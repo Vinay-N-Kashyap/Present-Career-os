@@ -1,0 +1,659 @@
+{
+  "schemaVersion": 1,
+  "prefix": "g3d",
+  "day": 2,
+  "promptSha": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Physically Based Rendering (PBR) & Cook-Torrance Microfacet BRDF",
+      "codeHash": "99e0a65386203b551acad910309b173fbba89a74eca75efa49a67ff7ca763509",
+      "spec": {
+        "template": "states",
+        "title": "Physically Based Rendering (PBR) & Cook-Torra... — Deterministic State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Scene Graph"
+          },
+          {
+            "id": "st2",
+            "label": "Vertex Transform"
+          },
+          {
+            "id": "st3",
+            "label": "Fragment Shader"
+          },
+          {
+            "id": "st4",
+            "label": "Frame Buffer"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Scene Graph): Initialize state for Physically Based Rendering (PBR...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Vertex Transform with zero-allocation buffer.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "transform()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Fragment Shader and evaluate hot-path invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Commit deterministic output in Frame Buffer.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit() ✓"
+            },
+            "tone": "ok"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Physically Based Rendering (PBR) & Cook-Torra... — Deterministic State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Scene Graph"
+          },
+          {
+            "id": "st2",
+            "label": "Vertex Transform"
+          },
+          {
+            "id": "st3",
+            "label": "Fragment Shader"
+          },
+          {
+            "id": "st4",
+            "label": "Frame Buffer"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Scene Graph): Initialize state for Physically Based Rendering (PBR...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Vertex Transform with zero-allocation buffer.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "transform()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Fragment Shader and evaluate hot-path invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Commit deterministic output in Frame Buffer.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit() ✓"
+            },
+            "tone": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Shadow Mapping & Percentage-Closer Filtering (PCF)",
+      "codeHash": "6ba6feff472aaccb7d00bcf8d46c1bfc92b0cc42836564c407e7a27f605a7229",
+      "spec": {
+        "template": "states",
+        "title": "Shadow Mapping & Percentage-Closer Filtering ... — Deterministic State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Scene Graph"
+          },
+          {
+            "id": "st2",
+            "label": "Vertex Transform"
+          },
+          {
+            "id": "st3",
+            "label": "Fragment Shader"
+          },
+          {
+            "id": "st4",
+            "label": "Frame Buffer"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Scene Graph): Initialize state for Shadow Mapping & Percentage-Clo...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Vertex Transform with zero-allocation buffer.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "transform()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Fragment Shader and evaluate hot-path invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Commit deterministic output in Frame Buffer.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit() ✓"
+            },
+            "tone": "ok"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Shadow Mapping & Percentage-Closer Filtering ... — Deterministic State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Scene Graph"
+          },
+          {
+            "id": "st2",
+            "label": "Vertex Transform"
+          },
+          {
+            "id": "st3",
+            "label": "Fragment Shader"
+          },
+          {
+            "id": "st4",
+            "label": "Frame Buffer"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Scene Graph): Initialize state for Shadow Mapping & Percentage-Clo...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Vertex Transform with zero-allocation buffer.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "transform()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Fragment Shader and evaluate hot-path invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Commit deterministic output in Frame Buffer.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit() ✓"
+            },
+            "tone": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Deferred Shading Pipeline & G-Buffer Architecture",
+      "codeHash": "b8b4a91322663f4389622519bdbc0825b0a5b675f629c0d14faed713532ad24a",
+      "spec": {
+        "template": "states",
+        "title": "Deferred Shading Pipeline & G-Buffer Architec... — Deterministic State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Scene Graph"
+          },
+          {
+            "id": "st2",
+            "label": "Vertex Transform"
+          },
+          {
+            "id": "st3",
+            "label": "Fragment Shader"
+          },
+          {
+            "id": "st4",
+            "label": "Frame Buffer"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Scene Graph): Initialize state for Deferred Shading Pipeline & G-B...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Vertex Transform with zero-allocation buffer.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "transform()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Fragment Shader and evaluate hot-path invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Commit deterministic output in Frame Buffer.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit() ✓"
+            },
+            "tone": "ok"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Deferred Shading Pipeline & G-Buffer Architec... — Deterministic State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Scene Graph"
+          },
+          {
+            "id": "st2",
+            "label": "Vertex Transform"
+          },
+          {
+            "id": "st3",
+            "label": "Fragment Shader"
+          },
+          {
+            "id": "st4",
+            "label": "Frame Buffer"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Scene Graph): Initialize state for Deferred Shading Pipeline & G-B...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Vertex Transform with zero-allocation buffer.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "transform()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Fragment Shader and evaluate hot-path invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Commit deterministic output in Frame Buffer.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit() ✓"
+            },
+            "tone": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "WebGPU Next-Gen Render Pipelines & WGSL Compute Workgroups",
+      "codeHash": "0bbc200197dbec07a9ee879c2aab776faaadf7badd22f8203fcaaf1d6b355d18",
+      "spec": {
+        "template": "states",
+        "title": "WebGPU Next-Gen Render Pipelines & WGSL Compu... — Deterministic State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Scene Graph"
+          },
+          {
+            "id": "st2",
+            "label": "Vertex Transform"
+          },
+          {
+            "id": "st3",
+            "label": "Fragment Shader"
+          },
+          {
+            "id": "st4",
+            "label": "Frame Buffer"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Scene Graph): Initialize state for WebGPU Next-Gen Render Pipeline...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Vertex Transform with zero-allocation buffer.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "transform()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Fragment Shader and evaluate hot-path invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Commit deterministic output in Frame Buffer.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit() ✓"
+            },
+            "tone": "ok"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "WebGPU Next-Gen Render Pipelines & WGSL Compu... — Deterministic State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Scene Graph"
+          },
+          {
+            "id": "st2",
+            "label": "Vertex Transform"
+          },
+          {
+            "id": "st3",
+            "label": "Fragment Shader"
+          },
+          {
+            "id": "st4",
+            "label": "Frame Buffer"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Scene Graph): Initialize state for WebGPU Next-Gen Render Pipeline...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Vertex Transform with zero-allocation buffer.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "transform()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Fragment Shader and evaluate hot-path invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Commit deterministic output in Frame Buffer.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit() ✓"
+            },
+            "tone": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Hierarchical View Frustum Culling & AABB Geometry",
+      "codeHash": "3a4a988668f06dff12f608a38cba3866e5791172c1dc3c54a6858bfd524fe29a",
+      "spec": {
+        "template": "states",
+        "title": "Hierarchical View Frustum Culling & AABB Geom... — Deterministic State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Scene Graph"
+          },
+          {
+            "id": "st2",
+            "label": "Vertex Transform"
+          },
+          {
+            "id": "st3",
+            "label": "Fragment Shader"
+          },
+          {
+            "id": "st4",
+            "label": "Frame Buffer"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Scene Graph): Initialize state for Hierarchical View Frustum Culli...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Vertex Transform with zero-allocation buffer.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "transform()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Fragment Shader and evaluate hot-path invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Commit deterministic output in Frame Buffer.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit() ✓"
+            },
+            "tone": "ok"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Hierarchical View Frustum Culling & AABB Geom... — Deterministic State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Scene Graph"
+          },
+          {
+            "id": "st2",
+            "label": "Vertex Transform"
+          },
+          {
+            "id": "st3",
+            "label": "Fragment Shader"
+          },
+          {
+            "id": "st4",
+            "label": "Frame Buffer"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Scene Graph): Initialize state for Hierarchical View Frustum Culli...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Vertex Transform with zero-allocation buffer.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "transform()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Fragment Shader and evaluate hot-path invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Commit deterministic output in Frame Buffer.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit() ✓"
+            },
+            "tone": "ok"
+          }
+        ]
+      }
+    }
+  ]
+}

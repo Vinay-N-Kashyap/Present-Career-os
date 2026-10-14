@@ -1,0 +1,659 @@
+{
+  "schemaVersion": 1,
+  "prefix": "quant-systems",
+  "day": 5,
+  "promptSha": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Multi-Exchange Smart Order Routing (SOR): Queue Priority & Fee/Rebate Optimization",
+      "codeHash": "e7396e43b966fd77000af1dbb53716346a44ac02c60bcf9ddbbe467e333dced7",
+      "spec": {
+        "template": "states",
+        "title": "Multi-Exchange Smart Order Routing (SOR): Que... — Deterministic State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Market Feed"
+          },
+          {
+            "id": "st2",
+            "label": "Risk Gate"
+          },
+          {
+            "id": "st3",
+            "label": "Limit Order Book"
+          },
+          {
+            "id": "st4",
+            "label": "Execution Fill"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Market Feed): Initialize state for Multi-Exchange Smart Order Rout...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Risk Gate with zero-allocation buffer.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "transform()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Limit Order Book and evaluate hot-path invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Commit deterministic output in Execution Fill.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit() ✓"
+            },
+            "tone": "ok"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Multi-Exchange Smart Order Routing (SOR): Que... — Deterministic State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Market Feed"
+          },
+          {
+            "id": "st2",
+            "label": "Risk Gate"
+          },
+          {
+            "id": "st3",
+            "label": "Limit Order Book"
+          },
+          {
+            "id": "st4",
+            "label": "Execution Fill"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Market Feed): Initialize state for Multi-Exchange Smart Order Rout...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Risk Gate with zero-allocation buffer.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "transform()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Limit Order Book and evaluate hot-path invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Commit deterministic output in Execution Fill.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit() ✓"
+            },
+            "tone": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "High-Frequency Cross-Venue Arbitrage & Race Condition Modeling",
+      "codeHash": "1e133c726820af32c7ca4827355f04a6c293ccab21dd5ad22b0f4182bc764d51",
+      "spec": {
+        "template": "states",
+        "title": "High-Frequency Cross-Venue Arbitrage & Race C... — Deterministic State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Market Feed"
+          },
+          {
+            "id": "st2",
+            "label": "Risk Gate"
+          },
+          {
+            "id": "st3",
+            "label": "Limit Order Book"
+          },
+          {
+            "id": "st4",
+            "label": "Execution Fill"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Market Feed): Initialize state for High-Frequency Cross-Venue Arbi...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Risk Gate with zero-allocation buffer.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "transform()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Limit Order Book and evaluate hot-path invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Commit deterministic output in Execution Fill.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit() ✓"
+            },
+            "tone": "ok"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "High-Frequency Cross-Venue Arbitrage & Race C... — Deterministic State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Market Feed"
+          },
+          {
+            "id": "st2",
+            "label": "Risk Gate"
+          },
+          {
+            "id": "st3",
+            "label": "Limit Order Book"
+          },
+          {
+            "id": "st4",
+            "label": "Execution Fill"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Market Feed): Initialize state for High-Frequency Cross-Venue Arbi...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Risk Gate with zero-allocation buffer.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "transform()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Limit Order Book and evaluate hot-path invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Commit deterministic output in Execution Fill.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit() ✓"
+            },
+            "tone": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Statistical Arbitrage: Multivariate Cointegration & Johansen VECM Half-Life",
+      "codeHash": "ba236d528c0bd78e5167e274994e002285261078745729c8ccd7f1ac27caef42",
+      "spec": {
+        "template": "states",
+        "title": "Statistical Arbitrage: Multivariate Cointegra... — Deterministic State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Market Feed"
+          },
+          {
+            "id": "st2",
+            "label": "Risk Gate"
+          },
+          {
+            "id": "st3",
+            "label": "Limit Order Book"
+          },
+          {
+            "id": "st4",
+            "label": "Execution Fill"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Market Feed): Initialize state for Statistical Arbitrage: Multivar...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Risk Gate with zero-allocation buffer.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "transform()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Limit Order Book and evaluate hot-path invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Commit deterministic output in Execution Fill.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit() ✓"
+            },
+            "tone": "ok"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Statistical Arbitrage: Multivariate Cointegra... — Deterministic State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Market Feed"
+          },
+          {
+            "id": "st2",
+            "label": "Risk Gate"
+          },
+          {
+            "id": "st3",
+            "label": "Limit Order Book"
+          },
+          {
+            "id": "st4",
+            "label": "Execution Fill"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Market Feed): Initialize state for Statistical Arbitrage: Multivar...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Risk Gate with zero-allocation buffer.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "transform()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Limit Order Book and evaluate hot-path invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Commit deterministic output in Execution Fill.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit() ✓"
+            },
+            "tone": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Institutional Risk: Expected Shortfall (CVaR) via Fat-Tailed Tail Modeling",
+      "codeHash": "483d6f2a00b15c7125cea1c6d7ea98c699f7226c406f5256cf21a14710411605",
+      "spec": {
+        "template": "states",
+        "title": "Institutional Risk: Expected Shortfall (CVaR)... — Deterministic State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Market Feed"
+          },
+          {
+            "id": "st2",
+            "label": "Risk Gate"
+          },
+          {
+            "id": "st3",
+            "label": "Limit Order Book"
+          },
+          {
+            "id": "st4",
+            "label": "Execution Fill"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Market Feed): Initialize state for Institutional Risk: Expected Sh...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Risk Gate with zero-allocation buffer.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "transform()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Limit Order Book and evaluate hot-path invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Commit deterministic output in Execution Fill.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit() ✓"
+            },
+            "tone": "ok"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Institutional Risk: Expected Shortfall (CVaR)... — Deterministic State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Market Feed"
+          },
+          {
+            "id": "st2",
+            "label": "Risk Gate"
+          },
+          {
+            "id": "st3",
+            "label": "Limit Order Book"
+          },
+          {
+            "id": "st4",
+            "label": "Execution Fill"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Market Feed): Initialize state for Institutional Risk: Expected Sh...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Risk Gate with zero-allocation buffer.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "transform()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Limit Order Book and evaluate hot-path invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Commit deterministic output in Execution Fill.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit() ✓"
+            },
+            "tone": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Algorithmic Governance: Failsafes, Circuit Breakers & Kill Switches",
+      "codeHash": "ba221de7450bac4a7c1f12111cb9d39d595642e44c08662f671eaaae521c70a8",
+      "spec": {
+        "template": "states",
+        "title": "Production Algorithmic Governance: Failsafes,... — Deterministic State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Market Feed"
+          },
+          {
+            "id": "st2",
+            "label": "Risk Gate"
+          },
+          {
+            "id": "st3",
+            "label": "Limit Order Book"
+          },
+          {
+            "id": "st4",
+            "label": "Execution Fill"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Market Feed): Initialize state for Production Algorithmic Governan...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Risk Gate with zero-allocation buffer.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "transform()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Limit Order Book and evaluate hot-path invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Commit deterministic output in Execution Fill.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit() ✓"
+            },
+            "tone": "ok"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Production Algorithmic Governance: Failsafes,... — Deterministic State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Market Feed"
+          },
+          {
+            "id": "st2",
+            "label": "Risk Gate"
+          },
+          {
+            "id": "st3",
+            "label": "Limit Order Book"
+          },
+          {
+            "id": "st4",
+            "label": "Execution Fill"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Market Feed): Initialize state for Production Algorithmic Governan...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Risk Gate with zero-allocation buffer.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "transform()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Limit Order Book and evaluate hot-path invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Commit deterministic output in Execution Fill.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit() ✓"
+            },
+            "tone": "ok"
+          }
+        ]
+      }
+    }
+  ]
+}

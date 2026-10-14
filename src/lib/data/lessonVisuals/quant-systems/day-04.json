@@ -1,0 +1,659 @@
+{
+  "schemaVersion": 1,
+  "prefix": "quant-systems",
+  "day": 4,
+  "promptSha": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "User-Space Kernel Bypass Networking: Solarflare OpenOnload & TCPDirect",
+      "codeHash": "6f620a26a9239b4b1cafc919b55872972017790de5bba5663e1398d08dbd7ad0",
+      "spec": {
+        "template": "states",
+        "title": "User-Space Kernel Bypass Networking: Solarfla... — Deterministic State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Market Feed"
+          },
+          {
+            "id": "st2",
+            "label": "Risk Gate"
+          },
+          {
+            "id": "st3",
+            "label": "Limit Order Book"
+          },
+          {
+            "id": "st4",
+            "label": "Execution Fill"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Market Feed): Initialize state for User-Space Kernel Bypass Networ...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Risk Gate with zero-allocation buffer.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "transform()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Limit Order Book and evaluate hot-path invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Commit deterministic output in Execution Fill.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit() ✓"
+            },
+            "tone": "ok"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "User-Space Kernel Bypass Networking: Solarfla... — Deterministic State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Market Feed"
+          },
+          {
+            "id": "st2",
+            "label": "Risk Gate"
+          },
+          {
+            "id": "st3",
+            "label": "Limit Order Book"
+          },
+          {
+            "id": "st4",
+            "label": "Execution Fill"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Market Feed): Initialize state for User-Space Kernel Bypass Networ...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Risk Gate with zero-allocation buffer.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "transform()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Limit Order Book and evaluate hot-path invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Commit deterministic output in Execution Fill.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit() ✓"
+            },
+            "tone": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "IEEE 1588v2 Precision Time Protocol (PTP) & Sub-Nanosecond Clock Synchronization",
+      "codeHash": "add1db9e5a17b0703128e3aa5b63fa0d6792d8b2fb3c189c21dea5a1d8f9635f",
+      "spec": {
+        "template": "states",
+        "title": "IEEE 1588v2 Precision Time Protocol (PTP) & S... — Deterministic State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Market Feed"
+          },
+          {
+            "id": "st2",
+            "label": "Risk Gate"
+          },
+          {
+            "id": "st3",
+            "label": "Limit Order Book"
+          },
+          {
+            "id": "st4",
+            "label": "Execution Fill"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Market Feed): Initialize state for IEEE 1588v2 Precision Time Prot...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Risk Gate with zero-allocation buffer.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "transform()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Limit Order Book and evaluate hot-path invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Commit deterministic output in Execution Fill.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit() ✓"
+            },
+            "tone": "ok"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "IEEE 1588v2 Precision Time Protocol (PTP) & S... — Deterministic State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Market Feed"
+          },
+          {
+            "id": "st2",
+            "label": "Risk Gate"
+          },
+          {
+            "id": "st3",
+            "label": "Limit Order Book"
+          },
+          {
+            "id": "st4",
+            "label": "Execution Fill"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Market Feed): Initialize state for IEEE 1588v2 Precision Time Prot...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Risk Gate with zero-allocation buffer.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "transform()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Limit Order Book and evaluate hot-path invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Commit deterministic output in Execution Fill.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit() ✓"
+            },
+            "tone": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Hardware Acceleration: FPGA Pre-Trade Risk Checks & Direct Market Access (DMA)",
+      "codeHash": "363b45ff5e53ad9e57527fb497fe8e0ce28b9769a49489fbd5489fae4885253c",
+      "spec": {
+        "template": "states",
+        "title": "Hardware Acceleration: FPGA Pre-Trade Risk Ch... — Deterministic State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Market Feed"
+          },
+          {
+            "id": "st2",
+            "label": "Risk Gate"
+          },
+          {
+            "id": "st3",
+            "label": "Limit Order Book"
+          },
+          {
+            "id": "st4",
+            "label": "Execution Fill"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Market Feed): Initialize state for Hardware Acceleration: FPGA Pre...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Risk Gate with zero-allocation buffer.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "transform()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Limit Order Book and evaluate hot-path invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Commit deterministic output in Execution Fill.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit() ✓"
+            },
+            "tone": "ok"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Hardware Acceleration: FPGA Pre-Trade Risk Ch... — Deterministic State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Market Feed"
+          },
+          {
+            "id": "st2",
+            "label": "Risk Gate"
+          },
+          {
+            "id": "st3",
+            "label": "Limit Order Book"
+          },
+          {
+            "id": "st4",
+            "label": "Execution Fill"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Market Feed): Initialize state for Hardware Acceleration: FPGA Pre...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Risk Gate with zero-allocation buffer.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "transform()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Limit Order Book and evaluate hot-path invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Commit deterministic output in Execution Fill.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit() ✓"
+            },
+            "tone": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Lock-Free SPSC Ring Buffers, False Sharing & Acquire-Release Memory Ordering",
+      "codeHash": "5a0d1c0bc5762ea2c46d213278741b00e8c916a47887d114e46abd8d41d1e890",
+      "spec": {
+        "template": "states",
+        "title": "Lock-Free SPSC Ring Buffers, False Sharing & ... — Deterministic State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Market Feed"
+          },
+          {
+            "id": "st2",
+            "label": "Risk Gate"
+          },
+          {
+            "id": "st3",
+            "label": "Limit Order Book"
+          },
+          {
+            "id": "st4",
+            "label": "Execution Fill"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Market Feed): Initialize state for Lock-Free SPSC Ring Buffers, Fa...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Risk Gate with zero-allocation buffer.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "transform()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Limit Order Book and evaluate hot-path invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Commit deterministic output in Execution Fill.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit() ✓"
+            },
+            "tone": "ok"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Lock-Free SPSC Ring Buffers, False Sharing & ... — Deterministic State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Market Feed"
+          },
+          {
+            "id": "st2",
+            "label": "Risk Gate"
+          },
+          {
+            "id": "st3",
+            "label": "Limit Order Book"
+          },
+          {
+            "id": "st4",
+            "label": "Execution Fill"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Market Feed): Initialize state for Lock-Free SPSC Ring Buffers, Fa...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Risk Gate with zero-allocation buffer.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "transform()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Limit Order Book and evaluate hot-path invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Commit deterministic output in Execution Fill.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit() ✓"
+            },
+            "tone": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "End-to-End Tick-to-Trade Profiling: Sub-Microsecond P99 Execution Architecture",
+      "codeHash": "0e5ddbe010379f8ffc2ba57e90d8903310f3f39a1617c7780fe6bd646ff5a3a6",
+      "spec": {
+        "template": "states",
+        "title": "End-to-End Tick-to-Trade Profiling: Sub-Micro... — Deterministic State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Market Feed"
+          },
+          {
+            "id": "st2",
+            "label": "Risk Gate"
+          },
+          {
+            "id": "st3",
+            "label": "Limit Order Book"
+          },
+          {
+            "id": "st4",
+            "label": "Execution Fill"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Market Feed): Initialize state for End-to-End Tick-to-Trade Profil...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Risk Gate with zero-allocation buffer.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "transform()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Limit Order Book and evaluate hot-path invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Commit deterministic output in Execution Fill.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit() ✓"
+            },
+            "tone": "ok"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "End-to-End Tick-to-Trade Profiling: Sub-Micro... — Deterministic State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Market Feed"
+          },
+          {
+            "id": "st2",
+            "label": "Risk Gate"
+          },
+          {
+            "id": "st3",
+            "label": "Limit Order Book"
+          },
+          {
+            "id": "st4",
+            "label": "Execution Fill"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Market Feed): Initialize state for End-to-End Tick-to-Trade Profil...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Risk Gate with zero-allocation buffer.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "transform()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Limit Order Book and evaluate hot-path invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Commit deterministic output in Execution Fill.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit() ✓"
+            },
+            "tone": "ok"
+          }
+        ]
+      }
+    }
+  ]
+}

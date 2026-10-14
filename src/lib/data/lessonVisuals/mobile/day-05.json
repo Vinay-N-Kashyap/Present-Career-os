@@ -1,0 +1,2419 @@
+{
+  "schemaVersion": 1,
+  "prefix": "mobile",
+  "day": 5,
+  "promptSha": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Cold Start Profiling: Optimizing TTID, Hermes Engine Warmup & First Render",
+      "codeHash": "54509be3e4cfa7023841e517f8a7a63937f2aee5775d154e6ae8e5e6a62b1684",
+      "spec": {
+        "template": "component-tree",
+        "title": "Cold Start Profiling: Optimizing TTID, Hermes... — Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "AppShell",
+            "name": "<MobileAppShell />",
+            "props": {
+              "theme": "dark"
+            },
+            "state": {
+              "online": "true"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "NavStack",
+            "name": "<NavigationStack />",
+            "props": {
+              "route": "Day5"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "ScreenView",
+            "name": "<ScreenViewport />",
+            "state": {
+              "loading": "false"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "NativeBridge",
+            "name": "<NativeSensorBridge />",
+            "props": {
+              "fps": "60"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <MobileAppShell /> for Cold Start Profiling: Optimizing ...",
+            "activeId": "AppShell",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "NavStack",
+                "name": "<NavigationStack />",
+                "props": {
+                  "route": "Day5"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "60"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Pass route params down to <NavigationStack />.",
+            "activeId": "NavStack",
+            "reRenderingIds": [
+              "NavStack",
+              "ScreenView"
+            ],
+            "propsPassed": {
+              "from": "AppShell",
+              "to": "NavStack",
+              "propName": "route",
+              "value": "Day5"
+            },
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "NavStack",
+                "name": "<NavigationStack />",
+                "props": {
+                  "route": "Day5"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "60"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Render <ScreenViewport /> with reactive state bindings.",
+            "activeId": "ScreenView",
+            "reRenderingIds": [
+              "ScreenView"
+            ],
+            "propsPassed": {
+              "from": "NavStack",
+              "to": "ScreenView",
+              "propName": "payload",
+              "value": "hydrated"
+            },
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "NavStack",
+                "name": "<NavigationStack />",
+                "props": {
+                  "route": "Day5"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "60"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Dispatch gesture event from <NativeSensorBridge /> to shell.",
+            "activeId": "NativeBridge",
+            "eventFired": {
+              "from": "NativeBridge",
+              "to": "AppShell",
+              "eventName": "onNativeCommit"
+            },
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "NavStack",
+                "name": "<NavigationStack />",
+                "props": {
+                  "route": "Day5"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "60"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "title": "Cold Start Profiling: Optimizing TTID, Hermes... — Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "AppShell",
+            "name": "<MobileAppShell />",
+            "props": {
+              "theme": "dark"
+            },
+            "state": {
+              "online": "true"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "NavStack",
+            "name": "<NavigationStack />",
+            "props": {
+              "route": "Day5"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "ScreenView",
+            "name": "<ScreenViewport />",
+            "state": {
+              "loading": "false"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "NativeBridge",
+            "name": "<NativeSensorBridge />",
+            "props": {
+              "fps": "60"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <MobileAppShell /> for Cold Start Profiling: Optimizing ...",
+            "activeId": "AppShell",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "NavStack",
+                "name": "<NavigationStack />",
+                "props": {
+                  "route": "Day5"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "60"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Pass route params down to <NavigationStack />.",
+            "activeId": "NavStack",
+            "reRenderingIds": [
+              "NavStack",
+              "ScreenView"
+            ],
+            "propsPassed": {
+              "from": "AppShell",
+              "to": "NavStack",
+              "propName": "route",
+              "value": "Day5"
+            },
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "NavStack",
+                "name": "<NavigationStack />",
+                "props": {
+                  "route": "Day5"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "60"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Render <ScreenViewport /> with reactive state bindings.",
+            "activeId": "ScreenView",
+            "reRenderingIds": [
+              "ScreenView"
+            ],
+            "propsPassed": {
+              "from": "NavStack",
+              "to": "ScreenView",
+              "propName": "payload",
+              "value": "hydrated"
+            },
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "NavStack",
+                "name": "<NavigationStack />",
+                "props": {
+                  "route": "Day5"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "60"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Dispatch gesture event from <NativeSensorBridge /> to shell.",
+            "activeId": "NativeBridge",
+            "eventFired": {
+              "from": "NativeBridge",
+              "to": "AppShell",
+              "eventName": "onNativeCommit"
+            },
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "NavStack",
+                "name": "<NavigationStack />",
+                "props": {
+                  "route": "Day5"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "60"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Over-The-Air (OTA) Updates & Native Runtime ABI Compatibility Matrices",
+      "codeHash": "d7985e6204317f15976d3c65065f9a1b6427a11d437d75be4de92a9747095991",
+      "spec": {
+        "template": "component-tree",
+        "title": "Over-The-Air (OTA) Updates & Native Runtime A... — Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "AppShell",
+            "name": "<MobileAppShell />",
+            "props": {
+              "theme": "dark"
+            },
+            "state": {
+              "online": "true"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "NavStack",
+            "name": "<NavigationStack />",
+            "props": {
+              "route": "Day5"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "ScreenView",
+            "name": "<ScreenViewport />",
+            "state": {
+              "loading": "false"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "NativeBridge",
+            "name": "<NativeSensorBridge />",
+            "props": {
+              "fps": "60"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <MobileAppShell /> for Over-The-Air (OTA) Updates & Nati...",
+            "activeId": "AppShell",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "NavStack",
+                "name": "<NavigationStack />",
+                "props": {
+                  "route": "Day5"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "60"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Pass route params down to <NavigationStack />.",
+            "activeId": "NavStack",
+            "reRenderingIds": [
+              "NavStack",
+              "ScreenView"
+            ],
+            "propsPassed": {
+              "from": "AppShell",
+              "to": "NavStack",
+              "propName": "route",
+              "value": "Day5"
+            },
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "NavStack",
+                "name": "<NavigationStack />",
+                "props": {
+                  "route": "Day5"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "60"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Render <ScreenViewport /> with reactive state bindings.",
+            "activeId": "ScreenView",
+            "reRenderingIds": [
+              "ScreenView"
+            ],
+            "propsPassed": {
+              "from": "NavStack",
+              "to": "ScreenView",
+              "propName": "payload",
+              "value": "hydrated"
+            },
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "NavStack",
+                "name": "<NavigationStack />",
+                "props": {
+                  "route": "Day5"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "60"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Dispatch gesture event from <NativeSensorBridge /> to shell.",
+            "activeId": "NativeBridge",
+            "eventFired": {
+              "from": "NativeBridge",
+              "to": "AppShell",
+              "eventName": "onNativeCommit"
+            },
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "NavStack",
+                "name": "<NavigationStack />",
+                "props": {
+                  "route": "Day5"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "60"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "title": "Over-The-Air (OTA) Updates & Native Runtime A... — Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "AppShell",
+            "name": "<MobileAppShell />",
+            "props": {
+              "theme": "dark"
+            },
+            "state": {
+              "online": "true"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "NavStack",
+            "name": "<NavigationStack />",
+            "props": {
+              "route": "Day5"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "ScreenView",
+            "name": "<ScreenViewport />",
+            "state": {
+              "loading": "false"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "NativeBridge",
+            "name": "<NativeSensorBridge />",
+            "props": {
+              "fps": "60"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <MobileAppShell /> for Over-The-Air (OTA) Updates & Nati...",
+            "activeId": "AppShell",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "NavStack",
+                "name": "<NavigationStack />",
+                "props": {
+                  "route": "Day5"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "60"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Pass route params down to <NavigationStack />.",
+            "activeId": "NavStack",
+            "reRenderingIds": [
+              "NavStack",
+              "ScreenView"
+            ],
+            "propsPassed": {
+              "from": "AppShell",
+              "to": "NavStack",
+              "propName": "route",
+              "value": "Day5"
+            },
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "NavStack",
+                "name": "<NavigationStack />",
+                "props": {
+                  "route": "Day5"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "60"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Render <ScreenViewport /> with reactive state bindings.",
+            "activeId": "ScreenView",
+            "reRenderingIds": [
+              "ScreenView"
+            ],
+            "propsPassed": {
+              "from": "NavStack",
+              "to": "ScreenView",
+              "propName": "payload",
+              "value": "hydrated"
+            },
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "NavStack",
+                "name": "<NavigationStack />",
+                "props": {
+                  "route": "Day5"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "60"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Dispatch gesture event from <NativeSensorBridge /> to shell.",
+            "activeId": "NativeBridge",
+            "eventFired": {
+              "from": "NativeBridge",
+              "to": "AppShell",
+              "eventName": "onNativeCommit"
+            },
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "NavStack",
+                "name": "<NavigationStack />",
+                "props": {
+                  "route": "Day5"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "60"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Offline Sync Engine: SQLite WAL Mode & Bi-Directional Delta Queues",
+      "codeHash": "61682a82b3b03d1e9c1e825845849b5410f4c7843d8b8ef95fc3b5062c551336",
+      "spec": {
+        "template": "component-tree",
+        "title": "Enterprise Offline Sync Engine: SQLite WAL Mo... — Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "AppShell",
+            "name": "<MobileAppShell />",
+            "props": {
+              "theme": "dark"
+            },
+            "state": {
+              "online": "true"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "NavStack",
+            "name": "<NavigationStack />",
+            "props": {
+              "route": "Day5"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "ScreenView",
+            "name": "<ScreenViewport />",
+            "state": {
+              "loading": "false"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "NativeBridge",
+            "name": "<NativeSensorBridge />",
+            "props": {
+              "fps": "60"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <MobileAppShell /> for Enterprise Offline Sync Engine: S...",
+            "activeId": "AppShell",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "NavStack",
+                "name": "<NavigationStack />",
+                "props": {
+                  "route": "Day5"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "60"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Pass route params down to <NavigationStack />.",
+            "activeId": "NavStack",
+            "reRenderingIds": [
+              "NavStack",
+              "ScreenView"
+            ],
+            "propsPassed": {
+              "from": "AppShell",
+              "to": "NavStack",
+              "propName": "route",
+              "value": "Day5"
+            },
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "NavStack",
+                "name": "<NavigationStack />",
+                "props": {
+                  "route": "Day5"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "60"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Render <ScreenViewport /> with reactive state bindings.",
+            "activeId": "ScreenView",
+            "reRenderingIds": [
+              "ScreenView"
+            ],
+            "propsPassed": {
+              "from": "NavStack",
+              "to": "ScreenView",
+              "propName": "payload",
+              "value": "hydrated"
+            },
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "NavStack",
+                "name": "<NavigationStack />",
+                "props": {
+                  "route": "Day5"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "60"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Dispatch gesture event from <NativeSensorBridge /> to shell.",
+            "activeId": "NativeBridge",
+            "eventFired": {
+              "from": "NativeBridge",
+              "to": "AppShell",
+              "eventName": "onNativeCommit"
+            },
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "NavStack",
+                "name": "<NavigationStack />",
+                "props": {
+                  "route": "Day5"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "60"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "title": "Enterprise Offline Sync Engine: SQLite WAL Mo... — Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "AppShell",
+            "name": "<MobileAppShell />",
+            "props": {
+              "theme": "dark"
+            },
+            "state": {
+              "online": "true"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "NavStack",
+            "name": "<NavigationStack />",
+            "props": {
+              "route": "Day5"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "ScreenView",
+            "name": "<ScreenViewport />",
+            "state": {
+              "loading": "false"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "NativeBridge",
+            "name": "<NativeSensorBridge />",
+            "props": {
+              "fps": "60"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <MobileAppShell /> for Enterprise Offline Sync Engine: S...",
+            "activeId": "AppShell",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "NavStack",
+                "name": "<NavigationStack />",
+                "props": {
+                  "route": "Day5"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "60"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Pass route params down to <NavigationStack />.",
+            "activeId": "NavStack",
+            "reRenderingIds": [
+              "NavStack",
+              "ScreenView"
+            ],
+            "propsPassed": {
+              "from": "AppShell",
+              "to": "NavStack",
+              "propName": "route",
+              "value": "Day5"
+            },
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "NavStack",
+                "name": "<NavigationStack />",
+                "props": {
+                  "route": "Day5"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "60"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Render <ScreenViewport /> with reactive state bindings.",
+            "activeId": "ScreenView",
+            "reRenderingIds": [
+              "ScreenView"
+            ],
+            "propsPassed": {
+              "from": "NavStack",
+              "to": "ScreenView",
+              "propName": "payload",
+              "value": "hydrated"
+            },
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "NavStack",
+                "name": "<NavigationStack />",
+                "props": {
+                  "route": "Day5"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "60"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Dispatch gesture event from <NativeSensorBridge /> to shell.",
+            "activeId": "NativeBridge",
+            "eventFired": {
+              "from": "NativeBridge",
+              "to": "AppShell",
+              "eventName": "onNativeCommit"
+            },
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "NavStack",
+                "name": "<NavigationStack />",
+                "props": {
+                  "route": "Day5"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "60"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Mobile Security Hardening: SSL Pinning, Root Detection & Enclave Attestation",
+      "codeHash": "875b38225cdd9f26e44ae8d3aab6dacd51649ff2faec17047d06203af667bf8f",
+      "spec": {
+        "template": "component-tree",
+        "title": "Mobile Security Hardening: SSL Pinning, Root ... — Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "AppShell",
+            "name": "<MobileAppShell />",
+            "props": {
+              "theme": "dark"
+            },
+            "state": {
+              "online": "true"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "NavStack",
+            "name": "<NavigationStack />",
+            "props": {
+              "route": "Day5"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "ScreenView",
+            "name": "<ScreenViewport />",
+            "state": {
+              "loading": "false"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "NativeBridge",
+            "name": "<NativeSensorBridge />",
+            "props": {
+              "fps": "60"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <MobileAppShell /> for Mobile Security Hardening: SSL Pi...",
+            "activeId": "AppShell",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "NavStack",
+                "name": "<NavigationStack />",
+                "props": {
+                  "route": "Day5"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "60"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Pass route params down to <NavigationStack />.",
+            "activeId": "NavStack",
+            "reRenderingIds": [
+              "NavStack",
+              "ScreenView"
+            ],
+            "propsPassed": {
+              "from": "AppShell",
+              "to": "NavStack",
+              "propName": "route",
+              "value": "Day5"
+            },
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "NavStack",
+                "name": "<NavigationStack />",
+                "props": {
+                  "route": "Day5"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "60"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Render <ScreenViewport /> with reactive state bindings.",
+            "activeId": "ScreenView",
+            "reRenderingIds": [
+              "ScreenView"
+            ],
+            "propsPassed": {
+              "from": "NavStack",
+              "to": "ScreenView",
+              "propName": "payload",
+              "value": "hydrated"
+            },
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "NavStack",
+                "name": "<NavigationStack />",
+                "props": {
+                  "route": "Day5"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "60"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Dispatch gesture event from <NativeSensorBridge /> to shell.",
+            "activeId": "NativeBridge",
+            "eventFired": {
+              "from": "NativeBridge",
+              "to": "AppShell",
+              "eventName": "onNativeCommit"
+            },
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "NavStack",
+                "name": "<NavigationStack />",
+                "props": {
+                  "route": "Day5"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "60"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "title": "Mobile Security Hardening: SSL Pinning, Root ... — Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "AppShell",
+            "name": "<MobileAppShell />",
+            "props": {
+              "theme": "dark"
+            },
+            "state": {
+              "online": "true"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "NavStack",
+            "name": "<NavigationStack />",
+            "props": {
+              "route": "Day5"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "ScreenView",
+            "name": "<ScreenViewport />",
+            "state": {
+              "loading": "false"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "NativeBridge",
+            "name": "<NativeSensorBridge />",
+            "props": {
+              "fps": "60"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <MobileAppShell /> for Mobile Security Hardening: SSL Pi...",
+            "activeId": "AppShell",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "NavStack",
+                "name": "<NavigationStack />",
+                "props": {
+                  "route": "Day5"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "60"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Pass route params down to <NavigationStack />.",
+            "activeId": "NavStack",
+            "reRenderingIds": [
+              "NavStack",
+              "ScreenView"
+            ],
+            "propsPassed": {
+              "from": "AppShell",
+              "to": "NavStack",
+              "propName": "route",
+              "value": "Day5"
+            },
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "NavStack",
+                "name": "<NavigationStack />",
+                "props": {
+                  "route": "Day5"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "60"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Render <ScreenViewport /> with reactive state bindings.",
+            "activeId": "ScreenView",
+            "reRenderingIds": [
+              "ScreenView"
+            ],
+            "propsPassed": {
+              "from": "NavStack",
+              "to": "ScreenView",
+              "propName": "payload",
+              "value": "hydrated"
+            },
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "NavStack",
+                "name": "<NavigationStack />",
+                "props": {
+                  "route": "Day5"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "60"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Dispatch gesture event from <NativeSensorBridge /> to shell.",
+            "activeId": "NativeBridge",
+            "eventFired": {
+              "from": "NativeBridge",
+              "to": "AppShell",
+              "eventName": "onNativeCommit"
+            },
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "NavStack",
+                "name": "<NavigationStack />",
+                "props": {
+                  "route": "Day5"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "60"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Fastlane CI/CD & Automated Phased App Store Release Engineering",
+      "codeHash": "b0ebb016b9e023a8deec7c1944c0ce661215afbb6ec2d633c4bc8fb0248ef008",
+      "spec": {
+        "template": "component-tree",
+        "title": "Fastlane CI/CD & Automated Phased App Store R... — Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "AppShell",
+            "name": "<MobileAppShell />",
+            "props": {
+              "theme": "dark"
+            },
+            "state": {
+              "online": "true"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "NavStack",
+            "name": "<NavigationStack />",
+            "props": {
+              "route": "Day5"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "ScreenView",
+            "name": "<ScreenViewport />",
+            "state": {
+              "loading": "false"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "NativeBridge",
+            "name": "<NativeSensorBridge />",
+            "props": {
+              "fps": "60"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <MobileAppShell /> for Fastlane CI/CD & Automated Phased...",
+            "activeId": "AppShell",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "NavStack",
+                "name": "<NavigationStack />",
+                "props": {
+                  "route": "Day5"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "60"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Pass route params down to <NavigationStack />.",
+            "activeId": "NavStack",
+            "reRenderingIds": [
+              "NavStack",
+              "ScreenView"
+            ],
+            "propsPassed": {
+              "from": "AppShell",
+              "to": "NavStack",
+              "propName": "route",
+              "value": "Day5"
+            },
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "NavStack",
+                "name": "<NavigationStack />",
+                "props": {
+                  "route": "Day5"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "60"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Render <ScreenViewport /> with reactive state bindings.",
+            "activeId": "ScreenView",
+            "reRenderingIds": [
+              "ScreenView"
+            ],
+            "propsPassed": {
+              "from": "NavStack",
+              "to": "ScreenView",
+              "propName": "payload",
+              "value": "hydrated"
+            },
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "NavStack",
+                "name": "<NavigationStack />",
+                "props": {
+                  "route": "Day5"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "60"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Dispatch gesture event from <NativeSensorBridge /> to shell.",
+            "activeId": "NativeBridge",
+            "eventFired": {
+              "from": "NativeBridge",
+              "to": "AppShell",
+              "eventName": "onNativeCommit"
+            },
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "NavStack",
+                "name": "<NavigationStack />",
+                "props": {
+                  "route": "Day5"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "60"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "title": "Fastlane CI/CD & Automated Phased App Store R... — Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "AppShell",
+            "name": "<MobileAppShell />",
+            "props": {
+              "theme": "dark"
+            },
+            "state": {
+              "online": "true"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "NavStack",
+            "name": "<NavigationStack />",
+            "props": {
+              "route": "Day5"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "ScreenView",
+            "name": "<ScreenViewport />",
+            "state": {
+              "loading": "false"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "NativeBridge",
+            "name": "<NativeSensorBridge />",
+            "props": {
+              "fps": "60"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <MobileAppShell /> for Fastlane CI/CD & Automated Phased...",
+            "activeId": "AppShell",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "NavStack",
+                "name": "<NavigationStack />",
+                "props": {
+                  "route": "Day5"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "60"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Pass route params down to <NavigationStack />.",
+            "activeId": "NavStack",
+            "reRenderingIds": [
+              "NavStack",
+              "ScreenView"
+            ],
+            "propsPassed": {
+              "from": "AppShell",
+              "to": "NavStack",
+              "propName": "route",
+              "value": "Day5"
+            },
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "NavStack",
+                "name": "<NavigationStack />",
+                "props": {
+                  "route": "Day5"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "60"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Render <ScreenViewport /> with reactive state bindings.",
+            "activeId": "ScreenView",
+            "reRenderingIds": [
+              "ScreenView"
+            ],
+            "propsPassed": {
+              "from": "NavStack",
+              "to": "ScreenView",
+              "propName": "payload",
+              "value": "hydrated"
+            },
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "NavStack",
+                "name": "<NavigationStack />",
+                "props": {
+                  "route": "Day5"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "60"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Dispatch gesture event from <NativeSensorBridge /> to shell.",
+            "activeId": "NativeBridge",
+            "eventFired": {
+              "from": "NativeBridge",
+              "to": "AppShell",
+              "eventName": "onNativeCommit"
+            },
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "NavStack",
+                "name": "<NavigationStack />",
+                "props": {
+                  "route": "Day5"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "60"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

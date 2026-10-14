@@ -1,0 +1,1029 @@
+{
+  "schemaVersion": 1,
+  "prefix": "blockchain",
+  "day": 4,
+  "promptSha": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Read-Only Reentrancy & Cross-Contract State Inconsistency",
+      "codeHash": "f69dace1c326862991ca26dc5e688c1b5b372666762225d26ae302ac805f13dd",
+      "spec": {
+        "template": "sequence",
+        "title": "Read-Only Reentrancy & Cross-Contract State I... — On-Chain Transaction Sequence",
+        "actors": [
+          "Wallet Signer",
+          "Mempool Node",
+          "EVM Contract",
+          "Block Ledger"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Wallet Signer signs payload for Read-Only Reentrancy & Cross-Contra...",
+            "activeActor": "Wallet Signer",
+            "messages": [
+              {
+                "from": "Wallet Signer",
+                "to": "Mempool Node",
+                "label": "eth_sendRawTransaction(sig)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Mempool Node validates nonce & gas limit, forwards to EVM.",
+            "activeActor": "Mempool Node",
+            "messages": [
+              {
+                "from": "Wallet Signer",
+                "to": "Mempool Node",
+                "label": "eth_sendRawTransaction(sig)",
+                "tone": "ok"
+              },
+              {
+                "from": "Mempool Node",
+                "to": "EVM Contract",
+                "label": "CALLDATA + Gas Check",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: EVM Contract verifies invariants and mutates state root.",
+            "activeActor": "EVM Contract",
+            "messages": [
+              {
+                "from": "Wallet Signer",
+                "to": "Mempool Node",
+                "label": "eth_sendRawTransaction(sig)",
+                "tone": "ok"
+              },
+              {
+                "from": "Mempool Node",
+                "to": "EVM Contract",
+                "label": "CALLDATA + Gas Check",
+                "tone": "ok"
+              },
+              {
+                "from": "EVM Contract",
+                "to": "Block Ledger",
+                "label": "SSTORE + Emit Event",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Block Ledger seals Merkle root and returns receipt.",
+            "activeActor": "Block Ledger",
+            "messages": [
+              {
+                "from": "Wallet Signer",
+                "to": "Mempool Node",
+                "label": "eth_sendRawTransaction(sig)",
+                "tone": "ok"
+              },
+              {
+                "from": "Mempool Node",
+                "to": "EVM Contract",
+                "label": "CALLDATA + Gas Check",
+                "tone": "ok"
+              },
+              {
+                "from": "EVM Contract",
+                "to": "Block Ledger",
+                "label": "SSTORE + Emit Event",
+                "tone": "ok"
+              },
+              {
+                "from": "Block Ledger",
+                "to": "Wallet Signer",
+                "label": "TxReceipt (Finalized ✓)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Read-Only Reentrancy & Cross-Contract State I... — On-Chain Transaction Sequence",
+        "actors": [
+          "Wallet Signer",
+          "Mempool Node",
+          "EVM Contract",
+          "Block Ledger"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Wallet Signer signs payload for Read-Only Reentrancy & Cross-Contra...",
+            "activeActor": "Wallet Signer",
+            "messages": [
+              {
+                "from": "Wallet Signer",
+                "to": "Mempool Node",
+                "label": "eth_sendRawTransaction(sig)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Mempool Node validates nonce & gas limit, forwards to EVM.",
+            "activeActor": "Mempool Node",
+            "messages": [
+              {
+                "from": "Wallet Signer",
+                "to": "Mempool Node",
+                "label": "eth_sendRawTransaction(sig)",
+                "tone": "ok"
+              },
+              {
+                "from": "Mempool Node",
+                "to": "EVM Contract",
+                "label": "CALLDATA + Gas Check",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: EVM Contract verifies invariants and mutates state root.",
+            "activeActor": "EVM Contract",
+            "messages": [
+              {
+                "from": "Wallet Signer",
+                "to": "Mempool Node",
+                "label": "eth_sendRawTransaction(sig)",
+                "tone": "ok"
+              },
+              {
+                "from": "Mempool Node",
+                "to": "EVM Contract",
+                "label": "CALLDATA + Gas Check",
+                "tone": "ok"
+              },
+              {
+                "from": "EVM Contract",
+                "to": "Block Ledger",
+                "label": "SSTORE + Emit Event",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Block Ledger seals Merkle root and returns receipt.",
+            "activeActor": "Block Ledger",
+            "messages": [
+              {
+                "from": "Wallet Signer",
+                "to": "Mempool Node",
+                "label": "eth_sendRawTransaction(sig)",
+                "tone": "ok"
+              },
+              {
+                "from": "Mempool Node",
+                "to": "EVM Contract",
+                "label": "CALLDATA + Gas Check",
+                "tone": "ok"
+              },
+              {
+                "from": "EVM Contract",
+                "to": "Block Ledger",
+                "label": "SSTORE + Emit Event",
+                "tone": "ok"
+              },
+              {
+                "from": "Block Ledger",
+                "to": "Wallet Signer",
+                "label": "TxReceipt (Finalized ✓)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Foundry Stateful Invariant & Fuzz Testing",
+      "codeHash": "ffd92d1bbb269b55a10cdfb503c4ae5ddb450b8b778bb350f801f7a16b871e14",
+      "spec": {
+        "template": "sequence",
+        "title": "Foundry Stateful Invariant & Fuzz Testing — On-Chain Transaction Sequence",
+        "actors": [
+          "Wallet Signer",
+          "Mempool Node",
+          "EVM Contract",
+          "Block Ledger"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Wallet Signer signs payload for Foundry Stateful Invariant & Fuzz T...",
+            "activeActor": "Wallet Signer",
+            "messages": [
+              {
+                "from": "Wallet Signer",
+                "to": "Mempool Node",
+                "label": "eth_sendRawTransaction(sig)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Mempool Node validates nonce & gas limit, forwards to EVM.",
+            "activeActor": "Mempool Node",
+            "messages": [
+              {
+                "from": "Wallet Signer",
+                "to": "Mempool Node",
+                "label": "eth_sendRawTransaction(sig)",
+                "tone": "ok"
+              },
+              {
+                "from": "Mempool Node",
+                "to": "EVM Contract",
+                "label": "CALLDATA + Gas Check",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: EVM Contract verifies invariants and mutates state root.",
+            "activeActor": "EVM Contract",
+            "messages": [
+              {
+                "from": "Wallet Signer",
+                "to": "Mempool Node",
+                "label": "eth_sendRawTransaction(sig)",
+                "tone": "ok"
+              },
+              {
+                "from": "Mempool Node",
+                "to": "EVM Contract",
+                "label": "CALLDATA + Gas Check",
+                "tone": "ok"
+              },
+              {
+                "from": "EVM Contract",
+                "to": "Block Ledger",
+                "label": "SSTORE + Emit Event",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Block Ledger seals Merkle root and returns receipt.",
+            "activeActor": "Block Ledger",
+            "messages": [
+              {
+                "from": "Wallet Signer",
+                "to": "Mempool Node",
+                "label": "eth_sendRawTransaction(sig)",
+                "tone": "ok"
+              },
+              {
+                "from": "Mempool Node",
+                "to": "EVM Contract",
+                "label": "CALLDATA + Gas Check",
+                "tone": "ok"
+              },
+              {
+                "from": "EVM Contract",
+                "to": "Block Ledger",
+                "label": "SSTORE + Emit Event",
+                "tone": "ok"
+              },
+              {
+                "from": "Block Ledger",
+                "to": "Wallet Signer",
+                "label": "TxReceipt (Finalized ✓)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Foundry Stateful Invariant & Fuzz Testing — On-Chain Transaction Sequence",
+        "actors": [
+          "Wallet Signer",
+          "Mempool Node",
+          "EVM Contract",
+          "Block Ledger"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Wallet Signer signs payload for Foundry Stateful Invariant & Fuzz T...",
+            "activeActor": "Wallet Signer",
+            "messages": [
+              {
+                "from": "Wallet Signer",
+                "to": "Mempool Node",
+                "label": "eth_sendRawTransaction(sig)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Mempool Node validates nonce & gas limit, forwards to EVM.",
+            "activeActor": "Mempool Node",
+            "messages": [
+              {
+                "from": "Wallet Signer",
+                "to": "Mempool Node",
+                "label": "eth_sendRawTransaction(sig)",
+                "tone": "ok"
+              },
+              {
+                "from": "Mempool Node",
+                "to": "EVM Contract",
+                "label": "CALLDATA + Gas Check",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: EVM Contract verifies invariants and mutates state root.",
+            "activeActor": "EVM Contract",
+            "messages": [
+              {
+                "from": "Wallet Signer",
+                "to": "Mempool Node",
+                "label": "eth_sendRawTransaction(sig)",
+                "tone": "ok"
+              },
+              {
+                "from": "Mempool Node",
+                "to": "EVM Contract",
+                "label": "CALLDATA + Gas Check",
+                "tone": "ok"
+              },
+              {
+                "from": "EVM Contract",
+                "to": "Block Ledger",
+                "label": "SSTORE + Emit Event",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Block Ledger seals Merkle root and returns receipt.",
+            "activeActor": "Block Ledger",
+            "messages": [
+              {
+                "from": "Wallet Signer",
+                "to": "Mempool Node",
+                "label": "eth_sendRawTransaction(sig)",
+                "tone": "ok"
+              },
+              {
+                "from": "Mempool Node",
+                "to": "EVM Contract",
+                "label": "CALLDATA + Gas Check",
+                "tone": "ok"
+              },
+              {
+                "from": "EVM Contract",
+                "to": "Block Ledger",
+                "label": "SSTORE + Emit Event",
+                "tone": "ok"
+              },
+              {
+                "from": "Block Ledger",
+                "to": "Wallet Signer",
+                "label": "TxReceipt (Finalized ✓)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Formal Verification, SMTChecker & Symbolic Execution",
+      "codeHash": "0fc340458f612c3e29ca73a18392518568148c8fe61050d08d55afa18e5dd249",
+      "spec": {
+        "template": "sequence",
+        "title": "Formal Verification, SMTChecker & Symbolic Ex... — On-Chain Transaction Sequence",
+        "actors": [
+          "Wallet Signer",
+          "Mempool Node",
+          "EVM Contract",
+          "Block Ledger"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Wallet Signer signs payload for Formal Verification, SMTChecker & S...",
+            "activeActor": "Wallet Signer",
+            "messages": [
+              {
+                "from": "Wallet Signer",
+                "to": "Mempool Node",
+                "label": "eth_sendRawTransaction(sig)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Mempool Node validates nonce & gas limit, forwards to EVM.",
+            "activeActor": "Mempool Node",
+            "messages": [
+              {
+                "from": "Wallet Signer",
+                "to": "Mempool Node",
+                "label": "eth_sendRawTransaction(sig)",
+                "tone": "ok"
+              },
+              {
+                "from": "Mempool Node",
+                "to": "EVM Contract",
+                "label": "CALLDATA + Gas Check",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: EVM Contract verifies invariants and mutates state root.",
+            "activeActor": "EVM Contract",
+            "messages": [
+              {
+                "from": "Wallet Signer",
+                "to": "Mempool Node",
+                "label": "eth_sendRawTransaction(sig)",
+                "tone": "ok"
+              },
+              {
+                "from": "Mempool Node",
+                "to": "EVM Contract",
+                "label": "CALLDATA + Gas Check",
+                "tone": "ok"
+              },
+              {
+                "from": "EVM Contract",
+                "to": "Block Ledger",
+                "label": "SSTORE + Emit Event",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Block Ledger seals Merkle root and returns receipt.",
+            "activeActor": "Block Ledger",
+            "messages": [
+              {
+                "from": "Wallet Signer",
+                "to": "Mempool Node",
+                "label": "eth_sendRawTransaction(sig)",
+                "tone": "ok"
+              },
+              {
+                "from": "Mempool Node",
+                "to": "EVM Contract",
+                "label": "CALLDATA + Gas Check",
+                "tone": "ok"
+              },
+              {
+                "from": "EVM Contract",
+                "to": "Block Ledger",
+                "label": "SSTORE + Emit Event",
+                "tone": "ok"
+              },
+              {
+                "from": "Block Ledger",
+                "to": "Wallet Signer",
+                "label": "TxReceipt (Finalized ✓)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Formal Verification, SMTChecker & Symbolic Ex... — On-Chain Transaction Sequence",
+        "actors": [
+          "Wallet Signer",
+          "Mempool Node",
+          "EVM Contract",
+          "Block Ledger"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Wallet Signer signs payload for Formal Verification, SMTChecker & S...",
+            "activeActor": "Wallet Signer",
+            "messages": [
+              {
+                "from": "Wallet Signer",
+                "to": "Mempool Node",
+                "label": "eth_sendRawTransaction(sig)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Mempool Node validates nonce & gas limit, forwards to EVM.",
+            "activeActor": "Mempool Node",
+            "messages": [
+              {
+                "from": "Wallet Signer",
+                "to": "Mempool Node",
+                "label": "eth_sendRawTransaction(sig)",
+                "tone": "ok"
+              },
+              {
+                "from": "Mempool Node",
+                "to": "EVM Contract",
+                "label": "CALLDATA + Gas Check",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: EVM Contract verifies invariants and mutates state root.",
+            "activeActor": "EVM Contract",
+            "messages": [
+              {
+                "from": "Wallet Signer",
+                "to": "Mempool Node",
+                "label": "eth_sendRawTransaction(sig)",
+                "tone": "ok"
+              },
+              {
+                "from": "Mempool Node",
+                "to": "EVM Contract",
+                "label": "CALLDATA + Gas Check",
+                "tone": "ok"
+              },
+              {
+                "from": "EVM Contract",
+                "to": "Block Ledger",
+                "label": "SSTORE + Emit Event",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Block Ledger seals Merkle root and returns receipt.",
+            "activeActor": "Block Ledger",
+            "messages": [
+              {
+                "from": "Wallet Signer",
+                "to": "Mempool Node",
+                "label": "eth_sendRawTransaction(sig)",
+                "tone": "ok"
+              },
+              {
+                "from": "Mempool Node",
+                "to": "EVM Contract",
+                "label": "CALLDATA + Gas Check",
+                "tone": "ok"
+              },
+              {
+                "from": "EVM Contract",
+                "to": "Block Ledger",
+                "label": "SSTORE + Emit Event",
+                "tone": "ok"
+              },
+              {
+                "from": "Block Ledger",
+                "to": "Wallet Signer",
+                "label": "TxReceipt (Finalized ✓)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Multi-Signature Safe Architecture & Threshold Signatures",
+      "codeHash": "11c7ed57168b409af9fd8d6c71d45fd8cc08372b87df1f2a45acce08fed1f55d",
+      "spec": {
+        "template": "sequence",
+        "title": "Multi-Signature Safe Architecture & Threshold... — On-Chain Transaction Sequence",
+        "actors": [
+          "Wallet Signer",
+          "Mempool Node",
+          "EVM Contract",
+          "Block Ledger"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Wallet Signer signs payload for Multi-Signature Safe Architecture &...",
+            "activeActor": "Wallet Signer",
+            "messages": [
+              {
+                "from": "Wallet Signer",
+                "to": "Mempool Node",
+                "label": "eth_sendRawTransaction(sig)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Mempool Node validates nonce & gas limit, forwards to EVM.",
+            "activeActor": "Mempool Node",
+            "messages": [
+              {
+                "from": "Wallet Signer",
+                "to": "Mempool Node",
+                "label": "eth_sendRawTransaction(sig)",
+                "tone": "ok"
+              },
+              {
+                "from": "Mempool Node",
+                "to": "EVM Contract",
+                "label": "CALLDATA + Gas Check",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: EVM Contract verifies invariants and mutates state root.",
+            "activeActor": "EVM Contract",
+            "messages": [
+              {
+                "from": "Wallet Signer",
+                "to": "Mempool Node",
+                "label": "eth_sendRawTransaction(sig)",
+                "tone": "ok"
+              },
+              {
+                "from": "Mempool Node",
+                "to": "EVM Contract",
+                "label": "CALLDATA + Gas Check",
+                "tone": "ok"
+              },
+              {
+                "from": "EVM Contract",
+                "to": "Block Ledger",
+                "label": "SSTORE + Emit Event",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Block Ledger seals Merkle root and returns receipt.",
+            "activeActor": "Block Ledger",
+            "messages": [
+              {
+                "from": "Wallet Signer",
+                "to": "Mempool Node",
+                "label": "eth_sendRawTransaction(sig)",
+                "tone": "ok"
+              },
+              {
+                "from": "Mempool Node",
+                "to": "EVM Contract",
+                "label": "CALLDATA + Gas Check",
+                "tone": "ok"
+              },
+              {
+                "from": "EVM Contract",
+                "to": "Block Ledger",
+                "label": "SSTORE + Emit Event",
+                "tone": "ok"
+              },
+              {
+                "from": "Block Ledger",
+                "to": "Wallet Signer",
+                "label": "TxReceipt (Finalized ✓)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Multi-Signature Safe Architecture & Threshold... — On-Chain Transaction Sequence",
+        "actors": [
+          "Wallet Signer",
+          "Mempool Node",
+          "EVM Contract",
+          "Block Ledger"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Wallet Signer signs payload for Multi-Signature Safe Architecture &...",
+            "activeActor": "Wallet Signer",
+            "messages": [
+              {
+                "from": "Wallet Signer",
+                "to": "Mempool Node",
+                "label": "eth_sendRawTransaction(sig)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Mempool Node validates nonce & gas limit, forwards to EVM.",
+            "activeActor": "Mempool Node",
+            "messages": [
+              {
+                "from": "Wallet Signer",
+                "to": "Mempool Node",
+                "label": "eth_sendRawTransaction(sig)",
+                "tone": "ok"
+              },
+              {
+                "from": "Mempool Node",
+                "to": "EVM Contract",
+                "label": "CALLDATA + Gas Check",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: EVM Contract verifies invariants and mutates state root.",
+            "activeActor": "EVM Contract",
+            "messages": [
+              {
+                "from": "Wallet Signer",
+                "to": "Mempool Node",
+                "label": "eth_sendRawTransaction(sig)",
+                "tone": "ok"
+              },
+              {
+                "from": "Mempool Node",
+                "to": "EVM Contract",
+                "label": "CALLDATA + Gas Check",
+                "tone": "ok"
+              },
+              {
+                "from": "EVM Contract",
+                "to": "Block Ledger",
+                "label": "SSTORE + Emit Event",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Block Ledger seals Merkle root and returns receipt.",
+            "activeActor": "Block Ledger",
+            "messages": [
+              {
+                "from": "Wallet Signer",
+                "to": "Mempool Node",
+                "label": "eth_sendRawTransaction(sig)",
+                "tone": "ok"
+              },
+              {
+                "from": "Mempool Node",
+                "to": "EVM Contract",
+                "label": "CALLDATA + Gas Check",
+                "tone": "ok"
+              },
+              {
+                "from": "EVM Contract",
+                "to": "Block Ledger",
+                "label": "SSTORE + Emit Event",
+                "tone": "ok"
+              },
+              {
+                "from": "Block Ledger",
+                "to": "Wallet Signer",
+                "label": "TxReceipt (Finalized ✓)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Timelock Governance & Decentralized Emergency Response",
+      "codeHash": "0d5faa48679e46d679163267cbab17997fe737429c9e5224db5c35e5a5b607a2",
+      "spec": {
+        "template": "sequence",
+        "title": "Timelock Governance & Decentralized Emergency... — On-Chain Transaction Sequence",
+        "actors": [
+          "Wallet Signer",
+          "Mempool Node",
+          "EVM Contract",
+          "Block Ledger"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Wallet Signer signs payload for Timelock Governance & Decentralized...",
+            "activeActor": "Wallet Signer",
+            "messages": [
+              {
+                "from": "Wallet Signer",
+                "to": "Mempool Node",
+                "label": "eth_sendRawTransaction(sig)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Mempool Node validates nonce & gas limit, forwards to EVM.",
+            "activeActor": "Mempool Node",
+            "messages": [
+              {
+                "from": "Wallet Signer",
+                "to": "Mempool Node",
+                "label": "eth_sendRawTransaction(sig)",
+                "tone": "ok"
+              },
+              {
+                "from": "Mempool Node",
+                "to": "EVM Contract",
+                "label": "CALLDATA + Gas Check",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: EVM Contract verifies invariants and mutates state root.",
+            "activeActor": "EVM Contract",
+            "messages": [
+              {
+                "from": "Wallet Signer",
+                "to": "Mempool Node",
+                "label": "eth_sendRawTransaction(sig)",
+                "tone": "ok"
+              },
+              {
+                "from": "Mempool Node",
+                "to": "EVM Contract",
+                "label": "CALLDATA + Gas Check",
+                "tone": "ok"
+              },
+              {
+                "from": "EVM Contract",
+                "to": "Block Ledger",
+                "label": "SSTORE + Emit Event",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Block Ledger seals Merkle root and returns receipt.",
+            "activeActor": "Block Ledger",
+            "messages": [
+              {
+                "from": "Wallet Signer",
+                "to": "Mempool Node",
+                "label": "eth_sendRawTransaction(sig)",
+                "tone": "ok"
+              },
+              {
+                "from": "Mempool Node",
+                "to": "EVM Contract",
+                "label": "CALLDATA + Gas Check",
+                "tone": "ok"
+              },
+              {
+                "from": "EVM Contract",
+                "to": "Block Ledger",
+                "label": "SSTORE + Emit Event",
+                "tone": "ok"
+              },
+              {
+                "from": "Block Ledger",
+                "to": "Wallet Signer",
+                "label": "TxReceipt (Finalized ✓)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Timelock Governance & Decentralized Emergency... — On-Chain Transaction Sequence",
+        "actors": [
+          "Wallet Signer",
+          "Mempool Node",
+          "EVM Contract",
+          "Block Ledger"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Wallet Signer signs payload for Timelock Governance & Decentralized...",
+            "activeActor": "Wallet Signer",
+            "messages": [
+              {
+                "from": "Wallet Signer",
+                "to": "Mempool Node",
+                "label": "eth_sendRawTransaction(sig)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Mempool Node validates nonce & gas limit, forwards to EVM.",
+            "activeActor": "Mempool Node",
+            "messages": [
+              {
+                "from": "Wallet Signer",
+                "to": "Mempool Node",
+                "label": "eth_sendRawTransaction(sig)",
+                "tone": "ok"
+              },
+              {
+                "from": "Mempool Node",
+                "to": "EVM Contract",
+                "label": "CALLDATA + Gas Check",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: EVM Contract verifies invariants and mutates state root.",
+            "activeActor": "EVM Contract",
+            "messages": [
+              {
+                "from": "Wallet Signer",
+                "to": "Mempool Node",
+                "label": "eth_sendRawTransaction(sig)",
+                "tone": "ok"
+              },
+              {
+                "from": "Mempool Node",
+                "to": "EVM Contract",
+                "label": "CALLDATA + Gas Check",
+                "tone": "ok"
+              },
+              {
+                "from": "EVM Contract",
+                "to": "Block Ledger",
+                "label": "SSTORE + Emit Event",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Block Ledger seals Merkle root and returns receipt.",
+            "activeActor": "Block Ledger",
+            "messages": [
+              {
+                "from": "Wallet Signer",
+                "to": "Mempool Node",
+                "label": "eth_sendRawTransaction(sig)",
+                "tone": "ok"
+              },
+              {
+                "from": "Mempool Node",
+                "to": "EVM Contract",
+                "label": "CALLDATA + Gas Check",
+                "tone": "ok"
+              },
+              {
+                "from": "EVM Contract",
+                "to": "Block Ledger",
+                "label": "SSTORE + Emit Event",
+                "tone": "ok"
+              },
+              {
+                "from": "Block Ledger",
+                "to": "Wallet Signer",
+                "label": "TxReceipt (Finalized ✓)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
