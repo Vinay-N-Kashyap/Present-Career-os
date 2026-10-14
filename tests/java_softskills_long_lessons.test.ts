@@ -490,6 +490,69 @@ test('Soft Skills Day 5: Domain-Specific Content Assertions', () => {
   assert.ok(ssD5.parts[4].output.includes('$3.4M Validated ROI'));
 });
 
+test('Java Basics Day 6: Resolution & Structural Invariants for Switch Statements, Arrow Expressions & Pattern Matching', () => {
+  const javaD6 = getLongLesson('java-basics', 6);
+  assert.ok(javaD6, 'java-basics Day 6 long lesson must resolve');
+  assert.equal(javaD6.day, 6);
+  assert.equal(javaD6.parts.length, 5, 'java-basics Day 6 must contain exactly 5 parts');
+  assert.ok(javaD6.summary.length >= 4, 'java-basics Day 6 must contain comprehensive summary');
+  assert.ok(javaD6.projectStep, 'java-basics Day 6 must have a hands-on project step');
+  assert.ok(javaD6.projectStep.steps.length >= 4, 'projectStep must have >= 4 steps');
+
+  const spokenMin = estimateSpokenMinutes(javaD6);
+  const totalMin = estimateLessonMinutes(javaD6);
+  assert.ok(spokenMin >= 8, `Spoken minutes should be >= 8 (got ${spokenMin})`);
+  assert.ok(totalMin >= 15, `Total minutes should be >= 15 (got ${totalMin})`);
+
+  // Structural invariants for every part
+  for (const part of javaD6.parts) {
+    assert.ok(part.code, `Part '${part.title}' must contain executable code`);
+    assert.ok(part.output, `Part '${part.title}' must declare expected terminal output`);
+    assert.ok(part.say.length >= 3, `Part '${part.title}' must provide deep pedagogical exposition`);
+    assert.ok(part.code.includes('console.log('), `Code in '${part.title}' must print results`);
+
+    // Socratic MCQ
+    assert.ok(part.check.question.length > 10, 'MCQ check question must be descriptive');
+    assert.ok(part.check.options.length >= 3, 'MCQ must provide at least 3 distinct options');
+    assert.ok(part.check.answer >= 0 && part.check.answer < part.check.options.length, 'Answer index must be valid');
+    assert.ok(part.check.why.length > 15, 'Explanation must be rigorous');
+  }
+});
+
+test('Java Basics Day 6: Domain-Specific Content Assertions', () => {
+  const javaD6 = getLongLesson('java-basics', 6);
+  assert.ok(javaD6);
+
+  // Part 1 – Arrow Syntax & Yielding Values
+  assert.ok(javaD6.parts[0].title.includes('Switch Expressions') || javaD6.parts[0].title.includes('Arrow Syntax'));
+  assert.ok(javaD6.parts[0].output.includes('NPCI_IMMEDIATE_SWITCH'));
+  assert.ok(javaD6.parts[0].output.includes('120 bps'));
+
+  // Part 2 – Fallthrough & Break
+  assert.ok(javaD6.parts[1].title.includes('Fallthrough') || javaD6.parts[1].title.includes('Break'));
+  assert.ok(javaD6.parts[1].output.includes('STOP_VEHICLES'));
+  assert.ok(javaD6.parts[1].output.includes('PREPARE_TO_STOP'));
+  assert.ok(javaD6.parts[1].output.includes('BLINKING_AMBER_CAUTION'));
+
+  // Part 3 – Default Guards & Protocol Status
+  assert.ok(javaD6.parts[2].title.includes('Default Guards') || javaD6.parts[2].title.includes('Exhaustiveness'));
+  assert.ok(javaD6.parts[2].output.includes('SUCCESS_OK'));
+  assert.ok(javaD6.parts[2].output.includes('CLIENT_ERROR'));
+  assert.ok(javaD6.parts[2].output.includes('UNKNOWN_PROTOCOL_STATUS'));
+
+  // Part 4 – Pattern Matching for Switch
+  assert.ok(javaD6.parts[3].title.includes('Pattern Matching'));
+  assert.ok(javaD6.parts[3].output.includes('ACCOUNT_LOCKED_SECURITY_ALERT'));
+  assert.ok(javaD6.parts[3].output.includes('FLAG_HIGH_VALUE_AML_REVIEW'));
+
+  // Part 5 – Sealed Interfaces & Exhaustive State Machines
+  assert.ok(javaD6.parts[4].title.includes('Sealed') || javaD6.parts[4].title.includes('Exhaustive'));
+  assert.ok(javaD6.parts[4].output.includes('RESERVE_INVENTORY'));
+  assert.ok(javaD6.parts[4].output.includes('DISPATCH_FULFILLMENT'));
+  assert.ok(javaD6.parts[4].output.includes('REQUEST_CUSTOMER_FEEDBACK'));
+});
+
+
 
 
 

@@ -1891,10 +1891,308 @@ console.log('Latency Reduction: ' + (metrics.g1gc.p99PauseMs / metrics.genZgc.p9
         'Benchmark 100,000 concurrent virtual threads dispatching across a fixed carrier platform thread pool.',
         'Implement structured task fan-out with StructuredTaskScope.ShutdownOnFailure to guard against orphaned subtasks.',
         'Propagate immutable security and tenant context down deep asynchronous call trees using Scoped Values.',
-        'Configure and tune JVM startup flags for Generational ZGC (-XX:+UseZGC -XX:+ZGenerational) to guarantee sub-millisecond tail latency.'
+      ]
+    }
+  },
+  {
+    day: 6,
+    title: 'Switch Statements, Modern Switch Expressions, Pattern Matching & Sealed State Machines',
+    goal: 'Master enterprise multi-branch decision control: classic switch versus Java 14+ switch expressions with arrow syntax, preventing fallthrough bugs with break and scope isolation, default guards, Java 21 pattern matching with when guards, and sealed interface exhaustiveness.',
+    minutes: 28,
+    recap: 'Yesterday we explored advanced JVM execution models and virtual threads. Today we master high-throughput control flow: modern switch expressions, pattern matching, and sealed domain state machines.',
+    parts: [
+      {
+        title: 'Classic Switch vs. Java 14+ Switch Expressions: Arrow Syntax & Yielding Values',
+        say: [
+          'In traditional Java, the switch statement was a primitive control structure derived from C: it required verbose case labels, manual break statements on every branch, and could not return values directly as expressions without assigning to an external mutable variable.',
+          'Java 14 modernized branching by introducing switch expressions (standardized in JEP 361). Using the concise arrow syntax (case LABEL -> expression;), a switch expression computes and returns a value directly, turning multi-branch routing into an elegant, functional assignment.',
+          'When a branch requires multiple statements or complex logging before computing a return value, Java introduces the yield keyword. Unlike return (which exits the enclosing method), yield terminates the switch block and supplies the value to the assignment target while maintaining lexical scope isolation.'
+        ],
+        example: 'Like an automated parcel routing conveyor belt at an airport: packages scan their destination tag once, and the mechanical gate immediately routes them to their exact flight chute without needing a human to stand at every junction holding a stop sign.',
+        code: `// Java 14+ Switch Expressions with Arrow Syntax Simulation
+class PaymentGatewayRouter {
+  routePayment(channel: string): {
+    gateway: string;
+    feeBasisPoints: number;
+    status: 'ROUTED' | 'UNSUPPORTED';
+  } {
+    // Simulates Java: return switch (channel) { case "UPI" -> ...; case "CREDIT_CARD", "DEBIT_CARD" -> ...; };
+    switch (channel) {
+      case 'UPI':
+        return { gateway: 'NPCI_IMMEDIATE_SWITCH', feeBasisPoints: 0, status: 'ROUTED' };
+      case 'CREDIT_CARD':
+      case 'DEBIT_CARD':
+        return { gateway: 'VISA_MASTERCARD_RAILS', feeBasisPoints: 120, status: 'ROUTED' };
+      case 'NET_BANKING':
+        return { gateway: 'IMPS_NEFT_CLEARING', feeBasisPoints: 45, status: 'ROUTED' };
+      default:
+        return { gateway: 'MANUAL_REVIEW_FALLBACK', feeBasisPoints: 0, status: 'UNSUPPORTED' };
+    }
+  }
+}
+
+const router = new PaymentGatewayRouter();
+console.log('UPI Route: ' + router.routePayment('UPI').gateway);
+console.log('Card Rail Fee: ' + router.routePayment('CREDIT_CARD').feeBasisPoints + ' bps');
+console.log('Net Banking Route: ' + router.routePayment('NET_BANKING').gateway);
+console.log('Unknown Channel Status: ' + router.routePayment('CRYPTO').status);`,
+        output: `UPI Route: NPCI_IMMEDIATE_SWITCH\nCard Rail Fee: 120 bps\nNet Banking Route: IMPS_NEFT_CLEARING\nUnknown Channel Status: UNSUPPORTED`,
+        codeNotes: [
+          { line: 8, note: 'Arrow syntax eliminates verbose break statements on individual cases' },
+          { line: 11, note: 'Multi-label cases (CREDIT_CARD, DEBIT_CARD) eliminate redundant duplicate routing branches' },
+          { line: 16, note: 'Default guard safely captures unrecognized payment channels without throwing unhandled exceptions' }
+        ],
+        tryIt: 'Route a DEBIT_CARD payment and confirm it shares the 120 bps fee structure with credit cards.',
+        check: {
+          question: 'What is the primary benefit of Java 14+ switch expressions over legacy switch statements?',
+          options: [
+            'They evaluate directly to a return value using arrow syntax without requiring manual break statements',
+            'They convert all string variables into numeric integers automatically',
+            'They delete unhandled variables from computer memory permanently'
+          ],
+          answer: 0,
+          why: 'Modern switch expressions return computed values directly to variables or method callers, eliminating accidental fallthrough bugs caused by missing break statements.'
+        }
+      },
+      {
+        title: 'Preventing Silent Fallthrough: The Critical Role of Break & Scope Isolation',
+        say: [
+          'In legacy switch statements with colon syntax (case VALUE:), if a developer forgets to write a break statement, execution silently cascades into the next case below it. This behavior, known as fallthrough, is one of the most prolific sources of catastrophic production bugs in enterprise systems.',
+          'Fallthrough occurs because the JVM evaluates case labels as bytecode jump targets rather than isolated blocks. Once the instruction pointer jumps to a matching case, it continues executing sequential bytecode until it explicitly encounters a break instruction or the end of the switch block.',
+          'With modern arrow syntax (->), fallthrough is structurally impossible: each arrow defines an isolated branch where only the expression or block to the right of the arrow executes. Furthermore, variable declarations inside an arrow block do not leak into adjacent cases, preventing naming collisions.'
+        ],
+        example: 'Like an elevator with broken doors: if the stop mechanism (break) fails on floor 3, the elevator plummets through floors 2 and 1, executing every action along the way instead of holding safely at its intended destination.',
+        code: `// State Machine Fallthrough vs Guarded Break Simulation
+class TrafficLightController {
+  transitionWithFallthrough(currentSignal: string): string[] {
+    const actions: string[] = [];
+    switch (currentSignal) {
+      case 'RED':
+        actions.push('STOP_VEHICLES');
+        // Explicit break prevents falling through into yellow
+        break;
+      case 'YELLOW':
+        actions.push('PREPARE_TO_STOP');
+        // Explicit break prevents falling through into green
+        break;
+      case 'GREEN':
+        actions.push('PROCEED_SAFELY');
+        break;
+      default:
+        actions.push('BLINKING_AMBER_CAUTION');
+    }
+    return actions;
+  }
+}
+
+const light = new TrafficLightController();
+console.log('Red Signal Action: ' + light.transitionWithFallthrough('RED')[0]);
+console.log('Yellow Signal Action: ' + light.transitionWithFallthrough('YELLOW')[0]);
+console.log('Green Signal Action: ' + light.transitionWithFallthrough('GREEN')[0]);
+console.log('Power Loss Fallback: ' + light.transitionWithFallthrough('MALFUNCTION')[0]);`,
+        output: `Red Signal Action: STOP_VEHICLES\nYellow Signal Action: PREPARE_TO_STOP\nGreen Signal Action: PROCEED_SAFELY\nPower Loss Fallback: BLINKING_AMBER_CAUTION`,
+        codeNotes: [
+          { line: 8, note: 'Explicit break terminates switch execution immediately after recording the STOP action' },
+          { line: 16, note: 'Default branch handles unexpected states such as sensor malfunctions or grid power failures' },
+          { line: 24, note: 'Outputs confirm strictly isolated single-action transitions per traffic state' }
+        ],
+        tryIt: 'Pass an empty string or unexpected signal to observe the default caution fallback.',
+        check: {
+          question: 'What occurs in a legacy colon-syntax switch statement if a break is omitted?',
+          options: [
+            'Execution falls through and unintentionally executes subsequent cases below it',
+            'The Java Virtual Machine instantly aborts with an OutOfMemoryError',
+            'The operating system reboots the computer server'
+          ],
+          answer: 0,
+          why: 'Omitting break in colon-syntax switch allows execution to fall through into the next case label regardless of whether that label matches.'
+        }
+      },
+      {
+        title: 'Default Guards & Exhaustiveness: Why Mission-Critical Systems Must Handle Every Variant',
+        say: [
+          'In enterprise banking, telecommunications, and aerospace software, a control structure must be exhaustive: it must have a deterministic, proven outcome for every possible input value. Leaving unhandled inputs causes silent data corruption or unhandled null states.',
+          'The default clause serves as the fail-safe boundary in a switch block. When an input does not match any predefined case label, the default clause executes, allowing the application to log an audit trail, raise a domain-specific exception, or apply a secure fallback.',
+          'When switching on primitive enums or sealed types, modern Java compilers check exhaustiveness at compile time. However, when switching on open types such as String, int, or unsealed classes, the default clause is strictly mandatory to ensure the switch expression always yields a value.'
+        ],
+        example: 'Like an automated passport control gate: if a traveler presents an unrecognized alien ID or an expired passport not in the visa registry, the gate does not freeze—it triggers the default security rejection gate and alerts an officer.',
+        code: `// Default Guard & Robust Protocol Classifier Simulation
+class HttpStatusCodeClassifier {
+  classify(statusCode: number): string {
+    const category = Math.floor(statusCode / 100);
+    switch (category) {
+      case 2:
+        return 'SUCCESS_OK';
+      case 3:
+        return 'REDIRECTION';
+      case 4:
+        return 'CLIENT_ERROR';
+      case 5:
+        return 'SERVER_FAULT';
+      default:
+        return 'UNKNOWN_PROTOCOL_STATUS';
+    }
+  }
+}
+
+const classifier = new HttpStatusCodeClassifier();
+console.log('200 Code: ' + classifier.classify(200));
+console.log('404 Code: ' + classifier.classify(404));
+console.log('503 Code: ' + classifier.classify(503));
+console.log('999 Code: ' + classifier.classify(999));`,
+        output: `200 Code: SUCCESS_OK\n404 Code: CLIENT_ERROR\n503 Code: SERVER_FAULT\n999 Code: UNKNOWN_PROTOCOL_STATUS`,
+        codeNotes: [
+          { line: 4, note: 'Normalizes 3-digit HTTP status codes into single-digit category buckets' },
+          { line: 14, note: 'Default branch ensures non-standard codes (like 999) return an explicit protocol label rather than undefined' },
+          { line: 23, note: 'Verifies complete coverage across standard and edge-case status codes' }
+        ],
+        tryIt: 'Classify code 301 to verify HTTP redirect category handling.',
+        check: {
+          question: 'Why is a default clause required when switching on open types like String or int in a switch expression?',
+          options: [
+            'Because open types have infinite possible values, requiring a catch-all branch for exhaustiveness',
+            'Because Java cannot compare numbers greater than 100 without a default keyword',
+            'Because switch expressions run 50% slower without a default clause'
+          ],
+          answer: 0,
+          why: 'Switch expressions must guarantee a return value for every possible input. Open types like integers or strings require default to ensure mathematical exhaustiveness.'
+        }
+      },
+      {
+        title: 'Java 21 Pattern Matching for Switch: Type Patterns & Guarded When Clauses',
+        say: [
+          'Java 21 finalized Pattern Matching for switch (JEP 441), fundamentally transforming the Java language. Previously, switch only supported primitives, enums, and strings. Now, switch can inspect the concrete runtime type of an object and deconstruct it on the fly.',
+          'Type patterns allow developers to test an object type and bind it to a local typed variable in a single atomic operation: case String s -> s.length();. This completely eliminates fragile manual type casting and messy chains of if-else instanceof statements.',
+          'Furthermore, Java 21 introduces guarded patterns using the when keyword. A guarded pattern evaluates an additional boolean expression after the type match: case Account a when a.balance() < 0 -> triggerOverdraftAlert(a);. This combines polymorphism and business rule validation in a clean, declarative syntax.'
+        ],
+        example: 'Like an automated airport customs scanner that simultaneously weighs a suitcase, checks its dimensions, and flags it for special inspection if it exceeds 23 kilograms—all in a single pass without needing three separate conveyor belts.',
+        code: `// Java 21 Pattern Matching with Guarded When Conditions Simulation
+interface SecurityEvent {
+  type: 'AUTH' | 'TRANSACTION' | 'ADMIN';
+  failedAttempts?: number;
+  amountUSD?: number;
+}
+
+class EventDispatcher {
+  dispatch(event: SecurityEvent): string {
+    // Simulates Java 21: switch (event) { case AuthEvent e when e.failedAttempts() >= 3 -> ... }
+    switch (event.type) {
+      case 'AUTH':
+        if ((event.failedAttempts || 0) >= 3) {
+          return 'ACCOUNT_LOCKED_SECURITY_ALERT';
+        }
+        return 'AUTHENTICATION_GRANTED';
+      case 'TRANSACTION':
+        if ((event.amountUSD || 0) > 10000) {
+          return 'FLAG_HIGH_VALUE_AML_REVIEW';
+        }
+        return 'STANDARD_CLEARING';
+      default:
+        return 'UNRECOGNIZED_EVENT_DROPPED';
+    }
+  }
+}
+
+const dispatcher = new EventDispatcher();
+console.log('Failed Login x3: ' + dispatcher.dispatch({ type: 'AUTH', failedAttempts: 3 }));
+console.log('Valid Login: ' + dispatcher.dispatch({ type: 'AUTH', failedAttempts: 1 }));
+console.log('High Value Transfer: ' + dispatcher.dispatch({ type: 'TRANSACTION', amountUSD: 50000 }));
+console.log('Normal Transfer: ' + dispatcher.dispatch({ type: 'TRANSACTION', amountUSD: 500 }));`,
+        output: `Failed Login x3: ACCOUNT_LOCKED_SECURITY_ALERT\nValid Login: AUTHENTICATION_GRANTED\nHigh Value Transfer: FLAG_HIGH_VALUE_AML_REVIEW\nNormal Transfer: STANDARD_CLEARING`,
+        codeNotes: [
+          { line: 12, note: 'Simulates guarded pattern matching: matches AUTH type and checks condition failedAttempts >= 3' },
+          { line: 17, note: 'Simulates transaction threshold guard: flags transfers over $10,000 for compliance review' },
+          { line: 28, note: 'Demonstrates declarative multi-constraint dispatching without cascading if-else blocks' }
+        ],
+        tryIt: 'Dispatch an AUTH event with 2 failed attempts to verify authentication is still granted.',
+        check: {
+          question: 'What does the when keyword do in a Java 21 switch statement?',
+          options: [
+            'It adds an additional boolean guard condition that must evaluate to true for the case to match',
+            'It tells the computer to wait 5 seconds before running the case',
+            'It loops the case continuously until the user presses enter'
+          ],
+          answer: 0,
+          why: 'The when keyword introduces a guarded pattern: the case matches only if both the type pattern and the accompanying boolean guard condition evaluate to true.'
+        }
+      },
+      {
+        title: 'Sealed Interfaces & Exhaustive Domain Modeling: Eliminating Redundant Defaults',
+        say: [
+          'In domain-driven design, state machines often have a strictly closed set of valid states. In Java 17 and 21, sealed classes and interfaces (sealed interface OrderStatus permits ...) formally declare all allowed subclasses directly in the interface declaration.',
+          'When a switch expression evaluates an instance of a sealed hierarchy, the Java compiler verifies that every permitted subclass has an explicit case label. If every permitted variant is covered, the switch expression is provably exhaustive.',
+          'This compiler-verified exhaustiveness provides immense architectural safety: developers do not need a dummy default branch. More importantly, if a new status (such as REFUNDED) is added to the sealed hierarchy in the future, the Java compiler will refuse to compile until every switch statement across the entire codebase explicitly handles the new state.'
+        ],
+        example: 'Like a coin with exactly two sides (Heads and Tails): a coin-toss machine that explicitly handles both Heads and Tails never needs an imaginary third mystery case because the physical rules of coins make any other outcome impossible.',
+        code: `// Sealed Hierarchy Exhaustive Dispatch Simulation
+type OrderState = 'PENDING_PAYMENT' | 'PAID' | 'SHIPPED' | 'DELIVERED' | 'CANCELLED';
+
+class OrderStateProcessor {
+  evaluateOrder(status: OrderState): {
+    nextAction: string;
+    canCancel: boolean;
+  } {
+    // Simulates exhaustive switch on sealed interface: compiler proves all 5 states covered
+    switch (status) {
+      case 'PENDING_PAYMENT':
+        return { nextAction: 'RESERVE_INVENTORY', canCancel: true };
+      case 'PAID':
+        return { nextAction: 'DISPATCH_FULFILLMENT', canCancel: false };
+      case 'SHIPPED':
+        return { nextAction: 'TRACK_CARRIER_TRANSIT', canCancel: false };
+      case 'DELIVERED':
+        return { nextAction: 'REQUEST_CUSTOMER_FEEDBACK', canCancel: false };
+      case 'CANCELLED':
+        return { nextAction: 'RESTOCK_WAREHOUSE', canCancel: false };
+      default:
+        throw new Error('Non-exhaustive state: ' + status);
+    }
+  }
+}
+
+const processor = new OrderStateProcessor();
+console.log('Pending Action: ' + processor.evaluateOrder('PENDING_PAYMENT').nextAction);
+console.log('Paid Action: ' + processor.evaluateOrder('PAID').nextAction);
+console.log('Shipped Action: ' + processor.evaluateOrder('SHIPPED').nextAction);
+console.log('Delivered Action: ' + processor.evaluateOrder('DELIVERED').nextAction);`,
+        output: `Pending Action: RESERVE_INVENTORY\nPaid Action: DISPATCH_FULFILLMENT\nShipped Action: TRACK_CARRIER_TRANSIT\nDelivered Action: REQUEST_CUSTOMER_FEEDBACK`,
+        codeNotes: [
+          { line: 9, note: 'Exhaustive coverage of all 5 domain states declared in the sealed hierarchy' },
+          { line: 20, note: 'Compiler ensures zero unhandled states, eliminating unreachable fallback branches' },
+          { line: 26, note: 'Outputs confirm deterministic business actions dispatched for every domain lifecycle phase' }
+        ],
+        tryIt: 'Evaluate the CANCELLED order state and observe the RESTOCK_WAREHOUSE action.',
+        check: {
+          question: 'What happens when a new subclass is added to a sealed hierarchy used in a switch expression?',
+          options: [
+            'The compiler triggers an error on any switch expression that does not explicitly handle the new subclass',
+            'The program silently ignores the new subclass at runtime',
+            'The computer deletes the old subclasses automatically'
+          ],
+          answer: 0,
+          why: 'Sealed interfaces enforce compiler-level exhaustiveness. Adding a new permitted subtype causes the compiler to flag all unhandled switch expressions until they are updated.'
+        }
+      }
+    ],
+    summary: [
+      'Java 14+ switch expressions return values directly using concise arrow syntax (case LABEL -> expression;).',
+      'The yield keyword allows multi-statement blocks inside switch expressions to supply return values while preserving lexical scope.',
+      'Arrow syntax eliminates accidental fallthrough bugs caused by omitted break statements in legacy switch blocks.',
+      'Java 21 pattern matching enables switching on runtime object types and applying boolean guards with the when keyword.',
+      'Switching over sealed hierarchies guarantees compile-time exhaustiveness, safely eliminating redundant default clauses.'
+    ],
+    projectStep: {
+      title: 'Architect an Enterprise Order Routing State Machine',
+      steps: [
+        'Model payment channel routing using modern Java switch expressions with multi-label cases and arrow syntax.',
+        'Implement an isolated state machine with explicit break statements to guard against unintentional fallthrough.',
+        'Configure a robust default fallback guard to classify HTTP and network status codes with zero unhandled exceptions.',
+        'Apply Java 21 pattern matching with when guards to detect high-risk authentication and transaction anomalies.',
+        'Refactor the state processor to switch over a sealed interface hierarchy, verifying compile-time exhaustiveness.'
       ]
     }
   }
 ];
+
 
 
