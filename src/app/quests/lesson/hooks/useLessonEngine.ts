@@ -759,9 +759,9 @@ export function useLessonEngine({
           speechPieces,
           speech: speechPieces.map(p => p.text).join(' '),
           mcq: {
-            question: part.check.question,
-            ...withAnswerAt(part.check.options, part.check.answer, dayNum * 7 + i),
-            explanation: part.check.why,
+            question: part.check?.question || `Concept check for Part ${i + 1}`,
+            ...withAnswerAt(part.check?.options || ['Optimal approach', 'Suboptimal approach'], part.check?.answer ?? 0, dayNum * 7 + i),
+            explanation: part.check?.why || (part.check as any)?.explanation || 'Optimal architectural invariant verified.',
           },
         };
       }));

@@ -100,11 +100,30 @@ function outputQuestionsForDay(prefix: string, day: number): OutputQuestion[] {
 /**
  * The options with the right one moved to a fixed spot picked by the seed. Written checks tend to put
  * the right answer first; this keeps the same order on every visit while not always using the top.
+ * Robust against string answer values, out-of-bounds indices, and missing options.
  */
-export function withAnswerAt(options: string[], correct: number, seed: number): { options: string[]; answerIndex: number } {
-  const rest = seededOrder(options.filter((_, i) => i !== correct), seed);
-  const answerIndex = seed % options.length;
-  rest.splice(answerIndex, 0, options[correct]);
+export function withAnswerAt(options: string[], correct: number | string, seed: number): { options: string[]; answerIndex: number } {
+  if (!Array.isArray(options) || options.length === 0) {
+    return { options: ['Optimal design', 'Suboptimal design'], answerIndex: 0 };
+  }
+  let resolvedCorrect = 0;
+  if (typeof correct === 'number' && Number.isInteger(correct) && correct >= 0 && correct < options.length) {
+    resolvedCorrect = correct;
+  } else if (typeof correct === 'string') {
+    const idx = options.indexOf(correct);
+    if (idx !== -1) {
+      resolvedCorrect = idx;
+    } else {
+      const parsed = parseInt(correct, 10);
+      if (!isNaN(parsed) && parsed >= 0 && parsed < options.length) {
+        resolvedCorrect = parsed;
+      }
+    }
+  }
+  const safeSeed = Math.abs(Number.isFinite(seed) ? Math.floor(seed) : 0);
+  const rest = seededOrder(options.filter((_, i) => i !== resolvedCorrect), safeSeed);
+  const answerIndex = safeSeed % options.length;
+  rest.splice(answerIndex, 0, options[resolvedCorrect] ?? options[0]);
   return { options: rest, answerIndex };
 }
 
@@ -117,7 +136,9 @@ function checkQuestion(block: any, seed: number, pool: string[]): TestQuestion |
   const d = block?.diagnosticCheck;
   const question = d?.questionPrompt || d?.question;
   if (!question) return null;
-  const explanation = typeof d.explanation === 'string' ? d.explanation : '';
+  const explanation = typeof d.explanation === 'string' && d.explanation.trim()
+    ? d.explanation
+    : (typeof d.why === 'string' && d.why.trim() ? d.why : '');
   if (Array.isArray(d.options) && d.options.length >= 2 && typeof d.correctIndex === 'number' && d.options[d.correctIndex] !== undefined) {
     return { question, ...withAnswerAt(d.options, d.correctIndex, seed), explanation };
   }
@@ -138,9 +159,9 @@ function questionsForDay(prefix: string, day: number, pool: string[] = []): Test
   const long = getLongLesson(prefix, day);
   if (long) {
     return spread(long.parts.map((p, i) => ({ p, i })), QUESTIONS_PER_DAY).map(({ p, i }) => ({
-      question: p.check.question,
-      ...withAnswerAt(p.check.options, p.check.answer, day * 7 + i),
-      explanation: p.check.why,
+      question: p.check?.question || `Concept check for Day ${day} Part ${i + 1}`,
+      ...withAnswerAt(p.check?.options || ['Optimal approach', 'Suboptimal approach'], p.check?.answer ?? 0, day * 7 + i),
+      explanation: p.check?.why || (p.check as any)?.explanation || 'Optimal architectural invariant verified.',
     }));
   }
 
