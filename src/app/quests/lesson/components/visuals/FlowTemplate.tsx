@@ -26,6 +26,36 @@ export function FlowTemplate({
     nodes.length === 5 &&
     nodes.map((n) => n.id).join(',') === 'item,clean_item,category,clean_category,label';
 
+  const getNodeIcon = (nodeId: string): string => {
+    const id = nodeId.toLowerCase();
+    if (id.includes('instruction') || id.includes('code')) return '📝';
+    if (id.includes('python') || id.includes('engine') || id.includes('interp')) return '⚡';
+    if (id.includes('screen') || id.includes('out') || id.includes('term')) return '🖥️';
+    if (id.includes('clean')) return '✨';
+    if (id.includes('item') || id.includes('cat')) return '🏷️';
+    return '📦';
+  };
+
+  const getStatusBadge = (nodeId: string, tone: VisualTone, value: string): { label: string; color: string } | null => {
+    const id = nodeId.toLowerCase();
+    if (tone === 'data') {
+      if (id.includes('instruction')) return { label: 'Code Ready', color: 'var(--accent)' };
+      if (id.includes('python')) return { label: 'Executing...', color: 'var(--accent)' };
+      return { label: 'Active', color: 'var(--accent)' };
+    }
+    if (tone === 'ok') {
+      if (id.includes('screen')) return { label: 'Output Ready', color: 'var(--success)' };
+      return { label: 'Success', color: 'var(--success)' };
+    }
+    if (tone === 'error') {
+      return { label: 'Error', color: 'var(--coral)' };
+    }
+    if (value) {
+      return { label: 'Ready', color: 'var(--text-muted)' };
+    }
+    return null;
+  };
+
   const renderNodeBox = (node: Node) => {
     const isHighlighted =
       highlightedLabel !== null &&
@@ -35,6 +65,11 @@ export function FlowTemplate({
     const effectiveTone: VisualTone = isHighlighted ? 'data' : rawTone;
     const isTappable = node.tappable !== false;
     const value = step.values?.[node.id] || '';
+    const isActive = effectiveTone !== 'idle' || isHighlighted;
+    const icon = getNodeIcon(node.id);
+    const badge = getStatusBadge(node.id, effectiveTone, value);
+    const isTerminalScreen = node.id.toLowerCase().includes('screen');
+    const isInstructionCode = node.id.toLowerCase().includes('instruction');
 
     return (
       <div
@@ -55,46 +90,98 @@ export function FlowTemplate({
         aria-label={`${node.label}: ${value || 'empty'}`}
         style={{
           border: `2px solid ${getToneColor(effectiveTone)}`,
-          background: getToneBg(effectiveTone),
-          borderRadius: '12px',
+          background: isActive
+            ? `linear-gradient(145deg, ${getToneBg(effectiveTone)}, var(--bg2))`
+            : 'var(--bg2)',
+          borderRadius: '14px',
           padding: '12px 14px',
-          minWidth: '110px',
-          maxWidth: '180px',
+          minWidth: '125px',
+          maxWidth: '220px',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
-          gap: '6px',
+          gap: '8px',
           cursor: isTappable ? 'pointer' : 'default',
-          transition: 'background 300ms ease, border-color 300ms ease, box-shadow 300ms ease',
-          boxShadow: isHighlighted ? '0 0 0 3px rgba(59, 130, 246, 0.35)' : undefined,
+          transition: 'all 280ms cubic-bezier(0.4, 0, 0.2, 1)',
+          transform: isActive ? 'translateY(-3px)' : 'none',
+          boxShadow: isActive
+            ? `0 0 20px color-mix(in srgb, ${getToneColor(effectiveTone)} 32%, transparent), 0 4px 12px rgba(0, 0, 0, 0.2)`
+            : '0 2px 6px rgba(0, 0, 0, 0.1)',
+          position: 'relative',
         }}
       >
-        <span
-          style={{
-            fontSize: '12px',
-            fontWeight: 600,
-            textTransform: 'uppercase',
-            letterSpacing: '0.05em',
-            color: getToneTextColor(effectiveTone),
-          }}
-        >
-          {node.label}
-        </span>
+        {/* Top Header Row with Icon, Node Label, and Status Badge */}
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%', gap: '6px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
+            <span style={{ fontSize: '14px', lineHeight: 1 }} aria-hidden="true">{icon}</span>
+            <span
+              style={{
+                fontSize: '11.5px',
+                fontWeight: 800,
+                textTransform: 'uppercase',
+                letterSpacing: '0.05em',
+                color: getToneTextColor(effectiveTone),
+              }}
+            >
+              {node.label}
+            </span>
+          </div>
+
+          {badge && (
+            <span
+              style={{
+                fontSize: '9.5px',
+                fontWeight: 800,
+                padding: '1.5px 6px',
+                borderRadius: '6px',
+                background: `color-mix(in srgb, ${badge.color} 18%, transparent)`,
+                color: badge.color,
+                border: `1px solid color-mix(in srgb, ${badge.color} 35%, transparent)`,
+                whiteSpace: 'nowrap',
+                lineHeight: 1.2,
+              }}
+            >
+              {badge.label}
+            </span>
+          )}
+        </div>
+
+        {/* Node Content / Value Display */}
         <div
           style={{
+            width: '100%',
             fontFamily: 'var(--font-mono, monospace)',
-            fontSize: '14px',
+            fontSize: '13px',
             fontWeight: 500,
             color: 'var(--t1)',
-            textAlign: 'center',
+            textAlign: isTerminalScreen || isInstructionCode ? 'left' : 'center',
             wordBreak: 'break-word',
-            minHeight: '22px',
+            minHeight: '26px',
+            background: isTerminalScreen
+              ? 'rgba(0, 0, 0, 0.35)'
+              : isInstructionCode
+              ? 'var(--bg1)'
+              : 'transparent',
+            padding: (isTerminalScreen || isInstructionCode) && value ? '6px 8px' : '2px 4px',
+            borderRadius: '8px',
+            border: (isTerminalScreen || isInstructionCode) && value ? '1px solid var(--border)' : 'none',
           }}
         >
           {value ? (
-            <RenderWithFaintSpaces text={value} showSpaces={showSpaces} />
+            isTerminalScreen ? (
+              <span style={{ color: 'var(--success-bright, var(--success))', display: 'flex', alignItems: 'flex-start', gap: '4px' }}>
+                <span style={{ opacity: 0.6, userSelect: 'none' }}>&gt;</span>
+                <RenderWithFaintSpaces text={value} showSpaces={showSpaces} />
+              </span>
+            ) : (
+              <RenderWithFaintSpaces text={value} showSpaces={showSpaces} />
+            )
           ) : (
-            <span style={{ color: 'var(--text-muted)', fontSize: '12px' }}>(empty)</span>
+            <span style={{ color: 'var(--text-muted)', fontSize: '11.5px', fontStyle: 'italic' }}>
+              {effectiveTone === 'data' && node.id.toLowerCase().includes('python')
+                ? 'Processing instructions...'
+                : '(waiting...)'}
+            </span>
           )}
         </div>
       </div>
@@ -112,16 +199,24 @@ export function FlowTemplate({
       }}
       aria-hidden="true"
     >
-      <svg width="28" height="20" viewBox="0 0 28 20" style={{ flexShrink: 0 }}>
+      <svg width="32" height="20" viewBox="0 0 32 20" style={{ flexShrink: 0, overflow: 'visible' }}>
         <path
-          d="M 4 10 L 22 10 M 16 4 L 22 10 L 16 16"
+          d="M 3 10 L 25 10 M 19 4 L 25 10 L 19 16"
           fill="none"
           stroke={lit ? 'var(--accent)' : 'var(--border)'}
-          strokeWidth={lit ? '2.5' : '1.8'}
+          strokeWidth={lit ? '2.8' : '1.8'}
           strokeLinecap="round"
           strokeLinejoin="round"
-          style={{ transition: 'stroke 300ms ease, stroke-width 300ms ease' }}
+          strokeDasharray={lit ? '6 4' : 'none'}
+          style={{
+            transition: 'stroke 300ms ease, stroke-width 300ms ease',
+            animation: lit ? 'laserDash 0.9s linear infinite' : 'none',
+            filter: lit ? 'drop-shadow(0 0 4px var(--accent))' : 'none',
+          }}
         />
+        {lit && (
+          <circle cx="14" cy="10" r="2.5" fill="var(--accent)" filter="drop-shadow(0 0 4px var(--accent))" />
+        )}
       </svg>
     </div>
   );
@@ -188,6 +283,12 @@ export function FlowTemplate({
         padding: '16px 8px',
       }}
     >
+      <style>{`
+        @keyframes laserDash {
+          from { stroke-dashoffset: 20; }
+          to { stroke-dashoffset: 0; }
+        }
+      `}</style>
       {nodes.map((node, i) => {
         const nextNode = nodes[i + 1];
         const lit = nextNode ? isLitArrow(node.id, nextNode.id) : false;

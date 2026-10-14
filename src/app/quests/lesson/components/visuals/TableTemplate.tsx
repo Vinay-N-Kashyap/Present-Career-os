@@ -121,10 +121,13 @@ export function TableTemplate({ columns = [], step, showSpaces }: TableTemplateP
               className="visual-table-row"
               style={{
                 gridTemplateColumns: gridColumnsStyle,
-                borderRadius: '8px',
+                borderRadius: '10px',
                 border: `1.5px solid ${getToneColor(tone)}`,
-                background: getToneBg(tone),
-                transition: 'background 300ms ease, border-color 300ms ease',
+                borderLeft: tone !== 'idle' ? `4px solid ${getToneColor(tone)}` : `1.5px solid ${getToneColor(tone)}`,
+                background: tone !== 'idle' ? `linear-gradient(90deg, ${getToneBg(tone)}, var(--bg2))` : getToneBg(tone),
+                boxShadow: tone !== 'idle' ? `0 0 16px color-mix(in srgb, ${getToneColor(tone)} 20%, transparent)` : 'none',
+                transform: tone !== 'idle' ? 'translateX(2px)' : 'none',
+                transition: 'all 280ms cubic-bezier(0.4, 0, 0.2, 1)',
                 opacity: 1,
               }}
             >

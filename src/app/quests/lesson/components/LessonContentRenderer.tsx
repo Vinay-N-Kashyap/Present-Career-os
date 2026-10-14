@@ -69,6 +69,8 @@ interface LessonContentRendererProps {
   isManualOverride?: boolean;
   onVisualStepChange?: (newStepIndex: number, manual: boolean) => void;
   onSyncWithVoice?: () => void;
+  audioProgress?: number;
+  currentPieceAt?: string | null;
 }
 
 function renderWithTappableWords(
@@ -76,49 +78,142 @@ function renderWithTappableWords(
   labels: string[],
   highlightedLabel: string | null,
   onWordClick: (label: string) => void,
-  onWordHover?: (label: string | null) => void
+  onWordHover?: (label: string | null) => void,
+  isSpokenParagraph?: boolean,
+  audioProgress?: number
 ): React.ReactNode {
+  if (!text) return text;
   const tokens = tokenizeParagraphWithUnderlines(text, labels);
-  if (tokens.length <= 1 && (!tokens[0] || !tokens[0].isUnderlined)) {
-    return text;
+
+  // If not currently spoken, render tokens with clear underline on key concepts
+  if (!isSpokenParagraph || typeof audioProgress !== 'number' || audioProgress <= 0) {
+    if (tokens.length <= 1 && (!tokens[0] || !tokens[0].isUnderlined)) {
+      return text;
+    }
+    return tokens.map((token, idx) => {
+      if (!token.isUnderlined || !token.matchedLabel) {
+        return <React.Fragment key={idx}>{token.text}</React.Fragment>;
+      }
+      const lowerKey = token.matchedLabel.toLowerCase();
+      const isHighlighted = highlightedLabel && highlightedLabel.toLowerCase() === lowerKey;
+
+      return (
+        <button
+          key={idx}
+          type="button"
+          data-testid={`tappable-word-${lowerKey}`}
+          onClick={(e) => {
+            e.stopPropagation();
+            onWordClick(token.matchedLabel!);
+          }}
+          onMouseEnter={() => onWordHover && onWordHover(token.matchedLabel!)}
+          onMouseLeave={() => onWordHover && onWordHover(null)}
+          style={{
+            display: 'inline',
+            background: isHighlighted ? 'color-mix(in srgb, var(--accent) 20%, transparent)' : 'transparent',
+            border: 'none',
+            borderBottom: isHighlighted ? '2px solid var(--accent)' : '1.5px solid var(--accent)',
+            color: isHighlighted ? 'var(--accent)' : 'inherit',
+            font: 'inherit',
+            padding: '0 2px',
+            margin: 0,
+            cursor: 'pointer',
+            borderRadius: 3,
+            transition: 'all 0.15s ease',
+          }}
+          title={`Tap to highlight ${token.matchedLabel} in the visual`}
+        >
+          {token.text}
+        </button>
+      );
+    });
   }
 
-  return tokens.map((token, idx) => {
-    if (!token.isUnderlined || !token.matchedLabel) {
-      return <React.Fragment key={idx}>{token.text}</React.Fragment>;
+  // When speech is active on this paragraph: Karaoke word-by-word highlight with 5-10% subtle glow
+  const allWords = text.match(/\S+/g) || [];
+  const activeWordIdx = allWords.length > 0
+    ? Math.min(allWords.length - 1, Math.max(0, Math.floor((audioProgress / 100) * allWords.length)))
+    : -1;
+
+  let wordCounter = 0;
+
+  return tokens.map((token, tIdx) => {
+    if (token.isUnderlined && token.matchedLabel) {
+      const lowerKey = token.matchedLabel.toLowerCase();
+      const isHighlighted = highlightedLabel && highlightedLabel.toLowerCase() === lowerKey;
+      const tokenWords = token.text.match(/\S+/g) || [''];
+      const isCurrentSpokenWord = activeWordIdx >= wordCounter && activeWordIdx < wordCounter + tokenWords.length;
+      wordCounter += tokenWords.length;
+
+      return (
+        <button
+          key={tIdx}
+          type="button"
+          data-testid={`tappable-word-${lowerKey}`}
+          onClick={(e) => {
+            e.stopPropagation();
+            onWordClick(token.matchedLabel!);
+          }}
+          onMouseEnter={() => onWordHover && onWordHover(token.matchedLabel!)}
+          onMouseLeave={() => onWordHover && onWordHover(null)}
+          style={{
+            display: 'inline',
+            background: isCurrentSpokenWord
+              ? 'color-mix(in srgb, var(--accent) 18%, transparent)'
+              : isHighlighted
+              ? 'color-mix(in srgb, var(--accent) 20%, transparent)'
+              : 'transparent',
+            border: 'none',
+            borderBottom: isHighlighted ? '2px solid var(--accent)' : '1.5px solid var(--accent)',
+            color: isCurrentSpokenWord || isHighlighted ? 'var(--accent)' : 'inherit',
+            boxShadow: isCurrentSpokenWord ? '0 0 10px rgba(var(--brand-rgb), 0.35)' : undefined,
+            font: 'inherit',
+            padding: '0 2px',
+            margin: 0,
+            cursor: 'pointer',
+            borderRadius: 3,
+            transition: 'all 0.15s ease',
+          }}
+          title={`Tap to highlight ${token.matchedLabel} in the visual`}
+        >
+          {token.text}
+        </button>
+      );
     }
 
-    const lowerKey = token.matchedLabel.toLowerCase();
-    const isHighlighted = highlightedLabel && highlightedLabel.toLowerCase() === lowerKey;
-
+    // Non-underlined text: split into words and whitespace
+    const chunks = token.text.split(/(\s+)/);
     return (
-      <button
-        key={idx}
-        type="button"
-        data-testid={`tappable-word-${lowerKey}`}
-        onClick={(e) => {
-          e.stopPropagation();
-          onWordClick(token.matchedLabel!);
-        }}
-        onMouseEnter={() => onWordHover && onWordHover(token.matchedLabel!)}
-        onMouseLeave={() => onWordHover && onWordHover(null)}
-        style={{
-          display: 'inline',
-          background: isHighlighted ? 'color-mix(in srgb, var(--accent) 20%, transparent)' : 'transparent',
-          border: 'none',
-          borderBottom: isHighlighted ? '2px solid var(--accent)' : '1px dashed var(--accent)',
-          color: isHighlighted ? 'var(--accent)' : 'inherit',
-          font: 'inherit',
-          padding: '0 2px',
-          margin: 0,
-          cursor: 'pointer',
-          borderRadius: 2,
-          transition: 'background 0.15s ease, border-color 0.15s ease, color 0.15s ease',
-        }}
-        title={`Tap to highlight ${token.matchedLabel} in the visual`}
-      >
-        {token.text}
-      </button>
+      <React.Fragment key={tIdx}>
+        {chunks.map((chunk, cIdx) => {
+          if (!chunk) return null;
+          if (/^\s+$/.test(chunk)) {
+            return <React.Fragment key={cIdx}>{chunk}</React.Fragment>;
+          }
+          const isCurrentSpokenWord = (wordCounter === activeWordIdx);
+          wordCounter++;
+
+          if (isCurrentSpokenWord) {
+            return (
+              <span
+                key={cIdx}
+                style={{
+                  background: 'color-mix(in srgb, var(--accent) 16%, transparent)',
+                  color: 'var(--accent)',
+                  boxShadow: '0 0 8px rgba(var(--brand-rgb), 0.3)',
+                  borderRadius: '3px',
+                  padding: '1px 3px',
+                  fontWeight: 700,
+                  transition: 'all 0.12s ease',
+                }}
+              >
+                {chunk}
+              </span>
+            );
+          }
+          return <React.Fragment key={cIdx}>{chunk}</React.Fragment>;
+        })}
+      </React.Fragment>
     );
   });
 }
@@ -183,6 +278,8 @@ export function LessonContentRenderer({
   isManualOverride = false,
   onVisualStepChange,
   onSyncWithVoice,
+  audioProgress = 0,
+  currentPieceAt = null,
 }: LessonContentRendererProps) {
   const safeTeacher = teacher || {
     name: 'Kashyap Sir',
@@ -199,6 +296,71 @@ export function LessonContentRenderer({
   const [selectedSlideAnswers, setSelectedSlideAnswers] = useState<Record<number, number>>({});
   const [slideAnswerFeedback, setSlideAnswerFeedback] = useState<Record<number, { isCorrect: boolean; feedback: string }>>({});
   const highlightTimerRef = useRef<NodeJS.Timeout | null>(null);
+
+  const scrollAreaRef = useRef<HTMLDivElement>(null);
+  const userScrolledRef = useRef(false);
+  const userScrollTimerRef = useRef<NodeJS.Timeout | null>(null);
+
+  const handleUserScroll = useCallback(() => {
+    userScrolledRef.current = true;
+    if (userScrollTimerRef.current) {
+      clearTimeout(userScrollTimerRef.current);
+    }
+    userScrollTimerRef.current = setTimeout(() => {
+      userScrolledRef.current = false;
+    }, 4000);
+  }, []);
+
+  // Smooth Auto-scroll to topic currently being explained by the teacher
+  useEffect(() => {
+    if (userScrolledRef.current || !scrollAreaRef.current) return;
+
+    if (!currentPieceAt || currentPieceAt === 'intro' || currentPieceAt === 'say1' || currentPieceAt === 'say2') {
+      scrollAreaRef.current.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+
+    if (currentPieceAt === 'example') {
+      const el = scrollAreaRef.current.querySelector('[data-testid="lesson-everyday-example"]');
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        return;
+      }
+    }
+
+    if (currentPieceAt === 'code' || currentPieceAt === 'notes') {
+      const el = scrollAreaRef.current.querySelector('[data-testid="lesson-code-notes"]') ||
+                 scrollAreaRef.current.querySelector('[data-testid="lesson-code-editor-root"]');
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        return;
+      }
+    }
+
+    if (currentPieceAt === 'tryIt') {
+      const el = scrollAreaRef.current.querySelector('[data-testid="lesson-try-it"]');
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        return;
+      }
+    }
+  }, [currentPieceAt, currentSlide]);
+
+  // When teacher explanation finishes, gently scroll down so user can answer the Quick Check
+  const prevPlayingRef = useRef(isPlaying);
+  useEffect(() => {
+    const wasPlaying = prevPlayingRef.current;
+    prevPlayingRef.current = isPlaying;
+
+    if (wasPlaying && !isPlaying && !userScrolledRef.current && scrollAreaRef.current) {
+      if (currentSlide > 0 && !understandingConfirmed[currentSlide - 1]) {
+        const checkEl = scrollAreaRef.current.querySelector('[data-testid="inline-socratic-check"]');
+        if (checkEl) {
+          checkEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+      }
+    }
+  }, [isPlaying, currentSlide, understandingConfirmed]);
 
   const handleTriggerHighlight = useCallback((label: string) => {
     if (highlightTimerRef.current) {
@@ -221,6 +383,9 @@ export function LessonContentRenderer({
     return () => {
       if (highlightTimerRef.current) {
         clearTimeout(highlightTimerRef.current);
+      }
+      if (userScrollTimerRef.current) {
+        clearTimeout(userScrollTimerRef.current);
       }
     };
   }, []);
@@ -450,7 +615,12 @@ export function LessonContentRenderer({
             </div>
           </div>
         ) : (
-          <div className="interactive-right-scroll-area">
+          <div
+            className="interactive-right-scroll-area"
+            ref={scrollAreaRef}
+            onWheel={handleUserScroll}
+            onTouchMove={handleUserScroll}
+          >
             {currentSlide === 0 && (
               <div data-testid="lesson-intro-card" style={{ textAlign: 'center', padding: '12px 0' }}>
                 <h3 style={{ fontSize: 15.5, fontWeight: 900, color: 'var(--t1)' }}>{questData?.title || 'Today\'s lesson'}</h3>
@@ -491,7 +661,7 @@ export function LessonContentRenderer({
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 14, textAlign: 'left' }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 8 }}>
                     <h4 data-testid="lesson-slide-title" style={{ fontSize: 16.5, fontWeight: 900, color: safeTeacher.accent || 'var(--accent)', margin: 0 }}>
-                      {renderWithTappableWords(slide.title || 'Lesson Slide', tappableLabels, highlightedLabel, handleTriggerHighlight, handleWordHover)}
+                      {renderWithTappableWords(slide.title || 'Lesson Slide', tappableLabels, highlightedLabel, handleTriggerHighlight, handleWordHover, isPlaying && currentPieceAt === 'intro', audioProgress)}
                     </h4>
                     <button
                       type="button"
@@ -529,7 +699,7 @@ export function LessonContentRenderer({
                     <div data-testid="lesson-explain" style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
                       {slide.explain.map((para: string, i: number) => (
                         <p key={i} style={{ fontSize: 14, color: 'var(--t1)', lineHeight: 1.6, margin: 0 }}>
-                          {renderWithTappableWords(para, tappableLabels, highlightedLabel, handleTriggerHighlight, handleWordHover)}
+                          {renderWithTappableWords(para, tappableLabels, highlightedLabel, handleTriggerHighlight, handleWordHover, isPlaying && currentPieceAt === `say${i + 1}`, audioProgress)}
                         </p>
                       ))}
                     </div>
@@ -539,7 +709,7 @@ export function LessonContentRenderer({
                     <div data-testid="lesson-everyday-example" style={{ padding: '12px 16px', borderRadius: 14, background: 'rgba(var(--info-rgb), 0.08)', border: '1px solid rgba(var(--info-rgb), 0.3)' }}>
                       <div style={{ fontSize: 12, fontWeight: 900, color: 'var(--info)', marginBottom: 4 }}>🌍 Everyday example</div>
                       <div style={{ fontSize: 13.5, color: 'var(--t1)', lineHeight: 1.55 }}>
-                        {renderWithTappableWords(slide.example, tappableLabels, highlightedLabel, handleTriggerHighlight, handleWordHover)}
+                        {renderWithTappableWords(slide.example, tappableLabels, highlightedLabel, handleTriggerHighlight, handleWordHover, isPlaying && currentPieceAt === 'example', audioProgress)}
                       </div>
                     </div>
                   )}
@@ -649,7 +819,7 @@ export function LessonContentRenderer({
                     <div data-testid="lesson-try-it" style={{ padding: '12px 16px', borderRadius: 14, background: 'rgba(var(--success-rgb), 0.08)', border: '1px solid rgba(var(--success-rgb), 0.3)' }}>
                       <div style={{ fontSize: 12, fontWeight: 900, color: 'var(--success)', marginBottom: 4 }}>✍️ Your turn</div>
                       <div style={{ fontSize: 13.5, color: 'var(--t1)', lineHeight: 1.55 }}>
-                        {renderWithTappableWords(slide.tryIt, tappableLabels, highlightedLabel, handleTriggerHighlight, handleWordHover)}
+                        {renderWithTappableWords(slide.tryIt, tappableLabels, highlightedLabel, handleTriggerHighlight, handleWordHover, isPlaying && currentPieceAt === 'tryIt', audioProgress)}
                       </div>
                     </div>
                   )}

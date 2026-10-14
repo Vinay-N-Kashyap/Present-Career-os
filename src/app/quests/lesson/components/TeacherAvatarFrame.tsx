@@ -81,6 +81,18 @@ export function TeacherAvatarFrame({
           flex-direction: column;
           line-height: 1.15;
         }
+        @keyframes avatarVoicePulse {
+          0%, 100% {
+            box-shadow: 0 0 0 0 rgba(var(--brand-rgb), 0.45);
+          }
+          50% {
+            box-shadow: 0 0 0 6px rgba(var(--brand-rgb), 0);
+          }
+        }
+        @keyframes barEqualizer {
+          0%, 100% { transform: scaleY(0.3); }
+          50% { transform: scaleY(1); }
+        }
         @media (max-width: 639px) {
           .teacher-avatar-docked-info {
             display: none !important;
@@ -101,20 +113,21 @@ export function TeacherAvatarFrame({
       {/* Avatar Face / Emoji */}
       <div
         style={{
-          width: '32px',
-          height: '32px',
+          width: '34px',
+          height: '34px',
           borderRadius: '50%',
           background: 'var(--bg3)',
-          border: '1px solid var(--border)',
+          border: `1.5px solid ${isPlaying ? (safeTeacher.accent || 'var(--accent)') : 'var(--border)'}`,
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
           position: 'relative',
-          overflow: 'hidden',
+          overflow: 'visible',
           flexShrink: 0,
+          animation: isPlaying ? 'avatarVoicePulse 1.8s infinite ease-in-out' : 'none',
         }}
       >
-        <span style={{ fontSize: '18px', userSelect: 'none' }}>
+        <span style={{ fontSize: '20px', userSelect: 'none' }}>
           {safeTeacher.avatar || '👨‍🏫'}
         </span>
 
@@ -123,13 +136,14 @@ export function TeacherAvatarFrame({
           <span
             style={{
               position: 'absolute',
-              top: '1px',
-              right: '1px',
-              width: '7px',
-              height: '7px',
+              bottom: '-1px',
+              right: '-1px',
+              width: '8px',
+              height: '8px',
               borderRadius: '50%',
               background: 'var(--success)',
-              boxShadow: '0 0 4px var(--success)',
+              boxShadow: '0 0 6px var(--success)',
+              border: '1.5px solid var(--bg2)',
             }}
           />
         )}
@@ -140,7 +154,7 @@ export function TeacherAvatarFrame({
         <span
           data-testid="teacher-avatar-name"
           style={{
-            fontSize: '11.5px',
+            fontSize: '12px',
             fontWeight: 800,
             color: 'var(--t1)',
             letterSpacing: '0.01em',
@@ -152,36 +166,43 @@ export function TeacherAvatarFrame({
         <span
           data-testid="teacher-avatar-status"
           style={{
-            fontSize: '9.5px',
-            fontWeight: 600,
-            color: isPlaying ? 'var(--success)' : 'var(--text-muted)',
+            fontSize: '10px',
+            fontWeight: 700,
+            color: isPlaying ? 'var(--success)' : 'var(--t3)',
             whiteSpace: 'nowrap',
+            display: 'flex',
+            alignItems: 'center',
+            gap: 4,
           }}
         >
-          {isPlaying ? 'Speaking...' : 'Tutor'}
+          {isPlaying ? 'Speaking...' : (safeTeacher.role || 'AI Instructor')}
         </span>
       </div>
 
-      {/* Mini Waveform (when speaking) */}
+      {/* Animated Waveform Equalizer (when speaking) */}
       {isPlaying && (
         <div
           className="teacher-avatar-docked-waveform"
           style={{
             display: 'flex',
             alignItems: 'center',
-            gap: '2px',
+            gap: '2.5px',
             paddingLeft: '4px',
+            height: '14px',
           }}
           aria-hidden="true"
         >
-          {[0.6, 1, 0.7, 0.4].map((scale, i) => (
+          {[0.2, 0.4, 0.1, 0.35].map((delay, i) => (
             <div
               key={i}
               style={{
-                width: '2px',
-                height: `${12 * scale}px`,
+                width: '2.5px',
+                height: '12px',
                 background: safeTeacher.accent || 'var(--accent)',
                 borderRadius: '1px',
+                animation: `barEqualizer 0.8s ease-in-out infinite`,
+                animationDelay: `${delay}s`,
+                transformOrigin: 'bottom',
               }}
             />
           ))}

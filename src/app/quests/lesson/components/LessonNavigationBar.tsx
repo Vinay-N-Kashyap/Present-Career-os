@@ -104,8 +104,100 @@ export function LessonNavigationBar({
         }
       `}</style>
 
-      {/* Left controls */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexShrink: 1, minWidth: 0 }}>
+      {/* Zone 1 (Left-Down): Prominent Teacher Avatar Frame */}
+      <div style={{ display: 'flex', alignItems: 'center', flexShrink: 0, minWidth: 0 }}>
+        <TeacherAvatarFrame
+          userId={userId || 'guest'}
+          teacherId={teacherId || 'kashyap'}
+          teacher={safeTeacher}
+          isPlaying={Boolean(isPlaying)}
+          speechText={speechText || ''}
+          questData={questData}
+        />
+      </div>
+
+      {/* Zone 2 (Middle-Center): Prominent Centered Next / Finish Button */}
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flex: 1, minWidth: 0, padding: '0 8px' }}>
+        {isLastSlide ? (
+          <button
+            data-testid="btn-finish-quest"
+            disabled={!examPassed}
+            onClick={finishLessonAndReturn}
+            className={`lesson-nav-btn ${examPassed ? 'animate-pulse' : ''}`}
+            style={{
+              padding: '10px 28px',
+              fontSize: 14.5,
+              fontWeight: 900,
+              borderRadius: 12,
+              background: examPassed ? 'var(--green)' : 'var(--border)',
+              color: examPassed ? 'var(--t1)' : 'var(--text-muted)',
+              cursor: examPassed ? 'pointer' : 'not-allowed',
+              opacity: examPassed ? 1 : 0.6,
+              border: 'none',
+              whiteSpace: 'nowrap',
+              boxShadow: examPassed ? '0 0 16px rgba(34, 197, 94, 0.35)' : undefined,
+            }}
+          >
+            <span className="lesson-nav-label-desktop">Finish Quest & Return 🏁</span>
+            <span className="lesson-nav-label-mobile">Finish 🏁</span>
+          </button>
+        ) : (
+          <button
+            data-testid="btn-next-slide"
+            disabled={isLocked}
+            onClick={() => {
+              if (isLocked) return;
+              handleNextSlide();
+            }}
+            className="lesson-nav-btn lesson-nav-btn-next"
+            title={isLocked ? 'Answer the concept check above to unlock the next slide' : 'Next Slide'}
+            style={{
+              background: isLocked ? 'var(--border)' : (safeTeacher.accent || 'var(--accent)'),
+              border: 'none',
+              padding: '10px 24px',
+              borderRadius: 12,
+              fontSize: 14,
+              fontWeight: 800,
+              color: isLocked ? 'var(--text-muted)' : 'var(--accent-btn-fg, #ffffff)',
+              cursor: isLocked ? 'not-allowed' : 'pointer',
+              opacity: isLocked ? 0.6 : 1,
+              whiteSpace: 'nowrap',
+              transition: 'all 0.2s ease',
+              boxShadow: !isLocked ? '0 0 14px color-mix(in srgb, var(--accent) 28%, transparent)' : undefined,
+            }}
+          >
+            <span className="lesson-nav-label-desktop">
+              {isLocked ? 'Answer Check 🔒' : 'Next Slide ▶'}
+            </span>
+            <span className="lesson-nav-label-mobile">
+              {isLocked ? 'Locked 🔒' : 'Next ▶'}
+            </span>
+          </button>
+        )}
+      </div>
+
+      {/* Zone 3 (Right-Down): Secondary Controls (Progress, Prev, Q&A) */}
+      <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexShrink: 0 }}>
+        {slidesLength > 0 && (
+          <span
+            data-testid="lesson-check-progress-pill"
+            className="lesson-nav-label-desktop"
+            style={{
+              fontSize: 11,
+              fontWeight: 700,
+              color: confirmedCount >= slidesLength ? 'var(--success)' : 'var(--t3)',
+              background: 'rgba(255,255,255,0.04)',
+              border: '1px solid var(--border)',
+              borderRadius: 999,
+              padding: '4px 10px',
+              fontFamily: 'var(--font-mono)',
+              whiteSpace: 'nowrap',
+            }}
+          >
+            ✓ {Math.min(confirmedCount, slidesLength)}/{slidesLength} Checks
+          </span>
+        )}
+
         <button
           onClick={handlePrevSlide}
           disabled={currentSlide === 0}
@@ -114,9 +206,9 @@ export function LessonNavigationBar({
           style={{
             background: 'transparent',
             border: '1px solid var(--border)',
-            padding: '10px 18px',
+            padding: '10px 16px',
             borderRadius: 12,
-            fontSize: 14,
+            fontSize: 13.5,
             fontWeight: 700,
             color: 'var(--t2)',
             cursor: currentSlide === 0 ? 'not-allowed' : 'pointer',
@@ -138,12 +230,12 @@ export function LessonNavigationBar({
           className="lesson-nav-btn lesson-nav-btn-qa"
           data-testid="btn-qa-toggle"
           style={{
-            padding: '10px 16px',
+            padding: '10px 14px',
             borderRadius: 12,
             border: `1.5px solid ${isInteractive ? 'var(--border)' : safeTeacher.accent || 'var(--accent)'}`,
             background: isInteractive ? 'transparent' : 'rgba(var(--brand-rgb), 0.1)',
             color: isInteractive ? 'var(--t2)' : (safeTeacher.accent || 'var(--accent)'),
-            fontSize: 13.5,
+            fontSize: 13,
             fontWeight: 800,
             cursor: 'pointer',
             display: 'flex',
@@ -155,93 +247,6 @@ export function LessonNavigationBar({
           <span className="lesson-nav-label-desktop">{isInteractive ? '📖 Slide Lecture' : '💬 Interactive Q&A'}</span>
           <span className="lesson-nav-label-mobile">{isInteractive ? '📖 Slides' : '💬 Q&A'}</span>
         </button>
-      </div>
-
-      {/* Center: Docked Teacher Avatar Frame */}
-      <TeacherAvatarFrame
-        userId={userId || 'guest'}
-        teacherId={teacherId || 'kashyap'}
-        teacher={safeTeacher}
-        isPlaying={Boolean(isPlaying)}
-        speechText={speechText || ''}
-        questData={questData}
-      />
-
-      {/* Right controls */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexShrink: 0 }}>
-        {slidesLength > 0 && (
-          <span
-            data-testid="lesson-check-progress-pill"
-            className="lesson-nav-label-desktop"
-            style={{
-              fontSize: 11,
-              fontWeight: 700,
-              color: confirmedCount >= slidesLength ? 'var(--success)' : 'var(--t3)',
-              background: 'rgba(255,255,255,0.04)',
-              border: '1px solid var(--border)',
-              borderRadius: 999,
-              padding: '4px 10px',
-              fontFamily: 'var(--font-mono)',
-              whiteSpace: 'nowrap',
-            }}
-          >
-            ✓ {Math.min(confirmedCount, slidesLength)}/{slidesLength} Checks
-          </span>
-        )}
-        {isLastSlide ? (
-          <button
-            data-testid="btn-finish-quest"
-            disabled={!examPassed}
-            onClick={finishLessonAndReturn}
-            className={`lesson-nav-btn ${examPassed ? 'animate-pulse' : ''}`}
-            style={{
-              padding: '10px 24px',
-              fontSize: 14.5,
-              fontWeight: 900,
-              borderRadius: 12,
-              background: examPassed ? 'var(--green)' : 'var(--border)',
-              color: examPassed ? 'var(--t1)' : 'var(--text-muted)',
-              cursor: examPassed ? 'pointer' : 'not-allowed',
-              opacity: examPassed ? 1 : 0.6,
-              border: 'none',
-              whiteSpace: 'nowrap',
-            }}
-          >
-            <span className="lesson-nav-label-desktop">Finish Quest & Return 🏁</span>
-            <span className="lesson-nav-label-mobile">Finish 🏁</span>
-          </button>
-        ) : (
-          <button
-            data-testid="btn-next-slide"
-            disabled={isLocked}
-            onClick={() => {
-              if (isLocked) return;
-              handleNextSlide();
-            }}
-            className="lesson-nav-btn lesson-nav-btn-next"
-            title={isLocked ? 'Answer the concept check above to unlock the next slide' : 'Next Slide'}
-            style={{
-              background: isLocked ? 'var(--border)' : (safeTeacher.accent || 'var(--accent)'),
-              border: 'none',
-              padding: '10px 20px',
-              borderRadius: 12,
-              fontSize: 14,
-              fontWeight: 700,
-              color: isLocked ? 'var(--text-muted)' : 'var(--accent-btn-fg, #ffffff)',
-              cursor: isLocked ? 'not-allowed' : 'pointer',
-              opacity: isLocked ? 0.6 : 1,
-              whiteSpace: 'nowrap',
-              transition: 'all 0.2s ease',
-            }}
-          >
-            <span className="lesson-nav-label-desktop">
-              {isLocked ? 'Answer Check 🔒' : 'Next Slide ▶'}
-            </span>
-            <span className="lesson-nav-label-mobile">
-              {isLocked ? 'Locked 🔒' : 'Next ▶'}
-            </span>
-          </button>
-        )}
       </div>
     </div>
   );

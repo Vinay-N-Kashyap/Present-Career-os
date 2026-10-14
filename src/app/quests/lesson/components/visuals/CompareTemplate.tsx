@@ -34,7 +34,8 @@ export function CompareTemplate({
           borderRadius: '12px',
           border: `1.5px solid ${getToneColor(tone)}`,
           background: getToneBg(tone),
-          transition: 'background 300ms ease, border-color 300ms ease',
+          boxShadow: tone !== 'idle' ? `0 0 16px color-mix(in srgb, ${getToneColor(tone)} 22%, transparent)` : 'none',
+          transition: 'all 280ms cubic-bezier(0.4, 0, 0.2, 1)',
           minWidth: '180px',
         }}
       >

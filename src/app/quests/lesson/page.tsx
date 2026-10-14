@@ -927,6 +927,8 @@ function LessonPageContent({ questId, questData, overrideUser, isTestMode = fals
             isManualOverride={state.isManualOverride}
             onVisualStepChange={engine.onVisualStepChange}
             onSyncWithVoice={engine.onSyncWithVoice}
+            audioProgress={state.audioProgress}
+            currentPieceAt={state.currentPieceAt}
           />
 
           <LessonNavigationBar
