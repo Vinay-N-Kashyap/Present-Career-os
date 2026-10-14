@@ -870,6 +870,73 @@ test('Java Basics Day 11: Domain-Specific Content Assertions', () => {
   assert.ok(javaD11.parts[4].output.includes('EQUALS_AND_HASHCODE_CONTRACT_ENFORCED'));
 });
 
+test('Java Basics Day 12: Resolution & Structural Invariants for Encapsulation & Immutability Patterns', () => {
+  const javaD12 = getLongLesson('java-basics', 12);
+  assert.ok(javaD12, 'java-basics Day 12 long lesson must resolve');
+  assert.equal(javaD12.day, 12);
+  assert.equal(javaD12.parts.length, 5, 'java-basics Day 12 must contain exactly 5 parts');
+  assert.ok(javaD12.summary.length >= 4, 'java-basics Day 12 must contain comprehensive summary');
+  assert.ok(javaD12.projectStep, 'java-basics Day 12 must have a hands-on project step');
+  assert.ok(javaD12.projectStep.steps.length >= 4, 'projectStep must have >= 4 steps');
+
+  const spokenMin = estimateSpokenMinutes(javaD12);
+  const totalMin = estimateLessonMinutes(javaD12);
+  assert.ok(spokenMin >= 8, `Spoken minutes should be >= 8 (got ${spokenMin})`);
+  assert.ok(totalMin >= 15, `Total minutes should be >= 15 (got ${totalMin})`);
+
+  // Structural invariants for every part
+  for (const part of javaD12.parts) {
+    assert.ok(part.code, `Part '${part.title}' must contain executable code`);
+    assert.ok(part.output, `Part '${part.title}' must declare expected terminal output`);
+    assert.ok(part.say.length >= 3, `Part '${part.title}' must provide deep pedagogical exposition`);
+    assert.ok(part.code.includes('console.log('), `Code in '${part.title}' must print results`);
+
+    // Socratic MCQ
+    assert.ok(part.check.question.length > 10, 'MCQ check question must be descriptive');
+    assert.ok(part.check.options.length >= 3, 'MCQ must provide at least 3 distinct options');
+    assert.ok(part.check.answer >= 0 && part.check.answer < part.check.options.length, 'Answer index must be valid');
+    assert.ok(part.check.why.length > 15, 'Explanation must be rigorous');
+  }
+});
+
+test('Java Basics Day 12: Domain-Specific Content Assertions', () => {
+  const javaD12 = getLongLesson('java-basics', 12);
+  assert.ok(javaD12);
+
+  // Part 1 – Access Modifiers & Scope Boundaries
+  assert.ok(javaD12.parts[0].title.includes('Access Modifiers') || javaD12.parts[0].title.includes('Scope Boundaries'));
+  assert.ok(javaD12.parts[0].output.includes('Private from Same Class: true'));
+  assert.ok(javaD12.parts[0].output.includes('Private from Same Package: false'));
+  assert.ok(javaD12.parts[0].output.includes('Protected from Subclass in Other Package: true'));
+  assert.ok(javaD12.parts[0].output.includes('ACCESS_LEVELS_STRICTLY_ENFORCED'));
+
+  // Part 2 – Validated Mutators & Invariant Guards
+  assert.ok(javaD12.parts[1].title.includes('Defensive Getters') || javaD12.parts[1].title.includes('Validation Guards'));
+  assert.ok(javaD12.parts[1].output.includes('Account Holder: Kashyap Vinay'));
+  assert.ok(javaD12.parts[1].output.includes('Current Invariant Balance: ₹11000'));
+  assert.ok(javaD12.parts[1].output.includes('MUTATION_GUARDS_ACTIVE'));
+
+  // Part 3 – Defensive Copying vs Reference Escape
+  assert.ok(javaD12.parts[2].title.includes('Defensive Copying') || javaD12.parts[2].title.includes('Reference Escape'));
+  assert.ok(javaD12.parts[2].output.includes('Super Admin Authorized: false'));
+  assert.ok(javaD12.parts[2].output.includes('Root Override Authorized: false'));
+  assert.ok(javaD12.parts[2].output.includes('Policy Roles Count: 2'));
+  assert.ok(javaD12.parts[2].output.includes('ZERO_REFERENCE_ESCAPE_VERIFIED'));
+
+  // Part 4 – Immutable Records & Value Objects
+  assert.ok(javaD12.parts[3].title.includes('Immutability') || javaD12.parts[3].title.includes('Records'));
+  assert.ok(javaD12.parts[3].output.includes('Pair: USD/INR @ 83.45'));
+  assert.ok(javaD12.parts[3].output.includes('Conversion of $1,000: ₹83450'));
+  assert.ok(javaD12.parts[3].output.includes('IMMUTABLE_VALUE_OBJECT_CERTIFIED'));
+
+  // Part 5 – Encapsulated Wallet & Audit Ledger
+  assert.ok(javaD12.parts[4].title.includes('Encapsulated Wallet') || javaD12.parts[4].title.includes('Audit Ledger'));
+  assert.ok(javaD12.parts[4].output.includes('Final Wallet Balance: ₹6000'));
+  assert.ok(javaD12.parts[4].output.includes('Total Ledger Entries: 3'));
+  assert.ok(javaD12.parts[4].output.includes('TAMPER_PROOF_LEDGER_ENFORCED'));
+});
+
+
 
 
 
