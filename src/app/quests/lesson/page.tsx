@@ -518,8 +518,21 @@ function LessonPageRouter() {
   }
 
   // Guard against accessing completed previous classes (Feature 1: user cant access previous classes)
-  const isClassAlreadyCompleted = Boolean(questId && completedQuests.includes(questId));
-  if (isClassAlreadyCompleted && !isTestMode) {
+  const allowCompletedBypass = searchParams.get('allowCompletedBypass') === 'true';
+  let allCompletedQuests = [...completedQuests];
+  if (typeof window !== 'undefined') {
+    try {
+      const raw = localStorage.getItem('pinit_completed_quests') || localStorage.getItem(`pinit_${userId}_completed_quests`) || localStorage.getItem('pinit_guest_completed_quests');
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        if (Array.isArray(parsed)) {
+          allCompletedQuests = Array.from(new Set([...allCompletedQuests, ...parsed]));
+        }
+      }
+    } catch {}
+  }
+  const isClassAlreadyCompleted = Boolean(questId && allCompletedQuests.includes(questId));
+  if (isClassAlreadyCompleted && !allowCompletedBypass) {
     return (
       <div
         data-testid="quest-already-completed-locked"
@@ -628,10 +641,18 @@ function LessonPageContent({ questId, questData, overrideUser, isTestMode = fals
   const enterFullscreen = useCallback(async () => {
     try {
       if (typeof document !== 'undefined' && !document.fullscreenElement) {
-        await document.documentElement.requestFullscreen();
+        if (document.documentElement.requestFullscreen) {
+          await document.documentElement.requestFullscreen();
+        } else {
+          setIsFullscreen(true);
+          setShowFullscreenPill(true);
+        }
       }
-    } catch (err) {
-      console.warn('Fullscreen request failed:', err);
+    } catch (_err) {
+      // If native requestFullscreen is denied by security sandbox, activate CSS fullscreen mode
+      setIsFullscreen(true);
+      setShowFullscreenPill(true);
+      setTimeout(() => setShowFullscreenPill(false), 3500);
     }
   }, []);
 
@@ -639,19 +660,21 @@ function LessonPageContent({ questId, questData, overrideUser, isTestMode = fals
     try {
       if (typeof document !== 'undefined' && document.fullscreenElement) {
         await document.exitFullscreen();
+      } else {
+        setIsFullscreen(false);
       }
-    } catch (err) {
-      console.warn('Exit fullscreen failed:', err);
+    } catch (_err) {
+      setIsFullscreen(false);
     }
   }, []);
 
   const toggleFullscreen = useCallback(() => {
-    if (typeof document !== 'undefined' && document.fullscreenElement) {
+    if (isFullscreen || (typeof document !== 'undefined' && document.fullscreenElement)) {
       exitFullscreen();
     } else {
       enterFullscreen();
     }
-  }, [enterFullscreen, exitFullscreen]);
+  }, [isFullscreen, enterFullscreen, exitFullscreen]);
 
   // Sync fullscreen state with browser events
   useEffect(() => {
@@ -691,7 +714,7 @@ function LessonPageContent({ questId, questData, overrideUser, isTestMode = fals
           if (now - lastShiftSpaceTime < 500) {
             e.preventDefault();
             lastShiftSpaceTime = 0;
-            if (!document.fullscreenElement) {
+            if (!document.fullscreenElement && !isFullscreen) {
               enterFullscreen();
             }
           } else {
@@ -702,7 +725,7 @@ function LessonPageContent({ questId, questData, overrideUser, isTestMode = fals
 
       // Shift + Esc (or Esc) to exit fullscreen
       if (e.code === 'Escape' || e.key === 'Escape') {
-        if (document.fullscreenElement) {
+        if (isFullscreen || (typeof document !== 'undefined' && document.fullscreenElement)) {
           e.preventDefault();
           exitFullscreen();
         }
@@ -711,7 +734,7 @@ function LessonPageContent({ questId, questData, overrideUser, isTestMode = fals
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [enterFullscreen, exitFullscreen]);
+  }, [isFullscreen, enterFullscreen, exitFullscreen]);
 
   const syllabus: string[] = Array.isArray(questData?.syllabus) ? questData.syllabus : [];
   const totalSlides = (state.slides.length || syllabus.length) + 2;

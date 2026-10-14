@@ -100,9 +100,6 @@ const nextConfig = {
   // Ignore build-time TS/ESLint on Vercel to prevent container OOM (SIGKILL) across 52 courses
   typescript: { ignoreBuildErrors: true },
   eslint:     { ignoreDuringBuilds: true },
-  outputFileTracingIncludes: {
-    '/api/**/*': ['./src/lib/data/lessonVisuals/**/*'],
-  },
   // Strip console logs in production builds to prevent leaking PII and telemetry (DEF-043)
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production' ? { exclude: ['error', 'warn'] } : false,
