@@ -1291,66 +1291,15 @@
             ]
           },
           {
-            "at": "say3",
-            "caption": "Putting # in front of a line turns it off without deleting it.",
+            "at": "say2",
+            "caption": "Comments explain why code exists so teammates understand it.",
             "rows": [
               {
                 "cells": [
                   "# My Expense Tracker, day 1",
-                  "skipped"
-                ],
-                "tone": "idle"
-              },
-              {
-                "cells": [
-                  "print(\"Tea\", 20)",
-                  "Tea 20"
-                ],
-                "tone": "ok"
-              },
-              {
-                "cells": [
-                  "# print(\"Movie\", 300)",
-                  "turned off"
+                  "explains purpose"
                 ],
                 "tone": "data"
-              },
-              {
-                "cells": [
-                  "print(\"Bus\", 45) # the bus to college",
-                  "Bus 45"
-                ],
-                "tone": "ok"
-              }
-            ],
-            "checks": [
-              "Tea 20",
-              "Bus 45"
-            ],
-            "mustNotShow": [
-              "Movie"
-            ]
-          }
-        ]
-      },
-      "filled": {
-        "template": "table",
-        "title": "Python skips everything after #",
-        "columns": [
-          "Line",
-          "What happens"
-        ],
-        "steps": [
-          {
-            "at": "say1",
-            "caption": "A # line is a note for people; Python skips it.",
-            "rows": [
-              {
-                "cells": [
-                  "# My Expense Tracker, day 1",
-                  "skipped"
-                ],
-                "tone": "idle"
               },
               {
                 "cells": [
@@ -1419,6 +1368,289 @@
             "mustNotShow": [
               "Movie"
             ]
+          },
+          {
+            "at": "example",
+            "caption": "Like sticky notes on a book, comments are notes that readers skip.",
+            "rows": [
+              {
+                "cells": [
+                  "# Textbook sticky note",
+                  "Reader skips note"
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  "print(\"Tea\", 20)",
+                  "Tea 20"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "# Reminder note",
+                  "Reader skips note"
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  "print(\"Bus\", 45)",
+                  "Bus 45"
+                ],
+                "tone": "ok"
+              }
+            ],
+            "checks": [
+              "Tea 20",
+              "Bus 45"
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Remove the # to unmute the movie line and print it on screen.",
+            "rows": [
+              {
+                "cells": [
+                  "# My Expense Tracker, day 1",
+                  "skipped"
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  "print(\"Tea\", 20)",
+                  "Tea 20"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "print(\"Movie\", 300)",
+                  "Movie 300"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "print(\"Bus\", 45)",
+                  "Bus 45"
+                ],
+                "tone": "ok"
+              }
+            ],
+            "whatIf": "# My Expense Tracker, day 1\nprint(\"Tea\", 20)\nprint(\"Movie\", 300)\nprint(\"Bus\", 45)",
+            "checks": [
+              "Tea 20",
+              "Movie 300",
+              "Bus 45"
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Python skips everything after #",
+        "columns": [
+          "Line",
+          "What happens"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "A # line is a note for people; Python skips it.",
+            "rows": [
+              {
+                "cells": [
+                  "# My Expense Tracker, day 1",
+                  "skipped"
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  "print(\"Tea\", 20)",
+                  "Tea 20"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "# print(\"Movie\", 300)",
+                  ""
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  "print(\"Bus\", 45) # the bus to college",
+                  "Bus 45"
+                ],
+                "tone": "ok"
+              }
+            ],
+            "checks": [
+              "Tea 20",
+              "Bus 45"
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Comments explain why code exists so teammates understand it.",
+            "rows": [
+              {
+                "cells": [
+                  "# My Expense Tracker, day 1",
+                  "explains purpose"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "print(\"Tea\", 20)",
+                  "Tea 20"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "# print(\"Movie\", 300)",
+                  ""
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  "print(\"Bus\", 45) # the bus to college",
+                  "Bus 45"
+                ],
+                "tone": "ok"
+              }
+            ],
+            "checks": [
+              "Tea 20",
+              "Bus 45"
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Putting # in front of a line turns it off without deleting it.",
+            "rows": [
+              {
+                "cells": [
+                  "# My Expense Tracker, day 1",
+                  "skipped"
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  "print(\"Tea\", 20)",
+                  "Tea 20"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "# print(\"Movie\", 300)",
+                  "turned off"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "print(\"Bus\", 45) # the bus to college",
+                  "Bus 45"
+                ],
+                "tone": "ok"
+              }
+            ],
+            "checks": [
+              "Tea 20",
+              "Bus 45"
+            ],
+            "mustNotShow": [
+              "Movie"
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Like sticky notes on a book, comments are notes that readers skip.",
+            "rows": [
+              {
+                "cells": [
+                  "# Textbook sticky note",
+                  "Reader skips note"
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  "print(\"Tea\", 20)",
+                  "Tea 20"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "# Reminder note",
+                  "Reader skips note"
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  "print(\"Bus\", 45)",
+                  "Bus 45"
+                ],
+                "tone": "ok"
+              }
+            ],
+            "checks": [
+              "Tea 20",
+              "Bus 45"
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Remove the # to unmute the movie line and print it on screen.",
+            "rows": [
+              {
+                "cells": [
+                  "# My Expense Tracker, day 1",
+                  "skipped"
+                ],
+                "tone": "idle"
+              },
+              {
+                "cells": [
+                  "print(\"Tea\", 20)",
+                  "Tea 20"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "print(\"Movie\", 300)",
+                  "Movie 300"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "print(\"Bus\", 45)",
+                  "Bus 45"
+                ],
+                "tone": "ok"
+              }
+            ],
+            "whatIf": "# My Expense Tracker, day 1\nprint(\"Tea\", 20)\nprint(\"Movie\", 300)\nprint(\"Bus\", 45)",
+            "checks": [
+              "Tea 20",
+              "Movie 300",
+              "Bus 45"
+            ]
           }
         ]
       }
@@ -1435,6 +1667,54 @@
         ],
         "steps": [
           {
+            "at": "say1",
+            "caption": "Put title, expenses, and total together in your first program.",
+            "rows": [
+              {
+                "cells": [
+                  "print(\"=== My Expense Tracker ===\")",
+                  "=== My Expense Tracker ==="
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "print(\"Tea\", 20)",
+                  "Tea 20"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "print(\"Bus\", 45)",
+                  "Bus 45"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "print(\"Lunch\", 120)",
+                  "Lunch 120"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "print(\"Total:\", 20 + 45 + 120)",
+                  "Total: 185"
+                ],
+                "tone": "ok"
+              }
+            ],
+            "checks": [
+              "=== My Expense Tracker ===",
+              "Tea 20",
+              "Bus 45",
+              "Lunch 120",
+              "Total: 185"
+            ]
+          },
+          {
             "at": "say2",
             "caption": "A title, one line per expense, and the total at the bottom.",
             "rows": [
@@ -1528,6 +1808,104 @@
               "Bus 45",
               "Lunch 120",
               "Total: 185"
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Like a shop receipt, the program shows header, items, and total.",
+            "rows": [
+              {
+                "cells": [
+                  "print(\"=== My Expense Tracker ===\")",
+                  "=== My Expense Tracker ==="
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "print(\"Tea\", 20)",
+                  "Tea 20"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "print(\"Bus\", 45)",
+                  "Bus 45"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "print(\"Lunch\", 120)",
+                  "Lunch 120"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "print(\"Total:\", 20 + 45 + 120)",
+                  "Total: 185"
+                ],
+                "tone": "ok"
+              }
+            ],
+            "checks": [
+              "=== My Expense Tracker ===",
+              "Total: 185"
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Add Notebook 60 and update math to verify the total is 245.",
+            "rows": [
+              {
+                "cells": [
+                  "print(\"=== My Expense Tracker ===\")",
+                  "=== My Expense Tracker ==="
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "print(\"Tea\", 20)",
+                  "Tea 20"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "print(\"Bus\", 45)",
+                  "Bus 45"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "print(\"Lunch\", 120)",
+                  "Lunch 120"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "print(\"Notebook\", 60)",
+                  "Notebook 60"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "print(\"Total:\", ... + 60)",
+                  "Total: 245"
+                ],
+                "tone": "data"
+              }
+            ],
+            "whatIf": "print(\"=== My Expense Tracker ===\")\nprint(\"Tea\", 20)\nprint(\"Bus\", 45)\nprint(\"Lunch\", 120)\nprint(\"Notebook\", 60)\nprint(\"Total:\", 20 + 45 + 120 + 60)",
+            "checks": [
+              "Notebook 60",
+              "Total: 245"
             ]
           }
         ]
@@ -1541,6 +1919,54 @@
         ],
         "steps": [
           {
+            "at": "say1",
+            "caption": "Put title, expenses, and total together in your first program.",
+            "rows": [
+              {
+                "cells": [
+                  "print(\"=== My Expense Tracker ===\")",
+                  "=== My Expense Tracker ==="
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "print(\"Tea\", 20)",
+                  "Tea 20"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "print(\"Bus\", 45)",
+                  "Bus 45"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "print(\"Lunch\", 120)",
+                  "Lunch 120"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "print(\"Total:\", 20 + 45 + 120)",
+                  "Total: 185"
+                ],
+                "tone": "ok"
+              }
+            ],
+            "checks": [
+              "=== My Expense Tracker ===",
+              "Tea 20",
+              "Bus 45",
+              "Lunch 120",
+              "Total: 185"
+            ]
+          },
+          {
             "at": "say2",
             "caption": "A title, one line per expense, and the total at the bottom.",
             "rows": [
@@ -1634,6 +2060,104 @@
               "Bus 45",
               "Lunch 120",
               "Total: 185"
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Like a shop receipt, the program shows header, items, and total.",
+            "rows": [
+              {
+                "cells": [
+                  "print(\"=== My Expense Tracker ===\")",
+                  "=== My Expense Tracker ==="
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "print(\"Tea\", 20)",
+                  "Tea 20"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "print(\"Bus\", 45)",
+                  "Bus 45"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "print(\"Lunch\", 120)",
+                  "Lunch 120"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "print(\"Total:\", 20 + 45 + 120)",
+                  "Total: 185"
+                ],
+                "tone": "ok"
+              }
+            ],
+            "checks": [
+              "=== My Expense Tracker ===",
+              "Total: 185"
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Add Notebook 60 and update math to verify the total is 245.",
+            "rows": [
+              {
+                "cells": [
+                  "print(\"=== My Expense Tracker ===\")",
+                  "=== My Expense Tracker ==="
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "print(\"Tea\", 20)",
+                  "Tea 20"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "print(\"Bus\", 45)",
+                  "Bus 45"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "print(\"Lunch\", 120)",
+                  "Lunch 120"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "print(\"Notebook\", 60)",
+                  "Notebook 60"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "print(\"Total:\", ... + 60)",
+                  "Total: 245"
+                ],
+                "tone": "data"
+              }
+            ],
+            "whatIf": "print(\"=== My Expense Tracker ===\")\nprint(\"Tea\", 20)\nprint(\"Bus\", 45)\nprint(\"Lunch\", 120)\nprint(\"Notebook\", 60)\nprint(\"Total:\", 20 + 45 + 120 + 60)",
+            "checks": [
+              "Notebook 60",
+              "Total: 245"
             ]
           }
         ]
