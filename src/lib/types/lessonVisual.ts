@@ -380,8 +380,8 @@ export interface StatesSpec {
 export interface ComponentTreeNodeType {
   id: string;
   name: string;
-  props?: Record<string, string>;
-  state?: Record<string, string>;
+  props?: Record<string, string | undefined>;
+  state?: Record<string, string | undefined>;
   tone?: VisualTone;
 }
 
