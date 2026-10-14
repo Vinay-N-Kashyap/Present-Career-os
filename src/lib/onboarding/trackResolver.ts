@@ -14,12 +14,18 @@ export interface ResolvedTrack {
   weakAreas: string[];
 }
 
-type TrackKey =
+export type TrackKey =
   | 'ai' | 'analytics' | 'cyber' | 'frontend' | 'devops' | 'uiux' | 'fullstack' | 'accounting' | 'banking'
   | 'investment' | 'hr' | 'digitalMarketing' | 'marketing' | 'ecommerce' | 'entrepreneur' | 'sales'
   | 'digitalTransformation' | 'finance' | 'consulting' | 'product' | 'operations' | 'iot' | 'qa' | 'research'
   | 'policy' | 'education' | 'healthcare' | 'media' | 'hardware' | 'creative' | 'social' | 'java'
-  | 'mobile' | 'blockchain' | 'pythonBackend' | 'dsa';
+  | 'mobile' | 'blockchain' | 'pythonBackend' | 'dsa'
+  // Extended tracks for full platform course catalog parity
+  | 'nodeWeb' | 'sre' | 'streaming' | 'aideploy' | 'cloudNative' | 'cloudPython' | 'vectorPython'
+  | 'safetyPython' | 'dsaPython' | 'cyberPython' | 'databaseEng' | 'distributedSys' | 'distributedPython'
+  | 'trainPython' | 'aiPython' | 'graphics3d' | 'iotNetwork' | 'iotEdgeAi' | 'iotSecurity'
+  | 'quantSystems' | 'quantPython' | 'computerFundamentals' | 'promptLiteracy' | 'promptPython'
+  | 'excelDataViz' | 'gitVersionControl' | 'softSkills' | 'nlp' | 'nlpPython';
 
 export const TRACKS: Record<TrackKey, ResolvedTrack> = {
   ai: {
@@ -208,7 +214,6 @@ export const TRACKS: Record<TrackKey, ResolvedTrack> = {
     skillsList: 'Program Management, Grant Writing, Stakeholder Alignment, Impact Measurement, Non-Profit Governance',
     weakAreas: ['Monitoring & Evaluation (M&E) Frameworks', 'Donor Reporting Metrics', 'Statutory NGO Compliance'],
   },
-  // Tracks reached from typed goals only (each has its own course).
   mobile: {
     targetRoleLabel: 'Mobile App Developer',
     courseId: 'course-mobile-dev',
@@ -239,7 +244,295 @@ export const TRACKS: Record<TrackKey, ResolvedTrack> = {
     skillsList: 'Java Standard Library, OOP Principles, Spring Boot REST, SQL Databases, System Design',
     weakAreas: ['Docker Containers', 'System Design', 'Microservices Architecture'],
   },
+  // Additional specialized course tracks
+  nodeWeb: {
+    targetRoleLabel: 'Backend Node.js & TypeScript SDE',
+    courseId: 'course-node-web',
+    skillsList: 'Node.js, Express, TypeScript, RESTful API Design, JWT & Auth Middleware, PostgreSQL, Prisma ORM, Redis Caching',
+    weakAreas: ['Event Loop Saturation', 'Database Connection Pooling', 'Graceful Error Taxonomy'],
+  },
+  sre: {
+    targetRoleLabel: 'Site Reliability & Observability Engineer',
+    courseId: 'course-sre-web',
+    skillsList: 'TypeScript, OpenTelemetry, Prometheus & Grafana, Incident Response Playbooks, Distributed Tracing, Multi-Cloud SRE',
+    weakAreas: ['Error Budget Calculation', 'Cascading Failure Mitigation', 'High-Cardinality Metric Costs'],
+  },
+  streaming: {
+    targetRoleLabel: 'Real-Time Streaming Systems Architect',
+    courseId: 'course-stream-web',
+    skillsList: 'TypeScript, Apache Kafka, Event-Driven Architecture, Stream Processing, WebSockets, Redis Streams, Backpressure Control',
+    weakAreas: ['Exactly-Once Delivery Guarantees', 'Consumer Lag Monitoring', 'Partition Rebalancing Impact'],
+  },
+  aideploy: {
+    targetRoleLabel: 'Production AI Deployment Engineer',
+    courseId: 'course-aideploy-web',
+    skillsList: 'TypeScript, Model Serving, LLM Ingestion Gateways, Streaming Token Delivery, vLLM / Ollama APIs, Rate Limiting & Failover',
+    weakAreas: ['Token Cost Governance', 'Cold Start Optimization', 'Streaming Backpressure Handling'],
+  },
+  cloudNative: {
+    targetRoleLabel: 'Cloud Solutions Architect & AWS DevOps Engineer',
+    courseId: 'course-cloud-native',
+    skillsList: 'AWS Architecture (EC2, ECS, Lambda), Terraform IaC, IAM Security Policies, VPC Peering, S3 / DynamoDB, CloudFront CDN',
+    weakAreas: ['Multi-AZ Failover Orchestration', 'Cost Allocation & Tagging', 'Cross-Account IAM Roles'],
+  },
+  cloudPython: {
+    targetRoleLabel: 'Cloud Systems Engineer (Python / AWS)',
+    courseId: 'course-cloud-python',
+    skillsList: 'Python Boto3, AWS Lambda Serverless, CloudFormation, API Gateway, S3 Automation, CloudWatch Alarms',
+    weakAreas: ['Serverless Concurrency Limits', 'Asynchronous Event Sourcing', 'Security Group Hardening'],
+  },
+  vectorPython: {
+    targetRoleLabel: 'Vector Database & Retrieval Engineer',
+    courseId: 'course-vector-python',
+    skillsList: 'Python, pgvector, Pinecone, Qdrant, Dense & Sparse Embeddings, Hybrid Search, HNSW Indexing, FAISS Clustering',
+    weakAreas: ['HNSW Graph Construction Tuning', 'Re-ranking Latency Trade-offs', 'Vector Drift & Re-indexing'],
+  },
+  safetyPython: {
+    targetRoleLabel: 'AI Safety, Alignment & Red-Teaming Engineer',
+    courseId: 'course-safety-python',
+    skillsList: 'Python, LlamaGuard, Prompt Injection Mitigation, Constitutional AI, Toxic Output Detection, Hallucination Auditing',
+    weakAreas: ['Adversarial Jailbreak Detection', 'Safety Benchmark Evaluation', 'Differential Privacy Guarantees'],
+  },
+  dsaPython: {
+    targetRoleLabel: 'Software Engineer (Python DSA & Algorithms)',
+    courseId: 'course-dsa-python',
+    skillsList: 'Python Data Structures, Binary Search, Graph BFS/DFS, Heaps & Priority Queues, Dynamic Programming, Memoization',
+    weakAreas: ['Recursion Limit & Call Stack Tuning', 'Trie Space Complexity', 'Bit Manipulation Optimization'],
+  },
+  cyberPython: {
+    targetRoleLabel: 'Cybersecurity Automation Engineer (Python / SecOps)',
+    courseId: 'course-cyber-python',
+    skillsList: 'Python Scapy, Network Packet Sniffing, Threat Hunting Scripts, Automated Vulnerability Scanners, Malware Analysis Basics',
+    weakAreas: ['Custom Protocol Dissection', 'Evasion Technique Detection', 'Automated Triage Workflows'],
+  },
+  databaseEng: {
+    targetRoleLabel: 'Database Architect & Query Optimization Specialist',
+    courseId: 'course-database-eng',
+    skillsList: 'PostgreSQL Internals, B-Tree & GIN Indexing, Query Plan EXPLAIN ANALYZE, ACID Isolation Levels, WAL & Replication, Sharding',
+    weakAreas: ['Lock Contention Mitigation', 'Vacuum Tuning & Bloat Control', 'Distributed Transaction Protocols (2PC)'],
+  },
+  distributedSys: {
+    targetRoleLabel: 'Distributed Systems Architect & Scale Engineer',
+    courseId: 'course-distributed-sys',
+    skillsList: 'Consensus Protocols (Raft/Paxos), Distributed Key-Value Stores, Partitioning & Gossip, Load Balancing, Circuit Breakers',
+    weakAreas: ['Split-Brain Prevention', 'CAP Theorem Trade-Off Design', 'Idempotency in Distributed Pipelines'],
+  },
+  distributedPython: {
+    targetRoleLabel: 'Distributed Systems Engineer (Python)',
+    courseId: 'course-distributed-python',
+    skillsList: 'Python Celery, Distributed Task Queues, Redis Cluster, gRPC Microservices, AsyncIO Concurrency, Distributed Tracing',
+    weakAreas: ['Deadlock Detection in Distributed Queues', 'Backpressure Propagation', 'Network Jitter Fault Tolerance'],
+  },
+  trainPython: {
+    targetRoleLabel: 'Deep Learning Training & Fine-Tuning Engineer',
+    courseId: 'course-train-python',
+    skillsList: 'PyTorch Distributed (DDP / FSDP), Mixed Precision (bf16/fp16), LoRA / QLoRA Fine-Tuning, Gradient Accumulation, Deepspeed',
+    weakAreas: ['GPU Memory OOM Profiling', 'Learning Rate Scheduling & Warmup', 'Data Pipeline Bottleneck Elimination'],
+  },
+  aiPython: {
+    targetRoleLabel: 'AI & Machine Learning Engineer (Python)',
+    courseId: 'course-ai-python',
+    skillsList: 'Python ML, Scikit-Learn, Feature Engineering, Supervised & Unsupervised Learning, Model Evaluation Metrics, ONNX Inference',
+    weakAreas: ['Data Leakage Prevention', 'Hyperparameter Bayesian Optimization', 'Model Drift Detection'],
+  },
+  graphics3d: {
+    targetRoleLabel: '3D Graphics & Spatial Computing Engineer',
+    courseId: 'course-3d-graphics',
+    skillsList: 'WebGL, Three.js, GLSL Shader Programming, 3D Mesh Geometry, Animation Rigging & Morphs, WebXR / Spatial Computing',
+    weakAreas: ['Draw Call Batching & GPU Draw Bounds', 'Shader Precision & Fragment Overhead', 'LOD Asset Streaming'],
+  },
+  iotNetwork: {
+    targetRoleLabel: 'IoT Network & Industrial Edge Protocol Engineer',
+    courseId: 'course-iot-network',
+    skillsList: 'LoRaWAN, Zigbee, BLE Mesh, Thread / Matter Protocols, Industrial Modbus, CoAP / MQTT-SN, Network Topologies',
+    weakAreas: ['RF Interference & Path Loss Modeling', 'Mesh Routing Overhead', 'Gateway Edge Synchronization'],
+  },
+  iotEdgeAi: {
+    targetRoleLabel: 'Edge AI & TinyML Embedded Engineer',
+    courseId: 'course-iot-edge-ai',
+    skillsList: 'TensorFlow Lite for Microcontrollers (TFLM), Edge TPU, Quantization (INT8), Audio Spectrogram DSP, Accelerometer Anomaly Detection',
+    weakAreas: ['SRAM-Constrained Model Pruning', 'Quantization-Aware Training (QAT)', 'Real-Time Inference Jitter'],
+  },
+  iotSecurity: {
+    targetRoleLabel: 'Embedded & Hardware Security Engineer',
+    courseId: 'course-iot-security',
+    skillsList: 'Hardware Root of Trust (RoT), Cryptographic Co-Processors (ATECC608), Secure Element, JTAG/UART Lockdown, Firmware Encryption',
+    weakAreas: ['Side-Channel Attack Mitigation', 'Physical Tamper Detection', 'Public Key Infrastructure (PKI) for IoT'],
+  },
+  quantSystems: {
+    targetRoleLabel: 'Quantitative Trading Systems Engineer',
+    courseId: 'course-quant-systems',
+    skillsList: 'C++ / Low-Latency Systems, Order Book Matching Engines, Market Data Feeds (FIX/FAST), High-Frequency Trading Architecture, Slippage Modeling',
+    weakAreas: ['Kernel Bypass & NIC Tuning', 'Lock-Free Queue Synchronization', 'Risk Gate Pre-Trade Latency'],
+  },
+  quantPython: {
+    targetRoleLabel: 'Quantitative Finance & Algorithmic Trading Specialist',
+    courseId: 'course-quant-python',
+    skillsList: 'Python, NumPy & Pandas, Vectorized Backtesting, Monte Carlo Simulation, Black-Scholes Pricing, Sharpe & Sortino Optimization',
+    weakAreas: ['Lookahead & Survivorship Bias', 'Regime Shift Adaptation', 'Transaction Cost Drag Modeling'],
+  },
+  computerFundamentals: {
+    targetRoleLabel: 'Computer Systems & IT Fundamentals Specialist',
+    courseId: 'course-computer-fundamentals',
+    skillsList: 'Operating System Internals (Linux/Windows), CLI & Bash Scripting, File System Hierarchy, Networking Basics (DNS/TCP/IP), Process Management',
+    weakAreas: ['Linux File Permission Hardening', 'Process Signal Handling', 'Network Subnetting & CIDR'],
+  },
+  promptLiteracy: {
+    targetRoleLabel: 'Generative AI & Prompt Engineering Specialist',
+    courseId: 'course-ai-prompt-literacy',
+    skillsList: 'Few-Shot Prompting, Chain-of-Thought (CoT), Markdown Output Formatting, Persona Framing, System Message Steering, Ethical AI Boundaries',
+    weakAreas: ['Hallucination Verification Protocols', 'Prompt Drift Over Model Versions', 'Complex Multi-Constraint Prompting'],
+  },
+  promptPython: {
+    targetRoleLabel: 'LLM Application & Prompt Developer (Python)',
+    courseId: 'course-ai-prompt-python',
+    skillsList: 'Python OpenAI / Anthropic / Gemini SDKs, Structured JSON Output, Function Calling & Tool Use, Dynamic Few-Shot Retrieval, Async Batching',
+    weakAreas: ['Pydantic Schema Validation Fallbacks', 'Token Budget Rate Limiting', 'Streaming Parser Interruption'],
+  },
+  excelDataViz: {
+    targetRoleLabel: 'Business Intelligence & Excel Analytics Specialist',
+    courseId: 'course-excel-data-viz',
+    skillsList: 'Advanced Excel, Dynamic Array Formulas (XLOOKUP/FILTER/UNIQUE), Pivot Tables & Slicers, Power Query ETL, Executive Charting',
+    weakAreas: ['Nested Array Performance Drops', 'Data Model Relationship Ambiguity', 'Dashboard Visual Clutter Reduction'],
+  },
+  gitVersionControl: {
+    targetRoleLabel: 'Software Tools & Version Control Specialist',
+    courseId: 'course-git-version-control',
+    skillsList: 'Git CLI, Branching Strategies (GitFlow / Trunk), Interactive Rebase, Conflict Resolution, Git Submodules, Pull Request Code Review',
+    weakAreas: ['Detached HEAD State Recovery', 'Reflog Disaster Restoration', 'Cherry-Pick Merge Conflict Cleanups'],
+  },
+  softSkills: {
+    targetRoleLabel: 'Professional Tech Communicator & Leadership Specialist',
+    courseId: 'course-softskills-communication',
+    skillsList: 'Technical Presentation Storytelling, Executive Email Synthesis, Cross-Functional Stakeholder Alignment, Active Listening, STAR Interview Delivery',
+    weakAreas: ['Non-Technical Jargon Translation', 'Conflict Resolution Frameworks', 'Timeboxed Architectural Pitches'],
+  },
+  nlp: {
+    targetRoleLabel: 'NLP Engineer & Computational Linguist',
+    courseId: 'course-nlp',
+    skillsList: 'Tokenization (BPE/WordPiece), TF-IDF, Word Embeddings, Multi-Head Attention, Transformers (BERT/GPT), Named Entity Recognition (NER)',
+    weakAreas: ['Subword Boundary Ambiguity', 'Attention Quadratic Complexity at Scale', 'Low-Resource Language Tokenization'],
+  },
+  nlpPython: {
+    targetRoleLabel: 'NLP & Language Model Engineer (Python)',
+    courseId: 'course-nlp-python',
+    skillsList: 'Python HuggingFace Transformers, PyTorch NLP, Spacy Pipelines, Text Classification, LoRA PEFT Fine-Tuning, Sentence Transformers',
+    weakAreas: ['Fine-Tuning Catastrophic Forgetting', 'Batch Token Padding Waste', 'Cross-Encoder Re-Ranking Latency'],
+  },
 };
+
+/**
+ * Authoritative Course-to-Track mapping covering all courses and canonical aliases.
+ */
+export const COURSE_TRACK_MAP: Record<string, ResolvedTrack> = {
+  // Core Software Engineering
+  'course-java-logic': TRACKS.java,
+  'course-java': TRACKS.java,
+  'course-react-web': TRACKS.frontend,
+  'course-react': TRACKS.frontend,
+  'course-node-web': TRACKS.nodeWeb,
+  'course-fullstack-js': TRACKS.fullstack,
+  'course-fullstack': TRACKS.fullstack,
+  'course-fullstack-dev': TRACKS.fullstack,
+  'course-dsa-optim': TRACKS.dsa,
+  'course-dsa': TRACKS.dsa,
+  'course-dsa-python': TRACKS.dsaPython,
+  'course-python-backend': TRACKS.pythonBackend,
+  'course-python': TRACKS.pythonBackend,
+  'course-python-fullstack': TRACKS.pythonBackend,
+
+  // Cloud & Reliability
+  'course-cloud-native': TRACKS.cloudNative,
+  'course-cloud-python': TRACKS.cloudPython,
+  'course-devops-cicd': TRACKS.devops,
+  'course-devops': TRACKS.devops,
+  'course-cloud-devops': TRACKS.devops,
+  'course-sre-web': TRACKS.sre,
+  'course-stream-web': TRACKS.streaming,
+  'course-aideploy-web': TRACKS.aideploy,
+  'course-database-eng': TRACKS.databaseEng,
+  'course-database': TRACKS.databaseEng,
+  'course-distributed-sys': TRACKS.distributedSys,
+  'course-distributed': TRACKS.distributedSys,
+  'course-distributed-python': TRACKS.distributedPython,
+
+  // AI & Advanced Computing
+  'course-ai-eng': TRACKS.ai,
+  'course-ai': TRACKS.ai,
+  'course-ai-python': TRACKS.aiPython,
+  'course-vector-python': TRACKS.vectorPython,
+  'course-safety-python': TRACKS.safetyPython,
+  'course-train-python': TRACKS.trainPython,
+  'course-nlp': TRACKS.nlp,
+  'course-nlp-python': TRACKS.nlpPython,
+  'course-ai-prompt-literacy': TRACKS.promptLiteracy,
+  'course-ai-prompt-python': TRACKS.promptPython,
+
+  // Mobile, Hardware & Graphics
+  'course-mobile-dev': TRACKS.mobile,
+  'course-iot-embedded': TRACKS.iot,
+  'course-iot-network': TRACKS.iotNetwork,
+  'course-iot-edge-ai': TRACKS.iotEdgeAi,
+  'course-iot-security': TRACKS.iotSecurity,
+  'course-3d-graphics': TRACKS.graphics3d,
+  'course-blockchain-web3': TRACKS.blockchain,
+  'course-cybersecurity': TRACKS.cyber,
+  'course-cyber-python': TRACKS.cyberPython,
+
+  // Quantitative Finance & Systems
+  'course-quant-systems': TRACKS.quantSystems,
+  'course-quant-python': TRACKS.quantPython,
+
+  // Commerce & Management
+  'course-digital-accounting': TRACKS.accounting,
+  'course-accounting': TRACKS.accounting,
+  'course-finance-investment': TRACKS.investment,
+  'course-finance': TRACKS.finance,
+  'course-business-analytics': TRACKS.analytics,
+  'course-marketing-branding': TRACKS.marketing,
+  'course-marketing': TRACKS.marketing,
+  'course-digital-marketing': TRACKS.digitalMarketing,
+  'course-ecommerce-digital-biz': TRACKS.ecommerce,
+  'course-ecommerce': TRACKS.ecommerce,
+  'course-entrepreneurship-biz-mgmt': TRACKS.entrepreneur,
+  'course-entrepreneurship': TRACKS.entrepreneur,
+  'course-sales-crm-success': TRACKS.sales,
+  'course-sales': TRACKS.sales,
+  'course-operations-supplychain-compliance': TRACKS.operations,
+  'course-operations': TRACKS.operations,
+  'course-ai-digital-transformation': TRACKS.digitalTransformation,
+
+  // Foundations & Professional Skills
+  'course-design-systems': TRACKS.uiux,
+  'course-computer-fundamentals': TRACKS.computerFundamentals,
+  'course-excel-data-viz': TRACKS.excelDataViz,
+  'course-git-version-control': TRACKS.gitVersionControl,
+  'course-softskills-communication': TRACKS.softSkills,
+  'course-soft-skills': TRACKS.softSkills,
+};
+
+/**
+ * Deterministically resolves a track for ANY course ID, with safe fallback.
+ */
+export function resolveTrackForCourse(courseId: string): ResolvedTrack {
+  const normalized = (courseId || '').trim().toLowerCase();
+  if (COURSE_TRACK_MAP[normalized]) return COURSE_TRACK_MAP[normalized];
+  if (COURSE_TRACK_MAP[`course-${normalized}`]) return COURSE_TRACK_MAP[`course-${normalized}`];
+
+  // If formatted as a course-id, generate a deterministic fallback preserving courseId
+  if (normalized.startsWith('course-')) {
+    const rawName = normalized.replace(/^course-/, '').replace(/[-_]/g, ' ');
+    const titleCase = rawName.replace(/\b\w/g, (c) => c.toUpperCase());
+    return {
+      targetRoleLabel: `${titleCase} Specialist`,
+      courseId: normalized,
+      skillsList: 'Core Architecture, Industry Best Practices, Production Reliability, Automated Testing, Technical Documentation',
+      weakAreas: ['Production Scalability', 'Advanced System Patterns', 'Performance Benchmarking'],
+    };
+  }
+
+  return TRACKS.java;
+}
 
 /** Onboarding option ids (the four goal questions) → track. Options not listed ("exploring", "other", …) use the degree fallback. */
 const OPTION_TRACK: Record<string, TrackKey> = {
@@ -256,6 +549,11 @@ const OPTION_TRACK: Record<string, TrackKey> = {
   product_manager: 'product',
   financial_analyst: 'finance',
   digital_marketing: 'digitalMarketing',
+  sre_engineer: 'sre',
+  blockchain_developer: 'blockchain',
+  mobile_developer: 'mobile',
+  nlp_engineer: 'nlp',
+  quant_engineer: 'quantSystems',
   // Q1_COMMERCE_GOAL
   accounting_finance: 'accounting',
   banking_services: 'banking',
@@ -315,6 +613,21 @@ interface KeywordRule {
 /** Free-text rules, most specific first. */
 const KEYWORD_RULES: KeywordRule[] = [
   { track: 'digitalTransformation', words: ['rpa'], phrases: ['digital transformation', 'ai transformation', 'ai business', 'ai strategy'] },
+  { track: 'sre', words: ['sre', 'opentelemetry'], phrases: ['site reliability', 'site reliability engineer', 'reliability engineer', 'error budget'] },
+  { track: 'streaming', words: ['kafka'], phrases: ['stream processing', 'event driven', 'real time streaming', 'redis streams'] },
+  { track: 'aideploy', words: ['mlops', 'ollama', 'vllm'], phrases: ['ai deployment', 'model serving', 'llm deployment', 'model deployment'] },
+  { track: 'vectorPython', words: ['pgvector', 'pinecone', 'qdrant', 'milvus', 'weaviate'], phrases: ['vector database', 'vector search', 'dense retrieval', 'hybrid search'] },
+  { track: 'safetyPython', words: ['guardrails', 'redteaming'], phrases: ['ai safety', 'model alignment', 'red teaming', 'prompt injection'] },
+  { track: 'databaseEng', words: ['postgres', 'postgresql', 'dba', 'sql'], phrases: ['database engineer', 'database engineering', 'query optimization', 'database architect', 'query performance'] },
+  { track: 'distributedSys', words: ['raft', 'paxos'], phrases: ['distributed systems', 'distributed system', 'high scale system', 'distributed architecture'] },
+  { track: 'graphics3d', words: ['webgl', 'threejs', 'three.js', 'glsl', 'shader', 'shaders', 'webxr'], phrases: ['3d graphics', 'spatial computing', 'avatar animation'] },
+  { track: 'quantSystems', words: ['hft', 'quant'], phrases: ['quantitative trading', 'quant developer', 'quant systems', 'algorithmic trading', 'matching engine'] },
+  { track: 'nlp', words: ['nlp', 'transformers', 'bert', 'tokenization'], phrases: ['natural language processing', 'computational linguistics'] },
+  { track: 'promptLiteracy', words: ['prompting'], phrases: ['prompt engineering', 'prompt literacy', 'generative literacy'] },
+  { track: 'excelDataViz', words: ['excel', 'vlookup', 'xlookup', 'pivot'], phrases: ['data visualization', 'excel analytics', 'spreadsheet modeling'] },
+  { track: 'gitVersionControl', words: ['git', 'github'], phrases: ['version control'] },
+  { track: 'softSkills', words: ['communication', 'presentation'], phrases: ['soft skills', 'tech communication', 'interview mastery'] },
+  { track: 'computerFundamentals', phrases: ['computer fundamentals', 'operating systems', 'os fundamentals', 'computer literacy'] },
   { track: 'ai', words: ['ai', 'ml', 'llm', 'llms', 'genai', 'nlp', 'aiml'], phrases: ['artificial intelligence', 'machine learning', 'deep learning', 'computer vision', 'generative ai'] },
   {
     track: 'analytics',
@@ -328,6 +641,8 @@ const KEYWORD_RULES: KeywordRule[] = [
   { track: 'mobile', words: ['mobile', 'android', 'ios', 'flutter', 'kotlin', 'swift'], phrases: ['react native', 'mobile app', 'mobile apps', 'app developer'] },
   { track: 'fullstack', words: ['fullstack', 'mern', 'mean'], phrases: ['full stack'] },
   { track: 'frontend', words: ['frontend', 'react', 'reactjs', 'nextjs', 'html', 'css', 'website', 'websites'], phrases: ['front end', 'next js', 'web developer', 'web development', 'web dev'] },
+  { track: 'nodeWeb', words: ['nodejs', 'expressjs'], phrases: ['node js', 'node backend', 'typescript backend'] },
+  { track: 'cloudNative', phrases: ['cloud native', 'aws cloud', 'cloud architect'] },
   { track: 'pythonBackend', words: ['python', 'django', 'flask', 'fastapi'] },
   { track: 'java', words: ['backend', 'java', 'spring', 'sde'], phrases: ['back end', 'software engineer', 'software engineering', 'software developer', 'spring boot'] },
   { track: 'devops', words: ['devops', 'cloud', 'aws', 'azure', 'gcp', 'docker', 'kubernetes', 'k8s', 'sre', 'terraform'] },
@@ -385,11 +700,18 @@ function matches(rule: KeywordRule, words: Set<string>, padded: string): boolean
 export function matchTrackFromGoal(goalRole?: string): ResolvedTrack | null {
   const goal = (goalRole || '').trim().toLowerCase();
   if (!goal) return null;
+
+  // Direct courseId or course alias match
+  if (COURSE_TRACK_MAP[goal]) return COURSE_TRACK_MAP[goal];
+  if (COURSE_TRACK_MAP[`course-${goal}`]) return COURSE_TRACK_MAP[`course-${goal}`];
+
   const option = OPTION_TRACK[goal];
   if (option) return TRACKS[option];
+
   // A saved role label (e.g. onboarding_answers.role = "Product Manager (Tech & Business Strategy)").
   const byLabel = (Object.keys(TRACKS) as TrackKey[]).find((k) => TRACKS[k].targetRoleLabel.toLowerCase() === goal);
   if (byLabel) return TRACKS[byLabel];
+
   const tokens = tokenize(goal);
   const words = new Set(tokens);
   const padded = ` ${tokens.join(' ')} `;
