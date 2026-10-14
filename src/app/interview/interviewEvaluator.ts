@@ -36,8 +36,12 @@ export function computeDeterministicEvaluation({
   archetype,
   tabSwitchCount
 }: EvaluationInput) {
-  const userMsgCount = messages.filter(m => m.role === 'user').length;
-  const roleKey = normalizeRoleKey(activeTopicName, domainStream);
+  const safeMessages = Array.isArray(messages) ? messages : [];
+  const userMsgCount = safeMessages.filter(m => m?.role === 'user').length;
+  const safeStarStep = typeof starStep === 'number' && Number.isFinite(starStep) ? Math.max(0, Math.min(4, Math.floor(starStep))) : 0;
+  const safeFillerCount = typeof fillerWordCount === 'number' && Number.isFinite(fillerWordCount) ? Math.max(0, Math.floor(fillerWordCount)) : 0;
+  const safeTabSwitches = typeof tabSwitchCount === 'number' && Number.isFinite(tabSwitchCount) ? Math.max(0, Math.floor(tabSwitchCount)) : 0;
+  const roleKey = normalizeRoleKey(activeTopicName || 'Full Stack Engineer', domainStream || 'tech');
 
   const verbalContribution = Math.min(88, Math.max(45, userMsgCount * 9));
   const topologyEvaluation = latestTopology?.nodes?.length
@@ -52,16 +56,16 @@ export function computeDeterministicEvaluation({
     // Golden Rule 3: Speech telemetry (filler words) is purely diagnostic and does NOT penalize core comms hiring score.
     comms: Math.max(40, Math.min(95, 45 + userMsgCount * 8)),
     solving: solvingScore,
-    star: Math.max(35, Math.min(95, 40 + starStep * 15))
+    star: Math.max(35, Math.min(95, 40 + safeStarStep * 15))
   };
 
   const scoringResult = calculateRoleWeightedScore(rawDimensions, roleKey);
   const coaching = generatePersonaCoaching(archetype, scoringResult.sanitizedDimensions, roleKey);
   const telemetryDiagnostics = generateTelemetryDiagnostics({
-    eyeContact: typeof eyeContactScore === 'number' ? eyeContactScore : undefined,
-    wpm: typeof wpmScore === 'number' ? wpmScore : undefined,
-    fillerWords: typeof fillerWordCount === 'number' && (userMsgCount > 0 || fillerWordCount > 0) ? fillerWordCount : undefined,
-    tabSwitches: typeof tabSwitchCount === 'number' ? tabSwitchCount : undefined
+    eyeContact: typeof eyeContactScore === 'number' && Number.isFinite(eyeContactScore) ? eyeContactScore : undefined,
+    wpm: typeof wpmScore === 'number' && Number.isFinite(wpmScore) ? wpmScore : undefined,
+    fillerWords: typeof fillerWordCount === 'number' && (userMsgCount > 0 || safeFillerCount > 0) ? safeFillerCount : undefined,
+    tabSwitches: typeof tabSwitchCount === 'number' && Number.isFinite(tabSwitchCount) ? Math.max(0, Math.floor(tabSwitchCount)) : undefined
   });
 
   const round2Badge = roleKey === 'iot_embedded'
