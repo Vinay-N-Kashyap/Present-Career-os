@@ -1042,36 +1042,8 @@
             }
           },
           {
-            "at": "say3",
-            "caption": "Inside quotes any letters work, but H and h are still different.",
-            "left": {
-              "code": "print(\"HELLO\")",
-              "result": "HELLO",
-              "tone": "ok",
-              "checks": [
-                "HELLO"
-              ]
-            },
-            "right": {
-              "code": "print(\"Hello\" == \"hello\")",
-              "result": "False",
-              "tone": "data",
-              "checks": [
-                "False"
-              ]
-            }
-          }
-        ]
-      },
-      "filled": {
-        "template": "compare",
-        "title": "Small and capital letters are different",
-        "leftLabel": "print",
-        "rightLabel": "Print",
-        "steps": [
-          {
-            "at": "say1",
-            "caption": "Python knows print, not Print.",
+            "at": "say2",
+            "caption": "NameError means Python searched for an unknown instruction name.",
             "left": {
               "code": "print(\"hello\")",
               "result": "hello",
@@ -1108,6 +1080,162 @@
               "checks": [
                 "False"
               ]
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Like passwords, Mango123 and mango123 are completely different.",
+            "left": {
+              "code": "print(\"Mango123\" == \"Mango123\")",
+              "result": "True",
+              "tone": "ok",
+              "checks": [
+                "True"
+              ],
+              "whatIf": "print(\"Mango123\" == \"Mango123\")"
+            },
+            "right": {
+              "code": "print(\"Mango123\" == \"mango123\")",
+              "result": "False",
+              "tone": "error",
+              "checks": [
+                "False"
+              ],
+              "whatIf": "print(\"Mango123\" == \"mango123\")"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Change print to Print to inspect the real NameError message.",
+            "left": {
+              "code": "print(\"hello\")",
+              "result": "hello",
+              "tone": "ok",
+              "checks": [
+                "hello"
+              ]
+            },
+            "right": {
+              "code": "Print(\"hello\")",
+              "result": "NameError",
+              "tone": "error",
+              "checks": [
+                "NameError"
+              ],
+              "whatIf": "Print(\"hello\")"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Small and capital letters are different",
+        "leftLabel": "print",
+        "rightLabel": "Print",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Python knows print, not Print.",
+            "left": {
+              "code": "print(\"hello\")",
+              "result": "hello",
+              "tone": "ok",
+              "checks": [
+                "hello"
+              ]
+            },
+            "right": {
+              "code": "Print(\"hello\")",
+              "result": "NameError",
+              "tone": "error",
+              "checks": [
+                "NameError"
+              ],
+              "whatIf": "Print(\"hello\")"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "NameError means Python searched for an unknown instruction name.",
+            "left": {
+              "code": "print(\"hello\")",
+              "result": "hello",
+              "tone": "ok",
+              "checks": [
+                "hello"
+              ]
+            },
+            "right": {
+              "code": "Print(\"hello\")",
+              "result": "NameError",
+              "tone": "error",
+              "checks": [
+                "NameError"
+              ],
+              "whatIf": "Print(\"hello\")"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Inside quotes any letters work, but H and h are still different.",
+            "left": {
+              "code": "print(\"HELLO\")",
+              "result": "HELLO",
+              "tone": "ok",
+              "checks": [
+                "HELLO"
+              ]
+            },
+            "right": {
+              "code": "print(\"Hello\" == \"hello\")",
+              "result": "False",
+              "tone": "data",
+              "checks": [
+                "False"
+              ]
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Like passwords, Mango123 and mango123 are completely different.",
+            "left": {
+              "code": "print(\"Mango123\" == \"Mango123\")",
+              "result": "True",
+              "tone": "ok",
+              "checks": [
+                "True"
+              ],
+              "whatIf": "print(\"Mango123\" == \"Mango123\")"
+            },
+            "right": {
+              "code": "print(\"Mango123\" == \"mango123\")",
+              "result": "False",
+              "tone": "error",
+              "checks": [
+                "False"
+              ],
+              "whatIf": "print(\"Mango123\" == \"mango123\")"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Change print to Print to inspect the real NameError message.",
+            "left": {
+              "code": "print(\"hello\")",
+              "result": "hello",
+              "tone": "ok",
+              "checks": [
+                "hello"
+              ]
+            },
+            "right": {
+              "code": "Print(\"hello\")",
+              "result": "NameError",
+              "tone": "error",
+              "checks": [
+                "NameError"
+              ],
+              "whatIf": "Print(\"hello\")"
             }
           }
         ]
