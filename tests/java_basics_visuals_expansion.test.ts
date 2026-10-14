@@ -8,14 +8,14 @@ import { loadDayFile, getVisual, clearDayFileCache } from '../src/lib/visuals/lo
 import { getLongLesson } from '../src/lib/data/longLessons';
 import { getTappableLabelsForVisual } from '../src/lib/visuals/visualRules';
 
-test('Java Basics Visuals Expansion: Days 6, 7 & 8 On-Disk Spec Verification', () => {
+test('Java Basics Visuals Expansion: Days 6 to 9 On-Disk Spec Verification', () => {
   clearDayFileCache();
   const prefix = 'java-basics';
   const expectedTemplate = 'stack-queue';
 
   assert.equal(isCourseVisualsEnabled(prefix), true, `Course "${prefix}" must be enabled in enabledCourses`);
 
-  for (const day of [6, 7, 8]) {
+  for (const day of [6, 7, 8, 9]) {
     const dayPadded = String(day).padStart(2, '0');
     const filePath = path.resolve(process.cwd(), `src/lib/data/lessonVisuals/${prefix}/day-${dayPadded}.json`);
     assert.ok(fs.existsSync(filePath), `On-disk visual file missing: ${filePath}`);
