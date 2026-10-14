@@ -22,8 +22,15 @@ export function resolveInternshipState(
   }
   if (!enrollment) {
     const capstoneDone = isCapstoneComplete(crashEnrollment);
+    const track = (crashEnrollment?.track || '').toLowerCase();
     const isEligibleTrack =
-      crashEnrollment?.track === 'python_ai' || crashEnrollment?.track === 'web_fullstack';
+      track === 'python_ai' ||
+      track === 'web_fullstack' ||
+      track.includes('python') ||
+      track.includes('web') ||
+      track.includes('fullstack') ||
+      track.includes('sde') ||
+      track.includes('tech');
 
     if (!isEligibleTrack) {
       return {
