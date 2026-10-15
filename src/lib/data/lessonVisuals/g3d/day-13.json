@@ -1,0 +1,344 @@
+{
+  "schemaVersion": 1,
+  "prefix": "g3d",
+  "day": 13,
+  "promptSha": "307e5de8acdb0985b55687d7250d497bb2e697d3361caa8a258db0b8b8f9ab1e",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Radiative Transfer in Translucent Media and the BSSRDF Formulation",
+      "codeHash": "018007fed89d6f3d2260f664e79a5d60dafa28f405306363d79356734ebe46d2",
+      "spec": {
+        "template": "states",
+        "title": "Radiative Transfer in Translucent Media and the BSSRDF Formulation — Real-Time State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Radiative Transfer Setup"
+          },
+          {
+            "id": "st2",
+            "label": "Pipeline Evaluation"
+          },
+          {
+            "id": "st3",
+            "label": "Transform Execution"
+          },
+          {
+            "id": "st4",
+            "label": "Verified Output"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Radiative Transfer Setup): Initialize pipeline state for Radiative Transfer in Translucent Media and the BSSRDF Formulation.",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Pipeline Evaluation with numerical boundary validation.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "dispatch()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Transform Execution applying mathematical transform invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Transition to Verified Output confirming deterministic convergence.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit()"
+            },
+            "tone": "data"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Christensen-Burley Normalized Diffusion Model",
+      "codeHash": "ec281a1bb3417b4df3236688d87599c3925063357d0decdaea8093ea7c4062ef",
+      "spec": {
+        "template": "states",
+        "title": "Christensen-Burley Normalized Diffusion Model — Real-Time State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Christensen-Burley Setup"
+          },
+          {
+            "id": "st2",
+            "label": "Pipeline Evaluation"
+          },
+          {
+            "id": "st3",
+            "label": "Transform Execution"
+          },
+          {
+            "id": "st4",
+            "label": "Verified Output"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Christensen-Burley Setup): Initialize pipeline state for Christensen-Burley Normalized Diffusion Model.",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Pipeline Evaluation with numerical boundary validation.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "dispatch()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Transform Execution applying mathematical transform invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Transition to Verified Output confirming deterministic convergence.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit()"
+            },
+            "tone": "data"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Screen-Space Subsurface Scattering (SSSS) & Separable Kernel Decomposition",
+      "codeHash": "5fc0c72e6944768ec8cc1bcf3b04813645ea067b5a9e321eebac5e4ffa07f4fd",
+      "spec": {
+        "template": "states",
+        "title": "Screen-Space Subsurface Scattering (SSSS) & Separable Kernel Decomposition — Real-Time State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Screen-Space Subsu Setup"
+          },
+          {
+            "id": "st2",
+            "label": "Pipeline Evaluation"
+          },
+          {
+            "id": "st3",
+            "label": "Transform Execution"
+          },
+          {
+            "id": "st4",
+            "label": "Verified Output"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Screen-Space Subsu Setup): Initialize pipeline state for Screen-Space Subsurface Scattering (SSSS) & Separable Kernel Decomposition.",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Pipeline Evaluation with numerical boundary validation.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "dispatch()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Transform Execution applying mathematical transform invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Transition to Verified Output confirming deterministic convergence.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit()"
+            },
+            "tone": "data"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Multi-Layer Anatomical Skin: Epidermis, Dermis, Melanin, and Hemoglobin",
+      "codeHash": "37ea315c2841316f78373aecc805d57af399826c8de4909c7031c7fe719327b2",
+      "spec": {
+        "template": "states",
+        "title": "Multi-Layer Anatomical Skin: Epidermis, Dermis, Melanin, and Hemoglobin — Real-Time State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Multi-Layer Anatom Setup"
+          },
+          {
+            "id": "st2",
+            "label": "Pipeline Evaluation"
+          },
+          {
+            "id": "st3",
+            "label": "Transform Execution"
+          },
+          {
+            "id": "st4",
+            "label": "Verified Output"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Multi-Layer Anatom Setup): Initialize pipeline state for Multi-Layer Anatomical Skin: Epidermis, Dermis, Melanin, and Hemoglobin.",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Pipeline Evaluation with numerical boundary validation.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "dispatch()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Transform Execution applying mathematical transform invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Transition to Verified Output confirming deterministic convergence.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit()"
+            },
+            "tone": "data"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Dual-Lobe GGX Specular, Micro-Roughness, and Porosity Shading",
+      "codeHash": "65c82c76e5248e87b9c194242c9f41bb2fadee8aa2013e703044b349bd8c3e11",
+      "spec": {
+        "template": "states",
+        "title": "Dual-Lobe GGX Specular, Micro-Roughness, and Porosity Shading — Real-Time State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Dual-Lobe GGX Spec Setup"
+          },
+          {
+            "id": "st2",
+            "label": "Pipeline Evaluation"
+          },
+          {
+            "id": "st3",
+            "label": "Transform Execution"
+          },
+          {
+            "id": "st4",
+            "label": "Verified Output"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Dual-Lobe GGX Spec Setup): Initialize pipeline state for Dual-Lobe GGX Specular, Micro-Roughness, and Porosity Shading.",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Pipeline Evaluation with numerical boundary validation.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "dispatch()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Transform Execution applying mathematical transform invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Transition to Verified Output confirming deterministic convergence.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit()"
+            },
+            "tone": "data"
+          }
+        ]
+      }
+    }
+  ]
+}

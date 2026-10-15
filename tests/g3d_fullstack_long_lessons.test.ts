@@ -559,3 +559,65 @@ test('G3D Days 6–10: Domain-Specific Content Assertions', () => {
   assert.ok(d10.parts[4].output.includes('109.89 FPS @ 4K Resolution'));
   assert.ok(d10.parts[4].output.includes('Principal 3D Computer Graphics & WebGPU Shader Architect Certification'));
 });
+
+test('G3D Days 11–15 & Milestone 3 Capstone: Resolution, Word Counts & Invariants', () => {
+  for (let day = 11; day <= 15; day++) {
+    const lesson = getLongLesson('g3d', day);
+    assert.ok(lesson, `G3D Day ${day} long lesson must resolve`);
+    assert.equal(lesson.day, day);
+    assert.equal(lesson.parts.length, 5, `G3D Day ${day} must contain exactly 5 parts`);
+    assert.ok(lesson.minutes >= 35, `G3D Day ${day} must be >= 35 minutes`);
+    assert.ok(lesson.summary.length >= 4, `G3D Day ${day} must contain comprehensive summary`);
+    assert.ok(lesson.projectStep, `G3D Day ${day} must have a hands-on project step`);
+
+    // Total Spoken Words check (>= 2,940 words)
+    let totalWords = 0;
+    for (const part of lesson.parts) {
+      assert.ok(part.code, `Day ${day} Part '${part.title}' must contain code`);
+      assert.ok(part.output, `Day ${day} Part '${part.title}' must declare expected output`);
+      assert.ok(part.check, `Day ${day} Part '${part.title}' must have Socratic check`);
+      assert.equal(part.check.options.length, 4, `Day ${day} Part '${part.title}' MCQ must have 4 options`);
+      assert.ok(part.check.answer >= 0 && part.check.answer <= 3, `Day ${day} Part '${part.title}' answer must be in 0..3`);
+      assert.ok(part.check.why.length > 20, `Day ${day} Part '${part.title}' explanation must be rigorous`);
+
+      const text = Array.isArray(part.say) ? part.say.join(' ') : part.say;
+      const w = text.trim().split(/\s+/).filter(Boolean).length;
+      totalWords += w;
+    }
+    assert.ok(totalWords >= 2940, `G3D Day ${day} must have >= 2,940 spoken words (actual: ${totalWords})`);
+  }
+});
+
+test('G3D Days 11–15: Domain-Specific Content Assertions', () => {
+  // Day 11: Real-Time Volumetric Rendering & Atmospheric Scattering
+  const d11 = getLongLesson('g3d', 11);
+  assert.ok(d11.title.includes('Volumetric Rendering') || d11.title.includes('Atmospheric Scattering'));
+  assert.ok(d11.parts[0].output.includes('Volumetric Pipeline'));
+  assert.ok(d11.parts[1].output.includes('Phase Pipeline'));
+
+  // Day 12: Ocean Waves Simulation, FFT & Phillips Spectrum
+  const d12 = getLongLesson('g3d', 12);
+  assert.ok(d12.title.includes('Ocean Waves') || d12.title.includes('Phillips Spectrum'));
+  assert.ok(d12.parts[0].output.includes('Tessendorf FFT Spectrum'));
+  assert.ok(d12.parts[3].output.includes('Jacobian Foam'));
+
+  // Day 13: Subsurface Scattering (SSS) & Human Skin
+  const d13 = getLongLesson('g3d', 13);
+  assert.ok(d13.title.includes('Subsurface Scattering') || d13.title.includes('Human Skin'));
+  assert.ok(d13.parts[0].output.includes('Dipole BSSRDF'));
+  assert.ok(d13.parts[1].output.includes('Burley Normalized SSS'));
+
+  // Day 14: Hardware Ray Tracing Pipelines: DXR, Vulkan KHR & WebGPU Binding
+  const d14 = getLongLesson('g3d', 14);
+  assert.ok(d14.title.includes('Hardware Ray Tracing') || d14.title.includes('DXR'));
+  assert.ok(d14.parts[0].output.includes('RT Acceleration Structure'));
+  assert.ok(d14.parts[1].output.includes('SBT Generator'));
+
+  // Day 15: ⭐ Milestone 3 Capstone: Real-Time Cinematic Digital Twin Engine
+  const d15 = getLongLesson('g3d', 15);
+  assert.ok(d15.title.includes('Milestone 3 Capstone'));
+  assert.ok(d15.parts[0].output.includes('Digital Twin FrameGraph'));
+  assert.ok(d15.parts[4].output.includes('Grand Master Certification'));
+  assert.ok(d15.parts[4].output.includes('CONFERRED'));
+  assert.ok(d15.parts[4].output.includes('Grand Master of 3D Graphics & Real-Time Simulation Systems'));
+});

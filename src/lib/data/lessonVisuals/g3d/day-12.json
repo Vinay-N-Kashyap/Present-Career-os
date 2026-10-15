@@ -1,0 +1,344 @@
+{
+  "schemaVersion": 1,
+  "prefix": "g3d",
+  "day": 12,
+  "promptSha": "307e5de8acdb0985b55687d7250d497bb2e697d3361caa8a258db0b8b8f9ab1e",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Linear Wave Theory, Statistical Oceanography, and the Tessendorf Framework",
+      "codeHash": "0c2dec4d8b94ada42647fb756f4c3c38be4237a424f720437f77ecde8d30b62c",
+      "spec": {
+        "template": "states",
+        "title": "Linear Wave Theory, Statistical Oceanography, and the Tessendorf Framework — Real-Time State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Linear Wave Theory Setup"
+          },
+          {
+            "id": "st2",
+            "label": "Pipeline Evaluation"
+          },
+          {
+            "id": "st3",
+            "label": "Transform Execution"
+          },
+          {
+            "id": "st4",
+            "label": "Verified Output"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Linear Wave Theory Setup): Initialize pipeline state for Linear Wave Theory, Statistical Oceanography, and the Tessendorf Framework.",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Pipeline Evaluation with numerical boundary validation.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "dispatch()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Transform Execution applying mathematical transform invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Transition to Verified Output confirming deterministic convergence.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit()"
+            },
+            "tone": "data"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Time-Domain Dispersion, Angular Frequency, and Complex Euler Evolution",
+      "codeHash": "d8232e55128e93638230ef43507c3a41f2248962873f606e5954c142f44392f6",
+      "spec": {
+        "template": "states",
+        "title": "Time-Domain Dispersion, Angular Frequency, and Complex Euler Evolution — Real-Time State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Time-Domain Disper Setup"
+          },
+          {
+            "id": "st2",
+            "label": "Pipeline Evaluation"
+          },
+          {
+            "id": "st3",
+            "label": "Transform Execution"
+          },
+          {
+            "id": "st4",
+            "label": "Verified Output"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Time-Domain Disper Setup): Initialize pipeline state for Time-Domain Dispersion, Angular Frequency, and Complex Euler Evolution.",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Pipeline Evaluation with numerical boundary validation.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "dispatch()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Transform Execution applying mathematical transform invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Transition to Verified Output confirming deterministic convergence.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit()"
+            },
+            "tone": "data"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Horizontal Choppy Wave Displacement and Inverse Fast Fourier Transform (IFFT)",
+      "codeHash": "d4bc6d9ea0d4b3c8a04e29161a6b0d689b428ece3b08c4bb2065dd80c1269057",
+      "spec": {
+        "template": "states",
+        "title": "Horizontal Choppy Wave Displacement and Inverse Fast Fourier Transform (IFFT) — Real-Time State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Horizontal Choppy  Setup"
+          },
+          {
+            "id": "st2",
+            "label": "Pipeline Evaluation"
+          },
+          {
+            "id": "st3",
+            "label": "Transform Execution"
+          },
+          {
+            "id": "st4",
+            "label": "Verified Output"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Horizontal Choppy  Setup): Initialize pipeline state for Horizontal Choppy Wave Displacement and Inverse Fast Fourier Transform (IFFT).",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Pipeline Evaluation with numerical boundary validation.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "dispatch()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Transform Execution applying mathematical transform invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Transition to Verified Output confirming deterministic convergence.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit()"
+            },
+            "tone": "data"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Jacobian Determinant, Wave Inversion Detection, and Dynamic Whitecap Foam",
+      "codeHash": "62ca1da010fed4e939ee9d997ef065fcb3971f533293078d28bdad918eb201ee",
+      "spec": {
+        "template": "states",
+        "title": "Jacobian Determinant, Wave Inversion Detection, and Dynamic Whitecap Foam — Real-Time State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Jacobian Determina Setup"
+          },
+          {
+            "id": "st2",
+            "label": "Pipeline Evaluation"
+          },
+          {
+            "id": "st3",
+            "label": "Transform Execution"
+          },
+          {
+            "id": "st4",
+            "label": "Verified Output"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Jacobian Determina Setup): Initialize pipeline state for Jacobian Determinant, Wave Inversion Detection, and Dynamic Whitecap Foam.",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Pipeline Evaluation with numerical boundary validation.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "dispatch()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Transform Execution applying mathematical transform invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Transition to Verified Output confirming deterministic convergence.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit()"
+            },
+            "tone": "data"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Real-Time Hydrodynamic Shading: Screen-Space Refraction, Caustics, and Subsurface Absorption",
+      "codeHash": "7215118bfa429d478d8676eb5ac00cce9664e1f3dcd9d1bd898696297a268152",
+      "spec": {
+        "template": "states",
+        "title": "Real-Time Hydrodynamic Shading: Screen-Space Refraction, Caustics, and Subsurface Absorption — Real-Time State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Real-Time Hydrodyn Setup"
+          },
+          {
+            "id": "st2",
+            "label": "Pipeline Evaluation"
+          },
+          {
+            "id": "st3",
+            "label": "Transform Execution"
+          },
+          {
+            "id": "st4",
+            "label": "Verified Output"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Real-Time Hydrodyn Setup): Initialize pipeline state for Real-Time Hydrodynamic Shading: Screen-Space Refraction, Caustics, and Subsurface Absorption.",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Pipeline Evaluation with numerical boundary validation.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "dispatch()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Transform Execution applying mathematical transform invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Transition to Verified Output confirming deterministic convergence.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit()"
+            },
+            "tone": "data"
+          }
+        ]
+      }
+    }
+  ]
+}
