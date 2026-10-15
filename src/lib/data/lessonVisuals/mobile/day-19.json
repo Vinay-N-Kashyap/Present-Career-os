@@ -1,0 +1,1049 @@
+{
+  "schemaVersion": 1,
+  "prefix": "mobile",
+  "day": 19,
+  "promptSha": "dbe466b9c7ec9770fe90e0340b5f91b92202f7f7bd19e2a675cab750d2bc2117",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Deep Linking Architectures: Custom URI Schemes vs Universal Links & App Links",
+      "codeHash": "7b3888688ac197cd23b6c21dfd06d67bd3eb5849c5850da75c420593824cb161",
+      "spec": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<UniversalRoutingRootScreen />",
+            "props": {
+              "pacing": "SUB_50MS_DISPATCH"
+            },
+            "children": [
+              {
+                "id": "DomainVerifier",
+                "name": "<AasaAssetLinksVerifier />",
+                "props": {
+                  "trust": "CRYPTOGRAPHIC_TWO_WAY"
+                }
+              },
+              {
+                "id": "StateHydrator",
+                "name": "<NavigationHierarchyHydrator />",
+                "props": {
+                  "backStack": "PARENT_STACK_PRESERVED"
+                }
+              },
+              {
+                "id": "DeferredResolver",
+                "name": "<DeferredDeepLinkResolver />",
+                "props": {
+                  "attribution": "INSTALL_REFERRER"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Intercept incoming Universal Link via <UniversalRoutingRootScreen />",
+            "activeId": "root",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<UniversalRoutingRootScreen />",
+                "props": {
+                  "listener": "LINKING_ACTIVE"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Verify domain cryptographic signature via <AasaAssetLinksVerifier />",
+            "activeId": "DomainVerifier",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "DomainVerifier",
+                "name": "<AasaAssetLinksVerifier />",
+                "props": {
+                  "status": "VERIFIED_OK"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Hydrate 3-level parent navigation hierarchy via <NavigationHierarchyHydrator />",
+            "activeId": "StateHydrator",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "StateHydrator",
+                "name": "<NavigationHierarchyHydrator />",
+                "props": {
+                  "depth": "3_LEVELS"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Resolve campaign parameters on first launch via <DeferredDeepLinkResolver />",
+            "activeId": "DeferredResolver",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "DeferredResolver",
+                "name": "<DeferredDeepLinkResolver />",
+                "props": {
+                  "status": "DEFERRED_LINK_RESOLVED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<UniversalRoutingRootScreen />",
+            "props": {
+              "pacing": "SUB_50MS_DISPATCH"
+            },
+            "children": [
+              {
+                "id": "DomainVerifier",
+                "name": "<AasaAssetLinksVerifier />",
+                "props": {
+                  "trust": "CRYPTOGRAPHIC_TWO_WAY"
+                }
+              },
+              {
+                "id": "StateHydrator",
+                "name": "<NavigationHierarchyHydrator />",
+                "props": {
+                  "backStack": "PARENT_STACK_PRESERVED"
+                }
+              },
+              {
+                "id": "DeferredResolver",
+                "name": "<DeferredDeepLinkResolver />",
+                "props": {
+                  "attribution": "INSTALL_REFERRER"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Intercept incoming Universal Link via <UniversalRoutingRootScreen />",
+            "activeId": "root",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<UniversalRoutingRootScreen />",
+                "props": {
+                  "listener": "LINKING_ACTIVE"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Verify domain cryptographic signature via <AasaAssetLinksVerifier />",
+            "activeId": "DomainVerifier",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "DomainVerifier",
+                "name": "<AasaAssetLinksVerifier />",
+                "props": {
+                  "status": "VERIFIED_OK"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Hydrate 3-level parent navigation hierarchy via <NavigationHierarchyHydrator />",
+            "activeId": "StateHydrator",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "StateHydrator",
+                "name": "<NavigationHierarchyHydrator />",
+                "props": {
+                  "depth": "3_LEVELS"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Resolve campaign parameters on first launch via <DeferredDeepLinkResolver />",
+            "activeId": "DeferredResolver",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "DeferredResolver",
+                "name": "<DeferredDeepLinkResolver />",
+                "props": {
+                  "status": "DEFERRED_LINK_RESOLVED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Operating System Verification & Handshake: AASA & Digital Asset Links",
+      "codeHash": "12c45638232a06f3e68016b3bbde0b62ed95c2e2abffe75af15bade39b75441c",
+      "spec": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<UniversalRoutingRootScreen />",
+            "props": {
+              "pacing": "SUB_50MS_DISPATCH"
+            },
+            "children": [
+              {
+                "id": "DomainVerifier",
+                "name": "<AasaAssetLinksVerifier />",
+                "props": {
+                  "trust": "CRYPTOGRAPHIC_TWO_WAY"
+                }
+              },
+              {
+                "id": "StateHydrator",
+                "name": "<NavigationHierarchyHydrator />",
+                "props": {
+                  "backStack": "PARENT_STACK_PRESERVED"
+                }
+              },
+              {
+                "id": "DeferredResolver",
+                "name": "<DeferredDeepLinkResolver />",
+                "props": {
+                  "attribution": "INSTALL_REFERRER"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Intercept incoming Universal Link via <UniversalRoutingRootScreen />",
+            "activeId": "root",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<UniversalRoutingRootScreen />",
+                "props": {
+                  "listener": "LINKING_ACTIVE"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Verify domain cryptographic signature via <AasaAssetLinksVerifier />",
+            "activeId": "DomainVerifier",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "DomainVerifier",
+                "name": "<AasaAssetLinksVerifier />",
+                "props": {
+                  "status": "VERIFIED_OK"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Hydrate 3-level parent navigation hierarchy via <NavigationHierarchyHydrator />",
+            "activeId": "StateHydrator",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "StateHydrator",
+                "name": "<NavigationHierarchyHydrator />",
+                "props": {
+                  "depth": "3_LEVELS"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Resolve campaign parameters on first launch via <DeferredDeepLinkResolver />",
+            "activeId": "DeferredResolver",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "DeferredResolver",
+                "name": "<DeferredDeepLinkResolver />",
+                "props": {
+                  "status": "DEFERRED_LINK_RESOLVED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<UniversalRoutingRootScreen />",
+            "props": {
+              "pacing": "SUB_50MS_DISPATCH"
+            },
+            "children": [
+              {
+                "id": "DomainVerifier",
+                "name": "<AasaAssetLinksVerifier />",
+                "props": {
+                  "trust": "CRYPTOGRAPHIC_TWO_WAY"
+                }
+              },
+              {
+                "id": "StateHydrator",
+                "name": "<NavigationHierarchyHydrator />",
+                "props": {
+                  "backStack": "PARENT_STACK_PRESERVED"
+                }
+              },
+              {
+                "id": "DeferredResolver",
+                "name": "<DeferredDeepLinkResolver />",
+                "props": {
+                  "attribution": "INSTALL_REFERRER"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Intercept incoming Universal Link via <UniversalRoutingRootScreen />",
+            "activeId": "root",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<UniversalRoutingRootScreen />",
+                "props": {
+                  "listener": "LINKING_ACTIVE"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Verify domain cryptographic signature via <AasaAssetLinksVerifier />",
+            "activeId": "DomainVerifier",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "DomainVerifier",
+                "name": "<AasaAssetLinksVerifier />",
+                "props": {
+                  "status": "VERIFIED_OK"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Hydrate 3-level parent navigation hierarchy via <NavigationHierarchyHydrator />",
+            "activeId": "StateHydrator",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "StateHydrator",
+                "name": "<NavigationHierarchyHydrator />",
+                "props": {
+                  "depth": "3_LEVELS"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Resolve campaign parameters on first launch via <DeferredDeepLinkResolver />",
+            "activeId": "DeferredResolver",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "DeferredResolver",
+                "name": "<DeferredDeepLinkResolver />",
+                "props": {
+                  "status": "DEFERRED_LINK_RESOLVED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Deep Link Route Parsing & Navigation State Hydration",
+      "codeHash": "31ed8b973a3fb47ce618074d57d4f77790ac1704d93bd31020af310f4eb2b52c",
+      "spec": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<UniversalRoutingRootScreen />",
+            "props": {
+              "pacing": "SUB_50MS_DISPATCH"
+            },
+            "children": [
+              {
+                "id": "DomainVerifier",
+                "name": "<AasaAssetLinksVerifier />",
+                "props": {
+                  "trust": "CRYPTOGRAPHIC_TWO_WAY"
+                }
+              },
+              {
+                "id": "StateHydrator",
+                "name": "<NavigationHierarchyHydrator />",
+                "props": {
+                  "backStack": "PARENT_STACK_PRESERVED"
+                }
+              },
+              {
+                "id": "DeferredResolver",
+                "name": "<DeferredDeepLinkResolver />",
+                "props": {
+                  "attribution": "INSTALL_REFERRER"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Intercept incoming Universal Link via <UniversalRoutingRootScreen />",
+            "activeId": "root",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<UniversalRoutingRootScreen />",
+                "props": {
+                  "listener": "LINKING_ACTIVE"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Verify domain cryptographic signature via <AasaAssetLinksVerifier />",
+            "activeId": "DomainVerifier",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "DomainVerifier",
+                "name": "<AasaAssetLinksVerifier />",
+                "props": {
+                  "status": "VERIFIED_OK"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Hydrate 3-level parent navigation hierarchy via <NavigationHierarchyHydrator />",
+            "activeId": "StateHydrator",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "StateHydrator",
+                "name": "<NavigationHierarchyHydrator />",
+                "props": {
+                  "depth": "3_LEVELS"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Resolve campaign parameters on first launch via <DeferredDeepLinkResolver />",
+            "activeId": "DeferredResolver",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "DeferredResolver",
+                "name": "<DeferredDeepLinkResolver />",
+                "props": {
+                  "status": "DEFERRED_LINK_RESOLVED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<UniversalRoutingRootScreen />",
+            "props": {
+              "pacing": "SUB_50MS_DISPATCH"
+            },
+            "children": [
+              {
+                "id": "DomainVerifier",
+                "name": "<AasaAssetLinksVerifier />",
+                "props": {
+                  "trust": "CRYPTOGRAPHIC_TWO_WAY"
+                }
+              },
+              {
+                "id": "StateHydrator",
+                "name": "<NavigationHierarchyHydrator />",
+                "props": {
+                  "backStack": "PARENT_STACK_PRESERVED"
+                }
+              },
+              {
+                "id": "DeferredResolver",
+                "name": "<DeferredDeepLinkResolver />",
+                "props": {
+                  "attribution": "INSTALL_REFERRER"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Intercept incoming Universal Link via <UniversalRoutingRootScreen />",
+            "activeId": "root",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<UniversalRoutingRootScreen />",
+                "props": {
+                  "listener": "LINKING_ACTIVE"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Verify domain cryptographic signature via <AasaAssetLinksVerifier />",
+            "activeId": "DomainVerifier",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "DomainVerifier",
+                "name": "<AasaAssetLinksVerifier />",
+                "props": {
+                  "status": "VERIFIED_OK"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Hydrate 3-level parent navigation hierarchy via <NavigationHierarchyHydrator />",
+            "activeId": "StateHydrator",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "StateHydrator",
+                "name": "<NavigationHierarchyHydrator />",
+                "props": {
+                  "depth": "3_LEVELS"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Resolve campaign parameters on first launch via <DeferredDeepLinkResolver />",
+            "activeId": "DeferredResolver",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "DeferredResolver",
+                "name": "<DeferredDeepLinkResolver />",
+                "props": {
+                  "status": "DEFERRED_LINK_RESOLVED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Deferred Deep Linking & Attribution Tracking",
+      "codeHash": "199dc65e34dad218fd5aee525fd237ab886abff19667c22ac602ac9cce68ea4d",
+      "spec": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<UniversalRoutingRootScreen />",
+            "props": {
+              "pacing": "SUB_50MS_DISPATCH"
+            },
+            "children": [
+              {
+                "id": "DomainVerifier",
+                "name": "<AasaAssetLinksVerifier />",
+                "props": {
+                  "trust": "CRYPTOGRAPHIC_TWO_WAY"
+                }
+              },
+              {
+                "id": "StateHydrator",
+                "name": "<NavigationHierarchyHydrator />",
+                "props": {
+                  "backStack": "PARENT_STACK_PRESERVED"
+                }
+              },
+              {
+                "id": "DeferredResolver",
+                "name": "<DeferredDeepLinkResolver />",
+                "props": {
+                  "attribution": "INSTALL_REFERRER"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Intercept incoming Universal Link via <UniversalRoutingRootScreen />",
+            "activeId": "root",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<UniversalRoutingRootScreen />",
+                "props": {
+                  "listener": "LINKING_ACTIVE"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Verify domain cryptographic signature via <AasaAssetLinksVerifier />",
+            "activeId": "DomainVerifier",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "DomainVerifier",
+                "name": "<AasaAssetLinksVerifier />",
+                "props": {
+                  "status": "VERIFIED_OK"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Hydrate 3-level parent navigation hierarchy via <NavigationHierarchyHydrator />",
+            "activeId": "StateHydrator",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "StateHydrator",
+                "name": "<NavigationHierarchyHydrator />",
+                "props": {
+                  "depth": "3_LEVELS"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Resolve campaign parameters on first launch via <DeferredDeepLinkResolver />",
+            "activeId": "DeferredResolver",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "DeferredResolver",
+                "name": "<DeferredDeepLinkResolver />",
+                "props": {
+                  "status": "DEFERRED_LINK_RESOLVED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<UniversalRoutingRootScreen />",
+            "props": {
+              "pacing": "SUB_50MS_DISPATCH"
+            },
+            "children": [
+              {
+                "id": "DomainVerifier",
+                "name": "<AasaAssetLinksVerifier />",
+                "props": {
+                  "trust": "CRYPTOGRAPHIC_TWO_WAY"
+                }
+              },
+              {
+                "id": "StateHydrator",
+                "name": "<NavigationHierarchyHydrator />",
+                "props": {
+                  "backStack": "PARENT_STACK_PRESERVED"
+                }
+              },
+              {
+                "id": "DeferredResolver",
+                "name": "<DeferredDeepLinkResolver />",
+                "props": {
+                  "attribution": "INSTALL_REFERRER"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Intercept incoming Universal Link via <UniversalRoutingRootScreen />",
+            "activeId": "root",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<UniversalRoutingRootScreen />",
+                "props": {
+                  "listener": "LINKING_ACTIVE"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Verify domain cryptographic signature via <AasaAssetLinksVerifier />",
+            "activeId": "DomainVerifier",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "DomainVerifier",
+                "name": "<AasaAssetLinksVerifier />",
+                "props": {
+                  "status": "VERIFIED_OK"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Hydrate 3-level parent navigation hierarchy via <NavigationHierarchyHydrator />",
+            "activeId": "StateHydrator",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "StateHydrator",
+                "name": "<NavigationHierarchyHydrator />",
+                "props": {
+                  "depth": "3_LEVELS"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Resolve campaign parameters on first launch via <DeferredDeepLinkResolver />",
+            "activeId": "DeferredResolver",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "DeferredResolver",
+                "name": "<DeferredDeepLinkResolver />",
+                "props": {
+                  "status": "DEFERRED_LINK_RESOLVED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Universal Routing Master Engine: Full Production Simulator",
+      "codeHash": "ef2b9f96867caec7620b7a2c5fc311fb8f4eca4f10195204a2db9ab1c456fbf1",
+      "spec": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<UniversalRoutingRootScreen />",
+            "props": {
+              "pacing": "SUB_50MS_DISPATCH"
+            },
+            "children": [
+              {
+                "id": "DomainVerifier",
+                "name": "<AasaAssetLinksVerifier />",
+                "props": {
+                  "trust": "CRYPTOGRAPHIC_TWO_WAY"
+                }
+              },
+              {
+                "id": "StateHydrator",
+                "name": "<NavigationHierarchyHydrator />",
+                "props": {
+                  "backStack": "PARENT_STACK_PRESERVED"
+                }
+              },
+              {
+                "id": "DeferredResolver",
+                "name": "<DeferredDeepLinkResolver />",
+                "props": {
+                  "attribution": "INSTALL_REFERRER"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Intercept incoming Universal Link via <UniversalRoutingRootScreen />",
+            "activeId": "root",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<UniversalRoutingRootScreen />",
+                "props": {
+                  "listener": "LINKING_ACTIVE"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Verify domain cryptographic signature via <AasaAssetLinksVerifier />",
+            "activeId": "DomainVerifier",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "DomainVerifier",
+                "name": "<AasaAssetLinksVerifier />",
+                "props": {
+                  "status": "VERIFIED_OK"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Hydrate 3-level parent navigation hierarchy via <NavigationHierarchyHydrator />",
+            "activeId": "StateHydrator",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "StateHydrator",
+                "name": "<NavigationHierarchyHydrator />",
+                "props": {
+                  "depth": "3_LEVELS"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Resolve campaign parameters on first launch via <DeferredDeepLinkResolver />",
+            "activeId": "DeferredResolver",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "DeferredResolver",
+                "name": "<DeferredDeepLinkResolver />",
+                "props": {
+                  "status": "DEFERRED_LINK_RESOLVED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<UniversalRoutingRootScreen />",
+            "props": {
+              "pacing": "SUB_50MS_DISPATCH"
+            },
+            "children": [
+              {
+                "id": "DomainVerifier",
+                "name": "<AasaAssetLinksVerifier />",
+                "props": {
+                  "trust": "CRYPTOGRAPHIC_TWO_WAY"
+                }
+              },
+              {
+                "id": "StateHydrator",
+                "name": "<NavigationHierarchyHydrator />",
+                "props": {
+                  "backStack": "PARENT_STACK_PRESERVED"
+                }
+              },
+              {
+                "id": "DeferredResolver",
+                "name": "<DeferredDeepLinkResolver />",
+                "props": {
+                  "attribution": "INSTALL_REFERRER"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Intercept incoming Universal Link via <UniversalRoutingRootScreen />",
+            "activeId": "root",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<UniversalRoutingRootScreen />",
+                "props": {
+                  "listener": "LINKING_ACTIVE"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Verify domain cryptographic signature via <AasaAssetLinksVerifier />",
+            "activeId": "DomainVerifier",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "DomainVerifier",
+                "name": "<AasaAssetLinksVerifier />",
+                "props": {
+                  "status": "VERIFIED_OK"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Hydrate 3-level parent navigation hierarchy via <NavigationHierarchyHydrator />",
+            "activeId": "StateHydrator",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "StateHydrator",
+                "name": "<NavigationHierarchyHydrator />",
+                "props": {
+                  "depth": "3_LEVELS"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Resolve campaign parameters on first launch via <DeferredDeepLinkResolver />",
+            "activeId": "DeferredResolver",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "DeferredResolver",
+                "name": "<DeferredDeepLinkResolver />",
+                "props": {
+                  "status": "DEFERRED_LINK_RESOLVED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -941,5 +941,43 @@ test('Mobile Day 18: FlashList Cell Recycling, getItemLayout & Image Downsamplin
   assert.ok(mobileLesson18.parts[4].code?.includes('MobileVirtualizedListMasterEngine'));
 });
 
+test('Mobile Day 19: Deep Linking, Universal Routing & Navigation Hydration Verification', () => {
+  const mobileLesson19 = getLongLesson('mobile', 19);
+  assert.ok(mobileLesson19, 'Mobile Day 19 long lesson must resolve');
+  assert.equal(mobileLesson19.day, 19);
+  assert.equal(mobileLesson19.parts.length, 5, 'Mobile Day 19 must contain exactly 5 parts');
+  assert.ok(mobileLesson19.summary.length >= 4, 'Mobile Day 19 must contain summary points');
+  assert.ok(mobileLesson19.projectStep, 'Mobile Day 19 must have projectStep');
+
+  const spokenMin = estimateSpokenMinutes(mobileLesson19);
+  const totalMin = estimateLessonMinutes(mobileLesson19);
+  assert.ok(spokenMin >= 20, 'Spoken minutes should be >= 20 (got ' + spokenMin + ')');
+  assert.ok(totalMin >= 35 && totalMin <= 40, 'Total minutes should be between 35 and 40 (got ' + totalMin + ')');
+
+  for (let i = 0; i < mobileLesson19.parts.length; i++) {
+    const part = mobileLesson19.parts[i];
+    assert.ok(part.title.length > 0, 'Part ' + (i + 1) + ' must have a non-empty title');
+    assert.ok(part.say.length >= 5, 'Part ' + (i + 1) + ' must have at least 5 explanation paragraphs');
+    assert.ok(part.example && part.example.length > 0, 'Part ' + (i + 1) + ' must have a real-world example');
+    assert.ok(part.code && part.code.includes('console.log('), 'Part ' + (i + 1) + ' code must print results');
+    assert.ok(part.output && part.output.length > 0, 'Part ' + (i + 1) + ' must have deterministic expected output');
+    assert.ok(part.tryIt && part.tryIt.length > 0, 'Part ' + (i + 1) + ' must have a tryIt experiment');
+
+    // Socratic Check validation
+    const check = part.check as any;
+    assert.ok(check.question.length > 10, 'Part ' + (i + 1) + ' check question must be descriptive');
+    assert.ok(check.options.length >= 4, 'Part ' + (i + 1) + ' check must have >= 4 options');
+    assert.ok(check.answer >= 0 && check.answer < check.options.length, 'Part ' + (i + 1) + ' answer must be valid');
+    assert.ok(check.why.length > 15, 'Part ' + (i + 1) + ' check explanation must be rigorous');
+  }
+
+  // Domain specifics
+  assert.ok(mobileLesson19.parts[0].code?.includes('DeepLinkProtocolValidator'));
+  assert.ok(mobileLesson19.parts[1].code?.includes('DomainAssociationVerifier'));
+  assert.ok(mobileLesson19.parts[2].code?.includes('NavigationStateHydrator'));
+  assert.ok(mobileLesson19.parts[3].code?.includes('DeferredDeepLinkResolver'));
+  assert.ok(mobileLesson19.parts[4].code?.includes('MobileUniversalRoutingMasterEngine'));
+});
+
 
 
