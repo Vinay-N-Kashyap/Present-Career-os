@@ -1,0 +1,849 @@
+{
+  "schemaVersion": 1,
+  "prefix": "blockchain",
+  "day": 10,
+  "promptSha": "9a329c0f7721ba3e18cd987fe88fbc910245a909d3b764b73b22cf309df78132",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Mappings & Storage Hash Allocation: keccak256(key . slot) Mechanics",
+      "codeHash": "1a45127777271ac6d35ac43326efe5e4710ed601e482684af019346f6dba180b",
+      "spec": {
+        "template": "sequence",
+        "title": "Mappings & Storage Hash Allocation: keccak256(key . slot) Mechanics \u2014 Decentralized Vault Sequence",
+        "actors": [
+          "Vault Depositor",
+          "Decentralized Vault Engine",
+          "EVM Storage Controller",
+          "PoS Consensus Coordinator"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Vault Depositor initiates interaction for Mappings & Storage Hash Allocati",
+            "activeActor": "Vault Depositor",
+            "messages": [
+              {
+                "from": "Vault Depositor",
+                "to": "Decentralized Vault Engine",
+                "label": "submitVaultTransaction(collateral, debt)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Decentralized Vault Engine calculates storage slot mapping and FSM state",
+            "activeActor": "Decentralized Vault Engine",
+            "messages": [
+              {
+                "from": "Decentralized Vault Engine",
+                "to": "EVM Storage Controller",
+                "label": "computeStorageSlot(keccak256(key . slot))",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: EVM Storage Controller verifies storage pointers, packing and gas refunds",
+            "activeActor": "EVM Storage Controller",
+            "messages": [
+              {
+                "from": "EVM Storage Controller",
+                "to": "PoS Consensus Coordinator",
+                "label": "executeSSTORE(packedSlot, EIP3529Refund)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: PoS Consensus Coordinator finalizes checkpoint and certifies Milestone 2",
+            "activeActor": "PoS Consensus Coordinator",
+            "messages": [
+              {
+                "from": "Vault Depositor",
+                "to": "Decentralized Vault Engine",
+                "label": "submitVaultTransaction(collateral, debt)",
+                "tone": "ok"
+              },
+              {
+                "from": "Decentralized Vault Engine",
+                "to": "EVM Storage Controller",
+                "label": "computeStorageSlot(keccak256(key . slot))",
+                "tone": "ok"
+              },
+              {
+                "from": "EVM Storage Controller",
+                "to": "PoS Consensus Coordinator",
+                "label": "executeSSTORE(packedSlot, EIP3529Refund)",
+                "tone": "ok"
+              },
+              {
+                "from": "PoS Consensus Coordinator",
+                "to": "Decentralized Vault Engine",
+                "label": "Milestone2Certified(Optimal \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Mappings & Storage Hash Allocation: keccak256(key . slot) Mechanics \u2014 Decentralized Vault Sequence",
+        "actors": [
+          "Vault Depositor",
+          "Decentralized Vault Engine",
+          "EVM Storage Controller",
+          "PoS Consensus Coordinator"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Vault Depositor initiates interaction for Mappings & Storage Hash Allocati",
+            "activeActor": "Vault Depositor",
+            "messages": [
+              {
+                "from": "Vault Depositor",
+                "to": "Decentralized Vault Engine",
+                "label": "submitVaultTransaction(collateral, debt)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Decentralized Vault Engine calculates storage slot mapping and FSM state",
+            "activeActor": "Decentralized Vault Engine",
+            "messages": [
+              {
+                "from": "Decentralized Vault Engine",
+                "to": "EVM Storage Controller",
+                "label": "computeStorageSlot(keccak256(key . slot))",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: EVM Storage Controller verifies storage pointers, packing and gas refunds",
+            "activeActor": "EVM Storage Controller",
+            "messages": [
+              {
+                "from": "EVM Storage Controller",
+                "to": "PoS Consensus Coordinator",
+                "label": "executeSSTORE(packedSlot, EIP3529Refund)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: PoS Consensus Coordinator finalizes checkpoint and certifies Milestone 2",
+            "activeActor": "PoS Consensus Coordinator",
+            "messages": [
+              {
+                "from": "Vault Depositor",
+                "to": "Decentralized Vault Engine",
+                "label": "submitVaultTransaction(collateral, debt)",
+                "tone": "ok"
+              },
+              {
+                "from": "Decentralized Vault Engine",
+                "to": "EVM Storage Controller",
+                "label": "computeStorageSlot(keccak256(key . slot))",
+                "tone": "ok"
+              },
+              {
+                "from": "EVM Storage Controller",
+                "to": "PoS Consensus Coordinator",
+                "label": "executeSSTORE(packedSlot, EIP3529Refund)",
+                "tone": "ok"
+              },
+              {
+                "from": "PoS Consensus Coordinator",
+                "to": "Decentralized Vault Engine",
+                "label": "Milestone2Certified(Optimal \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Dynamic Arrays in Storage vs Memory: Length Slots & Element Indexing",
+      "codeHash": "7b4218c6d23f04efa3de1e9c86aab61ea618fa76c68292db5ab38b4981ef289e",
+      "spec": {
+        "template": "sequence",
+        "title": "Dynamic Arrays in Storage vs Memory: Length Slots & Element Indexing \u2014 Decentralized Vault Sequence",
+        "actors": [
+          "Vault Depositor",
+          "Decentralized Vault Engine",
+          "EVM Storage Controller",
+          "PoS Consensus Coordinator"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Vault Depositor initiates interaction for Dynamic Arrays in Storage vs Mem",
+            "activeActor": "Vault Depositor",
+            "messages": [
+              {
+                "from": "Vault Depositor",
+                "to": "Decentralized Vault Engine",
+                "label": "submitVaultTransaction(collateral, debt)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Decentralized Vault Engine calculates storage slot mapping and FSM state",
+            "activeActor": "Decentralized Vault Engine",
+            "messages": [
+              {
+                "from": "Decentralized Vault Engine",
+                "to": "EVM Storage Controller",
+                "label": "computeStorageSlot(keccak256(key . slot))",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: EVM Storage Controller verifies storage pointers, packing and gas refunds",
+            "activeActor": "EVM Storage Controller",
+            "messages": [
+              {
+                "from": "EVM Storage Controller",
+                "to": "PoS Consensus Coordinator",
+                "label": "executeSSTORE(packedSlot, EIP3529Refund)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: PoS Consensus Coordinator finalizes checkpoint and certifies Milestone 2",
+            "activeActor": "PoS Consensus Coordinator",
+            "messages": [
+              {
+                "from": "Vault Depositor",
+                "to": "Decentralized Vault Engine",
+                "label": "submitVaultTransaction(collateral, debt)",
+                "tone": "ok"
+              },
+              {
+                "from": "Decentralized Vault Engine",
+                "to": "EVM Storage Controller",
+                "label": "computeStorageSlot(keccak256(key . slot))",
+                "tone": "ok"
+              },
+              {
+                "from": "EVM Storage Controller",
+                "to": "PoS Consensus Coordinator",
+                "label": "executeSSTORE(packedSlot, EIP3529Refund)",
+                "tone": "ok"
+              },
+              {
+                "from": "PoS Consensus Coordinator",
+                "to": "Decentralized Vault Engine",
+                "label": "Milestone2Certified(Optimal \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Dynamic Arrays in Storage vs Memory: Length Slots & Element Indexing \u2014 Decentralized Vault Sequence",
+        "actors": [
+          "Vault Depositor",
+          "Decentralized Vault Engine",
+          "EVM Storage Controller",
+          "PoS Consensus Coordinator"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Vault Depositor initiates interaction for Dynamic Arrays in Storage vs Mem",
+            "activeActor": "Vault Depositor",
+            "messages": [
+              {
+                "from": "Vault Depositor",
+                "to": "Decentralized Vault Engine",
+                "label": "submitVaultTransaction(collateral, debt)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Decentralized Vault Engine calculates storage slot mapping and FSM state",
+            "activeActor": "Decentralized Vault Engine",
+            "messages": [
+              {
+                "from": "Decentralized Vault Engine",
+                "to": "EVM Storage Controller",
+                "label": "computeStorageSlot(keccak256(key . slot))",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: EVM Storage Controller verifies storage pointers, packing and gas refunds",
+            "activeActor": "EVM Storage Controller",
+            "messages": [
+              {
+                "from": "EVM Storage Controller",
+                "to": "PoS Consensus Coordinator",
+                "label": "executeSSTORE(packedSlot, EIP3529Refund)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: PoS Consensus Coordinator finalizes checkpoint and certifies Milestone 2",
+            "activeActor": "PoS Consensus Coordinator",
+            "messages": [
+              {
+                "from": "Vault Depositor",
+                "to": "Decentralized Vault Engine",
+                "label": "submitVaultTransaction(collateral, debt)",
+                "tone": "ok"
+              },
+              {
+                "from": "Decentralized Vault Engine",
+                "to": "EVM Storage Controller",
+                "label": "computeStorageSlot(keccak256(key . slot))",
+                "tone": "ok"
+              },
+              {
+                "from": "EVM Storage Controller",
+                "to": "PoS Consensus Coordinator",
+                "label": "executeSSTORE(packedSlot, EIP3529Refund)",
+                "tone": "ok"
+              },
+              {
+                "from": "PoS Consensus Coordinator",
+                "to": "Decentralized Vault Engine",
+                "label": "Milestone2Certified(Optimal \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Storage Pointers vs Memory Copies: Mutation Hazards & Pointer Mechanics",
+      "codeHash": "ed66846886a1586d8e6ce927edb2243c9398efab690917012c4b7429282f557c",
+      "spec": {
+        "template": "sequence",
+        "title": "Storage Pointers vs Memory Copies: Mutation Hazards & Pointer Mechanics \u2014 Decentralized Vault Sequence",
+        "actors": [
+          "Vault Depositor",
+          "Decentralized Vault Engine",
+          "EVM Storage Controller",
+          "PoS Consensus Coordinator"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Vault Depositor initiates interaction for Storage Pointers vs Memory Copie",
+            "activeActor": "Vault Depositor",
+            "messages": [
+              {
+                "from": "Vault Depositor",
+                "to": "Decentralized Vault Engine",
+                "label": "submitVaultTransaction(collateral, debt)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Decentralized Vault Engine calculates storage slot mapping and FSM state",
+            "activeActor": "Decentralized Vault Engine",
+            "messages": [
+              {
+                "from": "Decentralized Vault Engine",
+                "to": "EVM Storage Controller",
+                "label": "computeStorageSlot(keccak256(key . slot))",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: EVM Storage Controller verifies storage pointers, packing and gas refunds",
+            "activeActor": "EVM Storage Controller",
+            "messages": [
+              {
+                "from": "EVM Storage Controller",
+                "to": "PoS Consensus Coordinator",
+                "label": "executeSSTORE(packedSlot, EIP3529Refund)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: PoS Consensus Coordinator finalizes checkpoint and certifies Milestone 2",
+            "activeActor": "PoS Consensus Coordinator",
+            "messages": [
+              {
+                "from": "Vault Depositor",
+                "to": "Decentralized Vault Engine",
+                "label": "submitVaultTransaction(collateral, debt)",
+                "tone": "ok"
+              },
+              {
+                "from": "Decentralized Vault Engine",
+                "to": "EVM Storage Controller",
+                "label": "computeStorageSlot(keccak256(key . slot))",
+                "tone": "ok"
+              },
+              {
+                "from": "EVM Storage Controller",
+                "to": "PoS Consensus Coordinator",
+                "label": "executeSSTORE(packedSlot, EIP3529Refund)",
+                "tone": "ok"
+              },
+              {
+                "from": "PoS Consensus Coordinator",
+                "to": "Decentralized Vault Engine",
+                "label": "Milestone2Certified(Optimal \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Storage Pointers vs Memory Copies: Mutation Hazards & Pointer Mechanics \u2014 Decentralized Vault Sequence",
+        "actors": [
+          "Vault Depositor",
+          "Decentralized Vault Engine",
+          "EVM Storage Controller",
+          "PoS Consensus Coordinator"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Vault Depositor initiates interaction for Storage Pointers vs Memory Copie",
+            "activeActor": "Vault Depositor",
+            "messages": [
+              {
+                "from": "Vault Depositor",
+                "to": "Decentralized Vault Engine",
+                "label": "submitVaultTransaction(collateral, debt)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Decentralized Vault Engine calculates storage slot mapping and FSM state",
+            "activeActor": "Decentralized Vault Engine",
+            "messages": [
+              {
+                "from": "Decentralized Vault Engine",
+                "to": "EVM Storage Controller",
+                "label": "computeStorageSlot(keccak256(key . slot))",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: EVM Storage Controller verifies storage pointers, packing and gas refunds",
+            "activeActor": "EVM Storage Controller",
+            "messages": [
+              {
+                "from": "EVM Storage Controller",
+                "to": "PoS Consensus Coordinator",
+                "label": "executeSSTORE(packedSlot, EIP3529Refund)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: PoS Consensus Coordinator finalizes checkpoint and certifies Milestone 2",
+            "activeActor": "PoS Consensus Coordinator",
+            "messages": [
+              {
+                "from": "Vault Depositor",
+                "to": "Decentralized Vault Engine",
+                "label": "submitVaultTransaction(collateral, debt)",
+                "tone": "ok"
+              },
+              {
+                "from": "Decentralized Vault Engine",
+                "to": "EVM Storage Controller",
+                "label": "computeStorageSlot(keccak256(key . slot))",
+                "tone": "ok"
+              },
+              {
+                "from": "EVM Storage Controller",
+                "to": "PoS Consensus Coordinator",
+                "label": "executeSSTORE(packedSlot, EIP3529Refund)",
+                "tone": "ok"
+              },
+              {
+                "from": "PoS Consensus Coordinator",
+                "to": "Decentralized Vault Engine",
+                "label": "Milestone2Certified(Optimal \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Gas Refund Optimization, EIP-3529 Pruning & SSTORE Cleansing",
+      "codeHash": "bf999e74aab914b4350b1d505c2f61cd72b9f1cab65088f0743db44edacee890",
+      "spec": {
+        "template": "sequence",
+        "title": "Gas Refund Optimization, EIP-3529 Pruning & SSTORE Cleansing \u2014 Decentralized Vault Sequence",
+        "actors": [
+          "Vault Depositor",
+          "Decentralized Vault Engine",
+          "EVM Storage Controller",
+          "PoS Consensus Coordinator"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Vault Depositor initiates interaction for Gas Refund Optimization, EIP-352",
+            "activeActor": "Vault Depositor",
+            "messages": [
+              {
+                "from": "Vault Depositor",
+                "to": "Decentralized Vault Engine",
+                "label": "submitVaultTransaction(collateral, debt)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Decentralized Vault Engine calculates storage slot mapping and FSM state",
+            "activeActor": "Decentralized Vault Engine",
+            "messages": [
+              {
+                "from": "Decentralized Vault Engine",
+                "to": "EVM Storage Controller",
+                "label": "computeStorageSlot(keccak256(key . slot))",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: EVM Storage Controller verifies storage pointers, packing and gas refunds",
+            "activeActor": "EVM Storage Controller",
+            "messages": [
+              {
+                "from": "EVM Storage Controller",
+                "to": "PoS Consensus Coordinator",
+                "label": "executeSSTORE(packedSlot, EIP3529Refund)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: PoS Consensus Coordinator finalizes checkpoint and certifies Milestone 2",
+            "activeActor": "PoS Consensus Coordinator",
+            "messages": [
+              {
+                "from": "Vault Depositor",
+                "to": "Decentralized Vault Engine",
+                "label": "submitVaultTransaction(collateral, debt)",
+                "tone": "ok"
+              },
+              {
+                "from": "Decentralized Vault Engine",
+                "to": "EVM Storage Controller",
+                "label": "computeStorageSlot(keccak256(key . slot))",
+                "tone": "ok"
+              },
+              {
+                "from": "EVM Storage Controller",
+                "to": "PoS Consensus Coordinator",
+                "label": "executeSSTORE(packedSlot, EIP3529Refund)",
+                "tone": "ok"
+              },
+              {
+                "from": "PoS Consensus Coordinator",
+                "to": "Decentralized Vault Engine",
+                "label": "Milestone2Certified(Optimal \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Gas Refund Optimization, EIP-3529 Pruning & SSTORE Cleansing \u2014 Decentralized Vault Sequence",
+        "actors": [
+          "Vault Depositor",
+          "Decentralized Vault Engine",
+          "EVM Storage Controller",
+          "PoS Consensus Coordinator"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Vault Depositor initiates interaction for Gas Refund Optimization, EIP-352",
+            "activeActor": "Vault Depositor",
+            "messages": [
+              {
+                "from": "Vault Depositor",
+                "to": "Decentralized Vault Engine",
+                "label": "submitVaultTransaction(collateral, debt)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Decentralized Vault Engine calculates storage slot mapping and FSM state",
+            "activeActor": "Decentralized Vault Engine",
+            "messages": [
+              {
+                "from": "Decentralized Vault Engine",
+                "to": "EVM Storage Controller",
+                "label": "computeStorageSlot(keccak256(key . slot))",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: EVM Storage Controller verifies storage pointers, packing and gas refunds",
+            "activeActor": "EVM Storage Controller",
+            "messages": [
+              {
+                "from": "EVM Storage Controller",
+                "to": "PoS Consensus Coordinator",
+                "label": "executeSSTORE(packedSlot, EIP3529Refund)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: PoS Consensus Coordinator finalizes checkpoint and certifies Milestone 2",
+            "activeActor": "PoS Consensus Coordinator",
+            "messages": [
+              {
+                "from": "Vault Depositor",
+                "to": "Decentralized Vault Engine",
+                "label": "submitVaultTransaction(collateral, debt)",
+                "tone": "ok"
+              },
+              {
+                "from": "Decentralized Vault Engine",
+                "to": "EVM Storage Controller",
+                "label": "computeStorageSlot(keccak256(key . slot))",
+                "tone": "ok"
+              },
+              {
+                "from": "EVM Storage Controller",
+                "to": "PoS Consensus Coordinator",
+                "label": "executeSSTORE(packedSlot, EIP3529Refund)",
+                "tone": "ok"
+              },
+              {
+                "from": "PoS Consensus Coordinator",
+                "to": "Decentralized Vault Engine",
+                "label": "Milestone2Certified(Optimal \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Milestone 2 Capstone: The Decentralized Vault Engine Architecture",
+      "codeHash": "41089bf235f0ab0db46a309c296a0e62d0b7613fa38f93be9953af9c98e59032",
+      "spec": {
+        "template": "sequence",
+        "title": "Milestone 2 Capstone: The Decentralized Vault Engine Architecture \u2014 Decentralized Vault Sequence",
+        "actors": [
+          "Vault Depositor",
+          "Decentralized Vault Engine",
+          "EVM Storage Controller",
+          "PoS Consensus Coordinator"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Vault Depositor initiates interaction for Milestone 2 Capstone: The Decent",
+            "activeActor": "Vault Depositor",
+            "messages": [
+              {
+                "from": "Vault Depositor",
+                "to": "Decentralized Vault Engine",
+                "label": "submitVaultTransaction(collateral, debt)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Decentralized Vault Engine calculates storage slot mapping and FSM state",
+            "activeActor": "Decentralized Vault Engine",
+            "messages": [
+              {
+                "from": "Decentralized Vault Engine",
+                "to": "EVM Storage Controller",
+                "label": "computeStorageSlot(keccak256(key . slot))",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: EVM Storage Controller verifies storage pointers, packing and gas refunds",
+            "activeActor": "EVM Storage Controller",
+            "messages": [
+              {
+                "from": "EVM Storage Controller",
+                "to": "PoS Consensus Coordinator",
+                "label": "executeSSTORE(packedSlot, EIP3529Refund)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: PoS Consensus Coordinator finalizes checkpoint and certifies Milestone 2",
+            "activeActor": "PoS Consensus Coordinator",
+            "messages": [
+              {
+                "from": "Vault Depositor",
+                "to": "Decentralized Vault Engine",
+                "label": "submitVaultTransaction(collateral, debt)",
+                "tone": "ok"
+              },
+              {
+                "from": "Decentralized Vault Engine",
+                "to": "EVM Storage Controller",
+                "label": "computeStorageSlot(keccak256(key . slot))",
+                "tone": "ok"
+              },
+              {
+                "from": "EVM Storage Controller",
+                "to": "PoS Consensus Coordinator",
+                "label": "executeSSTORE(packedSlot, EIP3529Refund)",
+                "tone": "ok"
+              },
+              {
+                "from": "PoS Consensus Coordinator",
+                "to": "Decentralized Vault Engine",
+                "label": "Milestone2Certified(Optimal \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Milestone 2 Capstone: The Decentralized Vault Engine Architecture \u2014 Decentralized Vault Sequence",
+        "actors": [
+          "Vault Depositor",
+          "Decentralized Vault Engine",
+          "EVM Storage Controller",
+          "PoS Consensus Coordinator"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Vault Depositor initiates interaction for Milestone 2 Capstone: The Decent",
+            "activeActor": "Vault Depositor",
+            "messages": [
+              {
+                "from": "Vault Depositor",
+                "to": "Decentralized Vault Engine",
+                "label": "submitVaultTransaction(collateral, debt)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Decentralized Vault Engine calculates storage slot mapping and FSM state",
+            "activeActor": "Decentralized Vault Engine",
+            "messages": [
+              {
+                "from": "Decentralized Vault Engine",
+                "to": "EVM Storage Controller",
+                "label": "computeStorageSlot(keccak256(key . slot))",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: EVM Storage Controller verifies storage pointers, packing and gas refunds",
+            "activeActor": "EVM Storage Controller",
+            "messages": [
+              {
+                "from": "EVM Storage Controller",
+                "to": "PoS Consensus Coordinator",
+                "label": "executeSSTORE(packedSlot, EIP3529Refund)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: PoS Consensus Coordinator finalizes checkpoint and certifies Milestone 2",
+            "activeActor": "PoS Consensus Coordinator",
+            "messages": [
+              {
+                "from": "Vault Depositor",
+                "to": "Decentralized Vault Engine",
+                "label": "submitVaultTransaction(collateral, debt)",
+                "tone": "ok"
+              },
+              {
+                "from": "Decentralized Vault Engine",
+                "to": "EVM Storage Controller",
+                "label": "computeStorageSlot(keccak256(key . slot))",
+                "tone": "ok"
+              },
+              {
+                "from": "EVM Storage Controller",
+                "to": "PoS Consensus Coordinator",
+                "label": "executeSSTORE(packedSlot, EIP3529Refund)",
+                "tone": "ok"
+              },
+              {
+                "from": "PoS Consensus Coordinator",
+                "to": "Decentralized Vault Engine",
+                "label": "Milestone2Certified(Optimal \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
