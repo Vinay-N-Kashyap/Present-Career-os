@@ -1,0 +1,2309 @@
+{
+  "schemaVersion": 1,
+  "prefix": "mobile",
+  "day": 6,
+  "promptSha": "ae64889198b89ade1ce98bc237bef7c81028e50b1d44db07fb7fc258ef9eed8d",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Flux Architecture & Redux Toolkit: Slices, Thunks & State Normalization",
+      "codeHash": "1f7d45595949ecb373ee5fafb9b41c4b04340f3b16d7f11e1fe2df0b14fc18d2",
+      "spec": {
+        "template": "component-tree",
+        "title": "Flux Architecture & Redux Toolkit: Slices, Th... — Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "AppShell",
+            "name": "<MobileAppShell />",
+            "props": {
+              "theme": "dark"
+            },
+            "state": {
+              "online": "true"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "StoreProvider",
+            "name": "<StoreProvider />",
+            "props": {
+              "mode": "normalized"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "ScreenView",
+            "name": "<ScreenViewport />",
+            "state": {
+              "loading": "false"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "NativeBridge",
+            "name": "<NativeSensorBridge />",
+            "props": {
+              "fps": "120"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <MobileAppShell /> for Flux Architecture & Redux Tool...",
+            "activeId": "AppShell",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "StoreProvider",
+                "name": "<StoreProvider />",
+                "props": {
+                  "mode": "normalized"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Dispatch actions and reconcile state slices in <StoreProvider />.",
+            "activeId": "StoreProvider",
+            "reRenderingIds": [
+              "StoreProvider",
+              "ScreenView"
+            ],
+            "propsPassed": {
+              "from": "AppShell",
+              "to": "StoreProvider",
+              "propName": "slice",
+              "value": "state"
+            },
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "StoreProvider",
+                "name": "<StoreProvider />",
+                "props": {
+                  "mode": "normalized"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Render responsive UI tree in <ScreenViewport /> at 120 FPS.",
+            "activeId": "ScreenView",
+            "reRenderingIds": [
+              "ScreenView"
+            ],
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "StoreProvider",
+                "name": "<StoreProvider />",
+                "props": {
+                  "mode": "normalized"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Synchronize native bridge telemetry via <NativeSensorBridge />.",
+            "activeId": "NativeBridge",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "StoreProvider",
+                "name": "<StoreProvider />",
+                "props": {
+                  "mode": "normalized"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "title": "Flux Architecture & Redux Toolkit: Slices, Th... — Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "AppShell",
+            "name": "<MobileAppShell />",
+            "props": {
+              "theme": "dark"
+            },
+            "state": {
+              "online": "true"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "StoreProvider",
+            "name": "<StoreProvider />",
+            "props": {
+              "mode": "normalized"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "ScreenView",
+            "name": "<ScreenViewport />",
+            "state": {
+              "loading": "false"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "NativeBridge",
+            "name": "<NativeSensorBridge />",
+            "props": {
+              "fps": "120"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <MobileAppShell /> for Flux Architecture & Redux Tool...",
+            "activeId": "AppShell",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "StoreProvider",
+                "name": "<StoreProvider />",
+                "props": {
+                  "mode": "normalized"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Dispatch actions and reconcile state slices in <StoreProvider />.",
+            "activeId": "StoreProvider",
+            "reRenderingIds": [
+              "StoreProvider",
+              "ScreenView"
+            ],
+            "propsPassed": {
+              "from": "AppShell",
+              "to": "StoreProvider",
+              "propName": "slice",
+              "value": "state"
+            },
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "StoreProvider",
+                "name": "<StoreProvider />",
+                "props": {
+                  "mode": "normalized"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Render responsive UI tree in <ScreenViewport /> at 120 FPS.",
+            "activeId": "ScreenView",
+            "reRenderingIds": [
+              "ScreenView"
+            ],
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "StoreProvider",
+                "name": "<StoreProvider />",
+                "props": {
+                  "mode": "normalized"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Synchronize native bridge telemetry via <NativeSensorBridge />.",
+            "activeId": "NativeBridge",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "StoreProvider",
+                "name": "<StoreProvider />",
+                "props": {
+                  "mode": "normalized"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Transient State & Micro-Stores: Zustand, Context Performance & Atomic Selectors",
+      "codeHash": "6db40a56c57d93f1cc42c3ca5ffbbe2b945595663f506e4acdae9db5e5a3ad0e",
+      "spec": {
+        "template": "component-tree",
+        "title": "Transient State & Micro-Stores: Zustand, Cont... — Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "AppShell",
+            "name": "<MobileAppShell />",
+            "props": {
+              "theme": "dark"
+            },
+            "state": {
+              "online": "true"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "StoreProvider",
+            "name": "<StoreProvider />",
+            "props": {
+              "mode": "normalized"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "ScreenView",
+            "name": "<ScreenViewport />",
+            "state": {
+              "loading": "false"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "NativeBridge",
+            "name": "<NativeSensorBridge />",
+            "props": {
+              "fps": "120"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <MobileAppShell /> for Transient State & Micro-Stores...",
+            "activeId": "AppShell",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "StoreProvider",
+                "name": "<StoreProvider />",
+                "props": {
+                  "mode": "normalized"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Dispatch actions and reconcile state slices in <StoreProvider />.",
+            "activeId": "StoreProvider",
+            "reRenderingIds": [
+              "StoreProvider",
+              "ScreenView"
+            ],
+            "propsPassed": {
+              "from": "AppShell",
+              "to": "StoreProvider",
+              "propName": "slice",
+              "value": "state"
+            },
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "StoreProvider",
+                "name": "<StoreProvider />",
+                "props": {
+                  "mode": "normalized"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Render responsive UI tree in <ScreenViewport /> at 120 FPS.",
+            "activeId": "ScreenView",
+            "reRenderingIds": [
+              "ScreenView"
+            ],
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "StoreProvider",
+                "name": "<StoreProvider />",
+                "props": {
+                  "mode": "normalized"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Synchronize native bridge telemetry via <NativeSensorBridge />.",
+            "activeId": "NativeBridge",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "StoreProvider",
+                "name": "<StoreProvider />",
+                "props": {
+                  "mode": "normalized"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "title": "Transient State & Micro-Stores: Zustand, Cont... — Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "AppShell",
+            "name": "<MobileAppShell />",
+            "props": {
+              "theme": "dark"
+            },
+            "state": {
+              "online": "true"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "StoreProvider",
+            "name": "<StoreProvider />",
+            "props": {
+              "mode": "normalized"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "ScreenView",
+            "name": "<ScreenViewport />",
+            "state": {
+              "loading": "false"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "NativeBridge",
+            "name": "<NativeSensorBridge />",
+            "props": {
+              "fps": "120"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <MobileAppShell /> for Transient State & Micro-Stores...",
+            "activeId": "AppShell",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "StoreProvider",
+                "name": "<StoreProvider />",
+                "props": {
+                  "mode": "normalized"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Dispatch actions and reconcile state slices in <StoreProvider />.",
+            "activeId": "StoreProvider",
+            "reRenderingIds": [
+              "StoreProvider",
+              "ScreenView"
+            ],
+            "propsPassed": {
+              "from": "AppShell",
+              "to": "StoreProvider",
+              "propName": "slice",
+              "value": "state"
+            },
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "StoreProvider",
+                "name": "<StoreProvider />",
+                "props": {
+                  "mode": "normalized"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Render responsive UI tree in <ScreenViewport /> at 120 FPS.",
+            "activeId": "ScreenView",
+            "reRenderingIds": [
+              "ScreenView"
+            ],
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "StoreProvider",
+                "name": "<StoreProvider />",
+                "props": {
+                  "mode": "normalized"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Synchronize native bridge telemetry via <NativeSensorBridge />.",
+            "activeId": "NativeBridge",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "StoreProvider",
+                "name": "<StoreProvider />",
+                "props": {
+                  "mode": "normalized"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "MMKV vs AsyncStorage: Memory-Mapped Files, C++ Native Engine & 100x I/O Throughput",
+      "codeHash": "72d9d30e707e158b4aa1e22574c6273a4bda85fec3f50535804ed4a087497483",
+      "spec": {
+        "template": "component-tree",
+        "title": "MMKV vs AsyncStorage: Memory-Mapped Files, C+... — Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "AppShell",
+            "name": "<MobileAppShell />",
+            "props": {
+              "theme": "dark"
+            },
+            "state": {
+              "online": "true"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "StoreProvider",
+            "name": "<StoreProvider />",
+            "props": {
+              "mode": "normalized"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "ScreenView",
+            "name": "<ScreenViewport />",
+            "state": {
+              "loading": "false"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "NativeBridge",
+            "name": "<NativeSensorBridge />",
+            "props": {
+              "fps": "120"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <MobileAppShell /> for MMKV vs AsyncStorage: Memory-M...",
+            "activeId": "AppShell",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "StoreProvider",
+                "name": "<StoreProvider />",
+                "props": {
+                  "mode": "normalized"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Dispatch actions and reconcile state slices in <StoreProvider />.",
+            "activeId": "StoreProvider",
+            "reRenderingIds": [
+              "StoreProvider",
+              "ScreenView"
+            ],
+            "propsPassed": {
+              "from": "AppShell",
+              "to": "StoreProvider",
+              "propName": "slice",
+              "value": "state"
+            },
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "StoreProvider",
+                "name": "<StoreProvider />",
+                "props": {
+                  "mode": "normalized"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Render responsive UI tree in <ScreenViewport /> at 120 FPS.",
+            "activeId": "ScreenView",
+            "reRenderingIds": [
+              "ScreenView"
+            ],
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "StoreProvider",
+                "name": "<StoreProvider />",
+                "props": {
+                  "mode": "normalized"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Synchronize native bridge telemetry via <NativeSensorBridge />.",
+            "activeId": "NativeBridge",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "StoreProvider",
+                "name": "<StoreProvider />",
+                "props": {
+                  "mode": "normalized"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "title": "MMKV vs AsyncStorage: Memory-Mapped Files, C+... — Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "AppShell",
+            "name": "<MobileAppShell />",
+            "props": {
+              "theme": "dark"
+            },
+            "state": {
+              "online": "true"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "StoreProvider",
+            "name": "<StoreProvider />",
+            "props": {
+              "mode": "normalized"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "ScreenView",
+            "name": "<ScreenViewport />",
+            "state": {
+              "loading": "false"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "NativeBridge",
+            "name": "<NativeSensorBridge />",
+            "props": {
+              "fps": "120"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <MobileAppShell /> for MMKV vs AsyncStorage: Memory-M...",
+            "activeId": "AppShell",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "StoreProvider",
+                "name": "<StoreProvider />",
+                "props": {
+                  "mode": "normalized"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Dispatch actions and reconcile state slices in <StoreProvider />.",
+            "activeId": "StoreProvider",
+            "reRenderingIds": [
+              "StoreProvider",
+              "ScreenView"
+            ],
+            "propsPassed": {
+              "from": "AppShell",
+              "to": "StoreProvider",
+              "propName": "slice",
+              "value": "state"
+            },
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "StoreProvider",
+                "name": "<StoreProvider />",
+                "props": {
+                  "mode": "normalized"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Render responsive UI tree in <ScreenViewport /> at 120 FPS.",
+            "activeId": "ScreenView",
+            "reRenderingIds": [
+              "ScreenView"
+            ],
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "StoreProvider",
+                "name": "<StoreProvider />",
+                "props": {
+                  "mode": "normalized"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Synchronize native bridge telemetry via <NativeSensorBridge />.",
+            "activeId": "NativeBridge",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "StoreProvider",
+                "name": "<StoreProvider />",
+                "props": {
+                  "mode": "normalized"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Offline SQLite Storage & Write-Ahead Logging (WAL): Concurrent Reads & Zero UI-Locking",
+      "codeHash": "664fbb02c3c829549efc86c57039113b2cdd924100cfef11081c3f55b33a6dd4",
+      "spec": {
+        "template": "component-tree",
+        "title": "Offline SQLite Storage & Write-Ahead Logging ... — Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "AppShell",
+            "name": "<MobileAppShell />",
+            "props": {
+              "theme": "dark"
+            },
+            "state": {
+              "online": "true"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "StoreProvider",
+            "name": "<StoreProvider />",
+            "props": {
+              "mode": "normalized"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "ScreenView",
+            "name": "<ScreenViewport />",
+            "state": {
+              "loading": "false"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "NativeBridge",
+            "name": "<NativeSensorBridge />",
+            "props": {
+              "fps": "120"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <MobileAppShell /> for Offline SQLite Storage & Write...",
+            "activeId": "AppShell",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "StoreProvider",
+                "name": "<StoreProvider />",
+                "props": {
+                  "mode": "normalized"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Dispatch actions and reconcile state slices in <StoreProvider />.",
+            "activeId": "StoreProvider",
+            "reRenderingIds": [
+              "StoreProvider",
+              "ScreenView"
+            ],
+            "propsPassed": {
+              "from": "AppShell",
+              "to": "StoreProvider",
+              "propName": "slice",
+              "value": "state"
+            },
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "StoreProvider",
+                "name": "<StoreProvider />",
+                "props": {
+                  "mode": "normalized"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Render responsive UI tree in <ScreenViewport /> at 120 FPS.",
+            "activeId": "ScreenView",
+            "reRenderingIds": [
+              "ScreenView"
+            ],
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "StoreProvider",
+                "name": "<StoreProvider />",
+                "props": {
+                  "mode": "normalized"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Synchronize native bridge telemetry via <NativeSensorBridge />.",
+            "activeId": "NativeBridge",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "StoreProvider",
+                "name": "<StoreProvider />",
+                "props": {
+                  "mode": "normalized"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "title": "Offline SQLite Storage & Write-Ahead Logging ... — Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "AppShell",
+            "name": "<MobileAppShell />",
+            "props": {
+              "theme": "dark"
+            },
+            "state": {
+              "online": "true"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "StoreProvider",
+            "name": "<StoreProvider />",
+            "props": {
+              "mode": "normalized"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "ScreenView",
+            "name": "<ScreenViewport />",
+            "state": {
+              "loading": "false"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "NativeBridge",
+            "name": "<NativeSensorBridge />",
+            "props": {
+              "fps": "120"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <MobileAppShell /> for Offline SQLite Storage & Write...",
+            "activeId": "AppShell",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "StoreProvider",
+                "name": "<StoreProvider />",
+                "props": {
+                  "mode": "normalized"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Dispatch actions and reconcile state slices in <StoreProvider />.",
+            "activeId": "StoreProvider",
+            "reRenderingIds": [
+              "StoreProvider",
+              "ScreenView"
+            ],
+            "propsPassed": {
+              "from": "AppShell",
+              "to": "StoreProvider",
+              "propName": "slice",
+              "value": "state"
+            },
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "StoreProvider",
+                "name": "<StoreProvider />",
+                "props": {
+                  "mode": "normalized"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Render responsive UI tree in <ScreenViewport /> at 120 FPS.",
+            "activeId": "ScreenView",
+            "reRenderingIds": [
+              "ScreenView"
+            ],
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "StoreProvider",
+                "name": "<StoreProvider />",
+                "props": {
+                  "mode": "normalized"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Synchronize native bridge telemetry via <NativeSensorBridge />.",
+            "activeId": "NativeBridge",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "StoreProvider",
+                "name": "<StoreProvider />",
+                "props": {
+                  "mode": "normalized"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "State Hydration, Cache Reconciliation & Monotonic Conflict Resolution Engine",
+      "codeHash": "1725ea4b43da05eea56a1953b1e314297e4b89dbbc580f17aadfe4e3d4ba2dde",
+      "spec": {
+        "template": "component-tree",
+        "title": "State Hydration, Cache Reconciliation & Monot... — Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "AppShell",
+            "name": "<MobileAppShell />",
+            "props": {
+              "theme": "dark"
+            },
+            "state": {
+              "online": "true"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "StoreProvider",
+            "name": "<StoreProvider />",
+            "props": {
+              "mode": "normalized"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "ScreenView",
+            "name": "<ScreenViewport />",
+            "state": {
+              "loading": "false"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "NativeBridge",
+            "name": "<NativeSensorBridge />",
+            "props": {
+              "fps": "120"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <MobileAppShell /> for State Hydration, Cache Reconci...",
+            "activeId": "AppShell",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "StoreProvider",
+                "name": "<StoreProvider />",
+                "props": {
+                  "mode": "normalized"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Dispatch actions and reconcile state slices in <StoreProvider />.",
+            "activeId": "StoreProvider",
+            "reRenderingIds": [
+              "StoreProvider",
+              "ScreenView"
+            ],
+            "propsPassed": {
+              "from": "AppShell",
+              "to": "StoreProvider",
+              "propName": "slice",
+              "value": "state"
+            },
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "StoreProvider",
+                "name": "<StoreProvider />",
+                "props": {
+                  "mode": "normalized"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Render responsive UI tree in <ScreenViewport /> at 120 FPS.",
+            "activeId": "ScreenView",
+            "reRenderingIds": [
+              "ScreenView"
+            ],
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "StoreProvider",
+                "name": "<StoreProvider />",
+                "props": {
+                  "mode": "normalized"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Synchronize native bridge telemetry via <NativeSensorBridge />.",
+            "activeId": "NativeBridge",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "StoreProvider",
+                "name": "<StoreProvider />",
+                "props": {
+                  "mode": "normalized"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "title": "State Hydration, Cache Reconciliation & Monot... — Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "AppShell",
+            "name": "<MobileAppShell />",
+            "props": {
+              "theme": "dark"
+            },
+            "state": {
+              "online": "true"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "StoreProvider",
+            "name": "<StoreProvider />",
+            "props": {
+              "mode": "normalized"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "ScreenView",
+            "name": "<ScreenViewport />",
+            "state": {
+              "loading": "false"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "NativeBridge",
+            "name": "<NativeSensorBridge />",
+            "props": {
+              "fps": "120"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <MobileAppShell /> for State Hydration, Cache Reconci...",
+            "activeId": "AppShell",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "StoreProvider",
+                "name": "<StoreProvider />",
+                "props": {
+                  "mode": "normalized"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Dispatch actions and reconcile state slices in <StoreProvider />.",
+            "activeId": "StoreProvider",
+            "reRenderingIds": [
+              "StoreProvider",
+              "ScreenView"
+            ],
+            "propsPassed": {
+              "from": "AppShell",
+              "to": "StoreProvider",
+              "propName": "slice",
+              "value": "state"
+            },
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "StoreProvider",
+                "name": "<StoreProvider />",
+                "props": {
+                  "mode": "normalized"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Render responsive UI tree in <ScreenViewport /> at 120 FPS.",
+            "activeId": "ScreenView",
+            "reRenderingIds": [
+              "ScreenView"
+            ],
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "StoreProvider",
+                "name": "<StoreProvider />",
+                "props": {
+                  "mode": "normalized"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Synchronize native bridge telemetry via <NativeSensorBridge />.",
+            "activeId": "NativeBridge",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "theme": "dark"
+                },
+                "state": {
+                  "online": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "StoreProvider",
+                "name": "<StoreProvider />",
+                "props": {
+                  "mode": "normalized"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ScreenView",
+                "name": "<ScreenViewport />",
+                "state": {
+                  "loading": "false"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "NativeBridge",
+                "name": "<NativeSensorBridge />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
