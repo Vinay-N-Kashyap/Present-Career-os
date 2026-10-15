@@ -675,5 +675,43 @@ test('Mobile Day 11: Camera, Media Library Permissions & VisionCamera C++ Workle
   assert.ok(mobileLesson11.parts[4].code?.includes('MobileHardwareMasterEngine'));
 });
 
+test('Mobile Day 12: Geolocation, High-Precision GNSS, Geofencing & Map Clustering Verification', () => {
+  const mobileLesson12 = getLongLesson('mobile', 12);
+  assert.ok(mobileLesson12, 'Mobile Day 12 long lesson must resolve');
+  assert.equal(mobileLesson12.day, 12);
+  assert.equal(mobileLesson12.parts.length, 5, 'Mobile Day 12 must contain exactly 5 parts');
+  assert.ok(mobileLesson12.summary.length >= 4, 'Mobile Day 12 must contain summary points');
+  assert.ok(mobileLesson12.projectStep, 'Mobile Day 12 must have projectStep');
+
+  const spokenMin = estimateSpokenMinutes(mobileLesson12);
+  const totalMin = estimateLessonMinutes(mobileLesson12);
+  assert.ok(spokenMin >= 20, `Spoken minutes should be >= 20 (got ${spokenMin})`);
+  assert.ok(totalMin >= 35 && totalMin <= 40, `Total minutes should be between 35 and 40 (got ${totalMin})`);
+
+  for (let i = 0; i < mobileLesson12.parts.length; i++) {
+    const part = mobileLesson12.parts[i];
+    assert.ok(part.title.length > 0, `Part ${i + 1} must have a non-empty title`);
+    assert.ok(part.say.length >= 5, `Part ${i + 1} must have at least 5 explanation paragraphs`);
+    assert.ok(part.example && part.example.length > 0, `Part ${i + 1} must have a real-world example`);
+    assert.ok(part.code && part.code.includes('console.log('), `Part ${i + 1} code must print results`);
+    assert.ok(part.output && part.output.length > 0, `Part ${i + 1} must have deterministic expected output`);
+    assert.ok(part.tryIt && part.tryIt.length > 0, `Part ${i + 1} must have a tryIt experiment`);
+
+    // Socratic Check validation
+    const check = part.check as any;
+    assert.ok(check.question.length > 10, `Part ${i + 1} check question must be descriptive`);
+    assert.ok(check.options.length >= 4, `Part ${i + 1} check must have >= 4 options`);
+    assert.ok(check.answer >= 0 && check.answer < check.options.length, `Part ${i + 1} answer must be valid`);
+    assert.ok(check.why.length > 15, `Part ${i + 1} check explanation must be rigorous`);
+  }
+
+  // Domain specifics
+  assert.ok(mobileLesson12.parts[0].code?.includes('GpsAccuracyGate'));
+  assert.ok(mobileLesson12.parts[1].code?.includes('LocationPermissionEscalationEngine'));
+  assert.ok(mobileLesson12.parts[2].code?.includes('BackgroundGeofenceManager'));
+  assert.ok(mobileLesson12.parts[3].code?.includes('MapMarkerClusteringEngine'));
+  assert.ok(mobileLesson12.parts[4].code?.includes('MobileGeolocationMasterEngine'));
+});
+
 
 

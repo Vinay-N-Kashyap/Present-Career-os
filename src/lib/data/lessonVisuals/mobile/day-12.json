@@ -1,0 +1,1119 @@
+{
+  "schemaVersion": 1,
+  "prefix": "mobile",
+  "day": 12,
+  "promptSha": "a37dd585913cb8ce57ad2abd250c6d023ff7665a8cbf024cd9704b31d10c3021",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "High-Precision GNSS Positioning & Accuracy Filtering: Mitigating Multipath Noise",
+      "codeHash": "b1096dc099475cfa1d8c4679ff4f8f29cda3bbe31216a6c9f09f8e1e1b034e77",
+      "spec": {
+        "template": "component-tree",
+        "title": "High-Precision GNSS Positioning & Accuracy Fi... \u2014 Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "SpatialAppRoot",
+            "name": "<SpatialNavigationApp />",
+            "props": {
+              "accuracy": "HIGH_GNSS"
+            },
+            "state": {
+              "tracking": "ACTIVE"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "AccuracyGate",
+            "name": "<GpsAccuracyBoundary />",
+            "props": {
+              "maxMeters": "20"
+            },
+            "tone": "accent"
+          },
+          {
+            "id": "GeofenceEngine",
+            "name": "<CoprocessorGeofenceManager />",
+            "props": {
+              "batteryMode": "LOW_POWER",
+              "maxRegions": "20"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "ClusterMapView",
+            "name": "<SuperclusterMapView />",
+            "props": {
+              "maxMarkers": "50",
+              "fps": "60"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <SpatialNavigationApp /> for High-Precision GNSS Positionin...",
+            "activeId": "SpatialAppRoot",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "SpatialAppRoot",
+                "name": "<SpatialNavigationApp />",
+                "props": {
+                  "stage": "INITIALIZING"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Engage <GpsAccuracyBoundary /> to filter multipath GPS noise > 20m",
+            "activeId": "AccuracyGate",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "AccuracyGate",
+                "name": "<GpsAccuracyBoundary />",
+                "props": {
+                  "filtering": "ACTIVE"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Monitor geofence regions on low-power <CoprocessorGeofenceManager /> (<1% battery/day)",
+            "activeId": "GeofenceEngine",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "GeofenceEngine",
+                "name": "<CoprocessorGeofenceManager />",
+                "props": {
+                  "watchdog": "30s"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Render spatial pins via <SuperclusterMapView /> at locked 60 FPS",
+            "activeId": "ClusterMapView",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "ClusterMapView",
+                "name": "<SuperclusterMapView />",
+                "props": {
+                  "fps": "60_LOCKED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "title": "High-Precision GNSS Positioning & Accuracy Fi... \u2014 Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "SpatialAppRoot",
+            "name": "<SpatialNavigationApp />",
+            "props": {
+              "accuracy": "HIGH_GNSS"
+            },
+            "state": {
+              "tracking": "ACTIVE"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "AccuracyGate",
+            "name": "<GpsAccuracyBoundary />",
+            "props": {
+              "maxMeters": "20"
+            },
+            "tone": "accent"
+          },
+          {
+            "id": "GeofenceEngine",
+            "name": "<CoprocessorGeofenceManager />",
+            "props": {
+              "batteryMode": "LOW_POWER",
+              "maxRegions": "20"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "ClusterMapView",
+            "name": "<SuperclusterMapView />",
+            "props": {
+              "maxMarkers": "50",
+              "fps": "60"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <SpatialNavigationApp /> for High-Precision GNSS Positionin...",
+            "activeId": "SpatialAppRoot",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "SpatialAppRoot",
+                "name": "<SpatialNavigationApp />",
+                "props": {
+                  "stage": "INITIALIZING"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Engage <GpsAccuracyBoundary /> to filter multipath GPS noise > 20m",
+            "activeId": "AccuracyGate",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "AccuracyGate",
+                "name": "<GpsAccuracyBoundary />",
+                "props": {
+                  "filtering": "ACTIVE"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Monitor geofence regions on low-power <CoprocessorGeofenceManager /> (<1% battery/day)",
+            "activeId": "GeofenceEngine",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "GeofenceEngine",
+                "name": "<CoprocessorGeofenceManager />",
+                "props": {
+                  "watchdog": "30s"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Render spatial pins via <SuperclusterMapView /> at locked 60 FPS",
+            "activeId": "ClusterMapView",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "ClusterMapView",
+                "name": "<SuperclusterMapView />",
+                "props": {
+                  "fps": "60_LOCKED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Foreground vs Background Location Sandboxes: OS Escalation & App Store Compliance",
+      "codeHash": "d6f6424f9af8fe61a98465c872d53c13468e8273cc058e7cfe91ab12e8b04ae1",
+      "spec": {
+        "template": "component-tree",
+        "title": "Foreground vs Background Location Sandboxes: ... \u2014 Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "SpatialAppRoot",
+            "name": "<SpatialNavigationApp />",
+            "props": {
+              "accuracy": "HIGH_GNSS"
+            },
+            "state": {
+              "tracking": "ACTIVE"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "AccuracyGate",
+            "name": "<GpsAccuracyBoundary />",
+            "props": {
+              "maxMeters": "20"
+            },
+            "tone": "accent"
+          },
+          {
+            "id": "GeofenceEngine",
+            "name": "<CoprocessorGeofenceManager />",
+            "props": {
+              "batteryMode": "LOW_POWER",
+              "maxRegions": "20"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "ClusterMapView",
+            "name": "<SuperclusterMapView />",
+            "props": {
+              "maxMarkers": "50",
+              "fps": "60"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <SpatialNavigationApp /> for Foreground vs Background Locat...",
+            "activeId": "SpatialAppRoot",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "SpatialAppRoot",
+                "name": "<SpatialNavigationApp />",
+                "props": {
+                  "stage": "INITIALIZING"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Engage <GpsAccuracyBoundary /> to filter multipath GPS noise > 20m",
+            "activeId": "AccuracyGate",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "AccuracyGate",
+                "name": "<GpsAccuracyBoundary />",
+                "props": {
+                  "filtering": "ACTIVE"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Monitor geofence regions on low-power <CoprocessorGeofenceManager /> (<1% battery/day)",
+            "activeId": "GeofenceEngine",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "GeofenceEngine",
+                "name": "<CoprocessorGeofenceManager />",
+                "props": {
+                  "watchdog": "30s"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Render spatial pins via <SuperclusterMapView /> at locked 60 FPS",
+            "activeId": "ClusterMapView",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "ClusterMapView",
+                "name": "<SuperclusterMapView />",
+                "props": {
+                  "fps": "60_LOCKED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "title": "Foreground vs Background Location Sandboxes: ... \u2014 Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "SpatialAppRoot",
+            "name": "<SpatialNavigationApp />",
+            "props": {
+              "accuracy": "HIGH_GNSS"
+            },
+            "state": {
+              "tracking": "ACTIVE"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "AccuracyGate",
+            "name": "<GpsAccuracyBoundary />",
+            "props": {
+              "maxMeters": "20"
+            },
+            "tone": "accent"
+          },
+          {
+            "id": "GeofenceEngine",
+            "name": "<CoprocessorGeofenceManager />",
+            "props": {
+              "batteryMode": "LOW_POWER",
+              "maxRegions": "20"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "ClusterMapView",
+            "name": "<SuperclusterMapView />",
+            "props": {
+              "maxMarkers": "50",
+              "fps": "60"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <SpatialNavigationApp /> for Foreground vs Background Locat...",
+            "activeId": "SpatialAppRoot",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "SpatialAppRoot",
+                "name": "<SpatialNavigationApp />",
+                "props": {
+                  "stage": "INITIALIZING"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Engage <GpsAccuracyBoundary /> to filter multipath GPS noise > 20m",
+            "activeId": "AccuracyGate",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "AccuracyGate",
+                "name": "<GpsAccuracyBoundary />",
+                "props": {
+                  "filtering": "ACTIVE"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Monitor geofence regions on low-power <CoprocessorGeofenceManager /> (<1% battery/day)",
+            "activeId": "GeofenceEngine",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "GeofenceEngine",
+                "name": "<CoprocessorGeofenceManager />",
+                "props": {
+                  "watchdog": "30s"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Render spatial pins via <SuperclusterMapView /> at locked 60 FPS",
+            "activeId": "ClusterMapView",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "ClusterMapView",
+                "name": "<SuperclusterMapView />",
+                "props": {
+                  "fps": "60_LOCKED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Background Geolocation, Geofencing & Battery Pacing: TaskManager & Significant Motion",
+      "codeHash": "3705285bc9c41c46ee26ff0bafac0289bb0e3760cb1b9b50a2ce0949932a0e12",
+      "spec": {
+        "template": "component-tree",
+        "title": "Background Geolocation, Geofencing & Battery ... \u2014 Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "SpatialAppRoot",
+            "name": "<SpatialNavigationApp />",
+            "props": {
+              "accuracy": "HIGH_GNSS"
+            },
+            "state": {
+              "tracking": "ACTIVE"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "AccuracyGate",
+            "name": "<GpsAccuracyBoundary />",
+            "props": {
+              "maxMeters": "20"
+            },
+            "tone": "accent"
+          },
+          {
+            "id": "GeofenceEngine",
+            "name": "<CoprocessorGeofenceManager />",
+            "props": {
+              "batteryMode": "LOW_POWER",
+              "maxRegions": "20"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "ClusterMapView",
+            "name": "<SuperclusterMapView />",
+            "props": {
+              "maxMarkers": "50",
+              "fps": "60"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <SpatialNavigationApp /> for Background Geolocation, Geofen...",
+            "activeId": "SpatialAppRoot",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "SpatialAppRoot",
+                "name": "<SpatialNavigationApp />",
+                "props": {
+                  "stage": "INITIALIZING"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Engage <GpsAccuracyBoundary /> to filter multipath GPS noise > 20m",
+            "activeId": "AccuracyGate",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "AccuracyGate",
+                "name": "<GpsAccuracyBoundary />",
+                "props": {
+                  "filtering": "ACTIVE"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Monitor geofence regions on low-power <CoprocessorGeofenceManager /> (<1% battery/day)",
+            "activeId": "GeofenceEngine",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "GeofenceEngine",
+                "name": "<CoprocessorGeofenceManager />",
+                "props": {
+                  "watchdog": "30s"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Render spatial pins via <SuperclusterMapView /> at locked 60 FPS",
+            "activeId": "ClusterMapView",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "ClusterMapView",
+                "name": "<SuperclusterMapView />",
+                "props": {
+                  "fps": "60_LOCKED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "title": "Background Geolocation, Geofencing & Battery ... \u2014 Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "SpatialAppRoot",
+            "name": "<SpatialNavigationApp />",
+            "props": {
+              "accuracy": "HIGH_GNSS"
+            },
+            "state": {
+              "tracking": "ACTIVE"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "AccuracyGate",
+            "name": "<GpsAccuracyBoundary />",
+            "props": {
+              "maxMeters": "20"
+            },
+            "tone": "accent"
+          },
+          {
+            "id": "GeofenceEngine",
+            "name": "<CoprocessorGeofenceManager />",
+            "props": {
+              "batteryMode": "LOW_POWER",
+              "maxRegions": "20"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "ClusterMapView",
+            "name": "<SuperclusterMapView />",
+            "props": {
+              "maxMarkers": "50",
+              "fps": "60"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <SpatialNavigationApp /> for Background Geolocation, Geofen...",
+            "activeId": "SpatialAppRoot",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "SpatialAppRoot",
+                "name": "<SpatialNavigationApp />",
+                "props": {
+                  "stage": "INITIALIZING"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Engage <GpsAccuracyBoundary /> to filter multipath GPS noise > 20m",
+            "activeId": "AccuracyGate",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "AccuracyGate",
+                "name": "<GpsAccuracyBoundary />",
+                "props": {
+                  "filtering": "ACTIVE"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Monitor geofence regions on low-power <CoprocessorGeofenceManager /> (<1% battery/day)",
+            "activeId": "GeofenceEngine",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "GeofenceEngine",
+                "name": "<CoprocessorGeofenceManager />",
+                "props": {
+                  "watchdog": "30s"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Render spatial pins via <SuperclusterMapView /> at locked 60 FPS",
+            "activeId": "ClusterMapView",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "ClusterMapView",
+                "name": "<SuperclusterMapView />",
+                "props": {
+                  "fps": "60_LOCKED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Interactive Maps, Polyline Geometry & Spatial Clustering: 60 FPS Native MapKit",
+      "codeHash": "994e2b5e94495d4734e9e1e8d1e26c712fc394680358e70c2caf3a3315a36dd3",
+      "spec": {
+        "template": "component-tree",
+        "title": "Interactive Maps, Polyline Geometry & Spatial... \u2014 Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "SpatialAppRoot",
+            "name": "<SpatialNavigationApp />",
+            "props": {
+              "accuracy": "HIGH_GNSS"
+            },
+            "state": {
+              "tracking": "ACTIVE"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "AccuracyGate",
+            "name": "<GpsAccuracyBoundary />",
+            "props": {
+              "maxMeters": "20"
+            },
+            "tone": "accent"
+          },
+          {
+            "id": "GeofenceEngine",
+            "name": "<CoprocessorGeofenceManager />",
+            "props": {
+              "batteryMode": "LOW_POWER",
+              "maxRegions": "20"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "ClusterMapView",
+            "name": "<SuperclusterMapView />",
+            "props": {
+              "maxMarkers": "50",
+              "fps": "60"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <SpatialNavigationApp /> for Interactive Maps, Polyline Geo...",
+            "activeId": "SpatialAppRoot",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "SpatialAppRoot",
+                "name": "<SpatialNavigationApp />",
+                "props": {
+                  "stage": "INITIALIZING"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Engage <GpsAccuracyBoundary /> to filter multipath GPS noise > 20m",
+            "activeId": "AccuracyGate",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "AccuracyGate",
+                "name": "<GpsAccuracyBoundary />",
+                "props": {
+                  "filtering": "ACTIVE"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Monitor geofence regions on low-power <CoprocessorGeofenceManager /> (<1% battery/day)",
+            "activeId": "GeofenceEngine",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "GeofenceEngine",
+                "name": "<CoprocessorGeofenceManager />",
+                "props": {
+                  "watchdog": "30s"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Render spatial pins via <SuperclusterMapView /> at locked 60 FPS",
+            "activeId": "ClusterMapView",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "ClusterMapView",
+                "name": "<SuperclusterMapView />",
+                "props": {
+                  "fps": "60_LOCKED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "title": "Interactive Maps, Polyline Geometry & Spatial... \u2014 Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "SpatialAppRoot",
+            "name": "<SpatialNavigationApp />",
+            "props": {
+              "accuracy": "HIGH_GNSS"
+            },
+            "state": {
+              "tracking": "ACTIVE"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "AccuracyGate",
+            "name": "<GpsAccuracyBoundary />",
+            "props": {
+              "maxMeters": "20"
+            },
+            "tone": "accent"
+          },
+          {
+            "id": "GeofenceEngine",
+            "name": "<CoprocessorGeofenceManager />",
+            "props": {
+              "batteryMode": "LOW_POWER",
+              "maxRegions": "20"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "ClusterMapView",
+            "name": "<SuperclusterMapView />",
+            "props": {
+              "maxMarkers": "50",
+              "fps": "60"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <SpatialNavigationApp /> for Interactive Maps, Polyline Geo...",
+            "activeId": "SpatialAppRoot",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "SpatialAppRoot",
+                "name": "<SpatialNavigationApp />",
+                "props": {
+                  "stage": "INITIALIZING"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Engage <GpsAccuracyBoundary /> to filter multipath GPS noise > 20m",
+            "activeId": "AccuracyGate",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "AccuracyGate",
+                "name": "<GpsAccuracyBoundary />",
+                "props": {
+                  "filtering": "ACTIVE"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Monitor geofence regions on low-power <CoprocessorGeofenceManager /> (<1% battery/day)",
+            "activeId": "GeofenceEngine",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "GeofenceEngine",
+                "name": "<CoprocessorGeofenceManager />",
+                "props": {
+                  "watchdog": "30s"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Render spatial pins via <SuperclusterMapView /> at locked 60 FPS",
+            "activeId": "ClusterMapView",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "ClusterMapView",
+                "name": "<SuperclusterMapView />",
+                "props": {
+                  "fps": "60_LOCKED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Fleet Geolocation & Geofence Dispatch Pipeline: Master Simulator",
+      "codeHash": "8664728e659bd34b44ac9c9451596ee94dfdab494a6b4fcde5f666609aa4d9ad",
+      "spec": {
+        "template": "component-tree",
+        "title": "Enterprise Fleet Geolocation & Geofence Dispa... \u2014 Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "SpatialAppRoot",
+            "name": "<SpatialNavigationApp />",
+            "props": {
+              "accuracy": "HIGH_GNSS"
+            },
+            "state": {
+              "tracking": "ACTIVE"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "AccuracyGate",
+            "name": "<GpsAccuracyBoundary />",
+            "props": {
+              "maxMeters": "20"
+            },
+            "tone": "accent"
+          },
+          {
+            "id": "GeofenceEngine",
+            "name": "<CoprocessorGeofenceManager />",
+            "props": {
+              "batteryMode": "LOW_POWER",
+              "maxRegions": "20"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "ClusterMapView",
+            "name": "<SuperclusterMapView />",
+            "props": {
+              "maxMarkers": "50",
+              "fps": "60"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <SpatialNavigationApp /> for Enterprise Fleet Geolocation &...",
+            "activeId": "SpatialAppRoot",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "SpatialAppRoot",
+                "name": "<SpatialNavigationApp />",
+                "props": {
+                  "stage": "INITIALIZING"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Engage <GpsAccuracyBoundary /> to filter multipath GPS noise > 20m",
+            "activeId": "AccuracyGate",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "AccuracyGate",
+                "name": "<GpsAccuracyBoundary />",
+                "props": {
+                  "filtering": "ACTIVE"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Monitor geofence regions on low-power <CoprocessorGeofenceManager /> (<1% battery/day)",
+            "activeId": "GeofenceEngine",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "GeofenceEngine",
+                "name": "<CoprocessorGeofenceManager />",
+                "props": {
+                  "watchdog": "30s"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Render spatial pins via <SuperclusterMapView /> at locked 60 FPS",
+            "activeId": "ClusterMapView",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "ClusterMapView",
+                "name": "<SuperclusterMapView />",
+                "props": {
+                  "fps": "60_LOCKED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "title": "Enterprise Fleet Geolocation & Geofence Dispa... \u2014 Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "SpatialAppRoot",
+            "name": "<SpatialNavigationApp />",
+            "props": {
+              "accuracy": "HIGH_GNSS"
+            },
+            "state": {
+              "tracking": "ACTIVE"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "AccuracyGate",
+            "name": "<GpsAccuracyBoundary />",
+            "props": {
+              "maxMeters": "20"
+            },
+            "tone": "accent"
+          },
+          {
+            "id": "GeofenceEngine",
+            "name": "<CoprocessorGeofenceManager />",
+            "props": {
+              "batteryMode": "LOW_POWER",
+              "maxRegions": "20"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "ClusterMapView",
+            "name": "<SuperclusterMapView />",
+            "props": {
+              "maxMarkers": "50",
+              "fps": "60"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <SpatialNavigationApp /> for Enterprise Fleet Geolocation &...",
+            "activeId": "SpatialAppRoot",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "SpatialAppRoot",
+                "name": "<SpatialNavigationApp />",
+                "props": {
+                  "stage": "INITIALIZING"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Engage <GpsAccuracyBoundary /> to filter multipath GPS noise > 20m",
+            "activeId": "AccuracyGate",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "AccuracyGate",
+                "name": "<GpsAccuracyBoundary />",
+                "props": {
+                  "filtering": "ACTIVE"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Monitor geofence regions on low-power <CoprocessorGeofenceManager /> (<1% battery/day)",
+            "activeId": "GeofenceEngine",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "GeofenceEngine",
+                "name": "<CoprocessorGeofenceManager />",
+                "props": {
+                  "watchdog": "30s"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Render spatial pins via <SuperclusterMapView /> at locked 60 FPS",
+            "activeId": "ClusterMapView",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "ClusterMapView",
+                "name": "<SuperclusterMapView />",
+                "props": {
+                  "fps": "60_LOCKED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

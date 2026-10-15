@@ -64,13 +64,13 @@ test('Block 146: Advanced Systems, Mobile & Graphics On-Disk Visual Suites (Days
   }
 });
 
-test('Mobile Expansion (Days 6–11): Component-Tree Visual Spec Verification', () => {
+test('Mobile Expansion (Days 6–12): Component-Tree Visual Spec Verification', () => {
   clearDayFileCache();
   const prefix = 'mobile';
   const expectedTemplate = 'component-tree';
 
-  // Test currently generated days (6-11 complete)
-  for (let day = 6; day <= 11; day++) {
+  // Test currently generated days (6-12 complete)
+  for (let day = 6; day <= 12; day++) {
     const dayPadded = String(day).padStart(2, '0');
     const filePath = path.resolve(process.cwd(), `src/lib/data/lessonVisuals/${prefix}/day-${dayPadded}.json`);
     assert.ok(fs.existsSync(filePath), `On-disk visual file missing: ${filePath}`);
