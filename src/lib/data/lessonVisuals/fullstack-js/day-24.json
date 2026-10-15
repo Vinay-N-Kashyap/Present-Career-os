@@ -1,0 +1,544 @@
+{
+  "schemaVersion": 1,
+  "prefix": "fullstack-js",
+  "day": 24,
+  "promptSha": "9b593d46a20e2ff02d8f71018eabfcd47bce5a84e09432a014fb2bd552044fdc",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Containerization Fundamentals & Docker Layer Caching Mechanics",
+      "codeHash": "f3574433184d4d17a733b6f59313766724b441ee1462c0d7f106b0900c14eea1",
+      "spec": {
+        "template": "flow",
+        "title": "Containerization Fundamentals & Doc... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Ingress Stream / Request Frame",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Containerization Fundamentals & Doc...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Distributed State",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingress stream payload and initialize Containerization Fundamentals & Doc....",
+            "values": {
+              "in": "Stream Ingress",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute protocol handling, encoding, and routing in Containerization Fundamentals & Doc....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "active",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world distributed microservices interaction in Containerization Fundamentals & Doc....",
+            "values": {
+              "in": "Active Flow",
+              "proc": "Executing",
+              "out": "State Converged"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "active",
+              "out": "active"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify backpressure, container bounds, and telemetry health in Containerization Fundamentals & Doc....",
+            "values": {
+              "in": "Terminal State",
+              "proc": "Quiesced",
+              "out": "Verified State"
+            },
+            "tones": {
+              "in": "success",
+              "proc": "success",
+              "out": "success"
+            },
+            "arrows": [
+              [
+                "in",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Multi-Stage Production Builds & Next.js Standalone Output",
+      "codeHash": "ac090b016bcaf3fbc1c5e472fbfc3fd93569b6f44b6be1a08db2ffeabc6db9a1",
+      "spec": {
+        "template": "flow",
+        "title": "Multi-Stage Production Builds & Nex... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Ingress Stream / Request Frame",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Multi-Stage Production Builds & Nex...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Distributed State",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingress stream payload and initialize Multi-Stage Production Builds & Nex....",
+            "values": {
+              "in": "Stream Ingress",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute protocol handling, encoding, and routing in Multi-Stage Production Builds & Nex....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "active",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world distributed microservices interaction in Multi-Stage Production Builds & Nex....",
+            "values": {
+              "in": "Active Flow",
+              "proc": "Executing",
+              "out": "State Converged"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "active",
+              "out": "active"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify backpressure, container bounds, and telemetry health in Multi-Stage Production Builds & Nex....",
+            "values": {
+              "in": "Terminal State",
+              "proc": "Quiesced",
+              "out": "Verified State"
+            },
+            "tones": {
+              "in": "success",
+              "proc": "success",
+              "out": "success"
+            },
+            "arrows": [
+              [
+                "in",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Container Hardening: Non-Root Users, Alpine Linux & Distroless Security",
+      "codeHash": "7b6b1a161094f1c2a392c2f472d21545cc6cc0dde71564f3a1856c2d34335d4f",
+      "spec": {
+        "template": "flow",
+        "title": "Container Hardening: Non-Root Users... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Ingress Stream / Request Frame",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Container Hardening: Non-Root Users...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Distributed State",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingress stream payload and initialize Container Hardening: Non-Root Users....",
+            "values": {
+              "in": "Stream Ingress",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute protocol handling, encoding, and routing in Container Hardening: Non-Root Users....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "active",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world distributed microservices interaction in Container Hardening: Non-Root Users....",
+            "values": {
+              "in": "Active Flow",
+              "proc": "Executing",
+              "out": "State Converged"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "active",
+              "out": "active"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify backpressure, container bounds, and telemetry health in Container Hardening: Non-Root Users....",
+            "values": {
+              "in": "Terminal State",
+              "proc": "Quiesced",
+              "out": "Verified State"
+            },
+            "tones": {
+              "in": "success",
+              "proc": "success",
+              "out": "success"
+            },
+            "arrows": [
+              [
+                "in",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Container Lifecycle: Liveness, Readiness & Graceful Shutdown",
+      "codeHash": "2cf54ee3ea04490b375ceded295b21dadf3a6786478ca71f5457c1ff9aed6d6f",
+      "spec": {
+        "template": "flow",
+        "title": "Container Lifecycle: Liveness, Read... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Ingress Stream / Request Frame",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Container Lifecycle: Liveness, Read...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Distributed State",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingress stream payload and initialize Container Lifecycle: Liveness, Read....",
+            "values": {
+              "in": "Stream Ingress",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute protocol handling, encoding, and routing in Container Lifecycle: Liveness, Read....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "active",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world distributed microservices interaction in Container Lifecycle: Liveness, Read....",
+            "values": {
+              "in": "Active Flow",
+              "proc": "Executing",
+              "out": "State Converged"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "active",
+              "out": "active"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify backpressure, container bounds, and telemetry health in Container Lifecycle: Liveness, Read....",
+            "values": {
+              "in": "Terminal State",
+              "proc": "Quiesced",
+              "out": "Verified State"
+            },
+            "tones": {
+              "in": "success",
+              "proc": "success",
+              "out": "success"
+            },
+            "arrows": [
+              [
+                "in",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Docker Compose Orchestration, Volume Persistence & Bridge Networks",
+      "codeHash": "8a15488eaf29551ae0bbdd1bc96f9e394a10aeabad4d37dfb8675ce6f09c6337",
+      "spec": {
+        "template": "flow",
+        "title": "Docker Compose Orchestration, Volum... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Ingress Stream / Request Frame",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Docker Compose Orchestration, Volum...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Distributed State",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingress stream payload and initialize Docker Compose Orchestration, Volum....",
+            "values": {
+              "in": "Stream Ingress",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute protocol handling, encoding, and routing in Docker Compose Orchestration, Volum....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "active",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world distributed microservices interaction in Docker Compose Orchestration, Volum....",
+            "values": {
+              "in": "Active Flow",
+              "proc": "Executing",
+              "out": "State Converged"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "active",
+              "out": "active"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify backpressure, container bounds, and telemetry health in Docker Compose Orchestration, Volum....",
+            "values": {
+              "in": "Terminal State",
+              "proc": "Quiesced",
+              "out": "Verified State"
+            },
+            "tones": {
+              "in": "success",
+              "proc": "success",
+              "out": "success"
+            },
+            "arrows": [
+              [
+                "in",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

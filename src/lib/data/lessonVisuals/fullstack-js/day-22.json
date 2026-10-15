@@ -1,0 +1,544 @@
+{
+  "schemaVersion": 1,
+  "prefix": "fullstack-js",
+  "day": 22,
+  "promptSha": "9f286703192d5e1eb85d35cbb1bf92897b945fb4795ff71dce8d2dbbec0da987",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Protocol Buffers (Protobuf) Binary Encoding & Schema Invariants",
+      "codeHash": "572c187abb5a15ac34016700d2f7cf5b24cabf5a799a5cffb69293c74ff7a23b",
+      "spec": {
+        "template": "flow",
+        "title": "Protocol Buffers (Protobuf) Binary ... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Ingress Stream / Request Frame",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Protocol Buffers (Protobuf) Binary ...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Distributed State",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingress stream payload and initialize Protocol Buffers (Protobuf) Binary ....",
+            "values": {
+              "in": "Stream Ingress",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute protocol handling, encoding, and routing in Protocol Buffers (Protobuf) Binary ....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "active",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world distributed microservices interaction in Protocol Buffers (Protobuf) Binary ....",
+            "values": {
+              "in": "Active Flow",
+              "proc": "Executing",
+              "out": "State Converged"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "active",
+              "out": "active"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify backpressure, container bounds, and telemetry health in Protocol Buffers (Protobuf) Binary ....",
+            "values": {
+              "in": "Terminal State",
+              "proc": "Quiesced",
+              "out": "Verified State"
+            },
+            "tones": {
+              "in": "success",
+              "proc": "success",
+              "out": "success"
+            },
+            "arrows": [
+              [
+                "in",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "gRPC Architecture & HTTP/2 Multiplexed Transport Mechanics",
+      "codeHash": "af12c091cb0be0a47cec67a28741b4ab92cff2fdbc0d2657443d45b4478d3afb",
+      "spec": {
+        "template": "flow",
+        "title": "gRPC Architecture & HTTP/2 Multiple... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Ingress Stream / Request Frame",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. gRPC Architecture & HTTP/2 Multiple...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Distributed State",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingress stream payload and initialize gRPC Architecture & HTTP/2 Multiple....",
+            "values": {
+              "in": "Stream Ingress",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute protocol handling, encoding, and routing in gRPC Architecture & HTTP/2 Multiple....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "active",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world distributed microservices interaction in gRPC Architecture & HTTP/2 Multiple....",
+            "values": {
+              "in": "Active Flow",
+              "proc": "Executing",
+              "out": "State Converged"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "active",
+              "out": "active"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify backpressure, container bounds, and telemetry health in gRPC Architecture & HTTP/2 Multiple....",
+            "values": {
+              "in": "Terminal State",
+              "proc": "Quiesced",
+              "out": "Verified State"
+            },
+            "tones": {
+              "in": "success",
+              "proc": "success",
+              "out": "success"
+            },
+            "arrows": [
+              [
+                "in",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Deadlines, Context Cancellation & Cascading Timeout Mitigation",
+      "codeHash": "4c0b5e6cd80a4b4754541b7e2e971167e499bb7fcf0dc1d22d16a329b151569e",
+      "spec": {
+        "template": "flow",
+        "title": "Deadlines, Context Cancellation & C... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Ingress Stream / Request Frame",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Deadlines, Context Cancellation & C...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Distributed State",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingress stream payload and initialize Deadlines, Context Cancellation & C....",
+            "values": {
+              "in": "Stream Ingress",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute protocol handling, encoding, and routing in Deadlines, Context Cancellation & C....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "active",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world distributed microservices interaction in Deadlines, Context Cancellation & C....",
+            "values": {
+              "in": "Active Flow",
+              "proc": "Executing",
+              "out": "State Converged"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "active",
+              "out": "active"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify backpressure, container bounds, and telemetry health in Deadlines, Context Cancellation & C....",
+            "values": {
+              "in": "Terminal State",
+              "proc": "Quiesced",
+              "out": "Verified State"
+            },
+            "tones": {
+              "in": "success",
+              "proc": "success",
+              "out": "success"
+            },
+            "arrows": [
+              [
+                "in",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Bidirectional Streaming & High-Throughput Event Channelling",
+      "codeHash": "89c28e8127068d5feae0b43eda730057de84b8014bee1d4d643531573c257146",
+      "spec": {
+        "template": "flow",
+        "title": "Bidirectional Streaming & High-Thro... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Ingress Stream / Request Frame",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Bidirectional Streaming & High-Thro...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Distributed State",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingress stream payload and initialize Bidirectional Streaming & High-Thro....",
+            "values": {
+              "in": "Stream Ingress",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute protocol handling, encoding, and routing in Bidirectional Streaming & High-Thro....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "active",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world distributed microservices interaction in Bidirectional Streaming & High-Thro....",
+            "values": {
+              "in": "Active Flow",
+              "proc": "Executing",
+              "out": "State Converged"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "active",
+              "out": "active"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify backpressure, container bounds, and telemetry health in Bidirectional Streaming & High-Thro....",
+            "values": {
+              "in": "Terminal State",
+              "proc": "Quiesced",
+              "out": "Verified State"
+            },
+            "tones": {
+              "in": "success",
+              "proc": "success",
+              "out": "success"
+            },
+            "arrows": [
+              [
+                "in",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Service Mesh Architecture & gRPC-to-JSON Transcoding",
+      "codeHash": "a4f5a63fcbba58ce5cdcf816f1cd2dcb47c5e332da54258033a86e988896ceb4",
+      "spec": {
+        "template": "flow",
+        "title": "Service Mesh Architecture & gRPC-to... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Ingress Stream / Request Frame",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Service Mesh Architecture & gRPC-to...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Distributed State",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingress stream payload and initialize Service Mesh Architecture & gRPC-to....",
+            "values": {
+              "in": "Stream Ingress",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute protocol handling, encoding, and routing in Service Mesh Architecture & gRPC-to....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "active",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world distributed microservices interaction in Service Mesh Architecture & gRPC-to....",
+            "values": {
+              "in": "Active Flow",
+              "proc": "Executing",
+              "out": "State Converged"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "active",
+              "out": "active"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify backpressure, container bounds, and telemetry health in Service Mesh Architecture & gRPC-to....",
+            "values": {
+              "in": "Terminal State",
+              "proc": "Quiesced",
+              "out": "Verified State"
+            },
+            "tones": {
+              "in": "success",
+              "proc": "success",
+              "out": "success"
+            },
+            "arrows": [
+              [
+                "in",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
