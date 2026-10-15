@@ -1,0 +1,2309 @@
+{
+  "schemaVersion": 1,
+  "prefix": "mobile",
+  "day": 10,
+  "promptSha": "0332e07fd5fb42472604730611951f03f01aa8ea2da79797c27993735808d1a0",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Cryptographic Key Derivation & Enclave Attestation: BIP-39, BIP-44 & Hardware Silicon",
+      "codeHash": "54619d778e2615ba52b233b16d252c71ac3eb50011cf90fabc3961fa142a714e",
+      "spec": {
+        "template": "component-tree",
+        "title": "Cryptographic Key Derivation & Enclave Attest... — Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "AppShell",
+            "name": "<CryptoVaultApp />",
+            "props": {
+              "security": "ENCLAVE"
+            },
+            "state": {
+              "status": "LOCKED"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "EnclaveBridge",
+            "name": "<SecureEnclaveJsiBridge />",
+            "props": {
+              "zeroCopy": "true"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "LedgerWAL",
+            "name": "<SQLiteWalOutboxLedger />",
+            "state": {
+              "monotonicSeq": "1"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "VaultUI",
+            "name": "<BiometricVaultDrawer />",
+            "props": {
+              "fps": "120"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <CryptoVaultApp /> for Cryptographic Key Derivation &...",
+            "activeId": "AppShell",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<CryptoVaultApp />",
+                "props": {
+                  "security": "ENCLAVE"
+                },
+                "state": {
+                  "status": "LOCKED"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "EnclaveBridge",
+                "name": "<SecureEnclaveJsiBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "LedgerWAL",
+                "name": "<SQLiteWalOutboxLedger />",
+                "state": {
+                  "monotonicSeq": "1"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "VaultUI",
+                "name": "<BiometricVaultDrawer />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Bind C++ hardware enclave bridge into <SecureEnclaveJsiBridge />.",
+            "activeId": "EnclaveBridge",
+            "reRenderingIds": [
+              "EnclaveBridge",
+              "LedgerWAL"
+            ],
+            "propsPassed": {
+              "from": "AppShell",
+              "to": "EnclaveBridge",
+              "propName": "bip44Path",
+              "value": "m/44'/60'/0'/0/0"
+            },
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<CryptoVaultApp />",
+                "props": {
+                  "security": "ENCLAVE"
+                },
+                "state": {
+                  "status": "LOCKED"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "EnclaveBridge",
+                "name": "<SecureEnclaveJsiBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "LedgerWAL",
+                "name": "<SQLiteWalOutboxLedger />",
+                "state": {
+                  "monotonicSeq": "1"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "VaultUI",
+                "name": "<BiometricVaultDrawer />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stage idempotent offline transactions in <SQLiteWalOutboxLedger />.",
+            "activeId": "LedgerWAL",
+            "reRenderingIds": [
+              "LedgerWAL"
+            ],
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<CryptoVaultApp />",
+                "props": {
+                  "security": "ENCLAVE"
+                },
+                "state": {
+                  "status": "LOCKED"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "EnclaveBridge",
+                "name": "<SecureEnclaveJsiBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "LedgerWAL",
+                "name": "<SQLiteWalOutboxLedger />",
+                "state": {
+                  "monotonicSeq": "1"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "VaultUI",
+                "name": "<BiometricVaultDrawer />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute 120 FPS biometric unlock via <BiometricVaultDrawer />.",
+            "activeId": "VaultUI",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<CryptoVaultApp />",
+                "props": {
+                  "security": "ENCLAVE"
+                },
+                "state": {
+                  "status": "LOCKED"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "EnclaveBridge",
+                "name": "<SecureEnclaveJsiBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "LedgerWAL",
+                "name": "<SQLiteWalOutboxLedger />",
+                "state": {
+                  "monotonicSeq": "1"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "VaultUI",
+                "name": "<BiometricVaultDrawer />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "title": "Cryptographic Key Derivation & Enclave Attest... — Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "AppShell",
+            "name": "<CryptoVaultApp />",
+            "props": {
+              "security": "ENCLAVE"
+            },
+            "state": {
+              "status": "LOCKED"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "EnclaveBridge",
+            "name": "<SecureEnclaveJsiBridge />",
+            "props": {
+              "zeroCopy": "true"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "LedgerWAL",
+            "name": "<SQLiteWalOutboxLedger />",
+            "state": {
+              "monotonicSeq": "1"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "VaultUI",
+            "name": "<BiometricVaultDrawer />",
+            "props": {
+              "fps": "120"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <CryptoVaultApp /> for Cryptographic Key Derivation &...",
+            "activeId": "AppShell",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<CryptoVaultApp />",
+                "props": {
+                  "security": "ENCLAVE"
+                },
+                "state": {
+                  "status": "LOCKED"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "EnclaveBridge",
+                "name": "<SecureEnclaveJsiBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "LedgerWAL",
+                "name": "<SQLiteWalOutboxLedger />",
+                "state": {
+                  "monotonicSeq": "1"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "VaultUI",
+                "name": "<BiometricVaultDrawer />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Bind C++ hardware enclave bridge into <SecureEnclaveJsiBridge />.",
+            "activeId": "EnclaveBridge",
+            "reRenderingIds": [
+              "EnclaveBridge",
+              "LedgerWAL"
+            ],
+            "propsPassed": {
+              "from": "AppShell",
+              "to": "EnclaveBridge",
+              "propName": "bip44Path",
+              "value": "m/44'/60'/0'/0/0"
+            },
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<CryptoVaultApp />",
+                "props": {
+                  "security": "ENCLAVE"
+                },
+                "state": {
+                  "status": "LOCKED"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "EnclaveBridge",
+                "name": "<SecureEnclaveJsiBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "LedgerWAL",
+                "name": "<SQLiteWalOutboxLedger />",
+                "state": {
+                  "monotonicSeq": "1"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "VaultUI",
+                "name": "<BiometricVaultDrawer />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stage idempotent offline transactions in <SQLiteWalOutboxLedger />.",
+            "activeId": "LedgerWAL",
+            "reRenderingIds": [
+              "LedgerWAL"
+            ],
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<CryptoVaultApp />",
+                "props": {
+                  "security": "ENCLAVE"
+                },
+                "state": {
+                  "status": "LOCKED"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "EnclaveBridge",
+                "name": "<SecureEnclaveJsiBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "LedgerWAL",
+                "name": "<SQLiteWalOutboxLedger />",
+                "state": {
+                  "monotonicSeq": "1"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "VaultUI",
+                "name": "<BiometricVaultDrawer />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute 120 FPS biometric unlock via <BiometricVaultDrawer />.",
+            "activeId": "VaultUI",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<CryptoVaultApp />",
+                "props": {
+                  "security": "ENCLAVE"
+                },
+                "state": {
+                  "status": "LOCKED"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "EnclaveBridge",
+                "name": "<SecureEnclaveJsiBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "LedgerWAL",
+                "name": "<SQLiteWalOutboxLedger />",
+                "state": {
+                  "monotonicSeq": "1"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "VaultUI",
+                "name": "<BiometricVaultDrawer />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Offline SQLite WAL Ledger & Monotonic Outbox Engine: Concurrent Reads & Zero Data Loss",
+      "codeHash": "88da4a6786b36c9e662e5d100ddf1f645214b77d7aa11dba2bd5d02a1579657f",
+      "spec": {
+        "template": "component-tree",
+        "title": "Offline SQLite WAL Ledger & Monotonic Outbox ... — Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "AppShell",
+            "name": "<CryptoVaultApp />",
+            "props": {
+              "security": "ENCLAVE"
+            },
+            "state": {
+              "status": "LOCKED"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "EnclaveBridge",
+            "name": "<SecureEnclaveJsiBridge />",
+            "props": {
+              "zeroCopy": "true"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "LedgerWAL",
+            "name": "<SQLiteWalOutboxLedger />",
+            "state": {
+              "monotonicSeq": "1"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "VaultUI",
+            "name": "<BiometricVaultDrawer />",
+            "props": {
+              "fps": "120"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <CryptoVaultApp /> for Offline SQLite WAL Ledger & Mo...",
+            "activeId": "AppShell",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<CryptoVaultApp />",
+                "props": {
+                  "security": "ENCLAVE"
+                },
+                "state": {
+                  "status": "LOCKED"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "EnclaveBridge",
+                "name": "<SecureEnclaveJsiBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "LedgerWAL",
+                "name": "<SQLiteWalOutboxLedger />",
+                "state": {
+                  "monotonicSeq": "1"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "VaultUI",
+                "name": "<BiometricVaultDrawer />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Bind C++ hardware enclave bridge into <SecureEnclaveJsiBridge />.",
+            "activeId": "EnclaveBridge",
+            "reRenderingIds": [
+              "EnclaveBridge",
+              "LedgerWAL"
+            ],
+            "propsPassed": {
+              "from": "AppShell",
+              "to": "EnclaveBridge",
+              "propName": "bip44Path",
+              "value": "m/44'/60'/0'/0/0"
+            },
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<CryptoVaultApp />",
+                "props": {
+                  "security": "ENCLAVE"
+                },
+                "state": {
+                  "status": "LOCKED"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "EnclaveBridge",
+                "name": "<SecureEnclaveJsiBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "LedgerWAL",
+                "name": "<SQLiteWalOutboxLedger />",
+                "state": {
+                  "monotonicSeq": "1"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "VaultUI",
+                "name": "<BiometricVaultDrawer />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stage idempotent offline transactions in <SQLiteWalOutboxLedger />.",
+            "activeId": "LedgerWAL",
+            "reRenderingIds": [
+              "LedgerWAL"
+            ],
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<CryptoVaultApp />",
+                "props": {
+                  "security": "ENCLAVE"
+                },
+                "state": {
+                  "status": "LOCKED"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "EnclaveBridge",
+                "name": "<SecureEnclaveJsiBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "LedgerWAL",
+                "name": "<SQLiteWalOutboxLedger />",
+                "state": {
+                  "monotonicSeq": "1"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "VaultUI",
+                "name": "<BiometricVaultDrawer />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute 120 FPS biometric unlock via <BiometricVaultDrawer />.",
+            "activeId": "VaultUI",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<CryptoVaultApp />",
+                "props": {
+                  "security": "ENCLAVE"
+                },
+                "state": {
+                  "status": "LOCKED"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "EnclaveBridge",
+                "name": "<SecureEnclaveJsiBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "LedgerWAL",
+                "name": "<SQLiteWalOutboxLedger />",
+                "state": {
+                  "monotonicSeq": "1"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "VaultUI",
+                "name": "<BiometricVaultDrawer />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "title": "Offline SQLite WAL Ledger & Monotonic Outbox ... — Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "AppShell",
+            "name": "<CryptoVaultApp />",
+            "props": {
+              "security": "ENCLAVE"
+            },
+            "state": {
+              "status": "LOCKED"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "EnclaveBridge",
+            "name": "<SecureEnclaveJsiBridge />",
+            "props": {
+              "zeroCopy": "true"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "LedgerWAL",
+            "name": "<SQLiteWalOutboxLedger />",
+            "state": {
+              "monotonicSeq": "1"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "VaultUI",
+            "name": "<BiometricVaultDrawer />",
+            "props": {
+              "fps": "120"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <CryptoVaultApp /> for Offline SQLite WAL Ledger & Mo...",
+            "activeId": "AppShell",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<CryptoVaultApp />",
+                "props": {
+                  "security": "ENCLAVE"
+                },
+                "state": {
+                  "status": "LOCKED"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "EnclaveBridge",
+                "name": "<SecureEnclaveJsiBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "LedgerWAL",
+                "name": "<SQLiteWalOutboxLedger />",
+                "state": {
+                  "monotonicSeq": "1"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "VaultUI",
+                "name": "<BiometricVaultDrawer />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Bind C++ hardware enclave bridge into <SecureEnclaveJsiBridge />.",
+            "activeId": "EnclaveBridge",
+            "reRenderingIds": [
+              "EnclaveBridge",
+              "LedgerWAL"
+            ],
+            "propsPassed": {
+              "from": "AppShell",
+              "to": "EnclaveBridge",
+              "propName": "bip44Path",
+              "value": "m/44'/60'/0'/0/0"
+            },
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<CryptoVaultApp />",
+                "props": {
+                  "security": "ENCLAVE"
+                },
+                "state": {
+                  "status": "LOCKED"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "EnclaveBridge",
+                "name": "<SecureEnclaveJsiBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "LedgerWAL",
+                "name": "<SQLiteWalOutboxLedger />",
+                "state": {
+                  "monotonicSeq": "1"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "VaultUI",
+                "name": "<BiometricVaultDrawer />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stage idempotent offline transactions in <SQLiteWalOutboxLedger />.",
+            "activeId": "LedgerWAL",
+            "reRenderingIds": [
+              "LedgerWAL"
+            ],
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<CryptoVaultApp />",
+                "props": {
+                  "security": "ENCLAVE"
+                },
+                "state": {
+                  "status": "LOCKED"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "EnclaveBridge",
+                "name": "<SecureEnclaveJsiBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "LedgerWAL",
+                "name": "<SQLiteWalOutboxLedger />",
+                "state": {
+                  "monotonicSeq": "1"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "VaultUI",
+                "name": "<BiometricVaultDrawer />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute 120 FPS biometric unlock via <BiometricVaultDrawer />.",
+            "activeId": "VaultUI",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<CryptoVaultApp />",
+                "props": {
+                  "security": "ENCLAVE"
+                },
+                "state": {
+                  "status": "LOCKED"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "EnclaveBridge",
+                "name": "<SecureEnclaveJsiBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "LedgerWAL",
+                "name": "<SQLiteWalOutboxLedger />",
+                "state": {
+                  "monotonicSeq": "1"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "VaultUI",
+                "name": "<BiometricVaultDrawer />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "120 FPS Reanimated 3 Biometric Authentication Vault: Worklets & Spring Physics",
+      "codeHash": "5d5cb1ede56cd301d16416fd12664f70f4e51968e7d584ec489ea44acbc5695c",
+      "spec": {
+        "template": "component-tree",
+        "title": "120 FPS Reanimated 3 Biometric Authentication... — Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "AppShell",
+            "name": "<CryptoVaultApp />",
+            "props": {
+              "security": "ENCLAVE"
+            },
+            "state": {
+              "status": "LOCKED"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "EnclaveBridge",
+            "name": "<SecureEnclaveJsiBridge />",
+            "props": {
+              "zeroCopy": "true"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "LedgerWAL",
+            "name": "<SQLiteWalOutboxLedger />",
+            "state": {
+              "monotonicSeq": "1"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "VaultUI",
+            "name": "<BiometricVaultDrawer />",
+            "props": {
+              "fps": "120"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <CryptoVaultApp /> for 120 FPS Reanimated 3 Biometric...",
+            "activeId": "AppShell",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<CryptoVaultApp />",
+                "props": {
+                  "security": "ENCLAVE"
+                },
+                "state": {
+                  "status": "LOCKED"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "EnclaveBridge",
+                "name": "<SecureEnclaveJsiBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "LedgerWAL",
+                "name": "<SQLiteWalOutboxLedger />",
+                "state": {
+                  "monotonicSeq": "1"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "VaultUI",
+                "name": "<BiometricVaultDrawer />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Bind C++ hardware enclave bridge into <SecureEnclaveJsiBridge />.",
+            "activeId": "EnclaveBridge",
+            "reRenderingIds": [
+              "EnclaveBridge",
+              "LedgerWAL"
+            ],
+            "propsPassed": {
+              "from": "AppShell",
+              "to": "EnclaveBridge",
+              "propName": "bip44Path",
+              "value": "m/44'/60'/0'/0/0"
+            },
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<CryptoVaultApp />",
+                "props": {
+                  "security": "ENCLAVE"
+                },
+                "state": {
+                  "status": "LOCKED"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "EnclaveBridge",
+                "name": "<SecureEnclaveJsiBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "LedgerWAL",
+                "name": "<SQLiteWalOutboxLedger />",
+                "state": {
+                  "monotonicSeq": "1"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "VaultUI",
+                "name": "<BiometricVaultDrawer />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stage idempotent offline transactions in <SQLiteWalOutboxLedger />.",
+            "activeId": "LedgerWAL",
+            "reRenderingIds": [
+              "LedgerWAL"
+            ],
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<CryptoVaultApp />",
+                "props": {
+                  "security": "ENCLAVE"
+                },
+                "state": {
+                  "status": "LOCKED"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "EnclaveBridge",
+                "name": "<SecureEnclaveJsiBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "LedgerWAL",
+                "name": "<SQLiteWalOutboxLedger />",
+                "state": {
+                  "monotonicSeq": "1"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "VaultUI",
+                "name": "<BiometricVaultDrawer />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute 120 FPS biometric unlock via <BiometricVaultDrawer />.",
+            "activeId": "VaultUI",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<CryptoVaultApp />",
+                "props": {
+                  "security": "ENCLAVE"
+                },
+                "state": {
+                  "status": "LOCKED"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "EnclaveBridge",
+                "name": "<SecureEnclaveJsiBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "LedgerWAL",
+                "name": "<SQLiteWalOutboxLedger />",
+                "state": {
+                  "monotonicSeq": "1"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "VaultUI",
+                "name": "<BiometricVaultDrawer />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "title": "120 FPS Reanimated 3 Biometric Authentication... — Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "AppShell",
+            "name": "<CryptoVaultApp />",
+            "props": {
+              "security": "ENCLAVE"
+            },
+            "state": {
+              "status": "LOCKED"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "EnclaveBridge",
+            "name": "<SecureEnclaveJsiBridge />",
+            "props": {
+              "zeroCopy": "true"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "LedgerWAL",
+            "name": "<SQLiteWalOutboxLedger />",
+            "state": {
+              "monotonicSeq": "1"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "VaultUI",
+            "name": "<BiometricVaultDrawer />",
+            "props": {
+              "fps": "120"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <CryptoVaultApp /> for 120 FPS Reanimated 3 Biometric...",
+            "activeId": "AppShell",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<CryptoVaultApp />",
+                "props": {
+                  "security": "ENCLAVE"
+                },
+                "state": {
+                  "status": "LOCKED"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "EnclaveBridge",
+                "name": "<SecureEnclaveJsiBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "LedgerWAL",
+                "name": "<SQLiteWalOutboxLedger />",
+                "state": {
+                  "monotonicSeq": "1"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "VaultUI",
+                "name": "<BiometricVaultDrawer />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Bind C++ hardware enclave bridge into <SecureEnclaveJsiBridge />.",
+            "activeId": "EnclaveBridge",
+            "reRenderingIds": [
+              "EnclaveBridge",
+              "LedgerWAL"
+            ],
+            "propsPassed": {
+              "from": "AppShell",
+              "to": "EnclaveBridge",
+              "propName": "bip44Path",
+              "value": "m/44'/60'/0'/0/0"
+            },
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<CryptoVaultApp />",
+                "props": {
+                  "security": "ENCLAVE"
+                },
+                "state": {
+                  "status": "LOCKED"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "EnclaveBridge",
+                "name": "<SecureEnclaveJsiBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "LedgerWAL",
+                "name": "<SQLiteWalOutboxLedger />",
+                "state": {
+                  "monotonicSeq": "1"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "VaultUI",
+                "name": "<BiometricVaultDrawer />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stage idempotent offline transactions in <SQLiteWalOutboxLedger />.",
+            "activeId": "LedgerWAL",
+            "reRenderingIds": [
+              "LedgerWAL"
+            ],
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<CryptoVaultApp />",
+                "props": {
+                  "security": "ENCLAVE"
+                },
+                "state": {
+                  "status": "LOCKED"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "EnclaveBridge",
+                "name": "<SecureEnclaveJsiBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "LedgerWAL",
+                "name": "<SQLiteWalOutboxLedger />",
+                "state": {
+                  "monotonicSeq": "1"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "VaultUI",
+                "name": "<BiometricVaultDrawer />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute 120 FPS biometric unlock via <BiometricVaultDrawer />.",
+            "activeId": "VaultUI",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<CryptoVaultApp />",
+                "props": {
+                  "security": "ENCLAVE"
+                },
+                "state": {
+                  "status": "LOCKED"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "EnclaveBridge",
+                "name": "<SecureEnclaveJsiBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "LedgerWAL",
+                "name": "<SQLiteWalOutboxLedger />",
+                "state": {
+                  "monotonicSeq": "1"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "VaultUI",
+                "name": "<BiometricVaultDrawer />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "C++ JSI Native TurboModule Hardware Crypto Bridge: Zero-Bridge Direct Pointer Invocation",
+      "codeHash": "a635c8434f846c433d78ff9c736fedb26eec4643e8ca8c3d359080d8a34c7731",
+      "spec": {
+        "template": "component-tree",
+        "title": "C++ JSI Native TurboModule Hardware Crypto Br... — Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "AppShell",
+            "name": "<CryptoVaultApp />",
+            "props": {
+              "security": "ENCLAVE"
+            },
+            "state": {
+              "status": "LOCKED"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "EnclaveBridge",
+            "name": "<SecureEnclaveJsiBridge />",
+            "props": {
+              "zeroCopy": "true"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "LedgerWAL",
+            "name": "<SQLiteWalOutboxLedger />",
+            "state": {
+              "monotonicSeq": "1"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "VaultUI",
+            "name": "<BiometricVaultDrawer />",
+            "props": {
+              "fps": "120"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <CryptoVaultApp /> for C++ JSI Native TurboModule Har...",
+            "activeId": "AppShell",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<CryptoVaultApp />",
+                "props": {
+                  "security": "ENCLAVE"
+                },
+                "state": {
+                  "status": "LOCKED"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "EnclaveBridge",
+                "name": "<SecureEnclaveJsiBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "LedgerWAL",
+                "name": "<SQLiteWalOutboxLedger />",
+                "state": {
+                  "monotonicSeq": "1"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "VaultUI",
+                "name": "<BiometricVaultDrawer />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Bind C++ hardware enclave bridge into <SecureEnclaveJsiBridge />.",
+            "activeId": "EnclaveBridge",
+            "reRenderingIds": [
+              "EnclaveBridge",
+              "LedgerWAL"
+            ],
+            "propsPassed": {
+              "from": "AppShell",
+              "to": "EnclaveBridge",
+              "propName": "bip44Path",
+              "value": "m/44'/60'/0'/0/0"
+            },
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<CryptoVaultApp />",
+                "props": {
+                  "security": "ENCLAVE"
+                },
+                "state": {
+                  "status": "LOCKED"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "EnclaveBridge",
+                "name": "<SecureEnclaveJsiBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "LedgerWAL",
+                "name": "<SQLiteWalOutboxLedger />",
+                "state": {
+                  "monotonicSeq": "1"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "VaultUI",
+                "name": "<BiometricVaultDrawer />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stage idempotent offline transactions in <SQLiteWalOutboxLedger />.",
+            "activeId": "LedgerWAL",
+            "reRenderingIds": [
+              "LedgerWAL"
+            ],
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<CryptoVaultApp />",
+                "props": {
+                  "security": "ENCLAVE"
+                },
+                "state": {
+                  "status": "LOCKED"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "EnclaveBridge",
+                "name": "<SecureEnclaveJsiBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "LedgerWAL",
+                "name": "<SQLiteWalOutboxLedger />",
+                "state": {
+                  "monotonicSeq": "1"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "VaultUI",
+                "name": "<BiometricVaultDrawer />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute 120 FPS biometric unlock via <BiometricVaultDrawer />.",
+            "activeId": "VaultUI",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<CryptoVaultApp />",
+                "props": {
+                  "security": "ENCLAVE"
+                },
+                "state": {
+                  "status": "LOCKED"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "EnclaveBridge",
+                "name": "<SecureEnclaveJsiBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "LedgerWAL",
+                "name": "<SQLiteWalOutboxLedger />",
+                "state": {
+                  "monotonicSeq": "1"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "VaultUI",
+                "name": "<BiometricVaultDrawer />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "title": "C++ JSI Native TurboModule Hardware Crypto Br... — Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "AppShell",
+            "name": "<CryptoVaultApp />",
+            "props": {
+              "security": "ENCLAVE"
+            },
+            "state": {
+              "status": "LOCKED"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "EnclaveBridge",
+            "name": "<SecureEnclaveJsiBridge />",
+            "props": {
+              "zeroCopy": "true"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "LedgerWAL",
+            "name": "<SQLiteWalOutboxLedger />",
+            "state": {
+              "monotonicSeq": "1"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "VaultUI",
+            "name": "<BiometricVaultDrawer />",
+            "props": {
+              "fps": "120"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <CryptoVaultApp /> for C++ JSI Native TurboModule Har...",
+            "activeId": "AppShell",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<CryptoVaultApp />",
+                "props": {
+                  "security": "ENCLAVE"
+                },
+                "state": {
+                  "status": "LOCKED"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "EnclaveBridge",
+                "name": "<SecureEnclaveJsiBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "LedgerWAL",
+                "name": "<SQLiteWalOutboxLedger />",
+                "state": {
+                  "monotonicSeq": "1"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "VaultUI",
+                "name": "<BiometricVaultDrawer />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Bind C++ hardware enclave bridge into <SecureEnclaveJsiBridge />.",
+            "activeId": "EnclaveBridge",
+            "reRenderingIds": [
+              "EnclaveBridge",
+              "LedgerWAL"
+            ],
+            "propsPassed": {
+              "from": "AppShell",
+              "to": "EnclaveBridge",
+              "propName": "bip44Path",
+              "value": "m/44'/60'/0'/0/0"
+            },
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<CryptoVaultApp />",
+                "props": {
+                  "security": "ENCLAVE"
+                },
+                "state": {
+                  "status": "LOCKED"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "EnclaveBridge",
+                "name": "<SecureEnclaveJsiBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "LedgerWAL",
+                "name": "<SQLiteWalOutboxLedger />",
+                "state": {
+                  "monotonicSeq": "1"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "VaultUI",
+                "name": "<BiometricVaultDrawer />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stage idempotent offline transactions in <SQLiteWalOutboxLedger />.",
+            "activeId": "LedgerWAL",
+            "reRenderingIds": [
+              "LedgerWAL"
+            ],
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<CryptoVaultApp />",
+                "props": {
+                  "security": "ENCLAVE"
+                },
+                "state": {
+                  "status": "LOCKED"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "EnclaveBridge",
+                "name": "<SecureEnclaveJsiBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "LedgerWAL",
+                "name": "<SQLiteWalOutboxLedger />",
+                "state": {
+                  "monotonicSeq": "1"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "VaultUI",
+                "name": "<BiometricVaultDrawer />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute 120 FPS biometric unlock via <BiometricVaultDrawer />.",
+            "activeId": "VaultUI",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<CryptoVaultApp />",
+                "props": {
+                  "security": "ENCLAVE"
+                },
+                "state": {
+                  "status": "LOCKED"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "EnclaveBridge",
+                "name": "<SecureEnclaveJsiBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "LedgerWAL",
+                "name": "<SQLiteWalOutboxLedger />",
+                "state": {
+                  "monotonicSeq": "1"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "VaultUI",
+                "name": "<BiometricVaultDrawer />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Memory Profiling, Bitmap Downsampling & Cold Start Optimization (< 400ms TTID)",
+      "codeHash": "752734ab5bc6df59ab51291986c06a70097aef1161651aead0688f6b251ed9c8",
+      "spec": {
+        "template": "component-tree",
+        "title": "Memory Profiling, Bitmap Downsampling & Cold ... — Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "AppShell",
+            "name": "<CryptoVaultApp />",
+            "props": {
+              "security": "ENCLAVE"
+            },
+            "state": {
+              "status": "LOCKED"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "EnclaveBridge",
+            "name": "<SecureEnclaveJsiBridge />",
+            "props": {
+              "zeroCopy": "true"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "LedgerWAL",
+            "name": "<SQLiteWalOutboxLedger />",
+            "state": {
+              "monotonicSeq": "1"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "VaultUI",
+            "name": "<BiometricVaultDrawer />",
+            "props": {
+              "fps": "120"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <CryptoVaultApp /> for Memory Profiling, Bitmap Downs...",
+            "activeId": "AppShell",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<CryptoVaultApp />",
+                "props": {
+                  "security": "ENCLAVE"
+                },
+                "state": {
+                  "status": "LOCKED"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "EnclaveBridge",
+                "name": "<SecureEnclaveJsiBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "LedgerWAL",
+                "name": "<SQLiteWalOutboxLedger />",
+                "state": {
+                  "monotonicSeq": "1"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "VaultUI",
+                "name": "<BiometricVaultDrawer />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Bind C++ hardware enclave bridge into <SecureEnclaveJsiBridge />.",
+            "activeId": "EnclaveBridge",
+            "reRenderingIds": [
+              "EnclaveBridge",
+              "LedgerWAL"
+            ],
+            "propsPassed": {
+              "from": "AppShell",
+              "to": "EnclaveBridge",
+              "propName": "bip44Path",
+              "value": "m/44'/60'/0'/0/0"
+            },
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<CryptoVaultApp />",
+                "props": {
+                  "security": "ENCLAVE"
+                },
+                "state": {
+                  "status": "LOCKED"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "EnclaveBridge",
+                "name": "<SecureEnclaveJsiBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "LedgerWAL",
+                "name": "<SQLiteWalOutboxLedger />",
+                "state": {
+                  "monotonicSeq": "1"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "VaultUI",
+                "name": "<BiometricVaultDrawer />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stage idempotent offline transactions in <SQLiteWalOutboxLedger />.",
+            "activeId": "LedgerWAL",
+            "reRenderingIds": [
+              "LedgerWAL"
+            ],
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<CryptoVaultApp />",
+                "props": {
+                  "security": "ENCLAVE"
+                },
+                "state": {
+                  "status": "LOCKED"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "EnclaveBridge",
+                "name": "<SecureEnclaveJsiBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "LedgerWAL",
+                "name": "<SQLiteWalOutboxLedger />",
+                "state": {
+                  "monotonicSeq": "1"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "VaultUI",
+                "name": "<BiometricVaultDrawer />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute 120 FPS biometric unlock via <BiometricVaultDrawer />.",
+            "activeId": "VaultUI",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<CryptoVaultApp />",
+                "props": {
+                  "security": "ENCLAVE"
+                },
+                "state": {
+                  "status": "LOCKED"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "EnclaveBridge",
+                "name": "<SecureEnclaveJsiBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "LedgerWAL",
+                "name": "<SQLiteWalOutboxLedger />",
+                "state": {
+                  "monotonicSeq": "1"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "VaultUI",
+                "name": "<BiometricVaultDrawer />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "title": "Memory Profiling, Bitmap Downsampling & Cold ... — Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "AppShell",
+            "name": "<CryptoVaultApp />",
+            "props": {
+              "security": "ENCLAVE"
+            },
+            "state": {
+              "status": "LOCKED"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "EnclaveBridge",
+            "name": "<SecureEnclaveJsiBridge />",
+            "props": {
+              "zeroCopy": "true"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "LedgerWAL",
+            "name": "<SQLiteWalOutboxLedger />",
+            "state": {
+              "monotonicSeq": "1"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "VaultUI",
+            "name": "<BiometricVaultDrawer />",
+            "props": {
+              "fps": "120"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <CryptoVaultApp /> for Memory Profiling, Bitmap Downs...",
+            "activeId": "AppShell",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<CryptoVaultApp />",
+                "props": {
+                  "security": "ENCLAVE"
+                },
+                "state": {
+                  "status": "LOCKED"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "EnclaveBridge",
+                "name": "<SecureEnclaveJsiBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "LedgerWAL",
+                "name": "<SQLiteWalOutboxLedger />",
+                "state": {
+                  "monotonicSeq": "1"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "VaultUI",
+                "name": "<BiometricVaultDrawer />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Bind C++ hardware enclave bridge into <SecureEnclaveJsiBridge />.",
+            "activeId": "EnclaveBridge",
+            "reRenderingIds": [
+              "EnclaveBridge",
+              "LedgerWAL"
+            ],
+            "propsPassed": {
+              "from": "AppShell",
+              "to": "EnclaveBridge",
+              "propName": "bip44Path",
+              "value": "m/44'/60'/0'/0/0"
+            },
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<CryptoVaultApp />",
+                "props": {
+                  "security": "ENCLAVE"
+                },
+                "state": {
+                  "status": "LOCKED"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "EnclaveBridge",
+                "name": "<SecureEnclaveJsiBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "LedgerWAL",
+                "name": "<SQLiteWalOutboxLedger />",
+                "state": {
+                  "monotonicSeq": "1"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "VaultUI",
+                "name": "<BiometricVaultDrawer />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stage idempotent offline transactions in <SQLiteWalOutboxLedger />.",
+            "activeId": "LedgerWAL",
+            "reRenderingIds": [
+              "LedgerWAL"
+            ],
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<CryptoVaultApp />",
+                "props": {
+                  "security": "ENCLAVE"
+                },
+                "state": {
+                  "status": "LOCKED"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "EnclaveBridge",
+                "name": "<SecureEnclaveJsiBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "LedgerWAL",
+                "name": "<SQLiteWalOutboxLedger />",
+                "state": {
+                  "monotonicSeq": "1"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "VaultUI",
+                "name": "<BiometricVaultDrawer />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute 120 FPS biometric unlock via <BiometricVaultDrawer />.",
+            "activeId": "VaultUI",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<CryptoVaultApp />",
+                "props": {
+                  "security": "ENCLAVE"
+                },
+                "state": {
+                  "status": "LOCKED"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "EnclaveBridge",
+                "name": "<SecureEnclaveJsiBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "LedgerWAL",
+                "name": "<SQLiteWalOutboxLedger />",
+                "state": {
+                  "monotonicSeq": "1"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "VaultUI",
+                "name": "<BiometricVaultDrawer />",
+                "props": {
+                  "fps": "120"
+                },
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

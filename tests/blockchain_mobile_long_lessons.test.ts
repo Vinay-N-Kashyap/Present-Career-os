@@ -599,5 +599,43 @@ test('Mobile Day 9: Memory Diagnostics, Leak Detection & Battery Pacing Verifica
   assert.ok(mobileLesson9.parts[4].code?.includes('MobileProfilerAuditor'));
 });
 
+test('Mobile Day 10: Milestone 2 Cryptographic Mobile Wallet Capstone Verification', () => {
+  const mobileLesson10 = getLongLesson('mobile', 10);
+  assert.ok(mobileLesson10, 'Mobile Day 10 long lesson must resolve');
+  assert.equal(mobileLesson10.day, 10);
+  assert.equal(mobileLesson10.parts.length, 5, 'Mobile Day 10 must contain exactly 5 parts');
+  assert.ok(mobileLesson10.summary.length >= 4, 'Mobile Day 10 must contain summary points');
+  assert.ok(mobileLesson10.projectStep, 'Mobile Day 10 must have projectStep');
+
+  const spokenMin = estimateSpokenMinutes(mobileLesson10);
+  const totalMin = estimateLessonMinutes(mobileLesson10);
+  assert.ok(spokenMin >= 20, `Spoken minutes should be >= 20 (got ${spokenMin})`);
+  assert.ok(totalMin >= 35 && totalMin <= 40, `Total minutes should be between 35 and 40 (got ${totalMin})`);
+
+  for (let i = 0; i < mobileLesson10.parts.length; i++) {
+    const part = mobileLesson10.parts[i];
+    assert.ok(part.title.length > 0, `Part ${i + 1} must have a non-empty title`);
+    assert.ok(part.say.length >= 5, `Part ${i + 1} must have at least 5 explanation paragraphs`);
+    assert.ok(part.example && part.example.length > 0, `Part ${i + 1} must have a real-world example`);
+    assert.ok(part.code && part.code.includes('console.log('), `Part ${i + 1} code must print results`);
+    assert.ok(part.output && part.output.length > 0, `Part ${i + 1} must have deterministic expected output`);
+    assert.ok(part.tryIt && part.tryIt.length > 0, `Part ${i + 1} must have a tryIt experiment`);
+
+    // Socratic Check validation
+    const check = part.check as any;
+    assert.ok(check.question.length > 10, `Part ${i + 1} check question must be descriptive`);
+    assert.ok(check.options.length >= 4, `Part ${i + 1} check must have >= 4 options`);
+    assert.ok(check.answer >= 0 && check.answer < check.options.length, `Part ${i + 1} answer must be valid`);
+    assert.ok(check.why.length > 15, `Part ${i + 1} check explanation must be rigorous`);
+  }
+
+  // Domain specifics
+  assert.ok(mobileLesson10.parts[0].code?.includes('MobileCryptographicVault'));
+  assert.ok(mobileLesson10.parts[1].code?.includes('OfflineWalletLedger'));
+  assert.ok(mobileLesson10.parts[2].code?.includes('BiometricVaultAnimationEngine'));
+  assert.ok(mobileLesson10.parts[3].code?.includes('CppJsiCryptoTurboModule'));
+  assert.ok(mobileLesson10.parts[4].code?.includes('MobileSystemsBenchmarkSuite'));
+});
+
 
 
