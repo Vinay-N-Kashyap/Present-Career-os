@@ -110,12 +110,12 @@ test('Mobile Expansion (Days 6–15): Component-Tree Visual Spec Verification', 
   }
 });
 
-test('Blockchain Expansion (Days 6–20): Sequence Visual Spec Verification', () => {
+test('Blockchain Expansion (Days 6–25): Sequence Visual Spec Verification', () => {
   clearDayFileCache();
   const prefix = 'blockchain';
   const expectedTemplate = 'sequence';
 
-  for (let day = 6; day <= 20; day++) {
+  for (let day = 6; day <= 25; day++) {
     const dayPadded = String(day).padStart(2, '0');
     const filePath = path.resolve(process.cwd(), `src/lib/data/lessonVisuals/${prefix}/day-${dayPadded}.json`);
     if (!fs.existsSync(filePath)) {
