@@ -1,0 +1,1139 @@
+{
+  "schemaVersion": 1,
+  "prefix": "fullstack-js",
+  "day": 8,
+  "promptSha": "c113292c7844a6f56a8f7df7ac11a2138d4600a1d8683acf4289f99fcb74e302",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Next.js Middleware on V8 Isolates: Execution Order & matcher Configurations",
+      "codeHash": "598d0acd8fb31d59741718899ec069c4df3ded5e00c017d0aec46a2458fba180",
+      "spec": {
+        "template": "flow",
+        "title": "Next.js Middleware on V8 Isolates: Ex... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Edge Request & Headers",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Next.js Middleware on V8 Isolates: Ex...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Transformed Response",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Inspect incoming edge request and matcher rules for Next.js Middleware on V8 Isolates: Ex....",
+            "values": {
+              "in": "Day 8 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute isolate verification or rewrite logic in Next.js Middleware on V8 Isolates: Ex....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluate edge routing decision and rate limit invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Policy Enforced",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end execution verified for Next.js Middleware on V8 Isolates: Ex....",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Next.js Middleware on V8 Isolates: Ex... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Edge Request & Headers",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Next.js Middleware on V8 Isolates: Ex...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Transformed Response",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Inspect incoming edge request and matcher rules for Next.js Middleware on V8 Isolates: Ex....",
+            "values": {
+              "in": "Day 8 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute isolate verification or rewrite logic in Next.js Middleware on V8 Isolates: Ex....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluate edge routing decision and rate limit invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Policy Enforced",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end execution verified for Next.js Middleware on V8 Isolates: Ex....",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Stateless JWT Authentication & Distributed Session Caching",
+      "codeHash": "e82aa36c39068040288e1c7b49522bb0d929bb795973bd1dc2ca33574b2968a8",
+      "spec": {
+        "template": "flow",
+        "title": "Stateless JWT Authentication & Distri... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Edge Request & Headers",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Stateless JWT Authentication & Distri...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Transformed Response",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Inspect incoming edge request and matcher rules for Stateless JWT Authentication & Distri....",
+            "values": {
+              "in": "Day 8 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute isolate verification or rewrite logic in Stateless JWT Authentication & Distri....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluate edge routing decision and rate limit invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Policy Enforced",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end execution verified for Stateless JWT Authentication & Distri....",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Stateless JWT Authentication & Distri... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Edge Request & Headers",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Stateless JWT Authentication & Distri...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Transformed Response",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Inspect incoming edge request and matcher rules for Stateless JWT Authentication & Distri....",
+            "values": {
+              "in": "Day 8 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute isolate verification or rewrite logic in Stateless JWT Authentication & Distri....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluate edge routing decision and rate limit invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Policy Enforced",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end execution verified for Stateless JWT Authentication & Distri....",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Request & Response Manipulation: Headers, Cookies, Rewrites & Geolocation Routing",
+      "codeHash": "bf1d49d035cd6879080ec58e2517bcc55fbbb8fb18bf12b4c506450503e3f404",
+      "spec": {
+        "template": "flow",
+        "title": "Request & Response Manipulation: Head... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Edge Request & Headers",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Request & Response Manipulation: Head...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Transformed Response",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Inspect incoming edge request and matcher rules for Request & Response Manipulation: Head....",
+            "values": {
+              "in": "Day 8 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute isolate verification or rewrite logic in Request & Response Manipulation: Head....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluate edge routing decision and rate limit invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Policy Enforced",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end execution verified for Request & Response Manipulation: Head....",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Request & Response Manipulation: Head... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Edge Request & Headers",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Request & Response Manipulation: Head...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Transformed Response",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Inspect incoming edge request and matcher rules for Request & Response Manipulation: Head....",
+            "values": {
+              "in": "Day 8 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute isolate verification or rewrite logic in Request & Response Manipulation: Head....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluate edge routing decision and rate limit invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Policy Enforced",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end execution verified for Request & Response Manipulation: Head....",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Edge Rate Limiting: Sliding Window Counters via Distributed Key-Value Caching",
+      "codeHash": "14438031a55def716d96557f83c819575c83b1514f47d99ca7e7f62bebbc4da7",
+      "spec": {
+        "template": "flow",
+        "title": "Edge Rate Limiting: Sliding Window Co... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Edge Request & Headers",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Edge Rate Limiting: Sliding Window Co...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Transformed Response",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Inspect incoming edge request and matcher rules for Edge Rate Limiting: Sliding Window Co....",
+            "values": {
+              "in": "Day 8 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute isolate verification or rewrite logic in Edge Rate Limiting: Sliding Window Co....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluate edge routing decision and rate limit invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Policy Enforced",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end execution verified for Edge Rate Limiting: Sliding Window Co....",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Edge Rate Limiting: Sliding Window Co... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Edge Request & Headers",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Edge Rate Limiting: Sliding Window Co...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Transformed Response",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Inspect incoming edge request and matcher rules for Edge Rate Limiting: Sliding Window Co....",
+            "values": {
+              "in": "Day 8 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute isolate verification or rewrite logic in Edge Rate Limiting: Sliding Window Co....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluate edge routing decision and rate limit invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Policy Enforced",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end execution verified for Edge Rate Limiting: Sliding Window Co....",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Edge Security Gateway: Geo-Routing, Session Verification & Rate Limiting Master Engine",
+      "codeHash": "929025db819e8ab97e3f9589c5456e58f786b8d293c0d0951d54091315b3fb62",
+      "spec": {
+        "template": "flow",
+        "title": "Enterprise Edge Security Gateway: Geo... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Edge Request & Headers",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Enterprise Edge Security Gateway: Geo...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Transformed Response",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Inspect incoming edge request and matcher rules for Enterprise Edge Security Gateway: Geo....",
+            "values": {
+              "in": "Day 8 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute isolate verification or rewrite logic in Enterprise Edge Security Gateway: Geo....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluate edge routing decision and rate limit invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Policy Enforced",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end execution verified for Enterprise Edge Security Gateway: Geo....",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Enterprise Edge Security Gateway: Geo... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Edge Request & Headers",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Enterprise Edge Security Gateway: Geo...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Transformed Response",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Inspect incoming edge request and matcher rules for Enterprise Edge Security Gateway: Geo....",
+            "values": {
+              "in": "Day 8 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute isolate verification or rewrite logic in Enterprise Edge Security Gateway: Geo....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluate edge routing decision and rate limit invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Policy Enforced",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end execution verified for Enterprise Edge Security Gateway: Geo....",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
