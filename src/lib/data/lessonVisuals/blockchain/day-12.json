@@ -1,0 +1,789 @@
+{
+  "schemaVersion": 1,
+  "prefix": "blockchain",
+  "day": 12,
+  "promptSha": "9a329c0f7721ba3e18cd987fe88fbc910245a909d3b764b73b22cf309df78132",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "OpenZeppelin ReentrancyGuard Architecture: Non-Zero Storage Slot Economics",
+      "codeHash": "ef83d69f9c9ff1da051d089b1fbfd77c824626876f5653e33cd3e8e73e2e9ae6",
+      "spec": {
+        "template": "sequence",
+        "title": "OpenZeppelin ReentrancyGuard Architecture: Non-Zero Storage Slot Economics \u2014 Reentrancy Guard Sequence",
+        "actors": [
+          "Caller Transaction",
+          "Reentrancy Guard",
+          "EVM State Controller",
+          "Security Auditor"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Caller initiates function invocation for OpenZeppelin ReentrancyGuard Arc",
+            "activeActor": "Caller Transaction",
+            "messages": [
+              {
+                "from": "Caller Transaction",
+                "to": "Reentrancy Guard",
+                "label": "enterProtectedFunction()",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Guard inspects slot status and acquires execution lock",
+            "activeActor": "Reentrancy Guard",
+            "messages": [
+              {
+                "from": "Reentrancy Guard",
+                "to": "EVM State Controller",
+                "label": "acquireLock(status = ENTERED / TSTORE)",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Untrusted callee attempts recursive re-entry and is rejected",
+            "activeActor": "EVM State Controller",
+            "messages": [
+              {
+                "from": "EVM State Controller",
+                "to": "Reentrancy Guard",
+                "label": "reenter() -> REVERT_ALREADY_ENTERED",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Function completes and guard resets lock to clean state",
+            "activeActor": "Security Auditor",
+            "messages": [
+              {
+                "from": "Reentrancy Guard",
+                "to": "EVM State Controller",
+                "label": "releaseLock(status = NOT_ENTERED / TSTORE 0)",
+                "tone": "ok"
+              },
+              {
+                "from": "EVM State Controller",
+                "to": "Security Auditor",
+                "label": "verifyGasOptimization(300 gas \u2713)",
+                "tone": "ok"
+              },
+              {
+                "from": "Security Auditor",
+                "to": "Caller Transaction",
+                "label": "ReentrancyGuardCertified(Optimal \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "OpenZeppelin ReentrancyGuard Architecture: Non-Zero Storage Slot Economics \u2014 Reentrancy Guard Sequence",
+        "actors": [
+          "Caller Transaction",
+          "Reentrancy Guard",
+          "EVM State Controller",
+          "Security Auditor"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Caller initiates function invocation for OpenZeppelin ReentrancyGuard Arc",
+            "activeActor": "Caller Transaction",
+            "messages": [
+              {
+                "from": "Caller Transaction",
+                "to": "Reentrancy Guard",
+                "label": "enterProtectedFunction()",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Guard inspects slot status and acquires execution lock",
+            "activeActor": "Reentrancy Guard",
+            "messages": [
+              {
+                "from": "Reentrancy Guard",
+                "to": "EVM State Controller",
+                "label": "acquireLock(status = ENTERED / TSTORE)",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Untrusted callee attempts recursive re-entry and is rejected",
+            "activeActor": "EVM State Controller",
+            "messages": [
+              {
+                "from": "EVM State Controller",
+                "to": "Reentrancy Guard",
+                "label": "reenter() -> REVERT_ALREADY_ENTERED",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Function completes and guard resets lock to clean state",
+            "activeActor": "Security Auditor",
+            "messages": [
+              {
+                "from": "Reentrancy Guard",
+                "to": "EVM State Controller",
+                "label": "releaseLock(status = NOT_ENTERED / TSTORE 0)",
+                "tone": "ok"
+              },
+              {
+                "from": "EVM State Controller",
+                "to": "Security Auditor",
+                "label": "verifyGasOptimization(300 gas \u2713)",
+                "tone": "ok"
+              },
+              {
+                "from": "Security Auditor",
+                "to": "Caller Transaction",
+                "label": "ReentrancyGuardCertified(Optimal \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Transient Storage (EIP-1153): TSTORE & TLOAD Opcode Revolution",
+      "codeHash": "98843e1a168bfc52fe5d8f12c6bb562b0632e38278cdf596aa55bb1afff3d1f6",
+      "spec": {
+        "template": "sequence",
+        "title": "Transient Storage (EIP-1153): TSTORE & TLOAD Opcode Revolution \u2014 Reentrancy Guard Sequence",
+        "actors": [
+          "Caller Transaction",
+          "Reentrancy Guard",
+          "EVM State Controller",
+          "Security Auditor"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Caller initiates function invocation for Transient Storage (EIP-1153): TS",
+            "activeActor": "Caller Transaction",
+            "messages": [
+              {
+                "from": "Caller Transaction",
+                "to": "Reentrancy Guard",
+                "label": "enterProtectedFunction()",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Guard inspects slot status and acquires execution lock",
+            "activeActor": "Reentrancy Guard",
+            "messages": [
+              {
+                "from": "Reentrancy Guard",
+                "to": "EVM State Controller",
+                "label": "acquireLock(status = ENTERED / TSTORE)",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Untrusted callee attempts recursive re-entry and is rejected",
+            "activeActor": "EVM State Controller",
+            "messages": [
+              {
+                "from": "EVM State Controller",
+                "to": "Reentrancy Guard",
+                "label": "reenter() -> REVERT_ALREADY_ENTERED",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Function completes and guard resets lock to clean state",
+            "activeActor": "Security Auditor",
+            "messages": [
+              {
+                "from": "Reentrancy Guard",
+                "to": "EVM State Controller",
+                "label": "releaseLock(status = NOT_ENTERED / TSTORE 0)",
+                "tone": "ok"
+              },
+              {
+                "from": "EVM State Controller",
+                "to": "Security Auditor",
+                "label": "verifyGasOptimization(300 gas \u2713)",
+                "tone": "ok"
+              },
+              {
+                "from": "Security Auditor",
+                "to": "Caller Transaction",
+                "label": "ReentrancyGuardCertified(Optimal \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Transient Storage (EIP-1153): TSTORE & TLOAD Opcode Revolution \u2014 Reentrancy Guard Sequence",
+        "actors": [
+          "Caller Transaction",
+          "Reentrancy Guard",
+          "EVM State Controller",
+          "Security Auditor"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Caller initiates function invocation for Transient Storage (EIP-1153): TS",
+            "activeActor": "Caller Transaction",
+            "messages": [
+              {
+                "from": "Caller Transaction",
+                "to": "Reentrancy Guard",
+                "label": "enterProtectedFunction()",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Guard inspects slot status and acquires execution lock",
+            "activeActor": "Reentrancy Guard",
+            "messages": [
+              {
+                "from": "Reentrancy Guard",
+                "to": "EVM State Controller",
+                "label": "acquireLock(status = ENTERED / TSTORE)",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Untrusted callee attempts recursive re-entry and is rejected",
+            "activeActor": "EVM State Controller",
+            "messages": [
+              {
+                "from": "EVM State Controller",
+                "to": "Reentrancy Guard",
+                "label": "reenter() -> REVERT_ALREADY_ENTERED",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Function completes and guard resets lock to clean state",
+            "activeActor": "Security Auditor",
+            "messages": [
+              {
+                "from": "Reentrancy Guard",
+                "to": "EVM State Controller",
+                "label": "releaseLock(status = NOT_ENTERED / TSTORE 0)",
+                "tone": "ok"
+              },
+              {
+                "from": "EVM State Controller",
+                "to": "Security Auditor",
+                "label": "verifyGasOptimization(300 gas \u2713)",
+                "tone": "ok"
+              },
+              {
+                "from": "Security Auditor",
+                "to": "Caller Transaction",
+                "label": "ReentrancyGuardCertified(Optimal \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cross-Function Reentrancy Defense: Comprehensive Mutex Harmonization",
+      "codeHash": "754c89af28423f667c2007691956c439c7232eae11caa4fb06f866ff64b9ffad",
+      "spec": {
+        "template": "sequence",
+        "title": "Cross-Function Reentrancy Defense: Comprehensive Mutex Harmonization \u2014 Reentrancy Guard Sequence",
+        "actors": [
+          "Caller Transaction",
+          "Reentrancy Guard",
+          "EVM State Controller",
+          "Security Auditor"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Caller initiates function invocation for Cross-Function Reentrancy Defens",
+            "activeActor": "Caller Transaction",
+            "messages": [
+              {
+                "from": "Caller Transaction",
+                "to": "Reentrancy Guard",
+                "label": "enterProtectedFunction()",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Guard inspects slot status and acquires execution lock",
+            "activeActor": "Reentrancy Guard",
+            "messages": [
+              {
+                "from": "Reentrancy Guard",
+                "to": "EVM State Controller",
+                "label": "acquireLock(status = ENTERED / TSTORE)",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Untrusted callee attempts recursive re-entry and is rejected",
+            "activeActor": "EVM State Controller",
+            "messages": [
+              {
+                "from": "EVM State Controller",
+                "to": "Reentrancy Guard",
+                "label": "reenter() -> REVERT_ALREADY_ENTERED",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Function completes and guard resets lock to clean state",
+            "activeActor": "Security Auditor",
+            "messages": [
+              {
+                "from": "Reentrancy Guard",
+                "to": "EVM State Controller",
+                "label": "releaseLock(status = NOT_ENTERED / TSTORE 0)",
+                "tone": "ok"
+              },
+              {
+                "from": "EVM State Controller",
+                "to": "Security Auditor",
+                "label": "verifyGasOptimization(300 gas \u2713)",
+                "tone": "ok"
+              },
+              {
+                "from": "Security Auditor",
+                "to": "Caller Transaction",
+                "label": "ReentrancyGuardCertified(Optimal \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Cross-Function Reentrancy Defense: Comprehensive Mutex Harmonization \u2014 Reentrancy Guard Sequence",
+        "actors": [
+          "Caller Transaction",
+          "Reentrancy Guard",
+          "EVM State Controller",
+          "Security Auditor"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Caller initiates function invocation for Cross-Function Reentrancy Defens",
+            "activeActor": "Caller Transaction",
+            "messages": [
+              {
+                "from": "Caller Transaction",
+                "to": "Reentrancy Guard",
+                "label": "enterProtectedFunction()",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Guard inspects slot status and acquires execution lock",
+            "activeActor": "Reentrancy Guard",
+            "messages": [
+              {
+                "from": "Reentrancy Guard",
+                "to": "EVM State Controller",
+                "label": "acquireLock(status = ENTERED / TSTORE)",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Untrusted callee attempts recursive re-entry and is rejected",
+            "activeActor": "EVM State Controller",
+            "messages": [
+              {
+                "from": "EVM State Controller",
+                "to": "Reentrancy Guard",
+                "label": "reenter() -> REVERT_ALREADY_ENTERED",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Function completes and guard resets lock to clean state",
+            "activeActor": "Security Auditor",
+            "messages": [
+              {
+                "from": "Reentrancy Guard",
+                "to": "EVM State Controller",
+                "label": "releaseLock(status = NOT_ENTERED / TSTORE 0)",
+                "tone": "ok"
+              },
+              {
+                "from": "EVM State Controller",
+                "to": "Security Auditor",
+                "label": "verifyGasOptimization(300 gas \u2713)",
+                "tone": "ok"
+              },
+              {
+                "from": "Security Auditor",
+                "to": "Caller Transaction",
+                "label": "ReentrancyGuardCertified(Optimal \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Gas Cost Comparative Analysis & Benchmark Engine: Persistent vs Transient",
+      "codeHash": "3782b457e2b88d0710d8dcd8006a91b2ab76860293b3417b2bbe44d15de506a1",
+      "spec": {
+        "template": "sequence",
+        "title": "Gas Cost Comparative Analysis & Benchmark Engine: Persistent vs Transient \u2014 Reentrancy Guard Sequence",
+        "actors": [
+          "Caller Transaction",
+          "Reentrancy Guard",
+          "EVM State Controller",
+          "Security Auditor"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Caller initiates function invocation for Gas Cost Comparative Analysis & ",
+            "activeActor": "Caller Transaction",
+            "messages": [
+              {
+                "from": "Caller Transaction",
+                "to": "Reentrancy Guard",
+                "label": "enterProtectedFunction()",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Guard inspects slot status and acquires execution lock",
+            "activeActor": "Reentrancy Guard",
+            "messages": [
+              {
+                "from": "Reentrancy Guard",
+                "to": "EVM State Controller",
+                "label": "acquireLock(status = ENTERED / TSTORE)",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Untrusted callee attempts recursive re-entry and is rejected",
+            "activeActor": "EVM State Controller",
+            "messages": [
+              {
+                "from": "EVM State Controller",
+                "to": "Reentrancy Guard",
+                "label": "reenter() -> REVERT_ALREADY_ENTERED",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Function completes and guard resets lock to clean state",
+            "activeActor": "Security Auditor",
+            "messages": [
+              {
+                "from": "Reentrancy Guard",
+                "to": "EVM State Controller",
+                "label": "releaseLock(status = NOT_ENTERED / TSTORE 0)",
+                "tone": "ok"
+              },
+              {
+                "from": "EVM State Controller",
+                "to": "Security Auditor",
+                "label": "verifyGasOptimization(300 gas \u2713)",
+                "tone": "ok"
+              },
+              {
+                "from": "Security Auditor",
+                "to": "Caller Transaction",
+                "label": "ReentrancyGuardCertified(Optimal \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Gas Cost Comparative Analysis & Benchmark Engine: Persistent vs Transient \u2014 Reentrancy Guard Sequence",
+        "actors": [
+          "Caller Transaction",
+          "Reentrancy Guard",
+          "EVM State Controller",
+          "Security Auditor"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Caller initiates function invocation for Gas Cost Comparative Analysis & ",
+            "activeActor": "Caller Transaction",
+            "messages": [
+              {
+                "from": "Caller Transaction",
+                "to": "Reentrancy Guard",
+                "label": "enterProtectedFunction()",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Guard inspects slot status and acquires execution lock",
+            "activeActor": "Reentrancy Guard",
+            "messages": [
+              {
+                "from": "Reentrancy Guard",
+                "to": "EVM State Controller",
+                "label": "acquireLock(status = ENTERED / TSTORE)",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Untrusted callee attempts recursive re-entry and is rejected",
+            "activeActor": "EVM State Controller",
+            "messages": [
+              {
+                "from": "EVM State Controller",
+                "to": "Reentrancy Guard",
+                "label": "reenter() -> REVERT_ALREADY_ENTERED",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Function completes and guard resets lock to clean state",
+            "activeActor": "Security Auditor",
+            "messages": [
+              {
+                "from": "Reentrancy Guard",
+                "to": "EVM State Controller",
+                "label": "releaseLock(status = NOT_ENTERED / TSTORE 0)",
+                "tone": "ok"
+              },
+              {
+                "from": "EVM State Controller",
+                "to": "Security Auditor",
+                "label": "verifyGasOptimization(300 gas \u2713)",
+                "tone": "ok"
+              },
+              {
+                "from": "Security Auditor",
+                "to": "Caller Transaction",
+                "label": "ReentrancyGuardCertified(Optimal \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Master ReentrancyGuard & Transient Lock Architecture Synthesis",
+      "codeHash": "259bbd91ab279a35d1a9d94580c14035bc8348d096d676bbb1fdd768ed16a876",
+      "spec": {
+        "template": "sequence",
+        "title": "Master ReentrancyGuard & Transient Lock Architecture Synthesis \u2014 Reentrancy Guard Sequence",
+        "actors": [
+          "Caller Transaction",
+          "Reentrancy Guard",
+          "EVM State Controller",
+          "Security Auditor"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Caller initiates function invocation for Master ReentrancyGuard & Transie",
+            "activeActor": "Caller Transaction",
+            "messages": [
+              {
+                "from": "Caller Transaction",
+                "to": "Reentrancy Guard",
+                "label": "enterProtectedFunction()",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Guard inspects slot status and acquires execution lock",
+            "activeActor": "Reentrancy Guard",
+            "messages": [
+              {
+                "from": "Reentrancy Guard",
+                "to": "EVM State Controller",
+                "label": "acquireLock(status = ENTERED / TSTORE)",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Untrusted callee attempts recursive re-entry and is rejected",
+            "activeActor": "EVM State Controller",
+            "messages": [
+              {
+                "from": "EVM State Controller",
+                "to": "Reentrancy Guard",
+                "label": "reenter() -> REVERT_ALREADY_ENTERED",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Function completes and guard resets lock to clean state",
+            "activeActor": "Security Auditor",
+            "messages": [
+              {
+                "from": "Reentrancy Guard",
+                "to": "EVM State Controller",
+                "label": "releaseLock(status = NOT_ENTERED / TSTORE 0)",
+                "tone": "ok"
+              },
+              {
+                "from": "EVM State Controller",
+                "to": "Security Auditor",
+                "label": "verifyGasOptimization(300 gas \u2713)",
+                "tone": "ok"
+              },
+              {
+                "from": "Security Auditor",
+                "to": "Caller Transaction",
+                "label": "ReentrancyGuardCertified(Optimal \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Master ReentrancyGuard & Transient Lock Architecture Synthesis \u2014 Reentrancy Guard Sequence",
+        "actors": [
+          "Caller Transaction",
+          "Reentrancy Guard",
+          "EVM State Controller",
+          "Security Auditor"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Caller initiates function invocation for Master ReentrancyGuard & Transie",
+            "activeActor": "Caller Transaction",
+            "messages": [
+              {
+                "from": "Caller Transaction",
+                "to": "Reentrancy Guard",
+                "label": "enterProtectedFunction()",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Guard inspects slot status and acquires execution lock",
+            "activeActor": "Reentrancy Guard",
+            "messages": [
+              {
+                "from": "Reentrancy Guard",
+                "to": "EVM State Controller",
+                "label": "acquireLock(status = ENTERED / TSTORE)",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Untrusted callee attempts recursive re-entry and is rejected",
+            "activeActor": "EVM State Controller",
+            "messages": [
+              {
+                "from": "EVM State Controller",
+                "to": "Reentrancy Guard",
+                "label": "reenter() -> REVERT_ALREADY_ENTERED",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Function completes and guard resets lock to clean state",
+            "activeActor": "Security Auditor",
+            "messages": [
+              {
+                "from": "Reentrancy Guard",
+                "to": "EVM State Controller",
+                "label": "releaseLock(status = NOT_ENTERED / TSTORE 0)",
+                "tone": "ok"
+              },
+              {
+                "from": "EVM State Controller",
+                "to": "Security Auditor",
+                "label": "verifyGasOptimization(300 gas \u2713)",
+                "tone": "ok"
+              },
+              {
+                "from": "Security Auditor",
+                "to": "Caller Transaction",
+                "label": "ReentrancyGuardCertified(Optimal \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
