@@ -1,0 +1,669 @@
+{
+  "schemaVersion": 1,
+  "prefix": "blockchain",
+  "day": 27,
+  "promptSha": "9a329c0f7721ba3e18cd987fe88fbc910245a909d3b764b73b22cf309df78132",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Anatomy of DeFi Liquidations: Health Factor Triggers, Close Factors & Seizable Collateral Math",
+      "codeHash": "3737306f8ee870a24f5c9ec5ff2d6aedf1249cfe49f7d70df262e67e29475799",
+      "spec": {
+        "template": "sequence",
+        "title": "Anatomy of DeFi Liquidations: Health Factor Triggers, Close Factors & Seizable Collateral Math — DeFi Liquidation Engine Sequence",
+        "actors": [
+          "Liquidator Bot",
+          "LendingPoolEngine",
+          "PriceOracleRegistry",
+          "ReserveTreasury"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Protocol monitors state for Anatomy of DeFi Liquidations: ",
+            "activeActor": "Liquidator Bot",
+            "messages": [
+              {
+                "from": "Liquidator Bot",
+                "to": "LendingPoolEngine",
+                "label": "detectDistressedPosition(checkHealthFactor) [Phase 1]",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Engine executes liquidation calculation or uncollateralized loan dispatch",
+            "activeActor": "LendingPoolEngine",
+            "messages": [
+              {
+                "from": "LendingPoolEngine",
+                "to": "PriceOracleRegistry",
+                "label": "executeModelCalculation(applyCloseFactor) [Phase 2]",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Protocol settles seized collateral or verifies safety backstop waterfall",
+            "activeActor": "PriceOracleRegistry",
+            "messages": [
+              {
+                "from": "PriceOracleRegistry",
+                "to": "ReserveTreasury",
+                "label": "verifyRiskThreshold(calculateSeizableTokens) [Phase 3]",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Liquidation settled; debt extinguished and state committed",
+            "activeActor": "LendingPoolEngine",
+            "messages": [
+              {
+                "from": "LendingPoolEngine",
+                "to": "Liquidator Bot",
+                "label": "LiquidationCommitted(healthFactorRestored ✓)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Anatomy of DeFi Liquidations: Health Factor Triggers, Close Factors & Seizable Collateral Math — DeFi Liquidation Engine Sequence",
+        "actors": [
+          "Liquidator Bot",
+          "LendingPoolEngine",
+          "PriceOracleRegistry",
+          "ReserveTreasury"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Protocol monitors state for Anatomy of DeFi Liquidations: ",
+            "activeActor": "Liquidator Bot",
+            "messages": [
+              {
+                "from": "Liquidator Bot",
+                "to": "LendingPoolEngine",
+                "label": "detectDistressedPosition(checkHealthFactor) [Phase 1]",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Engine executes liquidation calculation or uncollateralized loan dispatch",
+            "activeActor": "LendingPoolEngine",
+            "messages": [
+              {
+                "from": "LendingPoolEngine",
+                "to": "PriceOracleRegistry",
+                "label": "executeModelCalculation(applyCloseFactor) [Phase 2]",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Protocol settles seized collateral or verifies safety backstop waterfall",
+            "activeActor": "PriceOracleRegistry",
+            "messages": [
+              {
+                "from": "PriceOracleRegistry",
+                "to": "ReserveTreasury",
+                "label": "verifyRiskThreshold(calculateSeizableTokens) [Phase 3]",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Liquidation settled; debt extinguished and state committed",
+            "activeActor": "LendingPoolEngine",
+            "messages": [
+              {
+                "from": "LendingPoolEngine",
+                "to": "Liquidator Bot",
+                "label": "LiquidationCommitted(healthFactorRestored ✓)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Keeper Bots & MEV Priority Gas Auctions (PGA) in Liquidations",
+      "codeHash": "b84f28f3b5faf9dde21e8b6956520205ed044915b855061b00373f9a369008bf",
+      "spec": {
+        "template": "sequence",
+        "title": "Keeper Bots & MEV Priority Gas Auctions (PGA) in Liquidations — DeFi Liquidation Engine Sequence",
+        "actors": [
+          "Keeper Daemon",
+          "FlashbotsRelay",
+          "BlockBuilder",
+          "ValidatorCoinbase"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Protocol monitors state for Keeper Bots & MEV Priority Gas",
+            "activeActor": "Keeper Daemon",
+            "messages": [
+              {
+                "from": "Keeper Daemon",
+                "to": "FlashbotsRelay",
+                "label": "detectDistressedPosition(mempoolOracleUpdate) [Phase 1]",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Engine executes liquidation calculation or uncollateralized loan dispatch",
+            "activeActor": "FlashbotsRelay",
+            "messages": [
+              {
+                "from": "FlashbotsRelay",
+                "to": "BlockBuilder",
+                "label": "executeModelCalculation(simulateMevBundle) [Phase 2]",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Protocol settles seized collateral or verifies safety backstop waterfall",
+            "activeActor": "BlockBuilder",
+            "messages": [
+              {
+                "from": "BlockBuilder",
+                "to": "ValidatorCoinbase",
+                "label": "verifyRiskThreshold(transferCoinbaseBribe) [Phase 3]",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Liquidation settled; debt extinguished and state committed",
+            "activeActor": "FlashbotsRelay",
+            "messages": [
+              {
+                "from": "FlashbotsRelay",
+                "to": "Keeper Daemon",
+                "label": "LiquidationCommitted(bundleMinedTopBlock ✓)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Keeper Bots & MEV Priority Gas Auctions (PGA) in Liquidations — DeFi Liquidation Engine Sequence",
+        "actors": [
+          "Keeper Daemon",
+          "FlashbotsRelay",
+          "BlockBuilder",
+          "ValidatorCoinbase"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Protocol monitors state for Keeper Bots & MEV Priority Gas",
+            "activeActor": "Keeper Daemon",
+            "messages": [
+              {
+                "from": "Keeper Daemon",
+                "to": "FlashbotsRelay",
+                "label": "detectDistressedPosition(mempoolOracleUpdate) [Phase 1]",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Engine executes liquidation calculation or uncollateralized loan dispatch",
+            "activeActor": "FlashbotsRelay",
+            "messages": [
+              {
+                "from": "FlashbotsRelay",
+                "to": "BlockBuilder",
+                "label": "executeModelCalculation(simulateMevBundle) [Phase 2]",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Protocol settles seized collateral or verifies safety backstop waterfall",
+            "activeActor": "BlockBuilder",
+            "messages": [
+              {
+                "from": "BlockBuilder",
+                "to": "ValidatorCoinbase",
+                "label": "verifyRiskThreshold(transferCoinbaseBribe) [Phase 3]",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Liquidation settled; debt extinguished and state committed",
+            "activeActor": "FlashbotsRelay",
+            "messages": [
+              {
+                "from": "FlashbotsRelay",
+                "to": "Keeper Daemon",
+                "label": "LiquidationCommitted(bundleMinedTopBlock ✓)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Flash Loan-Powered Atomic Liquidations (Zero-Capital Liquidator Architecture)",
+      "codeHash": "c7f8bf1fa2a770639ad2179ce5093b18c1b0e5d7555f85b1d4fbe22f98428a8d",
+      "spec": {
+        "template": "sequence",
+        "title": "Flash Loan-Powered Atomic Liquidations (Zero-Capital Liquidator Architecture) — DeFi Liquidation Engine Sequence",
+        "actors": [
+          "FlashPoolVault",
+          "KeeperContract",
+          "LendingPoolEngine",
+          "UniswapV3Router"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Protocol monitors state for Flash Loan-Powered Atomic Liqu",
+            "activeActor": "FlashPoolVault",
+            "messages": [
+              {
+                "from": "FlashPoolVault",
+                "to": "KeeperContract",
+                "label": "detectDistressedPosition(requestFlashBorrow) [Phase 1]",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Engine executes liquidation calculation or uncollateralized loan dispatch",
+            "activeActor": "KeeperContract",
+            "messages": [
+              {
+                "from": "KeeperContract",
+                "to": "LendingPoolEngine",
+                "label": "executeModelCalculation(seizeCollateralBonus) [Phase 2]",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Protocol settles seized collateral or verifies safety backstop waterfall",
+            "activeActor": "LendingPoolEngine",
+            "messages": [
+              {
+                "from": "LendingPoolEngine",
+                "to": "UniswapV3Router",
+                "label": "verifyRiskThreshold(exactInputDEXSwap) [Phase 3]",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Liquidation settled; debt extinguished and state committed",
+            "activeActor": "KeeperContract",
+            "messages": [
+              {
+                "from": "KeeperContract",
+                "to": "FlashPoolVault",
+                "label": "LiquidationCommitted(flashLoanRepaidProfitRetained ✓)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Flash Loan-Powered Atomic Liquidations (Zero-Capital Liquidator Architecture) — DeFi Liquidation Engine Sequence",
+        "actors": [
+          "FlashPoolVault",
+          "KeeperContract",
+          "LendingPoolEngine",
+          "UniswapV3Router"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Protocol monitors state for Flash Loan-Powered Atomic Liqu",
+            "activeActor": "FlashPoolVault",
+            "messages": [
+              {
+                "from": "FlashPoolVault",
+                "to": "KeeperContract",
+                "label": "detectDistressedPosition(requestFlashBorrow) [Phase 1]",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Engine executes liquidation calculation or uncollateralized loan dispatch",
+            "activeActor": "KeeperContract",
+            "messages": [
+              {
+                "from": "KeeperContract",
+                "to": "LendingPoolEngine",
+                "label": "executeModelCalculation(seizeCollateralBonus) [Phase 2]",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Protocol settles seized collateral or verifies safety backstop waterfall",
+            "activeActor": "LendingPoolEngine",
+            "messages": [
+              {
+                "from": "LendingPoolEngine",
+                "to": "UniswapV3Router",
+                "label": "verifyRiskThreshold(exactInputDEXSwap) [Phase 3]",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Liquidation settled; debt extinguished and state committed",
+            "activeActor": "KeeperContract",
+            "messages": [
+              {
+                "from": "KeeperContract",
+                "to": "FlashPoolVault",
+                "label": "LiquidationCommitted(flashLoanRepaidProfitRetained ✓)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Bad Debt Mechanics, Deficit Socialization & Protocol Safety Backstops",
+      "codeHash": "bac11e0e5e0002b3faa7c156a123b0196cd9bdf46ac2a7e1c4285dddd7882b0d",
+      "spec": {
+        "template": "sequence",
+        "title": "Bad Debt Mechanics, Deficit Socialization & Protocol Safety Backstops — DeFi Liquidation Engine Sequence",
+        "actors": [
+          "Risk DAO Sentinel",
+          "ReserveTreasury",
+          "SafetyModulePool",
+          "DepositorVault"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Protocol monitors state for Bad Debt Mechanics, Deficit So",
+            "activeActor": "Risk DAO Sentinel",
+            "messages": [
+              {
+                "from": "Risk DAO Sentinel",
+                "to": "ReserveTreasury",
+                "label": "detectDistressedPosition(assessBadDebtShortfall) [Phase 1]",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Engine executes liquidation calculation or uncollateralized loan dispatch",
+            "activeActor": "ReserveTreasury",
+            "messages": [
+              {
+                "from": "ReserveTreasury",
+                "to": "SafetyModulePool",
+                "label": "executeModelCalculation(tapTreasuryReserves) [Phase 2]",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Protocol settles seized collateral or verifies safety backstop waterfall",
+            "activeActor": "SafetyModulePool",
+            "messages": [
+              {
+                "from": "SafetyModulePool",
+                "to": "DepositorVault",
+                "label": "verifyRiskThreshold(slashSafetyModuleTokens) [Phase 3]",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Liquidation settled; debt extinguished and state committed",
+            "activeActor": "ReserveTreasury",
+            "messages": [
+              {
+                "from": "ReserveTreasury",
+                "to": "Risk DAO Sentinel",
+                "label": "LiquidationCommitted(protocolSolvencyPreserved ✓)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Bad Debt Mechanics, Deficit Socialization & Protocol Safety Backstops — DeFi Liquidation Engine Sequence",
+        "actors": [
+          "Risk DAO Sentinel",
+          "ReserveTreasury",
+          "SafetyModulePool",
+          "DepositorVault"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Protocol monitors state for Bad Debt Mechanics, Deficit So",
+            "activeActor": "Risk DAO Sentinel",
+            "messages": [
+              {
+                "from": "Risk DAO Sentinel",
+                "to": "ReserveTreasury",
+                "label": "detectDistressedPosition(assessBadDebtShortfall) [Phase 1]",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Engine executes liquidation calculation or uncollateralized loan dispatch",
+            "activeActor": "ReserveTreasury",
+            "messages": [
+              {
+                "from": "ReserveTreasury",
+                "to": "SafetyModulePool",
+                "label": "executeModelCalculation(tapTreasuryReserves) [Phase 2]",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Protocol settles seized collateral or verifies safety backstop waterfall",
+            "activeActor": "SafetyModulePool",
+            "messages": [
+              {
+                "from": "SafetyModulePool",
+                "to": "DepositorVault",
+                "label": "verifyRiskThreshold(slashSafetyModuleTokens) [Phase 3]",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Liquidation settled; debt extinguished and state committed",
+            "activeActor": "ReserveTreasury",
+            "messages": [
+              {
+                "from": "ReserveTreasury",
+                "to": "Risk DAO Sentinel",
+                "label": "LiquidationCommitted(protocolSolvencyPreserved ✓)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Liquidation Sentinel & Protocol Solvency Master Engine",
+      "codeHash": "85b44493a4bc21f1244198637931f599ad91fe160705877b04c7de720d255d8d",
+      "spec": {
+        "template": "sequence",
+        "title": "Enterprise Liquidation Sentinel & Protocol Solvency Master Engine — DeFi Liquidation Engine Sequence",
+        "actors": [
+          "Institutional Sentinel",
+          "LiquidationEngine",
+          "SolvencyAuditor",
+          "Enterprise Risk DAO"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Protocol monitors state for Enterprise Liquidation Sentine",
+            "activeActor": "Institutional Sentinel",
+            "messages": [
+              {
+                "from": "Institutional Sentinel",
+                "to": "LiquidationEngine",
+                "label": "detectDistressedPosition(auditLiquidationGates) [Phase 1]",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Engine executes liquidation calculation or uncollateralized loan dispatch",
+            "activeActor": "LiquidationEngine",
+            "messages": [
+              {
+                "from": "LiquidationEngine",
+                "to": "SolvencyAuditor",
+                "label": "executeModelCalculation(verifyFlashSolvency) [Phase 2]",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Protocol settles seized collateral or verifies safety backstop waterfall",
+            "activeActor": "SolvencyAuditor",
+            "messages": [
+              {
+                "from": "SolvencyAuditor",
+                "to": "Enterprise Risk DAO",
+                "label": "verifyRiskThreshold(confirmSlippageTolerance) [Phase 3]",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Liquidation settled; debt extinguished and state committed",
+            "activeActor": "LiquidationEngine",
+            "messages": [
+              {
+                "from": "LiquidationEngine",
+                "to": "Institutional Sentinel",
+                "label": "LiquidationCommitted(enterpriseLiquidationCertified ✓)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Enterprise Liquidation Sentinel & Protocol Solvency Master Engine — DeFi Liquidation Engine Sequence",
+        "actors": [
+          "Institutional Sentinel",
+          "LiquidationEngine",
+          "SolvencyAuditor",
+          "Enterprise Risk DAO"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Protocol monitors state for Enterprise Liquidation Sentine",
+            "activeActor": "Institutional Sentinel",
+            "messages": [
+              {
+                "from": "Institutional Sentinel",
+                "to": "LiquidationEngine",
+                "label": "detectDistressedPosition(auditLiquidationGates) [Phase 1]",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Engine executes liquidation calculation or uncollateralized loan dispatch",
+            "activeActor": "LiquidationEngine",
+            "messages": [
+              {
+                "from": "LiquidationEngine",
+                "to": "SolvencyAuditor",
+                "label": "executeModelCalculation(verifyFlashSolvency) [Phase 2]",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Protocol settles seized collateral or verifies safety backstop waterfall",
+            "activeActor": "SolvencyAuditor",
+            "messages": [
+              {
+                "from": "SolvencyAuditor",
+                "to": "Enterprise Risk DAO",
+                "label": "verifyRiskThreshold(confirmSlippageTolerance) [Phase 3]",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Liquidation settled; debt extinguished and state committed",
+            "activeActor": "LiquidationEngine",
+            "messages": [
+              {
+                "from": "LiquidationEngine",
+                "to": "Institutional Sentinel",
+                "label": "LiquidationCommitted(enterpriseLiquidationCertified ✓)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
