@@ -1,0 +1,2309 @@
+{
+  "schemaVersion": 1,
+  "prefix": "mobile",
+  "day": 9,
+  "promptSha": "abee2e8ee908ee8d180a564a9564f5a3ee64b42ceb597044f84ac5c5454b8765",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Mobile Memory Topologies: Virtual Memory, RSS, iOS Jetsam & Android LMK",
+      "codeHash": "3a0f3577f5f60f363cf5bcca3a2d8286d5b85ef427a42c392c1abdc21d02e16c",
+      "spec": {
+        "template": "component-tree",
+        "title": "Mobile Memory Topologies: Virtual Memory, RSS... — Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "AppShell",
+            "name": "<MemoryMonitorRoot />",
+            "props": {
+              "maxRssMb": "1200"
+            },
+            "state": {
+              "status": "NORMAL"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "ImagePipeline",
+            "name": "<NativeImageDownsampler />",
+            "props": {
+              "subsample": "true"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "RadioOptimizer",
+            "name": "<CoalescedRadioSync />",
+            "state": {
+              "tailTimeSec": "0"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "ProfilerAgent",
+            "name": "<LeakCanaryProfiler />",
+            "props": {
+              "activeListeners": "0"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <MemoryMonitorRoot /> for Mobile Memory Topologies: Virt...",
+            "activeId": "AppShell",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MemoryMonitorRoot />",
+                "props": {
+                  "maxRssMb": "1200"
+                },
+                "state": {
+                  "status": "NORMAL"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "ImagePipeline",
+                "name": "<NativeImageDownsampler />",
+                "props": {
+                  "subsample": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "RadioOptimizer",
+                "name": "<CoalescedRadioSync />",
+                "state": {
+                  "tailTimeSec": "0"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ProfilerAgent",
+                "name": "<LeakCanaryProfiler />",
+                "props": {
+                  "activeListeners": "0"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Subsample bitmap allocations in <NativeImageDownsampler />.",
+            "activeId": "ImagePipeline",
+            "reRenderingIds": [
+              "ImagePipeline",
+              "ProfilerAgent"
+            ],
+            "propsPassed": {
+              "from": "AppShell",
+              "to": "ImagePipeline",
+              "propName": "subsample",
+              "value": "true"
+            },
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MemoryMonitorRoot />",
+                "props": {
+                  "maxRssMb": "1200"
+                },
+                "state": {
+                  "status": "NORMAL"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "ImagePipeline",
+                "name": "<NativeImageDownsampler />",
+                "props": {
+                  "subsample": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "RadioOptimizer",
+                "name": "<CoalescedRadioSync />",
+                "state": {
+                  "tailTimeSec": "0"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ProfilerAgent",
+                "name": "<LeakCanaryProfiler />",
+                "props": {
+                  "activeListeners": "0"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Coalesce network packets in <CoalescedRadioSync /> to save battery.",
+            "activeId": "RadioOptimizer",
+            "reRenderingIds": [
+              "RadioOptimizer"
+            ],
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MemoryMonitorRoot />",
+                "props": {
+                  "maxRssMb": "1200"
+                },
+                "state": {
+                  "status": "NORMAL"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "ImagePipeline",
+                "name": "<NativeImageDownsampler />",
+                "props": {
+                  "subsample": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "RadioOptimizer",
+                "name": "<CoalescedRadioSync />",
+                "state": {
+                  "tailTimeSec": "0"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "ProfilerAgent",
+                "name": "<LeakCanaryProfiler />",
+                "props": {
+                  "activeListeners": "0"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Assert leak-free heap stability via <LeakCanaryProfiler />.",
+            "activeId": "ProfilerAgent",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MemoryMonitorRoot />",
+                "props": {
+                  "maxRssMb": "1200"
+                },
+                "state": {
+                  "status": "NORMAL"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "ImagePipeline",
+                "name": "<NativeImageDownsampler />",
+                "props": {
+                  "subsample": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "RadioOptimizer",
+                "name": "<CoalescedRadioSync />",
+                "state": {
+                  "tailTimeSec": "0"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "ProfilerAgent",
+                "name": "<LeakCanaryProfiler />",
+                "props": {
+                  "activeListeners": "0"
+                },
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "title": "Mobile Memory Topologies: Virtual Memory, RSS... — Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "AppShell",
+            "name": "<MemoryMonitorRoot />",
+            "props": {
+              "maxRssMb": "1200"
+            },
+            "state": {
+              "status": "NORMAL"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "ImagePipeline",
+            "name": "<NativeImageDownsampler />",
+            "props": {
+              "subsample": "true"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "RadioOptimizer",
+            "name": "<CoalescedRadioSync />",
+            "state": {
+              "tailTimeSec": "0"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "ProfilerAgent",
+            "name": "<LeakCanaryProfiler />",
+            "props": {
+              "activeListeners": "0"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <MemoryMonitorRoot /> for Mobile Memory Topologies: Virt...",
+            "activeId": "AppShell",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MemoryMonitorRoot />",
+                "props": {
+                  "maxRssMb": "1200"
+                },
+                "state": {
+                  "status": "NORMAL"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "ImagePipeline",
+                "name": "<NativeImageDownsampler />",
+                "props": {
+                  "subsample": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "RadioOptimizer",
+                "name": "<CoalescedRadioSync />",
+                "state": {
+                  "tailTimeSec": "0"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ProfilerAgent",
+                "name": "<LeakCanaryProfiler />",
+                "props": {
+                  "activeListeners": "0"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Subsample bitmap allocations in <NativeImageDownsampler />.",
+            "activeId": "ImagePipeline",
+            "reRenderingIds": [
+              "ImagePipeline",
+              "ProfilerAgent"
+            ],
+            "propsPassed": {
+              "from": "AppShell",
+              "to": "ImagePipeline",
+              "propName": "subsample",
+              "value": "true"
+            },
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MemoryMonitorRoot />",
+                "props": {
+                  "maxRssMb": "1200"
+                },
+                "state": {
+                  "status": "NORMAL"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "ImagePipeline",
+                "name": "<NativeImageDownsampler />",
+                "props": {
+                  "subsample": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "RadioOptimizer",
+                "name": "<CoalescedRadioSync />",
+                "state": {
+                  "tailTimeSec": "0"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ProfilerAgent",
+                "name": "<LeakCanaryProfiler />",
+                "props": {
+                  "activeListeners": "0"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Coalesce network packets in <CoalescedRadioSync /> to save battery.",
+            "activeId": "RadioOptimizer",
+            "reRenderingIds": [
+              "RadioOptimizer"
+            ],
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MemoryMonitorRoot />",
+                "props": {
+                  "maxRssMb": "1200"
+                },
+                "state": {
+                  "status": "NORMAL"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "ImagePipeline",
+                "name": "<NativeImageDownsampler />",
+                "props": {
+                  "subsample": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "RadioOptimizer",
+                "name": "<CoalescedRadioSync />",
+                "state": {
+                  "tailTimeSec": "0"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "ProfilerAgent",
+                "name": "<LeakCanaryProfiler />",
+                "props": {
+                  "activeListeners": "0"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Assert leak-free heap stability via <LeakCanaryProfiler />.",
+            "activeId": "ProfilerAgent",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MemoryMonitorRoot />",
+                "props": {
+                  "maxRssMb": "1200"
+                },
+                "state": {
+                  "status": "NORMAL"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "ImagePipeline",
+                "name": "<NativeImageDownsampler />",
+                "props": {
+                  "subsample": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "RadioOptimizer",
+                "name": "<CoalescedRadioSync />",
+                "state": {
+                  "tailTimeSec": "0"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "ProfilerAgent",
+                "name": "<LeakCanaryProfiler />",
+                "props": {
+                  "activeListeners": "0"
+                },
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "JavaScript vs Native Leaks: Hermes Retain Cycles, Detached Views & Closure Traps",
+      "codeHash": "85f4b0aa1edc92b3167a32faa417cac990d21319ad3e7d98f229ec8eef98f0e9",
+      "spec": {
+        "template": "component-tree",
+        "title": "JavaScript vs Native Leaks: Hermes Retain Cyc... — Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "AppShell",
+            "name": "<MemoryMonitorRoot />",
+            "props": {
+              "maxRssMb": "1200"
+            },
+            "state": {
+              "status": "NORMAL"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "ImagePipeline",
+            "name": "<NativeImageDownsampler />",
+            "props": {
+              "subsample": "true"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "RadioOptimizer",
+            "name": "<CoalescedRadioSync />",
+            "state": {
+              "tailTimeSec": "0"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "ProfilerAgent",
+            "name": "<LeakCanaryProfiler />",
+            "props": {
+              "activeListeners": "0"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <MemoryMonitorRoot /> for JavaScript vs Native Leaks: He...",
+            "activeId": "AppShell",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MemoryMonitorRoot />",
+                "props": {
+                  "maxRssMb": "1200"
+                },
+                "state": {
+                  "status": "NORMAL"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "ImagePipeline",
+                "name": "<NativeImageDownsampler />",
+                "props": {
+                  "subsample": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "RadioOptimizer",
+                "name": "<CoalescedRadioSync />",
+                "state": {
+                  "tailTimeSec": "0"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ProfilerAgent",
+                "name": "<LeakCanaryProfiler />",
+                "props": {
+                  "activeListeners": "0"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Subsample bitmap allocations in <NativeImageDownsampler />.",
+            "activeId": "ImagePipeline",
+            "reRenderingIds": [
+              "ImagePipeline",
+              "ProfilerAgent"
+            ],
+            "propsPassed": {
+              "from": "AppShell",
+              "to": "ImagePipeline",
+              "propName": "subsample",
+              "value": "true"
+            },
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MemoryMonitorRoot />",
+                "props": {
+                  "maxRssMb": "1200"
+                },
+                "state": {
+                  "status": "NORMAL"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "ImagePipeline",
+                "name": "<NativeImageDownsampler />",
+                "props": {
+                  "subsample": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "RadioOptimizer",
+                "name": "<CoalescedRadioSync />",
+                "state": {
+                  "tailTimeSec": "0"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ProfilerAgent",
+                "name": "<LeakCanaryProfiler />",
+                "props": {
+                  "activeListeners": "0"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Coalesce network packets in <CoalescedRadioSync /> to save battery.",
+            "activeId": "RadioOptimizer",
+            "reRenderingIds": [
+              "RadioOptimizer"
+            ],
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MemoryMonitorRoot />",
+                "props": {
+                  "maxRssMb": "1200"
+                },
+                "state": {
+                  "status": "NORMAL"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "ImagePipeline",
+                "name": "<NativeImageDownsampler />",
+                "props": {
+                  "subsample": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "RadioOptimizer",
+                "name": "<CoalescedRadioSync />",
+                "state": {
+                  "tailTimeSec": "0"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "ProfilerAgent",
+                "name": "<LeakCanaryProfiler />",
+                "props": {
+                  "activeListeners": "0"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Assert leak-free heap stability via <LeakCanaryProfiler />.",
+            "activeId": "ProfilerAgent",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MemoryMonitorRoot />",
+                "props": {
+                  "maxRssMb": "1200"
+                },
+                "state": {
+                  "status": "NORMAL"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "ImagePipeline",
+                "name": "<NativeImageDownsampler />",
+                "props": {
+                  "subsample": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "RadioOptimizer",
+                "name": "<CoalescedRadioSync />",
+                "state": {
+                  "tailTimeSec": "0"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "ProfilerAgent",
+                "name": "<LeakCanaryProfiler />",
+                "props": {
+                  "activeListeners": "0"
+                },
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "title": "JavaScript vs Native Leaks: Hermes Retain Cyc... — Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "AppShell",
+            "name": "<MemoryMonitorRoot />",
+            "props": {
+              "maxRssMb": "1200"
+            },
+            "state": {
+              "status": "NORMAL"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "ImagePipeline",
+            "name": "<NativeImageDownsampler />",
+            "props": {
+              "subsample": "true"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "RadioOptimizer",
+            "name": "<CoalescedRadioSync />",
+            "state": {
+              "tailTimeSec": "0"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "ProfilerAgent",
+            "name": "<LeakCanaryProfiler />",
+            "props": {
+              "activeListeners": "0"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <MemoryMonitorRoot /> for JavaScript vs Native Leaks: He...",
+            "activeId": "AppShell",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MemoryMonitorRoot />",
+                "props": {
+                  "maxRssMb": "1200"
+                },
+                "state": {
+                  "status": "NORMAL"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "ImagePipeline",
+                "name": "<NativeImageDownsampler />",
+                "props": {
+                  "subsample": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "RadioOptimizer",
+                "name": "<CoalescedRadioSync />",
+                "state": {
+                  "tailTimeSec": "0"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ProfilerAgent",
+                "name": "<LeakCanaryProfiler />",
+                "props": {
+                  "activeListeners": "0"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Subsample bitmap allocations in <NativeImageDownsampler />.",
+            "activeId": "ImagePipeline",
+            "reRenderingIds": [
+              "ImagePipeline",
+              "ProfilerAgent"
+            ],
+            "propsPassed": {
+              "from": "AppShell",
+              "to": "ImagePipeline",
+              "propName": "subsample",
+              "value": "true"
+            },
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MemoryMonitorRoot />",
+                "props": {
+                  "maxRssMb": "1200"
+                },
+                "state": {
+                  "status": "NORMAL"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "ImagePipeline",
+                "name": "<NativeImageDownsampler />",
+                "props": {
+                  "subsample": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "RadioOptimizer",
+                "name": "<CoalescedRadioSync />",
+                "state": {
+                  "tailTimeSec": "0"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ProfilerAgent",
+                "name": "<LeakCanaryProfiler />",
+                "props": {
+                  "activeListeners": "0"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Coalesce network packets in <CoalescedRadioSync /> to save battery.",
+            "activeId": "RadioOptimizer",
+            "reRenderingIds": [
+              "RadioOptimizer"
+            ],
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MemoryMonitorRoot />",
+                "props": {
+                  "maxRssMb": "1200"
+                },
+                "state": {
+                  "status": "NORMAL"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "ImagePipeline",
+                "name": "<NativeImageDownsampler />",
+                "props": {
+                  "subsample": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "RadioOptimizer",
+                "name": "<CoalescedRadioSync />",
+                "state": {
+                  "tailTimeSec": "0"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "ProfilerAgent",
+                "name": "<LeakCanaryProfiler />",
+                "props": {
+                  "activeListeners": "0"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Assert leak-free heap stability via <LeakCanaryProfiler />.",
+            "activeId": "ProfilerAgent",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MemoryMonitorRoot />",
+                "props": {
+                  "maxRssMb": "1200"
+                },
+                "state": {
+                  "status": "NORMAL"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "ImagePipeline",
+                "name": "<NativeImageDownsampler />",
+                "props": {
+                  "subsample": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "RadioOptimizer",
+                "name": "<CoalescedRadioSync />",
+                "state": {
+                  "tailTimeSec": "0"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "ProfilerAgent",
+                "name": "<LeakCanaryProfiler />",
+                "props": {
+                  "activeListeners": "0"
+                },
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Image Memory Optimization: Decoded Bitmaps, Subsampling & Downsampling Pipelines",
+      "codeHash": "46c683b35e10fb1a88fd74fd6bca8b691615938aee7efefd6fd4bccabaf0c503",
+      "spec": {
+        "template": "component-tree",
+        "title": "Image Memory Optimization: Decoded Bitmaps, S... — Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "AppShell",
+            "name": "<MemoryMonitorRoot />",
+            "props": {
+              "maxRssMb": "1200"
+            },
+            "state": {
+              "status": "NORMAL"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "ImagePipeline",
+            "name": "<NativeImageDownsampler />",
+            "props": {
+              "subsample": "true"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "RadioOptimizer",
+            "name": "<CoalescedRadioSync />",
+            "state": {
+              "tailTimeSec": "0"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "ProfilerAgent",
+            "name": "<LeakCanaryProfiler />",
+            "props": {
+              "activeListeners": "0"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <MemoryMonitorRoot /> for Image Memory Optimization: Dec...",
+            "activeId": "AppShell",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MemoryMonitorRoot />",
+                "props": {
+                  "maxRssMb": "1200"
+                },
+                "state": {
+                  "status": "NORMAL"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "ImagePipeline",
+                "name": "<NativeImageDownsampler />",
+                "props": {
+                  "subsample": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "RadioOptimizer",
+                "name": "<CoalescedRadioSync />",
+                "state": {
+                  "tailTimeSec": "0"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ProfilerAgent",
+                "name": "<LeakCanaryProfiler />",
+                "props": {
+                  "activeListeners": "0"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Subsample bitmap allocations in <NativeImageDownsampler />.",
+            "activeId": "ImagePipeline",
+            "reRenderingIds": [
+              "ImagePipeline",
+              "ProfilerAgent"
+            ],
+            "propsPassed": {
+              "from": "AppShell",
+              "to": "ImagePipeline",
+              "propName": "subsample",
+              "value": "true"
+            },
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MemoryMonitorRoot />",
+                "props": {
+                  "maxRssMb": "1200"
+                },
+                "state": {
+                  "status": "NORMAL"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "ImagePipeline",
+                "name": "<NativeImageDownsampler />",
+                "props": {
+                  "subsample": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "RadioOptimizer",
+                "name": "<CoalescedRadioSync />",
+                "state": {
+                  "tailTimeSec": "0"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ProfilerAgent",
+                "name": "<LeakCanaryProfiler />",
+                "props": {
+                  "activeListeners": "0"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Coalesce network packets in <CoalescedRadioSync /> to save battery.",
+            "activeId": "RadioOptimizer",
+            "reRenderingIds": [
+              "RadioOptimizer"
+            ],
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MemoryMonitorRoot />",
+                "props": {
+                  "maxRssMb": "1200"
+                },
+                "state": {
+                  "status": "NORMAL"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "ImagePipeline",
+                "name": "<NativeImageDownsampler />",
+                "props": {
+                  "subsample": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "RadioOptimizer",
+                "name": "<CoalescedRadioSync />",
+                "state": {
+                  "tailTimeSec": "0"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "ProfilerAgent",
+                "name": "<LeakCanaryProfiler />",
+                "props": {
+                  "activeListeners": "0"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Assert leak-free heap stability via <LeakCanaryProfiler />.",
+            "activeId": "ProfilerAgent",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MemoryMonitorRoot />",
+                "props": {
+                  "maxRssMb": "1200"
+                },
+                "state": {
+                  "status": "NORMAL"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "ImagePipeline",
+                "name": "<NativeImageDownsampler />",
+                "props": {
+                  "subsample": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "RadioOptimizer",
+                "name": "<CoalescedRadioSync />",
+                "state": {
+                  "tailTimeSec": "0"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "ProfilerAgent",
+                "name": "<LeakCanaryProfiler />",
+                "props": {
+                  "activeListeners": "0"
+                },
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "title": "Image Memory Optimization: Decoded Bitmaps, S... — Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "AppShell",
+            "name": "<MemoryMonitorRoot />",
+            "props": {
+              "maxRssMb": "1200"
+            },
+            "state": {
+              "status": "NORMAL"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "ImagePipeline",
+            "name": "<NativeImageDownsampler />",
+            "props": {
+              "subsample": "true"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "RadioOptimizer",
+            "name": "<CoalescedRadioSync />",
+            "state": {
+              "tailTimeSec": "0"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "ProfilerAgent",
+            "name": "<LeakCanaryProfiler />",
+            "props": {
+              "activeListeners": "0"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <MemoryMonitorRoot /> for Image Memory Optimization: Dec...",
+            "activeId": "AppShell",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MemoryMonitorRoot />",
+                "props": {
+                  "maxRssMb": "1200"
+                },
+                "state": {
+                  "status": "NORMAL"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "ImagePipeline",
+                "name": "<NativeImageDownsampler />",
+                "props": {
+                  "subsample": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "RadioOptimizer",
+                "name": "<CoalescedRadioSync />",
+                "state": {
+                  "tailTimeSec": "0"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ProfilerAgent",
+                "name": "<LeakCanaryProfiler />",
+                "props": {
+                  "activeListeners": "0"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Subsample bitmap allocations in <NativeImageDownsampler />.",
+            "activeId": "ImagePipeline",
+            "reRenderingIds": [
+              "ImagePipeline",
+              "ProfilerAgent"
+            ],
+            "propsPassed": {
+              "from": "AppShell",
+              "to": "ImagePipeline",
+              "propName": "subsample",
+              "value": "true"
+            },
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MemoryMonitorRoot />",
+                "props": {
+                  "maxRssMb": "1200"
+                },
+                "state": {
+                  "status": "NORMAL"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "ImagePipeline",
+                "name": "<NativeImageDownsampler />",
+                "props": {
+                  "subsample": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "RadioOptimizer",
+                "name": "<CoalescedRadioSync />",
+                "state": {
+                  "tailTimeSec": "0"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ProfilerAgent",
+                "name": "<LeakCanaryProfiler />",
+                "props": {
+                  "activeListeners": "0"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Coalesce network packets in <CoalescedRadioSync /> to save battery.",
+            "activeId": "RadioOptimizer",
+            "reRenderingIds": [
+              "RadioOptimizer"
+            ],
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MemoryMonitorRoot />",
+                "props": {
+                  "maxRssMb": "1200"
+                },
+                "state": {
+                  "status": "NORMAL"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "ImagePipeline",
+                "name": "<NativeImageDownsampler />",
+                "props": {
+                  "subsample": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "RadioOptimizer",
+                "name": "<CoalescedRadioSync />",
+                "state": {
+                  "tailTimeSec": "0"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "ProfilerAgent",
+                "name": "<LeakCanaryProfiler />",
+                "props": {
+                  "activeListeners": "0"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Assert leak-free heap stability via <LeakCanaryProfiler />.",
+            "activeId": "ProfilerAgent",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MemoryMonitorRoot />",
+                "props": {
+                  "maxRssMb": "1200"
+                },
+                "state": {
+                  "status": "NORMAL"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "ImagePipeline",
+                "name": "<NativeImageDownsampler />",
+                "props": {
+                  "subsample": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "RadioOptimizer",
+                "name": "<CoalescedRadioSync />",
+                "state": {
+                  "tailTimeSec": "0"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "ProfilerAgent",
+                "name": "<LeakCanaryProfiler />",
+                "props": {
+                  "activeListeners": "0"
+                },
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Battery Diagnostics & Background Pacing: Wake Locks, GPS & Cellular Radios",
+      "codeHash": "3f0e79a82e887d87f0b04aa80a7bdafc2f5a3394ad354ef7576cffc6be72dfba",
+      "spec": {
+        "template": "component-tree",
+        "title": "Battery Diagnostics & Background Pacing: Wake... — Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "AppShell",
+            "name": "<MemoryMonitorRoot />",
+            "props": {
+              "maxRssMb": "1200"
+            },
+            "state": {
+              "status": "NORMAL"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "ImagePipeline",
+            "name": "<NativeImageDownsampler />",
+            "props": {
+              "subsample": "true"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "RadioOptimizer",
+            "name": "<CoalescedRadioSync />",
+            "state": {
+              "tailTimeSec": "0"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "ProfilerAgent",
+            "name": "<LeakCanaryProfiler />",
+            "props": {
+              "activeListeners": "0"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <MemoryMonitorRoot /> for Battery Diagnostics & Backgrou...",
+            "activeId": "AppShell",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MemoryMonitorRoot />",
+                "props": {
+                  "maxRssMb": "1200"
+                },
+                "state": {
+                  "status": "NORMAL"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "ImagePipeline",
+                "name": "<NativeImageDownsampler />",
+                "props": {
+                  "subsample": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "RadioOptimizer",
+                "name": "<CoalescedRadioSync />",
+                "state": {
+                  "tailTimeSec": "0"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ProfilerAgent",
+                "name": "<LeakCanaryProfiler />",
+                "props": {
+                  "activeListeners": "0"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Subsample bitmap allocations in <NativeImageDownsampler />.",
+            "activeId": "ImagePipeline",
+            "reRenderingIds": [
+              "ImagePipeline",
+              "ProfilerAgent"
+            ],
+            "propsPassed": {
+              "from": "AppShell",
+              "to": "ImagePipeline",
+              "propName": "subsample",
+              "value": "true"
+            },
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MemoryMonitorRoot />",
+                "props": {
+                  "maxRssMb": "1200"
+                },
+                "state": {
+                  "status": "NORMAL"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "ImagePipeline",
+                "name": "<NativeImageDownsampler />",
+                "props": {
+                  "subsample": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "RadioOptimizer",
+                "name": "<CoalescedRadioSync />",
+                "state": {
+                  "tailTimeSec": "0"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ProfilerAgent",
+                "name": "<LeakCanaryProfiler />",
+                "props": {
+                  "activeListeners": "0"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Coalesce network packets in <CoalescedRadioSync /> to save battery.",
+            "activeId": "RadioOptimizer",
+            "reRenderingIds": [
+              "RadioOptimizer"
+            ],
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MemoryMonitorRoot />",
+                "props": {
+                  "maxRssMb": "1200"
+                },
+                "state": {
+                  "status": "NORMAL"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "ImagePipeline",
+                "name": "<NativeImageDownsampler />",
+                "props": {
+                  "subsample": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "RadioOptimizer",
+                "name": "<CoalescedRadioSync />",
+                "state": {
+                  "tailTimeSec": "0"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "ProfilerAgent",
+                "name": "<LeakCanaryProfiler />",
+                "props": {
+                  "activeListeners": "0"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Assert leak-free heap stability via <LeakCanaryProfiler />.",
+            "activeId": "ProfilerAgent",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MemoryMonitorRoot />",
+                "props": {
+                  "maxRssMb": "1200"
+                },
+                "state": {
+                  "status": "NORMAL"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "ImagePipeline",
+                "name": "<NativeImageDownsampler />",
+                "props": {
+                  "subsample": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "RadioOptimizer",
+                "name": "<CoalescedRadioSync />",
+                "state": {
+                  "tailTimeSec": "0"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "ProfilerAgent",
+                "name": "<LeakCanaryProfiler />",
+                "props": {
+                  "activeListeners": "0"
+                },
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "title": "Battery Diagnostics & Background Pacing: Wake... — Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "AppShell",
+            "name": "<MemoryMonitorRoot />",
+            "props": {
+              "maxRssMb": "1200"
+            },
+            "state": {
+              "status": "NORMAL"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "ImagePipeline",
+            "name": "<NativeImageDownsampler />",
+            "props": {
+              "subsample": "true"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "RadioOptimizer",
+            "name": "<CoalescedRadioSync />",
+            "state": {
+              "tailTimeSec": "0"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "ProfilerAgent",
+            "name": "<LeakCanaryProfiler />",
+            "props": {
+              "activeListeners": "0"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <MemoryMonitorRoot /> for Battery Diagnostics & Backgrou...",
+            "activeId": "AppShell",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MemoryMonitorRoot />",
+                "props": {
+                  "maxRssMb": "1200"
+                },
+                "state": {
+                  "status": "NORMAL"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "ImagePipeline",
+                "name": "<NativeImageDownsampler />",
+                "props": {
+                  "subsample": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "RadioOptimizer",
+                "name": "<CoalescedRadioSync />",
+                "state": {
+                  "tailTimeSec": "0"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ProfilerAgent",
+                "name": "<LeakCanaryProfiler />",
+                "props": {
+                  "activeListeners": "0"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Subsample bitmap allocations in <NativeImageDownsampler />.",
+            "activeId": "ImagePipeline",
+            "reRenderingIds": [
+              "ImagePipeline",
+              "ProfilerAgent"
+            ],
+            "propsPassed": {
+              "from": "AppShell",
+              "to": "ImagePipeline",
+              "propName": "subsample",
+              "value": "true"
+            },
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MemoryMonitorRoot />",
+                "props": {
+                  "maxRssMb": "1200"
+                },
+                "state": {
+                  "status": "NORMAL"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "ImagePipeline",
+                "name": "<NativeImageDownsampler />",
+                "props": {
+                  "subsample": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "RadioOptimizer",
+                "name": "<CoalescedRadioSync />",
+                "state": {
+                  "tailTimeSec": "0"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ProfilerAgent",
+                "name": "<LeakCanaryProfiler />",
+                "props": {
+                  "activeListeners": "0"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Coalesce network packets in <CoalescedRadioSync /> to save battery.",
+            "activeId": "RadioOptimizer",
+            "reRenderingIds": [
+              "RadioOptimizer"
+            ],
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MemoryMonitorRoot />",
+                "props": {
+                  "maxRssMb": "1200"
+                },
+                "state": {
+                  "status": "NORMAL"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "ImagePipeline",
+                "name": "<NativeImageDownsampler />",
+                "props": {
+                  "subsample": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "RadioOptimizer",
+                "name": "<CoalescedRadioSync />",
+                "state": {
+                  "tailTimeSec": "0"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "ProfilerAgent",
+                "name": "<LeakCanaryProfiler />",
+                "props": {
+                  "activeListeners": "0"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Assert leak-free heap stability via <LeakCanaryProfiler />.",
+            "activeId": "ProfilerAgent",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MemoryMonitorRoot />",
+                "props": {
+                  "maxRssMb": "1200"
+                },
+                "state": {
+                  "status": "NORMAL"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "ImagePipeline",
+                "name": "<NativeImageDownsampler />",
+                "props": {
+                  "subsample": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "RadioOptimizer",
+                "name": "<CoalescedRadioSync />",
+                "state": {
+                  "tailTimeSec": "0"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "ProfilerAgent",
+                "name": "<LeakCanaryProfiler />",
+                "props": {
+                  "activeListeners": "0"
+                },
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Profiling Toolchains: Xcode Instruments, LeakCanary & Android Memory Profiler",
+      "codeHash": "903b7bd90142da74dfe0e1a3895b5d2f53726450d8b31b006e4e1bff9cdcecfc",
+      "spec": {
+        "template": "component-tree",
+        "title": "Profiling Toolchains: Xcode Instruments, Leak... — Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "AppShell",
+            "name": "<MemoryMonitorRoot />",
+            "props": {
+              "maxRssMb": "1200"
+            },
+            "state": {
+              "status": "NORMAL"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "ImagePipeline",
+            "name": "<NativeImageDownsampler />",
+            "props": {
+              "subsample": "true"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "RadioOptimizer",
+            "name": "<CoalescedRadioSync />",
+            "state": {
+              "tailTimeSec": "0"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "ProfilerAgent",
+            "name": "<LeakCanaryProfiler />",
+            "props": {
+              "activeListeners": "0"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <MemoryMonitorRoot /> for Profiling Toolchains: Xcode In...",
+            "activeId": "AppShell",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MemoryMonitorRoot />",
+                "props": {
+                  "maxRssMb": "1200"
+                },
+                "state": {
+                  "status": "NORMAL"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "ImagePipeline",
+                "name": "<NativeImageDownsampler />",
+                "props": {
+                  "subsample": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "RadioOptimizer",
+                "name": "<CoalescedRadioSync />",
+                "state": {
+                  "tailTimeSec": "0"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ProfilerAgent",
+                "name": "<LeakCanaryProfiler />",
+                "props": {
+                  "activeListeners": "0"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Subsample bitmap allocations in <NativeImageDownsampler />.",
+            "activeId": "ImagePipeline",
+            "reRenderingIds": [
+              "ImagePipeline",
+              "ProfilerAgent"
+            ],
+            "propsPassed": {
+              "from": "AppShell",
+              "to": "ImagePipeline",
+              "propName": "subsample",
+              "value": "true"
+            },
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MemoryMonitorRoot />",
+                "props": {
+                  "maxRssMb": "1200"
+                },
+                "state": {
+                  "status": "NORMAL"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "ImagePipeline",
+                "name": "<NativeImageDownsampler />",
+                "props": {
+                  "subsample": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "RadioOptimizer",
+                "name": "<CoalescedRadioSync />",
+                "state": {
+                  "tailTimeSec": "0"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ProfilerAgent",
+                "name": "<LeakCanaryProfiler />",
+                "props": {
+                  "activeListeners": "0"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Coalesce network packets in <CoalescedRadioSync /> to save battery.",
+            "activeId": "RadioOptimizer",
+            "reRenderingIds": [
+              "RadioOptimizer"
+            ],
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MemoryMonitorRoot />",
+                "props": {
+                  "maxRssMb": "1200"
+                },
+                "state": {
+                  "status": "NORMAL"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "ImagePipeline",
+                "name": "<NativeImageDownsampler />",
+                "props": {
+                  "subsample": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "RadioOptimizer",
+                "name": "<CoalescedRadioSync />",
+                "state": {
+                  "tailTimeSec": "0"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "ProfilerAgent",
+                "name": "<LeakCanaryProfiler />",
+                "props": {
+                  "activeListeners": "0"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Assert leak-free heap stability via <LeakCanaryProfiler />.",
+            "activeId": "ProfilerAgent",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MemoryMonitorRoot />",
+                "props": {
+                  "maxRssMb": "1200"
+                },
+                "state": {
+                  "status": "NORMAL"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "ImagePipeline",
+                "name": "<NativeImageDownsampler />",
+                "props": {
+                  "subsample": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "RadioOptimizer",
+                "name": "<CoalescedRadioSync />",
+                "state": {
+                  "tailTimeSec": "0"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "ProfilerAgent",
+                "name": "<LeakCanaryProfiler />",
+                "props": {
+                  "activeListeners": "0"
+                },
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "title": "Profiling Toolchains: Xcode Instruments, Leak... — Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "AppShell",
+            "name": "<MemoryMonitorRoot />",
+            "props": {
+              "maxRssMb": "1200"
+            },
+            "state": {
+              "status": "NORMAL"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "ImagePipeline",
+            "name": "<NativeImageDownsampler />",
+            "props": {
+              "subsample": "true"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "RadioOptimizer",
+            "name": "<CoalescedRadioSync />",
+            "state": {
+              "tailTimeSec": "0"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "ProfilerAgent",
+            "name": "<LeakCanaryProfiler />",
+            "props": {
+              "activeListeners": "0"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <MemoryMonitorRoot /> for Profiling Toolchains: Xcode In...",
+            "activeId": "AppShell",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MemoryMonitorRoot />",
+                "props": {
+                  "maxRssMb": "1200"
+                },
+                "state": {
+                  "status": "NORMAL"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "ImagePipeline",
+                "name": "<NativeImageDownsampler />",
+                "props": {
+                  "subsample": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "RadioOptimizer",
+                "name": "<CoalescedRadioSync />",
+                "state": {
+                  "tailTimeSec": "0"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ProfilerAgent",
+                "name": "<LeakCanaryProfiler />",
+                "props": {
+                  "activeListeners": "0"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Subsample bitmap allocations in <NativeImageDownsampler />.",
+            "activeId": "ImagePipeline",
+            "reRenderingIds": [
+              "ImagePipeline",
+              "ProfilerAgent"
+            ],
+            "propsPassed": {
+              "from": "AppShell",
+              "to": "ImagePipeline",
+              "propName": "subsample",
+              "value": "true"
+            },
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MemoryMonitorRoot />",
+                "props": {
+                  "maxRssMb": "1200"
+                },
+                "state": {
+                  "status": "NORMAL"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "ImagePipeline",
+                "name": "<NativeImageDownsampler />",
+                "props": {
+                  "subsample": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "RadioOptimizer",
+                "name": "<CoalescedRadioSync />",
+                "state": {
+                  "tailTimeSec": "0"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "ProfilerAgent",
+                "name": "<LeakCanaryProfiler />",
+                "props": {
+                  "activeListeners": "0"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Coalesce network packets in <CoalescedRadioSync /> to save battery.",
+            "activeId": "RadioOptimizer",
+            "reRenderingIds": [
+              "RadioOptimizer"
+            ],
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MemoryMonitorRoot />",
+                "props": {
+                  "maxRssMb": "1200"
+                },
+                "state": {
+                  "status": "NORMAL"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "ImagePipeline",
+                "name": "<NativeImageDownsampler />",
+                "props": {
+                  "subsample": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "RadioOptimizer",
+                "name": "<CoalescedRadioSync />",
+                "state": {
+                  "tailTimeSec": "0"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "ProfilerAgent",
+                "name": "<LeakCanaryProfiler />",
+                "props": {
+                  "activeListeners": "0"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Assert leak-free heap stability via <LeakCanaryProfiler />.",
+            "activeId": "ProfilerAgent",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<MemoryMonitorRoot />",
+                "props": {
+                  "maxRssMb": "1200"
+                },
+                "state": {
+                  "status": "NORMAL"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "ImagePipeline",
+                "name": "<NativeImageDownsampler />",
+                "props": {
+                  "subsample": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "RadioOptimizer",
+                "name": "<CoalescedRadioSync />",
+                "state": {
+                  "tailTimeSec": "0"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "ProfilerAgent",
+                "name": "<LeakCanaryProfiler />",
+                "props": {
+                  "activeListeners": "0"
+                },
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
