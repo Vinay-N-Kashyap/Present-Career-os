@@ -1,0 +1,1029 @@
+{
+  "schemaVersion": 1,
+  "prefix": "blockchain",
+  "day": 7,
+  "promptSha": "7a329c0f7721ba3e18cd987fe88fbc910245a909d3b764b73b22cf309df78130",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "The UTXO Paradigm: Graph Transactions, Set Accumulators & Bitcoin Script",
+      "codeHash": "f2342d694835b434329cc616afc61de3c997694c6a184edeeff565e0e13b9695",
+      "spec": {
+        "template": "sequence",
+        "title": "The UTXO Paradigm: Graph Transactions, Set Accumulators & Bitcoin Script \u2014 Ledger State Transition Sequence",
+        "actors": [
+          "Transaction Signer",
+          "Mempool Node",
+          "State Transition Engine",
+          "State Trie DB"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Signer broadcasts transaction for The UTXO Paradigm: Graph Transac",
+            "activeActor": "Transaction Signer",
+            "messages": [
+              {
+                "from": "Transaction Signer",
+                "to": "Mempool Node",
+                "label": "broadcastTransaction(nonce/inputs, sig)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Mempool Node verifies anti-replay guards and passes to State Engine",
+            "activeActor": "Mempool Node",
+            "messages": [
+              {
+                "from": "Transaction Signer",
+                "to": "Mempool Node",
+                "label": "broadcastTransaction(nonce/inputs, sig)",
+                "tone": "ok"
+              },
+              {
+                "from": "Mempool Node",
+                "to": "State Transition Engine",
+                "label": "validateMonotonicity(EIP-155 / UTXO)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: State Transition Engine mutates balances and updates Merkle Trie root",
+            "activeActor": "State Transition Engine",
+            "messages": [
+              {
+                "from": "Transaction Signer",
+                "to": "Mempool Node",
+                "label": "broadcastTransaction(nonce/inputs, sig)",
+                "tone": "ok"
+              },
+              {
+                "from": "Mempool Node",
+                "to": "State Transition Engine",
+                "label": "validateMonotonicity(EIP-155 / UTXO)",
+                "tone": "ok"
+              },
+              {
+                "from": "State Transition Engine",
+                "to": "State Trie DB",
+                "label": "commitStateDiff(SSTORE / destroyOutpoint)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: State Trie DB commits new root hash and returns execution receipt",
+            "activeActor": "State Trie DB",
+            "messages": [
+              {
+                "from": "Transaction Signer",
+                "to": "Mempool Node",
+                "label": "broadcastTransaction(nonce/inputs, sig)",
+                "tone": "ok"
+              },
+              {
+                "from": "Mempool Node",
+                "to": "State Transition Engine",
+                "label": "validateMonotonicity(EIP-155 / UTXO)",
+                "tone": "ok"
+              },
+              {
+                "from": "State Transition Engine",
+                "to": "State Trie DB",
+                "label": "commitStateDiff(SSTORE / destroyOutpoint)",
+                "tone": "ok"
+              },
+              {
+                "from": "State Trie DB",
+                "to": "Transaction Signer",
+                "label": "StateTransitionReceipt(Root 0x8dfc... \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "The UTXO Paradigm: Graph Transactions, Set Accumulators & Bitcoin Script \u2014 Ledger State Transition Sequence",
+        "actors": [
+          "Transaction Signer",
+          "Mempool Node",
+          "State Transition Engine",
+          "State Trie DB"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Signer broadcasts transaction for The UTXO Paradigm: Graph Transac",
+            "activeActor": "Transaction Signer",
+            "messages": [
+              {
+                "from": "Transaction Signer",
+                "to": "Mempool Node",
+                "label": "broadcastTransaction(nonce/inputs, sig)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Mempool Node verifies anti-replay guards and passes to State Engine",
+            "activeActor": "Mempool Node",
+            "messages": [
+              {
+                "from": "Transaction Signer",
+                "to": "Mempool Node",
+                "label": "broadcastTransaction(nonce/inputs, sig)",
+                "tone": "ok"
+              },
+              {
+                "from": "Mempool Node",
+                "to": "State Transition Engine",
+                "label": "validateMonotonicity(EIP-155 / UTXO)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: State Transition Engine mutates balances and updates Merkle Trie root",
+            "activeActor": "State Transition Engine",
+            "messages": [
+              {
+                "from": "Transaction Signer",
+                "to": "Mempool Node",
+                "label": "broadcastTransaction(nonce/inputs, sig)",
+                "tone": "ok"
+              },
+              {
+                "from": "Mempool Node",
+                "to": "State Transition Engine",
+                "label": "validateMonotonicity(EIP-155 / UTXO)",
+                "tone": "ok"
+              },
+              {
+                "from": "State Transition Engine",
+                "to": "State Trie DB",
+                "label": "commitStateDiff(SSTORE / destroyOutpoint)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: State Trie DB commits new root hash and returns execution receipt",
+            "activeActor": "State Trie DB",
+            "messages": [
+              {
+                "from": "Transaction Signer",
+                "to": "Mempool Node",
+                "label": "broadcastTransaction(nonce/inputs, sig)",
+                "tone": "ok"
+              },
+              {
+                "from": "Mempool Node",
+                "to": "State Transition Engine",
+                "label": "validateMonotonicity(EIP-155 / UTXO)",
+                "tone": "ok"
+              },
+              {
+                "from": "State Transition Engine",
+                "to": "State Trie DB",
+                "label": "commitStateDiff(SSTORE / destroyOutpoint)",
+                "tone": "ok"
+              },
+              {
+                "from": "State Trie DB",
+                "to": "Transaction Signer",
+                "label": "StateTransitionReceipt(Root 0x8dfc... \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Account-Based State Model: World State Trie, Nonces & Storage Roots",
+      "codeHash": "f6ea23f941b4a6735609ccf59b6263525215d1ea7cfd6d202c637042b5f04597",
+      "spec": {
+        "template": "sequence",
+        "title": "The Account-Based State Model: World State Trie, Nonces & Storage Roots \u2014 Ledger State Transition Sequence",
+        "actors": [
+          "Transaction Signer",
+          "Mempool Node",
+          "State Transition Engine",
+          "State Trie DB"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Signer broadcasts transaction for The Account-Based State Model: W",
+            "activeActor": "Transaction Signer",
+            "messages": [
+              {
+                "from": "Transaction Signer",
+                "to": "Mempool Node",
+                "label": "broadcastTransaction(nonce/inputs, sig)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Mempool Node verifies anti-replay guards and passes to State Engine",
+            "activeActor": "Mempool Node",
+            "messages": [
+              {
+                "from": "Transaction Signer",
+                "to": "Mempool Node",
+                "label": "broadcastTransaction(nonce/inputs, sig)",
+                "tone": "ok"
+              },
+              {
+                "from": "Mempool Node",
+                "to": "State Transition Engine",
+                "label": "validateMonotonicity(EIP-155 / UTXO)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: State Transition Engine mutates balances and updates Merkle Trie root",
+            "activeActor": "State Transition Engine",
+            "messages": [
+              {
+                "from": "Transaction Signer",
+                "to": "Mempool Node",
+                "label": "broadcastTransaction(nonce/inputs, sig)",
+                "tone": "ok"
+              },
+              {
+                "from": "Mempool Node",
+                "to": "State Transition Engine",
+                "label": "validateMonotonicity(EIP-155 / UTXO)",
+                "tone": "ok"
+              },
+              {
+                "from": "State Transition Engine",
+                "to": "State Trie DB",
+                "label": "commitStateDiff(SSTORE / destroyOutpoint)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: State Trie DB commits new root hash and returns execution receipt",
+            "activeActor": "State Trie DB",
+            "messages": [
+              {
+                "from": "Transaction Signer",
+                "to": "Mempool Node",
+                "label": "broadcastTransaction(nonce/inputs, sig)",
+                "tone": "ok"
+              },
+              {
+                "from": "Mempool Node",
+                "to": "State Transition Engine",
+                "label": "validateMonotonicity(EIP-155 / UTXO)",
+                "tone": "ok"
+              },
+              {
+                "from": "State Transition Engine",
+                "to": "State Trie DB",
+                "label": "commitStateDiff(SSTORE / destroyOutpoint)",
+                "tone": "ok"
+              },
+              {
+                "from": "State Trie DB",
+                "to": "Transaction Signer",
+                "label": "StateTransitionReceipt(Root 0x8dfc... \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "The Account-Based State Model: World State Trie, Nonces & Storage Roots \u2014 Ledger State Transition Sequence",
+        "actors": [
+          "Transaction Signer",
+          "Mempool Node",
+          "State Transition Engine",
+          "State Trie DB"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Signer broadcasts transaction for The Account-Based State Model: W",
+            "activeActor": "Transaction Signer",
+            "messages": [
+              {
+                "from": "Transaction Signer",
+                "to": "Mempool Node",
+                "label": "broadcastTransaction(nonce/inputs, sig)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Mempool Node verifies anti-replay guards and passes to State Engine",
+            "activeActor": "Mempool Node",
+            "messages": [
+              {
+                "from": "Transaction Signer",
+                "to": "Mempool Node",
+                "label": "broadcastTransaction(nonce/inputs, sig)",
+                "tone": "ok"
+              },
+              {
+                "from": "Mempool Node",
+                "to": "State Transition Engine",
+                "label": "validateMonotonicity(EIP-155 / UTXO)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: State Transition Engine mutates balances and updates Merkle Trie root",
+            "activeActor": "State Transition Engine",
+            "messages": [
+              {
+                "from": "Transaction Signer",
+                "to": "Mempool Node",
+                "label": "broadcastTransaction(nonce/inputs, sig)",
+                "tone": "ok"
+              },
+              {
+                "from": "Mempool Node",
+                "to": "State Transition Engine",
+                "label": "validateMonotonicity(EIP-155 / UTXO)",
+                "tone": "ok"
+              },
+              {
+                "from": "State Transition Engine",
+                "to": "State Trie DB",
+                "label": "commitStateDiff(SSTORE / destroyOutpoint)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: State Trie DB commits new root hash and returns execution receipt",
+            "activeActor": "State Trie DB",
+            "messages": [
+              {
+                "from": "Transaction Signer",
+                "to": "Mempool Node",
+                "label": "broadcastTransaction(nonce/inputs, sig)",
+                "tone": "ok"
+              },
+              {
+                "from": "Mempool Node",
+                "to": "State Transition Engine",
+                "label": "validateMonotonicity(EIP-155 / UTXO)",
+                "tone": "ok"
+              },
+              {
+                "from": "State Transition Engine",
+                "to": "State Trie DB",
+                "label": "commitStateDiff(SSTORE / destroyOutpoint)",
+                "tone": "ok"
+              },
+              {
+                "from": "State Trie DB",
+                "to": "Transaction Signer",
+                "label": "StateTransitionReceipt(Root 0x8dfc... \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Double-Spend Mitigation, Replay Attack Defenses & Nonce Monotonicity",
+      "codeHash": "3fcd47293c90eccdddfef969bdd7e7acb538339ef91422e4d46c7074b8c93749",
+      "spec": {
+        "template": "sequence",
+        "title": "Double-Spend Mitigation, Replay Attack Defenses & Nonce Monotonicity \u2014 Ledger State Transition Sequence",
+        "actors": [
+          "Transaction Signer",
+          "Mempool Node",
+          "State Transition Engine",
+          "State Trie DB"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Signer broadcasts transaction for Double-Spend Mitigation, Replay ",
+            "activeActor": "Transaction Signer",
+            "messages": [
+              {
+                "from": "Transaction Signer",
+                "to": "Mempool Node",
+                "label": "broadcastTransaction(nonce/inputs, sig)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Mempool Node verifies anti-replay guards and passes to State Engine",
+            "activeActor": "Mempool Node",
+            "messages": [
+              {
+                "from": "Transaction Signer",
+                "to": "Mempool Node",
+                "label": "broadcastTransaction(nonce/inputs, sig)",
+                "tone": "ok"
+              },
+              {
+                "from": "Mempool Node",
+                "to": "State Transition Engine",
+                "label": "validateMonotonicity(EIP-155 / UTXO)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: State Transition Engine mutates balances and updates Merkle Trie root",
+            "activeActor": "State Transition Engine",
+            "messages": [
+              {
+                "from": "Transaction Signer",
+                "to": "Mempool Node",
+                "label": "broadcastTransaction(nonce/inputs, sig)",
+                "tone": "ok"
+              },
+              {
+                "from": "Mempool Node",
+                "to": "State Transition Engine",
+                "label": "validateMonotonicity(EIP-155 / UTXO)",
+                "tone": "ok"
+              },
+              {
+                "from": "State Transition Engine",
+                "to": "State Trie DB",
+                "label": "commitStateDiff(SSTORE / destroyOutpoint)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: State Trie DB commits new root hash and returns execution receipt",
+            "activeActor": "State Trie DB",
+            "messages": [
+              {
+                "from": "Transaction Signer",
+                "to": "Mempool Node",
+                "label": "broadcastTransaction(nonce/inputs, sig)",
+                "tone": "ok"
+              },
+              {
+                "from": "Mempool Node",
+                "to": "State Transition Engine",
+                "label": "validateMonotonicity(EIP-155 / UTXO)",
+                "tone": "ok"
+              },
+              {
+                "from": "State Transition Engine",
+                "to": "State Trie DB",
+                "label": "commitStateDiff(SSTORE / destroyOutpoint)",
+                "tone": "ok"
+              },
+              {
+                "from": "State Trie DB",
+                "to": "Transaction Signer",
+                "label": "StateTransitionReceipt(Root 0x8dfc... \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Double-Spend Mitigation, Replay Attack Defenses & Nonce Monotonicity \u2014 Ledger State Transition Sequence",
+        "actors": [
+          "Transaction Signer",
+          "Mempool Node",
+          "State Transition Engine",
+          "State Trie DB"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Signer broadcasts transaction for Double-Spend Mitigation, Replay ",
+            "activeActor": "Transaction Signer",
+            "messages": [
+              {
+                "from": "Transaction Signer",
+                "to": "Mempool Node",
+                "label": "broadcastTransaction(nonce/inputs, sig)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Mempool Node verifies anti-replay guards and passes to State Engine",
+            "activeActor": "Mempool Node",
+            "messages": [
+              {
+                "from": "Transaction Signer",
+                "to": "Mempool Node",
+                "label": "broadcastTransaction(nonce/inputs, sig)",
+                "tone": "ok"
+              },
+              {
+                "from": "Mempool Node",
+                "to": "State Transition Engine",
+                "label": "validateMonotonicity(EIP-155 / UTXO)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: State Transition Engine mutates balances and updates Merkle Trie root",
+            "activeActor": "State Transition Engine",
+            "messages": [
+              {
+                "from": "Transaction Signer",
+                "to": "Mempool Node",
+                "label": "broadcastTransaction(nonce/inputs, sig)",
+                "tone": "ok"
+              },
+              {
+                "from": "Mempool Node",
+                "to": "State Transition Engine",
+                "label": "validateMonotonicity(EIP-155 / UTXO)",
+                "tone": "ok"
+              },
+              {
+                "from": "State Transition Engine",
+                "to": "State Trie DB",
+                "label": "commitStateDiff(SSTORE / destroyOutpoint)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: State Trie DB commits new root hash and returns execution receipt",
+            "activeActor": "State Trie DB",
+            "messages": [
+              {
+                "from": "Transaction Signer",
+                "to": "Mempool Node",
+                "label": "broadcastTransaction(nonce/inputs, sig)",
+                "tone": "ok"
+              },
+              {
+                "from": "Mempool Node",
+                "to": "State Transition Engine",
+                "label": "validateMonotonicity(EIP-155 / UTXO)",
+                "tone": "ok"
+              },
+              {
+                "from": "State Transition Engine",
+                "to": "State Trie DB",
+                "label": "commitStateDiff(SSTORE / destroyOutpoint)",
+                "tone": "ok"
+              },
+              {
+                "from": "State Trie DB",
+                "to": "Transaction Signer",
+                "label": "StateTransitionReceipt(Root 0x8dfc... \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "State Bloat, History Expiry (EIP-4444) & Verkle Trees",
+      "codeHash": "1f342422fc0fc15ab3bf9c35cf00e947a1979785d57f36046430f5326181e5d3",
+      "spec": {
+        "template": "sequence",
+        "title": "State Bloat, History Expiry (EIP-4444) & Verkle Trees \u2014 Ledger State Transition Sequence",
+        "actors": [
+          "Transaction Signer",
+          "Mempool Node",
+          "State Transition Engine",
+          "State Trie DB"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Signer broadcasts transaction for State Bloat, History Expiry (EIP",
+            "activeActor": "Transaction Signer",
+            "messages": [
+              {
+                "from": "Transaction Signer",
+                "to": "Mempool Node",
+                "label": "broadcastTransaction(nonce/inputs, sig)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Mempool Node verifies anti-replay guards and passes to State Engine",
+            "activeActor": "Mempool Node",
+            "messages": [
+              {
+                "from": "Transaction Signer",
+                "to": "Mempool Node",
+                "label": "broadcastTransaction(nonce/inputs, sig)",
+                "tone": "ok"
+              },
+              {
+                "from": "Mempool Node",
+                "to": "State Transition Engine",
+                "label": "validateMonotonicity(EIP-155 / UTXO)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: State Transition Engine mutates balances and updates Merkle Trie root",
+            "activeActor": "State Transition Engine",
+            "messages": [
+              {
+                "from": "Transaction Signer",
+                "to": "Mempool Node",
+                "label": "broadcastTransaction(nonce/inputs, sig)",
+                "tone": "ok"
+              },
+              {
+                "from": "Mempool Node",
+                "to": "State Transition Engine",
+                "label": "validateMonotonicity(EIP-155 / UTXO)",
+                "tone": "ok"
+              },
+              {
+                "from": "State Transition Engine",
+                "to": "State Trie DB",
+                "label": "commitStateDiff(SSTORE / destroyOutpoint)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: State Trie DB commits new root hash and returns execution receipt",
+            "activeActor": "State Trie DB",
+            "messages": [
+              {
+                "from": "Transaction Signer",
+                "to": "Mempool Node",
+                "label": "broadcastTransaction(nonce/inputs, sig)",
+                "tone": "ok"
+              },
+              {
+                "from": "Mempool Node",
+                "to": "State Transition Engine",
+                "label": "validateMonotonicity(EIP-155 / UTXO)",
+                "tone": "ok"
+              },
+              {
+                "from": "State Transition Engine",
+                "to": "State Trie DB",
+                "label": "commitStateDiff(SSTORE / destroyOutpoint)",
+                "tone": "ok"
+              },
+              {
+                "from": "State Trie DB",
+                "to": "Transaction Signer",
+                "label": "StateTransitionReceipt(Root 0x8dfc... \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "State Bloat, History Expiry (EIP-4444) & Verkle Trees \u2014 Ledger State Transition Sequence",
+        "actors": [
+          "Transaction Signer",
+          "Mempool Node",
+          "State Transition Engine",
+          "State Trie DB"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Signer broadcasts transaction for State Bloat, History Expiry (EIP",
+            "activeActor": "Transaction Signer",
+            "messages": [
+              {
+                "from": "Transaction Signer",
+                "to": "Mempool Node",
+                "label": "broadcastTransaction(nonce/inputs, sig)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Mempool Node verifies anti-replay guards and passes to State Engine",
+            "activeActor": "Mempool Node",
+            "messages": [
+              {
+                "from": "Transaction Signer",
+                "to": "Mempool Node",
+                "label": "broadcastTransaction(nonce/inputs, sig)",
+                "tone": "ok"
+              },
+              {
+                "from": "Mempool Node",
+                "to": "State Transition Engine",
+                "label": "validateMonotonicity(EIP-155 / UTXO)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: State Transition Engine mutates balances and updates Merkle Trie root",
+            "activeActor": "State Transition Engine",
+            "messages": [
+              {
+                "from": "Transaction Signer",
+                "to": "Mempool Node",
+                "label": "broadcastTransaction(nonce/inputs, sig)",
+                "tone": "ok"
+              },
+              {
+                "from": "Mempool Node",
+                "to": "State Transition Engine",
+                "label": "validateMonotonicity(EIP-155 / UTXO)",
+                "tone": "ok"
+              },
+              {
+                "from": "State Transition Engine",
+                "to": "State Trie DB",
+                "label": "commitStateDiff(SSTORE / destroyOutpoint)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: State Trie DB commits new root hash and returns execution receipt",
+            "activeActor": "State Trie DB",
+            "messages": [
+              {
+                "from": "Transaction Signer",
+                "to": "Mempool Node",
+                "label": "broadcastTransaction(nonce/inputs, sig)",
+                "tone": "ok"
+              },
+              {
+                "from": "Mempool Node",
+                "to": "State Transition Engine",
+                "label": "validateMonotonicity(EIP-155 / UTXO)",
+                "tone": "ok"
+              },
+              {
+                "from": "State Transition Engine",
+                "to": "State Trie DB",
+                "label": "commitStateDiff(SSTORE / destroyOutpoint)",
+                "tone": "ok"
+              },
+              {
+                "from": "State Trie DB",
+                "to": "Transaction Signer",
+                "label": "StateTransitionReceipt(Root 0x8dfc... \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Master Distributed Ledger State Model Architecture & Transition Engine",
+      "codeHash": "a9c88103ed6cab8fe4c6c2b3c8c8ed6cfddcadf79cd744cc584a6a10ba5288a2",
+      "spec": {
+        "template": "sequence",
+        "title": "Master Distributed Ledger State Model Architecture & Transition Engine \u2014 Ledger State Transition Sequence",
+        "actors": [
+          "Transaction Signer",
+          "Mempool Node",
+          "State Transition Engine",
+          "State Trie DB"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Signer broadcasts transaction for Master Distributed Ledger State ",
+            "activeActor": "Transaction Signer",
+            "messages": [
+              {
+                "from": "Transaction Signer",
+                "to": "Mempool Node",
+                "label": "broadcastTransaction(nonce/inputs, sig)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Mempool Node verifies anti-replay guards and passes to State Engine",
+            "activeActor": "Mempool Node",
+            "messages": [
+              {
+                "from": "Transaction Signer",
+                "to": "Mempool Node",
+                "label": "broadcastTransaction(nonce/inputs, sig)",
+                "tone": "ok"
+              },
+              {
+                "from": "Mempool Node",
+                "to": "State Transition Engine",
+                "label": "validateMonotonicity(EIP-155 / UTXO)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: State Transition Engine mutates balances and updates Merkle Trie root",
+            "activeActor": "State Transition Engine",
+            "messages": [
+              {
+                "from": "Transaction Signer",
+                "to": "Mempool Node",
+                "label": "broadcastTransaction(nonce/inputs, sig)",
+                "tone": "ok"
+              },
+              {
+                "from": "Mempool Node",
+                "to": "State Transition Engine",
+                "label": "validateMonotonicity(EIP-155 / UTXO)",
+                "tone": "ok"
+              },
+              {
+                "from": "State Transition Engine",
+                "to": "State Trie DB",
+                "label": "commitStateDiff(SSTORE / destroyOutpoint)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: State Trie DB commits new root hash and returns execution receipt",
+            "activeActor": "State Trie DB",
+            "messages": [
+              {
+                "from": "Transaction Signer",
+                "to": "Mempool Node",
+                "label": "broadcastTransaction(nonce/inputs, sig)",
+                "tone": "ok"
+              },
+              {
+                "from": "Mempool Node",
+                "to": "State Transition Engine",
+                "label": "validateMonotonicity(EIP-155 / UTXO)",
+                "tone": "ok"
+              },
+              {
+                "from": "State Transition Engine",
+                "to": "State Trie DB",
+                "label": "commitStateDiff(SSTORE / destroyOutpoint)",
+                "tone": "ok"
+              },
+              {
+                "from": "State Trie DB",
+                "to": "Transaction Signer",
+                "label": "StateTransitionReceipt(Root 0x8dfc... \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Master Distributed Ledger State Model Architecture & Transition Engine \u2014 Ledger State Transition Sequence",
+        "actors": [
+          "Transaction Signer",
+          "Mempool Node",
+          "State Transition Engine",
+          "State Trie DB"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Signer broadcasts transaction for Master Distributed Ledger State ",
+            "activeActor": "Transaction Signer",
+            "messages": [
+              {
+                "from": "Transaction Signer",
+                "to": "Mempool Node",
+                "label": "broadcastTransaction(nonce/inputs, sig)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Mempool Node verifies anti-replay guards and passes to State Engine",
+            "activeActor": "Mempool Node",
+            "messages": [
+              {
+                "from": "Transaction Signer",
+                "to": "Mempool Node",
+                "label": "broadcastTransaction(nonce/inputs, sig)",
+                "tone": "ok"
+              },
+              {
+                "from": "Mempool Node",
+                "to": "State Transition Engine",
+                "label": "validateMonotonicity(EIP-155 / UTXO)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: State Transition Engine mutates balances and updates Merkle Trie root",
+            "activeActor": "State Transition Engine",
+            "messages": [
+              {
+                "from": "Transaction Signer",
+                "to": "Mempool Node",
+                "label": "broadcastTransaction(nonce/inputs, sig)",
+                "tone": "ok"
+              },
+              {
+                "from": "Mempool Node",
+                "to": "State Transition Engine",
+                "label": "validateMonotonicity(EIP-155 / UTXO)",
+                "tone": "ok"
+              },
+              {
+                "from": "State Transition Engine",
+                "to": "State Trie DB",
+                "label": "commitStateDiff(SSTORE / destroyOutpoint)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: State Trie DB commits new root hash and returns execution receipt",
+            "activeActor": "State Trie DB",
+            "messages": [
+              {
+                "from": "Transaction Signer",
+                "to": "Mempool Node",
+                "label": "broadcastTransaction(nonce/inputs, sig)",
+                "tone": "ok"
+              },
+              {
+                "from": "Mempool Node",
+                "to": "State Transition Engine",
+                "label": "validateMonotonicity(EIP-155 / UTXO)",
+                "tone": "ok"
+              },
+              {
+                "from": "State Transition Engine",
+                "to": "State Trie DB",
+                "label": "commitStateDiff(SSTORE / destroyOutpoint)",
+                "tone": "ok"
+              },
+              {
+                "from": "State Trie DB",
+                "to": "Transaction Signer",
+                "label": "StateTransitionReceipt(Root 0x8dfc... \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
