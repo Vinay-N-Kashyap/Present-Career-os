@@ -1,0 +1,1139 @@
+{
+  "schemaVersion": 1,
+  "prefix": "fullstack-js",
+  "day": 9,
+  "promptSha": "1539639ea6828bd2803a623103a80bbf68517d04e6df0297c455fe0795ec44b7",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Parallel Routes: Named Slots (@slot) & Independent Subtree Streaming",
+      "codeHash": "d8fa3406a0480d5d7963dea87c99472a6baa625fe5b04dca12127aef490e01bb",
+      "spec": {
+        "template": "flow",
+        "title": "Parallel Routes: Named Slots (@slot) ... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Route & Slot Navigation",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Parallel Routes: Named Slots (@slot) ...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Hydrated Layout Tree",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Capture route segment and parallel slot props for Parallel Routes: Named Slots (@slot) ....",
+            "values": {
+              "in": "Day 9 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute route interception or slot streaming in Parallel Routes: Named Slots (@slot) ....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluate soft vs hard navigation and layout state invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Slots Reconciled",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end execution verified for Parallel Routes: Named Slots (@slot) ....",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Parallel Routes: Named Slots (@slot) ... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Route & Slot Navigation",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Parallel Routes: Named Slots (@slot) ...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Hydrated Layout Tree",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Capture route segment and parallel slot props for Parallel Routes: Named Slots (@slot) ....",
+            "values": {
+              "in": "Day 9 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute route interception or slot streaming in Parallel Routes: Named Slots (@slot) ....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluate soft vs hard navigation and layout state invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Slots Reconciled",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end execution verified for Parallel Routes: Named Slots (@slot) ....",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Intercepting Routes: Modal Routing Overlays ((.), (..), (...)) & Shareable URLs",
+      "codeHash": "0450f31a071b5f8e2d745e48d1fa43c8f70bd0a6347db79cb6cb9e48b3daf33e",
+      "spec": {
+        "template": "flow",
+        "title": "Intercepting Routes: Modal Routing Ov... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Route & Slot Navigation",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Intercepting Routes: Modal Routing Ov...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Hydrated Layout Tree",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Capture route segment and parallel slot props for Intercepting Routes: Modal Routing Ov....",
+            "values": {
+              "in": "Day 9 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute route interception or slot streaming in Intercepting Routes: Modal Routing Ov....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluate soft vs hard navigation and layout state invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Slots Reconciled",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end execution verified for Intercepting Routes: Modal Routing Ov....",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Intercepting Routes: Modal Routing Ov... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Route & Slot Navigation",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Intercepting Routes: Modal Routing Ov...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Hydrated Layout Tree",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Capture route segment and parallel slot props for Intercepting Routes: Modal Routing Ov....",
+            "values": {
+              "in": "Day 9 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute route interception or slot streaming in Intercepting Routes: Modal Routing Ov....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluate soft vs hard navigation and layout state invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Slots Reconciled",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end execution verified for Intercepting Routes: Modal Routing Ov....",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The default.tsx Fallback Contract & Hard Navigation vs Soft Navigation Invariants",
+      "codeHash": "f05bb184da3a379d9a41bcc5d46a98d6677953fd2e3d32a33c07674ea2bdaccd",
+      "spec": {
+        "template": "flow",
+        "title": "The default.tsx Fallback Contract & H... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Route & Slot Navigation",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. The default.tsx Fallback Contract & H...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Hydrated Layout Tree",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Capture route segment and parallel slot props for The default.tsx Fallback Contract & H....",
+            "values": {
+              "in": "Day 9 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute route interception or slot streaming in The default.tsx Fallback Contract & H....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluate soft vs hard navigation and layout state invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Slots Reconciled",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end execution verified for The default.tsx Fallback Contract & H....",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "The default.tsx Fallback Contract & H... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Route & Slot Navigation",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. The default.tsx Fallback Contract & H...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Hydrated Layout Tree",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Capture route segment and parallel slot props for The default.tsx Fallback Contract & H....",
+            "values": {
+              "in": "Day 9 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute route interception or slot streaming in The default.tsx Fallback Contract & H....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluate soft vs hard navigation and layout state invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Slots Reconciled",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end execution verified for The default.tsx Fallback Contract & H....",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Nested Layout State Isolation & Independent Error / Loading Boundaries",
+      "codeHash": "83b2f924c2810d6eb4dd86ba88f1bd0485dbc0bc3635c5005d0e7087e760a879",
+      "spec": {
+        "template": "flow",
+        "title": "Nested Layout State Isolation & Indep... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Route & Slot Navigation",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Nested Layout State Isolation & Indep...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Hydrated Layout Tree",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Capture route segment and parallel slot props for Nested Layout State Isolation & Indep....",
+            "values": {
+              "in": "Day 9 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute route interception or slot streaming in Nested Layout State Isolation & Indep....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluate soft vs hard navigation and layout state invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Slots Reconciled",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end execution verified for Nested Layout State Isolation & Indep....",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Nested Layout State Isolation & Indep... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Route & Slot Navigation",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Nested Layout State Isolation & Indep...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Hydrated Layout Tree",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Capture route segment and parallel slot props for Nested Layout State Isolation & Indep....",
+            "values": {
+              "in": "Day 9 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute route interception or slot streaming in Nested Layout State Isolation & Indep....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluate soft vs hard navigation and layout state invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Slots Reconciled",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end execution verified for Nested Layout State Isolation & Indep....",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Multi-Pane Dashboard: Master-Detail Intercepting Modals & Parallel Streaming Slots",
+      "codeHash": "d05708c2cdd7d9c4504d27079655920a005a1c1678994ae8e68442d700415be1",
+      "spec": {
+        "template": "flow",
+        "title": "Enterprise Multi-Pane Dashboard: Mast... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Route & Slot Navigation",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Enterprise Multi-Pane Dashboard: Mast...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Hydrated Layout Tree",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Capture route segment and parallel slot props for Enterprise Multi-Pane Dashboard: Mast....",
+            "values": {
+              "in": "Day 9 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute route interception or slot streaming in Enterprise Multi-Pane Dashboard: Mast....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluate soft vs hard navigation and layout state invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Slots Reconciled",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end execution verified for Enterprise Multi-Pane Dashboard: Mast....",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Enterprise Multi-Pane Dashboard: Mast... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Route & Slot Navigation",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Enterprise Multi-Pane Dashboard: Mast...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Hydrated Layout Tree",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Capture route segment and parallel slot props for Enterprise Multi-Pane Dashboard: Mast....",
+            "values": {
+              "in": "Day 9 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute route interception or slot streaming in Enterprise Multi-Pane Dashboard: Mast....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluate soft vs hard navigation and layout state invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Slots Reconciled",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end execution verified for Enterprise Multi-Pane Dashboard: Mast....",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
