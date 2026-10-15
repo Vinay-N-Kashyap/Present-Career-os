@@ -1,0 +1,2309 @@
+{
+  "schemaVersion": 1,
+  "prefix": "mobile",
+  "day": 7,
+  "promptSha": "60664e1925fe35f196b571206baec7e2c91e5e6d07b27363b1ba32b318d466c8",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Hermes Worklets & The UI Thread Engine: runOnUI, Shared Values & Zero-Bridge Pacing",
+      "codeHash": "8558054ea5abc800a703a6aea268766f1ec45f640e215d7101971cd7e5294276",
+      "spec": {
+        "template": "component-tree",
+        "title": "Hermes Worklets & The UI Thread Engine: runOn... — Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "AppShell",
+            "name": "<GestureRootView />",
+            "props": {
+              "flex": "1"
+            },
+            "state": {
+              "fps": "120"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "PanResponder",
+            "name": "<PanGestureHandler />",
+            "props": {
+              "activeOffsetX": "[-15, 15]"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "AnimatedLayer",
+            "name": "<AnimatedLayer />",
+            "state": {
+              "springActive": "true"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "RenderNode",
+            "name": "<NativeRenderNode />",
+            "props": {
+              "workletThread": "UI"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <GestureRootView /> for Hermes Worklets & The UI Threa...",
+            "activeId": "AppShell",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<GestureRootView />",
+                "props": {
+                  "flex": "1"
+                },
+                "state": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "PanResponder",
+                "name": "<PanGestureHandler />",
+                "props": {
+                  "activeOffsetX": "[-15, 15]"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "AnimatedLayer",
+                "name": "<AnimatedLayer />",
+                "state": {
+                  "springActive": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "RenderNode",
+                "name": "<NativeRenderNode />",
+                "props": {
+                  "workletThread": "UI"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Stream touch events directly into <PanGestureHandler />.",
+            "activeId": "PanResponder",
+            "reRenderingIds": [
+              "PanResponder",
+              "AnimatedLayer"
+            ],
+            "propsPassed": {
+              "from": "AppShell",
+              "to": "PanResponder",
+              "propName": "touchState",
+              "value": "ACTIVE"
+            },
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<GestureRootView />",
+                "props": {
+                  "flex": "1"
+                },
+                "state": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "PanResponder",
+                "name": "<PanGestureHandler />",
+                "props": {
+                  "activeOffsetX": "[-15, 15]"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "AnimatedLayer",
+                "name": "<AnimatedLayer />",
+                "state": {
+                  "springActive": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "RenderNode",
+                "name": "<NativeRenderNode />",
+                "props": {
+                  "workletThread": "UI"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute spring physics in <AnimatedLayer /> at 120 FPS.",
+            "activeId": "AnimatedLayer",
+            "reRenderingIds": [
+              "AnimatedLayer"
+            ],
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<GestureRootView />",
+                "props": {
+                  "flex": "1"
+                },
+                "state": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "PanResponder",
+                "name": "<PanGestureHandler />",
+                "props": {
+                  "activeOffsetX": "[-15, 15]"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "AnimatedLayer",
+                "name": "<AnimatedLayer />",
+                "state": {
+                  "springActive": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "RenderNode",
+                "name": "<NativeRenderNode />",
+                "props": {
+                  "workletThread": "UI"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Commit display link transform to <NativeRenderNode />.",
+            "activeId": "RenderNode",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<GestureRootView />",
+                "props": {
+                  "flex": "1"
+                },
+                "state": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "PanResponder",
+                "name": "<PanGestureHandler />",
+                "props": {
+                  "activeOffsetX": "[-15, 15]"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "AnimatedLayer",
+                "name": "<AnimatedLayer />",
+                "state": {
+                  "springActive": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "RenderNode",
+                "name": "<NativeRenderNode />",
+                "props": {
+                  "workletThread": "UI"
+                },
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "title": "Hermes Worklets & The UI Thread Engine: runOn... — Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "AppShell",
+            "name": "<GestureRootView />",
+            "props": {
+              "flex": "1"
+            },
+            "state": {
+              "fps": "120"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "PanResponder",
+            "name": "<PanGestureHandler />",
+            "props": {
+              "activeOffsetX": "[-15, 15]"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "AnimatedLayer",
+            "name": "<AnimatedLayer />",
+            "state": {
+              "springActive": "true"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "RenderNode",
+            "name": "<NativeRenderNode />",
+            "props": {
+              "workletThread": "UI"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <GestureRootView /> for Hermes Worklets & The UI Threa...",
+            "activeId": "AppShell",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<GestureRootView />",
+                "props": {
+                  "flex": "1"
+                },
+                "state": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "PanResponder",
+                "name": "<PanGestureHandler />",
+                "props": {
+                  "activeOffsetX": "[-15, 15]"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "AnimatedLayer",
+                "name": "<AnimatedLayer />",
+                "state": {
+                  "springActive": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "RenderNode",
+                "name": "<NativeRenderNode />",
+                "props": {
+                  "workletThread": "UI"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Stream touch events directly into <PanGestureHandler />.",
+            "activeId": "PanResponder",
+            "reRenderingIds": [
+              "PanResponder",
+              "AnimatedLayer"
+            ],
+            "propsPassed": {
+              "from": "AppShell",
+              "to": "PanResponder",
+              "propName": "touchState",
+              "value": "ACTIVE"
+            },
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<GestureRootView />",
+                "props": {
+                  "flex": "1"
+                },
+                "state": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "PanResponder",
+                "name": "<PanGestureHandler />",
+                "props": {
+                  "activeOffsetX": "[-15, 15]"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "AnimatedLayer",
+                "name": "<AnimatedLayer />",
+                "state": {
+                  "springActive": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "RenderNode",
+                "name": "<NativeRenderNode />",
+                "props": {
+                  "workletThread": "UI"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute spring physics in <AnimatedLayer /> at 120 FPS.",
+            "activeId": "AnimatedLayer",
+            "reRenderingIds": [
+              "AnimatedLayer"
+            ],
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<GestureRootView />",
+                "props": {
+                  "flex": "1"
+                },
+                "state": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "PanResponder",
+                "name": "<PanGestureHandler />",
+                "props": {
+                  "activeOffsetX": "[-15, 15]"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "AnimatedLayer",
+                "name": "<AnimatedLayer />",
+                "state": {
+                  "springActive": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "RenderNode",
+                "name": "<NativeRenderNode />",
+                "props": {
+                  "workletThread": "UI"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Commit display link transform to <NativeRenderNode />.",
+            "activeId": "RenderNode",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<GestureRootView />",
+                "props": {
+                  "flex": "1"
+                },
+                "state": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "PanResponder",
+                "name": "<PanGestureHandler />",
+                "props": {
+                  "activeOffsetX": "[-15, 15]"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "AnimatedLayer",
+                "name": "<AnimatedLayer />",
+                "state": {
+                  "springActive": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "RenderNode",
+                "name": "<NativeRenderNode />",
+                "props": {
+                  "workletThread": "UI"
+                },
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Gesture Handler 2 Pan Responders: Simultaneous Recognition & Touch State Machines",
+      "codeHash": "8bf292ddeb43f7478146df45dea2aaf0dea43ff9d0f98ffd4eb4a64a3d3b886d",
+      "spec": {
+        "template": "component-tree",
+        "title": "Gesture Handler 2 Pan Responders: Simultaneou... — Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "AppShell",
+            "name": "<GestureRootView />",
+            "props": {
+              "flex": "1"
+            },
+            "state": {
+              "fps": "120"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "PanResponder",
+            "name": "<PanGestureHandler />",
+            "props": {
+              "activeOffsetX": "[-15, 15]"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "AnimatedLayer",
+            "name": "<AnimatedLayer />",
+            "state": {
+              "springActive": "true"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "RenderNode",
+            "name": "<NativeRenderNode />",
+            "props": {
+              "workletThread": "UI"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <GestureRootView /> for Gesture Handler 2 Pan Responde...",
+            "activeId": "AppShell",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<GestureRootView />",
+                "props": {
+                  "flex": "1"
+                },
+                "state": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "PanResponder",
+                "name": "<PanGestureHandler />",
+                "props": {
+                  "activeOffsetX": "[-15, 15]"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "AnimatedLayer",
+                "name": "<AnimatedLayer />",
+                "state": {
+                  "springActive": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "RenderNode",
+                "name": "<NativeRenderNode />",
+                "props": {
+                  "workletThread": "UI"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Stream touch events directly into <PanGestureHandler />.",
+            "activeId": "PanResponder",
+            "reRenderingIds": [
+              "PanResponder",
+              "AnimatedLayer"
+            ],
+            "propsPassed": {
+              "from": "AppShell",
+              "to": "PanResponder",
+              "propName": "touchState",
+              "value": "ACTIVE"
+            },
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<GestureRootView />",
+                "props": {
+                  "flex": "1"
+                },
+                "state": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "PanResponder",
+                "name": "<PanGestureHandler />",
+                "props": {
+                  "activeOffsetX": "[-15, 15]"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "AnimatedLayer",
+                "name": "<AnimatedLayer />",
+                "state": {
+                  "springActive": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "RenderNode",
+                "name": "<NativeRenderNode />",
+                "props": {
+                  "workletThread": "UI"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute spring physics in <AnimatedLayer /> at 120 FPS.",
+            "activeId": "AnimatedLayer",
+            "reRenderingIds": [
+              "AnimatedLayer"
+            ],
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<GestureRootView />",
+                "props": {
+                  "flex": "1"
+                },
+                "state": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "PanResponder",
+                "name": "<PanGestureHandler />",
+                "props": {
+                  "activeOffsetX": "[-15, 15]"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "AnimatedLayer",
+                "name": "<AnimatedLayer />",
+                "state": {
+                  "springActive": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "RenderNode",
+                "name": "<NativeRenderNode />",
+                "props": {
+                  "workletThread": "UI"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Commit display link transform to <NativeRenderNode />.",
+            "activeId": "RenderNode",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<GestureRootView />",
+                "props": {
+                  "flex": "1"
+                },
+                "state": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "PanResponder",
+                "name": "<PanGestureHandler />",
+                "props": {
+                  "activeOffsetX": "[-15, 15]"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "AnimatedLayer",
+                "name": "<AnimatedLayer />",
+                "state": {
+                  "springActive": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "RenderNode",
+                "name": "<NativeRenderNode />",
+                "props": {
+                  "workletThread": "UI"
+                },
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "title": "Gesture Handler 2 Pan Responders: Simultaneou... — Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "AppShell",
+            "name": "<GestureRootView />",
+            "props": {
+              "flex": "1"
+            },
+            "state": {
+              "fps": "120"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "PanResponder",
+            "name": "<PanGestureHandler />",
+            "props": {
+              "activeOffsetX": "[-15, 15]"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "AnimatedLayer",
+            "name": "<AnimatedLayer />",
+            "state": {
+              "springActive": "true"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "RenderNode",
+            "name": "<NativeRenderNode />",
+            "props": {
+              "workletThread": "UI"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <GestureRootView /> for Gesture Handler 2 Pan Responde...",
+            "activeId": "AppShell",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<GestureRootView />",
+                "props": {
+                  "flex": "1"
+                },
+                "state": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "PanResponder",
+                "name": "<PanGestureHandler />",
+                "props": {
+                  "activeOffsetX": "[-15, 15]"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "AnimatedLayer",
+                "name": "<AnimatedLayer />",
+                "state": {
+                  "springActive": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "RenderNode",
+                "name": "<NativeRenderNode />",
+                "props": {
+                  "workletThread": "UI"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Stream touch events directly into <PanGestureHandler />.",
+            "activeId": "PanResponder",
+            "reRenderingIds": [
+              "PanResponder",
+              "AnimatedLayer"
+            ],
+            "propsPassed": {
+              "from": "AppShell",
+              "to": "PanResponder",
+              "propName": "touchState",
+              "value": "ACTIVE"
+            },
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<GestureRootView />",
+                "props": {
+                  "flex": "1"
+                },
+                "state": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "PanResponder",
+                "name": "<PanGestureHandler />",
+                "props": {
+                  "activeOffsetX": "[-15, 15]"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "AnimatedLayer",
+                "name": "<AnimatedLayer />",
+                "state": {
+                  "springActive": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "RenderNode",
+                "name": "<NativeRenderNode />",
+                "props": {
+                  "workletThread": "UI"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute spring physics in <AnimatedLayer /> at 120 FPS.",
+            "activeId": "AnimatedLayer",
+            "reRenderingIds": [
+              "AnimatedLayer"
+            ],
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<GestureRootView />",
+                "props": {
+                  "flex": "1"
+                },
+                "state": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "PanResponder",
+                "name": "<PanGestureHandler />",
+                "props": {
+                  "activeOffsetX": "[-15, 15]"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "AnimatedLayer",
+                "name": "<AnimatedLayer />",
+                "state": {
+                  "springActive": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "RenderNode",
+                "name": "<NativeRenderNode />",
+                "props": {
+                  "workletThread": "UI"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Commit display link transform to <NativeRenderNode />.",
+            "activeId": "RenderNode",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<GestureRootView />",
+                "props": {
+                  "flex": "1"
+                },
+                "state": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "PanResponder",
+                "name": "<PanGestureHandler />",
+                "props": {
+                  "activeOffsetX": "[-15, 15]"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "AnimatedLayer",
+                "name": "<AnimatedLayer />",
+                "state": {
+                  "springActive": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "RenderNode",
+                "name": "<NativeRenderNode />",
+                "props": {
+                  "workletThread": "UI"
+                },
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Spring Physics & Decay Inertia: Damping Ratios, Stiffness, Mass & Oscillator Math",
+      "codeHash": "acad1756760f14fc1b62553a81da6aa94347a5b2df9de9c44f6c1acf91304d0a",
+      "spec": {
+        "template": "component-tree",
+        "title": "Spring Physics & Decay Inertia: Damping Ratio... — Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "AppShell",
+            "name": "<GestureRootView />",
+            "props": {
+              "flex": "1"
+            },
+            "state": {
+              "fps": "120"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "PanResponder",
+            "name": "<PanGestureHandler />",
+            "props": {
+              "activeOffsetX": "[-15, 15]"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "AnimatedLayer",
+            "name": "<AnimatedLayer />",
+            "state": {
+              "springActive": "true"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "RenderNode",
+            "name": "<NativeRenderNode />",
+            "props": {
+              "workletThread": "UI"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <GestureRootView /> for Spring Physics & Decay Inertia...",
+            "activeId": "AppShell",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<GestureRootView />",
+                "props": {
+                  "flex": "1"
+                },
+                "state": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "PanResponder",
+                "name": "<PanGestureHandler />",
+                "props": {
+                  "activeOffsetX": "[-15, 15]"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "AnimatedLayer",
+                "name": "<AnimatedLayer />",
+                "state": {
+                  "springActive": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "RenderNode",
+                "name": "<NativeRenderNode />",
+                "props": {
+                  "workletThread": "UI"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Stream touch events directly into <PanGestureHandler />.",
+            "activeId": "PanResponder",
+            "reRenderingIds": [
+              "PanResponder",
+              "AnimatedLayer"
+            ],
+            "propsPassed": {
+              "from": "AppShell",
+              "to": "PanResponder",
+              "propName": "touchState",
+              "value": "ACTIVE"
+            },
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<GestureRootView />",
+                "props": {
+                  "flex": "1"
+                },
+                "state": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "PanResponder",
+                "name": "<PanGestureHandler />",
+                "props": {
+                  "activeOffsetX": "[-15, 15]"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "AnimatedLayer",
+                "name": "<AnimatedLayer />",
+                "state": {
+                  "springActive": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "RenderNode",
+                "name": "<NativeRenderNode />",
+                "props": {
+                  "workletThread": "UI"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute spring physics in <AnimatedLayer /> at 120 FPS.",
+            "activeId": "AnimatedLayer",
+            "reRenderingIds": [
+              "AnimatedLayer"
+            ],
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<GestureRootView />",
+                "props": {
+                  "flex": "1"
+                },
+                "state": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "PanResponder",
+                "name": "<PanGestureHandler />",
+                "props": {
+                  "activeOffsetX": "[-15, 15]"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "AnimatedLayer",
+                "name": "<AnimatedLayer />",
+                "state": {
+                  "springActive": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "RenderNode",
+                "name": "<NativeRenderNode />",
+                "props": {
+                  "workletThread": "UI"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Commit display link transform to <NativeRenderNode />.",
+            "activeId": "RenderNode",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<GestureRootView />",
+                "props": {
+                  "flex": "1"
+                },
+                "state": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "PanResponder",
+                "name": "<PanGestureHandler />",
+                "props": {
+                  "activeOffsetX": "[-15, 15]"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "AnimatedLayer",
+                "name": "<AnimatedLayer />",
+                "state": {
+                  "springActive": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "RenderNode",
+                "name": "<NativeRenderNode />",
+                "props": {
+                  "workletThread": "UI"
+                },
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "title": "Spring Physics & Decay Inertia: Damping Ratio... — Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "AppShell",
+            "name": "<GestureRootView />",
+            "props": {
+              "flex": "1"
+            },
+            "state": {
+              "fps": "120"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "PanResponder",
+            "name": "<PanGestureHandler />",
+            "props": {
+              "activeOffsetX": "[-15, 15]"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "AnimatedLayer",
+            "name": "<AnimatedLayer />",
+            "state": {
+              "springActive": "true"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "RenderNode",
+            "name": "<NativeRenderNode />",
+            "props": {
+              "workletThread": "UI"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <GestureRootView /> for Spring Physics & Decay Inertia...",
+            "activeId": "AppShell",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<GestureRootView />",
+                "props": {
+                  "flex": "1"
+                },
+                "state": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "PanResponder",
+                "name": "<PanGestureHandler />",
+                "props": {
+                  "activeOffsetX": "[-15, 15]"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "AnimatedLayer",
+                "name": "<AnimatedLayer />",
+                "state": {
+                  "springActive": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "RenderNode",
+                "name": "<NativeRenderNode />",
+                "props": {
+                  "workletThread": "UI"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Stream touch events directly into <PanGestureHandler />.",
+            "activeId": "PanResponder",
+            "reRenderingIds": [
+              "PanResponder",
+              "AnimatedLayer"
+            ],
+            "propsPassed": {
+              "from": "AppShell",
+              "to": "PanResponder",
+              "propName": "touchState",
+              "value": "ACTIVE"
+            },
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<GestureRootView />",
+                "props": {
+                  "flex": "1"
+                },
+                "state": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "PanResponder",
+                "name": "<PanGestureHandler />",
+                "props": {
+                  "activeOffsetX": "[-15, 15]"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "AnimatedLayer",
+                "name": "<AnimatedLayer />",
+                "state": {
+                  "springActive": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "RenderNode",
+                "name": "<NativeRenderNode />",
+                "props": {
+                  "workletThread": "UI"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute spring physics in <AnimatedLayer /> at 120 FPS.",
+            "activeId": "AnimatedLayer",
+            "reRenderingIds": [
+              "AnimatedLayer"
+            ],
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<GestureRootView />",
+                "props": {
+                  "flex": "1"
+                },
+                "state": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "PanResponder",
+                "name": "<PanGestureHandler />",
+                "props": {
+                  "activeOffsetX": "[-15, 15]"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "AnimatedLayer",
+                "name": "<AnimatedLayer />",
+                "state": {
+                  "springActive": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "RenderNode",
+                "name": "<NativeRenderNode />",
+                "props": {
+                  "workletThread": "UI"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Commit display link transform to <NativeRenderNode />.",
+            "activeId": "RenderNode",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<GestureRootView />",
+                "props": {
+                  "flex": "1"
+                },
+                "state": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "PanResponder",
+                "name": "<PanGestureHandler />",
+                "props": {
+                  "activeOffsetX": "[-15, 15]"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "AnimatedLayer",
+                "name": "<AnimatedLayer />",
+                "state": {
+                  "springActive": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "RenderNode",
+                "name": "<NativeRenderNode />",
+                "props": {
+                  "workletThread": "UI"
+                },
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Interpolation & Extrapolation: Clamping Curves, Color Ranges & SVG Matrix Morphing",
+      "codeHash": "5b5b7c3d36fc5e9941cea2e26450bb18e8d8a38660aa6ebea03c4222c7ded4a1",
+      "spec": {
+        "template": "component-tree",
+        "title": "Interpolation & Extrapolation: Clamping Curve... — Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "AppShell",
+            "name": "<GestureRootView />",
+            "props": {
+              "flex": "1"
+            },
+            "state": {
+              "fps": "120"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "PanResponder",
+            "name": "<PanGestureHandler />",
+            "props": {
+              "activeOffsetX": "[-15, 15]"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "AnimatedLayer",
+            "name": "<AnimatedLayer />",
+            "state": {
+              "springActive": "true"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "RenderNode",
+            "name": "<NativeRenderNode />",
+            "props": {
+              "workletThread": "UI"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <GestureRootView /> for Interpolation & Extrapolation:...",
+            "activeId": "AppShell",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<GestureRootView />",
+                "props": {
+                  "flex": "1"
+                },
+                "state": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "PanResponder",
+                "name": "<PanGestureHandler />",
+                "props": {
+                  "activeOffsetX": "[-15, 15]"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "AnimatedLayer",
+                "name": "<AnimatedLayer />",
+                "state": {
+                  "springActive": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "RenderNode",
+                "name": "<NativeRenderNode />",
+                "props": {
+                  "workletThread": "UI"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Stream touch events directly into <PanGestureHandler />.",
+            "activeId": "PanResponder",
+            "reRenderingIds": [
+              "PanResponder",
+              "AnimatedLayer"
+            ],
+            "propsPassed": {
+              "from": "AppShell",
+              "to": "PanResponder",
+              "propName": "touchState",
+              "value": "ACTIVE"
+            },
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<GestureRootView />",
+                "props": {
+                  "flex": "1"
+                },
+                "state": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "PanResponder",
+                "name": "<PanGestureHandler />",
+                "props": {
+                  "activeOffsetX": "[-15, 15]"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "AnimatedLayer",
+                "name": "<AnimatedLayer />",
+                "state": {
+                  "springActive": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "RenderNode",
+                "name": "<NativeRenderNode />",
+                "props": {
+                  "workletThread": "UI"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute spring physics in <AnimatedLayer /> at 120 FPS.",
+            "activeId": "AnimatedLayer",
+            "reRenderingIds": [
+              "AnimatedLayer"
+            ],
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<GestureRootView />",
+                "props": {
+                  "flex": "1"
+                },
+                "state": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "PanResponder",
+                "name": "<PanGestureHandler />",
+                "props": {
+                  "activeOffsetX": "[-15, 15]"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "AnimatedLayer",
+                "name": "<AnimatedLayer />",
+                "state": {
+                  "springActive": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "RenderNode",
+                "name": "<NativeRenderNode />",
+                "props": {
+                  "workletThread": "UI"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Commit display link transform to <NativeRenderNode />.",
+            "activeId": "RenderNode",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<GestureRootView />",
+                "props": {
+                  "flex": "1"
+                },
+                "state": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "PanResponder",
+                "name": "<PanGestureHandler />",
+                "props": {
+                  "activeOffsetX": "[-15, 15]"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "AnimatedLayer",
+                "name": "<AnimatedLayer />",
+                "state": {
+                  "springActive": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "RenderNode",
+                "name": "<NativeRenderNode />",
+                "props": {
+                  "workletThread": "UI"
+                },
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "title": "Interpolation & Extrapolation: Clamping Curve... — Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "AppShell",
+            "name": "<GestureRootView />",
+            "props": {
+              "flex": "1"
+            },
+            "state": {
+              "fps": "120"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "PanResponder",
+            "name": "<PanGestureHandler />",
+            "props": {
+              "activeOffsetX": "[-15, 15]"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "AnimatedLayer",
+            "name": "<AnimatedLayer />",
+            "state": {
+              "springActive": "true"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "RenderNode",
+            "name": "<NativeRenderNode />",
+            "props": {
+              "workletThread": "UI"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <GestureRootView /> for Interpolation & Extrapolation:...",
+            "activeId": "AppShell",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<GestureRootView />",
+                "props": {
+                  "flex": "1"
+                },
+                "state": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "PanResponder",
+                "name": "<PanGestureHandler />",
+                "props": {
+                  "activeOffsetX": "[-15, 15]"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "AnimatedLayer",
+                "name": "<AnimatedLayer />",
+                "state": {
+                  "springActive": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "RenderNode",
+                "name": "<NativeRenderNode />",
+                "props": {
+                  "workletThread": "UI"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Stream touch events directly into <PanGestureHandler />.",
+            "activeId": "PanResponder",
+            "reRenderingIds": [
+              "PanResponder",
+              "AnimatedLayer"
+            ],
+            "propsPassed": {
+              "from": "AppShell",
+              "to": "PanResponder",
+              "propName": "touchState",
+              "value": "ACTIVE"
+            },
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<GestureRootView />",
+                "props": {
+                  "flex": "1"
+                },
+                "state": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "PanResponder",
+                "name": "<PanGestureHandler />",
+                "props": {
+                  "activeOffsetX": "[-15, 15]"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "AnimatedLayer",
+                "name": "<AnimatedLayer />",
+                "state": {
+                  "springActive": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "RenderNode",
+                "name": "<NativeRenderNode />",
+                "props": {
+                  "workletThread": "UI"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute spring physics in <AnimatedLayer /> at 120 FPS.",
+            "activeId": "AnimatedLayer",
+            "reRenderingIds": [
+              "AnimatedLayer"
+            ],
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<GestureRootView />",
+                "props": {
+                  "flex": "1"
+                },
+                "state": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "PanResponder",
+                "name": "<PanGestureHandler />",
+                "props": {
+                  "activeOffsetX": "[-15, 15]"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "AnimatedLayer",
+                "name": "<AnimatedLayer />",
+                "state": {
+                  "springActive": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "RenderNode",
+                "name": "<NativeRenderNode />",
+                "props": {
+                  "workletThread": "UI"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Commit display link transform to <NativeRenderNode />.",
+            "activeId": "RenderNode",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<GestureRootView />",
+                "props": {
+                  "flex": "1"
+                },
+                "state": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "PanResponder",
+                "name": "<PanGestureHandler />",
+                "props": {
+                  "activeOffsetX": "[-15, 15]"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "AnimatedLayer",
+                "name": "<AnimatedLayer />",
+                "state": {
+                  "springActive": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "RenderNode",
+                "name": "<NativeRenderNode />",
+                "props": {
+                  "workletThread": "UI"
+                },
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Layout Animations & Shared Element Transitions: Enter/Exit Keyframes & Morphing Views",
+      "codeHash": "ae29e2d23487dc193657a4d2966f3c17631bddef6e9b7cd0387ed89f95704107",
+      "spec": {
+        "template": "component-tree",
+        "title": "Layout Animations & Shared Element Transition... — Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "AppShell",
+            "name": "<GestureRootView />",
+            "props": {
+              "flex": "1"
+            },
+            "state": {
+              "fps": "120"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "PanResponder",
+            "name": "<PanGestureHandler />",
+            "props": {
+              "activeOffsetX": "[-15, 15]"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "AnimatedLayer",
+            "name": "<AnimatedLayer />",
+            "state": {
+              "springActive": "true"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "RenderNode",
+            "name": "<NativeRenderNode />",
+            "props": {
+              "workletThread": "UI"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <GestureRootView /> for Layout Animations & Shared Ele...",
+            "activeId": "AppShell",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<GestureRootView />",
+                "props": {
+                  "flex": "1"
+                },
+                "state": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "PanResponder",
+                "name": "<PanGestureHandler />",
+                "props": {
+                  "activeOffsetX": "[-15, 15]"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "AnimatedLayer",
+                "name": "<AnimatedLayer />",
+                "state": {
+                  "springActive": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "RenderNode",
+                "name": "<NativeRenderNode />",
+                "props": {
+                  "workletThread": "UI"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Stream touch events directly into <PanGestureHandler />.",
+            "activeId": "PanResponder",
+            "reRenderingIds": [
+              "PanResponder",
+              "AnimatedLayer"
+            ],
+            "propsPassed": {
+              "from": "AppShell",
+              "to": "PanResponder",
+              "propName": "touchState",
+              "value": "ACTIVE"
+            },
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<GestureRootView />",
+                "props": {
+                  "flex": "1"
+                },
+                "state": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "PanResponder",
+                "name": "<PanGestureHandler />",
+                "props": {
+                  "activeOffsetX": "[-15, 15]"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "AnimatedLayer",
+                "name": "<AnimatedLayer />",
+                "state": {
+                  "springActive": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "RenderNode",
+                "name": "<NativeRenderNode />",
+                "props": {
+                  "workletThread": "UI"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute spring physics in <AnimatedLayer /> at 120 FPS.",
+            "activeId": "AnimatedLayer",
+            "reRenderingIds": [
+              "AnimatedLayer"
+            ],
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<GestureRootView />",
+                "props": {
+                  "flex": "1"
+                },
+                "state": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "PanResponder",
+                "name": "<PanGestureHandler />",
+                "props": {
+                  "activeOffsetX": "[-15, 15]"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "AnimatedLayer",
+                "name": "<AnimatedLayer />",
+                "state": {
+                  "springActive": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "RenderNode",
+                "name": "<NativeRenderNode />",
+                "props": {
+                  "workletThread": "UI"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Commit display link transform to <NativeRenderNode />.",
+            "activeId": "RenderNode",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<GestureRootView />",
+                "props": {
+                  "flex": "1"
+                },
+                "state": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "PanResponder",
+                "name": "<PanGestureHandler />",
+                "props": {
+                  "activeOffsetX": "[-15, 15]"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "AnimatedLayer",
+                "name": "<AnimatedLayer />",
+                "state": {
+                  "springActive": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "RenderNode",
+                "name": "<NativeRenderNode />",
+                "props": {
+                  "workletThread": "UI"
+                },
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "title": "Layout Animations & Shared Element Transition... — Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "AppShell",
+            "name": "<GestureRootView />",
+            "props": {
+              "flex": "1"
+            },
+            "state": {
+              "fps": "120"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "PanResponder",
+            "name": "<PanGestureHandler />",
+            "props": {
+              "activeOffsetX": "[-15, 15]"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "AnimatedLayer",
+            "name": "<AnimatedLayer />",
+            "state": {
+              "springActive": "true"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "RenderNode",
+            "name": "<NativeRenderNode />",
+            "props": {
+              "workletThread": "UI"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <GestureRootView /> for Layout Animations & Shared Ele...",
+            "activeId": "AppShell",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<GestureRootView />",
+                "props": {
+                  "flex": "1"
+                },
+                "state": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "PanResponder",
+                "name": "<PanGestureHandler />",
+                "props": {
+                  "activeOffsetX": "[-15, 15]"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "AnimatedLayer",
+                "name": "<AnimatedLayer />",
+                "state": {
+                  "springActive": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "RenderNode",
+                "name": "<NativeRenderNode />",
+                "props": {
+                  "workletThread": "UI"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Stream touch events directly into <PanGestureHandler />.",
+            "activeId": "PanResponder",
+            "reRenderingIds": [
+              "PanResponder",
+              "AnimatedLayer"
+            ],
+            "propsPassed": {
+              "from": "AppShell",
+              "to": "PanResponder",
+              "propName": "touchState",
+              "value": "ACTIVE"
+            },
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<GestureRootView />",
+                "props": {
+                  "flex": "1"
+                },
+                "state": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "PanResponder",
+                "name": "<PanGestureHandler />",
+                "props": {
+                  "activeOffsetX": "[-15, 15]"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "AnimatedLayer",
+                "name": "<AnimatedLayer />",
+                "state": {
+                  "springActive": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "RenderNode",
+                "name": "<NativeRenderNode />",
+                "props": {
+                  "workletThread": "UI"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute spring physics in <AnimatedLayer /> at 120 FPS.",
+            "activeId": "AnimatedLayer",
+            "reRenderingIds": [
+              "AnimatedLayer"
+            ],
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<GestureRootView />",
+                "props": {
+                  "flex": "1"
+                },
+                "state": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "PanResponder",
+                "name": "<PanGestureHandler />",
+                "props": {
+                  "activeOffsetX": "[-15, 15]"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "AnimatedLayer",
+                "name": "<AnimatedLayer />",
+                "state": {
+                  "springActive": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "RenderNode",
+                "name": "<NativeRenderNode />",
+                "props": {
+                  "workletThread": "UI"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Commit display link transform to <NativeRenderNode />.",
+            "activeId": "RenderNode",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<GestureRootView />",
+                "props": {
+                  "flex": "1"
+                },
+                "state": {
+                  "fps": "120"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "PanResponder",
+                "name": "<PanGestureHandler />",
+                "props": {
+                  "activeOffsetX": "[-15, 15]"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "AnimatedLayer",
+                "name": "<AnimatedLayer />",
+                "state": {
+                  "springActive": "true"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "RenderNode",
+                "name": "<NativeRenderNode />",
+                "props": {
+                  "workletThread": "UI"
+                },
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
