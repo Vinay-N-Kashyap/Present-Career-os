@@ -1,0 +1,1049 @@
+{
+  "schemaVersion": 1,
+  "prefix": "mobile",
+  "day": 21,
+  "promptSha": "cd6f26892d2853bef5d5f212d423bbc95502ec6c6654ed72e2b962cebda355fd",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Native Media Pipelines & Hardware Acceleration: VideoToolbox & Android MediaCodec",
+      "codeHash": "41492627dcbcca1b2297123ccb432262df2be2ce4ab0200c2302900d32fd85fb",
+      "spec": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<NativeMediaRootPlayer />",
+            "props": {
+              "startup": "SUB_250MS_TTFF"
+            },
+            "children": [
+              {
+                "id": "HardwareCodec",
+                "name": "<HardwareVideoDecoder />",
+                "props": {
+                  "silicon": "VIDEOTOOLBOX_MEDIACODEC"
+                }
+              },
+              {
+                "id": "AbrManager",
+                "name": "<HlsAdaptiveBitrateManager />",
+                "props": {
+                  "buffer": "15S_STABLE_OCCUPANCY"
+                }
+              },
+              {
+                "id": "DrmTee",
+                "name": "<DrmContentDecryptionModule />",
+                "props": {
+                  "security": "FAIRPLAY_WIDEVINE_L1"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize hardware-accelerated video decoder via <HardwareVideoDecoder />",
+            "activeId": "HardwareCodec",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "HardwareCodec",
+                "name": "<HardwareVideoDecoder />",
+                "props": {
+                  "cpuLoad": "SUB_5_PERCENT"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Parse HLS master manifest and monitor ABR buffer via <HlsAdaptiveBitrateManager />",
+            "activeId": "AbrManager",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "AbrManager",
+                "name": "<HlsAdaptiveBitrateManager />",
+                "props": {
+                  "rendition": "1080P_SELECTED"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Exchange cryptographic DRM licenses in hardware TEE via <DrmContentDecryptionModule />",
+            "activeId": "DrmTee",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "DrmTee",
+                "name": "<DrmContentDecryptionModule />",
+                "props": {
+                  "status": "LICENSE_ACTIVE"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute comprehensive media player verification benchmark",
+            "activeId": "root",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<NativeMediaRootPlayer />",
+                "props": {
+                  "certification": "TIER_1_CERTIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<NativeMediaRootPlayer />",
+            "props": {
+              "startup": "SUB_250MS_TTFF"
+            },
+            "children": [
+              {
+                "id": "HardwareCodec",
+                "name": "<HardwareVideoDecoder />",
+                "props": {
+                  "silicon": "VIDEOTOOLBOX_MEDIACODEC"
+                }
+              },
+              {
+                "id": "AbrManager",
+                "name": "<HlsAdaptiveBitrateManager />",
+                "props": {
+                  "buffer": "15S_STABLE_OCCUPANCY"
+                }
+              },
+              {
+                "id": "DrmTee",
+                "name": "<DrmContentDecryptionModule />",
+                "props": {
+                  "security": "FAIRPLAY_WIDEVINE_L1"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize hardware-accelerated video decoder via <HardwareVideoDecoder />",
+            "activeId": "HardwareCodec",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "HardwareCodec",
+                "name": "<HardwareVideoDecoder />",
+                "props": {
+                  "cpuLoad": "SUB_5_PERCENT"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Parse HLS master manifest and monitor ABR buffer via <HlsAdaptiveBitrateManager />",
+            "activeId": "AbrManager",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "AbrManager",
+                "name": "<HlsAdaptiveBitrateManager />",
+                "props": {
+                  "rendition": "1080P_SELECTED"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Exchange cryptographic DRM licenses in hardware TEE via <DrmContentDecryptionModule />",
+            "activeId": "DrmTee",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "DrmTee",
+                "name": "<DrmContentDecryptionModule />",
+                "props": {
+                  "status": "LICENSE_ACTIVE"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute comprehensive media player verification benchmark",
+            "activeId": "root",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<NativeMediaRootPlayer />",
+                "props": {
+                  "certification": "TIER_1_CERTIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "HLS Adaptive Bitrate (ABR) Streaming: Master Manifests & Bandwidth Adaptation",
+      "codeHash": "37688237d6a1476489b07c860fefd065684aeee25ff2aa75618304b646158d85",
+      "spec": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<NativeMediaRootPlayer />",
+            "props": {
+              "startup": "SUB_250MS_TTFF"
+            },
+            "children": [
+              {
+                "id": "HardwareCodec",
+                "name": "<HardwareVideoDecoder />",
+                "props": {
+                  "silicon": "VIDEOTOOLBOX_MEDIACODEC"
+                }
+              },
+              {
+                "id": "AbrManager",
+                "name": "<HlsAdaptiveBitrateManager />",
+                "props": {
+                  "buffer": "15S_STABLE_OCCUPANCY"
+                }
+              },
+              {
+                "id": "DrmTee",
+                "name": "<DrmContentDecryptionModule />",
+                "props": {
+                  "security": "FAIRPLAY_WIDEVINE_L1"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize hardware-accelerated video decoder via <HardwareVideoDecoder />",
+            "activeId": "HardwareCodec",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "HardwareCodec",
+                "name": "<HardwareVideoDecoder />",
+                "props": {
+                  "cpuLoad": "SUB_5_PERCENT"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Parse HLS master manifest and monitor ABR buffer via <HlsAdaptiveBitrateManager />",
+            "activeId": "AbrManager",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "AbrManager",
+                "name": "<HlsAdaptiveBitrateManager />",
+                "props": {
+                  "rendition": "1080P_SELECTED"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Exchange cryptographic DRM licenses in hardware TEE via <DrmContentDecryptionModule />",
+            "activeId": "DrmTee",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "DrmTee",
+                "name": "<DrmContentDecryptionModule />",
+                "props": {
+                  "status": "LICENSE_ACTIVE"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute comprehensive media player verification benchmark",
+            "activeId": "root",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<NativeMediaRootPlayer />",
+                "props": {
+                  "certification": "TIER_1_CERTIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<NativeMediaRootPlayer />",
+            "props": {
+              "startup": "SUB_250MS_TTFF"
+            },
+            "children": [
+              {
+                "id": "HardwareCodec",
+                "name": "<HardwareVideoDecoder />",
+                "props": {
+                  "silicon": "VIDEOTOOLBOX_MEDIACODEC"
+                }
+              },
+              {
+                "id": "AbrManager",
+                "name": "<HlsAdaptiveBitrateManager />",
+                "props": {
+                  "buffer": "15S_STABLE_OCCUPANCY"
+                }
+              },
+              {
+                "id": "DrmTee",
+                "name": "<DrmContentDecryptionModule />",
+                "props": {
+                  "security": "FAIRPLAY_WIDEVINE_L1"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize hardware-accelerated video decoder via <HardwareVideoDecoder />",
+            "activeId": "HardwareCodec",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "HardwareCodec",
+                "name": "<HardwareVideoDecoder />",
+                "props": {
+                  "cpuLoad": "SUB_5_PERCENT"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Parse HLS master manifest and monitor ABR buffer via <HlsAdaptiveBitrateManager />",
+            "activeId": "AbrManager",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "AbrManager",
+                "name": "<HlsAdaptiveBitrateManager />",
+                "props": {
+                  "rendition": "1080P_SELECTED"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Exchange cryptographic DRM licenses in hardware TEE via <DrmContentDecryptionModule />",
+            "activeId": "DrmTee",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "DrmTee",
+                "name": "<DrmContentDecryptionModule />",
+                "props": {
+                  "status": "LICENSE_ACTIVE"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute comprehensive media player verification benchmark",
+            "activeId": "root",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<NativeMediaRootPlayer />",
+                "props": {
+                  "certification": "TIER_1_CERTIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Audio Session Management, Audio Focus & System Interruption Recovery",
+      "codeHash": "ef974c6cc9bd86d865ec32ec87f4b1f6fa20fbf3bcad12af4859c0619c6e21be",
+      "spec": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<NativeMediaRootPlayer />",
+            "props": {
+              "startup": "SUB_250MS_TTFF"
+            },
+            "children": [
+              {
+                "id": "HardwareCodec",
+                "name": "<HardwareVideoDecoder />",
+                "props": {
+                  "silicon": "VIDEOTOOLBOX_MEDIACODEC"
+                }
+              },
+              {
+                "id": "AbrManager",
+                "name": "<HlsAdaptiveBitrateManager />",
+                "props": {
+                  "buffer": "15S_STABLE_OCCUPANCY"
+                }
+              },
+              {
+                "id": "DrmTee",
+                "name": "<DrmContentDecryptionModule />",
+                "props": {
+                  "security": "FAIRPLAY_WIDEVINE_L1"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize hardware-accelerated video decoder via <HardwareVideoDecoder />",
+            "activeId": "HardwareCodec",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "HardwareCodec",
+                "name": "<HardwareVideoDecoder />",
+                "props": {
+                  "cpuLoad": "SUB_5_PERCENT"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Parse HLS master manifest and monitor ABR buffer via <HlsAdaptiveBitrateManager />",
+            "activeId": "AbrManager",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "AbrManager",
+                "name": "<HlsAdaptiveBitrateManager />",
+                "props": {
+                  "rendition": "1080P_SELECTED"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Exchange cryptographic DRM licenses in hardware TEE via <DrmContentDecryptionModule />",
+            "activeId": "DrmTee",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "DrmTee",
+                "name": "<DrmContentDecryptionModule />",
+                "props": {
+                  "status": "LICENSE_ACTIVE"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute comprehensive media player verification benchmark",
+            "activeId": "root",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<NativeMediaRootPlayer />",
+                "props": {
+                  "certification": "TIER_1_CERTIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<NativeMediaRootPlayer />",
+            "props": {
+              "startup": "SUB_250MS_TTFF"
+            },
+            "children": [
+              {
+                "id": "HardwareCodec",
+                "name": "<HardwareVideoDecoder />",
+                "props": {
+                  "silicon": "VIDEOTOOLBOX_MEDIACODEC"
+                }
+              },
+              {
+                "id": "AbrManager",
+                "name": "<HlsAdaptiveBitrateManager />",
+                "props": {
+                  "buffer": "15S_STABLE_OCCUPANCY"
+                }
+              },
+              {
+                "id": "DrmTee",
+                "name": "<DrmContentDecryptionModule />",
+                "props": {
+                  "security": "FAIRPLAY_WIDEVINE_L1"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize hardware-accelerated video decoder via <HardwareVideoDecoder />",
+            "activeId": "HardwareCodec",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "HardwareCodec",
+                "name": "<HardwareVideoDecoder />",
+                "props": {
+                  "cpuLoad": "SUB_5_PERCENT"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Parse HLS master manifest and monitor ABR buffer via <HlsAdaptiveBitrateManager />",
+            "activeId": "AbrManager",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "AbrManager",
+                "name": "<HlsAdaptiveBitrateManager />",
+                "props": {
+                  "rendition": "1080P_SELECTED"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Exchange cryptographic DRM licenses in hardware TEE via <DrmContentDecryptionModule />",
+            "activeId": "DrmTee",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "DrmTee",
+                "name": "<DrmContentDecryptionModule />",
+                "props": {
+                  "status": "LICENSE_ACTIVE"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute comprehensive media player verification benchmark",
+            "activeId": "root",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<NativeMediaRootPlayer />",
+                "props": {
+                  "certification": "TIER_1_CERTIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "DRM Architecture & Encrypted Content Decryption: FairPlay & Widevine",
+      "codeHash": "d3858c966e22a8a55ea9f0eaa101982e1ba5caec2240564116633ae14bde9759",
+      "spec": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<NativeMediaRootPlayer />",
+            "props": {
+              "startup": "SUB_250MS_TTFF"
+            },
+            "children": [
+              {
+                "id": "HardwareCodec",
+                "name": "<HardwareVideoDecoder />",
+                "props": {
+                  "silicon": "VIDEOTOOLBOX_MEDIACODEC"
+                }
+              },
+              {
+                "id": "AbrManager",
+                "name": "<HlsAdaptiveBitrateManager />",
+                "props": {
+                  "buffer": "15S_STABLE_OCCUPANCY"
+                }
+              },
+              {
+                "id": "DrmTee",
+                "name": "<DrmContentDecryptionModule />",
+                "props": {
+                  "security": "FAIRPLAY_WIDEVINE_L1"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize hardware-accelerated video decoder via <HardwareVideoDecoder />",
+            "activeId": "HardwareCodec",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "HardwareCodec",
+                "name": "<HardwareVideoDecoder />",
+                "props": {
+                  "cpuLoad": "SUB_5_PERCENT"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Parse HLS master manifest and monitor ABR buffer via <HlsAdaptiveBitrateManager />",
+            "activeId": "AbrManager",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "AbrManager",
+                "name": "<HlsAdaptiveBitrateManager />",
+                "props": {
+                  "rendition": "1080P_SELECTED"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Exchange cryptographic DRM licenses in hardware TEE via <DrmContentDecryptionModule />",
+            "activeId": "DrmTee",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "DrmTee",
+                "name": "<DrmContentDecryptionModule />",
+                "props": {
+                  "status": "LICENSE_ACTIVE"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute comprehensive media player verification benchmark",
+            "activeId": "root",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<NativeMediaRootPlayer />",
+                "props": {
+                  "certification": "TIER_1_CERTIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<NativeMediaRootPlayer />",
+            "props": {
+              "startup": "SUB_250MS_TTFF"
+            },
+            "children": [
+              {
+                "id": "HardwareCodec",
+                "name": "<HardwareVideoDecoder />",
+                "props": {
+                  "silicon": "VIDEOTOOLBOX_MEDIACODEC"
+                }
+              },
+              {
+                "id": "AbrManager",
+                "name": "<HlsAdaptiveBitrateManager />",
+                "props": {
+                  "buffer": "15S_STABLE_OCCUPANCY"
+                }
+              },
+              {
+                "id": "DrmTee",
+                "name": "<DrmContentDecryptionModule />",
+                "props": {
+                  "security": "FAIRPLAY_WIDEVINE_L1"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize hardware-accelerated video decoder via <HardwareVideoDecoder />",
+            "activeId": "HardwareCodec",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "HardwareCodec",
+                "name": "<HardwareVideoDecoder />",
+                "props": {
+                  "cpuLoad": "SUB_5_PERCENT"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Parse HLS master manifest and monitor ABR buffer via <HlsAdaptiveBitrateManager />",
+            "activeId": "AbrManager",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "AbrManager",
+                "name": "<HlsAdaptiveBitrateManager />",
+                "props": {
+                  "rendition": "1080P_SELECTED"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Exchange cryptographic DRM licenses in hardware TEE via <DrmContentDecryptionModule />",
+            "activeId": "DrmTee",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "DrmTee",
+                "name": "<DrmContentDecryptionModule />",
+                "props": {
+                  "status": "LICENSE_ACTIVE"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute comprehensive media player verification benchmark",
+            "activeId": "root",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<NativeMediaRootPlayer />",
+                "props": {
+                  "certification": "TIER_1_CERTIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Mobile Video Player Engine: Full Production Simulator",
+      "codeHash": "0629223f0af49d1a38a3cc81fc1d1529f6407372d14a449230c11dc5de31af60",
+      "spec": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<NativeMediaRootPlayer />",
+            "props": {
+              "startup": "SUB_250MS_TTFF"
+            },
+            "children": [
+              {
+                "id": "HardwareCodec",
+                "name": "<HardwareVideoDecoder />",
+                "props": {
+                  "silicon": "VIDEOTOOLBOX_MEDIACODEC"
+                }
+              },
+              {
+                "id": "AbrManager",
+                "name": "<HlsAdaptiveBitrateManager />",
+                "props": {
+                  "buffer": "15S_STABLE_OCCUPANCY"
+                }
+              },
+              {
+                "id": "DrmTee",
+                "name": "<DrmContentDecryptionModule />",
+                "props": {
+                  "security": "FAIRPLAY_WIDEVINE_L1"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize hardware-accelerated video decoder via <HardwareVideoDecoder />",
+            "activeId": "HardwareCodec",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "HardwareCodec",
+                "name": "<HardwareVideoDecoder />",
+                "props": {
+                  "cpuLoad": "SUB_5_PERCENT"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Parse HLS master manifest and monitor ABR buffer via <HlsAdaptiveBitrateManager />",
+            "activeId": "AbrManager",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "AbrManager",
+                "name": "<HlsAdaptiveBitrateManager />",
+                "props": {
+                  "rendition": "1080P_SELECTED"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Exchange cryptographic DRM licenses in hardware TEE via <DrmContentDecryptionModule />",
+            "activeId": "DrmTee",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "DrmTee",
+                "name": "<DrmContentDecryptionModule />",
+                "props": {
+                  "status": "LICENSE_ACTIVE"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute comprehensive media player verification benchmark",
+            "activeId": "root",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<NativeMediaRootPlayer />",
+                "props": {
+                  "certification": "TIER_1_CERTIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<NativeMediaRootPlayer />",
+            "props": {
+              "startup": "SUB_250MS_TTFF"
+            },
+            "children": [
+              {
+                "id": "HardwareCodec",
+                "name": "<HardwareVideoDecoder />",
+                "props": {
+                  "silicon": "VIDEOTOOLBOX_MEDIACODEC"
+                }
+              },
+              {
+                "id": "AbrManager",
+                "name": "<HlsAdaptiveBitrateManager />",
+                "props": {
+                  "buffer": "15S_STABLE_OCCUPANCY"
+                }
+              },
+              {
+                "id": "DrmTee",
+                "name": "<DrmContentDecryptionModule />",
+                "props": {
+                  "security": "FAIRPLAY_WIDEVINE_L1"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize hardware-accelerated video decoder via <HardwareVideoDecoder />",
+            "activeId": "HardwareCodec",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "HardwareCodec",
+                "name": "<HardwareVideoDecoder />",
+                "props": {
+                  "cpuLoad": "SUB_5_PERCENT"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Parse HLS master manifest and monitor ABR buffer via <HlsAdaptiveBitrateManager />",
+            "activeId": "AbrManager",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "AbrManager",
+                "name": "<HlsAdaptiveBitrateManager />",
+                "props": {
+                  "rendition": "1080P_SELECTED"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Exchange cryptographic DRM licenses in hardware TEE via <DrmContentDecryptionModule />",
+            "activeId": "DrmTee",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "DrmTee",
+                "name": "<DrmContentDecryptionModule />",
+                "props": {
+                  "status": "LICENSE_ACTIVE"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute comprehensive media player verification benchmark",
+            "activeId": "root",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<NativeMediaRootPlayer />",
+                "props": {
+                  "certification": "TIER_1_CERTIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
