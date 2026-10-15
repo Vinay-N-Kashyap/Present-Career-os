@@ -1,0 +1,2309 @@
+{
+  "schemaVersion": 1,
+  "prefix": "mobile",
+  "day": 8,
+  "promptSha": "751a819aa7857f352bc4c42c7734b235cea3ddd0021d26eb42814c864dc25f83",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "The C++ JavaScript Interface (JSI): Host Objects, Host Functions & Pointer Interop",
+      "codeHash": "ec110080a5a964db19c8e27422196c8733c365f81c32b65df6b716713365e525",
+      "spec": {
+        "template": "component-tree",
+        "title": "The C++ JavaScript Interface (JSI): Host Obje... — Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "AppShell",
+            "name": "<TurboModuleRoot />",
+            "props": {
+              "arch": "JSI"
+            },
+            "state": {
+              "status": "bound"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "HostBridge",
+            "name": "<CppHostObjectBridge />",
+            "props": {
+              "zeroCopy": "true"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "HardwareLayer",
+            "name": "<NativeHardwareEnclave />",
+            "state": {
+              "locked": "false"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "JsiRuntime",
+            "name": "<HermesJsiRuntime />",
+            "props": {
+              "latencyNs": "120"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <TurboModuleRoot /> for The C++ JavaScript Interface (...",
+            "activeId": "AppShell",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<TurboModuleRoot />",
+                "props": {
+                  "arch": "JSI"
+                },
+                "state": {
+                  "status": "bound"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "HostBridge",
+                "name": "<CppHostObjectBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "HardwareLayer",
+                "name": "<NativeHardwareEnclave />",
+                "state": {
+                  "locked": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "JsiRuntime",
+                "name": "<HermesJsiRuntime />",
+                "props": {
+                  "latencyNs": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Bind C++ Host Object pointers into <CppHostObjectBridge />.",
+            "activeId": "HostBridge",
+            "reRenderingIds": [
+              "HostBridge",
+              "JsiRuntime"
+            ],
+            "propsPassed": {
+              "from": "AppShell",
+              "to": "HostBridge",
+              "propName": "hostPtr",
+              "value": "0x7fa9bc01"
+            },
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<TurboModuleRoot />",
+                "props": {
+                  "arch": "JSI"
+                },
+                "state": {
+                  "status": "bound"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "HostBridge",
+                "name": "<CppHostObjectBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "HardwareLayer",
+                "name": "<NativeHardwareEnclave />",
+                "state": {
+                  "locked": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "JsiRuntime",
+                "name": "<HermesJsiRuntime />",
+                "props": {
+                  "latencyNs": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute hardware instructions directly in <NativeHardwareEnclave />.",
+            "activeId": "HardwareLayer",
+            "reRenderingIds": [
+              "HardwareLayer"
+            ],
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<TurboModuleRoot />",
+                "props": {
+                  "arch": "JSI"
+                },
+                "state": {
+                  "status": "bound"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "HostBridge",
+                "name": "<CppHostObjectBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "HardwareLayer",
+                "name": "<NativeHardwareEnclave />",
+                "state": {
+                  "locked": "false"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "JsiRuntime",
+                "name": "<HermesJsiRuntime />",
+                "props": {
+                  "latencyNs": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Synchronize zero-copy memory buffer to <HermesJsiRuntime />.",
+            "activeId": "JsiRuntime",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<TurboModuleRoot />",
+                "props": {
+                  "arch": "JSI"
+                },
+                "state": {
+                  "status": "bound"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "HostBridge",
+                "name": "<CppHostObjectBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "HardwareLayer",
+                "name": "<NativeHardwareEnclave />",
+                "state": {
+                  "locked": "false"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "JsiRuntime",
+                "name": "<HermesJsiRuntime />",
+                "props": {
+                  "latencyNs": "120"
+                },
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "title": "The C++ JavaScript Interface (JSI): Host Obje... — Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "AppShell",
+            "name": "<TurboModuleRoot />",
+            "props": {
+              "arch": "JSI"
+            },
+            "state": {
+              "status": "bound"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "HostBridge",
+            "name": "<CppHostObjectBridge />",
+            "props": {
+              "zeroCopy": "true"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "HardwareLayer",
+            "name": "<NativeHardwareEnclave />",
+            "state": {
+              "locked": "false"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "JsiRuntime",
+            "name": "<HermesJsiRuntime />",
+            "props": {
+              "latencyNs": "120"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <TurboModuleRoot /> for The C++ JavaScript Interface (...",
+            "activeId": "AppShell",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<TurboModuleRoot />",
+                "props": {
+                  "arch": "JSI"
+                },
+                "state": {
+                  "status": "bound"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "HostBridge",
+                "name": "<CppHostObjectBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "HardwareLayer",
+                "name": "<NativeHardwareEnclave />",
+                "state": {
+                  "locked": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "JsiRuntime",
+                "name": "<HermesJsiRuntime />",
+                "props": {
+                  "latencyNs": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Bind C++ Host Object pointers into <CppHostObjectBridge />.",
+            "activeId": "HostBridge",
+            "reRenderingIds": [
+              "HostBridge",
+              "JsiRuntime"
+            ],
+            "propsPassed": {
+              "from": "AppShell",
+              "to": "HostBridge",
+              "propName": "hostPtr",
+              "value": "0x7fa9bc01"
+            },
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<TurboModuleRoot />",
+                "props": {
+                  "arch": "JSI"
+                },
+                "state": {
+                  "status": "bound"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "HostBridge",
+                "name": "<CppHostObjectBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "HardwareLayer",
+                "name": "<NativeHardwareEnclave />",
+                "state": {
+                  "locked": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "JsiRuntime",
+                "name": "<HermesJsiRuntime />",
+                "props": {
+                  "latencyNs": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute hardware instructions directly in <NativeHardwareEnclave />.",
+            "activeId": "HardwareLayer",
+            "reRenderingIds": [
+              "HardwareLayer"
+            ],
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<TurboModuleRoot />",
+                "props": {
+                  "arch": "JSI"
+                },
+                "state": {
+                  "status": "bound"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "HostBridge",
+                "name": "<CppHostObjectBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "HardwareLayer",
+                "name": "<NativeHardwareEnclave />",
+                "state": {
+                  "locked": "false"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "JsiRuntime",
+                "name": "<HermesJsiRuntime />",
+                "props": {
+                  "latencyNs": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Synchronize zero-copy memory buffer to <HermesJsiRuntime />.",
+            "activeId": "JsiRuntime",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<TurboModuleRoot />",
+                "props": {
+                  "arch": "JSI"
+                },
+                "state": {
+                  "status": "bound"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "HostBridge",
+                "name": "<CppHostObjectBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "HardwareLayer",
+                "name": "<NativeHardwareEnclave />",
+                "state": {
+                  "locked": "false"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "JsiRuntime",
+                "name": "<HermesJsiRuntime />",
+                "props": {
+                  "latencyNs": "120"
+                },
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Codegen & Strongly Typed Specs: TypeScript Declarations & C++ Abstract Bases",
+      "codeHash": "9b870a71bd074b4a7cd630f3b210bbdb8365becca7e14b455861227a67f4f926",
+      "spec": {
+        "template": "component-tree",
+        "title": "Codegen & Strongly Typed Specs: TypeScript De... — Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "AppShell",
+            "name": "<TurboModuleRoot />",
+            "props": {
+              "arch": "JSI"
+            },
+            "state": {
+              "status": "bound"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "HostBridge",
+            "name": "<CppHostObjectBridge />",
+            "props": {
+              "zeroCopy": "true"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "HardwareLayer",
+            "name": "<NativeHardwareEnclave />",
+            "state": {
+              "locked": "false"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "JsiRuntime",
+            "name": "<HermesJsiRuntime />",
+            "props": {
+              "latencyNs": "120"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <TurboModuleRoot /> for Codegen & Strongly Typed Specs...",
+            "activeId": "AppShell",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<TurboModuleRoot />",
+                "props": {
+                  "arch": "JSI"
+                },
+                "state": {
+                  "status": "bound"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "HostBridge",
+                "name": "<CppHostObjectBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "HardwareLayer",
+                "name": "<NativeHardwareEnclave />",
+                "state": {
+                  "locked": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "JsiRuntime",
+                "name": "<HermesJsiRuntime />",
+                "props": {
+                  "latencyNs": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Bind C++ Host Object pointers into <CppHostObjectBridge />.",
+            "activeId": "HostBridge",
+            "reRenderingIds": [
+              "HostBridge",
+              "JsiRuntime"
+            ],
+            "propsPassed": {
+              "from": "AppShell",
+              "to": "HostBridge",
+              "propName": "hostPtr",
+              "value": "0x7fa9bc01"
+            },
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<TurboModuleRoot />",
+                "props": {
+                  "arch": "JSI"
+                },
+                "state": {
+                  "status": "bound"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "HostBridge",
+                "name": "<CppHostObjectBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "HardwareLayer",
+                "name": "<NativeHardwareEnclave />",
+                "state": {
+                  "locked": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "JsiRuntime",
+                "name": "<HermesJsiRuntime />",
+                "props": {
+                  "latencyNs": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute hardware instructions directly in <NativeHardwareEnclave />.",
+            "activeId": "HardwareLayer",
+            "reRenderingIds": [
+              "HardwareLayer"
+            ],
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<TurboModuleRoot />",
+                "props": {
+                  "arch": "JSI"
+                },
+                "state": {
+                  "status": "bound"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "HostBridge",
+                "name": "<CppHostObjectBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "HardwareLayer",
+                "name": "<NativeHardwareEnclave />",
+                "state": {
+                  "locked": "false"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "JsiRuntime",
+                "name": "<HermesJsiRuntime />",
+                "props": {
+                  "latencyNs": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Synchronize zero-copy memory buffer to <HermesJsiRuntime />.",
+            "activeId": "JsiRuntime",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<TurboModuleRoot />",
+                "props": {
+                  "arch": "JSI"
+                },
+                "state": {
+                  "status": "bound"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "HostBridge",
+                "name": "<CppHostObjectBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "HardwareLayer",
+                "name": "<NativeHardwareEnclave />",
+                "state": {
+                  "locked": "false"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "JsiRuntime",
+                "name": "<HermesJsiRuntime />",
+                "props": {
+                  "latencyNs": "120"
+                },
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "title": "Codegen & Strongly Typed Specs: TypeScript De... — Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "AppShell",
+            "name": "<TurboModuleRoot />",
+            "props": {
+              "arch": "JSI"
+            },
+            "state": {
+              "status": "bound"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "HostBridge",
+            "name": "<CppHostObjectBridge />",
+            "props": {
+              "zeroCopy": "true"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "HardwareLayer",
+            "name": "<NativeHardwareEnclave />",
+            "state": {
+              "locked": "false"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "JsiRuntime",
+            "name": "<HermesJsiRuntime />",
+            "props": {
+              "latencyNs": "120"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <TurboModuleRoot /> for Codegen & Strongly Typed Specs...",
+            "activeId": "AppShell",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<TurboModuleRoot />",
+                "props": {
+                  "arch": "JSI"
+                },
+                "state": {
+                  "status": "bound"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "HostBridge",
+                "name": "<CppHostObjectBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "HardwareLayer",
+                "name": "<NativeHardwareEnclave />",
+                "state": {
+                  "locked": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "JsiRuntime",
+                "name": "<HermesJsiRuntime />",
+                "props": {
+                  "latencyNs": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Bind C++ Host Object pointers into <CppHostObjectBridge />.",
+            "activeId": "HostBridge",
+            "reRenderingIds": [
+              "HostBridge",
+              "JsiRuntime"
+            ],
+            "propsPassed": {
+              "from": "AppShell",
+              "to": "HostBridge",
+              "propName": "hostPtr",
+              "value": "0x7fa9bc01"
+            },
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<TurboModuleRoot />",
+                "props": {
+                  "arch": "JSI"
+                },
+                "state": {
+                  "status": "bound"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "HostBridge",
+                "name": "<CppHostObjectBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "HardwareLayer",
+                "name": "<NativeHardwareEnclave />",
+                "state": {
+                  "locked": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "JsiRuntime",
+                "name": "<HermesJsiRuntime />",
+                "props": {
+                  "latencyNs": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute hardware instructions directly in <NativeHardwareEnclave />.",
+            "activeId": "HardwareLayer",
+            "reRenderingIds": [
+              "HardwareLayer"
+            ],
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<TurboModuleRoot />",
+                "props": {
+                  "arch": "JSI"
+                },
+                "state": {
+                  "status": "bound"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "HostBridge",
+                "name": "<CppHostObjectBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "HardwareLayer",
+                "name": "<NativeHardwareEnclave />",
+                "state": {
+                  "locked": "false"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "JsiRuntime",
+                "name": "<HermesJsiRuntime />",
+                "props": {
+                  "latencyNs": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Synchronize zero-copy memory buffer to <HermesJsiRuntime />.",
+            "activeId": "JsiRuntime",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<TurboModuleRoot />",
+                "props": {
+                  "arch": "JSI"
+                },
+                "state": {
+                  "status": "bound"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "HostBridge",
+                "name": "<CppHostObjectBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "HardwareLayer",
+                "name": "<NativeHardwareEnclave />",
+                "state": {
+                  "locked": "false"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "JsiRuntime",
+                "name": "<HermesJsiRuntime />",
+                "props": {
+                  "latencyNs": "120"
+                },
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "TurboModules on iOS: Objective-C++ (.mm), Swift Bridging & Synchronous Methods",
+      "codeHash": "e0044ed340844e8f01246b0754f4f8c7e3fbfca64ae22e29cbec0574eccc2b65",
+      "spec": {
+        "template": "component-tree",
+        "title": "TurboModules on iOS: Objective-C++ (.mm), Swi... — Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "AppShell",
+            "name": "<TurboModuleRoot />",
+            "props": {
+              "arch": "JSI"
+            },
+            "state": {
+              "status": "bound"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "HostBridge",
+            "name": "<CppHostObjectBridge />",
+            "props": {
+              "zeroCopy": "true"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "HardwareLayer",
+            "name": "<NativeHardwareEnclave />",
+            "state": {
+              "locked": "false"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "JsiRuntime",
+            "name": "<HermesJsiRuntime />",
+            "props": {
+              "latencyNs": "120"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <TurboModuleRoot /> for TurboModules on iOS: Objective...",
+            "activeId": "AppShell",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<TurboModuleRoot />",
+                "props": {
+                  "arch": "JSI"
+                },
+                "state": {
+                  "status": "bound"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "HostBridge",
+                "name": "<CppHostObjectBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "HardwareLayer",
+                "name": "<NativeHardwareEnclave />",
+                "state": {
+                  "locked": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "JsiRuntime",
+                "name": "<HermesJsiRuntime />",
+                "props": {
+                  "latencyNs": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Bind C++ Host Object pointers into <CppHostObjectBridge />.",
+            "activeId": "HostBridge",
+            "reRenderingIds": [
+              "HostBridge",
+              "JsiRuntime"
+            ],
+            "propsPassed": {
+              "from": "AppShell",
+              "to": "HostBridge",
+              "propName": "hostPtr",
+              "value": "0x7fa9bc01"
+            },
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<TurboModuleRoot />",
+                "props": {
+                  "arch": "JSI"
+                },
+                "state": {
+                  "status": "bound"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "HostBridge",
+                "name": "<CppHostObjectBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "HardwareLayer",
+                "name": "<NativeHardwareEnclave />",
+                "state": {
+                  "locked": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "JsiRuntime",
+                "name": "<HermesJsiRuntime />",
+                "props": {
+                  "latencyNs": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute hardware instructions directly in <NativeHardwareEnclave />.",
+            "activeId": "HardwareLayer",
+            "reRenderingIds": [
+              "HardwareLayer"
+            ],
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<TurboModuleRoot />",
+                "props": {
+                  "arch": "JSI"
+                },
+                "state": {
+                  "status": "bound"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "HostBridge",
+                "name": "<CppHostObjectBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "HardwareLayer",
+                "name": "<NativeHardwareEnclave />",
+                "state": {
+                  "locked": "false"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "JsiRuntime",
+                "name": "<HermesJsiRuntime />",
+                "props": {
+                  "latencyNs": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Synchronize zero-copy memory buffer to <HermesJsiRuntime />.",
+            "activeId": "JsiRuntime",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<TurboModuleRoot />",
+                "props": {
+                  "arch": "JSI"
+                },
+                "state": {
+                  "status": "bound"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "HostBridge",
+                "name": "<CppHostObjectBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "HardwareLayer",
+                "name": "<NativeHardwareEnclave />",
+                "state": {
+                  "locked": "false"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "JsiRuntime",
+                "name": "<HermesJsiRuntime />",
+                "props": {
+                  "latencyNs": "120"
+                },
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "title": "TurboModules on iOS: Objective-C++ (.mm), Swi... — Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "AppShell",
+            "name": "<TurboModuleRoot />",
+            "props": {
+              "arch": "JSI"
+            },
+            "state": {
+              "status": "bound"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "HostBridge",
+            "name": "<CppHostObjectBridge />",
+            "props": {
+              "zeroCopy": "true"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "HardwareLayer",
+            "name": "<NativeHardwareEnclave />",
+            "state": {
+              "locked": "false"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "JsiRuntime",
+            "name": "<HermesJsiRuntime />",
+            "props": {
+              "latencyNs": "120"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <TurboModuleRoot /> for TurboModules on iOS: Objective...",
+            "activeId": "AppShell",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<TurboModuleRoot />",
+                "props": {
+                  "arch": "JSI"
+                },
+                "state": {
+                  "status": "bound"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "HostBridge",
+                "name": "<CppHostObjectBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "HardwareLayer",
+                "name": "<NativeHardwareEnclave />",
+                "state": {
+                  "locked": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "JsiRuntime",
+                "name": "<HermesJsiRuntime />",
+                "props": {
+                  "latencyNs": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Bind C++ Host Object pointers into <CppHostObjectBridge />.",
+            "activeId": "HostBridge",
+            "reRenderingIds": [
+              "HostBridge",
+              "JsiRuntime"
+            ],
+            "propsPassed": {
+              "from": "AppShell",
+              "to": "HostBridge",
+              "propName": "hostPtr",
+              "value": "0x7fa9bc01"
+            },
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<TurboModuleRoot />",
+                "props": {
+                  "arch": "JSI"
+                },
+                "state": {
+                  "status": "bound"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "HostBridge",
+                "name": "<CppHostObjectBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "HardwareLayer",
+                "name": "<NativeHardwareEnclave />",
+                "state": {
+                  "locked": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "JsiRuntime",
+                "name": "<HermesJsiRuntime />",
+                "props": {
+                  "latencyNs": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute hardware instructions directly in <NativeHardwareEnclave />.",
+            "activeId": "HardwareLayer",
+            "reRenderingIds": [
+              "HardwareLayer"
+            ],
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<TurboModuleRoot />",
+                "props": {
+                  "arch": "JSI"
+                },
+                "state": {
+                  "status": "bound"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "HostBridge",
+                "name": "<CppHostObjectBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "HardwareLayer",
+                "name": "<NativeHardwareEnclave />",
+                "state": {
+                  "locked": "false"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "JsiRuntime",
+                "name": "<HermesJsiRuntime />",
+                "props": {
+                  "latencyNs": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Synchronize zero-copy memory buffer to <HermesJsiRuntime />.",
+            "activeId": "JsiRuntime",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<TurboModuleRoot />",
+                "props": {
+                  "arch": "JSI"
+                },
+                "state": {
+                  "status": "bound"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "HostBridge",
+                "name": "<CppHostObjectBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "HardwareLayer",
+                "name": "<NativeHardwareEnclave />",
+                "state": {
+                  "locked": "false"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "JsiRuntime",
+                "name": "<HermesJsiRuntime />",
+                "props": {
+                  "latencyNs": "120"
+                },
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "TurboModules on Android: JNI, Kotlin, C++ Shared Libraries & CMake Toolchains",
+      "codeHash": "b0b959ab150475ae7d5f0b280e0eaedcea8f31c404840ef88f49623b17e1313d",
+      "spec": {
+        "template": "component-tree",
+        "title": "TurboModules on Android: JNI, Kotlin, C++ Sha... — Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "AppShell",
+            "name": "<TurboModuleRoot />",
+            "props": {
+              "arch": "JSI"
+            },
+            "state": {
+              "status": "bound"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "HostBridge",
+            "name": "<CppHostObjectBridge />",
+            "props": {
+              "zeroCopy": "true"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "HardwareLayer",
+            "name": "<NativeHardwareEnclave />",
+            "state": {
+              "locked": "false"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "JsiRuntime",
+            "name": "<HermesJsiRuntime />",
+            "props": {
+              "latencyNs": "120"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <TurboModuleRoot /> for TurboModules on Android: JNI, ...",
+            "activeId": "AppShell",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<TurboModuleRoot />",
+                "props": {
+                  "arch": "JSI"
+                },
+                "state": {
+                  "status": "bound"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "HostBridge",
+                "name": "<CppHostObjectBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "HardwareLayer",
+                "name": "<NativeHardwareEnclave />",
+                "state": {
+                  "locked": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "JsiRuntime",
+                "name": "<HermesJsiRuntime />",
+                "props": {
+                  "latencyNs": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Bind C++ Host Object pointers into <CppHostObjectBridge />.",
+            "activeId": "HostBridge",
+            "reRenderingIds": [
+              "HostBridge",
+              "JsiRuntime"
+            ],
+            "propsPassed": {
+              "from": "AppShell",
+              "to": "HostBridge",
+              "propName": "hostPtr",
+              "value": "0x7fa9bc01"
+            },
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<TurboModuleRoot />",
+                "props": {
+                  "arch": "JSI"
+                },
+                "state": {
+                  "status": "bound"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "HostBridge",
+                "name": "<CppHostObjectBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "HardwareLayer",
+                "name": "<NativeHardwareEnclave />",
+                "state": {
+                  "locked": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "JsiRuntime",
+                "name": "<HermesJsiRuntime />",
+                "props": {
+                  "latencyNs": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute hardware instructions directly in <NativeHardwareEnclave />.",
+            "activeId": "HardwareLayer",
+            "reRenderingIds": [
+              "HardwareLayer"
+            ],
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<TurboModuleRoot />",
+                "props": {
+                  "arch": "JSI"
+                },
+                "state": {
+                  "status": "bound"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "HostBridge",
+                "name": "<CppHostObjectBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "HardwareLayer",
+                "name": "<NativeHardwareEnclave />",
+                "state": {
+                  "locked": "false"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "JsiRuntime",
+                "name": "<HermesJsiRuntime />",
+                "props": {
+                  "latencyNs": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Synchronize zero-copy memory buffer to <HermesJsiRuntime />.",
+            "activeId": "JsiRuntime",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<TurboModuleRoot />",
+                "props": {
+                  "arch": "JSI"
+                },
+                "state": {
+                  "status": "bound"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "HostBridge",
+                "name": "<CppHostObjectBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "HardwareLayer",
+                "name": "<NativeHardwareEnclave />",
+                "state": {
+                  "locked": "false"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "JsiRuntime",
+                "name": "<HermesJsiRuntime />",
+                "props": {
+                  "latencyNs": "120"
+                },
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "title": "TurboModules on Android: JNI, Kotlin, C++ Sha... — Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "AppShell",
+            "name": "<TurboModuleRoot />",
+            "props": {
+              "arch": "JSI"
+            },
+            "state": {
+              "status": "bound"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "HostBridge",
+            "name": "<CppHostObjectBridge />",
+            "props": {
+              "zeroCopy": "true"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "HardwareLayer",
+            "name": "<NativeHardwareEnclave />",
+            "state": {
+              "locked": "false"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "JsiRuntime",
+            "name": "<HermesJsiRuntime />",
+            "props": {
+              "latencyNs": "120"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <TurboModuleRoot /> for TurboModules on Android: JNI, ...",
+            "activeId": "AppShell",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<TurboModuleRoot />",
+                "props": {
+                  "arch": "JSI"
+                },
+                "state": {
+                  "status": "bound"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "HostBridge",
+                "name": "<CppHostObjectBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "HardwareLayer",
+                "name": "<NativeHardwareEnclave />",
+                "state": {
+                  "locked": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "JsiRuntime",
+                "name": "<HermesJsiRuntime />",
+                "props": {
+                  "latencyNs": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Bind C++ Host Object pointers into <CppHostObjectBridge />.",
+            "activeId": "HostBridge",
+            "reRenderingIds": [
+              "HostBridge",
+              "JsiRuntime"
+            ],
+            "propsPassed": {
+              "from": "AppShell",
+              "to": "HostBridge",
+              "propName": "hostPtr",
+              "value": "0x7fa9bc01"
+            },
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<TurboModuleRoot />",
+                "props": {
+                  "arch": "JSI"
+                },
+                "state": {
+                  "status": "bound"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "HostBridge",
+                "name": "<CppHostObjectBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "HardwareLayer",
+                "name": "<NativeHardwareEnclave />",
+                "state": {
+                  "locked": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "JsiRuntime",
+                "name": "<HermesJsiRuntime />",
+                "props": {
+                  "latencyNs": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute hardware instructions directly in <NativeHardwareEnclave />.",
+            "activeId": "HardwareLayer",
+            "reRenderingIds": [
+              "HardwareLayer"
+            ],
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<TurboModuleRoot />",
+                "props": {
+                  "arch": "JSI"
+                },
+                "state": {
+                  "status": "bound"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "HostBridge",
+                "name": "<CppHostObjectBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "HardwareLayer",
+                "name": "<NativeHardwareEnclave />",
+                "state": {
+                  "locked": "false"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "JsiRuntime",
+                "name": "<HermesJsiRuntime />",
+                "props": {
+                  "latencyNs": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Synchronize zero-copy memory buffer to <HermesJsiRuntime />.",
+            "activeId": "JsiRuntime",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<TurboModuleRoot />",
+                "props": {
+                  "arch": "JSI"
+                },
+                "state": {
+                  "status": "bound"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "HostBridge",
+                "name": "<CppHostObjectBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "HardwareLayer",
+                "name": "<NativeHardwareEnclave />",
+                "state": {
+                  "locked": "false"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "JsiRuntime",
+                "name": "<HermesJsiRuntime />",
+                "props": {
+                  "latencyNs": "120"
+                },
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cross-Platform Hardware Acceleration: Direct Accelerometer, Camera Buffers & Enclaves",
+      "codeHash": "265bb7c8df3820e1bb638a7f33cdc5132b12f9029e22615373b48d421f66bc72",
+      "spec": {
+        "template": "component-tree",
+        "title": "Cross-Platform Hardware Acceleration: Direct ... — Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "AppShell",
+            "name": "<TurboModuleRoot />",
+            "props": {
+              "arch": "JSI"
+            },
+            "state": {
+              "status": "bound"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "HostBridge",
+            "name": "<CppHostObjectBridge />",
+            "props": {
+              "zeroCopy": "true"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "HardwareLayer",
+            "name": "<NativeHardwareEnclave />",
+            "state": {
+              "locked": "false"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "JsiRuntime",
+            "name": "<HermesJsiRuntime />",
+            "props": {
+              "latencyNs": "120"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <TurboModuleRoot /> for Cross-Platform Hardware Accele...",
+            "activeId": "AppShell",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<TurboModuleRoot />",
+                "props": {
+                  "arch": "JSI"
+                },
+                "state": {
+                  "status": "bound"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "HostBridge",
+                "name": "<CppHostObjectBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "HardwareLayer",
+                "name": "<NativeHardwareEnclave />",
+                "state": {
+                  "locked": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "JsiRuntime",
+                "name": "<HermesJsiRuntime />",
+                "props": {
+                  "latencyNs": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Bind C++ Host Object pointers into <CppHostObjectBridge />.",
+            "activeId": "HostBridge",
+            "reRenderingIds": [
+              "HostBridge",
+              "JsiRuntime"
+            ],
+            "propsPassed": {
+              "from": "AppShell",
+              "to": "HostBridge",
+              "propName": "hostPtr",
+              "value": "0x7fa9bc01"
+            },
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<TurboModuleRoot />",
+                "props": {
+                  "arch": "JSI"
+                },
+                "state": {
+                  "status": "bound"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "HostBridge",
+                "name": "<CppHostObjectBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "HardwareLayer",
+                "name": "<NativeHardwareEnclave />",
+                "state": {
+                  "locked": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "JsiRuntime",
+                "name": "<HermesJsiRuntime />",
+                "props": {
+                  "latencyNs": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute hardware instructions directly in <NativeHardwareEnclave />.",
+            "activeId": "HardwareLayer",
+            "reRenderingIds": [
+              "HardwareLayer"
+            ],
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<TurboModuleRoot />",
+                "props": {
+                  "arch": "JSI"
+                },
+                "state": {
+                  "status": "bound"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "HostBridge",
+                "name": "<CppHostObjectBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "HardwareLayer",
+                "name": "<NativeHardwareEnclave />",
+                "state": {
+                  "locked": "false"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "JsiRuntime",
+                "name": "<HermesJsiRuntime />",
+                "props": {
+                  "latencyNs": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Synchronize zero-copy memory buffer to <HermesJsiRuntime />.",
+            "activeId": "JsiRuntime",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<TurboModuleRoot />",
+                "props": {
+                  "arch": "JSI"
+                },
+                "state": {
+                  "status": "bound"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "HostBridge",
+                "name": "<CppHostObjectBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "HardwareLayer",
+                "name": "<NativeHardwareEnclave />",
+                "state": {
+                  "locked": "false"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "JsiRuntime",
+                "name": "<HermesJsiRuntime />",
+                "props": {
+                  "latencyNs": "120"
+                },
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "title": "Cross-Platform Hardware Acceleration: Direct ... — Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "AppShell",
+            "name": "<TurboModuleRoot />",
+            "props": {
+              "arch": "JSI"
+            },
+            "state": {
+              "status": "bound"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "HostBridge",
+            "name": "<CppHostObjectBridge />",
+            "props": {
+              "zeroCopy": "true"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "HardwareLayer",
+            "name": "<NativeHardwareEnclave />",
+            "state": {
+              "locked": "false"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "JsiRuntime",
+            "name": "<HermesJsiRuntime />",
+            "props": {
+              "latencyNs": "120"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <TurboModuleRoot /> for Cross-Platform Hardware Accele...",
+            "activeId": "AppShell",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<TurboModuleRoot />",
+                "props": {
+                  "arch": "JSI"
+                },
+                "state": {
+                  "status": "bound"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "HostBridge",
+                "name": "<CppHostObjectBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "HardwareLayer",
+                "name": "<NativeHardwareEnclave />",
+                "state": {
+                  "locked": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "JsiRuntime",
+                "name": "<HermesJsiRuntime />",
+                "props": {
+                  "latencyNs": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Bind C++ Host Object pointers into <CppHostObjectBridge />.",
+            "activeId": "HostBridge",
+            "reRenderingIds": [
+              "HostBridge",
+              "JsiRuntime"
+            ],
+            "propsPassed": {
+              "from": "AppShell",
+              "to": "HostBridge",
+              "propName": "hostPtr",
+              "value": "0x7fa9bc01"
+            },
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<TurboModuleRoot />",
+                "props": {
+                  "arch": "JSI"
+                },
+                "state": {
+                  "status": "bound"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "HostBridge",
+                "name": "<CppHostObjectBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "HardwareLayer",
+                "name": "<NativeHardwareEnclave />",
+                "state": {
+                  "locked": "false"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "JsiRuntime",
+                "name": "<HermesJsiRuntime />",
+                "props": {
+                  "latencyNs": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute hardware instructions directly in <NativeHardwareEnclave />.",
+            "activeId": "HardwareLayer",
+            "reRenderingIds": [
+              "HardwareLayer"
+            ],
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<TurboModuleRoot />",
+                "props": {
+                  "arch": "JSI"
+                },
+                "state": {
+                  "status": "bound"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "HostBridge",
+                "name": "<CppHostObjectBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "HardwareLayer",
+                "name": "<NativeHardwareEnclave />",
+                "state": {
+                  "locked": "false"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "JsiRuntime",
+                "name": "<HermesJsiRuntime />",
+                "props": {
+                  "latencyNs": "120"
+                },
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Synchronize zero-copy memory buffer to <HermesJsiRuntime />.",
+            "activeId": "JsiRuntime",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "AppShell",
+                "name": "<TurboModuleRoot />",
+                "props": {
+                  "arch": "JSI"
+                },
+                "state": {
+                  "status": "bound"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "HostBridge",
+                "name": "<CppHostObjectBridge />",
+                "props": {
+                  "zeroCopy": "true"
+                },
+                "tone": "data"
+              },
+              {
+                "id": "HardwareLayer",
+                "name": "<NativeHardwareEnclave />",
+                "state": {
+                  "locked": "false"
+                },
+                "tone": "ok"
+              },
+              {
+                "id": "JsiRuntime",
+                "name": "<HermesJsiRuntime />",
+                "props": {
+                  "latencyNs": "120"
+                },
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
