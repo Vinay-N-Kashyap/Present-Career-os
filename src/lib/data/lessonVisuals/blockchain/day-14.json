@@ -1,0 +1,729 @@
+{
+  "schemaVersion": 1,
+  "prefix": "blockchain",
+  "day": 14,
+  "promptSha": "9a329c0f7721ba3e18cd987fe88fbc910245a909d3b764b73b22cf309df78132",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Spot Price Oracles & Single-Block Liquidity Manipulation",
+      "codeHash": "7c6f2fb087f02b2fbb163b5ec0ac6bb485c13d0d919365987d30b4bb6cb3d8aa",
+      "spec": {
+        "template": "sequence",
+        "title": "Spot Price Oracles & Single-Block Liquidity Manipulation \u2014 Oracle Security Sequence",
+        "actors": [
+          "Lending Protocol",
+          "Chainlink DON Oracle",
+          "Uniswap TWAP Pool",
+          "Liquidation Vault"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Protocol initiates multi-oracle price query for Spot Price Oracles & Single-Bloc",
+            "activeActor": "Lending Protocol",
+            "messages": [
+              {
+                "from": "Lending Protocol",
+                "to": "Chainlink DON Oracle",
+                "label": "latestRoundData()",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Chainlink nodes submit threshold-signed median price with heartbeat check",
+            "activeActor": "Chainlink DON Oracle",
+            "messages": [
+              {
+                "from": "Chainlink DON Oracle",
+                "to": "Lending Protocol",
+                "label": "return(roundId, answer, updatedAt) [Fresh \u2713]",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Protocol samples Uniswap TWAP accumulator to cross-check deviation",
+            "activeActor": "Uniswap TWAP Pool",
+            "messages": [
+              {
+                "from": "Lending Protocol",
+                "to": "Uniswap TWAP Pool",
+                "label": "observe(30m_window) -> return(twapPrice)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Dual-oracle consensus validates spread < 200 bps; liquidations proceed safely",
+            "activeActor": "Liquidation Vault",
+            "messages": [
+              {
+                "from": "Lending Protocol",
+                "to": "Liquidation Vault",
+                "label": "assertDeviation(spread < 2%) [Conservative Min Price]",
+                "tone": "ok"
+              },
+              {
+                "from": "Liquidation Vault",
+                "to": "Lending Protocol",
+                "label": "OracleConsensusApproved(Safe \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Spot Price Oracles & Single-Block Liquidity Manipulation \u2014 Oracle Security Sequence",
+        "actors": [
+          "Lending Protocol",
+          "Chainlink DON Oracle",
+          "Uniswap TWAP Pool",
+          "Liquidation Vault"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Protocol initiates multi-oracle price query for Spot Price Oracles & Single-Bloc",
+            "activeActor": "Lending Protocol",
+            "messages": [
+              {
+                "from": "Lending Protocol",
+                "to": "Chainlink DON Oracle",
+                "label": "latestRoundData()",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Chainlink nodes submit threshold-signed median price with heartbeat check",
+            "activeActor": "Chainlink DON Oracle",
+            "messages": [
+              {
+                "from": "Chainlink DON Oracle",
+                "to": "Lending Protocol",
+                "label": "return(roundId, answer, updatedAt) [Fresh \u2713]",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Protocol samples Uniswap TWAP accumulator to cross-check deviation",
+            "activeActor": "Uniswap TWAP Pool",
+            "messages": [
+              {
+                "from": "Lending Protocol",
+                "to": "Uniswap TWAP Pool",
+                "label": "observe(30m_window) -> return(twapPrice)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Dual-oracle consensus validates spread < 200 bps; liquidations proceed safely",
+            "activeActor": "Liquidation Vault",
+            "messages": [
+              {
+                "from": "Lending Protocol",
+                "to": "Liquidation Vault",
+                "label": "assertDeviation(spread < 2%) [Conservative Min Price]",
+                "tone": "ok"
+              },
+              {
+                "from": "Liquidation Vault",
+                "to": "Lending Protocol",
+                "label": "OracleConsensusApproved(Safe \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Uniswap v2 & v3 Time-Weighted Average Price (TWAP) Accumulators",
+      "codeHash": "be187070da5bb573c32e13912ac83112b8f1b44a66ebe451fac891bef7f3bd73",
+      "spec": {
+        "template": "sequence",
+        "title": "Uniswap v2 & v3 Time-Weighted Average Price (TWAP) Accumulators \u2014 Oracle Security Sequence",
+        "actors": [
+          "Lending Protocol",
+          "Chainlink DON Oracle",
+          "Uniswap TWAP Pool",
+          "Liquidation Vault"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Protocol initiates multi-oracle price query for Uniswap v2 & v3 Time-Weighted Av",
+            "activeActor": "Lending Protocol",
+            "messages": [
+              {
+                "from": "Lending Protocol",
+                "to": "Chainlink DON Oracle",
+                "label": "latestRoundData()",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Chainlink nodes submit threshold-signed median price with heartbeat check",
+            "activeActor": "Chainlink DON Oracle",
+            "messages": [
+              {
+                "from": "Chainlink DON Oracle",
+                "to": "Lending Protocol",
+                "label": "return(roundId, answer, updatedAt) [Fresh \u2713]",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Protocol samples Uniswap TWAP accumulator to cross-check deviation",
+            "activeActor": "Uniswap TWAP Pool",
+            "messages": [
+              {
+                "from": "Lending Protocol",
+                "to": "Uniswap TWAP Pool",
+                "label": "observe(30m_window) -> return(twapPrice)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Dual-oracle consensus validates spread < 200 bps; liquidations proceed safely",
+            "activeActor": "Liquidation Vault",
+            "messages": [
+              {
+                "from": "Lending Protocol",
+                "to": "Liquidation Vault",
+                "label": "assertDeviation(spread < 2%) [Conservative Min Price]",
+                "tone": "ok"
+              },
+              {
+                "from": "Liquidation Vault",
+                "to": "Lending Protocol",
+                "label": "OracleConsensusApproved(Safe \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Uniswap v2 & v3 Time-Weighted Average Price (TWAP) Accumulators \u2014 Oracle Security Sequence",
+        "actors": [
+          "Lending Protocol",
+          "Chainlink DON Oracle",
+          "Uniswap TWAP Pool",
+          "Liquidation Vault"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Protocol initiates multi-oracle price query for Uniswap v2 & v3 Time-Weighted Av",
+            "activeActor": "Lending Protocol",
+            "messages": [
+              {
+                "from": "Lending Protocol",
+                "to": "Chainlink DON Oracle",
+                "label": "latestRoundData()",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Chainlink nodes submit threshold-signed median price with heartbeat check",
+            "activeActor": "Chainlink DON Oracle",
+            "messages": [
+              {
+                "from": "Chainlink DON Oracle",
+                "to": "Lending Protocol",
+                "label": "return(roundId, answer, updatedAt) [Fresh \u2713]",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Protocol samples Uniswap TWAP accumulator to cross-check deviation",
+            "activeActor": "Uniswap TWAP Pool",
+            "messages": [
+              {
+                "from": "Lending Protocol",
+                "to": "Uniswap TWAP Pool",
+                "label": "observe(30m_window) -> return(twapPrice)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Dual-oracle consensus validates spread < 200 bps; liquidations proceed safely",
+            "activeActor": "Liquidation Vault",
+            "messages": [
+              {
+                "from": "Lending Protocol",
+                "to": "Liquidation Vault",
+                "label": "assertDeviation(spread < 2%) [Conservative Min Price]",
+                "tone": "ok"
+              },
+              {
+                "from": "Liquidation Vault",
+                "to": "Lending Protocol",
+                "label": "OracleConsensusApproved(Safe \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Chainlink Decentralized Oracle Networks (DONs) & AggregatorV3Interface",
+      "codeHash": "89da44c71c5846062930c042fd8ddb47d0ebb1564e3e7f7c53467b2ba0773aa4",
+      "spec": {
+        "template": "sequence",
+        "title": "Chainlink Decentralized Oracle Networks (DONs) & AggregatorV3Interface \u2014 Oracle Security Sequence",
+        "actors": [
+          "Lending Protocol",
+          "Chainlink DON Oracle",
+          "Uniswap TWAP Pool",
+          "Liquidation Vault"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Protocol initiates multi-oracle price query for Chainlink Decentralized Oracle N",
+            "activeActor": "Lending Protocol",
+            "messages": [
+              {
+                "from": "Lending Protocol",
+                "to": "Chainlink DON Oracle",
+                "label": "latestRoundData()",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Chainlink nodes submit threshold-signed median price with heartbeat check",
+            "activeActor": "Chainlink DON Oracle",
+            "messages": [
+              {
+                "from": "Chainlink DON Oracle",
+                "to": "Lending Protocol",
+                "label": "return(roundId, answer, updatedAt) [Fresh \u2713]",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Protocol samples Uniswap TWAP accumulator to cross-check deviation",
+            "activeActor": "Uniswap TWAP Pool",
+            "messages": [
+              {
+                "from": "Lending Protocol",
+                "to": "Uniswap TWAP Pool",
+                "label": "observe(30m_window) -> return(twapPrice)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Dual-oracle consensus validates spread < 200 bps; liquidations proceed safely",
+            "activeActor": "Liquidation Vault",
+            "messages": [
+              {
+                "from": "Lending Protocol",
+                "to": "Liquidation Vault",
+                "label": "assertDeviation(spread < 2%) [Conservative Min Price]",
+                "tone": "ok"
+              },
+              {
+                "from": "Liquidation Vault",
+                "to": "Lending Protocol",
+                "label": "OracleConsensusApproved(Safe \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Chainlink Decentralized Oracle Networks (DONs) & AggregatorV3Interface \u2014 Oracle Security Sequence",
+        "actors": [
+          "Lending Protocol",
+          "Chainlink DON Oracle",
+          "Uniswap TWAP Pool",
+          "Liquidation Vault"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Protocol initiates multi-oracle price query for Chainlink Decentralized Oracle N",
+            "activeActor": "Lending Protocol",
+            "messages": [
+              {
+                "from": "Lending Protocol",
+                "to": "Chainlink DON Oracle",
+                "label": "latestRoundData()",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Chainlink nodes submit threshold-signed median price with heartbeat check",
+            "activeActor": "Chainlink DON Oracle",
+            "messages": [
+              {
+                "from": "Chainlink DON Oracle",
+                "to": "Lending Protocol",
+                "label": "return(roundId, answer, updatedAt) [Fresh \u2713]",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Protocol samples Uniswap TWAP accumulator to cross-check deviation",
+            "activeActor": "Uniswap TWAP Pool",
+            "messages": [
+              {
+                "from": "Lending Protocol",
+                "to": "Uniswap TWAP Pool",
+                "label": "observe(30m_window) -> return(twapPrice)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Dual-oracle consensus validates spread < 200 bps; liquidations proceed safely",
+            "activeActor": "Liquidation Vault",
+            "messages": [
+              {
+                "from": "Lending Protocol",
+                "to": "Liquidation Vault",
+                "label": "assertDeviation(spread < 2%) [Conservative Min Price]",
+                "tone": "ok"
+              },
+              {
+                "from": "Liquidation Vault",
+                "to": "Lending Protocol",
+                "label": "OracleConsensusApproved(Safe \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Oracle Security Invariants: Staleness, Heartbeats & Circuit Breakers",
+      "codeHash": "5967fef7d14a69959d3266bbee3ede9a83996c27615ce4237afeb8541607a4d5",
+      "spec": {
+        "template": "sequence",
+        "title": "Oracle Security Invariants: Staleness, Heartbeats & Circuit Breakers \u2014 Oracle Security Sequence",
+        "actors": [
+          "Lending Protocol",
+          "Chainlink DON Oracle",
+          "Uniswap TWAP Pool",
+          "Liquidation Vault"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Protocol initiates multi-oracle price query for Oracle Security Invariants: Stal",
+            "activeActor": "Lending Protocol",
+            "messages": [
+              {
+                "from": "Lending Protocol",
+                "to": "Chainlink DON Oracle",
+                "label": "latestRoundData()",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Chainlink nodes submit threshold-signed median price with heartbeat check",
+            "activeActor": "Chainlink DON Oracle",
+            "messages": [
+              {
+                "from": "Chainlink DON Oracle",
+                "to": "Lending Protocol",
+                "label": "return(roundId, answer, updatedAt) [Fresh \u2713]",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Protocol samples Uniswap TWAP accumulator to cross-check deviation",
+            "activeActor": "Uniswap TWAP Pool",
+            "messages": [
+              {
+                "from": "Lending Protocol",
+                "to": "Uniswap TWAP Pool",
+                "label": "observe(30m_window) -> return(twapPrice)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Dual-oracle consensus validates spread < 200 bps; liquidations proceed safely",
+            "activeActor": "Liquidation Vault",
+            "messages": [
+              {
+                "from": "Lending Protocol",
+                "to": "Liquidation Vault",
+                "label": "assertDeviation(spread < 2%) [Conservative Min Price]",
+                "tone": "ok"
+              },
+              {
+                "from": "Liquidation Vault",
+                "to": "Lending Protocol",
+                "label": "OracleConsensusApproved(Safe \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Oracle Security Invariants: Staleness, Heartbeats & Circuit Breakers \u2014 Oracle Security Sequence",
+        "actors": [
+          "Lending Protocol",
+          "Chainlink DON Oracle",
+          "Uniswap TWAP Pool",
+          "Liquidation Vault"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Protocol initiates multi-oracle price query for Oracle Security Invariants: Stal",
+            "activeActor": "Lending Protocol",
+            "messages": [
+              {
+                "from": "Lending Protocol",
+                "to": "Chainlink DON Oracle",
+                "label": "latestRoundData()",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Chainlink nodes submit threshold-signed median price with heartbeat check",
+            "activeActor": "Chainlink DON Oracle",
+            "messages": [
+              {
+                "from": "Chainlink DON Oracle",
+                "to": "Lending Protocol",
+                "label": "return(roundId, answer, updatedAt) [Fresh \u2713]",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Protocol samples Uniswap TWAP accumulator to cross-check deviation",
+            "activeActor": "Uniswap TWAP Pool",
+            "messages": [
+              {
+                "from": "Lending Protocol",
+                "to": "Uniswap TWAP Pool",
+                "label": "observe(30m_window) -> return(twapPrice)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Dual-oracle consensus validates spread < 200 bps; liquidations proceed safely",
+            "activeActor": "Liquidation Vault",
+            "messages": [
+              {
+                "from": "Lending Protocol",
+                "to": "Liquidation Vault",
+                "label": "assertDeviation(spread < 2%) [Conservative Min Price]",
+                "tone": "ok"
+              },
+              {
+                "from": "Liquidation Vault",
+                "to": "Lending Protocol",
+                "label": "OracleConsensusApproved(Safe \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Master Dual-Oracle Defense & Fallback Engine Architecture",
+      "codeHash": "63a601b1fd4e975c2a615370174cd18c05b23af75806ac26f61356d8cd0f8e33",
+      "spec": {
+        "template": "sequence",
+        "title": "Master Dual-Oracle Defense & Fallback Engine Architecture \u2014 Oracle Security Sequence",
+        "actors": [
+          "Lending Protocol",
+          "Chainlink DON Oracle",
+          "Uniswap TWAP Pool",
+          "Liquidation Vault"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Protocol initiates multi-oracle price query for Master Dual-Oracle Defense & Fal",
+            "activeActor": "Lending Protocol",
+            "messages": [
+              {
+                "from": "Lending Protocol",
+                "to": "Chainlink DON Oracle",
+                "label": "latestRoundData()",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Chainlink nodes submit threshold-signed median price with heartbeat check",
+            "activeActor": "Chainlink DON Oracle",
+            "messages": [
+              {
+                "from": "Chainlink DON Oracle",
+                "to": "Lending Protocol",
+                "label": "return(roundId, answer, updatedAt) [Fresh \u2713]",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Protocol samples Uniswap TWAP accumulator to cross-check deviation",
+            "activeActor": "Uniswap TWAP Pool",
+            "messages": [
+              {
+                "from": "Lending Protocol",
+                "to": "Uniswap TWAP Pool",
+                "label": "observe(30m_window) -> return(twapPrice)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Dual-oracle consensus validates spread < 200 bps; liquidations proceed safely",
+            "activeActor": "Liquidation Vault",
+            "messages": [
+              {
+                "from": "Lending Protocol",
+                "to": "Liquidation Vault",
+                "label": "assertDeviation(spread < 2%) [Conservative Min Price]",
+                "tone": "ok"
+              },
+              {
+                "from": "Liquidation Vault",
+                "to": "Lending Protocol",
+                "label": "OracleConsensusApproved(Safe \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Master Dual-Oracle Defense & Fallback Engine Architecture \u2014 Oracle Security Sequence",
+        "actors": [
+          "Lending Protocol",
+          "Chainlink DON Oracle",
+          "Uniswap TWAP Pool",
+          "Liquidation Vault"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Protocol initiates multi-oracle price query for Master Dual-Oracle Defense & Fal",
+            "activeActor": "Lending Protocol",
+            "messages": [
+              {
+                "from": "Lending Protocol",
+                "to": "Chainlink DON Oracle",
+                "label": "latestRoundData()",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Chainlink nodes submit threshold-signed median price with heartbeat check",
+            "activeActor": "Chainlink DON Oracle",
+            "messages": [
+              {
+                "from": "Chainlink DON Oracle",
+                "to": "Lending Protocol",
+                "label": "return(roundId, answer, updatedAt) [Fresh \u2713]",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Protocol samples Uniswap TWAP accumulator to cross-check deviation",
+            "activeActor": "Uniswap TWAP Pool",
+            "messages": [
+              {
+                "from": "Lending Protocol",
+                "to": "Uniswap TWAP Pool",
+                "label": "observe(30m_window) -> return(twapPrice)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Dual-oracle consensus validates spread < 200 bps; liquidations proceed safely",
+            "activeActor": "Liquidation Vault",
+            "messages": [
+              {
+                "from": "Lending Protocol",
+                "to": "Liquidation Vault",
+                "label": "assertDeviation(spread < 2%) [Conservative Min Price]",
+                "tone": "ok"
+              },
+              {
+                "from": "Liquidation Vault",
+                "to": "Lending Protocol",
+                "label": "OracleConsensusApproved(Safe \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

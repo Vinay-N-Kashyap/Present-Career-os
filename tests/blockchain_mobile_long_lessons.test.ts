@@ -1701,3 +1701,42 @@ test('Blockchain Day 13: Flash Loans, Arbitrage Mechanics & ERC-3156 Standard Ex
   assert.ok(blockchainLesson13.parts[4].code?.includes('FlashLoanMasterEngine'));
 });
 
+test('Blockchain Day 14: Price Oracle Manipulation, Uniswap TWAP & Chainlink Decentralized Oracles Verification', () => {
+  const blockchainLesson14 = getLongLesson('blockchain', 14);
+  assert.ok(blockchainLesson14, 'Blockchain Day 14 long lesson must resolve');
+  assert.equal(blockchainLesson14.day, 14);
+  assert.equal(blockchainLesson14.parts.length, 5, 'Blockchain Day 14 must contain exactly 5 parts');
+  assert.ok(blockchainLesson14.summary.length >= 4, 'Blockchain Day 14 must contain summary points');
+  assert.ok(blockchainLesson14.projectStep, 'Blockchain Day 14 must have projectStep');
+
+  const spokenMin = estimateSpokenMinutes(blockchainLesson14);
+  const totalMin = estimateLessonMinutes(blockchainLesson14);
+  assert.ok(spokenMin >= 20, 'Spoken minutes should be >= 20 (got ' + spokenMin + ')');
+  assert.ok(totalMin >= 35 && totalMin <= 40, 'Total minutes should be between 35 and 40 (got ' + totalMin + ')');
+
+  for (let i = 0; i < blockchainLesson14.parts.length; i++) {
+    const part = blockchainLesson14.parts[i];
+    assert.ok(part.title.length > 0, 'Part ' + (i + 1) + ' must have a non-empty title');
+    assert.ok(part.say.length >= 5, 'Part ' + (i + 1) + ' must have at least 5 explanation paragraphs');
+    assert.ok(part.example && part.example.length > 0, 'Part ' + (i + 1) + ' must have a real-world example');
+    assert.ok(part.code && part.code.includes('console.log('), 'Part ' + (i + 1) + ' code must print results');
+    assert.ok(part.output && part.output.length > 0, 'Part ' + (i + 1) + ' must have deterministic expected output');
+    assert.ok(part.tryIt && part.tryIt.length > 0, 'Part ' + (i + 1) + ' must have a tryIt experiment');
+
+    // Socratic Check validation
+    const check = part.check as any;
+    assert.ok(check.question.length > 10, 'Part ' + (i + 1) + ' check question must be descriptive');
+    assert.ok(check.options.length >= 4, 'Part ' + (i + 1) + ' check must have >= 4 options');
+    assert.ok(check.answer >= 0 && check.answer < check.options.length, 'Part ' + (i + 1) + ' answer must be valid');
+    assert.ok(check.why.length > 15, 'Part ' + (i + 1) + ' check explanation must be rigorous');
+  }
+
+  // Domain specifics
+  assert.ok(blockchainLesson14.parts[0].code?.includes('SpotPriceManipulationSimulator'));
+  assert.ok(blockchainLesson14.parts[1].code?.includes('UniswapTwapAccumulatorEngine'));
+  assert.ok(blockchainLesson14.parts[2].code?.includes('ChainlinkOracleConsumerGuard'));
+  assert.ok(blockchainLesson14.parts[3].code?.includes('OracleStalenessAuditor'));
+  assert.ok(blockchainLesson14.parts[4].code?.includes('PriceOracleMasterEngine'));
+});
+
+
