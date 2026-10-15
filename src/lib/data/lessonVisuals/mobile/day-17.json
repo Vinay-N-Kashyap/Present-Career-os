@@ -1,0 +1,1049 @@
+{
+  "schemaVersion": 1,
+  "prefix": "mobile",
+  "day": 17,
+  "promptSha": "ad3b1793727f01830ee0f18216061831376cfd9c95ed90173a7f75fff8e62fc0",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Vector Mathematics of Multi-Touch: Two-Finger Euclidean Distance & Focal Points",
+      "codeHash": "1c8b903145fef2db42bb1e65de900f7f9d9dffbf1a3d03b122a7d4cfdc1262df",
+      "spec": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<MultiTouchCanvasScreen />",
+            "props": {
+              "pacing": "120_FPS_PROMOTION"
+            },
+            "children": [
+              {
+                "id": "FocalVectorTracker",
+                "name": "<FocalPointTrackerWorklet />",
+                "props": {
+                  "status": "ANCHORED_MIDPOINT"
+                }
+              },
+              {
+                "id": "SimultaneousGestureCoordinator",
+                "name": "<GestureCompositionCoordinator />",
+                "props": {
+                  "mode": "SIMULTANEOUS_PAN_PINCH"
+                }
+              },
+              {
+                "id": "PolarRotationEngine",
+                "name": "<PolarRotationTransform />",
+                "props": {
+                  "detent": "ORTHOGONAL_90_SNAP"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount <MultiTouchCanvasScreen /> on native 120Hz display link",
+            "activeId": "root",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<MultiTouchCanvasScreen />",
+                "props": {
+                  "displayLink": "PROMOTION_120HZ"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Track two-finger Euclidean distance via <FocalPointTrackerWorklet />",
+            "activeId": "FocalVectorTracker",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "FocalVectorTracker",
+                "name": "<FocalPointTrackerWorklet />",
+                "props": {
+                  "status": "ANCHORED_MIDPOINT"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Arbitrate pan and pinch concurrently via <GestureCompositionCoordinator />",
+            "activeId": "SimultaneousGestureCoordinator",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "SimultaneousGestureCoordinator",
+                "name": "<GestureCompositionCoordinator />",
+                "props": {
+                  "mode": "SIMULTANEOUS_PAN_PINCH"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Compose polar rotation with magnetic detents via <PolarRotationTransform />",
+            "activeId": "PolarRotationEngine",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "PolarRotationEngine",
+                "name": "<PolarRotationTransform />",
+                "props": {
+                  "detent": "ORTHOGONAL_90_SNAP"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<MultiTouchCanvasScreen />",
+            "props": {
+              "pacing": "120_FPS_PROMOTION"
+            },
+            "children": [
+              {
+                "id": "FocalVectorTracker",
+                "name": "<FocalPointTrackerWorklet />",
+                "props": {
+                  "status": "ANCHORED_MIDPOINT"
+                }
+              },
+              {
+                "id": "SimultaneousGestureCoordinator",
+                "name": "<GestureCompositionCoordinator />",
+                "props": {
+                  "mode": "SIMULTANEOUS_PAN_PINCH"
+                }
+              },
+              {
+                "id": "PolarRotationEngine",
+                "name": "<PolarRotationTransform />",
+                "props": {
+                  "detent": "ORTHOGONAL_90_SNAP"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount <MultiTouchCanvasScreen /> on native 120Hz display link",
+            "activeId": "root",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<MultiTouchCanvasScreen />",
+                "props": {
+                  "displayLink": "PROMOTION_120HZ"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Track two-finger Euclidean distance via <FocalPointTrackerWorklet />",
+            "activeId": "FocalVectorTracker",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "FocalVectorTracker",
+                "name": "<FocalPointTrackerWorklet />",
+                "props": {
+                  "status": "ANCHORED_MIDPOINT"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Arbitrate pan and pinch concurrently via <GestureCompositionCoordinator />",
+            "activeId": "SimultaneousGestureCoordinator",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "SimultaneousGestureCoordinator",
+                "name": "<GestureCompositionCoordinator />",
+                "props": {
+                  "mode": "SIMULTANEOUS_PAN_PINCH"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Compose polar rotation with magnetic detents via <PolarRotationTransform />",
+            "activeId": "PolarRotationEngine",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "PolarRotationEngine",
+                "name": "<PolarRotationTransform />",
+                "props": {
+                  "detent": "ORTHOGONAL_90_SNAP"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Complex Coordinate Transformations: Anchored Scaling & Affine Offsets",
+      "codeHash": "17b8652be6cde36c00230a2b7ace051f3abde73c6cb5f4ba4c1f436dacf152c9",
+      "spec": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<MultiTouchCanvasScreen />",
+            "props": {
+              "pacing": "120_FPS_PROMOTION"
+            },
+            "children": [
+              {
+                "id": "FocalVectorTracker",
+                "name": "<FocalPointTrackerWorklet />",
+                "props": {
+                  "status": "ANCHORED_MIDPOINT"
+                }
+              },
+              {
+                "id": "SimultaneousGestureCoordinator",
+                "name": "<GestureCompositionCoordinator />",
+                "props": {
+                  "mode": "SIMULTANEOUS_PAN_PINCH"
+                }
+              },
+              {
+                "id": "PolarRotationEngine",
+                "name": "<PolarRotationTransform />",
+                "props": {
+                  "detent": "ORTHOGONAL_90_SNAP"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount <MultiTouchCanvasScreen /> on native 120Hz display link",
+            "activeId": "root",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<MultiTouchCanvasScreen />",
+                "props": {
+                  "displayLink": "PROMOTION_120HZ"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Track two-finger Euclidean distance via <FocalPointTrackerWorklet />",
+            "activeId": "FocalVectorTracker",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "FocalVectorTracker",
+                "name": "<FocalPointTrackerWorklet />",
+                "props": {
+                  "status": "ANCHORED_MIDPOINT"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Arbitrate pan and pinch concurrently via <GestureCompositionCoordinator />",
+            "activeId": "SimultaneousGestureCoordinator",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "SimultaneousGestureCoordinator",
+                "name": "<GestureCompositionCoordinator />",
+                "props": {
+                  "mode": "SIMULTANEOUS_PAN_PINCH"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Compose polar rotation with magnetic detents via <PolarRotationTransform />",
+            "activeId": "PolarRotationEngine",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "PolarRotationEngine",
+                "name": "<PolarRotationTransform />",
+                "props": {
+                  "detent": "ORTHOGONAL_90_SNAP"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<MultiTouchCanvasScreen />",
+            "props": {
+              "pacing": "120_FPS_PROMOTION"
+            },
+            "children": [
+              {
+                "id": "FocalVectorTracker",
+                "name": "<FocalPointTrackerWorklet />",
+                "props": {
+                  "status": "ANCHORED_MIDPOINT"
+                }
+              },
+              {
+                "id": "SimultaneousGestureCoordinator",
+                "name": "<GestureCompositionCoordinator />",
+                "props": {
+                  "mode": "SIMULTANEOUS_PAN_PINCH"
+                }
+              },
+              {
+                "id": "PolarRotationEngine",
+                "name": "<PolarRotationTransform />",
+                "props": {
+                  "detent": "ORTHOGONAL_90_SNAP"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount <MultiTouchCanvasScreen /> on native 120Hz display link",
+            "activeId": "root",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<MultiTouchCanvasScreen />",
+                "props": {
+                  "displayLink": "PROMOTION_120HZ"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Track two-finger Euclidean distance via <FocalPointTrackerWorklet />",
+            "activeId": "FocalVectorTracker",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "FocalVectorTracker",
+                "name": "<FocalPointTrackerWorklet />",
+                "props": {
+                  "status": "ANCHORED_MIDPOINT"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Arbitrate pan and pinch concurrently via <GestureCompositionCoordinator />",
+            "activeId": "SimultaneousGestureCoordinator",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "SimultaneousGestureCoordinator",
+                "name": "<GestureCompositionCoordinator />",
+                "props": {
+                  "mode": "SIMULTANEOUS_PAN_PINCH"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Compose polar rotation with magnetic detents via <PolarRotationTransform />",
+            "activeId": "PolarRotationEngine",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "PolarRotationEngine",
+                "name": "<PolarRotationTransform />",
+                "props": {
+                  "detent": "ORTHOGONAL_90_SNAP"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Gesture Composition & State Coordination: Gesture.Simultaneous vs Gesture.Race",
+      "codeHash": "222b8fba57b3c4785cacce6935d2ddbb9c5b9c01edd82f22d9f2ff74913efd7c",
+      "spec": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<MultiTouchCanvasScreen />",
+            "props": {
+              "pacing": "120_FPS_PROMOTION"
+            },
+            "children": [
+              {
+                "id": "FocalVectorTracker",
+                "name": "<FocalPointTrackerWorklet />",
+                "props": {
+                  "status": "ANCHORED_MIDPOINT"
+                }
+              },
+              {
+                "id": "SimultaneousGestureCoordinator",
+                "name": "<GestureCompositionCoordinator />",
+                "props": {
+                  "mode": "SIMULTANEOUS_PAN_PINCH"
+                }
+              },
+              {
+                "id": "PolarRotationEngine",
+                "name": "<PolarRotationTransform />",
+                "props": {
+                  "detent": "ORTHOGONAL_90_SNAP"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount <MultiTouchCanvasScreen /> on native 120Hz display link",
+            "activeId": "root",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<MultiTouchCanvasScreen />",
+                "props": {
+                  "displayLink": "PROMOTION_120HZ"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Track two-finger Euclidean distance via <FocalPointTrackerWorklet />",
+            "activeId": "FocalVectorTracker",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "FocalVectorTracker",
+                "name": "<FocalPointTrackerWorklet />",
+                "props": {
+                  "status": "ANCHORED_MIDPOINT"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Arbitrate pan and pinch concurrently via <GestureCompositionCoordinator />",
+            "activeId": "SimultaneousGestureCoordinator",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "SimultaneousGestureCoordinator",
+                "name": "<GestureCompositionCoordinator />",
+                "props": {
+                  "mode": "SIMULTANEOUS_PAN_PINCH"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Compose polar rotation with magnetic detents via <PolarRotationTransform />",
+            "activeId": "PolarRotationEngine",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "PolarRotationEngine",
+                "name": "<PolarRotationTransform />",
+                "props": {
+                  "detent": "ORTHOGONAL_90_SNAP"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<MultiTouchCanvasScreen />",
+            "props": {
+              "pacing": "120_FPS_PROMOTION"
+            },
+            "children": [
+              {
+                "id": "FocalVectorTracker",
+                "name": "<FocalPointTrackerWorklet />",
+                "props": {
+                  "status": "ANCHORED_MIDPOINT"
+                }
+              },
+              {
+                "id": "SimultaneousGestureCoordinator",
+                "name": "<GestureCompositionCoordinator />",
+                "props": {
+                  "mode": "SIMULTANEOUS_PAN_PINCH"
+                }
+              },
+              {
+                "id": "PolarRotationEngine",
+                "name": "<PolarRotationTransform />",
+                "props": {
+                  "detent": "ORTHOGONAL_90_SNAP"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount <MultiTouchCanvasScreen /> on native 120Hz display link",
+            "activeId": "root",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<MultiTouchCanvasScreen />",
+                "props": {
+                  "displayLink": "PROMOTION_120HZ"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Track two-finger Euclidean distance via <FocalPointTrackerWorklet />",
+            "activeId": "FocalVectorTracker",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "FocalVectorTracker",
+                "name": "<FocalPointTrackerWorklet />",
+                "props": {
+                  "status": "ANCHORED_MIDPOINT"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Arbitrate pan and pinch concurrently via <GestureCompositionCoordinator />",
+            "activeId": "SimultaneousGestureCoordinator",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "SimultaneousGestureCoordinator",
+                "name": "<GestureCompositionCoordinator />",
+                "props": {
+                  "mode": "SIMULTANEOUS_PAN_PINCH"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Compose polar rotation with magnetic detents via <PolarRotationTransform />",
+            "activeId": "PolarRotationEngine",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "PolarRotationEngine",
+                "name": "<PolarRotationTransform />",
+                "props": {
+                  "detent": "ORTHOGONAL_90_SNAP"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Rotation Matrices & Polar Angles: Multi-Touch In-Plane Twisting",
+      "codeHash": "eb418a833c977092a12c814a27580228c0fa912dc9982f4be2660707865e9ce5",
+      "spec": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<MultiTouchCanvasScreen />",
+            "props": {
+              "pacing": "120_FPS_PROMOTION"
+            },
+            "children": [
+              {
+                "id": "FocalVectorTracker",
+                "name": "<FocalPointTrackerWorklet />",
+                "props": {
+                  "status": "ANCHORED_MIDPOINT"
+                }
+              },
+              {
+                "id": "SimultaneousGestureCoordinator",
+                "name": "<GestureCompositionCoordinator />",
+                "props": {
+                  "mode": "SIMULTANEOUS_PAN_PINCH"
+                }
+              },
+              {
+                "id": "PolarRotationEngine",
+                "name": "<PolarRotationTransform />",
+                "props": {
+                  "detent": "ORTHOGONAL_90_SNAP"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount <MultiTouchCanvasScreen /> on native 120Hz display link",
+            "activeId": "root",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<MultiTouchCanvasScreen />",
+                "props": {
+                  "displayLink": "PROMOTION_120HZ"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Track two-finger Euclidean distance via <FocalPointTrackerWorklet />",
+            "activeId": "FocalVectorTracker",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "FocalVectorTracker",
+                "name": "<FocalPointTrackerWorklet />",
+                "props": {
+                  "status": "ANCHORED_MIDPOINT"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Arbitrate pan and pinch concurrently via <GestureCompositionCoordinator />",
+            "activeId": "SimultaneousGestureCoordinator",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "SimultaneousGestureCoordinator",
+                "name": "<GestureCompositionCoordinator />",
+                "props": {
+                  "mode": "SIMULTANEOUS_PAN_PINCH"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Compose polar rotation with magnetic detents via <PolarRotationTransform />",
+            "activeId": "PolarRotationEngine",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "PolarRotationEngine",
+                "name": "<PolarRotationTransform />",
+                "props": {
+                  "detent": "ORTHOGONAL_90_SNAP"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<MultiTouchCanvasScreen />",
+            "props": {
+              "pacing": "120_FPS_PROMOTION"
+            },
+            "children": [
+              {
+                "id": "FocalVectorTracker",
+                "name": "<FocalPointTrackerWorklet />",
+                "props": {
+                  "status": "ANCHORED_MIDPOINT"
+                }
+              },
+              {
+                "id": "SimultaneousGestureCoordinator",
+                "name": "<GestureCompositionCoordinator />",
+                "props": {
+                  "mode": "SIMULTANEOUS_PAN_PINCH"
+                }
+              },
+              {
+                "id": "PolarRotationEngine",
+                "name": "<PolarRotationTransform />",
+                "props": {
+                  "detent": "ORTHOGONAL_90_SNAP"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount <MultiTouchCanvasScreen /> on native 120Hz display link",
+            "activeId": "root",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<MultiTouchCanvasScreen />",
+                "props": {
+                  "displayLink": "PROMOTION_120HZ"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Track two-finger Euclidean distance via <FocalPointTrackerWorklet />",
+            "activeId": "FocalVectorTracker",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "FocalVectorTracker",
+                "name": "<FocalPointTrackerWorklet />",
+                "props": {
+                  "status": "ANCHORED_MIDPOINT"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Arbitrate pan and pinch concurrently via <GestureCompositionCoordinator />",
+            "activeId": "SimultaneousGestureCoordinator",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "SimultaneousGestureCoordinator",
+                "name": "<GestureCompositionCoordinator />",
+                "props": {
+                  "mode": "SIMULTANEOUS_PAN_PINCH"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Compose polar rotation with magnetic detents via <PolarRotationTransform />",
+            "activeId": "PolarRotationEngine",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "PolarRotationEngine",
+                "name": "<PolarRotationTransform />",
+                "props": {
+                  "detent": "ORTHOGONAL_90_SNAP"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Multi-Touch Canvas Master Engine: Full Production Simulator",
+      "codeHash": "95a37dd12bdbab9fa67143399ff17ce5d8678ca3ca6074463e715bfecf24fab3",
+      "spec": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<MultiTouchCanvasScreen />",
+            "props": {
+              "pacing": "120_FPS_PROMOTION"
+            },
+            "children": [
+              {
+                "id": "FocalVectorTracker",
+                "name": "<FocalPointTrackerWorklet />",
+                "props": {
+                  "status": "ANCHORED_MIDPOINT"
+                }
+              },
+              {
+                "id": "SimultaneousGestureCoordinator",
+                "name": "<GestureCompositionCoordinator />",
+                "props": {
+                  "mode": "SIMULTANEOUS_PAN_PINCH"
+                }
+              },
+              {
+                "id": "PolarRotationEngine",
+                "name": "<PolarRotationTransform />",
+                "props": {
+                  "detent": "ORTHOGONAL_90_SNAP"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount <MultiTouchCanvasScreen /> on native 120Hz display link",
+            "activeId": "root",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<MultiTouchCanvasScreen />",
+                "props": {
+                  "displayLink": "PROMOTION_120HZ"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Track two-finger Euclidean distance via <FocalPointTrackerWorklet />",
+            "activeId": "FocalVectorTracker",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "FocalVectorTracker",
+                "name": "<FocalPointTrackerWorklet />",
+                "props": {
+                  "status": "ANCHORED_MIDPOINT"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Arbitrate pan and pinch concurrently via <GestureCompositionCoordinator />",
+            "activeId": "SimultaneousGestureCoordinator",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "SimultaneousGestureCoordinator",
+                "name": "<GestureCompositionCoordinator />",
+                "props": {
+                  "mode": "SIMULTANEOUS_PAN_PINCH"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Compose polar rotation with magnetic detents via <PolarRotationTransform />",
+            "activeId": "PolarRotationEngine",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "PolarRotationEngine",
+                "name": "<PolarRotationTransform />",
+                "props": {
+                  "detent": "ORTHOGONAL_90_SNAP"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<MultiTouchCanvasScreen />",
+            "props": {
+              "pacing": "120_FPS_PROMOTION"
+            },
+            "children": [
+              {
+                "id": "FocalVectorTracker",
+                "name": "<FocalPointTrackerWorklet />",
+                "props": {
+                  "status": "ANCHORED_MIDPOINT"
+                }
+              },
+              {
+                "id": "SimultaneousGestureCoordinator",
+                "name": "<GestureCompositionCoordinator />",
+                "props": {
+                  "mode": "SIMULTANEOUS_PAN_PINCH"
+                }
+              },
+              {
+                "id": "PolarRotationEngine",
+                "name": "<PolarRotationTransform />",
+                "props": {
+                  "detent": "ORTHOGONAL_90_SNAP"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount <MultiTouchCanvasScreen /> on native 120Hz display link",
+            "activeId": "root",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<MultiTouchCanvasScreen />",
+                "props": {
+                  "displayLink": "PROMOTION_120HZ"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Track two-finger Euclidean distance via <FocalPointTrackerWorklet />",
+            "activeId": "FocalVectorTracker",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "FocalVectorTracker",
+                "name": "<FocalPointTrackerWorklet />",
+                "props": {
+                  "status": "ANCHORED_MIDPOINT"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Arbitrate pan and pinch concurrently via <GestureCompositionCoordinator />",
+            "activeId": "SimultaneousGestureCoordinator",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "SimultaneousGestureCoordinator",
+                "name": "<GestureCompositionCoordinator />",
+                "props": {
+                  "mode": "SIMULTANEOUS_PAN_PINCH"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Compose polar rotation with magnetic detents via <PolarRotationTransform />",
+            "activeId": "PolarRotationEngine",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "PolarRotationEngine",
+                "name": "<PolarRotationTransform />",
+                "props": {
+                  "detent": "ORTHOGONAL_90_SNAP"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
