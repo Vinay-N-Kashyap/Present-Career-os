@@ -1,0 +1,1049 @@
+{
+  "schemaVersion": 1,
+  "prefix": "mobile",
+  "day": 16,
+  "promptSha": "d3a4365d1df2ff02dd5e298c78447b260e0ffcb3c47f5deb89b2eef70856243d",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Second-Order Differential Spring Physics: Mass, Stiffness & Damping Ratios",
+      "codeHash": "0c85d03351e80449e795dfe43f4bd24a4aa792ef9153d89eb1da46f39227d310",
+      "spec": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<MobilePhysicsRootScreen />",
+            "props": {
+              "pacing": "120_FPS_PROMOTION"
+            },
+            "children": [
+              {
+                "id": "SpringOscillator",
+                "name": "<SpringPhysicsWorklet />",
+                "props": {
+                  "damping": "ZETA_1_00_CRITICAL"
+                }
+              },
+              {
+                "id": "InertialDecayManager",
+                "name": "<InertialFlingDecayView />",
+                "props": {
+                  "friction": "EXPONENTIAL_COAST"
+                }
+              },
+              {
+                "id": "LayoutMorphView",
+                "name": "<LayoutMorphingContainer />",
+                "props": {
+                  "transition": "SPRINGIFY_SMOOTH"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount <MobilePhysicsRootScreen /> on native 120Hz display link",
+            "activeId": "root",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<MobilePhysicsRootScreen />",
+                "props": {
+                  "displayLink": "PROMOTION_120HZ"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Initialize <SpringPhysicsWorklet /> on 120Hz native DisplayLink",
+            "activeId": "SpringOscillator",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "SpringOscillator",
+                "name": "<SpringPhysicsWorklet />",
+                "props": {
+                  "status": "SYNCHRONIZED_120_FPS"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Coast gesture fling via <InertialFlingDecayView /> with asymptotic rubber-banding",
+            "activeId": "InertialDecayManager",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "InertialDecayManager",
+                "name": "<InertialFlingDecayView />",
+                "props": {
+                  "velocity": "CONSERVED"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Morph native Yoga shadow tree bounds via <LayoutMorphingContainer />",
+            "activeId": "LayoutMorphView",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "LayoutMorphView",
+                "name": "<LayoutMorphingContainer />",
+                "props": {
+                  "morphing": "ACTIVE_SUB_16MS"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<MobilePhysicsRootScreen />",
+            "props": {
+              "pacing": "120_FPS_PROMOTION"
+            },
+            "children": [
+              {
+                "id": "SpringOscillator",
+                "name": "<SpringPhysicsWorklet />",
+                "props": {
+                  "damping": "ZETA_1_00_CRITICAL"
+                }
+              },
+              {
+                "id": "InertialDecayManager",
+                "name": "<InertialFlingDecayView />",
+                "props": {
+                  "friction": "EXPONENTIAL_COAST"
+                }
+              },
+              {
+                "id": "LayoutMorphView",
+                "name": "<LayoutMorphingContainer />",
+                "props": {
+                  "transition": "SPRINGIFY_SMOOTH"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount <MobilePhysicsRootScreen /> on native 120Hz display link",
+            "activeId": "root",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<MobilePhysicsRootScreen />",
+                "props": {
+                  "displayLink": "PROMOTION_120HZ"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Initialize <SpringPhysicsWorklet /> on 120Hz native DisplayLink",
+            "activeId": "SpringOscillator",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "SpringOscillator",
+                "name": "<SpringPhysicsWorklet />",
+                "props": {
+                  "status": "SYNCHRONIZED_120_FPS"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Coast gesture fling via <InertialFlingDecayView /> with asymptotic rubber-banding",
+            "activeId": "InertialDecayManager",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "InertialDecayManager",
+                "name": "<InertialFlingDecayView />",
+                "props": {
+                  "velocity": "CONSERVED"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Morph native Yoga shadow tree bounds via <LayoutMorphingContainer />",
+            "activeId": "LayoutMorphView",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "LayoutMorphView",
+                "name": "<LayoutMorphingContainer />",
+                "props": {
+                  "morphing": "ACTIVE_SUB_16MS"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Hermes UI Thread Worklets: DisplayLink Synchronization & Shared Values",
+      "codeHash": "a3e90ff551d70e0a9515a787a16f6ef4146a4fb970871af53f16cb314901aa5a",
+      "spec": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<MobilePhysicsRootScreen />",
+            "props": {
+              "pacing": "120_FPS_PROMOTION"
+            },
+            "children": [
+              {
+                "id": "SpringOscillator",
+                "name": "<SpringPhysicsWorklet />",
+                "props": {
+                  "damping": "ZETA_1_00_CRITICAL"
+                }
+              },
+              {
+                "id": "InertialDecayManager",
+                "name": "<InertialFlingDecayView />",
+                "props": {
+                  "friction": "EXPONENTIAL_COAST"
+                }
+              },
+              {
+                "id": "LayoutMorphView",
+                "name": "<LayoutMorphingContainer />",
+                "props": {
+                  "transition": "SPRINGIFY_SMOOTH"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount <MobilePhysicsRootScreen /> on native 120Hz display link",
+            "activeId": "root",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<MobilePhysicsRootScreen />",
+                "props": {
+                  "displayLink": "PROMOTION_120HZ"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Initialize <SpringPhysicsWorklet /> on 120Hz native DisplayLink",
+            "activeId": "SpringOscillator",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "SpringOscillator",
+                "name": "<SpringPhysicsWorklet />",
+                "props": {
+                  "status": "SYNCHRONIZED_120_FPS"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Coast gesture fling via <InertialFlingDecayView /> with asymptotic rubber-banding",
+            "activeId": "InertialDecayManager",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "InertialDecayManager",
+                "name": "<InertialFlingDecayView />",
+                "props": {
+                  "velocity": "CONSERVED"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Morph native Yoga shadow tree bounds via <LayoutMorphingContainer />",
+            "activeId": "LayoutMorphView",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "LayoutMorphView",
+                "name": "<LayoutMorphingContainer />",
+                "props": {
+                  "morphing": "ACTIVE_SUB_16MS"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<MobilePhysicsRootScreen />",
+            "props": {
+              "pacing": "120_FPS_PROMOTION"
+            },
+            "children": [
+              {
+                "id": "SpringOscillator",
+                "name": "<SpringPhysicsWorklet />",
+                "props": {
+                  "damping": "ZETA_1_00_CRITICAL"
+                }
+              },
+              {
+                "id": "InertialDecayManager",
+                "name": "<InertialFlingDecayView />",
+                "props": {
+                  "friction": "EXPONENTIAL_COAST"
+                }
+              },
+              {
+                "id": "LayoutMorphView",
+                "name": "<LayoutMorphingContainer />",
+                "props": {
+                  "transition": "SPRINGIFY_SMOOTH"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount <MobilePhysicsRootScreen /> on native 120Hz display link",
+            "activeId": "root",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<MobilePhysicsRootScreen />",
+                "props": {
+                  "displayLink": "PROMOTION_120HZ"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Initialize <SpringPhysicsWorklet /> on 120Hz native DisplayLink",
+            "activeId": "SpringOscillator",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "SpringOscillator",
+                "name": "<SpringPhysicsWorklet />",
+                "props": {
+                  "status": "SYNCHRONIZED_120_FPS"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Coast gesture fling via <InertialFlingDecayView /> with asymptotic rubber-banding",
+            "activeId": "InertialDecayManager",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "InertialDecayManager",
+                "name": "<InertialFlingDecayView />",
+                "props": {
+                  "velocity": "CONSERVED"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Morph native Yoga shadow tree bounds via <LayoutMorphingContainer />",
+            "activeId": "LayoutMorphView",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "LayoutMorphView",
+                "name": "<LayoutMorphingContainer />",
+                "props": {
+                  "morphing": "ACTIVE_SUB_16MS"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Inertial Fling Decay Physics: Friction Coefficients & Edge Rubber-Banding",
+      "codeHash": "91b29d422a176c5d1888a89b22b99babe43037a628e0877dc62445c582877bdd",
+      "spec": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<MobilePhysicsRootScreen />",
+            "props": {
+              "pacing": "120_FPS_PROMOTION"
+            },
+            "children": [
+              {
+                "id": "SpringOscillator",
+                "name": "<SpringPhysicsWorklet />",
+                "props": {
+                  "damping": "ZETA_1_00_CRITICAL"
+                }
+              },
+              {
+                "id": "InertialDecayManager",
+                "name": "<InertialFlingDecayView />",
+                "props": {
+                  "friction": "EXPONENTIAL_COAST"
+                }
+              },
+              {
+                "id": "LayoutMorphView",
+                "name": "<LayoutMorphingContainer />",
+                "props": {
+                  "transition": "SPRINGIFY_SMOOTH"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount <MobilePhysicsRootScreen /> on native 120Hz display link",
+            "activeId": "root",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<MobilePhysicsRootScreen />",
+                "props": {
+                  "displayLink": "PROMOTION_120HZ"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Initialize <SpringPhysicsWorklet /> on 120Hz native DisplayLink",
+            "activeId": "SpringOscillator",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "SpringOscillator",
+                "name": "<SpringPhysicsWorklet />",
+                "props": {
+                  "status": "SYNCHRONIZED_120_FPS"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Coast gesture fling via <InertialFlingDecayView /> with asymptotic rubber-banding",
+            "activeId": "InertialDecayManager",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "InertialDecayManager",
+                "name": "<InertialFlingDecayView />",
+                "props": {
+                  "velocity": "CONSERVED"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Morph native Yoga shadow tree bounds via <LayoutMorphingContainer />",
+            "activeId": "LayoutMorphView",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "LayoutMorphView",
+                "name": "<LayoutMorphingContainer />",
+                "props": {
+                  "morphing": "ACTIVE_SUB_16MS"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<MobilePhysicsRootScreen />",
+            "props": {
+              "pacing": "120_FPS_PROMOTION"
+            },
+            "children": [
+              {
+                "id": "SpringOscillator",
+                "name": "<SpringPhysicsWorklet />",
+                "props": {
+                  "damping": "ZETA_1_00_CRITICAL"
+                }
+              },
+              {
+                "id": "InertialDecayManager",
+                "name": "<InertialFlingDecayView />",
+                "props": {
+                  "friction": "EXPONENTIAL_COAST"
+                }
+              },
+              {
+                "id": "LayoutMorphView",
+                "name": "<LayoutMorphingContainer />",
+                "props": {
+                  "transition": "SPRINGIFY_SMOOTH"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount <MobilePhysicsRootScreen /> on native 120Hz display link",
+            "activeId": "root",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<MobilePhysicsRootScreen />",
+                "props": {
+                  "displayLink": "PROMOTION_120HZ"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Initialize <SpringPhysicsWorklet /> on 120Hz native DisplayLink",
+            "activeId": "SpringOscillator",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "SpringOscillator",
+                "name": "<SpringPhysicsWorklet />",
+                "props": {
+                  "status": "SYNCHRONIZED_120_FPS"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Coast gesture fling via <InertialFlingDecayView /> with asymptotic rubber-banding",
+            "activeId": "InertialDecayManager",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "InertialDecayManager",
+                "name": "<InertialFlingDecayView />",
+                "props": {
+                  "velocity": "CONSERVED"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Morph native Yoga shadow tree bounds via <LayoutMorphingContainer />",
+            "activeId": "LayoutMorphView",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "LayoutMorphView",
+                "name": "<LayoutMorphingContainer />",
+                "props": {
+                  "morphing": "ACTIVE_SUB_16MS"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Layout Animations & Morphing: Entering, Exiting & Keyframe Transitions",
+      "codeHash": "b488c693713f50d9004faed978c8fce2408b6251e4e26b5cb0ee66ddcd6b3c43",
+      "spec": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<MobilePhysicsRootScreen />",
+            "props": {
+              "pacing": "120_FPS_PROMOTION"
+            },
+            "children": [
+              {
+                "id": "SpringOscillator",
+                "name": "<SpringPhysicsWorklet />",
+                "props": {
+                  "damping": "ZETA_1_00_CRITICAL"
+                }
+              },
+              {
+                "id": "InertialDecayManager",
+                "name": "<InertialFlingDecayView />",
+                "props": {
+                  "friction": "EXPONENTIAL_COAST"
+                }
+              },
+              {
+                "id": "LayoutMorphView",
+                "name": "<LayoutMorphingContainer />",
+                "props": {
+                  "transition": "SPRINGIFY_SMOOTH"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount <MobilePhysicsRootScreen /> on native 120Hz display link",
+            "activeId": "root",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<MobilePhysicsRootScreen />",
+                "props": {
+                  "displayLink": "PROMOTION_120HZ"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Initialize <SpringPhysicsWorklet /> on 120Hz native DisplayLink",
+            "activeId": "SpringOscillator",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "SpringOscillator",
+                "name": "<SpringPhysicsWorklet />",
+                "props": {
+                  "status": "SYNCHRONIZED_120_FPS"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Coast gesture fling via <InertialFlingDecayView /> with asymptotic rubber-banding",
+            "activeId": "InertialDecayManager",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "InertialDecayManager",
+                "name": "<InertialFlingDecayView />",
+                "props": {
+                  "velocity": "CONSERVED"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Morph native Yoga shadow tree bounds via <LayoutMorphingContainer />",
+            "activeId": "LayoutMorphView",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "LayoutMorphView",
+                "name": "<LayoutMorphingContainer />",
+                "props": {
+                  "morphing": "ACTIVE_SUB_16MS"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<MobilePhysicsRootScreen />",
+            "props": {
+              "pacing": "120_FPS_PROMOTION"
+            },
+            "children": [
+              {
+                "id": "SpringOscillator",
+                "name": "<SpringPhysicsWorklet />",
+                "props": {
+                  "damping": "ZETA_1_00_CRITICAL"
+                }
+              },
+              {
+                "id": "InertialDecayManager",
+                "name": "<InertialFlingDecayView />",
+                "props": {
+                  "friction": "EXPONENTIAL_COAST"
+                }
+              },
+              {
+                "id": "LayoutMorphView",
+                "name": "<LayoutMorphingContainer />",
+                "props": {
+                  "transition": "SPRINGIFY_SMOOTH"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount <MobilePhysicsRootScreen /> on native 120Hz display link",
+            "activeId": "root",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<MobilePhysicsRootScreen />",
+                "props": {
+                  "displayLink": "PROMOTION_120HZ"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Initialize <SpringPhysicsWorklet /> on 120Hz native DisplayLink",
+            "activeId": "SpringOscillator",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "SpringOscillator",
+                "name": "<SpringPhysicsWorklet />",
+                "props": {
+                  "status": "SYNCHRONIZED_120_FPS"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Coast gesture fling via <InertialFlingDecayView /> with asymptotic rubber-banding",
+            "activeId": "InertialDecayManager",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "InertialDecayManager",
+                "name": "<InertialFlingDecayView />",
+                "props": {
+                  "velocity": "CONSERVED"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Morph native Yoga shadow tree bounds via <LayoutMorphingContainer />",
+            "activeId": "LayoutMorphView",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "LayoutMorphView",
+                "name": "<LayoutMorphingContainer />",
+                "props": {
+                  "morphing": "ACTIVE_SUB_16MS"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Motion & Physics Master Engine: Full Production Simulator",
+      "codeHash": "43db7a6ed197c3e4e396ef2d7f8a97989930f9536e30f54091d64b06c891e2e4",
+      "spec": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<MobilePhysicsRootScreen />",
+            "props": {
+              "pacing": "120_FPS_PROMOTION"
+            },
+            "children": [
+              {
+                "id": "SpringOscillator",
+                "name": "<SpringPhysicsWorklet />",
+                "props": {
+                  "damping": "ZETA_1_00_CRITICAL"
+                }
+              },
+              {
+                "id": "InertialDecayManager",
+                "name": "<InertialFlingDecayView />",
+                "props": {
+                  "friction": "EXPONENTIAL_COAST"
+                }
+              },
+              {
+                "id": "LayoutMorphView",
+                "name": "<LayoutMorphingContainer />",
+                "props": {
+                  "transition": "SPRINGIFY_SMOOTH"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount <MobilePhysicsRootScreen /> on native 120Hz display link",
+            "activeId": "root",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<MobilePhysicsRootScreen />",
+                "props": {
+                  "displayLink": "PROMOTION_120HZ"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Initialize <SpringPhysicsWorklet /> on 120Hz native DisplayLink",
+            "activeId": "SpringOscillator",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "SpringOscillator",
+                "name": "<SpringPhysicsWorklet />",
+                "props": {
+                  "status": "SYNCHRONIZED_120_FPS"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Coast gesture fling via <InertialFlingDecayView /> with asymptotic rubber-banding",
+            "activeId": "InertialDecayManager",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "InertialDecayManager",
+                "name": "<InertialFlingDecayView />",
+                "props": {
+                  "velocity": "CONSERVED"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Morph native Yoga shadow tree bounds via <LayoutMorphingContainer />",
+            "activeId": "LayoutMorphView",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "LayoutMorphView",
+                "name": "<LayoutMorphingContainer />",
+                "props": {
+                  "morphing": "ACTIVE_SUB_16MS"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<MobilePhysicsRootScreen />",
+            "props": {
+              "pacing": "120_FPS_PROMOTION"
+            },
+            "children": [
+              {
+                "id": "SpringOscillator",
+                "name": "<SpringPhysicsWorklet />",
+                "props": {
+                  "damping": "ZETA_1_00_CRITICAL"
+                }
+              },
+              {
+                "id": "InertialDecayManager",
+                "name": "<InertialFlingDecayView />",
+                "props": {
+                  "friction": "EXPONENTIAL_COAST"
+                }
+              },
+              {
+                "id": "LayoutMorphView",
+                "name": "<LayoutMorphingContainer />",
+                "props": {
+                  "transition": "SPRINGIFY_SMOOTH"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount <MobilePhysicsRootScreen /> on native 120Hz display link",
+            "activeId": "root",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<MobilePhysicsRootScreen />",
+                "props": {
+                  "displayLink": "PROMOTION_120HZ"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Initialize <SpringPhysicsWorklet /> on 120Hz native DisplayLink",
+            "activeId": "SpringOscillator",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "SpringOscillator",
+                "name": "<SpringPhysicsWorklet />",
+                "props": {
+                  "status": "SYNCHRONIZED_120_FPS"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Coast gesture fling via <InertialFlingDecayView /> with asymptotic rubber-banding",
+            "activeId": "InertialDecayManager",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "InertialDecayManager",
+                "name": "<InertialFlingDecayView />",
+                "props": {
+                  "velocity": "CONSERVED"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Morph native Yoga shadow tree bounds via <LayoutMorphingContainer />",
+            "activeId": "LayoutMorphView",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "LayoutMorphView",
+                "name": "<LayoutMorphingContainer />",
+                "props": {
+                  "morphing": "ACTIVE_SUB_16MS"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

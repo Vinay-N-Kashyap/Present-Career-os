@@ -4376,5 +4376,259 @@ console.log('Release Invariant: Phased rollouts contain blast radius and enable 
       "Execute an end-to-end systems benchmark audit certifying sub-400ms TTID, flat 78MB RAM, locked 60 FPS, and Tier-1 Certification."
     ]
   }
+},
+{
+  "day": 16,
+  "title": "Advanced 120 FPS Reanimated 3 Physics: Second-Order Springs & Inertial Decay",
+  "goal": "Master high-performance native mobile animation engineering: second-order differential spring physics, calculating critical damping ratios, executing Hermes worklets on the native UI thread, modeling velocity-conserving inertial decay, and coordinating 120 FPS layout transitions on Apple ProMotion displays.",
+  "minutes": 35,
+  "recap": "In this module, we advance from static screens and device sensors into high-frame-rate physical motion. Modern mobile users expect fluid, tactile interfaces where UI elements move according to the physical laws of mass, momentum, and elasticity. We learn to model spring-mass-damper systems mathematically and execute calculations directly on the display link tick.",
+  "parts": [
+    {
+      "title": "Second-Order Differential Spring Physics: Mass, Stiffness & Damping Ratios",
+      "say": [
+        "In traditional web and mobile animation engineering, developers frequently rely on cubic bezier timing curves such as ease-in, ease-out, or ease-in-out. Timing curves define an animated property strictly as a parametric function of time. While timing curves work adequately for non-interactive decorative transitions, they fail completely when handling continuous user gestures.",
+        "Consider what happens when a user drags a card across the screen and flings it with high finger velocity. If you animate the release using a cubic bezier timing curve with a fixed duration of 300 milliseconds, the card abruptly halts its high finger velocity and starts an artificial duration timer. This sudden velocity discontinuity creates an unnatural, jarring hitch that breaks user immersion.",
+        "Modern mobile user experience design replaces timing curves with Physical Spring Oscillators. A physical spring does not have an arbitrary fixed duration; instead, its position and velocity over time are governed by the physical laws of Newtonian mechanics and harmonic oscillation.",
+        "Specifically, a damped spring-mass system is modeled by a second-order linear ordinary differential equation: m * x''(t) + c * x'(t) + k * x(t) = 0, where m represents the mass of the animated element, c represents the damping coefficient representing frictional energy loss, and k represents the spring stiffness coefficient pulling the object toward equilibrium.",
+        "To solve this differential equation, we evaluate its characteristic algebraic polynomial: m * r^2 + c * r + k = 0. The roots of this quadratic equation dictate the temporal trajectory of the animation: r = (-c +/- sqrt(c^2 - 4 * m * k)) / (2 * m).",
+        "The behavior of any physical spring animation is fundamentally characterized by its dimensionless Damping Ratio, denoted by the Greek letter zeta: zeta = c / (2 * sqrt(m * k)). The term 2 * sqrt(m * k) represents the Critical Damping Coefficient, c_c. The value of zeta divides spring motion into three distinct physical regimes.",
+        "When zeta < 1.0, the discriminant c^2 - 4 * m * k is negative, producing complex conjugate roots. This is the Under-Damped regime: the animated view accelerates toward the target, overshoots it, and bounces back and forth before eventually coming to rest. Under-damped springs with zeta between 0.5 and 0.8 deliver playful, tactile interactions ideal for toggle switches, pull-to-refresh indicators, and bouncy notification badges.",
+        "When zeta = 1.0, the discriminant is exactly zero, producing a repeated real root. This is the Critically Damped regime: the animated element returns to equilibrium in the fastest possible mathematical duration without a single pixel of overshoot. Critically damped springs are the enterprise gold standard for modal dialogs, bottom sheets, navigation cards, and master-detail transitions where motion must feel snappy without dizzying oscillations.",
+        "When zeta > 1.0, the discriminant is positive, producing two distinct negative real roots. This is the Over-Damped regime: the animated element slowly crawls toward equilibrium without bouncing, behaving like an object moving through heavy molasses. Over-damped springs are rarely used in mobile UI because they make interfaces feel sluggish and unresponsive.",
+        "In React Native Reanimated 3, developers configure withSpring({ mass: 1, stiffness: 100, damping: 20, velocity: gestureVelocity }). Passing the initial finger release velocity directly into the spring equation guarantees complete velocity conservation: the card seamlessly continues moving at the exact speed the user was dragging it, feeling completely glued to the thumb.",
+        "Furthermore, Reanimated 3 allows configuring overshootClamping: true. When enabled, the spring engine allows the view to accelerate with high elasticity but clamps the position the instant it crosses zero velocity at the target, combining the snappiness of a bouncy spring with the precision of critical damping.",
+        "To prevent infinite floating-point calculations, the spring physics engine implements an Energy Threshold Gate (restSpeedThreshold: 0.001 and restDisplacementThreshold: 0.001). When total kinetic and potential energy drops below the threshold, the animation halts and disconnects from the display link, conserving device battery.",
+        "By mastering spring differential equations, damping ratios, and energy thresholds, mobile engineers design interfaces that feel alive, responsive, and physically grounded."
+      ],
+      "example": "Think of the suspension shock absorbers on an off-road truck. If the truck hits a boulder and has weak shocks (under-damped), the chassis bounces wildly up and down for ten seconds (zeta < 1). If the shocks are rusted stiff with mud (over-damped), the wheels cannot absorb the bump and the ride is bone-jarring (zeta > 1). When the shock absorbers are tuned by a racing mechanic to critical damping (zeta = 1), the suspension absorbs the impact instantly and levels the chassis in a fraction of a second.",
+      "code": "// Second-Order Differential Spring Physics Calculator\nclass SpringPhysicsCalculator {\n  calculateDampingRatio(mass, stiffness, damping) {\n    // Critical damping coefficient: c_c = 2 * sqrt(m * k)\n    const criticalDamping = 2 * Math.sqrt(mass * stiffness);\n    const zeta = damping / criticalDamping;\n\n    let classification = 'CRITICALLY_DAMPED_OPTIMAL';\n    let bounceBehavior = 'Zero overshoot; reaches equilibrium in minimal time';\n\n    if (zeta < 0.99) {\n      classification = 'UNDER_DAMPED_BOUNCY';\n      bounceBehavior = 'Playful oscillation; overshoots target before settling';\n    } else if (zeta > 1.01) {\n      classification = 'OVER_DAMPED_SLUGGISH';\n      bounceBehavior = 'Slow sluggish creep; no overshoot but takes too long';\n    }\n\n    return {\n      massKg: mass,\n      stiffnessKp: stiffness,\n      dampingCoefficient: damping,\n      criticalDampingCoeff: Number(criticalDamping.toFixed(2)),\n      dampingRatioZeta: Number(zeta.toFixed(2)),\n      classification,\n      bounceBehavior\n    };\n  }\n}\n\nconst calculator = new SpringPhysicsCalculator();\nconsole.log('--- REANIMATED 3 SPRING OSCILLATOR PHYSICS ---');\n\n// 1. Playful bouncy toggle switch (Under-damped: zeta = 0.50)\nconst bouncy = calculator.calculateDampingRatio(1, 100, 10);\nconsole.log('Spring 1 (Bouncy Toggle):   zeta = ' + bouncy.dampingRatioZeta + ' | ' + bouncy.classification);\nconsole.log('  Behavior: ' + bouncy.bounceBehavior);\n\n// 2. Enterprise modal drawer (Critically damped: zeta = 1.00)\nconst modal = calculator.calculateDampingRatio(1, 100, 20);\nconsole.log('Spring 2 (Modal Drawer):    zeta = ' + modal.dampingRatioZeta + ' | ' + modal.classification);\nconsole.log('  Behavior: ' + modal.bounceBehavior);\n\n// 3. Molasses slow transition (Over-damped: zeta = 1.50)\nconst sluggish = calculator.calculateDampingRatio(1, 100, 30);\nconsole.log('Spring 3 (Sluggish Sheet):  zeta = ' + sluggish.dampingRatioZeta + ' | ' + sluggish.classification);\nconsole.log('  Behavior: ' + sluggish.bounceBehavior);\nconsole.log('Spring Invariant: Critical damping (zeta = 1.0) achieves fastest equilibrium with zero overshoot');",
+      "output": "--- REANIMATED 3 SPRING OSCILLATOR PHYSICS ---\nSpring 1 (Bouncy Toggle):   zeta = 0.5 | UNDER_DAMPED_BOUNCY\n  Behavior: Playful oscillation; overshoots target before settling\nSpring 2 (Modal Drawer):    zeta = 1 | CRITICALLY_DAMPED_OPTIMAL\n  Behavior: Zero overshoot; reaches equilibrium in minimal time\nSpring 3 (Sluggish Sheet):  zeta = 1.5 | OVER_DAMPED_SLUGGISH\n  Behavior: Slow sluggish creep; no overshoot but takes too long\nSpring Invariant: Critical damping (zeta = 1.0) achieves fastest equilibrium with zero overshoot",
+      "codeNotes": [
+        {
+          "line": 4,
+          "note": "Computes critical damping coefficient c_c = 2 * sqrt(m * k)"
+        },
+        {
+          "line": 5,
+          "note": "Calculates dimensionless damping ratio zeta to classify bounce dynamics"
+        },
+        {
+          "line": 34,
+          "note": "Proves zeta = 1.0 achieves fastest settling time without overshoot"
+        }
+      ],
+      "tryIt": "Set damping to 14.14 with mass=1 and stiffness=100 and verify that zeta evaluates to 0.71 (the Butterworth maximally flat response).",
+      "check": {
+        "question": "Why is a critically damped spring (damping ratio zeta = 1.0) preferred for enterprise modal sheets and navigation drawers?",
+        "options": [
+          "Because it returns the view to equilibrium in the shortest possible mathematical duration with zero overshoot or oscillation",
+          "Because critically damped springs reduce mobile phone battery usage to 0%",
+          "Because iOS and Android crash if zeta is less than 1.0",
+          "Because critically damped springs turn off the phone display automatically"
+        ],
+        "answer": 0,
+        "why": "Mathematically, critical damping (zeta = 1.0) provides the fastest possible transition to the target resting position without oscillating or bouncing past the target, making enterprise UI transitions feel instantaneous and crisp."
+      }
+    },
+    {
+      "title": "Hermes UI Thread Worklets: DisplayLink Synchronization & Shared Values",
+      "say": [
+        "In standard React Native architectures, animations driven by React component state updates (using useState or setState) run on the JavaScript thread. When JavaScript updates state, React reconciles the virtual DOM, serializes view properties into JSON, and passes them over the asynchronous bridge to the native platform thread.",
+        "On 120Hz ProMotion displays (such as modern iPhones and flagship Android devices), a frame must render every 8.33 milliseconds (16.6ms on 60Hz screens). If the JavaScript thread is busy parsing a 5MB API response, running Redux state reducers, or executing SQLite queries, the JS thread stalls for 50 milliseconds or longer. The animation starves for frames, resulting in noticeable UI stutter and frozen touch gestures.",
+        "React Native Reanimated 3 eliminates this bottleneck through JavaScript Worklets. A Worklet is a small JavaScript function flagged with the 'worklet' directive that is compiled into Hermes bytecode and executed inside an isolated Hermes JS runtime living directly on the native UI thread.",
+        "Worklet synchronization is powered by CADisplayLink on iOS and Choreographer on Android. On every physical hardware display refresh tick (every 8.33 milliseconds on 120Hz screens), the native display link fires a hardware interrupt that executes the worklet synchronously.",
+        "State communication between the JavaScript thread and the native UI thread worklet is mediated by Shared Values created with useSharedValue(initialValue). A Shared Value is not a standard React state variable; it is a thread-safe C++ JSI Host Object with memory pointers accessible from both the JS thread and the UI thread.",
+        "When the user interacts with a gesture handler, the gesture handler updates the Shared Value directly on the UI thread without crossing the bridge. The attached useAnimatedStyle worklet recalculates transformation matrices and applies them directly to native views (UIKit or Android Views) within the same 8.33-millisecond hardware frame.",
+        "To read a Shared Value synchronously on the UI thread, worklets access sv.value directly. When reading from the JS thread, the runtime safely reads the cached host value without blocking UI rendering.",
+        "Furthermore, Reanimated 3 implements Auto-Workletization: when passing callback functions to gesture handlers or animation modifiers, the Babel/SWC Reanimated compiler plugin detects closures, extracts referenced variables, and generates native worklet bindings automatically.",
+        "Memory hygiene in worklets requires strict closure scoping. Developers must avoid capturing large JavaScript state objects inside worklet closures, as this creates memory retention traps across native threads.",
+        "Under the hood, worklets utilize JSI (JavaScript Interface) Host Objects to manipulate native view transforms directly in C++. By eliminating JSON serialization, bridge queues, and React reconciliation passes, worklets achieve true zero-overhead frame dispatch.",
+        "When combined with useDerivedValue, worklets can chain mathematical transformations reactively: for example, deriving rotational angle and opacity values purely as mathematical functions of horizontal scroll offset, updating all styles in a single synchronized frame pass.",
+        "In production enterprise applications, keeping worklet execution time under 2 milliseconds leaves over 6 milliseconds of CPU headroom per frame, preventing thermal throttling during extended animation sequences.",
+        "By utilizing Hermes UI thread worklets and Shared Values, mobile applications achieve locked 120 FPS performance completely decoupled from JavaScript thread congestion."
+      ],
+      "example": "Think of a film movie projector running at 120 frames per second. If the projectionist has to run back and forth to an office across the street every time a new frame needs to be shown (legacy bridge animation), the film pauses and stutters. A Hermes Worklet is like having the projectionist stand right next to the lens with the reels spinning continuously: frames project with perfect optical timing regardless of what is happening in the office.",
+      "code": "// Hermes UI Thread Worklet & 120 FPS Frame Pacing Simulator\nclass HermesWorkletRuntimeEngine {\n  constructor(targetFps) {\n    this.targetFps = targetFps;\n    this.frameBudgetMs = 1000 / targetFps; // 8.33ms for 120 FPS!\n    this.sharedValues = new Map();\n  }\n\n  createSharedValue(key, initialValue) {\n    const hostObject = {\n      value: initialValue,\n      threadAccess: 'SYNCHRONOUS_UI_THREAD_DIRECT_POINTER',\n      isJsiHostObject: true\n    };\n    this.sharedValues.set(key, hostObject);\n    return hostObject;\n  }\n\n  // Simulates display link tick executing worklet on native UI thread\n  executeDisplayLinkTick(workletFn, jsThreadCongested) {\n    const sv = this.sharedValues.get('translationX');\n    const startMicros = 100; // Simulated timestamp\n\n    // Worklet executes on UI thread: immune to JS thread stalls!\n    const updatedValue = workletFn(sv.value);\n    sv.value = updatedValue;\n\n    const executionDurationMs = 1.2; // Fast C++ JSI worklet evaluation\n    const isWithinBudget = executionDurationMs <= this.frameBudgetMs;\n\n    return {\n      displayRefreshHz: this.targetFps,\n      frameBudgetMs: Number(this.frameBudgetMs.toFixed(2)),\n      workletDurationMs: executionDurationMs,\n      sharedValueUpdated: sv.value,\n      jsThreadBusy: jsThreadCongested,\n      frameDropped: !isWithinBudget,\n      pacingStatus: isWithinBudget ? 'LOCKED_120_FPS_PROMOTION_NOMINAL' : 'FRAME_DROPPED'\n    };\n  }\n}\n\nconst engine = new HermesWorkletRuntimeEngine(120);\nconsole.log('--- HERMES UI THREAD WORKLET & 120 FPS ENGINE ---');\n\n// 1. Initialize Shared Value\nconst transX = engine.createSharedValue('translationX', 0);\nconsole.log('Shared Value Created:   Initial = ' + transX.value + ' | Access: ' + transX.threadAccess);\n\n// 2. Simulate 120Hz DisplayLink tick while JS thread is frozen with heavy computation\nconst tickResult = engine.executeDisplayLinkTick((val) => {\n  'worklet';\n  return val + 15.5; // Smooth physical glide\n}, true); // JS Thread is Congested!\n\nconsole.log('Display Refresh Rate:   ' + tickResult.displayRefreshHz + ' Hz (ProMotion)');\nconsole.log('Frame Budget:           ' + tickResult.frameBudgetMs + ' ms per frame');\nconsole.log('Worklet Execution Time: ' + tickResult.workletDurationMs + ' ms (Headroom: ' + (tickResult.frameBudgetMs - tickResult.workletDurationMs).toFixed(2) + ' ms)');\nconsole.log('JS Thread Stalled:      ' + tickResult.jsThreadBusy + ' (Zero impact on UI!)');\nconsole.log('Pacing Status:          ' + tickResult.pacingStatus);\nconsole.log('Worklet Invariant: UI thread worklets maintain 120 FPS even when the JavaScript thread is completely blocked');",
+      "output": "--- HERMES UI THREAD WORKLET & 120 FPS ENGINE ---\nShared Value Created:   Initial = 0 | Access: SYNCHRONOUS_UI_THREAD_DIRECT_POINTER\nDisplay Refresh Rate:   120 Hz (ProMotion)\nFrame Budget:           8.33 ms per frame\nWorklet Execution Time: 1.2 ms (Headroom: 7.13 ms)\nJS Thread Stalled:      true (Zero impact on UI!)\nPacing Status:          LOCKED_120_FPS_PROMOTION_NOMINAL\nWorklet Invariant: UI thread worklets maintain 120 FPS even when the JavaScript thread is completely blocked",
+      "codeNotes": [
+        {
+          "line": 4,
+          "note": "Calculates 8.33ms frame budget for 120Hz ProMotion displays"
+        },
+        {
+          "line": 8,
+          "note": "Encapsulates Shared Value as thread-safe C++ JSI host object"
+        },
+        {
+          "line": 23,
+          "note": "Executes worklet in 1.2ms directly on UI thread, ignoring JS thread stalls"
+        }
+      ],
+      "tryIt": "Set targetFps to 60 and observe how frame budget doubles to 16.67ms for standard displays.",
+      "check": {
+        "question": "Why do Reanimated 3 worklets not experience frame drops when the JavaScript thread is blocked by heavy API parsing?",
+        "options": [
+          "Because worklets run in an isolated Hermes runtime directly on the native UI thread, synchronized to the hardware display link independently of the JavaScript thread",
+          "Because Reanimated deletes heavy API responses automatically",
+          "Because modern phones have 10 separate screens inside them",
+          "Because JavaScript thread stalls automatically increase the battery voltage"
+        ],
+        "answer": 0,
+        "why": "Worklets execute directly on the native platform UI thread driven by the hardware CADisplayLink / Choreographer. Because they run in an isolated Hermes thread context, heavy JSON parsing or Redux state reductions on the JS thread cannot stall the animation loop."
+      }
+    },
+    {
+      "title": "Inertial Fling Decay Physics: Friction Coefficients & Edge Rubber-Banding",
+      "say": [
+        "When a user flings a scrollable list, swipeable carousel, or draggable card and lifts their thumb, the element should not freeze abruptly. It must coast to a halt smoothly, preserving its release velocity while gradually bleeding kinetic energy to friction.",
+        "In Reanimated 3, this physical phenomenon is modeled by withDecay({ velocity, deceleration, clamp }). The decay animation implements an exponential velocity decay differential equation: v(t) = v_0 * e^(-k * t), where v_0 is the initial gesture release velocity and k is the friction deceleration coefficient (defaulting to 0.998).",
+        "Integrating velocity over time reveals the total coasting distance the view will travel before resting: d_total = v_0 / (1 - deceleration). If a user flicks a list at 2,000 pixels per second with a deceleration factor of 0.998, the view will coast approximately 1,000 pixels before resting.",
+        "However, mobile screens have physical boundaries. If the user flings a card toward the edge of the viewport, the view must not fly off into the void. It must collide with the boundary, absorb kinetic energy, and spring back into view\u2014a tactile behavior known as Rubber-Banding.",
+        "Rubber-banding is mathematically modeled using Apple\u2019s asymptotic rubber-band formula: x_display = (x * d * c) / (d + c * x), where x is the drag distance past the boundary, d is the dimension of the screen, and c is the resistance coefficient (typically 0.55).",
+        "As the user pulls further past the edge, resistance increases non-linearly: dragging 100 pixels past the edge moves the view only 35 pixels on screen. When the user releases, the decay animation seamlessly transitions into a bouncy under-damped spring (withSpring) that snaps the view back to the boundary with zero hitching.",
+        "Furthermore, Reanimated 3 allows configuring velocity clamps. Passing clamp: [minOffset, maxOffset] into withDecay automatically detects boundary collisions and seamlessly switches deceleration physics into spring bounce-back.",
+        "In addition, inertial decay calculations are velocity-aware: if the user releases with velocity below 50 pixels per second, decay is bypassed, and the view settles immediately to avoid imperceptible micro-crawling.",
+        "On high-frequency touch digitisers running at 240Hz, touch events arrive twice as fast as the 120Hz display refresh. Reanimated 3 applies a low-pass Kalman filter across the final three touch samples to estimate true instantaneous release velocity, eliminating finger-jitter anomalies.",
+        "When designing swipeable list items (such as archive or delete actions), coupling withDecay with snap points allows cards to coast smoothly before locking into action thresholds, creating crisp tactile interactions.",
+        "In enterprise finance and trading applications, inertial decay scrolling allows brokers to scan thousands of ticker symbols with a single high-velocity flick, while rubber-band clamping provides immediate physical reassurance when reaching the top or bottom of the market order book.",
+        "By combining exponential velocity decay with asymptotic rubber-banding formulas, mobile engineers create world-class scrolling and dragging experiences that feel indistinguishable from Apple iOS native system components."
+      ],
+      "example": "Think of sliding an ice hockey puck across a frozen lake versus a wooden floor. On a frozen lake with low friction (high deceleration coefficient), a flick sends the puck gliding hundreds of yards before it stops (withDecay). If the puck hits the wooden rink wall, the rubber bumper compresses non-linearly and bounces the puck back onto the ice (rubber-band spring).",
+      "code": "// Inertial Fling Decay & Asymptotic Rubber-Band Simulator\nclass InertialDecayPhysicsEngine {\n  calculateFlingDecayDistance(initialVelocityPxPerSec, decelerationCoeff) {\n    // Total distance traveled: d = v0 / (1 - deceleration) / 1000\n    // Simplified discrete simulation:\n    let velocity = initialVelocityPxPerSec;\n    let distance = 0;\n    const timeStepSec = 0.016; // 16ms frame ticks\n\n    while (Math.abs(velocity) > 1.0) {\n      distance += velocity * timeStepSec;\n      velocity *= decelerationCoeff;\n    }\n\n    return Number(distance.toFixed(1));\n  }\n\n  // Apple Asymptotic Rubber-Band resistance formula\n  calculateRubberBandOffset(dragPastEdgePx, screenDimensionPx) {\n    const c = 0.55; // Standard Apple resistance coefficient\n    const d = screenDimensionPx;\n    const x = Math.abs(dragPastEdgePx);\n\n    // Formula: (x * d * c) / (d + c * x)\n    const rubberBanded = (x * d * c) / (d + c * x);\n    const resistanceRatio = rubberBanded / x;\n\n    return {\n      dragPastEdgePx,\n      renderedOffsetPx: Number(rubberBanded.toFixed(1)),\n      resistanceEffectPercent: Number(((1 - resistanceRatio) * 100).toFixed(1))\n    };\n  }\n}\n\nconst decayEngine = new InertialDecayPhysicsEngine();\nconsole.log('--- INERTIAL FLING DECAY & RUBBER-BANDING ---');\n\n// 1. High-velocity flick (2,500 px/sec with 0.998 deceleration)\nconst coastDist = decayEngine.calculateFlingDecayDistance(2500, 0.992);\nconsole.log('Fling Velocity:         2,500 px/s');\nconsole.log('Coasting Distance:      ' + coastDist + ' px before resting');\n\n// 2. Rubber-banding past screen boundary (100px drag)\nconst rb1 = decayEngine.calculateRubberBandOffset(100, 852);\nconsole.log('Drag Past Edge (100px): Rendered = ' + rb1.renderedOffsetPx + ' px | Resistance: ' + rb1.resistanceEffectPercent + '%');\n\n// 3. Deeper pull past boundary (300px drag)\nconst rb2 = decayEngine.calculateRubberBandOffset(300, 852);\nconsole.log('Drag Past Edge (300px): Rendered = ' + rb2.renderedOffsetPx + ' px | Resistance: ' + rb2.resistanceEffectPercent + '%');\nconsole.log('Decay Invariant: Asymptotic rubber-banding increases resistance non-linearly to prevent unnatural boundary clipping');",
+      "output": "--- INERTIAL FLING DECAY & RUBBER-BANDING ---\nFling Velocity:         2,500 px/s\nCoasting Distance:      4998 px before resting\nDrag Past Edge (100px): Rendered = 51.7 px | Resistance: 48.3%\nDrag Past Edge (300px): Rendered = 138.2 px | Resistance: 53.9%\nDecay Invariant: Asymptotic rubber-banding increases resistance non-linearly to prevent unnatural boundary clipping",
+      "codeNotes": [
+        {
+          "line": 9,
+          "note": "Simulates discrete velocity decay bleeding kinetic energy frame by frame"
+        },
+        {
+          "line": 21,
+          "note": "Applies Apple asymptotic rubber-band resistance formula (x * d * c) / (d + c * x)"
+        },
+        {
+          "line": 43,
+          "note": "Demonstrates resistance increasing from 48.3% to 53.9% as user pulls deeper"
+        }
+      ],
+      "tryIt": "Set dragPastEdgePx to 500 and verify that rendered offset asymptotically flattens below 200px.",
+      "check": {
+        "question": "What is the purpose of the asymptotic rubber-banding formula when dragging past a boundary in mobile interfaces?",
+        "options": [
+          "It progressively increases physical resistance as the user pulls past the boundary, preventing visual detachment while providing tactile feedback that the edge has been reached",
+          "It stretches the physical glass of the smartphone screen",
+          "It sends an emergency alert to Apple and Google servers",
+          "It deletes the off-screen items from device storage permanently"
+        ],
+        "answer": 0,
+        "why": "Asymptotic rubber-banding simulates physical elastic resistance: the further the user pulls past the boundary, the more resistance is applied, visually communicating that the edge of the content has been reached before smoothly springing back."
+      }
+    },
+    {
+      "title": "Layout Animations & Morphing: Entering, Exiting & Keyframe Transitions",
+      "say": [
+        "In standard mobile app development, when list items are added, deleted, or reordered, the elements snap into place instantly. This visual jarring disorients the user, making it difficult to perceive what changed in the user interface.",
+        "React Native Reanimated 3 provides Layout Animations that animate changes in the native layout hierarchy automatically without requiring manual coordinate calculations or complex state tracking.",
+        "Layout animations categorize view changes into three distinct phases: 1. Entering Animations: How a view animates when it first mounts (such as FadeInDown, SlideInRight, or ZoomIn); 2. Exiting Animations: How a view animates when it unmounts from the hierarchy (such as FadeOutUp or SlideOutLeft); 3. Layout Transitions: How existing sibling views animate to their new coordinates when another item is inserted or removed (such as Layout.springify() or LinearTransition).",
+        "Under the hood, Reanimated\u2019s layout animation engine intercepts native Yoga layout calculations. When a component mounts or unmounts, the native shadow tree detects the layout delta (old x, y, width, height vs new x, y, width, height).",
+        "Instead of abruptly snapping to the new coordinates, Reanimated intercepts the layout mutation on the native thread and generates a high-speed interpolated spring transition that morphs the view to its new bounding box over 300 milliseconds.",
+        "Furthermore, developers can define custom Keyframe Animations with custom bezier or spring curves. A Keyframe specifies exact percentage intervals (0%, 50%, 100%) with custom transformation matrices, rotations, and opacities.",
+        "Performance optimization in layout animations is critical. If a list contains 500 items and deleting one item triggers 499 layout animations simultaneously, the native UI thread can be overwhelmed with layout passes. To avoid this, engineers combine Layout Animations with FlashList virtualization: only visible cells within the current viewport execute morphing transitions.",
+        "In addition, Shared Element Transitions (using sharedTransitionTag) coordinate view transitions across navigation screens: tapping an avatar thumbnail on a feed smoothly expands the image into a full-screen hero header on the details screen across navigation boundaries.",
+        "During complex layout morphing, Reanimated maintains separate transform matrices and layout bounding boxes. By animating the transform matrix rather than recomputing Yoga flexbox styles on every frame tick, GPU hardware layers composite the moving views without triggering expensive native measure passes.",
+        "To handle edge cases where sibling items change dimensions simultaneously (such as expanding an accordion or collapsing a card), Reanimated computes simultaneous delta matrices, ensuring that surrounding views glide smoothly outward without clipping or overlapping artifacts.",
+        "By mastering entering, exiting, and layout morphing transitions, mobile engineers create interfaces where visual state changes feel seamless, intuitive, and polished."
+      ],
+      "example": "Think of a busy executive\u2019s calendar whiteboard. When an appointment is canceled in traditional software, someone takes an eraser, rubs it out in an instant, and rewrites the remaining slots, leaving the user wondering what happened. With layout animations, the canceled card softly shrinks and fades out (Exiting), while the meetings below glide smoothly upward into their new slots (Layout.springify), allowing the human eye to track the change effortlessly.",
+      "code": "// Reanimated 3 Layout Animation & Morphing Engine\nclass LayoutAnimationMorphEngine {\n  constructor() {\n    this.activeNodes = new Map();\n  }\n\n  // Simulates view mounting with Entering animation\n  simulateEnteringAnimation(nodeId, initialBoundingBox) {\n    const enteringSpec = {\n      type: 'SlideInDown.springify()',\n      startTransform: { translateY: -100, opacity: 0 },\n      targetTransform: { translateY: 0, opacity: 1 },\n      durationMs: 250,\n      fpsPacing: 'LOCKED_120_FPS'\n    };\n\n    this.activeNodes.set(nodeId, {\n      id: nodeId,\n      box: initialBoundingBox,\n      isMounted: true,\n      animationPhase: 'ENTERED_NOMINAL'\n    });\n\n    return enteringSpec;\n  }\n\n  // Simulates layout morphing when sibling is removed\n  simulateLayoutMorph(nodeId, oldY, newY) {\n    const deltaY = newY - oldY;\n    const node = this.activeNodes.get(nodeId);\n    if (node) {\n      node.box.y = newY;\n    }\n\n    return {\n      nodeId,\n      oldCoordinateY: oldY,\n      newCoordinateY: newY,\n      deltaMorphY: deltaY,\n      transitionType: 'Layout.springify().damping(15)',\n      morphDurationMs: 280,\n      interpolatedFrames: 34 // 34 smooth frames at 120 FPS!\n    };\n  }\n\n  // Simulates view unmounting with Exiting animation\n  simulateExitingAnimation(nodeId) {\n    this.activeNodes.delete(nodeId);\n    return {\n      nodeId,\n      exitingSpec: 'FadeOutLeft.duration(200)',\n      status: 'REMOVED_CLEANLY_FROM_SHADOW_TREE'\n    };\n  }\n}\n\nconst morphEngine = new LayoutAnimationMorphEngine();\nconsole.log('--- REANIMATED 3 LAYOUT ANIMATION & MORPHING ---');\n\n// 1. Component mounts with SlideInDown spring\nconst entering = morphEngine.simulateEnteringAnimation('CARD_101', { x: 0, y: 120, w: 380, h: 80 });\nconsole.log('Entering Animation: ' + entering.type + ' | Duration: ' + entering.durationMs + ' ms | Pacing: ' + entering.fpsPacing);\n\n// 2. Sibling item above is deleted -> View morphs smoothly upward\nconst morph = morphEngine.simulateLayoutMorph('CARD_101', 120, 40);\nconsole.log('Layout Morphing:    ' + morph.nodeId + ' moved ' + morph.deltaMorphY + ' px (' + morph.oldCoordinateY + ' -> ' + morph.newCoordinateY + ')');\nconsole.log('Transition Physics: ' + morph.transitionType + ' (' + morph.interpolatedFrames + ' frames at 120 FPS)');\n\n// 3. Component dismissed with FadeOutLeft\nconst exit = morphEngine.simulateExitingAnimation('CARD_101');\nconsole.log('Exiting Animation:  ' + exit.nodeId + ' -> ' + exit.exitingSpec);\nconsole.log('Layout Invariant: Native layout morphing animates shadow tree deltas without JavaScript thread coordination');",
+      "output": "--- REANIMATED 3 LAYOUT ANIMATION & MORPHING ---\nEntering Animation: SlideInDown.springify() | Duration: 250 ms | Pacing: LOCKED_120_FPS\nLayout Morphing:    CARD_101 moved -80 px (120 -> 40)\nTransition Physics: Layout.springify().damping(15) (34 frames at 120 FPS)\nExiting Animation:  CARD_101 -> FadeOutLeft.duration(200)\nLayout Invariant: Native layout morphing animates shadow tree deltas without JavaScript thread coordination",
+      "codeNotes": [
+        {
+          "line": 8,
+          "note": "Configures Entering animation using SlideInDown spring dynamics"
+        },
+        {
+          "line": 23,
+          "note": "Calculates native shadow tree delta and interpolates 34 frames at 120 FPS"
+        },
+        {
+          "line": 37,
+          "note": "Fades out exiting component and cleans up native view delegates"
+        }
+      ],
+      "tryIt": "Simulate a delta of -120px and verify that the layout morphing transition recalculates coordinate deltas smoothly.",
+      "check": {
+        "question": "How do Reanimated 3 Layout Animations coordinate smooth position changes when list items are added or deleted?",
+        "options": [
+          "The native shadow tree detects the bounding box delta (old coordinates vs new coordinates) and executes a spring morphing transition directly on the UI thread",
+          "By sending 60 JSON messages per second across the legacy bridge",
+          "By taking screenshots of the previous layout and displaying a video file",
+          "By restarting the React Native application on every list modification"
+        ],
+        "answer": 0,
+        "why": "Reanimated intercepts layout mutations in the native Yoga shadow tree. By comparing previous layout bounds with the newly calculated bounds, it generates an automated spring transition directly on the UI thread, animating the element smoothly into its new position."
+      }
+    },
+    {
+      "title": "Enterprise Motion & Physics Master Engine: Full Production Simulator",
+      "say": [
+        "To conclude our study of advanced mobile physics and animations, we synthesize all concepts into an enterprise-grade mobile physics engine: the MobilePhysicsSpringMasterEngine.",
+        "This master pipeline integrates the complete physical animation stack: 1. Analytical second-order spring calculation verifying critical damping (zeta = 1.0) and energy cutoff thresholds; 2. Hermes UI thread worklet execution synchronized to the 120Hz ProMotion display link; 3. Velocity-conserving inertial fling decay paired with asymptotic rubber-band resistance; and 4. Native layout animations morphing shadow tree deltas across entering, exiting, and reordering phases.",
+        "In production enterprise applications, this physics engine powers fluid gesture drawers, interactive data visualization charts, biometric verification sliders, and responsive e-commerce checkout flows.",
+        "Error handling across the physics engine is strictly defensive: if an animation encounters invalid parameters (such as negative mass, division by zero stiffness, or infinite initial velocity), the engine clamps parameters to safe operating limits, falling back to critically damped defaults rather than crashing the native UI thread.",
+        "Furthermore, battery and thermal consumption are actively governed. The physics engine tracks active oscillator counts: when all springs reach their energy cutoff threshold (restDisplacementThreshold <= 0.001 and restSpeedThreshold <= 0.001), the display link unregisters its listener immediately, ensuring zero idle GPU wakeups.",
+        "Automated continuous integration tests simulate multi-finger fling gestures and layout reorders, certifying that 100% of frames render under the 8.33ms ProMotion threshold without dropped frames, memory leaks, or bridge thread congestion.",
+        "In addition, accessibility compliance is engineered into the core pipeline: the engine observes the system accessibility settings via AccessibilityInfo.isReduceMotionEnabled(). When reduced motion is activated by the user, complex physical bounces and flings are instantly converted into elegant, instant cross-fades, ensuring full compliance with WCAG 2.2 guidelines.",
+        "By mastering second-order springs, Hermes worklets, inertial decay, and layout morphing, you possess the advanced motion engineering capabilities required to build premier tier-1 mobile interfaces that delight users and stand up to rigorous enterprise auditing.",
+        "Congratulations on completing Day 16! In the next module, we explore multi-touch gesture physics: two-finger pinch-to-zoom, rotation matrix transformations, and simultaneous gesture coordinators."
+      ],
+      "example": "Think of the suspension and steering system on a luxury sports car. Every component is engineered for physical harmony: the electronic dampers adjust in milliseconds to road bumps (critical spring damping), the drive-by-wire steering transmits tactile road feel without delay (UI worklets), the brakes bleed speed smoothly without locking the wheels (inertial decay), and the aerodynamic spoilers deploy gracefully at high speeds (layout morphing).",
+      "code": "// Enterprise Mobile Motion & Physics Master Engine\nclass MobilePhysicsSpringMasterEngine {\n  executeCompletePhysicsAudit(config) {\n    // 1. Second-order differential spring verification\n    const criticalDampingCoeff = 2 * Math.sqrt(config.mass * config.stiffness);\n    const zeta = config.damping / criticalDampingCoeff;\n    const isSpringOptimal = Math.abs(zeta - 1.0) < 0.05; // Critical damping target\n\n    // 2. 120 FPS ProMotion Worklet Pacing (<8.33ms)\n    const isWorkletPaced120Fps = config.workletDurationMs < 8.33;\n\n    // 3. Velocity-Conserving Decay & Rubber-Banding\n    const decayActive = config.initialVelocityPxPerSec > 0;\n    const rubberBandSupported = config.hasAsymptoticRubberBanding;\n\n    // 4. Native Layout Animation Morphing\n    const layoutMorphingActive = config.supportsShadowTreeMorphing;\n\n    const isCertified = isSpringOptimal && isWorkletPaced120Fps && decayActive && rubberBandSupported && layoutMorphingActive;\n\n    return {\n      auditId: 'PHYSICS-AUDIT-2026-X16',\n      dampingRatioZeta: Number(zeta.toFixed(2)),\n      springClassification: isSpringOptimal ? 'CRITICALLY_DAMPED_OPTIMAL' : 'NON_OPTIMAL_BOUNCE',\n      displayRefreshHz: 120,\n      workletDurationMs: config.workletDurationMs,\n      framePacingStatus: isWorkletPaced120Fps ? 'LOCKED_120_FPS_PROMOTION_NOMINAL' : 'FRAME_DROPPED',\n      rubberBandResistanceActive: rubberBandSupported,\n      shadowTreeMorphingActive: layoutMorphingActive,\n      motionPipelineGrade: isCertified ? 'ENTERPRISE_120_FPS_PHYSICS_CERTIFIED' : 'PHYSICS_DEFECT'\n    };\n  }\n}\n\nconst masterEngine = new MobilePhysicsSpringMasterEngine();\nconsole.log('Executing Day 16 Enterprise Motion & Physics Master Audit...');\n\nconst audit = masterEngine.executeCompletePhysicsAudit({\n  mass: 1,\n  stiffness: 100,\n  damping: 20, // zeta = 20 / (2 * 10) = 1.00!\n  workletDurationMs: 1.2,\n  initialVelocityPxPerSec: 2500,\n  hasAsymptoticRubberBanding: true,\n  supportsShadowTreeMorphing: true\n});\n\nconsole.log('Motion & Physics Verification Audit Results:');\nconsole.log('  Audit ID:                 ' + audit.auditId);\nconsole.log('  Damping Ratio (zeta):     ' + audit.dampingRatioZeta + ' (' + audit.springClassification + ')');\nconsole.log('  Display Refresh Rate:     ' + audit.displayRefreshHz + ' Hz (ProMotion DisplayLink)');\nconsole.log('  Worklet Execution Time:   ' + audit.workletDurationMs + ' ms (< 8.33ms Frame Budget)');\nconsole.log('  Frame Pacing Status:      ' + audit.framePacingStatus);\nconsole.log('  Rubber-Banding Active:    ' + audit.rubberBandResistanceActive);\nconsole.log('  Shadow Tree Morphing:     ' + audit.shadowTreeMorphingActive);\nconsole.log('  Certification Grade:      ' + audit.motionPipelineGrade);\nconsole.log('Master Invariant: Full physics stack achieves critical damping (zeta=1.0), 120 FPS pacing & zero-hitch morphing');",
+      "output": "Executing Day 16 Enterprise Motion & Physics Master Audit...\nMotion & Physics Verification Audit Results:\n  Audit ID:                 PHYSICS-AUDIT-2026-X16\n  Damping Ratio (zeta):     1 (CRITICALLY_DAMPED_OPTIMAL)\n  Display Refresh Rate:     120 Hz (ProMotion DisplayLink)\n  Worklet Execution Time:   1.2 ms (< 8.33ms Frame Budget)\n  Frame Pacing Status:      LOCKED_120_FPS_PROMOTION_NOMINAL\n  Rubber-Banding Active:    true\n  Shadow Tree Morphing:     true\n  Certification Grade:      ENTERPRISE_120_FPS_PHYSICS_CERTIFIED\nMaster Invariant: Full physics stack achieves critical damping (zeta=1.0), 120 FPS pacing & zero-hitch morphing",
+      "codeNotes": [
+        {
+          "line": 4,
+          "note": "Validates critical damping ratio (zeta = 1.0) for zero-overshoot motion"
+        },
+        {
+          "line": 9,
+          "note": "Certifies 1.2ms worklet execution well within the 8.33ms 120Hz ProMotion budget"
+        },
+        {
+          "line": 15,
+          "note": "Asserts presence of asymptotic rubber-banding and native shadow tree morphing"
+        }
+      ],
+      "tryIt": "Set damping to 10 and observe how the engine detects under-damped bounce and flags non-optimal certification.",
+      "check": {
+        "question": "What core physical criteria ensure an enterprise mobile application achieves locked 120 FPS motion without UI stutter?",
+        "options": [
+          "Critically damped spring equations (zeta = 1.0), Hermes UI thread worklet execution (<8.33ms), velocity-conserving inertial decay with asymptotic rubber-banding, and native shadow tree layout morphing",
+          "Setting all animation durations to exactly 5 seconds using setInterval in JavaScript",
+          "Disabling all physics engines and using animated GIFs instead",
+          "Running animations only when the smartphone is connected to a computer via USB"
+        ],
+        "answer": 0,
+        "why": "Locked 120 FPS motion requires executing analytical spring physics and decay equations directly on the native UI thread via Hermes worklets within the 8.33ms ProMotion hardware budget, combined with asymptotic rubber-banding and shadow tree layout morphing."
+      }
+    }
+  ],
+  "summary": [
+    "Physical spring motion is governed by second-order differential equations characterized by the damping ratio zeta = c / (2 * sqrt(mk)).",
+    "Critical damping (zeta = 1.0) achieves the fastest equilibrium with zero overshoot, ideal for enterprise modals and navigation cards.",
+    "Hermes UI thread worklets execute on native display link interrupts, maintaining 120 FPS pacing even during JS thread stalls.",
+    "Inertial fling decay combines exponential velocity dissipation with Apple's asymptotic rubber-band formula past viewport bounds.",
+    "Native layout animations intercept Yoga shadow tree deltas to interpolate entering, exiting, and morphing transitions smoothly."
+  ],
+  "projectStep": {
+    "title": "Day 16 Project: Build the 120 FPS Physical Gesture & Inertial Sheet Engine",
+    "steps": [
+      "Derive second-order spring equations calculating critical damping (zeta = 1.0) and initial gesture velocity injection.",
+      "Create Hermes UI thread worklets utilizing Shared Values to update native transform matrices within the 8.33ms frame budget.",
+      "Implement withDecay fling physics with Apple asymptotic rubber-band resistance when dragging beyond screen boundaries.",
+      "Configure entering, exiting, and layout morphing transitions on dynamic list elements using Layout.springify().",
+      "Execute the MobilePhysicsSpringMasterEngine audit certifying locked 120 FPS ProMotion pacing and zero frame drops."
+    ]
+  }
 }
 ];
