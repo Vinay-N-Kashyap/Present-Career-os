@@ -1,0 +1,1139 @@
+{
+  "schemaVersion": 1,
+  "prefix": "fullstack-js",
+  "day": 12,
+  "promptSha": "4f83b4f792481e8a8a687735568fbd3386cb78918ba968c4cb04f241d825ca7c",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Pillar 1: Prisma Schema Declarations, Referential Integrity & Cascade Rules",
+      "codeHash": "934bcded745c53982729d13c35d80cc106ae4e28464e81b1a377972f1f653c38",
+      "spec": {
+        "template": "flow",
+        "title": "Pillar 1: Prisma Schema Declarations,... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Relational Schema Mutation",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Pillar 1: Prisma Schema Declarations,...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Persistence State",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingress relational model definition and initialize Pillar 1: Prisma Schema Declarations,....",
+            "values": {
+              "in": "Day 12 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute query compilation and schema migration in Pillar 1: Prisma Schema Declarations,....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluate transactional atomicity and connection pooling rules.",
+            "values": {
+              "in": "Validated",
+              "proc": "Action Committed",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end relational persistence confirmed for Pillar 1: Prisma Schema Declarations,....",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Pillar 1: Prisma Schema Declarations,... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Relational Schema Mutation",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Pillar 1: Prisma Schema Declarations,...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Persistence State",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingress relational model definition and initialize Pillar 1: Prisma Schema Declarations,....",
+            "values": {
+              "in": "Day 12 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute query compilation and schema migration in Pillar 1: Prisma Schema Declarations,....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluate transactional atomicity and connection pooling rules.",
+            "values": {
+              "in": "Validated",
+              "proc": "Action Committed",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end relational persistence confirmed for Pillar 1: Prisma Schema Declarations,....",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Pillar 2: Declarative Migrations, Drift Detection & The Shadow Database",
+      "codeHash": "d4c0cdc2b90f26a937ae31d069519c80181bb422385801de05b55e28df59206c",
+      "spec": {
+        "template": "flow",
+        "title": "Pillar 2: Declarative Migrations, Dri... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Relational Schema Mutation",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Pillar 2: Declarative Migrations, Dri...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Persistence State",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingress relational model definition and initialize Pillar 2: Declarative Migrations, Dri....",
+            "values": {
+              "in": "Day 12 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute query compilation and schema migration in Pillar 2: Declarative Migrations, Dri....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluate transactional atomicity and connection pooling rules.",
+            "values": {
+              "in": "Validated",
+              "proc": "Action Committed",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end relational persistence confirmed for Pillar 2: Declarative Migrations, Dri....",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Pillar 2: Declarative Migrations, Dri... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Relational Schema Mutation",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Pillar 2: Declarative Migrations, Dri...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Persistence State",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingress relational model definition and initialize Pillar 2: Declarative Migrations, Dri....",
+            "values": {
+              "in": "Day 12 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute query compilation and schema migration in Pillar 2: Declarative Migrations, Dri....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluate transactional atomicity and connection pooling rules.",
+            "values": {
+              "in": "Validated",
+              "proc": "Action Committed",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end relational persistence confirmed for Pillar 2: Declarative Migrations, Dri....",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Pillar 3: Type-Safe Query Execution: Projections, Relational Joins & In-Memory Grouping",
+      "codeHash": "289a50c4a558b2b5f685afa0f6e3e9c54867b94e9fd94c90c79cdfdd52e47c3f",
+      "spec": {
+        "template": "flow",
+        "title": "Pillar 3: Type-Safe Query Execution: ... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Relational Schema Mutation",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Pillar 3: Type-Safe Query Execution: ...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Persistence State",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingress relational model definition and initialize Pillar 3: Type-Safe Query Execution: ....",
+            "values": {
+              "in": "Day 12 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute query compilation and schema migration in Pillar 3: Type-Safe Query Execution: ....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluate transactional atomicity and connection pooling rules.",
+            "values": {
+              "in": "Validated",
+              "proc": "Action Committed",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end relational persistence confirmed for Pillar 3: Type-Safe Query Execution: ....",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Pillar 3: Type-Safe Query Execution: ... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Relational Schema Mutation",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Pillar 3: Type-Safe Query Execution: ...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Persistence State",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingress relational model definition and initialize Pillar 3: Type-Safe Query Execution: ....",
+            "values": {
+              "in": "Day 12 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute query compilation and schema migration in Pillar 3: Type-Safe Query Execution: ....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluate transactional atomicity and connection pooling rules.",
+            "values": {
+              "in": "Validated",
+              "proc": "Action Committed",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end relational persistence confirmed for Pillar 3: Type-Safe Query Execution: ....",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Pillar 4: Transactional Workflows: Interactive $transaction & Optimistic Concurrency Control",
+      "codeHash": "7d749316b96ef2f4a45b9cdb79f7f91b43b470e8cd795df90e0a62248723dccf",
+      "spec": {
+        "template": "flow",
+        "title": "Pillar 4: Transactional Workflows: In... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Relational Schema Mutation",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Pillar 4: Transactional Workflows: In...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Persistence State",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingress relational model definition and initialize Pillar 4: Transactional Workflows: In....",
+            "values": {
+              "in": "Day 12 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute query compilation and schema migration in Pillar 4: Transactional Workflows: In....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluate transactional atomicity and connection pooling rules.",
+            "values": {
+              "in": "Validated",
+              "proc": "Action Committed",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end relational persistence confirmed for Pillar 4: Transactional Workflows: In....",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Pillar 4: Transactional Workflows: In... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Relational Schema Mutation",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Pillar 4: Transactional Workflows: In...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Persistence State",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingress relational model definition and initialize Pillar 4: Transactional Workflows: In....",
+            "values": {
+              "in": "Day 12 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute query compilation and schema migration in Pillar 4: Transactional Workflows: In....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluate transactional atomicity and connection pooling rules.",
+            "values": {
+              "in": "Validated",
+              "proc": "Action Committed",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end relational persistence confirmed for Pillar 4: Transactional Workflows: In....",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Pillar 5: Serverless Connection Pooling, PgBouncer & Prisma Accelerate / Pulse Architecture",
+      "codeHash": "eb54ea102e30280c61f592b044b1bac0bea8d179dad69aa08f8e1a73d62d8000",
+      "spec": {
+        "template": "flow",
+        "title": "Pillar 5: Serverless Connection Pooli... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Relational Schema Mutation",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Pillar 5: Serverless Connection Pooli...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Persistence State",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingress relational model definition and initialize Pillar 5: Serverless Connection Pooli....",
+            "values": {
+              "in": "Day 12 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute query compilation and schema migration in Pillar 5: Serverless Connection Pooli....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluate transactional atomicity and connection pooling rules.",
+            "values": {
+              "in": "Validated",
+              "proc": "Action Committed",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end relational persistence confirmed for Pillar 5: Serverless Connection Pooli....",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Pillar 5: Serverless Connection Pooli... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Relational Schema Mutation",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Pillar 5: Serverless Connection Pooli...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Persistence State",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingress relational model definition and initialize Pillar 5: Serverless Connection Pooli....",
+            "values": {
+              "in": "Day 12 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute query compilation and schema migration in Pillar 5: Serverless Connection Pooli....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluate transactional atomicity and connection pooling rules.",
+            "values": {
+              "in": "Validated",
+              "proc": "Action Committed",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end relational persistence confirmed for Pillar 5: Serverless Connection Pooli....",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
