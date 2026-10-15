@@ -1397,6 +1397,44 @@ test('Mobile Day 30: 🏆 FINAL CAPSTONE: Sovereign Cross-Platform Mobile Applic
   assert.ok(mobileLesson30.parts[4].code?.includes('PrincipalMobileArchitectMasterEngine'));
 });
 
+test('Blockchain Day 6: Proof of Stake (PoS), Validators, Casper FFG & Slashing Conditions Verification', () => {
+  const blockchainLesson6 = getLongLesson('blockchain', 6);
+  assert.ok(blockchainLesson6, 'Blockchain Day 6 long lesson must resolve');
+  assert.equal(blockchainLesson6.day, 6);
+  assert.equal(blockchainLesson6.parts.length, 5, 'Blockchain Day 6 must contain exactly 5 parts');
+  assert.ok(blockchainLesson6.summary.length >= 4, 'Blockchain Day 6 must contain summary points');
+  assert.ok(blockchainLesson6.projectStep, 'Blockchain Day 6 must have projectStep');
+
+  const spokenMin = estimateSpokenMinutes(blockchainLesson6);
+  const totalMin = estimateLessonMinutes(blockchainLesson6);
+  assert.ok(spokenMin >= 20, 'Spoken minutes should be >= 20 (got ' + spokenMin + ')');
+  assert.ok(totalMin >= 35 && totalMin <= 40, 'Total minutes should be between 35 and 40 (got ' + totalMin + ')');
+
+  for (let i = 0; i < blockchainLesson6.parts.length; i++) {
+    const part = blockchainLesson6.parts[i];
+    assert.ok(part.title.length > 0, 'Part ' + (i + 1) + ' must have a non-empty title');
+    assert.ok(part.say.length >= 5, 'Part ' + (i + 1) + ' must have at least 5 explanation paragraphs');
+    assert.ok(part.example && part.example.length > 0, 'Part ' + (i + 1) + ' must have a real-world example');
+    assert.ok(part.code && part.code.includes('console.log('), 'Part ' + (i + 1) + ' code must print results');
+    assert.ok(part.output && part.output.length > 0, 'Part ' + (i + 1) + ' must have deterministic expected output');
+    assert.ok(part.tryIt && part.tryIt.length > 0, 'Part ' + (i + 1) + ' must have a tryIt experiment');
+
+    // Socratic Check validation
+    const check = part.check as any;
+    assert.ok(check.question.length > 10, 'Part ' + (i + 1) + ' check question must be descriptive');
+    assert.ok(check.options.length >= 4, 'Part ' + (i + 1) + ' check must have >= 4 options');
+    assert.ok(check.answer >= 0 && check.answer < check.options.length, 'Part ' + (i + 1) + ' answer must be valid');
+    assert.ok(check.why.length > 15, 'Part ' + (i + 1) + ' check explanation must be rigorous');
+  }
+
+  // Domain specifics
+  assert.ok(blockchainLesson6.parts[0].code?.includes('BeaconChainValidatorRegistry'));
+  assert.ok(blockchainLesson6.parts[1].code?.includes('CasperFinalityEngine'));
+  assert.ok(blockchainLesson6.parts[2].code?.includes('ProofOfStakeSlashingAuditor'));
+  assert.ok(blockchainLesson6.parts[3].code?.includes('ValidatorLifecycleCoordinator'));
+  assert.ok(blockchainLesson6.parts[4].code?.includes('ProofOfStakeConsensusMasterEngine'));
+});
+
 
 
 

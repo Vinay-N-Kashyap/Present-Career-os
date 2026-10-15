@@ -1,0 +1,1029 @@
+{
+  "schemaVersion": 1,
+  "prefix": "blockchain",
+  "day": 6,
+  "promptSha": "3b29c0f7721ba3e18cd987fe88fbc910245a909d3b764b73b22cf309df78129",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "PoS Consensus Architecture: 32 ETH Staking, Beacon Chain & RANDAO",
+      "codeHash": "61334e11380dbeccf0c6dbfbdbebaa9efc5a743eb2d250c20c4fd9836e9f71cf",
+      "spec": {
+        "template": "sequence",
+        "title": "PoS Consensus Architecture: 32 ETH Staking, Beacon Chain & RANDAO \u2014 On-Chain PoS Consensus Sequence",
+        "actors": [
+          "Validator Node",
+          "Beacon Chain",
+          "Casper FFG",
+          "Slashing Slurper"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Validator Node broadcasts attestation for PoS Consensus Architecture: 32 E",
+            "activeActor": "Validator Node",
+            "messages": [
+              {
+                "from": "Validator Node",
+                "to": "Beacon Chain",
+                "label": "submitAttestation(slot, targetRoot)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Beacon Chain accumulates RANDAO and updates Casper FFG checkpoint",
+            "activeActor": "Beacon Chain",
+            "messages": [
+              {
+                "from": "Validator Node",
+                "to": "Beacon Chain",
+                "label": "submitAttestation(slot, targetRoot)",
+                "tone": "ok"
+              },
+              {
+                "from": "Beacon Chain",
+                "to": "Casper FFG",
+                "label": "aggregateVotes(2/3 supermajority)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Casper FFG justifies checkpoint and asserts anti-slashing invariants",
+            "activeActor": "Casper FFG",
+            "messages": [
+              {
+                "from": "Validator Node",
+                "to": "Beacon Chain",
+                "label": "submitAttestation(slot, targetRoot)",
+                "tone": "ok"
+              },
+              {
+                "from": "Beacon Chain",
+                "to": "Casper FFG",
+                "label": "aggregateVotes(2/3 supermajority)",
+                "tone": "ok"
+              },
+              {
+                "from": "Casper FFG",
+                "to": "Slashing Slurper",
+                "label": "auditEquivocation(noDoubleVote)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Consensus engine finalizes epoch and issues validation receipt",
+            "activeActor": "Slashing Slurper",
+            "messages": [
+              {
+                "from": "Validator Node",
+                "to": "Beacon Chain",
+                "label": "submitAttestation(slot, targetRoot)",
+                "tone": "ok"
+              },
+              {
+                "from": "Beacon Chain",
+                "to": "Casper FFG",
+                "label": "aggregateVotes(2/3 supermajority)",
+                "tone": "ok"
+              },
+              {
+                "from": "Casper FFG",
+                "to": "Slashing Slurper",
+                "label": "auditEquivocation(noDoubleVote)",
+                "tone": "ok"
+              },
+              {
+                "from": "Slashing Slurper",
+                "to": "Validator Node",
+                "label": "EpochFinalized(Receipt \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "PoS Consensus Architecture: 32 ETH Staking, Beacon Chain & RANDAO \u2014 On-Chain PoS Consensus Sequence",
+        "actors": [
+          "Validator Node",
+          "Beacon Chain",
+          "Casper FFG",
+          "Slashing Slurper"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Validator Node broadcasts attestation for PoS Consensus Architecture: 32 E",
+            "activeActor": "Validator Node",
+            "messages": [
+              {
+                "from": "Validator Node",
+                "to": "Beacon Chain",
+                "label": "submitAttestation(slot, targetRoot)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Beacon Chain accumulates RANDAO and updates Casper FFG checkpoint",
+            "activeActor": "Beacon Chain",
+            "messages": [
+              {
+                "from": "Validator Node",
+                "to": "Beacon Chain",
+                "label": "submitAttestation(slot, targetRoot)",
+                "tone": "ok"
+              },
+              {
+                "from": "Beacon Chain",
+                "to": "Casper FFG",
+                "label": "aggregateVotes(2/3 supermajority)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Casper FFG justifies checkpoint and asserts anti-slashing invariants",
+            "activeActor": "Casper FFG",
+            "messages": [
+              {
+                "from": "Validator Node",
+                "to": "Beacon Chain",
+                "label": "submitAttestation(slot, targetRoot)",
+                "tone": "ok"
+              },
+              {
+                "from": "Beacon Chain",
+                "to": "Casper FFG",
+                "label": "aggregateVotes(2/3 supermajority)",
+                "tone": "ok"
+              },
+              {
+                "from": "Casper FFG",
+                "to": "Slashing Slurper",
+                "label": "auditEquivocation(noDoubleVote)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Consensus engine finalizes epoch and issues validation receipt",
+            "activeActor": "Slashing Slurper",
+            "messages": [
+              {
+                "from": "Validator Node",
+                "to": "Beacon Chain",
+                "label": "submitAttestation(slot, targetRoot)",
+                "tone": "ok"
+              },
+              {
+                "from": "Beacon Chain",
+                "to": "Casper FFG",
+                "label": "aggregateVotes(2/3 supermajority)",
+                "tone": "ok"
+              },
+              {
+                "from": "Casper FFG",
+                "to": "Slashing Slurper",
+                "label": "auditEquivocation(noDoubleVote)",
+                "tone": "ok"
+              },
+              {
+                "from": "Slashing Slurper",
+                "to": "Validator Node",
+                "label": "EpochFinalized(Receipt \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Casper FFG & LMD GHOST: Slots, Epochs & Supermajority Finality",
+      "codeHash": "08f5323ad02cb2c3df06bd8f063dae2106d3e24ca0fb8cab6dab71d1c5993bac",
+      "spec": {
+        "template": "sequence",
+        "title": "Casper FFG & LMD GHOST: Slots, Epochs & Supermajority Finality \u2014 On-Chain PoS Consensus Sequence",
+        "actors": [
+          "Validator Node",
+          "Beacon Chain",
+          "Casper FFG",
+          "Slashing Slurper"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Validator Node broadcasts attestation for Casper FFG & LMD GHOST: Slots, E",
+            "activeActor": "Validator Node",
+            "messages": [
+              {
+                "from": "Validator Node",
+                "to": "Beacon Chain",
+                "label": "submitAttestation(slot, targetRoot)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Beacon Chain accumulates RANDAO and updates Casper FFG checkpoint",
+            "activeActor": "Beacon Chain",
+            "messages": [
+              {
+                "from": "Validator Node",
+                "to": "Beacon Chain",
+                "label": "submitAttestation(slot, targetRoot)",
+                "tone": "ok"
+              },
+              {
+                "from": "Beacon Chain",
+                "to": "Casper FFG",
+                "label": "aggregateVotes(2/3 supermajority)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Casper FFG justifies checkpoint and asserts anti-slashing invariants",
+            "activeActor": "Casper FFG",
+            "messages": [
+              {
+                "from": "Validator Node",
+                "to": "Beacon Chain",
+                "label": "submitAttestation(slot, targetRoot)",
+                "tone": "ok"
+              },
+              {
+                "from": "Beacon Chain",
+                "to": "Casper FFG",
+                "label": "aggregateVotes(2/3 supermajority)",
+                "tone": "ok"
+              },
+              {
+                "from": "Casper FFG",
+                "to": "Slashing Slurper",
+                "label": "auditEquivocation(noDoubleVote)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Consensus engine finalizes epoch and issues validation receipt",
+            "activeActor": "Slashing Slurper",
+            "messages": [
+              {
+                "from": "Validator Node",
+                "to": "Beacon Chain",
+                "label": "submitAttestation(slot, targetRoot)",
+                "tone": "ok"
+              },
+              {
+                "from": "Beacon Chain",
+                "to": "Casper FFG",
+                "label": "aggregateVotes(2/3 supermajority)",
+                "tone": "ok"
+              },
+              {
+                "from": "Casper FFG",
+                "to": "Slashing Slurper",
+                "label": "auditEquivocation(noDoubleVote)",
+                "tone": "ok"
+              },
+              {
+                "from": "Slashing Slurper",
+                "to": "Validator Node",
+                "label": "EpochFinalized(Receipt \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Casper FFG & LMD GHOST: Slots, Epochs & Supermajority Finality \u2014 On-Chain PoS Consensus Sequence",
+        "actors": [
+          "Validator Node",
+          "Beacon Chain",
+          "Casper FFG",
+          "Slashing Slurper"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Validator Node broadcasts attestation for Casper FFG & LMD GHOST: Slots, E",
+            "activeActor": "Validator Node",
+            "messages": [
+              {
+                "from": "Validator Node",
+                "to": "Beacon Chain",
+                "label": "submitAttestation(slot, targetRoot)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Beacon Chain accumulates RANDAO and updates Casper FFG checkpoint",
+            "activeActor": "Beacon Chain",
+            "messages": [
+              {
+                "from": "Validator Node",
+                "to": "Beacon Chain",
+                "label": "submitAttestation(slot, targetRoot)",
+                "tone": "ok"
+              },
+              {
+                "from": "Beacon Chain",
+                "to": "Casper FFG",
+                "label": "aggregateVotes(2/3 supermajority)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Casper FFG justifies checkpoint and asserts anti-slashing invariants",
+            "activeActor": "Casper FFG",
+            "messages": [
+              {
+                "from": "Validator Node",
+                "to": "Beacon Chain",
+                "label": "submitAttestation(slot, targetRoot)",
+                "tone": "ok"
+              },
+              {
+                "from": "Beacon Chain",
+                "to": "Casper FFG",
+                "label": "aggregateVotes(2/3 supermajority)",
+                "tone": "ok"
+              },
+              {
+                "from": "Casper FFG",
+                "to": "Slashing Slurper",
+                "label": "auditEquivocation(noDoubleVote)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Consensus engine finalizes epoch and issues validation receipt",
+            "activeActor": "Slashing Slurper",
+            "messages": [
+              {
+                "from": "Validator Node",
+                "to": "Beacon Chain",
+                "label": "submitAttestation(slot, targetRoot)",
+                "tone": "ok"
+              },
+              {
+                "from": "Beacon Chain",
+                "to": "Casper FFG",
+                "label": "aggregateVotes(2/3 supermajority)",
+                "tone": "ok"
+              },
+              {
+                "from": "Casper FFG",
+                "to": "Slashing Slurper",
+                "label": "auditEquivocation(noDoubleVote)",
+                "tone": "ok"
+              },
+              {
+                "from": "Slashing Slurper",
+                "to": "Validator Node",
+                "label": "EpochFinalized(Receipt \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Slashing Conditions & Provable Cryptographic Equivocation",
+      "codeHash": "f7405783291e2c2b6293e96480a20c2d610ef87cec160e64c06ae606f69c3fd3",
+      "spec": {
+        "template": "sequence",
+        "title": "Slashing Conditions & Provable Cryptographic Equivocation \u2014 On-Chain PoS Consensus Sequence",
+        "actors": [
+          "Validator Node",
+          "Beacon Chain",
+          "Casper FFG",
+          "Slashing Slurper"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Validator Node broadcasts attestation for Slashing Conditions & Provable C",
+            "activeActor": "Validator Node",
+            "messages": [
+              {
+                "from": "Validator Node",
+                "to": "Beacon Chain",
+                "label": "submitAttestation(slot, targetRoot)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Beacon Chain accumulates RANDAO and updates Casper FFG checkpoint",
+            "activeActor": "Beacon Chain",
+            "messages": [
+              {
+                "from": "Validator Node",
+                "to": "Beacon Chain",
+                "label": "submitAttestation(slot, targetRoot)",
+                "tone": "ok"
+              },
+              {
+                "from": "Beacon Chain",
+                "to": "Casper FFG",
+                "label": "aggregateVotes(2/3 supermajority)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Casper FFG justifies checkpoint and asserts anti-slashing invariants",
+            "activeActor": "Casper FFG",
+            "messages": [
+              {
+                "from": "Validator Node",
+                "to": "Beacon Chain",
+                "label": "submitAttestation(slot, targetRoot)",
+                "tone": "ok"
+              },
+              {
+                "from": "Beacon Chain",
+                "to": "Casper FFG",
+                "label": "aggregateVotes(2/3 supermajority)",
+                "tone": "ok"
+              },
+              {
+                "from": "Casper FFG",
+                "to": "Slashing Slurper",
+                "label": "auditEquivocation(noDoubleVote)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Consensus engine finalizes epoch and issues validation receipt",
+            "activeActor": "Slashing Slurper",
+            "messages": [
+              {
+                "from": "Validator Node",
+                "to": "Beacon Chain",
+                "label": "submitAttestation(slot, targetRoot)",
+                "tone": "ok"
+              },
+              {
+                "from": "Beacon Chain",
+                "to": "Casper FFG",
+                "label": "aggregateVotes(2/3 supermajority)",
+                "tone": "ok"
+              },
+              {
+                "from": "Casper FFG",
+                "to": "Slashing Slurper",
+                "label": "auditEquivocation(noDoubleVote)",
+                "tone": "ok"
+              },
+              {
+                "from": "Slashing Slurper",
+                "to": "Validator Node",
+                "label": "EpochFinalized(Receipt \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Slashing Conditions & Provable Cryptographic Equivocation \u2014 On-Chain PoS Consensus Sequence",
+        "actors": [
+          "Validator Node",
+          "Beacon Chain",
+          "Casper FFG",
+          "Slashing Slurper"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Validator Node broadcasts attestation for Slashing Conditions & Provable C",
+            "activeActor": "Validator Node",
+            "messages": [
+              {
+                "from": "Validator Node",
+                "to": "Beacon Chain",
+                "label": "submitAttestation(slot, targetRoot)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Beacon Chain accumulates RANDAO and updates Casper FFG checkpoint",
+            "activeActor": "Beacon Chain",
+            "messages": [
+              {
+                "from": "Validator Node",
+                "to": "Beacon Chain",
+                "label": "submitAttestation(slot, targetRoot)",
+                "tone": "ok"
+              },
+              {
+                "from": "Beacon Chain",
+                "to": "Casper FFG",
+                "label": "aggregateVotes(2/3 supermajority)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Casper FFG justifies checkpoint and asserts anti-slashing invariants",
+            "activeActor": "Casper FFG",
+            "messages": [
+              {
+                "from": "Validator Node",
+                "to": "Beacon Chain",
+                "label": "submitAttestation(slot, targetRoot)",
+                "tone": "ok"
+              },
+              {
+                "from": "Beacon Chain",
+                "to": "Casper FFG",
+                "label": "aggregateVotes(2/3 supermajority)",
+                "tone": "ok"
+              },
+              {
+                "from": "Casper FFG",
+                "to": "Slashing Slurper",
+                "label": "auditEquivocation(noDoubleVote)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Consensus engine finalizes epoch and issues validation receipt",
+            "activeActor": "Slashing Slurper",
+            "messages": [
+              {
+                "from": "Validator Node",
+                "to": "Beacon Chain",
+                "label": "submitAttestation(slot, targetRoot)",
+                "tone": "ok"
+              },
+              {
+                "from": "Beacon Chain",
+                "to": "Casper FFG",
+                "label": "aggregateVotes(2/3 supermajority)",
+                "tone": "ok"
+              },
+              {
+                "from": "Casper FFG",
+                "to": "Slashing Slurper",
+                "label": "auditEquivocation(noDoubleVote)",
+                "tone": "ok"
+              },
+              {
+                "from": "Slashing Slurper",
+                "to": "Validator Node",
+                "label": "EpochFinalized(Receipt \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Validator Lifecycle: Activation Queue, Inactivity Leaks & Voluntary Exit",
+      "codeHash": "7bec95609b93d49111791215f0609b22d6b1f1737ff3e21b3f42fad7e973880b",
+      "spec": {
+        "template": "sequence",
+        "title": "Validator Lifecycle: Activation Queue, Inactivity Leaks & Voluntary Exit \u2014 On-Chain PoS Consensus Sequence",
+        "actors": [
+          "Validator Node",
+          "Beacon Chain",
+          "Casper FFG",
+          "Slashing Slurper"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Validator Node broadcasts attestation for Validator Lifecycle: Activation ",
+            "activeActor": "Validator Node",
+            "messages": [
+              {
+                "from": "Validator Node",
+                "to": "Beacon Chain",
+                "label": "submitAttestation(slot, targetRoot)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Beacon Chain accumulates RANDAO and updates Casper FFG checkpoint",
+            "activeActor": "Beacon Chain",
+            "messages": [
+              {
+                "from": "Validator Node",
+                "to": "Beacon Chain",
+                "label": "submitAttestation(slot, targetRoot)",
+                "tone": "ok"
+              },
+              {
+                "from": "Beacon Chain",
+                "to": "Casper FFG",
+                "label": "aggregateVotes(2/3 supermajority)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Casper FFG justifies checkpoint and asserts anti-slashing invariants",
+            "activeActor": "Casper FFG",
+            "messages": [
+              {
+                "from": "Validator Node",
+                "to": "Beacon Chain",
+                "label": "submitAttestation(slot, targetRoot)",
+                "tone": "ok"
+              },
+              {
+                "from": "Beacon Chain",
+                "to": "Casper FFG",
+                "label": "aggregateVotes(2/3 supermajority)",
+                "tone": "ok"
+              },
+              {
+                "from": "Casper FFG",
+                "to": "Slashing Slurper",
+                "label": "auditEquivocation(noDoubleVote)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Consensus engine finalizes epoch and issues validation receipt",
+            "activeActor": "Slashing Slurper",
+            "messages": [
+              {
+                "from": "Validator Node",
+                "to": "Beacon Chain",
+                "label": "submitAttestation(slot, targetRoot)",
+                "tone": "ok"
+              },
+              {
+                "from": "Beacon Chain",
+                "to": "Casper FFG",
+                "label": "aggregateVotes(2/3 supermajority)",
+                "tone": "ok"
+              },
+              {
+                "from": "Casper FFG",
+                "to": "Slashing Slurper",
+                "label": "auditEquivocation(noDoubleVote)",
+                "tone": "ok"
+              },
+              {
+                "from": "Slashing Slurper",
+                "to": "Validator Node",
+                "label": "EpochFinalized(Receipt \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Validator Lifecycle: Activation Queue, Inactivity Leaks & Voluntary Exit \u2014 On-Chain PoS Consensus Sequence",
+        "actors": [
+          "Validator Node",
+          "Beacon Chain",
+          "Casper FFG",
+          "Slashing Slurper"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Validator Node broadcasts attestation for Validator Lifecycle: Activation ",
+            "activeActor": "Validator Node",
+            "messages": [
+              {
+                "from": "Validator Node",
+                "to": "Beacon Chain",
+                "label": "submitAttestation(slot, targetRoot)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Beacon Chain accumulates RANDAO and updates Casper FFG checkpoint",
+            "activeActor": "Beacon Chain",
+            "messages": [
+              {
+                "from": "Validator Node",
+                "to": "Beacon Chain",
+                "label": "submitAttestation(slot, targetRoot)",
+                "tone": "ok"
+              },
+              {
+                "from": "Beacon Chain",
+                "to": "Casper FFG",
+                "label": "aggregateVotes(2/3 supermajority)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Casper FFG justifies checkpoint and asserts anti-slashing invariants",
+            "activeActor": "Casper FFG",
+            "messages": [
+              {
+                "from": "Validator Node",
+                "to": "Beacon Chain",
+                "label": "submitAttestation(slot, targetRoot)",
+                "tone": "ok"
+              },
+              {
+                "from": "Beacon Chain",
+                "to": "Casper FFG",
+                "label": "aggregateVotes(2/3 supermajority)",
+                "tone": "ok"
+              },
+              {
+                "from": "Casper FFG",
+                "to": "Slashing Slurper",
+                "label": "auditEquivocation(noDoubleVote)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Consensus engine finalizes epoch and issues validation receipt",
+            "activeActor": "Slashing Slurper",
+            "messages": [
+              {
+                "from": "Validator Node",
+                "to": "Beacon Chain",
+                "label": "submitAttestation(slot, targetRoot)",
+                "tone": "ok"
+              },
+              {
+                "from": "Beacon Chain",
+                "to": "Casper FFG",
+                "label": "aggregateVotes(2/3 supermajority)",
+                "tone": "ok"
+              },
+              {
+                "from": "Casper FFG",
+                "to": "Slashing Slurper",
+                "label": "auditEquivocation(noDoubleVote)",
+                "tone": "ok"
+              },
+              {
+                "from": "Slashing Slurper",
+                "to": "Validator Node",
+                "label": "EpochFinalized(Receipt \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Master PoS Validator Security & Consensus Health Certification Engine",
+      "codeHash": "849ddf27c3c60fe9bf78c09fd6cea4d3d45889dd6d5508060edc4bbdde9f30d6",
+      "spec": {
+        "template": "sequence",
+        "title": "Master PoS Validator Security & Consensus Health Certification Engine \u2014 On-Chain PoS Consensus Sequence",
+        "actors": [
+          "Validator Node",
+          "Beacon Chain",
+          "Casper FFG",
+          "Slashing Slurper"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Validator Node broadcasts attestation for Master PoS Validator Security & ",
+            "activeActor": "Validator Node",
+            "messages": [
+              {
+                "from": "Validator Node",
+                "to": "Beacon Chain",
+                "label": "submitAttestation(slot, targetRoot)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Beacon Chain accumulates RANDAO and updates Casper FFG checkpoint",
+            "activeActor": "Beacon Chain",
+            "messages": [
+              {
+                "from": "Validator Node",
+                "to": "Beacon Chain",
+                "label": "submitAttestation(slot, targetRoot)",
+                "tone": "ok"
+              },
+              {
+                "from": "Beacon Chain",
+                "to": "Casper FFG",
+                "label": "aggregateVotes(2/3 supermajority)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Casper FFG justifies checkpoint and asserts anti-slashing invariants",
+            "activeActor": "Casper FFG",
+            "messages": [
+              {
+                "from": "Validator Node",
+                "to": "Beacon Chain",
+                "label": "submitAttestation(slot, targetRoot)",
+                "tone": "ok"
+              },
+              {
+                "from": "Beacon Chain",
+                "to": "Casper FFG",
+                "label": "aggregateVotes(2/3 supermajority)",
+                "tone": "ok"
+              },
+              {
+                "from": "Casper FFG",
+                "to": "Slashing Slurper",
+                "label": "auditEquivocation(noDoubleVote)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Consensus engine finalizes epoch and issues validation receipt",
+            "activeActor": "Slashing Slurper",
+            "messages": [
+              {
+                "from": "Validator Node",
+                "to": "Beacon Chain",
+                "label": "submitAttestation(slot, targetRoot)",
+                "tone": "ok"
+              },
+              {
+                "from": "Beacon Chain",
+                "to": "Casper FFG",
+                "label": "aggregateVotes(2/3 supermajority)",
+                "tone": "ok"
+              },
+              {
+                "from": "Casper FFG",
+                "to": "Slashing Slurper",
+                "label": "auditEquivocation(noDoubleVote)",
+                "tone": "ok"
+              },
+              {
+                "from": "Slashing Slurper",
+                "to": "Validator Node",
+                "label": "EpochFinalized(Receipt \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Master PoS Validator Security & Consensus Health Certification Engine \u2014 On-Chain PoS Consensus Sequence",
+        "actors": [
+          "Validator Node",
+          "Beacon Chain",
+          "Casper FFG",
+          "Slashing Slurper"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Validator Node broadcasts attestation for Master PoS Validator Security & ",
+            "activeActor": "Validator Node",
+            "messages": [
+              {
+                "from": "Validator Node",
+                "to": "Beacon Chain",
+                "label": "submitAttestation(slot, targetRoot)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Beacon Chain accumulates RANDAO and updates Casper FFG checkpoint",
+            "activeActor": "Beacon Chain",
+            "messages": [
+              {
+                "from": "Validator Node",
+                "to": "Beacon Chain",
+                "label": "submitAttestation(slot, targetRoot)",
+                "tone": "ok"
+              },
+              {
+                "from": "Beacon Chain",
+                "to": "Casper FFG",
+                "label": "aggregateVotes(2/3 supermajority)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Casper FFG justifies checkpoint and asserts anti-slashing invariants",
+            "activeActor": "Casper FFG",
+            "messages": [
+              {
+                "from": "Validator Node",
+                "to": "Beacon Chain",
+                "label": "submitAttestation(slot, targetRoot)",
+                "tone": "ok"
+              },
+              {
+                "from": "Beacon Chain",
+                "to": "Casper FFG",
+                "label": "aggregateVotes(2/3 supermajority)",
+                "tone": "ok"
+              },
+              {
+                "from": "Casper FFG",
+                "to": "Slashing Slurper",
+                "label": "auditEquivocation(noDoubleVote)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Consensus engine finalizes epoch and issues validation receipt",
+            "activeActor": "Slashing Slurper",
+            "messages": [
+              {
+                "from": "Validator Node",
+                "to": "Beacon Chain",
+                "label": "submitAttestation(slot, targetRoot)",
+                "tone": "ok"
+              },
+              {
+                "from": "Beacon Chain",
+                "to": "Casper FFG",
+                "label": "aggregateVotes(2/3 supermajority)",
+                "tone": "ok"
+              },
+              {
+                "from": "Casper FFG",
+                "to": "Slashing Slurper",
+                "label": "auditEquivocation(noDoubleVote)",
+                "tone": "ok"
+              },
+              {
+                "from": "Slashing Slurper",
+                "to": "Validator Node",
+                "label": "EpochFinalized(Receipt \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
