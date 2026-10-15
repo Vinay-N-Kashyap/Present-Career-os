@@ -1,0 +1,789 @@
+{
+  "schemaVersion": 1,
+  "prefix": "blockchain",
+  "day": 13,
+  "promptSha": "9a329c0f7721ba3e18cd987fe88fbc910245a909d3b764b73b22cf309df78132",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Flash Loan Fundamentals & Atomic Transaction Lifecycle",
+      "codeHash": "da6d2c8542cfec399268666593f22c002bb09000bd6cae99e2145c53d6d66d06",
+      "spec": {
+        "template": "sequence",
+        "title": "Flash Loan Fundamentals & Atomic Transaction Lifecycle \u2014 Flash Loan Sequence",
+        "actors": [
+          "Flash Borrower",
+          "ERC3156 Lender Pool",
+          "DEX Automated Market Maker",
+          "Profit Vault"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Borrower initiates uncollateralized flash loan for Flash Loan Fundamentals & Atomic",
+            "activeActor": "Flash Borrower",
+            "messages": [
+              {
+                "from": "Flash Borrower",
+                "to": "ERC3156 Lender Pool",
+                "label": "flashLoan(receiver, token, amount)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Lender disburses capital and triggers execution callback",
+            "activeActor": "ERC3156 Lender Pool",
+            "messages": [
+              {
+                "from": "ERC3156 Lender Pool",
+                "to": "Flash Borrower",
+                "label": "onFlashLoan(initiator, token, amount, fee)",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Borrower executes cross-DEX arbitrage and captures spread",
+            "activeActor": "DEX Automated Market Maker",
+            "messages": [
+              {
+                "from": "Flash Borrower",
+                "to": "DEX Automated Market Maker",
+                "label": "swapArbitrage(amount) -> yield(profit)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Borrower repays principal + fee; lender verifies solvency invariant",
+            "activeActor": "Profit Vault",
+            "messages": [
+              {
+                "from": "Flash Borrower",
+                "to": "ERC3156 Lender Pool",
+                "label": "repay(amount + fee) [Magic Return \u2713]",
+                "tone": "ok"
+              },
+              {
+                "from": "ERC3156 Lender Pool",
+                "to": "Profit Vault",
+                "label": "transferNetProfit(surplus)",
+                "tone": "ok"
+              },
+              {
+                "from": "Profit Vault",
+                "to": "Flash Borrower",
+                "label": "FlashLoanCertified(Solvent \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Flash Loan Fundamentals & Atomic Transaction Lifecycle \u2014 Flash Loan Sequence",
+        "actors": [
+          "Flash Borrower",
+          "ERC3156 Lender Pool",
+          "DEX Automated Market Maker",
+          "Profit Vault"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Borrower initiates uncollateralized flash loan for Flash Loan Fundamentals & Atomic",
+            "activeActor": "Flash Borrower",
+            "messages": [
+              {
+                "from": "Flash Borrower",
+                "to": "ERC3156 Lender Pool",
+                "label": "flashLoan(receiver, token, amount)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Lender disburses capital and triggers execution callback",
+            "activeActor": "ERC3156 Lender Pool",
+            "messages": [
+              {
+                "from": "ERC3156 Lender Pool",
+                "to": "Flash Borrower",
+                "label": "onFlashLoan(initiator, token, amount, fee)",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Borrower executes cross-DEX arbitrage and captures spread",
+            "activeActor": "DEX Automated Market Maker",
+            "messages": [
+              {
+                "from": "Flash Borrower",
+                "to": "DEX Automated Market Maker",
+                "label": "swapArbitrage(amount) -> yield(profit)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Borrower repays principal + fee; lender verifies solvency invariant",
+            "activeActor": "Profit Vault",
+            "messages": [
+              {
+                "from": "Flash Borrower",
+                "to": "ERC3156 Lender Pool",
+                "label": "repay(amount + fee) [Magic Return \u2713]",
+                "tone": "ok"
+              },
+              {
+                "from": "ERC3156 Lender Pool",
+                "to": "Profit Vault",
+                "label": "transferNetProfit(surplus)",
+                "tone": "ok"
+              },
+              {
+                "from": "Profit Vault",
+                "to": "Flash Borrower",
+                "label": "FlashLoanCertified(Solvent \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The ERC-3156 Flash Lending Standard: Interfaces & Magic Returns",
+      "codeHash": "e0e590d43aca9a4bfd8ca48759f6f62035fe38067b8f981d66b279fc53c92146",
+      "spec": {
+        "template": "sequence",
+        "title": "The ERC-3156 Flash Lending Standard: Interfaces & Magic Returns \u2014 Flash Loan Sequence",
+        "actors": [
+          "Flash Borrower",
+          "ERC3156 Lender Pool",
+          "DEX Automated Market Maker",
+          "Profit Vault"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Borrower initiates uncollateralized flash loan for The ERC-3156 Flash Lending Stand",
+            "activeActor": "Flash Borrower",
+            "messages": [
+              {
+                "from": "Flash Borrower",
+                "to": "ERC3156 Lender Pool",
+                "label": "flashLoan(receiver, token, amount)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Lender disburses capital and triggers execution callback",
+            "activeActor": "ERC3156 Lender Pool",
+            "messages": [
+              {
+                "from": "ERC3156 Lender Pool",
+                "to": "Flash Borrower",
+                "label": "onFlashLoan(initiator, token, amount, fee)",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Borrower executes cross-DEX arbitrage and captures spread",
+            "activeActor": "DEX Automated Market Maker",
+            "messages": [
+              {
+                "from": "Flash Borrower",
+                "to": "DEX Automated Market Maker",
+                "label": "swapArbitrage(amount) -> yield(profit)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Borrower repays principal + fee; lender verifies solvency invariant",
+            "activeActor": "Profit Vault",
+            "messages": [
+              {
+                "from": "Flash Borrower",
+                "to": "ERC3156 Lender Pool",
+                "label": "repay(amount + fee) [Magic Return \u2713]",
+                "tone": "ok"
+              },
+              {
+                "from": "ERC3156 Lender Pool",
+                "to": "Profit Vault",
+                "label": "transferNetProfit(surplus)",
+                "tone": "ok"
+              },
+              {
+                "from": "Profit Vault",
+                "to": "Flash Borrower",
+                "label": "FlashLoanCertified(Solvent \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "The ERC-3156 Flash Lending Standard: Interfaces & Magic Returns \u2014 Flash Loan Sequence",
+        "actors": [
+          "Flash Borrower",
+          "ERC3156 Lender Pool",
+          "DEX Automated Market Maker",
+          "Profit Vault"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Borrower initiates uncollateralized flash loan for The ERC-3156 Flash Lending Stand",
+            "activeActor": "Flash Borrower",
+            "messages": [
+              {
+                "from": "Flash Borrower",
+                "to": "ERC3156 Lender Pool",
+                "label": "flashLoan(receiver, token, amount)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Lender disburses capital and triggers execution callback",
+            "activeActor": "ERC3156 Lender Pool",
+            "messages": [
+              {
+                "from": "ERC3156 Lender Pool",
+                "to": "Flash Borrower",
+                "label": "onFlashLoan(initiator, token, amount, fee)",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Borrower executes cross-DEX arbitrage and captures spread",
+            "activeActor": "DEX Automated Market Maker",
+            "messages": [
+              {
+                "from": "Flash Borrower",
+                "to": "DEX Automated Market Maker",
+                "label": "swapArbitrage(amount) -> yield(profit)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Borrower repays principal + fee; lender verifies solvency invariant",
+            "activeActor": "Profit Vault",
+            "messages": [
+              {
+                "from": "Flash Borrower",
+                "to": "ERC3156 Lender Pool",
+                "label": "repay(amount + fee) [Magic Return \u2713]",
+                "tone": "ok"
+              },
+              {
+                "from": "ERC3156 Lender Pool",
+                "to": "Profit Vault",
+                "label": "transferNetProfit(surplus)",
+                "tone": "ok"
+              },
+              {
+                "from": "Profit Vault",
+                "to": "Flash Borrower",
+                "label": "FlashLoanCertified(Solvent \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Decentralized Arbitrage & Liquidation Engine Architecture",
+      "codeHash": "de46c07aad4aeb7937d3555473f98042019372aba0bc2977a60a1a090e9509c8",
+      "spec": {
+        "template": "sequence",
+        "title": "Decentralized Arbitrage & Liquidation Engine Architecture \u2014 Flash Loan Sequence",
+        "actors": [
+          "Flash Borrower",
+          "ERC3156 Lender Pool",
+          "DEX Automated Market Maker",
+          "Profit Vault"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Borrower initiates uncollateralized flash loan for Decentralized Arbitrage & Liquid",
+            "activeActor": "Flash Borrower",
+            "messages": [
+              {
+                "from": "Flash Borrower",
+                "to": "ERC3156 Lender Pool",
+                "label": "flashLoan(receiver, token, amount)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Lender disburses capital and triggers execution callback",
+            "activeActor": "ERC3156 Lender Pool",
+            "messages": [
+              {
+                "from": "ERC3156 Lender Pool",
+                "to": "Flash Borrower",
+                "label": "onFlashLoan(initiator, token, amount, fee)",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Borrower executes cross-DEX arbitrage and captures spread",
+            "activeActor": "DEX Automated Market Maker",
+            "messages": [
+              {
+                "from": "Flash Borrower",
+                "to": "DEX Automated Market Maker",
+                "label": "swapArbitrage(amount) -> yield(profit)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Borrower repays principal + fee; lender verifies solvency invariant",
+            "activeActor": "Profit Vault",
+            "messages": [
+              {
+                "from": "Flash Borrower",
+                "to": "ERC3156 Lender Pool",
+                "label": "repay(amount + fee) [Magic Return \u2713]",
+                "tone": "ok"
+              },
+              {
+                "from": "ERC3156 Lender Pool",
+                "to": "Profit Vault",
+                "label": "transferNetProfit(surplus)",
+                "tone": "ok"
+              },
+              {
+                "from": "Profit Vault",
+                "to": "Flash Borrower",
+                "label": "FlashLoanCertified(Solvent \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Decentralized Arbitrage & Liquidation Engine Architecture \u2014 Flash Loan Sequence",
+        "actors": [
+          "Flash Borrower",
+          "ERC3156 Lender Pool",
+          "DEX Automated Market Maker",
+          "Profit Vault"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Borrower initiates uncollateralized flash loan for Decentralized Arbitrage & Liquid",
+            "activeActor": "Flash Borrower",
+            "messages": [
+              {
+                "from": "Flash Borrower",
+                "to": "ERC3156 Lender Pool",
+                "label": "flashLoan(receiver, token, amount)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Lender disburses capital and triggers execution callback",
+            "activeActor": "ERC3156 Lender Pool",
+            "messages": [
+              {
+                "from": "ERC3156 Lender Pool",
+                "to": "Flash Borrower",
+                "label": "onFlashLoan(initiator, token, amount, fee)",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Borrower executes cross-DEX arbitrage and captures spread",
+            "activeActor": "DEX Automated Market Maker",
+            "messages": [
+              {
+                "from": "Flash Borrower",
+                "to": "DEX Automated Market Maker",
+                "label": "swapArbitrage(amount) -> yield(profit)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Borrower repays principal + fee; lender verifies solvency invariant",
+            "activeActor": "Profit Vault",
+            "messages": [
+              {
+                "from": "Flash Borrower",
+                "to": "ERC3156 Lender Pool",
+                "label": "repay(amount + fee) [Magic Return \u2713]",
+                "tone": "ok"
+              },
+              {
+                "from": "ERC3156 Lender Pool",
+                "to": "Profit Vault",
+                "label": "transferNetProfit(surplus)",
+                "tone": "ok"
+              },
+              {
+                "from": "Profit Vault",
+                "to": "Flash Borrower",
+                "label": "FlashLoanCertified(Solvent \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Flash Loan Security Invariants & Attack Surfaces: Oracles, Reentrancy & Governance",
+      "codeHash": "41df4e0c1b4570ecfda480c862080ee30f29d50801b3034d5dfcc84f6817a6e4",
+      "spec": {
+        "template": "sequence",
+        "title": "Flash Loan Security Invariants & Attack Surfaces: Oracles, Reentrancy & Governance \u2014 Flash Loan Sequence",
+        "actors": [
+          "Flash Borrower",
+          "ERC3156 Lender Pool",
+          "DEX Automated Market Maker",
+          "Profit Vault"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Borrower initiates uncollateralized flash loan for Flash Loan Security Invariants &",
+            "activeActor": "Flash Borrower",
+            "messages": [
+              {
+                "from": "Flash Borrower",
+                "to": "ERC3156 Lender Pool",
+                "label": "flashLoan(receiver, token, amount)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Lender disburses capital and triggers execution callback",
+            "activeActor": "ERC3156 Lender Pool",
+            "messages": [
+              {
+                "from": "ERC3156 Lender Pool",
+                "to": "Flash Borrower",
+                "label": "onFlashLoan(initiator, token, amount, fee)",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Borrower executes cross-DEX arbitrage and captures spread",
+            "activeActor": "DEX Automated Market Maker",
+            "messages": [
+              {
+                "from": "Flash Borrower",
+                "to": "DEX Automated Market Maker",
+                "label": "swapArbitrage(amount) -> yield(profit)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Borrower repays principal + fee; lender verifies solvency invariant",
+            "activeActor": "Profit Vault",
+            "messages": [
+              {
+                "from": "Flash Borrower",
+                "to": "ERC3156 Lender Pool",
+                "label": "repay(amount + fee) [Magic Return \u2713]",
+                "tone": "ok"
+              },
+              {
+                "from": "ERC3156 Lender Pool",
+                "to": "Profit Vault",
+                "label": "transferNetProfit(surplus)",
+                "tone": "ok"
+              },
+              {
+                "from": "Profit Vault",
+                "to": "Flash Borrower",
+                "label": "FlashLoanCertified(Solvent \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Flash Loan Security Invariants & Attack Surfaces: Oracles, Reentrancy & Governance \u2014 Flash Loan Sequence",
+        "actors": [
+          "Flash Borrower",
+          "ERC3156 Lender Pool",
+          "DEX Automated Market Maker",
+          "Profit Vault"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Borrower initiates uncollateralized flash loan for Flash Loan Security Invariants &",
+            "activeActor": "Flash Borrower",
+            "messages": [
+              {
+                "from": "Flash Borrower",
+                "to": "ERC3156 Lender Pool",
+                "label": "flashLoan(receiver, token, amount)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Lender disburses capital and triggers execution callback",
+            "activeActor": "ERC3156 Lender Pool",
+            "messages": [
+              {
+                "from": "ERC3156 Lender Pool",
+                "to": "Flash Borrower",
+                "label": "onFlashLoan(initiator, token, amount, fee)",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Borrower executes cross-DEX arbitrage and captures spread",
+            "activeActor": "DEX Automated Market Maker",
+            "messages": [
+              {
+                "from": "Flash Borrower",
+                "to": "DEX Automated Market Maker",
+                "label": "swapArbitrage(amount) -> yield(profit)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Borrower repays principal + fee; lender verifies solvency invariant",
+            "activeActor": "Profit Vault",
+            "messages": [
+              {
+                "from": "Flash Borrower",
+                "to": "ERC3156 Lender Pool",
+                "label": "repay(amount + fee) [Magic Return \u2713]",
+                "tone": "ok"
+              },
+              {
+                "from": "ERC3156 Lender Pool",
+                "to": "Profit Vault",
+                "label": "transferNetProfit(surplus)",
+                "tone": "ok"
+              },
+              {
+                "from": "Profit Vault",
+                "to": "Flash Borrower",
+                "label": "FlashLoanCertified(Solvent \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Master Flash Loan & Arbitrage Execution Engine Architecture",
+      "codeHash": "d3148ebfe400cbb0b0a4d953ee461291b9c801f0f3318b20556b8cfc5f460adf",
+      "spec": {
+        "template": "sequence",
+        "title": "Master Flash Loan & Arbitrage Execution Engine Architecture \u2014 Flash Loan Sequence",
+        "actors": [
+          "Flash Borrower",
+          "ERC3156 Lender Pool",
+          "DEX Automated Market Maker",
+          "Profit Vault"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Borrower initiates uncollateralized flash loan for Master Flash Loan & Arbitrage Ex",
+            "activeActor": "Flash Borrower",
+            "messages": [
+              {
+                "from": "Flash Borrower",
+                "to": "ERC3156 Lender Pool",
+                "label": "flashLoan(receiver, token, amount)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Lender disburses capital and triggers execution callback",
+            "activeActor": "ERC3156 Lender Pool",
+            "messages": [
+              {
+                "from": "ERC3156 Lender Pool",
+                "to": "Flash Borrower",
+                "label": "onFlashLoan(initiator, token, amount, fee)",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Borrower executes cross-DEX arbitrage and captures spread",
+            "activeActor": "DEX Automated Market Maker",
+            "messages": [
+              {
+                "from": "Flash Borrower",
+                "to": "DEX Automated Market Maker",
+                "label": "swapArbitrage(amount) -> yield(profit)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Borrower repays principal + fee; lender verifies solvency invariant",
+            "activeActor": "Profit Vault",
+            "messages": [
+              {
+                "from": "Flash Borrower",
+                "to": "ERC3156 Lender Pool",
+                "label": "repay(amount + fee) [Magic Return \u2713]",
+                "tone": "ok"
+              },
+              {
+                "from": "ERC3156 Lender Pool",
+                "to": "Profit Vault",
+                "label": "transferNetProfit(surplus)",
+                "tone": "ok"
+              },
+              {
+                "from": "Profit Vault",
+                "to": "Flash Borrower",
+                "label": "FlashLoanCertified(Solvent \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Master Flash Loan & Arbitrage Execution Engine Architecture \u2014 Flash Loan Sequence",
+        "actors": [
+          "Flash Borrower",
+          "ERC3156 Lender Pool",
+          "DEX Automated Market Maker",
+          "Profit Vault"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Borrower initiates uncollateralized flash loan for Master Flash Loan & Arbitrage Ex",
+            "activeActor": "Flash Borrower",
+            "messages": [
+              {
+                "from": "Flash Borrower",
+                "to": "ERC3156 Lender Pool",
+                "label": "flashLoan(receiver, token, amount)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Lender disburses capital and triggers execution callback",
+            "activeActor": "ERC3156 Lender Pool",
+            "messages": [
+              {
+                "from": "ERC3156 Lender Pool",
+                "to": "Flash Borrower",
+                "label": "onFlashLoan(initiator, token, amount, fee)",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Borrower executes cross-DEX arbitrage and captures spread",
+            "activeActor": "DEX Automated Market Maker",
+            "messages": [
+              {
+                "from": "Flash Borrower",
+                "to": "DEX Automated Market Maker",
+                "label": "swapArbitrage(amount) -> yield(profit)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Borrower repays principal + fee; lender verifies solvency invariant",
+            "activeActor": "Profit Vault",
+            "messages": [
+              {
+                "from": "Flash Borrower",
+                "to": "ERC3156 Lender Pool",
+                "label": "repay(amount + fee) [Magic Return \u2713]",
+                "tone": "ok"
+              },
+              {
+                "from": "ERC3156 Lender Pool",
+                "to": "Profit Vault",
+                "label": "transferNetProfit(surplus)",
+                "tone": "ok"
+              },
+              {
+                "from": "Profit Vault",
+                "to": "Flash Borrower",
+                "label": "FlashLoanCertified(Solvent \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
