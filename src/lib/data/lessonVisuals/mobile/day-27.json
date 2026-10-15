@@ -1,0 +1,1079 @@
+{
+  "schemaVersion": 1,
+  "prefix": "mobile",
+  "day": 27,
+  "promptSha": "dea0f79f54abb80f4c88562b13b35bd01d9b7b92d0ed0d90b66a2d9f1002fdeb",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Unit Testing Pure Mobile Logic: Jest, Fast Mocks, Snapshot Traps & Reducer Invariants",
+      "codeHash": "904f2598e17f6da1eaae0b254999a62267becf4f420a66e4f3f3b6e0fc07562d",
+      "spec": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<MobileTestingPyramidRoot />",
+            "props": {
+              "status": "QUALITY_GATE_PASSED"
+            },
+            "children": [
+              {
+                "id": "UnitTestEngine",
+                "name": "<JestUnitTestHarness />",
+                "props": {
+                  "tier": "70_PCT_UNIT",
+                  "speed": "FAST_IN_MEMORY"
+                }
+              },
+              {
+                "id": "RntlTester",
+                "name": "<RntlComponentTester />",
+                "props": {
+                  "tier": "20_PCT_INTEGRATION",
+                  "queries": "BY_ROLE_AND_LABEL"
+                }
+              },
+              {
+                "id": "MaestroRunner",
+                "name": "<MaestroE2eOrchestrator />",
+                "props": {
+                  "tier": "10_PCT_E2E",
+                  "flow": "DECLARATIVE_YAML"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Execute fast in-memory Jest unit tests verifying pure reducer state invariants via <JestUnitTestHarness />",
+            "activeId": "UnitTestEngine",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "UnitTestEngine",
+                "name": "<JestUnitTestHarness />",
+                "props": {
+                  "coverage": "85_PCT_BRANCH_APPROVED"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Verify component interactions and accessibility roles via <RntlComponentTester />",
+            "activeId": "RntlTester",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "RntlTester",
+                "name": "<RntlComponentTester />",
+                "props": {
+                  "a11yQuery": "ROLE_AND_NAME_MATCHED"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Orchestrate declarative black-box E2E flows against release binaries via <MaestroE2eOrchestrator />",
+            "activeId": "MaestroRunner",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "MaestroRunner",
+                "name": "<MaestroE2eOrchestrator />",
+                "props": {
+                  "e2eStatus": "SMOKE_FLOW_GREEN"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Certify release candidate build through the Mobile Test Pyramid Continuous Quality Gate",
+            "activeId": "root",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<MobileTestingPyramidRoot />",
+                "props": {
+                  "releaseStatus": "APPROVED_FOR_STAGING"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<MobileTestingPyramidRoot />",
+            "props": {
+              "status": "QUALITY_GATE_PASSED"
+            },
+            "children": [
+              {
+                "id": "UnitTestEngine",
+                "name": "<JestUnitTestHarness />",
+                "props": {
+                  "tier": "70_PCT_UNIT",
+                  "speed": "FAST_IN_MEMORY"
+                }
+              },
+              {
+                "id": "RntlTester",
+                "name": "<RntlComponentTester />",
+                "props": {
+                  "tier": "20_PCT_INTEGRATION",
+                  "queries": "BY_ROLE_AND_LABEL"
+                }
+              },
+              {
+                "id": "MaestroRunner",
+                "name": "<MaestroE2eOrchestrator />",
+                "props": {
+                  "tier": "10_PCT_E2E",
+                  "flow": "DECLARATIVE_YAML"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Execute fast in-memory Jest unit tests verifying pure reducer state invariants via <JestUnitTestHarness />",
+            "activeId": "UnitTestEngine",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "UnitTestEngine",
+                "name": "<JestUnitTestHarness />",
+                "props": {
+                  "coverage": "85_PCT_BRANCH_APPROVED"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Verify component interactions and accessibility roles via <RntlComponentTester />",
+            "activeId": "RntlTester",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "RntlTester",
+                "name": "<RntlComponentTester />",
+                "props": {
+                  "a11yQuery": "ROLE_AND_NAME_MATCHED"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Orchestrate declarative black-box E2E flows against release binaries via <MaestroE2eOrchestrator />",
+            "activeId": "MaestroRunner",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "MaestroRunner",
+                "name": "<MaestroE2eOrchestrator />",
+                "props": {
+                  "e2eStatus": "SMOKE_FLOW_GREEN"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Certify release candidate build through the Mobile Test Pyramid Continuous Quality Gate",
+            "activeId": "root",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<MobileTestingPyramidRoot />",
+                "props": {
+                  "releaseStatus": "APPROVED_FOR_STAGING"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Component Integration Testing: React Native Testing Library (RNTL) & User Events",
+      "codeHash": "335a7a57ee153117d918713cdb381416675e517669c50919ce61795617627374",
+      "spec": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<MobileTestingPyramidRoot />",
+            "props": {
+              "status": "QUALITY_GATE_PASSED"
+            },
+            "children": [
+              {
+                "id": "UnitTestEngine",
+                "name": "<JestUnitTestHarness />",
+                "props": {
+                  "tier": "70_PCT_UNIT",
+                  "speed": "FAST_IN_MEMORY"
+                }
+              },
+              {
+                "id": "RntlTester",
+                "name": "<RntlComponentTester />",
+                "props": {
+                  "tier": "20_PCT_INTEGRATION",
+                  "queries": "BY_ROLE_AND_LABEL"
+                }
+              },
+              {
+                "id": "MaestroRunner",
+                "name": "<MaestroE2eOrchestrator />",
+                "props": {
+                  "tier": "10_PCT_E2E",
+                  "flow": "DECLARATIVE_YAML"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Execute fast in-memory Jest unit tests verifying pure reducer state invariants via <JestUnitTestHarness />",
+            "activeId": "UnitTestEngine",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "UnitTestEngine",
+                "name": "<JestUnitTestHarness />",
+                "props": {
+                  "coverage": "85_PCT_BRANCH_APPROVED"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Verify component interactions and accessibility roles via <RntlComponentTester />",
+            "activeId": "RntlTester",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "RntlTester",
+                "name": "<RntlComponentTester />",
+                "props": {
+                  "a11yQuery": "ROLE_AND_NAME_MATCHED"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Orchestrate declarative black-box E2E flows against release binaries via <MaestroE2eOrchestrator />",
+            "activeId": "MaestroRunner",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "MaestroRunner",
+                "name": "<MaestroE2eOrchestrator />",
+                "props": {
+                  "e2eStatus": "SMOKE_FLOW_GREEN"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Certify release candidate build through the Mobile Test Pyramid Continuous Quality Gate",
+            "activeId": "root",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<MobileTestingPyramidRoot />",
+                "props": {
+                  "releaseStatus": "APPROVED_FOR_STAGING"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<MobileTestingPyramidRoot />",
+            "props": {
+              "status": "QUALITY_GATE_PASSED"
+            },
+            "children": [
+              {
+                "id": "UnitTestEngine",
+                "name": "<JestUnitTestHarness />",
+                "props": {
+                  "tier": "70_PCT_UNIT",
+                  "speed": "FAST_IN_MEMORY"
+                }
+              },
+              {
+                "id": "RntlTester",
+                "name": "<RntlComponentTester />",
+                "props": {
+                  "tier": "20_PCT_INTEGRATION",
+                  "queries": "BY_ROLE_AND_LABEL"
+                }
+              },
+              {
+                "id": "MaestroRunner",
+                "name": "<MaestroE2eOrchestrator />",
+                "props": {
+                  "tier": "10_PCT_E2E",
+                  "flow": "DECLARATIVE_YAML"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Execute fast in-memory Jest unit tests verifying pure reducer state invariants via <JestUnitTestHarness />",
+            "activeId": "UnitTestEngine",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "UnitTestEngine",
+                "name": "<JestUnitTestHarness />",
+                "props": {
+                  "coverage": "85_PCT_BRANCH_APPROVED"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Verify component interactions and accessibility roles via <RntlComponentTester />",
+            "activeId": "RntlTester",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "RntlTester",
+                "name": "<RntlComponentTester />",
+                "props": {
+                  "a11yQuery": "ROLE_AND_NAME_MATCHED"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Orchestrate declarative black-box E2E flows against release binaries via <MaestroE2eOrchestrator />",
+            "activeId": "MaestroRunner",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "MaestroRunner",
+                "name": "<MaestroE2eOrchestrator />",
+                "props": {
+                  "e2eStatus": "SMOKE_FLOW_GREEN"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Certify release candidate build through the Mobile Test Pyramid Continuous Quality Gate",
+            "activeId": "root",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<MobileTestingPyramidRoot />",
+                "props": {
+                  "releaseStatus": "APPROVED_FOR_STAGING"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Native Module & Hardware Mocking: TurboModules, NativeEventEmitter & Async Storage Spies",
+      "codeHash": "222169088924d78c3e170235bf8ed63eeefefcc56fc5122254c81c78f1bae6ea",
+      "spec": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<MobileTestingPyramidRoot />",
+            "props": {
+              "status": "QUALITY_GATE_PASSED"
+            },
+            "children": [
+              {
+                "id": "UnitTestEngine",
+                "name": "<JestUnitTestHarness />",
+                "props": {
+                  "tier": "70_PCT_UNIT",
+                  "speed": "FAST_IN_MEMORY"
+                }
+              },
+              {
+                "id": "RntlTester",
+                "name": "<RntlComponentTester />",
+                "props": {
+                  "tier": "20_PCT_INTEGRATION",
+                  "queries": "BY_ROLE_AND_LABEL"
+                }
+              },
+              {
+                "id": "MaestroRunner",
+                "name": "<MaestroE2eOrchestrator />",
+                "props": {
+                  "tier": "10_PCT_E2E",
+                  "flow": "DECLARATIVE_YAML"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Execute fast in-memory Jest unit tests verifying pure reducer state invariants via <JestUnitTestHarness />",
+            "activeId": "UnitTestEngine",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "UnitTestEngine",
+                "name": "<JestUnitTestHarness />",
+                "props": {
+                  "coverage": "85_PCT_BRANCH_APPROVED"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Verify component interactions and accessibility roles via <RntlComponentTester />",
+            "activeId": "RntlTester",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "RntlTester",
+                "name": "<RntlComponentTester />",
+                "props": {
+                  "a11yQuery": "ROLE_AND_NAME_MATCHED"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Orchestrate declarative black-box E2E flows against release binaries via <MaestroE2eOrchestrator />",
+            "activeId": "MaestroRunner",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "MaestroRunner",
+                "name": "<MaestroE2eOrchestrator />",
+                "props": {
+                  "e2eStatus": "SMOKE_FLOW_GREEN"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Certify release candidate build through the Mobile Test Pyramid Continuous Quality Gate",
+            "activeId": "root",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<MobileTestingPyramidRoot />",
+                "props": {
+                  "releaseStatus": "APPROVED_FOR_STAGING"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<MobileTestingPyramidRoot />",
+            "props": {
+              "status": "QUALITY_GATE_PASSED"
+            },
+            "children": [
+              {
+                "id": "UnitTestEngine",
+                "name": "<JestUnitTestHarness />",
+                "props": {
+                  "tier": "70_PCT_UNIT",
+                  "speed": "FAST_IN_MEMORY"
+                }
+              },
+              {
+                "id": "RntlTester",
+                "name": "<RntlComponentTester />",
+                "props": {
+                  "tier": "20_PCT_INTEGRATION",
+                  "queries": "BY_ROLE_AND_LABEL"
+                }
+              },
+              {
+                "id": "MaestroRunner",
+                "name": "<MaestroE2eOrchestrator />",
+                "props": {
+                  "tier": "10_PCT_E2E",
+                  "flow": "DECLARATIVE_YAML"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Execute fast in-memory Jest unit tests verifying pure reducer state invariants via <JestUnitTestHarness />",
+            "activeId": "UnitTestEngine",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "UnitTestEngine",
+                "name": "<JestUnitTestHarness />",
+                "props": {
+                  "coverage": "85_PCT_BRANCH_APPROVED"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Verify component interactions and accessibility roles via <RntlComponentTester />",
+            "activeId": "RntlTester",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "RntlTester",
+                "name": "<RntlComponentTester />",
+                "props": {
+                  "a11yQuery": "ROLE_AND_NAME_MATCHED"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Orchestrate declarative black-box E2E flows against release binaries via <MaestroE2eOrchestrator />",
+            "activeId": "MaestroRunner",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "MaestroRunner",
+                "name": "<MaestroE2eOrchestrator />",
+                "props": {
+                  "e2eStatus": "SMOKE_FLOW_GREEN"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Certify release candidate build through the Mobile Test Pyramid Continuous Quality Gate",
+            "activeId": "root",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<MobileTestingPyramidRoot />",
+                "props": {
+                  "releaseStatus": "APPROVED_FOR_STAGING"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Black-Box E2E Automation: Maestro Declarative YAML vs Gray-Box Detox",
+      "codeHash": "af1fb6a711411386de055bd8d34954de93bdd9bfa76ec18b40f2e1ec72bcb686",
+      "spec": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<MobileTestingPyramidRoot />",
+            "props": {
+              "status": "QUALITY_GATE_PASSED"
+            },
+            "children": [
+              {
+                "id": "UnitTestEngine",
+                "name": "<JestUnitTestHarness />",
+                "props": {
+                  "tier": "70_PCT_UNIT",
+                  "speed": "FAST_IN_MEMORY"
+                }
+              },
+              {
+                "id": "RntlTester",
+                "name": "<RntlComponentTester />",
+                "props": {
+                  "tier": "20_PCT_INTEGRATION",
+                  "queries": "BY_ROLE_AND_LABEL"
+                }
+              },
+              {
+                "id": "MaestroRunner",
+                "name": "<MaestroE2eOrchestrator />",
+                "props": {
+                  "tier": "10_PCT_E2E",
+                  "flow": "DECLARATIVE_YAML"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Execute fast in-memory Jest unit tests verifying pure reducer state invariants via <JestUnitTestHarness />",
+            "activeId": "UnitTestEngine",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "UnitTestEngine",
+                "name": "<JestUnitTestHarness />",
+                "props": {
+                  "coverage": "85_PCT_BRANCH_APPROVED"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Verify component interactions and accessibility roles via <RntlComponentTester />",
+            "activeId": "RntlTester",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "RntlTester",
+                "name": "<RntlComponentTester />",
+                "props": {
+                  "a11yQuery": "ROLE_AND_NAME_MATCHED"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Orchestrate declarative black-box E2E flows against release binaries via <MaestroE2eOrchestrator />",
+            "activeId": "MaestroRunner",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "MaestroRunner",
+                "name": "<MaestroE2eOrchestrator />",
+                "props": {
+                  "e2eStatus": "SMOKE_FLOW_GREEN"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Certify release candidate build through the Mobile Test Pyramid Continuous Quality Gate",
+            "activeId": "root",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<MobileTestingPyramidRoot />",
+                "props": {
+                  "releaseStatus": "APPROVED_FOR_STAGING"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<MobileTestingPyramidRoot />",
+            "props": {
+              "status": "QUALITY_GATE_PASSED"
+            },
+            "children": [
+              {
+                "id": "UnitTestEngine",
+                "name": "<JestUnitTestHarness />",
+                "props": {
+                  "tier": "70_PCT_UNIT",
+                  "speed": "FAST_IN_MEMORY"
+                }
+              },
+              {
+                "id": "RntlTester",
+                "name": "<RntlComponentTester />",
+                "props": {
+                  "tier": "20_PCT_INTEGRATION",
+                  "queries": "BY_ROLE_AND_LABEL"
+                }
+              },
+              {
+                "id": "MaestroRunner",
+                "name": "<MaestroE2eOrchestrator />",
+                "props": {
+                  "tier": "10_PCT_E2E",
+                  "flow": "DECLARATIVE_YAML"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Execute fast in-memory Jest unit tests verifying pure reducer state invariants via <JestUnitTestHarness />",
+            "activeId": "UnitTestEngine",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "UnitTestEngine",
+                "name": "<JestUnitTestHarness />",
+                "props": {
+                  "coverage": "85_PCT_BRANCH_APPROVED"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Verify component interactions and accessibility roles via <RntlComponentTester />",
+            "activeId": "RntlTester",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "RntlTester",
+                "name": "<RntlComponentTester />",
+                "props": {
+                  "a11yQuery": "ROLE_AND_NAME_MATCHED"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Orchestrate declarative black-box E2E flows against release binaries via <MaestroE2eOrchestrator />",
+            "activeId": "MaestroRunner",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "MaestroRunner",
+                "name": "<MaestroE2eOrchestrator />",
+                "props": {
+                  "e2eStatus": "SMOKE_FLOW_GREEN"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Certify release candidate build through the Mobile Test Pyramid Continuous Quality Gate",
+            "activeId": "root",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<MobileTestingPyramidRoot />",
+                "props": {
+                  "releaseStatus": "APPROVED_FOR_STAGING"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Master Mobile Test Pyramid Architecture & Continuous Quality Gate",
+      "codeHash": "0046764e88008be97793d7a6c54ccb7ebccaa7f3c8cfe471117268665b71037c",
+      "spec": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<MobileTestingPyramidRoot />",
+            "props": {
+              "status": "QUALITY_GATE_PASSED"
+            },
+            "children": [
+              {
+                "id": "UnitTestEngine",
+                "name": "<JestUnitTestHarness />",
+                "props": {
+                  "tier": "70_PCT_UNIT",
+                  "speed": "FAST_IN_MEMORY"
+                }
+              },
+              {
+                "id": "RntlTester",
+                "name": "<RntlComponentTester />",
+                "props": {
+                  "tier": "20_PCT_INTEGRATION",
+                  "queries": "BY_ROLE_AND_LABEL"
+                }
+              },
+              {
+                "id": "MaestroRunner",
+                "name": "<MaestroE2eOrchestrator />",
+                "props": {
+                  "tier": "10_PCT_E2E",
+                  "flow": "DECLARATIVE_YAML"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Execute fast in-memory Jest unit tests verifying pure reducer state invariants via <JestUnitTestHarness />",
+            "activeId": "UnitTestEngine",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "UnitTestEngine",
+                "name": "<JestUnitTestHarness />",
+                "props": {
+                  "coverage": "85_PCT_BRANCH_APPROVED"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Verify component interactions and accessibility roles via <RntlComponentTester />",
+            "activeId": "RntlTester",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "RntlTester",
+                "name": "<RntlComponentTester />",
+                "props": {
+                  "a11yQuery": "ROLE_AND_NAME_MATCHED"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Orchestrate declarative black-box E2E flows against release binaries via <MaestroE2eOrchestrator />",
+            "activeId": "MaestroRunner",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "MaestroRunner",
+                "name": "<MaestroE2eOrchestrator />",
+                "props": {
+                  "e2eStatus": "SMOKE_FLOW_GREEN"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Certify release candidate build through the Mobile Test Pyramid Continuous Quality Gate",
+            "activeId": "root",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<MobileTestingPyramidRoot />",
+                "props": {
+                  "releaseStatus": "APPROVED_FOR_STAGING"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<MobileTestingPyramidRoot />",
+            "props": {
+              "status": "QUALITY_GATE_PASSED"
+            },
+            "children": [
+              {
+                "id": "UnitTestEngine",
+                "name": "<JestUnitTestHarness />",
+                "props": {
+                  "tier": "70_PCT_UNIT",
+                  "speed": "FAST_IN_MEMORY"
+                }
+              },
+              {
+                "id": "RntlTester",
+                "name": "<RntlComponentTester />",
+                "props": {
+                  "tier": "20_PCT_INTEGRATION",
+                  "queries": "BY_ROLE_AND_LABEL"
+                }
+              },
+              {
+                "id": "MaestroRunner",
+                "name": "<MaestroE2eOrchestrator />",
+                "props": {
+                  "tier": "10_PCT_E2E",
+                  "flow": "DECLARATIVE_YAML"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Execute fast in-memory Jest unit tests verifying pure reducer state invariants via <JestUnitTestHarness />",
+            "activeId": "UnitTestEngine",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "UnitTestEngine",
+                "name": "<JestUnitTestHarness />",
+                "props": {
+                  "coverage": "85_PCT_BRANCH_APPROVED"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Verify component interactions and accessibility roles via <RntlComponentTester />",
+            "activeId": "RntlTester",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "RntlTester",
+                "name": "<RntlComponentTester />",
+                "props": {
+                  "a11yQuery": "ROLE_AND_NAME_MATCHED"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Orchestrate declarative black-box E2E flows against release binaries via <MaestroE2eOrchestrator />",
+            "activeId": "MaestroRunner",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "MaestroRunner",
+                "name": "<MaestroE2eOrchestrator />",
+                "props": {
+                  "e2eStatus": "SMOKE_FLOW_GREEN"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Certify release candidate build through the Mobile Test Pyramid Continuous Quality Gate",
+            "activeId": "root",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<MobileTestingPyramidRoot />",
+                "props": {
+                  "releaseStatus": "APPROVED_FOR_STAGING"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
