@@ -1,0 +1,1139 @@
+{
+  "schemaVersion": 1,
+  "prefix": "fullstack-js",
+  "day": 10,
+  "promptSha": "3ad83499154b63c0dfe576c94cccd03dcee47d231dda3426abd166c49e194303",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Pillar 1: Edge-Terminated Request Gateway with Multi-Tenant Routing & JWT Verification",
+      "codeHash": "d6b3c02bb2e0be864fea27b6596546d59e29c1e6738fb4c7866d04b0fde0d234",
+      "spec": {
+        "template": "flow",
+        "title": "Pillar 1: Edge-Terminated Request Gat... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Multi-Tenant Edge Ingress",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Pillar 1: Edge-Terminated Request Gat...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Platform State",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingress request through edge gateway and parallel layout for Pillar 1: Edge-Terminated Request Gat....",
+            "values": {
+              "in": "Day 10 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute server component rendering and data caching in Pillar 1: Edge-Terminated Request Gat....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluate optimistic mutation and tag revalidation invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Action Committed",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end execution verified for Pillar 1: Edge-Terminated Request Gat....",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Pillar 1: Edge-Terminated Request Gat... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Multi-Tenant Edge Ingress",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Pillar 1: Edge-Terminated Request Gat...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Platform State",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingress request through edge gateway and parallel layout for Pillar 1: Edge-Terminated Request Gat....",
+            "values": {
+              "in": "Day 10 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute server component rendering and data caching in Pillar 1: Edge-Terminated Request Gat....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluate optimistic mutation and tag revalidation invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Action Committed",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end execution verified for Pillar 1: Edge-Terminated Request Gat....",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Pillar 2: Hierarchical RSC Layout Tree with Parallel Cart & Activity Slots",
+      "codeHash": "052023c8f4a7d83a12fae4fe57afa93298e0f6bce2393429f443cc4933bb95d5",
+      "spec": {
+        "template": "flow",
+        "title": "Pillar 2: Hierarchical RSC Layout Tre... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Multi-Tenant Edge Ingress",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Pillar 2: Hierarchical RSC Layout Tre...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Platform State",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingress request through edge gateway and parallel layout for Pillar 2: Hierarchical RSC Layout Tre....",
+            "values": {
+              "in": "Day 10 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute server component rendering and data caching in Pillar 2: Hierarchical RSC Layout Tre....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluate optimistic mutation and tag revalidation invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Action Committed",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end execution verified for Pillar 2: Hierarchical RSC Layout Tre....",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Pillar 2: Hierarchical RSC Layout Tre... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Multi-Tenant Edge Ingress",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Pillar 2: Hierarchical RSC Layout Tre...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Platform State",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingress request through edge gateway and parallel layout for Pillar 2: Hierarchical RSC Layout Tre....",
+            "values": {
+              "in": "Day 10 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute server component rendering and data caching in Pillar 2: Hierarchical RSC Layout Tre....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluate optimistic mutation and tag revalidation invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Action Committed",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end execution verified for Pillar 2: Hierarchical RSC Layout Tre....",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Pillar 3: Multi-Tier Data Fetching with Stale-While-Revalidate & Granular Cache Tags",
+      "codeHash": "b84668b82c01722fbb7f3591276e920c26d5ab6603820ac4de1c05db7040396d",
+      "spec": {
+        "template": "flow",
+        "title": "Pillar 3: Multi-Tier Data Fetching wi... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Multi-Tenant Edge Ingress",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Pillar 3: Multi-Tier Data Fetching wi...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Platform State",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingress request through edge gateway and parallel layout for Pillar 3: Multi-Tier Data Fetching wi....",
+            "values": {
+              "in": "Day 10 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute server component rendering and data caching in Pillar 3: Multi-Tier Data Fetching wi....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluate optimistic mutation and tag revalidation invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Action Committed",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end execution verified for Pillar 3: Multi-Tier Data Fetching wi....",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Pillar 3: Multi-Tier Data Fetching wi... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Multi-Tenant Edge Ingress",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Pillar 3: Multi-Tier Data Fetching wi...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Platform State",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingress request through edge gateway and parallel layout for Pillar 3: Multi-Tier Data Fetching wi....",
+            "values": {
+              "in": "Day 10 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute server component rendering and data caching in Pillar 3: Multi-Tier Data Fetching wi....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluate optimistic mutation and tag revalidation invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Action Committed",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end execution verified for Pillar 3: Multi-Tier Data Fetching wi....",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Pillar 4: Optimistic Server Action Mutations with Zero-Latency Cart Updates & Rollbacks",
+      "codeHash": "50604ef22daa7bb1b5eefad6ef1969ba901a97bb33ae8376b4dbc0e5b002446e",
+      "spec": {
+        "template": "flow",
+        "title": "Pillar 4: Optimistic Server Action Mu... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Multi-Tenant Edge Ingress",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Pillar 4: Optimistic Server Action Mu...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Platform State",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingress request through edge gateway and parallel layout for Pillar 4: Optimistic Server Action Mu....",
+            "values": {
+              "in": "Day 10 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute server component rendering and data caching in Pillar 4: Optimistic Server Action Mu....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluate optimistic mutation and tag revalidation invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Action Committed",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end execution verified for Pillar 4: Optimistic Server Action Mu....",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Pillar 4: Optimistic Server Action Mu... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Multi-Tenant Edge Ingress",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Pillar 4: Optimistic Server Action Mu...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Platform State",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingress request through edge gateway and parallel layout for Pillar 4: Optimistic Server Action Mu....",
+            "values": {
+              "in": "Day 10 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute server component rendering and data caching in Pillar 4: Optimistic Server Action Mu....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluate optimistic mutation and tag revalidation invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Action Committed",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end execution verified for Pillar 4: Optimistic Server Action Mu....",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Pillar 5: Grand Milestone Synthesis: Enterprise SaaS Platform Integration & Verification",
+      "codeHash": "61e0c68c37b2373c910918e19f18e286fedd3b535023232a092a14367ab3f968",
+      "spec": {
+        "template": "flow",
+        "title": "Pillar 5: Grand Milestone Synthesis: ... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Multi-Tenant Edge Ingress",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Pillar 5: Grand Milestone Synthesis: ...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Platform State",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingress request through edge gateway and parallel layout for Pillar 5: Grand Milestone Synthesis: ....",
+            "values": {
+              "in": "Day 10 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute server component rendering and data caching in Pillar 5: Grand Milestone Synthesis: ....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluate optimistic mutation and tag revalidation invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Action Committed",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end execution verified for Pillar 5: Grand Milestone Synthesis: ....",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Pillar 5: Grand Milestone Synthesis: ... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Multi-Tenant Edge Ingress",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Pillar 5: Grand Milestone Synthesis: ...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Platform State",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingress request through edge gateway and parallel layout for Pillar 5: Grand Milestone Synthesis: ....",
+            "values": {
+              "in": "Day 10 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute server component rendering and data caching in Pillar 5: Grand Milestone Synthesis: ....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluate optimistic mutation and tag revalidation invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Action Committed",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end execution verified for Pillar 5: Grand Milestone Synthesis: ....",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
