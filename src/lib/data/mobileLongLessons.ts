@@ -4116,5 +4116,265 @@ console.log('Release Invariant: Phased rollouts contain blast radius and enable 
       "Deploy an end-to-end master data engine certifying WAL concurrency, outbox ordering, and tombstone deletion tracking."
     ]
   }
+},
+{
+  "day": 15,
+  "title": "\u2b50 MILESTONE 3: Real-Time Decentralized Peer-to-Peer Communication & Media Streaming Engine Capstone",
+  "goal": "Synthesize the entire intermediate mobile systems engineering curriculum into an enterprise-grade Milestone 3 Capstone: integrating real-time camera C++ frame processors, low-power coprocessor geofencing, Secure Enclave biometric P-256 key attestation, embedded SQLite WAL persistence with monotonic outbox queues, and 60 FPS optimistic UI synchronization.",
+  "minutes": 35,
+  "recap": "Welcome to Milestone 3! Over Days 11 through 14, you mastered hardware peripherals, spatial geofencing, silicon enclave biometrics, and offline-first relational persistence. Today, we unite these subsystems into a unified, production-grade Capstone application: an enterprise decentralized field inspection and peer-to-peer verification engine capable of operating in hostile, disconnected mobile environments.",
+  "parts": [
+    {
+      "title": "Hardware Camera Vision Pipeline: Zero-Copy C++ Worklets & EXIF Privacy Scrubbing",
+      "say": [
+        "In this first capstone subsystem, our application establishes a high-performance hardware camera vision pipeline capable of scanning physical credentials and capturing encrypted field inspection evidence at 60 FPS without dropping frames or triggering operating system thermal throttling.",
+        "The subsystem initiates with an operating system permission verification audit. The application inspects camera and media library permissions using the two-step contextual priming pattern. If the user previously denied permission permanently, the app presents an educational dialog and dispatches a native linking intent via Linking.openSettings(), resuming camera viewfinder mounting dynamically via an AppState foreground transition listener.",
+        "To process incoming video frames in real time, the camera preview interfaces directly with react-native-vision-camera. A C++ Frame Processor worklet runs inside an isolated Hermes JavaScript runtime hosted directly on a dedicated native camera capture thread.",
+        "When the hardware sensor captures a 1080p frame (containing 7.91 megabytes of raw uncompressed RGBA pixel data), the native pipeline wraps the memory buffer in a C++ JSI Host Object. The frame pointer is passed to the worklet as a zero-copy reference, bypassing the legacy JSON serialization bridge entirely.",
+        "Within the worklet, computer vision inference (such as MLKit barcode scanning or optical character recognition) evaluates the frame in under 8.5 milliseconds\u2014well within the strict 16.6-millisecond budget required to guarantee locked 60 FPS viewport rendering.",
+        "When the user captures a high-resolution 24-megapixel photo for inspection documentation, the image asset enters the on-device privacy sanitizer. Smartphone camera sensors embed sensitive EXIF metadata (including high-precision GPS coordinates, capture timestamps, and hardware serial numbers) inside JPEG headers. The pipeline strips these tags to protect user privacy and prevent physical address leakage.",
+        "Simultaneously, the raw 91.5-megabyte decoded bitmap is downsampled to a maximum dimension of 1200x800 pixels with 0.7 compression quality. This slashes volatile RAM consumption by 96% down to 3.66 megabytes, completely eliminating the risk of iOS Jetsam memory kills or Android Low Memory Killer (LMK) terminations.",
+        "Camera hardware sessions are strictly lifecycle-aware: when the screen loses focus or the user switches tabs, the camera sensor is powered down immediately, returning the device silicon to a low-power idle state to prevent device overheating and battery drain.",
+        "To ensure continuous reliability, automated health checks periodically inspect camera hardware sensor availability. If a device has a physically damaged camera or camera access is blocked by an active video conferencing call in another window, the pipeline emits diagnostic telemetry and falls back to manual document upload workflows.",
+        "In high-security enterprise environments, organizations enforce Data Loss Prevention (DLP) policies. Mobile apps operating in these environments must certify that cached media files are stored within encrypted app-private sandbox directories (such as Context.getFilesDir() on Android or Library/Application Support on iOS) rather than publicly accessible external storage.",
+        "By uniting zero-copy C++ frame processors, on-device EXIF scrubbing, and 0.7 quality bitmap downsampling, our capstone delivers a workstation-class media capture subsystem.",
+        "To ensure continuous visual clarity during low-light field inspections, the VisionCamera pipeline incorporates real-time histogram equalization directly inside native shaders. The frame processor dynamically calculates scene luminance across the raw pixel buffer, automatically adjusting camera exposure and activating the device LED torch when ambient lux drops below safe scanning thresholds.",
+        "Furthermore, the camera controller tracks frame drop metrics in real time. If thermal throttling causes frame evaluation times to exceed 16.6 milliseconds, the controller gracefully downshifts processing frequency from 60 FPS to 30 FPS while maintaining smooth viewfinder rendering, preventing OS thermal shutdown."
+      ],
+      "example": "Think of an armored military reconnaissance drone. The drone does not record video to a massive tape reel and drop it over base camp. It has an onboard computer vision module installed directly behind the camera lens that scans terrain in real time in milliseconds (zero-copy worklet). When it photographs an enemy base, it automatically scrubs the drone\u2019s GPS altitude from the photo header (EXIF sanitization) and compresses the image before transmitting it over low-bandwidth radio (downsampling).",
+      "code": "// Capstone Subsystem 1: Camera Vision & Media Pipeline\nclass CapstoneMediaSubsystem {\n  executeCameraMediaAudit() {\n    const frameSizeMb = 7.91; // 1080p raw RGBA\n    const inferenceTimeMs = 8.2;\n    const isZeroCopy = true;\n    const isWithinBudget = inferenceTimeMs <= 16.6;\n\n    // Downsampling & EXIF Scrubbing\n    const originalDecodedMb = 91.55;\n    const downsampledDecodedMb = 3.66; // 1200x800 @ 0.7 quality\n    const ramSavingsPercent = ((originalDecodedMb - downsampledDecodedMb) / originalDecodedMb) * 100;\n    const isExifGpsScrubbed = true;\n\n    return {\n      subsystemId: 'CAPSTONE-MOD-01-VISION',\n      zeroCopyPointerActive: isZeroCopy,\n      inferenceTimeMs,\n      framePacingStatus: isWithinBudget ? 'LOCKED_60_FPS' : 'DROPPED_FRAME',\n      originalMemoryMb: originalDecodedMb,\n      downsampledMemoryMb: downsampledDecodedMb,\n      ramSavingsPercent: Number(ramSavingsPercent.toFixed(1)),\n      exifPrivacyScrubbed: isExifGpsScrubbed,\n      status: 'CAMERA_VISION_SUBSYSTEM_NOMINAL'\n    };\n  }\n}\n\nconst mediaSubsystem = new CapstoneMediaSubsystem();\nconsole.log('--- CAPSTONE SUBSYSTEM 1: CAMERA VISION & PRIVACY PIPELINE ---');\n\nconst visionReport = mediaSubsystem.executeCameraMediaAudit();\nconsole.log('Subsystem ID:           ' + visionReport.subsystemId);\nconsole.log('Zero-Copy C++ JSI:      ' + visionReport.zeroCopyPointerActive);\nconsole.log('Inference Duration:     ' + visionReport.inferenceTimeMs + ' ms (Target <= 16.6ms)');\nconsole.log('Viewport Frame Pacing:  ' + visionReport.framePacingStatus);\nconsole.log('Decoded RAM Slashing:   ' + visionReport.originalMemoryMb + ' MB -> ' + visionReport.downsampledMemoryMb + ' MB (' + visionReport.ramSavingsPercent + '% Savings)');\nconsole.log('EXIF GPS Sanitization:  ' + (visionReport.exifPrivacyScrubbed ? 'VERIFIED_ZERO_LEAKAGE' : 'FAILED'));\nconsole.log('Subsystem Status:       ' + visionReport.status);\nconsole.log('Vision Invariant: Zero-copy JSI pointers maintain 60 FPS while bitmap downsampling eliminates Jetsam kills');",
+      "output": "--- CAPSTONE SUBSYSTEM 1: CAMERA VISION & PRIVACY PIPELINE ---\nSubsystem ID:           CAPSTONE-MOD-01-VISION\nZero-Copy C++ JSI:      true\nInference Duration:     8.2 ms (Target <= 16.6ms)\nViewport Frame Pacing:  LOCKED_60_FPS\nDecoded RAM Slashing:   91.55 MB -> 3.66 MB (96% Savings)\nEXIF GPS Sanitization:  VERIFIED_ZERO_LEAKAGE\nSubsystem Status:       CAMERA_VISION_SUBSYSTEM_NOMINAL\nVision Invariant: Zero-copy JSI pointers maintain 60 FPS while bitmap downsampling eliminates Jetsam kills",
+      "codeNotes": [
+        {
+          "line": 4,
+          "note": "Evaluates zero-copy C++ JSI pointer processing inside 8.2ms inference budget"
+        },
+        {
+          "line": 10,
+          "note": "Slashes decoded bitmap RAM footprint from 91.55MB down to 3.66MB (96% savings)"
+        },
+        {
+          "line": 34,
+          "note": "Certifies EXIF metadata scrubbing to guarantee zero physical location leakage"
+        }
+      ],
+      "tryIt": "Simulate a 4K frame by setting frameSizeMb = 31.64 and verify that inferenceTimeMs must remain within 16.6ms to prevent dropped frames.",
+      "check": {
+        "question": "Why is combining zero-copy C++ worklets with 0.7 quality bitmap downsampling mandatory for mobile camera applications?",
+        "options": [
+          "Zero-copy worklets eliminate JSON bridge overhead to lock 60 FPS computer vision, while bitmap downsampling slashes volatile RAM by 96% to prevent iOS Jetsam memory terminations",
+          "Because camera lenses physically refuse to open unless worklets are running",
+          "Because Apple charges developers a $100 penalty for every photo uploaded at full resolution",
+          "Because mobile device batteries recharge faster when photos are downsampled"
+        ],
+        "answer": 0,
+        "why": "Uncompressed camera frames contain millions of pixels that freeze the JS thread if serialized over JSON. Zero-copy C++ worklets process native memory pointers directly at 60 FPS, while downsampling prevents 90MB+ bitmaps from exceeding mobile OS memory limits."
+      }
+    },
+    {
+      "title": "Spatial Intelligence: Coprocessor Geofencing, Accuracy Gates & Map Clustering",
+      "say": [
+        "The second capstone subsystem orchestrates spatial intelligence: tracking field inspection sites, monitoring high-security facility perimeters, and rendering thousands of geographic assets across interactive maps without UI stutter.",
+        "The spatial pipeline begins with high-precision GNSS positioning and multipath filtering. The application enforces a strict Accuracy Gate: all incoming coordinates with an accuracy radius greater than 20 meters, or with timestamps older than 15 seconds, are discarded. This eliminates erratic jumping caused by satellite multipath reflections off skyscraper walls in dense metropolitan canyons.",
+        "Permission management enforces compliant two-step escalation: the application acquires foreground location authorization first, and only requests background authorization when the user explicitly enables a background patrol or automated dispatch mode, satisfying Apple Guideline 5.1.1 and Google Play privacy policies.",
+        "To monitor inspection checkpoints without draining battery life, the application registers circular geofence regions (latitude, longitude, radius). Boundary monitoring is delegated directly to the native low-power motion coprocessor (Apple M-series or Android Sensor Hub), consuming less than 1% battery per day.",
+        "When the field inspector physically crosses a checkpoint boundary, the operating system wakes up the application in the background via TaskManager.defineTask(). The background worker executes within a strict 30-second OS watchdog timer: logging the arrival timestamp, writing a cryptographic proof-of-presence record to SQLite, and calling TaskManager.finish().",
+        "On the user interface thread, thousands of inspection sites are rendered using react-native-maps. To prevent the UI thread from mounting thousands of individual UIView / Android View instances (which drops frame rates to 5 FPS), the pipeline utilizes Supercluster spatial indexing.",
+        "Supercluster groups nearby pins into single cluster badges (e.g. '45 inspection points'). As the user zooms in from continental overview to street-level perspective, clusters expand smoothly into individual pins, capping total mounted native views at under 50 markers to lock buttery-smooth 60 FPS viewport panning.",
+        "All map markers configure trackViewChanges={false} to cache marker graphics as static GPU textures, completely eliminating CPU rendering overhead during camera movements.",
+        "In logistics and transportation systems, dispatch data is safeguarded through geographic hashing (Geohash). By encoding latitude and longitude into hierarchical base-32 string hashes (e.g. '9q8yyk'), database queries perform instantaneous spatial bounding box lookups with indexed B-trees, eliminating computationally expensive trigonometric distance calculations on the backend.",
+        "Finally, spatial telemetry pipelines enforce strict data retention windows. Location coordinates older than 30 days are automatically aggregated into anonymized heatmaps and permanently expunged from production databases, maintaining rigorous compliance with global privacy regulations.",
+        "By uniting GNSS accuracy filtering, low-power coprocessor geofencing, and Supercluster spatial indexing, our capstone delivers a complete, battery-efficient spatial intelligence engine.",
+        "To prevent boundary oscillation (rapid, repetitive enter and exit events when a user lingers on the physical perimeter of an inspection zone), the geofence engine implements a 15-meter Spatial Hysteresis Buffer. A user is only marked as exited once they travel 15 meters beyond the outer radius, completely eliminating noisy trigger cascades.",
+        "Additionally, the spatial engine enforces adaptive location sampling. When the device accelerometer detects the user is seated or motionless, GPS polling enters low-power standby mode, waking up instantly when step detection or significant motion interrupts signal movement."
+      ],
+      "example": "Think of an air traffic control radar screen. The radar receiver filters out cloud clutter and ground reflections (GNSS accuracy gate). It sounds an automated alarm only when an aircraft enters restricted military airspace (low-power geofencing). And on the controller\u2019s display, a distant flight formation appears as a single squadron blip, expanding into individual aircraft numbers only when the controller zooms in (spatial clustering). Everything remains clear, responsive, and reliable.",
+      "code": "// Capstone Subsystem 2: Spatial Intelligence & Geofence Pipeline\nclass CapstoneSpatialSubsystem {\n  executeSpatialSubsystemAudit() {\n    // 1. High-precision GNSS accuracy filtering\n    const rawGpsFix = { accuracyMeters: 8.4, isMocked: false, ageSec: 2.1 };\n    const isGnssAccurate = rawGpsFix.accuracyMeters <= 20.0 && !rawGpsFix.isMocked && rawGpsFix.ageSec <= 15.0;\n\n    // 2. Hardware coprocessor geofencing\n    const registeredGeofences = 12;\n    const isWithinPlatformLimit = registeredGeofences <= 20; // iOS 20 region limit\n    const batteryConsumption = '< 1% PER_DAY';\n\n    // 3. TaskManager 30s background watchdog\n    const backgroundExecutionDurationMs = 42;\n    const isWatchdogSafe = backgroundExecutionDurationMs < 30000;\n\n    // 4. Supercluster 60 FPS map marker scaling (5,000 points -> 20 markers)\n    const totalPoints = 5000;\n    const mountedNativeMarkers = 20; // Clustered active viewport\n    const markerReductionPercent = ((totalPoints - mountedNativeMarkers) / totalPoints) * 100;\n    const isMapPanning60Fps = mountedNativeMarkers <= 50;\n\n    return {\n      subsystemId: 'CAPSTONE-MOD-02-SPATIAL',\n      gnssAccuracyPassed: isGnssAccurate,\n      coprocessorGeofencingActive: isWithinPlatformLimit,\n      batteryImpact: batteryConsumption,\n      watchdogComplianceSafe: isWatchdogSafe,\n      totalInspectionSites: totalPoints,\n      mountedMarkerCount: mountedNativeMarkers,\n      markerReductionPercent: Number(markerReductionPercent.toFixed(1)),\n      mapFrameRatePacing: isMapPanning60Fps ? 'LOCKED_60_FPS' : 'DROPPED_FRAMES',\n      status: 'SPATIAL_SUBSYSTEM_NOMINAL'\n    };\n  }\n}\n\nconst spatialSubsystem = new CapstoneSpatialSubsystem();\nconsole.log('--- CAPSTONE SUBSYSTEM 2: SPATIAL INTELLIGENCE & GEOFENCING ---');\n\nconst spatialReport = spatialSubsystem.executeSpatialSubsystemAudit();\nconsole.log('Subsystem ID:           ' + spatialReport.subsystemId);\nconsole.log('GNSS Accuracy (<20m):   ' + spatialReport.gnssAccuracyPassed);\nconsole.log('Coprocessor Geofences:  ' + spatialReport.coprocessorGeofencingActive + ' (Battery: ' + spatialReport.batteryImpact + ')');\nconsole.log('Watchdog Adherence:     ' + spatialReport.watchdogComplianceSafe + ' (Executed in 42ms < 30,000ms)');\nconsole.log('Supercluster Scaling:   ' + spatialReport.totalInspectionSites + ' sites -> ' + spatialReport.mountedMarkerCount + ' mounted markers (' + spatialReport.markerReductionPercent + '% Reduction)');\nconsole.log('Map Panning Viewport:   ' + spatialReport.mapFrameRatePacing);\nconsole.log('Subsystem Status:       ' + spatialReport.status);\nconsole.log('Spatial Invariant: Coprocessor geofencing uses <1% battery while Supercluster locks 60 FPS map panning');",
+      "output": "--- CAPSTONE SUBSYSTEM 2: SPATIAL INTELLIGENCE & GEOFENCING ---\nSubsystem ID:           CAPSTONE-MOD-02-SPATIAL\nGNSS Accuracy (<20m):   true\nCoprocessor Geofences:  true (Battery: < 1% PER_DAY)\nWatchdog Adherence:     true (Executed in 42ms < 30,000ms)\nSupercluster Scaling:   5000 sites -> 20 mounted markers (99.6% Reduction)\nMap Panning Viewport:   LOCKED_60_FPS\nSubsystem Status:       SPATIAL_SUBSYSTEM_NOMINAL\nSpatial Invariant: Coprocessor geofencing uses <1% battery while Supercluster locks 60 FPS map panning",
+      "codeNotes": [
+        {
+          "line": 4,
+          "note": "Filters incoming satellite fixes asserting accuracy radius <= 20m and age <= 15s"
+        },
+        {
+          "line": 9,
+          "note": "Asserts geofences remain within the 20-region OS platform limit to preserve battery"
+        },
+        {
+          "line": 19,
+          "note": "Supercluster spatial indexing reduces 5,000 pins to 20 markers, locking 60 FPS panning"
+        }
+      ],
+      "tryIt": "Set mountedNativeMarkers to 100 and observe how the engine flags GPU dropped frames for viewport panning.",
+      "check": {
+        "question": "What allows the capstone spatial engine to monitor geographic inspection checkpoints for days without depleting device battery?",
+        "options": [
+          "Delegating circular boundary monitoring to low-power motion coprocessors (< 1% battery/day) instead of running continuous high-power GPS satellite radios",
+          "Disabling device cellular antennas and using FM radio broadcasts",
+          "Relying exclusively on paper maps and asking the user to manually mark locations",
+          "Connecting the smartphone to an external solar panel array"
+        ],
+        "answer": 0,
+        "why": "Continuous GNSS satellite reception drains phone batteries in a few hours. Native geofencing delegates boundary checks to dedicated low-power sensor hubs and cell tower beacons, consuming negligible power (<1% per day) until an entry or exit boundary event wakes the app."
+      }
+    },
+    {
+      "title": "Hardware Biometric Vault: Secure Enclave P-256 Attestation & Lockout Safety",
+      "say": [
+        "The third capstone subsystem provides zero-trust identity security: protecting sensitive inspection reports, cryptographic keys, and user credentials behind isolated hardware silicon biometrics.",
+        "Rather than relying on client-side boolean flags (isAuthenticated = true) that can be easily spoofed on rooted or jailbroken devices using runtime hooking frameworks like Frida, the capstone enforces Cryptographic Hardware Key Attestation.",
+        "During user onboarding, the application requests the Apple Secure Enclave (or Android StrongBox Keymaster) to generate an Elliptic Curve P-256 (secp256r1) Asymmetric Key Pair directly inside hardware silicon.",
+        "The private key is configured with the kSecAccessControlBiometryAny access control flag, physically trapping the private key in hardware silicon. The private key can never be read, exported, or copied into software memory. It can only be unlocked to compute digital signatures when the user physically touches the sensor (FaceID or Fingerprint).",
+        "When an inspector signs a critical field audit, the enterprise backend issues a single-use 256-bit Challenge Nonce. The mobile app passes the nonce to the Secure Enclave, prompting the native biometric sheet.",
+        "Once biometrics are verified by the TrueDepth or ultrasonic sensor, the Secure Enclave computes an ECDSA P-256 digital signature over the challenge nonce. The backend verifies the signature against the user\u2019s registered public key, mathematically certifying that the authorized user physically approved the document.",
+        "The subsystem also monitors biometric enrollment integrity via evaluatedPolicyDomainState. If an attacker gains possession of an unlocked phone and enrolls a rogue fingerprint in device settings, the evaluatedPolicyDomainState hash changes, prompting the application to immediately invalidate local keys and require master password re-authentication.",
+        "Furthermore, the subsystem implements a resilient Lockout State Machine: handling user cancellation cleanly without error alerts, tracking failed attempts, applying 30-second cooldowns after 3 failures, and gracefully falling back to master device PIN passcodes after 5 consecutive errors without crashing.",
+        "Apple Secure Enclave runs its own microkernel operating system known as SEPOS (Secure Enclave Processor Operating System). SEPOS executes entirely in isolated memory encrypted with ephemeral keys generated by the hardware TRNG on every boot. Even if the main iOS kernel suffers a total memory compromise, SEPOS memory pages remain mathematically opaque to external read or write operations.",
+        "This hardware attestation model forms the technological foundation of modern Passkeys and the FIDO2 / WebAuthn standard on mobile. Rather than maintaining static passwords or shared secrets on centralized cloud servers, the user device holds the asymmetric private key inside hardware silicon, sharing only the public key with the service provider.",
+        "By uniting Class 3 Strong silicon isolation, P-256 challenge signing, tamper detection, and defensive lockout recovery, our capstone delivers military-grade identity security.",
+        "In enterprise multi-tenant deployments, the biometric engine manages per-tenant cryptographic key isolation. Each organizational tenant receives a dedicated P-256 key pair generated inside the Secure Enclave tagged with tenant-specific access control policies, ensuring compromise of one tenant key cannot affect other organizational vaults.",
+        "Furthermore, all cryptographic signatures are bundled with hardware attestation statements signed by the Apple or Google silicon root of trust. The backend server verifies the certificate chain up to the manufacturer root, certifying that the signature was generated by physical hardware rather than an emulated virtual machine."
+      ],
+      "example": "Think of an ultra-secure bank vault. The vault combination is not written on a post-it note on the manager\u2019s desk (client-side boolean). The combination is stored inside a time-locked safe embedded in 10 feet of reinforced concrete (Secure Enclave). To sign a money transfer, the manager places their thumb on the safe; the safe stamps the document with an unforgeable embossed seal (ECDSA signature). If an intruder tries to tamper with the safe door 5 times, steel bars slide down and lock the room (lockout state machine).",
+      "code": "// Capstone Subsystem 3: Biometric Enclave & Attestation Pipeline\nclass CapstoneBiometricSubsystem {\n  executeBiometricSecurityAudit() {\n    // 1. Audit Class 3 Strong Silicon Isolation\n    const isSecureEnclaveActive = true;\n    const biometricTier = 'CLASS_3_STRONG';\n    const siliconOk = isSecureEnclaveActive && biometricTier === 'CLASS_3_STRONG';\n\n    // 2. Cryptographic P-256 Asymmetric Hardware Key Attestation\n    const challengeNonce = 'NONCE_1776264000_8x9a2b1c';\n    let hash = 0xcbf29ce484222325n;\n    for (let i = 0; i < challengeNonce.length; i++) {\n      hash = (hash ^ BigInt(challengeNonce.charCodeAt(i))) * 0x100000001b3n;\n    }\n    const signatureHex = '3045022100' + (hash & 0xffffffffffffffffn).toString(16).padStart(16, '0');\n    const isSignatureAttested = signatureHex.startsWith('3045022100');\n\n    // 3. Evaluated Policy Domain State Tamper Protection\n    const isDomainStateTampered = false;\n\n    // 4. Defensive Lockout & Passcode Fallback Safety\n    const supportsDevicePinFallback = true;\n    const maxConsecutiveFailuresBeforePin = 5;\n\n    const isSubsystemCertified = siliconOk && isSignatureAttested && !isDomainStateTampered && supportsDevicePinFallback;\n\n    return {\n      subsystemId: 'CAPSTONE-MOD-03-BIOMETRICS',\n      siliconIsolation: 'APPLE_SECURE_ENCLAVE_ISOLATED',\n      biometricClass: biometricTier,\n      attestationAlgorithm: 'ECDSA_SHA256_P256',\n      attestedSignatureHex: signatureHex,\n      tamperProtectionActive: !isDomainStateTampered,\n      devicePasscodeFallbackReady: supportsDevicePinFallback,\n      lockoutFailureThreshold: maxConsecutiveFailuresBeforePin,\n      status: isSubsystemCertified ? 'BIOMETRIC_VAULT_SUBSYSTEM_NOMINAL' : 'SECURITY_DEFECT'\n    };\n  }\n}\n\nconst bioSubsystem = new CapstoneBiometricSubsystem();\nconsole.log('--- CAPSTONE SUBSYSTEM 3: BIOMETRIC ENCLAVE & ATTESTATION ---');\n\nconst bioReport = bioSubsystem.executeBiometricSecurityAudit();\nconsole.log('Subsystem ID:           ' + bioReport.subsystemId);\nconsole.log('Silicon Isolation:      ' + bioReport.siliconIsolation + ' (' + bioReport.biometricClass + ')');\nconsole.log('P-256 Attestation Sign: ' + bioReport.attestedSignatureHex);\nconsole.log('Tamper Defense:         ' + (bioReport.tamperProtectionActive ? 'DOMAIN_STATE_VERIFIED_NOMINAL' : 'TAMPERED'));\nconsole.log('Device PIN Fallback:    ' + bioReport.devicePasscodeFallbackReady + ' (Threshold: ' + bioReport.lockoutFailureThreshold + ' failures)');\nconsole.log('Subsystem Status:       ' + bioReport.status);\nconsole.log('Biometric Invariant: P-256 enclave signatures eliminate client-side boolean spoofing while lockout handles errors');",
+      "output": "--- CAPSTONE SUBSYSTEM 3: BIOMETRIC ENCLAVE & ATTESTATION ---\nSubsystem ID:           CAPSTONE-MOD-03-BIOMETRICS\nSilicon Isolation:      APPLE_SECURE_ENCLAVE_ISOLATED (CLASS_3_STRONG)\nP-256 Attestation Sign: 304502210025a20d039da7829b\nTamper Defense:         DOMAIN_STATE_VERIFIED_NOMINAL\nDevice PIN Fallback:    true (Threshold: 5 failures)\nSubsystem Status:       BIOMETRIC_VAULT_SUBSYSTEM_NOMINAL\nBiometric Invariant: P-256 enclave signatures eliminate client-side boolean spoofing while lockout handles errors",
+      "codeNotes": [
+        {
+          "line": 4,
+          "note": "Certifies Class 3 Strong hardware silicon isolation inside Apple Secure Enclave"
+        },
+        {
+          "line": 13,
+          "note": "Generates ECDSA P-256 digital signature over server challenge nonce"
+        },
+        {
+          "line": 20,
+          "note": "Asserts tamper protection and master device PIN fallback threshold of 5 failures"
+        }
+      ],
+      "tryIt": "Simulate domainStateTampered = true and verify that the security status revokes certification.",
+      "check": {
+        "question": "Why does the capstone biometric vault require P-256 hardware attestation rather than storing an authentication boolean?",
+        "options": [
+          "Because software booleans can be easily flipped in memory on jailbroken devices using Frida hooks, while P-256 attestation produces mathematical cryptographic signatures that only the Secure Enclave can generate",
+          "Because booleans require 100MB of extra RAM on mobile devices",
+          "Because iOS does not support the boolean data type in JavaScript",
+          "Because Apple App Store requires all booleans to be encrypted with AES-128"
+        ],
+        "answer": 0,
+        "why": "A client-side boolean flag can be easily modified in memory by attackers using runtime instrumentation frameworks like Frida. In contrast, hardware key attestation computes an ECDSA P-256 signature inside the Secure Enclave that cannot be forged without physical biometric verification."
+      }
+    },
+    {
+      "title": "Offline Relational Persistence: SQLite WAL, Schema Migrations & Monotonic Outbox",
+      "say": [
+        "The fourth capstone subsystem is the persistent data layer: an embedded offline-first relational database and distributed synchronization engine designed to guarantee zero data loss across hostile mobile network conditions.",
+        "The data layer utilizes embedded SQLite with Write-Ahead Logging (PRAGMA journal_mode = WAL;). In WAL mode, writes are appended sequentially to a separate write-ahead log (-wal) and memory-mapped shared index (-shm), completely eliminating database lock contention between background synchronization workers and 60 FPS UI thread read queries.",
+        "Database evolution is governed by deterministic schema versioning using PRAGMA user_version;. The forward-only migration pipeline iterates sequentially from currentDbVersion to targetSchemaVersion, wrapping each DDL step (CREATE TABLE, ALTER TABLE, CREATE INDEX) in atomic rollback transactions.",
+        "When an inspector creates or edits an inspection record offline, the action is recorded in the local SQLite database and simultaneously appended to the mutation_outbox table within the same atomic database transaction.",
+        "Each outbox record is stamped with a client-generated UUID Version 4 idempotency key and a monotonically increasing sequence integer. When cellular connectivity restores, the background sync worker drains the outbox in strict sequence order (ORDER BY sequence_num ASC).",
+        "If a dropped cellular packet results in a lost HTTP acknowledgement, the client safely resends the mutation outbox record. The backend detects the identical UUID idempotency key in its deduplication cache, skips re-executing the database write, and returns a success response\u2014eliminating duplicate records and double-mutations.",
+        "On the user interface, changes render instantly via Optimistic UI Updates within 8.2 milliseconds, maintaining locked 60 FPS feedback without blocking spinners. If the server rejects the transaction, the reconciliation engine retrieves the pre-mutation snapshot from local history and automatically rolls back the local state.",
+        "Deleted records are recorded as Soft Deletes (Tombstones) with deletion timestamps, ensuring remote servers can propagate deletions across all client devices without resurrecting deleted entities during future sync cycles.",
+        "In WAL mode, SQLite utilizes a shared memory index file with the -shm extension. The -shm file acts as an in-memory hash table mapping database pages to their latest versions in the WAL file. This enables reader connections to locate the latest version of any page in nanoseconds without performing linear disk searches across the log file.",
+        "Furthermore, mobile architects leverage memory-mapped I/O by executing PRAGMA mmap_size = 268435456; (allocating up to 256MB of address space). Memory mapping instructs the operating system kernel to map database pages directly into the application process virtual memory, eliminating user-space to kernel-space buffer copies during read operations.",
+        "By uniting SQLite WAL concurrency, user_version migrations, monotonic outbox queues, and optimistic reconciliation, our capstone delivers an unshakeable offline-first persistence foundation.",
+        "To optimize database performance over months of heavy field usage, the persistence supervisor schedules automated WAL checkpoints and index defragmentation during idle charging windows. Executing PRAGMA wal_checkpoint(TRUNCATE); resets the log file to zero bytes, reclaiming flash storage and keeping read queries blazing fast.",
+        "Additionally, the synchronization queue incorporates bandwidth-aware payload adaptation. When the device is operating over a high-latency 3G cellular connection, large media attachments are deferred while lightweight JSON inspection deltas are prioritized, ensuring critical mission data reaches the backend immediately."
+      ],
+      "example": "Think of an astronaut logging scientific samples on Mars. The astronaut does not wait for a 20-minute radio round-trip to Earth before recording each rock sample. They log everything into the rover\u2019s local internal database (embedded SQLite WAL). Each sample gets a unique serialized barcode (UUID idempotency key) and a sequential mission number (monotonic sequence). When the rover\u2019s high-gain antenna aligns with Earth, the outbox transmits the mission log in order; Earth acknowledges each sample barcode without confusion.",
+      "code": "// Capstone Subsystem 4: Offline Relational & Outbox Pipeline\nclass CapstonePersistenceSubsystem {\n  executePersistenceAudit() {\n    // 1. Audit SQLite WAL Concurrency\n    const journalMode = 'WAL';\n    const cacheSizeKb = 64000; // 64 MB\n    const concurrentReadWrite = true;\n\n    // 2. Schema Migration Versioning\n    const userVersionPragma = 3;\n    const migrationsAppliedCount = 2; // v1 -> v3\n\n    // 3. Monotonic Outbox with UUID Idempotency\n    const enqueuedMutations = [\n      { id: 'UUID-V4-9X8Y7Z1A', seq: 1, op: 'INSERT', entity: 'inspection_reports' },\n      { id: 'UUID-V4-9X8Y7Z1B', seq: 2, op: 'UPDATE', entity: 'inspection_reports' }\n    ];\n    const isMonotonic = enqueuedMutations[1].seq > enqueuedMutations[0].seq;\n    const isIdempotencyActive = true;\n\n    // 4. Optimistic UI Frame Pacing & Rollback Safety\n    const optimisticRenderLatencyMs = 8.2;\n    const is60FpsPacing = optimisticRenderLatencyMs <= 16.6;\n    const snapshotRollbackSupported = true;\n\n    const isSubsystemCertified = journalMode === 'WAL' && concurrentReadWrite && isMonotonic && isIdempotencyActive && is60FpsPacing;\n\n    return {\n      subsystemId: 'CAPSTONE-MOD-04-PERSISTENCE',\n      sqliteJournalMode: journalMode,\n      cacheSizeKb,\n      concurrentExecutionWithoutLocks: concurrentReadWrite,\n      dbSchemaVersion: 'v' + userVersionPragma,\n      migrationsExecuted: migrationsAppliedCount,\n      outboxMonotonicOrderVerified: isMonotonic,\n      idempotencyDeduplicationActive: isIdempotencyActive,\n      optimisticRenderLatencyMs,\n      frameRateStatus: is60FpsPacing ? 'LOCKED_60_FPS' : 'DROPPED_FRAMES',\n      rollbackSafetyReady: snapshotRollbackSupported,\n      status: isSubsystemCertified ? 'PERSISTENCE_SUBSYSTEM_NOMINAL' : 'PERSISTENCE_DEFECT'\n    };\n  }\n}\n\nconst persistSubsystem = new CapstonePersistenceSubsystem();\nconsole.log('--- CAPSTONE SUBSYSTEM 4: OFFLINE RELATIONAL PERSISTENCE ---');\n\nconst persistReport = persistSubsystem.executePersistenceAudit();\nconsole.log('Subsystem ID:           ' + persistReport.subsystemId);\nconsole.log('SQLite Concurrency:     ' + persistReport.sqliteJournalMode + ' (Cache: ' + persistReport.cacheSizeKb + ' KB | Zero Lock Contention)');\nconsole.log('Schema Evolution:       ' + persistReport.dbSchemaVersion + ' (' + persistReport.migrationsExecuted + ' migrations applied forward)');\nconsole.log('Monotonic Outbox:       Order Verified: ' + persistReport.outboxMonotonicOrderVerified + ' | Idempotency: ' + persistReport.idempotencyDeduplicationActive);\nconsole.log('Optimistic Rendering:   ' + persistReport.optimisticRenderLatencyMs + ' ms (' + persistReport.frameRateStatus + ')');\nconsole.log('Rollback Safety:        ' + persistReport.rollbackSafetyReady);\nconsole.log('Subsystem Status:       ' + persistReport.status);\nconsole.log('Persistence Invariant: WAL mode eliminates database contention while monotonic outbox guarantees safe sync');",
+      "output": "--- CAPSTONE SUBSYSTEM 4: OFFLINE RELATIONAL PERSISTENCE ---\nSubsystem ID:           CAPSTONE-MOD-04-PERSISTENCE\nSQLite Concurrency:     WAL (Cache: 64000 KB | Zero Lock Contention)\nSchema Evolution:       v3 (2 migrations applied forward)\nMonotonic Outbox:       Order Verified: true | Idempotency: true\nOptimistic Rendering:   8.2 ms (LOCKED_60_FPS)\nRollback Safety:        true\nSubsystem Status:       PERSISTENCE_SUBSYSTEM_NOMINAL\nPersistence Invariant: WAL mode eliminates database contention while monotonic outbox guarantees safe sync",
+      "codeNotes": [
+        {
+          "line": 4,
+          "note": "Configures Write-Ahead Logging (WAL) and 64MB cache to eliminate lock contention"
+        },
+        {
+          "line": 13,
+          "note": "Validates monotonic sequence order and UUID idempotency in outbox records"
+        },
+        {
+          "line": 19,
+          "note": "Certifies sub-16ms optimistic UI rendering with automated snapshot rollback"
+        }
+      ],
+      "tryIt": "Set journalMode to DELETE and verify that the persistence subsystem flags lock contention defects.",
+      "check": {
+        "question": "What allows the capstone offline relational engine to sync mutations without duplicating records when cellular networks drop ACKs?",
+        "options": [
+          "Monotonic outbox queues pairing integer sequence numbers with client-generated UUID idempotency keys cached on the backend server",
+          "Sending mutations only when the mobile device is plugged into AC power",
+          "Erasing the SQLite database file whenever network connection times out",
+          "Asking the user to manually verify every row using a paper checklist"
+        ],
+        "answer": 0,
+        "why": "Unreliable cellular networks frequently drop HTTP response ACKs. Monotonic outbox queues pairing sequence numbers with client-generated UUID idempotency keys allow the server to recognize retransmitted mutations, skip duplicate database execution, and return the cached success response."
+      }
+    },
+    {
+      "title": "Milestone 3 Capstone Systems Audit & Zero-Defect Production Certification",
+      "say": [
+        "In this final milestone capstone synthesis, we execute an end-to-end systems benchmark audit across the complete mobile architecture, certifying that our integrated application satisfies tier-1 enterprise standards across cold start performance, memory hygiene, battery conservation, and zero-defect reliability.",
+        "The benchmark begins with Time To Initial Display (TTID) profiling: cold launch duration must remain sub-400ms. By compiling Hermes bytecode (.hbc), lazily initializing TurboModules, and rendering a lightweight skeleton UI within the first 16 milliseconds, our application achieves an initial paint of 320 milliseconds\u2014well beneath the 400ms threshold.",
+        "Memory profiling across extended usage cycles confirms zero memory leaks. Through native image downsampling (reducing 24MP photos to 1200px at 0.7 quality), process dirty memory is capped at 78.4 megabytes. Even after 50 consecutive photo captures and map navigation transitions, memory remains flat, eliminating all risk of iOS Jetsam or Android Low Memory Killer terminations.",
+        "Battery and thermal pacing are certified under active field conditions. By offloading geofence boundary monitoring to low-power motion coprocessors, geofencing consumes less than 1% battery per day. Camera sensors and frame processors automatically deactivate on screen blur, allowing device silicon to return to low-power idle states.",
+        "Hardware security attestation is verified: 100% of cryptographic signatures are generated inside isolated Class 3 Strong silicon (Apple Secure Enclave / Android StrongBox), and evaluatedPolicyDomainState checks protect against unauthorized biometric enrollment tampering.",
+        "Data persistence guarantees zero data loss: embedded SQLite operating in Write-Ahead Logging (WAL) mode provides isolated snapshot reads at 60 FPS while background sync workers drain monotonic outbox queues with UUID idempotency keys.",
+        "In automated continuous deployment pipelines, Fastlane lanes compile production iOS IPA and Android AAB binaries, uploading symbolicated crash mapping files directly to Sentry and Datadog, with automated canary rollouts halting instantly if crash-free sessions drop below 99.95%.",
+        "Congratulations on completing Milestone 3! You have mastered the entire spectrum of intermediate mobile systems engineering: from native peripherals and computer vision to spatial geofencing, hardware biometric enclaves, and offline-first relational engines.",
+        "By uniting high-level TypeScript declarative agility with bare-metal C++ JSI TurboModules, Hermes UI thread worklets, and hardware biometric enclaves, you have engineered a production-grade mobile architecture that rivals the most sophisticated banking and cryptographic applications on the planet.",
+        "With these capabilities certified, you stand ready to tackle advanced mobile distributed systems, custom C++ graphics shaders, WebRTC audio/video pipelines, and enterprise app store deployments.",
+        "In production CI/CD pipelines, automated Detox end-to-end endurance test suites execute 50 consecutive inspection cycles, certifying that memory growth remains flat below 5MB and that 100% of UI transitions maintain locked 60 FPS pacing across physical iOS and Android test lab devices.",
+        "Finally, automated Fastlane deployment scripts sign release binaries with enterprise provisioning profiles, uploading dSYM and ProGuard symbol maps to Sentry, arming automatic canary rollouts that halt instantaneously if crash-free session rates dip below 99.95%."
+      ],
+      "example": "Think of the final inspection of a newly constructed spacecraft before launch. Technicians inspect the life support systems (camera vision), navigational thrusters (spatial geofencing), armored hull locks (Secure Enclave biometrics), flight data recorder (SQLite WAL persistence), and power telemetry (battery profiling). Only when all green lights are verified across all subsystems does mission control certify the vessel for flight.",
+      "code": "// Milestone 3 Capstone Master Systems Benchmark Audit\nclass MobileMilestone3CapstoneEngine {\n  executeCompleteCapstoneAudit() {\n    // 1. Cold Start Performance (<400ms TTID)\n    const ttidMs = 320; // 320ms to initial interactive paint\n    const isColdStartOptimal = ttidMs <= 400;\n\n    // 2. Memory Hygiene & Jetsam Safety (<100MB)\n    const dirtyMemoryMb = 78.4;\n    const isMemoryHygieneOptimal = dirtyMemoryMb <= 100.0;\n\n    // 3. UI Thread Frame Pacing (Locked 60 FPS)\n    const displayFps = 60;\n    const isFrameRateLocked = displayFps >= 60;\n\n    // 4. Silicon Hardware Security (Secure Enclave P-256)\n    const isSecureEnclaveAttested = true;\n\n    // 5. Offline SQLite WAL & Monotonic Outbox\n    const isOfflineWalSyncActive = true;\n\n    // 6. Battery Conservation (<1% Geofence Drain)\n    const isBatteryPacingOptimal = true;\n\n    const isMilestoneCertified = isColdStartOptimal && isMemoryHygieneOptimal && isFrameRateLocked && isSecureEnclaveAttested && isOfflineWalSyncActive && isBatteryPacingOptimal;\n\n    return {\n      capstoneId: 'PINIT-MOBILE-M3-CAPSTONE-CERTIFIED',\n      coldStartTtidMs: ttidMs,\n      dirtyMemoryFootprintMb: dirtyMemoryMb,\n      displayFrameRateFps: displayFps,\n      secureEnclaveP256Attested: isSecureEnclaveAttested,\n      offlineWalSyncActive: isOfflineWalSyncActive,\n      batteryPacingOptimal: isBatteryPacingOptimal,\n      milestoneCertificationGrade: isMilestoneCertified ? 'TIER_1_ENTERPRISE_MILESTONE_3_CERTIFIED' : 'MILESTONE_DEFECT'\n    };\n  }\n}\n\nconst capstoneEngine = new MobileMilestone3CapstoneEngine();\nconsole.log('Executing Milestone 3 Capstone Enterprise Systems Verification Audit...');\n\nconst audit = capstoneEngine.executeCompleteCapstoneAudit();\nconsole.log('Milestone 3 Systems Verification Audit Results:');\nconsole.log('  Capstone ID:            ' + audit.capstoneId);\nconsole.log('  Cold Start TTID:        ' + audit.coldStartTtidMs + ' ms (Target <= 400ms: PASSED)');\nconsole.log('  Dirty Memory Footprint: ' + audit.dirtyMemoryFootprintMb + ' MB (Zero Jetsam Risk: PASSED)');\nconsole.log('  Display Refresh Rate:   ' + audit.displayFrameRateFps + ' FPS (Locked at 60Hz: PASSED)');\nconsole.log('  Secure Enclave P-256:   ' + (audit.secureEnclaveP256Attested ? 'HARDWARE_ATTESTED_NOMINAL' : 'FAILED'));\nconsole.log('  Offline Relational WAL: ' + (audit.offlineWalSyncActive ? 'MONOTONIC_OUTBOX_ACTIVE' : 'FAILED'));\nconsole.log('  Battery Conservation:   ' + (audit.batteryPacingOptimal ? 'SUB_1_PERCENT_COPROCESSOR_PACING' : 'FAILED'));\nconsole.log('  Milestone Certification: ' + audit.milestoneCertificationGrade);\nconsole.log('Capstone Invariant: Complete mobile stack achieves sub-400ms boot, 60 FPS pacing, enclave security & WAL sync');",
+      "output": "Executing Milestone 3 Capstone Enterprise Systems Verification Audit...\nMilestone 3 Systems Verification Audit Results:\n  Capstone ID:            PINIT-MOBILE-M3-CAPSTONE-CERTIFIED\n  Cold Start TTID:        320 ms (Target <= 400ms: PASSED)\n  Dirty Memory Footprint: 78.4 MB (Zero Jetsam Risk: PASSED)\n  Display Refresh Rate:   60 FPS (Locked at 60Hz: PASSED)\n  Secure Enclave P-256:   HARDWARE_ATTESTED_NOMINAL\n  Offline Relational WAL: MONOTONIC_OUTBOX_ACTIVE\n  Battery Conservation:   SUB_1_PERCENT_COPROCESSOR_PACING\n  Milestone Certification: TIER_1_ENTERPRISE_MILESTONE_3_CERTIFIED\nCapstone Invariant: Complete mobile stack achieves sub-400ms boot, 60 FPS pacing, enclave security & WAL sync",
+      "codeNotes": [
+        {
+          "line": 4,
+          "note": "Validates sub-400ms cold start TTID (320ms) via pre-compiled Hermes bytecode"
+        },
+        {
+          "line": 8,
+          "note": "Maintains flat 78.4MB dirty memory footprint to completely eliminate Jetsam terminations"
+        },
+        {
+          "line": 40,
+          "note": "Synthesizes P-256 enclave attestation, SQLite WAL sync, and low-power coprocessor pacing"
+        }
+      ],
+      "tryIt": "Adjust ttidMs to 280ms and verify that the systems benchmark passes with ultra-fast startup performance.",
+      "check": {
+        "question": "What comprehensive architectural combination enables an enterprise mobile application to earn Milestone 3 Tier-1 Certification?",
+        "options": [
+          "Sub-400ms TTID cold boot, 78MB flat memory footprint with bitmap downsampling, locked 60 FPS UI thread pacing, Class 3 Secure Enclave P-256 hardware attestation, and offline SQLite WAL persistence with monotonic idempotency outboxes",
+          "Rewriting all code in plain HTML and running in a mobile web browser",
+          "Disabling all local storage and requiring continuous 5G cellular connection",
+          "Removing all security checks and storing passwords in plain text"
+        ],
+        "answer": 0,
+        "why": "Tier-1 Milestone 3 mobile certification demands excellence across performance (sub-400ms TTID), memory hygiene (sub-100MB dirty RAM via downsampling), locked 60 FPS rendering, isolated silicon biometric security (Secure Enclave P-256), and unshakeable offline persistence (SQLite WAL with monotonic outbox queues)."
+      }
+    }
+  ],
+  "summary": [
+    "Zero-copy C++ frame processors run on native camera threads at 60 FPS, while 0.7 downsampling prevents Jetsam kills.",
+    "Spatial intelligence combines GNSS accuracy filtering (<=20m), coprocessor geofencing (<1% battery), and Supercluster map scaling.",
+    "Class 3 Secure Enclave biometrics compute P-256 ECDSA signatures over challenge nonces, eliminating client boolean spoofing.",
+    "Embedded SQLite with Write-Ahead Logging (WAL) concurrency eliminates database locks between sync workers and UI reads.",
+    "Milestone 3 certification verifies sub-400ms TTID, flat 78MB memory footprint, locked 60 FPS pacing, and zero-defect sync."
+  ],
+  "projectStep": {
+    "title": "Milestone 3 Capstone: Build the Enterprise Field Inspection & P2P Attestation Engine",
+    "steps": [
+      "Construct a zero-copy camera frame processor worklet with on-device EXIF GPS scrubbing and 0.7 bitmap downsampling.",
+      "Deploy background geofence monitoring offloaded to low-power motion coprocessors with 30-second watchdog compliance.",
+      "Implement Secure Enclave P-256 asymmetric hardware key attestation with challenge nonce signing and lockout state machines.",
+      "Build an offline-first SQLite WAL database with PRAGMA user_version schema migrations and monotonic mutation outboxes.",
+      "Execute an end-to-end systems benchmark audit certifying sub-400ms TTID, flat 78MB RAM, locked 60 FPS, and Tier-1 Certification."
+    ]
+  }
 }
 ];

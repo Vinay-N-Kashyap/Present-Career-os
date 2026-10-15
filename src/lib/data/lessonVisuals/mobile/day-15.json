@@ -1,0 +1,1229 @@
+{
+  "schemaVersion": 1,
+  "prefix": "mobile",
+  "day": 15,
+  "promptSha": "3820e48319e53fab955a2f2383dcb9ee0e87f31366fe4b414c6dfa3e394a511a",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Hardware Camera Vision Pipeline: Zero-Copy C++ Worklets & EXIF Privacy Scrubbing",
+      "codeHash": "c48078a5f99df0f621dd0ee393b6fadd492089ccc148712a275f3146926da5b0",
+      "spec": {
+        "template": "component-tree",
+        "title": "Hardware Camera Vision Pipeline: Zero-Copy C+... \u2014 Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "CapstoneAppRoot",
+            "name": "<Milestone3CapstoneApp />",
+            "props": {
+              "milestone": "3_CAPSTONE",
+              "grade": "TIER_1"
+            },
+            "state": {
+              "systemStatus": "CERTIFIED"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "VisionSubsystem",
+            "name": "<CameraVisionProcessor />",
+            "props": {
+              "zeroCopy": "true",
+              "fps": "60"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "SpatialGeofenceSubsystem",
+            "name": "<CoprocessorGeofenceManager />",
+            "props": {
+              "battery": "<1%",
+              "accuracy": "<=20m"
+            },
+            "tone": "accent"
+          },
+          {
+            "id": "EnclaveBiometricSubsystem",
+            "name": "<SecureEnclaveAttestationVault />",
+            "props": {
+              "algorithm": "P256_ECDSA",
+              "tier": "CLASS_3"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "PersistenceSubsystem",
+            "name": "<SQLiteWalOutboxLedger />",
+            "props": {
+              "mode": "WAL",
+              "outbox": "MONOTONIC"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <Milestone3CapstoneApp /> for Hardware Camera Vision Pipelin...",
+            "activeId": "CapstoneAppRoot",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "CapstoneAppRoot",
+                "name": "<Milestone3CapstoneApp />",
+                "props": {
+                  "stage": "INITIALIZE_CAPSTONE"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Initialize <CameraVisionProcessor /> zero-copy worklets & downsampler",
+            "activeId": "VisionSubsystem",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "VisionSubsystem",
+                "name": "<CameraVisionProcessor />",
+                "props": {
+                  "status": "ACTIVE_60_FPS"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Authorize <SecureEnclaveAttestationVault /> P-256 hardware attestation signature",
+            "activeId": "EnclaveBiometricSubsystem",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "EnclaveBiometricSubsystem",
+                "name": "<SecureEnclaveAttestationVault />",
+                "props": {
+                  "signature": "ECDSA_ATTESTED"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Commit transaction to <SQLiteWalOutboxLedger /> with sub-16ms optimistic UI pacing",
+            "activeId": "PersistenceSubsystem",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "PersistenceSubsystem",
+                "name": "<SQLiteWalOutboxLedger />",
+                "props": {
+                  "outbox": "COMMITTED_IDEMPOTENT"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "title": "Hardware Camera Vision Pipeline: Zero-Copy C+... \u2014 Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "CapstoneAppRoot",
+            "name": "<Milestone3CapstoneApp />",
+            "props": {
+              "milestone": "3_CAPSTONE",
+              "grade": "TIER_1"
+            },
+            "state": {
+              "systemStatus": "CERTIFIED"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "VisionSubsystem",
+            "name": "<CameraVisionProcessor />",
+            "props": {
+              "zeroCopy": "true",
+              "fps": "60"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "SpatialGeofenceSubsystem",
+            "name": "<CoprocessorGeofenceManager />",
+            "props": {
+              "battery": "<1%",
+              "accuracy": "<=20m"
+            },
+            "tone": "accent"
+          },
+          {
+            "id": "EnclaveBiometricSubsystem",
+            "name": "<SecureEnclaveAttestationVault />",
+            "props": {
+              "algorithm": "P256_ECDSA",
+              "tier": "CLASS_3"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "PersistenceSubsystem",
+            "name": "<SQLiteWalOutboxLedger />",
+            "props": {
+              "mode": "WAL",
+              "outbox": "MONOTONIC"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <Milestone3CapstoneApp /> for Hardware Camera Vision Pipelin...",
+            "activeId": "CapstoneAppRoot",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "CapstoneAppRoot",
+                "name": "<Milestone3CapstoneApp />",
+                "props": {
+                  "stage": "INITIALIZE_CAPSTONE"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Initialize <CameraVisionProcessor /> zero-copy worklets & downsampler",
+            "activeId": "VisionSubsystem",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "VisionSubsystem",
+                "name": "<CameraVisionProcessor />",
+                "props": {
+                  "status": "ACTIVE_60_FPS"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Authorize <SecureEnclaveAttestationVault /> P-256 hardware attestation signature",
+            "activeId": "EnclaveBiometricSubsystem",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "EnclaveBiometricSubsystem",
+                "name": "<SecureEnclaveAttestationVault />",
+                "props": {
+                  "signature": "ECDSA_ATTESTED"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Commit transaction to <SQLiteWalOutboxLedger /> with sub-16ms optimistic UI pacing",
+            "activeId": "PersistenceSubsystem",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "PersistenceSubsystem",
+                "name": "<SQLiteWalOutboxLedger />",
+                "props": {
+                  "outbox": "COMMITTED_IDEMPOTENT"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Spatial Intelligence: Coprocessor Geofencing, Accuracy Gates & Map Clustering",
+      "codeHash": "b3504a99e075992ec4c7d459aa10af4bd16c415a28cbcc569ceb19f989c6c740",
+      "spec": {
+        "template": "component-tree",
+        "title": "Spatial Intelligence: Coprocessor Geofencing,... \u2014 Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "CapstoneAppRoot",
+            "name": "<Milestone3CapstoneApp />",
+            "props": {
+              "milestone": "3_CAPSTONE",
+              "grade": "TIER_1"
+            },
+            "state": {
+              "systemStatus": "CERTIFIED"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "VisionSubsystem",
+            "name": "<CameraVisionProcessor />",
+            "props": {
+              "zeroCopy": "true",
+              "fps": "60"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "SpatialGeofenceSubsystem",
+            "name": "<CoprocessorGeofenceManager />",
+            "props": {
+              "battery": "<1%",
+              "accuracy": "<=20m"
+            },
+            "tone": "accent"
+          },
+          {
+            "id": "EnclaveBiometricSubsystem",
+            "name": "<SecureEnclaveAttestationVault />",
+            "props": {
+              "algorithm": "P256_ECDSA",
+              "tier": "CLASS_3"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "PersistenceSubsystem",
+            "name": "<SQLiteWalOutboxLedger />",
+            "props": {
+              "mode": "WAL",
+              "outbox": "MONOTONIC"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <Milestone3CapstoneApp /> for Spatial Intelligence: Coproces...",
+            "activeId": "CapstoneAppRoot",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "CapstoneAppRoot",
+                "name": "<Milestone3CapstoneApp />",
+                "props": {
+                  "stage": "INITIALIZE_CAPSTONE"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Initialize <CameraVisionProcessor /> zero-copy worklets & downsampler",
+            "activeId": "VisionSubsystem",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "VisionSubsystem",
+                "name": "<CameraVisionProcessor />",
+                "props": {
+                  "status": "ACTIVE_60_FPS"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Authorize <SecureEnclaveAttestationVault /> P-256 hardware attestation signature",
+            "activeId": "EnclaveBiometricSubsystem",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "EnclaveBiometricSubsystem",
+                "name": "<SecureEnclaveAttestationVault />",
+                "props": {
+                  "signature": "ECDSA_ATTESTED"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Commit transaction to <SQLiteWalOutboxLedger /> with sub-16ms optimistic UI pacing",
+            "activeId": "PersistenceSubsystem",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "PersistenceSubsystem",
+                "name": "<SQLiteWalOutboxLedger />",
+                "props": {
+                  "outbox": "COMMITTED_IDEMPOTENT"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "title": "Spatial Intelligence: Coprocessor Geofencing,... \u2014 Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "CapstoneAppRoot",
+            "name": "<Milestone3CapstoneApp />",
+            "props": {
+              "milestone": "3_CAPSTONE",
+              "grade": "TIER_1"
+            },
+            "state": {
+              "systemStatus": "CERTIFIED"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "VisionSubsystem",
+            "name": "<CameraVisionProcessor />",
+            "props": {
+              "zeroCopy": "true",
+              "fps": "60"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "SpatialGeofenceSubsystem",
+            "name": "<CoprocessorGeofenceManager />",
+            "props": {
+              "battery": "<1%",
+              "accuracy": "<=20m"
+            },
+            "tone": "accent"
+          },
+          {
+            "id": "EnclaveBiometricSubsystem",
+            "name": "<SecureEnclaveAttestationVault />",
+            "props": {
+              "algorithm": "P256_ECDSA",
+              "tier": "CLASS_3"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "PersistenceSubsystem",
+            "name": "<SQLiteWalOutboxLedger />",
+            "props": {
+              "mode": "WAL",
+              "outbox": "MONOTONIC"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <Milestone3CapstoneApp /> for Spatial Intelligence: Coproces...",
+            "activeId": "CapstoneAppRoot",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "CapstoneAppRoot",
+                "name": "<Milestone3CapstoneApp />",
+                "props": {
+                  "stage": "INITIALIZE_CAPSTONE"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Initialize <CameraVisionProcessor /> zero-copy worklets & downsampler",
+            "activeId": "VisionSubsystem",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "VisionSubsystem",
+                "name": "<CameraVisionProcessor />",
+                "props": {
+                  "status": "ACTIVE_60_FPS"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Authorize <SecureEnclaveAttestationVault /> P-256 hardware attestation signature",
+            "activeId": "EnclaveBiometricSubsystem",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "EnclaveBiometricSubsystem",
+                "name": "<SecureEnclaveAttestationVault />",
+                "props": {
+                  "signature": "ECDSA_ATTESTED"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Commit transaction to <SQLiteWalOutboxLedger /> with sub-16ms optimistic UI pacing",
+            "activeId": "PersistenceSubsystem",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "PersistenceSubsystem",
+                "name": "<SQLiteWalOutboxLedger />",
+                "props": {
+                  "outbox": "COMMITTED_IDEMPOTENT"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Hardware Biometric Vault: Secure Enclave P-256 Attestation & Lockout Safety",
+      "codeHash": "5b6fcc8e9e7222d68fe0f9482ece304f488456a072acce380c1e8bc262f79e48",
+      "spec": {
+        "template": "component-tree",
+        "title": "Hardware Biometric Vault: Secure Enclave P-25... \u2014 Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "CapstoneAppRoot",
+            "name": "<Milestone3CapstoneApp />",
+            "props": {
+              "milestone": "3_CAPSTONE",
+              "grade": "TIER_1"
+            },
+            "state": {
+              "systemStatus": "CERTIFIED"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "VisionSubsystem",
+            "name": "<CameraVisionProcessor />",
+            "props": {
+              "zeroCopy": "true",
+              "fps": "60"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "SpatialGeofenceSubsystem",
+            "name": "<CoprocessorGeofenceManager />",
+            "props": {
+              "battery": "<1%",
+              "accuracy": "<=20m"
+            },
+            "tone": "accent"
+          },
+          {
+            "id": "EnclaveBiometricSubsystem",
+            "name": "<SecureEnclaveAttestationVault />",
+            "props": {
+              "algorithm": "P256_ECDSA",
+              "tier": "CLASS_3"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "PersistenceSubsystem",
+            "name": "<SQLiteWalOutboxLedger />",
+            "props": {
+              "mode": "WAL",
+              "outbox": "MONOTONIC"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <Milestone3CapstoneApp /> for Hardware Biometric Vault: Secu...",
+            "activeId": "CapstoneAppRoot",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "CapstoneAppRoot",
+                "name": "<Milestone3CapstoneApp />",
+                "props": {
+                  "stage": "INITIALIZE_CAPSTONE"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Initialize <CameraVisionProcessor /> zero-copy worklets & downsampler",
+            "activeId": "VisionSubsystem",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "VisionSubsystem",
+                "name": "<CameraVisionProcessor />",
+                "props": {
+                  "status": "ACTIVE_60_FPS"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Authorize <SecureEnclaveAttestationVault /> P-256 hardware attestation signature",
+            "activeId": "EnclaveBiometricSubsystem",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "EnclaveBiometricSubsystem",
+                "name": "<SecureEnclaveAttestationVault />",
+                "props": {
+                  "signature": "ECDSA_ATTESTED"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Commit transaction to <SQLiteWalOutboxLedger /> with sub-16ms optimistic UI pacing",
+            "activeId": "PersistenceSubsystem",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "PersistenceSubsystem",
+                "name": "<SQLiteWalOutboxLedger />",
+                "props": {
+                  "outbox": "COMMITTED_IDEMPOTENT"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "title": "Hardware Biometric Vault: Secure Enclave P-25... \u2014 Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "CapstoneAppRoot",
+            "name": "<Milestone3CapstoneApp />",
+            "props": {
+              "milestone": "3_CAPSTONE",
+              "grade": "TIER_1"
+            },
+            "state": {
+              "systemStatus": "CERTIFIED"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "VisionSubsystem",
+            "name": "<CameraVisionProcessor />",
+            "props": {
+              "zeroCopy": "true",
+              "fps": "60"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "SpatialGeofenceSubsystem",
+            "name": "<CoprocessorGeofenceManager />",
+            "props": {
+              "battery": "<1%",
+              "accuracy": "<=20m"
+            },
+            "tone": "accent"
+          },
+          {
+            "id": "EnclaveBiometricSubsystem",
+            "name": "<SecureEnclaveAttestationVault />",
+            "props": {
+              "algorithm": "P256_ECDSA",
+              "tier": "CLASS_3"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "PersistenceSubsystem",
+            "name": "<SQLiteWalOutboxLedger />",
+            "props": {
+              "mode": "WAL",
+              "outbox": "MONOTONIC"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <Milestone3CapstoneApp /> for Hardware Biometric Vault: Secu...",
+            "activeId": "CapstoneAppRoot",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "CapstoneAppRoot",
+                "name": "<Milestone3CapstoneApp />",
+                "props": {
+                  "stage": "INITIALIZE_CAPSTONE"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Initialize <CameraVisionProcessor /> zero-copy worklets & downsampler",
+            "activeId": "VisionSubsystem",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "VisionSubsystem",
+                "name": "<CameraVisionProcessor />",
+                "props": {
+                  "status": "ACTIVE_60_FPS"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Authorize <SecureEnclaveAttestationVault /> P-256 hardware attestation signature",
+            "activeId": "EnclaveBiometricSubsystem",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "EnclaveBiometricSubsystem",
+                "name": "<SecureEnclaveAttestationVault />",
+                "props": {
+                  "signature": "ECDSA_ATTESTED"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Commit transaction to <SQLiteWalOutboxLedger /> with sub-16ms optimistic UI pacing",
+            "activeId": "PersistenceSubsystem",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "PersistenceSubsystem",
+                "name": "<SQLiteWalOutboxLedger />",
+                "props": {
+                  "outbox": "COMMITTED_IDEMPOTENT"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Offline Relational Persistence: SQLite WAL, Schema Migrations & Monotonic Outbox",
+      "codeHash": "cb4b60a8e1f68abf301cce0855832678fdda00585b1b76713a306675486f49aa",
+      "spec": {
+        "template": "component-tree",
+        "title": "Offline Relational Persistence: SQLite WAL, S... \u2014 Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "CapstoneAppRoot",
+            "name": "<Milestone3CapstoneApp />",
+            "props": {
+              "milestone": "3_CAPSTONE",
+              "grade": "TIER_1"
+            },
+            "state": {
+              "systemStatus": "CERTIFIED"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "VisionSubsystem",
+            "name": "<CameraVisionProcessor />",
+            "props": {
+              "zeroCopy": "true",
+              "fps": "60"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "SpatialGeofenceSubsystem",
+            "name": "<CoprocessorGeofenceManager />",
+            "props": {
+              "battery": "<1%",
+              "accuracy": "<=20m"
+            },
+            "tone": "accent"
+          },
+          {
+            "id": "EnclaveBiometricSubsystem",
+            "name": "<SecureEnclaveAttestationVault />",
+            "props": {
+              "algorithm": "P256_ECDSA",
+              "tier": "CLASS_3"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "PersistenceSubsystem",
+            "name": "<SQLiteWalOutboxLedger />",
+            "props": {
+              "mode": "WAL",
+              "outbox": "MONOTONIC"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <Milestone3CapstoneApp /> for Offline Relational Persistence...",
+            "activeId": "CapstoneAppRoot",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "CapstoneAppRoot",
+                "name": "<Milestone3CapstoneApp />",
+                "props": {
+                  "stage": "INITIALIZE_CAPSTONE"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Initialize <CameraVisionProcessor /> zero-copy worklets & downsampler",
+            "activeId": "VisionSubsystem",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "VisionSubsystem",
+                "name": "<CameraVisionProcessor />",
+                "props": {
+                  "status": "ACTIVE_60_FPS"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Authorize <SecureEnclaveAttestationVault /> P-256 hardware attestation signature",
+            "activeId": "EnclaveBiometricSubsystem",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "EnclaveBiometricSubsystem",
+                "name": "<SecureEnclaveAttestationVault />",
+                "props": {
+                  "signature": "ECDSA_ATTESTED"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Commit transaction to <SQLiteWalOutboxLedger /> with sub-16ms optimistic UI pacing",
+            "activeId": "PersistenceSubsystem",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "PersistenceSubsystem",
+                "name": "<SQLiteWalOutboxLedger />",
+                "props": {
+                  "outbox": "COMMITTED_IDEMPOTENT"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "title": "Offline Relational Persistence: SQLite WAL, S... \u2014 Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "CapstoneAppRoot",
+            "name": "<Milestone3CapstoneApp />",
+            "props": {
+              "milestone": "3_CAPSTONE",
+              "grade": "TIER_1"
+            },
+            "state": {
+              "systemStatus": "CERTIFIED"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "VisionSubsystem",
+            "name": "<CameraVisionProcessor />",
+            "props": {
+              "zeroCopy": "true",
+              "fps": "60"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "SpatialGeofenceSubsystem",
+            "name": "<CoprocessorGeofenceManager />",
+            "props": {
+              "battery": "<1%",
+              "accuracy": "<=20m"
+            },
+            "tone": "accent"
+          },
+          {
+            "id": "EnclaveBiometricSubsystem",
+            "name": "<SecureEnclaveAttestationVault />",
+            "props": {
+              "algorithm": "P256_ECDSA",
+              "tier": "CLASS_3"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "PersistenceSubsystem",
+            "name": "<SQLiteWalOutboxLedger />",
+            "props": {
+              "mode": "WAL",
+              "outbox": "MONOTONIC"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <Milestone3CapstoneApp /> for Offline Relational Persistence...",
+            "activeId": "CapstoneAppRoot",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "CapstoneAppRoot",
+                "name": "<Milestone3CapstoneApp />",
+                "props": {
+                  "stage": "INITIALIZE_CAPSTONE"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Initialize <CameraVisionProcessor /> zero-copy worklets & downsampler",
+            "activeId": "VisionSubsystem",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "VisionSubsystem",
+                "name": "<CameraVisionProcessor />",
+                "props": {
+                  "status": "ACTIVE_60_FPS"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Authorize <SecureEnclaveAttestationVault /> P-256 hardware attestation signature",
+            "activeId": "EnclaveBiometricSubsystem",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "EnclaveBiometricSubsystem",
+                "name": "<SecureEnclaveAttestationVault />",
+                "props": {
+                  "signature": "ECDSA_ATTESTED"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Commit transaction to <SQLiteWalOutboxLedger /> with sub-16ms optimistic UI pacing",
+            "activeId": "PersistenceSubsystem",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "PersistenceSubsystem",
+                "name": "<SQLiteWalOutboxLedger />",
+                "props": {
+                  "outbox": "COMMITTED_IDEMPOTENT"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Milestone 3 Capstone Systems Audit & Zero-Defect Production Certification",
+      "codeHash": "8cd8cef71c0664280b31d4d90031b3dfa94c802114ef43018c472c883e50a5ee",
+      "spec": {
+        "template": "component-tree",
+        "title": "Milestone 3 Capstone Systems Audit & Zero-Def... \u2014 Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "CapstoneAppRoot",
+            "name": "<Milestone3CapstoneApp />",
+            "props": {
+              "milestone": "3_CAPSTONE",
+              "grade": "TIER_1"
+            },
+            "state": {
+              "systemStatus": "CERTIFIED"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "VisionSubsystem",
+            "name": "<CameraVisionProcessor />",
+            "props": {
+              "zeroCopy": "true",
+              "fps": "60"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "SpatialGeofenceSubsystem",
+            "name": "<CoprocessorGeofenceManager />",
+            "props": {
+              "battery": "<1%",
+              "accuracy": "<=20m"
+            },
+            "tone": "accent"
+          },
+          {
+            "id": "EnclaveBiometricSubsystem",
+            "name": "<SecureEnclaveAttestationVault />",
+            "props": {
+              "algorithm": "P256_ECDSA",
+              "tier": "CLASS_3"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "PersistenceSubsystem",
+            "name": "<SQLiteWalOutboxLedger />",
+            "props": {
+              "mode": "WAL",
+              "outbox": "MONOTONIC"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <Milestone3CapstoneApp /> for Milestone 3 Capstone Systems A...",
+            "activeId": "CapstoneAppRoot",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "CapstoneAppRoot",
+                "name": "<Milestone3CapstoneApp />",
+                "props": {
+                  "stage": "INITIALIZE_CAPSTONE"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Initialize <CameraVisionProcessor /> zero-copy worklets & downsampler",
+            "activeId": "VisionSubsystem",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "VisionSubsystem",
+                "name": "<CameraVisionProcessor />",
+                "props": {
+                  "status": "ACTIVE_60_FPS"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Authorize <SecureEnclaveAttestationVault /> P-256 hardware attestation signature",
+            "activeId": "EnclaveBiometricSubsystem",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "EnclaveBiometricSubsystem",
+                "name": "<SecureEnclaveAttestationVault />",
+                "props": {
+                  "signature": "ECDSA_ATTESTED"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Commit transaction to <SQLiteWalOutboxLedger /> with sub-16ms optimistic UI pacing",
+            "activeId": "PersistenceSubsystem",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "PersistenceSubsystem",
+                "name": "<SQLiteWalOutboxLedger />",
+                "props": {
+                  "outbox": "COMMITTED_IDEMPOTENT"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "title": "Milestone 3 Capstone Systems Audit & Zero-Def... \u2014 Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "CapstoneAppRoot",
+            "name": "<Milestone3CapstoneApp />",
+            "props": {
+              "milestone": "3_CAPSTONE",
+              "grade": "TIER_1"
+            },
+            "state": {
+              "systemStatus": "CERTIFIED"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "VisionSubsystem",
+            "name": "<CameraVisionProcessor />",
+            "props": {
+              "zeroCopy": "true",
+              "fps": "60"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "SpatialGeofenceSubsystem",
+            "name": "<CoprocessorGeofenceManager />",
+            "props": {
+              "battery": "<1%",
+              "accuracy": "<=20m"
+            },
+            "tone": "accent"
+          },
+          {
+            "id": "EnclaveBiometricSubsystem",
+            "name": "<SecureEnclaveAttestationVault />",
+            "props": {
+              "algorithm": "P256_ECDSA",
+              "tier": "CLASS_3"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "PersistenceSubsystem",
+            "name": "<SQLiteWalOutboxLedger />",
+            "props": {
+              "mode": "WAL",
+              "outbox": "MONOTONIC"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <Milestone3CapstoneApp /> for Milestone 3 Capstone Systems A...",
+            "activeId": "CapstoneAppRoot",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "CapstoneAppRoot",
+                "name": "<Milestone3CapstoneApp />",
+                "props": {
+                  "stage": "INITIALIZE_CAPSTONE"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Initialize <CameraVisionProcessor /> zero-copy worklets & downsampler",
+            "activeId": "VisionSubsystem",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "VisionSubsystem",
+                "name": "<CameraVisionProcessor />",
+                "props": {
+                  "status": "ACTIVE_60_FPS"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Authorize <SecureEnclaveAttestationVault /> P-256 hardware attestation signature",
+            "activeId": "EnclaveBiometricSubsystem",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "EnclaveBiometricSubsystem",
+                "name": "<SecureEnclaveAttestationVault />",
+                "props": {
+                  "signature": "ECDSA_ATTESTED"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Commit transaction to <SQLiteWalOutboxLedger /> with sub-16ms optimistic UI pacing",
+            "activeId": "PersistenceSubsystem",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "PersistenceSubsystem",
+                "name": "<SQLiteWalOutboxLedger />",
+                "props": {
+                  "outbox": "COMMITTED_IDEMPOTENT"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
