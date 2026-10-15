@@ -1,0 +1,669 @@
+{
+  "schemaVersion": 1,
+  "prefix": "blockchain",
+  "day": 24,
+  "promptSha": "9a329c0f7721ba3e18cd987fe88fbc910245a909d3b764b73b22cf309df78132",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Uniswap v3 Flash Swaps & Optimistic Execution",
+      "codeHash": "169b2dd3364ce47302ad2bb09187373c92eafdd75c9c136f8bbeed1cfa9c83c8",
+      "spec": {
+        "template": "sequence",
+        "title": "Uniswap v3 Flash Swaps & Optimistic Execution \u2014 Concentrated DEX Routing Sequence",
+        "actors": [
+          "Trader / LP",
+          "SwapRouter",
+          "UniswapV3Pool",
+          "FlashCallback"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Trader calls SwapRouter for Uniswap v3 Flash Swaps & Optimis",
+            "activeActor": "Trader / LP",
+            "messages": [
+              {
+                "from": "Trader / LP",
+                "to": "SwapRouter",
+                "label": "exactInput(path, minOut) [Packed Route Verified]",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: SwapRouter decodes 23-byte hop slice and routes through pool",
+            "activeActor": "SwapRouter",
+            "messages": [
+              {
+                "from": "SwapRouter",
+                "to": "UniswapV3Pool",
+                "label": "swap(recipient, zeroForOne, amountIn) [Zero-Padding Gas]",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Pool executes optimistic disbursement and verifies callback repayment",
+            "activeActor": "UniswapV3Pool",
+            "messages": [
+              {
+                "from": "UniswapV3Pool",
+                "to": "FlashCallback",
+                "label": "uniswapV3FlashCallback(fee0, fee1) [Solvency Invariant]",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Multi-hop settled; output transferred with slippage defense check",
+            "activeActor": "SwapRouter",
+            "messages": [
+              {
+                "from": "SwapRouter",
+                "to": "Trader / LP",
+                "label": "TokensTransferred(SlippageSafe \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Uniswap v3 Flash Swaps & Optimistic Execution \u2014 Concentrated DEX Routing Sequence",
+        "actors": [
+          "Trader / LP",
+          "SwapRouter",
+          "UniswapV3Pool",
+          "FlashCallback"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Trader calls SwapRouter for Uniswap v3 Flash Swaps & Optimis",
+            "activeActor": "Trader / LP",
+            "messages": [
+              {
+                "from": "Trader / LP",
+                "to": "SwapRouter",
+                "label": "exactInput(path, minOut) [Packed Route Verified]",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: SwapRouter decodes 23-byte hop slice and routes through pool",
+            "activeActor": "SwapRouter",
+            "messages": [
+              {
+                "from": "SwapRouter",
+                "to": "UniswapV3Pool",
+                "label": "swap(recipient, zeroForOne, amountIn) [Zero-Padding Gas]",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Pool executes optimistic disbursement and verifies callback repayment",
+            "activeActor": "UniswapV3Pool",
+            "messages": [
+              {
+                "from": "UniswapV3Pool",
+                "to": "FlashCallback",
+                "label": "uniswapV3FlashCallback(fee0, fee1) [Solvency Invariant]",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Multi-hop settled; output transferred with slippage defense check",
+            "activeActor": "SwapRouter",
+            "messages": [
+              {
+                "from": "SwapRouter",
+                "to": "Trader / LP",
+                "label": "TokensTransferred(SlippageSafe \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Multi-Hop Swap Routing & Packed Path Encoding",
+      "codeHash": "133c0e1bcca38635afde3926bd2492722ce8892ab0d1720df77f0a5d463a10e0",
+      "spec": {
+        "template": "sequence",
+        "title": "Multi-Hop Swap Routing & Packed Path Encoding \u2014 Concentrated DEX Routing Sequence",
+        "actors": [
+          "Trader / LP",
+          "SwapRouter",
+          "UniswapV3Pool",
+          "FlashCallback"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Trader calls SwapRouter for Multi-Hop Swap Routing & Packed ",
+            "activeActor": "Trader / LP",
+            "messages": [
+              {
+                "from": "Trader / LP",
+                "to": "SwapRouter",
+                "label": "exactInput(path, minOut) [Packed Route Verified]",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: SwapRouter decodes 23-byte hop slice and routes through pool",
+            "activeActor": "SwapRouter",
+            "messages": [
+              {
+                "from": "SwapRouter",
+                "to": "UniswapV3Pool",
+                "label": "swap(recipient, zeroForOne, amountIn) [Zero-Padding Gas]",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Pool executes optimistic disbursement and verifies callback repayment",
+            "activeActor": "UniswapV3Pool",
+            "messages": [
+              {
+                "from": "UniswapV3Pool",
+                "to": "FlashCallback",
+                "label": "uniswapV3FlashCallback(fee0, fee1) [Solvency Invariant]",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Multi-hop settled; output transferred with slippage defense check",
+            "activeActor": "SwapRouter",
+            "messages": [
+              {
+                "from": "SwapRouter",
+                "to": "Trader / LP",
+                "label": "TokensTransferred(SlippageSafe \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Multi-Hop Swap Routing & Packed Path Encoding \u2014 Concentrated DEX Routing Sequence",
+        "actors": [
+          "Trader / LP",
+          "SwapRouter",
+          "UniswapV3Pool",
+          "FlashCallback"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Trader calls SwapRouter for Multi-Hop Swap Routing & Packed ",
+            "activeActor": "Trader / LP",
+            "messages": [
+              {
+                "from": "Trader / LP",
+                "to": "SwapRouter",
+                "label": "exactInput(path, minOut) [Packed Route Verified]",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: SwapRouter decodes 23-byte hop slice and routes through pool",
+            "activeActor": "SwapRouter",
+            "messages": [
+              {
+                "from": "SwapRouter",
+                "to": "UniswapV3Pool",
+                "label": "swap(recipient, zeroForOne, amountIn) [Zero-Padding Gas]",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Pool executes optimistic disbursement and verifies callback repayment",
+            "activeActor": "UniswapV3Pool",
+            "messages": [
+              {
+                "from": "UniswapV3Pool",
+                "to": "FlashCallback",
+                "label": "uniswapV3FlashCallback(fee0, fee1) [Solvency Invariant]",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Multi-hop settled; output transferred with slippage defense check",
+            "activeActor": "SwapRouter",
+            "messages": [
+              {
+                "from": "SwapRouter",
+                "to": "Trader / LP",
+                "label": "TokensTransferred(SlippageSafe \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Exact Input vs Exact Output Multi-Pool Execution Math",
+      "codeHash": "08dc1dc33896804dae33933a357ec9d5c52a05b0355da9bfb37a8f1ea908957c",
+      "spec": {
+        "template": "sequence",
+        "title": "Exact Input vs Exact Output Multi-Pool Execution Math \u2014 Concentrated DEX Routing Sequence",
+        "actors": [
+          "Trader / LP",
+          "SwapRouter",
+          "UniswapV3Pool",
+          "FlashCallback"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Trader calls SwapRouter for Exact Input vs Exact Output Mult",
+            "activeActor": "Trader / LP",
+            "messages": [
+              {
+                "from": "Trader / LP",
+                "to": "SwapRouter",
+                "label": "exactInput(path, minOut) [Packed Route Verified]",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: SwapRouter decodes 23-byte hop slice and routes through pool",
+            "activeActor": "SwapRouter",
+            "messages": [
+              {
+                "from": "SwapRouter",
+                "to": "UniswapV3Pool",
+                "label": "swap(recipient, zeroForOne, amountIn) [Zero-Padding Gas]",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Pool executes optimistic disbursement and verifies callback repayment",
+            "activeActor": "UniswapV3Pool",
+            "messages": [
+              {
+                "from": "UniswapV3Pool",
+                "to": "FlashCallback",
+                "label": "uniswapV3FlashCallback(fee0, fee1) [Solvency Invariant]",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Multi-hop settled; output transferred with slippage defense check",
+            "activeActor": "SwapRouter",
+            "messages": [
+              {
+                "from": "SwapRouter",
+                "to": "Trader / LP",
+                "label": "TokensTransferred(SlippageSafe \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Exact Input vs Exact Output Multi-Pool Execution Math \u2014 Concentrated DEX Routing Sequence",
+        "actors": [
+          "Trader / LP",
+          "SwapRouter",
+          "UniswapV3Pool",
+          "FlashCallback"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Trader calls SwapRouter for Exact Input vs Exact Output Mult",
+            "activeActor": "Trader / LP",
+            "messages": [
+              {
+                "from": "Trader / LP",
+                "to": "SwapRouter",
+                "label": "exactInput(path, minOut) [Packed Route Verified]",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: SwapRouter decodes 23-byte hop slice and routes through pool",
+            "activeActor": "SwapRouter",
+            "messages": [
+              {
+                "from": "SwapRouter",
+                "to": "UniswapV3Pool",
+                "label": "swap(recipient, zeroForOne, amountIn) [Zero-Padding Gas]",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Pool executes optimistic disbursement and verifies callback repayment",
+            "activeActor": "UniswapV3Pool",
+            "messages": [
+              {
+                "from": "UniswapV3Pool",
+                "to": "FlashCallback",
+                "label": "uniswapV3FlashCallback(fee0, fee1) [Solvency Invariant]",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Multi-hop settled; output transferred with slippage defense check",
+            "activeActor": "SwapRouter",
+            "messages": [
+              {
+                "from": "SwapRouter",
+                "to": "Trader / LP",
+                "label": "TokensTransferred(SlippageSafe \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "MEV & Sandwich Attack Defenses: amountOutMinimum & Private RPCs",
+      "codeHash": "444fad3dbaecfa204aa9f1aad53b8705c60352a46e6fcf652ae77a5ae848edf5",
+      "spec": {
+        "template": "sequence",
+        "title": "MEV & Sandwich Attack Defenses: amountOutMinimum & Private RPCs \u2014 Concentrated DEX Routing Sequence",
+        "actors": [
+          "Trader / LP",
+          "SwapRouter",
+          "UniswapV3Pool",
+          "FlashCallback"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Trader calls SwapRouter for MEV & Sandwich Attack Defenses: ",
+            "activeActor": "Trader / LP",
+            "messages": [
+              {
+                "from": "Trader / LP",
+                "to": "SwapRouter",
+                "label": "exactInput(path, minOut) [Packed Route Verified]",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: SwapRouter decodes 23-byte hop slice and routes through pool",
+            "activeActor": "SwapRouter",
+            "messages": [
+              {
+                "from": "SwapRouter",
+                "to": "UniswapV3Pool",
+                "label": "swap(recipient, zeroForOne, amountIn) [Zero-Padding Gas]",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Pool executes optimistic disbursement and verifies callback repayment",
+            "activeActor": "UniswapV3Pool",
+            "messages": [
+              {
+                "from": "UniswapV3Pool",
+                "to": "FlashCallback",
+                "label": "uniswapV3FlashCallback(fee0, fee1) [Solvency Invariant]",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Multi-hop settled; output transferred with slippage defense check",
+            "activeActor": "SwapRouter",
+            "messages": [
+              {
+                "from": "SwapRouter",
+                "to": "Trader / LP",
+                "label": "TokensTransferred(SlippageSafe \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "MEV & Sandwich Attack Defenses: amountOutMinimum & Private RPCs \u2014 Concentrated DEX Routing Sequence",
+        "actors": [
+          "Trader / LP",
+          "SwapRouter",
+          "UniswapV3Pool",
+          "FlashCallback"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Trader calls SwapRouter for MEV & Sandwich Attack Defenses: ",
+            "activeActor": "Trader / LP",
+            "messages": [
+              {
+                "from": "Trader / LP",
+                "to": "SwapRouter",
+                "label": "exactInput(path, minOut) [Packed Route Verified]",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: SwapRouter decodes 23-byte hop slice and routes through pool",
+            "activeActor": "SwapRouter",
+            "messages": [
+              {
+                "from": "SwapRouter",
+                "to": "UniswapV3Pool",
+                "label": "swap(recipient, zeroForOne, amountIn) [Zero-Padding Gas]",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Pool executes optimistic disbursement and verifies callback repayment",
+            "activeActor": "UniswapV3Pool",
+            "messages": [
+              {
+                "from": "UniswapV3Pool",
+                "to": "FlashCallback",
+                "label": "uniswapV3FlashCallback(fee0, fee1) [Solvency Invariant]",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Multi-hop settled; output transferred with slippage defense check",
+            "activeActor": "SwapRouter",
+            "messages": [
+              {
+                "from": "SwapRouter",
+                "to": "Trader / LP",
+                "label": "TokensTransferred(SlippageSafe \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Master DEX Routing Engine & Institutional Execution Certification",
+      "codeHash": "52a0bd67edcde8d3a5e742f500a063692efb6284d0715ad7919c8a21bd8cee51",
+      "spec": {
+        "template": "sequence",
+        "title": "Master DEX Routing Engine & Institutional Execution Certification \u2014 Concentrated DEX Routing Sequence",
+        "actors": [
+          "Trader / LP",
+          "SwapRouter",
+          "UniswapV3Pool",
+          "FlashCallback"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Trader calls SwapRouter for Master DEX Routing Engine & Inst",
+            "activeActor": "Trader / LP",
+            "messages": [
+              {
+                "from": "Trader / LP",
+                "to": "SwapRouter",
+                "label": "exactInput(path, minOut) [Packed Route Verified]",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: SwapRouter decodes 23-byte hop slice and routes through pool",
+            "activeActor": "SwapRouter",
+            "messages": [
+              {
+                "from": "SwapRouter",
+                "to": "UniswapV3Pool",
+                "label": "swap(recipient, zeroForOne, amountIn) [Zero-Padding Gas]",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Pool executes optimistic disbursement and verifies callback repayment",
+            "activeActor": "UniswapV3Pool",
+            "messages": [
+              {
+                "from": "UniswapV3Pool",
+                "to": "FlashCallback",
+                "label": "uniswapV3FlashCallback(fee0, fee1) [Solvency Invariant]",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Multi-hop settled; output transferred with slippage defense check",
+            "activeActor": "SwapRouter",
+            "messages": [
+              {
+                "from": "SwapRouter",
+                "to": "Trader / LP",
+                "label": "TokensTransferred(SlippageSafe \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Master DEX Routing Engine & Institutional Execution Certification \u2014 Concentrated DEX Routing Sequence",
+        "actors": [
+          "Trader / LP",
+          "SwapRouter",
+          "UniswapV3Pool",
+          "FlashCallback"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Trader calls SwapRouter for Master DEX Routing Engine & Inst",
+            "activeActor": "Trader / LP",
+            "messages": [
+              {
+                "from": "Trader / LP",
+                "to": "SwapRouter",
+                "label": "exactInput(path, minOut) [Packed Route Verified]",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: SwapRouter decodes 23-byte hop slice and routes through pool",
+            "activeActor": "SwapRouter",
+            "messages": [
+              {
+                "from": "SwapRouter",
+                "to": "UniswapV3Pool",
+                "label": "swap(recipient, zeroForOne, amountIn) [Zero-Padding Gas]",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Pool executes optimistic disbursement and verifies callback repayment",
+            "activeActor": "UniswapV3Pool",
+            "messages": [
+              {
+                "from": "UniswapV3Pool",
+                "to": "FlashCallback",
+                "label": "uniswapV3FlashCallback(fee0, fee1) [Solvency Invariant]",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Multi-hop settled; output transferred with slippage defense check",
+            "activeActor": "SwapRouter",
+            "messages": [
+              {
+                "from": "SwapRouter",
+                "to": "Trader / LP",
+                "label": "TokensTransferred(SlippageSafe \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
