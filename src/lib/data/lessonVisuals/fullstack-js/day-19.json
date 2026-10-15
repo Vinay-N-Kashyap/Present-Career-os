@@ -1,0 +1,544 @@
+{
+  "schemaVersion": 1,
+  "prefix": "fullstack-js",
+  "day": 19,
+  "promptSha": "345dbfad28d5e1b681e6ad519f8e7204243215a3de590a6ad23a314be752c6a9",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Producer-Consumer Architecture & BullMQ Job Lifecycles",
+      "codeHash": "68ae0bb16d50ed41481576dcc63b69af85d4e3ac539fccd8fe45559ce4b9d60e",
+      "spec": {
+        "template": "flow",
+        "title": "Producer-Consumer Architecture & Bu... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Ingress Job / Task Descriptor",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Producer-Consumer Architecture & Bu...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Processed Queue State / DLQ State",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingress task descriptor and initialize Producer-Consumer Architecture & Bu....",
+            "values": {
+              "in": "Job Enqueued",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute queue lifecycle, backoff scheduling, and worker dispatch in Producer-Consumer Architecture & Bu....",
+            "values": {
+              "in": "Claimed",
+              "proc": "Executing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "active",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world asynchronous execution pattern in Producer-Consumer Architecture & Bu....",
+            "values": {
+              "in": "Active Worker",
+              "proc": "Processing",
+              "out": "Completed / Retrying"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "active",
+              "out": "active"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify deterministic idempotency, DLQ isolation, and queue throughput in Producer-Consumer Architecture & Bu....",
+            "values": {
+              "in": "Terminal State",
+              "proc": "Quiesced",
+              "out": "Verified State"
+            },
+            "tones": {
+              "in": "success",
+              "proc": "success",
+              "out": "success"
+            },
+            "arrows": [
+              [
+                "in",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Concurrency, Sandboxed Workers & Event Loop Protection",
+      "codeHash": "1ee239d65ed6b982346d3a91809d6709327d51e6337076ba1ce8575a27101b3c",
+      "spec": {
+        "template": "flow",
+        "title": "Concurrency, Sandboxed Workers & Ev... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Ingress Job / Task Descriptor",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Concurrency, Sandboxed Workers & Ev...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Processed Queue State / DLQ State",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingress task descriptor and initialize Concurrency, Sandboxed Workers & Ev....",
+            "values": {
+              "in": "Job Enqueued",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute queue lifecycle, backoff scheduling, and worker dispatch in Concurrency, Sandboxed Workers & Ev....",
+            "values": {
+              "in": "Claimed",
+              "proc": "Executing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "active",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world asynchronous execution pattern in Concurrency, Sandboxed Workers & Ev....",
+            "values": {
+              "in": "Active Worker",
+              "proc": "Processing",
+              "out": "Completed / Retrying"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "active",
+              "out": "active"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify deterministic idempotency, DLQ isolation, and queue throughput in Concurrency, Sandboxed Workers & Ev....",
+            "values": {
+              "in": "Terminal State",
+              "proc": "Quiesced",
+              "out": "Verified State"
+            },
+            "tones": {
+              "in": "success",
+              "proc": "success",
+              "out": "success"
+            },
+            "arrows": [
+              [
+                "in",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Retry Strategies, Exponential Backoff, Jitter & Dead-Letter Queues (DLQ)",
+      "codeHash": "5cd6ce27c9a83412dd20ecd9ec04af18ff858355df628a838d2c9f13950cd0bf",
+      "spec": {
+        "template": "flow",
+        "title": "Retry Strategies, Exponential Backo... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Ingress Job / Task Descriptor",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Retry Strategies, Exponential Backo...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Processed Queue State / DLQ State",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingress task descriptor and initialize Retry Strategies, Exponential Backo....",
+            "values": {
+              "in": "Job Enqueued",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute queue lifecycle, backoff scheduling, and worker dispatch in Retry Strategies, Exponential Backo....",
+            "values": {
+              "in": "Claimed",
+              "proc": "Executing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "active",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world asynchronous execution pattern in Retry Strategies, Exponential Backo....",
+            "values": {
+              "in": "Active Worker",
+              "proc": "Processing",
+              "out": "Completed / Retrying"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "active",
+              "out": "active"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify deterministic idempotency, DLQ isolation, and queue throughput in Retry Strategies, Exponential Backo....",
+            "values": {
+              "in": "Terminal State",
+              "proc": "Quiesced",
+              "out": "Verified State"
+            },
+            "tones": {
+              "in": "success",
+              "proc": "success",
+              "out": "success"
+            },
+            "arrows": [
+              [
+                "in",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Rate Limiting, Group Throttling & Priority Scheduling",
+      "codeHash": "ba14767138e2091a75848f58b22c58d9e53a95fa3a616a1597ac3e961d97271b",
+      "spec": {
+        "template": "flow",
+        "title": "Rate Limiting, Group Throttling & P... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Ingress Job / Task Descriptor",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Rate Limiting, Group Throttling & P...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Processed Queue State / DLQ State",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingress task descriptor and initialize Rate Limiting, Group Throttling & P....",
+            "values": {
+              "in": "Job Enqueued",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute queue lifecycle, backoff scheduling, and worker dispatch in Rate Limiting, Group Throttling & P....",
+            "values": {
+              "in": "Claimed",
+              "proc": "Executing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "active",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world asynchronous execution pattern in Rate Limiting, Group Throttling & P....",
+            "values": {
+              "in": "Active Worker",
+              "proc": "Processing",
+              "out": "Completed / Retrying"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "active",
+              "out": "active"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify deterministic idempotency, DLQ isolation, and queue throughput in Rate Limiting, Group Throttling & P....",
+            "values": {
+              "in": "Terminal State",
+              "proc": "Quiesced",
+              "out": "Verified State"
+            },
+            "tones": {
+              "in": "success",
+              "proc": "success",
+              "out": "success"
+            },
+            "arrows": [
+              [
+                "in",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Distributed Job Deduplication, Idempotency Keys & Monitored Queue Workflows",
+      "codeHash": "b83dc4f5297c5c8f0264bbe1c0a769ae345d62558e8425ee034f095df85c4471",
+      "spec": {
+        "template": "flow",
+        "title": "Distributed Job Deduplication, Idem... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Ingress Job / Task Descriptor",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Distributed Job Deduplication, Idem...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Processed Queue State / DLQ State",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingress task descriptor and initialize Distributed Job Deduplication, Idem....",
+            "values": {
+              "in": "Job Enqueued",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute queue lifecycle, backoff scheduling, and worker dispatch in Distributed Job Deduplication, Idem....",
+            "values": {
+              "in": "Claimed",
+              "proc": "Executing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "active",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world asynchronous execution pattern in Distributed Job Deduplication, Idem....",
+            "values": {
+              "in": "Active Worker",
+              "proc": "Processing",
+              "out": "Completed / Retrying"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "active",
+              "out": "active"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify deterministic idempotency, DLQ isolation, and queue throughput in Distributed Job Deduplication, Idem....",
+            "values": {
+              "in": "Terminal State",
+              "proc": "Quiesced",
+              "out": "Verified State"
+            },
+            "tones": {
+              "in": "success",
+              "proc": "success",
+              "out": "success"
+            },
+            "arrows": [
+              [
+                "in",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
