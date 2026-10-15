@@ -1,0 +1,1139 @@
+{
+  "schemaVersion": 1,
+  "prefix": "fullstack-js",
+  "day": 14,
+  "promptSha": "81ef8ee093378182e241fc84cf82ee4c8cd6dc7c7df667fe743941a028c621bb",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "In-Memory Key-Value Architecture & Redis Data Structures",
+      "codeHash": "322745954f613d2f03c552311452109c28a75b249058a545628c8e780ee3e623",
+      "spec": {
+        "template": "flow",
+        "title": "In-Memory Key-Value Architecture & ... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Ingress Cache/Read Key",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. In-Memory Key-Value Architecture & ...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. In-Memory / Database Resolution State",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingress cache key and initialize In-Memory Key-Value Architecture & ....",
+            "values": {
+              "in": "Day 14 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute key lookup, TTL evaluation, and stampede protection in In-Memory Key-Value Architecture & ....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluate cache hit/miss or atomic Lua mutation invariant.",
+            "values": {
+              "in": "Validated",
+              "proc": "Action Committed",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end caching resolution confirmed for In-Memory Key-Value Architecture & ....",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "In-Memory Key-Value Architecture & ... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Ingress Cache/Read Key",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. In-Memory Key-Value Architecture & ...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. In-Memory / Database Resolution State",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingress cache key and initialize In-Memory Key-Value Architecture & ....",
+            "values": {
+              "in": "Day 14 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute key lookup, TTL evaluation, and stampede protection in In-Memory Key-Value Architecture & ....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluate cache hit/miss or atomic Lua mutation invariant.",
+            "values": {
+              "in": "Validated",
+              "proc": "Action Committed",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end caching resolution confirmed for In-Memory Key-Value Architecture & ....",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Cache-Aside (Lazy-Loading) Pattern vs Write-Through / Write-Behind",
+      "codeHash": "3c105fb53710d71c828944b2d17c5be07f8c28b02294c042a566d1206e7e9e61",
+      "spec": {
+        "template": "flow",
+        "title": "The Cache-Aside (Lazy-Loading) Patt... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Ingress Cache/Read Key",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. The Cache-Aside (Lazy-Loading) Patt...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. In-Memory / Database Resolution State",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingress cache key and initialize The Cache-Aside (Lazy-Loading) Patt....",
+            "values": {
+              "in": "Day 14 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute key lookup, TTL evaluation, and stampede protection in The Cache-Aside (Lazy-Loading) Patt....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluate cache hit/miss or atomic Lua mutation invariant.",
+            "values": {
+              "in": "Validated",
+              "proc": "Action Committed",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end caching resolution confirmed for The Cache-Aside (Lazy-Loading) Patt....",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "The Cache-Aside (Lazy-Loading) Patt... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Ingress Cache/Read Key",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. The Cache-Aside (Lazy-Loading) Patt...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. In-Memory / Database Resolution State",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingress cache key and initialize The Cache-Aside (Lazy-Loading) Patt....",
+            "values": {
+              "in": "Day 14 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute key lookup, TTL evaluation, and stampede protection in The Cache-Aside (Lazy-Loading) Patt....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluate cache hit/miss or atomic Lua mutation invariant.",
+            "values": {
+              "in": "Validated",
+              "proc": "Action Committed",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end caching resolution confirmed for The Cache-Aside (Lazy-Loading) Patt....",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cache Invalidation, TTL Invariants & Thundering Herd (Cache Stampede) Mitigation",
+      "codeHash": "2f1282dfabff60af3cee9ee72992c4bb79f565e7f7cd1c06394ecedd1ee60234",
+      "spec": {
+        "template": "flow",
+        "title": "Cache Invalidation, TTL Invariants ... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Ingress Cache/Read Key",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Cache Invalidation, TTL Invariants ...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. In-Memory / Database Resolution State",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingress cache key and initialize Cache Invalidation, TTL Invariants ....",
+            "values": {
+              "in": "Day 14 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute key lookup, TTL evaluation, and stampede protection in Cache Invalidation, TTL Invariants ....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluate cache hit/miss or atomic Lua mutation invariant.",
+            "values": {
+              "in": "Validated",
+              "proc": "Action Committed",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end caching resolution confirmed for Cache Invalidation, TTL Invariants ....",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Cache Invalidation, TTL Invariants ... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Ingress Cache/Read Key",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Cache Invalidation, TTL Invariants ...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. In-Memory / Database Resolution State",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingress cache key and initialize Cache Invalidation, TTL Invariants ....",
+            "values": {
+              "in": "Day 14 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute key lookup, TTL evaluation, and stampede protection in Cache Invalidation, TTL Invariants ....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluate cache hit/miss or atomic Lua mutation invariant.",
+            "values": {
+              "in": "Validated",
+              "proc": "Action Committed",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end caching resolution confirmed for Cache Invalidation, TTL Invariants ....",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Redis Transactions (MULTI/EXEC), Pipelining & Lua Script Atomicity",
+      "codeHash": "e52fde4d67fc3958fb00d1eea9c15fbe67e72f2eeecb3dc975545a05a6656b66",
+      "spec": {
+        "template": "flow",
+        "title": "Redis Transactions (MULTI/EXEC), Pi... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Ingress Cache/Read Key",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Redis Transactions (MULTI/EXEC), Pi...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. In-Memory / Database Resolution State",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingress cache key and initialize Redis Transactions (MULTI/EXEC), Pi....",
+            "values": {
+              "in": "Day 14 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute key lookup, TTL evaluation, and stampede protection in Redis Transactions (MULTI/EXEC), Pi....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluate cache hit/miss or atomic Lua mutation invariant.",
+            "values": {
+              "in": "Validated",
+              "proc": "Action Committed",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end caching resolution confirmed for Redis Transactions (MULTI/EXEC), Pi....",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Redis Transactions (MULTI/EXEC), Pi... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Ingress Cache/Read Key",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Redis Transactions (MULTI/EXEC), Pi...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. In-Memory / Database Resolution State",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingress cache key and initialize Redis Transactions (MULTI/EXEC), Pi....",
+            "values": {
+              "in": "Day 14 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute key lookup, TTL evaluation, and stampede protection in Redis Transactions (MULTI/EXEC), Pi....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluate cache hit/miss or atomic Lua mutation invariant.",
+            "values": {
+              "in": "Validated",
+              "proc": "Action Committed",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end caching resolution confirmed for Redis Transactions (MULTI/EXEC), Pi....",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Distributed Cache Manager with Soft TTL & Stale-While-Revalidate",
+      "codeHash": "56257799b372ec473f7e70a232021fa62c1b3ffcb04e6654fe6363ef147d030b",
+      "spec": {
+        "template": "flow",
+        "title": "Enterprise Distributed Cache Manage... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Ingress Cache/Read Key",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Enterprise Distributed Cache Manage...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. In-Memory / Database Resolution State",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingress cache key and initialize Enterprise Distributed Cache Manage....",
+            "values": {
+              "in": "Day 14 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute key lookup, TTL evaluation, and stampede protection in Enterprise Distributed Cache Manage....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluate cache hit/miss or atomic Lua mutation invariant.",
+            "values": {
+              "in": "Validated",
+              "proc": "Action Committed",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end caching resolution confirmed for Enterprise Distributed Cache Manage....",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Enterprise Distributed Cache Manage... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Ingress Cache/Read Key",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Enterprise Distributed Cache Manage...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. In-Memory / Database Resolution State",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingress cache key and initialize Enterprise Distributed Cache Manage....",
+            "values": {
+              "in": "Day 14 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute key lookup, TTL evaluation, and stampede protection in Enterprise Distributed Cache Manage....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluate cache hit/miss or atomic Lua mutation invariant.",
+            "values": {
+              "in": "Validated",
+              "proc": "Action Committed",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end caching resolution confirmed for Enterprise Distributed Cache Manage....",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
