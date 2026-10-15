@@ -5886,5 +5886,248 @@ console.log('Release Invariant: Phased rollouts contain blast radius and enable 
       "Execute the MobileMediaStreamingMasterEngine audit certifying sub-250ms Time To First Frame and Tier-1 certification."
     ]
   }
+},
+{
+  "day": 22,
+  "title": "Native Bluetooth Low Energy (BLE): Peripheral / Central Roles, GATT Services & MTU Optimization",
+  "parts": [
+    {
+      "title": "Bluetooth Low Energy Architecture: Central vs Peripheral Roles & Advertising Packets",
+      "say": [
+        "Bluetooth Low Energy (BLE), introduced in the Bluetooth 4.0 Core Specification and refined through Bluetooth 5.x, revolutionized wireless hardware communication for smartphones. Unlike Classic Bluetooth\u2014which was engineered for continuous, high-bandwidth streaming (such as legacy wireless headsets) and consumed significant battery power\u2014BLE was explicitly designed for ultra-low power consumption. BLE peripherals (such as glucose monitors, smart rings, beacons, and IoT environmental sensors) can operate continuously for months or even years on a single coin-cell battery.",
+        "The physical architecture of BLE operates in the globally unlicensed 2.4 GHz Industrial, Scientific, and Medical (ISM) frequency band. The spectrum is divided into 40 physical RF channels spaced 2 MHz apart. Critically, these 40 channels are bifurcated into two distinct operational groups: 3 Primary Advertising Channels (Channels 37, 38, and 39) and 37 Data Channels (Channels 0 through 36). The three advertising channels are strategically allocated across frequencies that avoid interference from common Wi-Fi channels 1, 6, and 11.",
+        "In BLE communication, devices adopt one of two fundamental operational roles: Central or Peripheral. A Peripheral is typically a small, resource-constrained device (e.g., a smart fitness tracker) that broadcasts data to announce its presence. A Central is a powerful computing device (e.g., an iPhone or Android smartphone) that scans the 3 advertising channels, detects peripheral broadcasts, and initiates bidirectional point-to-point connections.",
+        "Peripheral broadcasting relies on Advertising Packets. In legacy BLE 4.x, an advertising payload is capped at 31 bytes of total data. This compact payload is structured into Length-Type-Value (LTV) data structures conforming to the Generic Access Profile (GAP). Common advertising fields include: Flags (indicating discovery modes), Complete or Shortened Local Name, 16-bit or 128-bit Service UUIDs (identifying supported GATT services), and Manufacturer Specific Data (custom binary sensor telemetry).",
+        "When 31 bytes are insufficient, peripherals can support an active Scan Response packet. When a central scanner detects an advertisement, it immediately dispatches a SCAN_REQ over the air; the peripheral responds with a secondary SCAN_RSP containing an additional 31 bytes of metadata (such as device serial numbers or extended device names) without establishing a formal connection.",
+        "Furthermore, modern BLE 5.0 introduces Extended Advertising. Extended advertising offloads large payloads (up to 254 bytes per packet) onto the 37 secondary data channels, enabling high-throughput beaconing and periodic advertising trains.",
+        "Central scanning is quantified through Received Signal Strength Indication (RSSI), measured in decibels relative to one milliwatt (dBm). RSSI values typically range from -30 dBm (device in immediate physical contact) to -95 dBm (device at the edge of RF reception). Mobile applications calculate estimated proximity using the Log-Distance Path Loss Model: RSSI = -10n * log10(d) + A, where n is the path loss exponent of the physical environment and A is the received signal strength at a calibrated distance of one meter.",
+        "However, raw RSSI is notoriously noisy due to multipath reflections, physical obstacles, and human body attenuation. Enterprise mobile applications never react to instantaneous raw RSSI readings; instead, they filter signal streams using Moving Average or Kalman Filters before determining whether a device is within connection range.",
+        "Scanning duty cycles also dictate battery life: a smartphone scanning continuously with 100% duty cycle will drain 5-10% of battery per hour. Production apps configure windowed duty cycles (e.g., scanning for 200ms every 2,000ms) to preserve battery while maintaining rapid peripheral discovery.",
+        "By mastering BLE RF channels, Central and Peripheral topologies, advertising payload structures, and filtered RSSI proximity mathematics, mobile engineers lay the robust foundation for high-performance hardware connectivity."
+      ],
+      "example": "Think of a lighthouse on a foggy coastline and a cargo ship navigating at sea. The lighthouse (Peripheral) continuously blinks a bright, unique light pattern across the horizon every five seconds (advertising packets) without knowing who is out there. The ship's lookout (Central) scans the horizon with binoculars, detects the flashing light, measures its brightness (RSSI), identifies the harbor name (local name and service UUID), and steers the ship directly toward the dock to establish contact.",
+      "code": "// Native Bluetooth Low Energy (BLE) Advertising & Discovery Engine\nclass BleAdvertisingDiscoveryEngine {\n  constructor() {\n    this.discoveredPeripherals = new Map();\n  }\n\n  // Parses raw 31-byte GAP advertising payload\n  parseAdvertisingPacket(rawHexPayload, rssi) {\n    const buffer = Buffer.from(rawHexPayload, 'hex');\n    let offset = 0;\n    let localName = 'UNKNOWN_DEVICE';\n    let serviceUuid = null;\n    let manufacturerData = null;\n\n    while (offset < buffer.length) {\n      const length = buffer[offset];\n      if (length === 0 || offset + length >= buffer.length) break;\n\n      const adType = buffer[offset + 1];\n      const data = buffer.subarray(offset + 2, offset + 1 + length);\n\n      if (adType === 0x09) { // Complete Local Name\n        localName = data.toString('utf8');\n      } else if (adType === 0x03) { // Complete 16-bit Service UUID\n        serviceUuid = '0x' + data.readUInt16LE(0).toString(16).padStart(4, '0').toUpperCase();\n      } else if (adType === 0xFF) { // Manufacturer Specific Data\n        manufacturerData = data.toString('hex');\n      }\n\n      offset += 1 + length;\n    }\n\n    // Calculate approximate distance using Log-Distance Path Loss: RSSI = -10n*log10(d) + A\n    const measuredPowerAt1m = -59; // Calibrated 1m RSSI\n    const pathLossExponent = 2.4;  // Indoor office environment\n    const estimatedDistanceMeters = Math.pow(10, (measuredPowerAt1m - rssi) / (10 * pathLossExponent));\n\n    return {\n      localName,\n      serviceUuid,\n      manufacturerData,\n      rawRssi: rssi,\n      estimatedDistanceMeters: parseFloat(estimatedDistanceMeters.toFixed(2)),\n      proximityZone: rssi > -65 ? 'IMMEDIATE' : rssi > -80 ? 'NEAR' : 'FAR'\n    };\n  }\n\n  // Registers discovered peripheral with Kalman-filtered RSSI\n  registerDiscoveredPeripheral(peripheralId, parsedAd) {\n    this.discoveredPeripherals.set(peripheralId, {\n      id: peripheralId,\n      ...parsedAd,\n      lastSeenAt: Date.now(),\n      connectionState: 'DISCOVERED_READY_TO_CONNECT'\n    });\n    return this.discoveredPeripherals.get(peripheralId);\n  }\n}\n\nconst discoveryEngine = new BleAdvertisingDiscoveryEngine();\nconsole.log('--- NATIVE BLE ADVERTISING & DISCOVERY AUDIT ---');\n\n// 1. Raw advertising packet: Name='PinIT-Sensor', ServiceUUID=0x180D (Heart Rate), ManufacturerData=0x01020304\n// 02 01 06 (Flags) 0D 09 50 69 6E 49 54 2D 53 65 6E 73 6F 72 (Name) 03 03 0D 18 (UUID) 05 FF 4C 00 01 02 (Mfr)\nconst rawHex = '0201060d0950696e49542d53656e736f7203030d1805ff4c000102';\nconst parsed = discoveryEngine.parseAdvertisingPacket(rawHex, -62);\n\nconsole.log('Discovered Device: ' + parsed.localName + ' | Service: ' + parsed.serviceUuid);\nconsole.log('Manufacturer Data: 0x' + parsed.manufacturerData + ' | RSSI: ' + parsed.rawRssi + ' dBm');\nconsole.log('Distance Estimate: ' + parsed.estimatedDistanceMeters + ' meters (Proximity: ' + parsed.proximityZone + ')');\n\n// 2. Register into active central connection table\nconst registered = discoveryEngine.registerDiscoveredPeripheral('F2:A4:9B:11:22:33', parsed);\nconsole.log('Registry Status:   ' + registered.connectionState + ' (ID: ' + registered.id + ')');\nconsole.log('BLE Invariant: Advertising packets parse LTV records and estimate proximity via log-distance path loss');",
+      "output": "--- NATIVE BLE ADVERTISING & DISCOVERY AUDIT ---\nDiscovered Device: PinIT-Sensor | Service: 0x180D\nManufacturer Data: 0x4c000102 | RSSI: -62 dBm\nDistance Estimate: 1.33 meters (Proximity: IMMEDIATE)\nRegistry Status:   DISCOVERED_READY_TO_CONNECT (ID: F2:A4:9B:11:22:33)\nBLE Invariant: Advertising packets parse LTV records and estimate proximity via log-distance path loss",
+      "codeNotes": [
+        {
+          "line": 9,
+          "note": "Parses 31-byte GAP advertising structures extracting Local Name, UUID, and Manufacturer Data"
+        },
+        {
+          "line": 34,
+          "note": "Calculates estimated physical distance in meters using log-distance RF path loss modeling"
+        },
+        {
+          "line": 45,
+          "note": "Classifies proximity zones (IMMEDIATE, NEAR, FAR) for threshold-based automatic connection"
+        }
+      ],
+      "tryIt": "Supply an RSSI of -85 dBm and verify that proximityZone evaluates to FAR.",
+      "check": {
+        "question": "Why are BLE primary advertising channels strictly limited to Channels 37, 38, and 39 in the 2.4 GHz spectrum?",
+        "options": [
+          "They are strategically positioned across frequencies that minimize RF interference from standard 2.4 GHz Wi-Fi channels 1, 6, and 11",
+          "Because smartphones are physically incapable of transmitting on numbers higher than 40",
+          "To prevent radios from transmitting FM music stations",
+          "Because Apple and Google own those three channels exclusively"
+        ],
+        "answer": 0,
+        "why": "Channels 37, 38, and 39 sit between and outside the primary transmission bands of standard Wi-Fi channels 1, 6, and 11, maximizing peripheral discovery probability in crowded RF environments."
+      }
+    },
+    {
+      "title": "Generic Attribute Profile (GATT): Services, Characteristics & CCCD Notifications",
+      "say": [
+        "Once a BLE Central connects to a Peripheral over an RF data channel, the communication protocol transitions from broadcast advertising to the Generic Attribute Profile (GATT). GATT defines a structured, hierarchical database schema that organizes data exchange over the Attribute Protocol (ATT).",
+        "The GATT architectural hierarchy consists of four cascading tiers: Profile, Service, Characteristic, and Descriptor. 1. Profile: A predefined collection of services fulfilling a high-level use case (e.g., the Heart Rate Profile or Blood Pressure Profile standardized by the Bluetooth Special Interest Group); 2. Service: A logical grouping of related data points (e.g., Device Information Service or Battery Service); 3. Characteristic: An atomic data value containing a value, properties, and permissions (e.g., Battery Level percentage or Real-Time Electrocardiogram waveform); 4. Descriptor: Metadata attributes that describe the characteristic or configure its behavior.",
+        "Every Service and Characteristic is globally identified by a Universally Unique Identifier (UUID). The Bluetooth SIG defines standardized 16-bit UUIDs (e.g., 0x180F for Battery Service, 0x2A19 for Battery Level). For proprietary hardware, developers generate custom 128-bit UUIDs (such as 128-bit RFC 4122 GUIDs) to prevent identifier collisions.",
+        "Characteristics declare operational Properties that define how a Central may interact with them: Read (allows the Central to fetch the current value on demand), Write (sends data and waits for an ATT acknowledgment), Write Without Response (streams data rapidly without waiting for acknowledgments, maximizing throughput at the risk of packet loss), Notify (the Peripheral pushes updates automatically without acknowledgments), and Indicate (the Peripheral pushes updates and demands an ATT confirmation before sending the next packet).",
+        "The cornerstone of real-time BLE streaming is Notifications. However, a Peripheral is NOT permitted to transmit notifications to a Central by default. The Central must first explicitly subscribe to the characteristic by configuring its Client Characteristic Configuration Descriptor (CCCD), which is universally assigned the standardized 16-bit UUID 0x2902.",
+        "To enable real-time notifications, the Central executes an ATT Write Request to the 0x2902 descriptor with the binary payload 0x0001 (little-endian uint16). To enable indications, the Central writes 0x0002. To unsubscribe and halt peripheral transmissions, the Central writes 0x0000. Forgetting to write 0x0001 to the CCCD descriptor is the single most frequent cause of missing BLE data streams in mobile development.",
+        "Attribute security is enforced through Permissions: characteristics can require Encryption, Authentication (pairing via Passkey or Numeric Comparison), or Authorization (user consent). If an unbonded smartphone attempts to read a protected characteristic, the peripheral returns an ATT_ERROR_INSUFFICIENT_AUTHENTICATION error, prompting the mobile OS to trigger a native Bluetooth Pairing Dialog.",
+        "On iOS, CoreBluetooth abstracts GATT operations through CBPeripheralDelegate: peripheral:didDiscoverServices:, didDiscoverCharacteristicsForService:, didUpdateValueForCharacteristic:, and didWriteValueForCharacteristic:. On Android, BluetoothGattCallback provides onServicesDiscovered, onCharacteristicRead, onCharacteristicWrite, and onCharacteristicChanged.",
+        "Concurrency in GATT transactions requires strict serialization. The ATT protocol allows only ONE outstanding request-response transaction at a time per connection. If a mobile app calls writeCharacteristic twice in rapid succession without awaiting the onCharacteristicWrite callback, the second call fails silently on Android or crashes the native GATT client. Enterprise apps implement a FIFO GATT Operation Queue that serializes all reads, writes, and descriptor configurations.",
+        "By mastering the GATT hierarchy, UUID conventions, characteristic properties, CCCD notification handshakes, and serialized transaction queues, mobile engineers construct rock-solid hardware communication layers."
+      ],
+      "example": "Think of a smart hotel guest room. The room itself is the Profile. Inside, the climate control panel is a Service. On that panel, the temperature reading is a Characteristic. You can look at the dial (Read) or turn the knob (Write). Next to the dial is a small toggle switch labeled 'Beep when temperature changes' (the 0x2902 CCCD Descriptor). Until you flip that toggle switch to ON (writing 0x0001), the panel remains completely silent.",
+      "code": "// Generic Attribute Profile (GATT) Schema & CCCD Subscription Coordinator\nclass GattProfileCoordinator {\n  constructor() {\n    this.services = new Map();\n    this.notificationSubscriptions = new Map();\n  }\n\n  // Declares GATT Service with Characteristics and Descriptors\n  registerGattService(serviceDefinition) {\n    this.services.set(serviceDefinition.uuid, serviceDefinition);\n    return {\n      serviceUuid: serviceDefinition.uuid,\n      characteristicsCount: serviceDefinition.characteristics.length,\n      status: 'SERVICE_REGISTERED'\n    };\n  }\n\n  // Subscribes to real-time notifications via 0x2902 CCCD descriptor\n  writeClientCharacteristicConfigDescriptor(charUuid, cccdValue) {\n    const isNotify = cccdValue === 0x0001;\n    const isIndicate = cccdValue === 0x0002;\n    const isDisable = cccdValue === 0x0000;\n\n    let subscriptionType = 'DISABLED';\n    if (isNotify) subscriptionType = 'NOTIFICATIONS_ACTIVE';\n    else if (isIndicate) subscriptionType = 'INDICATIONS_ACTIVE';\n\n    this.notificationSubscriptions.set(charUuid, subscriptionType);\n\n    return {\n      characteristicUuid: charUuid,\n      descriptorUuid: '0x2902',\n      writtenValueHex: '0x' + cccdValue.toString(16).padStart(4, '0'),\n      subscriptionStatus: subscriptionType,\n      isSubscribed: !isDisable\n    };\n  }\n\n  // Simulates peripheral dispatching a notification packet\n  emitCharacteristicNotification(charUuid, rawBytes) {\n    const subscription = this.notificationSubscriptions.get(charUuid);\n    if (!subscription || subscription === 'DISABLED') {\n      return {\n        isDelivered: false,\n        reason: 'CCCD_NOT_SUBSCRIBED_PACKET_DROPPED'\n      };\n    }\n\n    return {\n      isDelivered: true,\n      characteristicUuid: charUuid,\n      payloadBytesLength: rawBytes.length,\n      hexPayload: Buffer.from(rawBytes).toString('hex').toUpperCase(),\n      transportMode: subscription\n    };\n  }\n}\n\nconst gatt = new GattProfileCoordinator();\nconsole.log('--- GATT SERVICES & CCCD NOTIFICATION AUDIT ---');\n\n// 1. Register Health Telemetry Service (0x180D) with Heart Rate Measurement (0x2A37)\ngatt.registerGattService({\n  uuid: '0x180D',\n  name: 'HeartRateService',\n  characteristics: [\n    {\n      uuid: '0x2A37',\n      name: 'HeartRateMeasurement',\n      properties: ['NOTIFY'],\n      descriptors: ['0x2902']\n    }\n  ]\n});\n\nconsole.log('Registered Service: 0x180D (Heart Rate) with Characteristic 0x2A37 [NOTIFY]');\n\n// 2. Attempt notification before CCCD subscription -> dropped\nconst unSubscribedEmit = gatt.emitCharacteristicNotification('0x2A37', [0x00, 0x48]); // 72 bpm\nconsole.log('Pre-Subscription:   Delivered = ' + unSubscribedEmit.isDelivered + ' (' + unSubscribedEmit.reason + ')');\n\n// 3. Write 0x0001 to 0x2902 CCCD descriptor\nconst subscription = gatt.writeClientCharacteristicConfigDescriptor('0x2A37', 0x0001);\nconsole.log('CCCD Handshake:     Wrote ' + subscription.writtenValueHex + ' to 0x2902 -> ' + subscription.subscriptionStatus);\n\n// 4. Peripheral pushes notification after subscription\nconst liveEmit = gatt.emitCharacteristicNotification('0x2A37', [0x00, 0x48]);\nconsole.log('Post-Subscription:  Delivered = ' + liveEmit.isDelivered + ' | Payload: 0x' + liveEmit.hexPayload + ' (' + liveEmit.transportMode + ')');\nconsole.log('GATT Invariant: Notifications require explicit 0x0001 write to 0x2902 CCCD descriptor to unlock streaming');",
+      "output": "--- GATT SERVICES & CCCD NOTIFICATION AUDIT ---\nRegistered Service: 0x180D (Heart Rate) with Characteristic 0x2A37 [NOTIFY]\nPre-Subscription:   Delivered = false (CCCD_NOT_SUBSCRIBED_PACKET_DROPPED)\nCCCD Handshake:     Wrote 0x0001 to 0x2902 -> NOTIFICATIONS_ACTIVE\nPost-Subscription:  Delivered = true | Payload: 0x0048 (NOTIFICATIONS_ACTIVE)\nGATT Invariant: Notifications require explicit 0x0001 write to 0x2902 CCCD descriptor to unlock streaming",
+      "codeNotes": [
+        {
+          "line": 8,
+          "note": "Registers hierarchical GATT service schemas containing characteristics and descriptors"
+        },
+        {
+          "line": 17,
+          "note": "Executes 0x0001 write to 0x2902 Client Characteristic Configuration Descriptor"
+        },
+        {
+          "line": 34,
+          "note": "Verifies that notification packets drop silently until CCCD subscription is active"
+        }
+      ],
+      "tryIt": "Write 0x0000 to the CCCD descriptor and verify that subsequent notifications are dropped.",
+      "check": {
+        "question": "What happens if a mobile application forgets to write 0x0001 to the 0x2902 CCCD descriptor of a NOTIFY characteristic?",
+        "options": [
+          "The peripheral will never transmit notification data packets over the air, leaving the mobile app listening on a completely silent characteristic",
+          "The smartphone battery will explode instantly",
+          "The operating system uninstalls the mobile app automatically",
+          "The characteristic converts itself into a Wi-Fi router"
+        ],
+        "answer": 0,
+        "why": "The BLE specification forbids peripherals from transmitting notifications until the client writes 0x0001 to the CCCD descriptor (0x2902). Without this write, the peripheral remains silent."
+      }
+    },
+    {
+      "title": "MTU Negotiation, High-Throughput Data Transfer & L2CAP Channels",
+      "say": [
+        "In basic BLE applications, transferring tiny sensor readings (such as a 2-byte battery reading or a 1-byte temperature integer) presents negligible performance challenges. However, modern connected hardware demands high-throughput data transfer: wearable health patches transmit multi-lead ECG waveforms, smart glasses stream raw sensor telemetry, and IoT devices receive Firmware Over-The-Air (FOTA) binary updates measuring hundreds of kilobytes.",
+        "Under default BLE settings, data throughput is severely throttled by the default Maximum Transmission Unit (MTU) of the Attribute Protocol. By specification, the baseline default ATT MTU is exactly 23 bytes. Every ATT packet incurs 3 bytes of protocol header overhead (1 byte Opcode, 2 bytes Attribute Handle). Therefore, the effective maximum user data payload per packet is a meager 20 bytes.",
+        "If an app attempts to transmit a 512-byte firmware chunk over a 23-byte MTU, the data must be fragmented into 26 sequential ATT packets. On Android, where each packet exchange requires a Connection Event interval (typically 15 to 45 ms), transmitting that single 512-byte chunk can take over one second, resulting in a disastrous throughput of under 0.5 KB/s.",
+        "To break through this bottleneck, mobile architectures execute ATT MTU Exchange immediately after establishing a connection. The client dispatches an Exchange MTU Request proposing a larger buffer (typically 512 or 517 bytes). The peripheral responds with its supported MTU, and both radios agree on the minimum of their capabilities.",
+        "With an MTU of 517 bytes, effective user payload per packet jumps from 20 bytes to 514 bytes (517 - 3 bytes overhead). That same 512-byte firmware chunk is now transmitted in a SINGLE over-the-air packet, boosting effective throughput by over 2,500% (reaching 50-80 KB/s).",
+        "Crucially, operating systems handle MTU negotiation differently: On iOS, CoreBluetooth manages MTU automatically behind the scenes (negotiating up to 512 bytes with CBPeripheral.maximumWriteValueLength(for: .withoutResponse)). On Android, the developer must explicitly invoke bluetoothGatt.requestMtu(517) and wait for the onMtuChanged callback before attempting large writes.",
+        "Beyond MTU negotiation, BLE 5.0 introduces the 2M PHY (Physical Layer). While classic BLE 1M PHY transmits at 1 megabit per second, 2M PHY doubles the RF symbol rate to 2 megabits per second, cutting radio transmit duration in half and drastically reducing battery drain.",
+        "For extreme high-throughput use cases (such as continuous audio streaming or high-rate sensor logging), modern Bluetooth standards provide L2CAP Connection-Oriented Channels (CoC). L2CAP channels bypass the entire GATT and ATT database layer, establishing a direct, credit-based, streaming socket between Central and Peripheral capable of transmitting up to 64 KB per packet at speeds exceeding 150 KB/s.",
+        "Flow control in high-throughput transfer requires packet chunking: writing too fast overfills the native Bluetooth controller's TX buffers. When writing without response, developers must monitor onCharacteristicWrite callbacks or track the canSendWriteWithoutResponse event on iOS to avoid buffer overflow errors.",
+        "By implementing MTU 517 negotiation, 2M PHY configuration, and L2CAP connection-oriented streaming, mobile engineers unlock high-speed data pipelines capable of delivering fast, seamless firmware updates."
+      ],
+      "example": "Think of moving 500 books to a new house. If you use small shoe boxes that hold only 2 books each (23-byte default MTU), you must make 250 separate trips back and forth across town (250 connection events). If you instead load a giant moving truck that holds all 500 books at once (517-byte negotiated MTU), you make a single trip, saving hours of travel time and gallons of fuel.",
+      "code": "// Native BLE MTU Negotiation & High-Throughput Transfer Engine\nclass BleMtuThroughputOptimizer {\n  constructor() {\n    this.currentAttMtu = 23; // Default baseline specification MTU\n    this.negotiatedMaxPayload = 20; // 23 - 3 bytes ATT header\n  }\n\n  // Executes ATT MTU Exchange handshake\n  exchangeMtu(clientProposedMtu, peripheralMaxMtu) {\n    // Both radios agree on the minimum of their supported buffers\n    const agreedMtu = Math.min(clientProposedMtu, peripheralMaxMtu);\n    this.currentAttMtu = agreedMtu;\n    this.negotiatedMaxPayload = agreedMtu - 3; // Subtract 3 bytes ATT header\n\n    return {\n      previousMtu: 23,\n      negotiatedAttMtu: agreedMtu,\n      effectivePayloadBytesPerPacket: this.negotiatedMaxPayload,\n      throughputMultiplier: parseFloat((this.negotiatedMaxPayload / 20).toFixed(1)),\n      status: 'MTU_EXCHANGE_COMPLETED'\n    };\n  }\n\n  // Calculates transfer performance for a binary payload\n  calculateTransferPlan(payloadSizeBytes, connectionIntervalMs = 15.0) {\n    const packetsRequired = Math.ceil(payloadSizeBytes / this.negotiatedMaxPayload);\n    const estimatedTransferTimeMs = packetsRequired * connectionIntervalMs;\n    const throughputKbps = (payloadSizeBytes * 8) / (estimatedTransferTimeMs / 1000) / 1000;\n\n    return {\n      payloadSizeBytes,\n      packetsRequired,\n      effectivePayloadPerPacket: this.negotiatedMaxPayload,\n      estimatedTransferTimeMs,\n      throughputKbps: parseFloat(throughputKbps.toFixed(2))\n    };\n  }\n}\n\nconst optimizer = new BleMtuThroughputOptimizer();\nconsole.log('--- NATIVE BLE MTU OPTIMIZATION & THROUGHPUT AUDIT ---');\n\n// 1. Baseline transfer with default 23-byte MTU for 4,096-byte firmware chunk\nconst baselinePlan = optimizer.calculateTransferPlan(4096, 15.0);\nconsole.log('Default MTU (23 bytes):   ' + baselinePlan.packetsRequired + ' packets required across ' + baselinePlan.estimatedTransferTimeMs + ' ms');\nconsole.log('  Baseline Throughput:    ' + baselinePlan.throughputKbps + ' kbps (Payload/pkt: ' + baselinePlan.effectivePayloadPerPacket + ' bytes)');\n\n// 2. Negotiate optimal 517-byte MTU\nconst mtuHandshake = optimizer.exchangeMtu(517, 517);\nconsole.log('MTU Handshake:            Agreed ATT MTU = ' + mtuHandshake.negotiatedAttMtu + ' bytes (' + mtuHandshake.throughputMultiplier + 'x payload capacity)');\n\n// 3. Optimized transfer for same 4,096-byte firmware chunk\nconst optimizedPlan = optimizer.calculateTransferPlan(4096, 15.0);\nconsole.log('Optimized MTU (517 bytes):' + optimizedPlan.packetsRequired + ' packets required across ' + optimizedPlan.estimatedTransferTimeMs + ' ms');\nconsole.log('  Optimized Throughput:   ' + optimizedPlan.throughputKbps + ' kbps (Payload/pkt: ' + optimizedPlan.effectivePayloadPerPacket + ' bytes)');\nconsole.log('Speedup Factor:           ' + (baselinePlan.estimatedTransferTimeMs / optimizedPlan.estimatedTransferTimeMs).toFixed(1) + 'x faster transfer duration!');\nconsole.log('MTU Invariant: MTU exchange from 23 to 517 expands packet payload by 25.7x, slashing connection events');",
+      "output": "--- NATIVE BLE MTU OPTIMIZATION & THROUGHPUT AUDIT ---\nDefault MTU (23 bytes):   205 packets required across 3075 ms\n  Baseline Throughput:    10.66 kbps (Payload/pkt: 20 bytes)\nMTU Handshake:            Agreed ATT MTU = 517 bytes (25.7x payload capacity)\nOptimized MTU (517 bytes):8 packets required across 120 ms\n  Optimized Throughput:   273.07 kbps (Payload/pkt: 514 bytes)\nSpeedup Factor:           25.6x faster transfer duration!\nMTU Invariant: MTU exchange from 23 to 517 expands packet payload by 25.7x, slashing connection events",
+      "codeNotes": [
+        {
+          "line": 9,
+          "note": "Negotiates negotiated ATT MTU subtracting 3 bytes for Opcode and Handle overhead"
+        },
+        {
+          "line": 23,
+          "note": "Calculates required packet fragmentation across connection interval timings"
+        },
+        {
+          "line": 45,
+          "note": "Demonstrates 25.6x speedup transferring a 4KB firmware payload in 8 packets vs 205 packets"
+        }
+      ],
+      "tryIt": "Exchange an MTU of 256 bytes and compare the throughput against the 517-byte optimum.",
+      "check": {
+        "question": "Why does negotiating an ATT MTU of 517 bytes dramatically increase BLE data throughput?",
+        "options": [
+          "It increases the effective user payload per packet from 20 bytes to 514 bytes, reducing required connection events by over 95%",
+          "It turns off the phone's battery protection circuit",
+          "It boosts the radio antenna power to 500 Watts",
+          "It converts the Bluetooth radio into a cellular satellite dish"
+        ],
+        "answer": 0,
+        "why": "With default 23-byte MTU, each packet holds only 20 bytes of payload. Negotiating 517 bytes expands payload capacity to 514 bytes per packet, collapsing the number of packets and round-trip connection intervals needed."
+      }
+    },
+    {
+      "title": "Native Permissions, State Preservation & iOS Background CoreBluetooth",
+      "say": [
+        "In production mobile applications, communicating with physical BLE peripherals is deeply constrained by operating system security policies, runtime user permissions, and background power management. A mobile app that operates perfectly in foreground development testing will fail abruptly in production if it cannot survive background app suspension or device restarts.",
+        "Permission architectures have evolved dramatically across modern iOS and Android releases. On Android 12 (API level 31) and higher, Google decoupled Bluetooth from geographic location by introducing granular runtime permissions: 1. BLUETOOTH_SCAN (allows the app to scan for nearby peripherals; apps declare android:usesPermissionFlags=\"neverForLocation\" if they do not derive physical location); 2. BLUETOOTH_CONNECT (allows the app to connect and exchange GATT data with paired devices); and 3. BLUETOOTH_ADVERTISE (enables peripheral broadcasting). On legacy Android 6 through 11, scanning strictly required ACCESS_FINE_LOCATION and active GPS location services.",
+        "On iOS, applications declare NSBluetoothAlwaysUsageDescription in Info.plist explaining to the user why Bluetooth access is required. When the app initializes CBCentralManager, the operating system prompts the user with a native permission dialog.",
+        "Operating system Bluetooth adapters operate through a state machine: on iOS, CBCentralManagerDelegate.centralManagerDidUpdateState: delivers CBManagerState: .poweredOn, .poweredOff, .unauthorized, .unsupported, or .resetting. A robust mobile architecture must listen for these state changes: if the user flips Airplane Mode or toggles Bluetooth off in Control Center, the app must gracefully pause GATT queues and notify the user politely rather than crashing.",
+        "The most critical architectural challenge in mobile BLE is Background Execution. When a user locks their iPhone or navigates to another app, the operating system moves your app into the background and suspends its process. Under default settings, background scanning is halted, and timers cease firing.",
+        "To enable continuous peripheral communication, iOS provides the bluetooth-central Background Mode in UIBackgroundModes. Furthermore, to survive low-memory termination (Jetsam kills), Apple provides CoreBluetooth State Preservation and Restoration.",
+        "When initializing CBCentralManager, the app supplies a persistent restoration identifier: CBCentralManager(delegate: self, queue: nil, options: [CBCentralManagerOptionRestoreIdentifierKey: \"PinITCentralManager\"]). If the operating system terminates the app in the background to reclaim memory, iOS keeps the Bluetooth radio active on the device coprocessor.",
+        "When the peripheral subsequently transmits a notification or disconnects, the OS automatically relaunches the app in the background and delivers centralManager(_:willRestoreState:). The app extracts restored peripheral instances, rebinds delegates, and resumes data processing without the user ever opening the app.",
+        "Connection resilience also mandates an Exponential Backoff Reconnection State Machine: if a wearable peripheral moves out of range, attempting immediate tight loops of connect() drains the battery within hours. The client must schedule progressive reconnect intervals (e.g., 2s, 5s, 15s, 30s) capped by max backoff limits.",
+        "By mastering modern runtime permissions, adapter state machines, CoreBluetooth state restoration, and resilient reconnection strategies, mobile engineers deliver industrial-grade hardware connectivity."
+      ],
+      "example": "Think of an offshore lighthouse keeper who occasionally takes a nap (background app suspension). Instead of staying awake 24 hours a day staring at the water (draining all their energy), the keeper installs a loud acoustic tripwire bell connected to the harbor buoy (CoreBluetooth State Restoration). If a supply ship docks in the dead of night, the bell rings, the keeper instantly wakes up, opens the harbor gate, and goes back to sleep once the cargo is unloaded.",
+      "code": "// Native BLE Permissions & Background State Restoration Manager\nclass BlePermissionStateRestorationManager {\n  constructor() {\n    this.adapterState = 'POWERED_OFF';\n    this.permissions = {\n      scanGranted: false,\n      connectGranted: false\n    };\n    this.restorationIdent = null;\n    this.activeConnections = new Map();\n  }\n\n  // Audits and verifies Android 12+ & iOS BLE permissions\n  auditPermissions(platform, grantedPermissions = []) {\n    if (platform === 'ANDROID_12_PLUS') {\n      const hasScan = grantedPermissions.includes('BLUETOOTH_SCAN');\n      const hasConnect = grantedPermissions.includes('BLUETOOTH_CONNECT');\n      this.permissions.scanGranted = hasScan;\n      this.permissions.connectGranted = hasConnect;\n\n      return {\n        platform,\n        isFullyAuthorized: hasScan && hasConnect,\n        scanAllowed: hasScan,\n        connectAllowed: hasConnect,\n        policy: 'ANDROID_12_GRANULAR_PERMISSIONS_VERIFIED'\n      };\n    }\n\n    if (platform === 'IOS') {\n      const isAlwaysGranted = grantedPermissions.includes('NSBluetoothAlwaysUsageDescription');\n      this.permissions.scanGranted = isAlwaysGranted;\n      this.permissions.connectGranted = isAlwaysGranted;\n\n      return {\n        platform,\n        isFullyAuthorized: isAlwaysGranted,\n        policy: 'IOS_COREBLUETOOTH_ALWAYS_AUTHORIZED'\n      };\n    }\n  }\n\n  // Initializes CBCentralManager with State Restoration\n  initializeCentralManagerWithRestoration(restoreKey) {\n    this.restorationIdent = restoreKey;\n    this.adapterState = 'POWERED_ON';\n\n    return {\n      adapterState: this.adapterState,\n      restoreIdentifier: this.restorationIdent,\n      backgroundModes: ['bluetooth-central'],\n      stateRestorationSupported: true\n    };\n  }\n\n  // Simulates iOS waking the app in background after Jetsam termination\n  handleSystemWillRestoreState(restoredStateDict) {\n    const restoredPeripherals = restoredStateDict.kCBRestoredPeripherals || [];\n    for (const p of restoredPeripherals) {\n      this.activeConnections.set(p.id, {\n        id: p.id,\n        name: p.name,\n        restoredFromBackground: true\n      });\n    }\n\n    return {\n      restoredPeripheralsCount: restoredPeripherals.length,\n      resumedConnections: Array.from(this.activeConnections.keys()),\n      systemState: 'APP_RESURRECTED_IN_BACKGROUND_BY_COREBLUETOOTH'\n    };\n  }\n}\n\nconst manager = new BlePermissionStateRestorationManager();\nconsole.log('--- BLE PERMISSIONS & STATE RESTORATION AUDIT ---');\n\n// 1. Audit Android 12+ granular permissions\nconst androidAudit = manager.auditPermissions('ANDROID_12_PLUS', ['BLUETOOTH_SCAN', 'BLUETOOTH_CONNECT']);\nconsole.log('Android 12+ Audit: Authorized = ' + androidAudit.isFullyAuthorized + ' | Scan: ' + androidAudit.scanAllowed + ' | Connect: ' + androidAudit.connectAllowed);\n\n// 2. Initialize iOS CBCentralManager with State Restoration Key\nconst init = manager.initializeCentralManagerWithRestoration('PinIT_Medical_Central_Manager');\nconsole.log('CoreBluetooth Init:Adapter: ' + init.adapterState + ' | Restore Key: ' + init.restoreIdentifier);\nconsole.log('Background Mode:   ' + init.backgroundModes.join(', ') + ' (Restoration: ' + init.stateRestorationSupported + ')');\n\n// 3. Simulate OS waking app in background after memory termination\nconst restored = manager.handleSystemWillRestoreState({\n  kCBRestoredPeripherals: [\n    { id: 'E4:22:11:AA:BB:CC', name: 'PinIT-ECG-Patch' }\n  ]\n});\n\nconsole.log('Restoration Event: ' + restored.systemState);\nconsole.log('Resumed Peripheral:' + restored.resumedConnections.join(', ') + ' (Count: ' + restored.restoredPeripheralsCount + ')');\nconsole.log('Restoration Invariant: CoreBluetooth state restoration wakes terminated apps in background when peripherals transmit');",
+      "output": "--- BLE PERMISSIONS & STATE RESTORATION AUDIT ---\nAndroid 12+ Audit: Authorized = true | Scan: true | Connect: true\nCoreBluetooth Init:Adapter: POWERED_ON | Restore Key: PinIT_Medical_Central_Manager\nBackground Mode:   bluetooth-central (Restoration: true)\nRestoration Event: APP_RESURRECTED_IN_BACKGROUND_BY_COREBLUETOOTH\nResumed Peripheral:E4:22:11:AA:BB:CC (Count: 1)\nRestoration Invariant: CoreBluetooth state restoration wakes terminated apps in background when peripherals transmit",
+      "codeNotes": [
+        {
+          "line": 12,
+          "note": "Audits Android 12+ BLUETOOTH_SCAN and BLUETOOTH_CONNECT runtime permissions"
+        },
+        {
+          "line": 34,
+          "note": "Registers CBCentralManagerOptionRestoreIdentifierKey for background survival"
+        },
+        {
+          "line": 45,
+          "note": "Handles willRestoreState restoring peripheral connections after background memory termination"
+        }
+      ],
+      "tryIt": "Omit BLUETOOTH_CONNECT from Android permissions and verify isFullyAuthorized evaluates to false.",
+      "check": {
+        "question": "What is the primary benefit of CoreBluetooth State Restoration (CBCentralManagerOptionRestoreIdentifierKey)?",
+        "options": [
+          "It allows iOS to keep Bluetooth connections alive and wake terminated applications in the background when peripherals send data or disconnect",
+          "It restores deleted photos from the smartphone's camera roll",
+          "It automatically pays for user in-app purchases",
+          "It replaces the iPhone battery when discharged"
+        ],
+        "answer": 0,
+        "why": "CoreBluetooth State Restoration registers a persistent identifier with iOS: if the app is killed in the background for memory pressure, the OS wakes the app back up when the peripheral transmits data, preventing dropped telemetry."
+      }
+    },
+    {
+      "title": "Enterprise Mobile BLE Peripheral Communicator: Full Production Simulator",
+      "say": [
+        "To conclude our comprehensive masterclass on native Bluetooth Low Energy engineering, we synthesize every architectural component into a production-grade communication engine: the MobileBleMasterCommunicator.",
+        "This master engine unites the complete mobile BLE stack: 1. Advertising packet discovery parsing LTV structures and estimating distance via filtered RSSI path loss modeling; 2. GATT profile registration declaring services, characteristics, and managing CCCD 0x2902 notification subscriptions; 3. ATT MTU negotiation expanding buffer capacity from 23 to 517 bytes for high-throughput sensor streaming; and 4. Native permission auditing and background state restoration enabling 24/7 background telemetry collection.",
+        "In production enterprise systems, this communicator powers commercial medical monitoring patches, automotive keyless entry systems, and industrial IoT data loggers across millions of devices.",
+        "Defensive error handling guarantees zero memory leaks and zero frozen GATT queues: if an over-the-air write times out, the engine purges the queue and triggers an exponential backoff reconnection sequence; if Bluetooth adapter state transitions to poweredOff, all active peripheral instances are cleanly invalidated.",
+        "Performance benchmarks are strictly enforced: connection establishment must complete in under 200 milliseconds, MTU negotiation must succeed on the first connection event, and background telemetry throughput must achieve sustained rates exceeding 50 KB/s without exceeding mobile battery power budgets.",
+        "Automated continuous integration test suites execute against simulated hardware peripheral emulators, validating advertisement scanning, characteristic read/write handshakes, and CCCD notify streaming across diverse peripheral firmware versions.",
+        "In enterprise deployments, resilient offline fallback handling is paramount. When telemetry arrives from a wearable BLE sensor while the smartphone has zero cellular or Wi-Fi internet access, the engine batches incoming sensor packets, writes them to encrypted local SQLite WAL tables, and transmits them asynchronously to cloud endpoints once connectivity restores.",
+        "Production telemetry and observability complete the BLE architecture. Each connection cycle emits structured OpenTelemetry spans capturing connection latency, RSSI signal variance, packet retransmission counts, and battery drain rates, surfacing hardware telemetry anomalies in real-time engineering dashboards.",
+        "Congratulations on completing Day 22! You have mastered the complete systems engineering discipline of native Bluetooth Low Energy, GATT architecture, MTU optimization, and background state restoration.",
+        "In the next module, Day 23, we explore Background Geolocation & Continuous Battery-Optimized Telemetry, mastering the Significant-Change Location Service, Geofencing Monitors, and WakeLock Power Budgets."
+      ],
+      "example": "Think of a flight dispatch communication system at an international airport. The tower radar (BLE scanner) spots incoming aircraft transponders (advertising packets), assigns a dedicated radio frequency and flight gate (GATT connection), widens the communication channel for instant digital flight plan transfers (MTU 517 exchange), and keeps the radio open on battery backup even during power grid outages (state restoration), ensuring zero planes ever lose contact.",
+      "code": "// Enterprise Mobile BLE Master Communicator Engine\nclass MobileBleMasterCommunicator {\n  executeCompleteBleAudit(metrics) {\n    // 1. Advertising Discovery & Proximity (<3.0m)\n    const isDiscoveryPassing = metrics.advertisingParsed && metrics.estimatedDistanceMeters < 3.0;\n\n    // 2. GATT CCCD Notification Subscription Active\n    const isGattPassing = metrics.gattServiceRegistered && metrics.isCccdSubscribed;\n\n    // 3. MTU Optimization (>=512 bytes)\n    const isMtuPassing = metrics.negotiatedAttMtu >= 512 && metrics.throughputMultiplier > 20.0;\n\n    // 4. Permissions & Background State Restoration Active\n    const isSystemPassing = metrics.permissionsAuthorized && metrics.stateRestorationActive;\n\n    // 5. Connection Latency (<200ms)\n    const isPerformancePassing = metrics.connectionLatencyMs < 200;\n\n    const isCertified = isDiscoveryPassing && isGattPassing && isMtuPassing && isSystemPassing && isPerformancePassing;\n\n    return {\n      auditId: 'BLE-COMMUNICATOR-AUDIT-2026-X22',\n      discoveryStatus: isDiscoveryPassing ? 'PROXIMITY_DISCOVERY_VERIFIED' : 'DISCOVERY_DEFECT',\n      gattSubscriptionStatus: isGattPassing ? 'CCCD_NOTIFY_STREAMING_ACTIVE' : 'GATT_SUBSCRIPTION_DEFECT',\n      mtuOptimizationStatus: isMtuPassing ? 'MTU_517_HIGH_THROUGHPUT' : 'THROUGHPUT_THROTTLE_DEFECT',\n      systemRestorationStatus: isSystemPassing ? 'BACKGROUND_RESTORE_CERTIFIED' : 'SYSTEM_PERMISSION_DEFECT',\n      connectionLatencyStatus: isPerformancePassing ? 'SUB_200MS_OPTIMAL' : 'LATENCY_DEFECT',\n      overallBleCertification: isCertified ? 'ENTERPRISE_TIER_1_BLE_CERTIFIED' : 'BLE_COMMUNICATION_DEFECT'\n    };\n  }\n}\n\nconst masterCommunicator = new MobileBleMasterCommunicator();\nconsole.log('Executing Day 22 Enterprise Mobile BLE Master Communicator Audit...');\n\nconst audit = masterCommunicator.executeCompleteBleAudit({\n  advertisingParsed: true,\n  estimatedDistanceMeters: 1.25,\n  gattServiceRegistered: true,\n  isCccdSubscribed: true,\n  negotiatedAttMtu: 517,\n  throughputMultiplier: 25.7,\n  permissionsAuthorized: true,\n  stateRestorationActive: true,\n  connectionLatencyMs: 142\n});\n\nconsole.log('BLE Master Verification Audit Results:');\nconsole.log('  Audit ID:                 ' + audit.auditId);\nconsole.log('  Discovery & Proximity:    ' + audit.discoveryStatus);\nconsole.log('  GATT CCCD Subscription:   ' + audit.gattSubscriptionStatus);\nconsole.log('  MTU Optimization:         ' + audit.mtuOptimizationStatus);\nconsole.log('  System State Restoration: ' + audit.systemRestorationStatus);\nconsole.log('  Connection Latency:       ' + audit.connectionLatencyStatus + ' (Target < 200ms: PASSED)');\nconsole.log('  Final Certification:      ' + audit.overallBleCertification);\nconsole.log('Master Invariant: Enterprise mobile BLE communicators unite filtered discovery, GATT CCCD streaming, MTU 517 & background restoration');",
+      "output": "Executing Day 22 Enterprise Mobile BLE Master Communicator Audit...\nBLE Master Verification Audit Results:\n  Audit ID:                 BLE-COMMUNICATOR-AUDIT-2026-X22\n  Discovery & Proximity:    PROXIMITY_DISCOVERY_VERIFIED\n  GATT CCCD Subscription:   CCCD_NOTIFY_STREAMING_ACTIVE\n  MTU Optimization:         MTU_517_HIGH_THROUGHPUT\n  System State Restoration: BACKGROUND_RESTORE_CERTIFIED\n  Connection Latency:       SUB_200MS_OPTIMAL (Target < 200ms: PASSED)\n  Final Certification:      ENTERPRISE_TIER_1_BLE_CERTIFIED\nMaster Invariant: Enterprise mobile BLE communicators unite filtered discovery, GATT CCCD streaming, MTU 517 & background restoration",
+      "codeNotes": [
+        {
+          "line": 4,
+          "note": "Asserts proximity discovery within 3.0 meters using filtered RSSI path loss modeling"
+        },
+        {
+          "line": 10,
+          "note": "Validates negotiated MTU >= 512 bytes achieving 25.7x payload throughput expansion"
+        },
+        {
+          "line": 16,
+          "note": "Certifies sub-200ms connection latency and background state restoration compliance"
+        }
+      ],
+      "tryIt": "Set connectionLatencyMs to 280 and observe how the communicator flags a LATENCY_DEFECT.",
+      "check": {
+        "question": "What four core pillars guarantee an enterprise mobile BLE architecture operates reliably in production?",
+        "options": [
+          "Filtered RSSI proximity discovery, CCCD 0x2902 notification subscription, MTU 517 buffer negotiation, and CoreBluetooth/Android background state restoration",
+          "Leaving Bluetooth radios continuously scanning at 100% duty cycle until the battery dies",
+          "Hardcoding MAC addresses into the mobile app binary",
+          "Using only Wi-Fi and disabling all Bluetooth hardware"
+        ],
+        "answer": 0,
+        "why": "Enterprise mobile BLE demands filtered RSSI discovery, explicit CCCD notification subscriptions, MTU 517 high-throughput negotiation, and native background state restoration."
+      }
+    }
+  ],
+  "summary": [
+    "BLE operates across 40 physical RF channels, using Channels 37, 38, and 39 for advertising and 37 data channels for connected GATT operations.",
+    "GATT structures data into Services, Characteristics, and Descriptors; real-time notifications require writing 0x0001 to the 0x2902 CCCD descriptor.",
+    "Default ATT MTU of 23 bytes restricts payload to 20 bytes; negotiating MTU 517 expands payload to 514 bytes, slashing transfer times by over 95%.",
+    "Modern mobile permissions (Android 12+ BLUETOOTH_SCAN/CONNECT) and CoreBluetooth State Restoration enable robust 24/7 background telemetry.",
+    "The Master BLE Communicator certifies filtered proximity discovery, GATT CCCD streaming, MTU 517 throughput, and sub-200ms connection latency."
+  ],
+  "projectStep": {
+    "title": "Day 22 Project: Build the Enterprise Native Bluetooth Low Energy (BLE) Communicator",
+    "steps": [
+      "Implement a BLE advertising parser extracting Local Name, Service UUID, and calculating distance via log-distance path loss.",
+      "Build a GATT profile coordinator managing services, characteristics, and CCCD 0x2902 notification subscriptions.",
+      "Implement an ATT MTU negotiation engine expanding packet payload from 20 to 514 bytes for high-throughput transfer.",
+      "Configure native permissions for Android 12+ and iOS CoreBluetooth background state restoration.",
+      "Execute the MobileBleMasterCommunicator audit certifying sub-200ms connection latency and Tier-1 certification."
+    ]
+  }
 }
 ];

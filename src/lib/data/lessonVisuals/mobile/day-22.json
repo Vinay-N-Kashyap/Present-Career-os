@@ -1,0 +1,1049 @@
+{
+  "schemaVersion": 1,
+  "prefix": "mobile",
+  "day": 22,
+  "promptSha": "fde8df08a84a7a00e2ed9a267bf8858ef2a4653296351c3d6e242b46b6d4aca2",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Bluetooth Low Energy Architecture: Central vs Peripheral Roles & Advertising Packets",
+      "codeHash": "e2e6b66947990a75e6f5a00c1aa52da076d78a48b7f2876221ea700701b1f4b2",
+      "spec": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<BleCommunicatorRoot />",
+            "props": {
+              "status": "CONNECTED_SUB_200MS"
+            },
+            "children": [
+              {
+                "id": "DiscoveryScanner",
+                "name": "<BleAdvertisingScanner />",
+                "props": {
+                  "channels": "37_38_39_ADV"
+                }
+              },
+              {
+                "id": "GattCoordinator",
+                "name": "<GattProfileCoordinator />",
+                "props": {
+                  "cccd": "0x2902_ACTIVE"
+                }
+              },
+              {
+                "id": "MtuOptimizer",
+                "name": "<AttMtuOptimizer />",
+                "props": {
+                  "payload": "514_BYTES_OPTIMIZED"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Discover peripheral advertising packets and filter RSSI via <BleAdvertisingScanner />",
+            "activeId": "DiscoveryScanner",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "DiscoveryScanner",
+                "name": "<BleAdvertisingScanner />",
+                "props": {
+                  "proximity": "IMMEDIATE"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Connect and configure CCCD 0x2902 notification subscription via <GattProfileCoordinator />",
+            "activeId": "GattCoordinator",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "GattCoordinator",
+                "name": "<GattProfileCoordinator />",
+                "props": {
+                  "subscription": "NOTIFICATIONS_ACTIVE"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Negotiate 517-byte MTU buffer for 25.7x high-throughput transfer via <AttMtuOptimizer />",
+            "activeId": "MtuOptimizer",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "MtuOptimizer",
+                "name": "<AttMtuOptimizer />",
+                "props": {
+                  "mtu": "517_AGREED"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute comprehensive BLE master communicator verification audit",
+            "activeId": "root",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<BleCommunicatorRoot />",
+                "props": {
+                  "certification": "TIER_1_CERTIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<BleCommunicatorRoot />",
+            "props": {
+              "status": "CONNECTED_SUB_200MS"
+            },
+            "children": [
+              {
+                "id": "DiscoveryScanner",
+                "name": "<BleAdvertisingScanner />",
+                "props": {
+                  "channels": "37_38_39_ADV"
+                }
+              },
+              {
+                "id": "GattCoordinator",
+                "name": "<GattProfileCoordinator />",
+                "props": {
+                  "cccd": "0x2902_ACTIVE"
+                }
+              },
+              {
+                "id": "MtuOptimizer",
+                "name": "<AttMtuOptimizer />",
+                "props": {
+                  "payload": "514_BYTES_OPTIMIZED"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Discover peripheral advertising packets and filter RSSI via <BleAdvertisingScanner />",
+            "activeId": "DiscoveryScanner",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "DiscoveryScanner",
+                "name": "<BleAdvertisingScanner />",
+                "props": {
+                  "proximity": "IMMEDIATE"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Connect and configure CCCD 0x2902 notification subscription via <GattProfileCoordinator />",
+            "activeId": "GattCoordinator",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "GattCoordinator",
+                "name": "<GattProfileCoordinator />",
+                "props": {
+                  "subscription": "NOTIFICATIONS_ACTIVE"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Negotiate 517-byte MTU buffer for 25.7x high-throughput transfer via <AttMtuOptimizer />",
+            "activeId": "MtuOptimizer",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "MtuOptimizer",
+                "name": "<AttMtuOptimizer />",
+                "props": {
+                  "mtu": "517_AGREED"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute comprehensive BLE master communicator verification audit",
+            "activeId": "root",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<BleCommunicatorRoot />",
+                "props": {
+                  "certification": "TIER_1_CERTIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Generic Attribute Profile (GATT): Services, Characteristics & CCCD Notifications",
+      "codeHash": "688675fc7ef86590532118e9d03a16306f4e8938ebb8f7af2cae6840f0fb87fd",
+      "spec": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<BleCommunicatorRoot />",
+            "props": {
+              "status": "CONNECTED_SUB_200MS"
+            },
+            "children": [
+              {
+                "id": "DiscoveryScanner",
+                "name": "<BleAdvertisingScanner />",
+                "props": {
+                  "channels": "37_38_39_ADV"
+                }
+              },
+              {
+                "id": "GattCoordinator",
+                "name": "<GattProfileCoordinator />",
+                "props": {
+                  "cccd": "0x2902_ACTIVE"
+                }
+              },
+              {
+                "id": "MtuOptimizer",
+                "name": "<AttMtuOptimizer />",
+                "props": {
+                  "payload": "514_BYTES_OPTIMIZED"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Discover peripheral advertising packets and filter RSSI via <BleAdvertisingScanner />",
+            "activeId": "DiscoveryScanner",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "DiscoveryScanner",
+                "name": "<BleAdvertisingScanner />",
+                "props": {
+                  "proximity": "IMMEDIATE"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Connect and configure CCCD 0x2902 notification subscription via <GattProfileCoordinator />",
+            "activeId": "GattCoordinator",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "GattCoordinator",
+                "name": "<GattProfileCoordinator />",
+                "props": {
+                  "subscription": "NOTIFICATIONS_ACTIVE"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Negotiate 517-byte MTU buffer for 25.7x high-throughput transfer via <AttMtuOptimizer />",
+            "activeId": "MtuOptimizer",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "MtuOptimizer",
+                "name": "<AttMtuOptimizer />",
+                "props": {
+                  "mtu": "517_AGREED"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute comprehensive BLE master communicator verification audit",
+            "activeId": "root",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<BleCommunicatorRoot />",
+                "props": {
+                  "certification": "TIER_1_CERTIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<BleCommunicatorRoot />",
+            "props": {
+              "status": "CONNECTED_SUB_200MS"
+            },
+            "children": [
+              {
+                "id": "DiscoveryScanner",
+                "name": "<BleAdvertisingScanner />",
+                "props": {
+                  "channels": "37_38_39_ADV"
+                }
+              },
+              {
+                "id": "GattCoordinator",
+                "name": "<GattProfileCoordinator />",
+                "props": {
+                  "cccd": "0x2902_ACTIVE"
+                }
+              },
+              {
+                "id": "MtuOptimizer",
+                "name": "<AttMtuOptimizer />",
+                "props": {
+                  "payload": "514_BYTES_OPTIMIZED"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Discover peripheral advertising packets and filter RSSI via <BleAdvertisingScanner />",
+            "activeId": "DiscoveryScanner",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "DiscoveryScanner",
+                "name": "<BleAdvertisingScanner />",
+                "props": {
+                  "proximity": "IMMEDIATE"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Connect and configure CCCD 0x2902 notification subscription via <GattProfileCoordinator />",
+            "activeId": "GattCoordinator",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "GattCoordinator",
+                "name": "<GattProfileCoordinator />",
+                "props": {
+                  "subscription": "NOTIFICATIONS_ACTIVE"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Negotiate 517-byte MTU buffer for 25.7x high-throughput transfer via <AttMtuOptimizer />",
+            "activeId": "MtuOptimizer",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "MtuOptimizer",
+                "name": "<AttMtuOptimizer />",
+                "props": {
+                  "mtu": "517_AGREED"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute comprehensive BLE master communicator verification audit",
+            "activeId": "root",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<BleCommunicatorRoot />",
+                "props": {
+                  "certification": "TIER_1_CERTIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "MTU Negotiation, High-Throughput Data Transfer & L2CAP Channels",
+      "codeHash": "387b567aad4760f26e1b3ec7f1a31463f65b38282d2aebfd4a2445c2d86ba663",
+      "spec": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<BleCommunicatorRoot />",
+            "props": {
+              "status": "CONNECTED_SUB_200MS"
+            },
+            "children": [
+              {
+                "id": "DiscoveryScanner",
+                "name": "<BleAdvertisingScanner />",
+                "props": {
+                  "channels": "37_38_39_ADV"
+                }
+              },
+              {
+                "id": "GattCoordinator",
+                "name": "<GattProfileCoordinator />",
+                "props": {
+                  "cccd": "0x2902_ACTIVE"
+                }
+              },
+              {
+                "id": "MtuOptimizer",
+                "name": "<AttMtuOptimizer />",
+                "props": {
+                  "payload": "514_BYTES_OPTIMIZED"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Discover peripheral advertising packets and filter RSSI via <BleAdvertisingScanner />",
+            "activeId": "DiscoveryScanner",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "DiscoveryScanner",
+                "name": "<BleAdvertisingScanner />",
+                "props": {
+                  "proximity": "IMMEDIATE"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Connect and configure CCCD 0x2902 notification subscription via <GattProfileCoordinator />",
+            "activeId": "GattCoordinator",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "GattCoordinator",
+                "name": "<GattProfileCoordinator />",
+                "props": {
+                  "subscription": "NOTIFICATIONS_ACTIVE"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Negotiate 517-byte MTU buffer for 25.7x high-throughput transfer via <AttMtuOptimizer />",
+            "activeId": "MtuOptimizer",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "MtuOptimizer",
+                "name": "<AttMtuOptimizer />",
+                "props": {
+                  "mtu": "517_AGREED"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute comprehensive BLE master communicator verification audit",
+            "activeId": "root",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<BleCommunicatorRoot />",
+                "props": {
+                  "certification": "TIER_1_CERTIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<BleCommunicatorRoot />",
+            "props": {
+              "status": "CONNECTED_SUB_200MS"
+            },
+            "children": [
+              {
+                "id": "DiscoveryScanner",
+                "name": "<BleAdvertisingScanner />",
+                "props": {
+                  "channels": "37_38_39_ADV"
+                }
+              },
+              {
+                "id": "GattCoordinator",
+                "name": "<GattProfileCoordinator />",
+                "props": {
+                  "cccd": "0x2902_ACTIVE"
+                }
+              },
+              {
+                "id": "MtuOptimizer",
+                "name": "<AttMtuOptimizer />",
+                "props": {
+                  "payload": "514_BYTES_OPTIMIZED"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Discover peripheral advertising packets and filter RSSI via <BleAdvertisingScanner />",
+            "activeId": "DiscoveryScanner",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "DiscoveryScanner",
+                "name": "<BleAdvertisingScanner />",
+                "props": {
+                  "proximity": "IMMEDIATE"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Connect and configure CCCD 0x2902 notification subscription via <GattProfileCoordinator />",
+            "activeId": "GattCoordinator",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "GattCoordinator",
+                "name": "<GattProfileCoordinator />",
+                "props": {
+                  "subscription": "NOTIFICATIONS_ACTIVE"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Negotiate 517-byte MTU buffer for 25.7x high-throughput transfer via <AttMtuOptimizer />",
+            "activeId": "MtuOptimizer",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "MtuOptimizer",
+                "name": "<AttMtuOptimizer />",
+                "props": {
+                  "mtu": "517_AGREED"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute comprehensive BLE master communicator verification audit",
+            "activeId": "root",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<BleCommunicatorRoot />",
+                "props": {
+                  "certification": "TIER_1_CERTIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Native Permissions, State Preservation & iOS Background CoreBluetooth",
+      "codeHash": "618b80d3171e7ae99ec51ab17870b7b21b37751be8f296f9c549050affc1a549",
+      "spec": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<BleCommunicatorRoot />",
+            "props": {
+              "status": "CONNECTED_SUB_200MS"
+            },
+            "children": [
+              {
+                "id": "DiscoveryScanner",
+                "name": "<BleAdvertisingScanner />",
+                "props": {
+                  "channels": "37_38_39_ADV"
+                }
+              },
+              {
+                "id": "GattCoordinator",
+                "name": "<GattProfileCoordinator />",
+                "props": {
+                  "cccd": "0x2902_ACTIVE"
+                }
+              },
+              {
+                "id": "MtuOptimizer",
+                "name": "<AttMtuOptimizer />",
+                "props": {
+                  "payload": "514_BYTES_OPTIMIZED"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Discover peripheral advertising packets and filter RSSI via <BleAdvertisingScanner />",
+            "activeId": "DiscoveryScanner",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "DiscoveryScanner",
+                "name": "<BleAdvertisingScanner />",
+                "props": {
+                  "proximity": "IMMEDIATE"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Connect and configure CCCD 0x2902 notification subscription via <GattProfileCoordinator />",
+            "activeId": "GattCoordinator",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "GattCoordinator",
+                "name": "<GattProfileCoordinator />",
+                "props": {
+                  "subscription": "NOTIFICATIONS_ACTIVE"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Negotiate 517-byte MTU buffer for 25.7x high-throughput transfer via <AttMtuOptimizer />",
+            "activeId": "MtuOptimizer",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "MtuOptimizer",
+                "name": "<AttMtuOptimizer />",
+                "props": {
+                  "mtu": "517_AGREED"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute comprehensive BLE master communicator verification audit",
+            "activeId": "root",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<BleCommunicatorRoot />",
+                "props": {
+                  "certification": "TIER_1_CERTIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<BleCommunicatorRoot />",
+            "props": {
+              "status": "CONNECTED_SUB_200MS"
+            },
+            "children": [
+              {
+                "id": "DiscoveryScanner",
+                "name": "<BleAdvertisingScanner />",
+                "props": {
+                  "channels": "37_38_39_ADV"
+                }
+              },
+              {
+                "id": "GattCoordinator",
+                "name": "<GattProfileCoordinator />",
+                "props": {
+                  "cccd": "0x2902_ACTIVE"
+                }
+              },
+              {
+                "id": "MtuOptimizer",
+                "name": "<AttMtuOptimizer />",
+                "props": {
+                  "payload": "514_BYTES_OPTIMIZED"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Discover peripheral advertising packets and filter RSSI via <BleAdvertisingScanner />",
+            "activeId": "DiscoveryScanner",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "DiscoveryScanner",
+                "name": "<BleAdvertisingScanner />",
+                "props": {
+                  "proximity": "IMMEDIATE"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Connect and configure CCCD 0x2902 notification subscription via <GattProfileCoordinator />",
+            "activeId": "GattCoordinator",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "GattCoordinator",
+                "name": "<GattProfileCoordinator />",
+                "props": {
+                  "subscription": "NOTIFICATIONS_ACTIVE"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Negotiate 517-byte MTU buffer for 25.7x high-throughput transfer via <AttMtuOptimizer />",
+            "activeId": "MtuOptimizer",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "MtuOptimizer",
+                "name": "<AttMtuOptimizer />",
+                "props": {
+                  "mtu": "517_AGREED"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute comprehensive BLE master communicator verification audit",
+            "activeId": "root",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<BleCommunicatorRoot />",
+                "props": {
+                  "certification": "TIER_1_CERTIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Mobile BLE Peripheral Communicator: Full Production Simulator",
+      "codeHash": "64d97b37ae9574ea5d590aad48dfb3b3b52c5240645581b6a1e605461aef1791",
+      "spec": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<BleCommunicatorRoot />",
+            "props": {
+              "status": "CONNECTED_SUB_200MS"
+            },
+            "children": [
+              {
+                "id": "DiscoveryScanner",
+                "name": "<BleAdvertisingScanner />",
+                "props": {
+                  "channels": "37_38_39_ADV"
+                }
+              },
+              {
+                "id": "GattCoordinator",
+                "name": "<GattProfileCoordinator />",
+                "props": {
+                  "cccd": "0x2902_ACTIVE"
+                }
+              },
+              {
+                "id": "MtuOptimizer",
+                "name": "<AttMtuOptimizer />",
+                "props": {
+                  "payload": "514_BYTES_OPTIMIZED"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Discover peripheral advertising packets and filter RSSI via <BleAdvertisingScanner />",
+            "activeId": "DiscoveryScanner",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "DiscoveryScanner",
+                "name": "<BleAdvertisingScanner />",
+                "props": {
+                  "proximity": "IMMEDIATE"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Connect and configure CCCD 0x2902 notification subscription via <GattProfileCoordinator />",
+            "activeId": "GattCoordinator",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "GattCoordinator",
+                "name": "<GattProfileCoordinator />",
+                "props": {
+                  "subscription": "NOTIFICATIONS_ACTIVE"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Negotiate 517-byte MTU buffer for 25.7x high-throughput transfer via <AttMtuOptimizer />",
+            "activeId": "MtuOptimizer",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "MtuOptimizer",
+                "name": "<AttMtuOptimizer />",
+                "props": {
+                  "mtu": "517_AGREED"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute comprehensive BLE master communicator verification audit",
+            "activeId": "root",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<BleCommunicatorRoot />",
+                "props": {
+                  "certification": "TIER_1_CERTIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<BleCommunicatorRoot />",
+            "props": {
+              "status": "CONNECTED_SUB_200MS"
+            },
+            "children": [
+              {
+                "id": "DiscoveryScanner",
+                "name": "<BleAdvertisingScanner />",
+                "props": {
+                  "channels": "37_38_39_ADV"
+                }
+              },
+              {
+                "id": "GattCoordinator",
+                "name": "<GattProfileCoordinator />",
+                "props": {
+                  "cccd": "0x2902_ACTIVE"
+                }
+              },
+              {
+                "id": "MtuOptimizer",
+                "name": "<AttMtuOptimizer />",
+                "props": {
+                  "payload": "514_BYTES_OPTIMIZED"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Discover peripheral advertising packets and filter RSSI via <BleAdvertisingScanner />",
+            "activeId": "DiscoveryScanner",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "DiscoveryScanner",
+                "name": "<BleAdvertisingScanner />",
+                "props": {
+                  "proximity": "IMMEDIATE"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Connect and configure CCCD 0x2902 notification subscription via <GattProfileCoordinator />",
+            "activeId": "GattCoordinator",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "GattCoordinator",
+                "name": "<GattProfileCoordinator />",
+                "props": {
+                  "subscription": "NOTIFICATIONS_ACTIVE"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Negotiate 517-byte MTU buffer for 25.7x high-throughput transfer via <AttMtuOptimizer />",
+            "activeId": "MtuOptimizer",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "MtuOptimizer",
+                "name": "<AttMtuOptimizer />",
+                "props": {
+                  "mtu": "517_AGREED"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute comprehensive BLE master communicator verification audit",
+            "activeId": "root",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<BleCommunicatorRoot />",
+                "props": {
+                  "certification": "TIER_1_CERTIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
