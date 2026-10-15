@@ -1,0 +1,1049 @@
+{
+  "schemaVersion": 1,
+  "prefix": "mobile",
+  "day": 23,
+  "promptSha": "3395d67c52dff480fad1b9603b0eaab7397752354dbbe117e856d1f31d53ad77",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Continuous Location Tracking vs Battery Drain: GNSS, Wi-Fi & Cellular Trade-offs",
+      "codeHash": "8d79579bcd431c3c0ebddbb9a0d37607e0a58e8d03b7e41433befcd56db38eaa",
+      "spec": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<BackgroundLocationRoot />",
+            "props": {
+              "power": "SUB_5_PERCENT_24H"
+            },
+            "children": [
+              {
+                "id": "PowerPacer",
+                "name": "<DynamicPowerPacingEngine />",
+                "props": {
+                  "radio": "MOTION_SCALED_GNSS"
+                }
+              },
+              {
+                "id": "SlcResurrection",
+                "name": "<SignificantChangeService />",
+                "props": {
+                  "survival": "APP_RESURRECTION_ACTIVE"
+                }
+              },
+              {
+                "id": "GeofenceCoprocessor",
+                "name": "<HardwareGeofenceMonitor />",
+                "props": {
+                  "regions": "20_CIRCULAR_MAX"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Scale location provider and radio power based on motion via <DynamicPowerPacingEngine />",
+            "activeId": "PowerPacer",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "PowerPacer",
+                "name": "<DynamicPowerPacingEngine />",
+                "props": {
+                  "currentDraw": "2.5MA_STATIONARY"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Monitor cell tower handoffs and wake terminated app via <SignificantChangeService />",
+            "activeId": "SlcResurrection",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "SlcResurrection",
+                "name": "<SignificantChangeService />",
+                "props": {
+                  "status": "CELLULAR_TOWER_MONITORING"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Offload up to 20 circular perimeters to motion coprocessor via <HardwareGeofenceMonitor />",
+            "activeId": "GeofenceCoprocessor",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "GeofenceCoprocessor",
+                "name": "<HardwareGeofenceMonitor />",
+                "props": {
+                  "dwell": "60S_LOITERING_GUARD"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute comprehensive background telemetry and WakeLock verification audit",
+            "activeId": "root",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<BackgroundLocationRoot />",
+                "props": {
+                  "certification": "TIER_1_CERTIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<BackgroundLocationRoot />",
+            "props": {
+              "power": "SUB_5_PERCENT_24H"
+            },
+            "children": [
+              {
+                "id": "PowerPacer",
+                "name": "<DynamicPowerPacingEngine />",
+                "props": {
+                  "radio": "MOTION_SCALED_GNSS"
+                }
+              },
+              {
+                "id": "SlcResurrection",
+                "name": "<SignificantChangeService />",
+                "props": {
+                  "survival": "APP_RESURRECTION_ACTIVE"
+                }
+              },
+              {
+                "id": "GeofenceCoprocessor",
+                "name": "<HardwareGeofenceMonitor />",
+                "props": {
+                  "regions": "20_CIRCULAR_MAX"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Scale location provider and radio power based on motion via <DynamicPowerPacingEngine />",
+            "activeId": "PowerPacer",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "PowerPacer",
+                "name": "<DynamicPowerPacingEngine />",
+                "props": {
+                  "currentDraw": "2.5MA_STATIONARY"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Monitor cell tower handoffs and wake terminated app via <SignificantChangeService />",
+            "activeId": "SlcResurrection",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "SlcResurrection",
+                "name": "<SignificantChangeService />",
+                "props": {
+                  "status": "CELLULAR_TOWER_MONITORING"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Offload up to 20 circular perimeters to motion coprocessor via <HardwareGeofenceMonitor />",
+            "activeId": "GeofenceCoprocessor",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "GeofenceCoprocessor",
+                "name": "<HardwareGeofenceMonitor />",
+                "props": {
+                  "dwell": "60S_LOITERING_GUARD"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute comprehensive background telemetry and WakeLock verification audit",
+            "activeId": "root",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<BackgroundLocationRoot />",
+                "props": {
+                  "certification": "TIER_1_CERTIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "iOS Significant-Change Location Service & Background App Resurrection",
+      "codeHash": "e5b5ea0bd6f1de4aa90f79748d8789ac29c3af5da1d081f6dca0c5c11d01bbfb",
+      "spec": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<BackgroundLocationRoot />",
+            "props": {
+              "power": "SUB_5_PERCENT_24H"
+            },
+            "children": [
+              {
+                "id": "PowerPacer",
+                "name": "<DynamicPowerPacingEngine />",
+                "props": {
+                  "radio": "MOTION_SCALED_GNSS"
+                }
+              },
+              {
+                "id": "SlcResurrection",
+                "name": "<SignificantChangeService />",
+                "props": {
+                  "survival": "APP_RESURRECTION_ACTIVE"
+                }
+              },
+              {
+                "id": "GeofenceCoprocessor",
+                "name": "<HardwareGeofenceMonitor />",
+                "props": {
+                  "regions": "20_CIRCULAR_MAX"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Scale location provider and radio power based on motion via <DynamicPowerPacingEngine />",
+            "activeId": "PowerPacer",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "PowerPacer",
+                "name": "<DynamicPowerPacingEngine />",
+                "props": {
+                  "currentDraw": "2.5MA_STATIONARY"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Monitor cell tower handoffs and wake terminated app via <SignificantChangeService />",
+            "activeId": "SlcResurrection",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "SlcResurrection",
+                "name": "<SignificantChangeService />",
+                "props": {
+                  "status": "CELLULAR_TOWER_MONITORING"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Offload up to 20 circular perimeters to motion coprocessor via <HardwareGeofenceMonitor />",
+            "activeId": "GeofenceCoprocessor",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "GeofenceCoprocessor",
+                "name": "<HardwareGeofenceMonitor />",
+                "props": {
+                  "dwell": "60S_LOITERING_GUARD"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute comprehensive background telemetry and WakeLock verification audit",
+            "activeId": "root",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<BackgroundLocationRoot />",
+                "props": {
+                  "certification": "TIER_1_CERTIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<BackgroundLocationRoot />",
+            "props": {
+              "power": "SUB_5_PERCENT_24H"
+            },
+            "children": [
+              {
+                "id": "PowerPacer",
+                "name": "<DynamicPowerPacingEngine />",
+                "props": {
+                  "radio": "MOTION_SCALED_GNSS"
+                }
+              },
+              {
+                "id": "SlcResurrection",
+                "name": "<SignificantChangeService />",
+                "props": {
+                  "survival": "APP_RESURRECTION_ACTIVE"
+                }
+              },
+              {
+                "id": "GeofenceCoprocessor",
+                "name": "<HardwareGeofenceMonitor />",
+                "props": {
+                  "regions": "20_CIRCULAR_MAX"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Scale location provider and radio power based on motion via <DynamicPowerPacingEngine />",
+            "activeId": "PowerPacer",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "PowerPacer",
+                "name": "<DynamicPowerPacingEngine />",
+                "props": {
+                  "currentDraw": "2.5MA_STATIONARY"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Monitor cell tower handoffs and wake terminated app via <SignificantChangeService />",
+            "activeId": "SlcResurrection",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "SlcResurrection",
+                "name": "<SignificantChangeService />",
+                "props": {
+                  "status": "CELLULAR_TOWER_MONITORING"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Offload up to 20 circular perimeters to motion coprocessor via <HardwareGeofenceMonitor />",
+            "activeId": "GeofenceCoprocessor",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "GeofenceCoprocessor",
+                "name": "<HardwareGeofenceMonitor />",
+                "props": {
+                  "dwell": "60S_LOITERING_GUARD"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute comprehensive background telemetry and WakeLock verification audit",
+            "activeId": "root",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<BackgroundLocationRoot />",
+                "props": {
+                  "certification": "TIER_1_CERTIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Native Hardware Geofencing & Coprocessor Circular Region Monitoring",
+      "codeHash": "077125cf428752f5f1db3566cc72dbd2b1b1dfb767863e01642cdc412221ab9d",
+      "spec": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<BackgroundLocationRoot />",
+            "props": {
+              "power": "SUB_5_PERCENT_24H"
+            },
+            "children": [
+              {
+                "id": "PowerPacer",
+                "name": "<DynamicPowerPacingEngine />",
+                "props": {
+                  "radio": "MOTION_SCALED_GNSS"
+                }
+              },
+              {
+                "id": "SlcResurrection",
+                "name": "<SignificantChangeService />",
+                "props": {
+                  "survival": "APP_RESURRECTION_ACTIVE"
+                }
+              },
+              {
+                "id": "GeofenceCoprocessor",
+                "name": "<HardwareGeofenceMonitor />",
+                "props": {
+                  "regions": "20_CIRCULAR_MAX"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Scale location provider and radio power based on motion via <DynamicPowerPacingEngine />",
+            "activeId": "PowerPacer",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "PowerPacer",
+                "name": "<DynamicPowerPacingEngine />",
+                "props": {
+                  "currentDraw": "2.5MA_STATIONARY"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Monitor cell tower handoffs and wake terminated app via <SignificantChangeService />",
+            "activeId": "SlcResurrection",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "SlcResurrection",
+                "name": "<SignificantChangeService />",
+                "props": {
+                  "status": "CELLULAR_TOWER_MONITORING"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Offload up to 20 circular perimeters to motion coprocessor via <HardwareGeofenceMonitor />",
+            "activeId": "GeofenceCoprocessor",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "GeofenceCoprocessor",
+                "name": "<HardwareGeofenceMonitor />",
+                "props": {
+                  "dwell": "60S_LOITERING_GUARD"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute comprehensive background telemetry and WakeLock verification audit",
+            "activeId": "root",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<BackgroundLocationRoot />",
+                "props": {
+                  "certification": "TIER_1_CERTIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<BackgroundLocationRoot />",
+            "props": {
+              "power": "SUB_5_PERCENT_24H"
+            },
+            "children": [
+              {
+                "id": "PowerPacer",
+                "name": "<DynamicPowerPacingEngine />",
+                "props": {
+                  "radio": "MOTION_SCALED_GNSS"
+                }
+              },
+              {
+                "id": "SlcResurrection",
+                "name": "<SignificantChangeService />",
+                "props": {
+                  "survival": "APP_RESURRECTION_ACTIVE"
+                }
+              },
+              {
+                "id": "GeofenceCoprocessor",
+                "name": "<HardwareGeofenceMonitor />",
+                "props": {
+                  "regions": "20_CIRCULAR_MAX"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Scale location provider and radio power based on motion via <DynamicPowerPacingEngine />",
+            "activeId": "PowerPacer",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "PowerPacer",
+                "name": "<DynamicPowerPacingEngine />",
+                "props": {
+                  "currentDraw": "2.5MA_STATIONARY"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Monitor cell tower handoffs and wake terminated app via <SignificantChangeService />",
+            "activeId": "SlcResurrection",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "SlcResurrection",
+                "name": "<SignificantChangeService />",
+                "props": {
+                  "status": "CELLULAR_TOWER_MONITORING"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Offload up to 20 circular perimeters to motion coprocessor via <HardwareGeofenceMonitor />",
+            "activeId": "GeofenceCoprocessor",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "GeofenceCoprocessor",
+                "name": "<HardwareGeofenceMonitor />",
+                "props": {
+                  "dwell": "60S_LOITERING_GUARD"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute comprehensive background telemetry and WakeLock verification audit",
+            "activeId": "root",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<BackgroundLocationRoot />",
+                "props": {
+                  "certification": "TIER_1_CERTIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Android Foreground Services, Background Location & WakeLock Pacing",
+      "codeHash": "d7cb8b5ce17613cb48ee70eb9819867585caaa1cb4f843c01f245adea40950de",
+      "spec": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<BackgroundLocationRoot />",
+            "props": {
+              "power": "SUB_5_PERCENT_24H"
+            },
+            "children": [
+              {
+                "id": "PowerPacer",
+                "name": "<DynamicPowerPacingEngine />",
+                "props": {
+                  "radio": "MOTION_SCALED_GNSS"
+                }
+              },
+              {
+                "id": "SlcResurrection",
+                "name": "<SignificantChangeService />",
+                "props": {
+                  "survival": "APP_RESURRECTION_ACTIVE"
+                }
+              },
+              {
+                "id": "GeofenceCoprocessor",
+                "name": "<HardwareGeofenceMonitor />",
+                "props": {
+                  "regions": "20_CIRCULAR_MAX"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Scale location provider and radio power based on motion via <DynamicPowerPacingEngine />",
+            "activeId": "PowerPacer",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "PowerPacer",
+                "name": "<DynamicPowerPacingEngine />",
+                "props": {
+                  "currentDraw": "2.5MA_STATIONARY"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Monitor cell tower handoffs and wake terminated app via <SignificantChangeService />",
+            "activeId": "SlcResurrection",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "SlcResurrection",
+                "name": "<SignificantChangeService />",
+                "props": {
+                  "status": "CELLULAR_TOWER_MONITORING"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Offload up to 20 circular perimeters to motion coprocessor via <HardwareGeofenceMonitor />",
+            "activeId": "GeofenceCoprocessor",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "GeofenceCoprocessor",
+                "name": "<HardwareGeofenceMonitor />",
+                "props": {
+                  "dwell": "60S_LOITERING_GUARD"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute comprehensive background telemetry and WakeLock verification audit",
+            "activeId": "root",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<BackgroundLocationRoot />",
+                "props": {
+                  "certification": "TIER_1_CERTIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<BackgroundLocationRoot />",
+            "props": {
+              "power": "SUB_5_PERCENT_24H"
+            },
+            "children": [
+              {
+                "id": "PowerPacer",
+                "name": "<DynamicPowerPacingEngine />",
+                "props": {
+                  "radio": "MOTION_SCALED_GNSS"
+                }
+              },
+              {
+                "id": "SlcResurrection",
+                "name": "<SignificantChangeService />",
+                "props": {
+                  "survival": "APP_RESURRECTION_ACTIVE"
+                }
+              },
+              {
+                "id": "GeofenceCoprocessor",
+                "name": "<HardwareGeofenceMonitor />",
+                "props": {
+                  "regions": "20_CIRCULAR_MAX"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Scale location provider and radio power based on motion via <DynamicPowerPacingEngine />",
+            "activeId": "PowerPacer",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "PowerPacer",
+                "name": "<DynamicPowerPacingEngine />",
+                "props": {
+                  "currentDraw": "2.5MA_STATIONARY"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Monitor cell tower handoffs and wake terminated app via <SignificantChangeService />",
+            "activeId": "SlcResurrection",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "SlcResurrection",
+                "name": "<SignificantChangeService />",
+                "props": {
+                  "status": "CELLULAR_TOWER_MONITORING"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Offload up to 20 circular perimeters to motion coprocessor via <HardwareGeofenceMonitor />",
+            "activeId": "GeofenceCoprocessor",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "GeofenceCoprocessor",
+                "name": "<HardwareGeofenceMonitor />",
+                "props": {
+                  "dwell": "60S_LOITERING_GUARD"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute comprehensive background telemetry and WakeLock verification audit",
+            "activeId": "root",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<BackgroundLocationRoot />",
+                "props": {
+                  "certification": "TIER_1_CERTIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Mobile Telemetry & Location Master Engine: Full Production Simulator",
+      "codeHash": "a79fbda620c89af1b45c295822a7e6c309ba94bd8cd38b2ec1a891d6aae460ef",
+      "spec": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<BackgroundLocationRoot />",
+            "props": {
+              "power": "SUB_5_PERCENT_24H"
+            },
+            "children": [
+              {
+                "id": "PowerPacer",
+                "name": "<DynamicPowerPacingEngine />",
+                "props": {
+                  "radio": "MOTION_SCALED_GNSS"
+                }
+              },
+              {
+                "id": "SlcResurrection",
+                "name": "<SignificantChangeService />",
+                "props": {
+                  "survival": "APP_RESURRECTION_ACTIVE"
+                }
+              },
+              {
+                "id": "GeofenceCoprocessor",
+                "name": "<HardwareGeofenceMonitor />",
+                "props": {
+                  "regions": "20_CIRCULAR_MAX"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Scale location provider and radio power based on motion via <DynamicPowerPacingEngine />",
+            "activeId": "PowerPacer",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "PowerPacer",
+                "name": "<DynamicPowerPacingEngine />",
+                "props": {
+                  "currentDraw": "2.5MA_STATIONARY"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Monitor cell tower handoffs and wake terminated app via <SignificantChangeService />",
+            "activeId": "SlcResurrection",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "SlcResurrection",
+                "name": "<SignificantChangeService />",
+                "props": {
+                  "status": "CELLULAR_TOWER_MONITORING"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Offload up to 20 circular perimeters to motion coprocessor via <HardwareGeofenceMonitor />",
+            "activeId": "GeofenceCoprocessor",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "GeofenceCoprocessor",
+                "name": "<HardwareGeofenceMonitor />",
+                "props": {
+                  "dwell": "60S_LOITERING_GUARD"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute comprehensive background telemetry and WakeLock verification audit",
+            "activeId": "root",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<BackgroundLocationRoot />",
+                "props": {
+                  "certification": "TIER_1_CERTIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<BackgroundLocationRoot />",
+            "props": {
+              "power": "SUB_5_PERCENT_24H"
+            },
+            "children": [
+              {
+                "id": "PowerPacer",
+                "name": "<DynamicPowerPacingEngine />",
+                "props": {
+                  "radio": "MOTION_SCALED_GNSS"
+                }
+              },
+              {
+                "id": "SlcResurrection",
+                "name": "<SignificantChangeService />",
+                "props": {
+                  "survival": "APP_RESURRECTION_ACTIVE"
+                }
+              },
+              {
+                "id": "GeofenceCoprocessor",
+                "name": "<HardwareGeofenceMonitor />",
+                "props": {
+                  "regions": "20_CIRCULAR_MAX"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Scale location provider and radio power based on motion via <DynamicPowerPacingEngine />",
+            "activeId": "PowerPacer",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "PowerPacer",
+                "name": "<DynamicPowerPacingEngine />",
+                "props": {
+                  "currentDraw": "2.5MA_STATIONARY"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Monitor cell tower handoffs and wake terminated app via <SignificantChangeService />",
+            "activeId": "SlcResurrection",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "SlcResurrection",
+                "name": "<SignificantChangeService />",
+                "props": {
+                  "status": "CELLULAR_TOWER_MONITORING"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Offload up to 20 circular perimeters to motion coprocessor via <HardwareGeofenceMonitor />",
+            "activeId": "GeofenceCoprocessor",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "GeofenceCoprocessor",
+                "name": "<HardwareGeofenceMonitor />",
+                "props": {
+                  "dwell": "60S_LOITERING_GUARD"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute comprehensive background telemetry and WakeLock verification audit",
+            "activeId": "root",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<BackgroundLocationRoot />",
+                "props": {
+                  "certification": "TIER_1_CERTIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
