@@ -1,0 +1,344 @@
+{
+  "schemaVersion": 1,
+  "prefix": "g3d",
+  "day": 9,
+  "promptSha": "b875e695661d262251e0d72c25208b2edfbefe28d7cad0e3170542132dcfcef7",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Subpixel Motion Vectors & Velocity Buffers",
+      "codeHash": "a9009ad9b5cb59195b07bfede7f5f426ccbb8f237f93e67991162fd20938d24a",
+      "spec": {
+        "template": "states",
+        "title": "Subpixel Motion Vectors & Velocity Buffers — Real-Time State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "World Coordinate Space"
+          },
+          {
+            "id": "st2",
+            "label": "Camera Projection Transform"
+          },
+          {
+            "id": "st3",
+            "label": "Subpixel Jitter Offset"
+          },
+          {
+            "id": "st4",
+            "label": "2D Velocity Vector"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (World Coordinate Space): Initialize state architecture for Subpixel Motion Vectors & Velocity Buffers.",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Camera Projection Transform with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "dispatch()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Subpixel Jitter Offset and evaluate hot-path shader invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Transition to 2D Velocity Vector with verified deterministic output.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit()"
+            },
+            "tone": "warn"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Temporal Anti-Aliasing (TAA) & Halton Low-Discrepancy Jitter",
+      "codeHash": "48c516cd3b2e41be26250070bd58e6d9a56f6b07b129ba62dca15830761aa4a9",
+      "spec": {
+        "template": "states",
+        "title": "Temporal Anti-Aliasing (TAA) & Halton Low-Discrepancy Jitter — Real-Time State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Halton (2, 3) Generator"
+          },
+          {
+            "id": "st2",
+            "label": "Subpixel Projection Jitter"
+          },
+          {
+            "id": "st3",
+            "label": "Velocity Reprojection Tap"
+          },
+          {
+            "id": "st4",
+            "label": "EMA History Accumulator"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Halton (2, 3) Generator): Initialize state architecture for Temporal Anti-Aliasing (TAA) & Halton Low-Discrepancy Jitter.",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Subpixel Projection Jitter with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "dispatch()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Velocity Reprojection Tap and evaluate hot-path shader invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Transition to EMA History Accumulator with verified deterministic output.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit()"
+            },
+            "tone": "warn"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Neighborhood Clamping & Variance Clipping in YCoCg Space",
+      "codeHash": "3377b47056c56a0bb2207beee9bbc60bce78f8162671df664d5132b1927611fa",
+      "spec": {
+        "template": "states",
+        "title": "Neighborhood Clamping & Variance Clipping in YCoCg Space — Real-Time State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "3x3 Linear RGB Samples"
+          },
+          {
+            "id": "st2",
+            "label": "YCoCg Color Conversion"
+          },
+          {
+            "id": "st3",
+            "label": "Statistical Variance Box"
+          },
+          {
+            "id": "st4",
+            "label": "Clipped History Color"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (3x3 Linear RGB Samples): Initialize state architecture for Neighborhood Clamping & Variance Clipping in YCoCg Space.",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to YCoCg Color Conversion with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "dispatch()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Statistical Variance Box and evaluate hot-path shader invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Transition to Clipped History Color with verified deterministic output.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit()"
+            },
+            "tone": "warn"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Temporal Super-Resolution (TSR / FSR 2.0 Style) & Contrast-Adaptive Sharpening (CAS)",
+      "codeHash": "6bed78c6e6139a56f2a58d5d9ed1b72e03b1dc22a3bf9aa37898ac5b02f04283",
+      "spec": {
+        "template": "states",
+        "title": "Temporal Super-Resolution (TSR / FSR 2.0 Style) & Contrast-Adaptive Sharpening (CAS) — Real-Time State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "1440p Render Input"
+          },
+          {
+            "id": "st2",
+            "label": "Lanczos Reconstruction Tap"
+          },
+          {
+            "id": "st3",
+            "label": "CAS 5-Tap Cross Filter"
+          },
+          {
+            "id": "st4",
+            "label": "Pristine 4K Output"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (1440p Render Input): Initialize state architecture for Temporal Super-Resolution (TSR / FSR 2.0 Style) & Contrast-Adaptive Sharpening (CAS).",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Lanczos Reconstruction Tap with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "dispatch()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to CAS 5-Tap Cross Filter and evaluate hot-path shader invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Transition to Pristine 4K Output with verified deterministic output.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit()"
+            },
+            "tone": "warn"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Real-Time TAA & Temporal Upscaling Engine",
+      "codeHash": "b1097ae3736f819406cb36575940a30081f8d78ff4e4f9eddf4a5030b882c2ad",
+      "spec": {
+        "template": "states",
+        "title": "Production Real-Time TAA & Temporal Upscaling Engine — Real-Time State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Jitter Phase Sequence"
+          },
+          {
+            "id": "st2",
+            "label": "Temporal History Buffer"
+          },
+          {
+            "id": "st3",
+            "label": "Variance Clamping Guard"
+          },
+          {
+            "id": "st4",
+            "label": "Converged AAA Output"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Jitter Phase Sequence): Initialize state architecture for Production Real-Time TAA & Temporal Upscaling Engine.",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Temporal History Buffer with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "dispatch()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Variance Clamping Guard and evaluate hot-path shader invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Transition to Converged AAA Output with verified deterministic output.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit()"
+            },
+            "tone": "warn"
+          }
+        ]
+      }
+    }
+  ]
+}

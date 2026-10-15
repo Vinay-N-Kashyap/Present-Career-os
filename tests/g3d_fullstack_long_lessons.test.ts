@@ -493,6 +493,69 @@ test('Fullstack-JS Day 5: Domain-Specific Content Assertions', () => {
   assert.ok(fsD5.parts[4].output.includes('FAST_FAIL_FALLBACK_TRIGGERED'));
 });
 
+test('G3D Days 6–10 & Milestone 2 Capstone: Resolution, Word Counts & Invariants', () => {
+  for (let day = 6; day <= 10; day++) {
+    const lesson = getLongLesson('g3d', day);
+    assert.ok(lesson, `G3D Day ${day} long lesson must resolve`);
+    assert.equal(lesson.day, day);
+    assert.equal(lesson.parts.length, 5, `G3D Day ${day} must contain exactly 5 parts`);
+    assert.ok(lesson.minutes >= 35, `G3D Day ${day} must be >= 35 minutes`);
+    assert.ok(lesson.summary.length >= 4, `G3D Day ${day} must contain comprehensive summary`);
+    assert.ok(lesson.projectStep, `G3D Day ${day} must have a hands-on project step`);
 
+    // Total Spoken Words check (>= 2,940 words)
+    let totalWords = 0;
+    for (const part of lesson.parts) {
+      assert.ok(part.code, `Day ${day} Part '${part.title}' must contain code`);
+      assert.ok(part.output, `Day ${day} Part '${part.title}' must declare expected output`);
+      assert.ok(part.check, `Day ${day} Part '${part.title}' must have Socratic check`);
+      assert.equal(part.check.options.length, 4, `Day ${day} Part '${part.title}' MCQ must have 4 options`);
+      assert.ok(part.check.answer >= 0 && part.check.answer <= 3, `Day ${day} Part '${part.title}' answer must be in 0..3`);
+      assert.ok(part.check.why.length > 20, `Day ${day} Part '${part.title}' explanation must be rigorous`);
 
+      const text = Array.isArray(part.say) ? part.say.join(' ') : part.say;
+      const w = text.trim().split(/\s+/).filter(Boolean).length;
+      totalWords += w;
+    }
+    assert.ok(totalWords >= 2940, `G3D Day ${day} must have >= 2,940 spoken words (actual: ${totalWords})`);
+  }
+});
 
+test('G3D Days 6–10: Domain-Specific Content Assertions', () => {
+  // Day 6: Spherical Harmonics & GI
+  const d6 = getLongLesson('g3d', 6);
+  assert.ok(d6.title.includes('Spherical Harmonics') || d6.title.includes('Irradiance Probes'));
+  assert.ok(d6.parts[0].output.includes('SH Pipeline'));
+  assert.ok(d6.parts[1].output.includes('Chebyshev Test'));
+
+  // Day 7: Cascaded Shadow Maps & PCSS
+  const d7 = getLongLesson('g3d', 7);
+  assert.ok(d7.title.includes('Cascaded Shadow Maps') || d7.title.includes('PCSS'));
+  assert.ok(d7.parts[0].output.includes('CSM Pipeline'));
+  assert.ok(d7.parts[0].output.includes('Texel Snapping'));
+
+  // Day 8: GPU-Driven Rendering & Mesh Shaders
+  const d8 = getLongLesson('g3d', 8);
+  assert.ok(d8.title.includes('GPU-Driven') || d8.title.includes('Mesh Shaders'));
+  assert.ok(d8.parts[0].output.includes('GPU-Driven Pipeline'));
+  assert.ok(d8.parts[2].output.includes('Hi-Z'));
+
+  // Day 9: TAA & Motion Vectors
+  const d9 = getLongLesson('g3d', 9);
+  assert.ok(d9.title.includes('Temporal Anti-Aliasing') || d9.title.includes('TAA'));
+  assert.ok(d9.parts[0].output.includes('Velocity Pipeline'));
+  assert.ok(d9.parts[1].output.includes('Halton'));
+  assert.ok(d9.parts[2].output.includes('YCoCg'));
+
+  // Day 10: ⭐ Milestone 2 Capstone
+  const d10 = getLongLesson('g3d', 10);
+  assert.ok(d10.title.includes('Milestone 2 Capstone'));
+  assert.ok(d10.parts[0].title.includes('Tier 1'));
+  assert.ok(d10.parts[1].title.includes('Tier 2'));
+  assert.ok(d10.parts[2].title.includes('Tier 3'));
+  assert.ok(d10.parts[3].title.includes('Tier 4'));
+  assert.ok(d10.parts[4].title.includes('Tier 5'));
+  assert.ok(d10.parts[4].output.includes('5-GATE ARCHITECTURE VIVA VOCE DEFENSE MATRIX'));
+  assert.ok(d10.parts[4].output.includes('109.89 FPS @ 4K Resolution'));
+  assert.ok(d10.parts[4].output.includes('Principal 3D Computer Graphics & WebGPU Shader Architect Certification'));
+});

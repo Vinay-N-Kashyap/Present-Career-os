@@ -1,0 +1,344 @@
+{
+  "schemaVersion": 1,
+  "prefix": "g3d",
+  "day": 7,
+  "promptSha": "499b3b3e74e896a1950db05e46d4f1e9d47728a1ed0efdb5d6ca4b76c50e8a37",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Cascaded Shadow Maps (CSM): View Frustum Splitting & Texel Snapping",
+      "codeHash": "a80b82a08689c2d523fb6c67cfaef02b88f0d5d602eee0c10786d1217ca9a9f7",
+      "spec": {
+        "template": "states",
+        "title": "Cascaded Shadow Maps (CSM): View Frustum Splitting & Texel Snapping — Real-Time State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "View Frustum Partition"
+          },
+          {
+            "id": "st2",
+            "label": "Logarithmic Split Bounds"
+          },
+          {
+            "id": "st3",
+            "label": "Light Space Snapping"
+          },
+          {
+            "id": "st4",
+            "label": "Active Cascade Selection"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (View Frustum Partition): Initialize state architecture for Cascaded Shadow Maps (CSM): View Frustum Splitting & Texel Snapping.",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Logarithmic Split Bounds with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "dispatch()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Light Space Snapping and evaluate hot-path shader invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Transition to Active Cascade Selection with verified deterministic output.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit()"
+            },
+            "tone": "warn"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Percentage-Closer Soft Shadows (PCSS) & Variable Penumbra Estimation",
+      "codeHash": "572aa02aa4694849d0419ff49f1541d80151ae8dfd5e2d20300033e5f23a46e5",
+      "spec": {
+        "template": "states",
+        "title": "Percentage-Closer Soft Shadows (PCSS) & Variable Penumbra Estimation — Real-Time State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Area Light Source"
+          },
+          {
+            "id": "st2",
+            "label": "Poisson Blocker Search"
+          },
+          {
+            "id": "st3",
+            "label": "Penumbra Width Ratio"
+          },
+          {
+            "id": "st4",
+            "label": "Contact Filtered PCF"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Area Light Source): Initialize state architecture for Percentage-Closer Soft Shadows (PCSS) & Variable Penumbra Estimation.",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Poisson Blocker Search with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "dispatch()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Penumbra Width Ratio and evaluate hot-path shader invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Transition to Contact Filtered PCF with verified deterministic output.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit()"
+            },
+            "tone": "warn"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Virtual Shadow Maps (VSM) & Sparse Physical Page Allocations",
+      "codeHash": "183b4db8d1dfb0bf206f8c221e88ed02f41d94412882ecc97b87a360ea930d5e",
+      "spec": {
+        "template": "states",
+        "title": "Virtual Shadow Maps (VSM) & Sparse Physical Page Allocations — Real-Time State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Virtual 16k Coordinates"
+          },
+          {
+            "id": "st2",
+            "label": "GPU Feedback Request"
+          },
+          {
+            "id": "st3",
+            "label": "LRU Physical Page Slot"
+          },
+          {
+            "id": "st4",
+            "label": "Atlas Texture Sample"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Virtual 16k Coordinates): Initialize state architecture for Virtual Shadow Maps (VSM) & Sparse Physical Page Allocations.",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to GPU Feedback Request with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "dispatch()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to LRU Physical Page Slot and evaluate hot-path shader invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Transition to Atlas Texture Sample with verified deterministic output.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit()"
+            },
+            "tone": "warn"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Moment Shadow Mapping (MSM) & Variance Shadow Maps (VSM)",
+      "codeHash": "389e752ae48a3ff3af248d630eed963acb25c438023e4630185c7331425761c1",
+      "spec": {
+        "template": "states",
+        "title": "Moment Shadow Mapping (MSM) & Variance Shadow Maps (VSM) — Real-Time State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Stored 4-Moments"
+          },
+          {
+            "id": "st2",
+            "label": "Hankel Matrix Cholesky"
+          },
+          {
+            "id": "st3",
+            "label": "Hamburger Bound Test"
+          },
+          {
+            "id": "st4",
+            "label": "Bleed-Free Shadow Factor"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Stored 4-Moments): Initialize state architecture for Moment Shadow Mapping (MSM) & Variance Shadow Maps (VSM).",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Hankel Matrix Cholesky with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "dispatch()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Hamburger Bound Test and evaluate hot-path shader invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Transition to Bleed-Free Shadow Factor with verified deterministic output.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit()"
+            },
+            "tone": "warn"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Cascaded & Soft Shadow Architecture Engine",
+      "codeHash": "ff40c46a15b47f9bce83340ea8487d58cf71d643298948f60df47cf429acad31",
+      "spec": {
+        "template": "states",
+        "title": "Production Cascaded & Soft Shadow Architecture Engine — Real-Time State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Slope-Scaled Bias"
+          },
+          {
+            "id": "st2",
+            "label": "Cascade Layer Blending"
+          },
+          {
+            "id": "st3",
+            "label": "Poisson Blocker Ratio"
+          },
+          {
+            "id": "st4",
+            "label": "Filtered Direct Shadow"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Slope-Scaled Bias): Initialize state architecture for Production Cascaded & Soft Shadow Architecture Engine.",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Cascade Layer Blending with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "dispatch()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Poisson Blocker Ratio and evaluate hot-path shader invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Transition to Filtered Direct Shadow with verified deterministic output.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit()"
+            },
+            "tone": "warn"
+          }
+        ]
+      }
+    }
+  ]
+}

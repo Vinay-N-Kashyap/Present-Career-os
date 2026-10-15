@@ -1,0 +1,344 @@
+{
+  "schemaVersion": 1,
+  "prefix": "g3d",
+  "day": 8,
+  "promptSha": "87eba03ba533f1b933ba78711d7c732e7e0289b6aae7b340851c026ce843ae51",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "GPU-Driven Pipeline Architecture & Multi-Draw Indirect",
+      "codeHash": "ce319466e1b571522863ea6c64915fecb36bfab72e5669ff92c9fb7a7c41becf",
+      "spec": {
+        "template": "states",
+        "title": "GPU-Driven Pipeline Architecture & Multi-Draw Indirect — Real-Time State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Scene Instance Buffer"
+          },
+          {
+            "id": "st2",
+            "label": "GPU Frustum Culling"
+          },
+          {
+            "id": "st3",
+            "label": "Atomic Draw Command Write"
+          },
+          {
+            "id": "st4",
+            "label": "Multi-Draw Indirect Dispatch"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Scene Instance Buffer): Initialize state architecture for GPU-Driven Pipeline Architecture & Multi-Draw Indirect.",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to GPU Frustum Culling with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "dispatch()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Atomic Draw Command Write and evaluate hot-path shader invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Transition to Multi-Draw Indirect Dispatch with verified deterministic output.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit()"
+            },
+            "tone": "warn"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Mesh Shaders, Task Shaders & Meshlet Geometry Clusters",
+      "codeHash": "2fb2c782781688d56f3546af4e93cb21f73282c0610c57b6b340c0edefcc47d0",
+      "spec": {
+        "template": "states",
+        "title": "Mesh Shaders, Task Shaders & Meshlet Geometry Clusters — Real-Time State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Meshlet Topology 64v/126t"
+          },
+          {
+            "id": "st2",
+            "label": "Task Shader Normal Cone"
+          },
+          {
+            "id": "st3",
+            "label": "Cluster Frustum Test"
+          },
+          {
+            "id": "st4",
+            "label": "Mesh Shader Dispatch"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Meshlet Topology 64v/126t): Initialize state architecture for Mesh Shaders, Task Shaders & Meshlet Geometry Clusters.",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Task Shader Normal Cone with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "dispatch()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Cluster Frustum Test and evaluate hot-path shader invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Transition to Mesh Shader Dispatch with verified deterministic output.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit()"
+            },
+            "tone": "warn"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Hierarchical-Z (Hi-Z) Two-Pass Occlusion Culling",
+      "codeHash": "307ccd55e3563f1598a74ee3afe75c5bbfd455166b5a66a292d4bc70cf331cf7",
+      "spec": {
+        "template": "states",
+        "title": "Hierarchical-Z (Hi-Z) Two-Pass Occlusion Culling — Real-Time State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "1024x1024 Depth Buffer"
+          },
+          {
+            "id": "st2",
+            "label": "Hierarchical-Z Pyramid"
+          },
+          {
+            "id": "st3",
+            "label": "Conservative AABB Test"
+          },
+          {
+            "id": "st4",
+            "label": "Two-Pass Occlusion Culling"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (1024x1024 Depth Buffer): Initialize state architecture for Hierarchical-Z (Hi-Z) Two-Pass Occlusion Culling.",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Hierarchical-Z Pyramid with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "dispatch()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Conservative AABB Test and evaluate hot-path shader invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Transition to Two-Pass Occlusion Culling with verified deterministic output.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit()"
+            },
+            "tone": "warn"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Dynamic GPU Level-of-Detail (LOD) Selection & Geomorphing",
+      "codeHash": "51374b9e0dec3f52c2c4fd4096016efa1d0c43f0efbd5eeb4b246254d96f5d2b",
+      "spec": {
+        "template": "states",
+        "title": "Dynamic GPU Level-of-Detail (LOD) Selection & Geomorphing — Real-Time State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Continuous Error Metric"
+          },
+          {
+            "id": "st2",
+            "label": "Discrete LOD 0-3 Selection"
+          },
+          {
+            "id": "st3",
+            "label": "Geomorph Transition Band"
+          },
+          {
+            "id": "st4",
+            "label": "Interpolated Vertex Buffer"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Continuous Error Metric): Initialize state architecture for Dynamic GPU Level-of-Detail (LOD) Selection & Geomorphing.",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Discrete LOD 0-3 Selection with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "dispatch()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Geomorph Transition Band and evaluate hot-path shader invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Transition to Interpolated Vertex Buffer with verified deterministic output.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit()"
+            },
+            "tone": "warn"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Massively Parallel GPU-Driven Scene Renderer",
+      "codeHash": "d8afc34fc3d0b63d07d1382013b405ceb5e7972b2b667116fa96542e40ca6496",
+      "spec": {
+        "template": "states",
+        "title": "Massively Parallel GPU-Driven Scene Renderer — Real-Time State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "5000 Scene Instances"
+          },
+          {
+            "id": "st2",
+            "label": "Two-Pass Culling Pipeline"
+          },
+          {
+            "id": "st3",
+            "label": "Meshlet Workgroup Emission"
+          },
+          {
+            "id": "st4",
+            "label": "Indirect Draw Execution"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (5000 Scene Instances): Initialize state architecture for Massively Parallel GPU-Driven Scene Renderer.",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Two-Pass Culling Pipeline with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "dispatch()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Meshlet Workgroup Emission and evaluate hot-path shader invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Transition to Indirect Draw Execution with verified deterministic output.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit()"
+            },
+            "tone": "warn"
+          }
+        ]
+      }
+    }
+  ]
+}

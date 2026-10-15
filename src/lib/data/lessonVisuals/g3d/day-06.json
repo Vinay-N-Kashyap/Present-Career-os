@@ -1,0 +1,344 @@
+{
+  "schemaVersion": 1,
+  "prefix": "g3d",
+  "day": 6,
+  "promptSha": "2b4c986167406c2d145ba5aafb7b38092f47c49d1859bbdd3a301e0f507f8d74",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Spherical Harmonics (SH) Ambient Irradiance & Basis Projections",
+      "codeHash": "ace614f018eab76da2626c135216d481e87798fef55a472eabd45d82fec4724e",
+      "spec": {
+        "template": "states",
+        "title": "Spherical Harmonics (SH) Ambient Irradiance & Basis Projections — Real-Time State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Radiance Environment"
+          },
+          {
+            "id": "st2",
+            "label": "SH Projection Basis"
+          },
+          {
+            "id": "st3",
+            "label": "Ramamoorthi Matrix"
+          },
+          {
+            "id": "st4",
+            "label": "Cosine Irradiance"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Radiance Environment): Initialize state architecture for Spherical Harmonics (SH) Ambient Irradiance & Basis Projections.",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to SH Projection Basis with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "dispatch()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Ramamoorthi Matrix and evaluate hot-path shader invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Transition to Cosine Irradiance with verified deterministic output.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit()"
+            },
+            "tone": "warn"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Irradiance Volume Probes & Normal-Weighted Trilinear Interpolation",
+      "codeHash": "b73d4dd6bfedd2262ad46467a6e626765c8b7f89c43024923573474afa3650d9",
+      "spec": {
+        "template": "states",
+        "title": "Irradiance Volume Probes & Normal-Weighted Trilinear Interpolation — Real-Time State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Probe Grid Coordinates"
+          },
+          {
+            "id": "st2",
+            "label": "Trilinear Weights"
+          },
+          {
+            "id": "st3",
+            "label": "Chebyshev Depth Test"
+          },
+          {
+            "id": "st4",
+            "label": "Filtered Probe Sample"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Probe Grid Coordinates): Initialize state architecture for Irradiance Volume Probes & Normal-Weighted Trilinear Interpolation.",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Trilinear Weights with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "dispatch()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Chebyshev Depth Test and evaluate hot-path shader invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Transition to Filtered Probe Sample with verified deterministic output.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit()"
+            },
+            "tone": "warn"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Light Propagation Volumes (LPV) & Virtual Point Light (VPL) Injection",
+      "codeHash": "e37b6a512454b42dbccbedbf4e618716b053a29c8ccae2fbdcd0f6b16c7efbe0",
+      "spec": {
+        "template": "states",
+        "title": "Light Propagation Volumes (LPV) & Virtual Point Light (VPL) Injection — Real-Time State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "RSM Virtual Point Lights"
+          },
+          {
+            "id": "st2",
+            "label": "3D Grid SH Injection"
+          },
+          {
+            "id": "st3",
+            "label": "Cellular Automata Step"
+          },
+          {
+            "id": "st4",
+            "label": "Equilibrium Flux"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (RSM Virtual Point Lights): Initialize state architecture for Light Propagation Volumes (LPV) & Virtual Point Light (VPL) Injection.",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to 3D Grid SH Injection with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "dispatch()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Cellular Automata Step and evaluate hot-path shader invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Transition to Equilibrium Flux with verified deterministic output.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit()"
+            },
+            "tone": "warn"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Voxel Global Illumination (VXGI) & Voxel Cone Tracing",
+      "codeHash": "880b3fdfb80438667e30d6c61065a442c0bc45cd8cd3914315d7ba7e24f922d0",
+      "spec": {
+        "template": "states",
+        "title": "Voxel Global Illumination (VXGI) & Voxel Cone Tracing — Real-Time State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Conservative Voxelize"
+          },
+          {
+            "id": "st2",
+            "label": "3D Anisotropic Mipmap"
+          },
+          {
+            "id": "st3",
+            "label": "Cone March Stepping"
+          },
+          {
+            "id": "st4",
+            "label": "Accumulated Radiance"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Conservative Voxelize): Initialize state architecture for Voxel Global Illumination (VXGI) & Voxel Cone Tracing.",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to 3D Anisotropic Mipmap with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "dispatch()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Cone March Stepping and evaluate hot-path shader invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Transition to Accumulated Radiance with verified deterministic output.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit()"
+            },
+            "tone": "warn"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Real-Time Indirect Diffuse Global Illumination Master Engine",
+      "codeHash": "3ac7babd6c7fb2fdf9dcd1075298339074f18a3baf58dac49978f0bfc6f0b738",
+      "spec": {
+        "template": "states",
+        "title": "Real-Time Indirect Diffuse Global Illumination Master Engine — Real-Time State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "G-Buffer Properties"
+          },
+          {
+            "id": "st2",
+            "label": "SH Ambient Sampling"
+          },
+          {
+            "id": "st3",
+            "label": "LPV + VXGI Gathering"
+          },
+          {
+            "id": "st4",
+            "label": "PBR Radiance Output"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (G-Buffer Properties): Initialize state architecture for Real-Time Indirect Diffuse Global Illumination Master Engine.",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to SH Ambient Sampling with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "dispatch()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to LPV + VXGI Gathering and evaluate hot-path shader invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Transition to PBR Radiance Output with verified deterministic output.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit()"
+            },
+            "tone": "warn"
+          }
+        ]
+      }
+    }
+  ]
+}

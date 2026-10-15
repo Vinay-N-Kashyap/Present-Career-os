@@ -1,0 +1,344 @@
+{
+  "schemaVersion": 1,
+  "prefix": "g3d",
+  "day": 10,
+  "promptSha": "307e5de8acdb0985b55687d7250d497bb2e697d3361caa8a258db0b8b8f9ab1e",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Tier 1: GPU-Driven Meshlet Geometry & Hi-Z Occlusion Pipeline",
+      "codeHash": "c829b255db555f3a097b7c6d040fd5fb095196421d411a47f602f9858adf39e6",
+      "spec": {
+        "template": "states",
+        "title": "Tier 1: GPU-Driven Meshlet Geometry & Hi-Z Occlusion Pipeline — Real-Time State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "10000 Scene Meshlets"
+          },
+          {
+            "id": "st2",
+            "label": "Frustum & Cone Culling"
+          },
+          {
+            "id": "st3",
+            "label": "Hi-Z Occlusion Pyramid"
+          },
+          {
+            "id": "st4",
+            "label": "Indirect Command Buffer"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (10000 Scene Meshlets): Initialize state architecture for Tier 1: GPU-Driven Meshlet Geometry & Hi-Z Occlusion Pipeline.",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Frustum & Cone Culling with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "dispatch()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Hi-Z Occlusion Pyramid and evaluate hot-path shader invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Transition to Indirect Command Buffer with verified deterministic output.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit()"
+            },
+            "tone": "warn"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Tier 2: Real-Time Indirect Global Illumination & Probe Grid",
+      "codeHash": "a915f1e39c2db4cc33f55369f01ee799ba0663e6ec90d4008df0ffd9ec3c49e8",
+      "spec": {
+        "template": "states",
+        "title": "Tier 2: Real-Time Indirect Global Illumination & Probe Grid — Real-Time State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "3D Probe Lattice"
+          },
+          {
+            "id": "st2",
+            "label": "Normal Offset Biasing"
+          },
+          {
+            "id": "st3",
+            "label": "Chebyshev Visibility Test"
+          },
+          {
+            "id": "st4",
+            "label": "Voxel Cone Gather"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (3D Probe Lattice): Initialize state architecture for Tier 2: Real-Time Indirect Global Illumination & Probe Grid.",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Normal Offset Biasing with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "dispatch()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Chebyshev Visibility Test and evaluate hot-path shader invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Transition to Voxel Cone Gather with verified deterministic output.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit()"
+            },
+            "tone": "warn"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Tier 3: 4-Cascade Directional Shadows & PCSS Contact Hardening",
+      "codeHash": "8aac7a5dde55dcb99c43607566ab2801c1d8efa4200f8d610fc8807823b9fd2f",
+      "spec": {
+        "template": "states",
+        "title": "Tier 3: 4-Cascade Directional Shadows & PCSS Contact Hardening — Real-Time State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "4-Cascade Log Splits"
+          },
+          {
+            "id": "st2",
+            "label": "Light Texel Snapping"
+          },
+          {
+            "id": "st3",
+            "label": "Poisson Blocker Search"
+          },
+          {
+            "id": "st4",
+            "label": "Soft Contact Penumbra"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (4-Cascade Log Splits): Initialize state architecture for Tier 3: 4-Cascade Directional Shadows & PCSS Contact Hardening.",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Light Texel Snapping with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "dispatch()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Poisson Blocker Search and evaluate hot-path shader invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Transition to Soft Contact Penumbra with verified deterministic output.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit()"
+            },
+            "tone": "warn"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Tier 4: Temporal Anti-Aliasing (TAA) & Subpixel Velocity Reprojection",
+      "codeHash": "f0f42e7d93608706796bce9656584abe88843f78f9248757adf3da24911199fc",
+      "spec": {
+        "template": "states",
+        "title": "Tier 4: Temporal Anti-Aliasing (TAA) & Subpixel Velocity Reprojection — Real-Time State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Halton Camera Jitter"
+          },
+          {
+            "id": "st2",
+            "label": "Motion Vector Reprojection"
+          },
+          {
+            "id": "st3",
+            "label": "YCoCg Variance Box"
+          },
+          {
+            "id": "st4",
+            "label": "CAS Sharpened 4K"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Halton Camera Jitter): Initialize state architecture for Tier 4: Temporal Anti-Aliasing (TAA) & Subpixel Velocity Reprojection.",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Motion Vector Reprojection with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "dispatch()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to YCoCg Variance Box and evaluate hot-path shader invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Transition to CAS Sharpened 4K with verified deterministic output.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit()"
+            },
+            "tone": "warn"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Tier 5: 5-Gate 3D Graphics Architecture Viva Voce Defense & Master Certification",
+      "codeHash": "e5c123492153c68beb45972297ab7e138372685e3ef125cbb1faf1dc75ff3c54",
+      "spec": {
+        "template": "states",
+        "title": "Tier 5: 5-Gate 3D Graphics Architecture Viva Voce Defense & Master Certification — Real-Time State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Tier 1-4 Pipeline Engine"
+          },
+          {
+            "id": "st2",
+            "label": "5-Gate Architecture Review"
+          },
+          {
+            "id": "st3",
+            "label": "4K 109 FPS Frame Budget"
+          },
+          {
+            "id": "st4",
+            "label": "Principal Architect Certified"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Tier 1-4 Pipeline Engine): Initialize state architecture for Tier 5: 5-Gate 3D Graphics Architecture Viva Voce Defense & Master Certification.",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to 5-Gate Architecture Review with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "dispatch()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to 4K 109 FPS Frame Budget and evaluate hot-path shader invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Transition to Principal Architect Certified with verified deterministic output.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit()"
+            },
+            "tone": "warn"
+          }
+        ]
+      }
+    }
+  ]
+}
