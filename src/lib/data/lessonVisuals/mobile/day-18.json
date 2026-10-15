@@ -1,0 +1,1049 @@
+{
+  "schemaVersion": 1,
+  "prefix": "mobile",
+  "day": 18,
+  "promptSha": "d6fb58ed20f789c9c58131232fbde7169d4c60ecc3ad608778d324173c2b1e1f",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "The Virtualization Window: Viewport Capacity, Draw Distance & Blank Area Metrics",
+      "codeHash": "65b4f222f0f4b2134fca5d10073c08bbc0616e906b615408828207b7ba803eaa",
+      "spec": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<VirtualizedFeedScreen />",
+            "props": {
+              "pacing": "120_FPS_PROMOTION"
+            },
+            "children": [
+              {
+                "id": "FlashListViewPool",
+                "name": "<NativeViewRecyclingPool />",
+                "props": {
+                  "capacity": "O1_BOUNDED_14_VIEWS"
+                }
+              },
+              {
+                "id": "LayoutOffsetCache",
+                "name": "<GetItemLayoutEngine />",
+                "props": {
+                  "jump": "O1_ANALYTICAL_INSTANT"
+                }
+              },
+              {
+                "id": "BitmapDownsampler",
+                "name": "<ImageDownsamplingPipeline />",
+                "props": {
+                  "savings": "99_6_PERCENT_RAM"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount <VirtualizedFeedScreen /> on native 120Hz display link",
+            "activeId": "root",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<VirtualizedFeedScreen />",
+                "props": {
+                  "displayLink": "PROMOTION_120HZ"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Initialize <NativeViewRecyclingPool /> with fixed 14 native containers",
+            "activeId": "FlashListViewPool",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "FlashListViewPool",
+                "name": "<NativeViewRecyclingPool />",
+                "props": {
+                  "status": "RECYCLING_ACTIVE"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute O(1) jump-scroll via <GetItemLayoutEngine /> with zero measuring passes",
+            "activeId": "LayoutOffsetCache",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "LayoutOffsetCache",
+                "name": "<GetItemLayoutEngine />",
+                "props": {
+                  "passes": "ZERO_MEASURE_PASSES"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Decode downsampled RGBA bitmaps via <ImageDownsamplingPipeline />",
+            "activeId": "BitmapDownsampler",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "BitmapDownsampler",
+                "name": "<ImageDownsamplingPipeline />",
+                "props": {
+                  "memory": "0_34MB_SAFE"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<VirtualizedFeedScreen />",
+            "props": {
+              "pacing": "120_FPS_PROMOTION"
+            },
+            "children": [
+              {
+                "id": "FlashListViewPool",
+                "name": "<NativeViewRecyclingPool />",
+                "props": {
+                  "capacity": "O1_BOUNDED_14_VIEWS"
+                }
+              },
+              {
+                "id": "LayoutOffsetCache",
+                "name": "<GetItemLayoutEngine />",
+                "props": {
+                  "jump": "O1_ANALYTICAL_INSTANT"
+                }
+              },
+              {
+                "id": "BitmapDownsampler",
+                "name": "<ImageDownsamplingPipeline />",
+                "props": {
+                  "savings": "99_6_PERCENT_RAM"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount <VirtualizedFeedScreen /> on native 120Hz display link",
+            "activeId": "root",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<VirtualizedFeedScreen />",
+                "props": {
+                  "displayLink": "PROMOTION_120HZ"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Initialize <NativeViewRecyclingPool /> with fixed 14 native containers",
+            "activeId": "FlashListViewPool",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "FlashListViewPool",
+                "name": "<NativeViewRecyclingPool />",
+                "props": {
+                  "status": "RECYCLING_ACTIVE"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute O(1) jump-scroll via <GetItemLayoutEngine /> with zero measuring passes",
+            "activeId": "LayoutOffsetCache",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "LayoutOffsetCache",
+                "name": "<GetItemLayoutEngine />",
+                "props": {
+                  "passes": "ZERO_MEASURE_PASSES"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Decode downsampled RGBA bitmaps via <ImageDownsamplingPipeline />",
+            "activeId": "BitmapDownsampler",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "BitmapDownsampler",
+                "name": "<ImageDownsamplingPipeline />",
+                "props": {
+                  "memory": "0_34MB_SAFE"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "FlashList Native View Recycling: View Pooling & Zero-Unmount DOM Recycling",
+      "codeHash": "2f71d3f2e14baa86eec7e085074be4616c3a4537ace9aa9cf269ef1e5d47cbaa",
+      "spec": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<VirtualizedFeedScreen />",
+            "props": {
+              "pacing": "120_FPS_PROMOTION"
+            },
+            "children": [
+              {
+                "id": "FlashListViewPool",
+                "name": "<NativeViewRecyclingPool />",
+                "props": {
+                  "capacity": "O1_BOUNDED_14_VIEWS"
+                }
+              },
+              {
+                "id": "LayoutOffsetCache",
+                "name": "<GetItemLayoutEngine />",
+                "props": {
+                  "jump": "O1_ANALYTICAL_INSTANT"
+                }
+              },
+              {
+                "id": "BitmapDownsampler",
+                "name": "<ImageDownsamplingPipeline />",
+                "props": {
+                  "savings": "99_6_PERCENT_RAM"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount <VirtualizedFeedScreen /> on native 120Hz display link",
+            "activeId": "root",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<VirtualizedFeedScreen />",
+                "props": {
+                  "displayLink": "PROMOTION_120HZ"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Initialize <NativeViewRecyclingPool /> with fixed 14 native containers",
+            "activeId": "FlashListViewPool",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "FlashListViewPool",
+                "name": "<NativeViewRecyclingPool />",
+                "props": {
+                  "status": "RECYCLING_ACTIVE"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute O(1) jump-scroll via <GetItemLayoutEngine /> with zero measuring passes",
+            "activeId": "LayoutOffsetCache",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "LayoutOffsetCache",
+                "name": "<GetItemLayoutEngine />",
+                "props": {
+                  "passes": "ZERO_MEASURE_PASSES"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Decode downsampled RGBA bitmaps via <ImageDownsamplingPipeline />",
+            "activeId": "BitmapDownsampler",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "BitmapDownsampler",
+                "name": "<ImageDownsamplingPipeline />",
+                "props": {
+                  "memory": "0_34MB_SAFE"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<VirtualizedFeedScreen />",
+            "props": {
+              "pacing": "120_FPS_PROMOTION"
+            },
+            "children": [
+              {
+                "id": "FlashListViewPool",
+                "name": "<NativeViewRecyclingPool />",
+                "props": {
+                  "capacity": "O1_BOUNDED_14_VIEWS"
+                }
+              },
+              {
+                "id": "LayoutOffsetCache",
+                "name": "<GetItemLayoutEngine />",
+                "props": {
+                  "jump": "O1_ANALYTICAL_INSTANT"
+                }
+              },
+              {
+                "id": "BitmapDownsampler",
+                "name": "<ImageDownsamplingPipeline />",
+                "props": {
+                  "savings": "99_6_PERCENT_RAM"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount <VirtualizedFeedScreen /> on native 120Hz display link",
+            "activeId": "root",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<VirtualizedFeedScreen />",
+                "props": {
+                  "displayLink": "PROMOTION_120HZ"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Initialize <NativeViewRecyclingPool /> with fixed 14 native containers",
+            "activeId": "FlashListViewPool",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "FlashListViewPool",
+                "name": "<NativeViewRecyclingPool />",
+                "props": {
+                  "status": "RECYCLING_ACTIVE"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute O(1) jump-scroll via <GetItemLayoutEngine /> with zero measuring passes",
+            "activeId": "LayoutOffsetCache",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "LayoutOffsetCache",
+                "name": "<GetItemLayoutEngine />",
+                "props": {
+                  "passes": "ZERO_MEASURE_PASSES"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Decode downsampled RGBA bitmaps via <ImageDownsamplingPipeline />",
+            "activeId": "BitmapDownsampler",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "BitmapDownsampler",
+                "name": "<ImageDownsamplingPipeline />",
+                "props": {
+                  "memory": "0_34MB_SAFE"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Layout Measurement Caching: getItemLayout & estimatedItemSize Zero-Bridge Caching",
+      "codeHash": "3c566a2ffb62f58a9a93912a7fa620c721d88de3a15073903cf48376d835fb3f",
+      "spec": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<VirtualizedFeedScreen />",
+            "props": {
+              "pacing": "120_FPS_PROMOTION"
+            },
+            "children": [
+              {
+                "id": "FlashListViewPool",
+                "name": "<NativeViewRecyclingPool />",
+                "props": {
+                  "capacity": "O1_BOUNDED_14_VIEWS"
+                }
+              },
+              {
+                "id": "LayoutOffsetCache",
+                "name": "<GetItemLayoutEngine />",
+                "props": {
+                  "jump": "O1_ANALYTICAL_INSTANT"
+                }
+              },
+              {
+                "id": "BitmapDownsampler",
+                "name": "<ImageDownsamplingPipeline />",
+                "props": {
+                  "savings": "99_6_PERCENT_RAM"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount <VirtualizedFeedScreen /> on native 120Hz display link",
+            "activeId": "root",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<VirtualizedFeedScreen />",
+                "props": {
+                  "displayLink": "PROMOTION_120HZ"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Initialize <NativeViewRecyclingPool /> with fixed 14 native containers",
+            "activeId": "FlashListViewPool",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "FlashListViewPool",
+                "name": "<NativeViewRecyclingPool />",
+                "props": {
+                  "status": "RECYCLING_ACTIVE"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute O(1) jump-scroll via <GetItemLayoutEngine /> with zero measuring passes",
+            "activeId": "LayoutOffsetCache",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "LayoutOffsetCache",
+                "name": "<GetItemLayoutEngine />",
+                "props": {
+                  "passes": "ZERO_MEASURE_PASSES"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Decode downsampled RGBA bitmaps via <ImageDownsamplingPipeline />",
+            "activeId": "BitmapDownsampler",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "BitmapDownsampler",
+                "name": "<ImageDownsamplingPipeline />",
+                "props": {
+                  "memory": "0_34MB_SAFE"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<VirtualizedFeedScreen />",
+            "props": {
+              "pacing": "120_FPS_PROMOTION"
+            },
+            "children": [
+              {
+                "id": "FlashListViewPool",
+                "name": "<NativeViewRecyclingPool />",
+                "props": {
+                  "capacity": "O1_BOUNDED_14_VIEWS"
+                }
+              },
+              {
+                "id": "LayoutOffsetCache",
+                "name": "<GetItemLayoutEngine />",
+                "props": {
+                  "jump": "O1_ANALYTICAL_INSTANT"
+                }
+              },
+              {
+                "id": "BitmapDownsampler",
+                "name": "<ImageDownsamplingPipeline />",
+                "props": {
+                  "savings": "99_6_PERCENT_RAM"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount <VirtualizedFeedScreen /> on native 120Hz display link",
+            "activeId": "root",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<VirtualizedFeedScreen />",
+                "props": {
+                  "displayLink": "PROMOTION_120HZ"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Initialize <NativeViewRecyclingPool /> with fixed 14 native containers",
+            "activeId": "FlashListViewPool",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "FlashListViewPool",
+                "name": "<NativeViewRecyclingPool />",
+                "props": {
+                  "status": "RECYCLING_ACTIVE"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute O(1) jump-scroll via <GetItemLayoutEngine /> with zero measuring passes",
+            "activeId": "LayoutOffsetCache",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "LayoutOffsetCache",
+                "name": "<GetItemLayoutEngine />",
+                "props": {
+                  "passes": "ZERO_MEASURE_PASSES"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Decode downsampled RGBA bitmaps via <ImageDownsamplingPipeline />",
+            "activeId": "BitmapDownsampler",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "BitmapDownsampler",
+                "name": "<ImageDownsamplingPipeline />",
+                "props": {
+                  "memory": "0_34MB_SAFE"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Asynchronous Image Downsampling & Off-Screen Bitmap Recycling in Feeds",
+      "codeHash": "a86d4f4445fb2a5afe684893df3cdf834f3a6da339115628422ea181640eb1f4",
+      "spec": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<VirtualizedFeedScreen />",
+            "props": {
+              "pacing": "120_FPS_PROMOTION"
+            },
+            "children": [
+              {
+                "id": "FlashListViewPool",
+                "name": "<NativeViewRecyclingPool />",
+                "props": {
+                  "capacity": "O1_BOUNDED_14_VIEWS"
+                }
+              },
+              {
+                "id": "LayoutOffsetCache",
+                "name": "<GetItemLayoutEngine />",
+                "props": {
+                  "jump": "O1_ANALYTICAL_INSTANT"
+                }
+              },
+              {
+                "id": "BitmapDownsampler",
+                "name": "<ImageDownsamplingPipeline />",
+                "props": {
+                  "savings": "99_6_PERCENT_RAM"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount <VirtualizedFeedScreen /> on native 120Hz display link",
+            "activeId": "root",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<VirtualizedFeedScreen />",
+                "props": {
+                  "displayLink": "PROMOTION_120HZ"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Initialize <NativeViewRecyclingPool /> with fixed 14 native containers",
+            "activeId": "FlashListViewPool",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "FlashListViewPool",
+                "name": "<NativeViewRecyclingPool />",
+                "props": {
+                  "status": "RECYCLING_ACTIVE"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute O(1) jump-scroll via <GetItemLayoutEngine /> with zero measuring passes",
+            "activeId": "LayoutOffsetCache",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "LayoutOffsetCache",
+                "name": "<GetItemLayoutEngine />",
+                "props": {
+                  "passes": "ZERO_MEASURE_PASSES"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Decode downsampled RGBA bitmaps via <ImageDownsamplingPipeline />",
+            "activeId": "BitmapDownsampler",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "BitmapDownsampler",
+                "name": "<ImageDownsamplingPipeline />",
+                "props": {
+                  "memory": "0_34MB_SAFE"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<VirtualizedFeedScreen />",
+            "props": {
+              "pacing": "120_FPS_PROMOTION"
+            },
+            "children": [
+              {
+                "id": "FlashListViewPool",
+                "name": "<NativeViewRecyclingPool />",
+                "props": {
+                  "capacity": "O1_BOUNDED_14_VIEWS"
+                }
+              },
+              {
+                "id": "LayoutOffsetCache",
+                "name": "<GetItemLayoutEngine />",
+                "props": {
+                  "jump": "O1_ANALYTICAL_INSTANT"
+                }
+              },
+              {
+                "id": "BitmapDownsampler",
+                "name": "<ImageDownsamplingPipeline />",
+                "props": {
+                  "savings": "99_6_PERCENT_RAM"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount <VirtualizedFeedScreen /> on native 120Hz display link",
+            "activeId": "root",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<VirtualizedFeedScreen />",
+                "props": {
+                  "displayLink": "PROMOTION_120HZ"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Initialize <NativeViewRecyclingPool /> with fixed 14 native containers",
+            "activeId": "FlashListViewPool",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "FlashListViewPool",
+                "name": "<NativeViewRecyclingPool />",
+                "props": {
+                  "status": "RECYCLING_ACTIVE"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute O(1) jump-scroll via <GetItemLayoutEngine /> with zero measuring passes",
+            "activeId": "LayoutOffsetCache",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "LayoutOffsetCache",
+                "name": "<GetItemLayoutEngine />",
+                "props": {
+                  "passes": "ZERO_MEASURE_PASSES"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Decode downsampled RGBA bitmaps via <ImageDownsamplingPipeline />",
+            "activeId": "BitmapDownsampler",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "BitmapDownsampler",
+                "name": "<ImageDownsamplingPipeline />",
+                "props": {
+                  "memory": "0_34MB_SAFE"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Feed Virtualization Master Engine: Full Production Simulator",
+      "codeHash": "fa1c761cc1d10ba36ffb3dea3999581b9fe8322ff5e723fdcb77ad26858ef2a7",
+      "spec": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<VirtualizedFeedScreen />",
+            "props": {
+              "pacing": "120_FPS_PROMOTION"
+            },
+            "children": [
+              {
+                "id": "FlashListViewPool",
+                "name": "<NativeViewRecyclingPool />",
+                "props": {
+                  "capacity": "O1_BOUNDED_14_VIEWS"
+                }
+              },
+              {
+                "id": "LayoutOffsetCache",
+                "name": "<GetItemLayoutEngine />",
+                "props": {
+                  "jump": "O1_ANALYTICAL_INSTANT"
+                }
+              },
+              {
+                "id": "BitmapDownsampler",
+                "name": "<ImageDownsamplingPipeline />",
+                "props": {
+                  "savings": "99_6_PERCENT_RAM"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount <VirtualizedFeedScreen /> on native 120Hz display link",
+            "activeId": "root",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<VirtualizedFeedScreen />",
+                "props": {
+                  "displayLink": "PROMOTION_120HZ"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Initialize <NativeViewRecyclingPool /> with fixed 14 native containers",
+            "activeId": "FlashListViewPool",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "FlashListViewPool",
+                "name": "<NativeViewRecyclingPool />",
+                "props": {
+                  "status": "RECYCLING_ACTIVE"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute O(1) jump-scroll via <GetItemLayoutEngine /> with zero measuring passes",
+            "activeId": "LayoutOffsetCache",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "LayoutOffsetCache",
+                "name": "<GetItemLayoutEngine />",
+                "props": {
+                  "passes": "ZERO_MEASURE_PASSES"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Decode downsampled RGBA bitmaps via <ImageDownsamplingPipeline />",
+            "activeId": "BitmapDownsampler",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "BitmapDownsampler",
+                "name": "<ImageDownsamplingPipeline />",
+                "props": {
+                  "memory": "0_34MB_SAFE"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<VirtualizedFeedScreen />",
+            "props": {
+              "pacing": "120_FPS_PROMOTION"
+            },
+            "children": [
+              {
+                "id": "FlashListViewPool",
+                "name": "<NativeViewRecyclingPool />",
+                "props": {
+                  "capacity": "O1_BOUNDED_14_VIEWS"
+                }
+              },
+              {
+                "id": "LayoutOffsetCache",
+                "name": "<GetItemLayoutEngine />",
+                "props": {
+                  "jump": "O1_ANALYTICAL_INSTANT"
+                }
+              },
+              {
+                "id": "BitmapDownsampler",
+                "name": "<ImageDownsamplingPipeline />",
+                "props": {
+                  "savings": "99_6_PERCENT_RAM"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount <VirtualizedFeedScreen /> on native 120Hz display link",
+            "activeId": "root",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<VirtualizedFeedScreen />",
+                "props": {
+                  "displayLink": "PROMOTION_120HZ"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Initialize <NativeViewRecyclingPool /> with fixed 14 native containers",
+            "activeId": "FlashListViewPool",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "FlashListViewPool",
+                "name": "<NativeViewRecyclingPool />",
+                "props": {
+                  "status": "RECYCLING_ACTIVE"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute O(1) jump-scroll via <GetItemLayoutEngine /> with zero measuring passes",
+            "activeId": "LayoutOffsetCache",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "LayoutOffsetCache",
+                "name": "<GetItemLayoutEngine />",
+                "props": {
+                  "passes": "ZERO_MEASURE_PASSES"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Decode downsampled RGBA bitmaps via <ImageDownsamplingPipeline />",
+            "activeId": "BitmapDownsampler",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "BitmapDownsampler",
+                "name": "<ImageDownsamplingPipeline />",
+                "props": {
+                  "memory": "0_34MB_SAFE"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
