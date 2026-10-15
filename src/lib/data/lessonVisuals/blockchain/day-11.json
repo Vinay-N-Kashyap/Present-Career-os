@@ -1,0 +1,849 @@
+{
+  "schemaVersion": 1,
+  "prefix": "blockchain",
+  "day": 11,
+  "promptSha": "9a329c0f7721ba3e18cd987fe88fbc910245a909d3b764b73b22cf309df78132",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "The Anatomy of a Reentrancy Attack: Control Flow Hijacking & The DAO Exploit",
+      "codeHash": "c5ffc70a895d56ffeffb7263da7b541893f3122777525a9219c681024c51a8c9",
+      "spec": {
+        "template": "sequence",
+        "title": "The Anatomy of a Reentrancy Attack: Control Flow Hijacking & The DAO Exploit \u2014 Reentrancy Defense Sequence",
+        "actors": [
+          "Attacker Contract",
+          "Vulnerable Protocol",
+          "EVM State Controller",
+          "Security Audit Engine"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Attacker triggers interaction for The Anatomy of a Reentrancy Atta",
+            "activeActor": "Attacker Contract",
+            "messages": [
+              {
+                "from": "Attacker Contract",
+                "to": "Vulnerable Protocol",
+                "label": "initiateWithdrawal(amount)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Protocol checks balance and initiates external callback",
+            "activeActor": "Vulnerable Protocol",
+            "messages": [
+              {
+                "from": "Vulnerable Protocol",
+                "to": "Attacker Contract",
+                "label": "executeExternalCall(call{value})",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Attacker attempts recursive reentrancy before state effect",
+            "activeActor": "EVM State Controller",
+            "messages": [
+              {
+                "from": "Attacker Contract",
+                "to": "Vulnerable Protocol",
+                "label": "reenterWithdrawal() [CEI Check]",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Security Audit Engine validates CEI and confirms protocol immunity",
+            "activeActor": "Security Audit Engine",
+            "messages": [
+              {
+                "from": "Attacker Contract",
+                "to": "Vulnerable Protocol",
+                "label": "initiateWithdrawal(amount)",
+                "tone": "ok"
+              },
+              {
+                "from": "Vulnerable Protocol",
+                "to": "EVM State Controller",
+                "label": "applyEffectsFirst(balance = 0)",
+                "tone": "ok"
+              },
+              {
+                "from": "EVM State Controller",
+                "to": "Security Audit Engine",
+                "label": "verifyReentrancyImmunity(CEI \u2713)",
+                "tone": "ok"
+              },
+              {
+                "from": "Security Audit Engine",
+                "to": "Vulnerable Protocol",
+                "label": "ReentrancyDefenseCertified(Optimal \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "The Anatomy of a Reentrancy Attack: Control Flow Hijacking & The DAO Exploit \u2014 Reentrancy Defense Sequence",
+        "actors": [
+          "Attacker Contract",
+          "Vulnerable Protocol",
+          "EVM State Controller",
+          "Security Audit Engine"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Attacker triggers interaction for The Anatomy of a Reentrancy Atta",
+            "activeActor": "Attacker Contract",
+            "messages": [
+              {
+                "from": "Attacker Contract",
+                "to": "Vulnerable Protocol",
+                "label": "initiateWithdrawal(amount)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Protocol checks balance and initiates external callback",
+            "activeActor": "Vulnerable Protocol",
+            "messages": [
+              {
+                "from": "Vulnerable Protocol",
+                "to": "Attacker Contract",
+                "label": "executeExternalCall(call{value})",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Attacker attempts recursive reentrancy before state effect",
+            "activeActor": "EVM State Controller",
+            "messages": [
+              {
+                "from": "Attacker Contract",
+                "to": "Vulnerable Protocol",
+                "label": "reenterWithdrawal() [CEI Check]",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Security Audit Engine validates CEI and confirms protocol immunity",
+            "activeActor": "Security Audit Engine",
+            "messages": [
+              {
+                "from": "Attacker Contract",
+                "to": "Vulnerable Protocol",
+                "label": "initiateWithdrawal(amount)",
+                "tone": "ok"
+              },
+              {
+                "from": "Vulnerable Protocol",
+                "to": "EVM State Controller",
+                "label": "applyEffectsFirst(balance = 0)",
+                "tone": "ok"
+              },
+              {
+                "from": "EVM State Controller",
+                "to": "Security Audit Engine",
+                "label": "verifyReentrancyImmunity(CEI \u2713)",
+                "tone": "ok"
+              },
+              {
+                "from": "Security Audit Engine",
+                "to": "Vulnerable Protocol",
+                "label": "ReentrancyDefenseCertified(Optimal \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Checks-Effects-Interactions (CEI) Pattern: Structural State Protection",
+      "codeHash": "4f55df89ddd565830cee0edc2fa0d2856064002a9f0125a7424d7cfc5a37b555",
+      "spec": {
+        "template": "sequence",
+        "title": "The Checks-Effects-Interactions (CEI) Pattern: Structural State Protection \u2014 Reentrancy Defense Sequence",
+        "actors": [
+          "Attacker Contract",
+          "Vulnerable Protocol",
+          "EVM State Controller",
+          "Security Audit Engine"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Attacker triggers interaction for The Checks-Effects-Interactions ",
+            "activeActor": "Attacker Contract",
+            "messages": [
+              {
+                "from": "Attacker Contract",
+                "to": "Vulnerable Protocol",
+                "label": "initiateWithdrawal(amount)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Protocol checks balance and initiates external callback",
+            "activeActor": "Vulnerable Protocol",
+            "messages": [
+              {
+                "from": "Vulnerable Protocol",
+                "to": "Attacker Contract",
+                "label": "executeExternalCall(call{value})",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Attacker attempts recursive reentrancy before state effect",
+            "activeActor": "EVM State Controller",
+            "messages": [
+              {
+                "from": "Attacker Contract",
+                "to": "Vulnerable Protocol",
+                "label": "reenterWithdrawal() [CEI Check]",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Security Audit Engine validates CEI and confirms protocol immunity",
+            "activeActor": "Security Audit Engine",
+            "messages": [
+              {
+                "from": "Attacker Contract",
+                "to": "Vulnerable Protocol",
+                "label": "initiateWithdrawal(amount)",
+                "tone": "ok"
+              },
+              {
+                "from": "Vulnerable Protocol",
+                "to": "EVM State Controller",
+                "label": "applyEffectsFirst(balance = 0)",
+                "tone": "ok"
+              },
+              {
+                "from": "EVM State Controller",
+                "to": "Security Audit Engine",
+                "label": "verifyReentrancyImmunity(CEI \u2713)",
+                "tone": "ok"
+              },
+              {
+                "from": "Security Audit Engine",
+                "to": "Vulnerable Protocol",
+                "label": "ReentrancyDefenseCertified(Optimal \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "The Checks-Effects-Interactions (CEI) Pattern: Structural State Protection \u2014 Reentrancy Defense Sequence",
+        "actors": [
+          "Attacker Contract",
+          "Vulnerable Protocol",
+          "EVM State Controller",
+          "Security Audit Engine"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Attacker triggers interaction for The Checks-Effects-Interactions ",
+            "activeActor": "Attacker Contract",
+            "messages": [
+              {
+                "from": "Attacker Contract",
+                "to": "Vulnerable Protocol",
+                "label": "initiateWithdrawal(amount)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Protocol checks balance and initiates external callback",
+            "activeActor": "Vulnerable Protocol",
+            "messages": [
+              {
+                "from": "Vulnerable Protocol",
+                "to": "Attacker Contract",
+                "label": "executeExternalCall(call{value})",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Attacker attempts recursive reentrancy before state effect",
+            "activeActor": "EVM State Controller",
+            "messages": [
+              {
+                "from": "Attacker Contract",
+                "to": "Vulnerable Protocol",
+                "label": "reenterWithdrawal() [CEI Check]",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Security Audit Engine validates CEI and confirms protocol immunity",
+            "activeActor": "Security Audit Engine",
+            "messages": [
+              {
+                "from": "Attacker Contract",
+                "to": "Vulnerable Protocol",
+                "label": "initiateWithdrawal(amount)",
+                "tone": "ok"
+              },
+              {
+                "from": "Vulnerable Protocol",
+                "to": "EVM State Controller",
+                "label": "applyEffectsFirst(balance = 0)",
+                "tone": "ok"
+              },
+              {
+                "from": "EVM State Controller",
+                "to": "Security Audit Engine",
+                "label": "verifyReentrancyImmunity(CEI \u2713)",
+                "tone": "ok"
+              },
+              {
+                "from": "Security Audit Engine",
+                "to": "Vulnerable Protocol",
+                "label": "ReentrancyDefenseCertified(Optimal \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cross-Function Reentrancy: Auxiliary Vector Exploitation & Shared State Hazards",
+      "codeHash": "985df45885a44a7364d5355ded85bf54ce94e7572e43a0dc34a8768579b6b7a6",
+      "spec": {
+        "template": "sequence",
+        "title": "Cross-Function Reentrancy: Auxiliary Vector Exploitation & Shared State Hazards \u2014 Reentrancy Defense Sequence",
+        "actors": [
+          "Attacker Contract",
+          "Vulnerable Protocol",
+          "EVM State Controller",
+          "Security Audit Engine"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Attacker triggers interaction for Cross-Function Reentrancy: Auxil",
+            "activeActor": "Attacker Contract",
+            "messages": [
+              {
+                "from": "Attacker Contract",
+                "to": "Vulnerable Protocol",
+                "label": "initiateWithdrawal(amount)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Protocol checks balance and initiates external callback",
+            "activeActor": "Vulnerable Protocol",
+            "messages": [
+              {
+                "from": "Vulnerable Protocol",
+                "to": "Attacker Contract",
+                "label": "executeExternalCall(call{value})",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Attacker attempts recursive reentrancy before state effect",
+            "activeActor": "EVM State Controller",
+            "messages": [
+              {
+                "from": "Attacker Contract",
+                "to": "Vulnerable Protocol",
+                "label": "reenterWithdrawal() [CEI Check]",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Security Audit Engine validates CEI and confirms protocol immunity",
+            "activeActor": "Security Audit Engine",
+            "messages": [
+              {
+                "from": "Attacker Contract",
+                "to": "Vulnerable Protocol",
+                "label": "initiateWithdrawal(amount)",
+                "tone": "ok"
+              },
+              {
+                "from": "Vulnerable Protocol",
+                "to": "EVM State Controller",
+                "label": "applyEffectsFirst(balance = 0)",
+                "tone": "ok"
+              },
+              {
+                "from": "EVM State Controller",
+                "to": "Security Audit Engine",
+                "label": "verifyReentrancyImmunity(CEI \u2713)",
+                "tone": "ok"
+              },
+              {
+                "from": "Security Audit Engine",
+                "to": "Vulnerable Protocol",
+                "label": "ReentrancyDefenseCertified(Optimal \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Cross-Function Reentrancy: Auxiliary Vector Exploitation & Shared State Hazards \u2014 Reentrancy Defense Sequence",
+        "actors": [
+          "Attacker Contract",
+          "Vulnerable Protocol",
+          "EVM State Controller",
+          "Security Audit Engine"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Attacker triggers interaction for Cross-Function Reentrancy: Auxil",
+            "activeActor": "Attacker Contract",
+            "messages": [
+              {
+                "from": "Attacker Contract",
+                "to": "Vulnerable Protocol",
+                "label": "initiateWithdrawal(amount)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Protocol checks balance and initiates external callback",
+            "activeActor": "Vulnerable Protocol",
+            "messages": [
+              {
+                "from": "Vulnerable Protocol",
+                "to": "Attacker Contract",
+                "label": "executeExternalCall(call{value})",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Attacker attempts recursive reentrancy before state effect",
+            "activeActor": "EVM State Controller",
+            "messages": [
+              {
+                "from": "Attacker Contract",
+                "to": "Vulnerable Protocol",
+                "label": "reenterWithdrawal() [CEI Check]",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Security Audit Engine validates CEI and confirms protocol immunity",
+            "activeActor": "Security Audit Engine",
+            "messages": [
+              {
+                "from": "Attacker Contract",
+                "to": "Vulnerable Protocol",
+                "label": "initiateWithdrawal(amount)",
+                "tone": "ok"
+              },
+              {
+                "from": "Vulnerable Protocol",
+                "to": "EVM State Controller",
+                "label": "applyEffectsFirst(balance = 0)",
+                "tone": "ok"
+              },
+              {
+                "from": "EVM State Controller",
+                "to": "Security Audit Engine",
+                "label": "verifyReentrancyImmunity(CEI \u2713)",
+                "tone": "ok"
+              },
+              {
+                "from": "Security Audit Engine",
+                "to": "Vulnerable Protocol",
+                "label": "ReentrancyDefenseCertified(Optimal \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Read-Only Reentrancy: Oracles, AMM Reserves & Cross-Contract State Hazards",
+      "codeHash": "175ffd68ebb889637e2abef481d85928df0458807b9648bf6ee762be71f2899e",
+      "spec": {
+        "template": "sequence",
+        "title": "Read-Only Reentrancy: Oracles, AMM Reserves & Cross-Contract State Hazards \u2014 Reentrancy Defense Sequence",
+        "actors": [
+          "Attacker Contract",
+          "Vulnerable Protocol",
+          "EVM State Controller",
+          "Security Audit Engine"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Attacker triggers interaction for Read-Only Reentrancy: Oracles, A",
+            "activeActor": "Attacker Contract",
+            "messages": [
+              {
+                "from": "Attacker Contract",
+                "to": "Vulnerable Protocol",
+                "label": "initiateWithdrawal(amount)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Protocol checks balance and initiates external callback",
+            "activeActor": "Vulnerable Protocol",
+            "messages": [
+              {
+                "from": "Vulnerable Protocol",
+                "to": "Attacker Contract",
+                "label": "executeExternalCall(call{value})",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Attacker attempts recursive reentrancy before state effect",
+            "activeActor": "EVM State Controller",
+            "messages": [
+              {
+                "from": "Attacker Contract",
+                "to": "Vulnerable Protocol",
+                "label": "reenterWithdrawal() [CEI Check]",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Security Audit Engine validates CEI and confirms protocol immunity",
+            "activeActor": "Security Audit Engine",
+            "messages": [
+              {
+                "from": "Attacker Contract",
+                "to": "Vulnerable Protocol",
+                "label": "initiateWithdrawal(amount)",
+                "tone": "ok"
+              },
+              {
+                "from": "Vulnerable Protocol",
+                "to": "EVM State Controller",
+                "label": "applyEffectsFirst(balance = 0)",
+                "tone": "ok"
+              },
+              {
+                "from": "EVM State Controller",
+                "to": "Security Audit Engine",
+                "label": "verifyReentrancyImmunity(CEI \u2713)",
+                "tone": "ok"
+              },
+              {
+                "from": "Security Audit Engine",
+                "to": "Vulnerable Protocol",
+                "label": "ReentrancyDefenseCertified(Optimal \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Read-Only Reentrancy: Oracles, AMM Reserves & Cross-Contract State Hazards \u2014 Reentrancy Defense Sequence",
+        "actors": [
+          "Attacker Contract",
+          "Vulnerable Protocol",
+          "EVM State Controller",
+          "Security Audit Engine"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Attacker triggers interaction for Read-Only Reentrancy: Oracles, A",
+            "activeActor": "Attacker Contract",
+            "messages": [
+              {
+                "from": "Attacker Contract",
+                "to": "Vulnerable Protocol",
+                "label": "initiateWithdrawal(amount)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Protocol checks balance and initiates external callback",
+            "activeActor": "Vulnerable Protocol",
+            "messages": [
+              {
+                "from": "Vulnerable Protocol",
+                "to": "Attacker Contract",
+                "label": "executeExternalCall(call{value})",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Attacker attempts recursive reentrancy before state effect",
+            "activeActor": "EVM State Controller",
+            "messages": [
+              {
+                "from": "Attacker Contract",
+                "to": "Vulnerable Protocol",
+                "label": "reenterWithdrawal() [CEI Check]",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Security Audit Engine validates CEI and confirms protocol immunity",
+            "activeActor": "Security Audit Engine",
+            "messages": [
+              {
+                "from": "Attacker Contract",
+                "to": "Vulnerable Protocol",
+                "label": "initiateWithdrawal(amount)",
+                "tone": "ok"
+              },
+              {
+                "from": "Vulnerable Protocol",
+                "to": "EVM State Controller",
+                "label": "applyEffectsFirst(balance = 0)",
+                "tone": "ok"
+              },
+              {
+                "from": "EVM State Controller",
+                "to": "Security Audit Engine",
+                "label": "verifyReentrancyImmunity(CEI \u2713)",
+                "tone": "ok"
+              },
+              {
+                "from": "Security Audit Engine",
+                "to": "Vulnerable Protocol",
+                "label": "ReentrancyDefenseCertified(Optimal \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Master Reentrancy Defense & Secure Protocol Engine Architecture",
+      "codeHash": "5df58959fbc64e18669d6a6ed8c783c39b815e9d705625f62598acea12433d9d",
+      "spec": {
+        "template": "sequence",
+        "title": "Master Reentrancy Defense & Secure Protocol Engine Architecture \u2014 Reentrancy Defense Sequence",
+        "actors": [
+          "Attacker Contract",
+          "Vulnerable Protocol",
+          "EVM State Controller",
+          "Security Audit Engine"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Attacker triggers interaction for Master Reentrancy Defense & Secu",
+            "activeActor": "Attacker Contract",
+            "messages": [
+              {
+                "from": "Attacker Contract",
+                "to": "Vulnerable Protocol",
+                "label": "initiateWithdrawal(amount)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Protocol checks balance and initiates external callback",
+            "activeActor": "Vulnerable Protocol",
+            "messages": [
+              {
+                "from": "Vulnerable Protocol",
+                "to": "Attacker Contract",
+                "label": "executeExternalCall(call{value})",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Attacker attempts recursive reentrancy before state effect",
+            "activeActor": "EVM State Controller",
+            "messages": [
+              {
+                "from": "Attacker Contract",
+                "to": "Vulnerable Protocol",
+                "label": "reenterWithdrawal() [CEI Check]",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Security Audit Engine validates CEI and confirms protocol immunity",
+            "activeActor": "Security Audit Engine",
+            "messages": [
+              {
+                "from": "Attacker Contract",
+                "to": "Vulnerable Protocol",
+                "label": "initiateWithdrawal(amount)",
+                "tone": "ok"
+              },
+              {
+                "from": "Vulnerable Protocol",
+                "to": "EVM State Controller",
+                "label": "applyEffectsFirst(balance = 0)",
+                "tone": "ok"
+              },
+              {
+                "from": "EVM State Controller",
+                "to": "Security Audit Engine",
+                "label": "verifyReentrancyImmunity(CEI \u2713)",
+                "tone": "ok"
+              },
+              {
+                "from": "Security Audit Engine",
+                "to": "Vulnerable Protocol",
+                "label": "ReentrancyDefenseCertified(Optimal \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Master Reentrancy Defense & Secure Protocol Engine Architecture \u2014 Reentrancy Defense Sequence",
+        "actors": [
+          "Attacker Contract",
+          "Vulnerable Protocol",
+          "EVM State Controller",
+          "Security Audit Engine"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Attacker triggers interaction for Master Reentrancy Defense & Secu",
+            "activeActor": "Attacker Contract",
+            "messages": [
+              {
+                "from": "Attacker Contract",
+                "to": "Vulnerable Protocol",
+                "label": "initiateWithdrawal(amount)",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Protocol checks balance and initiates external callback",
+            "activeActor": "Vulnerable Protocol",
+            "messages": [
+              {
+                "from": "Vulnerable Protocol",
+                "to": "Attacker Contract",
+                "label": "executeExternalCall(call{value})",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Attacker attempts recursive reentrancy before state effect",
+            "activeActor": "EVM State Controller",
+            "messages": [
+              {
+                "from": "Attacker Contract",
+                "to": "Vulnerable Protocol",
+                "label": "reenterWithdrawal() [CEI Check]",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Security Audit Engine validates CEI and confirms protocol immunity",
+            "activeActor": "Security Audit Engine",
+            "messages": [
+              {
+                "from": "Attacker Contract",
+                "to": "Vulnerable Protocol",
+                "label": "initiateWithdrawal(amount)",
+                "tone": "ok"
+              },
+              {
+                "from": "Vulnerable Protocol",
+                "to": "EVM State Controller",
+                "label": "applyEffectsFirst(balance = 0)",
+                "tone": "ok"
+              },
+              {
+                "from": "EVM State Controller",
+                "to": "Security Audit Engine",
+                "label": "verifyReentrancyImmunity(CEI \u2713)",
+                "tone": "ok"
+              },
+              {
+                "from": "Security Audit Engine",
+                "to": "Vulnerable Protocol",
+                "label": "ReentrancyDefenseCertified(Optimal \u2713)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
