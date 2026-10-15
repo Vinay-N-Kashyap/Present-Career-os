@@ -1,0 +1,1069 @@
+{
+  "schemaVersion": 1,
+  "prefix": "mobile",
+  "day": 26,
+  "promptSha": "56bdd442e46644664b12184e31ccd37e649f0617c5852dd2b5d197ab24ff8519",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Accessibility Tree Architecture: Semantic Elements, accessible={true}, Labels & Hints",
+      "codeHash": "3af36a46955b5938d8a1afbd1576586a4ba6bda0128c0ec48d470d14daa4553f",
+      "spec": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<MobileAccessibilityRoot />",
+            "props": {
+              "wcagTier": "WCAG_AA_COMPLIANT"
+            },
+            "children": [
+              {
+                "id": "A11yTreeBuilder",
+                "name": "<AccessibilityTreeBuilder />",
+                "props": {
+                  "accessible": "true",
+                  "screenReader": "VOICEOVER_TALKBACK"
+                }
+              },
+              {
+                "id": "StateEngine",
+                "name": "<ControlStateEngine />",
+                "props": {
+                  "roles": "ADJUSTABLE_EXPANDED_TAB"
+                }
+              },
+              {
+                "id": "FocusCoordinator",
+                "name": "<LiveAnnouncementCoordinator />",
+                "props": {
+                  "modalTrap": "ACTIVE",
+                  "liveRegion": "POLITE_URGENT"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Construct accessible semantic nodes and strip redundant role labels via <AccessibilityTreeBuilder />",
+            "activeId": "A11yTreeBuilder",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "A11yTreeBuilder",
+                "name": "<AccessibilityTreeBuilder />",
+                "props": {
+                  "labelStatus": "REDUNDANT_ROLE_STRIPPED"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Declare dynamic control roles, expanded/selected states & adjustable gestures via <ControlStateEngine />",
+            "activeId": "StateEngine",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "StateEngine",
+                "name": "<ControlStateEngine />",
+                "props": {
+                  "stateStatus": "TRAITS_EXPOSED_OK"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Dispatch live speech announcements and trap modal dialog focus via <LiveAnnouncementCoordinator />",
+            "activeId": "FocusCoordinator",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "FocusCoordinator",
+                "name": "<LiveAnnouncementCoordinator />",
+                "props": {
+                  "announcementStatus": "INTERRUPT_AND_POLITE_READY"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute comprehensive Tier-1 Mobile Accessibility Master Certification audit",
+            "activeId": "root",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<MobileAccessibilityRoot />",
+                "props": {
+                  "compliance": "TIER_1_CERTIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<MobileAccessibilityRoot />",
+            "props": {
+              "wcagTier": "WCAG_AA_COMPLIANT"
+            },
+            "children": [
+              {
+                "id": "A11yTreeBuilder",
+                "name": "<AccessibilityTreeBuilder />",
+                "props": {
+                  "accessible": "true",
+                  "screenReader": "VOICEOVER_TALKBACK"
+                }
+              },
+              {
+                "id": "StateEngine",
+                "name": "<ControlStateEngine />",
+                "props": {
+                  "roles": "ADJUSTABLE_EXPANDED_TAB"
+                }
+              },
+              {
+                "id": "FocusCoordinator",
+                "name": "<LiveAnnouncementCoordinator />",
+                "props": {
+                  "modalTrap": "ACTIVE",
+                  "liveRegion": "POLITE_URGENT"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Construct accessible semantic nodes and strip redundant role labels via <AccessibilityTreeBuilder />",
+            "activeId": "A11yTreeBuilder",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "A11yTreeBuilder",
+                "name": "<AccessibilityTreeBuilder />",
+                "props": {
+                  "labelStatus": "REDUNDANT_ROLE_STRIPPED"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Declare dynamic control roles, expanded/selected states & adjustable gestures via <ControlStateEngine />",
+            "activeId": "StateEngine",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "StateEngine",
+                "name": "<ControlStateEngine />",
+                "props": {
+                  "stateStatus": "TRAITS_EXPOSED_OK"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Dispatch live speech announcements and trap modal dialog focus via <LiveAnnouncementCoordinator />",
+            "activeId": "FocusCoordinator",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "FocusCoordinator",
+                "name": "<LiveAnnouncementCoordinator />",
+                "props": {
+                  "announcementStatus": "INTERRUPT_AND_POLITE_READY"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute comprehensive Tier-1 Mobile Accessibility Master Certification audit",
+            "activeId": "root",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<MobileAccessibilityRoot />",
+                "props": {
+                  "compliance": "TIER_1_CERTIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Custom Roles, Accessibility Traits & Dynamic State Representation",
+      "codeHash": "8b113826da0ee1a15fef39cdb64c2e280deffc5978867316c596b842825f8642",
+      "spec": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<MobileAccessibilityRoot />",
+            "props": {
+              "wcagTier": "WCAG_AA_COMPLIANT"
+            },
+            "children": [
+              {
+                "id": "A11yTreeBuilder",
+                "name": "<AccessibilityTreeBuilder />",
+                "props": {
+                  "accessible": "true",
+                  "screenReader": "VOICEOVER_TALKBACK"
+                }
+              },
+              {
+                "id": "StateEngine",
+                "name": "<ControlStateEngine />",
+                "props": {
+                  "roles": "ADJUSTABLE_EXPANDED_TAB"
+                }
+              },
+              {
+                "id": "FocusCoordinator",
+                "name": "<LiveAnnouncementCoordinator />",
+                "props": {
+                  "modalTrap": "ACTIVE",
+                  "liveRegion": "POLITE_URGENT"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Construct accessible semantic nodes and strip redundant role labels via <AccessibilityTreeBuilder />",
+            "activeId": "A11yTreeBuilder",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "A11yTreeBuilder",
+                "name": "<AccessibilityTreeBuilder />",
+                "props": {
+                  "labelStatus": "REDUNDANT_ROLE_STRIPPED"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Declare dynamic control roles, expanded/selected states & adjustable gestures via <ControlStateEngine />",
+            "activeId": "StateEngine",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "StateEngine",
+                "name": "<ControlStateEngine />",
+                "props": {
+                  "stateStatus": "TRAITS_EXPOSED_OK"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Dispatch live speech announcements and trap modal dialog focus via <LiveAnnouncementCoordinator />",
+            "activeId": "FocusCoordinator",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "FocusCoordinator",
+                "name": "<LiveAnnouncementCoordinator />",
+                "props": {
+                  "announcementStatus": "INTERRUPT_AND_POLITE_READY"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute comprehensive Tier-1 Mobile Accessibility Master Certification audit",
+            "activeId": "root",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<MobileAccessibilityRoot />",
+                "props": {
+                  "compliance": "TIER_1_CERTIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<MobileAccessibilityRoot />",
+            "props": {
+              "wcagTier": "WCAG_AA_COMPLIANT"
+            },
+            "children": [
+              {
+                "id": "A11yTreeBuilder",
+                "name": "<AccessibilityTreeBuilder />",
+                "props": {
+                  "accessible": "true",
+                  "screenReader": "VOICEOVER_TALKBACK"
+                }
+              },
+              {
+                "id": "StateEngine",
+                "name": "<ControlStateEngine />",
+                "props": {
+                  "roles": "ADJUSTABLE_EXPANDED_TAB"
+                }
+              },
+              {
+                "id": "FocusCoordinator",
+                "name": "<LiveAnnouncementCoordinator />",
+                "props": {
+                  "modalTrap": "ACTIVE",
+                  "liveRegion": "POLITE_URGENT"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Construct accessible semantic nodes and strip redundant role labels via <AccessibilityTreeBuilder />",
+            "activeId": "A11yTreeBuilder",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "A11yTreeBuilder",
+                "name": "<AccessibilityTreeBuilder />",
+                "props": {
+                  "labelStatus": "REDUNDANT_ROLE_STRIPPED"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Declare dynamic control roles, expanded/selected states & adjustable gestures via <ControlStateEngine />",
+            "activeId": "StateEngine",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "StateEngine",
+                "name": "<ControlStateEngine />",
+                "props": {
+                  "stateStatus": "TRAITS_EXPOSED_OK"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Dispatch live speech announcements and trap modal dialog focus via <LiveAnnouncementCoordinator />",
+            "activeId": "FocusCoordinator",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "FocusCoordinator",
+                "name": "<LiveAnnouncementCoordinator />",
+                "props": {
+                  "announcementStatus": "INTERRUPT_AND_POLITE_READY"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute comprehensive Tier-1 Mobile Accessibility Master Certification audit",
+            "activeId": "root",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<MobileAccessibilityRoot />",
+                "props": {
+                  "compliance": "TIER_1_CERTIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Live Screen Reader Announcements: AccessibilityInfo & Focus Management",
+      "codeHash": "390a933bb4092850f18ef31f3b56830f98d09ee2fe3ddfd0b8b74899fea223c8",
+      "spec": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<MobileAccessibilityRoot />",
+            "props": {
+              "wcagTier": "WCAG_AA_COMPLIANT"
+            },
+            "children": [
+              {
+                "id": "A11yTreeBuilder",
+                "name": "<AccessibilityTreeBuilder />",
+                "props": {
+                  "accessible": "true",
+                  "screenReader": "VOICEOVER_TALKBACK"
+                }
+              },
+              {
+                "id": "StateEngine",
+                "name": "<ControlStateEngine />",
+                "props": {
+                  "roles": "ADJUSTABLE_EXPANDED_TAB"
+                }
+              },
+              {
+                "id": "FocusCoordinator",
+                "name": "<LiveAnnouncementCoordinator />",
+                "props": {
+                  "modalTrap": "ACTIVE",
+                  "liveRegion": "POLITE_URGENT"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Construct accessible semantic nodes and strip redundant role labels via <AccessibilityTreeBuilder />",
+            "activeId": "A11yTreeBuilder",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "A11yTreeBuilder",
+                "name": "<AccessibilityTreeBuilder />",
+                "props": {
+                  "labelStatus": "REDUNDANT_ROLE_STRIPPED"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Declare dynamic control roles, expanded/selected states & adjustable gestures via <ControlStateEngine />",
+            "activeId": "StateEngine",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "StateEngine",
+                "name": "<ControlStateEngine />",
+                "props": {
+                  "stateStatus": "TRAITS_EXPOSED_OK"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Dispatch live speech announcements and trap modal dialog focus via <LiveAnnouncementCoordinator />",
+            "activeId": "FocusCoordinator",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "FocusCoordinator",
+                "name": "<LiveAnnouncementCoordinator />",
+                "props": {
+                  "announcementStatus": "INTERRUPT_AND_POLITE_READY"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute comprehensive Tier-1 Mobile Accessibility Master Certification audit",
+            "activeId": "root",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<MobileAccessibilityRoot />",
+                "props": {
+                  "compliance": "TIER_1_CERTIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<MobileAccessibilityRoot />",
+            "props": {
+              "wcagTier": "WCAG_AA_COMPLIANT"
+            },
+            "children": [
+              {
+                "id": "A11yTreeBuilder",
+                "name": "<AccessibilityTreeBuilder />",
+                "props": {
+                  "accessible": "true",
+                  "screenReader": "VOICEOVER_TALKBACK"
+                }
+              },
+              {
+                "id": "StateEngine",
+                "name": "<ControlStateEngine />",
+                "props": {
+                  "roles": "ADJUSTABLE_EXPANDED_TAB"
+                }
+              },
+              {
+                "id": "FocusCoordinator",
+                "name": "<LiveAnnouncementCoordinator />",
+                "props": {
+                  "modalTrap": "ACTIVE",
+                  "liveRegion": "POLITE_URGENT"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Construct accessible semantic nodes and strip redundant role labels via <AccessibilityTreeBuilder />",
+            "activeId": "A11yTreeBuilder",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "A11yTreeBuilder",
+                "name": "<AccessibilityTreeBuilder />",
+                "props": {
+                  "labelStatus": "REDUNDANT_ROLE_STRIPPED"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Declare dynamic control roles, expanded/selected states & adjustable gestures via <ControlStateEngine />",
+            "activeId": "StateEngine",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "StateEngine",
+                "name": "<ControlStateEngine />",
+                "props": {
+                  "stateStatus": "TRAITS_EXPOSED_OK"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Dispatch live speech announcements and trap modal dialog focus via <LiveAnnouncementCoordinator />",
+            "activeId": "FocusCoordinator",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "FocusCoordinator",
+                "name": "<LiveAnnouncementCoordinator />",
+                "props": {
+                  "announcementStatus": "INTERRUPT_AND_POLITE_READY"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute comprehensive Tier-1 Mobile Accessibility Master Certification audit",
+            "activeId": "root",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<MobileAccessibilityRoot />",
+                "props": {
+                  "compliance": "TIER_1_CERTIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Dynamic Type & Visual Accessibility: Font Scaling, Contrast & 48dp Targets",
+      "codeHash": "e79251e4c6ef03099217c65b2d6584c28c5b8b402887493cb00e4f144cfc6933",
+      "spec": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<MobileAccessibilityRoot />",
+            "props": {
+              "wcagTier": "WCAG_AA_COMPLIANT"
+            },
+            "children": [
+              {
+                "id": "A11yTreeBuilder",
+                "name": "<AccessibilityTreeBuilder />",
+                "props": {
+                  "accessible": "true",
+                  "screenReader": "VOICEOVER_TALKBACK"
+                }
+              },
+              {
+                "id": "StateEngine",
+                "name": "<ControlStateEngine />",
+                "props": {
+                  "roles": "ADJUSTABLE_EXPANDED_TAB"
+                }
+              },
+              {
+                "id": "FocusCoordinator",
+                "name": "<LiveAnnouncementCoordinator />",
+                "props": {
+                  "modalTrap": "ACTIVE",
+                  "liveRegion": "POLITE_URGENT"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Construct accessible semantic nodes and strip redundant role labels via <AccessibilityTreeBuilder />",
+            "activeId": "A11yTreeBuilder",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "A11yTreeBuilder",
+                "name": "<AccessibilityTreeBuilder />",
+                "props": {
+                  "labelStatus": "REDUNDANT_ROLE_STRIPPED"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Declare dynamic control roles, expanded/selected states & adjustable gestures via <ControlStateEngine />",
+            "activeId": "StateEngine",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "StateEngine",
+                "name": "<ControlStateEngine />",
+                "props": {
+                  "stateStatus": "TRAITS_EXPOSED_OK"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Dispatch live speech announcements and trap modal dialog focus via <LiveAnnouncementCoordinator />",
+            "activeId": "FocusCoordinator",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "FocusCoordinator",
+                "name": "<LiveAnnouncementCoordinator />",
+                "props": {
+                  "announcementStatus": "INTERRUPT_AND_POLITE_READY"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute comprehensive Tier-1 Mobile Accessibility Master Certification audit",
+            "activeId": "root",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<MobileAccessibilityRoot />",
+                "props": {
+                  "compliance": "TIER_1_CERTIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<MobileAccessibilityRoot />",
+            "props": {
+              "wcagTier": "WCAG_AA_COMPLIANT"
+            },
+            "children": [
+              {
+                "id": "A11yTreeBuilder",
+                "name": "<AccessibilityTreeBuilder />",
+                "props": {
+                  "accessible": "true",
+                  "screenReader": "VOICEOVER_TALKBACK"
+                }
+              },
+              {
+                "id": "StateEngine",
+                "name": "<ControlStateEngine />",
+                "props": {
+                  "roles": "ADJUSTABLE_EXPANDED_TAB"
+                }
+              },
+              {
+                "id": "FocusCoordinator",
+                "name": "<LiveAnnouncementCoordinator />",
+                "props": {
+                  "modalTrap": "ACTIVE",
+                  "liveRegion": "POLITE_URGENT"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Construct accessible semantic nodes and strip redundant role labels via <AccessibilityTreeBuilder />",
+            "activeId": "A11yTreeBuilder",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "A11yTreeBuilder",
+                "name": "<AccessibilityTreeBuilder />",
+                "props": {
+                  "labelStatus": "REDUNDANT_ROLE_STRIPPED"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Declare dynamic control roles, expanded/selected states & adjustable gestures via <ControlStateEngine />",
+            "activeId": "StateEngine",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "StateEngine",
+                "name": "<ControlStateEngine />",
+                "props": {
+                  "stateStatus": "TRAITS_EXPOSED_OK"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Dispatch live speech announcements and trap modal dialog focus via <LiveAnnouncementCoordinator />",
+            "activeId": "FocusCoordinator",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "FocusCoordinator",
+                "name": "<LiveAnnouncementCoordinator />",
+                "props": {
+                  "announcementStatus": "INTERRUPT_AND_POLITE_READY"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute comprehensive Tier-1 Mobile Accessibility Master Certification audit",
+            "activeId": "root",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<MobileAccessibilityRoot />",
+                "props": {
+                  "compliance": "TIER_1_CERTIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Automated Accessibility Auditing & Master Mobile a11y Certification",
+      "codeHash": "0c742a097300fa23984fe73dce317e7701e6ac5d3795ed6b67597e9b75b393be",
+      "spec": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<MobileAccessibilityRoot />",
+            "props": {
+              "wcagTier": "WCAG_AA_COMPLIANT"
+            },
+            "children": [
+              {
+                "id": "A11yTreeBuilder",
+                "name": "<AccessibilityTreeBuilder />",
+                "props": {
+                  "accessible": "true",
+                  "screenReader": "VOICEOVER_TALKBACK"
+                }
+              },
+              {
+                "id": "StateEngine",
+                "name": "<ControlStateEngine />",
+                "props": {
+                  "roles": "ADJUSTABLE_EXPANDED_TAB"
+                }
+              },
+              {
+                "id": "FocusCoordinator",
+                "name": "<LiveAnnouncementCoordinator />",
+                "props": {
+                  "modalTrap": "ACTIVE",
+                  "liveRegion": "POLITE_URGENT"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Construct accessible semantic nodes and strip redundant role labels via <AccessibilityTreeBuilder />",
+            "activeId": "A11yTreeBuilder",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "A11yTreeBuilder",
+                "name": "<AccessibilityTreeBuilder />",
+                "props": {
+                  "labelStatus": "REDUNDANT_ROLE_STRIPPED"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Declare dynamic control roles, expanded/selected states & adjustable gestures via <ControlStateEngine />",
+            "activeId": "StateEngine",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "StateEngine",
+                "name": "<ControlStateEngine />",
+                "props": {
+                  "stateStatus": "TRAITS_EXPOSED_OK"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Dispatch live speech announcements and trap modal dialog focus via <LiveAnnouncementCoordinator />",
+            "activeId": "FocusCoordinator",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "FocusCoordinator",
+                "name": "<LiveAnnouncementCoordinator />",
+                "props": {
+                  "announcementStatus": "INTERRUPT_AND_POLITE_READY"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute comprehensive Tier-1 Mobile Accessibility Master Certification audit",
+            "activeId": "root",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<MobileAccessibilityRoot />",
+                "props": {
+                  "compliance": "TIER_1_CERTIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<MobileAccessibilityRoot />",
+            "props": {
+              "wcagTier": "WCAG_AA_COMPLIANT"
+            },
+            "children": [
+              {
+                "id": "A11yTreeBuilder",
+                "name": "<AccessibilityTreeBuilder />",
+                "props": {
+                  "accessible": "true",
+                  "screenReader": "VOICEOVER_TALKBACK"
+                }
+              },
+              {
+                "id": "StateEngine",
+                "name": "<ControlStateEngine />",
+                "props": {
+                  "roles": "ADJUSTABLE_EXPANDED_TAB"
+                }
+              },
+              {
+                "id": "FocusCoordinator",
+                "name": "<LiveAnnouncementCoordinator />",
+                "props": {
+                  "modalTrap": "ACTIVE",
+                  "liveRegion": "POLITE_URGENT"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Construct accessible semantic nodes and strip redundant role labels via <AccessibilityTreeBuilder />",
+            "activeId": "A11yTreeBuilder",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "A11yTreeBuilder",
+                "name": "<AccessibilityTreeBuilder />",
+                "props": {
+                  "labelStatus": "REDUNDANT_ROLE_STRIPPED"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Declare dynamic control roles, expanded/selected states & adjustable gestures via <ControlStateEngine />",
+            "activeId": "StateEngine",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "StateEngine",
+                "name": "<ControlStateEngine />",
+                "props": {
+                  "stateStatus": "TRAITS_EXPOSED_OK"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Dispatch live speech announcements and trap modal dialog focus via <LiveAnnouncementCoordinator />",
+            "activeId": "FocusCoordinator",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "FocusCoordinator",
+                "name": "<LiveAnnouncementCoordinator />",
+                "props": {
+                  "announcementStatus": "INTERRUPT_AND_POLITE_READY"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute comprehensive Tier-1 Mobile Accessibility Master Certification audit",
+            "activeId": "root",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<MobileAccessibilityRoot />",
+                "props": {
+                  "compliance": "TIER_1_CERTIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

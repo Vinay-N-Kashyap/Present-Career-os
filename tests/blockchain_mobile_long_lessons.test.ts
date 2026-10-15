@@ -1207,5 +1207,44 @@ test('Mobile Day 25: Secure Medical Device Telemetry & Real-Time BLE IoT Gateway
   assert.ok(mobileLesson25.parts[4].code?.includes('MobileMilestone5CapstoneMasterEngine'));
 });
 
+test('Mobile Day 26: Mobile Accessibility: Screen Readers VoiceOver & TalkBack Optimization', () => {
+  const mobileLesson26 = getLongLesson('mobile', 26);
+  assert.ok(mobileLesson26, 'Mobile Day 26 long lesson must resolve');
+  assert.equal(mobileLesson26.day, 26);
+  assert.equal(mobileLesson26.parts.length, 5, 'Mobile Day 26 must contain exactly 5 parts');
+  assert.ok(mobileLesson26.summary.length >= 4, 'Mobile Day 26 must contain summary points');
+  assert.ok(mobileLesson26.projectStep, 'Mobile Day 26 must have projectStep');
+
+  const spokenMin = estimateSpokenMinutes(mobileLesson26);
+  const totalMin = estimateLessonMinutes(mobileLesson26);
+  assert.ok(spokenMin >= 20, 'Spoken minutes should be >= 20 (got ' + spokenMin + ')');
+  assert.ok(totalMin >= 35 && totalMin <= 40, 'Total minutes should be between 35 and 40 (got ' + totalMin + ')');
+
+  for (let i = 0; i < mobileLesson26.parts.length; i++) {
+    const part = mobileLesson26.parts[i];
+    assert.ok(part.title.length > 0, 'Part ' + (i + 1) + ' must have a non-empty title');
+    assert.ok(part.say.length >= 5, 'Part ' + (i + 1) + ' must have at least 5 explanation paragraphs');
+    assert.ok(part.example && part.example.length > 0, 'Part ' + (i + 1) + ' must have a real-world example');
+    assert.ok(part.code && part.code.includes('console.log('), 'Part ' + (i + 1) + ' code must print results');
+    assert.ok(part.output && part.output.length > 0, 'Part ' + (i + 1) + ' must have deterministic expected output');
+    assert.ok(part.tryIt && part.tryIt.length > 0, 'Part ' + (i + 1) + ' must have a tryIt experiment');
+
+    // Socratic Check validation
+    const check = part.check as any;
+    assert.ok(check.question.length > 10, 'Part ' + (i + 1) + ' check question must be descriptive');
+    assert.ok(check.options.length >= 4, 'Part ' + (i + 1) + ' check must have >= 4 options');
+    assert.ok(check.answer >= 0 && check.answer < check.options.length, 'Part ' + (i + 1) + ' answer must be valid');
+    assert.ok(check.why.length > 15, 'Part ' + (i + 1) + ' check explanation must be rigorous');
+  }
+
+  // Domain specifics
+  assert.ok(mobileLesson26.parts[0].code?.includes('MobileAccessibilityNodeBuilder'));
+  assert.ok(mobileLesson26.parts[1].code?.includes('AccessibleControlStateEngine'));
+  assert.ok(mobileLesson26.parts[2].code?.includes('AccessibilityAnnouncementCoordinator'));
+  assert.ok(mobileLesson26.parts[3].code?.includes('VisualAccessibilityAuditor'));
+  assert.ok(mobileLesson26.parts[4].code?.includes('MobileAccessibilityMasterEngine'));
+});
+
+
 
 
