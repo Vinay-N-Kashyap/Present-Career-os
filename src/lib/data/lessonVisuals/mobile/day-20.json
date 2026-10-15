@@ -1,0 +1,1049 @@
+{
+  "schemaVersion": 1,
+  "prefix": "mobile",
+  "day": 20,
+  "promptSha": "5ca981190820c97bd584f69418ada3b8eac75fd8aac4aa196f420868046ea0f5",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "APNs & FCM Architecture: Device Token Lifecycle & Authentication Handshake",
+      "codeHash": "bf6b1818d132e2b4dc35b49b06bb9f06ea0f820bb43e44f8b18d0b83f1531f64",
+      "spec": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<Milestone4CapstoneRootScreen />",
+            "props": {
+              "status": "TIER_1_CERTIFIED"
+            },
+            "children": [
+              {
+                "id": "TokenRegistrar",
+                "name": "<PushTokenRegistrar />",
+                "props": {
+                  "gateway": "APNS_FCM_GATEWAY"
+                }
+              },
+              {
+                "id": "ServiceExtension",
+                "name": "<NotificationServiceExtension />",
+                "props": {
+                  "decryption": "E2E_CIPHER_SOLVED"
+                }
+              },
+              {
+                "id": "DynamicIsland",
+                "name": "<ActivityKitDynamicIsland />",
+                "props": {
+                  "presentation": "EXPANDED_COMPACT_MINIMAL"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Register cryptographic device token via <PushTokenRegistrar />",
+            "activeId": "root",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<Milestone4CapstoneRootScreen />",
+                "props": {
+                  "token": "REGISTERED"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Decrypt encrypted payload and attach media via <NotificationServiceExtension />",
+            "activeId": "ServiceExtension",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "ServiceExtension",
+                "name": "<NotificationServiceExtension />",
+                "props": {
+                  "status": "DECRYPTED_ATTACHED"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Render real-time glanceable updates via <ActivityKitDynamicIsland />",
+            "activeId": "DynamicIsland",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "DynamicIsland",
+                "name": "<ActivityKitDynamicIsland />",
+                "props": {
+                  "layout": "EXPANDED_CENTER_ACTIVE"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute comprehensive Milestone 4 benchmark certification",
+            "activeId": "root",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<Milestone4CapstoneRootScreen />",
+                "props": {
+                  "grade": "TIER_1_CERTIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<Milestone4CapstoneRootScreen />",
+            "props": {
+              "status": "TIER_1_CERTIFIED"
+            },
+            "children": [
+              {
+                "id": "TokenRegistrar",
+                "name": "<PushTokenRegistrar />",
+                "props": {
+                  "gateway": "APNS_FCM_GATEWAY"
+                }
+              },
+              {
+                "id": "ServiceExtension",
+                "name": "<NotificationServiceExtension />",
+                "props": {
+                  "decryption": "E2E_CIPHER_SOLVED"
+                }
+              },
+              {
+                "id": "DynamicIsland",
+                "name": "<ActivityKitDynamicIsland />",
+                "props": {
+                  "presentation": "EXPANDED_COMPACT_MINIMAL"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Register cryptographic device token via <PushTokenRegistrar />",
+            "activeId": "root",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<Milestone4CapstoneRootScreen />",
+                "props": {
+                  "token": "REGISTERED"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Decrypt encrypted payload and attach media via <NotificationServiceExtension />",
+            "activeId": "ServiceExtension",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "ServiceExtension",
+                "name": "<NotificationServiceExtension />",
+                "props": {
+                  "status": "DECRYPTED_ATTACHED"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Render real-time glanceable updates via <ActivityKitDynamicIsland />",
+            "activeId": "DynamicIsland",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "DynamicIsland",
+                "name": "<ActivityKitDynamicIsland />",
+                "props": {
+                  "layout": "EXPANDED_CENTER_ACTIVE"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute comprehensive Milestone 4 benchmark certification",
+            "activeId": "root",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<Milestone4CapstoneRootScreen />",
+                "props": {
+                  "grade": "TIER_1_CERTIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Background Silent Payloads & iOS Notification Service Extensions",
+      "codeHash": "e1c4bc8e36496492f24e10b4735bda94eb85efe9db35708ff0edb7dbe7ff468e",
+      "spec": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<Milestone4CapstoneRootScreen />",
+            "props": {
+              "status": "TIER_1_CERTIFIED"
+            },
+            "children": [
+              {
+                "id": "TokenRegistrar",
+                "name": "<PushTokenRegistrar />",
+                "props": {
+                  "gateway": "APNS_FCM_GATEWAY"
+                }
+              },
+              {
+                "id": "ServiceExtension",
+                "name": "<NotificationServiceExtension />",
+                "props": {
+                  "decryption": "E2E_CIPHER_SOLVED"
+                }
+              },
+              {
+                "id": "DynamicIsland",
+                "name": "<ActivityKitDynamicIsland />",
+                "props": {
+                  "presentation": "EXPANDED_COMPACT_MINIMAL"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Register cryptographic device token via <PushTokenRegistrar />",
+            "activeId": "root",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<Milestone4CapstoneRootScreen />",
+                "props": {
+                  "token": "REGISTERED"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Decrypt encrypted payload and attach media via <NotificationServiceExtension />",
+            "activeId": "ServiceExtension",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "ServiceExtension",
+                "name": "<NotificationServiceExtension />",
+                "props": {
+                  "status": "DECRYPTED_ATTACHED"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Render real-time glanceable updates via <ActivityKitDynamicIsland />",
+            "activeId": "DynamicIsland",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "DynamicIsland",
+                "name": "<ActivityKitDynamicIsland />",
+                "props": {
+                  "layout": "EXPANDED_CENTER_ACTIVE"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute comprehensive Milestone 4 benchmark certification",
+            "activeId": "root",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<Milestone4CapstoneRootScreen />",
+                "props": {
+                  "grade": "TIER_1_CERTIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<Milestone4CapstoneRootScreen />",
+            "props": {
+              "status": "TIER_1_CERTIFIED"
+            },
+            "children": [
+              {
+                "id": "TokenRegistrar",
+                "name": "<PushTokenRegistrar />",
+                "props": {
+                  "gateway": "APNS_FCM_GATEWAY"
+                }
+              },
+              {
+                "id": "ServiceExtension",
+                "name": "<NotificationServiceExtension />",
+                "props": {
+                  "decryption": "E2E_CIPHER_SOLVED"
+                }
+              },
+              {
+                "id": "DynamicIsland",
+                "name": "<ActivityKitDynamicIsland />",
+                "props": {
+                  "presentation": "EXPANDED_COMPACT_MINIMAL"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Register cryptographic device token via <PushTokenRegistrar />",
+            "activeId": "root",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<Milestone4CapstoneRootScreen />",
+                "props": {
+                  "token": "REGISTERED"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Decrypt encrypted payload and attach media via <NotificationServiceExtension />",
+            "activeId": "ServiceExtension",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "ServiceExtension",
+                "name": "<NotificationServiceExtension />",
+                "props": {
+                  "status": "DECRYPTED_ATTACHED"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Render real-time glanceable updates via <ActivityKitDynamicIsland />",
+            "activeId": "DynamicIsland",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "DynamicIsland",
+                "name": "<ActivityKitDynamicIsland />",
+                "props": {
+                  "layout": "EXPANDED_CENTER_ACTIVE"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute comprehensive Milestone 4 benchmark certification",
+            "activeId": "root",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<Milestone4CapstoneRootScreen />",
+                "props": {
+                  "grade": "TIER_1_CERTIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Interactive Notifications, Action Categories & Inline Reply Handlers",
+      "codeHash": "e7813bcd8266b1e31bfb3308c8e58680f42eb333936c60cb0e383c370d3ec7de",
+      "spec": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<Milestone4CapstoneRootScreen />",
+            "props": {
+              "status": "TIER_1_CERTIFIED"
+            },
+            "children": [
+              {
+                "id": "TokenRegistrar",
+                "name": "<PushTokenRegistrar />",
+                "props": {
+                  "gateway": "APNS_FCM_GATEWAY"
+                }
+              },
+              {
+                "id": "ServiceExtension",
+                "name": "<NotificationServiceExtension />",
+                "props": {
+                  "decryption": "E2E_CIPHER_SOLVED"
+                }
+              },
+              {
+                "id": "DynamicIsland",
+                "name": "<ActivityKitDynamicIsland />",
+                "props": {
+                  "presentation": "EXPANDED_COMPACT_MINIMAL"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Register cryptographic device token via <PushTokenRegistrar />",
+            "activeId": "root",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<Milestone4CapstoneRootScreen />",
+                "props": {
+                  "token": "REGISTERED"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Decrypt encrypted payload and attach media via <NotificationServiceExtension />",
+            "activeId": "ServiceExtension",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "ServiceExtension",
+                "name": "<NotificationServiceExtension />",
+                "props": {
+                  "status": "DECRYPTED_ATTACHED"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Render real-time glanceable updates via <ActivityKitDynamicIsland />",
+            "activeId": "DynamicIsland",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "DynamicIsland",
+                "name": "<ActivityKitDynamicIsland />",
+                "props": {
+                  "layout": "EXPANDED_CENTER_ACTIVE"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute comprehensive Milestone 4 benchmark certification",
+            "activeId": "root",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<Milestone4CapstoneRootScreen />",
+                "props": {
+                  "grade": "TIER_1_CERTIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<Milestone4CapstoneRootScreen />",
+            "props": {
+              "status": "TIER_1_CERTIFIED"
+            },
+            "children": [
+              {
+                "id": "TokenRegistrar",
+                "name": "<PushTokenRegistrar />",
+                "props": {
+                  "gateway": "APNS_FCM_GATEWAY"
+                }
+              },
+              {
+                "id": "ServiceExtension",
+                "name": "<NotificationServiceExtension />",
+                "props": {
+                  "decryption": "E2E_CIPHER_SOLVED"
+                }
+              },
+              {
+                "id": "DynamicIsland",
+                "name": "<ActivityKitDynamicIsland />",
+                "props": {
+                  "presentation": "EXPANDED_COMPACT_MINIMAL"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Register cryptographic device token via <PushTokenRegistrar />",
+            "activeId": "root",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<Milestone4CapstoneRootScreen />",
+                "props": {
+                  "token": "REGISTERED"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Decrypt encrypted payload and attach media via <NotificationServiceExtension />",
+            "activeId": "ServiceExtension",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "ServiceExtension",
+                "name": "<NotificationServiceExtension />",
+                "props": {
+                  "status": "DECRYPTED_ATTACHED"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Render real-time glanceable updates via <ActivityKitDynamicIsland />",
+            "activeId": "DynamicIsland",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "DynamicIsland",
+                "name": "<ActivityKitDynamicIsland />",
+                "props": {
+                  "layout": "EXPANDED_CENTER_ACTIVE"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute comprehensive Milestone 4 benchmark certification",
+            "activeId": "root",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<Milestone4CapstoneRootScreen />",
+                "props": {
+                  "grade": "TIER_1_CERTIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "ActivityKit Live Activities & Dynamic Island Presentation Engineering",
+      "codeHash": "96533040368cadd69a9ea726952aaf641023d523527211cf0d381d212fa0adc5",
+      "spec": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<Milestone4CapstoneRootScreen />",
+            "props": {
+              "status": "TIER_1_CERTIFIED"
+            },
+            "children": [
+              {
+                "id": "TokenRegistrar",
+                "name": "<PushTokenRegistrar />",
+                "props": {
+                  "gateway": "APNS_FCM_GATEWAY"
+                }
+              },
+              {
+                "id": "ServiceExtension",
+                "name": "<NotificationServiceExtension />",
+                "props": {
+                  "decryption": "E2E_CIPHER_SOLVED"
+                }
+              },
+              {
+                "id": "DynamicIsland",
+                "name": "<ActivityKitDynamicIsland />",
+                "props": {
+                  "presentation": "EXPANDED_COMPACT_MINIMAL"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Register cryptographic device token via <PushTokenRegistrar />",
+            "activeId": "root",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<Milestone4CapstoneRootScreen />",
+                "props": {
+                  "token": "REGISTERED"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Decrypt encrypted payload and attach media via <NotificationServiceExtension />",
+            "activeId": "ServiceExtension",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "ServiceExtension",
+                "name": "<NotificationServiceExtension />",
+                "props": {
+                  "status": "DECRYPTED_ATTACHED"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Render real-time glanceable updates via <ActivityKitDynamicIsland />",
+            "activeId": "DynamicIsland",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "DynamicIsland",
+                "name": "<ActivityKitDynamicIsland />",
+                "props": {
+                  "layout": "EXPANDED_CENTER_ACTIVE"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute comprehensive Milestone 4 benchmark certification",
+            "activeId": "root",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<Milestone4CapstoneRootScreen />",
+                "props": {
+                  "grade": "TIER_1_CERTIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<Milestone4CapstoneRootScreen />",
+            "props": {
+              "status": "TIER_1_CERTIFIED"
+            },
+            "children": [
+              {
+                "id": "TokenRegistrar",
+                "name": "<PushTokenRegistrar />",
+                "props": {
+                  "gateway": "APNS_FCM_GATEWAY"
+                }
+              },
+              {
+                "id": "ServiceExtension",
+                "name": "<NotificationServiceExtension />",
+                "props": {
+                  "decryption": "E2E_CIPHER_SOLVED"
+                }
+              },
+              {
+                "id": "DynamicIsland",
+                "name": "<ActivityKitDynamicIsland />",
+                "props": {
+                  "presentation": "EXPANDED_COMPACT_MINIMAL"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Register cryptographic device token via <PushTokenRegistrar />",
+            "activeId": "root",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<Milestone4CapstoneRootScreen />",
+                "props": {
+                  "token": "REGISTERED"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Decrypt encrypted payload and attach media via <NotificationServiceExtension />",
+            "activeId": "ServiceExtension",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "ServiceExtension",
+                "name": "<NotificationServiceExtension />",
+                "props": {
+                  "status": "DECRYPTED_ATTACHED"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Render real-time glanceable updates via <ActivityKitDynamicIsland />",
+            "activeId": "DynamicIsland",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "DynamicIsland",
+                "name": "<ActivityKitDynamicIsland />",
+                "props": {
+                  "layout": "EXPANDED_CENTER_ACTIVE"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute comprehensive Milestone 4 benchmark certification",
+            "activeId": "root",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<Milestone4CapstoneRootScreen />",
+                "props": {
+                  "grade": "TIER_1_CERTIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Milestone 4 Capstone Systems Benchmark Audit & Tier-1 Certification",
+      "codeHash": "d3293c3e7000b122c677d0b2c12bcc8885aa98526b784fd5337b1ffa19c040d5",
+      "spec": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<Milestone4CapstoneRootScreen />",
+            "props": {
+              "status": "TIER_1_CERTIFIED"
+            },
+            "children": [
+              {
+                "id": "TokenRegistrar",
+                "name": "<PushTokenRegistrar />",
+                "props": {
+                  "gateway": "APNS_FCM_GATEWAY"
+                }
+              },
+              {
+                "id": "ServiceExtension",
+                "name": "<NotificationServiceExtension />",
+                "props": {
+                  "decryption": "E2E_CIPHER_SOLVED"
+                }
+              },
+              {
+                "id": "DynamicIsland",
+                "name": "<ActivityKitDynamicIsland />",
+                "props": {
+                  "presentation": "EXPANDED_COMPACT_MINIMAL"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Register cryptographic device token via <PushTokenRegistrar />",
+            "activeId": "root",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<Milestone4CapstoneRootScreen />",
+                "props": {
+                  "token": "REGISTERED"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Decrypt encrypted payload and attach media via <NotificationServiceExtension />",
+            "activeId": "ServiceExtension",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "ServiceExtension",
+                "name": "<NotificationServiceExtension />",
+                "props": {
+                  "status": "DECRYPTED_ATTACHED"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Render real-time glanceable updates via <ActivityKitDynamicIsland />",
+            "activeId": "DynamicIsland",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "DynamicIsland",
+                "name": "<ActivityKitDynamicIsland />",
+                "props": {
+                  "layout": "EXPANDED_CENTER_ACTIVE"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute comprehensive Milestone 4 benchmark certification",
+            "activeId": "root",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<Milestone4CapstoneRootScreen />",
+                "props": {
+                  "grade": "TIER_1_CERTIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "rootId": "root",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "<Milestone4CapstoneRootScreen />",
+            "props": {
+              "status": "TIER_1_CERTIFIED"
+            },
+            "children": [
+              {
+                "id": "TokenRegistrar",
+                "name": "<PushTokenRegistrar />",
+                "props": {
+                  "gateway": "APNS_FCM_GATEWAY"
+                }
+              },
+              {
+                "id": "ServiceExtension",
+                "name": "<NotificationServiceExtension />",
+                "props": {
+                  "decryption": "E2E_CIPHER_SOLVED"
+                }
+              },
+              {
+                "id": "DynamicIsland",
+                "name": "<ActivityKitDynamicIsland />",
+                "props": {
+                  "presentation": "EXPANDED_COMPACT_MINIMAL"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Register cryptographic device token via <PushTokenRegistrar />",
+            "activeId": "root",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<Milestone4CapstoneRootScreen />",
+                "props": {
+                  "token": "REGISTERED"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Decrypt encrypted payload and attach media via <NotificationServiceExtension />",
+            "activeId": "ServiceExtension",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "ServiceExtension",
+                "name": "<NotificationServiceExtension />",
+                "props": {
+                  "status": "DECRYPTED_ATTACHED"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Render real-time glanceable updates via <ActivityKitDynamicIsland />",
+            "activeId": "DynamicIsland",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "DynamicIsland",
+                "name": "<ActivityKitDynamicIsland />",
+                "props": {
+                  "layout": "EXPANDED_CENTER_ACTIVE"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute comprehensive Milestone 4 benchmark certification",
+            "activeId": "root",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "root",
+                "name": "<Milestone4CapstoneRootScreen />",
+                "props": {
+                  "grade": "TIER_1_CERTIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
