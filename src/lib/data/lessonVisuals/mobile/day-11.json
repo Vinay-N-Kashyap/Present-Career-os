@@ -1,0 +1,1119 @@
+{
+  "schemaVersion": 1,
+  "prefix": "mobile",
+  "day": 11,
+  "promptSha": "852526f92425457028762fe60498b798b9c518bbccbc9355000deac35527612e",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Native Permission Lifecycles: iOS Info.plist & Android Manifest Sandboxes",
+      "codeHash": "51173c20e7dff0c92b5b0b756bd8d30d6c217302a232360001763fb4258e4537",
+      "spec": {
+        "template": "component-tree",
+        "title": "Native Permission Lifecycles: iOS Info.plist ... \u2014 Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "AppRoot",
+            "name": "<CameraAppContainer />",
+            "props": {
+              "permissions": "MANAGED"
+            },
+            "state": {
+              "ready": "true"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "PermissionShield",
+            "name": "<NativePermissionBoundary />",
+            "props": {
+              "canAskAgain": "true"
+            },
+            "tone": "accent"
+          },
+          {
+            "id": "VisionProcessor",
+            "name": "<VisionCameraFrameWorklet />",
+            "props": {
+              "zeroCopy": "true",
+              "fps": "60"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "MediaSanitizer",
+            "name": "<ExifPrivacyDownsampler />",
+            "props": {
+              "quality": "0.7",
+              "scrubGps": "true"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <CameraAppContainer /> for Native Permission Lifecycles: ...",
+            "activeId": "AppRoot",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppRoot",
+                "name": "<CameraAppContainer />",
+                "props": {
+                  "stage": "INIT"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Evaluate <NativePermissionBoundary /> and native OS manifest declarations",
+            "activeId": "PermissionShield",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "PermissionShield",
+                "name": "<NativePermissionBoundary />",
+                "props": {
+                  "status": "VERIFYING"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute <VisionCameraFrameWorklet /> zero-copy C++ inference",
+            "activeId": "VisionProcessor",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "VisionProcessor",
+                "name": "<VisionCameraFrameWorklet />",
+                "props": {
+                  "budget": "16.6ms"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Engage <ExifPrivacyDownsampler /> to scrub GPS and reduce RAM footprint by 96%",
+            "activeId": "MediaSanitizer",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "MediaSanitizer",
+                "name": "<ExifPrivacyDownsampler />",
+                "props": {
+                  "compression": "0.7"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "title": "Native Permission Lifecycles: iOS Info.plist ... \u2014 Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "AppRoot",
+            "name": "<CameraAppContainer />",
+            "props": {
+              "permissions": "MANAGED"
+            },
+            "state": {
+              "ready": "true"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "PermissionShield",
+            "name": "<NativePermissionBoundary />",
+            "props": {
+              "canAskAgain": "true"
+            },
+            "tone": "accent"
+          },
+          {
+            "id": "VisionProcessor",
+            "name": "<VisionCameraFrameWorklet />",
+            "props": {
+              "zeroCopy": "true",
+              "fps": "60"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "MediaSanitizer",
+            "name": "<ExifPrivacyDownsampler />",
+            "props": {
+              "quality": "0.7",
+              "scrubGps": "true"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <CameraAppContainer /> for Native Permission Lifecycles: ...",
+            "activeId": "AppRoot",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppRoot",
+                "name": "<CameraAppContainer />",
+                "props": {
+                  "stage": "INIT"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Evaluate <NativePermissionBoundary /> and native OS manifest declarations",
+            "activeId": "PermissionShield",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "PermissionShield",
+                "name": "<NativePermissionBoundary />",
+                "props": {
+                  "status": "VERIFYING"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute <VisionCameraFrameWorklet /> zero-copy C++ inference",
+            "activeId": "VisionProcessor",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "VisionProcessor",
+                "name": "<VisionCameraFrameWorklet />",
+                "props": {
+                  "budget": "16.6ms"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Engage <ExifPrivacyDownsampler /> to scrub GPS and reduce RAM footprint by 96%",
+            "activeId": "MediaSanitizer",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "MediaSanitizer",
+                "name": "<ExifPrivacyDownsampler />",
+                "props": {
+                  "compression": "0.7"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Permanent Permission Denials & Linking to System Settings (Linking.openSettings)",
+      "codeHash": "0d6d731877d418929131d3b5b76bc271a91a2f65035d5ee8ffb8716c176c2c25",
+      "spec": {
+        "template": "component-tree",
+        "title": "Permanent Permission Denials & Linking to Sys... \u2014 Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "AppRoot",
+            "name": "<CameraAppContainer />",
+            "props": {
+              "permissions": "MANAGED"
+            },
+            "state": {
+              "ready": "true"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "PermissionShield",
+            "name": "<NativePermissionBoundary />",
+            "props": {
+              "canAskAgain": "false"
+            },
+            "tone": "accent"
+          },
+          {
+            "id": "VisionProcessor",
+            "name": "<VisionCameraFrameWorklet />",
+            "props": {
+              "zeroCopy": "true",
+              "fps": "60"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "MediaSanitizer",
+            "name": "<ExifPrivacyDownsampler />",
+            "props": {
+              "quality": "0.7",
+              "scrubGps": "true"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <CameraAppContainer /> for Permanent Permission Denials &...",
+            "activeId": "AppRoot",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppRoot",
+                "name": "<CameraAppContainer />",
+                "props": {
+                  "stage": "INIT"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Evaluate <NativePermissionBoundary /> and native OS manifest declarations",
+            "activeId": "PermissionShield",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "PermissionShield",
+                "name": "<NativePermissionBoundary />",
+                "props": {
+                  "status": "VERIFYING"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute <VisionCameraFrameWorklet /> zero-copy C++ inference",
+            "activeId": "VisionProcessor",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "VisionProcessor",
+                "name": "<VisionCameraFrameWorklet />",
+                "props": {
+                  "budget": "16.6ms"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Engage <ExifPrivacyDownsampler /> to scrub GPS and reduce RAM footprint by 96%",
+            "activeId": "MediaSanitizer",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "MediaSanitizer",
+                "name": "<ExifPrivacyDownsampler />",
+                "props": {
+                  "compression": "0.7"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "title": "Permanent Permission Denials & Linking to Sys... \u2014 Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "AppRoot",
+            "name": "<CameraAppContainer />",
+            "props": {
+              "permissions": "MANAGED"
+            },
+            "state": {
+              "ready": "true"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "PermissionShield",
+            "name": "<NativePermissionBoundary />",
+            "props": {
+              "canAskAgain": "false"
+            },
+            "tone": "accent"
+          },
+          {
+            "id": "VisionProcessor",
+            "name": "<VisionCameraFrameWorklet />",
+            "props": {
+              "zeroCopy": "true",
+              "fps": "60"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "MediaSanitizer",
+            "name": "<ExifPrivacyDownsampler />",
+            "props": {
+              "quality": "0.7",
+              "scrubGps": "true"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <CameraAppContainer /> for Permanent Permission Denials &...",
+            "activeId": "AppRoot",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppRoot",
+                "name": "<CameraAppContainer />",
+                "props": {
+                  "stage": "INIT"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Evaluate <NativePermissionBoundary /> and native OS manifest declarations",
+            "activeId": "PermissionShield",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "PermissionShield",
+                "name": "<NativePermissionBoundary />",
+                "props": {
+                  "status": "VERIFYING"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute <VisionCameraFrameWorklet /> zero-copy C++ inference",
+            "activeId": "VisionProcessor",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "VisionProcessor",
+                "name": "<VisionCameraFrameWorklet />",
+                "props": {
+                  "budget": "16.6ms"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Engage <ExifPrivacyDownsampler /> to scrub GPS and reduce RAM footprint by 96%",
+            "activeId": "MediaSanitizer",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "MediaSanitizer",
+                "name": "<ExifPrivacyDownsampler />",
+                "props": {
+                  "compression": "0.7"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "VisionCamera & Real-Time C++ Frame Processors: Hermes Worklets on Native Buffers",
+      "codeHash": "4139b91f05286d64d1aca48fa479855f5382f3feb1606b78d697366a75ff19ee",
+      "spec": {
+        "template": "component-tree",
+        "title": "VisionCamera & Real-Time C++ Frame Processors... \u2014 Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "AppRoot",
+            "name": "<CameraAppContainer />",
+            "props": {
+              "permissions": "MANAGED"
+            },
+            "state": {
+              "ready": "true"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "PermissionShield",
+            "name": "<NativePermissionBoundary />",
+            "props": {
+              "canAskAgain": "true"
+            },
+            "tone": "accent"
+          },
+          {
+            "id": "VisionProcessor",
+            "name": "<VisionCameraFrameWorklet />",
+            "props": {
+              "zeroCopy": "true",
+              "fps": "60"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "MediaSanitizer",
+            "name": "<ExifPrivacyDownsampler />",
+            "props": {
+              "quality": "0.7",
+              "scrubGps": "true"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <CameraAppContainer /> for VisionCamera & Real-Time C++ F...",
+            "activeId": "AppRoot",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppRoot",
+                "name": "<CameraAppContainer />",
+                "props": {
+                  "stage": "INIT"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Evaluate <NativePermissionBoundary /> and native OS manifest declarations",
+            "activeId": "PermissionShield",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "PermissionShield",
+                "name": "<NativePermissionBoundary />",
+                "props": {
+                  "status": "VERIFYING"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute <VisionCameraFrameWorklet /> zero-copy C++ inference",
+            "activeId": "VisionProcessor",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "VisionProcessor",
+                "name": "<VisionCameraFrameWorklet />",
+                "props": {
+                  "budget": "16.6ms"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Engage <ExifPrivacyDownsampler /> to scrub GPS and reduce RAM footprint by 96%",
+            "activeId": "MediaSanitizer",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "MediaSanitizer",
+                "name": "<ExifPrivacyDownsampler />",
+                "props": {
+                  "compression": "0.7"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "title": "VisionCamera & Real-Time C++ Frame Processors... \u2014 Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "AppRoot",
+            "name": "<CameraAppContainer />",
+            "props": {
+              "permissions": "MANAGED"
+            },
+            "state": {
+              "ready": "true"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "PermissionShield",
+            "name": "<NativePermissionBoundary />",
+            "props": {
+              "canAskAgain": "true"
+            },
+            "tone": "accent"
+          },
+          {
+            "id": "VisionProcessor",
+            "name": "<VisionCameraFrameWorklet />",
+            "props": {
+              "zeroCopy": "true",
+              "fps": "60"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "MediaSanitizer",
+            "name": "<ExifPrivacyDownsampler />",
+            "props": {
+              "quality": "0.7",
+              "scrubGps": "true"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <CameraAppContainer /> for VisionCamera & Real-Time C++ F...",
+            "activeId": "AppRoot",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppRoot",
+                "name": "<CameraAppContainer />",
+                "props": {
+                  "stage": "INIT"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Evaluate <NativePermissionBoundary /> and native OS manifest declarations",
+            "activeId": "PermissionShield",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "PermissionShield",
+                "name": "<NativePermissionBoundary />",
+                "props": {
+                  "status": "VERIFYING"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute <VisionCameraFrameWorklet /> zero-copy C++ inference",
+            "activeId": "VisionProcessor",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "VisionProcessor",
+                "name": "<VisionCameraFrameWorklet />",
+                "props": {
+                  "budget": "16.6ms"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Engage <ExifPrivacyDownsampler /> to scrub GPS and reduce RAM footprint by 96%",
+            "activeId": "MediaSanitizer",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "MediaSanitizer",
+                "name": "<ExifPrivacyDownsampler />",
+                "props": {
+                  "compression": "0.7"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Media Library Asset Access, EXIF Privacy Scrubbing & Bitmap Downsampling",
+      "codeHash": "b7d3e8cb1fe864dd7ee8b8ff3d6c463d06ad945e92f50ee6f89f02184ad24cc4",
+      "spec": {
+        "template": "component-tree",
+        "title": "Media Library Asset Access, EXIF Privacy Scru... \u2014 Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "AppRoot",
+            "name": "<CameraAppContainer />",
+            "props": {
+              "permissions": "MANAGED"
+            },
+            "state": {
+              "ready": "true"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "PermissionShield",
+            "name": "<NativePermissionBoundary />",
+            "props": {
+              "canAskAgain": "true"
+            },
+            "tone": "accent"
+          },
+          {
+            "id": "VisionProcessor",
+            "name": "<VisionCameraFrameWorklet />",
+            "props": {
+              "zeroCopy": "true",
+              "fps": "60"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "MediaSanitizer",
+            "name": "<ExifPrivacyDownsampler />",
+            "props": {
+              "quality": "0.7",
+              "scrubGps": "true"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <CameraAppContainer /> for Media Library Asset Access, EX...",
+            "activeId": "AppRoot",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppRoot",
+                "name": "<CameraAppContainer />",
+                "props": {
+                  "stage": "INIT"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Evaluate <NativePermissionBoundary /> and native OS manifest declarations",
+            "activeId": "PermissionShield",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "PermissionShield",
+                "name": "<NativePermissionBoundary />",
+                "props": {
+                  "status": "VERIFYING"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute <VisionCameraFrameWorklet /> zero-copy C++ inference",
+            "activeId": "VisionProcessor",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "VisionProcessor",
+                "name": "<VisionCameraFrameWorklet />",
+                "props": {
+                  "budget": "16.6ms"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Engage <ExifPrivacyDownsampler /> to scrub GPS and reduce RAM footprint by 96%",
+            "activeId": "MediaSanitizer",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "MediaSanitizer",
+                "name": "<ExifPrivacyDownsampler />",
+                "props": {
+                  "compression": "0.7"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "title": "Media Library Asset Access, EXIF Privacy Scru... \u2014 Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "AppRoot",
+            "name": "<CameraAppContainer />",
+            "props": {
+              "permissions": "MANAGED"
+            },
+            "state": {
+              "ready": "true"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "PermissionShield",
+            "name": "<NativePermissionBoundary />",
+            "props": {
+              "canAskAgain": "true"
+            },
+            "tone": "accent"
+          },
+          {
+            "id": "VisionProcessor",
+            "name": "<VisionCameraFrameWorklet />",
+            "props": {
+              "zeroCopy": "true",
+              "fps": "60"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "MediaSanitizer",
+            "name": "<ExifPrivacyDownsampler />",
+            "props": {
+              "quality": "0.7",
+              "scrubGps": "true"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <CameraAppContainer /> for Media Library Asset Access, EX...",
+            "activeId": "AppRoot",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppRoot",
+                "name": "<CameraAppContainer />",
+                "props": {
+                  "stage": "INIT"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Evaluate <NativePermissionBoundary /> and native OS manifest declarations",
+            "activeId": "PermissionShield",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "PermissionShield",
+                "name": "<NativePermissionBoundary />",
+                "props": {
+                  "status": "VERIFYING"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute <VisionCameraFrameWorklet /> zero-copy C++ inference",
+            "activeId": "VisionProcessor",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "VisionProcessor",
+                "name": "<VisionCameraFrameWorklet />",
+                "props": {
+                  "budget": "16.6ms"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Engage <ExifPrivacyDownsampler /> to scrub GPS and reduce RAM footprint by 96%",
+            "activeId": "MediaSanitizer",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "MediaSanitizer",
+                "name": "<ExifPrivacyDownsampler />",
+                "props": {
+                  "compression": "0.7"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Camera & Media Capture Master Pipeline: Full Production Simulator",
+      "codeHash": "d9370fa4eec0d905be7bad80fefb27ee019509f622155130ef3b19c9b8b1afd4",
+      "spec": {
+        "template": "component-tree",
+        "title": "Enterprise Camera & Media Capture Master Pipe... \u2014 Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "AppRoot",
+            "name": "<CameraAppContainer />",
+            "props": {
+              "permissions": "MANAGED"
+            },
+            "state": {
+              "ready": "true"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "PermissionShield",
+            "name": "<NativePermissionBoundary />",
+            "props": {
+              "canAskAgain": "true"
+            },
+            "tone": "accent"
+          },
+          {
+            "id": "VisionProcessor",
+            "name": "<VisionCameraFrameWorklet />",
+            "props": {
+              "zeroCopy": "true",
+              "fps": "60"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "MediaSanitizer",
+            "name": "<ExifPrivacyDownsampler />",
+            "props": {
+              "quality": "0.7",
+              "scrubGps": "true"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <CameraAppContainer /> for Enterprise Camera & Media Capt...",
+            "activeId": "AppRoot",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppRoot",
+                "name": "<CameraAppContainer />",
+                "props": {
+                  "stage": "INIT"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Evaluate <NativePermissionBoundary /> and native OS manifest declarations",
+            "activeId": "PermissionShield",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "PermissionShield",
+                "name": "<NativePermissionBoundary />",
+                "props": {
+                  "status": "VERIFYING"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute <VisionCameraFrameWorklet /> zero-copy C++ inference",
+            "activeId": "VisionProcessor",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "VisionProcessor",
+                "name": "<VisionCameraFrameWorklet />",
+                "props": {
+                  "budget": "16.6ms"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Engage <ExifPrivacyDownsampler /> to scrub GPS and reduce RAM footprint by 96%",
+            "activeId": "MediaSanitizer",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "MediaSanitizer",
+                "name": "<ExifPrivacyDownsampler />",
+                "props": {
+                  "compression": "0.7"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "title": "Enterprise Camera & Media Capture Master Pipe... \u2014 Mobile Component Hierarchy",
+        "nodes": [
+          {
+            "id": "AppRoot",
+            "name": "<CameraAppContainer />",
+            "props": {
+              "permissions": "MANAGED"
+            },
+            "state": {
+              "ready": "true"
+            },
+            "tone": "ok"
+          },
+          {
+            "id": "PermissionShield",
+            "name": "<NativePermissionBoundary />",
+            "props": {
+              "canAskAgain": "true"
+            },
+            "tone": "accent"
+          },
+          {
+            "id": "VisionProcessor",
+            "name": "<VisionCameraFrameWorklet />",
+            "props": {
+              "zeroCopy": "true",
+              "fps": "60"
+            },
+            "tone": "data"
+          },
+          {
+            "id": "MediaSanitizer",
+            "name": "<ExifPrivacyDownsampler />",
+            "props": {
+              "quality": "0.7",
+              "scrubGps": "true"
+            },
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount root <CameraAppContainer /> for Enterprise Camera & Media Capt...",
+            "activeId": "AppRoot",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppRoot",
+                "name": "<CameraAppContainer />",
+                "props": {
+                  "stage": "INIT"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Evaluate <NativePermissionBoundary /> and native OS manifest declarations",
+            "activeId": "PermissionShield",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "PermissionShield",
+                "name": "<NativePermissionBoundary />",
+                "props": {
+                  "status": "VERIFYING"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute <VisionCameraFrameWorklet /> zero-copy C++ inference",
+            "activeId": "VisionProcessor",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "VisionProcessor",
+                "name": "<VisionCameraFrameWorklet />",
+                "props": {
+                  "budget": "16.6ms"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Engage <ExifPrivacyDownsampler /> to scrub GPS and reduce RAM footprint by 96%",
+            "activeId": "MediaSanitizer",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "MediaSanitizer",
+                "name": "<ExifPrivacyDownsampler />",
+                "props": {
+                  "compression": "0.7"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
