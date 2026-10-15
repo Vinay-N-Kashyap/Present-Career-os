@@ -1,0 +1,1139 @@
+{
+  "schemaVersion": 1,
+  "prefix": "fullstack-js",
+  "day": 18,
+  "promptSha": "7959a12c09d1eed4b6751f6fce3d7566d1c1c7230b0a983aa1eb6b6c8135aeef",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Real-Time Transport Protocols: WebSockets vs SSE vs Long Polling",
+      "codeHash": "f1b9402219f678ce08b73b88490b33f9ad4bcafe3eb11e39b0a7d5440ada74e0",
+      "spec": {
+        "template": "flow",
+        "title": "Real-Time Transport Protocols: WebS... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Ingress Stream Frame / Event Vector",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Real-Time Transport Protocols: WebS...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Real-Time Transmission State",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingress stream frame vector and initialize Real-Time Transport Protocols: WebS....",
+            "values": {
+              "in": "Day 18 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute handshake upgrade, heartbeat evaluation, and pub/sub routing in Real-Time Transport Protocols: WebS....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluate TCP framing, backpressure watermark, and fanout invariant.",
+            "values": {
+              "in": "Validated",
+              "proc": "Action Committed",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end streaming transmission confirmed for Real-Time Transport Protocols: WebS....",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Real-Time Transport Protocols: WebS... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Ingress Stream Frame / Event Vector",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Real-Time Transport Protocols: WebS...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Real-Time Transmission State",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingress stream frame vector and initialize Real-Time Transport Protocols: WebS....",
+            "values": {
+              "in": "Day 18 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute handshake upgrade, heartbeat evaluation, and pub/sub routing in Real-Time Transport Protocols: WebS....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluate TCP framing, backpressure watermark, and fanout invariant.",
+            "values": {
+              "in": "Validated",
+              "proc": "Action Committed",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end streaming transmission confirmed for Real-Time Transport Protocols: WebS....",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The WebSocket Connection Lifecycle: HTTP Upgrade Handshake & TCP Framing",
+      "codeHash": "c497157cf34e8c72fbc124afd0ed3434462fe16b28e12163424c86c60437182f",
+      "spec": {
+        "template": "flow",
+        "title": "The WebSocket Connection Lifecycle:... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Ingress Stream Frame / Event Vector",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. The WebSocket Connection Lifecycle:...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Real-Time Transmission State",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingress stream frame vector and initialize The WebSocket Connection Lifecycle:....",
+            "values": {
+              "in": "Day 18 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute handshake upgrade, heartbeat evaluation, and pub/sub routing in The WebSocket Connection Lifecycle:....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluate TCP framing, backpressure watermark, and fanout invariant.",
+            "values": {
+              "in": "Validated",
+              "proc": "Action Committed",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end streaming transmission confirmed for The WebSocket Connection Lifecycle:....",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "The WebSocket Connection Lifecycle:... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Ingress Stream Frame / Event Vector",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. The WebSocket Connection Lifecycle:...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Real-Time Transmission State",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingress stream frame vector and initialize The WebSocket Connection Lifecycle:....",
+            "values": {
+              "in": "Day 18 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute handshake upgrade, heartbeat evaluation, and pub/sub routing in The WebSocket Connection Lifecycle:....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluate TCP framing, backpressure watermark, and fanout invariant.",
+            "values": {
+              "in": "Validated",
+              "proc": "Action Committed",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end streaming transmission confirmed for The WebSocket Connection Lifecycle:....",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Heartbeat Pings, Ghost Connections & Sliding-Window Disconnection Detection",
+      "codeHash": "49c1e31cee58fecab926f9cb74814800e88082061dfb1a6f577284ee2b3f316e",
+      "spec": {
+        "template": "flow",
+        "title": "Heartbeat Pings, Ghost Connections ... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Ingress Stream Frame / Event Vector",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Heartbeat Pings, Ghost Connections ...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Real-Time Transmission State",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingress stream frame vector and initialize Heartbeat Pings, Ghost Connections ....",
+            "values": {
+              "in": "Day 18 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute handshake upgrade, heartbeat evaluation, and pub/sub routing in Heartbeat Pings, Ghost Connections ....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluate TCP framing, backpressure watermark, and fanout invariant.",
+            "values": {
+              "in": "Validated",
+              "proc": "Action Committed",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end streaming transmission confirmed for Heartbeat Pings, Ghost Connections ....",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Heartbeat Pings, Ghost Connections ... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Ingress Stream Frame / Event Vector",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Heartbeat Pings, Ghost Connections ...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Real-Time Transmission State",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingress stream frame vector and initialize Heartbeat Pings, Ghost Connections ....",
+            "values": {
+              "in": "Day 18 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute handshake upgrade, heartbeat evaluation, and pub/sub routing in Heartbeat Pings, Ghost Connections ....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluate TCP framing, backpressure watermark, and fanout invariant.",
+            "values": {
+              "in": "Validated",
+              "proc": "Action Committed",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end streaming transmission confirmed for Heartbeat Pings, Ghost Connections ....",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Distributed Pub/Sub Fanout with Redis & Channel Partitioning",
+      "codeHash": "4f040ef5b5a437f6aac4e2cf62c06888c47eda0623ea270e8d975b2a72cd7c63",
+      "spec": {
+        "template": "flow",
+        "title": "Distributed Pub/Sub Fanout with Red... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Ingress Stream Frame / Event Vector",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Distributed Pub/Sub Fanout with Red...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Real-Time Transmission State",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingress stream frame vector and initialize Distributed Pub/Sub Fanout with Red....",
+            "values": {
+              "in": "Day 18 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute handshake upgrade, heartbeat evaluation, and pub/sub routing in Distributed Pub/Sub Fanout with Red....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluate TCP framing, backpressure watermark, and fanout invariant.",
+            "values": {
+              "in": "Validated",
+              "proc": "Action Committed",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end streaming transmission confirmed for Distributed Pub/Sub Fanout with Red....",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Distributed Pub/Sub Fanout with Red... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Ingress Stream Frame / Event Vector",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Distributed Pub/Sub Fanout with Red...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Real-Time Transmission State",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingress stream frame vector and initialize Distributed Pub/Sub Fanout with Red....",
+            "values": {
+              "in": "Day 18 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute handshake upgrade, heartbeat evaluation, and pub/sub routing in Distributed Pub/Sub Fanout with Red....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluate TCP framing, backpressure watermark, and fanout invariant.",
+            "values": {
+              "in": "Validated",
+              "proc": "Action Committed",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end streaming transmission confirmed for Distributed Pub/Sub Fanout with Red....",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Flow Control, High-Watermark Buffering & Client Backpressure",
+      "codeHash": "c9422d690d2f04b3c3a0a838d66d1ffee268da473c88d9ea08b9acb9afcdf0ca",
+      "spec": {
+        "template": "flow",
+        "title": "Flow Control, High-Watermark Buffer... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Ingress Stream Frame / Event Vector",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Flow Control, High-Watermark Buffer...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Real-Time Transmission State",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingress stream frame vector and initialize Flow Control, High-Watermark Buffer....",
+            "values": {
+              "in": "Day 18 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute handshake upgrade, heartbeat evaluation, and pub/sub routing in Flow Control, High-Watermark Buffer....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluate TCP framing, backpressure watermark, and fanout invariant.",
+            "values": {
+              "in": "Validated",
+              "proc": "Action Committed",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end streaming transmission confirmed for Flow Control, High-Watermark Buffer....",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Flow Control, High-Watermark Buffer... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Ingress Stream Frame / Event Vector",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Flow Control, High-Watermark Buffer...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Real-Time Transmission State",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingress stream frame vector and initialize Flow Control, High-Watermark Buffer....",
+            "values": {
+              "in": "Day 18 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute handshake upgrade, heartbeat evaluation, and pub/sub routing in Flow Control, High-Watermark Buffer....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluate TCP framing, backpressure watermark, and fanout invariant.",
+            "values": {
+              "in": "Validated",
+              "proc": "Action Committed",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end streaming transmission confirmed for Flow Control, High-Watermark Buffer....",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
