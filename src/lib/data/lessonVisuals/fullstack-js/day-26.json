@@ -1,0 +1,564 @@
+{
+  "schemaVersion": 1,
+  "prefix": "fullstack-js",
+  "day": 26,
+  "promptSha": "7c56af713d939f0e5d20b9144d23edafd405fe949abcb692c2ef8cc21515dd92",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Kubernetes Architecture: Control Plane, Worker Nodes & Declarative Reconciliation",
+      "codeHash": "6431f8a37c680170600535cba5ad55cfd2540f2c699572a9fa73c3b9c0b1172b",
+      "spec": {
+        "template": "flow",
+        "title": "Kubernetes Architecture: Control... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Ingress Stream / Request Frame",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Kubernetes Architecture: Control...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Distributed State",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingress stream payload and initialize Kubernetes Architecture: Control....",
+            "values": {
+              "in": "Stream Ingress",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute protocol handling, encoding, and routing in Kubernetes Architecture: Control....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "active",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world distributed microservices interaction in Kubernetes Architecture: Control....",
+            "values": {
+              "in": "Validated",
+              "proc": "Dispatched",
+              "out": "Applying State"
+            },
+            "tones": {
+              "in": "active",
+              "proc": "active",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify end-to-end telemetry and state consistency in Kubernetes Architecture: Control....",
+            "values": {
+              "in": "ACK Received",
+              "proc": "Committed",
+              "out": "Telemetry Verified"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "active",
+              "out": "active"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Pods, ReplicaSets & RollingUpdate Deployment Strategies",
+      "codeHash": "96102150c280dceabd22ca24f166b1e283a593779414224978c5380a79333edb",
+      "spec": {
+        "template": "flow",
+        "title": "Pods, ReplicaSets & RollingUpdat... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Ingress Stream / Request Frame",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Pods, ReplicaSets & RollingUpdat...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Distributed State",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingress stream payload and initialize Pods, ReplicaSets & RollingUpdat....",
+            "values": {
+              "in": "Stream Ingress",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute protocol handling, encoding, and routing in Pods, ReplicaSets & RollingUpdat....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "active",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world distributed microservices interaction in Pods, ReplicaSets & RollingUpdat....",
+            "values": {
+              "in": "Validated",
+              "proc": "Dispatched",
+              "out": "Applying State"
+            },
+            "tones": {
+              "in": "active",
+              "proc": "active",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify end-to-end telemetry and state consistency in Pods, ReplicaSets & RollingUpdat....",
+            "values": {
+              "in": "ACK Received",
+              "proc": "Committed",
+              "out": "Telemetry Verified"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "active",
+              "out": "active"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Service Discovery, ClusterIP, Ingress Routing & CoreDNS",
+      "codeHash": "c08bf7d3f6596577eb41f83a57a2d751c76d4850629287dd38da0ee476366598",
+      "spec": {
+        "template": "flow",
+        "title": "Service Discovery, ClusterIP, In... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Ingress Stream / Request Frame",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Service Discovery, ClusterIP, In...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Distributed State",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingress stream payload and initialize Service Discovery, ClusterIP, In....",
+            "values": {
+              "in": "Stream Ingress",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute protocol handling, encoding, and routing in Service Discovery, ClusterIP, In....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "active",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world distributed microservices interaction in Service Discovery, ClusterIP, In....",
+            "values": {
+              "in": "Validated",
+              "proc": "Dispatched",
+              "out": "Applying State"
+            },
+            "tones": {
+              "in": "active",
+              "proc": "active",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify end-to-end telemetry and state consistency in Service Discovery, ClusterIP, In....",
+            "values": {
+              "in": "ACK Received",
+              "proc": "Committed",
+              "out": "Telemetry Verified"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "active",
+              "out": "active"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Configuration Decoupling: ConfigMaps, Secrets & Projected Volumes",
+      "codeHash": "06c08f26d096a51baa86e0d7be957639771b20ce8f7b55b34d1e122b44369ba7",
+      "spec": {
+        "template": "flow",
+        "title": "Configuration Decoupling: Config... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Ingress Stream / Request Frame",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Configuration Decoupling: Config...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Distributed State",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingress stream payload and initialize Configuration Decoupling: Config....",
+            "values": {
+              "in": "Stream Ingress",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute protocol handling, encoding, and routing in Configuration Decoupling: Config....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "active",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world distributed microservices interaction in Configuration Decoupling: Config....",
+            "values": {
+              "in": "Validated",
+              "proc": "Dispatched",
+              "out": "Applying State"
+            },
+            "tones": {
+              "in": "active",
+              "proc": "active",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify end-to-end telemetry and state consistency in Configuration Decoupling: Config....",
+            "values": {
+              "in": "ACK Received",
+              "proc": "Committed",
+              "out": "Telemetry Verified"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "active",
+              "out": "active"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Helm Package Management: Charts, Values & Declarative Release Lifecycle",
+      "codeHash": "24c64c5b33605ff248c92376db8b6a4a7c773f993bba81e87aea1fe4e646abe2",
+      "spec": {
+        "template": "flow",
+        "title": "Helm Package Management: Charts,... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Ingress Stream / Request Frame",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Helm Package Management: Charts,...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Distributed State",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingress stream payload and initialize Helm Package Management: Charts,....",
+            "values": {
+              "in": "Stream Ingress",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute protocol handling, encoding, and routing in Helm Package Management: Charts,....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "active",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world distributed microservices interaction in Helm Package Management: Charts,....",
+            "values": {
+              "in": "Validated",
+              "proc": "Dispatched",
+              "out": "Applying State"
+            },
+            "tones": {
+              "in": "active",
+              "proc": "active",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify end-to-end telemetry and state consistency in Helm Package Management: Charts,....",
+            "values": {
+              "in": "ACK Received",
+              "proc": "Committed",
+              "out": "Telemetry Verified"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "active",
+              "out": "active"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,564 @@
+{
+  "schemaVersion": 1,
+  "prefix": "fullstack-js",
+  "day": 28,
+  "promptSha": "7c56af713d939f0e5d20b9144d23edafd405fe949abcb692c2ef8cc21515dd92",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "The Three Pillars of Observability: Metrics, Structured Logs & Distributed Traces",
+      "codeHash": "9f8c8a69933cd81376426577aa83f237bf4943f4bf91e345e0464d92defe4945",
+      "spec": {
+        "template": "flow",
+        "title": "The Three Pillars of Observabili... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Ingress Stream / Request Frame",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. The Three Pillars of Observabili...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Distributed State",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingress stream payload and initialize The Three Pillars of Observabili....",
+            "values": {
+              "in": "Stream Ingress",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute protocol handling, encoding, and routing in The Three Pillars of Observabili....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "active",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world distributed microservices interaction in The Three Pillars of Observabili....",
+            "values": {
+              "in": "Validated",
+              "proc": "Dispatched",
+              "out": "Applying State"
+            },
+            "tones": {
+              "in": "active",
+              "proc": "active",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify end-to-end telemetry and state consistency in The Three Pillars of Observabili....",
+            "values": {
+              "in": "ACK Received",
+              "proc": "Committed",
+              "out": "Telemetry Verified"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "active",
+              "out": "active"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "OpenTelemetry (OTel) Standard & W3C Distributed Context Propagation",
+      "codeHash": "40e1db8a9f412aab47b1b5c3947ca7a36b2811b1086108816ea02987b2e19922",
+      "spec": {
+        "template": "flow",
+        "title": "OpenTelemetry (OTel) Standard & ... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Ingress Stream / Request Frame",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. OpenTelemetry (OTel) Standard & ...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Distributed State",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingress stream payload and initialize OpenTelemetry (OTel) Standard & ....",
+            "values": {
+              "in": "Stream Ingress",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute protocol handling, encoding, and routing in OpenTelemetry (OTel) Standard & ....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "active",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world distributed microservices interaction in OpenTelemetry (OTel) Standard & ....",
+            "values": {
+              "in": "Validated",
+              "proc": "Dispatched",
+              "out": "Applying State"
+            },
+            "tones": {
+              "in": "active",
+              "proc": "active",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify end-to-end telemetry and state consistency in OpenTelemetry (OTel) Standard & ....",
+            "values": {
+              "in": "ACK Received",
+              "proc": "Committed",
+              "out": "Telemetry Verified"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "active",
+              "out": "active"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Prometheus Metrics Architecture: RED Method & Metric Types",
+      "codeHash": "7ae7b7441e1472567288acdff1cab49bf104a2d97e8f5e889c9748087ed72867",
+      "spec": {
+        "template": "flow",
+        "title": "Prometheus Metrics Architecture:... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Ingress Stream / Request Frame",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Prometheus Metrics Architecture:...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Distributed State",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingress stream payload and initialize Prometheus Metrics Architecture:....",
+            "values": {
+              "in": "Stream Ingress",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute protocol handling, encoding, and routing in Prometheus Metrics Architecture:....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "active",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world distributed microservices interaction in Prometheus Metrics Architecture:....",
+            "values": {
+              "in": "Validated",
+              "proc": "Dispatched",
+              "out": "Applying State"
+            },
+            "tones": {
+              "in": "active",
+              "proc": "active",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify end-to-end telemetry and state consistency in Prometheus Metrics Architecture:....",
+            "values": {
+              "in": "ACK Received",
+              "proc": "Committed",
+              "out": "Telemetry Verified"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "active",
+              "out": "active"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Distributed Tracing Visualization: Spans, DAG Trees & Jaeger/Grafana Tempo",
+      "codeHash": "15075d6cea66f85f2697756f64b92286f9f5a738de2a526e42930a6b3da2e20c",
+      "spec": {
+        "template": "flow",
+        "title": "Distributed Tracing Visualizatio... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Ingress Stream / Request Frame",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Distributed Tracing Visualizatio...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Distributed State",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingress stream payload and initialize Distributed Tracing Visualizatio....",
+            "values": {
+              "in": "Stream Ingress",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute protocol handling, encoding, and routing in Distributed Tracing Visualizatio....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "active",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world distributed microservices interaction in Distributed Tracing Visualizatio....",
+            "values": {
+              "in": "Validated",
+              "proc": "Dispatched",
+              "out": "Applying State"
+            },
+            "tones": {
+              "in": "active",
+              "proc": "active",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify end-to-end telemetry and state consistency in Distributed Tracing Visualizatio....",
+            "values": {
+              "in": "ACK Received",
+              "proc": "Committed",
+              "out": "Telemetry Verified"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "active",
+              "out": "active"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Service Level Objectives (SLOs), SLIs, Error Budgets & PromQL Alerting",
+      "codeHash": "b3cdbdc1f790a049d82895c9644de4a2022ceab4da6ed6e4afab278a45b9efca",
+      "spec": {
+        "template": "flow",
+        "title": "Service Level Objectives (SLOs),... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Ingress Stream / Request Frame",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Service Level Objectives (SLOs),...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Distributed State",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingress stream payload and initialize Service Level Objectives (SLOs),....",
+            "values": {
+              "in": "Stream Ingress",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute protocol handling, encoding, and routing in Service Level Objectives (SLOs),....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "active",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world distributed microservices interaction in Service Level Objectives (SLOs),....",
+            "values": {
+              "in": "Validated",
+              "proc": "Dispatched",
+              "out": "Applying State"
+            },
+            "tones": {
+              "in": "active",
+              "proc": "active",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify end-to-end telemetry and state consistency in Service Level Objectives (SLOs),....",
+            "values": {
+              "in": "ACK Received",
+              "proc": "Committed",
+              "out": "Telemetry Verified"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "active",
+              "out": "active"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

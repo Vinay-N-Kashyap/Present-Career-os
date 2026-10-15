@@ -1,0 +1,564 @@
+{
+  "schemaVersion": 1,
+  "prefix": "fullstack-js",
+  "day": 27,
+  "promptSha": "7c56af713d939f0e5d20b9144d23edafd405fe949abcb692c2ef8cc21515dd92",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "CI/CD Engineering Principles: Trunk-Based Development, Shift-Left & Pipeline DAGs",
+      "codeHash": "181a0166c9aa4fc44948b9b9febcf61f00dec33f69d6367b98405f6e69668215",
+      "spec": {
+        "template": "flow",
+        "title": "CI/CD Engineering Principles: Tr... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Ingress Stream / Request Frame",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. CI/CD Engineering Principles: Tr...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Distributed State",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingress stream payload and initialize CI/CD Engineering Principles: Tr....",
+            "values": {
+              "in": "Stream Ingress",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute protocol handling, encoding, and routing in CI/CD Engineering Principles: Tr....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "active",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world distributed microservices interaction in CI/CD Engineering Principles: Tr....",
+            "values": {
+              "in": "Validated",
+              "proc": "Dispatched",
+              "out": "Applying State"
+            },
+            "tones": {
+              "in": "active",
+              "proc": "active",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify end-to-end telemetry and state consistency in CI/CD Engineering Principles: Tr....",
+            "values": {
+              "in": "ACK Received",
+              "proc": "Committed",
+              "out": "Telemetry Verified"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "active",
+              "out": "active"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "GitHub Actions Architecture: Workflows, Runners, Matrix Builds & Event Triggers",
+      "codeHash": "5081f58b036438eee1660e8da055b60dd664f96134d95834ae0e87c4aadd69f1",
+      "spec": {
+        "template": "flow",
+        "title": "GitHub Actions Architecture: Wor... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Ingress Stream / Request Frame",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. GitHub Actions Architecture: Wor...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Distributed State",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingress stream payload and initialize GitHub Actions Architecture: Wor....",
+            "values": {
+              "in": "Stream Ingress",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute protocol handling, encoding, and routing in GitHub Actions Architecture: Wor....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "active",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world distributed microservices interaction in GitHub Actions Architecture: Wor....",
+            "values": {
+              "in": "Validated",
+              "proc": "Dispatched",
+              "out": "Applying State"
+            },
+            "tones": {
+              "in": "active",
+              "proc": "active",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify end-to-end telemetry and state consistency in GitHub Actions Architecture: Wor....",
+            "values": {
+              "in": "ACK Received",
+              "proc": "Committed",
+              "out": "Telemetry Verified"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "active",
+              "out": "active"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Dependency Caching, OIDC Cloud Federation & Zero-Trust Secret Governance",
+      "codeHash": "a087a31c6fce1025d622b74073f152bc06e43f9f65cb888bfaac176b3ba4dbfc",
+      "spec": {
+        "template": "flow",
+        "title": "Dependency Caching, OIDC Cloud F... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Ingress Stream / Request Frame",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Dependency Caching, OIDC Cloud F...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Distributed State",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingress stream payload and initialize Dependency Caching, OIDC Cloud F....",
+            "values": {
+              "in": "Stream Ingress",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute protocol handling, encoding, and routing in Dependency Caching, OIDC Cloud F....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "active",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world distributed microservices interaction in Dependency Caching, OIDC Cloud F....",
+            "values": {
+              "in": "Validated",
+              "proc": "Dispatched",
+              "out": "Applying State"
+            },
+            "tones": {
+              "in": "active",
+              "proc": "active",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify end-to-end telemetry and state consistency in Dependency Caching, OIDC Cloud F....",
+            "values": {
+              "in": "ACK Received",
+              "proc": "Committed",
+              "out": "Telemetry Verified"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "active",
+              "out": "active"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Automated Multi-Arch Docker Builds, Buildx, QEMU & Container Security Auditing",
+      "codeHash": "195f054e7c4a229c79dbe3dfabe74e81503bfed10f3bfd807db83c8e34f86d73",
+      "spec": {
+        "template": "flow",
+        "title": "Automated Multi-Arch Docker Buil... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Ingress Stream / Request Frame",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Automated Multi-Arch Docker Buil...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Distributed State",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingress stream payload and initialize Automated Multi-Arch Docker Buil....",
+            "values": {
+              "in": "Stream Ingress",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute protocol handling, encoding, and routing in Automated Multi-Arch Docker Buil....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "active",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world distributed microservices interaction in Automated Multi-Arch Docker Buil....",
+            "values": {
+              "in": "Validated",
+              "proc": "Dispatched",
+              "out": "Applying State"
+            },
+            "tones": {
+              "in": "active",
+              "proc": "active",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify end-to-end telemetry and state consistency in Automated Multi-Arch Docker Buil....",
+            "values": {
+              "in": "ACK Received",
+              "proc": "Committed",
+              "out": "Telemetry Verified"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "active",
+              "out": "active"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Automated Semantic Versioning, Conventional Commits & Canary Release Orchestration",
+      "codeHash": "69e192cef23cf608c195f24ce5ecf2e4ec78fb07f9acaaa549df7387462b7ea4",
+      "spec": {
+        "template": "flow",
+        "title": "Automated Semantic Versioning, C... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Ingress Stream / Request Frame",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Automated Semantic Versioning, C...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Distributed State",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingress stream payload and initialize Automated Semantic Versioning, C....",
+            "values": {
+              "in": "Stream Ingress",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute protocol handling, encoding, and routing in Automated Semantic Versioning, C....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "active",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world distributed microservices interaction in Automated Semantic Versioning, C....",
+            "values": {
+              "in": "Validated",
+              "proc": "Dispatched",
+              "out": "Applying State"
+            },
+            "tones": {
+              "in": "active",
+              "proc": "active",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify end-to-end telemetry and state consistency in Automated Semantic Versioning, C....",
+            "values": {
+              "in": "ACK Received",
+              "proc": "Committed",
+              "out": "Telemetry Verified"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "active",
+              "out": "active"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

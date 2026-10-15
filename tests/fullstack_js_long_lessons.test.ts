@@ -13,7 +13,7 @@ import {
 test('Full-Stack JavaScript Long Lessons: Resolution & Language Invariants', () => {
   assert.equal(getLongLessonLanguage('fullstack-js'), 'typescript');
 
-  for (let day = 1; day <= 25; day++) {
+  for (let day = 1; day <= 30; day++) {
     const lesson = getLongLesson('fullstack-js', day);
     assert.ok(lesson, `fullstack-js Day ${day} long lesson must resolve`);
     assert.equal(lesson.day, day);
@@ -1208,3 +1208,204 @@ test('Full-Stack JS Day 25: ⭐ Milestone 5 Capstone: Distributed Event-Driven C
   assert.ok(lesson.parts[3].code?.includes('ContainerWorkerSupervisor'));
   assert.ok(lesson.parts[4].code?.includes('Milestone5CapstoneCertificationMatrix'));
 });
+
+function normalizeDayOutput(str: string): string {
+  return str.trim()
+    .replace(/\r\n/g, '\n')
+    .replace(/timestamp":\d+/g, 'timestamp":0')
+    .replace(/PID=\d+/g, 'PID=0')
+    .replace(/ASIA-TEMP-[A-Z0-9]+/g, 'ASIA-TEMP-000000000000')
+    .replace(/sha256:[a-f0-9]{20}/g, 'sha256:6eeb0bf41d6f1bf249f3')
+    .replace(/00-[a-f0-9]{32}-[a-f0-9]{16}-01/g, '00-00000000000000000000000000000000-1111111111111111-01')
+    .replace(/"traceId":"[a-f0-9]{8}\.\.\."/g, '"traceId":"00000000..."')
+    .replace(/"spanId":"[a-f0-9]{6}\.\.\."/g, '"spanId":"00000000..."')
+    .replace(/ID: lock-[a-f0-9]{8}\.\.\./g, 'ID: lock-00000000...')
+    .replace(/Lock lock-[a-f0-9]{8}\.\.\./g, 'Lock lock-00000000...')
+    .replace(/#+/g, '#####');
+}
+
+test('Full-Stack JS Day 26: Kubernetes Microservices Orchestration, Helm Charts, ConfigMaps & Secrets', async () => {
+  const lesson = getLongLesson('fullstack-js', 26);
+  assert.ok(lesson, 'fullstack-js Day 26 long lesson must resolve');
+  assert.equal(lesson.day, 26);
+  assert.equal(lesson.parts.length, 5);
+  assert.ok(lesson.summary.length >= 4);
+  assert.ok(lesson.projectStep);
+
+  const spokenMin = estimateSpokenMinutes(lesson);
+  const totalMin = estimateLessonMinutes(lesson);
+  assert.ok(spokenMin >= 20, `Spoken minutes should be >= 20 (got ${spokenMin})`);
+  assert.ok(totalMin >= 35 && totalMin <= 40, `Total minutes should be between 35 and 40 (got ${totalMin})`);
+
+  for (let i = 0; i < lesson.parts.length; i++) {
+    const part = lesson.parts[i];
+    assert.ok(part.check.options.length >= 4);
+
+    let stdout = '';
+    const sandbox = {
+      console: { log: (...args: any[]) => { stdout += args.map(a => typeof a === 'object' ? JSON.stringify(a) : String(a)).join(' ') + '\n'; } },
+      setTimeout, Promise, Date, Map, Set, Array, JSON, Math, Number, isNaN, Object, Buffer, process, crypto
+    };
+    vm.createContext(sandbox);
+    const compiled = esbuild.transformSync(part.code, { loader: 'ts' });
+    vm.runInContext(compiled.code, sandbox);
+    const normActual = normalizeDayOutput(stdout);
+    const normExpected = normalizeDayOutput(part.output);
+    assert.equal(normActual, normExpected, `Day 26 Part ${i + 1} stdout mismatch`);
+  }
+
+  assert.ok(lesson.parts[0].code?.includes('KubernetesClusterSimulator'));
+  assert.ok(lesson.parts[1].code?.includes('RollingDeploymentController'));
+  assert.ok(lesson.parts[2].code?.includes('KubernetesNetworkMesh'));
+  assert.ok(lesson.parts[3].code?.includes('KubernetesVolumeReloader'));
+  assert.ok(lesson.parts[4].code?.includes('HelmReleaseManager'));
+});
+
+test('Full-Stack JS Day 27: CI/CD Pipelines with GitHub Actions, Semantic Versioning & Multi-Arch Docker Builds', async () => {
+  const lesson = getLongLesson('fullstack-js', 27);
+  assert.ok(lesson, 'fullstack-js Day 27 long lesson must resolve');
+  assert.equal(lesson.day, 27);
+  assert.equal(lesson.parts.length, 5);
+  assert.ok(lesson.summary.length >= 4);
+  assert.ok(lesson.projectStep);
+
+  const spokenMin = estimateSpokenMinutes(lesson);
+  const totalMin = estimateLessonMinutes(lesson);
+  assert.ok(spokenMin >= 20, `Spoken minutes should be >= 20 (got ${spokenMin})`);
+  assert.ok(totalMin >= 35 && totalMin <= 40, `Total minutes should be between 35 and 40 (got ${totalMin})`);
+
+  for (let i = 0; i < lesson.parts.length; i++) {
+    const part = lesson.parts[i];
+    assert.ok(part.check.options.length >= 4);
+
+    let stdout = '';
+    const sandbox = {
+      console: { log: (...args: any[]) => { stdout += args.map(a => typeof a === 'object' ? JSON.stringify(a) : String(a)).join(' ') + '\n'; } },
+      setTimeout, Promise, Date, Map, Set, Array, JSON, Math, Number, isNaN, Object, Buffer, process, crypto
+    };
+    vm.createContext(sandbox);
+    const compiled = esbuild.transformSync(part.code, { loader: 'ts' });
+    vm.runInContext(compiled.code, sandbox);
+    const normActual = normalizeDayOutput(stdout);
+    const normExpected = normalizeDayOutput(part.output);
+    assert.equal(normActual, normExpected, `Day 27 Part ${i + 1} stdout mismatch`);
+  }
+
+  assert.ok(lesson.parts[0].code?.includes('PipelineDagEngine'));
+  assert.ok(lesson.parts[1].code?.includes('GitHubActionsScheduler'));
+  assert.ok(lesson.parts[2].code?.includes('CiSecurityAndCacheEngine'));
+  assert.ok(lesson.parts[3].code?.includes('ContainerBuildAndSecurityPipeline'));
+  assert.ok(lesson.parts[4].code?.includes('AutomatedReleaseAndCanaryEngine'));
+});
+
+test('Full-Stack JS Day 28: Cloud Observability, OpenTelemetry (OTel), Prometheus Metrics & Distributed Tracing', async () => {
+  const lesson = getLongLesson('fullstack-js', 28);
+  assert.ok(lesson, 'fullstack-js Day 28 long lesson must resolve');
+  assert.equal(lesson.day, 28);
+  assert.equal(lesson.parts.length, 5);
+  assert.ok(lesson.summary.length >= 4);
+  assert.ok(lesson.projectStep);
+
+  const spokenMin = estimateSpokenMinutes(lesson);
+  const totalMin = estimateLessonMinutes(lesson);
+  assert.ok(spokenMin >= 20, `Spoken minutes should be >= 20 (got ${spokenMin})`);
+  assert.ok(totalMin >= 35 && totalMin <= 40, `Total minutes should be between 35 and 40 (got ${totalMin})`);
+
+  for (let i = 0; i < lesson.parts.length; i++) {
+    const part = lesson.parts[i];
+    assert.ok(part.check.options.length >= 4);
+
+    let stdout = '';
+    const sandbox = {
+      console: { log: (...args: any[]) => { stdout += args.map(a => typeof a === 'object' ? JSON.stringify(a) : String(a)).join(' ') + '\n'; } },
+      setTimeout, Promise, Date, Map, Set, Array, JSON, Math, Number, isNaN, Object, Buffer, process, crypto
+    };
+    vm.createContext(sandbox);
+    const compiled = esbuild.transformSync(part.code, { loader: 'ts' });
+    vm.runInContext(compiled.code, sandbox);
+    const normActual = normalizeDayOutput(stdout);
+    const normExpected = normalizeDayOutput(part.output);
+    assert.equal(normActual, normExpected, `Day 28 Part ${i + 1} stdout mismatch`);
+  }
+
+  assert.ok(lesson.parts[0].code?.includes('ObservabilityTelemetryHub'));
+  assert.ok(lesson.parts[1].code?.includes('OpenTelemetryTraceEngine'));
+  assert.ok(lesson.parts[2].code?.includes('PrometheusRegistry'));
+  assert.ok(lesson.parts[3].code?.includes('TraceWaterfallVisualizer'));
+  assert.ok(lesson.parts[4].code?.includes('SreReliabilityCalculator'));
+});
+
+test('Full-Stack JS Day 29: Cloud Infrastructure as Code (IaC) with Terraform, Cloudflare CDN & Edge Security', async () => {
+  const lesson = getLongLesson('fullstack-js', 29);
+  assert.ok(lesson, 'fullstack-js Day 29 long lesson must resolve');
+  assert.equal(lesson.day, 29);
+  assert.equal(lesson.parts.length, 5);
+  assert.ok(lesson.summary.length >= 4);
+  assert.ok(lesson.projectStep);
+
+  const spokenMin = estimateSpokenMinutes(lesson);
+  const totalMin = estimateLessonMinutes(lesson);
+  assert.ok(spokenMin >= 20, `Spoken minutes should be >= 20 (got ${spokenMin})`);
+  assert.ok(totalMin >= 35 && totalMin <= 40, `Total minutes should be between 35 and 40 (got ${totalMin})`);
+
+  for (let i = 0; i < lesson.parts.length; i++) {
+    const part = lesson.parts[i];
+    assert.ok(part.check.options.length >= 4);
+
+    let stdout = '';
+    const sandbox = {
+      console: { log: (...args: any[]) => { stdout += args.map(a => typeof a === 'object' ? JSON.stringify(a) : String(a)).join(' ') + '\n'; } },
+      setTimeout, Promise, Date, Map, Set, Array, JSON, Math, Number, isNaN, Object, Buffer, process, crypto
+    };
+    vm.createContext(sandbox);
+    const compiled = esbuild.transformSync(part.code, { loader: 'ts' });
+    vm.runInContext(compiled.code, sandbox);
+    const normActual = normalizeDayOutput(stdout);
+    const normExpected = normalizeDayOutput(part.output);
+    assert.equal(normActual, normExpected, `Day 29 Part ${i + 1} stdout mismatch`);
+  }
+
+  assert.ok(lesson.parts[0].code?.includes('TerraformDagEngine'));
+  assert.ok(lesson.parts[1].code?.includes('TerraformStateBackend'));
+  assert.ok(lesson.parts[2].code?.includes('TerraformModuleEngine'));
+  assert.ok(lesson.parts[3].code?.includes('CloudflareEdgeCdnPoP'));
+  assert.ok(lesson.parts[4].code?.includes('CloudflareEdgeWafAndTunnel'));
+});
+
+test('Full-Stack JS Day 30: ⭐ Milestone 6 Capstone: Enterprise Cloud-Native Production Platform & Grand Master Certification', async () => {
+  const lesson = getLongLesson('fullstack-js', 30);
+  assert.ok(lesson, 'fullstack-js Day 30 long lesson must resolve');
+  assert.equal(lesson.day, 30);
+  assert.equal(lesson.parts.length, 5);
+  assert.ok(lesson.summary.length >= 4);
+  assert.ok(lesson.projectStep);
+
+  const spokenMin = estimateSpokenMinutes(lesson);
+  const totalMin = estimateLessonMinutes(lesson);
+  assert.ok(spokenMin >= 20, `Spoken minutes should be >= 20 (got ${spokenMin})`);
+  assert.ok(totalMin >= 35 && totalMin <= 40, `Total minutes should be between 35 and 40 (got ${totalMin})`);
+
+  for (let i = 0; i < lesson.parts.length; i++) {
+    const part = lesson.parts[i];
+    assert.ok(part.check.options.length >= 4);
+
+    let stdout = '';
+    const sandbox = {
+      console: { log: (...args: any[]) => { stdout += args.map(a => typeof a === 'object' ? JSON.stringify(a) : String(a)).join(' ') + '\n'; } },
+      setTimeout, Promise, Date, Map, Set, Array, JSON, Math, Number, isNaN, Object, Buffer, process, crypto
+    };
+    vm.createContext(sandbox);
+    const compiled = esbuild.transformSync(part.code, { loader: 'ts' });
+    vm.runInContext(compiled.code, sandbox);
+    const normActual = normalizeDayOutput(stdout);
+    const normExpected = normalizeDayOutput(part.output);
+    assert.equal(normActual, normExpected, `Day 30 Part ${i + 1} stdout mismatch`);
+  }
+
+  assert.ok(lesson.parts[0].code?.includes('CapstoneEdgeIngressGateway'));
+  assert.ok(lesson.parts[1].code?.includes('CapstoneKubernetesMesh'));
+  assert.ok(lesson.parts[2].code?.includes('CapstoneEventFabricSupervisor'));
+  assert.ok(lesson.parts[3].code?.includes('CapstoneTelemetryHub'));
+  assert.ok(lesson.parts[4].code?.includes('FullStackMasterCertificationMatrix'));
+});
+
