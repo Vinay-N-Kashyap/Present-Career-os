@@ -1,0 +1,599 @@
+{
+  "schemaVersion": 1,
+  "prefix": "comp_fund",
+  "day": 9,
+  "promptSha": "270d090c79f56b915978fa19c0d45684d88cef84e614189fa598059d7833205b",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Network Architecture Foundations: OSI 7-Layer Model vs TCP/IP 4-Layer Stack",
+      "codeHash": "14d005a31b5df72b16eef88583b3b668348be2702e818465ff459201a7a7f23a",
+      "spec": {
+        "template": "cells",
+        "title": "Network Architecture Foundations: OSI 7-Layer Model vs TCP/IP 4-Layer Stack — Network Subsystem & Routing Telemetry",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Inspecting network packet headers and interface states for Network Architecture Foun...",
+            "items": [
+              "0x00: ETH_FRAME",
+              "0x40: IP_PACKET",
+              "0x80: TCP_SEG",
+              "0xC0: DNS_RECORD"
+            ],
+            "pointers": [
+              {
+                "name": "NET",
+                "index": 0,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              0,
+              1
+            ],
+            "tones": {
+              "0": "data",
+              "1": "idle",
+              "2": "idle",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Subnet prefix matching and routing evaluation for Network Architecture Foun...",
+            "items": [
+              "0x00: ETH_FRAME",
+              "0x40: IP_PACKET",
+              "0x80: TCP_SEG",
+              "0xC0: DNS_RECORD"
+            ],
+            "pointers": [
+              {
+                "name": "NET",
+                "index": 1,
+                "tone": "accent"
+              }
+            ],
+            "highlightRange": [
+              1,
+              2
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "accent",
+              "2": "idle",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world operational state and DNS resolution flow for Network Architecture Foun...",
+            "items": [
+              "0x00: ETH_FRAME",
+              "0x40: IP_PACKET",
+              "0x80: TCP_SEG",
+              "0xC0: DNS_RECORD"
+            ],
+            "pointers": [
+              {
+                "name": "NET",
+                "index": 2,
+                "tone": "success"
+              }
+            ],
+            "highlightRange": [
+              2,
+              3
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "idle",
+              "2": "success",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Interactive verification and network telemetry diagnostics for Network Architecture Foun...",
+            "items": [
+              "0x00: ETH_FRAME",
+              "0x40: IP_PACKET",
+              "0x80: TCP_SEG",
+              "0xC0: DNS_RECORD"
+            ],
+            "pointers": [
+              {
+                "name": "NET",
+                "index": 3,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              3,
+              4
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "idle",
+              "2": "idle",
+              "3": "data"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Link Layer Frames, Ethernet MAC Addressing & ARP Resolution Flow",
+      "codeHash": "3595911211d4506c4ae31465fa6072b41c56d36b7e9317b29b93b74536a20835",
+      "spec": {
+        "template": "cells",
+        "title": "Link Layer Frames, Ethernet MAC Addressing & ARP Resolution Flow — Network Subsystem & Routing Telemetry",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Inspecting network packet headers and interface states for Link Layer Frames, Ethern...",
+            "items": [
+              "0x00: ETH_FRAME",
+              "0x40: IP_PACKET",
+              "0x80: TCP_SEG",
+              "0xC0: DNS_RECORD"
+            ],
+            "pointers": [
+              {
+                "name": "NET",
+                "index": 0,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              0,
+              1
+            ],
+            "tones": {
+              "0": "data",
+              "1": "idle",
+              "2": "idle",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Subnet prefix matching and routing evaluation for Link Layer Frames, Ethern...",
+            "items": [
+              "0x00: ETH_FRAME",
+              "0x40: IP_PACKET",
+              "0x80: TCP_SEG",
+              "0xC0: DNS_RECORD"
+            ],
+            "pointers": [
+              {
+                "name": "NET",
+                "index": 1,
+                "tone": "accent"
+              }
+            ],
+            "highlightRange": [
+              1,
+              2
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "accent",
+              "2": "idle",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world operational state and DNS resolution flow for Link Layer Frames, Ethern...",
+            "items": [
+              "0x00: ETH_FRAME",
+              "0x40: IP_PACKET",
+              "0x80: TCP_SEG",
+              "0xC0: DNS_RECORD"
+            ],
+            "pointers": [
+              {
+                "name": "NET",
+                "index": 2,
+                "tone": "success"
+              }
+            ],
+            "highlightRange": [
+              2,
+              3
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "idle",
+              "2": "success",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Interactive verification and network telemetry diagnostics for Link Layer Frames, Ethern...",
+            "items": [
+              "0x00: ETH_FRAME",
+              "0x40: IP_PACKET",
+              "0x80: TCP_SEG",
+              "0xC0: DNS_RECORD"
+            ],
+            "pointers": [
+              {
+                "name": "NET",
+                "index": 3,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              3,
+              4
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "idle",
+              "2": "idle",
+              "3": "data"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Network Layer IPv4 Addressing, Classless Inter-Domain Routing (CIDR) & Subnet Math",
+      "codeHash": "a9d2d90fc3fef73628189bc832f5bf48c19c35733324777019e000439e2272a0",
+      "spec": {
+        "template": "cells",
+        "title": "Network Layer IPv4 Addressing, Classless Inter-Domain Routing (CIDR) & Subnet Math — Network Subsystem & Routing Telemetry",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Inspecting network packet headers and interface states for Network Layer IPv4 Addres...",
+            "items": [
+              "0x00: ETH_FRAME",
+              "0x40: IP_PACKET",
+              "0x80: TCP_SEG",
+              "0xC0: DNS_RECORD"
+            ],
+            "pointers": [
+              {
+                "name": "NET",
+                "index": 0,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              0,
+              1
+            ],
+            "tones": {
+              "0": "data",
+              "1": "idle",
+              "2": "idle",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Subnet prefix matching and routing evaluation for Network Layer IPv4 Addres...",
+            "items": [
+              "0x00: ETH_FRAME",
+              "0x40: IP_PACKET",
+              "0x80: TCP_SEG",
+              "0xC0: DNS_RECORD"
+            ],
+            "pointers": [
+              {
+                "name": "NET",
+                "index": 1,
+                "tone": "accent"
+              }
+            ],
+            "highlightRange": [
+              1,
+              2
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "accent",
+              "2": "idle",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world operational state and DNS resolution flow for Network Layer IPv4 Addres...",
+            "items": [
+              "0x00: ETH_FRAME",
+              "0x40: IP_PACKET",
+              "0x80: TCP_SEG",
+              "0xC0: DNS_RECORD"
+            ],
+            "pointers": [
+              {
+                "name": "NET",
+                "index": 2,
+                "tone": "success"
+              }
+            ],
+            "highlightRange": [
+              2,
+              3
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "idle",
+              "2": "success",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Interactive verification and network telemetry diagnostics for Network Layer IPv4 Addres...",
+            "items": [
+              "0x00: ETH_FRAME",
+              "0x40: IP_PACKET",
+              "0x80: TCP_SEG",
+              "0xC0: DNS_RECORD"
+            ],
+            "pointers": [
+              {
+                "name": "NET",
+                "index": 3,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              3,
+              4
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "idle",
+              "2": "idle",
+              "3": "data"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Domain Name System (DNS) Resolution Hierarchy, Root Servers & Caching Flow",
+      "codeHash": "f950e4139b458cc4fdd17375176e31b51da51b30bcbe2d5660fdf97cf5f820f0",
+      "spec": {
+        "template": "cells",
+        "title": "Domain Name System (DNS) Resolution Hierarchy, Root Servers & Caching Flow — Network Subsystem & Routing Telemetry",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Inspecting network packet headers and interface states for Domain Name System (DNS) ...",
+            "items": [
+              "0x00: ETH_FRAME",
+              "0x40: IP_PACKET",
+              "0x80: TCP_SEG",
+              "0xC0: DNS_RECORD"
+            ],
+            "pointers": [
+              {
+                "name": "NET",
+                "index": 0,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              0,
+              1
+            ],
+            "tones": {
+              "0": "data",
+              "1": "idle",
+              "2": "idle",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Subnet prefix matching and routing evaluation for Domain Name System (DNS) ...",
+            "items": [
+              "0x00: ETH_FRAME",
+              "0x40: IP_PACKET",
+              "0x80: TCP_SEG",
+              "0xC0: DNS_RECORD"
+            ],
+            "pointers": [
+              {
+                "name": "NET",
+                "index": 1,
+                "tone": "accent"
+              }
+            ],
+            "highlightRange": [
+              1,
+              2
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "accent",
+              "2": "idle",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world operational state and DNS resolution flow for Domain Name System (DNS) ...",
+            "items": [
+              "0x00: ETH_FRAME",
+              "0x40: IP_PACKET",
+              "0x80: TCP_SEG",
+              "0xC0: DNS_RECORD"
+            ],
+            "pointers": [
+              {
+                "name": "NET",
+                "index": 2,
+                "tone": "success"
+              }
+            ],
+            "highlightRange": [
+              2,
+              3
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "idle",
+              "2": "success",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Interactive verification and network telemetry diagnostics for Domain Name System (DNS) ...",
+            "items": [
+              "0x00: ETH_FRAME",
+              "0x40: IP_PACKET",
+              "0x80: TCP_SEG",
+              "0xC0: DNS_RECORD"
+            ],
+            "pointers": [
+              {
+                "name": "NET",
+                "index": 3,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              3,
+              4
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "idle",
+              "2": "idle",
+              "3": "data"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Master Network Interface Telemetry, Routing Table & DNS Inspection Suite",
+      "codeHash": "2537b658ebc2a4b9b0e4fe0d3252b9612103e12594578cd426e33af71b98550b",
+      "spec": {
+        "template": "cells",
+        "title": "Master Network Interface Telemetry, Routing Table & DNS Inspection Suite — Network Subsystem & Routing Telemetry",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Inspecting network packet headers and interface states for Master Network Interface ...",
+            "items": [
+              "0x00: ETH_FRAME",
+              "0x40: IP_PACKET",
+              "0x80: TCP_SEG",
+              "0xC0: DNS_RECORD"
+            ],
+            "pointers": [
+              {
+                "name": "NET",
+                "index": 0,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              0,
+              1
+            ],
+            "tones": {
+              "0": "data",
+              "1": "idle",
+              "2": "idle",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Subnet prefix matching and routing evaluation for Master Network Interface ...",
+            "items": [
+              "0x00: ETH_FRAME",
+              "0x40: IP_PACKET",
+              "0x80: TCP_SEG",
+              "0xC0: DNS_RECORD"
+            ],
+            "pointers": [
+              {
+                "name": "NET",
+                "index": 1,
+                "tone": "accent"
+              }
+            ],
+            "highlightRange": [
+              1,
+              2
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "accent",
+              "2": "idle",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world operational state and DNS resolution flow for Master Network Interface ...",
+            "items": [
+              "0x00: ETH_FRAME",
+              "0x40: IP_PACKET",
+              "0x80: TCP_SEG",
+              "0xC0: DNS_RECORD"
+            ],
+            "pointers": [
+              {
+                "name": "NET",
+                "index": 2,
+                "tone": "success"
+              }
+            ],
+            "highlightRange": [
+              2,
+              3
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "idle",
+              "2": "success",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Interactive verification and network telemetry diagnostics for Master Network Interface ...",
+            "items": [
+              "0x00: ETH_FRAME",
+              "0x40: IP_PACKET",
+              "0x80: TCP_SEG",
+              "0xC0: DNS_RECORD"
+            ],
+            "pointers": [
+              {
+                "name": "NET",
+                "index": 3,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              3,
+              4
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "idle",
+              "2": "idle",
+              "3": "data"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

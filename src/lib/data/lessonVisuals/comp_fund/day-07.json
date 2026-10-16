@@ -1,0 +1,599 @@
+{
+  "schemaVersion": 1,
+  "prefix": "comp_fund",
+  "day": 7,
+  "promptSha": "cc88f8dddb376201e52fb90d35a7ee0f7021f696f101075c52fc73fc159aae20",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Memory Hierarchy Latency Gap & The Principle of Locality",
+      "codeHash": "5a0a8519c65c21df5e540e6e94e4026dd7b253f62fc45fdd3ecdc63bd69d29fb",
+      "spec": {
+        "template": "cells",
+        "title": "Memory Hierarchy Latency Gap & The Principle of Locality — Memory Subsystem & Cache Telemetry",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Inspecting memory cache hierarchy and address layout for Memory Hierarchy Latency ...",
+            "items": [
+              "0x00: L1_HIT",
+              "0x40: L2_LINE",
+              "0x80: L3_TAG",
+              "0xC0: DRAM_BUS"
+            ],
+            "pointers": [
+              {
+                "name": "MEM",
+                "index": 0,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              0,
+              1
+            ],
+            "tones": {
+              "0": "data",
+              "1": "idle",
+              "2": "idle",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Locality evaluation and hardware latency pipeline for Memory Hierarchy Latency ...",
+            "items": [
+              "0x00: L1_HIT",
+              "0x40: L2_LINE",
+              "0x80: L3_TAG",
+              "0xC0: DRAM_BUS"
+            ],
+            "pointers": [
+              {
+                "name": "MEM",
+                "index": 1,
+                "tone": "accent"
+              }
+            ],
+            "highlightRange": [
+              1,
+              2
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "accent",
+              "2": "idle",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world operational state and TLB translation for Memory Hierarchy Latency ...",
+            "items": [
+              "0x00: L1_HIT",
+              "0x40: L2_LINE",
+              "0x80: L3_TAG",
+              "0xC0: DRAM_BUS"
+            ],
+            "pointers": [
+              {
+                "name": "MEM",
+                "index": 2,
+                "tone": "success"
+              }
+            ],
+            "highlightRange": [
+              2,
+              3
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "idle",
+              "2": "success",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Interactive verification and memory audit telemetry for Memory Hierarchy Latency ...",
+            "items": [
+              "0x00: L1_HIT",
+              "0x40: L2_LINE",
+              "0x80: L3_TAG",
+              "0xC0: DRAM_BUS"
+            ],
+            "pointers": [
+              {
+                "name": "MEM",
+                "index": 3,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              3,
+              4
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "idle",
+              "2": "idle",
+              "3": "data"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "CPU Cache Microarchitecture: L1/L2/L3 Topology & Associativity",
+      "codeHash": "526583d5f7efa98df62fff42f72027e6cd0af9f9d2a05ca2edadab3d258933d4",
+      "spec": {
+        "template": "cells",
+        "title": "CPU Cache Microarchitecture: L1/L2/L3 Topology & Associativity — Memory Subsystem & Cache Telemetry",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Inspecting memory cache hierarchy and address layout for CPU Cache Microarchitectu...",
+            "items": [
+              "0x00: L1_HIT",
+              "0x40: L2_LINE",
+              "0x80: L3_TAG",
+              "0xC0: DRAM_BUS"
+            ],
+            "pointers": [
+              {
+                "name": "MEM",
+                "index": 0,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              0,
+              1
+            ],
+            "tones": {
+              "0": "data",
+              "1": "idle",
+              "2": "idle",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Locality evaluation and hardware latency pipeline for CPU Cache Microarchitectu...",
+            "items": [
+              "0x00: L1_HIT",
+              "0x40: L2_LINE",
+              "0x80: L3_TAG",
+              "0xC0: DRAM_BUS"
+            ],
+            "pointers": [
+              {
+                "name": "MEM",
+                "index": 1,
+                "tone": "accent"
+              }
+            ],
+            "highlightRange": [
+              1,
+              2
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "accent",
+              "2": "idle",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world operational state and TLB translation for CPU Cache Microarchitectu...",
+            "items": [
+              "0x00: L1_HIT",
+              "0x40: L2_LINE",
+              "0x80: L3_TAG",
+              "0xC0: DRAM_BUS"
+            ],
+            "pointers": [
+              {
+                "name": "MEM",
+                "index": 2,
+                "tone": "success"
+              }
+            ],
+            "highlightRange": [
+              2,
+              3
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "idle",
+              "2": "success",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Interactive verification and memory audit telemetry for CPU Cache Microarchitectu...",
+            "items": [
+              "0x00: L1_HIT",
+              "0x40: L2_LINE",
+              "0x80: L3_TAG",
+              "0xC0: DRAM_BUS"
+            ],
+            "pointers": [
+              {
+                "name": "MEM",
+                "index": 3,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              3,
+              4
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "idle",
+              "2": "idle",
+              "3": "data"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cache Coherence, MESI Protocol & False Sharing Mitigation",
+      "codeHash": "293e2466fd555f4b5854b569044889303597a632aaf2afbd92c04eb56c53d6a8",
+      "spec": {
+        "template": "cells",
+        "title": "Cache Coherence, MESI Protocol & False Sharing Mitigation — Memory Subsystem & Cache Telemetry",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Inspecting memory cache hierarchy and address layout for Cache Coherence, MESI Pro...",
+            "items": [
+              "0x00: L1_HIT",
+              "0x40: L2_LINE",
+              "0x80: L3_TAG",
+              "0xC0: DRAM_BUS"
+            ],
+            "pointers": [
+              {
+                "name": "MEM",
+                "index": 0,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              0,
+              1
+            ],
+            "tones": {
+              "0": "data",
+              "1": "idle",
+              "2": "idle",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Locality evaluation and hardware latency pipeline for Cache Coherence, MESI Pro...",
+            "items": [
+              "0x00: L1_HIT",
+              "0x40: L2_LINE",
+              "0x80: L3_TAG",
+              "0xC0: DRAM_BUS"
+            ],
+            "pointers": [
+              {
+                "name": "MEM",
+                "index": 1,
+                "tone": "accent"
+              }
+            ],
+            "highlightRange": [
+              1,
+              2
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "accent",
+              "2": "idle",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world operational state and TLB translation for Cache Coherence, MESI Pro...",
+            "items": [
+              "0x00: L1_HIT",
+              "0x40: L2_LINE",
+              "0x80: L3_TAG",
+              "0xC0: DRAM_BUS"
+            ],
+            "pointers": [
+              {
+                "name": "MEM",
+                "index": 2,
+                "tone": "success"
+              }
+            ],
+            "highlightRange": [
+              2,
+              3
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "idle",
+              "2": "success",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Interactive verification and memory audit telemetry for Cache Coherence, MESI Pro...",
+            "items": [
+              "0x00: L1_HIT",
+              "0x40: L2_LINE",
+              "0x80: L3_TAG",
+              "0xC0: DRAM_BUS"
+            ],
+            "pointers": [
+              {
+                "name": "MEM",
+                "index": 3,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              3,
+              4
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "idle",
+              "2": "idle",
+              "3": "data"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Virtual Memory, Paging, MMU & Translation Lookaside Buffer (TLB)",
+      "codeHash": "260792cbad1c7c7829d02a75ea1c4d55087d8d909de5a7458aefbc3aab3db976",
+      "spec": {
+        "template": "cells",
+        "title": "Virtual Memory, Paging, MMU & Translation Lookaside Buffer (TLB) — Memory Subsystem & Cache Telemetry",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Inspecting memory cache hierarchy and address layout for Virtual Memory, Paging, M...",
+            "items": [
+              "0x00: L1_HIT",
+              "0x40: L2_LINE",
+              "0x80: L3_TAG",
+              "0xC0: DRAM_BUS"
+            ],
+            "pointers": [
+              {
+                "name": "MEM",
+                "index": 0,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              0,
+              1
+            ],
+            "tones": {
+              "0": "data",
+              "1": "idle",
+              "2": "idle",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Locality evaluation and hardware latency pipeline for Virtual Memory, Paging, M...",
+            "items": [
+              "0x00: L1_HIT",
+              "0x40: L2_LINE",
+              "0x80: L3_TAG",
+              "0xC0: DRAM_BUS"
+            ],
+            "pointers": [
+              {
+                "name": "MEM",
+                "index": 1,
+                "tone": "accent"
+              }
+            ],
+            "highlightRange": [
+              1,
+              2
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "accent",
+              "2": "idle",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world operational state and TLB translation for Virtual Memory, Paging, M...",
+            "items": [
+              "0x00: L1_HIT",
+              "0x40: L2_LINE",
+              "0x80: L3_TAG",
+              "0xC0: DRAM_BUS"
+            ],
+            "pointers": [
+              {
+                "name": "MEM",
+                "index": 2,
+                "tone": "success"
+              }
+            ],
+            "highlightRange": [
+              2,
+              3
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "idle",
+              "2": "success",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Interactive verification and memory audit telemetry for Virtual Memory, Paging, M...",
+            "items": [
+              "0x00: L1_HIT",
+              "0x40: L2_LINE",
+              "0x80: L3_TAG",
+              "0xC0: DRAM_BUS"
+            ],
+            "pointers": [
+              {
+                "name": "MEM",
+                "index": 3,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              3,
+              4
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "idle",
+              "2": "idle",
+              "3": "data"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Master Hardware Memory Diagnostics & Cache Profiling Telemetry Suite",
+      "codeHash": "9fa2b62c8ad63c1f4802139f1c312437bbb6db182ed23153a52a44084e80c491",
+      "spec": {
+        "template": "cells",
+        "title": "Master Hardware Memory Diagnostics & Cache Profiling Telemetry Suite — Memory Subsystem & Cache Telemetry",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Inspecting memory cache hierarchy and address layout for Master Hardware Memory Di...",
+            "items": [
+              "0x00: L1_HIT",
+              "0x40: L2_LINE",
+              "0x80: L3_TAG",
+              "0xC0: DRAM_BUS"
+            ],
+            "pointers": [
+              {
+                "name": "MEM",
+                "index": 0,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              0,
+              1
+            ],
+            "tones": {
+              "0": "data",
+              "1": "idle",
+              "2": "idle",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Locality evaluation and hardware latency pipeline for Master Hardware Memory Di...",
+            "items": [
+              "0x00: L1_HIT",
+              "0x40: L2_LINE",
+              "0x80: L3_TAG",
+              "0xC0: DRAM_BUS"
+            ],
+            "pointers": [
+              {
+                "name": "MEM",
+                "index": 1,
+                "tone": "accent"
+              }
+            ],
+            "highlightRange": [
+              1,
+              2
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "accent",
+              "2": "idle",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world operational state and TLB translation for Master Hardware Memory Di...",
+            "items": [
+              "0x00: L1_HIT",
+              "0x40: L2_LINE",
+              "0x80: L3_TAG",
+              "0xC0: DRAM_BUS"
+            ],
+            "pointers": [
+              {
+                "name": "MEM",
+                "index": 2,
+                "tone": "success"
+              }
+            ],
+            "highlightRange": [
+              2,
+              3
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "idle",
+              "2": "success",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Interactive verification and memory audit telemetry for Master Hardware Memory Di...",
+            "items": [
+              "0x00: L1_HIT",
+              "0x40: L2_LINE",
+              "0x80: L3_TAG",
+              "0xC0: DRAM_BUS"
+            ],
+            "pointers": [
+              {
+                "name": "MEM",
+                "index": 3,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              3,
+              4
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "idle",
+              "2": "idle",
+              "3": "data"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,599 @@
+{
+  "schemaVersion": 1,
+  "prefix": "comp_fund",
+  "day": 8,
+  "promptSha": "be60f460e11385076b043e43779abe01c3dff9a1f4cc604ad4818ad46929d842",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Storage Physical Foundations: Electromechanical HDDs vs NAND Flash & Wear Leveling",
+      "codeHash": "83d76f2f36e7e7db3d99acf18427034e4c0e6b98fde3e9d0ba8e9fab6a9444a8",
+      "spec": {
+        "template": "cells",
+        "title": "Storage Physical Foundations: Electromechanical HDDs vs NAND Flash & Wear Leveling — Storage Subsystem & Data Integrity Telemetry",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Inspecting storage physical topology and queue layouts for Storage Physical Foundati...",
+            "items": [
+              "0x00: NVMe_SQ",
+              "0x40: NAND_BLK",
+              "0x80: RAID_XOR",
+              "0xC0: SHA_HASH"
+            ],
+            "pointers": [
+              {
+                "name": "DISK",
+                "index": 0,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              0,
+              1
+            ],
+            "tones": {
+              "0": "data",
+              "1": "idle",
+              "2": "idle",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: PCIe lane bandwidth and parity striping evaluation for Storage Physical Foundati...",
+            "items": [
+              "0x00: NVMe_SQ",
+              "0x40: NAND_BLK",
+              "0x80: RAID_XOR",
+              "0xC0: SHA_HASH"
+            ],
+            "pointers": [
+              {
+                "name": "DISK",
+                "index": 1,
+                "tone": "accent"
+              }
+            ],
+            "highlightRange": [
+              1,
+              2
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "accent",
+              "2": "idle",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world operational state and self-healing telemetry for Storage Physical Foundati...",
+            "items": [
+              "0x00: NVMe_SQ",
+              "0x40: NAND_BLK",
+              "0x80: RAID_XOR",
+              "0xC0: SHA_HASH"
+            ],
+            "pointers": [
+              {
+                "name": "DISK",
+                "index": 2,
+                "tone": "success"
+              }
+            ],
+            "highlightRange": [
+              2,
+              3
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "idle",
+              "2": "success",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Interactive verification and storage health diagnostics for Storage Physical Foundati...",
+            "items": [
+              "0x00: NVMe_SQ",
+              "0x40: NAND_BLK",
+              "0x80: RAID_XOR",
+              "0xC0: SHA_HASH"
+            ],
+            "pointers": [
+              {
+                "name": "DISK",
+                "index": 3,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              3,
+              4
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "idle",
+              "2": "idle",
+              "3": "data"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "NVMe Architecture, PCIe Bus Lanes & Submission/Completion Queues",
+      "codeHash": "a136d3e84236e0038bfc0a819ed5ec35c9aff7971f20199002de1eda18fd3272",
+      "spec": {
+        "template": "cells",
+        "title": "NVMe Architecture, PCIe Bus Lanes & Submission/Completion Queues — Storage Subsystem & Data Integrity Telemetry",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Inspecting storage physical topology and queue layouts for NVMe Architecture, PCIe B...",
+            "items": [
+              "0x00: NVMe_SQ",
+              "0x40: NAND_BLK",
+              "0x80: RAID_XOR",
+              "0xC0: SHA_HASH"
+            ],
+            "pointers": [
+              {
+                "name": "DISK",
+                "index": 0,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              0,
+              1
+            ],
+            "tones": {
+              "0": "data",
+              "1": "idle",
+              "2": "idle",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: PCIe lane bandwidth and parity striping evaluation for NVMe Architecture, PCIe B...",
+            "items": [
+              "0x00: NVMe_SQ",
+              "0x40: NAND_BLK",
+              "0x80: RAID_XOR",
+              "0xC0: SHA_HASH"
+            ],
+            "pointers": [
+              {
+                "name": "DISK",
+                "index": 1,
+                "tone": "accent"
+              }
+            ],
+            "highlightRange": [
+              1,
+              2
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "accent",
+              "2": "idle",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world operational state and self-healing telemetry for NVMe Architecture, PCIe B...",
+            "items": [
+              "0x00: NVMe_SQ",
+              "0x40: NAND_BLK",
+              "0x80: RAID_XOR",
+              "0xC0: SHA_HASH"
+            ],
+            "pointers": [
+              {
+                "name": "DISK",
+                "index": 2,
+                "tone": "success"
+              }
+            ],
+            "highlightRange": [
+              2,
+              3
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "idle",
+              "2": "success",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Interactive verification and storage health diagnostics for NVMe Architecture, PCIe B...",
+            "items": [
+              "0x00: NVMe_SQ",
+              "0x40: NAND_BLK",
+              "0x80: RAID_XOR",
+              "0xC0: SHA_HASH"
+            ],
+            "pointers": [
+              {
+                "name": "DISK",
+                "index": 3,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              3,
+              4
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "idle",
+              "2": "idle",
+              "3": "data"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "RAID Redundancy Architectures & XOR Parity Striping Mathematics",
+      "codeHash": "c1c19d04f66d10325f331490389d432f19d196959ab468385e191f8856ba0629",
+      "spec": {
+        "template": "cells",
+        "title": "RAID Redundancy Architectures & XOR Parity Striping Mathematics — Storage Subsystem & Data Integrity Telemetry",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Inspecting storage physical topology and queue layouts for RAID Redundancy Architect...",
+            "items": [
+              "0x00: NVMe_SQ",
+              "0x40: NAND_BLK",
+              "0x80: RAID_XOR",
+              "0xC0: SHA_HASH"
+            ],
+            "pointers": [
+              {
+                "name": "DISK",
+                "index": 0,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              0,
+              1
+            ],
+            "tones": {
+              "0": "data",
+              "1": "idle",
+              "2": "idle",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: PCIe lane bandwidth and parity striping evaluation for RAID Redundancy Architect...",
+            "items": [
+              "0x00: NVMe_SQ",
+              "0x40: NAND_BLK",
+              "0x80: RAID_XOR",
+              "0xC0: SHA_HASH"
+            ],
+            "pointers": [
+              {
+                "name": "DISK",
+                "index": 1,
+                "tone": "accent"
+              }
+            ],
+            "highlightRange": [
+              1,
+              2
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "accent",
+              "2": "idle",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world operational state and self-healing telemetry for RAID Redundancy Architect...",
+            "items": [
+              "0x00: NVMe_SQ",
+              "0x40: NAND_BLK",
+              "0x80: RAID_XOR",
+              "0xC0: SHA_HASH"
+            ],
+            "pointers": [
+              {
+                "name": "DISK",
+                "index": 2,
+                "tone": "success"
+              }
+            ],
+            "highlightRange": [
+              2,
+              3
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "idle",
+              "2": "success",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Interactive verification and storage health diagnostics for RAID Redundancy Architect...",
+            "items": [
+              "0x00: NVMe_SQ",
+              "0x40: NAND_BLK",
+              "0x80: RAID_XOR",
+              "0xC0: SHA_HASH"
+            ],
+            "pointers": [
+              {
+                "name": "DISK",
+                "index": 3,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              3,
+              4
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "idle",
+              "2": "idle",
+              "3": "data"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Silent Data Corruption (Bit Rot), Copy-on-Write (CoW) & Scrubbing",
+      "codeHash": "9d2c86b5c2b84f9d4031cca958b9a77ea31c4073eb59cc52a80ac3fd958640a7",
+      "spec": {
+        "template": "cells",
+        "title": "Silent Data Corruption (Bit Rot), Copy-on-Write (CoW) & Scrubbing — Storage Subsystem & Data Integrity Telemetry",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Inspecting storage physical topology and queue layouts for Silent Data Corruption (B...",
+            "items": [
+              "0x00: NVMe_SQ",
+              "0x40: NAND_BLK",
+              "0x80: RAID_XOR",
+              "0xC0: SHA_HASH"
+            ],
+            "pointers": [
+              {
+                "name": "DISK",
+                "index": 0,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              0,
+              1
+            ],
+            "tones": {
+              "0": "data",
+              "1": "idle",
+              "2": "idle",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: PCIe lane bandwidth and parity striping evaluation for Silent Data Corruption (B...",
+            "items": [
+              "0x00: NVMe_SQ",
+              "0x40: NAND_BLK",
+              "0x80: RAID_XOR",
+              "0xC0: SHA_HASH"
+            ],
+            "pointers": [
+              {
+                "name": "DISK",
+                "index": 1,
+                "tone": "accent"
+              }
+            ],
+            "highlightRange": [
+              1,
+              2
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "accent",
+              "2": "idle",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world operational state and self-healing telemetry for Silent Data Corruption (B...",
+            "items": [
+              "0x00: NVMe_SQ",
+              "0x40: NAND_BLK",
+              "0x80: RAID_XOR",
+              "0xC0: SHA_HASH"
+            ],
+            "pointers": [
+              {
+                "name": "DISK",
+                "index": 2,
+                "tone": "success"
+              }
+            ],
+            "highlightRange": [
+              2,
+              3
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "idle",
+              "2": "success",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Interactive verification and storage health diagnostics for Silent Data Corruption (B...",
+            "items": [
+              "0x00: NVMe_SQ",
+              "0x40: NAND_BLK",
+              "0x80: RAID_XOR",
+              "0xC0: SHA_HASH"
+            ],
+            "pointers": [
+              {
+                "name": "DISK",
+                "index": 3,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              3,
+              4
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "idle",
+              "2": "idle",
+              "3": "data"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Master Enterprise Storage Benchmarking & Cryptographic Integrity Audit Suite",
+      "codeHash": "a1530c120c4f65ace80eeaa905be83d9edae075fd1009fb456f8ff35e9121e8c",
+      "spec": {
+        "template": "cells",
+        "title": "Master Enterprise Storage Benchmarking & Cryptographic Integrity Audit Suite — Storage Subsystem & Data Integrity Telemetry",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Inspecting storage physical topology and queue layouts for Master Enterprise Storage...",
+            "items": [
+              "0x00: NVMe_SQ",
+              "0x40: NAND_BLK",
+              "0x80: RAID_XOR",
+              "0xC0: SHA_HASH"
+            ],
+            "pointers": [
+              {
+                "name": "DISK",
+                "index": 0,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              0,
+              1
+            ],
+            "tones": {
+              "0": "data",
+              "1": "idle",
+              "2": "idle",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: PCIe lane bandwidth and parity striping evaluation for Master Enterprise Storage...",
+            "items": [
+              "0x00: NVMe_SQ",
+              "0x40: NAND_BLK",
+              "0x80: RAID_XOR",
+              "0xC0: SHA_HASH"
+            ],
+            "pointers": [
+              {
+                "name": "DISK",
+                "index": 1,
+                "tone": "accent"
+              }
+            ],
+            "highlightRange": [
+              1,
+              2
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "accent",
+              "2": "idle",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world operational state and self-healing telemetry for Master Enterprise Storage...",
+            "items": [
+              "0x00: NVMe_SQ",
+              "0x40: NAND_BLK",
+              "0x80: RAID_XOR",
+              "0xC0: SHA_HASH"
+            ],
+            "pointers": [
+              {
+                "name": "DISK",
+                "index": 2,
+                "tone": "success"
+              }
+            ],
+            "highlightRange": [
+              2,
+              3
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "idle",
+              "2": "success",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Interactive verification and storage health diagnostics for Master Enterprise Storage...",
+            "items": [
+              "0x00: NVMe_SQ",
+              "0x40: NAND_BLK",
+              "0x80: RAID_XOR",
+              "0xC0: SHA_HASH"
+            ],
+            "pointers": [
+              {
+                "name": "DISK",
+                "index": 3,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              3,
+              4
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "idle",
+              "2": "idle",
+              "3": "data"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

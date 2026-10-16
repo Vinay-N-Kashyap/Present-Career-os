@@ -1,0 +1,599 @@
+{
+  "schemaVersion": 1,
+  "prefix": "comp_fund",
+  "day": 6,
+  "promptSha": "8d1d85d24670119ebb5eaaf37fe3c4c41d06c0bfad3c1b97820033eeedec2565",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Process Abstraction, Process Control Block (PCB) & PID Lifecycle",
+      "codeHash": "54e242f8390a957fbf1b44c5fc862db350a5d9453c52671811324e700ceadd02",
+      "spec": {
+        "template": "cells",
+        "title": "Process Abstraction, Process Control Block (PCB) & PID Lifecycle — Process & Thread Telemetry",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Inspecting PID process control block and registers for Process Abstraction, Process Con...",
+            "items": [
+              "0x00: PID",
+              "0x04: STATE",
+              "0x08: REG_PC",
+              "0x0C: REG_SP"
+            ],
+            "pointers": [
+              {
+                "name": "PC",
+                "index": 0,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              0,
+              1
+            ],
+            "tones": {
+              "0": "data",
+              "1": "idle",
+              "2": "idle",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Context switching and thread dispatch cycle for Process Abstraction, Process Con...",
+            "items": [
+              "0x00: PID",
+              "0x04: STATE",
+              "0x08: REG_PC",
+              "0x0C: REG_SP"
+            ],
+            "pointers": [
+              {
+                "name": "PC",
+                "index": 2,
+                "tone": "accent"
+              }
+            ],
+            "highlightRange": [
+              2,
+              3
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "idle",
+              "2": "accent",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Scheduling runqueue and vruntime evaluation for Process Abstraction, Process Con...",
+            "items": [
+              "0x00: PID",
+              "0x04: STATE",
+              "0x08: REG_PC",
+              "0x0C: REG_SP"
+            ],
+            "pointers": [
+              {
+                "name": "SP",
+                "index": 3,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              1,
+              2
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "data",
+              "2": "data",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: SRE process health verification and SHA-256 seal for Process Abstraction, Process Con...",
+            "items": [
+              "0x00: PID",
+              "0x04: STATE",
+              "0x08: REG_PC",
+              "0x0C: REG_SP"
+            ],
+            "pointers": [
+              {
+                "name": "PC",
+                "index": 0,
+                "tone": "accent"
+              }
+            ],
+            "highlightRange": [
+              0,
+              3
+            ],
+            "tones": {
+              "0": "accent",
+              "1": "accent",
+              "2": "accent",
+              "3": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Multithreading Architecture, Shared Memory & Concurrency Primitives",
+      "codeHash": "5d6a75dcae6052a0cd62a5045d4a5db24ac160596ce0dabd3f5894dac2d60044",
+      "spec": {
+        "template": "cells",
+        "title": "Multithreading Architecture, Shared Memory & Concurrency Primitives — Process & Thread Telemetry",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Inspecting PID process control block and registers for Multithreading Architecture, Sha...",
+            "items": [
+              "0x00: PID",
+              "0x04: STATE",
+              "0x08: REG_PC",
+              "0x0C: REG_SP"
+            ],
+            "pointers": [
+              {
+                "name": "PC",
+                "index": 0,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              0,
+              1
+            ],
+            "tones": {
+              "0": "data",
+              "1": "idle",
+              "2": "idle",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Context switching and thread dispatch cycle for Multithreading Architecture, Sha...",
+            "items": [
+              "0x00: PID",
+              "0x04: STATE",
+              "0x08: REG_PC",
+              "0x0C: REG_SP"
+            ],
+            "pointers": [
+              {
+                "name": "PC",
+                "index": 2,
+                "tone": "accent"
+              }
+            ],
+            "highlightRange": [
+              2,
+              3
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "idle",
+              "2": "accent",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Scheduling runqueue and vruntime evaluation for Multithreading Architecture, Sha...",
+            "items": [
+              "0x00: PID",
+              "0x04: STATE",
+              "0x08: REG_PC",
+              "0x0C: REG_SP"
+            ],
+            "pointers": [
+              {
+                "name": "SP",
+                "index": 3,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              1,
+              2
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "data",
+              "2": "data",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: SRE process health verification and SHA-256 seal for Multithreading Architecture, Sha...",
+            "items": [
+              "0x00: PID",
+              "0x04: STATE",
+              "0x08: REG_PC",
+              "0x0C: REG_SP"
+            ],
+            "pointers": [
+              {
+                "name": "PC",
+                "index": 0,
+                "tone": "accent"
+              }
+            ],
+            "highlightRange": [
+              0,
+              3
+            ],
+            "tones": {
+              "0": "accent",
+              "1": "accent",
+              "2": "accent",
+              "3": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "CPU Scheduling Algorithms, Quantum Time Slicing & Linux CFS",
+      "codeHash": "f5d419e7f532fa8a8ccbebae928c4f055ee99a906c457884fe75a47c1f88e4ce",
+      "spec": {
+        "template": "cells",
+        "title": "CPU Scheduling Algorithms, Quantum Time Slicing & Linux CFS — Process & Thread Telemetry",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Inspecting PID process control block and registers for CPU Scheduling Algorithms, Quant...",
+            "items": [
+              "0x00: PID",
+              "0x04: STATE",
+              "0x08: REG_PC",
+              "0x0C: REG_SP"
+            ],
+            "pointers": [
+              {
+                "name": "PC",
+                "index": 0,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              0,
+              1
+            ],
+            "tones": {
+              "0": "data",
+              "1": "idle",
+              "2": "idle",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Context switching and thread dispatch cycle for CPU Scheduling Algorithms, Quant...",
+            "items": [
+              "0x00: PID",
+              "0x04: STATE",
+              "0x08: REG_PC",
+              "0x0C: REG_SP"
+            ],
+            "pointers": [
+              {
+                "name": "PC",
+                "index": 2,
+                "tone": "accent"
+              }
+            ],
+            "highlightRange": [
+              2,
+              3
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "idle",
+              "2": "accent",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Scheduling runqueue and vruntime evaluation for CPU Scheduling Algorithms, Quant...",
+            "items": [
+              "0x00: PID",
+              "0x04: STATE",
+              "0x08: REG_PC",
+              "0x0C: REG_SP"
+            ],
+            "pointers": [
+              {
+                "name": "SP",
+                "index": 3,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              1,
+              2
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "data",
+              "2": "data",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: SRE process health verification and SHA-256 seal for CPU Scheduling Algorithms, Quant...",
+            "items": [
+              "0x00: PID",
+              "0x04: STATE",
+              "0x08: REG_PC",
+              "0x0C: REG_SP"
+            ],
+            "pointers": [
+              {
+                "name": "PC",
+                "index": 0,
+                "tone": "accent"
+              }
+            ],
+            "highlightRange": [
+              0,
+              3
+            ],
+            "tones": {
+              "0": "accent",
+              "1": "accent",
+              "2": "accent",
+              "3": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Context Switching Mechanics, CPU Affinity & cgroups Throttling",
+      "codeHash": "84e6d09f2fb14fa58f32fb3af320ff482a2d099a4866e650495b22630a2abf9e",
+      "spec": {
+        "template": "cells",
+        "title": "Context Switching Mechanics, CPU Affinity & cgroups Throttling — Process & Thread Telemetry",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Inspecting PID process control block and registers for Context Switching Mechanics, CPU...",
+            "items": [
+              "0x00: PID",
+              "0x04: STATE",
+              "0x08: REG_PC",
+              "0x0C: REG_SP"
+            ],
+            "pointers": [
+              {
+                "name": "PC",
+                "index": 0,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              0,
+              1
+            ],
+            "tones": {
+              "0": "data",
+              "1": "idle",
+              "2": "idle",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Context switching and thread dispatch cycle for Context Switching Mechanics, CPU...",
+            "items": [
+              "0x00: PID",
+              "0x04: STATE",
+              "0x08: REG_PC",
+              "0x0C: REG_SP"
+            ],
+            "pointers": [
+              {
+                "name": "PC",
+                "index": 2,
+                "tone": "accent"
+              }
+            ],
+            "highlightRange": [
+              2,
+              3
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "idle",
+              "2": "accent",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Scheduling runqueue and vruntime evaluation for Context Switching Mechanics, CPU...",
+            "items": [
+              "0x00: PID",
+              "0x04: STATE",
+              "0x08: REG_PC",
+              "0x0C: REG_SP"
+            ],
+            "pointers": [
+              {
+                "name": "SP",
+                "index": 3,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              1,
+              2
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "data",
+              "2": "data",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: SRE process health verification and SHA-256 seal for Context Switching Mechanics, CPU...",
+            "items": [
+              "0x00: PID",
+              "0x04: STATE",
+              "0x08: REG_PC",
+              "0x0C: REG_SP"
+            ],
+            "pointers": [
+              {
+                "name": "PC",
+                "index": 0,
+                "tone": "accent"
+              }
+            ],
+            "highlightRange": [
+              0,
+              3
+            ],
+            "tones": {
+              "0": "accent",
+              "1": "accent",
+              "2": "accent",
+              "3": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Master Linux Process Telemetry & SRE Health Inspection Suite",
+      "codeHash": "2a20b033a89160619a3ad70beeee55c8fd218ac8e03d4f04771a8e2b327f0249",
+      "spec": {
+        "template": "cells",
+        "title": "Master Linux Process Telemetry & SRE Health Inspection Suite — Process & Thread Telemetry",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Inspecting PID process control block and registers for Master Linux Process Telemetry &...",
+            "items": [
+              "0x00: PID",
+              "0x04: STATE",
+              "0x08: REG_PC",
+              "0x0C: REG_SP"
+            ],
+            "pointers": [
+              {
+                "name": "PC",
+                "index": 0,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              0,
+              1
+            ],
+            "tones": {
+              "0": "data",
+              "1": "idle",
+              "2": "idle",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Context switching and thread dispatch cycle for Master Linux Process Telemetry &...",
+            "items": [
+              "0x00: PID",
+              "0x04: STATE",
+              "0x08: REG_PC",
+              "0x0C: REG_SP"
+            ],
+            "pointers": [
+              {
+                "name": "PC",
+                "index": 2,
+                "tone": "accent"
+              }
+            ],
+            "highlightRange": [
+              2,
+              3
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "idle",
+              "2": "accent",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Scheduling runqueue and vruntime evaluation for Master Linux Process Telemetry &...",
+            "items": [
+              "0x00: PID",
+              "0x04: STATE",
+              "0x08: REG_PC",
+              "0x0C: REG_SP"
+            ],
+            "pointers": [
+              {
+                "name": "SP",
+                "index": 3,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              1,
+              2
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "data",
+              "2": "data",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: SRE process health verification and SHA-256 seal for Master Linux Process Telemetry &...",
+            "items": [
+              "0x00: PID",
+              "0x04: STATE",
+              "0x08: REG_PC",
+              "0x0C: REG_SP"
+            ],
+            "pointers": [
+              {
+                "name": "PC",
+                "index": 0,
+                "tone": "accent"
+              }
+            ],
+            "highlightRange": [
+              0,
+              3
+            ],
+            "tones": {
+              "0": "accent",
+              "1": "accent",
+              "2": "accent",
+              "3": "accent"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

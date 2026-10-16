@@ -1,0 +1,599 @@
+{
+  "schemaVersion": 1,
+  "prefix": "comp_fund",
+  "day": 11,
+  "promptSha": "27ea7408f0e50a0eabb9e54dff8a45be15da4ad82088b36f63b3bd7ad9e9c3d9",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Modern Browser Multi-Process Architecture: The Critical Rendering Path",
+      "codeHash": "93ed2167c1194f3c34dc10e1a2188ca18284a30c6da8def3ee93264eae71ffd5",
+      "spec": {
+        "template": "cells",
+        "title": "Modern Browser Multi-Process Architecture: The Critical Rendering Path — Browser Subsystem & DevTools Telemetry",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Inspecting browser runtime and DOM tree structures for Modern Browser Multi-Proc...",
+            "items": [
+              "0x00: DOM_TREE",
+              "0x40: NET_WATERFALL",
+              "0x80: SEC_COOKIE",
+              "0xC0: V8_EVENT_LOOP"
+            ],
+            "pointers": [
+              {
+                "name": "UI",
+                "index": 0,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              0,
+              1
+            ],
+            "tones": {
+              "0": "data",
+              "1": "idle",
+              "2": "idle",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Critical rendering path and waterfall evaluation for Modern Browser Multi-Proc...",
+            "items": [
+              "0x00: DOM_TREE",
+              "0x40: NET_WATERFALL",
+              "0x80: SEC_COOKIE",
+              "0xC0: V8_EVENT_LOOP"
+            ],
+            "pointers": [
+              {
+                "name": "UI",
+                "index": 1,
+                "tone": "accent"
+              }
+            ],
+            "highlightRange": [
+              1,
+              2
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "accent",
+              "2": "idle",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world operational state and storage security for Modern Browser Multi-Proc...",
+            "items": [
+              "0x00: DOM_TREE",
+              "0x40: NET_WATERFALL",
+              "0x80: SEC_COOKIE",
+              "0xC0: V8_EVENT_LOOP"
+            ],
+            "pointers": [
+              {
+                "name": "UI",
+                "index": 2,
+                "tone": "success"
+              }
+            ],
+            "highlightRange": [
+              2,
+              3
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "idle",
+              "2": "success",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Interactive verification and browser audit diagnostics for Modern Browser Multi-Proc...",
+            "items": [
+              "0x00: DOM_TREE",
+              "0x40: NET_WATERFALL",
+              "0x80: SEC_COOKIE",
+              "0xC0: V8_EVENT_LOOP"
+            ],
+            "pointers": [
+              {
+                "name": "UI",
+                "index": 3,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              3,
+              4
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "idle",
+              "2": "idle",
+              "3": "data"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Network Waterfall Telemetry: DNS, TCP, TLS, TTFB & Download Lifecycles",
+      "codeHash": "5f3134f3084221f1e5b2b0a7b597e323db08e3a1adeef9672d60a3efd60c59c1",
+      "spec": {
+        "template": "cells",
+        "title": "Network Waterfall Telemetry: DNS, TCP, TLS, TTFB & Download Lifecycles — Browser Subsystem & DevTools Telemetry",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Inspecting browser runtime and DOM tree structures for Network Waterfall Telemet...",
+            "items": [
+              "0x00: DOM_TREE",
+              "0x40: NET_WATERFALL",
+              "0x80: SEC_COOKIE",
+              "0xC0: V8_EVENT_LOOP"
+            ],
+            "pointers": [
+              {
+                "name": "UI",
+                "index": 0,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              0,
+              1
+            ],
+            "tones": {
+              "0": "data",
+              "1": "idle",
+              "2": "idle",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Critical rendering path and waterfall evaluation for Network Waterfall Telemet...",
+            "items": [
+              "0x00: DOM_TREE",
+              "0x40: NET_WATERFALL",
+              "0x80: SEC_COOKIE",
+              "0xC0: V8_EVENT_LOOP"
+            ],
+            "pointers": [
+              {
+                "name": "UI",
+                "index": 1,
+                "tone": "accent"
+              }
+            ],
+            "highlightRange": [
+              1,
+              2
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "accent",
+              "2": "idle",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world operational state and storage security for Network Waterfall Telemet...",
+            "items": [
+              "0x00: DOM_TREE",
+              "0x40: NET_WATERFALL",
+              "0x80: SEC_COOKIE",
+              "0xC0: V8_EVENT_LOOP"
+            ],
+            "pointers": [
+              {
+                "name": "UI",
+                "index": 2,
+                "tone": "success"
+              }
+            ],
+            "highlightRange": [
+              2,
+              3
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "idle",
+              "2": "success",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Interactive verification and browser audit diagnostics for Network Waterfall Telemet...",
+            "items": [
+              "0x00: DOM_TREE",
+              "0x40: NET_WATERFALL",
+              "0x80: SEC_COOKIE",
+              "0xC0: V8_EVENT_LOOP"
+            ],
+            "pointers": [
+              {
+                "name": "UI",
+                "index": 3,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              3,
+              4
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "idle",
+              "2": "idle",
+              "3": "data"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Client-Side Storage Engines: LocalStorage, SessionStorage & Cookie Security",
+      "codeHash": "d193f2fc940a7f36ab2721be1137b4dd1de064514c50141d7717d683bf544a09",
+      "spec": {
+        "template": "cells",
+        "title": "Client-Side Storage Engines: LocalStorage, SessionStorage & Cookie Security — Browser Subsystem & DevTools Telemetry",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Inspecting browser runtime and DOM tree structures for Client-Side Storage Engin...",
+            "items": [
+              "0x00: DOM_TREE",
+              "0x40: NET_WATERFALL",
+              "0x80: SEC_COOKIE",
+              "0xC0: V8_EVENT_LOOP"
+            ],
+            "pointers": [
+              {
+                "name": "UI",
+                "index": 0,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              0,
+              1
+            ],
+            "tones": {
+              "0": "data",
+              "1": "idle",
+              "2": "idle",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Critical rendering path and waterfall evaluation for Client-Side Storage Engin...",
+            "items": [
+              "0x00: DOM_TREE",
+              "0x40: NET_WATERFALL",
+              "0x80: SEC_COOKIE",
+              "0xC0: V8_EVENT_LOOP"
+            ],
+            "pointers": [
+              {
+                "name": "UI",
+                "index": 1,
+                "tone": "accent"
+              }
+            ],
+            "highlightRange": [
+              1,
+              2
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "accent",
+              "2": "idle",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world operational state and storage security for Client-Side Storage Engin...",
+            "items": [
+              "0x00: DOM_TREE",
+              "0x40: NET_WATERFALL",
+              "0x80: SEC_COOKIE",
+              "0xC0: V8_EVENT_LOOP"
+            ],
+            "pointers": [
+              {
+                "name": "UI",
+                "index": 2,
+                "tone": "success"
+              }
+            ],
+            "highlightRange": [
+              2,
+              3
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "idle",
+              "2": "success",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Interactive verification and browser audit diagnostics for Client-Side Storage Engin...",
+            "items": [
+              "0x00: DOM_TREE",
+              "0x40: NET_WATERFALL",
+              "0x80: SEC_COOKIE",
+              "0xC0: V8_EVENT_LOOP"
+            ],
+            "pointers": [
+              {
+                "name": "UI",
+                "index": 3,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              3,
+              4
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "idle",
+              "2": "idle",
+              "3": "data"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The JavaScript Runtime & Event Loop: Microtasks, Macrotasks & Long Tasks",
+      "codeHash": "53afaebdd867cdac8b32a55d2df5e29970e426b2851cb48d6e05cfe16ad39d6a",
+      "spec": {
+        "template": "cells",
+        "title": "The JavaScript Runtime & Event Loop: Microtasks, Macrotasks & Long Tasks — Browser Subsystem & DevTools Telemetry",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Inspecting browser runtime and DOM tree structures for The JavaScript Runtime & ...",
+            "items": [
+              "0x00: DOM_TREE",
+              "0x40: NET_WATERFALL",
+              "0x80: SEC_COOKIE",
+              "0xC0: V8_EVENT_LOOP"
+            ],
+            "pointers": [
+              {
+                "name": "UI",
+                "index": 0,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              0,
+              1
+            ],
+            "tones": {
+              "0": "data",
+              "1": "idle",
+              "2": "idle",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Critical rendering path and waterfall evaluation for The JavaScript Runtime & ...",
+            "items": [
+              "0x00: DOM_TREE",
+              "0x40: NET_WATERFALL",
+              "0x80: SEC_COOKIE",
+              "0xC0: V8_EVENT_LOOP"
+            ],
+            "pointers": [
+              {
+                "name": "UI",
+                "index": 1,
+                "tone": "accent"
+              }
+            ],
+            "highlightRange": [
+              1,
+              2
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "accent",
+              "2": "idle",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world operational state and storage security for The JavaScript Runtime & ...",
+            "items": [
+              "0x00: DOM_TREE",
+              "0x40: NET_WATERFALL",
+              "0x80: SEC_COOKIE",
+              "0xC0: V8_EVENT_LOOP"
+            ],
+            "pointers": [
+              {
+                "name": "UI",
+                "index": 2,
+                "tone": "success"
+              }
+            ],
+            "highlightRange": [
+              2,
+              3
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "idle",
+              "2": "success",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Interactive verification and browser audit diagnostics for The JavaScript Runtime & ...",
+            "items": [
+              "0x00: DOM_TREE",
+              "0x40: NET_WATERFALL",
+              "0x80: SEC_COOKIE",
+              "0xC0: V8_EVENT_LOOP"
+            ],
+            "pointers": [
+              {
+                "name": "UI",
+                "index": 3,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              3,
+              4
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "idle",
+              "2": "idle",
+              "3": "data"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Master Full-Stack Browser DevTools Audit & Web Performance Optimization Suite",
+      "codeHash": "88892f3c54688a0b5faa7cab348b5253f186d2fdcb53af05239269714232d2c2",
+      "spec": {
+        "template": "cells",
+        "title": "Master Full-Stack Browser DevTools Audit & Web Performance Optimization Suite — Browser Subsystem & DevTools Telemetry",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Inspecting browser runtime and DOM tree structures for Master Full-Stack Browser...",
+            "items": [
+              "0x00: DOM_TREE",
+              "0x40: NET_WATERFALL",
+              "0x80: SEC_COOKIE",
+              "0xC0: V8_EVENT_LOOP"
+            ],
+            "pointers": [
+              {
+                "name": "UI",
+                "index": 0,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              0,
+              1
+            ],
+            "tones": {
+              "0": "data",
+              "1": "idle",
+              "2": "idle",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Critical rendering path and waterfall evaluation for Master Full-Stack Browser...",
+            "items": [
+              "0x00: DOM_TREE",
+              "0x40: NET_WATERFALL",
+              "0x80: SEC_COOKIE",
+              "0xC0: V8_EVENT_LOOP"
+            ],
+            "pointers": [
+              {
+                "name": "UI",
+                "index": 1,
+                "tone": "accent"
+              }
+            ],
+            "highlightRange": [
+              1,
+              2
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "accent",
+              "2": "idle",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world operational state and storage security for Master Full-Stack Browser...",
+            "items": [
+              "0x00: DOM_TREE",
+              "0x40: NET_WATERFALL",
+              "0x80: SEC_COOKIE",
+              "0xC0: V8_EVENT_LOOP"
+            ],
+            "pointers": [
+              {
+                "name": "UI",
+                "index": 2,
+                "tone": "success"
+              }
+            ],
+            "highlightRange": [
+              2,
+              3
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "idle",
+              "2": "success",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Interactive verification and browser audit diagnostics for Master Full-Stack Browser...",
+            "items": [
+              "0x00: DOM_TREE",
+              "0x40: NET_WATERFALL",
+              "0x80: SEC_COOKIE",
+              "0xC0: V8_EVENT_LOOP"
+            ],
+            "pointers": [
+              {
+                "name": "UI",
+                "index": 3,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              3,
+              4
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "idle",
+              "2": "idle",
+              "3": "data"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

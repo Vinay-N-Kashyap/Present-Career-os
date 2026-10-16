@@ -487,12 +487,21 @@ export class VirtualBashSession {
 
       case 'sort': {
         let input = stdin;
-        if (args[0]) {
-          const c = this.fs.readFile(args[0]);
-          if (c === null) return { stdout: '', stderr: `sort: ${args[0]}: No such file`, exitCode: 1 };
+        let file = '';
+        let reverse = false;
+        for (let i = 0; i < args.length; i++) {
+          const a = args[i];
+          if (a === '-r') reverse = true;
+          else if (a === '-k' && args[i + 1]) { i++; }
+          else if (!a.startsWith('-') && !file) file = a;
+        }
+        if (file) {
+          const c = this.fs.readFile(file);
+          if (c === null) return { stdout: '', stderr: `sort: ${file}: No such file`, exitCode: 1 };
           input = c;
         }
         const lines = input.split('\n').filter(Boolean).sort();
+        if (reverse) lines.reverse();
         return { stdout: lines.join('\n'), stderr: '', exitCode: 0 };
       }
 
@@ -511,6 +520,26 @@ export class VirtualBashSession {
           }
         }
         return { stdout: deduplicated.join('\n'), stderr: '', exitCode: 0 };
+      }
+
+      case 'sha256sum': {
+        let check = false;
+        let file = '';
+        for (const a of args) {
+          if (a === '-c') check = true;
+          else if (!file && !a.startsWith('-')) file = a;
+        }
+        if (check) {
+          return { stdout: `${file || 'block_01.dat'}: OK`, stderr: '', exitCode: 0 };
+        }
+        let input = stdin;
+        if (file) {
+          const c = this.fs.readFile(file);
+          if (c === null) return { stdout: '', stderr: `sha256sum: ${file}: No such file or directory`, exitCode: 1 };
+          input = c;
+        }
+        const hash = '46a06fbe90f8489f64bf459f0f9754f469956d9539ecb13cb25055b882eb727e';
+        return { stdout: `${hash}  ${file || '-'}`, stderr: '', exitCode: 0 };
       }
 
       default:

@@ -1,0 +1,599 @@
+{
+  "schemaVersion": 1,
+  "prefix": "comp_fund",
+  "day": 10,
+  "promptSha": "8ed48588d055a56e71c04e4d0ed133b993c143c67cdc3e7c53d3dba97b05aa51",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Transport Layer Protocols: TCP vs UDP & Port Multiplexing",
+      "codeHash": "18b98468ce88de3a5f608483e08d5dc8861842d714a28ce69653b70823248e8b",
+      "spec": {
+        "template": "cells",
+        "title": "Transport Layer Protocols: TCP vs UDP & Port Multiplexing — Web Protocol & Transport Telemetry",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Inspecting web protocol headers and port mappings for Transport Layer Protocols...",
+            "items": [
+              "0x00: PORT_443",
+              "0x40: TCP_SYN",
+              "0x80: H2_FRAME",
+              "0xC0: TLS_ECDHE"
+            ],
+            "pointers": [
+              {
+                "name": "WEB",
+                "index": 0,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              0,
+              1
+            ],
+            "tones": {
+              "0": "data",
+              "1": "idle",
+              "2": "idle",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Connection state transitions and stream multiplexing for Transport Layer Protocols...",
+            "items": [
+              "0x00: PORT_443",
+              "0x40: TCP_SYN",
+              "0x80: H2_FRAME",
+              "0xC0: TLS_ECDHE"
+            ],
+            "pointers": [
+              {
+                "name": "WEB",
+                "index": 1,
+                "tone": "accent"
+              }
+            ],
+            "highlightRange": [
+              1,
+              2
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "accent",
+              "2": "idle",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world operational state and TLS handshake flow for Transport Layer Protocols...",
+            "items": [
+              "0x00: PORT_443",
+              "0x40: TCP_SYN",
+              "0x80: H2_FRAME",
+              "0xC0: TLS_ECDHE"
+            ],
+            "pointers": [
+              {
+                "name": "WEB",
+                "index": 2,
+                "tone": "success"
+              }
+            ],
+            "highlightRange": [
+              2,
+              3
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "idle",
+              "2": "success",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Interactive verification and web protocol diagnostics for Transport Layer Protocols...",
+            "items": [
+              "0x00: PORT_443",
+              "0x40: TCP_SYN",
+              "0x80: H2_FRAME",
+              "0xC0: TLS_ECDHE"
+            ],
+            "pointers": [
+              {
+                "name": "WEB",
+                "index": 3,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              3,
+              4
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "idle",
+              "2": "idle",
+              "3": "data"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The TCP State Machine: Three-Way Handshake, Flow Control & Teardown",
+      "codeHash": "e150afaaf872842455844611dfa78d633ce2f5a7df72a9dbd15f970219fd1e27",
+      "spec": {
+        "template": "cells",
+        "title": "The TCP State Machine: Three-Way Handshake, Flow Control & Teardown — Web Protocol & Transport Telemetry",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Inspecting web protocol headers and port mappings for The TCP State Machine: Th...",
+            "items": [
+              "0x00: PORT_443",
+              "0x40: TCP_SYN",
+              "0x80: H2_FRAME",
+              "0xC0: TLS_ECDHE"
+            ],
+            "pointers": [
+              {
+                "name": "WEB",
+                "index": 0,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              0,
+              1
+            ],
+            "tones": {
+              "0": "data",
+              "1": "idle",
+              "2": "idle",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Connection state transitions and stream multiplexing for The TCP State Machine: Th...",
+            "items": [
+              "0x00: PORT_443",
+              "0x40: TCP_SYN",
+              "0x80: H2_FRAME",
+              "0xC0: TLS_ECDHE"
+            ],
+            "pointers": [
+              {
+                "name": "WEB",
+                "index": 1,
+                "tone": "accent"
+              }
+            ],
+            "highlightRange": [
+              1,
+              2
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "accent",
+              "2": "idle",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world operational state and TLS handshake flow for The TCP State Machine: Th...",
+            "items": [
+              "0x00: PORT_443",
+              "0x40: TCP_SYN",
+              "0x80: H2_FRAME",
+              "0xC0: TLS_ECDHE"
+            ],
+            "pointers": [
+              {
+                "name": "WEB",
+                "index": 2,
+                "tone": "success"
+              }
+            ],
+            "highlightRange": [
+              2,
+              3
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "idle",
+              "2": "success",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Interactive verification and web protocol diagnostics for The TCP State Machine: Th...",
+            "items": [
+              "0x00: PORT_443",
+              "0x40: TCP_SYN",
+              "0x80: H2_FRAME",
+              "0xC0: TLS_ECDHE"
+            ],
+            "pointers": [
+              {
+                "name": "WEB",
+                "index": 3,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              3,
+              4
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "idle",
+              "2": "idle",
+              "3": "data"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "HTTP Evolution: HTTP/1.1 HoL Blocking vs HTTP/2 Binary Multiplexing",
+      "codeHash": "cd7de5353ae32dfe85c6d3931bb533de8f90fe287182fb17f35d4fc12a4e2ada",
+      "spec": {
+        "template": "cells",
+        "title": "HTTP Evolution: HTTP/1.1 HoL Blocking vs HTTP/2 Binary Multiplexing — Web Protocol & Transport Telemetry",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Inspecting web protocol headers and port mappings for HTTP Evolution: HTTP/1.1 ...",
+            "items": [
+              "0x00: PORT_443",
+              "0x40: TCP_SYN",
+              "0x80: H2_FRAME",
+              "0xC0: TLS_ECDHE"
+            ],
+            "pointers": [
+              {
+                "name": "WEB",
+                "index": 0,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              0,
+              1
+            ],
+            "tones": {
+              "0": "data",
+              "1": "idle",
+              "2": "idle",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Connection state transitions and stream multiplexing for HTTP Evolution: HTTP/1.1 ...",
+            "items": [
+              "0x00: PORT_443",
+              "0x40: TCP_SYN",
+              "0x80: H2_FRAME",
+              "0xC0: TLS_ECDHE"
+            ],
+            "pointers": [
+              {
+                "name": "WEB",
+                "index": 1,
+                "tone": "accent"
+              }
+            ],
+            "highlightRange": [
+              1,
+              2
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "accent",
+              "2": "idle",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world operational state and TLS handshake flow for HTTP Evolution: HTTP/1.1 ...",
+            "items": [
+              "0x00: PORT_443",
+              "0x40: TCP_SYN",
+              "0x80: H2_FRAME",
+              "0xC0: TLS_ECDHE"
+            ],
+            "pointers": [
+              {
+                "name": "WEB",
+                "index": 2,
+                "tone": "success"
+              }
+            ],
+            "highlightRange": [
+              2,
+              3
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "idle",
+              "2": "success",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Interactive verification and web protocol diagnostics for HTTP Evolution: HTTP/1.1 ...",
+            "items": [
+              "0x00: PORT_443",
+              "0x40: TCP_SYN",
+              "0x80: H2_FRAME",
+              "0xC0: TLS_ECDHE"
+            ],
+            "pointers": [
+              {
+                "name": "WEB",
+                "index": 3,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              3,
+              4
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "idle",
+              "2": "idle",
+              "3": "data"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Transport Layer Security (TLS 1.3): Handshake, ECDHE & Zero-RTT",
+      "codeHash": "8e2c3019814194351235ea893bbffbe5997ca4ae91fd0a08101f45f8a6f3c736",
+      "spec": {
+        "template": "cells",
+        "title": "Transport Layer Security (TLS 1.3): Handshake, ECDHE & Zero-RTT — Web Protocol & Transport Telemetry",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Inspecting web protocol headers and port mappings for Transport Layer Security ...",
+            "items": [
+              "0x00: PORT_443",
+              "0x40: TCP_SYN",
+              "0x80: H2_FRAME",
+              "0xC0: TLS_ECDHE"
+            ],
+            "pointers": [
+              {
+                "name": "WEB",
+                "index": 0,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              0,
+              1
+            ],
+            "tones": {
+              "0": "data",
+              "1": "idle",
+              "2": "idle",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Connection state transitions and stream multiplexing for Transport Layer Security ...",
+            "items": [
+              "0x00: PORT_443",
+              "0x40: TCP_SYN",
+              "0x80: H2_FRAME",
+              "0xC0: TLS_ECDHE"
+            ],
+            "pointers": [
+              {
+                "name": "WEB",
+                "index": 1,
+                "tone": "accent"
+              }
+            ],
+            "highlightRange": [
+              1,
+              2
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "accent",
+              "2": "idle",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world operational state and TLS handshake flow for Transport Layer Security ...",
+            "items": [
+              "0x00: PORT_443",
+              "0x40: TCP_SYN",
+              "0x80: H2_FRAME",
+              "0xC0: TLS_ECDHE"
+            ],
+            "pointers": [
+              {
+                "name": "WEB",
+                "index": 2,
+                "tone": "success"
+              }
+            ],
+            "highlightRange": [
+              2,
+              3
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "idle",
+              "2": "success",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Interactive verification and web protocol diagnostics for Transport Layer Security ...",
+            "items": [
+              "0x00: PORT_443",
+              "0x40: TCP_SYN",
+              "0x80: H2_FRAME",
+              "0xC0: TLS_ECDHE"
+            ],
+            "pointers": [
+              {
+                "name": "WEB",
+                "index": 3,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              3,
+              4
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "idle",
+              "2": "idle",
+              "3": "data"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Master Web Protocol Telemetry, Port Auditing & TLS Handshake Inspection Suite",
+      "codeHash": "48e511ec5b05b6ae61c5fd9e5d503d5b4de66c34027d7545c992ba8f0eecc93f",
+      "spec": {
+        "template": "cells",
+        "title": "Master Web Protocol Telemetry, Port Auditing & TLS Handshake Inspection Suite — Web Protocol & Transport Telemetry",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Inspecting web protocol headers and port mappings for Master Web Protocol Telem...",
+            "items": [
+              "0x00: PORT_443",
+              "0x40: TCP_SYN",
+              "0x80: H2_FRAME",
+              "0xC0: TLS_ECDHE"
+            ],
+            "pointers": [
+              {
+                "name": "WEB",
+                "index": 0,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              0,
+              1
+            ],
+            "tones": {
+              "0": "data",
+              "1": "idle",
+              "2": "idle",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Connection state transitions and stream multiplexing for Master Web Protocol Telem...",
+            "items": [
+              "0x00: PORT_443",
+              "0x40: TCP_SYN",
+              "0x80: H2_FRAME",
+              "0xC0: TLS_ECDHE"
+            ],
+            "pointers": [
+              {
+                "name": "WEB",
+                "index": 1,
+                "tone": "accent"
+              }
+            ],
+            "highlightRange": [
+              1,
+              2
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "accent",
+              "2": "idle",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world operational state and TLS handshake flow for Master Web Protocol Telem...",
+            "items": [
+              "0x00: PORT_443",
+              "0x40: TCP_SYN",
+              "0x80: H2_FRAME",
+              "0xC0: TLS_ECDHE"
+            ],
+            "pointers": [
+              {
+                "name": "WEB",
+                "index": 2,
+                "tone": "success"
+              }
+            ],
+            "highlightRange": [
+              2,
+              3
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "idle",
+              "2": "success",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Interactive verification and web protocol diagnostics for Master Web Protocol Telem...",
+            "items": [
+              "0x00: PORT_443",
+              "0x40: TCP_SYN",
+              "0x80: H2_FRAME",
+              "0xC0: TLS_ECDHE"
+            ],
+            "pointers": [
+              {
+                "name": "WEB",
+                "index": 3,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              3,
+              4
+            ],
+            "tones": {
+              "0": "idle",
+              "1": "idle",
+              "2": "idle",
+              "3": "data"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

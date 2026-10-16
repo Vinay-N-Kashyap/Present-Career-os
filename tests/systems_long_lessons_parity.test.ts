@@ -674,3 +674,215 @@ test('Systems Long Lessons: iot_emb Day 5 Wireless Networking, BLE GATT & Secure
   const res5 = await executeCppSuite(iotEmbLesson5.parts[4].code!, 'verifyOtaFirmwareSignature');
   assert.equal(res5.allPassed, true, 'Part 5 verifyOtaFirmwareSignature must pass AST analysis');
 });
+
+test('Systems Long Lessons: comp_fund Day 6 Process Management & Multitasking Verification', async () => {
+  const compFundD6 = getLongLesson('comp_fund', 6);
+  assert.ok(compFundD6, 'comp_fund Day 6 must resolve');
+  assert.equal(compFundD6.day, 6);
+  assert.equal(compFundD6.parts.length, 5);
+
+  const spokenMin = estimateSpokenMinutes(compFundD6);
+  const totalMin = estimateLessonMinutes(compFundD6);
+  assert.ok(spokenMin >= 8, `Spoken minutes should be >= 8 (got ${spokenMin})`);
+  assert.ok(totalMin >= 15, `Total minutes should be >= 15 (got ${totalMin})`);
+
+  for (let i = 0; i < compFundD6.parts.length; i++) {
+    const part = compFundD6.parts[i];
+    assert.ok(part.title.length > 0, `Part ${i + 1} must have a non-empty title`);
+    assert.ok(part.say.length >= 3, `Part ${i + 1} must have at least 3 explanation paragraphs`);
+    assert.ok(part.example && part.example.length > 0, `Part ${i + 1} must have a real-world example`);
+    assert.ok(part.code && part.code.length > 0, `Part ${i + 1} code must contain bash commands`);
+    assert.ok(part.output && part.output.length > 0, `Part ${i + 1} must have expected output`);
+    assert.ok(part.tryIt && part.tryIt.length > 0, `Part ${i + 1} must have a tryIt experiment`);
+
+    // Socratic Check validation
+    const check = part.check as any;
+    assert.ok(check.question.length > 0, `Part ${i + 1} check question must be non-empty`);
+    assert.ok(check.options.length >= 3, `Part ${i + 1} check must have at least 3 options`);
+    assert.ok(check.answer >= 0 && check.answer < check.options.length, `Part ${i + 1} answer must be valid`);
+    assert.ok(check.why.length > 0, `Part ${i + 1} check explanation must be non-empty`);
+  }
+
+  // Part 1: PCB & PID
+  const res1 = await executeBashSuite(compFundD6.parts[0].code!);
+  assert.equal(res1.allPassed, true, 'Part 1 PCB must succeed');
+  assert.ok(res1.stdout?.includes('PID: 1042'), 'Must report PID');
+  assert.ok(res1.stdout?.includes('TASK_RUNNING'), 'Must report running state');
+
+  // Part 2: Multithreading & Mutex
+  const res2 = await executeBashSuite(compFundD6.parts[1].code!);
+  assert.equal(res2.allPassed, true, 'Part 2 thread TCB must succeed');
+  assert.ok(res2.stdout?.includes('THREAD_ID: T1'), 'Must report thread ID');
+  assert.ok(res2.stdout?.includes('MUTEX_LOCK_HELD: LOCK_DB_POOL'), 'Must report mutex lock');
+
+  // Part 3: CPU Scheduling & vruntime
+  const res3 = await executeBashSuite(compFundD6.parts[2].code!);
+  assert.equal(res3.allPassed, true, 'Part 3 scheduling must succeed');
+  assert.ok(res3.stdout?.includes('vruntime='), 'Must report vruntime');
+
+  // Part 4: Context switching & cgroups
+  const res4 = await executeBashSuite(compFundD6.parts[3].code!);
+  assert.equal(res4.allPassed, true, 'Part 4 cgroups must succeed');
+  assert.ok(res4.stdout?.includes('nr_throttled: 142'), 'Must report throttled count');
+
+  // Part 5: SRE Health Index
+  const res5 = await executeBashSuite(compFundD6.parts[4].code!);
+  assert.equal(res5.allPassed, true, 'Part 5 telemetry audit must succeed');
+  assert.ok(res5.stdout?.includes('HEALTH_INDEX: 98/100'), 'Must report health index');
+});
+
+test('Systems Long Lessons: comp_fund Day 7 Memory Hierarchy & Caching Verification', async () => {
+  const d7 = getLongLesson('comp_fund', 7);
+  assert.ok(d7, 'comp_fund Day 7 must resolve');
+  assert.equal(d7.day, 7);
+  assert.equal(d7.parts.length, 5);
+
+  const spokenMin = estimateSpokenMinutes(d7);
+  const totalMin = estimateLessonMinutes(d7);
+  assert.ok(spokenMin >= 8, `Spoken minutes should be >= 8 (got ${spokenMin})`);
+  assert.ok(totalMin >= 15, `Total minutes should be >= 15 (got ${totalMin})`);
+
+  for (let i = 0; i < d7.parts.length; i++) {
+    const part = d7.parts[i];
+    assert.ok(part.title.length > 0, `Part ${i + 1} title non-empty`);
+    assert.ok(part.say.length >= 3, `Part ${i + 1} say paragraphs >= 3`);
+    assert.ok(part.example && part.example.length > 0, `Part ${i + 1} example non-empty`);
+    assert.ok(part.code && part.code.length > 0, `Part ${i + 1} code non-empty`);
+    assert.ok(part.output && part.output.length > 0, `Part ${i + 1} output non-empty`);
+    assert.ok(part.tryIt && part.tryIt.length > 0, `Part ${i + 1} tryIt non-empty`);
+    const check = part.check as any;
+    assert.ok(check.question.length > 0, `Part ${i + 1} check question`);
+    assert.ok(check.options.length >= 3, `Part ${i + 1} check options`);
+    assert.ok(check.answer >= 0 && check.answer < check.options.length, `Part ${i + 1} check answer`);
+    assert.ok(check.why.length > 0, `Part ${i + 1} check why`);
+  }
+
+  const res1 = await executeBashSuite(d7.parts[0].code!);
+  assert.equal(res1.allPassed, true);
+  assert.ok(res1.stdout?.includes('MAIN_DRAM'));
+
+  const res2 = await executeBashSuite(d7.parts[1].code!);
+  assert.equal(res2.allPassed, true);
+  assert.ok(res2.stdout?.includes('L1_HIT'));
+
+  const res3 = await executeBashSuite(d7.parts[2].code!);
+  assert.equal(res3.allPassed, true);
+  assert.ok(res3.stdout?.includes('EXCLUSIVE'));
+
+  const res4 = await executeBashSuite(d7.parts[3].code!);
+  assert.equal(res4.allPassed, true);
+  assert.ok(res4.stdout?.includes('TLB_HIT'));
+
+  const res5 = await executeBashSuite(d7.parts[4].code!);
+  assert.equal(res5.allPassed, true);
+  assert.ok(res5.stdout?.includes('MEMORY_HEALTH_INDEX: 99/100'));
+});
+
+test('Systems Long Lessons: comp_fund Day 8 Storage Technologies & Data Integrity Verification', async () => {
+  const d8 = getLongLesson('comp_fund', 8);
+  assert.ok(d8, 'comp_fund Day 8 must resolve');
+  assert.equal(d8.day, 8);
+  assert.equal(d8.parts.length, 5);
+
+  const res1 = await executeBashSuite(d8.parts[0].code!);
+  assert.equal(res1.allPassed, true);
+  assert.ok(res1.stdout?.includes('BLK_004'));
+
+  const res2 = await executeBashSuite(d8.parts[1].code!);
+  assert.equal(res2.allPassed, true);
+  assert.ok(res2.stdout?.includes('SATURATED_PEAK'));
+
+  const res3 = await executeBashSuite(d8.parts[2].code!);
+  assert.equal(res3.allPassed, true);
+  assert.ok(res3.stdout?.includes('STRIPE_01'));
+
+  const res4 = await executeBashSuite(d8.parts[3].code!);
+  assert.equal(res4.allPassed, true);
+  assert.ok(res4.stdout?.includes('DATA_INTEGRITY_VERIFIED'));
+
+  const res5 = await executeBashSuite(d8.parts[4].code!);
+  assert.equal(res5.allPassed, true);
+  assert.ok(res5.stdout?.includes('STORAGE_HEALTH_INDEX: 99/100'));
+});
+
+test('Systems Long Lessons: comp_fund Day 9 Computer Networking & Subnetting Verification', async () => {
+  const d9 = getLongLesson('comp_fund', 9);
+  assert.ok(d9, 'comp_fund Day 9 must resolve');
+  assert.equal(d9.day, 9);
+  assert.equal(d9.parts.length, 5);
+
+  const res1 = await executeBashSuite(d9.parts[0].code!);
+  assert.equal(res1.allPassed, true);
+  assert.ok(res1.stdout?.includes('IP_PACKET'));
+
+  const res2 = await executeBashSuite(d9.parts[1].code!);
+  assert.equal(res2.allPassed, true);
+  assert.ok(res2.stdout?.includes('REACHABLE'));
+
+  const res3 = await executeBashSuite(d9.parts[2].code!);
+  assert.equal(res3.allPassed, true);
+  assert.ok(res3.stdout?.includes('172.16.0.0/26'));
+
+  const res4 = await executeBashSuite(d9.parts[3].code!);
+  assert.equal(res4.allPassed, true);
+  assert.ok(res4.stdout?.includes('CNAME'));
+
+  const res5 = await executeBashSuite(d9.parts[4].code!);
+  assert.equal(res5.allPassed, true);
+  assert.ok(res5.stdout?.includes('NETWORK_HEALTH_INDEX: 99/100'));
+});
+
+test('Systems Long Lessons: comp_fund Day 10 Web Protocols & TLS 1.3 Verification', async () => {
+  const d10 = getLongLesson('comp_fund', 10);
+  assert.ok(d10, 'comp_fund Day 10 must resolve');
+  assert.equal(d10.day, 10);
+  assert.equal(d10.parts.length, 5);
+
+  const res1 = await executeBashSuite(d10.parts[0].code!);
+  assert.equal(res1.allPassed, true);
+  assert.ok(res1.stdout?.includes('LISTEN'));
+
+  const res2 = await executeBashSuite(d10.parts[1].code!);
+  assert.equal(res2.allPassed, true);
+  assert.ok(res2.stdout?.includes('ESTABLISHED'));
+
+  const res3 = await executeBashSuite(d10.parts[2].code!);
+  assert.equal(res3.allPassed, true);
+  assert.ok(res3.stdout?.includes('INTERLEAVED'));
+
+  const res4 = await executeBashSuite(d10.parts[3].code!);
+  assert.equal(res4.allPassed, true);
+  assert.ok(res4.stdout?.includes('APPLICATION_DATA_FLOW'));
+
+  const res5 = await executeBashSuite(d10.parts[4].code!);
+  assert.equal(res5.allPassed, true);
+  assert.ok(res5.stdout?.includes('WEB_HEALTH_INDEX: 99/100'));
+});
+
+test('Systems Long Lessons: comp_fund Day 11 Browser DevTools & Web Performance Verification', async () => {
+  const d11 = getLongLesson('comp_fund', 11);
+  assert.ok(d11, 'comp_fund Day 11 must resolve');
+  assert.equal(d11.day, 11);
+  assert.equal(d11.parts.length, 5);
+
+  const res1 = await executeBashSuite(d11.parts[0].code!);
+  assert.equal(res1.allPassed, true);
+  assert.ok(res1.stdout?.includes('GPU_ACCELERATED'));
+
+  const res2 = await executeBashSuite(d11.parts[1].code!);
+  assert.equal(res2.allPassed, true);
+  assert.ok(res2.stdout?.includes('DISK_CACHE_HIT'));
+
+  const res3 = await executeBashSuite(d11.parts[2].code!);
+  assert.equal(res3.allPassed, true);
+  assert.ok(res3.stdout?.includes('PROTECTED'));
+
+  const res4 = await executeBashSuite(d11.parts[3].code!);
+  assert.equal(res4.allPassed, true);
+  assert.ok(res4.stdout?.includes('DRAINED_IMMEDIATELY'));
+
+  const res5 = await executeBashSuite(d11.parts[4].code!);
+  assert.equal(res5.allPassed, true);
+  assert.ok(res5.stdout?.includes('FRONTEND_HEALTH_INDEX: 99/100'));
+});
+
