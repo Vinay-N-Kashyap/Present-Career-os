@@ -1,0 +1,344 @@
+{
+  "schemaVersion": 1,
+  "prefix": "quant-systems",
+  "day": 9,
+  "promptSha": "6f8835ed37cd3a7299aa16dc05151245a390e67c428fa01b826007cc1df21252",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Heterogeneous Trading Architecture: CPU vs GPU vs FPGA",
+      "codeHash": "72419d632912a87bd1c92bd2bd037035920c68dd1cbaf48f3651db6af74a82c5",
+      "spec": {
+        "template": "states",
+        "title": "Heterogeneous Trading Architecture: CPU vs GPU v — High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "AXI4 Stream"
+          },
+          {
+            "id": "st2",
+            "label": "Silicon Parser"
+          },
+          {
+            "id": "st3",
+            "label": "Pre-Trade Filter"
+          },
+          {
+            "id": "st4",
+            "label": "PCIe DMA Ring"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (AXI4 Stream): Initialize deterministic state for Heterogeneous Trading Architecture: ...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Silicon Parser with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "ingest()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Pre-Trade Filter and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Commit wire-speed execution in PCIe DMA Ring.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit() ✓"
+            },
+            "tone": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "PCIe Direct Memory Access (DMA) & Base Address Register (BAR) Memory Mapping",
+      "codeHash": "2ce0e83994f7f21cb6c6236f6d5f48765e74583a5ddbaf26a7a9ae7fe14fb4db",
+      "spec": {
+        "template": "states",
+        "title": "PCIe Direct Memory Access (DMA) & Base Address R — High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "AXI4 Stream"
+          },
+          {
+            "id": "st2",
+            "label": "Silicon Parser"
+          },
+          {
+            "id": "st3",
+            "label": "Pre-Trade Filter"
+          },
+          {
+            "id": "st4",
+            "label": "PCIe DMA Ring"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (AXI4 Stream): Initialize deterministic state for PCIe Direct Memory Access (DMA) & Ba...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Silicon Parser with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "ingest()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Pre-Trade Filter and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Commit wire-speed execution in PCIe DMA Ring.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit() ✓"
+            },
+            "tone": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "AXI4-Stream Protocol & Wire-Speed Packet Parsing in Silicon",
+      "codeHash": "58744ad0759b25b5d9cb91c6561b96224eafd90e3d604a518b543d4c9a98e4a9",
+      "spec": {
+        "template": "states",
+        "title": "AXI4-Stream Protocol & Wire-Speed Packet Parsing — High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "AXI4 Stream"
+          },
+          {
+            "id": "st2",
+            "label": "Silicon Parser"
+          },
+          {
+            "id": "st3",
+            "label": "Pre-Trade Filter"
+          },
+          {
+            "id": "st4",
+            "label": "PCIe DMA Ring"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (AXI4 Stream): Initialize deterministic state for AXI4-Stream Protocol & Wire-Speed Pa...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Silicon Parser with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "ingest()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Pre-Trade Filter and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Commit wire-speed execution in PCIe DMA Ring.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit() ✓"
+            },
+            "tone": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Hardware Pre-Trade Risk Checks & Credit Filters in Silicon (< 15 ns)",
+      "codeHash": "8afa5750c0aab90977943d1732a476750161b85ccc61d591f2de9e2bff71b866",
+      "spec": {
+        "template": "states",
+        "title": "Hardware Pre-Trade Risk Checks & Credit Filters  — High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "AXI4 Stream"
+          },
+          {
+            "id": "st2",
+            "label": "Silicon Parser"
+          },
+          {
+            "id": "st3",
+            "label": "Pre-Trade Filter"
+          },
+          {
+            "id": "st4",
+            "label": "PCIe DMA Ring"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (AXI4 Stream): Initialize deterministic state for Hardware Pre-Trade Risk Checks & Cre...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Silicon Parser with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "ingest()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Pre-Trade Filter and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Commit wire-speed execution in PCIe DMA Ring.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit() ✓"
+            },
+            "tone": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Hybrid FPGA-CPU Co-Processing Trading Gateway Simulator",
+      "codeHash": "4687d71f61d5c3eef5169c781c031389e7f33656e4c07a84fd1ac198b0c89e72",
+      "spec": {
+        "template": "states",
+        "title": "Hybrid FPGA-CPU Co-Processing Trading Gateway Si — High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "AXI4 Stream"
+          },
+          {
+            "id": "st2",
+            "label": "Silicon Parser"
+          },
+          {
+            "id": "st3",
+            "label": "Pre-Trade Filter"
+          },
+          {
+            "id": "st4",
+            "label": "PCIe DMA Ring"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (AXI4 Stream): Initialize deterministic state for Hybrid FPGA-CPU Co-Processing Tradin...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Silicon Parser with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "ingest()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Pre-Trade Filter and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Commit wire-speed execution in PCIe DMA Ring.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit() ✓"
+            },
+            "tone": "ok"
+          }
+        ]
+      }
+    }
+  ]
+}

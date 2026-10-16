@@ -1,0 +1,344 @@
+{
+  "schemaVersion": 1,
+  "prefix": "quant-systems",
+  "day": 7,
+  "promptSha": "6ea199df7582cba0119b8c0664502df1f4b470bc690cf3c376e2426584d3df84",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Order Book Storage Models: Vector vs Map vs Radix Tree vs Flat Array",
+      "codeHash": "7ed1494a18fc3ea66aaea00cd732a2e80d389c5f2656c366a2d52b586bb494c8",
+      "spec": {
+        "template": "states",
+        "title": "Order Book Storage Models: Vector vs Map vs Radi — High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Price Indexer"
+          },
+          {
+            "id": "st2",
+            "label": "Intrusive Queue"
+          },
+          {
+            "id": "st3",
+            "label": "FIFO Sequencer"
+          },
+          {
+            "id": "st4",
+            "label": "Spread Calculator"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Price Indexer): Initialize deterministic state for Order Book Storage Models: Vector vs...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Intrusive Queue with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "ingest()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to FIFO Sequencer and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Commit wire-speed execution in Spread Calculator.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit() ✓"
+            },
+            "tone": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "O(1) Intrusive Doubly-Linked List for Price Level FIFO Queue",
+      "codeHash": "0a24b469cc3142974dd3cc0d10b27f864a4abb52438cac6d80522cc1e8fc9076",
+      "spec": {
+        "template": "states",
+        "title": "O(1) Intrusive Doubly-Linked List for Price Leve — High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Price Indexer"
+          },
+          {
+            "id": "st2",
+            "label": "Intrusive Queue"
+          },
+          {
+            "id": "st3",
+            "label": "FIFO Sequencer"
+          },
+          {
+            "id": "st4",
+            "label": "Spread Calculator"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Price Indexer): Initialize deterministic state for O(1) Intrusive Doubly-Linked List fo...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Intrusive Queue with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "ingest()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to FIFO Sequencer and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Commit wire-speed execution in Spread Calculator.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit() ✓"
+            },
+            "tone": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Flat Array Price Level Indexing with Constant-Time Offset Arithmetic & Bitmasks",
+      "codeHash": "baff881de29d0ea53ea9d2d6f01bb21437fa0359b3986af93925831c4f8825af",
+      "spec": {
+        "template": "states",
+        "title": "Flat Array Price Level Indexing with Constant-Ti — High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Price Indexer"
+          },
+          {
+            "id": "st2",
+            "label": "Intrusive Queue"
+          },
+          {
+            "id": "st3",
+            "label": "FIFO Sequencer"
+          },
+          {
+            "id": "st4",
+            "label": "Spread Calculator"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Price Indexer): Initialize deterministic state for Flat Array Price Level Indexing with...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Intrusive Queue with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "ingest()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to FIFO Sequencer and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Commit wire-speed execution in Spread Calculator.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit() ✓"
+            },
+            "tone": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Level 2 (Depth of Market) Aggregated Book Synthesis",
+      "codeHash": "9ec05cac413d7595077d6d5589be5738329cf46aa9bbea4e4c075f0fd1929605",
+      "spec": {
+        "template": "states",
+        "title": "Level 2 (Depth of Market) Aggregated Book Synthe — High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Price Indexer"
+          },
+          {
+            "id": "st2",
+            "label": "Intrusive Queue"
+          },
+          {
+            "id": "st3",
+            "label": "FIFO Sequencer"
+          },
+          {
+            "id": "st4",
+            "label": "Spread Calculator"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Price Indexer): Initialize deterministic state for Level 2 (Depth of Market) Aggregated...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Intrusive Queue with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "ingest()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to FIFO Sequencer and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Commit wire-speed execution in Spread Calculator.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit() ✓"
+            },
+            "tone": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "High-Performance Limit Order Matching Engine Core",
+      "codeHash": "215bc5df66a7f19e8fa361e1d123adbf81e04c67c0c6d0977d0b07a0ddf1778a",
+      "spec": {
+        "template": "states",
+        "title": "High-Performance Limit Order Matching Engine Cor — High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Price Indexer"
+          },
+          {
+            "id": "st2",
+            "label": "Intrusive Queue"
+          },
+          {
+            "id": "st3",
+            "label": "FIFO Sequencer"
+          },
+          {
+            "id": "st4",
+            "label": "Spread Calculator"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Price Indexer): Initialize deterministic state for High-Performance Limit Order Matchin...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Intrusive Queue with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "ingest()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to FIFO Sequencer and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Commit wire-speed execution in Spread Calculator.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit() ✓"
+            },
+            "tone": "ok"
+          }
+        ]
+      }
+    }
+  ]
+}
