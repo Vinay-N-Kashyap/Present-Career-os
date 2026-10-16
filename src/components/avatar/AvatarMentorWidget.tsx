@@ -2,6 +2,8 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import { usePersonalAvatarMemory }    from './hooks/usePersonalAvatarMemory';
 import { useFacialEmotionDetection }  from './hooks/useFacialEmotionDetection';
 import { matchBestAlternative, matchNavigationIntent, getGrammarVocabulary } from './hooks/useVoiceNavigation';
+import { parseWakeWord } from '@/lib/avatar/wakeWordParser';
+import { isNextTaskIntent, isValidSnapshotTimestamp, getAuthoritativeNextTask } from '@/lib/avatar/deterministicAdvisor';
 import { analyzeVoiceFrames, analyzeVoiceSamples, verifyVoiceSignature, calculateSpectralFeatures, extractMelFilterbank, AcousticFrame, VoicePrint } from './hooks/useVoiceBiometrics';
 import { saveVoicePrintToSupabase, getVoicePrintFromSupabase } from '@/lib/supabaseService';
 import * as THREE from 'three';
@@ -553,7 +555,16 @@ export default function AvatarMentorWidget({
     setSubtitleRole('user');
 
     // ── Client-side navigation & conversational command parser ──
-    const lower = msg.toLowerCase();
+    const wakeResult = parseWakeWord(msg, teacherId);
+    if (wakeResult.hasWakeWord && wakeResult.isStandaloneWake) {
+      const greeting = `Yes, I am listening! How can I help you today?`;
+      setMessages(prev => [...prev, { role: 'assistant', content: greeting }]);
+      await speakReply(greeting);
+      return;
+    }
+
+    const effectiveMsg = (wakeResult.hasWakeWord && wakeResult.command ? wakeResult.command : msg).trim();
+    const lower = effectiveMsg.toLowerCase();
 
     // 1. Exit conversational mode check
     if (isConversing && (lower.includes('bye') || lower.includes('goodbye') || lower.includes('stop talking') || lower.includes('minimize') || lower.includes('close'))) {
@@ -651,7 +662,7 @@ export default function AvatarMentorWidget({
     }
 
     // ── Voice Navigation Engine — exhaustive route matching with confidence scoring ──
-    const navResult = matchNavigationIntent(msg);
+    const navResult = matchNavigationIntent(effectiveMsg);
     if (navResult.matched && navResult.confidence >= 0.7) {
       // High confidence → navigate immediately with voice confirmation
       console.log(`[VoiceNav] sendMessage HIGH confidence (${(navResult.confidence * 100).toFixed(0)}%) → ${navResult.path} (${navResult.displayName})`);
@@ -679,7 +690,7 @@ export default function AvatarMentorWidget({
 
     setLoading(true);
 
-    const emotionalCtx = emotionAIRef.current.getEmotionalContext(msg);
+    const emotionalCtx = emotionAIRef.current.getEmotionalContext(effectiveMsg);
     const historyForAPI = memoryRef.current.getConversationContext(10)
       .map((c: { userMessage?: string; avatarResponse?: string; role?: string; content?: string }) =>
         c.userMessage
@@ -692,23 +703,43 @@ export default function AvatarMentorWidget({
         method: 'POST', headers: { 'Content-Type': 'application/json' },
         credentials: 'include',
         body: JSON.stringify({
-          message: msg,
+          message: effectiveMsg,
           history: historyForAPI,
           teacherId,
           careerContext: { ...careerProfile, activeQuest }
         }),
       });
-      const { reply } = await res.json();
+      const data = await res.json();
+      const reply = data?.reply || '';
       const cleanReply = sanitizeLLMOutput(reply);
       setMessages(prev => [...prev, { role: 'assistant', content: cleanReply }]);
-      memoryRef.current.storeConversation(msg, cleanReply, { emotion: emotionalCtx.detectedEmotion, engagement: 0.8 });
+      memoryRef.current.storeConversation(effectiveMsg, cleanReply, { emotion: emotionalCtx.detectedEmotion, engagement: 0.8 });
       await speakReply(cleanReply);
     } catch {
-      setMessages(prev => [...prev, { role: 'assistant', content: 'Connection issue. Please try again.' }]);
+      if (isNextTaskIntent(effectiveMsg)) {
+        let fallbackMessage = "I cannot verify your latest progress while offline. Please reconnect to confirm your next task.";
+        try {
+          const cached = localStorage.getItem(`pinit_${userId}_verified_progress`);
+          if (cached) {
+            const parsed = JSON.parse(cached);
+            if (isValidSnapshotTimestamp(parsed.syncedAt, 24 * 60 * 60 * 1000)) {
+              const localAdvisor = getAuthoritativeNextTask(parsed, userId, []);
+              if (localAdvisor.status === 'VERIFIED_TASK' || localAdvisor.status === 'COURSE_COMPLETED') {
+                const syncDate = new Date(parsed.syncedAt).toLocaleTimeString();
+                fallbackMessage = `${localAdvisor.speechText} (Offline Snapshot synced at ${syncDate})`;
+              }
+            }
+          }
+        } catch {}
+        setMessages(prev => [...prev, { role: 'assistant', content: fallbackMessage }]);
+        await speakReply(fallbackMessage);
+      } else {
+        setMessages(prev => [...prev, { role: 'assistant', content: 'Connection issue. Please try again.' }]);
+      }
     } finally {
       setLoading(false);
     }
-  }, [input, loading, isConversing, onEnlarge, careerProfile, onTabShift, teacherId, activeQuest, speakReply]);
+  }, [input, loading, isConversing, onEnlarge, careerProfile, onTabShift, teacherId, activeQuest, speakReply, userId]);
 
   // Keep track of latest speaking/loading states in refs to avoid stale closures in SpeechRecognition handlers
   const speakingRef = useRef(speaking);
@@ -817,52 +848,23 @@ export default function AvatarMentorWidget({
             return;
           }
 
-          // Clean phoneme matching for teacher names (accidental words & offensive terms removed)
-          const cleanText = text.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()?]/g, "").trim();
-          const fuzzyMatchPriya = /\b(priya|preya|pria)\b/i.test(cleanText);
-          const fuzzyMatchKashyap = /\b(kashyap|kash)\b/i.test(cleanText);
-          const fuzzyMatchKarthic = /\b(karthic|karthik|kartik)\b/i.test(cleanText);
-          const fuzzyMatchMaya = /\b(maya|maia)\b/i.test(cleanText);
-          const fuzzyMatchDivya = /\b(divya|divia)\b/i.test(cleanText);
+          // Use robust word-boundary wake-word parser (resilient to commas, collisions, standalone wake words)
+          const parsed = parseWakeWord(transcript, teacherId);
 
-          let matchedWakeWord = false;
-          let matchedTeacherKey = '';
-          
-          if (fuzzyMatchPriya) {
-            matchedWakeWord = true;
-            matchedTeacherKey = 'priya';
-          } else if (fuzzyMatchKashyap) {
-            matchedWakeWord = true;
-            matchedTeacherKey = 'kashyap';
-          } else if (fuzzyMatchKarthic) {
-            matchedWakeWord = true;
-            matchedTeacherKey = 'karthic';
-          } else if (fuzzyMatchMaya) {
-            matchedWakeWord = true;
-            matchedTeacherKey = 'maya';
-          } else if (fuzzyMatchDivya) {
-            matchedWakeWord = true;
-            matchedTeacherKey = 'divya';
-          }
-
-          if (matchedWakeWord) {
-            console.log("Wake word detected:", transcript, "Matched teacher:", matchedTeacherKey);
+          if (parsed.hasWakeWord) {
+            console.log("Wake word detected:", transcript, "Matched mentor:", parsed.mentor);
             setIsMinimized(false);
 
-            // Strip wake word prefixes cleanly from query (clean keywords only)
-            const cleaned = transcript
-              .replace(/\b(hey|hay|hi|hello)\b/gi, '')
-              .replace(new RegExp(`\\b(${matchedTeacherKey}|priya|preya|pria|kashyap|kash|karthic|karthik|kartik|maya|maia|divya|divia)\\b`, 'gi'), '')
-              .trim();
+            if (parsed.isStandaloneWake) {
+              const greeting = `Yes, I am listening! How can I help you today?`;
+              setMessages(prev => [...prev, { role: 'assistant', content: greeting }]);
+              speakReplyRef.current(greeting);
+              return;
+            }
 
+            const cleaned = parsed.command;
             if (cleaned.length > 0) {
-              const cleanedAlts = allAlternatives.map(alt =>
-                alt.replace(/\b(hey|hay|hi|hello)\b/gi, '')
-                   .replace(new RegExp(`\\b(${matchedTeacherKey}|priya|preya|pria|kashyap|kash|karthic|karthik|kartik|maya|maia|divya|divia)\\b`, 'gi'), '')
-                   .trim()
-              ).filter(a => a.length > 0);
-
-              const navResult = matchBestAlternative(cleanedAlts.length > 0 ? cleanedAlts : [cleaned]);
+              const navResult = matchBestAlternative([cleaned]);
 
               if (navResult.matched && navResult.confidence >= 0.7) {
                 const confirmation = `Sure! Taking you to ${navResult.displayName} now.`;

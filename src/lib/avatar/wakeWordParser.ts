@@ -13,12 +13,15 @@ const WAKE_WORD_REGEX = /^\s*(?:(?:hey|hi|hello)[,\s]+)?(priya|anish)\b[\s,.:;!?
 
 export interface WakeWordResult {
   hasWakeWord: boolean;
-  mentor: 'priya' | 'anish' | null;
+  mentor: string | null;
   command: string;
   isStandaloneWake: boolean;
 }
 
-export function parseWakeWord(transcript: unknown): WakeWordResult {
+export function parseWakeWord(
+  transcript: unknown,
+  configuredMentor?: string
+): WakeWordResult {
   if (typeof transcript !== 'string') {
     return { hasWakeWord: false, mentor: null, command: '', isStandaloneWake: false };
   }
@@ -28,7 +31,12 @@ export function parseWakeWord(transcript: unknown): WakeWordResult {
     return { hasWakeWord: false, mentor: null, command: '', isStandaloneWake: false };
   }
 
-  const match = trimmed.match(WAKE_WORD_REGEX);
+  const mentorPattern = configuredMentor && /^[a-zA-Z0-9_-]+$/.test(configuredMentor)
+    ? `(${configuredMentor.toLowerCase()}|priya|anish)`
+    : '(priya|anish)';
+  const dynamicRegex = new RegExp(`^\\s*(?:(?:hey|hi|hello)[,\\s]+)?${mentorPattern}\\b[\\s,.:;!?-]*`, 'i');
+
+  const match = trimmed.match(dynamicRegex);
   if (!match) {
     return {
       hasWakeWord: false,
@@ -38,7 +46,7 @@ export function parseWakeWord(transcript: unknown): WakeWordResult {
     };
   }
 
-  const mentor = match[1].toLowerCase() as 'priya' | 'anish';
+  const mentor = match[1].toLowerCase();
   const matchedPrefixLength = match[0].length;
   const rawCommand = trimmed.slice(matchedPrefixLength).trim();
 

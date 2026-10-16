@@ -1,7 +1,12 @@
 import { NextResponse } from 'next/server';
-import { requireUserFromRequest } from '@/lib/server/requireAuth';
+import { requireUserFromRequest, getBearerToken, getAuthoritativeSupabaseClient } from '@/lib/server/requireAuth';
 import { sanitizeLLMOutput } from '@/lib/sanitizeLLM';
 import { checkRateLimit, getClientIp } from '@/lib/server/rateLimit';
+import { resolveAvatarFeatureState } from '@/lib/avatar/avatarFeatureFlags';
+import { loadAvatarMemoryTriState, TriStateMemoryResult } from '@/lib/avatar/memoryStore';
+import { buildMentorSystemPrompt } from '@/lib/avatar/mentorPromptBuilder';
+import { isNextTaskIntent, getAuthoritativeNextTask, StudentProgressSnapshot, CurriculumItem } from '@/lib/avatar/deterministicAdvisor';
+import { COURSES_REGISTRY } from '@/lib/data/coursesData';
 
 interface MentorChatRequest {
   message?: string;
@@ -63,18 +68,88 @@ ${body.currentSlide.codeSnippet ? `- Slide Code Snippet:\n\`\`\`\n${body.current
 IMPORTANT: The student's question is about this specific slide! Explain the concepts directly referencing this slide's title and key takeaways.`
       : '';
 
-    const systemPrompt = `You are an elite, empathetic Technical Career Mentor at PinIT Career OS${body.teacherId ? ` (Persona: ${body.teacherId})` : ''}.
-You are directly mentoring ${studentName}, who is aiming for the role of "${targetRole}".
-CURRENT STUDENT CONTEXT:
-- Active Learning Quest: "${questTitle}"
-- Critical Skill Gaps to close: ${missingSkills.length > 0 ? missingSkills.join(', ') : 'No critical gaps flagged yet'}
-- Current ATS Resume Score: ${atsScore}/100${slideContextPrompt}
+    const flagState = resolveAvatarFeatureState();
+    let memoryState: TriStateMemoryResult | undefined;
+    if (flagState.mode === 'v2_advisor' && gated.user?.id) {
+      memoryState = await loadAvatarMemoryTriState(gated.user.id);
+    }
 
-YOUR INSTRUCTIONS:
-1. Provide actionable, concise, pragmatic advice tailored to their role and active quest.
-2. If the student asks about what to focus on, explicitly address their specific skill gaps (${missingSkills.slice(0, 3).join(', ') || 'foundation principles'}) and guide them through their active quest "${questTitle}".
-3. Never use generic platitudes. Be encouraging, precise, and practical. Keep responses under 3 paragraphs.
-4. Maintain a warm, encouraging, yet rigorous Socratic mentor tone.`;
+    const systemPrompt = buildMentorSystemPrompt(
+      {
+        studentName,
+        targetRole,
+        questTitle,
+        missingSkills,
+        atsScore,
+        teacherId: body.teacherId,
+        slideContextPrompt,
+      },
+      memoryState,
+      flagState.mode
+    );
+
+    // In V2 Advisor mode: Intercept anchored next-task intent with deterministic curriculum resolver (0ms LLM hallucination)
+    if (flagState.mode === 'v2_advisor' && isNextTaskIntent(userMessage) && gated.user?.id) {
+      const token = getBearerToken(req);
+      const supabase = getAuthoritativeSupabaseClient(token);
+      const { data: userProfile } = await supabase
+        .from('users')
+        .select('id, completed_quests, updated_at')
+        .eq('id', gated.user.id)
+        .maybeSingle();
+
+      const activeCourseId = (typeof body.activeQuest === 'object' && body.activeQuest !== null ? (body.activeQuest as any).courseId : undefined) || 'fullstack-mastery';
+      const course = COURSES_REGISTRY.find(c => c.id === activeCourseId) || COURSES_REGISTRY[0];
+      const curriculum: CurriculumItem[] = (course?.quests || []).map(q => ({
+        questId: q.id,
+        courseId: course?.id || activeCourseId,
+        title: q.title,
+      }));
+
+      const snapshot: StudentProgressSnapshot = {
+        userId: gated.user.id,
+        courseId: activeCourseId,
+        completedQuestIds: Array.isArray(userProfile?.completed_quests) ? userProfile.completed_quests : [],
+        syncedAt: userProfile?.updated_at ? new Date(userProfile.updated_at).getTime() : Date.now(),
+      };
+
+      const advisorResult = getAuthoritativeNextTask(snapshot, gated.user.id, curriculum);
+      const cleanReply = sanitizeLLMOutput(advisorResult.speechText);
+
+      const wantsStreamEarly = Boolean(body.stream) || Boolean(req.headers.get('accept')?.includes('text/event-stream'));
+      if (wantsStreamEarly) {
+        const encoder = new TextEncoder();
+        const streamResponse = new ReadableStream({
+          start(controller) {
+            controller.enqueue(encoder.encode(`data: ${JSON.stringify({ token: cleanReply })}\n\n`));
+            controller.enqueue(encoder.encode('data: [DONE]\n\n'));
+            controller.close();
+          }
+        });
+        return new Response(streamResponse, {
+          headers: {
+            'Content-Type': 'text/event-stream; charset=utf-8',
+            'Cache-Control': 'no-cache, no-transform',
+            'Connection': 'keep-alive',
+          }
+        });
+      }
+
+      return NextResponse.json({
+        ok: true,
+        reply: cleanReply,
+        simulated: false,
+        deterministic: true,
+        advisorResult,
+        context: {
+          studentName,
+          targetRole,
+          activeQuest: questTitle,
+          missingSkills,
+          atsScore,
+        }
+      });
+    }
 
     // Try calling Groq / OpenRouter
     const groqKeysStr = process.env.GROQ_API_KEYS || '';
