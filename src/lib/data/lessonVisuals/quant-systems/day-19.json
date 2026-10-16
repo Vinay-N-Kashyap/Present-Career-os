@@ -1,0 +1,344 @@
+{
+  "schemaVersion": 1,
+  "prefix": "quant-systems",
+  "day": 19,
+  "promptSha": "a186e2056ea5259163ed4c7c26f5de3e9c6d494455579774f66c5448cd7c962d",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "FIFO Matching Engine Physics & Level 2 vs Level 3 Visibility",
+      "codeHash": "55b7a9df217cc6934e349130f24d7f00ee695396f13cdefad90d01a40031d5ad",
+      "spec": {
+        "template": "states",
+        "title": "FIFO Matching Engine Physics & Level 2 vs Level  — High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "L2 Book Depth"
+          },
+          {
+            "id": "st2",
+            "label": "Queue Tracker"
+          },
+          {
+            "id": "st3",
+            "label": "Cancel Hazard"
+          },
+          {
+            "id": "st4",
+            "label": "Fill Surface"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (L2 Book Depth): Initialize deterministic state for FIFO Matching Engine Physics & L...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Queue Tracker with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "compute()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Cancel Hazard and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Commit wire-speed execution in Fill Surface.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit() →"
+            },
+            "tone": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Proportional Cancellation Allocation & Prorated Queue Advancement",
+      "codeHash": "f7525985f9e4888ac764090eddff9186d8e46e8b9f8bc8c2491f087775e77601",
+      "spec": {
+        "template": "states",
+        "title": "Proportional Cancellation Allocation & Prorated  — High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "L2 Book Depth"
+          },
+          {
+            "id": "st2",
+            "label": "Queue Tracker"
+          },
+          {
+            "id": "st3",
+            "label": "Cancel Hazard"
+          },
+          {
+            "id": "st4",
+            "label": "Fill Surface"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (L2 Book Depth): Initialize deterministic state for Proportional Cancellation Alloca...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Queue Tracker with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "compute()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Cancel Hazard and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Commit wire-speed execution in Fill Surface.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit() →"
+            },
+            "tone": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Survival Analysis & Queue Depletion Hazard Functions",
+      "codeHash": "587ad5505bdf846450c16cc435667b2873242ca9c238256e24eccfd6cb0cc189",
+      "spec": {
+        "template": "states",
+        "title": "Survival Analysis & Queue Depletion Hazard Funct — High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "L2 Book Depth"
+          },
+          {
+            "id": "st2",
+            "label": "Queue Tracker"
+          },
+          {
+            "id": "st3",
+            "label": "Cancel Hazard"
+          },
+          {
+            "id": "st4",
+            "label": "Fill Surface"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (L2 Book Depth): Initialize deterministic state for Survival Analysis & Queue Deplet...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Queue Tracker with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "compute()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Cancel Hazard and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Commit wire-speed execution in Fill Surface.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit() →"
+            },
+            "tone": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Adverse Fill Probabilities & Quote Re-Posting Thresholds",
+      "codeHash": "bf82d5b1c9b1bdd08a7cc543495be4f483100df7171a67e469db0c13be0f4958",
+      "spec": {
+        "template": "states",
+        "title": "Adverse Fill Probabilities & Quote Re-Posting Th — High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "L2 Book Depth"
+          },
+          {
+            "id": "st2",
+            "label": "Queue Tracker"
+          },
+          {
+            "id": "st3",
+            "label": "Cancel Hazard"
+          },
+          {
+            "id": "st4",
+            "label": "Fill Surface"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (L2 Book Depth): Initialize deterministic state for Adverse Fill Probabilities & Quo...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Queue Tracker with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "compute()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Cancel Hazard and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Commit wire-speed execution in Fill Surface.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit() →"
+            },
+            "tone": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production C++ Low-Latency Queue Position Tracker",
+      "codeHash": "44a384c8bf55323dacf9dd0869684cad22409296fceb05ceb50112db78ab00fa",
+      "spec": {
+        "template": "states",
+        "title": "Production C++ Low-Latency Queue Position Tracke — High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "L2 Book Depth"
+          },
+          {
+            "id": "st2",
+            "label": "Queue Tracker"
+          },
+          {
+            "id": "st3",
+            "label": "Cancel Hazard"
+          },
+          {
+            "id": "st4",
+            "label": "Fill Surface"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (L2 Book Depth): Initialize deterministic state for Production C++ Low-Latency Queue...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Queue Tracker with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "compute()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Cancel Hazard and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Commit wire-speed execution in Fill Surface.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit() →"
+            },
+            "tone": "ok"
+          }
+        ]
+      }
+    }
+  ]
+}
