@@ -67,6 +67,15 @@ test('Quant & Excel Long Lessons: Resolution & Structural Invariants', () => {
   assert.equal(excelLesson5.day, 5);
   assert.equal(excelLesson5.parts.length, 5, 'excel_viz Day 5 must contain exactly 5 parts');
 
+  for (let d = 6; d <= 10; d++) {
+    const el = getLongLesson('excel_viz', d);
+    assert.ok(el, `excel_viz Day ${d} long lesson must resolve`);
+    assert.equal(el.day, d);
+    assert.equal(el.parts.length, 5, `excel_viz Day ${d} must contain exactly 5 parts`);
+    assert.ok(el.summary.length >= 4, `excel_viz Day ${d} must have comprehensive summary`);
+    assert.ok(el.projectStep, `excel_viz Day ${d} must have projectStep`);
+  }
+
   // 3. ai_prompt aliasing
   const promptLesson = getLongLesson('ai_prompt', 1);
   assert.ok(promptLesson, 'ai_prompt Day 1 long lesson must resolve via aliasing');
@@ -1462,3 +1471,174 @@ test('Quant Systems Day 30: 🏆 Final Capstone: Sovereign Ultra-Low-Latency Qua
   assert.ok(lesson.parts[3].code?.includes('SubMicrosecondHftStrategy'));
   assert.ok(lesson.parts[4].code?.includes('GrandMasterFinalCapstoneEngine'));
 });
+
+test('Excel Viz Day 6: Advanced Statistical Functions, Regression Analysis & Trend Forecasting', () => {
+  const lesson = getLongLesson('excel_viz', 6);
+  assert.ok(lesson, 'excel_viz Day 6 must resolve');
+  assert.equal(lesson.day, 6);
+  assert.equal(lesson.parts.length, 5);
+
+  const spokenMin = estimateSpokenMinutes(lesson);
+  const totalMin = estimateLessonMinutes(lesson);
+  assert.ok(spokenMin >= 8, `Spoken minutes should be >= 8 (got ${spokenMin})`);
+  assert.ok(totalMin >= 15, `Total minutes should be >= 15 (got ${totalMin})`);
+
+  for (let i = 0; i < lesson.parts.length; i++) {
+    const part = lesson.parts[i];
+    assert.ok(part.title.length > 0, `Part ${i + 1} must have a non-empty title`);
+    assert.ok(part.say.length >= 3, `Part ${i + 1} must have at least 3 explanation paragraphs`);
+    assert.ok(part.example && part.example.length > 0, `Part ${i + 1} must have an example`);
+    assert.ok(part.code && part.code.includes('def '), `Part ${i + 1} code must define Python functions`);
+    assert.ok(part.output && part.output.length > 0, `Part ${i + 1} must have output`);
+    assert.ok(part.tryIt && part.tryIt.length > 0, `Part ${i + 1} must have tryIt`);
+
+    const check = part.check as any;
+    assert.ok(check.question.length > 10, `Part ${i + 1} question must be descriptive`);
+    assert.equal(check.options.length, 4, `Part ${i + 1} check must have 4 options`);
+    assert.ok(check.answer >= 0 && check.answer < 4, `Part ${i + 1} answer must be valid`);
+    assert.ok(check.why.length > 15, `Part ${i + 1} why must be descriptive`);
+  }
+
+  assert.ok(lesson.parts[0].code?.includes('calculate_ols_regression'));
+  assert.ok(lesson.parts[1].code?.includes('diagnose_residuals_and_r_squared'));
+  assert.ok(lesson.parts[2].code?.includes('detect_heteroskedasticity'));
+  assert.ok(lesson.parts[3].code?.includes('decompose_ets_seasonality'));
+  assert.ok(lesson.parts[4].code?.includes('ProductionStatisticalForecastingEngine'));
+});
+
+test('Excel Viz Day 7: Power Query ETL Pipeline, Data Cleansing & Fuzzy Matching', () => {
+  const lesson = getLongLesson('excel_viz', 7);
+  assert.ok(lesson, 'excel_viz Day 7 must resolve');
+  assert.equal(lesson.day, 7);
+  assert.equal(lesson.parts.length, 5);
+
+  const spokenMin = estimateSpokenMinutes(lesson);
+  const totalMin = estimateLessonMinutes(lesson);
+  assert.ok(spokenMin >= 8, `Spoken minutes should be >= 8 (got ${spokenMin})`);
+  assert.ok(totalMin >= 15, `Total minutes should be >= 15 (got ${totalMin})`);
+
+  for (let i = 0; i < lesson.parts.length; i++) {
+    const part = lesson.parts[i];
+    assert.ok(part.title.length > 0);
+    assert.ok(part.say.length >= 3);
+    assert.ok(part.example && part.example.length > 0);
+    assert.ok(part.code && part.code.includes('def '));
+    assert.ok(part.output && part.output.length > 0);
+    assert.ok(part.tryIt && part.tryIt.length > 0);
+
+    const check = part.check as any;
+    assert.ok(check.question.length > 10);
+    assert.equal(check.options.length, 4);
+    assert.ok(check.answer >= 0 && check.answer < 4);
+    assert.ok(check.why.length > 15);
+  }
+
+  assert.ok(lesson.parts[0].code?.includes('simulate_m_query_ast_pipeline'));
+  assert.ok(lesson.parts[1].code?.includes('execute_dynamic_unpivot'));
+  assert.ok(lesson.parts[2].code?.includes('audit_schema_drift_and_coercion'));
+  assert.ok(lesson.parts[3].code?.includes('execute_fuzzy_string_matching'));
+  assert.ok(lesson.parts[4].code?.includes('ProductionPowerQueryEtlEngine'));
+});
+
+test('Excel Viz Day 8: Advanced PivotTables, Slicers & Dynamic Relational Data Models', () => {
+  const lesson = getLongLesson('excel_viz', 8);
+  assert.ok(lesson, 'excel_viz Day 8 must resolve');
+  assert.equal(lesson.day, 8);
+  assert.equal(lesson.parts.length, 5);
+
+  const spokenMin = estimateSpokenMinutes(lesson);
+  const totalMin = estimateLessonMinutes(lesson);
+  assert.ok(spokenMin >= 8, `Spoken minutes should be >= 8 (got ${spokenMin})`);
+  assert.ok(totalMin >= 15, `Total minutes should be >= 15 (got ${totalMin})`);
+
+  for (let i = 0; i < lesson.parts.length; i++) {
+    const part = lesson.parts[i];
+    assert.ok(part.title.length > 0);
+    assert.ok(part.say.length >= 3);
+    assert.ok(part.example && part.example.length > 0);
+    assert.ok(part.code && (part.code.includes('def ') || part.code.includes('class ')));
+    assert.ok(part.output && part.output.length > 0);
+    assert.ok(part.tryIt && part.tryIt.length > 0);
+
+    const check = part.check as any;
+    assert.ok(check.question.length > 10);
+    assert.equal(check.options.length, 4);
+    assert.ok(check.answer >= 0 && check.answer < 4);
+    assert.ok(check.why.length > 15);
+  }
+
+  assert.ok(lesson.parts[0].code?.includes('build_star_schema_relationship_graph'));
+  assert.ok(lesson.parts[1].code?.includes('evaluate_dax_filter_context'));
+  assert.ok(lesson.parts[2].code?.includes('activate_userelationship_path'));
+  assert.ok(lesson.parts[3].code?.includes('synchronize_slicer_cache'));
+  assert.ok(lesson.parts[4].code?.includes('ProductionEnterpriseDataModelEngine'));
+});
+
+test('Excel Viz Day 9: Financial & Loan Amortization Models, NPV, IRR & XIRR', () => {
+  const lesson = getLongLesson('excel_viz', 9);
+  assert.ok(lesson, 'excel_viz Day 9 must resolve');
+  assert.equal(lesson.day, 9);
+  assert.equal(lesson.parts.length, 5);
+
+  const spokenMin = estimateSpokenMinutes(lesson);
+  const totalMin = estimateLessonMinutes(lesson);
+  assert.ok(spokenMin >= 8, `Spoken minutes should be >= 8 (got ${spokenMin})`);
+  assert.ok(totalMin >= 15, `Total minutes should be >= 15 (got ${totalMin})`);
+
+  for (let i = 0; i < lesson.parts.length; i++) {
+    const part = lesson.parts[i];
+    assert.ok(part.title.length > 0);
+    assert.ok(part.say.length >= 3);
+    assert.ok(part.example && part.example.length > 0);
+    assert.ok(part.code && (part.code.includes('def ') || part.code.includes('class ')));
+    assert.ok(part.output && part.output.length > 0);
+    assert.ok(part.tryIt && part.tryIt.length > 0);
+
+    const check = part.check as any;
+    assert.ok(check.question.length > 10);
+    assert.equal(check.options.length, 4);
+    assert.ok(check.answer >= 0 && check.answer < 4);
+    assert.ok(check.why.length > 15);
+  }
+
+  assert.ok(lesson.parts[0].code?.includes('generate_loan_amortization_schedule'));
+  assert.ok(lesson.parts[1].code?.includes('calculate_xnpv_irregular_dates'));
+  assert.ok(lesson.parts[2].code?.includes('detect_irr_multiple_roots'));
+  assert.ok(lesson.parts[3].code?.includes('solve_xirr_newton_raphson'));
+  assert.ok(lesson.parts[4].code?.includes('ProductionLoanAmortizationAndXirrEngine'));
+});
+
+test('Excel Viz Day 10: ⭐ Milestone 2 Capstone: Enterprise Financial & Operational Analytics Dashboard', () => {
+  const lesson = getLongLesson('excel_viz', 10);
+  assert.ok(lesson, 'excel_viz Day 10 must resolve');
+  assert.equal(lesson.day, 10);
+  assert.equal(lesson.parts.length, 5);
+
+  const spokenMin = estimateSpokenMinutes(lesson);
+  const totalMin = estimateLessonMinutes(lesson);
+  assert.ok(spokenMin >= 8, `Spoken minutes should be >= 8 (got ${spokenMin})`);
+  assert.ok(totalMin >= 15, `Total minutes should be >= 15 (got ${totalMin})`);
+
+  for (let i = 0; i < lesson.parts.length; i++) {
+    const part = lesson.parts[i];
+    assert.ok(part.title.length > 0);
+    assert.ok(part.say.length >= 3);
+    assert.ok(part.example && part.example.length > 0);
+    assert.ok(part.code && part.code.includes('class '));
+    assert.ok(part.output && part.output.length > 0);
+    assert.ok(part.tryIt && part.tryIt.length > 0);
+
+    const check = part.check as any;
+    assert.ok(check.question.length > 10);
+    assert.equal(check.options.length, 4);
+    assert.ok(check.answer >= 0 && check.answer < 4);
+    assert.ok(check.why.length > 15);
+  }
+
+  assert.ok(lesson.parts[0].code?.includes('Milestone2DataModelConfig'));
+  assert.ok(lesson.parts[1].code?.includes('AutomatedEtlQualityGate'));
+  assert.ok(lesson.parts[2].code?.includes('DynamicDaxTimeIntelligenceEngine'));
+  assert.ok(lesson.parts[3].code?.includes('InteractiveScenarioSwitchboard'));
+  assert.ok(lesson.parts[4].code?.includes('GrandMasterMilestone2CapstoneEngine'));
+});
+
