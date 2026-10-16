@@ -1,0 +1,592 @@
+[
+  {
+    "partTitle": "The Architecture of the 13-Week Cash Flow (TWCF) Model",
+    "codeHash": "520545c7500a21adc19efac8e1736347fd5293f881a066e733d74fb231028143",
+    "spec": {
+      "template": "bars",
+      "title": "The Architecture of the 13-Week Cash Flo... \u2014 13-Week Cash Flow Telemetry",
+      "steps": [
+        {
+          "at": "intro",
+          "caption": "Step 1: Baseline cash parameters and weekly cadence for The Architecture of the 13-Week ...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Treasury Cash",
+              "value": 75,
+              "tone": "data"
+            },
+            {
+              "label": "Direct Receipts",
+              "value": 45,
+              "tone": "accent"
+            },
+            {
+              "label": "Disbursements",
+              "value": 60,
+              "tone": "warn"
+            },
+            {
+              "label": "Liquidity Headroom",
+              "value": 80,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "say1",
+          "caption": "Step 2: AR collection curves and critical vendor stratification for The Architecture of the 13-Week ...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Treasury Cash",
+              "value": 80,
+              "tone": "data"
+            },
+            {
+              "label": "Direct Receipts",
+              "value": 70,
+              "tone": "accent"
+            },
+            {
+              "label": "Disbursements",
+              "value": 75,
+              "tone": "warn"
+            },
+            {
+              "label": "Liquidity Headroom",
+              "value": 85,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "example",
+          "caption": "Step 3: Revolver borrowing base and automated cash sweep execution for The Architecture of the 13-Week ...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Treasury Cash",
+              "value": 90,
+              "tone": "data"
+            },
+            {
+              "label": "Direct Receipts",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "Disbursements",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "Liquidity Headroom",
+              "value": 95,
+              "tone": "accent"
+            }
+          ]
+        },
+        {
+          "at": "tryIt",
+          "caption": "Step 4: Full treasury scorecard certification and SHA-256 seal for The Architecture of the 13-Week ...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Treasury Cash",
+              "value": 100,
+              "tone": "data"
+            },
+            {
+              "label": "Direct Receipts",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "Disbursements",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "Liquidity Headroom",
+              "value": 100,
+              "tone": "accent"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "partTitle": "Direct Receipts Modeling: AR Aging, DSO, Collection Curves & Bad Debt Leakage",
+    "codeHash": "540109099e75890dc94e00f1f0395d015c9ca6e56834dd79621ae48b131c3aed",
+    "spec": {
+      "template": "bars",
+      "title": "Direct Receipts Modeling: AR Aging, DSO,... \u2014 13-Week Cash Flow Telemetry",
+      "steps": [
+        {
+          "at": "intro",
+          "caption": "Step 1: Baseline cash parameters and weekly cadence for Direct Receipts Modeling: AR Agi...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Treasury Cash",
+              "value": 75,
+              "tone": "data"
+            },
+            {
+              "label": "Direct Receipts",
+              "value": 45,
+              "tone": "accent"
+            },
+            {
+              "label": "Disbursements",
+              "value": 60,
+              "tone": "warn"
+            },
+            {
+              "label": "Liquidity Headroom",
+              "value": 80,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "say1",
+          "caption": "Step 2: AR collection curves and critical vendor stratification for Direct Receipts Modeling: AR Agi...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Treasury Cash",
+              "value": 80,
+              "tone": "data"
+            },
+            {
+              "label": "Direct Receipts",
+              "value": 70,
+              "tone": "accent"
+            },
+            {
+              "label": "Disbursements",
+              "value": 75,
+              "tone": "warn"
+            },
+            {
+              "label": "Liquidity Headroom",
+              "value": 85,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "example",
+          "caption": "Step 3: Revolver borrowing base and automated cash sweep execution for Direct Receipts Modeling: AR Agi...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Treasury Cash",
+              "value": 90,
+              "tone": "data"
+            },
+            {
+              "label": "Direct Receipts",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "Disbursements",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "Liquidity Headroom",
+              "value": 95,
+              "tone": "accent"
+            }
+          ]
+        },
+        {
+          "at": "tryIt",
+          "caption": "Step 4: Full treasury scorecard certification and SHA-256 seal for Direct Receipts Modeling: AR Agi...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Treasury Cash",
+              "value": 100,
+              "tone": "data"
+            },
+            {
+              "label": "Direct Receipts",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "Disbursements",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "Liquidity Headroom",
+              "value": 100,
+              "tone": "accent"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "partTitle": "Direct Disbursements Modeling: AP Aging, DPO, Critical Vendor Stratification & Payroll Cycles",
+    "codeHash": "9eda078d8318adc051789e22508d74d21450a189c887c46abe1eb564e1dae540",
+    "spec": {
+      "template": "bars",
+      "title": "Direct Disbursements Modeling: AP Aging,... \u2014 13-Week Cash Flow Telemetry",
+      "steps": [
+        {
+          "at": "intro",
+          "caption": "Step 1: Baseline cash parameters and weekly cadence for Direct Disbursements Modeling: A...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Treasury Cash",
+              "value": 75,
+              "tone": "data"
+            },
+            {
+              "label": "Direct Receipts",
+              "value": 45,
+              "tone": "accent"
+            },
+            {
+              "label": "Disbursements",
+              "value": 60,
+              "tone": "warn"
+            },
+            {
+              "label": "Liquidity Headroom",
+              "value": 80,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "say1",
+          "caption": "Step 2: AR collection curves and critical vendor stratification for Direct Disbursements Modeling: A...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Treasury Cash",
+              "value": 80,
+              "tone": "data"
+            },
+            {
+              "label": "Direct Receipts",
+              "value": 70,
+              "tone": "accent"
+            },
+            {
+              "label": "Disbursements",
+              "value": 75,
+              "tone": "warn"
+            },
+            {
+              "label": "Liquidity Headroom",
+              "value": 85,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "example",
+          "caption": "Step 3: Revolver borrowing base and automated cash sweep execution for Direct Disbursements Modeling: A...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Treasury Cash",
+              "value": 90,
+              "tone": "data"
+            },
+            {
+              "label": "Direct Receipts",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "Disbursements",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "Liquidity Headroom",
+              "value": 95,
+              "tone": "accent"
+            }
+          ]
+        },
+        {
+          "at": "tryIt",
+          "caption": "Step 4: Full treasury scorecard certification and SHA-256 seal for Direct Disbursements Modeling: A...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Treasury Cash",
+              "value": 100,
+              "tone": "data"
+            },
+            {
+              "label": "Direct Receipts",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "Disbursements",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "Liquidity Headroom",
+              "value": 100,
+              "tone": "accent"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "partTitle": "Liquidity Buffers, Revolver Borrowing Base & Covenant Headroom",
+    "codeHash": "e7c19a3187121233973270c28959ab61c480ac673a15d0ef8ba9a67c4e7aee6e",
+    "spec": {
+      "template": "bars",
+      "title": "Liquidity Buffers, Revolver Borrowing Ba... \u2014 13-Week Cash Flow Telemetry",
+      "steps": [
+        {
+          "at": "intro",
+          "caption": "Step 1: Baseline cash parameters and weekly cadence for Liquidity Buffers, Revolver Borr...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Treasury Cash",
+              "value": 75,
+              "tone": "data"
+            },
+            {
+              "label": "Direct Receipts",
+              "value": 45,
+              "tone": "accent"
+            },
+            {
+              "label": "Disbursements",
+              "value": 60,
+              "tone": "warn"
+            },
+            {
+              "label": "Liquidity Headroom",
+              "value": 80,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "say1",
+          "caption": "Step 2: AR collection curves and critical vendor stratification for Liquidity Buffers, Revolver Borr...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Treasury Cash",
+              "value": 80,
+              "tone": "data"
+            },
+            {
+              "label": "Direct Receipts",
+              "value": 70,
+              "tone": "accent"
+            },
+            {
+              "label": "Disbursements",
+              "value": 75,
+              "tone": "warn"
+            },
+            {
+              "label": "Liquidity Headroom",
+              "value": 85,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "example",
+          "caption": "Step 3: Revolver borrowing base and automated cash sweep execution for Liquidity Buffers, Revolver Borr...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Treasury Cash",
+              "value": 90,
+              "tone": "data"
+            },
+            {
+              "label": "Direct Receipts",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "Disbursements",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "Liquidity Headroom",
+              "value": 95,
+              "tone": "accent"
+            }
+          ]
+        },
+        {
+          "at": "tryIt",
+          "caption": "Step 4: Full treasury scorecard certification and SHA-256 seal for Liquidity Buffers, Revolver Borr...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Treasury Cash",
+              "value": 100,
+              "tone": "data"
+            },
+            {
+              "label": "Direct Receipts",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "Disbursements",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "Liquidity Headroom",
+              "value": 100,
+              "tone": "accent"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "partTitle": "Enterprise Treasury 13-Week Cash Flow (TWCF) Command Gateway",
+    "codeHash": "6592a051ded78fcd08e45716c41a733aa15c85e29a661061c02a0502b99233e4",
+    "spec": {
+      "template": "bars",
+      "title": "Enterprise Treasury 13-Week Cash Flow (T... \u2014 13-Week Cash Flow Telemetry",
+      "steps": [
+        {
+          "at": "intro",
+          "caption": "Step 1: Baseline cash parameters and weekly cadence for Enterprise Treasury 13-Week Cash...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Treasury Cash",
+              "value": 75,
+              "tone": "data"
+            },
+            {
+              "label": "Direct Receipts",
+              "value": 45,
+              "tone": "accent"
+            },
+            {
+              "label": "Disbursements",
+              "value": 60,
+              "tone": "warn"
+            },
+            {
+              "label": "Liquidity Headroom",
+              "value": 80,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "say1",
+          "caption": "Step 2: AR collection curves and critical vendor stratification for Enterprise Treasury 13-Week Cash...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Treasury Cash",
+              "value": 80,
+              "tone": "data"
+            },
+            {
+              "label": "Direct Receipts",
+              "value": 70,
+              "tone": "accent"
+            },
+            {
+              "label": "Disbursements",
+              "value": 75,
+              "tone": "warn"
+            },
+            {
+              "label": "Liquidity Headroom",
+              "value": 85,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "example",
+          "caption": "Step 3: Revolver borrowing base and automated cash sweep execution for Enterprise Treasury 13-Week Cash...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Treasury Cash",
+              "value": 90,
+              "tone": "data"
+            },
+            {
+              "label": "Direct Receipts",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "Disbursements",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "Liquidity Headroom",
+              "value": 95,
+              "tone": "accent"
+            }
+          ]
+        },
+        {
+          "at": "tryIt",
+          "caption": "Step 4: Full treasury scorecard certification and SHA-256 seal for Enterprise Treasury 13-Week Cash...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Treasury Cash",
+              "value": 100,
+              "tone": "data"
+            },
+            {
+              "label": "Direct Receipts",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "Disbursements",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "Liquidity Headroom",
+              "value": 100,
+              "tone": "accent"
+            }
+          ]
+        }
+      ]
+    }
+  }
+]
