@@ -84,3 +84,150 @@ def generate_funnel_visual(prefix: str, day: int, entries: list) -> dict:
         "model": "anthropic/claude-3.5-sonnet",
         "entries": json_entries
     }
+
+def generate_ledger_sheet_visual(prefix: str, day: int, entries: list) -> dict:
+    json_entries = []
+    for idx, e in enumerate(entries):
+        base_amount = 25000 + day * 3500 + idx * 1250
+        adjustment = int(base_amount * 0.20)
+        code_hash = make_sha256(e['code'])
+
+        json_entries.append({
+            "partTitle": e['title'],
+            "codeHash": code_hash,
+            "spec": {
+                "template": "ledger-sheet",
+                "title": f"{e['title'][:42]}... — General Ledger Verification",
+                "steps": [
+                    {
+                        "at": "intro",
+                        "caption": f"Step 1: Open primary facility debit entry (${base_amount:,}) for {e['title'][:35]}...",
+                        "title": f"Day {day} Journal — Initial Posting",
+                        "isBalanced": True,
+                        "totalDebit": base_amount,
+                        "totalCredit": base_amount,
+                        "entries": [
+                            {
+                                "id": f"JNL-{day}01",
+                                "account": "Primary Operating Asset / Commercial Facility",
+                                "debit": base_amount,
+                                "balance": base_amount,
+                                "tone": "data",
+                                "memo": "Initial facility recognition"
+                            },
+                            {
+                                "id": f"JNL-{day}02",
+                                "account": "Clearing & Settlement Control / Syndicate Funding",
+                                "credit": base_amount,
+                                "balance": 0,
+                                "tone": "ok",
+                                "memo": "Offset settlement control"
+                            }
+                        ]
+                    },
+                    {
+                        "at": "say1",
+                        "caption": f"Step 2: Record secondary interest & fee accrual adjustment (${adjustment:,}).",
+                        "title": f"Day {day} Journal — Accrual Adjustment",
+                        "isBalanced": True,
+                        "totalDebit": base_amount + adjustment,
+                        "totalCredit": base_amount + adjustment,
+                        "entries": [
+                            {
+                                "id": f"JNL-{day}01",
+                                "account": "Primary Operating Asset / Commercial Facility",
+                                "debit": base_amount,
+                                "balance": base_amount,
+                                "tone": "ok"
+                            },
+                            {
+                                "id": f"JNL-{day}03",
+                                "account": "Accrued Facility Interest / Fee Receivable",
+                                "debit": adjustment,
+                                "balance": base_amount + adjustment,
+                                "tone": "data"
+                            },
+                            {
+                                "id": f"JNL-{day}02",
+                                "account": "Clearing & Settlement Control / Syndicate Funding",
+                                "credit": base_amount + adjustment,
+                                "balance": 0,
+                                "tone": "ok"
+                            }
+                        ]
+                    },
+                    {
+                        "at": "example",
+                        "caption": f"Step 3: Verification of institutional reserve provisioning & counterparty collateral.",
+                        "title": f"Day {day} Journal — Collateral & Reserve Alignment",
+                        "isBalanced": True,
+                        "totalDebit": base_amount + adjustment,
+                        "totalCredit": base_amount + adjustment,
+                        "entries": [
+                            {
+                                "id": f"JNL-{day}01",
+                                "account": "Primary Operating Asset / Commercial Facility",
+                                "debit": base_amount,
+                                "balance": base_amount,
+                                "tone": "ok"
+                            },
+                            {
+                                "id": f"JNL-{day}03",
+                                "account": "Accrued Facility Interest / Fee Receivable",
+                                "debit": adjustment,
+                                "balance": base_amount + adjustment,
+                                "tone": "ok"
+                            },
+                            {
+                                "id": f"JNL-{day}02",
+                                "account": "Clearing & Settlement Control / Syndicate Funding",
+                                "credit": base_amount + adjustment,
+                                "balance": 0,
+                                "tone": "ok"
+                            }
+                        ]
+                    },
+                    {
+                        "at": "tryIt",
+                        "caption": f"Step 4: Real-time balance sheet reconciliation and regulatory capital confirmation.",
+                        "title": f"Day {day} Journal — Balanced Closure",
+                        "isBalanced": True,
+                        "totalDebit": base_amount + adjustment,
+                        "totalCredit": base_amount + adjustment,
+                        "entries": [
+                            {
+                                "id": f"JNL-{day}01",
+                                "account": "Primary Operating Asset / Commercial Facility",
+                                "debit": base_amount,
+                                "balance": base_amount,
+                                "tone": "ok"
+                            },
+                            {
+                                "id": f"JNL-{day}03",
+                                "account": "Accrued Facility Interest / Fee Receivable",
+                                "debit": adjustment,
+                                "balance": base_amount + adjustment,
+                                "tone": "ok"
+                            },
+                            {
+                                "id": f"JNL-{day}02",
+                                "account": "Clearing & Settlement Control / Syndicate Funding",
+                                "credit": base_amount + adjustment,
+                                "balance": 0,
+                                "tone": "ok"
+                            }
+                        ]
+                    }
+                ]
+            }
+        })
+
+    return {
+        "schemaVersion": 1,
+        "prefix": prefix,
+        "day": day,
+        "promptSha": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
+        "model": "anthropic/claude-3.5-sonnet",
+        "entries": json_entries
+    }
+
