@@ -1,0 +1,599 @@
+{
+  "schemaVersion": 1,
+  "prefix": "excel_viz",
+  "day": 12,
+  "promptSha": "77af127809e6c9c26c0962f3a3f004af756a3f1b6dd54af6ea0e6d6ba74fe127",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Capital Budgeting Foundations: Net Present Value (NPV), Internal Rate of Return (IRR) & Hurdle Rate Invariants",
+      "codeHash": "7f21758185577164846abec5dd780011ae1f55e48bc945f02d9da8991a0f0f09",
+      "spec": {
+        "template": "bars",
+        "title": "Capital Budgeting Foundations: Net Prese... \u2014 Capital Allocation & Sensitivity Metrics",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline capital budgeting indicators for Capital Budgeting Foundations: Net Pre...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Projected NPV",
+                "value": 78,
+                "tone": "data"
+              },
+              {
+                "label": "Internal Rate of Return",
+                "value": 55,
+                "tone": "idle"
+              },
+              {
+                "label": "Profitability Index",
+                "value": 42,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk-Adjusted Return",
+                "value": 30,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Map sensitivity surfaces and hurdle rate buffers for Capital Budgeting Foundations: Net Pre...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Projected NPV",
+                "value": 84,
+                "tone": "ok"
+              },
+              {
+                "label": "Internal Rate of Return",
+                "value": 68,
+                "tone": "data"
+              },
+              {
+                "label": "Profitability Index",
+                "value": 52,
+                "tone": "data"
+              },
+              {
+                "label": "Risk-Adjusted Return",
+                "value": 38,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluate valuation elasticity and tornado ranking swings",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Projected NPV",
+                "value": 90,
+                "tone": "ok"
+              },
+              {
+                "label": "Internal Rate of Return",
+                "value": 75,
+                "tone": "ok"
+              },
+              {
+                "label": "Profitability Index",
+                "value": 62,
+                "tone": "ok"
+              },
+              {
+                "label": "Risk-Adjusted Return",
+                "value": 50,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Commit audited investment committee scorecard for Capital Budgeting Foundations: Net Pre...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Projected NPV",
+                "value": 95,
+                "tone": "ok"
+              },
+              {
+                "label": "Internal Rate of Return",
+                "value": 82,
+                "tone": "ok"
+              },
+              {
+                "label": "Profitability Index",
+                "value": 70,
+                "tone": "ok"
+              },
+              {
+                "label": "Risk-Adjusted Return",
+                "value": 60,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Dual-Variable Sensitivity Tables (Excel Data Tables 2D) & Vectorized Scenario Grids",
+      "codeHash": "f40c6d0cc1b27f9cc8426968c8d7b19ba642395048f908ca50e63236610eb3ff",
+      "spec": {
+        "template": "bars",
+        "title": "Dual-Variable Sensitivity Tables (Excel ... \u2014 Capital Allocation & Sensitivity Metrics",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline capital budgeting indicators for Dual-Variable Sensitivity Tables (Exce...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Projected NPV",
+                "value": 78,
+                "tone": "data"
+              },
+              {
+                "label": "Internal Rate of Return",
+                "value": 55,
+                "tone": "idle"
+              },
+              {
+                "label": "Profitability Index",
+                "value": 42,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk-Adjusted Return",
+                "value": 30,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Map sensitivity surfaces and hurdle rate buffers for Dual-Variable Sensitivity Tables (Exce...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Projected NPV",
+                "value": 84,
+                "tone": "ok"
+              },
+              {
+                "label": "Internal Rate of Return",
+                "value": 68,
+                "tone": "data"
+              },
+              {
+                "label": "Profitability Index",
+                "value": 52,
+                "tone": "data"
+              },
+              {
+                "label": "Risk-Adjusted Return",
+                "value": 38,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluate valuation elasticity and tornado ranking swings",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Projected NPV",
+                "value": 90,
+                "tone": "ok"
+              },
+              {
+                "label": "Internal Rate of Return",
+                "value": 75,
+                "tone": "ok"
+              },
+              {
+                "label": "Profitability Index",
+                "value": 62,
+                "tone": "ok"
+              },
+              {
+                "label": "Risk-Adjusted Return",
+                "value": 50,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Commit audited investment committee scorecard for Dual-Variable Sensitivity Tables (Exce...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Projected NPV",
+                "value": 95,
+                "tone": "ok"
+              },
+              {
+                "label": "Internal Rate of Return",
+                "value": 82,
+                "tone": "ok"
+              },
+              {
+                "label": "Profitability Index",
+                "value": 70,
+                "tone": "ok"
+              },
+              {
+                "label": "Risk-Adjusted Return",
+                "value": 60,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Tornado Diagram Architecture: Ranking Value Drivers by Elasticity of Valuation",
+      "codeHash": "878eb10abcd6aa4dd0c72d491d8b899a414183e63ecb835b0a70a26d3fb12329",
+      "spec": {
+        "template": "bars",
+        "title": "Tornado Diagram Architecture: Ranking Va... \u2014 Capital Allocation & Sensitivity Metrics",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline capital budgeting indicators for Tornado Diagram Architecture: Ranking ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Projected NPV",
+                "value": 78,
+                "tone": "data"
+              },
+              {
+                "label": "Internal Rate of Return",
+                "value": 55,
+                "tone": "idle"
+              },
+              {
+                "label": "Profitability Index",
+                "value": 42,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk-Adjusted Return",
+                "value": 30,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Map sensitivity surfaces and hurdle rate buffers for Tornado Diagram Architecture: Ranking ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Projected NPV",
+                "value": 84,
+                "tone": "ok"
+              },
+              {
+                "label": "Internal Rate of Return",
+                "value": 68,
+                "tone": "data"
+              },
+              {
+                "label": "Profitability Index",
+                "value": 52,
+                "tone": "data"
+              },
+              {
+                "label": "Risk-Adjusted Return",
+                "value": 38,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluate valuation elasticity and tornado ranking swings",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Projected NPV",
+                "value": 90,
+                "tone": "ok"
+              },
+              {
+                "label": "Internal Rate of Return",
+                "value": 75,
+                "tone": "ok"
+              },
+              {
+                "label": "Profitability Index",
+                "value": 62,
+                "tone": "ok"
+              },
+              {
+                "label": "Risk-Adjusted Return",
+                "value": 50,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Commit audited investment committee scorecard for Tornado Diagram Architecture: Ranking ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Projected NPV",
+                "value": 95,
+                "tone": "ok"
+              },
+              {
+                "label": "Internal Rate of Return",
+                "value": 82,
+                "tone": "ok"
+              },
+              {
+                "label": "Profitability Index",
+                "value": 70,
+                "tone": "ok"
+              },
+              {
+                "label": "Risk-Adjusted Return",
+                "value": 60,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Break-Even Analysis, Operating Leverage & Margin of Safety Modeling",
+      "codeHash": "6a60a884f7ffa687652fcba2d1a8e9369bc904266ed32ec09ce5e0af00fdfe06",
+      "spec": {
+        "template": "bars",
+        "title": "Break-Even Analysis, Operating Leverage ... \u2014 Capital Allocation & Sensitivity Metrics",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline capital budgeting indicators for Break-Even Analysis, Operating Leverag...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Projected NPV",
+                "value": 78,
+                "tone": "data"
+              },
+              {
+                "label": "Internal Rate of Return",
+                "value": 55,
+                "tone": "idle"
+              },
+              {
+                "label": "Profitability Index",
+                "value": 42,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk-Adjusted Return",
+                "value": 30,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Map sensitivity surfaces and hurdle rate buffers for Break-Even Analysis, Operating Leverag...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Projected NPV",
+                "value": 84,
+                "tone": "ok"
+              },
+              {
+                "label": "Internal Rate of Return",
+                "value": 68,
+                "tone": "data"
+              },
+              {
+                "label": "Profitability Index",
+                "value": 52,
+                "tone": "data"
+              },
+              {
+                "label": "Risk-Adjusted Return",
+                "value": 38,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluate valuation elasticity and tornado ranking swings",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Projected NPV",
+                "value": 90,
+                "tone": "ok"
+              },
+              {
+                "label": "Internal Rate of Return",
+                "value": 75,
+                "tone": "ok"
+              },
+              {
+                "label": "Profitability Index",
+                "value": 62,
+                "tone": "ok"
+              },
+              {
+                "label": "Risk-Adjusted Return",
+                "value": 50,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Commit audited investment committee scorecard for Break-Even Analysis, Operating Leverag...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Projected NPV",
+                "value": 95,
+                "tone": "ok"
+              },
+              {
+                "label": "Internal Rate of Return",
+                "value": 82,
+                "tone": "ok"
+              },
+              {
+                "label": "Profitability Index",
+                "value": 70,
+                "tone": "ok"
+              },
+              {
+                "label": "Risk-Adjusted Return",
+                "value": 60,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Institutional Capital Allocation & Dynamic Investment Committee Scoring Engine",
+      "codeHash": "136eac6f9400e4fa40a6ac08f21655d7410827a204d9c8673dbea65562ae3544",
+      "spec": {
+        "template": "bars",
+        "title": "Institutional Capital Allocation & Dynam... \u2014 Capital Allocation & Sensitivity Metrics",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline capital budgeting indicators for Institutional Capital Allocation & Dyn...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Projected NPV",
+                "value": 78,
+                "tone": "data"
+              },
+              {
+                "label": "Internal Rate of Return",
+                "value": 55,
+                "tone": "idle"
+              },
+              {
+                "label": "Profitability Index",
+                "value": 42,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk-Adjusted Return",
+                "value": 30,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Map sensitivity surfaces and hurdle rate buffers for Institutional Capital Allocation & Dyn...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Projected NPV",
+                "value": 84,
+                "tone": "ok"
+              },
+              {
+                "label": "Internal Rate of Return",
+                "value": 68,
+                "tone": "data"
+              },
+              {
+                "label": "Profitability Index",
+                "value": 52,
+                "tone": "data"
+              },
+              {
+                "label": "Risk-Adjusted Return",
+                "value": 38,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluate valuation elasticity and tornado ranking swings",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Projected NPV",
+                "value": 90,
+                "tone": "ok"
+              },
+              {
+                "label": "Internal Rate of Return",
+                "value": 75,
+                "tone": "ok"
+              },
+              {
+                "label": "Profitability Index",
+                "value": 62,
+                "tone": "ok"
+              },
+              {
+                "label": "Risk-Adjusted Return",
+                "value": 50,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Commit audited investment committee scorecard for Institutional Capital Allocation & Dyn...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Projected NPV",
+                "value": 95,
+                "tone": "ok"
+              },
+              {
+                "label": "Internal Rate of Return",
+                "value": 82,
+                "tone": "ok"
+              },
+              {
+                "label": "Profitability Index",
+                "value": 70,
+                "tone": "ok"
+              },
+              {
+                "label": "Risk-Adjusted Return",
+                "value": 60,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
