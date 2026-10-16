@@ -1,0 +1,599 @@
+{
+  "schemaVersion": 1,
+  "prefix": "excel_viz",
+  "day": 15,
+  "promptSha": "c8ca4b5b916ddb6faaaed2eae6ce472189773f23ef56dd6e856f133979ec4d68",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Strategic M&A Architecture, Exchange Ratios & Transaction Financing Mix",
+      "codeHash": "76da7002144216de35be7a5f834444055c191000711db8e5624219b447732ab6",
+      "spec": {
+        "template": "bars",
+        "title": "Strategic M&A Architecture, Exchange Rat... \u2014 Strategic M&A Capstone Metrics",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline strategic M&A metrics for Strategic M&A Architecture, Exchang...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Combined Enterprise Value",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "Pro Forma EPS Growth",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Synergy Realization",
+                "value": 50,
+                "tone": "idle"
+              },
+              {
+                "label": "Pro Forma Leverage",
+                "value": 35,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Valuation bridge and financing mechanics for Strategic M&A Architecture, Exchang...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Combined Enterprise Value",
+                "value": 88,
+                "tone": "data"
+              },
+              {
+                "label": "Pro Forma EPS Growth",
+                "value": 68,
+                "tone": "accent"
+              },
+              {
+                "label": "Synergy Realization",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Pro Forma Leverage",
+                "value": 32,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Applied institutional case study and accretion analysis for Strategic M&A Architecture, Exchang...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Combined Enterprise Value",
+                "value": 92,
+                "tone": "accent"
+              },
+              {
+                "label": "Pro Forma EPS Growth",
+                "value": 72,
+                "tone": "accent"
+              },
+              {
+                "label": "Synergy Realization",
+                "value": 65,
+                "tone": "data"
+              },
+              {
+                "label": "Pro Forma Leverage",
+                "value": 30,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Interactive board scorecard and covenant stress testing for Strategic M&A Architecture, Exchang...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Combined Enterprise Value",
+                "value": 96,
+                "tone": "accent"
+              },
+              {
+                "label": "Pro Forma EPS Growth",
+                "value": 78,
+                "tone": "accent"
+              },
+              {
+                "label": "Synergy Realization",
+                "value": 75,
+                "tone": "accent"
+              },
+              {
+                "label": "Pro Forma Leverage",
+                "value": 28,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Pro Forma Combined Income Statement, Goodwill & Purchase Price Allocation (PPA)",
+      "codeHash": "e8a6253644865b37d9a57ce09b6f54a82c4ace501d64856efd24af287bc5ad84",
+      "spec": {
+        "template": "bars",
+        "title": "Pro Forma Combined Income Statement, Goo... \u2014 Strategic M&A Capstone Metrics",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline strategic M&A metrics for Pro Forma Combined Income Statement...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Combined Enterprise Value",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "Pro Forma EPS Growth",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Synergy Realization",
+                "value": 50,
+                "tone": "idle"
+              },
+              {
+                "label": "Pro Forma Leverage",
+                "value": 35,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Valuation bridge and financing mechanics for Pro Forma Combined Income Statement...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Combined Enterprise Value",
+                "value": 88,
+                "tone": "data"
+              },
+              {
+                "label": "Pro Forma EPS Growth",
+                "value": 68,
+                "tone": "accent"
+              },
+              {
+                "label": "Synergy Realization",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Pro Forma Leverage",
+                "value": 32,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Applied institutional case study and accretion analysis for Pro Forma Combined Income Statement...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Combined Enterprise Value",
+                "value": 92,
+                "tone": "accent"
+              },
+              {
+                "label": "Pro Forma EPS Growth",
+                "value": 72,
+                "tone": "accent"
+              },
+              {
+                "label": "Synergy Realization",
+                "value": 65,
+                "tone": "data"
+              },
+              {
+                "label": "Pro Forma Leverage",
+                "value": 30,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Interactive board scorecard and covenant stress testing for Pro Forma Combined Income Statement...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Combined Enterprise Value",
+                "value": 96,
+                "tone": "accent"
+              },
+              {
+                "label": "Pro Forma EPS Growth",
+                "value": 78,
+                "tone": "accent"
+              },
+              {
+                "label": "Synergy Realization",
+                "value": 75,
+                "tone": "accent"
+              },
+              {
+                "label": "Pro Forma Leverage",
+                "value": 28,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Revenue & Cost Synergies, Realization Phasing & Integration Friction",
+      "codeHash": "bde33af7f9e5a01df2cc164c5351fdafbd7b827a50a6d304f4d8e3c5eb3724e0",
+      "spec": {
+        "template": "bars",
+        "title": "Revenue & Cost Synergies, Realization Ph... \u2014 Strategic M&A Capstone Metrics",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline strategic M&A metrics for Revenue & Cost Synergies, Realizati...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Combined Enterprise Value",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "Pro Forma EPS Growth",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Synergy Realization",
+                "value": 50,
+                "tone": "idle"
+              },
+              {
+                "label": "Pro Forma Leverage",
+                "value": 35,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Valuation bridge and financing mechanics for Revenue & Cost Synergies, Realizati...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Combined Enterprise Value",
+                "value": 88,
+                "tone": "data"
+              },
+              {
+                "label": "Pro Forma EPS Growth",
+                "value": 68,
+                "tone": "accent"
+              },
+              {
+                "label": "Synergy Realization",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Pro Forma Leverage",
+                "value": 32,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Applied institutional case study and accretion analysis for Revenue & Cost Synergies, Realizati...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Combined Enterprise Value",
+                "value": 92,
+                "tone": "accent"
+              },
+              {
+                "label": "Pro Forma EPS Growth",
+                "value": 72,
+                "tone": "accent"
+              },
+              {
+                "label": "Synergy Realization",
+                "value": 65,
+                "tone": "data"
+              },
+              {
+                "label": "Pro Forma Leverage",
+                "value": 30,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Interactive board scorecard and covenant stress testing for Revenue & Cost Synergies, Realizati...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Combined Enterprise Value",
+                "value": 96,
+                "tone": "accent"
+              },
+              {
+                "label": "Pro Forma EPS Growth",
+                "value": 78,
+                "tone": "accent"
+              },
+              {
+                "label": "Synergy Realization",
+                "value": 75,
+                "tone": "accent"
+              },
+              {
+                "label": "Pro Forma Leverage",
+                "value": 28,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Pro Forma Earnings Per Share (EPS) Accretion/Dilution Analysis & Breakeven Synergy Solver",
+      "codeHash": "56b92716e7ffe8726b7134097452c0bc68fa0ba24d4d59ca5dbdaa582ad6a4d4",
+      "spec": {
+        "template": "bars",
+        "title": "Pro Forma Earnings Per Share (EPS) Accre... \u2014 Strategic M&A Capstone Metrics",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline strategic M&A metrics for Pro Forma Earnings Per Share (EPS) ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Combined Enterprise Value",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "Pro Forma EPS Growth",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Synergy Realization",
+                "value": 50,
+                "tone": "idle"
+              },
+              {
+                "label": "Pro Forma Leverage",
+                "value": 35,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Valuation bridge and financing mechanics for Pro Forma Earnings Per Share (EPS) ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Combined Enterprise Value",
+                "value": 88,
+                "tone": "data"
+              },
+              {
+                "label": "Pro Forma EPS Growth",
+                "value": 68,
+                "tone": "accent"
+              },
+              {
+                "label": "Synergy Realization",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Pro Forma Leverage",
+                "value": 32,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Applied institutional case study and accretion analysis for Pro Forma Earnings Per Share (EPS) ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Combined Enterprise Value",
+                "value": 92,
+                "tone": "accent"
+              },
+              {
+                "label": "Pro Forma EPS Growth",
+                "value": 72,
+                "tone": "accent"
+              },
+              {
+                "label": "Synergy Realization",
+                "value": 65,
+                "tone": "data"
+              },
+              {
+                "label": "Pro Forma Leverage",
+                "value": 30,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Interactive board scorecard and covenant stress testing for Pro Forma Earnings Per Share (EPS) ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Combined Enterprise Value",
+                "value": 96,
+                "tone": "accent"
+              },
+              {
+                "label": "Pro Forma EPS Growth",
+                "value": 78,
+                "tone": "accent"
+              },
+              {
+                "label": "Synergy Realization",
+                "value": 75,
+                "tone": "accent"
+              },
+              {
+                "label": "Pro Forma Leverage",
+                "value": 28,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Grand Master Milestone 3 Capstone Enterprise Strategic M&A Command Center & Boardroom Scorecard",
+      "codeHash": "e9af3217dd07faa7a202c85e5247e91a21d285d1939ea0cc500af180a6bb0aa6",
+      "spec": {
+        "template": "bars",
+        "title": "Grand Master Milestone 3 Capstone Enterp... \u2014 Strategic M&A Capstone Metrics",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline strategic M&A metrics for Grand Master Milestone 3 Capstone E...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Combined Enterprise Value",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "Pro Forma EPS Growth",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Synergy Realization",
+                "value": 50,
+                "tone": "idle"
+              },
+              {
+                "label": "Pro Forma Leverage",
+                "value": 35,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Valuation bridge and financing mechanics for Grand Master Milestone 3 Capstone E...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Combined Enterprise Value",
+                "value": 88,
+                "tone": "data"
+              },
+              {
+                "label": "Pro Forma EPS Growth",
+                "value": 68,
+                "tone": "accent"
+              },
+              {
+                "label": "Synergy Realization",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Pro Forma Leverage",
+                "value": 32,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Applied institutional case study and accretion analysis for Grand Master Milestone 3 Capstone E...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Combined Enterprise Value",
+                "value": 92,
+                "tone": "accent"
+              },
+              {
+                "label": "Pro Forma EPS Growth",
+                "value": 72,
+                "tone": "accent"
+              },
+              {
+                "label": "Synergy Realization",
+                "value": 65,
+                "tone": "data"
+              },
+              {
+                "label": "Pro Forma Leverage",
+                "value": 30,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Interactive board scorecard and covenant stress testing for Grand Master Milestone 3 Capstone E...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Combined Enterprise Value",
+                "value": 96,
+                "tone": "accent"
+              },
+              {
+                "label": "Pro Forma EPS Growth",
+                "value": 78,
+                "tone": "accent"
+              },
+              {
+                "label": "Synergy Realization",
+                "value": 75,
+                "tone": "accent"
+              },
+              {
+                "label": "Pro Forma Leverage",
+                "value": 28,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
