@@ -1,0 +1,592 @@
+[
+  {
+    "partTitle": "The 5-Step Revenue Recognition Framework under ASC 606 & IFRS 15",
+    "codeHash": "d375e37e406346ec0e1b77d04f1370bd8b3ddfde33a111465d7e1547bdb9f185",
+    "spec": {
+      "template": "bars",
+      "title": "The 5-Step Revenue Recognition Framework... \u2014 ASC 606 Revenue Telemetry",
+      "steps": [
+        {
+          "at": "intro",
+          "caption": "Step 1: Baseline contract terms and performance obligations for The 5-Step Revenue Recognition F...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Contract Enforceability",
+              "value": 90,
+              "tone": "data"
+            },
+            {
+              "label": "SSP Allocation",
+              "value": 45,
+              "tone": "accent"
+            },
+            {
+              "label": "Deferred Revenue",
+              "value": 40,
+              "tone": "idle"
+            },
+            {
+              "label": "GAAP Recognition",
+              "value": 50,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "say1",
+          "caption": "Step 2: Relative SSP discount proration and timing scans for The 5-Step Revenue Recognition F...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Contract Enforceability",
+              "value": 95,
+              "tone": "data"
+            },
+            {
+              "label": "SSP Allocation",
+              "value": 75,
+              "tone": "accent"
+            },
+            {
+              "label": "Deferred Revenue",
+              "value": 65,
+              "tone": "warn"
+            },
+            {
+              "label": "GAAP Recognition",
+              "value": 70,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "example",
+          "caption": "Step 3: Deferred revenue waterfall roll-forward and contract modifications in The 5-Step Revenue Recognition F...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Contract Enforceability",
+              "value": 100,
+              "tone": "data"
+            },
+            {
+              "label": "SSP Allocation",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "Deferred Revenue",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "GAAP Recognition",
+              "value": 85,
+              "tone": "accent"
+            }
+          ]
+        },
+        {
+          "at": "tryIt",
+          "caption": "Step 4: Auditor certified revenue scorecard and SHA-256 seal for The 5-Step Revenue Recognition F...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Contract Enforceability",
+              "value": 100,
+              "tone": "data"
+            },
+            {
+              "label": "SSP Allocation",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "Deferred Revenue",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "GAAP Recognition",
+              "value": 100,
+              "tone": "accent"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "partTitle": "Multi-Element Arrangements & Standalone Selling Price (SSP) Allocation",
+    "codeHash": "5b677d7070c9b24b82879166cdd7848ff680341c7d185fddd96d366c24ffb2d9",
+    "spec": {
+      "template": "bars",
+      "title": "Multi-Element Arrangements & Standalone ... \u2014 ASC 606 Revenue Telemetry",
+      "steps": [
+        {
+          "at": "intro",
+          "caption": "Step 1: Baseline contract terms and performance obligations for Multi-Element Arrangements & Sta...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Contract Enforceability",
+              "value": 90,
+              "tone": "data"
+            },
+            {
+              "label": "SSP Allocation",
+              "value": 45,
+              "tone": "accent"
+            },
+            {
+              "label": "Deferred Revenue",
+              "value": 40,
+              "tone": "idle"
+            },
+            {
+              "label": "GAAP Recognition",
+              "value": 50,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "say1",
+          "caption": "Step 2: Relative SSP discount proration and timing scans for Multi-Element Arrangements & Sta...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Contract Enforceability",
+              "value": 95,
+              "tone": "data"
+            },
+            {
+              "label": "SSP Allocation",
+              "value": 75,
+              "tone": "accent"
+            },
+            {
+              "label": "Deferred Revenue",
+              "value": 65,
+              "tone": "warn"
+            },
+            {
+              "label": "GAAP Recognition",
+              "value": 70,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "example",
+          "caption": "Step 3: Deferred revenue waterfall roll-forward and contract modifications in Multi-Element Arrangements & Sta...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Contract Enforceability",
+              "value": 100,
+              "tone": "data"
+            },
+            {
+              "label": "SSP Allocation",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "Deferred Revenue",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "GAAP Recognition",
+              "value": 85,
+              "tone": "accent"
+            }
+          ]
+        },
+        {
+          "at": "tryIt",
+          "caption": "Step 4: Auditor certified revenue scorecard and SHA-256 seal for Multi-Element Arrangements & Sta...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Contract Enforceability",
+              "value": 100,
+              "tone": "data"
+            },
+            {
+              "label": "SSP Allocation",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "Deferred Revenue",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "GAAP Recognition",
+              "value": 100,
+              "tone": "accent"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "partTitle": "Deferred Revenue Waterfall & Billing vs Revenue Recognition Schedules",
+    "codeHash": "ff2e117d2fc41662a07c461202a27c2572bda287cf0b9b54359c159ae9fb1bd0",
+    "spec": {
+      "template": "bars",
+      "title": "Deferred Revenue Waterfall & Billing vs ... \u2014 ASC 606 Revenue Telemetry",
+      "steps": [
+        {
+          "at": "intro",
+          "caption": "Step 1: Baseline contract terms and performance obligations for Deferred Revenue Waterfall & Bil...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Contract Enforceability",
+              "value": 90,
+              "tone": "data"
+            },
+            {
+              "label": "SSP Allocation",
+              "value": 45,
+              "tone": "accent"
+            },
+            {
+              "label": "Deferred Revenue",
+              "value": 40,
+              "tone": "idle"
+            },
+            {
+              "label": "GAAP Recognition",
+              "value": 50,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "say1",
+          "caption": "Step 2: Relative SSP discount proration and timing scans for Deferred Revenue Waterfall & Bil...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Contract Enforceability",
+              "value": 95,
+              "tone": "data"
+            },
+            {
+              "label": "SSP Allocation",
+              "value": 75,
+              "tone": "accent"
+            },
+            {
+              "label": "Deferred Revenue",
+              "value": 65,
+              "tone": "warn"
+            },
+            {
+              "label": "GAAP Recognition",
+              "value": 70,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "example",
+          "caption": "Step 3: Deferred revenue waterfall roll-forward and contract modifications in Deferred Revenue Waterfall & Bil...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Contract Enforceability",
+              "value": 100,
+              "tone": "data"
+            },
+            {
+              "label": "SSP Allocation",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "Deferred Revenue",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "GAAP Recognition",
+              "value": 85,
+              "tone": "accent"
+            }
+          ]
+        },
+        {
+          "at": "tryIt",
+          "caption": "Step 4: Auditor certified revenue scorecard and SHA-256 seal for Deferred Revenue Waterfall & Bil...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Contract Enforceability",
+              "value": 100,
+              "tone": "data"
+            },
+            {
+              "label": "SSP Allocation",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "Deferred Revenue",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "GAAP Recognition",
+              "value": 100,
+              "tone": "accent"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "partTitle": "Contract Modifications, Upgrades, Downgrades & True-Up Accounting",
+    "codeHash": "c421293287b2f10267db34c1b9af8584365d46ecfa8b5edaf9f5ebac8bf741e4",
+    "spec": {
+      "template": "bars",
+      "title": "Contract Modifications, Upgrades, Downgr... \u2014 ASC 606 Revenue Telemetry",
+      "steps": [
+        {
+          "at": "intro",
+          "caption": "Step 1: Baseline contract terms and performance obligations for Contract Modifications, Upgrades...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Contract Enforceability",
+              "value": 90,
+              "tone": "data"
+            },
+            {
+              "label": "SSP Allocation",
+              "value": 45,
+              "tone": "accent"
+            },
+            {
+              "label": "Deferred Revenue",
+              "value": 40,
+              "tone": "idle"
+            },
+            {
+              "label": "GAAP Recognition",
+              "value": 50,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "say1",
+          "caption": "Step 2: Relative SSP discount proration and timing scans for Contract Modifications, Upgrades...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Contract Enforceability",
+              "value": 95,
+              "tone": "data"
+            },
+            {
+              "label": "SSP Allocation",
+              "value": 75,
+              "tone": "accent"
+            },
+            {
+              "label": "Deferred Revenue",
+              "value": 65,
+              "tone": "warn"
+            },
+            {
+              "label": "GAAP Recognition",
+              "value": 70,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "example",
+          "caption": "Step 3: Deferred revenue waterfall roll-forward and contract modifications in Contract Modifications, Upgrades...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Contract Enforceability",
+              "value": 100,
+              "tone": "data"
+            },
+            {
+              "label": "SSP Allocation",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "Deferred Revenue",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "GAAP Recognition",
+              "value": 85,
+              "tone": "accent"
+            }
+          ]
+        },
+        {
+          "at": "tryIt",
+          "caption": "Step 4: Auditor certified revenue scorecard and SHA-256 seal for Contract Modifications, Upgrades...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Contract Enforceability",
+              "value": 100,
+              "tone": "data"
+            },
+            {
+              "label": "SSP Allocation",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "Deferred Revenue",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "GAAP Recognition",
+              "value": 100,
+              "tone": "accent"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "partTitle": "Enterprise SaaS Revenue Recognition & Deferred Revenue Governance Gateway",
+    "codeHash": "74b0e78865a5220cb64905782c733b8e2a724cd0eeccaf9c5462ef3cf5024536",
+    "spec": {
+      "template": "bars",
+      "title": "Enterprise SaaS Revenue Recognition & De... \u2014 ASC 606 Revenue Telemetry",
+      "steps": [
+        {
+          "at": "intro",
+          "caption": "Step 1: Baseline contract terms and performance obligations for Enterprise SaaS Revenue Recognit...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Contract Enforceability",
+              "value": 90,
+              "tone": "data"
+            },
+            {
+              "label": "SSP Allocation",
+              "value": 45,
+              "tone": "accent"
+            },
+            {
+              "label": "Deferred Revenue",
+              "value": 40,
+              "tone": "idle"
+            },
+            {
+              "label": "GAAP Recognition",
+              "value": 50,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "say1",
+          "caption": "Step 2: Relative SSP discount proration and timing scans for Enterprise SaaS Revenue Recognit...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Contract Enforceability",
+              "value": 95,
+              "tone": "data"
+            },
+            {
+              "label": "SSP Allocation",
+              "value": 75,
+              "tone": "accent"
+            },
+            {
+              "label": "Deferred Revenue",
+              "value": 65,
+              "tone": "warn"
+            },
+            {
+              "label": "GAAP Recognition",
+              "value": 70,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "example",
+          "caption": "Step 3: Deferred revenue waterfall roll-forward and contract modifications in Enterprise SaaS Revenue Recognit...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Contract Enforceability",
+              "value": 100,
+              "tone": "data"
+            },
+            {
+              "label": "SSP Allocation",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "Deferred Revenue",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "GAAP Recognition",
+              "value": 85,
+              "tone": "accent"
+            }
+          ]
+        },
+        {
+          "at": "tryIt",
+          "caption": "Step 4: Auditor certified revenue scorecard and SHA-256 seal for Enterprise SaaS Revenue Recognit...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Contract Enforceability",
+              "value": 100,
+              "tone": "data"
+            },
+            {
+              "label": "SSP Allocation",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "Deferred Revenue",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "GAAP Recognition",
+              "value": 100,
+              "tone": "accent"
+            }
+          ]
+        }
+      ]
+    }
+  }
+]
