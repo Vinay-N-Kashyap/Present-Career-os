@@ -1,0 +1,344 @@
+{
+  "schemaVersion": 1,
+  "prefix": "quant-systems",
+  "day": 14,
+  "promptSha": "984512df254e6c8ff16e72c417fa62ccd37eafe82ba8f4ffd7976b58d094436c",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Dark Pools & Alternative Trading Systems (ATS): Microstructure & Midpoint Crossing Mechanics",
+      "codeHash": "29cf3bd35e70bd1eae3f1ab41f331d7c1dccdae0a09eafa0eff47a8f74bbaf14",
+      "spec": {
+        "template": "states",
+        "title": "Dark Pools & Alternative Trading Systems (ATS):  — High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Dark Match"
+          },
+          {
+            "id": "st2",
+            "label": "Midpoint Peg"
+          },
+          {
+            "id": "st3",
+            "label": "Iceberg Sniffer"
+          },
+          {
+            "id": "st4",
+            "label": "Crossing Gate"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Dark Match): Initialize deterministic state for Dark Pools & Alternative Trading Systems...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Midpoint Peg with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "compute()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Iceberg Sniffer and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Commit wire-speed execution in Crossing Gate.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit() →"
+            },
+            "tone": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Hidden & Iceberg Order Detection in Consolidated L2 Order Books",
+      "codeHash": "706d54288e9780aad3b0aa2e8202dce960f6aaca705fe548b1f305c7f3047c55",
+      "spec": {
+        "template": "states",
+        "title": "Hidden & Iceberg Order Detection in Consolidated — High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Dark Match"
+          },
+          {
+            "id": "st2",
+            "label": "Midpoint Peg"
+          },
+          {
+            "id": "st3",
+            "label": "Iceberg Sniffer"
+          },
+          {
+            "id": "st4",
+            "label": "Crossing Gate"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Dark Match): Initialize deterministic state for Hidden & Iceberg Order Detection in Cons...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Midpoint Peg with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "compute()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Iceberg Sniffer and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Commit wire-speed execution in Crossing Gate.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit() →"
+            },
+            "tone": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Information Leakage, Gamification & Toxicity Defense in Dark Venues",
+      "codeHash": "3cac437675fc92b4d5c8fbd64c2a68ff0d7ac7ef390995d591fcbadc3f7dc1b5",
+      "spec": {
+        "template": "states",
+        "title": "Information Leakage, Gamification & Toxicity Def — High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Dark Match"
+          },
+          {
+            "id": "st2",
+            "label": "Midpoint Peg"
+          },
+          {
+            "id": "st3",
+            "label": "Iceberg Sniffer"
+          },
+          {
+            "id": "st4",
+            "label": "Crossing Gate"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Dark Match): Initialize deterministic state for Information Leakage, Gamification & Toxi...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Midpoint Peg with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "compute()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Iceberg Sniffer and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Commit wire-speed execution in Crossing Gate.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit() →"
+            },
+            "tone": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Routing Algorithms: Dark-First Slicing with Fallback Lit Sweeping (Dark Aggregator)",
+      "codeHash": "b4d845a397e001f9768a0392b1409cb2a0b042ed2984b5b6c39256062a752535",
+      "spec": {
+        "template": "states",
+        "title": "Routing Algorithms: Dark-First Slicing with Fall — High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Dark Match"
+          },
+          {
+            "id": "st2",
+            "label": "Midpoint Peg"
+          },
+          {
+            "id": "st3",
+            "label": "Iceberg Sniffer"
+          },
+          {
+            "id": "st4",
+            "label": "Crossing Gate"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Dark Match): Initialize deterministic state for Routing Algorithms: Dark-First Slicing w...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Midpoint Peg with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "compute()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Iceberg Sniffer and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Commit wire-speed execution in Crossing Gate.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit() →"
+            },
+            "tone": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production C++ Dark Liquidity Aggregator & Crossing Engine Simulator",
+      "codeHash": "aefb7da9210626270fa3a3ae23897b02cb1a832f0221f2d332d577c278feff88",
+      "spec": {
+        "template": "states",
+        "title": "Production C++ Dark Liquidity Aggregator & Cross — High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Dark Match"
+          },
+          {
+            "id": "st2",
+            "label": "Midpoint Peg"
+          },
+          {
+            "id": "st3",
+            "label": "Iceberg Sniffer"
+          },
+          {
+            "id": "st4",
+            "label": "Crossing Gate"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Dark Match): Initialize deterministic state for Production C++ Dark Liquidity Aggregator...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Midpoint Peg with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "compute()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Iceberg Sniffer and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Commit wire-speed execution in Crossing Gate.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit() →"
+            },
+            "tone": "ok"
+          }
+        ]
+      }
+    }
+  ]
+}
