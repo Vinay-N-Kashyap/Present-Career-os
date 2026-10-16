@@ -1,0 +1,599 @@
+{
+  "schemaVersion": 1,
+  "prefix": "excel_viz",
+  "day": 11,
+  "promptSha": "46f671534016f8e8748bf438d3253577ed39610cba03cc0584c6bb991670744d",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "The Three-Statement Integration Invariant: Balancing P&L, Balance Sheet & Cash Flow Statement",
+      "codeHash": "e189b8ff8abc5f4b42ebc69d8fa6f80a1b9e699a71e88c0daf1f675b2c04e20b",
+      "spec": {
+        "template": "bars",
+        "title": "The Three-Statement Integration Invarian... \u2014 Treasury & Working Capital Distribution",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline working capital metrics for The Three-Statement Integration Invari...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Current Liquidity",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Accounts Receivable",
+                "value": 52,
+                "tone": "idle"
+              },
+              {
+                "label": "Inventory Velocity",
+                "value": 38,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Cash",
+                "value": 28,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Isolate cash conversion cycles and debt buffers for The Three-Statement Integration Invari...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Current Liquidity",
+                "value": 82,
+                "tone": "ok"
+              },
+              {
+                "label": "Accounts Receivable",
+                "value": 65,
+                "tone": "data"
+              },
+              {
+                "label": "Inventory Velocity",
+                "value": 48,
+                "tone": "data"
+              },
+              {
+                "label": "Operating Cash",
+                "value": 35,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluate working capital sensitivity and revolver triggers",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Current Liquidity",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Accounts Receivable",
+                "value": 72,
+                "tone": "ok"
+              },
+              {
+                "label": "Inventory Velocity",
+                "value": 58,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Commit audited treasury liquidity schedule for The Three-Statement Integration Invari...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Current Liquidity",
+                "value": 94,
+                "tone": "ok"
+              },
+              {
+                "label": "Accounts Receivable",
+                "value": 78,
+                "tone": "ok"
+              },
+              {
+                "label": "Inventory Velocity",
+                "value": 66,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash",
+                "value": 55,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Working Capital Mechanics: Days Sales Outstanding (DSO), Days Inventory Outstanding (DIO) & Days Payable Outstanding (DPO)",
+      "codeHash": "2982f214d204aa9dc39cf90e2f0531e2a45ef326842d6b3f3a9d391473d49bba",
+      "spec": {
+        "template": "bars",
+        "title": "Working Capital Mechanics: Days Sales Ou... \u2014 Treasury & Working Capital Distribution",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline working capital metrics for Working Capital Mechanics: Days Sales ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Current Liquidity",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Accounts Receivable",
+                "value": 52,
+                "tone": "idle"
+              },
+              {
+                "label": "Inventory Velocity",
+                "value": 38,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Cash",
+                "value": 28,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Isolate cash conversion cycles and debt buffers for Working Capital Mechanics: Days Sales ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Current Liquidity",
+                "value": 82,
+                "tone": "ok"
+              },
+              {
+                "label": "Accounts Receivable",
+                "value": 65,
+                "tone": "data"
+              },
+              {
+                "label": "Inventory Velocity",
+                "value": 48,
+                "tone": "data"
+              },
+              {
+                "label": "Operating Cash",
+                "value": 35,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluate working capital sensitivity and revolver triggers",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Current Liquidity",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Accounts Receivable",
+                "value": 72,
+                "tone": "ok"
+              },
+              {
+                "label": "Inventory Velocity",
+                "value": 58,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Commit audited treasury liquidity schedule for Working Capital Mechanics: Days Sales ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Current Liquidity",
+                "value": 94,
+                "tone": "ok"
+              },
+              {
+                "label": "Accounts Receivable",
+                "value": 78,
+                "tone": "ok"
+              },
+              {
+                "label": "Inventory Velocity",
+                "value": 66,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash",
+                "value": 55,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Cash Conversion Cycle (CCC) & Operating Cash Drag Optimization",
+      "codeHash": "28d0acece9b3a4deedf2f2cd21d8674da605890334e8bbfdc92fff58a555f06e",
+      "spec": {
+        "template": "bars",
+        "title": "The Cash Conversion Cycle (CCC) & Operat... \u2014 Treasury & Working Capital Distribution",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline working capital metrics for The Cash Conversion Cycle (CCC) & Oper...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Current Liquidity",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Accounts Receivable",
+                "value": 52,
+                "tone": "idle"
+              },
+              {
+                "label": "Inventory Velocity",
+                "value": 38,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Cash",
+                "value": 28,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Isolate cash conversion cycles and debt buffers for The Cash Conversion Cycle (CCC) & Oper...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Current Liquidity",
+                "value": 82,
+                "tone": "ok"
+              },
+              {
+                "label": "Accounts Receivable",
+                "value": 65,
+                "tone": "data"
+              },
+              {
+                "label": "Inventory Velocity",
+                "value": 48,
+                "tone": "data"
+              },
+              {
+                "label": "Operating Cash",
+                "value": 35,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluate working capital sensitivity and revolver triggers",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Current Liquidity",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Accounts Receivable",
+                "value": 72,
+                "tone": "ok"
+              },
+              {
+                "label": "Inventory Velocity",
+                "value": 58,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Commit audited treasury liquidity schedule for The Cash Conversion Cycle (CCC) & Oper...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Current Liquidity",
+                "value": 94,
+                "tone": "ok"
+              },
+              {
+                "label": "Accounts Receivable",
+                "value": 78,
+                "tone": "ok"
+              },
+              {
+                "label": "Inventory Velocity",
+                "value": 66,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash",
+                "value": 55,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Dynamic Cash Flow Forecasting: Revolver Triggers, Minimum Cash Sweeps & Interest Circularity Breakers",
+      "codeHash": "085571b8f6ffd4b745a0de12a8507558d486a4354c6e16c700797256ed55606f",
+      "spec": {
+        "template": "bars",
+        "title": "Dynamic Cash Flow Forecasting: Revolver ... \u2014 Treasury & Working Capital Distribution",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline working capital metrics for Dynamic Cash Flow Forecasting: Revolve...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Current Liquidity",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Accounts Receivable",
+                "value": 52,
+                "tone": "idle"
+              },
+              {
+                "label": "Inventory Velocity",
+                "value": 38,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Cash",
+                "value": 28,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Isolate cash conversion cycles and debt buffers for Dynamic Cash Flow Forecasting: Revolve...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Current Liquidity",
+                "value": 82,
+                "tone": "ok"
+              },
+              {
+                "label": "Accounts Receivable",
+                "value": 65,
+                "tone": "data"
+              },
+              {
+                "label": "Inventory Velocity",
+                "value": 48,
+                "tone": "data"
+              },
+              {
+                "label": "Operating Cash",
+                "value": 35,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluate working capital sensitivity and revolver triggers",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Current Liquidity",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Accounts Receivable",
+                "value": 72,
+                "tone": "ok"
+              },
+              {
+                "label": "Inventory Velocity",
+                "value": 58,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Commit audited treasury liquidity schedule for Dynamic Cash Flow Forecasting: Revolve...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Current Liquidity",
+                "value": 94,
+                "tone": "ok"
+              },
+              {
+                "label": "Accounts Receivable",
+                "value": 78,
+                "tone": "ok"
+              },
+              {
+                "label": "Inventory Velocity",
+                "value": 66,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash",
+                "value": 55,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Institutional Treasury Liquidity Dashboard & Working Capital Optimization Engine",
+      "codeHash": "3516140cd1a62731d1c83c70231a2a5aaec6ddfcc1601018b8cb035f9fb3232e",
+      "spec": {
+        "template": "bars",
+        "title": "Institutional Treasury Liquidity Dashboa... \u2014 Treasury & Working Capital Distribution",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline working capital metrics for Institutional Treasury Liquidity Dashb...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Current Liquidity",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Accounts Receivable",
+                "value": 52,
+                "tone": "idle"
+              },
+              {
+                "label": "Inventory Velocity",
+                "value": 38,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Cash",
+                "value": 28,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Isolate cash conversion cycles and debt buffers for Institutional Treasury Liquidity Dashb...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Current Liquidity",
+                "value": 82,
+                "tone": "ok"
+              },
+              {
+                "label": "Accounts Receivable",
+                "value": 65,
+                "tone": "data"
+              },
+              {
+                "label": "Inventory Velocity",
+                "value": 48,
+                "tone": "data"
+              },
+              {
+                "label": "Operating Cash",
+                "value": 35,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluate working capital sensitivity and revolver triggers",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Current Liquidity",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Accounts Receivable",
+                "value": 72,
+                "tone": "ok"
+              },
+              {
+                "label": "Inventory Velocity",
+                "value": 58,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Commit audited treasury liquidity schedule for Institutional Treasury Liquidity Dashb...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Current Liquidity",
+                "value": 94,
+                "tone": "ok"
+              },
+              {
+                "label": "Accounts Receivable",
+                "value": 78,
+                "tone": "ok"
+              },
+              {
+                "label": "Inventory Velocity",
+                "value": 66,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash",
+                "value": 55,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
