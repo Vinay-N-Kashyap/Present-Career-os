@@ -1,0 +1,344 @@
+{
+  "schemaVersion": 1,
+  "prefix": "g3d",
+  "day": 23,
+  "promptSha": "6cc2d102aa80f2b203172fd58a0ff4add1b43fef9d8e6e3cec99f33aeeab8f92",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Phonemes, Visemes & the Oculus 15 Standard Viseme Mapping",
+      "codeHash": "138f3bae143b88b3966b01bfbc33eb483ae7e6472e6d1fe540299e5f19d05076",
+      "spec": {
+        "template": "states",
+        "title": "Phonemes, Visemes & the Oculus 15 Standard Viseme Mapping — Real-Time State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Phonemes, Visemes Setup"
+          },
+          {
+            "id": "st2",
+            "label": "Pipeline Evaluation"
+          },
+          {
+            "id": "st3",
+            "label": "Transform Execution"
+          },
+          {
+            "id": "st4",
+            "label": "Verified Output"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Phonemes, Visemes Setup): Initialize pipeline state for Phonemes, Visemes & the Oculus 15 Standard Viseme Mapping.",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Pipeline Evaluation with numerical boundary validation.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "dispatch()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Transform Execution applying mathematical transform invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Transition to Verified Output confirming deterministic convergence.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit()"
+            },
+            "tone": "data"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Web Audio API: AnalyserNode FFT Spectrogram & RMS Amplitude",
+      "codeHash": "b6d0d890bb251c386f07109cc13c19d8a03118ec6cb437878865f36d98bc6fc2",
+      "spec": {
+        "template": "states",
+        "title": "Web Audio API: AnalyserNode FFT Spectrogram & RMS Amplitude — Real-Time State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Web Audio API: Ana Setup"
+          },
+          {
+            "id": "st2",
+            "label": "Pipeline Evaluation"
+          },
+          {
+            "id": "st3",
+            "label": "Transform Execution"
+          },
+          {
+            "id": "st4",
+            "label": "Verified Output"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Web Audio API: Ana Setup): Initialize pipeline state for Web Audio API: AnalyserNode FFT Spectrogram & RMS Amplitude.",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Pipeline Evaluation with numerical boundary validation.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "dispatch()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Transform Execution applying mathematical transform invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Transition to Verified Output confirming deterministic convergence.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit()"
+            },
+            "tone": "data"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Viseme Temporal Smoothing: Asymmetric Attack/Decay Filters",
+      "codeHash": "1b3319d5fbf2c718254ead73f4b97f8709247a97c18c1db5c30271be9cb16b89",
+      "spec": {
+        "template": "states",
+        "title": "Viseme Temporal Smoothing: Asymmetric Attack/Decay Filters — Real-Time State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Viseme Temporal Sm Setup"
+          },
+          {
+            "id": "st2",
+            "label": "Pipeline Evaluation"
+          },
+          {
+            "id": "st3",
+            "label": "Transform Execution"
+          },
+          {
+            "id": "st4",
+            "label": "Verified Output"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Viseme Temporal Sm Setup): Initialize pipeline state for Viseme Temporal Smoothing: Asymmetric Attack/Decay Filters.",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Pipeline Evaluation with numerical boundary validation.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "dispatch()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Transform Execution applying mathematical transform invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Transition to Verified Output confirming deterministic convergence.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit()"
+            },
+            "tone": "data"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Procedural Secondary Motion: Spring-Damper Oscillators for Hair & Jiggle Physics",
+      "codeHash": "6bfb32bca13381e63138d541d774100706694fea6d00cbf234342e901d720584",
+      "spec": {
+        "template": "states",
+        "title": "Procedural Secondary Motion: Spring-Damper Oscillators for Hair & Jiggle Physics — Real-Time State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Procedural Seconda Setup"
+          },
+          {
+            "id": "st2",
+            "label": "Pipeline Evaluation"
+          },
+          {
+            "id": "st3",
+            "label": "Transform Execution"
+          },
+          {
+            "id": "st4",
+            "label": "Verified Output"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Procedural Seconda Setup): Initialize pipeline state for Procedural Secondary Motion: Spring-Damper Oscillators for Hair & Jiggle Physics.",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Pipeline Evaluation with numerical boundary validation.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "dispatch()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Transform Execution applying mathematical transform invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Transition to Verified Output confirming deterministic convergence.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit()"
+            },
+            "tone": "data"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Full Real-Time Speech-to-Face & Lip-Sync Animation Engine",
+      "codeHash": "3ba6d0121fb90eea5c86d05267426732a6119561ba0025c0c0b4ff300635f94f",
+      "spec": {
+        "template": "states",
+        "title": "Full Real-Time Speech-to-Face & Lip-Sync Animation Engine — Real-Time State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Full Real-Time Spe Setup"
+          },
+          {
+            "id": "st2",
+            "label": "Pipeline Evaluation"
+          },
+          {
+            "id": "st3",
+            "label": "Transform Execution"
+          },
+          {
+            "id": "st4",
+            "label": "Verified Output"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Full Real-Time Spe Setup): Initialize pipeline state for Full Real-Time Speech-to-Face & Lip-Sync Animation Engine.",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Pipeline Evaluation with numerical boundary validation.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "dispatch()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Transform Execution applying mathematical transform invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Transition to Verified Output confirming deterministic convergence.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit()"
+            },
+            "tone": "data"
+          }
+        ]
+      }
+    }
+  ]
+}

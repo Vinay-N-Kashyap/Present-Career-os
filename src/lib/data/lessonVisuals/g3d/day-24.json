@@ -1,0 +1,344 @@
+{
+  "schemaVersion": 1,
+  "prefix": "g3d",
+  "day": 24,
+  "promptSha": "7000ce022e38dfdaae21a3b1de364fe50162a45505767e242adb08f48e340fb2",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Axis-Aligned Bounding Box (AABB) & Broad-Phase Collision Detection",
+      "codeHash": "8b8a7005dc9a5482828148d11a8ba6d0daab4b09011bb7543e802f40c8ec393e",
+      "spec": {
+        "template": "states",
+        "title": "Axis-Aligned Bounding Box (AABB) & Broad-Phase Collision Detection — Real-Time State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Axis-Aligned Bound Setup"
+          },
+          {
+            "id": "st2",
+            "label": "Pipeline Evaluation"
+          },
+          {
+            "id": "st3",
+            "label": "Transform Execution"
+          },
+          {
+            "id": "st4",
+            "label": "Verified Output"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Axis-Aligned Bound Setup): Initialize pipeline state for Axis-Aligned Bounding Box (AABB) & Broad-Phase Collision Detection.",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Pipeline Evaluation with numerical boundary validation.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "dispatch()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Transform Execution applying mathematical transform invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Transition to Verified Output confirming deterministic convergence.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit()"
+            },
+            "tone": "data"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Screen-to-World Raycasting & 3D Mouse Object Picking",
+      "codeHash": "5e7d5d8788ecc905a7d077878788f659889b07d6af7547f762ff0ce37d0dd63a",
+      "spec": {
+        "template": "states",
+        "title": "Screen-to-World Raycasting & 3D Mouse Object Picking — Real-Time State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Screen-to-World Ra Setup"
+          },
+          {
+            "id": "st2",
+            "label": "Pipeline Evaluation"
+          },
+          {
+            "id": "st3",
+            "label": "Transform Execution"
+          },
+          {
+            "id": "st4",
+            "label": "Verified Output"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Screen-to-World Ra Setup): Initialize pipeline state for Screen-to-World Raycasting & 3D Mouse Object Picking.",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Pipeline Evaluation with numerical boundary validation.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "dispatch()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Transform Execution applying mathematical transform invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Transition to Verified Output confirming deterministic convergence.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit()"
+            },
+            "tone": "data"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Oriented Bounding Boxes (OBB) & Rotational Separating Axis Theorem",
+      "codeHash": "d5fb87be2f27f0cf578da4f74642b55087f8d7068e10535ffd8a06c60d41a9a7",
+      "spec": {
+        "template": "states",
+        "title": "Oriented Bounding Boxes (OBB) & Rotational Separating Axis Theorem — Real-Time State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Oriented Bounding Setup"
+          },
+          {
+            "id": "st2",
+            "label": "Pipeline Evaluation"
+          },
+          {
+            "id": "st3",
+            "label": "Transform Execution"
+          },
+          {
+            "id": "st4",
+            "label": "Verified Output"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Oriented Bounding Setup): Initialize pipeline state for Oriented Bounding Boxes (OBB) & Rotational Separating Axis Theorem.",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Pipeline Evaluation with numerical boundary validation.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "dispatch()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Transform Execution applying mathematical transform invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Transition to Verified Output confirming deterministic convergence.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit()"
+            },
+            "tone": "data"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Narrow-Phase Ray-Triangle Intersection: Möller-Trumbore Algorithm",
+      "codeHash": "813a1e530797cd407244101745a9e735c7307e8e4ccdc53fa01fe5caa091fc4d",
+      "spec": {
+        "template": "states",
+        "title": "Narrow-Phase Ray-Triangle Intersection: Möller-Trumbore Algorithm — Real-Time State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Narrow-Phase Ray-T Setup"
+          },
+          {
+            "id": "st2",
+            "label": "Pipeline Evaluation"
+          },
+          {
+            "id": "st3",
+            "label": "Transform Execution"
+          },
+          {
+            "id": "st4",
+            "label": "Verified Output"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Narrow-Phase Ray-T Setup): Initialize pipeline state for Narrow-Phase Ray-Triangle Intersection: Möller-Trumbore Algorithm.",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Pipeline Evaluation with numerical boundary validation.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "dispatch()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Transform Execution applying mathematical transform invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Transition to Verified Output confirming deterministic convergence.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit()"
+            },
+            "tone": "data"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Unified Real-Time 3D Spatial Collision & Raycast Engine",
+      "codeHash": "f59f7d1b02e200de2e2aa3f60c145f6c887c7a415d63dce8e9cba44f7fba64fd",
+      "spec": {
+        "template": "states",
+        "title": "Unified Real-Time 3D Spatial Collision & Raycast Engine — Real-Time State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Unified Real-Time Setup"
+          },
+          {
+            "id": "st2",
+            "label": "Pipeline Evaluation"
+          },
+          {
+            "id": "st3",
+            "label": "Transform Execution"
+          },
+          {
+            "id": "st4",
+            "label": "Verified Output"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Unified Real-Time Setup): Initialize pipeline state for Unified Real-Time 3D Spatial Collision & Raycast Engine.",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Pipeline Evaluation with numerical boundary validation.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "dispatch()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Transform Execution applying mathematical transform invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Transition to Verified Output confirming deterministic convergence.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit()"
+            },
+            "tone": "data"
+          }
+        ]
+      }
+    }
+  ]
+}

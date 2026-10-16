@@ -1,0 +1,344 @@
+{
+  "schemaVersion": 1,
+  "prefix": "g3d",
+  "day": 25,
+  "promptSha": "d99d5b6da4515abf098572af981c9336d353dd690ec92aa2cdfe88047cfc6d91",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Hardware Instanced Rendering & Vertex Attribute Divisors",
+      "codeHash": "d22fd34dbd6cc2cf68735d063ecfdc28573a51ce0fec291e21e2f908cdd7b9ed",
+      "spec": {
+        "template": "states",
+        "title": "Hardware Instanced Rendering & Vertex Attribute Divisors — Real-Time State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Hardware Instanced Setup"
+          },
+          {
+            "id": "st2",
+            "label": "Pipeline Evaluation"
+          },
+          {
+            "id": "st3",
+            "label": "Transform Execution"
+          },
+          {
+            "id": "st4",
+            "label": "Verified Output"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Hardware Instanced Setup): Initialize pipeline state for Hardware Instanced Rendering & Vertex Attribute Divisors.",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Pipeline Evaluation with numerical boundary validation.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "dispatch()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Transform Execution applying mathematical transform invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Transition to Verified Output confirming deterministic convergence.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit()"
+            },
+            "tone": "data"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Camera-Facing Billboarding Matrices: Spherical vs Cylindrical",
+      "codeHash": "1fb6480e3941e9deb71ff8a0621b227fabcb5d94c2f63951c37bc824798efbd6",
+      "spec": {
+        "template": "states",
+        "title": "Camera-Facing Billboarding Matrices: Spherical vs Cylindrical — Real-Time State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Camera-Facing Bill Setup"
+          },
+          {
+            "id": "st2",
+            "label": "Pipeline Evaluation"
+          },
+          {
+            "id": "st3",
+            "label": "Transform Execution"
+          },
+          {
+            "id": "st4",
+            "label": "Verified Output"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Camera-Facing Bill Setup): Initialize pipeline state for Camera-Facing Billboarding Matrices: Spherical vs Cylindrical.",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Pipeline Evaluation with numerical boundary validation.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "dispatch()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Transform Execution applying mathematical transform invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Transition to Verified Output confirming deterministic convergence.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit()"
+            },
+            "tone": "data"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "GPU Compute via Transform Feedback Ping-Pong Buffers",
+      "codeHash": "7832111562f9798cbb8c50ba6d3918b93739c27dff8a08df8db810c8d9a4d9c2",
+      "spec": {
+        "template": "states",
+        "title": "GPU Compute via Transform Feedback Ping-Pong Buffers — Real-Time State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "GPU Compute via Tr Setup"
+          },
+          {
+            "id": "st2",
+            "label": "Pipeline Evaluation"
+          },
+          {
+            "id": "st3",
+            "label": "Transform Execution"
+          },
+          {
+            "id": "st4",
+            "label": "Verified Output"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (GPU Compute via Tr Setup): Initialize pipeline state for GPU Compute via Transform Feedback Ping-Pong Buffers.",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Pipeline Evaluation with numerical boundary validation.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "dispatch()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Transform Execution applying mathematical transform invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Transition to Verified Output confirming deterministic convergence.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit()"
+            },
+            "tone": "data"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Particle Simulation Integrators: Verlet vs Euler & Lifetime Color Gradients",
+      "codeHash": "0219c2aa9d9194fadbd691d0ebe35fae4f543be21125324c562e08718834e314",
+      "spec": {
+        "template": "states",
+        "title": "Particle Simulation Integrators: Verlet vs Euler & Lifetime Color Gradients — Real-Time State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Particle Simulatio Setup"
+          },
+          {
+            "id": "st2",
+            "label": "Pipeline Evaluation"
+          },
+          {
+            "id": "st3",
+            "label": "Transform Execution"
+          },
+          {
+            "id": "st4",
+            "label": "Verified Output"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Particle Simulatio Setup): Initialize pipeline state for Particle Simulation Integrators: Verlet vs Euler & Lifetime Color Gradients.",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Pipeline Evaluation with numerical boundary validation.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "dispatch()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Transform Execution applying mathematical transform invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Transition to Verified Output confirming deterministic convergence.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit()"
+            },
+            "tone": "data"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "High-Throughput 100,000 Particle Physics & GPU Instancing Engine",
+      "codeHash": "40aa03206d5e5ec5312c546793d724d053ba11fe47faed93a5d8db815a0c31e7",
+      "spec": {
+        "template": "states",
+        "title": "High-Throughput 100,000 Particle Physics & GPU Instancing Engine — Real-Time State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "High-Throughput 10 Setup"
+          },
+          {
+            "id": "st2",
+            "label": "Pipeline Evaluation"
+          },
+          {
+            "id": "st3",
+            "label": "Transform Execution"
+          },
+          {
+            "id": "st4",
+            "label": "Verified Output"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (High-Throughput 10 Setup): Initialize pipeline state for High-Throughput 100,000 Particle Physics & GPU Instancing Engine.",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Pipeline Evaluation with numerical boundary validation.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "dispatch()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Transform Execution applying mathematical transform invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Transition to Verified Output confirming deterministic convergence.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit()"
+            },
+            "tone": "data"
+          }
+        ]
+      }
+    }
+  ]
+}

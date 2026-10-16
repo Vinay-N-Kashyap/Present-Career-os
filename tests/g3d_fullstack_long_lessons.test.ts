@@ -685,3 +685,64 @@ test('G3D Days 16–20: Domain-Specific Content Assertions', () => {
   assert.ok(d20.parts[1].output.includes('Cross-Fade Joint Blender'));
   assert.ok(d20.parts[4].output.includes('Avatar Animation Controller'));
 });
+
+test('G3D Days 21–25: Resolution, Word Counts & Invariants', () => {
+  for (let day = 21; day <= 25; day++) {
+    const lesson = getLongLesson('g3d', day);
+    assert.ok(lesson, `G3D Day ${day} long lesson must resolve`);
+    assert.equal(lesson.day, day);
+    assert.equal(lesson.parts.length, 5, `G3D Day ${day} must contain exactly 5 parts`);
+    assert.ok(lesson.minutes >= 35, `G3D Day ${day} must be >= 35 minutes`);
+    assert.ok(lesson.summary.length >= 4, `G3D Day ${day} must contain comprehensive summary`);
+    assert.ok(lesson.projectStep, `G3D Day ${day} must have a hands-on project step`);
+
+    // Total Spoken Words check (>= 2,940 words)
+    let totalWords = 0;
+    for (const part of lesson.parts) {
+      assert.ok(part.code, `Day ${day} Part '${part.title}' must contain code`);
+      assert.ok(part.output, `Day ${day} Part '${part.title}' must declare expected output`);
+      assert.ok(part.check, `Day ${day} Part '${part.title}' must have Socratic check`);
+      assert.equal(part.check.options.length, 4, `Day ${day} Part '${part.title}' MCQ must have 4 options`);
+      assert.ok(part.check.answer >= 0 && part.check.answer <= 3, `Day ${day} Part '${part.title}' answer must be in 0..3`);
+      assert.ok(part.check.why.length > 20, `Day ${day} Part '${part.title}' explanation must be rigorous`);
+
+      const text = Array.isArray(part.say) ? part.say.join(' ') : part.say;
+      const w = text.trim().split(/\s+/).filter(Boolean).length;
+      totalWords += w;
+    }
+    assert.ok(totalWords >= 2940, `G3D Day ${day} must have >= 2,940 spoken words (actual: ${totalWords})`);
+  }
+});
+
+test('G3D Days 21–25: Domain-Specific Content Assertions', () => {
+  // Day 21: ⭐ Milestone 4 Capstone: Interactive 3D Avatar Skeletal Animation Engine
+  const d21 = getLongLesson('g3d', 21);
+  assert.ok(d21.title.includes('Milestone 4 Capstone') || d21.title.includes('Avatar Skeletal Animation'));
+  assert.ok(d21.parts[0].output.includes('Total Humanoid Bones: 54'));
+  assert.ok(d21.parts[4].output.includes('MILESTONE 4'));
+
+  // Day 22: Facial Rigging: Morph Targets & ARKit Blendshapes (52 Shapes)
+  const d22 = getLongLesson('g3d', 22);
+  assert.ok(d22.title.includes('Facial Rigging') || d22.title.includes('ARKit'));
+  assert.ok(d22.parts[0].output.includes('Linear Additive Invariant'));
+  assert.ok(d22.parts[1].output.includes('ARKit Taxonomy Audit'));
+
+  // Day 23: Audio Lip-Sync & Viseme Mapping (Speech-to-Face) & Secondary Motion
+  const d23 = getLongLesson('g3d', 23);
+  assert.ok(d23.title.includes('Audio Lip-Sync') || d23.title.includes('Viseme Mapping'));
+  assert.ok(d23.parts[0].output.includes('Linguistic Invariant'));
+  assert.ok(d23.parts[4].output.includes('Speech-to-Face & Secondary Motion Engine Online'));
+
+  // Day 24: 3D Physics: Raycasting, Collisions & Bounding Volumes (AABB / OBB)
+  const d24 = getLongLesson('g3d', 24);
+  assert.ok(d24.title.includes('3D Physics') || d24.title.includes('Raycasting'));
+  assert.ok(d24.parts[0].output.includes('AABB'));
+  assert.ok(d24.parts[3].output.includes('Möller-Trumbore Test'));
+  assert.ok(d24.parts[4].output.includes('3D Spatial Collision & Raycast Engine Online'));
+
+  // Day 25: Particle Systems & GPU Instanced Rendering
+  const d25 = getLongLesson('g3d', 25);
+  assert.ok(d25.title.includes('Particle Systems') || d25.title.includes('GPU Instanced'));
+  assert.ok(d25.parts[0].output.includes('Hardware Instanced Draw'));
+  assert.ok(d25.parts[4].output.includes('100K_GPU_PARTICLE_ENGINE_ACTIVE'));
+});

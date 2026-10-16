@@ -204,12 +204,12 @@ test('Full-Stack JavaScript Expansion (Days 6–30): Flow Visual Spec Verificati
   }
 });
 
-test('G3D Expansion (Days 6–20): States Visual Spec Verification', () => {
+test('G3D Expansion (Days 6–25): States Visual Spec Verification', () => {
   clearDayFileCache();
   const prefix = 'g3d';
   const expectedTemplate = 'states';
 
-  for (let day = 6; day <= 20; day++) {
+  for (let day = 6; day <= 25; day++) {
     const dayPadded = String(day).padStart(2, '0');
     const filePath = path.resolve(process.cwd(), `src/lib/data/lessonVisuals/${prefix}/day-${dayPadded}.json`);
     assert.ok(fs.existsSync(filePath), `Visual file must exist at ${filePath}`);
