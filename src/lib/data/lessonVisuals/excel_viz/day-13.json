@@ -1,0 +1,599 @@
+{
+  "schemaVersion": 1,
+  "prefix": "excel_viz",
+  "day": 13,
+  "promptSha": "91f6550b36b7a7e7a61d61e2b7eddfb56320ef21252a5565233215df3b98aaa8",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Unlevered Free Cash Flow (UFCF) Mechanics: NOPAT, Non-Cash Adjustments, CapEx & Working Capital Shifts",
+      "codeHash": "36dd0166ca160743a8841a255defc987174312851a6788d5734094a1c7593ed7",
+      "spec": {
+        "template": "bars",
+        "title": "Unlevered Free Cash Flow (UFCF) Mechanic... \u2014 Valuation & DCF Metrics",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline valuation metrics for Unlevered Free Cash Flow (UFCF) Mec...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Enterprise Value",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Equity Value",
+                "value": 62,
+                "tone": "idle"
+              },
+              {
+                "label": "Terminal Weight",
+                "value": 72,
+                "tone": "idle"
+              },
+              {
+                "label": "Discount Rate (WACC)",
+                "value": 28,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Mathematical framework and discounting invariants for Unlevered Free Cash Flow (UFCF) Mec...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Enterprise Value",
+                "value": 82,
+                "tone": "data"
+              },
+              {
+                "label": "Equity Value",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Terminal Weight",
+                "value": 74,
+                "tone": "data"
+              },
+              {
+                "label": "Discount Rate (WACC)",
+                "value": 30,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Applied institutional case study and cash stream derivation for Unlevered Free Cash Flow (UFCF) Mec...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Enterprise Value",
+                "value": 88,
+                "tone": "accent"
+              },
+              {
+                "label": "Equity Value",
+                "value": 70,
+                "tone": "accent"
+              },
+              {
+                "label": "Terminal Weight",
+                "value": 76,
+                "tone": "data"
+              },
+              {
+                "label": "Discount Rate (WACC)",
+                "value": 32,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Interactive parameter stress test and sensitivity bounds for Unlevered Free Cash Flow (UFCF) Mec...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Enterprise Value",
+                "value": 92,
+                "tone": "accent"
+              },
+              {
+                "label": "Equity Value",
+                "value": 75,
+                "tone": "accent"
+              },
+              {
+                "label": "Terminal Weight",
+                "value": 80,
+                "tone": "accent"
+              },
+              {
+                "label": "Discount Rate (WACC)",
+                "value": 35,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Weighted Average Cost of Capital (WACC): Cost of Equity, CAPM Beta Delevering/Relevering & After-Tax Cost of Debt",
+      "codeHash": "3f0f3ff1576156fd8d22ed8fb4eef1acd65dcb891b071582f3120440f3503a13",
+      "spec": {
+        "template": "bars",
+        "title": "Weighted Average Cost of Capital (WACC):... \u2014 Valuation & DCF Metrics",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline valuation metrics for Weighted Average Cost of Capital (W...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Enterprise Value",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Equity Value",
+                "value": 62,
+                "tone": "idle"
+              },
+              {
+                "label": "Terminal Weight",
+                "value": 72,
+                "tone": "idle"
+              },
+              {
+                "label": "Discount Rate (WACC)",
+                "value": 28,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Mathematical framework and discounting invariants for Weighted Average Cost of Capital (W...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Enterprise Value",
+                "value": 82,
+                "tone": "data"
+              },
+              {
+                "label": "Equity Value",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Terminal Weight",
+                "value": 74,
+                "tone": "data"
+              },
+              {
+                "label": "Discount Rate (WACC)",
+                "value": 30,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Applied institutional case study and cash stream derivation for Weighted Average Cost of Capital (W...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Enterprise Value",
+                "value": 88,
+                "tone": "accent"
+              },
+              {
+                "label": "Equity Value",
+                "value": 70,
+                "tone": "accent"
+              },
+              {
+                "label": "Terminal Weight",
+                "value": 76,
+                "tone": "data"
+              },
+              {
+                "label": "Discount Rate (WACC)",
+                "value": 32,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Interactive parameter stress test and sensitivity bounds for Weighted Average Cost of Capital (W...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Enterprise Value",
+                "value": 92,
+                "tone": "accent"
+              },
+              {
+                "label": "Equity Value",
+                "value": 75,
+                "tone": "accent"
+              },
+              {
+                "label": "Terminal Weight",
+                "value": 80,
+                "tone": "accent"
+              },
+              {
+                "label": "Discount Rate (WACC)",
+                "value": 35,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Terminal Value Architecture: Gordon Growth Perpetual Annuity vs Exit Multiple (EV/EBITDA) Methodologies",
+      "codeHash": "57c860a3a510248240d3da0f4c898bb926d3b1d3a88f522ddf77b9879b324553",
+      "spec": {
+        "template": "bars",
+        "title": "Terminal Value Architecture: Gordon Grow... \u2014 Valuation & DCF Metrics",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline valuation metrics for Terminal Value Architecture: Gordon...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Enterprise Value",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Equity Value",
+                "value": 62,
+                "tone": "idle"
+              },
+              {
+                "label": "Terminal Weight",
+                "value": 72,
+                "tone": "idle"
+              },
+              {
+                "label": "Discount Rate (WACC)",
+                "value": 28,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Mathematical framework and discounting invariants for Terminal Value Architecture: Gordon...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Enterprise Value",
+                "value": 82,
+                "tone": "data"
+              },
+              {
+                "label": "Equity Value",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Terminal Weight",
+                "value": 74,
+                "tone": "data"
+              },
+              {
+                "label": "Discount Rate (WACC)",
+                "value": 30,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Applied institutional case study and cash stream derivation for Terminal Value Architecture: Gordon...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Enterprise Value",
+                "value": 88,
+                "tone": "accent"
+              },
+              {
+                "label": "Equity Value",
+                "value": 70,
+                "tone": "accent"
+              },
+              {
+                "label": "Terminal Weight",
+                "value": 76,
+                "tone": "data"
+              },
+              {
+                "label": "Discount Rate (WACC)",
+                "value": 32,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Interactive parameter stress test and sensitivity bounds for Terminal Value Architecture: Gordon...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Enterprise Value",
+                "value": 92,
+                "tone": "accent"
+              },
+              {
+                "label": "Equity Value",
+                "value": 75,
+                "tone": "accent"
+              },
+              {
+                "label": "Terminal Weight",
+                "value": 80,
+                "tone": "accent"
+              },
+              {
+                "label": "Discount Rate (WACC)",
+                "value": 35,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Enterprise Value to Equity Value Bridge: Net Debt, Non-Operating Assets & Diluted Share Count",
+      "codeHash": "814028ef53a97165783553076a4d51e377903a9db649fd07706bc2811f146237",
+      "spec": {
+        "template": "bars",
+        "title": "The Enterprise Value to Equity Value Bri... \u2014 Valuation & DCF Metrics",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline valuation metrics for The Enterprise Value to Equity Valu...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Enterprise Value",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Equity Value",
+                "value": 62,
+                "tone": "idle"
+              },
+              {
+                "label": "Terminal Weight",
+                "value": 72,
+                "tone": "idle"
+              },
+              {
+                "label": "Discount Rate (WACC)",
+                "value": 28,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Mathematical framework and discounting invariants for The Enterprise Value to Equity Valu...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Enterprise Value",
+                "value": 82,
+                "tone": "data"
+              },
+              {
+                "label": "Equity Value",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Terminal Weight",
+                "value": 74,
+                "tone": "data"
+              },
+              {
+                "label": "Discount Rate (WACC)",
+                "value": 30,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Applied institutional case study and cash stream derivation for The Enterprise Value to Equity Valu...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Enterprise Value",
+                "value": 88,
+                "tone": "accent"
+              },
+              {
+                "label": "Equity Value",
+                "value": 70,
+                "tone": "accent"
+              },
+              {
+                "label": "Terminal Weight",
+                "value": 76,
+                "tone": "data"
+              },
+              {
+                "label": "Discount Rate (WACC)",
+                "value": 32,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Interactive parameter stress test and sensitivity bounds for The Enterprise Value to Equity Valu...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Enterprise Value",
+                "value": 92,
+                "tone": "accent"
+              },
+              {
+                "label": "Equity Value",
+                "value": 75,
+                "tone": "accent"
+              },
+              {
+                "label": "Terminal Weight",
+                "value": 80,
+                "tone": "accent"
+              },
+              {
+                "label": "Discount Rate (WACC)",
+                "value": 35,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Institutional Multi-Stage DCF Valuation Model & Dual-Sensitivity Valuation Matrix",
+      "codeHash": "204da190190d24ccc009d4d43eea76ca1f782d571dbb6229cce714de3245c36d",
+      "spec": {
+        "template": "bars",
+        "title": "Institutional Multi-Stage DCF Valuation ... \u2014 Valuation & DCF Metrics",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline valuation metrics for Institutional Multi-Stage DCF Valua...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Enterprise Value",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Equity Value",
+                "value": 62,
+                "tone": "idle"
+              },
+              {
+                "label": "Terminal Weight",
+                "value": 72,
+                "tone": "idle"
+              },
+              {
+                "label": "Discount Rate (WACC)",
+                "value": 28,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Mathematical framework and discounting invariants for Institutional Multi-Stage DCF Valua...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Enterprise Value",
+                "value": 82,
+                "tone": "data"
+              },
+              {
+                "label": "Equity Value",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Terminal Weight",
+                "value": 74,
+                "tone": "data"
+              },
+              {
+                "label": "Discount Rate (WACC)",
+                "value": 30,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Applied institutional case study and cash stream derivation for Institutional Multi-Stage DCF Valua...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Enterprise Value",
+                "value": 88,
+                "tone": "accent"
+              },
+              {
+                "label": "Equity Value",
+                "value": 70,
+                "tone": "accent"
+              },
+              {
+                "label": "Terminal Weight",
+                "value": 76,
+                "tone": "data"
+              },
+              {
+                "label": "Discount Rate (WACC)",
+                "value": 32,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Interactive parameter stress test and sensitivity bounds for Institutional Multi-Stage DCF Valua...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Enterprise Value",
+                "value": 92,
+                "tone": "accent"
+              },
+              {
+                "label": "Equity Value",
+                "value": 75,
+                "tone": "accent"
+              },
+              {
+                "label": "Terminal Weight",
+                "value": 80,
+                "tone": "accent"
+              },
+              {
+                "label": "Discount Rate (WACC)",
+                "value": 35,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
