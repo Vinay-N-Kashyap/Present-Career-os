@@ -1,0 +1,344 @@
+{
+  "schemaVersion": 1,
+  "prefix": "g3d",
+  "day": 17,
+  "promptSha": "491412604143271174fbb484e33dcfd14c6bbf3172c4c87922ea24582c9ef690",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "The Linear Blend Skinning Formula (v' = Sum w_i M_i M_bind_inv_i v)",
+      "codeHash": "5d22835cba7f313e7781d849bc54cddc9a5697dadb23d8aa3ca071856108b9ca",
+      "spec": {
+        "template": "states",
+        "title": "The Linear Blend Skinning Formula (v' = Sum w_i M_i M_bind_inv_i v) — Real-Time State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "The Linear Blend S Setup"
+          },
+          {
+            "id": "st2",
+            "label": "Pipeline Evaluation"
+          },
+          {
+            "id": "st3",
+            "label": "Transform Execution"
+          },
+          {
+            "id": "st4",
+            "label": "Verified Output"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (The Linear Blend S Setup): Initialize pipeline state for The Linear Blend Skinning Formula (v' = Sum w_i M_i M_bind_inv_i v).",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Pipeline Evaluation with numerical boundary validation.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "dispatch()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Transform Execution applying mathematical transform invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Transition to Verified Output confirming deterministic convergence.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit()"
+            },
+            "tone": "data"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Critical Role of Inverse Bind Matrices (M_bind_inv)",
+      "codeHash": "64eb3c3878bb3db4caa963dcded5bcd3b51a15847039e7a4d4e6aaa18fd6e160",
+      "spec": {
+        "template": "states",
+        "title": "The Critical Role of Inverse Bind Matrices (M_bind_inv) — Real-Time State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "The Critical Role Setup"
+          },
+          {
+            "id": "st2",
+            "label": "Pipeline Evaluation"
+          },
+          {
+            "id": "st3",
+            "label": "Transform Execution"
+          },
+          {
+            "id": "st4",
+            "label": "Verified Output"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (The Critical Role Setup): Initialize pipeline state for The Critical Role of Inverse Bind Matrices (M_bind_inv).",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Pipeline Evaluation with numerical boundary validation.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "dispatch()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Transform Execution applying mathematical transform invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Transition to Verified Output confirming deterministic convergence.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit()"
+            },
+            "tone": "data"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Vertex Joint Attributes, Quantization & Weight Normalization",
+      "codeHash": "b32e75e5da9d020c63f13e54a2272bde9add838c16406c5417e65b9ad6b06645",
+      "spec": {
+        "template": "states",
+        "title": "Vertex Joint Attributes, Quantization & Weight Normalization — Real-Time State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Vertex Joint Attri Setup"
+          },
+          {
+            "id": "st2",
+            "label": "Pipeline Evaluation"
+          },
+          {
+            "id": "st3",
+            "label": "Transform Execution"
+          },
+          {
+            "id": "st4",
+            "label": "Verified Output"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Vertex Joint Attri Setup): Initialize pipeline state for Vertex Joint Attributes, Quantization & Weight Normalization.",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Pipeline Evaluation with numerical boundary validation.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "dispatch()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Transform Execution applying mathematical transform invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Transition to Verified Output confirming deterministic convergence.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit()"
+            },
+            "tone": "data"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Candy-Wrapper Artifact: Volume Loss in Twisting Joints",
+      "codeHash": "047e0a32953520467a471cc9357748b12cbcf7d939d78a1fa15805274262b5bb",
+      "spec": {
+        "template": "states",
+        "title": "The Candy-Wrapper Artifact: Volume Loss in Twisting Joints — Real-Time State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "The Candy-Wrapper Setup"
+          },
+          {
+            "id": "st2",
+            "label": "Pipeline Evaluation"
+          },
+          {
+            "id": "st3",
+            "label": "Transform Execution"
+          },
+          {
+            "id": "st4",
+            "label": "Verified Output"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (The Candy-Wrapper Setup): Initialize pipeline state for The Candy-Wrapper Artifact: Volume Loss in Twisting Joints.",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Pipeline Evaluation with numerical boundary validation.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "dispatch()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Transform Execution applying mathematical transform invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Transition to Verified Output confirming deterministic convergence.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit()"
+            },
+            "tone": "data"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Dual Quaternion Skinning (DQS) & Constant Volume Preservation",
+      "codeHash": "26de9ecbe3265e6f3419be7c7c68e8058c2540281faeb26902ed7475ab73202e",
+      "spec": {
+        "template": "states",
+        "title": "Dual Quaternion Skinning (DQS) & Constant Volume Preservation — Real-Time State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Dual Quaternion Sk Setup"
+          },
+          {
+            "id": "st2",
+            "label": "Pipeline Evaluation"
+          },
+          {
+            "id": "st3",
+            "label": "Transform Execution"
+          },
+          {
+            "id": "st4",
+            "label": "Verified Output"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Dual Quaternion Sk Setup): Initialize pipeline state for Dual Quaternion Skinning (DQS) & Constant Volume Preservation.",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Pipeline Evaluation with numerical boundary validation.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "dispatch()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Transform Execution applying mathematical transform invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Transition to Verified Output confirming deterministic convergence.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit()"
+            },
+            "tone": "data"
+          }
+        ]
+      }
+    }
+  ]
+}

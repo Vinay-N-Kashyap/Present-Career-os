@@ -1,0 +1,344 @@
+{
+  "schemaVersion": 1,
+  "prefix": "g3d",
+  "day": 16,
+  "promptSha": "c5594eca8560f30f73209d5516b9d3ed64862e340824b9b5c3f64eeee7d57e08",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Skeletal Armatures, Bone Trees & Forward Kinematics (FK)",
+      "codeHash": "9769725ec7bcd0166d59ac93023147afa1642a0ab761eba7b9184973fb01949f",
+      "spec": {
+        "template": "states",
+        "title": "Skeletal Armatures, Bone Trees & Forward Kinematics (FK) — Real-Time State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Skeletal Armatures Setup"
+          },
+          {
+            "id": "st2",
+            "label": "Pipeline Evaluation"
+          },
+          {
+            "id": "st3",
+            "label": "Transform Execution"
+          },
+          {
+            "id": "st4",
+            "label": "Verified Output"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Skeletal Armatures Setup): Initialize pipeline state for Skeletal Armatures, Bone Trees & Forward Kinematics (FK).",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Pipeline Evaluation with numerical boundary validation.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "dispatch()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Transform Execution applying mathematical transform invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Transition to Verified Output confirming deterministic convergence.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit()"
+            },
+            "tone": "data"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Local Transform Decompositions: Translation, Rotation & Scale (TRS)",
+      "codeHash": "2b59a078bd0846d6b1aa329e59029d4ba40bcefb4cd8599341d07b6be9f63d2a",
+      "spec": {
+        "template": "states",
+        "title": "Local Transform Decompositions: Translation, Rotation & Scale (TRS) — Real-Time State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Local Transform De Setup"
+          },
+          {
+            "id": "st2",
+            "label": "Pipeline Evaluation"
+          },
+          {
+            "id": "st3",
+            "label": "Transform Execution"
+          },
+          {
+            "id": "st4",
+            "label": "Verified Output"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Local Transform De Setup): Initialize pipeline state for Local Transform Decompositions: Translation, Rotation & Scale (TRS).",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Pipeline Evaluation with numerical boundary validation.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "dispatch()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Transform Execution applying mathematical transform invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Transition to Verified Output confirming deterministic convergence.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit()"
+            },
+            "tone": "data"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Joint Matrix Palette (uniform mat4 u_JointMatrix[64])",
+      "codeHash": "15d21ae734cc6b160dbbe93d97734e67eb1ef8bb463a079749e7c80ff51febe6",
+      "spec": {
+        "template": "states",
+        "title": "The Joint Matrix Palette (uniform mat4 u_JointMatrix[64]) — Real-Time State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "The Joint Matrix P Setup"
+          },
+          {
+            "id": "st2",
+            "label": "Pipeline Evaluation"
+          },
+          {
+            "id": "st3",
+            "label": "Transform Execution"
+          },
+          {
+            "id": "st4",
+            "label": "Verified Output"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (The Joint Matrix P Setup): Initialize pipeline state for The Joint Matrix Palette (uniform mat4 u_JointMatrix[64]).",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Pipeline Evaluation with numerical boundary validation.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "dispatch()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Transform Execution applying mathematical transform invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Transition to Verified Output confirming deterministic convergence.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit()"
+            },
+            "tone": "data"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Bind Poses vs Animated Poses: The Rest Frame Problem",
+      "codeHash": "7c8ac86219c27185dd161bb98185cd37e53a52ae4b2d91768bf4a7b881ed55f7",
+      "spec": {
+        "template": "states",
+        "title": "Bind Poses vs Animated Poses: The Rest Frame Problem — Real-Time State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Bind Poses vs Anim Setup"
+          },
+          {
+            "id": "st2",
+            "label": "Pipeline Evaluation"
+          },
+          {
+            "id": "st3",
+            "label": "Transform Execution"
+          },
+          {
+            "id": "st4",
+            "label": "Verified Output"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Bind Poses vs Anim Setup): Initialize pipeline state for Bind Poses vs Animated Poses: The Rest Frame Problem.",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Pipeline Evaluation with numerical boundary validation.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "dispatch()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Transform Execution applying mathematical transform invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Transition to Verified Output confirming deterministic convergence.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit()"
+            },
+            "tone": "data"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Full Forward Kinematic Hierarchy Evaluator & Joint Chain Synthesis",
+      "codeHash": "b9cc9b6b3d79aec163a212067e7028a0339c5c51cf81abf6041ea03c0914704e",
+      "spec": {
+        "template": "states",
+        "title": "Full Forward Kinematic Hierarchy Evaluator & Joint Chain Synthesis — Real-Time State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Full Forward Kinem Setup"
+          },
+          {
+            "id": "st2",
+            "label": "Pipeline Evaluation"
+          },
+          {
+            "id": "st3",
+            "label": "Transform Execution"
+          },
+          {
+            "id": "st4",
+            "label": "Verified Output"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Full Forward Kinem Setup): Initialize pipeline state for Full Forward Kinematic Hierarchy Evaluator & Joint Chain Synthesis.",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Pipeline Evaluation with numerical boundary validation.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "dispatch()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Transform Execution applying mathematical transform invariants.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Transition to Verified Output confirming deterministic convergence.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit()"
+            },
+            "tone": "data"
+          }
+        ]
+      }
+    }
+  ]
+}

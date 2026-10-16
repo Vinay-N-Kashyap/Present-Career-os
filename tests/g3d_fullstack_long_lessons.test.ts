@@ -621,3 +621,67 @@ test('G3D Days 11–15: Domain-Specific Content Assertions', () => {
   assert.ok(d15.parts[4].output.includes('CONFERRED'));
   assert.ok(d15.parts[4].output.includes('Grand Master of 3D Graphics & Real-Time Simulation Systems'));
 });
+
+test('G3D Days 16–20: Resolution, Word Counts & Invariants', () => {
+  for (let day = 16; day <= 20; day++) {
+    const lesson = getLongLesson('g3d', day);
+    assert.ok(lesson, `G3D Day ${day} long lesson must resolve`);
+    assert.equal(lesson.day, day);
+    assert.equal(lesson.parts.length, 5, `G3D Day ${day} must contain exactly 5 parts`);
+    assert.ok(lesson.minutes >= 35, `G3D Day ${day} must be >= 35 minutes`);
+    assert.ok(lesson.summary.length >= 4, `G3D Day ${day} must contain comprehensive summary`);
+    assert.ok(lesson.projectStep, `G3D Day ${day} must have a hands-on project step`);
+
+    // Total Spoken Words check (>= 2,940 words)
+    let totalWords = 0;
+    for (const part of lesson.parts) {
+      assert.ok(part.code, `Day ${day} Part '${part.title}' must contain code`);
+      assert.ok(part.output, `Day ${day} Part '${part.title}' must declare expected output`);
+      assert.ok(part.check, `Day ${day} Part '${part.title}' must have Socratic check`);
+      assert.equal(part.check.options.length, 4, `Day ${day} Part '${part.title}' MCQ must have 4 options`);
+      assert.ok(part.check.answer >= 0 && part.check.answer <= 3, `Day ${day} Part '${part.title}' answer must be in 0..3`);
+      assert.ok(part.check.why.length > 20, `Day ${day} Part '${part.title}' explanation must be rigorous`);
+
+      const text = Array.isArray(part.say) ? part.say.join(' ') : part.say;
+      const w = text.trim().split(/\s+/).filter(Boolean).length;
+      totalWords += w;
+    }
+    assert.ok(totalWords >= 2940, `G3D Day ${day} must have >= 2,940 spoken words (actual: ${totalWords})`);
+  }
+});
+
+test('G3D Days 16–20: Domain-Specific Content Assertions', () => {
+  // Day 16: Skeletal Rigging: Bone Hierarchies & Joint Matrices
+  const d16 = getLongLesson('g3d', 16);
+  assert.ok(d16.title.includes('Skeletal Rigging'));
+  assert.ok(d16.parts[0].output.includes('Forward Kinematics'));
+  assert.ok(d16.parts[2].output.includes('Joint Palette'));
+
+  // Day 17: Linear Blend Skinning (LBS) & Dual Quaternions
+  const d17 = getLongLesson('g3d', 17);
+  assert.ok(d17.title.includes('Linear Blend Skinning') || d17.title.includes('Dual Quaternions'));
+  assert.ok(d17.parts[0].output.includes('Linear Blend Skinning'));
+  assert.ok(d17.parts[3].output.includes('Candy-Wrapper Analysis'));
+  assert.ok(d17.parts[4].output.includes('Dual Quaternion Skinning'));
+
+  // Day 18: Inverse Kinematics (IK): FABRIK & CCD Algorithms
+  const d18 = getLongLesson('g3d', 18);
+  assert.ok(d18.title.includes('Inverse Kinematics') || d18.title.includes('FABRIK'));
+  assert.ok(d18.parts[1].output.includes('Analytical Two-Bone IK'));
+  assert.ok(d18.parts[2].output.includes('CCD Solver Engine'));
+  assert.ok(d18.parts[3].output.includes('FABRIK Engine'));
+
+  // Day 19: Keyframe Animation & Quaternion Slerp Interpolation
+  const d19 = getLongLesson('g3d', 19);
+  assert.ok(d19.title.includes('Keyframe Animation') || d19.title.includes('Quaternion Slerp'));
+  assert.ok(d19.parts[0].output.includes('Quaternion Mathematics Engine'));
+  assert.ok(d19.parts[1].output.includes('SLERP Animation Engine'));
+  assert.ok(d19.parts[2].output.includes('glTF 2.0 Keyframe Sampler'));
+
+  // Day 20: Animation State Machines & Cross-Fade Blending
+  const d20 = getLongLesson('g3d', 20);
+  assert.ok(d20.title.includes('Animation State Machines') || d20.title.includes('Cross-Fade Blending'));
+  assert.ok(d20.parts[0].output.includes('Animation State Machine'));
+  assert.ok(d20.parts[1].output.includes('Cross-Fade Joint Blender'));
+  assert.ok(d20.parts[4].output.includes('Avatar Animation Controller'));
+});
