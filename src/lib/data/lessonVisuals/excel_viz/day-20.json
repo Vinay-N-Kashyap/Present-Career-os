@@ -1,0 +1,592 @@
+[
+  {
+    "partTitle": "Tier 1: Multi-Scenario Switchboard & Macro Factor Router",
+    "codeHash": "1730122d02d0c91d68c891cd196e5a5ddc7a2da299fe686e82a6aebe7c9e2c25",
+    "spec": {
+      "template": "bars",
+      "title": "Tier 1: Multi-Scenario Switchboard & Mac... \u2014 Milestone 4 Capstone Metrics",
+      "steps": [
+        {
+          "at": "intro",
+          "caption": "Step 1: Baseline parameters and constraints for Tier 1: Multi-Scenario Switchboard ...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Portfolio Yield",
+              "value": 45,
+              "tone": "data"
+            },
+            {
+              "label": "Duration Compliance",
+              "value": 60,
+              "tone": "accent"
+            },
+            {
+              "label": "VaR Protection",
+              "value": 50,
+              "tone": "idle"
+            },
+            {
+              "label": "Audit Integrity",
+              "value": 85,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "say1",
+          "caption": "Step 2: Dynamic optimization and stochastic shock analysis in Tier 1: Multi-Scenario Switchboard ...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Portfolio Yield",
+              "value": 65,
+              "tone": "data"
+            },
+            {
+              "label": "Duration Compliance",
+              "value": 80,
+              "tone": "accent"
+            },
+            {
+              "label": "VaR Protection",
+              "value": 75,
+              "tone": "warn"
+            },
+            {
+              "label": "Audit Integrity",
+              "value": 92,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "example",
+          "caption": "Step 3: Correlated Monte Carlo simulation and circularity breaker checks in Tier 1: Multi-Scenario Switchboard ...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Portfolio Yield",
+              "value": 85,
+              "tone": "data"
+            },
+            {
+              "label": "Duration Compliance",
+              "value": 95,
+              "tone": "accent"
+            },
+            {
+              "label": "VaR Protection",
+              "value": 90,
+              "tone": "accent"
+            },
+            {
+              "label": "Audit Integrity",
+              "value": 96,
+              "tone": "accent"
+            }
+          ]
+        },
+        {
+          "at": "tryIt",
+          "caption": "Step 4: Grand Master Capstone execution and cryptographic audit seal applied for Tier 1: Multi-Scenario Switchboard ...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Portfolio Yield",
+              "value": 100,
+              "tone": "data"
+            },
+            {
+              "label": "Duration Compliance",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "VaR Protection",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "Audit Integrity",
+              "value": 100,
+              "tone": "accent"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "partTitle": "Tier 2: Non-Linear Constrained Treasury Optimization Engine",
+    "codeHash": "12a83bdfac4fb0421033de31b4a529c45bef68ad66cb94f986ddadb93a811003",
+    "spec": {
+      "template": "bars",
+      "title": "Tier 2: Non-Linear Constrained Treasury ... \u2014 Milestone 4 Capstone Metrics",
+      "steps": [
+        {
+          "at": "intro",
+          "caption": "Step 1: Baseline parameters and constraints for Tier 2: Non-Linear Constrained Trea...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Portfolio Yield",
+              "value": 45,
+              "tone": "data"
+            },
+            {
+              "label": "Duration Compliance",
+              "value": 60,
+              "tone": "accent"
+            },
+            {
+              "label": "VaR Protection",
+              "value": 50,
+              "tone": "idle"
+            },
+            {
+              "label": "Audit Integrity",
+              "value": 85,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "say1",
+          "caption": "Step 2: Dynamic optimization and stochastic shock analysis in Tier 2: Non-Linear Constrained Trea...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Portfolio Yield",
+              "value": 65,
+              "tone": "data"
+            },
+            {
+              "label": "Duration Compliance",
+              "value": 80,
+              "tone": "accent"
+            },
+            {
+              "label": "VaR Protection",
+              "value": 75,
+              "tone": "warn"
+            },
+            {
+              "label": "Audit Integrity",
+              "value": 92,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "example",
+          "caption": "Step 3: Correlated Monte Carlo simulation and circularity breaker checks in Tier 2: Non-Linear Constrained Trea...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Portfolio Yield",
+              "value": 85,
+              "tone": "data"
+            },
+            {
+              "label": "Duration Compliance",
+              "value": 95,
+              "tone": "accent"
+            },
+            {
+              "label": "VaR Protection",
+              "value": 90,
+              "tone": "accent"
+            },
+            {
+              "label": "Audit Integrity",
+              "value": 96,
+              "tone": "accent"
+            }
+          ]
+        },
+        {
+          "at": "tryIt",
+          "caption": "Step 4: Grand Master Capstone execution and cryptographic audit seal applied for Tier 2: Non-Linear Constrained Trea...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Portfolio Yield",
+              "value": 100,
+              "tone": "data"
+            },
+            {
+              "label": "Duration Compliance",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "VaR Protection",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "Audit Integrity",
+              "value": 100,
+              "tone": "accent"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "partTitle": "Tier 3: 10,000-Path Correlated Monte Carlo Cash Simulation Engine",
+    "codeHash": "5d69c81e9bd1962649a4bd9ffeeffe5fb1454109de47edca545883f86f3fa63f",
+    "spec": {
+      "template": "bars",
+      "title": "Tier 3: 10,000-Path Correlated Monte Car... \u2014 Milestone 4 Capstone Metrics",
+      "steps": [
+        {
+          "at": "intro",
+          "caption": "Step 1: Baseline parameters and constraints for Tier 3: 10,000-Path Correlated Mont...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Portfolio Yield",
+              "value": 45,
+              "tone": "data"
+            },
+            {
+              "label": "Duration Compliance",
+              "value": 60,
+              "tone": "accent"
+            },
+            {
+              "label": "VaR Protection",
+              "value": 50,
+              "tone": "idle"
+            },
+            {
+              "label": "Audit Integrity",
+              "value": 85,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "say1",
+          "caption": "Step 2: Dynamic optimization and stochastic shock analysis in Tier 3: 10,000-Path Correlated Mont...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Portfolio Yield",
+              "value": 65,
+              "tone": "data"
+            },
+            {
+              "label": "Duration Compliance",
+              "value": 80,
+              "tone": "accent"
+            },
+            {
+              "label": "VaR Protection",
+              "value": 75,
+              "tone": "warn"
+            },
+            {
+              "label": "Audit Integrity",
+              "value": 92,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "example",
+          "caption": "Step 3: Correlated Monte Carlo simulation and circularity breaker checks in Tier 3: 10,000-Path Correlated Mont...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Portfolio Yield",
+              "value": 85,
+              "tone": "data"
+            },
+            {
+              "label": "Duration Compliance",
+              "value": 95,
+              "tone": "accent"
+            },
+            {
+              "label": "VaR Protection",
+              "value": 90,
+              "tone": "accent"
+            },
+            {
+              "label": "Audit Integrity",
+              "value": 96,
+              "tone": "accent"
+            }
+          ]
+        },
+        {
+          "at": "tryIt",
+          "caption": "Step 4: Grand Master Capstone execution and cryptographic audit seal applied for Tier 3: 10,000-Path Correlated Mont...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Portfolio Yield",
+              "value": 100,
+              "tone": "data"
+            },
+            {
+              "label": "Duration Compliance",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "VaR Protection",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "Audit Integrity",
+              "value": 100,
+              "tone": "accent"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "partTitle": "Tier 4: FAST-Standard Circularity-Free Balance Sheet & Debt Schedule",
+    "codeHash": "3cbac888dc90ed559a6b4e295ef463fa6cd906976f4774fefd2bd2e008256a7e",
+    "spec": {
+      "template": "bars",
+      "title": "Tier 4: FAST-Standard Circularity-Free B... \u2014 Milestone 4 Capstone Metrics",
+      "steps": [
+        {
+          "at": "intro",
+          "caption": "Step 1: Baseline parameters and constraints for Tier 4: FAST-Standard Circularity-F...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Portfolio Yield",
+              "value": 45,
+              "tone": "data"
+            },
+            {
+              "label": "Duration Compliance",
+              "value": 60,
+              "tone": "accent"
+            },
+            {
+              "label": "VaR Protection",
+              "value": 50,
+              "tone": "idle"
+            },
+            {
+              "label": "Audit Integrity",
+              "value": 85,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "say1",
+          "caption": "Step 2: Dynamic optimization and stochastic shock analysis in Tier 4: FAST-Standard Circularity-F...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Portfolio Yield",
+              "value": 65,
+              "tone": "data"
+            },
+            {
+              "label": "Duration Compliance",
+              "value": 80,
+              "tone": "accent"
+            },
+            {
+              "label": "VaR Protection",
+              "value": 75,
+              "tone": "warn"
+            },
+            {
+              "label": "Audit Integrity",
+              "value": 92,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "example",
+          "caption": "Step 3: Correlated Monte Carlo simulation and circularity breaker checks in Tier 4: FAST-Standard Circularity-F...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Portfolio Yield",
+              "value": 85,
+              "tone": "data"
+            },
+            {
+              "label": "Duration Compliance",
+              "value": 95,
+              "tone": "accent"
+            },
+            {
+              "label": "VaR Protection",
+              "value": 90,
+              "tone": "accent"
+            },
+            {
+              "label": "Audit Integrity",
+              "value": 96,
+              "tone": "accent"
+            }
+          ]
+        },
+        {
+          "at": "tryIt",
+          "caption": "Step 4: Grand Master Capstone execution and cryptographic audit seal applied for Tier 4: FAST-Standard Circularity-F...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Portfolio Yield",
+              "value": 100,
+              "tone": "data"
+            },
+            {
+              "label": "Duration Compliance",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "VaR Protection",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "Audit Integrity",
+              "value": 100,
+              "tone": "accent"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "partTitle": "Tier 5: Grand Master Milestone 4 Capstone Corporate Treasury Risk Command Center",
+    "codeHash": "c7b468a17b5190a2a578940949c800d7c514b2d14de154d1afbc2dcde34841e1",
+    "spec": {
+      "template": "bars",
+      "title": "Tier 5: Grand Master Milestone 4 Capston... \u2014 Milestone 4 Capstone Metrics",
+      "steps": [
+        {
+          "at": "intro",
+          "caption": "Step 1: Baseline parameters and constraints for Tier 5: Grand Master Milestone 4 Ca...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Portfolio Yield",
+              "value": 45,
+              "tone": "data"
+            },
+            {
+              "label": "Duration Compliance",
+              "value": 60,
+              "tone": "accent"
+            },
+            {
+              "label": "VaR Protection",
+              "value": 50,
+              "tone": "idle"
+            },
+            {
+              "label": "Audit Integrity",
+              "value": 85,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "say1",
+          "caption": "Step 2: Dynamic optimization and stochastic shock analysis in Tier 5: Grand Master Milestone 4 Ca...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Portfolio Yield",
+              "value": 65,
+              "tone": "data"
+            },
+            {
+              "label": "Duration Compliance",
+              "value": 80,
+              "tone": "accent"
+            },
+            {
+              "label": "VaR Protection",
+              "value": 75,
+              "tone": "warn"
+            },
+            {
+              "label": "Audit Integrity",
+              "value": 92,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "example",
+          "caption": "Step 3: Correlated Monte Carlo simulation and circularity breaker checks in Tier 5: Grand Master Milestone 4 Ca...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Portfolio Yield",
+              "value": 85,
+              "tone": "data"
+            },
+            {
+              "label": "Duration Compliance",
+              "value": 95,
+              "tone": "accent"
+            },
+            {
+              "label": "VaR Protection",
+              "value": 90,
+              "tone": "accent"
+            },
+            {
+              "label": "Audit Integrity",
+              "value": 96,
+              "tone": "accent"
+            }
+          ]
+        },
+        {
+          "at": "tryIt",
+          "caption": "Step 4: Grand Master Capstone execution and cryptographic audit seal applied for Tier 5: Grand Master Milestone 4 Ca...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Portfolio Yield",
+              "value": 100,
+              "tone": "data"
+            },
+            {
+              "label": "Duration Compliance",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "VaR Protection",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "Audit Integrity",
+              "value": 100,
+              "tone": "accent"
+            }
+          ]
+        }
+      ]
+    }
+  }
+]
