@@ -67,7 +67,7 @@ test('Quant & Excel Long Lessons: Resolution & Structural Invariants', () => {
   assert.equal(excelLesson5.day, 5);
   assert.equal(excelLesson5.parts.length, 5, 'excel_viz Day 5 must contain exactly 5 parts');
 
-  for (let d = 6; d <= 17; d++) {
+  for (let d = 6; d <= 18; d++) {
     const el = getLongLesson('excel_viz', d);
     assert.ok(el, `excel_viz Day ${d} long lesson must resolve`);
     assert.equal(el.day, d);
@@ -1878,4 +1878,38 @@ test('Excel Viz Day 17: Scenario Manager, Goal Seek & Complex Constrained Optimi
   assert.ok(lesson.parts[2].code?.includes('LinearProgrammingSolverEngine'));
   assert.ok(lesson.parts[3].code?.includes('NonLinearOptimizationAlgorithmEngine'));
   assert.ok(lesson.parts[4].code?.includes('EnterpriseCapitalStructureOptimizerPlatform'));
+});
+
+test('Excel Viz Day 18: Monte Carlo Simulation & Stochastic Risk Modeling in Excel', () => {
+  const lesson = getLongLesson('excel_viz', 18);
+  assert.ok(lesson, 'excel_viz Day 18 must resolve');
+  assert.equal(lesson.day, 18);
+  assert.equal(lesson.parts.length, 5);
+
+  const spokenMin = estimateSpokenMinutes(lesson);
+  const totalMin = estimateLessonMinutes(lesson);
+  assert.ok(spokenMin >= 8, `Spoken minutes should be >= 8 (got ${spokenMin})`);
+  assert.ok(totalMin >= 15, `Total minutes should be >= 15 (got ${totalMin})`);
+
+  for (let i = 0; i < lesson.parts.length; i++) {
+    const part = lesson.parts[i];
+    assert.ok(part.title.length > 0);
+    assert.ok(part.say.length >= 3);
+    assert.ok(part.example && part.example.length > 0);
+    assert.ok(part.code && part.code.includes('class '));
+    assert.ok(part.output && part.output.length > 0);
+    assert.ok(part.tryIt && part.tryIt.length > 0);
+
+    const check = part.check as any;
+    assert.ok(check.question.length > 10);
+    assert.equal(check.options.length, 4);
+    assert.ok(check.answer >= 0 && check.answer < 4);
+    assert.ok(check.why.length > 15);
+  }
+
+  assert.ok(lesson.parts[0].code?.includes('StochasticDistributionModelingEngine'));
+  assert.ok(lesson.parts[1].code?.includes('MonteCarloIterationEngine'));
+  assert.ok(lesson.parts[2].code?.includes('ValueAtRiskAndTailRiskEngine'));
+  assert.ok(lesson.parts[3].code?.includes('CorrelatedCholeskyDecompositionEngine'));
+  assert.ok(lesson.parts[4].code?.includes('EnterpriseMonteCarloCapitalBudgetingPlatform'));
 });
