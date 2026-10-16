@@ -1,0 +1,592 @@
+[
+  {
+    "partTitle": "The Capital Allocation Hierarchy & Hurdle Rate Architecture",
+    "codeHash": "310ed92f4c341b76922d3fcae6b7ccef2122b84f5b46dd7a0115978b6c5eb29d",
+    "spec": {
+      "template": "bars",
+      "title": "The Capital Allocation Hierarchy & Hurdl... \u2014 Capital Allocation Telemetry",
+      "steps": [
+        {
+          "at": "intro",
+          "caption": "Step 1: Baseline WACC and hurdle rate architecture for The Capital Allocation Hierarchy...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "WACC Floor",
+              "value": 85,
+              "tone": "data"
+            },
+            {
+              "label": "Hurdle Spread",
+              "value": 45,
+              "tone": "accent"
+            },
+            {
+              "label": "ROIC Performance",
+              "value": 75,
+              "tone": "idle"
+            },
+            {
+              "label": "EVA Creation",
+              "value": 80,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "say1",
+          "caption": "Step 2: Capital rationing and ROIC-WACC spread analysis for The Capital Allocation Hierarchy...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "WACC Floor",
+              "value": 85,
+              "tone": "data"
+            },
+            {
+              "label": "Hurdle Spread",
+              "value": 65,
+              "tone": "accent"
+            },
+            {
+              "label": "ROIC Performance",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "EVA Creation",
+              "value": 88,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "example",
+          "caption": "Step 3: Stern Stewart EVA adjustments and multi-division DuPont decomposition in The Capital Allocation Hierarchy...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "WACC Floor",
+              "value": 85,
+              "tone": "data"
+            },
+            {
+              "label": "Hurdle Spread",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "ROIC Performance",
+              "value": 95,
+              "tone": "accent"
+            },
+            {
+              "label": "EVA Creation",
+              "value": 95,
+              "tone": "accent"
+            }
+          ]
+        },
+        {
+          "at": "tryIt",
+          "caption": "Step 4: Boardroom capital allocation scorecard certification and SHA-256 seal for The Capital Allocation Hierarchy...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "WACC Floor",
+              "value": 100,
+              "tone": "data"
+            },
+            {
+              "label": "Hurdle Spread",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "ROIC Performance",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "EVA Creation",
+              "value": 100,
+              "tone": "accent"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "partTitle": "Return on Invested Capital (ROIC) vs WACC Spread & Value Creation",
+    "codeHash": "95de5905f00745fe75fa41dcd592f79c35d30e1454fbab8bd1c7d437fef46fe3",
+    "spec": {
+      "template": "bars",
+      "title": "Return on Invested Capital (ROIC) vs WAC... \u2014 Capital Allocation Telemetry",
+      "steps": [
+        {
+          "at": "intro",
+          "caption": "Step 1: Baseline WACC and hurdle rate architecture for Return on Invested Capital (ROIC...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "WACC Floor",
+              "value": 85,
+              "tone": "data"
+            },
+            {
+              "label": "Hurdle Spread",
+              "value": 45,
+              "tone": "accent"
+            },
+            {
+              "label": "ROIC Performance",
+              "value": 75,
+              "tone": "idle"
+            },
+            {
+              "label": "EVA Creation",
+              "value": 80,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "say1",
+          "caption": "Step 2: Capital rationing and ROIC-WACC spread analysis for Return on Invested Capital (ROIC...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "WACC Floor",
+              "value": 85,
+              "tone": "data"
+            },
+            {
+              "label": "Hurdle Spread",
+              "value": 65,
+              "tone": "accent"
+            },
+            {
+              "label": "ROIC Performance",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "EVA Creation",
+              "value": 88,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "example",
+          "caption": "Step 3: Stern Stewart EVA adjustments and multi-division DuPont decomposition in Return on Invested Capital (ROIC...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "WACC Floor",
+              "value": 85,
+              "tone": "data"
+            },
+            {
+              "label": "Hurdle Spread",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "ROIC Performance",
+              "value": 95,
+              "tone": "accent"
+            },
+            {
+              "label": "EVA Creation",
+              "value": 95,
+              "tone": "accent"
+            }
+          ]
+        },
+        {
+          "at": "tryIt",
+          "caption": "Step 4: Boardroom capital allocation scorecard certification and SHA-256 seal for Return on Invested Capital (ROIC...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "WACC Floor",
+              "value": 100,
+              "tone": "data"
+            },
+            {
+              "label": "Hurdle Spread",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "ROIC Performance",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "EVA Creation",
+              "value": 100,
+              "tone": "accent"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "partTitle": "Stern Stewart Economic Value Added (EVA) & Accounting Adjustments",
+    "codeHash": "d6c766590413a85ffc07e8d26ac157dabc3ab8c276269ebb849a21fe6ffa229d",
+    "spec": {
+      "template": "bars",
+      "title": "Stern Stewart Economic Value Added (EVA)... \u2014 Capital Allocation Telemetry",
+      "steps": [
+        {
+          "at": "intro",
+          "caption": "Step 1: Baseline WACC and hurdle rate architecture for Stern Stewart Economic Value Add...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "WACC Floor",
+              "value": 85,
+              "tone": "data"
+            },
+            {
+              "label": "Hurdle Spread",
+              "value": 45,
+              "tone": "accent"
+            },
+            {
+              "label": "ROIC Performance",
+              "value": 75,
+              "tone": "idle"
+            },
+            {
+              "label": "EVA Creation",
+              "value": 80,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "say1",
+          "caption": "Step 2: Capital rationing and ROIC-WACC spread analysis for Stern Stewart Economic Value Add...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "WACC Floor",
+              "value": 85,
+              "tone": "data"
+            },
+            {
+              "label": "Hurdle Spread",
+              "value": 65,
+              "tone": "accent"
+            },
+            {
+              "label": "ROIC Performance",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "EVA Creation",
+              "value": 88,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "example",
+          "caption": "Step 3: Stern Stewart EVA adjustments and multi-division DuPont decomposition in Stern Stewart Economic Value Add...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "WACC Floor",
+              "value": 85,
+              "tone": "data"
+            },
+            {
+              "label": "Hurdle Spread",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "ROIC Performance",
+              "value": 95,
+              "tone": "accent"
+            },
+            {
+              "label": "EVA Creation",
+              "value": 95,
+              "tone": "accent"
+            }
+          ]
+        },
+        {
+          "at": "tryIt",
+          "caption": "Step 4: Boardroom capital allocation scorecard certification and SHA-256 seal for Stern Stewart Economic Value Add...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "WACC Floor",
+              "value": 100,
+              "tone": "data"
+            },
+            {
+              "label": "Hurdle Spread",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "ROIC Performance",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "EVA Creation",
+              "value": 100,
+              "tone": "accent"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "partTitle": "Multi-Division ROIC Decomposition & Strategic Portfolio Matrices",
+    "codeHash": "fa471deb00213ce6dd2f4877614e6e6e3eb2f110d0ce6e1d602c039319f52b9a",
+    "spec": {
+      "template": "bars",
+      "title": "Multi-Division ROIC Decomposition & Stra... \u2014 Capital Allocation Telemetry",
+      "steps": [
+        {
+          "at": "intro",
+          "caption": "Step 1: Baseline WACC and hurdle rate architecture for Multi-Division ROIC Decompositio...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "WACC Floor",
+              "value": 85,
+              "tone": "data"
+            },
+            {
+              "label": "Hurdle Spread",
+              "value": 45,
+              "tone": "accent"
+            },
+            {
+              "label": "ROIC Performance",
+              "value": 75,
+              "tone": "idle"
+            },
+            {
+              "label": "EVA Creation",
+              "value": 80,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "say1",
+          "caption": "Step 2: Capital rationing and ROIC-WACC spread analysis for Multi-Division ROIC Decompositio...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "WACC Floor",
+              "value": 85,
+              "tone": "data"
+            },
+            {
+              "label": "Hurdle Spread",
+              "value": 65,
+              "tone": "accent"
+            },
+            {
+              "label": "ROIC Performance",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "EVA Creation",
+              "value": 88,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "example",
+          "caption": "Step 3: Stern Stewart EVA adjustments and multi-division DuPont decomposition in Multi-Division ROIC Decompositio...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "WACC Floor",
+              "value": 85,
+              "tone": "data"
+            },
+            {
+              "label": "Hurdle Spread",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "ROIC Performance",
+              "value": 95,
+              "tone": "accent"
+            },
+            {
+              "label": "EVA Creation",
+              "value": 95,
+              "tone": "accent"
+            }
+          ]
+        },
+        {
+          "at": "tryIt",
+          "caption": "Step 4: Boardroom capital allocation scorecard certification and SHA-256 seal for Multi-Division ROIC Decompositio...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "WACC Floor",
+              "value": 100,
+              "tone": "data"
+            },
+            {
+              "label": "Hurdle Spread",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "ROIC Performance",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "EVA Creation",
+              "value": 100,
+              "tone": "accent"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "partTitle": "Enterprise Corporate Capital Allocation Strategy Gateway",
+    "codeHash": "4da37254924a0f62cbc73a2e52fc7af7aac6b9bfd8128671f7a6b5ddb8893eeb",
+    "spec": {
+      "template": "bars",
+      "title": "Enterprise Corporate Capital Allocation ... \u2014 Capital Allocation Telemetry",
+      "steps": [
+        {
+          "at": "intro",
+          "caption": "Step 1: Baseline WACC and hurdle rate architecture for Enterprise Corporate Capital All...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "WACC Floor",
+              "value": 85,
+              "tone": "data"
+            },
+            {
+              "label": "Hurdle Spread",
+              "value": 45,
+              "tone": "accent"
+            },
+            {
+              "label": "ROIC Performance",
+              "value": 75,
+              "tone": "idle"
+            },
+            {
+              "label": "EVA Creation",
+              "value": 80,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "say1",
+          "caption": "Step 2: Capital rationing and ROIC-WACC spread analysis for Enterprise Corporate Capital All...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "WACC Floor",
+              "value": 85,
+              "tone": "data"
+            },
+            {
+              "label": "Hurdle Spread",
+              "value": 65,
+              "tone": "accent"
+            },
+            {
+              "label": "ROIC Performance",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "EVA Creation",
+              "value": 88,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "example",
+          "caption": "Step 3: Stern Stewart EVA adjustments and multi-division DuPont decomposition in Enterprise Corporate Capital All...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "WACC Floor",
+              "value": 85,
+              "tone": "data"
+            },
+            {
+              "label": "Hurdle Spread",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "ROIC Performance",
+              "value": 95,
+              "tone": "accent"
+            },
+            {
+              "label": "EVA Creation",
+              "value": 95,
+              "tone": "accent"
+            }
+          ]
+        },
+        {
+          "at": "tryIt",
+          "caption": "Step 4: Boardroom capital allocation scorecard certification and SHA-256 seal for Enterprise Corporate Capital All...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "WACC Floor",
+              "value": 100,
+              "tone": "data"
+            },
+            {
+              "label": "Hurdle Spread",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "ROIC Performance",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "EVA Creation",
+              "value": 100,
+              "tone": "accent"
+            }
+          ]
+        }
+      ]
+    }
+  }
+]
