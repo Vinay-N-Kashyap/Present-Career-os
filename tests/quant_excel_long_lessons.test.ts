@@ -38,7 +38,7 @@ test('Quant & Excel Long Lessons: Resolution & Structural Invariants', () => {
   assert.equal(quantLesson5.day, 5);
   assert.equal(quantLesson5.parts.length, 5, 'quant-systems Day 5 must contain exactly 5 parts');
 
-  for (let d = 6; d <= 25; d++) {
+  for (let d = 6; d <= 30; d++) {
     const ql = getLongLesson('quant-systems', d);
     assert.ok(ql, `quant-systems Day ${d} long lesson must resolve`);
     assert.equal(ql.day, d);
@@ -1261,4 +1261,204 @@ test('Quant Systems Day 25: ⭐ Milestone 5 Capstone: Enterprise Real-Time Quant
   assert.ok(lesson.parts[2].code?.includes('CorrelatedStressEngine'));
   assert.ok(lesson.parts[3].code?.includes('LiquidityRiskGateEngine'));
   assert.ok(lesson.parts[4].code?.includes('GrandMasterMilestone5RiskEngine'));
+});
+
+test('Quant Systems Day 26: Pre-Trade Risk Controls & Fat-Finger Circuit Breakers: SEC Rule 15c3-5, Dynamic Price Collars & Sub-Millisecond Kill Switches', () => {
+  const lesson = getLongLesson('quant-systems', 26);
+  assert.ok(lesson, 'quant-systems Day 26 must resolve');
+  assert.equal(lesson.day, 26);
+  assert.equal(lesson.parts.length, 5);
+
+  const spokenMin = estimateSpokenMinutes(lesson);
+  const totalMin = estimateLessonMinutes(lesson);
+  assert.ok(spokenMin >= 8);
+  assert.ok(totalMin >= 15);
+
+  for (let i = 0; i < lesson.parts.length; i++) {
+    const part = lesson.parts[i];
+    assert.ok(part.title.length > 0);
+    assert.ok(part.say.length >= 3);
+    assert.ok(part.example && part.example.length > 0);
+    assert.ok(part.code && part.code.includes('#include'));
+    assert.ok(part.output && part.output.length > 0);
+    assert.ok(part.tryIt && part.tryIt.length > 0);
+
+    const check = part.check as any;
+    assert.ok(check.question.length > 0);
+    assert.equal(check.options.length, 4);
+    assert.ok(check.answer >= 0 && check.answer < 4);
+    assert.ok(check.why.length > 0);
+
+    const inspection = inspectCppSource(part.code, 'main');
+    assert.equal(inspection.hasValidSignature, true);
+    assert.equal(inspection.hasHeaders, true);
+    assert.equal(inspection.hasReturn, true);
+    assert.equal(inspection.syntaxViolations.length, 0);
+  }
+
+  assert.ok(lesson.parts[0].code?.includes('MarketAccessRuleEngine'));
+  assert.ok(lesson.parts[1].code?.includes('FatFingerLimitFilter'));
+  assert.ok(lesson.parts[2].code?.includes('DynamicPriceCollarEngine'));
+  assert.ok(lesson.parts[3].code?.includes('EmergencyKillSwitchEngine'));
+  assert.ok(lesson.parts[4].code?.includes('ProductionPreTradeRiskGateway'));
+});
+
+test('Quant Systems Day 27: Backtesting Pitfalls, Point-in-Time Data & Overfitting Elimination', () => {
+  const lesson = getLongLesson('quant-systems', 27);
+  assert.ok(lesson, 'quant-systems Day 27 must resolve');
+  assert.equal(lesson.day, 27);
+  assert.equal(lesson.parts.length, 5);
+
+  const spokenMin = estimateSpokenMinutes(lesson);
+  const totalMin = estimateLessonMinutes(lesson);
+  assert.ok(spokenMin >= 8);
+  assert.ok(totalMin >= 15);
+
+  for (let i = 0; i < lesson.parts.length; i++) {
+    const part = lesson.parts[i];
+    assert.ok(part.title.length > 0);
+    assert.ok(part.say.length >= 3);
+    assert.ok(part.example && part.example.length > 0);
+    assert.ok(part.code && part.code.includes('#include'));
+    assert.ok(part.output && part.output.length > 0);
+    assert.ok(part.tryIt && part.tryIt.length > 0);
+
+    const check = part.check as any;
+    assert.ok(check.question.length > 0);
+    assert.equal(check.options.length, 4);
+    assert.ok(check.answer >= 0 && check.answer < 4);
+    assert.ok(check.why.length > 0);
+
+    const inspection = inspectCppSource(part.code, 'main');
+    assert.equal(inspection.hasValidSignature, true);
+    assert.equal(inspection.hasHeaders, true);
+    assert.equal(inspection.hasReturn, true);
+    assert.equal(inspection.syntaxViolations.length, 0);
+  }
+
+  assert.ok(lesson.parts[0].code?.includes('PointInTimeBacktestAuditor'));
+  assert.ok(lesson.parts[1].code?.includes('SurvivorshipBiasEngine'));
+  assert.ok(lesson.parts[2].code?.includes('DeflatedSharpeEngine'));
+  assert.ok(lesson.parts[3].code?.includes('WalkForwardValidator'));
+  assert.ok(lesson.parts[4].code?.includes('ProductionBacktestPipeline'));
+});
+
+test('Quant Systems Day 28: Crypto Derivatives: Perpetual Swaps, Funding Rate Arbitrage & Liquidation Engine Mechanics', () => {
+  const lesson = getLongLesson('quant-systems', 28);
+  assert.ok(lesson, 'quant-systems Day 28 must resolve');
+  assert.equal(lesson.day, 28);
+  assert.equal(lesson.parts.length, 5);
+
+  const spokenMin = estimateSpokenMinutes(lesson);
+  const totalMin = estimateLessonMinutes(lesson);
+  assert.ok(spokenMin >= 8);
+  assert.ok(totalMin >= 15);
+
+  for (let i = 0; i < lesson.parts.length; i++) {
+    const part = lesson.parts[i];
+    assert.ok(part.title.length > 0);
+    assert.ok(part.say.length >= 3);
+    assert.ok(part.example && part.example.length > 0);
+    assert.ok(part.code && part.code.includes('#include'));
+    assert.ok(part.output && part.output.length > 0);
+    assert.ok(part.tryIt && part.tryIt.length > 0);
+
+    const check = part.check as any;
+    assert.ok(check.question.length > 0);
+    assert.equal(check.options.length, 4);
+    assert.ok(check.answer >= 0 && check.answer < 4);
+    assert.ok(check.why.length > 0);
+
+    const inspection = inspectCppSource(part.code, 'main');
+    assert.equal(inspection.hasValidSignature, true);
+    assert.equal(inspection.hasHeaders, true);
+    assert.equal(inspection.hasReturn, true);
+    assert.equal(inspection.syntaxViolations.length, 0);
+  }
+
+  assert.ok(lesson.parts[0].code?.includes('PerpetualSwapEngine'));
+  assert.ok(lesson.parts[1].code?.includes('FundingRateArbitrageur'));
+  assert.ok(lesson.parts[2].code?.includes('LiquidationCascadeSimulator'));
+  assert.ok(lesson.parts[3].code?.includes('AutoDeleveragingEngine'));
+  assert.ok(lesson.parts[4].code?.includes('ProductionCryptoDerivativesEngine'));
+});
+
+test('Quant Systems Day 29: High-Frequency Trading Infrastructure: FPGA Acceleration & Silicon Offloading', () => {
+  const lesson = getLongLesson('quant-systems', 29);
+  assert.ok(lesson, 'quant-systems Day 29 must resolve');
+  assert.equal(lesson.day, 29);
+  assert.equal(lesson.parts.length, 5);
+
+  const spokenMin = estimateSpokenMinutes(lesson);
+  const totalMin = estimateLessonMinutes(lesson);
+  assert.ok(spokenMin >= 8);
+  assert.ok(totalMin >= 15);
+
+  for (let i = 0; i < lesson.parts.length; i++) {
+    const part = lesson.parts[i];
+    assert.ok(part.title.length > 0);
+    assert.ok(part.say.length >= 3);
+    assert.ok(part.example && part.example.length > 0);
+    assert.ok(part.code && part.code.includes('#include'));
+    assert.ok(part.output && part.output.length > 0);
+    assert.ok(part.tryIt && part.tryIt.length > 0);
+
+    const check = part.check as any;
+    assert.ok(check.question.length > 0);
+    assert.equal(check.options.length, 4);
+    assert.ok(check.answer >= 0 && check.answer < 4);
+    assert.ok(check.why.length > 0);
+
+    const inspection = inspectCppSource(part.code, 'main');
+    assert.equal(inspection.hasValidSignature, true);
+    assert.equal(inspection.hasHeaders, true);
+    assert.equal(inspection.hasReturn, true);
+    assert.equal(inspection.syntaxViolations.length, 0);
+  }
+
+  assert.ok(lesson.parts[0].code?.includes('FpgaEthernetMacParser'));
+  assert.ok(lesson.parts[1].code?.includes('PcieDmaRingBuffer'));
+  assert.ok(lesson.parts[2].code?.includes('SiliconRiskFilter15c35'));
+  assert.ok(lesson.parts[3].code?.includes('Axi4StreamPipeline'));
+  assert.ok(lesson.parts[4].code?.includes('HybridFpgaCpuGateway'));
+});
+
+test('Quant Systems Day 30: 🏆 Final Capstone: Sovereign Ultra-Low-Latency Quantitative Trading & Market Making System', () => {
+  const lesson = getLongLesson('quant-systems', 30);
+  assert.ok(lesson, 'quant-systems Day 30 must resolve');
+  assert.equal(lesson.day, 30);
+  assert.equal(lesson.parts.length, 5);
+
+  const spokenMin = estimateSpokenMinutes(lesson);
+  const totalMin = estimateLessonMinutes(lesson);
+  assert.ok(spokenMin >= 8);
+  assert.ok(totalMin >= 15);
+
+  for (let i = 0; i < lesson.parts.length; i++) {
+    const part = lesson.parts[i];
+    assert.ok(part.title.length > 0);
+    assert.ok(part.say.length >= 3);
+    assert.ok(part.example && part.example.length > 0);
+    assert.ok(part.code && part.code.includes('#include'));
+    assert.ok(part.output && part.output.length > 0);
+    assert.ok(part.tryIt && part.tryIt.length > 0);
+
+    const check = part.check as any;
+    assert.ok(check.question.length > 0);
+    assert.equal(check.options.length, 4);
+    assert.ok(check.answer >= 0 && check.answer < 4);
+    assert.ok(check.why.length > 0);
+
+    const inspection = inspectCppSource(part.code, 'main');
+    assert.equal(inspection.hasValidSignature, true);
+    assert.equal(inspection.hasHeaders, true);
+    assert.equal(inspection.hasReturn, true);
+    assert.equal(inspection.syntaxViolations.length, 0);
+  }
+
+  assert.ok(lesson.parts[0].code?.includes('Milestone6SovereignConfig'));
+  assert.ok(lesson.parts[1].code?.includes('LockFreeSpscEngine'));
+  assert.ok(lesson.parts[2].code?.includes('DeterministicMatchingKernel'));
+  assert.ok(lesson.parts[3].code?.includes('SubMicrosecondHftStrategy'));
+  assert.ok(lesson.parts[4].code?.includes('GrandMasterFinalCapstoneEngine'));
 });

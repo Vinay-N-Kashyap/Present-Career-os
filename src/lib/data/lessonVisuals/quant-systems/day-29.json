@@ -1,0 +1,344 @@
+{
+  "schemaVersion": 1,
+  "prefix": "quant-systems",
+  "day": 29,
+  "promptSha": "9828ffae99f62e62f7092b63783f4b02d10a3052a486da2c45f112d17cf3e215",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "FPGA Architecture in HFT: Hardware Pipelines vs Von Neumann CPU Latency",
+      "codeHash": "108b3c98802559c782dcbe2827749556d863c6f89eefda70e7e8f99638033f1b",
+      "spec": {
+        "template": "states",
+        "title": "FPGA Architecture in HFT: Hardware Pipelines  \u2014 High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "10G Eth MAC"
+          },
+          {
+            "id": "st2",
+            "label": "IP/UDP Header"
+          },
+          {
+            "id": "st3",
+            "label": "ITCH Binary Beat"
+          },
+          {
+            "id": "st4",
+            "label": "Silicon Decode"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (10G Eth MAC): Initialize deterministic state for FPGA Architecture in HFT: Hardware ...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to IP/UDP Header with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "initialize()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to ITCH Binary Beat and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "State 4 (Silicon Decode): Execute deterministic verification with zero heap allocations.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "verify()"
+            },
+            "tone": "accent"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Direct Memory Access (DMA), PCIe Gen5 Ring Buffers & Zero-Copy Host Interfacing",
+      "codeHash": "fb797100ba515ab3882f18a1400dc88ab06708211c12213d0a267ee24fda842d",
+      "spec": {
+        "template": "states",
+        "title": "Direct Memory Access (DMA), PCIe Gen5 Ring Bu \u2014 High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "PCIe Gen5 DMA"
+          },
+          {
+            "id": "st2",
+            "label": "Host HugePages"
+          },
+          {
+            "id": "st3",
+            "label": "Descriptor Ring"
+          },
+          {
+            "id": "st4",
+            "label": "Zero-Copy Poll"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (PCIe Gen5 DMA): Initialize deterministic state for Direct Memory Access (DMA), PCIe Ge...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Host HugePages with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "process()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Descriptor Ring and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "filter()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "State 4 (Zero-Copy Poll): Execute deterministic verification with zero heap allocations.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "approve()"
+            },
+            "tone": "accent"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Hardware Pre-Trade Risk Filtering: Sub-100 Nanosecond Silicon Checks",
+      "codeHash": "0d336f9dec4e027151e912df51f86f9bd51a80a9ae77017360eaf9c34ece871c",
+      "spec": {
+        "template": "states",
+        "title": "Hardware Pre-Trade Risk Filtering: Sub-100 Na \u2014 High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Clip Register"
+          },
+          {
+            "id": "st2",
+            "label": "Price Band Logic"
+          },
+          {
+            "id": "st3",
+            "label": "Credit Counter"
+          },
+          {
+            "id": "st4",
+            "label": "3.1ns Pass"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Clip Register): Initialize deterministic state for Hardware Pre-Trade Risk Filtering: ...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Price Band Logic with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "sample()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Credit Counter and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "calculate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "State 4 (3.1ns Pass): Execute deterministic verification with zero heap allocations.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "enforce()"
+            },
+            "tone": "accent"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "AXI4-Stream Protocol & RTL Network Packet De-serialization",
+      "codeHash": "e79f31005f03a04be0f6b50c141080fd4dd1b37d2af71c5eacbd8485175c0d65",
+      "spec": {
+        "template": "states",
+        "title": "AXI4-Stream Protocol & RTL Network Packet De- \u2014 High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "AXI TDATA Bus"
+          },
+          {
+            "id": "st2",
+            "label": "TVALID/TREADY"
+          },
+          {
+            "id": "st3",
+            "label": "TKEEP Byte Mask"
+          },
+          {
+            "id": "st4",
+            "label": "TLAST Frame"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (AXI TDATA Bus): Initialize deterministic state for AXI4-Stream Protocol & RTL Network ...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to TVALID/TREADY with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "stream()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to TKEEP Byte Mask and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "pipeline()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "State 4 (TLAST Frame): Execute deterministic verification with zero heap allocations.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "finalize()"
+            },
+            "tone": "accent"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Hybrid FPGA-CPU Co-Design & Microsecond Fallback Architectures",
+      "codeHash": "5d579c8f02012599f19ded477a50c80379ca99aded29bf34957a7dcf821b7e2c",
+      "spec": {
+        "template": "states",
+        "title": "Production Hybrid FPGA-CPU Co-Design & Micros \u2014 High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "FPGA Fast Path"
+          },
+          {
+            "id": "st2",
+            "label": "PCIe Ring Buffer"
+          },
+          {
+            "id": "st3",
+            "label": "Host CPU Model"
+          },
+          {
+            "id": "st4",
+            "label": "Failover Standby"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (FPGA Fast Path): Initialize deterministic state for Production Hybrid FPGA-CPU Co-Desig...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to PCIe Ring Buffer with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "audit()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Host CPU Model and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "benchmark()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "State 4 (Failover Standby): Execute deterministic verification with zero heap allocations.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "certify()"
+            },
+            "tone": "accent"
+          }
+        ]
+      }
+    }
+  ]
+}
