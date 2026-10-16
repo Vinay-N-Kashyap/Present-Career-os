@@ -74,6 +74,7 @@ export interface LongLessonCheck {
 }
 
 export interface LongLessonPart {
+  part?: string;
   title: string;
   /** What the teacher says, one paragraph per entry. Shown on screen and spoken aloud. */
   say: string[] | string;

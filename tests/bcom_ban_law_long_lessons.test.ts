@@ -791,3 +791,142 @@ test('Block 198 (TASK-781..785): Domain specifics & deterministic Python code ve
   assert.ok(d15.parts[3].code?.includes('run_autonomous_investment_banking_command_engine'));
   assert.ok(d15.parts[4].code?.includes('verify_milestone3_investment_banking_masterclass_certification'));
 });
+
+test('Block 199 (TASK-786..790): bcom_ban Days 16–20 Resolution & Pedagogical Structure Invariants', () => {
+  for (let day = 16; day <= 20; day++) {
+    const lesson = getLongLesson('bcom_ban', day);
+    assert.ok(lesson, `bcom_ban Day ${day} lesson must be defined`);
+    assert.equal(lesson.coursePrefix, 'bcom_ban');
+    assert.equal(lesson.day, day);
+    assert.equal(lesson.parts.length, 5, `bcom_ban Day ${day} must have exactly 5 parts`);
+    assert.equal(getLongLessonLanguage('bcom_ban'), 'python');
+
+    let totalSpokenWords = 0;
+    for (let partIdx = 0; partIdx < 5; partIdx++) {
+      const part = lesson.parts[partIdx];
+      assert.ok(part.title.length > 0, `Day ${day} Part ${partIdx + 1} must have a non-empty title`);
+      assert.ok(part.say.length >= 3, `Day ${day} Part ${partIdx + 1} must have at least 3 explanation paragraphs`);
+      assert.ok(part.example && part.example.length > 0, `Day ${day} Part ${partIdx + 1} must have a real-world example`);
+      assert.ok(part.code && part.code.includes('def '), `Day ${day} Part ${partIdx + 1} code must contain Python functions`);
+      assert.ok(part.output && part.output.length > 0, `Day ${day} Part ${partIdx + 1} must have deterministic expected output`);
+      assert.ok(part.tryIt && part.tryIt.length > 0, `Day ${day} Part ${partIdx + 1} must have a tryIt experiment`);
+
+      const partWords = part.say.reduce((acc, p) => acc + p.split(/\s+/).filter(Boolean).length, 0);
+      assert.ok(partWords >= 580, `Day ${day} Part ${partIdx + 1} word count (${partWords}) must be >= 580 words`);
+      totalSpokenWords += partWords;
+
+      // Socratic Check validation
+      const check = part.check as any;
+      assert.ok(check.question.length > 0, `Day ${day} Part ${partIdx + 1} check question must be non-empty`);
+      assert.equal(check.options.length, 4, `Day ${day} Part ${partIdx + 1} check must have exactly 4 options`);
+      assert.ok(
+        (typeof check.answer === 'number' && check.answer >= 0 && check.answer < 4) ||
+        (typeof check.answerIndex === 'number' && check.answerIndex >= 0 && check.answerIndex < 4),
+        `Day ${day} Part ${partIdx + 1} answer must be a valid option index (0..3)`
+      );
+      assert.ok(
+        (check.why && check.why.length > 0) || (check.explanation && check.explanation.length > 0),
+        `Day ${day} Part ${partIdx + 1} check must have a non-empty explanation`
+      );
+    }
+
+    assert.ok(totalSpokenWords >= 2950, `Day ${day} total spoken words (${totalSpokenWords}) must be >= 2,950 words`);
+    const spokenMinutes = estimateSpokenMinutes(lesson);
+    assert.ok(spokenMinutes >= 20.0, `Day ${day} spoken minutes (${spokenMinutes}) must be >= 20.0 minutes`);
+  }
+});
+
+test('Block 199 (TASK-786..790): bcom_ban Days 16–20 Gate v2 on-disk visual JSON files uphold cryptographic SHA-256 bindings & ledger-sheet template', async () => {
+  const fs = await import('node:fs');
+  const path = await import('node:path');
+  const crypto = await import('node:crypto');
+  const { loadDayFile, getVisual, clearDayFileCache } = await import('../src/lib/visuals/loadVisuals');
+  const { getTappableLabelsForVisual } = await import('../src/lib/visuals/visualRules');
+
+  clearDayFileCache();
+
+  for (let day = 16; day <= 20; day++) {
+    const dayPadded = String(day).padStart(2, '0');
+    const filePath = path.resolve(process.cwd(), `src/lib/data/lessonVisuals/bcom_ban/day-${dayPadded}.json`);
+    assert.ok(fs.existsSync(filePath), `On-disk visual file missing: ${filePath}`);
+
+    const dayFile = loadDayFile('bcom_ban', day);
+    assert.ok(dayFile, `loadDayFile failed for bcom_ban Day ${day}`);
+    assert.equal(dayFile.schemaVersion, 1);
+    assert.equal(dayFile.prefix, 'bcom_ban');
+    assert.equal(dayFile.day, day);
+    assert.equal(dayFile.entries.length, 5, `Expected 5 entries in bcom_ban Day ${day}`);
+
+    const lesson = getLongLesson('bcom_ban', day)!;
+    for (let partIdx = 0; partIdx < 5; partIdx++) {
+      const entry = dayFile.entries[partIdx];
+      const part = lesson.parts[partIdx];
+
+      assert.equal(entry.partTitle, part.title, `partTitle mismatch at bcom_ban Day ${day} Part ${partIdx}`);
+      const expectedHash = crypto.createHash('sha256').update(part.code || '').digest('hex');
+      assert.equal(entry.codeHash, expectedHash, `codeHash mismatch at bcom_ban Day ${day} Part ${partIdx}`);
+
+      const visual = getVisual('bcom_ban', day, partIdx);
+      assert.ok(visual, `getVisual returned null for bcom_ban Day ${day} Part ${partIdx}`);
+      assert.equal(visual.template, 'ledger-sheet', `Expected template "ledger-sheet" for bcom_ban`);
+      assert.equal(visual.steps.length, 4, `Expected 4 synchronized steps for bcom_ban Day ${day} Part ${partIdx}`);
+      assert.deepEqual(
+        visual.steps.map(s => s.at),
+        ['intro', 'say1', 'example', 'tryIt'],
+        `Step markers must be ['intro', 'say1', 'example', 'tryIt']`
+      );
+
+      // Verify balanced double-entry ledger bookkeeping
+      visual.steps.forEach((step: any, stepIdx: number) => {
+        assert.equal(step.isBalanced, true, `Step ${stepIdx} in Day ${day} Part ${partIdx} must be balanced`);
+        assert.equal(step.totalDebit, step.totalCredit, `Step ${stepIdx} debits must equal credits`);
+      });
+
+      const labels = getTappableLabelsForVisual(visual);
+      assert.ok(labels.length > 0, `Expected non-empty tappable labels for bcom_ban Day ${day} Part ${partIdx}`);
+    }
+  }
+});
+
+test('Block 199 (TASK-786..790): Domain specifics & deterministic Python code verification across Days 16–20', () => {
+  // Day 16: Wealth Management & Private Banking (TASK-786)
+  const d16 = getLongLesson('bcom_ban', 16)!;
+  assert.ok(d16.parts[0].code?.includes('model_family_office_asset_allocation'));
+  assert.ok(d16.parts[1].code?.includes('calculate_markowitz_portfolio_metrics'));
+  assert.ok(d16.parts[2].code?.includes('evaluate_dynasty_trust_tax_shield'));
+  assert.ok(d16.parts[3].code?.includes('simulate_wealth_preservation_monte_carlo'));
+  assert.ok(d16.parts[4].code?.includes('audit_wealth_management_regulatory_compliance'));
+
+  // Day 17: Derivatives Trading & Hedging (TASK-787)
+  const d17 = getLongLesson('bcom_ban', 17)!;
+  assert.ok(d17.parts[0].code?.includes('model_interest_rate_swap_valuation'));
+  assert.ok(d17.parts[1].code?.includes('calculate_black_scholes_and_greeks'));
+  assert.ok(d17.parts[2].code?.includes('model_cross_currency_basis_swap'));
+  assert.ok(d17.parts[3].code?.includes('simulate_structured_note_payoff_engine'));
+  assert.ok(d17.parts[4].code?.includes('audit_isda_csa_variation_margin_compliance'));
+
+  // Day 18: Risk Management & Basel Framework (TASK-788)
+  const d18 = getLongLesson('bcom_ban', 18)!;
+  assert.ok(d18.parts[0].code?.includes('calculate_basel_expected_credit_loss'));
+  assert.ok(d18.parts[1].code?.includes('calculate_var_and_expected_shortfall'));
+  assert.ok(d18.parts[2].code?.includes('calculate_basel_capital_adequacy_ratios'));
+  assert.ok(d18.parts[3].code?.includes('simulate_ccar_severely_adverse_stress_engine'));
+  assert.ok(d18.parts[4].code?.includes('audit_enterprise_risk_governance_invariants'));
+
+  // Day 19: Digital Banking & Open Banking APIs (TASK-789)
+  const d19 = getLongLesson('bcom_ban', 19)!;
+  assert.ok(d19.parts[0].code?.includes('model_cloud_native_core_banking_ledger'));
+  assert.ok(d19.parts[1].code?.includes('generate_iso20022_pacs008_message'));
+  assert.ok(d19.parts[2].code?.includes('model_open_banking_aisp_pisp_api_gateway'));
+  assert.ok(d19.parts[3].code?.includes('simulate_instant_payment_rail_engine'));
+  assert.ok(d19.parts[4].code?.includes('audit_digital_banking_cyber_and_fraud_invariants'));
+
+  // Day 20: ⭐ Milestone 4 Capstone: Autonomous Global Banking & Financial Services Control Tower (TASK-790)
+  const d20 = getLongLesson('bcom_ban', 20)!;
+  assert.ok(d20.parts[0].code?.includes('model_global_private_wealth_orchestrator'));
+  assert.ok(d20.parts[1].code?.includes('verify_tier2_institutional_derivatives_engine'));
+  assert.ok(d20.parts[2].code?.includes('audit_tier3_basel_capital_and_ccar_invariants'));
+  assert.ok(d20.parts[3].code?.includes('run_tier4_digital_banking_payment_rail_engine'));
+  assert.ok(d20.parts[4].code?.includes('verify_milestone4_global_banking_masterclass_certification'));
+});
+
