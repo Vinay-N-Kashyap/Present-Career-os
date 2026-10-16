@@ -1,0 +1,592 @@
+[
+  {
+    "partTitle": "Master Corporate Strategic Plan & Scenario Router",
+    "codeHash": "f87f06894d5dc3cd86ad634c47d5aa338f2e928ed63ccebb2e6d4505830fbaa6",
+    "spec": {
+      "template": "bars",
+      "title": "Master Corporate Strategic Plan & Scenar... \u2014 Milestone 5 Grand Capstone Telemetry",
+      "steps": [
+        {
+          "at": "intro",
+          "caption": "Step 1: Baseline macro routing and strategic planning for Master Corporate Strategic Plan ...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Scenario Dispatch",
+              "value": 85,
+              "tone": "data"
+            },
+            {
+              "label": "Commercial PVM",
+              "value": 50,
+              "tone": "accent"
+            },
+            {
+              "label": "Treasury Liquidity",
+              "value": 65,
+              "tone": "warn"
+            },
+            {
+              "label": "Capital Allocation",
+              "value": 75,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "say1",
+          "caption": "Step 2: ASC 606 allocation and 13-week cash treasury simulation for Master Corporate Strategic Plan ...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Scenario Dispatch",
+              "value": 90,
+              "tone": "data"
+            },
+            {
+              "label": "Commercial PVM",
+              "value": 80,
+              "tone": "accent"
+            },
+            {
+              "label": "Treasury Liquidity",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "Capital Allocation",
+              "value": 85,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "example",
+          "caption": "Step 3: Executive EBITDA waterfall walk and EVA compounding analysis for Master Corporate Strategic Plan ...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Scenario Dispatch",
+              "value": 95,
+              "tone": "data"
+            },
+            {
+              "label": "Commercial PVM",
+              "value": 90,
+              "tone": "accent"
+            },
+            {
+              "label": "Treasury Liquidity",
+              "value": 95,
+              "tone": "accent"
+            },
+            {
+              "label": "Capital Allocation",
+              "value": 95,
+              "tone": "accent"
+            }
+          ]
+        },
+        {
+          "at": "tryIt",
+          "caption": "Step 4: Grand Master Boardroom Scorecard certification and SHA-256 seal for Master Corporate Strategic Plan ...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Scenario Dispatch",
+              "value": 100,
+              "tone": "data"
+            },
+            {
+              "label": "Commercial PVM",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "Treasury Liquidity",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "Capital Allocation",
+              "value": 100,
+              "tone": "accent"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "partTitle": "Unified Commercial PVM & ASC 606 Revenue Recognition Engine",
+    "codeHash": "be25d9ff4fa78e7bfdf75f3405315543334546bce86ee527f1fcf5d6141ef8eb",
+    "spec": {
+      "template": "bars",
+      "title": "Unified Commercial PVM & ASC 606 Revenue... \u2014 Milestone 5 Grand Capstone Telemetry",
+      "steps": [
+        {
+          "at": "intro",
+          "caption": "Step 1: Baseline macro routing and strategic planning for Unified Commercial PVM & ASC 606...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Scenario Dispatch",
+              "value": 85,
+              "tone": "data"
+            },
+            {
+              "label": "Commercial PVM",
+              "value": 50,
+              "tone": "accent"
+            },
+            {
+              "label": "Treasury Liquidity",
+              "value": 65,
+              "tone": "warn"
+            },
+            {
+              "label": "Capital Allocation",
+              "value": 75,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "say1",
+          "caption": "Step 2: ASC 606 allocation and 13-week cash treasury simulation for Unified Commercial PVM & ASC 606...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Scenario Dispatch",
+              "value": 90,
+              "tone": "data"
+            },
+            {
+              "label": "Commercial PVM",
+              "value": 80,
+              "tone": "accent"
+            },
+            {
+              "label": "Treasury Liquidity",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "Capital Allocation",
+              "value": 85,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "example",
+          "caption": "Step 3: Executive EBITDA waterfall walk and EVA compounding analysis for Unified Commercial PVM & ASC 606...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Scenario Dispatch",
+              "value": 95,
+              "tone": "data"
+            },
+            {
+              "label": "Commercial PVM",
+              "value": 90,
+              "tone": "accent"
+            },
+            {
+              "label": "Treasury Liquidity",
+              "value": 95,
+              "tone": "accent"
+            },
+            {
+              "label": "Capital Allocation",
+              "value": 95,
+              "tone": "accent"
+            }
+          ]
+        },
+        {
+          "at": "tryIt",
+          "caption": "Step 4: Grand Master Boardroom Scorecard certification and SHA-256 seal for Unified Commercial PVM & ASC 606...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Scenario Dispatch",
+              "value": 100,
+              "tone": "data"
+            },
+            {
+              "label": "Commercial PVM",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "Treasury Liquidity",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "Capital Allocation",
+              "value": 100,
+              "tone": "accent"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "partTitle": "Operational Cost Variance & 13-Week Cash Flow (TWCF) Treasury Engine",
+    "codeHash": "2b72a7f354e8b39eb86b9fea3031edfcb6a7329b90c889714053df9c48a249cb",
+    "spec": {
+      "template": "bars",
+      "title": "Operational Cost Variance & 13-Week Cash... \u2014 Milestone 5 Grand Capstone Telemetry",
+      "steps": [
+        {
+          "at": "intro",
+          "caption": "Step 1: Baseline macro routing and strategic planning for Operational Cost Variance & 13-W...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Scenario Dispatch",
+              "value": 85,
+              "tone": "data"
+            },
+            {
+              "label": "Commercial PVM",
+              "value": 50,
+              "tone": "accent"
+            },
+            {
+              "label": "Treasury Liquidity",
+              "value": 65,
+              "tone": "warn"
+            },
+            {
+              "label": "Capital Allocation",
+              "value": 75,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "say1",
+          "caption": "Step 2: ASC 606 allocation and 13-week cash treasury simulation for Operational Cost Variance & 13-W...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Scenario Dispatch",
+              "value": 90,
+              "tone": "data"
+            },
+            {
+              "label": "Commercial PVM",
+              "value": 80,
+              "tone": "accent"
+            },
+            {
+              "label": "Treasury Liquidity",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "Capital Allocation",
+              "value": 85,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "example",
+          "caption": "Step 3: Executive EBITDA waterfall walk and EVA compounding analysis for Operational Cost Variance & 13-W...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Scenario Dispatch",
+              "value": 95,
+              "tone": "data"
+            },
+            {
+              "label": "Commercial PVM",
+              "value": 90,
+              "tone": "accent"
+            },
+            {
+              "label": "Treasury Liquidity",
+              "value": 95,
+              "tone": "accent"
+            },
+            {
+              "label": "Capital Allocation",
+              "value": 95,
+              "tone": "accent"
+            }
+          ]
+        },
+        {
+          "at": "tryIt",
+          "caption": "Step 4: Grand Master Boardroom Scorecard certification and SHA-256 seal for Operational Cost Variance & 13-W...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Scenario Dispatch",
+              "value": 100,
+              "tone": "data"
+            },
+            {
+              "label": "Commercial PVM",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "Treasury Liquidity",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "Capital Allocation",
+              "value": 100,
+              "tone": "accent"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "partTitle": "Enterprise Capital Allocation, ROIC-WACC Spread & Stern Stewart EVA Engine",
+    "codeHash": "e796333c365eeebe463c8d9fd1c35a0e4a5426723b585595047d9645c96c7584",
+    "spec": {
+      "template": "bars",
+      "title": "Enterprise Capital Allocation, ROIC-WACC... \u2014 Milestone 5 Grand Capstone Telemetry",
+      "steps": [
+        {
+          "at": "intro",
+          "caption": "Step 1: Baseline macro routing and strategic planning for Enterprise Capital Allocation, R...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Scenario Dispatch",
+              "value": 85,
+              "tone": "data"
+            },
+            {
+              "label": "Commercial PVM",
+              "value": 50,
+              "tone": "accent"
+            },
+            {
+              "label": "Treasury Liquidity",
+              "value": 65,
+              "tone": "warn"
+            },
+            {
+              "label": "Capital Allocation",
+              "value": 75,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "say1",
+          "caption": "Step 2: ASC 606 allocation and 13-week cash treasury simulation for Enterprise Capital Allocation, R...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Scenario Dispatch",
+              "value": 90,
+              "tone": "data"
+            },
+            {
+              "label": "Commercial PVM",
+              "value": 80,
+              "tone": "accent"
+            },
+            {
+              "label": "Treasury Liquidity",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "Capital Allocation",
+              "value": 85,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "example",
+          "caption": "Step 3: Executive EBITDA waterfall walk and EVA compounding analysis for Enterprise Capital Allocation, R...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Scenario Dispatch",
+              "value": 95,
+              "tone": "data"
+            },
+            {
+              "label": "Commercial PVM",
+              "value": 90,
+              "tone": "accent"
+            },
+            {
+              "label": "Treasury Liquidity",
+              "value": 95,
+              "tone": "accent"
+            },
+            {
+              "label": "Capital Allocation",
+              "value": 95,
+              "tone": "accent"
+            }
+          ]
+        },
+        {
+          "at": "tryIt",
+          "caption": "Step 4: Grand Master Boardroom Scorecard certification and SHA-256 seal for Enterprise Capital Allocation, R...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Scenario Dispatch",
+              "value": 100,
+              "tone": "data"
+            },
+            {
+              "label": "Commercial PVM",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "Treasury Liquidity",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "Capital Allocation",
+              "value": 100,
+              "tone": "accent"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "partTitle": "\u2b50 Grand Master Milestone 5 Capstone: Enterprise Corporate FP&A & Treasury Platform",
+    "codeHash": "31cf5b9c5e1d4ebc6c4db1ce51cad73d5fc4e3f64819055678f913380a047e4f",
+    "spec": {
+      "template": "bars",
+      "title": "\u2b50 Grand Master Milestone 5 Capstone: Ent... \u2014 Milestone 5 Grand Capstone Telemetry",
+      "steps": [
+        {
+          "at": "intro",
+          "caption": "Step 1: Baseline macro routing and strategic planning for \u2b50 Grand Master Milestone 5 Capst...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Scenario Dispatch",
+              "value": 85,
+              "tone": "data"
+            },
+            {
+              "label": "Commercial PVM",
+              "value": 50,
+              "tone": "accent"
+            },
+            {
+              "label": "Treasury Liquidity",
+              "value": 65,
+              "tone": "warn"
+            },
+            {
+              "label": "Capital Allocation",
+              "value": 75,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "say1",
+          "caption": "Step 2: ASC 606 allocation and 13-week cash treasury simulation for \u2b50 Grand Master Milestone 5 Capst...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Scenario Dispatch",
+              "value": 90,
+              "tone": "data"
+            },
+            {
+              "label": "Commercial PVM",
+              "value": 80,
+              "tone": "accent"
+            },
+            {
+              "label": "Treasury Liquidity",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "Capital Allocation",
+              "value": 85,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "example",
+          "caption": "Step 3: Executive EBITDA waterfall walk and EVA compounding analysis for \u2b50 Grand Master Milestone 5 Capst...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Scenario Dispatch",
+              "value": 95,
+              "tone": "data"
+            },
+            {
+              "label": "Commercial PVM",
+              "value": 90,
+              "tone": "accent"
+            },
+            {
+              "label": "Treasury Liquidity",
+              "value": 95,
+              "tone": "accent"
+            },
+            {
+              "label": "Capital Allocation",
+              "value": 95,
+              "tone": "accent"
+            }
+          ]
+        },
+        {
+          "at": "tryIt",
+          "caption": "Step 4: Grand Master Boardroom Scorecard certification and SHA-256 seal for \u2b50 Grand Master Milestone 5 Capst...",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Scenario Dispatch",
+              "value": 100,
+              "tone": "data"
+            },
+            {
+              "label": "Commercial PVM",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "Treasury Liquidity",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "Capital Allocation",
+              "value": 100,
+              "tone": "accent"
+            }
+          ]
+        }
+      ]
+    }
+  }
+]
