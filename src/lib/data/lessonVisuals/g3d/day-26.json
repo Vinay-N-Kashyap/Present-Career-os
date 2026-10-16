@@ -1,0 +1,269 @@
+{
+  "schemaVersion": 1,
+  "prefix": "g3d",
+  "day": 26,
+  "promptSha": "2c0f894df44c1753848228fea2f6b40210c6548a5ae33e6f090ffd436219a56d",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Continuous & Discrete LOD: Screen-Space Error Metrics & Hysteresis Bands",
+      "codeHash": "75eecd30d584aa2bab38123c8de787ca21635465b75a2cb289b891e647d23942",
+      "spec": {
+        "template": "states",
+        "title": "Continuous & Discrete LOD: Screen-Space Error Metrics & Hysteresis Bands — Real-Time State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Continuous & Discrete LO Setup"
+          },
+          {
+            "id": "st2",
+            "label": "Pipeline Evaluation"
+          },
+          {
+            "id": "st3",
+            "label": "Transform Execution"
+          },
+          {
+            "id": "st4",
+            "label": "Verified Output"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Continuous & Discrete LO Setup): Initialize pipeline state for Continuous & Discrete LOD: Screen-Space Error Metrics & Hysteresis Bands.",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "State 2 (Pipeline Evaluation): Evaluate shader registers and buffer allocations.",
+            "currentState": "st2",
+            "tone": "accent"
+          },
+          {
+            "at": "example",
+            "caption": "State 3 (Transform Execution): Execute real-time transformation and simulation step.",
+            "currentState": "st3",
+            "tone": "warn"
+          },
+          {
+            "at": "tryIt",
+            "caption": "State 4 (Verified Output): Verification passed and deterministic output validated.",
+            "currentState": "st4",
+            "tone": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Smooth LOD Morphing (Geomorphing) & Dithered Stipple Cross-Fading",
+      "codeHash": "382358af5c3e18caf75f7ec49f347f53306be58bdcce9a2f69968309c4fe7a66",
+      "spec": {
+        "template": "states",
+        "title": "Smooth LOD Morphing (Geomorphing) & Dithered Stipple Cross-Fading — Real-Time State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Smooth LOD Morphing (Geo Setup"
+          },
+          {
+            "id": "st2",
+            "label": "Pipeline Evaluation"
+          },
+          {
+            "id": "st3",
+            "label": "Transform Execution"
+          },
+          {
+            "id": "st4",
+            "label": "Verified Output"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Smooth LOD Morphing (Geo Setup): Initialize pipeline state for Smooth LOD Morphing (Geomorphing) & Dithered Stipple Cross-Fading.",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "State 2 (Pipeline Evaluation): Evaluate shader registers and buffer allocations.",
+            "currentState": "st2",
+            "tone": "accent"
+          },
+          {
+            "at": "example",
+            "caption": "State 3 (Transform Execution): Execute real-time transformation and simulation step.",
+            "currentState": "st3",
+            "tone": "warn"
+          },
+          {
+            "at": "tryIt",
+            "caption": "State 4 (Verified Output): Verification passed and deterministic output validated.",
+            "currentState": "st4",
+            "tone": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Hierarchical View Frustum Culling & Gribb-Hartmann Plane Extraction",
+      "codeHash": "ba957de5f63222459cce0e24e0d8f8758d3c867e5cb7ebf11a7d49360990072f",
+      "spec": {
+        "template": "states",
+        "title": "Hierarchical View Frustum Culling & Gribb-Hartmann Plane Extraction — Real-Time State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Hierarchical View Frustu Setup"
+          },
+          {
+            "id": "st2",
+            "label": "Pipeline Evaluation"
+          },
+          {
+            "id": "st3",
+            "label": "Transform Execution"
+          },
+          {
+            "id": "st4",
+            "label": "Verified Output"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Hierarchical View Frustu Setup): Initialize pipeline state for Hierarchical View Frustum Culling & Gribb-Hartmann Plane Extraction.",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "State 2 (Pipeline Evaluation): Evaluate shader registers and buffer allocations.",
+            "currentState": "st2",
+            "tone": "accent"
+          },
+          {
+            "at": "example",
+            "caption": "State 3 (Transform Execution): Execute real-time transformation and simulation step.",
+            "currentState": "st3",
+            "tone": "warn"
+          },
+          {
+            "at": "tryIt",
+            "caption": "State 4 (Verified Output): Verification passed and deterministic output validated.",
+            "currentState": "st4",
+            "tone": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Hierarchical Z-Buffer (Hi-Z) Hardware Occlusion Culling",
+      "codeHash": "25fe2715038261a7278049dc0e7557e0d23f3ed4b765fc7210b5b03f6868afc8",
+      "spec": {
+        "template": "states",
+        "title": "Hierarchical Z-Buffer (Hi-Z) Hardware Occlusion Culling — Real-Time State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Hierarchical Z-Buffer (H Setup"
+          },
+          {
+            "id": "st2",
+            "label": "Pipeline Evaluation"
+          },
+          {
+            "id": "st3",
+            "label": "Transform Execution"
+          },
+          {
+            "id": "st4",
+            "label": "Verified Output"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Hierarchical Z-Buffer (H Setup): Initialize pipeline state for Hierarchical Z-Buffer (Hi-Z) Hardware Occlusion Culling.",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "State 2 (Pipeline Evaluation): Evaluate shader registers and buffer allocations.",
+            "currentState": "st2",
+            "tone": "accent"
+          },
+          {
+            "at": "example",
+            "caption": "State 3 (Transform Execution): Execute real-time transformation and simulation step.",
+            "currentState": "st3",
+            "tone": "warn"
+          },
+          {
+            "at": "tryIt",
+            "caption": "State 4 (Verified Output): Verification passed and deterministic output validated.",
+            "currentState": "st4",
+            "tone": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Scene LOD & Occlusion Culling Engine",
+      "codeHash": "b7fd8a4e7896339f717972bda6d42b5eff32425b304ca187677d6e8f62151df2",
+      "spec": {
+        "template": "states",
+        "title": "Enterprise Scene LOD & Occlusion Culling Engine — Real-Time State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Enterprise Scene LOD & O Setup"
+          },
+          {
+            "id": "st2",
+            "label": "Pipeline Evaluation"
+          },
+          {
+            "id": "st3",
+            "label": "Transform Execution"
+          },
+          {
+            "id": "st4",
+            "label": "Verified Output"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Enterprise Scene LOD & O Setup): Initialize pipeline state for Enterprise Scene LOD & Occlusion Culling Engine.",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "State 2 (Pipeline Evaluation): Evaluate shader registers and buffer allocations.",
+            "currentState": "st2",
+            "tone": "accent"
+          },
+          {
+            "at": "example",
+            "caption": "State 3 (Transform Execution): Execute real-time transformation and simulation step.",
+            "currentState": "st3",
+            "tone": "warn"
+          },
+          {
+            "at": "tryIt",
+            "caption": "State 4 (Verified Output): Verification passed and deterministic output validated.",
+            "currentState": "st4",
+            "tone": "ok"
+          }
+        ]
+      }
+    }
+  ]
+}

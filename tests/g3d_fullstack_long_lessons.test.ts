@@ -746,3 +746,71 @@ test('G3D Days 21–25: Domain-Specific Content Assertions', () => {
   assert.ok(d25.parts[0].output.includes('Hardware Instanced Draw'));
   assert.ok(d25.parts[4].output.includes('100K_GPU_PARTICLE_ENGINE_ACTIVE'));
 });
+
+test('G3D Days 26–30 & 🏆 Grand Final Capstone: Resolution, Word Counts & Invariants', () => {
+  for (let day = 26; day <= 30; day++) {
+    const lesson = getLongLesson('g3d', day);
+    assert.ok(lesson, `G3D Day ${day} long lesson must resolve`);
+    assert.equal(lesson.day, day);
+    assert.equal(lesson.parts.length, 5, `G3D Day ${day} must contain exactly 5 parts`);
+    assert.ok(lesson.minutes >= 35, `G3D Day ${day} must be >= 35 minutes`);
+    assert.ok(lesson.summary.length >= 4, `G3D Day ${day} must contain comprehensive summary`);
+    assert.ok(lesson.projectStep, `G3D Day ${day} must have a hands-on project step`);
+
+    // Total Spoken Words check (>= 2,940 words)
+    let totalWords = 0;
+    for (const part of lesson.parts) {
+      assert.ok(part.code, `Day ${day} Part '${part.title}' must contain code`);
+      assert.ok(part.output, `Day ${day} Part '${part.title}' must declare expected output`);
+      assert.ok(part.check, `Day ${day} Part '${part.title}' must have Socratic check`);
+      assert.equal(part.check.options.length, 4, `Day ${day} Part '${part.title}' MCQ must have 4 options`);
+      assert.ok(part.check.answer >= 0 && part.check.answer <= 3, `Day ${day} Part '${part.title}' answer must be in 0..3`);
+      assert.ok(part.check.why.length > 20, `Day ${day} Part '${part.title}' explanation must be rigorous`);
+
+      const text = Array.isArray(part.say) ? part.say.join(' ') : part.say;
+      const w = text.trim().split(/\s+/).filter(Boolean).length;
+      totalWords += w;
+    }
+    assert.ok(totalWords >= 2940, `G3D Day ${day} must have >= 2,940 spoken words (actual: ${totalWords})`);
+  }
+});
+
+test('G3D Days 26–30: Domain-Specific Content Assertions', () => {
+  // Day 26: Level of Detail (LOD) & Occlusion Culling
+  const d26 = getLongLesson('g3d', 26);
+  assert.ok(d26.title.includes('Level of Detail') || d26.title.includes('Occlusion Culling'));
+  assert.ok(d26.parts[0].output.includes('LOD Invariant'));
+  assert.ok(d26.parts[2].output.includes('Gribb-Hartmann'));
+  assert.ok(d26.parts[4].output.includes('ENTERPRISE_LOD_OCCLUSION_PIPELINE_ACTIVE'));
+
+  // Day 27: WebXR: VR Headsets, AR Spatial Anchors & 6-DoF Tracking
+  const d27 = getLongLesson('g3d', 27);
+  assert.ok(d27.title.includes('WebXR') || d27.title.includes('6-DoF Tracking'));
+  assert.ok(d27.parts[0].output.includes('Motion-To-Photon') || d27.parts[0].output.includes('6-DoF Tracking'));
+  assert.ok(d27.parts[1].output.includes('Stereoscopic Invariant'));
+  assert.ok(d27.parts[4].output.includes('WEBXR_METAVERSE_ENGINE_CERTIFIED'));
+
+  // Day 28: Screen-Space Ambient Occlusion (SSAO) & Depth Post-Passes
+  const d28 = getLongLesson('g3d', 28);
+  assert.ok(d28.title.includes('SSAO') || d28.title.includes('Screen-Space Ambient Occlusion'));
+  assert.ok(d28.parts[0].output.includes('SSAO Invariant'));
+  assert.ok(d28.parts[2].output.includes('Kernel Invariant'));
+  assert.ok(d28.parts[4].output.includes('SSAO_DEPTH_PIPELINE_ACTIVE'));
+
+  // Day 29: Procedural 3D Geometry Generation & Perlin Noise Terrains
+  const d29 = getLongLesson('g3d', 29);
+  assert.ok(d29.title.includes('Procedural 3D Geometry') || d29.title.includes('Perlin Noise'));
+  assert.ok(d29.parts[0].output.includes('Perlin Invariant'));
+  assert.ok(d29.parts[2].output.includes('Chunk Invariant'));
+  assert.ok(d29.parts[4].output.includes('PROCEDURAL_TERRAIN_STREAMING_ACTIVE'));
+
+  // Day 30: 🏆 FINAL CAPSTONE: Enterprise Real-Time 3D Interactive Metaverse Avatar Engine
+  const d30 = getLongLesson('g3d', 30);
+  assert.ok(d30.title.includes('FINAL CAPSTONE') && d30.title.includes('Metaverse Avatar Engine'));
+  assert.ok(d30.parts[0].output.includes('CAPSTONE MASTER ARCHITECTURAL BLUEPRINT'));
+  assert.ok(d30.parts[1].output.includes('Tier 1 & 2 Invariant'));
+  assert.ok(d30.parts[3].output.includes('Master Frame Pipeline Orchestrator'));
+  assert.ok(d30.parts[4].output.includes('5-GATE GRAND MASTER VIVA VOCE DEFENSE MATRIX'));
+  assert.ok(d30.parts[4].output.includes('100% COMPLETE'));
+});
+

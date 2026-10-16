@@ -1,0 +1,269 @@
+{
+  "schemaVersion": 1,
+  "prefix": "g3d",
+  "day": 27,
+  "promptSha": "eafd88aa973d33278030d92751a43aae96f77078828c93b0f5c6881821ecfe19",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "The WebXR Device Architecture: Sessions, Reference Spaces & 6-DoF Pose Tracking",
+      "codeHash": "33d28dbfb9b1e61c5e81d2aad84e1dcabbddc36fc58e407c5d97992535702a58",
+      "spec": {
+        "template": "states",
+        "title": "The WebXR Device Architecture: Sessions, Reference Spaces & 6-DoF Pose Tracking — Real-Time State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "The WebXR Device Archite Setup"
+          },
+          {
+            "id": "st2",
+            "label": "Pipeline Evaluation"
+          },
+          {
+            "id": "st3",
+            "label": "Transform Execution"
+          },
+          {
+            "id": "st4",
+            "label": "Verified Output"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (The WebXR Device Archite Setup): Initialize pipeline state for The WebXR Device Architecture: Sessions, Reference Spaces & 6-DoF Pose Tracking.",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "State 2 (Pipeline Evaluation): Evaluate shader registers and buffer allocations.",
+            "currentState": "st2",
+            "tone": "accent"
+          },
+          {
+            "at": "example",
+            "caption": "State 3 (Transform Execution): Execute real-time transformation and simulation step.",
+            "currentState": "st3",
+            "tone": "warn"
+          },
+          {
+            "at": "tryIt",
+            "caption": "State 4 (Verified Output): Verification passed and deterministic output validated.",
+            "currentState": "st4",
+            "tone": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Stereoscopic Rendering & Asymmetric Eye Projection Matrices (IPD & FOV)",
+      "codeHash": "009a1cf8dc99bc181e63ed9e084042a25ed9d3457e67d5938a52a92af0f194ae",
+      "spec": {
+        "template": "states",
+        "title": "Stereoscopic Rendering & Asymmetric Eye Projection Matrices (IPD & FOV) — Real-Time State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Stereoscopic Rendering & Setup"
+          },
+          {
+            "id": "st2",
+            "label": "Pipeline Evaluation"
+          },
+          {
+            "id": "st3",
+            "label": "Transform Execution"
+          },
+          {
+            "id": "st4",
+            "label": "Verified Output"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Stereoscopic Rendering & Setup): Initialize pipeline state for Stereoscopic Rendering & Asymmetric Eye Projection Matrices (IPD & FOV).",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "State 2 (Pipeline Evaluation): Evaluate shader registers and buffer allocations.",
+            "currentState": "st2",
+            "tone": "accent"
+          },
+          {
+            "at": "example",
+            "caption": "State 3 (Transform Execution): Execute real-time transformation and simulation step.",
+            "currentState": "st3",
+            "tone": "warn"
+          },
+          {
+            "at": "tryIt",
+            "caption": "State 4 (Verified Output): Verification passed and deterministic output validated.",
+            "currentState": "st4",
+            "tone": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Controller Tracking, Hand Tracking (25 Joints) & Haptic Feedback",
+      "codeHash": "c2a05a2d9fea77207f7d7b5d364f6e923e120d170fc55097652607a03806a875",
+      "spec": {
+        "template": "states",
+        "title": "Controller Tracking, Hand Tracking (25 Joints) & Haptic Feedback — Real-Time State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Controller Tracking, Han Setup"
+          },
+          {
+            "id": "st2",
+            "label": "Pipeline Evaluation"
+          },
+          {
+            "id": "st3",
+            "label": "Transform Execution"
+          },
+          {
+            "id": "st4",
+            "label": "Verified Output"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Controller Tracking, Han Setup): Initialize pipeline state for Controller Tracking, Hand Tracking (25 Joints) & Haptic Feedback.",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "State 2 (Pipeline Evaluation): Evaluate shader registers and buffer allocations.",
+            "currentState": "st2",
+            "tone": "accent"
+          },
+          {
+            "at": "example",
+            "caption": "State 3 (Transform Execution): Execute real-time transformation and simulation step.",
+            "currentState": "st3",
+            "tone": "warn"
+          },
+          {
+            "at": "tryIt",
+            "caption": "State 4 (Verified Output): Verification passed and deterministic output validated.",
+            "currentState": "st4",
+            "tone": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Augmented Reality: Plane Detection, Hit-Testing & Spatial Anchors",
+      "codeHash": "7c50c2f24e4dc729758778f9c9ea8c45be856ee6ea3349b3576ed441a8ab04be",
+      "spec": {
+        "template": "states",
+        "title": "Augmented Reality: Plane Detection, Hit-Testing & Spatial Anchors — Real-Time State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Augmented Reality: Plane Setup"
+          },
+          {
+            "id": "st2",
+            "label": "Pipeline Evaluation"
+          },
+          {
+            "id": "st3",
+            "label": "Transform Execution"
+          },
+          {
+            "id": "st4",
+            "label": "Verified Output"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Augmented Reality: Plane Setup): Initialize pipeline state for Augmented Reality: Plane Detection, Hit-Testing & Spatial Anchors.",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "State 2 (Pipeline Evaluation): Evaluate shader registers and buffer allocations.",
+            "currentState": "st2",
+            "tone": "accent"
+          },
+          {
+            "at": "example",
+            "caption": "State 3 (Transform Execution): Execute real-time transformation and simulation step.",
+            "currentState": "st3",
+            "tone": "warn"
+          },
+          {
+            "at": "tryIt",
+            "caption": "State 4 (Verified Output): Verification passed and deterministic output validated.",
+            "currentState": "st4",
+            "tone": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Integrated WebXR Metaverse Reality Engine",
+      "codeHash": "596942585401e10a9ebcc9f0314839eabc08511dfee51fe2f0b9ba31def74fcc",
+      "spec": {
+        "template": "states",
+        "title": "Integrated WebXR Metaverse Reality Engine — Real-Time State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Integrated WebXR Metaver Setup"
+          },
+          {
+            "id": "st2",
+            "label": "Pipeline Evaluation"
+          },
+          {
+            "id": "st3",
+            "label": "Transform Execution"
+          },
+          {
+            "id": "st4",
+            "label": "Verified Output"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Integrated WebXR Metaver Setup): Initialize pipeline state for Integrated WebXR Metaverse Reality Engine.",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "State 2 (Pipeline Evaluation): Evaluate shader registers and buffer allocations.",
+            "currentState": "st2",
+            "tone": "accent"
+          },
+          {
+            "at": "example",
+            "caption": "State 3 (Transform Execution): Execute real-time transformation and simulation step.",
+            "currentState": "st3",
+            "tone": "warn"
+          },
+          {
+            "at": "tryIt",
+            "caption": "State 4 (Verified Output): Verification passed and deterministic output validated.",
+            "currentState": "st4",
+            "tone": "ok"
+          }
+        ]
+      }
+    }
+  ]
+}
