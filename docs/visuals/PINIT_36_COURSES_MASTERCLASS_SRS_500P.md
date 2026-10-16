@@ -363,3 +363,78 @@ Current online platforms fail because they present syntax in isolation, ignore f
 * **GitHub Capstone Project:** ApexTransformer: Sovereign Foundation Transformer Architecture, Alignment, RAG & LLMOps Engine  
 * **Overview:** Master the computational models of language: Unicode preprocessing, TF-IDF vector spaces, Word2Vec/FastText embeddings, HMM POS taggers, LSTM gated memory cells, Scaled Dot-Product Self-Attention, Multi-Head Transformers, BPE tokenization, BERT/GPT architectures, SQuAD QA, Two-Stage FAISS dense retrieval, Nucleus Top-p sampling, and LoRA PEFT parameter adaptation.  
 
+---
+
+## 4. Part XLV: Multi-Branch Scaled Parallel Architecture & Collision-Free Orchestration Blueprint
+
+### 4.1 Master Curriculum Completion Audit (Mathematical State of the System)
+As of Block 191 (Excel Viz Days 6–10 & Milestone 2 Capstone):
+* **Total LongLesson Days Implemented on Platform:** **1,045 Days** across 53 course module files.
+* **Total Gate v2 On-Disk Visual Specs Created:** **990 JSON Specifications** across 52 course directories.
+* **Tier 1 Standard (30-Day Foundation Masterclass - 53 Modules x 30 Days = 1,590 Days):**
+  * Completed: **1,045 Days (65.72%)**
+  * Remaining Work: **545 Days (34.28%)**
+* **Tier 2 Standard (60-Day Full Enterprise Specification in Bible PDF - 37 Courses x 60 Days = 2,220 Days):**
+  * Completed: **1,045 Days (47.07%)**
+  * Remaining Work: **1,175 Days (52.93%)**
+
+---
+
+### 4.2 The 3-Branch Tri-Stream Division Matrix (Zero Overlap & Zero Collision)
+To scale production without race conditions or merge conflicts, the remaining workload is strictly partitioned into three isolated, concurrent execution streams:
+
+```
+                                  MASTER PLATFORM ROADMAP
+                                             │
+         ┌───────────────────────────────────┼───────────────────────────────────┐
+         │                                   │                                   │
+         ▼                                   ▼                                   ▼
+    [BRANCH A]                          [BRANCH B]                          [BRANCH C]
+Curriculum Stream 1                 Curriculum Stream 2                 Platform & Institutional
+Tech & Launchpad Tracks             Commerce & IoT Tracks               Admin & Faculty Systems
+Worktree: Present-Career-os         Worktree: Present-Career-os-b       Worktree: Present-Career-os-c
+Branch: codex/interview-tab         Branch: agent/branch-b-commerce     Branch: agent/branch-c-platform
+Tasks: TASK-688 to TASK-750         Tasks: TASK-751 to TASK-850         Tasks: TASK-851 to TASK-950
+```
+
+| Stream / Branch | Primary Scope & Tracks | Assigned Files (Strict Ownership) | Tests & Visual Artifacts |
+| :--- | :--- | :--- | :--- |
+| **Branch A (Curriculum Tech & Launchpad)** | • `excel_viz` (Days 11–30)<br>• `comp_fund` (Days 6–30)<br>• `git_vcs` (Days 6–30)<br>• `soft_skills` (Days 6–30)<br>**Total: 95 Days** | `src/lib/data/excelVizLongLessons.ts`<br>`src/lib/data/compFundLongLessons.ts`<br>`src/lib/data/gitVcsLongLessons.ts`<br>`src/lib/data/softSkillsLongLessons.ts` | `src/lib/data/lessonVisuals/{excel_viz,comp_fund,git_vcs,soft_skills}/*`<br>`tests/quant_excel_long_lessons.test.ts`<br>`tests/systems_long_lessons_parity.test.ts`<br>`tests/java_softskills_long_lessons.test.ts` |
+| **Branch B (Curriculum Commerce & IoT)** | • 14 B.Com Tracks (Days 6–30 = 350 Days)<br>• 4 IoT Tracks (`iot_net`, `iot_edge`, `iot_sec`, `iot_emb`) (Days 6–30 = 100 Days)<br>**Total: 450 Days** | `src/lib/data/bcom*LongLessons.ts`<br>`src/lib/data/iot*LongLessons.ts` | `src/lib/data/lessonVisuals/{bcom_*,iot_*}/*`<br>`tests/bcom_*.test.ts`<br>`tests/iot_*.test.ts` |
+| **Branch C (Admin, Faculty & Platform)** | • Campus Admin Portal (`/campus-admin/*`)<br>• Teacher & Faculty Dashboard (`/teacher/*`)<br>• University Multi-Tenant Isolation & RLS<br>• Placement & Student Analytics<br>• Moderation & Guardrails | `src/app/campus-admin/*`<br>`src/app/teacher/*`<br>`src/app/university/*`<br>`src/components/admin/*`<br>`src/components/teacher/*`<br>`src/lib/admin/*`<br>`src/lib/teacher/*` | `tests/campus_admin_*.test.ts`<br>`tests/teacher_portal_*.test.ts`<br>`tests/multitenant_branding_parity.test.ts` |
+
+**Collision-Free Guarantee:** Branch A and Branch B share **ZERO** source files, test files, or visual folders. Branch C touches **ZERO** curriculum or visual lesson files. All three streams can develop and commit in parallel with 0% Git merge conflict probability.
+
+---
+
+### 4.3 Universal Sub-Branch Operating Invariants (The "Never Make a Mess" Codex)
+
+1. **Isolated Git Worktrees:**
+   * Every sub-agent must work in its own dedicated Git worktree directory:
+     ```bash
+     git worktree add ../Present-Career-os-branch-b -b agent/branch-b-curriculum-commerce-iot
+     git worktree add ../Present-Career-os-branch-c -b agent/branch-c-platform-admin-faculty
+     ```
+   * Never switch branches inside someone else's active worktree.
+2. **Sub-Branch Isolation (No Direct Mainline Commits):**
+   * Sub-branches must never commit directly to `main` or merge into each other prematurely.
+   * Only after a 5-day block or major milestone is 100% complete, verified with passing tests, and approved by the user, may it be merged into `main`.
+3. **Central Shared Memory Synchronization:**
+   * Before beginning work, log the task in `C:\Users\Admin\Desktop\projects\memory of agent\multi_agent_control.csv`.
+   * After completing each task block, log completion in `agent_tasks.csv` and add a detailed milestone ledger in `PROJECT_MEMORY.md`.
+4. **Strict 5-Part LongLesson Invariants (Zero Hallucination):**
+   * Each day must contain exactly 5 parts (`part1_hook`, `part2_analogy`, `part3_deep`, `part4_code`, `part5_wrap`).
+   * Word Count: Minimum 560 words per part; minimum 2,940 total spoken words per day.
+   * Duration: Exactly 35 minutes (21.0 min spoken @ 120 wpm, 14.0 min activity).
+   * Interactive Code: Self-contained, syntactically valid code with 100% deterministic stdout.
+5. **Gate v2 Visual JSON Invariants:**
+   * Generated on disk in `src/lib/data/lessonVisuals/<course_prefix>/day-XX.json`.
+   * Exactly 4 synchronized steps: `intro`, `say1`, `example`, `tryIt`.
+   * Valid visual template (`bars`, `flow`, `table`, `register-bits`, `ledger-sheet`, `funnel`, etc.).
+   * Exact SHA-256 code hash binding (`hashSnippet(interactiveCode)`).
+6. **Watchdog and Execution Limits:**
+   * Enforce a hard 6-minute watchdog termination on any background command.
+   * Avoid inline multi-line PowerShell strings (`npx tsx -e "..."` hanging trap); execute dedicated `.ts` script files.
+7. **Atomic Verified Commits:**
+   * Run `npx vitest run tests/...` and `npx tsc --noEmit`. Only commit when 100% green.
+
