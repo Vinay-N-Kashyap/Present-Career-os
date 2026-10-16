@@ -1,11 +1,11 @@
 import React from 'react';
-import ConvocationManager from '@/components/admin/ConvocationManager';
+import CentralConvocationManager from '@/components/admin/CentralConvocationManager';
 
 export const metadata = {
-  title: 'Convocation Ceremony & Cryptographic Degree Registry | Campus Admin',
-  description: 'Statutory 160-credit degree audit validation, Chancellor digital authentication seals, and National Academic Depository integration.',
+  title: 'Annual Convocation & Degree Scroll Sealing Console | Campus Admin',
+  description: 'Statutory degree conferment ordinance, Chancellor parchment dual sealing, President and Institute Gold Medals, and DigiLocker NAD depository integration.',
 };
 
 export default function ConvocationPage() {
-  return <ConvocationManager />;
+  return <CentralConvocationManager />;
 }
