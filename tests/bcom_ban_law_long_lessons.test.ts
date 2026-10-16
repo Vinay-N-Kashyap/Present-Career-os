@@ -659,12 +659,135 @@ test('Block 197 (TASK-776..780): Domain specifics & deterministic Python code ve
   assert.ok(d10.parts[4].code?.includes('verify_milestone2_banking_masterclass_certification'));
 });
 
+test('Block 198 (TASK-781..785): bcom_ban Days 11–15 5-part pedagogical structure, word counts & duration invariants', () => {
+  for (let day = 11; day <= 15; day++) {
+    const lesson = getLongLesson('bcom_ban', day);
+    assert.ok(lesson, `bcom_ban Day ${day} lesson must be defined`);
+    assert.equal(lesson.coursePrefix, 'bcom_ban');
+    assert.equal(lesson.day, day);
+    assert.equal(lesson.parts.length, 5, `Day ${day} must have exactly 5 parts`);
 
+    const spoken = estimateSpokenMinutes(lesson);
+    assert.ok(spoken >= 20.0, `Day ${day} spoken minutes (${spoken}) must be >= 20.0 min`);
+    const total = estimateLessonMinutes(lesson);
+    assert.ok(total >= 35.0, `Day ${day} total lesson minutes (${total}) must be >= 35.0 min`);
 
+    let dayTotalWords = 0;
+    lesson.parts.forEach((part, idx) => {
+      const partWords = (part.say as string[]).reduce((sum, p) => sum + p.split(/\s+/).filter(Boolean).length, 0);
+      dayTotalWords += partWords;
+      assert.ok(partWords >= 580, `Day ${day} Part ${idx + 1} words (${partWords}) must be >= 580 words`);
+      assert.ok(part.title, `Day ${day} Part ${idx + 1} must have a title`);
+      assert.ok(part.say.length >= 3, `Day ${day} Part ${idx + 1} must have >= 3 spoken paragraphs`);
+      assert.ok(part.example, `Day ${day} Part ${idx + 1} must include a real-world banking example`);
+      assert.ok(part.code, `Day ${day} Part ${idx + 1} must include executable Python code`);
+      assert.ok(part.output, `Day ${day} Part ${idx + 1} must include expected console output`);
+      assert.ok(part.tryIt, `Day ${day} Part ${idx + 1} must include a tryIt experiment`);
+      assert.ok(part.codeNotes && part.codeNotes.length >= 3, `Day ${day} Part ${idx + 1} must have >= 3 codeNotes`);
 
+      assert.ok(part.check.question, `Day ${day} Part ${idx + 1} check must have question text`);
+      assert.equal(part.check.options.length, 4, `Day ${day} Part ${idx + 1} check must have exactly 4 options`);
+      assert.equal(typeof part.check.answer, 'number', `Day ${day} Part ${idx + 1} check must have numerical answer`);
+      assert.ok(part.check.answer >= 0 && part.check.answer < 4, `Day ${day} Part ${idx + 1} answer must be in [0..3]`);
+      assert.ok(part.check.why, `Day ${day} Part ${idx + 1} check must have educational rationale`);
+    });
 
+    assert.ok(dayTotalWords >= 2950, `Day ${day} total words (${dayTotalWords}) must be >= 2950 words`);
+    assert.ok(lesson.summary && lesson.summary.length >= 4, `Day ${day} summary must have >= 4 bullet points`);
+    assert.ok(lesson.projectStep && lesson.projectStep.title && lesson.projectStep.steps.length >= 3, `Day ${day} projectStep must have title and >= 3 steps`);
+  }
+});
 
+test('Block 198 (TASK-781..785): bcom_ban Days 11–15 Gate v2 on-disk visual JSON files uphold cryptographic SHA-256 bindings & ledger-sheet template', async () => {
+  const fs = await import('node:fs');
+  const path = await import('node:path');
+  const crypto = await import('node:crypto');
+  const { loadDayFile, getVisual, clearDayFileCache } = await import('../src/lib/visuals/loadVisuals');
+  const { getTappableLabelsForVisual } = await import('../src/lib/visuals/visualRules');
 
+  clearDayFileCache();
 
+  for (let day = 11; day <= 15; day++) {
+    const dayPadded = String(day).padStart(2, '0');
+    const filePath = path.resolve(process.cwd(), `src/lib/data/lessonVisuals/bcom_ban/day-${dayPadded}.json`);
+    assert.ok(fs.existsSync(filePath), `On-disk visual file missing: ${filePath}`);
 
+    const dayFile = loadDayFile('bcom_ban', day);
+    assert.ok(dayFile, `loadDayFile failed for bcom_ban Day ${day}`);
+    assert.equal(dayFile.schemaVersion, 1);
+    assert.equal(dayFile.prefix, 'bcom_ban');
+    assert.equal(dayFile.day, day);
+    assert.equal(dayFile.entries.length, 5, `Expected 5 entries in bcom_ban Day ${day}`);
 
+    const lesson = getLongLesson('bcom_ban', day)!;
+    for (let partIdx = 0; partIdx < 5; partIdx++) {
+      const entry = dayFile.entries[partIdx];
+      const part = lesson.parts[partIdx];
+
+      assert.equal(entry.partTitle, part.title, `partTitle mismatch at bcom_ban Day ${day} Part ${partIdx}`);
+      const expectedHash = crypto.createHash('sha256').update(part.code || '').digest('hex');
+      assert.equal(entry.codeHash, expectedHash, `codeHash mismatch at bcom_ban Day ${day} Part ${partIdx}`);
+
+      const visual = getVisual('bcom_ban', day, partIdx);
+      assert.ok(visual, `getVisual returned null for bcom_ban Day ${day} Part ${partIdx}`);
+      assert.equal(visual.template, 'ledger-sheet', `Expected template "ledger-sheet" for bcom_ban`);
+      assert.equal(visual.steps.length, 4, `Expected 4 synchronized steps for bcom_ban Day ${day} Part ${partIdx}`);
+      assert.deepEqual(
+        visual.steps.map(s => s.at),
+        ['intro', 'say1', 'example', 'tryIt'],
+        `Step markers must be ['intro', 'say1', 'example', 'tryIt']`
+      );
+
+      // Verify balanced double-entry ledger bookkeeping
+      visual.steps.forEach((step: any, stepIdx: number) => {
+        assert.equal(step.isBalanced, true, `Step ${stepIdx} in Day ${day} Part ${partIdx} must be balanced`);
+        assert.equal(step.totalDebit, step.totalCredit, `Step ${stepIdx} debits must equal credits`);
+      });
+
+      const labels = getTappableLabelsForVisual(visual);
+      assert.ok(labels.length > 0, `Expected non-empty tappable labels for bcom_ban Day ${day} Part ${partIdx}`);
+    }
+  }
+});
+
+test('Block 198 (TASK-781..785): Domain specifics & deterministic Python code verification across Days 11–15', () => {
+  // Day 11: Equity Capital Markets & IPO Bookbuilding (TASK-781)
+  const d11 = getLongLesson('bcom_ban', 11)!;
+  assert.ok(d11.parts[0].code?.includes('model_ipo_underwriting_syndicate_spread'));
+  assert.ok(d11.parts[1].code?.includes('model_ipo_bookbuilding_orderbook_clearing'));
+  assert.ok(d11.parts[2].code?.includes('evaluate_ipo_underpricing_and_money_left_on_table'));
+  assert.ok(d11.parts[3].code?.includes('simulate_greenshoe_syndicate_stabilization_engine'));
+  assert.ok(d11.parts[4].code?.includes('audit_ecm_regulatory_governance_invariants'));
+
+  // Day 12: Debt Capital Markets & Corporate Bonds (TASK-782)
+  const d12 = getLongLesson('bcom_ban', 12)!;
+  assert.ok(d12.parts[0].code?.includes('model_dcm_bond_issuance_economics'));
+  assert.ok(d12.parts[1].code?.includes('calculate_corporate_bond_yield_spreads'));
+  assert.ok(d12.parts[2].code?.includes('model_bond_duration_and_convexity_risk'));
+  assert.ok(d12.parts[3].code?.includes('evaluate_dcm_cross_border_placement_tranches'));
+  assert.ok(d12.parts[4].code?.includes('audit_dcm_underwriting_and_covenant_governance'));
+
+  // Day 13: M&A Advisory & Fairness Opinions (TASK-783)
+  const d13 = getLongLesson('bcom_ban', 13)!;
+  assert.ok(d13.parts[0].code?.includes('model_ma_advisory_mandate_and_success_fees'));
+  assert.ok(d13.parts[1].code?.includes('calculate_ma_valuation_football_field'));
+  assert.ok(d13.parts[2].code?.includes('evaluate_ma_eps_accretion_dilution_and_synergies'));
+  assert.ok(d13.parts[3].code?.includes('simulate_ma_deal_protection_and_breakup_fees'));
+  assert.ok(d13.parts[4].code?.includes('audit_ma_fairness_opinion_governance_invariants'));
+
+  // Day 14: Structured Credit & Securitization Waterfalls (TASK-784)
+  const d14 = getLongLesson('bcom_ban', 14)!;
+  assert.ok(d14.parts[0].code?.includes('model_spv_true_sale_and_capital_relief'));
+  assert.ok(d14.parts[1].code?.includes('calculate_structured_credit_tranche_subordination'));
+  assert.ok(d14.parts[2].code?.includes('simulate_securitization_cash_flow_waterfall'));
+  assert.ok(d14.parts[3].code?.includes('evaluate_dodd_frank_risk_retention_compliance'));
+  assert.ok(d14.parts[4].code?.includes('audit_structured_credit_rating_and_governance'));
+
+  // Day 15: ⭐ Milestone 3 Capstone: Enterprise Investment Banking Command Platform (TASK-785)
+  const d15 = getLongLesson('bcom_ban', 15)!;
+  assert.ok(d15.parts[0].code?.includes('model_enterprise_investment_banking_division'));
+  assert.ok(d15.parts[1].code?.includes('verify_5tier_investment_banking_architecture'));
+  assert.ok(d15.parts[2].code?.includes('audit_investment_banking_quantitative_invariants'));
+  assert.ok(d15.parts[3].code?.includes('run_autonomous_investment_banking_command_engine'));
+  assert.ok(d15.parts[4].code?.includes('verify_milestone3_investment_banking_masterclass_certification'));
+});
