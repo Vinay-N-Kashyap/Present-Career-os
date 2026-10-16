@@ -1,0 +1,344 @@
+{
+  "schemaVersion": 1,
+  "prefix": "quant-systems",
+  "day": 24,
+  "promptSha": "eadcaa6b54d07bf721ff53c9aa21aee6dca4acc3918826493d34bac19ec75ecd",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Physical Topology of Financial Exchanges: Equinix NY4, Carteret & Mahwah Equidistance Regulations",
+      "codeHash": "d951410deb895fb48abd11ef84e01db640df6fa216cc115133fc04eb0573b3ba",
+      "spec": {
+        "template": "states",
+        "title": "Physical Topology of Financial Exchanges: Equ — High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "NY4 / Carteret LOB"
+          },
+          {
+            "id": "st2",
+            "label": "Geodesic Distance"
+          },
+          {
+            "id": "st3",
+            "label": "500m Fiber Spool"
+          },
+          {
+            "id": "st4",
+            "label": "Fair Access Audit"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (NY4 / Carteret LOB): Initialize deterministic state for Physical Topology of Financial...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Geodesic Distance with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "compute()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to 500m Fiber Spool and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "State 4 (Fair Access Audit): Execute deterministic verification with zero heap allocations.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "verify()"
+            },
+            "tone": "accent"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Speed of Light in Fiber Glass vs Free-Space Microwave Radio",
+      "codeHash": "1b3fd96ab8185bb9b41ac4a750586aab2a825ecff24382318a064593a9f35a07",
+      "spec": {
+        "template": "states",
+        "title": "Speed of Light in Fiber Glass vs Free-Space M — High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Refractive Index"
+          },
+          {
+            "id": "st2",
+            "label": "Silica Glass Fiber"
+          },
+          {
+            "id": "st3",
+            "label": "Microwave Air Hop"
+          },
+          {
+            "id": "st4",
+            "label": "6.4ms RTT Edge"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Refractive Index): Initialize deterministic state for Speed of Light in Fiber Glass ...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Silica Glass Fiber with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "compute()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Microwave Air Hop and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "State 4 (6.4ms RTT Edge): Execute deterministic verification with zero heap allocations.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "verify()"
+            },
+            "tone": "accent"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cut-Through Switching vs Store-and-Forward Network Queuing",
+      "codeHash": "c8bb6bbaf46876c6dfd1a19fe71dec919619fd3ddab53b093172b2523ebce88b",
+      "spec": {
+        "template": "states",
+        "title": "Cut-Through Switching vs Store-and-Forward Ne — High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Wire Ingress Byte"
+          },
+          {
+            "id": "st2",
+            "label": "MAC Header Sniff"
+          },
+          {
+            "id": "st3",
+            "label": "Cut-Through ASIC"
+          },
+          {
+            "id": "st4",
+            "label": "5ns Zero Jitter"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Wire Ingress Byte): Initialize deterministic state for Cut-Through Switching vs Store...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to MAC Header Sniff with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "compute()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Cut-Through ASIC and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "State 4 (5ns Zero Jitter): Execute deterministic verification with zero heap allocations.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "verify()"
+            },
+            "tone": "accent"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Direct Market Access (DMA), Kernel Bypass (Solarflare OpenOnload) & Raw Frame Egress",
+      "codeHash": "de1f0597a5cb51364679846c56f3926fd40e208fe6de9ebc485109a7000c40cf",
+      "spec": {
+        "template": "states",
+        "title": "Direct Market Access (DMA), Kernel Bypass (So — High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Hardware DMA Ring"
+          },
+          {
+            "id": "st2",
+            "label": "User-Space Memory"
+          },
+          {
+            "id": "st3",
+            "label": "MMIO Doorbell"
+          },
+          {
+            "id": "st4",
+            "label": "36ns Wire Egress"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Hardware DMA Ring): Initialize deterministic state for Direct Market Access (DMA), Ke...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to User-Space Memory with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "compute()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to MMIO Doorbell and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "State 4 (36ns Wire Egress): Execute deterministic verification with zero heap allocations.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "verify()"
+            },
+            "tone": "accent"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Latency Physics Simulator & Microwave-to-Fiber Failover Guard",
+      "codeHash": "270757c4a1cb394977c299606d582366e11fb4fbc394c3f29549ff5195f7b8b0",
+      "spec": {
+        "template": "states",
+        "title": "Production Latency Physics Simulator & Microw — High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Microwave Primary"
+          },
+          {
+            "id": "st2",
+            "label": "Telemetry Monitor"
+          },
+          {
+            "id": "st3",
+            "label": "Rain Fade Alert"
+          },
+          {
+            "id": "st4",
+            "label": "42ns Fiber Fallback"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Microwave Primary): Initialize deterministic state for Production Latency Physics Sim...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Telemetry Monitor with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "compute()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Rain Fade Alert and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "State 4 (42ns Fiber Fallback): Execute deterministic verification with zero heap allocations.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "verify()"
+            },
+            "tone": "accent"
+          }
+        ]
+      }
+    }
+  ]
+}
