@@ -1,8 +1,8 @@
-# PinIT Career OS — 10-Slide Shareholder & Investor Deck
+# PinIT Career OS — 10-Slide Complete 37-Course Master Presentation Deck
 
-**Document Title:** PinIT Career OS: Executive Shareholder Briefing  
+**Document Title:** PinIT Career OS: The 37-Course Master Curriculum & Platform Pitch Deck  
 **Target Audience:** Shareholders, Board Members, Campus Partners & Investors (Audience new to the platform)  
-**Format:** 10-Slide Widescreen Presentation (Slide 1: Product Intro + Slides 2–10: Course Portfolio, Completion Stats, Pedagogy & Roadmap)  
+**Format:** 10-Slide Widescreen Presentation (1 Product Vision Slide + 9 Slides Explaining All 37 Courses with 2 Fullstack Flagships)  
 **PowerPoint File (.pptx):** [`docs/PINIT_CURRICULUM_AND_PRODUCT_10_SLIDE_PITCH_DECK.pptx`](file:///c:/Users/Admin/Desktop/projects/Present-Career-os/docs/PINIT_CURRICULUM_AND_PRODUCT_10_SLIDE_PITCH_DECK.pptx)  
 
 ---
@@ -10,220 +10,163 @@
 ## 📽️ SLIDE 1: What is PinIT Career OS? (The 60-Second Introduction)
 ### *Bridging Higher Education to High-Paying Employment Through Active Learning*
 
-#### 🎨 Slide Composition (3 Visual Columns)
-* **Left Card (The Broken College Status Quo — RED):**
-  * *Outdated Theory:* Universities teach from textbooks written a decade ago.
-  * *Video Lecture Failure:* Online video platforms (Coursera/Udemy) have 85%–90% dropout rates because watching videos is passive.
-  * *Unemployable Graduates:* Over 80% of Indian college graduates fail basic technical and financial hiring screens.
-  * *Software Chaos:* Colleges waste $60k–$130k/year on fragmented LMS tools, testing portals, and disconnected spreadsheets.
-* **Center Card (The PinIT Solution — GREEN):**
-  * *All-In-One Campus Platform:* Combines coursework, coding sandboxes, AI mentorship, and verified placement in 1 app.
-  * *Active Learning:* Students write real code and run financial models in their browser every 5 minutes.
-  * *24/7 AI Voice Mentors:* Personal senior mentors that speak to students and guide them through roadblocks.
-  * *Verifiable Proof-of-Work:* Students graduate with real projects on GitHub and verified skills recruiters trust.
-* **Right Card (The Built Scale Today — GOLD):**
-  * **37 Master Courses** covering Tech, Business, Commerce, and Hardware.
-  * **1,045 Daily Training Lessons** completely built, verified, and live on platform.
-  * **990 Interactive Visual Simulations** running in student browsers.
-  * **300+ Automated Tests** guaranteeing 100% production reliability.
-
-#### 🎙️ Speaker Pitch
-> *"Welcome, shareholders. If you're new to PinIT Career OS, here is the big picture: Higher education is facing a massive crisis. Colleges teach outdated theory, and online video courses fail because 90% of students drop out. PinIT solves this. We are an all-in-one Career Operating System that replaces passive videos with hands-on practice, AI pair-programming, and real company projects. Over 1,045 training days are already built and live on our platform today."*
+* **3 Giant KPI Blocks Across the Top:**
+  * **`37`** *Master Courses* — Complete multi-disciplinary catalog: Tech, AI, Cloud, Hardware & 14 Commerce Tracks.
+  * **`1,045`** *Lesson Days Built & Live* — 65.7% of full 30-day foundation complete today with 100% automated test verification.
+  * **`990`** *Interactive Simulators* — 17 proprietary visual engines turning abstract concepts into active browser simulations.
+* **Side-by-Side Comparison:**
+  * *The College Employability Crisis (RED):* Outdated textbook theory (10 years old), 90% video dropouts in MOOCs, 80%+ graduate failure rates in practical hiring interviews, $60k–$130k/yr wasted on fragmented software.
+  * *The PinIT Sovereign Solution (GREEN):* All-in-one platform connecting curriculum, browser sandboxes, AI mentors, and placement in 1 app. Students write code and balance ledgers every 5 minutes.
+* **🎙️ Speaker Pitch:**
+  > *"Welcome, shareholders. If you're new to PinIT Career OS, here is our core premise: Higher education is experiencing an employability crisis. Universities teach outdated theory, and online video courses fail because 90% of students drop out. PinIT solves this. We are an all-in-one Career Operating System that replaces passive videos with hands-on practice, AI pair-programming, and real company projects. Over 1,045 training days are already built and live on our platform today."*
 
 ---
 
-## 📽️ SLIDE 2: The Course Portfolio at a Glance (What Courses We Have)
-### *A Multi-Disciplinary Curriculum Designed for Both Engineering and Business Campuses*
+## 📽️ SLIDE 2: The 37-Course Master Map & The Two Fullstack Flagships
+### *Total Campus Coverage: 1,045 Days Live (65.7% Complete) Across 4 Core Faculties*
 
-#### 🎨 Slide Composition (4 Domain Cards)
-* **Software & Distributed Systems (Engineering - 6 Courses):** Fullstack Web (Next.js & React), Python Backend Architecture, Modern JavaScript, Database Engineering (SQL & B+ Trees), Cloud Infrastructure & DevOps, Distributed Systems.
-* **Cutting-Edge Deep Tech & AI (AI & Systems - 7 Courses):** Data Structures & Algorithms (DSA), Java 21 LTS & JVM Internals, 3D WebGL Graphics, Applied AI & Deep Learning, AI Prompt Engineering, EVM Blockchain, Cybersecurity.
-* **Commerce, Finance & Management (Business School - 14 Courses):** Corporate Finance, Banking Operations, Forensic Accounting, Corporate Tax, Business Law, Digital Marketing, E-Commerce, B2B Sales & CRM, Operations & Supply Chain, Entrepreneurship.
-* **Launchpads & Hardware Silicon (Campus Essentials - 10 Courses):** Freshman Launchpads: Excel & Data Analytics, Computer OS, Git Version Control, Tech Soft Skills. Hardware: Embedded Systems, TinyML Edge AI, IoT Security, Radio Protocols, Quantitative Systems.
-
-#### 🎙️ Speaker Pitch
-> *"For our shareholders, here is our course footprint: We offer 37 complete, semester-grade master courses. Unlike single-subject bootcamps that only teach coding, PinIT covers the entire college: Computer Science, Cloud, AI, Hardware, and 14 complete tracks in Commerce, Finance, and Business Management. We can license our platform to an entire university campus, serving every department simultaneously."*
-
----
-
-## 📽️ SLIDE 3: The Progress Scorecard (Completed vs. Remaining)
-### *An Exact Mathematical Audit of What is Live Today and What is Being Built Right Now*
-
-#### 🎨 Slide Composition (3 Metric Cards)
-* **65.7% Completed (LIVE PRODUCTION):**
-  * **1,045 Total Days Built & Verified** across 53 course modules.
-  * **19 Deep Tech Tracks** are 100% Complete to Day 30.
-  * **Quant Systems Engineering** is 100% Complete (Our Crown Jewel).
-  * **Excel Data Modeling:** Days 1–10 Complete with Capstones.
-  * **990 Interactive Visual Specs** generated and running on disk.
-* **34.3% In Production (REMAINING WORKLOAD):**
-  * **545 Days Remaining** to reach 100% across all 30-day masterclasses.
-  * **Commerce (14 Tracks):** Days 1–5 built; Days 6–30 (350 days) in production.
-  * **IoT & Hardware (4 Tracks):** Days 1–5 built; Days 6–30 (100 days) in production.
-  * **Tech Launchpad (4 Tracks):** Days 6–30 (95 days) in production.
-  * 600 Visual Specifications remaining to be created.
-* **Execution Efficiency (WHY WE SHIP SO FAST):**
-  * *Parallel Multi-Agent Architecture:* 3 isolated work streams building concurrently.
-  * *Zero Merge Collisions:* Each branch works on separate files without git conflicts.
-  * *Automated Test Batteries:* 100% test pass rate before any commit is pushed.
-  * *High Velocity:* Over 15,000 words and 5 full days delivered per daily block.
-
-#### 🎙️ Speaker Pitch
-> *"Here is our exact progress for investors: To reach our 30-Day Foundation standard across all 53 tracks, we need 1,590 course days. We have already built and verified 1,045 days—that is 65.7% of the total curriculum complete and live! The remaining 34.3% is 545 days, mostly in Commerce and IoT. We are building this through 3 parallel sub-branches so we can finish the remaining work rapidly without collisions."*
+* **Faculty 1: Software & Web Engineering (100% Complete — 6 Courses • 180 Days):**
+  * ★ **Course 02: Full-Stack React Web Development** *(Web Fullstack Flagship)*
+  * ★ **Course 20: Python Programming & Backend Systems** *(Python Fullstack Flagship)*
+  * Course 01: Java Core Logic • Course 03: Node.js & TypeScript Backend
+  * Course 04: Cloud Native Architectures (AWS) • Course 05: DevOps & CI/CD Pipelines
+* **Faculty 2: Deep Computer Science & AI (100% Complete — 7 Courses • 210 Days):**
+  * Course 07: Data Structures & Algorithms • Course 09: Cybersecurity & Zero Trust
+  * Course 10: Database Engineering & SQL • Course 11: Distributed Systems & Consensus
+  * Course 12: Applied AI & LLMs • Course 15: 3D Graphics • Course 16: Blockchain Web3
+  * Course 21: Quantitative Systems Engineering (The Crown Jewel)
+* **Faculty 3: Commerce & Management (Days 1–5 Live — 14 Courses • 70/420 Days):**
+  * Course 22: Digital Accounting & Tax • Course 23: Business Finance & Investment
+  * Course 24: Business Analytics • Course 25: Marketing & Brand Management
+  * Course 26: Digital Marketing • Course 27: E-Commerce • Course 28: Entrepreneurship
+  * Course 29: Sales & CRM • Course 30: Supply Chain & Ops • Course 31: AI Business
+* **Faculty 4: Launchpad & IoT Silicon (Days 1–5 Live — 10 Courses • 50/300 Days):**
+  * Course 32: Computer OS Fundamentals • Course 33: Everyday AI Prompt Literacy
+  * Course 34: Excel & Data Analysis (Days 1–10 Live!) • Course 35: Git & GitHub VCS
+  * Course 36: Tech Soft Skills & STAR • Course 37: NLP & Computational Linguistics
+  * IoT Hardware (Courses 14, 17, 18, 19): Embedded MCU, Wireless, TinyML, Security
+* **🎙️ Speaker Pitch:**
+  > *"Here is our complete 37-course footprint. Every course is semester-grade. Notice our two flagship Fullstack tracks: Course 02 is Web Fullstack with React and Next.js, and Course 20 is Python Fullstack with FastAPI and async databases. Combined with our deep computer science, 14 commerce tracks, and launchpads, PinIT covers 100% of university degrees."*
 
 ---
 
-## 📽️ SLIDE 4: How We Teach (Active Learning vs. Passive Videos)
-### *The Secret Sauce That Beats Video Bootcamps and Eliminates Dropout Rates*
+## 📽️ SLIDE 3: Deep Dive: The Two Fullstack Flagships
+### *How We Train Job-Ready Full-Stack Developers Who Can Architect Real Enterprise Applications*
 
-#### 🎨 Slide Composition (2 Strategic Pillars)
-* **The 30-Minute Daily Method (High Retention Routine):**
-  * *1. Senior Audio Narration (12 mins):* Engaging voice-guided pair-programming explaining the business & systems intuition.
-  * *2. Live Interactive Diagram (5 mins):* Visual animation showing how data, cash, or memory moves through the system.
-  * *3. Forced Code/Ledger Fix (7 mins):* Students cannot proceed without fixing an intentional production bug in their browser.
-  * *4. The 3 AM Outage Puzzle (6 mins):* A real-world disaster scenario (server crash, tax leak, fraud attempt) to test problem-solving.
-* **The Socratic AI Guardrail (Why Students Never Quit):**
-  * *The Problem with ChatGPT:* Gives students the answer immediately, creating copy-paste dependency with zero real learning.
-  * *PinIT Socratic Engine:* When a student is stuck, our AI acts like an expert tutor:
-    * *Tier 1:* Gives a conceptual hint asking the student to re-think.
-    * *Tier 2:* Highlights the visual memory diagram showing where the error is.
-    * *Tier 3:* Only gives surgical line hints if they fail multiple times.
-  * *Result:* 100% of students finish the lesson without giving up.
-
-#### 🎙️ Speaker Pitch
-> *"Why is our teaching methodology our biggest competitive moat? Because competitors just sell pre-recorded videos. In PinIT, students spend 30 minutes a day actively doing the work. They listen to a senior mentor, watch animated state changes, fix real code bugs, and solve simulated production outages. And our Socratic AI never simply hands them the answer—it guides them to figure it out themselves. That's why our completion rates crush the industry average."*
+* **Course 02: Full-Stack React & Next.js Web Development (100% Built — 30 Days Live):**
+  * *What Students Learn:* React 19, Next.js App Router, TypeScript, Tailwind CSS, Server Components (RSC), Flight serialization, Server Actions, edge streaming, and optimistic mutations.
+  * *How We Teach:* Students build real full-stack web applications in the browser with live preview, component-tree state inspection, and live SSR hydration.
+  * *Why We Teach It:* Next.js is the dominant industry standard for modern enterprise frontend and full-stack web development.
+  * *Where It Leads:* Senior Full-Stack Engineer, Frontend Architect, React Platform Lead. Starting Salary: ₹14–25 LPA ($120k–$160k).
+  * *Live GitHub Capstone:* Sovereign Microservices Web Portal with dynamic authentication, streaming SSR, and optimistic state mutations.
+* **Course 20: Python Fullstack & Backend Systems (100% Built — 30 Days Live):**
+  * *What Students Learn:* Advanced Python 3.12, FastAPI, AsyncIO event loops, PostgreSQL database connection pools, Redis caching, and memory profiling.
+  * *How We Teach:* Students dissect memory profiling, async task queues, generator pipelines, and production REST/GraphQL API contracts.
+  * *Why We Teach It:* Python powers the backend of modern AI applications, data engineering platforms, and high-scale cloud services.
+  * *Where It Leads:* Python Backend Engineer, AI Full-Stack Developer, API Platform Architect. Starting Salary: ₹12–24 LPA ($110k–$150k).
+  * *Live GitHub Capstone:* Enterprise Asynchronous Job Queue with distributed workers, retry backoff, and PostgreSQL persistence.
+* **🎙️ Speaker Pitch:**
+  > *"Shareholders often ask: What are your flagship courses that get students hired first? It's our Two Fullstack tracks. Course 02 is our Web Fullstack track, teaching React and Next.js App Router. Course 20 is our Python Fullstack track, teaching FastAPI, async database pools, and backend architecture. Both are 100% built, tested, and live today, producing graduates who build real, deployable enterprise applications."*
 
 ---
 
-## 📽️ SLIDE 5: Seeing is Believing (17 Interactive Visual Engines)
-### *How We Turn Intimidating, Abstract Subjects into Crystal-Clear Visual Simulations*
+## 📽️ SLIDE 4: Core Software & Cloud Engineering (Courses 01, 03, 04, 05, 06)
+### *5 Foundation Tracks Transforming Beginners into Enterprise Infrastructure Engineers (100% Complete)*
 
-#### 🎨 Slide Composition (3 Visual Domain Showcases)
-* **Accounting & Finance (For Business Students):**
-  * *LedgerSheet Engine:* Interactive T-accounts where debits and credits must balance.
-  * *Funnel Engine:* Live sales pipelines showing lead drop-off and conversion rates.
-  * *Bars & Sensitivity:* Dynamic charts for DCF valuation and scenario modeling.
-* **Software & Cloud (For Engineering Students):**
-  * *TreeGraph Engine:* Shows how database indexes (B+ Trees) split and re-balance.
-  * *Flow Engine:* Visualizes microservices, API gateways, and distributed message queues.
-  * *ComponentTree Engine:* Shows how modern web apps stream HTML from servers.
-* **Hardware & Silicon (For IoT & Systems Students):**
-  * *RegisterBits Engine:* Students flip bits 0–7 live and watch microcontroller memory change.
-  * *StackQueue Engine:* Animates memory buffers, cache lines, and queue allocations.
-  * *Cryptographic Binding:* All 990 visuals locked by SHA-256 hashes to runtime code.
-
-#### 🎙️ Speaker Pitch
-> *"Every investor asks: What is your proprietary technology? It's our 17 Interactive Visual Engines. Most students quit accounting because debits and credits feel abstract. Our LedgerSheet engine makes it click instantly. Most students quit embedded systems because memory registers are invisible. Our RegisterBits engine lets them flip bits and see the memory change live. We've built 990 of these visual simulations, creating a massive barrier to entry for any competitor."*
+* **Course 01: Java Core Logic & Project Loom (30 Days Live):** Java 21 LTS core syntax, OOP encapsulation, stack/heap memory, AutoCloseable resource safety, and Project Loom virtual threads. (Careers: Java Enterprise Developer, ₹10–20 LPA).
+* **Course 03: Node.js & TypeScript Backend (30 Days Live):** Node.js event loop, libuv microtask queues, stream pipelines, TypeScript enterprise schemas, JWT auth, and rate-limiting middleware. (Careers: Node.js Backend Engineer, ₹12–22 LPA).
+* **Course 04: Cloud Native Architectures - AWS (30 Days Live):** AWS architecture: EC2, S3, RDS, Lambda serverless, API Gateway, IAM zero-trust policies, VPC subnets, and CloudFront. (Careers: Cloud Solutions Architect, ₹14–26 LPA).
+* **Course 05: DevOps & CI/CD Pipelines (30 Days Live):** Docker multi-stage builds, container orchestration, Kubernetes pod lifecycles, automated GitHub Actions CI/CD workflows, Terraform IaC. (Careers: SRE, DevOps Engineer, ₹14–28 LPA).
+* **Course 06: UI/UX Design Systems & Design Tokens (30 Days Live):** Atomic design architecture, WCAG 2.1 AA accessibility, design token variables, Figma to code translation, responsive fluid typography. (Careers: Design Systems Engineer, Frontend Architect, ₹12–22 LPA).
+* **🎙️ Speaker Pitch:**
+  > *"These five courses form the operational backbone of any tech company: Java for enterprise banking backends, Node.js for high-speed APIs, AWS for cloud hosting, DevOps for automated Kubernetes delivery, and Design Systems for accessible UI. All five are 100% built and live, giving students end-to-end systems competence."*
 
 ---
 
-## 📽️ SLIDE 6: Vertical 1 — Software & Web Systems (High Placement Engine)
-### *The Engine That Lands Students High-Paying Software Engineering Jobs (100% Built & Live)*
+## 📽️ SLIDE 5: Deep Computer Science & Systems (Courses 07, 08, 09, 10, 11)
+### *Deep Systems Engineering That Generative AI Cannot Automate (100% Complete)*
 
-#### 🎨 Slide Composition (Courses & Career Outcomes)
-* **Courses in This Vertical (All 6 Complete — 180 Days Live):**
-  * 1. Python Backend Architecture: Modern async APIs, FastAPI, database connections.
-  * 2. Modern JavaScript Mastery: Async event loops, memory management, browser APIs.
-  * 3. Fullstack Next.js: Server Components, React App Router, high-speed streaming.
-  * 4. Database Engineering: SQL, indexing internals, transaction ACID guarantees.
-  * 5. Distributed Systems: Cloud servers, consensus algorithms, failover handling.
-  * 6. Cloud & DevOps: Docker containers, Kubernetes deployment, automated CI/CD.
-* **Why Shareholders Care: Job Placement & Market Demand:**
-  * *Massive Market Demand:* 70% of high-paying campus placements are in software development.
-  * *Target Job Titles:* Full-Stack Engineer, Backend Developer, DevOps / Cloud Architect.
-  * *Average Starting Salary:* ₹12 LPA to ₹25 LPA ($120k–$180k globally).
-  * *The Portfolio Advantage:* Students graduate with authentic GitHub projects rather than copy-pasted homework.
-  * *Verified Hireability:* Automated tests prove the student can write production code on Day 1.
-
-#### 🎙️ Speaker Pitch
-> *"Our Software and Web Systems vertical is 100% complete today. Why is this critical for shareholders? Because software engineering accounts for over 70% of high-paying campus placements. Our students don't just learn syntax—they build distributed queues, configure database indexes, and deploy containers. When tech recruiters see our students' verified code on GitHub, they hire them immediately at Rs 12 to 25 Lakh starting packages."*
+* **Course 07: Data Structures & Algorithms (30 Days Live):** Red-Black trees, graph BFS/DFS, dynamic programming memoization grids, amortized complexity, memory bounds, technical interview drill. (Careers: Algorithm Engineer, ₹15–30 LPA).
+* **Course 08: Mobile App Development (30 Days Live):** React Native cross-platform architecture, native UI threads, FlatList memory optimization, gestures, offline SQLite synchronization. (Careers: Mobile App Engineer, ₹12–24 LPA).
+* **Course 09: Cybersecurity Principles & Secure Systems (30 Days Live):** Zero-Trust architecture, AES-GCM encryption, memory safety bounds, buffer overflow defenses, OWASP Top 10, SOC 2 compliance. (Careers: Security Engineer, ₹15–32 LPA).
+* **Course 10: Database Systems & SQL Performance (30 Days Live):** Database engine internals: B+ Tree index structures, Write-Ahead Logs (WAL), MVCC, SQL execution plans, deadlocks, connection pooling. (Careers: Database Administrator, Data Platform Engineer, ₹14–25 LPA).
+* **Course 11: High-Scale Distributed Systems (30 Days Live):** Raft consensus protocol, Two-Phase Commits (2PC), CAP theorem trade-offs, consistent hashing ring partitions, vector clocks. (Careers: Distributed Systems Architect, Principal Infrastructure Engineer, ₹20–40 LPA).
+* **🎙️ Speaker Pitch:**
+  > *"This slide represents our deep computer science moat: Data Structures, Mobile, Cybersecurity, Database Internals, and Distributed Systems. In Course 10, students study how B+ trees split and write to disk. In Course 11, they implement the Raft consensus algorithm. This is why our students stand out from standard bootcamp graduates who only know surface-level frontend code."*
 
 ---
 
-## 📽️ SLIDE 7: Vertical 2 — Quantitative Trading & Advanced Tech (Crown Jewel)
-### *Sub-Microsecond Trading Engines & Deep Tech (100% Built & Verified)*
+## 📽️ SLIDE 6: Cutting-Edge AI, 3D Graphics & Quant Systems (Courses 12, 15, 16, 21, 37)
+### *Elite Career Specializations with Global $200k+ Placement Benchmarks (100% Built & Live)*
 
-#### 🎨 Slide Composition (Crown Jewel & Specialized Tech)
-* **The Crown Jewel: Quant Trading Systems (30/30 Days Complete):**
-  * *High-Frequency Trading Architecture:* Sub-microsecond market making in C++.
-  * *41.8 Nanosecond Matching:* Building ultra-fast financial order books.
-  * *SEC Rule 15c3-5 Pre-Trade Risk:* Automated circuit breakers and kill switches.
-  * *Options Greeks & Derivatives:* Black-Scholes pricing models and tail-risk simulation.
-  * *Why it's unique:* No other university platform in the world teaches HFT engineering in a browser.
-* **Advanced AI, Blockchain & Mobile (Specialized Tracks):**
-  * *Applied AI & Machine Learning:* Neural networks, computer vision, vector search.
-  * *Everyday AI & Prompt Engineering:* Building production AI agents and automation.
-  * *EVM Blockchain Engineering:* Smart contracts, decentralized security, token bridges.
-  * *Target Careers:* Quantitative Trader, HFT Engineer, AI Developer, Blockchain Auditor.
-  * *Starting Packages:* ₹30 LPA to ₹80 LPA ($200k–$400k+ global prop shops).
-
-#### 🎙️ Speaker Pitch
-> *"Here is our crown jewel: Quantitative and Low-Latency Trading Systems. 30 full days, completely built and verified. High-frequency trading firms pay the highest starting salaries in the world—often Rs 40 to 80 Lakhs—yet universities teach zero HFT. PinIT has built the world's first interactive HFT curriculum. This elite track positions PinIT as a premium, institutional product that attracts top engineering colleges."*
+* **Course 21: Quantitative Systems Engineering (👑 The Crown Jewel — 30/30 Days Live):**
+  * High-Frequency Trading in C++: 41.8ns limit order book (LOB) matching engine.
+  * Kernel bypass, lock-free SPSC circular ring buffers with 64-byte cache alignment.
+  * SEC Rule 15c3-5 pre-trade risk kill switches & Black-Scholes derivatives Greeks.
+  * Starting Packages: ₹40–80 LPA ($200k–$400k+ global prop shops).
+* **Course 12 & 37: Applied AI & NLP (60 Days Total — 100% Built & Expanding):**
+  * Course 12: Applied AI Foundations: Neural networks, backprop, vector embeddings, RAG.
+  * Course 37: NLP & Transformers: Scaled dot-product self-attention, BPE, LoRA fine-tuning.
+  * Careers: AI/ML Engineer, LLMOps Specialist (₹16–35 LPA / $140k–$210k).
+* **Course 15: 3D Graphics & Avatar Animation (30 Days Live):** WebGL2 programmable GPU pipelines, Model-View-Projection (MVP) matrix transforms, skeletal rigging, inverse kinematics (FABRIK). (Powers PinIT's own 3D AI mentors!).
+* **Course 16: Blockchain, Web3 & Smart Contracts (30 Days Live):** EVM internals, Solidity smart contracts, Merkle Patricia state roots, reentrancy mutex guards, gas optimization. (Careers: Smart Contract Auditor, ₹18–35 LPA).
+* **🎙️ Speaker Pitch:**
+  > *"This slide contains our highest-margin, elite disciplines. Course 21 is Quantitative Systems—teaching high-frequency trading in C++ with 41.8-nanosecond matching. Prop shops pay Rs 40 to 80 Lakh starting packages for this skill. Meanwhile, Course 12 and 37 cover modern AI, LLMs, and Transformers. These courses position PinIT as an elite institution partner."*
 
 ---
 
-## 📽️ SLIDE 8: Vertical 3 — Commerce, Banking & Management (Mass Market)
-### *14 Complete Tracks for B.Com, BBA & MBA Students (Days 1–5 Live, Days 6–30 Expanding)*
+## 📽️ SLIDE 7: IoT, Embedded Firmware & Hardware Security (Courses 14, 17, 18, 19)
+### *Direct Hardware Silicon Engineering Aligned with India's $50B Semiconductor Mission*
 
-#### 🎨 Slide Composition (14 Tracks & Market Size)
-* **The 14 Business & Commerce Tracks (70 Days Live • 350 Days Expanding):**
-  * 1. Corporate Finance (DCF Valuation, WACC, Capital Budgeting).
-  * 2. Commercial Banking (Basel III Risk, Loan Underwriting, Treasury).
-  * 3. Digital Accounting (Double-entry, ASC 606 revenue, 3-statement models).
-  * 4. Corporate Taxation (Deferred taxes, Section 163(j), GST/VAT).
-  * 5. Forensic Auditing (Fraud detection, Benford's Law, SOX 404).
-  * 6. Digital Marketing & E-Commerce (CAC:LTV, Marketplace economics).
-  * 7. Operations & B2B Sales (Supply chain, CRM pipelines, Six Sigma).
-* **Why Shareholders Care: Huge Market Size & Zero Competition:**
-  * *60% of University Students:* Over 60% of college enrollments are in non-engineering business & commerce degrees.
-  * *Zero Competition:* Almost all edtech competitors only teach coding. We are the first to bring active simulation learning to B.Com & BBA.
-  * *Target Careers:* Financial Analyst, Investment Banker, Forensic Auditor, Tax Consultant at Big 4 accounting firms.
-  * *Starting Salary:* ₹8 LPA to ₹20 LPA ($80k–$150k global).
-
-#### 🎙️ Speaker Pitch
-> *"Why is Commerce our biggest revenue expansion opportunity? Because over 60% of students on college campuses are NOT in computer science—they are in B.Com, BBA, and MBA programs. Almost all coding bootcamps completely ignore this massive audience! We have built 14 complete business tracks covering Finance, Banking, Tax, and Marketing with interactive simulations. This allows us to sell PinIT to the entire university, not just the engineering department."*
+* **Course 14: IoT, Firmware & Embedded Systems (Days 1–5 Live • Days 6–30 in Flight):** Bare-metal C++ microcontroller programming, memory-mapped I/O (MMIO), volatile register pointers, NVIC interrupts, circular DMA double-buffering. (Careers: Embedded Firmware Engineer, ₹10–22 LPA).
+* **Course 18: Edge AI, DSP & TinyML Systems (Days 1–5 Live • Days 6–30 in Flight):** Running AI neural networks directly on microcontrollers with zero cloud latency, INT8 post-training quantization, CMSIS-NN ARM SIMD micro-kernels (SMLAD). (Careers: Edge AI Developer, TinyML Systems Engineer, ₹14–26 LPA).
+* **Course 17: IoT Wireless Networks & Protocols (Days 1–5 Live • Days 6–30 in Flight):** Friis link budgets, IEEE 802.15.4 MAC frames, RFC 6282 6LoWPAN header compression (40 bytes to 2 bytes), CoAP over UDP and MQTT-SN. (Careers: IoT Network Architect, ₹12–24 LPA).
+* **Course 19: Industrial IoT Security & Device Lifecycle (Days 1–5 Live • Days 6–30 in Flight):** Silicon Hardware Root of Trust: OTP eFuses, immutable Mask ROM, cryptographic secure boot chains, ARM TrustZone memory partitioning. (Careers: Hardware Security Researcher, ₹15–30 LPA).
+* **🎙️ Speaker Pitch:**
+  > *"India is investing over $50 Billion into semiconductor manufacturing and hardware design. These four courses—Embedded MCU, Edge AI TinyML, Wireless IoT, and Hardware Root of Trust—connect our students directly to physical chips. Days 1 through 5 are live today, and our Branch B sub-agents are expanding Days 6 through 30."*
 
 ---
 
-## 📽️ SLIDE 9: Vertical 4 — Freshman Launchpads & IoT Hardware (Campus Entry)
-### *Level 0 Campus Readiness for All Freshmen + Direct Hardware Microcontroller Systems*
+## 📽️ SLIDE 8: Accounting, Finance & Operations Management (Courses 22, 23, 24, 28, 30)
+### *Modernizing B.Com & MBA Education with Live Double-Entry Ledgers and Financial Modeling*
 
-#### 🎨 Slide Composition (Launchpad & IoT Silicon)
-* **Freshman Universal Launchpads (Every Freshman's Starting Point):**
-  * *Excel & Data Analysis (excel_viz):* Days 1–10 complete! Power Query, Pivot Tables, and Financial Modeling.
-  * *Computer Literacy & OS (comp_fund):* Linux terminal navigation, file systems, and productivity.
-  * *Git & Version Control (git_vcs):* Code collaboration, branching, pull requests, and GitHub portfolios.
-  * *Tech Soft Skills & Interviews (soft_skills):* Socratic STAR interview technique, executive presentation skills.
-  * *Role:* Guarantees that every student builds baseline confidence in their very first semester.
-* **IoT & Silicon Hardware Systems (Connecting Software to Chips):**
-  * *Embedded Firmware (iot_emb):* C++ bare-metal programming, hardware register control.
-  * *TinyML Edge AI (iot_edge):* Running AI neural networks on tiny microcontrollers.
-  * *IoT Security & Trust (iot_sec):* Hardware root of trust, cryptographic secure boot.
-  * *IoT Networks (iot_net):* Wireless radio protocols, 6LoWPAN, low-power sensor networks.
-  * *Market Opportunity:* India's $50B semiconductor and electronics manufacturing revolution.
-
-#### 🎙️ Speaker Pitch
-> *"Every campus needs a starting point for incoming freshmen. Our Launchpad courses—Excel, Git, Computer Fundamentals, and Interview Skills—provide an immediate confidence booster for first-year students. Meanwhile, our four IoT tracks connect students to the physical world of electronics and microcontrollers, perfectly aligned with the global surge in semiconductor manufacturing."*
+* **Course 22: Digital Accounting & Taxation (Days 1–5 Live • Days 6–30 in Flight):** Double-entry bookkeeping trial balance, ASC 606 revenue recognition, ASC 740 Deferred Tax Assets/Liabilities (DTA/DTL) and OECD transfer pricing. Features our interactive LedgerSheet simulator! (Careers: Corporate Controller, Big 4 Tax Consultant, ₹8–18 LPA).
+* **Course 23: Business Finance & Investment Management (Days 1–5 Live • Days 6–30 in Flight):** Discounted Cash Flow (DCF), WACC valuation, DuPont 3-step ROE, multi-tranche debt capital structures, LBO debt waterfalls. Features our Bars simulator! (Careers: Investment Banking Analyst, Private Equity, ₹12–25 LPA).
+* **Course 24: Business Analytics & Decision Intelligence (Days 1–5 Live • Days 6–30 in Flight):** Linear programming simplex optimization, marginal shadow prices, cohort retention matrices, Net Revenue Retention (NRR > 100%). (Careers: Financial Analyst, ₹10–20 LPA).
+* **Course 28: Entrepreneurship & Business Management (Days 1–5 Live • Days 6–30 in Flight):** Business Model Canvas (BMC), burn rate runway, SAFE note conversion, cap table dilution and liquidation preference waterfalls. (Careers: Startup Founder, Venture Analyst).
+* **Course 30: Operations, Supply Chain & Compliance (Days 1–5 Live • Days 6–30 in Flight):** Little's Law (WIP = Throughput * Cycle Time), EOQ inventory curves, Bullwhip effect reduction, Six Sigma Cpk quality control. (Careers: Operations Director, ₹10–22 LPA).
+* **🎙️ Speaker Pitch:**
+  > *"Over 60% of university students are enrolled in Commerce, BBA, and MBA programs. We have brought the exact same interactive simulation rigor to business education. Students use our LedgerSheet engine to balance books, run DCF valuations, and model supply chain inventory. This unlocks massive enterprise software sales to business colleges."*
 
 ---
 
-## 📽️ SLIDE 10: The Roadmap & Finishing the Remaining 34% (Commercial Scale)
-### *How We Are Scaling to 100% Platform Completion via Our Parallel Multi-Branch Engine*
+## 📽️ SLIDE 9: Revenue & Commercial Growth Systems (Courses 25, 26, 27, 29, 31)
+### *Training Revenue-Generating Leaders: From Digital Attribution to Enterprise AI Automation*
 
-#### 🎨 Slide Composition (3 Execution Streams & Business Model)
-* **Branch A: Tech Launchpad (Current Stream):**
-  * Finishing Launchpad courses to Day 30 (95 Days total).
-  * Excel Data Modeling: Days 11–30.
-  * Git, Linux OS & Soft Skills: Days 6–30.
-  * Ensures universal Day-1 campus onboarding is 100% complete.
-* **Branch B: Commerce & IoT (New Sub-Stream):**
-  * Completing 14 Commerce & 4 IoT tracks from Day 6 to 30 (450 Days).
-  * Zero-Collision Guarantee: Runs in an isolated workspace with zero git conflicts.
-  * Unlocks the massive 60% non-engineering campus market.
-* **Branch C: Campus Platform (Enterprise B2B SaaS):**
-  * Campus Admin Portal: Student admissions, fee management & audit reporting.
-  * Faculty Portal: Automated assignment grading & live student radar.
-  * Commercial Model: Annual university enterprise SaaS license ($50k–$200k/campus).
+* **Course 25 & 26: Marketing, Brand & Digital Growth (Days 1–5 Live • Days 6–30 in Flight):** PESTLE, Porter's Five Forces, STP segmentation, programmatic ad auctions, multi-touch attribution models. Features our Funnel simulator! (Careers: Growth Marketing Lead, Performance Marketer, ₹9–20 LPA).
+* **Course 27: E-Commerce & Digital Business (Days 1–5 Live • Days 6–30 in Flight):** Two-sided marketplace economics, take rate commission modeling, dynamic pricing, cart abandonment funnels, payment gateway APIs, and reverse logistics margins. (Careers: E-Commerce Category Manager, ₹10–22 LPA).
+* **Course 29: Enterprise B2B Sales & CRM (Days 1–5 Live • Days 6–30 in Flight):** B2B pipeline velocity math, BANT qualification, MEDDPICC deal defense, LTV:CAC unit economics, proactive churn intervention playbooks. (Careers: Enterprise Account Executive, ₹12–25 LPA).
+* **Course 31: AI & Digital Transformation for Business (Days 1–5 Live • Days 6–30 in Flight):** Hyperautomation: Deterministic RPA bots vs probabilistic cognitive AI agents, process mining on ERP event logs, automation economics (FTE labor savings). (Careers: Management Consultant, Chief Digital Officer Staff, ₹14–28 LPA).
+* **🎙️ Speaker Pitch:**
+  > *"Modern businesses run on growth and digital transformation. In these courses, students learn programmatic ad attribution, two-sided marketplace take rates, B2B enterprise sales pipelines, and process mining. When graduates interview at fast-growing companies, they already understand customer acquisition economics and revenue pipelines."*
 
-#### 🎙️ Speaker Pitch
-> *"To conclude for our shareholders: PinIT Career OS is already 65.7% built and fully verified with over 1,045 active training days. By deploying our 3-branch parallel execution architecture, we are rapidly finishing the remaining 34% without collisions or delays. We are building the definitive operating system for higher education—delivering high-margin B2B SaaS software to universities and transforming students into hireable professionals. Thank you!"*
+---
+
+## 📽️ SLIDE 10: Freshman Launchpads (Courses 32–36) & The Scaled 3-Branch Roadmap
+### *Level 0 Campus Readiness for Every Incoming Student + The Parallel Execution Engine to 100% Completion*
+
+* **The 5 Freshman Launchpad Courses:**
+  * *Course 32: Computer OS Fundamentals (Days 1–5 Live):* Linux POSIX commands, file tree navigation, piping & terminal CLI.
+  * *Course 33: Everyday AI Literacy & Prompting (100% Live — 30 Days):* Chain-of-thought prompts, automated business workflows.
+  * *Course 34: Excel & Data Analysis (Days 1–10 Live!):* Power Query M, Star Schema, DAX Time Intelligence, Financial Amortization.
+  * *Course 35: Git, GitHub & Team VCS (Days 1–5 Live):* Distributed Git states, branching, merge conflicts, pull requests.
+  * *Course 36: Tech Soft Skills & Communication (Days 1–5 Live):* Socratic STAR interviews, executive bottom-line communication.
+* **The 3-Branch Parallel Scaling Roadmap (Finishing the Remaining 34%):**
+  * *Branch A (Current Stream):* Finalizing Launchpad tracks to Day 30 (Excel, Git, OS, Soft Skills = 95 Days).
+  * *Branch B (Sub-Agent Stream):* Completing 14 Commerce Tracks & 4 IoT Tracks from Day 6 to Day 30 (450 Days) with zero file collisions.
+  * *Branch C (Platform Stream):* Delivering Campus Admin Portal, Faculty Grading Rubrics, and University Multi-Tenant Isolation.
+* **The Commercial B2B SaaS Model:**
+  * Annual University Enterprise Licenses: $50,000 to $200,000 per campus based on student body size.
+  * Defensible Enterprise Moat: Deep multi-year academic integration making PinIT contractually entrenched on campus.
+* **🎙️ Speaker Pitch:**
+  > *"To conclude: Every student starts in our universal launchpad—mastering Excel, Linux, Git, and Interview Communication. And with our 3-branch parallel execution architecture, we are rapidly finishing the remaining 34% of the curriculum while deploying our university administrative software. We have built the definitive operating system for higher education. Thank you, and I welcome your questions."*
