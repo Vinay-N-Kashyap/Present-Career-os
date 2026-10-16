@@ -88,8 +88,15 @@ test('WakeWord: Resilient to non-string or empty inputs', () => {
 test('Intent: Matches legitimate curriculum next-task questions', () => {
   assert.strictEqual(isNextTaskIntent("What's next?"), true);
   assert.strictEqual(isNextTaskIntent("what is next"), true);
+  assert.strictEqual(isNextTaskIntent("what next"), true);
+  assert.strictEqual(isNextTaskIntent("what's my next task?"), true);
+  assert.strictEqual(isNextTaskIntent("what is the next quest?"), true);
   assert.strictEqual(isNextTaskIntent("What should I do next?"), true);
   assert.strictEqual(isNextTaskIntent("what should I study next"), true);
+  assert.strictEqual(isNextTaskIntent("what should I learn next?"), true);
+  assert.strictEqual(isNextTaskIntent("what do I do next?"), true);
+  assert.strictEqual(isNextTaskIntent("tell me what's next"), true);
+  assert.strictEqual(isNextTaskIntent("show me my next task"), true);
   assert.strictEqual(isNextTaskIntent("next quest!"), true);
   assert.strictEqual(isNextTaskIntent("next task"), true);
   assert.strictEqual(isNextTaskIntent("what should I do?"), true);

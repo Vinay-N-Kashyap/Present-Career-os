@@ -4,6 +4,7 @@ import { useFacialEmotionDetection }  from './hooks/useFacialEmotionDetection';
 import { matchBestAlternative, matchNavigationIntent, getGrammarVocabulary } from './hooks/useVoiceNavigation';
 import { parseWakeWord } from '@/lib/avatar/wakeWordParser';
 import { isNextTaskIntent, isValidSnapshotTimestamp, getAuthoritativeNextTask } from '@/lib/avatar/deterministicAdvisor';
+import { COURSES_REGISTRY } from '@/lib/data/coursesData';
 import { analyzeVoiceFrames, analyzeVoiceSamples, verifyVoiceSignature, calculateSpectralFeatures, extractMelFilterbank, AcousticFrame, VoicePrint } from './hooks/useVoiceBiometrics';
 import { saveVoicePrintToSupabase, getVoicePrintFromSupabase } from '@/lib/supabaseService';
 import * as THREE from 'three';
@@ -709,7 +710,13 @@ export default function AvatarMentorWidget({
           careerContext: { ...careerProfile, activeQuest }
         }),
       });
-      const data = await res.json();
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        const errMsg = data?.message || data?.error || 'Unable to get response from mentor. Please try again.';
+        setMessages(prev => [...prev, { role: 'assistant', content: errMsg }]);
+        await speakReply(errMsg);
+        return;
+      }
       const reply = data?.reply || '';
       const cleanReply = sanitizeLLMOutput(reply);
       setMessages(prev => [...prev, { role: 'assistant', content: cleanReply }]);
@@ -723,7 +730,13 @@ export default function AvatarMentorWidget({
           if (cached) {
             const parsed = JSON.parse(cached);
             if (isValidSnapshotTimestamp(parsed.syncedAt, 24 * 60 * 60 * 1000)) {
-              const localAdvisor = getAuthoritativeNextTask(parsed, userId, []);
+              const course = COURSES_REGISTRY.find(c => c.id === parsed.courseId) || COURSES_REGISTRY[0];
+              const localCurriculum = (course?.quests || []).map(q => ({
+                questId: q.id,
+                courseId: course?.id || parsed.courseId,
+                title: q.title
+              }));
+              const localAdvisor = getAuthoritativeNextTask(parsed, userId, localCurriculum);
               if (localAdvisor.status === 'VERIFIED_TASK' || localAdvisor.status === 'COURSE_COMPLETED') {
                 const syncDate = new Date(parsed.syncedAt).toLocaleTimeString();
                 fallbackMessage = `${localAdvisor.speechText} (Offline Snapshot synced at ${syncDate})`;

@@ -15,7 +15,7 @@
  * instead of erroring on every profile change.
  */
 import { supabase } from '@/lib/supabaseClient';
-import { tableExists } from '@/lib/services/supabaseTable';
+import { tableExists, getCampusSupabaseClient } from '@/lib/services/supabaseTable';
 
 const TABLE = 'avatar_memory';
 
@@ -55,7 +55,8 @@ export async function loadAvatarMemoryTriState(userId: string): Promise<TriState
   if (!exists) {
     return { status: 'ERROR', error: 'TABLE_MISSING', memory: empty(userId) };
   }
-  const { data, error } = await supabase
+  const client = await getCampusSupabaseClient();
+  const { data, error } = await client
     .from(TABLE)
     .select('persona, memories, relationship_state')
     .eq('user_id', userId)
@@ -87,7 +88,8 @@ export async function saveAvatarMemory(userId: string, incoming: unknown) {
   if (!(await tableExists(TABLE))) return NOT_MIGRATED;
 
   const m = (incoming || {}) as Record<string, any>;
-  const { error } = await supabase.from(TABLE).upsert({
+  const client = await getCampusSupabaseClient();
+  const { error } = await client.from(TABLE).upsert({
     user_id: userId,
     persona: m.persona && typeof m.persona === 'object' ? m.persona : {},
     memories: Array.isArray(m.memories) ? m.memories : [],

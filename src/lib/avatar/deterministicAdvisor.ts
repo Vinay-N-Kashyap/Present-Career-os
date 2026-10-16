@@ -43,7 +43,7 @@ export interface AdvisorResult {
 
 // ── 1. Strict Intent Regex (Anchored End-of-String) ──────────────────────────
 export const NEXT_TASK_INTENT_REGEX =
-  /^(?:what(?:'s|\s+is)\s+next|next\s+(?:task|quest|lesson)|what\s+should\s+i\s+(?:do|study)(?:\s+next)?)\s*[?.!]*$/i;
+  /^(?:(?:tell\s+me\s+|show\s+me\s+)?(?:what(?:'s|\s+is|\s+do\s+i|\s+should\s+i)\s+(?:the\s+|my\s+)?(?:next(?:\s+(?:task|quest|lesson|mission))?|(?:do|study|learn)(?:\s+next)?)|(?:the\s+|my\s+)?next\s+(?:task|quest|lesson|mission))|what\s+next)\s*[?.!]*$/i;
 
 export function isNextTaskIntent(query: unknown): boolean {
   if (typeof query !== 'string') return false;
@@ -143,10 +143,16 @@ export function getAuthoritativeNextTask(
 
   // 4. Find first incomplete quest in canonical prerequisite order
   const completedSet = new Set(
-    Array.isArray(snapshot.completedQuestIds) ? snapshot.completedQuestIds : []
+    (Array.isArray(snapshot.completedQuestIds) ? snapshot.completedQuestIds : [])
+      .map(id => typeof id === 'string' ? id.trim().toLowerCase() : '')
+      .filter(Boolean)
   );
 
-  const nextItem = curriculum.find(item => item && item.questId && !completedSet.has(item.questId));
+  const nextItem = curriculum.find(item => {
+    if (!item || !item.questId) return false;
+    const normalized = item.questId.trim().toLowerCase();
+    return !completedSet.has(normalized);
+  });
 
   const ageSeconds = Math.max(Math.floor((referenceNow - snapshot.syncedAt) / 1000), 0);
 

@@ -94,21 +94,32 @@ IMPORTANT: The student's question is about this specific slide! Explain the conc
       const supabase = getAuthoritativeSupabaseClient(token);
       const { data: userProfile } = await supabase
         .from('users')
-        .select('id, completed_quests, updated_at')
+        .select('id, completed_quests, onboarding_answers, updated_at')
         .eq('id', gated.user.id)
         .maybeSingle();
 
-      const activeCourseId = (typeof body.activeQuest === 'object' && body.activeQuest !== null ? (body.activeQuest as any).courseId : undefined) || 'fullstack-mastery';
+      const ob = (userProfile?.onboarding_answers || {}) as Record<string, any>;
+      const activeCourseId = 
+        body.careerContext?.activeCourseId ||
+        body.careerContext?.courseId ||
+        (typeof body.activeQuest === 'object' && body.activeQuest !== null ? (body.activeQuest as any).courseId : undefined) ||
+        ob.active_course ||
+        ob.selected_course ||
+        ob.courseId ||
+        ob.track ||
+        'fullstack-mastery';
+
       const course = COURSES_REGISTRY.find(c => c.id === activeCourseId) || COURSES_REGISTRY[0];
+      const resolvedCourseId = course?.id || activeCourseId;
       const curriculum: CurriculumItem[] = (course?.quests || []).map(q => ({
         questId: q.id,
-        courseId: course?.id || activeCourseId,
+        courseId: resolvedCourseId,
         title: q.title,
       }));
 
       const snapshot: StudentProgressSnapshot = {
         userId: gated.user.id,
-        courseId: activeCourseId,
+        courseId: resolvedCourseId,
         completedQuestIds: Array.isArray(userProfile?.completed_quests) ? userProfile.completed_quests : [],
         syncedAt: userProfile?.updated_at ? new Date(userProfile.updated_at).getTime() : Date.now(),
       };
