@@ -37,21 +37,48 @@ const empty = (userId: string): AvatarMemory => ({
   userId, persona: {}, memories: [], conversationHistory: [], relationshipState: {},
 });
 
+export type TriStateMemoryResult =
+  | { status: 'SUCCESS'; memory: AvatarMemory }
+  | { status: 'NOT_FOUND'; memory: AvatarMemory }
+  | { status: 'ERROR'; error: string; memory: AvatarMemory };
+
 export async function loadAvatarMemory(userId: string): Promise<AvatarMemory> {
-  if (!userId || !(await tableExists(TABLE))) return empty(userId);
+  const result = await loadAvatarMemoryTriState(userId);
+  return result.memory;
+}
+
+export async function loadAvatarMemoryTriState(userId: string): Promise<TriStateMemoryResult> {
+  if (!userId) {
+    return { status: 'ERROR', error: 'NO_USER_ID', memory: empty('') };
+  }
+  const exists = await tableExists(TABLE);
+  if (!exists) {
+    return { status: 'ERROR', error: 'TABLE_MISSING', memory: empty(userId) };
+  }
   const { data, error } = await supabase
     .from(TABLE)
     .select('persona, memories, relationship_state')
     .eq('user_id', userId)
     .maybeSingle();
-  if (error || !data) return empty(userId);
+
+  if (error) {
+    return { status: 'ERROR', error: error.message || 'DATABASE_QUERY_ERROR', memory: empty(userId) };
+  }
+
+  if (!data) {
+    return { status: 'NOT_FOUND', memory: empty(userId) };
+  }
+
   return {
-    userId,
-    persona: data.persona || {},
-    memories: Array.isArray(data.memories) ? data.memories : [],
-    // Never restored from storage — transcripts are not persisted by design.
-    conversationHistory: [],
-    relationshipState: data.relationship_state || {},
+    status: 'SUCCESS',
+    memory: {
+      userId,
+      persona: data.persona || {},
+      memories: Array.isArray(data.memories) ? data.memories : [],
+      // Never restored from storage — transcripts are not persisted by design.
+      conversationHistory: [],
+      relationshipState: data.relationship_state || {},
+    },
   };
 }
 
