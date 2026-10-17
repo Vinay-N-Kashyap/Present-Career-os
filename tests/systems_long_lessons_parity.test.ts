@@ -1398,3 +1398,139 @@ test('Systems Long Lessons: comp_fund Day 30 🏆 GRAND FINAL CAPSTONE: Sovereig
   assert.ok(res5.stdout?.includes('SOVEREIGN_SYSTEMS_MASTER_CAPSTONE_VERIFIED'));
   assert.ok(res5.stdout?.includes('GRAND_CAPSTONE_HEALTH: 100/100'));
 });
+
+test('Systems Long Lessons: git_vcs Day 6 File Ignoring & Repository Hygiene Verification', async () => {
+  const d6 = getLongLesson('git_vcs', 6);
+  assert.ok(d6, 'git_vcs Day 6 must resolve');
+  assert.equal(d6.day, 6);
+  assert.equal(d6.parts.length, 5);
+
+  const res1 = await executeBashSuite(d6.parts[0].code!);
+  assert.equal(res1.allPassed, true);
+  assert.ok(res1.stdout?.includes('GITIGNORE_PATTERN_MATCHING_VERIFIED'));
+
+  const res2 = await executeBashSuite(d6.parts[1].code!);
+  assert.equal(res2.allPassed, true);
+  assert.ok(res2.stdout?.includes('GIT_RM_CACHED_UNTRACKING_VERIFIED'));
+
+  const res3 = await executeBashSuite(d6.parts[2].code!);
+  assert.equal(res3.allPassed, true);
+  assert.ok(res3.stdout?.includes('DIRECTORY_SLASH_ANCHORING_VERIFIED'));
+
+  const res4 = await executeBashSuite(d6.parts[3].code!);
+  assert.equal(res4.allPassed, true);
+  assert.ok(res4.stdout?.includes('REPOSITORY_EXCLUSION_HIERARCHY_VERIFIED'));
+
+  const res5 = await executeBashSuite(d6.parts[4].code!);
+  assert.equal(res5.allPassed, true);
+  assert.ok(res5.stdout?.includes('Repository Hygiene Index: 100/100'));
+});
+
+test('Systems Long Lessons: git_vcs Day 7 Undoing Local Changes, Restore, Amend & Reset Verification', async () => {
+  const d7 = getLongLesson('git_vcs', 7);
+  assert.ok(d7, 'git_vcs Day 7 must resolve');
+  assert.equal(d7.day, 7);
+  assert.equal(d7.parts.length, 5);
+
+  const res1 = await executeBashSuite(d7.parts[0].code!);
+  assert.equal(res1.allPassed, true);
+  assert.ok(res1.stdout?.includes('GIT_RESTORE_OPERATIONS_VERIFIED'));
+
+  const res2 = await executeBashSuite(d7.parts[1].code!);
+  assert.equal(res2.allPassed, true);
+  assert.ok(res2.stdout?.includes('GIT_COMMIT_AMEND_VERIFIED'));
+
+  const res3 = await executeBashSuite(d7.parts[2].code!);
+  assert.equal(res3.allPassed, true);
+  assert.ok(res3.stdout?.includes('GIT_CLEAN_UNTRACKED_VERIFIED'));
+
+  const res4 = await executeBashSuite(d7.parts[3].code!);
+  assert.equal(res4.allPassed, true);
+  assert.ok(res4.stdout?.includes('GIT_REVERT_AND_RESET_VERIFIED'));
+
+  const res5 = await executeBashSuite(d7.parts[4].code!);
+  assert.equal(res5.allPassed, true);
+  assert.ok(res5.stdout?.includes('Local Undo Health Index: 100/100'));
+});
+
+test('Systems Long Lessons: git_vcs Day 8 Git History Inspection, Topology Visualization & Pickaxe Verification', async () => {
+  const d8 = getLongLesson('git_vcs', 8);
+  assert.ok(d8, 'git_vcs Day 8 must resolve');
+  assert.equal(d8.day, 8);
+  assert.equal(d8.parts.length, 5);
+
+  const res1 = await executeBashSuite(d8.parts[0].code!);
+  assert.equal(res1.allPassed, true);
+  assert.ok(res1.stdout?.includes('GIT_PICKAXE_AUDIT_VERIFIED'));
+
+  const res2 = await executeBashSuite(d8.parts[1].code!);
+  assert.equal(res2.allPassed, true);
+  assert.ok(res2.stdout?.includes('GIT_TOPOLOGY_VISUALIZATION_VERIFIED'));
+
+  const res3 = await executeBashSuite(d8.parts[2].code!);
+  assert.equal(res3.allPassed, true);
+  assert.ok(res3.stdout?.includes('GIT_METADATA_INSPECTION_VERIFIED'));
+
+  const res4 = await executeBashSuite(d8.parts[3].code!);
+  assert.equal(res4.allPassed, true);
+  assert.ok(res4.stdout?.includes('GIT_BLAME_AND_LINE_TRACE_VERIFIED'));
+
+  const res5 = await executeBashSuite(d8.parts[4].code!);
+  assert.equal(res5.allPassed, true);
+  assert.ok(res5.stdout?.includes('Git History Inspection Index: 100/100'));
+});
+
+test('Systems Long Lessons: git_vcs Day 9 Git Branching Architecture, Fast-Forward & Detached HEAD Verification', async () => {
+  const d9 = getLongLesson('git_vcs', 9);
+  assert.ok(d9, 'git_vcs Day 9 must resolve');
+  assert.equal(d9.day, 9);
+  assert.equal(d9.parts.length, 5);
+
+  const res1 = await executeBashSuite(d9.parts[0].code!);
+  assert.equal(res1.allPassed, true);
+  assert.ok(res1.stdout?.includes('BRANCH_POINTER_ADVANCEMENT_VERIFIED'));
+
+  const res2 = await executeBashSuite(d9.parts[1].code!);
+  assert.equal(res2.allPassed, true);
+  assert.ok(res2.stdout?.includes('FAST_FORWARD_MERGE_VERIFIED'));
+
+  const res3 = await executeBashSuite(d9.parts[2].code!);
+  assert.equal(res3.allPassed, true);
+  assert.ok(res3.stdout?.includes('GIT_SWITCH_OPERATIONS_VERIFIED'));
+
+  const res4 = await executeBashSuite(d9.parts[3].code!);
+  assert.equal(res4.allPassed, true);
+  assert.ok(res4.stdout?.includes('DETACHED_HEAD_SALVAGE_VERIFIED'));
+
+  const res5 = await executeBashSuite(d9.parts[4].code!);
+  assert.equal(res5.allPassed, true);
+  assert.ok(res5.stdout?.includes('Branching Architecture Index: 100/100'));
+});
+
+test('Systems Long Lessons: git_vcs Day 10 ⭐ MILESTONE 2 Capstone: 3-Way Merge Mechanics, Topology & ORT Verification', async () => {
+  const d10 = getLongLesson('git_vcs', 10);
+  assert.ok(d10, 'git_vcs Day 10 must resolve');
+  assert.equal(d10.day, 10);
+  assert.equal(d10.parts.length, 5);
+
+  const res1 = await executeBashSuite(d10.parts[0].code!);
+  assert.equal(res1.allPassed, true);
+  assert.ok(res1.stdout?.includes('THREE_WAY_MERGE_COMMIT_VERIFIED'));
+
+  const res2 = await executeBashSuite(d10.parts[1].code!);
+  assert.equal(res2.allPassed, true);
+  assert.ok(res2.stdout?.includes('CONFLICT_RESOLUTION_MECHANICS_VERIFIED'));
+
+  const res3 = await executeBashSuite(d10.parts[2].code!);
+  assert.equal(res3.allPassed, true);
+  assert.ok(res3.stdout?.includes('NO_FF_TOPOLOGY_PRESERVATION_VERIFIED'));
+
+  const res4 = await executeBashSuite(d10.parts[3].code!);
+  assert.equal(res4.allPassed, true);
+  assert.ok(res4.stdout?.includes('GIT_MERGE_ABORT_VERIFIED'));
+
+  const res5 = await executeBashSuite(d10.parts[4].code!);
+  assert.equal(res5.allPassed, true);
+  assert.ok(res5.stdout?.includes('Merge Architecture Index: 100/100'));
+});
+
