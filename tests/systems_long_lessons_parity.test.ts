@@ -2478,5 +2478,141 @@ test('Systems Long Lessons: git_vcs Day 45 Milestone 6 (M2): ApexAudit Cryptogra
   assert.ok(res5.stdout?.includes('AUDIT_SEAL: APEX-AUDIT-MILESTONE-6-CERTIFIED'));
 });
 
+test('Systems Long Lessons: git_vcs Day 46 Advanced GitHub Actions: Composite Actions, Reusable Workflows (workflow_call), Matrix Strategies & Cache', async () => {
+  const d46 = getLongLesson('git_vcs', 46);
+  assert.ok(d46, 'git_vcs Day 46 must resolve');
+  assert.equal(d46.day, 46);
+  assert.equal(d46.parts.length, 5);
+
+  const res1 = await executeBashSuite(d46.parts[0].code!);
+  assert.equal(res1.allPassed, true);
+  assert.ok(res1.stdout?.includes('ARCHITECTURE: Modular CI Encapsulation (workflow_call + Composite Actions)'));
+
+  const res2 = await executeBashSuite(d46.parts[1].code!);
+  assert.equal(res2.allPassed, true);
+  assert.ok(res2.stdout?.includes('INCIDENT: Mutable @main Tag Supply-Chain Poisoning'));
+
+  const res3 = await executeBashSuite(d46.parts[2].code!);
+  assert.equal(res3.allPassed, true);
+  assert.ok(res3.stdout?.includes('MATRIX_TOPOLOGY: 3 OS (ubuntu, windows, macos) x 3 Node (18, 20, 22) = 9 Parallel Jobs'));
+
+  const res4 = await executeBashSuite(d46.parts[3].code!);
+  assert.equal(res4.allPassed, true);
+  assert.ok(res4.stdout?.includes('FALLBACK_RESTORE: Partial prefix match via restore-keys (node-linux-x64-)'));
+
+  const res5 = await executeBashSuite(d46.parts[4].code!);
+  assert.equal(res5.allPassed, true);
+  assert.ok(res5.stdout?.includes('AUDIT_SEAL: MODULAR-GHA-ARCHITECTURE-CERTIFIED'));
+});
+
+test('Systems Long Lessons: git_vcs Day 47 Self-Hosted Runners, Security Isolation, Ephemeral Environments & OIDC Cloud Authentication (AWS/GCP)', async () => {
+  const d47 = getLongLesson('git_vcs', 47);
+  assert.ok(d47, 'git_vcs Day 47 must resolve');
+  assert.equal(d47.day, 47);
+  assert.equal(d47.parts.length, 5);
+
+  const res1 = await executeBashSuite(d47.parts[0].code!);
+  assert.equal(res1.allPassed, true);
+  assert.ok(res1.stdout?.includes('AUTH_PROTOCOL: OpenID Connect (OIDC) Zero-Secret Federation'));
+
+  const res2 = await executeBashSuite(d47.parts[1].code!);
+  assert.equal(res2.allPassed, true);
+  assert.ok(res2.stdout?.includes('INCIDENT: Persistent Self-Hosted Runner Disk Cache Exfiltration'));
+
+  const res3 = await executeBashSuite(d47.parts[2].code!);
+  assert.equal(res3.allPassed, true);
+  assert.ok(res3.stdout?.includes('LEGACY_KEYS_PURGED: 50 static 3-year-old github-actions-user IAM keys deleted'));
+
+  const res4 = await executeBashSuite(d47.parts[3].code!);
+  assert.equal(res4.allPassed, true);
+  assert.ok(res4.stdout?.includes('CROSS_JOB_LEAKAGE: 0 bytes of residual state across 50 isolated executions'));
+
+  const res5 = await executeBashSuite(d47.parts[4].code!);
+  assert.equal(res5.allPassed, true);
+  assert.ok(res5.stdout?.includes('AUDIT_SEAL: ZERO-SECRET-OIDC-FEDERATION-CERTIFIED'));
+});
+
+test('Systems Long Lessons: git_vcs Day 48 GitHub Enterprise Administration: GitHub Apps vs Fine-Grained PATs, Webhooks & Audit Log Streaming', async () => {
+  const d48 = getLongLesson('git_vcs', 48);
+  assert.ok(d48, 'git_vcs Day 48 must resolve');
+  assert.equal(d48.day, 48);
+  assert.equal(d48.parts.length, 5);
+
+  const res1 = await executeBashSuite(d48.parts[0].code!);
+  assert.equal(res1.allPassed, true);
+  assert.ok(res1.stdout?.includes('IDENTITY_MODEL: Organization GitHub App Service Identity'));
+
+  const res2 = await executeBashSuite(d48.parts[1].code!);
+  assert.equal(res2.allPassed, true);
+  assert.ok(res2.stdout?.includes('INCIDENT: Departed Engineer PAT Revocation Production Blackout'));
+
+  const res3 = await executeBashSuite(d48.parts[2].code!);
+  assert.equal(res3.allPassed, true);
+  assert.ok(res3.stdout?.includes('SIGNATURE_HEADER: X-Hub-Signature-256 verified via constant-time digest comparison'));
+
+  const res4 = await executeBashSuite(d48.parts[3].code!);
+  assert.equal(res4.allPassed, true);
+  assert.ok(res4.stdout?.includes('ANOMALY_DETECTED: Unauthorized branch protection bypass flagged in 180ms'));
+
+  const res5 = await executeBashSuite(d48.parts[4].code!);
+  assert.equal(res5.allPassed, true);
+  assert.ok(res5.stdout?.includes('AUDIT_SEAL: GITHUB-ENTERPRISE-GOVERNANCE-CERTIFIED'));
+});
+
+test('Systems Long Lessons: git_vcs Day 49 Repository Governance at Scale: Organization Rulesets, CODEOWNERS, Automated Merge Queues & Branch Policies', async () => {
+  const d49 = getLongLesson('git_vcs', 49);
+  assert.ok(d49, 'git_vcs Day 49 must resolve');
+  assert.equal(d49.day, 49);
+  assert.equal(d49.parts.length, 5);
+
+  const res1 = await executeBashSuite(d49.parts[0].code!);
+  assert.equal(res1.allPassed, true);
+  assert.ok(res1.stdout?.includes('GOVERNANCE_LAYER: GitHub Organization-Wide Repository Rulesets'));
+
+  const res2 = await executeBashSuite(d49.parts[1].code!);
+  assert.equal(res2.allPassed, true);
+  assert.ok(res2.stdout?.includes('INCIDENT: Semantic Integration Race Condition (PR A + PR B Broken Main)'));
+
+  const res3 = await executeBashSuite(d49.parts[2].code!);
+  assert.equal(res3.allPassed, true);
+  assert.ok(res3.stdout?.includes('RULE_1: /services/billing/ -> @pinit-org/billing-security (Mandatory)'));
+
+  const res4 = await executeBashSuite(d49.parts[3].code!);
+  assert.equal(res4.allPassed, true);
+  assert.ok(res4.stdout?.includes('FAULT_EVICTION: PR #14 (incompatible schema change) automatically evicted from queue'));
+
+  const res5 = await executeBashSuite(d49.parts[4].code!);
+  assert.equal(res5.allPassed, true);
+  assert.ok(res5.stdout?.includes('AUDIT_SEAL: REPOSITORY-GOVERNANCE-SCALE-CERTIFIED'));
+});
+
+test('Systems Long Lessons: git_vcs Day 50 Milestone 7 (M2): ApexAutomate Enterprise GitHub Actions & Security Automation Suite', async () => {
+  const d50 = getLongLesson('git_vcs', 50);
+  assert.ok(d50, 'git_vcs Day 50 must resolve');
+  assert.equal(d50.day, 50);
+  assert.equal(d50.parts.length, 5);
+
+  const res1 = await executeBashSuite(d50.parts[0].code!);
+  assert.equal(res1.allPassed, true);
+  assert.ok(res1.stdout?.includes('PLATFORM: ApexAutomate Enterprise CI/CD & Governance Suite'));
+
+  const res2 = await executeBashSuite(d50.parts[1].code!);
+  assert.equal(res2.allPassed, true);
+  assert.ok(res2.stdout?.includes('CRITICAL_VULNERABILITY: pull_request_target Untrusted Checkout Secret Exfiltration'));
+
+  const res3 = await executeBashSuite(d50.parts[2].code!);
+  assert.equal(res3.allPassed, true);
+  assert.ok(res3.stdout?.includes('ACTION_PIN_SCAN: 420 workflow files verified; 100% using 40-char commit SHAs'));
+
+  const res4 = await executeBashSuite(d50.parts[3].code!);
+  assert.equal(res4.allPassed, true);
+  assert.ok(res4.stdout?.includes('ATTACK_2: Forged webhook POST payload -> REJECTED (HTTP 401 HMAC mismatch)'));
+
+  const res5 = await executeBashSuite(d50.parts[4].code!);
+  assert.equal(res5.allPassed, true);
+  assert.ok(res5.stdout?.includes('AUDIT_SEAL: APEX-AUTOMATE-MILESTONE-7-CERTIFIED'));
+});
+
+
 
 
