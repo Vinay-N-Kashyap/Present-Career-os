@@ -114,27 +114,42 @@ function toDbRecord(tableName: string, record: any): any {
   }
   if (tableName === 'central_equal_opportunity') {
     return {
-      audit_id: record.scholarRecordId,
+      scholar_record_id: record.scholarRecordId,
       institution_id: record.institutionId || 'inst-apex-001',
-      facility_name: record.department,
-      barrier_category: record.disabilityCategory,
-      compliance_score: record.disabilityPercentage,
-      remedial_action: record.assignedAssistiveServices?.map((s: any) => s.resourceDetails).join('; ') || 'Scribe and compensatory time allocation',
-      target_completion: '2026-12-31',
-      status: 'AUDITED_COMPLIANT'
+      student_roll_number: record.studentRollNumber || '2024CSB031',
+      scholar_name: record.scholarName || record.studentName || 'Scholar Name',
+      department: record.department,
+      academic_year: record.academicYear || '2025-2026',
+      disability_category: record.disabilityCategory,
+      udid_number: record.udidNumber || 'UDID-999999',
+      disability_percentage: Number(record.disabilityPercentage) || 40,
+      is_benchmark_disability: record.isBenchmarkDisability ?? true,
+      allocated_services: record.allocatedServices || [],
+      accessibility_accommodations: record.accessibilityAccommodations || [],
+      status: record.status || 'REGISTERED_ACTIVE',
+      audit_sha256: record.auditSha256 || '0000000000000000000000000000000000000000000000000000000000000000'
     };
   }
   if (tableName === 'faculty_professor_of_practice') {
     return {
-      pop_id: record.popRecordId,
+      pop_record_id: record.popRecordId,
       institution_id: record.institutionId || 'inst-apex-001',
-      expert_name: record.professorName,
-      industry_organization: record.parentIndustryOrganization,
+      expert_name: record.expertName || record.professorName || 'Industry Expert',
+      parent_organization: record.parentOrganization || record.parentIndustryOrganization || 'Industry Corp',
+      designation_in_industry: record.designationInIndustry || 'Distinguished Industry Fellow',
+      total_years_industry_experience: Number(record.totalYearsIndustryExperience ?? record.industryExperienceYears ?? 15),
       department: record.department,
-      total_industry_experience_years: record.industryExperienceYears,
-      monthly_honorarium_inr: record.monthlyHonorariumInr,
-      engagement_type: record.fundingModel,
-      status: record.tenureStatus,
+      funding_model: record.fundingModel || 'UNIVERSITY_FUNDED_POP',
+      sponsoring_industry_partner: record.sponsoringIndustryPartner || null,
+      monthly_honorarium_rate_inr: Number(record.monthlyHonorariumRateInr ?? record.monthlyHonorariumInr ?? 100000),
+      appointment_start_date: record.appointmentStartDate || '2026-01-01',
+      appointment_end_date: record.appointmentEndDate || '2027-01-01',
+      tenure_years_total: Number(record.tenureYearsTotal || 1),
+      co_taught_course_codes: record.coTaughtCourseCodes || ['CS-800'],
+      mentored_capstones_count: Number(record.mentoredCapstonesCount || 0),
+      status: record.status || record.tenureStatus || 'APPOINTMENT_ACTIVE',
+      honorarium_bills: record.honorariumBills || [],
+      audit_sha256: record.auditSha256 || '0000000000000000000000000000000000000000000000000000000000000000'
     };
   }
   if (tableName === 'central_internal_audit_cag') {
@@ -530,36 +545,45 @@ function fromDbRecord<T>(tableName: string, row: any, fallbackDefault: T[]): T {
     } as unknown as T;
   }
   if (tableName === 'central_equal_opportunity') {
-    const def = (fallbackDefault as any[]).find(d => d.scholarRecordId === row.audit_id);
+    const def = (fallbackDefault as any[]).find(d => d.scholarRecordId === (row.scholar_record_id || row.audit_id));
     return {
-      scholarRecordId: row.audit_id,
-      studentRollNumber: def?.studentRollNumber || '2024EOC001',
-      studentName: def?.studentName || 'Scholar Name',
-      department: row.facility_name,
-      disabilityCategory: row.barrier_category,
-      disabilityPercentage: Number(row.compliance_score) || 50,
-      udidCardNumber: def?.udidCardNumber || 'UDID-999999',
-      assignedAssistiveServices: def?.assignedAssistiveServices || [],
-      examCompensatoryMinutes: def?.examCompensatoryMinutes || 60,
-      auditSha256: def?.auditSha256 || '0000000000000000000000000000000000000000000000000000000000000000'
+      scholarRecordId: row.scholar_record_id || row.audit_id || def?.scholarRecordId,
+      studentRollNumber: row.student_roll_number || def?.studentRollNumber || '2024CSB031',
+      scholarName: row.scholar_name || def?.scholarName || 'Scholar Name',
+      department: row.department || def?.department || 'Equal Opportunity Cell',
+      academicYear: row.academic_year || def?.academicYear || '2025-2026',
+      disabilityCategory: row.disability_category || row.barrier_category || def?.disabilityCategory || 'LOCOMOTOR_DISABILITY',
+      udidNumber: row.udid_number || def?.udidNumber || def?.udidCardNumber || 'UDID-999999',
+      disabilityPercentage: Number(row.disability_percentage ?? row.compliance_score ?? def?.disabilityPercentage ?? 40),
+      isBenchmarkDisability: row.is_benchmark_disability ?? def?.isBenchmarkDisability ?? true,
+      allocatedServices: Array.isArray(row.allocated_services) ? row.allocated_services : (def?.allocatedServices || def?.assignedAssistiveServices || []),
+      accessibilityAccommodations: Array.isArray(row.accessibility_accommodations) ? row.accessibility_accommodations : (def?.accessibilityAccommodations || []),
+      status: row.status || def?.status || 'REGISTERED_ACTIVE',
+      createdTimestamp: row.created_at || def?.createdTimestamp || new Date().toISOString(),
+      auditSha256: row.audit_sha256 || def?.auditSha256 || '0000000000000000000000000000000000000000000000000000000000000000'
     } as unknown as T;
   }
   if (tableName === 'faculty_professor_of_practice') {
-    const def = (fallbackDefault as any[]).find(d => d.popRecordId === row.pop_id);
+    const def = (fallbackDefault as any[]).find(d => d.popRecordId === (row.pop_record_id || row.pop_id));
     return {
-      popRecordId: row.pop_id,
-      professorName: row.expert_name,
-      parentIndustryOrganization: row.industry_organization,
-      industryDesignation: def?.industryDesignation || 'Distinguished Industry Fellow',
-      industryExperienceYears: Number(row.total_industry_experience_years) || 15,
-      department: row.department,
-      fundingModel: row.engagement_type,
-      monthlyHonorariumInr: Number(row.monthly_honorarium_inr) || 100000,
-      tenureYears: def?.tenureYears || 1,
-      tenureStatus: row.status,
-      assignedCourseCodes: def?.assignedCourseCodes || ['CS-800'],
-      honorariumBills: def?.honorariumBills || [],
-      auditSha256: def?.auditSha256 || '0000000000000000000000000000000000000000000000000000000000000000'
+      popRecordId: row.pop_record_id || row.pop_id || def?.popRecordId,
+      expertName: row.expert_name || def?.expertName || 'Industry Expert',
+      parentOrganization: row.parent_organization || row.industry_organization || def?.parentOrganization || 'Industry Partner Corp',
+      designationInIndustry: row.designation_in_industry || def?.designationInIndustry || 'Distinguished Industry Fellow',
+      totalYearsIndustryExperience: Number(row.total_years_industry_experience ?? row.total_industry_experience_years ?? def?.totalYearsIndustryExperience ?? 15),
+      department: row.department || def?.department || 'Engineering',
+      fundingModel: row.funding_model || row.engagement_type || def?.fundingModel || 'UNIVERSITY_FUNDED_POP',
+      sponsoringIndustryPartner: row.sponsoring_industry_partner || def?.sponsoringIndustryPartner,
+      monthlyHonorariumRateInr: Number(row.monthly_honorarium_rate_inr ?? row.monthly_honorarium_inr ?? def?.monthlyHonorariumRateInr ?? 100000),
+      appointmentStartDate: row.appointment_start_date || def?.appointmentStartDate || '2026-01-01',
+      appointmentEndDate: row.appointment_end_date || def?.appointmentEndDate || '2027-01-01',
+      tenureYearsTotal: Number(row.tenure_years_total ?? def?.tenureYearsTotal ?? 1),
+      coTaughtCourseCodes: Array.isArray(row.co_taught_course_codes) ? row.co_taught_course_codes : (def?.coTaughtCourseCodes || ['CS-800']),
+      mentoredCapstonesCount: Number(row.mentored_capstones_count ?? def?.mentoredCapstonesCount ?? 0),
+      status: row.status || def?.status || 'APPOINTMENT_ACTIVE',
+      honorariumBills: Array.isArray(row.honorarium_bills) ? row.honorarium_bills : (def?.honorariumBills || []),
+      createdTimestamp: row.created_at || def?.createdTimestamp || new Date().toISOString(),
+      auditSha256: row.audit_sha256 || def?.auditSha256 || '0000000000000000000000000000000000000000000000000000000000000000'
     } as unknown as T;
   }
   if (tableName === 'central_internal_audit_cag') {
@@ -1177,7 +1201,8 @@ function fromDbRecord<T>(tableName: string, row: any, fallbackDefault: T[]): T {
  */
 export async function loadGovernanceRecords<T>(
   tableName: string,
-  fallbackDefault: T[]
+  fallbackDefault: T[],
+  institutionId: string = 'inst-apex-001'
 ): Promise<{ data: T[]; source: 'supabase' | 'local_storage' | 'memory' }> {
   // 1. Attempt Supabase fetch if configured
   if (isSupabaseConfigured()) {
@@ -1185,6 +1210,7 @@ export async function loadGovernanceRecords<T>(
       const { data, error } = await supabase
         .from(tableName)
         .select('*')
+        .eq('institution_id', institutionId)
         .limit(100);
 
       if (!error && Array.isArray(data) && data.length > 0) {
@@ -1240,9 +1266,9 @@ export async function saveGovernanceRecord<T extends Record<string, any>>(
     : tableName === 'faculty_startup_incubation'
     ? 'venture_id'
     : tableName === 'central_equal_opportunity'
-    ? 'audit_id'
+    ? 'scholar_record_id'
     : tableName === 'faculty_professor_of_practice'
-    ? 'pop_id'
+    ? 'pop_record_id'
     : tableName === 'central_internal_audit_cag'
     ? 'audit_para_id'
     : tableName === 'central_academic_bank_credits'
@@ -1326,7 +1352,9 @@ export async function saveGovernanceRecord<T extends Record<string, any>>(
       } else {
         existing.unshift(record);
       }
-      window.localStorage.setItem(key, JSON.stringify(existing));
+      // Keep at most 50 recent records in local storage to prevent QuotaExceededError
+      const trimmed = existing.slice(0, 50);
+      window.localStorage.setItem(key, JSON.stringify(trimmed));
 
       if (!savedToSupabase) {
         return { success: true, source: 'local_storage', data: record };

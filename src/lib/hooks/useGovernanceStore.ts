@@ -59,9 +59,11 @@ export function useGovernanceStore<T extends Record<string, any>>(
   const saveRecord = async (record: T): Promise<PersistenceResult<T>> => {
     setIsSaving(true);
     const recId = record[primaryKey];
+    let previousSnapshot: T[] = [];
 
-    // Optimistic UI state update
+    // Optimistic UI state update with snapshot preservation
     setRecords((prev) => {
+      previousSnapshot = prev;
       const idx = prev.findIndex((item) => item[primaryKey] === recId);
       if (idx >= 0) {
         const copy = [...prev];
@@ -73,11 +75,19 @@ export function useGovernanceStore<T extends Record<string, any>>(
 
     try {
       const res = await saveGovernanceRecord(tableName, record, primaryKey);
+      if (!res.success) {
+        // Rollback state on persistence failure
+        setRecords(previousSnapshot);
+        setIsSaving(false);
+        return res;
+      }
       setSyncSource(res.source);
       setLastSaved(new Date().toLocaleTimeString());
       setIsSaving(false);
       return res;
     } catch (e: any) {
+      // Rollback state on thrown exception
+      setRecords(previousSnapshot);
       setIsSaving(false);
       return { success: false, source: 'memory', error: e?.message };
     }

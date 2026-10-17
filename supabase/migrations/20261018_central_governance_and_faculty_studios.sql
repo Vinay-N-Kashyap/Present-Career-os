@@ -41,7 +41,12 @@ ALTER TABLE public.central_nirf_rankings ENABLE ROW LEVEL SECURITY;
 
 CREATE POLICY "Tenant isolation for NIRF rankings" ON public.central_nirf_rankings
     FOR ALL USING (
-        auth.role() = 'authenticated' OR auth.role() = 'service_role' OR auth.role() = 'anon'
+        (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
+        OR auth.role() = 'service_role'
+    )
+    WITH CHECK (
+        (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
+        OR auth.role() = 'service_role'
     );
 
 -- ============================================================================
@@ -71,7 +76,12 @@ ALTER TABLE public.faculty_emeritus_fellowships ENABLE ROW LEVEL SECURITY;
 
 CREATE POLICY "Tenant isolation for Emeritus Fellowships" ON public.faculty_emeritus_fellowships
     FOR ALL USING (
-        auth.role() = 'authenticated' OR auth.role() = 'service_role' OR auth.role() = 'anon'
+        (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
+        OR auth.role() = 'service_role'
+    )
+    WITH CHECK (
+        (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
+        OR auth.role() = 'service_role'
     );
 
 -- ============================================================================
@@ -97,7 +107,12 @@ ALTER TABLE public.central_disaster_safety ENABLE ROW LEVEL SECURITY;
 
 CREATE POLICY "Tenant isolation for Disaster Safety" ON public.central_disaster_safety
     FOR ALL USING (
-        auth.role() = 'authenticated' OR auth.role() = 'service_role' OR auth.role() = 'anon'
+        (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
+        OR auth.role() = 'service_role'
+    )
+    WITH CHECK (
+        (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
+        OR auth.role() = 'service_role'
     );
 
 -- ============================================================================
@@ -122,7 +137,12 @@ ALTER TABLE public.faculty_startup_incubation ENABLE ROW LEVEL SECURITY;
 
 CREATE POLICY "Tenant isolation for Startup Incubation" ON public.faculty_startup_incubation
     FOR ALL USING (
-        auth.role() = 'authenticated' OR auth.role() = 'service_role' OR auth.role() = 'anon'
+        (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
+        OR auth.role() = 'service_role'
+    )
+    WITH CHECK (
+        (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
+        OR auth.role() = 'service_role'
     );
 
 -- ============================================================================
@@ -130,14 +150,20 @@ CREATE POLICY "Tenant isolation for Startup Incubation" ON public.faculty_startu
 -- ============================================================================
 CREATE TABLE IF NOT EXISTS public.central_equal_opportunity (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    case_id VARCHAR(64) NOT NULL UNIQUE,
+    scholar_record_id VARCHAR(64) NOT NULL UNIQUE,
     institution_id VARCHAR(64) NOT NULL DEFAULT 'inst-apex-001',
-    category VARCHAR(32) NOT NULL,
-    student_or_staff_id VARCHAR(64) NOT NULL,
-    grievance_description TEXT NOT NULL,
-    accommodation_requested TEXT,
-    remedial_measures JSONB NOT NULL DEFAULT '[]'::jsonb,
-    resolution_status VARCHAR(32) NOT NULL DEFAULT 'PENDING_COMMITTEE_REVIEW',
+    student_roll_number VARCHAR(64) NOT NULL,
+    scholar_name TEXT NOT NULL,
+    department TEXT NOT NULL,
+    academic_year VARCHAR(16) NOT NULL DEFAULT '2025-2026',
+    disability_category VARCHAR(64) NOT NULL,
+    udid_number VARCHAR(32) NOT NULL,
+    disability_percentage NUMERIC(5, 2) NOT NULL DEFAULT 40.0,
+    is_benchmark_disability BOOLEAN NOT NULL DEFAULT true,
+    allocated_services JSONB NOT NULL DEFAULT '[]'::jsonb,
+    accessibility_accommodations JSONB NOT NULL DEFAULT '[]'::jsonb,
+    status VARCHAR(32) NOT NULL DEFAULT 'REGISTERED_ACTIVE',
+    audit_sha256 VARCHAR(64) NOT NULL DEFAULT '0000000000000000000000000000000000000000000000000000000000000000',
     created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
     updated_at TIMESTAMPTZ NOT NULL DEFAULT now()
 );
@@ -146,7 +172,12 @@ ALTER TABLE public.central_equal_opportunity ENABLE ROW LEVEL SECURITY;
 
 CREATE POLICY "Tenant isolation for EOC" ON public.central_equal_opportunity
     FOR ALL USING (
-        auth.role() = 'authenticated' OR auth.role() = 'service_role' OR auth.role() = 'anon'
+        (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
+        OR auth.role() = 'service_role'
+    )
+    WITH CHECK (
+        (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
+        OR auth.role() = 'service_role'
     );
 
 -- ============================================================================
@@ -154,16 +185,24 @@ CREATE POLICY "Tenant isolation for EOC" ON public.central_equal_opportunity
 -- ============================================================================
 CREATE TABLE IF NOT EXISTS public.faculty_professor_of_practice (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    scholar_id VARCHAR(64) NOT NULL UNIQUE,
+    pop_record_id VARCHAR(64) NOT NULL UNIQUE,
     institution_id VARCHAR(64) NOT NULL DEFAULT 'inst-apex-001',
-    full_name TEXT NOT NULL,
-    industry_domain TEXT NOT NULL,
-    years_industry_experience INT NOT NULL,
-    appointed_department TEXT NOT NULL,
-    honorarium_per_lecture_inr NUMERIC(10, 2) NOT NULL DEFAULT 5000.0,
-    tenure_start DATE NOT NULL,
-    tenure_end DATE NOT NULL,
-    status VARCHAR(32) NOT NULL DEFAULT 'ACTIVE_PRACTITIONER',
+    expert_name TEXT NOT NULL,
+    parent_organization TEXT NOT NULL,
+    designation_in_industry TEXT NOT NULL,
+    total_years_industry_experience INT NOT NULL,
+    department TEXT NOT NULL,
+    funding_model VARCHAR(32) NOT NULL DEFAULT 'UNIVERSITY_FUNDED_POP',
+    sponsoring_industry_partner TEXT,
+    monthly_honorarium_rate_inr NUMERIC(10, 2) NOT NULL DEFAULT 100000.0,
+    appointment_start_date DATE NOT NULL,
+    appointment_end_date DATE NOT NULL,
+    tenure_years_total INT NOT NULL DEFAULT 1,
+    co_taught_course_codes JSONB NOT NULL DEFAULT '[]'::jsonb,
+    mentored_capstones_count INT NOT NULL DEFAULT 0,
+    status VARCHAR(32) NOT NULL DEFAULT 'APPOINTMENT_ACTIVE',
+    honorarium_bills JSONB NOT NULL DEFAULT '[]'::jsonb,
+    audit_sha256 VARCHAR(64) NOT NULL DEFAULT '0000000000000000000000000000000000000000000000000000000000000000',
     created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
     updated_at TIMESTAMPTZ NOT NULL DEFAULT now()
 );
@@ -172,7 +211,12 @@ ALTER TABLE public.faculty_professor_of_practice ENABLE ROW LEVEL SECURITY;
 
 CREATE POLICY "Tenant isolation for PoP" ON public.faculty_professor_of_practice
     FOR ALL USING (
-        auth.role() = 'authenticated' OR auth.role() = 'service_role' OR auth.role() = 'anon'
+        (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
+        OR auth.role() = 'service_role'
+    )
+    WITH CHECK (
+        (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
+        OR auth.role() = 'service_role'
     );
 
 -- ============================================================================
@@ -197,7 +241,12 @@ ALTER TABLE public.central_internal_audit_cag ENABLE ROW LEVEL SECURITY;
 
 CREATE POLICY "Tenant isolation for CAG Audit" ON public.central_internal_audit_cag
     FOR ALL USING (
-        auth.role() = 'authenticated' OR auth.role() = 'service_role' OR auth.role() = 'anon'
+        (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
+        OR auth.role() = 'service_role'
+    )
+    WITH CHECK (
+        (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
+        OR auth.role() = 'service_role'
     );
 
 -- ============================================================================
@@ -222,7 +271,12 @@ ALTER TABLE public.central_academic_bank_credits ENABLE ROW LEVEL SECURITY;
 
 CREATE POLICY "Tenant isolation for ABC" ON public.central_academic_bank_credits
     FOR ALL USING (
-        auth.role() = 'authenticated' OR auth.role() = 'service_role' OR auth.role() = 'anon'
+        (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
+        OR auth.role() = 'service_role'
+    )
+    WITH CHECK (
+        (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
+        OR auth.role() = 'service_role'
     );
 
 -- ============================================================================
@@ -248,7 +302,12 @@ ALTER TABLE public.central_procurement_tenders ENABLE ROW LEVEL SECURITY;
 
 CREATE POLICY "Tenant isolation for Tenders" ON public.central_procurement_tenders
     FOR ALL USING (
-        auth.role() = 'authenticated' OR auth.role() = 'service_role' OR auth.role() = 'anon'
+        (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
+        OR auth.role() = 'service_role'
+    )
+    WITH CHECK (
+        (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
+        OR auth.role() = 'service_role'
     );
 
 -- ============================================================================
@@ -273,7 +332,12 @@ ALTER TABLE public.central_rti_grievances ENABLE ROW LEVEL SECURITY;
 
 CREATE POLICY "Tenant isolation for RTI" ON public.central_rti_grievances
     FOR ALL USING (
-        auth.role() = 'authenticated' OR auth.role() = 'service_role' OR auth.role() = 'anon'
+        (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
+        OR auth.role() = 'service_role'
+    )
+    WITH CHECK (
+        (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
+        OR auth.role() = 'service_role'
     );
 
 -- ============================================================================
@@ -298,7 +362,12 @@ ALTER TABLE public.central_guest_house_bookings ENABLE ROW LEVEL SECURITY;
 
 CREATE POLICY "Tenant isolation for Guest House" ON public.central_guest_house_bookings
     FOR ALL USING (
-        auth.role() = 'authenticated' OR auth.role() = 'service_role' OR auth.role() = 'anon'
+        (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
+        OR auth.role() = 'service_role'
+    )
+    WITH CHECK (
+        (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
+        OR auth.role() = 'service_role'
     );
 
 -- ============================================================================
@@ -323,7 +392,12 @@ ALTER TABLE public.central_coe_press_custody ENABLE ROW LEVEL SECURITY;
 
 CREATE POLICY "Tenant isolation for CoE Press" ON public.central_coe_press_custody
     FOR ALL USING (
-        auth.role() = 'authenticated' OR auth.role() = 'service_role' OR auth.role() = 'anon'
+        (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
+        OR auth.role() = 'service_role'
+    )
+    WITH CHECK (
+        (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
+        OR auth.role() = 'service_role'
     );
 
 -- ============================================================================
@@ -347,7 +421,12 @@ ALTER TABLE public.central_convocation_records ENABLE ROW LEVEL SECURITY;
 
 CREATE POLICY "Tenant isolation for Convocation" ON public.central_convocation_records
     FOR ALL USING (
-        auth.role() = 'authenticated' OR auth.role() = 'service_role' OR auth.role() = 'anon'
+        (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
+        OR auth.role() = 'service_role'
+    )
+    WITH CHECK (
+        (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
+        OR auth.role() = 'service_role'
     );
 
 -- ============================================================================
@@ -370,7 +449,12 @@ ALTER TABLE public.central_college_affiliations ENABLE ROW LEVEL SECURITY;
 
 CREATE POLICY "Tenant isolation for College Affiliations" ON public.central_college_affiliations
     FOR ALL USING (
-        auth.role() = 'authenticated' OR auth.role() = 'service_role' OR auth.role() = 'anon'
+        (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
+        OR auth.role() = 'service_role'
+    )
+    WITH CHECK (
+        (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
+        OR auth.role() = 'service_role'
     );
 
 -- ============================================================================
@@ -394,7 +478,12 @@ ALTER TABLE public.central_student_elections ENABLE ROW LEVEL SECURITY;
 
 CREATE POLICY "Tenant isolation for Elections" ON public.central_student_elections
     FOR ALL USING (
-        auth.role() = 'authenticated' OR auth.role() = 'service_role' OR auth.role() = 'anon'
+        (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
+        OR auth.role() = 'service_role'
+    )
+    WITH CHECK (
+        (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
+        OR auth.role() = 'service_role'
     );
 
 -- ============================================================================
@@ -417,7 +506,12 @@ ALTER TABLE public.central_plagiarism_tribunals ENABLE ROW LEVEL SECURITY;
 
 CREATE POLICY "Tenant isolation for Plagiarism Tribunal" ON public.central_plagiarism_tribunals
     FOR ALL USING (
-        auth.role() = 'authenticated' OR auth.role() = 'service_role' OR auth.role() = 'anon'
+        (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
+        OR auth.role() = 'service_role'
+    )
+    WITH CHECK (
+        (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
+        OR auth.role() = 'service_role'
     );
 
 -- ============================================================================
@@ -440,7 +534,12 @@ ALTER TABLE public.central_sports_quota ENABLE ROW LEVEL SECURITY;
 
 CREATE POLICY "Tenant isolation for Sports Quota" ON public.central_sports_quota
     FOR ALL USING (
-        auth.role() = 'authenticated' OR auth.role() = 'service_role' OR auth.role() = 'anon'
+        (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
+        OR auth.role() = 'service_role'
+    )
+    WITH CHECK (
+        (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
+        OR auth.role() = 'service_role'
     );
 
 -- ============================================================================
@@ -463,7 +562,12 @@ ALTER TABLE public.central_alumni_endowments ENABLE ROW LEVEL SECURITY;
 
 CREATE POLICY "Tenant isolation for Alumni Endowments" ON public.central_alumni_endowments
     FOR ALL USING (
-        auth.role() = 'authenticated' OR auth.role() = 'service_role' OR auth.role() = 'anon'
+        (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
+        OR auth.role() = 'service_role'
+    )
+    WITH CHECK (
+        (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
+        OR auth.role() = 'service_role'
     );
 
 -- ============================================================================
@@ -471,7 +575,7 @@ CREATE POLICY "Tenant isolation for Alumni Endowments" ON public.central_alumni_
 -- ============================================================================
 CREATE TABLE IF NOT EXISTS public.faculty_research_fellowships (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    fellowship_code VARCHAR(64) NOT NULL UNIQUE,
+    fellowship_id VARCHAR(64) NOT NULL UNIQUE,
     institution_id VARCHAR(64) NOT NULL DEFAULT 'inst-apex-001',
     fellow_name TEXT NOT NULL,
     funding_agency VARCHAR(32) NOT NULL,
@@ -487,7 +591,12 @@ ALTER TABLE public.faculty_research_fellowships ENABLE ROW LEVEL SECURITY;
 
 CREATE POLICY "Tenant isolation for Research Fellowships" ON public.faculty_research_fellowships
     FOR ALL USING (
-        auth.role() = 'authenticated' OR auth.role() = 'service_role' OR auth.role() = 'anon'
+        (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
+        OR auth.role() = 'service_role'
+    )
+    WITH CHECK (
+        (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
+        OR auth.role() = 'service_role'
     );
 
 -- ============================================================================
@@ -511,7 +620,12 @@ ALTER TABLE public.faculty_ipr_patents ENABLE ROW LEVEL SECURITY;
 
 CREATE POLICY "Tenant isolation for IPR Patents" ON public.faculty_ipr_patents
     FOR ALL USING (
-        auth.role() = 'authenticated' OR auth.role() = 'service_role' OR auth.role() = 'anon'
+        (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
+        OR auth.role() = 'service_role'
+    )
+    WITH CHECK (
+        (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
+        OR auth.role() = 'service_role'
     );
 
 -- ============================================================================
@@ -535,7 +649,12 @@ ALTER TABLE public.faculty_equipment_amc ENABLE ROW LEVEL SECURITY;
 
 CREATE POLICY "Tenant isolation for Equipment AMC" ON public.faculty_equipment_amc
     FOR ALL USING (
-        auth.role() = 'authenticated' OR auth.role() = 'service_role' OR auth.role() = 'anon'
+        (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
+        OR auth.role() = 'service_role'
+    )
+    WITH CHECK (
+        (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
+        OR auth.role() = 'service_role'
     );
 
 -- ============================================================================
@@ -559,7 +678,12 @@ ALTER TABLE public.faculty_mooc_courses ENABLE ROW LEVEL SECURITY;
 
 CREATE POLICY "Tenant isolation for MOOC Courses" ON public.faculty_mooc_courses
     FOR ALL USING (
-        auth.role() = 'authenticated' OR auth.role() = 'service_role' OR auth.role() = 'anon'
+        (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
+        OR auth.role() = 'service_role'
+    )
+    WITH CHECK (
+        (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
+        OR auth.role() = 'service_role'
     );
 
 -- ============================================================================
@@ -582,7 +706,12 @@ ALTER TABLE public.faculty_academic_books ENABLE ROW LEVEL SECURITY;
 
 CREATE POLICY "Tenant isolation for Academic Books" ON public.faculty_academic_books
     FOR ALL USING (
-        auth.role() = 'authenticated' OR auth.role() = 'service_role' OR auth.role() = 'anon'
+        (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
+        OR auth.role() = 'service_role'
+    )
+    WITH CHECK (
+        (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
+        OR auth.role() = 'service_role'
     );
 
 -- ============================================================================
@@ -605,7 +734,12 @@ ALTER TABLE public.faculty_continuing_education ENABLE ROW LEVEL SECURITY;
 
 CREATE POLICY "Tenant isolation for Continuing Education" ON public.faculty_continuing_education
     FOR ALL USING (
-        auth.role() = 'authenticated' OR auth.role() = 'service_role' OR auth.role() = 'anon'
+        (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
+        OR auth.role() = 'service_role'
+    )
+    WITH CHECK (
+        (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
+        OR auth.role() = 'service_role'
     );
 
 -- ============================================================================
@@ -627,7 +761,12 @@ ALTER TABLE public.faculty_student_mentorship ENABLE ROW LEVEL SECURITY;
 
 CREATE POLICY "Tenant isolation for Mentorship" ON public.faculty_student_mentorship
     FOR ALL USING (
-        auth.role() = 'authenticated' OR auth.role() = 'service_role' OR auth.role() = 'anon'
+        (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
+        OR auth.role() = 'service_role'
+    )
+    WITH CHECK (
+        (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
+        OR auth.role() = 'service_role'
     );
 
 -- ============================================================================
@@ -649,7 +788,12 @@ ALTER TABLE public.faculty_question_papers ENABLE ROW LEVEL SECURITY;
 
 CREATE POLICY "Tenant isolation for Question Papers" ON public.faculty_question_papers
     FOR ALL USING (
-        auth.role() = 'authenticated' OR auth.role() = 'service_role' OR auth.role() = 'anon'
+        (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
+        OR auth.role() = 'service_role'
+    )
+    WITH CHECK (
+        (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
+        OR auth.role() = 'service_role'
     );
 
 -- ============================================================================
@@ -673,7 +817,12 @@ ALTER TABLE public.faculty_travel_grants ENABLE ROW LEVEL SECURITY;
 
 CREATE POLICY "Tenant isolation for Travel Grants" ON public.faculty_travel_grants
     FOR ALL USING (
-        auth.role() = 'authenticated' OR auth.role() = 'service_role' OR auth.role() = 'anon'
+        (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
+        OR auth.role() = 'service_role'
+    )
+    WITH CHECK (
+        (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
+        OR auth.role() = 'service_role'
     );
 
 -- ============================================================================
@@ -696,7 +845,12 @@ ALTER TABLE public.faculty_academic_audits ENABLE ROW LEVEL SECURITY;
 
 CREATE POLICY "Tenant isolation for Academic Audits" ON public.faculty_academic_audits
     FOR ALL USING (
-        auth.role() = 'authenticated' OR auth.role() = 'service_role' OR auth.role() = 'anon'
+        (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
+        OR auth.role() = 'service_role'
+    )
+    WITH CHECK (
+        (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
+        OR auth.role() = 'service_role'
     );
 
 -- ============================================================================
@@ -720,7 +874,12 @@ ALTER TABLE public.faculty_department_requisitions ENABLE ROW LEVEL SECURITY;
 
 CREATE POLICY "Tenant isolation for Department Requisitions" ON public.faculty_department_requisitions
     FOR ALL USING (
-        auth.role() = 'authenticated' OR auth.role() = 'service_role' OR auth.role() = 'anon'
+        (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
+        OR auth.role() = 'service_role'
+    )
+    WITH CHECK (
+        (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
+        OR auth.role() = 'service_role'
     );
 
 -- ============================================================================
@@ -748,5 +907,10 @@ ALTER TABLE public.faculty_syllabi ENABLE ROW LEVEL SECURITY;
 
 CREATE POLICY "Tenant isolation for Syllabi" ON public.faculty_syllabi
     FOR ALL USING (
-        auth.role() = 'authenticated' OR auth.role() = 'service_role' OR auth.role() = 'anon'
+        (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
+        OR auth.role() = 'service_role'
+    )
+    WITH CHECK (
+        (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
+        OR auth.role() = 'service_role'
     );
