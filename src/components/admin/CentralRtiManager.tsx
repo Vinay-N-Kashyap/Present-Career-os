@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useMemo } from 'react';
+import { useGovernanceStore } from '@/lib/hooks/useGovernanceStore';
 import {
   RtiRecord,
   RtiCategory,
@@ -14,7 +15,13 @@ import {
 } from '@/lib/admin/centralRti';
 
 export default function CentralRtiManager() {
-  const [rtis, setRtis] = useState<RtiRecord[]>(SEED_RTIS);
+  const {
+    records: rtis,
+    setRecords: setRtis,
+    syncSource,
+    isSaving,
+    saveRecord
+  } = useGovernanceStore<RtiRecord>('central_rti_grievances', SEED_RTIS, 'rtiId');
   const [selectedCategory, setSelectedCategory] = useState<RtiCategory | 'ALL'>('ALL');
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -75,7 +82,7 @@ export default function CentralRtiManager() {
     return { total, disposed, pending, complianceRate };
   }, [rtis]);
 
-  const handleRegisterRti = (e: React.FormEvent) => {
+  const handleRegisterRti = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!applicantName.trim() || !subjectDescription.trim()) {
       showToast('Please provide applicant name and subject description');
@@ -93,14 +100,14 @@ export default function CentralRtiManager() {
       cpioOfficer,
     });
 
-    setRtis([created, ...rtis]);
+    await saveRecord(created);
     setIsNewRtiModalOpen(false);
     setApplicantName('');
     setSubjectDescription('');
     showToast(`RTI Application ${created.registrationNumber} registered!`);
   };
 
-  const handleRecordDecision = (e: React.FormEvent) => {
+  const handleRecordDecision = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!decisionModalRti) return;
 
@@ -111,14 +118,14 @@ export default function CentralRtiManager() {
       dispositionDate: new Date().toISOString().split('T')[0],
     });
 
-    setRtis(rtis.map((r) => (r.rtiId === updated.rtiId ? updated : r)));
+    await saveRecord(updated);
     setDecisionModalRti(null);
     setExemptions([]);
     setDispositionRemarks('');
     showToast(`Decision recorded for ${updated.registrationNumber} with SHA-256 seal!`);
   };
 
-  const handleRecordAppeal = (e: React.FormEvent) => {
+  const handleRecordAppeal = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!appealModalRti) return;
 
@@ -128,7 +135,7 @@ export default function CentralRtiManager() {
       groundForAppeal: groundForAppeal.trim(),
     });
 
-    setRtis(rtis.map((r) => (r.rtiId === updated.rtiId ? updated : r)));
+    await saveRecord(updated);
     setAppealModalRti(null);
     showToast(`First Appeal registered for ${updated.registrationNumber}!`);
   };
@@ -172,8 +179,17 @@ export default function CentralRtiManager() {
                 CPGRAMS Redressal Active
               </span>
             </div>
-            <h1 className="text-2xl md:text-3xl font-extrabold text-white mt-2 tracking-tight">
+            <h1 className="text-2xl md:text-3xl font-extrabold text-white mt-2 tracking-tight flex items-center gap-3">
               Right to Information (RTI 2005) & Public Grievance Portal
+              <span className={`text-xs px-2.5 py-0.5 rounded-full border flex items-center gap-1.5 font-normal ${
+                syncSource === 'supabase'
+                  ? 'bg-emerald-950/80 text-emerald-300 border-emerald-700/80'
+                  : 'bg-slate-900 text-slate-400 border-slate-700'
+              }`}>
+                <span className={`w-1.5 h-1.5 rounded-full ${syncSource === 'supabase' ? 'bg-emerald-400 animate-pulse' : 'bg-slate-400'}`}></span>
+                {syncSource === 'supabase' ? 'PostgreSQL Active (support.pinit)' : 'Resilient Local Storage'}
+                {isSaving && <span className="text-emerald-400 ml-1">Saving...</span>}
+              </span>
             </h1>
             <p className="text-slate-400 text-sm mt-1 max-w-2xl leading-relaxed">
               Statutory 30-day response tracking, Section 8 exemption audits, First Appellate Authority (FAA)

@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import { useGovernanceStore } from '@/lib/hooks/useGovernanceStore';
 import {
   IprCategory,
   PatentLifecycleStage,
@@ -13,7 +14,13 @@ import {
 } from '@/lib/teacher/facultyIprPatents';
 
 export default function FacultyIprPatentsStudio() {
-  const [patents, setPatents] = useState<FacultyPatentRecord[]>(INITIAL_FACULTY_PATENTS);
+  const {
+    records: patents,
+    setRecords: setPatents,
+    syncSource,
+    isSaving,
+    saveRecord
+  } = useGovernanceStore<FacultyPatentRecord>('faculty_ipr_patents', INITIAL_FACULTY_PATENTS, 'patentId');
   const [filterCategory, setFilterCategory] = useState<IprCategory | 'ALL'>('ALL');
   const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(false);
   const [isGrantModalOpen, setIsGrantModalOpen] = useState(false);
@@ -55,7 +62,7 @@ export default function FacultyIprPatentsStudio() {
     0
   );
 
-  const handleRegisterPatent = (e: React.FormEvent) => {
+  const handleRegisterPatent = async (e: React.FormEvent) => {
     e.preventDefault();
     setFormError(null);
     try {
@@ -77,7 +84,7 @@ export default function FacultyIprPatentsStudio() {
         ],
       });
 
-      setPatents([created, ...patents]);
+      await saveRecord(created);
       setIsRegisterModalOpen(false);
       // Reset form
       setNewTitle('');
@@ -96,12 +103,12 @@ export default function FacultyIprPatentsStudio() {
     setIsGrantModalOpen(true);
   };
 
-  const handleConfirmGrant = (e: React.FormEvent) => {
+  const handleConfirmGrant = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!selectedPatent) return;
     try {
       const updated = recordPatentGrant(selectedPatent, grantDateInput);
-      setPatents(patents.map((p) => (p.patentId === updated.patentId ? updated : p)));
+      await saveRecord(updated);
       setIsGrantModalOpen(false);
       setSelectedPatent(null);
     } catch (err: unknown) {
@@ -114,7 +121,7 @@ export default function FacultyIprPatentsStudio() {
     setIsLicenseModalOpen(true);
   };
 
-  const handleConfirmLicense = (e: React.FormEvent) => {
+  const handleConfirmLicense = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!selectedPatent) return;
     try {
@@ -127,7 +134,7 @@ export default function FacultyIprPatentsStudio() {
         agreementDate: new Date().toISOString().split('T')[0],
       });
 
-      setPatents(patents.map((p) => (p.patentId === updated.patentId ? updated : p)));
+      await saveRecord(updated);
       setIsLicenseModalOpen(false);
       setSelectedPatent(null);
     } catch (err: unknown) {
@@ -160,8 +167,17 @@ export default function FacultyIprPatentsStudio() {
               UGC CAS Table 2 Category 3 & 60/20/20 Royalty
             </span>
           </div>
-          <h1 className="text-2xl font-bold tracking-tight text-white mt-2">
+          <h1 className="text-2xl font-bold tracking-tight text-white mt-2 flex items-center gap-3">
             Faculty Intellectual Property Rights (IPR) & Patent Commercialization Studio
+            <span className={`text-xs px-2.5 py-0.5 rounded-full border flex items-center gap-1.5 ${
+              syncSource === 'supabase'
+                ? 'bg-emerald-950/80 text-emerald-300 border-emerald-700/80'
+                : 'bg-slate-900 text-slate-400 border-slate-700'
+            }`}>
+              <span className={`w-1.5 h-1.5 rounded-full ${syncSource === 'supabase' ? 'bg-emerald-400 animate-pulse' : 'bg-slate-400'}`}></span>
+              {syncSource === 'supabase' ? 'PostgreSQL Active (support.pinit)' : 'Resilient Local Storage'}
+              {isSaving && <span className="text-emerald-400 ml-1">Saving...</span>}
+            </span>
           </h1>
           <p className="text-sm text-slate-400 mt-1">
             Invention Disclosures, Patent Prosecution, UGC CAS Research Credits & Statutory Commercial Royalty Distribution

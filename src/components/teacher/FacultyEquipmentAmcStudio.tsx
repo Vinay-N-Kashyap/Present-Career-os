@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import { useGovernanceStore } from '@/lib/hooks/useGovernanceStore';
 import {
   EquipmentCategory,
   MaintenanceContractType,
@@ -15,7 +16,13 @@ import {
 } from '@/lib/teacher/facultyEquipmentAmc';
 
 export default function FacultyEquipmentAmcStudio() {
-  const [assets, setAssets] = useState<EquipmentAssetRecord[]>(INITIAL_EQUIPMENT_ASSETS);
+  const {
+    records: assets,
+    setRecords: setAssets,
+    syncSource,
+    isSaving,
+    saveRecord
+  } = useGovernanceStore<EquipmentAssetRecord>('faculty_equipment_amc', INITIAL_EQUIPMENT_ASSETS, 'assetId');
   const [selectedStatus, setSelectedStatus] = useState<string>('ALL');
   const [selectedAsset, setSelectedAsset] = useState<EquipmentAssetRecord | null>(null);
 
@@ -80,7 +87,7 @@ export default function FacultyEquipmentAmcStudio() {
     : assets.filter((a) => a.status === selectedStatus);
 
   // Handlers
-  const handleRegisterAsset = (e: React.FormEvent) => {
+  const handleRegisterAsset = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
       const created = registerEquipmentAsset({
@@ -100,7 +107,7 @@ export default function FacultyEquipmentAmcStudio() {
         maxSlaResolutionHours: Number(newSlaHours),
       });
 
-      setAssets([created, ...assets]);
+      await saveRecord(created);
       setShowAddModal(false);
       showMsg(`Lab asset '${created.equipmentName}' registered (${created.trackingToken}) under ${created.contractType}.`, 'success');
     } catch (err: any) {
@@ -108,12 +115,12 @@ export default function FacultyEquipmentAmcStudio() {
     }
   };
 
-  const handleLogBreakdown = (e: React.FormEvent) => {
+  const handleLogBreakdown = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!selectedAsset) return;
     try {
       const updated = logEquipmentBreakdown(selectedAsset, Number(downtimeHours));
-      setAssets(assets.map((a) => (a.assetId === updated.assetId ? updated : a)));
+      await saveRecord(updated);
       setSelectedAsset(updated);
       setShowBreakdownModal(false);
       showMsg(`Breakdown logged (${downtimeHours}h). Accrued GFR SLA Penalty: ₹${updated.accruedDowntimePenaltyInr}.`, 'error');
@@ -122,7 +129,7 @@ export default function FacultyEquipmentAmcStudio() {
     }
   };
 
-  const handleRecordCalibration = (e: React.FormEvent) => {
+  const handleRecordCalibration = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!selectedAsset) return;
     try {
@@ -134,7 +141,7 @@ export default function FacultyEquipmentAmcStudio() {
         isCompliant: calibCompliant,
       });
 
-      setAssets(assets.map((a) => (a.assetId === updated.assetId ? updated : a)));
+      await saveRecord(updated);
       setSelectedAsset(updated);
       setShowCalibModal(false);
       showMsg(`Calibration certificate (${calibCertNo}) recorded. Status restored to ${updated.status}.`, 'success');
@@ -143,7 +150,7 @@ export default function FacultyEquipmentAmcStudio() {
     }
   };
 
-  const handleRenewContract = (e: React.FormEvent) => {
+  const handleRenewContract = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!selectedAsset) return;
     try {
@@ -155,7 +162,7 @@ export default function FacultyEquipmentAmcStudio() {
         annualContractValueInr: Number(renewVal),
       });
 
-      setAssets(assets.map((a) => (a.assetId === updated.assetId ? updated : a)));
+      await saveRecord(updated);
       setSelectedAsset(updated);
       setShowRenewModal(false);
       showMsg(`Contract renewed successfully for ₹${renewVal} with ${renewVendor}.`, 'success');
@@ -183,8 +190,17 @@ export default function FacultyEquipmentAmcStudio() {
         <div>
           <div className="flex items-center gap-3">
             <span className="text-3xl">🔬</span>
-            <h1 className="text-2xl md:text-3xl font-bold tracking-tight text-white">
+            <h1 className="text-2xl md:text-3xl font-bold tracking-tight text-white flex items-center gap-3">
               Faculty Lab Equipment Maintenance & AMC Service Studio
+              <span className={`text-xs px-2.5 py-0.5 rounded-full border flex items-center gap-1.5 font-normal ${
+                syncSource === 'supabase'
+                  ? 'bg-emerald-950/80 text-emerald-300 border-emerald-700/80'
+                  : 'bg-slate-900 text-slate-400 border-slate-700'
+              }`}>
+                <span className={`w-1.5 h-1.5 rounded-full ${syncSource === 'supabase' ? 'bg-emerald-400 animate-pulse' : 'bg-slate-400'}`}></span>
+                {syncSource === 'supabase' ? 'PostgreSQL Active (support.pinit)' : 'Resilient Local Storage'}
+                {isSaving && <span className="text-emerald-400 ml-1">Saving...</span>}
+              </span>
             </h1>
           </div>
           <p className="text-slate-400 text-sm mt-1">

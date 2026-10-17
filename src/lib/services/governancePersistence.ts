@@ -185,6 +185,57 @@ function toDbRecord(tableName: string, record: any): any {
       disbursement_status: 'CLEARED_FOR_PAYMENT',
     };
   }
+  if (tableName === 'central_procurement_tenders') {
+    return {
+      tender_id: record.tenderId || record.tenderRefNumber,
+      institution_id: record.institutionId || 'inst-apex-001',
+      procurement_title: record.title,
+      estimated_value_inr: record.estimatedValue || 0.0,
+      procurement_method: record.procurementMode || 'GEM_PORTAL',
+      technical_bids_received: Array.isArray(record.bids) ? record.bids.length : 0,
+      selected_vendor: record.awardedVendorName || (Array.isArray(record.bids) ? record.bids.find((b: any) => b.status === 'AWARDED_L1')?.vendorName : null),
+      po_number: record.poNumber || record.tenderRefNumber,
+      gfr_compliance_passed: true,
+      tender_status: record.stage || 'NIT_PUBLISHED'
+    };
+  }
+  if (tableName === 'central_rti_grievances') {
+    return {
+      appeal_number: record.registrationNumber || record.rtiId,
+      institution_id: record.institutionId || 'inst-apex-001',
+      applicant_name: record.applicantName,
+      date_of_application: record.receivedDate,
+      statutory_deadline: record.statutoryDeadlineDate || '2026-03-31',
+      query_summary: record.subjectDescription,
+      assigned_cpio: record.cpioOfficer,
+      disclosure_exempt_section_8: Array.isArray(record.exemptionsApplied) && record.exemptionsApplied.length > 0,
+      disposal_status: record.stage || 'CPIO_SCRUTINIZING'
+    };
+  }
+  if (tableName === 'faculty_ipr_patents') {
+    return {
+      application_number: record.applicationNumber || record.patentId,
+      institution_id: record.institutionId || 'inst-apex-001',
+      patent_title: record.inventionTitle,
+      lead_inventor: record.leadInventorName,
+      department: record.leadDepartment,
+      filing_jurisdiction: record.category === 'PCT_INTERNATIONAL_PATENT' ? 'PCT' : 'INDIA_IPO',
+      patent_status: record.stage || 'PATENT_PUBLISHED',
+      commercial_royalty_inr: record.commercialLicense?.totalRoyaltyRealizedInr || 0.0
+    };
+  }
+  if (tableName === 'faculty_equipment_amc') {
+    return {
+      asset_tag: record.assetId || record.trackingToken,
+      institution_id: record.institutionId || 'inst-apex-001',
+      equipment_name: record.equipmentName,
+      laboratory_location: record.labLocation,
+      vendor_name: record.vendorName,
+      amc_expiry_date: record.contractEndDate,
+      calibration_status: record.calibration?.isCompliant ? 'VALID_CALIBRATION' : 'EXPIRED_CALIBRATION',
+      annual_contract_cost_inr: record.annualContractValueInr || 45000.0
+    };
+  }
   // Generic fallback: map keys from camelCase to snake_case
   const mapped: any = {};
   for (const [k, v] of Object.entries(record)) {
@@ -410,6 +461,94 @@ function fromDbRecord<T>(tableName: string, row: any, fallbackDefault: T[]): T {
       auditSha256: def?.auditSha256 || '0000000000000000000000000000000000000000000000000000000000000000'
     } as unknown as T;
   }
+  if (tableName === 'central_procurement_tenders') {
+    const def = (fallbackDefault as any[]).find(d => d.tenderId === row.tender_id || d.tenderRefNumber === row.tender_id);
+    return {
+      tenderId: row.tender_id,
+      tenderRefNumber: def?.tenderRefNumber || row.tender_id,
+      title: row.procurement_title,
+      category: def?.category || 'SCIENTIFIC_LAB_EQUIPMENT',
+      procurementMode: row.procurement_method || 'OPEN_ADVERTISED_TENDER',
+      estimatedValue: Number(row.estimated_value_inr) || 5000000,
+      emdAmount: def?.emdAmount || 100000,
+      pbgAmount: def?.pbgAmount || 250000,
+      indenterDepartment: def?.indenterDepartment || 'Department of Chemistry',
+      publishedDate: def?.publishedDate || row.created_at?.split('T')[0] || '2026-03-01',
+      closingDate: def?.closingDate || '2026-03-31',
+      cpcChairperson: def?.cpcChairperson || 'Prof. S. R. Iyengar (Dean Infrastructure)',
+      isPac: def?.isPac || false,
+      bids: def?.bids || [],
+      stage: row.tender_status || 'NIT_PUBLISHED',
+      createdTimestamp: row.created_at,
+      auditSha256: def?.auditSha256 || '0000000000000000000000000000000000000000000000000000000000000000'
+    } as unknown as T;
+  }
+  if (tableName === 'central_rti_grievances') {
+    const def = (fallbackDefault as any[]).find(d => d.registrationNumber === row.appeal_number || d.rtiId === row.appeal_number);
+    return {
+      rtiId: def?.rtiId || row.appeal_number,
+      registrationNumber: row.appeal_number,
+      applicantName: row.applicant_name,
+      isBplExempt: def?.isBplExempt || false,
+      category: def?.category || 'ADMISSIONS_AND_RESERVATIONS',
+      subjectDescription: row.query_summary,
+      departmentConcerned: def?.departmentConcerned || 'Academic Affairs',
+      receivedDate: row.date_of_application,
+      statutoryDeadlineDate: row.statutory_deadline,
+      isLifeOrLiberty: def?.isLifeOrLiberty || false,
+      cpioOfficer: row.assigned_cpio,
+      stage: row.disposal_status || 'CPIO_SCRUTINIZING',
+      exemptionsApplied: def?.exemptionsApplied || [],
+      dispositionRemarks: def?.dispositionRemarks,
+      dispositionDate: def?.dispositionDate,
+      firstAppeal: def?.firstAppeal,
+      auditSha256: def?.auditSha256 || '0000000000000000000000000000000000000000000000000000000000000000'
+    } as unknown as T;
+  }
+  if (tableName === 'faculty_ipr_patents') {
+    const def = (fallbackDefault as any[]).find(d => d.applicationNumber === row.application_number || d.patentId === row.application_number);
+    return {
+      patentId: def?.patentId || `PAT-${row.application_number}`,
+      inventionTitle: row.patent_title,
+      category: def?.category || (row.filing_jurisdiction === 'PCT' ? 'PCT_INTERNATIONAL_PATENT' : 'NATIONAL_INDIAN_PATENT'),
+      applicationNumber: row.application_number,
+      filingDate: def?.filingDate || row.created_at?.split('T')[0] || '2026-04-10',
+      leadInventorName: row.lead_inventor,
+      leadDepartment: row.department,
+      inventors: def?.inventors || [{ empId: 'EMP-001', facultyName: row.lead_inventor, department: row.department, isLeadInventor: true, contributionPercentage: 100 }],
+      stage: row.patent_status || 'PATENT_PUBLISHED',
+      ugcCasPoints: def?.ugcCasPoints || 10,
+      commercialLicense: def?.commercialLicense,
+      auditSha256: def?.auditSha256 || '0000000000000000000000000000000000000000000000000000000000000000'
+    } as unknown as T;
+  }
+  if (tableName === 'faculty_equipment_amc') {
+    const def = (fallbackDefault as any[]).find(d => d.assetId === row.asset_tag || d.trackingToken === row.asset_tag);
+    return {
+      assetId: row.asset_tag,
+      trackingToken: def?.trackingToken || row.asset_tag,
+      equipmentName: row.equipment_name,
+      serialNumber: def?.serialNumber || 'SN-DEF-99',
+      department: def?.department || 'Computer Science & Engineering',
+      labLocation: row.laboratory_location,
+      facultyCustodianName: def?.facultyCustodianName || 'Lab Custodian',
+      facultyCustodianEmpId: def?.facultyCustodianEmpId || 'EMP-001',
+      category: def?.category || 'COMPUTING_CLUSTER_GPU',
+      procurementValueInr: def?.procurementValueInr || 5000000,
+      contractType: def?.contractType || 'COMPREHENSIVE_CAMC',
+      vendorName: row.vendor_name,
+      contractStartDate: def?.contractStartDate || '2026-01-01',
+      contractEndDate: row.amc_expiry_date,
+      annualContractValueInr: Number(row.annual_contract_cost_inr) || 350000,
+      maxSlaResolutionHours: def?.maxSlaResolutionHours || 24,
+      status: row.calibration_status === 'VALID_CALIBRATION' ? 'OPERATIONAL' : 'CALIBRATION_OVERDUE',
+      breakdowns: def?.breakdowns || [],
+      calibrations: def?.calibrations || [],
+      calibration: def?.calibration,
+      accruedDowntimePenaltyInr: def?.accruedDowntimePenaltyInr || 0,
+      auditSha256: def?.auditSha256 || '0000000000000000000000000000000000000000000000000000000000000000'
+    } as unknown as T;
+  }
   // Generic camelCase mapper
   const mapped: any = {};
   for (const [k, v] of Object.entries(row)) {
@@ -498,6 +637,14 @@ export async function saveGovernanceRecord<T extends Record<string, any>>(
     ? 'isbn'
     : tableName === 'faculty_research_fellowships'
     ? 'fellowship_id'
+    : tableName === 'central_procurement_tenders'
+    ? 'tender_id'
+    : tableName === 'central_rti_grievances'
+    ? 'appeal_number'
+    : tableName === 'faculty_ipr_patents'
+    ? 'application_number'
+    : tableName === 'faculty_equipment_amc'
+    ? 'asset_tag'
     : primaryKey.replace(/([A-Z])/g, '_$1').toLowerCase();
 
   // 1. Supabase write

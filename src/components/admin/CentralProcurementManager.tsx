@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useMemo } from 'react';
+import { useGovernanceStore } from '@/lib/hooks/useGovernanceStore';
 import {
   TenderRecord,
   TenderCategory,
@@ -14,7 +15,13 @@ import {
 } from '@/lib/admin/centralProcurement';
 
 export default function CentralProcurementManager() {
-  const [tenders, setTenders] = useState<TenderRecord[]>(SEED_TENDERS);
+  const {
+    records: tenders,
+    setRecords: setTenders,
+    syncSource,
+    isSaving,
+    saveRecord
+  } = useGovernanceStore<TenderRecord>('central_procurement_tenders', SEED_TENDERS, 'tenderId');
   const [selectedCategory, setSelectedCategory] = useState<TenderCategory | 'ALL'>('ALL');
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -74,7 +81,7 @@ export default function CentralProcurementManager() {
     };
   }, [tenders]);
 
-  const handleCreateTender = (e: React.FormEvent) => {
+  const handleCreateTender = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!title.trim() || estimatedValue <= 0) {
       showToast('Please provide valid tender title and estimated value');
@@ -92,13 +99,13 @@ export default function CentralProcurementManager() {
       isPac,
     });
 
-    setTenders([created, ...tenders]);
+    await saveRecord(created);
     setIsNewTenderModalOpen(false);
     setTitle('');
     showToast(`Tender ${created.tenderRefNumber} published successfully under GFR guidelines`);
   };
 
-  const handleAwardContract = (e: React.FormEvent) => {
+  const handleAwardContract = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!evalModalTender || !selectedBidderId) {
       showToast('Please select a qualified bidder to award');
@@ -108,7 +115,7 @@ export default function CentralProcurementManager() {
     try {
       const officerList = officers.split(',').map((o) => o.trim()).filter(Boolean);
       const updated = awardTenderContract(evalModalTender, selectedBidderId, officerList);
-      setTenders(tenders.map((t) => (t.tenderId === updated.tenderId ? updated : t)));
+      await saveRecord(updated);
       setEvalModalTender(null);
       setSelectedBidderId('');
       showToast(`Contract awarded to ${selectedBidderId} with SHA-256 seal!`);
@@ -157,8 +164,17 @@ export default function CentralProcurementManager() {
                 CVC Compliance Verified
               </span>
             </div>
-            <h1 className="text-2xl md:text-3xl font-extrabold text-white mt-2 tracking-tight">
+            <h1 className="text-2xl md:text-3xl font-extrabold text-white mt-2 tracking-tight flex items-center gap-3">
               Central University Tender & Works e-Procurement Portal
+              <span className={`text-xs px-2.5 py-0.5 rounded-full border flex items-center gap-1.5 font-normal ${
+                syncSource === 'supabase'
+                  ? 'bg-emerald-950/80 text-emerald-300 border-emerald-700/80'
+                  : 'bg-slate-900 text-slate-400 border-slate-700'
+              }`}>
+                <span className={`w-1.5 h-1.5 rounded-full ${syncSource === 'supabase' ? 'bg-emerald-400 animate-pulse' : 'bg-slate-400'}`}></span>
+                {syncSource === 'supabase' ? 'PostgreSQL Active (support.pinit)' : 'Resilient Local Storage'}
+                {isSaving && <span className="text-emerald-400 ml-1">Saving...</span>}
+              </span>
             </h1>
             <p className="text-slate-400 text-sm mt-1 max-w-2xl leading-relaxed">
               Apex institutional procurement, Central Purchase Committee (CPC) two-bid evaluations,
