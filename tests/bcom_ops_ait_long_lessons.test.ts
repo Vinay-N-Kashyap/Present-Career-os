@@ -805,5 +805,139 @@ test('Block 220: Domain specifics & deterministic Python code verification acros
   assert.ok(d25.parts[4].code?.includes('MasterAutonomousOperationsVerificationEngine'));
 });
 
+test('Block 221: B.Com Operations Days 26–30 LongLesson Structural Invariants & Spoken Word Count (>= 2,950 words/day)', () => {
+  for (let day = 26; day <= 30; day++) {
+    const lesson = getLongLesson('bcom_ops', day);
+    assert.ok(lesson, `bcom_ops Day ${day} long lesson must resolve`);
+    assert.equal(lesson.day, day);
+    assert.equal(lesson.minutes, day === 30 ? 50 : 45, `Day ${day} minutes must be ${day === 30 ? 50 : 45}`);
+    assert.equal(lesson.parts.length, 5, `Day ${day} must contain exactly 5 parts`);
+
+    let totalSpokenWords = 0;
+    for (let partIdx = 0; partIdx < 5; partIdx++) {
+      const part = lesson.parts[partIdx];
+      const partWords = Array.isArray(part.say)
+        ? part.say.reduce((acc, p) => acc + p.trim().split(/\s+/).filter(Boolean).length, 0)
+        : part.say.trim().split(/\s+/).filter(Boolean).length;
+      totalSpokenWords += partWords;
+      assert.ok(partWords >= 580, `Day ${day} Part ${partIdx + 1} has ${partWords} words; expected >= 580 words`);
+    }
+
+    assert.ok(
+      totalSpokenWords >= 2950,
+      `Day ${day} total spoken words is ${totalSpokenWords}; expected >= 2,950 words (~20.0 min spoken duration)`
+    );
+
+    assert.ok(lesson.summary && lesson.summary.length >= 5, `Day ${day} must have at least 5 summary bullet points`);
+    assert.ok(lesson.projectStep, `Day ${day} must have a hands-on projectStep`);
+    assert.ok(lesson.projectStep.steps.length >= 4, `Day ${day} projectStep must have at least 4 steps`);
+
+    for (let partIdx = 0; partIdx < 5; partIdx++) {
+      const part = lesson.parts[partIdx];
+      assert.ok(part.title.length > 0, `Day ${day} Part ${partIdx + 1} must have a non-empty title`);
+      assert.ok(part.say.length >= 4, `Day ${day} Part ${partIdx + 1} must have at least 4 exposition paragraphs`);
+      assert.ok(part.example && part.example.length > 0, `Day ${day} Part ${partIdx + 1} must have a real-world example`);
+      assert.ok(part.code && (part.code.includes('def ') || part.code.includes('class ')), `Day ${day} Part ${partIdx + 1} code must contain Python functions/classes`);
+      assert.ok(part.output && part.output.length > 0, `Day ${day} Part ${partIdx + 1} must have deterministic expected output`);
+      assert.ok(part.tryIt && part.tryIt.length > 0, `Day ${day} Part ${partIdx + 1} must have a tryIt experiment`);
+      assert.ok(part.codeNotes && part.codeNotes.length >= 3, `Day ${day} Part ${partIdx + 1} must have at least 3 codeNotes`);
+
+      const check = part.check as any;
+      assert.ok(check.question.length > 10, `Day ${day} Part ${partIdx + 1} check question must be descriptive`);
+      assert.equal(check.options.length, 4, `Day ${day} Part ${partIdx + 1} check must have exactly 4 options`);
+      assert.ok(check.answer >= 0 && check.answer < 4, `Day ${day} Part ${partIdx + 1} answer must be valid index`);
+      assert.ok(check.why && check.why.length > 15, `Day ${day} Part ${partIdx + 1} why explanation must be rigorous`);
+    }
+  }
+});
+
+test('Block 221: B.Com Operations Days 26–30 Gate v2 Workflow Visuals & Cryptographic SHA-256 Bindings', async () => {
+  const fs = await import('node:fs');
+  const path = await import('node:path');
+  const crypto = await import('node:crypto');
+  const { loadDayFile, getVisual } = await import('../src/lib/visuals/loadVisuals');
+
+  for (let day = 26; day <= 30; day++) {
+    const filePath = path.resolve(process.cwd(), `src/lib/data/lessonVisuals/bcom_ops/day-${String(day).padStart(2, '0')}.json`);
+    assert.ok(fs.existsSync(filePath), `On-disk visual file missing: ${filePath}`);
+
+    const dayFile = loadDayFile('bcom_ops', day);
+    assert.ok(dayFile, `loadDayFile failed for bcom_ops Day ${day}`);
+    assert.equal(dayFile.schemaVersion, 1);
+    assert.equal(dayFile.prefix, 'bcom_ops');
+    assert.equal(dayFile.day, day);
+    assert.equal(dayFile.entries.length, 5, `Expected 5 entries in bcom_ops Day ${day}`);
+
+    const lesson = getLongLesson('bcom_ops', day)!;
+    for (let partIdx = 0; partIdx < 5; partIdx++) {
+      const entry = dayFile.entries[partIdx];
+      const part = lesson.parts[partIdx];
+
+      assert.equal(entry.partTitle, part.title, `partTitle mismatch at bcom_ops Day ${day} Part ${partIdx}`);
+      const expectedHash = crypto.createHash('sha256').update(part.code || '').digest('hex');
+      assert.equal(entry.codeHash, expectedHash, `codeHash mismatch at bcom_ops Day ${day} Part ${partIdx}`);
+
+      const visual = getVisual('bcom_ops', day, partIdx);
+      assert.ok(visual, `getVisual returned null for bcom_ops Day ${day} Part ${partIdx}`);
+      assert.equal(visual.template, 'workflow', `Expected template "workflow" for bcom_ops`);
+      assert.equal(visual.steps.length, 4, `Expected 4 synchronized steps for bcom_ops Day ${day} Part ${partIdx}`);
+      assert.deepEqual(
+        visual.steps.map((s: any) => s.at),
+        ['intro', 'say1', 'example', 'tryIt'],
+        `Step markers must be ['intro', 'say1', 'example', 'tryIt']`
+      );
+    }
+  }
+});
+
+test('Block 221: Domain specifics & deterministic Python code verification across Days 26–30', () => {
+  // Day 26: ISO 9001:2015 QMS, Annex SL, PDCA & 8D CAPA
+  const d26 = getLongLesson('bcom_ops', 26)!;
+  assert.ok(d26.parts[0].code?.includes('evaluate_qms_annex_sl_readiness'));
+  assert.ok(d26.parts[1].code?.includes('audit_pdca_continuous_improvement_cycle'));
+  assert.ok(d26.parts[2].code?.includes('evaluate_stage1_stage2_audit_pipeline'));
+  assert.ok(d26.parts[3].code?.includes('AuditNonConformanceManager'));
+  assert.ok(d26.parts[4].code?.includes('audit_iso_non_conformance_closure'));
+  assert.ok(d26.parts[4].code?.includes('MasterIso9001CertificationEngine'));
+
+  // Day 27: Supply Chain Resilience, Dual Sourcing & Geopolitical Risk Mitigation
+  const d27 = getLongLesson('bcom_ops', 27)!;
+  assert.ok(d27.parts[0].code?.includes('analyze_single_source_vulnerability'));
+  assert.ok(d27.parts[1].code?.includes('model_china_plus_one_dual_sourcing'));
+  assert.ok(d27.parts[2].code?.includes('evaluate_nearshoring_tco_and_logistics'));
+  assert.ok(d27.parts[3].code?.includes('audit_tts_vs_ttr_buffer_resilience'));
+  assert.ok(d27.parts[4].code?.includes('calculate_supply_chain_resilience_index'));
+  assert.ok(d27.parts[4].code?.includes('MasterSupplyChainResilienceOrchestrator'));
+
+  // Day 28: Sustainable Supply Chains, ESG & Green Logistics (Scope 3, EUDR, 3TG)
+  const d28 = getLongLesson('bcom_ops', 28)!;
+  assert.ok(d28.parts[0].code?.includes('audit_scope3_value_chain_emissions'));
+  assert.ok(d28.parts[1].code?.includes('verify_eudr_gps_geolocation_compliance'));
+  assert.ok(d28.parts[2].code?.includes('audit_conflict_minerals_cmrt'));
+  assert.ok(d28.parts[3].code?.includes('evaluate_supplier_fair_labor_scorecard'));
+  assert.ok(d28.parts[4].code?.includes('audit_sustainable_procurement'));
+  assert.ok(d28.parts[4].code?.includes('MasterSustainableProcurementOrchestrator'));
+
+  // Day 29: AI & Autonomous Operations in Modern SCM (Computer Vision, Predictive Maintenance & RPA)
+  const d29 = getLongLesson('bcom_ops', 29)!;
+  assert.ok(d29.parts[0].code?.includes('inspect_surface_defects_computer_vision'));
+  assert.ok(d29.parts[1].code?.includes('predict_equipment_failure_lead_days'));
+  assert.ok(d29.parts[2].code?.includes('simulate_rpa_procurement_automation'));
+  assert.ok(d29.parts[3].code?.includes('optimize_autonomous_logistics_dispatch'));
+  assert.ok(d29.parts[4].code?.includes('evaluate_autonomous_ops'));
+  assert.ok(d29.parts[4].code?.includes('MasterAutonomousOperationsOrchestrator'));
+
+  // Day 30: Course 30 Milestone 6 Grand Final Capstone: Enterprise Operations, Supply Chain & Compliance Master Suite (50 mins)
+  const d30 = getLongLesson('bcom_ops', 30)!;
+  assert.ok(d30.parts[0].code?.includes('audit_module1_process_and_inventory_planning'));
+  assert.ok(d30.parts[1].code?.includes('audit_module2_manufacturing_and_quality'));
+  assert.ok(d30.parts[2].code?.includes('audit_module3_compliance_and_risk_governance'));
+  assert.ok(d30.parts[3].code?.includes('audit_module4_operational_execution'));
+  assert.ok(d30.parts[4].code?.includes('orchestrate_ops_suite'));
+  assert.ok(d30.parts[4].code?.includes('audit_ops_master_cert'));
+  assert.ok(d30.parts[4].code?.includes('MasterOperationsVerificationEngine'));
+});
+
+
 
 
