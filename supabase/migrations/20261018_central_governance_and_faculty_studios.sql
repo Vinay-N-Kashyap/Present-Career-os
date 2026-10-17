@@ -39,6 +39,7 @@ CREATE TABLE IF NOT EXISTS public.central_nirf_rankings (
 CREATE INDEX IF NOT EXISTS idx_nirf_inst_year ON public.central_nirf_rankings(institution_id, ranking_year);
 ALTER TABLE public.central_nirf_rankings ENABLE ROW LEVEL SECURITY;
 
+DROP POLICY IF EXISTS "Tenant isolation for NIRF rankings" ON public.central_nirf_rankings;
 CREATE POLICY "Tenant isolation for NIRF rankings" ON public.central_nirf_rankings
     FOR ALL USING (
         (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
@@ -74,6 +75,7 @@ CREATE TABLE IF NOT EXISTS public.faculty_emeritus_fellowships (
 CREATE INDEX IF NOT EXISTS idx_emeritus_inst ON public.faculty_emeritus_fellowships(institution_id);
 ALTER TABLE public.faculty_emeritus_fellowships ENABLE ROW LEVEL SECURITY;
 
+DROP POLICY IF EXISTS "Tenant isolation for Emeritus Fellowships" ON public.faculty_emeritus_fellowships;
 CREATE POLICY "Tenant isolation for Emeritus Fellowships" ON public.faculty_emeritus_fellowships
     FOR ALL USING (
         (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
@@ -105,6 +107,7 @@ CREATE TABLE IF NOT EXISTS public.central_disaster_safety (
 CREATE INDEX IF NOT EXISTS idx_disaster_inst ON public.central_disaster_safety(institution_id);
 ALTER TABLE public.central_disaster_safety ENABLE ROW LEVEL SECURITY;
 
+DROP POLICY IF EXISTS "Tenant isolation for Disaster Safety" ON public.central_disaster_safety;
 CREATE POLICY "Tenant isolation for Disaster Safety" ON public.central_disaster_safety
     FOR ALL USING (
         (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
@@ -135,6 +138,7 @@ CREATE TABLE IF NOT EXISTS public.faculty_startup_incubation (
 CREATE INDEX IF NOT EXISTS idx_incubation_inst ON public.faculty_startup_incubation(institution_id);
 ALTER TABLE public.faculty_startup_incubation ENABLE ROW LEVEL SECURITY;
 
+DROP POLICY IF EXISTS "Tenant isolation for Startup Incubation" ON public.faculty_startup_incubation;
 CREATE POLICY "Tenant isolation for Startup Incubation" ON public.faculty_startup_incubation
     FOR ALL USING (
         (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
@@ -170,6 +174,7 @@ CREATE TABLE IF NOT EXISTS public.central_equal_opportunity (
 CREATE INDEX IF NOT EXISTS idx_eoc_inst ON public.central_equal_opportunity(institution_id);
 ALTER TABLE public.central_equal_opportunity ENABLE ROW LEVEL SECURITY;
 
+DROP POLICY IF EXISTS "Tenant isolation for EOC" ON public.central_equal_opportunity;
 CREATE POLICY "Tenant isolation for EOC" ON public.central_equal_opportunity
     FOR ALL USING (
         (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
@@ -209,6 +214,7 @@ CREATE TABLE IF NOT EXISTS public.faculty_professor_of_practice (
 CREATE INDEX IF NOT EXISTS idx_pop_inst ON public.faculty_professor_of_practice(institution_id);
 ALTER TABLE public.faculty_professor_of_practice ENABLE ROW LEVEL SECURITY;
 
+DROP POLICY IF EXISTS "Tenant isolation for PoP" ON public.faculty_professor_of_practice;
 CREATE POLICY "Tenant isolation for PoP" ON public.faculty_professor_of_practice
     FOR ALL USING (
         (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
@@ -239,6 +245,7 @@ CREATE TABLE IF NOT EXISTS public.central_internal_audit_cag (
 CREATE INDEX IF NOT EXISTS idx_cag_audit_inst ON public.central_internal_audit_cag(institution_id);
 ALTER TABLE public.central_internal_audit_cag ENABLE ROW LEVEL SECURITY;
 
+DROP POLICY IF EXISTS "Tenant isolation for CAG Audit" ON public.central_internal_audit_cag;
 CREATE POLICY "Tenant isolation for CAG Audit" ON public.central_internal_audit_cag
     FOR ALL USING (
         (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
@@ -269,6 +276,7 @@ CREATE TABLE IF NOT EXISTS public.central_academic_bank_credits (
 CREATE INDEX IF NOT EXISTS idx_abc_inst ON public.central_academic_bank_credits(institution_id);
 ALTER TABLE public.central_academic_bank_credits ENABLE ROW LEVEL SECURITY;
 
+DROP POLICY IF EXISTS "Tenant isolation for ABC" ON public.central_academic_bank_credits;
 CREATE POLICY "Tenant isolation for ABC" ON public.central_academic_bank_credits
     FOR ALL USING (
         (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
@@ -300,6 +308,7 @@ CREATE TABLE IF NOT EXISTS public.central_procurement_tenders (
 CREATE INDEX IF NOT EXISTS idx_tenders_inst ON public.central_procurement_tenders(institution_id);
 ALTER TABLE public.central_procurement_tenders ENABLE ROW LEVEL SECURITY;
 
+DROP POLICY IF EXISTS "Tenant isolation for Tenders" ON public.central_procurement_tenders;
 CREATE POLICY "Tenant isolation for Tenders" ON public.central_procurement_tenders
     FOR ALL USING (
         (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
@@ -330,6 +339,7 @@ CREATE TABLE IF NOT EXISTS public.central_rti_grievances (
 CREATE INDEX IF NOT EXISTS idx_rti_inst ON public.central_rti_grievances(institution_id);
 ALTER TABLE public.central_rti_grievances ENABLE ROW LEVEL SECURITY;
 
+DROP POLICY IF EXISTS "Tenant isolation for RTI" ON public.central_rti_grievances;
 CREATE POLICY "Tenant isolation for RTI" ON public.central_rti_grievances
     FOR ALL USING (
         (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
@@ -360,6 +370,7 @@ CREATE TABLE IF NOT EXISTS public.central_guest_house_bookings (
 CREATE INDEX IF NOT EXISTS idx_guest_house_inst ON public.central_guest_house_bookings(institution_id);
 ALTER TABLE public.central_guest_house_bookings ENABLE ROW LEVEL SECURITY;
 
+DROP POLICY IF EXISTS "Tenant isolation for Guest House" ON public.central_guest_house_bookings;
 CREATE POLICY "Tenant isolation for Guest House" ON public.central_guest_house_bookings
     FOR ALL USING (
         (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
@@ -390,6 +401,7 @@ CREATE TABLE IF NOT EXISTS public.central_coe_press_custody (
 CREATE INDEX IF NOT EXISTS idx_coe_press_inst ON public.central_coe_press_custody(institution_id);
 ALTER TABLE public.central_coe_press_custody ENABLE ROW LEVEL SECURITY;
 
+DROP POLICY IF EXISTS "Tenant isolation for CoE Press" ON public.central_coe_press_custody;
 CREATE POLICY "Tenant isolation for CoE Press" ON public.central_coe_press_custody
     FOR ALL USING (
         (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
@@ -419,6 +431,7 @@ CREATE TABLE IF NOT EXISTS public.central_convocation_records (
 CREATE INDEX IF NOT EXISTS idx_convocation_inst ON public.central_convocation_records(institution_id);
 ALTER TABLE public.central_convocation_records ENABLE ROW LEVEL SECURITY;
 
+DROP POLICY IF EXISTS "Tenant isolation for Convocation" ON public.central_convocation_records;
 CREATE POLICY "Tenant isolation for Convocation" ON public.central_convocation_records
     FOR ALL USING (
         (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
@@ -447,6 +460,7 @@ CREATE TABLE IF NOT EXISTS public.central_college_affiliations (
 CREATE INDEX IF NOT EXISTS idx_affiliation_inst ON public.central_college_affiliations(institution_id);
 ALTER TABLE public.central_college_affiliations ENABLE ROW LEVEL SECURITY;
 
+DROP POLICY IF EXISTS "Tenant isolation for College Affiliations" ON public.central_college_affiliations;
 CREATE POLICY "Tenant isolation for College Affiliations" ON public.central_college_affiliations
     FOR ALL USING (
         (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
@@ -476,6 +490,7 @@ CREATE TABLE IF NOT EXISTS public.central_student_elections (
 CREATE INDEX IF NOT EXISTS idx_elections_inst ON public.central_student_elections(institution_id);
 ALTER TABLE public.central_student_elections ENABLE ROW LEVEL SECURITY;
 
+DROP POLICY IF EXISTS "Tenant isolation for Elections" ON public.central_student_elections;
 CREATE POLICY "Tenant isolation for Elections" ON public.central_student_elections
     FOR ALL USING (
         (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
@@ -504,6 +519,7 @@ CREATE TABLE IF NOT EXISTS public.central_plagiarism_tribunals (
 CREATE INDEX IF NOT EXISTS idx_tribunal_inst ON public.central_plagiarism_tribunals(institution_id);
 ALTER TABLE public.central_plagiarism_tribunals ENABLE ROW LEVEL SECURITY;
 
+DROP POLICY IF EXISTS "Tenant isolation for Plagiarism Tribunal" ON public.central_plagiarism_tribunals;
 CREATE POLICY "Tenant isolation for Plagiarism Tribunal" ON public.central_plagiarism_tribunals
     FOR ALL USING (
         (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
@@ -532,6 +548,7 @@ CREATE TABLE IF NOT EXISTS public.central_sports_quota (
 CREATE INDEX IF NOT EXISTS idx_sports_inst ON public.central_sports_quota(institution_id);
 ALTER TABLE public.central_sports_quota ENABLE ROW LEVEL SECURITY;
 
+DROP POLICY IF EXISTS "Tenant isolation for Sports Quota" ON public.central_sports_quota;
 CREATE POLICY "Tenant isolation for Sports Quota" ON public.central_sports_quota
     FOR ALL USING (
         (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
@@ -560,6 +577,7 @@ CREATE TABLE IF NOT EXISTS public.central_alumni_endowments (
 CREATE INDEX IF NOT EXISTS idx_alumni_inst ON public.central_alumni_endowments(institution_id);
 ALTER TABLE public.central_alumni_endowments ENABLE ROW LEVEL SECURITY;
 
+DROP POLICY IF EXISTS "Tenant isolation for Alumni Endowments" ON public.central_alumni_endowments;
 CREATE POLICY "Tenant isolation for Alumni Endowments" ON public.central_alumni_endowments
     FOR ALL USING (
         (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
@@ -589,6 +607,7 @@ CREATE TABLE IF NOT EXISTS public.faculty_research_fellowships (
 CREATE INDEX IF NOT EXISTS idx_fellowship_inst ON public.faculty_research_fellowships(institution_id);
 ALTER TABLE public.faculty_research_fellowships ENABLE ROW LEVEL SECURITY;
 
+DROP POLICY IF EXISTS "Tenant isolation for Research Fellowships" ON public.faculty_research_fellowships;
 CREATE POLICY "Tenant isolation for Research Fellowships" ON public.faculty_research_fellowships
     FOR ALL USING (
         (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
@@ -618,6 +637,7 @@ CREATE TABLE IF NOT EXISTS public.faculty_ipr_patents (
 CREATE INDEX IF NOT EXISTS idx_patents_inst ON public.faculty_ipr_patents(institution_id);
 ALTER TABLE public.faculty_ipr_patents ENABLE ROW LEVEL SECURITY;
 
+DROP POLICY IF EXISTS "Tenant isolation for IPR Patents" ON public.faculty_ipr_patents;
 CREATE POLICY "Tenant isolation for IPR Patents" ON public.faculty_ipr_patents
     FOR ALL USING (
         (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
@@ -647,6 +667,7 @@ CREATE TABLE IF NOT EXISTS public.faculty_equipment_amc (
 CREATE INDEX IF NOT EXISTS idx_amc_inst ON public.faculty_equipment_amc(institution_id);
 ALTER TABLE public.faculty_equipment_amc ENABLE ROW LEVEL SECURITY;
 
+DROP POLICY IF EXISTS "Tenant isolation for Equipment AMC" ON public.faculty_equipment_amc;
 CREATE POLICY "Tenant isolation for Equipment AMC" ON public.faculty_equipment_amc
     FOR ALL USING (
         (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
@@ -676,6 +697,7 @@ CREATE TABLE IF NOT EXISTS public.faculty_mooc_courses (
 CREATE INDEX IF NOT EXISTS idx_mooc_inst ON public.faculty_mooc_courses(institution_id);
 ALTER TABLE public.faculty_mooc_courses ENABLE ROW LEVEL SECURITY;
 
+DROP POLICY IF EXISTS "Tenant isolation for MOOC Courses" ON public.faculty_mooc_courses;
 CREATE POLICY "Tenant isolation for MOOC Courses" ON public.faculty_mooc_courses
     FOR ALL USING (
         (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
@@ -704,6 +726,7 @@ CREATE TABLE IF NOT EXISTS public.faculty_academic_books (
 CREATE INDEX IF NOT EXISTS idx_books_inst ON public.faculty_academic_books(institution_id);
 ALTER TABLE public.faculty_academic_books ENABLE ROW LEVEL SECURITY;
 
+DROP POLICY IF EXISTS "Tenant isolation for Academic Books" ON public.faculty_academic_books;
 CREATE POLICY "Tenant isolation for Academic Books" ON public.faculty_academic_books
     FOR ALL USING (
         (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
@@ -732,6 +755,7 @@ CREATE TABLE IF NOT EXISTS public.faculty_continuing_education (
 CREATE INDEX IF NOT EXISTS idx_fdp_inst ON public.faculty_continuing_education(institution_id);
 ALTER TABLE public.faculty_continuing_education ENABLE ROW LEVEL SECURITY;
 
+DROP POLICY IF EXISTS "Tenant isolation for Continuing Education" ON public.faculty_continuing_education;
 CREATE POLICY "Tenant isolation for Continuing Education" ON public.faculty_continuing_education
     FOR ALL USING (
         (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
@@ -759,6 +783,7 @@ CREATE TABLE IF NOT EXISTS public.faculty_student_mentorship (
 CREATE INDEX IF NOT EXISTS idx_mentorship_inst ON public.faculty_student_mentorship(institution_id);
 ALTER TABLE public.faculty_student_mentorship ENABLE ROW LEVEL SECURITY;
 
+DROP POLICY IF EXISTS "Tenant isolation for Mentorship" ON public.faculty_student_mentorship;
 CREATE POLICY "Tenant isolation for Mentorship" ON public.faculty_student_mentorship
     FOR ALL USING (
         (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
@@ -786,6 +811,7 @@ CREATE TABLE IF NOT EXISTS public.faculty_question_papers (
 CREATE INDEX IF NOT EXISTS idx_qp_inst ON public.faculty_question_papers(institution_id);
 ALTER TABLE public.faculty_question_papers ENABLE ROW LEVEL SECURITY;
 
+DROP POLICY IF EXISTS "Tenant isolation for Question Papers" ON public.faculty_question_papers;
 CREATE POLICY "Tenant isolation for Question Papers" ON public.faculty_question_papers
     FOR ALL USING (
         (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
@@ -815,6 +841,7 @@ CREATE TABLE IF NOT EXISTS public.faculty_travel_grants (
 CREATE INDEX IF NOT EXISTS idx_travel_inst ON public.faculty_travel_grants(institution_id);
 ALTER TABLE public.faculty_travel_grants ENABLE ROW LEVEL SECURITY;
 
+DROP POLICY IF EXISTS "Tenant isolation for Travel Grants" ON public.faculty_travel_grants;
 CREATE POLICY "Tenant isolation for Travel Grants" ON public.faculty_travel_grants
     FOR ALL USING (
         (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
@@ -843,6 +870,7 @@ CREATE TABLE IF NOT EXISTS public.faculty_academic_audits (
 CREATE INDEX IF NOT EXISTS idx_acad_audit_inst ON public.faculty_academic_audits(institution_id);
 ALTER TABLE public.faculty_academic_audits ENABLE ROW LEVEL SECURITY;
 
+DROP POLICY IF EXISTS "Tenant isolation for Academic Audits" ON public.faculty_academic_audits;
 CREATE POLICY "Tenant isolation for Academic Audits" ON public.faculty_academic_audits
     FOR ALL USING (
         (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
@@ -872,6 +900,7 @@ CREATE TABLE IF NOT EXISTS public.faculty_department_requisitions (
 CREATE INDEX IF NOT EXISTS idx_requisitions_inst ON public.faculty_department_requisitions(institution_id);
 ALTER TABLE public.faculty_department_requisitions ENABLE ROW LEVEL SECURITY;
 
+DROP POLICY IF EXISTS "Tenant isolation for Department Requisitions" ON public.faculty_department_requisitions;
 CREATE POLICY "Tenant isolation for Department Requisitions" ON public.faculty_department_requisitions
     FOR ALL USING (
         (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
@@ -905,6 +934,7 @@ CREATE TABLE IF NOT EXISTS public.faculty_syllabi (
 CREATE INDEX IF NOT EXISTS idx_syllabi_inst ON public.faculty_syllabi(institution_id);
 ALTER TABLE public.faculty_syllabi ENABLE ROW LEVEL SECURITY;
 
+DROP POLICY IF EXISTS "Tenant isolation for Syllabi" ON public.faculty_syllabi;
 CREATE POLICY "Tenant isolation for Syllabi" ON public.faculty_syllabi
     FOR ALL USING (
         (auth.role() = 'authenticated' AND (institution_id = coalesce(auth.jwt()->>'institution_id', auth.jwt()->'app_metadata'->>'institution_id', 'inst-apex-001')))
