@@ -67,7 +67,7 @@ test('Quant & Excel Long Lessons: Resolution & Structural Invariants', () => {
   assert.equal(excelLesson5.day, 5);
   assert.equal(excelLesson5.parts.length, 5, 'excel_viz Day 5 must contain exactly 5 parts');
 
-  for (let d = 6; d <= 30; d++) {
+  for (let d = 6; d <= 40; d++) {
     const el = getLongLesson('excel_viz', d);
     assert.ok(el, `excel_viz Day ${d} long lesson must resolve`);
     assert.equal(el.day, d);
@@ -2464,6 +2464,162 @@ test('Excel Viz Day 35: Milestone 4: ApexValuation Three-Statement Financial Mod
   assert.ok(lesson.parts[3].code?.includes('BoardroomValuationPitchGateway'));
   assert.ok(lesson.parts[4].code?.includes('MasterApexValuationEngine'));
 });
+
+test('Excel Viz Day 36: Power Query M Language Internals: Table Transformations, Custom Functions & Query Folding Optimization', () => {
+  const lesson = getLongLesson('excel_viz', 36);
+  assert.ok(lesson, 'excel_viz Day 36 must resolve');
+  assert.equal(lesson.day, 36);
+  assert.equal(lesson.parts.length, 5);
+
+  const spokenMin = estimateSpokenMinutes(lesson);
+  assert.ok(spokenMin >= 20, `Spoken minutes should be >= 20 (got ${spokenMin})`);
+
+  for (const part of lesson.parts) {
+    assert.ok(part.title.length > 0);
+    assert.ok(part.say.length >= 3);
+    assert.ok(part.example && part.example.length > 0);
+    assert.ok(part.code && part.code.includes('class '));
+    assert.ok(part.output && part.output.length > 0);
+    assert.ok(part.tryIt && part.tryIt.length > 0);
+
+    const check = part.check as any;
+    assert.ok(check.question.length > 10);
+    assert.equal(check.options.length, 4);
+    assert.ok(check.answer >= 0 && check.answer < 4);
+    assert.ok(check.why.length > 15);
+  }
+
+  assert.ok(lesson.parts[0].code?.includes('MFunctionalEvaluationEngine'));
+  assert.ok(lesson.parts[1].code?.includes('MCustomFunctionCompiler'));
+  assert.ok(lesson.parts[2].code?.includes('QueryFoldingTranslator'));
+  assert.ok(lesson.parts[3].code?.includes('QueryFoldingBreakerDiagnostic'));
+  assert.ok(lesson.parts[4].code?.includes('MasterPowerQueryEtlGateway'));
+});
+
+test('Excel Viz Day 37: Dimensional Modeling in Excel: Star Schemas, Fact vs Dimension Tables & Active vs Inactive Relationships', () => {
+  const lesson = getLongLesson('excel_viz', 37);
+  assert.ok(lesson, 'excel_viz Day 37 must resolve');
+  assert.equal(lesson.day, 37);
+  assert.equal(lesson.parts.length, 5);
+
+  const spokenMin = estimateSpokenMinutes(lesson);
+  assert.ok(spokenMin >= 20, `Spoken minutes should be >= 20 (got ${spokenMin})`);
+
+  for (const part of lesson.parts) {
+    assert.ok(part.title.length > 0);
+    assert.ok(part.say.length >= 3);
+    assert.ok(part.example && part.example.length > 0);
+    assert.ok(part.code && part.code.includes('class '));
+    assert.ok(part.output && part.output.length > 0);
+    assert.ok(part.tryIt && part.tryIt.length > 0);
+
+    const check = part.check as any;
+    assert.ok(check.question.length > 10);
+    assert.equal(check.options.length, 4);
+    assert.ok(check.answer >= 0 && check.answer < 4);
+    assert.ok(check.why.length > 15);
+  }
+
+  assert.ok(lesson.parts[0].code?.includes('StarSchemaTopologyEngine'));
+  assert.ok(lesson.parts[1].code?.includes('VertiPaqCompressionSimulator'));
+  assert.ok(lesson.parts[2].code?.includes('SurrogateKeyIntegrityAuditor'));
+  assert.ok(lesson.parts[3].code?.includes('RolePlayingDimensionManager'));
+  assert.ok(lesson.parts[4].code?.includes('MasterEnterpriseStarSchemaGateway'));
+});
+
+test('Excel Viz Day 38: Introduction to DAX (Data Analysis Expressions): Calculated Columns vs Measures, Filter Context & Row Context', () => {
+  const lesson = getLongLesson('excel_viz', 38);
+  assert.ok(lesson, 'excel_viz Day 38 must resolve');
+  assert.equal(lesson.day, 38);
+  assert.equal(lesson.parts.length, 5);
+
+  const spokenMin = estimateSpokenMinutes(lesson);
+  assert.ok(spokenMin >= 20, `Spoken minutes should be >= 20 (got ${spokenMin})`);
+
+  for (const part of lesson.parts) {
+    assert.ok(part.title.length > 0);
+    assert.ok(part.say.length >= 3);
+    assert.ok(part.example && part.example.length > 0);
+    assert.ok(part.code && part.code.includes('class '));
+    assert.ok(part.output && part.output.length > 0);
+    assert.ok(part.tryIt && part.tryIt.length > 0);
+
+    const check = part.check as any;
+    assert.ok(check.question.length > 10);
+    assert.equal(check.options.length, 4);
+    assert.ok(check.answer >= 0 && check.answer < 4);
+    assert.ok(check.why.length > 15);
+  }
+
+  assert.ok(lesson.parts[0].code?.includes('EvaluationContextEngine'));
+  assert.ok(lesson.parts[1].code?.includes('CalculatedColumnMemoryAuditor'));
+  assert.ok(lesson.parts[2].code?.includes('CalculateContextTransitionEngine'));
+  assert.ok(lesson.parts[3].code?.includes('IterativeXAggregatorEngine'));
+  assert.ok(lesson.parts[4].code?.includes('MasterDaxEvaluationGateway'));
+});
+
+test('Excel Viz Day 39: Time Intelligence in DAX: TOTALYTD, SAMEPERIODLASTYEAR, Rolling Averages & Calendar Tables', () => {
+  const lesson = getLongLesson('excel_viz', 39);
+  assert.ok(lesson, 'excel_viz Day 39 must resolve');
+  assert.equal(lesson.day, 39);
+  assert.equal(lesson.parts.length, 5);
+
+  const spokenMin = estimateSpokenMinutes(lesson);
+  assert.ok(spokenMin >= 20, `Spoken minutes should be >= 20 (got ${spokenMin})`);
+
+  for (const part of lesson.parts) {
+    assert.ok(part.title.length > 0);
+    assert.ok(part.say.length >= 3);
+    assert.ok(part.example && part.example.length > 0);
+    assert.ok(part.code && part.code.includes('class '));
+    assert.ok(part.output && part.output.length > 0);
+    assert.ok(part.tryIt && part.tryIt.length > 0);
+
+    const check = part.check as any;
+    assert.ok(check.question.length > 10);
+    assert.equal(check.options.length, 4);
+    assert.ok(check.answer >= 0 && check.answer < 4);
+    assert.ok(check.why.length > 15);
+  }
+
+  assert.ok(lesson.parts[0].code?.includes('ContiguousCalendarAuditor'));
+  assert.ok(lesson.parts[1].code?.includes('TotalYtdVarianceEngine'));
+  assert.ok(lesson.parts[2].code?.includes('SamePeriodLastYearEngine'));
+  assert.ok(lesson.parts[3].code?.includes('RollingPeriodDaxEngine'));
+  assert.ok(lesson.parts[4].code?.includes('MasterTimeIntelligenceGateway'));
+});
+
+test('Excel Viz Day 40: Milestone 5: ApexModel Star Schema Data Modeling & High-Performance DAX Engine Suite', () => {
+  const lesson = getLongLesson('excel_viz', 40);
+  assert.ok(lesson, 'excel_viz Day 40 must resolve');
+  assert.equal(lesson.day, 40);
+  assert.equal(lesson.parts.length, 5);
+
+  const spokenMin = estimateSpokenMinutes(lesson);
+  assert.ok(spokenMin >= 20, `Spoken minutes should be >= 20 (got ${spokenMin})`);
+
+  for (const part of lesson.parts) {
+    assert.ok(part.title.length > 0);
+    assert.ok(part.say.length >= 3);
+    assert.ok(part.example && part.example.length > 0);
+    assert.ok(part.code && part.code.includes('class '));
+    assert.ok(part.output && part.output.length > 0);
+    assert.ok(part.tryIt && part.tryIt.length > 0);
+
+    const check = part.check as any;
+    assert.ok(check.question.length > 10);
+    assert.equal(check.options.length, 4);
+    assert.ok(check.answer >= 0 && check.answer < 4);
+    assert.ok(check.why.length > 15);
+  }
+
+  assert.ok(lesson.parts[0].code?.includes('Milestone5ModelAuditor'));
+  assert.ok(lesson.parts[1].code?.includes('MultiSourceQueryFoldingPipeline'));
+  assert.ok(lesson.parts[2].code?.includes('VertiPaqPerformanceProfiler'));
+  assert.ok(lesson.parts[3].code?.includes('ExecutiveDaxMetricEngine'));
+  assert.ok(lesson.parts[4].code?.includes('MasterApexModelPlatform'));
+});
+
 
 
 

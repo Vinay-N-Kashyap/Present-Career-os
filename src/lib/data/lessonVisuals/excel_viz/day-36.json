@@ -1,0 +1,592 @@
+[
+  {
+    "partTitle": "M Language Functional Architecture & Let-In Evaluation Graph",
+    "codeHash": "ade8cedd23fbe6b60d7090912530b9cbccbae2746f4722adc4b93fd4140674e5",
+    "spec": {
+      "template": "bars",
+      "title": "M Language Functional Architecture & Let-In Evaluation Graph — Power Query M Language Internals: Table Transformations, Custom Functions & Query Folding Optimization",
+      "steps": [
+        {
+          "at": "intro",
+          "caption": "Step 1: Ledger ingestion and statutory framework for M Language Functional Architecture & Let-In Evaluation Graph",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Mashup Engine DAG",
+              "value": 25,
+              "tone": "accent"
+            },
+            {
+              "label": "Custom M Functions",
+              "value": 20,
+              "tone": "data"
+            },
+            {
+              "label": "Relational Pushdown",
+              "value": 15,
+              "tone": "data"
+            },
+            {
+              "label": "Folding Audit Seal",
+              "value": 10,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "say1",
+          "caption": "Step 2: Processing recursive linkages and calculations for M Language Functional Architecture & Let-In Evaluation Graph",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Mashup Engine DAG",
+              "value": 65,
+              "tone": "accent"
+            },
+            {
+              "label": "Custom M Functions",
+              "value": 60,
+              "tone": "data"
+            },
+            {
+              "label": "Relational Pushdown",
+              "value": 55,
+              "tone": "data"
+            },
+            {
+              "label": "Folding Audit Seal",
+              "value": 45,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "example",
+          "caption": "Step 3: Real-world stress testing and scenarios for M Language Functional Architecture & Let-In Evaluation Graph",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Mashup Engine DAG",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "Custom M Functions",
+              "value": 80,
+              "tone": "data"
+            },
+            {
+              "label": "Relational Pushdown",
+              "value": 75,
+              "tone": "data"
+            },
+            {
+              "label": "Folding Audit Seal",
+              "value": 70,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "tryIt",
+          "caption": "Step 4: Active experimentation and parameter tuning for M Language Functional Architecture & Let-In Evaluation Graph",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Mashup Engine DAG",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "Custom M Functions",
+              "value": 95,
+              "tone": "data"
+            },
+            {
+              "label": "Relational Pushdown",
+              "value": 90,
+              "tone": "data"
+            },
+            {
+              "label": "Folding Audit Seal",
+              "value": 85,
+              "tone": "data"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "partTitle": "Parametric Custom Functions & First-Class Function Composition",
+    "codeHash": "131926ccceb97f2f7fff611d60bd2f39765f1749a65b9a25504f5ea5231ff6ec",
+    "spec": {
+      "template": "bars",
+      "title": "Parametric Custom Functions & First-Class Function Composition — Power Query M Language Internals: Table Transformations, Custom Functions & Query Folding Optimization",
+      "steps": [
+        {
+          "at": "intro",
+          "caption": "Step 1: Ledger ingestion and statutory framework for Parametric Custom Functions & First-Class Function Composition",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Mashup Engine DAG",
+              "value": 25,
+              "tone": "accent"
+            },
+            {
+              "label": "Custom M Functions",
+              "value": 20,
+              "tone": "data"
+            },
+            {
+              "label": "Relational Pushdown",
+              "value": 15,
+              "tone": "data"
+            },
+            {
+              "label": "Folding Audit Seal",
+              "value": 10,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "say1",
+          "caption": "Step 2: Processing recursive linkages and calculations for Parametric Custom Functions & First-Class Function Composition",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Mashup Engine DAG",
+              "value": 65,
+              "tone": "accent"
+            },
+            {
+              "label": "Custom M Functions",
+              "value": 60,
+              "tone": "data"
+            },
+            {
+              "label": "Relational Pushdown",
+              "value": 55,
+              "tone": "data"
+            },
+            {
+              "label": "Folding Audit Seal",
+              "value": 45,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "example",
+          "caption": "Step 3: Real-world stress testing and scenarios for Parametric Custom Functions & First-Class Function Composition",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Mashup Engine DAG",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "Custom M Functions",
+              "value": 80,
+              "tone": "data"
+            },
+            {
+              "label": "Relational Pushdown",
+              "value": 75,
+              "tone": "data"
+            },
+            {
+              "label": "Folding Audit Seal",
+              "value": 70,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "tryIt",
+          "caption": "Step 4: Active experimentation and parameter tuning for Parametric Custom Functions & First-Class Function Composition",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Mashup Engine DAG",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "Custom M Functions",
+              "value": 95,
+              "tone": "data"
+            },
+            {
+              "label": "Relational Pushdown",
+              "value": 90,
+              "tone": "data"
+            },
+            {
+              "label": "Folding Audit Seal",
+              "value": 85,
+              "tone": "data"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "partTitle": "Query Folding Pushdown Mechanics & OData/SQL Translation Graph",
+    "codeHash": "6e31358d583242e27e8c43982425a884d3b828360c7cd087113384900c4e6f38",
+    "spec": {
+      "template": "bars",
+      "title": "Query Folding Pushdown Mechanics & OData/SQL Translation Graph — Power Query M Language Internals: Table Transformations, Custom Functions & Query Folding Optimization",
+      "steps": [
+        {
+          "at": "intro",
+          "caption": "Step 1: Ledger ingestion and statutory framework for Query Folding Pushdown Mechanics & OData/SQL Translation Graph",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Mashup Engine DAG",
+              "value": 25,
+              "tone": "accent"
+            },
+            {
+              "label": "Custom M Functions",
+              "value": 20,
+              "tone": "data"
+            },
+            {
+              "label": "Relational Pushdown",
+              "value": 15,
+              "tone": "data"
+            },
+            {
+              "label": "Folding Audit Seal",
+              "value": 10,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "say1",
+          "caption": "Step 2: Processing recursive linkages and calculations for Query Folding Pushdown Mechanics & OData/SQL Translation Graph",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Mashup Engine DAG",
+              "value": 65,
+              "tone": "accent"
+            },
+            {
+              "label": "Custom M Functions",
+              "value": 60,
+              "tone": "data"
+            },
+            {
+              "label": "Relational Pushdown",
+              "value": 55,
+              "tone": "data"
+            },
+            {
+              "label": "Folding Audit Seal",
+              "value": 45,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "example",
+          "caption": "Step 3: Real-world stress testing and scenarios for Query Folding Pushdown Mechanics & OData/SQL Translation Graph",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Mashup Engine DAG",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "Custom M Functions",
+              "value": 80,
+              "tone": "data"
+            },
+            {
+              "label": "Relational Pushdown",
+              "value": 75,
+              "tone": "data"
+            },
+            {
+              "label": "Folding Audit Seal",
+              "value": 70,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "tryIt",
+          "caption": "Step 4: Active experimentation and parameter tuning for Query Folding Pushdown Mechanics & OData/SQL Translation Graph",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Mashup Engine DAG",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "Custom M Functions",
+              "value": 95,
+              "tone": "data"
+            },
+            {
+              "label": "Relational Pushdown",
+              "value": 90,
+              "tone": "data"
+            },
+            {
+              "label": "Folding Audit Seal",
+              "value": 85,
+              "tone": "data"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "partTitle": "Breaking Query Folding: WAN Bottlenecks & Streaming Record Buffering",
+    "codeHash": "f814751740e88cdff448557babedfd7cee5c6c6fdae0bc67e2cae87978240a74",
+    "spec": {
+      "template": "bars",
+      "title": "Breaking Query Folding: WAN Bottlenecks & Streaming Record Buffering — Power Query M Language Internals: Table Transformations, Custom Functions & Query Folding Optimization",
+      "steps": [
+        {
+          "at": "intro",
+          "caption": "Step 1: Ledger ingestion and statutory framework for Breaking Query Folding: WAN Bottlenecks & Streaming Record Buffering",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Mashup Engine DAG",
+              "value": 25,
+              "tone": "accent"
+            },
+            {
+              "label": "Custom M Functions",
+              "value": 20,
+              "tone": "data"
+            },
+            {
+              "label": "Relational Pushdown",
+              "value": 15,
+              "tone": "data"
+            },
+            {
+              "label": "Folding Audit Seal",
+              "value": 10,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "say1",
+          "caption": "Step 2: Processing recursive linkages and calculations for Breaking Query Folding: WAN Bottlenecks & Streaming Record Buffering",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Mashup Engine DAG",
+              "value": 65,
+              "tone": "accent"
+            },
+            {
+              "label": "Custom M Functions",
+              "value": 60,
+              "tone": "data"
+            },
+            {
+              "label": "Relational Pushdown",
+              "value": 55,
+              "tone": "data"
+            },
+            {
+              "label": "Folding Audit Seal",
+              "value": 45,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "example",
+          "caption": "Step 3: Real-world stress testing and scenarios for Breaking Query Folding: WAN Bottlenecks & Streaming Record Buffering",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Mashup Engine DAG",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "Custom M Functions",
+              "value": 80,
+              "tone": "data"
+            },
+            {
+              "label": "Relational Pushdown",
+              "value": 75,
+              "tone": "data"
+            },
+            {
+              "label": "Folding Audit Seal",
+              "value": 70,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "tryIt",
+          "caption": "Step 4: Active experimentation and parameter tuning for Breaking Query Folding: WAN Bottlenecks & Streaming Record Buffering",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Mashup Engine DAG",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "Custom M Functions",
+              "value": 95,
+              "tone": "data"
+            },
+            {
+              "label": "Relational Pushdown",
+              "value": 90,
+              "tone": "data"
+            },
+            {
+              "label": "Folding Audit Seal",
+              "value": 85,
+              "tone": "data"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "partTitle": "Enterprise Power Query Mashup Engine & Folding Telemetry Gateway",
+    "codeHash": "520ae2f5b9056bea336a0b48f043b40c4dfc89b6f130d5a4314c4f48f1beb3fb",
+    "spec": {
+      "template": "bars",
+      "title": "Enterprise Power Query Mashup Engine & Folding Telemetry Gateway — Power Query M Language Internals: Table Transformations, Custom Functions & Query Folding Optimization",
+      "steps": [
+        {
+          "at": "intro",
+          "caption": "Step 1: Ledger ingestion and statutory framework for Enterprise Power Query Mashup Engine & Folding Telemetry Gateway",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Mashup Engine DAG",
+              "value": 25,
+              "tone": "accent"
+            },
+            {
+              "label": "Custom M Functions",
+              "value": 20,
+              "tone": "data"
+            },
+            {
+              "label": "Relational Pushdown",
+              "value": 15,
+              "tone": "data"
+            },
+            {
+              "label": "Folding Audit Seal",
+              "value": 10,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "say1",
+          "caption": "Step 2: Processing recursive linkages and calculations for Enterprise Power Query Mashup Engine & Folding Telemetry Gateway",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Mashup Engine DAG",
+              "value": 65,
+              "tone": "accent"
+            },
+            {
+              "label": "Custom M Functions",
+              "value": 60,
+              "tone": "data"
+            },
+            {
+              "label": "Relational Pushdown",
+              "value": 55,
+              "tone": "data"
+            },
+            {
+              "label": "Folding Audit Seal",
+              "value": 45,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "example",
+          "caption": "Step 3: Real-world stress testing and scenarios for Enterprise Power Query Mashup Engine & Folding Telemetry Gateway",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Mashup Engine DAG",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "Custom M Functions",
+              "value": 80,
+              "tone": "data"
+            },
+            {
+              "label": "Relational Pushdown",
+              "value": 75,
+              "tone": "data"
+            },
+            {
+              "label": "Folding Audit Seal",
+              "value": 70,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "tryIt",
+          "caption": "Step 4: Active experimentation and parameter tuning for Enterprise Power Query Mashup Engine & Folding Telemetry Gateway",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Mashup Engine DAG",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "Custom M Functions",
+              "value": 95,
+              "tone": "data"
+            },
+            {
+              "label": "Relational Pushdown",
+              "value": 90,
+              "tone": "data"
+            },
+            {
+              "label": "Folding Audit Seal",
+              "value": 85,
+              "tone": "data"
+            }
+          ]
+        }
+      ]
+    }
+  }
+]
