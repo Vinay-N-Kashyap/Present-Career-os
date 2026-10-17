@@ -328,6 +328,52 @@ function toDbRecord(tableName: string, record: any): any {
       moderation_passed: record.status === 'APPROVED_FOR_COE' || Boolean(record.moderation_passed)
     };
   }
+  if (tableName === 'central_student_elections') {
+    return {
+      election_id: record.electionId || record.certificateToken || record.id,
+      election_year: parseInt(record.academicYear?.split('-')[0]) || record.election_year || 2026,
+      institution_id: record.institutionId || 'inst-apex-001',
+      post_title: record.post || record.post_title || 'PRESIDENT',
+      candidates: record.candidates || [],
+      total_ballots_cast: Number(record.totalVotesCast ?? record.total_ballots_cast ?? 0),
+      lyngdoh_committee_compliant: Boolean(record.modelCodeViolationsCount === 0 || record.lyngdoh_committee_compliant !== false),
+      election_status: record.stage || record.election_status || 'NOTIFICATION_ISSUED'
+    };
+  }
+  if (tableName === 'central_plagiarism_tribunals') {
+    return {
+      dossier_number: record.caseId || record.trackingToken || record.id,
+      institution_id: record.institutionId || 'inst-apex-001',
+      candidate_id: record.respondentName || record.candidate_id || 'CAND-001',
+      thesis_title: record.documentTitle || record.thesis_title || 'Dissertation',
+      similarity_percentage: Number(record.netSimilarityPercentage ?? record.rawSimilarityPercentage ?? record.similarity_percentage ?? 0),
+      ugc_plagiarism_level: record.plagiarismLevel === 'LEVEL_3_SEVERE' ? 3 : record.plagiarismLevel === 'LEVEL_2_MODERATE' ? 2 : record.plagiarismLevel === 'LEVEL_1_MINOR' ? 1 : (Number(record.ugc_plagiarism_level) || 0),
+      tribunal_ruling: record.stage || record.tribunal_ruling || 'ALLEGATION_REGISTERED'
+    };
+  }
+  if (tableName === 'faculty_travel_grants') {
+    return {
+      grant_request_id: record.grantId || record.deputationTrackingNumber || record.id,
+      institution_id: record.institutionId || 'inst-apex-001',
+      faculty_applicant: record.facultyName || record.faculty_applicant || 'Faculty Applicant',
+      conference_name: record.conferenceTitle || record.conference_name || 'Conference',
+      destination_country: record.destinationCityCountry || record.destination_country || 'India',
+      sanctioned_amount_inr: Number(record.sanctionedAmount ?? record.estimatedTotalInr ?? record.sanctioned_amount_inr ?? 0),
+      cpda_balance_remaining_inr: Number(record.availableCpdaBalance ?? record.cpda_balance_remaining_inr ?? 100000),
+      approval_status: record.stage || record.approval_status || 'DIRECTOR_SANCTIONED'
+    };
+  }
+  if (tableName === 'faculty_academic_audits') {
+    return {
+      audit_id: record.auditId || record.auditRefNumber || record.id,
+      institution_id: record.institutionId || 'inst-apex-001',
+      auditee_faculty: record.facultyInstructor || record.auditee_faculty || 'Auditee Faculty',
+      peer_observer: record.peerAuditor || record.peer_observer || 'Peer Observer',
+      course_name: record.courseTitle || record.course_name || 'Course',
+      pedagogical_score: Number(record.compositeAqi ?? record.pedagogical_score ?? 4.0),
+      feedback_notes: record.recommendations || record.commendations || record.feedback_notes || 'Pedagogical feedback'
+    };
+  }
   // Generic fallback: map keys from camelCase to snake_case
   const mapped: any = {};
   for (const [k, v] of Object.entries(record)) {
@@ -853,6 +899,117 @@ function fromDbRecord<T>(tableName: string, row: any, fallbackDefault: T[]): T {
       lastUpdated: row.updated_at || new Date().toISOString()
     } as unknown as T;
   }
+  if (tableName === 'central_student_elections') {
+    const def = (fallbackDefault as any[]).find(d => d.electionId === row.election_id || d.certificateToken === row.election_id);
+    return {
+      electionId: row.election_id,
+      certificateToken: def?.certificateToken || `ELEC-2026-${row.post_title}-${row.election_id}`,
+      post: row.post_title,
+      academicYear: def?.academicYear || `${row.election_year}-${row.election_year + 1}`,
+      stage: row.election_status || 'NOTIFICATION_ISSUED',
+      returningOfficerName: def?.returningOfficerName || 'Prof. Dean of Student Affairs',
+      pollingDate: def?.pollingDate || '2026-09-25',
+      eligibleVoterCount: def?.eligibleVoterCount || 4200,
+      totalVotesCast: Number(row.total_ballots_cast) || 0,
+      rejectedBallotsCount: def?.rejectedBallotsCount || 0,
+      candidates: row.candidates || def?.candidates || [],
+      declaredWinnerCandidateId: def?.declaredWinnerCandidateId,
+      modelCodeViolationsCount: row.lyngdoh_committee_compliant ? 0 : (def?.modelCodeViolationsCount || 1),
+      cryptographicElectionSeal: def?.cryptographicElectionSeal,
+      lastUpdated: row.updated_at || new Date().toISOString()
+    } as unknown as T;
+  }
+  if (tableName === 'central_plagiarism_tribunals') {
+    const def = (fallbackDefault as any[]).find(d => d.caseId === row.dossier_number || d.trackingToken === row.dossier_number);
+    return {
+      caseId: row.dossier_number,
+      trackingToken: def?.trackingToken || `PLAG-2026-CSE-${row.dossier_number}`,
+      documentTitle: row.thesis_title,
+      respondentName: row.candidate_id,
+      respondentRole: def?.respondentRole || 'RESEARCH_SCHOLAR',
+      department: def?.department || 'Computer Science & Engineering',
+      complainantType: def?.complainantType || 'EXAMINER',
+      allegationDate: def?.allegationDate || '2026-03-01',
+      rawSimilarityPercentage: Number(row.similarity_percentage) || 15.0,
+      netSimilarityPercentage: Number(row.similarity_percentage) || 15.0,
+      plagiarismLevel: row.ugc_plagiarism_level === 3 ? 'LEVEL_3_SEVERE' : row.ugc_plagiarism_level === 2 ? 'LEVEL_2_MODERATE' : row.ugc_plagiarism_level === 1 ? 'LEVEL_1_MINOR' : 'LEVEL_0_TOLERABLE',
+      exclusions: def?.exclusions || {
+        excludeBibliography: true,
+        excludeQuotesAndAttributions: true,
+        excludeSmallMatchesUnder10Words: true,
+        excludeGenericMathematicalFormulas: true
+      },
+      stage: row.tribunal_ruling || 'ALLEGATION_REGISTERED',
+      daipChairmanName: def?.daipChairmanName || 'Prof. HoD',
+      daipFindings: def?.daipFindings,
+      iaipChairmanName: def?.iaipChairmanName,
+      iaipHearingDate: def?.iaipHearingDate,
+      statutoryStudentPenalty: def?.statutoryStudentPenalty,
+      statutoryFacultyPenalty: def?.statutoryFacultyPenalty,
+      finalOrderResolutionNumber: def?.finalOrderResolutionNumber,
+      cryptographicSeal: def?.cryptographicSeal,
+      lastUpdated: row.updated_at || new Date().toISOString()
+    } as unknown as T;
+  }
+  if (tableName === 'faculty_travel_grants') {
+    const def = (fallbackDefault as any[]).find(d => d.grantId === row.grant_request_id || d.deputationTrackingNumber === row.grant_request_id);
+    return {
+      grantId: row.grant_request_id,
+      deputationTrackingNumber: def?.deputationTrackingNumber || `DEP-2026-${row.grant_request_id}`,
+      facultyName: row.faculty_applicant,
+      facultyEmpId: def?.facultyEmpId || 'FAC-EMP-001',
+      department: def?.department || 'Computer Science & Engineering',
+      fundingScheme: def?.fundingScheme || 'INST_CPDA_SCHEME',
+      conferenceTitle: row.conference_name,
+      conferenceTier: def?.conferenceTier || 'TIER_1_CORE_A_STAR',
+      destinationCityCountry: row.destination_country,
+      paperTitle: def?.paperTitle || 'Research Publication',
+      presentationType: def?.presentationType || 'ORAL_TECHNICAL',
+      travelStartDate: def?.travelStartDate || '2026-08-15',
+      travelEndDate: def?.travelEndDate || '2026-08-21',
+      durationDays: def?.durationDays || 7,
+      expenses: def?.expenses || { airfare: 75000, registrationFee: 50000, dailyAllowance: 36000, visaAndInsurance: 10000 },
+      estimatedTotalInr: Number(row.sanctioned_amount_inr) || 171000,
+      availableCpdaBalance: Number(row.cpda_balance_remaining_inr) || 300000,
+      stage: row.approval_status || 'DIRECTOR_SANCTIONED',
+      sanctionedAmount: Number(row.sanctioned_amount_inr) || 171000,
+      meaClearanceNumber: def?.meaClearanceNumber,
+      approvalRemarks: def?.approvalRemarks,
+      cryptographicSeal: def?.cryptographicSeal,
+      lastUpdated: row.updated_at || new Date().toISOString()
+    } as unknown as T;
+  }
+  if (tableName === 'faculty_academic_audits') {
+    const def = (fallbackDefault as any[]).find(d => d.auditId === row.audit_id || d.auditRefNumber === row.audit_id);
+    return {
+      auditId: row.audit_id,
+      auditRefNumber: def?.auditRefNumber || `AAA-2026-${row.audit_id}`,
+      auditType: def?.auditType || 'PEER_CLASSROOM_TEACHING_OBSERVATION',
+      facultyInstructor: row.auditee_faculty,
+      peerAuditor: row.peer_observer,
+      department: def?.department || 'Engineering',
+      courseCode: def?.courseCode || 'ENG-101',
+      courseTitle: row.course_name,
+      topicTaught: def?.topicTaught || 'Advanced Topics',
+      classBatch: def?.classBatch || 'Batch 2026',
+      scheduledDate: def?.scheduledDate || '2026-03-10',
+      observationDate: def?.observationDate,
+      scores: def?.scores || {
+        coursePlanAdherence: Number(row.pedagogical_score) || 4.5,
+        activeLearningEngagement: 4.5,
+        ictIntegration: 4.5,
+        formativeAssessment: 4.0,
+        inclusivityAndSupport: 4.5
+      },
+      compositeAqi: Number(row.pedagogical_score) || 4.4,
+      qualityGrade: def?.qualityGrade || 'Exemplary (A++)',
+      commendations: def?.commendations || 'Effective pedagogical practices.',
+      recommendations: row.feedback_notes || def?.recommendations || 'Maintain high engagement.',
+      facultyRemarks: def?.facultyRemarks,
+      stage: def?.stage || 'REPORT_SUBMITTED',
+      cryptographicSeal: def?.cryptographicSeal
+    } as unknown as T;
+  }
   // Generic camelCase mapper
   const mapped: any = {};
   for (const [k, v] of Object.entries(row)) {
@@ -965,6 +1122,14 @@ export async function saveGovernanceRecord<T extends Record<string, any>>(
     ? 'mentorship_cohort_id'
     : tableName === 'faculty_question_papers'
     ? 'paper_token'
+    : tableName === 'central_student_elections'
+    ? 'election_id'
+    : tableName === 'central_plagiarism_tribunals'
+    ? 'dossier_number'
+    : tableName === 'faculty_travel_grants'
+    ? 'grant_request_id'
+    : tableName === 'faculty_academic_audits'
+    ? 'audit_id'
     : primaryKey.replace(/([A-Z])/g, '_$1').toLowerCase();
 
   // 1. Supabase write

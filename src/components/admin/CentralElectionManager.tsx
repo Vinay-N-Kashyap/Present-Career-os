@@ -18,9 +18,20 @@ import {
   certifyElectionResults,
   exportElectionAuditCSV,
 } from '@/lib/admin/centralElections';
+import { useGovernanceStore } from '@/lib/hooks/useGovernanceStore';
 
 export default function CentralElectionManager() {
-  const [elections, setElections] = useState<ElectionRecord[]>(INITIAL_ELECTION_RECORDS);
+  const {
+    records: elections,
+    setRecords: setElections,
+    syncSource,
+    isSaving,
+    saveRecord
+  } = useGovernanceStore<ElectionRecord>(
+    'central_student_elections',
+    INITIAL_ELECTION_RECORDS,
+    'electionId'
+  );
   const [selectedStage, setSelectedStage] = useState<string>('ALL');
   const [selectedElection, setSelectedElection] = useState<ElectionRecord | null>(null);
 
@@ -78,7 +89,7 @@ export default function CentralElectionManager() {
     : elections.filter((e) => e.stage === selectedStage);
 
   // Handlers
-  const handleCreateElection = (e: React.FormEvent) => {
+  const handleCreateElection = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
       const created = initializeElectionNotification({
@@ -89,6 +100,7 @@ export default function CentralElectionManager() {
         eligibleVoterCount: Number(newVoterCount),
       });
       setElections([created, ...elections]);
+      await saveRecord(created);
       setShowNotifyModal(false);
       showMsg(`Election notification issued for post of ${newPost} (${created.certificateToken}).`, 'success');
     } catch (err: any) {
@@ -96,7 +108,7 @@ export default function CentralElectionManager() {
     }
   };
 
-  const handleRegisterNomination = (e: React.FormEvent) => {
+  const handleRegisterNomination = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!selectedElection) return;
     try {
@@ -114,6 +126,7 @@ export default function CentralElectionManager() {
       });
       setElections(elections.map((item) => (item.electionId === updated.electionId ? updated : item)));
       setSelectedElection(updated);
+      await saveRecord(updated);
       setShowNominateModal(false);
       const addedCandidate = updated.candidates[updated.candidates.length - 1];
       if (addedCandidate.isScrutinyApproved) {
@@ -126,17 +139,18 @@ export default function CentralElectionManager() {
     }
   };
 
-  const handleFinalizeScrutiny = (election: ElectionRecord) => {
+  const handleFinalizeScrutiny = async (election: ElectionRecord) => {
     try {
       const updated = finalizeCandidateScrutiny(election);
       setElections(elections.map((item) => (item.electionId === updated.electionId ? updated : item)));
+      await saveRecord(updated);
       showMsg(`Scrutiny finalized for ${election.post}. Ballot list locked for campaigning.`, 'success');
     } catch (err: any) {
       showMsg(err.message, 'error');
     }
   };
 
-  const handleAuditExpense = (e: React.FormEvent) => {
+  const handleAuditExpense = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!selectedElection || !selectedCandidateId) return;
     const candidate = selectedElection.candidates.find((c) => c.candidateId === selectedCandidateId);
@@ -156,17 +170,19 @@ export default function CentralElectionManager() {
     const updated = { ...selectedElection, candidates: updatedCandidates };
     setElections(elections.map((item) => (item.electionId === updated.electionId ? updated : item)));
     setSelectedElection(updated);
+    await saveRecord(updated);
     setShowExpenseModal(false);
     showMsg(`Campaign expense of ₹${expenseAmount} logged (Total: ₹${audit.totalExpenditureInr}/${MAX_CAMPAIGN_EXPENDITURE_INR}).`, 'success');
   };
 
-  const handleRecordPolling = (e: React.FormEvent) => {
+  const handleRecordPolling = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!selectedElection) return;
     try {
       const updated = recordPollingResults(selectedElection, pollingVotes, Number(rejectedBallots));
       setElections(elections.map((item) => (item.electionId === updated.electionId ? updated : item)));
       setSelectedElection(updated);
+      await saveRecord(updated);
       setShowPollingModal(false);
       showMsg(`Secret ballot polling votes successfully recorded and verified.`, 'success');
     } catch (err: any) {
@@ -174,10 +190,11 @@ export default function CentralElectionManager() {
     }
   };
 
-  const handleCertifyResults = (election: ElectionRecord) => {
+  const handleCertifyResults = async (election: ElectionRecord) => {
     try {
       const updated = certifyElectionResults(election);
       setElections(elections.map((item) => (item.electionId === updated.electionId ? updated : item)));
+      await saveRecord(updated);
       const winner = updated.candidates.find((c) => c.candidateId === updated.declaredWinnerCandidateId);
       showMsg(`Election certified! Declared Winner: ${winner?.fullName || 'Candidate'} with ${winner?.votesReceived} votes.`, 'success');
     } catch (err: any) {
@@ -213,6 +230,11 @@ export default function CentralElectionManager() {
           </p>
         </div>
         <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-800 border border-slate-700 text-slate-300">
+            <span className={`w-2 h-2 rounded-full ${syncSource === 'supabase' ? 'bg-emerald-400 animate-pulse' : 'bg-amber-400'}`} />
+            <span>{syncSource === 'supabase' ? 'Live Supabase DB' : syncSource === 'local_storage' ? 'Local Persistence' : 'Runtime Cache'}</span>
+            {isSaving && <span className="text-cyan-400 ml-1">(saving...)</span>}
+          </div>
           <button
             onClick={() => setShowNotifyModal(true)}
             className="px-4 py-2 bg-indigo-600 hover:bg-indigo-500 text-white rounded-lg text-sm font-medium transition flex items-center gap-2 shadow-sm"

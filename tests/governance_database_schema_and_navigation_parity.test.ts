@@ -54,6 +54,10 @@ test('1. Database Migration: 20261018 SQL Schema File Exists & Contains Invarian
   assert.ok(content.includes('public.central_college_affiliations'));
   assert.ok(content.includes('public.faculty_student_mentorship'));
   assert.ok(content.includes('public.faculty_question_papers'));
+  assert.ok(content.includes('public.central_student_elections'));
+  assert.ok(content.includes('public.central_plagiarism_tribunals'));
+  assert.ok(content.includes('public.faculty_travel_grants'));
+  assert.ok(content.includes('public.faculty_academic_audits'));
 
   // Verify RLS security invariants
   const rlsMatches = content.match(/ENABLE ROW LEVEL SECURITY/g) || [];
@@ -148,6 +152,35 @@ test('2. Universal Persistence: Resilient Fallback Works Without Crashes', async
     'paperToken'
   );
   assert.equal(paperSave.success, true);
+
+  // Test Batch 6 saving resilience
+  const electionsSave = await saveGovernanceRecord(
+    'central_student_elections',
+    { electionId: 'ELEC-TEST-01', post: 'PRESIDENT', academicYear: '2026-2027', stage: 'NOTIFICATION_ISSUED' },
+    'electionId'
+  );
+  assert.equal(electionsSave.success, true);
+
+  const plagiarismSave = await saveGovernanceRecord(
+    'central_plagiarism_tribunals',
+    { caseId: 'CASE-TEST-01', documentTitle: 'Thesis A', respondentName: 'Scholar A', plagiarismLevel: 'LEVEL_1_MINOR' },
+    'caseId'
+  );
+  assert.equal(plagiarismSave.success, true);
+
+  const travelSave = await saveGovernanceRecord(
+    'faculty_travel_grants',
+    { grantId: 'GRANT-TEST-01', facultyName: 'Dr. Test', conferenceTitle: 'IEEE 2026', destinationCityCountry: 'Singapore' },
+    'grantId'
+  );
+  assert.equal(travelSave.success, true);
+
+  const auditSave = await saveGovernanceRecord(
+    'faculty_academic_audits',
+    { auditId: 'AUDIT-TEST-01', facultyInstructor: 'Dr. Faculty', peerAuditor: 'Dr. Peer', courseTitle: 'Advanced AI' },
+    'auditId'
+  );
+  assert.equal(auditSave.success, true);
 });
 
 test('3. Campus Admin Shell Navigation: All 40 Portals Route to Real App Router Pages', () => {

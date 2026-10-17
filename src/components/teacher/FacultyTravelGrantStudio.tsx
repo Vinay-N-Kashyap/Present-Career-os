@@ -13,9 +13,20 @@ import {
   settleTravelReimbursement,
   exportTravelGrantsCSV,
 } from '@/lib/teacher/facultyTravelGrants';
+import { useGovernanceStore } from '@/lib/hooks/useGovernanceStore';
 
 export default function FacultyTravelGrantStudio() {
-  const [grants, setGrants] = useState<TravelGrantRecord[]>(SEED_TRAVEL_GRANTS);
+  const {
+    records: grants,
+    setRecords: setGrants,
+    syncSource,
+    isSaving,
+    saveRecord
+  } = useGovernanceStore<TravelGrantRecord>(
+    'faculty_travel_grants',
+    SEED_TRAVEL_GRANTS,
+    'grantId'
+  );
   const [selectedScheme, setSelectedScheme] = useState<TravelFundingScheme | 'ALL'>('ALL');
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -94,7 +105,7 @@ export default function FacultyTravelGrantStudio() {
     };
   }, [grants]);
 
-  const handleCreateProposal = (e: React.FormEvent) => {
+  const handleCreateProposal = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!facultyName.trim() || !conferenceTitle.trim() || !paperTitle.trim()) {
       showToast('Please provide faculty name, conference title, and accepted paper title');
@@ -118,6 +129,7 @@ export default function FacultyTravelGrantStudio() {
       });
 
       setGrants([created, ...grants]);
+      await saveRecord(created);
       setIsNewProposalModalOpen(false);
       showToast(`Deputation proposal ${created.deputationRefNumber} submitted!`);
     } catch (err: unknown) {
@@ -126,7 +138,7 @@ export default function FacultyTravelGrantStudio() {
     }
   };
 
-  const handleAdvanceStage = (e: React.FormEvent) => {
+  const handleAdvanceStage = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!stageModalGrant) return;
 
@@ -137,11 +149,12 @@ export default function FacultyTravelGrantStudio() {
     });
 
     setGrants(grants.map((g) => (g.grantId === updated.grantId ? updated : g)));
+    await saveRecord(updated);
     setStageModalGrant(null);
     showToast(`Deputation advanced to ${targetStage.replace(/_/g, ' ')}!`);
   };
 
-  const handleSettleReimbursement = (e: React.FormEvent) => {
+  const handleSettleReimbursement = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!settleModalGrant) return;
 
@@ -152,6 +165,7 @@ export default function FacultyTravelGrantStudio() {
     );
 
     setGrants(grants.map((g) => (g.grantId === updated.grantId ? updated : g)));
+    await saveRecord(updated);
     setSettleModalGrant(null);
     showToast(`Travel claim settled at ₹${actualAmount.toLocaleString('en-IN')} with SHA-256 seal!`);
   };
@@ -204,6 +218,11 @@ export default function FacultyTravelGrantStudio() {
             </p>
           </div>
           <div className="flex flex-wrap items-center gap-3">
+            <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-800 border border-slate-700 text-slate-300">
+              <span className={`w-2 h-2 rounded-full ${syncSource === 'supabase' ? 'bg-emerald-400 animate-pulse' : 'bg-amber-400'}`} />
+              <span>{syncSource === 'supabase' ? 'Live Supabase DB' : syncSource === 'local_storage' ? 'Local Persistence' : 'Runtime Cache'}</span>
+              {isSaving && <span className="text-cyan-400 ml-1">(saving...)</span>}
+            </div>
             <button
               onClick={() => setIsNewProposalModalOpen(true)}
               className="bg-emerald-600 hover:bg-emerald-500 text-white font-medium px-4 py-2.5 rounded-xl shadow-lg transition flex items-center gap-2 border border-emerald-400/40 text-sm"

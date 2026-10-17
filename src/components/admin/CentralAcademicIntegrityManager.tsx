@@ -14,9 +14,20 @@ import {
   adjudicateFinalPenalty,
   exportPlagiarismTribunalCSV,
 } from '@/lib/admin/centralAcademicIntegrity';
+import { useGovernanceStore } from '@/lib/hooks/useGovernanceStore';
 
 export default function CentralAcademicIntegrityManager() {
-  const [cases, setCases] = useState<PlagiarismCaseRecord[]>(INITIAL_PLAGIARISM_CASES);
+  const {
+    records: cases,
+    setRecords: setCases,
+    syncSource,
+    isSaving,
+    saveRecord
+  } = useGovernanceStore<PlagiarismCaseRecord>(
+    'central_plagiarism_tribunals',
+    INITIAL_PLAGIARISM_CASES,
+    'caseId'
+  );
   const [selectedLevel, setSelectedLevel] = useState<string>('ALL');
   const [selectedCase, setSelectedCase] = useState<PlagiarismCaseRecord | null>(null);
 
@@ -75,7 +86,7 @@ export default function CentralAcademicIntegrityManager() {
     : cases.filter((c) => c.plagiarismLevel === selectedLevel);
 
   // Handlers
-  const handleRegisterCase = (e: React.FormEvent) => {
+  const handleRegisterCase = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
       const created = registerPlagiarismAllegation({
@@ -96,6 +107,7 @@ export default function CentralAcademicIntegrityManager() {
       });
 
       setCases([created, ...cases]);
+      await saveRecord(created);
       setShowRegisterModal(false);
       showMsg(`Allegation registered (${created.trackingToken}): Assessed as ${created.plagiarismLevel.replace(/_/g, ' ')}.`, 'success');
     } catch (err: any) {
@@ -103,13 +115,14 @@ export default function CentralAcademicIntegrityManager() {
     }
   };
 
-  const handleRecordDaip = (e: React.FormEvent) => {
+  const handleRecordDaip = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!selectedCase) return;
     try {
       const updated = recordDaipInquiryReport(selectedCase, daipFindingsText, Number(daipConfirmedPct));
       setCases(cases.map((c) => (c.caseId === updated.caseId ? updated : c)));
       setSelectedCase(updated);
+      await saveRecord(updated);
       setShowDaipModal(false);
       showMsg(`DAIP inquiry report submitted. Net similarity: ${updated.netSimilarityPercentage}%. Stage: ${updated.stage}.`, 'success');
     } catch (err: any) {
@@ -117,13 +130,14 @@ export default function CentralAcademicIntegrityManager() {
     }
   };
 
-  const handleScheduleIaip = (e: React.FormEvent) => {
+  const handleScheduleIaip = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!selectedCase) return;
     try {
       const updated = scheduleIaipHearing(selectedCase, iaipChair, iaipDate);
       setCases(cases.map((c) => (c.caseId === updated.caseId ? updated : c)));
       setSelectedCase(updated);
+      await saveRecord(updated);
       setShowIaipModal(false);
       showMsg(`IAIP hearing scheduled on ${iaipDate} under ${iaipChair}.`, 'success');
     } catch (err: any) {
@@ -131,13 +145,14 @@ export default function CentralAcademicIntegrityManager() {
     }
   };
 
-  const handleAdjudicateVerdict = (e: React.FormEvent) => {
+  const handleAdjudicateVerdict = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!selectedCase) return;
     try {
       const updated = adjudicateFinalPenalty(selectedCase, verdictResolution);
       setCases(cases.map((c) => (c.caseId === updated.caseId ? updated : c)));
       setSelectedCase(updated);
+      await saveRecord(updated);
       setShowVerdictModal(false);
       showMsg(`Final statutory penalty order executed: Resolution ${updated.finalOrderResolutionNumber}.`, 'success');
     } catch (err: any) {
@@ -173,6 +188,11 @@ export default function CentralAcademicIntegrityManager() {
           </p>
         </div>
         <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-800 border border-slate-700 text-slate-300">
+            <span className={`w-2 h-2 rounded-full ${syncSource === 'supabase' ? 'bg-emerald-400 animate-pulse' : 'bg-amber-400'}`} />
+            <span>{syncSource === 'supabase' ? 'Live Supabase DB' : syncSource === 'local_storage' ? 'Local Persistence' : 'Runtime Cache'}</span>
+            {isSaving && <span className="text-cyan-400 ml-1">(saving...)</span>}
+          </div>
           <button
             onClick={() => setShowRegisterModal(true)}
             className="px-4 py-2 bg-indigo-600 hover:bg-indigo-500 text-white rounded-lg text-sm font-medium transition flex items-center gap-2 shadow-sm"

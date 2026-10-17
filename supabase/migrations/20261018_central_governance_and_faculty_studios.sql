@@ -378,6 +378,7 @@ CREATE POLICY "Tenant isolation for College Affiliations" ON public.central_coll
 -- ============================================================================
 CREATE TABLE IF NOT EXISTS public.central_student_elections (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    election_id VARCHAR(64) NOT NULL UNIQUE,
     election_year INT NOT NULL DEFAULT 2026,
     institution_id VARCHAR(64) NOT NULL DEFAULT 'inst-apex-001',
     post_title VARCHAR(64) NOT NULL,

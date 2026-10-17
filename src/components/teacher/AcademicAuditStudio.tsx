@@ -11,9 +11,20 @@ import {
   facultyAcknowledgeAudit,
   exportAcademicAuditLedgerCSV,
 } from '@/lib/teacher/academicAudit';
+import { useGovernanceStore } from '@/lib/hooks/useGovernanceStore';
 
 export default function AcademicAuditStudio() {
-  const [observations, setObservations] = useState<PeerObservationRecord[]>(SEED_OBSERVATIONS);
+  const {
+    records: observations,
+    setRecords: setObservations,
+    syncSource,
+    isSaving,
+    saveRecord
+  } = useGovernanceStore<PeerObservationRecord>(
+    'faculty_academic_audits',
+    SEED_OBSERVATIONS,
+    'auditId'
+  );
   const [selectedType, setSelectedType] = useState<AcademicAuditType | 'ALL'>('ALL');
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -84,7 +95,7 @@ export default function AcademicAuditStudio() {
     return { total, completedCount: completed.length, avgAqi, pendingAck, scheduled };
   }, [observations]);
 
-  const handleScheduleObservation = (e: React.FormEvent) => {
+  const handleScheduleObservation = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!facultyInstructor.trim() || !courseCode.trim() || !topicTaught.trim()) {
       showToast('Please provide complete instructor, course, and topic information');
@@ -103,11 +114,12 @@ export default function AcademicAuditStudio() {
     });
 
     setObservations([created, ...observations]);
+    await saveRecord(created);
     setIsScheduleModalOpen(false);
     showToast(`Peer observation ${created.auditRefNumber} scheduled successfully!`);
   };
 
-  const handleSubmitReport = (e: React.FormEvent) => {
+  const handleSubmitReport = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!reportModalObs) return;
 
@@ -120,6 +132,7 @@ export default function AcademicAuditStudio() {
       });
 
       setObservations(observations.map((o) => (o.auditId === updated.auditId ? updated : o)));
+      await saveRecord(updated);
       setReportModalObs(null);
       showToast(`Observation report submitted with AQI ${updated.compositeAqi} and SHA-256 seal!`);
     } catch (err: unknown) {
@@ -128,7 +141,7 @@ export default function AcademicAuditStudio() {
     }
   };
 
-  const handleAcknowledge = (e: React.FormEvent) => {
+  const handleAcknowledge = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!ackModalObs || !facultyRemarks.trim()) {
       showToast('Please provide your acknowledgement remarks');
@@ -137,6 +150,7 @@ export default function AcademicAuditStudio() {
 
     const updated = facultyAcknowledgeAudit(ackModalObs, facultyRemarks.trim());
     setObservations(observations.map((o) => (o.auditId === updated.auditId ? updated : o)));
+    await saveRecord(updated);
     setAckModalObs(null);
     showToast(`Feedback acknowledged for ${updated.auditRefNumber}!`);
   };
@@ -189,6 +203,11 @@ export default function AcademicAuditStudio() {
             </p>
           </div>
           <div className="flex flex-wrap items-center gap-3">
+            <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-800 border border-slate-700 text-slate-300">
+              <span className={`w-2 h-2 rounded-full ${syncSource === 'supabase' ? 'bg-emerald-400 animate-pulse' : 'bg-amber-400'}`} />
+              <span>{syncSource === 'supabase' ? 'Live Supabase DB' : syncSource === 'local_storage' ? 'Local Persistence' : 'Runtime Cache'}</span>
+              {isSaving && <span className="text-cyan-400 ml-1">(saving...)</span>}
+            </div>
             <button
               onClick={() => setIsScheduleModalOpen(true)}
               className="bg-amber-600 hover:bg-amber-500 text-white font-medium px-4 py-2.5 rounded-xl shadow-lg transition flex items-center gap-2 border border-amber-400/40 text-sm"
