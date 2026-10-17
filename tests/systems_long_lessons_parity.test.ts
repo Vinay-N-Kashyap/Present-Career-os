@@ -2613,6 +2613,137 @@ test('Systems Long Lessons: git_vcs Day 50 Milestone 7 (M2): ApexAutomate Enterp
   assert.ok(res5.stdout?.includes('AUDIT_SEAL: APEX-AUTOMATE-MILESTONE-7-CERTIFIED'));
 });
 
+test('Systems Long Lessons: git_vcs Day 51 Git Performance Tuning: core.fsmonitor (Watchman), Commit-Graphs, Untracked Cache & Reachability Bitmaps', async () => {
+  const d51 = getLongLesson('git_vcs', 51);
+  assert.ok(d51, 'git_vcs Day 51 must resolve');
+  assert.equal(d51.day, 51);
+  assert.equal(d51.parts.length, 5);
 
+  const res1 = await executeBashSuite(d51.parts[0].code!);
+  assert.equal(res1.allPassed, true);
+  assert.ok(res1.stdout?.includes('ARCHITECTURE: Event-Driven Filesystem Monitoring & Reachability Bitmaps'));
 
+  const res2 = await executeBashSuite(d51.parts[1].code!);
+  assert.equal(res2.allPassed, true);
+  assert.ok(res2.stdout?.includes('REMEDIATION_LATENCY: Reduced from 45,000ms to 18ms via core.fsmonitor + commit-graph'));
 
+  const res3 = await executeBashSuite(d51.parts[2].code!);
+  assert.equal(res3.allPassed, true);
+  assert.ok(res3.stdout?.includes('BITMAP_REPACK: git repack -a -b -d reduced Counting objects from 300s to 200ms'));
+
+  const res4 = await executeBashSuite(d51.parts[3].code!);
+  assert.equal(res4.allPassed, true);
+  assert.ok(res4.stdout?.includes('IPC_QUEUE_HANDLING: Watchman clock token resynchronized cleanly without deadlock'));
+
+  const res5 = await executeBashSuite(d51.parts[4].code!);
+  assert.equal(res5.allPassed, true);
+  assert.ok(res5.stdout?.includes('AUDIT_SEAL: EXTREME-GIT-PERFORMANCE-TUNING-CERTIFIED'));
+});
+
+test('Systems Long Lessons: git_vcs Day 52 Advanced Disaster Forensics: Recovering Dangling Trees, Reconstructing Broken Merge Bases & git fsck --lost-found', async () => {
+  const d52 = getLongLesson('git_vcs', 52);
+  assert.ok(d52, 'git_vcs Day 52 must resolve');
+  assert.equal(d52.day, 52);
+  assert.equal(d52.parts.length, 5);
+
+  const res1 = await executeBashSuite(d52.parts[0].code!);
+  assert.equal(res1.allPassed, true);
+  assert.ok(res1.stdout?.includes('SALVAGE_INVARIANT: Intact .git/objects/ guarantees 100% source reconstruction'));
+
+  const res2 = await executeBashSuite(d52.parts[1].code!);
+  assert.equal(res2.allPassed, true);
+  assert.ok(res2.stdout?.includes('DANGLING_COMMIT_FOUND: 8f4e2a19d3c7b501 recovered from .git/lost-found/commit/'));
+
+  const res3 = await executeBashSuite(d52.parts[2].code!);
+  assert.equal(res3.allPassed, true);
+  assert.ok(res3.stdout?.includes('SYNTHESIZED_COMMIT: git commit-tree bound orphan root tree to parent commit'));
+
+  const res4 = await executeBashSuite(d52.parts[3].code!);
+  assert.equal(res4.allPassed, true);
+  assert.ok(res4.stdout?.includes('UNPACK_SALVAGE: Move pack outside .git then run git unpack-objects -r'));
+
+  const res5 = await executeBashSuite(d52.parts[4].code!);
+  assert.equal(res5.allPassed, true);
+  assert.ok(res5.stdout?.includes('AUDIT_SEAL: GIT-DISASTER-FORENSICS-SALVAGE-CERTIFIED'));
+});
+
+test('Systems Long Lessons: git_vcs Day 53 Safe Force-Push Protocols: --force-with-lease vs --force-if-includes vs Destructive --force', async () => {
+  const d53 = getLongLesson('git_vcs', 53);
+  assert.ok(d53, 'git_vcs Day 53 must resolve');
+  assert.equal(d53.day, 53);
+  assert.equal(d53.parts.length, 5);
+
+  const res1 = await executeBashSuite(d53.parts[0].code!);
+  assert.equal(res1.allPassed, true);
+  assert.ok(res1.stdout?.includes('CAS_INVARIANT: Update(R, new) iff Current(R) == ExpectedLocalMirror(R)'));
+
+  const res2 = await executeBashSuite(d53.parts[1].code!);
+  assert.equal(res2.allPassed, true);
+  assert.ok(res2.stdout?.includes('REMEDY: Enforce --force-with-lease --force-if-includes across all developer aliases'));
+
+  const res3 = await executeBashSuite(d53.parts[2].code!);
+  assert.equal(res3.allPassed, true);
+  assert.ok(res3.stdout?.includes('PROTECTED_BRANCH_POLICY: Non-fast-forward updates on refs/heads/main strictly blocked'));
+
+  const res4 = await executeBashSuite(d53.parts[3].code!);
+  assert.equal(res4.allPassed, true);
+  assert.ok(res4.stdout?.includes('WORKERS_2_TO_10: Rejected atomically with [rejected] (stale info) — 0 overwrites'));
+
+  const res5 = await executeBashSuite(d53.parts[4].code!);
+  assert.equal(res5.allPassed, true);
+  assert.ok(res5.stdout?.includes('AUDIT_SEAL: COMPARE-AND-SWAP-FORCE-PUSH-CERTIFIED'));
+});
+
+test('Systems Long Lessons: git_vcs Day 54 Worktree Concurrency & Workspace Isolation in Multi-Agent Environments: Collision Detection & Lifecycles', async () => {
+  const d54 = getLongLesson('git_vcs', 54);
+  assert.ok(d54, 'git_vcs Day 54 must resolve');
+  assert.equal(d54.day, 54);
+  assert.equal(d54.parts.length, 5);
+
+  const res1 = await executeBashSuite(d54.parts[0].code!);
+  assert.equal(res1.allPassed, true);
+  assert.ok(res1.stdout?.includes('ISOLATION_INVARIANT: For all i != j, Branch_i != Branch_j and WorktreePath_i != WorktreePath_j'));
+
+  const res2 = await executeBashSuite(d54.parts[1].code!);
+  assert.equal(res2.allPassed, true);
+  assert.ok(res2.stdout?.includes('CRASH_RECOVERY: git worktree remove --force plus git worktree prune cleared stale lock'));
+
+  const res3 = await executeBashSuite(d54.parts[2].code!);
+  assert.equal(res3.allPassed, true);
+  assert.ok(res3.stdout?.includes('RECONCILIATION_QUEUE: 10/10 agent branches merged sequentially into staging'));
+
+  const res4 = await executeBashSuite(d54.parts[3].code!);
+  assert.equal(res4.allPassed, true);
+  assert.ok(res4.stdout?.includes('INDEX_LOCK_CONTENTIONS: 0 .git/index.lock collisions (per-worktree index isolation)'));
+
+  const res5 = await executeBashSuite(d54.parts[4].code!);
+  assert.equal(res5.allPassed, true);
+  assert.ok(res5.stdout?.includes('AUDIT_SEAL: MULTI-AGENT-WORKTREE-ISOLATION-CERTIFIED'));
+});
+
+test('Systems Long Lessons: git_vcs Day 55 Legacy VCS Migration Engineering: Migrating Subversion (SVN), Perforce & Mercurial to Git with Full History', async () => {
+  const d55 = getLongLesson('git_vcs', 55);
+  assert.ok(d55, 'git_vcs Day 55 must resolve');
+  assert.equal(d55.day, 55);
+  assert.equal(d55.parts.length, 5);
+
+  const res1 = await executeBashSuite(d55.parts[0].code!);
+  assert.equal(res1.allPassed, true);
+  assert.ok(res1.stdout?.includes('SVN_REF_MAPPING: /trunk -> refs/heads/main, /branches/* -> refs/heads/*, /tags/* -> Annotated Tags'));
+
+  const res2 = await executeBashSuite(d55.parts[1].code!);
+  assert.equal(res2.allPassed, true);
+  assert.ok(res2.stdout?.includes('REMEDIATION: Re-ran migration with verified authors.txt and git filter-repo LFS extraction'));
+
+  const res3 = await executeBashSuite(d55.parts[2].code!);
+  assert.equal(res3.allPassed, true);
+  assert.ok(res3.stdout?.includes('LFS_EXTRACTION: Binaries > 10MB converted to Git LFS pointers (180GB -> 2.4GB clone)'));
+
+  const res4 = await executeBashSuite(d55.parts[3].code!);
+  assert.equal(res4.allPassed, true);
+  assert.ok(res4.stdout?.includes('BYTE_PARITY_VERDICT: 0 byte discrepancies across all sampled historical tag trees'));
+
+  const res5 = await executeBashSuite(d55.parts[4].code!);
+  assert.equal(res5.allPassed, true);
+  assert.ok(res5.stdout?.includes('AUDIT_SEAL: LEGACY-VCS-MIGRATION-PROVENANCE-CERTIFIED'));
+});

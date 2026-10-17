@@ -1,0 +1,869 @@
+{
+  "schemaVersion": 1,
+  "prefix": "git_vcs",
+  "day": 51,
+  "promptSha": "d003f59b8867714472e2b4193cd0cd8ca4b3d6a0dfa06f4ecb5188709bfb1c75",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "The Physics of Monorepo Latency: O(N) lstat() Syscalls vs O(k) Event-Driven FSMonitor",
+      "codeHash": "bc0e52fd139f5f52d18bc4f0c8873f1907c8c1129648f01426195da188ac2350",
+      "spec": {
+        "template": "workflow",
+        "title": "The Physics of Monorepo Latency: O(N) lstat()... — Performance & Forensics",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Working Tree",
+            "subtext": "core.fsmonitor",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Staging Index",
+            "subtext": "Worktree Pool",
+            "tone": "ok"
+          },
+          {
+            "id": "s3",
+            "name": "Object Store",
+            "subtext": "fsck / Bitmaps",
+            "tone": "data"
+          },
+          {
+            "id": "s4",
+            "name": "Remote DAG",
+            "subtext": "CAS Lease / LFS",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Working Tree): Initialize The Physics of Monorepo Latenc...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "core.fsmonitor",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "Worktree Pool",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Object Store",
+                "subtext": "fsck / Bitmaps",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Remote DAG",
+                "subtext": "CAS Lease / LFS",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Staging Index): Verify per-worktree index & UNTR/FSMN extensions.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "core.fsmonitor",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "Worktree Pool",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Object Store",
+                "subtext": "fsck / Bitmaps",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Remote DAG",
+                "subtext": "CAS Lease / LFS",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Object Store): Audit .git/objects/ bitmaps, commit-graph & fsck.",
+            "activeStageId": "s3",
+            "statusBadge": "PROCESSING",
+            "throughput": "Nominal",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "core.fsmonitor",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "Worktree Pool",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Object Store",
+                "subtext": "fsck / Bitmaps",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Remote DAG",
+                "subtext": "CAS Lease / LFS",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Remote DAG): Certify CAS lease & historical migration provenance.",
+            "activeStageId": "s4",
+            "statusBadge": "VERIFIED",
+            "throughput": "Complete",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "core.fsmonitor",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "Worktree Pool",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Object Store",
+                "subtext": "fsck / Bitmaps",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Remote DAG",
+                "subtext": "CAS Lease / LFS",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The 45-Second Git Status Productivity Collapse: GIT_TRACE2_PERF Forensic Profiling",
+      "codeHash": "1533e5ff3e8ec04b5c19f630391a6dd37764bd289426db3f3354217a9c0375c8",
+      "spec": {
+        "template": "workflow",
+        "title": "The 45-Second Git Status Productivity Collaps... — Performance & Forensics",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Working Tree",
+            "subtext": "core.fsmonitor",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Staging Index",
+            "subtext": "Worktree Pool",
+            "tone": "ok"
+          },
+          {
+            "id": "s3",
+            "name": "Object Store",
+            "subtext": "fsck / Bitmaps",
+            "tone": "data"
+          },
+          {
+            "id": "s4",
+            "name": "Remote DAG",
+            "subtext": "CAS Lease / LFS",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Working Tree): Initialize The 45-Second Git Status Produ...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "core.fsmonitor",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "Worktree Pool",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Object Store",
+                "subtext": "fsck / Bitmaps",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Remote DAG",
+                "subtext": "CAS Lease / LFS",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Staging Index): Verify per-worktree index & UNTR/FSMN extensions.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "core.fsmonitor",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "Worktree Pool",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Object Store",
+                "subtext": "fsck / Bitmaps",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Remote DAG",
+                "subtext": "CAS Lease / LFS",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Object Store): Audit .git/objects/ bitmaps, commit-graph & fsck.",
+            "activeStageId": "s3",
+            "statusBadge": "PROCESSING",
+            "throughput": "Nominal",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "core.fsmonitor",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "Worktree Pool",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Object Store",
+                "subtext": "fsck / Bitmaps",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Remote DAG",
+                "subtext": "CAS Lease / LFS",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Remote DAG): Certify CAS lease & historical migration provenance.",
+            "activeStageId": "s4",
+            "statusBadge": "VERIFIED",
+            "throughput": "Complete",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "core.fsmonitor",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "Worktree Pool",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Object Store",
+                "subtext": "fsck / Bitmaps",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Remote DAG",
+                "subtext": "CAS Lease / LFS",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Commit-Graph Generation Numbers & Reachability Bitmaps (git repack -a -b -d)",
+      "codeHash": "74c9787240ce00afd7f1b1d0a9b492452ad05800f148250f96fcef2a628b29fe",
+      "spec": {
+        "template": "workflow",
+        "title": "Commit-Graph Generation Numbers & Reachabilit... — Performance & Forensics",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Working Tree",
+            "subtext": "core.fsmonitor",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Staging Index",
+            "subtext": "Worktree Pool",
+            "tone": "ok"
+          },
+          {
+            "id": "s3",
+            "name": "Object Store",
+            "subtext": "fsck / Bitmaps",
+            "tone": "data"
+          },
+          {
+            "id": "s4",
+            "name": "Remote DAG",
+            "subtext": "CAS Lease / LFS",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Working Tree): Initialize Commit-Graph Generation Number...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "core.fsmonitor",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "Worktree Pool",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Object Store",
+                "subtext": "fsck / Bitmaps",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Remote DAG",
+                "subtext": "CAS Lease / LFS",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Staging Index): Verify per-worktree index & UNTR/FSMN extensions.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "core.fsmonitor",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "Worktree Pool",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Object Store",
+                "subtext": "fsck / Bitmaps",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Remote DAG",
+                "subtext": "CAS Lease / LFS",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Object Store): Audit .git/objects/ bitmaps, commit-graph & fsck.",
+            "activeStageId": "s3",
+            "statusBadge": "PROCESSING",
+            "throughput": "Nominal",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "core.fsmonitor",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "Worktree Pool",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Object Store",
+                "subtext": "fsck / Bitmaps",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Remote DAG",
+                "subtext": "CAS Lease / LFS",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Remote DAG): Certify CAS lease & historical migration provenance.",
+            "activeStageId": "s4",
+            "statusBadge": "VERIFIED",
+            "throughput": "Complete",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "core.fsmonitor",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "Worktree Pool",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Object Store",
+                "subtext": "fsck / Bitmaps",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Remote DAG",
+                "subtext": "CAS Lease / LFS",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "1-Million File Filesystem Event Saturation & Watchman Clock Resynchronization Lab",
+      "codeHash": "ad61b44a7841aa722d50a4ef15c8e477494cc0eed810d2f796c166d71fdd044d",
+      "spec": {
+        "template": "workflow",
+        "title": "1-Million File Filesystem Event Saturation & ... — Performance & Forensics",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Working Tree",
+            "subtext": "core.fsmonitor",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Staging Index",
+            "subtext": "Worktree Pool",
+            "tone": "ok"
+          },
+          {
+            "id": "s3",
+            "name": "Object Store",
+            "subtext": "fsck / Bitmaps",
+            "tone": "data"
+          },
+          {
+            "id": "s4",
+            "name": "Remote DAG",
+            "subtext": "CAS Lease / LFS",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Working Tree): Initialize 1-Million File Filesystem Even...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "core.fsmonitor",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "Worktree Pool",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Object Store",
+                "subtext": "fsck / Bitmaps",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Remote DAG",
+                "subtext": "CAS Lease / LFS",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Staging Index): Verify per-worktree index & UNTR/FSMN extensions.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "core.fsmonitor",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "Worktree Pool",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Object Store",
+                "subtext": "fsck / Bitmaps",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Remote DAG",
+                "subtext": "CAS Lease / LFS",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Object Store): Audit .git/objects/ bitmaps, commit-graph & fsck.",
+            "activeStageId": "s3",
+            "statusBadge": "PROCESSING",
+            "throughput": "Nominal",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "core.fsmonitor",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "Worktree Pool",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Object Store",
+                "subtext": "fsck / Bitmaps",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Remote DAG",
+                "subtext": "CAS Lease / LFS",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Remote DAG): Certify CAS lease & historical migration provenance.",
+            "activeStageId": "s4",
+            "statusBadge": "VERIFIED",
+            "throughput": "Complete",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "core.fsmonitor",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "Worktree Pool",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Object Store",
+                "subtext": "fsck / Bitmaps",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Remote DAG",
+                "subtext": "CAS Lease / LFS",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Master Git Performance Tuning Gateway & Sovereign Certification",
+      "codeHash": "97b3eb89638f0f1b7527b093941db41e5635b3cb2478a295c60ad6b5cd94ac8e",
+      "spec": {
+        "template": "workflow",
+        "title": "Master Git Performance Tuning Gateway & Sover... — Performance & Forensics",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Working Tree",
+            "subtext": "core.fsmonitor",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Staging Index",
+            "subtext": "Worktree Pool",
+            "tone": "ok"
+          },
+          {
+            "id": "s3",
+            "name": "Object Store",
+            "subtext": "fsck / Bitmaps",
+            "tone": "data"
+          },
+          {
+            "id": "s4",
+            "name": "Remote DAG",
+            "subtext": "CAS Lease / LFS",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Working Tree): Initialize Master Git Performance Tuning ...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "core.fsmonitor",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "Worktree Pool",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Object Store",
+                "subtext": "fsck / Bitmaps",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Remote DAG",
+                "subtext": "CAS Lease / LFS",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Staging Index): Verify per-worktree index & UNTR/FSMN extensions.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "core.fsmonitor",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "Worktree Pool",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Object Store",
+                "subtext": "fsck / Bitmaps",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Remote DAG",
+                "subtext": "CAS Lease / LFS",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Object Store): Audit .git/objects/ bitmaps, commit-graph & fsck.",
+            "activeStageId": "s3",
+            "statusBadge": "PROCESSING",
+            "throughput": "Nominal",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "core.fsmonitor",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "Worktree Pool",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Object Store",
+                "subtext": "fsck / Bitmaps",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Remote DAG",
+                "subtext": "CAS Lease / LFS",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Remote DAG): Certify CAS lease & historical migration provenance.",
+            "activeStageId": "s4",
+            "statusBadge": "VERIFIED",
+            "throughput": "Complete",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "core.fsmonitor",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "Worktree Pool",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Object Store",
+                "subtext": "fsck / Bitmaps",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Remote DAG",
+                "subtext": "CAS Lease / LFS",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
