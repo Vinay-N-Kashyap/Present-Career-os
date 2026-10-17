@@ -1,0 +1,1709 @@
+{
+  "schemaVersion": 1,
+  "prefix": "soft-skills",
+  "day": 7,
+  "promptSha": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "The Psychology of Code Reviews: Eliminating Accusatory 'You' Statements & Ego Defensiveness",
+      "codeHash": "389ad177cd92daa23ff715cd1dde9faba6d0cb8e85221181c55d918394d291ce",
+      "spec": {
+        "template": "workflow",
+        "title": "The Psychology of Code Reviews: Eliminating A... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Context Framing",
+            "subtext": "Stakeholder Goal",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Structured Thesis",
+            "subtext": "BLUF / Pyramid",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Objection Defense",
+            "subtext": "Data-Backed",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Executive Alignment",
+            "subtext": "Action Plan",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Context Framing): Initialize The Psychology of Code Reviews: Eliminat...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Stakeholder Goal",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Thesis",
+                "subtext": "BLUF / Pyramid",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Objection Defense",
+                "subtext": "Data-Backed",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Alignment",
+                "subtext": "Action Plan",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Structured Thesis): Process core communication model.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Stakeholder Goal",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Thesis",
+                "subtext": "BLUF / Pyramid",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Objection Defense",
+                "subtext": "Data-Backed",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Alignment",
+                "subtext": "Action Plan",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Objection Defense): Verify high-trust invariants.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "Zero Friction",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Stakeholder Goal",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Thesis",
+                "subtext": "BLUF / Pyramid",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Objection Defense",
+                "subtext": "Data-Backed",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Alignment",
+                "subtext": "Action Plan",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Executive Alignment): Commit collaborative action plan.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "Alignment Met ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Stakeholder Goal",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Thesis",
+                "subtext": "BLUF / Pyramid",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Objection Defense",
+                "subtext": "Data-Backed",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Alignment",
+                "subtext": "Action Plan",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "The Psychology of Code Reviews: Eliminating A... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Context Framing",
+            "subtext": "Stakeholder Goal",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Structured Thesis",
+            "subtext": "BLUF / Pyramid",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Objection Defense",
+            "subtext": "Data-Backed",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Executive Alignment",
+            "subtext": "Action Plan",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Context Framing): Initialize The Psychology of Code Reviews: Eliminat...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Stakeholder Goal",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Thesis",
+                "subtext": "BLUF / Pyramid",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Objection Defense",
+                "subtext": "Data-Backed",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Alignment",
+                "subtext": "Action Plan",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Structured Thesis): Process core communication model.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Stakeholder Goal",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Thesis",
+                "subtext": "BLUF / Pyramid",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Objection Defense",
+                "subtext": "Data-Backed",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Alignment",
+                "subtext": "Action Plan",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Objection Defense): Verify high-trust invariants.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "Zero Friction",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Stakeholder Goal",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Thesis",
+                "subtext": "BLUF / Pyramid",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Objection Defense",
+                "subtext": "Data-Backed",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Alignment",
+                "subtext": "Action Plan",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Executive Alignment): Commit collaborative action plan.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "Alignment Met ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Stakeholder Goal",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Thesis",
+                "subtext": "BLUF / Pyramid",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Objection Defense",
+                "subtext": "Data-Backed",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Alignment",
+                "subtext": "Action Plan",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Situation-Behavior-Impact (SBI) Model: Objective Grounding in Observable Evidence",
+      "codeHash": "687acfdbf7413793cfbd405f4368355bc2478f1e5e8b83f5f08c09d75d57756f",
+      "spec": {
+        "template": "workflow",
+        "title": "The Situation-Behavior-Impact (SBI) Model: Ob... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Context Framing",
+            "subtext": "Stakeholder Goal",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Structured Thesis",
+            "subtext": "BLUF / Pyramid",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Objection Defense",
+            "subtext": "Data-Backed",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Executive Alignment",
+            "subtext": "Action Plan",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Context Framing): Initialize The Situation-Behavior-Impact (SBI) Mode...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Stakeholder Goal",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Thesis",
+                "subtext": "BLUF / Pyramid",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Objection Defense",
+                "subtext": "Data-Backed",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Alignment",
+                "subtext": "Action Plan",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Structured Thesis): Process core communication model.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Stakeholder Goal",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Thesis",
+                "subtext": "BLUF / Pyramid",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Objection Defense",
+                "subtext": "Data-Backed",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Alignment",
+                "subtext": "Action Plan",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Objection Defense): Verify high-trust invariants.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "Zero Friction",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Stakeholder Goal",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Thesis",
+                "subtext": "BLUF / Pyramid",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Objection Defense",
+                "subtext": "Data-Backed",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Alignment",
+                "subtext": "Action Plan",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Executive Alignment): Commit collaborative action plan.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "Alignment Met ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Stakeholder Goal",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Thesis",
+                "subtext": "BLUF / Pyramid",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Objection Defense",
+                "subtext": "Data-Backed",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Alignment",
+                "subtext": "Action Plan",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "The Situation-Behavior-Impact (SBI) Model: Ob... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Context Framing",
+            "subtext": "Stakeholder Goal",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Structured Thesis",
+            "subtext": "BLUF / Pyramid",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Objection Defense",
+            "subtext": "Data-Backed",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Executive Alignment",
+            "subtext": "Action Plan",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Context Framing): Initialize The Situation-Behavior-Impact (SBI) Mode...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Stakeholder Goal",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Thesis",
+                "subtext": "BLUF / Pyramid",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Objection Defense",
+                "subtext": "Data-Backed",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Alignment",
+                "subtext": "Action Plan",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Structured Thesis): Process core communication model.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Stakeholder Goal",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Thesis",
+                "subtext": "BLUF / Pyramid",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Objection Defense",
+                "subtext": "Data-Backed",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Alignment",
+                "subtext": "Action Plan",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Objection Defense): Verify high-trust invariants.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "Zero Friction",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Stakeholder Goal",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Thesis",
+                "subtext": "BLUF / Pyramid",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Objection Defense",
+                "subtext": "Data-Backed",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Alignment",
+                "subtext": "Action Plan",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Executive Alignment): Commit collaborative action plan.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "Alignment Met ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Stakeholder Goal",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Thesis",
+                "subtext": "BLUF / Pyramid",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Objection Defense",
+                "subtext": "Data-Backed",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Alignment",
+                "subtext": "Action Plan",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Categorizing Feedback Intent: Conventional Comments ([blocking], [nit], [question], [suggestion])",
+      "codeHash": "2d034a59d609acc1a2f503dfd20136ebdee19d2e3ccdeda7efb7ccb369a1fa45",
+      "spec": {
+        "template": "workflow",
+        "title": "Categorizing Feedback Intent: Conventional Co... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Context Framing",
+            "subtext": "Stakeholder Goal",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Structured Thesis",
+            "subtext": "BLUF / Pyramid",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Objection Defense",
+            "subtext": "Data-Backed",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Executive Alignment",
+            "subtext": "Action Plan",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Context Framing): Initialize Categorizing Feedback Intent: Convention...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Stakeholder Goal",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Thesis",
+                "subtext": "BLUF / Pyramid",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Objection Defense",
+                "subtext": "Data-Backed",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Alignment",
+                "subtext": "Action Plan",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Structured Thesis): Process core communication model.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Stakeholder Goal",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Thesis",
+                "subtext": "BLUF / Pyramid",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Objection Defense",
+                "subtext": "Data-Backed",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Alignment",
+                "subtext": "Action Plan",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Objection Defense): Verify high-trust invariants.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "Zero Friction",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Stakeholder Goal",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Thesis",
+                "subtext": "BLUF / Pyramid",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Objection Defense",
+                "subtext": "Data-Backed",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Alignment",
+                "subtext": "Action Plan",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Executive Alignment): Commit collaborative action plan.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "Alignment Met ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Stakeholder Goal",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Thesis",
+                "subtext": "BLUF / Pyramid",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Objection Defense",
+                "subtext": "Data-Backed",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Alignment",
+                "subtext": "Action Plan",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Categorizing Feedback Intent: Conventional Co... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Context Framing",
+            "subtext": "Stakeholder Goal",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Structured Thesis",
+            "subtext": "BLUF / Pyramid",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Objection Defense",
+            "subtext": "Data-Backed",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Executive Alignment",
+            "subtext": "Action Plan",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Context Framing): Initialize Categorizing Feedback Intent: Convention...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Stakeholder Goal",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Thesis",
+                "subtext": "BLUF / Pyramid",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Objection Defense",
+                "subtext": "Data-Backed",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Alignment",
+                "subtext": "Action Plan",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Structured Thesis): Process core communication model.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Stakeholder Goal",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Thesis",
+                "subtext": "BLUF / Pyramid",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Objection Defense",
+                "subtext": "Data-Backed",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Alignment",
+                "subtext": "Action Plan",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Objection Defense): Verify high-trust invariants.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "Zero Friction",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Stakeholder Goal",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Thesis",
+                "subtext": "BLUF / Pyramid",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Objection Defense",
+                "subtext": "Data-Backed",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Alignment",
+                "subtext": "Action Plan",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Executive Alignment): Commit collaborative action plan.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "Alignment Met ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Stakeholder Goal",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Thesis",
+                "subtext": "BLUF / Pyramid",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Objection Defense",
+                "subtext": "Data-Backed",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Alignment",
+                "subtext": "Action Plan",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Navigating Disagreements & Escalations: Seeking Alignment over Compliance",
+      "codeHash": "b5b8aed92a523dc1dd249a8fce8335a441c6902d041ee632af6a2167d5b5675a",
+      "spec": {
+        "template": "workflow",
+        "title": "Navigating Disagreements & Escalations: Seeki... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Context Framing",
+            "subtext": "Stakeholder Goal",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Structured Thesis",
+            "subtext": "BLUF / Pyramid",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Objection Defense",
+            "subtext": "Data-Backed",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Executive Alignment",
+            "subtext": "Action Plan",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Context Framing): Initialize Navigating Disagreements & Escalations: ...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Stakeholder Goal",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Thesis",
+                "subtext": "BLUF / Pyramid",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Objection Defense",
+                "subtext": "Data-Backed",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Alignment",
+                "subtext": "Action Plan",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Structured Thesis): Process core communication model.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Stakeholder Goal",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Thesis",
+                "subtext": "BLUF / Pyramid",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Objection Defense",
+                "subtext": "Data-Backed",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Alignment",
+                "subtext": "Action Plan",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Objection Defense): Verify high-trust invariants.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "Zero Friction",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Stakeholder Goal",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Thesis",
+                "subtext": "BLUF / Pyramid",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Objection Defense",
+                "subtext": "Data-Backed",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Alignment",
+                "subtext": "Action Plan",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Executive Alignment): Commit collaborative action plan.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "Alignment Met ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Stakeholder Goal",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Thesis",
+                "subtext": "BLUF / Pyramid",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Objection Defense",
+                "subtext": "Data-Backed",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Alignment",
+                "subtext": "Action Plan",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Navigating Disagreements & Escalations: Seeki... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Context Framing",
+            "subtext": "Stakeholder Goal",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Structured Thesis",
+            "subtext": "BLUF / Pyramid",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Objection Defense",
+            "subtext": "Data-Backed",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Executive Alignment",
+            "subtext": "Action Plan",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Context Framing): Initialize Navigating Disagreements & Escalations: ...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Stakeholder Goal",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Thesis",
+                "subtext": "BLUF / Pyramid",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Objection Defense",
+                "subtext": "Data-Backed",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Alignment",
+                "subtext": "Action Plan",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Structured Thesis): Process core communication model.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Stakeholder Goal",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Thesis",
+                "subtext": "BLUF / Pyramid",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Objection Defense",
+                "subtext": "Data-Backed",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Alignment",
+                "subtext": "Action Plan",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Objection Defense): Verify high-trust invariants.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "Zero Friction",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Stakeholder Goal",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Thesis",
+                "subtext": "BLUF / Pyramid",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Objection Defense",
+                "subtext": "Data-Backed",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Alignment",
+                "subtext": "Action Plan",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Executive Alignment): Commit collaborative action plan.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "Alignment Met ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Stakeholder Goal",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Thesis",
+                "subtext": "BLUF / Pyramid",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Objection Defense",
+                "subtext": "Data-Backed",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Alignment",
+                "subtext": "Action Plan",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Master Code Review & Constructive Feedback Suite: High-Trust Engineering Culture Index",
+      "codeHash": "2e22137904746cabaf894d7141b7a1a600ce7d630c17b08e7f732dd9942017ec",
+      "spec": {
+        "template": "workflow",
+        "title": "Master Code Review & Constructive Feedback Su... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Context Framing",
+            "subtext": "Stakeholder Goal",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Structured Thesis",
+            "subtext": "BLUF / Pyramid",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Objection Defense",
+            "subtext": "Data-Backed",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Executive Alignment",
+            "subtext": "Action Plan",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Context Framing): Initialize Master Code Review & Constructive Feedba...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Stakeholder Goal",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Thesis",
+                "subtext": "BLUF / Pyramid",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Objection Defense",
+                "subtext": "Data-Backed",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Alignment",
+                "subtext": "Action Plan",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Structured Thesis): Process core communication model.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Stakeholder Goal",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Thesis",
+                "subtext": "BLUF / Pyramid",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Objection Defense",
+                "subtext": "Data-Backed",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Alignment",
+                "subtext": "Action Plan",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Objection Defense): Verify high-trust invariants.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "Zero Friction",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Stakeholder Goal",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Thesis",
+                "subtext": "BLUF / Pyramid",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Objection Defense",
+                "subtext": "Data-Backed",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Alignment",
+                "subtext": "Action Plan",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Executive Alignment): Commit collaborative action plan.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "Alignment Met ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Stakeholder Goal",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Thesis",
+                "subtext": "BLUF / Pyramid",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Objection Defense",
+                "subtext": "Data-Backed",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Alignment",
+                "subtext": "Action Plan",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Master Code Review & Constructive Feedback Su... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Context Framing",
+            "subtext": "Stakeholder Goal",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Structured Thesis",
+            "subtext": "BLUF / Pyramid",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Objection Defense",
+            "subtext": "Data-Backed",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Executive Alignment",
+            "subtext": "Action Plan",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Context Framing): Initialize Master Code Review & Constructive Feedba...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Stakeholder Goal",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Thesis",
+                "subtext": "BLUF / Pyramid",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Objection Defense",
+                "subtext": "Data-Backed",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Alignment",
+                "subtext": "Action Plan",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Structured Thesis): Process core communication model.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Stakeholder Goal",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Thesis",
+                "subtext": "BLUF / Pyramid",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Objection Defense",
+                "subtext": "Data-Backed",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Alignment",
+                "subtext": "Action Plan",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Objection Defense): Verify high-trust invariants.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "Zero Friction",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Stakeholder Goal",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Thesis",
+                "subtext": "BLUF / Pyramid",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Objection Defense",
+                "subtext": "Data-Backed",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Alignment",
+                "subtext": "Action Plan",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Executive Alignment): Commit collaborative action plan.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "Alignment Met ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Stakeholder Goal",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Thesis",
+                "subtext": "BLUF / Pyramid",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Objection Defense",
+                "subtext": "Data-Backed",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Alignment",
+                "subtext": "Action Plan",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
