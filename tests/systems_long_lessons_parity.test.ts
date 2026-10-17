@@ -3422,3 +3422,138 @@ test('Systems Long Lessons: comp_fund Day 50 Milestone 9: ApexResilience Enterpr
   assert.equal(res5.allPassed, true);
   assert.ok(res5.stdout?.includes('MILESTONE_9_VERDICT: APEX_RESILIENCE_SUITE_BOARD_APPROVED'));
 });
+
+test('Systems Long Lessons: comp_fund Day 51 Historic Systems Catastrophe 1: The Knight Capital $440M 45-Minute Algorithmic Meltdown', async () => {
+  const d51 = getLongLesson('comp_fund', 51);
+  assert.ok(d51, 'comp_fund Day 51 must resolve');
+  assert.equal(d51.day, 51);
+  assert.equal(d51.parts.length, 5);
+
+  const res1 = await executeBashSuite(d51.parts[0].code!);
+  assert.equal(res1.allPassed, true);
+  assert.ok(res1.stdout?.includes('INVARIANT: ATOMIC_CLUSTER_DEPLOY_AND_DEAD_CODE_ELIMINATION'));
+
+  const res2 = await executeBashSuite(d51.parts[1].code!);
+  assert.equal(res2.allPassed, true);
+  assert.ok(res2.stdout?.includes('ARCHITECT_RULING: VETO_FLAG_REUSE_MANDATE_ATOMIC_HASH_GATE'));
+
+  const res3 = await executeBashSuite(d51.parts[2].code!);
+  assert.equal(res3.allPassed, true);
+  assert.ok(res3.stdout?.includes('GATE_VERDICT: ATOMIC_DEPLOYMENT_PARITY_100_PCT_VERIFIED'));
+
+  const res4 = await executeBashSuite(d51.parts[3].code!);
+  assert.equal(res4.allPassed, true);
+  assert.ok(res4.stdout?.includes('LAB_VERDICT: TRADING_HALTED_IN_6_4MS_SAVING_USD_439500000'));
+
+  const res5 = await executeBashSuite(d51.parts[4].code!);
+  assert.equal(res5.allPassed, true);
+  assert.ok(res5.stdout?.includes('DAY_51_CERTIFICATION: KNIGHT_CAPITAL_FORENSICS_MASTERED'));
+});
+
+test('Systems Long Lessons: comp_fund Day 52 Historic Systems Catastrophe 2: The CrowdStrike Falcon Global Windows Kernel Crash (BSoD)', async () => {
+  const d52 = getLongLesson('comp_fund', 52);
+  assert.ok(d52, 'comp_fund Day 52 must resolve');
+  assert.equal(d52.day, 52);
+  assert.equal(d52.parts.length, 5);
+
+  const res1 = await executeBashSuite(d52.parts[0].code!);
+  assert.equal(res1.allPassed, true);
+  assert.ok(res1.stdout?.includes('INVARIANT: RING_0_FAULTS_CRASH_ENTIRE_OS_WITH_ZERO_SAFETY_NET'));
+
+  const res2 = await executeBashSuite(d52.parts[1].code!);
+  assert.equal(res2.allPassed, true);
+  assert.ok(res2.stdout?.includes('RECOVERY_CHALLENGE: BITLOCKER_SAFE_MODE_MANUAL_FILE_DELETION'));
+
+  const res3 = await executeBashSuite(d52.parts[2].code!);
+  assert.equal(res3.allPassed, true);
+  assert.ok(res3.stdout?.includes('PARSER_STATUS: ZERO_RING_0_PAGE_FAULTS_ON_MALFORMED_INPUT'));
+
+  const res4 = await executeBashSuite(d52.parts[3].code!);
+  assert.equal(res4.allPassed, true);
+  assert.ok(res4.stdout?.includes('LAB_VERDICT: 99_9_PCT_OF_FLEET_PROTECTED_ZERO_GLOBAL_OUTAGE'));
+
+  const res5 = await executeBashSuite(d52.parts[4].code!);
+  assert.equal(res5.allPassed, true);
+  assert.ok(res5.stdout?.includes('DAY_52_CERTIFICATION: KERNEL_DRIVER_SAFETY_AND_CANARIES_MASTERED'));
+});
+
+test('Systems Long Lessons: comp_fund Day 53 Historic Systems Catastrophe 3: The Cloudflare Global Regex CPU Exhaustion Outage (ReDoS)', async () => {
+  const d53 = getLongLesson('comp_fund', 53);
+  assert.ok(d53, 'comp_fund Day 53 must resolve');
+  assert.equal(d53.day, 53);
+  assert.equal(d53.parts.length, 5);
+
+  const res1 = await executeBashSuite(d53.parts[0].code!);
+  assert.equal(res1.allPassed, true);
+  assert.ok(res1.stdout?.includes('INVARIANT: UNTRUSTED_INPUT_MATCHING_MUST_BE_STRICTLY_LINEAR_O_N'));
+
+  const res2 = await executeBashSuite(d53.parts[1].code!);
+  assert.equal(res2.allPassed, true);
+  assert.ok(res2.stdout?.includes('ARCHITECTURAL_FIX: MIGRATE_WAF_ENGINE_FROM_PCRE_TO_RUST_DFA'));
+
+  const res3 = await executeBashSuite(d53.parts[2].code!);
+  assert.equal(res3.allPassed, true);
+  assert.ok(res3.stdout?.includes('ENGINE_STATUS: LINEAR_TIME_O_N_GUARANTEE_MATHEMATICALLY_PROVEN'));
+
+  const res4 = await executeBashSuite(d53.parts[3].code!);
+  assert.equal(res4.allPassed, true);
+  assert.ok(res4.stdout?.includes('LAB_VERDICT: ZERO_CPU_STARVATION_UNDER_ADVERSARIAL_PAYLOADS'));
+
+  const res5 = await executeBashSuite(d53.parts[4].code!);
+  assert.equal(res5.allPassed, true);
+  assert.ok(res5.stdout?.includes('DAY_53_CERTIFICATION: REDOS_AND_LINEAR_AUTOMATA_MASTERED'));
+});
+
+test('Systems Long Lessons: comp_fund Day 54 Operating Systems Convergence: Linux vs Windows NT Internals vs macOS Darwin (Mach Kernel)', async () => {
+  const d54 = getLongLesson('comp_fund', 54);
+  assert.ok(d54, 'comp_fund Day 54 must resolve');
+  assert.equal(d54.day, 54);
+  assert.equal(d54.parts.length, 5);
+
+  const res1 = await executeBashSuite(d54.parts[0].code!);
+  assert.equal(res1.allPassed, true);
+  assert.ok(res1.stdout?.includes('INVARIANT: NATIVE_KERNEL_PRIMITIVES_OUTPERFORM_POSIX_EMULATION'));
+
+  const res2 = await executeBashSuite(d54.parts[1].code!);
+  assert.equal(res2.allPassed, true);
+  assert.ok(res2.stdout?.includes('PERFORMANCE_RESTORED: 100000_IOPS_PARITY_WITH_LINUX_IO_URING'));
+
+  const res3 = await executeBashSuite(d54.parts[2].code!);
+  assert.equal(res3.allPassed, true);
+  assert.ok(res3.stdout?.includes('ABSTRACTION_STATUS: UNIFIED_NATIVE_ASYNC_IO_ENGINE_VERIFIED'));
+
+  const res4 = await executeBashSuite(d54.parts[3].code!);
+  assert.equal(res4.allPassed, true);
+  assert.ok(res4.stdout?.includes('BENCHMARK_VERDICT: USE_PROCESS_POOLS_ON_LINUX_THREAD_IOCP_ON_NT'));
+
+  const res5 = await executeBashSuite(d54.parts[4].code!);
+  assert.equal(res5.allPassed, true);
+  assert.ok(res5.stdout?.includes('DAY_54_CERTIFICATION: MULTI_OS_KERNEL_INTERNALS_MASTERED'));
+});
+
+test('Systems Long Lessons: comp_fund Day 55 Modern Distributed Operating Systems & Cloud-Native Platforms: Kubernetes, MicroVMs & Unikernels', async () => {
+  const d55 = getLongLesson('comp_fund', 55);
+  assert.ok(d55, 'comp_fund Day 55 must resolve');
+  assert.equal(d55.day, 55);
+  assert.equal(d55.parts.length, 5);
+
+  const res1 = await executeBashSuite(d55.parts[0].code!);
+  assert.equal(res1.allPassed, true);
+  assert.ok(res1.stdout?.includes('INVARIANT: MINIMAL_KERNEL_CODE_MAXIMIZES_SECURITY_AND_DENSITY'));
+
+  const res2 = await executeBashSuite(d55.parts[1].code!);
+  assert.equal(res2.allPassed, true);
+  assert.ok(res2.stdout?.includes('COLD_START_RESULT: 5_MILLISECOND_KVM_BOOT_WITH_HARDWARE_ISOLATION'));
+
+  const res3 = await executeBashSuite(d55.parts[2].code!);
+  assert.equal(res3.allPassed, true);
+  assert.ok(res3.stdout?.includes('RUNNER_STATUS: HARDWARE_ISOLATED_MICROVM_EXECUTION_VERIFIED'));
+
+  const res4 = await executeBashSuite(d55.parts[3].code!);
+  assert.equal(res4.allPassed, true);
+  assert.ok(res4.stdout?.includes('LAB_VERDICT: 200X_DENSITY_GAIN_WITH_ZERO_SHARED_KERNEL_SURFACE'));
+
+  const res5 = await executeBashSuite(d55.parts[4].code!);
+  assert.equal(res5.allPassed, true);
+  assert.ok(res5.stdout?.includes('DAY_55_CERTIFICATION: DISTRIBUTED_OS_AND_MICROVMS_MASTERED'));
+});

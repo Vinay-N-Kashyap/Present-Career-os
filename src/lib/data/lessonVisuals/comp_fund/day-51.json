@@ -1,0 +1,211 @@
+{
+  "day": 51,
+  "course": "comp_fund",
+  "entries": [
+    {
+      "stepId": "cf-d51-p1",
+      "partTitle": "Knight Capital Systems Autopsy: Manual Deployment Drift, Flag Reuse & Dead Code (`Power Peg`)",
+      "template": "cells",
+      "codeHash": "89ce89ad87f346ece4bc64ea5feccb63e4ed2fa02e5bd0c422b89617f1284607",
+      "data": {
+        "title": "Systems Architecture Telemetry: Knight Capital Systems Autopsy: Manual Deployment Drift, Flag Re",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "INCIDENT_DATE",
+            "AUGUST_1_2012_KNIGHT_CAPITAL",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "ROOT_CAUSE_1",
+            "MANUAL_UNSCRIPTED_DEPLOYMENT",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "ROOT_CAUSE_2",
+            "REPURPOSED_FLAG_ACTIVATED_8Y",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "ROOT_CAUSE_3",
+            "ZERO_AUTOMATED_FINANCIAL_KIL",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d51-p2",
+      "partTitle": "Detective Challenge: The Partial Deployment Version Mismatch & Principal Architect Ruling",
+      "template": "cells",
+      "codeHash": "1eb91204a27274fdc28235020945417dac841818c1e1b80e6845bc99ca8f67f6",
+      "data": {
+        "title": "Systems Architecture Telemetry: Detective Challenge: The Partial Deployment Version Mismatch & P",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "CLUSTER_SIZE",
+            "8_PRODUCTION_SMARS_ORDER_ROU",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "NODES_1_TO_7_HASH",
+            "SHA256_NEW_RLP_ENGINE_9A8F2C",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "NODE_8_ROGUE_HASH",
+            "SHA256_LEGACY_POWER_PEG_4D1B",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "ANOMALY_VOLUME",
+            "4000000_ERRONEOUS_ORDERS_IN_",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d51-p3",
+      "partTitle": "Mastery Assignment: Cryptographic Cluster Deployment Verification Gate Implementation",
+      "template": "cells",
+      "codeHash": "664e0196e845652938e232827c251faf731298129ecf56b90f2d94313cbd73f5",
+      "data": {
+        "title": "Systems Architecture Telemetry: Mastery Assignment: Cryptographic Cluster Deployment Verificatio",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "PREFLIGHT_SCAN",
+            "QUERYING_ALL_8_PRODUCTION_CL",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "BINARY_ATTESTATION",
+            "8_OF_8_NODES_MATCH_SHA256_9A",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "SCHEMA_VALIDATION",
+            "ZERO_DEPRECATED_ZOMBIE_FLAGS",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "ROLLBACK_TRIGGER",
+            "ARMED_FOR_ANY_SINGLE_NODE_HA",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d51-p4",
+      "partTitle": "Production Incident Lab: High-Frequency Algorithmic Circuit Breaker & 6.4ms Hardware Kill Switch",
+      "template": "cells",
+      "codeHash": "752f7273212a542f721eef53449a16b439cb7aa30f2ac10b259e7e9d405203aa",
+      "data": {
+        "title": "Systems Architecture Telemetry: Production Incident Lab: High-Frequency Algorithmic Circuit Brea",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "CIRCUIT_BREAKER_CFG",
+            "MAX_LOSS_USD_500000_PER_60_S",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "SIMULATED_FAULT",
+            "RUNAWAY_INFINITE_BUY_HIGH_SE",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "DETECTION_LATENCY",
+            "THRESHOLD_BREACHED_AT_6_4_MI",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "KILL_ACTION",
+            "HARDWARE_TCP_FIN_RST_ORDER_G",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d51-p5",
+      "partTitle": "Day 51 Architecture Certification: Knight Capital Autopsy & Deployment Atomicity Mastery",
+      "template": "cells",
+      "codeHash": "7c2ab648632e9bd8e19885eb4fcf77e282d075ef6c021e0e8697b51691f32faa",
+      "data": {
+        "title": "Systems Architecture Telemetry: Day 51 Architecture Certification: Knight Capital Autopsy & Depl",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "DEAD_CODE_AUDIT",
+            "ZERO_DORMANT_TEST_PATHS_IN_P",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "FLAG_HYGIENE_AUDIT",
+            "IMMUTABLE_MONOTONIC_FEATURE_",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "ATOMIC_DEPLOY_AUDIT",
+            "SHA256_FLEET_ATTESTATION_ENF",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "CIRCUIT_BREAKER_AUDIT",
+            "SUB_10MS_CAPITAL_KILL_SWITCH",
+            "Verified 100%"
+          ]
+        ]
+      }
+    }
+  ]
+}

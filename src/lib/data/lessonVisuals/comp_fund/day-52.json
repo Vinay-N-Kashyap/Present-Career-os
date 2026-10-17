@@ -1,0 +1,211 @@
+{
+  "day": 52,
+  "course": "comp_fund",
+  "entries": [
+    {
+      "stepId": "cf-d52-p1",
+      "partTitle": "Ring 0 Kernel Space vs Ring 3 User Space & The July 19, 2024 CrowdStrike BSoD Autopsy",
+      "template": "cells",
+      "codeHash": "2f746a6a5dcf1077ad3a98e06651d9e40f73b41098988ea34d2c06f1330351fc",
+      "data": {
+        "title": "Systems Architecture Telemetry: Ring 0 Kernel Space vs Ring 3 User Space & The July 19, 2024 Cro",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "INCIDENT_DATE",
+            "JULY_19_2024_8_5_MILLION_WIN",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "PRIVILEGE_LEVEL",
+            "CPU_RING_0_KERNEL_DRIVER_CSA",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "TRIGGER_PAYLOAD",
+            "CHANNEL_FILE_291_DYNAMIC_RUL",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "KERNEL_EXCEPTION",
+            "PAGE_FAULT_IN_NONPAGED_AREA_",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d52-p2",
+      "partTitle": "Detective Challenge: The `20 vs 21` Array Bounds Mismatch (`0x9c`) & Boot-Loop Recovery",
+      "template": "cells",
+      "codeHash": "965d3851a4d2e657889ccfeb0fda3966b08ec2923e0c2f6492b53fc11912c2b4",
+      "data": {
+        "title": "Systems Architecture Telemetry: Detective Challenge: The `20 vs 21` Array Bounds Mismatch (`0x9c",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "EXPECTED_ARRAY_BOUNDS",
+            "20_PARAMETER_FIELDS_IN_IPC_T",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "ACTUAL_TEMPLATE_ACCESS",
+            "INDEX_21_OUT_OF_BOUNDS_READ_",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "INVALID_MEMORY_ADDR",
+            "NULL_POINTER_PLUS_0X0000009C",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "DELIVERY_VIOLATION",
+            "SIMULTANEOUS_GLOBAL_PUSH_BYP",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d52-p3",
+      "partTitle": "Mastery Assignment: Defensive In-Kernel Parser with Bounds Validation & eBPF/Rust Safety",
+      "template": "cells",
+      "codeHash": "d08b4315ab0f554c4c236aaaf03ac19db020fdc712634dd82ed8ffb00b2bc9e8",
+      "data": {
+        "title": "Systems Architecture Telemetry: Mastery Assignment: Defensive In-Kernel Parser with Bounds Valid",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "PARSER_STEP_1",
+            "CRYPTOGRAPHIC_SIGNATURE_AND_",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "PARSER_STEP_2",
+            "STRICT_FIELD_COUNT_BOUNDS_CH",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "PARSER_STEP_3",
+            "NON_NULL_POINTER_RANGE_VALID",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "FALLBACK_ACTION",
+            "GRACEFUL_ERROR_RETURN_RETAIN",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d52-p4",
+      "partTitle": "Production Incident Lab: Staged Canary Progressive Delivery & Boot-Time Watchdog Rollback",
+      "template": "cells",
+      "codeHash": "1a06fc7d107292ebabacde2586eaadd91472d0740dde4a1d41d3c186ffc54a0e",
+      "data": {
+        "title": "Systems Architecture Telemetry: Production Incident Lab: Staged Canary Progressive Delivery & Bo",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "FLEET_POPULATION",
+            "500000_ENTERPRISE_ENDPOINT_M",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "STAGE_0_SANDBOX",
+            "USER_SPACE_FUZZER_AND_VM_BOO",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "STAGE_1_CANARY",
+            "0_1_PCT_COHORT_DETECTED_CRAS",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "AUTO_HALT_GATE",
+            "ROLLOUT_ABORTED_AND_CHANNEL_",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d52-p5",
+      "partTitle": "Day 52 Architecture Certification: Ring 0 Memory Safety & Progressive Delivery Mastery",
+      "template": "cells",
+      "codeHash": "c1c7c05a2737b9ad80a8221de1eb2727b8a5551a6dcd5546cfd6365383a45936",
+      "data": {
+        "title": "Systems Architecture Telemetry: Day 52 Architecture Certification: Ring 0 Memory Safety & Progre",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "RING_0_BOUNDS_AUDIT",
+            "DEFENSIVE_ARRAY_AND_NULL_CHE",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "USERSPACE_SANDBOX_AUDIT",
+            "PRE_DEPLOY_FUZZING_GATE_ACTI",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "STAGED_CANARY_AUDIT",
+            "0_1_TO_1_TO_10_TO_100_PCT_RI",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "BOOT_FALLBACK_AUDIT",
+            "AUTO_REVERT_ON_EARLY_BOOT_CR",
+            "Verified 100%"
+          ]
+        ]
+      }
+    }
+  ]
+}

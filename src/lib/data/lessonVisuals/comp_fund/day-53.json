@@ -1,0 +1,211 @@
+{
+  "day": 53,
+  "course": "comp_fund",
+  "entries": [
+    {
+      "stepId": "cf-d53-p1",
+      "partTitle": "NFA Backtracking ($O(2^N)$) vs Thompson DFA ($O(N)$) & The July 2, 2019 Cloudflare Outage",
+      "template": "cells",
+      "codeHash": "9f6f156fc28fb32c94970b98c06454efaff2308ec12d3d7ee834c06cd5152b3c",
+      "data": {
+        "title": "Systems Architecture Telemetry: NFA Backtracking ($O(2^N)$) vs Thompson DFA ($O(N)$) & The July ",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "OUTAGE_DATE",
+            "JULY_2_2019_CLOUDFLARE_82_PC",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "VULNERABLE_ENGINE",
+            "BACKTRACKING_NFA_PCRE_EXPONE",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "RESILIENT_ENGINE",
+            "THOMPSON_DFA_GOOGLE_RE2_RUST",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "TOXIC_PATTERN",
+            "NESTED_OR_ADJACENT_GREEDY_QU",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d53-p2",
+      "partTitle": "Detective Challenge: Deconstructing Cloudflare's `.*.*=.*` WAF Rule & CPU Starvation",
+      "template": "cells",
+      "codeHash": "0a185d99ae909fe01b8c014590b6c73f9fa81c35c873575426e73e5715d55715",
+      "data": {
+        "title": "Systems Architecture Telemetry: Detective Challenge: Deconstructing Cloudflare's `.*.*=.*` WAF R",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "DEPLOYED_WAF_RULE",
+            "GREEDY_ADJACENT_WILDCARDS_BE",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "TRIGGER_REQUEST",
+            "HTTP_HEADER_WITH_LONG_STRING",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "BACKTRACK_EXPLOSION",
+            "MILLIONS_OF_NFA_STATE_PERMUT",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "GLOBAL_IMPACT",
+            "100_PCT_CPU_SATURATION_ACROS",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d53-p3",
+      "partTitle": "Mastery Assignment: Linear-Time DFA Regex Engine (`RE2`) & Static AST Linter Implementation",
+      "template": "cells",
+      "codeHash": "da3c811cff3d004671c8a118184490fcd7ac13cd81f0bc20317519986ef1d0f2",
+      "data": {
+        "title": "Systems Architecture Telemetry: Mastery Assignment: Linear-Time DFA Regex Engine (`RE2`) & Stati",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "STATIC_AST_SCAN",
+            "FLAGGED_NESTED_QUANTIFIER_GR",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "ADVERSARIAL_INPUT",
+            "30_REPEATED_CHARS_WITH_NON_M",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "NFA_PCRE_LATENCY",
+            "OVER_10000_MS_EXPONENTIAL_2_",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "DFA_RE2_LATENCY",
+            "0_004_MS_SINGLE_PASS_30_STEP",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d53-p4",
+      "partTitle": "Production Incident Lab: Adversarial ReDoS Payload Injection & API Gateway Defense",
+      "template": "cells",
+      "codeHash": "66ed261c1f08de6e09772ff63bc483532fcac2aab16fff740fb5f7c71140445b",
+      "data": {
+        "title": "Systems Architecture Telemetry: Production Incident Lab: Adversarial ReDoS Payload Injection & A",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "ATTACK_VECTOR",
+            "1000_CONCURRENT_REDOS_API_RE",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "LEGACY_PCRE_GATEWAY",
+            "CPU_100_PCT_HTTP_504_GATEWAY",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "RE2_DFA_GATEWAY",
+            "CPU_4_PCT_P99_LATENCY_0_8_MI",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "CI_CD_LINTER_GATE",
+            "BLOCKED_3_BACKTRACKING_REGEX",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d53-p5",
+      "partTitle": "Day 53 Architecture Certification: ReDoS Forensics & Linear-Time Automata Mastery",
+      "template": "cells",
+      "codeHash": "c19a169af4f3db9596bd863cb758ebdd91069c0cfce7eb0f5293e52297530c27",
+      "data": {
+        "title": "Systems Architecture Telemetry: Day 53 Architecture Certification: ReDoS Forensics & Linear-Time",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "NFA_VS_DFA_AUDIT",
+            "THOMPSON_SIMULATION_O_N_COMP",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "WAF_OUTAGE_AUDIT",
+            "GREEDY_QUANTIFIER_BACKTRACKI",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "RE2_ENGINE_AUDIT",
+            "ZERO_BACKTRACKING_DFA_RUNTIM",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "CI_REGEX_GATE_AUDIT",
+            "AUTOMATED_REDOS_STATIC_ANALY",
+            "Verified 100%"
+          ]
+        ]
+      }
+    }
+  ]
+}
