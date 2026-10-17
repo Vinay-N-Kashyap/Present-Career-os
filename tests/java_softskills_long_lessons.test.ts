@@ -2053,3 +2053,161 @@ test('Soft Skills Day 30: Domain-Specific Content Assertions', () => {
   assert.ok(ssD30.parts[4].title.includes('Capstone Certification') || ssD30.parts[4].title.includes('Sovereign Technical Leader'));
   assert.ok(ssD30.parts[4].output.includes('GRAND CAREER OS CAPSTONE CERTIFICATION'));
 });
+
+test('Soft Skills Day 31: Resolution & Structural Invariants for Scope Clarification & Capacity Estimation', () => {
+  const ssD31 = getLongLesson('soft-skills', 31);
+  assert.ok(ssD31, 'soft-skills Day 31 long lesson must resolve');
+  assert.equal(ssD31.day, 31);
+  assert.equal(ssD31.parts.length, 5, 'soft-skills Day 31 must contain exactly 5 parts');
+  assert.ok(ssD31.summary.length >= 4, 'soft-skills Day 31 must contain comprehensive summary');
+  assert.ok(ssD31.projectStep, 'soft-skills Day 31 must have a hands-on project step');
+
+  const spokenMin = estimateSpokenMinutes(ssD31);
+  assert.ok(spokenMin >= 20, `Spoken minutes should be >= 20 (got ${spokenMin})`);
+
+  for (const part of ssD31.parts) {
+    assert.ok(part.code.includes('console.log('), `Code in '${part.title}' must print results`);
+    assert.ok(part.check.options.length === 4, 'MCQ must provide exactly 4 distinct options');
+    assert.ok(part.check.answer >= 0 && part.check.answer < 4, 'Answer index must be valid');
+    assert.ok(part.check.why.length > 15, 'Explanation must be rigorous');
+  }
+});
+
+test('Soft Skills Day 31: Domain-Specific Content Assertions', () => {
+  const ssD31 = getLongLesson('soft-skills', 31);
+  assert.ok(ssD31);
+
+  assert.ok(ssD31.parts[0].output.includes('SYSTEM DESIGN OPENING CALCULUS EVALUATION'));
+  assert.ok(ssD31.parts[1].output.includes('AMBIGUITY BOUNDARY PROBE EVALUATION'));
+  assert.ok(ssD31.parts[2].output.includes('BACK-OF-THE-ENVELOPE CAPACITY EVALUATION'));
+  assert.ok(ssD31.parts[3].output.includes('LIVE SCOPING UNDER FIRE LAB EVALUATION'));
+  assert.ok(ssD31.parts[4].output.includes('DAY 31 SYSTEM DESIGN PROTOCOL CERTIFICATION'));
+  assert.ok(ssD31.parts[4].output.includes('DAY_31_SCOPE_AND_ESTIMATION_100_PCT_VERIFIED'));
+});
+
+test('Soft Skills Day 32: Resolution & Structural Invariants for Driving the Whiteboard & Topological Canvas', () => {
+  const ssD32 = getLongLesson('soft-skills', 32);
+  assert.ok(ssD32, 'soft-skills Day 32 long lesson must resolve');
+  assert.equal(ssD32.day, 32);
+  assert.equal(ssD32.parts.length, 5, 'soft-skills Day 32 must contain exactly 5 parts');
+  assert.ok(ssD32.summary.length >= 4, 'soft-skills Day 32 must contain comprehensive summary');
+  assert.ok(ssD32.projectStep, 'soft-skills Day 32 must have a hands-on project step');
+
+  const spokenMin = estimateSpokenMinutes(ssD32);
+  assert.ok(spokenMin >= 20, `Spoken minutes should be >= 20 (got ${spokenMin})`);
+
+  for (const part of ssD32.parts) {
+    assert.ok(part.code.includes('console.log('), `Code in '${part.title}' must print results`);
+    assert.ok(part.check.options.length === 4, 'MCQ must provide exactly 4 distinct options');
+    assert.ok(part.check.answer >= 0 && part.check.answer < 4, 'Answer index must be valid');
+    assert.ok(part.check.why.length > 15, 'Explanation must be rigorous');
+  }
+});
+
+test('Soft Skills Day 32: Domain-Specific Content Assertions', () => {
+  const ssD32 = getLongLesson('soft-skills', 32);
+  assert.ok(ssD32);
+
+  assert.ok(ssD32.parts[0].output.includes('VISUAL SYSTEMS TOPOLOGY EVALUATION'));
+  assert.ok(ssD32.parts[1].output.includes('RIDE-SHARING DISPATCH ARCHITECTURE AUDIT'));
+  assert.ok(ssD32.parts[1].output.includes('UBER_H3_HEXAGONAL_INDEX_LEVEL_8'));
+  assert.ok(ssD32.parts[2].output.includes('ARCHITECTURE CANVAS EXPORTER EVALUATION'));
+  assert.ok(ssD32.parts[3].output.includes('LIVE WHITEBOARD DRIVING LAB EVALUATION'));
+  assert.ok(ssD32.parts[4].output.includes('DAY 32 WHITEBOARD MASTERY CERTIFICATION'));
+  assert.ok(ssD32.parts[4].output.includes('DAY_32_WHITEBOARD_DRIVING_100_PCT_VERIFIED'));
+});
+
+test('Soft Skills Day 33: Resolution & Structural Invariants for Communicating Trade-Offs Under Pressure', () => {
+  const ssD33 = getLongLesson('soft-skills', 33);
+  assert.ok(ssD33, 'soft-skills Day 33 long lesson must resolve');
+  assert.equal(ssD33.day, 33);
+  assert.equal(ssD33.parts.length, 5, 'soft-skills Day 33 must contain exactly 5 parts');
+  assert.ok(ssD33.summary.length >= 4, 'soft-skills Day 33 must contain comprehensive summary');
+  assert.ok(ssD33.projectStep, 'soft-skills Day 33 must have a hands-on project step');
+
+  const spokenMin = estimateSpokenMinutes(ssD33);
+  assert.ok(spokenMin >= 20, `Spoken minutes should be >= 20 (got ${spokenMin})`);
+
+  for (const part of ssD33.parts) {
+    assert.ok(part.code.includes('console.log('), `Code in '${part.title}' must print results`);
+    assert.ok(part.check.options.length === 4, 'MCQ must provide exactly 4 distinct options');
+    assert.ok(part.check.answer >= 0 && part.check.answer < 4, 'Answer index must be valid');
+    assert.ok(part.check.why.length > 15, 'Explanation must be rigorous');
+  }
+});
+
+test('Soft Skills Day 33: Domain-Specific Content Assertions', () => {
+  const ssD33 = getLongLesson('soft-skills', 33);
+  assert.ok(ssD33);
+
+  assert.ok(ssD33.parts[0].output.includes('MULTI-DIMENSIONAL TRADE-OFF MATRIX EVALUATION'));
+  assert.ok(ssD33.parts[0].output.includes('PACELC_TRADE_OFF_RIGOR_VERIFIED'));
+  assert.ok(ssD33.parts[1].output.includes('ARCHITECTURAL TRADE-OFF DISSECTION AUDIT'));
+  assert.ok(ssD33.parts[2].output.includes('AUTOMATED TRADE-OFF RADAR EVALUATION'));
+  assert.ok(ssD33.parts[3].output.includes('TRADE-OFF CROSS-EXAMINATION LAB EVALUATION'));
+  assert.ok(ssD33.parts[4].output.includes('DAY 33 TRADE-OFF MASTERY CERTIFICATION'));
+  assert.ok(ssD33.parts[4].output.includes('DAY_33_TRADE_OFFS_100_PCT_VERIFIED'));
+});
+
+test('Soft Skills Day 34: Resolution & Structural Invariants for Handling Pushback & Curveballs', () => {
+  const ssD34 = getLongLesson('soft-skills', 34);
+  assert.ok(ssD34, 'soft-skills Day 34 long lesson must resolve');
+  assert.equal(ssD34.day, 34);
+  assert.equal(ssD34.parts.length, 5, 'soft-skills Day 34 must contain exactly 5 parts');
+  assert.ok(ssD34.summary.length >= 4, 'soft-skills Day 34 must contain comprehensive summary');
+  assert.ok(ssD34.projectStep, 'soft-skills Day 34 must have a hands-on project step');
+
+  const spokenMin = estimateSpokenMinutes(ssD34);
+  assert.ok(spokenMin >= 20, `Spoken minutes should be >= 20 (got ${spokenMin})`);
+
+  for (const part of ssD34.parts) {
+    assert.ok(part.code.includes('console.log('), `Code in '${part.title}' must print results`);
+    assert.ok(part.check.options.length === 4, 'MCQ must provide exactly 4 distinct options');
+    assert.ok(part.check.answer >= 0 && part.check.answer < 4, 'Answer index must be valid');
+    assert.ok(part.check.why.length > 15, 'Explanation must be rigorous');
+  }
+});
+
+test('Soft Skills Day 34: Domain-Specific Content Assertions', () => {
+  const ssD34 = getLongLesson('soft-skills', 34);
+  assert.ok(ssD34);
+
+  assert.ok(ssD34.parts[0].output.includes('EVALUATOR STRESS-TESTING PSYCHOLOGY EVALUATION'));
+  assert.ok(ssD34.parts[1].output.includes('CURVEBALL TAXONOMY & PLAYBOOK AUDIT'));
+  assert.ok(ssD34.parts[2].output.includes('CURVEBALL SIMULATOR EVALUATION'));
+  assert.ok(ssD34.parts[2].output.includes('CURVEBALL_GENERATOR_SIMULATION_PASSED'));
+  assert.ok(ssD34.parts[3].output.includes('HIGH-STRESS CURVEBALL GAUNTLET LAB EVALUATION'));
+  assert.ok(ssD34.parts[4].output.includes('DAY 34 CURVEBALL MASTERY CERTIFICATION'));
+  assert.ok(ssD34.parts[4].output.includes('DAY_34_CURVEBALLS_100_PCT_VERIFIED'));
+});
+
+test('Soft Skills Day 35: Resolution & Structural Invariants for Milestone 4 (M2) ApexDesign System Design Suite', () => {
+  const ssD35 = getLongLesson('soft-skills', 35);
+  assert.ok(ssD35, 'soft-skills Day 35 long lesson must resolve');
+  assert.equal(ssD35.day, 35);
+  assert.equal(ssD35.parts.length, 5, 'soft-skills Day 35 must contain exactly 5 parts');
+  assert.ok(ssD35.summary.length >= 4, 'soft-skills Day 35 must contain comprehensive summary');
+  assert.ok(ssD35.projectStep, 'soft-skills Day 35 must have a hands-on project step');
+
+  const spokenMin = estimateSpokenMinutes(ssD35);
+  assert.ok(spokenMin >= 20, `Spoken minutes should be >= 20 (got ${spokenMin})`);
+
+  for (const part of ssD35.parts) {
+    assert.ok(part.code.includes('console.log('), `Code in '${part.title}' must print results`);
+    assert.ok(part.check.options.length === 4, 'MCQ must provide exactly 4 distinct options');
+    assert.ok(part.check.answer >= 0 && part.check.answer < 4, 'Answer index must be valid');
+    assert.ok(part.check.why.length > 15, 'Explanation must be rigorous');
+  }
+});
+
+test('Soft Skills Day 35: Domain-Specific Content Assertions', () => {
+  const ssD35 = getLongLesson('soft-skills', 35);
+  assert.ok(ssD35);
+
+  assert.ok(ssD35.parts[0].output.includes('PLANETARY SCALE SYSTEM DESIGN RUBRIC EVALUATION'));
+  assert.ok(ssD35.parts[1].output.includes('APEXDESIGN ARCHITECTURE DOSSIER AUDIT'));
+  assert.ok(ssD35.parts[2].output.includes('APEXDESIGN INTERACTIVE WHITEBOARD EVALUATION'));
+  assert.ok(ssD35.parts[3].output.includes('APEXDESIGN BAR RAISER DEFENSE LAB EVALUATION'));
+  assert.ok(ssD35.parts[4].output.includes('MILESTONE 4 APEXDESIGN CAPSTONE CERTIFICATION'));
+  assert.ok(ssD35.parts[4].output.includes('MILESTONE_4_APEXDESIGN_SUITE_100_PCT_VERIFIED'));
+});

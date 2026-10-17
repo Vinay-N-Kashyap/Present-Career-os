@@ -1,0 +1,1709 @@
+{
+  "schemaVersion": 1,
+  "prefix": "soft-skills",
+  "day": 34,
+  "promptSha": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "The Psychology of Evaluator Stress-Testing: Probes & Composure",
+      "codeHash": "260e1f1eefe22bea38074272b7a348f65f83ef4365fa054863b8be00b91827de",
+      "spec": {
+        "template": "workflow",
+        "title": "The Psychology of Evaluator Stress-Testing: P... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Scope & Context Framing",
+            "subtext": "Requirements Calculus",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Topological Architecture",
+            "subtext": "5-Tier Layered Canvas",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "PACELC Trade-Offs",
+            "subtext": "Unit Economics & Bottlenecks",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Executive Bar Raiser",
+            "subtext": "Adaptive Consensus Ratified",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Scope & Context Framing): Initialize The Psychology of Evaluator Stress-Testing: P...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Scope & Context Framing",
+                "subtext": "Requirements Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Topological Architecture",
+                "subtext": "5-Tier Layered Canvas",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "PACELC Trade-Offs",
+                "subtext": "Unit Economics & Bottlenecks",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Bar Raiser",
+                "subtext": "Adaptive Consensus Ratified",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Topological Architecture): Model decoupled data flow.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active Flow",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Scope & Context Framing",
+                "subtext": "Requirements Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Topological Architecture",
+                "subtext": "5-Tier Layered Canvas",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "PACELC Trade-Offs",
+                "subtext": "Unit Economics & Bottlenecks",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Bar Raiser",
+                "subtext": "Adaptive Consensus Ratified",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (PACELC Trade-Offs): Evaluate latency and capacity bottlenecks.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "High Signal",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Scope & Context Framing",
+                "subtext": "Requirements Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Topological Architecture",
+                "subtext": "5-Tier Layered Canvas",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "PACELC Trade-Offs",
+                "subtext": "Unit Economics & Bottlenecks",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Bar Raiser",
+                "subtext": "Adaptive Consensus Ratified",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Executive Bar Raiser): Ratify planetary-scale consensus.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "Staff Architect ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Scope & Context Framing",
+                "subtext": "Requirements Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Topological Architecture",
+                "subtext": "5-Tier Layered Canvas",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "PACELC Trade-Offs",
+                "subtext": "Unit Economics & Bottlenecks",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Bar Raiser",
+                "subtext": "Adaptive Consensus Ratified",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "The Psychology of Evaluator Stress-Testing: P... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Scope & Context Framing",
+            "subtext": "Requirements Calculus",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Topological Architecture",
+            "subtext": "5-Tier Layered Canvas",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "PACELC Trade-Offs",
+            "subtext": "Unit Economics & Bottlenecks",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Executive Bar Raiser",
+            "subtext": "Adaptive Consensus Ratified",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Scope & Context Framing): Initialize The Psychology of Evaluator Stress-Testing: P...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Scope & Context Framing",
+                "subtext": "Requirements Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Topological Architecture",
+                "subtext": "5-Tier Layered Canvas",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "PACELC Trade-Offs",
+                "subtext": "Unit Economics & Bottlenecks",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Bar Raiser",
+                "subtext": "Adaptive Consensus Ratified",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Topological Architecture): Model decoupled data flow.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active Flow",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Scope & Context Framing",
+                "subtext": "Requirements Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Topological Architecture",
+                "subtext": "5-Tier Layered Canvas",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "PACELC Trade-Offs",
+                "subtext": "Unit Economics & Bottlenecks",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Bar Raiser",
+                "subtext": "Adaptive Consensus Ratified",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (PACELC Trade-Offs): Evaluate latency and capacity bottlenecks.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "High Signal",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Scope & Context Framing",
+                "subtext": "Requirements Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Topological Architecture",
+                "subtext": "5-Tier Layered Canvas",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "PACELC Trade-Offs",
+                "subtext": "Unit Economics & Bottlenecks",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Bar Raiser",
+                "subtext": "Adaptive Consensus Ratified",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Executive Bar Raiser): Ratify planetary-scale consensus.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "Staff Architect ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Scope & Context Framing",
+                "subtext": "Requirements Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Topological Architecture",
+                "subtext": "5-Tier Layered Canvas",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "PACELC Trade-Offs",
+                "subtext": "Unit Economics & Bottlenecks",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Bar Raiser",
+                "subtext": "Adaptive Consensus Ratified",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Curveball Taxonomy & Playbook: 10 Architectural Pivots",
+      "codeHash": "0eb9aeae34eb80dea33432b1f8bde12b2333a71a81adb186af67eb8a900f2ecf",
+      "spec": {
+        "template": "workflow",
+        "title": "The Curveball Taxonomy & Playbook: 10 Archite... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Scope & Context Framing",
+            "subtext": "Requirements Calculus",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Topological Architecture",
+            "subtext": "5-Tier Layered Canvas",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "PACELC Trade-Offs",
+            "subtext": "Unit Economics & Bottlenecks",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Executive Bar Raiser",
+            "subtext": "Adaptive Consensus Ratified",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Scope & Context Framing): Initialize The Curveball Taxonomy & Playbook: 10 Archite...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Scope & Context Framing",
+                "subtext": "Requirements Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Topological Architecture",
+                "subtext": "5-Tier Layered Canvas",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "PACELC Trade-Offs",
+                "subtext": "Unit Economics & Bottlenecks",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Bar Raiser",
+                "subtext": "Adaptive Consensus Ratified",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Topological Architecture): Model decoupled data flow.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active Flow",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Scope & Context Framing",
+                "subtext": "Requirements Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Topological Architecture",
+                "subtext": "5-Tier Layered Canvas",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "PACELC Trade-Offs",
+                "subtext": "Unit Economics & Bottlenecks",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Bar Raiser",
+                "subtext": "Adaptive Consensus Ratified",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (PACELC Trade-Offs): Evaluate latency and capacity bottlenecks.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "High Signal",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Scope & Context Framing",
+                "subtext": "Requirements Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Topological Architecture",
+                "subtext": "5-Tier Layered Canvas",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "PACELC Trade-Offs",
+                "subtext": "Unit Economics & Bottlenecks",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Bar Raiser",
+                "subtext": "Adaptive Consensus Ratified",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Executive Bar Raiser): Ratify planetary-scale consensus.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "Staff Architect ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Scope & Context Framing",
+                "subtext": "Requirements Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Topological Architecture",
+                "subtext": "5-Tier Layered Canvas",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "PACELC Trade-Offs",
+                "subtext": "Unit Economics & Bottlenecks",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Bar Raiser",
+                "subtext": "Adaptive Consensus Ratified",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "The Curveball Taxonomy & Playbook: 10 Archite... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Scope & Context Framing",
+            "subtext": "Requirements Calculus",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Topological Architecture",
+            "subtext": "5-Tier Layered Canvas",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "PACELC Trade-Offs",
+            "subtext": "Unit Economics & Bottlenecks",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Executive Bar Raiser",
+            "subtext": "Adaptive Consensus Ratified",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Scope & Context Framing): Initialize The Curveball Taxonomy & Playbook: 10 Archite...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Scope & Context Framing",
+                "subtext": "Requirements Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Topological Architecture",
+                "subtext": "5-Tier Layered Canvas",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "PACELC Trade-Offs",
+                "subtext": "Unit Economics & Bottlenecks",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Bar Raiser",
+                "subtext": "Adaptive Consensus Ratified",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Topological Architecture): Model decoupled data flow.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active Flow",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Scope & Context Framing",
+                "subtext": "Requirements Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Topological Architecture",
+                "subtext": "5-Tier Layered Canvas",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "PACELC Trade-Offs",
+                "subtext": "Unit Economics & Bottlenecks",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Bar Raiser",
+                "subtext": "Adaptive Consensus Ratified",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (PACELC Trade-Offs): Evaluate latency and capacity bottlenecks.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "High Signal",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Scope & Context Framing",
+                "subtext": "Requirements Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Topological Architecture",
+                "subtext": "5-Tier Layered Canvas",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "PACELC Trade-Offs",
+                "subtext": "Unit Economics & Bottlenecks",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Bar Raiser",
+                "subtext": "Adaptive Consensus Ratified",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Executive Bar Raiser): Ratify planetary-scale consensus.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "Staff Architect ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Scope & Context Framing",
+                "subtext": "Requirements Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Topological Architecture",
+                "subtext": "5-Tier Layered Canvas",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "PACELC Trade-Offs",
+                "subtext": "Unit Economics & Bottlenecks",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Bar Raiser",
+                "subtext": "Adaptive Consensus Ratified",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "System Design Curveball Generator CLI Simulator Implementation",
+      "codeHash": "bf6579bfe268924de9ee65772395442df376564a053ef4fc304fc0c76983422a",
+      "spec": {
+        "template": "workflow",
+        "title": "System Design Curveball Generator CLI Simulat... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Scope & Context Framing",
+            "subtext": "Requirements Calculus",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Topological Architecture",
+            "subtext": "5-Tier Layered Canvas",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "PACELC Trade-Offs",
+            "subtext": "Unit Economics & Bottlenecks",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Executive Bar Raiser",
+            "subtext": "Adaptive Consensus Ratified",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Scope & Context Framing): Initialize System Design Curveball Generator CLI Simulat...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Scope & Context Framing",
+                "subtext": "Requirements Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Topological Architecture",
+                "subtext": "5-Tier Layered Canvas",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "PACELC Trade-Offs",
+                "subtext": "Unit Economics & Bottlenecks",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Bar Raiser",
+                "subtext": "Adaptive Consensus Ratified",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Topological Architecture): Model decoupled data flow.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active Flow",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Scope & Context Framing",
+                "subtext": "Requirements Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Topological Architecture",
+                "subtext": "5-Tier Layered Canvas",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "PACELC Trade-Offs",
+                "subtext": "Unit Economics & Bottlenecks",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Bar Raiser",
+                "subtext": "Adaptive Consensus Ratified",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (PACELC Trade-Offs): Evaluate latency and capacity bottlenecks.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "High Signal",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Scope & Context Framing",
+                "subtext": "Requirements Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Topological Architecture",
+                "subtext": "5-Tier Layered Canvas",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "PACELC Trade-Offs",
+                "subtext": "Unit Economics & Bottlenecks",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Bar Raiser",
+                "subtext": "Adaptive Consensus Ratified",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Executive Bar Raiser): Ratify planetary-scale consensus.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "Staff Architect ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Scope & Context Framing",
+                "subtext": "Requirements Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Topological Architecture",
+                "subtext": "5-Tier Layered Canvas",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "PACELC Trade-Offs",
+                "subtext": "Unit Economics & Bottlenecks",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Bar Raiser",
+                "subtext": "Adaptive Consensus Ratified",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "System Design Curveball Generator CLI Simulat... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Scope & Context Framing",
+            "subtext": "Requirements Calculus",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Topological Architecture",
+            "subtext": "5-Tier Layered Canvas",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "PACELC Trade-Offs",
+            "subtext": "Unit Economics & Bottlenecks",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Executive Bar Raiser",
+            "subtext": "Adaptive Consensus Ratified",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Scope & Context Framing): Initialize System Design Curveball Generator CLI Simulat...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Scope & Context Framing",
+                "subtext": "Requirements Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Topological Architecture",
+                "subtext": "5-Tier Layered Canvas",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "PACELC Trade-Offs",
+                "subtext": "Unit Economics & Bottlenecks",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Bar Raiser",
+                "subtext": "Adaptive Consensus Ratified",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Topological Architecture): Model decoupled data flow.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active Flow",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Scope & Context Framing",
+                "subtext": "Requirements Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Topological Architecture",
+                "subtext": "5-Tier Layered Canvas",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "PACELC Trade-Offs",
+                "subtext": "Unit Economics & Bottlenecks",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Bar Raiser",
+                "subtext": "Adaptive Consensus Ratified",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (PACELC Trade-Offs): Evaluate latency and capacity bottlenecks.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "High Signal",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Scope & Context Framing",
+                "subtext": "Requirements Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Topological Architecture",
+                "subtext": "5-Tier Layered Canvas",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "PACELC Trade-Offs",
+                "subtext": "Unit Economics & Bottlenecks",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Bar Raiser",
+                "subtext": "Adaptive Consensus Ratified",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Executive Bar Raiser): Ratify planetary-scale consensus.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "Staff Architect ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Scope & Context Framing",
+                "subtext": "Requirements Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Topological Architecture",
+                "subtext": "5-Tier Layered Canvas",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "PACELC Trade-Offs",
+                "subtext": "Unit Economics & Bottlenecks",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Bar Raiser",
+                "subtext": "Adaptive Consensus Ratified",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "High-Stress Curveball Gauntlet Lab: Compound Anomaly Survival",
+      "codeHash": "d186ad4e85a2a562fc8c470881417b6bbbbda6b4efa0c6c2c76e0706f0f6fa8f",
+      "spec": {
+        "template": "workflow",
+        "title": "High-Stress Curveball Gauntlet Lab: Compound ... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Scope & Context Framing",
+            "subtext": "Requirements Calculus",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Topological Architecture",
+            "subtext": "5-Tier Layered Canvas",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "PACELC Trade-Offs",
+            "subtext": "Unit Economics & Bottlenecks",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Executive Bar Raiser",
+            "subtext": "Adaptive Consensus Ratified",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Scope & Context Framing): Initialize High-Stress Curveball Gauntlet Lab: Compound ...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Scope & Context Framing",
+                "subtext": "Requirements Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Topological Architecture",
+                "subtext": "5-Tier Layered Canvas",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "PACELC Trade-Offs",
+                "subtext": "Unit Economics & Bottlenecks",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Bar Raiser",
+                "subtext": "Adaptive Consensus Ratified",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Topological Architecture): Model decoupled data flow.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active Flow",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Scope & Context Framing",
+                "subtext": "Requirements Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Topological Architecture",
+                "subtext": "5-Tier Layered Canvas",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "PACELC Trade-Offs",
+                "subtext": "Unit Economics & Bottlenecks",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Bar Raiser",
+                "subtext": "Adaptive Consensus Ratified",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (PACELC Trade-Offs): Evaluate latency and capacity bottlenecks.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "High Signal",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Scope & Context Framing",
+                "subtext": "Requirements Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Topological Architecture",
+                "subtext": "5-Tier Layered Canvas",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "PACELC Trade-Offs",
+                "subtext": "Unit Economics & Bottlenecks",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Bar Raiser",
+                "subtext": "Adaptive Consensus Ratified",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Executive Bar Raiser): Ratify planetary-scale consensus.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "Staff Architect ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Scope & Context Framing",
+                "subtext": "Requirements Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Topological Architecture",
+                "subtext": "5-Tier Layered Canvas",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "PACELC Trade-Offs",
+                "subtext": "Unit Economics & Bottlenecks",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Bar Raiser",
+                "subtext": "Adaptive Consensus Ratified",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "High-Stress Curveball Gauntlet Lab: Compound ... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Scope & Context Framing",
+            "subtext": "Requirements Calculus",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Topological Architecture",
+            "subtext": "5-Tier Layered Canvas",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "PACELC Trade-Offs",
+            "subtext": "Unit Economics & Bottlenecks",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Executive Bar Raiser",
+            "subtext": "Adaptive Consensus Ratified",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Scope & Context Framing): Initialize High-Stress Curveball Gauntlet Lab: Compound ...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Scope & Context Framing",
+                "subtext": "Requirements Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Topological Architecture",
+                "subtext": "5-Tier Layered Canvas",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "PACELC Trade-Offs",
+                "subtext": "Unit Economics & Bottlenecks",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Bar Raiser",
+                "subtext": "Adaptive Consensus Ratified",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Topological Architecture): Model decoupled data flow.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active Flow",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Scope & Context Framing",
+                "subtext": "Requirements Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Topological Architecture",
+                "subtext": "5-Tier Layered Canvas",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "PACELC Trade-Offs",
+                "subtext": "Unit Economics & Bottlenecks",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Bar Raiser",
+                "subtext": "Adaptive Consensus Ratified",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (PACELC Trade-Offs): Evaluate latency and capacity bottlenecks.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "High Signal",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Scope & Context Framing",
+                "subtext": "Requirements Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Topological Architecture",
+                "subtext": "5-Tier Layered Canvas",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "PACELC Trade-Offs",
+                "subtext": "Unit Economics & Bottlenecks",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Bar Raiser",
+                "subtext": "Adaptive Consensus Ratified",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Executive Bar Raiser): Ratify planetary-scale consensus.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "Staff Architect ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Scope & Context Framing",
+                "subtext": "Requirements Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Topological Architecture",
+                "subtext": "5-Tier Layered Canvas",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "PACELC Trade-Offs",
+                "subtext": "Unit Economics & Bottlenecks",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Bar Raiser",
+                "subtext": "Adaptive Consensus Ratified",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Day 34 Mastery Certification: Interview Pushback & Adaptive Pivoting",
+      "codeHash": "99eb4686447c5ed0442520bf03bd65a15a795e786c94915b872293ac94cce8bd",
+      "spec": {
+        "template": "workflow",
+        "title": "Day 34 Mastery Certification: Interview Pushb... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Scope & Context Framing",
+            "subtext": "Requirements Calculus",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Topological Architecture",
+            "subtext": "5-Tier Layered Canvas",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "PACELC Trade-Offs",
+            "subtext": "Unit Economics & Bottlenecks",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Executive Bar Raiser",
+            "subtext": "Adaptive Consensus Ratified",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Scope & Context Framing): Initialize Day 34 Mastery Certification: Interview Pushb...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Scope & Context Framing",
+                "subtext": "Requirements Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Topological Architecture",
+                "subtext": "5-Tier Layered Canvas",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "PACELC Trade-Offs",
+                "subtext": "Unit Economics & Bottlenecks",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Bar Raiser",
+                "subtext": "Adaptive Consensus Ratified",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Topological Architecture): Model decoupled data flow.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active Flow",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Scope & Context Framing",
+                "subtext": "Requirements Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Topological Architecture",
+                "subtext": "5-Tier Layered Canvas",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "PACELC Trade-Offs",
+                "subtext": "Unit Economics & Bottlenecks",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Bar Raiser",
+                "subtext": "Adaptive Consensus Ratified",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (PACELC Trade-Offs): Evaluate latency and capacity bottlenecks.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "High Signal",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Scope & Context Framing",
+                "subtext": "Requirements Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Topological Architecture",
+                "subtext": "5-Tier Layered Canvas",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "PACELC Trade-Offs",
+                "subtext": "Unit Economics & Bottlenecks",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Bar Raiser",
+                "subtext": "Adaptive Consensus Ratified",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Executive Bar Raiser): Ratify planetary-scale consensus.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "Staff Architect ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Scope & Context Framing",
+                "subtext": "Requirements Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Topological Architecture",
+                "subtext": "5-Tier Layered Canvas",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "PACELC Trade-Offs",
+                "subtext": "Unit Economics & Bottlenecks",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Bar Raiser",
+                "subtext": "Adaptive Consensus Ratified",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Day 34 Mastery Certification: Interview Pushb... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Scope & Context Framing",
+            "subtext": "Requirements Calculus",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Topological Architecture",
+            "subtext": "5-Tier Layered Canvas",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "PACELC Trade-Offs",
+            "subtext": "Unit Economics & Bottlenecks",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Executive Bar Raiser",
+            "subtext": "Adaptive Consensus Ratified",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Scope & Context Framing): Initialize Day 34 Mastery Certification: Interview Pushb...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Scope & Context Framing",
+                "subtext": "Requirements Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Topological Architecture",
+                "subtext": "5-Tier Layered Canvas",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "PACELC Trade-Offs",
+                "subtext": "Unit Economics & Bottlenecks",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Bar Raiser",
+                "subtext": "Adaptive Consensus Ratified",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Topological Architecture): Model decoupled data flow.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active Flow",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Scope & Context Framing",
+                "subtext": "Requirements Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Topological Architecture",
+                "subtext": "5-Tier Layered Canvas",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "PACELC Trade-Offs",
+                "subtext": "Unit Economics & Bottlenecks",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Bar Raiser",
+                "subtext": "Adaptive Consensus Ratified",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (PACELC Trade-Offs): Evaluate latency and capacity bottlenecks.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "High Signal",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Scope & Context Framing",
+                "subtext": "Requirements Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Topological Architecture",
+                "subtext": "5-Tier Layered Canvas",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "PACELC Trade-Offs",
+                "subtext": "Unit Economics & Bottlenecks",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Bar Raiser",
+                "subtext": "Adaptive Consensus Ratified",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Executive Bar Raiser): Ratify planetary-scale consensus.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "Staff Architect ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Scope & Context Framing",
+                "subtext": "Requirements Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Topological Architecture",
+                "subtext": "5-Tier Layered Canvas",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "PACELC Trade-Offs",
+                "subtext": "Unit Economics & Bottlenecks",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Bar Raiser",
+                "subtext": "Adaptive Consensus Ratified",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
