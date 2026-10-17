@@ -1,0 +1,344 @@
+{
+  "schemaVersion": 1,
+  "prefix": "quant-systems",
+  "day": 15,
+  "promptSha": "cf40c1f745d25becf0ef33c6687fedac1936bf1c2f3a843938b01302592501b2",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Architecture of an Ultra-Low-Latency Multi-Venue Execution Engine",
+      "codeHash": "05dd3d7ae9115bfd1a5e03ee75bf46ee842409f0387cb2b17c5ba0f2df688936",
+      "spec": {
+        "template": "states",
+        "title": "Architecture of an Ultra-Low-Latency Multi-Venue — High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "BBO Aggregator"
+          },
+          {
+            "id": "st2",
+            "label": "Optimal Trajectory"
+          },
+          {
+            "id": "st3",
+            "label": "Maker Taker SOR"
+          },
+          {
+            "id": "st4",
+            "label": "Execution Defense"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (BBO Aggregator): Initialize deterministic state for Architecture of an Ultra-Low-Latency Mul...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Optimal Trajectory with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "compute()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Maker Taker SOR and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Commit wire-speed execution in Execution Defense.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit() →"
+            },
+            "tone": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Dynamic Trajectory Slicing & Implementation Shortfall Benchmark",
+      "codeHash": "8726bd8e506621176b7f1323dd50d40664eb7fe9cbfa7a6c9af2d36b7b1a8135",
+      "spec": {
+        "template": "states",
+        "title": "Dynamic Trajectory Slicing & Implementation Shor — High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "BBO Aggregator"
+          },
+          {
+            "id": "st2",
+            "label": "Optimal Trajectory"
+          },
+          {
+            "id": "st3",
+            "label": "Maker Taker SOR"
+          },
+          {
+            "id": "st4",
+            "label": "Execution Defense"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (BBO Aggregator): Initialize deterministic state for Dynamic Trajectory Slicing & Implementat...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Optimal Trajectory with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "compute()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Maker Taker SOR and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Commit wire-speed execution in Execution Defense.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit() →"
+            },
+            "tone": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Fee-Optimized Multi-Venue Smart Order Routing & ISO Sweeper",
+      "codeHash": "18d76fb09ec402ce216228189b36efa2146c241701edb7aec2260d7d5e39e24f",
+      "spec": {
+        "template": "states",
+        "title": "Fee-Optimized Multi-Venue Smart Order Routing &  — High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "BBO Aggregator"
+          },
+          {
+            "id": "st2",
+            "label": "Optimal Trajectory"
+          },
+          {
+            "id": "st3",
+            "label": "Maker Taker SOR"
+          },
+          {
+            "id": "st4",
+            "label": "Execution Defense"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (BBO Aggregator): Initialize deterministic state for Fee-Optimized Multi-Venue Smart Order Ro...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Optimal Trajectory with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "compute()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Maker Taker SOR and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Commit wire-speed execution in Execution Defense.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit() →"
+            },
+            "tone": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Dark Midpoint Crossing Integration & Adverse Selection Shielding",
+      "codeHash": "0654ccca8e125f5e8a4c762d4bb2bf1f16dfc7bc9ff162fd902b38d3920ca958",
+      "spec": {
+        "template": "states",
+        "title": "Dark Midpoint Crossing Integration & Adverse Sel — High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "BBO Aggregator"
+          },
+          {
+            "id": "st2",
+            "label": "Optimal Trajectory"
+          },
+          {
+            "id": "st3",
+            "label": "Maker Taker SOR"
+          },
+          {
+            "id": "st4",
+            "label": "Execution Defense"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (BBO Aggregator): Initialize deterministic state for Dark Midpoint Crossing Integration & Adv...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Optimal Trajectory with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "compute()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Maker Taker SOR and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Commit wire-speed execution in Execution Defense.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit() →"
+            },
+            "tone": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "⭐ Milestone 3 Capstone: Full Sub-Microsecond Multi-Venue SOR & Optimal Execution Engine Simulator",
+      "codeHash": "56e374daf7e9bba25bba4bc388e4c05c95583b9993966b0f34d8fbc191b12104",
+      "spec": {
+        "template": "states",
+        "title": "⭐ Milestone 3 Capstone: Full Sub-Microsecond Mul — High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "BBO Aggregator"
+          },
+          {
+            "id": "st2",
+            "label": "Optimal Trajectory"
+          },
+          {
+            "id": "st3",
+            "label": "Maker Taker SOR"
+          },
+          {
+            "id": "st4",
+            "label": "Execution Defense"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (BBO Aggregator): Initialize deterministic state for ⭐ Milestone 3 Capstone: Full Sub-Microse...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Optimal Trajectory with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "compute()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Maker Taker SOR and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Commit wire-speed execution in Execution Defense.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit() →"
+            },
+            "tone": "ok"
+          }
+        ]
+      }
+    }
+  ]
+}

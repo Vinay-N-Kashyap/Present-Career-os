@@ -1,0 +1,344 @@
+{
+  "schemaVersion": 1,
+  "prefix": "quant-systems",
+  "day": 12,
+  "promptSha": "16118c79d3c3c3200aea1aeba1d5f9ab21f82504e2f853172b3d81f2c6803c92",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Modern Market Fragmentation & Venue Fee Schedules: Maker-Taker vs Inverted Economics",
+      "codeHash": "38def164346fdaef7505638d1678adce80cafa434444eaaa6d47904e343e3273",
+      "spec": {
+        "template": "states",
+        "title": "Modern Market Fragmentation & Venue Fee Schedule — High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Venue Scanner"
+          },
+          {
+            "id": "st2",
+            "label": "Maker Rebate"
+          },
+          {
+            "id": "st3",
+            "label": "Queue Priority"
+          },
+          {
+            "id": "st4",
+            "label": "SOR Router"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Venue Scanner): Initialize deterministic state for Modern Market Fragmentation & Venue Fee ...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Maker Rebate with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "compute()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Queue Priority and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Commit wire-speed execution in SOR Router.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit() →"
+            },
+            "tone": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Queue Priority, Depth Estimation & Expected Fill Rates in Limit Order Books",
+      "codeHash": "2b8dc13d420aee51cacfe7bea969ceda4720ef0a0fe48378384e3a84edc08290",
+      "spec": {
+        "template": "states",
+        "title": "Queue Priority, Depth Estimation & Expected Fill — High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Venue Scanner"
+          },
+          {
+            "id": "st2",
+            "label": "Maker Rebate"
+          },
+          {
+            "id": "st3",
+            "label": "Queue Priority"
+          },
+          {
+            "id": "st4",
+            "label": "SOR Router"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Venue Scanner): Initialize deterministic state for Queue Priority, Depth Estimation & Expec...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Maker Rebate with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "compute()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Queue Priority and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Commit wire-speed execution in SOR Router.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit() →"
+            },
+            "tone": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Adverse Selection, Informed Order Flow & Post-Fill Toxicity (Markout Analysis)",
+      "codeHash": "e868a54af035b509d5517d2f212cb08891e57892c29e4c78f3155424230542b2",
+      "spec": {
+        "template": "states",
+        "title": "Adverse Selection, Informed Order Flow & Post-Fi — High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Venue Scanner"
+          },
+          {
+            "id": "st2",
+            "label": "Maker Rebate"
+          },
+          {
+            "id": "st3",
+            "label": "Queue Priority"
+          },
+          {
+            "id": "st4",
+            "label": "SOR Router"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Venue Scanner): Initialize deterministic state for Adverse Selection, Informed Order Flow &...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Maker Rebate with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "compute()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Queue Priority and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Commit wire-speed execution in SOR Router.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit() →"
+            },
+            "tone": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Static vs Dynamic Routing Policies: Multi-Venue Split Optimization & Intermarket Sweep Orders",
+      "codeHash": "bb271648b4f6ce27c4fb7131c8d3f9049418fd1699358ae9914474ba17c04d67",
+      "spec": {
+        "template": "states",
+        "title": "Static vs Dynamic Routing Policies: Multi-Venue  — High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Venue Scanner"
+          },
+          {
+            "id": "st2",
+            "label": "Maker Rebate"
+          },
+          {
+            "id": "st3",
+            "label": "Queue Priority"
+          },
+          {
+            "id": "st4",
+            "label": "SOR Router"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Venue Scanner): Initialize deterministic state for Static vs Dynamic Routing Policies: Mult...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Maker Rebate with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "compute()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Queue Priority and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Commit wire-speed execution in SOR Router.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit() →"
+            },
+            "tone": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production C++ Low-Latency Smart Order Router Engine Simulator",
+      "codeHash": "b3a67d9931438d40f434e0ad29da153f249b0a3d18ae13b7f3e1106cc8cec09d",
+      "spec": {
+        "template": "states",
+        "title": "Production C++ Low-Latency Smart Order Router En — High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Venue Scanner"
+          },
+          {
+            "id": "st2",
+            "label": "Maker Rebate"
+          },
+          {
+            "id": "st3",
+            "label": "Queue Priority"
+          },
+          {
+            "id": "st4",
+            "label": "SOR Router"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Venue Scanner): Initialize deterministic state for Production C++ Low-Latency Smart Order R...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Maker Rebate with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "compute()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Queue Priority and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Commit wire-speed execution in SOR Router.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit() →"
+            },
+            "tone": "ok"
+          }
+        ]
+      }
+    }
+  ]
+}

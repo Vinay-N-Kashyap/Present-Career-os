@@ -60,3 +60,44 @@ test('Block 145: Launchpad & Core Engineering On-Disk Visual Suites (Days 1–5)
     }
   }
 });
+
+test('Block 191: Excel Viz On-Disk Visual Suites (Days 6–10)', () => {
+  clearDayFileCache();
+  assert.equal(isCourseVisualsEnabled('excel_viz'), true);
+
+  for (let day = 6; day <= 10; day++) {
+    const dayPadded = String(day).padStart(2, '0');
+    const filePath = path.resolve(process.cwd(), `src/lib/data/lessonVisuals/excel_viz/day-${dayPadded}.json`);
+    assert.ok(fs.existsSync(filePath), `On-disk visual file missing: ${filePath}`);
+
+    const dayFile = loadDayFile('excel_viz', day);
+    assert.ok(dayFile, `loadDayFile failed for excel_viz Day ${day}`);
+    assert.equal(dayFile.schemaVersion, 1);
+    assert.equal(dayFile.prefix, 'excel_viz');
+    assert.equal(dayFile.day, day);
+    assert.equal(dayFile.entries.length, 5);
+
+    const lesson = getLongLesson('excel_viz', day);
+    assert.ok(lesson);
+    assert.equal(lesson.parts.length, 5);
+
+    for (let partIdx = 0; partIdx < 5; partIdx++) {
+      const entry = dayFile.entries[partIdx];
+      const part = lesson.parts[partIdx];
+
+      assert.equal(entry.partTitle, part.title);
+      const expectedHash = crypto.createHash('sha256').update(part.code || '').digest('hex');
+      assert.equal(entry.codeHash, expectedHash);
+
+      const visual = getVisual('excel_viz', day, partIdx);
+      assert.ok(visual);
+      assert.equal(visual.template, 'bars');
+      assert.equal(visual.steps.length, 4);
+      assert.deepEqual(visual.steps.map(s => s.at), ['intro', 'say1', 'example', 'tryIt']);
+
+      const labels = getTappableLabelsForVisual(visual);
+      assert.ok(labels.length > 0);
+    }
+  }
+});
+

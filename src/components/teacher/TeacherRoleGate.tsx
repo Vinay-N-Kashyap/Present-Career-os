@@ -9,7 +9,7 @@ import { supabase } from '@/lib/supabaseClient';
 
 const ALLOWED_ROLES = ['teacher', 'admin', 'superadmin', 'faculty'];
 
-export default function TeacherRoleGate() {
+export default function TeacherRoleGate({ children }: { children?: React.ReactNode } = {}) {
   const { user, loading, login, logout } = useAuth();
   const [isLoggingIn, setIsLoggingIn] = useState(false);
   const [loginError, setLoginError] = useState<string | null>(null);
@@ -284,6 +284,10 @@ export default function TeacherRoleGate() {
     (user as any)?.department_name ||
     (user as any)?.user_metadata?.department ||
     'Computer Science & AI';
+
+  if (children) {
+    return <>{children}</>;
+  }
 
   return (
     <TeacherDashboard

@@ -1,0 +1,344 @@
+{
+  "schemaVersion": 1,
+  "prefix": "quant-systems",
+  "day": 22,
+  "promptSha": "e0ec06dc1d77cf812d69caf611c8fe2d6e551fced4cd518a3775cb723104dac9",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Parametric Normal Value at Risk (VaR) & Variance-Covariance Matrix Formulation",
+      "codeHash": "d44baa0543407d0e5ca9336da87581be0b76ccda11818a54f477801c6c68fdaa",
+      "spec": {
+        "template": "states",
+        "title": "Parametric Normal Value at Risk (VaR) & Varia — High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Covariance Matrix"
+          },
+          {
+            "id": "st2",
+            "label": "Quadratic Form"
+          },
+          {
+            "id": "st3",
+            "label": "Parametric Quantile"
+          },
+          {
+            "id": "st4",
+            "label": "Div Benefit"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Covariance Matrix): Initialize deterministic state for Parametric Normal Value at Ris...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Quadratic Form with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "compute()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Parametric Quantile and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "State 4 (Div Benefit): Execute deterministic verification with zero heap allocations.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "verify()"
+            },
+            "tone": "accent"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Historical Simulation VaR & Empirical Quantile Interpolation",
+      "codeHash": "31e79cc598d753cb97417d45f8ccddba515c67a018d9119c5c94f936f494729b",
+      "spec": {
+        "template": "states",
+        "title": "Historical Simulation VaR & Empirical Quantil — High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Return Sorter"
+          },
+          {
+            "id": "st2",
+            "label": "Moment Calculator"
+          },
+          {
+            "id": "st3",
+            "label": "Quantile Extractor"
+          },
+          {
+            "id": "st4",
+            "label": "Fat-Tail Audit"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Return Sorter): Initialize deterministic state for Historical Simulation VaR & Em...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Moment Calculator with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "compute()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Quantile Extractor and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "State 4 (Fat-Tail Audit): Execute deterministic verification with zero heap allocations.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "verify()"
+            },
+            "tone": "accent"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Expected Shortfall (Conditional VaR / CVaR) & Sub-Additivity Coherence",
+      "codeHash": "a002fcd05e2b4723c71e4b166bfd82a99180f1db61fe0c1721fc08ab57fd7441",
+      "spec": {
+        "template": "states",
+        "title": "Expected Shortfall (Conditional VaR / CVaR) & — High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Loss Ranking"
+          },
+          {
+            "id": "st2",
+            "label": "VaR Cutoff"
+          },
+          {
+            "id": "st3",
+            "label": "Tail Mean Integrator"
+          },
+          {
+            "id": "st4",
+            "label": "Sub-Additivity OK"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Loss Ranking): Initialize deterministic state for Expected Shortfall (Conditiona...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to VaR Cutoff with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "compute()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Tail Mean Integrator and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "State 4 (Sub-Additivity OK): Execute deterministic verification with zero heap allocations.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "verify()"
+            },
+            "tone": "accent"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Extreme Value Theory (EVT) & Generalized Pareto Distribution (GPD) Peaks-Over-Threshold",
+      "codeHash": "51a942c6bcc267fed0f66d2c34cb1a6a8eb1be3de661c12ade66d4dbee5aeef1",
+      "spec": {
+        "template": "states",
+        "title": "Extreme Value Theory (EVT) & Generalized Pare — High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Loss Exceedances"
+          },
+          {
+            "id": "st2",
+            "label": "Threshold U"
+          },
+          {
+            "id": "st3",
+            "label": "GPD Tail Index"
+          },
+          {
+            "id": "st4",
+            "label": "EVT Quantile Extr"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Loss Exceedances): Initialize deterministic state for Extreme Value Theory (EVT) & G...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Threshold U with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "compute()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to GPD Tail Index and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "State 4 (EVT Quantile Extr): Execute deterministic verification with zero heap allocations.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "verify()"
+            },
+            "tone": "accent"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Multi-Asset Risk Engine with Real-Time VaR/CVaR Aggregation",
+      "codeHash": "4489a9928d46444d0e00ec04e8705c65d3cbfa534c2f37b375a96125a74fd04b",
+      "spec": {
+        "template": "states",
+        "title": "Production Multi-Asset Risk Engine with Real- — High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Multi-Asset Stream"
+          },
+          {
+            "id": "st2",
+            "label": "Component VaR"
+          },
+          {
+            "id": "st3",
+            "label": "FRTB Capital Guard"
+          },
+          {
+            "id": "st4",
+            "label": "Risk Gatekeeper"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Multi-Asset Stream): Initialize deterministic state for Production Multi-Asset Risk En...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Component VaR with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "compute()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to FRTB Capital Guard and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "State 4 (Risk Gatekeeper): Execute deterministic verification with zero heap allocations.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "verify()"
+            },
+            "tone": "accent"
+          }
+        ]
+      }
+    }
+  ]
+}

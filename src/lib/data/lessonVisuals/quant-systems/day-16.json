@@ -1,0 +1,344 @@
+{
+  "schemaVersion": 1,
+  "prefix": "quant-systems",
+  "day": 16,
+  "promptSha": "ffd84fe95fb5d91d2acd3b7b1603ac8e7d5eb36767c1d2880714e82ef25066c9",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Volume Clocks vs Chronological Time: Normalizing Information Arrival Rate",
+      "codeHash": "b8fa2f2eeb69744e2540d8d886ed7f9c0cf056721b855c9691c5b2fb7045af82",
+      "spec": {
+        "template": "states",
+        "title": "Volume Clocks vs Chronological Time: Normalizing — High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Volume Clock"
+          },
+          {
+            "id": "st2",
+            "label": "BVC Slicer"
+          },
+          {
+            "id": "st3",
+            "label": "VPIN Metric"
+          },
+          {
+            "id": "st4",
+            "label": "Toxicity Shield"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Volume Clock): Initialize deterministic state for Volume Clocks vs Chronological T...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to BVC Slicer with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "compute()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to VPIN Metric and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Commit wire-speed execution in Toxicity Shield.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit() →"
+            },
+            "tone": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Bulk Volume Classification (BVC) & The Tick Rule",
+      "codeHash": "319e045a93a3fd5d2e6a7879067074971a5623be4f0d4d8af53d8619dd1f47fe",
+      "spec": {
+        "template": "states",
+        "title": "Bulk Volume Classification (BVC) & The Tick Rule — High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Volume Clock"
+          },
+          {
+            "id": "st2",
+            "label": "BVC Slicer"
+          },
+          {
+            "id": "st3",
+            "label": "VPIN Metric"
+          },
+          {
+            "id": "st4",
+            "label": "Toxicity Shield"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Volume Clock): Initialize deterministic state for Bulk Volume Classification (BVC)...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to BVC Slicer with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "compute()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to VPIN Metric and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Commit wire-speed execution in Toxicity Shield.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit() →"
+            },
+            "tone": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The VPIN Metric: Rolling Absolute Imbalance over N Volume Buckets",
+      "codeHash": "f28b2afb895ad7ab5a5251019ae0942d3daede5f27eba4f044869beae087bac6",
+      "spec": {
+        "template": "states",
+        "title": "The VPIN Metric: Rolling Absolute Imbalance over — High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Volume Clock"
+          },
+          {
+            "id": "st2",
+            "label": "BVC Slicer"
+          },
+          {
+            "id": "st3",
+            "label": "VPIN Metric"
+          },
+          {
+            "id": "st4",
+            "label": "Toxicity Shield"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Volume Clock): Initialize deterministic state for The VPIN Metric: Rolling Absolut...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to BVC Slicer with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "compute()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to VPIN Metric and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Commit wire-speed execution in Toxicity Shield.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit() →"
+            },
+            "tone": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Adverse Selection Markouts & Quote Skewing Dynamics",
+      "codeHash": "59111752ac89925bfb9b8c64e8aeed5bbb03709d1e79500b636f16ef45cfda76",
+      "spec": {
+        "template": "states",
+        "title": "Adverse Selection Markouts & Quote Skewing Dynam — High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Volume Clock"
+          },
+          {
+            "id": "st2",
+            "label": "BVC Slicer"
+          },
+          {
+            "id": "st3",
+            "label": "VPIN Metric"
+          },
+          {
+            "id": "st4",
+            "label": "Toxicity Shield"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Volume Clock): Initialize deterministic state for Adverse Selection Markouts & Quo...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to BVC Slicer with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "compute()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to VPIN Metric and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Commit wire-speed execution in Toxicity Shield.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit() →"
+            },
+            "tone": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production C++ Low-Latency VPIN Calculation & Toxicity Circuit Breaker",
+      "codeHash": "fd428c9357a97f8fc9f3b4e0f4ba4f70b93a669d2b0585a0a2f13f18adfd1376",
+      "spec": {
+        "template": "states",
+        "title": "Production C++ Low-Latency VPIN Calculation & To — High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Volume Clock"
+          },
+          {
+            "id": "st2",
+            "label": "BVC Slicer"
+          },
+          {
+            "id": "st3",
+            "label": "VPIN Metric"
+          },
+          {
+            "id": "st4",
+            "label": "Toxicity Shield"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Volume Clock): Initialize deterministic state for Production C++ Low-Latency VPIN ...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to BVC Slicer with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "compute()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to VPIN Metric and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Commit wire-speed execution in Toxicity Shield.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit() →"
+            },
+            "tone": "ok"
+          }
+        ]
+      }
+    }
+  ]
+}

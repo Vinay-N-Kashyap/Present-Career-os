@@ -1,0 +1,344 @@
+{
+  "schemaVersion": 1,
+  "prefix": "quant-systems",
+  "day": 23,
+  "promptSha": "73bf8e37c2a7e6575a2e0751672e733f4d8593a502d8f421c3c86cf1d325f294",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Basel III & Fundamental Review of the Trading Book (FRTB) Capital Framework",
+      "codeHash": "870a61f3e0ad998649fff7e41e36d9150d73492a8ab8e4f21c2f0a1ddc3a457c",
+      "spec": {
+        "template": "states",
+        "title": "Basel III & Fundamental Review of the Trading — High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "10d Base Horizon"
+          },
+          {
+            "id": "st2",
+            "label": "Multi-Horizon Scale"
+          },
+          {
+            "id": "st3",
+            "label": "Stressed 2008 ES"
+          },
+          {
+            "id": "st4",
+            "label": "FRTB Compliance"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (10d Base Horizon): Initialize deterministic state for Basel III & Fundamental Review...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Multi-Horizon Scale with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "compute()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Stressed 2008 ES and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "State 4 (FRTB Compliance): Execute deterministic verification with zero heap allocations.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "verify()"
+            },
+            "tone": "accent"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cornish-Fisher Expansion for Non-Normal Return Distributions (Skewness & Kurtosis)",
+      "codeHash": "f3666b806ed8279c014902ea569f6811a7f0a423899ec2098d03c74ffe1e5517",
+      "spec": {
+        "template": "states",
+        "title": "Cornish-Fisher Expansion for Non-Normal Retur — High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Sample Skewness"
+          },
+          {
+            "id": "st2",
+            "label": "Excess Kurtosis"
+          },
+          {
+            "id": "st3",
+            "label": "CF Polynomial Adj"
+          },
+          {
+            "id": "st4",
+            "label": "Higher-Moment VaR"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Sample Skewness): Initialize deterministic state for Cornish-Fisher Expansion for N...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Excess Kurtosis with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "compute()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to CF Polynomial Adj and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "State 4 (Higher-Moment VaR): Execute deterministic verification with zero heap allocations.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "verify()"
+            },
+            "tone": "accent"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Correlated Multi-Asset Monte Carlo Simulation via Cholesky Decomposition",
+      "codeHash": "87cf2741dfddec4db0f930458a906052de2d3768d788e5d233fc2ac2f7538f95",
+      "spec": {
+        "template": "states",
+        "title": "Correlated Multi-Asset Monte Carlo Simulation — High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Corr Matrix Ingest"
+          },
+          {
+            "id": "st2",
+            "label": "Cholesky Factor L"
+          },
+          {
+            "id": "st3",
+            "label": "Gaussian Vector Z"
+          },
+          {
+            "id": "st4",
+            "label": "10k Loss Paths"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Corr Matrix Ingest): Initialize deterministic state for Correlated Multi-Asset Monte C...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Cholesky Factor L with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "compute()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Gaussian Vector Z and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "State 4 (10k Loss Paths): Execute deterministic verification with zero heap allocations.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "verify()"
+            },
+            "tone": "accent"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Liquidity-Adjusted Value at Risk (L-VaR) & Bid-Ask Spread Elasticity",
+      "codeHash": "6559147f6b6a0c0f31892fd98a10de9c8aa123d4850a2b6f1d1f55d4d29249e0",
+      "spec": {
+        "template": "states",
+        "title": "Liquidity-Adjusted Value at Risk (L-VaR) & Bi — High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Spread Expansion"
+          },
+          {
+            "id": "st2",
+            "label": "Exogenous Haircut"
+          },
+          {
+            "id": "st3",
+            "label": "Endogenous Impact"
+          },
+          {
+            "id": "st4",
+            "label": "L-VaR Boundary"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Spread Expansion): Initialize deterministic state for Liquidity-Adjusted Value at Ri...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Exogenous Haircut with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "compute()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Endogenous Impact and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "State 4 (L-VaR Boundary): Execute deterministic verification with zero heap allocations.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "verify()"
+            },
+            "tone": "accent"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Real-Time Stress Testing & Macroeconomic Shock Simulator",
+      "codeHash": "2dbe7f40312899e125360740961355f205bfa03586f5e5c0aadc6ae386485200",
+      "spec": {
+        "template": "states",
+        "title": "Production Real-Time Stress Testing & Macroec — High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Macro Shock Vector"
+          },
+          {
+            "id": "st2",
+            "label": "Non-linear Reval"
+          },
+          {
+            "id": "st3",
+            "label": "Margin Headroom"
+          },
+          {
+            "id": "st4",
+            "label": "Solvency Shield"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Macro Shock Vector): Initialize deterministic state for Production Real-Time Stress Te...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Non-linear Reval with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "compute()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Margin Headroom and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "State 4 (Solvency Shield): Execute deterministic verification with zero heap allocations.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "verify()"
+            },
+            "tone": "accent"
+          }
+        ]
+      }
+    }
+  ]
+}
