@@ -551,5 +551,132 @@ test('Block 218: Domain specifics & deterministic Python code verification acros
   assert.ok(d15.parts[4].code?.includes('run_milestone3_master_governance_verification'));
 });
 
+test('Block 219: B.Com Operations Days 16–20 LongLesson Structural Invariants & Spoken Word Count (>= 2,950 words/day)', () => {
+  for (let day = 16; day <= 20; day++) {
+    const lesson = getLongLesson('bcom_ops', day);
+    assert.ok(lesson, `bcom_ops Day ${day} long lesson must resolve`);
+    assert.equal(lesson.day, day);
+    assert.equal(lesson.minutes, day === 20 ? 50 : 45, `Day ${day} minutes must be ${day === 20 ? 50 : 45}`);
+    assert.equal(lesson.parts.length, 5, `Day ${day} must contain exactly 5 parts`);
+
+    let totalSpokenWords = 0;
+    for (let partIdx = 0; partIdx < 5; partIdx++) {
+      const part = lesson.parts[partIdx];
+      const partWords = Array.isArray(part.say)
+        ? part.say.reduce((acc, p) => acc + p.trim().split(/\s+/).filter(Boolean).length, 0)
+        : part.say.trim().split(/\s+/).filter(Boolean).length;
+      totalSpokenWords += partWords;
+      assert.ok(partWords >= 580, `Day ${day} Part ${partIdx + 1} has ${partWords} words; expected >= 580 words`);
+    }
+
+    assert.ok(
+      totalSpokenWords >= 2950,
+      `Day ${day} total spoken words is ${totalSpokenWords}; expected >= 2,950 words (~20.0 min spoken duration)`
+    );
+
+    assert.ok(lesson.summary && lesson.summary.length >= 5, `Day ${day} must have at least 5 summary bullet points`);
+    assert.ok(lesson.projectStep, `Day ${day} must have a hands-on projectStep`);
+    assert.ok(lesson.projectStep.steps.length >= 4, `Day ${day} projectStep must have at least 4 steps`);
+
+    for (let partIdx = 0; partIdx < 5; partIdx++) {
+      const part = lesson.parts[partIdx];
+      assert.ok(part.title.length > 0, `Day ${day} Part ${partIdx + 1} must have a non-empty title`);
+      assert.ok(part.say.length >= 4, `Day ${day} Part ${partIdx + 1} must have at least 4 exposition paragraphs`);
+      assert.ok(part.example && part.example.length > 0, `Day ${day} Part ${partIdx + 1} must have a real-world example`);
+      assert.ok(part.code && (part.code.includes('def ') || part.code.includes('class ')), `Day ${day} Part ${partIdx + 1} code must contain Python functions/classes`);
+      assert.ok(part.output && part.output.length > 0, `Day ${day} Part ${partIdx + 1} must have deterministic expected output`);
+      assert.ok(part.tryIt && part.tryIt.length > 0, `Day ${day} Part ${partIdx + 1} must have a tryIt experiment`);
+      assert.ok(part.codeNotes && part.codeNotes.length >= 3, `Day ${day} Part ${partIdx + 1} must have at least 3 codeNotes`);
+
+      const check = part.check as any;
+      assert.ok(check.question.length > 10, `Day ${day} Part ${partIdx + 1} check question must be descriptive`);
+      assert.equal(check.options.length, 4, `Day ${day} Part ${partIdx + 1} check must have exactly 4 options`);
+      assert.ok(check.answer >= 0 && check.answer < 4, `Day ${day} Part ${partIdx + 1} answer must be valid index`);
+      assert.ok(check.why && check.why.length > 15, `Day ${day} Part ${partIdx + 1} why explanation must be rigorous`);
+    }
+  }
+});
+
+test('Block 219: B.Com Operations Days 16–20 Gate v2 Workflow Visuals & Cryptographic SHA-256 Bindings', async () => {
+  const fs = await import('node:fs');
+  const path = await import('node:path');
+  const crypto = await import('node:crypto');
+  const { loadDayFile, getVisual } = await import('../src/lib/visuals/loadVisuals');
+
+  for (let day = 16; day <= 20; day++) {
+    const filePath = path.resolve(process.cwd(), `src/lib/data/lessonVisuals/bcom_ops/day-${String(day).padStart(2, '0')}.json`);
+    assert.ok(fs.existsSync(filePath), `On-disk visual file missing: ${filePath}`);
+
+    const dayFile = loadDayFile('bcom_ops', day);
+    assert.ok(dayFile, `loadDayFile failed for bcom_ops Day ${day}`);
+    assert.equal(dayFile.schemaVersion, 1);
+    assert.equal(dayFile.prefix, 'bcom_ops');
+    assert.equal(dayFile.day, day);
+    assert.equal(dayFile.entries.length, 5, `Expected 5 entries in bcom_ops Day ${day}`);
+
+    const lesson = getLongLesson('bcom_ops', day)!;
+    for (let partIdx = 0; partIdx < 5; partIdx++) {
+      const entry = dayFile.entries[partIdx];
+      const part = lesson.parts[partIdx];
+
+      assert.equal(entry.partTitle, part.title, `partTitle mismatch at bcom_ops Day ${day} Part ${partIdx}`);
+      const expectedHash = crypto.createHash('sha256').update(part.code || '').digest('hex');
+      assert.equal(entry.codeHash, expectedHash, `codeHash mismatch at bcom_ops Day ${day} Part ${partIdx}`);
+
+      const visual = getVisual('bcom_ops', day, partIdx);
+      assert.ok(visual, `getVisual returned null for bcom_ops Day ${day} Part ${partIdx}`);
+      assert.equal(visual.template, 'workflow', `Expected template "workflow" for bcom_ops`);
+      assert.equal(visual.steps.length, 4, `Expected 4 synchronized steps for bcom_ops Day ${day} Part ${partIdx}`);
+      assert.deepEqual(
+        visual.steps.map((s: any) => s.at),
+        ['intro', 'say1', 'example', 'tryIt'],
+        `Step markers must be ['intro', 'say1', 'example', 'tryIt']`
+      );
+    }
+  }
+});
+
+test('Block 219: Domain specifics & deterministic Python code verification across Days 16–20', () => {
+  // Day 16: Strategic Sourcing, Supplier Selection & The Kraljic Portfolio Matrix
+  const d16 = getLongLesson('bcom_ops', 16)!;
+  assert.ok(d16.parts[0].code?.includes('classify_kraljic_quadrant'));
+  assert.ok(d16.parts[1].code?.includes('compute_supplier_tco'));
+  assert.ok(d16.parts[2].code?.includes('compute_ahp_supplier_scores'));
+  assert.ok(d16.parts[3].code?.includes('evaluate_sourcing_resilience_strategy'));
+  assert.ok(d16.parts[4].code?.includes('execute_strategic_sourcing_governance'));
+
+  // Day 17: Incoterms 2020, International Freight Contracts & Total Landed Cost (TLC) Calculus
+  const d17 = getLongLesson('bcom_ops', 17)!;
+  assert.ok(d17.parts[0].code?.includes('evaluate_incoterm_responsibilities'));
+  assert.ok(d17.parts[1].code?.includes('audit_ucp600_letter_of_credit_documents'));
+  assert.ok(d17.parts[2].code?.includes('calculate_customs_duties_and_import_taxes'));
+  assert.ok(d17.parts[3].code?.includes('evaluate_maritime_risk_and_demurrage'));
+  assert.ok(d17.parts[4].code?.includes('compute_comprehensive_total_landed_cost'));
+
+  // Day 18: Spend Analytics, Supplier Performance Scorecards & Value Engineering (VA/VE)
+  const d18 = getLongLesson('bcom_ops', 18)!;
+  assert.ok(d18.parts[0].code?.includes('build_spend_cube_analysis'));
+  assert.ok(d18.parts[1].code?.includes('evaluate_supplier_operational_performance'));
+  assert.ok(d18.parts[2].code?.includes('evaluate_balanced_supplier_scorecard'));
+  assert.ok(d18.parts[3].code?.includes('evaluate_vave_reengineering_proposal'));
+  assert.ok(d18.parts[4].code?.includes('execute_supplier_governance_control_tower'));
+
+  // Day 19: Contract Negotiation, Supplier Relationship Management (SRM) & Risk Mitigation
+  const d19 = getLongLesson('bcom_ops', 19)!;
+  assert.ok(d19.parts[0].code?.includes('audit_contractual_delivery_performance'));
+  assert.ok(d19.parts[1].code?.includes('evaluate_negotiation_frontier'));
+  assert.ok(d19.parts[2].code?.includes('calculate_altman_z_score_health'));
+  assert.ok(d19.parts[3].code?.includes('simulate_supply_chain_disruption_failover'));
+  assert.ok(d19.parts[4].code?.includes('run_integrated_supplier_risk_sentinel'));
+
+  // Day 20: Milestone 4 Capstone: Global Strategic Sourcing, Supplier Performance & Trade Compliance Control Tower
+  const d20 = getLongLesson('bcom_ops', 20)!;
+  assert.ok(d20.parts[0].code?.includes('GlobalSourcingControlTower'));
+  assert.ok(d20.parts[1].code?.includes('evaluate_spend_cube_and_ahp_selection'));
+  assert.ok(d20.parts[2].code?.includes('compute_comprehensive_total_landed_cost'));
+  assert.ok(d20.parts[3].code?.includes('audit_supplier_performance_and_solvency'));
+  assert.ok(d20.parts[4].code?.includes('MasterSourcingVerificationEngine'));
+});
+
 
 
