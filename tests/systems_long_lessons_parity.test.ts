@@ -1534,3 +1534,139 @@ test('Systems Long Lessons: git_vcs Day 10 ⭐ MILESTONE 2 Capstone: 3-Way Merge
   assert.ok(res5.stdout?.includes('Merge Architecture Index: 100/100'));
 });
 
+test('Systems Long Lessons: git_vcs Day 11 Merge Conflict Detection, Index Stages & zdiff3 Verification', async () => {
+  const d11 = getLongLesson('git_vcs', 11);
+  assert.ok(d11, 'git_vcs Day 11 must resolve');
+  assert.equal(d11.day, 11);
+  assert.equal(d11.parts.length, 5);
+
+  const res1 = await executeBashSuite(d11.parts[0].code!);
+  assert.equal(res1.allPassed, true);
+  assert.ok(res1.stdout?.includes('CONFLICT_MARKERS_ANATOMY_VERIFIED'));
+
+  const res2 = await executeBashSuite(d11.parts[1].code!);
+  assert.equal(res2.allPassed, true);
+  assert.ok(res2.stdout?.includes('UNMERGED_INDEX_STAGES_VERIFIED'));
+
+  const res3 = await executeBashSuite(d11.parts[2].code!);
+  assert.equal(res3.allPassed, true);
+  assert.ok(res3.stdout?.includes('CLEAN_CONFLICT_SYNTHESIS_VERIFIED'));
+
+  const res4 = await executeBashSuite(d11.parts[3].code!);
+  assert.equal(res4.allPassed, true);
+  assert.ok(res4.stdout?.includes('ZDIFF3_COMMON_ANCESTOR_VERIFIED'));
+
+  const res5 = await executeBashSuite(d11.parts[4].code!);
+  assert.equal(res5.allPassed, true);
+  assert.ok(res5.stdout?.includes('Merge Conflict Resolution Index: 100/100'));
+});
+
+test('Systems Long Lessons: git_vcs Day 12 Git Stash LIFO Stack, Untracked & Branch Recovery Verification', async () => {
+  const d12 = getLongLesson('git_vcs', 12);
+  assert.ok(d12, 'git_vcs Day 12 must resolve');
+  assert.equal(d12.day, 12);
+  assert.equal(d12.parts.length, 5);
+
+  const res1 = await executeBashSuite(d12.parts[0].code!);
+  assert.equal(res1.allPassed, true);
+  assert.ok(res1.stdout?.includes('GIT_STASH_LIFO_STACK_VERIFIED'));
+
+  const res2 = await executeBashSuite(d12.parts[1].code!);
+  assert.equal(res2.allPassed, true);
+  assert.ok(res2.stdout?.includes('STASH_POP_VS_APPLY_VERIFIED'));
+
+  const res3 = await executeBashSuite(d12.parts[2].code!);
+  assert.equal(res3.allPassed, true);
+  assert.ok(res3.stdout?.includes('STASH_UNTRACKED_AND_ALL_VERIFIED'));
+
+  const res4 = await executeBashSuite(d12.parts[3].code!);
+  assert.equal(res4.allPassed, true);
+  assert.ok(res4.stdout?.includes('PARTIAL_STASH_AND_BRANCH_VERIFIED'));
+
+  const res5 = await executeBashSuite(d12.parts[4].code!);
+  assert.equal(res5.allPassed, true);
+  assert.ok(res5.stdout?.includes('Git Stash Architecture Index: 100/100'));
+});
+
+test('Systems Long Lessons: git_vcs Day 13 Git Tagging & Release Management: Lightweight, Annotated & SemVer Verification', async () => {
+  const d13 = getLongLesson('git_vcs', 13);
+  assert.ok(d13, 'git_vcs Day 13 must resolve');
+  assert.equal(d13.day, 13);
+  assert.equal(d13.parts.length, 5);
+
+  const res1 = await executeBashSuite(d13.parts[0].code!);
+  assert.equal(res1.allPassed, true);
+  assert.ok(res1.stdout?.includes('LIGHTWEIGHT_VS_ANNOTATED_TAG_VERIFIED'));
+
+  const res2 = await executeBashSuite(d13.parts[1].code!);
+  assert.equal(res2.allPassed, true);
+  assert.ok(res2.stdout?.includes('SEMVER_SPECIFICATION_VERIFIED'));
+
+  const res3 = await executeBashSuite(d13.parts[2].code!);
+  assert.equal(res3.allPassed, true);
+  assert.ok(res3.stdout?.includes('CRYPTOGRAPHIC_TAG_SIGNATURE_VERIFIED'));
+
+  const res4 = await executeBashSuite(d13.parts[3].code!);
+  assert.equal(res4.allPassed, true);
+  assert.ok(res4.stdout?.includes('REMOTE_TAG_SYNCHRONIZATION_VERIFIED'));
+
+  const res5 = await executeBashSuite(d13.parts[4].code!);
+  assert.equal(res5.allPassed, true);
+  assert.ok(res5.stdout?.includes('Git Tagging & Release Index: 100/100'));
+});
+
+test('Systems Long Lessons: git_vcs Day 14 Time-Travel & Reset Modes: Soft, Mixed, Hard & Reflog Verification', async () => {
+  const d14 = getLongLesson('git_vcs', 14);
+  assert.ok(d14, 'git_vcs Day 14 must resolve');
+  assert.equal(d14.day, 14);
+  assert.equal(d14.parts.length, 5);
+
+  const res1 = await executeBashSuite(d14.parts[0].code!);
+  assert.equal(res1.allPassed, true);
+  assert.ok(res1.stdout?.includes('RESET_SOFT_MODE_VERIFIED'));
+
+  const res2 = await executeBashSuite(d14.parts[1].code!);
+  assert.equal(res2.allPassed, true);
+  assert.ok(res2.stdout?.includes('RESET_MIXED_MODE_VERIFIED'));
+
+  const res3 = await executeBashSuite(d14.parts[2].code!);
+  assert.equal(res3.allPassed, true);
+  assert.ok(res3.stdout?.includes('RESET_HARD_DESTRUCTIVE_VERIFIED'));
+
+  const res4 = await executeBashSuite(d14.parts[3].code!);
+  assert.equal(res4.allPassed, true);
+  assert.ok(res4.stdout?.includes('REFLOG_DISASTER_RECOVERY_VERIFIED'));
+
+  const res5 = await executeBashSuite(d14.parts[4].code!);
+  assert.equal(res5.allPassed, true);
+  assert.ok(res5.stdout?.includes('Reset & Reflog Recovery Index: 100/100'));
+});
+
+test('Systems Long Lessons: git_vcs Day 15 ⭐ MILESTONE 2 CAPSTONE: Intermediate Git Concurrency & Recovery Engine Verification', async () => {
+  const d15 = getLongLesson('git_vcs', 15);
+  assert.ok(d15, 'git_vcs Day 15 must resolve');
+  assert.equal(d15.day, 15);
+  assert.equal(d15.parts.length, 5);
+
+  const res1 = await executeBashSuite(d15.parts[0].code!);
+  assert.equal(res1.allPassed, true);
+  assert.ok(res1.stdout?.includes('BRANCH_POINTER_DAG_SYNTHESIS_VERIFIED'));
+
+  const res2 = await executeBashSuite(d15.parts[1].code!);
+  assert.equal(res2.allPassed, true);
+  assert.ok(res2.stdout?.includes('THREE_WAY_MERGE_BASE_SYNTHESIS_VERIFIED'));
+
+  const res3 = await executeBashSuite(d15.parts[2].code!);
+  assert.equal(res3.allPassed, true);
+  assert.ok(res3.stdout?.includes('CONFLICT_RESOLUTION_ZERO_ARTIFACT_VERIFIED'));
+
+  const res4 = await executeBashSuite(d15.parts[3].code!);
+  assert.equal(res4.allPassed, true);
+  assert.ok(res4.stdout?.includes('STASH_LIFO_AND_REFLOG_SALVAGE_VERIFIED'));
+
+  const res5 = await executeBashSuite(d15.parts[4].code!);
+  assert.equal(res5.allPassed, true);
+  assert.ok(res5.stdout?.includes('Milestone 2 Intermediate Index: 100/100'));
+});
+
+
