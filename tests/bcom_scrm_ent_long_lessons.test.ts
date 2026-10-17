@@ -724,6 +724,141 @@ test('B.Com SCRM Milestone 2 (Days 6-10): Gate v2 Funnel Visuals & Cryptographic
   }
 });
 
+test('B.Com SCRM Milestone 3 (Days 11-15): Invariants & Spoken Time Floor Verification', () => {
+  for (let day = 11; day <= 15; day++) {
+    const lesson = getLongLesson('bcom_scrm', day);
+    assert.ok(lesson, `bcom_scrm Day ${day} lesson must be defined`);
+    assert.equal(lesson.coursePrefix, 'bcom_scrm');
+    assert.equal(lesson.day, day);
+    assert.equal(lesson.parts.length, 5, `Day ${day} must have exactly 5 parts`);
+
+    // Day 15 Capstone minutes = 50, Days 11-14 minutes = 45
+    if (day === 15) {
+      assert.equal(lesson.minutes, 50, 'Day 15 Capstone minutes must be 50');
+    } else {
+      assert.equal(lesson.minutes, 45, `Day ${day} minutes must be 45`);
+    }
+
+    const spokenMin = estimateSpokenMinutes(lesson);
+    assert.ok(
+      spokenMin >= 19.5,
+      `Day ${day} spoken minutes must be >= 19.5 min for ~2,950 words floor (got ${spokenMin.toFixed(2)} min)`
+    );
+
+    for (let pIdx = 0; pIdx < lesson.parts.length; pIdx++) {
+      const part = lesson.parts[pIdx];
+      assert.ok(part.title.length > 0, `Day ${day} Part ${pIdx + 1} must have a non-empty title`);
+      assert.ok(part.say.length >= 3, `Day ${day} Part ${pIdx + 1} must have >= 3 paragraphs`);
+      assert.ok(part.example && part.example.length > 0, `Day ${day} Part ${pIdx + 1} must have an example`);
+      assert.ok(
+        part.code && (part.code.includes('def ') || part.code.includes('class ')),
+        `Day ${day} Part ${pIdx + 1} code must contain Python functions/classes`
+      );
+      assert.ok(part.output && part.output.length > 0, `Day ${day} Part ${pIdx + 1} must have expected output`);
+      assert.ok(part.codeNotes && part.codeNotes.length >= 3, `Day ${day} Part ${pIdx + 1} must have >= 3 codeNotes`);
+      assert.ok(part.tryIt && part.tryIt.length > 0, `Day ${day} Part ${pIdx + 1} must have tryIt experiment`);
+
+      const check = part.check as any;
+      assert.ok(check.question.length > 0, `Day ${day} Part ${pIdx + 1} check question must be non-empty`);
+      assert.equal(check.options.length, 4, `Day ${day} Part ${pIdx + 1} check options must be exactly 4`);
+      assert.ok(check.answerIndex >= 0 && check.answerIndex < 4, `Day ${day} Part ${pIdx + 1} answerIndex must be valid`);
+      assert.ok(check.explanation.length > 0, `Day ${day} Part ${pIdx + 1} explanation must be non-empty`);
+    }
+  }
+});
+
+test('B.Com SCRM Milestone 3 (Days 11-15): Python Domain Code & Accreditation Verification', () => {
+  // Day 11: Customer Health Scoring & CHS
+  const d11 = getLongLesson('bcom_scrm', 11)!;
+  assert.ok(d11.parts[0].code?.includes('score_multidimensional_telemetry'));
+  assert.ok(d11.parts[1].code?.includes('analyze_support_ticket_sentiment_and_velocity'));
+  assert.ok(d11.parts[4].code?.includes('MasterCustomerHealthScoreEngine'));
+  assert.ok(d11.parts[4].output?.includes('CUSTOMER_HEALTH_SCORING_CERTIFIED_NOMINAL'));
+
+  // Day 12: Customer Retention & NRR >= 120%
+  const d12 = getLongLesson('bcom_scrm', 12)!;
+  assert.ok(d12.parts[0].code?.includes('calculate_grr_and_nrr_metrics'));
+  assert.ok(d12.parts[1].code?.includes('model_cohort_retention_waterfall'));
+  assert.ok(d12.parts[4].code?.includes('MasterNetRevenueRetentionEngine'));
+  assert.ok(d12.parts[4].output?.includes('NET_REVENUE_RETENTION_CERTIFIED_NOMINAL'));
+
+  // Day 13: Voice of Customer NPS, CSAT & CES
+  const d13 = getLongLesson('bcom_scrm', 13)!;
+  assert.ok(d13.parts[0].code?.includes('triangulate_voc_sentiment_metrics'));
+  assert.ok(d13.parts[1].code?.includes('calculate_nps_and_statistical_confidence'));
+  assert.ok(d13.parts[4].code?.includes('MasterVoiceOfCustomerEngine'));
+  assert.ok(d13.parts[4].output?.includes('VOICE_OF_CUSTOMER_CERTIFIED_NOMINAL'));
+
+  // Day 14: CS Ops & Portfolio Capacity
+  const d14 = getLongLesson('bcom_scrm', 14)!;
+  assert.ok(d14.parts[0].code?.includes('audit_cs_ops_tech_stack_maturity'));
+  assert.ok(d14.parts[1].code?.includes('model_csm_portfolio_capacity_and_headcount'));
+  assert.ok(d14.parts[2].code?.includes('analyze_account_whitespace_and_cross_sell'));
+  assert.ok(d14.parts[3].code?.includes('audit_joint_success_plan_and_qbr_cadence'));
+  assert.ok(d14.parts[4].code?.includes('MasterCustomerSuccessOperationsEngine'));
+  assert.ok(d14.parts[4].output?.includes('CUSTOMER_SUCCESS_OPERATIONS_CERTIFIED_NOMINAL'));
+
+  // Day 15: Milestone 3 Grand Capstone & CESRD Credential
+  const d15 = getLongLesson('bcom_scrm', 15)!;
+  assert.ok(d15.parts[0].code?.includes('audit_milestone3_cs_architecture'));
+  assert.ok(d15.parts[1].code?.includes('simulate_enterprise_customer_portfolio_dynamics'));
+  assert.ok(d15.parts[2].code?.includes('execute_crisis_account_churn_rescue_protocol'));
+  assert.ok(d15.parts[3].code?.includes('evaluate_boardroom_retention_and_valuation_impact'));
+  assert.ok(d15.parts[4].code?.includes('MasterEnterpriseCustomerSuccessOperatingEngine'));
+  assert.ok(d15.parts[4].output?.includes('CESRD_CREDENTIAL_CERTIFIED_NOMINAL'));
+  assert.ok(d15.parts[4].output?.includes('Certified Enterprise Customer Success & Retention Director'));
+});
+
+test('B.Com SCRM Milestone 3 (Days 11-15): Gate v2 Funnel Visuals & Cryptographic SHA-256 Bindings Verification', () => {
+  const visualsDir = path.resolve(__dirname, '../src/lib/data/lessonVisuals/bcom_scrm');
+  
+  for (let day = 11; day <= 15; day++) {
+    const fileName = `day-${day.toString().padStart(2, '0')}.json`;
+    const filePath = path.join(visualsDir, fileName);
+    assert.ok(fs.existsSync(filePath), `Visual file ${fileName} must exist on disk`);
+
+    const raw = fs.readFileSync(filePath, 'utf-8');
+    const visual = JSON.parse(raw);
+
+    assert.equal(visual.schemaVersion, 1);
+    assert.equal(visual.prefix, 'bcom_scrm');
+    assert.equal(visual.day, day);
+    assert.ok(visual.promptSha && visual.promptSha.length === 64, 'promptSha must be valid 64-char sha256');
+    assert.equal(visual.entries.length, 5, `Visual ${fileName} must have exactly 5 entries`);
+
+    const lesson = getLongLesson('bcom_scrm', day)!;
+    for (let eIdx = 0; eIdx < visual.entries.length; eIdx++) {
+      const entry = visual.entries[eIdx];
+      const part = lesson.parts[eIdx];
+
+      assert.equal(entry.partTitle, part.title, `Entry ${eIdx} partTitle must match lesson part title`);
+
+      // Verify cryptographic SHA-256 code hash binding
+      const expectedHash = crypto.createHash('sha256').update(part.code.trim()).digest('hex');
+      assert.equal(
+        entry.codeHash,
+        expectedHash,
+        `Day ${day} Part ${eIdx + 1} codeHash must strictly match SHA-256 of part.code.trim()`
+      );
+
+      // Verify Funnel template structure
+      assert.equal(entry.spec.template, 'funnel', 'Visual template must be funnel');
+      assert.equal(entry.spec.steps.length, 4, 'Visual spec must have exactly 4 steps');
+      const stepAts = entry.spec.steps.map((s: any) => s.at);
+      assert.deepEqual(stepAts, ['intro', 'say1', 'example', 'tryIt'], 'Steps must match [intro, say1, example, tryIt]');
+
+      for (const step of entry.spec.steps) {
+        assert.ok(step.caption.length > 0, 'Step caption must be non-empty');
+        assert.ok(['top', 'qual', 'target', 'final'].includes(step.activeStageId));
+        assert.equal(step.stages.length, 4, 'Funnel must have 4 stages');
+      }
+
+      assert.deepEqual(entry.filled, entry.spec, 'filled must match spec');
+    }
+  }
+});
+
+
 
 
 
