@@ -1,0 +1,211 @@
+{
+  "day": 47,
+  "course": "comp_fund",
+  "entries": [
+    {
+      "stepId": "cf-d47-p1",
+      "partTitle": "Block Storage (`SAN`: `iSCSI` / Fibre Channel) vs File Storage (`NAS`: `NFSv4` / `SMB3`) & Multipath I/O (`MPIO`)",
+      "template": "cells",
+      "codeHash": "a1cfb713f83fa8f14c279cc0343ec203c335a5b4ca64ed910b381123ddb94b31",
+      "data": {
+        "title": "Systems Architecture Telemetry: Block Storage (`SAN`: `iSCSI` / Fibre Channel) vs File Storage (",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "BLOCK_SAN_TIER",
+            "ISCSI_AND_FIBRE_CHANNEL_RAW_",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "FILE_NAS_TIER",
+            "NFSV4_AND_SMB3_POSIX_SHARED_",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "RAID_GEOMETRY",
+            "RAID0_STRIPE_RAID1_MIRROR_RA",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "ERASURE_CODING",
+            "REED_SOLOMON_8_PLUS_4_GALOIS",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d47-p2",
+      "partTitle": "Detective Challenge: The `RAID 5` Rebuild `URE` Double-Fault Collapse & `RAID 6` / `RAID 10` Physics",
+      "template": "cells",
+      "codeHash": "63e44ba24fff93586d69b34fac1a556b30177f4a23eb7a81b762cd4af0994ddf",
+      "data": {
+        "title": "Systems Architecture Telemetry: Detective Challenge: The `RAID 5` Rebuild `URE` Double-Fault Col",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "ARRAY_CONFIG",
+            "24_DRIVE_12TB_RAID5_SINGLE_P",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "INITIAL_FAULT",
+            "DRIVE_12_PHYSICAL_SECTOR_FAI",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "REBUILD_STRESS",
+            "23_REMAINING_DRIVES_READ_AT_",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "SECOND_FAULT",
+            "DRIVE_18_UNRECOVERABLE_READ_",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d47-p3",
+      "partTitle": "Mastery Assignment: Reed-Solomon ($N+M$) Erasure Coding Engine in Galois Field $GF(2^8)$",
+      "template": "cells",
+      "codeHash": "f03688f6bdc00ad74d885cb9ac7df35646455fc7b285687ec153df139fc1b6f0",
+      "data": {
+        "title": "Systems Architecture Telemetry: Mastery Assignment: Reed-Solomon ($N+M$) Erasure Coding Engine i",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "ENCODING_MATRIX",
+            "4_DATA_SHARDS_PLUS_2_PARITY_",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "STRIPE_WRITE",
+            "64KB_BLOCK_DISTRIBUTED_ACROS",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "FAULT_INJECTION",
+            "DISK_2_AND_DISK_5_DESTROYED_",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "GALOIS_RECONSTRUCTION",
+            "VANDERMONDE_MATRIX_INVERSION",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d47-p4",
+      "partTitle": "Production Incident Lab: Linux `iSCSI` Target (`targetcli`) & `DM-Multipath` (`multipathd`) Cable-Cut Failover",
+      "template": "cells",
+      "codeHash": "4c1a3ae059730d72135f47d39312050ce536a47433efdfd36034e9514989ee2e",
+      "data": {
+        "title": "Systems Architecture Telemetry: Production Incident Lab: Linux `iSCSI` Target (`targetcli`) & `D",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "SAN_TARGET",
+            "LINUX_LIO_TARGETCLI_BLOCK_LU",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "NETWORK_FABRIC",
+            "DUAL_25GBE_OPTICAL_PATHS_NIC",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "MPIO_POLICY",
+            "DM_MULTIPATH_QUEUE_LENGTH_AC",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "CABLE_CUT_TEST",
+            "NIC_A_SEVERED_UNDER_80000_IO",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d47-p5",
+      "partTitle": "Day 47 Architecture Certification: SAN/NAS, RAID 6 & Reed-Solomon Erasure Coding Mastery",
+      "template": "cells",
+      "codeHash": "28ed599ff290a089fe533af76c133244e51ee58cd9f56a7f9df2333c509f0e9d",
+      "data": {
+        "title": "Systems Architecture Telemetry: Day 47 Architecture Certification: SAN/NAS, RAID 6 & Reed-Solomo",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "SAN_VS_NAS_AUDIT",
+            "SCSI_3_PR_BLOCK_LUN_VS_NFS_V",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "RAID_URE_AUDIT",
+            "RAID5_OBSOLESCENCE_AND_RAID6",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "ERASURE_CODING_AUDIT",
+            "REED_SOLOMON_4_PLUS_2_RECOVE",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "ISCSI_MPIO_AUDIT",
+            "DUAL_FABRIC_MULTIPATH_FAILOV",
+            "Verified 100%"
+          ]
+        ]
+      }
+    }
+  ]
+}

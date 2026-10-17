@@ -1,0 +1,211 @@
+{
+  "day": 48,
+  "course": "comp_fund",
+  "entries": [
+    {
+      "stepId": "cf-d48-p1",
+      "partTitle": "Pets vs Cattle, Declarative State Graphs (`Terraform`/`OpenTofu`) & Immutable Golden Images (`Packer`)",
+      "template": "cells",
+      "codeHash": "29ab7f4e1cb375d121546a2bfaabd8c864f360d59528cc96ab7b6d9166203377",
+      "data": {
+        "title": "Systems Architecture Telemetry: Pets vs Cattle, Declarative State Graphs (`Terraform`/`OpenTofu`",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "PARADIGM_SHIFT",
+            "DISPOSABLE_CATTLE_OVER_HANDC",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "STATE_ENGINE",
+            "DECLARATIVE_DAG_TERRAFORM_OP",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "IMAGE_PIPELINE",
+            "HASHICORP_PACKER_PREBAKED_GO",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "DRIFT_RECONCILER",
+            "CONTINUOUS_SHA256_STATE_DIFF",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d48-p2",
+      "partTitle": "Detective Challenge: The $1.4M Snowflake Server Disaster & Rolling Immutable CVE Patching",
+      "template": "cells",
+      "codeHash": "789f0919b542de2fc591b34a62e8d3faf9feaa3211442f53a8efd33182f4e331",
+      "data": {
+        "title": "Systems Architecture Telemetry: Detective Challenge: The $1.4M Snowflake Server Disaster & Rolli",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "OUTAGE_EVENT",
+            "8_YEAR_SNOWFLAKE_SERVER_HARD",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "ROOT_CAUSE",
+            "12_SYSADMINS_APPLIED_UNDOCUM",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "BUSINESS_IMPACT",
+            "3_WEEKS_DOWNTIME_USD_1400000",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "CVE_PATCH_RULING",
+            "VETO_MANUAL_SSH_APT_UPGRADE_",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d48-p3",
+      "partTitle": "Mastery Assignment: Declarative State Reconciliation Engine Implementation",
+      "template": "cells",
+      "codeHash": "bb8117101bf23969a8d2f25de747a7286ded71bdf5fbfcbb41e19c0c91968bc4",
+      "data": {
+        "title": "Systems Architecture Telemetry: Mastery Assignment: Declarative State Reconciliation Engine Impl",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "DESIRED_STATE_SPEC",
+            "NGINX_1_26_TLS_STRICT_PORT_4",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "ACTUAL_STATE_SCAN",
+            "DRIFT_DETECTED_PORT_8080_OPE",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "PLAN_COMPUTATION",
+            "REVOKE_PORT_8080_RESTORE_IMM",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "CONVERGE_EXECUTION",
+            "IDEMPOTENT_STATE_APPLIED_IN_",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d48-p4",
+      "partTitle": "Production Incident Lab: Automated Drift Detection & Self-Healing Fleet Reconciliation",
+      "template": "cells",
+      "codeHash": "1184d18037cfa95d46e4e2737ab726f7c28fbacb85b6041b09e14446d07e8e20",
+      "data": {
+        "title": "Systems Architecture Telemetry: Production Incident Lab: Automated Drift Detection & Self-Healin",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "UNAUTHORIZED_CHANGE",
+            "MANUAL_SSH_MODIFIED_SYSCTL_A",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "DETECTION_LATENCY",
+            "12_SECONDS_VIA_CONTINUOUS_ST",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "REMEDIATION_ACTION",
+            "TAINTED_INSTANCE_CORDONED_AN",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "REPLACEMENT_BOOT",
+            "GOLDEN_IMAGE_SPAWNED_IN_14_S",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d48-p5",
+      "partTitle": "Day 48 Architecture Certification: Infrastructure as Code & Immutable Fleet Governance",
+      "template": "cells",
+      "codeHash": "6dd26366e74e2e5192b9fa28f49158909965134b6d2972dfed776ba2b274d5c9",
+      "data": {
+        "title": "Systems Architecture Telemetry: Day 48 Architecture Certification: Infrastructure as Code & Immu",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "DECLARATIVE_DAG_AUDIT",
+            "STATE_GRAPH_IDEMPOTENCY_VERI",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "GOLDEN_IMAGE_AUDIT",
+            "PACKER_15S_BOOT_PIPELINE_VER",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "SNOWFLAKE_ELIMINATION_AUDIT",
+            "ZERO_MANUAL_SSH_ACCESS_ENFOR",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "DRIFT_RECONCILIATION_AUDIT",
+            "30S_AUTO_REMEDIATION_ACTIVE",
+            "Verified 100%"
+          ]
+        ]
+      }
+    }
+  ]
+}

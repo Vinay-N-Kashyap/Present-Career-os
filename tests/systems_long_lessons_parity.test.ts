@@ -3287,3 +3287,138 @@ test('Systems Long Lessons: comp_fund Day 45 Milestone 8: ApexProductivity Sover
   assert.equal(res5.allPassed, true);
   assert.ok(res5.stdout?.includes('MILESTONE_8_VERDICT: APEX_PRODUCTIVITY_SUITE_BOARD_APPROVED'));
 });
+
+test('Systems Long Lessons: comp_fund Day 46 High Availability & Clustering: Heartbeats, Split-Brain Syndrome, STONITH & Active-Active Topologies', async () => {
+  const d46 = getLongLesson('comp_fund', 46);
+  assert.ok(d46, 'comp_fund Day 46 must resolve');
+  assert.equal(d46.day, 46);
+  assert.equal(d46.parts.length, 5);
+
+  const res1 = await executeBashSuite(d46.parts[0].code!);
+  assert.equal(res1.allPassed, true);
+  assert.ok(res1.stdout?.includes('TOPOLOGY_COMPARE: ACTIVE_PASSIVE_VS_ACTIVE_ACTIVE_MULTI_MASTER'));
+
+  const res2 = await executeBashSuite(d46.parts[1].code!);
+  assert.equal(res2.allPassed, true);
+  assert.ok(res2.stdout?.includes('REMEDIATION_2: ENFORCE_OUT_OF_BAND_IPMI_STONITH_POWER_KILL'));
+
+  const res3 = await executeBashSuite(d46.parts[2].code!);
+  assert.equal(res3.allPassed, true);
+  assert.ok(res3.stdout?.includes('ELECTION_STATUS: NODE_B_PROMOTED_AFTER_STONITH_CONFIRMATION'));
+
+  const res4 = await executeBashSuite(d46.parts[3].code!);
+  assert.equal(res4.allPassed, true);
+  assert.ok(res4.stdout?.includes('LAB_VERDICT: 100_PCT_WRITE_AVAILABILITY_ZERO_SPLIT_BRAIN'));
+
+  const res5 = await executeBashSuite(d46.parts[4].code!);
+  assert.equal(res5.allPassed, true);
+  assert.ok(res5.stdout?.includes('DAY_46_CERTIFICATION: HIGH_AVAILABILITY_CLUSTERING_MASTERED'));
+});
+
+test('Systems Long Lessons: comp_fund Day 47 Enterprise Storage Protocols & SAN/NAS: iSCSI, NFSv4, SMB3, RAID Arrays & Erasure Coding', async () => {
+  const d47 = getLongLesson('comp_fund', 47);
+  assert.ok(d47, 'comp_fund Day 47 must resolve');
+  assert.equal(d47.day, 47);
+  assert.equal(d47.parts.length, 5);
+
+  const res1 = await executeBashSuite(d47.parts[0].code!);
+  assert.equal(res1.allPassed, true);
+  assert.ok(res1.stdout?.includes('INVARIANT: SURVIVES_UP_TO_M_SIMULTANEOUS_DISK_FAILURES'));
+
+  const res2 = await executeBashSuite(d47.parts[1].code!);
+  assert.equal(res2.allPassed, true);
+  assert.ok(res2.stdout?.includes('ARCHITECTURAL_FIX: MIGRATE_TO_RAID6_OR_REED_SOLOMON_ERASURE'));
+
+  const res3 = await executeBashSuite(d47.parts[2].code!);
+  assert.equal(res3.allPassed, true);
+  assert.ok(res3.stdout?.includes('INTEGRITY_CHECK: SHA256_RECONSTRUCTED_PAYLOAD_100_PCT_MATCH'));
+
+  const res4 = await executeBashSuite(d47.parts[3].code!);
+  assert.equal(res4.allPassed, true);
+  assert.ok(res4.stdout?.includes('FAILOVER_VERDICT: ZERO_IO_ERRORS_SUB_MILLISECOND_PATH_SWITCH'));
+
+  const res5 = await executeBashSuite(d47.parts[4].code!);
+  assert.equal(res5.allPassed, true);
+  assert.ok(res5.stdout?.includes('DAY_47_CERTIFICATION: ENTERPRISE_STORAGE_PROTOCOLS_MASTERED'));
+});
+
+test('Systems Long Lessons: comp_fund Day 48 Infrastructure as Code (IaC) & Immutable Architecture: Declarative State, Drift & Golden Images', async () => {
+  const d48 = getLongLesson('comp_fund', 48);
+  assert.ok(d48, 'comp_fund Day 48 must resolve');
+  assert.equal(d48.day, 48);
+  assert.equal(d48.parts.length, 5);
+
+  const res1 = await executeBashSuite(d48.parts[0].code!);
+  assert.equal(res1.allPassed, true);
+  assert.ok(res1.stdout?.includes('IMMUTABLE_RULE: ZERO_IN_PLACE_SSH_PATCHING_REPLACE_ON_UPDATE'));
+
+  const res2 = await executeBashSuite(d48.parts[1].code!);
+  assert.equal(res2.allPassed, true);
+  assert.ok(res2.stdout?.includes('IMMUTABLE_ROLLOUT: PACKER_GOLDEN_IMAGE_ASG_BLUE_GREEN_REFRESH'));
+
+  const res3 = await executeBashSuite(d48.parts[2].code!);
+  assert.equal(res3.allPassed, true);
+  assert.ok(res3.stdout?.includes('RECONCILER_STATUS: ZERO_CONFIGURATION_DRIFT_VERIFIED'));
+
+  const res4 = await executeBashSuite(d48.parts[3].code!);
+  assert.equal(res4.allPassed, true);
+  assert.ok(res4.stdout?.includes('LAB_VERDICT: SELF_HEALING_IMMUTABLE_FLEET_100_PCT_CONVERGED'));
+
+  const res5 = await executeBashSuite(d48.parts[4].code!);
+  assert.equal(res5.allPassed, true);
+  assert.ok(res5.stdout?.includes('DAY_48_CERTIFICATION: IAC_AND_IMMUTABLE_ARCHITECTURE_MASTERED'));
+});
+
+test('Systems Long Lessons: comp_fund Day 49 Enterprise Disaster Recovery: RTO, RPO, The 3-2-1 Backup Rule & Automated Site Failovers', async () => {
+  const d49 = getLongLesson('comp_fund', 49);
+  assert.ok(d49, 'comp_fund Day 49 must resolve');
+  assert.equal(d49.day, 49);
+  assert.equal(d49.parts.length, 5);
+
+  const res1 = await executeBashSuite(d49.parts[0].code!);
+  assert.equal(res1.allPassed, true);
+  assert.ok(res1.stdout?.includes('INVARIANT: UNTESTED_BACKUP_EQUALS_ZERO_BACKUP_EXISTENCE'));
+
+  const res2 = await executeBashSuite(d49.parts[1].code!);
+  assert.equal(res2.allPassed, true);
+  assert.ok(res2.stdout?.includes('REMEDIATION_2: AUTOMATED_DAILY_SANDBOX_RESTORE_AND_SQL_AUDIT'));
+
+  const res3 = await executeBashSuite(d49.parts[2].code!);
+  assert.equal(res3.allPassed, true);
+  assert.ok(res3.stdout?.includes('VERIFIER_STATUS: RTO_48S_RPO_4S_ZERO_RESTORATION_ERRORS'));
+
+  const res4 = await executeBashSuite(d49.parts[3].code!);
+  assert.equal(res4.allPassed, true);
+  assert.ok(res4.stdout?.includes('GAMEDAY_VERDICT: FULL_REGIONAL_RECOVERY_IN_112_SECONDS_SLA_MET'));
+
+  const res5 = await executeBashSuite(d49.parts[4].code!);
+  assert.equal(res5.allPassed, true);
+  assert.ok(res5.stdout?.includes('DAY_49_CERTIFICATION: ENTERPRISE_DISASTER_RECOVERY_MASTERED'));
+});
+
+test('Systems Long Lessons: comp_fund Day 50 Milestone 9: ApexResilience Enterprise High-Availability & Disaster Recovery Suite', async () => {
+  const d50 = getLongLesson('comp_fund', 50);
+  assert.ok(d50, 'comp_fund Day 50 must resolve');
+  assert.equal(d50.day, 50);
+  assert.equal(d50.parts.length, 5);
+
+  const res1 = await executeBashSuite(d50.parts[0].code!);
+  assert.equal(res1.allPassed, true);
+  assert.ok(res1.stdout?.includes('RECOVERY_LAYER: 3_2_1_1_0_WORM_BACKUPS_RTO_42S_RPO_0S'));
+
+  const res2 = await executeBashSuite(d50.parts[1].code!);
+  assert.equal(res2.allPassed, true);
+  assert.ok(res2.stdout?.includes('REMEDIATION_2: SERIALIZED_RAFT_TERM_FENCING_TOKEN_LOCK'));
+
+  const res3 = await executeBashSuite(d50.parts[2].code!);
+  assert.equal(res3.allPassed, true);
+  assert.ok(res3.stdout?.includes('ENGINE_STATUS: APEX_RESILIENCE_AUTONOMOUS_SHIELD_ACTIVE'));
+
+  const res4 = await executeBashSuite(d50.parts[3].code!);
+  assert.equal(res4.allPassed, true);
+  assert.ok(res4.stdout?.includes('VIVA_VERDICT: STANDBY_PROMOTED_AND_DNS_SWITCHED_IN_42_SECONDS'));
+
+  const res5 = await executeBashSuite(d50.parts[4].code!);
+  assert.equal(res5.allPassed, true);
+  assert.ok(res5.stdout?.includes('MILESTONE_9_VERDICT: APEX_RESILIENCE_SUITE_BOARD_APPROVED'));
+});

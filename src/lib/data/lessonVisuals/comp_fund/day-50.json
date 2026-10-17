@@ -1,0 +1,211 @@
+{
+  "day": 50,
+  "course": "comp_fund",
+  "entries": [
+    {
+      "stepId": "cf-d50-p1",
+      "partTitle": "ApexResilience Systems Architecture Blueprint: Unifying HA Quorum, MPIO SAN, Immutable IaC & WORM DR",
+      "template": "cells",
+      "codeHash": "7b64a6d842cec18222c5687970d085eb223cf545061d220e72d75b6487c24a14",
+      "data": {
+        "title": "Systems Architecture Telemetry: ApexResilience Systems Architecture Blueprint: Unifying HA Quoru",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "PLATFORM_NAME",
+            "APEX_RESILIENCE_HA_AND_DR_OR",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "CLUSTERING_LAYER",
+            "3_NODE_RAFT_QUORUM_WITH_IPMI",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "STORAGE_LAYER",
+            "DUAL_25GBE_ISCSI_MPIO_AND_RS",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "INFRASTRUCTURE_LAYER",
+            "PACKER_GOLDEN_IMAGES_TERRAFO",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d50-p2",
+      "partTitle": "Detective Challenge: The Cascading Failover Flapping Meltdown & Exponential Backoff Hysteresis",
+      "template": "cells",
+      "codeHash": "d7c6576fd4e659cbf75c4e317f96cd530dd8aaaad2322eb28189aa9a9e332019",
+      "data": {
+        "title": "Systems Architecture Telemetry: Detective Challenge: The Cascading Failover Flapping Meltdown & ",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "INCIDENT_TRACE",
+            "INTERMITTENT_PACKET_JITTER_1",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "FAILURE_CASCADE",
+            "NODE_A_AND_NODE_B_MUTUAL_STO",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "ROOT_CAUSE",
+            "ZERO_HYSTERESIS_DAMPING_ON_H",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "REMEDIATION_1",
+            "EXPONENTIAL_BACKOFF_HYSTERES",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d50-p3",
+      "partTitle": "Mastery Assignment: ApexResilience High-Availability Orchestrator Implementation",
+      "template": "cells",
+      "codeHash": "63568f097e475d0792cd362c9af0e048dd8b57a2750ca744594d1e15ce4710ae",
+      "data": {
+        "title": "Systems Architecture Telemetry: Mastery Assignment: ApexResilience High-Availability Orchestrato",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "QUORUM_STATE",
+            "3_OF_3_NODES_HEALTHY_HYSTERE",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "STORAGE_STATE",
+            "ISCSI_MPIO_DUAL_PATH_AND_RAI",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "IAC_STATE",
+            "GOLDEN_IMAGE_V19_DEPLOYED_ZE",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "BACKUP_STATE",
+            "WORM_SNAPSHOT_VERIFIED_IN_EP",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d50-p4",
+      "partTitle": "Production Incident Lab: Compound Dual-Failure Viva Defense (SAN Link Cut + Primary Node Power Loss)",
+      "template": "cells",
+      "codeHash": "c6ed2936cae82febff89396c48cf143bfce29bee4bf8a24fe5bf5da606bc9bce",
+      "data": {
+        "title": "Systems Architecture Telemetry: Production Incident Lab: Compound Dual-Failure Viva Defense (SAN",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "COMPOUND_FAULT",
+            "PRIMARY_SAN_LINK_CUT_PLUS_PR",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "STEP_1_QUORUM",
+            "REGION_2_WITNESSES_DETECT_LO",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "STEP_2_STONITH",
+            "IPMI_POWER_ISOLATION_OF_PRIM",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "STEP_3_STORAGE",
+            "SYNC_REPLICATION_CHECKPOINT_",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d50-p5",
+      "partTitle": "Milestone 9 Viva Certification: ApexResilience Board Approval",
+      "template": "cells",
+      "codeHash": "3462fcf6106714e70fe1ab3d1ede97148041e644f6e638a4434fb02059bd9928",
+      "data": {
+        "title": "Systems Architecture Telemetry: Milestone 9 Viva Certification: ApexResilience Board Approval",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "PILLAR_1_HA",
+            "3_NODE_QUORUM_AND_STONITH_FE",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "PILLAR_2_STORAGE",
+            "ISCSI_MPIO_AND_REED_SOLOMON_",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "PILLAR_3_IAC",
+            "IMMUTABLE_GOLDEN_IMAGES_AND_",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "PILLAR_4_BCDR",
+            "3_2_1_1_0_SANDBOX_RESTORE_42",
+            "Verified 100%"
+          ]
+        ]
+      }
+    }
+  ]
+}
