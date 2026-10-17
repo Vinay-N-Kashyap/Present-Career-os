@@ -1,0 +1,211 @@
+{
+  "day": 44,
+  "course": "comp_fund",
+  "entries": [
+    {
+      "stepId": "cf-d44-p1",
+      "partTitle": "Modern CLI Architecture: `ripgrep` (`rg`) SIMD Regex, `fzf` Async Fuzzy Scoring & `jq`",
+      "template": "cells",
+      "codeHash": "0b89f99b6e84079ba491775f7f3b1e71da526a77bdebf67dbd0d926b4699af68",
+      "data": {
+        "title": "Systems Architecture Telemetry: Modern CLI Architecture: `ripgrep` (`rg`) SIMD Regex, `fzf` Asyn",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "CODE_SEARCH_ENGINE",
+            "RIPGREP_SIMD_AVX2_PARALLEL_W",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "FUZZY_FINDER",
+            "FZF_SMITH_WATERMAN_ASYNC_STR",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "JSON_PROCESSOR",
+            "JQ_STREAMING_FUNCTIONAL_DSL_",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "SYNTAX_PAGER",
+            "BAT_TREESITTER_GIT_DIFF_INTE",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d44-p2",
+      "partTitle": "Detective Challenge: The 18-Minute `find -exec grep` Monorepo Freeze vs 1.2-Second `ripgrep`",
+      "template": "cells",
+      "codeHash": "90aff2598756f6818c633eeff2efb68f0636cfbb955a2d7d11090262aa40c545",
+      "data": {
+        "title": "Systems Architecture Telemetry: Detective Challenge: The 18-Minute `find -exec grep` Monorepo Fr",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "LEGACY_COMMAND",
+            "find_exec_grep_across_200000",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "LEGACY_PENALTY",
+            "18_MINUTES_100_PCT_DISK_IO_F",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "RIPGREP_OPTIMIZATION_1",
+            "AUTOMATIC_GITIGNORE_PRUNING_",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "RIPGREP_OPTIMIZATION_2",
+            "LOCKLESS_WORK_STEALING_THREA",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d44-p3",
+      "partTitle": "Mastery Assignment: Composable Interactive Terminal Pipelines (`rg` + `fzf` + `bat` + `git`)",
+      "template": "cells",
+      "codeHash": "75c685a2b5374c51ec0ab2af48e1f83779823333e24808cf6622b3c28a30f98c",
+      "data": {
+        "title": "Systems Architecture Telemetry: Mastery Assignment: Composable Interactive Terminal Pipelines (`",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "PIPELINE_STAGE_1",
+            "RG_FILES_OR_GIT_LOG_ONELINE_",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "PIPELINE_STAGE_2",
+            "FZF_MULTI_SELECT_WITH_BAT_CO",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "KEYBIND_HOOKS",
+            "CTRL_R_HISTORY_CTRL_T_FILES_",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "RESPONSE_LATENCY",
+            "4_8_MS_ACROSS_500000_CANDIDA",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d44-p4",
+      "partTitle": "Incident Lab: Parsing an 800MB Kubernetes JSON Payload with `jq` vs Naive DOM OOM Crash",
+      "template": "cells",
+      "codeHash": "a4541b6cbccd0ed836ef7205f11a638a77bb2755260c8a2ec7d4814f3dbf5078",
+      "data": {
+        "title": "Systems Architecture Telemetry: Incident Lab: Parsing an 800MB Kubernetes JSON Payload with `jq`",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "INPUT_PAYLOAD",
+            "800MB_KUBERNETES_CLUSTER_POD",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "NAIVE_DOM_PARSE",
+            "OOM_CRASH_AT_3_4GB_RAM_ALLOC",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "JQ_FILTER_PIPELINE",
+            "SELECT_NAMESPACE_PROD_AND_RE",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "EXTRACTED_OFFENDERS",
+            "payment_worker_7f9b_and_auth",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d44-p5",
+      "partTitle": "Day 44 Mastery Certification: The Modern High-Performance CLI Toolkit (`rg`, `fzf`, `jq`, `bat`, `zoxide`)",
+      "template": "cells",
+      "codeHash": "4ce49f7d246078bafc98bfe46836e01257bd4c7bd12cc6186fd3dc97adf02332",
+      "data": {
+        "title": "Systems Architecture Telemetry: Day 44 Mastery Certification: The Modern High-Performance CLI To",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "RIPGREP_SIMD_AUDIT",
+            "GITIGNORE_AWARE_PARALLEL_SEA",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "FZF_STREAM_AUDIT",
+            "SUB_10MS_FUZZY_SCORING_VERIF",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "JQ_DSL_AUDIT",
+            "ZERO_OOM_JSON_TRANSFORMATION",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "BAT_ZOXIDE_AUDIT",
+            "SYNTAX_PAGING_AND_FRECENCY_J",
+            "Verified 100%"
+          ]
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,211 @@
+{
+  "day": 41,
+  "course": "comp_fund",
+  "entries": [
+    {
+      "stepId": "cf-d41-p1",
+      "partTitle": "`tmux` Client-Server Architecture, Pseudo-Terminals (`pty`) & `SIGHUP` Signal Immunity",
+      "template": "cells",
+      "codeHash": "596c841550ba8ee2a95f71c3ba3b118d1d2dffd1509af8302090c389b85b14e1",
+      "data": {
+        "title": "Systems Architecture Telemetry: `tmux` Client-Server Architecture, Pseudo-Terminals (`pty`) & `S",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "MULTIPLEXER_DAEMON",
+            "TMUX_SERVER_BACKGROUND_SOCKE",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "PTY_DECOUPLING",
+            "MASTER_SLAVE_PSEUDO_TERMINAL",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "SIGNAL_SHIELD",
+            "SIGHUP_INTERCEPTED_ON_SSH_DR",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "HIERARCHY_MODEL",
+            "SERVER_TO_SESSIONS_TO_WINDOW",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d41-p2",
+      "partTitle": "Detective Challenge: The Dropped SSH 12-Hour Database Migration Disaster & `tmux attach` Recovery",
+      "template": "cells",
+      "codeHash": "439178d37b02b1787683a9980ab88fb3e32a8d233514f6b560aa4236066cafdd",
+      "data": {
+        "title": "Systems Architecture Telemetry: Detective Challenge: The Dropped SSH 12-Hour Database Migration ",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "OUTAGE_EVENT",
+            "12_HOUR_DB_MIGRATION_ABORTED",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "KERNEL_SIGNAL_TRACE",
+            "SIGHUP_SIGNAL_1_DELIVERED_TO",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "ROOT_CAUSE",
+            "UNMULTIPLEXED_SSH_PTY_CLOSED",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "REMEDIATION",
+            "EXECUTE_INSIDE_NAMED_TMUX_SE",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d41-p3",
+      "partTitle": "Mastery Assignment: Declarative Multi-Server Workspace Orchestration (`tmuxinator` + SSH `ControlMaster`)",
+      "template": "cells",
+      "codeHash": "ef3496037e718481ccdd06dc44c071ddc2a06298c3903d778e1fdbddef9eb62f",
+      "data": {
+        "title": "Systems Architecture Telemetry: Mastery Assignment: Declarative Multi-Server Workspace Orchestra",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "DECLARATIVE_SPEC",
+            "TMUXINATOR_8_SERVER_OPS_LAYO",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "SSH_ACCELERATION",
+            "CONTROL_MASTER_PERSISTENT_MU",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "PANE_TOPOLOGY",
+            "4_TILED_PANES_PER_WINDOW_WIT",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "STARTUP_LATENCY",
+            "20_MIN_MANUAL_REDUCED_TO_450",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d41-p4",
+      "partTitle": "Incident Lab: Git-Managed Dotfiles & Atomic Symlink Farm Deployment with `GNU Stow`",
+      "template": "cells",
+      "codeHash": "c9bd4a8a6b1d5d850244b1e4708879905f21d63dca36147370b2b999f62ea71f",
+      "data": {
+        "title": "Systems Architecture Telemetry: Incident Lab: Git-Managed Dotfiles & Atomic Symlink Farm Deploym",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "REPO_STRUCTURE",
+            "MODULAR_PACKAGES_TMUX_NVIM_B",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "SYMLINK_ENGINE",
+            "GNU_STOW_TARGET_HOME_TREE_FO",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "CONFLICT_CHECK",
+            "ZERO_EXISTING_FILE_COLLISION",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "PROVISION_TIME",
+            "120_MS_ACROSS_CLEAN_LINUX_CO",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d41-p5",
+      "partTitle": "Day 41 Mastery Certification: Persistent Terminal Multiplexing & Reproducible Dotfiles",
+      "template": "cells",
+      "codeHash": "7c52f5547b8a200a968e5dc0aca884241ea09d59cfcd6ae1ccd48023f0901b25",
+      "data": {
+        "title": "Systems Architecture Telemetry: Day 41 Mastery Certification: Persistent Terminal Multiplexing &",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "DAEMON_SOCKET_AUDIT",
+            "TMUX_SERVER_PID_AND_PTY_VERI",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "SIGHUP_IMMUNITY_AUDIT",
+            "DETACH_AND_REATTACH_ZERO_LOS",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "SSH_MUX_AUDIT",
+            "CONTROL_MASTER_SOCKET_REUSE_",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "GNU_STOW_AUDIT",
+            "ATOMIC_SYMLINK_FARM_SYNCED",
+            "Verified 100%"
+          ]
+        ]
+      }
+    }
+  ]
+}

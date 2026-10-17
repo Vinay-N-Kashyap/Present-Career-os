@@ -1,0 +1,211 @@
+{
+  "day": 45,
+  "course": "comp_fund",
+  "entries": [
+    {
+      "stepId": "cf-d45-p1",
+      "partTitle": "ApexProductivity Sovereign Architecture Blueprint & The 60-Second Provisioning Invariant",
+      "template": "cells",
+      "codeHash": "c2f53373208beb09b537c1156aefdb5311999ae676725f78992cddf5bb2196fe",
+      "data": {
+        "title": "Systems Architecture Telemetry: ApexProductivity Sovereign Architecture Blueprint & The 60-Secon",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "SUITE_NAME",
+            "APEX_PRODUCTIVITY_SOVEREIGN_",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "SESSION_LAYER",
+            "TMUX_DAEMON_WITH_SSH_CONTROL",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "EDITOR_LAYER",
+            "NEOVIM_LUA_LSP_AND_TREESITTE",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "AUTOMATION_LAYER",
+            "JUSTFILE_DAG_DIRENV_AND_GNU_",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d45-p2",
+      "partTitle": "Detective Challenge: Eliminating the $30,000 4-Week Onboarding Configuration Drift Disaster",
+      "template": "cells",
+      "codeHash": "9cecd9138ee712a86e81e91553ee15c8a8e4d6e8662567ac192d7fa49b26aa76",
+      "data": {
+        "title": "Systems Architecture Telemetry: Detective Challenge: Eliminating the $30,000 4-Week Onboarding C",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "LEGACY_FAILURE",
+            "4_WEEK_ONBOARDING_DRIFT_USD_",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "ROOT_CAUSE",
+            "UNDOCUMENTED_MANUAL_INSTALLS",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "REMEDIATION_1",
+            "DECLARATIVE_PACKAGE_LOCK_AND",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "REMEDIATION_2",
+            "AUTOMATED_PRE_COMMIT_SECRET_",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d45-p3",
+      "partTitle": "Mastery Assignment: Implementing the 4-Phase `ApexProductivity` Bootstrap Orchestrator (`38s`)",
+      "template": "cells",
+      "codeHash": "26f740d8125b84d6a5662fa0b6874bf45532711cec682995b625f653e1663961",
+      "data": {
+        "title": "Systems Architecture Telemetry: Mastery Assignment: Implementing the 4-Phase `ApexProductivity` ",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "PHASE_1_BOOTSTRAP",
+            "CLONE_DOTFILES_AND_VERIFY_LO",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "PHASE_2_SYMLINK",
+            "GNU_STOW_ATOMIC_LINK_TMUX_NV",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "PHASE_3_LSP_CLI",
+            "HEADLESS_NVIM_TREESITTER_RG_",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "PHASE_4_WORKSPACE",
+            "TMUX_SERVER_SPAWNED_WITH_3_D",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d45-p4",
+      "partTitle": "Incident Lab: Milestone 8 Live Viva — Unplugging the Network Mid-Compile & The 60s Clean-Container Timer",
+      "template": "cells",
+      "codeHash": "03607a1dc87aa695847a6b25617ccf8a6695b44b96f4d9600dc62c1a991745a9",
+      "data": {
+        "title": "Systems Architecture Telemetry: Incident Lab: Milestone 8 Live Viva — Unplugging the Network Mid",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "CHAOS_EVENT",
+            "NETWORK_CABLE_UNPLUGGED_MID_",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "TMUX_DAEMON_SHIELD",
+            "SIGHUP_BLOCKED_BACKGROUND_BU",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "RECONNECT_CMD",
+            "apex_attach_RESTORED_EXACT_N",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "CLEAN_CONTAINER_TEST",
+            "FULL_SUITE_PROVISIONED_IN_38",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d45-p5",
+      "partTitle": "Milestone 8 Board Approval: Block 9 Keyboard-Driven Engineering & Workspace Mastery Certification",
+      "template": "cells",
+      "codeHash": "01e193b713b012c2eedaa484ff58e1e1532abda79fe210fae4dc86a2dd5ae5b2",
+      "data": {
+        "title": "Systems Architecture Telemetry: Milestone 8 Board Approval: Block 9 Keyboard-Driven Engineering ",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "PILLAR_1_TMUX",
+            "PERSISTENT_SESSIONS_AND_STOW",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "PILLAR_2_NVIM",
+            "MODAL_GRAMMAR_LSP_AND_TREESI",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "PILLAR_3_DAG",
+            "MAKE_JUST_12_FACTOR_AND_VAUL",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "PILLAR_4_CLI",
+            "RIPGREP_FZF_JQ_BAT_COMPOSABL",
+            "Verified 100%"
+          ]
+        ]
+      }
+    }
+  ]
+}

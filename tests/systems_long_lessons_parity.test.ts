@@ -3153,4 +3153,137 @@ test('Systems Long Lessons: comp_fund Day 40 Milestone 7: ApexTrace eBPF Kernel 
   assert.ok(res5.stdout?.includes('MILESTONE_7_VERDICT: APEXTRACE_OBSERVABILITY_BOARD_APPROVED'));
 });
 
+test('Systems Long Lessons: comp_fund Day 41 Modern Terminal Multiplexing & Keyboard-Driven Productivity: tmux, Sessions & Dotfiles Management', async () => {
+  const d41 = getLongLesson('comp_fund', 41);
+  assert.ok(d41, 'comp_fund Day 41 must resolve');
+  assert.equal(d41.day, 41);
+  assert.equal(d41.parts.length, 5);
 
+  const res1 = await executeBashSuite(d41.parts[0].code!);
+  assert.equal(res1.allPassed, true);
+  assert.ok(res1.stdout?.includes('INVARIANT: CLIENT_DISCONNECT_PRESERVES_RUNNING_PROCESSES'));
+
+  const res2 = await executeBashSuite(d41.parts[1].code!);
+  assert.equal(res2.allPassed, true);
+  assert.ok(res2.stdout?.includes('RECOVERY_VERIFIED: TMUX_ATTACH_RESTORES_100_PCT_STATE'));
+
+  const res3 = await executeBashSuite(d41.parts[2].code!);
+  assert.equal(res3.allPassed, true);
+  assert.ok(res3.stdout?.includes('ORCHESTRATOR_STATUS: MULTI_SERVER_GRID_ACTIVE'));
+
+  const res4 = await executeBashSuite(d41.parts[3].code!);
+  assert.equal(res4.allPassed, true);
+  assert.ok(res4.stdout?.includes('DOTFILES_VERDICT: REPRODUCIBLE_DECLARATIVE_HOME_VERIFIED'));
+
+  const res5 = await executeBashSuite(d41.parts[4].code!);
+  assert.equal(res5.allPassed, true);
+  assert.ok(res5.stdout?.includes('DAY_41_CERTIFICATION: TERMINAL_MULTIPLEXING_MASTERED'));
+});
+
+test('Systems Long Lessons: comp_fund Day 42 High-Performance Text Editing & Modal Editing: Vim/Neovim Mechanics, Buffers & The Language Server Protocol', async () => {
+  const d42 = getLongLesson('comp_fund', 42);
+  assert.ok(d42, 'comp_fund Day 42 must resolve');
+  assert.equal(d42.day, 42);
+  assert.equal(d42.parts.length, 5);
+
+  const res1 = await executeBashSuite(d42.parts[0].code!);
+  assert.equal(res1.allPassed, true);
+  assert.ok(res1.stdout?.includes('SYNTAX_ENGINE: TREESITTER_INCREMENTAL_CONCRETE_AST'));
+
+  const res2 = await executeBashSuite(d42.parts[1].code!);
+  assert.equal(res2.allPassed, true);
+  assert.ok(res2.stdout?.includes('PREVENTION_FIX: GIT_CONTROLLED_CONFIG_AND_LOCK_HYGIENE'));
+
+  const res3 = await executeBashSuite(d42.parts[2].code!);
+  assert.equal(res3.allPassed, true);
+  assert.ok(res3.stdout?.includes('LSP_STATUS: SUB_4MS_INCREMENTAL_COMPLETION_VERIFIED'));
+
+  const res4 = await executeBashSuite(d42.parts[3].code!);
+  assert.equal(res4.allPassed, true);
+  assert.ok(res4.stdout?.includes('BENCHMARK_VERDICT: 44X_MEMORY_REDUCTION_50X_FASTER_BOOT'));
+
+  const res5 = await executeBashSuite(d42.parts[4].code!);
+  assert.equal(res5.allPassed, true);
+  assert.ok(res5.stdout?.includes('DAY_42_CERTIFICATION: MODAL_EDITING_AND_LSP_MASTERED'));
+});
+
+test('Systems Long Lessons: comp_fund Day 43 Automation & Task Orchestration: Makefiles, Just, Environment Variables (12-Factor App) & Secret Management', async () => {
+  const d43 = getLongLesson('comp_fund', 43);
+  assert.ok(d43, 'comp_fund Day 43 must resolve');
+  assert.equal(d43.day, 43);
+  assert.equal(d43.parts.length, 5);
+
+  const res1 = await executeBashSuite(d43.parts[0].code!);
+  assert.equal(res1.allPassed, true);
+  assert.ok(res1.stdout?.includes('SECRET_INJECTION: DIRENV_ENVRC_AND_VAULT_EPHEMERAL_LEASES'));
+
+  const res2 = await executeBashSuite(d43.parts[1].code!);
+  assert.equal(res2.allPassed, true);
+  assert.ok(res2.stdout?.includes('PIPELINE_STATUS: DETERMINISTIC_SINGLE_COMMAND_JUST_DEPLOY'));
+
+  const res3 = await executeBashSuite(d43.parts[2].code!);
+  assert.equal(res3.allPassed, true);
+  assert.ok(res3.stdout?.includes('STEP_3_DEPLOY: ATOMIC_RELEASE_COMPLETED_IN_1_4S'));
+
+  const res4 = await executeBashSuite(d43.parts[3].code!);
+  assert.equal(res4.allPassed, true);
+  assert.ok(res4.stdout?.includes('GATE_VERDICT: ZERO_PLAINTEXT_SECRETS_IN_VERSION_CONTROL'));
+
+  const res5 = await executeBashSuite(d43.parts[4].code!);
+  assert.equal(res5.allPassed, true);
+  assert.ok(res5.stdout?.includes('DAY_43_CERTIFICATION: TASK_ORCHESTRATION_AND_SECRETS_MASTERED'));
+});
+
+test('Systems Long Lessons: comp_fund Day 44 Command-Line Productivity & Fuzzy Finding: fzf, ripgrep, bat, jq & Composable Pipelines', async () => {
+  const d44 = getLongLesson('comp_fund', 44);
+  assert.ok(d44, 'comp_fund Day 44 must resolve');
+  assert.equal(d44.day, 44);
+  assert.equal(d44.parts.length, 5);
+
+  const res1 = await executeBashSuite(d44.parts[0].code!);
+  assert.equal(res1.allPassed, true);
+  assert.ok(res1.stdout?.includes('DIR_JUMPER: ZOXIDE_FRECENCY_RANKED_PATH_DATABASE'));
+
+  const res2 = await executeBashSuite(d44.parts[1].code!);
+  assert.equal(res2.allPassed, true);
+  assert.ok(res2.stdout?.includes('RIPGREP_RESULT: 1_2_SECONDS_TOTAL_EXECUTION_900X_SPEEDUP'));
+
+  const res3 = await executeBashSuite(d44.parts[2].code!);
+  assert.equal(res3.allPassed, true);
+  assert.ok(res3.stdout?.includes('NAVIGATOR_STATUS: COMPOSABLE_UNIX_FUZZY_PIPELINE_VERIFIED'));
+
+  const res4 = await executeBashSuite(d44.parts[3].code!);
+  assert.equal(res4.allPassed, true);
+  assert.ok(res4.stdout?.includes('JQ_PERFORMANCE: 2_8_SECONDS_IN_24MB_CONSTANT_RAM_FOOTPRINT'));
+
+  const res5 = await executeBashSuite(d44.parts[4].code!);
+  assert.equal(res5.allPassed, true);
+  assert.ok(res5.stdout?.includes('DAY_44_CERTIFICATION: MODERN_CLI_PRODUCTIVITY_MASTERED'));
+});
+
+test('Systems Long Lessons: comp_fund Day 45 Milestone 8: ApexProductivity Sovereign Developer Environment & Workspace Orchestrator', async () => {
+  const d45 = getLongLesson('comp_fund', 45);
+  assert.ok(d45, 'comp_fund Day 45 must resolve');
+  assert.equal(d45.day, 45);
+  assert.equal(d45.parts.length, 5);
+
+  const res1 = await executeBashSuite(d45.parts[0].code!);
+  assert.equal(res1.allPassed, true);
+  assert.ok(res1.stdout?.includes('PROVISION_SLA: ZERO_TO_PRODUCTIVE_IN_UNDER_60_SECONDS'));
+
+  const res2 = await executeBashSuite(d45.parts[1].code!);
+  assert.equal(res2.allPassed, true);
+  assert.ok(res2.stdout?.includes('ONBOARDING_RESULT: 100_PCT_IDENTICAL_TOOLCHAIN_IN_42_SECONDS'));
+
+  const res3 = await executeBashSuite(d45.parts[2].code!);
+  assert.equal(res3.allPassed, true);
+  assert.ok(res3.stdout?.includes('ORCHESTRATOR_STATUS: APEX_PRODUCTIVITY_READY_IN_38_SECONDS'));
+
+  const res4 = await executeBashSuite(d45.parts[3].code!);
+  assert.equal(res4.allPassed, true);
+  assert.ok(res4.stdout?.includes('VIVA_SLA_VERDICT: 60S_PROVISION_AND_ZERO_STATE_LOSS_PROVEN'));
+
+  const res5 = await executeBashSuite(d45.parts[4].code!);
+  assert.equal(res5.allPassed, true);
+  assert.ok(res5.stdout?.includes('MILESTONE_8_VERDICT: APEX_PRODUCTIVITY_SUITE_BOARD_APPROVED'));
+});

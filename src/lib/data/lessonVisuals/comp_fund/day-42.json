@@ -1,0 +1,211 @@
+{
+  "day": 42,
+  "course": "comp_fund",
+  "entries": [
+    {
+      "stepId": "cf-d42-p1",
+      "partTitle": "The Modal Finite State Machine, Algebraic Operator + Motion Grammar & Buffers/Windows/Tabs",
+      "template": "cells",
+      "codeHash": "32ba42bbb671bf13a82a62d539c592c1ad2c8566f901d0143b888a331752209a",
+      "data": {
+        "title": "Systems Architecture Telemetry: The Modal Finite State Machine, Algebraic Operator + Motion Gram",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "EDITOR_FSM",
+            "NORMAL_INSERT_VISUAL_COMMAND",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "COMPOSABLE_GRAMMAR",
+            "OPERATOR_VERB_PLUS_TEXT_OBJE",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "VIEWPORT_MODEL",
+            "IN_MEMORY_BUFFERS_WINDOWS_AN",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "LSP_TRANSPORT",
+            "JSON_RPC_2_0_OVER_STDIO_CLIE",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d42-p2",
+      "partTitle": "Detective Challenge: The `E325: ATTENTION` `.swp` Swapfile Race Condition & Safe Recovery",
+      "template": "cells",
+      "codeHash": "0808369591e4de282b30c5ed6e3541f4327a558a2b035ac0978d99244758901a",
+      "data": {
+        "title": "Systems Architecture Telemetry: Detective Challenge: The `E325: ATTENTION` `.swp` Swapfile Race ",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "ALERT_CODE",
+            "E325_ATTENTION_SWAP_FILE_ALR",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "CONFLICT_CAUSE",
+            "CONCURRENT_SSH_SESSION_OR_DR",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "SWAPFILE_METADATA",
+            "OWNER_UID_PID_HOST_AND_DIRTY",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "SAFE_PROTOCOL",
+            "DIFF_RECOVERY_OR_READ_ONLY_I",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d42-p3",
+      "partTitle": "Mastery Assignment: The Language Server Protocol (LSP) Client-Server Architecture Over JSON-RPC 2.0",
+      "template": "cells",
+      "codeHash": "fb6b8795b9a3225ab1450d69caa5dc354ec5758462f6d047405065a823953f75",
+      "data": {
+        "title": "Systems Architecture Telemetry: Mastery Assignment: The Language Server Protocol (LSP) Client-Se",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "RPC_HANDSHAKE",
+            "INITIALIZE_CAPABILITIES_AND_",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "DOCUMENT_SYNC",
+            "TEXT_DOCUMENT_DID_OPEN_AND_D",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "CODE_INTEL_REQ",
+            "TEXT_DOCUMENT_COMPLETION_AND",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "SERVER_BACKEND",
+            "CLANGD_PYRIGHT_RUST_analyzer",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d42-p4",
+      "partTitle": "Incident Lab: Benchmarking Remote Cloud Development — 4.2GB GUI IDE vs 94MB Headless Neovim + LSP",
+      "template": "cells",
+      "codeHash": "a2fc9911e835f81389097005a37b9bfa10673455a3eed7980895191a08cf90f8",
+      "data": {
+        "title": "Systems Architecture Telemetry: Incident Lab: Benchmarking Remote Cloud Development — 4.2GB GUI ",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "LEGACY_REMOTE_GUI_IDE",
+            "4200MB_RAM_45S_BOOT_210MS_LA",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "HEADLESS_NVIM_LSP_SSH",
+            "94MB_RAM_38MS_BOOT_3MS_KEY_L",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "LAZY_PLUGIN_LOADER",
+            "BYTECODE_LUAJIT_CACHE_ENABLE",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "MONOREPO_SCALE",
+            "1000000_LINES_INDEXED_WITHOU",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d42-p5",
+      "partTitle": "Day 42 Mastery Certification: Modal Editing Grammar, Swapfile Safety & LSP Architecture",
+      "template": "cells",
+      "codeHash": "4715b69143410801b5f5d4dfe56742ef065eefe7e6475eff14f33eece7de77da",
+      "data": {
+        "title": "Systems Architecture Telemetry: Day 42 Mastery Certification: Modal Editing Grammar, Swapfile Sa",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "MODAL_GRAMMAR_AUDIT",
+            "OPERATOR_MOTION_COMPOSABILIT",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "BUFFER_SWAP_AUDIT",
+            "E325_RECOVERY_PROTOCOL_ENFOR",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "LSP_JSONRPC_AUDIT",
+            "STDIO_CAPABILITY_NEGOTIATION",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "TREESITTER_AST_AUDIT",
+            "INCREMENTAL_PARSING_SUB_5MS_",
+            "Verified 100%"
+          ]
+        ]
+      }
+    }
+  ]
+}

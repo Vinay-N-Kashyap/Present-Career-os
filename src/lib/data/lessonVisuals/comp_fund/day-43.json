@@ -1,0 +1,211 @@
+{
+  "day": 43,
+  "course": "comp_fund",
+  "entries": [
+    {
+      "stepId": "cf-d43-p1",
+      "partTitle": "DAG Task Orchestration: `GNU Make` `$mtime$` Idempotency, `.PHONY` Targets & `Just`",
+      "template": "cells",
+      "codeHash": "8be04f038e731ca9e767e6a714136a872e75c513875e75c1def071bc7c282411",
+      "data": {
+        "title": "Systems Architecture Telemetry: DAG Task Orchestration: `GNU Make` `$mtime$` Idempotency, `.PHON",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "DAG_ENGINE",
+            "GNU_MAKE_AND_JUST_COMMAND_OR",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "IDEMPOTENCY_RULE",
+            "REBUILD_IFF_TARGET_MISSING_O",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "PHONY_DECLARATION",
+            "EXPLICIT_NON_FILE_ACTION_TAR",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "TWELVE_FACTOR_CFG",
+            "STRICT_ENV_VAR_SEPARATION_FR",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d43-p2",
+      "partTitle": "Detective Challenge: The $65,000 Hardcoded AWS Key Breach & Out-of-Order Deployment Failure",
+      "template": "cells",
+      "codeHash": "7453feb9c55a9727499d0f4c458e919013d3606fe3583e5373a5a0be007d92e0",
+      "data": {
+        "title": "Systems Architecture Telemetry: Detective Challenge: The $65,000 Hardcoded AWS Key Breach & Out-",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "INCIDENT_1",
+            "HARDCODED_AWS_KEY_SCRAPED_IN",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "INCIDENT_2",
+            "DEPLOY_RAN_BEFORE_DB_MIGRATE",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "DAG_FIX",
+            "DEPLOY_TARGET_DECLARES_MIGRA",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "SECRET_FIX",
+            "PURGE_REPO_AND_ENFORCE_VAULT",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d43-p3",
+      "partTitle": "Mastery Assignment: Topological DAG Task Runner (Kahn's Algorithm) & Environment Validator",
+      "template": "cells",
+      "codeHash": "0720bfbf62c472a46ce80539e75c32702bc4d3861902e168e3923c659a54dcb6",
+      "data": {
+        "title": "Systems Architecture Telemetry: Mastery Assignment: Topological DAG Task Runner (Kahn's Algorith",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "TOPOLOGICAL_SORT",
+            "KAHN_ALGORITHM_CYCLE_FREE_DA",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "ENV_VALIDATION",
+            "REQUIRED_DB_URL_AND_VAULT_TO",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "STEP_1_MIGRATE",
+            "SCHEMA_V42_APPLIED_EXIT_CODE",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "STEP_2_BUILD",
+            "INCREMENTAL_MTIME_CACHE_HIT_",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d43-p4",
+      "partTitle": "Incident Lab: Pre-Commit Shannon Entropy Secret Scanner & Incremental Build Graph Pruning",
+      "template": "cells",
+      "codeHash": "434eefb449fc96c7c697435907ab8797c83780140efc589a415b0002fd19432e",
+      "data": {
+        "title": "Systems Architecture Telemetry: Incident Lab: Pre-Commit Shannon Entropy Secret Scanner & Increm",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "PRE_COMMIT_SCAN",
+            "SHANNON_ENTROPY_AND_REGEX_AS",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "BLOCKED_PATTERN",
+            "AKIA_AWS_SECRET_KEY_HIGH_ENT",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "MTIME_GRAPH_TEST",
+            "1_MODIFIED_SOURCE_REBUILDS_O",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "CACHE_SAVINGS",
+            "94_PCT_BUILD_TIME_SAVED_VIA_",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d43-p5",
+      "partTitle": "Day 43 Mastery Certification: DAG Task Orchestration, 12-Factor Config & Secret Hygiene",
+      "template": "cells",
+      "codeHash": "afbadbee15a1b3f6a2f66102fdaefc9cf4345d6fd2dce14455074d08ce8993ec",
+      "data": {
+        "title": "Systems Architecture Telemetry: Day 43 Mastery Certification: DAG Task Orchestration, 12-Factor ",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "MAKEFILE_DAG_AUDIT",
+            "MTIME_AND_PHONY_INVARIANTS_V",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "JUSTFILE_AUDIT",
+            "DECLARATIVE_PREREQUISITE_ORD",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "TWELVE_FACTOR_AUDIT",
+            "ZERO_HARDCODED_CONFIG_IN_SOU",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "VAULT_DIRENV_AUDIT",
+            "EPHEMERAL_SCOPED_ENV_LOADING",
+            "Verified 100%"
+          ]
+        ]
+      }
+    }
+  ]
+}
