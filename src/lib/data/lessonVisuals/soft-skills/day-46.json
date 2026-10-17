@@ -1,0 +1,1709 @@
+{
+  "schemaVersion": 1,
+  "prefix": "soft-skills",
+  "day": 46,
+  "promptSha": "0edf9e170d892ade189a46a192e296dbbe732c0c1b013b957ee6c729f7c761ad",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Equity Mechanics & Startup Cap Tables: ISOs vs NSOs vs RSUs",
+      "codeHash": "83d0a277e44852dd35f4a4f1ed54a819d8f43a0a8d2aa0225b6679bf9156e282",
+      "spec": {
+        "template": "workflow",
+        "title": "Equity Mechanics & Startup Cap Tables: ISOs v... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Financial & Context Grounding",
+            "subtext": "Equity & Position Analysis",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Leverage & Dial Optimization",
+            "subtext": "Multi-Variable Scenarios",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Collaborative Defense & De-escalation",
+            "subtext": "Poise & Rapport Preservation",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Executive Ratification",
+            "subtext": "Principal Leadership ✓",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Financial & Context Grounding): Initialize Equity Mechanics & Startup Cap Tables: ISOs v...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Financial & Context Grounding",
+                "subtext": "Equity & Position Analysis",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Leverage & Dial Optimization",
+                "subtext": "Multi-Variable Scenarios",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Collaborative Defense & De-escalation",
+                "subtext": "Poise & Rapport Preservation",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Leverage & Dial Optimization): Model state transitions and compensation matrices.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active Flow",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Financial & Context Grounding",
+                "subtext": "Equity & Position Analysis",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Leverage & Dial Optimization",
+                "subtext": "Multi-Variable Scenarios",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Collaborative Defense & De-escalation",
+                "subtext": "Poise & Rapport Preservation",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Collaborative Defense & De-escalation): Align stakeholder incentives and bridge gap.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "High Signal",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Financial & Context Grounding",
+                "subtext": "Equity & Position Analysis",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Leverage & Dial Optimization",
+                "subtext": "Multi-Variable Scenarios",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Collaborative Defense & De-escalation",
+                "subtext": "Poise & Rapport Preservation",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Executive Ratification): Ratify enterprise technical sovereignty.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "Principal Strategist ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Financial & Context Grounding",
+                "subtext": "Equity & Position Analysis",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Leverage & Dial Optimization",
+                "subtext": "Multi-Variable Scenarios",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Collaborative Defense & De-escalation",
+                "subtext": "Poise & Rapport Preservation",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Equity Mechanics & Startup Cap Tables: ISOs v... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Financial & Context Grounding",
+            "subtext": "Equity & Position Analysis",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Leverage & Dial Optimization",
+            "subtext": "Multi-Variable Scenarios",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Collaborative Defense & De-escalation",
+            "subtext": "Poise & Rapport Preservation",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Executive Ratification",
+            "subtext": "Principal Leadership ✓",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Financial & Context Grounding): Initialize Equity Mechanics & Startup Cap Tables: ISOs v...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Financial & Context Grounding",
+                "subtext": "Equity & Position Analysis",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Leverage & Dial Optimization",
+                "subtext": "Multi-Variable Scenarios",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Collaborative Defense & De-escalation",
+                "subtext": "Poise & Rapport Preservation",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Leverage & Dial Optimization): Model state transitions and compensation matrices.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active Flow",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Financial & Context Grounding",
+                "subtext": "Equity & Position Analysis",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Leverage & Dial Optimization",
+                "subtext": "Multi-Variable Scenarios",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Collaborative Defense & De-escalation",
+                "subtext": "Poise & Rapport Preservation",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Collaborative Defense & De-escalation): Align stakeholder incentives and bridge gap.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "High Signal",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Financial & Context Grounding",
+                "subtext": "Equity & Position Analysis",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Leverage & Dial Optimization",
+                "subtext": "Multi-Variable Scenarios",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Collaborative Defense & De-escalation",
+                "subtext": "Poise & Rapport Preservation",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Executive Ratification): Ratify enterprise technical sovereignty.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "Principal Strategist ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Financial & Context Grounding",
+                "subtext": "Equity & Position Analysis",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Leverage & Dial Optimization",
+                "subtext": "Multi-Variable Scenarios",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Collaborative Defense & De-escalation",
+                "subtext": "Poise & Rapport Preservation",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Total Compensation Deconstruct: 4-Year Financial Lifecycle Spreadsheet Model",
+      "codeHash": "d29b996c7b701267a3e520074b413cd92d17b177663a1b4af04f2d96f0d158c8",
+      "spec": {
+        "template": "workflow",
+        "title": "The Total Compensation Deconstruct: 4-Year Fi... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Financial & Context Grounding",
+            "subtext": "Equity & Position Analysis",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Leverage & Dial Optimization",
+            "subtext": "Multi-Variable Scenarios",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Collaborative Defense & De-escalation",
+            "subtext": "Poise & Rapport Preservation",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Executive Ratification",
+            "subtext": "Principal Leadership ✓",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Financial & Context Grounding): Initialize The Total Compensation Deconstruct: 4-Year Fi...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Financial & Context Grounding",
+                "subtext": "Equity & Position Analysis",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Leverage & Dial Optimization",
+                "subtext": "Multi-Variable Scenarios",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Collaborative Defense & De-escalation",
+                "subtext": "Poise & Rapport Preservation",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Leverage & Dial Optimization): Model state transitions and compensation matrices.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active Flow",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Financial & Context Grounding",
+                "subtext": "Equity & Position Analysis",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Leverage & Dial Optimization",
+                "subtext": "Multi-Variable Scenarios",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Collaborative Defense & De-escalation",
+                "subtext": "Poise & Rapport Preservation",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Collaborative Defense & De-escalation): Align stakeholder incentives and bridge gap.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "High Signal",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Financial & Context Grounding",
+                "subtext": "Equity & Position Analysis",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Leverage & Dial Optimization",
+                "subtext": "Multi-Variable Scenarios",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Collaborative Defense & De-escalation",
+                "subtext": "Poise & Rapport Preservation",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Executive Ratification): Ratify enterprise technical sovereignty.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "Principal Strategist ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Financial & Context Grounding",
+                "subtext": "Equity & Position Analysis",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Leverage & Dial Optimization",
+                "subtext": "Multi-Variable Scenarios",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Collaborative Defense & De-escalation",
+                "subtext": "Poise & Rapport Preservation",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "The Total Compensation Deconstruct: 4-Year Fi... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Financial & Context Grounding",
+            "subtext": "Equity & Position Analysis",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Leverage & Dial Optimization",
+            "subtext": "Multi-Variable Scenarios",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Collaborative Defense & De-escalation",
+            "subtext": "Poise & Rapport Preservation",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Executive Ratification",
+            "subtext": "Principal Leadership ✓",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Financial & Context Grounding): Initialize The Total Compensation Deconstruct: 4-Year Fi...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Financial & Context Grounding",
+                "subtext": "Equity & Position Analysis",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Leverage & Dial Optimization",
+                "subtext": "Multi-Variable Scenarios",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Collaborative Defense & De-escalation",
+                "subtext": "Poise & Rapport Preservation",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Leverage & Dial Optimization): Model state transitions and compensation matrices.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active Flow",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Financial & Context Grounding",
+                "subtext": "Equity & Position Analysis",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Leverage & Dial Optimization",
+                "subtext": "Multi-Variable Scenarios",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Collaborative Defense & De-escalation",
+                "subtext": "Poise & Rapport Preservation",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Collaborative Defense & De-escalation): Align stakeholder incentives and bridge gap.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "High Signal",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Financial & Context Grounding",
+                "subtext": "Equity & Position Analysis",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Leverage & Dial Optimization",
+                "subtext": "Multi-Variable Scenarios",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Collaborative Defense & De-escalation",
+                "subtext": "Poise & Rapport Preservation",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Executive Ratification): Ratify enterprise technical sovereignty.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "Principal Strategist ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Financial & Context Grounding",
+                "subtext": "Equity & Position Analysis",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Leverage & Dial Optimization",
+                "subtext": "Multi-Variable Scenarios",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Collaborative Defense & De-escalation",
+                "subtext": "Poise & Rapport Preservation",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Tech Total Compensation Simulator CLI: Equity Dilution Across Series B to IPO",
+      "codeHash": "9964df202bcd6a6a168f9203ff4943a7c16a53f8ab36aa13363162594a115632",
+      "spec": {
+        "template": "workflow",
+        "title": "Tech Total Compensation Simulator CLI: Equity... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Financial & Context Grounding",
+            "subtext": "Equity & Position Analysis",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Leverage & Dial Optimization",
+            "subtext": "Multi-Variable Scenarios",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Collaborative Defense & De-escalation",
+            "subtext": "Poise & Rapport Preservation",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Executive Ratification",
+            "subtext": "Principal Leadership ✓",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Financial & Context Grounding): Initialize Tech Total Compensation Simulator CLI: Equity...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Financial & Context Grounding",
+                "subtext": "Equity & Position Analysis",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Leverage & Dial Optimization",
+                "subtext": "Multi-Variable Scenarios",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Collaborative Defense & De-escalation",
+                "subtext": "Poise & Rapport Preservation",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Leverage & Dial Optimization): Model state transitions and compensation matrices.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active Flow",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Financial & Context Grounding",
+                "subtext": "Equity & Position Analysis",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Leverage & Dial Optimization",
+                "subtext": "Multi-Variable Scenarios",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Collaborative Defense & De-escalation",
+                "subtext": "Poise & Rapport Preservation",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Collaborative Defense & De-escalation): Align stakeholder incentives and bridge gap.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "High Signal",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Financial & Context Grounding",
+                "subtext": "Equity & Position Analysis",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Leverage & Dial Optimization",
+                "subtext": "Multi-Variable Scenarios",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Collaborative Defense & De-escalation",
+                "subtext": "Poise & Rapport Preservation",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Executive Ratification): Ratify enterprise technical sovereignty.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "Principal Strategist ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Financial & Context Grounding",
+                "subtext": "Equity & Position Analysis",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Leverage & Dial Optimization",
+                "subtext": "Multi-Variable Scenarios",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Collaborative Defense & De-escalation",
+                "subtext": "Poise & Rapport Preservation",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Tech Total Compensation Simulator CLI: Equity... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Financial & Context Grounding",
+            "subtext": "Equity & Position Analysis",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Leverage & Dial Optimization",
+            "subtext": "Multi-Variable Scenarios",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Collaborative Defense & De-escalation",
+            "subtext": "Poise & Rapport Preservation",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Executive Ratification",
+            "subtext": "Principal Leadership ✓",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Financial & Context Grounding): Initialize Tech Total Compensation Simulator CLI: Equity...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Financial & Context Grounding",
+                "subtext": "Equity & Position Analysis",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Leverage & Dial Optimization",
+                "subtext": "Multi-Variable Scenarios",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Collaborative Defense & De-escalation",
+                "subtext": "Poise & Rapport Preservation",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Leverage & Dial Optimization): Model state transitions and compensation matrices.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active Flow",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Financial & Context Grounding",
+                "subtext": "Equity & Position Analysis",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Leverage & Dial Optimization",
+                "subtext": "Multi-Variable Scenarios",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Collaborative Defense & De-escalation",
+                "subtext": "Poise & Rapport Preservation",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Collaborative Defense & De-escalation): Align stakeholder incentives and bridge gap.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "High Signal",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Financial & Context Grounding",
+                "subtext": "Equity & Position Analysis",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Leverage & Dial Optimization",
+                "subtext": "Multi-Variable Scenarios",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Collaborative Defense & De-escalation",
+                "subtext": "Poise & Rapport Preservation",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Executive Ratification): Ratify enterprise technical sovereignty.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "Principal Strategist ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Financial & Context Grounding",
+                "subtext": "Equity & Position Analysis",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Leverage & Dial Optimization",
+                "subtext": "Multi-Variable Scenarios",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Collaborative Defense & De-escalation",
+                "subtext": "Poise & Rapport Preservation",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Complex Offer Financial Audit Lab: Detecting Exploitative Clauses & Predatory Terms",
+      "codeHash": "3507e8762c8e84d4c28e6aee4b5684d9e31d83b9e37ed263990c4d5412835b99",
+      "spec": {
+        "template": "workflow",
+        "title": "Complex Offer Financial Audit Lab: Detecting ... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Financial & Context Grounding",
+            "subtext": "Equity & Position Analysis",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Leverage & Dial Optimization",
+            "subtext": "Multi-Variable Scenarios",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Collaborative Defense & De-escalation",
+            "subtext": "Poise & Rapport Preservation",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Executive Ratification",
+            "subtext": "Principal Leadership ✓",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Financial & Context Grounding): Initialize Complex Offer Financial Audit Lab: Detecting ...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Financial & Context Grounding",
+                "subtext": "Equity & Position Analysis",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Leverage & Dial Optimization",
+                "subtext": "Multi-Variable Scenarios",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Collaborative Defense & De-escalation",
+                "subtext": "Poise & Rapport Preservation",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Leverage & Dial Optimization): Model state transitions and compensation matrices.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active Flow",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Financial & Context Grounding",
+                "subtext": "Equity & Position Analysis",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Leverage & Dial Optimization",
+                "subtext": "Multi-Variable Scenarios",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Collaborative Defense & De-escalation",
+                "subtext": "Poise & Rapport Preservation",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Collaborative Defense & De-escalation): Align stakeholder incentives and bridge gap.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "High Signal",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Financial & Context Grounding",
+                "subtext": "Equity & Position Analysis",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Leverage & Dial Optimization",
+                "subtext": "Multi-Variable Scenarios",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Collaborative Defense & De-escalation",
+                "subtext": "Poise & Rapport Preservation",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Executive Ratification): Ratify enterprise technical sovereignty.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "Principal Strategist ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Financial & Context Grounding",
+                "subtext": "Equity & Position Analysis",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Leverage & Dial Optimization",
+                "subtext": "Multi-Variable Scenarios",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Collaborative Defense & De-escalation",
+                "subtext": "Poise & Rapport Preservation",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Complex Offer Financial Audit Lab: Detecting ... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Financial & Context Grounding",
+            "subtext": "Equity & Position Analysis",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Leverage & Dial Optimization",
+            "subtext": "Multi-Variable Scenarios",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Collaborative Defense & De-escalation",
+            "subtext": "Poise & Rapport Preservation",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Executive Ratification",
+            "subtext": "Principal Leadership ✓",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Financial & Context Grounding): Initialize Complex Offer Financial Audit Lab: Detecting ...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Financial & Context Grounding",
+                "subtext": "Equity & Position Analysis",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Leverage & Dial Optimization",
+                "subtext": "Multi-Variable Scenarios",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Collaborative Defense & De-escalation",
+                "subtext": "Poise & Rapport Preservation",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Leverage & Dial Optimization): Model state transitions and compensation matrices.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active Flow",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Financial & Context Grounding",
+                "subtext": "Equity & Position Analysis",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Leverage & Dial Optimization",
+                "subtext": "Multi-Variable Scenarios",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Collaborative Defense & De-escalation",
+                "subtext": "Poise & Rapport Preservation",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Collaborative Defense & De-escalation): Align stakeholder incentives and bridge gap.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "High Signal",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Financial & Context Grounding",
+                "subtext": "Equity & Position Analysis",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Leverage & Dial Optimization",
+                "subtext": "Multi-Variable Scenarios",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Collaborative Defense & De-escalation",
+                "subtext": "Poise & Rapport Preservation",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Executive Ratification): Ratify enterprise technical sovereignty.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "Principal Strategist ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Financial & Context Grounding",
+                "subtext": "Equity & Position Analysis",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Leverage & Dial Optimization",
+                "subtext": "Multi-Variable Scenarios",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Collaborative Defense & De-escalation",
+                "subtext": "Poise & Rapport Preservation",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Master Tech Offer Financial Certification & Day 46 Accreditation",
+      "codeHash": "d2b369a65e596dfa2221ea15a531059308470ea958fd76474f57afd00e83b900",
+      "spec": {
+        "template": "workflow",
+        "title": "Master Tech Offer Financial Certification & D... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Financial & Context Grounding",
+            "subtext": "Equity & Position Analysis",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Leverage & Dial Optimization",
+            "subtext": "Multi-Variable Scenarios",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Collaborative Defense & De-escalation",
+            "subtext": "Poise & Rapport Preservation",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Executive Ratification",
+            "subtext": "Principal Leadership ✓",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Financial & Context Grounding): Initialize Master Tech Offer Financial Certification & D...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Financial & Context Grounding",
+                "subtext": "Equity & Position Analysis",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Leverage & Dial Optimization",
+                "subtext": "Multi-Variable Scenarios",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Collaborative Defense & De-escalation",
+                "subtext": "Poise & Rapport Preservation",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Leverage & Dial Optimization): Model state transitions and compensation matrices.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active Flow",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Financial & Context Grounding",
+                "subtext": "Equity & Position Analysis",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Leverage & Dial Optimization",
+                "subtext": "Multi-Variable Scenarios",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Collaborative Defense & De-escalation",
+                "subtext": "Poise & Rapport Preservation",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Collaborative Defense & De-escalation): Align stakeholder incentives and bridge gap.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "High Signal",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Financial & Context Grounding",
+                "subtext": "Equity & Position Analysis",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Leverage & Dial Optimization",
+                "subtext": "Multi-Variable Scenarios",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Collaborative Defense & De-escalation",
+                "subtext": "Poise & Rapport Preservation",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Executive Ratification): Ratify enterprise technical sovereignty.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "Principal Strategist ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Financial & Context Grounding",
+                "subtext": "Equity & Position Analysis",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Leverage & Dial Optimization",
+                "subtext": "Multi-Variable Scenarios",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Collaborative Defense & De-escalation",
+                "subtext": "Poise & Rapport Preservation",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Master Tech Offer Financial Certification & D... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Financial & Context Grounding",
+            "subtext": "Equity & Position Analysis",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Leverage & Dial Optimization",
+            "subtext": "Multi-Variable Scenarios",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Collaborative Defense & De-escalation",
+            "subtext": "Poise & Rapport Preservation",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Executive Ratification",
+            "subtext": "Principal Leadership ✓",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Financial & Context Grounding): Initialize Master Tech Offer Financial Certification & D...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Financial & Context Grounding",
+                "subtext": "Equity & Position Analysis",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Leverage & Dial Optimization",
+                "subtext": "Multi-Variable Scenarios",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Collaborative Defense & De-escalation",
+                "subtext": "Poise & Rapport Preservation",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Leverage & Dial Optimization): Model state transitions and compensation matrices.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active Flow",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Financial & Context Grounding",
+                "subtext": "Equity & Position Analysis",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Leverage & Dial Optimization",
+                "subtext": "Multi-Variable Scenarios",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Collaborative Defense & De-escalation",
+                "subtext": "Poise & Rapport Preservation",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Collaborative Defense & De-escalation): Align stakeholder incentives and bridge gap.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "High Signal",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Financial & Context Grounding",
+                "subtext": "Equity & Position Analysis",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Leverage & Dial Optimization",
+                "subtext": "Multi-Variable Scenarios",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Collaborative Defense & De-escalation",
+                "subtext": "Poise & Rapport Preservation",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Executive Ratification): Ratify enterprise technical sovereignty.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "Principal Strategist ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Financial & Context Grounding",
+                "subtext": "Equity & Position Analysis",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Leverage & Dial Optimization",
+                "subtext": "Multi-Variable Scenarios",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Collaborative Defense & De-escalation",
+                "subtext": "Poise & Rapport Preservation",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
