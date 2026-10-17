@@ -16,9 +16,16 @@ import {
   SAMPLE_EOC_SCHOLARS,
   SAMPLE_A11Y_AUDITS,
 } from '@/lib/admin/centralEqualOpportunity';
+import { useGovernanceStore } from '@/lib/hooks/useGovernanceStore';
 
 export default function CentralEqualOpportunityManager() {
-  const [scholars, setScholars] = useState<EocScholarRecord[]>(SAMPLE_EOC_SCHOLARS);
+  const {
+    records: scholars,
+    setRecords: setScholars,
+    syncSource,
+    isSaving,
+    saveRecord
+  } = useGovernanceStore<EocScholarRecord>('central_equal_opportunity', SAMPLE_EOC_SCHOLARS, 'scholarRecordId');
   const [audits, setAudits] = useState<CampusAccessibilityAudit[]>(SAMPLE_A11Y_AUDITS);
   const [activeTab, setActiveTab] = useState<'SCHOLARS' | 'AUDITS'>('SCHOLARS');
   const [selectedCategory, setSelectedCategory] = useState<string>('ALL');
@@ -85,7 +92,7 @@ export default function CentralEqualOpportunityManager() {
   });
 
   // Handlers
-  const handleRegisterScholar = (e: React.FormEvent) => {
+  const handleRegisterScholar = async (e: React.FormEvent) => {
     e.preventDefault();
     setFormError('');
 
@@ -104,7 +111,7 @@ export default function CentralEqualOpportunityManager() {
         disabilityPercentage: disabilityPercent,
       });
 
-      setScholars([created, ...scholars]);
+      await saveRecord(created);
       setShowRegisterModal(false);
       notify(`Scholar ${created.scholarName} registered with EOC. Benchmark status: ${created.isBenchmarkDisability ? 'YES' : 'NO'}.`);
     } catch (err: any) {
@@ -117,7 +124,7 @@ export default function CentralEqualOpportunityManager() {
     setShowAssignModal(true);
   };
 
-  const handleAssignService = (e: React.FormEvent) => {
+  const handleAssignService = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!actionScholar) return;
 
@@ -127,7 +134,7 @@ export default function CentralEqualOpportunityManager() {
       disbursedCostInr: serviceCost,
     });
 
-    setScholars(scholars.map(s => (s.scholarRecordId === updated.scholarRecordId ? updated : s)));
+    await saveRecord(updated);
     if (selectedScholar?.scholarRecordId === updated.scholarRecordId) {
       setSelectedScholar(updated);
     }
@@ -188,8 +195,17 @@ export default function CentralEqualOpportunityManager() {
               </svg>
             </span>
             <div>
-              <h1 className="text-2xl font-bold tracking-tight text-white">
+              <h1 className="text-2xl font-bold tracking-tight text-white flex items-center gap-3">
                 Equal Opportunity Cell (EOC) & Universal Accessibility Console
+                <span className={`text-xs px-2.5 py-0.5 rounded-full border flex items-center gap-1.5 ${
+                  syncSource === 'supabase'
+                    ? 'bg-emerald-950/80 text-emerald-300 border-emerald-700/80'
+                    : 'bg-slate-900 text-slate-400 border-slate-700'
+                }`}>
+                  <span className={`w-1.5 h-1.5 rounded-full ${syncSource === 'supabase' ? 'bg-emerald-400 animate-pulse' : 'bg-slate-400'}`}></span>
+                  {syncSource === 'supabase' ? 'PostgreSQL Active (support.pinit)' : 'Resilient Local Storage'}
+                  {isSaving && <span className="text-emerald-400 ml-1">Saving...</span>}
+                </span>
               </h1>
               <p className="text-sm text-slate-400 mt-0.5">
                 RPwD Act 2016 4% Statutory Quota • CPWD Barrier-Free Built Environment • Assistive Devices & Scribe Allocation • UDID Verification

@@ -14,9 +14,16 @@ import {
   exportPoPLedgerCSV,
   SAMPLE_POP_RECORDS,
 } from '@/lib/teacher/facultyProfessorOfPractice';
+import { useGovernanceStore } from '@/lib/hooks/useGovernanceStore';
 
 export default function FacultyProfessorOfPracticeStudio() {
-  const [records, setRecords] = useState<ProfessorOfPracticeRecord[]>(SAMPLE_POP_RECORDS);
+  const {
+    records,
+    setRecords,
+    syncSource,
+    isSaving,
+    saveRecord
+  } = useGovernanceStore<ProfessorOfPracticeRecord>('faculty_professor_of_practice', SAMPLE_POP_RECORDS, 'popRecordId');
   const [selectedFunding, setSelectedFunding] = useState<string>('ALL');
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedRecord, setSelectedRecord] = useState<ProfessorOfPracticeRecord | null>(null);
@@ -76,7 +83,7 @@ export default function FacultyProfessorOfPracticeStudio() {
   });
 
   // Handlers
-  const handleOnboardPoP = (e: React.FormEvent) => {
+  const handleOnboardPoP = async (e: React.FormEvent) => {
     e.preventDefault();
     setFormError('');
 
@@ -94,7 +101,7 @@ export default function FacultyProfessorOfPracticeStudio() {
         coTaughtCourseCodes: courseCodes.split(';').map(c => c.trim()).filter(Boolean),
       });
 
-      setRecords([created, ...records]);
+      await saveRecord(created);
       setShowOnboardModal(false);
       notify(`Professor of Practice ${created.expertName} successfully onboarded in ${created.department}!`);
     } catch (err: any) {
@@ -107,7 +114,7 @@ export default function FacultyProfessorOfPracticeStudio() {
     setShowBillModal(true);
   };
 
-  const handleGenerateBill = (e: React.FormEvent) => {
+  const handleGenerateBill = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!actionRecord) return;
 
@@ -117,7 +124,7 @@ export default function FacultyProfessorOfPracticeStudio() {
         daysDelivered,
       });
 
-      setRecords(records.map(r => (r.popRecordId === updated.popRecordId ? updated : r)));
+      await saveRecord(updated);
       if (selectedRecord?.popRecordId === updated.popRecordId) {
         setSelectedRecord(updated);
       }
@@ -130,14 +137,14 @@ export default function FacultyProfessorOfPracticeStudio() {
     }
   };
 
-  const handleDisburseBill = (record: ProfessorOfPracticeRecord, billId: string) => {
+  const handleDisburseBill = async (record: ProfessorOfPracticeRecord, billId: string) => {
     const res = disbursePoPHonorarium(record, billId);
     if (!res.success) {
       notify(res.error || 'Failed to disburse honorarium', 'error');
       return;
     }
 
-    setRecords(records.map(r => (r.popRecordId === res.record.popRecordId ? res.record : r)));
+    await saveRecord(res.record);
     if (selectedRecord?.popRecordId === res.record.popRecordId) {
       setSelectedRecord(res.record);
     }
@@ -182,8 +189,17 @@ export default function FacultyProfessorOfPracticeStudio() {
               </svg>
             </span>
             <div>
-              <h1 className="text-2xl font-bold tracking-tight text-white">
+              <h1 className="text-2xl font-bold tracking-tight text-white flex items-center gap-3">
                 Faculty Professor of Practice (PoP) & Industry Chair Studio
+                <span className={`text-xs px-2.5 py-0.5 rounded-full border flex items-center gap-1.5 ${
+                  syncSource === 'supabase'
+                    ? 'bg-emerald-950/80 text-emerald-300 border-emerald-700/80'
+                    : 'bg-slate-900 text-slate-400 border-slate-700'
+                }`}>
+                  <span className={`w-1.5 h-1.5 rounded-full ${syncSource === 'supabase' ? 'bg-emerald-400 animate-pulse' : 'bg-slate-400'}`}></span>
+                  {syncSource === 'supabase' ? 'PostgreSQL Active (support.pinit)' : 'Resilient Local Storage'}
+                  {isSaving && <span className="text-emerald-400 ml-1">Saving...</span>}
+                </span>
               </h1>
               <p className="text-sm text-slate-400 mt-0.5">
                 UGC 2022 Guidelines • 15+ Years Industry Practice • Industry-Sponsored & University Models • Section 194J 10% TDS Deductions

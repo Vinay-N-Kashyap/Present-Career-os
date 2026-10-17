@@ -14,9 +14,16 @@ import {
   exportStartupIncubationCSV,
   SAMPLE_STARTUPS,
 } from '@/lib/teacher/facultyStartupIncubation';
+import { useGovernanceStore } from '@/lib/hooks/useGovernanceStore';
 
 export default function FacultyStartupIncubationStudio() {
-  const [startups, setStartups] = useState<IncubatedStartupRecord[]>(SAMPLE_STARTUPS);
+  const {
+    records: startups,
+    setRecords: setStartups,
+    syncSource,
+    isSaving,
+    saveRecord
+  } = useGovernanceStore<IncubatedStartupRecord>('faculty_startup_incubation', SAMPLE_STARTUPS, 'startupRecordId');
   const [selectedStage, setSelectedStage] = useState<string>('ALL');
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedStartup, setSelectedStartup] = useState<IncubatedStartupRecord | null>(null);
@@ -79,7 +86,7 @@ export default function FacultyStartupIncubationStudio() {
   });
 
   // Handlers
-  const handleRegisterStartup = (e: React.FormEvent) => {
+  const handleRegisterStartup = async (e: React.FormEvent) => {
     e.preventDefault();
     setRegisterError('');
 
@@ -95,7 +102,7 @@ export default function FacultyStartupIncubationStudio() {
         facultyTimeCommitmentPercent: facultyTime,
       });
 
-      setStartups([created, ...startups]);
+      await saveRecord(created);
       setShowRegisterModal(false);
       notify(`Venture "${created.startupName}" inducted into university pre-incubation!`);
     } catch (err: any) {
@@ -109,7 +116,7 @@ export default function FacultyStartupIncubationStudio() {
     setShowRocModal(true);
   };
 
-  const handleRecordRoc = (e: React.FormEvent) => {
+  const handleRecordRoc = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!actionStartup) return;
     setRocError('');
@@ -121,7 +128,7 @@ export default function FacultyStartupIncubationStudio() {
         universityEquityStakePercent: equityStake,
       });
 
-      setStartups(startups.map(s => (s.startupRecordId === updated.startupRecordId ? updated : s)));
+      await saveRecord(updated);
       if (selectedStartup?.startupRecordId === updated.startupRecordId) {
         setSelectedStartup(updated);
       }
@@ -138,14 +145,14 @@ export default function FacultyStartupIncubationStudio() {
     setShowSeedModal(true);
   };
 
-  const handleSanctionSeed = (e: React.FormEvent) => {
+  const handleSanctionSeed = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!actionStartup) return;
     setSeedError('');
 
     try {
       const updated = sanctionSeedGrant(actionStartup, seedAmount);
-      setStartups(startups.map(s => (s.startupRecordId === updated.startupRecordId ? updated : s)));
+      await saveRecord(updated);
       if (selectedStartup?.startupRecordId === updated.startupRecordId) {
         setSelectedStartup(updated);
       }
@@ -156,14 +163,14 @@ export default function FacultyStartupIncubationStudio() {
     }
   };
 
-  const handleDisburseTranche = (startup: IncubatedStartupRecord, trancheNum: 1 | 2 | 3) => {
+  const handleDisburseTranche = async (startup: IncubatedStartupRecord, trancheNum: 1 | 2 | 3) => {
     const res = disburseSeedTranche(startup, trancheNum);
     if (!res.success) {
       notify(res.error || 'Failed to disburse tranche', 'error');
       return;
     }
 
-    setStartups(startups.map(s => (s.startupRecordId === res.record.startupRecordId ? res.record : s)));
+    await saveRecord(res.record);
     if (selectedStartup?.startupRecordId === res.record.startupRecordId) {
       setSelectedStartup(res.record);
     }
@@ -208,8 +215,17 @@ export default function FacultyStartupIncubationStudio() {
               </svg>
             </span>
             <div>
-              <h1 className="text-2xl font-bold tracking-tight text-white">
+              <h1 className="text-2xl font-bold tracking-tight text-white flex items-center gap-3">
                 Faculty Student Start-Up Incubation & Innovation Studio
+                <span className={`text-xs px-2.5 py-0.5 rounded-full border flex items-center gap-1.5 ${
+                  syncSource === 'supabase'
+                    ? 'bg-emerald-950/80 text-emerald-300 border-emerald-700/80'
+                    : 'bg-slate-900 text-slate-400 border-slate-700'
+                }`}>
+                  <span className={`w-1.5 h-1.5 rounded-full ${syncSource === 'supabase' ? 'bg-emerald-400 animate-pulse' : 'bg-slate-400'}`}></span>
+                  {syncSource === 'supabase' ? 'PostgreSQL Active (support.pinit)' : 'Resilient Local Storage'}
+                  {isSaving && <span className="text-emerald-400 ml-1">Saving...</span>}
+                </span>
               </h1>
               <p className="text-sm text-slate-400 mt-0.5">
                 National Innovation & Start-up Policy (NISP 2019) • 2.0% to 9.5% University Equity Cap • ₹10L Seed Fund Tranches • MoE IIC Framework

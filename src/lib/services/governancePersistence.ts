@@ -85,6 +85,58 @@ function toDbRecord(tableName: string, record: any): any {
       audit_sha256: record.auditSha256 || '0000000000000000000000000000000000000000000000000000000000000000'
     };
   }
+  if (tableName === 'central_disaster_safety') {
+    return {
+      protocol_id: record.incidentId,
+      institution_id: record.institutionId || 'inst-apex-001',
+      building_zone: record.primaryLocation,
+      hazard_type: record.hazardCategory,
+      evacuation_routes: record.musterHeadcounts || [],
+      assembly_points: record.musterHeadcounts?.map((m: any) => m.musterPointName) || [],
+      fire_noc_valid_until: '2027-12-31',
+      last_mock_drill_date: record.incidentTimestamp?.split('T')[0] || new Date().toISOString().split('T')[0],
+      readiness_score: 94.0,
+      status: record.threatLevel,
+    };
+  }
+  if (tableName === 'faculty_startup_incubation') {
+    return {
+      venture_id: record.startupRecordId,
+      institution_id: record.institutionId || 'inst-apex-001',
+      startup_name: record.startupName,
+      faculty_mentor: record.facultyMentorName,
+      student_founders: [{ name: record.founderStudentName, roll: record.founderStudentRoll }],
+      seed_funding_inr: record.totalSanctionedSeedFundInr,
+      equity_stake_pct: record.universityEquityStakePercent,
+      incubation_stage: record.incubationStage,
+      ip_disclosure_number: record.rocCinOrLlpin || null,
+    };
+  }
+  if (tableName === 'central_equal_opportunity') {
+    return {
+      audit_id: record.scholarRecordId,
+      institution_id: record.institutionId || 'inst-apex-001',
+      facility_name: record.department,
+      barrier_category: record.disabilityCategory,
+      compliance_score: record.disabilityPercentage,
+      remedial_action: record.assignedAssistiveServices?.map((s: any) => s.resourceDetails).join('; ') || 'Scribe and compensatory time allocation',
+      target_completion: '2026-12-31',
+      status: 'AUDITED_COMPLIANT'
+    };
+  }
+  if (tableName === 'faculty_professor_of_practice') {
+    return {
+      pop_id: record.popRecordId,
+      institution_id: record.institutionId || 'inst-apex-001',
+      expert_name: record.professorName,
+      industry_organization: record.parentIndustryOrganization,
+      department: record.department,
+      total_industry_experience_years: record.industryExperienceYears,
+      monthly_honorarium_inr: record.monthlyHonorariumInr,
+      engagement_type: record.fundingModel,
+      status: record.tenureStatus,
+    };
+  }
   // Generic fallback: map keys from camelCase to snake_case
   const mapped: any = {};
   for (const [k, v] of Object.entries(record)) {
@@ -147,6 +199,80 @@ function fromDbRecord<T>(tableName: string, row: any, fallbackDefault: T[]): T {
       auditSha256: row.audit_sha256,
       createdAt: row.created_at,
       updatedAt: row.updated_at
+    } as unknown as T;
+  }
+  if (tableName === 'central_disaster_safety') {
+    const def = (fallbackDefault as any[]).find(d => d.incidentId === row.protocol_id);
+    return {
+      incidentId: row.protocol_id,
+      incidentTimestamp: row.created_at,
+      hazardCategory: row.hazard_type,
+      threatLevel: row.status,
+      primaryLocation: row.building_zone,
+      reportingOfficer: def?.reportingOfficer || 'Chief Safety Officer',
+      sirenTriggered: def?.sirenTriggered ?? true,
+      massAlertDispatched: def?.massAlertDispatched ?? true,
+      musterHeadcounts: Array.isArray(row.evacuation_routes) && row.evacuation_routes.length > 0
+        ? row.evacuation_routes
+        : def?.musterHeadcounts || [],
+      auditSha256: def?.auditSha256 || '0000000000000000000000000000000000000000000000000000000000000000'
+    } as unknown as T;
+  }
+  if (tableName === 'faculty_startup_incubation') {
+    const def = (fallbackDefault as any[]).find(d => d.startupRecordId === row.venture_id);
+    return {
+      startupRecordId: row.venture_id,
+      startupName: row.startup_name,
+      primaryDomain: def?.primaryDomain || 'Innovation & DeepTech',
+      founderStudentName: Array.isArray(row.student_founders) && row.student_founders[0]?.name ? row.student_founders[0].name : (def?.founderStudentName || 'Student Founder'),
+      founderStudentRoll: Array.isArray(row.student_founders) && row.student_founders[0]?.roll ? row.student_founders[0].roll : (def?.founderStudentRoll || '2023CSB001'),
+      facultyMentorName: row.faculty_mentor,
+      facultyMentorEmpId: def?.facultyMentorEmpId || 'FAC-MENTOR-001',
+      department: def?.department || 'Technology & Applied Sciences',
+      incubationStage: row.incubation_stage,
+      rocCinOrLlpin: row.ip_disclosure_number || def?.rocCinOrLlpin,
+      incorporationDate: def?.incorporationDate,
+      universityEquityStakePercent: Number(row.equity_stake_pct) || 5.0,
+      facultyTimeCommitmentPercent: def?.facultyTimeCommitmentPercent || 15.0,
+      totalSanctionedSeedFundInr: Number(row.seed_funding_inr) || 0,
+      totalDisbursedSeedFundInr: def?.totalDisbursedSeedFundInr || 0,
+      seedTranches: def?.seedTranches || [],
+      patentsFiledCount: def?.patentsFiledCount || 0,
+      createdTimestamp: row.created_at,
+      auditSha256: def?.auditSha256 || '0000000000000000000000000000000000000000000000000000000000000000'
+    } as unknown as T;
+  }
+  if (tableName === 'central_equal_opportunity') {
+    const def = (fallbackDefault as any[]).find(d => d.scholarRecordId === row.audit_id);
+    return {
+      scholarRecordId: row.audit_id,
+      studentRollNumber: def?.studentRollNumber || '2024EOC001',
+      studentName: def?.studentName || 'Scholar Name',
+      department: row.facility_name,
+      disabilityCategory: row.barrier_category,
+      disabilityPercentage: Number(row.compliance_score) || 50,
+      udidCardNumber: def?.udidCardNumber || 'UDID-999999',
+      assignedAssistiveServices: def?.assignedAssistiveServices || [],
+      examCompensatoryMinutes: def?.examCompensatoryMinutes || 60,
+      auditSha256: def?.auditSha256 || '0000000000000000000000000000000000000000000000000000000000000000'
+    } as unknown as T;
+  }
+  if (tableName === 'faculty_professor_of_practice') {
+    const def = (fallbackDefault as any[]).find(d => d.popRecordId === row.pop_id);
+    return {
+      popRecordId: row.pop_id,
+      professorName: row.expert_name,
+      parentIndustryOrganization: row.industry_organization,
+      industryDesignation: def?.industryDesignation || 'Distinguished Industry Fellow',
+      industryExperienceYears: Number(row.total_industry_experience_years) || 15,
+      department: row.department,
+      fundingModel: row.engagement_type,
+      monthlyHonorariumInr: Number(row.monthly_honorarium_inr) || 100000,
+      tenureYears: def?.tenureYears || 1,
+      tenureStatus: row.status,
+      assignedCourseCodes: def?.assignedCourseCodes || ['CS-800'],
+      honorariumBills: def?.honorariumBills || [],
+      auditSha256: def?.auditSha256 || '0000000000000000000000000000000000000000000000000000000000000000'
     } as unknown as T;
   }
   // Generic camelCase mapper
@@ -221,6 +347,14 @@ export async function saveGovernanceRecord<T extends Record<string, any>>(
     ? 'record_id'
     : tableName === 'faculty_emeritus_fellowships'
     ? 'dossier_id'
+    : tableName === 'central_disaster_safety'
+    ? 'protocol_id'
+    : tableName === 'faculty_startup_incubation'
+    ? 'venture_id'
+    : tableName === 'central_equal_opportunity'
+    ? 'audit_id'
+    : tableName === 'faculty_professor_of_practice'
+    ? 'pop_id'
     : primaryKey.replace(/([A-Z])/g, '_$1').toLowerCase();
 
   // 1. Supabase write
