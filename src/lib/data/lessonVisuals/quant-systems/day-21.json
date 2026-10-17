@@ -1,0 +1,344 @@
+{
+  "schemaVersion": 1,
+  "prefix": "quant-systems",
+  "day": 21,
+  "promptSha": "d50507dbb1a16554e07f0489a90de06308a6c3a72d2838f389ab1afcd4bb641c",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Black-Scholes-Merton Partial Differential Equation & Cumulative Normal Distribution Approximation",
+      "codeHash": "a96c5036f14dd07268cab193e8018dd06c7a593ad2c6e5f92c53864162ad54e8",
+      "spec": {
+        "template": "states",
+        "title": "Black-Scholes-Merton Partial Differential Equ — High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "BSM PDE Core"
+          },
+          {
+            "id": "st2",
+            "label": "Normal CDF"
+          },
+          {
+            "id": "st3",
+            "label": "Put-Call Parity"
+          },
+          {
+            "id": "st4",
+            "label": "Arb Elimination"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (BSM PDE Core): Initialize deterministic state for Black-Scholes-Merton Partial D...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Normal CDF with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "compute()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Put-Call Parity and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "State 4 (Arb Elimination): Execute deterministic verification with zero heap allocations.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "verify()"
+            },
+            "tone": "accent"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Analytical Greeks Formulation: First-Order Delta & Vega",
+      "codeHash": "85912e429fb9a86d13e7376144d1d3b49de316fc2ecafb1163a24f1ee141cabd",
+      "spec": {
+        "template": "states",
+        "title": "Analytical Greeks Formulation: First-Order De — High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Spot Sensitivity"
+          },
+          {
+            "id": "st2",
+            "label": "Delta Hedger"
+          },
+          {
+            "id": "st3",
+            "label": "Vega Estimator"
+          },
+          {
+            "id": "st4",
+            "label": "Greeks Verifier"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Spot Sensitivity): Initialize deterministic state for Analytical Greeks Formulation:...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Delta Hedger with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "compute()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Vega Estimator and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "State 4 (Greeks Verifier): Execute deterministic verification with zero heap allocations.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "verify()"
+            },
+            "tone": "accent"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Analytical Greeks Formulation: Second-Order Gamma & Cross-Greeks (Theta & Rho)",
+      "codeHash": "0cf3e3ecdbe8e44945a0dd9ffd0415a7cf19762100f4451f45d22e46ee014074",
+      "spec": {
+        "template": "states",
+        "title": "Analytical Greeks Formulation: Second-Order G — High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Gamma Acceleration"
+          },
+          {
+            "id": "st2",
+            "label": "Theta Decay"
+          },
+          {
+            "id": "st3",
+            "label": "Rho Rate Tracker"
+          },
+          {
+            "id": "st4",
+            "label": "Convexity Guard"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Gamma Acceleration): Initialize deterministic state for Analytical Greeks Formulation:...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Theta Decay with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "compute()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Rho Rate Tracker and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "State 4 (Convexity Guard): Execute deterministic verification with zero heap allocations.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "verify()"
+            },
+            "tone": "accent"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Newton-Raphson Numerical Root-Finding for Implied Volatility",
+      "codeHash": "4a7d85efb73c4f1c75fda1da2ddb37feac026e1c04c99c8d5a7ac72188ec4962",
+      "spec": {
+        "template": "states",
+        "title": "Newton-Raphson Numerical Root-Finding for Imp — High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Price Error Diff"
+          },
+          {
+            "id": "st2",
+            "label": "Vega Derivative"
+          },
+          {
+            "id": "st3",
+            "label": "Newton Step"
+          },
+          {
+            "id": "st4",
+            "label": "IV Root Converged"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Price Error Diff): Initialize deterministic state for Newton-Raphson Numerical Root-...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Vega Derivative with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "compute()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Newton Step and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "State 4 (IV Root Converged): Execute deterministic verification with zero heap allocations.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "verify()"
+            },
+            "tone": "accent"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Derivatives Pricing & Implied Volatility Pipeline",
+      "codeHash": "178d2711c4f5cac29396c9c7abc3336ff314c05e572f41d968bac129f0364a92",
+      "spec": {
+        "template": "states",
+        "title": "Production Derivatives Pricing & Implied Vola — High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Strike Chain Ingest"
+          },
+          {
+            "id": "st2",
+            "label": "Smile Spline"
+          },
+          {
+            "id": "st3",
+            "label": "Delta Aggregator"
+          },
+          {
+            "id": "st4",
+            "label": "Auto Equity Hedge"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Strike Chain Ingest): Initialize deterministic state for Production Derivatives Pricing...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Smile Spline with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "compute()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Delta Aggregator and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "State 4 (Auto Equity Hedge): Execute deterministic verification with zero heap allocations.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "verify()"
+            },
+            "tone": "accent"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,344 @@
+{
+  "schemaVersion": 1,
+  "prefix": "quant-systems",
+  "day": 27,
+  "promptSha": "627b24fade0ca4b56ccd028fbcc361b45a1becae4356f6822226f36eef697687",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Point-in-Time Data Integrity & Lookahead Bias Prevention",
+      "codeHash": "38dabfe8936e4e613d4eb520f55523b0da64c1e1c0bd9ee3456f2adc6a90ef0f",
+      "spec": {
+        "template": "states",
+        "title": "Point-in-Time Data Integrity & Lookahead Bias \u2014 High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Bi-Temporal Rec"
+          },
+          {
+            "id": "st2",
+            "label": "Obs Timestamp"
+          },
+          {
+            "id": "st3",
+            "label": "Avail Timestamp"
+          },
+          {
+            "id": "st4",
+            "label": "Point-In-Time Pass"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Bi-Temporal Rec): Initialize deterministic state for Point-in-Time Data Integrity & Look...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Obs Timestamp with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "initialize()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Avail Timestamp and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "State 4 (Point-In-Time Pass): Execute deterministic verification with zero heap allocations.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "verify()"
+            },
+            "tone": "accent"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Survivorship Bias, Delisting Events & Corporate Action Adjustments",
+      "codeHash": "fd1e7ad593359ba3c5c4b5d01857ec16ec57083006c4789aff623e54b0eb5688",
+      "spec": {
+        "template": "states",
+        "title": "Survivorship Bias, Delisting Events & Corpora \u2014 High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Universe List"
+          },
+          {
+            "id": "st2",
+            "label": "Delisted Bankrupt"
+          },
+          {
+            "id": "st3",
+            "label": "Split Adjust Factor"
+          },
+          {
+            "id": "st4",
+            "label": "Survivorship Valid"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Universe List): Initialize deterministic state for Survivorship Bias, Delisting Events...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Delisted Bankrupt with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "process()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Split Adjust Factor and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "filter()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "State 4 (Survivorship Valid): Execute deterministic verification with zero heap allocations.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "approve()"
+            },
+            "tone": "accent"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Overfitting, Multiple Testing & Deflated Sharpe Ratio",
+      "codeHash": "ea8c930368bc3a7bc7efe74033a694c9402bdd1e87d17e303258011d7da6b5db",
+      "spec": {
+        "template": "states",
+        "title": "Overfitting, Multiple Testing & Deflated Shar \u2014 High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Observed Sharpe"
+          },
+          {
+            "id": "st2",
+            "label": "Null Max Sharpe"
+          },
+          {
+            "id": "st3",
+            "label": "Kurtosis Penalty"
+          },
+          {
+            "id": "st4",
+            "label": "DSR Certified"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Observed Sharpe): Initialize deterministic state for Overfitting, Multiple Testing & Def...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Null Max Sharpe with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "sample()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Kurtosis Penalty and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "calculate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "State 4 (DSR Certified): Execute deterministic verification with zero heap allocations.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "enforce()"
+            },
+            "tone": "accent"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Walk-Forward Optimization & Combinatorial Purged Cross-Validation",
+      "codeHash": "d3b9bdb6c851aa6521be04d566fcbc3322a277fd16b4366f5c283d58d3ff65b2",
+      "spec": {
+        "template": "states",
+        "title": "Walk-Forward Optimization & Combinatorial Pur \u2014 High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "IS Train Window"
+          },
+          {
+            "id": "st2",
+            "label": "Purge Buffer"
+          },
+          {
+            "id": "st3",
+            "label": "Embargo Buffer"
+          },
+          {
+            "id": "st4",
+            "label": "OOS Walk-Forward"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (IS Train Window): Initialize deterministic state for Walk-Forward Optimization & Combina...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Purge Buffer with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "stream()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Embargo Buffer and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "pipeline()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "State 4 (OOS Walk-Forward): Execute deterministic verification with zero heap allocations.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "finalize()"
+            },
+            "tone": "accent"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Institutional Backtesting Engine & Bias Verification",
+      "codeHash": "3c30e1a9b30c48240eda18859eccafed2ca12bcad9df8502fbeba986d95ed99f",
+      "spec": {
+        "template": "states",
+        "title": "Production Institutional Backtesting Engine & \u2014 High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "PIT Ingestion"
+          },
+          {
+            "id": "st2",
+            "label": "Delisting Ledger"
+          },
+          {
+            "id": "st3",
+            "label": "DSR Selection Gate"
+          },
+          {
+            "id": "st4",
+            "label": "Institutional Cert"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (PIT Ingestion): Initialize deterministic state for Production Institutional Backtestin...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Delisting Ledger with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "audit()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to DSR Selection Gate and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "benchmark()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "State 4 (Institutional Cert): Execute deterministic verification with zero heap allocations.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "certify()"
+            },
+            "tone": "accent"
+          }
+        ]
+      }
+    }
+  ]
+}

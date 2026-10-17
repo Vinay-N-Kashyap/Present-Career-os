@@ -1,0 +1,344 @@
+{
+  "schemaVersion": 1,
+  "prefix": "quant-systems",
+  "day": 28,
+  "promptSha": "cca6da72235157ea296990c9632284007a3486f8dd0031803c77d2227432bdf8",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Perpetual Swap Mechanics, Mark Price Calculation & Basis Drift",
+      "codeHash": "40422d6bbe306af2ff688eb85f77f75dff1ad627c51d628814c0c36180e6d8c2",
+      "spec": {
+        "template": "states",
+        "title": "Perpetual Swap Mechanics, Mark Price Calculat \u2014 High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Spot Index Median"
+          },
+          {
+            "id": "st2",
+            "label": "Basis 30m EMA"
+          },
+          {
+            "id": "st3",
+            "label": "Impact Midpoint"
+          },
+          {
+            "id": "st4",
+            "label": "Fair Mark Price"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Spot Index Median): Initialize deterministic state for Perpetual Swap Mechanics, Mark Pric...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Basis 30m EMA with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "initialize()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Impact Midpoint and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "State 4 (Fair Mark Price): Execute deterministic verification with zero heap allocations.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "verify()"
+            },
+            "tone": "accent"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Funding Rate Dynamics, 8-Hour Settlements & Delta-Neutral Carry Arbitrage",
+      "codeHash": "2082c7b4eb68d5072f5029bd40c4213b044c2883e6b3f715ed14e016d267adc5",
+      "spec": {
+        "template": "states",
+        "title": "Funding Rate Dynamics, 8-Hour Settlements & D \u2014 High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Spot-Perp Basis"
+          },
+          {
+            "id": "st2",
+            "label": "8h Funding Clamp"
+          },
+          {
+            "id": "st3",
+            "label": "Carry Cashflow"
+          },
+          {
+            "id": "st4",
+            "label": "Delta Neutral"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Spot-Perp Basis): Initialize deterministic state for Funding Rate Dynamics, 8-Hour Settl...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to 8h Funding Clamp with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "process()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Carry Cashflow and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "filter()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "State 4 (Delta Neutral): Execute deterministic verification with zero heap allocations.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "approve()"
+            },
+            "tone": "accent"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Liquidation Waterfall, Insurance Funds & Bankruptcy Cascade Prevention",
+      "codeHash": "c33d74115ff462cc7256332e8dd75f8a5b7c0105089620806f6660dd13c731e9",
+      "spec": {
+        "template": "states",
+        "title": "Liquidation Waterfall, Insurance Funds & Bank \u2014 High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Margin Ratio MMR"
+          },
+          {
+            "id": "st2",
+            "label": "Liq Price Trigger"
+          },
+          {
+            "id": "st3",
+            "label": "Bankruptcy Floor"
+          },
+          {
+            "id": "st4",
+            "label": "Insurance Surplus"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Margin Ratio MMR): Initialize deterministic state for Liquidation Waterfall, Insurance Fu...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Liq Price Trigger with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "sample()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Bankruptcy Floor and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "calculate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "State 4 (Insurance Surplus): Execute deterministic verification with zero heap allocations.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "enforce()"
+            },
+            "tone": "accent"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Auto-Deleveraging (ADL) Queues & Counterparty Haircut Algorithms",
+      "codeHash": "765882133f800816305a8ef20eae5718a4db941cdf68ad99dca2033fca730bd2",
+      "spec": {
+        "template": "states",
+        "title": "Auto-Deleveraging (ADL) Queues & Counterparty \u2014 High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Profit Ranking"
+          },
+          {
+            "id": "st2",
+            "label": "Leverage Quantile"
+          },
+          {
+            "id": "st3",
+            "label": "ADL Light Tiers"
+          },
+          {
+            "id": "st4",
+            "label": "Haircut Solvency"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Profit Ranking): Initialize deterministic state for Auto-Deleveraging (ADL) Queues & Co...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Leverage Quantile with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "stream()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to ADL Light Tiers and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "pipeline()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "State 4 (Haircut Solvency): Execute deterministic verification with zero heap allocations.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "finalize()"
+            },
+            "tone": "accent"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Institutional Crypto Derivatives Risk & Execution Gateway",
+      "codeHash": "fb635c4da8d3b9b9182bbe26dba20f32d6d01abd6ff98e04a2c694033bf221bc",
+      "spec": {
+        "template": "states",
+        "title": "Production Institutional Crypto Derivatives R \u2014 High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Mark Price Engine"
+          },
+          {
+            "id": "st2",
+            "label": "Cross-Margin Pool"
+          },
+          {
+            "id": "st3",
+            "label": "Liquidation Queue"
+          },
+          {
+            "id": "st4",
+            "label": "Exchange Solvency"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Mark Price Engine): Initialize deterministic state for Production Institutional Crypto Der...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Cross-Margin Pool with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "audit()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Liquidation Queue and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "benchmark()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "State 4 (Exchange Solvency): Execute deterministic verification with zero heap allocations.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "certify()"
+            },
+            "tone": "accent"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,344 @@
+{
+  "schemaVersion": 1,
+  "prefix": "quant-systems",
+  "day": 18,
+  "promptSha": "241f947fdaa2850039dd26b9aab1006f8e4caf42577acc1beec8da5a7f0989e4",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Limitations of Rolling OLS & The State-Space Paradigm",
+      "codeHash": "621db3af9dbbf6e70f17ffa4a6c7cede1935ed0d1217eb8d872b4251c2a3fddd",
+      "spec": {
+        "template": "states",
+        "title": "Limitations of Rolling OLS & The State-Space Par — High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "State Space"
+          },
+          {
+            "id": "st2",
+            "label": "Predict Update"
+          },
+          {
+            "id": "st3",
+            "label": "Kalman Gain"
+          },
+          {
+            "id": "st4",
+            "label": "Beta Hedger"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (State Space): Initialize deterministic state for Limitations of Rolling OLS & The...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Predict Update with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "compute()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Kalman Gain and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Commit wire-speed execution in Beta Hedger.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit() →"
+            },
+            "tone": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Kalman Filter Recursion: Predict and Update Steps",
+      "codeHash": "231386bcb795008cae4a7b6dc7163f0171394da10b59e4bd543d7a1b485740ef",
+      "spec": {
+        "template": "states",
+        "title": "The Kalman Filter Recursion: Predict and Update  — High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "State Space"
+          },
+          {
+            "id": "st2",
+            "label": "Predict Update"
+          },
+          {
+            "id": "st3",
+            "label": "Kalman Gain"
+          },
+          {
+            "id": "st4",
+            "label": "Beta Hedger"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (State Space): Initialize deterministic state for The Kalman Filter Recursion: Pre...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Predict Update with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "compute()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Kalman Gain and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Commit wire-speed execution in Beta Hedger.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit() →"
+            },
+            "tone": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Tuning Process Noise (Q) & Measurement Noise (R)",
+      "codeHash": "9634425d5a9c4fa745797b12e456b5d28375a66be70896b646f4e1bace62af52",
+      "spec": {
+        "template": "states",
+        "title": "Tuning Process Noise (Q) & Measurement Noise (R) — High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "State Space"
+          },
+          {
+            "id": "st2",
+            "label": "Predict Update"
+          },
+          {
+            "id": "st3",
+            "label": "Kalman Gain"
+          },
+          {
+            "id": "st4",
+            "label": "Beta Hedger"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (State Space): Initialize deterministic state for Tuning Process Noise (Q) & Measu...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Predict Update with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "compute()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Kalman Gain and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Commit wire-speed execution in Beta Hedger.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit() →"
+            },
+            "tone": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Multi-Asset Dynamic Beta Hedging & Factor Neutrality",
+      "codeHash": "dbd8b7ba69522034c11c645bd9410725a9285b4ae922c2cff3c953e8fdb2869a",
+      "spec": {
+        "template": "states",
+        "title": "Multi-Asset Dynamic Beta Hedging & Factor Neutra — High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "State Space"
+          },
+          {
+            "id": "st2",
+            "label": "Predict Update"
+          },
+          {
+            "id": "st3",
+            "label": "Kalman Gain"
+          },
+          {
+            "id": "st4",
+            "label": "Beta Hedger"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (State Space): Initialize deterministic state for Multi-Asset Dynamic Beta Hedging...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Predict Update with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "compute()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Kalman Gain and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Commit wire-speed execution in Beta Hedger.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit() →"
+            },
+            "tone": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production C++ Sub-Microsecond Kalman Filter Engine",
+      "codeHash": "d0a5593d8f9fe6d516814294842b02fc0e724b4c34bd6b327a3f41651f678975",
+      "spec": {
+        "template": "states",
+        "title": "Production C++ Sub-Microsecond Kalman Filter Eng — High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "State Space"
+          },
+          {
+            "id": "st2",
+            "label": "Predict Update"
+          },
+          {
+            "id": "st3",
+            "label": "Kalman Gain"
+          },
+          {
+            "id": "st4",
+            "label": "Beta Hedger"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (State Space): Initialize deterministic state for Production C++ Sub-Microsecond K...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Predict Update with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "compute()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Kalman Gain and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Commit wire-speed execution in Beta Hedger.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "commit() →"
+            },
+            "tone": "ok"
+          }
+        ]
+      }
+    }
+  ]
+}

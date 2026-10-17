@@ -1,0 +1,599 @@
+{
+  "schemaVersion": 1,
+  "prefix": "excel_viz",
+  "day": 6,
+  "promptSha": "19c697dd72be1a2741f0aace61f4bb38d1da93ac94c9f98600ee4dda51ea6f1c",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Ordinary Least Squares (OLS) Linear Regression & The LINEST Matrix Invariant",
+      "codeHash": "8f3a7e63d9881e94dac01e8630b10d4778edd63ec40691db82a39991ad345ed9",
+      "spec": {
+        "template": "bars",
+        "title": "Ordinary Least Squares (OLS) Linear Regr... — Quantitative KPI Distribution",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline KPI cohort metrics for Ordinary Least Squares (OLS) Linear Regr...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 48,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 38,
+                "tone": "idle"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 26,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Isolate operational drivers and margin trends for Ordinary Least Squares (OLS) Linear Regr...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 82,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 48,
+                "tone": "data"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 34,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Apply sensitivity model and benchmark variance thresholds",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 68,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 56,
+                "tone": "ok"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 42,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Commit audited analytical dashboard for Ordinary Least Squares (OLS) Linear Regr...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 92,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 74,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 62,
+                "tone": "ok"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 48,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Residual Diagnostics, Standard Errors & Coefficient of Determination (R²)",
+      "codeHash": "e9c265940c5b17cf7ced326ef75dcb535902a469929de80bfd4c8841040981c5",
+      "spec": {
+        "template": "bars",
+        "title": "Residual Diagnostics, Standard Errors & ... — Quantitative KPI Distribution",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline KPI cohort metrics for Residual Diagnostics, Standard Errors & ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 48,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 38,
+                "tone": "idle"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 26,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Isolate operational drivers and margin trends for Residual Diagnostics, Standard Errors & ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 82,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 48,
+                "tone": "data"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 34,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Apply sensitivity model and benchmark variance thresholds",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 68,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 56,
+                "tone": "ok"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 42,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Commit audited analytical dashboard for Residual Diagnostics, Standard Errors & ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 92,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 74,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 62,
+                "tone": "ok"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 48,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Heteroskedasticity & Breusch-Pagan Variance Stability",
+      "codeHash": "766a54480c2aa461e0934699715fdfdb866e13204dbbcd75a5ab55b12991b39b",
+      "spec": {
+        "template": "bars",
+        "title": "Heteroskedasticity & Breusch-Pagan Varia... — Quantitative KPI Distribution",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline KPI cohort metrics for Heteroskedasticity & Breusch-Pagan Varia...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 48,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 38,
+                "tone": "idle"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 26,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Isolate operational drivers and margin trends for Heteroskedasticity & Breusch-Pagan Varia...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 82,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 48,
+                "tone": "data"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 34,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Apply sensitivity model and benchmark variance thresholds",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 68,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 56,
+                "tone": "ok"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 42,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Commit audited analytical dashboard for Heteroskedasticity & Breusch-Pagan Varia...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 92,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 74,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 62,
+                "tone": "ok"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 48,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Exponential Triple Smoothing (ETS) & Seasonality Decomposition",
+      "codeHash": "be8a3c15a7b70a9d5116fffcbd8db98ac1416278741b9860f37b5ecd4ce068db",
+      "spec": {
+        "template": "bars",
+        "title": "Exponential Triple Smoothing (ETS) & Sea... — Quantitative KPI Distribution",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline KPI cohort metrics for Exponential Triple Smoothing (ETS) & Sea...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 48,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 38,
+                "tone": "idle"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 26,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Isolate operational drivers and margin trends for Exponential Triple Smoothing (ETS) & Sea...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 82,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 48,
+                "tone": "data"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 34,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Apply sensitivity model and benchmark variance thresholds",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 68,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 56,
+                "tone": "ok"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 42,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Commit audited analytical dashboard for Exponential Triple Smoothing (ETS) & Sea...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 92,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 74,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 62,
+                "tone": "ok"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 48,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Multivariate Statistical Forecasting & Confidence Interval Engine",
+      "codeHash": "46ebf8d825c5056e16104f304360e844e2304dc049aab0e33a2ffdf021da8ca7",
+      "spec": {
+        "template": "bars",
+        "title": "Production Multivariate Statistical Fore... — Quantitative KPI Distribution",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline KPI cohort metrics for Production Multivariate Statistical Fore...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 48,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 38,
+                "tone": "idle"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 26,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Isolate operational drivers and margin trends for Production Multivariate Statistical Fore...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 82,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 48,
+                "tone": "data"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 34,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Apply sensitivity model and benchmark variance thresholds",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 68,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 56,
+                "tone": "ok"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 42,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Commit audited analytical dashboard for Production Multivariate Statistical Fore...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 92,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 74,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 62,
+                "tone": "ok"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 48,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

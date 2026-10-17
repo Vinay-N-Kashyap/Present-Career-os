@@ -1,0 +1,599 @@
+{
+  "schemaVersion": 1,
+  "prefix": "excel_viz",
+  "day": 8,
+  "promptSha": "af4dfdb63685463174045fb9213210e0889722b6cea5f7bc7c07136a6248b98b",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Star Schema Architecture: Fact Tables vs Dimension Tables",
+      "codeHash": "1aaace48ddd5e242d98d68318d05a5fc1c272872b0f056ac6f187c33354e186b",
+      "spec": {
+        "template": "bars",
+        "title": "Star Schema Architecture: Fact Tables vs... — Quantitative KPI Distribution",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline KPI cohort metrics for Star Schema Architecture: Fact Tables vs...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 48,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 38,
+                "tone": "idle"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 26,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Isolate operational drivers and margin trends for Star Schema Architecture: Fact Tables vs...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 82,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 48,
+                "tone": "data"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 34,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Apply sensitivity model and benchmark variance thresholds",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 68,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 56,
+                "tone": "ok"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 42,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Commit audited analytical dashboard for Star Schema Architecture: Fact Tables vs...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 92,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 74,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 62,
+                "tone": "ok"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 48,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "DAX Evaluation Context: Row Context vs Filter Context & CALCULATE",
+      "codeHash": "b756b4e132ee9330dd0d8d083556e9b7605a0c04f7efef04e31e81ddb77591c9",
+      "spec": {
+        "template": "bars",
+        "title": "DAX Evaluation Context: Row Context vs F... — Quantitative KPI Distribution",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline KPI cohort metrics for DAX Evaluation Context: Row Context vs F...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 48,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 38,
+                "tone": "idle"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 26,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Isolate operational drivers and margin trends for DAX Evaluation Context: Row Context vs F...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 82,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 48,
+                "tone": "data"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 34,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Apply sensitivity model and benchmark variance thresholds",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 68,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 56,
+                "tone": "ok"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 42,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Commit audited analytical dashboard for DAX Evaluation Context: Row Context vs F...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 92,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 74,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 62,
+                "tone": "ok"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 48,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Inactive Relational Paths & Dynamic Activation via USERELATIONSHIP",
+      "codeHash": "61506ce1861f186e2db81cd1e75d218e2948bc4f7d78158a2babb05c45abccdd",
+      "spec": {
+        "template": "bars",
+        "title": "Inactive Relational Paths & Dynamic Acti... — Quantitative KPI Distribution",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline KPI cohort metrics for Inactive Relational Paths & Dynamic Acti...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 48,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 38,
+                "tone": "idle"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 26,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Isolate operational drivers and margin trends for Inactive Relational Paths & Dynamic Acti...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 82,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 48,
+                "tone": "data"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 34,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Apply sensitivity model and benchmark variance thresholds",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 68,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 56,
+                "tone": "ok"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 42,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Commit audited analytical dashboard for Inactive Relational Paths & Dynamic Acti...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 92,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 74,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 62,
+                "tone": "ok"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 48,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Multi-Table Pivot Tables, Slicer Cache Synchronization & Cross-Filtering",
+      "codeHash": "72770fd83baac9ec2e84fb90768334641a76937a74f6668b6d6610d7138aa0d1",
+      "spec": {
+        "template": "bars",
+        "title": "Multi-Table Pivot Tables, Slicer Cache S... — Quantitative KPI Distribution",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline KPI cohort metrics for Multi-Table Pivot Tables, Slicer Cache S...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 48,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 38,
+                "tone": "idle"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 26,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Isolate operational drivers and margin trends for Multi-Table Pivot Tables, Slicer Cache S...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 82,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 48,
+                "tone": "data"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 34,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Apply sensitivity model and benchmark variance thresholds",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 68,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 56,
+                "tone": "ok"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 42,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Commit audited analytical dashboard for Multi-Table Pivot Tables, Slicer Cache S...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 92,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 74,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 62,
+                "tone": "ok"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 48,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Enterprise Data Model & Dynamic DAX KPI Measure Engine",
+      "codeHash": "ac3f11440aa68afd5b327b43ee58638415948d420bf821ba2222b96b35eb6985",
+      "spec": {
+        "template": "bars",
+        "title": "Production Enterprise Data Model & Dynam... — Quantitative KPI Distribution",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline KPI cohort metrics for Production Enterprise Data Model & Dynam...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 48,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 38,
+                "tone": "idle"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 26,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Isolate operational drivers and margin trends for Production Enterprise Data Model & Dynam...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 82,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 48,
+                "tone": "data"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 34,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Apply sensitivity model and benchmark variance thresholds",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 68,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 56,
+                "tone": "ok"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 42,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Commit audited analytical dashboard for Production Enterprise Data Model & Dynam...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 92,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 74,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 62,
+                "tone": "ok"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 48,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,344 @@
+{
+  "schemaVersion": 1,
+  "prefix": "quant-systems",
+  "day": 25,
+  "promptSha": "a4c695debdb4a87d9051b85e0642c8d8603dda2018fbfc5a38352889f093f498",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Architectural Blueprint: Tier 1 Sub-Microsecond Black-Scholes Greeks Kernel",
+      "codeHash": "1050fee28bca9a2fabf0d72405d9cd19d9accb8dd6c6eb84d8610c7a4027fb70",
+      "spec": {
+        "template": "states",
+        "title": "Architectural Blueprint: Tier 1 Sub-Microseco — High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Tier 1 BSM Greeks"
+          },
+          {
+            "id": "st2",
+            "label": "Tier 2 VaR / ES"
+          },
+          {
+            "id": "st3",
+            "label": "Tier 3 Monte Carlo"
+          },
+          {
+            "id": "st4",
+            "label": "Tier 4 Pre-Trade"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Tier 1 BSM Greeks): Initialize deterministic state for Architectural Blueprint: Tier ...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Tier 2 VaR / ES with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "compute()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Tier 3 Monte Carlo and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "State 4 (Tier 4 Pre-Trade): Execute deterministic verification with zero heap allocations.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "verify()"
+            },
+            "tone": "accent"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Architectural Blueprint: Tier 2 Real-Time Parametric & Historical VaR/CVaR Matrix",
+      "codeHash": "07e4a495d2bad9c40be43494f7c51130e8cd6eab054f3673593d7dda51413a41",
+      "spec": {
+        "template": "states",
+        "title": "Architectural Blueprint: Tier 2 Real-Time Par — High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "10-Asset Portfolio"
+          },
+          {
+            "id": "st2",
+            "label": "Component VaR Dec"
+          },
+          {
+            "id": "st3",
+            "label": "FRTB 97.5% ES"
+          },
+          {
+            "id": "st4",
+            "label": "Limit Verification"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (10-Asset Portfolio): Initialize deterministic state for Architectural Blueprint: Tier ...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Component VaR Dec with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "compute()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to FRTB 97.5% ES and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "State 4 (Limit Verification): Execute deterministic verification with zero heap allocations.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "verify()"
+            },
+            "tone": "accent"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Architectural Blueprint: Tier 3 Cholesky Correlated Monte Carlo & Cornish-Fisher Stress Engine",
+      "codeHash": "ae01848fa4cf454741d18d643f4ddc26f4bb59554b418cc05d1cc3ff69cf2ccb",
+      "spec": {
+        "template": "states",
+        "title": "Architectural Blueprint: Tier 3 Cholesky Corr — High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Cholesky Corr L"
+          },
+          {
+            "id": "st2",
+            "label": "10k Stress Paths"
+          },
+          {
+            "id": "st3",
+            "label": "Cornish-Fisher Tail"
+          },
+          {
+            "id": "st4",
+            "label": "99.9% Black Swan"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Cholesky Corr L): Initialize deterministic state for Architectural Blueprint: Tier ...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to 10k Stress Paths with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "compute()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Cornish-Fisher Tail and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "State 4 (99.9% Black Swan): Execute deterministic verification with zero heap allocations.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "verify()"
+            },
+            "tone": "accent"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Architectural Blueprint: Tier 4 Liquidity-Adjusted VaR & SEC 15c3-5 Pre-Trade Capital Gate",
+      "codeHash": "11de3494a1fda661a39dfe07a6d6a5b4f992900455a69e2a0893c4b9e5b736bd",
+      "spec": {
+        "template": "states",
+        "title": "Architectural Blueprint: Tier 4 Liquidity-Adj — High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "SEC 15c3-5 Rules"
+          },
+          {
+            "id": "st2",
+            "label": "Max Clip Filter"
+          },
+          {
+            "id": "st3",
+            "label": "NBBO Price Collar"
+          },
+          {
+            "id": "st4",
+            "label": "L-VaR Gatekeeper"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (SEC 15c3-5 Rules): Initialize deterministic state for Architectural Blueprint: Tier ...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Max Clip Filter with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "compute()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to NBBO Price Collar and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "State 4 (L-VaR Gatekeeper): Execute deterministic verification with zero heap allocations.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "verify()"
+            },
+            "tone": "accent"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Architectural Blueprint: Tier 5 Grand Master Synthesis: 5-Gate Enterprise Risk Matrix & Boardroom Certification",
+      "codeHash": "725a3eb5301a715999f1233ecff8660551aa81c7c9e72ab061d954ea0c146257",
+      "spec": {
+        "template": "states",
+        "title": "Architectural Blueprint: Tier 5 Grand Master  — High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Gate 1-4 Audit"
+          },
+          {
+            "id": "st2",
+            "label": "Median Tick Latency"
+          },
+          {
+            "id": "st3",
+            "label": "0 Heap Allocations"
+          },
+          {
+            "id": "st4",
+            "label": "Grand Master Pass"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Gate 1-4 Audit): Initialize deterministic state for Architectural Blueprint: Tier ...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Median Tick Latency with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "compute()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to 0 Heap Allocations and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "State 4 (Grand Master Pass): Execute deterministic verification with zero heap allocations.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "verify()"
+            },
+            "tone": "accent"
+          }
+        ]
+      }
+    }
+  ]
+}

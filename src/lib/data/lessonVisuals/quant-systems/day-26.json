@@ -1,0 +1,344 @@
+{
+  "schemaVersion": 1,
+  "prefix": "quant-systems",
+  "day": 26,
+  "promptSha": "a2c2d46356dce5aaecb75bce9895de2b20d80bbce9abf2a5cce946a5eae2b443",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "SEC Rule 15c3-5 Market Access Rule & Pre-Trade Architecture",
+      "codeHash": "92e101e744063b7a1274c6aa565baf38efc08011f48b176f677d8d564f7aa96b",
+      "spec": {
+        "template": "states",
+        "title": "SEC Rule 15c3-5 Market Access Rule & Pre-Trad \u2014 High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "SEC 15c3-5 DMA"
+          },
+          {
+            "id": "st2",
+            "label": "Account Credit"
+          },
+          {
+            "id": "st3",
+            "label": "Borrow Locator"
+          },
+          {
+            "id": "st4",
+            "label": "Pre-Trade Pass"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (SEC 15c3-5 DMA): Initialize deterministic state for SEC Rule 15c3-5 Market Access Rule ...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Account Credit with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "initialize()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Borrow Locator and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "State 4 (Pre-Trade Pass): Execute deterministic verification with zero heap allocations.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "verify()"
+            },
+            "tone": "accent"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Fat-Finger Clip Limits & Notional Order Value Filters",
+      "codeHash": "c1ce3116e331a47c4b093cd77c520cfffabdc21fa06c2c357d6bc60beebd8a47",
+      "spec": {
+        "template": "states",
+        "title": "Fat-Finger Clip Limits & Notional Order Value \u2014 High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Clip Limit Qty"
+          },
+          {
+            "id": "st2",
+            "label": "Notional Filter"
+          },
+          {
+            "id": "st3",
+            "label": "Velocity Window"
+          },
+          {
+            "id": "st4",
+            "label": "Order Approved"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Clip Limit Qty): Initialize deterministic state for Fat-Finger Clip Limits & Notional O...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Notional Filter with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "process()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Velocity Window and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "filter()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "State 4 (Order Approved): Execute deterministic verification with zero heap allocations.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "approve()"
+            },
+            "tone": "accent"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Multi-Tiered NBBO Dynamic Price Collar Enforcement",
+      "codeHash": "25ca9bb691e1be0e4d9ac98c35fcd658060d6682d067b7980331369e16b7d446",
+      "spec": {
+        "template": "states",
+        "title": "Multi-Tiered NBBO Dynamic Price Collar Enforc \u2014 High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "NBBO Feed"
+          },
+          {
+            "id": "st2",
+            "label": "Midpoint Ref"
+          },
+          {
+            "id": "st3",
+            "label": "Collar Bounds"
+          },
+          {
+            "id": "st4",
+            "label": "Price Protected"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (NBBO Feed): Initialize deterministic state for Multi-Tiered NBBO Dynamic Price Col...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Midpoint Ref with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "sample()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Collar Bounds and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "calculate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "State 4 (Price Protected): Execute deterministic verification with zero heap allocations.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "enforce()"
+            },
+            "tone": "accent"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Sub-Millisecond Global Kill Switches & State Machine Halts",
+      "codeHash": "277deb5efbcb427b2f6ab547bbb49354fd6bd07abb281c76248314c819e92f34",
+      "spec": {
+        "template": "states",
+        "title": "Sub-Millisecond Global Kill Switches & State  \u2014 High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Normal Trading"
+          },
+          {
+            "id": "st2",
+            "label": "Drawdown Breach"
+          },
+          {
+            "id": "st3",
+            "label": "FSM Halt State"
+          },
+          {
+            "id": "st4",
+            "label": "Orders Purged"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Normal Trading): Initialize deterministic state for Sub-Millisecond Global Kill Switche...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Drawdown Breach with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "stream()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to FSM Halt State and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "pipeline()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "State 4 (Orders Purged): Execute deterministic verification with zero heap allocations.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "finalize()"
+            },
+            "tone": "accent"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Pre-Trade Risk Gateway Integration & Performance Auditing",
+      "codeHash": "9f2fdac9c4cb3b10524e3750f4b8870b095f2dc4960764643c469023fa15a05a",
+      "spec": {
+        "template": "states",
+        "title": "Production Pre-Trade Risk Gateway Integration \u2014 High-Frequency Systems State Machine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Gate 1 KillSwitch"
+          },
+          {
+            "id": "st2",
+            "label": "Gate 2 DMA/Credit"
+          },
+          {
+            "id": "st3",
+            "label": "Gate 3 Clip/Price"
+          },
+          {
+            "id": "st4",
+            "label": "Gate 4/5 Approved"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Gate 1 KillSwitch): Initialize deterministic state for Production Pre-Trade Risk Gateway I...",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Gate 2 DMA/Credit with zero-allocation buffer pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "audit()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Gate 3 Clip/Price and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "benchmark()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "State 4 (Gate 4/5 Approved): Execute deterministic verification with zero heap allocations.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "certify()"
+            },
+            "tone": "accent"
+          }
+        ]
+      }
+    }
+  ]
+}

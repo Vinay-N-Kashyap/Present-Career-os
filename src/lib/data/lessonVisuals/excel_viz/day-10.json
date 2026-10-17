@@ -1,0 +1,599 @@
+{
+  "schemaVersion": 1,
+  "prefix": "excel_viz",
+  "day": 10,
+  "promptSha": "cf316807831053d4a85278670b8c7826eac28f58e8cc88c1455704913f84ef8b",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Tier 1: Enterprise Multi-Table Star Schema Architecture & Referential Topology",
+      "codeHash": "6df3fe2709176d7b89783fc80d3da202c486b6bca198757f68cca97e4e676795",
+      "spec": {
+        "template": "bars",
+        "title": "Tier 1: Enterprise Multi-Table Star Sche... — Quantitative KPI Distribution",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline KPI cohort metrics for Tier 1: Enterprise Multi-Table Star Sche...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 48,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 38,
+                "tone": "idle"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 26,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Isolate operational drivers and margin trends for Tier 1: Enterprise Multi-Table Star Sche...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 82,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 48,
+                "tone": "data"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 34,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Apply sensitivity model and benchmark variance thresholds",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 68,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 56,
+                "tone": "ok"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 42,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Commit audited analytical dashboard for Tier 1: Enterprise Multi-Table Star Sche...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 92,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 74,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 62,
+                "tone": "ok"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 48,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Tier 2: Automated Ingestion, Cleaning & Data Quality Gate",
+      "codeHash": "38e59cf85c5774275932b9c891e4d44e3a01c9ea9efeb21c2da5eef8ab135d7c",
+      "spec": {
+        "template": "bars",
+        "title": "Tier 2: Automated Ingestion, Cleaning & ... — Quantitative KPI Distribution",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline KPI cohort metrics for Tier 2: Automated Ingestion, Cleaning & ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 48,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 38,
+                "tone": "idle"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 26,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Isolate operational drivers and margin trends for Tier 2: Automated Ingestion, Cleaning & ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 82,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 48,
+                "tone": "data"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 34,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Apply sensitivity model and benchmark variance thresholds",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 68,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 56,
+                "tone": "ok"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 42,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Commit audited analytical dashboard for Tier 2: Automated Ingestion, Cleaning & ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 92,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 74,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 62,
+                "tone": "ok"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 48,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Tier 3: Dynamic DAX Time Intelligence, YTD Running Totals & Moving Trend Engine",
+      "codeHash": "c6f666c8b14749f5c794c71220c3022b07951f3694659c827decf885953abb35",
+      "spec": {
+        "template": "bars",
+        "title": "Tier 3: Dynamic DAX Time Intelligence, Y... — Quantitative KPI Distribution",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline KPI cohort metrics for Tier 3: Dynamic DAX Time Intelligence, Y...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 48,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 38,
+                "tone": "idle"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 26,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Isolate operational drivers and margin trends for Tier 3: Dynamic DAX Time Intelligence, Y...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 82,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 48,
+                "tone": "data"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 34,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Apply sensitivity model and benchmark variance thresholds",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 68,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 56,
+                "tone": "ok"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 42,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Commit audited analytical dashboard for Tier 3: Dynamic DAX Time Intelligence, Y...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 92,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 74,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 62,
+                "tone": "ok"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 48,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Tier 4: Interactive Scenario Switchboard & Variance Sensitivity Engine",
+      "codeHash": "346fdca6c2a6a998f89f6905e1027ffd41d90e0a71086ae3e31003126411c22e",
+      "spec": {
+        "template": "bars",
+        "title": "Tier 4: Interactive Scenario Switchboard... — Quantitative KPI Distribution",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline KPI cohort metrics for Tier 4: Interactive Scenario Switchboard...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 48,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 38,
+                "tone": "idle"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 26,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Isolate operational drivers and margin trends for Tier 4: Interactive Scenario Switchboard...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 82,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 48,
+                "tone": "data"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 34,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Apply sensitivity model and benchmark variance thresholds",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 68,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 56,
+                "tone": "ok"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 42,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Commit audited analytical dashboard for Tier 4: Interactive Scenario Switchboard...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 92,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 74,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 62,
+                "tone": "ok"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 48,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Tier 5: Grand Master Milestone 2 Capstone Financial Command Center",
+      "codeHash": "c4a1a8eaf378bcb8e407c91b858ec196ae2683e0ad91239cabf8e43de1289a17",
+      "spec": {
+        "template": "bars",
+        "title": "Tier 5: Grand Master Milestone 2 Capston... — Quantitative KPI Distribution",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline KPI cohort metrics for Tier 5: Grand Master Milestone 2 Capston...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 48,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 38,
+                "tone": "idle"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 26,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Isolate operational drivers and margin trends for Tier 5: Grand Master Milestone 2 Capston...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 82,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 48,
+                "tone": "data"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 34,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Apply sensitivity model and benchmark variance thresholds",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 68,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 56,
+                "tone": "ok"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 42,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Commit audited analytical dashboard for Tier 5: Grand Master Milestone 2 Capston...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Revenue Run-Rate",
+                "value": 92,
+                "tone": "ok"
+              },
+              {
+                "label": "Contribution Margin",
+                "value": 74,
+                "tone": "ok"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 62,
+                "tone": "ok"
+              },
+              {
+                "label": "Net EBITDA",
+                "value": 48,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
