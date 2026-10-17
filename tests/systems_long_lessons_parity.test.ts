@@ -2343,4 +2343,140 @@ test('Systems Long Lessons: git_vcs Day 40 Milestone 5 (M2): ApexRelease Enterpr
   assert.ok(res5.stdout?.includes('AUDIT_SEAL: APEX-RELEASE-MILESTONE-5-CERTIFIED'));
 });
 
+test('Systems Long Lessons: git_vcs Day 41 Cryptographic Commit & Tag Signing: GPG vs SSH Key Signatures, Web-Flow Verification & Allowed Signers', async () => {
+  const d41 = getLongLesson('git_vcs', 41);
+  assert.ok(d41, 'git_vcs Day 41 must resolve');
+  assert.equal(d41.day, 41);
+  assert.equal(d41.parts.length, 5);
+
+  const res1 = await executeBashSuite(d41.parts[0].code!);
+  assert.equal(res1.allPassed, true);
+  assert.ok(res1.stdout?.includes('SIGNING_FORMAT: ssh'));
+
+  const res2 = await executeBashSuite(d41.parts[1].code!);
+  assert.equal(res2.allPassed, true);
+  assert.ok(res2.stdout?.includes('INCIDENT: Forged Executive Commit Detected'));
+
+  const res3 = await executeBashSuite(d41.parts[2].code!);
+  assert.equal(res3.allPassed, true);
+  assert.ok(res3.stdout?.includes('ALLOWED_SIGNERS_REGISTRY: /home/student/workspace/git_allowed_signers/allowed_signers'));
+
+  const res4 = await executeBashSuite(d41.parts[3].code!);
+  assert.equal(res4.allPassed, true);
+  assert.ok(res4.stdout?.includes('ATTACK_SIMULATION: Bit-Flipping on Signed Commit Object'));
+
+  const res5 = await executeBashSuite(d41.parts[4].code!);
+  assert.equal(res5.allPassed, true);
+  assert.ok(res5.stdout?.includes('AUDIT_SEAL: CRYPTOGRAPHIC-PROVENANCE-CERTIFIED'));
+});
+
+test('Systems Long Lessons: git_vcs Day 42 Secret Detection & Pre-Commit Hardening: Pre-Commit Hooks, Gitleaks, TruffleHog & Entropy Scanning', async () => {
+  const d42 = getLongLesson('git_vcs', 42);
+  assert.ok(d42, 'git_vcs Day 42 must resolve');
+  assert.equal(d42.day, 42);
+  assert.equal(d42.parts.length, 5);
+
+  const res1 = await executeBashSuite(d42.parts[0].code!);
+  assert.equal(res1.allPassed, true);
+  assert.ok(res1.stdout?.includes('SCANNER: Shannon Entropy Analysis Engine'));
+
+  const res2 = await executeBashSuite(d42.parts[1].code!);
+  assert.equal(res2.allPassed, true);
+  assert.ok(res2.stdout?.includes('INCIDENT: Leaked AWS Root Key AKIAIOSFODNN7EXAMPLE'));
+
+  const res3 = await executeBashSuite(d42.parts[2].code!);
+  assert.equal(res3.allPassed, true);
+  assert.ok(res3.stdout?.includes('PRE_COMMIT_HOOK: Active in .git/hooks/pre-commit'));
+
+  const res4 = await executeBashSuite(d42.parts[3].code!);
+  assert.equal(res4.allPassed, true);
+  assert.ok(res4.stdout?.includes('DETECTION_RATE: 100% (5/5 attack vectors intercepted)'));
+
+  const res5 = await executeBashSuite(d42.parts[4].code!);
+  assert.equal(res5.allPassed, true);
+  assert.ok(res5.stdout?.includes('AUDIT_SEAL: SHIFT-LEFT-SECRETS-CERTIFIED'));
+});
+
+test('Systems Long Lessons: git_vcs Day 43 Permanent Secret Purging & Repository Cleansing: git filter-repo vs BFG, Rewriting Packfiles & Reflogs', async () => {
+  const d43 = getLongLesson('git_vcs', 43);
+  assert.ok(d43, 'git_vcs Day 43 must resolve');
+  assert.equal(d43.day, 43);
+  assert.equal(d43.parts.length, 5);
+
+  const res1 = await executeBashSuite(d43.parts[0].code!);
+  assert.equal(res1.allPassed, true);
+  assert.ok(res1.stdout?.includes('TOOL: git filter-repo (Modern high-performance Python DAG rewriter)'));
+
+  const res2 = await executeBashSuite(d43.parts[1].code!);
+  assert.equal(res2.allPassed, true);
+  assert.ok(res2.stdout?.includes('INCIDENT: Dangling Reflog Secret Exfiltration'));
+
+  const res3 = await executeBashSuite(d43.parts[2].code!);
+  assert.equal(res3.allPassed, true);
+  assert.ok(res3.stdout?.includes('GARBAGE_COLLECTION: git gc --prune=now --aggressive (COMPLETE)'));
+
+  const res4 = await executeBashSuite(d43.parts[3].code!);
+  assert.equal(res4.allPassed, true);
+  assert.ok(res4.stdout?.includes('BENCHMARK: 5000 commits scrubbed in 1.4 seconds'));
+
+  const res5 = await executeBashSuite(d43.parts[4].code!);
+  assert.equal(res5.allPassed, true);
+  assert.ok(res5.stdout?.includes('AUDIT_SEAL: REPOSITORY-CLEANSE-CERTIFIED'));
+});
+
+test('Systems Long Lessons: git_vcs Day 44 Tamper-Evident Repository Auditing: Merkle Tree Invariants, SHA-1 Collision Attacks & SHA-256 Architecture', async () => {
+  const d44 = getLongLesson('git_vcs', 44);
+  assert.ok(d44, 'git_vcs Day 44 must resolve');
+  assert.equal(d44.day, 44);
+  assert.equal(d44.parts.length, 5);
+
+  const res1 = await executeBashSuite(d44.parts[0].code!);
+  assert.equal(res1.allPassed, true);
+  assert.ok(res1.stdout?.includes('MERKLE_INVARIANT: Delta Blob cascades to Delta Tree and Delta Commit'));
+
+  const res2 = await executeBashSuite(d44.parts[1].code!);
+  assert.equal(res2.allPassed, true);
+  assert.ok(res2.stdout?.includes('COLLISION_DETECTED: SHA-1DC detected mathematical collision signature'));
+
+  const res3 = await executeBashSuite(d44.parts[2].code!);
+  assert.equal(res3.allPassed, true);
+  assert.ok(res3.stdout?.includes('OBJECT_FORMAT: sha256'));
+
+  const res4 = await executeBashSuite(d44.parts[3].code!);
+  assert.equal(res4.allPassed, true);
+  assert.ok(res4.stdout?.includes('TRANSLATION_TABLE: Bidirectional SHA-1 to SHA-256 mapping verified'));
+
+  const res5 = await executeBashSuite(d44.parts[4].code!);
+  assert.equal(res5.allPassed, true);
+  assert.ok(res5.stdout?.includes('AUDIT_SEAL: MERKLE-COLLISION-RESISTANCE-CERTIFIED'));
+});
+
+test('Systems Long Lessons: git_vcs Day 45 Milestone 6 (M2): ApexAudit Cryptographic Git Verification & Secrets Hardening Suite', async () => {
+  const d45 = getLongLesson('git_vcs', 45);
+  assert.ok(d45, 'git_vcs Day 45 must resolve');
+  assert.equal(d45.day, 45);
+  assert.equal(d45.parts.length, 5);
+
+  const res1 = await executeBashSuite(d45.parts[0].code!);
+  assert.equal(res1.allPassed, true);
+  assert.ok(res1.stdout?.includes('SUITE: ApexAudit Institutional Security Platform'));
+
+  const res2 = await executeBashSuite(d45.parts[1].code!);
+  assert.equal(res2.allPassed, true);
+  assert.ok(res2.stdout?.includes('DEFECT: Lingering annotated tag refs/tags/v1.0.0 contained unpurged secret'));
+
+  const res3 = await executeBashSuite(d45.parts[2].code!);
+  assert.equal(res3.allPassed, true);
+  assert.ok(res3.stdout?.includes('STATUS: Institutional security posture certified'));
+
+  const res4 = await executeBashSuite(d45.parts[3].code!);
+  assert.equal(res4.allPassed, true);
+  assert.ok(res4.stdout?.includes('RESILIENCE_SCORE: 100% (4/4 attacks neutralized)'));
+
+  const res5 = await executeBashSuite(d45.parts[4].code!);
+  assert.equal(res5.allPassed, true);
+  assert.ok(res5.stdout?.includes('AUDIT_SEAL: APEX-AUDIT-MILESTONE-6-CERTIFIED'));
+});
+
+
 
