@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "coursePrefix": "bcom_dmkt",
+  "day": 23,
+  "title": "Community & Conversational Social Commerce Architecture",
+  "funnelSteps": [
+    {
+      "step": "WHATSAPP_CLOUD_API_ROUTING",
+      "label": "Meta Graph API Webhook Routing & Session Management",
+      "metric": "24h Session Window Active",
+      "status": "COMPLETED",
+      "color": "#10B981"
+    },
+    {
+      "step": "BROADCAST_QUALITY_AND_TIERING",
+      "label": "Broadcast Deliverability (98% Read Rate) & Tier Governance",
+      "metric": "Quality: GREEN / Tier: 100k",
+      "status": "COMPLETED",
+      "color": "#3B82F6"
+    },
+    {
+      "step": "CART_AND_COD_AUTOMATION",
+      "label": "Automated Cart Recovery & COD to Prepaid Conversion",
+      "metric": "35% Recovery / 40% RTO Reduction",
+      "status": "COMPLETED",
+      "color": "#6366F1"
+    },
+    {
+      "step": "D2C_LIVE_STREAM_SELLING",
+      "label": "Interactive Live Selling & Instantaneous Flash Checkout",
+      "metric": "17.0% Live CVR ($63.75k GMV)",
+      "status": "COMPLETED",
+      "color": "#F59E0B"
+    },
+    {
+      "step": "CONVERSATIONAL_GATEWAY",
+      "label": "Enterprise Conversational Commerce & Community Gateway",
+      "metric": "100.0/100 CCCI Certified",
+      "status": "COMPLETED",
+      "color": "#8B5CF6"
+    }
+  ],
+  "kpis": [
+    {
+      "label": "WhatsApp Read Rate",
+      "value": "98.0%"
+    },
+    {
+      "label": "Abandoned Cart Recovery",
+      "value": "35.0%"
+    },
+    {
+      "label": "Live Stream CVR",
+      "value": "17.0%"
+    },
+    {
+      "label": "Composite CCCI Score",
+      "value": "100.0/100"
+    }
+  ]
+}

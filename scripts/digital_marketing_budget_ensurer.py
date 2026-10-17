@@ -115,6 +115,41 @@ DMKT_INVARIANT_EXPANSIONS = {
         "Activation (identifying the core 'Aha!' moment within minutes of onboarding), Retention (monitoring D1, D7, and D30 cohort decay), "
         "Revenue, and Referral loops. On mobile ecosystems, App Store and Google Play metadata, custom product pages, and SKAdNetwork conversion "
         "schemas are methodically tuned to maximize organic search visibility and expand the organic install multiplier across paid acquisition."
+    ),
+    'dynamic_retargeting_and_frequency_governance': (
+        "In institutional retargeting and display operations, growth teams deploy Dynamic Product Ads (DPA) synchronized with real-time "
+        "product catalog feeds to present users with the exact SKUs they browsed. To prevent brand erosion and budget waste, ad operations "
+        "enforces strict audience recency windowing (segmenting 1-3 day cart abandoners, 7-14 day product viewers, and 30-day lapsed buyers) "
+        "paired with programmatic frequency capping (limiting impressions to a maximum of 3 per user per day). Bidding algorithms monitor the "
+        "Ad Fatigue Index—triggering immediate creative pause and audience exclusion when click-through rates degrade by over 30% from baseline."
+    ),
+    'unit_economics_and_clv_cac_governance': (
+        "Sustainable venture-scale growth is governed by unyielding unit economics centered on the Golden Ratio: Customer Lifetime Value to "
+        "Customer Acquisition Cost (CLV:CAC >= 3.0). Growth finance leaders decompose acquisition spend into blended CAC and paid channel CAC, "
+        "evaluating payback periods to ensure that initial customer gross profit fully recoups acquisition costs within a strict 12-month window. "
+        "By modeling multi-year cohort retention curves and optimizing Average Revenue Per User (ARPU) against churn probabilities, the organization "
+        "guarantees that every growth dollar deployed compounds enterprise enterprise valuation rather than burning speculative capital."
+    ),
+    'conversational_commerce_and_whatsapp_governance': (
+        "Modern direct-to-consumer (D2C) brands leverage conversational commerce and community channels to achieve unparalleled conversion "
+        "velocity. Through the WhatsApp Business Cloud API, enterprise brands deploy verified chatbot workflows and broadcast notifications "
+        "that achieve 98% open rates and 45% click-through rates—dramatically outperforming legacy email marketing. Automated abandoned cart "
+        "reminders with one-click payment links and cash-on-delivery (COD) confirmation webhooks eliminate friction at checkout, while interactive "
+        "live stream shopping events generate immediate revenue surges and establish persistent community loyalty."
+    ),
+    'econometric_mmm_and_incrementality_governance': (
+        "To achieve causal measurement without relying on brittle deterministic tracking cookies, enterprise marketing science applies top-down "
+        "econometric Marketing Mix Modeling (MMM). Media channels are modeled using adstock carryover half-life decay functions and Hill saturation "
+        "curves to identify diminishing marginal returns across spend tiers. Crucially, econometric MMM models are continuously calibrated "
+        "using randomized geo-lift holdout experiments and synthetic control groups, isolating true causal incremental revenue (iROAS) and "
+        "preventing performance marketing budgets from claiming credit for organic brand demand that would have converted anyway."
+    ),
+    'ai_growth_automation_and_cookieless_privacy_governance': (
+        "Finally, enterprise digital marketing infrastructure navigates third-party cookie deprecation through first-party data capture, "
+        "Server-Side Tagging (Cloud GTM), and Generative AI marketing workflows. Machine learning models continuously score customer engagement "
+        "signals to predict churn probabilities and trigger automated retention incentives before accounts lapse. Concurrently, generative AI "
+        "multimodal creative pipelines synthesize targeted ad variations at massive scale, while Consent Management Platforms (CMP) enforce "
+        "strict compliance with global privacy regulations (GDPR, CCPA, DPDP Act), creating an ethical, resilient growth apparatus."
     )
 }
 

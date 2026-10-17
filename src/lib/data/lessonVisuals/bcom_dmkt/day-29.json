@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "coursePrefix": "bcom_dmkt",
+  "day": 29,
+  "title": "Omnichannel Customer Journey & Full-Funnel Growth Orchestration Architecture",
+  "funnelSteps": [
+    {
+      "step": "FUNNEL_STAGE_ALIGNMENT",
+      "label": "Full-Funnel TOFU (50%) / MOFU (30%) / BOFU (20%) Capital Balancing",
+      "metric": "Balanced 50/30/20 Ratio",
+      "status": "COMPLETED",
+      "color": "#10B981"
+    },
+    {
+      "step": "CROSS_NETWORK_SUPPRESSION",
+      "label": "Real-Time Cross-Channel Audience Synchronization & Negative Lists",
+      "metric": "< 1.2s Sync Latency",
+      "status": "COMPLETED",
+      "color": "#3B82F6"
+    },
+    {
+      "step": "MTA_MMM_RECONCILIATION",
+      "label": "Triangulated Micro-MTA vs Macro-Econometric MMM Reconciliation",
+      "metric": "Triangulated Weights Verified",
+      "status": "COMPLETED",
+      "color": "#6366F1"
+    },
+    {
+      "step": "EXECUTIVE_VELOCITY_DASHBOARD",
+      "label": "Executive Growth Velocity (CAC $37.70, Payback 5.0m, ARR +85%)",
+      "metric": "Tier 1 Venture-Scale Engine",
+      "status": "COMPLETED",
+      "color": "#F59E0B"
+    },
+    {
+      "step": "ENTERPRISE_ORCHESTRATION_GATEWAY",
+      "label": "Institutional Omnichannel Growth Orchestration Gateway",
+      "metric": "100.0/100 FFGI Certified",
+      "status": "COMPLETED",
+      "color": "#8B5CF6"
+    }
+  ],
+  "kpis": [
+    {
+      "label": "Funnel Capital Mix",
+      "value": "50% TOFU / 30% MOFU / 20% BOFU"
+    },
+    {
+      "label": "Sync Latency",
+      "value": "< 1.2 Seconds"
+    },
+    {
+      "label": "Payback Horizon",
+      "value": "5.0 Months"
+    },
+    {
+      "label": "Composite FFGI Score",
+      "value": "100.0/100"
+    }
+  ]
+}

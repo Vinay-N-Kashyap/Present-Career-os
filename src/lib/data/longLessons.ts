@@ -115,6 +115,12 @@ export interface LongLesson {
   summary?: string[];
   /** Today's step of the month project. */
   projectStep?: { title: string; steps: string[] };
+  visualBinding?: {
+    schemaVersion?: number;
+    type?: string;
+    visualHash?: string;
+    [key: string]: any;
+  };
 }
 
 const LONG_LESSON_SOURCES: Record<string, ReadonlyArray<LongLesson>> = {

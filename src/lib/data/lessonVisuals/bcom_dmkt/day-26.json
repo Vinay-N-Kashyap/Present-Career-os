@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "coursePrefix": "bcom_dmkt",
+  "day": 26,
+  "title": "AI in Digital Marketing: Generative Creative Generation & Predictive Churn Architecture",
+  "funnelSteps": [
+    {
+      "step": "GENERATIVE_CREATIVE_SYNTHESIS",
+      "label": "Multimodal Generative Ad Pipeline & Brand Safety Compliance",
+      "metric": "100 Creative Variants/Min",
+      "status": "COMPLETED",
+      "color": "#10B981"
+    },
+    {
+      "step": "PREDICTIVE_CHURN_SCORING",
+      "label": "Machine Learning Churn Probability Scoring (Engagement & NPS)",
+      "metric": "P(churn) >= 0.60 Flagged",
+      "status": "COMPLETED",
+      "color": "#3B82F6"
+    },
+    {
+      "step": "AUTOMATED_RETENTION_INTERVENTION",
+      "label": "Automated Discount Escalation & VIP Success Concierge Routing",
+      "metric": "70% Churn Interception",
+      "status": "COMPLETED",
+      "color": "#6366F1"
+    },
+    {
+      "step": "AI_BANDIT_BIDDING_OPTIMIZATION",
+      "label": "Contextual Multi-Armed Bandit Bidding & Regret Minimization",
+      "metric": "+24.5% Conversion Lift",
+      "status": "COMPLETED",
+      "color": "#F59E0B"
+    },
+    {
+      "step": "ENTERPRISE_AI_GROWTH_GATEWAY",
+      "label": "Institutional AI Marketing & Automated Retention Gateway",
+      "metric": "100.0/100 AIMI Certified",
+      "status": "COMPLETED",
+      "color": "#8B5CF6"
+    }
+  ],
+  "kpis": [
+    {
+      "label": "Creative Synthesis Speed",
+      "value": "100 Variants/Min"
+    },
+    {
+      "label": "Churn Interception Threshold",
+      "value": "Risk >= 60.0%"
+    },
+    {
+      "label": "Bandit Conversion Lift",
+      "value": "+24.5%"
+    },
+    {
+      "label": "Composite AIMI Score",
+      "value": "100.0/100"
+    }
+  ]
+}

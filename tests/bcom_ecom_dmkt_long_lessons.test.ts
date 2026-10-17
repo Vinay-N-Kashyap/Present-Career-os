@@ -1626,5 +1626,175 @@ test('Course bcom_dmkt Milestone 4 Complete: All 20 Days Certified', () => {
   }
 });
 
+test('Block 210 (TASK-841..845): Days 21–25 structural invariants, word budget & 5-part parity', () => {
+  for (let day = 21; day <= 25; day++) {
+    const lesson = getLongLesson('bcom_dmkt', day);
+    assert.ok(lesson, `bcom_dmkt Day ${day} must be defined`);
+    assert.equal(lesson.day, day);
+    assert.equal(lesson.parts.length, 5, `bcom_dmkt Day ${day} must have exactly 5 parts`);
+
+    let dayWords = 0;
+    for (let partIdx = 0; partIdx < 5; partIdx++) {
+      const part = lesson.parts[partIdx];
+      assert.ok(part.title && part.title.length > 0, `Day ${day} Part ${partIdx + 1} must have title`);
+      assert.ok(part.say && part.say.length >= 3, `Day ${day} Part ${partIdx + 1} must have >= 3 say paragraphs`);
+
+      const partWords = part.say.reduce((sum, p) => sum + p.trim().split(/\s+/).filter(Boolean).length, 0);
+      assert.ok(partWords >= 580, `Day ${day} Part ${partIdx + 1} word count (${partWords}) must be >= 580 words`);
+      dayWords += partWords;
+
+      assert.ok(part.example && part.example.length > 0, `Day ${day} Part ${partIdx + 1} must have example`);
+      assert.ok(part.code && part.code.includes('def '), `Day ${day} Part ${partIdx + 1} must have Python code`);
+      assert.ok(part.output && part.output.length > 0, `Day ${day} Part ${partIdx + 1} must have output`);
+      assert.ok(part.codeNotes && part.codeNotes.length >= 3, `Day ${day} Part ${partIdx + 1} must have >= 3 codeNotes`);
+      assert.ok(part.tryIt && part.tryIt.length > 0, `Day ${day} Part ${partIdx + 1} must have tryIt`);
+
+      assert.ok(part.check, `Day ${day} Part ${partIdx + 1} must have check`);
+      assert.ok(part.check.question && part.check.question.length > 0);
+      assert.equal(part.check.options.length, 4);
+      assert.ok(part.check.why && part.check.why.length > 0);
+    }
+
+    assert.ok(dayWords >= 2950, `Day ${day} total words (${dayWords}) must be >= 2,950 words`);
+  }
+});
+
+test('Block 210 (TASK-841..845): Domain specifics & deterministic Python code verification across Days 21–25', () => {
+  // Day 21: Dynamic Retargeting & Ad Fatigue Frequency Capping
+  const d21 = getLongLesson('bcom_dmkt', 21)!;
+  assert.ok(d21.parts[0].code?.includes('simulate_dpa_catalog_sync'));
+  assert.ok(d21.parts[1].code?.includes('calculate_recency_bid_multiplier'));
+  assert.ok(d21.parts[2].code?.includes('evaluate_frequency_cap_and_pacing'));
+  assert.ok(d21.parts[3].code?.includes('audit_ad_fatigue_and_wearout'));
+  assert.ok(d21.parts[4].code?.includes('audit_enterprise_retargeting_gateway'));
+
+  // Day 22: Customer Lifetime Value to CAC Ratio (CLV:CAC >= 3:1)
+  const d22 = getLongLesson('bcom_dmkt', 22)!;
+  assert.ok(d22.parts[0].code?.includes('decompose_customer_acquisition_cost'));
+  assert.ok(d22.parts[1].code?.includes('calculate_customer_lifetime_value'));
+  assert.ok(d22.parts[2].code?.includes('evaluate_clv_cac_ratio'));
+  assert.ok(d22.parts[3].code?.includes('calculate_cac_payback_months'));
+  assert.ok(d22.parts[4].code?.includes('audit_enterprise_unit_economics_gateway'));
+
+  // Day 23: Community & Conversational Commerce: WhatsApp Business API
+  const d23 = getLongLesson('bcom_dmkt', 23)!;
+  assert.ok(d23.parts[0].code?.includes('simulate_whatsapp_webhook_router'));
+  assert.ok(d23.parts[1].code?.includes('audit_whatsapp_broadcast_health'));
+  assert.ok(d23.parts[2].code?.includes('simulate_whatsapp_cart_and_cod_recovery'));
+  assert.ok(d23.parts[3].code?.includes('evaluate_live_selling_conversion_event'));
+  assert.ok(d23.parts[4].code?.includes('audit_enterprise_conversational_gateway'));
+
+  // Day 24: Marketing Mix Modeling (MMM) & Incrementality Geo-Testing
+  const d24 = getLongLesson('bcom_dmkt', 24)!;
+  assert.ok(d24.parts[0].code?.includes('simulate_top_down_mmm_regression'));
+  assert.ok(d24.parts[1].code?.includes('calculate_adstock_and_saturation'));
+  assert.ok(d24.parts[2].code?.includes('evaluate_geo_lift_experiment'));
+  assert.ok(d24.parts[3].code?.includes('calculate_incremental_roas'));
+  assert.ok(d24.parts[4].code?.includes('audit_enterprise_mmm_gateway'));
+
+  // Day 25: Milestone 5 Capstone: Advanced Retargeting, Unit Economics, Conversational Commerce & Econometric MMM Engine
+  const d25 = getLongLesson('bcom_dmkt', 25)!;
+  assert.ok(d25.parts[0].code?.includes('execute_tier1_retargeting_control_tower'));
+  assert.ok(d25.parts[1].code?.includes('execute_tier2_unit_economics_hub'));
+  assert.ok(d25.parts[2].code?.includes('execute_tier3_conversational_engine'));
+  assert.ok(d25.parts[3].code?.includes('execute_tier4_econometric_mmm_calibrator'));
+  assert.ok(d25.parts[4].code?.includes('execute_tier5_master_growth_command_tower'));
+});
+
+test('Course bcom_dmkt Milestone 5 Complete: All 25 Days Certified', () => {
+  for (let day = 1; day <= 25; day++) {
+    const lesson = getLongLesson('bcom_dmkt', day);
+    assert.ok(lesson, `bcom_dmkt Day ${day} must be defined`);
+    assert.equal(lesson.day, day);
+    assert.equal(lesson.parts.length, 5, `bcom_dmkt Day ${day} must have 5 parts`);
+  }
+});
+
+test('Block 211 (TASK-846..850): Days 26–30 structural invariants, word budget & 5-part parity', () => {
+  for (let day = 26; day <= 30; day++) {
+    const lesson = getLongLesson('bcom_dmkt', day);
+    assert.ok(lesson, `bcom_dmkt Day ${day} must be defined`);
+    assert.equal(lesson.day, day);
+    assert.equal(lesson.parts.length, 5, `bcom_dmkt Day ${day} must have exactly 5 parts`);
+
+    let dayWords = 0;
+    for (let partIdx = 0; partIdx < 5; partIdx++) {
+      const part = lesson.parts[partIdx];
+      assert.ok(part.title && part.title.length > 0, `Day ${day} Part ${partIdx + 1} must have title`);
+      assert.ok(part.say && part.say.length >= 3, `Day ${day} Part ${partIdx + 1} must have >= 3 say paragraphs`);
+
+      const partWords = part.say.reduce((sum, p) => sum + p.trim().split(/\s+/).filter(Boolean).length, 0);
+      assert.ok(partWords >= 580, `Day ${day} Part ${partIdx + 1} word count (${partWords}) must be >= 580 words`);
+      dayWords += partWords;
+
+      assert.ok(part.example && part.example.length > 0, `Day ${day} Part ${partIdx + 1} must have example`);
+      assert.ok(part.code && part.code.includes('def '), `Day ${day} Part ${partIdx + 1} must have Python code`);
+      assert.ok(part.output && part.output.length > 0, `Day ${day} Part ${partIdx + 1} must have output`);
+      assert.ok(part.codeNotes && part.codeNotes.length >= 3, `Day ${day} Part ${partIdx + 1} must have >= 3 codeNotes`);
+      assert.ok(part.tryIt && part.tryIt.length > 0, `Day ${day} Part ${partIdx + 1} must have tryIt`);
+
+      assert.ok(part.check, `Day ${day} Part ${partIdx + 1} must have check`);
+      assert.ok(part.check.question && part.check.question.length > 0);
+      assert.equal(part.check.options.length, 4);
+      assert.ok(part.check.why && part.check.why.length > 0);
+    }
+
+    assert.ok(dayWords >= 2950, `Day ${day} total words (${dayWords}) must be >= 2,950 words`);
+  }
+});
+
+test('Block 211 (TASK-846..850): Domain specifics & deterministic Python code verification across Days 26–30', () => {
+  // Day 26: AI in Digital Marketing: Generative Creative Generation & Predictive Churn
+  const d26 = getLongLesson('bcom_dmkt', 26)!;
+  assert.ok(d26.parts[0].code?.includes('simulate_generative_ad_synthesis'));
+  assert.ok(d26.parts[1].code?.includes('evaluate_predictive_churn_risk'));
+  assert.ok(d26.parts[2].code?.includes('trigger_automated_retention_intervention'));
+  assert.ok(d26.parts[3].code?.includes('simulate_contextual_bandit_bidding'));
+  assert.ok(d26.parts[4].code?.includes('audit_enterprise_ai_marketing_gateway'));
+
+  // Day 27: Data Privacy, Cookie Deprecation & First-Party Data Strategies
+  const d27 = getLongLesson('bcom_dmkt', 27)!;
+  assert.ok(d27.parts[0].code?.includes('simulate_privacy_sandbox_topics_api'));
+  assert.ok(d27.parts[1].code?.includes('simulate_progressive_profiling_funnel'));
+  assert.ok(d27.parts[2].code?.includes('simulate_server_side_tagging_pipeline'));
+  assert.ok(d27.parts[3].code?.includes('audit_cmp_consent_and_regulatory_compliance'));
+  assert.ok(d27.parts[4].code?.includes('audit_enterprise_privacy_gateway'));
+
+  // Day 28: Digital Marketing Budgeting & Annual Media Planning: Share of Voice (SOV)
+  const d28 = getLongLesson('bcom_dmkt', 28)!;
+  assert.ok(d28.parts[0].code?.includes('simulate_objective_and_task_budget'));
+  assert.ok(d28.parts[1].code?.includes('calculate_esov_and_market_share_projection'));
+  assert.ok(d28.parts[2].code?.includes('allocate_annual_media_budget_and_flighting'));
+  assert.ok(d28.parts[3].code?.includes('audit_mer_and_working_capital_buffers'));
+  assert.ok(d28.parts[4].code?.includes('audit_enterprise_media_planning_gateway'));
+
+  // Day 29: Omnichannel Customer Journey & Full-Funnel Growth Orchestration
+  const d29 = getLongLesson('bcom_dmkt', 29)!;
+  assert.ok(d29.parts[0].code?.includes('simulate_full_funnel_stage_alignment'));
+  assert.ok(d29.parts[1].code?.includes('simulate_cross_network_audience_suppression'));
+  assert.ok(d29.parts[2].code?.includes('reconcile_mta_and_mmm_attribution'));
+  assert.ok(d29.parts[3].code?.includes('evaluate_executive_growth_velocity'));
+  assert.ok(d29.parts[4].code?.includes('audit_enterprise_growth_orchestration_gateway'));
+
+  // Day 30: Course 28 Grand Final Capstone: Enterprise Digital Marketing & Autonomous Growth Hacking Suite
+  const d30 = getLongLesson('bcom_dmkt', 30)!;
+  assert.ok(d30.parts[0].code?.includes('execute_tier1_seo_sem_quality_score_engine'));
+  assert.ok(d30.parts[1].code?.includes('execute_tier2_paid_media_lookalike_tower'));
+  assert.ok(d30.parts[2].code?.includes('execute_tier3_lifecycle_cro_testing_engine'));
+  assert.ok(d30.parts[3].code?.includes('execute_tier4_analytics_attribution_mmm_calibrator'));
+  assert.ok(d30.parts[4].code?.includes('execute_tier5_grand_master_boardroom_defense'));
+});
+
+test('Course bcom_dmkt 100% COMPLETE: All 30 Days & Milestone 6 Grand Final Capstone Certified', () => {
+  for (let day = 1; day <= 30; day++) {
+    const lesson = getLongLesson('bcom_dmkt', day);
+    assert.ok(lesson, `bcom_dmkt Day ${day} must be defined`);
+    assert.equal(lesson.day, day);
+    assert.equal(lesson.parts.length, 5, `bcom_dmkt Day ${day} must have 5 parts`);
+  }
+});
+
+
+
 
 
