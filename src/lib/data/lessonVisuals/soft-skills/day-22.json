@@ -1,0 +1,1709 @@
+{
+  "schemaVersion": 1,
+  "prefix": "soft-skills",
+  "day": 22,
+  "promptSha": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "The Reverse Interview Paradox: Why the Final 5 Minutes Are an Audition",
+      "codeHash": "734985f70796a585356bb4b0397dd145d6d7a71716f8216a7ec19c8dedc74105",
+      "spec": {
+        "template": "workflow",
+        "title": "The Reverse Interview Paradox: Why the Final ... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Context Framing",
+            "subtext": "Candidate Alignment",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Structured Narrative",
+            "subtext": "STAR / RADIO / TC",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Technical Depth",
+            "subtext": "Scale Metrics & Trade-offs",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Executive Pass-Back",
+            "subtext": "Strong Hire Signal",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Context Framing): Initialize The Reverse Interview Paradox: Why the F...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Candidate Alignment",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Narrative",
+                "subtext": "STAR / RADIO / TC",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Technical Depth",
+                "subtext": "Scale Metrics & Trade-offs",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Pass-Back",
+                "subtext": "Strong Hire Signal",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Structured Narrative): Process core interview model.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Candidate Alignment",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Narrative",
+                "subtext": "STAR / RADIO / TC",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Technical Depth",
+                "subtext": "Scale Metrics & Trade-offs",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Pass-Back",
+                "subtext": "Strong Hire Signal",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Technical Depth): Verify scale metrics & empirical trade-offs.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "High Signal",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Candidate Alignment",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Narrative",
+                "subtext": "STAR / RADIO / TC",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Technical Depth",
+                "subtext": "Scale Metrics & Trade-offs",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Pass-Back",
+                "subtext": "Strong Hire Signal",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Executive Pass-Back): Commit high-signal engineering response.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "Strong Hire ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Candidate Alignment",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Narrative",
+                "subtext": "STAR / RADIO / TC",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Technical Depth",
+                "subtext": "Scale Metrics & Trade-offs",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Pass-Back",
+                "subtext": "Strong Hire Signal",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "The Reverse Interview Paradox: Why the Final ... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Context Framing",
+            "subtext": "Candidate Alignment",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Structured Narrative",
+            "subtext": "STAR / RADIO / TC",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Technical Depth",
+            "subtext": "Scale Metrics & Trade-offs",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Executive Pass-Back",
+            "subtext": "Strong Hire Signal",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Context Framing): Initialize The Reverse Interview Paradox: Why the F...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Candidate Alignment",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Narrative",
+                "subtext": "STAR / RADIO / TC",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Technical Depth",
+                "subtext": "Scale Metrics & Trade-offs",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Pass-Back",
+                "subtext": "Strong Hire Signal",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Structured Narrative): Process core interview model.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Candidate Alignment",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Narrative",
+                "subtext": "STAR / RADIO / TC",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Technical Depth",
+                "subtext": "Scale Metrics & Trade-offs",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Pass-Back",
+                "subtext": "Strong Hire Signal",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Technical Depth): Verify scale metrics & empirical trade-offs.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "High Signal",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Candidate Alignment",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Narrative",
+                "subtext": "STAR / RADIO / TC",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Technical Depth",
+                "subtext": "Scale Metrics & Trade-offs",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Pass-Back",
+                "subtext": "Strong Hire Signal",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Executive Pass-Back): Commit high-signal engineering response.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "Strong Hire ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Candidate Alignment",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Narrative",
+                "subtext": "STAR / RADIO / TC",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Technical Depth",
+                "subtext": "Scale Metrics & Trade-offs",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Pass-Back",
+                "subtext": "Strong Hire Signal",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The 4 Pillars of High-Signal Reverse Engineering Inquiry",
+      "codeHash": "41b08f8dc5a8449298d7ba71a9b56a59cc7c360bee96fb3469b73781ff27c377",
+      "spec": {
+        "template": "workflow",
+        "title": "The 4 Pillars of High-Signal Reverse Engineer... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Context Framing",
+            "subtext": "Candidate Alignment",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Structured Narrative",
+            "subtext": "STAR / RADIO / TC",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Technical Depth",
+            "subtext": "Scale Metrics & Trade-offs",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Executive Pass-Back",
+            "subtext": "Strong Hire Signal",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Context Framing): Initialize The 4 Pillars of High-Signal Reverse Eng...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Candidate Alignment",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Narrative",
+                "subtext": "STAR / RADIO / TC",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Technical Depth",
+                "subtext": "Scale Metrics & Trade-offs",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Pass-Back",
+                "subtext": "Strong Hire Signal",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Structured Narrative): Process core interview model.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Candidate Alignment",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Narrative",
+                "subtext": "STAR / RADIO / TC",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Technical Depth",
+                "subtext": "Scale Metrics & Trade-offs",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Pass-Back",
+                "subtext": "Strong Hire Signal",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Technical Depth): Verify scale metrics & empirical trade-offs.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "High Signal",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Candidate Alignment",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Narrative",
+                "subtext": "STAR / RADIO / TC",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Technical Depth",
+                "subtext": "Scale Metrics & Trade-offs",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Pass-Back",
+                "subtext": "Strong Hire Signal",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Executive Pass-Back): Commit high-signal engineering response.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "Strong Hire ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Candidate Alignment",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Narrative",
+                "subtext": "STAR / RADIO / TC",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Technical Depth",
+                "subtext": "Scale Metrics & Trade-offs",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Pass-Back",
+                "subtext": "Strong Hire Signal",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "The 4 Pillars of High-Signal Reverse Engineer... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Context Framing",
+            "subtext": "Candidate Alignment",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Structured Narrative",
+            "subtext": "STAR / RADIO / TC",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Technical Depth",
+            "subtext": "Scale Metrics & Trade-offs",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Executive Pass-Back",
+            "subtext": "Strong Hire Signal",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Context Framing): Initialize The 4 Pillars of High-Signal Reverse Eng...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Candidate Alignment",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Narrative",
+                "subtext": "STAR / RADIO / TC",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Technical Depth",
+                "subtext": "Scale Metrics & Trade-offs",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Pass-Back",
+                "subtext": "Strong Hire Signal",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Structured Narrative): Process core interview model.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Candidate Alignment",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Narrative",
+                "subtext": "STAR / RADIO / TC",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Technical Depth",
+                "subtext": "Scale Metrics & Trade-offs",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Pass-Back",
+                "subtext": "Strong Hire Signal",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Technical Depth): Verify scale metrics & empirical trade-offs.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "High Signal",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Candidate Alignment",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Narrative",
+                "subtext": "STAR / RADIO / TC",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Technical Depth",
+                "subtext": "Scale Metrics & Trade-offs",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Pass-Back",
+                "subtext": "Strong Hire Signal",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Executive Pass-Back): Commit high-signal engineering response.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "Strong Hire ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Candidate Alignment",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Narrative",
+                "subtext": "STAR / RADIO / TC",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Technical Depth",
+                "subtext": "Scale Metrics & Trade-offs",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Pass-Back",
+                "subtext": "Strong Hire Signal",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Diagnosing Engineering Culture Red Flags: Uncovering Burnout & Chaos",
+      "codeHash": "220272a75f74e863b1b68e872f97b81701ad3ae7f7755a4d62d59429ed1bad2e",
+      "spec": {
+        "template": "workflow",
+        "title": "Diagnosing Engineering Culture Red Flags: Unc... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Context Framing",
+            "subtext": "Candidate Alignment",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Structured Narrative",
+            "subtext": "STAR / RADIO / TC",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Technical Depth",
+            "subtext": "Scale Metrics & Trade-offs",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Executive Pass-Back",
+            "subtext": "Strong Hire Signal",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Context Framing): Initialize Diagnosing Engineering Culture Red Flags...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Candidate Alignment",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Narrative",
+                "subtext": "STAR / RADIO / TC",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Technical Depth",
+                "subtext": "Scale Metrics & Trade-offs",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Pass-Back",
+                "subtext": "Strong Hire Signal",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Structured Narrative): Process core interview model.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Candidate Alignment",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Narrative",
+                "subtext": "STAR / RADIO / TC",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Technical Depth",
+                "subtext": "Scale Metrics & Trade-offs",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Pass-Back",
+                "subtext": "Strong Hire Signal",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Technical Depth): Verify scale metrics & empirical trade-offs.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "High Signal",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Candidate Alignment",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Narrative",
+                "subtext": "STAR / RADIO / TC",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Technical Depth",
+                "subtext": "Scale Metrics & Trade-offs",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Pass-Back",
+                "subtext": "Strong Hire Signal",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Executive Pass-Back): Commit high-signal engineering response.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "Strong Hire ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Candidate Alignment",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Narrative",
+                "subtext": "STAR / RADIO / TC",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Technical Depth",
+                "subtext": "Scale Metrics & Trade-offs",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Pass-Back",
+                "subtext": "Strong Hire Signal",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Diagnosing Engineering Culture Red Flags: Unc... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Context Framing",
+            "subtext": "Candidate Alignment",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Structured Narrative",
+            "subtext": "STAR / RADIO / TC",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Technical Depth",
+            "subtext": "Scale Metrics & Trade-offs",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Executive Pass-Back",
+            "subtext": "Strong Hire Signal",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Context Framing): Initialize Diagnosing Engineering Culture Red Flags...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Candidate Alignment",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Narrative",
+                "subtext": "STAR / RADIO / TC",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Technical Depth",
+                "subtext": "Scale Metrics & Trade-offs",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Pass-Back",
+                "subtext": "Strong Hire Signal",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Structured Narrative): Process core interview model.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Candidate Alignment",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Narrative",
+                "subtext": "STAR / RADIO / TC",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Technical Depth",
+                "subtext": "Scale Metrics & Trade-offs",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Pass-Back",
+                "subtext": "Strong Hire Signal",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Technical Depth): Verify scale metrics & empirical trade-offs.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "High Signal",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Candidate Alignment",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Narrative",
+                "subtext": "STAR / RADIO / TC",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Technical Depth",
+                "subtext": "Scale Metrics & Trade-offs",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Pass-Back",
+                "subtext": "Strong Hire Signal",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Executive Pass-Back): Commit high-signal engineering response.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "Strong Hire ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Candidate Alignment",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Narrative",
+                "subtext": "STAR / RADIO / TC",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Technical Depth",
+                "subtext": "Scale Metrics & Trade-offs",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Pass-Back",
+                "subtext": "Strong Hire Signal",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Role-Tailored Inquiries: Recruiter vs Engineering Manager vs Staff Engineer",
+      "codeHash": "2b3d34d74fb90ffe0d0dc4445efc11ca55270373c024b0748e6f48d5f2be7b98",
+      "spec": {
+        "template": "workflow",
+        "title": "Role-Tailored Inquiries: Recruiter vs Enginee... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Context Framing",
+            "subtext": "Candidate Alignment",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Structured Narrative",
+            "subtext": "STAR / RADIO / TC",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Technical Depth",
+            "subtext": "Scale Metrics & Trade-offs",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Executive Pass-Back",
+            "subtext": "Strong Hire Signal",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Context Framing): Initialize Role-Tailored Inquiries: Recruiter vs En...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Candidate Alignment",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Narrative",
+                "subtext": "STAR / RADIO / TC",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Technical Depth",
+                "subtext": "Scale Metrics & Trade-offs",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Pass-Back",
+                "subtext": "Strong Hire Signal",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Structured Narrative): Process core interview model.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Candidate Alignment",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Narrative",
+                "subtext": "STAR / RADIO / TC",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Technical Depth",
+                "subtext": "Scale Metrics & Trade-offs",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Pass-Back",
+                "subtext": "Strong Hire Signal",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Technical Depth): Verify scale metrics & empirical trade-offs.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "High Signal",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Candidate Alignment",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Narrative",
+                "subtext": "STAR / RADIO / TC",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Technical Depth",
+                "subtext": "Scale Metrics & Trade-offs",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Pass-Back",
+                "subtext": "Strong Hire Signal",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Executive Pass-Back): Commit high-signal engineering response.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "Strong Hire ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Candidate Alignment",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Narrative",
+                "subtext": "STAR / RADIO / TC",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Technical Depth",
+                "subtext": "Scale Metrics & Trade-offs",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Pass-Back",
+                "subtext": "Strong Hire Signal",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Role-Tailored Inquiries: Recruiter vs Enginee... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Context Framing",
+            "subtext": "Candidate Alignment",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Structured Narrative",
+            "subtext": "STAR / RADIO / TC",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Technical Depth",
+            "subtext": "Scale Metrics & Trade-offs",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Executive Pass-Back",
+            "subtext": "Strong Hire Signal",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Context Framing): Initialize Role-Tailored Inquiries: Recruiter vs En...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Candidate Alignment",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Narrative",
+                "subtext": "STAR / RADIO / TC",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Technical Depth",
+                "subtext": "Scale Metrics & Trade-offs",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Pass-Back",
+                "subtext": "Strong Hire Signal",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Structured Narrative): Process core interview model.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Candidate Alignment",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Narrative",
+                "subtext": "STAR / RADIO / TC",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Technical Depth",
+                "subtext": "Scale Metrics & Trade-offs",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Pass-Back",
+                "subtext": "Strong Hire Signal",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Technical Depth): Verify scale metrics & empirical trade-offs.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "High Signal",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Candidate Alignment",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Narrative",
+                "subtext": "STAR / RADIO / TC",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Technical Depth",
+                "subtext": "Scale Metrics & Trade-offs",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Pass-Back",
+                "subtext": "Strong Hire Signal",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Executive Pass-Back): Commit high-signal engineering response.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "Strong Hire ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Candidate Alignment",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Narrative",
+                "subtext": "STAR / RADIO / TC",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Technical Depth",
+                "subtext": "Scale Metrics & Trade-offs",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Pass-Back",
+                "subtext": "Strong Hire Signal",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Master Reverse Interviewing Simulator: Multi-Persona Question Selection Engine",
+      "codeHash": "6ccce378eb35feac4002447e3b372b81243b4429ce8d9479798e68a6f4683bda",
+      "spec": {
+        "template": "workflow",
+        "title": "The Master Reverse Interviewing Simulator: Mu... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Context Framing",
+            "subtext": "Candidate Alignment",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Structured Narrative",
+            "subtext": "STAR / RADIO / TC",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Technical Depth",
+            "subtext": "Scale Metrics & Trade-offs",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Executive Pass-Back",
+            "subtext": "Strong Hire Signal",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Context Framing): Initialize The Master Reverse Interviewing Simulato...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Candidate Alignment",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Narrative",
+                "subtext": "STAR / RADIO / TC",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Technical Depth",
+                "subtext": "Scale Metrics & Trade-offs",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Pass-Back",
+                "subtext": "Strong Hire Signal",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Structured Narrative): Process core interview model.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Candidate Alignment",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Narrative",
+                "subtext": "STAR / RADIO / TC",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Technical Depth",
+                "subtext": "Scale Metrics & Trade-offs",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Pass-Back",
+                "subtext": "Strong Hire Signal",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Technical Depth): Verify scale metrics & empirical trade-offs.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "High Signal",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Candidate Alignment",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Narrative",
+                "subtext": "STAR / RADIO / TC",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Technical Depth",
+                "subtext": "Scale Metrics & Trade-offs",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Pass-Back",
+                "subtext": "Strong Hire Signal",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Executive Pass-Back): Commit high-signal engineering response.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "Strong Hire ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Candidate Alignment",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Narrative",
+                "subtext": "STAR / RADIO / TC",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Technical Depth",
+                "subtext": "Scale Metrics & Trade-offs",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Pass-Back",
+                "subtext": "Strong Hire Signal",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "The Master Reverse Interviewing Simulator: Mu... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Context Framing",
+            "subtext": "Candidate Alignment",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Structured Narrative",
+            "subtext": "STAR / RADIO / TC",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Technical Depth",
+            "subtext": "Scale Metrics & Trade-offs",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Executive Pass-Back",
+            "subtext": "Strong Hire Signal",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Context Framing): Initialize The Master Reverse Interviewing Simulato...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Candidate Alignment",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Narrative",
+                "subtext": "STAR / RADIO / TC",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Technical Depth",
+                "subtext": "Scale Metrics & Trade-offs",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Pass-Back",
+                "subtext": "Strong Hire Signal",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Structured Narrative): Process core interview model.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Candidate Alignment",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Narrative",
+                "subtext": "STAR / RADIO / TC",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Technical Depth",
+                "subtext": "Scale Metrics & Trade-offs",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Pass-Back",
+                "subtext": "Strong Hire Signal",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Technical Depth): Verify scale metrics & empirical trade-offs.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "High Signal",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Candidate Alignment",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Narrative",
+                "subtext": "STAR / RADIO / TC",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Technical Depth",
+                "subtext": "Scale Metrics & Trade-offs",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Pass-Back",
+                "subtext": "Strong Hire Signal",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Executive Pass-Back): Commit high-signal engineering response.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "Strong Hire ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Context Framing",
+                "subtext": "Candidate Alignment",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Structured Narrative",
+                "subtext": "STAR / RADIO / TC",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Technical Depth",
+                "subtext": "Scale Metrics & Trade-offs",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Executive Pass-Back",
+                "subtext": "Strong Hire Signal",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
