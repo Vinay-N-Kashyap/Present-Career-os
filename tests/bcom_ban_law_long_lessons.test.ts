@@ -1214,4 +1214,278 @@ test('COURSE 26 GRAND MASTER COMPLETION: bcom_ban Days 1–30 Full Curriculum In
   }
 });
 
+test('Block 212 (TASK-1096..1100): bcom_law Days 6–10 resolve with strict 5-part LongLesson invariants and >= 20.0 spoken minutes', () => {
+  for (let day = 6; day <= 10; day++) {
+    const lesson = getLongLesson('bcom_law', day);
+    assert.ok(lesson, `bcom_law Day ${day} must resolve`);
+    assert.equal(lesson.coursePrefix, 'bcom_law');
+    assert.equal(lesson.day, day);
+    assert.equal(lesson.parts.length, 5, `Day ${day} must have exactly 5 parts`);
+    assert.equal(getLongLessonLanguage('bcom_law'), 'python');
+
+    const spoken = estimateSpokenMinutes(lesson);
+    assert.ok(spoken >= 20.0, `Day ${day} spoken minutes (${spoken}) must be >= 20.0 min`);
+    const total = estimateLessonMinutes(lesson);
+    assert.ok(total >= 35.0, `Day ${day} total minutes (${total}) must be >= 35.0 min`);
+
+    let dayTotalWords = 0;
+    lesson.parts.forEach((part, idx) => {
+      assert.ok(part.title, `Day ${day} Part ${idx + 1} must have a title`);
+      assert.ok(Array.isArray(part.say) && part.say.length >= 3, `Day ${day} Part ${idx + 1} must have >= 3 say paragraphs`);
+
+      const partWordCount = (part.say as string[]).reduce((sum, p) => sum + p.split(/\s+/).filter(Boolean).length, 0);
+      assert.ok(partWordCount >= 580, `Day ${day} Part ${idx + 1} word count (${partWordCount}) must be >= 580 words`);
+      dayTotalWords += partWordCount;
+
+      assert.ok(part.example, `Day ${day} Part ${idx + 1} must include a real-world example`);
+      assert.ok(part.code, `Day ${day} Part ${idx + 1} must include executable Python code`);
+      assert.ok(part.output, `Day ${day} Part ${idx + 1} must include expected console output`);
+      assert.ok(part.tryIt, `Day ${day} Part ${idx + 1} must include a tryIt experiment`);
+      assert.ok(part.codeNotes && part.codeNotes.length >= 3, `Day ${day} Part ${idx + 1} must have >= 3 codeNotes`);
+
+      assert.ok(part.check.question, `Day ${day} Part ${idx + 1} check must have question text`);
+      assert.equal(part.check.options.length, 4, `Day ${day} Part ${idx + 1} check must have exactly 4 options`);
+      assert.equal(typeof part.check.answer, 'number', `Day ${day} Part ${idx + 1} check must have numerical answer`);
+      assert.ok(part.check.answer >= 0 && part.check.answer < 4, `Day ${day} Part ${idx + 1} answer must be in [0..3]`);
+      assert.ok(part.check.why, `Day ${day} Part ${idx + 1} check must have educational rationale`);
+    });
+
+    assert.ok(dayTotalWords >= 2950, `Day ${day} total words (${dayTotalWords}) must be >= 2950 words`);
+    assert.ok(lesson.summary && lesson.summary.length >= 4, `Day ${day} summary must have >= 4 bullet points`);
+    assert.ok(lesson.projectStep && lesson.projectStep.title && lesson.projectStep.steps.length >= 3, `Day ${day} projectStep must have title and >= 3 steps`);
+  }
+});
+
+test('Block 212 (TASK-1096..1100): bcom_law Days 6–10 Gate v2 on-disk visual JSON files uphold cryptographic SHA-256 bindings & ledger-sheet template', async () => {
+  const fs = await import('node:fs');
+  const path = await import('node:path');
+  const crypto = await import('node:crypto');
+  const { loadDayFile, getVisual, clearDayFileCache } = await import('../src/lib/visuals/loadVisuals');
+  const { getTappableLabelsForVisual } = await import('../src/lib/visuals/visualRules');
+
+  clearDayFileCache();
+
+  for (let day = 6; day <= 10; day++) {
+    const dayPadded = String(day).padStart(2, '0');
+    const filePath = path.resolve(process.cwd(), `src/lib/data/lessonVisuals/bcom_law/day-${dayPadded}.json`);
+    assert.ok(fs.existsSync(filePath), `On-disk visual file missing: ${filePath}`);
+
+    const dayFile = loadDayFile('bcom_law', day);
+    assert.ok(dayFile, `loadDayFile failed for bcom_law Day ${day}`);
+    assert.equal(dayFile.schemaVersion, 1);
+    assert.equal(dayFile.prefix, 'bcom_law');
+    assert.equal(dayFile.day, day);
+    assert.equal(dayFile.entries.length, 5, `Expected 5 entries in bcom_law Day ${day}`);
+
+    const lesson = getLongLesson('bcom_law', day)!;
+    for (let partIdx = 0; partIdx < 5; partIdx++) {
+      const entry = dayFile.entries[partIdx];
+      const part = lesson.parts[partIdx];
+
+      assert.equal(entry.partTitle, part.title, `partTitle mismatch at bcom_law Day ${day} Part ${partIdx}`);
+      const expectedHash = crypto.createHash('sha256').update(part.code || '').digest('hex');
+      assert.equal(entry.codeHash, expectedHash, `codeHash mismatch at bcom_law Day ${day} Part ${partIdx}`);
+
+      const visual = getVisual('bcom_law', day, partIdx);
+      assert.ok(visual, `getVisual returned null for bcom_law Day ${day} Part ${partIdx}`);
+      assert.equal(visual.template, 'ledger-sheet', `Expected template "ledger-sheet" for bcom_law`);
+      assert.equal(visual.steps.length, 4, `Expected 4 synchronized steps for bcom_law Day ${day} Part ${partIdx}`);
+
+      assert.deepEqual(
+        visual.steps.map((s: any) => s.at),
+        ['intro', 'say1', 'example', 'tryIt'],
+        `Step markers must be ['intro', 'say1', 'example', 'tryIt']`
+      );
+
+      visual.steps.forEach((step: any, stepIdx: number) => {
+        assert.equal(step.isBalanced, true, `Step ${stepIdx} in Day ${day} Part ${partIdx} must be balanced`);
+        assert.equal(step.totalDebit, step.totalCredit, `Step ${stepIdx} debits must equal credits`);
+      });
+
+      const labels = getTappableLabelsForVisual(visual);
+      assert.ok(labels.length > 0, `Expected non-empty tappable labels for bcom_law Day ${day} Part ${partIdx}`);
+    }
+  }
+});
+
+test('Block 212 (TASK-1096..1100): Domain specifics & deterministic Python code verification across Days 6–10', () => {
+  // Day 6: Patent Law & Patentability Invariants (TASK-1096)
+  const d6 = getLongLesson('bcom_law', 6)!;
+  assert.ok(d6.parts[0].code?.includes('evaluate_alice_mayo_patentability'));
+  assert.ok(d6.parts[1].code?.includes('evaluate_section_102_novelty'));
+  assert.ok(d6.parts[2].code?.includes('evaluate_section_103_patentability'));
+  assert.ok(d6.parts[3].code?.includes('audit_commercial_product_fto'));
+  assert.ok(d6.parts[4].code?.includes('calculate_litigation_damages_exposure'));
+
+  // Day 7: Trademark Law, Trade Dress & Global Brand Protection (TASK-1097)
+  const d7 = getLongLesson('bcom_law', 7)!;
+  assert.ok(d7.parts[0].code?.includes('evaluate_mark'));
+  assert.ok(d7.parts[1].code?.includes('calculate_confusion_risk'));
+  assert.ok(d7.parts[2].code?.includes('evaluate_dilution_exposure'));
+  assert.ok(d7.parts[3].code?.includes('structure_madrid_filing'));
+  assert.ok(d7.parts[4].code?.includes('evaluate_trade_dress_protectability'));
+
+  // Day 8: Trade Secret Governance & Defend Trade Secrets Act (DTSA) (TASK-1098)
+  const d8 = getLongLesson('bcom_law', 8)!;
+  assert.ok(d8.parts[0].code?.includes('audit_trade_secret_status'));
+  assert.ok(d8.parts[1].code?.includes('evaluate_liability_and_whistleblower_shield'));
+  assert.ok(d8.parts[2].code?.includes('evaluate_covenant_and_mobility'));
+  assert.ok(d8.parts[3].code?.includes('evaluate_ex_parte_seizure_qualifiers'));
+  assert.ok(d8.parts[4].code?.includes('audit_criminal_trade_secret_exposure'));
+
+  // Day 9: Copyright Law, Software Licensing & Digital Millennium Copyright Act (DMCA) (TASK-1099)
+  const d9 = getLongLesson('bcom_law', 9)!;
+  assert.ok(d9.parts[0].code?.includes('execute_afc_test'));
+  assert.ok(d9.parts[1].code?.includes('audit_software_ip_ownership'));
+  assert.ok(d9.parts[2].code?.includes('audit_platform_safe_harbor_eligibility'));
+  assert.ok(d9.parts[3].code?.includes('audit_oss_linkage'));
+  assert.ok(d9.parts[4].code?.includes('calculate_infringement_damages'));
+
+  // Day 10: ⭐ Milestone 2 Capstone: Intellectual Property & Technology Licensing Architecture (TASK-1100)
+  const d10 = getLongLesson('bcom_law', 10)!;
+  assert.ok(d10.parts[0].code?.includes('calculate_frand_apportioned_royalty'));
+  assert.ok(d10.parts[1].code?.includes('evaluate_ipr_defense_strategy'));
+  assert.ok(d10.parts[2].code?.includes('calculate_relief_from_royalty_fair_value'));
+  assert.ok(d10.parts[3].code?.includes('audit_reverse_payment_settlement'));
+  assert.ok(d10.parts[4].code?.includes('execute_milestone2_capstone_defense'));
+});
+
+test('Block 213 (TASK-1101..1105): bcom_law Days 11–15 resolve with strict 5-part LongLesson invariants and >= 20.0 spoken minutes', () => {
+  for (let day = 11; day <= 15; day++) {
+    const lesson = getLongLesson('bcom_law', day);
+    assert.ok(lesson, `bcom_law Day ${day} must resolve`);
+    assert.equal(lesson.coursePrefix, 'bcom_law');
+    assert.equal(lesson.day, day);
+    assert.equal(lesson.parts.length, 5, `Day ${day} must have exactly 5 parts`);
+    assert.equal(getLongLessonLanguage('bcom_law'), 'python');
+
+    const spoken = estimateSpokenMinutes(lesson);
+    assert.ok(spoken >= 20.0, `Day ${day} spoken minutes (${spoken}) must be >= 20.0 min`);
+    const total = estimateLessonMinutes(lesson);
+    assert.ok(total >= 35.0, `Day ${day} total minutes (${total}) must be >= 35.0 min`);
+
+    let dayTotalWords = 0;
+    lesson.parts.forEach((part, idx) => {
+      assert.ok(part.title, `Day ${day} Part ${idx + 1} must have a title`);
+      assert.ok(Array.isArray(part.say) && part.say.length >= 3, `Day ${day} Part ${idx + 1} must have >= 3 say paragraphs`);
+
+      const partWordCount = (part.say as string[]).reduce((sum, p) => sum + p.split(/\s+/).filter(Boolean).length, 0);
+      assert.ok(partWordCount >= 580, `Day ${day} Part ${idx + 1} word count (${partWordCount}) must be >= 580 words`);
+      dayTotalWords += partWordCount;
+
+      assert.ok(part.example, `Day ${day} Part ${idx + 1} must include a real-world example`);
+      assert.ok(part.code, `Day ${day} Part ${idx + 1} must include executable Python code`);
+      assert.ok(part.output, `Day ${day} Part ${idx + 1} must include expected console output`);
+      assert.ok(part.tryIt, `Day ${day} Part ${idx + 1} must include a tryIt experiment`);
+      assert.ok(part.codeNotes && part.codeNotes.length >= 3, `Day ${day} Part ${idx + 1} must have >= 3 codeNotes`);
+
+      assert.ok(part.check.question, `Day ${day} Part ${idx + 1} check must have question text`);
+      assert.equal(part.check.options.length, 4, `Day ${day} Part ${idx + 1} check must have exactly 4 options`);
+      assert.equal(typeof part.check.answer, 'number', `Day ${day} Part ${idx + 1} check must have numerical answer`);
+      assert.ok(part.check.answer >= 0 && part.check.answer < 4, `Day ${day} Part ${idx + 1} answer must be in [0..3]`);
+      assert.ok(part.check.why, `Day ${day} Part ${idx + 1} check must have educational rationale`);
+    });
+
+    assert.ok(dayTotalWords >= 2950, `Day ${day} total words (${dayTotalWords}) must be >= 2950 words`);
+    assert.ok(lesson.summary && lesson.summary.length >= 4, `Day ${day} summary must have >= 4 bullet points`);
+    assert.ok(lesson.projectStep && lesson.projectStep.title && lesson.projectStep.steps.length >= 3, `Day ${day} projectStep must have title and >= 3 steps`);
+  }
+});
+
+test('Block 213 (TASK-1101..1105): bcom_law Days 11–15 Gate v2 on-disk visual JSON files uphold cryptographic SHA-256 bindings & ledger-sheet template', async () => {
+  const fs = await import('node:fs');
+  const path = await import('node:path');
+  const crypto = await import('node:crypto');
+  const { loadDayFile, getVisual, clearDayFileCache } = await import('../src/lib/visuals/loadVisuals');
+  const { getTappableLabelsForVisual } = await import('../src/lib/visuals/visualRules');
+
+  clearDayFileCache();
+
+  for (let day = 11; day <= 15; day++) {
+    const dayPadded = String(day).padStart(2, '0');
+    const filePath = path.resolve(process.cwd(), `src/lib/data/lessonVisuals/bcom_law/day-${dayPadded}.json`);
+    assert.ok(fs.existsSync(filePath), `On-disk visual file missing: ${filePath}`);
+
+    const dayFile = loadDayFile('bcom_law', day);
+    assert.ok(dayFile, `loadDayFile failed for bcom_law Day ${day}`);
+    assert.equal(dayFile.schemaVersion, 1);
+    assert.equal(dayFile.prefix, 'bcom_law');
+    assert.equal(dayFile.day, day);
+    assert.equal(dayFile.entries.length, 5, `Expected 5 entries in bcom_law Day ${day}`);
+
+    const lesson = getLongLesson('bcom_law', day)!;
+    for (let partIdx = 0; partIdx < 5; partIdx++) {
+      const entry = dayFile.entries[partIdx];
+      const part = lesson.parts[partIdx];
+
+      assert.equal(entry.partTitle, part.title, `partTitle mismatch at bcom_law Day ${day} Part ${partIdx}`);
+      const expectedHash = crypto.createHash('sha256').update(part.code || '').digest('hex');
+      assert.equal(entry.codeHash, expectedHash, `codeHash mismatch at bcom_law Day ${day} Part ${partIdx}`);
+
+      const visual = getVisual('bcom_law', day, partIdx);
+      assert.ok(visual, `getVisual returned null for bcom_law Day ${day} Part ${partIdx}`);
+      assert.equal(visual.template, 'ledger-sheet', `Expected template "ledger-sheet" for bcom_law`);
+      assert.equal(visual.steps.length, 4, `Expected 4 synchronized steps for bcom_law Day ${day} Part ${partIdx}`);
+
+      assert.deepEqual(
+        visual.steps.map((s: any) => s.at),
+        ['intro', 'say1', 'example', 'tryIt'],
+        `Step markers must be ['intro', 'say1', 'example', 'tryIt']`
+      );
+
+      visual.steps.forEach((step: any, stepIdx: number) => {
+        assert.equal(step.isBalanced, true, `Step ${stepIdx} in Day ${day} Part ${partIdx} must be balanced`);
+        assert.equal(step.totalDebit, step.totalCredit, `Step ${stepIdx} debits must equal credits`);
+      });
+
+      const labels = getTappableLabelsForVisual(visual);
+      assert.ok(labels.length > 0, `Expected non-empty tappable labels for bcom_law Day ${day} Part ${partIdx}`);
+    }
+  }
+});
+
+test('Block 213 (TASK-1101..1105): Domain specifics & deterministic Python code verification across Days 11–15', () => {
+  // Day 11: Securities Act of 1933: The Howey Test & Section 5 Gun-Jumping Invariants (TASK-1101)
+  const d11 = getLongLesson('bcom_law', 11)!;
+  assert.ok(d11.parts[0].code?.includes('evaluate_howey_test'));
+  assert.ok(d11.parts[1].code?.includes('evaluate_section_5_compliance'));
+  assert.ok(d11.parts[2].code?.includes('evaluate_gun_jumping_safe_harbor'));
+  assert.ok(d11.parts[3].code?.includes('classify_securities_exemption'));
+  assert.ok(d11.parts[4].code?.includes('calculate_section_11_damages_exposure'));
+
+  // Day 12: Private Placements, Regulation D (Rule 506) & Accredited Investor Invariants (TASK-1102)
+  const d12 = getLongLesson('bcom_law', 12)!;
+  assert.ok(d12.parts[0].code?.includes('evaluate_ralston_purina_exemption'));
+  assert.ok(d12.parts[1].code?.includes('evaluate_reg_d_offering_compliance'));
+  assert.ok(d12.parts[2].code?.includes('audit_accredited_investor_status'));
+  assert.ok(d12.parts[3].code?.includes('evaluate_rule_144_resale'));
+  assert.ok(d12.parts[4].code?.includes('evaluate_reg_s_compliance'));
+
+  // Day 13: Public Offerings & Underwriting Law: S-1 Registration, Syndicates & Green Shoe Options (TASK-1103)
+  const d13 = getLongLesson('bcom_law', 13)!;
+  assert.ok(d13.parts[0].code?.includes('audit_s1_registration_statement'));
+  assert.ok(d13.parts[1].code?.includes('model_underwriting_structure'));
+  assert.ok(d13.parts[2].code?.includes('audit_underwriting_agreement_closing'));
+  assert.ok(d13.parts[3].code?.includes('execute_green_shoe_stabilization'));
+  assert.ok(d13.parts[4].code?.includes('audit_underwriter_due_diligence_program'));
+
+  // Day 14: Securities Litigation Defense: PSLRA Safe Harbor, Basic v. Levinson & Loss Causation (TASK-1104)
+  const d14 = getLongLesson('bcom_law', 14)!;
+  assert.ok(d14.parts[0].code?.includes('evaluate_10b5_complaint_viability'));
+  assert.ok(d14.parts[1].code?.includes('evaluate_class_certification_price_impact'));
+  assert.ok(d14.parts[2].code?.includes('evaluate_tellabs_scienter_pleading'));
+  assert.ok(d14.parts[3].code?.includes('evaluate_pslra_safe_harbor'));
+  assert.ok(d14.parts[4].code?.includes('evaluate_loss_causation_econometrics'));
+
+  // Day 15: ⭐ Milestone 3 Capstone: Capital Markets Syndicate & Securities Enforcement Control Tower (TASK-1105)
+  const d15 = getLongLesson('bcom_law', 15)!;
+  assert.ok(d15.parts[0].code?.includes('audit_tier1_capital_formation'));
+  assert.ok(d15.parts[1].code?.includes('execute_tier2_ipo_syndicate_command'));
+  assert.ok(d15.parts[2].code?.includes('audit_tier3_barchris_due_diligence_clearance'));
+  assert.ok(d15.parts[3].code?.includes('execute_tier4_securities_defense_command'));
+  assert.ok(d15.parts[4].code?.includes('execute_milestone3_master_boardroom_certification'));
+});
+
+
+
 
