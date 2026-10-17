@@ -619,6 +619,253 @@ test('All 14 B.Com & Business Specializations 100% Complete: Milestone 1 Certifi
   }
 });
 
+test('Block 202 (TASK-801..805): bcom_ecom Days 6–10 5-part architecture, >= 580 words per part, >= 2,950 total words & >= 20.0 minutes spoken audio', () => {
+  for (let day = 6; day <= 10; day++) {
+    const lesson = getLongLesson('bcom_ecom', day);
+    assert.ok(lesson, `bcom_ecom Day ${day} lesson must be defined`);
+    assert.equal(lesson.coursePrefix, 'bcom_ecom');
+    assert.equal(lesson.day, day);
+    assert.equal(lesson.parts.length, 5, `Day ${day} must have exactly 5 parts`);
 
+    const spoken = estimateSpokenMinutes(lesson);
+    assert.ok(spoken >= 20.0, `Day ${day} spoken minutes (${spoken}) must be >= 20.0 min`);
+    const total = estimateLessonMinutes(lesson);
+    assert.ok(total >= 35.0, `Day ${day} total lesson minutes (${total}) must be >= 35.0 min`);
 
+    let dayTotalWords = 0;
+    lesson.parts.forEach((part, idx) => {
+      const partWords = (part.say as string[]).reduce((sum, p) => sum + p.split(/\s+/).filter(Boolean).length, 0);
+      dayTotalWords += partWords;
+      assert.ok(partWords >= 580, `Day ${day} Part ${idx + 1} words (${partWords}) must be >= 580 words`);
+      assert.ok(part.title, `Day ${day} Part ${idx + 1} must have a title`);
+      assert.ok(part.say.length >= 3, `Day ${day} Part ${idx + 1} must have >= 3 spoken paragraphs`);
+      assert.ok(part.example, `Day ${day} Part ${idx + 1} must include a real-world e-commerce example`);
+      assert.ok(part.code, `Day ${day} Part ${idx + 1} must include executable Python code`);
+      assert.ok(part.output, `Day ${day} Part ${idx + 1} must include expected console output`);
+      assert.ok(part.tryIt, `Day ${day} Part ${idx + 1} must include a tryIt experiment`);
+      assert.ok(part.codeNotes && part.codeNotes.length >= 3, `Day ${day} Part ${idx + 1} must have >= 3 codeNotes`);
 
+      assert.ok(part.check.question, `Day ${day} Part ${idx + 1} check must have question text`);
+      assert.equal(part.check.options.length, 4, `Day ${day} Part ${idx + 1} check must have exactly 4 options`);
+      assert.equal(typeof part.check.answer, 'number', `Day ${day} Part ${idx + 1} check must have numerical answer`);
+      assert.ok(part.check.answer >= 0 && part.check.answer < 4, `Day ${day} Part ${idx + 1} answer must be in [0..3]`);
+      assert.ok(part.check.why, `Day ${day} Part ${idx + 1} check must have educational rationale`);
+    });
+
+    assert.ok(dayTotalWords >= 2950, `Day ${day} total words (${dayTotalWords}) must be >= 2950 words`);
+  }
+});
+
+test('Block 202 (TASK-801..805): bcom_ecom Days 6–10 Gate v2 on-disk visual JSON files uphold cryptographic SHA-256 bindings & funnel template', async () => {
+  const fs = await import('node:fs');
+  const path = await import('node:path');
+  const crypto = await import('node:crypto');
+  const { loadDayFile, getVisual, clearDayFileCache } = await import('../src/lib/visuals/loadVisuals');
+
+  clearDayFileCache();
+
+  for (let day = 6; day <= 10; day++) {
+    const dayPadded = String(day).padStart(2, '0');
+    const filePath = path.resolve(process.cwd(), `src/lib/data/lessonVisuals/bcom_ecom/day-${dayPadded}.json`);
+    assert.ok(fs.existsSync(filePath), `On-disk visual file missing: ${filePath}`);
+
+    const dayFile = loadDayFile('bcom_ecom', day);
+    assert.ok(dayFile, `loadDayFile failed for bcom_ecom Day ${day}`);
+    assert.equal(dayFile.schemaVersion, 1);
+    assert.equal(dayFile.prefix, 'bcom_ecom');
+    assert.equal(dayFile.day, day);
+    assert.equal(dayFile.entries.length, 5, `Expected 5 entries in bcom_ecom Day ${day}`);
+
+    const lesson = getLongLesson('bcom_ecom', day)!;
+    for (let partIdx = 0; partIdx < 5; partIdx++) {
+      const entry = dayFile.entries[partIdx];
+      const part = lesson.parts[partIdx];
+
+      assert.equal(entry.partTitle, part.title, `partTitle mismatch at bcom_ecom Day ${day} Part ${partIdx}`);
+      const expectedHash = crypto.createHash('sha256').update(part.code || '').digest('hex');
+      assert.equal(entry.codeHash, expectedHash, `codeHash mismatch at bcom_ecom Day ${day} Part ${partIdx}`);
+
+      const visual = getVisual('bcom_ecom', day, partIdx);
+      assert.ok(visual, `getVisual returned null for bcom_ecom Day ${day} Part ${partIdx}`);
+      assert.equal(visual.template, 'funnel', `Expected template "funnel" for bcom_ecom`);
+      assert.equal(visual.steps.length, 4, `Expected 4 synchronized steps for bcom_ecom Day ${day} Part ${partIdx}`);
+      assert.deepEqual(
+        visual.steps.map(s => s.at),
+        ['intro', 'say1', 'example', 'tryIt'],
+        `Step markers must be ['intro', 'say1', 'example', 'tryIt']`
+      );
+    }
+  }
+});
+
+test('Block 202 (TASK-801..805): Domain specifics & deterministic Python code verification across Days 6–10', () => {
+  // Day 6: Checkout Flow & Payment Gateway
+  const d6 = getLongLesson('bcom_ecom', 6)!;
+  assert.ok(d6.parts[0].code?.includes('model_checkout_funnel_conversion'));
+  assert.ok(d6.parts[1].code?.includes('model_payment_gateway_net_settlement'));
+  assert.ok(d6.parts[2].code?.includes('model_3ds2_risk_authentication'));
+  assert.ok(d6.parts[3].code?.includes('model_multi_gateway_smart_routing'));
+  assert.ok(d6.parts[4].code?.includes('model_enterprise_checkout_command_gateway'));
+
+  // Day 7: Order Management Systems (OMS) & Split Shipments
+  const d7 = getLongLesson('bcom_ecom', 7)!;
+  assert.ok(d7.parts[0].code?.includes('model_oms_order_state_machine'));
+  assert.ok(d7.parts[1].code?.includes('model_multi_warehouse_order_allocation'));
+  assert.ok(d7.parts[2].code?.includes('model_split_shipment_consolidation_tradeoffs'));
+  assert.ok(d7.parts[3].code?.includes('simulate_distributed_oms_event_pipeline'));
+  assert.ok(d7.parts[4].code?.includes('model_enterprise_oms_command_gateway'));
+
+  // Day 8: Inventory Management & Stockouts
+  const d8 = getLongLesson('bcom_ecom', 8)!;
+  assert.ok(d8.parts[0].code?.includes('model_inventory_carrying_costs_and_stockout_loss'));
+  assert.ok(d8.parts[1].code?.includes('model_stochastic_safety_stock'));
+  assert.ok(d8.parts[2].code?.includes('model_rop_and_eoq_inventory_optimization'));
+  assert.ok(d8.parts[3].code?.includes('simulate_continuous_inventory_review_cycles'));
+  assert.ok(d8.parts[4].code?.includes('model_enterprise_inventory_command_gateway'));
+
+  // Day 9: Warehousing, Pick & Pack Operations
+  const d9 = getLongLesson('bcom_ecom', 9)!;
+  assert.ok(d9.parts[0].code?.includes('model_warehouse_picking_efficiency'));
+  assert.ok(d9.parts[1].code?.includes('model_carton_size_optimization_and_dunnage'));
+  assert.ok(d9.parts[2].code?.includes('model_carrier_chargeable_volumetric_weight'));
+  assert.ok(d9.parts[3].code?.includes('simulate_fulfillment_center_throughput_pipeline'));
+  assert.ok(d9.parts[4].code?.includes('model_enterprise_warehouse_command_gateway'));
+
+  // Day 10: Logistics, 3PL Carriers & COD RTO Mitigation
+  const d10 = getLongLesson('bcom_ecom', 10)!;
+  assert.ok(d10.parts[0].code?.includes('model_multi_carrier_logistics_routing'));
+  assert.ok(d10.parts[1].code?.includes('model_cod_rto_economic_loss'));
+  assert.ok(d10.parts[2].code?.includes('model_predictive_rto_scoring_and_otp_intervention'));
+  assert.ok(d10.parts[3].code?.includes('simulate_dynamic_carrier_allocation_and_rto_defense'));
+  assert.ok(d10.parts[4].code?.includes('model_enterprise_logistics_command_gateway'));
+});
+
+test('Block 203 (TASK-806..810): bcom_ecom Days 11–15 5-part architecture, >= 580 words per part, >= 2,950 total words & >= 20.0 minutes spoken audio', () => {
+  for (let day = 11; day <= 15; day++) {
+    const lesson = getLongLesson('bcom_ecom', day);
+    assert.ok(lesson, `bcom_ecom Day ${day} lesson must be defined`);
+    assert.equal(lesson.coursePrefix, 'bcom_ecom');
+    assert.equal(lesson.day, day);
+    assert.equal(lesson.parts.length, 5, `Day ${day} must have exactly 5 parts`);
+
+    const spoken = estimateSpokenMinutes(lesson);
+    assert.ok(spoken >= 20.0, `Day ${day} spoken minutes (${spoken}) must be >= 20.0 min`);
+    const total = estimateLessonMinutes(lesson);
+    assert.ok(total >= 35.0, `Day ${day} total lesson minutes (${total}) must be >= 35.0 min`);
+
+    let dayTotalWords = 0;
+    lesson.parts.forEach((part, idx) => {
+      const partWords = (part.say as string[]).reduce((sum, p) => sum + p.split(/\s+/).filter(Boolean).length, 0);
+      dayTotalWords += partWords;
+      assert.ok(partWords >= 580, `Day ${day} Part ${idx + 1} words (${partWords}) must be >= 580 words`);
+      assert.ok(part.title, `Day ${day} Part ${idx + 1} must have a title`);
+      assert.ok(part.say.length >= 3, `Day ${day} Part ${idx + 1} must have >= 3 spoken paragraphs`);
+      assert.ok(part.example, `Day ${day} Part ${idx + 1} must include a real-world e-commerce example`);
+      assert.ok(part.code, `Day ${day} Part ${idx + 1} must include executable Python code`);
+      assert.ok(part.output, `Day ${day} Part ${idx + 1} must include expected console output`);
+      assert.ok(part.tryIt, `Day ${day} Part ${idx + 1} must include a tryIt experiment`);
+      assert.ok(part.codeNotes && part.codeNotes.length >= 3, `Day ${day} Part ${idx + 1} must have >= 3 codeNotes`);
+
+      assert.ok(part.check.question, `Day ${day} Part ${idx + 1} check must have question text`);
+      assert.equal(part.check.options.length, 4, `Day ${day} Part ${idx + 1} check must have exactly 4 options`);
+      assert.equal(typeof part.check.answer, 'number', `Day ${day} Part ${idx + 1} check must have numerical answer`);
+      assert.ok(part.check.answer >= 0 && part.check.answer < 4, `Day ${day} Part ${idx + 1} answer must be in [0..3]`);
+      assert.ok(part.check.why, `Day ${day} Part ${idx + 1} check must have educational rationale`);
+    });
+
+    assert.ok(dayTotalWords >= 2950, `Day ${day} total words (${dayTotalWords}) must be >= 2950 words`);
+  }
+});
+
+test('Block 203 (TASK-806..810): bcom_ecom Days 11–15 Gate v2 on-disk visual JSON files uphold cryptographic SHA-256 bindings & funnel template', async () => {
+  const fs = await import('node:fs');
+  const path = await import('node:path');
+  const crypto = await import('node:crypto');
+  const { loadDayFile, getVisual, clearDayFileCache } = await import('../src/lib/visuals/loadVisuals');
+
+  clearDayFileCache();
+
+  for (let day = 11; day <= 15; day++) {
+    const dayPadded = String(day).padStart(2, '0');
+    const filePath = path.resolve(process.cwd(), `src/lib/data/lessonVisuals/bcom_ecom/day-${dayPadded}.json`);
+    assert.ok(fs.existsSync(filePath), `On-disk visual file missing: ${filePath}`);
+
+    const dayFile = loadDayFile('bcom_ecom', day);
+    assert.ok(dayFile, `loadDayFile failed for bcom_ecom Day ${day}`);
+    assert.equal(dayFile.schemaVersion, 1);
+    assert.equal(dayFile.prefix, 'bcom_ecom');
+    assert.equal(dayFile.day, day);
+    assert.equal(dayFile.entries.length, 5, `Expected 5 entries in bcom_ecom Day ${day}`);
+
+    const lesson = getLongLesson('bcom_ecom', day)!;
+    for (let partIdx = 0; partIdx < 5; partIdx++) {
+      const entry = dayFile.entries[partIdx];
+      const part = lesson.parts[partIdx];
+
+      assert.equal(entry.partTitle, part.title, `partTitle mismatch at bcom_ecom Day ${day} Part ${partIdx}`);
+      const expectedHash = crypto.createHash('sha256').update(part.code || '').digest('hex');
+      assert.equal(entry.codeHash, expectedHash, `codeHash mismatch at bcom_ecom Day ${day} Part ${partIdx}`);
+
+      const visual = getVisual('bcom_ecom', day, partIdx);
+      assert.ok(visual, `getVisual returned null for bcom_ecom Day ${day} Part ${partIdx}`);
+      assert.equal(visual.template, 'funnel', `Expected template "funnel" for bcom_ecom`);
+      assert.equal(visual.steps.length, 4, `Expected 4 synchronized steps for bcom_ecom Day ${day} Part ${partIdx}`);
+      assert.deepEqual(
+        visual.steps.map(s => s.at),
+        ['intro', 'say1', 'example', 'tryIt'],
+        `Step markers must be ['intro', 'say1', 'example', 'tryIt']`
+      );
+    }
+  }
+});
+
+test('Block 203 (TASK-806..810): Domain specifics & deterministic Python code verification across Days 11–15', () => {
+  // Day 11: Reverse Logistics & Returns Management
+  const d11 = getLongLesson('bcom_ecom', 11)!;
+  assert.ok(d11.parts[0].code?.includes('model_reverse_logistics_economics'));
+  assert.ok(d11.parts[1].code?.includes('process_automated_rma_request'));
+  assert.ok(d11.parts[2].code?.includes('model_warehouse_restocking_and_grading'));
+  assert.ok(d11.parts[3].code?.includes('audit_return_fraud_and_tampering'));
+  assert.ok(d11.parts[4].code?.includes('run_enterprise_reverse_logistics_gateway'));
+
+  // Day 12: Marketplace Operations & Buy Box
+  const d12 = getLongLesson('bcom_ecom', 12)!;
+  assert.ok(d12.parts[0].code?.includes('model_marketplace_channel_economics'));
+  assert.ok(d12.parts[1].code?.includes('evaluate_marketplace_buy_box'));
+  assert.ok(d12.parts[2].code?.includes('simulate_algorithmic_repricing_war'));
+  assert.ok(d12.parts[3].code?.includes('simulate_ondc_beckn_transaction'));
+  assert.ok(d12.parts[4].code?.includes('run_enterprise_multichannel_marketplace_gateway'));
+
+  // Day 13: D2C Tech Stacks & Headless Commerce
+  const d13 = getLongLesson('bcom_ecom', 13)!;
+  assert.ok(d13.parts[0].code?.includes('model_headless_vs_monolith_tco'));
+  assert.ok(d13.parts[1].code?.includes('simulate_headless_graphql_gateway'));
+  assert.ok(d13.parts[2].code?.includes('model_core_web_vitals_conversion_elasticity'));
+  assert.ok(d13.parts[3].code?.includes('simulate_flash_sale_concurrency'));
+  assert.ok(d13.parts[4].code?.includes('run_enterprise_headless_gateway'));
+
+  // Day 14: Customer Support & Post-Purchase Experience
+  const d14 = getLongLesson('bcom_ecom', 14)!;
+  assert.ok(d14.parts[0].code?.includes('model_wismo_and_post_purchase_economics'));
+  assert.ok(d14.parts[1].code?.includes('model_omnichannel_support_slas'));
+  assert.ok(d14.parts[2].code?.includes('simulate_ai_support_deflection_engine'));
+  assert.ok(d14.parts[3].code?.includes('calculate_erlang_c_staffing'));
+  assert.ok(d14.parts[4].code?.includes('run_enterprise_cx_operations_gateway'));
+
+  // Day 15: Milestone 2 Capstone: Autonomous Supply Chain, OMS & Logistics Engine
+  const d15 = getLongLesson('bcom_ecom', 15)!;
+  assert.ok(d15.parts[0].code?.includes('model_inbound_procurement_and_allocation'));
+  assert.ok(d15.parts[1].code?.includes('route_order_optimally'));
+  assert.ok(d15.parts[2].code?.includes('run_logistics_and_risk_control_tower'));
+  assert.ok(d15.parts[3].code?.includes('simulate_bfcm_mega_sale_stress_test'));
+  assert.ok(d15.parts[4].code?.includes('evaluate_milestone2_capstone_accreditation'));
+});
+
+test('Course bcom_ecom 100% Complete: All 15 Days & Milestone 2 Capstone Certified', () => {
+  for (let day = 1; day <= 15; day++) {
+    const lesson = getLongLesson('bcom_ecom', day);
+    assert.ok(lesson, `bcom_ecom Day ${day} must be defined`);
+    assert.equal(lesson.day, day);
+    assert.equal(lesson.parts.length, 5, `bcom_ecom Day ${day} must have 5 parts`);
+  }
+});
