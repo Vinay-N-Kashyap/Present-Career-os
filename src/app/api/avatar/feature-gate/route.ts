@@ -18,6 +18,10 @@ export async function GET() {
       reason: config.reason,
       killSwitchActive: config.clientEnabled && !config.serverEnabled,
       version: '2.0.0-gated',
+    }, {
+      headers: {
+        'Cache-Control': 'public, s-maxage=60, stale-while-revalidate=120',
+      }
     });
   } catch (err) {
     // In any failure scenario, default safely to v1 legacy

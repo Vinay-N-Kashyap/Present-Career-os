@@ -42,6 +42,18 @@ export type TriStateMemoryResult =
   | { status: 'NOT_FOUND'; memory: AvatarMemory }
   | { status: 'ERROR'; error: string; memory: AvatarMemory };
 
+// In-Memory TTL Cache for Tri-State Memory Results to prevent Supabase query thrashing
+const memoryCache = new Map<string, { result: TriStateMemoryResult; at: number }>();
+const MEMORY_CACHE_TTL_MS = 120 * 1000; // 2 minutes
+
+export function invalidateAvatarMemoryCache(userId?: string): void {
+  if (userId) {
+    memoryCache.delete(userId);
+  } else {
+    memoryCache.clear();
+  }
+}
+
 export async function loadAvatarMemory(userId: string): Promise<AvatarMemory> {
   const result = await loadAvatarMemoryTriState(userId);
   return result.memory;
@@ -51,9 +63,17 @@ export async function loadAvatarMemoryTriState(userId: string): Promise<TriState
   if (!userId) {
     return { status: 'ERROR', error: 'NO_USER_ID', memory: empty('') };
   }
+
+  const cached = memoryCache.get(userId);
+  if (cached && Date.now() - cached.at < MEMORY_CACHE_TTL_MS) {
+    return cached.result;
+  }
+
   const exists = await tableExists(TABLE);
   if (!exists) {
-    return { status: 'ERROR', error: 'TABLE_MISSING', memory: empty(userId) };
+    const res: TriStateMemoryResult = { status: 'ERROR', error: 'TABLE_MISSING', memory: empty(userId) };
+    memoryCache.set(userId, { result: res, at: Date.now() });
+    return res;
   }
   const client = await getCampusSupabaseClient();
   const { data, error } = await client
@@ -63,14 +83,19 @@ export async function loadAvatarMemoryTriState(userId: string): Promise<TriState
     .maybeSingle();
 
   if (error) {
-    return { status: 'ERROR', error: error.message || 'DATABASE_QUERY_ERROR', memory: empty(userId) };
+    const res: TriStateMemoryResult = { status: 'ERROR', error: error.message || 'DATABASE_QUERY_ERROR', memory: empty(userId) };
+    // Cache errors briefly (10s) to avoid repeated hammering during outages
+    memoryCache.set(userId, { result: res, at: Date.now() - (MEMORY_CACHE_TTL_MS - 10_000) });
+    return res;
   }
 
   if (!data) {
-    return { status: 'NOT_FOUND', memory: empty(userId) };
+    const res: TriStateMemoryResult = { status: 'NOT_FOUND', memory: empty(userId) };
+    memoryCache.set(userId, { result: res, at: Date.now() });
+    return res;
   }
 
-  return {
+  const res: TriStateMemoryResult = {
     status: 'SUCCESS',
     memory: {
       userId,
@@ -81,6 +106,8 @@ export async function loadAvatarMemoryTriState(userId: string): Promise<TriState
       relationshipState: data.relationship_state || {},
     },
   };
+  memoryCache.set(userId, { result: res, at: Date.now() });
+  return res;
 }
 
 export async function saveAvatarMemory(userId: string, incoming: unknown) {
@@ -97,6 +124,9 @@ export async function saveAvatarMemory(userId: string, incoming: unknown) {
     updated_at: new Date().toISOString(),
   }, { onConflict: 'user_id' });
   if (error) throw error;
+
+  // Invalidate memory cache so next read gets updated state
+  invalidateAvatarMemoryCache(userId);
 
   return { ok: true as const };
 }

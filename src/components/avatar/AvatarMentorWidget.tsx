@@ -162,6 +162,10 @@ export default function AvatarMentorWidget({
   const rendererRef = useRef<THREE.WebGLRenderer | null>(null);
   const streamRef = useRef<MediaStream | null>(null);
   const animFrameRef = useRef<number | null>(null);
+  // Voice input deduplication & debounce guards
+  const lastSentMsgRef = useRef<string>('');
+  const lastSentTimeRef = useRef<number>(0);
+  const speechDebounceTimerRef = useRef<any>(null);
 
   useEffect(() => {
     voiceFreqRef.current = voiceFreq;
@@ -545,6 +549,15 @@ export default function AvatarMentorWidget({
   const sendMessage = useCallback(async (text?: string) => {
     const msg = (text || input).trim();
     if (!msg || loading) return;
+
+    // Deduplication guard: ignore identical messages dispatched within 1500ms
+    const now = Date.now();
+    if (lastSentMsgRef.current === msg.toLowerCase() && now - lastSentTimeRef.current < 1500) {
+      return;
+    }
+    lastSentMsgRef.current = msg.toLowerCase();
+    lastSentTimeRef.current = now;
+
     setInput('');
     setMessages(prev => [...prev, { role: 'user', content: msg }]);
     setMessages(prev => {
@@ -854,10 +867,17 @@ export default function AvatarMentorWidget({
 
           const text = transcript.trim().toLowerCase();
 
-          // In active conversation mode, dispatch speech directly to AI mentor
+          // In active conversation mode, dispatch speech to AI mentor with 300ms debounce
           if (conversingRef.current) {
             console.log("[Conversing] Direct speech parsed:", transcript);
-            sendMessageRef.current(transcript);
+            if (speechDebounceTimerRef.current) {
+              clearTimeout(speechDebounceTimerRef.current);
+            }
+            speechDebounceTimerRef.current = setTimeout(() => {
+              if (!speakingRef.current && !loadingRef.current) {
+                sendMessageRef.current(transcript);
+              }
+            }, 300);
             return;
           }
 
