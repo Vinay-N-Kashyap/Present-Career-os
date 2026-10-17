@@ -1,0 +1,1709 @@
+{
+  "schemaVersion": 1,
+  "prefix": "git_vcs",
+  "day": 17,
+  "promptSha": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Interactive Rebase Architecture: The `git-rebase-todo` Grammar & Lifecycle",
+      "codeHash": "d16cf8b7e32374d7a9d34fdcc2a2a121861dfde43306796f5f696f21804e4e4c",
+      "spec": {
+        "template": "workflow",
+        "title": "Interactive Rebase Architecture: The `git-reb... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Working Tree",
+            "subtext": "git add",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Staging Index",
+            "subtext": "git commit",
+            "tone": "ok"
+          },
+          {
+            "id": "s3",
+            "name": "Feature Branch",
+            "subtext": "git rebase",
+            "tone": "data"
+          },
+          {
+            "id": "s4",
+            "name": "Mainline CI",
+            "subtext": "Verified Merge",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Working Tree): Initialize Interactive Rebase Architecture: The `gi...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "git add",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "git commit",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Feature Branch",
+                "subtext": "git rebase",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Mainline CI",
+                "subtext": "Verified Merge",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Staging Index): Process core workflow stage.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "git add",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "git commit",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Feature Branch",
+                "subtext": "git rebase",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Mainline CI",
+                "subtext": "Verified Merge",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Feature Branch): Verify quality and invariants.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "Zero Defects",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "git add",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "git commit",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Feature Branch",
+                "subtext": "git rebase",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Mainline CI",
+                "subtext": "Verified Merge",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Mainline CI): Commit end-to-end delivery.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "SLA Met ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "git add",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "git commit",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Feature Branch",
+                "subtext": "git rebase",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Mainline CI",
+                "subtext": "Verified Merge",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Interactive Rebase Architecture: The `git-reb... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Working Tree",
+            "subtext": "git add",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Staging Index",
+            "subtext": "git commit",
+            "tone": "ok"
+          },
+          {
+            "id": "s3",
+            "name": "Feature Branch",
+            "subtext": "git rebase",
+            "tone": "data"
+          },
+          {
+            "id": "s4",
+            "name": "Mainline CI",
+            "subtext": "Verified Merge",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Working Tree): Initialize Interactive Rebase Architecture: The `gi...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "git add",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "git commit",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Feature Branch",
+                "subtext": "git rebase",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Mainline CI",
+                "subtext": "Verified Merge",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Staging Index): Process core workflow stage.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "git add",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "git commit",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Feature Branch",
+                "subtext": "git rebase",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Mainline CI",
+                "subtext": "Verified Merge",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Feature Branch): Verify quality and invariants.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "Zero Defects",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "git add",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "git commit",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Feature Branch",
+                "subtext": "git rebase",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Mainline CI",
+                "subtext": "Verified Merge",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Mainline CI): Commit end-to-end delivery.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "SLA Met ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "git add",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "git commit",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Feature Branch",
+                "subtext": "git rebase",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Mainline CI",
+                "subtext": "Verified Merge",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Commit Consolidation: `squash` vs `fixup` & Log Curation",
+      "codeHash": "f2bb9b179a7a0e7074096d70fced645dfdc7cc0d9b73024012ba3c975f10fc1a",
+      "spec": {
+        "template": "workflow",
+        "title": "Commit Consolidation: `squash` vs `fixup` & L... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Working Tree",
+            "subtext": "git add",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Staging Index",
+            "subtext": "git commit",
+            "tone": "ok"
+          },
+          {
+            "id": "s3",
+            "name": "Feature Branch",
+            "subtext": "git rebase",
+            "tone": "data"
+          },
+          {
+            "id": "s4",
+            "name": "Mainline CI",
+            "subtext": "Verified Merge",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Working Tree): Initialize Commit Consolidation: `squash` vs `fixup...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "git add",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "git commit",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Feature Branch",
+                "subtext": "git rebase",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Mainline CI",
+                "subtext": "Verified Merge",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Staging Index): Process core workflow stage.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "git add",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "git commit",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Feature Branch",
+                "subtext": "git rebase",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Mainline CI",
+                "subtext": "Verified Merge",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Feature Branch): Verify quality and invariants.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "Zero Defects",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "git add",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "git commit",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Feature Branch",
+                "subtext": "git rebase",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Mainline CI",
+                "subtext": "Verified Merge",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Mainline CI): Commit end-to-end delivery.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "SLA Met ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "git add",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "git commit",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Feature Branch",
+                "subtext": "git rebase",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Mainline CI",
+                "subtext": "Verified Merge",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Commit Consolidation: `squash` vs `fixup` & L... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Working Tree",
+            "subtext": "git add",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Staging Index",
+            "subtext": "git commit",
+            "tone": "ok"
+          },
+          {
+            "id": "s3",
+            "name": "Feature Branch",
+            "subtext": "git rebase",
+            "tone": "data"
+          },
+          {
+            "id": "s4",
+            "name": "Mainline CI",
+            "subtext": "Verified Merge",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Working Tree): Initialize Commit Consolidation: `squash` vs `fixup...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "git add",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "git commit",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Feature Branch",
+                "subtext": "git rebase",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Mainline CI",
+                "subtext": "Verified Merge",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Staging Index): Process core workflow stage.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "git add",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "git commit",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Feature Branch",
+                "subtext": "git rebase",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Mainline CI",
+                "subtext": "Verified Merge",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Feature Branch): Verify quality and invariants.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "Zero Defects",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "git add",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "git commit",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Feature Branch",
+                "subtext": "git rebase",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Mainline CI",
+                "subtext": "Verified Merge",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Mainline CI): Commit end-to-end delivery.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "SLA Met ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "git add",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "git commit",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Feature Branch",
+                "subtext": "git rebase",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Mainline CI",
+                "subtext": "Verified Merge",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Historical Revision: `reword` for Message Sanitation & `drop` for Dead Code Purge",
+      "codeHash": "53a7f6349894f2aa8bbeff022bfa12b3adeb04a651641a47bc29a8bdef6364cd",
+      "spec": {
+        "template": "workflow",
+        "title": "Historical Revision: `reword` for Message San... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Working Tree",
+            "subtext": "git add",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Staging Index",
+            "subtext": "git commit",
+            "tone": "ok"
+          },
+          {
+            "id": "s3",
+            "name": "Feature Branch",
+            "subtext": "git rebase",
+            "tone": "data"
+          },
+          {
+            "id": "s4",
+            "name": "Mainline CI",
+            "subtext": "Verified Merge",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Working Tree): Initialize Historical Revision: `reword` for Messag...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "git add",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "git commit",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Feature Branch",
+                "subtext": "git rebase",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Mainline CI",
+                "subtext": "Verified Merge",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Staging Index): Process core workflow stage.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "git add",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "git commit",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Feature Branch",
+                "subtext": "git rebase",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Mainline CI",
+                "subtext": "Verified Merge",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Feature Branch): Verify quality and invariants.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "Zero Defects",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "git add",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "git commit",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Feature Branch",
+                "subtext": "git rebase",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Mainline CI",
+                "subtext": "Verified Merge",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Mainline CI): Commit end-to-end delivery.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "SLA Met ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "git add",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "git commit",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Feature Branch",
+                "subtext": "git rebase",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Mainline CI",
+                "subtext": "Verified Merge",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Historical Revision: `reword` for Message San... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Working Tree",
+            "subtext": "git add",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Staging Index",
+            "subtext": "git commit",
+            "tone": "ok"
+          },
+          {
+            "id": "s3",
+            "name": "Feature Branch",
+            "subtext": "git rebase",
+            "tone": "data"
+          },
+          {
+            "id": "s4",
+            "name": "Mainline CI",
+            "subtext": "Verified Merge",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Working Tree): Initialize Historical Revision: `reword` for Messag...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "git add",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "git commit",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Feature Branch",
+                "subtext": "git rebase",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Mainline CI",
+                "subtext": "Verified Merge",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Staging Index): Process core workflow stage.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "git add",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "git commit",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Feature Branch",
+                "subtext": "git rebase",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Mainline CI",
+                "subtext": "Verified Merge",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Feature Branch): Verify quality and invariants.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "Zero Defects",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "git add",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "git commit",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Feature Branch",
+                "subtext": "git rebase",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Mainline CI",
+                "subtext": "Verified Merge",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Mainline CI): Commit end-to-end delivery.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "SLA Met ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "git add",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "git commit",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Feature Branch",
+                "subtext": "git rebase",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Mainline CI",
+                "subtext": "Verified Merge",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Surgical Decomposition & Automation: `edit`, Commit Splitting & `exec` Test Gates",
+      "codeHash": "3e39654e71420ea6e225e818efa1ddc14c0cb37130e7594a8c4a5b46cc522df7",
+      "spec": {
+        "template": "workflow",
+        "title": "Surgical Decomposition & Automation: `edit`, ... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Working Tree",
+            "subtext": "git add",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Staging Index",
+            "subtext": "git commit",
+            "tone": "ok"
+          },
+          {
+            "id": "s3",
+            "name": "Feature Branch",
+            "subtext": "git rebase",
+            "tone": "data"
+          },
+          {
+            "id": "s4",
+            "name": "Mainline CI",
+            "subtext": "Verified Merge",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Working Tree): Initialize Surgical Decomposition & Automation: `ed...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "git add",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "git commit",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Feature Branch",
+                "subtext": "git rebase",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Mainline CI",
+                "subtext": "Verified Merge",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Staging Index): Process core workflow stage.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "git add",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "git commit",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Feature Branch",
+                "subtext": "git rebase",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Mainline CI",
+                "subtext": "Verified Merge",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Feature Branch): Verify quality and invariants.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "Zero Defects",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "git add",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "git commit",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Feature Branch",
+                "subtext": "git rebase",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Mainline CI",
+                "subtext": "Verified Merge",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Mainline CI): Commit end-to-end delivery.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "SLA Met ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "git add",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "git commit",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Feature Branch",
+                "subtext": "git rebase",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Mainline CI",
+                "subtext": "Verified Merge",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Surgical Decomposition & Automation: `edit`, ... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Working Tree",
+            "subtext": "git add",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Staging Index",
+            "subtext": "git commit",
+            "tone": "ok"
+          },
+          {
+            "id": "s3",
+            "name": "Feature Branch",
+            "subtext": "git rebase",
+            "tone": "data"
+          },
+          {
+            "id": "s4",
+            "name": "Mainline CI",
+            "subtext": "Verified Merge",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Working Tree): Initialize Surgical Decomposition & Automation: `ed...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "git add",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "git commit",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Feature Branch",
+                "subtext": "git rebase",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Mainline CI",
+                "subtext": "Verified Merge",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Staging Index): Process core workflow stage.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "git add",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "git commit",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Feature Branch",
+                "subtext": "git rebase",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Mainline CI",
+                "subtext": "Verified Merge",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Feature Branch): Verify quality and invariants.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "Zero Defects",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "git add",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "git commit",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Feature Branch",
+                "subtext": "git rebase",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Mainline CI",
+                "subtext": "Verified Merge",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Mainline CI): Commit end-to-end delivery.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "SLA Met ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "git add",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "git commit",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Feature Branch",
+                "subtext": "git rebase",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Mainline CI",
+                "subtext": "Verified Merge",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Master Interactive Rebase Suite: Pull Request History Curation & Index Certification",
+      "codeHash": "66d82bb36736ef076183aa261e2a084b987f7a7674b589f3f6d8a58b0ea003fe",
+      "spec": {
+        "template": "workflow",
+        "title": "Master Interactive Rebase Suite: Pull Request... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Working Tree",
+            "subtext": "git add",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Staging Index",
+            "subtext": "git commit",
+            "tone": "ok"
+          },
+          {
+            "id": "s3",
+            "name": "Feature Branch",
+            "subtext": "git rebase",
+            "tone": "data"
+          },
+          {
+            "id": "s4",
+            "name": "Mainline CI",
+            "subtext": "Verified Merge",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Working Tree): Initialize Master Interactive Rebase Suite: Pull Re...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "git add",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "git commit",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Feature Branch",
+                "subtext": "git rebase",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Mainline CI",
+                "subtext": "Verified Merge",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Staging Index): Process core workflow stage.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "git add",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "git commit",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Feature Branch",
+                "subtext": "git rebase",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Mainline CI",
+                "subtext": "Verified Merge",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Feature Branch): Verify quality and invariants.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "Zero Defects",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "git add",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "git commit",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Feature Branch",
+                "subtext": "git rebase",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Mainline CI",
+                "subtext": "Verified Merge",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Mainline CI): Commit end-to-end delivery.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "SLA Met ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "git add",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "git commit",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Feature Branch",
+                "subtext": "git rebase",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Mainline CI",
+                "subtext": "Verified Merge",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Master Interactive Rebase Suite: Pull Request... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Working Tree",
+            "subtext": "git add",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Staging Index",
+            "subtext": "git commit",
+            "tone": "ok"
+          },
+          {
+            "id": "s3",
+            "name": "Feature Branch",
+            "subtext": "git rebase",
+            "tone": "data"
+          },
+          {
+            "id": "s4",
+            "name": "Mainline CI",
+            "subtext": "Verified Merge",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Working Tree): Initialize Master Interactive Rebase Suite: Pull Re...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "git add",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "git commit",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Feature Branch",
+                "subtext": "git rebase",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Mainline CI",
+                "subtext": "Verified Merge",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Staging Index): Process core workflow stage.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "git add",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "git commit",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Feature Branch",
+                "subtext": "git rebase",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Mainline CI",
+                "subtext": "Verified Merge",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Feature Branch): Verify quality and invariants.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "Zero Defects",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "git add",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "git commit",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Feature Branch",
+                "subtext": "git rebase",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Mainline CI",
+                "subtext": "Verified Merge",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Mainline CI): Commit end-to-end delivery.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "SLA Met ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "git add",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "git commit",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Feature Branch",
+                "subtext": "git rebase",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Mainline CI",
+                "subtext": "Verified Merge",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
