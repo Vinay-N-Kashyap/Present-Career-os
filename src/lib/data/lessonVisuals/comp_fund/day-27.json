@@ -1,0 +1,211 @@
+{
+  "day": 27,
+  "course": "comp_fund",
+  "entries": [
+    {
+      "stepId": "cf-d27-p1",
+      "partTitle": "Remote Access Protocols: Secure Shell (SSH Port 22) CLI vs Remote Desktop Protocol (RDP Port 3389)",
+      "template": "cells",
+      "codeHash": "c0d9300c91ce5652e40270c3adb59d9ab2b3c2a8c08deb01e1c084a4abe5f91e",
+      "data": {
+        "title": "Remote Infrastructure: Remote Access Protocols: Secure Shell (SSH Port 22) CLI vs Remote Desktop Protocol (RDP Port 3389)",
+        "headers": [
+          "Metric",
+          "Setting",
+          "Status",
+          "Verification"
+        ],
+        "rows": [
+          [
+            "Remote Protocol",
+            "Part 1",
+            "Active",
+            "Verified"
+          ],
+          [
+            "Tunnel Mode",
+            "Encrypted Tunnel",
+            "Routing",
+            "Verified"
+          ],
+          [
+            "QoS Budget",
+            "Sub-20ms RTT",
+            "Compliant",
+            "Verified"
+          ],
+          [
+            "Collaboration Index",
+            "100%",
+            "Ready",
+            "Verified"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d27-p2",
+      "partTitle": "SSH Port Forwarding & Cryptographic Tunneling: Local (-L), Remote (-R) & Dynamic SOCKS5 (-D) Proxies",
+      "template": "cells",
+      "codeHash": "d4831452ccb8b94188f41138b3a1597764252c74abe27017ca1ba796818faaeb",
+      "data": {
+        "title": "Remote Infrastructure: SSH Port Forwarding & Cryptographic Tunneling: Local (-L), Remote (-R) & Dynamic SOCKS5 (-D) Proxies",
+        "headers": [
+          "Metric",
+          "Setting",
+          "Status",
+          "Verification"
+        ],
+        "rows": [
+          [
+            "Remote Protocol",
+            "Part 2",
+            "Active",
+            "Verified"
+          ],
+          [
+            "Tunnel Mode",
+            "Encrypted Tunnel",
+            "Routing",
+            "Verified"
+          ],
+          [
+            "QoS Budget",
+            "Sub-20ms RTT",
+            "Compliant",
+            "Verified"
+          ],
+          [
+            "Collaboration Index",
+            "100%",
+            "Ready",
+            "Verified"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d27-p3",
+      "partTitle": "Cloud Virtual Desktop Infrastructure (VDI): Amazon WorkSpaces, Azure Virtual Desktop & Screen Scraping Mechanics",
+      "template": "cells",
+      "codeHash": "db5bed1ce497be5122db33de27adeae4e6f681af821fd9a7c5b7acd46b62e985",
+      "data": {
+        "title": "Remote Infrastructure: Cloud Virtual Desktop Infrastructure (VDI): Amazon WorkSpaces, Azure Virtual Desktop & Screen Scraping Mechanics",
+        "headers": [
+          "Metric",
+          "Setting",
+          "Status",
+          "Verification"
+        ],
+        "rows": [
+          [
+            "Remote Protocol",
+            "Part 3",
+            "Active",
+            "Verified"
+          ],
+          [
+            "Tunnel Mode",
+            "Encrypted Tunnel",
+            "Routing",
+            "Verified"
+          ],
+          [
+            "QoS Budget",
+            "Sub-20ms RTT",
+            "Compliant",
+            "Verified"
+          ],
+          [
+            "Collaboration Index",
+            "100%",
+            "Ready",
+            "Verified"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d27-p4",
+      "partTitle": "Network QoS, Latency Budgets & Collaboration Security: Bandwidth, Jitter & Zero Trust Access (ZTNA)",
+      "template": "cells",
+      "codeHash": "fa927e1cae24e31837e4b71963676b177e72bfb5e6fec022a2b03d3523b5f42c",
+      "data": {
+        "title": "Remote Infrastructure: Network QoS, Latency Budgets & Collaboration Security: Bandwidth, Jitter & Zero Trust Access (ZTNA)",
+        "headers": [
+          "Metric",
+          "Setting",
+          "Status",
+          "Verification"
+        ],
+        "rows": [
+          [
+            "Remote Protocol",
+            "Part 4",
+            "Active",
+            "Verified"
+          ],
+          [
+            "Tunnel Mode",
+            "Encrypted Tunnel",
+            "Routing",
+            "Verified"
+          ],
+          [
+            "QoS Budget",
+            "Sub-20ms RTT",
+            "Compliant",
+            "Verified"
+          ],
+          [
+            "Collaboration Index",
+            "100%",
+            "Ready",
+            "Verified"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d27-p5",
+      "partTitle": "Master Remote Work Infrastructure, SSH Tunnels & VDI Collaboration Telemetry Suite",
+      "template": "cells",
+      "codeHash": "e15aada85bce82e2435ffa50bf2e15d256ec170b657e302cd55551355d1f2ee1",
+      "data": {
+        "title": "Remote Infrastructure: Master Remote Work Infrastructure, SSH Tunnels & VDI Collaboration Telemetry Suite",
+        "headers": [
+          "Metric",
+          "Setting",
+          "Status",
+          "Verification"
+        ],
+        "rows": [
+          [
+            "Remote Protocol",
+            "Part 5",
+            "Active",
+            "Verified"
+          ],
+          [
+            "Tunnel Mode",
+            "Encrypted Tunnel",
+            "Routing",
+            "Verified"
+          ],
+          [
+            "QoS Budget",
+            "Sub-20ms RTT",
+            "Compliant",
+            "Verified"
+          ],
+          [
+            "Collaboration Index",
+            "100%",
+            "Ready",
+            "Verified"
+          ]
+        ]
+      }
+    }
+  ]
+}

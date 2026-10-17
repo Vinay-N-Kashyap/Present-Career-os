@@ -1,0 +1,211 @@
+{
+  "day": 29,
+  "course": "comp_fund",
+  "entries": [
+    {
+      "stepId": "cf-d29-p1",
+      "partTitle": "Data Remanence Physics & Decommissioning Risks: Quick Format vs Magnetic Bit Remanence",
+      "template": "cells",
+      "codeHash": "1e68a778a1e22302fcf326976f414cc218174975fbe048afe88c46cdb9557c49",
+      "data": {
+        "title": "Data Sanitization: Data Remanence Physics & Decommissioning Risks: Quick Format vs Magnetic Bit Remanence",
+        "headers": [
+          "Framework",
+          "Standard",
+          "Method",
+          "Remanence Level"
+        ],
+        "rows": [
+          [
+            "DoD 5220.22-M",
+            "7-Pass Overwrite",
+            "Alternating Patterns",
+            "Zero Remanence"
+          ],
+          [
+            "SSD Flash",
+            "Crypto Erase",
+            "MEK Key Destruction",
+            "Zero Remanence"
+          ],
+          [
+            "NIST SP 800-88",
+            "Purge / Destroy",
+            "Cryptographic / Shred",
+            "Certified Clean"
+          ],
+          [
+            "E-Waste Compliance",
+            "R2 / e-Stewards",
+            "Zero Landfill Leaching",
+            "Audited Custody"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d29-p2",
+      "partTitle": "Department of Defense DoD 5220.22-M 7-Pass Drive Overwrite Standard & Magnetic Hysteresis",
+      "template": "cells",
+      "codeHash": "4babfcaf8adb2a51078d611613afe9057ec279216812978ee1bab9829a9112c7",
+      "data": {
+        "title": "Data Sanitization: Department of Defense DoD 5220.22-M 7-Pass Drive Overwrite Standard & Magnetic Hysteresis",
+        "headers": [
+          "Framework",
+          "Standard",
+          "Method",
+          "Remanence Level"
+        ],
+        "rows": [
+          [
+            "DoD 5220.22-M",
+            "7-Pass Overwrite",
+            "Alternating Patterns",
+            "Zero Remanence"
+          ],
+          [
+            "SSD Flash",
+            "Crypto Erase",
+            "MEK Key Destruction",
+            "Zero Remanence"
+          ],
+          [
+            "NIST SP 800-88",
+            "Purge / Destroy",
+            "Cryptographic / Shred",
+            "Certified Clean"
+          ],
+          [
+            "E-Waste Compliance",
+            "R2 / e-Stewards",
+            "Zero Landfill Leaching",
+            "Audited Custody"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d29-p3",
+      "partTitle": "Solid-State Drive (SSD) Sanitization: Wear-Leveling Blocks, ATA Enhanced Secure Erase & Cryptographic Shredding",
+      "template": "cells",
+      "codeHash": "10387c3aa45f1e92eec056dc8a1fa92472e5cd310fefdf31ab8dc47c1b1712da",
+      "data": {
+        "title": "Data Sanitization: Solid-State Drive (SSD) Sanitization: Wear-Leveling Blocks, ATA Enhanced Secure Erase & Cryptographic Shredding",
+        "headers": [
+          "Framework",
+          "Standard",
+          "Method",
+          "Remanence Level"
+        ],
+        "rows": [
+          [
+            "DoD 5220.22-M",
+            "7-Pass Overwrite",
+            "Alternating Patterns",
+            "Zero Remanence"
+          ],
+          [
+            "SSD Flash",
+            "Crypto Erase",
+            "MEK Key Destruction",
+            "Zero Remanence"
+          ],
+          [
+            "NIST SP 800-88",
+            "Purge / Destroy",
+            "Cryptographic / Shred",
+            "Certified Clean"
+          ],
+          [
+            "E-Waste Compliance",
+            "R2 / e-Stewards",
+            "Zero Landfill Leaching",
+            "Audited Custody"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d29-p4",
+      "partTitle": "NIST SP 800-88 Rev 1 Guidelines (Clear, Purge, Destroy) & Certified E-Waste Recycling (R2 / e-Stewards)",
+      "template": "cells",
+      "codeHash": "61702c5b78d0497e7ce0f144fdd666243cc5ce6f2b08d67ad57de70c30f9f65f",
+      "data": {
+        "title": "Data Sanitization: NIST SP 800-88 Rev 1 Guidelines (Clear, Purge, Destroy) & Certified E-Waste Recycling (R2 / e-Stewards)",
+        "headers": [
+          "Framework",
+          "Standard",
+          "Method",
+          "Remanence Level"
+        ],
+        "rows": [
+          [
+            "DoD 5220.22-M",
+            "7-Pass Overwrite",
+            "Alternating Patterns",
+            "Zero Remanence"
+          ],
+          [
+            "SSD Flash",
+            "Crypto Erase",
+            "MEK Key Destruction",
+            "Zero Remanence"
+          ],
+          [
+            "NIST SP 800-88",
+            "Purge / Destroy",
+            "Cryptographic / Shred",
+            "Certified Clean"
+          ],
+          [
+            "E-Waste Compliance",
+            "R2 / e-Stewards",
+            "Zero Landfill Leaching",
+            "Audited Custody"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d29-p5",
+      "partTitle": "Master Sustainable Computing, E-Waste Governance & Cryptographic Data Sanitization Suite",
+      "template": "cells",
+      "codeHash": "10879c9153f5f996dc162386c0c5aa5b93723d1a410d7871d483a9d46a577e4e",
+      "data": {
+        "title": "Data Sanitization: Master Sustainable Computing, E-Waste Governance & Cryptographic Data Sanitization Suite",
+        "headers": [
+          "Framework",
+          "Standard",
+          "Method",
+          "Remanence Level"
+        ],
+        "rows": [
+          [
+            "DoD 5220.22-M",
+            "7-Pass Overwrite",
+            "Alternating Patterns",
+            "Zero Remanence"
+          ],
+          [
+            "SSD Flash",
+            "Crypto Erase",
+            "MEK Key Destruction",
+            "Zero Remanence"
+          ],
+          [
+            "NIST SP 800-88",
+            "Purge / Destroy",
+            "Cryptographic / Shred",
+            "Certified Clean"
+          ],
+          [
+            "E-Waste Compliance",
+            "R2 / e-Stewards",
+            "Zero Landfill Leaching",
+            "Audited Custody"
+          ]
+        ]
+      }
+    }
+  ]
+}

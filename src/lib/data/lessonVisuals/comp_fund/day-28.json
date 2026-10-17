@@ -1,0 +1,211 @@
+{
+  "day": 28,
+  "course": "comp_fund",
+  "entries": [
+    {
+      "stepId": "cf-d28-p1",
+      "partTitle": "CPU Thermal Dynamics & Heat Dissipation: Junction Temperature (T_j), Thermal Paste & Heatsink Physics",
+      "template": "cells",
+      "codeHash": "0eb14110b314790b352b01873d5fd479cbf946980ff5d304e84b4a33ff69eb2d",
+      "data": {
+        "title": "Hardware Reliability: CPU Thermal Dynamics & Heat Dissipation: Junction Temperature (T_j), Thermal Paste & Heatsink Physics",
+        "headers": [
+          "Metric",
+          "Threshold",
+          "Actual",
+          "Status"
+        ],
+        "rows": [
+          [
+            "CPU Thermal Margin",
+            "<= 85 C",
+            "64 C",
+            "Verified Nominal"
+          ],
+          [
+            "Throttling Circuit",
+            "PROCHOT#",
+            "Active DVFS",
+            "Verified Safe"
+          ],
+          [
+            "PSU Efficiency",
+            ">= 90% Platinum",
+            "92% Measured",
+            "Verified High"
+          ],
+          [
+            "UPS Power Backup",
+            "0ms / AVR",
+            "Nominal 120V",
+            "Verified Protected"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d28-p2",
+      "partTitle": "Dynamic Thermal Throttling Mechanics: PROCHOT#, Clock Modulation & Thermal Runaway Mitigation",
+      "template": "cells",
+      "codeHash": "5c2e2d9a71edcf1aef9aea0d921210112501d0103de73f2be587ffd258546649",
+      "data": {
+        "title": "Hardware Reliability: Dynamic Thermal Throttling Mechanics: PROCHOT#, Clock Modulation & Thermal Runaway Mitigation",
+        "headers": [
+          "Metric",
+          "Threshold",
+          "Actual",
+          "Status"
+        ],
+        "rows": [
+          [
+            "CPU Thermal Margin",
+            "<= 85 C",
+            "64 C",
+            "Verified Nominal"
+          ],
+          [
+            "Throttling Circuit",
+            "PROCHOT#",
+            "Active DVFS",
+            "Verified Safe"
+          ],
+          [
+            "PSU Efficiency",
+            ">= 90% Platinum",
+            "92% Measured",
+            "Verified High"
+          ],
+          [
+            "UPS Power Backup",
+            "0ms / AVR",
+            "Nominal 120V",
+            "Verified Protected"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d28-p3",
+      "partTitle": "Power Supply Unit (PSU) Electrical Architecture: 80-Plus Efficiency Ratings & 12V Rail Stability",
+      "template": "cells",
+      "codeHash": "4945605a8f0c69cd953180ddc4968266dfd325427018f09e826c99f8941e4745",
+      "data": {
+        "title": "Hardware Reliability: Power Supply Unit (PSU) Electrical Architecture: 80-Plus Efficiency Ratings & 12V Rail Stability",
+        "headers": [
+          "Metric",
+          "Threshold",
+          "Actual",
+          "Status"
+        ],
+        "rows": [
+          [
+            "CPU Thermal Margin",
+            "<= 85 C",
+            "64 C",
+            "Verified Nominal"
+          ],
+          [
+            "Throttling Circuit",
+            "PROCHOT#",
+            "Active DVFS",
+            "Verified Safe"
+          ],
+          [
+            "PSU Efficiency",
+            ">= 90% Platinum",
+            "92% Measured",
+            "Verified High"
+          ],
+          [
+            "UPS Power Backup",
+            "0ms / AVR",
+            "Nominal 120V",
+            "Verified Protected"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d28-p4",
+      "partTitle": "Uninterruptible Power Supply (UPS) & Clean Power: Standby, Line-Interactive (AVR) vs Online Double-Conversion",
+      "template": "cells",
+      "codeHash": "927253721e31b4ab06dba5a911caa841ee5f314ac31a81af3406f57ca6fb338e",
+      "data": {
+        "title": "Hardware Reliability: Uninterruptible Power Supply (UPS) & Clean Power: Standby, Line-Interactive (AVR) vs Online Double-Conversion",
+        "headers": [
+          "Metric",
+          "Threshold",
+          "Actual",
+          "Status"
+        ],
+        "rows": [
+          [
+            "CPU Thermal Margin",
+            "<= 85 C",
+            "64 C",
+            "Verified Nominal"
+          ],
+          [
+            "Throttling Circuit",
+            "PROCHOT#",
+            "Active DVFS",
+            "Verified Safe"
+          ],
+          [
+            "PSU Efficiency",
+            ">= 90% Platinum",
+            "92% Measured",
+            "Verified High"
+          ],
+          [
+            "UPS Power Backup",
+            "0ms / AVR",
+            "Nominal 120V",
+            "Verified Protected"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d28-p5",
+      "partTitle": "Master Hardware Maintenance, Thermals & Clean Power Management Suite",
+      "template": "cells",
+      "codeHash": "c353ac5ca2eb33502a011f3b8dccea50c498c2c23d7f8814407ad9cdcb417e8a",
+      "data": {
+        "title": "Hardware Reliability: Master Hardware Maintenance, Thermals & Clean Power Management Suite",
+        "headers": [
+          "Metric",
+          "Threshold",
+          "Actual",
+          "Status"
+        ],
+        "rows": [
+          [
+            "CPU Thermal Margin",
+            "<= 85 C",
+            "64 C",
+            "Verified Nominal"
+          ],
+          [
+            "Throttling Circuit",
+            "PROCHOT#",
+            "Active DVFS",
+            "Verified Safe"
+          ],
+          [
+            "PSU Efficiency",
+            ">= 90% Platinum",
+            "92% Measured",
+            "Verified High"
+          ],
+          [
+            "UPS Power Backup",
+            "0ms / AVR",
+            "Nominal 120V",
+            "Verified Protected"
+          ]
+        ]
+      }
+    }
+  ]
+}

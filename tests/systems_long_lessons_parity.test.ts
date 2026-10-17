@@ -1290,3 +1290,111 @@ test('Systems Long Lessons: comp_fund Day 26 Data Privacy & VPN Tunnel Verificat
   assert.equal(res5.allPassed, true);
   assert.ok(res5.stdout?.includes('Data Privacy Health Index: 100/100'));
 });
+test('Systems Long Lessons: comp_fund Day 27 Remote Work & Collaboration Infrastructure Verification', async () => {
+  const d27 = getLongLesson('comp_fund', 27);
+  assert.ok(d27, 'comp_fund Day 27 must resolve');
+  assert.equal(d27.day, 27);
+  assert.equal(d27.parts.length, 5);
+
+  const res1 = await executeBashSuite(d27.parts[0].code!);
+  assert.equal(res1.allPassed, true);
+  assert.ok(res1.stdout?.includes('REMOTE_WORK_INFRASTRUCTURE_VERIFIED'));
+
+  const res2 = await executeBashSuite(d27.parts[1].code!);
+  assert.equal(res2.allPassed, true);
+  assert.ok(res2.stdout?.includes('SSH_PORT_FORWARDING_TUNNELS_VERIFIED'));
+
+  const res3 = await executeBashSuite(d27.parts[2].code!);
+  assert.equal(res3.allPassed, true);
+  assert.ok(res3.stdout?.includes('CLOUD_VDI_COLLABORATION_VERIFIED'));
+
+  const res4 = await executeBashSuite(d27.parts[3].code!);
+  assert.equal(res4.allPassed, true);
+  assert.ok(res4.stdout?.includes('ZERO_TRUST_NETWORK_ACCESS_VERIFIED'));
+
+  const res5 = await executeBashSuite(d27.parts[4].code!);
+  assert.equal(res5.allPassed, true);
+  assert.ok(res5.stdout?.includes('Remote Work Health Index: 100/100'));
+});
+
+test('Systems Long Lessons: comp_fund Day 28 Hardware Maintenance, Thermals & UPS Power Verification', async () => {
+  const d28 = getLongLesson('comp_fund', 28);
+  assert.ok(d28, 'comp_fund Day 28 must resolve');
+  assert.equal(d28.day, 28);
+  assert.equal(d28.parts.length, 5);
+
+  const res1 = await executeBashSuite(d28.parts[0].code!);
+  assert.equal(res1.allPassed, true);
+  assert.ok(res1.stdout?.includes('CPU_THERMAL_SAFETY_MARGIN_VERIFIED'));
+
+  const res2 = await executeBashSuite(d28.parts[1].code!);
+  assert.equal(res2.allPassed, true);
+  assert.ok(res2.stdout?.includes('THERMAL_THROTTLING_MITIGATION_VERIFIED'));
+
+  const res3 = await executeBashSuite(d28.parts[2].code!);
+  assert.equal(res3.allPassed, true);
+  assert.ok(res3.stdout?.includes('PSU_80_PLUS_EFFICIENCY_VERIFIED'));
+
+  const res4 = await executeBashSuite(d28.parts[3].code!);
+  assert.equal(res4.allPassed, true);
+  assert.ok(res4.stdout?.includes('UPS_BATTERY_BACKUP_VERIFIED'));
+
+  const res5 = await executeBashSuite(d28.parts[4].code!);
+  assert.equal(res5.allPassed, true);
+  assert.ok(res5.stdout?.includes('Hardware Reliability Index: 100/100'));
+});
+
+test('Systems Long Lessons: comp_fund Day 29 Sustainable Computing & Data Sanitization Verification', async () => {
+  const d29 = getLongLesson('comp_fund', 29);
+  assert.ok(d29, 'comp_fund Day 29 must resolve');
+  assert.equal(d29.day, 29);
+  assert.equal(d29.parts.length, 5);
+
+  const res1 = await executeBashSuite(d29.parts[0].code!);
+  assert.equal(res1.allPassed, true);
+  assert.ok(res1.stdout?.includes('DATA_REMANENCE_THREAT_VERIFIED'));
+
+  const res2 = await executeBashSuite(d29.parts[1].code!);
+  assert.equal(res2.allPassed, true);
+  assert.ok(res2.stdout?.includes('DOD_5220_22_M_SANITIZATION_VERIFIED'));
+
+  const res3 = await executeBashSuite(d29.parts[2].code!);
+  assert.equal(res3.allPassed, true);
+  assert.ok(res3.stdout?.includes('SSD_CRYPTOGRAPHIC_ERASURE_VERIFIED'));
+
+  const res4 = await executeBashSuite(d29.parts[3].code!);
+  assert.equal(res4.allPassed, true);
+  assert.ok(res4.stdout?.includes('NIST_800_88_EWASTE_STEWARDSHIP_VERIFIED'));
+
+  const res5 = await executeBashSuite(d29.parts[4].code!);
+  assert.equal(res5.allPassed, true);
+  assert.ok(res5.stdout?.includes('Sanitization & Sustainability Index: 100/100'));
+});
+
+test('Systems Long Lessons: comp_fund Day 30 🏆 GRAND FINAL CAPSTONE: Sovereign Computer Literacy & OS Master Suite Verification', async () => {
+  const d30 = getLongLesson('comp_fund', 30);
+  assert.ok(d30, 'comp_fund Day 30 must resolve');
+  assert.equal(d30.day, 30);
+  assert.equal(d30.parts.length, 5);
+
+  const res1 = await executeBashSuite(d30.parts[0].code!);
+  assert.equal(res1.allPassed, true);
+  assert.ok(res1.stdout?.includes('COMPUTING_FOUNDATIONS_SYNTHESIS_VERIFIED'));
+
+  const res2 = await executeBashSuite(d30.parts[1].code!);
+  assert.equal(res2.allPassed, true);
+  assert.ok(res2.stdout?.includes('SYSTEMS_NETWORKING_STORAGE_SYNTHESIS_VERIFIED'));
+
+  const res3 = await executeBashSuite(d30.parts[2].code!);
+  assert.equal(res3.allPassed, true);
+  assert.ok(res3.stdout?.includes('SECURITY_CRYPTOGRAPHY_PERIPHERALS_SYNTHESIS_VERIFIED'));
+
+  const res4 = await executeBashSuite(d30.parts[3].code!);
+  assert.equal(res4.allPassed, true);
+  assert.ok(res4.stdout?.includes('WORKFLOWS_VIRTUALIZATION_PRIVACY_SYNTHESIS_VERIFIED'));
+
+  const res5 = await executeBashSuite(d30.parts[4].code!);
+  assert.equal(res5.allPassed, true);
+  assert.ok(res5.stdout?.includes('SOVEREIGN_SYSTEMS_MASTER_CAPSTONE_VERIFIED'));
+  assert.ok(res5.stdout?.includes('GRAND_CAPSTONE_HEALTH: 100/100'));
+});

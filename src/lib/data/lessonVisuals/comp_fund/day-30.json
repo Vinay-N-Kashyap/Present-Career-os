@@ -1,0 +1,211 @@
+{
+  "day": 30,
+  "course": "comp_fund",
+  "entries": [
+    {
+      "stepId": "cf-d30-p1",
+      "partTitle": "Pillar 1: Hardware Foundations, CPU Privilege Rings & Kernel System Call Dispatch",
+      "template": "cells",
+      "codeHash": "665dc4164417e9927b9cf4e3b0e721e0cfd3a51274814eadd9a38ecc78446b91",
+      "data": {
+        "title": "Sovereign Master Suite: Pillar 1: Hardware Foundations, CPU Privilege Rings & Kernel System Call Dispatch",
+        "headers": [
+          "Pillar",
+          "Component",
+          "Standard",
+          "Certification"
+        ],
+        "rows": [
+          [
+            "Pillar 1",
+            "Pillar 1: Hardware Founda",
+            "Gold Standard",
+            "Verified 100%"
+          ],
+          [
+            "Architecture",
+            "Sovereign Systems",
+            "Enterprise Tier",
+            "Verified 100%"
+          ],
+          [
+            "Execution",
+            "POSIX / Linux",
+            "Zero Defects",
+            "Verified 100%"
+          ],
+          [
+            "Graduation",
+            "Course 21",
+            "100% Complete",
+            "Master Certified"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d30-p2",
+      "partTitle": "Pillar 2: Systems Networking, Subnet Mathematics & Enterprise Storage Resilience",
+      "template": "cells",
+      "codeHash": "83970d672c94e4d3166ae8eab34dcb8356918d759eb4894b685294b04079972d",
+      "data": {
+        "title": "Sovereign Master Suite: Pillar 2: Systems Networking, Subnet Mathematics & Enterprise Storage Resilience",
+        "headers": [
+          "Pillar",
+          "Component",
+          "Standard",
+          "Certification"
+        ],
+        "rows": [
+          [
+            "Pillar 2",
+            "Pillar 2: Systems Network",
+            "Gold Standard",
+            "Verified 100%"
+          ],
+          [
+            "Architecture",
+            "Sovereign Systems",
+            "Enterprise Tier",
+            "Verified 100%"
+          ],
+          [
+            "Execution",
+            "POSIX / Linux",
+            "Zero Defects",
+            "Verified 100%"
+          ],
+          [
+            "Graduation",
+            "Course 21",
+            "100% Complete",
+            "Master Certified"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d30-p3",
+      "partTitle": "Pillar 3: Enterprise Information Security, Cryptography & High-Speed Peripherals",
+      "template": "cells",
+      "codeHash": "53052e4b8b0f86621aebcc1d2a7c40b40d66dc44a4f68afc6e383fce4be54f2e",
+      "data": {
+        "title": "Sovereign Master Suite: Pillar 3: Enterprise Information Security, Cryptography & High-Speed Peripherals",
+        "headers": [
+          "Pillar",
+          "Component",
+          "Standard",
+          "Certification"
+        ],
+        "rows": [
+          [
+            "Pillar 3",
+            "Pillar 3: Enterprise Info",
+            "Gold Standard",
+            "Verified 100%"
+          ],
+          [
+            "Architecture",
+            "Sovereign Systems",
+            "Enterprise Tier",
+            "Verified 100%"
+          ],
+          [
+            "Execution",
+            "POSIX / Linux",
+            "Zero Defects",
+            "Verified 100%"
+          ],
+          [
+            "Graduation",
+            "Course 21",
+            "100% Complete",
+            "Master Certified"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d30-p4",
+      "partTitle": "Pillar 4: Container Virtualization, Diagnostic Troubleshooting & Automation Scripting",
+      "template": "cells",
+      "codeHash": "2db467f596426ed3c36d014fc18db42308eaddc14918b7ffdf53f67111e9dec4",
+      "data": {
+        "title": "Sovereign Master Suite: Pillar 4: Container Virtualization, Diagnostic Troubleshooting & Automation Scripting",
+        "headers": [
+          "Pillar",
+          "Component",
+          "Standard",
+          "Certification"
+        ],
+        "rows": [
+          [
+            "Pillar 4",
+            "Pillar 4: Container Virtu",
+            "Gold Standard",
+            "Verified 100%"
+          ],
+          [
+            "Architecture",
+            "Sovereign Systems",
+            "Enterprise Tier",
+            "Verified 100%"
+          ],
+          [
+            "Execution",
+            "POSIX / Linux",
+            "Zero Defects",
+            "Verified 100%"
+          ],
+          [
+            "Graduation",
+            "Course 21",
+            "100% Complete",
+            "Master Certified"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d30-p5",
+      "partTitle": "Pillar 5: Hardware Maintenance, Thermals, Data Sanitization & Sovereign Mastery Capstone",
+      "template": "cells",
+      "codeHash": "eac000f1a9ffeb0117993acc95b440ed9667d3bcd4a66c4d8e635c782c64a160",
+      "data": {
+        "title": "Sovereign Master Suite: Pillar 5: Hardware Maintenance, Thermals, Data Sanitization & Sovereign Mastery Capstone",
+        "headers": [
+          "Pillar",
+          "Component",
+          "Standard",
+          "Certification"
+        ],
+        "rows": [
+          [
+            "Pillar 5",
+            "Pillar 5: Hardware Mainte",
+            "Gold Standard",
+            "Verified 100%"
+          ],
+          [
+            "Architecture",
+            "Sovereign Systems",
+            "Enterprise Tier",
+            "Verified 100%"
+          ],
+          [
+            "Execution",
+            "POSIX / Linux",
+            "Zero Defects",
+            "Verified 100%"
+          ],
+          [
+            "Graduation",
+            "Course 21",
+            "100% Complete",
+            "Master Certified"
+          ]
+        ]
+      }
+    }
+  ]
+}
