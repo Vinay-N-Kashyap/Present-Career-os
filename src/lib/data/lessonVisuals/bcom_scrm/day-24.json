@@ -1,0 +1,1609 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_scrm",
+  "day": 24,
+  "promptSha": "cff38fa110de9580f17d0b3f5e04189b66cf032b3590068113017f4ecc29039b",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "The Executive QBR Value Realization Equation & Financial ROI Verification",
+      "codeHash": "a8dd9c745f1ad58e162da83f0934cb4fad6fcba1ed753381fccfb50658948a8c",
+      "spec": {
+        "template": "funnel",
+        "title": "The Executive QBR Value Realization Equati - RevOps Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Inbound commercial funnel (10,000 accounts).",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "TAM Accounts Identified",
+                "value": 10000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Target",
+                "value": 4500,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Engagement",
+                "value": 1800,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Contract ARR",
+                "value": 720,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Territory gating qualifies 45.0% of target accounts (4,500).",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "TAM Accounts Identified",
+                "value": 10000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Target",
+                "value": 4500,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "data"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Engagement",
+                "value": 1800,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Contract ARR",
+                "value": 720,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Ecosystem co-selling advances (1,800 deals).",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "TAM Accounts Identified",
+                "value": 10000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Target",
+                "value": 4500,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Engagement",
+                "value": 1800,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "data"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Contract ARR",
+                "value": 720,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Final closed ARR & expansion realization (720 enterprise clients, 7.2% yield).",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "TAM Accounts Identified",
+                "value": 10000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Target",
+                "value": 4500,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Engagement",
+                "value": 1800,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Contract ARR",
+                "value": 720,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "funnel",
+        "title": "The Executive QBR Value Realization Equati - RevOps Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Inbound commercial funnel (10,000 accounts).",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "TAM Accounts Identified",
+                "value": 10000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Target",
+                "value": 4500,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Engagement",
+                "value": 1800,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Contract ARR",
+                "value": 720,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Territory gating qualifies 45.0% of target accounts (4,500).",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "TAM Accounts Identified",
+                "value": 10000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Target",
+                "value": 4500,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "data"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Engagement",
+                "value": 1800,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Contract ARR",
+                "value": 720,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Ecosystem co-selling advances (1,800 deals).",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "TAM Accounts Identified",
+                "value": 10000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Target",
+                "value": 4500,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Engagement",
+                "value": 1800,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "data"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Contract ARR",
+                "value": 720,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Final closed ARR & expansion realization (720 enterprise clients, 7.2% yield).",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "TAM Accounts Identified",
+                "value": 10000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Target",
+                "value": 4500,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Engagement",
+                "value": 1800,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Contract ARR",
+                "value": 720,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Strategic QBR Deck: 20% Backward-Looking vs 80% Forward-Looking Architecture",
+      "codeHash": "aa16a69718792ea18ad61e5647b25ab2748ec891b78eeea15bcfbe9302037ef1",
+      "spec": {
+        "template": "funnel",
+        "title": "The Strategic QBR Deck: 20% Backward-Looki - RevOps Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Inbound commercial funnel (12,500 accounts).",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "TAM Accounts Identified",
+                "value": 12500,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Target",
+                "value": 5625,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Engagement",
+                "value": 2250,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Contract ARR",
+                "value": 900,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Territory gating qualifies 45.0% of target accounts (5,625).",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "TAM Accounts Identified",
+                "value": 12500,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Target",
+                "value": 5625,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "data"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Engagement",
+                "value": 2250,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Contract ARR",
+                "value": 900,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Ecosystem co-selling advances (2,250 deals).",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "TAM Accounts Identified",
+                "value": 12500,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Target",
+                "value": 5625,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Engagement",
+                "value": 2250,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "data"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Contract ARR",
+                "value": 900,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Final closed ARR & expansion realization (900 enterprise clients, 7.2% yield).",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "TAM Accounts Identified",
+                "value": 12500,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Target",
+                "value": 5625,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Engagement",
+                "value": 2250,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Contract ARR",
+                "value": 900,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "funnel",
+        "title": "The Strategic QBR Deck: 20% Backward-Looki - RevOps Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Inbound commercial funnel (12,500 accounts).",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "TAM Accounts Identified",
+                "value": 12500,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Target",
+                "value": 5625,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Engagement",
+                "value": 2250,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Contract ARR",
+                "value": 900,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Territory gating qualifies 45.0% of target accounts (5,625).",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "TAM Accounts Identified",
+                "value": 12500,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Target",
+                "value": 5625,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "data"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Engagement",
+                "value": 2250,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Contract ARR",
+                "value": 900,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Ecosystem co-selling advances (2,250 deals).",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "TAM Accounts Identified",
+                "value": 12500,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Target",
+                "value": 5625,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Engagement",
+                "value": 2250,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "data"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Contract ARR",
+                "value": 900,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Final closed ARR & expansion realization (900 enterprise clients, 7.2% yield).",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "TAM Accounts Identified",
+                "value": 12500,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Target",
+                "value": 5625,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Engagement",
+                "value": 2250,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Contract ARR",
+                "value": 900,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The 90-Day Renewal Lock-In Protocol: Proactive Governance vs 30-Day Churn Panic",
+      "codeHash": "ddb5bd9fc00b37bf09ae7c3060e9842acdae5762b5828943aaedc7a471b3357e",
+      "spec": {
+        "template": "funnel",
+        "title": "The 90-Day Renewal Lock-In Protocol: Proac - RevOps Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Inbound commercial funnel (8,000 accounts).",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "TAM Accounts Identified",
+                "value": 8000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Target",
+                "value": 3600,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Engagement",
+                "value": 1440,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Contract ARR",
+                "value": 576,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Territory gating qualifies 45.0% of target accounts (3,600).",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "TAM Accounts Identified",
+                "value": 8000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Target",
+                "value": 3600,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "data"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Engagement",
+                "value": 1440,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Contract ARR",
+                "value": 576,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Ecosystem co-selling advances (1,440 deals).",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "TAM Accounts Identified",
+                "value": 8000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Target",
+                "value": 3600,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Engagement",
+                "value": 1440,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "data"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Contract ARR",
+                "value": 576,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Final closed ARR & expansion realization (576 enterprise clients, 7.2% yield).",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "TAM Accounts Identified",
+                "value": 8000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Target",
+                "value": 3600,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Engagement",
+                "value": 1440,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Contract ARR",
+                "value": 576,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "funnel",
+        "title": "The 90-Day Renewal Lock-In Protocol: Proac - RevOps Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Inbound commercial funnel (8,000 accounts).",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "TAM Accounts Identified",
+                "value": 8000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Target",
+                "value": 3600,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Engagement",
+                "value": 1440,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Contract ARR",
+                "value": 576,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Territory gating qualifies 45.0% of target accounts (3,600).",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "TAM Accounts Identified",
+                "value": 8000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Target",
+                "value": 3600,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "data"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Engagement",
+                "value": 1440,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Contract ARR",
+                "value": 576,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Ecosystem co-selling advances (1,440 deals).",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "TAM Accounts Identified",
+                "value": 8000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Target",
+                "value": 3600,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Engagement",
+                "value": 1440,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "data"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Contract ARR",
+                "value": 576,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Final closed ARR & expansion realization (576 enterprise clients, 7.2% yield).",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "TAM Accounts Identified",
+                "value": 8000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Target",
+                "value": 3600,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Engagement",
+                "value": 1440,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Contract ARR",
+                "value": 576,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Expansion Engineering: Land-and-Expand Whitespace Account Mapping",
+      "codeHash": "2e60b4f7b6a31db9ad5ddbfed4b043bb21a748fd0a0d4a393fe0f99cbe597fa8",
+      "spec": {
+        "template": "funnel",
+        "title": "Expansion Engineering: Land-and-Expand Whi - RevOps Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Inbound commercial funnel (9,500 accounts).",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "TAM Accounts Identified",
+                "value": 9500,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Target",
+                "value": 4275,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Engagement",
+                "value": 1710,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Contract ARR",
+                "value": 684,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Territory gating qualifies 45.0% of target accounts (4,275).",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "TAM Accounts Identified",
+                "value": 9500,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Target",
+                "value": 4275,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "data"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Engagement",
+                "value": 1710,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Contract ARR",
+                "value": 684,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Ecosystem co-selling advances (1,710 deals).",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "TAM Accounts Identified",
+                "value": 9500,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Target",
+                "value": 4275,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Engagement",
+                "value": 1710,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "data"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Contract ARR",
+                "value": 684,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Final closed ARR & expansion realization (684 enterprise clients, 7.2% yield).",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "TAM Accounts Identified",
+                "value": 9500,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Target",
+                "value": 4275,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Engagement",
+                "value": 1710,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Contract ARR",
+                "value": 684,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "funnel",
+        "title": "Expansion Engineering: Land-and-Expand Whi - RevOps Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Inbound commercial funnel (9,500 accounts).",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "TAM Accounts Identified",
+                "value": 9500,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Target",
+                "value": 4275,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Engagement",
+                "value": 1710,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Contract ARR",
+                "value": 684,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Territory gating qualifies 45.0% of target accounts (4,275).",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "TAM Accounts Identified",
+                "value": 9500,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Target",
+                "value": 4275,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "data"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Engagement",
+                "value": 1710,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Contract ARR",
+                "value": 684,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Ecosystem co-selling advances (1,710 deals).",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "TAM Accounts Identified",
+                "value": 9500,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Target",
+                "value": 4275,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Engagement",
+                "value": 1710,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "data"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Contract ARR",
+                "value": 684,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Final closed ARR & expansion realization (684 enterprise clients, 7.2% yield).",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "TAM Accounts Identified",
+                "value": 9500,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Target",
+                "value": 4275,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Engagement",
+                "value": 1710,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Contract ARR",
+                "value": 684,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Master Customer Success & Enterprise Value Realization Control Tower",
+      "codeHash": "f38f37219d923e5e6a9464e8d0c1b1c59f24dd38b208694730c4e50da9bc86f9",
+      "spec": {
+        "template": "funnel",
+        "title": "Master Customer Success & Enterprise Value - RevOps Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Inbound commercial funnel (15,000 accounts).",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "TAM Accounts Identified",
+                "value": 15000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Target",
+                "value": 6750,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Engagement",
+                "value": 2700,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Contract ARR",
+                "value": 1080,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Territory gating qualifies 45.0% of target accounts (6,750).",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "TAM Accounts Identified",
+                "value": 15000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Target",
+                "value": 6750,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "data"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Engagement",
+                "value": 2700,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Contract ARR",
+                "value": 1080,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Ecosystem co-selling advances (2,700 deals).",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "TAM Accounts Identified",
+                "value": 15000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Target",
+                "value": 6750,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Engagement",
+                "value": 2700,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "data"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Contract ARR",
+                "value": 1080,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Final closed ARR & expansion realization (1,080 enterprise clients, 7.2% yield).",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "TAM Accounts Identified",
+                "value": 15000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Target",
+                "value": 6750,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Engagement",
+                "value": 2700,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Contract ARR",
+                "value": 1080,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "funnel",
+        "title": "Master Customer Success & Enterprise Value - RevOps Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Inbound commercial funnel (15,000 accounts).",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "TAM Accounts Identified",
+                "value": 15000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Target",
+                "value": 6750,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Engagement",
+                "value": 2700,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Contract ARR",
+                "value": 1080,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Territory gating qualifies 45.0% of target accounts (6,750).",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "TAM Accounts Identified",
+                "value": 15000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Target",
+                "value": 6750,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "data"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Engagement",
+                "value": 2700,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Contract ARR",
+                "value": 1080,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Ecosystem co-selling advances (2,700 deals).",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "TAM Accounts Identified",
+                "value": 15000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Target",
+                "value": 6750,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Engagement",
+                "value": 2700,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "data"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Contract ARR",
+                "value": 1080,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Final closed ARR & expansion realization (1,080 enterprise clients, 7.2% yield).",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "TAM Accounts Identified",
+                "value": 15000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Target",
+                "value": 6750,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Engagement",
+                "value": 2700,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Contract ARR",
+                "value": 1080,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
