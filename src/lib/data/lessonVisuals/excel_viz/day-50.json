@@ -1,0 +1,592 @@
+[
+  {
+    "partTitle": "Milestone 7 Capstone Orientation: Dual-Track Enterprise Automation Architecture (VBA Desktop vs Cloud Office Scripts)",
+    "codeHash": "18b97d49bf9a6665020aa6a1beb75076be5e3c9e9365ca987e01c8a6064bd3ba",
+    "spec": {
+      "template": "bars",
+      "title": "Milestone 7 Capstone Orientation: Dual-Track Enterprise Automation Architecture (VBA Desktop vs Cloud Office Scripts) – ⭐ Milestone 7: ApexAutomate Enterprise VBA & TypeScript Office Scripts Automation Suite",
+      "steps": [
+        {
+          "at": "intro",
+          "caption": "Step 1: Architectural ingestion and baseline configuration for Milestone 7 Capstone Orientation: Dual-Track Enterprise Automation Architecture (VBA Desktop vs Cloud Office Scripts)",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Desktop VBA 100k",
+              "value": 25,
+              "tone": "accent"
+            },
+            {
+              "label": "Cloud Script 25k",
+              "value": 20,
+              "tone": "data"
+            },
+            {
+              "label": "Functional LAMBDA",
+              "value": 15,
+              "tone": "data"
+            },
+            {
+              "label": "SOX 404 Audit Seal",
+              "value": 10,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "say1",
+          "caption": "Step 2: Execution pipeline and memory array processing for Milestone 7 Capstone Orientation: Dual-Track Enterprise Automation Architecture (VBA Desktop vs Cloud Office Scripts)",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Desktop VBA 100k",
+              "value": 65,
+              "tone": "accent"
+            },
+            {
+              "label": "Cloud Script 25k",
+              "value": 60,
+              "tone": "data"
+            },
+            {
+              "label": "Functional LAMBDA",
+              "value": 55,
+              "tone": "data"
+            },
+            {
+              "label": "SOX 404 Audit Seal",
+              "value": 45,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "example",
+          "caption": "Step 3: Stress testing and failure boundary validation for Milestone 7 Capstone Orientation: Dual-Track Enterprise Automation Architecture (VBA Desktop vs Cloud Office Scripts)",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Desktop VBA 100k",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "Cloud Script 25k",
+              "value": 80,
+              "tone": "data"
+            },
+            {
+              "label": "Functional LAMBDA",
+              "value": 75,
+              "tone": "data"
+            },
+            {
+              "label": "SOX 404 Audit Seal",
+              "value": 70,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "tryIt",
+          "caption": "Step 4: Institutional governance and production certification for Milestone 7 Capstone Orientation: Dual-Track Enterprise Automation Architecture (VBA Desktop vs Cloud Office Scripts)",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Desktop VBA 100k",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "Cloud Script 25k",
+              "value": 95,
+              "tone": "data"
+            },
+            {
+              "label": "Functional LAMBDA",
+              "value": 90,
+              "tone": "data"
+            },
+            {
+              "label": "SOX 404 Audit Seal",
+              "value": 85,
+              "tone": "data"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "partTitle": "Desktop Pillar: High-Throughput VBA Batch Engine with SOX Audit Trails & Guaranteed State Restoration",
+    "codeHash": "7c7165d299c5e664ec3051bbc9eccfac14c03f204b377ae648d8e4a96b45cfea",
+    "spec": {
+      "template": "bars",
+      "title": "Desktop Pillar: High-Throughput VBA Batch Engine with SOX Audit Trails & Guaranteed State Restoration – ⭐ Milestone 7: ApexAutomate Enterprise VBA & TypeScript Office Scripts Automation Suite",
+      "steps": [
+        {
+          "at": "intro",
+          "caption": "Step 1: Architectural ingestion and baseline configuration for Desktop Pillar: High-Throughput VBA Batch Engine with SOX Audit Trails & Guaranteed State Restoration",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Desktop VBA 100k",
+              "value": 25,
+              "tone": "accent"
+            },
+            {
+              "label": "Cloud Script 25k",
+              "value": 20,
+              "tone": "data"
+            },
+            {
+              "label": "Functional LAMBDA",
+              "value": 15,
+              "tone": "data"
+            },
+            {
+              "label": "SOX 404 Audit Seal",
+              "value": 10,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "say1",
+          "caption": "Step 2: Execution pipeline and memory array processing for Desktop Pillar: High-Throughput VBA Batch Engine with SOX Audit Trails & Guaranteed State Restoration",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Desktop VBA 100k",
+              "value": 65,
+              "tone": "accent"
+            },
+            {
+              "label": "Cloud Script 25k",
+              "value": 60,
+              "tone": "data"
+            },
+            {
+              "label": "Functional LAMBDA",
+              "value": 55,
+              "tone": "data"
+            },
+            {
+              "label": "SOX 404 Audit Seal",
+              "value": 45,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "example",
+          "caption": "Step 3: Stress testing and failure boundary validation for Desktop Pillar: High-Throughput VBA Batch Engine with SOX Audit Trails & Guaranteed State Restoration",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Desktop VBA 100k",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "Cloud Script 25k",
+              "value": 80,
+              "tone": "data"
+            },
+            {
+              "label": "Functional LAMBDA",
+              "value": 75,
+              "tone": "data"
+            },
+            {
+              "label": "SOX 404 Audit Seal",
+              "value": 70,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "tryIt",
+          "caption": "Step 4: Institutional governance and production certification for Desktop Pillar: High-Throughput VBA Batch Engine with SOX Audit Trails & Guaranteed State Restoration",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Desktop VBA 100k",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "Cloud Script 25k",
+              "value": 95,
+              "tone": "data"
+            },
+            {
+              "label": "Functional LAMBDA",
+              "value": 90,
+              "tone": "data"
+            },
+            {
+              "label": "SOX 404 Audit Seal",
+              "value": 85,
+              "tone": "data"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "partTitle": "Cloud Pillar: Headless TypeScript Office Script Webhook Pipeline with Sub-2-Second V8 Execution",
+    "codeHash": "16f4616b1886e006c792ed06794c7c52707cf417c26836c08fea742a47347d31",
+    "spec": {
+      "template": "bars",
+      "title": "Cloud Pillar: Headless TypeScript Office Script Webhook Pipeline with Sub-2-Second V8 Execution – ⭐ Milestone 7: ApexAutomate Enterprise VBA & TypeScript Office Scripts Automation Suite",
+      "steps": [
+        {
+          "at": "intro",
+          "caption": "Step 1: Architectural ingestion and baseline configuration for Cloud Pillar: Headless TypeScript Office Script Webhook Pipeline with Sub-2-Second V8 Execution",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Desktop VBA 100k",
+              "value": 25,
+              "tone": "accent"
+            },
+            {
+              "label": "Cloud Script 25k",
+              "value": 20,
+              "tone": "data"
+            },
+            {
+              "label": "Functional LAMBDA",
+              "value": 15,
+              "tone": "data"
+            },
+            {
+              "label": "SOX 404 Audit Seal",
+              "value": 10,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "say1",
+          "caption": "Step 2: Execution pipeline and memory array processing for Cloud Pillar: Headless TypeScript Office Script Webhook Pipeline with Sub-2-Second V8 Execution",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Desktop VBA 100k",
+              "value": 65,
+              "tone": "accent"
+            },
+            {
+              "label": "Cloud Script 25k",
+              "value": 60,
+              "tone": "data"
+            },
+            {
+              "label": "Functional LAMBDA",
+              "value": 55,
+              "tone": "data"
+            },
+            {
+              "label": "SOX 404 Audit Seal",
+              "value": 45,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "example",
+          "caption": "Step 3: Stress testing and failure boundary validation for Cloud Pillar: Headless TypeScript Office Script Webhook Pipeline with Sub-2-Second V8 Execution",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Desktop VBA 100k",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "Cloud Script 25k",
+              "value": 80,
+              "tone": "data"
+            },
+            {
+              "label": "Functional LAMBDA",
+              "value": 75,
+              "tone": "data"
+            },
+            {
+              "label": "SOX 404 Audit Seal",
+              "value": 70,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "tryIt",
+          "caption": "Step 4: Institutional governance and production certification for Cloud Pillar: Headless TypeScript Office Script Webhook Pipeline with Sub-2-Second V8 Execution",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Desktop VBA 100k",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "Cloud Script 25k",
+              "value": 95,
+              "tone": "data"
+            },
+            {
+              "label": "Functional LAMBDA",
+              "value": 90,
+              "tone": "data"
+            },
+            {
+              "label": "SOX 404 Audit Seal",
+              "value": 85,
+              "tone": "data"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "partTitle": "Grid Pillar: Pure Functional LAMBDA Financial Modeling Library with Recursion Safety",
+    "codeHash": "3c36bfc85da4aa42065b64155c8e5e7ace865fd56798fd38c5784d667fa7bc3c",
+    "spec": {
+      "template": "bars",
+      "title": "Grid Pillar: Pure Functional LAMBDA Financial Modeling Library with Recursion Safety – ⭐ Milestone 7: ApexAutomate Enterprise VBA & TypeScript Office Scripts Automation Suite",
+      "steps": [
+        {
+          "at": "intro",
+          "caption": "Step 1: Architectural ingestion and baseline configuration for Grid Pillar: Pure Functional LAMBDA Financial Modeling Library with Recursion Safety",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Desktop VBA 100k",
+              "value": 25,
+              "tone": "accent"
+            },
+            {
+              "label": "Cloud Script 25k",
+              "value": 20,
+              "tone": "data"
+            },
+            {
+              "label": "Functional LAMBDA",
+              "value": 15,
+              "tone": "data"
+            },
+            {
+              "label": "SOX 404 Audit Seal",
+              "value": 10,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "say1",
+          "caption": "Step 2: Execution pipeline and memory array processing for Grid Pillar: Pure Functional LAMBDA Financial Modeling Library with Recursion Safety",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Desktop VBA 100k",
+              "value": 65,
+              "tone": "accent"
+            },
+            {
+              "label": "Cloud Script 25k",
+              "value": 60,
+              "tone": "data"
+            },
+            {
+              "label": "Functional LAMBDA",
+              "value": 55,
+              "tone": "data"
+            },
+            {
+              "label": "SOX 404 Audit Seal",
+              "value": 45,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "example",
+          "caption": "Step 3: Stress testing and failure boundary validation for Grid Pillar: Pure Functional LAMBDA Financial Modeling Library with Recursion Safety",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Desktop VBA 100k",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "Cloud Script 25k",
+              "value": 80,
+              "tone": "data"
+            },
+            {
+              "label": "Functional LAMBDA",
+              "value": 75,
+              "tone": "data"
+            },
+            {
+              "label": "SOX 404 Audit Seal",
+              "value": 70,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "tryIt",
+          "caption": "Step 4: Institutional governance and production certification for Grid Pillar: Pure Functional LAMBDA Financial Modeling Library with Recursion Safety",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Desktop VBA 100k",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "Cloud Script 25k",
+              "value": 95,
+              "tone": "data"
+            },
+            {
+              "label": "Functional LAMBDA",
+              "value": 90,
+              "tone": "data"
+            },
+            {
+              "label": "SOX 404 Audit Seal",
+              "value": 85,
+              "tone": "data"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "partTitle": "Master Platform Synthesis: Viva Defense, End-to-End Stress Testing & Sovereign Milestone 7 Certification Seal",
+    "codeHash": "77de9110ec8d04aac33307e75c55f348f01d602bcddf1ed378581bd598abca80",
+    "spec": {
+      "template": "bars",
+      "title": "Master Platform Synthesis: Viva Defense, End-to-End Stress Testing & Sovereign Milestone 7 Certification Seal – ⭐ Milestone 7: ApexAutomate Enterprise VBA & TypeScript Office Scripts Automation Suite",
+      "steps": [
+        {
+          "at": "intro",
+          "caption": "Step 1: Architectural ingestion and baseline configuration for Master Platform Synthesis: Viva Defense, End-to-End Stress Testing & Sovereign Milestone 7 Certification Seal",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Desktop VBA 100k",
+              "value": 25,
+              "tone": "accent"
+            },
+            {
+              "label": "Cloud Script 25k",
+              "value": 20,
+              "tone": "data"
+            },
+            {
+              "label": "Functional LAMBDA",
+              "value": 15,
+              "tone": "data"
+            },
+            {
+              "label": "SOX 404 Audit Seal",
+              "value": 10,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "say1",
+          "caption": "Step 2: Execution pipeline and memory array processing for Master Platform Synthesis: Viva Defense, End-to-End Stress Testing & Sovereign Milestone 7 Certification Seal",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Desktop VBA 100k",
+              "value": 65,
+              "tone": "accent"
+            },
+            {
+              "label": "Cloud Script 25k",
+              "value": 60,
+              "tone": "data"
+            },
+            {
+              "label": "Functional LAMBDA",
+              "value": 55,
+              "tone": "data"
+            },
+            {
+              "label": "SOX 404 Audit Seal",
+              "value": 45,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "example",
+          "caption": "Step 3: Stress testing and failure boundary validation for Master Platform Synthesis: Viva Defense, End-to-End Stress Testing & Sovereign Milestone 7 Certification Seal",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Desktop VBA 100k",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "Cloud Script 25k",
+              "value": 80,
+              "tone": "data"
+            },
+            {
+              "label": "Functional LAMBDA",
+              "value": 75,
+              "tone": "data"
+            },
+            {
+              "label": "SOX 404 Audit Seal",
+              "value": 70,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "tryIt",
+          "caption": "Step 4: Institutional governance and production certification for Master Platform Synthesis: Viva Defense, End-to-End Stress Testing & Sovereign Milestone 7 Certification Seal",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Desktop VBA 100k",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "Cloud Script 25k",
+              "value": 95,
+              "tone": "data"
+            },
+            {
+              "label": "Functional LAMBDA",
+              "value": 90,
+              "tone": "data"
+            },
+            {
+              "label": "SOX 404 Audit Seal",
+              "value": 85,
+              "tone": "data"
+            }
+          ]
+        }
+      ]
+    }
+  }
+]

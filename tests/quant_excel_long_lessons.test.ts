@@ -67,7 +67,7 @@ test('Quant & Excel Long Lessons: Resolution & Structural Invariants', () => {
   assert.equal(excelLesson5.day, 5);
   assert.equal(excelLesson5.parts.length, 5, 'excel_viz Day 5 must contain exactly 5 parts');
 
-  for (let d = 6; d <= 45; d++) {
+  for (let d = 6; d <= 50; d++) {
     const el = getLongLesson('excel_viz', d);
     assert.ok(el, `excel_viz Day ${d} long lesson must resolve`);
     assert.equal(el.day, d);
@@ -2775,7 +2775,157 @@ test('Excel Viz Day 45: ⭐ Milestone 6: ApexAnalytics Statistical Testing & Tim
   assert.ok(lesson.parts[4].code?.includes('MasterApexAnalyticsPlatform'));
 });
 
+test('Excel Viz Day 46: VBA Architecture & COM Object Model: Application, Workbook, Worksheet & Range DOM Hierarchy', () => {
+  const lesson = getLongLesson('excel_viz', 46);
+  assert.ok(lesson, 'excel_viz Day 46 must resolve');
+  assert.equal(lesson.day, 46);
+  assert.equal(lesson.parts.length, 5);
 
+  const spokenMin = estimateSpokenMinutes(lesson);
+  assert.ok(spokenMin >= 20, `Spoken minutes should be >= 20 (got ${spokenMin})`);
 
+  for (const part of lesson.parts) {
+    assert.ok(part.title.length > 0);
+    assert.ok(part.say.length >= 3);
+    assert.ok(part.example && part.example.length > 0);
+    assert.ok(part.code && part.code.includes('class '));
+    assert.ok(part.output && part.output.length > 0);
+    assert.ok(part.tryIt && part.tryIt.length > 0);
 
+    const check = part.check as any;
+    assert.ok(check.question.length > 10);
+    assert.equal(check.options.length, 4);
+    assert.ok(check.answer >= 0 && check.answer < 4);
+    assert.ok(check.why.length > 15);
+  }
 
+  assert.ok(lesson.parts[0].code?.includes('ComHierarchyNavigator'));
+  assert.ok(lesson.parts[1].code?.includes('MemoryArrayBatchProcessor'));
+  assert.ok(lesson.parts[2].code?.includes('ExcelExecutionStateController'));
+  assert.ok(lesson.parts[3].code?.includes('MultiSheetLedgerConsolidator'));
+  assert.ok(lesson.parts[4].code?.includes('MasterVbaComAutomationGateway'));
+});
+
+test('Excel Viz Day 47: Robust VBA Error Handling & Event-Driven Automation: On Error GoTo, ScreenUpdating & Sheet Events', () => {
+  const lesson = getLongLesson('excel_viz', 47);
+  assert.ok(lesson, 'excel_viz Day 47 must resolve');
+  assert.equal(lesson.day, 47);
+  assert.equal(lesson.parts.length, 5);
+
+  const spokenMin = estimateSpokenMinutes(lesson);
+  assert.ok(spokenMin >= 20, `Spoken minutes should be >= 20 (got ${spokenMin})`);
+
+  for (const part of lesson.parts) {
+    assert.ok(part.title.length > 0);
+    assert.ok(part.say.length >= 3);
+    assert.ok(part.example && part.example.length > 0);
+    assert.ok(part.code && part.code.includes('class '));
+    assert.ok(part.output && part.output.length > 0);
+    assert.ok(part.tryIt && part.tryIt.length > 0);
+
+    const check = part.check as any;
+    assert.ok(check.question.length > 10);
+    assert.equal(check.options.length, 4);
+    assert.ok(check.answer >= 0 && check.answer < 4);
+    assert.ok(check.why.length > 15);
+  }
+
+  assert.ok(lesson.parts[0].code?.includes('StructuredErrorHandlerEngine'));
+  assert.ok(lesson.parts[1].code?.includes('ApplicationStateRestorationManager'));
+  assert.ok(lesson.parts[2].code?.includes('WorksheetChangeEventInterceptor'));
+  assert.ok(lesson.parts[3].code?.includes('SoxAuditTrailLogger'));
+  assert.ok(lesson.parts[4].code?.includes('MasterEventDrivenAutomationGateway'));
+});
+
+test('Excel Viz Day 48: Modern Automation with TypeScript Office Scripts: Excel JavaScript API, Power Automate & Async Cloud Flows', () => {
+  const lesson = getLongLesson('excel_viz', 48);
+  assert.ok(lesson, 'excel_viz Day 48 must resolve');
+  assert.equal(lesson.day, 48);
+  assert.equal(lesson.parts.length, 5);
+
+  const spokenMin = estimateSpokenMinutes(lesson);
+  assert.ok(spokenMin >= 20, `Spoken minutes should be >= 20 (got ${spokenMin})`);
+
+  for (const part of lesson.parts) {
+    assert.ok(part.title.length > 0);
+    assert.ok(part.say.length >= 3);
+    assert.ok(part.example && part.example.length > 0);
+    assert.ok(part.code && part.code.includes('class '));
+    assert.ok(part.output && part.output.length > 0);
+    assert.ok(part.tryIt && part.tryIt.length > 0);
+
+    const check = part.check as any;
+    assert.ok(check.question.length > 10);
+    assert.equal(check.options.length, 4);
+    assert.ok(check.answer >= 0 && check.answer < 4);
+    assert.ok(check.why.length > 15);
+  }
+
+  assert.ok(lesson.parts[0].code?.includes('OfficeScriptsSandboxArchitecture'));
+  assert.ok(lesson.parts[1].code?.includes('TypeScriptBatchMatrixEngine'));
+  assert.ok(lesson.parts[2].code?.includes('PowerAutomateJsonPayloadBridge'));
+  assert.ok(lesson.parts[3].code?.includes('AsyncCloudFlowPipeline'));
+  assert.ok(lesson.parts[4].code?.includes('MasterTypeScriptOfficeScriptsGateway'));
+});
+
+test('Excel Viz Day 49: Custom User-Defined Functions (UDFs) & Modern Lambda Helper Functions: LAMBDA Recursion, MAP, SCAN, REDUCE & BYROW', () => {
+  const lesson = getLongLesson('excel_viz', 49);
+  assert.ok(lesson, 'excel_viz Day 49 must resolve');
+  assert.equal(lesson.day, 49);
+  assert.equal(lesson.parts.length, 5);
+
+  const spokenMin = estimateSpokenMinutes(lesson);
+  assert.ok(spokenMin >= 20, `Spoken minutes should be >= 20 (got ${spokenMin})`);
+
+  for (const part of lesson.parts) {
+    assert.ok(part.title.length > 0);
+    assert.ok(part.say.length >= 3);
+    assert.ok(part.example && part.example.length > 0);
+    assert.ok(part.code && part.code.includes('class '));
+    assert.ok(part.output && part.output.length > 0);
+    assert.ok(part.tryIt && part.tryIt.length > 0);
+
+    const check = part.check as any;
+    assert.ok(check.question.length > 10);
+    assert.equal(check.options.length, 4);
+    assert.ok(check.answer >= 0 && check.answer < 4);
+    assert.ok(check.why.length > 15);
+  }
+
+  assert.ok(lesson.parts[0].code?.includes('PureLambdaEvaluationEngine'));
+  assert.ok(lesson.parts[1].code?.includes('TailRecursiveAmortizationEngine'));
+  assert.ok(lesson.parts[2].code?.includes('HigherOrderArrayTransformEngine'));
+  assert.ok(lesson.parts[3].code?.includes('ScanReduceAccumulatorEngine'));
+  assert.ok(lesson.parts[4].code?.includes('MasterFunctionalLambdaGateway'));
+});
+
+test('Excel Viz Day 50: ⭐ Milestone 7: ApexAutomate Enterprise VBA & TypeScript Office Scripts Automation Suite', () => {
+  const lesson = getLongLesson('excel_viz', 50);
+  assert.ok(lesson, 'excel_viz Day 50 must resolve');
+  assert.equal(lesson.day, 50);
+  assert.equal(lesson.parts.length, 5);
+
+  const spokenMin = estimateSpokenMinutes(lesson);
+  assert.ok(spokenMin >= 20, `Spoken minutes should be >= 20 (got ${spokenMin})`);
+
+  for (const part of lesson.parts) {
+    assert.ok(part.title.length > 0);
+    assert.ok(part.say.length >= 3);
+    assert.ok(part.example && part.example.length > 0);
+    assert.ok(part.code && part.code.includes('class '));
+    assert.ok(part.output && part.output.length > 0);
+    assert.ok(part.tryIt && part.tryIt.length > 0);
+
+    const check = part.check as any;
+    assert.ok(check.question.length > 10);
+    assert.equal(check.options.length, 4);
+    assert.ok(check.answer >= 0 && check.answer < 4);
+    assert.ok(check.why.length > 15);
+  }
+
+  assert.ok(lesson.parts[0].code?.includes('Milestone7AutomationAuditor'));
+  assert.ok(lesson.parts[1].code?.includes('ProductionVbaBatchEngine'));
+  assert.ok(lesson.parts[2].code?.includes('CloudOfficeScriptBatchEngine'));
+  assert.ok(lesson.parts[3].code?.includes('EnterpriseLambdaFinancialLibrary'));
+  assert.ok(lesson.parts[4].code?.includes('MasterApexAutomatePlatform'));
+});
