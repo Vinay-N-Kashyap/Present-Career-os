@@ -1,0 +1,211 @@
+{
+  "day": 40,
+  "course": "comp_fund",
+  "entries": [
+    {
+      "stepId": "cf-d40-p1",
+      "partTitle": "ApexTrace Sovereign Observability Architecture & The Non-Interference Invariant (<1% CPU)",
+      "template": "cells",
+      "codeHash": "2050f2f5f118acc4ba60c28325d70a4006b216079a1d69fb00f6f1a7ab054fc6",
+      "data": {
+        "title": "Systems Architecture Telemetry: ApexTrace Sovereign Observability Architecture & The Non-Interfe",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "PLATFORM_NAME",
+            "APEXTRACE_SOVEREIGN_OBSERVAB",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "EBPF_DATAPLANE",
+            "BOUNDED_RINGBUF_AND_LRU_HASH",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "METHODOLOGY_ENGINE",
+            "AUTOMATED_USE_AND_RED_CORREL",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "PROFILING_ENGINE",
+            "CONTINUOUS_99HZ_ON_AND_OFF_C",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d40-p2",
+      "partTitle": "Detective Challenge: The Unbounded `BPF_MAP_TYPE_HASH` DDoS Kernel Slab OOM Leak",
+      "template": "cells",
+      "codeHash": "29493dbd74b0fb57ebc1d5cf33839700ee97e57ebb1239ba332a19abf935c445",
+      "data": {
+        "title": "Systems Architecture Telemetry: Detective Challenge: The Unbounded `BPF_MAP_TYPE_HASH` DDoS Kern",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "INCIDENT",
+            "DDOS_10M_SPOOFED_IPS_EXHAUST",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "ROOT_CAUSE",
+            "UNBOUNDED_BPF_MAP_TYPE_HASH_",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "FIX_1",
+            "MIGRATE_TO_BPF_MAP_TYPE_LRU_",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "FIX_2",
+            "STREAM_EVENTS_VIA_BOUNDED_BP",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d40-p3",
+      "partTitle": "Mastery Assignment: Implementing the Unified `ApexTrace` 4-Module Observability Pipeline",
+      "template": "cells",
+      "codeHash": "5ce884f5c4776cfc9a6c38fadabae4026eaa61966164d94af0014144ccfe8921",
+      "data": {
+        "title": "Systems Architecture Telemetry: Mastery Assignment: Implementing the Unified `ApexTrace` 4-Modul",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "MODULE_1_EBPF",
+            "BIO_AND_SOCKET_LATENCY_HISTO",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "MODULE_2_USE_RED",
+            "60S_HARDWARE_AND_SERVICE_MAT",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "MODULE_3_FLAME",
+            "ON_AND_OFF_CPU_SVG_GENERATOR",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "MODULE_4_COREDUMP",
+            "DEDUPLICATED_GDB_DWARF_TRIAG",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d40-p4",
+      "partTitle": "Incident Lab: Defending `ApexTrace` Under Live Chaos Injection (500ms Off-CPU Lock & 100/sec Crash Storm)",
+      "template": "cells",
+      "codeHash": "098d7cef87f5bcece0054a44ce9b64f6c61303ffe5dffeedc4c48402c94b8903",
+      "data": {
+        "title": "Systems Architecture Telemetry: Incident Lab: Defending `ApexTrace` Under Live Chaos Injection (",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "CHAOS_1_OFF_CPU_LOCK",
+            "500MS_STALL_AT_5_PCT_CPU_INJ",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "APEXTRACE_PINPOINT",
+            "SCHED_SWITCH_FLAME_FOUND_DB_",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "CHAOS_2_CRASH_STORM",
+            "100_SIGSEGV_PER_SEC_LOOP_INJ",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "APEXTRACE_SHIELD",
+            "BUILD_ID_RATE_LIMIT_AND_ZSTD",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d40-p5",
+      "partTitle": "Milestone 7 Board Approval: Block 8 Kernel Observability & Profiling Mastery Certification",
+      "template": "cells",
+      "codeHash": "1a1ff02f676e2c9621fd5552ed7954901ede49196d8692e60a7ead1d1809353f",
+      "data": {
+        "title": "Systems Architecture Telemetry: Milestone 7 Board Approval: Block 8 Kernel Observability & Profi",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "PILLAR_1_EBPF",
+            "VERIFIER_SAFE_KPROBES_AND_LR",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "PILLAR_2_USE_RED",
+            "HARDWARE_AND_SERVICE_CALCULU",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "PILLAR_3_FLAMES",
+            "99HZ_PMU_ON_AND_OFF_CPU_GRAP",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "PILLAR_4_FORENSICS",
+            "ELF_CORE_DWARF_GDB_TRIAGE_VE",
+            "Verified 100%"
+          ]
+        ]
+      }
+    }
+  ]
+}

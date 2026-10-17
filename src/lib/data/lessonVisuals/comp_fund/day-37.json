@@ -1,0 +1,211 @@
+{
+  "day": 37,
+  "course": "comp_fund",
+  "entries": [
+    {
+      "stepId": "cf-d37-p1",
+      "partTitle": "The USE Method (Utilization, Saturation, Errors) vs The RED Method (Rate, Errors, Duration)",
+      "template": "cells",
+      "codeHash": "083045818a3f9798bfe4d0827cb56fc4fce16f4f271d0d24615be3c795c020e2",
+      "data": {
+        "title": "Systems Architecture Telemetry: The USE Method (Utilization, Saturation, Errors) vs The RED Meth",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "HARDWARE_METHODOLOGY",
+            "BRENDAN_GREGG_USE_U_S_E",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "SERVICE_METHODOLOGY",
+            "MICROSERVICE_RED_RATE_ERRORS",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "RESOURCE_PILLARS",
+            "CPU_MEMORY_STORAGE_NETWORK_B",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "LINUX_60S_CHECKLIST",
+            "UPTIME_VMSTAT_MPSTAT_IOSTAT_",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d37-p2",
+      "partTitle": "Detective Challenge: The Invisible 99% Gigabit NIC Saturation Outage (When CPU & RAM Look Idle)",
+      "template": "cells",
+      "codeHash": "4579eff0360cc2836ea2db9a8c90baed7bb31cdb56d048f06c735eb0ee0da406",
+      "data": {
+        "title": "Systems Architecture Telemetry: Detective Challenge: The Invisible 99% Gigabit NIC Saturation Ou",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "RED_SYMPTOM",
+            "RATE_5000_RPS_ERR_0_1_PCT_P9",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "CPU_AND_RAM_USE",
+            "CPU_U_30_PCT_S_0_MEM_U_40_PC",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "STORAGE_USE",
+            "DISK_U_15_PCT_AWAIT_S_0_ERRO",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "NETWORK_USE_ALERT",
+            "NIC_U_99_PCT_TX_DROPS_4000_P",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d37-p3",
+      "partTitle": "Mastery Assignment: The 60-Second Linux USE Scanner & The Load Average `TASK_UNINTERRUPTIBLE` Trap",
+      "template": "cells",
+      "codeHash": "b88c4bef670a8fb563e4ec4e76fa908584fd16446d77e76a5497b00d2705b637",
+      "data": {
+        "title": "Systems Architecture Telemetry: Mastery Assignment: The 60-Second Linux USE Scanner & The Load A",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "PROC_LOADAVG",
+            "1M_24_50_5M_22_10_UNINTERRUP",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "VMSTAT_CPU_RUNQ",
+            "R_2_PROCS_B_18_BLOCKED_ON_DI",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "IOSTAT_NVME0N1",
+            "UTIL_99_8_PCT_AQU_SZ_34_2_SA",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "MEM_PSI_PRESSURE",
+            "SOME_AVG10_0_00_FULL_AVG10_0",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d37-p4",
+      "partTitle": "Incident Lab: Multi-Resource Stress Injection (`stress-ng` + `tc netem`) & 5-Second Isolation",
+      "template": "cells",
+      "codeHash": "2fc10b15f3fe1ddb94cd1bac59285a9fa02e45669f2fd559430ebd33fe0d0632",
+      "data": {
+        "title": "Systems Architecture Telemetry: Incident Lab: Multi-Resource Stress Injection (`stress-ng` + `tc",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "INJECTED_FAULT_1",
+            "STRESS_NG_HDD_QUEUE_DEPTH_64",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "INJECTED_FAULT_2",
+            "TC_QDISC_NETEM_TX_QUEUE_OVER",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "DETECTION_TIME",
+            "4_2_SECONDS_VIA_AUTOMATED_US",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "FALSE_UPGRADE_AVOIDED",
+            "SAVED_USD_80000_UNNEEDED_CPU",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d37-p5",
+      "partTitle": "Day 37 Mastery Certification: Complete Hardware USE & Service RED Observability Matrix",
+      "template": "cells",
+      "codeHash": "ee15c89d5d058ed837f3cd75480e89140d241f7b7ccef760c2bd89776eda745a",
+      "data": {
+        "title": "Systems Architecture Telemetry: Day 37 Mastery Certification: Complete Hardware USE & Service RE",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "CPU_USE_AUDIT",
+            "UTILIZATION_RUNQ_AND_MCE_VER",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "MEMORY_USE_AUDIT",
+            "CAPACITY_SWAP_PSI_OOM_VERIFI",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "STORAGE_USE_AUDIT",
+            "IOSTAT_UTIL_AQU_SZ_ERR_VERIF",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "NETWORK_USE_AUDIT",
+            "BANDWIDTH_QDISC_DROPS_RETRAN",
+            "Verified 100%"
+          ]
+        ]
+      }
+    }
+  ]
+}

@@ -3018,3 +3018,139 @@ test('Systems Long Lessons: comp_fund Day 35 Milestone 6: ApexContainer Rootless
   assert.ok(res5.stdout?.includes('MILESTONE_6_VERDICT: APEX_CONTAINER_ENGINE_BOARD_APPROVED'));
 });
 
+test('Systems Long Lessons: comp_fund Day 36 Modern Linux Tracing: eBPF, kprobes, uprobes & bpftrace', async () => {
+  const d36 = getLongLesson('comp_fund', 36);
+  assert.ok(d36, 'comp_fund Day 36 must resolve');
+  assert.equal(d36.day, 36);
+  assert.equal(d36.parts.length, 5);
+
+  const res1 = await executeBashSuite(d36.parts[0].code!);
+  assert.equal(res1.allPassed, true);
+  assert.ok(res1.stdout?.includes('SAFETY_GATE: STATIC_DAG_VERIFIER_NO_UNBOUNDED_LOOPS'));
+
+  const res2 = await executeBashSuite(d36.parts[1].code!);
+  assert.equal(res2.allPassed, true);
+  assert.ok(res2.stdout?.includes('ROOT_CAUSE_FOUND: RAID_BATTERY_CACHE_FLUSH_250MS_SPIKE'));
+
+  const res3 = await executeBashSuite(d36.parts[2].code!);
+  assert.equal(res3.allPassed, true);
+  assert.ok(res3.stdout?.includes('HISTOGRAM_STATUS: IN_KERNEL_LOG2_MAP_AGGREGATION_VERIFIED'));
+
+  const res4 = await executeBashSuite(d36.parts[3].code!);
+  assert.equal(res4.allPassed, true);
+  assert.ok(res4.stdout?.includes('BENCHMARK_VERDICT: EBPF_IN_KERNEL_AGGREGATION_SUPERIOR'));
+
+  const res5 = await executeBashSuite(d36.parts[4].code!);
+  assert.equal(res5.allPassed, true);
+  assert.ok(res5.stdout?.includes('DAY_36_CERTIFICATION: MODERN_LINUX_EBPF_TRACING_MASTERED'));
+});
+
+test('Systems Long Lessons: comp_fund Day 37 Brendan Gregg USE Method & RED Method: Systems Bottleneck Calculus', async () => {
+  const d37 = getLongLesson('comp_fund', 37);
+  assert.ok(d37, 'comp_fund Day 37 must resolve');
+  assert.equal(d37.day, 37);
+  assert.equal(d37.parts.length, 5);
+
+  const res1 = await executeBashSuite(d37.parts[0].code!);
+  assert.equal(res1.allPassed, true);
+  assert.ok(res1.stdout?.includes('INVARIANT: ALL_3_USE_METRICS_MANDATORY_PER_RESOURCE'));
+
+  const res2 = await executeBashSuite(d37.parts[1].code!);
+  assert.equal(res2.allPassed, true);
+  assert.ok(res2.stdout?.includes('ROOT_CAUSE_VERDICT: GIGABIT_NIC_TX_QUEUE_SATURATION'));
+
+  const res3 = await executeBashSuite(d37.parts[2].code!);
+  assert.equal(res3.allPassed, true);
+  assert.ok(res3.stdout?.includes('SCANNER_VERDICT: STORAGE_QUEUE_SATURATION_PINPOINTED'));
+
+  const res4 = await executeBashSuite(d37.parts[3].code!);
+  assert.equal(res4.allPassed, true);
+  assert.ok(res4.stdout?.includes('LAB_STATUS: MULTI_DIMENSIONAL_BOTTLENECKS_ISOLATED'));
+
+  const res5 = await executeBashSuite(d37.parts[4].code!);
+  assert.equal(res5.allPassed, true);
+  assert.ok(res5.stdout?.includes('DAY_37_CERTIFICATION: USE_AND_RED_CALCULUS_MASTERED'));
+});
+
+test('Systems Long Lessons: comp_fund Day 38 Systems Profiling: Linux perf, CPU Flame Graphs & Hardware Performance Counters', async () => {
+  const d38 = getLongLesson('comp_fund', 38);
+  assert.ok(d38, 'comp_fund Day 38 must resolve');
+  assert.equal(d38.day, 38);
+  assert.equal(d38.parts.length, 5);
+
+  const res1 = await executeBashSuite(d38.parts[0].code!);
+  assert.equal(res1.allPassed, true);
+  assert.ok(res1.stdout?.includes('WHY_99_HZ: PREVENTS_LOCKSTEP_ALIASING_WITH_100HZ_TIMERS'));
+
+  const res2 = await executeBashSuite(d38.parts[1].code!);
+  assert.equal(res2.allPassed, true);
+  assert.ok(res2.stdout?.includes('POST_FIX_RESULT: 60_PCT_CPU_SAVED_IPC_RESTORED_TO_2_4'));
+
+  const res3 = await executeBashSuite(d38.parts[2].code!);
+  assert.equal(res3.allPassed, true);
+  assert.ok(res3.stdout?.includes('OFF_CPU_DISCOVERY: 92_PCT_ELAPSED_TIME_IN_FUTEX_WAIT'));
+
+  const res4 = await executeBashSuite(d38.parts[3].code!);
+  assert.equal(res4.allPassed, true);
+  assert.ok(res4.stdout?.includes('PMU_VERDICT: HARDWARE_BRANCH_PREDICTION_DOMINATES_IPC'));
+
+  const res5 = await executeBashSuite(d38.parts[4].code!);
+  assert.equal(res5.allPassed, true);
+  assert.ok(res5.stdout?.includes('DAY_38_CERTIFICATION: SYSTEMS_PROFILING_AND_FLAMES_MASTERED'));
+});
+
+test('Systems Long Lessons: comp_fund Day 39 Production Core Dump Forensics: GDB, Memory Registers, Stack Unwinding & DWARF Symbols', async () => {
+  const d39 = getLongLesson('comp_fund', 39);
+  assert.ok(d39, 'comp_fund Day 39 must resolve');
+  assert.equal(d39.day, 39);
+  assert.equal(d39.parts.length, 5);
+
+  const res1 = await executeBashSuite(d39.parts[0].code!);
+  assert.equal(res1.allPassed, true);
+  assert.ok(res1.stdout?.includes('SYMBOL_FORMAT: DETACHED_DWARF_DEBUG_INFO_BUILD_ID_MATCH'));
+
+  const res2 = await executeBashSuite(d39.parts[1].code!);
+  assert.equal(res2.allPassed, true);
+  assert.ok(res2.stdout?.includes('RESOLVED_FAULT: ORDER_ROUTER_CPP_LINE_412_NULL_PTR_RAX_0x0'));
+
+  const res3 = await executeBashSuite(d39.parts[2].code!);
+  assert.equal(res3.allPassed, true);
+  assert.ok(res3.stdout?.includes('TRIAGE_STATUS: AUTOMATED_RCA_REPORT_GENERATED_IN_1_8S'));
+
+  const res4 = await executeBashSuite(d39.parts[3].code!);
+  assert.equal(res4.allPassed, true);
+  assert.ok(res4.stdout?.includes('UNWIND_VERDICT: CALL_CHAIN_RECONSTRUCTED_AND_PATCHED'));
+
+  const res5 = await executeBashSuite(d39.parts[4].code!);
+  assert.equal(res5.allPassed, true);
+  assert.ok(res5.stdout?.includes('DAY_39_CERTIFICATION: CORE_DUMP_FORENSICS_MASTERED'));
+});
+
+test('Systems Long Lessons: comp_fund Day 40 Milestone 7: ApexTrace eBPF Kernel Observability & Performance Profiling Suite', async () => {
+  const d40 = getLongLesson('comp_fund', 40);
+  assert.ok(d40, 'comp_fund Day 40 must resolve');
+  assert.equal(d40.day, 40);
+  assert.equal(d40.parts.length, 5);
+
+  const res1 = await executeBashSuite(d40.parts[0].code!);
+  assert.equal(res1.allPassed, true);
+  assert.ok(res1.stdout?.includes('NON_INTERFERENCE_SLA: SUB_1_PCT_CPU_ZERO_BLOCKING_DISK_IO'));
+
+  const res2 = await executeBashSuite(d40.parts[1].code!);
+  assert.equal(res2.allPassed, true);
+  assert.ok(res2.stdout?.includes('KERNEL_MEMORY_STATUS: ZERO_UNEVICTABLE_SLAB_GROWTH'));
+
+  const res3 = await executeBashSuite(d40.parts[2].code!);
+  assert.equal(res3.allPassed, true);
+  assert.ok(res3.stdout?.includes('PLATFORM_STATUS: APEXTRACE_UNIFIED_DAEMON_OPERATIONAL'));
+
+  const res4 = await executeBashSuite(d40.parts[3].code!);
+  assert.equal(res4.allPassed, true);
+  assert.ok(res4.stdout?.includes('TOTAL_MONITORING_OVERHEAD: 0_62_PCT_CPU_SLA_VERIFIED'));
+
+  const res5 = await executeBashSuite(d40.parts[4].code!);
+  assert.equal(res5.allPassed, true);
+  assert.ok(res5.stdout?.includes('MILESTONE_7_VERDICT: APEXTRACE_OBSERVABILITY_BOARD_APPROVED'));
+});
+
+

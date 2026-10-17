@@ -1,0 +1,211 @@
+{
+  "day": 39,
+  "course": "comp_fund",
+  "entries": [
+    {
+      "stepId": "cf-d39-p1",
+      "partTitle": "Linux ELF Core Dump Architecture, `RLIMIT_CORE` & `core_pattern` Pipeline",
+      "template": "cells",
+      "codeHash": "05b4c2af4dddaaaeedca137d023c12874db4d1ab2c93876075b9dc6280a4485d",
+      "data": {
+        "title": "Systems Architecture Telemetry: Linux ELF Core Dump Architecture, `RLIMIT_CORE` & `core_pattern`",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "BINARY_FORMAT",
+            "ELF_ET_CORE_STATIC_PROCESS_S",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "KERNEL_LIMIT_GATE",
+            "RLIMIT_CORE_UNLIMITED_IN_SYS",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "KERNEL_ROUTE",
+            "PROC_SYS_KERNEL_CORE_PATTERN",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "ELF_NOTES",
+            "NT_PRSTATUS_REGISTERS_AND_SI",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d39-p2",
+      "partTitle": "Detective Challenge: Resolving GDB `?? ()` Question Marks with Detached DWARF `.debug` Symbols",
+      "template": "cells",
+      "codeHash": "b5aed82566247a6abbb718fdef9dd6bad67663e5206f29cc0c76928f930176eb",
+      "data": {
+        "title": "Systems Architecture Telemetry: Detective Challenge: Resolving GDB `?? ()` Question Marks with D",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "INITIAL_GDB_VIEW",
+            "HEX_0x0000555555555123_IN_QU",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "DIAGNOSIS",
+            "STRIPPED_PRODUCTION_BINARY_N",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "SYMBOL_LOAD_CMD",
+            "gdb_s_app_debug_e_app_c_core",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "RESOLVED_FAULT",
+            "ORDER_ROUTER_CPP_LINE_412_NU",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d39-p3",
+      "partTitle": "Mastery Assignment: Automated Multi-Thread GDB Crash Triage (`thread apply all bt full`)",
+      "template": "cells",
+      "codeHash": "39657915bb67d6e0e12421e89c83024fb3377ba091e4cf04c79bbf0567228509",
+      "data": {
+        "title": "Systems Architecture Telemetry: Mastery Assignment: Automated Multi-Thread GDB Crash Triage (`th",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "INGEST_EVENT",
+            "CORE_DUMP_SIGNAL_11_SIGSEGV_",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "GDB_BATCH_CMD",
+            "thread_apply_all_bt_full_and",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "FAULTING_THREAD",
+            "LWP_8842_WORKER_POOL_3_DEREF",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "LOCAL_VARS",
+            "order_ptr_NULL_client_id_994",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d39-p4",
+      "partTitle": "Incident Lab: Manual Stack Unwinding (`RSP`/`RBP`) & DWARF `.eh_frame` Call Frame Information",
+      "template": "cells",
+      "codeHash": "db8d550f0b2ccf6b972f9803519de49d372ac568f39afad68b3ef6272fa2a582",
+      "data": {
+        "title": "Systems Architecture Telemetry: Incident Lab: Manual Stack Unwinding (`RSP`/`RBP`) & DWARF `.eh_",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "CORRUPTION_TYPE",
+            "STACK_BUFFER_OVERFLOW_SAVED_",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "RAW_RSP_POINTER",
+            "0x7fffffffe140_VALID_STACK_M",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "DWARF_CFI_TABLE",
+            "EH_FRAME_UNWIND_WITHOUT_RBP_",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "RECOVERED_CALLER",
+            "PARSE_WIRE_PACKET_AT_0x55555",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d39-p5",
+      "partTitle": "Day 39 Mastery Certification: Production Core Dump Readiness & Automated Forensics",
+      "template": "cells",
+      "codeHash": "b88a2aa1919634f632a6306eb8b285cc90a41f1ce24ceef8ed7afa15cdc500e8",
+      "data": {
+        "title": "Systems Architecture Telemetry: Day 39 Mastery Certification: Production Core Dump Readiness & A",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "ULIMIT_CORE_AUDIT",
+            "SYSTEMD_LIMITCORE_INFINITY_V",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "DWARF_ARCHIVE_AUDIT",
+            "BUILD_ID_DEBUGINFO_SERVER_SY",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "GDB_AUTOMATION_AUDIT",
+            "THREAD_APPLY_ALL_BT_SCRIPT_A",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "STORAGE_QUOTA_AUDIT",
+            "COREDUMP_MAX_USE_AND_ZSTD_AC",
+            "Verified 100%"
+          ]
+        ]
+      }
+    }
+  ]
+}

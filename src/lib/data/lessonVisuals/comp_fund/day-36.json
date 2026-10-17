@@ -1,0 +1,211 @@
+{
+  "day": 36,
+  "course": "comp_fund",
+  "entries": [
+    {
+      "stepId": "cf-d36-p1",
+      "partTitle": "eBPF Kernel Architecture: The In-Kernel Safety Verifier, JIT Compiler, Hooks & BPF Maps",
+      "template": "cells",
+      "codeHash": "be9c5995b853538e10b9bc49274b968cd26042d5bf3fef95f0625f034eb1ed55",
+      "data": {
+        "title": "Systems Architecture Telemetry: eBPF Kernel Architecture: The In-Kernel Safety Verifier, JIT Com",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "RUNTIME_ENGINE",
+            "IN_KERNEL_EBPF_SANDBOX_VM",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "SAFETY_GATE",
+            "STATIC_DAG_VERIFIER_NO_UNBOU",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "COMPILATION",
+            "JIT_NATIVE_X86_64_ARM64_MACH",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "HOOK_POINTS",
+            "KPROBES_UPROBES_TRACEPOINTS_",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d36-p2",
+      "partTitle": "Detective Challenge: The Printf Debugging Outage vs Zero-Interference eBPF Block I/O Tracing",
+      "template": "cells",
+      "codeHash": "0715e35918b4b18ac11e2742b60b3231b5280eec84ee9504265a85ed558564e2",
+      "data": {
+        "title": "Systems Architecture Telemetry: Detective Challenge: The Printf Debugging Outage vs Zero-Interfe",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "INCIDENT_SYMPTOM",
+            "RANDOM_250MS_DB_QUERY_MICRO_",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "LEGACY_PRINTF_FAILURE",
+            "80_PCT_THROUGHPUT_DROP_DISK_",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "EBPF_HOOK",
+            "TRACEPOINT_BLOCK_BLOCK_RQ_CO",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "ROOT_CAUSE_FOUND",
+            "RAID_BATTERY_CACHE_FLUSH_250",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d36-p3",
+      "partTitle": "Mastery Assignment: Custom eBPF Block I/O Power-of-2 Latency Histogram (`biolatency`)",
+      "template": "cells",
+      "codeHash": "c38608566d1de33eef56275fc25a1052502cdbb0e65aca3106529b72553d3361",
+      "data": {
+        "title": "Systems Architecture Telemetry: Mastery Assignment: Custom eBPF Block I/O Power-of-2 Latency His",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "PROBE_ATTACH",
+            "KPROBE_BLK_MQ_START_AND_COMP",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "BUCKET_128_TO_255_US",
+            "48200_IO_OPERATIONS",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "BUCKET_256_TO_511_US",
+            "12400_IO_OPERATIONS",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "BUCKET_128_TO_255_MS",
+            "6_OUTLIER_CACHE_FLUSH_SPIKES",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d36-p4",
+      "partTitle": "Incident Lab: Benchmarking 100,000 QPS eBPF Tracing vs Traditional Syslog/Auditd Logging",
+      "template": "cells",
+      "codeHash": "1307e6929f84e0fefe8e9968dd135a3f6fc652744e2904f832fce482256d3ec6",
+      "data": {
+        "title": "Systems Architecture Telemetry: Incident Lab: Benchmarking 100,000 QPS eBPF Tracing vs Tradition",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "WORKLOAD_RATE",
+            "100000_QPS_PRODUCTION_TRAFFI",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "SYSLOG_PRINTF_MODE",
+            "78_PCT_CPU_OVERHEAD_14200_DR",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "EBPF_KERNEL_MAP_MODE",
+            "0_4_PCT_CPU_OVERHEAD_0_DROPP",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "OPENAT_TRACE",
+            "TRACEPOINT_SYSCALLS_SYS_ENTE",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d36-p5",
+      "partTitle": "Day 36 Mastery Certification: eBPF Safety Verifier, Probe Selection & Production Telemetry",
+      "template": "cells",
+      "codeHash": "2ac1147991a4614b2976fc59270ef7755ab314c5aa0f4d890109b0e822ae1cd7",
+      "data": {
+        "title": "Systems Architecture Telemetry: Day 36 Mastery Certification: eBPF Safety Verifier, Probe Select",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "VERIFIER_AUDIT",
+            "BOUNDED_LOOPS_AND_VALID_PTRS",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "JIT_AUDIT",
+            "NATIVE_MACHINE_INSTRUCTION_E",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "PROBE_AUDIT",
+            "KPROBES_UPROBES_TRACEPOINTS_",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "MAP_AUDIT",
+            "ZERO_COPY_BPF_RINGBUF_TELEME",
+            "Verified 100%"
+          ]
+        ]
+      }
+    }
+  ]
+}

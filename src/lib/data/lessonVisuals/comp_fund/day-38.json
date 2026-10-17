@@ -1,0 +1,211 @@
+{
+  "day": 38,
+  "course": "comp_fund",
+  "entries": [
+    {
+      "stepId": "cf-d38-p1",
+      "partTitle": "Linux `perf` Sampling at 99 Hz, Flame Graph Geometry & Hardware PMU Counters (`IPC`)",
+      "template": "cells",
+      "codeHash": "1f1a45eb7ae189597836b6992d05c93803298ca29e92147ce94e1803dc2905f4",
+      "data": {
+        "title": "Systems Architecture Telemetry: Linux `perf` Sampling at 99 Hz, Flame Graph Geometry & Hardware ",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "SAMPLING_PROFILER",
+            "LINUX_PERF_RECORD_FREQ_99_HZ",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "WHY_99_HZ",
+            "PREVENTS_LOCKSTEP_ALIASING_W",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "FLAME_X_AXIS",
+            "ALPHABETICAL_SAMPLE_POPULATI",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "FLAME_Y_AXIS",
+            "CALL_STACK_DEPTH_PARENT_BELO",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d38-p2",
+      "partTitle": "Detective Challenge: The 68% `glibc` `malloc()`/`free()` Arena Lock Thrashing Flame Graph",
+      "template": "cells",
+      "codeHash": "d3d42d81edde2936784787f99f5831657d9f7cbadeab881cefdd8862742ac203",
+      "data": {
+        "title": "Systems Architecture Telemetry: Detective Challenge: The 68% `glibc` `malloc()`/`free()` Arena L",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "FLAME_GRAPH_HOT_TOWER",
+            "GLIBC_PTMALLOC_ARENA_LOCK_68",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "PMU_TELEMETRY",
+            "IPC_0_42_SEVERE_L3_CACHE_COH",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "REMEDIATION_1",
+            "PRE_ALLOCATED_OBJECT_RING_BU",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "REMEDIATION_2",
+            "LINK_JEMALLOC_THREAD_LOCAL_T",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d38-p3",
+      "partTitle": "Mastery Assignment: Dual-Spectrum Profiling — Combining On-CPU `perf` with Off-CPU eBPF Flame Graphs",
+      "template": "cells",
+      "codeHash": "2f5c0f87f685fb6dd1ee4e05e3ffac3391a2d20e4146d935018bbf3066e92fab",
+      "data": {
+        "title": "Systems Architecture Telemetry: Mastery Assignment: Dual-Spectrum Profiling — Combining On-CPU `",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "ON_CPU_CAPTURE",
+            "PERF_SCRIPT_STACKCOLLAPSE_PE",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "OFF_CPU_CAPTURE",
+            "EBPF_SCHED_SWITCH_OFFCPUTIME",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "OFF_CPU_DISCOVERY",
+            "92_PCT_ELAPSED_TIME_IN_FUTEX",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "SVG_ARTIFACT",
+            "INTERACTIVE_ON_AND_OFF_CPU_F",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d38-p4",
+      "partTitle": "Incident Lab: Hardware PMU Profiling — The 6x Branch Misprediction Pipeline Flush Penalty",
+      "template": "cells",
+      "codeHash": "0a96d70468f6d3a49fc6f13d324262de582db63dcd67fad6f3baec0a7f6eb0a5",
+      "data": {
+        "title": "Systems Architecture Telemetry: Incident Lab: Hardware PMU Profiling — The 6x Branch Mispredicti",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "UNSORTED_ARRAY_BRANCH_MISS",
+            "18_4_PCT_PIPELINE_FLUSHES",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "UNSORTED_EXECUTION_TIME",
+            "1420_MS_IPC_0_68",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "SORTED_ARRAY_BRANCH_MISS",
+            "0_1_PCT_BPU_PREDICTED",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "SORTED_OR_BRANCHLESS_TIME",
+            "235_MS_IPC_2_85_6X_FASTER",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d38-p5",
+      "partTitle": "Day 38 Mastery Certification: Production Systems Profiling & PMU Counter Hygiene",
+      "template": "cells",
+      "codeHash": "5585013316ffb81ce6daa20f1fb3f7c76698d04ce5d768df430740daa3b9d8b0",
+      "data": {
+        "title": "Systems Architecture Telemetry: Day 38 Mastery Certification: Production Systems Profiling & PMU",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "PERF_SAMPLING_AUDIT",
+            "99HZ_DWARF_FP_UNWINDING_VERI",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "ON_CPU_FLAME_AUDIT",
+            "HOT_PLATEAU_IDENTIFICATION_V",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "OFF_CPU_FLAME_AUDIT",
+            "SCHED_SWITCH_BLOCK_TIME_VERI",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "PMU_COUNTER_AUDIT",
+            "IPC_CACHE_AND_BRANCH_MISS_VE",
+            "Verified 100%"
+          ]
+        ]
+      }
+    }
+  ]
+}
