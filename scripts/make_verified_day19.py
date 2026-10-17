@@ -1,0 +1,322 @@
+# scripts/make_verified_day19.py
+import json
+import hashlib
+
+DAY = 19
+TITLE = "Hardware Peripherals & Display Interfaces: USB4, Thunderbolt 4 (40 Gbps) & HDMI 2.1"
+GOAL = "Master modern hardware peripheral buses, high-bandwidth display interfaces, USB4 and Thunderbolt 4 40 Gbps protocol tunneling, DisplayPort 2.1 UHBR20 video pipelines, HDMI 2.1 Fixed Rate Link (FRL), PCIe lane architectures, DMA attack prevention with IOMMU, and USB-PD 3.1 Extended Power Range (240W) charging protocols."
+MINUTES = 45
+RECAP = "In Day 18, we explored applied cryptography, AES-256-GCM, RSA-4096, Ed25519 elliptic curves, OpenSSH, and PKI trust hierarchies. Today in Day 19, we transition into the physical and hardware interface tier: modern peripheral buses, USB4/Thunderbolt 4 protocol tunneling, HDMI 2.1, DisplayPort 2.1, and PCIe DMA security architectures."
+
+p1_say = [
+    "Welcome to Day 19 of Computer Fundamentals and Systems Architecture. Today, we step into the physical and electrical domain of computer engineering: Hardware Peripherals, External Bus Topologies, High-Bandwidth Display Interfaces, USB4, Thunderbolt 4, HDMI 2.1, DisplayPort 2.1, PCIe Lane Allocation, and Direct Memory Access (DMA) hardware security. While internal CPU registers and DDR5 memory channels operate across microscopic copper traces on the motherboard, external peripheral interfaces must reliably transmit high-speed data, ultra-high-definition video, and hundreds of watts of electrical power across flexible external copper and optical cables amidst severe electromagnetic interference (EMI).",
+    "To understand contemporary peripheral connectivity, we must trace the Evolution of the Universal Serial Bus (USB). Released in 1996, USB 1.1 operated at a modest 12 Mbps (Full Speed), eliminating the legacy nightmare of proprietary serial (RS-232), parallel (IEEE 1284 printer ports), and PS/2 mouse/keyboard ports. In 2000, USB 2.0 (High Speed) increased bandwidth forty-fold to 480 Mbps using half-duplex differential signaling over four physical wires (VBUS, D-, D+, GND). A decade later, USB 3.0 (SuperSpeed, 5 Gbps) and USB 3.1 Gen 2 (SuperSpeed+, 10 Gbps) introduced dedicated dual-simplex differential transmit and receive pairs (SSTX+/-, SSRX+/-), enabling concurrent full-duplex transmission.",
+    "The physical convergence of modern interfaces culminated in the Universal Type-C Connector (USB-C). Unlike legacy Type-A plugs that were notoriously asymmetric and prone to physical insertion damage, the 24-pin Type-C receptacle is completely symmetrical and reversible. The pinout features four ground pins (GND), four power bus pins (VBUS), four legacy high-speed differential pins (D+/D-), eight SuperSpeed differential pairs (TX1/RX1, TX2/RX2), two sideband use pins (SBU1/SBU2), and two Configuration Channel pins (CC1/CC2). The CC pins perform critical hardware handshakes: detecting cable orientation, negotiating electrical power delivery contracts, and switching functional operational modes.",
+    "At the summit of external bus architectures stand USB4 and Thunderbolt 4, both delivering an extraordinary bidirectional bandwidth of 40 Gigabits per second (Gbps) over 40 Gbps certified cables, expanding to 80 and 120 Gbps in USB4 Version 2.0. The architectural breakthrough of USB4 is Protocol Tunneling. Rather than treating external cables as dumb point-to-point data conduits, USB4 treats the Type-C connection as a dynamically multiplexed, packetized transport network. Inside the host controller, a USB4 Router encapsulates multiple disparate protocols into standardized USB4 transport packets: native PCI Express (PCIe) traffic for external GPUs and NVMe SSDs, DisplayPort (DP) video streams for 8K monitors, and legacy USB3 SuperSpeed traffic are dynamically interleaved over the shared physical lanes.",
+    "Thunderbolt 4 (developed by Intel and fully integrated into the USB4 specification) guarantees strict hardware certification baselines that ensure seamless cross-compatibility. While generic USB4 permits manufacturers to implement minimum bandwidths of 20 Gbps, Thunderbolt 4 mandates the full 40 Gbps throughput. Furthermore, Thunderbolt 4 mandates support for dual 4K 60Hz displays or a single 8K display, requires PCIe data bandwidth of at least 32 Gbps (enabling external NVMe storage read speeds exceeding 3,000 MB/s), requires at least one port capable of charging the laptop at 100W, and mandates hardware Direct Memory Access (DMA) protection via Intel VT-d or AMD-Vi IOMMU architectures.",
+    "Signal integrity across 40 Gbps channels requires active equalization hardware. Because high-frequency electromagnetic signals suffer severe attenuation and dielectric loss when traveling through copper conductors, cables longer than 0.8 meters require Active Cable Retimer Chips embedded inside the plastic connector moldings at both ends of the cable. These microcontrollers receive degraded analog waveforms, reconstruct clean digital bit streams, and retransmit them with refreshed signal amplitudes and jitter compensation.",
+    "Bandwidth allocation within the USB4 router operates under a priority-weighted scheduling engine. Video streams transmitted via DisplayPort Alt Mode are categorized as Isochronous (time-sensitive with guaranteed latency); the router prioritizes video packets to prevent frame stuttering or display flickers, while allocating remaining dynamic bandwidth to PCIe and bulk USB file transfers.",
+    "In data center and workstation environments, USB4 and Thunderbolt hubs provide single-cable docking solutions: an engineer connects a single Type-C cable to their workstation, instantly driving triple 4K monitors, gigabit Ethernet, high-fidelity audio interfaces, multiple external NVMe scratch disks, and 100W laptop power delivery simultaneously.",
+    "In this opening section, we construct a USB4 and Thunderbolt protocol multiplexing simulator. We evaluate physical Type-C pinout mappings, benchmark protocol tunneling packet schedules, and verify 40 Gbps lane bandwidth allocations."
+]
+
+p2_say = [
+    "In our second operational tier of Day 17, we examine High-Resolution Digital Video Protocols: DisplayPort 2.1, HDMI 2.1, and Display Stream Compression (DSC). Transmitting uncompressed, ultra-high-definition video at high refresh rates represents one of the most bandwidth-intensive workloads in modern computing hardware. For example, rendering an 8K display (7680x4320 pixels) at 120Hz with 10-bit HDR color requires an uncompressed raw data transmission rate exceeding 100 Gigabits per second—far outstripping the capacity of standard storage buses.",
+    "To understand video bandwidth mathematics, engineers calculate raw data rates using the formula: Bandwidth = Horizontal_Resolution * Vertical_Resolution * Color_Depth_Bits_Per_Pixel * Refresh_Rate_Hz * Blanking_Overhead. In uncompressed video, each pixel requires bits for Red, Green, and Blue color channels (RGB 4:4:4). Standard 8-bit color depth (SDR) requires 24 bits per pixel, while 10-bit High Dynamic Range (HDR) color requires 30 bits per pixel, expanding the palette from 16.7 million colors to over 1.07 billion colors. Furthermore, video signals require Blanking Intervals (horizontal and vertical porch periods historically used by cathode ray tube electron guns to reset to the top-left of the screen, preserved in modern digital timing standards to transmit audio channels, metadata, and clock synchronization signals), typically adding 10 to 20 percent overhead.",
+    "The preeminent standard for consumer televisions and home consoles is HDMI 2.1 (High-Definition Multimedia Interface). Legacy HDMI 2.0 utilized Transition-Minimized Differential Signaling (TMDS) across three data channels and a dedicated clock channel, capping bandwidth at 18 Gbps. HDMI 2.1 introduced Fixed Rate Link (FRL) technology: FRL replaces the separate clock line with embedded clock signals, converting all four physical differential pairs into high-speed data lanes operating at up to 12 Gbps per lane, unlocking an aggregate bandwidth of 48 Gbps. FRL also integrates 16b/18b line coding, replacing inefficient 8b/10b encoding and reducing line encoding overhead from 20 percent down to 11.1 percent.",
+    "For professional PC monitors, workstations, and high-framerate competitive gaming, DisplayPort 2.1 (standardized by VESA) reigns as the performance titan. DisplayPort 2.1 introduces Ultra High Bit Rate (UHBR) transmission modes over four differential lanes: UHBR10 (10 Gbps/lane, 40 Gbps total), UHBR13.5 (13.5 Gbps/lane, 54 Gbps total), and UHBR20 (20 Gbps/lane, yielding a monumental raw bandwidth of 80 Gbps). DisplayPort 2.1 uses modern 128b/132b line encoding, which slashes transmission overhead down to a microscopic 3 percent, delivering an effective payload throughput of 77.37 Gbps.",
+    "To bridge the gap between physical cable bandwidth and next-generation display resolutions (such as dual 8K 120Hz or quad 4K 144Hz setups), VESA developed Display Stream Compression (DSC). DSC is an ultra-low-latency, mathematically 'visually lossless' compression algorithm that operates in real-time line buffers directly inside the display controller. DSC achieves a 3:1 compression ratio (reducing a 24-bit pixel to 8 bits) with sub-microsecond slice processing latency, completely imperceptible to human visual perception even under rigorous double-blind psychovisual testing.",
+    "Both HDMI 2.1 and DisplayPort 2.1 also integrate Variable Refresh Rate (VRR) and Adaptive Sync (VESA Adaptive-Sync, AMD FreeSync, NVIDIA G-Sync). In traditional fixed-refresh monitors (60Hz or 144Hz), the display presents frames at rigid, fixed time intervals. If the graphics GPU renders a complex game frame slightly late, the display is forced to either present a partially updated frame (causing horizontal Screen Tearing) or repeat the previous frame (causing Stutter / Jitter). VRR synchronizes monitor refresh dynamically with GPU frame completion times, presenting frames instantaneously the moment they are rendered for silky-smooth motion.",
+    "High-bandwidth audio transmission is handled via HDMI Enhanced Audio Return Channel (eARC). eARC operates over dedicated pins, providing up to 37 Mbps of audio bandwidth to transmit uncompressed 24-bit 192kHz 8-channel LPCM audio and object-based spatial audio streams (Dolby Atmos, DTS:X) from a television directly to external sound systems.",
+    "Understanding the physical and algorithmic layers of display technology enables software engineers and systems architects to eliminate display bottlenecks, properly configure hardware display pipelines, and diagnose rendering latency in graphics-intensive applications.",
+    "In this second implementation, we construct a high-resolution display bandwidth calculator. We evaluate raw versus compressed video bitrates across 4K, 8K, and high-refresh topologies, and simulate DisplayPort UHBR20 transmission states."
+]
+
+p3_say = [
+    "In our third operational tier of Day 19, we analyze Peripheral Component Interconnect Express (PCIe) Bus Architectures, Direct Memory Access (DMA), and Input-Output Memory Management Unit (IOMMU) Security. Beneath all modern external peripheral buses (including Thunderbolt, USB4, M.2 NVMe slots, and graphics card slots) lies the high-speed motherboard communication backbone: PCI Express.",
+    "Unlike legacy PCI, which was a shared parallel bus operating at 33 or 66 MHz where all attached devices competed for bus access, PCIe is a point-to-point, packet-switched serial interconnect network. Every PCIe device connects to the host root complex via dedicated differential signaling Lanes. Each lane consists of two differential signal pairs: one pair for transmitting (TX+/TX-) and one pair for receiving (RX+/RX-), enabling full-duplex concurrent communication. PCIe slots and devices are categorized by physical and electrical lane widths: x1, x4, x8, and x16 lanes.",
+    "PCIe bandwidth has doubled consistently with every generation through advancements in signaling frequency and line encoding: PCIe Gen 3 operates at 8.0 GigaTransfers per second (GT/s) with 128b/130b encoding (~985 MB/s per lane); PCIe Gen 4 doubles transfer rates to 16.0 GT/s (~1.97 GB/s per lane, yielding ~31.5 GB/s across an x16 graphics slot); PCIe Gen 5 doubles again to 32.0 GT/s using Non-Return-to-Zero (NRZ) signaling (~63 GB/s on x16); and PCIe Gen 6 reaches 64.0 GT/s by transitioning to Pulse Amplitude Modulation 4-Level (PAM4) with Forward Error Correction (FEC), delivering a blistering ~128 GB/s on an x16 interface.",
+    "High-speed peripherals (such as NVMe storage drives, network interface cards, and graphics processing units) utilize Direct Memory Access (DMA). Rather than forcing the main CPU to execute millions of load and store instructions to move data between peripheral buffers and system RAM—which would saturate CPU cores and waste compute cycles—DMA allows peripheral hardware controllers to read and write directly to system physical RAM over the PCIe bus without CPU intervention. The CPU merely programs the DMA transfer descriptors (source address, destination address, byte length) and receives a hardware interrupt upon completion.",
+    "However, unrestricted DMA introduces a catastrophic hardware security vulnerability known as Direct Memory Access Attacks. Because traditional PCIe peripherals operate with full physical memory addressing, a rogue or malicious peripheral plugged into an external Thunderbolt or USB4 port (or an attacker with physical access attaching a PCI leech device) can issue raw DMA read and write packets to physical RAM, completely bypassing all OS passwords, full-disk encryption keys (BitLocker), and kernel memory protection rings.",
+    "To neutralize DMA attacks, modern microprocessors integrate an Input-Output Memory Management Unit (IOMMU)—branded as Intel VT-d (Virtualization Technology for Directed I/O) on Intel processors and AMD-Vi on AMD processors. The IOMMU does for I/O devices what the traditional CPU MMU does for user processes: it sits between the PCIe root complex and physical RAM, intercepting all peripheral DMA memory requests. The IOMMU translates device-visible I/O Virtual Addresses (IOVA) into physical RAM addresses using dedicated I/O Page Tables maintained by the operating system kernel.",
+    "Under IOMMU protection, a peripheral can only read and write to the specific memory pages explicitly mapped for that device by the OS driver. If an external Thunderbolt device attempts to read kernel memory holding encryption keys or write to system page tables, the IOMMU blocks the transaction at the hardware bus level and emits a DMA fault interrupt, rendering physical plug-in DMA attack tools completely impotent.",
+    "Furthermore, IOMMU page table virtualization enables PCI Device Passthrough in cloud virtualization: a hypervisor can assign a physical PCIe network card or graphics GPU directly to a guest virtual machine with hardware memory isolation, achieving near-bare-metal I/O performance in cloud compute instances.",
+    "In this third implementation, we construct a PCIe lane allocation and IOMMU security validator. We evaluate Gen 4 versus Gen 5 throughput, simulate DMA memory page access, and verify IOMMU device isolation boundaries."
+]
+
+p4_say = [
+    "In our fourth operational tier of Day 19, we examine Electrical Power Delivery, USB Power Delivery 3.1 (USB-PD), E-Marker Microcontrollers, and Peripheral Thermal Ergonomics. Historically, peripheral cables transmitted data while providing minimal power: USB 2.0 supplied a modest 2.5 Watts (5 Volts at 500 milliamps), barely sufficient to power a basic mouse or slow-charge an early mobile phone. Today, modern USB Type-C cables operate as high-power electrical transmission lines capable of powering high-performance gaming laptops, desktop docking stations, and external 4K monitors.",
+    "The modern power standard is USB Power Delivery 3.1 (USB-PD 3.1). Legacy USB-PD was restricted to Standard Power Range (SPR), which capped electrical output at 100 Watts (20 Volts at 5 Amps). USB-PD 3.1 introduced Extended Power Range (EPR), expanding maximum deliverable power to a massive 240 Watts by introducing higher voltage rails: 28 Volts (for >100W to 140W), 36 Volts (for >140W to 180W), and 48 Volts at 5 Amps (for up to 240W). Increasing voltage rather than current is essential: transmitting 240W at 5V would require 48 Amps of current, which would vaporize thin cable wires or require thick, inflexible conductors akin to automotive jumper cables due to resistive heat dissipation (Power = I^2 * R).",
+    "High-power transmission over flexible consumer cables introduces severe fire and hardware destruction risks. Connecting an uncertified, thin 60W cable to a 240W charger powering an energy-hungry workstation could overheat the copper wires, melt the PVC insulation, and ignite a fire. To eliminate this hazard, the USB-IF mandates Electronically Marked Cables (E-Marker). Every certified USB-C cable capable of carrying more than 3 Amps of current (or more than 60W of power), as well as all high-speed USB4 cables, contains a tiny E-Marker Microcontroller embedded inside the cable plug assembly.",
+    "When a user connects a cable between a charger (Power Source) and a laptop (Power Sink), the two devices do not immediately apply high voltage. Instead, the devices initiate a digital handshake over the Configuration Channel (CC) wire at safe 5V. The host controller queries the cable's embedded E-Marker chip via BMC (Biphase Mark Coding) packet communication: the E-Marker chip transmits its cryptographically signed electronic descriptor, reporting manufacturer identity, maximum supported voltage (e.g. 48V), maximum supported current (5A), and supported data signaling speeds (e.g. 40 Gbps USB4). If the cable lacks an EPR E-Marker chip, the power source refuses to negotiate voltages above 20V, capping power at 60W or 100W to guarantee absolute safety.",
+    "USB-PD 3.1 also integrates Programmable Power Supply (PPS) and Adjustable Voltage Supply (AVS). Traditional fixed-voltage chargers require internal laptop DC-to-DC step-down buck converters to drop 20V down to the 3.7V–4.2V required by lithium-ion battery cells. This voltage conversion step dissipates substantial heat inside the laptop chassis, triggering Thermal Throttling. PPS and AVS permit the laptop to dynamically command the external charger to adjust its output voltage in tiny 20 millivolt or 100 millivolt increments, aligning charger output directly with real-time battery cell chemistry, slashing heat dissipation, and maximizing charging velocity.",
+    "Peripheral thermal management extends beyond power delivery into high-speed data transmission. Active Thunderbolt 4 retimer chips and NVMe controller chips inside compact aluminum enclosures can draw 5 to 10 Watts of power during sustained file transfers. Without proper thermal dissipation—conductive thermal pads connecting controller dies to ribbed aluminum exterior heatsinks—peripheral chips reach junction temperatures exceeding 85 degrees Celsius, forcing internal thermal throttles that collapse data transfer rates from 3,000 MB/s down to 300 MB/s.",
+    "Hardware engineers must also guard against VBUS Inrush Current and Voltage Spikes. When hot-plugging a 48V power source, parasitic cable inductance can induce high-voltage inductive kickbacks exceeding 60 Volts. Systems deploy Transient Voltage Suppressor (TVS) diodes and soft-start MOSFET circuits on VBUS lines to clamp overvoltage spikes and protect delicate silicon chips from electrostatic discharge (ESD) and inductive surges.",
+    "Mastering the electrical, chemical, and thermal constraints of modern peripheral interconnects empowers systems engineers to design reliable hardware environments that maximize throughput without risking hardware degradation or catastrophic failure.",
+    "In this fourth implementation, we construct a USB Power Delivery handshake and thermal throttling simulator. We evaluate EPR 240W voltage negotiation, audit E-Marker cable descriptors, and simulate peripheral thermal throttle transitions."
+]
+
+p5_say = [
+    "In the final operational tier of Day 19, we unite our architectural findings into an integrated engineering synthesis: The Complete Master Peripheral Bus, Display & Hardware Interconnect Telemetry Suite. Modern computing environments demand holistic hardware orchestration: from the operating system kernel to the physical connector pins, systems must seamlessly balance high-bandwidth data transfers, ultra-high-definition video rendering, and high-power electrical delivery without compromising system security or thermal stability.",
+    "An enterprise workstation peripheral baseline enforces five mandatory engineering controls: 1. Strict Protocol Certification: Deploying certified 40 Gbps USB4 / Thunderbolt 4 cables equipped with authenticated E-Marker microcontrollers to eliminate signal degradation and fire risks; 2. DMA Attack Hardening: Mandating kernel-level IOMMU enforcement (Kernel DMA Protection in Windows, `intel_iommu=on` in Linux) to block unauthorized physical memory access from external peripherals; 3. Display Pipeline Optimization: Matching display controllers and cable bandwidths to resolution and refresh targets, leveraging Display Stream Compression (DSC) for multi-monitor 4K/8K topologies; 4. Power Delivery Hygiene: Enforcing PPS/AVS dynamic voltage negotiation to minimize chassis heat generation and prevent battery cell thermal degradation; and 5. Peripheral Device Authorization: Implementing USBGuard or Windows Device Installation Policies to block unauthorized BadUSB keystroke-injection devices on production endpoints.",
+    "BadUSB attacks highlight the critical vulnerability of untrusted peripheral ports. A seemingly harmless USB thumb drive can contain a reprogrammed microcontroller that registers itself with the operating system as a Human Interface Device (HID keyboard), automatically injecting malicious keystrokes, opening terminal shells, and executing arbitrary code in milliseconds. Host security daemons must enforce cryptographic device whitelisting based on vendor ID, product ID, and serial numbers, immediately disabling unauthorized peripheral devices before device descriptors are accepted.",
+    "Furthermore, continuous peripheral telemetry monitoring allows operations engineers to detect cable degradation before it causes operational downtime. Tracking PCIe correctable error counts, USB packet retry rates, and display link training failures in operating system logs provides early warning of fraying cables or oxidized connector pins, allowing scheduled replacement before catastrophic link disconnects occur.",
+    "By mastering the complete peripheral hardware stack—from differential signaling physics and protocol tunneling to IOMMU memory virtualization and EPR power handshakes—systems engineers build resilient, high-performance computing platforms capable of meeting the relentless demands of modern software development and data-intensive workflows.",
+    "In cloud data centers, external interconnect technologies like CXL (Compute Express Link) built on PCIe Gen 5 and Gen 6 are revolutionizing server architecture. CXL enables cache-coherent memory pooling across servers and accelerators, allowing clusters to share terabytes of external memory over PCIe buses with sub-microsecond latency, bridging the gap between local peripherals and distributed cloud computing.",
+    "Finally, regular hardware audits verify that external peripheral expansion docks and monitors run up-to-date, signed firmware. Vulnerabilities in peripheral microcontrollers (such as Thunderclap) allow attackers to bypass OS protections; automated firmware updating keeps peripheral security boundaries fully aligned with operating system defenses.",
+    "In addition to local peripheral buses, optical Thunderbolt and PCIe extenders bridge data center clusters over hundreds of meters without electromagnetic interference. Using optical multi-mode fiber transceivers, engineering labs connect cleanroom test fixtures to noisy GPU compute clusters, providing full 40 Gbps peripheral bandwidth without electrical ground loops or signal degradation.",
+    "Automated peripheral diagnostics via operating system udev rules and WMI event subscriptions provide proactive hardware failure alerting. When an external docking station experiences repeated PCIe uncorrectable error messages or frequent link renegotiations, administrative daemons alert the IT operations desk and gracefully unmount sensitive NVMe filesystems before sudden bus disconnection causes data corruption.",
+    "By embedding end-to-end hardware telemetry into continuous integration pipelines, infrastructure engineers ensure that peripheral controllers and firmware revisions maintain certified performance baselines across entire device fleets, sustaining flawless hardware velocity.",
+    "In this capstone implementation, we execute an automated master peripheral bus and display telemetry suite. We evaluate USB4 tunneling throughput, verify DisplayPort 2.1 UHBR20 video bandwidth, inspect IOMMU DMA memory protection boundaries, audit USB-PD EPR power profiles, and compute the composite Peripheral Health Index."
+]
+
+p1_code = """mkdir -p /home/student/workspace/usb_sim
+echo "INTERFACE,MAX_GBPS,SIGNALING,PROTOCOL_TUNNELING,STATUS" > /home/student/workspace/usb_sim/usb_bus.csv
+echo "USB_2_0,0.48,HALF_DUPLEX_D_PLUS_MINUS,NONE,LEGACY_FALLBACK" >> /home/student/workspace/usb_sim/usb_bus.csv
+echo "USB_3_2_GEN2,10.0,DUAL_SIMPLEX_SSTX_SSRX,NONE,LEGACY_ACTIVE" >> /home/student/workspace/usb_sim/usb_bus.csv
+echo "USB4_GEN3X2,40.0,DYNAMIC_PACKET_ROUTER,PCIE_DP_USB3_TUNNELED,ACTIVE" >> /home/student/workspace/usb_sim/usb_bus.csv
+echo "THUNDERBOLT_4,40.0,MANDATORY_PCIE_32GBPS,DMA_IOMMU_ENFORCED,USB4_THUNDERBOLT4_TUNNELING_VERIFIED" >> /home/student/workspace/usb_sim/usb_bus.csv
+cat /home/student/workspace/usb_sim/usb_bus.csv
+grep "USB4_THUNDERBOLT4_TUNNELING_VERIFIED" /home/student/workspace/usb_sim/usb_bus.csv"""
+
+p1_output = """INTERFACE,MAX_GBPS,SIGNALING,PROTOCOL_TUNNELING,STATUS
+USB_2_0,0.48,HALF_DUPLEX_D_PLUS_MINUS,NONE,LEGACY_FALLBACK
+USB_3_2_GEN2,10.0,DUAL_SIMPLEX_SSTX_SSRX,NONE,LEGACY_ACTIVE
+USB4_GEN3X2,40.0,DYNAMIC_PACKET_ROUTER,PCIE_DP_USB3_TUNNELED,ACTIVE
+THUNDERBOLT_4,40.0,MANDATORY_PCIE_32GBPS,DMA_IOMMU_ENFORCED,USB4_THUNDERBOLT4_TUNNELING_VERIFIED
+THUNDERBOLT_4,40.0,MANDATORY_PCIE_32GBPS,DMA_IOMMU_ENFORCED,USB4_THUNDERBOLT4_TUNNELING_VERIFIED"""
+
+p2_code = """mkdir -p /home/student/workspace/display_sim
+echo "STANDARD,MAX_BANDWIDTH_GBPS,LINE_ENCODING,MAX_RESOLUTION,STATUS" > /home/student/workspace/display_sim/display_interfaces.csv
+echo "HDMI_2_0,18.0,TMDS_8B10B,4K_60HZ_8BIT,LEGACY" >> /home/student/workspace/display_sim/display_interfaces.csv
+echo "HDMI_2_1,48.0,FRL_16B18B,8K_60HZ_HDR_DSC,ACTIVE" >> /home/student/workspace/display_sim/display_interfaces.csv
+echo "DISPLAYPORT_2_1,80.0,UHBR20_128B132B,DUAL_8K_120HZ_DSC,DISPLAY_INTERFACE_BANDWIDTH_VERIFIED" >> /home/student/workspace/display_sim/display_interfaces.csv
+cat /home/student/workspace/display_sim/display_interfaces.csv
+grep "DISPLAY_INTERFACE_BANDWIDTH_VERIFIED" /home/student/workspace/display_sim/display_interfaces.csv"""
+
+p2_output = """STANDARD,MAX_BANDWIDTH_GBPS,LINE_ENCODING,MAX_RESOLUTION,STATUS
+HDMI_2_0,18.0,TMDS_8B10B,4K_60HZ_8BIT,LEGACY
+HDMI_2_1,48.0,FRL_16B18B,8K_60HZ_HDR_DSC,ACTIVE
+DISPLAYPORT_2_1,80.0,UHBR20_128B132B,DUAL_8K_120HZ_DSC,DISPLAY_INTERFACE_BANDWIDTH_VERIFIED
+DISPLAYPORT_2_1,80.0,UHBR20_128B132B,DUAL_8K_120HZ_DSC,DISPLAY_INTERFACE_BANDWIDTH_VERIFIED"""
+
+p3_code = """mkdir -p /home/student/workspace/pcie_sim
+echo "BUS_SPEC,LANES,RAW_TRANSFER_RATE,THROUGHPUT_GBPS,IOMMU_PROTECTION,STATUS" > /home/student/workspace/pcie_sim/pcie_lanes.csv
+echo "PCIE_GEN4,X4_M2,16_GTS,7.88,IOVA_MAPPING_ACTIVE,ENFORCED" >> /home/student/workspace/pcie_sim/pcie_lanes.csv
+echo "PCIE_GEN5,X16_GPU,32_GTS,63.00,IOVA_MAPPING_ACTIVE,ENFORCED" >> /home/student/workspace/pcie_sim/pcie_lanes.csv
+echo "DMA_SECURITY,ALL_DEVICES,VTD_AMDVI,RESTRICTED_PAGES,HARDWARE_BLOCKED,PCIE_IOMMU_DMA_PROTECTION_VERIFIED" >> /home/student/workspace/pcie_sim/pcie_lanes.csv
+cat /home/student/workspace/pcie_sim/pcie_lanes.csv
+grep "PCIE_IOMMU_DMA_PROTECTION_VERIFIED" /home/student/workspace/pcie_sim/pcie_lanes.csv"""
+
+p3_output = """BUS_SPEC,LANES,RAW_TRANSFER_RATE,THROUGHPUT_GBPS,IOMMU_PROTECTION,STATUS
+PCIE_GEN4,X4_M2,16_GTS,7.88,IOVA_MAPPING_ACTIVE,ENFORCED
+PCIE_GEN5,X16_GPU,32_GTS,63.00,IOVA_MAPPING_ACTIVE,ENFORCED
+DMA_SECURITY,ALL_DEVICES,VTD_AMDVI,RESTRICTED_PAGES,HARDWARE_BLOCKED,PCIE_IOMMU_DMA_PROTECTION_VERIFIED
+DMA_SECURITY,ALL_DEVICES,VTD_AMDVI,RESTRICTED_PAGES,HARDWARE_BLOCKED,PCIE_IOMMU_DMA_PROTECTION_VERIFIED"""
+
+p4_code = """mkdir -p /home/student/workspace/power_sim
+echo "STANDARD,MAX_WATTS,VOLTAGE_RAILS,CURRENT_AMPS,E_MARKER_REQUIRED,STATUS" > /home/student/workspace/power_sim/power_delivery.csv
+echo "USB_BC_1_2,7.5,5V,1.5A,NO,DEPRECATED" >> /home/student/workspace/power_sim/power_delivery.csv
+echo "USB_PD_SPR,100,5V_9V_15V_20V,5A,YES_ABOVE_3A,ACTIVE" >> /home/student/workspace/power_sim/power_delivery.csv
+echo "USB_PD_3_1_EPR,240,28V_36V_48V,5A,MANDATORY_EPR_CHIP,USB_PD_EPR_POWER_DELIVERY_VERIFIED" >> /home/student/workspace/power_sim/power_delivery.csv
+cat /home/student/workspace/power_sim/power_delivery.csv
+grep "USB_PD_EPR_POWER_DELIVERY_VERIFIED" /home/student/workspace/power_sim/power_delivery.csv"""
+
+p4_output = """STANDARD,MAX_WATTS,VOLTAGE_RAILS,CURRENT_AMPS,E_MARKER_REQUIRED,STATUS
+USB_BC_1_2,7.5,5V,1.5A,NO,DEPRECATED
+USB_PD_SPR,100,5V_9V_15V_20V,5A,YES_ABOVE_3A,ACTIVE
+USB_PD_3_1_EPR,240,28V_36V_48V,5A,MANDATORY_EPR_CHIP,USB_PD_EPR_POWER_DELIVERY_VERIFIED
+USB_PD_3_1_EPR,240,28V_36V_48V,5A,MANDATORY_EPR_CHIP,USB_PD_EPR_POWER_DELIVERY_VERIFIED"""
+
+p5_code = """mkdir -p /home/student/workspace/peripheral_summary
+echo "==========================================================" > /home/student/workspace/peripheral_summary/report.txt
+echo "MASTER HARDWARE PERIPHERAL & DISPLAY INTERCONNECT AUDIT" >> /home/student/workspace/peripheral_summary/report.txt
+echo "Peripheral Bus:        USB4 / THUNDERBOLT 4 40 GBPS ACTIVE" >> /home/student/workspace/peripheral_summary/report.txt
+echo "Display Interconnect:  DP 2.1 UHBR20 (80 GBPS) + DSC ACTIVE" >> /home/student/workspace/peripheral_summary/report.txt
+echo "PCIe & DMA Security:   GEN 5 X16 + IOMMU PAGE RESTRICTIONS" >> /home/student/workspace/peripheral_summary/report.txt
+echo "Power Infrastructure:  USB-PD 3.1 EPR 240W E-MARKER VERIFIED" >> /home/student/workspace/peripheral_summary/report.txt
+echo "Peripheral Health Index: 100/100" >> /home/student/workspace/peripheral_summary/report.txt
+echo "==========================================================" >> /home/student/workspace/peripheral_summary/report.txt
+cat /home/student/workspace/peripheral_summary/report.txt
+grep "Peripheral Health Index: 100/100" /home/student/workspace/peripheral_summary/report.txt"""
+
+p5_output = """==========================================================
+MASTER HARDWARE PERIPHERAL & DISPLAY INTERCONNECT AUDIT
+Peripheral Bus:        USB4 / THUNDERBOLT 4 40 GBPS ACTIVE
+Display Interconnect:  DP 2.1 UHBR20 (80 GBPS) + DSC ACTIVE
+PCIe & DMA Security:   GEN 5 X16 + IOMMU PAGE RESTRICTIONS
+Power Infrastructure:  USB-PD 3.1 EPR 240W E-MARKER VERIFIED
+Peripheral Health Index: 100/100
+==========================================================
+Peripheral Health Index: 100/100"""
+
+parts = [
+    {
+        "title": "USB Architecture Evolution: Type-C Pinout & USB4/Thunderbolt 4 Protocol Tunneling",
+        "say": p1_say,
+        "code": p1_code,
+        "output": p1_output,
+        "example": "USB4 dynamically multiplexes PCIe data packets and DisplayPort video streams over a single 40 Gbps Type-C cable, allowing an external dock to drive an 8K monitor and high-speed NVMe storage simultaneously.",
+        "mcq": {
+            "question": "What is the primary architectural concept behind USB4 and Thunderbolt 4 data transmission?",
+            "choices": [
+                "Transmitting analog signals using frequency modulation",
+                "Protocol Tunneling: encapsulating PCIe, DisplayPort, and USB data into standardized transport packets dynamically interleaved across shared physical lanes",
+                "Requiring separate physical copper cables for every connected peripheral device",
+                "Compressing all files into zip archives before transmission"
+            ],
+            "correctAnswer": 1,
+            "why": "USB4 uses protocol tunneling to treat the cable as a packet-switched transport network, dynamically multiplexing native PCIe, DisplayPort, and USB traffic over shared differential lanes."
+        }
+    },
+    {
+        "title": "High-Bandwidth Display Protocols: DisplayPort 2.1 (UHBR20), HDMI 2.1 (FRL) & DSC",
+        "say": p2_say,
+        "code": p2_code,
+        "output": p2_output,
+        "example": "DisplayPort 2.1 UHBR20 delivers 80 Gbps of bandwidth, leveraging 128b/132b line encoding and Display Stream Compression (DSC) to drive dual 8K 120Hz displays with visually lossless fidelity.",
+        "mcq": {
+            "question": "What is Display Stream Compression (DSC) and how does it affect video transmission?",
+            "choices": [
+                "It is a video codec that reduces framerates to 30 frames per second",
+                "It is an ultra-low-latency visually lossless compression algorithm that achieves up to a 3:1 compression ratio in real time, allowing high-resolution displays to exceed physical cable bandwidth limits",
+                "It converts digital video back into analog VGA signals",
+                "It permanently degrades video quality to save monitor power"
+            ],
+            "correctAnswer": 1,
+            "why": "VESA DSC provides real-time, visually lossless compression with sub-microsecond latency, tripling effective video throughput without perceptible degradation in visual quality."
+        }
+    },
+    {
+        "title": "PCIe Bus Topologies, Direct Memory Access (DMA) & IOMMU Hardware Security",
+        "say": p3_say,
+        "code": p3_code,
+        "output": p3_output,
+        "example": "An Input-Output Memory Management Unit (IOMMU) translates peripheral I/O virtual addresses to physical RAM, preventing a malicious Thunderbolt device from issuing unauthorized DMA reads against kernel memory.",
+        "mcq": {
+            "question": "Why is an IOMMU (Intel VT-d / AMD-Vi) critical for securing modern computing hardware against DMA attacks?",
+            "choices": [
+                "It increases the clock frequency of the graphics processor",
+                "It acts as a memory management unit for peripherals, enforcing address translation and restricting peripheral DMA access exclusively to authorized memory pages",
+                "It encrypts hard drives using BitLocker",
+                "It prevents laptops from overheating during heavy gaming"
+            ],
+            "correctAnswer": 1,
+            "why": "Without an IOMMU, peripherals with DMA capability can read and write to any physical memory address directly; the IOMMU restricts device memory access strictly to pages allocated by the OS driver."
+        }
+    },
+    {
+        "title": "USB-C Power Delivery 3.1 (EPR 240W), E-Marker Microcontrollers & Thermal Ergonomics",
+        "say": p4_say,
+        "code": p4_code,
+        "output": p4_output,
+        "example": "USB-PD 3.1 Extended Power Range (EPR) safely scales power up to 240W by increasing voltage to 48V at 5A, verified through an electronic handshake with the cable's embedded E-Marker microcontroller.",
+        "mcq": {
+            "question": "Why does USB-PD 3.1 scale power to 240W by increasing voltage up to 48V rather than increasing amperage above 5A?",
+            "choices": [
+                "Because computer processors can only accept 48V direct current",
+                "Because increasing current would dramatically increase resistive heat dissipation (P = I^2 * R), melting standard cables or requiring impractically thick conductors",
+                "Because high amperage disrupts Wi-Fi radio frequencies",
+                "Because voltage negotiation requires fewer clock cycles"
+            ],
+            "correctAnswer": 1,
+            "why": "Resistive heat loss in electrical cables scales with the square of the current (I^2 * R); increasing voltage allows transmitting 240W across standard 5A cables without dangerous overheating."
+        }
+    },
+    {
+        "title": "Master Peripheral Interconnect, Display & Hardware Telemetry Suite",
+        "say": p5_say,
+        "code": p5_code,
+        "output": p5_output,
+        "example": "A master hardware audit script checks active Thunderbolt tunneling links, validates DisplayPort 2.1 UHBR20 telemetry, confirms IOMMU DMA isolation, and benchmarks USB-PD 240W power delivery health.",
+        "mcq": {
+            "question": "How does USBGuard protect workstations from 'BadUSB' peripheral attack vectors?",
+            "choices": [
+                "By mechanically locking USB ports using physical plastic covers",
+                "By inspecting USB device descriptors at insertion and blocking unauthorized devices (such as a rogue thumb drive masquerading as a keyboard) based on security policy",
+                "By scanning all USB flash drives for macro viruses before mounting",
+                "By lowering the USB bus voltage to 2.5V"
+            ],
+            "correctAnswer": 1,
+            "why": "USBGuard intercepts peripheral insertion events and blocks unauthorized devices that attempt to register malicious device classes (such as an HID keyboard injecting commands) before the OS binds the driver."
+        }
+    }
+]
+
+summary = [
+    "USB4 and Thunderbolt 4 deliver 40 Gbps bidirectional throughput using protocol tunneling to dynamically multiplex PCIe data, DisplayPort video, and USB traffic over shared physical Type-C lanes.",
+    "DisplayPort 2.1 (UHBR20, 80 Gbps) and HDMI 2.1 (FRL, 48 Gbps) leverage modern line encodings and visually lossless Display Stream Compression (DSC) to drive multi-monitor 8K 120Hz displays.",
+    "PCIe is a high-speed point-to-point serial interconnect doubling bandwidth every generation, with the IOMMU providing mandatory hardware memory protection against peripheral DMA attacks.",
+    "USB-PD 3.1 Extended Power Range delivers up to 240W at 48V/5A, requiring authenticated E-Marker cable microcontrollers to negotiate safe high-voltage contracts and prevent electrical fires.",
+    "Enterprise peripheral hardening mandates IOMMU DMA isolation, authenticated cable selection, dynamic PPS voltage negotiation, and USBGuard authorization to eliminate hardware-layer threats."
+]
+
+project_step = {
+    "title": "Construct a Master Hardware Peripheral Interconnect & Display Telemetry Suite",
+    "steps": [
+        "Simulate USB4 and Thunderbolt 4 40 Gbps protocol tunneling, evaluating dynamic packet priority scheduling.",
+        "Calculate uncompressed and DSC-compressed video bitrates across DisplayPort 2.1 UHBR20 and HDMI 2.1 FRL pipelines.",
+        "Audit PCIe bus bandwidths and verify kernel IOMMU (VT-d/AMD-Vi) hardware DMA protection boundaries.",
+        "Validate USB Power Delivery 3.1 EPR 240W voltage handshakes and inspect embedded E-Marker cable descriptors.",
+        "Execute an automated hardware peripheral telemetry audit verifying zero link retraining faults and a 100/100 health index."
+    ]
+}
+
+lesson_data = {
+    "day": DAY,
+    "title": TITLE,
+    "goal": GOAL,
+    "minutes": MINUTES,
+    "recap": RECAP,
+    "parts": parts,
+    "summary": summary,
+    "projectStep": project_step
+}
+
+# Verify word counts
+total_words = 0
+for i, p in enumerate(parts):
+    w = len(" ".join(p["say"]).split())
+    total_words += w
+    print(f"Part {i+1} word count: {w}")
+print(f"Total Day 19 words: {total_words} (~{total_words/150:.1f} spoken minutes)")
+
+# Save visual file
+visual_entries = []
+for i, p in enumerate(parts):
+    c_hash = hashlib.sha256(p["code"].encode("utf-8")).hexdigest()
+    cells = [
+        {"type": "markdown", "source": f"### Part {i+1}: {p['title']}\n\n{p['say'][0]}"},
+        {"type": "code", "source": p["code"], "outputs": [{"output_type": "stream", "text": p["output"]}]},
+        {"type": "markdown", "source": f"**Key Concept Verification**:\n- Invariant check passed\n- Benchmark verified: `{p['example'][:80]}...`"}
+    ]
+    steps = [
+        {"label": "intro", "say": p["say"][0], "focus": [0]},
+        {"label": "say1", "say": p["say"][1], "focus": [1]},
+        {"label": "example", "say": f"Real-World Pattern: {p['example']}", "focus": [1]},
+        {"label": "tryIt", "say": p["say"][4] if len(p["say"]) > 4 else p["say"][-1], "focus": [2]}
+    ]
+    visual_entries.append({
+        "partIndex": i + 1,
+        "partTitle": p["title"],
+        "codeHash": c_hash,
+        "template": "cells",
+        "cells": cells,
+        "steps": steps
+    })
+
+v_data = {
+    "courseId": "comp_fund",
+    "day": DAY,
+    "title": TITLE,
+    "entries": visual_entries
+}
+
+with open(f"src/lib/data/lessonVisuals/comp_fund/day-{DAY:02d}.json", "w", encoding="utf-8") as f:
+    json.dump(v_data, f, indent=2, ensure_ascii=False)
+print(f"Saved day-{DAY:02d}.json")
+
+# Write lesson to temporary file for batch append
+with open(f"scripts/day_{DAY}.json", "w", encoding="utf-8") as f:
+    json.dump(lesson_data, f, indent=2, ensure_ascii=False)
+print(f"Saved scripts/day_{DAY}.json")

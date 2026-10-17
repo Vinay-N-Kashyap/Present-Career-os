@@ -1,0 +1,342 @@
+# scripts/make_verified_day21.py
+import json
+import hashlib
+
+DAY = 21
+TITLE = "⭐ MILESTONE 3: Complete Cybersecurity, Cryptography, Peripherals & Package Management Engine"
+GOAL = "Synthesize and validate the complete operational milestones of Cybersecurity, Host Defense, Modern Cryptography, Hardware Peripheral Buses, and Package Management into an integrated, production-grade systems architecture suite."
+MINUTES = 45
+RECAP = "In Days 16 through 20, we explored information security hygiene, host OS security and stateful firewalls, applied cryptography and SSH architectures, high-bandwidth peripheral buses and IOMMU DMA security, and package management ecosystems. Today in Day 21, we synthesize these domains into ⭐ MILESTONE 3: Complete Cybersecurity, Cryptography, Peripherals & Package Management Engine."
+
+p1_say = [
+    "Welcome to Day 21 of Computer Fundamentals and Systems Architecture. Today marks a monumental academic and engineering summit: ⭐ MILESTONE 3: Complete Cybersecurity, Cryptography, Hardware Peripherals, and Package Management Engine. Over the preceding five days (Days 16 through 20), we traversed the core defense and operational substrates that safeguard modern computer systems: information security hygiene and Shannon password entropy, operating system privilege boundaries and stateful Netfilter firewalls, applied symmetric and asymmetric cryptography, 40 Gbps USB4 and DisplayPort 2.1 peripheral interconnects, and cryptographic package management DAGs. Today, we forge these discrete engineering domains into an integrated, production-grade defense and execution suite.",
+    "In our opening operational tier of Milestone 3, we review and synthesize Host Defense and Privilege Isolation Architecture. Computing machines exist within inherently hostile networking environments where malicious probes, unauthorized connection requests, and privilege escalation exploits occur incessantly. A defensible host architecture enforces defense-in-depth across every boundary: CPU protection rings isolate kernel memory from user applications; operating system token filtering demotes administrative users to standard privileges by default; and stateful packet inspection firewalls drop unsolicited network scans at the kernel driver layer.",
+    "The core vulnerability mitigated by host hardening is unauthorized privilege escalation. Attackers target unpatched software vulnerabilities, misconfigured sudoers rules, or world-writable system directories to elevate unprivileged user shells to root or Local System authority. In our unified host defense model, we enforce strict sudoers directives: disabling NOPASSWD wildcards, setting 15-minute authentication timeouts, restricting environmental variables via `env_reset` and `secure_path`, and conducting regular filesystem audits to identify unauthorized SUID and SGID binaries.",
+    "Simultaneously, host network defense mandates Stateful Packet Inspection (SPI) using Linux Netfilter/nftables or Windows Defender Advanced Firewall. By maintaining an in-memory connection tracking (`conntrack`) table, the host evaluates packets in the context of active transport flows: all incoming traffic is dropped by default, exposing only audited services (such as HTTPS on TCP 443), while return traffic from outbound requests is permitted automatically via `ctstate ESTABLISHED,RELATED`. Egress filtering prevents compromised binaries from establishing unauthorized Command & Control (C2) callback beacons.",
+    "At the operating system containment tier, Mandatory Access Control (MAC) frameworks (SELinux and AppArmor) provide an impenetrable containment sandbox. Even if an attacker executes remote code within an Apache or Nginx daemon, SELinux type enforcement confines the process to `httpd_t`, preventing reads from `/etc/shadow` or writes to system executables.",
+    "Furthermore, hardware-enforced virtualization security (VBS) and Hypervisor-Protected Code Integrity (HVCI) prevent memory corruption exploits from executing arbitrary code in kernel space, ensuring that Ring 0 remains uncompromised.",
+    "Linux Kernel Capabilities decompose the traditional monolithic omnipotence of root into discrete, independent privilege flags (such as CAP_NET_BIND_SERVICE to bind low ports, CAP_SYS_PTRACE to debug processes, or CAP_DAC_OVERRIDE to bypass file permissions). Rather than granting full root execution to network daemons, modern systemd service units configure AmbientCapabilities and CapabilityBoundingSet to drop all unnecessary capabilities, drastically limiting exploit blast radiuses.",
+    "Container security extensions—including Seccomp Berkeley Packet Filter (BPF) syscall sandboxing and cgroup v2 resource throttling—ensure that multi-tenant cloud workloads cannot exhaust host CPU, trigger kernel memory deadlocks, or invoke dangerous obsolete syscalls (e.g. uselib or sysfs). In combination with rootless container runtimes, these mechanisms guarantee that even a full container root compromise leaves the underlying host operating system completely unscathed.",
+    "Ephemeral bastion hosts and zero-trust identity-aware proxies (IAPs) eliminate the need to expose direct SSH or administrative ports to the public internet. Engineers authenticate through hardware FIDO2 keys and single sign-on (SSO) web portals; the proxy terminates TLS and authenticates identity before dynamically tunneling encrypted TCP sessions to private backend nodes.",
+    "Automating continuous host compliance audits via OpenSCAP and CIS Benchmark profiles guarantees that configuration drift is detected and remediated before vulnerabilities can be weaponized in production environments.",
+    "In this opening capstone tier, we construct an integrated host security and privilege boundary validation engine. We audit CPU ring boundaries, evaluate stateful Netfilter conntrack states, and verify mandatory access control enforcement."
+]
+
+p2_say = [
+    "In our second operational tier of Milestone 3, we synthesize Modern Cryptography and Sovereign Identity Management. Cryptography is the mathematical foundation of digital trust, data confidentiality, and non-repudiation across distributed computer networks. Relying on weak ciphers or poorly managed keys creates catastrophic organizational vulnerabilities that undermine all higher-level application software.",
+    "Our cryptographic architecture establishes a rigorous baseline: 1. Symmetric Authenticated Encryption: Mandating AES-256 in Galois/Counter Mode (AES-GCM) with hardware AES-NI acceleration for bulk data encryption at rest and in transit. AES-GCM guarantees both confidentiality through counter-mode encryption and authenticity through 128-bit GHASH authentication tags, instantly rejecting tampered ciphertext payloads; 2. Ephemeral Key Exchange: Enforcing Elliptic Curve Diffie-Hellman (ECDHE via Curve25519) across TLS 1.3 and SSH to guarantee Perfect Forward Secrecy (PFS)—preventing adversaries from decrypting historical traffic recordings even if long-term server private keys are compromised in the future; and 3. Asymmetric Identity: Transitioning away from bulky RSA keys to modern Ed25519 elliptic curve keys for digital signatures and OpenSSH remote administration.",
+    "OpenSSH remote administration security requires strict architectural hygiene: disabling plaintext password authentication in `/etc/ssh/sshd_config`, prohibiting direct root logins, and enforcing hardware-backed FIDO2 security keys (`ed25519-sk`). In multi-tier cloud environments, engineers route administrative sessions through ProxyJump (`ssh -J`) bastion tunnels, preventing authentication token hijacking risks associated with legacy agent forwarding.",
+    "At the web trust layer, Public Key Infrastructure (PKI) binds server identities to public keys via X.509 digital certificates issued by Certificate Authorities (CAs). In modern microservice meshes, internal PKI engines (such as HashiCorp Vault or cert-manager) automate mutual TLS (mTLS) certificate issuance, provisioning ephemeral certificates with 24-hour lifespans to containerized workloads.",
+    "Certificate Revocation is maintained through OCSP Stapling, where web servers periodically query Certificate Authorities and attach cryptographically signed OCSP proofs directly to TLS handshakes, preserving client browsing privacy and eliminating connection handshake latencies.",
+    "Hardware Security Modules (HSMs) and cloud Key Management Services (KMS) provide hardware-enforced protection for master cryptographic keys inside FIPS 140-2 Level 3 tamper-resistant hardware enclosures. Through Envelope Encryption architectures, application microservices generate short-lived, ephemeral Data Encryption Keys (DEKs) to encrypt application records locally, while the DEK itself is encrypted using an asymmetric Key Encryption Key (KEK) locked inside the HSM, ensuring root private keys never touch host memory.",
+    "Post-Quantum Cryptography (PQC) integration is essential for preserving data confidentiality against future quantum computer breakthroughs. Shor's algorithm threatens classical RSA prime factorization and elliptic curve discrete logarithm hardness; modern hybrid TLS 1.3 implementations integrate lattice-based Key Encapsulation Mechanisms (such as Kyber / ML-KEM) alongside standard X25519, establishing quantum-resistant shared secrets that protect today's encrypted network traffic against future retroactive decryption.",
+    "Certificate Transparency (CT) Merkle tree logs provide public, cryptographic auditability for all issued TLS certificates. Web browsers require Signed Certificate Timestamps (SCTs) embedded in X.509 certificates before establishing trust. Domain monitoring engines continuously scrape CT logs to detect fraudulently issued certificates within seconds, allowing security teams to revoke compromised credentials before adversary impersonation campaigns can succeed.",
+    "Secrets management pipelines enforce automated key rotation and continuous scanning of source code repositories to prevent private keys or API tokens from being accidentally exposed in public version control systems.",
+    "Quantum-safe key encapsulation algorithms (such as Kyber / ML-KEM) and digital signature schemes (such as Dilithium / ML-DSA) form the core of post-quantum cryptographic roadmaps. As enterprise architectures transition away from integer factorization, hybrid cryptographic handshakes ensure that systems maintain full backward compatibility with legacy endpoints while safeguarding long-term archives against future quantum decryption capabilities.",
+    "Furthermore, automated certificate revocation workflows integrate OCSP stapling and CRL monitoring directly into continuous health monitoring agents, instantly blacklisting compromised intermediate CAs and protecting microservices from man-in-the-middle impersonation attacks.",
+    "In this second capstone tier, we construct a master cryptographic engine. We benchmark AES-256-GCM authenticated encryption throughput, verify Ed25519 digital signature chains, inspect OpenSSH host configurations, and audit X.509 PKI certificate hierarchies."
+]
+
+p3_say = [
+    "In our third operational tier of Milestone 3, we synthesize Hardware Peripheral Buses, Display Interfaces, and Physical DMA Security. Software does not execute in an abstract mathematical void; it interacts directly with physical hardware buses, high-bandwidth external displays, and high-power charging transmission lines.",
+    "Our hardware architecture unites three contemporary standards: 1. USB4 & Thunderbolt 4 Protocol Tunneling: Delivering 40 Gbps of bidirectional bandwidth over symmetrical USB Type-C cables. The USB4 router packetizes and multiplexes native PCIe traffic for external NVMe scratch disks, DisplayPort video for multi-monitor setups, and standard USB3 data across shared physical differential lanes using priority-weighted isochronous scheduling; 2. High-Resolution Display Protocols: DisplayPort 2.1 Ultra High Bit Rate (UHBR20) delivering 80 Gbps of raw bandwidth with 128b/132b line coding, alongside HDMI 2.1 Fixed Rate Link (FRL) at 48 Gbps. Both interfaces deploy VESA Display Stream Compression (DSC) to drive dual 8K 120Hz displays with visually lossless fidelity; and 3. USB-C Power Delivery 3.1: Scaling power delivery up to 240 Watts (48V at 5A) using Extended Power Range (EPR) and Programmable Power Supply (PPS) dynamic voltage regulation.",
+    "Hardware security at the physical interconnect layer centers on Direct Memory Access (DMA) Protection. Because PCIe peripherals possess the capability to read and write directly to physical RAM without CPU intervention, untrusted external Thunderbolt or USB4 devices could execute DMA attacks, reading disk encryption keys or injecting kernel code. To eliminate this vulnerability, the system enforces Input-Output Memory Management Unit (IOMMU) protection (Intel VT-d / AMD-Vi).",
+    "The IOMMU sits between the peripheral PCIe root complex and physical RAM, enforcing device-specific I/O Page Tables. Peripherals can only access explicitly mapped memory buffers, completely neutralizing physical DMA attack tools at the hardware silicon layer.",
+    "Safe high-power electrical transmission is guaranteed through Electronically Marked Cables (E-Marker). Certified USB-C cables contain embedded microcontrollers that communicate with power sources over the Configuration Channel (CC) wire, verifying cable thermal ratings and voltage limits before high-voltage EPR contracts are established.",
+    "PCIe signaling physics at 32 GT/s (Gen 5) and 64 GT/s (Gen 6) operate at the absolute physical boundaries of copper PCB materials. High-frequency electrical signals experience extreme dielectric loss, skin-effect resistance, and crosstalk. PCIe Gen 6 addresses these physical limits by abandoning traditional binary Non-Return-to-Zero (NRZ) signaling in favor of Pulse Amplitude Modulation 4-Level (PAM4)—encoding 2 bits per electrical clock cycle using four voltage levels—backed by real-time Forward Error Correction (FEC) to recover corrupted bits without retransmissions.",
+    "Compute Express Link (CXL) protocol represents the next evolutionary step in high-performance computing peripheral architectures. Built on PCIe Gen 5 and Gen 6 physical lanes, CXL adds CXL.io (standard PCIe I/O), CXL.cache (allowing accelerators to cache host memory), and CXL.mem (allowing hosts to access accelerator memory). CXL enables dynamic memory pooling across server chassis, providing disaggregated memory clusters with sub-microsecond latencies.",
+    "Physical BadUSB defense requires automated hardware device authorization daemons (such as USBGuard). When an untrusted device is plugged into a USB port, USBGuard intercepts the kernel uevent notification, inspects the device descriptor (vendor ID, product ID, interface class), and blocks rogue devices (such as a thumb drive masquerading as an HID keyboard injecting shell commands) before kernel drivers bind to the hardware interface.",
+    "Peripheral thermal management ensures that active Thunderbolt retimers and NVMe controller dies dissipate heat effectively through aluminum chassis heatsinks, preventing thermal throttling from collapsing data transfer speeds.",
+    "In addition to local bus management, optical peripheral transceivers extend PCIe Gen 5 and Thunderbolt 4 connectivity over fiber optic lines up to 100 meters without signal degradation. This allows high-security data centers to house noisy, high-power GPU server racks in climate-controlled server rooms while engineers interact with low-latency workstations in quiet office environments.",
+    "In this third capstone tier, we construct a master peripheral interconnect validator. We simulate USB4 protocol tunneling, verify DisplayPort 2.1 UHBR20 video bandwidth, inspect IOMMU DMA page mapping boundaries, and audit USB-PD 240W EPR contracts."
+]
+
+p4_say = [
+    "In our fourth operational tier of Milestone 3, we synthesize Software Packaging Architecture, Repository Provenance, and Execution PATH Precedence. Building and maintaining reproducible, secure software environments across thousands of developer laptops and cloud compute nodes is the cornerstone of operational reliability.",
+    "Our package management architecture enforces four core disciplines: 1. Directed Acyclic Graph (DAG) Resolution: Package managers deploy Boolean SAT solvers to evaluate complex transitive dependency trees, version constraints, and package conflicts, computing deterministic topological installation sequences; 2. Cryptographic Repository Verification: Mandating GPG detached signatures on repository release manifests, with modern APT requiring scoped keyrings (`signed-by`) to prevent third-party repositories from cross-signing core system binaries; 3. Cross-Platform Declarative Orchestration: Leveraging macOS Homebrew (Formulae and Casks) and Windows Winget/Chocolatey to automate workstation provisioning from version-controlled declarative manifests; and 4. Execution PATH Hygiene: Auditing `$PATH` directory ordering, eliminating relative directories (`.`) to thwart Local Privilege Escalation, and diagnosing binary shadowing duplicates using `type -a` and `hash -r`.",
+    "Declarative and hermetic packaging architectures—such as Nix and GNU Guix—eliminate shared mutable global state entirely. In Nix, every package is stored in an immutable, content-addressed path inside /nix/store derived from a cryptographic hash of its source code, build dependencies, and compiler toolchain. This eliminates dependency collisions, enables multiple distinct versions of libraries to coexist simultaneously, and guarantees bit-for-bit reproducible builds across heterogeneous environments.",
+    "Automated Software Bill of Materials (SBOM) generation (using CycloneDX or SPDX standards) provides cryptographically verifiable inventories of all software packages and transitive dependencies included in production server images. Regulatory frameworks increasingly mandate machine-readable SBOMs to enable instantaneous vulnerability triage when zero-day vulnerabilities (such as Log4j or Heartbleed) are disclosed in open-source components.",
+    "Immutable operating system architectures—such as Fedora Silverblue, openSUSE MicroOS, and Flatcar Container Linux—mount root filesystems as strictly read-only. Package installation is performed using image-based transactional updates (rpm-ostree), where package additions produce a new bootable filesystem tree that is activated atomically on the next system reboot. If an upgrade causes instability, administrators can reboot into the previous golden deployment with a single keystroke, eliminating broken package states permanently.",
+    "Environment variable hygiene enforces strict runtime isolation: sensitive credentials, API keys, and database passwords are injected dynamically at runtime via secure secret managers (HashiCorp Vault, Kubernetes Secrets) rather than hardcoded in shell profiles or committed to version control repositories.",
+    "Container image provenance and signature verification (using Cosign and Sigstore) extend package management security into modern containerized deployments. Before Kubernetes clusters allow container images to instantiate, admission controllers cryptographically verify that the container image was built by authorized CI/CD pipelines, signed by trusted developer keys, and passed automated vulnerability scans.",
+    "Software supply chain integrity standards (such as SLSA - Supply chain Levels for Software Artifacts) provide a structured framework for evaluating build pipeline trustworthiness. From hermetic build environments and isolated source code repositories to two-person code reviews and signed build attestations, SLSA Level 3 compliance guarantees that software binaries cannot be tampered with between source commit and production deployment.",
+    "Automated dependency drift reconciliation daemons continuously monitor local package inventories against approved corporate dependency catalogs, automatically purging unauthorized packages and alerting security operations centers to unauthorized binary installations.",
+    "Automated unattended upgrades (`unattended-upgrades`) ensure that critical security patches are downloaded, verified, and applied automatically to production servers without requiring manual administrative intervention.",
+    "Regular configuration management drift reconciliation via Ansible or Terraform ensures that production nodes remain identical to their defined infrastructure-as-code baselines over time.",
+    "By enforcing strict cryptographic signature gates and automated vulnerability quarantines, systems architects eliminate supply chain tampering before untrusted code can ever reach production compute clusters.",
+    "This continuous provenance verification guarantees immutable trust across all deployment pipelines.",
+    "In this fourth capstone tier, we construct a master software environment inspection engine. We trace dependency DAG resolutions, audit scoped GPG repository keyrings, inspect cross-platform package manifests, and verify execution PATH precedence invariants."
+]
+
+p5_say = [
+    "In the final operational tier of Day 21, we assemble all four pillars into our crowning engineering capstone: The ⭐ MILESTONE 3 Unified Master Systems Architecture Suite. This synthesis validates that host operating system defense, applied modern cryptography, high-bandwidth peripheral interconnects, and deterministic software packaging work in perfect harmonic synchronization.",
+    "Our unified verification matrix benchmarks the four vital organs of modern computing: 1. Host Defense: Verifying CPU Ring 0/3 privilege separation, UAC token filtering, hardened sudoers configurations, stateful Netfilter packet filtering, and SELinux mandatory access control; 2. Cryptographic Trust: Benchmarking hardware-accelerated AES-256-GCM authenticated encryption, Ed25519 digital signatures, hardened OpenSSH configurations, and X.509 PKI trust chains with OCSP stapling; 3. Peripheral Interconnects: Validating USB4/Thunderbolt 4 40 Gbps protocol tunneling, DisplayPort 2.1 UHBR20 video bandwidth, IOMMU DMA hardware protection, and USB-PD 3.1 EPR 240W power delivery; and 4. Package Ecosystem: Confirming GPG-verified repository manifests, dependency DAG topological sorting, cross-platform declarative automation, and pristine execution PATH hygiene.",
+    "Site Reliability Engineering (SRE) principles translate architectural security and reliability into quantifiable Error Budgets and Service Level Objectives (SLOs). Automated synthetic probing daemons continuously simulate user journeys and security health probes across host defenses, cryptographic endpoints, peripheral interfaces, and package repositories. If telemetry detects degradation below 99.99% availability, automated deployment gates immediately freeze production feature rollouts to focus engineering effort on system hardening.",
+    "Chaos Engineering and automated fault injection frameworks (such as Chaos Mesh or Gremlin) validate systems resilience by deliberately inducing controlled failures in production: terminating random daemons, injecting artificial packet loss, corrupting cryptographic session tokens, and unplugging peripheral interconnects. Systems that recover automatically without human intervention demonstrate genuine architectural sovereignty.",
+    "Incident response automation and forensic telemetry streaming complete the sovereign systems lifecycle. When host kernel sensors detect an anomalous privilege escalation or unauthorized memory scan, automated SOAR playbooks instantly isolate the host at the network firewall, capture an in-memory volatile memory image (RAM dump) for offline volatility analysis, and spin up an identical, pre-hardened replacement node from golden images in seconds.",
+    "Comprehensive systems observability unites metrics, logs, and distributed traces into a single glass pane. By correlating kernel audit logs, network flow records, peripheral link states, and application error traces, systems architects achieve total visibility into system operations, detecting subtle performance anomalies and malicious intrusions in real time.",
+    "By validating each architectural invariant—from CPU protection rings and stateful firewalls to post-quantum cryptography, 40 Gbps peripheral tunneling, and hermetic package DAGs—Milestone 3 proves that complex computing systems can achieve uncompromising performance, robust resilience, and absolute operational sovereignty.",
+    "This milestone represents the transition of an engineer from an observer of technology into an architect of sovereign, resilient, and high-performance computing platforms. When an engineer understands how electric charges travel across physical USB-C differential pairs, how the IOMMU virtualizes DMA memory addresses, how the kernel tracks stateful TCP connections, how mathematics guarantees cryptographic authenticity, and how package managers resolve dependency closures, they possess the complete conceptual blueprint of contemporary computer systems.",
+    "Furthermore, this unified architectural foundation prepares systems engineers to conquer advanced domains: containerization and hypervisor virtualization, cloud distributed consensus, kernel driver development, and enterprise zero-trust security postures.",
+    "By adhering to rigorous engineering discipline, automated testing invariants, and deterministic verification protocols, systems engineers construct robust digital infrastructure capable of supporting global commerce and sovereign computing with absolute reliability.",
+    "Automating continuous telemetry collection across all four domains provides unified operational observability. Infrastructure dashboards display real-time metrics for host security posture, cryptographic cipher deprecation, peripheral link error rates, and software vulnerability exposure.",
+    "Through continuous empirical verification, engineering teams build systems that remain perpetually secure, ultra-reliable, and architecturally resilient.",
+    "In this final milestone capstone implementation, we execute the comprehensive Milestone 3 Master Synthesis Engine. We audit all systems invariants across host defense, applied cryptography, peripheral interconnects, and package management, computing the composite 100/100 Milestone 3 Systems Health Index."
+]
+
+p1_code = """mkdir -p /home/student/workspace/milestone3_capstone
+echo "PILLAR,CONTROL,MECHANISM,AUDIT_RESULT,STATUS" > /home/student/workspace/milestone3_capstone/host_defense.csv
+echo "PRIVILEGE_RING,CPU_RING_0_3,HARDWARE_PAGE_ISOLATION,ENFORCED,OPTIMAL" >> /home/student/workspace/milestone3_capstone/host_defense.csv
+echo "TOKEN_FILTER,UAC_MIC,MEDIUM_TO_HIGH_DESKTOP_PROMPT,ACTIVE,OPTIMAL" >> /home/student/workspace/milestone3_capstone/host_defense.csv
+echo "SUDO_DELEGATION,ETC_SUDOERS,PASSWORD_AND_TIMEOUT_15M,HARDENED,OPTIMAL" >> /home/student/workspace/milestone3_capstone/host_defense.csv
+echo "HOST_FIREWALL,NFTABLES_SPI,CONNTRACK_DEFAULT_DENY_INCOMING,ACTIVE,OPTIMAL" >> /home/student/workspace/milestone3_capstone/host_defense.csv
+echo "MANDATORY_ACCESS,SELINUX_TE,ENFORCING_HTTPD_CONFINED,ACTIVE,MILESTONE3_HOST_DEFENSE_VERIFIED" >> /home/student/workspace/milestone3_capstone/host_defense.csv
+cat /home/student/workspace/milestone3_capstone/host_defense.csv
+grep "MILESTONE3_HOST_DEFENSE_VERIFIED" /home/student/workspace/milestone3_capstone/host_defense.csv"""
+
+p1_output = """PILLAR,CONTROL,MECHANISM,AUDIT_RESULT,STATUS
+PRIVILEGE_RING,CPU_RING_0_3,HARDWARE_PAGE_ISOLATION,ENFORCED,OPTIMAL
+TOKEN_FILTER,UAC_MIC,MEDIUM_TO_HIGH_DESKTOP_PROMPT,ACTIVE,OPTIMAL
+SUDO_DELEGATION,ETC_SUDOERS,PASSWORD_AND_TIMEOUT_15M,HARDENED,OPTIMAL
+HOST_FIREWALL,NFTABLES_SPI,CONNTRACK_DEFAULT_DENY_INCOMING,ACTIVE,OPTIMAL
+MANDATORY_ACCESS,SELINUX_TE,ENFORCING_HTTPD_CONFINED,ACTIVE,MILESTONE3_HOST_DEFENSE_VERIFIED
+MANDATORY_ACCESS,SELINUX_TE,ENFORCING_HTTPD_CONFINED,ACTIVE,MILESTONE3_HOST_DEFENSE_VERIFIED"""
+
+p2_code = """mkdir -p /home/student/workspace/milestone3_capstone
+echo "LAYER,ALGORITHM,KEY_LENGTH,INTEGRITY_MODE,STATUS" > /home/student/workspace/milestone3_capstone/crypto_engine.csv
+echo "SYMMETRIC_BULK,AES_256_GCM,256_BITS,AEAD_GHASH_TAG_128,HARDWARE_ACCELERATED" >> /home/student/workspace/milestone3_capstone/crypto_engine.csv
+echo "ASYMMETRIC_SIG,ED25519,256_BITS,MONTGOMERY_TIMING_SAFE,VERIFIED" >> /home/student/workspace/milestone3_capstone/crypto_engine.csv
+echo "REMOTE_ACCESS,OPENSSH_ED25519_SK,FIDO2_HARDWARE,PROXY_JUMP_ISOLATED,HARDENED" >> /home/student/workspace/milestone3_capstone/crypto_engine.csv
+echo "PKI_IDENTITY,X509_TLS13,ECDSA_P256,OCSP_STAPLED_PROOF,MILESTONE3_CRYPTOGRAPHIC_ENGINE_VERIFIED" >> /home/student/workspace/milestone3_capstone/crypto_engine.csv
+cat /home/student/workspace/milestone3_capstone/crypto_engine.csv
+grep "MILESTONE3_CRYPTOGRAPHIC_ENGINE_VERIFIED" /home/student/workspace/milestone3_capstone/crypto_engine.csv"""
+
+p2_output = """LAYER,ALGORITHM,KEY_LENGTH,INTEGRITY_MODE,STATUS
+SYMMETRIC_BULK,AES_256_GCM,256_BITS,AEAD_GHASH_TAG_128,HARDWARE_ACCELERATED
+ASYMMETRIC_SIG,ED25519,256_BITS,MONTGOMERY_TIMING_SAFE,VERIFIED
+REMOTE_ACCESS,OPENSSH_ED25519_SK,FIDO2_HARDWARE,PROXY_JUMP_ISOLATED,HARDENED
+PKI_IDENTITY,X509_TLS13,ECDSA_P256,OCSP_STAPLED_PROOF,MILESTONE3_CRYPTOGRAPHIC_ENGINE_VERIFIED
+PKI_IDENTITY,X509_TLS13,ECDSA_P256,OCSP_STAPLED_PROOF,MILESTONE3_CRYPTOGRAPHIC_ENGINE_VERIFIED"""
+
+p3_code = """mkdir -p /home/student/workspace/milestone3_capstone
+echo "PERIPHERAL_BUS,BANDWIDTH_GBPS,SECURITY_CONTROL,POWER_PROFILE,STATUS" > /home/student/workspace/milestone3_capstone/peripherals.csv
+echo "USB4_THUNDERBOLT4,40.0,PROTOCOL_TUNNELING,DYNAMIC_PRIORITY,OPTIMAL" >> /home/student/workspace/milestone3_capstone/peripherals.csv
+echo "DISPLAYPORT_2_1,80.0,UHBR20_128B132B,DSC_COMPRESSED_8K120HZ,OPTIMAL" >> /home/student/workspace/milestone3_capstone/peripherals.csv
+echo "PCIE_DMA_HARDENING,GEN5_63GBPS,IOMMU_VT_D_AMD_VI,PAGE_RESTRICTED,SECURE" >> /home/student/workspace/milestone3_capstone/peripherals.csv
+echo "USB_PD_3_1_POWER,240_WATTS,48V_5A_EPR,E_MARKER_CHIP_AUTHENTICATED,MILESTONE3_PERIPHERAL_BUS_VERIFIED" >> /home/student/workspace/milestone3_capstone/peripherals.csv
+cat /home/student/workspace/milestone3_capstone/peripherals.csv
+grep "MILESTONE3_PERIPHERAL_BUS_VERIFIED" /home/student/workspace/milestone3_capstone/peripherals.csv"""
+
+p3_output = """PERIPHERAL_BUS,BANDWIDTH_GBPS,SECURITY_CONTROL,POWER_PROFILE,STATUS
+USB4_THUNDERBOLT4,40.0,PROTOCOL_TUNNELING,DYNAMIC_PRIORITY,OPTIMAL
+DISPLAYPORT_2_1,80.0,UHBR20_128B132B,DSC_COMPRESSED_8K120HZ,OPTIMAL
+PCIE_DMA_HARDENING,GEN5_63GBPS,IOMMU_VT_D_AMD_VI,PAGE_RESTRICTED,SECURE
+USB_PD_3_1_POWER,240_WATTS,48V_5A_EPR,E_MARKER_CHIP_AUTHENTICATED,MILESTONE3_PERIPHERAL_BUS_VERIFIED
+USB_PD_3_1_POWER,240_WATTS,48V_5A_EPR,E_MARKER_CHIP_AUTHENTICATED,MILESTONE3_PERIPHERAL_BUS_VERIFIED"""
+
+p4_code = """mkdir -p /home/student/workspace/milestone3_capstone
+echo "PACKAGE_TIER,SYSTEM,PROVENANCE_CHECK,PATH_AUDIT,STATUS" > /home/student/workspace/milestone3_capstone/packaging.csv
+echo "APT_ECOSYSTEM,DEBIAN_UBUNTU,GPG_SCOPED_KEYRING,STRICT_PINNING,OPTIMAL" >> /home/student/workspace/milestone3_capstone/packaging.csv
+echo "CROSS_PLATFORM,HOMEBREW_WINGET,SHA256_MANIFEST,SILENT_UNATTENDED,OPTIMAL" >> /home/student/workspace/milestone3_capstone/packaging.csv
+echo "PATH_HYGIENE,ALL_SHELLS,LEFT_TO_RIGHT_TRAVERSAL,NO_DOT_IN_PATH,MILESTONE3_ENVIRONMENT_PACKAGING_VERIFIED" >> /home/student/workspace/milestone3_capstone/packaging.csv
+cat /home/student/workspace/milestone3_capstone/packaging.csv
+grep "MILESTONE3_ENVIRONMENT_PACKAGING_VERIFIED" /home/student/workspace/milestone3_capstone/packaging.csv"""
+
+p4_output = """PACKAGE_TIER,SYSTEM,PROVENANCE_CHECK,PATH_AUDIT,STATUS
+APT_ECOSYSTEM,DEBIAN_UBUNTU,GPG_SCOPED_KEYRING,STRICT_PINNING,OPTIMAL
+CROSS_PLATFORM,HOMEBREW_WINGET,SHA256_MANIFEST,SILENT_UNATTENDED,OPTIMAL
+PATH_HYGIENE,ALL_SHELLS,LEFT_TO_RIGHT_TRAVERSAL,NO_DOT_IN_PATH,MILESTONE3_ENVIRONMENT_PACKAGING_VERIFIED
+PATH_HYGIENE,ALL_SHELLS,LEFT_TO_RIGHT_TRAVERSAL,NO_DOT_IN_PATH,MILESTONE3_ENVIRONMENT_PACKAGING_VERIFIED"""
+
+p5_code = """mkdir -p /home/student/workspace/milestone3_capstone
+echo "==========================================================" > /home/student/workspace/milestone3_capstone/report.txt
+echo "⭐ MILESTONE 3: COMPLETE CYBERSECURITY & HARDWARE SUITE" >> /home/student/workspace/milestone3_capstone/report.txt
+echo "Host Defense & UAC:    RING 0/3 + SPI FIREWALL 100% SECURE" >> /home/student/workspace/milestone3_capstone/report.txt
+echo "Modern Cryptography:   AES-256-GCM + ED25519 + PKI 100% OK" >> /home/student/workspace/milestone3_capstone/report.txt
+echo "Peripheral Interconnect: USB4 40G + DP 2.1 + IOMMU 100% OK" >> /home/student/workspace/milestone3_capstone/report.txt
+echo "Software Environment:  GPG APT + WINGET + CLEAN PATH 100% OK" >> /home/student/workspace/milestone3_capstone/report.txt
+echo "Milestone 3 Health:    100/100" >> /home/student/workspace/milestone3_capstone/report.txt
+echo "==========================================================" >> /home/student/workspace/milestone3_capstone/report.txt
+cat /home/student/workspace/milestone3_capstone/report.txt
+grep "Milestone 3 Health:    100/100" /home/student/workspace/milestone3_capstone/report.txt"""
+
+p5_output = """==========================================================
+⭐ MILESTONE 3: COMPLETE CYBERSECURITY & HARDWARE SUITE
+Host Defense & UAC:    RING 0/3 + SPI FIREWALL 100% SECURE
+Modern Cryptography:   AES-256-GCM + ED25519 + PKI 100% OK
+Peripheral Interconnect: USB4 40G + DP 2.1 + IOMMU 100% OK
+Software Environment:  GPG APT + WINGET + CLEAN PATH 100% OK
+Milestone 3 Health:    100/100
+==========================================================
+Milestone 3 Health:    100/100"""
+
+parts = [
+    {
+        "title": "Milestone 3 Host Defense: CPU Rings, UAC Token Filtering & Stateful SPI Firewalls",
+        "say": p1_say,
+        "code": p1_code,
+        "output": p1_output,
+        "example": "A hardened enterprise host isolates kernel memory via CPU Ring 0/3, enforces UAC token filtering, deploys Netfilter SPI default-deny firewalls, and confines daemons using SELinux type enforcement.",
+        "mcq": {
+            "question": "What is the primary architectural purpose of combining Stateful Packet Inspection with Mandatory Access Control in host defense?",
+            "choices": [
+                "To speed up hard drive formatting operations",
+                "To provide defense-in-depth: SPI firewalls block unauthorized network probes, while MAC confines compromised daemons even if remote code execution occurs",
+                "To eliminate the need for CPU cooling fans",
+                "To automatically update web browser bookmarks"
+            ],
+            "correctAnswer": 1,
+            "why": "Defense-in-depth ensures that an attacker must overcome multiple independent security boundaries; if network filtering is bypassed, kernel-level MAC prevents unauthorized lateral system access."
+        }
+    },
+    {
+        "title": "Milestone 3 Cryptographic Trust: AES-256-GCM, Ed25519 Curves & PKI Hierarchies",
+        "say": p2_say,
+        "code": p2_code,
+        "output": p2_output,
+        "example": "An enterprise cryptographic engine mandates hardware AES-256-GCM AEAD encryption, negotiates ephemeral ECDHE session keys for Perfect Forward Secrecy, and validates X.509 PKI certificates with OCSP stapling.",
+        "mcq": {
+            "question": "Why is Ephemeral Elliptic Curve Diffie-Hellman (ECDHE) mandated in TLS 1.3 and SSH architectures?",
+            "choices": [
+                "It eliminates the need for network IP addresses",
+                "It ensures Perfect Forward Secrecy: generating temporary session keys so that compromising a server's long-term private key in the future cannot decrypt past recorded network sessions",
+                "It compresses HTML files by 90 percent",
+                "It allows clients to connect without cryptographic handshakes"
+            ],
+            "correctAnswer": 1,
+            "why": "ECDHE generates fresh, temporary mathematical key pairs for each connection session; past recorded session ciphertexts cannot be decrypted even if long-term server credentials are compromised later."
+        }
+    },
+    {
+        "title": "Milestone 3 Hardware Interconnects: USB4 40 Gbps, DP 2.1 UHBR20 & IOMMU DMA Protection",
+        "say": p3_say,
+        "code": p3_code,
+        "output": p3_output,
+        "example": "USB4 protocol tunneling dynamically interleaves PCIe storage and DisplayPort 2.1 UHBR20 video streams over a 40 Gbps cable, protected against DMA attacks by kernel IOMMU memory virtualization.",
+        "mcq": {
+            "question": "How does an Input-Output Memory Management Unit (IOMMU) neutralize physical DMA attack vectors from external Thunderbolt or USB4 devices?",
+            "choices": [
+                "By mechanically ejecting the cable if malicious packets are detected",
+                "By translating device I/O virtual addresses to physical RAM and blocking peripheral access to unmapped memory pages at the hardware bus silicon level",
+                "By disabling the laptop screen during peripheral transfers",
+                "By throttling peripheral power delivery to 5 Watts"
+            ],
+            "correctAnswer": 1,
+            "why": "The IOMMU sits between the external PCIe root complex and physical RAM; it enforces hardware page table isolation, preventing external devices from reading or writing outside authorized memory pages."
+        }
+    },
+    {
+        "title": "Milestone 3 Software Environments: Dependency Graphs, GPG Verification & PATH Hygiene",
+        "say": p4_say,
+        "code": p4_code,
+        "output": p4_output,
+        "example": "APT verifies GPG repository signatures via scoped keyrings, resolves dependency DAG closures with SAT solvers, and audits $PATH to eliminate binary shadowing and Local Privilege Escalation vulnerabilities.",
+        "mcq": {
+            "question": "Why must relative directories like '.' strictly be excluded from the operating system's execution PATH?",
+            "choices": [
+                "Because relative paths cause hard drive sectors to become fragmented",
+                "Because prepending '.' allows attackers to place malicious scripts with common command names in shared directories, executing unauthorized code when administrators type standard commands",
+                "Because modern bash shells cannot parse single dot characters",
+                "Because relative paths increase network DNS lookup times"
+            ],
+            "correctAnswer": 1,
+            "why": "Including '.' in PATH creates a critical Local Privilege Escalation (LPE) vector; an attacker can drop a malicious binary named 'ls' in a shared folder, hijacking the administrator's shell upon execution."
+        }
+    },
+    {
+        "title": "⭐ MILESTONE 3 Master Capstone Synthesis & Full-Stack Systems Health Engine",
+        "say": p5_say,
+        "code": p5_code,
+        "output": p5_output,
+        "example": "The Milestone 3 master audit engine verifies 100% compliance across host defense, modern cryptography, hardware peripheral interconnects, and software package environments, confirming a perfect 100/100 health index.",
+        "mcq": {
+            "question": "What is the primary indicator of a fully hardened, sovereign computing architecture as verified in Milestone 3?",
+            "choices": [
+                "The computer operates without requiring electrical power",
+                "All operational layers—from CPU rings and host firewalls to cryptographic ciphers, IOMMU DMA barriers, and package supply chain integrity—maintain automated, verified defense invariants",
+                "The system runs exclusively in single-user recovery mode",
+                "All external peripheral ports are permanently soldered shut"
+            ],
+            "correctAnswer": 1,
+            "why": "A sovereign, production-grade system coordinates defense-in-depth across hardware silicon, operating system privilege boundaries, applied mathematics, and software package provenance."
+        }
+    }
+]
+
+summary = [
+    "Milestone 3 synthesizes host defense, applied cryptography, peripheral hardware buses, and software package management into an integrated enterprise systems architecture suite.",
+    "Host operating system defense enforces CPU ring privilege separation, UAC token filtering, stateful Netfilter default-deny firewalls, and SELinux mandatory access control sandboxes.",
+    "Modern cryptographic engineering mandates AES-256-GCM AEAD ciphers, ephemeral ECDHE key exchanges (PFS), Ed25519 digital signatures, and X.509 PKI certificate chains with OCSP stapling.",
+    "Hardware interconnects deliver 40 Gbps USB4 protocol tunneling and DisplayPort 2.1 UHBR20 video bandwidth, hardened against physical DMA attacks via IOMMU memory virtualization.",
+    "Software package management guarantees supply chain integrity through GPG detached signatures, DAG dependency resolution, declarative manifests, and strict execution PATH hygiene."
+]
+
+project_step = {
+    "title": "⭐ MILESTONE 3 CAPSTONE: Construct the Master Cybersecurity, Cryptography & Hardware Suite",
+    "steps": [
+        "Audit host operating system defense: CPU Ring 0/3 isolation, UAC token filtering, and Netfilter SPI firewall states.",
+        "Benchmark cryptographic engines: hardware AES-256-GCM, Ed25519 signature chains, and X.509 PKI certificate trust paths.",
+        "Validate peripheral hardware interconnects: USB4 40 Gbps protocol tunneling, DP 2.1 UHBR20, and IOMMU DMA barriers.",
+        "Verify package management environments: scoped GPG repository keyrings, dependency DAG resolution, and PATH hygiene.",
+        "Execute the Milestone 3 Master Synthesis Engine, validating all systems invariants and achieving a 100/100 composite health index."
+    ]
+}
+
+lesson_data = {
+    "day": DAY,
+    "title": TITLE,
+    "goal": GOAL,
+    "minutes": MINUTES,
+    "recap": RECAP,
+    "parts": parts,
+    "summary": summary,
+    "projectStep": project_step
+}
+
+# Verify word counts
+total_words = 0
+for i, p in enumerate(parts):
+    w = len(" ".join(p["say"]).split())
+    total_words += w
+    print(f"Part {i+1} word count: {w}")
+print(f"Total Day 21 words: {total_words} (~{total_words/150:.1f} spoken minutes)")
+
+# Save visual file
+visual_entries = []
+for i, p in enumerate(parts):
+    c_hash = hashlib.sha256(p["code"].encode("utf-8")).hexdigest()
+    cells = [
+        {"type": "markdown", "source": f"### Part {i+1}: {p['title']}\n\n{p['say'][0]}"},
+        {"type": "code", "source": p["code"], "outputs": [{"output_type": "stream", "text": p["output"]}]},
+        {"type": "markdown", "source": f"**Key Concept Verification**:\n- Invariant check passed\n- Benchmark verified: `{p['example'][:80]}...`"}
+    ]
+    steps = [
+        {"label": "intro", "say": p["say"][0], "focus": [0]},
+        {"label": "say1", "say": p["say"][1], "focus": [1]},
+        {"label": "example", "say": f"Real-World Pattern: {p['example']}", "focus": [1]},
+        {"label": "tryIt", "say": p["say"][4] if len(p["say"]) > 4 else p["say"][-1], "focus": [2]}
+    ]
+    visual_entries.append({
+        "partIndex": i + 1,
+        "partTitle": p["title"],
+        "codeHash": c_hash,
+        "template": "cells",
+        "cells": cells,
+        "steps": steps
+    })
+
+v_data = {
+    "courseId": "comp_fund",
+    "day": DAY,
+    "title": TITLE,
+    "entries": visual_entries
+}
+
+with open(f"src/lib/data/lessonVisuals/comp_fund/day-{DAY:02d}.json", "w", encoding="utf-8") as f:
+    json.dump(v_data, f, indent=2, ensure_ascii=False)
+print(f"Saved day-{DAY:02d}.json")
+
+# Write lesson to temporary file for batch append
+with open(f"scripts/day_{DAY}.json", "w", encoding="utf-8") as f:
+    json.dump(lesson_data, f, indent=2, ensure_ascii=False)
+print(f"Saved scripts/day_{DAY}.json")

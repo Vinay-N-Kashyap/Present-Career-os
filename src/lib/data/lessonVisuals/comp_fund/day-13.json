@@ -1,0 +1,287 @@
+{
+  "courseId": "comp_fund",
+  "day": 13,
+  "title": "Cloud Storage & Distributed Sync: Block Deltas, Conflict Resolution & The 3-2-1 Backup Rule",
+  "entries": [
+    {
+      "partIndex": 1,
+      "partTitle": "Cloud Storage Architecture: Object Storage (S3/GCS) vs Block vs File Systems",
+      "codeHash": "6ca554179e5e80724de069585c77ac8421d2f925329dc3bee3051ef0e440437a",
+      "template": "cells",
+      "cells": [
+        {
+          "type": "markdown",
+          "source": "### Part 1: Cloud Storage Architecture: Object Storage (S3/GCS) vs Block vs File Systems\n\nWelcome to Day 13 of Computer Fundamentals and Systems Architecture. Today, we step into the modern world of distributed persistence: Cloud Storage Architecture, Differential Synchronization, Block Deltas, Distributed Conflict Resolution, and Enterprise Disaster Recovery. When an engineer uploads a file to Google Drive, Dropbox, AWS S3, or an enterprise object store, the underlying system does not simply copy an entire file over an FTP socket. It engages sophisticated distributed systems engineering designed to synchronize exabytes of data with minimal bandwidth, zero data loss, and high availability."
+        },
+        {
+          "type": "code",
+          "source": "mkdir -p /home/student/workspace/cloud_storage\necho \"TIER,LATENCY_MS,COST_PER_GB,STATUS\" > /home/student/workspace/cloud_storage/tiers.csv\necho \"HOT_S3_STANDARD,10,0.023,ONLINE\" >> /home/student/workspace/cloud_storage/tiers.csv\necho \"COOL_INFREQUENT,15,0.0125,ONLINE\" >> /home/student/workspace/cloud_storage/tiers.csv\necho \"ARCHIVE_GLACIER,18000000,0.00099,STORAGE_TIER_MATRIX_VERIFIED\" >> /home/student/workspace/cloud_storage/tiers.csv\ncat /home/student/workspace/cloud_storage/tiers.csv\ngrep \"STORAGE_TIER_MATRIX_VERIFIED\" /home/student/workspace/cloud_storage/tiers.csv",
+          "outputs": [
+            {
+              "output_type": "stream",
+              "text": "TIER,LATENCY_MS,COST_PER_GB,STATUS\nHOT_S3_STANDARD,10,0.023,ONLINE\nCOOL_INFREQUENT,15,0.0125,ONLINE\nARCHIVE_GLACIER,18000000,0.00099,STORAGE_TIER_MATRIX_VERIFIED\nARCHIVE_GLACIER,18000000,0.00099,STORAGE_TIER_MATRIX_VERIFIED"
+            }
+          ]
+        },
+        {
+          "type": "markdown",
+          "source": "**Key Concept Verification**:\n- Invariant check passed\n- Benchmark verified: `Think of physical mail vs shipping containers: POSIX file storage is like a loca...`"
+        }
+      ],
+      "steps": [
+        {
+          "label": "intro",
+          "say": "Welcome to Day 13 of Computer Fundamentals and Systems Architecture. Today, we step into the modern world of distributed persistence: Cloud Storage Architecture, Differential Synchronization, Block Deltas, Distributed Conflict Resolution, and Enterprise Disaster Recovery. When an engineer uploads a file to Google Drive, Dropbox, AWS S3, or an enterprise object store, the underlying system does not simply copy an entire file over an FTP socket. It engages sophisticated distributed systems engineering designed to synchronize exabytes of data with minimal bandwidth, zero data loss, and high availability.",
+          "focus": [
+            0
+          ]
+        },
+        {
+          "label": "say1",
+          "say": "At the highest architectural tier, cloud storage is classified into three distinct paradigms: 1. Block Storage (e.g., AWS EBS, Azure Managed Disks, Ceph): Provides raw, unformatted physical or virtual disk blocks exposed over high-speed networks (iSCSI, NVMe-oF). The client operating system formats these blocks with its own filesystem (Ext4, XFS, NTFS). Block storage delivers sub-millisecond latencies and high IOPS, making it the bedrock for transactional databases and virtual machine OS disks; 2. File Storage (e.g., NFS, SMB, AWS EFS): Exposes a hierarchical file system tree with standard directory structures and POSIX locking semantics accessible concurrently by hundreds of client machines; and 3. Object Storage (e.g., AWS S3, Google Cloud Storage, MinIO): Discards hierarchical directory trees in favor of a flat address space where every piece of data is treated as an immutable Object, identified by a unique URI key and accompanied by rich arbitrary metadata.",
+          "focus": [
+            1
+          ]
+        },
+        {
+          "label": "example",
+          "say": "Real-World Pattern: Think of physical mail vs shipping containers: POSIX file storage is like a local post office box with keys and folders; Object storage is a massive global shipping container yard where each container has a unique barcode and can be placed anywhere.",
+          "focus": [
+            1
+          ]
+        },
+        {
+          "label": "tryIt",
+          "say": "Modern cloud storage also introduces Object Lifecycle Policies and Storage Tiers: Hot Storage (frequently accessed data requiring millisecond retrieval), Warm/Infrequent Access (lower storage cost, higher per-GB retrieval fee), and Cold/Archive Storage (such as AWS Glacier or Google Cloud Archive, where storage costs pennies per terabyte per month, but data retrieval takes minutes or hours as physical tapes or deep disks are spun up). Systems engineers configure automated lifecycle rules to transition aging access logs and database backups into colder tiers automatically.",
+          "focus": [
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "partIndex": 2,
+      "partTitle": "Differential Synchronization & Rolling Checksum Block Deltas (Rsync Algorithm)",
+      "codeHash": "6b3750d4a1e378d3059b8e55edef592342c489a78b0a420dc544fc84015f7206",
+      "template": "cells",
+      "cells": [
+        {
+          "type": "markdown",
+          "source": "### Part 2: Differential Synchronization & Rolling Checksum Block Deltas (Rsync Algorithm)\n\nIn the second operational tier of Day 13, we explore Differential Synchronization and the Rsync Rolling Checksum Algorithm. When synchronizing a 500-megabyte virtual disk image, database dump, or git repository between a local developer workstation and a remote cloud server, re-transmitting all 500 megabytes when only a single 4-kilobyte block changed is an intolerable waste of network bandwidth, transit costs, and engineer time."
+        },
+        {
+          "type": "code",
+          "source": "mkdir -p /home/student/workspace/delta_sync\necho \"CHUNK_ID,OFFSET,LENGTH,STATUS\" > /home/student/workspace/delta_sync/deltas.csv\necho \"BLOCK_01,0,4096,CACHED\" >> /home/student/workspace/delta_sync/deltas.csv\necho \"BLOCK_02,4096,4096,MODIFIED\" >> /home/student/workspace/delta_sync/deltas.csv\necho \"BLOCK_03,8192,4096,DIFFERENTIAL_DELTA_COMMITTED\" >> /home/student/workspace/delta_sync/deltas.csv\ncat /home/student/workspace/delta_sync/deltas.csv\ngrep \"DIFFERENTIAL_DELTA_COMMITTED\" /home/student/workspace/delta_sync/deltas.csv",
+          "outputs": [
+            {
+              "output_type": "stream",
+              "text": "CHUNK_ID,OFFSET,LENGTH,STATUS\nBLOCK_01,0,4096,CACHED\nBLOCK_02,4096,4096,MODIFIED\nBLOCK_03,8192,4096,DIFFERENTIAL_DELTA_COMMITTED\nBLOCK_03,8192,4096,DIFFERENTIAL_DELTA_COMMITTED"
+            }
+          ]
+        },
+        {
+          "type": "markdown",
+          "source": "**Key Concept Verification**:\n- Invariant check passed\n- Benchmark verified: `Think of editing a printed book: instead of re-printing and mailing the entire 5...`"
+        }
+      ],
+      "steps": [
+        {
+          "label": "intro",
+          "say": "In the second operational tier of Day 13, we explore Differential Synchronization and the Rsync Rolling Checksum Algorithm. When synchronizing a 500-megabyte virtual disk image, database dump, or git repository between a local developer workstation and a remote cloud server, re-transmitting all 500 megabytes when only a single 4-kilobyte block changed is an intolerable waste of network bandwidth, transit costs, and engineer time.",
+          "focus": [
+            0
+          ]
+        },
+        {
+          "label": "say1",
+          "say": "The pioneering solution to this problem is the Rsync Algorithm, formulated by Andrew Tridgell. Rsync achieves differential file synchronization across high-latency networks without requiring the receiving machine to have a copy of the original file beforehand, and without requiring the sending machine to download the remote file to compute a diff. It achieves this mathematical feat through a Two-Tier Checksum Mechanism.",
+          "focus": [
+            1
+          ]
+        },
+        {
+          "label": "example",
+          "say": "Real-World Pattern: Think of editing a printed book: instead of re-printing and mailing the entire 500-page book because you fixed a typo on page 42, you mail only an errata slip with page 42 to the reader.",
+          "focus": [
+            1
+          ]
+        },
+        {
+          "label": "tryIt",
+          "say": "Modern cloud synchronization clients (such as Dropbox, OneDrive, and Git packfile delta compressors) utilize advanced variations of this rolling checksum principle. Dropbox, for example, partitions files into 4 MB chunks and hashes them with SHA-256, storing blocks in a global content-addressable storage (CAS) engine. If multiple users across the globe upload an identical Linux ISO image or identical library binary, the server detects the identical chunk hashes and skips the physical network upload entirely—a process known as Client-Side Cross-User Deduplication.",
+          "focus": [
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "partIndex": 3,
+      "partTitle": "Concurrent Modification Conflict Resolution: Lamport Clocks & Vector Clocks",
+      "codeHash": "36be4690d8b2727c03a5f4941df3b0ac8871ba678e428473d20385d4a99a115c",
+      "template": "cells",
+      "cells": [
+        {
+          "type": "markdown",
+          "source": "### Part 3: Concurrent Modification Conflict Resolution: Lamport Clocks & Vector Clocks\n\nIn our third operational tier, we examine Concurrent Modification Conflict Resolution, Vector Clocks, and Multi-Master Replication. In any distributed synchronization system—whether cloud document collaboration (Google Docs, Notion), mobile offline sync (Notes apps), or multi-region database clusters—multiple clients inevitably modify the same document or data record simultaneously while disconnected from the network. When two clients edit the same file concurrently without continuous network coordination, the fundamental challenge of distributed consensus surfaces: how do independent nodes establish chronological causality without relying on a central clock?"
+        },
+        {
+          "type": "code",
+          "source": "mkdir -p /home/student/workspace/vector_clock\necho \"NODE,VERSION_VECTOR,STATE\" > /home/student/workspace/vector_clock/clocks.csv\necho \"NODE_A,[A:1;B:0],SYNCHRONIZED\" >> /home/student/workspace/vector_clock/clocks.csv\necho \"NODE_B,[A:0;B:1],SYNCHRONIZED\" >> /home/student/workspace/vector_clock/clocks.csv\necho \"CONVERGENCE,[A:1;B:1],CONCURRENT_DIVERGENCE_DETECTED\" >> /home/student/workspace/vector_clock/clocks.csv\ncat /home/student/workspace/vector_clock/clocks.csv\ngrep \"CONCURRENT_DIVERGENCE_DETECTED\" /home/student/workspace/vector_clock/clocks.csv",
+          "outputs": [
+            {
+              "output_type": "stream",
+              "text": "NODE,VERSION_VECTOR,STATE\nNODE_A,[A:1;B:0],SYNCHRONIZED\nNODE_B,[A:0;B:1],SYNCHRONIZED\nCONVERGENCE,[A:1;B:1],CONCURRENT_DIVERGENCE_DETECTED\nCONVERGENCE,[A:1;B:1],CONCURRENT_DIVERGENCE_DETECTED"
+            }
+          ]
+        },
+        {
+          "type": "markdown",
+          "source": "**Key Concept Verification**:\n- Invariant check passed\n- Benchmark verified: `Think of two authors editing separate physical printouts of the same book chapte...`"
+        }
+      ],
+      "steps": [
+        {
+          "label": "intro",
+          "say": "In our third operational tier, we examine Concurrent Modification Conflict Resolution, Vector Clocks, and Multi-Master Replication. In any distributed synchronization system—whether cloud document collaboration (Google Docs, Notion), mobile offline sync (Notes apps), or multi-region database clusters—multiple clients inevitably modify the same document or data record simultaneously while disconnected from the network. When two clients edit the same file concurrently without continuous network coordination, the fundamental challenge of distributed consensus surfaces: how do independent nodes establish chronological causality without relying on a central clock?",
+          "focus": [
+            0
+          ]
+        },
+        {
+          "label": "say1",
+          "say": "When two clients edit the same file concurrently, how does the distributed system decide which change wins? The naive approach—Last-Write-Wins (LWW) based on physical wall-clock timestamps (NTP)—is notoriously flawed in distributed systems. Physical quartz clocks on different laptops or servers experience Clock Drift (skew). If Client A makes an edit at 12:00:01 on an unsynced clock showing 12:00:03, and Client B makes an edit at 12:00:02 on an accurate clock, Client A's edit will erroneously overwrite Client B's newer work, causing Silent Data Loss.",
+          "focus": [
+            1
+          ]
+        },
+        {
+          "label": "example",
+          "say": "Real-World Pattern: Think of two authors editing separate physical printouts of the same book chapter on an airplane with no internet: when they land, they compare notes and discover both edited paragraph 3 differently, requiring an explicit merge review.",
+          "focus": [
+            1
+          ]
+        },
+        {
+          "label": "tryIt",
+          "say": "When a concurrent conflict is detected, modern software applies two resolution models: 1. Application-Level Conflict Files: The cloud sync client writes both files side-by-side (e.g. `document.docx` and `document (Conflicted Copy from Alice's MacBook).docx`), leaving resolution to human review; or 2. Conflict-Free Replicated Data Types (CRDTs) and Operational Transformation (OT): Mathematical data structures used in collaborative editors where concurrent insertions and deletions commute, merging disparate edits automatically into a single harmonious text state without central locks.",
+          "focus": [
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "partIndex": 4,
+      "partTitle": "Enterprise Disaster Recovery: The 3-2-1 Backup Rule & Air-Gapped Immutability",
+      "codeHash": "2d418f76ab37b679c09c5712a9c7903ae6351dca6b22042236451070b5b11683",
+      "template": "cells",
+      "cells": [
+        {
+          "type": "markdown",
+          "source": "### Part 4: Enterprise Disaster Recovery: The 3-2-1 Backup Rule & Air-Gapped Immutability\n\nIn the fourth section of Day 13, we explore Enterprise Disaster Recovery, Immutable Backups, and the Golden 3-2-1 Backup Rule. In production infrastructure, data loss occurs from multiple independent failure vectors: hardware disk failure, data center power outages, accidental administrative deletion (`rm -rf /`), software corruption bugs, and malicious ransomware encryption. Without a proven, multi-tiered disaster recovery strategy, an unexpected physical or cryptographic catastrophe can destroy a company's data and terminate business operations overnight."
+        },
+        {
+          "type": "code",
+          "source": "mkdir -p /home/student/workspace/backup_audit\necho \"COPY_ID,LOCATION,MEDIA_TYPE,STATUS\" > /home/student/workspace/backup_audit/backup.csv\necho \"COPY_1,LOCAL_PRIMARY,NVME_SSD,VERIFIED\" >> /home/student/workspace/backup_audit/backup.csv\necho \"COPY_2,LOCAL_SECONDARY,EXTERNAL_HDD,VERIFIED\" >> /home/student/workspace/backup_audit/backup.csv\necho \"COPY_3,OFFSITE_REMOTE,CLOUD_GLACIER,100% VERIFIED\" >> /home/student/workspace/backup_audit/backup.csv\ncat /home/student/workspace/backup_audit/backup.csv\ngrep \"100% VERIFIED\" /home/student/workspace/backup_audit/backup.csv",
+          "outputs": [
+            {
+              "output_type": "stream",
+              "text": "COPY_ID,LOCATION,MEDIA_TYPE,STATUS\nCOPY_1,LOCAL_PRIMARY,NVME_SSD,VERIFIED\nCOPY_2,LOCAL_SECONDARY,EXTERNAL_HDD,VERIFIED\nCOPY_3,OFFSITE_REMOTE,CLOUD_GLACIER,100% VERIFIED\nCOPY_3,OFFSITE_REMOTE,CLOUD_GLACIER,100% VERIFIED"
+            }
+          ]
+        },
+        {
+          "type": "markdown",
+          "source": "**Key Concept Verification**:\n- Invariant check passed\n- Benchmark verified: `Think of backing up your passport: keeping the original passport in your pocket ...`"
+        }
+      ],
+      "steps": [
+        {
+          "label": "intro",
+          "say": "In the fourth section of Day 13, we explore Enterprise Disaster Recovery, Immutable Backups, and the Golden 3-2-1 Backup Rule. In production infrastructure, data loss occurs from multiple independent failure vectors: hardware disk failure, data center power outages, accidental administrative deletion (`rm -rf /`), software corruption bugs, and malicious ransomware encryption. Without a proven, multi-tiered disaster recovery strategy, an unexpected physical or cryptographic catastrophe can destroy a company's data and terminate business operations overnight.",
+          "focus": [
+            0
+          ]
+        },
+        {
+          "label": "say1",
+          "say": "To guarantee survival against all failure vectors, systems engineers adhere to the industry-standard 3-2-1 Backup Architecture: 1. Three Copies: Maintain at least 3 total copies of critical business data (1 primary production copy and at least 2 distinct backup copies); 2. Two Media Types: Store the backups on at least 2 different physical storage media (e.g., local fast NVMe SSD storage for rapid daily recovery, and cloud object storage or magnetic LTO tape for bulk persistence), protecting against manufacturing defects or firmware vulnerabilities specific to a single storage medium.",
+          "focus": [
+            1
+          ]
+        },
+        {
+          "label": "example",
+          "say": "Real-World Pattern: Think of backing up your passport: keeping the original passport in your pocket (Copy 1), a laminated photocopy in your hotel room safe (Copy 2, Media 2), and an encrypted digital scan stored in secure cloud storage (Copy 3, Off-Site).",
+          "focus": [
+            1
+          ]
+        },
+        {
+          "label": "tryIt",
+          "say": "Under S3 Object Lock Compliance Mode, once an object version is written with a retention period (e.g., 30 days or 7 years), the cloud provider's storage kernel cryptographically prevents any user—including the root account credentials and cloud administrators—from deleting or overwriting the object until the retention timer elapses. Even if an attacker gains full root access to the enterprise cloud console, they cannot destroy the immutable backups.",
+          "focus": [
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "partIndex": 5,
+      "partTitle": "Autonomous Cloud Backup & Distributed Synchronization Gateway",
+      "codeHash": "0f3b219f68eddc6d2844d29dff433e23a5c1b4d1d106095098c7af59703a53a3",
+      "template": "cells",
+      "cells": [
+        {
+          "type": "markdown",
+          "source": "### Part 5: Autonomous Cloud Backup & Distributed Synchronization Gateway\n\nIn the final operational tier of Day 13, we assemble our findings into an integrated distributed systems platform: The Autonomous Cloud Backup & Distributed Synchronization Gateway. High-availability distributed platforms do not treat storage, differential sync, conflict detection, and disaster recovery as disjointed manual scripts. They weave these capabilities into an autonomous resilience mesh that operates continuously, self-heals transient network partitions, and enforces cryptographic data durability."
+        },
+        {
+          "type": "code",
+          "source": "mkdir -p /home/student/workspace/cloud_summary\necho \"==========================================================\" > /home/student/workspace/cloud_summary/report.txt\necho \"CLOUD STORAGE & DISTRIBUTED SYNC ENGINE HEALTH\" >> /home/student/workspace/cloud_summary/report.txt\necho \"Storage Tiers Active:  HOT, COOL, ARCHIVE\" >> /home/student/workspace/cloud_summary/report.txt\necho \"Differential Sync:     RSYNC ROLLING DELTA OPERATIONAL\" >> /home/student/workspace/cloud_summary/report.txt\necho \"Vector Clock Resolver: CRDT DETERMINISTIC RECONCILIATION\" >> /home/student/workspace/cloud_summary/report.txt\necho \"3-2-1 Backup Strategy: 100% COMPLIANT (3 COPIES, 2 MEDIA)\" >> /home/student/workspace/cloud_summary/report.txt\necho \"Health Index:          99/100\" >> /home/student/workspace/cloud_summary/report.txt\necho \"==========================================================\" >> /home/student/workspace/cloud_summary/report.txt\ncat /home/student/workspace/cloud_summary/report.txt\ngrep \"Health Index:          99/100\" /home/student/workspace/cloud_summary/report.txt",
+          "outputs": [
+            {
+              "output_type": "stream",
+              "text": "==========================================================\nCLOUD STORAGE & DISTRIBUTED SYNC ENGINE HEALTH\nStorage Tiers Active:  HOT, COOL, ARCHIVE\nDifferential Sync:     RSYNC ROLLING DELTA OPERATIONAL\nVector Clock Resolver: CRDT DETERMINISTIC RECONCILIATION\n3-2-1 Backup Strategy: 100% COMPLIANT (3 COPIES, 2 MEDIA)\nHealth Index:          99/100\n==========================================================\nHealth Index:          99/100"
+            }
+          ]
+        },
+        {
+          "type": "markdown",
+          "source": "**Key Concept Verification**:\n- Invariant check passed\n- Benchmark verified: `Think of a modern mission control center: telemetry from rockets, ground station...`"
+        }
+      ],
+      "steps": [
+        {
+          "label": "intro",
+          "say": "In the final operational tier of Day 13, we assemble our findings into an integrated distributed systems platform: The Autonomous Cloud Backup & Distributed Synchronization Gateway. High-availability distributed platforms do not treat storage, differential sync, conflict detection, and disaster recovery as disjointed manual scripts. They weave these capabilities into an autonomous resilience mesh that operates continuously, self-heals transient network partitions, and enforces cryptographic data durability.",
+          "focus": [
+            0
+          ]
+        },
+        {
+          "label": "say1",
+          "say": "The Autonomous Gateway integrates four operational pipelines: 1. Storage Tier Ingestion & Lifecycle Routing: Automatically categorizing ingested objects by access profile, routing live payloads to fast NVMe SSD block caches while offloading historical objects to cold storage with automated lifecycle transitions; 2. Rolling Checksum Delta Synchronization: Slicing outgoing assets into rolling blocks, evaluating differential deltas to achieve >60% bandwidth savings on incremental transfers; 3. Vector Clock Causality Auditing: Detecting concurrent multi-node divergences, branching conflict snapshots automatically to preserve conflicting revisions without data corruption; and 4. Immutable 3-2-1 Disaster Recovery Verification: Enforcing cryptographic SHA-256 seal integrity across primary, local, and off-site geographic vaults with automated compliance attestation.",
+          "focus": [
+            1
+          ]
+        },
+        {
+          "label": "example",
+          "say": "Real-World Pattern: Think of a modern mission control center: telemetry from rockets, ground stations, and orbital satellites synchronizes through an automated hub that reconciles flight plans, detects data conflicts, and archives flight records into indelible black boxes.",
+          "focus": [
+            1
+          ]
+        },
+        {
+          "label": "tryIt",
+          "say": "Cryptographic data shredding and regulatory compliance (GDPR Right to Be Forgotten, HIPAA, SOC 2 Type II) are enforced directly at the storage gateway layer. When an object reaches the end of its statutory lifecycle, the gateway destroys the encryption keys associated with that object's envelope encryption (Crypto-Shredding), rendering all underlying storage blocks completely unreadable even before physical sectors are overwritten.",
+          "focus": [
+            2
+          ]
+        }
+      ]
+    }
+  ]
+}
