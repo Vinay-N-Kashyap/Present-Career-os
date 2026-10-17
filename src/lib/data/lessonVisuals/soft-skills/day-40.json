@@ -1,0 +1,1709 @@
+{
+  "schemaVersion": 1,
+  "prefix": "soft-skills",
+  "day": 40,
+  "promptSha": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "The Political Economy of Software Engineering: Institutional Power Dynamics",
+      "codeHash": "d60430c11998b66cba3029dd7545dd9fb68a2a3f6489843627391963bbaa3c3a",
+      "spec": {
+        "template": "workflow",
+        "title": "The Political Economy of Software Engineering... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Algorithmic Grounding",
+            "subtext": "Problem Calculus",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Hypothesis & Structure",
+            "subtext": "Traceable State Machine",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Grassroots Adoption",
+            "subtext": "Incentive Compatibility",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "ApexInfluence Ratification",
+            "subtext": "Principal Leadership ✓",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Algorithmic Grounding): Initialize The Political Economy of Software Engineering...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Algorithmic Grounding",
+                "subtext": "Problem Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Hypothesis & Structure",
+                "subtext": "Traceable State Machine",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Grassroots Adoption",
+                "subtext": "Incentive Compatibility",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "ApexInfluence Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Hypothesis & Structure): Model state transitions and trace matrices.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active Flow",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Algorithmic Grounding",
+                "subtext": "Problem Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Hypothesis & Structure",
+                "subtext": "Traceable State Machine",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Grassroots Adoption",
+                "subtext": "Incentive Compatibility",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "ApexInfluence Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Grassroots Adoption): Align stakeholder incentives and bridge chasm.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "High Signal",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Algorithmic Grounding",
+                "subtext": "Problem Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Hypothesis & Structure",
+                "subtext": "Traceable State Machine",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Grassroots Adoption",
+                "subtext": "Incentive Compatibility",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "ApexInfluence Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (ApexInfluence Ratification): Ratify enterprise technical sovereignty.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "Principal Strategist ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Algorithmic Grounding",
+                "subtext": "Problem Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Hypothesis & Structure",
+                "subtext": "Traceable State Machine",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Grassroots Adoption",
+                "subtext": "Incentive Compatibility",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "ApexInfluence Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "The Political Economy of Software Engineering... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Algorithmic Grounding",
+            "subtext": "Problem Calculus",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Hypothesis & Structure",
+            "subtext": "Traceable State Machine",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Grassroots Adoption",
+            "subtext": "Incentive Compatibility",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "ApexInfluence Ratification",
+            "subtext": "Principal Leadership ✓",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Algorithmic Grounding): Initialize The Political Economy of Software Engineering...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Algorithmic Grounding",
+                "subtext": "Problem Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Hypothesis & Structure",
+                "subtext": "Traceable State Machine",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Grassroots Adoption",
+                "subtext": "Incentive Compatibility",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "ApexInfluence Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Hypothesis & Structure): Model state transitions and trace matrices.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active Flow",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Algorithmic Grounding",
+                "subtext": "Problem Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Hypothesis & Structure",
+                "subtext": "Traceable State Machine",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Grassroots Adoption",
+                "subtext": "Incentive Compatibility",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "ApexInfluence Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Grassroots Adoption): Align stakeholder incentives and bridge chasm.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "High Signal",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Algorithmic Grounding",
+                "subtext": "Problem Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Hypothesis & Structure",
+                "subtext": "Traceable State Machine",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Grassroots Adoption",
+                "subtext": "Incentive Compatibility",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "ApexInfluence Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (ApexInfluence Ratification): Ratify enterprise technical sovereignty.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "Principal Strategist ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Algorithmic Grounding",
+                "subtext": "Problem Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Hypothesis & Structure",
+                "subtext": "Traceable State Machine",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Grassroots Adoption",
+                "subtext": "Incentive Compatibility",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "ApexInfluence Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "ApexInfluence Master Campaign Blueprint: The Comprehensive Strategy Dossier",
+      "codeHash": "69be13b40232ad7f189a22b982f22844d6c04e607da43ef555ab1dc8604ceb1b",
+      "spec": {
+        "template": "workflow",
+        "title": "ApexInfluence Master Campaign Blueprint: The ... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Algorithmic Grounding",
+            "subtext": "Problem Calculus",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Hypothesis & Structure",
+            "subtext": "Traceable State Machine",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Grassroots Adoption",
+            "subtext": "Incentive Compatibility",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "ApexInfluence Ratification",
+            "subtext": "Principal Leadership ✓",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Algorithmic Grounding): Initialize ApexInfluence Master Campaign Blueprint: The ...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Algorithmic Grounding",
+                "subtext": "Problem Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Hypothesis & Structure",
+                "subtext": "Traceable State Machine",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Grassroots Adoption",
+                "subtext": "Incentive Compatibility",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "ApexInfluence Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Hypothesis & Structure): Model state transitions and trace matrices.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active Flow",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Algorithmic Grounding",
+                "subtext": "Problem Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Hypothesis & Structure",
+                "subtext": "Traceable State Machine",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Grassroots Adoption",
+                "subtext": "Incentive Compatibility",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "ApexInfluence Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Grassroots Adoption): Align stakeholder incentives and bridge chasm.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "High Signal",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Algorithmic Grounding",
+                "subtext": "Problem Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Hypothesis & Structure",
+                "subtext": "Traceable State Machine",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Grassroots Adoption",
+                "subtext": "Incentive Compatibility",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "ApexInfluence Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (ApexInfluence Ratification): Ratify enterprise technical sovereignty.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "Principal Strategist ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Algorithmic Grounding",
+                "subtext": "Problem Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Hypothesis & Structure",
+                "subtext": "Traceable State Machine",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Grassroots Adoption",
+                "subtext": "Incentive Compatibility",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "ApexInfluence Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "ApexInfluence Master Campaign Blueprint: The ... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Algorithmic Grounding",
+            "subtext": "Problem Calculus",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Hypothesis & Structure",
+            "subtext": "Traceable State Machine",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Grassroots Adoption",
+            "subtext": "Incentive Compatibility",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "ApexInfluence Ratification",
+            "subtext": "Principal Leadership ✓",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Algorithmic Grounding): Initialize ApexInfluence Master Campaign Blueprint: The ...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Algorithmic Grounding",
+                "subtext": "Problem Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Hypothesis & Structure",
+                "subtext": "Traceable State Machine",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Grassroots Adoption",
+                "subtext": "Incentive Compatibility",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "ApexInfluence Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Hypothesis & Structure): Model state transitions and trace matrices.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active Flow",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Algorithmic Grounding",
+                "subtext": "Problem Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Hypothesis & Structure",
+                "subtext": "Traceable State Machine",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Grassroots Adoption",
+                "subtext": "Incentive Compatibility",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "ApexInfluence Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Grassroots Adoption): Align stakeholder incentives and bridge chasm.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "High Signal",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Algorithmic Grounding",
+                "subtext": "Problem Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Hypothesis & Structure",
+                "subtext": "Traceable State Machine",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Grassroots Adoption",
+                "subtext": "Incentive Compatibility",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "ApexInfluence Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (ApexInfluence Ratification): Ratify enterprise technical sovereignty.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "Principal Strategist ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Algorithmic Grounding",
+                "subtext": "Problem Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Hypothesis & Structure",
+                "subtext": "Traceable State Machine",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Grassroots Adoption",
+                "subtext": "Incentive Compatibility",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "ApexInfluence Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "ApexInfluence Campaign Health Telemetry Engine: Real-Time Governance Dashboard",
+      "codeHash": "9ae6fa2bbca2d30975b28b944184c411dd55ad148653a250b2d9cc085be8f85f",
+      "spec": {
+        "template": "workflow",
+        "title": "ApexInfluence Campaign Health Telemetry Engin... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Algorithmic Grounding",
+            "subtext": "Problem Calculus",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Hypothesis & Structure",
+            "subtext": "Traceable State Machine",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Grassroots Adoption",
+            "subtext": "Incentive Compatibility",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "ApexInfluence Ratification",
+            "subtext": "Principal Leadership ✓",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Algorithmic Grounding): Initialize ApexInfluence Campaign Health Telemetry Engin...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Algorithmic Grounding",
+                "subtext": "Problem Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Hypothesis & Structure",
+                "subtext": "Traceable State Machine",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Grassroots Adoption",
+                "subtext": "Incentive Compatibility",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "ApexInfluence Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Hypothesis & Structure): Model state transitions and trace matrices.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active Flow",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Algorithmic Grounding",
+                "subtext": "Problem Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Hypothesis & Structure",
+                "subtext": "Traceable State Machine",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Grassroots Adoption",
+                "subtext": "Incentive Compatibility",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "ApexInfluence Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Grassroots Adoption): Align stakeholder incentives and bridge chasm.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "High Signal",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Algorithmic Grounding",
+                "subtext": "Problem Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Hypothesis & Structure",
+                "subtext": "Traceable State Machine",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Grassroots Adoption",
+                "subtext": "Incentive Compatibility",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "ApexInfluence Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (ApexInfluence Ratification): Ratify enterprise technical sovereignty.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "Principal Strategist ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Algorithmic Grounding",
+                "subtext": "Problem Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Hypothesis & Structure",
+                "subtext": "Traceable State Machine",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Grassroots Adoption",
+                "subtext": "Incentive Compatibility",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "ApexInfluence Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "ApexInfluence Campaign Health Telemetry Engin... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Algorithmic Grounding",
+            "subtext": "Problem Calculus",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Hypothesis & Structure",
+            "subtext": "Traceable State Machine",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Grassroots Adoption",
+            "subtext": "Incentive Compatibility",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "ApexInfluence Ratification",
+            "subtext": "Principal Leadership ✓",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Algorithmic Grounding): Initialize ApexInfluence Campaign Health Telemetry Engin...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Algorithmic Grounding",
+                "subtext": "Problem Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Hypothesis & Structure",
+                "subtext": "Traceable State Machine",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Grassroots Adoption",
+                "subtext": "Incentive Compatibility",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "ApexInfluence Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Hypothesis & Structure): Model state transitions and trace matrices.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active Flow",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Algorithmic Grounding",
+                "subtext": "Problem Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Hypothesis & Structure",
+                "subtext": "Traceable State Machine",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Grassroots Adoption",
+                "subtext": "Incentive Compatibility",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "ApexInfluence Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Grassroots Adoption): Align stakeholder incentives and bridge chasm.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "High Signal",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Algorithmic Grounding",
+                "subtext": "Problem Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Hypothesis & Structure",
+                "subtext": "Traceable State Machine",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Grassroots Adoption",
+                "subtext": "Incentive Compatibility",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "ApexInfluence Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (ApexInfluence Ratification): Ratify enterprise technical sovereignty.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "Principal Strategist ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Algorithmic Grounding",
+                "subtext": "Problem Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Hypothesis & Structure",
+                "subtext": "Traceable State Machine",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Grassroots Adoption",
+                "subtext": "Incentive Compatibility",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "ApexInfluence Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Hostile Public Engineering Revolt Mediation Lab: De-Escalating Crises",
+      "codeHash": "c60836b40ed96c34a5b0df57e0637c0825434ed86ab3a759b7731481f298b40e",
+      "spec": {
+        "template": "workflow",
+        "title": "Hostile Public Engineering Revolt Mediation L... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Algorithmic Grounding",
+            "subtext": "Problem Calculus",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Hypothesis & Structure",
+            "subtext": "Traceable State Machine",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Grassroots Adoption",
+            "subtext": "Incentive Compatibility",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "ApexInfluence Ratification",
+            "subtext": "Principal Leadership ✓",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Algorithmic Grounding): Initialize Hostile Public Engineering Revolt Mediation L...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Algorithmic Grounding",
+                "subtext": "Problem Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Hypothesis & Structure",
+                "subtext": "Traceable State Machine",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Grassroots Adoption",
+                "subtext": "Incentive Compatibility",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "ApexInfluence Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Hypothesis & Structure): Model state transitions and trace matrices.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active Flow",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Algorithmic Grounding",
+                "subtext": "Problem Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Hypothesis & Structure",
+                "subtext": "Traceable State Machine",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Grassroots Adoption",
+                "subtext": "Incentive Compatibility",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "ApexInfluence Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Grassroots Adoption): Align stakeholder incentives and bridge chasm.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "High Signal",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Algorithmic Grounding",
+                "subtext": "Problem Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Hypothesis & Structure",
+                "subtext": "Traceable State Machine",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Grassroots Adoption",
+                "subtext": "Incentive Compatibility",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "ApexInfluence Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (ApexInfluence Ratification): Ratify enterprise technical sovereignty.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "Principal Strategist ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Algorithmic Grounding",
+                "subtext": "Problem Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Hypothesis & Structure",
+                "subtext": "Traceable State Machine",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Grassroots Adoption",
+                "subtext": "Incentive Compatibility",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "ApexInfluence Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Hostile Public Engineering Revolt Mediation L... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Algorithmic Grounding",
+            "subtext": "Problem Calculus",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Hypothesis & Structure",
+            "subtext": "Traceable State Machine",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Grassroots Adoption",
+            "subtext": "Incentive Compatibility",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "ApexInfluence Ratification",
+            "subtext": "Principal Leadership ✓",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Algorithmic Grounding): Initialize Hostile Public Engineering Revolt Mediation L...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Algorithmic Grounding",
+                "subtext": "Problem Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Hypothesis & Structure",
+                "subtext": "Traceable State Machine",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Grassroots Adoption",
+                "subtext": "Incentive Compatibility",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "ApexInfluence Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Hypothesis & Structure): Model state transitions and trace matrices.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active Flow",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Algorithmic Grounding",
+                "subtext": "Problem Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Hypothesis & Structure",
+                "subtext": "Traceable State Machine",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Grassroots Adoption",
+                "subtext": "Incentive Compatibility",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "ApexInfluence Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Grassroots Adoption): Align stakeholder incentives and bridge chasm.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "High Signal",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Algorithmic Grounding",
+                "subtext": "Problem Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Hypothesis & Structure",
+                "subtext": "Traceable State Machine",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Grassroots Adoption",
+                "subtext": "Incentive Compatibility",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "ApexInfluence Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (ApexInfluence Ratification): Ratify enterprise technical sovereignty.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "Principal Strategist ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Algorithmic Grounding",
+                "subtext": "Problem Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Hypothesis & Structure",
+                "subtext": "Traceable State Machine",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Grassroots Adoption",
+                "subtext": "Incentive Compatibility",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "ApexInfluence Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "🏆 Grand Milestone 5 Capstone Certification: ApexInfluence Technical Strategy Suite",
+      "codeHash": "a935ca0f2fb0f5de0e67f0eb30f9b279524b1df1d0db622963602f9c37727a3e",
+      "spec": {
+        "template": "workflow",
+        "title": "🏆 Grand Milestone 5 Capstone Certification: A... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Algorithmic Grounding",
+            "subtext": "Problem Calculus",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Hypothesis & Structure",
+            "subtext": "Traceable State Machine",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Grassroots Adoption",
+            "subtext": "Incentive Compatibility",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "ApexInfluence Ratification",
+            "subtext": "Principal Leadership ✓",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Algorithmic Grounding): Initialize 🏆 Grand Milestone 5 Capstone Certification: A...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Algorithmic Grounding",
+                "subtext": "Problem Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Hypothesis & Structure",
+                "subtext": "Traceable State Machine",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Grassroots Adoption",
+                "subtext": "Incentive Compatibility",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "ApexInfluence Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Hypothesis & Structure): Model state transitions and trace matrices.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active Flow",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Algorithmic Grounding",
+                "subtext": "Problem Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Hypothesis & Structure",
+                "subtext": "Traceable State Machine",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Grassroots Adoption",
+                "subtext": "Incentive Compatibility",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "ApexInfluence Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Grassroots Adoption): Align stakeholder incentives and bridge chasm.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "High Signal",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Algorithmic Grounding",
+                "subtext": "Problem Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Hypothesis & Structure",
+                "subtext": "Traceable State Machine",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Grassroots Adoption",
+                "subtext": "Incentive Compatibility",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "ApexInfluence Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (ApexInfluence Ratification): Ratify enterprise technical sovereignty.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "Principal Strategist ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Algorithmic Grounding",
+                "subtext": "Problem Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Hypothesis & Structure",
+                "subtext": "Traceable State Machine",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Grassroots Adoption",
+                "subtext": "Incentive Compatibility",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "ApexInfluence Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "🏆 Grand Milestone 5 Capstone Certification: A... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Algorithmic Grounding",
+            "subtext": "Problem Calculus",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Hypothesis & Structure",
+            "subtext": "Traceable State Machine",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Grassroots Adoption",
+            "subtext": "Incentive Compatibility",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "ApexInfluence Ratification",
+            "subtext": "Principal Leadership ✓",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Algorithmic Grounding): Initialize 🏆 Grand Milestone 5 Capstone Certification: A...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Algorithmic Grounding",
+                "subtext": "Problem Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Hypothesis & Structure",
+                "subtext": "Traceable State Machine",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Grassroots Adoption",
+                "subtext": "Incentive Compatibility",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "ApexInfluence Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Hypothesis & Structure): Model state transitions and trace matrices.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active Flow",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Algorithmic Grounding",
+                "subtext": "Problem Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Hypothesis & Structure",
+                "subtext": "Traceable State Machine",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Grassroots Adoption",
+                "subtext": "Incentive Compatibility",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "ApexInfluence Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Grassroots Adoption): Align stakeholder incentives and bridge chasm.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "High Signal",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Algorithmic Grounding",
+                "subtext": "Problem Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Hypothesis & Structure",
+                "subtext": "Traceable State Machine",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Grassroots Adoption",
+                "subtext": "Incentive Compatibility",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "ApexInfluence Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (ApexInfluence Ratification): Ratify enterprise technical sovereignty.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "Principal Strategist ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Algorithmic Grounding",
+                "subtext": "Problem Calculus",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Hypothesis & Structure",
+                "subtext": "Traceable State Machine",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Grassroots Adoption",
+                "subtext": "Incentive Compatibility",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "ApexInfluence Ratification",
+                "subtext": "Principal Leadership ✓",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
