@@ -1,0 +1,592 @@
+[
+  {
+    "partTitle": "Unlevered Free Cash Flow (FCFF) Modeling from Operating Earnings",
+    "codeHash": "cd816245aed9b1fd58ae24e74894e12d20389810c8f68af8697974916686823b",
+    "spec": {
+      "template": "bars",
+      "title": "Unlevered Free Cash Flow (FCFF) Modeling from Operating Earnings — Capital Budgeting & Valuation: Discounted Cash Flow (DCF), WACC & Multi-Tier Waterfall Returns",
+      "steps": [
+        {
+          "at": "intro",
+          "caption": "Step 1: Ledger ingestion and statutory framework for Unlevered Free Cash Flow (FCFF) Modeling from Operating Earnings",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Unlevered FCF",
+              "value": 25,
+              "tone": "accent"
+            },
+            {
+              "label": "WACC Discounting",
+              "value": 20,
+              "tone": "data"
+            },
+            {
+              "label": "Terminal Value",
+              "value": 15,
+              "tone": "data"
+            },
+            {
+              "label": "PE Equity Waterfall",
+              "value": 10,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "say1",
+          "caption": "Step 2: Processing recursive linkages and calculations for Unlevered Free Cash Flow (FCFF) Modeling from Operating Earnings",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Unlevered FCF",
+              "value": 65,
+              "tone": "accent"
+            },
+            {
+              "label": "WACC Discounting",
+              "value": 60,
+              "tone": "data"
+            },
+            {
+              "label": "Terminal Value",
+              "value": 55,
+              "tone": "data"
+            },
+            {
+              "label": "PE Equity Waterfall",
+              "value": 45,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "example",
+          "caption": "Step 3: Real-world stress testing and scenarios for Unlevered Free Cash Flow (FCFF) Modeling from Operating Earnings",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Unlevered FCF",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "WACC Discounting",
+              "value": 80,
+              "tone": "data"
+            },
+            {
+              "label": "Terminal Value",
+              "value": 75,
+              "tone": "data"
+            },
+            {
+              "label": "PE Equity Waterfall",
+              "value": 70,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "tryIt",
+          "caption": "Step 4: Active experimentation and parameter tuning for Unlevered Free Cash Flow (FCFF) Modeling from Operating Earnings",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Unlevered FCF",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "WACC Discounting",
+              "value": 95,
+              "tone": "data"
+            },
+            {
+              "label": "Terminal Value",
+              "value": 90,
+              "tone": "data"
+            },
+            {
+              "label": "PE Equity Waterfall",
+              "value": 85,
+              "tone": "data"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "partTitle": "Weighted Average Cost of Capital (WACC) & CAPM Cost of Equity",
+    "codeHash": "f9be165750e4f2a5cbbc8ec09094b098c08a39d2af26933a5be45543c727bc6f",
+    "spec": {
+      "template": "bars",
+      "title": "Weighted Average Cost of Capital (WACC) & CAPM Cost of Equity — Capital Budgeting & Valuation: Discounted Cash Flow (DCF), WACC & Multi-Tier Waterfall Returns",
+      "steps": [
+        {
+          "at": "intro",
+          "caption": "Step 1: Ledger ingestion and statutory framework for Weighted Average Cost of Capital (WACC) & CAPM Cost of Equity",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Unlevered FCF",
+              "value": 25,
+              "tone": "accent"
+            },
+            {
+              "label": "WACC Discounting",
+              "value": 20,
+              "tone": "data"
+            },
+            {
+              "label": "Terminal Value",
+              "value": 15,
+              "tone": "data"
+            },
+            {
+              "label": "PE Equity Waterfall",
+              "value": 10,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "say1",
+          "caption": "Step 2: Processing recursive linkages and calculations for Weighted Average Cost of Capital (WACC) & CAPM Cost of Equity",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Unlevered FCF",
+              "value": 65,
+              "tone": "accent"
+            },
+            {
+              "label": "WACC Discounting",
+              "value": 60,
+              "tone": "data"
+            },
+            {
+              "label": "Terminal Value",
+              "value": 55,
+              "tone": "data"
+            },
+            {
+              "label": "PE Equity Waterfall",
+              "value": 45,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "example",
+          "caption": "Step 3: Real-world stress testing and scenarios for Weighted Average Cost of Capital (WACC) & CAPM Cost of Equity",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Unlevered FCF",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "WACC Discounting",
+              "value": 80,
+              "tone": "data"
+            },
+            {
+              "label": "Terminal Value",
+              "value": 75,
+              "tone": "data"
+            },
+            {
+              "label": "PE Equity Waterfall",
+              "value": 70,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "tryIt",
+          "caption": "Step 4: Active experimentation and parameter tuning for Weighted Average Cost of Capital (WACC) & CAPM Cost of Equity",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Unlevered FCF",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "WACC Discounting",
+              "value": 95,
+              "tone": "data"
+            },
+            {
+              "label": "Terminal Value",
+              "value": 90,
+              "tone": "data"
+            },
+            {
+              "label": "PE Equity Waterfall",
+              "value": 85,
+              "tone": "data"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "partTitle": "Terminal Value Estimation: Gordon Growth vs Exit Multiple Dual Methods",
+    "codeHash": "e7559fd98f777c3eaa9a92a7ef39ed55c60b17dfe80255625b345802408ca83d",
+    "spec": {
+      "template": "bars",
+      "title": "Terminal Value Estimation: Gordon Growth vs Exit Multiple Dual Methods — Capital Budgeting & Valuation: Discounted Cash Flow (DCF), WACC & Multi-Tier Waterfall Returns",
+      "steps": [
+        {
+          "at": "intro",
+          "caption": "Step 1: Ledger ingestion and statutory framework for Terminal Value Estimation: Gordon Growth vs Exit Multiple Dual Methods",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Unlevered FCF",
+              "value": 25,
+              "tone": "accent"
+            },
+            {
+              "label": "WACC Discounting",
+              "value": 20,
+              "tone": "data"
+            },
+            {
+              "label": "Terminal Value",
+              "value": 15,
+              "tone": "data"
+            },
+            {
+              "label": "PE Equity Waterfall",
+              "value": 10,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "say1",
+          "caption": "Step 2: Processing recursive linkages and calculations for Terminal Value Estimation: Gordon Growth vs Exit Multiple Dual Methods",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Unlevered FCF",
+              "value": 65,
+              "tone": "accent"
+            },
+            {
+              "label": "WACC Discounting",
+              "value": 60,
+              "tone": "data"
+            },
+            {
+              "label": "Terminal Value",
+              "value": 55,
+              "tone": "data"
+            },
+            {
+              "label": "PE Equity Waterfall",
+              "value": 45,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "example",
+          "caption": "Step 3: Real-world stress testing and scenarios for Terminal Value Estimation: Gordon Growth vs Exit Multiple Dual Methods",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Unlevered FCF",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "WACC Discounting",
+              "value": 80,
+              "tone": "data"
+            },
+            {
+              "label": "Terminal Value",
+              "value": 75,
+              "tone": "data"
+            },
+            {
+              "label": "PE Equity Waterfall",
+              "value": 70,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "tryIt",
+          "caption": "Step 4: Active experimentation and parameter tuning for Terminal Value Estimation: Gordon Growth vs Exit Multiple Dual Methods",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Unlevered FCF",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "WACC Discounting",
+              "value": 95,
+              "tone": "data"
+            },
+            {
+              "label": "Terminal Value",
+              "value": 90,
+              "tone": "data"
+            },
+            {
+              "label": "PE Equity Waterfall",
+              "value": 85,
+              "tone": "data"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "partTitle": "Private Equity Multi-Tier Waterfall Distribution Hurdle Engine",
+    "codeHash": "56f32381fcc183381806e9fcff56290e57a414e8fc2302ecd0179bd70688bcbb",
+    "spec": {
+      "template": "bars",
+      "title": "Private Equity Multi-Tier Waterfall Distribution Hurdle Engine — Capital Budgeting & Valuation: Discounted Cash Flow (DCF), WACC & Multi-Tier Waterfall Returns",
+      "steps": [
+        {
+          "at": "intro",
+          "caption": "Step 1: Ledger ingestion and statutory framework for Private Equity Multi-Tier Waterfall Distribution Hurdle Engine",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Unlevered FCF",
+              "value": 25,
+              "tone": "accent"
+            },
+            {
+              "label": "WACC Discounting",
+              "value": 20,
+              "tone": "data"
+            },
+            {
+              "label": "Terminal Value",
+              "value": 15,
+              "tone": "data"
+            },
+            {
+              "label": "PE Equity Waterfall",
+              "value": 10,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "say1",
+          "caption": "Step 2: Processing recursive linkages and calculations for Private Equity Multi-Tier Waterfall Distribution Hurdle Engine",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Unlevered FCF",
+              "value": 65,
+              "tone": "accent"
+            },
+            {
+              "label": "WACC Discounting",
+              "value": 60,
+              "tone": "data"
+            },
+            {
+              "label": "Terminal Value",
+              "value": 55,
+              "tone": "data"
+            },
+            {
+              "label": "PE Equity Waterfall",
+              "value": 45,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "example",
+          "caption": "Step 3: Real-world stress testing and scenarios for Private Equity Multi-Tier Waterfall Distribution Hurdle Engine",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Unlevered FCF",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "WACC Discounting",
+              "value": 80,
+              "tone": "data"
+            },
+            {
+              "label": "Terminal Value",
+              "value": 75,
+              "tone": "data"
+            },
+            {
+              "label": "PE Equity Waterfall",
+              "value": 70,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "tryIt",
+          "caption": "Step 4: Active experimentation and parameter tuning for Private Equity Multi-Tier Waterfall Distribution Hurdle Engine",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Unlevered FCF",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "WACC Discounting",
+              "value": 95,
+              "tone": "data"
+            },
+            {
+              "label": "Terminal Value",
+              "value": 90,
+              "tone": "data"
+            },
+            {
+              "label": "PE Equity Waterfall",
+              "value": 85,
+              "tone": "data"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "partTitle": "Master Corporate Enterprise Valuation & Equity Waterfall Suite",
+    "codeHash": "26e45d3fab7c7daecb537a364e7f107d6b3f6d9e4d580d86c2242323450f1d06",
+    "spec": {
+      "template": "bars",
+      "title": "Master Corporate Enterprise Valuation & Equity Waterfall Suite — Capital Budgeting & Valuation: Discounted Cash Flow (DCF), WACC & Multi-Tier Waterfall Returns",
+      "steps": [
+        {
+          "at": "intro",
+          "caption": "Step 1: Ledger ingestion and statutory framework for Master Corporate Enterprise Valuation & Equity Waterfall Suite",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Unlevered FCF",
+              "value": 25,
+              "tone": "accent"
+            },
+            {
+              "label": "WACC Discounting",
+              "value": 20,
+              "tone": "data"
+            },
+            {
+              "label": "Terminal Value",
+              "value": 15,
+              "tone": "data"
+            },
+            {
+              "label": "PE Equity Waterfall",
+              "value": 10,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "say1",
+          "caption": "Step 2: Processing recursive linkages and calculations for Master Corporate Enterprise Valuation & Equity Waterfall Suite",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Unlevered FCF",
+              "value": 65,
+              "tone": "accent"
+            },
+            {
+              "label": "WACC Discounting",
+              "value": 60,
+              "tone": "data"
+            },
+            {
+              "label": "Terminal Value",
+              "value": 55,
+              "tone": "data"
+            },
+            {
+              "label": "PE Equity Waterfall",
+              "value": 45,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "example",
+          "caption": "Step 3: Real-world stress testing and scenarios for Master Corporate Enterprise Valuation & Equity Waterfall Suite",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Unlevered FCF",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "WACC Discounting",
+              "value": 80,
+              "tone": "data"
+            },
+            {
+              "label": "Terminal Value",
+              "value": 75,
+              "tone": "data"
+            },
+            {
+              "label": "PE Equity Waterfall",
+              "value": 70,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "tryIt",
+          "caption": "Step 4: Active experimentation and parameter tuning for Master Corporate Enterprise Valuation & Equity Waterfall Suite",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Unlevered FCF",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "WACC Discounting",
+              "value": 95,
+              "tone": "data"
+            },
+            {
+              "label": "Terminal Value",
+              "value": 90,
+              "tone": "data"
+            },
+            {
+              "label": "PE Equity Waterfall",
+              "value": 85,
+              "tone": "data"
+            }
+          ]
+        }
+      ]
+    }
+  }
+]

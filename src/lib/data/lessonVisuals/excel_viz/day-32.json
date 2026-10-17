@@ -1,0 +1,592 @@
+[
+  {
+    "partTitle": "The Revolving Credit Facility & Dynamic Cash Sweep Mechanics",
+    "codeHash": "bc61ac61bf52cd6d815cbd43cedcbdf075d3cdda5379d78222488d7f038f1f7b",
+    "spec": {
+      "template": "bars",
+      "title": "The Revolving Credit Facility & Dynamic Cash Sweep Mechanics — Debt Sculpting, Revolver Schedules & Circular Reference Resolution (Iterative Calculation Mechanics)",
+      "steps": [
+        {
+          "at": "intro",
+          "caption": "Step 1: Ledger ingestion and statutory framework for The Revolving Credit Facility & Dynamic Cash Sweep Mechanics",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Senior Term Debt",
+              "value": 25,
+              "tone": "accent"
+            },
+            {
+              "label": "Revolver Utilization",
+              "value": 20,
+              "tone": "data"
+            },
+            {
+              "label": "DSCR Coverage",
+              "value": 15,
+              "tone": "data"
+            },
+            {
+              "label": "Circularity Invariant",
+              "value": 10,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "say1",
+          "caption": "Step 2: Processing recursive linkages and calculations for The Revolving Credit Facility & Dynamic Cash Sweep Mechanics",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Senior Term Debt",
+              "value": 65,
+              "tone": "accent"
+            },
+            {
+              "label": "Revolver Utilization",
+              "value": 60,
+              "tone": "data"
+            },
+            {
+              "label": "DSCR Coverage",
+              "value": 55,
+              "tone": "data"
+            },
+            {
+              "label": "Circularity Invariant",
+              "value": 45,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "example",
+          "caption": "Step 3: Real-world stress testing and scenarios for The Revolving Credit Facility & Dynamic Cash Sweep Mechanics",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Senior Term Debt",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "Revolver Utilization",
+              "value": 80,
+              "tone": "data"
+            },
+            {
+              "label": "DSCR Coverage",
+              "value": 75,
+              "tone": "data"
+            },
+            {
+              "label": "Circularity Invariant",
+              "value": 70,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "tryIt",
+          "caption": "Step 4: Active experimentation and parameter tuning for The Revolving Credit Facility & Dynamic Cash Sweep Mechanics",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Senior Term Debt",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "Revolver Utilization",
+              "value": 95,
+              "tone": "data"
+            },
+            {
+              "label": "DSCR Coverage",
+              "value": 90,
+              "tone": "data"
+            },
+            {
+              "label": "Circularity Invariant",
+              "value": 85,
+              "tone": "data"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "partTitle": "Circular Reference Architecture & Algorithmic Circularity Breakers",
+    "codeHash": "5555d62f6bee31a54de5d355e980a86e2e01357ec1b171e1c500713c07635827",
+    "spec": {
+      "template": "bars",
+      "title": "Circular Reference Architecture & Algorithmic Circularity Breakers — Debt Sculpting, Revolver Schedules & Circular Reference Resolution (Iterative Calculation Mechanics)",
+      "steps": [
+        {
+          "at": "intro",
+          "caption": "Step 1: Ledger ingestion and statutory framework for Circular Reference Architecture & Algorithmic Circularity Breakers",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Senior Term Debt",
+              "value": 25,
+              "tone": "accent"
+            },
+            {
+              "label": "Revolver Utilization",
+              "value": 20,
+              "tone": "data"
+            },
+            {
+              "label": "DSCR Coverage",
+              "value": 15,
+              "tone": "data"
+            },
+            {
+              "label": "Circularity Invariant",
+              "value": 10,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "say1",
+          "caption": "Step 2: Processing recursive linkages and calculations for Circular Reference Architecture & Algorithmic Circularity Breakers",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Senior Term Debt",
+              "value": 65,
+              "tone": "accent"
+            },
+            {
+              "label": "Revolver Utilization",
+              "value": 60,
+              "tone": "data"
+            },
+            {
+              "label": "DSCR Coverage",
+              "value": 55,
+              "tone": "data"
+            },
+            {
+              "label": "Circularity Invariant",
+              "value": 45,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "example",
+          "caption": "Step 3: Real-world stress testing and scenarios for Circular Reference Architecture & Algorithmic Circularity Breakers",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Senior Term Debt",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "Revolver Utilization",
+              "value": 80,
+              "tone": "data"
+            },
+            {
+              "label": "DSCR Coverage",
+              "value": 75,
+              "tone": "data"
+            },
+            {
+              "label": "Circularity Invariant",
+              "value": 70,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "tryIt",
+          "caption": "Step 4: Active experimentation and parameter tuning for Circular Reference Architecture & Algorithmic Circularity Breakers",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Senior Term Debt",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "Revolver Utilization",
+              "value": 95,
+              "tone": "data"
+            },
+            {
+              "label": "DSCR Coverage",
+              "value": 90,
+              "tone": "data"
+            },
+            {
+              "label": "Circularity Invariant",
+              "value": 85,
+              "tone": "data"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "partTitle": "Debt Sculpting Optimization & Debt Service Coverage Ratios",
+    "codeHash": "ee36814343c8d7cee0e23c9bb10ab7d7a43f42fc03d796ed279207c81f4aeed0",
+    "spec": {
+      "template": "bars",
+      "title": "Debt Sculpting Optimization & Debt Service Coverage Ratios — Debt Sculpting, Revolver Schedules & Circular Reference Resolution (Iterative Calculation Mechanics)",
+      "steps": [
+        {
+          "at": "intro",
+          "caption": "Step 1: Ledger ingestion and statutory framework for Debt Sculpting Optimization & Debt Service Coverage Ratios",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Senior Term Debt",
+              "value": 25,
+              "tone": "accent"
+            },
+            {
+              "label": "Revolver Utilization",
+              "value": 20,
+              "tone": "data"
+            },
+            {
+              "label": "DSCR Coverage",
+              "value": 15,
+              "tone": "data"
+            },
+            {
+              "label": "Circularity Invariant",
+              "value": 10,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "say1",
+          "caption": "Step 2: Processing recursive linkages and calculations for Debt Sculpting Optimization & Debt Service Coverage Ratios",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Senior Term Debt",
+              "value": 65,
+              "tone": "accent"
+            },
+            {
+              "label": "Revolver Utilization",
+              "value": 60,
+              "tone": "data"
+            },
+            {
+              "label": "DSCR Coverage",
+              "value": 55,
+              "tone": "data"
+            },
+            {
+              "label": "Circularity Invariant",
+              "value": 45,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "example",
+          "caption": "Step 3: Real-world stress testing and scenarios for Debt Sculpting Optimization & Debt Service Coverage Ratios",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Senior Term Debt",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "Revolver Utilization",
+              "value": 80,
+              "tone": "data"
+            },
+            {
+              "label": "DSCR Coverage",
+              "value": 75,
+              "tone": "data"
+            },
+            {
+              "label": "Circularity Invariant",
+              "value": 70,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "tryIt",
+          "caption": "Step 4: Active experimentation and parameter tuning for Debt Sculpting Optimization & Debt Service Coverage Ratios",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Senior Term Debt",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "Revolver Utilization",
+              "value": 95,
+              "tone": "data"
+            },
+            {
+              "label": "DSCR Coverage",
+              "value": 90,
+              "tone": "data"
+            },
+            {
+              "label": "Circularity Invariant",
+              "value": 85,
+              "tone": "data"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "partTitle": "Syndicated Loan Covenants & Total Leverage Compliance Auditor",
+    "codeHash": "65011e362f20b81fa5d98586a5553fa2775422141fb36d8fb349a479a9693e7f",
+    "spec": {
+      "template": "bars",
+      "title": "Syndicated Loan Covenants & Total Leverage Compliance Auditor — Debt Sculpting, Revolver Schedules & Circular Reference Resolution (Iterative Calculation Mechanics)",
+      "steps": [
+        {
+          "at": "intro",
+          "caption": "Step 1: Ledger ingestion and statutory framework for Syndicated Loan Covenants & Total Leverage Compliance Auditor",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Senior Term Debt",
+              "value": 25,
+              "tone": "accent"
+            },
+            {
+              "label": "Revolver Utilization",
+              "value": 20,
+              "tone": "data"
+            },
+            {
+              "label": "DSCR Coverage",
+              "value": 15,
+              "tone": "data"
+            },
+            {
+              "label": "Circularity Invariant",
+              "value": 10,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "say1",
+          "caption": "Step 2: Processing recursive linkages and calculations for Syndicated Loan Covenants & Total Leverage Compliance Auditor",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Senior Term Debt",
+              "value": 65,
+              "tone": "accent"
+            },
+            {
+              "label": "Revolver Utilization",
+              "value": 60,
+              "tone": "data"
+            },
+            {
+              "label": "DSCR Coverage",
+              "value": 55,
+              "tone": "data"
+            },
+            {
+              "label": "Circularity Invariant",
+              "value": 45,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "example",
+          "caption": "Step 3: Real-world stress testing and scenarios for Syndicated Loan Covenants & Total Leverage Compliance Auditor",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Senior Term Debt",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "Revolver Utilization",
+              "value": 80,
+              "tone": "data"
+            },
+            {
+              "label": "DSCR Coverage",
+              "value": 75,
+              "tone": "data"
+            },
+            {
+              "label": "Circularity Invariant",
+              "value": 70,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "tryIt",
+          "caption": "Step 4: Active experimentation and parameter tuning for Syndicated Loan Covenants & Total Leverage Compliance Auditor",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Senior Term Debt",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "Revolver Utilization",
+              "value": 95,
+              "tone": "data"
+            },
+            {
+              "label": "DSCR Coverage",
+              "value": 90,
+              "tone": "data"
+            },
+            {
+              "label": "Circularity Invariant",
+              "value": 85,
+              "tone": "data"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "partTitle": "Master Integrated Debt Sculpting, Revolver & Iterative Convergence Suite",
+    "codeHash": "d5753a868f32deec9ea486853b25f2a0c285cb2a1557b5cb596bf89ecbec0d70",
+    "spec": {
+      "template": "bars",
+      "title": "Master Integrated Debt Sculpting, Revolver & Iterative Convergence Suite — Debt Sculpting, Revolver Schedules & Circular Reference Resolution (Iterative Calculation Mechanics)",
+      "steps": [
+        {
+          "at": "intro",
+          "caption": "Step 1: Ledger ingestion and statutory framework for Master Integrated Debt Sculpting, Revolver & Iterative Convergence Suite",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Senior Term Debt",
+              "value": 25,
+              "tone": "accent"
+            },
+            {
+              "label": "Revolver Utilization",
+              "value": 20,
+              "tone": "data"
+            },
+            {
+              "label": "DSCR Coverage",
+              "value": 15,
+              "tone": "data"
+            },
+            {
+              "label": "Circularity Invariant",
+              "value": 10,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "say1",
+          "caption": "Step 2: Processing recursive linkages and calculations for Master Integrated Debt Sculpting, Revolver & Iterative Convergence Suite",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Senior Term Debt",
+              "value": 65,
+              "tone": "accent"
+            },
+            {
+              "label": "Revolver Utilization",
+              "value": 60,
+              "tone": "data"
+            },
+            {
+              "label": "DSCR Coverage",
+              "value": 55,
+              "tone": "data"
+            },
+            {
+              "label": "Circularity Invariant",
+              "value": 45,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "example",
+          "caption": "Step 3: Real-world stress testing and scenarios for Master Integrated Debt Sculpting, Revolver & Iterative Convergence Suite",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Senior Term Debt",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "Revolver Utilization",
+              "value": 80,
+              "tone": "data"
+            },
+            {
+              "label": "DSCR Coverage",
+              "value": 75,
+              "tone": "data"
+            },
+            {
+              "label": "Circularity Invariant",
+              "value": 70,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "tryIt",
+          "caption": "Step 4: Active experimentation and parameter tuning for Master Integrated Debt Sculpting, Revolver & Iterative Convergence Suite",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Senior Term Debt",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "Revolver Utilization",
+              "value": 95,
+              "tone": "data"
+            },
+            {
+              "label": "DSCR Coverage",
+              "value": 90,
+              "tone": "data"
+            },
+            {
+              "label": "Circularity Invariant",
+              "value": 85,
+              "tone": "data"
+            }
+          ]
+        }
+      ]
+    }
+  }
+]

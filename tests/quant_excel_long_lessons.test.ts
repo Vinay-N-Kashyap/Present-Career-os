@@ -2310,5 +2310,160 @@ test('Excel Viz Day 30: Grand Final Milestone 6 Capstone Sovereign Financial OS'
   assert.ok(lesson.parts[4].code?.includes('SovereignEnterpriseFinancialOS'));
 });
 
+test('Excel Viz Day 31: Dynamic Three-Statement Financial Modeling', () => {
+  const lesson = getLongLesson('excel_viz', 31);
+  assert.ok(lesson, 'excel_viz Day 31 must resolve');
+  assert.equal(lesson.day, 31);
+  assert.equal(lesson.parts.length, 5);
+
+  const spokenMin = estimateSpokenMinutes(lesson);
+  assert.ok(spokenMin >= 20, `Spoken minutes should be >= 20 (got ${spokenMin})`);
+
+  for (const part of lesson.parts) {
+    assert.ok(part.title.length > 0);
+    assert.ok(part.say.length >= 3);
+    assert.ok(part.example && part.example.length > 0);
+    assert.ok(part.code && part.code.includes('class '));
+    assert.ok(part.output && part.output.length > 0);
+    assert.ok(part.tryIt && part.tryIt.length > 0);
+
+    const check = part.check as any;
+    assert.ok(check.question.length > 10);
+    assert.equal(check.options.length, 4);
+    assert.ok(check.answer >= 0 && check.answer < 4);
+    assert.ok(check.why.length > 15);
+  }
+
+  assert.ok(lesson.parts[0].code?.includes('ThreeStatementLedgerInvariants'));
+  assert.ok(lesson.parts[1].code?.includes('WorkingCapitalCashFlowBridge'));
+  assert.ok(lesson.parts[2].code?.includes('FixedAssetPpeSchedule'));
+  assert.ok(lesson.parts[3].code?.includes('RetainedEarningsEquityLinker'));
+  assert.ok(lesson.parts[4].code?.includes('MasterThreeStatementForecastEngine'));
+});
+
+test('Excel Viz Day 32: Debt Sculpting, Revolver Schedules & Circularity Breakers', () => {
+  const lesson = getLongLesson('excel_viz', 32);
+  assert.ok(lesson, 'excel_viz Day 32 must resolve');
+  assert.equal(lesson.day, 32);
+  assert.equal(lesson.parts.length, 5);
+
+  const spokenMin = estimateSpokenMinutes(lesson);
+  assert.ok(spokenMin >= 20, `Spoken minutes should be >= 20 (got ${spokenMin})`);
+
+  for (const part of lesson.parts) {
+    assert.ok(part.title.length > 0);
+    assert.ok(part.say.length >= 3);
+    assert.ok(part.example && part.example.length > 0);
+    assert.ok(part.code && part.code.includes('class '));
+    assert.ok(part.output && part.output.length > 0);
+    assert.ok(part.tryIt && part.tryIt.length > 0);
+
+    const check = part.check as any;
+    assert.ok(check.question.length > 10);
+    assert.equal(check.options.length, 4);
+    assert.ok(check.answer >= 0 && check.answer < 4);
+    assert.ok(check.why.length > 15);
+  }
+
+  assert.ok(lesson.parts[0].code?.includes('RevolverBorrowingSweepEngine'));
+  assert.ok(lesson.parts[1].code?.includes('CircularityBreakerToggle'));
+  assert.ok(lesson.parts[2].code?.includes('DebtSculptingDscrOptimizer'));
+  assert.ok(lesson.parts[3].code?.includes('CreditRatingCovenantAuditor'));
+  assert.ok(lesson.parts[4].code?.includes('MasterDebtAndCircularityEngine'));
+});
+
+test('Excel Viz Day 33: Capital Budgeting & Valuation: DCF, WACC & Multi-Tier Waterfalls', () => {
+  const lesson = getLongLesson('excel_viz', 33);
+  assert.ok(lesson, 'excel_viz Day 33 must resolve');
+  assert.equal(lesson.day, 33);
+  assert.equal(lesson.parts.length, 5);
+
+  const spokenMin = estimateSpokenMinutes(lesson);
+  assert.ok(spokenMin >= 20, `Spoken minutes should be >= 20 (got ${spokenMin})`);
+
+  for (const part of lesson.parts) {
+    assert.ok(part.title.length > 0);
+    assert.ok(part.say.length >= 3);
+    assert.ok(part.example && part.example.length > 0);
+    assert.ok(part.code && part.code.includes('class '));
+    assert.ok(part.output && part.output.length > 0);
+    assert.ok(part.tryIt && part.tryIt.length > 0);
+
+    const check = part.check as any;
+    assert.ok(check.question.length > 10);
+    assert.equal(check.options.length, 4);
+    assert.ok(check.answer >= 0 && check.answer < 4);
+    assert.ok(check.why.length > 15);
+  }
+
+  assert.ok(lesson.parts[0].code?.includes('UnleveredFreeCashFlowEngine'));
+  assert.ok(lesson.parts[1].code?.includes('WaccCapitalStructureCalculator'));
+  assert.ok(lesson.parts[2].code?.includes('TerminalValueSensitivityCalculator'));
+  assert.ok(lesson.parts[3].code?.includes('PrivateEquityWaterfallDistributions'));
+  assert.ok(lesson.parts[4].code?.includes('MasterCorporateValuationEngine'));
+});
+
+test('Excel Viz Day 34: Advanced Sensitivity & Scenario Managers: Data Tables & Monte Carlo', () => {
+  const lesson = getLongLesson('excel_viz', 34);
+  assert.ok(lesson, 'excel_viz Day 34 must resolve');
+  assert.equal(lesson.day, 34);
+  assert.equal(lesson.parts.length, 5);
+
+  const spokenMin = estimateSpokenMinutes(lesson);
+  assert.ok(spokenMin >= 20, `Spoken minutes should be >= 20 (got ${spokenMin})`);
+
+  for (const part of lesson.parts) {
+    assert.ok(part.title.length > 0);
+    assert.ok(part.say.length >= 3);
+    assert.ok(part.example && part.example.length > 0);
+    assert.ok(part.code && part.code.includes('class '));
+    assert.ok(part.output && part.output.length > 0);
+    assert.ok(part.tryIt && part.tryIt.length > 0);
+
+    const check = part.check as any;
+    assert.ok(check.question.length > 10);
+    assert.equal(check.options.length, 4);
+    assert.ok(check.answer >= 0 && check.answer < 4);
+    assert.ok(check.why.length > 15);
+  }
+
+  assert.ok(lesson.parts[0].code?.includes('TwoWayDataTableEngine'));
+  assert.ok(lesson.parts[1].code?.includes('TornadoSensitivityRanker'));
+  assert.ok(lesson.parts[2].code?.includes('ScenarioManagerSwitchboard'));
+  assert.ok(lesson.parts[3].code?.includes('CorrelatedMonteCarloEngine'));
+  assert.ok(lesson.parts[4].code?.includes('MasterFinancialRiskSensitivitySuite'));
+});
+
+test('Excel Viz Day 35: Milestone 4: ApexValuation Three-Statement Financial Modeling & Monte Carlo DCF Engine Suite', () => {
+  const lesson = getLongLesson('excel_viz', 35);
+  assert.ok(lesson, 'excel_viz Day 35 must resolve');
+  assert.equal(lesson.day, 35);
+  assert.equal(lesson.parts.length, 5);
+
+  const spokenMin = estimateSpokenMinutes(lesson);
+  assert.ok(spokenMin >= 20, `Spoken minutes should be >= 20 (got ${spokenMin})`);
+
+  for (const part of lesson.parts) {
+    assert.ok(part.title.length > 0);
+    assert.ok(part.say.length >= 3);
+    assert.ok(part.example && part.example.length > 0);
+    assert.ok(part.code && part.code.includes('class '));
+    assert.ok(part.output && part.output.length > 0);
+    assert.ok(part.tryIt && part.tryIt.length > 0);
+
+    const check = part.check as any;
+    assert.ok(check.question.length > 10);
+    assert.equal(check.options.length, 4);
+    assert.ok(check.answer >= 0 && check.answer < 4);
+    assert.ok(check.why.length > 15);
+  }
+
+  assert.ok(lesson.parts[0].code?.includes('Milestone4ValuationAuditor'));
+  assert.ok(lesson.parts[1].code?.includes('EnterpriseLboAcquisitionSimulator'));
+  assert.ok(lesson.parts[2].code?.includes('DistressScenarioStressTester'));
+  assert.ok(lesson.parts[3].code?.includes('BoardroomValuationPitchGateway'));
+  assert.ok(lesson.parts[4].code?.includes('MasterApexValuationEngine'));
+});
+
 
 
