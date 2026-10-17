@@ -1130,6 +1130,164 @@ test('B.Com SCRM Milestone 5 (Days 21-25): Gate v2 Funnel Visuals & Cryptographi
   }
 });
 
+test('B.Com SCRM Milestone 6 (Days 26-30): Long Lessons Structure & Word Count Invariants', () => {
+  for (let day = 26; day <= 30; day++) {
+    const lesson = getLongLesson('bcom_scrm', day);
+    assert.ok(lesson, `bcom_scrm Day ${day} lesson must be defined`);
+    assert.equal(lesson.coursePrefix, 'bcom_scrm');
+    assert.equal(lesson.day, day);
+    assert.equal(lesson.parts.length, 5, `Day ${day} must have exactly 5 parts`);
+
+    // Day 30 Capstone minutes = 50, Days 26-29 minutes = 45
+    if (day === 30) {
+      assert.equal(lesson.minutes, 50, 'Day 30 Capstone minutes must be 50');
+    } else {
+      assert.equal(lesson.minutes, 45, `Day ${day} minutes must be 45`);
+    }
+
+    const spokenMin = estimateSpokenMinutes(lesson);
+    assert.ok(
+      spokenMin >= 19.5,
+      `Day ${day} spoken minutes must be >= 19.5 min for ~2,950 words floor (got ${spokenMin.toFixed(2)} min)`
+    );
+
+    for (let pIdx = 0; pIdx < lesson.parts.length; pIdx++) {
+      const part = lesson.parts[pIdx];
+      assert.ok(part.title.length > 0, `Day ${day} Part ${pIdx + 1} must have a non-empty title`);
+      assert.ok(part.say.length >= 3, `Day ${day} Part ${pIdx + 1} must have >= 3 paragraphs`);
+      assert.ok(part.example && part.example.length > 0, `Day ${day} Part ${pIdx + 1} must have an example`);
+      assert.ok(
+        part.code && (part.code.includes('def ') || part.code.includes('class ')),
+        `Day ${day} Part ${pIdx + 1} code must contain Python functions/classes`
+      );
+      assert.ok(part.output && part.output.length > 0, `Day ${day} Part ${pIdx + 1} must have expected output`);
+      assert.ok(part.codeNotes && part.codeNotes.length >= 3, `Day ${day} Part ${pIdx + 1} must have >= 3 codeNotes`);
+      assert.ok(part.tryIt && part.tryIt.length > 0, `Day ${day} Part ${pIdx + 1} must have tryIt experiment`);
+
+      const check = part.check as any;
+      assert.ok(check.question.length > 0, `Day ${day} Part ${pIdx + 1} check question must be non-empty`);
+      assert.equal(check.options.length, 4, `Day ${day} Part ${pIdx + 1} check options must be exactly 4`);
+      assert.ok(check.answerIndex >= 0 && check.answerIndex < 4, `Day ${day} Part ${pIdx + 1} answerIndex must be valid`);
+      assert.ok(check.explanation.length > 0, `Day ${day} Part ${pIdx + 1} explanation must be non-empty`);
+    }
+  }
+});
+
+test('B.Com SCRM Milestone 6 (Days 26-30): Python Domain Code & Grand Capstone Verification', () => {
+  // Day 26: Outbound Deliverability & Infrastructure: SPF, DKIM, DMARC & Inbox Warming
+  const d26 = getLongLesson('bcom_scrm', 26)!;
+  assert.ok(d26.parts[0].code?.includes('audit_dns_authentication_triad'));
+  assert.ok(d26.parts[1].code?.includes('OutboundDomainTopologyManager'));
+  assert.ok(d26.parts[2].code?.includes('evaluate_inbox_warming_cadence'));
+  assert.ok(d26.parts[3].code?.includes('calculate_spreader_infrastructure'));
+  assert.ok(d26.parts[4].code?.includes('MasterDeliverabilityInfrastructureEngine'));
+
+  // Day 27: Advanced Sales Methodology: The Challenger Sale (Teach, Tailor, Take Control)
+  const d27 = getLongLesson('bcom_scrm', 27)!;
+  assert.ok(d27.parts[0].code?.includes('analyze_sales_rep_profile'));
+  assert.ok(d27.parts[1].code?.includes('evaluate_commercial_teaching_pitch'));
+  assert.ok(d27.parts[2].code?.includes('evaluate_executive_tailoring'));
+  assert.ok(d27.parts[3].code?.includes('evaluate_commercial_control_and_negotiation'));
+  assert.ok(d27.parts[4].code?.includes('MasterChallengerSalesEngine'));
+
+  // Day 28: Sales Analytics: Win/Loss Ratio, Ramp Time & Discount Rate Leakage
+  const d28 = getLongLesson('bcom_scrm', 28)!;
+  assert.ok(d28.parts[0].code?.includes('audit_win_loss_performance'));
+  assert.ok(d28.parts[1].code?.includes('evaluate_ae_ramp_progression'));
+  assert.ok(d28.parts[2].code?.includes('audit_discount_leakage_and_margin_impact'));
+  assert.ok(d28.parts[3].code?.includes('evaluate_discount_authority'));
+  assert.ok(d28.parts[4].code?.includes('MasterSalesAnalyticsEngine'));
+
+  // Day 29: AI in Sales & Customer Success: Autonomous Copilots & Predictive Opportunity Scoring
+  const d29 = getLongLesson('bcom_scrm', 29)!;
+  assert.ok(d29.parts[0].code?.includes('evaluate_ai_sales_copilot'));
+  assert.ok(d29.parts[1].code?.includes('orchestrate_post_call_crm_sync'));
+  assert.ok(d29.parts[2].code?.includes('calculate_predictive_win_score'));
+  assert.ok(d29.parts[3].code?.includes('predict_customer_churn_risk'));
+  assert.ok(d29.parts[4].code?.includes('MasterAiRevenueEngine'));
+
+  // Day 30: 🏆 Milestone 6 Grand Final Capstone: Enterprise Sales, Customer Success & CRM Master Suite
+  const d30 = getLongLesson('bcom_scrm', 30)!;
+  assert.ok(d30.parts[0].code?.includes('audit_prospecting_and_qualification_subsystem'));
+  assert.ok(d30.parts[1].code?.includes('audit_sales_execution_and_closing_subsystem'));
+  assert.ok(d30.parts[2].code?.includes('audit_customer_success_and_retention_subsystem'));
+  assert.ok(d30.parts[3].code?.includes('audit_sales_ops_and_enablement_subsystem'));
+  assert.ok(d30.parts[4].code?.includes('EnterpriseSalesCrmMasterSuite'));
+  assert.ok(d30.parts[4].code?.includes('orchestrateSalesCrmSuite'));
+  assert.ok(d30.parts[4].output?.includes('ENTERPRISE_SALES_CS_AND_CRM_MASTER_CERTIFIED_NOMINAL'));
+  assert.ok(d30.parts[4].output?.includes('ENTERPRISE_SALES_CS_AND_CRM_MASTER_CERTIFIED'));
+});
+
+test('B.Com SCRM Milestone 6 (Days 26-30): Gate v2 Funnel Visuals & Cryptographic SHA-256 Bindings Verification', () => {
+  const visualsDir = path.resolve(__dirname, '../src/lib/data/lessonVisuals/bcom_scrm');
+  
+  for (let day = 26; day <= 30; day++) {
+    const fileName = `day-${day.toString().padStart(2, '0')}.json`;
+    const filePath = path.join(visualsDir, fileName);
+    assert.ok(fs.existsSync(filePath), `Visual file ${fileName} must exist on disk`);
+
+    const raw = fs.readFileSync(filePath, 'utf-8');
+    const visual = JSON.parse(raw);
+
+    assert.equal(visual.schemaVersion, 1);
+    assert.equal(visual.prefix, 'bcom_scrm');
+    assert.equal(visual.day, day);
+    assert.ok(visual.promptSha && visual.promptSha.length === 64, 'promptSha must be valid 64-char sha256');
+    assert.equal(visual.entries.length, 5, `Visual ${fileName} must have exactly 5 entries`);
+
+    const lesson = getLongLesson('bcom_scrm', day)!;
+    for (let eIdx = 0; eIdx < visual.entries.length; eIdx++) {
+      const entry = visual.entries[eIdx];
+      const part = lesson.parts[eIdx];
+
+      assert.equal(entry.partTitle, part.title, `Entry ${eIdx} partTitle must match lesson part title`);
+
+      // Verify cryptographic SHA-256 code hash binding
+      const expectedHash = crypto.createHash('sha256').update(part.code.trim()).digest('hex');
+      assert.equal(
+        entry.codeHash,
+        expectedHash,
+        `Day ${day} Part ${eIdx + 1} codeHash must strictly match SHA-256 of part.code.trim()`
+      );
+
+      // Verify Funnel template structure
+      assert.equal(entry.spec.template, 'funnel', 'Visual template must be funnel');
+      assert.equal(entry.spec.steps.length, 4, 'Visual spec must have exactly 4 steps');
+      const stepAts = entry.spec.steps.map((s: any) => s.at);
+      assert.deepEqual(stepAts, ['intro', 'say1', 'example', 'tryIt'], 'Steps must match [intro, say1, example, tryIt]');
+
+      for (const step of entry.spec.steps) {
+        assert.ok(step.caption.length > 0, 'Step caption must be non-empty');
+        assert.ok(['top', 'qual', 'target', 'final'].includes(step.activeStageId));
+        assert.equal(step.stages.length, 4, 'Funnel must have 4 stages');
+      }
+
+      assert.deepEqual(entry.filled, entry.spec, 'filled must match spec');
+    }
+  }
+});
+
+test('B.Com SCRM Grand Capstone: Course 26 100% Completion Verification (30/30 Days)', () => {
+  assert.equal(BCOM_SCRM_LONG_LESSONS.length, 30, 'BCOM_SCRM_LONG_LESSONS must have exactly 30 days');
+
+  let totalWords = 0;
+  for (let d = 1; d <= 30; d++) {
+    const lesson = getLongLesson('bcom_scrm', d);
+    assert.ok(lesson, `Day ${d} must exist in BCOM_SCRM_LONG_LESSONS`);
+    assert.equal(lesson.day, d, `Lesson at index ${d - 1} must have day: ${d}`);
+    assert.equal(lesson.parts.length, 5, `Day ${d} must have exactly 5 parts`);
+
+    for (const part of lesson.parts) {
+      const wordCount = part.say.join(' ').split(/\s+/).filter(Boolean).length;
+      totalWords += wordCount;
+    }
+  }
+
+  // SCRM Course has over 82,000 words across 30 days (150 parts)
+  assert.ok(totalWords >= 80000, `Total SCRM course words must be >= 80,000 words (got ${totalWords})`);
+  console.log(`\n🏆 B.Com SCRM 100% Complete: ${totalWords.toLocaleString()} words across all 30 days (150 parts)!`);
+});
+
 
 
 
