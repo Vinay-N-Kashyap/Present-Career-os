@@ -1,0 +1,592 @@
+[
+  {
+    "partTitle": "Classical Time-Series Decomposition: Level, Trend & Seasonal Indices",
+    "codeHash": "ecbfe06545714dc8d52d511434269e78207e59e19e2def3c43d42e82ade0db2c",
+    "spec": {
+      "template": "bars",
+      "title": "Classical Time-Series Decomposition: Level, Trend & Seasonal Indices — Time-Series Forecasting & Exponential Smoothing: Seasonality Decomposition & Trend Projections (FORECAST.ETS)",
+      "steps": [
+        {
+          "at": "intro",
+          "caption": "Step 1: Ingestion and distributional baseline setup for Classical Time-Series Decomposition: Level, Trend & Seasonal Indices",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Classical Decomp",
+              "value": 25,
+              "tone": "accent"
+            },
+            {
+              "label": "Holt-Winters ETS",
+              "value": 20,
+              "tone": "data"
+            },
+            {
+              "label": "MAPE / RMSE Error",
+              "value": 15,
+              "tone": "data"
+            },
+            {
+              "label": "95% Prediction Cone",
+              "value": 10,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "say1",
+          "caption": "Step 2: Algorithmic calculation and statistical analysis for Classical Time-Series Decomposition: Level, Trend & Seasonal Indices",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Classical Decomp",
+              "value": 65,
+              "tone": "accent"
+            },
+            {
+              "label": "Holt-Winters ETS",
+              "value": 60,
+              "tone": "data"
+            },
+            {
+              "label": "MAPE / RMSE Error",
+              "value": 55,
+              "tone": "data"
+            },
+            {
+              "label": "95% Prediction Cone",
+              "value": 45,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "example",
+          "caption": "Step 3: Stress testing and statistical validation for Classical Time-Series Decomposition: Level, Trend & Seasonal Indices",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Classical Decomp",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "Holt-Winters ETS",
+              "value": 80,
+              "tone": "data"
+            },
+            {
+              "label": "MAPE / RMSE Error",
+              "value": 75,
+              "tone": "data"
+            },
+            {
+              "label": "95% Prediction Cone",
+              "value": 70,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "tryIt",
+          "caption": "Step 4: Econometric gating and production verification for Classical Time-Series Decomposition: Level, Trend & Seasonal Indices",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Classical Decomp",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "Holt-Winters ETS",
+              "value": 95,
+              "tone": "data"
+            },
+            {
+              "label": "MAPE / RMSE Error",
+              "value": 90,
+              "tone": "data"
+            },
+            {
+              "label": "95% Prediction Cone",
+              "value": 85,
+              "tone": "data"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "partTitle": "Holt-Winters Exponential Triple Smoothing (ETS) Mathematical Formulation",
+    "codeHash": "99ec3afaf693b99919f4bcc37afa2a5027a52e54cbcf2604d7f8030c4c871050",
+    "spec": {
+      "template": "bars",
+      "title": "Holt-Winters Exponential Triple Smoothing (ETS) Mathematical Formulation — Time-Series Forecasting & Exponential Smoothing: Seasonality Decomposition & Trend Projections (FORECAST.ETS)",
+      "steps": [
+        {
+          "at": "intro",
+          "caption": "Step 1: Ingestion and distributional baseline setup for Holt-Winters Exponential Triple Smoothing (ETS) Mathematical Formulation",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Classical Decomp",
+              "value": 25,
+              "tone": "accent"
+            },
+            {
+              "label": "Holt-Winters ETS",
+              "value": 20,
+              "tone": "data"
+            },
+            {
+              "label": "MAPE / RMSE Error",
+              "value": 15,
+              "tone": "data"
+            },
+            {
+              "label": "95% Prediction Cone",
+              "value": 10,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "say1",
+          "caption": "Step 2: Algorithmic calculation and statistical analysis for Holt-Winters Exponential Triple Smoothing (ETS) Mathematical Formulation",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Classical Decomp",
+              "value": 65,
+              "tone": "accent"
+            },
+            {
+              "label": "Holt-Winters ETS",
+              "value": 60,
+              "tone": "data"
+            },
+            {
+              "label": "MAPE / RMSE Error",
+              "value": 55,
+              "tone": "data"
+            },
+            {
+              "label": "95% Prediction Cone",
+              "value": 45,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "example",
+          "caption": "Step 3: Stress testing and statistical validation for Holt-Winters Exponential Triple Smoothing (ETS) Mathematical Formulation",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Classical Decomp",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "Holt-Winters ETS",
+              "value": 80,
+              "tone": "data"
+            },
+            {
+              "label": "MAPE / RMSE Error",
+              "value": 75,
+              "tone": "data"
+            },
+            {
+              "label": "95% Prediction Cone",
+              "value": 70,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "tryIt",
+          "caption": "Step 4: Econometric gating and production verification for Holt-Winters Exponential Triple Smoothing (ETS) Mathematical Formulation",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Classical Decomp",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "Holt-Winters ETS",
+              "value": 95,
+              "tone": "data"
+            },
+            {
+              "label": "MAPE / RMSE Error",
+              "value": 90,
+              "tone": "data"
+            },
+            {
+              "label": "95% Prediction Cone",
+              "value": 85,
+              "tone": "data"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "partTitle": "Forecast Error Diagnostics: MAE, RMSE, MAPE & Tracking Signals",
+    "codeHash": "2e4acfe78a109064c0da6088014ef6ceb7f7e9bc5b3139c1b687966c400e0f07",
+    "spec": {
+      "template": "bars",
+      "title": "Forecast Error Diagnostics: MAE, RMSE, MAPE & Tracking Signals — Time-Series Forecasting & Exponential Smoothing: Seasonality Decomposition & Trend Projections (FORECAST.ETS)",
+      "steps": [
+        {
+          "at": "intro",
+          "caption": "Step 1: Ingestion and distributional baseline setup for Forecast Error Diagnostics: MAE, RMSE, MAPE & Tracking Signals",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Classical Decomp",
+              "value": 25,
+              "tone": "accent"
+            },
+            {
+              "label": "Holt-Winters ETS",
+              "value": 20,
+              "tone": "data"
+            },
+            {
+              "label": "MAPE / RMSE Error",
+              "value": 15,
+              "tone": "data"
+            },
+            {
+              "label": "95% Prediction Cone",
+              "value": 10,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "say1",
+          "caption": "Step 2: Algorithmic calculation and statistical analysis for Forecast Error Diagnostics: MAE, RMSE, MAPE & Tracking Signals",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Classical Decomp",
+              "value": 65,
+              "tone": "accent"
+            },
+            {
+              "label": "Holt-Winters ETS",
+              "value": 60,
+              "tone": "data"
+            },
+            {
+              "label": "MAPE / RMSE Error",
+              "value": 55,
+              "tone": "data"
+            },
+            {
+              "label": "95% Prediction Cone",
+              "value": 45,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "example",
+          "caption": "Step 3: Stress testing and statistical validation for Forecast Error Diagnostics: MAE, RMSE, MAPE & Tracking Signals",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Classical Decomp",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "Holt-Winters ETS",
+              "value": 80,
+              "tone": "data"
+            },
+            {
+              "label": "MAPE / RMSE Error",
+              "value": 75,
+              "tone": "data"
+            },
+            {
+              "label": "95% Prediction Cone",
+              "value": 70,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "tryIt",
+          "caption": "Step 4: Econometric gating and production verification for Forecast Error Diagnostics: MAE, RMSE, MAPE & Tracking Signals",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Classical Decomp",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "Holt-Winters ETS",
+              "value": 95,
+              "tone": "data"
+            },
+            {
+              "label": "MAPE / RMSE Error",
+              "value": 90,
+              "tone": "data"
+            },
+            {
+              "label": "95% Prediction Cone",
+              "value": 85,
+              "tone": "data"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "partTitle": "Prediction Confidence Cones & Dynamic Inventory Buffer Sizing",
+    "codeHash": "e521094958448c966c44229eccfb6ad5fc0a5bc05901d47a3122e8d96b49fd90",
+    "spec": {
+      "template": "bars",
+      "title": "Prediction Confidence Cones & Dynamic Inventory Buffer Sizing — Time-Series Forecasting & Exponential Smoothing: Seasonality Decomposition & Trend Projections (FORECAST.ETS)",
+      "steps": [
+        {
+          "at": "intro",
+          "caption": "Step 1: Ingestion and distributional baseline setup for Prediction Confidence Cones & Dynamic Inventory Buffer Sizing",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Classical Decomp",
+              "value": 25,
+              "tone": "accent"
+            },
+            {
+              "label": "Holt-Winters ETS",
+              "value": 20,
+              "tone": "data"
+            },
+            {
+              "label": "MAPE / RMSE Error",
+              "value": 15,
+              "tone": "data"
+            },
+            {
+              "label": "95% Prediction Cone",
+              "value": 10,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "say1",
+          "caption": "Step 2: Algorithmic calculation and statistical analysis for Prediction Confidence Cones & Dynamic Inventory Buffer Sizing",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Classical Decomp",
+              "value": 65,
+              "tone": "accent"
+            },
+            {
+              "label": "Holt-Winters ETS",
+              "value": 60,
+              "tone": "data"
+            },
+            {
+              "label": "MAPE / RMSE Error",
+              "value": 55,
+              "tone": "data"
+            },
+            {
+              "label": "95% Prediction Cone",
+              "value": 45,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "example",
+          "caption": "Step 3: Stress testing and statistical validation for Prediction Confidence Cones & Dynamic Inventory Buffer Sizing",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Classical Decomp",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "Holt-Winters ETS",
+              "value": 80,
+              "tone": "data"
+            },
+            {
+              "label": "MAPE / RMSE Error",
+              "value": 75,
+              "tone": "data"
+            },
+            {
+              "label": "95% Prediction Cone",
+              "value": 70,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "tryIt",
+          "caption": "Step 4: Econometric gating and production verification for Prediction Confidence Cones & Dynamic Inventory Buffer Sizing",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Classical Decomp",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "Holt-Winters ETS",
+              "value": 95,
+              "tone": "data"
+            },
+            {
+              "label": "MAPE / RMSE Error",
+              "value": 90,
+              "tone": "data"
+            },
+            {
+              "label": "95% Prediction Cone",
+              "value": 85,
+              "tone": "data"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "partTitle": "Master Time-Series ETS Forecasting Gateway: Enterprise Seasonal Projection Suite",
+    "codeHash": "ec30c1059e2ce30ded5cfe31d4528c8d253a8b828beec7c24003374b851627ca",
+    "spec": {
+      "template": "bars",
+      "title": "Master Time-Series ETS Forecasting Gateway: Enterprise Seasonal Projection Suite — Time-Series Forecasting & Exponential Smoothing: Seasonality Decomposition & Trend Projections (FORECAST.ETS)",
+      "steps": [
+        {
+          "at": "intro",
+          "caption": "Step 1: Ingestion and distributional baseline setup for Master Time-Series ETS Forecasting Gateway: Enterprise Seasonal Projection Suite",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Classical Decomp",
+              "value": 25,
+              "tone": "accent"
+            },
+            {
+              "label": "Holt-Winters ETS",
+              "value": 20,
+              "tone": "data"
+            },
+            {
+              "label": "MAPE / RMSE Error",
+              "value": 15,
+              "tone": "data"
+            },
+            {
+              "label": "95% Prediction Cone",
+              "value": 10,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "say1",
+          "caption": "Step 2: Algorithmic calculation and statistical analysis for Master Time-Series ETS Forecasting Gateway: Enterprise Seasonal Projection Suite",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Classical Decomp",
+              "value": 65,
+              "tone": "accent"
+            },
+            {
+              "label": "Holt-Winters ETS",
+              "value": 60,
+              "tone": "data"
+            },
+            {
+              "label": "MAPE / RMSE Error",
+              "value": 55,
+              "tone": "data"
+            },
+            {
+              "label": "95% Prediction Cone",
+              "value": 45,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "example",
+          "caption": "Step 3: Stress testing and statistical validation for Master Time-Series ETS Forecasting Gateway: Enterprise Seasonal Projection Suite",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Classical Decomp",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "Holt-Winters ETS",
+              "value": 80,
+              "tone": "data"
+            },
+            {
+              "label": "MAPE / RMSE Error",
+              "value": 75,
+              "tone": "data"
+            },
+            {
+              "label": "95% Prediction Cone",
+              "value": 70,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "tryIt",
+          "caption": "Step 4: Econometric gating and production verification for Master Time-Series ETS Forecasting Gateway: Enterprise Seasonal Projection Suite",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Classical Decomp",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "Holt-Winters ETS",
+              "value": 95,
+              "tone": "data"
+            },
+            {
+              "label": "MAPE / RMSE Error",
+              "value": 90,
+              "tone": "data"
+            },
+            {
+              "label": "95% Prediction Cone",
+              "value": 85,
+              "tone": "data"
+            }
+          ]
+        }
+      ]
+    }
+  }
+]

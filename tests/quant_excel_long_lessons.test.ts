@@ -67,7 +67,7 @@ test('Quant & Excel Long Lessons: Resolution & Structural Invariants', () => {
   assert.equal(excelLesson5.day, 5);
   assert.equal(excelLesson5.parts.length, 5, 'excel_viz Day 5 must contain exactly 5 parts');
 
-  for (let d = 6; d <= 40; d++) {
+  for (let d = 6; d <= 45; d++) {
     const el = getLongLesson('excel_viz', d);
     assert.ok(el, `excel_viz Day ${d} long lesson must resolve`);
     assert.equal(el.day, d);
@@ -2619,6 +2619,162 @@ test('Excel Viz Day 40: Milestone 5: ApexModel Star Schema Data Modeling & High-
   assert.ok(lesson.parts[3].code?.includes('ExecutiveDaxMetricEngine'));
   assert.ok(lesson.parts[4].code?.includes('MasterApexModelPlatform'));
 });
+
+test('Excel Viz Day 41: Exploratory Data Analysis & Descriptive Statistics: Skewness, Kurtosis, Interquartile Range & Outlier Detection', () => {
+  const lesson = getLongLesson('excel_viz', 41);
+  assert.ok(lesson, 'excel_viz Day 41 must resolve');
+  assert.equal(lesson.day, 41);
+  assert.equal(lesson.parts.length, 5);
+
+  const spokenMin = estimateSpokenMinutes(lesson);
+  assert.ok(spokenMin >= 20, `Spoken minutes should be >= 20 (got ${spokenMin})`);
+
+  for (const part of lesson.parts) {
+    assert.ok(part.title.length > 0);
+    assert.ok(part.say.length >= 3);
+    assert.ok(part.example && part.example.length > 0);
+    assert.ok(part.code && part.code.includes('class '));
+    assert.ok(part.output && part.output.length > 0);
+    assert.ok(part.tryIt && part.tryIt.length > 0);
+
+    const check = part.check as any;
+    assert.ok(check.question.length > 10);
+    assert.equal(check.options.length, 4);
+    assert.ok(check.answer >= 0 && check.answer < 4);
+    assert.ok(check.why.length > 15);
+  }
+
+  assert.ok(lesson.parts[0].code?.includes('MathematicalMomentsCalculator'));
+  assert.ok(lesson.parts[1].code?.includes('TukeyIqrOutlierDetector'));
+  assert.ok(lesson.parts[2].code?.includes('DistributionShapeProfiler'));
+  assert.ok(lesson.parts[3].code?.includes('AutomatedEdaAnalyticsEngine'));
+  assert.ok(lesson.parts[4].code?.includes('MasterExploratoryDataAnalysisGateway'));
+});
+
+test('Excel Viz Day 42: Inferential Statistics & Hypothesis Testing in Excel: Z-Tests, T-Tests, Paired Samples & ANOVA F-Tests', () => {
+  const lesson = getLongLesson('excel_viz', 42);
+  assert.ok(lesson, 'excel_viz Day 42 must resolve');
+  assert.equal(lesson.day, 42);
+  assert.equal(lesson.parts.length, 5);
+
+  const spokenMin = estimateSpokenMinutes(lesson);
+  assert.ok(spokenMin >= 20, `Spoken minutes should be >= 20 (got ${spokenMin})`);
+
+  for (const part of lesson.parts) {
+    assert.ok(part.title.length > 0);
+    assert.ok(part.say.length >= 3);
+    assert.ok(part.example && part.example.length > 0);
+    assert.ok(part.code && part.code.includes('class '));
+    assert.ok(part.output && part.output.length > 0);
+    assert.ok(part.tryIt && part.tryIt.length > 0);
+
+    const check = part.check as any;
+    assert.ok(check.question.length > 10);
+    assert.equal(check.options.length, 4);
+    assert.ok(check.answer >= 0 && check.answer < 4);
+    assert.ok(check.why.length > 15);
+  }
+
+  assert.ok(lesson.parts[0].code?.includes('StudentTTestHypothesisEngine'));
+  assert.ok(lesson.parts[1].code?.includes('PairedSampleTTestEngine'));
+  assert.ok(lesson.parts[2].code?.includes('SingleFactorAnovaEngine'));
+  assert.ok(lesson.parts[3].code?.includes('FamilyWiseErrorCorrector'));
+  assert.ok(lesson.parts[4].code?.includes('MasterHypothesisTestingGateway'));
+});
+
+test('Excel Viz Day 43: Bivariate Correlation & Ordinary Least Squares (OLS) Linear Regression: R², Residual Plots & P-Values', () => {
+  const lesson = getLongLesson('excel_viz', 43);
+  assert.ok(lesson, 'excel_viz Day 43 must resolve');
+  assert.equal(lesson.day, 43);
+  assert.equal(lesson.parts.length, 5);
+
+  const spokenMin = estimateSpokenMinutes(lesson);
+  assert.ok(spokenMin >= 20, `Spoken minutes should be >= 20 (got ${spokenMin})`);
+
+  for (const part of lesson.parts) {
+    assert.ok(part.title.length > 0);
+    assert.ok(part.say.length >= 3);
+    assert.ok(part.example && part.example.length > 0);
+    assert.ok(part.code && part.code.includes('class '));
+    assert.ok(part.output && part.output.length > 0);
+    assert.ok(part.tryIt && part.tryIt.length > 0);
+
+    const check = part.check as any;
+    assert.ok(check.question.length > 10);
+    assert.equal(check.options.length, 4);
+    assert.ok(check.answer >= 0 && check.answer < 4);
+    assert.ok(check.why.length > 15);
+  }
+
+  assert.ok(lesson.parts[0].code?.includes('PearsonCorrelationMatrixEngine'));
+  assert.ok(lesson.parts[1].code?.includes('OlsLinearRegressionEngine'));
+  assert.ok(lesson.parts[2].code?.includes('LineAssumptionsDiagnosticEngine'));
+  assert.ok(lesson.parts[3].code?.includes('RegressionInferenceAuditor'));
+  assert.ok(lesson.parts[4].code?.includes('MasterOlsEconometricGateway'));
+});
+
+test('Excel Viz Day 44: Time-Series Forecasting & Exponential Smoothing: Seasonality Decomposition & Trend Projections (FORECAST.ETS)', () => {
+  const lesson = getLongLesson('excel_viz', 44);
+  assert.ok(lesson, 'excel_viz Day 44 must resolve');
+  assert.equal(lesson.day, 44);
+  assert.equal(lesson.parts.length, 5);
+
+  const spokenMin = estimateSpokenMinutes(lesson);
+  assert.ok(spokenMin >= 20, `Spoken minutes should be >= 20 (got ${spokenMin})`);
+
+  for (const part of lesson.parts) {
+    assert.ok(part.title.length > 0);
+    assert.ok(part.say.length >= 3);
+    assert.ok(part.example && part.example.length > 0);
+    assert.ok(part.code && part.code.includes('class '));
+    assert.ok(part.output && part.output.length > 0);
+    assert.ok(part.tryIt && part.tryIt.length > 0);
+
+    const check = part.check as any;
+    assert.ok(check.question.length > 10);
+    assert.equal(check.options.length, 4);
+    assert.ok(check.answer >= 0 && check.answer < 4);
+    assert.ok(check.why.length > 15);
+  }
+
+  assert.ok(lesson.parts[0].code?.includes('ClassicalDecompositionEngine'));
+  assert.ok(lesson.parts[1].code?.includes('HoltWintersEtsEngine'));
+  assert.ok(lesson.parts[2].code?.includes('ForecastAccuracyProfiler'));
+  assert.ok(lesson.parts[3].code?.includes('ForecastConfidenceIntervalCalculator'));
+  assert.ok(lesson.parts[4].code?.includes('MasterTimeSeriesEtsGateway'));
+});
+
+test('Excel Viz Day 45: ⭐ Milestone 6: ApexAnalytics Statistical Testing & Time-Series Forecasting Engine Suite', () => {
+  const lesson = getLongLesson('excel_viz', 45);
+  assert.ok(lesson, 'excel_viz Day 45 must resolve');
+  assert.equal(lesson.day, 45);
+  assert.equal(lesson.parts.length, 5);
+
+  const spokenMin = estimateSpokenMinutes(lesson);
+  assert.ok(spokenMin >= 20, `Spoken minutes should be >= 20 (got ${spokenMin})`);
+
+  for (const part of lesson.parts) {
+    assert.ok(part.title.length > 0);
+    assert.ok(part.say.length >= 3);
+    assert.ok(part.example && part.example.length > 0);
+    assert.ok(part.code && part.code.includes('class '));
+    assert.ok(part.output && part.output.length > 0);
+    assert.ok(part.tryIt && part.tryIt.length > 0);
+
+    const check = part.check as any;
+    assert.ok(check.question.length > 10);
+    assert.equal(check.options.length, 4);
+    assert.ok(check.answer >= 0 && check.answer < 4);
+    assert.ok(check.why.length > 15);
+  }
+
+  assert.ok(lesson.parts[0].code?.includes('Milestone6StatisticalAuditor'));
+  assert.ok(lesson.parts[1].code?.includes('MultiVariantAbTestingSuite'));
+  assert.ok(lesson.parts[2].code?.includes('ValidatedOlsEconometricSuite'));
+  assert.ok(lesson.parts[3].code?.includes('ExecutiveTimeSeriesForecastSuite'));
+  assert.ok(lesson.parts[4].code?.includes('MasterApexAnalyticsPlatform'));
+});
+
 
 
 
