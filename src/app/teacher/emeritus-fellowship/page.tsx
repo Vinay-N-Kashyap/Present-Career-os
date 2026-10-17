@@ -1,5 +1,6 @@
 import React from 'react';
 import FacultyEmeritusStudio from '@/components/teacher/FacultyEmeritusStudio';
+import TeacherRoleGate from '@/components/teacher/TeacherRoleGate';
 
 export const metadata = {
   title: 'Faculty Emeritus Fellowship & Superannuation Studio | PinIT Career OS',
@@ -7,5 +8,9 @@ export const metadata = {
 };
 
 export default function FacultyEmeritusPage() {
-  return <FacultyEmeritusStudio />;
+  return (
+    <TeacherRoleGate>
+      <FacultyEmeritusStudio />
+    </TeacherRoleGate>
+  );
 }

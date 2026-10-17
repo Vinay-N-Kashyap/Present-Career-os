@@ -1,5 +1,6 @@
 import React from 'react';
 import CentralNirfRankingManager from '@/components/admin/CentralNirfRankingManager';
+import CampusAdminRoleGate from '@/components/admin/CampusAdminRoleGate';
 
 export const metadata = {
   title: 'Central University NIRF & Global Ranking Console | PinIT Career OS',
@@ -7,5 +8,9 @@ export const metadata = {
 };
 
 export default function CentralNirfRankingPage() {
-  return <CentralNirfRankingManager />;
+  return (
+    <CampusAdminRoleGate>
+      <CentralNirfRankingManager />
+    </CampusAdminRoleGate>
+  );
 }

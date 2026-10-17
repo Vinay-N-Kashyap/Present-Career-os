@@ -13,9 +13,21 @@ import {
   exportFacultyEmeritusLedgerCSV,
   ContingencyClaim
 } from '@/lib/teacher/facultyEmeritusFellowship';
+import { useGovernanceStore } from '@/lib/hooks/useGovernanceStore';
 
 export default function FacultyEmeritusStudio() {
-  const [fellows, setFellows] = useState<FacultyEmeritusRecord[]>(DEFAULT_EMERITUS_FELLOWS);
+  const {
+    records: fellows,
+    setRecords: setFellows,
+    syncSource,
+    isSaving,
+    lastSaved,
+    saveRecord
+  } = useGovernanceStore<FacultyEmeritusRecord>(
+    'faculty_emeritus_fellowships',
+    DEFAULT_EMERITUS_FELLOWS,
+    'fellowshipId'
+  );
   const [activeTab, setActiveTab] = useState<'ALL' | EmeritusFellowshipStage>('ALL');
   const [selectedFellow, setSelectedFellow] = useState<FacultyEmeritusRecord | null>(null);
 
@@ -69,7 +81,7 @@ export default function FacultyEmeritusStudio() {
     ? fellows
     : fellows.filter(f => f.stage === activeTab);
 
-  const handleOnboard = (e: React.FormEvent) => {
+  const handleOnboard = async (e: React.FormEvent) => {
     e.preventDefault();
     setFormError(null);
     try {
@@ -86,19 +98,19 @@ export default function FacultyEmeritusStudio() {
 
       // Automatically activate tenure for demonstration
       const activated = activateEmeritusTenure(newFellow, new Date().toISOString().split('T')[0]);
-      setFellows([activated, ...fellows]);
+      await saveRecord(activated);
       setIsOnboardModalOpen(false);
     } catch (err: any) {
       setFormError(err.message || 'Validation error');
     }
   };
 
-  const handleGenerateVoucher = (e: React.FormEvent) => {
+  const handleGenerateVoucher = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!selectedFellow) return;
     try {
       const updated = generateMonthlyHonorariumVoucher(selectedFellow, voucherMonth, voucherNeft || undefined);
-      setFellows(fellows.map(f => f.fellowshipId === updated.fellowshipId ? updated : f));
+      await saveRecord(updated);
       setSelectedFellow(updated);
       setIsVoucherModalOpen(false);
     } catch (err: any) {
@@ -106,7 +118,7 @@ export default function FacultyEmeritusStudio() {
     }
   };
 
-  const handleClaimContingency = (e: React.FormEvent) => {
+  const handleClaimContingency = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!selectedFellow) return;
     setClaimError(null);
@@ -117,7 +129,7 @@ export default function FacultyEmeritusStudio() {
         claimedAmountInr: Number(claimAmount),
         invoiceDate: claimDate
       });
-      setFellows(fellows.map(f => f.fellowshipId === updated.fellowshipId ? updated : f));
+      await saveRecord(updated);
       setSelectedFellow(updated);
       setIsClaimModalOpen(false);
     } catch (err: any) {
@@ -125,7 +137,7 @@ export default function FacultyEmeritusStudio() {
     }
   };
 
-  const handleConcludeTenure = (e: React.FormEvent) => {
+  const handleConcludeTenure = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!selectedFellow) return;
     const updated = concludeEmeritusTenure(selectedFellow, {
@@ -133,7 +145,7 @@ export default function FacultyEmeritusStudio() {
       coMentoredPhdScholarsCount: Number(concludeScholars),
       masterclassesConductedCount: Number(concludeMasterclasses)
     });
-    setFellows(fellows.map(f => f.fellowshipId === updated.fellowshipId ? updated : f));
+    await saveRecord(updated);
     setSelectedFellow(updated);
     setIsConcludeModalOpen(false);
   };
@@ -183,6 +195,15 @@ export default function FacultyEmeritusStudio() {
                 Faculty Emeritus Fellowship & Superannuation Studio
                 <span className="text-xs px-2.5 py-0.5 rounded-full bg-indigo-950 text-indigo-300 border border-indigo-800">
                   UGC Scheme Mandate
+                </span>
+                <span className={`text-xs px-2.5 py-0.5 rounded-full border flex items-center gap-1.5 ${
+                  syncSource === 'supabase'
+                    ? 'bg-emerald-950/80 text-emerald-300 border-emerald-700/80'
+                    : 'bg-slate-900 text-slate-400 border-slate-700'
+                }`}>
+                  <span className={`w-1.5 h-1.5 rounded-full ${syncSource === 'supabase' ? 'bg-emerald-400 animate-pulse' : 'bg-slate-400'}`}></span>
+                  {syncSource === 'supabase' ? 'PostgreSQL Active (support.pinit)' : 'Resilient Local Storage'}
+                  {isSaving && <span className="text-emerald-400 ml-1">Saving...</span>}
                 </span>
               </h1>
               <p className="text-sm text-slate-400 mt-1">

@@ -11,9 +11,17 @@ import {
   recordOfficialRankDeclared,
   exportNirfDcsSummaryCSV
 } from '@/lib/admin/centralNirfRanking';
+import { useGovernanceStore } from '@/lib/hooks/useGovernanceStore';
 
 export default function CentralNirfRankingManager() {
-  const [records, setRecords] = useState<NirfRankingRecord[]>(DEFAULT_NIRF_RECORDS);
+  const {
+    records,
+    setRecords,
+    syncSource,
+    isSaving,
+    lastSaved,
+    saveRecord
+  } = useGovernanceStore<NirfRankingRecord>('central_nirf_rankings', DEFAULT_NIRF_RECORDS, 'recordId');
   const [activeTab, setActiveTab] = useState<'ALL' | NirfRankingCategory>('ALL');
   const [selectedRecord, setSelectedRecord] = useState<NirfRankingRecord | null>(null);
   const [isNewModalOpen, setIsNewModalOpen] = useState(false);
@@ -55,7 +63,7 @@ export default function CentralNirfRankingManager() {
     ? records
     : records.filter(r => r.category === activeTab);
 
-  const handleCreateSubmission = (e: React.FormEvent) => {
+  const handleCreateSubmission = async (e: React.FormEvent) => {
     e.preventDefault();
     const newRecord = createNirfSubmission({
       category: formCategory,
@@ -91,21 +99,21 @@ export default function CentralNirfRankingManager() {
       }
     });
 
-    setRecords([newRecord, ...records]);
+    await saveRecord(newRecord);
     setIsNewModalOpen(false);
   };
 
-  const handleAdvanceStatus = (record: NirfRankingRecord, nextStatus: DcsSubmissionStatus) => {
+  const handleAdvanceStatus = async (record: NirfRankingRecord, nextStatus: DcsSubmissionStatus) => {
     const updated = advanceDcsStatus(record, nextStatus);
-    setRecords(records.map(r => r.recordId === updated.recordId ? updated : r));
+    await saveRecord(updated);
     if (selectedRecord?.recordId === updated.recordId) setSelectedRecord(updated);
   };
 
-  const handleRecordOfficialRank = (e: React.FormEvent) => {
+  const handleRecordOfficialRank = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!selectedRecord) return;
     const updated = recordOfficialRankDeclared(selectedRecord, officialRankInput);
-    setRecords(records.map(r => r.recordId === updated.recordId ? updated : r));
+    await saveRecord(updated);
     setSelectedRecord(updated);
     setIsRankModalOpen(false);
   };
@@ -153,6 +161,15 @@ export default function CentralNirfRankingManager() {
                 Central NIRF & QS World Ranking Synthesizer
                 <span className="text-xs px-2.5 py-0.5 rounded-full bg-emerald-950 text-emerald-300 border border-emerald-800">
                   MoE DCS 2026 Ready
+                </span>
+                <span className={`text-xs px-2.5 py-0.5 rounded-full border flex items-center gap-1.5 ${
+                  syncSource === 'supabase'
+                    ? 'bg-emerald-950/80 text-emerald-300 border-emerald-700/80'
+                    : 'bg-slate-900 text-slate-400 border-slate-700'
+                }`}>
+                  <span className={`w-1.5 h-1.5 rounded-full ${syncSource === 'supabase' ? 'bg-emerald-400 animate-pulse' : 'bg-slate-400'}`}></span>
+                  {syncSource === 'supabase' ? 'PostgreSQL Active (support.pinit)' : 'Resilient Local Storage'}
+                  {isSaving && <span className="text-indigo-400 ml-1">Saving...</span>}
                 </span>
               </h1>
               <p className="text-sm text-slate-400 mt-1">

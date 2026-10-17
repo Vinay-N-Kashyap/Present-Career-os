@@ -40,6 +40,125 @@ export function isSupabaseConfigured(): boolean {
 }
 
 /**
+ * Database schema mapper for two-way synchronization between
+ * frontend camelCase domain models and PostgreSQL snake_case schema.
+ */
+function toDbRecord(tableName: string, record: any): any {
+  if (tableName === 'central_nirf_rankings') {
+    return {
+      record_id: record.recordId,
+      institution_id: record.institutionId || 'inst-apex-001',
+      ranking_year: record.rankingYear || 2026,
+      category: record.category,
+      institution_name: record.institutionName,
+      tlr_metrics: record.tlr || {},
+      rpc_metrics: record.rpc || {},
+      go_metrics: record.go || {},
+      oi_metrics: record.oi || {},
+      pr_metrics: record.pr || {},
+      composite_score: record.compositeScore || 0,
+      projected_rank_band: record.projectedRankBand || 'Top 100',
+      official_declared_rank: record.officialDeclaredRank || null,
+      qs_bridge: record.qsBridge || {},
+      status: record.status || 'DRAFT_DATA_COLLECTION',
+      nodal_officer: record.nodalOfficer || '',
+      public_disclosure_url: record.publicDisclosureUrl || null,
+      last_audit_date: record.lastAuditDate || new Date().toISOString(),
+      audit_sha256: record.auditSha256 || '0000000000000000000000000000000000000000000000000000000000000000'
+    };
+  }
+  if (tableName === 'faculty_emeritus_fellowships') {
+    return {
+      dossier_id: record.fellowshipId,
+      institution_id: record.institutionId || 'inst-apex-001',
+      faculty_name: record.facultyName,
+      department: record.hostDepartment,
+      superannuation_date: record.dateOfSuperannuation,
+      total_service_years: record.totalServiceYears || Math.max(25, (record.ageAtSuperannuation || 65) - 30),
+      h_index: record.hIndex || 20,
+      phd_scholars_mentored: record.coMentoredPhdScholarsCount || 0,
+      monthly_honorarium_inr: record.monthlyHonorariumInr || 50000,
+      contingency_grant_annual_inr: record.annualContingencyGrantInr || 50000,
+      status: record.stage || 'APPLICATION_SUBMITTED',
+      tenure_start_date: record.tenureStartDate || null,
+      tenure_end_date: record.tenureEndDate || null,
+      audit_sha256: record.auditSha256 || '0000000000000000000000000000000000000000000000000000000000000000'
+    };
+  }
+  // Generic fallback: map keys from camelCase to snake_case
+  const mapped: any = {};
+  for (const [k, v] of Object.entries(record)) {
+    const snakeKey = k.replace(/([A-Z])/g, '_$1').toLowerCase();
+    mapped[snakeKey] = v;
+  }
+  return mapped;
+}
+
+function fromDbRecord<T>(tableName: string, row: any, fallbackDefault: T[]): T {
+  if (tableName === 'central_nirf_rankings') {
+    const def = (fallbackDefault as any[]).find(d => d.recordId === row.record_id);
+    return {
+      recordId: row.record_id,
+      institutionId: row.institution_id,
+      rankingYear: row.ranking_year,
+      category: row.category,
+      institutionName: row.institution_name,
+      tlr: row.tlr_metrics || def?.tlr,
+      rpc: row.rpc_metrics || def?.rpc,
+      go: row.go_metrics || def?.go,
+      oi: row.oi_metrics || def?.oi,
+      pr: row.pr_metrics || def?.pr,
+      compositeScore: Number(row.composite_score) || 0,
+      projectedRankBand: row.projected_rank_band,
+      officialDeclaredRank: row.official_declared_rank,
+      qsBridge: row.qs_bridge || def?.qsBridge,
+      status: row.status,
+      nodalOfficer: row.nodal_officer,
+      publicDisclosureUrl: row.public_disclosure_url,
+      lastAuditDate: row.last_audit_date,
+      auditSha256: row.audit_sha256,
+      createdAt: row.created_at,
+      updatedAt: row.updated_at
+    } as unknown as T;
+  }
+  if (tableName === 'faculty_emeritus_fellowships') {
+    const def = (fallbackDefault as any[]).find(d => d.fellowshipId === row.dossier_id);
+    return {
+      fellowshipId: row.dossier_id,
+      facultyName: row.faculty_name,
+      facultyEmail: def?.facultyEmail || `${row.faculty_name.toLowerCase().replace(/[^a-z]/g, '.')}@university.ac.in`,
+      hostDepartment: row.department,
+      dateOfSuperannuation: row.superannuation_date,
+      ageAtSuperannuation: def?.ageAtSuperannuation || 65,
+      currentAge: def?.currentAge || 66,
+      academicSpecialization: def?.academicSpecialization || 'Emeritus Research Fellow',
+      proposedResearchMonograph: def?.proposedResearchMonograph || 'Comprehensive Field Monograph',
+      coMentoredPhdScholarsCount: row.phd_scholars_mentored || 0,
+      masterclassesConductedCount: def?.masterclassesConductedCount || 0,
+      tenureStartDate: row.tenure_start_date,
+      tenureEndDate: row.tenure_end_date,
+      monthlyHonorariumInr: Number(row.monthly_honorarium_inr) || 50000,
+      annualContingencyGrantInr: Number(row.contingency_grant_annual_inr) || 50000,
+      contingencyUtilizedInr: def?.contingencyUtilizedInr || 0,
+      stage: row.status || 'FELLOWSHIP_ACTIVE',
+      vouchers: def?.vouchers || [],
+      contingencyClaims: def?.contingencyClaims || [],
+      syndicateResolutionNumber: def?.syndicateResolutionNumber,
+      auditSha256: row.audit_sha256,
+      createdAt: row.created_at,
+      updatedAt: row.updated_at
+    } as unknown as T;
+  }
+  // Generic camelCase mapper
+  const mapped: any = {};
+  for (const [k, v] of Object.entries(row)) {
+    const camelKey = k.replace(/_([a-z])/g, (_, g) => g.toUpperCase());
+    mapped[camelKey] = v;
+  }
+  return mapped as T;
+}
+
+/**
  * Load governance records from Supabase with resilient local fallback
  */
 export async function loadGovernanceRecords<T>(
@@ -55,7 +174,8 @@ export async function loadGovernanceRecords<T>(
         .limit(100);
 
       if (!error && Array.isArray(data) && data.length > 0) {
-        return { data: data as T[], source: 'supabase' };
+        const mappedData = data.map(row => fromDbRecord<T>(tableName, row, fallbackDefault));
+        return { data: mappedData, source: 'supabase' };
       }
     } catch (err) {
       console.warn(`[GovernancePersistence] Supabase fetch failed for ${tableName}, falling back to local:`, err);
@@ -96,15 +216,25 @@ export async function saveGovernanceRecord<T extends Record<string, any>>(
 ): Promise<PersistenceResult<T>> {
   let savedToSupabase = false;
 
+  // Determine correct DB column for onConflict
+  const dbPrimaryKey = tableName === 'central_nirf_rankings'
+    ? 'record_id'
+    : tableName === 'faculty_emeritus_fellowships'
+    ? 'dossier_id'
+    : primaryKey.replace(/([A-Z])/g, '_$1').toLowerCase();
+
   // 1. Supabase write
   if (isSupabaseConfigured()) {
     try {
+      const dbRow = toDbRecord(tableName, record);
       const { error } = await supabase
         .from(tableName)
-        .upsert(record as any, { onConflict: primaryKey });
+        .upsert(dbRow, { onConflict: dbPrimaryKey });
 
       if (!error) {
         savedToSupabase = true;
+      } else {
+        console.warn(`[GovernancePersistence] Supabase upsert error on ${tableName}:`, error.message);
       }
     } catch (err: any) {
       console.warn(`[GovernancePersistence] Supabase write failed for ${tableName}:`, err?.message);
