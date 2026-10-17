@@ -1609,11 +1609,141 @@ test('B.Com Entrepreneurship Milestone 3 (Days 11-15): Gate v2 Funnel Visuals & 
   }
 });
 
-test('B.Com Entrepreneurship Milestones 1-3 (Days 1-15): Cumulative Verification', () => {
-  assert.ok(BCOM_ENT_LONG_LESSONS.length >= 15, 'BCOM_ENT_LONG_LESSONS must have at least 15 days');
+test('B.Com Entrepreneurship Milestone 4 (Days 16-20): Structure, Word Count & Zero-Hallucination Invariants', () => {
+  for (let day = 16; day <= 20; day++) {
+    const lesson = getLongLesson('bcom_ent', day);
+    assert.ok(lesson, `bcom_ent Day ${day} lesson must be defined`);
+    assert.equal(lesson.coursePrefix, 'bcom_ent');
+    assert.equal(lesson.day, day);
+    assert.equal(lesson.parts.length, 5, `Day ${day} must have exactly 5 parts`);
+
+    const expectedMinutes = day === 20 ? 50 : 45;
+    assert.equal(lesson.minutes, expectedMinutes, `Day ${day} minutes must be ${expectedMinutes}`);
+
+    let dayWords = 0;
+    for (let pIdx = 0; pIdx < lesson.parts.length; pIdx++) {
+      const part = lesson.parts[pIdx];
+      assert.ok(part.title.length > 0, `Day ${day} Part ${pIdx + 1} must have a non-empty title`);
+
+      const sayText = Array.isArray(part.say) ? part.say.join(' ') : String(part.say || '');
+      const partWords = sayText.split(/\s+/).filter(Boolean).length;
+      assert.ok(partWords >= 580, `Day ${day} Part ${pIdx + 1} words (${partWords}) must be >= 580`);
+      dayWords += partWords;
+
+      // Socratic check verification
+      const check = part.check as any;
+      assert.ok(check.question && check.question.length > 10, `Day ${day} Part ${pIdx + 1} check question missing`);
+      assert.equal(check.options.length, 4, `Day ${day} Part ${pIdx + 1} check must have 4 options`);
+      assert.ok([0, 1, 2, 3].includes(check.answerIndex ?? check.answer), `Day ${day} Part ${pIdx + 1} check answer out of bounds`);
+      assert.ok((check.explanation || check.why)?.length > 10, `Day ${day} Part ${pIdx + 1} explanation missing`);
+    }
+
+    assert.ok(dayWords >= 2950, `Day ${day} total words (${dayWords}) must be >= 2950`);
+    assert.ok(lesson.summary && lesson.summary.length >= 4, `Day ${day} summary missing`);
+    assert.ok(lesson.projectStep && lesson.projectStep.steps.length >= 4, `Day ${day} projectStep missing`);
+  }
+
+  // Domain specifics
+  // Day 16: Lean & Six Sigma Quality Control
+  const d16 = getLongLesson('bcom_ent', 16)!;
+  assert.ok(d16.parts[0].code?.includes('audit_timwoods_waste'));
+  assert.ok(d16.parts[1].code?.includes('execute_dmaic_milestone_tracker'));
+  assert.ok(d16.parts[2].code?.includes('calculate_process_capability'));
+  assert.ok(d16.parts[3].code?.includes('spc_control_chart_audit'));
+  assert.ok(d16.parts[4].code?.includes('master_six_sigma_quality_control_tower'));
+  assert.ok(d16.parts[4].output?.includes('LEAN_SIX_SIGMA_QUALITY_CERTIFIED_NOMINAL'));
+
+  // Day 17: Go-To-Market (GTM) Strategy & Viral Loops
+  const d17 = getLongLesson('bcom_ent', 17)!;
+  assert.ok(d17.parts[0].code?.includes('score_beachhead_markets'));
+  assert.ok(d17.parts[1].code?.includes('audit_whole_product_completeness'));
+  assert.ok(d17.parts[2].code?.includes('model_viral_loop_growth'));
+  assert.ok(d17.parts[3].code?.includes('analyze_channel_saturation'));
+  assert.ok(d17.parts[4].code?.includes('master_gtm_control_tower'));
+  assert.ok(d17.parts[4].output?.includes('GO_TO_MARKET_STRATEGY_CERTIFIED_NOMINAL'));
+
+  // Day 18: Revenue Operations (RevOps) & Pipeline Coverage
+  const d18 = getLongLesson('bcom_ent', 18)!;
+  assert.ok(d18.parts[0].code?.includes('calculate_sales_velocity'));
+  assert.ok(d18.parts[1].code?.includes('audit_pipeline_coverage'));
+  assert.ok(d18.parts[2].code?.includes('compute_weighted_forecast'));
+  assert.ok(d18.parts[3].code?.includes('plan_sales_capacity'));
+  assert.ok(d18.parts[4].code?.includes('master_revops_control_tower'));
+  assert.ok(d18.parts[4].output?.includes('REVENUE_OPERATIONS_CERTIFIED_NOMINAL'));
+
+  // Day 19: Pricing Strategies & Decoy Psychology
+  const d19 = getLongLesson('bcom_ent', 19)!;
+  assert.ok(d19.parts[0].code?.includes('calculate_value_based_price'));
+  assert.ok(d19.parts[1].code?.includes('evaluate_gbb_tier_mix'));
+  assert.ok(d19.parts[2].code?.includes('simulate_decoy_pricing'));
+  assert.ok(d19.parts[3].code?.includes('analyze_price_elasticity'));
+  assert.ok(d19.parts[4].code?.includes('master_pricing_control_tower'));
+  assert.ok(d19.parts[4].output?.includes('PRICING_STRATEGY_CERTIFIED_NOMINAL'));
+
+  // Day 20: Milestone 4 Capstone
+  const d20 = getLongLesson('bcom_ent', 20)!;
+  assert.ok(d20.parts[0].code?.includes('evaluate_six_sigma_quality'));
+  assert.ok(d20.parts[1].code?.includes('evaluate_gtm_scaling'));
+  assert.ok(d20.parts[2].code?.includes('evaluate_revops_pipeline'));
+  assert.ok(d20.parts[3].code?.includes('evaluate_unit_economics'));
+  assert.ok(d20.parts[4].code?.includes('master_milestone4_capstone_audit'));
+  assert.ok(d20.parts[4].output?.includes('GTM_SCALING_AND_UNIT_ECONOMICS_MASTER_CERTIFIED_NOMINAL'));
+});
+
+test('B.Com Entrepreneurship Milestone 4 (Days 16-20): Gate v2 Funnel Visuals & Cryptographic SHA-256 Bindings Verification', () => {
+  const visualsDir = path.resolve(__dirname, '../src/lib/data/lessonVisuals/bcom_ent');
+  
+  for (let day = 16; day <= 20; day++) {
+    const fileName = `day-${day.toString().padStart(2, '0')}.json`;
+    const filePath = path.join(visualsDir, fileName);
+    assert.ok(fs.existsSync(filePath), `Visual file ${fileName} must exist on disk`);
+
+    const raw = fs.readFileSync(filePath, 'utf-8');
+    const visual = JSON.parse(raw);
+
+    assert.equal(visual.schemaVersion, 1);
+    assert.equal(visual.prefix, 'bcom_ent');
+    assert.equal(visual.day, day);
+    assert.ok(visual.promptSha && visual.promptSha.length === 64, 'promptSha must be valid 64-char sha256');
+    assert.equal(visual.entries.length, 5, `Visual ${fileName} must have exactly 5 entries`);
+
+    const lesson = getLongLesson('bcom_ent', day)!;
+    for (let eIdx = 0; eIdx < visual.entries.length; eIdx++) {
+      const entry = visual.entries[eIdx];
+      const part = lesson.parts[eIdx];
+
+      assert.equal(entry.partTitle, part.title, `Entry ${eIdx} partTitle must match lesson part title`);
+
+      // Verify cryptographic SHA-256 code hash binding
+      const expectedHash = crypto.createHash('sha256').update(part.code.trim()).digest('hex');
+      assert.equal(
+        entry.codeHash,
+        expectedHash,
+        `Day ${day} Part ${eIdx + 1} codeHash must strictly match SHA-256 of part.code.trim()`
+      );
+
+      // Verify Funnel template structure
+      assert.equal(entry.spec.template, 'funnel', 'Visual template must be funnel');
+      assert.equal(entry.spec.steps.length, 4, 'Visual spec must have exactly 4 steps');
+      const stepAts = entry.spec.steps.map((s: any) => s.at);
+      assert.deepEqual(stepAts, ['intro', 'say1', 'example', 'tryIt'], 'Steps must match [intro, say1, example, tryIt]');
+
+      for (const step of entry.spec.steps) {
+        assert.ok(step.caption.length > 0, 'Step caption must be non-empty');
+        assert.ok(['top', 'qual', 'target', 'final'].includes(step.activeStageId));
+        assert.equal(step.stages.length, 4, 'Funnel must have 4 stages');
+      }
+
+      assert.deepEqual(entry.filled, entry.spec, 'filled must match spec');
+    }
+  }
+});
+
+test('B.Com Entrepreneurship Milestones 1-4 (Days 1-20): Cumulative Verification', () => {
+  assert.ok(BCOM_ENT_LONG_LESSONS.length >= 20, 'BCOM_ENT_LONG_LESSONS must have at least 20 days');
 
   let totalWords = 0;
-  for (let d = 1; d <= 15; d++) {
+  for (let d = 1; d <= 20; d++) {
     const lesson = getLongLesson('bcom_ent', d);
     assert.ok(lesson, `Day ${d} must exist in BCOM_ENT_LONG_LESSONS`);
     assert.equal(lesson.day, d);
@@ -1626,9 +1756,9 @@ test('B.Com Entrepreneurship Milestones 1-3 (Days 1-15): Cumulative Verification
     }
   }
 
-  // Days 1-10: ~22.6k words, Days 11-15: ~15.3k words -> Total >= 37,000 words
-  assert.ok(totalWords >= 37000, `Total bcom_ent words must be >= 37,000 words (got ${totalWords})`);
-  console.log(`\n🏆 B.Com Entrepreneurship Milestones 1-3 Complete: ${totalWords.toLocaleString()} words across Days 1-15 (75 parts)!`);
+  // Days 1-10: ~22.6k words, Days 11-15: ~15.3k words, Days 16-20: ~15.8k words -> Total >= 52,000 words
+  assert.ok(totalWords >= 50000, `Total bcom_ent words must be >= 50,000 words (got ${totalWords})`);
+  console.log(`\n🏆 B.Com Entrepreneurship Milestones 1-4 Complete: ${totalWords.toLocaleString()} words across Days 1-20 (100 parts)!`);
 });
 
 
