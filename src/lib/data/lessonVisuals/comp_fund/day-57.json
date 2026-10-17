@@ -1,0 +1,207 @@
+[
+  {
+    "part": 1,
+    "codeHash": "ed013eddcb98f31e622083237f546d594379c0579a23e058b02e850098a2a539",
+    "data": {
+      "template": "workflow",
+      "title": "Zero Trust Systems Architecture: CIS Benchmarks, Kernel",
+      "subtitle": "Day 57 Part 1 Enterprise Systems Telemetry & Invariant Audit",
+      "columns": [
+        "Gate ID",
+        "Control Parameter",
+        "Kernel Metric / Telemetry",
+        "Status"
+      ],
+      "rows": [
+        [
+          "Check 1",
+          "SECURITY_FRAMEWORK",
+          "CIS_LEVEL_2_SERVER_HARDENING",
+          "Verified 100%"
+        ],
+        [
+          "Check 2",
+          "KERNEL_SYSCTL_PROTECT",
+          "SYN_COOKIES_REVERSE_PATH_RP_",
+          "Verified 100%"
+        ],
+        [
+          "Check 3",
+          "SELINUX_POLICY",
+          "MANDATORY_ACCESS_CONTROL_TAR",
+          "Verified 100%"
+        ],
+        [
+          "Check 4",
+          "BASTION_TOPOLOGY",
+          "MUTUAL_TLS_SSH_CA_HARDWARE_Y",
+          "Verified 100%"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 2,
+    "codeHash": "3d4aa77e1b195270ad07653cff55a1a98a61a0c8eabf1907fe1658f9e79f369d",
+    "data": {
+      "template": "workflow",
+      "title": "Detective Challenge: The Permissive SELinux Compromise ",
+      "subtitle": "Day 57 Part 2 Enterprise Systems Telemetry & Invariant Audit",
+      "columns": [
+        "Gate ID",
+        "Control Parameter",
+        "Kernel Metric / Telemetry",
+        "Status"
+      ],
+      "rows": [
+        [
+          "Check 1",
+          "AUDIT_INCIDENT",
+          "COMPROMISED_NGINX_DAEMON_ESC",
+          "Verified 100%"
+        ],
+        [
+          "Check 2",
+          "ROOT_CAUSE",
+          "SELINUX_SET_TO_PERMISSIVE_BY",
+          "Verified 100%"
+        ],
+        [
+          "Check 3",
+          "EXPLOIT_VECTOR",
+          "WEB_WORKER_WROTE_MALICIOUS_E",
+          "Verified 100%"
+        ],
+        [
+          "Check 4",
+          "ENFORCING_PROOF",
+          "AVC_DENIED_TYPE_ENFORCEMENT_",
+          "Verified 100%"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 3,
+    "codeHash": "5b16cb27401bb280781d6b322d84c043f457391d37812c25de11fbbbbad3d437",
+    "data": {
+      "template": "workflow",
+      "title": "Mastery Assignment: Automated 50+ Control CIS Benchmark",
+      "subtitle": "Day 57 Part 3 Enterprise Systems Telemetry & Invariant Audit",
+      "columns": [
+        "Gate ID",
+        "Control Parameter",
+        "Kernel Metric / Telemetry",
+        "Status"
+      ],
+      "rows": [
+        [
+          "Check 1",
+          "SYSCTL_HARDENING",
+          "NET_IPV4_CONF_ALL_RP_FILTER_",
+          "Verified 100%"
+        ],
+        [
+          "Check 2",
+          "TCP_SYN_COOKIES",
+          "NET_IPV4_TCP_SYNC_COOKIES_SE",
+          "Verified 100%"
+        ],
+        [
+          "Check 3",
+          "IP_FORWARDING",
+          "NET_IPV4_IP_FORWARD_SET_TO_0",
+          "Verified 100%"
+        ],
+        [
+          "Check 4",
+          "POINTER_RESTRICT",
+          "KERNEL_KPTR_RESTRICT_SET_TO_",
+          "Verified 100%"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 4,
+    "codeHash": "82e274b7612deda208cbe1db2ce7e99c63bdfafccd63ecfd054ba7caf0837e52",
+    "data": {
+      "template": "workflow",
+      "title": "Production Incident Lab: SELinux Type Enforcement & Roo",
+      "subtitle": "Day 57 Part 4 Enterprise Systems Telemetry & Invariant Audit",
+      "columns": [
+        "Gate ID",
+        "Control Parameter",
+        "Kernel Metric / Telemetry",
+        "Status"
+      ],
+      "rows": [
+        [
+          "Check 1",
+          "ATTACK_SIMULATION",
+          "ROOT_COMPROMISED_HTTPD_READI",
+          "Verified 100%"
+        ],
+        [
+          "Check 2",
+          "PROCESS_CONTEXT",
+          "SYSTEM_U_SYSTEM_R_HTTPD_T_S0",
+          "Verified 100%"
+        ],
+        [
+          "Check 3",
+          "TARGET_CONTEXT",
+          "SYSTEM_U_OBJECT_R_SHADOW_T_S",
+          "Verified 100%"
+        ],
+        [
+          "Check 4",
+          "KERNEL_DECISION",
+          "TYPE_ENFORCEMENT_AVC_DENIAL_",
+          "Verified 100%"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 5,
+    "codeHash": "567e99f1586be99ce2416e83a85b5908719a4fdddea8ecccf087c8f620548e5d",
+    "data": {
+      "template": "workflow",
+      "title": "Day 57 Architecture Certification: Zero Trust Systems H",
+      "subtitle": "Day 57 Part 5 Enterprise Systems Telemetry & Invariant Audit",
+      "columns": [
+        "Gate ID",
+        "Control Parameter",
+        "Kernel Metric / Telemetry",
+        "Status"
+      ],
+      "rows": [
+        [
+          "Check 1",
+          "CIS_BASELINE_AUDIT",
+          "ZERO_NON_COMPLIANT_FINDINGS_",
+          "Verified 100%"
+        ],
+        [
+          "Check 2",
+          "KERNEL_SYSCTL_AUDIT",
+          "TCP_STACK_HARDENED_AGAINST_S",
+          "Verified 100%"
+        ],
+        [
+          "Check 3",
+          "MAC_SELINUX_AUDIT",
+          "ENFORCING_MODE_WITH_ZERO_AVC",
+          "Verified 100%"
+        ],
+        [
+          "Check 4",
+          "BASTION_GATE_AUDIT",
+          "HARDWARE_TOKEN_YUBIKEY_AUTHE",
+          "Verified 100%"
+        ]
+      ]
+    }
+  }
+]

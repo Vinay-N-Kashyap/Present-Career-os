@@ -1,0 +1,207 @@
+[
+  {
+    "part": 1,
+    "codeHash": "cb407063a4a00e1cf4a680db8023a2c31edfe90fd0f151d2890584b68ffa5aaa",
+    "data": {
+      "template": "workflow",
+      "title": "Chaos Engineering Architecture: Steady-State Baselines,",
+      "subtitle": "Day 58 Part 1 Enterprise Systems Telemetry & Invariant Audit",
+      "columns": [
+        "Gate ID",
+        "Control Parameter",
+        "Kernel Metric / Telemetry",
+        "Status"
+      ],
+      "rows": [
+        [
+          "Check 1",
+          "CHAOS_PARADIGM",
+          "PRINCIPLES_OF_CHAOS_ENGINEER",
+          "Verified 100%"
+        ],
+        [
+          "Check 2",
+          "STEADY_STATE_METRIC",
+          "99_99_PCT_TRANSACTION_SUCCES",
+          "Verified 100%"
+        ],
+        [
+          "Check 3",
+          "BLAST_RADIUS_LIMIT",
+          "2_PERCENT_CANARY_TRAFFIC_BEF",
+          "Verified 100%"
+        ],
+        [
+          "Check 4",
+          "AUTOMATED_ROLLBACK",
+          "ABORT_EXPERIMENT_IF_ERROR_RA",
+          "Verified 100%"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 2,
+    "codeHash": "a57478383b20fc21c3c0bd3a09c7857a3e3b35fb9a6bd85d3f5a3b0f810e1047",
+    "data": {
+      "template": "workflow",
+      "title": "Detective Challenge: The Unmitigated Pod Collocation Ch",
+      "subtitle": "Day 58 Part 2 Enterprise Systems Telemetry & Invariant Audit",
+      "columns": [
+        "Gate ID",
+        "Control Parameter",
+        "Kernel Metric / Telemetry",
+        "Status"
+      ],
+      "rows": [
+        [
+          "Check 1",
+          "OUTAGE_EVENT",
+          "8_MINUTE_PAYMENT_COLLAPSE_DU",
+          "Verified 100%"
+        ],
+        [
+          "Check 2",
+          "ROOT_CAUSE",
+          "ALL_PAYMENT_PODS_COLLOCATED_",
+          "Verified 100%"
+        ],
+        [
+          "Check 3",
+          "MISSING_PRIMITIVE",
+          "ZERO_POD_ANTI_AFFINITY_OR_TO",
+          "Verified 100%"
+        ],
+        [
+          "Check 4",
+          "REMEDIATION",
+          "DEPLOY_TOPOLOGY_SPREAD_AND_P",
+          "Verified 100%"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 3,
+    "codeHash": "d1f4e8829bb7551727b71fd61c00556654ef69cbe7935c41c3623a81ee848a36",
+    "data": {
+      "template": "workflow",
+      "title": "Mastery Assignment: Automated Linux Systems Failure Inj",
+      "subtitle": "Day 58 Part 3 Enterprise Systems Telemetry & Invariant Audit",
+      "columns": [
+        "Gate ID",
+        "Control Parameter",
+        "Kernel Metric / Telemetry",
+        "Status"
+      ],
+      "rows": [
+        [
+          "Check 1",
+          "TC_NETEM_LATENCY",
+          "ADDING_100MS_DELAY_PLUS_MINU",
+          "Verified 100%"
+        ],
+        [
+          "Check 2",
+          "PACKET_LOSS_RATE",
+          "5_PCT_STOCHASTIC_DROP_ON_EGR",
+          "Verified 100%"
+        ],
+        [
+          "Check 3",
+          "PROCESS_KILL_LOOP",
+          "SENDING_SIGKILL_TO_ARBITRARY",
+          "Verified 100%"
+        ],
+        [
+          "Check 4",
+          "MEMORY_STRESS_TEST",
+          "STRESS_NG_CONSUMING_80_PCT_A",
+          "Verified 100%"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 4,
+    "codeHash": "0aad29eec9d678b2efed744743d1a95cb6f5d430193a65af645b52142ba11976",
+    "data": {
+      "template": "workflow",
+      "title": "Production Incident Lab: Live Cluster Chaos Injection &",
+      "subtitle": "Day 58 Part 4 Enterprise Systems Telemetry & Invariant Audit",
+      "columns": [
+        "Gate ID",
+        "Control Parameter",
+        "Kernel Metric / Telemetry",
+        "Status"
+      ],
+      "rows": [
+        [
+          "Check 1",
+          "DRILL_DURATION",
+          "10_MINUTE_UNANNOUNCED_CHAOS_",
+          "Verified 100%"
+        ],
+        [
+          "Check 2",
+          "CHAOS_EVENTS",
+          "12_NODE_KILLS_AND_100MS_CROS",
+          "Verified 100%"
+        ],
+        [
+          "Check 3",
+          "TRAFFIC_LOAD",
+          "50000_REQUESTS_PER_SECOND_ST",
+          "Verified 100%"
+        ],
+        [
+          "Check 4",
+          "CLIENT_ERROR_RATE",
+          "MEASURED_0_004_PERCENT_HTTP_",
+          "Verified 100%"
+        ]
+      ]
+    }
+  },
+  {
+    "part": 5,
+    "codeHash": "80287c4daf032efac819c50063ae4ebac20ab0b151632e36f5f25e8e06f0c8a0",
+    "data": {
+      "template": "workflow",
+      "title": "Day 58 Architecture Certification: Chaos Engineering & ",
+      "subtitle": "Day 58 Part 5 Enterprise Systems Telemetry & Invariant Audit",
+      "columns": [
+        "Gate ID",
+        "Control Parameter",
+        "Kernel Metric / Telemetry",
+        "Status"
+      ],
+      "rows": [
+        [
+          "Check 1",
+          "STEADY_STATE_AUDIT",
+          "QUANTIFIABLE_SLO_METRICS_CON",
+          "Verified 100%"
+        ],
+        [
+          "Check 2",
+          "BLAST_RADIUS_AUDIT",
+          "BLAST_RADIUS_STRICTLY_CONTAI",
+          "Verified 100%"
+        ],
+        [
+          "Check 3",
+          "ANTI_AFFINITY_AUDIT",
+          "TOPOLOGY_SPREAD_CONSTRAINTS_",
+          "Verified 100%"
+        ],
+        [
+          "Check 4",
+          "AUTO_HEALING_AUDIT",
+          "K8S_REPLICASETS_RESTORE_HEAL",
+          "Verified 100%"
+        ]
+      ]
+    }
+  }
+]
