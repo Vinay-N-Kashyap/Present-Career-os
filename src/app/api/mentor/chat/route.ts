@@ -178,6 +178,8 @@ IMPORTANT: The student's question is about this specific slide! Explain the conc
       });
     }
 
+    const wantsStream = Boolean(body.stream) || Boolean(req.headers.get('accept')?.includes('text/event-stream'));
+
     // Determine model tier: light phatic query vs full technical inquiry
     const isLightQuery = LIGHT_QUERY_REGEX.test(userMessage);
     const selectedModel = isLightQuery ? 'llama-3.2-3b-preview' : 'llama-3.1-8b-instant';
