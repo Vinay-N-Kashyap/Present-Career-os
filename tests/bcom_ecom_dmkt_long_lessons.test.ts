@@ -1,5 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import * as path from 'node:path';
+import * as fs from 'node:fs';
+import * as crypto from 'node:crypto';
 import {
   getLongLesson,
   getLongLessonLanguage,
@@ -1376,4 +1379,252 @@ test('Course bcom_dmkt Milestone 2 Complete: All 10 Days Certified', () => {
     assert.equal(lesson.parts.length, 5, `bcom_dmkt Day ${day} must have 5 parts`);
   }
 });
+
+test('Block 208 (TASK-831..835): bcom_dmkt Days 11–15 5-part structure, Socratic checks, and >= 580 words/part budget invariants', () => {
+  for (let day = 11; day <= 15; day++) {
+    const lesson = getLongLesson('bcom_dmkt', day);
+    assert.ok(lesson, `bcom_dmkt Day ${day} lesson must be defined`);
+    assert.equal(lesson.coursePrefix, 'bcom_dmkt');
+    assert.equal(lesson.day, day);
+    assert.equal(lesson.parts.length, 5, `Day ${day} must have exactly 5 parts`);
+
+    let totalWords = 0;
+    for (let i = 0; i < lesson.parts.length; i++) {
+      const part = lesson.parts[i];
+      assert.ok(part.title && part.title.length > 0, `Day ${day} Part ${i + 1} must have a title`);
+      const words = part.say.trim().split(/\s+/).filter(Boolean).length;
+      assert.ok(words >= 580, `Day ${day} Part ${i + 1} word count (${words}) must be >= 580 words`);
+      totalWords += words;
+
+      assert.ok(part.code && part.code.includes('def '), `Day ${day} Part ${i + 1} must contain Python functions`);
+      assert.ok(part.output && part.output.length > 0, `Day ${day} Part ${i + 1} must have output`);
+      assert.ok(part.example && part.example.length > 0, `Day ${day} Part ${i + 1} must have real-world example`);
+      assert.ok(part.tryIt && part.tryIt.length > 0, `Day ${day} Part ${i + 1} must have tryIt`);
+      assert.ok(part.codeNotes && part.codeNotes.length >= 3, `Day ${day} Part ${i + 1} must have >= 3 codeNotes`);
+
+      assert.ok(part.check.question && part.check.question.length > 0, `Day ${day} Part ${i + 1} check question missing`);
+      assert.equal(part.check.options.length, 4, `Day ${day} Part ${i + 1} check must have 4 options`);
+      assert.ok(part.check.why && part.check.why.length > 0, `Day ${day} Part ${i + 1} check why missing`);
+    }
+
+    assert.ok(totalWords >= 2950, `Day ${day} total words (${totalWords}) must be >= 2,950 words`);
+    const spokenMin = totalWords / 150;
+    assert.ok(spokenMin >= 20.0, `Day ${day} spoken minutes (${spokenMin.toFixed(1)}) must be >= 20.0 min`);
+  }
+});
+
+test('Block 208 (TASK-831..835): bcom_dmkt Days 11–15 Gate v2 on-disk visual JSON files uphold cryptographic SHA-256 bindings & funnel template', async () => {
+  const { loadDayFile, getVisual, clearDayFileCache } = await import('../src/lib/visuals/loadVisuals');
+
+  clearDayFileCache();
+
+  for (let day = 11; day <= 15; day++) {
+    const dayPadded = String(day).padStart(2, '0');
+    const filePath = path.resolve(process.cwd(), `src/lib/data/lessonVisuals/bcom_dmkt/day-${dayPadded}.json`);
+    assert.ok(fs.existsSync(filePath), `On-disk visual file missing: ${filePath}`);
+
+    const dayFile = loadDayFile('bcom_dmkt', day);
+    assert.ok(dayFile, `loadDayFile failed for bcom_dmkt Day ${day}`);
+    assert.equal(dayFile.schemaVersion, 1);
+    assert.equal(dayFile.prefix, 'bcom_dmkt');
+    assert.equal(dayFile.day, day);
+    assert.equal(dayFile.entries.length, 5, `Expected 5 entries in bcom_dmkt Day ${day}`);
+
+    const lesson = getLongLesson('bcom_dmkt', day)!;
+    for (let partIdx = 0; partIdx < 5; partIdx++) {
+      const entry = dayFile.entries[partIdx];
+      const part = lesson.parts[partIdx];
+
+      assert.equal(entry.partTitle, part.title, `partTitle mismatch at bcom_dmkt Day ${day} Part ${partIdx}`);
+      const expectedHash = crypto.createHash('sha256').update(part.code || '').digest('hex');
+      assert.equal(entry.codeHash, expectedHash, `codeHash mismatch at bcom_dmkt Day ${day} Part ${partIdx}`);
+
+      const visual = getVisual('bcom_dmkt', day, partIdx);
+      assert.ok(visual, `getVisual returned null for bcom_dmkt Day ${day} Part ${partIdx}`);
+      assert.equal(visual.template, 'funnel', `Expected template "funnel" for bcom_dmkt`);
+      assert.equal(visual.steps.length, 4, `Expected 4 synchronized steps for bcom_dmkt Day ${day} Part ${partIdx}`);
+      assert.deepEqual(
+        visual.steps.map(s => s.at),
+        ['intro', 'say1', 'example', 'tryIt'],
+        `Step markers must be ['intro', 'say1', 'example', 'tryIt']`
+      );
+    }
+  }
+});
+
+test('Block 208 (TASK-831..835): Domain specifics & deterministic Python code verification across Days 11–15', () => {
+  // Day 11: Performance Video Marketing
+  const d11 = getLongLesson('bcom_dmkt', 11)!;
+  assert.ok(d11.parts[0].code?.includes('audit_video_hook_performance'));
+  assert.ok(d11.parts[1].code?.includes('analyze_video_retention_curve'));
+  assert.ok(d11.parts[2].code?.includes('simulate_cross_platform_video_economics'));
+  assert.ok(d11.parts[3].code?.includes('generate_modular_video_dco_matrix'));
+  assert.ok(d11.parts[4].code?.includes('execute_apex_video_marketing_gateway'));
+
+  // Day 12: Email Deliverability & DNS Authentication
+  const d12 = getLongLesson('bcom_dmkt', 12)!;
+  assert.ok(d12.parts[0].code?.includes('audit_email_dns_authentication'));
+  assert.ok(d12.parts[1].code?.includes('audit_sender_reputation_and_warmup'));
+  assert.ok(d12.parts[2].code?.includes('process_email_list_hygiene'));
+  assert.ok(d12.parts[3].code?.includes('validate_bimi_vmc_compliance'));
+  assert.ok(d12.parts[4].code?.includes('execute_apex_email_deliverability_gateway'));
+
+  // Day 13: Marketing Automation & Cart Drips
+  const d13 = getLongLesson('bcom_dmkt', 13)!;
+  assert.ok(d13.parts[0].code?.includes('process_lifecycle_event_state_machine'));
+  assert.ok(d13.parts[1].code?.includes('simulate_cart_abandonment_drip_recovery'));
+  assert.ok(d13.parts[2].code?.includes('schedule_predictive_replenishment_flow'));
+  assert.ok(d13.parts[3].code?.includes('execute_customer_winback_engine'));
+  assert.ok(d13.parts[4].code?.includes('execute_apex_lifecycle_automation_gateway'));
+
+  // Day 14: CRO & A/B Testing Statistics
+  const d14 = getLongLesson('bcom_dmkt', 14)!;
+  assert.ok(d14.parts[0].code?.includes('audit_funnel_conversion_friction'));
+  assert.ok(d14.parts[1].code?.includes('calculate_ab_test_statistical_significance'));
+  assert.ok(d14.parts[2].code?.includes('audit_sample_ratio_mismatch'));
+  assert.ok(d14.parts[3].code?.includes('evaluate_bayesian_ab_experiment'));
+  assert.ok(d14.parts[4].code?.includes('execute_apex_cro_experimentation_gateway'));
+
+  // Day 15: Milestone 3 Capstone: Performance Video, Lifecycle Automation & CRO
+  const d15 = getLongLesson('bcom_dmkt', 15)!;
+  assert.ok(d15.parts[0].code?.includes('execute_tier1_video_performance_engine'));
+  assert.ok(d15.parts[1].code?.includes('execute_tier2_deliverability_defense_system'));
+  assert.ok(d15.parts[2].code?.includes('execute_tier3_lifecycle_recovery_engine'));
+  assert.ok(d15.parts[3].code?.includes('execute_tier4_cro_experimentation_engine'));
+  assert.ok(d15.parts[4].code?.includes('execute_tier5_boardroom_growth_synthesizer'));
+});
+
+test('Course bcom_dmkt Milestone 3 Complete: All 15 Days Certified', () => {
+  for (let day = 1; day <= 15; day++) {
+    const lesson = getLongLesson('bcom_dmkt', day);
+    assert.ok(lesson, `bcom_dmkt Day ${day} must be defined`);
+    assert.equal(lesson.day, day);
+    assert.equal(lesson.parts.length, 5, `bcom_dmkt Day ${day} must have 5 parts`);
+  }
+});
+
+test('Block 209 (TASK-836..840): bcom_dmkt Days 16–20 5-part structure, Socratic checks, and >= 580 words/part budget invariants', () => {
+  for (let day = 16; day <= 20; day++) {
+    const lesson = getLongLesson('bcom_dmkt', day);
+    assert.ok(lesson, `bcom_dmkt Day ${day} must be defined`);
+    assert.equal(lesson.coursePrefix, 'bcom_dmkt');
+    assert.equal(lesson.day, day);
+    assert.equal(lesson.parts.length, 5, `Day ${day} must have exactly 5 parts`);
+
+    let totalWords = 0;
+    for (let i = 0; i < 5; i++) {
+      const part = lesson.parts[i];
+      const sayStr = Array.isArray(part.say) ? part.say.join(' ') : part.say;
+      const partWords = sayStr.trim().split(/\s+/).filter(Boolean).length;
+      totalWords += partWords;
+
+      assert.ok(partWords >= 580, `Day ${day} Part ${i + 1} words (${partWords}) must be >= 580 words`);
+      assert.ok(part.example && part.example.length > 0, `Day ${day} Part ${i + 1} example missing`);
+      assert.ok(part.code && part.code.length > 0, `Day ${day} Part ${i + 1} code missing`);
+      assert.ok(part.output && part.output.length > 0, `Day ${day} Part ${i + 1} output missing`);
+      assert.ok(part.tryIt && part.tryIt.length > 0, `Day ${day} Part ${i + 1} tryIt missing`);
+      assert.ok(part.codeNotes && part.codeNotes.length >= 3, `Day ${day} Part ${i + 1} must have >= 3 codeNotes`);
+
+      assert.ok(part.check.question && part.check.question.length > 0, `Day ${day} Part ${i + 1} check question missing`);
+      assert.equal(part.check.options.length, 4, `Day ${day} Part ${i + 1} check must have 4 options`);
+      assert.ok(part.check.why && part.check.why.length > 0, `Day ${day} Part ${i + 1} check why missing`);
+    }
+
+    assert.ok(totalWords >= 2950, `Day ${day} total words (${totalWords}) must be >= 2,950 words`);
+    const spokenMin = totalWords / 150;
+    assert.ok(spokenMin >= 20.0, `Day ${day} spoken minutes (${spokenMin.toFixed(1)}) must be >= 20.0 min`);
+  }
+});
+
+test('Block 209 (TASK-836..840): bcom_dmkt Days 16–20 Gate v2 on-disk visual JSON files uphold cryptographic SHA-256 bindings & funnel template', async () => {
+  const { loadDayFile, getVisual, clearDayFileCache } = await import('../src/lib/visuals/loadVisuals');
+
+  clearDayFileCache();
+
+  for (let day = 16; day <= 20; day++) {
+    const dayPadded = String(day).padStart(2, '0');
+    const filePath = path.resolve(process.cwd(), `src/lib/data/lessonVisuals/bcom_dmkt/day-${dayPadded}.json`);
+    assert.ok(fs.existsSync(filePath), `On-disk visual file missing: ${filePath}`);
+
+    const dayFile = loadDayFile('bcom_dmkt', day);
+    assert.ok(dayFile, `loadDayFile failed for bcom_dmkt Day ${day}`);
+    assert.equal(dayFile.schemaVersion, 1);
+    assert.equal(dayFile.prefix, 'bcom_dmkt');
+    assert.equal(dayFile.day, day);
+    assert.equal(dayFile.entries.length, 5, `Expected 5 entries in bcom_dmkt Day ${day}`);
+
+    const lesson = getLongLesson('bcom_dmkt', day)!;
+    for (let partIdx = 0; partIdx < 5; partIdx++) {
+      const entry = dayFile.entries[partIdx];
+      const part = lesson.parts[partIdx];
+
+      assert.equal(entry.partTitle, part.title, `partTitle mismatch at bcom_dmkt Day ${day} Part ${partIdx}`);
+      const expectedHash = crypto.createHash('sha256').update(part.code || '').digest('hex');
+      assert.equal(entry.codeHash, expectedHash, `codeHash mismatch at bcom_dmkt Day ${day} Part ${partIdx}`);
+
+      const visual = getVisual('bcom_dmkt', day, partIdx);
+      assert.ok(visual, `getVisual returned null for bcom_dmkt Day ${day} Part ${partIdx}`);
+      assert.equal(visual.template, 'funnel', `Expected template "funnel" for bcom_dmkt`);
+      assert.equal(visual.steps.length, 4, `Expected 4 synchronized steps for bcom_dmkt Day ${day} Part ${partIdx}`);
+      assert.deepEqual(
+        visual.steps.map(s => s.at),
+        ['intro', 'say1', 'example', 'tryIt'],
+        `Step markers must be ['intro', 'say1', 'example', 'tryIt']`
+      );
+    }
+  }
+});
+
+test('Block 209 (TASK-836..840): Domain specifics & deterministic Python code verification across Days 16–20', () => {
+  // Day 16: GA4 Event-Driven Data Model & Exploration Reports
+  const d16 = getLongLesson('bcom_dmkt', 16)!;
+  assert.ok(d16.parts[0].code?.includes('parse_ga4_event_stream'));
+  assert.ok(d16.parts[1].code?.includes('unnest_bigquery_ga4_events'));
+  assert.ok(d16.parts[2].code?.includes('analyze_ga4_funnel_exploration'));
+  assert.ok(d16.parts[3].code?.includes('evaluate_consent_mode_v2_payload'));
+  assert.ok(d16.parts[4].code?.includes('run_enterprise_ga4_gateway'));
+
+  // Day 17: Multi-Touch Attribution: U-Shaped & DDA
+  const d17 = getLongLesson('bcom_dmkt', 17)!;
+  assert.ok(d17.parts[0].code?.includes('calculate_rule_based_attribution'));
+  assert.ok(d17.parts[1].code?.includes('calculate_position_based_attribution'));
+  assert.ok(d17.parts[2].code?.includes('calculate_shapley_value_attribution'));
+  assert.ok(d17.parts[3].code?.includes('calculate_markov_chain_removal_effects'));
+  assert.ok(d17.parts[4].code?.includes('run_enterprise_attribution_gateway'));
+
+  // Day 18: Growth Hacking & Pirate Metrics (AARRR)
+  const d18 = getLongLesson('bcom_dmkt', 18)!;
+  assert.ok(d18.parts[0].code?.includes('audit_pirate_metrics_funnel'));
+  assert.ok(d18.parts[1].code?.includes('analyze_user_activation_velocity'));
+  assert.ok(d18.parts[2].code?.includes('evaluate_cohort_retention_curves'));
+  assert.ok(d18.parts[3].code?.includes('simulate_viral_loop_dynamics'));
+  assert.ok(d18.parts[4].code?.includes('execute_enterprise_growth_flywheel'));
+
+  // Day 19: App Store Optimization (ASO) & Mobile User Acquisition
+  const d19 = getLongLesson('bcom_dmkt', 19)!;
+  assert.ok(d19.parts[0].code?.includes('audit_aso_metadata_compliance'));
+  assert.ok(d19.parts[1].code?.includes('analyze_app_product_page_cro'));
+  assert.ok(d19.parts[2].code?.includes('simulate_apple_search_ads_campaigns'));
+  assert.ok(d19.parts[3].code?.includes('decode_skan_conversion_values'));
+  assert.ok(d19.parts[4].code?.includes('run_enterprise_mobile_acquisition_gateway'));
+
+  // Day 20: Milestone 4 Capstone: Programmatic Advertising, RTB & Growth Analytics Engine
+  const d20 = getLongLesson('bcom_dmkt', 20)!;
+  assert.ok(d20.parts[0].code?.includes('execute_tier1_ga4_streaming_engine'));
+  assert.ok(d20.parts[1].code?.includes('execute_tier2_attribution_reallocation_engine'));
+  assert.ok(d20.parts[2].code?.includes('execute_tier3_aarrr_flywheel_engine'));
+  assert.ok(d20.parts[3].code?.includes('execute_tier4_mobile_acquisition_engine'));
+  assert.ok(d20.parts[4].code?.includes('execute_tier5_milestone4_grand_synthesizer'));
+});
+
+test('Course bcom_dmkt Milestone 4 Complete: All 20 Days Certified', () => {
+  for (let day = 1; day <= 20; day++) {
+    const lesson = getLongLesson('bcom_dmkt', day);
+    assert.ok(lesson, `bcom_dmkt Day ${day} must be defined`);
+    assert.equal(lesson.day, day);
+    assert.equal(lesson.parts.length, 5, `bcom_dmkt Day ${day} must have 5 parts`);
+  }
+});
+
+
 

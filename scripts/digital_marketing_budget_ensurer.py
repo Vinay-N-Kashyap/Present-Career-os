@@ -59,6 +59,62 @@ DMKT_INVARIANT_EXPANSIONS = {
         "power with hyper-efficient lower-funnel performance marketing that delivers predictable, short-term cash flow. This balanced "
         "capital stewardship demonstrates unambiguous marketing return on investment to institutional stakeholders, establishing the "
         "marketing organization as an authentic, high-yield revenue engine rather than a discretionary corporate cost center."
+    ),
+    'performance_video_and_creative_testing_governance': (
+        "In institutional performance video marketing operations, creative iteration is managed with rigorous quantitative discipline. "
+        "Growth engineering teams treat short-form video creative—across TikTok, Instagram Reels, YouTube Shorts, and Meta Feed—as "
+        "dynamic financial assets subjected to automated split testing. Creative performance is continuously evaluated using 3-second "
+        "hook rates (video plays past 3 seconds divided by total impressions) and 15-second hold rates, isolating the exact second of viewer "
+        "drop-off through retention curves. By testing divergent opening hooks, visual text overlays, sound-off captions, and product value "
+        "propositions systematically, media teams achieve repeatable thumb-stopping velocity while preemptively replacing fatigued creative "
+        "before ad set frequency spikes undermine blended acquisition economics."
+    ),
+    'email_deliverability_and_dns_authentication_governance': (
+        "Modern enterprise email marketing infrastructure demands uncompromising technical governance across domain reputation and "
+        "cryptographic authentication. In strict alignment with Google and Yahoo bulk sender requirements, technical marketing operations "
+        "enforces 100% alignment across SPF (Sender Policy Framework), DKIM (DomainKeys Identified Mail 2048-bit RSA keys), and DMARC "
+        "(Domain-based Message Authentication, Reporting, and Conformance) with quarantine or reject enforcement policies. Simultaneously, "
+        "sender reputation is actively safeguarded by monitoring spam complaint rates against the strict 0.10% ceiling, implementing automated "
+        "sunset policies for inactive subscribers, and deploying Brand Indicators for Message Identification (BIMI) paired with Verified Mark "
+        "Certificates (VMC) to ensure pristine primary inbox placement and institutional brand protection."
+    ),
+    'marketing_automation_and_lifecycle_retention_governance': (
+        "To maximize customer lifetime value and eliminate revenue leakage, enterprise growth marketing deploys event-driven marketing "
+        "automation architectures. Behavioral event streams—such as cart abandonment, product browsing drops, category affinity changes, and "
+        "subscription renewal milestones—are processed in real time through distributed webhook pipelines and state machine orchestrators. "
+        "Automated multi-step nurture sequences dynamically modulate send times, discount escalation ladders, and channel delivery (blending "
+        "email, transactional SMS, and push notifications) based on individual customer price sensitivity and historical conversion velocity. "
+        "This disciplined lifecycle automation recovers significant lost margin while establishing persistent, frictionless customer engagement."
+    ),
+    'cro_and_statistical_experimentation_governance': (
+        "Enterprise conversion rate optimization (CRO) operates under the strictest standards of statistical inference and scientific rigor. "
+        "Optimization teams reject simplistic unscientific split tests in favor of pre-registered frequentist hypotheses, sizing experiments "
+        "using rigorous power calculations (80% statistical power at alpha = 0.05) to detect meaningful Minimum Detectable Effects (MDE). "
+        "Prior to evaluating experiment winners, automated health checks test for Sample Ratio Mismatch (SRM) to rule out underlying technical "
+        "biases in traffic allocation. Where rapid exploration is paramount, Bayesian multi-armed bandit algorithms dynamically route visitor "
+        "traffic toward winning variations, minimizing regret while delivering statistically validated conversion and revenue per visitor uplifts."
+    ),
+    'web_analytics_and_ga4_measurement_governance': (
+        "Digital measurement architecture in modern enterprises relies on comprehensive Google Analytics 4 (GA4) event-driven data models "
+        "and cloud data warehouse integration. Client-side tracking is reinforced with Server-Side Google Tag Manager (sGTM) and first-party "
+        "Conversions APIs (CAPI), transmitting clean, deduplicated event schemas directly into BigQuery for advanced behavioral analysis. "
+        "By enforcing strict naming conventions, user pseudo-ID mapping, Consent Mode v2 compliance, and custom dimension hierarchies, "
+        "analytics teams construct high-fidelity funnel exploration reports and cohort retention matrices that reveal granular drop-off points "
+        "and provide unambiguous ground truth for algorithmic media buying and executive growth decisions."
+    ),
+    'multi_touch_and_econometric_attribution_governance': (
+        "Enterprise attribution modeling requires a multi-dimensional approach that transcends naive single-touch heuristics. Growth analytics "
+        "teams operationalize Position-Based (40-20-40 U-Shaped) and machine learning Data-Driven Attribution (DDA) models to equitably distribute "
+        "revenue credit across introductory awareness touchpoints, mid-funnel nurturing engagements, and closing transaction catalysts. These "
+        "micro-level attribution models are continuously calibrated against top-down econometric Marketing Mix Modeling (MMM) and geo-lift "
+        "incrementality tests, ensuring that media budgets are optimized against true incremental profit rather than duplicated platform claims."
+    ),
+    'growth_hacking_and_mobile_acquisition_governance': (
+        "Finally, scalable user acquisition across web and mobile platforms is governed by Dave McClure's Pirate Metrics (AARRR) framework "
+        "and rigorous App Store Optimization (ASO). Growth teams systematically optimize every stage of the user lifecycle—Acquisition, "
+        "Activation (identifying the core 'Aha!' moment within minutes of onboarding), Retention (monitoring D1, D7, and D30 cohort decay), "
+        "Revenue, and Referral loops. On mobile ecosystems, App Store and Google Play metadata, custom product pages, and SKAdNetwork conversion "
+        "schemas are methodically tuned to maximize organic search visibility and expand the organic install multiplier across paid acquisition."
     )
 }
 

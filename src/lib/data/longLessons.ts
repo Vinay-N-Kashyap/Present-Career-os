@@ -74,7 +74,7 @@ export interface LongLessonCheck {
 }
 
 export interface LongLessonPart {
-  part?: string;
+  part?: string | number;
   title: string;
   /** What the teacher says, one paragraph per entry. Shown on screen and spoken aloud. */
   say: string[] | string;
@@ -82,6 +82,7 @@ export interface LongLessonPart {
   example?: string;
   /** Runnable code that prints its result: JavaScript (console.log) or, for Python courses, Python (print). */
   code?: string;
+  rawCode?: string;
   /** What the code prints, so students can compare. */
   output?: string;
   /** Notes for important code lines (1-based line numbers). */
@@ -100,6 +101,8 @@ export interface LongLesson {
   coursePrefix?: string;
   day: number;
   title: string;
+  totalParts?: number;
+  duration?: string;
   /** One sentence: what the student can do after this lesson. */
   goal?: string;
   /** Rough lesson length in minutes (lesson only, not practice). */
@@ -109,7 +112,7 @@ export interface LongLesson {
   overview?: string;
   parts: LongLessonPart[];
   /** Key points to remember, shown at the end. */
-  summary: string[];
+  summary?: string[];
   /** Today's step of the month project. */
   projectStep?: { title: string; steps: string[] };
 }
