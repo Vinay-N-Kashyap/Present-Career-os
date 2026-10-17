@@ -678,5 +678,132 @@ test('Block 219: Domain specifics & deterministic Python code verification acros
   assert.ok(d20.parts[4].code?.includes('MasterSourcingVerificationEngine'));
 });
 
+test('Block 220: B.Com Operations Days 21–25 LongLesson Structural Invariants & Spoken Word Count (>= 2,950 words/day)', () => {
+  for (let day = 21; day <= 25; day++) {
+    const lesson = getLongLesson('bcom_ops', day);
+    assert.ok(lesson, `bcom_ops Day ${day} long lesson must resolve`);
+    assert.equal(lesson.day, day);
+    assert.equal(lesson.minutes, day === 25 ? 50 : 45, `Day ${day} minutes must be ${day === 25 ? 50 : 45}`);
+    assert.equal(lesson.parts.length, 5, `Day ${day} must contain exactly 5 parts`);
+
+    let totalSpokenWords = 0;
+    for (let partIdx = 0; partIdx < 5; partIdx++) {
+      const part = lesson.parts[partIdx];
+      const partWords = Array.isArray(part.say)
+        ? part.say.reduce((acc, p) => acc + p.trim().split(/\s+/).filter(Boolean).length, 0)
+        : part.say.trim().split(/\s+/).filter(Boolean).length;
+      totalSpokenWords += partWords;
+      assert.ok(partWords >= 580, `Day ${day} Part ${partIdx + 1} has ${partWords} words; expected >= 580 words`);
+    }
+
+    assert.ok(
+      totalSpokenWords >= 2950,
+      `Day ${day} total spoken words is ${totalSpokenWords}; expected >= 2,950 words (~20.0 min spoken duration)`
+    );
+
+    assert.ok(lesson.summary && lesson.summary.length >= 5, `Day ${day} must have at least 5 summary bullet points`);
+    assert.ok(lesson.projectStep, `Day ${day} must have a hands-on projectStep`);
+    assert.ok(lesson.projectStep.steps.length >= 4, `Day ${day} projectStep must have at least 4 steps`);
+
+    for (let partIdx = 0; partIdx < 5; partIdx++) {
+      const part = lesson.parts[partIdx];
+      assert.ok(part.title.length > 0, `Day ${day} Part ${partIdx + 1} must have a non-empty title`);
+      assert.ok(part.say.length >= 4, `Day ${day} Part ${partIdx + 1} must have at least 4 exposition paragraphs`);
+      assert.ok(part.example && part.example.length > 0, `Day ${day} Part ${partIdx + 1} must have a real-world example`);
+      assert.ok(part.code && (part.code.includes('def ') || part.code.includes('class ')), `Day ${day} Part ${partIdx + 1} code must contain Python functions/classes`);
+      assert.ok(part.output && part.output.length > 0, `Day ${day} Part ${partIdx + 1} must have deterministic expected output`);
+      assert.ok(part.tryIt && part.tryIt.length > 0, `Day ${day} Part ${partIdx + 1} must have a tryIt experiment`);
+      assert.ok(part.codeNotes && part.codeNotes.length >= 3, `Day ${day} Part ${partIdx + 1} must have at least 3 codeNotes`);
+
+      const check = part.check as any;
+      assert.ok(check.question.length > 10, `Day ${day} Part ${partIdx + 1} check question must be descriptive`);
+      assert.equal(check.options.length, 4, `Day ${day} Part ${partIdx + 1} check must have exactly 4 options`);
+      assert.ok(check.answer >= 0 && check.answer < 4, `Day ${day} Part ${partIdx + 1} answer must be valid index`);
+      assert.ok(check.why && check.why.length > 15, `Day ${day} Part ${partIdx + 1} why explanation must be rigorous`);
+    }
+  }
+});
+
+test('Block 220: B.Com Operations Days 21–25 Gate v2 Workflow Visuals & Cryptographic SHA-256 Bindings', async () => {
+  const fs = await import('node:fs');
+  const path = await import('node:path');
+  const crypto = await import('node:crypto');
+  const { loadDayFile, getVisual } = await import('../src/lib/visuals/loadVisuals');
+
+  for (let day = 21; day <= 25; day++) {
+    const filePath = path.resolve(process.cwd(), `src/lib/data/lessonVisuals/bcom_ops/day-${String(day).padStart(2, '0')}.json`);
+    assert.ok(fs.existsSync(filePath), `On-disk visual file missing: ${filePath}`);
+
+    const dayFile = loadDayFile('bcom_ops', day);
+    assert.ok(dayFile, `loadDayFile failed for bcom_ops Day ${day}`);
+    assert.equal(dayFile.schemaVersion, 1);
+    assert.equal(dayFile.prefix, 'bcom_ops');
+    assert.equal(dayFile.day, day);
+    assert.equal(dayFile.entries.length, 5, `Expected 5 entries in bcom_ops Day ${day}`);
+
+    const lesson = getLongLesson('bcom_ops', day)!;
+    for (let partIdx = 0; partIdx < 5; partIdx++) {
+      const entry = dayFile.entries[partIdx];
+      const part = lesson.parts[partIdx];
+
+      assert.equal(entry.partTitle, part.title, `partTitle mismatch at bcom_ops Day ${day} Part ${partIdx}`);
+      const expectedHash = crypto.createHash('sha256').update(part.code || '').digest('hex');
+      assert.equal(entry.codeHash, expectedHash, `codeHash mismatch at bcom_ops Day ${day} Part ${partIdx}`);
+
+      const visual = getVisual('bcom_ops', day, partIdx);
+      assert.ok(visual, `getVisual returned null for bcom_ops Day ${day} Part ${partIdx}`);
+      assert.equal(visual.template, 'workflow', `Expected template "workflow" for bcom_ops`);
+      assert.equal(visual.steps.length, 4, `Expected 4 synchronized steps for bcom_ops Day ${day} Part ${partIdx}`);
+      assert.deepEqual(
+        visual.steps.map((s: any) => s.at),
+        ['intro', 'say1', 'example', 'tryIt'],
+        `Step markers must be ['intro', 'say1', 'example', 'tryIt']`
+      );
+    }
+  }
+});
+
+test('Block 220: Domain specifics & deterministic Python code verification across Days 21–25', () => {
+  // Day 21: IoT Sensor Networks, RFID / BLE Asset Tracking & Cold Chain Telematics
+  const d21 = getLongLesson('bcom_ops', 21)!;
+  assert.ok(d21.parts[0].code?.includes('evaluate_iot_edge_telemetry'));
+  assert.ok(d21.parts[1].code?.includes('calculate_rfid_ble_signal_triangulation'));
+  assert.ok(d21.parts[2].code?.includes('audit_cold_chain_telematics_geofence'));
+  assert.ok(d21.parts[3].code?.includes('analyze_vibration_telemetry_fft'));
+  assert.ok(d21.parts[4].code?.includes('execute_iot_telematics_control_gateway'));
+
+  // Day 22: Blockchain in SCM, Smart Contracts & Provenance Tracking (Track & Trace)
+  const d22 = getLongLesson('bcom_ops', 22)!;
+  assert.ok(d22.parts[0].code?.includes('generate_cryptographic_provenance_block'));
+  assert.ok(d22.parts[1].code?.includes('execute_smart_contract_escrow_settlement'));
+  assert.ok(d22.parts[2].code?.includes('verify_gs1_digital_link_serialization'));
+  assert.ok(d22.parts[3].code?.includes('audit_electronic_bill_of_lading_transfer'));
+  assert.ok(d22.parts[4].code?.includes('execute_blockchain_traceability_gateway'));
+
+  // Day 23: Autonomous Mobile Robots (AMRs), Automated Guided Vehicles (AGVs) & AS/RS Robotics
+  const d23 = getLongLesson('bcom_ops', 23)!;
+  assert.ok(d23.parts[0].code?.includes('evaluate_warehouse_robotics_fleet'));
+  assert.ok(d23.parts[1].code?.includes('calculate_asrs_throughput_and_roi'));
+  assert.ok(d23.parts[2].code?.includes('compute_amr_conflict_free_pathfinding'));
+  assert.ok(d23.parts[3].code?.includes('optimize_goods_to_person_picking'));
+  assert.ok(d23.parts[4].code?.includes('orchestrate_autonomous_robotic_fulfillment'));
+
+  // Day 24: Digital Twins in Logistics, Simulation & Discrete Event Modeling
+  const d24 = getLongLesson('bcom_ops', 24)!;
+  assert.ok(d24.parts[0].code?.includes('synchronize_digital_twin_telemetry'));
+  assert.ok(d24.parts[1].code?.includes('run_discrete_event_simulation'));
+  assert.ok(d24.parts[2].code?.includes('simulate_supply_chain_stress_test'));
+  assert.ok(d24.parts[3].code?.includes('detect_digital_twin_anomaly_divergence'));
+  assert.ok(d24.parts[4].code?.includes('execute_digital_twin_command_gateway'));
+
+  // Day 25: Milestone 5 Grand Capstone: Autonomous Smart Factory & Digital Twin Supply Chain Control Tower
+  const d25 = getLongLesson('bcom_ops', 25)!;
+  assert.ok(d25.parts[0].code?.includes('AutonomousSmartFactoryControlTower'));
+  assert.ok(d25.parts[1].code?.includes('evaluate_iot_telematics_and_blockchain_escrow'));
+  assert.ok(d25.parts[2].code?.includes('audit_robotic_fleet_and_asrs_operations'));
+  assert.ok(d25.parts[3].code?.includes('execute_digital_twin_simulation_and_stress_test'));
+  assert.ok(d25.parts[4].code?.includes('MasterAutonomousOperationsVerificationEngine'));
+});
+
 
 
