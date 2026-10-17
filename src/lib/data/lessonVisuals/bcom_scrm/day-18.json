@@ -1,0 +1,1609 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_scrm",
+  "day": 18,
+  "promptSha": "64a77320af4814b76f0d3a346696311245641dcde802d6adecea79f9722ac49c",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Competitive Battlecard Architecture: Strengths, Weaknesses, Landmines & Counter-Pitches",
+      "codeHash": "d92bcd5234de245f55486346ae943290a0c8193a4a63a556a8cec060532a0af6",
+      "spec": {
+        "template": "funnel",
+        "title": "Competitive Battlecard Architecture: Stren \u2014 RevOps Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Inbound revenue funnel (10,000 leads).",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Captured Pipeline",
+                "value": 10000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Tier",
+                "value": 4500,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Cycle",
+                "value": 1800,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Revenue",
+                "value": 720,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Operational gating qualifies 45.0% of opportunities (4,500).",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Captured Pipeline",
+                "value": 10000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Tier",
+                "value": 4500,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "data"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Cycle",
+                "value": 1800,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Revenue",
+                "value": 720,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Targeted conversion workflows advance (1,800 deals).",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Captured Pipeline",
+                "value": 10000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Tier",
+                "value": 4500,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Cycle",
+                "value": 1800,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "data"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Revenue",
+                "value": 720,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Final closed-won ARR realization (720 accounts, 7.2% net funnel yield).",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Captured Pipeline",
+                "value": 10000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Tier",
+                "value": 4500,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Cycle",
+                "value": 1800,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Revenue",
+                "value": 720,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "funnel",
+        "title": "Competitive Battlecard Architecture: Stren \u2014 RevOps Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Inbound revenue funnel (10,000 leads).",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Captured Pipeline",
+                "value": 10000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Tier",
+                "value": 4500,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Cycle",
+                "value": 1800,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Revenue",
+                "value": 720,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Operational gating qualifies 45.0% of opportunities (4,500).",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Captured Pipeline",
+                "value": 10000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Tier",
+                "value": 4500,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "data"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Cycle",
+                "value": 1800,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Revenue",
+                "value": 720,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Targeted conversion workflows advance (1,800 deals).",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Captured Pipeline",
+                "value": 10000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Tier",
+                "value": 4500,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Cycle",
+                "value": 1800,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "data"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Revenue",
+                "value": 720,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Final closed-won ARR realization (720 accounts, 7.2% net funnel yield).",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Captured Pipeline",
+                "value": 10000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Tier",
+                "value": 4500,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Cycle",
+                "value": 1800,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Revenue",
+                "value": 720,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Art of Laying Architectural Landmines in Early Discovery Calls",
+      "codeHash": "d4fb54110202e042a052a621005e3e38059f7e797ba09ff4dc418ba7717e0d8a",
+      "spec": {
+        "template": "funnel",
+        "title": "The Art of Laying Architectural Landmines  \u2014 RevOps Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Inbound revenue funnel (12,500 leads).",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Captured Pipeline",
+                "value": 12500,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Tier",
+                "value": 5625,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Cycle",
+                "value": 2250,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Revenue",
+                "value": 900,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Operational gating qualifies 45.0% of opportunities (5,625).",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Captured Pipeline",
+                "value": 12500,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Tier",
+                "value": 5625,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "data"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Cycle",
+                "value": 2250,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Revenue",
+                "value": 900,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Targeted conversion workflows advance (2,250 deals).",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Captured Pipeline",
+                "value": 12500,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Tier",
+                "value": 5625,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Cycle",
+                "value": 2250,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "data"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Revenue",
+                "value": 900,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Final closed-won ARR realization (900 accounts, 7.2% net funnel yield).",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Captured Pipeline",
+                "value": 12500,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Tier",
+                "value": 5625,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Cycle",
+                "value": 2250,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Revenue",
+                "value": 900,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "funnel",
+        "title": "The Art of Laying Architectural Landmines  \u2014 RevOps Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Inbound revenue funnel (12,500 leads).",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Captured Pipeline",
+                "value": 12500,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Tier",
+                "value": 5625,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Cycle",
+                "value": 2250,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Revenue",
+                "value": 900,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Operational gating qualifies 45.0% of opportunities (5,625).",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Captured Pipeline",
+                "value": 12500,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Tier",
+                "value": 5625,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "data"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Cycle",
+                "value": 2250,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Revenue",
+                "value": 900,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Targeted conversion workflows advance (2,250 deals).",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Captured Pipeline",
+                "value": 12500,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Tier",
+                "value": 5625,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Cycle",
+                "value": 2250,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "data"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Revenue",
+                "value": 900,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Final closed-won ARR realization (900 accounts, 7.2% net funnel yield).",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Captured Pipeline",
+                "value": 12500,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Tier",
+                "value": 5625,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Cycle",
+                "value": 2250,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Revenue",
+                "value": 900,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Structured Objection Handling Matrices: The LAER Framework",
+      "codeHash": "a115169b8505917a275ce1da4e8c246e0fe9ce52f3178cbd984452787183dff8",
+      "spec": {
+        "template": "funnel",
+        "title": "Structured Objection Handling Matrices: Th \u2014 RevOps Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Inbound revenue funnel (8,000 leads).",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Captured Pipeline",
+                "value": 8000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Tier",
+                "value": 3600,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Cycle",
+                "value": 1440,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Revenue",
+                "value": 576,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Operational gating qualifies 45.0% of opportunities (3,600).",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Captured Pipeline",
+                "value": 8000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Tier",
+                "value": 3600,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "data"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Cycle",
+                "value": 1440,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Revenue",
+                "value": 576,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Targeted conversion workflows advance (1,440 deals).",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Captured Pipeline",
+                "value": 8000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Tier",
+                "value": 3600,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Cycle",
+                "value": 1440,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "data"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Revenue",
+                "value": 576,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Final closed-won ARR realization (576 accounts, 7.2% net funnel yield).",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Captured Pipeline",
+                "value": 8000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Tier",
+                "value": 3600,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Cycle",
+                "value": 1440,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Revenue",
+                "value": 576,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "funnel",
+        "title": "Structured Objection Handling Matrices: Th \u2014 RevOps Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Inbound revenue funnel (8,000 leads).",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Captured Pipeline",
+                "value": 8000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Tier",
+                "value": 3600,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Cycle",
+                "value": 1440,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Revenue",
+                "value": 576,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Operational gating qualifies 45.0% of opportunities (3,600).",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Captured Pipeline",
+                "value": 8000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Tier",
+                "value": 3600,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "data"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Cycle",
+                "value": 1440,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Revenue",
+                "value": 576,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Targeted conversion workflows advance (1,440 deals).",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Captured Pipeline",
+                "value": 8000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Tier",
+                "value": 3600,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Cycle",
+                "value": 1440,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "data"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Revenue",
+                "value": 576,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Final closed-won ARR realization (576 accounts, 7.2% net funnel yield).",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Captured Pipeline",
+                "value": 8000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Tier",
+                "value": 3600,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Cycle",
+                "value": 1440,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Revenue",
+                "value": 576,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Sales Playbook Governance, Pitch Roleplay Certification & Telemetry",
+      "codeHash": "01282baf30a8009cbfe638e52bb79cd6af704ff2355246ae978a659c4d8cb1d1",
+      "spec": {
+        "template": "funnel",
+        "title": "Sales Playbook Governance, Pitch Roleplay  \u2014 RevOps Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Inbound revenue funnel (9,500 leads).",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Captured Pipeline",
+                "value": 9500,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Tier",
+                "value": 4275,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Cycle",
+                "value": 1710,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Revenue",
+                "value": 684,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Operational gating qualifies 45.0% of opportunities (4,275).",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Captured Pipeline",
+                "value": 9500,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Tier",
+                "value": 4275,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "data"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Cycle",
+                "value": 1710,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Revenue",
+                "value": 684,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Targeted conversion workflows advance (1,710 deals).",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Captured Pipeline",
+                "value": 9500,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Tier",
+                "value": 4275,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Cycle",
+                "value": 1710,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "data"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Revenue",
+                "value": 684,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Final closed-won ARR realization (684 accounts, 7.2% net funnel yield).",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Captured Pipeline",
+                "value": 9500,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Tier",
+                "value": 4275,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Cycle",
+                "value": 1710,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Revenue",
+                "value": 684,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "funnel",
+        "title": "Sales Playbook Governance, Pitch Roleplay  \u2014 RevOps Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Inbound revenue funnel (9,500 leads).",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Captured Pipeline",
+                "value": 9500,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Tier",
+                "value": 4275,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Cycle",
+                "value": 1710,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Revenue",
+                "value": 684,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Operational gating qualifies 45.0% of opportunities (4,275).",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Captured Pipeline",
+                "value": 9500,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Tier",
+                "value": 4275,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "data"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Cycle",
+                "value": 1710,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Revenue",
+                "value": 684,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Targeted conversion workflows advance (1,710 deals).",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Captured Pipeline",
+                "value": 9500,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Tier",
+                "value": 4275,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Cycle",
+                "value": 1710,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "data"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Revenue",
+                "value": 684,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Final closed-won ARR realization (684 accounts, 7.2% net funnel yield).",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Captured Pipeline",
+                "value": 9500,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Tier",
+                "value": 4275,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Cycle",
+                "value": 1710,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Revenue",
+                "value": 684,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Master Sales Enablement & Competitive Intelligence Control Tower",
+      "codeHash": "0b0d6066b9af238f49cf1e522ab46e5b9e62313fe68086f061e0477400a6b37a",
+      "spec": {
+        "template": "funnel",
+        "title": "Master Sales Enablement & Competitive Inte \u2014 RevOps Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Inbound revenue funnel (15,000 leads).",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Captured Pipeline",
+                "value": 15000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Tier",
+                "value": 6750,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Cycle",
+                "value": 2700,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Revenue",
+                "value": 1080,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Operational gating qualifies 45.0% of opportunities (6,750).",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Captured Pipeline",
+                "value": 15000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Tier",
+                "value": 6750,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "data"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Cycle",
+                "value": 2700,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Revenue",
+                "value": 1080,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Targeted conversion workflows advance (2,700 deals).",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Captured Pipeline",
+                "value": 15000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Tier",
+                "value": 6750,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Cycle",
+                "value": 2700,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "data"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Revenue",
+                "value": 1080,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Final closed-won ARR realization (1,080 accounts, 7.2% net funnel yield).",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Captured Pipeline",
+                "value": 15000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Tier",
+                "value": 6750,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Cycle",
+                "value": 2700,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Revenue",
+                "value": 1080,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "funnel",
+        "title": "Master Sales Enablement & Competitive Inte \u2014 RevOps Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Inbound revenue funnel (15,000 leads).",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Captured Pipeline",
+                "value": 15000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Tier",
+                "value": 6750,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Cycle",
+                "value": 2700,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Revenue",
+                "value": 1080,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Operational gating qualifies 45.0% of opportunities (6,750).",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Captured Pipeline",
+                "value": 15000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Tier",
+                "value": 6750,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "data"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Cycle",
+                "value": 2700,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Revenue",
+                "value": 1080,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Targeted conversion workflows advance (2,700 deals).",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Captured Pipeline",
+                "value": 15000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Tier",
+                "value": 6750,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Cycle",
+                "value": 2700,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "data"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Revenue",
+                "value": 1080,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Final closed-won ARR realization (1,080 accounts, 7.2% net funnel yield).",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Captured Pipeline",
+                "value": 15000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Tier",
+                "value": 6750,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Cycle",
+                "value": 2700,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Revenue",
+                "value": 1080,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
