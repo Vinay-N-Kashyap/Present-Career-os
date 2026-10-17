@@ -1,0 +1,1709 @@
+{
+  "schemaVersion": 1,
+  "prefix": "soft-skills",
+  "day": 43,
+  "promptSha": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "The Sociology of Technical Sponsorship vs Mentorship: Hewlett Multipliers",
+      "codeHash": "75c726bab7bb99c5fc7d7df42e71d949208b96d1a5ae36fd123d830665e850a1",
+      "spec": {
+        "template": "workflow",
+        "title": "The Sociology of Technical Sponsorship vs Men... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Strategic Framing",
+            "subtext": "Executive Context",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Capital Allocation",
+            "subtext": "ROI & Risk Matrix",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Multi-Year Roadmap",
+            "subtext": "Phased Stepping Stones",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Boardroom Consensus",
+            "subtext": "Unanimous Ratification",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Strategic Framing): Initialize The Sociology of Technical Sponsorship vs Men...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Strategic Framing",
+                "subtext": "Executive Context",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Capital Allocation",
+                "subtext": "ROI & Risk Matrix",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Multi-Year Roadmap",
+                "subtext": "Phased Stepping Stones",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Boardroom Consensus",
+                "subtext": "Unanimous Ratification",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Capital Allocation): Model financial ROI & loss exposure.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active Flow",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Strategic Framing",
+                "subtext": "Executive Context",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Capital Allocation",
+                "subtext": "ROI & Risk Matrix",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Multi-Year Roadmap",
+                "subtext": "Phased Stepping Stones",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Boardroom Consensus",
+                "subtext": "Unanimous Ratification",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Multi-Year Roadmap): Structure Strangler Fig evolutionary milestones.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "High Signal",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Strategic Framing",
+                "subtext": "Executive Context",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Capital Allocation",
+                "subtext": "ROI & Risk Matrix",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Multi-Year Roadmap",
+                "subtext": "Phased Stepping Stones",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Boardroom Consensus",
+                "subtext": "Unanimous Ratification",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Boardroom Consensus): Ratify sovereign technical strategy.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "Chief Strategist ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Strategic Framing",
+                "subtext": "Executive Context",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Capital Allocation",
+                "subtext": "ROI & Risk Matrix",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Multi-Year Roadmap",
+                "subtext": "Phased Stepping Stones",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Boardroom Consensus",
+                "subtext": "Unanimous Ratification",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "The Sociology of Technical Sponsorship vs Men... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Strategic Framing",
+            "subtext": "Executive Context",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Capital Allocation",
+            "subtext": "ROI & Risk Matrix",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Multi-Year Roadmap",
+            "subtext": "Phased Stepping Stones",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Boardroom Consensus",
+            "subtext": "Unanimous Ratification",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Strategic Framing): Initialize The Sociology of Technical Sponsorship vs Men...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Strategic Framing",
+                "subtext": "Executive Context",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Capital Allocation",
+                "subtext": "ROI & Risk Matrix",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Multi-Year Roadmap",
+                "subtext": "Phased Stepping Stones",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Boardroom Consensus",
+                "subtext": "Unanimous Ratification",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Capital Allocation): Model financial ROI & loss exposure.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active Flow",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Strategic Framing",
+                "subtext": "Executive Context",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Capital Allocation",
+                "subtext": "ROI & Risk Matrix",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Multi-Year Roadmap",
+                "subtext": "Phased Stepping Stones",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Boardroom Consensus",
+                "subtext": "Unanimous Ratification",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Multi-Year Roadmap): Structure Strangler Fig evolutionary milestones.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "High Signal",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Strategic Framing",
+                "subtext": "Executive Context",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Capital Allocation",
+                "subtext": "ROI & Risk Matrix",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Multi-Year Roadmap",
+                "subtext": "Phased Stepping Stones",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Boardroom Consensus",
+                "subtext": "Unanimous Ratification",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Boardroom Consensus): Ratify sovereign technical strategy.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "Chief Strategist ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Strategic Framing",
+                "subtext": "Executive Context",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Capital Allocation",
+                "subtext": "ROI & Risk Matrix",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Multi-Year Roadmap",
+                "subtext": "Phased Stepping Stones",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Boardroom Consensus",
+                "subtext": "Unanimous Ratification",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Engineering Career Ladder Blueprint: Objective Competency Matrices",
+      "codeHash": "9986e85bd4695150ae2bfdd58ecc719d838bd511fd3080307bc6400669348276",
+      "spec": {
+        "template": "workflow",
+        "title": "The Engineering Career Ladder Blueprint: Obje... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Strategic Framing",
+            "subtext": "Executive Context",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Capital Allocation",
+            "subtext": "ROI & Risk Matrix",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Multi-Year Roadmap",
+            "subtext": "Phased Stepping Stones",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Boardroom Consensus",
+            "subtext": "Unanimous Ratification",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Strategic Framing): Initialize The Engineering Career Ladder Blueprint: Obje...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Strategic Framing",
+                "subtext": "Executive Context",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Capital Allocation",
+                "subtext": "ROI & Risk Matrix",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Multi-Year Roadmap",
+                "subtext": "Phased Stepping Stones",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Boardroom Consensus",
+                "subtext": "Unanimous Ratification",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Capital Allocation): Model financial ROI & loss exposure.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active Flow",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Strategic Framing",
+                "subtext": "Executive Context",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Capital Allocation",
+                "subtext": "ROI & Risk Matrix",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Multi-Year Roadmap",
+                "subtext": "Phased Stepping Stones",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Boardroom Consensus",
+                "subtext": "Unanimous Ratification",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Multi-Year Roadmap): Structure Strangler Fig evolutionary milestones.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "High Signal",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Strategic Framing",
+                "subtext": "Executive Context",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Capital Allocation",
+                "subtext": "ROI & Risk Matrix",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Multi-Year Roadmap",
+                "subtext": "Phased Stepping Stones",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Boardroom Consensus",
+                "subtext": "Unanimous Ratification",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Boardroom Consensus): Ratify sovereign technical strategy.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "Chief Strategist ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Strategic Framing",
+                "subtext": "Executive Context",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Capital Allocation",
+                "subtext": "ROI & Risk Matrix",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Multi-Year Roadmap",
+                "subtext": "Phased Stepping Stones",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Boardroom Consensus",
+                "subtext": "Unanimous Ratification",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "The Engineering Career Ladder Blueprint: Obje... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Strategic Framing",
+            "subtext": "Executive Context",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Capital Allocation",
+            "subtext": "ROI & Risk Matrix",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Multi-Year Roadmap",
+            "subtext": "Phased Stepping Stones",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Boardroom Consensus",
+            "subtext": "Unanimous Ratification",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Strategic Framing): Initialize The Engineering Career Ladder Blueprint: Obje...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Strategic Framing",
+                "subtext": "Executive Context",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Capital Allocation",
+                "subtext": "ROI & Risk Matrix",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Multi-Year Roadmap",
+                "subtext": "Phased Stepping Stones",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Boardroom Consensus",
+                "subtext": "Unanimous Ratification",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Capital Allocation): Model financial ROI & loss exposure.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active Flow",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Strategic Framing",
+                "subtext": "Executive Context",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Capital Allocation",
+                "subtext": "ROI & Risk Matrix",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Multi-Year Roadmap",
+                "subtext": "Phased Stepping Stones",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Boardroom Consensus",
+                "subtext": "Unanimous Ratification",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Multi-Year Roadmap): Structure Strangler Fig evolutionary milestones.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "High Signal",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Strategic Framing",
+                "subtext": "Executive Context",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Capital Allocation",
+                "subtext": "ROI & Risk Matrix",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Multi-Year Roadmap",
+                "subtext": "Phased Stepping Stones",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Boardroom Consensus",
+                "subtext": "Unanimous Ratification",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Boardroom Consensus): Ratify sovereign technical strategy.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "Chief Strategist ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Strategic Framing",
+                "subtext": "Executive Context",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Capital Allocation",
+                "subtext": "ROI & Risk Matrix",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Multi-Year Roadmap",
+                "subtext": "Phased Stepping Stones",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Boardroom Consensus",
+                "subtext": "Unanimous Ratification",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Mentorship & Growth Milestones Tracker: Structured Ownership",
+      "codeHash": "e5571d9d7f9059fe89d427ea3d160d6cfe98110c920ccb5bdc3415f3149cb647",
+      "spec": {
+        "template": "workflow",
+        "title": "Mentorship & Growth Milestones Tracker: Struc... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Strategic Framing",
+            "subtext": "Executive Context",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Capital Allocation",
+            "subtext": "ROI & Risk Matrix",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Multi-Year Roadmap",
+            "subtext": "Phased Stepping Stones",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Boardroom Consensus",
+            "subtext": "Unanimous Ratification",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Strategic Framing): Initialize Mentorship & Growth Milestones Tracker: Struc...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Strategic Framing",
+                "subtext": "Executive Context",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Capital Allocation",
+                "subtext": "ROI & Risk Matrix",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Multi-Year Roadmap",
+                "subtext": "Phased Stepping Stones",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Boardroom Consensus",
+                "subtext": "Unanimous Ratification",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Capital Allocation): Model financial ROI & loss exposure.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active Flow",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Strategic Framing",
+                "subtext": "Executive Context",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Capital Allocation",
+                "subtext": "ROI & Risk Matrix",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Multi-Year Roadmap",
+                "subtext": "Phased Stepping Stones",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Boardroom Consensus",
+                "subtext": "Unanimous Ratification",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Multi-Year Roadmap): Structure Strangler Fig evolutionary milestones.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "High Signal",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Strategic Framing",
+                "subtext": "Executive Context",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Capital Allocation",
+                "subtext": "ROI & Risk Matrix",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Multi-Year Roadmap",
+                "subtext": "Phased Stepping Stones",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Boardroom Consensus",
+                "subtext": "Unanimous Ratification",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Boardroom Consensus): Ratify sovereign technical strategy.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "Chief Strategist ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Strategic Framing",
+                "subtext": "Executive Context",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Capital Allocation",
+                "subtext": "ROI & Risk Matrix",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Multi-Year Roadmap",
+                "subtext": "Phased Stepping Stones",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Boardroom Consensus",
+                "subtext": "Unanimous Ratification",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Mentorship & Growth Milestones Tracker: Struc... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Strategic Framing",
+            "subtext": "Executive Context",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Capital Allocation",
+            "subtext": "ROI & Risk Matrix",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Multi-Year Roadmap",
+            "subtext": "Phased Stepping Stones",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Boardroom Consensus",
+            "subtext": "Unanimous Ratification",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Strategic Framing): Initialize Mentorship & Growth Milestones Tracker: Struc...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Strategic Framing",
+                "subtext": "Executive Context",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Capital Allocation",
+                "subtext": "ROI & Risk Matrix",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Multi-Year Roadmap",
+                "subtext": "Phased Stepping Stones",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Boardroom Consensus",
+                "subtext": "Unanimous Ratification",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Capital Allocation): Model financial ROI & loss exposure.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active Flow",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Strategic Framing",
+                "subtext": "Executive Context",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Capital Allocation",
+                "subtext": "ROI & Risk Matrix",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Multi-Year Roadmap",
+                "subtext": "Phased Stepping Stones",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Boardroom Consensus",
+                "subtext": "Unanimous Ratification",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Multi-Year Roadmap): Structure Strangler Fig evolutionary milestones.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "High Signal",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Strategic Framing",
+                "subtext": "Executive Context",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Capital Allocation",
+                "subtext": "ROI & Risk Matrix",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Multi-Year Roadmap",
+                "subtext": "Phased Stepping Stones",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Boardroom Consensus",
+                "subtext": "Unanimous Ratification",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Boardroom Consensus): Ratify sovereign technical strategy.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "Chief Strategist ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Strategic Framing",
+                "subtext": "Executive Context",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Capital Allocation",
+                "subtext": "ROI & Risk Matrix",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Multi-Year Roadmap",
+                "subtext": "Phased Stepping Stones",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Boardroom Consensus",
+                "subtext": "Unanimous Ratification",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Underperforming Senior Engineer Coaching Lab: High-Empathy Triage",
+      "codeHash": "ade147bb5d7b0c98cf5ce51a0f8b88951ee217891c39dd7470decd43a37c1f2d",
+      "spec": {
+        "template": "workflow",
+        "title": "Underperforming Senior Engineer Coaching Lab:... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Strategic Framing",
+            "subtext": "Executive Context",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Capital Allocation",
+            "subtext": "ROI & Risk Matrix",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Multi-Year Roadmap",
+            "subtext": "Phased Stepping Stones",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Boardroom Consensus",
+            "subtext": "Unanimous Ratification",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Strategic Framing): Initialize Underperforming Senior Engineer Coaching Lab:...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Strategic Framing",
+                "subtext": "Executive Context",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Capital Allocation",
+                "subtext": "ROI & Risk Matrix",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Multi-Year Roadmap",
+                "subtext": "Phased Stepping Stones",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Boardroom Consensus",
+                "subtext": "Unanimous Ratification",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Capital Allocation): Model financial ROI & loss exposure.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active Flow",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Strategic Framing",
+                "subtext": "Executive Context",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Capital Allocation",
+                "subtext": "ROI & Risk Matrix",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Multi-Year Roadmap",
+                "subtext": "Phased Stepping Stones",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Boardroom Consensus",
+                "subtext": "Unanimous Ratification",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Multi-Year Roadmap): Structure Strangler Fig evolutionary milestones.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "High Signal",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Strategic Framing",
+                "subtext": "Executive Context",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Capital Allocation",
+                "subtext": "ROI & Risk Matrix",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Multi-Year Roadmap",
+                "subtext": "Phased Stepping Stones",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Boardroom Consensus",
+                "subtext": "Unanimous Ratification",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Boardroom Consensus): Ratify sovereign technical strategy.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "Chief Strategist ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Strategic Framing",
+                "subtext": "Executive Context",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Capital Allocation",
+                "subtext": "ROI & Risk Matrix",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Multi-Year Roadmap",
+                "subtext": "Phased Stepping Stones",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Boardroom Consensus",
+                "subtext": "Unanimous Ratification",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Underperforming Senior Engineer Coaching Lab:... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Strategic Framing",
+            "subtext": "Executive Context",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Capital Allocation",
+            "subtext": "ROI & Risk Matrix",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Multi-Year Roadmap",
+            "subtext": "Phased Stepping Stones",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Boardroom Consensus",
+            "subtext": "Unanimous Ratification",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Strategic Framing): Initialize Underperforming Senior Engineer Coaching Lab:...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Strategic Framing",
+                "subtext": "Executive Context",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Capital Allocation",
+                "subtext": "ROI & Risk Matrix",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Multi-Year Roadmap",
+                "subtext": "Phased Stepping Stones",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Boardroom Consensus",
+                "subtext": "Unanimous Ratification",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Capital Allocation): Model financial ROI & loss exposure.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active Flow",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Strategic Framing",
+                "subtext": "Executive Context",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Capital Allocation",
+                "subtext": "ROI & Risk Matrix",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Multi-Year Roadmap",
+                "subtext": "Phased Stepping Stones",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Boardroom Consensus",
+                "subtext": "Unanimous Ratification",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Multi-Year Roadmap): Structure Strangler Fig evolutionary milestones.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "High Signal",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Strategic Framing",
+                "subtext": "Executive Context",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Capital Allocation",
+                "subtext": "ROI & Risk Matrix",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Multi-Year Roadmap",
+                "subtext": "Phased Stepping Stones",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Boardroom Consensus",
+                "subtext": "Unanimous Ratification",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Boardroom Consensus): Ratify sovereign technical strategy.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "Chief Strategist ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Strategic Framing",
+                "subtext": "Executive Context",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Capital Allocation",
+                "subtext": "ROI & Risk Matrix",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Multi-Year Roadmap",
+                "subtext": "Phased Stepping Stones",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Boardroom Consensus",
+                "subtext": "Unanimous Ratification",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Master Culture, Sponsorship & Career Ladder Suite",
+      "codeHash": "14ed75ecb21116957ba4abf35196cd0c453a678e8bbd4a13640c0e0bacaebc8b",
+      "spec": {
+        "template": "workflow",
+        "title": "Master Culture, Sponsorship & Career Ladder S... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Strategic Framing",
+            "subtext": "Executive Context",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Capital Allocation",
+            "subtext": "ROI & Risk Matrix",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Multi-Year Roadmap",
+            "subtext": "Phased Stepping Stones",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Boardroom Consensus",
+            "subtext": "Unanimous Ratification",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Strategic Framing): Initialize Master Culture, Sponsorship & Career Ladder S...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Strategic Framing",
+                "subtext": "Executive Context",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Capital Allocation",
+                "subtext": "ROI & Risk Matrix",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Multi-Year Roadmap",
+                "subtext": "Phased Stepping Stones",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Boardroom Consensus",
+                "subtext": "Unanimous Ratification",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Capital Allocation): Model financial ROI & loss exposure.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active Flow",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Strategic Framing",
+                "subtext": "Executive Context",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Capital Allocation",
+                "subtext": "ROI & Risk Matrix",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Multi-Year Roadmap",
+                "subtext": "Phased Stepping Stones",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Boardroom Consensus",
+                "subtext": "Unanimous Ratification",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Multi-Year Roadmap): Structure Strangler Fig evolutionary milestones.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "High Signal",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Strategic Framing",
+                "subtext": "Executive Context",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Capital Allocation",
+                "subtext": "ROI & Risk Matrix",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Multi-Year Roadmap",
+                "subtext": "Phased Stepping Stones",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Boardroom Consensus",
+                "subtext": "Unanimous Ratification",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Boardroom Consensus): Ratify sovereign technical strategy.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "Chief Strategist ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Strategic Framing",
+                "subtext": "Executive Context",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Capital Allocation",
+                "subtext": "ROI & Risk Matrix",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Multi-Year Roadmap",
+                "subtext": "Phased Stepping Stones",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Boardroom Consensus",
+                "subtext": "Unanimous Ratification",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Master Culture, Sponsorship & Career Ladder S... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Strategic Framing",
+            "subtext": "Executive Context",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Capital Allocation",
+            "subtext": "ROI & Risk Matrix",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Multi-Year Roadmap",
+            "subtext": "Phased Stepping Stones",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Boardroom Consensus",
+            "subtext": "Unanimous Ratification",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Strategic Framing): Initialize Master Culture, Sponsorship & Career Ladder S...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Strategic Framing",
+                "subtext": "Executive Context",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Capital Allocation",
+                "subtext": "ROI & Risk Matrix",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Multi-Year Roadmap",
+                "subtext": "Phased Stepping Stones",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Boardroom Consensus",
+                "subtext": "Unanimous Ratification",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Capital Allocation): Model financial ROI & loss exposure.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active Flow",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Strategic Framing",
+                "subtext": "Executive Context",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Capital Allocation",
+                "subtext": "ROI & Risk Matrix",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Multi-Year Roadmap",
+                "subtext": "Phased Stepping Stones",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Boardroom Consensus",
+                "subtext": "Unanimous Ratification",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Multi-Year Roadmap): Structure Strangler Fig evolutionary milestones.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "High Signal",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Strategic Framing",
+                "subtext": "Executive Context",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Capital Allocation",
+                "subtext": "ROI & Risk Matrix",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Multi-Year Roadmap",
+                "subtext": "Phased Stepping Stones",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Boardroom Consensus",
+                "subtext": "Unanimous Ratification",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Boardroom Consensus): Ratify sovereign technical strategy.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "Chief Strategist ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Strategic Framing",
+                "subtext": "Executive Context",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Capital Allocation",
+                "subtext": "ROI & Risk Matrix",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Multi-Year Roadmap",
+                "subtext": "Phased Stepping Stones",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Boardroom Consensus",
+                "subtext": "Unanimous Ratification",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
