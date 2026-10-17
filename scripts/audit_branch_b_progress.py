@@ -32,8 +32,8 @@ total_target_tier1_days = len(files) * 30 # 18 * 30 = 540 days
 for prefix, path, name in files:
     if os.path.exists(path):
         content = open(path, encoding='utf-8').read()
-        # Find all day values matching top-level day property
-        days = sorted(list(set(map(int, re.findall(r'^\s*day:\s*(\d+),', content, re.MULTILINE)))))
+        # Find all day values matching top-level day property (quoted or unquoted)
+        days = sorted(list(set(map(int, re.findall(r'^\s*[\"\']?day[\"\']?\s*:\s*(\d+)\s*,', content, re.MULTILINE)))))
         count = len(days)
         total_completed_days += count
         status = "100% COMPLETE (30/30)" if count >= 30 else f"{count}/30 Days ({round(count/30*100, 1)}%)"

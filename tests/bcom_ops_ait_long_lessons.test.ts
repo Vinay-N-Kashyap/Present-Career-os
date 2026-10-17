@@ -439,3 +439,117 @@ test('Block 217: Domain specifics & deterministic Python code verification acros
   assert.ok(d10.parts[4].code?.includes('EnterpriseOperationsScorecard'));
 });
 
+test('Block 218 (TASK-1137..1141): B.Com Operations Days 11–15 Resolution & Invariant Verification', () => {
+  for (let day = 11; day <= 15; day++) {
+    const lesson = getLongLesson('bcom_ops', day);
+    assert.ok(lesson, `bcom_ops Day ${day} long lesson must resolve`);
+    assert.equal(lesson.coursePrefix, 'bcom_ops');
+    assert.equal(lesson.day, day);
+    assert.equal(lesson.minutes, day === 15 ? 50 : 45, `Day ${day} duration mismatch`);
+    assert.equal(lesson.parts.length, 5, `Day ${day} must contain exactly 5 parts`);
+    assert.ok(lesson.summary.length >= 5, `Day ${day} must have at least 5 summary bullet points`);
+    assert.ok(lesson.projectStep, `Day ${day} must have a hands-on projectStep`);
+    assert.ok(lesson.projectStep.steps.length >= 4, `Day ${day} projectStep must have at least 4 steps`);
+
+    for (let partIdx = 0; partIdx < 5; partIdx++) {
+      const part = lesson.parts[partIdx];
+      assert.ok(part.title.length > 0, `Day ${day} Part ${partIdx + 1} must have a non-empty title`);
+      assert.ok(part.say.length >= 4, `Day ${day} Part ${partIdx + 1} must have at least 4 exposition paragraphs`);
+      assert.ok(part.example && part.example.length > 0, `Day ${day} Part ${partIdx + 1} must have a real-world example`);
+      assert.ok(part.code && (part.code.includes('def ') || part.code.includes('class ')), `Day ${day} Part ${partIdx + 1} code must contain Python functions/classes`);
+      assert.ok(part.output && part.output.length > 0, `Day ${day} Part ${partIdx + 1} must have deterministic expected output`);
+      assert.ok(part.tryIt && part.tryIt.length > 0, `Day ${day} Part ${partIdx + 1} must have a tryIt experiment`);
+      assert.ok(part.codeNotes && part.codeNotes.length >= 3, `Day ${day} Part ${partIdx + 1} must have at least 3 codeNotes`);
+
+      const check = part.check as any;
+      assert.ok(check.question.length > 10, `Day ${day} Part ${partIdx + 1} check question must be descriptive`);
+      assert.equal(check.options.length, 4, `Day ${day} Part ${partIdx + 1} check must have exactly 4 options`);
+      assert.ok(check.answer >= 0 && check.answer < 4, `Day ${day} Part ${partIdx + 1} answer must be valid index`);
+      assert.ok(check.why && check.why.length > 15, `Day ${day} Part ${partIdx + 1} why explanation must be rigorous`);
+    }
+  }
+});
+
+test('Block 218: B.Com Operations Days 11–15 Gate v2 Workflow Visuals & Cryptographic SHA-256 Bindings', async () => {
+  const fs = await import('node:fs');
+  const path = await import('node:path');
+  const crypto = await import('node:crypto');
+  const { loadDayFile, getVisual } = await import('../src/lib/visuals/loadVisuals');
+
+  for (let day = 11; day <= 15; day++) {
+    const filePath = path.resolve(process.cwd(), `src/lib/data/lessonVisuals/bcom_ops/day-${String(day).padStart(2, '0')}.json`);
+    assert.ok(fs.existsSync(filePath), `On-disk visual file missing: ${filePath}`);
+
+    const dayFile = loadDayFile('bcom_ops', day);
+    assert.ok(dayFile, `loadDayFile failed for bcom_ops Day ${day}`);
+    assert.equal(dayFile.schemaVersion, 1);
+    assert.equal(dayFile.prefix, 'bcom_ops');
+    assert.equal(dayFile.day, day);
+    assert.equal(dayFile.entries.length, 5, `Expected 5 entries in bcom_ops Day ${day}`);
+
+    const lesson = getLongLesson('bcom_ops', day)!;
+    for (let partIdx = 0; partIdx < 5; partIdx++) {
+      const entry = dayFile.entries[partIdx];
+      const part = lesson.parts[partIdx];
+
+      assert.equal(entry.partTitle, part.title, `partTitle mismatch at bcom_ops Day ${day} Part ${partIdx}`);
+      const expectedHash = crypto.createHash('sha256').update(part.code || '').digest('hex');
+      assert.equal(entry.codeHash, expectedHash, `codeHash mismatch at bcom_ops Day ${day} Part ${partIdx}`);
+
+      const visual = getVisual('bcom_ops', day, partIdx);
+      assert.ok(visual, `getVisual returned null for bcom_ops Day ${day} Part ${partIdx}`);
+      assert.equal(visual.template, 'workflow', `Expected template "workflow" for bcom_ops`);
+      assert.equal(visual.steps.length, 4, `Expected 4 synchronized steps for bcom_ops Day ${day} Part ${partIdx}`);
+      assert.deepEqual(
+        visual.steps.map((s: any) => s.at),
+        ['intro', 'say1', 'example', 'tryIt'],
+        `Step markers must be ['intro', 'say1', 'example', 'tryIt']`
+      );
+    }
+  }
+});
+
+test('Block 218: Domain specifics & deterministic Python code verification across Days 11–15', () => {
+  // Day 11: Warehouse Management Systems (WMS) & Facility Layout Design
+  const d11 = getLongLesson('bcom_ops', 11)!;
+  assert.ok(d11.parts[0].code?.includes('evaluate_inbound_shipment_putaway'));
+  assert.ok(d11.parts[1].code?.includes('optimize_warehouse_slotting'));
+  assert.ok(d11.parts[2].code?.includes('calculate_aisle_pick_travel'));
+  assert.ok(d11.parts[3].code?.includes('execute_cycle_counting_audit'));
+  assert.ok(d11.parts[4].code?.includes('evaluate_warehouse_shift_productivity'));
+
+  // Day 12: Cold Chain Logistics & Temperature-Controlled Supply Chains
+  const d12 = getLongLesson('bcom_ops', 12)!;
+  assert.ok(d12.parts[0].code?.includes('evaluate_cold_chain_storage_regime'));
+  assert.ok(d12.parts[1].code?.includes('calculate_mean_kinetic_temperature'));
+  assert.ok(d12.parts[2].code?.includes('allocate_fefo_orders'));
+  assert.ok(d12.parts[3].code?.includes('monitor_haccp_in_transit_ccp'));
+  assert.ok(d12.parts[4].code?.includes('simulate_multi_zone_delivery_route'));
+
+  // Day 13: Reverse Logistics, Circular Economy & Waste Minimization
+  const d13 = getLongLesson('bcom_ops', 13)!;
+  assert.ok(d13.parts[0].code?.includes('evaluate_customer_return_authorization'));
+  assert.ok(d13.parts[1].code?.includes('execute_return_disposition_triage'));
+  assert.ok(d13.parts[2].code?.includes('evaluate_remanufacturing_batch_economics'));
+  assert.ok(d13.parts[3].code?.includes('reconcile_epr_statutory_obligations'));
+  assert.ok(d13.parts[4].code?.includes('calculate_circular_economy_financial_ledger'));
+
+  // Day 14: Legal, Regulatory & Compliance Frameworks in Supply Chain
+  const d14 = getLongLesson('bcom_ops', 14)!;
+  assert.ok(d14.parts[0].code?.includes('audit_procurement_transaction_icofr'));
+  assert.ok(d14.parts[1].code?.includes('evaluate_related_party_procurement_contract'));
+  assert.ok(d14.parts[2].code?.includes('audit_caro_2020_inventory_compliance'));
+  assert.ok(d14.parts[3].code?.includes('evaluate_vendor_esg_due_diligence_audit'));
+  assert.ok(d14.parts[4].code?.includes('audit_vendor_invoice_anti_corruption'));
+
+  // Day 15: Milestone 3 Capstone: Omnichannel Logistics, Temperature-Controlled Networks & Closed-Loop Circular Operations Control Tower
+  const d15 = getLongLesson('bcom_ops', 15)!;
+  assert.ok(d15.parts[0].code?.includes('OperationsControlTower'));
+  assert.ok(d15.parts[1].code?.includes('optimize_omnichannel_order_sourcing'));
+  assert.ok(d15.parts[2].code?.includes('triage_in_transit_cold_chain_telemetry'));
+  assert.ok(d15.parts[3].code?.includes('execute_closed_loop_reverse_operations'));
+  assert.ok(d15.parts[4].code?.includes('run_milestone3_master_governance_verification'));
+});
+
+
+
