@@ -137,6 +137,54 @@ function toDbRecord(tableName: string, record: any): any {
       status: record.tenureStatus,
     };
   }
+  if (tableName === 'central_internal_audit_cag') {
+    return {
+      audit_para_id: record.auditRecordId || record.auditParaId,
+      institution_id: record.institutionId || 'inst-apex-001',
+      financial_year: record.financialYear || '2025-2026',
+      audited_department: record.department || 'Central Administration',
+      para_category: record.category || 'PROCUREMENT_TENDER_IRREGULARITY',
+      audit_observation: record.observationNarrative || record.observationTitle || 'CAG Audit Observation',
+      monetary_variance_inr: record.financialImplicationInr || record.monetaryVarianceInr || 0.0,
+      remedial_action_taken: record.actionTakenNoteNarrative || record.remedialActionTaken || null,
+      settlement_status: record.status || 'HALF_MARGIN_QUERY_ISSUED'
+    };
+  }
+  if (tableName === 'central_academic_bank_credits') {
+    return {
+      student_apaar_id: record.apaarId || record.studentApaarId,
+      institution_id: record.institutionId || 'inst-apex-001',
+      student_roll_number: record.studentId || record.studentRollNumber || '2024AI001',
+      student_name: record.studentName || 'Student Scholar',
+      abc_account_id: record.abcRecordId || record.abcAccountId || 'ABC-DEF-001',
+      accumulated_credits: record.totalCreditsAccumulated ?? record.accumulatedCredits ?? 0,
+      digilocker_nad_verified: record.syncStatus === 'SYNCED_DIGILOCKER_NAD' || record.syncStatus === 'DEGREE_AWARDED_CLOSED' || Boolean(record.digilockerNadVerified),
+      transferred_credits: record.creditsTransferred ?? record.transferredCredits ?? 0,
+    };
+  }
+  if (tableName === 'faculty_academic_books') {
+    return {
+      isbn: record.isbnNumber || record.isbn,
+      institution_id: record.institutionId || 'inst-apex-001',
+      book_title: record.bookTitle,
+      author_faculty: record.facultyAuthorName || record.authorFaculty,
+      publisher_name: record.publisherName,
+      peer_reviewed: record.publicationType ? !record.publicationType.includes('NON_PEER') : true,
+      scopus_indexed: record.publicationType ? record.publicationType.includes('SCOPUS') : false,
+    };
+  }
+  if (tableName === 'faculty_research_fellowships') {
+    return {
+      fellowship_id: record.fellowId || record.fellowshipId,
+      institution_id: record.institutionId || 'inst-apex-001',
+      fellow_name: record.scholarName || record.fellowName,
+      funding_agency: record.fundingAgency,
+      monthly_stipend_inr: record.currentBaseStipendInr || 37000.0,
+      hra_percentage: record.cityHraTier === 'TIER_X_27_PERCENT' ? 27.0 : record.cityHraTier === 'TIER_Y_18_PERCENT' ? 18.0 : 9.0,
+      monthly_attendance_verified: true,
+      disbursement_status: 'CLEARED_FOR_PAYMENT',
+    };
+  }
   // Generic fallback: map keys from camelCase to snake_case
   const mapped: any = {};
   for (const [k, v] of Object.entries(record)) {
@@ -275,6 +323,93 @@ function fromDbRecord<T>(tableName: string, row: any, fallbackDefault: T[]): T {
       auditSha256: def?.auditSha256 || '0000000000000000000000000000000000000000000000000000000000000000'
     } as unknown as T;
   }
+  if (tableName === 'central_internal_audit_cag') {
+    const def = (fallbackDefault as any[]).find(d => d.auditRecordId === row.audit_para_id);
+    return {
+      auditRecordId: row.audit_para_id,
+      financialYear: row.financial_year,
+      auditingBody: def?.auditingBody || 'CAG_PRINCIPAL_DIRECTOR_AUDIT',
+      department: row.audited_department,
+      category: row.para_category,
+      severity: def?.severity || 'CRITICAL_CAG_PARA',
+      observationTitle: def?.observationTitle || `CAG Audit Para ${row.audit_para_id}`,
+      observationNarrative: row.audit_observation,
+      financialImplicationInr: Number(row.monetary_variance_inr) || 0,
+      remedialRecoveryAmountInr: def?.remedialRecoveryAmountInr || 0,
+      pendingRecoveryInr: def?.pendingRecoveryInr || Number(row.monetary_variance_inr) || 0,
+      targetResolutionDate: def?.targetResolutionDate || '2026-06-30',
+      halfMarginIssueDate: def?.halfMarginIssueDate || '2025-10-15',
+      departmentReplyDate: def?.departmentReplyDate,
+      actionTakenNoteNarrative: row.remedial_action_taken || def?.actionTakenNoteNarrative,
+      recoveryVoucherNumber: def?.recoveryVoucherNumber,
+      status: row.settlement_status || 'HALF_MARGIN_QUERY_ISSUED',
+      createdTimestamp: row.created_at,
+      auditSha256: def?.auditSha256 || '0000000000000000000000000000000000000000000000000000000000000000'
+    } as unknown as T;
+  }
+  if (tableName === 'central_academic_bank_credits') {
+    const def = (fallbackDefault as any[]).find(d => d.apaarId === row.student_apaar_id || d.abcRecordId === row.abc_account_id);
+    return {
+      abcRecordId: row.abc_account_id || def?.abcRecordId || `ABC-${row.student_apaar_id}`,
+      studentId: row.student_roll_number,
+      studentName: row.student_name,
+      apaarId: row.student_apaar_id,
+      digilockerUri: def?.digilockerUri || `in.gov.digilocker.nad/CERT/${row.student_apaar_id}`,
+      programName: def?.programName || 'B.Tech in Artificial Intelligence',
+      department: def?.department || 'Computer Science',
+      admissionYear: def?.admissionYear || 2024,
+      totalCreditsAccumulated: Number(row.accumulated_credits) || 0,
+      activeCreditBalance: Number(row.accumulated_credits) || 0,
+      creditsTransferred: Number(row.transferred_credits) || 0,
+      syncStatus: row.digilocker_nad_verified ? 'SYNCED_DIGILOCKER_NAD' : (def?.syncStatus || 'PENDING_VERIFICATION'),
+      courses: def?.courses || [],
+      redemptions: def?.redemptions || [],
+      auditSha256: def?.auditSha256 || '0000000000000000000000000000000000000000000000000000000000000000'
+    } as unknown as T;
+  }
+  if (tableName === 'faculty_academic_books') {
+    const def = (fallbackDefault as any[]).find(d => d.isbnNumber === row.isbn || d.bookRecordId === row.isbn);
+    return {
+      bookRecordId: def?.bookRecordId || `BOOK-${row.isbn.replace(/[^a-zA-Z0-9]/g, '')}`,
+      facultyAuthorId: def?.facultyAuthorId || 'FAC-CS-2022-045',
+      facultyAuthorName: row.author_faculty,
+      department: def?.department || 'Computer Science & Engineering',
+      bookTitle: row.book_title,
+      isbnNumber: row.isbn,
+      publisherName: row.publisher_name,
+      publicationType: def?.publicationType || (row.peer_reviewed ? 'INTERNATIONAL_PEER_REVIEWED_MONOGRAPH' : 'NATIONAL_EDITED_REFERENCE_VOLUME'),
+      royaltyAgreementPercent: def?.royaltyAgreementPercent || 12,
+      isUniversityPressSubsidized: def?.isUniversityPressSubsidized || false,
+      ugcCasPoints: def?.ugcCasPoints || 10,
+      publicationYear: def?.publicationYear || 2025,
+      royaltyCycles: def?.royaltyCycles || [],
+      totalRoyaltyEarnedInr: def?.totalRoyaltyEarnedInr || 0,
+      translationGrant: def?.translationGrant,
+      auditSha256: def?.auditSha256 || '0000000000000000000000000000000000000000000000000000000000000000'
+    } as unknown as T;
+  }
+  if (tableName === 'faculty_research_fellowships') {
+    const def = (fallbackDefault as any[]).find(d => d.fellowId === row.fellowship_id);
+    return {
+      fellowId: row.fellowship_id,
+      scholarName: row.fellow_name,
+      scholarEmail: def?.scholarEmail || `${row.fellow_name.toLowerCase().replace(/[^a-z]/g, '.')}@university.ac.in`,
+      rollNumber: def?.rollNumber || '2024PHD001',
+      piFacultyId: def?.piFacultyId || 'FAC-PI-001',
+      piFacultyName: def?.piFacultyName || 'Principal Investigator',
+      department: def?.department || 'Research & Postgraduate Studies',
+      fundingAgency: row.funding_agency,
+      fellowshipTier: def?.fellowshipTier || 'JRF_JUNIOR_RESEARCH_FELLOW',
+      cityHraTier: row.hra_percentage >= 27 ? 'TIER_X_27_PERCENT' : row.hra_percentage >= 18 ? 'TIER_Y_18_PERCENT' : 'TIER_Z_9_PERCENT',
+      currentBaseStipendInr: Number(row.monthly_stipend_inr) || 37000,
+      annualContingencyGrantInr: def?.annualContingencyGrantInr || 20000,
+      contingencySpentInr: def?.contingencySpentInr || 0,
+      enrollmentDate: def?.enrollmentDate || '2025-01-15',
+      monthlyBills: def?.monthlyBills || [],
+      contingencyClaims: def?.contingencyClaims || [],
+      auditSha256: def?.auditSha256 || '0000000000000000000000000000000000000000000000000000000000000000'
+    } as unknown as T;
+  }
   // Generic camelCase mapper
   const mapped: any = {};
   for (const [k, v] of Object.entries(row)) {
@@ -355,6 +490,14 @@ export async function saveGovernanceRecord<T extends Record<string, any>>(
     ? 'audit_id'
     : tableName === 'faculty_professor_of_practice'
     ? 'pop_id'
+    : tableName === 'central_internal_audit_cag'
+    ? 'audit_para_id'
+    : tableName === 'central_academic_bank_credits'
+    ? 'student_apaar_id'
+    : tableName === 'faculty_academic_books'
+    ? 'isbn'
+    : tableName === 'faculty_research_fellowships'
+    ? 'fellowship_id'
     : primaryKey.replace(/([A-Z])/g, '_$1').toLowerCase();
 
   // 1. Supabase write

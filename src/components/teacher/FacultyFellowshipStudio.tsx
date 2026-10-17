@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import { useGovernanceStore } from '@/lib/hooks/useGovernanceStore';
 import {
   ResearchFellowRecord,
   FellowshipTier,
@@ -19,7 +20,13 @@ import {
 } from '@/lib/teacher/facultyFellowshipStipend';
 
 export default function FacultyFellowshipStudio() {
-  const [fellows, setFellows] = useState<ResearchFellowRecord[]>(SAMPLE_RESEARCH_FELLOWS);
+  const {
+    records: fellows,
+    setRecords: setFellows,
+    syncSource,
+    isSaving,
+    saveRecord
+  } = useGovernanceStore<ResearchFellowRecord>('faculty_research_fellowships', SAMPLE_RESEARCH_FELLOWS, 'fellowId');
   const [activeTab, setActiveTab] = useState<string>('ALL');
   const [selectedFellow, setSelectedFellow] = useState<ResearchFellowRecord | null>(null);
 
@@ -78,7 +85,7 @@ export default function FacultyFellowshipStudio() {
     : 85;
 
   // Handlers
-  const handleEnrollFellow = (e: React.FormEvent) => {
+  const handleEnrollFellow = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
       const rec = createResearchFellowRecord({
@@ -94,7 +101,7 @@ export default function FacultyFellowshipStudio() {
         enrollmentDate: newEnrollDate
       });
 
-      setFellows([rec, ...fellows]);
+      await saveRecord(rec);
       setShowEnrollModal(false);
       setAlertBanner({ type: 'success', message: `Scholar ${rec.scholarName} enrolled with ID ${rec.fellowId} under ${rec.fundingAgency}` });
     } catch (err: unknown) {
@@ -102,7 +109,7 @@ export default function FacultyFellowshipStudio() {
     }
   };
 
-  const handleGenerateBill = (e: React.FormEvent) => {
+  const handleGenerateBill = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!selectedFellow) return;
 
@@ -111,7 +118,7 @@ export default function FacultyFellowshipStudio() {
       attendancePercent: Number(billAttendance)
     });
 
-    setFellows(fellows.map(f => f.fellowId === res.fellow.fellowId ? res.fellow : f));
+    await saveRecord(res.fellow);
     setSelectedFellow(res.fellow);
     setShowBillModal(false);
 
@@ -128,7 +135,7 @@ export default function FacultyFellowshipStudio() {
     }
   };
 
-  const handleDisburseBill = (billId: string) => {
+  const handleDisburseBill = async (billId: string) => {
     if (!selectedFellow) return;
 
     const res = disburseStipendBill(selectedFellow, billId);
@@ -137,12 +144,12 @@ export default function FacultyFellowshipStudio() {
       return;
     }
 
-    setFellows(fellows.map(f => f.fellowId === res.fellow.fellowId ? res.fellow : f));
+    await saveRecord(res.fellow);
     setSelectedFellow(res.fellow);
     setAlertBanner({ type: 'success', message: `Stipend DBT transfer released and cleared via PFMS!` });
   };
 
-  const handleClaimContingency = (e: React.FormEvent) => {
+  const handleClaimContingency = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!selectedFellow) return;
 
@@ -159,7 +166,7 @@ export default function FacultyFellowshipStudio() {
       return;
     }
 
-    setFellows(fellows.map(f => f.fellowId === res.fellow.fellowId ? res.fellow : f));
+    await saveRecord(res.fellow);
     setSelectedFellow(res.fellow);
     setShowContingencyModal(false);
     setAlertBanner({
@@ -168,14 +175,14 @@ export default function FacultyFellowshipStudio() {
     });
   };
 
-  const handleUpgradeSrf = (fellow: ResearchFellowRecord) => {
+  const handleUpgradeSrf = async (fellow: ResearchFellowRecord) => {
     const res = upgradeJrfToSrf(fellow, new Date().toISOString().split('T')[0]);
     if (!res.success) {
       setAlertBanner({ type: 'error', message: res.error || 'Upgrade rejected' });
       return;
     }
 
-    setFellows(fellows.map(f => f.fellowId === res.fellow.fellowId ? res.fellow : f));
+    await saveRecord(res.fellow);
     setAlertBanner({
       type: 'success',
       message: `🎉 Promotion approved! Scholar upgraded to SRF (Base: ₹42,000/mo) after 2-year assessment committee clearance.`
@@ -208,8 +215,17 @@ export default function FacultyFellowshipStudio() {
               GFR 2017 Contingency DBT
             </span>
           </div>
-          <h1 className="text-2xl font-bold text-slate-100 mt-2">
+          <h1 className="text-2xl font-bold text-slate-100 mt-2 flex items-center gap-3">
             Faculty Research Fellowship & Scholar Stipend Studio
+            <span className={`text-xs px-2.5 py-0.5 rounded-full border flex items-center gap-1.5 ${
+              syncSource === 'supabase'
+                ? 'bg-emerald-950/80 text-emerald-300 border-emerald-700/80'
+                : 'bg-slate-900 text-slate-400 border-slate-700'
+            }`}>
+              <span className={`w-1.5 h-1.5 rounded-full ${syncSource === 'supabase' ? 'bg-emerald-400 animate-pulse' : 'bg-slate-400'}`}></span>
+              {syncSource === 'supabase' ? 'PostgreSQL Active (support.pinit)' : 'Resilient Local Storage'}
+              {isSaving && <span className="text-emerald-400 ml-1">Saving...</span>}
+            </span>
           </h1>
           <p className="text-sm text-slate-400">
             JRF/SRF/PostDoc monthly stipend billing, 80% attendance countersign hurdle, HRA tiering & contingency ledger

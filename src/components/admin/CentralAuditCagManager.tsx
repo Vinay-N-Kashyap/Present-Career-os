@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import { useGovernanceStore } from '@/lib/hooks/useGovernanceStore';
 import {
   AuditObservationRecord,
   AuditParaCategory,
@@ -15,7 +16,13 @@ import {
 } from '@/lib/admin/centralAuditCagCompliance';
 
 export default function CentralAuditCagManager() {
-  const [records, setRecords] = useState<AuditObservationRecord[]>(SAMPLE_AUDIT_OBSERVATIONS);
+  const {
+    records,
+    setRecords,
+    syncSource,
+    isSaving,
+    saveRecord
+  } = useGovernanceStore<AuditObservationRecord>('central_internal_audit_cag', SAMPLE_AUDIT_OBSERVATIONS, 'auditRecordId');
   const [activeTab, setActiveTab] = useState<string>('ALL');
   const [selectedRecord, setSelectedRecord] = useState<AuditObservationRecord | null>(null);
 
@@ -62,7 +69,7 @@ export default function CentralAuditCagManager() {
   const resolvedRatePct = totalObservations > 0 ? Math.round((droppedCount / totalObservations) * 100) : 0;
 
   // Handlers
-  const handleAddObservation = (e: React.FormEvent) => {
+  const handleAddObservation = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
       const rec = createAuditObservationRecord({
@@ -77,7 +84,7 @@ export default function CentralAuditCagManager() {
         targetResolutionDate: newTargetDate
       });
 
-      setRecords([rec, ...records]);
+      await saveRecord(rec);
       setShowAddModal(false);
       setAlertBanner({ type: 'success', message: `Audit query ${rec.auditRecordId} logged under ${rec.category}` });
     } catch (err: unknown) {
@@ -85,7 +92,7 @@ export default function CentralAuditCagManager() {
     }
   };
 
-  const handleAtnSubmit = (e: React.FormEvent) => {
+  const handleAtnSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!selectedRecord) return;
 
@@ -93,13 +100,13 @@ export default function CentralAuditCagManager() {
       actionTakenNoteNarrative: atnNarrative
     });
 
-    setRecords(records.map(r => r.auditRecordId === updated.auditRecordId ? updated : r));
+    await saveRecord(updated);
     setSelectedRecord(updated);
     setShowAtnModal(false);
     setAlertBanner({ type: 'success', message: `Department ATN reply submitted for ${updated.auditRecordId}` });
   };
 
-  const handleRecordRecovery = (e: React.FormEvent) => {
+  const handleRecordRecovery = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!selectedRecord) return;
 
@@ -108,7 +115,7 @@ export default function CentralAuditCagManager() {
       recoveryVoucherNumber: recoveryVoucher
     });
 
-    setRecords(records.map(r => r.auditRecordId === updated.auditRecordId ? updated : r));
+    await saveRecord(updated);
     setSelectedRecord(updated);
     setShowRecoveryModal(false);
     setAlertBanner({
@@ -117,14 +124,14 @@ export default function CentralAuditCagManager() {
     });
   };
 
-  const handleDropObservation = (record: AuditObservationRecord) => {
+  const handleDropObservation = async (record: AuditObservationRecord) => {
     const res = dropAuditObservation(record);
     if (!res.success) {
       setAlertBanner({ type: 'error', message: res.error || 'Cannot drop observation' });
       return;
     }
 
-    setRecords(records.map(r => r.auditRecordId === res.record.auditRecordId ? res.record : r));
+    await saveRecord(res.record);
     setAlertBanner({
       type: 'success',
       message: `Audit observation ${record.auditRecordId} dropped and resolved by Finance Committee!`
@@ -157,8 +164,17 @@ export default function CentralAuditCagManager() {
               GFR 2017 & PAC Action Taken Notes
             </span>
           </div>
-          <h1 className="text-2xl font-bold text-slate-100 mt-2">
+          <h1 className="text-2xl font-bold text-slate-100 mt-2 flex items-center gap-3">
             Central University Internal Audit & CAG Redressal Console
+            <span className={`text-xs px-2.5 py-0.5 rounded-full border flex items-center gap-1.5 ${
+              syncSource === 'supabase'
+                ? 'bg-emerald-950/80 text-emerald-300 border-emerald-700/80'
+                : 'bg-slate-900 text-slate-400 border-slate-700'
+            }`}>
+              <span className={`w-1.5 h-1.5 rounded-full ${syncSource === 'supabase' ? 'bg-emerald-400 animate-pulse' : 'bg-slate-400'}`}></span>
+              {syncSource === 'supabase' ? 'PostgreSQL Active (support.pinit)' : 'Resilient Local Storage'}
+              {isSaving && <span className="text-emerald-400 ml-1">Saving...</span>}
+            </span>
           </h1>
           <p className="text-sm text-slate-400">
             Audit memo tracking, GFR public procurement compliance, financial recovery vouchers & ATN para resolution

@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import { useGovernanceStore } from '@/lib/hooks/useGovernanceStore';
 import {
   StudentAbcRecord,
   MeesCredentialTier,
@@ -15,7 +16,13 @@ import {
 } from '@/lib/admin/centralAcademicBankOfCredits';
 
 export default function CentralAcademicBankManager() {
-  const [records, setRecords] = useState<StudentAbcRecord[]>(SAMPLE_ABC_RECORDS);
+  const {
+    records,
+    setRecords,
+    syncSource,
+    isSaving,
+    saveRecord
+  } = useGovernanceStore<StudentAbcRecord>('central_academic_bank_credits', SAMPLE_ABC_RECORDS, 'abcRecordId');
   const [activeTab, setActiveTab] = useState<string>('ALL');
   const [selectedRecord, setSelectedRecord] = useState<StudentAbcRecord | null>(null);
 
@@ -66,7 +73,7 @@ export default function CentralAcademicBankManager() {
   const totalRedeemedDegrees = records.reduce((sum, r) => sum + r.redemptions.length, 0);
 
   // Handlers
-  const handleAddStudent = (e: React.FormEvent) => {
+  const handleAddStudent = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
       const rec = createStudentAbcRecord({
@@ -78,7 +85,7 @@ export default function CentralAcademicBankManager() {
         admissionYear: Number(newAdmYear)
       });
 
-      setRecords([rec, ...records]);
+      await saveRecord(rec);
       setShowAddModal(false);
       setAlertBanner({ type: 'success', message: `APAAR ID ${rec.apaarId} registered successfully for ${rec.studentName}` });
     } catch (err: unknown) {
@@ -86,13 +93,13 @@ export default function CentralAcademicBankManager() {
     }
   };
 
-  const handleSyncDigilocker = (record: StudentAbcRecord) => {
+  const handleSyncDigilocker = async (record: StudentAbcRecord) => {
     const res = syncWithDigilockerNad(record);
-    setRecords(records.map(r => r.abcRecordId === res.record.abcRecordId ? res.record : r));
+    await saveRecord(res.record);
     setAlertBanner({ type: 'success', message: `Digilocker NAD synced: ${res.digilockerUri}` });
   };
 
-  const handleAddCredit = (e: React.FormEvent) => {
+  const handleAddCredit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!selectedRecord) return;
 
@@ -109,13 +116,13 @@ export default function CentralAcademicBankManager() {
       completionDate: new Date().toISOString().split('T')[0]
     });
 
-    setRecords(records.map(r => r.abcRecordId === updated.abcRecordId ? updated : r));
+    await saveRecord(updated);
     setSelectedRecord(updated);
     setShowCreditModal(false);
     setAlertBanner({ type: 'success', message: `${courseCredits} Credits deposited for ${courseCode}. New Balance: ${updated.activeCreditBalance}` });
   };
 
-  const handleRedeem = (e: React.FormEvent) => {
+  const handleRedeem = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!selectedRecord) return;
 
@@ -125,7 +132,7 @@ export default function CentralAcademicBankManager() {
       return;
     }
 
-    setRecords(records.map(r => r.abcRecordId === res.record.abcRecordId ? res.record : r));
+    await saveRecord(res.record);
     setSelectedRecord(res.record);
     setShowRedeemModal(false);
     setAlertBanner({
@@ -160,8 +167,17 @@ export default function CentralAcademicBankManager() {
               Digilocker NAD & APAAR Registry
             </span>
           </div>
-          <h1 className="text-2xl font-bold text-slate-100 mt-2">
+          <h1 className="text-2xl font-bold text-slate-100 mt-2 flex items-center gap-3">
             Central University Academic Bank of Credits (ABC) & Digilocker NAD Console
+            <span className={`text-xs px-2.5 py-0.5 rounded-full border flex items-center gap-1.5 ${
+              syncSource === 'supabase'
+                ? 'bg-emerald-950/80 text-emerald-300 border-emerald-700/80'
+                : 'bg-slate-900 text-slate-400 border-slate-700'
+            }`}>
+              <span className={`w-1.5 h-1.5 rounded-full ${syncSource === 'supabase' ? 'bg-emerald-400 animate-pulse' : 'bg-slate-400'}`}></span>
+              {syncSource === 'supabase' ? 'PostgreSQL Active (support.pinit)' : 'Resilient Local Storage'}
+              {isSaving && <span className="text-emerald-400 ml-1">Saving...</span>}
+            </span>
           </h1>
           <p className="text-sm text-slate-400">
             Automated Permanent Academic Account Registry (APAAR ID), Multiple Entry/Exit Credit Accumulation & Degree Redemption Engine

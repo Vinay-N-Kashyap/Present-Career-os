@@ -18,9 +18,16 @@ import {
   exportFacultyBookPublishingLedgerCSV,
   SAMPLE_FACULTY_BOOKS,
 } from '@/lib/teacher/facultyBookPublishingRoyalty';
+import { useGovernanceStore } from '@/lib/hooks/useGovernanceStore';
 
 export default function FacultyBookRoyaltyStudio() {
-  const [records, setRecords] = useState<FacultyBookPublishingRecord[]>(SAMPLE_FACULTY_BOOKS);
+  const {
+    records,
+    setRecords,
+    syncSource,
+    isSaving,
+    saveRecord
+  } = useGovernanceStore<FacultyBookPublishingRecord>('faculty_academic_books', SAMPLE_FACULTY_BOOKS, 'bookRecordId');
   const [filterType, setFilterType] = useState<string>('ALL');
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [selectedRecord, setSelectedRecord] = useState<FacultyBookPublishingRecord | null>(null);
@@ -95,7 +102,7 @@ export default function FacultyBookRoyaltyStudio() {
   });
 
   // Handlers
-  const handleCreateBook = (e: React.FormEvent) => {
+  const handleCreateBook = async (e: React.FormEvent) => {
     e.preventDefault();
     setFormError('');
 
@@ -123,7 +130,7 @@ export default function FacultyBookRoyaltyStudio() {
         publicationYear: newYear,
       });
 
-      setRecords([created, ...records]);
+      await saveRecord(created);
       setShowAddModal(false);
       showNotification(`Academic Book "${created.bookTitle}" registered successfully! Allocated ${created.ugcCasPoints} UGC CAS Points.`);
       // Reset form
@@ -139,7 +146,7 @@ export default function FacultyBookRoyaltyStudio() {
     setShowRoyaltyModal(true);
   };
 
-  const handleRecordRoyalty = (e: React.FormEvent) => {
+  const handleRecordRoyalty = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!actionRecord) return;
 
@@ -149,7 +156,7 @@ export default function FacultyBookRoyaltyStudio() {
       grossSalesInr: cycleGrossSales,
     });
 
-    setRecords(records.map(r => (r.bookRecordId === updatedRecord.bookRecordId ? updatedRecord : r)));
+    await saveRecord(updatedRecord);
     if (selectedRecord?.bookRecordId === updatedRecord.bookRecordId) {
       setSelectedRecord(updatedRecord);
     }
@@ -159,14 +166,14 @@ export default function FacultyBookRoyaltyStudio() {
     );
   };
 
-  const handleDisburseRoyalty = (record: FacultyBookPublishingRecord, cycleId: string) => {
+  const handleDisburseRoyalty = async (record: FacultyBookPublishingRecord, cycleId: string) => {
     const res = disburseRoyaltyToAuthor(record, cycleId);
     if (!res.success) {
       showNotification(res.error || 'Failed to disburse royalty', 'error');
       return;
     }
 
-    setRecords(records.map(r => (r.bookRecordId === res.record.bookRecordId ? res.record : r)));
+    await saveRecord(res.record);
     if (selectedRecord?.bookRecordId === res.record.bookRecordId) {
       setSelectedRecord(res.record);
     }
@@ -179,7 +186,7 @@ export default function FacultyBookRoyaltyStudio() {
     setShowGrantModal(true);
   };
 
-  const handleSanctionGrant = (e: React.FormEvent) => {
+  const handleSanctionGrant = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!actionRecord) return;
     setGrantError('');
@@ -195,7 +202,7 @@ export default function FacultyBookRoyaltyStudio() {
       return;
     }
 
-    setRecords(records.map(r => (r.bookRecordId === res.record.bookRecordId ? res.record : r)));
+    await saveRecord(res.record);
     if (selectedRecord?.bookRecordId === res.record.bookRecordId) {
       setSelectedRecord(res.record);
     }
@@ -205,14 +212,14 @@ export default function FacultyBookRoyaltyStudio() {
     );
   };
 
-  const handleDisburseMilestone = (record: FacultyBookPublishingRecord, milestone: 1 | 2) => {
+  const handleDisburseMilestone = async (record: FacultyBookPublishingRecord, milestone: 1 | 2) => {
     const res = disburseTranslationMilestone(record, milestone);
     if (!res.success) {
       showNotification(res.error || 'Failed to disburse milestone', 'error');
       return;
     }
 
-    setRecords(records.map(r => (r.bookRecordId === res.record.bookRecordId ? res.record : r)));
+    await saveRecord(res.record);
     if (selectedRecord?.bookRecordId === res.record.bookRecordId) {
       setSelectedRecord(res.record);
     }
@@ -264,8 +271,17 @@ export default function FacultyBookRoyaltyStudio() {
               </svg>
             </span>
             <div>
-              <h1 className="text-2xl font-bold tracking-tight text-white">
+              <h1 className="text-2xl font-bold tracking-tight text-white flex items-center gap-3">
                 Faculty Book Publishing Royalty & Translation Studio
+                <span className={`text-xs px-2.5 py-0.5 rounded-full border flex items-center gap-1.5 ${
+                  syncSource === 'supabase'
+                    ? 'bg-emerald-950/80 text-emerald-300 border-emerald-700/80'
+                    : 'bg-slate-900 text-slate-400 border-slate-700'
+                }`}>
+                  <span className={`w-1.5 h-1.5 rounded-full ${syncSource === 'supabase' ? 'bg-emerald-400 animate-pulse' : 'bg-slate-400'}`}></span>
+                  {syncSource === 'supabase' ? 'PostgreSQL Active (support.pinit)' : 'Resilient Local Storage'}
+                  {isSaving && <span className="text-emerald-400 ml-1">Saving...</span>}
+                </span>
               </h1>
               <p className="text-sm text-slate-400 mt-0.5">
                 UGC CAS Table 2 Category 2 Book Research Scores • Publisher Royalties • Section 194J 10% TDS • NEP 2020 Translation Grants
