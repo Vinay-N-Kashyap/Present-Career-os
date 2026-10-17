@@ -14,9 +14,20 @@ import {
   sanctionByUniversitySyndicate,
   exportAffiliationAuditCSV,
 } from '@/lib/admin/centralAffiliation';
+import { useGovernanceStore } from '@/lib/hooks/useGovernanceStore';
 
 export default function CentralAffiliationManager() {
-  const [records, setRecords] = useState<AffiliationRecord[]>(INITIAL_AFFILIATION_RECORDS);
+  const {
+    records,
+    setRecords,
+    syncSource,
+    isSaving,
+    saveRecord,
+  } = useGovernanceStore<AffiliationRecord>(
+    'central_college_affiliations',
+    INITIAL_AFFILIATION_RECORDS,
+    'institutionCode'
+  );
   const [selectedFilter, setSelectedFilter] = useState<InspectionStage | 'ALL'>('ALL');
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -88,7 +99,7 @@ export default function CentralAffiliationManager() {
   }, [records]);
 
   // Handle Register Application
-  const handleRegisterApp = (e: React.FormEvent) => {
+  const handleRegisterApp = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!institutionCode.trim() || !institutionName.trim() || !programmeName.trim()) {
       showToast('Please fill out all mandatory institution fields.');
@@ -106,7 +117,7 @@ export default function CentralAffiliationManager() {
         approvedIntake: Number(approvedIntake),
       });
 
-      setRecords([created, ...records]);
+      await saveRecord(created);
       setIsNewAppModalOpen(false);
       showToast(`Affiliation dossier registered: ${created.certificateToken}`);
     } catch (err: unknown) {
@@ -116,7 +127,7 @@ export default function CentralAffiliationManager() {
   };
 
   // Handle Schedule Inspection
-  const handleScheduleInspection = (e: React.FormEvent) => {
+  const handleScheduleInspection = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!scheduleModalRecord || !aicChairman.trim()) return;
 
@@ -127,7 +138,7 @@ export default function CentralAffiliationManager() {
         inspectionDate,
       });
 
-      setRecords(records.map((r) => (r.affiliationId === updated.affiliationId ? updated : r)));
+      await saveRecord(updated);
       setScheduleModalRecord(null);
       showToast(`AIC Inspection scheduled on ${inspectionDate} under ${updated.aicChairman}`);
     } catch (err: unknown) {
@@ -137,7 +148,7 @@ export default function CentralAffiliationManager() {
   };
 
   // Handle Submit Inspection Findings
-  const handleSubmitFindings = (e: React.FormEvent) => {
+  const handleSubmitFindings = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!findingsModalRecord) return;
 
@@ -155,7 +166,7 @@ export default function CentralAffiliationManager() {
         newFinding,
       ]);
 
-      setRecords(records.map((r) => (r.affiliationId === updated.affiliationId ? updated : r)));
+      await saveRecord(updated);
       setFindingsModalRecord(null);
       showToast('AIC physical inspection findings report submitted.');
     } catch (err: unknown) {
@@ -165,13 +176,13 @@ export default function CentralAffiliationManager() {
   };
 
   // Handle Syndicate Sanction
-  const handleSyndicateSanction = (e: React.FormEvent) => {
+  const handleSyndicateSanction = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!syndicateModalRecord || !syndicateResolution.trim()) return;
 
     try {
       const updated = sanctionByUniversitySyndicate(syndicateModalRecord, syndicateResolution.trim());
-      setRecords(records.map((r) => (r.affiliationId === updated.affiliationId ? updated : r)));
+      await saveRecord(updated);
       setSyndicateModalRecord(null);
       showToast(`Affiliation sanctioned by Syndicate (Res: ${syndicateResolution})!`);
     } catch (err: unknown) {
@@ -216,9 +227,21 @@ export default function CentralAffiliationManager() {
               </svg>
             </span>
             <div>
-              <h1 className="text-2xl font-bold text-white tracking-tight">
-                University College Affiliation & Inspection Committee Console
-              </h1>
+              <div className="flex items-center gap-3">
+                <h1 className="text-2xl font-bold text-white tracking-tight">
+                  University College Affiliation & Inspection Committee Console
+                </h1>
+                <span className={`px-2.5 py-0.5 rounded-full text-xs font-semibold tracking-wide border ${
+                  syncSource === 'supabase'
+                    ? 'bg-emerald-500/20 text-emerald-300 border-emerald-500/30'
+                    : 'bg-amber-500/20 text-amber-300 border-amber-500/30'
+                }`}>
+                  {syncSource === 'supabase' ? 'Supabase Live' : 'Local Fallback'}
+                </span>
+                {isSaving && (
+                  <span className="text-xs text-rose-400 animate-pulse font-medium">Syncing...</span>
+                )}
+              </div>
               <p className="text-sm text-slate-400">
                 Statutory UGC Affiliation Regulations, AICTE Approval Process Handbook (APH) & Syndicate Governance
               </p>

@@ -11,9 +11,20 @@ import {
   resolveMentorshipFollowup,
   exportFacultyMentorshipCSV,
 } from '@/lib/teacher/facultyMentorship';
+import { useGovernanceStore } from '@/lib/hooks/useGovernanceStore';
 
 export default function FacultyMentorshipStudio() {
-  const [records, setRecords] = useState<MentorshipInteraction[]>(INITIAL_MENTORSHIP_RECORDS);
+  const {
+    records,
+    setRecords,
+    syncSource,
+    isSaving,
+    saveRecord,
+  } = useGovernanceStore<MentorshipInteraction>(
+    'faculty_student_mentorship',
+    INITIAL_MENTORSHIP_RECORDS,
+    'interactionId'
+  );
   const [selectedFilter, setSelectedFilter] = useState<'ALL' | MenteeRiskLevel | 'COUNSELOR_REFERRED' | 'RESOLVED'>('ALL');
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -88,7 +99,7 @@ export default function FacultyMentorshipStudio() {
   }, [records]);
 
   // Handle Log Interaction
-  const handleLogInteraction = (e: React.FormEvent) => {
+  const handleLogInteraction = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!enrollmentNumber.trim() || !studentName.trim() || !actionPlanDiscussion.trim()) {
       showToast('Please provide all mandatory interaction fields.');
@@ -113,7 +124,7 @@ export default function FacultyMentorshipStudio() {
         followUpDate: followUpDate || undefined,
       });
 
-      setRecords([created, ...records]);
+      await saveRecord(created);
       setIsLogModalOpen(false);
       showToast(`Proctorial mentorship session logged: ${created.interactionToken}`);
     } catch (err: unknown) {
@@ -123,13 +134,13 @@ export default function FacultyMentorshipStudio() {
   };
 
   // Handle Counselor Escalation
-  const handleEscalateCounselor = (e: React.FormEvent) => {
+  const handleEscalateCounselor = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!escalateModalRecord || !escalationReason.trim()) return;
 
     try {
       const updated = escalateToCampusCounselor(escalateModalRecord, escalationReason.trim());
-      setRecords(records.map((r) => (r.interactionId === updated.interactionId ? updated : r)));
+      await saveRecord(updated);
       setEscalateModalRecord(null);
       showToast(`Student escalated to Campus Counselor: ${updated.studentName}`);
     } catch (err: unknown) {
@@ -139,13 +150,13 @@ export default function FacultyMentorshipStudio() {
   };
 
   // Handle Resolution
-  const handleResolveFollowup = (e: React.FormEvent) => {
+  const handleResolveFollowup = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!resolveModalRecord || !resolutionNotes.trim()) return;
 
     try {
       const updated = resolveMentorshipFollowup(resolveModalRecord, resolutionNotes.trim());
-      setRecords(records.map((r) => (r.interactionId === updated.interactionId ? updated : r)));
+      await saveRecord(updated);
       setResolveModalRecord(null);
       showToast(`Proctorial follow-up resolved for ${updated.studentName}!`);
     } catch (err: unknown) {
@@ -190,9 +201,21 @@ export default function FacultyMentorshipStudio() {
               </svg>
             </span>
             <div>
-              <h1 className="text-2xl font-bold text-white tracking-tight">
-                Faculty Proctorial Mentorship & Student Wellness Studio
-              </h1>
+              <div className="flex items-center gap-3">
+                <h1 className="text-2xl font-bold text-white tracking-tight">
+                  Faculty Proctorial Mentorship & Student Wellness Studio
+                </h1>
+                <span className={`px-2.5 py-0.5 rounded-full text-xs font-semibold tracking-wide border ${
+                  syncSource === 'supabase'
+                    ? 'bg-emerald-500/20 text-emerald-300 border-emerald-500/30'
+                    : 'bg-amber-500/20 text-amber-300 border-amber-500/30'
+                }`}>
+                  {syncSource === 'supabase' ? 'Supabase Live' : 'Local Fallback'}
+                </span>
+                {isSaving && (
+                  <span className="text-xs text-rose-400 animate-pulse font-medium">Syncing...</span>
+                )}
+              </div>
               <p className="text-sm text-slate-400">
                 UGC Student Mentoring (Deeksharambh), AICTE Proctorial Ratio (1:20) & Holistic Student Wellness
               </p>

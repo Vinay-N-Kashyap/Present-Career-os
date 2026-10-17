@@ -285,6 +285,49 @@ function toDbRecord(tableName: string, record: any): any {
       aicte_atal_approved: record.scheme === 'AICTE_ATAL_ACADEMY' || record.aicte_atal_approved !== false
     };
   }
+  if (tableName === 'central_convocation_records') {
+    return {
+      scroll_id: record.scrollId || record.degreeWatermarkToken || record.id,
+      institution_id: record.institutionId || 'inst-apex-001',
+      student_roll_number: record.enrollmentNumber || record.studentId || '2024REG001',
+      degree_name: record.degreeProgram || record.degreeAbbreviation || 'B.Tech',
+      specialization: record.department || 'General',
+      chancellor_gold_medal: record.medalAwarded === 'CHANCELLORS_GOLD_MEDAL' || record.medalAwarded === 'PRESIDENTS_GOLD_MEDAL',
+      scroll_seal_sha256: record.cryptographicParchmentSeal || '0000000000000000000000000000000000000000000000000000000000000000',
+      is_conferred: Boolean(record.dignitarySignaturesVerified)
+    };
+  }
+  if (tableName === 'central_college_affiliations') {
+    return {
+      college_code: record.institutionCode || record.college_code || record.affiliationId || record.id,
+      institution_id: record.institutionId || 'inst-apex-001',
+      college_name: record.institutionName || record.college_name || 'Affiliated College',
+      affiliation_type: record.affiliationType || record.affiliation_type || 'TEMPORARY_PROVISIONAL',
+      inspection_score: Number(record.inspectionScore ?? (Array.isArray(record.findings) ? (100 - record.findings.filter((f: any) => f.severity !== 'COMPLIANT').length * 15) : 85.0)),
+      statutory_deficiencies: record.findings || [],
+      affiliation_status: record.stage || record.affiliation_status || 'PROVISIONAL_GRANTED'
+    };
+  }
+  if (tableName === 'faculty_student_mentorship') {
+    return {
+      mentorship_cohort_id: record.interactionId || record.interactionToken || record.mentorshipCohortId || record.id,
+      institution_id: record.institutionId || 'inst-apex-001',
+      faculty_proctor: record.facultyMentorName || record.faculty_proctor || 'Faculty Proctor',
+      assigned_students: record.assigned_students || [{ studentId: record.studentId, enrollmentNumber: record.enrollmentNumber, studentName: record.studentName }],
+      last_interaction_date: record.date || record.last_interaction_date || new Date().toISOString().split('T')[0],
+      flagged_wellness_concerns: Number(record.riskLevel === 'CRITICAL_CONCERN' ? 1 : (record.flagged_wellness_concerns || 0))
+    };
+  }
+  if (tableName === 'faculty_question_papers') {
+    return {
+      paper_token: record.submissionToken || record.paperId || record.id || record.paper_token,
+      institution_id: record.institutionId || 'inst-apex-001',
+      course_code: record.courseCode || record.course_code || 'CS301',
+      setter_faculty: record.facultySetterName || record.setter_faculty || 'Faculty Setter',
+      blooms_distribution: record.cognitiveDistribution?.levelBreakdown || record.blooms_distribution || { remembering: 20, understanding: 30, applying: 30, analyzing: 20 },
+      moderation_passed: record.status === 'APPROVED_FOR_COE' || Boolean(record.moderation_passed)
+    };
+  }
   // Generic fallback: map keys from camelCase to snake_case
   const mapped: any = {};
   for (const [k, v] of Object.entries(record)) {
@@ -707,6 +750,109 @@ function fromDbRecord<T>(tableName: string, row: any, fallbackDefault: T[]): T {
       lastUpdated: row.updated_at || new Date().toISOString()
     } as unknown as T;
   }
+  if (tableName === 'central_convocation_records') {
+    const def = (fallbackDefault as any[]).find(d => d.scrollId === row.scroll_id || d.degreeWatermarkToken === row.scroll_id);
+    return {
+      scrollId: row.scroll_id,
+      degreeWatermarkToken: def?.degreeWatermarkToken || `SCR-2026-${row.scroll_id}`,
+      studentId: def?.studentId || row.student_roll_number,
+      enrollmentNumber: row.student_roll_number,
+      studentName: def?.studentName || 'Scholar Name',
+      degreeProgram: row.degree_name,
+      degreeAbbreviation: def?.degreeAbbreviation || 'B.Tech',
+      department: row.specialization,
+      cgpa: def?.cgpa || 8.5,
+      classification: def?.classification || 'FIRST_CLASS_WITH_DISTINCTION',
+      confermentMode: def?.confermentMode || 'IN_PERSON',
+      medalAwarded: row.chancellor_gold_medal ? 'CHANCELLORS_GOLD_MEDAL' : def?.medalAwarded,
+      thesisTitle: def?.thesisTitle,
+      dignitarySignaturesVerified: Boolean(row.is_conferred),
+      dispatchTrackingNumber: def?.dispatchTrackingNumber,
+      cryptographicParchmentSeal: row.scroll_seal_sha256,
+      dateConferred: row.created_at?.split('T')[0] || '2026-05-20'
+    } as unknown as T;
+  }
+  if (tableName === 'central_college_affiliations') {
+    const def = (fallbackDefault as any[]).find(d => d.institutionCode === row.college_code || d.affiliationId === row.college_code);
+    return {
+      affiliationId: row.college_code,
+      certificateToken: def?.certificateToken || `AFF-2026-${row.college_code}`,
+      institutionCode: row.college_code,
+      institutionName: row.college_name,
+      trustOrSociety: def?.trustOrSociety || 'Trust / Society Educational Board',
+      affiliationType: row.affiliation_type,
+      academicYear: def?.academicYear || '2026-2027',
+      programmeName: def?.programmeName || 'Engineering & Technology Programmes',
+      approvedIntake: def?.approvedIntake || 120,
+      stage: row.affiliation_status || 'APPLICATION_SUBMITTED',
+      aicChairman: def?.aicChairman,
+      aicMembers: def?.aicMembers || [],
+      inspectionDate: def?.inspectionDate,
+      findings: Array.isArray(row.statutory_deficiencies) ? row.statutory_deficiencies : (def?.findings || []),
+      syndicateResolutionNumber: def?.syndicateResolutionNumber,
+      cryptographicAffiliationSeal: def?.cryptographicAffiliationSeal,
+      lastUpdated: row.updated_at || new Date().toISOString()
+    } as unknown as T;
+  }
+  if (tableName === 'faculty_student_mentorship') {
+    const def = (fallbackDefault as any[]).find(d => d.interactionId === row.mentorship_cohort_id || d.interactionToken === row.mentorship_cohort_id);
+    return {
+      interactionId: row.mentorship_cohort_id,
+      interactionToken: def?.interactionToken || `MNT-2026-${row.mentorship_cohort_id}`,
+      studentId: def?.studentId || 'STU-001',
+      enrollmentNumber: def?.enrollmentNumber || '2024CSB001',
+      studentName: def?.studentName || 'Student Scholar',
+      semester: def?.semester || 4,
+      department: def?.department || 'Computer Science & Engineering',
+      facultyMentorName: row.faculty_proctor,
+      facultyMentorEmpId: def?.facultyMentorEmpId || 'EMP-001',
+      category: def?.category || 'ROUTINE_ACADEMIC_AUDIT',
+      date: row.last_interaction_date || new Date().toISOString().split('T')[0],
+      currentCgpa: def?.currentCgpa || 7.5,
+      attendancePercentage: def?.attendancePercentage || 85.0,
+      riskLevel: (row.flagged_wellness_concerns > 0) ? 'CRITICAL_CONCERN' : (def?.riskLevel || 'LOW_NORMAL'),
+      actionPlanDiscussion: def?.actionPlanDiscussion || 'Regular proctorial review and wellness evaluation.',
+      parentContacted: def?.parentContacted || false,
+      referralToCounselor: (row.flagged_wellness_concerns > 0) || Boolean(def?.referralToCounselor),
+      followUpDate: def?.followUpDate,
+      isResolved: def?.isResolved ?? true,
+      resolutionNotes: def?.resolutionNotes,
+      cryptographicSeal: def?.cryptographicSeal
+    } as unknown as T;
+  }
+  if (tableName === 'faculty_question_papers') {
+    const def = (fallbackDefault as any[]).find(d => d.paperId === row.paper_token || d.submissionToken === row.paper_token);
+    return {
+      paperId: row.paper_token,
+      submissionToken: def?.submissionToken || `QP-2026-${row.paper_token}`,
+      courseCode: row.course_code,
+      courseTitle: def?.courseTitle || `Course ${row.course_code}`,
+      department: def?.department || 'Information Technology',
+      facultySetterName: row.setter_faculty,
+      facultySetterEmpId: def?.facultySetterEmpId || 'EMP-FAC-001',
+      paperSet: def?.paperSet || 'SET_A',
+      targetTotalMarks: def?.targetTotalMarks || 100,
+      examDurationMinutes: def?.examDurationMinutes || 180,
+      questions: def?.questions || [],
+      status: row.moderation_passed ? 'APPROVED_FOR_COE' : (def?.status || 'SUBMITTED_TO_DMC'),
+      cognitiveDistribution: def?.cognitiveDistribution || {
+        lotsMarks: 50,
+        hotsMarks: 50,
+        totalMarks: 100,
+        lotsPercentage: 50,
+        hotsPercentage: 50,
+        levelBreakdown: row.blooms_distribution || {},
+        coBreakdown: {},
+        isBalanced: true,
+        allCosCovered: true
+      },
+      dmcRemarks: def?.dmcRemarks,
+      dmcConvenorName: def?.dmcConvenorName,
+      dmcApprovedDate: def?.dmcApprovedDate,
+      cryptographicSeal: def?.cryptographicSeal,
+      lastUpdated: row.updated_at || new Date().toISOString()
+    } as unknown as T;
+  }
   // Generic camelCase mapper
   const mapped: any = {};
   for (const [k, v] of Object.entries(row)) {
@@ -811,6 +957,14 @@ export async function saveGovernanceRecord<T extends Record<string, any>>(
     ? 'mooc_id'
     : tableName === 'faculty_continuing_education'
     ? 'workshop_code'
+    : tableName === 'central_convocation_records'
+    ? 'scroll_id'
+    : tableName === 'central_college_affiliations'
+    ? 'college_code'
+    : tableName === 'faculty_student_mentorship'
+    ? 'mentorship_cohort_id'
+    : tableName === 'faculty_question_papers'
+    ? 'paper_token'
     : primaryKey.replace(/([A-Z])/g, '_$1').toLowerCase();
 
   // 1. Supabase write

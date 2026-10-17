@@ -13,10 +13,21 @@ import {
   dispatchInAbsentiaDegree,
   exportConvocationScrollsCSV,
 } from '@/lib/admin/centralConvocation';
+import { useGovernanceStore } from '@/lib/hooks/useGovernanceStore';
 
 export default function CentralConvocationManager() {
   const [session] = useState<ConvocationSession>(INITIAL_CONVOCATION_SESSION);
-  const [scrolls, setScrolls] = useState<DegreeScrollRecord[]>(INITIAL_DEGREE_SCROLLS);
+  const {
+    records: scrolls,
+    setRecords: setScrolls,
+    syncSource,
+    isSaving,
+    saveRecord,
+  } = useGovernanceStore<DegreeScrollRecord>(
+    'central_convocation_records',
+    INITIAL_DEGREE_SCROLLS,
+    'scrollId'
+  );
   const [selectedFilter, setSelectedFilter] = useState<'ALL' | 'MEDALISTS' | 'SEALED' | 'UNSEALED' | 'IN_ABSENTIA'>('ALL');
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -93,7 +104,7 @@ export default function CentralConvocationManager() {
   }, [scrolls]);
 
   // Handle Register Scholar
-  const handleRegisterScholar = (e: React.FormEvent) => {
+  const handleRegisterScholar = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!enrollmentNumber.trim() || !studentName.trim() || cgpa <= 0) {
       showToast('Please provide all mandatory scholar enrollment details.');
@@ -115,7 +126,7 @@ export default function CentralConvocationManager() {
         thesisTitle: thesisTitle.trim() || undefined,
       });
 
-      setScrolls([created, ...scrolls]);
+      await saveRecord(created);
       setIsRegisterModalOpen(false);
       showToast(`Graduating degree scroll initialized: ${created.degreeWatermarkToken}`);
     } catch (err: unknown) {
@@ -125,13 +136,13 @@ export default function CentralConvocationManager() {
   };
 
   // Handle Chancellor Sealing
-  const handleAuthorizeSeal = (e: React.FormEvent) => {
+  const handleAuthorizeSeal = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!sealModalScroll) return;
 
     try {
       const updated = authorizeChancellorSealing(sealModalScroll, registrarVerified, vcVerified);
-      setScrolls(scrolls.map((s) => (s.scrollId === updated.scrollId ? updated : s)));
+      await saveRecord(updated);
       setSealModalScroll(null);
       showToast(`Chancellor parchment seal verified for ${updated.studentName}!`);
     } catch (err: unknown) {
@@ -141,13 +152,13 @@ export default function CentralConvocationManager() {
   };
 
   // Handle Postal Dispatch
-  const handlePostalDispatch = (e: React.FormEvent) => {
+  const handlePostalDispatch = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!dispatchModalScroll || !trackingNumber.trim()) return;
 
     try {
       const updated = dispatchInAbsentiaDegree(dispatchModalScroll, trackingNumber.trim());
-      setScrolls(scrolls.map((s) => (s.scrollId === updated.scrollId ? updated : s)));
+      await saveRecord(updated);
       setDispatchModalScroll(null);
       showToast(`In-Absentia degree dispatched via India Post (Tracking: ${trackingNumber})!`);
     } catch (err: unknown) {
@@ -192,9 +203,21 @@ export default function CentralConvocationManager() {
               </svg>
             </span>
             <div>
-              <h1 className="text-2xl font-bold text-white tracking-tight">
-                {session.convocationNumber}th Annual Convocation Degree Scroll Sealing Console
-              </h1>
+              <div className="flex items-center gap-3">
+                <h1 className="text-2xl font-bold text-white tracking-tight">
+                  {session.convocationNumber}th Annual Convocation Degree Scroll Sealing Console
+                </h1>
+                <span className={`px-2.5 py-0.5 rounded-full text-xs font-semibold tracking-wide border ${
+                  syncSource === 'supabase'
+                    ? 'bg-emerald-500/20 text-emerald-300 border-emerald-500/30'
+                    : 'bg-amber-500/20 text-amber-300 border-amber-500/30'
+                }`}>
+                  {syncSource === 'supabase' ? 'Supabase Live' : 'Local Fallback'}
+                </span>
+                {isSaving && (
+                  <span className="text-xs text-rose-400 animate-pulse font-medium">Syncing...</span>
+                )}
+              </div>
               <p className="text-sm text-slate-400">
                 Statutory Degree Conferment Ordinance, Chancellor Protocol & DigiLocker National Academic Depository (NAD)
               </p>

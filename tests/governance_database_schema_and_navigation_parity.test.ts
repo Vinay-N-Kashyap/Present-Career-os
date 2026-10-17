@@ -50,6 +50,10 @@ test('1. Database Migration: 20261018 SQL Schema File Exists & Contains Invarian
   assert.ok(content.includes('public.central_coe_press_custody'));
   assert.ok(content.includes('public.faculty_mooc_courses'));
   assert.ok(content.includes('public.faculty_continuing_education'));
+  assert.ok(content.includes('public.central_convocation_records'));
+  assert.ok(content.includes('public.central_college_affiliations'));
+  assert.ok(content.includes('public.faculty_student_mentorship'));
+  assert.ok(content.includes('public.faculty_question_papers'));
 
   // Verify RLS security invariants
   const rlsMatches = content.match(/ENABLE ROW LEVEL SECURITY/g) || [];
@@ -115,6 +119,35 @@ test('2. Universal Persistence: Resilient Fallback Works Without Crashes', async
     'courseId'
   );
   assert.equal(fdpSave.success, true);
+
+  // Test Batch 5 saving resilience
+  const convocationSave = await saveGovernanceRecord(
+    'central_convocation_records',
+    { scrollId: 'SCROLL-TEST-01', studentName: 'Test Student', degreeName: 'B.Tech', status: 'VERIFIED' },
+    'scrollId'
+  );
+  assert.equal(convocationSave.success, true);
+
+  const affiliationSave = await saveGovernanceRecord(
+    'central_college_affiliations',
+    { collegeCode: 'AFF-TEST-01', collegeName: 'Test College', status: 'AFFILIATED' },
+    'collegeCode'
+  );
+  assert.equal(affiliationSave.success, true);
+
+  const mentorshipSave = await saveGovernanceRecord(
+    'faculty_student_mentorship',
+    { mentorshipCohortId: 'MENTOR-TEST-01', facultyId: 'FAC-01', studentName: 'Student A', status: 'ACTIVE' },
+    'mentorshipCohortId'
+  );
+  assert.equal(mentorshipSave.success, true);
+
+  const paperSave = await saveGovernanceRecord(
+    'faculty_question_papers',
+    { paperToken: 'PAPER-TEST-01', courseCode: 'CS301', title: 'Midterm Exam', status: 'LOCKED' },
+    'paperToken'
+  );
+  assert.equal(paperSave.success, true);
 });
 
 test('3. Campus Admin Shell Navigation: All 40 Portals Route to Real App Router Pages', () => {

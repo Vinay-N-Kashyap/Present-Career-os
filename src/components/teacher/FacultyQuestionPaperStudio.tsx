@@ -15,9 +15,20 @@ import {
   reviewByDmc,
   exportFacultyQuestionPapersCSV,
 } from '@/lib/teacher/facultyQuestionPaper';
+import { useGovernanceStore } from '@/lib/hooks/useGovernanceStore';
 
 export default function FacultyQuestionPaperStudio() {
-  const [papers, setPapers] = useState<FacultyQuestionPaper[]>(INITIAL_FACULTY_PAPERS);
+  const {
+    records: papers,
+    setRecords: setPapers,
+    syncSource,
+    isSaving,
+    saveRecord,
+  } = useGovernanceStore<FacultyQuestionPaper>(
+    'faculty_question_papers',
+    INITIAL_FACULTY_PAPERS,
+    'paperId'
+  );
   const [selectedFilter, setSelectedFilter] = useState<ModerationStatus | 'ALL'>('ALL');
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -93,7 +104,7 @@ export default function FacultyQuestionPaperStudio() {
   }, [papers]);
 
   // Handle Create Paper
-  const handleCreatePaper = (e: React.FormEvent) => {
+  const handleCreatePaper = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!courseCode.trim() || !courseTitle.trim() || !department.trim()) {
       showToast('Please provide course code, title, and department.');
@@ -112,7 +123,7 @@ export default function FacultyQuestionPaperStudio() {
         examDurationMinutes: Number(examDurationMinutes),
       });
 
-      setPapers([created, ...papers]);
+      await saveRecord(created);
       setExpandedPaperId(created.paperId);
       setIsNewPaperModalOpen(false);
       showToast(`Question paper draft created: ${created.submissionToken}`);
@@ -123,7 +134,7 @@ export default function FacultyQuestionPaperStudio() {
   };
 
   // Handle Add Question
-  const handleAddQuestion = (e: React.FormEvent) => {
+  const handleAddQuestion = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!questionModalPaper || !questionText.trim()) {
       showToast('Please provide question text.');
@@ -142,7 +153,7 @@ export default function FacultyQuestionPaperStudio() {
         rubricKeyOutline: rubricKeyOutline.trim() || undefined,
       });
 
-      setPapers(papers.map((p) => (p.paperId === updated.paperId ? updated : p)));
+      await saveRecord(updated);
       setQuestionModalPaper(null);
       setQuestionText('');
       setRubricKeyOutline('');
@@ -154,10 +165,10 @@ export default function FacultyQuestionPaperStudio() {
   };
 
   // Handle Submit to DMC
-  const handleSubmitToDmc = (paper: FacultyQuestionPaper) => {
+  const handleSubmitToDmc = async (paper: FacultyQuestionPaper) => {
     try {
       const updated = submitQuestionPaperToDmc(paper);
-      setPapers(papers.map((p) => (p.paperId === updated.paperId ? updated : p)));
+      await saveRecord(updated);
       showToast(`Paper ${paper.courseCode} submitted to Departmental Moderation Committee.`);
     } catch (err: unknown) {
       const msg = err instanceof Error ? err.message : 'Submission failed.';
@@ -166,7 +177,7 @@ export default function FacultyQuestionPaperStudio() {
   };
 
   // Handle DMC Review
-  const handleDmcReview = (e: React.FormEvent) => {
+  const handleDmcReview = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!dmcModalPaper) return;
 
@@ -177,7 +188,7 @@ export default function FacultyQuestionPaperStudio() {
         remarks: dmcRemarks.trim(),
       });
 
-      setPapers(papers.map((p) => (p.paperId === updated.paperId ? updated : p)));
+      await saveRecord(updated);
       setDmcModalPaper(null);
       showToast(
         dmcDecision === 'APPROVE'
@@ -226,9 +237,21 @@ export default function FacultyQuestionPaperStudio() {
               </svg>
             </span>
             <div>
-              <h1 className="text-2xl font-bold text-white tracking-tight">
-                Faculty Question Paper Authoring & Moderation Studio
-              </h1>
+              <div className="flex items-center gap-3">
+                <h1 className="text-2xl font-bold text-white tracking-tight">
+                  Faculty Question Paper Authoring & Moderation Studio
+                </h1>
+                <span className={`px-2.5 py-0.5 rounded-full text-xs font-semibold tracking-wide border ${
+                  syncSource === 'supabase'
+                    ? 'bg-emerald-500/20 text-emerald-300 border-emerald-500/30'
+                    : 'bg-amber-500/20 text-amber-300 border-amber-500/30'
+                }`}>
+                  {syncSource === 'supabase' ? 'Supabase Live' : 'Local Fallback'}
+                </span>
+                {isSaving && (
+                  <span className="text-xs text-rose-400 animate-pulse font-medium">Syncing...</span>
+                )}
+              </div>
               <p className="text-sm text-slate-400">
                 Outcome-Based Education (OBE) AICTE Exam Reforms & Departmental Moderation Committee (DMC) Workbench
               </p>
