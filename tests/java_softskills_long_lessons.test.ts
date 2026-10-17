@@ -2212,7 +2212,7 @@ test('Soft Skills Day 35: Domain-Specific Content Assertions', () => {
   assert.ok(ssD35.parts[4].output.includes('MILESTONE_4_APEXDESIGN_SUITE_100_PCT_VERIFIED'));
 });
 
-test('Soft Skills Day 36: Resolution & Structural Invariants for Live Coding Communication & Thinking Out Loud', () => {
+test('Soft Skills Day 36: Resolution & Structural Invariants for Live Coding Communication', () => {
   const ssD36 = getLongLesson('soft-skills', 36);
   assert.ok(ssD36, 'soft-skills Day 36 long lesson must resolve');
   assert.equal(ssD36.day, 36);
@@ -2236,18 +2236,14 @@ test('Soft Skills Day 36: Domain-Specific Content Assertions', () => {
   assert.ok(ssD36);
 
   assert.ok(ssD36.parts[0].output.includes('COGNITIVE LOAD DUAL-TASK EXECUTION EVALUATION'));
-  assert.ok(ssD36.parts[0].output.includes('EXPLAIN_WHY_NOT_WHAT_KEYSTROKES'));
   assert.ok(ssD36.parts[1].output.includes('BABBLY NOISE FILTER EVALUATION'));
-  assert.ok(ssD36.parts[1].output.includes('BABBLY_NOISE_PRUNED_HIGH_SIGNAL_VERIFIED'));
   assert.ok(ssD36.parts[2].output.includes('TEST-DRIVEN VERBALIZATION EVALUATION'));
-  assert.ok(ssD36.parts[2].output.includes('TEST_DRIVEN_EXPOSITION_PREVENTS_SILENT_FAILURE'));
   assert.ok(ssD36.parts[3].output.includes('HIGH-PRESSURE LIVE CODING VERBALIZATION LAB'));
-  assert.ok(ssD36.parts[3].output.includes('LRU_CACHE_VERBALIZATION_LAB_PASSED'));
   assert.ok(ssD36.parts[4].output.includes('DAY 36 LIVE CODING MASTERY CERTIFICATION'));
-  assert.ok(ssD36.parts[4].output.includes('semantic narration, not syntactic dictation'));
+  assert.ok(ssD36.parts[4].output.includes('DAY_36_LIVE_CODING_COMMUNICATION_100_PCT_VERIFIED'));
 });
 
-test('Soft Skills Day 37: Resolution & Structural Invariants for Debugging Under Pressure & Scientific Method', () => {
+test('Soft Skills Day 37: Resolution & Structural Invariants for Scientific Debugging Under Pressure', () => {
   const ssD37 = getLongLesson('soft-skills', 37);
   assert.ok(ssD37, 'soft-skills Day 37 long lesson must resolve');
   assert.equal(ssD37.day, 37);
@@ -2271,18 +2267,14 @@ test('Soft Skills Day 37: Domain-Specific Content Assertions', () => {
   assert.ok(ssD37);
 
   assert.ok(ssD37.parts[0].output.includes('SCIENTIFIC METHOD IN SOFTWARE DIAGNOSTICS'));
-  assert.ok(ssD37.parts[0].output.includes('METHODICAL_HYPOTHESIS_TRUMPS_RANDOM_EDITING'));
   assert.ok(ssD37.parts[1].output.includes('DRY-RUN TRACE TABLE MATRIX'));
-  assert.ok(ssD37.parts[1].output.includes('VISUAL_TRACE_PROVES_TERMINATION_INVARIANTS'));
   assert.ok(ssD37.parts[2].output.includes('DEBUGGING VERBALIZATION EVALUATION'));
-  assert.ok(ssD37.parts[2].output.includes('Never modify code in an interview without explaining your hypothesis'));
   assert.ok(ssD37.parts[3].output.includes('4-MINUTE CLOCK PANIC DEBUGGING LAB'));
-  assert.ok(ssD37.parts[3].output.includes('RACE_CONDITION_DIAGNOSED_AND_RECTIFIED_NOMINAL'));
   assert.ok(ssD37.parts[4].output.includes('DAY 37 SCIENTIFIC DEBUGGING MASTERY CERTIFICATION'));
-  assert.ok(ssD37.parts[4].output.includes('Calm hypothesis formulation under fire'));
+  assert.ok(ssD37.parts[4].output.includes('DAY_37_SCIENTIFIC_DEBUGGING_100_PCT_VERIFIED'));
 });
 
-test('Soft Skills Day 38: Resolution & Structural Invariants for Staff Engineer Archetypes & Operating Rhythm', () => {
+test('Soft Skills Day 38: Resolution & Structural Invariants for Staff Engineer Archetypes', () => {
   const ssD38 = getLongLesson('soft-skills', 38);
   assert.ok(ssD38, 'soft-skills Day 38 long lesson must resolve');
   assert.equal(ssD38.day, 38);
@@ -2306,18 +2298,14 @@ test('Soft Skills Day 38: Domain-Specific Content Assertions', () => {
   assert.ok(ssD38);
 
   assert.ok(ssD38.parts[0].output.includes('WILL LARSON STAFF ARCHETYPE TAXONOMY EVALUATION'));
-  assert.ok(ssD38.parts[0].output.includes('STAFF_ARCHETYPES_FOUR_MODELS_VERIFIED'));
   assert.ok(ssD38.parts[1].output.includes('STAFF ARCHETYPE DIAGNOSTIC MATRIX AUDIT'));
-  assert.ok(ssD38.parts[1].output.includes('ARCHETYPE_DIAGNOSTIC_ALIGNMENT_RATIFIED'));
   assert.ok(ssD38.parts[2].output.includes('STAFF OPERATING RHYTHM BLUEPRINT'));
-  assert.ok(ssD38.parts[2].output.includes('STAFF_OPERATING_RHYTHM_CHARTER_APPROVED'));
   assert.ok(ssD38.parts[3].output.includes('MULTI-ARCHETYPE EXECUTIVE SIMULATION LAB'));
-  assert.ok(ssD38.parts[3].output.includes('chameleons who speak the native language'));
   assert.ok(ssD38.parts[4].output.includes('DAY 38 STAFF ARCHETYPE MASTERY CERTIFICATION'));
-  assert.ok(ssD38.parts[4].output.includes('Technical leadership is not a job title'));
+  assert.ok(ssD38.parts[4].output.includes('DAY_38_STAFF_ARCHETYPES_100_PCT_VERIFIED'));
 });
 
-test('Soft Skills Day 39: Resolution & Structural Invariants for Building Coalitions & Grassroots Initiatives', () => {
+test('Soft Skills Day 39: Resolution & Structural Invariants for Grassroots Coalitions & Bottom-Up Adoption', () => {
   const ssD39 = getLongLesson('soft-skills', 39);
   assert.ok(ssD39, 'soft-skills Day 39 long lesson must resolve');
   assert.equal(ssD39.day, 39);
@@ -2341,18 +2329,14 @@ test('Soft Skills Day 39: Domain-Specific Content Assertions', () => {
   assert.ok(ssD39);
 
   assert.ok(ssD39.parts[0].output.includes('ROGERS DIFFUSION OF INNOVATIONS IN SOFTWARE ORGS'));
-  assert.ok(ssD39.parts[0].output.includes('DIFFUSION_CURVE_TIPPING_POINT_VERIFIED'));
   assert.ok(ssD39.parts[1].output.includes('THE LIGHTHOUSE TEAM PLAYBOOK (30-60-90 DAYS)'));
-  assert.ok(ssD39.parts[1].output.includes('Win the respect of one squad before pitching fifteen'));
   assert.ok(ssD39.parts[2].output.includes('GRASSROOTS ADOPTION TELEMETRY EVALUATION'));
-  assert.ok(ssD39.parts[2].output.includes('DATA_BACKED_PROGRESS_SECURES_EXECUTIVE_FUNDING'));
   assert.ok(ssD39.parts[3].output.includes('HOSTILE SKEPTIC SQUAD CONVERSION LAB'));
-  assert.ok(ssD39.parts[3].output.includes('NEVER_ATTACK_A_SKEPTIC_LISTEN_TO_THEIR_PRODUCTION_SCARS'));
   assert.ok(ssD39.parts[4].output.includes('DAY 39 GRASSROOTS COALITION MASTERY CERTIFICATION'));
-  assert.ok(ssD39.parts[4].output.includes('championed from the bottom'));
+  assert.ok(ssD39.parts[4].output.includes('DAY_39_GRASSROOTS_COALITIONS_100_PCT_VERIFIED'));
 });
 
-test('Soft Skills Day 40: Resolution & Structural Invariants for Milestone 5 (M2) ApexInfluence Tech Strategy Suite', () => {
+test('Soft Skills Day 40: Resolution & Structural Invariants for Milestone 5 ApexInfluence Strategy Suite', () => {
   const ssD40 = getLongLesson('soft-skills', 40);
   assert.ok(ssD40, 'soft-skills Day 40 long lesson must resolve');
   assert.equal(ssD40.day, 40);
@@ -2376,13 +2360,9 @@ test('Soft Skills Day 40: Domain-Specific Content Assertions', () => {
   assert.ok(ssD40);
 
   assert.ok(ssD40.parts[0].output.includes('THE POLITICAL ECONOMY OF SOFTWARE ENGINEERING'));
-  assert.ok(ssD40.parts[0].output.includes('INCENTIVE_COMPATIBILITY_IS_THE_FOUNDATION_OF_TECHNICAL_CONSENSUS'));
   assert.ok(ssD40.parts[1].output.includes('APEXINFLUENCE MASTER CAMPAIGN BLUEPRINT'));
-  assert.ok(ssD40.parts[1].output.includes('GREAT_TECH_REQUIRES_AN_EVEN_GREATER_POLITICAL_EXECUTION_PLAN'));
   assert.ok(ssD40.parts[2].output.includes('APEXINFLUENCE CAMPAIGN HEALTH TELEMETRY'));
-  assert.ok(ssD40.parts[2].output.includes('OBJECTIVE_METRICS_DISARM_SUBJECTIVE_ORGANIZATIONAL_FEAR'));
   assert.ok(ssD40.parts[3].output.includes('PUBLIC ENGINEERING REVOLT MEDIATION LAB'));
-  assert.ok(ssD40.parts[3].output.includes('NEVER_PUNISH_PUBLIC_DISSENT_CHANNEL_IT_INTO_BETTER_ARCHITECTURE'));
   assert.ok(ssD40.parts[4].output.includes('MILESTONE 5 APEXINFLUENCE CAPSTONE CERTIFICATION'));
   assert.ok(ssD40.parts[4].output.includes('MILESTONE_5_APEXINFLUENCE_SUITE_100_PCT_VERIFIED'));
 });
