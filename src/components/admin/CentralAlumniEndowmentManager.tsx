@@ -11,9 +11,20 @@ import {
   activateEndowmentChair,
   exportAlumniEndowmentLedgerCSV,
 } from '@/lib/admin/centralAlumniEndowment';
+import { useGovernanceStore } from '@/lib/hooks/useGovernanceStore';
 
 export default function CentralAlumniEndowmentManager() {
-  const [endowments, setEndowments] = useState<EndowmentPledgeRecord[]>(INITIAL_ALUMNI_ENDOWMENTS);
+  const {
+    records: endowments,
+    setRecords: setEndowments,
+    syncSource,
+    isSaving,
+    saveRecord
+  } = useGovernanceStore<EndowmentPledgeRecord>(
+    'central_alumni_endowments',
+    INITIAL_ALUMNI_ENDOWMENTS,
+    'endowmentId'
+  );
   const [filterCategory, setFilterCategory] = useState<EndowmentCategory | 'ALL'>('ALL');
   const [isPledgeModalOpen, setIsPledgeModalOpen] = useState(false);
   const [isRealizeModalOpen, setIsRealizeModalOpen] = useState(false);
@@ -48,7 +59,7 @@ export default function CentralAlumniEndowmentManager() {
   const certifiedRate = endowments.length > 0 ? ((certified80gCount / endowments.length) * 100).toFixed(1) : '0';
   const operationalChairsCount = endowments.filter((e) => e.stage === 'ENDOWMENT_CHAIR_OPERATIONAL').length;
 
-  const handleCreatePledge = (e: React.FormEvent) => {
+  const handleCreatePledge = async (e: React.FormEvent) => {
     e.preventDefault();
     setFormError(null);
     try {
@@ -69,6 +80,7 @@ export default function CentralAlumniEndowmentManager() {
       });
 
       setEndowments([created, ...endowments]);
+      await saveRecord(created);
       setIsPledgeModalOpen(false);
       // Reset form
       setNewDonorName('');
@@ -90,12 +102,13 @@ export default function CentralAlumniEndowmentManager() {
     setIsRealizeModalOpen(true);
   };
 
-  const handleConfirmRealization = (e: React.FormEvent) => {
+  const handleConfirmRealization = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!selectedEndowment) return;
     try {
       const updated = realizeCorpusAndCertify80G(selectedEndowment, Number(realizeInrInput));
       setEndowments(endowments.map((item) => (item.endowmentId === updated.endowmentId ? updated : item)));
+      await saveRecord(updated);
       setIsRealizeModalOpen(false);
       setSelectedEndowment(null);
     } catch (err: unknown) {
@@ -103,10 +116,11 @@ export default function CentralAlumniEndowmentManager() {
     }
   };
 
-  const handleActivateChair = (endowment: EndowmentPledgeRecord) => {
+  const handleActivateChair = async (endowment: EndowmentPledgeRecord) => {
     try {
       const updated = activateEndowmentChair(endowment);
       setEndowments(endowments.map((item) => (item.endowmentId === updated.endowmentId ? updated : item)));
+      await saveRecord(updated);
     } catch (err: unknown) {
       alert(err instanceof Error ? err.message : 'Error activating endowment chair.');
     }
@@ -146,6 +160,11 @@ export default function CentralAlumniEndowmentManager() {
         </div>
 
         <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 border border-slate-800 text-slate-300">
+            <span className={`w-2 h-2 rounded-full ${syncSource === 'supabase' ? 'bg-emerald-400 animate-pulse' : 'bg-amber-400'}`} />
+            <span>{syncSource === 'supabase' ? 'Live Supabase DB' : syncSource === 'local_storage' ? 'Local Persistence' : 'Runtime Cache'}</span>
+            {isSaving && <span className="text-cyan-400 ml-1">(saving...)</span>}
+          </div>
           <button
             onClick={handleDownloadCsv}
             className="px-4 py-2 text-sm font-medium rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition"

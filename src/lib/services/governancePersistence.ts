@@ -374,6 +374,56 @@ function toDbRecord(tableName: string, record: any): any {
       feedback_notes: record.recommendations || record.commendations || record.feedback_notes || 'Pedagogical feedback'
     };
   }
+  if (tableName === 'central_sports_quota') {
+    return {
+      athlete_id: record.applicantId || record.trackingToken || record.id,
+      institution_id: record.institutionId || 'inst-apex-001',
+      athlete_name: record.fullName || record.athlete_name || 'Athlete Applicant',
+      sport_discipline: record.sportsDiscipline || record.sport_discipline || 'ATHLETICS',
+      highest_level_represented: record.achievementTier || record.highest_level_represented || 'TIER_2_ALL_INDIA_AIU',
+      trials_fitness_score: Number(record.trialMetrics?.fitnessTrialScore ?? record.compositeSportsMeritScore ?? record.trials_fitness_score ?? 0),
+      quota_seat_allocated: record.stage === 'ADMISSION_CONFIRMED' || Boolean(record.quota_seat_allocated)
+    };
+  }
+  if (tableName === 'central_alumni_endowments') {
+    return {
+      corpus_id: record.endowmentId || record.pledgeToken || record.id,
+      institution_id: record.institutionId || 'inst-apex-001',
+      donor_name: record.donorFullName || record.donor_name || 'Alumni Donor',
+      graduating_batch_year: Number(record.donorBatchYear || record.graduating_batch_year || 2000),
+      pledged_amount_inr: Number(record.pledgedAmountInr ?? record.realizedAmountInr ?? record.pledged_amount_inr ?? 0),
+      endowment_purpose: record.category || record.purposeNote || record.endowment_purpose || 'CHAIR_PROFESSORSHIP',
+      tax_80g_receipt_issued: Boolean(record.section80gCertNumber || record.tax_80g_receipt_issued)
+    };
+  }
+  if (tableName === 'faculty_department_requisitions') {
+    return {
+      indent_number: record.indentId || record.indentRefNumber || record.id,
+      institution_id: record.institutionId || 'inst-apex-001',
+      requesting_faculty: record.facultyPi || record.requesting_faculty || 'Faculty PI',
+      department: record.department || 'Engineering',
+      item_description: Array.isArray(record.items) && record.items.length > 0 ? record.items[0].description : (record.item_description || 'Department Equipment'),
+      estimated_cost_inr: Number(record.totalEstimatedCostInr ?? record.estimated_cost_inr ?? 0),
+      gem_product_id: record.poNumber || record.gem_product_id || 'GEM-2026-001',
+      hod_approval_status: record.stage || record.hod_approval_status || 'APPROVED'
+    };
+  }
+  if (tableName === 'faculty_syllabi') {
+    return {
+      syllabus_code: record.syllabusId || record.courseCode || record.id,
+      institution_id: record.institutionId || 'inst-apex-001',
+      course_id: record.courseCode || record.course_id || 'CS401',
+      course_title: record.courseTitle || record.course_title || 'Distributed Systems',
+      faculty_id: record.facultyId || record.faculty_id || 'fac-prof-rao',
+      lecture_hours: Number(record.lectureCredits ? record.lectureCredits * 15 : (record.lecture_hours || 45)),
+      tutorial_hours: 15,
+      practical_hours: Number(record.labCredits ? record.labCredits * 30 : (record.practical_hours || 30)),
+      credit_structure: `${record.lectureCredits || 3}-1-${record.labCredits || 1}`,
+      learning_outcomes: record.clos || [],
+      delivery_plan: record.weeklyPlan || [],
+      status: 'APPROVED'
+    };
+  }
   // Generic fallback: map keys from camelCase to snake_case
   const mapped: any = {};
   for (const [k, v] of Object.entries(record)) {
@@ -1010,6 +1060,109 @@ function fromDbRecord<T>(tableName: string, row: any, fallbackDefault: T[]): T {
       cryptographicSeal: def?.cryptographicSeal
     } as unknown as T;
   }
+  if (tableName === 'central_sports_quota') {
+    const def = (fallbackDefault as any[]).find(d => d.applicantId === row.athlete_id || d.trackingToken === row.athlete_id);
+    return {
+      applicantId: row.athlete_id,
+      trackingToken: def?.trackingToken || `SPRT-2026-${row.sport_discipline}-${row.athlete_id}`,
+      fullName: row.athlete_name,
+      enrollmentOrAppNo: def?.enrollmentOrAppNo || `APP-SPRT-${row.athlete_id}`,
+      sportsDiscipline: row.sport_discipline,
+      achievementTier: row.highest_level_represented,
+      highestTournamentName: def?.highestTournamentName || 'National Championship',
+      certificateIssuingAuthority: def?.certificateIssuingAuthority || 'Association of Indian Universities (AIU)',
+      certificateYear: def?.certificateYear || 2025,
+      departmentApplied: def?.departmentApplied || 'Computer Science & Engineering',
+      baseAchievementPoints: def?.baseAchievementPoints || 85,
+      trialMetrics: def?.trialMetrics || {
+        sprint50mSeconds: 6.8,
+        standingBroadJumpMeters: 2.45,
+        enduranceRun1000mMinutes: 3.4,
+        skillTrialScore: 40,
+        fitnessTrialScore: Number(row.trials_fitness_score) || 40,
+        totalTrialScore: Number(row.trials_fitness_score) ? (Number(row.trials_fitness_score) + 40) : 80,
+        isTrialQualified: true
+      },
+      compositeSportsMeritScore: Number(row.trials_fitness_score) || 82.5,
+      stage: row.quota_seat_allocated ? 'ADMISSION_CONFIRMED' : (def?.stage || 'FITNESS_TRIALS_COMPLETED'),
+      sportsScholarshipAwardedInr: def?.sportsScholarshipAwardedInr || 35000,
+      disqualificationReason: def?.disqualificationReason,
+      cryptographicSeal: def?.cryptographicSeal,
+      lastUpdated: row.updated_at || new Date().toISOString()
+    } as unknown as T;
+  }
+  if (tableName === 'central_alumni_endowments') {
+    const def = (fallbackDefault as any[]).find(d => d.endowmentId === row.corpus_id || d.pledgeToken === row.corpus_id);
+    return {
+      endowmentId: row.corpus_id,
+      pledgeToken: def?.pledgeToken || `ENDOW-2026-${row.corpus_id}`,
+      donorFullName: row.donor_name,
+      donorBatchYear: Number(row.graduating_batch_year) || 2000,
+      donorAlmaMaterDegree: def?.donorAlmaMaterDegree || 'B.Tech Computer Science',
+      donorPanNumber: def?.donorPanNumber || 'ABCDE1234F',
+      donorEmail: def?.donorEmail || 'alumni@alumni.univ.ac.in',
+      donorCurrentOrganization: def?.donorCurrentOrganization || 'Global Tech Partners',
+      category: row.endowment_purpose,
+      pledgedAmountInr: Number(row.pledged_amount_inr) || 50000000,
+      pledgedCurrency: def?.pledgedCurrency || 'INR',
+      exchangeRateToInr: def?.exchangeRateToInr || 1.0,
+      realizedAmountInr: Number(row.pledged_amount_inr) || 50000000,
+      isForeignContribution: def?.isForeignContribution || false,
+      fcraClearanceNumber: def?.fcraClearanceNumber,
+      purposeNote: row.endowment_purpose,
+      stage: row.tax_80g_receipt_issued ? 'CORPUS_RECOLLECTED_80G_ISSUED' : (def?.stage || 'PLEDGE_REGISTERED'),
+      annualNetPayoutInr: def?.annualNetPayoutInr || (Number(row.pledged_amount_inr) * 0.07),
+      section80gCertNumber: row.tax_80g_receipt_issued ? (def?.section80gCertNumber || `80G-2026-${row.corpus_id}`) : undefined,
+      cryptographicSeal: def?.cryptographicSeal,
+      lastUpdated: row.updated_at || new Date().toISOString()
+    } as unknown as T;
+  }
+  if (tableName === 'faculty_department_requisitions') {
+    const def = (fallbackDefault as any[]).find(d => d.indentId === row.indent_number || d.indentRefNumber === row.indent_number);
+    return {
+      indentId: row.indent_number,
+      indentRefNumber: def?.indentRefNumber || `IND-2026-${row.indent_number}`,
+      facultyPi: row.requesting_faculty,
+      facultyEmpId: def?.facultyEmpId || 'FAC-EMP-001',
+      department: row.department,
+      category: def?.category || 'RESEARCH_EQUIPMENT_CAPEX',
+      budgetHead: def?.budgetHead || 'EXT_SPONSORED_RESEARCH',
+      budgetProjectCode: def?.budgetProjectCode || 'DST-SERB-CRG-2025-102',
+      availableBudgetInr: def?.availableBudgetInr || 2500000,
+      items: def?.items || [{ description: row.item_description, quantity: 1, unit: 'Unit', estimatedUnitPrice: Number(row.estimated_cost_inr) || 450000, catalogNumber: row.gem_product_id }],
+      totalEstimatedCostInr: Number(row.estimated_cost_inr) || 450000,
+      isPac: def?.isPac || false,
+      pacJustification: def?.pacJustification,
+      stage: row.hod_approval_status || 'HOD_RECOMMENDED',
+      poNumber: row.gem_product_id,
+      vendorName: def?.vendorName,
+      assetInwarding: def?.assetInwarding,
+      cryptographicSeal: def?.cryptographicSeal,
+      lastUpdated: row.updated_at || new Date().toISOString()
+    } as unknown as T;
+  }
+  if (tableName === 'faculty_syllabi') {
+    const def = (fallbackDefault as any[]).find(d => d.syllabusId === row.syllabus_code || d.courseCode === row.course_id);
+    return {
+      syllabusId: row.syllabus_code,
+      institutionId: row.institution_id,
+      facultyId: row.faculty_id,
+      courseCode: row.course_id,
+      courseTitle: row.course_title,
+      department: def?.department || 'Computer Science & Engineering',
+      semester: def?.semester || 6,
+      academicYear: def?.academicYear || '2026-2027',
+      totalCredits: def?.totalCredits || 4,
+      lectureCredits: Number(row.lecture_hours ? row.lecture_hours / 15 : 3),
+      labCredits: Number(row.practical_hours ? row.practical_hours / 30 : 1),
+      totalContactHours: (Number(row.lecture_hours) || 45) + (Number(row.practical_hours) || 30),
+      clos: (row.learning_outcomes && Array.isArray(row.learning_outcomes) && row.learning_outcomes.length > 0) ? row.learning_outcomes : (def?.clos || []),
+      modules: def?.modules || [],
+      weeklyPlan: (row.delivery_plan && Array.isArray(row.delivery_plan) && row.delivery_plan.length > 0) ? row.delivery_plan : (def?.weeklyPlan || []),
+      createdAt: row.created_at || new Date().toISOString(),
+      updatedAt: row.updated_at || new Date().toISOString()
+    } as unknown as T;
+  }
   // Generic camelCase mapper
   const mapped: any = {};
   for (const [k, v] of Object.entries(row)) {
@@ -1130,6 +1283,14 @@ export async function saveGovernanceRecord<T extends Record<string, any>>(
     ? 'grant_request_id'
     : tableName === 'faculty_academic_audits'
     ? 'audit_id'
+    : tableName === 'central_sports_quota'
+    ? 'athlete_id'
+    : tableName === 'central_alumni_endowments'
+    ? 'corpus_id'
+    : tableName === 'faculty_department_requisitions'
+    ? 'indent_number'
+    : tableName === 'faculty_syllabi'
+    ? 'syllabus_code'
     : primaryKey.replace(/([A-Z])/g, '_$1').toLowerCase();
 
   // 1. Supabase write

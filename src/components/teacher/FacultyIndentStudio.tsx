@@ -12,9 +12,20 @@ import {
   completeAssetInwarding,
   exportFacultyIndentsCSV,
 } from '@/lib/teacher/facultyIndents';
+import { useGovernanceStore } from '@/lib/hooks/useGovernanceStore';
 
 export default function FacultyIndentStudio() {
-  const [indents, setIndents] = useState<FacultyIndentRecord[]>(SEED_INDENTS);
+  const {
+    records: indents,
+    setRecords: setIndents,
+    syncSource,
+    isSaving,
+    saveRecord
+  } = useGovernanceStore<FacultyIndentRecord>(
+    'faculty_department_requisitions',
+    SEED_INDENTS,
+    'indentId'
+  );
   const [selectedCategory, setSelectedCategory] = useState<IndentCategory | 'ALL'>('ALL');
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -102,7 +113,7 @@ export default function FacultyIndentStudio() {
     setItemRows(itemRows.filter((_, i) => i !== index));
   };
 
-  const handleCreateIndent = (e: React.FormEvent) => {
+  const handleCreateIndent = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!facultyPi.trim() || itemRows.some((r) => !r.description.trim() || r.quantity <= 0)) {
       showToast('Please specify valid item descriptions and quantities');
@@ -132,6 +143,7 @@ export default function FacultyIndentStudio() {
       });
 
       setIndents([created, ...indents]);
+      await saveRecord(created);
       setIsNewIndentModalOpen(false);
       showToast(`Indent ${created.indentNumber} drafted successfully!`);
     } catch (err: unknown) {
@@ -140,7 +152,7 @@ export default function FacultyIndentStudio() {
     }
   };
 
-  const handleAdvanceStage = (e: React.FormEvent) => {
+  const handleAdvanceStage = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!stageModalIndent) return;
 
@@ -151,13 +163,14 @@ export default function FacultyIndentStudio() {
     });
 
     setIndents(indents.map((i) => (i.indentId === updated.indentId ? updated : i)));
+    await saveRecord(updated);
     setStageModalIndent(null);
     setPoNumber('');
     setVendorName('');
     showToast(`Indent stage advanced to ${targetStage.replace(/_/g, ' ')}`);
   };
 
-  const handleCompleteInwarding = (e: React.FormEvent) => {
+  const handleCompleteInwarding = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!inwardModalIndent || !inspectorFaculty.trim() || !invoiceNumber.trim()) {
       showToast('Inspector name and vendor invoice number are required');
@@ -171,6 +184,7 @@ export default function FacultyIndentStudio() {
     );
 
     setIndents(indents.map((i) => (i.indentId === updated.indentId ? updated : i)));
+    await saveRecord(updated);
     setInwardModalIndent(null);
     showToast(`Consignment inspected! Asset tagged: ${updated.assetTagNumber}`);
   };
@@ -223,6 +237,11 @@ export default function FacultyIndentStudio() {
             </p>
           </div>
           <div className="flex flex-wrap items-center gap-3">
+            <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-800 border border-slate-700 text-slate-300">
+              <span className={`w-2 h-2 rounded-full ${syncSource === 'supabase' ? 'bg-emerald-400 animate-pulse' : 'bg-amber-400'}`} />
+              <span>{syncSource === 'supabase' ? 'Live Supabase DB' : syncSource === 'local_storage' ? 'Local Persistence' : 'Runtime Cache'}</span>
+              {isSaving && <span className="text-cyan-400 ml-1">(saving...)</span>}
+            </div>
             <button
               onClick={() => setIsNewIndentModalOpen(true)}
               className="bg-teal-600 hover:bg-teal-500 text-white font-medium px-4 py-2.5 rounded-xl shadow-lg transition flex items-center gap-2 border border-teal-400/40 text-sm"

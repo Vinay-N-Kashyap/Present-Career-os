@@ -58,6 +58,10 @@ test('1. Database Migration: 20261018 SQL Schema File Exists & Contains Invarian
   assert.ok(content.includes('public.central_plagiarism_tribunals'));
   assert.ok(content.includes('public.faculty_travel_grants'));
   assert.ok(content.includes('public.faculty_academic_audits'));
+  assert.ok(content.includes('public.central_sports_quota'));
+  assert.ok(content.includes('public.central_alumni_endowments'));
+  assert.ok(content.includes('public.faculty_department_requisitions'));
+  assert.ok(content.includes('public.faculty_syllabi'));
 
   // Verify RLS security invariants
   const rlsMatches = content.match(/ENABLE ROW LEVEL SECURITY/g) || [];
@@ -181,6 +185,35 @@ test('2. Universal Persistence: Resilient Fallback Works Without Crashes', async
     'auditId'
   );
   assert.equal(auditSave.success, true);
+
+  // Test Batch 7 saving resilience
+  const sportsSave = await saveGovernanceRecord(
+    'central_sports_quota',
+    { applicantId: 'SPRT-TEST-01', fullName: 'Athlete A', sportsDiscipline: 'ATHLETICS', highestTournamentName: 'State' },
+    'applicantId'
+  );
+  assert.equal(sportsSave.success, true);
+
+  const endowmentSave = await saveGovernanceRecord(
+    'central_alumni_endowments',
+    { endowmentId: 'ENDOW-TEST-01', donorFullName: 'Donor A', pledgedAmountInr: 1000000, category: 'CHAIR_PROFESSORSHIP' },
+    'endowmentId'
+  );
+  assert.equal(endowmentSave.success, true);
+
+  const requisitionSave = await saveGovernanceRecord(
+    'faculty_department_requisitions',
+    { indentId: 'IND-TEST-01', facultyPi: 'Dr. Requester', department: 'Biotechnology', items: [{ description: 'Test Item', quantity: 1, unit: 'Unit', estimatedUnitPrice: 50000 }] },
+    'indentId'
+  );
+  assert.equal(requisitionSave.success, true);
+
+  const syllabusSave = await saveGovernanceRecord(
+    'faculty_syllabi',
+    { syllabusId: 'SYLLABUS-TEST-01', courseCode: 'CS401', courseTitle: 'Distributed Systems', facultyId: 'FAC-01' },
+    'syllabusId'
+  );
+  assert.equal(syllabusSave.success, true);
 });
 
 test('3. Campus Admin Shell Navigation: All 40 Portals Route to Real App Router Pages', () => {

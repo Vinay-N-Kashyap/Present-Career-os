@@ -9,6 +9,7 @@ import {
   computeSyllabusVelocity, 
   exportLessonPlanCSV 
 } from '@/lib/teacher/syllabus';
+import { useGovernanceStore } from '@/lib/hooks/useGovernanceStore';
 
 interface SyllabusPlannerStudioProps {
   institutionId?: string;
@@ -67,20 +68,32 @@ export const SyllabusPlannerStudio: React.FC<SyllabusPlannerStudioProps> = ({
     });
   }, [institutionId, facultyId]);
 
-  const [syllabus, setSyllabus] = useState<CourseSyllabus>(initialSyllabus);
+  const {
+    records: syllabi,
+    setRecords: setSyllabi,
+    syncSource,
+    isSaving,
+    saveRecord
+  } = useGovernanceStore<CourseSyllabus>(
+    'faculty_syllabi',
+    [initialSyllabus],
+    'syllabusId'
+  );
+  const syllabus = syllabi[0] || initialSyllabus;
   const [targetWeek, setTargetWeek] = useState<number>(5);
 
   const velocity = useMemo(() => {
     return computeSyllabusVelocity(syllabus, targetWeek);
   }, [syllabus, targetWeek]);
 
-  const handleUpdateHours = (weekNumber: number, hours: number) => {
+  const handleUpdateHours = async (weekNumber: number, hours: number) => {
     const updated = recordWeeklyProgress(
       { ...syllabus, weeklyPlan: [...syllabus.weeklyPlan.map(w => ({ ...w }))] },
       weekNumber,
       hours
     );
-    setSyllabus(updated);
+    setSyllabi([updated]);
+    await saveRecord(updated);
   };
 
   const handleExportCSV = () => {
@@ -117,6 +130,11 @@ export const SyllabusPlannerStudio: React.FC<SyllabusPlannerStudioProps> = ({
           </div>
 
           <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-800 border border-slate-700 text-slate-300">
+              <span className={`w-2 h-2 rounded-full ${syncSource === 'supabase' ? 'bg-emerald-400 animate-pulse' : 'bg-amber-400'}`} />
+              <span>{syncSource === 'supabase' ? 'Live Supabase DB' : syncSource === 'local_storage' ? 'Local Persistence' : 'Runtime Cache'}</span>
+              {isSaving && <span className="text-cyan-400 ml-1">(saving...)</span>}
+            </div>
             <button
               onClick={handleExportCSV}
               className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-medium text-sm transition"

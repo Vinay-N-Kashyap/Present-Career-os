@@ -15,9 +15,20 @@ import {
   confirmSportsAdmission,
   exportSportsQuotaLedgerCSV,
 } from '@/lib/admin/centralSports';
+import { useGovernanceStore } from '@/lib/hooks/useGovernanceStore';
 
 export default function CentralSportsManager() {
-  const [applicants, setApplicants] = useState<SportsQuotaApplicant[]>(INITIAL_SPORTS_APPLICANTS);
+  const {
+    records: applicants,
+    setRecords: setApplicants,
+    syncSource,
+    isSaving,
+    saveRecord
+  } = useGovernanceStore<SportsQuotaApplicant>(
+    'central_sports_quota',
+    INITIAL_SPORTS_APPLICANTS,
+    'applicantId'
+  );
   const [selectedDiscipline, setSelectedDiscipline] = useState<string>('ALL');
   const [selectedApplicant, setSelectedApplicant] = useState<SportsQuotaApplicant | null>(null);
 
@@ -72,7 +83,7 @@ export default function CentralSportsManager() {
     : applicants.filter((a) => a.sportsDiscipline === selectedDiscipline);
 
   // Handlers
-  const handleRegister = (e: React.FormEvent) => {
+  const handleRegister = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
       const created = registerSportsApplicant({
@@ -87,6 +98,7 @@ export default function CentralSportsManager() {
       });
 
       setApplicants([created, ...applicants]);
+      await saveRecord(created);
       setShowRegisterModal(false);
       showMsg(`Registered sports quota applicant ${created.fullName} (${created.trackingToken}) with ${created.baseAchievementPoints} base merit points.`, 'success');
     } catch (err: any) {
@@ -94,7 +106,7 @@ export default function CentralSportsManager() {
     }
   };
 
-  const handleRecordTrials = (e: React.FormEvent) => {
+  const handleRecordTrials = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!selectedApplicant) return;
     try {
@@ -108,6 +120,7 @@ export default function CentralSportsManager() {
 
       setApplicants(applicants.map((a) => (a.applicantId === updated.applicantId ? updated : a)));
       setSelectedApplicant(updated);
+      await saveRecord(updated);
       setShowTrialsModal(false);
       if (updated.trialMetrics?.isTrialQualified) {
         showMsg(`Trials passed! Composite sports merit score: ${updated.compositeSportsMeritScore}/100.`, 'success');
@@ -119,13 +132,14 @@ export default function CentralSportsManager() {
     }
   };
 
-  const handleOfferAdmission = (e: React.FormEvent) => {
+  const handleOfferAdmission = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!selectedApplicant) return;
     try {
       const updated = offerSportsQuotaAdmission(selectedApplicant, Number(scholarshipInr));
       setApplicants(applicants.map((a) => (a.applicantId === updated.applicantId ? updated : a)));
       setSelectedApplicant(updated);
+      await saveRecord(updated);
       setShowOfferModal(false);
       showMsg(`Supernumerary sports quota seat offered with ₹${scholarshipInr} annual sports scholarship.`, 'success');
     } catch (err: any) {
@@ -133,10 +147,11 @@ export default function CentralSportsManager() {
     }
   };
 
-  const handleConfirmAdmission = (applicant: SportsQuotaApplicant) => {
+  const handleConfirmAdmission = async (applicant: SportsQuotaApplicant) => {
     try {
       const updated = confirmSportsAdmission(applicant);
       setApplicants(applicants.map((a) => (a.applicantId === updated.applicantId ? updated : a)));
+      await saveRecord(updated);
       showMsg(`Sports quota admission confirmed for ${updated.fullName}!`, 'success');
     } catch (err: any) {
       showMsg(err.message, 'error');
@@ -171,6 +186,11 @@ export default function CentralSportsManager() {
           </p>
         </div>
         <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-800 border border-slate-700 text-slate-300">
+            <span className={`w-2 h-2 rounded-full ${syncSource === 'supabase' ? 'bg-emerald-400 animate-pulse' : 'bg-amber-400'}`} />
+            <span>{syncSource === 'supabase' ? 'Live Supabase DB' : syncSource === 'local_storage' ? 'Local Persistence' : 'Runtime Cache'}</span>
+            {isSaving && <span className="text-cyan-400 ml-1">(saving...)</span>}
+          </div>
           <button
             onClick={() => setShowRegisterModal(true)}
             className="px-4 py-2 bg-indigo-600 hover:bg-indigo-500 text-white rounded-lg text-sm font-medium transition flex items-center gap-2 shadow-sm"
