@@ -1,207 +1,211 @@
-[
-  {
-    "part": 1,
-    "codeHash": "da513388d4168dc0686a44c68fc8c0ed6170a19b4e58c8641cb656a600c5ecb3",
-    "data": {
-      "template": "workflow",
-      "title": "Principal Architect RFC Specification: $50M 3-Year Infr",
-      "subtitle": "Day 56 Part 1 Enterprise Systems Telemetry & Invariant Audit",
-      "columns": [
-        "Gate ID",
-        "Control Parameter",
-        "Kernel Metric / Telemetry",
-        "Status"
-      ],
-      "rows": [
-        [
-          "Check 1",
-          "BLUEPRINT_CAPEX_OPEX",
-          "50M_USD_3YR_MODERNIZATION_BU",
-          "Verified 100%"
+{
+  "day": 56,
+  "course": "comp_fund",
+  "entries": [
+    {
+      "stepId": "cf-d56-p1",
+      "partTitle": "The Principal Systems Architect Modernization RFC Specification",
+      "template": "cells",
+      "codeHash": "da513388d4168dc0686a44c68fc8c0ed6170a19b4e58c8641cb656a600c5ecb3",
+      "data": {
+        "title": "Systems Architecture Telemetry: The Principal Systems Architect Modernization RFC Specification",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
         ],
-        [
-          "Check 2",
-          "HYBRID_CLOUD_TOPOLOGY",
-          "PRIVATE_EQUINIX_FABRIC_PLUS_",
-          "Verified 100%"
-        ],
-        [
-          "Check 3",
-          "CONSOLIDATION_RATIO",
-          "12_TO_1_BAREMETAL_TO_FIRECRA",
-          "Verified 100%"
-        ],
-        [
-          "Check 4",
-          "SLA_AVAILABILITY_TARGET",
-          "99_999_PCT_HIGH_AVAILABILITY",
-          "Verified 100%"
+        "rows": [
+          [
+            "Check 1",
+            "BLUEPRINT_CAPEX_OPEX",
+            "50M_USD_3YR_MODERNIZATION_BU",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "HYBRID_CLOUD_TOPOLOGY",
+            "PRIVATE_EQUINIX_FABRIC_PLUS_",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "CONSOLIDATION_RATIO",
+            "12_TO_1_BAREMETAL_TO_FIRECRA",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "SLA_AVAILABILITY_TARGET",
+            "99_999_PCT_HIGH_AVAILABILITY",
+            "Verified 100%"
+          ]
         ]
-      ]
-    }
-  },
-  {
-    "part": 2,
-    "codeHash": "7af5ba91c2ff7c330cbed87c8f75de12b80bccb81e44d623d65ac21f9833f977",
-    "data": {
-      "template": "workflow",
-      "title": "Detective Challenge: The $15M Lift-and-Shift Cloud Cost",
-      "subtitle": "Day 56 Part 2 Enterprise Systems Telemetry & Invariant Audit",
-      "columns": [
-        "Gate ID",
-        "Control Parameter",
-        "Kernel Metric / Telemetry",
-        "Status"
-      ],
-      "rows": [
-        [
-          "Check 1",
-          "AUDIT_EVENT",
-          "15M_USD_CLOUD_BILLING_EXPLOS",
-          "Verified 100%"
+      }
+    },
+    {
+      "stepId": "cf-d56-p2",
+      "partTitle": "The Lift-and-Shift Cloud Cost Explosion Forensic Challenge",
+      "template": "cells",
+      "codeHash": "7af5ba91c2ff7c330cbed87c8f75de12b80bccb81e44d623d65ac21f9833f977",
+      "data": {
+        "title": "Systems Architecture Telemetry: The Lift-and-Shift Cloud Cost Explosion Forensic Challenge",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
         ],
-        [
-          "Check 2",
-          "UNATTACHED_EBS_STORAGE",
-          "420_TERABYTES_PROVISIONED_IO",
-          "Verified 100%"
-        ],
-        [
-          "Check 3",
-          "INTER_AZ_TRANSFER_TAX",
-          "850000_USD_MONTHLY_UNCOMPRES",
-          "Verified 100%"
-        ],
-        [
-          "Check 4",
-          "OVER_PROVISIONED_VMS",
-          "70_PCT_FLEET_IDLE_BELOW_5_PC",
-          "Verified 100%"
+        "rows": [
+          [
+            "Check 1",
+            "AUDIT_EVENT",
+            "15M_USD_CLOUD_BILLING_EXPLOS",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "UNATTACHED_EBS_STORAGE",
+            "420_TERABYTES_PROVISIONED_IO",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "INTER_AZ_TRANSFER_TAX",
+            "850000_USD_MONTHLY_UNCOMPRES",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "OVER_PROVISIONED_VMS",
+            "70_PCT_FLEET_IDLE_BELOW_5_PC",
+            "Verified 100%"
+          ]
         ]
-      ]
-    }
-  },
-  {
-    "part": 3,
-    "codeHash": "deb869bc942d9320e1ecb3f07a17d59c5f503c8a2baccd16c1b2e696bf351537",
-    "data": {
-      "template": "workflow",
-      "title": "Mastery Assignment: 5-Year Enterprise Infrastructure TC",
-      "subtitle": "Day 56 Part 3 Enterprise Systems Telemetry & Invariant Audit",
-      "columns": [
-        "Gate ID",
-        "Control Parameter",
-        "Kernel Metric / Telemetry",
-        "Status"
-      ],
-      "rows": [
-        [
-          "Check 1",
-          "BARE_METAL_5YR_CAPEX",
-          "18500000_USD_SERVERS_SWITCHE",
-          "Verified 100%"
+      }
+    },
+    {
+      "stepId": "cf-d56-p3",
+      "partTitle": "Enterprise Infrastructure TCO & Capacity Sizing Calculator Implementation",
+      "template": "cells",
+      "codeHash": "deb869bc942d9320e1ecb3f07a17d59c5f503c8a2baccd16c1b2e696bf351537",
+      "data": {
+        "title": "Systems Architecture Telemetry: Enterprise Infrastructure TCO & Capacity Sizing Calculator Imple",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
         ],
-        [
-          "Check 2",
-          "DATACENTER_FACILITY_OPEX",
-          "6200000_USD_POWER_COOLING_RA",
-          "Verified 100%"
-        ],
-        [
-          "Check 3",
-          "CLOUD_RAW_UNOPTIMIZED_OPEX",
-          "48900000_USD_OVER_5_YEAR_TIM",
-          "Verified 100%"
-        ],
-        [
-          "Check 4",
-          "OPTIMIZED_HYBRID_NET_SAVINGS",
-          "24200000_USD_NET_SAVED_OVER_",
-          "Verified 100%"
+        "rows": [
+          [
+            "Check 1",
+            "BARE_METAL_5YR_CAPEX",
+            "18500000_USD_SERVERS_SWITCHE",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "DATACENTER_FACILITY_OPEX",
+            "6200000_USD_POWER_COOLING_RA",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "CLOUD_RAW_UNOPTIMIZED_OPEX",
+            "48900000_USD_OVER_5_YEAR_TIM",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "OPTIMIZED_HYBRID_NET_SAVINGS",
+            "24200000_USD_NET_SAVED_OVER_",
+            "Verified 100%"
+          ]
         ]
-      ]
-    }
-  },
-  {
-    "part": 4,
-    "codeHash": "992c13f9291275e172afc1c4adfd0e6835bf803c4759ee4f9abee2f49c03ebb2",
-    "data": {
-      "template": "workflow",
-      "title": "Production Incident Lab: Boardroom Executive Defense of",
-      "subtitle": "Day 56 Part 4 Enterprise Systems Telemetry & Invariant Audit",
-      "columns": [
-        "Gate ID",
-        "Control Parameter",
-        "Kernel Metric / Telemetry",
-        "Status"
-      ],
-      "rows": [
-        [
-          "Check 1",
-          "SIMULATED_BOARD_REVIEW",
-          "CEO_CFO_CISO_LEAD_SRE_PANEL_",
-          "Verified 100%"
+      }
+    },
+    {
+      "stepId": "cf-d56-p4",
+      "partTitle": "Executive Board $50M Modernization RFC Defense Lab",
+      "template": "cells",
+      "codeHash": "992c13f9291275e172afc1c4adfd0e6835bf803c4759ee4f9abee2f49c03ebb2",
+      "data": {
+        "title": "Systems Architecture Telemetry: Executive Board $50M Modernization RFC Defense Lab",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
         ],
-        [
-          "Check 2",
-          "CFO_CHALLENGE",
-          "DEFENDED_WITH_24M_USD_HYBRID",
-          "Verified 100%"
-        ],
-        [
-          "Check 3",
-          "CISO_CHALLENGE",
-          "DEFENDED_WITH_ZERO_TRUST_AIR",
-          "Verified 100%"
-        ],
-        [
-          "Check 4",
-          "LEAD_SRE_CHALLENGE",
-          "DEFENDED_WITH_CANARY_ROLLOUT",
-          "Verified 100%"
+        "rows": [
+          [
+            "Check 1",
+            "SIMULATED_BOARD_REVIEW",
+            "CEO_CFO_CISO_LEAD_SRE_PANEL_",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "CFO_CHALLENGE",
+            "DEFENDED_WITH_24M_USD_HYBRID",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "CISO_CHALLENGE",
+            "DEFENDED_WITH_ZERO_TRUST_AIR",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "LEAD_SRE_CHALLENGE",
+            "DEFENDED_WITH_CANARY_ROLLOUT",
+            "Verified 100%"
+          ]
         ]
-      ]
-    }
-  },
-  {
-    "part": 5,
-    "codeHash": "d798d3dba66a4eba8a1d191ec4129475c77fe386e98b8dd82b84f779fc9d82dc",
-    "data": {
-      "template": "workflow",
-      "title": "Day 56 Architecture Certification: Principal Systems Ar",
-      "subtitle": "Day 56 Part 5 Enterprise Systems Telemetry & Invariant Audit",
-      "columns": [
-        "Gate ID",
-        "Control Parameter",
-        "Kernel Metric / Telemetry",
-        "Status"
-      ],
-      "rows": [
-        [
-          "Check 1",
-          "RFC_DOCUMENT_AUDIT",
-          "RFC_2026_ENTERPRISE_SYSTEMS_",
-          "Verified 100%"
+      }
+    },
+    {
+      "stepId": "cf-d56-p5",
+      "partTitle": "Day 56 Architecture Certification: Enterprise Modernization RFC & CapEx/OpEx Modeling",
+      "template": "cells",
+      "codeHash": "d798d3dba66a4eba8a1d191ec4129475c77fe386e98b8dd82b84f779fc9d82dc",
+      "data": {
+        "title": "Systems Architecture Telemetry: Day 56 Architecture Certification: Enterprise Modernization RFC ",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
         ],
-        [
-          "Check 2",
-          "FINANCIAL_MODEL_AUDIT",
-          "CAPEX_OPEX_TCO_5YR_WATERFALL",
-          "Verified 100%"
-        ],
-        [
-          "Check 3",
-          "HYBRID_TOPOLOGY_AUDIT",
-          "MULTI_REGION_DIRECTCONNECT_L",
-          "Verified 100%"
-        ],
-        [
-          "Check 4",
-          "SLO_ALIGNMENT_AUDIT",
-          "FIVE_NINES_UPTIME_MATHEMATIC",
-          "Verified 100%"
+        "rows": [
+          [
+            "Check 1",
+            "RFC_DOCUMENT_AUDIT",
+            "RFC_2026_ENTERPRISE_SYSTEMS_",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "FINANCIAL_MODEL_AUDIT",
+            "CAPEX_OPEX_TCO_5YR_WATERFALL",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "HYBRID_TOPOLOGY_AUDIT",
+            "MULTI_REGION_DIRECTCONNECT_L",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "SLO_ALIGNMENT_AUDIT",
+            "FIVE_NINES_UPTIME_MATHEMATIC",
+            "Verified 100%"
+          ]
         ]
-      ]
+      }
     }
-  }
-]
+  ]
+}

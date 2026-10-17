@@ -1,207 +1,211 @@
-[
-  {
-    "part": 1,
-    "codeHash": "7f05ce584917cdae0a4f0d88245399c17e76ce56093604008dbfa44f4361d41a",
-    "data": {
-      "template": "workflow",
-      "title": "ApexEnterpriseOS Master Architecture: Unified 60-Day Sy",
-      "subtitle": "Day 60 Part 1 Enterprise Systems Telemetry & Invariant Audit",
-      "columns": [
-        "Gate ID",
-        "Control Parameter",
-        "Kernel Metric / Telemetry",
-        "Status"
-      ],
-      "rows": [
-        [
-          "Check 1",
-          "PLATFORM_CORE",
-          "APEX_ENTERPRISE_OS_FULL_SCAL",
-          "Verified 100%"
+{
+  "day": 60,
+  "course": "comp_fund",
+  "entries": [
+    {
+      "stepId": "cf-d60-p1",
+      "partTitle": "ApexEnterpriseOS Grand Master Systems Architecture Specification",
+      "template": "cells",
+      "codeHash": "7f05ce584917cdae0a4f0d88245399c17e76ce56093604008dbfa44f4361d41a",
+      "data": {
+        "title": "Systems Architecture Telemetry: ApexEnterpriseOS Grand Master Systems Architecture Specification",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
         ],
-        [
-          "Check 2",
-          "60_DAY_SYNTHESIS",
-          "HARDWARE_KERNEL_OS_NET_VIRT_",
-          "Verified 100%"
-        ],
-        [
-          "Check 3",
-          "RESILIENCE_MODEL",
-          "AUTOMATED_FAULT_ISOLATION_AN",
-          "Verified 100%"
-        ],
-        [
-          "Check 4",
-          "DEFENSE_PORTFOLIO",
-          "50M_USD_3YR_MODERNIZATION_RF",
-          "Verified 100%"
+        "rows": [
+          [
+            "Check 1",
+            "PLATFORM_CORE",
+            "APEX_ENTERPRISE_OS_FULL_SCAL",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "60_DAY_SYNTHESIS",
+            "HARDWARE_KERNEL_OS_NET_VIRT_",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "RESILIENCE_MODEL",
+            "AUTOMATED_FAULT_ISOLATION_AN",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "DEFENSE_PORTFOLIO",
+            "50M_USD_3YR_MODERNIZATION_RF",
+            "Verified 100%"
+          ]
         ]
-      ]
-    }
-  },
-  {
-    "part": 2,
-    "codeHash": "76d2ec860ec050af49ea2c9329bacd2617e44f5b49bae415d72c6981b8806ad5",
-    "data": {
-      "template": "workflow",
-      "title": "Detective Challenge: The 60-Day Full-Stack Cascading Da",
-      "subtitle": "Day 60 Part 2 Enterprise Systems Telemetry & Invariant Audit",
-      "columns": [
-        "Gate ID",
-        "Control Parameter",
-        "Kernel Metric / Telemetry",
-        "Status"
-      ],
-      "rows": [
-        [
-          "Check 1",
-          "MEGA_OUTAGE_AUTOPSY",
-          "TRACING_CASCADING_MULTI_LAYE",
-          "Verified 100%"
+      }
+    },
+    {
+      "stepId": "cf-d60-p2",
+      "partTitle": "The 60-Day Full-Stack Datacenter Meltdown Comprehensive Forensic Challenge",
+      "template": "cells",
+      "codeHash": "76d2ec860ec050af49ea2c9329bacd2617e44f5b49bae415d72c6981b8806ad5",
+      "data": {
+        "title": "Systems Architecture Telemetry: The 60-Day Full-Stack Datacenter Meltdown Comprehensive Forensic",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
         ],
-        [
-          "Check 2",
-          "LAYER_1_SILICON_CACHE",
-          "L1_L2_DIRTY_CACHE_EVICTION_T",
-          "Verified 100%"
-        ],
-        [
-          "Check 3",
-          "LAYER_2_KERNEL_MEMORY",
-          "PAGE_TABLE_FRAGMENTATION_AND",
-          "Verified 100%"
-        ],
-        [
-          "Check 4",
-          "LAYER_3_NETWORK_HA",
-          "SPLIT_BRAIN_AVOIDED_VIA_STON",
-          "Verified 100%"
+        "rows": [
+          [
+            "Check 1",
+            "MEGA_OUTAGE_AUTOPSY",
+            "TRACING_CASCADING_MULTI_LAYE",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "LAYER_1_SILICON_CACHE",
+            "L1_L2_DIRTY_CACHE_EVICTION_T",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "LAYER_2_KERNEL_MEMORY",
+            "PAGE_TABLE_FRAGMENTATION_AND",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "LAYER_3_NETWORK_HA",
+            "SPLIT_BRAIN_AVOIDED_VIA_STON",
+            "Verified 100%"
+          ]
         ]
-      ]
-    }
-  },
-  {
-    "part": 3,
-    "codeHash": "0f84ec819f339fb1ff581d8db4dc7efe0eb02695f898f76d39c395905d916f30",
-    "data": {
-      "template": "workflow",
-      "title": "Mastery Assignment: ApexEnterpriseOS Full-Scale Product",
-      "subtitle": "Day 60 Part 3 Enterprise Systems Telemetry & Invariant Audit",
-      "columns": [
-        "Gate ID",
-        "Control Parameter",
-        "Kernel Metric / Telemetry",
-        "Status"
-      ],
-      "rows": [
-        [
-          "Check 1",
-          "MICROVM_RUNTIME",
-          "FIRECRACKER_BOOTING_IN_4_8MS",
-          "Verified 100%"
+      }
+    },
+    {
+      "stepId": "cf-d60-p3",
+      "partTitle": "ApexEnterpriseOS Full-Scale Production Platform Implementation",
+      "template": "cells",
+      "codeHash": "0f84ec819f339fb1ff581d8db4dc7efe0eb02695f898f76d39c395905d916f30",
+      "data": {
+        "title": "Systems Architecture Telemetry: ApexEnterpriseOS Full-Scale Production Platform Implementation",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
         ],
-        [
-          "Check 2",
-          "EBPF_OBSERVABILITY",
-          "BPF_TRACE_SURFACING_SUB_MICR",
-          "Verified 100%"
-        ],
-        [
-          "Check 3",
-          "CLUSTER_RELIABILITY",
-          "COROSYNC_PACEMAKER_QUORUM_EN",
-          "Verified 100%"
-        ],
-        [
-          "Check 4",
-          "GREEN_SCHEDULER",
-          "SPATIAL_TEMPORAL_CARBON_AWAR",
-          "Verified 100%"
+        "rows": [
+          [
+            "Check 1",
+            "MICROVM_RUNTIME",
+            "FIRECRACKER_BOOTING_IN_4_8MS",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "EBPF_OBSERVABILITY",
+            "BPF_TRACE_SURFACING_SUB_MICR",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "CLUSTER_RELIABILITY",
+            "COROSYNC_PACEMAKER_QUORUM_EN",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "GREEN_SCHEDULER",
+            "SPATIAL_TEMPORAL_CARBON_AWAR",
+            "Verified 100%"
+          ]
         ]
-      ]
-    }
-  },
-  {
-    "part": 4,
-    "codeHash": "0995e071e0f830126d7c46b0b61264224cba5106cd485050fbbb9c174136c6dc",
-    "data": {
-      "template": "workflow",
-      "title": "Production Incident Lab: Boardroom Viva Gate & $50M Inf",
-      "subtitle": "Day 60 Part 4 Enterprise Systems Telemetry & Invariant Audit",
-      "columns": [
-        "Gate ID",
-        "Control Parameter",
-        "Kernel Metric / Telemetry",
-        "Status"
-      ],
-      "rows": [
-        [
-          "Check 1",
-          "VIVA_PANEL_REVIEW",
-          "CEO_CTO_CISO_LEAD_ARCHITECT_",
-          "Verified 100%"
+      }
+    },
+    {
+      "stepId": "cf-d60-p4",
+      "partTitle": "ApexEnterpriseOS Month 2 Grand Master Capstone Senior Board Viva Defense",
+      "template": "cells",
+      "codeHash": "0995e071e0f830126d7c46b0b61264224cba5106cd485050fbbb9c174136c6dc",
+      "data": {
+        "title": "Systems Architecture Telemetry: ApexEnterpriseOS Month 2 Grand Master Capstone Senior Board Viva",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
         ],
-        [
-          "Check 2",
-          "FAULT_INJECTION_DEFENSE",
-          "DEFEATED_CHAOS_NODE_CRASH_IN",
-          "Verified 100%"
-        ],
-        [
-          "Check 3",
-          "RANSOMWARE_DEFENSE",
-          "DEFEATED_VIA_WORM_IMMUTABLE_",
-          "Verified 100%"
-        ],
-        [
-          "Check 4",
-          "TCO_ROI_DEFENSE",
-          "VALIDATED_24M_USD_NET_SAVING",
-          "Verified 100%"
+        "rows": [
+          [
+            "Check 1",
+            "VIVA_PANEL_REVIEW",
+            "CEO_CTO_CISO_LEAD_ARCHITECT_",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "FAULT_INJECTION_DEFENSE",
+            "DEFEATED_CHAOS_NODE_CRASH_IN",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "RANSOMWARE_DEFENSE",
+            "DEFEATED_VIA_WORM_IMMUTABLE_",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "TCO_ROI_DEFENSE",
+            "VALIDATED_24M_USD_NET_SAVING",
+            "Verified 100%"
+          ]
         ]
-      ]
-    }
-  },
-  {
-    "part": 5,
-    "codeHash": "9aeb1adcc4229e811c39290e6be1a215b023e820fe5a33f11ca89f29b27b6d1c",
-    "data": {
-      "template": "workflow",
-      "title": "Day 60 Grand Master Capstone Certification: Course 21 (",
-      "subtitle": "Day 60 Part 5 Enterprise Systems Telemetry & Invariant Audit",
-      "columns": [
-        "Gate ID",
-        "Control Parameter",
-        "Kernel Metric / Telemetry",
-        "Status"
-      ],
-      "rows": [
-        [
-          "Check 1",
-          "CURRICULUM_COMPLETION",
-          "60_OF_60_DAYS_FULLY_IMPLEMEN",
-          "Verified 100%"
+      }
+    },
+    {
+      "stepId": "cf-d60-p5",
+      "partTitle": "Day 60 Grand Master Capstone Certification: ApexEnterpriseOS & Course 21 Completion",
+      "template": "cells",
+      "codeHash": "9aeb1adcc4229e811c39290e6be1a215b023e820fe5a33f11ca89f29b27b6d1c",
+      "data": {
+        "title": "Systems Architecture Telemetry: Day 60 Grand Master Capstone Certification: ApexEnterpriseOS & C",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
         ],
-        [
-          "Check 2",
-          "PARITY_AUDIT",
-          "ALL_300_PARTS_TESTED_IN_POSI",
-          "Verified 100%"
-        ],
-        [
-          "Check 3",
-          "ARCHITECTURAL_HONORS",
-          "APEX_ENTERPRISE_OS_SOVEREIGN",
-          "Verified 100%"
-        ],
-        [
-          "Check 4",
-          "ACCREDITATION",
-          "PRINCIPAL_ENTERPRISE_SYSTEMS",
-          "Verified 100%"
+        "rows": [
+          [
+            "Check 1",
+            "CURRICULUM_COMPLETION",
+            "60_OF_60_DAYS_FULLY_IMPLEMEN",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "PARITY_AUDIT",
+            "ALL_300_PARTS_TESTED_IN_POSI",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "ARCHITECTURAL_HONORS",
+            "APEX_ENTERPRISE_OS_SOVEREIGN",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "ACCREDITATION",
+            "PRINCIPAL_ENTERPRISE_SYSTEMS",
+            "Verified 100%"
+          ]
         ]
-      ]
+      }
     }
-  }
-]
+  ]
+}

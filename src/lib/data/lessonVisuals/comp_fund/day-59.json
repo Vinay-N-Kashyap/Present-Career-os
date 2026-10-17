@@ -1,207 +1,211 @@
-[
-  {
-    "part": 1,
-    "codeHash": "f545ed32b86d4de2f26d9d163d46d1f2f6eae900281a11a2faa157f69bbd65ff",
-    "data": {
-      "template": "workflow",
-      "title": "Sustainable Systems Architecture: Power Usage Effective",
-      "subtitle": "Day 59 Part 1 Enterprise Systems Telemetry & Invariant Audit",
-      "columns": [
-        "Gate ID",
-        "Control Parameter",
-        "Kernel Metric / Telemetry",
-        "Status"
-      ],
-      "rows": [
-        [
-          "Check 1",
-          "SUSTAINABILITY_FRAMEWORK",
-          "GREEN_GRID_POWER_USAGE_EFFEC",
-          "Verified 100%"
+{
+  "day": 59,
+  "course": "comp_fund",
+  "entries": [
+    {
+      "stepId": "cf-d59-p1",
+      "partTitle": "Sustainable Systems Engineering & Green Datacenter Architecture",
+      "template": "cells",
+      "codeHash": "f545ed32b86d4de2f26d9d163d46d1f2f6eae900281a11a2faa157f69bbd65ff",
+      "data": {
+        "title": "Systems Architecture Telemetry: Sustainable Systems Engineering & Green Datacenter Architecture",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
         ],
-        [
-          "Check 2",
-          "DATACENTER_PUE_TARGET",
-          "1_12_PUE_BENCHMARK_CHILLED_W",
-          "Verified 100%"
-        ],
-        [
-          "Check 3",
-          "ENERGY_PROPORTIONALITY",
-          "HARDWARE_POWER_SCALES_LINEAR",
-          "Verified 100%"
-        ],
-        [
-          "Check 4",
-          "CARBON_INTENSITY_API",
-          "REALTIME_GRID_EMISSIONS_CARB",
-          "Verified 100%"
+        "rows": [
+          [
+            "Check 1",
+            "SUSTAINABILITY_FRAMEWORK",
+            "GREEN_GRID_POWER_USAGE_EFFEC",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "DATACENTER_PUE_TARGET",
+            "1_12_PUE_BENCHMARK_CHILLED_W",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "ENERGY_PROPORTIONALITY",
+            "HARDWARE_POWER_SCALES_LINEAR",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "CARBON_INTENSITY_API",
+            "REALTIME_GRID_EMISSIONS_CARB",
+            "Verified 100%"
+          ]
         ]
-      ]
-    }
-  },
-  {
-    "part": 2,
-    "codeHash": "410b22414518933686a71b76ec60572a9c0d085dba741ee518ad3fcaf8f41c41",
-    "data": {
-      "template": "workflow",
-      "title": "Detective Challenge: The Datacenter Idle Power Ineffici",
-      "subtitle": "Day 59 Part 2 Enterprise Systems Telemetry & Invariant Audit",
-      "columns": [
-        "Gate ID",
-        "Control Parameter",
-        "Kernel Metric / Telemetry",
-        "Status"
-      ],
-      "rows": [
-        [
-          "Check 1",
-          "TELEMETRY_AUDIT",
-          "500_MEGAWATT_HOURS_MONTHLY_F",
-          "Verified 100%"
+      }
+    },
+    {
+      "stepId": "cf-d59-p2",
+      "partTitle": "The Datacenter Idle Power Inefficiency Detective Challenge",
+      "template": "cells",
+      "codeHash": "410b22414518933686a71b76ec60572a9c0d085dba741ee518ad3fcaf8f41c41",
+      "data": {
+        "title": "Systems Architecture Telemetry: The Datacenter Idle Power Inefficiency Detective Challenge",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
         ],
-        [
-          "Check 2",
-          "ROOT_CAUSE",
-          "ZOMBIE_SERVERS_RUNNING_AT_10",
-          "Verified 100%"
-        ],
-        [
-          "Check 3",
-          "ENERGY_NON_PROPORTIONALITY",
-          "HIGH_IDLE_DRAIN_IN_LEGACY_HA",
-          "Verified 100%"
-        ],
-        [
-          "Check 4",
-          "CONSOLIDATION_FIX",
-          "PACK_WORKLOADS_SHUTDOWN_300_",
-          "Verified 100%"
+        "rows": [
+          [
+            "Check 1",
+            "TELEMETRY_AUDIT",
+            "500_MEGAWATT_HOURS_MONTHLY_F",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "ROOT_CAUSE",
+            "ZOMBIE_SERVERS_RUNNING_AT_10",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "ENERGY_NON_PROPORTIONALITY",
+            "HIGH_IDLE_DRAIN_IN_LEGACY_HA",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "CONSOLIDATION_FIX",
+            "PACK_WORKLOADS_SHUTDOWN_300_",
+            "Verified 100%"
+          ]
         ]
-      ]
-    }
-  },
-  {
-    "part": 3,
-    "codeHash": "e921c6065bcf88313708d92da9142ab0e2d1edb3f9040d060e734af3a11654e9",
-    "data": {
-      "template": "workflow",
-      "title": "Mastery Assignment: Carbon-Aware Spatial & Temporal Bat",
-      "subtitle": "Day 59 Part 3 Enterprise Systems Telemetry & Invariant Audit",
-      "columns": [
-        "Gate ID",
-        "Control Parameter",
-        "Kernel Metric / Telemetry",
-        "Status"
-      ],
-      "rows": [
-        [
-          "Check 1",
-          "JOB_QUEUE",
-          "BATCH_AI_TRAINING_AND_VIDEO_",
-          "Verified 100%"
+      }
+    },
+    {
+      "stepId": "cf-d59-p3",
+      "partTitle": "Carbon-Aware Spatial & Temporal Batch Job Scheduler Implementation",
+      "template": "cells",
+      "codeHash": "e921c6065bcf88313708d92da9142ab0e2d1edb3f9040d060e734af3a11654e9",
+      "data": {
+        "title": "Systems Architecture Telemetry: Carbon-Aware Spatial & Temporal Batch Job Scheduler Implementati",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
         ],
-        [
-          "Check 2",
-          "MARGINAL_CARBON_INTENSITY",
-          "TRACKING_GRID_SOLAR_WIND_FOR",
-          "Verified 100%"
-        ],
-        [
-          "Check 3",
-          "SPATIAL_SHIFTING",
-          "DISPATCH_TO_NORDIC_HYDRO_REG",
-          "Verified 100%"
-        ],
-        [
-          "Check 4",
-          "TEMPORAL_SHIFTING",
-          "DELAY_LOCAL_RUN_TO_MIDDAY_SO",
-          "Verified 100%"
+        "rows": [
+          [
+            "Check 1",
+            "JOB_QUEUE",
+            "BATCH_AI_TRAINING_AND_VIDEO_",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "MARGINAL_CARBON_INTENSITY",
+            "TRACKING_GRID_SOLAR_WIND_FOR",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "SPATIAL_SHIFTING",
+            "DISPATCH_TO_NORDIC_HYDRO_REG",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "TEMPORAL_SHIFTING",
+            "DELAY_LOCAL_RUN_TO_MIDDAY_SO",
+            "Verified 100%"
+          ]
         ]
-      ]
-    }
-  },
-  {
-    "part": 4,
-    "codeHash": "67c82335fc421d76576c846fb736fd921f0acc9cf711dbaa66e1112c69636f2f",
-    "data": {
-      "template": "workflow",
-      "title": "Production Incident Lab: CPU Energy Proportionality & F",
-      "subtitle": "Day 59 Part 4 Enterprise Systems Telemetry & Invariant Audit",
-      "columns": [
-        "Gate ID",
-        "Control Parameter",
-        "Kernel Metric / Telemetry",
-        "Status"
-      ],
-      "rows": [
-        [
-          "Check 1",
-          "TURBOSTAT_TELEMETRY",
-          "MEASURING_PACKAGE_WATTS_AND_",
-          "Verified 100%"
+      }
+    },
+    {
+      "stepId": "cf-d59-p4",
+      "partTitle": "CPU Energy Proportionality & Frequency Scaling Benchmark Lab",
+      "template": "cells",
+      "codeHash": "67c82335fc421d76576c846fb736fd921f0acc9cf711dbaa66e1112c69636f2f",
+      "data": {
+        "title": "Systems Architecture Telemetry: CPU Energy Proportionality & Frequency Scaling Benchmark Lab",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
         ],
-        [
-          "Check 2",
-          "GOVERNOR_PERFORMANCE",
-          "185_WATTS_PACKAGE_POWER_AT_M",
-          "Verified 100%"
-        ],
-        [
-          "Check 3",
-          "GOVERNOR_POWERSAVE",
-          "38_WATTS_PACKAGE_POWER_DURIN",
-          "Verified 100%"
-        ],
-        [
-          "Check 4",
-          "EFFICIENCY_CALCULUS",
-          "4_8X_POWER_REDUCTION_WITHOUT",
-          "Verified 100%"
+        "rows": [
+          [
+            "Check 1",
+            "TURBOSTAT_TELEMETRY",
+            "MEASURING_PACKAGE_WATTS_AND_",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "GOVERNOR_PERFORMANCE",
+            "185_WATTS_PACKAGE_POWER_AT_M",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "GOVERNOR_POWERSAVE",
+            "38_WATTS_PACKAGE_POWER_DURIN",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "EFFICIENCY_CALCULUS",
+            "4_8X_POWER_REDUCTION_WITHOUT",
+            "Verified 100%"
+          ]
         ]
-      ]
-    }
-  },
-  {
-    "part": 5,
-    "codeHash": "79bcc22f6887a0f1484639e79f80693aff3a06a27be0906e55bc41f58ad135eb",
-    "data": {
-      "template": "workflow",
-      "title": "Day 59 Architecture Certification: Sustainable Systems ",
-      "subtitle": "Day 59 Part 5 Enterprise Systems Telemetry & Invariant Audit",
-      "columns": [
-        "Gate ID",
-        "Control Parameter",
-        "Kernel Metric / Telemetry",
-        "Status"
-      ],
-      "rows": [
-        [
-          "Check 1",
-          "PUE_METRIC_AUDIT",
-          "DATACENTER_PUE_1_12_ANNUAL_B",
-          "Verified 100%"
+      }
+    },
+    {
+      "stepId": "cf-d59-p5",
+      "partTitle": "Day 59 Architecture Certification: Sustainable Systems Engineering & Green Datacenters",
+      "template": "cells",
+      "codeHash": "79bcc22f6887a0f1484639e79f80693aff3a06a27be0906e55bc41f58ad135eb",
+      "data": {
+        "title": "Systems Architecture Telemetry: Day 59 Architecture Certification: Sustainable Systems Engineeri",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
         ],
-        [
-          "Check 2",
-          "ZOMBIE_SERVER_AUDIT",
-          "ZERO_UNDERUTILIZED_HOSTS_BUR",
-          "Verified 100%"
-        ],
-        [
-          "Check 3",
-          "CARBON_AWARE_AUDIT",
-          "60_PCT_PLUS_AVOIDED_CARBON_V",
-          "Verified 100%"
-        ],
-        [
-          "Check 4",
-          "ENERGY_PROPORTIONAL_AUDIT",
-          "INTEL_P_STATES_AND_C_STATES_",
-          "Verified 100%"
+        "rows": [
+          [
+            "Check 1",
+            "PUE_METRIC_AUDIT",
+            "DATACENTER_PUE_1_12_ANNUAL_B",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "ZOMBIE_SERVER_AUDIT",
+            "ZERO_UNDERUTILIZED_HOSTS_BUR",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "CARBON_AWARE_AUDIT",
+            "60_PCT_PLUS_AVOIDED_CARBON_V",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "ENERGY_PROPORTIONAL_AUDIT",
+            "INTEL_P_STATES_AND_C_STATES_",
+            "Verified 100%"
+          ]
         ]
-      ]
+      }
     }
-  }
-]
+  ]
+}
