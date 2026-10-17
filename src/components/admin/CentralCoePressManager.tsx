@@ -15,9 +15,20 @@ import {
   activateEmergencyFallback,
   exportCoePressAuditCSV,
 } from '@/lib/admin/centralCoePress';
+import { useGovernanceStore } from '@/lib/hooks/useGovernanceStore';
 
 export default function CentralCoePressManager() {
-  const [jobs, setJobs] = useState<CoePressJob[]>(INITIAL_COE_PRESS_JOBS);
+  const {
+    records: jobs,
+    setRecords: setJobs,
+    syncSource,
+    isSaving,
+    saveRecord,
+  } = useGovernanceStore<CoePressJob>(
+    'central_coe_press_custody',
+    INITIAL_COE_PRESS_JOBS,
+    'jobId'
+  );
   const [selectedFilter, setSelectedFilter] = useState<CustodyStage | 'ALL'>('ALL');
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -95,7 +106,7 @@ export default function CentralCoePressManager() {
   }, [jobs]);
 
   // Handle Create Job
-  const handleCreateJob = (e: React.FormEvent) => {
+  const handleCreateJob = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!courseCode.trim() || !courseTitle.trim() || totalCandidates <= 0) {
       showToast('Please fill out all required job parameters.');
@@ -126,7 +137,7 @@ export default function CentralCoePressManager() {
         ],
       });
 
-      setJobs([created, ...jobs]);
+      await saveRecord(created);
       setIsNewJobModalOpen(false);
       showToast(`Confidential print job initialized with seal ${created.packetBarcodeSeal}`);
     } catch (err: unknown) {
@@ -136,7 +147,7 @@ export default function CentralCoePressManager() {
   };
 
   // Handle Double-Lock Execution
-  const handleExecuteDoubleLock = (e: React.FormEvent) => {
+  const handleExecuteDoubleLock = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!doubleLockModalJob) return;
 
@@ -161,7 +172,7 @@ export default function CentralCoePressManager() {
         showToast('Confidential packets dispatched to examination centers under armed guard.');
       }
 
-      setJobs(jobs.map((j) => (j.jobId === updated.jobId ? updated : j)));
+      await saveRecord(updated);
       setDoubleLockModalJob(null);
     } catch (err: unknown) {
       const msg = err instanceof Error ? err.message : 'Double-lock execution failed.';
@@ -170,7 +181,7 @@ export default function CentralCoePressManager() {
   };
 
   // Handle Emergency Fallback
-  const handleActivateFallback = (e: React.FormEvent) => {
+  const handleActivateFallback = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!fallbackModalJob) return;
 
@@ -182,7 +193,7 @@ export default function CentralCoePressManager() {
         authorizedByCoE: authorizedBy.trim(),
       });
 
-      setJobs(jobs.map((j) => (j.jobId === updated.jobId ? updated : j)));
+      await saveRecord(updated);
       setFallbackModalJob(null);
       showToast(`EMERGENCY: ${compromisedSet} quarantined. Fallback ${updated.activeSet} activated!`);
     } catch (err: unknown) {
@@ -192,7 +203,7 @@ export default function CentralCoePressManager() {
   };
 
   // Handle Center Verification
-  const handleCenterVerification = (e: React.FormEvent) => {
+  const handleCenterVerification = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!centerVerifyModalJob || !selectedCenterCode) return;
 
@@ -203,7 +214,7 @@ export default function CentralCoePressManager() {
         superintendentSignoff.trim() || 'Center Superintendent'
       );
 
-      setJobs(jobs.map((j) => (j.jobId === updated.jobId ? updated : j)));
+      await saveRecord(updated);
       setCenterVerifyModalJob(null);
       showToast(`Center ${selectedCenterCode} verified physical packet seal intact.`);
     } catch (err: unknown) {
@@ -248,9 +259,21 @@ export default function CentralCoePressManager() {
               </svg>
             </span>
             <div>
-              <h1 className="text-2xl font-bold text-white tracking-tight">
-                Controller of Examinations Confidential Press & Custody
-              </h1>
+              <div className="flex items-center gap-3">
+                <h1 className="text-2xl font-bold text-white tracking-tight">
+                  Controller of Examinations Confidential Press & Custody
+                </h1>
+                <span className={`px-2.5 py-0.5 rounded-full text-xs font-semibold tracking-wide border ${
+                  syncSource === 'supabase'
+                    ? 'bg-emerald-500/20 text-emerald-300 border-emerald-500/30'
+                    : 'bg-amber-500/20 text-amber-300 border-amber-500/30'
+                }`}>
+                  {syncSource === 'supabase' ? 'Supabase Live' : 'Local Fallback'}
+                </span>
+                {isSaving && (
+                  <span className="text-xs text-rose-400 animate-pulse font-medium">Syncing...</span>
+                )}
+              </div>
               <p className="text-sm text-slate-400">
                 Statutory Examination Ordinance & UGC Secure Confidential Custody Controller (Double-Lock Protocol)
               </p>

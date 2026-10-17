@@ -236,6 +236,55 @@ function toDbRecord(tableName: string, record: any): any {
       annual_contract_cost_inr: record.annualContractValueInr || 45000.0
     };
   }
+  if (tableName === 'central_guest_house_bookings') {
+    return {
+      booking_id: record.bookingId || record.bookingRefNumber || record.id,
+      institution_id: record.institutionId || 'inst-apex-001',
+      guest_name: record.guestName,
+      category: record.guestCategory || record.category || 'CATEGORY_A_INSTITUTIONAL',
+      room_number: record.roomNumber || record.room_number || 'Room-101',
+      check_in_date: record.checkInDate || record.check_in_date || new Date().toISOString().split('T')[0],
+      check_out_date: record.checkOutDate || record.check_out_date || new Date().toISOString().split('T')[0],
+      daily_tariff_inr: Number(record.tariffPerDay ?? record.daily_tariff_inr ?? 0),
+      booking_status: record.stage || record.booking_status || 'CONFIRMED'
+    };
+  }
+  if (tableName === 'central_coe_press_custody') {
+    return {
+      custody_dossier_id: record.jobId || record.packetBarcodeSeal || record.id,
+      institution_id: record.institutionId || 'inst-apex-001',
+      exam_session: record.examSession || 'END_SEM_SPRING_2026',
+      course_code: record.courseCode,
+      total_sets_received: Array.isArray(record.availableSets) ? record.availableSets.length : (record.total_sets_received || 3),
+      selected_set_code: record.activeSet || 'SET_A',
+      double_lock_verified: Boolean(record.doubleLockVerification?.custodianOneKeyVerified && record.doubleLockVerification?.custodianTwoKeyVerified),
+      safe_vault_seal_hash: record.packetBarcodeSeal || record.cryptographicSeal || 'SEAL_VAULT_001',
+      status: record.stage || 'DOUBLE_LOCK_VAULT'
+    };
+  }
+  if (tableName === 'faculty_mooc_courses') {
+    return {
+      mooc_id: record.courseId || record.trackingToken || record.id,
+      institution_id: record.institutionId || 'inst-apex-001',
+      course_title: record.courseTitle,
+      platform: record.nationalCoordinator || 'SWAYAM',
+      target_credit_equivalence: Number(record.credits || 3),
+      video_hours: Number(record.durationWeeks ? record.durationWeeks * 3 : (record.video_hours || 40)),
+      enrolled_learners: Number(record.enrolledLearnersCount || 0),
+      course_status: record.stage || 'COURSE_LIVE_ON_SWAYAM'
+    };
+  }
+  if (tableName === 'faculty_continuing_education') {
+    return {
+      workshop_code: record.courseId || record.certificateToken || record.id,
+      institution_id: record.institutionId || 'inst-apex-001',
+      workshop_title: record.courseTitle,
+      coordinator_name: record.coordinatorName,
+      duration_days: Number(record.durationDays || 5),
+      participants_count: Number(Array.isArray(record.participants) ? record.participants.length : (record.participants_count || 0)),
+      aicte_atal_approved: record.scheme === 'AICTE_ATAL_ACADEMY' || record.aicte_atal_approved !== false
+    };
+  }
   // Generic fallback: map keys from camelCase to snake_case
   const mapped: any = {};
   for (const [k, v] of Object.entries(record)) {
@@ -549,6 +598,115 @@ function fromDbRecord<T>(tableName: string, row: any, fallbackDefault: T[]): T {
       auditSha256: def?.auditSha256 || '0000000000000000000000000000000000000000000000000000000000000000'
     } as unknown as T;
   }
+  if (tableName === 'central_guest_house_bookings') {
+    const def = (fallbackDefault as any[]).find(d => d.bookingId === row.booking_id || d.bookingRefNumber === row.booking_id);
+    return {
+      bookingId: row.booking_id,
+      bookingRefNumber: def?.bookingRefNumber || `GH-2026-${row.booking_id}`,
+      guestName: row.guest_name,
+      guestDesignation: def?.guestDesignation || 'Visiting Scholar / Examiner',
+      guestCategory: row.category,
+      roomType: def?.roomType || 'EXECUTIVE_DELUXE',
+      roomNumber: row.room_number,
+      checkInDate: row.check_in_date,
+      checkOutDate: row.check_out_date,
+      durationDays: def?.durationDays || 2,
+      tariffPerDay: Number(row.daily_tariff_inr || 0),
+      totalBillingAmount: def?.totalBillingAmount || 0,
+      sponsoringDepartment: def?.sponsoringDepartment || 'Dean Academic Affairs',
+      sponsoringFacultyPi: def?.sponsoringFacultyPi,
+      vipProtocolRequired: def?.vipProtocolRequired || false,
+      stage: row.booking_status || 'REQUESTED',
+      approvalRemarks: def?.approvalRemarks,
+      cryptographicSeal: def?.cryptographicSeal
+    } as unknown as T;
+  }
+  if (tableName === 'central_coe_press_custody') {
+    const def = (fallbackDefault as any[]).find(d => d.jobId === row.custody_dossier_id || d.packetBarcodeSeal === row.safe_vault_seal_hash);
+    return {
+      jobId: row.custody_dossier_id,
+      packetBarcodeSeal: row.safe_vault_seal_hash,
+      examSession: row.exam_session,
+      courseCode: row.course_code,
+      courseTitle: def?.courseTitle || `Course ${row.course_code}`,
+      examDate: def?.examDate || '2026-05-18',
+      examSlot: def?.examSlot || 'FORENOON_0930_1230',
+      activeSet: row.selected_set_code,
+      availableSets: def?.availableSets || ['SET_A', 'SET_B', 'SET_C'],
+      totalCandidates: def?.totalCandidates || 200,
+      totalCopiesPrinted: def?.totalCopiesPrinted || 210,
+      packetsCount: def?.packetsCount || 9,
+      stage: row.status || 'DOUBLE_LOCK_VAULT',
+      doubleLockVerification: def?.doubleLockVerification || (row.double_lock_verified ? {
+        custodianOneId: 'COE-CONF-01',
+        custodianOneName: 'Dr. Ramesh Sharma (Joint Controller)',
+        custodianOneKeyVerified: true,
+        custodianTwoId: 'CSO-SEC-09',
+        custodianTwoName: 'Col. Vikram Rathore (CSO)',
+        custodianTwoKeyVerified: true,
+        verifiedTimestamp: row.created_at || new Date().toISOString(),
+        vaultLocation: 'STRONG-ROOM-A-BAY-2'
+      } : undefined),
+      centerAllocations: def?.centerAllocations || [],
+      fallbackHistory: def?.fallbackHistory || [],
+      cryptographicSeal: def?.cryptographicSeal || row.safe_vault_seal_hash,
+      remarks: def?.remarks,
+      lastUpdated: row.updated_at || new Date().toISOString()
+    } as unknown as T;
+  }
+  if (tableName === 'faculty_mooc_courses') {
+    const def = (fallbackDefault as any[]).find(d => d.courseId === row.mooc_id || d.trackingToken === row.mooc_id);
+    return {
+      courseId: row.mooc_id,
+      trackingToken: def?.trackingToken || `MOOC-2026-${row.mooc_id}`,
+      courseTitle: row.course_title,
+      department: def?.department || 'Computer Science & Engineering',
+      leadCoordinatorName: def?.leadCoordinatorName || 'Dr. Lead Coordinator',
+      leadCoordinatorEmpId: def?.leadCoordinatorEmpId || 'EMP-CSE-001',
+      nationalCoordinator: row.platform,
+      contributionType: def?.contributionType || 'FOUR_CREDIT_MOOC_COURSE',
+      credits: Number(row.target_credit_equivalence) || 4,
+      totalModulesCount: def?.totalModulesCount || 12,
+      durationWeeks: def?.durationWeeks || 12,
+      ugcApiPoints: def?.ugcApiPoints || 20,
+      stage: row.course_status || 'COURSE_LIVE_ON_SWAYAM',
+      quadrants: def?.quadrants || {
+        quadrant1ETutorial: true,
+        quadrant2EContent: true,
+        quadrant3WebResources: true,
+        quadrant4SelfAssessment: true
+      },
+      enrolledLearnersCount: Number(row.enrolled_learners) || 0,
+      proctoredExamPassPercentage: def?.proctoredExamPassPercentage || 75.0,
+      isAbcTransferEligible: def?.isAbcTransferEligible ?? true,
+      swayamCourseUrl: def?.swayamCourseUrl,
+      cryptographicCourseSeal: def?.cryptographicCourseSeal,
+      lastUpdated: row.updated_at || new Date().toISOString()
+    } as unknown as T;
+  }
+  if (tableName === 'faculty_continuing_education') {
+    const def = (fallbackDefault as any[]).find(d => d.courseId === row.workshop_code || d.certificateToken === row.workshop_code);
+    return {
+      courseId: row.workshop_code,
+      certificateToken: def?.certificateToken || `FDP-2026-${row.workshop_code}`,
+      courseTitle: row.workshop_title,
+      department: def?.department || 'Engineering & Technology',
+      coordinatorName: row.coordinator_name,
+      coordinatorEmpId: def?.coordinatorEmpId || 'EMP-CE-001',
+      scheme: def?.scheme || (row.aicte_atal_approved ? 'AICTE_ATAL_ACADEMY' : 'INSTITUTE_SELF_FINANCED_QIP'),
+      mode: def?.mode || 'HANDS_ON_BOOTCAMP',
+      startDate: def?.startDate || '2026-08-10',
+      endDate: def?.endDate || '2026-08-15',
+      durationDays: Number(row.duration_days) || 5,
+      targetCapacity: def?.targetCapacity || 50,
+      sanctionedBudgetInr: def?.sanctionedBudgetInr || 350000,
+      stage: def?.stage || 'COURSE_CONDUCTED',
+      participants: def?.participants || [],
+      syllabusModules: def?.syllabusModules || ['Module 1', 'Module 2'],
+      cryptographicCourseSeal: def?.cryptographicCourseSeal,
+      lastUpdated: row.updated_at || new Date().toISOString()
+    } as unknown as T;
+  }
   // Generic camelCase mapper
   const mapped: any = {};
   for (const [k, v] of Object.entries(row)) {
@@ -645,6 +803,14 @@ export async function saveGovernanceRecord<T extends Record<string, any>>(
     ? 'application_number'
     : tableName === 'faculty_equipment_amc'
     ? 'asset_tag'
+    : tableName === 'central_guest_house_bookings'
+    ? 'booking_id'
+    : tableName === 'central_coe_press_custody'
+    ? 'custody_dossier_id'
+    : tableName === 'faculty_mooc_courses'
+    ? 'mooc_id'
+    : tableName === 'faculty_continuing_education'
+    ? 'workshop_code'
     : primaryKey.replace(/([A-Z])/g, '_$1').toLowerCase();
 
   // 1. Supabase write

@@ -11,9 +11,20 @@ import {
   updateGuestBookingStatus,
   exportGuestHouseBookingsCSV,
 } from '@/lib/admin/centralGuestHouse';
+import { useGovernanceStore } from '@/lib/hooks/useGovernanceStore';
 
 export default function CentralGuestHouseManager() {
-  const [bookings, setBookings] = useState<GuestBookingRecord[]>(SEED_GUEST_BOOKINGS);
+  const {
+    records: bookings,
+    setRecords: setBookings,
+    syncSource,
+    isSaving,
+    saveRecord,
+  } = useGovernanceStore<GuestBookingRecord>(
+    'central_guest_house_bookings',
+    SEED_GUEST_BOOKINGS,
+    'bookingId'
+  );
   const [selectedCategory, setSelectedCategory] = useState<GuestCategory | 'ALL'>('ALL');
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -70,7 +81,7 @@ export default function CentralGuestHouseManager() {
     return { total, catACount, active, revenue };
   }, [bookings]);
 
-  const handleCreateBooking = (e: React.FormEvent) => {
+  const handleCreateBooking = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!guestName.trim() || !roomNumber.trim()) {
       showToast('Please provide guest name and room number');
@@ -91,7 +102,7 @@ export default function CentralGuestHouseManager() {
         vipProtocolRequired,
       });
 
-      setBookings([created, ...bookings]);
+      await saveRecord(created);
       setIsNewBookingModalOpen(false);
       setGuestName('');
       showToast(`Booking ${created.bookingRefNumber} requested successfully!`);
@@ -101,12 +112,12 @@ export default function CentralGuestHouseManager() {
     }
   };
 
-  const handleAdvanceStage = (e: React.FormEvent) => {
+  const handleAdvanceStage = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!stageModalBooking) return;
 
     const updated = updateGuestBookingStatus(stageModalBooking, targetStage, remarks.trim());
-    setBookings(bookings.map((b) => (b.bookingId === updated.bookingId ? updated : b)));
+    await saveRecord(updated);
     setStageModalBooking(null);
     showToast(`Booking stage advanced to ${targetStage.replace(/_/g, ' ')}!`);
   };
@@ -149,6 +160,16 @@ export default function CentralGuestHouseManager() {
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                 Transit Accommodation Active
               </span>
+              <span className={`px-2.5 py-0.5 rounded-full text-xs font-semibold tracking-wide border ${
+                syncSource === 'supabase'
+                  ? 'bg-emerald-500/20 text-emerald-300 border-emerald-500/30'
+                  : 'bg-amber-500/20 text-amber-300 border-amber-500/30'
+              }`}>
+                {syncSource === 'supabase' ? 'Supabase Live' : 'Local Fallback'}
+              </span>
+              {isSaving && (
+                <span className="text-xs text-rose-400 animate-pulse font-medium">Syncing...</span>
+              )}
             </div>
             <h1 className="text-2xl md:text-3xl font-extrabold text-white mt-2 tracking-tight">
               Central University Guest House & VIP Protocol Console

@@ -14,9 +14,20 @@ import {
   issueBatchCertificates,
   exportContinuingEducationCSV,
 } from '@/lib/teacher/facultyContinuingEducation';
+import { useGovernanceStore } from '@/lib/hooks/useGovernanceStore';
 
 export default function FacultyContinuingEducationStudio() {
-  const [courses, setCourses] = useState<ContinuingEducationCourse[]>(INITIAL_FDP_COURSES);
+  const {
+    records: courses,
+    setRecords: setCourses,
+    syncSource,
+    isSaving,
+    saveRecord,
+  } = useGovernanceStore<ContinuingEducationCourse>(
+    'faculty_continuing_education',
+    INITIAL_FDP_COURSES,
+    'courseId'
+  );
   const [selectedFilter, setSelectedFilter] = useState<CourseLifecycle | 'ALL'>('ALL');
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -89,7 +100,7 @@ export default function FacultyContinuingEducationStudio() {
   }, [courses]);
 
   // Handle Create Course
-  const handleCreateCourse = (e: React.FormEvent) => {
+  const handleCreateCourse = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!courseTitle.trim() || !department.trim()) {
       showToast('Please provide course title and department.');
@@ -111,7 +122,7 @@ export default function FacultyContinuingEducationStudio() {
         sanctionedBudgetInr: Number(sanctionedBudgetInr),
       });
 
-      setCourses([created, ...courses]);
+      await saveRecord(created);
       setExpandedCourseId(created.courseId);
       setIsNewCourseModalOpen(false);
       showToast(`Workshop proposal created: ${created.certificateToken}`);
@@ -122,7 +133,7 @@ export default function FacultyContinuingEducationStudio() {
   };
 
   // Handle Register Participant
-  const handleRegisterParticipant = (e: React.FormEvent) => {
+  const handleRegisterParticipant = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!registerParticipantCourse || !partName.trim() || !partEmail.trim()) {
       showToast('Please provide participant full name and email.');
@@ -138,7 +149,7 @@ export default function FacultyContinuingEducationStudio() {
         attendancePercentage: 0,
       });
 
-      setCourses(courses.map((c) => (c.courseId === updated.courseId ? updated : c)));
+      await saveRecord(updated);
       setRegisterParticipantCourse(null);
       showToast(`Participant registered: ${partName.trim()}`);
     } catch (err: unknown) {
@@ -148,7 +159,7 @@ export default function FacultyContinuingEducationStudio() {
   };
 
   // Handle Participant Evaluation
-  const handleEvaluateParticipant = (e: React.FormEvent) => {
+  const handleEvaluateParticipant = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!evaluateModalCourse || !selectedPartId) return;
 
@@ -160,7 +171,7 @@ export default function FacultyContinuingEducationStudio() {
         Number(evalScore)
       );
 
-      setCourses(courses.map((c) => (c.courseId === updated.courseId ? updated : c)));
+      await saveRecord(updated);
       setEvaluateModalCourse(null);
       showToast('Participant attendance and assessment score recorded.');
     } catch (err: unknown) {
@@ -170,10 +181,10 @@ export default function FacultyContinuingEducationStudio() {
   };
 
   // Handle Issue Batch Certificates
-  const handleIssueCertificates = (course: ContinuingEducationCourse) => {
+  const handleIssueCertificates = async (course: ContinuingEducationCourse) => {
     try {
       const updated = issueBatchCertificates(course);
-      setCourses(courses.map((c) => (c.courseId === updated.courseId ? updated : c)));
+      await saveRecord(updated);
       const certified = updated.participants.filter((p) => p.certificateIssued).length;
       showToast(`Batch certificates issued to ${certified} qualifying participants!`);
     } catch (err: unknown) {
@@ -218,9 +229,21 @@ export default function FacultyContinuingEducationStudio() {
               </svg>
             </span>
             <div>
-              <h1 className="text-2xl font-bold text-white tracking-tight">
-                Faculty Continuing Education & ATAL FDP Studio
-              </h1>
+              <div className="flex items-center gap-3">
+                <h1 className="text-2xl font-bold text-white tracking-tight">
+                  Faculty Continuing Education & ATAL FDP Studio
+                </h1>
+                <span className={`px-2.5 py-0.5 rounded-full text-xs font-semibold tracking-wide border ${
+                  syncSource === 'supabase'
+                    ? 'bg-emerald-500/20 text-emerald-300 border-emerald-500/30'
+                    : 'bg-amber-500/20 text-amber-300 border-amber-500/30'
+                }`}>
+                  {syncSource === 'supabase' ? 'Supabase Live' : 'Local Fallback'}
+                </span>
+                {isSaving && (
+                  <span className="text-xs text-rose-400 animate-pulse font-medium">Syncing...</span>
+                )}
+              </div>
               <p className="text-sm text-slate-400">
                 AICTE ATAL Academy, MoE GIAN International Courses & Quality Improvement Programme (QIP) Workbench
               </p>

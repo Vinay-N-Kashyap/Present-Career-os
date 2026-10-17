@@ -15,9 +15,20 @@ import {
   recordProctoredExamResults,
   exportFacultyMoocCoursesCSV,
 } from '@/lib/teacher/facultyMoocCourse';
+import { useGovernanceStore } from '@/lib/hooks/useGovernanceStore';
 
 export default function FacultyMoocCourseStudio() {
-  const [courses, setCourses] = useState<MoocCourseRecord[]>(INITIAL_MOOC_COURSES);
+  const {
+    records: courses,
+    setRecords: setCourses,
+    syncSource,
+    isSaving,
+    saveRecord,
+  } = useGovernanceStore<MoocCourseRecord>(
+    'faculty_mooc_courses',
+    INITIAL_MOOC_COURSES,
+    'courseId'
+  );
   const [selectedStage, setSelectedStage] = useState<string>('ALL');
   const [selectedCourse, setSelectedCourse] = useState<MoocCourseRecord | null>(null);
 
@@ -73,7 +84,7 @@ export default function FacultyMoocCourseStudio() {
     : courses.filter((c) => c.stage === selectedStage);
 
   // Handlers
-  const handleCreateCourse = (e: React.FormEvent) => {
+  const handleCreateCourse = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
       const created = authorMoocCourse({
@@ -94,7 +105,7 @@ export default function FacultyMoocCourseStudio() {
         },
       });
 
-      setCourses([created, ...courses]);
+      await saveRecord(created);
       setShowAddModal(false);
       showMsg(`SWAYAM MOOC '${created.courseTitle}' proposal registered (${created.trackingToken}) with ${created.ugcApiPoints} UGC CAS points.`, 'success');
     } catch (err: any) {
@@ -102,7 +113,7 @@ export default function FacultyMoocCourseStudio() {
     }
   };
 
-  const handleUpdateQuadrants = (e: React.FormEvent) => {
+  const handleUpdateQuadrants = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!selectedCourse) return;
     try {
@@ -113,7 +124,7 @@ export default function FacultyMoocCourseStudio() {
         quadrant4SelfAssessment: editQ4,
       });
 
-      setCourses(courses.map((c) => (c.courseId === updated.courseId ? updated : c)));
+      await saveRecord(updated);
       setSelectedCourse(updated);
       setShowQuadrantModal(false);
       const pct = evaluateQuadrantCompleteness(updated.quadrants);
@@ -123,12 +134,12 @@ export default function FacultyMoocCourseStudio() {
     }
   };
 
-  const handleRecordExam = (e: React.FormEvent) => {
+  const handleRecordExam = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!selectedCourse) return;
     try {
       const updated = recordProctoredExamResults(selectedCourse, Number(examLearners), Number(examPassPct));
-      setCourses(courses.map((c) => (c.courseId === updated.courseId ? updated : c)));
+      await saveRecord(updated);
       setSelectedCourse(updated);
       setShowExamModal(false);
       if (updated.isAbcTransferEligible) {
@@ -160,9 +171,21 @@ export default function FacultyMoocCourseStudio() {
         <div>
           <div className="flex items-center gap-3">
             <span className="text-3xl">🌐</span>
-            <h1 className="text-2xl md:text-3xl font-bold tracking-tight text-white">
-              Faculty SWAYAM MOOC & 4-Quadrant E-Content Studio
-            </h1>
+            <div className="flex items-center gap-3">
+              <h1 className="text-2xl md:text-3xl font-bold tracking-tight text-white">
+                Faculty SWAYAM MOOC & 4-Quadrant E-Content Studio
+              </h1>
+              <span className={`px-2.5 py-0.5 rounded-full text-xs font-semibold tracking-wide border ${
+                syncSource === 'supabase'
+                  ? 'bg-emerald-500/20 text-emerald-300 border-emerald-500/30'
+                  : 'bg-amber-500/20 text-amber-300 border-amber-500/30'
+              }`}>
+                {syncSource === 'supabase' ? 'Supabase Live' : 'Local Fallback'}
+              </span>
+              {isSaving && (
+                <span className="text-xs text-rose-400 animate-pulse font-medium">Syncing...</span>
+              )}
+            </div>
           </div>
           <p className="text-slate-400 text-sm mt-1">
             Statutory Compliance: UGC (Credit Framework for Online Courses through SWAYAM) & MoE 4-Quadrant E-Learning Architecture (UGC Table 2 Category 3).

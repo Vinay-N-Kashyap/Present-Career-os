@@ -46,6 +46,10 @@ test('1. Database Migration: 20261018 SQL Schema File Exists & Contains Invarian
   assert.ok(content.includes('public.central_academic_bank_credits'));
   assert.ok(content.includes('public.central_procurement_tenders'));
   assert.ok(content.includes('public.central_rti_grievances'));
+  assert.ok(content.includes('public.central_guest_house_bookings'));
+  assert.ok(content.includes('public.central_coe_press_custody'));
+  assert.ok(content.includes('public.faculty_mooc_courses'));
+  assert.ok(content.includes('public.faculty_continuing_education'));
 
   // Verify RLS security invariants
   const rlsMatches = content.match(/ENABLE ROW LEVEL SECURITY/g) || [];
@@ -82,6 +86,35 @@ test('2. Universal Persistence: Resilient Fallback Works Without Crashes', async
   assert.ok(saveResult.data);
   assert.equal(saveResult.data.id, 'mock-rec-99');
   assert.ok(['supabase', 'local_storage', 'memory'].includes(saveResult.source));
+
+  // Test Batch 4 saving resilience
+  const ghSave = await saveGovernanceRecord(
+    'central_guest_house_bookings',
+    { bookingId: 'GH-TEST-01', guestName: 'Test Guest', guestCategory: 'CATEGORY_A_INSTITUTIONAL', roomNumber: '101' },
+    'bookingId'
+  );
+  assert.equal(ghSave.success, true);
+
+  const coeSave = await saveGovernanceRecord(
+    'central_coe_press_custody',
+    { jobId: 'CPJ-TEST-01', courseCode: 'CS101', stage: 'DOUBLE_LOCK_VAULT' },
+    'jobId'
+  );
+  assert.equal(coeSave.success, true);
+
+  const moocSave = await saveGovernanceRecord(
+    'faculty_mooc_courses',
+    { courseId: 'MOOC-TEST-01', courseTitle: 'Test MOOC', credits: 4 },
+    'courseId'
+  );
+  assert.equal(moocSave.success, true);
+
+  const fdpSave = await saveGovernanceRecord(
+    'faculty_continuing_education',
+    { courseId: 'FDP-TEST-01', courseTitle: 'Test Workshop', coordinatorName: 'Dr. Test' },
+    'courseId'
+  );
+  assert.equal(fdpSave.success, true);
 });
 
 test('3. Campus Admin Shell Navigation: All 40 Portals Route to Real App Router Pages', () => {
