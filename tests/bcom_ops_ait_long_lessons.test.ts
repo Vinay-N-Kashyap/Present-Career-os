@@ -327,3 +327,115 @@ test('B.Com AIT Day 5 Capstone: Autonomous AI Swarm, PSI Drift & Transformation 
   assert.ok(aitLesson5.parts[4].code?.includes('verify_enterprise_digital_transformation_control_tower'));
 });
 
+test('Block 217 (TASK-1132..1136): B.Com Operations Days 6–10 Resolution & Invariant Verification', () => {
+  for (let day = 6; day <= 10; day++) {
+    const lesson = getLongLesson('bcom_ops', day);
+    assert.ok(lesson, `bcom_ops Day ${day} long lesson must resolve`);
+    assert.equal(lesson.coursePrefix, 'bcom_ops');
+    assert.equal(lesson.day, day);
+    assert.equal(lesson.minutes, 45, `Day ${day} duration must be 45 minutes`);
+    assert.equal(lesson.parts.length, 5, `Day ${day} must contain exactly 5 parts`);
+    assert.ok(lesson.summary.length >= 5, `Day ${day} must have at least 5 summary bullet points`);
+    assert.ok(lesson.projectStep, `Day ${day} must have a hands-on projectStep`);
+    assert.ok(lesson.projectStep.steps.length >= 4, `Day ${day} projectStep must have at least 4 steps`);
+
+    for (let partIdx = 0; partIdx < 5; partIdx++) {
+      const part = lesson.parts[partIdx];
+      assert.ok(part.title.length > 0, `Day ${day} Part ${partIdx + 1} must have a non-empty title`);
+      assert.ok(part.say.length >= 4, `Day ${day} Part ${partIdx + 1} must have at least 4 exposition paragraphs`);
+      assert.ok(part.example && part.example.length > 0, `Day ${day} Part ${partIdx + 1} must have a real-world example`);
+      assert.ok(part.code && (part.code.includes('def ') || part.code.includes('class ')), `Day ${day} Part ${partIdx + 1} code must contain Python functions/classes`);
+      assert.ok(part.output && part.output.length > 0, `Day ${day} Part ${partIdx + 1} must have deterministic expected output`);
+      assert.ok(part.tryIt && part.tryIt.length > 0, `Day ${day} Part ${partIdx + 1} must have a tryIt experiment`);
+      assert.ok(part.codeNotes && part.codeNotes.length >= 3, `Day ${day} Part ${partIdx + 1} must have at least 3 codeNotes`);
+
+      const check = part.check as any;
+      assert.ok(check.question.length > 10, `Day ${day} Part ${partIdx + 1} check question must be descriptive`);
+      assert.equal(check.options.length, 4, `Day ${day} Part ${partIdx + 1} check must have exactly 4 options`);
+      assert.ok(check.answer >= 0 && check.answer < 4, `Day ${day} Part ${partIdx + 1} answer must be valid index`);
+      assert.ok(check.why && check.why.length > 15, `Day ${day} Part ${partIdx + 1} why explanation must be rigorous`);
+    }
+  }
+});
+
+test('Block 217: B.Com Operations Days 6–10 Gate v2 Workflow Visuals & Cryptographic SHA-256 Bindings', async () => {
+  const fs = await import('node:fs');
+  const path = await import('node:path');
+  const crypto = await import('node:crypto');
+  const { loadDayFile, getVisual } = await import('../src/lib/visuals/loadVisuals');
+
+  for (let day = 6; day <= 10; day++) {
+    const filePath = path.resolve(process.cwd(), `src/lib/data/lessonVisuals/bcom_ops/day-${String(day).padStart(2, '0')}.json`);
+    assert.ok(fs.existsSync(filePath), `On-disk visual file missing: ${filePath}`);
+
+    const dayFile = loadDayFile('bcom_ops', day);
+    assert.ok(dayFile, `loadDayFile failed for bcom_ops Day ${day}`);
+    assert.equal(dayFile.schemaVersion, 1);
+    assert.equal(dayFile.prefix, 'bcom_ops');
+    assert.equal(dayFile.day, day);
+    assert.equal(dayFile.entries.length, 5, `Expected 5 entries in bcom_ops Day ${day}`);
+
+    const lesson = getLongLesson('bcom_ops', day)!;
+    for (let partIdx = 0; partIdx < 5; partIdx++) {
+      const entry = dayFile.entries[partIdx];
+      const part = lesson.parts[partIdx];
+
+      assert.equal(entry.partTitle, part.title, `partTitle mismatch at bcom_ops Day ${day} Part ${partIdx}`);
+      const expectedHash = crypto.createHash('sha256').update(part.code || '').digest('hex');
+      assert.equal(entry.codeHash, expectedHash, `codeHash mismatch at bcom_ops Day ${day} Part ${partIdx}`);
+
+      const visual = getVisual('bcom_ops', day, partIdx);
+      assert.ok(visual, `getVisual returned null for bcom_ops Day ${day} Part ${partIdx}`);
+      assert.equal(visual.template, 'workflow', `Expected template "workflow" for bcom_ops`);
+      assert.equal(visual.steps.length, 4, `Expected 4 synchronized steps for bcom_ops Day ${day} Part ${partIdx}`);
+      assert.deepEqual(
+        visual.steps.map((s: any) => s.at),
+        ['intro', 'say1', 'example', 'tryIt'],
+        `Step markers must be ['intro', 'say1', 'example', 'tryIt']`
+      );
+    }
+  }
+});
+
+test('Block 217: Domain specifics & deterministic Python code verification across Days 6–10', () => {
+  // Day 6: Aggregate Production Planning & MPS
+  const d6 = getLongLesson('bcom_ops', 6)!;
+  assert.ok(d6.parts[0].code?.includes('formulate_aggregate_planning_horizon'));
+  assert.ok(d6.parts[1].code?.includes('compare_chase_vs_level_strategies'));
+  assert.ok(d6.parts[2].code?.includes('optimize_hybrid_aggregate_plan'));
+  assert.ok(d6.parts[3].code?.includes('calculate_master_production_schedule'));
+  assert.ok(d6.parts[4].code?.includes('MasterScheduleGovernor'));
+
+  // Day 7: MRP I & Bill of Materials Explosion
+  const d7 = getLongLesson('bcom_ops', 7)!;
+  assert.ok(d7.parts[0].code?.includes('calculate_dependent_component_demand'));
+  assert.ok(d7.parts[1].code?.includes('BillOfMaterialsManager'));
+  assert.ok(d7.parts[2].code?.includes('compute_mrp_grid'));
+  assert.ok(d7.parts[3].code?.includes('evaluate_lot_sizing_policies'));
+  assert.ok(d7.parts[4].code?.includes('ClosedLoopMRPEngine'));
+
+  // Day 8: MRP II & Capacity Requirements Planning (CRP)
+  const d8 = getLongLesson('bcom_ops', 8)!;
+  assert.ok(d8.parts[0].code?.includes('simulate_mrp2_enterprise_impact'));
+  assert.ok(d8.parts[1].code?.includes('OperationsRoutingEngine'));
+  assert.ok(d8.parts[2].code?.includes('generate_infinite_load_profile'));
+  assert.ok(d8.parts[3].code?.includes('level_work_center_overload'));
+  assert.ok(d8.parts[4].code?.includes('evaluate_shop_floor_dispatching_rules'));
+
+  // Day 9: Toyota Production System (TPS), SMED & Heijunka
+  const d9 = getLongLesson('bcom_ops', 9)!;
+  assert.ok(d9.parts[0].code?.includes('analyze_lean_value_stream'));
+  assert.ok(d9.parts[1].code?.includes('simulate_smed_setup_reduction'));
+  assert.ok(d9.parts[2].code?.includes('generate_heijunka_mixed_model_schedule'));
+  assert.ok(d9.parts[3].code?.includes('JidokaWorkstation'));
+  assert.ok(d9.parts[4].code?.includes('calculate_cellular_swip_and_flow'));
+
+  // Day 10: Milestone 2 Capstone: Master Production Scheduling & Lean Factory Control Tower
+  const d10 = getLongLesson('bcom_ops', 10)!;
+  assert.ok(d10.parts[0].code?.includes('simulate_production_control_pyramid'));
+  assert.ok(d10.parts[1].code?.includes('analyze_multi_stage_factory_bottlenecks'));
+  assert.ok(d10.parts[2].code?.includes('LiveFactoryControlTower'));
+  assert.ok(d10.parts[3].code?.includes('verify_master_production_control_tower'));
+  assert.ok(d10.parts[4].code?.includes('EnterpriseOperationsScorecard'));
+});
+

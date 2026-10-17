@@ -231,3 +231,76 @@ def generate_ledger_sheet_visual(prefix: str, day: int, entries: list) -> dict:
         "entries": json_entries
     }
 
+def generate_workflow_visual(prefix: str, day: int, entries: list) -> dict:
+    import copy
+    json_entries = []
+    default_stages = [
+        {"id": "s1", "name": "Demand Forecast", "subtext": "EOQ / Safety Stock", "tone": "data"},
+        {"id": "s2", "name": "Procurement & WIP", "subtext": "Kanban Pull", "tone": "data"},
+        {"id": "s3", "name": "Six Sigma QA", "subtext": "Control Limits", "tone": "ok"},
+        {"id": "s4", "name": "Fulfillment SLA", "subtext": "OTIF 99.4%", "tone": "ok"}
+    ]
+
+    for idx, e in enumerate(entries):
+        code_hash = make_sha256(e['code'])
+        title_truncated = e['title'][:45]
+        spec = {
+            "template": "workflow",
+            "title": f"{title_truncated}... — Operational Workflow",
+            "stages": copy.deepcopy(default_stages),
+            "steps": [
+                {
+                    "at": "intro",
+                    "caption": f"Stage 1 (Demand Forecast): Initialize {e['title'][:40]}...",
+                    "activeStageId": "s1",
+                    "statusBadge": "INGRESS",
+                    "throughput": "100% Ready",
+                    "tone": "data",
+                    "stages": copy.deepcopy(default_stages)
+                },
+                {
+                    "at": "say1",
+                    "caption": f"Stage 2 (Procurement & WIP): Process core workflow stage.",
+                    "activeStageId": "s2",
+                    "statusBadge": "IN_PROGRESS",
+                    "throughput": "Active",
+                    "tone": "data",
+                    "stages": copy.deepcopy(default_stages)
+                },
+                {
+                    "at": "example",
+                    "caption": f"Stage 3 (Six Sigma QA): Verify quality and invariants.",
+                    "activeStageId": "s3",
+                    "statusBadge": "VALIDATED",
+                    "throughput": "Zero Defects",
+                    "tone": "ok",
+                    "stages": copy.deepcopy(default_stages)
+                },
+                {
+                    "at": "tryIt",
+                    "caption": f"Stage 4 (Fulfillment SLA): Commit end-to-end delivery.",
+                    "activeStageId": "s4",
+                    "statusBadge": "COMPLETED",
+                    "throughput": "SLA Met \u2713",
+                    "tone": "ok",
+                    "stages": copy.deepcopy(default_stages)
+                }
+            ]
+        }
+
+        json_entries.append({
+            "partTitle": e['title'],
+            "codeHash": code_hash,
+            "spec": spec,
+            "filled": copy.deepcopy(spec)
+        })
+
+    return {
+        "schemaVersion": 1,
+        "prefix": prefix,
+        "day": day,
+        "promptSha": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
+        "model": "anthropic/claude-3.5-sonnet",
+        "entries": json_entries
+    }
+
