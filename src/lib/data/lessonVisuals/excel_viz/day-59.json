@@ -1,0 +1,592 @@
+[
+  {
+    "partTitle": "Enterprise Shadow IT Architecture & The $15M Modernization Imperative: Unmanaged Workbook Sprawl & Operational Risk",
+    "codeHash": "ae3d5233746cbddd99b2bc0935fc579983bee2164eafc314608078e09a6e4264",
+    "spec": {
+      "template": "bars",
+      "title": "Enterprise Shadow IT Architecture & The $15M Modernization Imperative: Unmanaged Workbook Sprawl & Operational Risk – Principal Financial Systems Architect Modernization RFC: Transitioning Monolithic Workbooks to Governed Lakehouses",
+      "steps": [
+        {
+          "at": "intro",
+          "caption": "Step 1: Architectural baseline configuration and parameter ingestion for Enterprise Shadow IT Architecture & The $15M Modernization Imperative: Unmanaged Workbook Sprawl & Operational Risk",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Shadow IT Sprawl",
+              "value": 25,
+              "tone": "accent"
+            },
+            {
+              "label": "Modernization ROI",
+              "value": 20,
+              "tone": "data"
+            },
+            {
+              "label": "Lakehouse Coexistence",
+              "value": 15,
+              "tone": "data"
+            },
+            {
+              "label": "EARB Board Approval",
+              "value": 10,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "say1",
+          "caption": "Step 2: Processing pipeline execution and intermediate simulation for Enterprise Shadow IT Architecture & The $15M Modernization Imperative: Unmanaged Workbook Sprawl & Operational Risk",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Shadow IT Sprawl",
+              "value": 65,
+              "tone": "accent"
+            },
+            {
+              "label": "Modernization ROI",
+              "value": 60,
+              "tone": "data"
+            },
+            {
+              "label": "Lakehouse Coexistence",
+              "value": 55,
+              "tone": "data"
+            },
+            {
+              "label": "EARB Board Approval",
+              "value": 45,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "example",
+          "caption": "Step 3: Stress testing, boundary verification, and anomaly detection for Enterprise Shadow IT Architecture & The $15M Modernization Imperative: Unmanaged Workbook Sprawl & Operational Risk",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Shadow IT Sprawl",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "Modernization ROI",
+              "value": 80,
+              "tone": "data"
+            },
+            {
+              "label": "Lakehouse Coexistence",
+              "value": 75,
+              "tone": "data"
+            },
+            {
+              "label": "EARB Board Approval",
+              "value": 70,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "tryIt",
+          "caption": "Step 4: Sovereign institutional governance and production certification for Enterprise Shadow IT Architecture & The $15M Modernization Imperative: Unmanaged Workbook Sprawl & Operational Risk",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Shadow IT Sprawl",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "Modernization ROI",
+              "value": 95,
+              "tone": "data"
+            },
+            {
+              "label": "Lakehouse Coexistence",
+              "value": 90,
+              "tone": "data"
+            },
+            {
+              "label": "EARB Board Approval",
+              "value": 85,
+              "tone": "data"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "partTitle": "The Cost-Benefit & Risk Analysis Detective: Quantifying Technical Debt, Operational Failure Probabilities & Modernization ROI",
+    "codeHash": "2b551dd17bf86e1dd786f5ed5f5e12d601c743757f92d402f48e9c3178a1b82c",
+    "spec": {
+      "template": "bars",
+      "title": "The Cost-Benefit & Risk Analysis Detective: Quantifying Technical Debt, Operational Failure Probabilities & Modernization ROI – Principal Financial Systems Architect Modernization RFC: Transitioning Monolithic Workbooks to Governed Lakehouses",
+      "steps": [
+        {
+          "at": "intro",
+          "caption": "Step 1: Architectural baseline configuration and parameter ingestion for The Cost-Benefit & Risk Analysis Detective: Quantifying Technical Debt, Operational Failure Probabilities & Modernization ROI",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Shadow IT Sprawl",
+              "value": 25,
+              "tone": "accent"
+            },
+            {
+              "label": "Modernization ROI",
+              "value": 20,
+              "tone": "data"
+            },
+            {
+              "label": "Lakehouse Coexistence",
+              "value": 15,
+              "tone": "data"
+            },
+            {
+              "label": "EARB Board Approval",
+              "value": 10,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "say1",
+          "caption": "Step 2: Processing pipeline execution and intermediate simulation for The Cost-Benefit & Risk Analysis Detective: Quantifying Technical Debt, Operational Failure Probabilities & Modernization ROI",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Shadow IT Sprawl",
+              "value": 65,
+              "tone": "accent"
+            },
+            {
+              "label": "Modernization ROI",
+              "value": 60,
+              "tone": "data"
+            },
+            {
+              "label": "Lakehouse Coexistence",
+              "value": 55,
+              "tone": "data"
+            },
+            {
+              "label": "EARB Board Approval",
+              "value": 45,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "example",
+          "caption": "Step 3: Stress testing, boundary verification, and anomaly detection for The Cost-Benefit & Risk Analysis Detective: Quantifying Technical Debt, Operational Failure Probabilities & Modernization ROI",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Shadow IT Sprawl",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "Modernization ROI",
+              "value": 80,
+              "tone": "data"
+            },
+            {
+              "label": "Lakehouse Coexistence",
+              "value": 75,
+              "tone": "data"
+            },
+            {
+              "label": "EARB Board Approval",
+              "value": 70,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "tryIt",
+          "caption": "Step 4: Sovereign institutional governance and production certification for The Cost-Benefit & Risk Analysis Detective: Quantifying Technical Debt, Operational Failure Probabilities & Modernization ROI",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Shadow IT Sprawl",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "Modernization ROI",
+              "value": 95,
+              "tone": "data"
+            },
+            {
+              "label": "Lakehouse Coexistence",
+              "value": 90,
+              "tone": "data"
+            },
+            {
+              "label": "EARB Board Approval",
+              "value": 85,
+              "tone": "data"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "partTitle": "The Coexistence Architecture: Governed Lakehouse Core, Power BI Semantic Layer & Live XMLA / Direct Lake Excel Endpoints",
+    "codeHash": "39ff35db654d386233b6f6b63af9424713482db1690b20db64e2ba1c6a3428ea",
+    "spec": {
+      "template": "bars",
+      "title": "The Coexistence Architecture: Governed Lakehouse Core, Power BI Semantic Layer & Live XMLA / Direct Lake Excel Endpoints – Principal Financial Systems Architect Modernization RFC: Transitioning Monolithic Workbooks to Governed Lakehouses",
+      "steps": [
+        {
+          "at": "intro",
+          "caption": "Step 1: Architectural baseline configuration and parameter ingestion for The Coexistence Architecture: Governed Lakehouse Core, Power BI Semantic Layer & Live XMLA / Direct Lake Excel Endpoints",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Shadow IT Sprawl",
+              "value": 25,
+              "tone": "accent"
+            },
+            {
+              "label": "Modernization ROI",
+              "value": 20,
+              "tone": "data"
+            },
+            {
+              "label": "Lakehouse Coexistence",
+              "value": 15,
+              "tone": "data"
+            },
+            {
+              "label": "EARB Board Approval",
+              "value": 10,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "say1",
+          "caption": "Step 2: Processing pipeline execution and intermediate simulation for The Coexistence Architecture: Governed Lakehouse Core, Power BI Semantic Layer & Live XMLA / Direct Lake Excel Endpoints",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Shadow IT Sprawl",
+              "value": 65,
+              "tone": "accent"
+            },
+            {
+              "label": "Modernization ROI",
+              "value": 60,
+              "tone": "data"
+            },
+            {
+              "label": "Lakehouse Coexistence",
+              "value": 55,
+              "tone": "data"
+            },
+            {
+              "label": "EARB Board Approval",
+              "value": 45,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "example",
+          "caption": "Step 3: Stress testing, boundary verification, and anomaly detection for The Coexistence Architecture: Governed Lakehouse Core, Power BI Semantic Layer & Live XMLA / Direct Lake Excel Endpoints",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Shadow IT Sprawl",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "Modernization ROI",
+              "value": 80,
+              "tone": "data"
+            },
+            {
+              "label": "Lakehouse Coexistence",
+              "value": 75,
+              "tone": "data"
+            },
+            {
+              "label": "EARB Board Approval",
+              "value": 70,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "tryIt",
+          "caption": "Step 4: Sovereign institutional governance and production certification for The Coexistence Architecture: Governed Lakehouse Core, Power BI Semantic Layer & Live XMLA / Direct Lake Excel Endpoints",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Shadow IT Sprawl",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "Modernization ROI",
+              "value": 95,
+              "tone": "data"
+            },
+            {
+              "label": "Lakehouse Coexistence",
+              "value": 90,
+              "tone": "data"
+            },
+            {
+              "label": "EARB Board Approval",
+              "value": 85,
+              "tone": "data"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "partTitle": "Principal Architect Enterprise Modernization RFC Blueprint: Phased Migration Roadmap, Change Management & Governance Gates",
+    "codeHash": "80dd2f357a2720bd41029c985f63f7a3e080ea4f6eac66c61756c72d0a466cc3",
+    "spec": {
+      "template": "bars",
+      "title": "Principal Architect Enterprise Modernization RFC Blueprint: Phased Migration Roadmap, Change Management & Governance Gates – Principal Financial Systems Architect Modernization RFC: Transitioning Monolithic Workbooks to Governed Lakehouses",
+      "steps": [
+        {
+          "at": "intro",
+          "caption": "Step 1: Architectural baseline configuration and parameter ingestion for Principal Architect Enterprise Modernization RFC Blueprint: Phased Migration Roadmap, Change Management & Governance Gates",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Shadow IT Sprawl",
+              "value": 25,
+              "tone": "accent"
+            },
+            {
+              "label": "Modernization ROI",
+              "value": 20,
+              "tone": "data"
+            },
+            {
+              "label": "Lakehouse Coexistence",
+              "value": 15,
+              "tone": "data"
+            },
+            {
+              "label": "EARB Board Approval",
+              "value": 10,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "say1",
+          "caption": "Step 2: Processing pipeline execution and intermediate simulation for Principal Architect Enterprise Modernization RFC Blueprint: Phased Migration Roadmap, Change Management & Governance Gates",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Shadow IT Sprawl",
+              "value": 65,
+              "tone": "accent"
+            },
+            {
+              "label": "Modernization ROI",
+              "value": 60,
+              "tone": "data"
+            },
+            {
+              "label": "Lakehouse Coexistence",
+              "value": 55,
+              "tone": "data"
+            },
+            {
+              "label": "EARB Board Approval",
+              "value": 45,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "example",
+          "caption": "Step 3: Stress testing, boundary verification, and anomaly detection for Principal Architect Enterprise Modernization RFC Blueprint: Phased Migration Roadmap, Change Management & Governance Gates",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Shadow IT Sprawl",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "Modernization ROI",
+              "value": 80,
+              "tone": "data"
+            },
+            {
+              "label": "Lakehouse Coexistence",
+              "value": 75,
+              "tone": "data"
+            },
+            {
+              "label": "EARB Board Approval",
+              "value": 70,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "tryIt",
+          "caption": "Step 4: Sovereign institutional governance and production certification for Principal Architect Enterprise Modernization RFC Blueprint: Phased Migration Roadmap, Change Management & Governance Gates",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Shadow IT Sprawl",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "Modernization ROI",
+              "value": 95,
+              "tone": "data"
+            },
+            {
+              "label": "Lakehouse Coexistence",
+              "value": 90,
+              "tone": "data"
+            },
+            {
+              "label": "EARB Board Approval",
+              "value": 85,
+              "tone": "data"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "partTitle": "Master Architecture Review Board Gateway: Multi-Year Modernization Synthesis, Board Defense & Sovereign RFC Approval",
+    "codeHash": "1319bd37a5025f9d6b09dc6d2c9e37d82ce5eccfdb0be3806f57ea6d533cacea",
+    "spec": {
+      "template": "bars",
+      "title": "Master Architecture Review Board Gateway: Multi-Year Modernization Synthesis, Board Defense & Sovereign RFC Approval – Principal Financial Systems Architect Modernization RFC: Transitioning Monolithic Workbooks to Governed Lakehouses",
+      "steps": [
+        {
+          "at": "intro",
+          "caption": "Step 1: Architectural baseline configuration and parameter ingestion for Master Architecture Review Board Gateway: Multi-Year Modernization Synthesis, Board Defense & Sovereign RFC Approval",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Shadow IT Sprawl",
+              "value": 25,
+              "tone": "accent"
+            },
+            {
+              "label": "Modernization ROI",
+              "value": 20,
+              "tone": "data"
+            },
+            {
+              "label": "Lakehouse Coexistence",
+              "value": 15,
+              "tone": "data"
+            },
+            {
+              "label": "EARB Board Approval",
+              "value": 10,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "say1",
+          "caption": "Step 2: Processing pipeline execution and intermediate simulation for Master Architecture Review Board Gateway: Multi-Year Modernization Synthesis, Board Defense & Sovereign RFC Approval",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Shadow IT Sprawl",
+              "value": 65,
+              "tone": "accent"
+            },
+            {
+              "label": "Modernization ROI",
+              "value": 60,
+              "tone": "data"
+            },
+            {
+              "label": "Lakehouse Coexistence",
+              "value": 55,
+              "tone": "data"
+            },
+            {
+              "label": "EARB Board Approval",
+              "value": 45,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "example",
+          "caption": "Step 3: Stress testing, boundary verification, and anomaly detection for Master Architecture Review Board Gateway: Multi-Year Modernization Synthesis, Board Defense & Sovereign RFC Approval",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Shadow IT Sprawl",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "Modernization ROI",
+              "value": 80,
+              "tone": "data"
+            },
+            {
+              "label": "Lakehouse Coexistence",
+              "value": 75,
+              "tone": "data"
+            },
+            {
+              "label": "EARB Board Approval",
+              "value": 70,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "tryIt",
+          "caption": "Step 4: Sovereign institutional governance and production certification for Master Architecture Review Board Gateway: Multi-Year Modernization Synthesis, Board Defense & Sovereign RFC Approval",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Shadow IT Sprawl",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "Modernization ROI",
+              "value": 95,
+              "tone": "data"
+            },
+            {
+              "label": "Lakehouse Coexistence",
+              "value": 90,
+              "tone": "data"
+            },
+            {
+              "label": "EARB Board Approval",
+              "value": 85,
+              "tone": "data"
+            }
+          ]
+        }
+      ]
+    }
+  }
+]

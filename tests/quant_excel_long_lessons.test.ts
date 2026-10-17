@@ -67,7 +67,7 @@ test('Quant & Excel Long Lessons: Resolution & Structural Invariants', () => {
   assert.equal(excelLesson5.day, 5);
   assert.equal(excelLesson5.parts.length, 5, 'excel_viz Day 5 must contain exactly 5 parts');
 
-  for (let d = 6; d <= 55; d++) {
+  for (let d = 6; d <= 60; d++) {
     const el = getLongLesson('excel_viz', d);
     assert.ok(el, `excel_viz Day ${d} long lesson must resolve`);
     assert.equal(el.day, d);
@@ -3084,4 +3084,160 @@ test('Excel Viz Day 55: Enterprise Spreadsheet Governance, Role-Based Access Con
   assert.ok(lesson.parts[3].code?.includes('SoxComplianceAuditLedger'));
   assert.ok(lesson.parts[4].code?.includes('MasterEnterpriseGovernanceGateway'));
 });
+
+test('Excel Viz Day 56: Historic Catastrophe Post-Mortem 1: The $6.2 Billion JPMorgan London Whale VaR Formula Disaster', () => {
+  const lesson = getLongLesson('excel_viz', 56);
+  assert.ok(lesson, 'excel_viz Day 56 must resolve');
+  assert.equal(lesson.day, 56);
+  assert.equal(lesson.parts.length, 5);
+
+  const spokenMin = estimateSpokenMinutes(lesson);
+  assert.ok(spokenMin >= 20, `Spoken minutes should be >= 20 (got ${spokenMin})`);
+
+  for (const part of lesson.parts) {
+    assert.ok(part.title.length > 0);
+    assert.ok(part.say.length >= 3);
+    assert.ok(part.example && part.example.length > 0);
+    assert.ok(part.code && part.code.includes('class '));
+    assert.ok(part.output && part.output.length > 0);
+    assert.ok(part.tryIt && part.tryIt.length > 0);
+
+    const check = part.check as any;
+    assert.ok(check.question.length > 10);
+    assert.equal(check.options.length, 4);
+    assert.ok(check.answer >= 0 && check.answer < 4);
+    assert.ok(check.why.length > 15);
+  }
+
+  assert.ok(lesson.parts[0].code?.includes('LondonWhalePortfolioModel'));
+  assert.ok(lesson.parts[1].code?.includes('VarDivisionErrorDetector'));
+  assert.ok(lesson.parts[2].code?.includes('SpreadsheetGovernanceTracker'));
+  assert.ok(lesson.parts[3].code?.includes('DualEngineVarValidator'));
+  assert.ok(lesson.parts[4].code?.includes('MasterLondonWhaleForensicGateway'));
+});
+
+test('Excel Viz Day 57: Historic Catastrophe Post-Mortem 2: The Reinhart-Rogoff $200B Austerity Omission (=AVERAGE(A1:A15) Range Error)', () => {
+  const lesson = getLongLesson('excel_viz', 57);
+  assert.ok(lesson, 'excel_viz Day 57 must resolve');
+  assert.equal(lesson.day, 57);
+  assert.equal(lesson.parts.length, 5);
+
+  const spokenMin = estimateSpokenMinutes(lesson);
+  assert.ok(spokenMin >= 20, `Spoken minutes should be >= 20 (got ${spokenMin})`);
+
+  for (const part of lesson.parts) {
+    assert.ok(part.title.length > 0);
+    assert.ok(part.say.length >= 3);
+    assert.ok(part.example && part.example.length > 0);
+    assert.ok(part.code && part.code.includes('class '));
+    assert.ok(part.output && part.output.length > 0);
+    assert.ok(part.tryIt && part.tryIt.length > 0);
+
+    const check = part.check as any;
+    assert.ok(check.question.length > 10);
+    assert.equal(check.options.length, 4);
+    assert.ok(check.answer >= 0 && check.answer < 4);
+    assert.ok(check.why.length > 15);
+  }
+
+  assert.ok(lesson.parts[0].code?.includes('ReinhartRogoffGrowthModel'));
+  assert.ok(lesson.parts[1].code?.includes('TruncatedRangeDetector'));
+  assert.ok(lesson.parts[2].code?.includes('CountryWeightingAuditEngine'));
+  assert.ok(lesson.parts[3].code?.includes('AutoExpandingStructuredTable'));
+  assert.ok(lesson.parts[4].code?.includes('MasterReinhartRogoffForensicGateway'));
+});
+
+test('Excel Viz Day 58: Historic Catastrophe Post-Mortem 3: Fannie Mae $1.3B Restatement & MI5 Wiretap Phone Truncation', () => {
+  const lesson = getLongLesson('excel_viz', 58);
+  assert.ok(lesson, 'excel_viz Day 58 must resolve');
+  assert.equal(lesson.day, 58);
+  assert.equal(lesson.parts.length, 5);
+
+  const spokenMin = estimateSpokenMinutes(lesson);
+  assert.ok(spokenMin >= 20, `Spoken minutes should be >= 20 (got ${spokenMin})`);
+
+  for (const part of lesson.parts) {
+    assert.ok(part.title.length > 0);
+    assert.ok(part.say.length >= 3);
+    assert.ok(part.example && part.example.length > 0);
+    assert.ok(part.code && part.code.includes('class '));
+    assert.ok(part.output && part.output.length > 0);
+    assert.ok(part.tryIt && part.tryIt.length > 0);
+
+    const check = part.check as any;
+    assert.ok(check.question.length > 10);
+    assert.equal(check.options.length, 4);
+    assert.ok(check.answer >= 0 && check.answer < 4);
+    assert.ok(check.why.length > 15);
+  }
+
+  assert.ok(lesson.parts[0].code?.includes('Ieee754PrecisionProfiler'));
+  assert.ok(lesson.parts[1].code?.includes('TelephonyLeadingZeroRestorer'));
+  assert.ok(lesson.parts[2].code?.includes('TextTypeCoercionGuardian'));
+  assert.ok(lesson.parts[3].code?.includes('PowerQueryTypeSafePipeline'));
+  assert.ok(lesson.parts[4].code?.includes('MasterPrecisionTypeSafetyGateway'));
+});
+
+test('Excel Viz Day 59: Principal Financial Systems Architect Modernization RFC: Transitioning Monolithic Workbooks to Governed Lakehouses', () => {
+  const lesson = getLongLesson('excel_viz', 59);
+  assert.ok(lesson, 'excel_viz Day 59 must resolve');
+  assert.equal(lesson.day, 59);
+  assert.equal(lesson.parts.length, 5);
+
+  const spokenMin = estimateSpokenMinutes(lesson);
+  assert.ok(spokenMin >= 20, `Spoken minutes should be >= 20 (got ${spokenMin})`);
+
+  for (const part of lesson.parts) {
+    assert.ok(part.title.length > 0);
+    assert.ok(part.say.length >= 3);
+    assert.ok(part.example && part.example.length > 0);
+    assert.ok(part.code && part.code.includes('class '));
+    assert.ok(part.output && part.output.length > 0);
+    assert.ok(part.tryIt && part.tryIt.length > 0);
+
+    const check = part.check as any;
+    assert.ok(check.question.length > 10);
+    assert.equal(check.options.length, 4);
+    assert.ok(check.answer >= 0 && check.answer < 4);
+    assert.ok(check.why.length > 15);
+  }
+
+  assert.ok(lesson.parts[0].code?.includes('ShadowItSprawlProfiler'));
+  assert.ok(lesson.parts[1].code?.includes('ModernizationRoiCalculator'));
+  assert.ok(lesson.parts[2].code?.includes('LakehouseCoexistenceEngine'));
+  assert.ok(lesson.parts[3].code?.includes('EnterpriseModernizationRfcBuilder'));
+  assert.ok(lesson.parts[4].code?.includes('MasterArchitectureReviewBoardGateway'));
+});
+
+test('Excel Viz Day 60: 🏆 Capstone 2: ApexEnterpriseAnalytics Full-Scale Financial Engineering & Enterprise Data Modeling Master Capstone Viva Gate', () => {
+  const lesson = getLongLesson('excel_viz', 60);
+  assert.ok(lesson, 'excel_viz Day 60 must resolve');
+  assert.equal(lesson.day, 60);
+  assert.equal(lesson.parts.length, 5);
+
+  const spokenMin = estimateSpokenMinutes(lesson);
+  assert.ok(spokenMin >= 20, `Spoken minutes should be >= 20 (got ${spokenMin})`);
+
+  for (const part of lesson.parts) {
+    assert.ok(part.title.length > 0);
+    assert.ok(part.say.length >= 3);
+    assert.ok(part.example && part.example.length > 0);
+    assert.ok(part.code && part.code.includes('class '));
+    assert.ok(part.output && part.output.length > 0);
+    assert.ok(part.tryIt && part.tryIt.length > 0);
+
+    const check = part.check as any;
+    assert.ok(check.question.length > 10);
+    assert.equal(check.options.length, 4);
+    assert.ok(check.answer >= 0 && check.answer < 4);
+    assert.ok(check.why.length > 15);
+  }
+
+  assert.ok(lesson.parts[0].code?.includes('ApexEnterpriseBlueprintAuditor'));
+  assert.ok(lesson.parts[1].code?.includes('ModelChaosStressSimulator'));
+  assert.ok(lesson.parts[2].code?.includes('InGridMlAndCloudAutomator'));
+  assert.ok(lesson.parts[3].code?.includes('ProductionFinancialEngineSuite'));
+  assert.ok(lesson.parts[4].code?.includes('MasterApexEnterpriseAnalyticsPlatform'));
+});
+
 

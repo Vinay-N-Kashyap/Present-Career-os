@@ -1,0 +1,592 @@
+[
+  {
+    "partTitle": "Floating-Point Precision Limits & Type Coercion Architecture: IEEE 754 15-Digit Bounds & Scientific Notation Hazards",
+    "codeHash": "77b04f438ecd73e8be93e937293c0df22ffb494d7ba94012114467df0564888c",
+    "spec": {
+      "template": "bars",
+      "title": "Floating-Point Precision Limits & Type Coercion Architecture: IEEE 754 15-Digit Bounds & Scientific Notation Hazards – Historic Catastrophe Post-Mortem 3: Fannie Mae $1.3B Restatement & MI5 Wiretap Phone Truncation",
+      "steps": [
+        {
+          "at": "intro",
+          "caption": "Step 1: Architectural baseline configuration and parameter ingestion for Floating-Point Precision Limits & Type Coercion Architecture: IEEE 754 15-Digit Bounds & Scientific Notation Hazards",
+          "max": 100,
+          "bars": [
+            {
+              "label": "IEEE 754 Float Bound",
+              "value": 25,
+              "tone": "accent"
+            },
+            {
+              "label": "Telephony Zero Loss",
+              "value": 20,
+              "tone": "data"
+            },
+            {
+              "label": "Apostrophe Guard",
+              "value": 15,
+              "tone": "data"
+            },
+            {
+              "label": "Power Query Schema",
+              "value": 10,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "say1",
+          "caption": "Step 2: Processing pipeline execution and intermediate simulation for Floating-Point Precision Limits & Type Coercion Architecture: IEEE 754 15-Digit Bounds & Scientific Notation Hazards",
+          "max": 100,
+          "bars": [
+            {
+              "label": "IEEE 754 Float Bound",
+              "value": 65,
+              "tone": "accent"
+            },
+            {
+              "label": "Telephony Zero Loss",
+              "value": 60,
+              "tone": "data"
+            },
+            {
+              "label": "Apostrophe Guard",
+              "value": 55,
+              "tone": "data"
+            },
+            {
+              "label": "Power Query Schema",
+              "value": 45,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "example",
+          "caption": "Step 3: Stress testing, boundary verification, and anomaly detection for Floating-Point Precision Limits & Type Coercion Architecture: IEEE 754 15-Digit Bounds & Scientific Notation Hazards",
+          "max": 100,
+          "bars": [
+            {
+              "label": "IEEE 754 Float Bound",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "Telephony Zero Loss",
+              "value": 80,
+              "tone": "data"
+            },
+            {
+              "label": "Apostrophe Guard",
+              "value": 75,
+              "tone": "data"
+            },
+            {
+              "label": "Power Query Schema",
+              "value": 70,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "tryIt",
+          "caption": "Step 4: Sovereign institutional governance and production certification for Floating-Point Precision Limits & Type Coercion Architecture: IEEE 754 15-Digit Bounds & Scientific Notation Hazards",
+          "max": 100,
+          "bars": [
+            {
+              "label": "IEEE 754 Float Bound",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "Telephony Zero Loss",
+              "value": 95,
+              "tone": "data"
+            },
+            {
+              "label": "Apostrophe Guard",
+              "value": 90,
+              "tone": "data"
+            },
+            {
+              "label": "Power Query Schema",
+              "value": 85,
+              "tone": "data"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "partTitle": "The MI5 Telephony Truncation & Fannie Mae Hedge Restatement: Autopsy of Leading-Zero Loss & Uncontrolled Financial Hedges",
+    "codeHash": "a03c362567dc20ea9a5fcf8592a1c0209a33cc33bb5567be5ed3abef5a26b415",
+    "spec": {
+      "template": "bars",
+      "title": "The MI5 Telephony Truncation & Fannie Mae Hedge Restatement: Autopsy of Leading-Zero Loss & Uncontrolled Financial Hedges – Historic Catastrophe Post-Mortem 3: Fannie Mae $1.3B Restatement & MI5 Wiretap Phone Truncation",
+      "steps": [
+        {
+          "at": "intro",
+          "caption": "Step 1: Architectural baseline configuration and parameter ingestion for The MI5 Telephony Truncation & Fannie Mae Hedge Restatement: Autopsy of Leading-Zero Loss & Uncontrolled Financial Hedges",
+          "max": 100,
+          "bars": [
+            {
+              "label": "IEEE 754 Float Bound",
+              "value": 25,
+              "tone": "accent"
+            },
+            {
+              "label": "Telephony Zero Loss",
+              "value": 20,
+              "tone": "data"
+            },
+            {
+              "label": "Apostrophe Guard",
+              "value": 15,
+              "tone": "data"
+            },
+            {
+              "label": "Power Query Schema",
+              "value": 10,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "say1",
+          "caption": "Step 2: Processing pipeline execution and intermediate simulation for The MI5 Telephony Truncation & Fannie Mae Hedge Restatement: Autopsy of Leading-Zero Loss & Uncontrolled Financial Hedges",
+          "max": 100,
+          "bars": [
+            {
+              "label": "IEEE 754 Float Bound",
+              "value": 65,
+              "tone": "accent"
+            },
+            {
+              "label": "Telephony Zero Loss",
+              "value": 60,
+              "tone": "data"
+            },
+            {
+              "label": "Apostrophe Guard",
+              "value": 55,
+              "tone": "data"
+            },
+            {
+              "label": "Power Query Schema",
+              "value": 45,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "example",
+          "caption": "Step 3: Stress testing, boundary verification, and anomaly detection for The MI5 Telephony Truncation & Fannie Mae Hedge Restatement: Autopsy of Leading-Zero Loss & Uncontrolled Financial Hedges",
+          "max": 100,
+          "bars": [
+            {
+              "label": "IEEE 754 Float Bound",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "Telephony Zero Loss",
+              "value": 80,
+              "tone": "data"
+            },
+            {
+              "label": "Apostrophe Guard",
+              "value": 75,
+              "tone": "data"
+            },
+            {
+              "label": "Power Query Schema",
+              "value": 70,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "tryIt",
+          "caption": "Step 4: Sovereign institutional governance and production certification for The MI5 Telephony Truncation & Fannie Mae Hedge Restatement: Autopsy of Leading-Zero Loss & Uncontrolled Financial Hedges",
+          "max": 100,
+          "bars": [
+            {
+              "label": "IEEE 754 Float Bound",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "Telephony Zero Loss",
+              "value": 95,
+              "tone": "data"
+            },
+            {
+              "label": "Apostrophe Guard",
+              "value": 90,
+              "tone": "data"
+            },
+            {
+              "label": "Power Query Schema",
+              "value": 85,
+              "tone": "data"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "partTitle": "Textual Integrity in Data Ingestion: Preventing Auto-Casting in CSVs, Apostrophe Prefixes & Alphanumeric Protection",
+    "codeHash": "e7aec7e6fa70e92b2097fabc3e2c52e31107b74a23245c4fbc20293284290a39",
+    "spec": {
+      "template": "bars",
+      "title": "Textual Integrity in Data Ingestion: Preventing Auto-Casting in CSVs, Apostrophe Prefixes & Alphanumeric Protection – Historic Catastrophe Post-Mortem 3: Fannie Mae $1.3B Restatement & MI5 Wiretap Phone Truncation",
+      "steps": [
+        {
+          "at": "intro",
+          "caption": "Step 1: Architectural baseline configuration and parameter ingestion for Textual Integrity in Data Ingestion: Preventing Auto-Casting in CSVs, Apostrophe Prefixes & Alphanumeric Protection",
+          "max": 100,
+          "bars": [
+            {
+              "label": "IEEE 754 Float Bound",
+              "value": 25,
+              "tone": "accent"
+            },
+            {
+              "label": "Telephony Zero Loss",
+              "value": 20,
+              "tone": "data"
+            },
+            {
+              "label": "Apostrophe Guard",
+              "value": 15,
+              "tone": "data"
+            },
+            {
+              "label": "Power Query Schema",
+              "value": 10,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "say1",
+          "caption": "Step 2: Processing pipeline execution and intermediate simulation for Textual Integrity in Data Ingestion: Preventing Auto-Casting in CSVs, Apostrophe Prefixes & Alphanumeric Protection",
+          "max": 100,
+          "bars": [
+            {
+              "label": "IEEE 754 Float Bound",
+              "value": 65,
+              "tone": "accent"
+            },
+            {
+              "label": "Telephony Zero Loss",
+              "value": 60,
+              "tone": "data"
+            },
+            {
+              "label": "Apostrophe Guard",
+              "value": 55,
+              "tone": "data"
+            },
+            {
+              "label": "Power Query Schema",
+              "value": 45,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "example",
+          "caption": "Step 3: Stress testing, boundary verification, and anomaly detection for Textual Integrity in Data Ingestion: Preventing Auto-Casting in CSVs, Apostrophe Prefixes & Alphanumeric Protection",
+          "max": 100,
+          "bars": [
+            {
+              "label": "IEEE 754 Float Bound",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "Telephony Zero Loss",
+              "value": 80,
+              "tone": "data"
+            },
+            {
+              "label": "Apostrophe Guard",
+              "value": 75,
+              "tone": "data"
+            },
+            {
+              "label": "Power Query Schema",
+              "value": 70,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "tryIt",
+          "caption": "Step 4: Sovereign institutional governance and production certification for Textual Integrity in Data Ingestion: Preventing Auto-Casting in CSVs, Apostrophe Prefixes & Alphanumeric Protection",
+          "max": 100,
+          "bars": [
+            {
+              "label": "IEEE 754 Float Bound",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "Telephony Zero Loss",
+              "value": 95,
+              "tone": "data"
+            },
+            {
+              "label": "Apostrophe Guard",
+              "value": 90,
+              "tone": "data"
+            },
+            {
+              "label": "Power Query Schema",
+              "value": 85,
+              "tone": "data"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "partTitle": "Type-Safe Ingestion & Precision-Guaranteed Data Pipeline via Power Query M & Schema Contracts",
+    "codeHash": "46d8d74dd2f6e6ba251a0b5e6bcdf6663c2be9b6693ae2e61f676056a8f42229",
+    "spec": {
+      "template": "bars",
+      "title": "Type-Safe Ingestion & Precision-Guaranteed Data Pipeline via Power Query M & Schema Contracts – Historic Catastrophe Post-Mortem 3: Fannie Mae $1.3B Restatement & MI5 Wiretap Phone Truncation",
+      "steps": [
+        {
+          "at": "intro",
+          "caption": "Step 1: Architectural baseline configuration and parameter ingestion for Type-Safe Ingestion & Precision-Guaranteed Data Pipeline via Power Query M & Schema Contracts",
+          "max": 100,
+          "bars": [
+            {
+              "label": "IEEE 754 Float Bound",
+              "value": 25,
+              "tone": "accent"
+            },
+            {
+              "label": "Telephony Zero Loss",
+              "value": 20,
+              "tone": "data"
+            },
+            {
+              "label": "Apostrophe Guard",
+              "value": 15,
+              "tone": "data"
+            },
+            {
+              "label": "Power Query Schema",
+              "value": 10,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "say1",
+          "caption": "Step 2: Processing pipeline execution and intermediate simulation for Type-Safe Ingestion & Precision-Guaranteed Data Pipeline via Power Query M & Schema Contracts",
+          "max": 100,
+          "bars": [
+            {
+              "label": "IEEE 754 Float Bound",
+              "value": 65,
+              "tone": "accent"
+            },
+            {
+              "label": "Telephony Zero Loss",
+              "value": 60,
+              "tone": "data"
+            },
+            {
+              "label": "Apostrophe Guard",
+              "value": 55,
+              "tone": "data"
+            },
+            {
+              "label": "Power Query Schema",
+              "value": 45,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "example",
+          "caption": "Step 3: Stress testing, boundary verification, and anomaly detection for Type-Safe Ingestion & Precision-Guaranteed Data Pipeline via Power Query M & Schema Contracts",
+          "max": 100,
+          "bars": [
+            {
+              "label": "IEEE 754 Float Bound",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "Telephony Zero Loss",
+              "value": 80,
+              "tone": "data"
+            },
+            {
+              "label": "Apostrophe Guard",
+              "value": 75,
+              "tone": "data"
+            },
+            {
+              "label": "Power Query Schema",
+              "value": 70,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "tryIt",
+          "caption": "Step 4: Sovereign institutional governance and production certification for Type-Safe Ingestion & Precision-Guaranteed Data Pipeline via Power Query M & Schema Contracts",
+          "max": 100,
+          "bars": [
+            {
+              "label": "IEEE 754 Float Bound",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "Telephony Zero Loss",
+              "value": 95,
+              "tone": "data"
+            },
+            {
+              "label": "Apostrophe Guard",
+              "value": 90,
+              "tone": "data"
+            },
+            {
+              "label": "Power Query Schema",
+              "value": 85,
+              "tone": "data"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "partTitle": "Master Precision & Type-Safety Gateway: High-Volume Identifier Ingestion, Forensic Auditing & Data Contract Certification",
+    "codeHash": "4006f8f0f20e7a1c7a4b73043937217f172b38aff8fe3949d3fe1a58326bb700",
+    "spec": {
+      "template": "bars",
+      "title": "Master Precision & Type-Safety Gateway: High-Volume Identifier Ingestion, Forensic Auditing & Data Contract Certification – Historic Catastrophe Post-Mortem 3: Fannie Mae $1.3B Restatement & MI5 Wiretap Phone Truncation",
+      "steps": [
+        {
+          "at": "intro",
+          "caption": "Step 1: Architectural baseline configuration and parameter ingestion for Master Precision & Type-Safety Gateway: High-Volume Identifier Ingestion, Forensic Auditing & Data Contract Certification",
+          "max": 100,
+          "bars": [
+            {
+              "label": "IEEE 754 Float Bound",
+              "value": 25,
+              "tone": "accent"
+            },
+            {
+              "label": "Telephony Zero Loss",
+              "value": 20,
+              "tone": "data"
+            },
+            {
+              "label": "Apostrophe Guard",
+              "value": 15,
+              "tone": "data"
+            },
+            {
+              "label": "Power Query Schema",
+              "value": 10,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "say1",
+          "caption": "Step 2: Processing pipeline execution and intermediate simulation for Master Precision & Type-Safety Gateway: High-Volume Identifier Ingestion, Forensic Auditing & Data Contract Certification",
+          "max": 100,
+          "bars": [
+            {
+              "label": "IEEE 754 Float Bound",
+              "value": 65,
+              "tone": "accent"
+            },
+            {
+              "label": "Telephony Zero Loss",
+              "value": 60,
+              "tone": "data"
+            },
+            {
+              "label": "Apostrophe Guard",
+              "value": 55,
+              "tone": "data"
+            },
+            {
+              "label": "Power Query Schema",
+              "value": 45,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "example",
+          "caption": "Step 3: Stress testing, boundary verification, and anomaly detection for Master Precision & Type-Safety Gateway: High-Volume Identifier Ingestion, Forensic Auditing & Data Contract Certification",
+          "max": 100,
+          "bars": [
+            {
+              "label": "IEEE 754 Float Bound",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "Telephony Zero Loss",
+              "value": 80,
+              "tone": "data"
+            },
+            {
+              "label": "Apostrophe Guard",
+              "value": 75,
+              "tone": "data"
+            },
+            {
+              "label": "Power Query Schema",
+              "value": 70,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "tryIt",
+          "caption": "Step 4: Sovereign institutional governance and production certification for Master Precision & Type-Safety Gateway: High-Volume Identifier Ingestion, Forensic Auditing & Data Contract Certification",
+          "max": 100,
+          "bars": [
+            {
+              "label": "IEEE 754 Float Bound",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "Telephony Zero Loss",
+              "value": 95,
+              "tone": "data"
+            },
+            {
+              "label": "Apostrophe Guard",
+              "value": 90,
+              "tone": "data"
+            },
+            {
+              "label": "Power Query Schema",
+              "value": 85,
+              "tone": "data"
+            }
+          ]
+        }
+      ]
+    }
+  }
+]
