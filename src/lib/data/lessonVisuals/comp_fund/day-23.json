@@ -1,0 +1,211 @@
+{
+  "day": 23,
+  "course": "comp_fund",
+  "entries": [
+    {
+      "stepId": "cf-d23-p1",
+      "partTitle": "Systematic Troubleshooting Framework: The 7-Step CompTIA Diagnostic Methodology & Incident Triaging",
+      "template": "cells",
+      "codeHash": "e3649057ffeeeca6f5f639a6bc4be8140535e2208a4f6a5f140f5bb763ef149a",
+      "data": {
+        "title": "Diagnostic: Systematic Troubleshooting Framework: The 7-Step CompTIA Diagnostic Methodology & Incident Triaging",
+        "headers": [
+          "Metric",
+          "Setting",
+          "Status",
+          "Verification"
+        ],
+        "rows": [
+          [
+            "Protocol Step",
+            "Step 1",
+            "Active",
+            "Verified"
+          ],
+          [
+            "Diagnostic Tool",
+            "System Telemetry",
+            "Executed",
+            "Verified"
+          ],
+          [
+            "Root Cause",
+            "Isolated",
+            "Confirmed",
+            "Verified"
+          ],
+          [
+            "SLA Index",
+            "100%",
+            "Compliant",
+            "Verified"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d23-p2",
+      "partTitle": "Hypothesis Formulation & Differential Isolation: Divide-and-Conquer Testing & Layered Boundary Checks",
+      "template": "cells",
+      "codeHash": "80b64fac9e06b36e3a96c74b08b54d296e08cd82be2a5086fdc20f585d913bf8",
+      "data": {
+        "title": "Diagnostic: Hypothesis Formulation & Differential Isolation: Divide-and-Conquer Testing & Layered Boundary Checks",
+        "headers": [
+          "Metric",
+          "Setting",
+          "Status",
+          "Verification"
+        ],
+        "rows": [
+          [
+            "Protocol Step",
+            "Step 2",
+            "Active",
+            "Verified"
+          ],
+          [
+            "Diagnostic Tool",
+            "System Telemetry",
+            "Executed",
+            "Verified"
+          ],
+          [
+            "Root Cause",
+            "Isolated",
+            "Confirmed",
+            "Verified"
+          ],
+          [
+            "SLA Index",
+            "100%",
+            "Compliant",
+            "Verified"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d23-p3",
+      "partTitle": "Action Plans, Rollback Procedures & Forensic Log Auditing: Event Viewer & Syslog Parsing",
+      "template": "cells",
+      "codeHash": "3698a0ad20471ea51569990622799ab555509554ae864debec554ac035885a17",
+      "data": {
+        "title": "Diagnostic: Action Plans, Rollback Procedures & Forensic Log Auditing: Event Viewer & Syslog Parsing",
+        "headers": [
+          "Metric",
+          "Setting",
+          "Status",
+          "Verification"
+        ],
+        "rows": [
+          [
+            "Protocol Step",
+            "Step 3",
+            "Active",
+            "Verified"
+          ],
+          [
+            "Diagnostic Tool",
+            "System Telemetry",
+            "Executed",
+            "Verified"
+          ],
+          [
+            "Root Cause",
+            "Isolated",
+            "Confirmed",
+            "Verified"
+          ],
+          [
+            "SLA Index",
+            "100%",
+            "Compliant",
+            "Verified"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d23-p4",
+      "partTitle": "Full System Verification, Preventative Controls & Root Cause Post-Mortem Documentation",
+      "template": "cells",
+      "codeHash": "b552815bb861973d0d16422c87b41eb669d22718fdaeeb62884193228ede0529",
+      "data": {
+        "title": "Diagnostic: Full System Verification, Preventative Controls & Root Cause Post-Mortem Documentation",
+        "headers": [
+          "Metric",
+          "Setting",
+          "Status",
+          "Verification"
+        ],
+        "rows": [
+          [
+            "Protocol Step",
+            "Step 4",
+            "Active",
+            "Verified"
+          ],
+          [
+            "Diagnostic Tool",
+            "System Telemetry",
+            "Executed",
+            "Verified"
+          ],
+          [
+            "Root Cause",
+            "Isolated",
+            "Confirmed",
+            "Verified"
+          ],
+          [
+            "SLA Index",
+            "100%",
+            "Compliant",
+            "Verified"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d23-p5",
+      "partTitle": "Master IT Troubleshooting & Root Cause Analysis Telemetry Suite",
+      "template": "cells",
+      "codeHash": "86fc2d8d23d33738d9c10475999a13ec0eccc8c52e9c2f81e4f0d908d86005fe",
+      "data": {
+        "title": "Diagnostic: Master IT Troubleshooting & Root Cause Analysis Telemetry Suite",
+        "headers": [
+          "Metric",
+          "Setting",
+          "Status",
+          "Verification"
+        ],
+        "rows": [
+          [
+            "Protocol Step",
+            "Step 5",
+            "Active",
+            "Verified"
+          ],
+          [
+            "Diagnostic Tool",
+            "System Telemetry",
+            "Executed",
+            "Verified"
+          ],
+          [
+            "Root Cause",
+            "Isolated",
+            "Confirmed",
+            "Verified"
+          ],
+          [
+            "SLA Index",
+            "100%",
+            "Compliant",
+            "Verified"
+          ]
+        ]
+      }
+    }
+  ]
+}

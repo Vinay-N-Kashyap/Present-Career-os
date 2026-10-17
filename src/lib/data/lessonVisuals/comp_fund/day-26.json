@@ -1,0 +1,211 @@
+{
+  "day": 26,
+  "course": "comp_fund",
+  "entries": [
+    {
+      "stepId": "cf-d26-p1",
+      "partTitle": "Internet Privacy Threat Modeling: Cleartext DNS Leakage, ISP Metadata Harvesting & SNI Inspection",
+      "template": "cells",
+      "codeHash": "cbf92f1ba49ec16f3ad0ef875b341baf9a922a90e41e194f7097152a7ae6a955",
+      "data": {
+        "title": "Privacy: Internet Privacy Threat Modeling: Cleartext DNS Leakage, ISP Metadata Harvesting & SNI Inspection",
+        "headers": [
+          "Metric",
+          "Setting",
+          "Status",
+          "Verification"
+        ],
+        "rows": [
+          [
+            "Privacy Layer",
+            "Part 1",
+            "Active",
+            "Verified"
+          ],
+          [
+            "Tunnel Mode",
+            "Encrypted Tunnel",
+            "Masked",
+            "Verified"
+          ],
+          [
+            "Anti-Tracking",
+            "Partitioned",
+            "Enforced",
+            "Verified"
+          ],
+          [
+            "Privacy Index",
+            "100%",
+            "Cloaked",
+            "Verified"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d26-p2",
+      "partTitle": "Encrypted Domain Resolution: DNS-over-HTTPS (DoH RFC 8484) vs DNS-over-TLS (DoT RFC 7858)",
+      "template": "cells",
+      "codeHash": "dda8c9bfa76f377bdb1255af9dfd7b0a3a859b03ad131daee4a23934b829acc3",
+      "data": {
+        "title": "Privacy: Encrypted Domain Resolution: DNS-over-HTTPS (DoH RFC 8484) vs DNS-over-TLS (DoT RFC 7858)",
+        "headers": [
+          "Metric",
+          "Setting",
+          "Status",
+          "Verification"
+        ],
+        "rows": [
+          [
+            "Privacy Layer",
+            "Part 2",
+            "Active",
+            "Verified"
+          ],
+          [
+            "Tunnel Mode",
+            "Encrypted Tunnel",
+            "Masked",
+            "Verified"
+          ],
+          [
+            "Anti-Tracking",
+            "Partitioned",
+            "Enforced",
+            "Verified"
+          ],
+          [
+            "Privacy Index",
+            "100%",
+            "Cloaked",
+            "Verified"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d26-p3",
+      "partTitle": "Virtual Private Networks (VPN): WireGuard Noise Protocol vs OpenVPN Tunnel Encapsulation Mechanics",
+      "template": "cells",
+      "codeHash": "9b3315f284ceec46311006ebb980247e9ea32e8c6ff404af475ffe7b85a8359e",
+      "data": {
+        "title": "Privacy: Virtual Private Networks (VPN): WireGuard Noise Protocol vs OpenVPN Tunnel Encapsulation Mechanics",
+        "headers": [
+          "Metric",
+          "Setting",
+          "Status",
+          "Verification"
+        ],
+        "rows": [
+          [
+            "Privacy Layer",
+            "Part 3",
+            "Active",
+            "Verified"
+          ],
+          [
+            "Tunnel Mode",
+            "Encrypted Tunnel",
+            "Masked",
+            "Verified"
+          ],
+          [
+            "Anti-Tracking",
+            "Partitioned",
+            "Enforced",
+            "Verified"
+          ],
+          [
+            "Privacy Index",
+            "100%",
+            "Cloaked",
+            "Verified"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d26-p4",
+      "partTitle": "Web Tracking Ecosystem: Third-Party Cookies, ETag Tracking & Canvas Browser Fingerprinting",
+      "template": "cells",
+      "codeHash": "8fb313012cb5585f9db682efc83d751231ca6a066c65e39fa0b75e6250af8323",
+      "data": {
+        "title": "Privacy: Web Tracking Ecosystem: Third-Party Cookies, ETag Tracking & Canvas Browser Fingerprinting",
+        "headers": [
+          "Metric",
+          "Setting",
+          "Status",
+          "Verification"
+        ],
+        "rows": [
+          [
+            "Privacy Layer",
+            "Part 4",
+            "Active",
+            "Verified"
+          ],
+          [
+            "Tunnel Mode",
+            "Encrypted Tunnel",
+            "Masked",
+            "Verified"
+          ],
+          [
+            "Anti-Tracking",
+            "Partitioned",
+            "Enforced",
+            "Verified"
+          ],
+          [
+            "Privacy Index",
+            "100%",
+            "Cloaked",
+            "Verified"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d26-p5",
+      "partTitle": "Master Privacy Telemetry, Encrypted Tunnel & Anti-Surveillance Suite",
+      "template": "cells",
+      "codeHash": "81f8e3185191e41c3a3e14d047fde8beb48bf85f9320698f96fc8f782aa1e617",
+      "data": {
+        "title": "Privacy: Master Privacy Telemetry, Encrypted Tunnel & Anti-Surveillance Suite",
+        "headers": [
+          "Metric",
+          "Setting",
+          "Status",
+          "Verification"
+        ],
+        "rows": [
+          [
+            "Privacy Layer",
+            "Part 5",
+            "Active",
+            "Verified"
+          ],
+          [
+            "Tunnel Mode",
+            "Encrypted Tunnel",
+            "Masked",
+            "Verified"
+          ],
+          [
+            "Anti-Tracking",
+            "Partitioned",
+            "Enforced",
+            "Verified"
+          ],
+          [
+            "Privacy Index",
+            "100%",
+            "Cloaked",
+            "Verified"
+          ]
+        ]
+      }
+    }
+  ]
+}

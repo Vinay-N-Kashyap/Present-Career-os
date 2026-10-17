@@ -1,0 +1,211 @@
+{
+  "day": 22,
+  "course": "comp_fund",
+  "entries": [
+    {
+      "stepId": "cf-d22-p1",
+      "partTitle": "Hardware Virtualization: Type 1 Bare-Metal vs Type 2 Hosted Hypervisors & CPU Extensions",
+      "template": "cells",
+      "codeHash": "fa7f77b5447c23d85436e4eea775b27ca9ed4a9fe900adf7a5cc42a09f3ff16c",
+      "data": {
+        "title": "Telemetry: Hardware Virtualization: Type 1 Bare-Metal vs Type 2 Hosted Hypervisors & CPU Extensions",
+        "headers": [
+          "Metric",
+          "Setting",
+          "Status",
+          "Verification"
+        ],
+        "rows": [
+          [
+            "Isolation Layer",
+            "Part 1",
+            "Active",
+            "Verified"
+          ],
+          [
+            "Subsystem",
+            "Kernel / Hypervisor",
+            "Optimized",
+            "Verified"
+          ],
+          [
+            "Security",
+            "Boundary Check",
+            "Enforced",
+            "Verified"
+          ],
+          [
+            "Audit Index",
+            "100%",
+            "Compliant",
+            "Verified"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d22-p2",
+      "partTitle": "Linux Kernel Isolation: Namespaces, Process Visibility & cgroups v2 Resource Governance",
+      "template": "cells",
+      "codeHash": "353f397c73a619eef0536ce1f4c7f83951673fed739d937f6879a6ec1a12fce5",
+      "data": {
+        "title": "Telemetry: Linux Kernel Isolation: Namespaces, Process Visibility & cgroups v2 Resource Governance",
+        "headers": [
+          "Metric",
+          "Setting",
+          "Status",
+          "Verification"
+        ],
+        "rows": [
+          [
+            "Isolation Layer",
+            "Part 2",
+            "Active",
+            "Verified"
+          ],
+          [
+            "Subsystem",
+            "Kernel / Hypervisor",
+            "Optimized",
+            "Verified"
+          ],
+          [
+            "Security",
+            "Boundary Check",
+            "Enforced",
+            "Verified"
+          ],
+          [
+            "Audit Index",
+            "100%",
+            "Compliant",
+            "Verified"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d22-p3",
+      "partTitle": "Container Image Layering: UnionFS, OverlayFS Mechanics & Copy-on-Write (CoW)",
+      "template": "cells",
+      "codeHash": "a62c00d794f2fedf5467c7da9bdd7b6790e4604e22f62efc12438c7e5860bfc5",
+      "data": {
+        "title": "Telemetry: Container Image Layering: UnionFS, OverlayFS Mechanics & Copy-on-Write (CoW)",
+        "headers": [
+          "Metric",
+          "Setting",
+          "Status",
+          "Verification"
+        ],
+        "rows": [
+          [
+            "Isolation Layer",
+            "Part 3",
+            "Active",
+            "Verified"
+          ],
+          [
+            "Subsystem",
+            "Kernel / Hypervisor",
+            "Optimized",
+            "Verified"
+          ],
+          [
+            "Security",
+            "Boundary Check",
+            "Enforced",
+            "Verified"
+          ],
+          [
+            "Audit Index",
+            "100%",
+            "Compliant",
+            "Verified"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d22-p4",
+      "partTitle": "Container Security Boundaries: User Namespaces, Linux Capabilities & Seccomp System Call Filtering",
+      "template": "cells",
+      "codeHash": "a5e59d7f85763e02dfbb01e5a710c8659a335095e51f7a94bbb64f8f428f21bc",
+      "data": {
+        "title": "Telemetry: Container Security Boundaries: User Namespaces, Linux Capabilities & Seccomp System Call Filtering",
+        "headers": [
+          "Metric",
+          "Setting",
+          "Status",
+          "Verification"
+        ],
+        "rows": [
+          [
+            "Isolation Layer",
+            "Part 4",
+            "Active",
+            "Verified"
+          ],
+          [
+            "Subsystem",
+            "Kernel / Hypervisor",
+            "Optimized",
+            "Verified"
+          ],
+          [
+            "Security",
+            "Boundary Check",
+            "Enforced",
+            "Verified"
+          ],
+          [
+            "Audit Index",
+            "100%",
+            "Compliant",
+            "Verified"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d22-p5",
+      "partTitle": "Master Virtualization, Container Isolation & Runtime Telemetry Engine",
+      "template": "cells",
+      "codeHash": "f1a25e32dd7fafac986a0fe246f735c4dcd2b72b3534255b00786facb6210ca7",
+      "data": {
+        "title": "Telemetry: Master Virtualization, Container Isolation & Runtime Telemetry Engine",
+        "headers": [
+          "Metric",
+          "Setting",
+          "Status",
+          "Verification"
+        ],
+        "rows": [
+          [
+            "Isolation Layer",
+            "Part 5",
+            "Active",
+            "Verified"
+          ],
+          [
+            "Subsystem",
+            "Kernel / Hypervisor",
+            "Optimized",
+            "Verified"
+          ],
+          [
+            "Security",
+            "Boundary Check",
+            "Enforced",
+            "Verified"
+          ],
+          [
+            "Audit Index",
+            "100%",
+            "Compliant",
+            "Verified"
+          ]
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,211 @@
+{
+  "day": 24,
+  "course": "comp_fund",
+  "entries": [
+    {
+      "stepId": "cf-d24-p1",
+      "partTitle": "Shell Execution Semantics: Return Exit Codes ($?), Defensive Scripting Flags & Signal Traps",
+      "template": "cells",
+      "codeHash": "f9af7d46e891934d49b22d22e6ee90fa7892e5a04eb62ead23bc8bd746876f78",
+      "data": {
+        "title": "Automation: Shell Execution Semantics: Return Exit Codes ($?), Defensive Scripting Flags & Signal Traps",
+        "headers": [
+          "Metric",
+          "Setting",
+          "Status",
+          "Verification"
+        ],
+        "rows": [
+          [
+            "Script Engine",
+            "Part 1",
+            "Active",
+            "Verified"
+          ],
+          [
+            "Execution Mode",
+            "Strict POSIX",
+            "Enforced",
+            "Verified"
+          ],
+          [
+            "Concurrency",
+            "Flock Mutex",
+            "Locked",
+            "Verified"
+          ],
+          [
+            "Automation Index",
+            "100%",
+            "Deterministic",
+            "Verified"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d24-p2",
+      "partTitle": "Deterministic Control Flow: Conditionals, Robust Looping & String Pattern Transformations",
+      "template": "cells",
+      "codeHash": "d92b81ecce266f106a0f0958e96b89885c080be70fcdcf63d12c0f7c601a40eb",
+      "data": {
+        "title": "Automation: Deterministic Control Flow: Conditionals, Robust Looping & String Pattern Transformations",
+        "headers": [
+          "Metric",
+          "Setting",
+          "Status",
+          "Verification"
+        ],
+        "rows": [
+          [
+            "Script Engine",
+            "Part 2",
+            "Active",
+            "Verified"
+          ],
+          [
+            "Execution Mode",
+            "Strict POSIX",
+            "Enforced",
+            "Verified"
+          ],
+          [
+            "Concurrency",
+            "Flock Mutex",
+            "Locked",
+            "Verified"
+          ],
+          [
+            "Automation Index",
+            "100%",
+            "Deterministic",
+            "Verified"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d24-p3",
+      "partTitle": "Scheduled Task Orchestration: Unix Cron Architecture (Crontab Syntax), Anacron & Systemd Timers",
+      "template": "cells",
+      "codeHash": "197d5a6494ae2404caa87bc40f11a31d5c666889fd0d9b07e6747138a0b1562a",
+      "data": {
+        "title": "Automation: Scheduled Task Orchestration: Unix Cron Architecture (Crontab Syntax), Anacron & Systemd Timers",
+        "headers": [
+          "Metric",
+          "Setting",
+          "Status",
+          "Verification"
+        ],
+        "rows": [
+          [
+            "Script Engine",
+            "Part 3",
+            "Active",
+            "Verified"
+          ],
+          [
+            "Execution Mode",
+            "Strict POSIX",
+            "Enforced",
+            "Verified"
+          ],
+          [
+            "Concurrency",
+            "Flock Mutex",
+            "Locked",
+            "Verified"
+          ],
+          [
+            "Automation Index",
+            "100%",
+            "Deterministic",
+            "Verified"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d24-p4",
+      "partTitle": "Production Telemetry Logging: Structured JSON/CSV, Lockfile Concurrency & Log Rotation",
+      "template": "cells",
+      "codeHash": "f3ba7283ada573b9ef82d5d8126da8518a54303d3fba9e46d5df6acf4e76974b",
+      "data": {
+        "title": "Automation: Production Telemetry Logging: Structured JSON/CSV, Lockfile Concurrency & Log Rotation",
+        "headers": [
+          "Metric",
+          "Setting",
+          "Status",
+          "Verification"
+        ],
+        "rows": [
+          [
+            "Script Engine",
+            "Part 4",
+            "Active",
+            "Verified"
+          ],
+          [
+            "Execution Mode",
+            "Strict POSIX",
+            "Enforced",
+            "Verified"
+          ],
+          [
+            "Concurrency",
+            "Flock Mutex",
+            "Locked",
+            "Verified"
+          ],
+          [
+            "Automation Index",
+            "100%",
+            "Deterministic",
+            "Verified"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d24-p5",
+      "partTitle": "Master Scripting Automation, Crontab Scheduling & Telemetry Suite",
+      "template": "cells",
+      "codeHash": "8734cb52dffa3ea766700d99bd14c05de9a269e2b896637e6f4641bc168bb5e3",
+      "data": {
+        "title": "Automation: Master Scripting Automation, Crontab Scheduling & Telemetry Suite",
+        "headers": [
+          "Metric",
+          "Setting",
+          "Status",
+          "Verification"
+        ],
+        "rows": [
+          [
+            "Script Engine",
+            "Part 5",
+            "Active",
+            "Verified"
+          ],
+          [
+            "Execution Mode",
+            "Strict POSIX",
+            "Enforced",
+            "Verified"
+          ],
+          [
+            "Concurrency",
+            "Flock Mutex",
+            "Locked",
+            "Verified"
+          ],
+          [
+            "Automation Index",
+            "100%",
+            "Deterministic",
+            "Verified"
+          ]
+        ]
+      }
+    }
+  ]
+}

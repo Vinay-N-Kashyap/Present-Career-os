@@ -1,0 +1,211 @@
+{
+  "day": 25,
+  "course": "comp_fund",
+  "entries": [
+    {
+      "stepId": "cf-d25-p1",
+      "partTitle": "Spreadsheet Data Modeling: Cell Reference Topologies ($A$1 Absolute vs A1 Relative) & Directed Calculation Graphs",
+      "template": "cells",
+      "codeHash": "b27503b810394363e563ff456d53f7ff413dbc9130272d57304daf55524d4322",
+      "data": {
+        "title": "Spreadsheet: Spreadsheet Data Modeling: Cell Reference Topologies ($A$1 Absolute vs A1 Relative) & Directed Calculation Graphs",
+        "headers": [
+          "Metric",
+          "Setting",
+          "Status",
+          "Verification"
+        ],
+        "rows": [
+          [
+            "Formula Engine",
+            "Part 1",
+            "Active",
+            "Verified"
+          ],
+          [
+            "Calculation Mode",
+            "Dynamic DAG",
+            "Evaluated",
+            "Verified"
+          ],
+          [
+            "Data Integrity",
+            "Zero Errors",
+            "Audited",
+            "Verified"
+          ],
+          [
+            "Analytical Index",
+            "100%",
+            "Certified",
+            "Verified"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d25-p2",
+      "partTitle": "Relational Lookup Algorithms: Legacy VLOOKUP vs INDEX/MATCH vs Modern O(1) XLOOKUP",
+      "template": "cells",
+      "codeHash": "4a8344445e9c21b70ef6818315f8f7ba2a4f30ebb33d6678a8ae2cf9673bf75f",
+      "data": {
+        "title": "Spreadsheet: Relational Lookup Algorithms: Legacy VLOOKUP vs INDEX/MATCH vs Modern O(1) XLOOKUP",
+        "headers": [
+          "Metric",
+          "Setting",
+          "Status",
+          "Verification"
+        ],
+        "rows": [
+          [
+            "Formula Engine",
+            "Part 2",
+            "Active",
+            "Verified"
+          ],
+          [
+            "Calculation Mode",
+            "Dynamic DAG",
+            "Evaluated",
+            "Verified"
+          ],
+          [
+            "Data Integrity",
+            "Zero Errors",
+            "Audited",
+            "Verified"
+          ],
+          [
+            "Analytical Index",
+            "100%",
+            "Certified",
+            "Verified"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d25-p3",
+      "partTitle": "Dynamic Array Spill Engines: FILTER, UNIQUE, SORT & High-Velocity Aggregations (SUMIFS/COUNTIFS)",
+      "template": "cells",
+      "codeHash": "925e0a38b27cc6a4354734615b2f6642a2c601f75a51c475a5191b9318e11353",
+      "data": {
+        "title": "Spreadsheet: Dynamic Array Spill Engines: FILTER, UNIQUE, SORT & High-Velocity Aggregations (SUMIFS/COUNTIFS)",
+        "headers": [
+          "Metric",
+          "Setting",
+          "Status",
+          "Verification"
+        ],
+        "rows": [
+          [
+            "Formula Engine",
+            "Part 3",
+            "Active",
+            "Verified"
+          ],
+          [
+            "Calculation Mode",
+            "Dynamic DAG",
+            "Evaluated",
+            "Verified"
+          ],
+          [
+            "Data Integrity",
+            "Zero Errors",
+            "Audited",
+            "Verified"
+          ],
+          [
+            "Analytical Index",
+            "100%",
+            "Certified",
+            "Verified"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d25-p4",
+      "partTitle": "Spreadsheet Data Hygiene: Text Sanitization, Date Serial Mechanics & Standardized Formula Auditing",
+      "template": "cells",
+      "codeHash": "6076afa8363776fceaaf3361d5232d258f1951e663934279d8948663624c2b7d",
+      "data": {
+        "title": "Spreadsheet: Spreadsheet Data Hygiene: Text Sanitization, Date Serial Mechanics & Standardized Formula Auditing",
+        "headers": [
+          "Metric",
+          "Setting",
+          "Status",
+          "Verification"
+        ],
+        "rows": [
+          [
+            "Formula Engine",
+            "Part 4",
+            "Active",
+            "Verified"
+          ],
+          [
+            "Calculation Mode",
+            "Dynamic DAG",
+            "Evaluated",
+            "Verified"
+          ],
+          [
+            "Data Integrity",
+            "Zero Errors",
+            "Audited",
+            "Verified"
+          ],
+          [
+            "Analytical Index",
+            "100%",
+            "Certified",
+            "Verified"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d25-p5",
+      "partTitle": "Master Spreadsheet Data Architecture & Macro Automation Telemetry Suite",
+      "template": "cells",
+      "codeHash": "0e70068eb07654c7e17062d00f87fbd7928627fa8bc8f8911b6971e425a7d44f",
+      "data": {
+        "title": "Spreadsheet: Master Spreadsheet Data Architecture & Macro Automation Telemetry Suite",
+        "headers": [
+          "Metric",
+          "Setting",
+          "Status",
+          "Verification"
+        ],
+        "rows": [
+          [
+            "Formula Engine",
+            "Part 5",
+            "Active",
+            "Verified"
+          ],
+          [
+            "Calculation Mode",
+            "Dynamic DAG",
+            "Evaluated",
+            "Verified"
+          ],
+          [
+            "Data Integrity",
+            "Zero Errors",
+            "Audited",
+            "Verified"
+          ],
+          [
+            "Analytical Index",
+            "100%",
+            "Certified",
+            "Verified"
+          ]
+        ]
+      }
+    }
+  ]
+}

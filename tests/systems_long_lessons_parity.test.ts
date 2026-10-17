@@ -1155,3 +1155,138 @@ test('Systems Long Lessons: comp_fund Day 21 Milestone 3 Capstone Verification',
   assert.equal(res5.allPassed, true);
   assert.ok(res5.stdout?.includes('Milestone 3 Health:    100/100'));
 });
+
+test('Systems Long Lessons: comp_fund Day 22 Virtualization & Container Isolation Verification', async () => {
+  const d22 = getLongLesson('comp_fund', 22);
+  assert.ok(d22, 'comp_fund Day 22 must resolve');
+  assert.equal(d22.day, 22);
+  assert.equal(d22.parts.length, 5);
+
+  const res1 = await executeBashSuite(d22.parts[0].code!);
+  assert.equal(res1.allPassed, true);
+  assert.ok(res1.stdout?.includes('VIRTUALIZATION_CONTAINER_ISOLATION_VERIFIED'));
+
+  const res2 = await executeBashSuite(d22.parts[1].code!);
+  assert.equal(res2.allPassed, true);
+  assert.ok(res2.stdout?.includes('LINUX_KERNEL_NAMESPACES_CGROUPS_VERIFIED'));
+
+  const res3 = await executeBashSuite(d22.parts[2].code!);
+  assert.equal(res3.allPassed, true);
+  assert.ok(res3.stdout?.includes('OVERLAYFS_CONTAINER_LAYERING_VERIFIED'));
+
+  const res4 = await executeBashSuite(d22.parts[3].code!);
+  assert.equal(res4.allPassed, true);
+  assert.ok(res4.stdout?.includes('CONTAINER_SECURITY_BOUNDARY_VERIFIED'));
+
+  const res5 = await executeBashSuite(d22.parts[4].code!);
+  assert.equal(res5.allPassed, true);
+  assert.ok(res5.stdout?.includes('Virtualization Health: 100/100'));
+});
+
+test('Systems Long Lessons: comp_fund Day 23 Troubleshooting & Diagnostic Methodology Verification', async () => {
+  const d23 = getLongLesson('comp_fund', 23);
+  assert.ok(d23, 'comp_fund Day 23 must resolve');
+  assert.equal(d23.day, 23);
+  assert.equal(d23.parts.length, 5);
+
+  const res1 = await executeBashSuite(d23.parts[0].code!);
+  assert.equal(res1.allPassed, true);
+  assert.ok(res1.stdout?.includes('SEVEN_STEP_TROUBLESHOOTING_VERIFIED'));
+
+  const res2 = await executeBashSuite(d23.parts[1].code!);
+  assert.equal(res2.allPassed, true);
+  assert.ok(res2.stdout?.includes('DIVIDE_AND_CONQUER_ISOLATION_VERIFIED'));
+
+  const res3 = await executeBashSuite(d23.parts[2].code!);
+  assert.equal(res3.allPassed, true);
+  assert.ok(res3.stdout?.includes('ACTION_PLAN_ROLLBACK_VERIFIED'));
+
+  const res4 = await executeBashSuite(d23.parts[3].code!);
+  assert.equal(res4.allPassed, true);
+  assert.ok(res4.stdout?.includes('PREVENTATIVE_CONTROLS_VERIFIED'));
+
+  const res5 = await executeBashSuite(d23.parts[4].code!);
+  assert.equal(res5.allPassed, true);
+  assert.ok(res5.stdout?.includes('Troubleshooting Health Index: 100/100'));
+});
+
+test('Systems Long Lessons: comp_fund Day 24 Automation Scripting & Cron Scheduling Verification', async () => {
+  const d24 = getLongLesson('comp_fund', 24);
+  assert.ok(d24, 'comp_fund Day 24 must resolve');
+  assert.equal(d24.day, 24);
+  assert.equal(d24.parts.length, 5);
+
+  const res1 = await executeBashSuite(d24.parts[0].code!);
+  assert.equal(res1.allPassed, true);
+  assert.ok(res1.stdout?.includes('POSIX_EXIT_CODE_EVALUATION_VERIFIED'));
+
+  const res2 = await executeBashSuite(d24.parts[1].code!);
+  assert.equal(res2.allPassed, true);
+  assert.ok(res2.stdout?.includes('DETERMINISTIC_CONTROL_FLOW_VERIFIED'));
+
+  const res3 = await executeBashSuite(d24.parts[2].code!);
+  assert.equal(res3.allPassed, true);
+  assert.ok(res3.stdout?.includes('UNIX_CRON_SCHEDULER_VERIFIED'));
+
+  const res4 = await executeBashSuite(d24.parts[3].code!);
+  assert.equal(res4.allPassed, true);
+  assert.ok(res4.stdout?.includes('PRODUCTION_LOGGING_LOCKFILE_VERIFIED'));
+
+  const res5 = await executeBashSuite(d24.parts[4].code!);
+  assert.equal(res5.allPassed, true);
+  assert.ok(res5.stdout?.includes('Automation Health Index: 100/100'));
+});
+
+test('Systems Long Lessons: comp_fund Day 25 Office Productivity & Spreadsheet Architecture Verification', async () => {
+  const d25 = getLongLesson('comp_fund', 25);
+  assert.ok(d25, 'comp_fund Day 25 must resolve');
+  assert.equal(d25.day, 25);
+  assert.equal(d25.parts.length, 5);
+
+  const res1 = await executeBashSuite(d25.parts[0].code!);
+  assert.equal(res1.allPassed, true);
+  assert.ok(res1.stdout?.includes('SPREADSHEET_PRODUCTIVITY_VERIFIED'));
+
+  const res2 = await executeBashSuite(d25.parts[1].code!);
+  assert.equal(res2.allPassed, true);
+  assert.ok(res2.stdout?.includes('RELATIONAL_LOOKUP_ALGORITHMS_VERIFIED'));
+
+  const res3 = await executeBashSuite(d25.parts[2].code!);
+  assert.equal(res3.allPassed, true);
+  assert.ok(res3.stdout?.includes('DYNAMIC_ARRAY_SPILL_ENGINE_VERIFIED'));
+
+  const res4 = await executeBashSuite(d25.parts[3].code!);
+  assert.equal(res4.allPassed, true);
+  assert.ok(res4.stdout?.includes('SPREADSHEET_DATA_HYGIENE_VERIFIED'));
+
+  const res5 = await executeBashSuite(d25.parts[4].code!);
+  assert.equal(res5.allPassed, true);
+  assert.ok(res5.stdout?.includes('Spreadsheet Health Index: 100/100'));
+});
+
+test('Systems Long Lessons: comp_fund Day 26 Data Privacy & VPN Tunnel Verification', async () => {
+  const d26 = getLongLesson('comp_fund', 26);
+  assert.ok(d26, 'comp_fund Day 26 must resolve');
+  assert.equal(d26.day, 26);
+  assert.equal(d26.parts.length, 5);
+
+  const res1 = await executeBashSuite(d26.parts[0].code!);
+  assert.equal(res1.allPassed, true);
+  assert.ok(res1.stdout?.includes('DATA_PRIVACY_VPN_DOH_VERIFIED'));
+
+  const res2 = await executeBashSuite(d26.parts[1].code!);
+  assert.equal(res2.allPassed, true);
+  assert.ok(res2.stdout?.includes('ENCRYPTED_DOMAIN_RESOLUTION_VERIFIED'));
+
+  const res3 = await executeBashSuite(d26.parts[2].code!);
+  assert.equal(res3.allPassed, true);
+  assert.ok(res3.stdout?.includes('WIREGUARD_VPN_TUNNEL_VERIFIED'));
+
+  const res4 = await executeBashSuite(d26.parts[3].code!);
+  assert.equal(res4.allPassed, true);
+  assert.ok(res4.stdout?.includes('WEB_TRACKING_MITIGATION_VERIFIED'));
+
+  const res5 = await executeBashSuite(d26.parts[4].code!);
+  assert.equal(res5.allPassed, true);
+  assert.ok(res5.stdout?.includes('Data Privacy Health Index: 100/100'));
+});
