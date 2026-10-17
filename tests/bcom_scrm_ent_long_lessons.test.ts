@@ -547,8 +547,8 @@ test('Block 135: B.Com Entrepreneurship Day 5 Capstone: Investment Memo, Syndica
   assert.ok(total >= 15, `Total lesson minutes (${total}) must be >= 15`);
 });
 
-test('Course bcom_ent 100% Complete: All 5 Days Verified', () => {
-  for (let day = 1; day <= 5; day++) {
+test('Course bcom_ent: Milestone 1 & 2 (All 10 Days Verified)', () => {
+  for (let day = 1; day <= 10; day++) {
     const lesson = getLongLesson('bcom_ent', day);
     assert.ok(lesson, `bcom_ent Day ${day} must be defined`);
     assert.equal(lesson.day, day);
@@ -1287,6 +1287,193 @@ test('B.Com SCRM Grand Capstone: Course 26 100% Completion Verification (30/30 D
   assert.ok(totalWords >= 80000, `Total SCRM course words must be >= 80,000 words (got ${totalWords})`);
   console.log(`\n🏆 B.Com SCRM 100% Complete: ${totalWords.toLocaleString()} words across all 30 days (150 parts)!`);
 });
+
+test('B.Com Entrepreneurship Milestone 2 (Days 6-10): Invariants, Word Counts & Day 10 Minutes Verification', () => {
+  for (let day = 6; day <= 10; day++) {
+    const lesson = getLongLesson('bcom_ent', day);
+    assert.ok(lesson, `bcom_ent Day ${day} must be defined`);
+    assert.equal(lesson.coursePrefix, 'bcom_ent');
+    assert.equal(lesson.day, day);
+    assert.equal(lesson.parts.length, 5, `Day ${day} must have exactly 5 parts`);
+
+    if (day === 10) {
+      assert.equal(lesson.minutes, 50, 'Day 10 Capstone minutes must be exactly 50');
+    } else {
+      assert.equal(lesson.minutes, 45, `Day ${day} minutes must be 45`);
+    }
+
+    let totalWords = 0;
+    for (let pIdx = 0; pIdx < lesson.parts.length; pIdx++) {
+      const part = lesson.parts[pIdx];
+      assert.ok(part.title.length > 0, `Day ${day} Part ${pIdx + 1} title must be non-empty`);
+      assert.ok(part.say.length >= 3, `Day ${day} Part ${pIdx + 1} say array must have >= 3 paragraphs`);
+
+      const partWords = part.say.join(' ').trim().split(/\s+/).length;
+      totalWords += partWords;
+      assert.ok(
+        partWords >= 580,
+        `Day ${day} Part ${pIdx + 1} word count (${partWords}) must be >= 580 words`
+      );
+
+      // Verify code and output
+      assert.ok(part.code && part.code.length > 20, `Day ${day} Part ${pIdx + 1} code must be non-empty`);
+      assert.ok(part.output && part.output.length > 5, `Day ${day} Part ${pIdx + 1} output must be non-empty`);
+      assert.ok(part.example && part.example.length > 20, `Day ${day} Part ${pIdx + 1} example must be non-empty`);
+      assert.ok(part.tryIt && part.tryIt.length > 10, `Day ${day} Part ${pIdx + 1} tryIt must be non-empty`);
+
+      // Verify codeNotes
+      assert.ok(Array.isArray(part.codeNotes), `Day ${day} Part ${pIdx + 1} codeNotes must be array`);
+      assert.ok(part.codeNotes.length >= 4, `Day ${day} Part ${pIdx + 1} codeNotes must have >= 4 items`);
+
+      // Socratic check
+      const check = part.check as any;
+      assert.ok(check.question && check.question.length > 10, `Day ${day} Part ${pIdx + 1} check question missing`);
+      assert.equal(check.options.length, 4, `Day ${day} Part ${pIdx + 1} check must have 4 options`);
+      assert.ok(check.answerIndex >= 0 && check.answerIndex < 4, `Day ${day} Part ${pIdx + 1} invalid answerIndex`);
+      assert.equal(check.answer, check.answerIndex);
+      assert.ok(check.explanation && check.explanation.length > 10, `Day ${day} Part ${pIdx + 1} explanation missing`);
+    }
+
+    assert.ok(
+      totalWords >= 2950,
+      `Day ${day} total words (${totalWords}) must be >= 2950 words`
+    );
+
+    // Summary and projectStep
+    assert.ok(Array.isArray(lesson.summary), `Day ${day} summary must be array`);
+    assert.equal(lesson.summary.length, 5, `Day ${day} summary must have 5 bullet points`);
+    assert.ok(lesson.projectStep && lesson.projectStep.title, `Day ${day} projectStep must have title`);
+    assert.equal(lesson.projectStep.steps.length, 5, `Day ${day} projectStep must have 5 steps`);
+  }
+});
+
+test('B.Com Entrepreneurship Milestone 2 (Days 6-10): Python Domain Code & Accreditation Verification', () => {
+  // Day 6: Value Proposition & JTBD
+  const d6 = getLongLesson('bcom_ent', 6)!;
+  assert.ok(d6.parts[0].code?.includes('CustomerJob'));
+  assert.ok(d6.parts[0].code?.includes('evaluate_customer_jobs_profile'));
+  assert.ok(d6.parts[1].code?.includes('CustomerPain'));
+  assert.ok(d6.parts[2].code?.includes('CustomerGain'));
+  assert.ok(d6.parts[3].code?.includes('ValuePropositionFitEngine'));
+  assert.ok(d6.parts[4].code?.includes('MasterValuePropositionControlTower'));
+  assert.ok(d6.parts[4].output?.includes('VALUE_PROPOSITION_DESIGN_CERTIFIED_NOMINAL'));
+
+  // Day 7: Segments, Channels & Relationships
+  const d7 = getLongLesson('bcom_ent', 7)!;
+  assert.ok(d7.parts[0].code?.includes('MultiSidedPlatformEngine'));
+  assert.ok(d7.parts[0].output?.includes('MULTI_SIDED_PLATFORM_SOVEREIGN_LIQUIDITY'));
+  assert.ok(d7.parts[1].code?.includes('ChannelArchitectureEngine'));
+  assert.ok(d7.parts[2].code?.includes('CustomerRelationshipEngine'));
+  assert.ok(d7.parts[3].code?.includes('OmnichannelEconomicsEngine'));
+  assert.ok(d7.parts[4].code?.includes('MasterCustomerDeliveryControlTower'));
+  assert.ok(d7.parts[4].output?.includes('CUSTOMER_DELIVERY_ARCHITECTURE_CERTIFIED_NOMINAL'));
+
+  // Day 8: Resources, Activities & Partnerships
+  const d8 = getLongLesson('bcom_ent', 8)!;
+  assert.ok(d8.parts[0].code?.includes('VrioResourceAuditor'));
+  assert.ok(d8.parts[0].output?.includes('RESOURCE_PORTFOLIO_CERTIFIED_DEFENSIBLE'));
+  assert.ok(d8.parts[1].code?.includes('CoreActivityEngine'));
+  assert.ok(d8.parts[2].code?.includes('StrategicAllianceEngine'));
+  assert.ok(d8.parts[3].code?.includes('MakeVsBuyEngine'));
+  assert.ok(d8.parts[4].code?.includes('MasterBackstageOperationalControlTower'));
+  assert.ok(d8.parts[4].output?.includes('BACKSTAGE_OPERATIONAL_ENGINE_CERTIFIED_NOMINAL'));
+
+  // Day 9: Cost Structures & Multi-Stream Revenue
+  const d9 = getLongLesson('bcom_ent', 9)!;
+  assert.ok(d9.parts[0].code?.includes('CostPhysicsEngine'));
+  assert.ok(d9.parts[0].output?.includes('COST_STRUCTURE_CERTIFIED_SOLVENT'));
+  assert.ok(d9.parts[1].code?.includes('MultiStreamRevenueEngine'));
+  assert.ok(d9.parts[2].code?.includes('SubscriptionEconomicsEngine'));
+  assert.ok(d9.parts[3].code?.includes('MultiProductBreakEvenEngine'));
+  assert.ok(d9.parts[4].code?.includes('MasterFinancialViabilityControlTower'));
+  assert.ok(d9.parts[4].output?.includes('VENTURE_FINANCIAL_VIABILITY_CERTIFIED_NOMINAL'));
+
+  // Day 10: 🏆 Milestone 2 Capstone: Sovereign Business Model Canvas
+  const d10 = getLongLesson('bcom_ent', 10)!;
+  assert.ok(d10.parts[0].code?.includes('UnifiedBusinessModelCanvasEngine'));
+  assert.ok(d10.parts[0].output?.includes('BMC_UNIFIED_ARCHITECTURE_CERTIFIED_COHERENT'));
+  assert.ok(d10.parts[1].code?.includes('BusinessModelStressTestEngine'));
+  assert.ok(d10.parts[1].output?.includes('MACRO_STRESS_TEST_CERTIFIED_SOLVENT'));
+  assert.ok(d10.parts[2].code?.includes('BusinessModelShiftSimulator'));
+  assert.ok(d10.parts[2].output?.includes('BUSINESS_MODEL_SHIFT_CERTIFIED_BREAKTHROUGH'));
+  assert.ok(d10.parts[3].code?.includes('InvestmentCommitteeVentureMemoScorer'));
+  assert.ok(d10.parts[3].output?.includes('INVESTMENT_COMMITTEE_UNANIMOUS_APPROVAL'));
+  assert.ok(d10.parts[4].code?.includes('MasterSovereignBmcCapstoneEngine'));
+  assert.ok(d10.parts[4].output?.includes('VENTURE_CREATION_AND_BMC_MASTER_CERTIFIED_NOMINAL'));
+  assert.ok(d10.parts[4].output?.includes('Certified Business Model Architect & Venture Strategist'));
+});
+
+test('B.Com Entrepreneurship Milestone 2 (Days 6-10): Gate v2 Funnel Visuals & Cryptographic SHA-256 Bindings Verification', () => {
+  const visualsDir = path.resolve(__dirname, '../src/lib/data/lessonVisuals/bcom_ent');
+  
+  for (let day = 6; day <= 10; day++) {
+    const fileName = `day-${day.toString().padStart(2, '0')}.json`;
+    const filePath = path.join(visualsDir, fileName);
+    assert.ok(fs.existsSync(filePath), `Visual file ${fileName} must exist on disk`);
+
+    const raw = fs.readFileSync(filePath, 'utf-8');
+    const visual = JSON.parse(raw);
+
+    assert.equal(visual.schemaVersion, 1);
+    assert.equal(visual.prefix, 'bcom_ent');
+    assert.equal(visual.day, day);
+    assert.ok(visual.promptSha && visual.promptSha.length === 64, 'promptSha must be valid 64-char sha256');
+    assert.equal(visual.entries.length, 5, `Visual ${fileName} must have exactly 5 entries`);
+
+    const lesson = getLongLesson('bcom_ent', day)!;
+    for (let eIdx = 0; eIdx < visual.entries.length; eIdx++) {
+      const entry = visual.entries[eIdx];
+      const part = lesson.parts[eIdx];
+
+      assert.equal(entry.partTitle, part.title, `Entry ${eIdx} partTitle must match lesson part title`);
+
+      // Verify cryptographic SHA-256 code hash binding
+      const expectedHash = crypto.createHash('sha256').update(part.code.trim()).digest('hex');
+      assert.equal(
+        entry.codeHash,
+        expectedHash,
+        `Day ${day} Part ${eIdx + 1} codeHash must strictly match SHA-256 of part.code.trim()`
+      );
+
+      // Verify Funnel template structure
+      assert.equal(entry.spec.template, 'funnel', 'Visual template must be funnel');
+      assert.equal(entry.spec.steps.length, 4, 'Visual spec must have exactly 4 steps');
+      const stepAts = entry.spec.steps.map((s: any) => s.at);
+      assert.deepEqual(stepAts, ['intro', 'say1', 'example', 'tryIt'], 'Steps must match [intro, say1, example, tryIt]');
+
+      for (const step of entry.spec.steps) {
+        assert.ok(step.caption.length > 0, 'Step caption must be non-empty');
+        assert.ok(['top', 'qual', 'target', 'final'].includes(step.activeStageId));
+        assert.equal(step.stages.length, 4, 'Funnel must have 4 stages');
+      }
+
+      assert.deepEqual(entry.filled, entry.spec, 'filled must match spec');
+    }
+  }
+});
+
+test('B.Com Entrepreneurship Milestone 2 Capstone: 10/10 Days Integrated Verification', () => {
+  assert.ok(BCOM_ENT_LONG_LESSONS.length >= 10, 'BCOM_ENT_LONG_LESSONS must have at least 10 days');
+
+  let totalWords = 0;
+  for (let d = 1; d <= 10; d++) {
+    const lesson = getLongLesson('bcom_ent', d);
+    assert.ok(lesson, `Day ${d} must exist in BCOM_ENT_LONG_LESSONS`);
+    assert.equal(lesson.day, d, `Lesson at index ${d - 1} must have day: ${d}`);
+    assert.equal(lesson.parts.length, 5, `Day ${d} must have exactly 5 parts`);
+
+    for (const part of lesson.parts) {
+      const sayText = Array.isArray(part.say) ? part.say.join(' ') : String(part.say || '');
+      const wordCount = sayText.split(/\s+/).filter(Boolean).length;
+      totalWords += wordCount;
+    }
+  }
+
+  // Milestone 1 (legacy 5.6k words) + Milestone 2 (17.0k words) has 22,668 words across 10 days (50 parts)
+  assert.ok(totalWords >= 22000, `Total bcom_ent words must be >= 22,000 words (got ${totalWords})`);
+  console.log(`\n🏆 B.Com Entrepreneurship Milestone 2 Complete: ${totalWords.toLocaleString()} words across Days 1-10 (50 parts)!`);
+});
+
 
 
 
