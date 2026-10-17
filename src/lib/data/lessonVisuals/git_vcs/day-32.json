@@ -1,0 +1,869 @@
+{
+  "schemaVersion": 1,
+  "prefix": "git_vcs",
+  "day": 32,
+  "promptSha": "e569d885f2e8968119946078ccb727da106db87b0cd72384afb82d594a502e46",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "DIRC Header Specification & The 40-Byte Stat Cache: Ctime, Mtime, Inode & Device Invariants",
+      "codeHash": "a202f3c4be8c6735597cfd42a3ea8f7a84d5f7175ca232fbf91721236554bd65",
+      "spec": {
+        "template": "workflow",
+        "title": "DIRC Header Specification & The 40-Byte Stat ... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Working Tree",
+            "subtext": "git add",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Staging Index",
+            "subtext": "git commit",
+            "tone": "ok"
+          },
+          {
+            "id": "s3",
+            "name": "Feature Branch",
+            "subtext": "git rebase",
+            "tone": "data"
+          },
+          {
+            "id": "s4",
+            "name": "Mainline CI",
+            "subtext": "Verified Merge",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Working Tree): Initialize DIRC Header Specification & Th...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "git add",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "git commit",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Feature Branch",
+                "subtext": "git rebase",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Mainline CI",
+                "subtext": "Verified Merge",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Staging Index): Process core plumbing workflow.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "git add",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "git commit",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Feature Branch",
+                "subtext": "git rebase",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Mainline CI",
+                "subtext": "Verified Merge",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Feature Branch): Validate delta and binary data integrity.",
+            "activeStageId": "s3",
+            "statusBadge": "PROCESSING",
+            "throughput": "Nominal",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "git add",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "git commit",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Feature Branch",
+                "subtext": "git rebase",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Mainline CI",
+                "subtext": "Verified Merge",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Mainline CI): Complete storage certification.",
+            "activeStageId": "s4",
+            "statusBadge": "VERIFIED",
+            "throughput": "Complete",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "git add",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "git commit",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Feature Branch",
+                "subtext": "git rebase",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Mainline CI",
+                "subtext": "Verified Merge",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The rsync Stat Cache Invalidation Disaster: Sub-Second Filesystem Skew & Status Freezes",
+      "codeHash": "61a9d3c3ae9e2b7b20f7cdc85451be3c295fe6d24c8b592a802c79c556b2df5c",
+      "spec": {
+        "template": "workflow",
+        "title": "The rsync Stat Cache Invalidation Disaster: S... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Working Tree",
+            "subtext": "git add",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Staging Index",
+            "subtext": "git commit",
+            "tone": "ok"
+          },
+          {
+            "id": "s3",
+            "name": "Feature Branch",
+            "subtext": "git rebase",
+            "tone": "data"
+          },
+          {
+            "id": "s4",
+            "name": "Mainline CI",
+            "subtext": "Verified Merge",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Working Tree): Initialize The rsync Stat Cache Invalidat...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "git add",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "git commit",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Feature Branch",
+                "subtext": "git rebase",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Mainline CI",
+                "subtext": "Verified Merge",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Staging Index): Process core plumbing workflow.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "git add",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "git commit",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Feature Branch",
+                "subtext": "git rebase",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Mainline CI",
+                "subtext": "Verified Merge",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Feature Branch): Validate delta and binary data integrity.",
+            "activeStageId": "s3",
+            "statusBadge": "PROCESSING",
+            "throughput": "Nominal",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "git add",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "git commit",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Feature Branch",
+                "subtext": "git rebase",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Mainline CI",
+                "subtext": "Verified Merge",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Mainline CI): Complete storage certification.",
+            "activeStageId": "s4",
+            "statusBadge": "VERIFIED",
+            "throughput": "Complete",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "git add",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "git commit",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Feature Branch",
+                "subtext": "git rebase",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Mainline CI",
+                "subtext": "Verified Merge",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Index Conflict Stages (0, 1, 2, 3): Three-Way Merge Binary Slot Architecture",
+      "codeHash": "ae49620880a6f93c18062ea83d8edf6ce739dac2026e3506d8b9d7973e705f2c",
+      "spec": {
+        "template": "workflow",
+        "title": "Index Conflict Stages (0, 1, 2, 3): Three-Way... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Working Tree",
+            "subtext": "git add",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Staging Index",
+            "subtext": "git commit",
+            "tone": "ok"
+          },
+          {
+            "id": "s3",
+            "name": "Feature Branch",
+            "subtext": "git rebase",
+            "tone": "data"
+          },
+          {
+            "id": "s4",
+            "name": "Mainline CI",
+            "subtext": "Verified Merge",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Working Tree): Initialize Index Conflict Stages (0, 1, 2...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "git add",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "git commit",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Feature Branch",
+                "subtext": "git rebase",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Mainline CI",
+                "subtext": "Verified Merge",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Staging Index): Process core plumbing workflow.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "git add",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "git commit",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Feature Branch",
+                "subtext": "git rebase",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Mainline CI",
+                "subtext": "Verified Merge",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Feature Branch): Validate delta and binary data integrity.",
+            "activeStageId": "s3",
+            "statusBadge": "PROCESSING",
+            "throughput": "Nominal",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "git add",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "git commit",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Feature Branch",
+                "subtext": "git rebase",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Mainline CI",
+                "subtext": "Verified Merge",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Mainline CI): Complete storage certification.",
+            "activeStageId": "s4",
+            "statusBadge": "VERIFIED",
+            "throughput": "Complete",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "git add",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "git commit",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Feature Branch",
+                "subtext": "git rebase",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Mainline CI",
+                "subtext": "Verified Merge",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Tree Cache Extension (TREE) & Resolve Undo (REUC) Binary Serialization Engine",
+      "codeHash": "440158b55625e9297c0b1564e100b817efc9b3399949a4b2860509b8421228ab",
+      "spec": {
+        "template": "workflow",
+        "title": "Tree Cache Extension (TREE) & Resolve Undo (R... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Working Tree",
+            "subtext": "git add",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Staging Index",
+            "subtext": "git commit",
+            "tone": "ok"
+          },
+          {
+            "id": "s3",
+            "name": "Feature Branch",
+            "subtext": "git rebase",
+            "tone": "data"
+          },
+          {
+            "id": "s4",
+            "name": "Mainline CI",
+            "subtext": "Verified Merge",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Working Tree): Initialize Tree Cache Extension (TREE) & ...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "git add",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "git commit",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Feature Branch",
+                "subtext": "git rebase",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Mainline CI",
+                "subtext": "Verified Merge",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Staging Index): Process core plumbing workflow.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "git add",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "git commit",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Feature Branch",
+                "subtext": "git rebase",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Mainline CI",
+                "subtext": "Verified Merge",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Feature Branch): Validate delta and binary data integrity.",
+            "activeStageId": "s3",
+            "statusBadge": "PROCESSING",
+            "throughput": "Nominal",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "git add",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "git commit",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Feature Branch",
+                "subtext": "git rebase",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Mainline CI",
+                "subtext": "Verified Merge",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Mainline CI): Complete storage certification.",
+            "activeStageId": "s4",
+            "statusBadge": "VERIFIED",
+            "throughput": "Complete",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "git add",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "git commit",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Feature Branch",
+                "subtext": "git rebase",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Mainline CI",
+                "subtext": "Verified Merge",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Master Git Index Integrity Gateway: Stat Drift Elimination & High-Throughput Status Lock",
+      "codeHash": "c9355487dcfdad772ca5a452b4530f3c0fc60af30d60a8b499b99a8ce35dbeba",
+      "spec": {
+        "template": "workflow",
+        "title": "Master Git Index Integrity Gateway: Stat Drif... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Working Tree",
+            "subtext": "git add",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Staging Index",
+            "subtext": "git commit",
+            "tone": "ok"
+          },
+          {
+            "id": "s3",
+            "name": "Feature Branch",
+            "subtext": "git rebase",
+            "tone": "data"
+          },
+          {
+            "id": "s4",
+            "name": "Mainline CI",
+            "subtext": "Verified Merge",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Working Tree): Initialize Master Git Index Integrity Gat...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "git add",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "git commit",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Feature Branch",
+                "subtext": "git rebase",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Mainline CI",
+                "subtext": "Verified Merge",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Staging Index): Process core plumbing workflow.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "git add",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "git commit",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Feature Branch",
+                "subtext": "git rebase",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Mainline CI",
+                "subtext": "Verified Merge",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Feature Branch): Validate delta and binary data integrity.",
+            "activeStageId": "s3",
+            "statusBadge": "PROCESSING",
+            "throughput": "Nominal",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "git add",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "git commit",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Feature Branch",
+                "subtext": "git rebase",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Mainline CI",
+                "subtext": "Verified Merge",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Mainline CI): Complete storage certification.",
+            "activeStageId": "s4",
+            "statusBadge": "VERIFIED",
+            "throughput": "Complete",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "git add",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Staging Index",
+                "subtext": "git commit",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Feature Branch",
+                "subtext": "git rebase",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "Mainline CI",
+                "subtext": "Verified Merge",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

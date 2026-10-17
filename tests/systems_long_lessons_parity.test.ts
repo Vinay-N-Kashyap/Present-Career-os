@@ -2071,3 +2071,140 @@ test('Systems Long Lessons: git_vcs Day 30 🏆 FINAL CAPSTONE: Sovereign Git, G
   assert.equal(res5.allPassed, true);
   assert.ok(res5.stdout?.includes('Master Version Control Sovereign Index: 100/100'));
 });
+
+test('Systems Long Lessons: git_vcs Day 31 Packfiles & Pack Indices: .pack and .idx Binary Layout, Fan-Out Tables & Delta Compression', async () => {
+  const d31 = getLongLesson('git_vcs', 31);
+  assert.ok(d31, 'git_vcs Day 31 must resolve');
+  assert.equal(d31.day, 31);
+  assert.equal(d31.parts.length, 5);
+
+  const res1 = await executeBashSuite(d31.parts[0].code!);
+  assert.equal(res1.allPassed, true);
+  assert.ok(res1.stdout?.includes('PACKFILE_SIGNATURE: PACK'));
+
+  const res2 = await executeBashSuite(d31.parts[1].code!);
+  assert.equal(res2.allPassed, true);
+  assert.ok(res1.stdout?.includes('PACKFILE_SIGNATURE: PACK'));
+  assert.ok(res2.stdout?.includes('FANOUT_TABLE_ENTRIES: 256'));
+
+  const res3 = await executeBashSuite(d31.parts[2].code!);
+  assert.equal(res3.allPassed, true);
+  assert.ok(res3.stdout?.includes('SAVINGS_PERCENTAGE: 91.2%'));
+
+  const res4 = await executeBashSuite(d31.parts[3].code!);
+  assert.equal(res4.allPassed, true);
+  assert.ok(res4.stdout?.includes('CRC32_INTEGRITY: 100% MATCH'));
+
+  const res5 = await executeBashSuite(d31.parts[4].code!);
+  assert.equal(res5.allPassed, true);
+  assert.ok(res5.stdout?.includes('AUDIT_SEAL: PACKFILE-V2-STORAGE-CERTIFIED'));
+});
+
+test('Systems Long Lessons: git_vcs Day 32 The Git Index (.git/index) Binary Internals: DIRC Header, 40-Byte Stat Cache & Tree Cache Extension', async () => {
+  const d32 = getLongLesson('git_vcs', 32);
+  assert.ok(d32, 'git_vcs Day 32 must resolve');
+  assert.equal(d32.day, 32);
+  assert.equal(d32.parts.length, 5);
+
+  const res1 = await executeBashSuite(d32.parts[0].code!);
+  assert.equal(res1.allPassed, true);
+  assert.ok(res1.stdout?.includes('DIRC_HEADER_SIGNATURE: DIRC'));
+
+  const res2 = await executeBashSuite(d32.parts[1].code!);
+  assert.equal(res2.allPassed, true);
+  assert.ok(res2.stdout?.includes('REMEDY: git update-index --refresh'));
+
+  const res3 = await executeBashSuite(d32.parts[2].code!);
+  assert.equal(res3.allPassed, true);
+  assert.ok(res3.stdout?.includes('CONFLICT_RESOLUTION: Unmerged entries resolved into Stage 0'));
+
+  const res4 = await executeBashSuite(d32.parts[3].code!);
+  assert.equal(res4.allPassed, true);
+  assert.ok(res4.stdout?.includes('WRITE_TREE_ACCELERATION: 95%'));
+
+  const res5 = await executeBashSuite(d32.parts[4].code!);
+  assert.equal(res5.allPassed, true);
+  assert.ok(res5.stdout?.includes('AUDIT_SEAL: GIT-INDEX-DIRC-INTEGRITY-CERTIFIED'));
+});
+
+test('Systems Long Lessons: git_vcs Day 33 Delta Compression & Object Deduplication: Sliding Window Algorithms, Max Delta Depth & Thin Packs', async () => {
+  const d33 = getLongLesson('git_vcs', 33);
+  assert.ok(d33, 'git_vcs Day 33 must resolve');
+  assert.equal(d33.day, 33);
+  assert.equal(d33.parts.length, 5);
+
+  const res1 = await executeBashSuite(d33.parts[0].code!);
+  assert.equal(res1.allPassed, true);
+  assert.ok(res1.stdout?.includes('ALGORITHM: Sliding Window Delta Compression'));
+
+  const res2 = await executeBashSuite(d33.parts[1].code!);
+  assert.equal(res2.allPassed, true);
+  assert.ok(res2.stdout?.includes('INVARIANT: pack.depth <= 50'));
+
+  const res3 = await executeBashSuite(d33.parts[2].code!);
+  assert.equal(res3.allPassed, true);
+  assert.ok(res3.stdout?.includes('RECEIVER_ACTION: git index-pack --fix-thin'));
+
+  const res4 = await executeBashSuite(d33.parts[3].code!);
+  assert.equal(res4.allPassed, true);
+  assert.ok(res4.stdout?.includes('OOM_STATUS: 0 crashes'));
+
+  const res5 = await executeBashSuite(d33.parts[4].code!);
+  assert.equal(res5.allPassed, true);
+  assert.ok(res5.stdout?.includes('AUDIT_SEAL: DELTA-COMPRESSION-BOUNDED-PASS'));
+});
+
+test('Systems Long Lessons: git_vcs Day 34 Garbage Collection, MIDX & Alternate Stores: git gc, git prune, Multi-Pack-Index & info/alternates', async () => {
+  const d34 = getLongLesson('git_vcs', 34);
+  assert.ok(d34, 'git_vcs Day 34 must resolve');
+  assert.equal(d34.day, 34);
+  assert.equal(d34.parts.length, 5);
+
+  const res1 = await executeBashSuite(d34.parts[0].code!);
+  assert.equal(res1.allPassed, true);
+  assert.ok(res1.stdout?.includes('INDEX_TYPE: Multi-Pack-Index'));
+
+  const res2 = await executeBashSuite(d34.parts[1].code!);
+  assert.equal(res2.allPassed, true);
+  assert.ok(res2.stdout?.includes('ARCHITECTURAL_RULE: Alternates must be STRICTLY IMMUTABLE'));
+
+  const res3 = await executeBashSuite(d34.parts[2].code!);
+  assert.equal(res3.allPassed, true);
+  assert.ok(res3.stdout?.includes('LOG_TRAVERSAL_SPEED: 15s reduced to 180ms'));
+
+  const res4 = await executeBashSuite(d34.parts[3].code!);
+  assert.equal(res4.allPassed, true);
+  assert.ok(res4.stdout?.includes('BACKGROUND_GC_SAFETY: Zero race condition deletions'));
+
+  const res5 = await executeBashSuite(d34.parts[4].code!);
+  assert.equal(res5.allPassed, true);
+  assert.ok(res5.stdout?.includes('AUDIT_SEAL: REPOSITORY-MAINTENANCE-MIDX-CERTIFIED'));
+});
+
+test('Systems Long Lessons: git_vcs Day 35 Milestone 4 (M2): ApexPlumbing Custom Git Object Database & Packfile Decoder Suite', async () => {
+  const d35 = getLongLesson('git_vcs', 35);
+  assert.ok(d35, 'git_vcs Day 35 must resolve');
+  assert.equal(d35.day, 35);
+  assert.equal(d35.parts.length, 5);
+
+  const res1 = await executeBashSuite(d35.parts[0].code!);
+  assert.equal(res1.allPassed, true);
+  assert.ok(res1.stdout?.includes('CANONICAL_PARITY: Exact byte-for-byte matching'));
+
+  const res2 = await executeBashSuite(d35.parts[1].code!);
+  assert.equal(res2.allPassed, true);
+  assert.ok(res2.stdout?.includes('RESTORATION: ApexPlumbing recalculated SHA-1 trailer'));
+
+  const res3 = await executeBashSuite(d35.parts[2].code!);
+  assert.equal(res3.allPassed, true);
+  assert.ok(res3.stdout?.includes('BYTE_INTEGRITY: 100% match against git cat-file -p output'));
+
+  const res4 = await executeBashSuite(d35.parts[3].code!);
+  assert.equal(res4.allPassed, true);
+  assert.ok(res4.stdout?.includes('CANONICAL_EQUIVALENCE: Exactly matches git rev-list --topo-order'));
+
+  const res5 = await executeBashSuite(d35.parts[4].code!);
+  assert.equal(res5.allPassed, true);
+  assert.ok(res5.stdout?.includes('AUDIT_SEAL: APEX-PLUMBING-MILESTONE-4-CERTIFIED'));
+});
+
