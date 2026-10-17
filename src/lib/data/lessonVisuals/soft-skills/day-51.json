@@ -1,0 +1,157 @@
+[
+  {
+    "codeHash": "5716ea0c8619d028f9e32d86154e46523dad5c2223f6736f66022e2a7384a98e",
+    "title": "Day 51: The Anatomy of Tech Conference CFPs: Committe...",
+    "subtitle": "Technical Communication & Strategic Mastery \u2014 The Anatomy of Tech Conference CFPs: Committee Rubrics & Selection",
+    "stages": [
+      {
+        "id": "s1",
+        "name": "CFP Architecture & Hook",
+        "subtext": "Audience Value & Problem Framing",
+        "tone": "data"
+      },
+      {
+        "id": "s2",
+        "name": "Outline & Technical Depth",
+        "subtext": "4-Act Architecture & Code Walkthrough",
+        "tone": "data"
+      },
+      {
+        "id": "s3",
+        "name": "Live Demo Hardening",
+        "subtext": "Offline Docker & Network Resilience",
+        "tone": "warn"
+      },
+      {
+        "id": "s4",
+        "name": "Keynote Delivery & Q&A Mastery",
+        "subtext": "Disaster Recovery & Executive Poise",
+        "tone": "ok"
+      }
+    ]
+  },
+  {
+    "codeHash": "6ab2a1769e8fb0b77c52172c0cbeb86c4c16eb14a7348eb4ac5c59499340bb72",
+    "title": "Day 51: The Magnetic CFP Submission Blueprint: Outlin...",
+    "subtitle": "Technical Communication & Strategic Mastery \u2014 The Magnetic CFP Submission Blueprint: Outline Structure & High-Impact Abstract",
+    "stages": [
+      {
+        "id": "s1",
+        "name": "CFP Architecture & Hook",
+        "subtext": "Audience Value & Problem Framing",
+        "tone": "data"
+      },
+      {
+        "id": "s2",
+        "name": "Outline & Technical Depth",
+        "subtext": "4-Act Architecture & Code Walkthrough",
+        "tone": "data"
+      },
+      {
+        "id": "s3",
+        "name": "Live Demo Hardening",
+        "subtext": "Offline Docker & Network Resilience",
+        "tone": "warn"
+      },
+      {
+        "id": "s4",
+        "name": "Keynote Delivery & Q&A Mastery",
+        "subtext": "Disaster Recovery & Executive Poise",
+        "tone": "ok"
+      }
+    ]
+  },
+  {
+    "codeHash": "d9fa2535b44252dbe4e24a7e25e1354d9a8c72795cb926db4519ba22445440b2",
+    "title": "Day 51: Conference Demo Risk Mitigation Toolkit: Self...",
+    "subtitle": "Technical Communication & Strategic Mastery \u2014 Conference Demo Risk Mitigation Toolkit: Self-Contained Offline Docker Containers",
+    "stages": [
+      {
+        "id": "s1",
+        "name": "CFP Architecture & Hook",
+        "subtext": "Audience Value & Problem Framing",
+        "tone": "data"
+      },
+      {
+        "id": "s2",
+        "name": "Outline & Technical Depth",
+        "subtext": "4-Act Architecture & Code Walkthrough",
+        "tone": "data"
+      },
+      {
+        "id": "s3",
+        "name": "Live Demo Hardening",
+        "subtext": "Offline Docker & Network Resilience",
+        "tone": "warn"
+      },
+      {
+        "id": "s4",
+        "name": "Keynote Delivery & Q&A Mastery",
+        "subtext": "Disaster Recovery & Executive Poise",
+        "tone": "ok"
+      }
+    ]
+  },
+  {
+    "codeHash": "47cfe2c6730bd4d4297169cc3b955e3c46eadd1774cb8af0c185e180de7d0f83",
+    "title": "Day 51: Live Keynote Projector Failure Simulation Lab...",
+    "subtitle": "Technical Communication & Strategic Mastery \u2014 Live Keynote Projector Failure Simulation Lab: Seamless Delivery Under AV Collapse",
+    "stages": [
+      {
+        "id": "s1",
+        "name": "CFP Architecture & Hook",
+        "subtext": "Audience Value & Problem Framing",
+        "tone": "data"
+      },
+      {
+        "id": "s2",
+        "name": "Outline & Technical Depth",
+        "subtext": "4-Act Architecture & Code Walkthrough",
+        "tone": "data"
+      },
+      {
+        "id": "s3",
+        "name": "Live Demo Hardening",
+        "subtext": "Offline Docker & Network Resilience",
+        "tone": "warn"
+      },
+      {
+        "id": "s4",
+        "name": "Keynote Delivery & Q&A Mastery",
+        "subtext": "Disaster Recovery & Executive Poise",
+        "tone": "ok"
+      }
+    ]
+  },
+  {
+    "codeHash": "947fbf983e36acbb134f03bb1bfc5818af725f47dd2424a968ce5d5478c3b90b",
+    "title": "Day 51: Master Public Speaking & Tech Conferences Cer...",
+    "subtitle": "Technical Communication & Strategic Mastery \u2014 Master Public Speaking & Tech Conferences Certification",
+    "stages": [
+      {
+        "id": "s1",
+        "name": "CFP Architecture & Hook",
+        "subtext": "Audience Value & Problem Framing",
+        "tone": "data"
+      },
+      {
+        "id": "s2",
+        "name": "Outline & Technical Depth",
+        "subtext": "4-Act Architecture & Code Walkthrough",
+        "tone": "data"
+      },
+      {
+        "id": "s3",
+        "name": "Live Demo Hardening",
+        "subtext": "Offline Docker & Network Resilience",
+        "tone": "warn"
+      },
+      {
+        "id": "s4",
+        "name": "Keynote Delivery & Q&A Mastery",
+        "subtext": "Disaster Recovery & Executive Poise",
+        "tone": "ok"
+      }
+    ]
+  }
+]

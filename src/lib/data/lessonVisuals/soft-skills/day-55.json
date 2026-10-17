@@ -1,0 +1,157 @@
+[
+  {
+    "codeHash": "fff8dcfd3d1765a50131844a4e975903e63a8fae6b7d7f5be4d2e43614891b62",
+    "title": "Day 55: Edward Tufte's Visual Explanations: The Chall...",
+    "subtitle": "Technical Communication & Strategic Mastery \u2014 Edward Tufte's Visual Explanations: The Challenger Forensic Case",
+    "stages": [
+      {
+        "id": "s1",
+        "name": "Disaster Context & Teleconference",
+        "subtext": "Challenger 1986 O-Ring Threat",
+        "tone": "warn"
+      },
+      {
+        "id": "s2",
+        "name": "Chart Deconstruction & Anti-Patterns",
+        "subtext": "Tufte Forensic Flaw Analysis",
+        "tone": "warn"
+      },
+      {
+        "id": "s3",
+        "name": "Scatterplot Reconstruction",
+        "subtext": "Complete Temperature vs Damage Evidence",
+        "tone": "data"
+      },
+      {
+        "id": "s4",
+        "name": "Critical Threat Visualizer & Defense",
+        "subtext": "Uncompromising Technical Advocacy",
+        "tone": "ok"
+      }
+    ]
+  },
+  {
+    "codeHash": "a85568f18ef7d2e6df82f9b9faf3d5cef56e990420b826102f4e498bbb808235",
+    "title": "Day 55: The Challenger Chart Forensic Reconstruction:...",
+    "subtitle": "Technical Communication & Strategic Mastery \u2014 The Challenger Chart Forensic Reconstruction: The Definitive 1-Page Scatterplot Proof",
+    "stages": [
+      {
+        "id": "s1",
+        "name": "Disaster Context & Teleconference",
+        "subtext": "Challenger 1986 O-Ring Threat",
+        "tone": "warn"
+      },
+      {
+        "id": "s2",
+        "name": "Chart Deconstruction & Anti-Patterns",
+        "subtext": "Tufte Forensic Flaw Analysis",
+        "tone": "warn"
+      },
+      {
+        "id": "s3",
+        "name": "Scatterplot Reconstruction",
+        "subtext": "Complete Temperature vs Damage Evidence",
+        "tone": "data"
+      },
+      {
+        "id": "s4",
+        "name": "Critical Threat Visualizer & Defense",
+        "subtext": "Uncompromising Technical Advocacy",
+        "tone": "ok"
+      }
+    ]
+  },
+  {
+    "codeHash": "ccbe10922fb301c196195730e583ac85ff205af35b1b8c327550921f16fd2825",
+    "title": "Day 55: Critical Threat Visualizer CLI: Ingesting Raw...",
+    "subtitle": "Technical Communication & Strategic Mastery \u2014 Critical Threat Visualizer CLI: Ingesting Raw Telemetry & Emitting Tufte-Standard Risk Charts",
+    "stages": [
+      {
+        "id": "s1",
+        "name": "Disaster Context & Teleconference",
+        "subtext": "Challenger 1986 O-Ring Threat",
+        "tone": "warn"
+      },
+      {
+        "id": "s2",
+        "name": "Chart Deconstruction & Anti-Patterns",
+        "subtext": "Tufte Forensic Flaw Analysis",
+        "tone": "warn"
+      },
+      {
+        "id": "s3",
+        "name": "Scatterplot Reconstruction",
+        "subtext": "Complete Temperature vs Damage Evidence",
+        "tone": "data"
+      },
+      {
+        "id": "s4",
+        "name": "Critical Threat Visualizer & Defense",
+        "subtext": "Uncompromising Technical Advocacy",
+        "tone": "ok"
+      }
+    ]
+  },
+  {
+    "codeHash": "c3d4588bffb2612e2fecae09c81f7e284062f7d1c7d50619fd7470342ced1117",
+    "title": "Day 55: High-Pressure Launch Safety Defense Lab: Resi...",
+    "subtitle": "Technical Communication & Strategic Mastery \u2014 High-Pressure Launch Safety Defense Lab: Resisting Management Pressure",
+    "stages": [
+      {
+        "id": "s1",
+        "name": "Disaster Context & Teleconference",
+        "subtext": "Challenger 1986 O-Ring Threat",
+        "tone": "warn"
+      },
+      {
+        "id": "s2",
+        "name": "Chart Deconstruction & Anti-Patterns",
+        "subtext": "Tufte Forensic Flaw Analysis",
+        "tone": "warn"
+      },
+      {
+        "id": "s3",
+        "name": "Scatterplot Reconstruction",
+        "subtext": "Complete Temperature vs Damage Evidence",
+        "tone": "data"
+      },
+      {
+        "id": "s4",
+        "name": "Critical Threat Visualizer & Defense",
+        "subtext": "Uncompromising Technical Advocacy",
+        "tone": "ok"
+      }
+    ]
+  },
+  {
+    "codeHash": "9462807f9ecc6ddcc03860d6e9c3bfd8a44df8024696971caea63cb79ac0c15e",
+    "title": "Day 55: Master Historic Catastrophes & Ethical Engine...",
+    "subtitle": "Technical Communication & Strategic Mastery \u2014 Master Historic Catastrophes & Ethical Engineering Certification",
+    "stages": [
+      {
+        "id": "s1",
+        "name": "Disaster Context & Teleconference",
+        "subtext": "Challenger 1986 O-Ring Threat",
+        "tone": "warn"
+      },
+      {
+        "id": "s2",
+        "name": "Chart Deconstruction & Anti-Patterns",
+        "subtext": "Tufte Forensic Flaw Analysis",
+        "tone": "warn"
+      },
+      {
+        "id": "s3",
+        "name": "Scatterplot Reconstruction",
+        "subtext": "Complete Temperature vs Damage Evidence",
+        "tone": "data"
+      },
+      {
+        "id": "s4",
+        "name": "Critical Threat Visualizer & Defense",
+        "subtext": "Uncompromising Technical Advocacy",
+        "tone": "ok"
+      }
+    ]
+  }
+]

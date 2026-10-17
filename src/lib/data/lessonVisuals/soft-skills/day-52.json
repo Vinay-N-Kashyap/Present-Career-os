@@ -1,0 +1,157 @@
+[
+  {
+    "codeHash": "8a8eaad662d24c3a8a28907240402bcaa3a030c6c30ab72846218baa534a69ff",
+    "title": "Day 52: The Sociology of Technical Virality: Hacker N...",
+    "subtitle": "Technical Communication & Strategic Mastery \u2014 The Sociology of Technical Virality: Hacker News Mechanics & Algorithms",
+    "stages": [
+      {
+        "id": "s1",
+        "name": "Story Pitch & Hook",
+        "subtext": "Detective Mystery Framing",
+        "tone": "data"
+      },
+      {
+        "id": "s2",
+        "name": "Deep Dive & Forensic Proof",
+        "subtext": "Flame Graphs & Kernel Sysctl Diagnostics",
+        "tone": "data"
+      },
+      {
+        "id": "s3",
+        "name": "Syndication & Canonical SEO",
+        "subtext": "Substack/Medium Cross-Posting",
+        "tone": "warn"
+      },
+      {
+        "id": "s4",
+        "name": "HN Community Defense",
+        "subtext": "First 120-Min Rigorous De-escalation",
+        "tone": "ok"
+      }
+    ]
+  },
+  {
+    "codeHash": "48888cd029a1b3c086ab846c0042df5c56130ef38d1fde79bf18769071f51c18",
+    "title": "Day 52: The Front-Page Engineering Blog Blueprint: St...",
+    "subtitle": "Technical Communication & Strategic Mastery \u2014 The Front-Page Engineering Blog Blueprint: Structure, Flame Graphs & Narrative Arc",
+    "stages": [
+      {
+        "id": "s1",
+        "name": "Story Pitch & Hook",
+        "subtext": "Detective Mystery Framing",
+        "tone": "data"
+      },
+      {
+        "id": "s2",
+        "name": "Deep Dive & Forensic Proof",
+        "subtext": "Flame Graphs & Kernel Sysctl Diagnostics",
+        "tone": "data"
+      },
+      {
+        "id": "s3",
+        "name": "Syndication & Canonical SEO",
+        "subtext": "Substack/Medium Cross-Posting",
+        "tone": "warn"
+      },
+      {
+        "id": "s4",
+        "name": "HN Community Defense",
+        "subtext": "First 120-Min Rigorous De-escalation",
+        "tone": "ok"
+      }
+    ]
+  },
+  {
+    "codeHash": "a19e15e8411de4f5f248d5a731eb047ded241c89ed2c03bb302aa4c861f3f3ee",
+    "title": "Day 52: Technical Publication Markdown Engine: Multi-...",
+    "subtitle": "Technical Communication & Strategic Mastery \u2014 Technical Publication Markdown Engine: Multi-Platform Syndication",
+    "stages": [
+      {
+        "id": "s1",
+        "name": "Story Pitch & Hook",
+        "subtext": "Detective Mystery Framing",
+        "tone": "data"
+      },
+      {
+        "id": "s2",
+        "name": "Deep Dive & Forensic Proof",
+        "subtext": "Flame Graphs & Kernel Sysctl Diagnostics",
+        "tone": "data"
+      },
+      {
+        "id": "s3",
+        "name": "Syndication & Canonical SEO",
+        "subtext": "Substack/Medium Cross-Posting",
+        "tone": "warn"
+      },
+      {
+        "id": "s4",
+        "name": "HN Community Defense",
+        "subtext": "First 120-Min Rigorous De-escalation",
+        "tone": "ok"
+      }
+    ]
+  },
+  {
+    "codeHash": "857aa9f7b180a6a49dcaabf48b55802482c4444435c6b4e591fc9c5f82ac0856",
+    "title": "Day 52: Hacker News Comment Section Defense Lab: Defe...",
+    "subtitle": "Technical Communication & Strategic Mastery \u2014 Hacker News Comment Section Defense Lab: Defending Technical Integrity",
+    "stages": [
+      {
+        "id": "s1",
+        "name": "Story Pitch & Hook",
+        "subtext": "Detective Mystery Framing",
+        "tone": "data"
+      },
+      {
+        "id": "s2",
+        "name": "Deep Dive & Forensic Proof",
+        "subtext": "Flame Graphs & Kernel Sysctl Diagnostics",
+        "tone": "data"
+      },
+      {
+        "id": "s3",
+        "name": "Syndication & Canonical SEO",
+        "subtext": "Substack/Medium Cross-Posting",
+        "tone": "warn"
+      },
+      {
+        "id": "s4",
+        "name": "HN Community Defense",
+        "subtext": "First 120-Min Rigorous De-escalation",
+        "tone": "ok"
+      }
+    ]
+  },
+  {
+    "codeHash": "9012e9e142a0f37f4583bfd4d1225d1d562421258289796bd2cf05cee4b13a32",
+    "title": "Day 52: Master Technical Writing & Thought Leadership...",
+    "subtitle": "Technical Communication & Strategic Mastery \u2014 Master Technical Writing & Thought Leadership Certification",
+    "stages": [
+      {
+        "id": "s1",
+        "name": "Story Pitch & Hook",
+        "subtext": "Detective Mystery Framing",
+        "tone": "data"
+      },
+      {
+        "id": "s2",
+        "name": "Deep Dive & Forensic Proof",
+        "subtext": "Flame Graphs & Kernel Sysctl Diagnostics",
+        "tone": "data"
+      },
+      {
+        "id": "s3",
+        "name": "Syndication & Canonical SEO",
+        "subtext": "Substack/Medium Cross-Posting",
+        "tone": "warn"
+      },
+      {
+        "id": "s4",
+        "name": "HN Community Defense",
+        "subtext": "First 120-Min Rigorous De-escalation",
+        "tone": "ok"
+      }
+    ]
+  }
+]
