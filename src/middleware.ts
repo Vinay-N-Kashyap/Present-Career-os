@@ -122,8 +122,8 @@ export async function middleware(request: NextRequest) {
   // Sanitize log: log only pathname and method to prevent leaking query params (auth tokens, student IDs)
   console.log(`\n🌐 [CSP-FIX MIDDLEWARE] [${requestId}] ${method} ${path}`);
 
-  // ── Edge Route Guard: Protected Portals (/admin, /recruiter, /parent) ──
-  const PROTECTED_PREFIXES = ['/admin', '/recruiter', '/parent', '/teacher', '/consultant', '/advisor', '/crm', '/admissions', '/finance', '/placement', '/university'];
+  // ── Edge Route Guard: Protected Portals (/admin, /campus-admin, /recruiter, /parent, /teacher) ──
+  const PROTECTED_PREFIXES = ['/admin', '/campus-admin', '/recruiter', '/parent', '/teacher', '/consultant', '/advisor', '/crm', '/admissions', '/finance', '/placement', '/university'];
   const isProtectedPath = PROTECTED_PREFIXES.some(
     prefix => path === prefix || path.startsWith(`${prefix}/`)
   );
