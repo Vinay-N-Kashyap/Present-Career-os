@@ -137,7 +137,7 @@ IMPORTANT: The student's question is about this specific slide! Explain the conc
         userId: gated.user.id,
         courseId: resolvedCourseId,
         completedQuestIds: Array.isArray(userProfile?.completed_quests) ? userProfile.completed_quests : [],
-        syncedAt: userProfile?.updated_at ? new Date(userProfile.updated_at).getTime() : Date.now(),
+        syncedAt: Date.now(),
       };
 
       const advisorResult = getAuthoritativeNextTask(snapshot, gated.user.id, curriculum);

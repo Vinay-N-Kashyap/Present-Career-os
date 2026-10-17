@@ -43,11 +43,12 @@ export interface AdvisorResult {
 
 // ── 1. Strict Intent Regex (Anchored End-of-String) ──────────────────────────
 export const NEXT_TASK_INTENT_REGEX =
-  /^(?:(?:tell\s+me\s+|show\s+me\s+)?(?:what(?:'s|\s+is|\s+do\s+i|\s+should\s+i)\s+(?:the\s+|my\s+)?(?:next(?:\s+(?:task|quest|lesson|mission))?|(?:do|study|learn)(?:\s+next)?)|(?:the\s+|my\s+)?next\s+(?:task|quest|lesson|mission))|what\s+next)\s*[?.!]*$/i;
+  /^(?:(?:tell\s+me\s+|show\s+me\s+)?(?:what(?:'s|\s+is|\s+do\s+i|\s+should\s+i|\s+to)\s+(?:the\s+|my\s+)?(?:next(?:\s+(?:task|quest|lesson|mission))?|(?:do|study|learn)(?:\s+next)?)|(?:the\s+|my\s+)?next\s+(?:task|quest|lesson|mission))|what\s+next)\s*[?.!]*$/i;
 
 export function isNextTaskIntent(query: unknown): boolean {
   if (typeof query !== 'string') return false;
-  return NEXT_TASK_INTENT_REGEX.test(query.trim());
+  const normalized = query.trim().replace(/^[\p{Emoji}\p{Symbol}\s]+/u, '');
+  return NEXT_TASK_INTENT_REGEX.test(normalized);
 }
 
 // ── 2. Robust Timestamp & Freshness Validation ──────────────────────────────

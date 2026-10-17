@@ -889,9 +889,9 @@ export default function RigidAvatarMentorWidget({
 
   // Build ML-powered quick prompts
   const quickPrompts = [
+    '🎯 What should I study next?',
     `📊 How do I improve my Career Score from ${careerProfile?.ats_score||0}?`,
-    '🎯 What missions should I do today?',
-    '📚 What should I study next?',
+    '⚡ What missions should I do today?',
     '💼 Am I ready for job interviews?',
     ...mlRecs.slice(0,2).map(r => `${r.icon} Show me ${r.label.toLowerCase()} options`),
   ].slice(0, 5);
@@ -1119,8 +1119,8 @@ export default function RigidAvatarMentorWidget({
     if (onlyAvatar) return; // Never auto-minimize in onlyAvatar mode
     if (isMinimized) return;
 
-    // If AI is currently loading or speaking, do not close, and clear any timer
-    if (loading || speaking) return;
+    // If AI is currently loading or speaking, or voice recognition is active, do not close, and clear any timer
+    if (loading || speaking || recognizing) return;
 
     // If the user has typed something, don't close
     if (input.trim().length > 0) return;
@@ -1135,7 +1135,7 @@ export default function RigidAvatarMentorWidget({
     return () => {
       clearTimeout(timer);
     };
-  }, [loading, speaking, isMinimized, input, setIsMinimized, onlyAvatar]);
+  }, [loading, speaking, isMinimized, input, setIsMinimized, onlyAvatar, recognizing]);
 
   if (onlyAvatar) {
     return (
