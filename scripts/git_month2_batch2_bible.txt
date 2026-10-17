@@ -1,0 +1,416 @@
+Day 36</span>
+          <strong style="margin-left: 6pt; font-size: 8.8pt; color: #9a3412;">Branching Strategies at Scale: Gitflow vs GitHub Flow vs Trunk-Based Development & Short-Lived Branches</strong>
+          <span class="stage-pill" style="background: #ffedd5; color: #c2410c;">Stage 8: Distributed Branching & Enterprise Release Engineering</span>
+        </div>
+        <span style="font-size: 7.2pt; color: #64748b;">Month 2 &bull; Block 8 &bull; <strong>4 Quests</strong></span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5pt; margin-bottom: 4pt; font-size: 7.2pt;">
+        <div style="background: #fff7ed; padding: 4pt 6pt; border-radius: 3px; border: 1px solid #fed7aa;">
+          <strong>🎯 Spoken Goal &amp; Invariant:</strong><br>
+          <span style="color: #9a3412; font-weight: 600;">Goal:</span> How do elite engineering teams like Google, Meta, and Netflix ship code to production 50 times a day without breaking? They do not use Gitflow. Gitflow is an obsolete pattern from the shrink-wrapped software era of the 2000s that leads to 'merge hell'. Today, you master modern enterprise branching strategies: why Trunk-Based Development is the industry gold standard, how to decouple deployment from release using Feature Flags, and why branches should live for less than 24 hours.<br>
+          <span style="color: #c2410c; font-weight: 600;">Invariant:</span> <code>Trunk-Based Integration Cadence Invariant: All engineers merge short-lived feature branches into the trunk (<code>main</code>) at least once per 24 hours: $\text{Lifetime}(\text{branch}) \le 24\text{ hours}$. Incomplete features are safely hidden behind dynamic feature toggles rather than quarantined in long-lived divergent branches.</code>
+        </div>
+        <div style="background: #fef2f2; padding: 4pt 6pt; border-radius: 3px; border: 1px solid #fecaca; color: #991b1b;">
+          <strong>⚠️ Failure Mode &amp; tryIt Bug:</strong><br>
+          <strong>Failure:</strong> The Gitflow 3-Month Release Merge Hell Disaster: An enterprise uses Gitflow with separate <code>develop</code>, <code>release-2.0</code>, and <code>feature</code> branches lasting 3 months. When the team attempts to merge the release branch into <code>main</code>, they encounter 1,400 merge conflicts across 300 files. Resolving the conflicts takes 3 weeks of engineering time and introduces 18 critical production bugs.<br>
+          <strong>tryIt Friction:</strong> Simulate an enterprise feature rollout using Trunk-Based Development: implement a breaking API change behind a boolean feature flag, merge it into <code>main</code> via a short-lived branch in under 10 minutes, and toggle the feature dynamically at runtime.
+        </div>
+      </div>
+
+      <div style="background: #fff7ed; border: 1px solid #fed7aa; border-radius: 3px; padding: 3pt 6pt; margin-bottom: 4pt; font-size: 7.0pt;">
+        <strong style="color: #9a3412;">🪜 Socratic Hint Ladder:</strong>
+        <ol style="margin: 2px 0 2px 14px; padding: 0; color: #7c2d12;">
+          <li>Why do long-lived feature branches inevitably create an exponential increase in merge conflict probability over time?</li><li>How do Feature Flags (Toggles) allow developers to merge incomplete code into production daily without exposing unfinished features to users?</li><li>What metrics (such as DORA lead time for changes and change failure rate) differentiate Trunk-Based teams from Gitflow teams?</li>
+        </ol>
+      </div>
+
+      <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 3px; padding: 3pt 6pt; margin-bottom: 4pt; font-size: 7.0pt;">
+        <strong style="color: #9a3412;">🧩 Situational Production Puzzle:</strong>
+        <p style="margin: 2px 0; color: #1e293b;">A company requires 4 weeks of manual QA testing before every production release. The engineering manager proposes using Trunk-Based Development. The QA lead objects: 'If developers merge into main daily, how can we test a stable release candidate?'</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3pt; margin: 2px 0;">
+          
+            <div style="background: #ffffff; border: 1px solid #e2e8f0; padding: 2px 4px; border-radius: 2px; font-size: 6.8pt;">
+              <strong>A:</strong> QA testing should be eliminated entirely. 
+            </div>
+          
+            <div style="background: #ffedd5; border: 1px solid #ea580c; padding: 2px 4px; border-radius: 2px; font-size: 6.8pt;">
+              <strong>B:</strong> Diagnose Release Branching from Trunk: Under Trunk-Based Development, when code is ready for final release hardening, a short-lived release branch (e.g. <code>release/v2.1</code>) is cut from <code>main</code>. QA tests that frozen branch while developers continue merging daily into <code>main</code>. Any critical bug discovered by QA is cherry-picked back into the release branch, ensuring main never freezes. <strong style="color: #9a3412;">✓ [Optimal Systems Architecture Decision]</strong>
+            </div>
+          
+            <div style="background: #ffffff; border: 1px solid #e2e8f0; padding: 2px 4px; border-radius: 2px; font-size: 6.8pt;">
+              <strong>C:</strong> Developers must stop writing code for 4 weeks. 
+            </div>
+          
+            <div style="background: #ffffff; border: 1px solid #e2e8f0; padding: 2px 4px; border-radius: 2px; font-size: 6.8pt;">
+              <strong>D:</strong> Switch to a separate Git repository for each release. 
+            </div>
+          
+        </div>
+        <div style="margin-top: 2px; color: #9a3412; font-size: 6.8pt;"><strong>Strategic Debrief:</strong> Trunk-Based Development does not mean you cannot have stable releases. Teams cut a short-lived release branch from trunk for final stabilization and deployment, while active feature development continues uninterrupted on trunk.</div>
+      </div>
+
+      <div style="margin-top: 4pt; font-size: 7.2pt; border-top: 1px dashed #e2e8f0; padding-top: 3pt;">
+        <strong style="color: #9a3412;">4 Rigorous Quests (Concept &bull; Detective &bull; Mastery Assignment &bull; Incident Lab):</strong>
+        <div style="margin-top: 2pt;">
+          
+    <div style="margin-bottom: 2px;">
+      <span style="font-family: monospace; font-size: 6.8pt; background: #ffedd5; color: #9a3412; padding: 1px 3px; border-radius: 2px;">Q35.141</span>
+      <strong>Enterprise Branching Taxonomy & DORA Metrics Architecture</strong> <em>(Concept)</em>: <span style="color: #475569;">Analyze the systemic trade-offs between Gitflow, GitHub Flow, and Trunk-Based Development, examining lead time, deployment frequency, and conflict probability.</span>
+    </div>
+  
+    <div style="margin-bottom: 2px;">
+      <span style="font-family: monospace; font-size: 6.8pt; background: #ffedd5; color: #9a3412; padding: 1px 3px; border-radius: 2px;">Q35.142</span>
+      <strong>The 1,400-Conflict Gitflow Release Meltdown Detective Challenge</strong> <em>(Detective Challenge)</em>: <span style="color: #475569;">Investigate a stalled 3-month release branch with 1,400 merge conflicts; reconstruct the integration paths and establish a clean trunk-based migration.</span>
+    </div>
+  
+    <div style="margin-bottom: 2px;">
+      <span style="font-family: monospace; font-size: 6.8pt; background: #ffedd5; color: #9a3412; padding: 1px 3px; border-radius: 2px;">Q35.143</span>
+      <strong>Trunk-Based Release Engineering & Feature Flag Gateway</strong> <em>(Mastery Assignment)</em>: <span style="color: #475569;">Build an automated release governance engine that monitors branch lifespans, alerts on branches older than 48 hours, and validates feature flag coverage.</span>
+    </div>
+  
+    <div style="margin-bottom: 2px;">
+      <span style="font-family: monospace; font-size: 6.8pt; background: #ffedd5; color: #9a3412; padding: 1px 3px; border-radius: 2px;">Q35.144</span>
+      <strong>High-Frequency 50-PR Daily Trunk Integration Stress Lab</strong> <em>(Production Incident Lab)</em>: <span style="color: #475569;">Simulate 50 automated developer bots merging short-lived feature branches into trunk throughout a simulated 8-hour workday; measure merge queue stability.</span>
+    </div>
+  
+        </div>
+      </div>
+    </div>
+  
+    <div class="daily-card" style="margin-bottom: 10pt; page-break-inside: avoid; border-left: 3px solid #ea580c;">
+      <div class="daily-card-header">
+        <div>
+          <span style="background: #c2410c; color: #ffedd5; font-size: 7.5pt; font-weight: 700; padding: 1px 5px; border-radius: 2px;">Day 37</span>
+          <strong style="margin-left: 6pt; font-size: 8.8pt; color: #9a3412;">Monorepo vs Polyrepo Architecture: Scaling Bottlenecks, Hermetic Builds & Dependency Graph Management</strong>
+          <span class="stage-pill" style="background: #ffedd5; color: #c2410c;">Stage 8: Distributed Branching & Enterprise Release Engineering</span>
+        </div>
+        <span style="font-size: 7.2pt; color: #64748b;">Month 2 &bull; Block 8 &bull; <strong>4 Quests</strong></span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5pt; margin-bottom: 4pt; font-size: 7.2pt;">
+        <div style="background: #fff7ed; padding: 4pt 6pt; border-radius: 3px; border: 1px solid #fed7aa;">
+          <strong>🎯 Spoken Goal &amp; Invariant:</strong><br>
+          <span style="color: #9a3412; font-weight: 600;">Goal:</span> Should your company store 500 microservices in 500 separate repositories (polyrepo), or unify them in a single massive monorepo like Google, Microsoft, and Uber? Today, you master Monorepo vs Polyrepo systems architecture: evaluating the trade-offs between atomic cross-service commits versus repository bloat, understanding hermetic build dependency graphs (Bazel, Turborepo, Nx), and learning how Git scales to hundreds of gigabytes.<br>
+          <span style="color: #c2410c; font-weight: 600;">Invariant:</span> <code>Hermetic Affected Graph Invariant: In an enterprise monorepo, a commit mutating service $S_k$ must trigger CI builds strictly for $S_k$ and its transitive downstream dependents: $\text{BuildSet} = \text{TransitiveDependents}(S_k)$. Running the global test suite across all services on every commit is an architectural anti-pattern.</code>
+        </div>
+        <div style="background: #fef2f2; padding: 4pt 6pt; border-radius: 3px; border: 1px solid #fecaca; color: #991b1b;">
+          <strong>⚠️ Failure Mode &amp; tryIt Bug:</strong><br>
+          <strong>Failure:</strong> The 45-Minute Polyrepo Version Dependency Deadlock: A breaking API change requires updating 8 separate microservices across 8 polyrepos. Because each service has its own repository and CI release cycle, deploying the change takes 45 minutes of manual PR coordination. A race condition midway through leaves 3 services incompatible, causing an outage.<br>
+          <strong>tryIt Friction:</strong> Construct a multi-service monorepo containing two backend APIs and a shared utility library; configure path-based Git change detection using <code>git diff --name-only HEAD~1</code> to identify and test only the affected services.
+        </div>
+      </div>
+
+      <div style="background: #fff7ed; border: 1px solid #fed7aa; border-radius: 3px; padding: 3pt 6pt; margin-bottom: 4pt; font-size: 7.0pt;">
+        <strong style="color: #9a3412;">🪜 Socratic Hint Ladder:</strong>
+        <ol style="margin: 2px 0 2px 14px; padding: 0; color: #7c2d12;">
+          <li>What is the single greatest architectural advantage of a monorepo when refactoring a shared internal library used by 50 microservices?</li><li>Why does a monorepo without a smart build tool (like Bazel or Nx) inevitably collapse under the weight of CI execution times?</li><li>How do polyrepos introduce 'dependency version drift' across independent development teams?</li>
+        </ol>
+      </div>
+
+      <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 3px; padding: 3pt 6pt; margin-bottom: 4pt; font-size: 7.0pt;">
+        <strong style="color: #9a3412;">🧩 Situational Production Puzzle:</strong>
+        <p style="margin: 2px 0; color: #1e293b;">An enterprise monorepo contains 50 frontend applications and 100 backend services. Every time a developer pushes a 1-line typo fix in a CSS file of app A, the GitHub Actions CI pipeline runs for 4 hours, executing tests for all 150 applications.</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3pt; margin: 2px 0;">
+          
+            <div style="background: #ffffff; border: 1px solid #e2e8f0; padding: 2px 4px; border-radius: 2px; font-size: 6.8pt;">
+              <strong>A:</strong> Split the monorepo into 150 polyrepos immediately. 
+            </div>
+          
+            <div style="background: #ffedd5; border: 1px solid #ea580c; padding: 2px 4px; border-radius: 2px; font-size: 6.8pt;">
+              <strong>B:</strong> Diagnose Missing Affected Dependency Graph Filtering: The CI pipeline lacks change-detection path filtering. The team must configure path-based workflow triggers (<code>on.push.paths</code>) or integrate a monorepo build tool (like Turborepo, Nx, or Bazel) that inspects the git diff and executes tasks strictly for affected targets, reducing CI runtime from 4 hours to 90 seconds. <strong style="color: #9a3412;">✓ [Optimal Systems Architecture Decision]</strong>
+            </div>
+          
+            <div style="background: #ffffff; border: 1px solid #e2e8f0; padding: 2px 4px; border-radius: 2px; font-size: 6.8pt;">
+              <strong>C:</strong> Buy 150 new CI runner machines. 
+            </div>
+          
+            <div style="background: #ffffff; border: 1px solid #e2e8f0; padding: 2px 4px; border-radius: 2px; font-size: 6.8pt;">
+              <strong>D:</strong> Disable all unit testing across the monorepo. 
+            </div>
+          
+        </div>
+        <div style="margin-top: 2px; color: #9a3412; font-size: 6.8pt;"><strong>Strategic Debrief:</strong> A monorepo must use dependency graph analysis to test only the projects affected by a commit. Running global tests for all services on every commit wastes resources and destroys developer velocity.</div>
+      </div>
+
+      <div style="margin-top: 4pt; font-size: 7.2pt; border-top: 1px dashed #e2e8f0; padding-top: 3pt;">
+        <strong style="color: #9a3412;">4 Rigorous Quests (Concept &bull; Detective &bull; Mastery Assignment &bull; Incident Lab):</strong>
+        <div style="margin-top: 2pt;">
+          
+    <div style="margin-bottom: 2px;">
+      <span style="font-family: monospace; font-size: 6.8pt; background: #ffedd5; color: #9a3412; padding: 1px 3px; border-radius: 2px;">Q35.145</span>
+      <strong>Monorepo vs Polyrepo Systems Architecture & Scaling Limits</strong> <em>(Concept)</em>: <span style="color: #475569;">Analyze the technical trade-offs between monorepos and polyrepos, evaluating atomic commits, tooling complexity, Git performance limits, and dependency graphs.</span>
+    </div>
+  
+    <div style="margin-bottom: 2px;">
+      <span style="font-family: monospace; font-size: 6.8pt; background: #ffedd5; color: #9a3412; padding: 1px 3px; border-radius: 2px;">Q35.146</span>
+      <strong>The Polyrepo Cross-Service Dependency Deadlock Detective</strong> <em>(Detective Challenge)</em>: <span style="color: #475569;">Investigate a cascading production outage caused by desynchronized deployments across 6 polyrepos; reconstruct the dependency graph into an atomic migration.</span>
+    </div>
+  
+    <div style="margin-bottom: 2px;">
+      <span style="font-family: monospace; font-size: 6.8pt; background: #ffedd5; color: #9a3412; padding: 1px 3px; border-radius: 2px;">Q35.147</span>
+      <strong>Affected Dependency Graph Analyzer & Monorepo CI Dispatcher</strong> <em>(Mastery Assignment)</em>: <span style="color: #475569;">Build an automated CLI tool that parses monorepo dependency manifests, calculates the transitive closure of affected packages from a git diff, and triggers targeted CI runs.</span>
+    </div>
+  
+    <div style="margin-bottom: 2px;">
+      <span style="font-family: monospace; font-size: 6.8pt; background: #ffedd5; color: #9a3412; padding: 1px 3px; border-radius: 2px;">Q35.148</span>
+      <strong>5,000-Package Monorepo Path Resolution Stress Lab</strong> <em>(Production Incident Lab)</em>: <span style="color: #475569;">Simulate a 5,000-package enterprise monorepo; benchmark git diff and path filtering algorithms across 10,000 commits, verifying sub-second dependency calculation.</span>
+    </div>
+  
+        </div>
+      </div>
+    </div>
+  
+    <div class="daily-card" style="margin-bottom: 10pt; page-break-inside: avoid; border-left: 3px solid #ea580c;">
+      <div class="daily-card-header">
+        <div>
+          <span style="background: #c2410c; color: #ffedd5; font-size: 7.5pt; font-weight: 700; padding: 1px 5px; border-radius: 2px;">Day 38</span>
+          <strong style="margin-left: 6pt; font-size: 8.8pt; color: #9a3412;">Scalable Large Repositories: Sparse Checkout (`git sparse-checkout`), Blobless Clones & Microsoft Scalar</strong>
+          <span class="stage-pill" style="background: #ffedd5; color: #c2410c;">Stage 8: Distributed Branching & Enterprise Release Engineering</span>
+        </div>
+        <span style="font-size: 7.2pt; color: #64748b;">Month 2 &bull; Block 8 &bull; <strong>4 Quests</strong></span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5pt; margin-bottom: 4pt; font-size: 7.2pt;">
+        <div style="background: #fff7ed; padding: 4pt 6pt; border-radius: 3px; border: 1px solid #fed7aa;">
+          <strong>🎯 Spoken Goal &amp; Invariant:</strong><br>
+          <span style="color: #9a3412; font-weight: 600;">Goal:</span> Windows OS is stored in a single Git repository containing 3.5 million files and 300GB of data. If an engineer ran a standard <code>git clone</code>, it would take days and exhaust their hard drive. Today, you master ultra-large repository engineering: Partial Clones (<code>--filter=blob:none</code>, downloading commit trees while fetching file contents on-demand), Sparse Checkout (checking out only the folders your team works on), Cone Mode, and Microsoft Scalar.<br>
+          <span style="color: #c2410c; font-weight: 600;">Invariant:</span> <code>Blobless Lazy Hydration Invariant: A blobless partial clone (<code>git clone --filter=blob:none</code>) downloads the complete commit and tree DAG, but downloads zero file Blobs until a specific file is checked out or diffed: $\text{Clone Size} = O(\text{Trees}) \ll O(\text{Blobs})$. This enables instant cloning of 100GB+ repositories.</code>
+        </div>
+        <div style="background: #fef2f2; padding: 4pt 6pt; border-radius: 3px; border: 1px solid #fecaca; color: #991b1b;">
+          <strong>⚠️ Failure Mode &amp; tryIt Bug:</strong><br>
+          <strong>Failure:</strong> The Treeless Partial Clone Offline Disconnection Lockup: An engineer clones a repository using <code>--filter=tree:0</code> (treeless clone) to save bandwidth before boarding a flight. In-flight with no Wi-Fi, they run <code>git log -p</code> or <code>git checkout another-branch</code>. Because treeless clones require network requests to fetch tree objects on demand, Git halts with fatal connection errors, locking the developer out of work.<br>
+          <strong>tryIt Friction:</strong> Perform a blobless partial clone of a large open-source repository using <code>git clone --filter=blob:none --sparse <url></code>; enable cone mode using <code>git sparse-checkout set <directory></code>, and verify that only the targeted directory is checked out on disk while full commit history remains navigable.
+        </div>
+      </div>
+
+      <div style="background: #fff7ed; border: 1px solid #fed7aa; border-radius: 3px; padding: 3pt 6pt; margin-bottom: 4pt; font-size: 7.0pt;">
+        <strong style="color: #9a3412;">🪜 Socratic Hint Ladder:</strong>
+        <ol style="margin: 2px 0 2px 14px; padding: 0; color: #7c2d12;">
+          <li>What is the crucial difference between a blobless clone (<code>--filter=blob:none</code>) and a treeless clone (<code>--filter=tree:0</code>) in terms of offline usability?</li><li>Why is Sparse Checkout 'Cone Mode' vastly faster than arbitrary pattern matching in large repositories with hundreds of thousands of files?</li><li>What Git configuration optimizations does Microsoft Scalar automatically apply (e.g. <code>core.fsmonitor</code>, <code>commit-graph</code>, <code>fetch.writeCommitGraph</code>)?</li>
+        </ol>
+      </div>
+
+      <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 3px; padding: 3pt 6pt; margin-bottom: 4pt; font-size: 7.0pt;">
+        <strong style="color: #9a3412;">🧩 Situational Production Puzzle:</strong>
+        <p style="margin: 2px 0; color: #1e293b;">A developer working on a 150GB monorepo enables sparse checkout to work exclusively on <code>services/auth/</code>. When they run <code>git sparse-checkout set services/auth</code>, all other directories disappear from their file explorer. The developer panics, believing they accidentally deleted 95% of the company's code.</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3pt; margin: 2px 0;">
+          
+            <div style="background: #ffffff; border: 1px solid #e2e8f0; padding: 2px 4px; border-radius: 2px; font-size: 6.8pt;">
+              <strong>A:</strong> The developer deleted the code and must be reprimanded. 
+            </div>
+          
+            <div style="background: #ffedd5; border: 1px solid #ea580c; padding: 2px 4px; border-radius: 2px; font-size: 6.8pt;">
+              <strong>B:</strong> Diagnose Sparse Checkout Working Tree Virtualization: The code is completely safe in the Git object database and on the remote server. Sparse checkout merely instructs Git to populate the local working directory with only the specified directories, hiding unneeded files to save disk space and improve IDE indexing speed. Running <code>git sparse-checkout disable</code> instantly restores all files to disk. <strong style="color: #9a3412;">✓ [Optimal Systems Architecture Decision]</strong>
+            </div>
+          
+            <div style="background: #ffffff; border: 1px solid #e2e8f0; padding: 2px 4px; border-radius: 2px; font-size: 6.8pt;">
+              <strong>C:</strong> The developer must run git reset --hard origin/main. 
+            </div>
+          
+            <div style="background: #ffffff; border: 1px solid #e2e8f0; padding: 2px 4px; border-radius: 2px; font-size: 6.8pt;">
+              <strong>D:</strong> Sparse checkout requires recloning from scratch. 
+            </div>
+          
+        </div>
+        <div style="margin-top: 2px; color: #9a3412; font-size: 6.8pt;"><strong>Strategic Debrief:</strong> Sparse checkout selectively populates the working directory with only the folders you specify, keeping the rest of the repository in the Git object store without checking it out onto disk. No files are lost or deleted.</div>
+      </div>
+
+      <div style="margin-top: 4pt; font-size: 7.2pt; border-top: 1px dashed #e2e8f0; padding-top: 3pt;">
+        <strong style="color: #9a3412;">4 Rigorous Quests (Concept &bull; Detective &bull; Mastery Assignment &bull; Incident Lab):</strong>
+        <div style="margin-top: 2pt;">
+          
+    <div style="margin-bottom: 2px;">
+      <span style="font-family: monospace; font-size: 6.8pt; background: #ffedd5; color: #9a3412; padding: 1px 3px; border-radius: 2px;">Q35.149</span>
+      <strong>Partial Clone & Sparse Checkout Protocol Architecture</strong> <em>(Concept)</em>: <span style="color: #475569;">Analyze the mechanics of Git promisors, on-demand blob fetching, cone mode path prefix trees, and virtualized working directories.</span>
+    </div>
+  
+    <div style="margin-bottom: 2px;">
+      <span style="font-family: monospace; font-size: 6.8pt; background: #ffedd5; color: #9a3412; padding: 1px 3px; border-radius: 2px;">Q35.150</span>
+      <strong>The In-Flight Treeless Partial Clone Blackout Detective</strong> <em>(Detective Challenge)</em>: <span style="color: #475569;">Investigate an offline developer lockout caused by treeless partial clones; reconstruct local cache strategies to guarantee offline branch switching.</span>
+    </div>
+  
+    <div style="margin-bottom: 2px;">
+      <span style="font-family: monospace; font-size: 6.8pt; background: #ffedd5; color: #9a3412; padding: 1px 3px; border-radius: 2px;">Q35.151</span>
+      <strong>Enterprise Scalar & Sparse Workspace Configurator CLI</strong> <em>(Mastery Assignment)</em>: <span style="color: #475569;">Build an automated developer onboarding tool that provisions optimized sparse workspaces with blobless filters, cone mode paths, and fsmonitor daemons.</span>
+    </div>
+  
+    <div style="margin-bottom: 2px;">
+      <span style="font-family: monospace; font-size: 6.8pt; background: #ffedd5; color: #9a3412; padding: 1px 3px; border-radius: 2px;">Q35.152</span>
+      <strong>1-Million File Monorepo Sparse Checkout Performance Stress Lab</strong> <em>(Production Incident Lab)</em>: <span style="color: #475569;">Simulate a 1-million file repository; benchmark checkout latency, memory usage, and status query times across standard vs sparse cone mode configurations.</span>
+    </div>
+  
+        </div>
+      </div>
+    </div>
+  
+    <div class="daily-card" style="margin-bottom: 10pt; page-break-inside: avoid; border-left: 3px solid #ea580c;">
+      <div class="daily-card-header">
+        <div>
+          <span style="background: #c2410c; color: #ffedd5; font-size: 7.5pt; font-weight: 700; padding: 1px 5px; border-radius: 2px;">Day 39</span>
+          <strong style="margin-left: 6pt; font-size: 8.8pt; color: #9a3412;">Git LFS (Large File Storage): Pointer Files, Smudge/Clean Filters, S3 Storage Backends & Asset Deduplication</strong>
+          <span class="stage-pill" style="background: #ffedd5; color: #c2410c;">Stage 8: Distributed Branching & Enterprise Release Engineering</span>
+        </div>
+        <span style="font-size: 7.2pt; color: #64748b;">Month 2 &bull; Block 8 &bull; <strong>4 Quests</strong></span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5pt; margin-bottom: 4pt; font-size: 7.2pt;">
+        <div style="background: #fff7ed; padding: 4pt 6pt; border-radius: 3px; border: 1px solid #fed7aa;">
+          <strong>🎯 Spoken Goal &amp; Invariant:</strong><br>
+          <span style="color: #9a3412; font-weight: 600;">Goal:</span> Git was engineered for text diffs, not 500MB video assets, Photoshop files, or machine learning model weights. If you commit raw binary files directly to Git, every modification creates a full new Blob, bloating repository clone sizes into gigabytes. Today, you master Git LFS (Large File Storage): how smudge and clean filters replace large binary files with 130-byte text pointer files, how Git LFS offloads binary payloads to S3/cloud storage, and how file locking prevents unmergeable binary conflicts.<br>
+          <span style="color: #c2410c; font-weight: 600;">Invariant:</span> <code>LFS Pointer Grammar & Smudge/Clean Invariant: In the Git repository, an LFS-tracked file is strictly a 3-line text pointer: $\text{version} + \text{oid sha256} + \text{size}$. The Clean filter intercepts files on stage/commit and uploads raw binaries to LFS storage; the Smudge filter downloads and hydrates raw binaries on checkout.</code>
+        </div>
+        <div style="background: #fef2f2; padding: 4pt 6pt; border-radius: 3px; border: 1px solid #fecaca; color: #991b1b;">
+          <strong>⚠️ Failure Mode &amp; tryIt Bug:</strong><br>
+          <strong>Failure:</strong> The Unhydrated LFS Pointer Production ML Outage: A machine learning model deployment script runs in a container without <code>git-lfs</code> installed. The model serving container starts up and attempts to load the 2GB PyTorch model weight file. The application crashes immediately with a parsing error because the file on disk is literally a 130-byte text pointer file containing 'version https://git-lfs.github.com/spec/v1'.<br>
+          <strong>tryIt Friction:</strong> Configure Git LFS in a repository using <code>git lfs track '*.psd'</code>; inspect the generated <code>.gitattributes</code> file, commit a sample binary file, inspect the raw commit with <code>git cat-file -p</code> to verify it contains only the 130-byte text pointer, and test binary hydration.
+        </div>
+      </div>
+
+      <div style="background: #fff7ed; border: 1px solid #fed7aa; border-radius: 3px; padding: 3pt 6pt; margin-bottom: 4pt; font-size: 7.0pt;">
+        <strong style="color: #9a3412;">🪜 Socratic Hint Ladder:</strong>
+        <ol style="margin: 2px 0 2px 14px; padding: 0; color: #7c2d12;">
+          <li>Why does committing large binary files directly to standard Git cause permanent repository bloat even if the file is deleted in the very next commit?</li><li>What is the operational difference between the Git LFS Clean filter (run during <code>git add</code>) and the Smudge filter (run during <code>git checkout</code>)?</li><li>Why is Git LFS file locking (<code>git lfs lock <file></code>) essential for teams collaborating on binary files like 3D models or spreadsheets?</li>
+        </ol>
+      </div>
+
+      <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 3px; padding: 3pt 6pt; margin-bottom: 4pt; font-size: 7.0pt;">
+        <strong style="color: #9a3412;">🧩 Situational Production Puzzle:</strong>
+        <p style="margin: 2px 0; color: #1e293b;">A designer modifies a 300MB video file tracked by Git LFS. A developer runs <code>git clone</code>, but the clone takes 45 minutes and downloads 15GB of data. The developer discovers that Git LFS downloaded every single historical version of the 300MB video file across all branches.</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3pt; margin: 2px 0;">
+          
+            <div style="background: #ffffff; border: 1px solid #e2e8f0; padding: 2px 4px; border-radius: 2px; font-size: 6.8pt;">
+              <strong>A:</strong> Git LFS cannot be used for video files. 
+            </div>
+          
+            <div style="background: #ffedd5; border: 1px solid #ea580c; padding: 2px 4px; border-radius: 2px; font-size: 6.8pt;">
+              <strong>B:</strong> Diagnose Default LFS Download Strategy & Configure Smudge Exclusion: By default, <code>git lfs fetch --all</code> downloads all historical LFS objects. To optimize, the developer should configure <code>git lfs install --skip-smudge</code> to download only text pointers initially, and selectively hydrate only the specific current asset needed using <code>git lfs pull</code>. <strong style="color: #9a3412;">✓ [Optimal Systems Architecture Decision]</strong>
+            </div>
+          
+            <div style="background: #ffffff; border: 1px solid #e2e8f0; padding: 2px 4px; border-radius: 2px; font-size: 6.8pt;">
+              <strong>C:</strong> Delete the video file from the repository. 
+            </div>
+          
+            <div style="background: #ffffff; border: 1px solid #e2e8f0; padding: 2px 4px; border-radius: 2px; font-size: 6.8pt;">
+              <strong>D:</strong> Disable Git LFS in .gitconfig. 
+            </div>
+          
+        </div>
+        <div style="margin-top: 2px; color: #9a3412; font-size: 6.8pt;"><strong>Strategic Debrief:</strong> Git LFS can download all historical versions if configured aggressively. Using <code>--skip-smudge</code> during clone and hydrating assets selectively with <code>git lfs pull</code> ensures only current working assets are downloaded, saving massive bandwidth.</div>
+      </div>
+
+      <div style="margin-top: 4pt; font-size: 7.2pt; border-top: 1px dashed #e2e8f0; padding-top: 3pt;">
+        <strong style="color: #9a3412;">4 Rigorous Quests (Concept &bull; Detective &bull; Mastery Assignment &bull; Incident Lab):</strong>
+        <div style="margin-top: 2pt;">
+          
+    <div style="margin-bottom: 2px;">
+      <span style="font-family: monospace; font-size: 6.8pt; background: #ffedd5; color: #9a3412; padding: 1px 3px; border-radius: 2px;">Q35.153</span>
+      <strong>Git LFS Protocol & Smudge/Clean Filter Architecture</strong> <em>(Concept)</em>: <span style="color: #475569;">Detail the client-server protocol of Git LFS, analyzing pointer file grammars, batch API transfers, S3 storage backends, and smudge/clean filters.</span>
+    </div>
+  
+    <div style="margin-bottom: 2px;">
+      <span style="font-family: monospace; font-size: 6.8pt; background: #ffedd5; color: #9a3412; padding: 1px 3px; border-radius: 2px;">Q35.154</span>
+      <strong>The Unhydrated LFS Pointer Container Crash Detective Challenge</strong> <em>(Detective Challenge)</em>: <span style="color: #475569;">Investigate a production deployment crash where microservices failed to load ML models due to unhydrated LFS text pointers; repair the deployment pipeline.</span>
+    </div>
+  
+    <div style="margin-bottom: 2px;">
+      <span style="font-family: monospace; font-size: 6.8pt; background: #ffedd5; color: #9a3412; padding: 1px 3px; border-radius: 2px;">Q35.155</span>
+      <strong>Automated Git LFS Asset Migrator & Deduplication Engine</strong> <em>(Mastery Assignment)</em>: <span style="color: #475569;">Build a migration CLI tool that scans repository history for bloated binary files, converts them into Git LFS pointers retroactively, and repacks history.</span>
+    </div>
+  
+    <div style="margin-bottom: 2px;">
+      <span style="font-family: monospace; font-size: 6.8pt; background: #ffedd5; color: #9a3412; padding: 1px 3px; border-radius: 2px;">Q35.156</span>
+      <strong>Multi-Gigabyte Binary Concurrent LFS Push/Pull Stress Lab</strong> <em>(Production Incident Lab)</em>: <span style="color: #475569;">Simulate 20 concurrent developers pushing and pulling 1GB LFS assets against a mock S3 storage backend; measure retry handling and checksum validation.</span>
+    </div>
+  
+        </div>
+      </div>
+    </div>
+  
+    <div class="daily-card" style="margin-bottom: 10pt; page-break-inside: avoid; border-left: 3px solid #ea580c;">
+      <div class="daily-card-header">
+        <div>
+          <span style="background: #c2410c; color: #ffedd5; font-size: 7.5pt; font-weight: 700; padding: 1px 5px; border-radius: 2px;">Day 40</span>
+          <strong style="margin-left: 6pt; font-size: 8.8pt; color: #9a3412;">Milestone 5 (M2): ApexRelease Enterprise Trunk-Based CI/CD Release Engine Suite</strong>
+          <span class="stage-pill" style="background: #ffedd5; color: #c2410c;">Stage 8: Distributed Branching & Enterprise Release Engineering</span>
+        </div>
+        <span style="font-size: 7.2pt; color: #64748b;">Month 2 &bull; Block 8 &bull; <strong>4 Quests</strong></span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5pt; margin-bottom: 4pt; font-size: 7.2pt;">
+        <div style="background: #fff7ed; padding: 4pt 6pt; border-radius: 3px; border: 1px solid #fed7aa;">
+          <strong>🎯 Spoken Goal &amp; Invariant:</strong><br>
+          <span style="color: #9a3412; font-weight: 600;">Goal:</span> Milestone 5 (Month 2) tests your ability to architect enterprise-scale release engineering pipelines. You will build ApexRelease: an automated release platform that manages Trunk-Based branching workflows, validates short-lived branch lifespans, calculates affected monorepo dependency graphs, verifies Git LFS asset hydration, and automates semantic version releases with immutable annotated tags.<br>
+          <span style="color: #c2410c; font-weight: 600;">Invariant:</span> <code>Production Release Integrity Invariant: ApexRelease guarantees that production artifacts are built strictly from verified trunk commits with 100% LFS asset hydration, zero uncommitted submodule drift, and passing hermetic build validation.</code>
+        </div>
+        <div style="background: #fef2f2; padding: 4pt 6pt; border-radius: 3px; border: 1px solid #fecaca; color: #991b1b;">
+          <strong>⚠️ Failure Mode &amp; tryIt Bug:</strong><br>
+          <strong>Failure:</strong> The Unverified Binary Artifact Production Crash: An automated release script packaged a container image where an essential ML model asset was an unhydrated 130-byte LFS text pointer. The container passed superficial health checks but crashed when customer inference traffic hit the service, causing an enterprise outage.<br>
+          <strong>tryIt Friction:</strong> Deploy and test ApexRelease against a multi-service monorepo containing LFS assets; verify that ApexRelease identifies affected services, confirms LFS binary hydration, gates the trunk-based release, and generates automated changelogs.
+        </div>
+      </div>
+
+      <div style="background: #fff7ed; border: 1px solid #fed7aa; border-radius: 3px; padding: 3pt 6pt; margin-bottom: 4pt; font-size: 7.0pt;">
+        <strong style="color: #9a3412;">🪜 Socratic Hint Ladder:</strong>
+        <ol style="margin: 2px 0 2px 14px; padding: 0; color: #7c2d12;">
+          <li>How does ApexRelease verify that an LFS file on disk is an actual hydrated binary rather than an unsmudged text pointer before building a release?</li><li>Why must release tags in a trunk-based monorepo use package-scoped semantic tags (e.g. <code>@service-a/v1.2.0</code>) rather than a single monolithic version?</li><li>How does automated branch lifecycle auditing prevent 'stale branch rot' in enterprise organizations?</li>
+        </ol>
+      </div>
+
+      <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 3px; padding: 3pt 6pt; margin-bottom: 4pt; font-size: 7.0pt;">
+        <strong style="color: #9a3412;">🧩 Situational Production Puzzle:</strong>
+        <p style="margin: 2px 0; color: #1e293b;">During a high-stakes release, ApexRelease blocks deployment with: 'ERROR: LFS ASSET INTEGRITY FAILURE: models/v1.onnx has size 132 bytes but LFS metadata specifies 1.8GB'. The release engineer insists on forcing deployment.</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3pt; margin: 2px 0;">
+          
+            <div style="background: #ffffff; border: 1px solid #e2e8f0; padding: 2px 4px; border-radius: 2px; font-size: 6.8pt;">
+              <strong>A:</strong> Bypass the check and deploy anyway. 
+            </div>
+          
+            <div style="background: #ffedd5; border: 1px solid #ea580c; padding: 2px 4px; border-radius: 2px; font-size: 6.8pt;">
+              <strong>B:</strong> Diagnose Unhydrated LFS Pointer & Enforce Gating: The file on disk is literally the 132-byte LFS pointer, not the actual 1.8GB machine learning model. Deploying it will cause runtime crashes as soon as the service attempts to load weights. The engineer must run <code>git lfs pull</code> to hydrate the real binary asset before ApexRelease will unlock the release gate. <strong style="color: #9a3412;">✓ [Optimal Systems Architecture Decision]</strong>
+            </div>
+          
+            <div style="background: #ffffff; border: 1px solid #e2e8f0; padding: 2px 4px; border-radius: 2px; font-size: 6.8pt;">
+              <strong>C:</strong> Delete models/v1.onnx from the build. 
+            </div>
+          
+            <div style="background: #ffffff; border: 1px solid #e2e8f0; padding: 2px 4px; border-radius: 2px; font-size: 6.8pt;">
+              <strong>D:</strong> Increase the server RAM to 128GB. 
+            </div>
+          
+        </div>
+        <div style="margin-top: 2px; color: #9a3412; font-size: 6.8pt;"><strong>Strategic Debrief:</strong> ApexRelease's safety check detected that the file is merely the 132-byte LFS pointer rather than the real 1.8GB model binary. Halting deployment prevents a catastrophic runtime outage caused by unhydrated assets.</div>
+      </div>
+
+      <div style="margin-top: 4pt; font-size: 7.2pt; border-top: 1px dashed #e2e8f0; padding-top: 3pt;">
+        <strong style="color: #9a3412;">4 Rigorous Quests (Concept &bull; Detective &bull; Mastery Assignment &bull; Incident Lab):</strong>
+        <div style="margin-top: 2pt;">
+          
+    <div style="margin-bottom: 2px;">
+      <span style="font-family: monospace; font-size: 6.8pt; background: #ffedd5; color: #9a3412; padding: 1px 3px; border-radius: 2px;">Q35.157</span>
+      <strong>ApexRelease Systems Blueprint & Trunk Release Architecture</strong> <em>(Concept)</em>: <span style="color: #475569;">Document the complete systems blueprint of ApexRelease, detailing trunk-based release workflows, monorepo affected routing, LFS validation, and SemVer automation.</span>
+    </div>
+  
+    <div style="margin-bottom: 2px;">
+      <span style="font-family: monospace; font-size: 6.8pt; background: #ffedd5; color: #9a3412; padding: 1px 3px; border-radius: 2px;">Q35.158</span>
+      <strong>The Stale Release Branch Dependency Regression Detective</strong> <em>(Detective Challenge)</em>: <span style="color: #475569;">Investigate a high-severity production outage caused by an unverified stale branch release; reconstruct the release path and harden ApexRelease gates.</span>
+    </div>
+  
+    <div style="margin-bottom: 2px;">
+      <span style="font-family: monospace; font-size: 6.8pt; background: #ffedd5; color: #9a3412; padding: 1px 3px; border-radius: 2px;">Q35.159</span>
+      <strong>ApexRelease Production Release Orchestrator Platform</strong> <em>(Mastery Assignment)</em>: <span style="color: #475569;">Build the full ApexRelease platform: an automated CLI that enforces trunk-based branching, verifies LFS asset hydration, and generates scoped semantic releases.</span>
+    </div>
+  
+    <div style="margin-bottom: 2px;">
+      <span style="font-family: monospace; font-size: 6.8pt; background: #ffedd5; color: #9a3412; padding: 1px 3px; border-radius: 2px;">Q35.160</span>
+      <strong>ApexRelease Milestone 5 Viva Defense & Release Stress Gate</strong> <em>(Production Incident Lab)</em>: <span style="color: #475569;">Defend ApexRelease before the Principal DevOps Review Board under simulated release deadlocks, unhydrated LFS payloads, and concurrent branch deployments.</span>
+    </div>
+  
+        </div>
+      </div>
+    </div>
+  
+    <div class="daily-card" style="margin-bottom: 10pt; page-break-inside: avoid; border-left: 3px solid #ea580c;">
+      <div class="daily-card-header">
+        <div>
+          <span style="background: #c2410c; color: #ffedd5; font-size: 7.5pt; font-weight: 700; padding: 1px 5px; border-radius: 2px;">

@@ -2208,3 +2208,139 @@ test('Systems Long Lessons: git_vcs Day 35 Milestone 4 (M2): ApexPlumbing Custom
   assert.ok(res5.stdout?.includes('AUDIT_SEAL: APEX-PLUMBING-MILESTONE-4-CERTIFIED'));
 });
 
+test('Systems Long Lessons: git_vcs Day 36 Branching Strategies at Scale: Gitflow vs GitHub Flow vs Trunk-Based Development', async () => {
+  const d36 = getLongLesson('git_vcs', 36);
+  assert.ok(d36, 'git_vcs Day 36 must resolve');
+  assert.equal(d36.day, 36);
+  assert.equal(d36.parts.length, 5);
+
+  const res1 = await executeBashSuite(d36.parts[0].code!);
+  assert.equal(res1.allPassed, true);
+  assert.ok(res1.stdout?.includes('STRATEGY: Trunk-Based Development'));
+
+  const res2 = await executeBashSuite(d36.parts[1].code!);
+  assert.equal(res2.allPassed, true);
+  assert.ok(res2.stdout?.includes('CONFLICT_COUNT: 1400 merge conflicts across 300 files'));
+
+  const res3 = await executeBashSuite(d36.parts[2].code!);
+  assert.equal(res3.allPassed, true);
+  assert.ok(res3.stdout?.includes('FEATURE_FLAG: ENABLE_V2_PAYMENTS = true'));
+
+  const res4 = await executeBashSuite(d36.parts[3].code!);
+  assert.equal(res4.allPassed, true);
+  assert.ok(res4.stdout?.includes('MAINLINE_STABILITY: 100% green trunk builds guaranteed'));
+
+  const res5 = await executeBashSuite(d36.parts[4].code!);
+  assert.equal(res5.allPassed, true);
+  assert.ok(res5.stdout?.includes('AUDIT_SEAL: TRUNK-BASED-INTEGRATION-CERTIFIED'));
+});
+
+test('Systems Long Lessons: git_vcs Day 37 Monorepo vs Polyrepo Architecture: Scaling Bottlenecks, Hermetic Builds & Dependency Graph Management', async () => {
+  const d37 = getLongLesson('git_vcs', 37);
+  assert.ok(d37, 'git_vcs Day 37 must resolve');
+  assert.equal(d37.day, 37);
+  assert.equal(d37.parts.length, 5);
+
+  const res1 = await executeBashSuite(d37.parts[0].code!);
+  assert.equal(res1.allPassed, true);
+  assert.ok(res1.stdout?.includes('ARCHITECTURE: Unified Enterprise Monorepo'));
+
+  const res2 = await executeBashSuite(d37.parts[1].code!);
+  assert.equal(res2.allPassed, true);
+  assert.ok(res2.stdout?.includes('INCIDENT: 45-Minute Polyrepo Version Dependency Deadlock'));
+
+  const res3 = await executeBashSuite(d37.parts[2].code!);
+  assert.equal(res3.allPassed, true);
+  assert.ok(res3.stdout?.includes('CI_RUNTIME_REDUCTION: 4 hours reduced to 85 seconds'));
+
+  const res4 = await executeBashSuite(d37.parts[3].code!);
+  assert.equal(res4.allPassed, true);
+  assert.ok(res4.stdout?.includes('TOTAL_PACKAGES: 5000 packages indexed'));
+
+  const res5 = await executeBashSuite(d37.parts[4].code!);
+  assert.equal(res5.allPassed, true);
+  assert.ok(res5.stdout?.includes('AUDIT_SEAL: MONOREPO-HERMETIC-BUILD-CERTIFIED'));
+});
+
+test('Systems Long Lessons: git_vcs Day 38 Scalable Large Repositories: Sparse Checkout (git sparse-checkout), Blobless Clones & Microsoft Scalar', async () => {
+  const d38 = getLongLesson('git_vcs', 38);
+  assert.ok(d38, 'git_vcs Day 38 must resolve');
+  assert.equal(d38.day, 38);
+  assert.equal(d38.parts.length, 5);
+
+  const res1 = await executeBashSuite(d38.parts[0].code!);
+  assert.equal(res1.allPassed, true);
+  assert.ok(res1.stdout?.includes('CLONE_TYPE: Blobless Partial Clone (--filter=blob:none)'));
+
+  const res2 = await executeBashSuite(d38.parts[1].code!);
+  assert.equal(res2.allPassed, true);
+  assert.ok(res2.stdout?.includes('BEST_PRACTICE: Always prefer --filter=blob:none for full offline history'));
+
+  const res3 = await executeBashSuite(d38.parts[2].code!);
+  assert.equal(res3.allPassed, true);
+  assert.ok(res3.stdout?.includes('SPARSE_MODE: Cone Mode Enabled'));
+
+  const res4 = await executeBashSuite(d38.parts[3].code!);
+  assert.equal(res4.allPassed, true);
+  assert.ok(res4.stdout?.includes('FS_MONITOR: core.fsmonitor = true (OS kernel change events)'));
+
+  const res5 = await executeBashSuite(d38.parts[4].code!);
+  assert.equal(res5.allPassed, true);
+  assert.ok(res5.stdout?.includes('AUDIT_SEAL: LARGE-REPO-SCALABILITY-CERTIFIED'));
+});
+
+test('Systems Long Lessons: git_vcs Day 39 Git LFS (Large File Storage): Pointer Files, Smudge/Clean Filters, S3 Storage Backends & Asset Deduplication', async () => {
+  const d39 = getLongLesson('git_vcs', 39);
+  assert.ok(d39, 'git_vcs Day 39 must resolve');
+  assert.equal(d39.day, 39);
+  assert.equal(d39.parts.length, 5);
+
+  const res1 = await executeBashSuite(d39.parts[0].code!);
+  assert.equal(res1.allPassed, true);
+  assert.ok(res1.stdout?.includes('POINTER_SIZE: 130 bytes representing 1.8GB binary asset'));
+
+  const res2 = await executeBashSuite(d39.parts[1].code!);
+  assert.equal(res2.allPassed, true);
+  assert.ok(res2.stdout?.includes('REMEDY: git lfs pull inside CI build container before packaging'));
+
+  const res3 = await executeBashSuite(d39.parts[2].code!);
+  assert.equal(res3.allPassed, true);
+  assert.ok(res3.stdout?.includes('STORAGE_BACKEND: Amazon S3 Object Storage'));
+
+  const res4 = await executeBashSuite(d39.parts[3].code!);
+  assert.equal(res4.allPassed, true);
+  assert.ok(res4.stdout?.includes('COLLISION_PREVENTION: Unmergeable binary merge conflicts eliminated'));
+
+  const res5 = await executeBashSuite(d39.parts[4].code!);
+  assert.equal(res5.allPassed, true);
+  assert.ok(res5.stdout?.includes('AUDIT_SEAL: GIT-LFS-HYDRATION-VERIFIED'));
+});
+
+test('Systems Long Lessons: git_vcs Day 40 Milestone 5 (M2): ApexRelease Enterprise Trunk-Based CI/CD Release Engine Suite', async () => {
+  const d40 = getLongLesson('git_vcs', 40);
+  assert.ok(d40, 'git_vcs Day 40 must resolve');
+  assert.equal(d40.day, 40);
+  assert.equal(d40.parts.length, 5);
+
+  const res1 = await executeBashSuite(d40.parts[0].code!);
+  assert.equal(res1.allPassed, true);
+  assert.ok(res1.stdout?.includes('PLATFORM: ApexRelease Enterprise Trunk-Based CI/CD Engine'));
+
+  const res2 = await executeBashSuite(d40.parts[1].code!);
+  assert.equal(res2.allPassed, true);
+  assert.ok(res2.stdout?.includes('GATE_ACTION: ApexRelease blocked deployment preventing production container crash'));
+
+  const res3 = await executeBashSuite(d40.parts[2].code!);
+  assert.equal(res3.allPassed, true);
+  assert.ok(res3.stdout?.includes('ENGINE: ApexRelease Monorepo SemVer Tagger'));
+
+  const res4 = await executeBashSuite(d40.parts[3].code!);
+  assert.equal(res4.allPassed, true);
+  assert.ok(res4.stdout?.includes('AVERAGE_BRANCH_AGE: 6.4 hours (Trunk-Based standard achieved)'));
+
+  const res5 = await executeBashSuite(d40.parts[4].code!);
+  assert.equal(res5.allPassed, true);
+  assert.ok(res5.stdout?.includes('AUDIT_SEAL: APEX-RELEASE-MILESTONE-5-CERTIFIED'));
+});
+
+
