@@ -1,0 +1,869 @@
+{
+  "schemaVersion": 1,
+  "prefix": "git_vcs",
+  "day": 56,
+  "promptSha": "48a1f9cce3d86cb205715a0153731c2c37c06169113ef6698bc668c8fc131c37",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Anatomy of the $12M Force-Push Obliteration: Why Bare Servers Lack Default Reflogs",
+      "codeHash": "cfdccacbaec1f96a911db89761ee8532998652446fb5c33a07ca9f86d2240e08",
+      "spec": {
+        "template": "workflow",
+        "title": "Anatomy of the $12M Force-Push Obliteration: ... — Sovereign GitOps",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Working Tree",
+            "subtext": "Scalar / FSMonitor",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Security Gate",
+            "subtext": "Pre-Receive / AST",
+            "tone": "ok"
+          },
+          {
+            "id": "s3",
+            "name": "Merge Queue",
+            "subtext": "SLSA Level 3",
+            "tone": "data"
+          },
+          {
+            "id": "s4",
+            "name": "GitOps Fleet",
+            "subtext": "ApexEnterpriseGitOps",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Working Tree): Initialize Anatomy of the $12M Force-Push...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "Scalar / FSMonitor",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Security Gate",
+                "subtext": "Pre-Receive / AST",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Merge Queue",
+                "subtext": "SLSA Level 3",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "GitOps Fleet",
+                "subtext": "ApexEnterpriseGitOps",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Security Gate): Enforce Pre-Receive CAS, Entropy & AST invariants.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "Scalar / FSMonitor",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Security Gate",
+                "subtext": "Pre-Receive / AST",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Merge Queue",
+                "subtext": "SLSA Level 3",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "GitOps Fleet",
+                "subtext": "ApexEnterpriseGitOps",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Merge Queue): Validate speculative post-merge tree & SLSA attestation.",
+            "activeStageId": "s3",
+            "statusBadge": "PROCESSING",
+            "throughput": "Nominal",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "Scalar / FSMonitor",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Security Gate",
+                "subtext": "Pre-Receive / AST",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Merge Queue",
+                "subtext": "SLSA Level 3",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "GitOps Fleet",
+                "subtext": "ApexEnterpriseGitOps",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (GitOps Fleet): Issue sovereign ApexEnterpriseGitOps certification.",
+            "activeStageId": "s4",
+            "statusBadge": "VERIFIED",
+            "throughput": "Complete",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "Scalar / FSMonitor",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Security Gate",
+                "subtext": "Pre-Receive / AST",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Merge Queue",
+                "subtext": "SLSA Level 3",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "GitOps Fleet",
+                "subtext": "ApexEnterpriseGitOps",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Distributed Client Reflog Harvest Playbook: Resurrecting Wiped Remote Branches",
+      "codeHash": "c2672421757671d9171c6925cfc81ca353ba3d404282f74b22b577075c8b60a4",
+      "spec": {
+        "template": "workflow",
+        "title": "The Distributed Client Reflog Harvest Playboo... — Sovereign GitOps",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Working Tree",
+            "subtext": "Scalar / FSMonitor",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Security Gate",
+            "subtext": "Pre-Receive / AST",
+            "tone": "ok"
+          },
+          {
+            "id": "s3",
+            "name": "Merge Queue",
+            "subtext": "SLSA Level 3",
+            "tone": "data"
+          },
+          {
+            "id": "s4",
+            "name": "GitOps Fleet",
+            "subtext": "ApexEnterpriseGitOps",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Working Tree): Initialize The Distributed Client Reflog ...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "Scalar / FSMonitor",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Security Gate",
+                "subtext": "Pre-Receive / AST",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Merge Queue",
+                "subtext": "SLSA Level 3",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "GitOps Fleet",
+                "subtext": "ApexEnterpriseGitOps",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Security Gate): Enforce Pre-Receive CAS, Entropy & AST invariants.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "Scalar / FSMonitor",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Security Gate",
+                "subtext": "Pre-Receive / AST",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Merge Queue",
+                "subtext": "SLSA Level 3",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "GitOps Fleet",
+                "subtext": "ApexEnterpriseGitOps",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Merge Queue): Validate speculative post-merge tree & SLSA attestation.",
+            "activeStageId": "s3",
+            "statusBadge": "PROCESSING",
+            "throughput": "Nominal",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "Scalar / FSMonitor",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Security Gate",
+                "subtext": "Pre-Receive / AST",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Merge Queue",
+                "subtext": "SLSA Level 3",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "GitOps Fleet",
+                "subtext": "ApexEnterpriseGitOps",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (GitOps Fleet): Issue sovereign ApexEnterpriseGitOps certification.",
+            "activeStageId": "s4",
+            "statusBadge": "VERIFIED",
+            "throughput": "Complete",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "Scalar / FSMonitor",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Security Gate",
+                "subtext": "Pre-Receive / AST",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Merge Queue",
+                "subtext": "SLSA Level 3",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "GitOps Fleet",
+                "subtext": "ApexEnterpriseGitOps",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Industrial Server-Side Pre-Receive Non-Fast-Forward Firewall & Bare Reflogs",
+      "codeHash": "c7e9242ee5e7dd602d42af8aae5ad1e994d030529908c6673c6d538a6187ed11",
+      "spec": {
+        "template": "workflow",
+        "title": "Industrial Server-Side Pre-Receive Non-Fast-F... — Sovereign GitOps",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Working Tree",
+            "subtext": "Scalar / FSMonitor",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Security Gate",
+            "subtext": "Pre-Receive / AST",
+            "tone": "ok"
+          },
+          {
+            "id": "s3",
+            "name": "Merge Queue",
+            "subtext": "SLSA Level 3",
+            "tone": "data"
+          },
+          {
+            "id": "s4",
+            "name": "GitOps Fleet",
+            "subtext": "ApexEnterpriseGitOps",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Working Tree): Initialize Industrial Server-Side Pre-Rec...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "Scalar / FSMonitor",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Security Gate",
+                "subtext": "Pre-Receive / AST",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Merge Queue",
+                "subtext": "SLSA Level 3",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "GitOps Fleet",
+                "subtext": "ApexEnterpriseGitOps",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Security Gate): Enforce Pre-Receive CAS, Entropy & AST invariants.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "Scalar / FSMonitor",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Security Gate",
+                "subtext": "Pre-Receive / AST",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Merge Queue",
+                "subtext": "SLSA Level 3",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "GitOps Fleet",
+                "subtext": "ApexEnterpriseGitOps",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Merge Queue): Validate speculative post-merge tree & SLSA attestation.",
+            "activeStageId": "s3",
+            "statusBadge": "PROCESSING",
+            "throughput": "Nominal",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "Scalar / FSMonitor",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Security Gate",
+                "subtext": "Pre-Receive / AST",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Merge Queue",
+                "subtext": "SLSA Level 3",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "GitOps Fleet",
+                "subtext": "ApexEnterpriseGitOps",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (GitOps Fleet): Issue sovereign ApexEnterpriseGitOps certification.",
+            "activeStageId": "s4",
+            "statusBadge": "VERIFIED",
+            "throughput": "Complete",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "Scalar / FSMonitor",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Security Gate",
+                "subtext": "Pre-Receive / AST",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Merge Queue",
+                "subtext": "SLSA Level 3",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "GitOps Fleet",
+                "subtext": "ApexEnterpriseGitOps",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "10-Node Distributed Reflog Harvest & 95-Second RTO Stress Lab",
+      "codeHash": "a204ce221479ed683f046b8eb80f0c3cb90dcf7804ae42478b26b95b1667dada",
+      "spec": {
+        "template": "workflow",
+        "title": "10-Node Distributed Reflog Harvest & 95-Secon... — Sovereign GitOps",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Working Tree",
+            "subtext": "Scalar / FSMonitor",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Security Gate",
+            "subtext": "Pre-Receive / AST",
+            "tone": "ok"
+          },
+          {
+            "id": "s3",
+            "name": "Merge Queue",
+            "subtext": "SLSA Level 3",
+            "tone": "data"
+          },
+          {
+            "id": "s4",
+            "name": "GitOps Fleet",
+            "subtext": "ApexEnterpriseGitOps",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Working Tree): Initialize 10-Node Distributed Reflog Har...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "Scalar / FSMonitor",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Security Gate",
+                "subtext": "Pre-Receive / AST",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Merge Queue",
+                "subtext": "SLSA Level 3",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "GitOps Fleet",
+                "subtext": "ApexEnterpriseGitOps",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Security Gate): Enforce Pre-Receive CAS, Entropy & AST invariants.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "Scalar / FSMonitor",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Security Gate",
+                "subtext": "Pre-Receive / AST",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Merge Queue",
+                "subtext": "SLSA Level 3",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "GitOps Fleet",
+                "subtext": "ApexEnterpriseGitOps",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Merge Queue): Validate speculative post-merge tree & SLSA attestation.",
+            "activeStageId": "s3",
+            "statusBadge": "PROCESSING",
+            "throughput": "Nominal",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "Scalar / FSMonitor",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Security Gate",
+                "subtext": "Pre-Receive / AST",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Merge Queue",
+                "subtext": "SLSA Level 3",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "GitOps Fleet",
+                "subtext": "ApexEnterpriseGitOps",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (GitOps Fleet): Issue sovereign ApexEnterpriseGitOps certification.",
+            "activeStageId": "s4",
+            "statusBadge": "VERIFIED",
+            "throughput": "Complete",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "Scalar / FSMonitor",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Security Gate",
+                "subtext": "Pre-Receive / AST",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Merge Queue",
+                "subtext": "SLSA Level 3",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "GitOps Fleet",
+                "subtext": "ApexEnterpriseGitOps",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Master Force-Push Defense Gateway & Catastrophe 1 Certification",
+      "codeHash": "2053d725d349ea4f22296803b3f193164cae2d72a964a2f439c4d824ce8ac194",
+      "spec": {
+        "template": "workflow",
+        "title": "Master Force-Push Defense Gateway & Catastrop... — Sovereign GitOps",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Working Tree",
+            "subtext": "Scalar / FSMonitor",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Security Gate",
+            "subtext": "Pre-Receive / AST",
+            "tone": "ok"
+          },
+          {
+            "id": "s3",
+            "name": "Merge Queue",
+            "subtext": "SLSA Level 3",
+            "tone": "data"
+          },
+          {
+            "id": "s4",
+            "name": "GitOps Fleet",
+            "subtext": "ApexEnterpriseGitOps",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Working Tree): Initialize Master Force-Push Defense Gate...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "Scalar / FSMonitor",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Security Gate",
+                "subtext": "Pre-Receive / AST",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Merge Queue",
+                "subtext": "SLSA Level 3",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "GitOps Fleet",
+                "subtext": "ApexEnterpriseGitOps",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Security Gate): Enforce Pre-Receive CAS, Entropy & AST invariants.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "Scalar / FSMonitor",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Security Gate",
+                "subtext": "Pre-Receive / AST",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Merge Queue",
+                "subtext": "SLSA Level 3",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "GitOps Fleet",
+                "subtext": "ApexEnterpriseGitOps",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Merge Queue): Validate speculative post-merge tree & SLSA attestation.",
+            "activeStageId": "s3",
+            "statusBadge": "PROCESSING",
+            "throughput": "Nominal",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "Scalar / FSMonitor",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Security Gate",
+                "subtext": "Pre-Receive / AST",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Merge Queue",
+                "subtext": "SLSA Level 3",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "GitOps Fleet",
+                "subtext": "ApexEnterpriseGitOps",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (GitOps Fleet): Issue sovereign ApexEnterpriseGitOps certification.",
+            "activeStageId": "s4",
+            "statusBadge": "VERIFIED",
+            "throughput": "Complete",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Working Tree",
+                "subtext": "Scalar / FSMonitor",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Security Gate",
+                "subtext": "Pre-Receive / AST",
+                "tone": "ok"
+              },
+              {
+                "id": "s3",
+                "name": "Merge Queue",
+                "subtext": "SLSA Level 3",
+                "tone": "data"
+              },
+              {
+                "id": "s4",
+                "name": "GitOps Fleet",
+                "subtext": "ApexEnterpriseGitOps",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

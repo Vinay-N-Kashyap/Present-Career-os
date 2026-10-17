@@ -2747,3 +2747,138 @@ test('Systems Long Lessons: git_vcs Day 55 Legacy VCS Migration Engineering: Mig
   assert.equal(res5.allPassed, true);
   assert.ok(res5.stdout?.includes('AUDIT_SEAL: LEGACY-VCS-MIGRATION-PROVENANCE-CERTIFIED'));
 });
+
+test('Systems Long Lessons: git_vcs Day 56 Historic Catastrophe Post-Mortem 1: The Commercial Force-Push Repository Obliteration ($12M Lost WIP)', async () => {
+  const d56 = getLongLesson('git_vcs', 56);
+  assert.ok(d56, 'git_vcs Day 56 must resolve');
+  assert.equal(d56.day, 56);
+  assert.equal(d56.parts.length, 5);
+
+  const res1 = await executeBashSuite(d56.parts[0].code!);
+  assert.equal(res1.allPassed, true);
+  assert.ok(res1.stdout?.includes('CATASTROPHE_1: 2018 Commercial Force-Push Repository Obliteration (USD 12M Lost WIP)'));
+
+  const res2 = await executeBashSuite(d56.parts[1].code!);
+  assert.equal(res2.allPassed, true);
+  assert.ok(res2.stdout?.includes('TRUNK_RESTORATION: git push origin abc12349f8e7d6c5:refs/heads/main --force-with-lease'));
+
+  const res3 = await executeBashSuite(d56.parts[2].code!);
+  assert.equal(res3.allPassed, true);
+  assert.ok(res3.stdout?.includes('BARE_REFLOG_ENABLED: core.logAllRefUpdates=always configured on bare server as backup'));
+
+  const res4 = await executeBashSuite(d56.parts[3].code!);
+  assert.equal(res4.allPassed, true);
+  assert.ok(res4.stdout?.includes('RTO_ACHIEVED: Complete enterprise trunk restoration verified in 95 seconds'));
+
+  const res5 = await executeBashSuite(d56.parts[4].code!);
+  assert.equal(res5.allPassed, true);
+  assert.ok(res5.stdout?.includes('AUDIT_SEAL: FORCE-PUSH-CATASTROPHE-DEFENSE-CERTIFIED'));
+});
+
+test('Systems Long Lessons: git_vcs Day 57 Historic Catastrophe Post-Mortem 2: The Hardcoded AWS Root Key GitHub Leak ($4.5M Cloud Compromise)', async () => {
+  const d57 = getLongLesson('git_vcs', 57);
+  assert.ok(d57, 'git_vcs Day 57 must resolve');
+  assert.equal(d57.day, 57);
+  assert.equal(d57.parts.length, 5);
+
+  const res1 = await executeBashSuite(d57.parts[0].code!);
+  assert.equal(res1.allPassed, true);
+  assert.ok(res1.stdout?.includes('SCRAPER_VECTOR: Public events.api firehose harvested AKIA root key in 3.2 seconds'));
+
+  const res2 = await executeBashSuite(d57.parts[1].code!);
+  assert.equal(res2.allPassed, true);
+  assert.ok(res2.stdout?.includes('REMEDIATION_PROTOCOL: Remove secret, amend/rebase history, and store in Vault/Secrets'));
+
+  const res3 = await executeBashSuite(d57.parts[2].code!);
+  assert.equal(res3.allPassed, true);
+  assert.ok(res3.stdout?.includes('SHANNON_ENTROPY_SCORE: 5.42 bits/char exceeded 4.50 threshold on line 48'));
+
+  const res4 = await executeBashSuite(d57.parts[3].code!);
+  assert.equal(res4.allPassed, true);
+  assert.ok(res4.stdout?.includes('AWS_IAM_DEACTIVATION: iam:DeleteAccessKey executed automatically in 420 milliseconds'));
+
+  const res5 = await executeBashSuite(d57.parts[4].code!);
+  assert.equal(res5.allPassed, true);
+  assert.ok(res5.stdout?.includes('AUDIT_SEAL: ZERO-EXPOSURE-SECRET-FIREWALL-CERTIFIED'));
+});
+
+test('Systems Long Lessons: git_vcs Day 58 Historic Catastrophe Post-Mortem 3: The Broken Merge Conflict Silent Semantic Corruption (The $440M Glitch)', async () => {
+  const d58 = getLongLesson('git_vcs', 58);
+  assert.ok(d58, 'git_vcs Day 58 must resolve');
+  assert.equal(d58.day, 58);
+  assert.equal(d58.parts.length, 5);
+
+  const res1 = await executeBashSuite(d58.parts[0].code!);
+  assert.equal(res1.allPassed, true);
+  assert.ok(res1.stdout?.includes('MERGE_PARADOX: 0 textual Git merge conflicts (C_textual = 0) yet fatal semantic corruption'));
+
+  const res2 = await executeBashSuite(d58.parts[1].code!);
+  assert.equal(res2.allPassed, true);
+  assert.ok(res2.stdout?.includes('DETECTION_VERDICT: Git ORT reported 0 conflicts — AST symbol resolver caught arity mismatch'));
+
+  const res3 = await executeBashSuite(d58.parts[2].code!);
+  assert.equal(res3.allPassed, true);
+  assert.ok(res3.stdout?.includes('DEAD_CODE_FENCE: Feature flag enum reuse strictly forbidden via monotonic ID registry'));
+
+  const res4 = await executeBashSuite(d58.parts[3].code!);
+  assert.equal(res4.allPassed, true);
+  assert.ok(res4.stdout?.includes('AST_AND_INTEGRATION_CAUGHT: 20/20 semantic regressions blocked before reaching main'));
+
+  const res5 = await executeBashSuite(d58.parts[4].code!);
+  assert.equal(res5.allPassed, true);
+  assert.ok(res5.stdout?.includes('AUDIT_SEAL: SEMANTIC-AST-MERGE-INTEGRITY-CERTIFIED'));
+});
+
+test('Systems Long Lessons: git_vcs Day 59 Principal DevOps Architect Modernization RFC: Transitioning 2,000 Polyrepos to a Scalable Monorepo ($25M Blueprint)', async () => {
+  const d59 = getLongLesson('git_vcs', 59);
+  assert.ok(d59, 'git_vcs Day 59 must resolve');
+  assert.equal(d59.day, 59);
+  assert.equal(d59.parts.length, 5);
+
+  const res1 = await executeBashSuite(d59.parts[0].code!);
+  assert.equal(res1.allPassed, true);
+  assert.ok(res1.stdout?.includes('HISTORY_PRESERVATION: git filter-repo --to-subdirectory-filter retains 100% commit history'));
+
+  const res2 = await executeBashSuite(d59.parts[1].code!);
+  assert.equal(res2.allPassed, true);
+  assert.ok(res2.stdout?.includes('PROJECTED_SAVINGS: USD 25M/year via affected-target Bazel/Nx caching & atomic refactors'));
+
+  const res3 = await executeBashSuite(d59.parts[2].code!);
+  assert.equal(res3.allPassed, true);
+  assert.ok(res3.stdout?.includes('BOUNDARY_ISOLATION: Path-based CODEOWNERS + Organization Rulesets enforce team ownership'));
+
+  const res4 = await executeBashSuite(d59.parts[3].code!);
+  assert.equal(res4.allPassed, true);
+  assert.ok(res4.stdout?.includes('BOARD_DECISION: UNANIMOUS APPROVAL for 4-Wave Incremental Monorepo Consolidation'));
+
+  const res5 = await executeBashSuite(d59.parts[4].code!);
+  assert.equal(res5.allPassed, true);
+  assert.ok(res5.stdout?.includes('AUDIT_SEAL: PRINCIPAL-ARCHITECT-25M-RFC-CERTIFIED'));
+});
+
+test('Systems Long Lessons: git_vcs Day 60 🏆 GRAND FINAL CAPSTONE: ApexEnterpriseGitOps Sovereign Distributed Version Control & Enterprise Release Master Capstone Viva', async () => {
+  const d60 = getLongLesson('git_vcs', 60);
+  assert.ok(d60, 'git_vcs Day 60 must resolve');
+  assert.equal(d60.day, 60);
+  assert.equal(d60.parts.length, 5);
+
+  const res1 = await executeBashSuite(d60.parts[0].code!);
+  assert.equal(res1.allPassed, true);
+  assert.ok(res1.stdout?.includes('GRAND_CAPSTONE: ApexEnterpriseGitOps Sovereign Distributed Version Control Platform'));
+
+  const res2 = await executeBashSuite(d60.parts[1].code!);
+  assert.equal(res2.allPassed, true);
+  assert.ok(res2.stdout?.includes('VECTOR_2_BLOCKED: Shattered PDF SHA-1 collision & unhydrated 2GB LFS pointer rejected'));
+
+  const res3 = await executeBashSuite(d60.parts[2].code!);
+  assert.equal(res3.allPassed, true);
+  assert.ok(res3.stdout?.includes('GITOPS_SYNC: ArgoCD/Flux declarative pull reconciliation converged across 12 K8s clusters'));
+
+  const res4 = await executeBashSuite(d60.parts[3].code!);
+  assert.equal(res4.allPassed, true);
+  assert.ok(res4.stdout?.includes('PERFORMANCE_SLA_PROOF: 18ms git status (FSMonitor) & 200ms pack counting (Bitmaps) verified'));
+
+  const res5 = await executeBashSuite(d60.parts[4].code!);
+  assert.equal(res5.allPassed, true);
+  assert.ok(res5.stdout?.includes('AUDIT_SEAL: SOVEREIGN-APEX-ENTERPRISE-GITOPS-COURSE-20-COMPLETE'));
+});
