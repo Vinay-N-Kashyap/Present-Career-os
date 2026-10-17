@@ -1,0 +1,592 @@
+[
+  {
+    "partTitle": "EuSpRIG Standards & Tripartite Layer Architecture (Inputs, Calculations, Outputs)",
+    "codeHash": "d45bd9964ce7cb5c0b5c3720898898f7dffc8e8bf5ae42197b890a5ff754304c",
+    "spec": {
+      "template": "bars",
+      "title": "EuSpRIG Standards & Tripartite Layer Architecture (Inputs, Calculations, Outputs) – EuSpRIG Standards & Model Audit Methodology: Cell Dependency Mapping, Circularity Auditing & Trace Precedents",
+      "steps": [
+        {
+          "at": "intro",
+          "caption": "Step 1: Architectural ingestion and baseline configuration for EuSpRIG Standards & Tripartite Layer Architecture (Inputs, Calculations, Outputs)",
+          "max": 100,
+          "bars": [
+            {
+              "label": "EuSpRIG Structure",
+              "value": 25,
+              "tone": "accent"
+            },
+            {
+              "label": "Formula Drift",
+              "value": 20,
+              "tone": "data"
+            },
+            {
+              "label": "DAG Cycle Audit",
+              "value": 15,
+              "tone": "data"
+            },
+            {
+              "label": "SOX 404 Audit Seal",
+              "value": 10,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "say1",
+          "caption": "Step 2: Execution pipeline and memory array processing for EuSpRIG Standards & Tripartite Layer Architecture (Inputs, Calculations, Outputs)",
+          "max": 100,
+          "bars": [
+            {
+              "label": "EuSpRIG Structure",
+              "value": 65,
+              "tone": "accent"
+            },
+            {
+              "label": "Formula Drift",
+              "value": 60,
+              "tone": "data"
+            },
+            {
+              "label": "DAG Cycle Audit",
+              "value": 55,
+              "tone": "data"
+            },
+            {
+              "label": "SOX 404 Audit Seal",
+              "value": 45,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "example",
+          "caption": "Step 3: Stress testing and failure boundary validation for EuSpRIG Standards & Tripartite Layer Architecture (Inputs, Calculations, Outputs)",
+          "max": 100,
+          "bars": [
+            {
+              "label": "EuSpRIG Structure",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "Formula Drift",
+              "value": 80,
+              "tone": "data"
+            },
+            {
+              "label": "DAG Cycle Audit",
+              "value": 75,
+              "tone": "data"
+            },
+            {
+              "label": "SOX 404 Audit Seal",
+              "value": 70,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "tryIt",
+          "caption": "Step 4: Institutional governance and production certification for EuSpRIG Standards & Tripartite Layer Architecture (Inputs, Calculations, Outputs)",
+          "max": 100,
+          "bars": [
+            {
+              "label": "EuSpRIG Structure",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "Formula Drift",
+              "value": 95,
+              "tone": "data"
+            },
+            {
+              "label": "DAG Cycle Audit",
+              "value": 90,
+              "tone": "data"
+            },
+            {
+              "label": "SOX 404 Audit Seal",
+              "value": 85,
+              "tone": "data"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "partTitle": "Formula Drift & Static Analysis: Detecting Hardcoded Constants & Broken Columns",
+    "codeHash": "117e3b08907c2f67813b35ebbdb71cdb04ac980f1b6ac3a6c42d206c5a4829e4",
+    "spec": {
+      "template": "bars",
+      "title": "Formula Drift & Static Analysis: Detecting Hardcoded Constants & Broken Columns – EuSpRIG Standards & Model Audit Methodology: Cell Dependency Mapping, Circularity Auditing & Trace Precedents",
+      "steps": [
+        {
+          "at": "intro",
+          "caption": "Step 1: Architectural ingestion and baseline configuration for Formula Drift & Static Analysis: Detecting Hardcoded Constants & Broken Columns",
+          "max": 100,
+          "bars": [
+            {
+              "label": "EuSpRIG Structure",
+              "value": 25,
+              "tone": "accent"
+            },
+            {
+              "label": "Formula Drift",
+              "value": 20,
+              "tone": "data"
+            },
+            {
+              "label": "DAG Cycle Audit",
+              "value": 15,
+              "tone": "data"
+            },
+            {
+              "label": "SOX 404 Audit Seal",
+              "value": 10,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "say1",
+          "caption": "Step 2: Execution pipeline and memory array processing for Formula Drift & Static Analysis: Detecting Hardcoded Constants & Broken Columns",
+          "max": 100,
+          "bars": [
+            {
+              "label": "EuSpRIG Structure",
+              "value": 65,
+              "tone": "accent"
+            },
+            {
+              "label": "Formula Drift",
+              "value": 60,
+              "tone": "data"
+            },
+            {
+              "label": "DAG Cycle Audit",
+              "value": 55,
+              "tone": "data"
+            },
+            {
+              "label": "SOX 404 Audit Seal",
+              "value": 45,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "example",
+          "caption": "Step 3: Stress testing and failure boundary validation for Formula Drift & Static Analysis: Detecting Hardcoded Constants & Broken Columns",
+          "max": 100,
+          "bars": [
+            {
+              "label": "EuSpRIG Structure",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "Formula Drift",
+              "value": 80,
+              "tone": "data"
+            },
+            {
+              "label": "DAG Cycle Audit",
+              "value": 75,
+              "tone": "data"
+            },
+            {
+              "label": "SOX 404 Audit Seal",
+              "value": 70,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "tryIt",
+          "caption": "Step 4: Institutional governance and production certification for Formula Drift & Static Analysis: Detecting Hardcoded Constants & Broken Columns",
+          "max": 100,
+          "bars": [
+            {
+              "label": "EuSpRIG Structure",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "Formula Drift",
+              "value": 95,
+              "tone": "data"
+            },
+            {
+              "label": "DAG Cycle Audit",
+              "value": 90,
+              "tone": "data"
+            },
+            {
+              "label": "SOX 404 Audit Seal",
+              "value": 85,
+              "tone": "data"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "partTitle": "Cell Dependency DAGs, Trace Precedents & Circular Reference Detection",
+    "codeHash": "1f5ee3c78443a6972d6cc9441859eb5958718fa4d83d9f82602ba647b7530ee2",
+    "spec": {
+      "template": "bars",
+      "title": "Cell Dependency DAGs, Trace Precedents & Circular Reference Detection – EuSpRIG Standards & Model Audit Methodology: Cell Dependency Mapping, Circularity Auditing & Trace Precedents",
+      "steps": [
+        {
+          "at": "intro",
+          "caption": "Step 1: Architectural ingestion and baseline configuration for Cell Dependency DAGs, Trace Precedents & Circular Reference Detection",
+          "max": 100,
+          "bars": [
+            {
+              "label": "EuSpRIG Structure",
+              "value": 25,
+              "tone": "accent"
+            },
+            {
+              "label": "Formula Drift",
+              "value": 20,
+              "tone": "data"
+            },
+            {
+              "label": "DAG Cycle Audit",
+              "value": 15,
+              "tone": "data"
+            },
+            {
+              "label": "SOX 404 Audit Seal",
+              "value": 10,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "say1",
+          "caption": "Step 2: Execution pipeline and memory array processing for Cell Dependency DAGs, Trace Precedents & Circular Reference Detection",
+          "max": 100,
+          "bars": [
+            {
+              "label": "EuSpRIG Structure",
+              "value": 65,
+              "tone": "accent"
+            },
+            {
+              "label": "Formula Drift",
+              "value": 60,
+              "tone": "data"
+            },
+            {
+              "label": "DAG Cycle Audit",
+              "value": 55,
+              "tone": "data"
+            },
+            {
+              "label": "SOX 404 Audit Seal",
+              "value": 45,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "example",
+          "caption": "Step 3: Stress testing and failure boundary validation for Cell Dependency DAGs, Trace Precedents & Circular Reference Detection",
+          "max": 100,
+          "bars": [
+            {
+              "label": "EuSpRIG Structure",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "Formula Drift",
+              "value": 80,
+              "tone": "data"
+            },
+            {
+              "label": "DAG Cycle Audit",
+              "value": 75,
+              "tone": "data"
+            },
+            {
+              "label": "SOX 404 Audit Seal",
+              "value": 70,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "tryIt",
+          "caption": "Step 4: Institutional governance and production certification for Cell Dependency DAGs, Trace Precedents & Circular Reference Detection",
+          "max": 100,
+          "bars": [
+            {
+              "label": "EuSpRIG Structure",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "Formula Drift",
+              "value": 95,
+              "tone": "data"
+            },
+            {
+              "label": "DAG Cycle Audit",
+              "value": 90,
+              "tone": "data"
+            },
+            {
+              "label": "SOX 404 Audit Seal",
+              "value": 85,
+              "tone": "data"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "partTitle": "Model Risk Scorecard Engine: Quantitative Health Auditing under SR 11-7",
+    "codeHash": "5b45d11c8d7ede4f3b7d1fe27342eb41d833defbf9de10e7c8931b5459a4f6c7",
+    "spec": {
+      "template": "bars",
+      "title": "Model Risk Scorecard Engine: Quantitative Health Auditing under SR 11-7 – EuSpRIG Standards & Model Audit Methodology: Cell Dependency Mapping, Circularity Auditing & Trace Precedents",
+      "steps": [
+        {
+          "at": "intro",
+          "caption": "Step 1: Architectural ingestion and baseline configuration for Model Risk Scorecard Engine: Quantitative Health Auditing under SR 11-7",
+          "max": 100,
+          "bars": [
+            {
+              "label": "EuSpRIG Structure",
+              "value": 25,
+              "tone": "accent"
+            },
+            {
+              "label": "Formula Drift",
+              "value": 20,
+              "tone": "data"
+            },
+            {
+              "label": "DAG Cycle Audit",
+              "value": 15,
+              "tone": "data"
+            },
+            {
+              "label": "SOX 404 Audit Seal",
+              "value": 10,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "say1",
+          "caption": "Step 2: Execution pipeline and memory array processing for Model Risk Scorecard Engine: Quantitative Health Auditing under SR 11-7",
+          "max": 100,
+          "bars": [
+            {
+              "label": "EuSpRIG Structure",
+              "value": 65,
+              "tone": "accent"
+            },
+            {
+              "label": "Formula Drift",
+              "value": 60,
+              "tone": "data"
+            },
+            {
+              "label": "DAG Cycle Audit",
+              "value": 55,
+              "tone": "data"
+            },
+            {
+              "label": "SOX 404 Audit Seal",
+              "value": 45,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "example",
+          "caption": "Step 3: Stress testing and failure boundary validation for Model Risk Scorecard Engine: Quantitative Health Auditing under SR 11-7",
+          "max": 100,
+          "bars": [
+            {
+              "label": "EuSpRIG Structure",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "Formula Drift",
+              "value": 80,
+              "tone": "data"
+            },
+            {
+              "label": "DAG Cycle Audit",
+              "value": 75,
+              "tone": "data"
+            },
+            {
+              "label": "SOX 404 Audit Seal",
+              "value": 70,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "tryIt",
+          "caption": "Step 4: Institutional governance and production certification for Model Risk Scorecard Engine: Quantitative Health Auditing under SR 11-7",
+          "max": 100,
+          "bars": [
+            {
+              "label": "EuSpRIG Structure",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "Formula Drift",
+              "value": 95,
+              "tone": "data"
+            },
+            {
+              "label": "DAG Cycle Audit",
+              "value": 90,
+              "tone": "data"
+            },
+            {
+              "label": "SOX 404 Audit Seal",
+              "value": 85,
+              "tone": "data"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "partTitle": "Master EuSpRIG Audit Gateway: Synthesis, Forensic Reporting & Certification",
+    "codeHash": "23660e59421e80c9e300d62736395406b0f17712f6e048af6a5789aa88582aa3",
+    "spec": {
+      "template": "bars",
+      "title": "Master EuSpRIG Audit Gateway: Synthesis, Forensic Reporting & Certification – EuSpRIG Standards & Model Audit Methodology: Cell Dependency Mapping, Circularity Auditing & Trace Precedents",
+      "steps": [
+        {
+          "at": "intro",
+          "caption": "Step 1: Architectural ingestion and baseline configuration for Master EuSpRIG Audit Gateway: Synthesis, Forensic Reporting & Certification",
+          "max": 100,
+          "bars": [
+            {
+              "label": "EuSpRIG Structure",
+              "value": 25,
+              "tone": "accent"
+            },
+            {
+              "label": "Formula Drift",
+              "value": 20,
+              "tone": "data"
+            },
+            {
+              "label": "DAG Cycle Audit",
+              "value": 15,
+              "tone": "data"
+            },
+            {
+              "label": "SOX 404 Audit Seal",
+              "value": 10,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "say1",
+          "caption": "Step 2: Execution pipeline and memory array processing for Master EuSpRIG Audit Gateway: Synthesis, Forensic Reporting & Certification",
+          "max": 100,
+          "bars": [
+            {
+              "label": "EuSpRIG Structure",
+              "value": 65,
+              "tone": "accent"
+            },
+            {
+              "label": "Formula Drift",
+              "value": 60,
+              "tone": "data"
+            },
+            {
+              "label": "DAG Cycle Audit",
+              "value": 55,
+              "tone": "data"
+            },
+            {
+              "label": "SOX 404 Audit Seal",
+              "value": 45,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "example",
+          "caption": "Step 3: Stress testing and failure boundary validation for Master EuSpRIG Audit Gateway: Synthesis, Forensic Reporting & Certification",
+          "max": 100,
+          "bars": [
+            {
+              "label": "EuSpRIG Structure",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "Formula Drift",
+              "value": 80,
+              "tone": "data"
+            },
+            {
+              "label": "DAG Cycle Audit",
+              "value": 75,
+              "tone": "data"
+            },
+            {
+              "label": "SOX 404 Audit Seal",
+              "value": 70,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "tryIt",
+          "caption": "Step 4: Institutional governance and production certification for Master EuSpRIG Audit Gateway: Synthesis, Forensic Reporting & Certification",
+          "max": 100,
+          "bars": [
+            {
+              "label": "EuSpRIG Structure",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "Formula Drift",
+              "value": 95,
+              "tone": "data"
+            },
+            {
+              "label": "DAG Cycle Audit",
+              "value": 90,
+              "tone": "data"
+            },
+            {
+              "label": "SOX 404 Audit Seal",
+              "value": 85,
+              "tone": "data"
+            }
+          ]
+        }
+      ]
+    }
+  }
+]

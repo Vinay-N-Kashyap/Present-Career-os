@@ -1,0 +1,592 @@
+[
+  {
+    "partTitle": "Native Python in Excel (=PY()): Anaconda Runtime, Azure Containers & Row-Major Order",
+    "codeHash": "05550cb929242625fe11a118f5fb250df55ce857a1ed7cfb695f4303cb1200b8",
+    "spec": {
+      "template": "bars",
+      "title": "Native Python in Excel (=PY()): Anaconda Runtime, Azure Containers & Row-Major Order – Native Python in Excel (=PY()): Anaconda Runtime, Pandas DataFrames, Seaborn Visualizations & Cloud Sandbox Limits",
+      "steps": [
+        {
+          "at": "intro",
+          "caption": "Step 1: Architectural ingestion and baseline configuration for Native Python in Excel (=PY()): Anaconda Runtime, Azure Containers & Row-Major Order",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Anaconda Sandbox",
+              "value": 25,
+              "tone": "accent"
+            },
+            {
+              "label": "DataFrame Spilling",
+              "value": 20,
+              "tone": "data"
+            },
+            {
+              "label": "Seaborn In-Cell",
+              "value": 15,
+              "tone": "data"
+            },
+            {
+              "label": "Purview DLP Policy",
+              "value": 10,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "say1",
+          "caption": "Step 2: Execution pipeline and memory array processing for Native Python in Excel (=PY()): Anaconda Runtime, Azure Containers & Row-Major Order",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Anaconda Sandbox",
+              "value": 65,
+              "tone": "accent"
+            },
+            {
+              "label": "DataFrame Spilling",
+              "value": 60,
+              "tone": "data"
+            },
+            {
+              "label": "Seaborn In-Cell",
+              "value": 55,
+              "tone": "data"
+            },
+            {
+              "label": "Purview DLP Policy",
+              "value": 45,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "example",
+          "caption": "Step 3: Stress testing and failure boundary validation for Native Python in Excel (=PY()): Anaconda Runtime, Azure Containers & Row-Major Order",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Anaconda Sandbox",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "DataFrame Spilling",
+              "value": 80,
+              "tone": "data"
+            },
+            {
+              "label": "Seaborn In-Cell",
+              "value": 75,
+              "tone": "data"
+            },
+            {
+              "label": "Purview DLP Policy",
+              "value": 70,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "tryIt",
+          "caption": "Step 4: Institutional governance and production certification for Native Python in Excel (=PY()): Anaconda Runtime, Azure Containers & Row-Major Order",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Anaconda Sandbox",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "DataFrame Spilling",
+              "value": 95,
+              "tone": "data"
+            },
+            {
+              "label": "Seaborn In-Cell",
+              "value": 90,
+              "tone": "data"
+            },
+            {
+              "label": "Purview DLP Policy",
+              "value": 85,
+              "tone": "data"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "partTitle": "DataFrame Grid Marshalling: Ingesting Tabular Ranges via xl(), Type Casting & Imputation",
+    "codeHash": "14af9e239a2d6d95b014b6f773c87e198dd18a8ec10a28d855c7d4292b2d6341",
+    "spec": {
+      "template": "bars",
+      "title": "DataFrame Grid Marshalling: Ingesting Tabular Ranges via xl(), Type Casting & Imputation – Native Python in Excel (=PY()): Anaconda Runtime, Pandas DataFrames, Seaborn Visualizations & Cloud Sandbox Limits",
+      "steps": [
+        {
+          "at": "intro",
+          "caption": "Step 1: Architectural ingestion and baseline configuration for DataFrame Grid Marshalling: Ingesting Tabular Ranges via xl(), Type Casting & Imputation",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Anaconda Sandbox",
+              "value": 25,
+              "tone": "accent"
+            },
+            {
+              "label": "DataFrame Spilling",
+              "value": 20,
+              "tone": "data"
+            },
+            {
+              "label": "Seaborn In-Cell",
+              "value": 15,
+              "tone": "data"
+            },
+            {
+              "label": "Purview DLP Policy",
+              "value": 10,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "say1",
+          "caption": "Step 2: Execution pipeline and memory array processing for DataFrame Grid Marshalling: Ingesting Tabular Ranges via xl(), Type Casting & Imputation",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Anaconda Sandbox",
+              "value": 65,
+              "tone": "accent"
+            },
+            {
+              "label": "DataFrame Spilling",
+              "value": 60,
+              "tone": "data"
+            },
+            {
+              "label": "Seaborn In-Cell",
+              "value": 55,
+              "tone": "data"
+            },
+            {
+              "label": "Purview DLP Policy",
+              "value": 45,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "example",
+          "caption": "Step 3: Stress testing and failure boundary validation for DataFrame Grid Marshalling: Ingesting Tabular Ranges via xl(), Type Casting & Imputation",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Anaconda Sandbox",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "DataFrame Spilling",
+              "value": 80,
+              "tone": "data"
+            },
+            {
+              "label": "Seaborn In-Cell",
+              "value": 75,
+              "tone": "data"
+            },
+            {
+              "label": "Purview DLP Policy",
+              "value": 70,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "tryIt",
+          "caption": "Step 4: Institutional governance and production certification for DataFrame Grid Marshalling: Ingesting Tabular Ranges via xl(), Type Casting & Imputation",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Anaconda Sandbox",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "DataFrame Spilling",
+              "value": 95,
+              "tone": "data"
+            },
+            {
+              "label": "Seaborn In-Cell",
+              "value": 90,
+              "tone": "data"
+            },
+            {
+              "label": "Purview DLP Policy",
+              "value": 85,
+              "tone": "data"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "partTitle": "In-Grid Machine Learning & Predictive Analytics: Feature Importance & Default Scoring",
+    "codeHash": "c80fa9f4f731c0c9368dc1fa630a9a64a1e2d60e0ec455f03ab95d1877b9e51f",
+    "spec": {
+      "template": "bars",
+      "title": "In-Grid Machine Learning & Predictive Analytics: Feature Importance & Default Scoring – Native Python in Excel (=PY()): Anaconda Runtime, Pandas DataFrames, Seaborn Visualizations & Cloud Sandbox Limits",
+      "steps": [
+        {
+          "at": "intro",
+          "caption": "Step 1: Architectural ingestion and baseline configuration for In-Grid Machine Learning & Predictive Analytics: Feature Importance & Default Scoring",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Anaconda Sandbox",
+              "value": 25,
+              "tone": "accent"
+            },
+            {
+              "label": "DataFrame Spilling",
+              "value": 20,
+              "tone": "data"
+            },
+            {
+              "label": "Seaborn In-Cell",
+              "value": 15,
+              "tone": "data"
+            },
+            {
+              "label": "Purview DLP Policy",
+              "value": 10,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "say1",
+          "caption": "Step 2: Execution pipeline and memory array processing for In-Grid Machine Learning & Predictive Analytics: Feature Importance & Default Scoring",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Anaconda Sandbox",
+              "value": 65,
+              "tone": "accent"
+            },
+            {
+              "label": "DataFrame Spilling",
+              "value": 60,
+              "tone": "data"
+            },
+            {
+              "label": "Seaborn In-Cell",
+              "value": 55,
+              "tone": "data"
+            },
+            {
+              "label": "Purview DLP Policy",
+              "value": 45,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "example",
+          "caption": "Step 3: Stress testing and failure boundary validation for In-Grid Machine Learning & Predictive Analytics: Feature Importance & Default Scoring",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Anaconda Sandbox",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "DataFrame Spilling",
+              "value": 80,
+              "tone": "data"
+            },
+            {
+              "label": "Seaborn In-Cell",
+              "value": 75,
+              "tone": "data"
+            },
+            {
+              "label": "Purview DLP Policy",
+              "value": 70,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "tryIt",
+          "caption": "Step 4: Institutional governance and production certification for In-Grid Machine Learning & Predictive Analytics: Feature Importance & Default Scoring",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Anaconda Sandbox",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "DataFrame Spilling",
+              "value": 95,
+              "tone": "data"
+            },
+            {
+              "label": "Seaborn In-Cell",
+              "value": 90,
+              "tone": "data"
+            },
+            {
+              "label": "Purview DLP Policy",
+              "value": 85,
+              "tone": "data"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "partTitle": "Statistical Visualizations in Excel Cells: Matplotlib, Seaborn & High-DPI Rendering",
+    "codeHash": "762b00b8c58eb7f2f6f981ded0d774c5e364c968b4acc4f1451294dd540f21ac",
+    "spec": {
+      "template": "bars",
+      "title": "Statistical Visualizations in Excel Cells: Matplotlib, Seaborn & High-DPI Rendering – Native Python in Excel (=PY()): Anaconda Runtime, Pandas DataFrames, Seaborn Visualizations & Cloud Sandbox Limits",
+      "steps": [
+        {
+          "at": "intro",
+          "caption": "Step 1: Architectural ingestion and baseline configuration for Statistical Visualizations in Excel Cells: Matplotlib, Seaborn & High-DPI Rendering",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Anaconda Sandbox",
+              "value": 25,
+              "tone": "accent"
+            },
+            {
+              "label": "DataFrame Spilling",
+              "value": 20,
+              "tone": "data"
+            },
+            {
+              "label": "Seaborn In-Cell",
+              "value": 15,
+              "tone": "data"
+            },
+            {
+              "label": "Purview DLP Policy",
+              "value": 10,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "say1",
+          "caption": "Step 2: Execution pipeline and memory array processing for Statistical Visualizations in Excel Cells: Matplotlib, Seaborn & High-DPI Rendering",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Anaconda Sandbox",
+              "value": 65,
+              "tone": "accent"
+            },
+            {
+              "label": "DataFrame Spilling",
+              "value": 60,
+              "tone": "data"
+            },
+            {
+              "label": "Seaborn In-Cell",
+              "value": 55,
+              "tone": "data"
+            },
+            {
+              "label": "Purview DLP Policy",
+              "value": 45,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "example",
+          "caption": "Step 3: Stress testing and failure boundary validation for Statistical Visualizations in Excel Cells: Matplotlib, Seaborn & High-DPI Rendering",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Anaconda Sandbox",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "DataFrame Spilling",
+              "value": 80,
+              "tone": "data"
+            },
+            {
+              "label": "Seaborn In-Cell",
+              "value": 75,
+              "tone": "data"
+            },
+            {
+              "label": "Purview DLP Policy",
+              "value": 70,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "tryIt",
+          "caption": "Step 4: Institutional governance and production certification for Statistical Visualizations in Excel Cells: Matplotlib, Seaborn & High-DPI Rendering",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Anaconda Sandbox",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "DataFrame Spilling",
+              "value": 95,
+              "tone": "data"
+            },
+            {
+              "label": "Seaborn In-Cell",
+              "value": 90,
+              "tone": "data"
+            },
+            {
+              "label": "Purview DLP Policy",
+              "value": 85,
+              "tone": "data"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "partTitle": "Master Python in Excel Gateway: Pipeline Orchestration & Cloud Sandbox Governance",
+    "codeHash": "54a6ebc7c0663d4f35326f56b7f7ad10fa2177b71a3c2021414d3cdc2c94f963",
+    "spec": {
+      "template": "bars",
+      "title": "Master Python in Excel Gateway: Pipeline Orchestration & Cloud Sandbox Governance – Native Python in Excel (=PY()): Anaconda Runtime, Pandas DataFrames, Seaborn Visualizations & Cloud Sandbox Limits",
+      "steps": [
+        {
+          "at": "intro",
+          "caption": "Step 1: Architectural ingestion and baseline configuration for Master Python in Excel Gateway: Pipeline Orchestration & Cloud Sandbox Governance",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Anaconda Sandbox",
+              "value": 25,
+              "tone": "accent"
+            },
+            {
+              "label": "DataFrame Spilling",
+              "value": 20,
+              "tone": "data"
+            },
+            {
+              "label": "Seaborn In-Cell",
+              "value": 15,
+              "tone": "data"
+            },
+            {
+              "label": "Purview DLP Policy",
+              "value": 10,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "say1",
+          "caption": "Step 2: Execution pipeline and memory array processing for Master Python in Excel Gateway: Pipeline Orchestration & Cloud Sandbox Governance",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Anaconda Sandbox",
+              "value": 65,
+              "tone": "accent"
+            },
+            {
+              "label": "DataFrame Spilling",
+              "value": 60,
+              "tone": "data"
+            },
+            {
+              "label": "Seaborn In-Cell",
+              "value": 55,
+              "tone": "data"
+            },
+            {
+              "label": "Purview DLP Policy",
+              "value": 45,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "example",
+          "caption": "Step 3: Stress testing and failure boundary validation for Master Python in Excel Gateway: Pipeline Orchestration & Cloud Sandbox Governance",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Anaconda Sandbox",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "DataFrame Spilling",
+              "value": 80,
+              "tone": "data"
+            },
+            {
+              "label": "Seaborn In-Cell",
+              "value": 75,
+              "tone": "data"
+            },
+            {
+              "label": "Purview DLP Policy",
+              "value": 70,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "tryIt",
+          "caption": "Step 4: Institutional governance and production certification for Master Python in Excel Gateway: Pipeline Orchestration & Cloud Sandbox Governance",
+          "max": 100,
+          "bars": [
+            {
+              "label": "Anaconda Sandbox",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "DataFrame Spilling",
+              "value": 95,
+              "tone": "data"
+            },
+            {
+              "label": "Seaborn In-Cell",
+              "value": 90,
+              "tone": "data"
+            },
+            {
+              "label": "Purview DLP Policy",
+              "value": 85,
+              "tone": "data"
+            }
+          ]
+        }
+      ]
+    }
+  }
+]

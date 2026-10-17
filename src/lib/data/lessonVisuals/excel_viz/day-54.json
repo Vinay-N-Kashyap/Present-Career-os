@@ -1,0 +1,592 @@
+[
+  {
+    "partTitle": "Calculation Chain Internals & Dependency DAGs: Dirty Cell Pruning & Evaluation Trees",
+    "codeHash": "ff2296ecdc7d0fd6036851ee64d1a3a075e81ebe33555bb21dcc9f16847887fb",
+    "spec": {
+      "template": "bars",
+      "title": "Calculation Chain Internals & Dependency DAGs: Dirty Cell Pruning & Evaluation Trees – Calculation Chain Internals & Performance Tuning: Volatile Functions, Multi-Threaded Calc & Binary Formats (.xlsb)",
+      "steps": [
+        {
+          "at": "intro",
+          "caption": "Step 1: Architectural ingestion and baseline configuration for Calculation Chain Internals & Dependency DAGs: Dirty Cell Pruning & Evaluation Trees",
+          "max": 100,
+          "bars": [
+            {
+              "label": "DAG Dependency Chain",
+              "value": 25,
+              "tone": "accent"
+            },
+            {
+              "label": "Volatile Eradication",
+              "value": 20,
+              "tone": "data"
+            },
+            {
+              "label": "16-Core MTC Scaling",
+              "value": 15,
+              "tone": "data"
+            },
+            {
+              "label": "BIFF12 Compression",
+              "value": 10,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "say1",
+          "caption": "Step 2: Execution pipeline and memory array processing for Calculation Chain Internals & Dependency DAGs: Dirty Cell Pruning & Evaluation Trees",
+          "max": 100,
+          "bars": [
+            {
+              "label": "DAG Dependency Chain",
+              "value": 65,
+              "tone": "accent"
+            },
+            {
+              "label": "Volatile Eradication",
+              "value": 60,
+              "tone": "data"
+            },
+            {
+              "label": "16-Core MTC Scaling",
+              "value": 55,
+              "tone": "data"
+            },
+            {
+              "label": "BIFF12 Compression",
+              "value": 45,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "example",
+          "caption": "Step 3: Stress testing and failure boundary validation for Calculation Chain Internals & Dependency DAGs: Dirty Cell Pruning & Evaluation Trees",
+          "max": 100,
+          "bars": [
+            {
+              "label": "DAG Dependency Chain",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "Volatile Eradication",
+              "value": 80,
+              "tone": "data"
+            },
+            {
+              "label": "16-Core MTC Scaling",
+              "value": 75,
+              "tone": "data"
+            },
+            {
+              "label": "BIFF12 Compression",
+              "value": 70,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "tryIt",
+          "caption": "Step 4: Institutional governance and production certification for Calculation Chain Internals & Dependency DAGs: Dirty Cell Pruning & Evaluation Trees",
+          "max": 100,
+          "bars": [
+            {
+              "label": "DAG Dependency Chain",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "Volatile Eradication",
+              "value": 95,
+              "tone": "data"
+            },
+            {
+              "label": "16-Core MTC Scaling",
+              "value": 90,
+              "tone": "data"
+            },
+            {
+              "label": "BIFF12 Compression",
+              "value": 85,
+              "tone": "data"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "partTitle": "Volatile Function Elimination: Eradicating OFFSET / INDIRECT for Non-Volatile INDEX:INDEX",
+    "codeHash": "c4277356ed4bfbb73cc1fb84890e50ae7f282906984f21ba29213aa561a999b8",
+    "spec": {
+      "template": "bars",
+      "title": "Volatile Function Elimination: Eradicating OFFSET / INDIRECT for Non-Volatile INDEX:INDEX – Calculation Chain Internals & Performance Tuning: Volatile Functions, Multi-Threaded Calc & Binary Formats (.xlsb)",
+      "steps": [
+        {
+          "at": "intro",
+          "caption": "Step 1: Architectural ingestion and baseline configuration for Volatile Function Elimination: Eradicating OFFSET / INDIRECT for Non-Volatile INDEX:INDEX",
+          "max": 100,
+          "bars": [
+            {
+              "label": "DAG Dependency Chain",
+              "value": 25,
+              "tone": "accent"
+            },
+            {
+              "label": "Volatile Eradication",
+              "value": 20,
+              "tone": "data"
+            },
+            {
+              "label": "16-Core MTC Scaling",
+              "value": 15,
+              "tone": "data"
+            },
+            {
+              "label": "BIFF12 Compression",
+              "value": 10,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "say1",
+          "caption": "Step 2: Execution pipeline and memory array processing for Volatile Function Elimination: Eradicating OFFSET / INDIRECT for Non-Volatile INDEX:INDEX",
+          "max": 100,
+          "bars": [
+            {
+              "label": "DAG Dependency Chain",
+              "value": 65,
+              "tone": "accent"
+            },
+            {
+              "label": "Volatile Eradication",
+              "value": 60,
+              "tone": "data"
+            },
+            {
+              "label": "16-Core MTC Scaling",
+              "value": 55,
+              "tone": "data"
+            },
+            {
+              "label": "BIFF12 Compression",
+              "value": 45,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "example",
+          "caption": "Step 3: Stress testing and failure boundary validation for Volatile Function Elimination: Eradicating OFFSET / INDIRECT for Non-Volatile INDEX:INDEX",
+          "max": 100,
+          "bars": [
+            {
+              "label": "DAG Dependency Chain",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "Volatile Eradication",
+              "value": 80,
+              "tone": "data"
+            },
+            {
+              "label": "16-Core MTC Scaling",
+              "value": 75,
+              "tone": "data"
+            },
+            {
+              "label": "BIFF12 Compression",
+              "value": 70,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "tryIt",
+          "caption": "Step 4: Institutional governance and production certification for Volatile Function Elimination: Eradicating OFFSET / INDIRECT for Non-Volatile INDEX:INDEX",
+          "max": 100,
+          "bars": [
+            {
+              "label": "DAG Dependency Chain",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "Volatile Eradication",
+              "value": 95,
+              "tone": "data"
+            },
+            {
+              "label": "16-Core MTC Scaling",
+              "value": 90,
+              "tone": "data"
+            },
+            {
+              "label": "BIFF12 Compression",
+              "value": 85,
+              "tone": "data"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "partTitle": "Multi-Threaded Calculation (MTC) & Core Scaling: Overcoming Amdahl's Law Serial Locks",
+    "codeHash": "3096f49b0dfed1c359b93e9e7142ac8957edec93d7fd711ddf3a16e1cb8e64f2",
+    "spec": {
+      "template": "bars",
+      "title": "Multi-Threaded Calculation (MTC) & Core Scaling: Overcoming Amdahl's Law Serial Locks – Calculation Chain Internals & Performance Tuning: Volatile Functions, Multi-Threaded Calc & Binary Formats (.xlsb)",
+      "steps": [
+        {
+          "at": "intro",
+          "caption": "Step 1: Architectural ingestion and baseline configuration for Multi-Threaded Calculation (MTC) & Core Scaling: Overcoming Amdahl's Law Serial Locks",
+          "max": 100,
+          "bars": [
+            {
+              "label": "DAG Dependency Chain",
+              "value": 25,
+              "tone": "accent"
+            },
+            {
+              "label": "Volatile Eradication",
+              "value": 20,
+              "tone": "data"
+            },
+            {
+              "label": "16-Core MTC Scaling",
+              "value": 15,
+              "tone": "data"
+            },
+            {
+              "label": "BIFF12 Compression",
+              "value": 10,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "say1",
+          "caption": "Step 2: Execution pipeline and memory array processing for Multi-Threaded Calculation (MTC) & Core Scaling: Overcoming Amdahl's Law Serial Locks",
+          "max": 100,
+          "bars": [
+            {
+              "label": "DAG Dependency Chain",
+              "value": 65,
+              "tone": "accent"
+            },
+            {
+              "label": "Volatile Eradication",
+              "value": 60,
+              "tone": "data"
+            },
+            {
+              "label": "16-Core MTC Scaling",
+              "value": 55,
+              "tone": "data"
+            },
+            {
+              "label": "BIFF12 Compression",
+              "value": 45,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "example",
+          "caption": "Step 3: Stress testing and failure boundary validation for Multi-Threaded Calculation (MTC) & Core Scaling: Overcoming Amdahl's Law Serial Locks",
+          "max": 100,
+          "bars": [
+            {
+              "label": "DAG Dependency Chain",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "Volatile Eradication",
+              "value": 80,
+              "tone": "data"
+            },
+            {
+              "label": "16-Core MTC Scaling",
+              "value": 75,
+              "tone": "data"
+            },
+            {
+              "label": "BIFF12 Compression",
+              "value": 70,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "tryIt",
+          "caption": "Step 4: Institutional governance and production certification for Multi-Threaded Calculation (MTC) & Core Scaling: Overcoming Amdahl's Law Serial Locks",
+          "max": 100,
+          "bars": [
+            {
+              "label": "DAG Dependency Chain",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "Volatile Eradication",
+              "value": 95,
+              "tone": "data"
+            },
+            {
+              "label": "16-Core MTC Scaling",
+              "value": 90,
+              "tone": "data"
+            },
+            {
+              "label": "BIFF12 Compression",
+              "value": 85,
+              "tone": "data"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "partTitle": "Binary Workbook Compression (.xlsb vs .xlsx): Storage Efficiency & Serialization Speed",
+    "codeHash": "55cbb3c71d0bc46207b79357fe39f31963c59960cb5ae377196bb7e49dc04e79",
+    "spec": {
+      "template": "bars",
+      "title": "Binary Workbook Compression (.xlsb vs .xlsx): Storage Efficiency & Serialization Speed – Calculation Chain Internals & Performance Tuning: Volatile Functions, Multi-Threaded Calc & Binary Formats (.xlsb)",
+      "steps": [
+        {
+          "at": "intro",
+          "caption": "Step 1: Architectural ingestion and baseline configuration for Binary Workbook Compression (.xlsb vs .xlsx): Storage Efficiency & Serialization Speed",
+          "max": 100,
+          "bars": [
+            {
+              "label": "DAG Dependency Chain",
+              "value": 25,
+              "tone": "accent"
+            },
+            {
+              "label": "Volatile Eradication",
+              "value": 20,
+              "tone": "data"
+            },
+            {
+              "label": "16-Core MTC Scaling",
+              "value": 15,
+              "tone": "data"
+            },
+            {
+              "label": "BIFF12 Compression",
+              "value": 10,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "say1",
+          "caption": "Step 2: Execution pipeline and memory array processing for Binary Workbook Compression (.xlsb vs .xlsx): Storage Efficiency & Serialization Speed",
+          "max": 100,
+          "bars": [
+            {
+              "label": "DAG Dependency Chain",
+              "value": 65,
+              "tone": "accent"
+            },
+            {
+              "label": "Volatile Eradication",
+              "value": 60,
+              "tone": "data"
+            },
+            {
+              "label": "16-Core MTC Scaling",
+              "value": 55,
+              "tone": "data"
+            },
+            {
+              "label": "BIFF12 Compression",
+              "value": 45,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "example",
+          "caption": "Step 3: Stress testing and failure boundary validation for Binary Workbook Compression (.xlsb vs .xlsx): Storage Efficiency & Serialization Speed",
+          "max": 100,
+          "bars": [
+            {
+              "label": "DAG Dependency Chain",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "Volatile Eradication",
+              "value": 80,
+              "tone": "data"
+            },
+            {
+              "label": "16-Core MTC Scaling",
+              "value": 75,
+              "tone": "data"
+            },
+            {
+              "label": "BIFF12 Compression",
+              "value": 70,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "tryIt",
+          "caption": "Step 4: Institutional governance and production certification for Binary Workbook Compression (.xlsb vs .xlsx): Storage Efficiency & Serialization Speed",
+          "max": 100,
+          "bars": [
+            {
+              "label": "DAG Dependency Chain",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "Volatile Eradication",
+              "value": 95,
+              "tone": "data"
+            },
+            {
+              "label": "16-Core MTC Scaling",
+              "value": 90,
+              "tone": "data"
+            },
+            {
+              "label": "BIFF12 Compression",
+              "value": 85,
+              "tone": "data"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "partTitle": "Master Performance Tuning Gateway: Sub-Second Model Optimization & Certification",
+    "codeHash": "baa98f37032c1ed05632fada3b23af370a46e14fafe9b71cba2515c694f8e9ad",
+    "spec": {
+      "template": "bars",
+      "title": "Master Performance Tuning Gateway: Sub-Second Model Optimization & Certification – Calculation Chain Internals & Performance Tuning: Volatile Functions, Multi-Threaded Calc & Binary Formats (.xlsb)",
+      "steps": [
+        {
+          "at": "intro",
+          "caption": "Step 1: Architectural ingestion and baseline configuration for Master Performance Tuning Gateway: Sub-Second Model Optimization & Certification",
+          "max": 100,
+          "bars": [
+            {
+              "label": "DAG Dependency Chain",
+              "value": 25,
+              "tone": "accent"
+            },
+            {
+              "label": "Volatile Eradication",
+              "value": 20,
+              "tone": "data"
+            },
+            {
+              "label": "16-Core MTC Scaling",
+              "value": 15,
+              "tone": "data"
+            },
+            {
+              "label": "BIFF12 Compression",
+              "value": 10,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "say1",
+          "caption": "Step 2: Execution pipeline and memory array processing for Master Performance Tuning Gateway: Sub-Second Model Optimization & Certification",
+          "max": 100,
+          "bars": [
+            {
+              "label": "DAG Dependency Chain",
+              "value": 65,
+              "tone": "accent"
+            },
+            {
+              "label": "Volatile Eradication",
+              "value": 60,
+              "tone": "data"
+            },
+            {
+              "label": "16-Core MTC Scaling",
+              "value": 55,
+              "tone": "data"
+            },
+            {
+              "label": "BIFF12 Compression",
+              "value": 45,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "example",
+          "caption": "Step 3: Stress testing and failure boundary validation for Master Performance Tuning Gateway: Sub-Second Model Optimization & Certification",
+          "max": 100,
+          "bars": [
+            {
+              "label": "DAG Dependency Chain",
+              "value": 85,
+              "tone": "accent"
+            },
+            {
+              "label": "Volatile Eradication",
+              "value": 80,
+              "tone": "data"
+            },
+            {
+              "label": "16-Core MTC Scaling",
+              "value": 75,
+              "tone": "data"
+            },
+            {
+              "label": "BIFF12 Compression",
+              "value": 70,
+              "tone": "data"
+            }
+          ]
+        },
+        {
+          "at": "tryIt",
+          "caption": "Step 4: Institutional governance and production certification for Master Performance Tuning Gateway: Sub-Second Model Optimization & Certification",
+          "max": 100,
+          "bars": [
+            {
+              "label": "DAG Dependency Chain",
+              "value": 100,
+              "tone": "accent"
+            },
+            {
+              "label": "Volatile Eradication",
+              "value": 95,
+              "tone": "data"
+            },
+            {
+              "label": "16-Core MTC Scaling",
+              "value": 90,
+              "tone": "data"
+            },
+            {
+              "label": "BIFF12 Compression",
+              "value": 85,
+              "tone": "data"
+            }
+          ]
+        }
+      ]
+    }
+  }
+]

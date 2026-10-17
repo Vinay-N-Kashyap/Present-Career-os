@@ -67,7 +67,7 @@ test('Quant & Excel Long Lessons: Resolution & Structural Invariants', () => {
   assert.equal(excelLesson5.day, 5);
   assert.equal(excelLesson5.parts.length, 5, 'excel_viz Day 5 must contain exactly 5 parts');
 
-  for (let d = 6; d <= 50; d++) {
+  for (let d = 6; d <= 55; d++) {
     const el = getLongLesson('excel_viz', d);
     assert.ok(el, `excel_viz Day ${d} long lesson must resolve`);
     assert.equal(el.day, d);
@@ -2929,3 +2929,159 @@ test('Excel Viz Day 50: ⭐ Milestone 7: ApexAutomate Enterprise VBA & TypeScrip
   assert.ok(lesson.parts[3].code?.includes('EnterpriseLambdaFinancialLibrary'));
   assert.ok(lesson.parts[4].code?.includes('MasterApexAutomatePlatform'));
 });
+
+test('Excel Viz Day 51: EuSpRIG Standards & Model Audit Methodology: Cell Dependency Mapping, Circularity Auditing & Trace Precedents', () => {
+  const lesson = getLongLesson('excel_viz', 51);
+  assert.ok(lesson, 'excel_viz Day 51 must resolve');
+  assert.equal(lesson.day, 51);
+  assert.equal(lesson.parts.length, 5);
+
+  const spokenMin = estimateSpokenMinutes(lesson);
+  assert.ok(spokenMin >= 20, `Spoken minutes should be >= 20 (got ${spokenMin})`);
+
+  for (const part of lesson.parts) {
+    assert.ok(part.title.length > 0);
+    assert.ok(part.say.length >= 3);
+    assert.ok(part.example && part.example.length > 0);
+    assert.ok(part.code && part.code.includes('class '));
+    assert.ok(part.output && part.output.length > 0);
+    assert.ok(part.tryIt && part.tryIt.length > 0);
+
+    const check = part.check as any;
+    assert.ok(check.question.length > 10);
+    assert.equal(check.options.length, 4);
+    assert.ok(check.answer >= 0 && check.answer < 4);
+    assert.ok(check.why.length > 15);
+  }
+
+  assert.ok(lesson.parts[0].code?.includes('EuSprigArchitectureAuditor'));
+  assert.ok(lesson.parts[1].code?.includes('FormulaDriftDetector'));
+  assert.ok(lesson.parts[2].code?.includes('CellDependencyDagMapper'));
+  assert.ok(lesson.parts[3].code?.includes('ModelRiskScorecardEngine'));
+  assert.ok(lesson.parts[4].code?.includes('MasterEuSprigAuditGateway'));
+});
+
+test('Excel Viz Day 52: Native Python in Excel (=PY()): Anaconda Runtime, Pandas DataFrames, Seaborn Visualizations & Cloud Sandbox Limits', () => {
+  const lesson = getLongLesson('excel_viz', 52);
+  assert.ok(lesson, 'excel_viz Day 52 must resolve');
+  assert.equal(lesson.day, 52);
+  assert.equal(lesson.parts.length, 5);
+
+  const spokenMin = estimateSpokenMinutes(lesson);
+  assert.ok(spokenMin >= 20, `Spoken minutes should be >= 20 (got ${spokenMin})`);
+
+  for (const part of lesson.parts) {
+    assert.ok(part.title.length > 0);
+    assert.ok(part.say.length >= 3);
+    assert.ok(part.example && part.example.length > 0);
+    assert.ok(part.code && part.code.includes('class '));
+    assert.ok(part.output && part.output.length > 0);
+    assert.ok(part.tryIt && part.tryIt.length > 0);
+
+    const check = part.check as any;
+    assert.ok(check.question.length > 10);
+    assert.equal(check.options.length, 4);
+    assert.ok(check.answer >= 0 && check.answer < 4);
+    assert.ok(check.why.length > 15);
+  }
+
+  assert.ok(lesson.parts[0].code?.includes('PythonExcelSandboxArchitecture'));
+  assert.ok(lesson.parts[1].code?.includes('DataFrameGridMarshaller'));
+  assert.ok(lesson.parts[2].code?.includes('MachineLearningGridScorer'));
+  assert.ok(lesson.parts[3].code?.includes('StatisticalVisualizerRenderer'));
+  assert.ok(lesson.parts[4].code?.includes('MasterPythonExcelGateway'));
+});
+
+test('Excel Viz Day 53: High-Density Executive Financial Dashboards: Sparklines, Bullet Graphs, Form Controls & Information Radiators', () => {
+  const lesson = getLongLesson('excel_viz', 53);
+  assert.ok(lesson, 'excel_viz Day 53 must resolve');
+  assert.equal(lesson.day, 53);
+  assert.equal(lesson.parts.length, 5);
+
+  const spokenMin = estimateSpokenMinutes(lesson);
+  assert.ok(spokenMin >= 20, `Spoken minutes should be >= 20 (got ${spokenMin})`);
+
+  for (const part of lesson.parts) {
+    assert.ok(part.title.length > 0);
+    assert.ok(part.say.length >= 3);
+    assert.ok(part.example && part.example.length > 0);
+    assert.ok(part.code && part.code.includes('class '));
+    assert.ok(part.output && part.output.length > 0);
+    assert.ok(part.tryIt && part.tryIt.length > 0);
+
+    const check = part.check as any;
+    assert.ok(check.question.length > 10);
+    assert.equal(check.options.length, 4);
+    assert.ok(check.answer >= 0 && check.answer < 4);
+    assert.ok(check.why.length > 15);
+  }
+
+  assert.ok(lesson.parts[0].code?.includes('TufteDataInkRatioOptimizer'));
+  assert.ok(lesson.parts[1].code?.includes('StephenFewBulletGraphEngine'));
+  assert.ok(lesson.parts[2].code?.includes('MicroSparklineTrendProfiler'));
+  assert.ok(lesson.parts[3].code?.includes('InteractiveFormControlDashboard'));
+  assert.ok(lesson.parts[4].code?.includes('MasterExecutiveDashboardGateway'));
+});
+
+test('Excel Viz Day 54: Calculation Chain Internals & Performance Tuning: Volatile Functions, Multi-Threaded Calc & Binary Formats (.xlsb)', () => {
+  const lesson = getLongLesson('excel_viz', 54);
+  assert.ok(lesson, 'excel_viz Day 54 must resolve');
+  assert.equal(lesson.day, 54);
+  assert.equal(lesson.parts.length, 5);
+
+  const spokenMin = estimateSpokenMinutes(lesson);
+  assert.ok(spokenMin >= 20, `Spoken minutes should be >= 20 (got ${spokenMin})`);
+
+  for (const part of lesson.parts) {
+    assert.ok(part.title.length > 0);
+    assert.ok(part.say.length >= 3);
+    assert.ok(part.example && part.example.length > 0);
+    assert.ok(part.code && part.code.includes('class '));
+    assert.ok(part.output && part.output.length > 0);
+    assert.ok(part.tryIt && part.tryIt.length > 0);
+
+    const check = part.check as any;
+    assert.ok(check.question.length > 10);
+    assert.equal(check.options.length, 4);
+    assert.ok(check.answer >= 0 && check.answer < 4);
+    assert.ok(check.why.length > 15);
+  }
+
+  assert.ok(lesson.parts[0].code?.includes('CalculationChainDagProfiler'));
+  assert.ok(lesson.parts[1].code?.includes('VolatileFunctionEliminator'));
+  assert.ok(lesson.parts[2].code?.includes('MultiThreadedCalculationOptimizer'));
+  assert.ok(lesson.parts[3].code?.includes('BinaryWorkbookCompressor'));
+  assert.ok(lesson.parts[4].code?.includes('MasterPerformanceTuningGateway'));
+});
+
+test('Excel Viz Day 55: Enterprise Spreadsheet Governance, Role-Based Access Control, IRM & Compliance Validation', () => {
+  const lesson = getLongLesson('excel_viz', 55);
+  assert.ok(lesson, 'excel_viz Day 55 must resolve');
+  assert.equal(lesson.day, 55);
+  assert.equal(lesson.parts.length, 5);
+
+  const spokenMin = estimateSpokenMinutes(lesson);
+  assert.ok(spokenMin >= 20, `Spoken minutes should be >= 20 (got ${spokenMin})`);
+
+  for (const part of lesson.parts) {
+    assert.ok(part.title.length > 0);
+    assert.ok(part.say.length >= 3);
+    assert.ok(part.example && part.example.length > 0);
+    assert.ok(part.code && part.code.includes('class '));
+    assert.ok(part.output && part.output.length > 0);
+    assert.ok(part.tryIt && part.tryIt.length > 0);
+
+    const check = part.check as any;
+    assert.ok(check.question.length > 10);
+    assert.equal(check.options.length, 4);
+    assert.ok(check.answer >= 0 && check.answer < 4);
+    assert.ok(check.why.length > 15);
+  }
+
+  assert.ok(lesson.parts[0].code?.includes('DefenseInDepthSecurityModel'));
+  assert.ok(lesson.parts[1].code?.includes('RoleBasedAccessControlEngine'));
+  assert.ok(lesson.parts[2].code?.includes('InformationRightsManagementPolicy'));
+  assert.ok(lesson.parts[3].code?.includes('SoxComplianceAuditLedger'));
+  assert.ok(lesson.parts[4].code?.includes('MasterEnterpriseGovernanceGateway'));
+});
+
