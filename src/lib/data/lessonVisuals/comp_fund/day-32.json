@@ -1,0 +1,211 @@
+{
+  "day": 32,
+  "course": "comp_fund",
+  "entries": [
+    {
+      "stepId": "cf-d32-p1",
+      "partTitle": "The Container Abstraction Invariant: 6 Linux Namespaces & cgroups v2 Unified Hierarchy",
+      "template": "cells",
+      "codeHash": "738da49fbe82ea0c97608c20f62fa0961caf0e62fa003ecba831348e71ca1d36",
+      "data": {
+        "title": "Systems Architecture Telemetry: The Container Abstraction Invariant: 6 Linux Namespaces & cgroup",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "ISOLATION_NAMESPACES",
+            "PID_MNT_NET_IPC_UTS_USER",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "SYSCALL_PRIMITIVES",
+            "CLONE_UNSHARE_SETNS",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "CGROUPS_V2_HIERARCHY",
+            "UNIFIED_SINGLE_ROOT_TREE",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "RESOURCE_CONTROLLERS",
+            "CPU_MAX_MEMORY_MAX_IO_MAX",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d32-p2",
+      "partTitle": "Detective Challenge: The Noisy Neighbor OOM Host Crash & cgroups v2 memory.max Containment",
+      "template": "cells",
+      "codeHash": "9f73e3694edace406002c0e05fa73f38d9479c073986021d69092bc5b8a37655",
+      "data": {
+        "title": "Systems Architecture Telemetry: Detective Challenge: The Noisy Neighbor OOM Host Crash & cgroups",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "INCIDENT",
+            "NOISY_NEIGHBOR_HOST_RAM_EXHA",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "VICTIM_PROCESS",
+            "HOST_PAYMENT_GATEWAY_TERMINA",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "ROOT_CAUSE",
+            "CONTAINER_LAUNCHED_WITHOUT_M",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "ENFORCEMENT_FIX",
+            "CGROUP_MEMORY_MAX_536870912_",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d32-p3",
+      "partTitle": "Mastery Assignment: Building a Zero-Docker Container Runtime with unshare(), pivot_root() & User Namespaces",
+      "template": "cells",
+      "codeHash": "80937330adbec24d85d7115088e24380a4e76ae4410a57d1183e28747a153afe",
+      "data": {
+        "title": "Systems Architecture Telemetry: Mastery Assignment: Building a Zero-Docker Container Runtime wit",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "EXEC_CMD",
+            "unshare_pid_net_mount_uts_ip",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "PID_MAPPING",
+            "CONTAINER_PID_1_MAPS_TO_HOST",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "ROOTFS_JAIL",
+            "PIVOT_ROOT_TO_ISOLATED_BUNDL",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "USER_NS_MAP",
+            "CONTAINER_UID_0_MAPS_TO_HOST",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d32-p4",
+      "partTitle": "Incident Lab: cgroups v2 CFS Bandwidth Quota (`cpu.max`) & The 64-Core Legacy Runtime Trap",
+      "template": "cells",
+      "codeHash": "66a0c35720a4237b409af2bec26274022970b53c1c95e1cd44f3c2a883894064",
+      "data": {
+        "title": "Systems Architecture Telemetry: Incident Lab: cgroups v2 CFS Bandwidth Quota (`cpu.max`) & The 6",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "HOST_HARDWARE",
+            "64_PHYSICAL_CPU_CORES_DETECT",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "CGROUP_CPU_MAX",
+            "200000_QUOTA_PER_100000_PERI",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "LEGACY_JVM_BUG",
+            "64_THREADS_SPAWNED_FROM_PROC",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "CFS_THROTTLE_PENALTY",
+            "NR_THROTTLED_4210_PERIODS",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d32-p5",
+      "partTitle": "Day 32 Mastery Certification: Linux Container Isolation & cgroups v2 Governance Suite",
+      "template": "cells",
+      "codeHash": "bb4dfac9c0484e343379654b1b63d210a928885fdb9418ae0cf96c7079742e33",
+      "data": {
+        "title": "Systems Architecture Telemetry: Day 32 Mastery Certification: Linux Container Isolation & cgroup",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "NAMESPACE_AUDIT",
+            "ALL_6_KERNEL_NAMESPACES_ISOL",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "CGROUP_V2_AUDIT",
+            "UNIFIED_CONTROLLERS_ENFORCED",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "OOM_PROTECTION",
+            "MEMORY_MAX_AND_SWAP_MAX_LOCK",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "CPU_QUOTA_AUDIT",
+            "CFS_BANDWIDTH_THROTTLING_OPT",
+            "Verified 100%"
+          ]
+        ]
+      }
+    }
+  ]
+}

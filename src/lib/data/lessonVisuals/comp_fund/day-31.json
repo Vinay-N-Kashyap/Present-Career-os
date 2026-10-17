@@ -1,0 +1,211 @@
+{
+  "day": 31,
+  "course": "comp_fund",
+  "entries": [
+    {
+      "stepId": "cf-d31-p1",
+      "partTitle": "Type 1 vs Type 2 Hypervisors, Intel VT-x VMX Root/Non-Root & VMCS Architecture",
+      "template": "cells",
+      "codeHash": "87337e46d71aa939b94c848707bd52d14bb9d21106b9444ffcd002b0a2de9692",
+      "data": {
+        "title": "Systems Architecture Telemetry: Type 1 vs Type 2 Hypervisors, Intel VT-x VMX Root/Non-Root & VMC",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "HYPERVISOR_TYPE_1",
+            "BARE_METAL_KVM_ESXI_XEN",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "CPU_VIRT_EXT",
+            "INTEL_VT_X_VMX_ROOT_AND_NON_",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "VMCS_CONTROL",
+            "GUEST_STATE_AND_HOST_STATE_A",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "SENSITIVE_INST_TRAP",
+            "VM_EXIT_TO_HYPERVISOR_DISPAT",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d31-p2",
+      "partTitle": "Detective Challenge: Diagnosing the 400,000/sec VM-Exit Storm & Virtio Paravirtualization",
+      "template": "cells",
+      "codeHash": "3fef8f263cdeccad3acb9ce8dc6423da8570d2cbbced295d5c60e7c23ac2c461",
+      "data": {
+        "title": "Systems Architecture Telemetry: Detective Challenge: Diagnosing the 400,000/sec VM-Exit Storm & ",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "TRACE_SOURCE",
+            "KVM_STAT_HYPERVISOR_TELEMETR",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "ANOMALY_EVENT",
+            "IO_INSTRUCTION_VM_EXIT_40000",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "CYCLE_PENALTY",
+            "2000_CYCLES_PER_VM_EXIT_TRAN",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "ROOT_CAUSE",
+            "UNBUFFERED_LEGACY_PIO_POLLIN",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d31-p3",
+      "partTitle": "Mastery Assignment: Minimal KVM Micro-Hypervisor via /dev/kvm ioctl() API",
+      "template": "cells",
+      "codeHash": "cb75cdbf16b47e4c7d1558069b44e7505dadf85f8c51aaea64e9b4a5c36d2420",
+      "data": {
+        "title": "Systems Architecture Telemetry: Mastery Assignment: Minimal KVM Micro-Hypervisor via /dev/kvm io",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "DEVICE_NODE",
+            "/dev/kvm_IOCTL_INTERFACE",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "STEP_1",
+            "KVM_CREATE_VM_AND_SET_USER_M",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "STEP_2",
+            "KVM_CREATE_VCPU_AND_INIT_SRE",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "STEP_3",
+            "KVM_RUN_LOOP_HANDLING_KVM_EX",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d31-p4",
+      "partTitle": "Incident Lab: Two-Dimensional Paging — Extended Page Tables (EPT/SLAT) vs Shadow Page Tables",
+      "template": "cells",
+      "codeHash": "185bf2dbd5ad6bf4e6d8ec18f005729ca5ee1cfce50471349d1a522d5e48e18f",
+      "data": {
+        "title": "Systems Architecture Telemetry: Incident Lab: Two-Dimensional Paging — Extended Page Tables (EPT",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "SHADOW_PAGE_TABLE_MODE",
+            "300_PCT_QUERY_LATENCY_PENALT",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "SHADOW_PAGE_VM_EXITS",
+            "185000_PAGE_FAULT_INTERCEPTS",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "HARDWARE_EPT_MODE",
+            "SILICON_2D_GVA_TO_GPA_TO_HPA",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "EPT_VM_EXITS",
+            "ZERO_PAGE_TABLE_SYNC_TRAPS",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d31-p5",
+      "partTitle": "Day 31 Mastery Certification: Enterprise Hardware Virtualization & Host BIOS Verification",
+      "template": "cells",
+      "codeHash": "823636886364b6be95d76e416387f8d78308e99af3482a2d084eb03bc1e5bcf5",
+      "data": {
+        "title": "Systems Architecture Telemetry: Day 31 Mastery Certification: Enterprise Hardware Virtualization",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "VERIFY_CPU_FLAGS",
+            "grep_E_vmx_svm_proc_cpuinfo_",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "VERIFY_HYPERVISOR",
+            "KVM_KERNEL_MODULE_LOADED",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "VERIFY_SLAT_EPT",
+            "EXTENDED_PAGE_TABLES_ACTIVE",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "VERIFY_IO_PATH",
+            "VIRTIO_SHARED_MEMORY_RINGS_A",
+            "Verified 100%"
+          ]
+        ]
+      }
+    }
+  ]
+}

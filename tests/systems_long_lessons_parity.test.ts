@@ -2882,3 +2882,139 @@ test('Systems Long Lessons: git_vcs Day 60 🏆 GRAND FINAL CAPSTONE: ApexEnterp
   assert.equal(res5.allPassed, true);
   assert.ok(res5.stdout?.includes('AUDIT_SEAL: SOVEREIGN-APEX-ENTERPRISE-GITOPS-COURSE-20-COMPLETE'));
 });
+
+test('Systems Long Lessons: comp_fund Day 31 Hardware Virtualization: Type 1 vs Type 2 Hypervisors, Intel VT-x/AMD-V & Extended Page Tables', async () => {
+  const d31 = getLongLesson('comp_fund', 31);
+  assert.ok(d31, 'comp_fund Day 31 must resolve');
+  assert.equal(d31.day, 31);
+  assert.equal(d31.parts.length, 5);
+
+  const res1 = await executeBashSuite(d31.parts[0].code!);
+  assert.equal(res1.allPassed, true);
+  assert.ok(res1.stdout?.includes('SLAT_EPT_NPT: HARDWARE_2D_PAGE_TABLE_WALK_ENABLED'));
+
+  const res2 = await executeBashSuite(d31.parts[1].code!);
+  assert.equal(res2.allPassed, true);
+  assert.ok(res2.stdout?.includes('ANOMALY_EVENT: IO_INSTRUCTION_VM_EXIT_400000_PER_SEC'));
+
+  const res3 = await executeBashSuite(d31.parts[2].code!);
+  assert.equal(res3.allPassed, true);
+  assert.ok(res3.stdout?.includes('VMM_STATUS: GUEST_REAL_MODE_EXECUTION_VERIFIED'));
+
+  const res4 = await executeBashSuite(d31.parts[3].code!);
+  assert.equal(res4.allPassed, true);
+  assert.ok(res4.stdout?.includes('BENCHMARK_VERDICT: HARDWARE_SLAT_EPT_MANDATORY_IN_BIOS'));
+
+  const res5 = await executeBashSuite(d31.parts[4].code!);
+  assert.equal(res5.allPassed, true);
+  assert.ok(res5.stdout?.includes('DAY_31_CERTIFICATION: HARDWARE_VIRTUALIZATION_MASTERED'));
+});
+
+test('Systems Long Lessons: comp_fund Day 32 Linux Containers Internals: Namespaces (PID, Mount, Net, IPC, UTS, User) & cgroups v2', async () => {
+  const d32 = getLongLesson('comp_fund', 32);
+  assert.ok(d32, 'comp_fund Day 32 must resolve');
+  assert.equal(d32.day, 32);
+  assert.equal(d32.parts.length, 5);
+
+  const res1 = await executeBashSuite(d32.parts[0].code!);
+  assert.equal(res1.allPassed, true);
+  assert.ok(res1.stdout?.includes('INVARIANT: VIEW_IS_NAMESPACE_USAGE_IS_CGROUP_QUOTA'));
+
+  const res2 = await executeBashSuite(d32.parts[1].code!);
+  assert.equal(res2.allPassed, true);
+  assert.ok(res2.stdout?.includes('ISOLATION_VERIFIED: LEAKING_CONTAINER_OOM_CONTAINED'));
+
+  const res3 = await executeBashSuite(d32.parts[2].code!);
+  assert.equal(res3.allPassed, true);
+  assert.ok(res3.stdout?.includes('RUNTIME_STATUS: ZERO_DOCKER_PURE_KERNEL_CONTAINER_UP'));
+
+  const res4 = await executeBashSuite(d32.parts[3].code!);
+  assert.equal(res4.allPassed, true);
+  assert.ok(res4.stdout?.includes('REMEDIATION: CGROUP_V2_AWARE_RUNTIME_2_ACTIVE_THREADS'));
+
+  const res5 = await executeBashSuite(d32.parts[4].code!);
+  assert.equal(res5.allPassed, true);
+  assert.ok(res5.stdout?.includes('DAY_32_CERTIFICATION: LINUX_CONTAINER_INTERNALS_MASTERED'));
+});
+
+test('Systems Long Lessons: comp_fund Day 33 Container Images & Union File Systems: OverlayFS, Layer Immutability & OCI Runtimes', async () => {
+  const d33 = getLongLesson('comp_fund', 33);
+  assert.ok(d33, 'comp_fund Day 33 must resolve');
+  assert.equal(d33.day, 33);
+  assert.equal(d33.parts.length, 5);
+
+  const res1 = await executeBashSuite(d33.parts[0].code!);
+  assert.equal(res1.allPassed, true);
+  assert.ok(res1.stdout?.includes('WHITEOUT_MECHANISM: CHAR_DEVICE_0_0_MASKING_DELETED_FILES'));
+
+  const res2 = await executeBashSuite(d33.parts[1].code!);
+  assert.equal(res2.allPassed, true);
+  assert.ok(res2.stdout?.includes('REMEDIATION: ATOMIC_SINGLE_RUN_INSTALL_AND_CLEANUP'));
+
+  const res3 = await executeBashSuite(d33.parts[2].code!);
+  assert.equal(res3.allPassed, true);
+  assert.ok(res3.stdout?.includes('VERIFICATION: LOWERDIR_ORIGINAL_REMAINS_UNTOUCHED'));
+
+  const res4 = await executeBashSuite(d33.parts[3].code!);
+  assert.equal(res4.allPassed, true);
+  assert.ok(res4.stdout?.includes('EFFICIENCY_VERDICT: 99_PCT_STORAGE_AND_RAM_CACHE_SAVINGS'));
+
+  const res5 = await executeBashSuite(d33.parts[4].code!);
+  assert.equal(res5.allPassed, true);
+  assert.ok(res5.stdout?.includes('DAY_33_CERTIFICATION: UNION_FILESYSTEMS_AND_OCI_MASTERED'));
+});
+
+test('Systems Long Lessons: comp_fund Day 34 Container Networking: Bridge Networks, veth Virtual Pairs, NAT Masquerading & CNI Plugins', async () => {
+  const d34 = getLongLesson('comp_fund', 34);
+  assert.ok(d34, 'comp_fund Day 34 must resolve');
+  assert.equal(d34.day, 34);
+  assert.equal(d34.parts.length, 5);
+
+  const res1 = await executeBashSuite(d34.parts[0].code!);
+  assert.equal(res1.allPassed, true);
+  assert.ok(res1.stdout?.includes('OUTBOUND_ROUTING: IPTABLES_POSTROUTING_SNAT_MASQUERADE'));
+
+  const res2 = await executeBashSuite(d34.parts[1].code!);
+  assert.equal(res2.allPassed, true);
+  assert.ok(res2.stdout?.includes('CONNTRACK_METRIC: 65535_EPHEMERAL_PORTS_IN_TIME_WAIT'));
+
+  const res3 = await executeBashSuite(d34.parts[2].code!);
+  assert.equal(res3.allPassed, true);
+  assert.ok(res3.stdout?.includes('PING_VERIFICATION: 0_PACKET_LOSS_ACROSS_VIRTUAL_BRIDGE'));
+
+  const res4 = await executeBashSuite(d34.parts[3].code!);
+  assert.equal(res4.allPassed, true);
+  assert.ok(res4.stdout?.includes('ARCHITECTURAL_CHOICE: EBPF_CNI_FOR_HIGH_SCALE_CLUSTERS'));
+
+  const res5 = await executeBashSuite(d34.parts[4].code!);
+  assert.equal(res5.allPassed, true);
+  assert.ok(res5.stdout?.includes('DAY_34_CERTIFICATION: CONTAINER_NETWORKING_MASTERED'));
+});
+
+test('Systems Long Lessons: comp_fund Day 35 Milestone 6: ApexContainer Rootless Container Engine & cgroups Virtualization Suite', async () => {
+  const d35 = getLongLesson('comp_fund', 35);
+  assert.ok(d35, 'comp_fund Day 35 must resolve');
+  assert.equal(d35.day, 35);
+  assert.equal(d35.parts.length, 5);
+
+  const res1 = await executeBashSuite(d35.parts[0].code!);
+  assert.equal(res1.allPassed, true);
+  assert.ok(res1.stdout?.includes('SECURITY_ENCLOSURE: SECCOMP_BPF_AND_CAP_DROP_ALL'));
+
+  const res2 = await executeBashSuite(d35.parts[1].code!);
+  assert.equal(res2.allPassed, true);
+  assert.ok(res2.stdout?.includes('SECURITY_STATUS: HOST_BREAKOUT_SURFACE_ELIMINATED'));
+
+  const res3 = await executeBashSuite(d35.parts[2].code!);
+  assert.equal(res3.allPassed, true);
+  assert.ok(res3.stdout?.includes('ENGINE_STATUS: APEX_CONTAINER_PID_1_RUNNING_UNPRIVILEGED'));
+
+  const res4 = await executeBashSuite(d35.parts[3].code!);
+  assert.equal(res4.allPassed, true);
+  assert.ok(res4.stdout?.includes('KERNEL_DEFENSE_1: CGROUP_PIDS_MAX_100_BLOCKS_101ST_FORK_EAGAIN'));
+
+  const res5 = await executeBashSuite(d35.parts[4].code!);
+  assert.equal(res5.allPassed, true);
+  assert.ok(res5.stdout?.includes('MILESTONE_6_VERDICT: APEX_CONTAINER_ENGINE_BOARD_APPROVED'));
+});
+

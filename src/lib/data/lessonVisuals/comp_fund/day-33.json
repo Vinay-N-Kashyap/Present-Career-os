@@ -1,0 +1,211 @@
+{
+  "day": 33,
+  "course": "comp_fund",
+  "entries": [
+    {
+      "stepId": "cf-d33-p1",
+      "partTitle": "Linux OverlayFS Architecture (`lowerdir`, `upperdir`, `workdir`, `merged`) & OCI Runtimes",
+      "template": "cells",
+      "codeHash": "89ac44cf4145efce22a2c24ba9d8b985d56e4677218fbd8ea0fc37fb62baabd6",
+      "data": {
+        "title": "Systems Architecture Telemetry: Linux OverlayFS Architecture (`lowerdir`, `upperdir`, `workdir`,",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "MOUNT_TYPE",
+            "LINUX_KERNEL_OVERLAYFS_UNION",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "LOWERDIR_LAYERS",
+            "IMMUTABLE_READ_ONLY_SHARED_B",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "UPPERDIR_LAYER",
+            "EPHEMERAL_WRITABLE_CONTAINER",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "WHITEOUT_MECHANISM",
+            "CHAR_DEVICE_0_0_MASKING_DELE",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d33-p2",
+      "partTitle": "Detective Challenge: Multi-Layer Dockerfile Bloat & The 10GB Copy-on-Write (`copy_up`) Stall",
+      "template": "cells",
+      "codeHash": "2844d164908027c278da2afa8587663ae49263aa79393fb5f51fdfceb501556e",
+      "data": {
+        "title": "Systems Architecture Telemetry: Detective Challenge: Multi-Layer Dockerfile Bloat & The 10GB Cop",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "ANTI_PATTERN",
+            "SEPARATE_RUN_INSTALL_AND_RUN",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "LAYER_1_PAYLOAD",
+            "300MB_APT_CACHE_PERMANENTLY_",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "LAYER_2_PAYLOAD",
+            "WHITEOUT_FILES_ONLY_ZERO_SPA",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "COW_STALL_HAZARD",
+            "10GB_CHMOD_TRIGGERS_FULL_COP",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d33-p3",
+      "partTitle": "Mastery Assignment: Live OverlayFS Union Mount Orchestrator & Copy-on-Write Verification",
+      "template": "cells",
+      "codeHash": "a6f707764073aeadf19be5cef49294f642af20f0c9bf18fc40d88eb1359691bd",
+      "data": {
+        "title": "Systems Architecture Telemetry: Mastery Assignment: Live OverlayFS Union Mount Orchestrator & Co",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "LOWER_FILE",
+            "BASE_CONFIG_V1_IMMUTABLE_IN_",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "MOUNT_SYSCALL",
+            "OVERLAY_MERGED_VIEW_INITIALI",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "WRITE_INTERCEPT",
+            "MODIFY_CONFIG_TRIGGERS_KERNE",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "UPPER_FILE",
+            "MODIFIED_CONFIG_V2_ISOLATED_",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d33-p4",
+      "partTitle": "Incident Lab: High-Concurrency 100-Container Layer Sharing & Page Cache Deduplication",
+      "template": "cells",
+      "codeHash": "a07d8fee15a1e323c269bee7241c1efa23603ccd83f28f1d3b7a05f73e8aa71c",
+      "data": {
+        "title": "Systems Architecture Telemetry: Incident Lab: High-Concurrency 100-Container Layer Sharing & Pag",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "CONCURRENT_CONTAINERS",
+            "100_REPLICAS_INSTANTIATED_IN",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "BASE_IMAGE_SIZE",
+            "500MB_SHARED_SINGLE_INODE_PA",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "TOTAL_LOWERDIR_DISK",
+            "500MB_INSTEAD_OF_50GB_DUPLIC",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "AGGREGATE_UPPERDIR_DIFF",
+            "12MB_ACROSS_ALL_100_CONTAINE",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d33-p5",
+      "partTitle": "Day 33 Mastery Certification: Union File Systems, Layer Hygiene & OCI Runtime Compliance",
+      "template": "cells",
+      "codeHash": "a6292cb7b0925e73d24fae2769834fa6020e992bd0aaf0034c634166c250f24e",
+      "data": {
+        "title": "Systems Architecture Telemetry: Day 33 Mastery Certification: Union File Systems, Layer Hygiene ",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "OVERLAYFS_AUDIT",
+            "LOWER_UPPER_WORK_MERGED_VERI",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "IMMUTABILITY_AUDIT",
+            "CONTENT_ADDRESSABLE_SHA256_D",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "COW_HYGIENE_AUDIT",
+            "NO_LARGE_FILE_CHMOD_COPY_UP_",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "OCI_SPEC_AUDIT",
+            "CONFIG_JSON_AND_ROOTFS_BUNDL",
+            "Verified 100%"
+          ]
+        ]
+      }
+    }
+  ]
+}

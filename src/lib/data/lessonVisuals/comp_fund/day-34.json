@@ -1,0 +1,211 @@
+{
+  "day": 34,
+  "course": "comp_fund",
+  "entries": [
+    {
+      "stepId": "cf-d34-p1",
+      "partTitle": "The Virtual Ethernet (`veth`) Invariant, Linux Software Bridges & `iptables` SNAT/DNAT",
+      "template": "cells",
+      "codeHash": "da25ebc624d9c31da0efe64c42141606b6a2d3696ba6d9dd240cfb1fd6b76551",
+      "data": {
+        "title": "Systems Architecture Telemetry: The Virtual Ethernet (`veth`) Invariant, Linux Software Bridges ",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "NET_ISOLATION",
+            "DEDICATED_NETWORK_NAMESPACE_",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "VIRTUAL_WIRE",
+            "VETH_PAIR_CONTAINER_ETH0_TO_",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "LAYER_2_SWITCH",
+            "LINUX_SOFTWARE_BRIDGE_MAC_LE",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "OUTBOUND_ROUTING",
+            "IPTABLES_POSTROUTING_SNAT_MA",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d34-p2",
+      "partTitle": "Detective Challenge: `conntrack` Ephemeral Port Exhaustion (`TIME_WAIT`) & SNAT Outage",
+      "template": "cells",
+      "codeHash": "48e88c977872a844d5eb92888f4e0bd5436b98ab11972ac256afac8238ff918d",
+      "data": {
+        "title": "Systems Architecture Telemetry: Detective Challenge: `conntrack` Ephemeral Port Exhaustion (`TIM",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "OUTAGE_SYMPTOM",
+            "OUTBOUND_TCP_SYN_DROPPED_ACR",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "CONNTRACK_METRIC",
+            "65535_EPHEMERAL_PORTS_IN_TIM",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "ROOT_CAUSE",
+            "UNPOOLED_DB_CONNECTIONS_VIA_",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "REMEDIATION_1",
+            "PERSISTENT_CONNECTION_POOLIN",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d34-p3",
+      "partTitle": "Mastery Assignment: Building a Multi-Namespace Container Bridge Network from Scratch with `ip netns` & `veth`",
+      "template": "cells",
+      "codeHash": "7a62e82fe9da82cf05b10894317defc9750e462f1c181505e1b172ae0dda8723",
+      "data": {
+        "title": "Systems Architecture Telemetry: Mastery Assignment: Building a Multi-Namespace Container Bridge ",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "STEP_1",
+            "ip_link_add_br_pinit0_type_b",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "STEP_2",
+            "ip_netns_add_ns_app1_and_ns_",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "STEP_3",
+            "ip_link_add_veth_app1_peer_n",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "STEP_4",
+            "ASSIGN_172_18_0_2_AND_172_18",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d34-p4",
+      "partTitle": "Incident Lab: Benchmarking Host Mode, Bridge NAT, Macvlan & eBPF CNI Dataplanes",
+      "template": "cells",
+      "codeHash": "5b669d9954f9457cb99609080999a3479da6180097c759ed9ca4f94b2227fddf",
+      "data": {
+        "title": "Systems Architecture Telemetry: Incident Lab: Benchmarking Host Mode, Bridge NAT, Macvlan & eBPF",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "HOST_NETWORK_MODE",
+            "42_GBPS_THROUGHPUT_12_US_LAT",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "MACVLAN_DIRECT_MODE",
+            "39_GBPS_THROUGHPUT_15_US_LAT",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "BRIDGE_NAT_MODE",
+            "24_GBPS_THROUGHPUT_48_US_LAT",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "EBPF_CILIUM_ROUTING",
+            "38_GBPS_BYPASSING_IPTABLES_C",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d34-p5",
+      "partTitle": "Day 34 Mastery Certification: Container Networking, NAT Resilience & CNI Architecture",
+      "template": "cells",
+      "codeHash": "2c2858589d4ff712c7ea1906f3a6c25dc7856cd6bdb8986339fdd48787be2518",
+      "data": {
+        "title": "Systems Architecture Telemetry: Day 34 Mastery Certification: Container Networking, NAT Resilien",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "VETH_PAIR_AUDIT",
+            "BIDIRECTIONAL_NAMESPACE_LINK",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "BRIDGE_FDB_AUDIT",
+            "LAYER_2_MAC_FORWARDING_VERIF",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "NAT_PIPELINE_AUDIT",
+            "SNAT_MASQUERADE_AND_DNAT_VER",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "CNI_PLUGIN_AUDIT",
+            "IPAM_AND_EBPF_DATAPLANE_NOMI",
+            "Verified 100%"
+          ]
+        ]
+      }
+    }
+  ]
+}

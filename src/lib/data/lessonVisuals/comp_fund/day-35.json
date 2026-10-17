@@ -1,0 +1,211 @@
+{
+  "day": 35,
+  "course": "comp_fund",
+  "entries": [
+    {
+      "stepId": "cf-d35-p1",
+      "partTitle": "ApexContainer Sovereign Architecture Blueprint: Rootless Isolation, cgroups v2 & Seccomp-BPF",
+      "template": "cells",
+      "codeHash": "d8cdf65d2aa871ce8c828ae001f0d4ece3c87978305e5675e35e4bd77fa73862",
+      "data": {
+        "title": "Systems Architecture Telemetry: ApexContainer Sovereign Architecture Blueprint: Rootless Isolati",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "ENGINE_NAME",
+            "APEX_CONTAINER_SOVEREIGN_ROO",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "USER_NAMESPACE",
+            "CONTAINER_UID_0_TO_HOST_UID_",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "CGROUPS_V2_LIMITS",
+            "CPU_MAX_MEMORY_MAX_PIDS_MAX_",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "STORAGE_DRIVER",
+            "ROOTLESS_OVERLAYFS_WITH_FAST",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d35-p2",
+      "partTitle": "Detective Challenge: The `--privileged` Container `/dev/sda1` Host Breakout Post-Mortem",
+      "template": "cells",
+      "codeHash": "f6176f197613445db8e94c93c7f110e8e210eb74027b42d6b640e6fde72b4565",
+      "data": {
+        "title": "Systems Architecture Telemetry: Detective Challenge: The `--privileged` Container `/dev/sda1` Ho",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "VULNERABILITY",
+            "PRIVILEGED_FLAG_ENABLED_ON_W",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "EXPLOIT_VECTOR",
+            "DIRECT_MOUNT_OF_HOST_DEV_SDA",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "REMEDIATION_1",
+            "ENFORCE_ROOTLESS_USER_NAMESP",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "REMEDIATION_2",
+            "DROP_CAP_SYS_ADMIN_AND_MOUNT",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d35-p3",
+      "partTitle": "Mastery Assignment: End-to-End `ApexContainer` Engine Lifecycle & Resource Reclamation",
+      "template": "cells",
+      "codeHash": "a764f85d8dd722f6a99ae55c05d3c623dfa78184b21ac9515515b5724007d3d4",
+      "data": {
+        "title": "Systems Architecture Telemetry: Mastery Assignment: End-to-End `ApexContainer` Engine Lifecycle ",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "INIT_PHASE",
+            "UNSHARE_ALL_NAMESPACES_AND_W",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "CGROUP_PHASE",
+            "ATTACH_PID_TO_SYS_FS_CGROUP_",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "MOUNT_PHASE",
+            "OVERLAYFS_MERGED_AND_PIVOT_R",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "NET_PHASE",
+            "VETH_PAIR_ATTACHED_AND_SECCO",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d35-p4",
+      "partTitle": "Incident Lab: Defending Against the `:(){ :|:& };:` Chaos Fork Bomb via `pids.max`",
+      "template": "cells",
+      "codeHash": "9b9e8904fdce9b8e0de66a0e4b28a6c6de32b47315f12d5bb6e7462f88fd61a2",
+      "data": {
+        "title": "Systems Architecture Telemetry: Incident Lab: Defending Against the `:(){ :|:& };:` Chaos Fork B",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "CHAOS_VECTOR_1",
+            "MALICIOUS_FORK_BOMB_INJECTED",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "KERNEL_DEFENSE_1",
+            "CGROUP_PIDS_MAX_100_BLOCKS_1",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "CHAOS_VECTOR_2",
+            "RUNAWAY_ALLOCATION_BOMB_INJE",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "KERNEL_DEFENSE_2",
+            "CGROUP_MEMORY_MAX_CONTAINS_O",
+            "Verified 100%"
+          ]
+        ]
+      }
+    },
+    {
+      "stepId": "cf-d35-p5",
+      "partTitle": "Milestone 6 Board Approval: Block 7 Virtualization & Containers Mastery Certification",
+      "template": "cells",
+      "codeHash": "b82b41c834bf814905a01fdf45015147fc88a9b82639e90ee1c72ab9bf562cdb",
+      "data": {
+        "title": "Systems Architecture Telemetry: Milestone 6 Board Approval: Block 7 Virtualization & Containers ",
+        "headers": [
+          "Stage",
+          "Subsystem / Key",
+          "Telemetry Value",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Check 1",
+            "PILLAR_1_VIRT",
+            "INTEL_VT_X_AND_HARDWARE_EPT_",
+            "Verified 100%"
+          ],
+          [
+            "Check 2",
+            "PILLAR_2_ISOLATION",
+            "6_NAMESPACES_AND_CGROUPS_V2_",
+            "Verified 100%"
+          ],
+          [
+            "Check 3",
+            "PILLAR_3_STORAGE",
+            "OVERLAYFS_COW_AND_OCI_SPEC_V",
+            "Verified 100%"
+          ],
+          [
+            "Check 4",
+            "PILLAR_4_NETWORK",
+            "VETH_BRIDGE_SNAT_DNAT_CNI_VE",
+            "Verified 100%"
+          ]
+        ]
+      }
+    }
+  ]
+}
