@@ -8,7 +8,7 @@ import { loadDayFile, getVisual, clearDayFileCache } from '../src/lib/visuals/lo
 import { getLongLesson, estimateSpokenMinutes, estimateLessonMinutes } from '../src/lib/data/longLessons';
 import { getTappableLabelsForVisual } from '../src/lib/visuals/visualRules';
 
-test('Java Basics Visuals Expansion: Days 6 to 45 On-Disk Spec Verification', () => {
+test('Java Basics Visuals Expansion: Days 6 to 50 On-Disk Spec Verification', () => {
   clearDayFileCache();
   const prefix = 'java-basics';
   const expectedTemplate = 'stack-queue';
@@ -16,7 +16,7 @@ test('Java Basics Visuals Expansion: Days 6 to 45 On-Disk Spec Verification', ()
   assert.equal(isCourseVisualsEnabled(prefix), true, `Course "${prefix}" must be enabled in enabledCourses`);
 
   const daysToTest = [];
-  for (let d = 6; d <= 45; d++) {
+  for (let d = 6; d <= 50; d++) {
     daysToTest.push(d);
   }
 
@@ -62,7 +62,7 @@ test('Java Basics Visuals Expansion: Days 6 to 45 On-Disk Spec Verification', ()
 
 test('Java Basics Duration Invariant: Days >= 11 Meet 20+ Spoken Min and 35-40 Total Min', () => {
   const daysToTest = [];
-  for (let d = 11; d <= 45; d++) {
+  for (let d = 11; d <= 50; d++) {
     daysToTest.push(d);
   }
 
@@ -77,7 +77,7 @@ test('Java Basics Duration Invariant: Days >= 11 Meet 20+ Spoken Min and 35-40 T
   }
 });
 
-test('Java Basics Days 31-45 Domain & Masterclass Integrity Verification', () => {
+test('Java Basics Days 31-50 Domain & Masterclass Integrity Verification', () => {
   const prefix = 'java-basics';
 
   // Day 31: Classes, Heap Instances & Reference Pointer Mechanics
@@ -179,4 +179,39 @@ test('Java Basics Days 31-45 Domain & Masterclass Integrity Verification', () =>
   assert.equal(d45.parts.length, 5);
   assert.match(d45.title, /Milestone 8.*Resilient Order File Ingestion Engine/);
   assert.ok(d45.parts.some(p => (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('All-Or-Nothing') || (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('Torn State') || (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('Two-Phase Commit')));
+
+  // Day 46: Generics, Compile-Time Type Safety & Type Erasure Mechanics
+  const d46 = getLongLesson(prefix, 46);
+  assert.ok(d46);
+  assert.equal(d46.parts.length, 5);
+  assert.match(d46.title, /Generics.*Type Erasure/);
+  assert.ok(d46.parts.some(p => (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('Type Erasure') || (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('PECS') || (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('Raw Type')));
+
+  // Day 47: ArrayList Internals: Dynamic Amortized Growth, Array Copy & Capacity Sizing
+  const d47 = getLongLesson(prefix, 47);
+  assert.ok(d47);
+  assert.equal(d47.parts.length, 5);
+  assert.match(d47.title, /ArrayList.*Internals/);
+  assert.ok(d47.parts.some(p => (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('1.5x') || (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('reallocation') || (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('System.arraycopy')));
+
+  // Day 48: HashMap Deep Dive: Hash Codes, Buckets, Collision Chains & Red-Black Tree Binning
+  const d48 = getLongLesson(prefix, 48);
+  assert.ok(d48);
+  assert.equal(d48.parts.length, 5);
+  assert.match(d48.title, /HashMap.*Deep Dive/);
+  assert.ok(d48.parts.some(p => (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('bucket') || (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('Treeification') || (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('power of two')));
+
+  // Day 49: HashSet, Comparable vs Comparator Lambda Custom Sorting
+  const d49 = getLongLesson(prefix, 49);
+  assert.ok(d49);
+  assert.equal(d49.parts.length, 5);
+  assert.match(d49.title, /HashSet.*Comparable.*Comparator/);
+  assert.ok(d49.parts.some(p => (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('TimSort') || (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('anti-symmetry') || (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('thenComparing')));
+
+  // Day 50: Milestone 9: High-Throughput In-Memory Order Book & Inventory Cache
+  const d50 = getLongLesson(prefix, 50);
+  assert.ok(d50);
+  assert.equal(d50.parts.length, 5);
+  assert.match(d50.title, /Milestone 9.*Order Book/);
+  assert.ok(d50.parts.some(p => (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('Order Book') || (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('Composite') || (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('50,000')));
 });
