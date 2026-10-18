@@ -6,11 +6,11 @@
   "model": "anthropic/claude-3.5-sonnet",
   "entries": [
     {
-      "partTitle": "Milestone 10 Architecture: Dual-Rate Multitasking & Real-Time DSP Pipelines",
-      "codeHash": "c5c24f012219945971db754360171f8f777d3bbd9de45ce337d3e1a270437cc1",
+      "partTitle": "Milestone 10 Architecture: Multi-Rate FreeRTOS Tasking & Lock-Free Ring Buffering",
+      "codeHash": "028d3003e9367cb553bcf61567136f8dce881812b47735b78e7f87627b3dbb9a",
       "spec": {
         "template": "register-bits",
-        "title": "Milestone 10 Architecture: Dual-Rate Multitas... — Register Bit Architecture",
+        "title": "Milestone 10 Architecture: Multi-Rate FreeRTO... — Register Bit Architecture",
         "steps": [
           {
             "at": "intro",
@@ -259,7 +259,7 @@
       },
       "filled": {
         "template": "register-bits",
-        "title": "Milestone 10 Architecture: Dual-Rate Multitas... — Register Bit Architecture",
+        "title": "Milestone 10 Architecture: Multi-Rate FreeRTO... — Register Bit Architecture",
         "steps": [
           {
             "at": "intro",
@@ -508,11 +508,11 @@
       }
     },
     {
-      "partTitle": "Real-Time 1kHz SPI DMA Ingestion & Stationary Bias Calibration Subsystem",
-      "codeHash": "cd5864c858f984b42c966078cb1793aaa764717f5fd9586f8a1e4213fac3b427",
+      "partTitle": "Lock-Free Double-Buffered Real-Time Telemetry & Zero-Copy IMU Data Streaming",
+      "codeHash": "83fae71aa8e11621f5f06414bcbedc93eeec24f116ec82375c349b32711acc8f",
       "spec": {
         "template": "register-bits",
-        "title": "Real-Time 1kHz SPI DMA Ingestion & Stationary... — Register Bit Architecture",
+        "title": "Lock-Free Double-Buffered Real-Time Telemetry... — Register Bit Architecture",
         "steps": [
           {
             "at": "intro",
@@ -761,7 +761,7 @@
       },
       "filled": {
         "template": "register-bits",
-        "title": "Real-Time 1kHz SPI DMA Ingestion & Stationary... — Register Bit Architecture",
+        "title": "Lock-Free Double-Buffered Real-Time Telemetry... — Register Bit Architecture",
         "steps": [
           {
             "at": "intro",
@@ -1010,11 +1010,11 @@
       }
     },
     {
-      "partTitle": "High-Rate 200Hz Madgwick Quaternion Attitude Estimator & Defensive Gating",
-      "codeHash": "c5603a63253fd353a8c3f6d8abcd1f6bdb6a84df52cf710dbd76303b35a7f370",
+      "partTitle": "High-Rate 6-DOF Quaternion Attitude Estimator: Madgwick Gradient Descent with Dynamic Bias Tracking",
+      "codeHash": "8c6dea058044a24b4a6e2ae3b78535ef0b4c91ac6d2662bb8716ad3496a5730a",
       "spec": {
         "template": "register-bits",
-        "title": "High-Rate 200Hz Madgwick Quaternion Attitude ... — Register Bit Architecture",
+        "title": "High-Rate 6-DOF Quaternion Attitude Estimator... — Register Bit Architecture",
         "steps": [
           {
             "at": "intro",
@@ -1263,7 +1263,7 @@
       },
       "filled": {
         "template": "register-bits",
-        "title": "High-Rate 200Hz Madgwick Quaternion Attitude ... — Register Bit Architecture",
+        "title": "High-Rate 6-DOF Quaternion Attitude Estimator... — Register Bit Architecture",
         "steps": [
           {
             "at": "intro",
@@ -1512,11 +1512,11 @@
       }
     },
     {
-      "partTitle": "CMSIS-DSP 1024-Point RFFT Spectral Pipeline & Mechanical Anomaly Alarm",
-      "codeHash": "06e3314a209c2d000f41a6aaec4a24f25070a635c81f98da63995f87cb63dd23",
+      "partTitle": "CMSIS-DSP Vibration Spectral Analyzer: 1024-Point RFFT & ISO 10816 Bearing Fault Detection",
+      "codeHash": "af99e143b2888f0473ddf36b3633d2c66ef27d518f72b688737458f167b27f18",
       "spec": {
         "template": "register-bits",
-        "title": "CMSIS-DSP 1024-Point RFFT Spectral Pipeline &... — Register Bit Architecture",
+        "title": "CMSIS-DSP Vibration Spectral Analyzer: 1024-P... — Register Bit Architecture",
         "steps": [
           {
             "at": "intro",
@@ -1765,7 +1765,7 @@
       },
       "filled": {
         "template": "register-bits",
-        "title": "CMSIS-DSP 1024-Point RFFT Spectral Pipeline &... — Register Bit Architecture",
+        "title": "CMSIS-DSP Vibration Spectral Analyzer: 1024-P... — Register Bit Architecture",
         "steps": [
           {
             "at": "intro",
@@ -2014,11 +2014,11 @@
       }
     },
     {
-      "partTitle": "Milestone 10 Execution: Adversarial Stress Test & Final Certification Gate Verdict",
-      "codeHash": "b624b81cee2e92e0eb4dc02450b64116f8b3f26840a8748fd5575faabb7542d6",
+      "partTitle": "Milestone 10 Execution: Adversarial Fault Injection & Final Certification Gate Verdict",
+      "codeHash": "f170841ca1418b8500b56029404341d9d765bb7b2501c1fbc460f03bc8774599",
       "spec": {
         "template": "register-bits",
-        "title": "Milestone 10 Execution: Adversarial Stress Te... — Register Bit Architecture",
+        "title": "Milestone 10 Execution: Adversarial Fault Inj... — Register Bit Architecture",
         "steps": [
           {
             "at": "intro",
@@ -2267,7 +2267,7 @@
       },
       "filled": {
         "template": "register-bits",
-        "title": "Milestone 10 Execution: Adversarial Stress Te... — Register Bit Architecture",
+        "title": "Milestone 10 Execution: Adversarial Fault Inj... — Register Bit Architecture",
         "steps": [
           {
             "at": "intro",
