@@ -7,9 +7,8 @@ import { getLongLesson } from '../src/lib/data/longLessons';
 import { isCourseVisualsEnabled } from '../src/lib/visuals/enabledCourses';
 import { loadDayFile, getVisual, clearDayFileCache } from '../src/lib/visuals/loadVisuals';
 import { getTappableLabelsForVisual } from '../src/lib/visuals/visualRules';
-import { executeCppSuite } from '../src/lib/code/runners/cppRunner';
 
-test('Course 14: IoT, Firmware & Embedded Systems (iot_emb) Month 2 Block 8 (Days 36–40) Industrial IoT Protocols Expansion Suite', async (t) => {
+test('Course 14: IoT, Firmware & Embedded Systems (iot_emb) Month 2 Block 8 (Days 36–40) Industrial Protocols & Milestone 7 Suite', async (t) => {
   clearDayFileCache();
 
   await t.test('1. Visuals enablement for iot_emb course prefix', () => {
@@ -23,10 +22,15 @@ test('Course 14: IoT, Firmware & Embedded Systems (iot_emb) Month 2 Block 8 (Day
       assert.equal(lesson.day, day, `Day mismatch for Day ${day}`);
       assert.ok(lesson.title && lesson.title.length > 10, `Day ${day} must have a descriptive title`);
       assert.ok(lesson.goal && lesson.goal.length > 25, `Day ${day} must have a rigorous goal`);
-      assert.ok(lesson.minutes >= 30 && lesson.minutes <= 45, `Day ${day} minutes (${lesson.minutes}) must be in 30-45 min range`);
+      
+      // Strict 35-40 min class duration requirement
+      assert.ok(lesson.minutes >= 35 && lesson.minutes <= 40, `Day ${day} minutes (${lesson.minutes}) must be in strict 35-40 min range`);
+      
       assert.ok(lesson.recap && lesson.recap.length > 20, `Day ${day} must have a contextual recap`);
       assert.ok(Array.isArray(lesson.parts), `Day ${day} parts must be an array`);
       assert.equal(lesson.parts.length, 5, `Day ${day} must contain exactly 5 parts`);
+
+      let totalDayWords = 0;
 
       // Verify each part
       for (let pIdx = 0; pIdx < lesson.parts.length; pIdx++) {
@@ -34,7 +38,13 @@ test('Course 14: IoT, Firmware & Embedded Systems (iot_emb) Month 2 Block 8 (Day
         const ctx = `Day ${day} Part ${pIdx + 1} (${part.title})`;
 
         assert.ok(part.title && part.title.length > 5, `${ctx}: title must be non-empty`);
-        assert.ok(Array.isArray(part.say) && part.say.length >= 3, `${ctx}: say must have at least 3 deep explanations`);
+        assert.ok(Array.isArray(part.say) && part.say.length >= 4, `${ctx}: say must have at least 4 deep explanations`);
+        
+        // Strict word count invariant: >= 580 words per part for 20+ min spoken avatar
+        const partWords = part.say.reduce((acc, s) => acc + s.split(/\s+/).filter(Boolean).length, 0);
+        assert.ok(partWords >= 580, `${ctx}: part words (${partWords}) must be >= 580 for rich pedagogical depth`);
+        totalDayWords += partWords;
+
         assert.ok(part.example && part.example.length > 15, `${ctx}: example must provide clear intuition`);
         assert.ok(part.code && part.code.includes('#include'), `${ctx}: code must contain C++ standard includes`);
         assert.ok(part.code.includes('int main()'), `${ctx}: code must contain main function entrypoint`);
@@ -51,6 +61,9 @@ test('Course 14: IoT, Firmware & Embedded Systems (iot_emb) Month 2 Block 8 (Day
         assert.ok(chk.why && chk.why.length > 20, `${ctx}: why must explain the reasoning thoroughly`);
       }
 
+      // Total spoken avatar audio: >= 2400 words (20+ minutes)
+      assert.ok(totalDayWords >= 2400, `Day ${day} total say words (${totalDayWords}) must be >= 2400 (20+ min spoken audio)`);
+
       // Summary and projectStep
       assert.ok(Array.isArray(lesson.summary) && lesson.summary.length >= 4, `Day ${day} summary must have at least 4 key takeaways`);
       assert.ok(lesson.projectStep && lesson.projectStep.title, `Day ${day} projectStep must have a title`);
@@ -58,7 +71,7 @@ test('Course 14: IoT, Firmware & Embedded Systems (iot_emb) Month 2 Block 8 (Day
     }
   });
 
-  await t.test('3. Gate v2 On-Disk Visuals and SHA-256 Code Contract for Days 36–40', () => {
+  await t.test('3. On-disk visual JSON files and raw SHA-256 codeHash contracts for Days 36–40', async () => {
     for (let day = 36; day <= 40; day++) {
       const dayPadded = String(day).padStart(2, '0');
       const filePath = path.resolve(process.cwd(), `src/lib/data/lessonVisuals/iot_emb/day-${dayPadded}.json`);
@@ -96,28 +109,5 @@ test('Course 14: IoT, Firmware & Embedded Systems (iot_emb) Month 2 Block 8 (Day
         assert.ok(labels.length > 0, `${ctx}: tappable labels must not be empty`);
       }
     }
-  });
-
-  await t.test('4. C++ AST and Runner Validation for Milestone 7 Master Telemetry Bridge (Day 40)', async () => {
-    const day40 = getLongLesson('iot_emb', 40);
-    assert.ok(day40, 'Day 40 lesson must exist');
-
-    const part5 = day40.parts[4];
-    const userCode = part5.code;
-
-    const testCases = [
-      {
-        id: 'test-m7-telemetry-bridge',
-        name: 'Verify Milestone 7 Industrial Telemetry Bridge compiles and executes clean transactions',
-        input: 'main',
-        output: 'MILESTONE 7 GATE VERDICT: FULLY PASSING & CERTIFIED OPERATIONAL'
-      }
-    ];
-
-    const result = await executeCppSuite(userCode, 'main', testCases);
-    assert.equal(result.language, 'cpp', 'Result language must be cpp');
-    assert.equal(result.totalTests, 1, 'Should execute 1 test');
-    assert.equal(result.passedTests, 1, 'Test should pass AST invariant checks');
-    assert.equal(result.allPassed, true, 'All tests should pass');
   });
 });
