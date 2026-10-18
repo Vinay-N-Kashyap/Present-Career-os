@@ -529,6 +529,217 @@ test('Block 129: B.Com Accounting Day 5 Capstone: Multi-Entity Consolidation, Ca
   assert.ok(total >= 15, `Total lesson minutes (${total}) must be >= 15`);
 });
 
+// ============================================================================
+// BLOCK 2 (DAYS 6-10: TASK-1359..1363) - SUBSIDIARY BOOKS, BRS & RECTIFICATION
+// ============================================================================
+
+test('Block 130: B.Com Accounting Days 6-10: Resolution & Structure Invariants', () => {
+  for (let d = 6; d <= 10; d++) {
+    const lesson = getLongLesson('bcom-accounting', d);
+    assert.ok(lesson, `bcom-accounting Day ${d} lesson must be defined`);
+    assert.equal(lesson.coursePrefix, 'bcom-accounting');
+    assert.equal(lesson.day, d);
+    assert.equal(lesson.parts.length, 5, `bcom-accounting Day ${d} must have exactly 5 parts`);
+    assert.equal(getLongLessonLanguage('bcom-accounting'), 'python');
+
+    const expectedMin = d === 10 ? 50 : 45;
+    assert.equal(lesson.minutes, expectedMin, `Day ${d} minutes must be ${expectedMin}`);
+
+    const spoken = estimateSpokenMinutes(lesson);
+    assert.ok(spoken >= 8, `Day ${d} spoken minutes (${spoken}) must be at least 8`);
+    const total = estimateLessonMinutes(lesson);
+    assert.ok(total >= 15, `Day ${d} total lesson minutes (${total}) must be at least 15`);
+
+    assert.ok(lesson.summary && lesson.summary.length >= 4, `Day ${d} summary must have >= 4 bullets`);
+    assert.ok(lesson.projectStep && lesson.projectStep.title && lesson.projectStep.steps.length >= 4, `Day ${d} projectStep must have title and >= 4 steps`);
+
+    for (let i = 0; i < lesson.parts.length; i++) {
+      const part = lesson.parts[i];
+      assert.ok(part.title.length > 0, `Day ${d} Part ${i + 1} must have a title`);
+      assert.ok(part.say.length >= 3, `Day ${d} Part ${i + 1} must have >= 3 say paragraphs`);
+
+      const words = part.say.join(' ').split(/\s+/).length;
+      assert.ok(words >= 580, `Day ${d} Part ${i + 1} word count (${words}) must be >= 580`);
+
+      assert.ok(part.example && part.example.length > 0, `Day ${d} Part ${i + 1} must have an example`);
+      assert.ok(part.code && part.code.includes('def '), `Day ${d} Part ${i + 1} code must contain Python functions`);
+      assert.ok(part.output && part.output.length > 0, `Day ${d} Part ${i + 1} must have expected output`);
+      assert.ok(part.tryIt && part.tryIt.length > 0, `Day ${d} Part ${i + 1} must have tryIt instructions`);
+
+      // Socratic Check Invariants
+      const check = part.check as any;
+      assert.ok(check.question.length > 10, `Day ${d} Part ${i + 1} check question must be descriptive`);
+      assert.equal(check.options.length, 4, `Day ${d} Part ${i + 1} check must have exactly 4 options`);
+      assert.equal(typeof check.answer, 'number', `Day ${d} Part ${i + 1} answer must be number`);
+      assert.equal(check.answer, 0, `Day ${d} Part ${i + 1} answer index must be 0`);
+      assert.ok(check.why && check.why.length > 15, `Day ${d} Part ${i + 1} why explanation must be rigorous`);
+      assert.equal(check.answerIndex, 0);
+      assert.equal(check.explanation, check.why);
+    }
+  }
+});
+
+test('Block 130: B.Com Accounting Day 6: 3-Column Cash Book & Petty Cash Imprest System Snippets Verification', () => {
+  const lesson = getLongLesson('bcom-accounting', 6);
+  assert.ok(lesson);
+  assert.equal(lesson.day, 6);
+
+  assert.match(lesson.parts[0].title, /Triple-Column.*Cash.*Bank.*Discount/i);
+  assert.ok(lesson.parts[0].code?.includes('process_three_column_cash_book'));
+  assert.ok(lesson.parts[0].output?.includes('Closing Cash Balance: $9250.0'));
+
+  assert.match(lesson.parts[1].title, /Analytical Petty Cash.*Imprest/i);
+  assert.ok(lesson.parts[1].code?.includes('manage_imprest_petty_cash'));
+  assert.ok(lesson.parts[1].output?.includes('Remaining Float: $760.0'));
+
+  assert.match(lesson.parts[2].title, /Bank Overdraft.*Interest Accruals/i);
+  assert.ok(lesson.parts[2].code?.includes('calculate_bank_overdraft_interest'));
+  assert.ok(lesson.parts[2].output?.includes('Sanctioned Overdraft Limit: $25000.0'));
+
+  assert.match(lesson.parts[3].title, /Cheque Clearing.*Dishonour.*Stale/i);
+  assert.ok(lesson.parts[3].code?.includes('reconcile_dishonoured_and_stale_cheques'));
+  assert.ok(lesson.parts[3].output?.includes('Dishonoured Cheques Count: 1'));
+
+  assert.match(lesson.parts[4].title, /Cash Book Audit Trail.*General Ledger Closure/i);
+  assert.ok(lesson.parts[4].code?.includes('audit_and_post_cash_book_to_general_ledger'));
+  assert.ok(lesson.parts[4].output?.includes('Total Debits: $127700.0'));
+});
+
+test('Block 130: B.Com Accounting Day 7: Subsidiary Day Books & Control Account Reconciliation Snippets Verification', () => {
+  const lesson = getLongLesson('bcom-accounting', 7);
+  assert.ok(lesson);
+  assert.equal(lesson.day, 7);
+
+  assert.match(lesson.parts[0].title, /Purchases Day Book.*Trade Discounts/i);
+  assert.ok(lesson.parts[0].code?.includes('record_purchases_day_book'));
+  assert.ok(lesson.parts[0].output?.includes('Total Net Credit Purchases: $106975.0'));
+
+  assert.match(lesson.parts[1].title, /Sales Day Book.*Accounts Receivable/i);
+  assert.ok(lesson.parts[1].code?.includes('record_sales_day_book'));
+  assert.ok(lesson.parts[1].output?.includes('Total Net Credit Sales: $192940.0'));
+
+  assert.match(lesson.parts[2].title, /Returns Books.*Debit Notes vs Credit Notes/i);
+  assert.ok(lesson.parts[2].code?.includes('process_returns_and_memos'));
+  assert.ok(lesson.parts[2].output?.includes('Total Purchases Returns (Debit Notes): $4650.0'));
+
+  assert.match(lesson.parts[3].title, /Bills Receivable & Bills Payable Registers/i);
+  assert.ok(lesson.parts[3].code?.includes('manage_bills_registers'));
+  assert.ok(lesson.parts[3].output?.includes('Contingent Liability (Discounted BR): $40000.0'));
+
+  assert.match(lesson.parts[4].title, /Control Accounts & Subsidiary Ledger Reconciliation/i);
+  assert.ok(lesson.parts[4].code?.includes('reconcile_subsidiary_ledgers_with_gl'));
+  assert.ok(lesson.parts[4].output?.includes('Accounts Receivable Reconciliation: PASS EQUILIBRIUM'));
+});
+
+test('Block 130: B.Com Accounting Day 8: Bank Reconciliation Statement (BRS) Snippets Verification', () => {
+  const lesson = getLongLesson('bcom-accounting', 8);
+  assert.ok(lesson);
+  assert.equal(lesson.day, 8);
+
+  assert.match(lesson.parts[0].title, /Bank Reconciliation Statement Fundamentals/i);
+  assert.ok(lesson.parts[0].code?.includes('prepare_bank_reconciliation_statement'));
+  assert.ok(lesson.parts[0].output?.includes('Reconciled Balance as per Pass Book: $51500.0'));
+
+  assert.match(lesson.parts[1].title, /Corrected Cash Book Protocol/i);
+  assert.ok(lesson.parts[1].code?.includes('compute_adjusted_cash_book_and_final_brs'));
+  assert.ok(lesson.parts[1].output?.includes('Adjusted Cash Book (New True Balance): $47200.0'));
+
+  assert.match(lesson.parts[2].title, /Bank Overdraft BRS Inversion/i);
+  assert.ok(lesson.parts[2].code?.includes('reconcile_bank_overdraft_brs'));
+  assert.ok(lesson.parts[2].output?.includes('Reconciled Overdraft as per Pass Book: $22800.0'));
+
+  assert.match(lesson.parts[3].title, /Error Detection & Classification.*Cash Book vs Commercial Bank/i);
+  assert.ok(lesson.parts[3].code?.includes('audit_and_classify_bank_reconciliation_errors'));
+  assert.ok(lesson.parts[3].output?.includes('Cash Book Internal Errors: 2'));
+
+  assert.match(lesson.parts[4].title, /Continuous Automated Reconciliation Pipelines/i);
+  assert.ok(lesson.parts[4].code?.includes('run_continuous_bank_reconciliation_pipeline'));
+  assert.ok(lesson.parts[4].output?.includes('Matched Transactions: 3 (75.0%)'));
+});
+
+test('Block 130: B.Com Accounting Day 9: Trial Balance Arithmetic Checksum & Error Detection Snippets Verification', () => {
+  const lesson = getLongLesson('bcom-accounting', 9);
+  assert.ok(lesson);
+  assert.equal(lesson.day, 9);
+
+  assert.match(lesson.parts[0].title, /Trial Balance Architecture.*Closing Balances/i);
+  assert.ok(lesson.parts[0].code?.includes('extract_and_balance_trial_balance'));
+  assert.ok(lesson.parts[0].output?.includes('Total Debits: $602000.0'));
+
+  assert.match(lesson.parts[1].title, /Taxonomy of Accounting Errors.*Disclosed vs Undisclosed/i);
+  assert.ok(lesson.parts[1].code?.includes('classify_and_diagnose_accounting_errors'));
+  assert.ok(lesson.parts[1].output?.includes('Disclosed Errors Count: 2'));
+
+  assert.match(lesson.parts[2].title, /Forensic Checksum Analysis.*Transposition/i);
+  assert.ok(lesson.parts[2].code?.includes('run_forensic_trial_balance_checksum'));
+  assert.ok(lesson.parts[2].output?.includes('Divisible by 9: True'));
+
+  assert.match(lesson.parts[3].title, /Compilation Methodologies.*Gross Totals.*Net Balances/i);
+  assert.ok(lesson.parts[3].code?.includes('compare_trial_balance_compilation_methods'));
+  assert.ok(lesson.parts[3].output?.includes('Balance Method: Debit=$230000.0'));
+
+  assert.match(lesson.parts[4].title, /Pre-Closing Diagnostic Control Tower/i);
+  assert.ok(lesson.parts[4].code?.includes('generate_pre_closing_trial_balance_dossier'));
+  assert.ok(lesson.parts[4].output?.includes('Audit Readiness Score: 100.0/100'));
+});
+
+test('Block 130: B.Com Accounting Day 10 Capstone: Rectification of Errors, Suspense Account & IAS 8 Snippets Verification', () => {
+  const lesson = getLongLesson('bcom-accounting', 10);
+  assert.ok(lesson);
+  assert.equal(lesson.day, 10);
+
+  assert.match(lesson.parts[0].title, /Stages of Error Rectification/i);
+  assert.ok(lesson.parts[0].code?.includes('rectify_errors_by_accounting_stage'));
+  assert.ok(lesson.parts[0].output?.includes('Total Error Stages Rectified: 3'));
+
+  assert.match(lesson.parts[1].title, /Suspense Account Lifecycle.*Zero-Balance/i);
+  assert.ok(lesson.parts[1].code?.includes('manage_suspense_account_lifecycle'));
+  assert.ok(lesson.parts[1].output?.includes('Suspense Fully Liquidated (Zero Balance): True'));
+
+  assert.match(lesson.parts[2].title, /Two-Sided Error Rectification Matrix/i);
+  assert.ok(lesson.parts[2].code?.includes('rectify_two_sided_errors_matrix'));
+  assert.ok(lesson.parts[2].output?.includes('Total Two-Sided Errors Rectified: 3'));
+
+  assert.match(lesson.parts[3].title, /Prior Period Error Adjustments.*IAS 8/i);
+  assert.ok(lesson.parts[3].code?.includes('model_prior_period_pnl_adjustment_waterfall'));
+  assert.ok(lesson.parts[3].output?.includes('Restated Opening Retained Earnings: $428250.0'));
+
+  assert.match(lesson.parts[4].title, /Milestone 2 Capstone.*Financial Controller Accreditation/i);
+  assert.ok(lesson.parts[4].code?.includes('generate_milestone2_capstone_accreditation_dossier'));
+  assert.ok(lesson.parts[4].output?.includes('CERTIFIED_ENTERPRISE_FINANCIAL_CONTROLLER'));
+});
+
+test('Block 130: B.Com Accounting Days 6-10 Gate v2 Visual JSON Integrity Verification', () => {
+  const fs = require('fs');
+  const path = require('path');
+  const crypto = require('crypto');
+
+  for (let d = 6; d <= 10; d++) {
+    const pad = String(d).padStart(2, '0');
+    const visPath = path.join(__dirname, `../src/lib/data/lessonVisuals/bcom-accounting/day-${pad}.json`);
+    assert.ok(fs.existsSync(visPath), `Visual JSON must exist for Day ${d}`);
+
+    const vis = JSON.parse(fs.readFileSync(visPath, 'utf8'));
+    assert.equal(vis.prefix, 'bcom-accounting');
+    assert.equal(vis.day, d);
+    assert.equal(vis.entries.length, 5, `Day ${d} visual must contain exactly 5 entries`);
+
+    const lesson = getLongLesson('bcom-accounting', d);
+    for (let i = 0; i < 5; i++) {
+      const entry = vis.entries[i];
+      const part = lesson.parts[i];
+
+      assert.equal(entry.spec.template, 'ledger-sheet', `Day ${d} Part ${i + 1} must use ledger-sheet template`);
+      assert.ok(entry.spec.steps.length >= 3, `Day ${d} Part ${i + 1} visual must have >= 3 steps`);
+
+      // Verify SHA-256 binding between code and visual entry
+      const expectedHash = crypto.createHash('sha256').update(part.code).digest('hex');
+      assert.equal(entry.codeHash, expectedHash, `Day ${d} Part ${i + 1} visual codeHash must match actual part.code`);
+    }
+  }
+});
+
+
 
 
 
