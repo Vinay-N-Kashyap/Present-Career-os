@@ -56,6 +56,28 @@ def calibrate_sentences(paragraphs, min_words=585, max_words=605):
             
     return result_paras
 
+def make_part(title, say_paragraphs, example, code, output, codeNotes, tryIt, check_q, check_opts, check_ans, check_why):
+    calibrated_say = calibrate_sentences(say_paragraphs, min_words=585, max_words=600)
+    say_words = sum(len(p.split()) for p in calibrated_say)
+    all_words = say_words + len(example.split()) + len(tryIt.split()) + len(check_why.split())
+    return {
+        "title": title,
+        "say": calibrated_say,
+        "example": example,
+        "code": code,
+        "output": output,
+        "codeNotes": codeNotes,
+        "check": {
+            "question": check_q,
+            "options": check_opts,
+            "answer": check_ans,
+            "why": check_why
+        },
+        "tryIt": tryIt,
+        "_sayWords": say_words,
+        "_allWords": all_words
+    }
+
 def print_day_stats(day_obj):
     print(f"=== Day {day_obj['day']}: {day_obj['title']} ===")
     say_words_list = []
