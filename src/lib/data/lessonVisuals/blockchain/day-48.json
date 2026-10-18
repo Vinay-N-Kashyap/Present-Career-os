@@ -1,0 +1,669 @@
+{
+  "schemaVersion": 1,
+  "prefix": "blockchain",
+  "day": 48,
+  "promptSha": "aee5af6d5dce2af84abf93a8eb9370fee962996cdbf017a11675c17d66f7a272",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "ZK-Rollup Validity Proofs & Succinct Verification ($O(1)$ Verification Gas)",
+      "codeHash": "c5c304ce530bc16f8275d4063a7a5dd5b770a8f2249a872212cb029d385ececc",
+      "spec": {
+        "template": "sequence",
+        "title": "ZK-Rollup Validity Proofs & Succinct Verification ($O(1)$ Verification Gas) — Layer 2 Scaling & Verification Sequence",
+        "actors": [
+          "L2 Batch Aggregator",
+          "GPU ZK Prover Cluster",
+          "L1 Verifier Contract (0x08)",
+          "Immediate Exit Vault"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingestion and initialization of L2 state payload for ZK-Rollup Validity Proofs & Su...",
+            "activeActor": "L2 Batch Aggregator",
+            "messages": [
+              {
+                "from": "L2 Batch Aggregator",
+                "to": "GPU ZK Prover Cluster",
+                "label": "submitBatchOrTx(preparePayload) [Phase 1]",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Engine verifies data availability, state transition, and routing",
+            "activeActor": "GPU ZK Prover Cluster",
+            "messages": [
+              {
+                "from": "GPU ZK Prover Cluster",
+                "to": "L1 Verifier Contract (0x08)",
+                "label": "executeProofOrBisection(verifyConstraint) [Phase 2]",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of mathematical validity, fraud challenge, or KZG opening",
+            "activeActor": "L1 Verifier Contract (0x08)",
+            "messages": [
+              {
+                "from": "L1 Verifier Contract (0x08)",
+                "to": "Immediate Exit Vault",
+                "label": "settleOrSlash(verifyOnL1) [Phase 3]",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Canonical state settled on Layer 1; invariant verified and committed",
+            "activeActor": "GPU ZK Prover Cluster",
+            "messages": [
+              {
+                "from": "GPU ZK Prover Cluster",
+                "to": "L2 Batch Aggregator",
+                "label": "StateFinalized(securityInherited ✓)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "ZK-Rollup Validity Proofs & Succinct Verification ($O(1)$ Verification Gas) — Layer 2 Scaling & Verification Sequence",
+        "actors": [
+          "L2 Batch Aggregator",
+          "GPU ZK Prover Cluster",
+          "L1 Verifier Contract (0x08)",
+          "Immediate Exit Vault"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingestion and initialization of L2 state payload for ZK-Rollup Validity Proofs & Su...",
+            "activeActor": "L2 Batch Aggregator",
+            "messages": [
+              {
+                "from": "L2 Batch Aggregator",
+                "to": "GPU ZK Prover Cluster",
+                "label": "submitBatchOrTx(preparePayload) [Phase 1]",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Engine verifies data availability, state transition, and routing",
+            "activeActor": "GPU ZK Prover Cluster",
+            "messages": [
+              {
+                "from": "GPU ZK Prover Cluster",
+                "to": "L1 Verifier Contract (0x08)",
+                "label": "executeProofOrBisection(verifyConstraint) [Phase 2]",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of mathematical validity, fraud challenge, or KZG opening",
+            "activeActor": "L1 Verifier Contract (0x08)",
+            "messages": [
+              {
+                "from": "L1 Verifier Contract (0x08)",
+                "to": "Immediate Exit Vault",
+                "label": "settleOrSlash(verifyOnL1) [Phase 3]",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Canonical state settled on Layer 1; invariant verified and committed",
+            "activeActor": "GPU ZK Prover Cluster",
+            "messages": [
+              {
+                "from": "GPU ZK Prover Cluster",
+                "to": "L2 Batch Aggregator",
+                "label": "StateFinalized(securityInherited ✓)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Vitalik's zkEVM Taxonomy: Type 1 to Type 4 Equivalence vs Performance",
+      "codeHash": "119749b7fb92df26470f933a37bfcd3c61f8e4fd7586c350f9f7de709cbd4f6e",
+      "spec": {
+        "template": "sequence",
+        "title": "Vitalik's zkEVM Taxonomy: Type 1 to Type 4 Equivalence vs Performance — Layer 2 Scaling & Verification Sequence",
+        "actors": [
+          "L2 Batch Aggregator",
+          "GPU ZK Prover Cluster",
+          "L1 Verifier Contract (0x08)",
+          "Immediate Exit Vault"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingestion and initialization of L2 state payload for Vitalik's zkEVM Taxonomy: Type...",
+            "activeActor": "L2 Batch Aggregator",
+            "messages": [
+              {
+                "from": "L2 Batch Aggregator",
+                "to": "GPU ZK Prover Cluster",
+                "label": "submitBatchOrTx(preparePayload) [Phase 1]",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Engine verifies data availability, state transition, and routing",
+            "activeActor": "GPU ZK Prover Cluster",
+            "messages": [
+              {
+                "from": "GPU ZK Prover Cluster",
+                "to": "L1 Verifier Contract (0x08)",
+                "label": "executeProofOrBisection(verifyConstraint) [Phase 2]",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of mathematical validity, fraud challenge, or KZG opening",
+            "activeActor": "L1 Verifier Contract (0x08)",
+            "messages": [
+              {
+                "from": "L1 Verifier Contract (0x08)",
+                "to": "Immediate Exit Vault",
+                "label": "settleOrSlash(verifyOnL1) [Phase 3]",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Canonical state settled on Layer 1; invariant verified and committed",
+            "activeActor": "GPU ZK Prover Cluster",
+            "messages": [
+              {
+                "from": "GPU ZK Prover Cluster",
+                "to": "L2 Batch Aggregator",
+                "label": "StateFinalized(securityInherited ✓)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Vitalik's zkEVM Taxonomy: Type 1 to Type 4 Equivalence vs Performance — Layer 2 Scaling & Verification Sequence",
+        "actors": [
+          "L2 Batch Aggregator",
+          "GPU ZK Prover Cluster",
+          "L1 Verifier Contract (0x08)",
+          "Immediate Exit Vault"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingestion and initialization of L2 state payload for Vitalik's zkEVM Taxonomy: Type...",
+            "activeActor": "L2 Batch Aggregator",
+            "messages": [
+              {
+                "from": "L2 Batch Aggregator",
+                "to": "GPU ZK Prover Cluster",
+                "label": "submitBatchOrTx(preparePayload) [Phase 1]",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Engine verifies data availability, state transition, and routing",
+            "activeActor": "GPU ZK Prover Cluster",
+            "messages": [
+              {
+                "from": "GPU ZK Prover Cluster",
+                "to": "L1 Verifier Contract (0x08)",
+                "label": "executeProofOrBisection(verifyConstraint) [Phase 2]",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of mathematical validity, fraud challenge, or KZG opening",
+            "activeActor": "L1 Verifier Contract (0x08)",
+            "messages": [
+              {
+                "from": "L1 Verifier Contract (0x08)",
+                "to": "Immediate Exit Vault",
+                "label": "settleOrSlash(verifyOnL1) [Phase 3]",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Canonical state settled on Layer 1; invariant verified and committed",
+            "activeActor": "GPU ZK Prover Cluster",
+            "messages": [
+              {
+                "from": "GPU ZK Prover Cluster",
+                "to": "L2 Batch Aggregator",
+                "label": "StateFinalized(securityInherited ✓)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Detective Lab: The Data Availability Problem & State Diffs",
+      "codeHash": "f8b0ca6f08279e6004ece4ed2efc0198cc507833485debe0cd4526c4c80a3598",
+      "spec": {
+        "template": "sequence",
+        "title": "Detective Lab: The Data Availability Problem & State Diffs — Layer 2 Scaling & Verification Sequence",
+        "actors": [
+          "L2 Batch Aggregator",
+          "GPU ZK Prover Cluster",
+          "L1 Verifier Contract (0x08)",
+          "Immediate Exit Vault"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingestion and initialization of L2 state payload for Detective Lab: The Data Availa...",
+            "activeActor": "L2 Batch Aggregator",
+            "messages": [
+              {
+                "from": "L2 Batch Aggregator",
+                "to": "GPU ZK Prover Cluster",
+                "label": "submitBatchOrTx(preparePayload) [Phase 1]",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Engine verifies data availability, state transition, and routing",
+            "activeActor": "GPU ZK Prover Cluster",
+            "messages": [
+              {
+                "from": "GPU ZK Prover Cluster",
+                "to": "L1 Verifier Contract (0x08)",
+                "label": "executeProofOrBisection(verifyConstraint) [Phase 2]",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of mathematical validity, fraud challenge, or KZG opening",
+            "activeActor": "L1 Verifier Contract (0x08)",
+            "messages": [
+              {
+                "from": "L1 Verifier Contract (0x08)",
+                "to": "Immediate Exit Vault",
+                "label": "settleOrSlash(verifyOnL1) [Phase 3]",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Canonical state settled on Layer 1; invariant verified and committed",
+            "activeActor": "GPU ZK Prover Cluster",
+            "messages": [
+              {
+                "from": "GPU ZK Prover Cluster",
+                "to": "L2 Batch Aggregator",
+                "label": "StateFinalized(securityInherited ✓)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Detective Lab: The Data Availability Problem & State Diffs — Layer 2 Scaling & Verification Sequence",
+        "actors": [
+          "L2 Batch Aggregator",
+          "GPU ZK Prover Cluster",
+          "L1 Verifier Contract (0x08)",
+          "Immediate Exit Vault"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingestion and initialization of L2 state payload for Detective Lab: The Data Availa...",
+            "activeActor": "L2 Batch Aggregator",
+            "messages": [
+              {
+                "from": "L2 Batch Aggregator",
+                "to": "GPU ZK Prover Cluster",
+                "label": "submitBatchOrTx(preparePayload) [Phase 1]",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Engine verifies data availability, state transition, and routing",
+            "activeActor": "GPU ZK Prover Cluster",
+            "messages": [
+              {
+                "from": "GPU ZK Prover Cluster",
+                "to": "L1 Verifier Contract (0x08)",
+                "label": "executeProofOrBisection(verifyConstraint) [Phase 2]",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of mathematical validity, fraud challenge, or KZG opening",
+            "activeActor": "L1 Verifier Contract (0x08)",
+            "messages": [
+              {
+                "from": "L1 Verifier Contract (0x08)",
+                "to": "Immediate Exit Vault",
+                "label": "settleOrSlash(verifyOnL1) [Phase 3]",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Canonical state settled on Layer 1; invariant verified and committed",
+            "activeActor": "GPU ZK Prover Cluster",
+            "messages": [
+              {
+                "from": "GPU ZK Prover Cluster",
+                "to": "L2 Batch Aggregator",
+                "label": "StateFinalized(securityInherited ✓)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Elliptic Curve Pairing Checks & Groth16 Verification Precompiles (0x08)",
+      "codeHash": "8613b206eef3530d23e303dbab83d7a5f238ca2a59cce36b9d97d292d084db11",
+      "spec": {
+        "template": "sequence",
+        "title": "Elliptic Curve Pairing Checks & Groth16 Verification Precompiles (0x08) — Layer 2 Scaling & Verification Sequence",
+        "actors": [
+          "L2 Batch Aggregator",
+          "GPU ZK Prover Cluster",
+          "L1 Verifier Contract (0x08)",
+          "Immediate Exit Vault"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingestion and initialization of L2 state payload for Elliptic Curve Pairing Checks ...",
+            "activeActor": "L2 Batch Aggregator",
+            "messages": [
+              {
+                "from": "L2 Batch Aggregator",
+                "to": "GPU ZK Prover Cluster",
+                "label": "submitBatchOrTx(preparePayload) [Phase 1]",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Engine verifies data availability, state transition, and routing",
+            "activeActor": "GPU ZK Prover Cluster",
+            "messages": [
+              {
+                "from": "GPU ZK Prover Cluster",
+                "to": "L1 Verifier Contract (0x08)",
+                "label": "executeProofOrBisection(verifyConstraint) [Phase 2]",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of mathematical validity, fraud challenge, or KZG opening",
+            "activeActor": "L1 Verifier Contract (0x08)",
+            "messages": [
+              {
+                "from": "L1 Verifier Contract (0x08)",
+                "to": "Immediate Exit Vault",
+                "label": "settleOrSlash(verifyOnL1) [Phase 3]",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Canonical state settled on Layer 1; invariant verified and committed",
+            "activeActor": "GPU ZK Prover Cluster",
+            "messages": [
+              {
+                "from": "GPU ZK Prover Cluster",
+                "to": "L2 Batch Aggregator",
+                "label": "StateFinalized(securityInherited ✓)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Elliptic Curve Pairing Checks & Groth16 Verification Precompiles (0x08) — Layer 2 Scaling & Verification Sequence",
+        "actors": [
+          "L2 Batch Aggregator",
+          "GPU ZK Prover Cluster",
+          "L1 Verifier Contract (0x08)",
+          "Immediate Exit Vault"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingestion and initialization of L2 state payload for Elliptic Curve Pairing Checks ...",
+            "activeActor": "L2 Batch Aggregator",
+            "messages": [
+              {
+                "from": "L2 Batch Aggregator",
+                "to": "GPU ZK Prover Cluster",
+                "label": "submitBatchOrTx(preparePayload) [Phase 1]",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Engine verifies data availability, state transition, and routing",
+            "activeActor": "GPU ZK Prover Cluster",
+            "messages": [
+              {
+                "from": "GPU ZK Prover Cluster",
+                "to": "L1 Verifier Contract (0x08)",
+                "label": "executeProofOrBisection(verifyConstraint) [Phase 2]",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of mathematical validity, fraud challenge, or KZG opening",
+            "activeActor": "L1 Verifier Contract (0x08)",
+            "messages": [
+              {
+                "from": "L1 Verifier Contract (0x08)",
+                "to": "Immediate Exit Vault",
+                "label": "settleOrSlash(verifyOnL1) [Phase 3]",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Canonical state settled on Layer 1; invariant verified and committed",
+            "activeActor": "GPU ZK Prover Cluster",
+            "messages": [
+              {
+                "from": "GPU ZK Prover Cluster",
+                "to": "L2 Batch Aggregator",
+                "label": "StateFinalized(securityInherited ✓)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production ZK-Rollup Settlement Suite & Immediate Finality",
+      "codeHash": "76f815a29dfc9be28af19f5b4e8f992d9e85d2def8ad5c37a89043067be56024",
+      "spec": {
+        "template": "sequence",
+        "title": "Production ZK-Rollup Settlement Suite & Immediate Finality — Layer 2 Scaling & Verification Sequence",
+        "actors": [
+          "L2 Batch Aggregator",
+          "GPU ZK Prover Cluster",
+          "L1 Verifier Contract (0x08)",
+          "Immediate Exit Vault"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingestion and initialization of L2 state payload for Production ZK-Rollup Settlemen...",
+            "activeActor": "L2 Batch Aggregator",
+            "messages": [
+              {
+                "from": "L2 Batch Aggregator",
+                "to": "GPU ZK Prover Cluster",
+                "label": "submitBatchOrTx(preparePayload) [Phase 1]",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Engine verifies data availability, state transition, and routing",
+            "activeActor": "GPU ZK Prover Cluster",
+            "messages": [
+              {
+                "from": "GPU ZK Prover Cluster",
+                "to": "L1 Verifier Contract (0x08)",
+                "label": "executeProofOrBisection(verifyConstraint) [Phase 2]",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of mathematical validity, fraud challenge, or KZG opening",
+            "activeActor": "L1 Verifier Contract (0x08)",
+            "messages": [
+              {
+                "from": "L1 Verifier Contract (0x08)",
+                "to": "Immediate Exit Vault",
+                "label": "settleOrSlash(verifyOnL1) [Phase 3]",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Canonical state settled on Layer 1; invariant verified and committed",
+            "activeActor": "GPU ZK Prover Cluster",
+            "messages": [
+              {
+                "from": "GPU ZK Prover Cluster",
+                "to": "L2 Batch Aggregator",
+                "label": "StateFinalized(securityInherited ✓)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Production ZK-Rollup Settlement Suite & Immediate Finality — Layer 2 Scaling & Verification Sequence",
+        "actors": [
+          "L2 Batch Aggregator",
+          "GPU ZK Prover Cluster",
+          "L1 Verifier Contract (0x08)",
+          "Immediate Exit Vault"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingestion and initialization of L2 state payload for Production ZK-Rollup Settlemen...",
+            "activeActor": "L2 Batch Aggregator",
+            "messages": [
+              {
+                "from": "L2 Batch Aggregator",
+                "to": "GPU ZK Prover Cluster",
+                "label": "submitBatchOrTx(preparePayload) [Phase 1]",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Engine verifies data availability, state transition, and routing",
+            "activeActor": "GPU ZK Prover Cluster",
+            "messages": [
+              {
+                "from": "GPU ZK Prover Cluster",
+                "to": "L1 Verifier Contract (0x08)",
+                "label": "executeProofOrBisection(verifyConstraint) [Phase 2]",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of mathematical validity, fraud challenge, or KZG opening",
+            "activeActor": "L1 Verifier Contract (0x08)",
+            "messages": [
+              {
+                "from": "L1 Verifier Contract (0x08)",
+                "to": "Immediate Exit Vault",
+                "label": "settleOrSlash(verifyOnL1) [Phase 3]",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Canonical state settled on Layer 1; invariant verified and committed",
+            "activeActor": "GPU ZK Prover Cluster",
+            "messages": [
+              {
+                "from": "GPU ZK Prover Cluster",
+                "to": "L2 Batch Aggregator",
+                "label": "StateFinalized(securityInherited ✓)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
