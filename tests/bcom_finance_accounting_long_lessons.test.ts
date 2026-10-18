@@ -1646,4 +1646,251 @@ test('Block 134: B.Com Accounting Days 26-30 Gate v2 Visual JSON Integrity Verif
   }
 });
 
+// ============================================================================
+// BLOCK 135: B.COM FINANCE DAYS 6-10 (MILESTONE 2 CAPSTONE: TASK-1424..1428)
+// ============================================================================
+
+test('Block 135: B.Com Finance Days 6-10 Structural & Invariant Verification', () => {
+  for (let d = 6; d <= 10; d++) {
+    const lesson = getLongLesson('bcom-finance', d);
+    assert.ok(lesson, `bcom-finance Day ${d} lesson must be defined`);
+    assert.equal(lesson.coursePrefix, 'bcom-finance');
+    assert.equal(lesson.day, d);
+    assert.equal(lesson.parts.length, 5, `Day ${d} must contain exactly 5 parts`);
+    assert.equal(getLongLessonLanguage('bcom-finance'), 'python');
+
+    const expectedMinutes = d === 10 ? 50 : 45;
+    assert.equal(lesson.minutes, expectedMinutes, `Day ${d} duration must be ${expectedMinutes} min`);
+
+    const spoken = estimateSpokenMinutes(lesson);
+    assert.ok(spoken >= 8, `Day ${d} spoken minutes (${spoken}) must be >= 8`);
+    const total = estimateLessonMinutes(lesson);
+    assert.ok(total >= 15, `Day ${d} total lesson minutes (${total}) must be >= 15`);
+
+    assert.ok(lesson.summary && lesson.summary.length >= 5, `Day ${d} summary must have >= 5 items`);
+    assert.ok(lesson.projectStep && lesson.projectStep.title && lesson.projectStep.steps.length >= 5, `Day ${d} projectStep must have title and >= 5 steps`);
+
+    let totalWords = 0;
+    for (let i = 0; i < 5; i++) {
+      const part = lesson.parts[i];
+      assert.ok(part.title.length > 0, `Day ${d} Part ${i + 1} must have title`);
+      assert.ok(part.say.length >= 1, `Day ${d} Part ${i + 1} say must be non-empty`);
+      
+      const partWords = part.say.join(' ').split(/\s+/).filter(Boolean).length;
+      totalWords += partWords;
+      assert.ok(partWords >= 580, `Day ${d} Part ${i + 1} words (${partWords}) must be >= 580`);
+
+      assert.ok(part.code && part.code.length > 50, `Day ${d} Part ${i + 1} code must be non-empty`);
+      assert.ok(part.output && part.output.length > 10, `Day ${d} Part ${i + 1} output must be non-empty`);
+      assert.ok(part.example && part.example.length > 0, `Day ${d} Part ${i + 1} example must be non-empty`);
+      assert.ok(part.tryIt && part.tryIt.length > 0, `Day ${d} Part ${i + 1} tryIt must be non-empty`);
+
+      // Socratic check verification
+      const check = part.check as any;
+      assert.ok(check, `Day ${d} Part ${i + 1} check must be defined`);
+      assert.ok(check.question && check.question.length > 10, `Day ${d} Part ${i + 1} check question missing`);
+      assert.equal(check.options.length, 4, `Day ${d} Part ${i + 1} check must have exactly 4 options`);
+      assert.equal(check.answer, 0, `Day ${d} Part ${i + 1} answer must be index 0`);
+      assert.equal(check.answerIndex, 0, `Day ${d} Part ${i + 1} answerIndex must be index 0`);
+      assert.ok(check.why && check.why.length > 10, `Day ${d} Part ${i + 1} why missing`);
+      assert.equal(check.explanation, check.why, `Day ${d} Part ${i + 1} explanation must equal why`);
+    }
+
+    assert.ok(totalWords >= 2950, `Day ${d} total words (${totalWords}) must be >= 2950`);
+  }
+});
+
+test('Block 135: B.Com Finance Day 6: Bond Valuation & Fixed Income Pricing Snippets Verification', () => {
+  const lesson = getLongLesson('bcom-finance', 6);
+  assert.ok(lesson);
+  assert.equal(lesson.title, 'Bond Valuation: Pricing Fixed Income Securities & Coupon Pricing');
+
+  // Part 1: Bond pricing equation
+  assert.match(lesson.parts[0].title, /Bond Pricing Equation/i);
+  assert.ok(lesson.parts[0].code?.includes('BondValuationEngine'));
+  assert.ok(lesson.parts[0].output?.includes('FAIR VALUE PRICING AUDIT'));
+
+  // Part 2: Par, premium, discount
+  assert.match(lesson.parts[1].title, /Par, Premium & Discount Dynamics/i);
+  assert.ok(lesson.parts[1].code?.includes('BondPricingRelationshipEngine'));
+  assert.ok(lesson.parts[1].output?.includes('PREMIUM_BOND'));
+  assert.ok(lesson.parts[1].output?.includes('DISCOUNT_BOND'));
+
+  // Part 3: Clean vs dirty price
+  assert.match(lesson.parts[2].title, /Clean Price vs Dirty Price/i);
+  assert.ok(lesson.parts[2].code?.includes('SettlementPricingEngine'));
+  assert.ok(lesson.parts[2].output?.includes('Total Invoice Price'));
+
+  // Part 4: Zero-coupon bond
+  assert.match(lesson.parts[3].title, /Zero-Coupon Bond Pricing/i);
+  assert.ok(lesson.parts[3].code?.includes('ZeroCouponBondEngine'));
+  assert.ok(lesson.parts[3].output?.includes('Implied Yield: 10.0%'));
+
+  // Part 5: Master portfolio engine
+  assert.match(lesson.parts[4].title, /Enterprise Fixed Income Portfolio Valuation/i);
+  assert.ok(lesson.parts[4].code?.includes('InstitutionalFixedIncomeMasterEngine'));
+  assert.ok(lesson.parts[4].output?.includes('PORTFOLIO_MARK_TO_MARKET_AUDIT_VERIFIED'));
+});
+
+test('Block 135: B.Com Finance Day 7: Yield to Maturity (YTM) & Approximation Snippets Verification', () => {
+  const lesson = getLongLesson('bcom-finance', 7);
+  assert.ok(lesson);
+  assert.equal(lesson.title, 'Yield to Maturity (YTM) & Bond Yield Approximation');
+
+  // Part 1: Yield spectrum
+  assert.match(lesson.parts[0].title, /Yield Measures Spectrum/i);
+  assert.ok(lesson.parts[0].code?.includes('YieldSpectrumEngine'));
+  assert.ok(lesson.parts[0].output?.includes('Nominal Coupon Yield'));
+
+  // Part 2: Market approximation formula
+  assert.match(lesson.parts[1].title, /Standard Market YTM Approximation/i);
+  assert.ok(lesson.parts[1].code?.includes('YtmApproximationEngine'));
+  assert.ok(lesson.parts[1].output?.includes('Approximate YTM: 12.63%'));
+
+  // Part 3: Exact solver
+  assert.match(lesson.parts[2].title, /Exact Yield to Maturity Numerical Solver/i);
+  assert.ok(lesson.parts[2].code?.includes('ExactYtmSolverEngine'));
+  assert.ok(lesson.parts[2].output?.includes('Exact YTM:    12.8277%'));
+
+  // Part 4: Yield decomposition
+  assert.match(lesson.parts[3].title, /Yield Decomposition: Current Yield & Capital Gains/i);
+  assert.ok(lesson.parts[3].code?.includes('YieldDecompositionEngine'));
+  assert.ok(lesson.parts[3].output?.includes('Current Income Yield:       8.42%'));
+  assert.ok(lesson.parts[3].output?.includes('Capital Gains Yield:       +3.16%'));
+
+  // Part 5: Yield curve diagnostics
+  assert.match(lesson.parts[4].title, /Yield Curve Structures/i);
+  assert.ok(lesson.parts[4].code?.includes('YieldCurveDiagnosticEngine'));
+  assert.ok(lesson.parts[4].output?.includes('INVERTED_YIELD_CURVE'));
+  assert.ok(lesson.parts[4].output?.includes('RECESSION_WARNING_HIGH_PROBABILITY'));
+});
+
+test('Block 135: B.Com Finance Day 8: Macaulay & Modified Duration Snippets Verification', () => {
+  const lesson = getLongLesson('bcom-finance', 8);
+  assert.ok(lesson);
+  assert.equal(lesson.title, 'Interest Rate Risk: Macaulay Duration & Modified Duration');
+
+  // Part 1: Macaulay duration
+  assert.match(lesson.parts[0].title, /Macaulay Duration: Cash Flow Timing/i);
+  assert.ok(lesson.parts[0].code?.includes('MacaulayDurationEngine'));
+  assert.ok(lesson.parts[0].output?.includes('Macaulay Duration:   2.74 Years'));
+  assert.ok(lesson.parts[0].output?.includes('Macaulay Duration:   5.00 Years'));
+
+  // Part 2: Modified duration
+  assert.match(lesson.parts[1].title, /Modified Duration: Percentage Price Sensitivity/i);
+  assert.ok(lesson.parts[1].code?.includes('ModifiedDurationEngine'));
+  assert.ok(lesson.parts[1].output?.includes('Modified Duration:   2.49% per 100 bps'));
+
+  // Part 3: Convexity
+  assert.match(lesson.parts[2].title, /Bond Convexity: Curvature Correction/i);
+  assert.ok(lesson.parts[2].code?.includes('BondConvexityEngine'));
+  assert.ok(lesson.parts[2].output?.includes('Convexity = 59.39'));
+
+  // Part 4: BPS estimator
+  assert.match(lesson.parts[3].title, /Bond Price Sensitivity Percentage Estimator/i);
+  assert.ok(lesson.parts[3].code?.includes('PriceSensitivityEstimator'));
+  assert.ok(lesson.parts[3].output?.includes('Est Price Change: -5.000%'));
+
+  // Part 5: ALM immunization
+  assert.match(lesson.parts[4].title, /Duration Immunization & Asset-Liability Management/i);
+  assert.ok(lesson.parts[4].code?.includes('DurationImmunizationEngine'));
+  assert.ok(lesson.parts[4].output?.includes('IMMUNIZED_BALANCED_PORTFOLIO'));
+});
+
+test('Block 135: B.Com Finance Day 9: Capital Budgeting & NPV Decision Rule Snippets Verification', () => {
+  const lesson = getLongLesson('bcom-finance', 9);
+  assert.ok(lesson);
+  assert.equal(lesson.title, 'Capital Budgeting: Net Present Value (NPV) Decision Rule');
+
+  // Part 1: NPV decision rule
+  assert.match(lesson.parts[0].title, /The NPV Decision Rule/i);
+  assert.ok(lesson.parts[0].code?.includes('NetPresentValueEngine'));
+  assert.ok(lesson.parts[0].output?.includes('Net Present Value: $+22,764.84'));
+  assert.ok(lesson.parts[0].output?.includes('ACCEPT_PROJECT_WEALTH_MAXIMIZING'));
+
+  // Part 2: FCFF & terminal salvage
+  assert.match(lesson.parts[1].title, /Free Cash Flow Modeling/i);
+  assert.ok(lesson.parts[1].code?.includes('FreeCashFlowEngine'));
+  assert.ok(lesson.parts[1].output?.includes('Net FCFF: $104,500.00 [Incl Terminal Salvage: $27,500.00]'));
+
+  // Part 3: Value additivity
+  assert.match(lesson.parts[2].title, /NPV Superiority Axioms & Value Additivity/i);
+  assert.ok(lesson.parts[2].code?.includes('ValueAdditivityEngine'));
+  assert.ok(lesson.parts[2].output?.includes('NPV VALUE ADDITIVITY CONFIRMED = True'));
+
+  // Part 4: Mutually exclusive selection
+  assert.match(lesson.parts[3].title, /Mutually Exclusive Project Selection/i);
+  assert.ok(lesson.parts[3].code?.includes('MutuallyExclusiveProjectEngine'));
+  assert.ok(lesson.parts[3].output?.includes('OPTIMAL SELECTION: PROJECT_A'));
+
+  // Part 5: Master capex suite
+  assert.match(lesson.parts[4].title, /Executive Capital Allocation Suite/i);
+  assert.ok(lesson.parts[4].code?.includes('ExecutiveCapitalBudgetingSuite'));
+  assert.ok(lesson.parts[4].output?.includes('APPROVED_VALUE_CREATING'));
+});
+
+test('Block 135: B.Com Finance Day 10 Capstone: IRR Bisection & Hurdle Benchmark Snippets Verification', () => {
+  const lesson = getLongLesson('bcom-finance', 10);
+  assert.ok(lesson);
+  assert.equal(lesson.title, 'Capital Budgeting: Internal Rate of Return (IRR) & Hurdle Rate Benchmark');
+
+  // Part 1: Bisection IRR engine
+  assert.match(lesson.parts[0].title, /Internal Rate of Return.*Bisection Engine/i);
+  assert.ok(lesson.parts[0].code?.includes('HighPrecisionIrrBisectionEngine'));
+  assert.ok(lesson.parts[0].output?.includes('Solved IRR:  13.07%'));
+  assert.ok(lesson.parts[0].output?.includes('Solved IRR: 100.00%'));
+
+  // Part 2: Hurdle benchmark & NPV profile
+  assert.match(lesson.parts[1].title, /Hurdle Rate Benchmark Testing/i);
+  assert.ok(lesson.parts[1].code?.includes('NpvProfileEngine'));
+  assert.ok(lesson.parts[1].output?.includes('Exact Solved IRR (NPV = 0):           13.07%'));
+
+  // Part 3: MIRR
+  assert.match(lesson.parts[2].title, /Modified Internal Rate of Return \(MIRR\)/i);
+  assert.ok(lesson.parts[2].code?.includes('ModifiedIrrEngine'));
+  assert.ok(lesson.parts[2].output?.includes('MODIFIED IRR (Realistic WACC Reinvestment):    12.25%'));
+
+  // Part 4: Capital rationing & PI
+  assert.match(lesson.parts[3].title, /Capital Rationing & Profitability Index/i);
+  assert.ok(lesson.parts[3].code?.includes('CapitalRationingOptimizer'));
+  assert.ok(lesson.parts[3].output?.includes('MAXIMIZED VALUE DENSITY UNDER HARD CAPEX CONSTRAINTS'));
+
+  // Part 5: Grand Milestone 2 Capstone
+  assert.match(lesson.parts[4].title, /Milestone 2 Capstone: Comprehensive Capital Budgeting Control Tower/i);
+  assert.ok(lesson.parts[4].code?.includes('Milestone2CapitalBudgetingControlTower'));
+  assert.ok(lesson.parts[4].output?.includes('TOTAL SHAREHOLDER WEALTH ADDED: $  +58,835.46'));
+  assert.ok(lesson.parts[4].output?.includes('MILESTONE_2_CFO_CAPITAL_ALLOCATION_CERTIFIED'));
+  assert.ok(lesson.parts[4].output?.includes('MILESTONE 2 COMPLETE: CAPITAL BUDGETING & VALUATION MASTER ATTAINED!'));
+});
+
+test('Block 135: B.Com Finance Days 6-10 Gate v2 Visual JSON Integrity Verification', () => {
+  const fs = require('fs');
+  const path = require('path');
+  const crypto = require('crypto');
+
+  for (let d = 6; d <= 10; d++) {
+    const pad = String(d).padStart(2, '0');
+    const visPath = path.join(__dirname, `../src/lib/data/lessonVisuals/bcom-finance/day-${pad}.json`);
+    assert.ok(fs.existsSync(visPath), `Visual JSON must exist for Day ${d}`);
+
+    const vis = JSON.parse(fs.readFileSync(visPath, 'utf8'));
+    assert.equal(vis.prefix, 'bcom-finance');
+    assert.equal(vis.day, d);
+    assert.equal(vis.entries.length, 5, `Day ${d} visual must contain exactly 5 entries`);
+
+    const lesson = getLongLesson('bcom-finance', d);
+    for (let i = 0; i < 5; i++) {
+      const entry = vis.entries[i];
+      const part = lesson.parts[i];
+
+      assert.equal(entry.spec.template, 'ledger-sheet', `Day ${d} Part ${i + 1} must use ledger-sheet template`);
+      assert.ok(entry.spec.steps.length >= 3, `Day ${d} Part ${i + 1} visual must have >= 3 steps`);
+
+      // Verify SHA-256 binding between code and visual entry
+      const expectedHash = crypto.createHash('sha256').update(part.code).digest('hex');
+      assert.equal(entry.codeHash, expectedHash, `Day ${d} Part ${i + 1} visual codeHash must match actual part.code`);
+    }
+  }
+});
+
 
