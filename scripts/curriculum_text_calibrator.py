@@ -383,6 +383,216 @@ DOMAIN_EXTENSIONS = {
             "This capstone achievement demonstrates your mastery of modern microservices, high-scale concurrency, asynchronous event streaming, and distributed fault tolerance.",
             "With 50 days of rigorous curriculum complete, you possess the elite architectural capabilities required to design, lead, and defend world-class distributed backend systems at global scale."
         ]
+    ],
+    51: [
+        # Part 1: Distributed Tracing & W3C TraceContext
+        [
+            "In modern cloud architectures, a single end-user interaction can fan out into dozens of asynchronous RPCs and database calls across distributed microservice boundaries.",
+            "Without distributed tracing, tracking down the root cause of an intermittent latency spike or transient failure across multi-tiered services requires searching through disparate server logs.",
+            "The W3C TraceContext specification standardizes the format of distributed trace identifiers, ensuring seamless interoperability across heterogeneous software stacks and polyglot microservices.",
+            "By embedding traceparent headers containing a version, a 16-byte trace ID, a parent 8-byte span ID, and trace flags, services maintain complete causal context across network hops.",
+            "Establishing standardized distributed tracing provides backend engineering teams with the granular visibility needed to diagnose bottlenecks and optimize distributed transaction paths."
+        ],
+        # Part 2: Contextvars & Asynchronous Propagation
+        [
+            "In Python's asynchronous ecosystem, passing active span context manually through every function argument clutters codebase interfaces and introduces subtle programmer errors.",
+            "Python 3.7 introduced the contextvars module, providing native coroutine-local storage that automatically flows across asyncio tasks, callbacks, and awaited coroutines.",
+            "By storing the active OpenTelemetry span within a context variable, downstream application logic can access, annotate, and extend the current span without explicit parameter threading.",
+            "When dispatching outgoing HTTP or gRPC requests, custom client interceptors extract the current trace context from contextvars and inject it into outbound wire headers.",
+            "Mastering contextvars-based propagation guarantees that distributed trace causality remains intact across complex asynchronous task hierarchies and concurrent event loops."
+        ],
+        # Part 3: Span Lifecycle & Semantic Attributes
+        [
+            "A span represents a discrete unit of work within a distributed trace, encapsulating an operation name, start and end timestamps, status codes, and structured attributes.",
+            "Adhering to OpenTelemetry semantic conventions ensures that attributes such as http.method, http.status_code, db.system, and rpc.service follow globally consistent naming standards.",
+            "When an operation encounters an unhandled exception, the span records the error event, captures the formatted stack trace, and marks its status code as Error.",
+            "Recording detailed telemetry attributes on spans enables site reliability engineers to perform multi-dimensional querying and outlier analysis across millions of production requests.",
+            "Rigorous span instrumentation empowers engineering organizations to pinpoint failing components within seconds during critical enterprise production incidents."
+        ],
+        # Part 4: Distributed Sampling Strategies
+        [
+            "Collecting 100% of distributed trace spans in high-throughput enterprise systems generates massive telemetry data volumes, resulting in prohibitive storage and network egress costs.",
+            "To balance observability depth with operational costs, distributed tracing frameworks employ sophisticated sampling strategies to selectively record representative subsets of traces.",
+            "Head-based probabilistic sampling makes an irrevocable recording decision at the ingress gateway, sampling a fixed percentage of incoming requests uniformly across the mesh.",
+            "Tail-based sampling buffers spans in memory across all nodes and makes a final sampling decision only after the request completes, guaranteeing that all errors and high-latency outliers are preserved.",
+            "Designing an effective sampling architecture ensures that observability backends capture actionable diagnostics for critical edge cases without saturating operational budgets."
+        ],
+        # Part 5: Multi-Service Tracing Pipeline Synthesis
+        [
+            "In this capstone tracing lab, we assemble a realistic multi-service request pipeline connecting an API Gateway, an Authentication Service, a Billing Service, and an In-Memory Database.",
+            "As an incoming request traverses each microservice hop, child spans are spawned, annotated with service-specific metadata, and linked to their common distributed trace root.",
+            "The resulting trace graph visualizes the end-to-end execution timeline, pinpointing exact processing latencies and isolating the specific component responsible for downstream delays.",
+            "By inspecting the unified distributed trace, developers can immediately determine whether a 200-millisecond delay was caused by network transit, database contention, or CPU bottlenecks.",
+            "Mastering end-to-end distributed tracing equips software engineers with the investigative capabilities required to manage and optimize mission-critical cloud microservices."
+        ]
+    ],
+    52: [
+        # Part 1: Metrics Architecture & The RED Method
+        [
+            "While distributed traces provide deep forensic inspection into individual request journeys, aggregate metrics provide real-time operational awareness across entire server fleets.",
+            "Tom Wilkie's RED Method provides an industry-standard framework for microservice monitoring, focusing on three core operational signals: Rate, Errors, and Duration.",
+            "Monitoring request Rate measures incoming operational throughput, revealing sudden traffic surges, bot-driven denial-of-service attempts, or unexpected client traffic drops.",
+            "Tracking Error counts enables instant alerting when downstream service failures, database disconnects, or unhandled exceptions breach service level objectives.",
+            "Measuring request Duration distributions exposes creeping performance degradation and latency anomalies before they impact large percentages of active platform users."
+        ],
+        # Part 2: Prometheus Counter & Gauge Primitives
+        [
+            "Prometheus organizes all numerical metrics into a multi-dimensional time series data model identified by metric names and key-value label pairs.",
+            "A Counter is a monotonically increasing metric that only increases or resets to zero upon application reboot, making it ideal for tracking total requests, completed orders, and error counts.",
+            "In contrast, a Gauge represents a numerical value that can arbitrarily increase and decrease over time, perfectly capturing active database connections, worker thread pools, and memory usage.",
+            "Prometheus scrapers poll application metric endpoints at regular intervals, computing rates of change over counters using mathematical PromQL functions like rate() and irate().",
+            "Understanding the distinct mathematical semantics of Counters and Gauges enables developers to model application telemetry accurately without introducing aggregation distortion."
+        ],
+        # Part 3: Histograms & Percentile Calculations
+        [
+            "Average latency calculations are notoriously misleading in distributed computing because extreme outliers are completely masked by large volumes of fast requests.",
+            "A Prometheus Histogram samples observed request durations and counts them into configurable, cumulative numerical buckets, enabling client-side percentile calculations.",
+            "By analyzing histogram bucket distributions via PromQL's histogram_quantile() function, SREs can calculate high-precision p50, p95, and p99 latency percentiles across cluster nodes.",
+            "Carefully tuning bucket boundaries ensures that histogram bucketing provides fine-grained resolution around critical SLA thresholds while minimizing metric storage overhead.",
+            "Mastering histogram instrumentation allows engineering teams to enforce strict percentile-based Service Level Agreements with absolute mathematical rigor."
+        ],
+        # Part 4: High-Cardinality Traps & Memory Protection
+        [
+            "The most dangerous pitfall in Prometheus metrics instrumentation is the accidental creation of high-cardinality label dimensions within high-volume production services.",
+            "Each unique combination of metric name and label key-value pairs creates a new, independent time series that consumes persistent memory within the Prometheus server.",
+            "Attaching unbounded identifiers—such as user IDs, order UUIDs, or email addresses—to metric labels causes an exponential explosion in active time series, crashing Prometheus servers with out-of-memory errors.",
+            "Defensive metrics engineering requires restricting labels to low-cardinality, bounded enumerations such as HTTP method, route template, and generalized status code classes.",
+            "Enforcing strict cardinality limits preserves monitoring cluster stability and guarantees reliable alerting during peak traffic events."
+        ],
+        # Part 5: Production RED Metrics Service Dashboard
+        [
+            "In this synthesis lab, we instrument an asynchronous e-commerce checkout service with a comprehensive, production-grade Prometheus RED metrics suite.",
+            "The service tracks total request throughput using labeled counters, monitors active concurrent transactions via gauges, and records response latencies using calibrated histograms.",
+            "Simulating a traffic spike accompanied by injected database slowdowns demonstrates how PromQL rate and quantile queries expose performance bottlenecks in real time.",
+            "By evaluating latency distributions against target SLA thresholds, the monitoring dashboard provides immediate visual confirmation of platform health and SLA compliance.",
+            "Mastering Prometheus metrics instrumentation empowers backend engineers to design robust operational observability suites that ensure continuous system reliability at scale."
+        ]
+    ],
+    53: [
+        # Part 1: Structured JSON Logging vs Plaintext
+        [
+            "In high-scale containerized microservice architectures, emitting unformatted plaintext log messages via standard print statements creates severe operational blind spots.",
+            "Modern centralized log aggregation engines—such as Elasticsearch, Grafana Loki, and AWS CloudWatch—rely on structured JSON formats to index and filter log streams efficiently.",
+            "Emitting logs as single-line JSON envelopes containing typed keys allows operators to execute sub-second filtered queries across billions of log lines from hundreds of containers.",
+            "Furthermore, structured logging guarantees schema consistency across diverse engineering teams, ensuring that timestamps, log levels, and messages adhere to corporate standards.",
+            "Adopting structured JSON logging transforms raw operational text streams into rich, searchable data warehouses that accelerate incident investigation and system auditing."
+        ],
+        # Part 2: Correlation IDs & Request Tracing
+        [
+            "When an incoming HTTP request triggers a multi-service chain of remote procedure calls, diagnosing an error requires correlating all associated log entries across services.",
+            "A Correlation ID is a globally unique identifier (UUIDv4) generated at the API gateway and passed across every internal service hop via the standard X-Correlation-ID header.",
+            "Every microservice participating in request processing extracts the correlation ID and binds it to its active execution context, stamping it onto every emitted log entry.",
+            "During a production outage, an on-call engineer can query the centralized logging platform using a single correlation ID to retrieve the complete cross-service execution story.",
+            "Implementing universal correlation ID propagation eliminates guesswork and slashes Mean Time to Resolution (MTTR) during complex distributed production incidents."
+        ],
+        # Part 3: Automated Context Injection via Contextvars
+        [
+            "Requiring application developers to manually attach correlation IDs and trace identifiers to every log call leads to missing context and fragile codebases.",
+            "In Python, we leverage contextvars and custom logging filters to inject contextual metadata into the log record automatically behind the scenes.",
+            "When a request arrives, middleware generates or extracts the correlation ID and stores it in a context variable, making it accessible to all coroutines in the current task.",
+            "The logging framework's formatting filter intercepts every log record, reads the active context variable, and embeds the correlation ID, user context, and span ID into the output JSON.",
+            "This automated enrichment pattern ensures that 100% of emitted log messages carry complete operational context without requiring repetitive boilerplate from developers."
+        ],
+        # Part 4: Automated PII Masking & Security Sanitization
+        [
+            "Emitting unredacted customer data—such as credit card numbers, passwords, authorization tokens, and personal email addresses—into application logs violates data privacy laws like GDPR and HIPAA.",
+            "Once sensitive data enters centralized log aggregators, it is permanently replicated across storage backups and exposed to broad internal engineering access.",
+            "To prevent data leakage, production logging pipelines must incorporate automated PII redaction filters that sanitize sensitive fields before serializing logs to stdout.",
+            "High-performance regex patterns scan log dictionary values, replacing credit card sequences, password strings, and bearer tokens with masked placeholders like [REDACTED].",
+            "Embedding automated sanitization directly into the logging pipeline guarantees enterprise compliance and shields customer privacy from accidental developer logging errors."
+        ],
+        # Part 5: Production Incident Triage & Log Query Lab
+        [
+            "In this practical forensics lab, we simulate an urgent production incident where an automated payment processing transaction fails intermittently under high concurrency.",
+            "By querying structured JSON logs using a specific customer correlation ID, we reconstruct the exact sequence of events leading up to the failed transaction.",
+            "The structured log trail reveals contextual metadata, captured error codes, and sanitized request parameters, exposing a transient database lock timeout.",
+            "Because sensitive payment credentials were automatically masked by our redaction filter, the forensic audit log remains fully compliant with security standards.",
+            "Mastering structured logging, correlation propagation, and automated sanitization equips backend architects to build transparent, secure, and easily debugged cloud applications."
+        ]
+    ],
+    54: [
+        # Part 1: Kubernetes Container Probes & Lifecycles
+        [
+            "In containerized orchestrators like Kubernetes, applications are dynamically scheduled, scaled, updated, and terminated across dynamic cloud server clusters.",
+            "To manage pod lifecycles safely without routing traffic to dead or unready containers, Kubernetes relies on three distinct HTTP health probe types.",
+            "The Liveness Probe checks whether the application process is running and responsive; if it fails repeatedly, Kubernetes terminates the container and restarts it.",
+            "The Readiness Probe determines whether the pod is currently capable of handling live customer traffic; if it fails, the pod is removed from service endpoints.",
+            "The Startup Probe protects slow-starting applications by disabling liveness and readiness checks until the initialization process has completed successfully."
+        ],
+        # Part 2: Shallow vs Deep Health Check Architecture
+        [
+            "A critical architectural decision in health check design is the distinction between Shallow health checks and Deep health checks.",
+            "A Shallow health check verifies only internal process responsiveness, returning HTTP 200 immediately without executing external network queries.",
+            "In contrast, a Deep health check verifies connectivity to backing databases, message brokers, and third-party APIs by executing live test queries.",
+            "Using deep health checks for Kubernetes readiness probes is a dangerous antipattern: if a primary database slows down, all pods fail their readiness checks simultaneously, taking down the entire service mesh.",
+            "Best practice dictates using shallow probes for routine Kubernetes routing, reserving deep health checks for specialized synthetic monitoring and diagnostic dashboards."
+        ],
+        # Part 3: Graceful Shutdown & POSIX Signal Handling
+        [
+            "When Kubernetes scales down a deployment or performs a rolling update, it initiates container termination by sending a POSIX SIGTERM signal to the main process.",
+            "If an application terminates abruptly upon receiving SIGTERM, all in-flight HTTP requests and database transactions are severed, resulting in dropped client connections and 502 Bad Gateway errors.",
+            "A graceful shutdown handler intercepts the SIGTERM signal, transitions the pod's readiness probe to failing (HTTP 503), and stops accepting new incoming connections.",
+            "The application then allows a configured grace period (such as 15 or 30 seconds) for existing in-flight requests to complete execution and commit transactions cleanly.",
+            "Engineering robust signal handling ensures that microservices achieve zero-downtime rolling updates without dropping a single user transaction."
+        ],
+        # Part 4: Connection Draining & TCP Keep-Alive
+        [
+            "During rolling deployments, ingress load balancers and Kubernetes kube-proxy require several seconds to update iptables rules and remove terminating pods from routing tables.",
+            "Because load balancers may continue forwarding new TCP connections for a brief window after SIGTERM, terminating pods must continue serving new requests during this buffer.",
+            "Furthermore, clients utilizing HTTP persistent keep-alive connections will continue reusing existing open sockets unless the server explicitly closes them.",
+            "During graceful draining, the server sends 'Connection: close' headers on all response messages, signaling clients and proxies to gracefully terminate persistent sockets.",
+            "Coordinating connection draining with Kubernetes termination grace periods prevents race conditions and ensures smooth traffic handover to newly launched pods."
+        ],
+        # Part 5: Rolling Deployment Zero-Downtime Verification
+        [
+            "In this production SRE lab, we simulate a Kubernetes rolling update of a high-throughput API gateway under continuous synthetic customer traffic.",
+            "The test harness injects a SIGTERM termination signal into an active container while concurrently measuring request success rates and latency.",
+            "The service smoothly transitions readiness state, drains in-flight requests within the configured timeout window, and completes clean resource teardown with zero dropped connections.",
+            "Throughout the entire deployment sequence, synthetic client requests achieve a 100% success rate with zero 502 Bad Gateway or connection reset errors.",
+            "Mastering Kubernetes probes, shallow health checks, and graceful draining mechanics allows engineers to deploy code continuously into production with absolute confidence."
+        ]
+    ],
+    55: [
+        # Part 1: Milestone 10 Architecture & Telemetry Contracts
+        [
+            "Welcome to Milestone 10! In this capstone engineering project, you synthesize the advanced observability, SRE telemetry, and resilience principles of Block 11 into a unified production harness.",
+            "Industrial cloud backends require a cohesive operational plane where traces, metrics, structured logs, and lifecycle probes reinforce one another to provide complete system transparency.",
+            "The Milestone 10 architecture establishes strict telemetry contracts: every request generates an OpenTelemetry trace, updates Prometheus RED metrics, and produces correlated JSON logs.",
+            "Furthermore, the service integrates robust Kubernetes health probe endpoints and automated SIGTERM graceful draining to ensure seamless rolling updates under load.",
+            "Synthesizing these disparate operational capabilities creates an enterprise-grade backend foundation that guarantees maximum availability and rapid incident recovery."
+        ],
+        # Part 2: Trace-to-Log Correlation Mechanics
+        [
+            "The holy grail of modern observability is the seamless correlation between distributed traces and structured application log records.",
+            "When an engineer inspects a high-latency trace span in an observability UI, they must be able to click directly into the detailed debug logs emitted by that specific operation.",
+            "Milestone 10 accomplishes this by injecting the active OpenTelemetry Trace ID and Span ID into every structured JSON log entry via asynchronous context variables.",
+            "When an exception occurs deep inside a nested coroutine, the structured error log automatically carries the exact trace identifier, enabling instant cross-system navigation.",
+            "Bridging traces and logs through automated identifier binding dramatically accelerates root cause analysis and eliminates frustrating log-hunting during critical outages."
+        ],
+        # Part 3: Real-Time RED Metrics Aggregation Engine
+        [
+            "To provide immediate operational feedback without overwhelming metrics storage, Milestone 10 integrates an in-memory RED metrics aggregation engine.",
+            "The engine tracks request throughput rates using atomic counters, monitors active concurrent requests via gauges, and calculates precise p50, p95, and p99 latencies using histogram buckets.",
+            "All metric dimensions are strictly bounded to low-cardinality enumerations, protecting monitoring backends from memory exhaustion during unexpected traffic spikes.",
+            "By evaluating metrics in real time against defined Service Level Objectives, the platform triggers automated alerts whenever error rates or latency thresholds are breached.",
+            "This real-time telemetry capability provides site reliability engineers with the quantifiable data needed to defend high-availability service level agreements."
+        ],
+        # Part 4: Resilient Lifecycle & Connection Draining Controller
+        [
+            "To guarantee zero dropped connections during routine cloud maintenance, Milestone 10 deploys a robust Kubernetes lifecycle controller.",
+            "The controller exposes independent Liveness and Readiness probe endpoints, utilizing shallow health checks to avoid cascading dependencies during outages.",
+            "Upon receiving a SIGTERM signal, the controller immediately flips the readiness probe to False, signaling Kubernetes to stop routing new traffic to the pod.",
+            "It then initiates an asynchronous draining phase, monitoring active in-flight requests and waiting for them to complete before shutting down database connection pools.",
+            "This structured shutdown sequence ensures that in-flight orders are persisted cleanly and customers never experience broken TCP connections during rolling updates."
+        ],
+        # Part 5: Full Synthesis Benchmark & Production Certification
+        [
+            "In this capstone defense and verification gate, we subject the complete Milestone 10 operational suite to an aggressive production stress harness.",
+            "The harness dispatches thousands of concurrent requests across simulated multi-service workflows while simultaneously triggering a rolling deployment and injecting downstream faults.",
+            "The telemetry suite captures 100% of distributed trace spans, aggregates RED metrics with sub-millisecond precision, and emits fully correlated, PII-sanitized structured logs.",
+            "Simultaneously, the lifecycle controller drains in-flight requests during SIGTERM signal handling, achieving 100% request success with zero dropped connections.",
+            "Concluding with official certification: '[MILESTONE 10 PASSED] Production Observability, SRE Telemetry & Resilience Suite Certified!', this achievement proves your mastery of modern backend SRE."
+        ]
     ]
 }
 
