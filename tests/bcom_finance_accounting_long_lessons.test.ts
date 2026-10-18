@@ -2364,3 +2364,230 @@ test('Block 137: B.Com Finance Days 16-20 Gate v2 Visual JSON Integrity Verifica
 
 
 
+
+test('Block 138: B.Com Finance Days 21-25 Invariants (Word Count >= 2950, 5 Parts >= 580, Socratic Check strictly answerIndex 0)', () => {
+  for (let d = 21; d <= 25; d++) {
+    const lesson = getLongLesson('bcom-finance', d);
+    assert.ok(lesson, `bcom-finance Day ${d} lesson must be defined`);
+    assert.equal(lesson.coursePrefix, 'bcom-finance');
+    assert.equal(lesson.day, d);
+    assert.equal(lesson.parts.length, 5, `Day ${d} must have exactly 5 parts`);
+    assert.equal(lesson.minutes, 45, `Day ${d} duration must be 45 minutes`);
+    assert.ok(lesson.goal && lesson.goal.length > 20, `Day ${d} goal must be informative`);
+    assert.ok(lesson.recap && lesson.recap.length > 20, `Day ${d} recap must be informative`);
+    assert.ok(lesson.summary && lesson.summary.length >= 3, `Day ${d} summary must have >= 3 points`);
+    assert.ok(lesson.projectStep && lesson.projectStep.title, `Day ${d} projectStep must have a title`);
+    assert.ok(lesson.projectStep.steps && lesson.projectStep.steps.length >= 3, `Day ${d} projectStep must have >= 3 steps`);
+
+    let totalWords = 0;
+    for (let i = 0; i < 5; i++) {
+      const p = lesson.parts[i];
+      assert.ok(p.title && p.title.length > 5, `Day ${d} Part ${i + 1} title must be non-empty`);
+      
+      const partWords = p.say.reduce((acc: number, s: string) => acc + s.trim().split(/\s+/).filter(Boolean).length, 0);
+      totalWords += partWords;
+      assert.ok(partWords >= 580, `Day ${d} Part ${i + 1} (${p.title}) words ${partWords} must be >= 580`);
+
+      assert.ok(p.code && (p.code.includes('class ') || p.code.includes('def ')), `Day ${d} Part ${i + 1} code missing`);
+      assert.ok(p.output && p.output.length > 0, `Day ${d} Part ${i + 1} output missing`);
+      assert.ok(p.codeNotes && p.codeNotes.length >= 1, `Day ${d} Part ${i + 1} codeNotes missing`);
+      assert.ok(p.tryIt && p.tryIt.length > 0, `Day ${d} Part ${i + 1} tryIt missing`);
+
+      const check = p.check as any;
+      assert.ok(check && check.question && check.question.length > 10, `Day ${d} Part ${i + 1} check question missing`);
+      assert.equal(check.options.length, 4, `Day ${d} Part ${i + 1} check must have 4 options`);
+      assert.equal(check.answer, 0, `Day ${d} Part ${i + 1} check answer must be 0`);
+      assert.equal(check.answerIndex, 0, `Day ${d} Part ${i + 1} check answerIndex must be 0`);
+      assert.ok(check.why && check.why.length > 10, `Day ${d} Part ${i + 1} check why missing`);
+      assert.equal(check.explanation, check.why, `Day ${d} Part ${i + 1} explanation must match why`);
+    }
+
+    assert.ok(totalWords >= 2950, `Day ${d} total words ${totalWords} < 2950`);
+  }
+});
+
+test('Block 138: B.Com Finance Day 21: Milestone 4 Capstone Snippets Verification', () => {
+  const lesson = getLongLesson('bcom-finance', 21);
+  assert.ok(lesson);
+  assert.match(lesson.title, /MILESTONE 4/i);
+
+  // Part 1: Leverage Risk Engine
+  assert.match(lesson.parts[0].title, /Integrated Operating, Financial & Combined Leverage/i);
+  assert.ok(lesson.parts[0].code?.includes('IntegratedLeverageKernel'));
+  assert.ok(lesson.parts[0].output?.includes('Degree of Combined Leverage (DCL)'));
+
+  // Part 2: Static Trade-Off Optimization
+  assert.match(lesson.parts[1].title, /Static Trade-Off Capital Structure & WACC Minimization/i);
+  assert.ok(lesson.parts[1].code?.includes('CapitalStructureOptimizationKernel'));
+  assert.ok(lesson.parts[1].output?.includes('MIN WACC'));
+
+  // Part 3: Rolling Cash Budget
+  assert.match(lesson.parts[2].title, /Operational Working Capital & Cash Budgeting Cockpit/i);
+  assert.ok(lesson.parts[2].code?.includes('WorkingCapitalCockpitKernel'));
+  assert.ok(lesson.parts[2].output?.includes('Total Bank Credit Facility Drawn'));
+
+  // Part 4: Share Repurchase vs Dividend
+  assert.match(lesson.parts[3].title, /Walter, Gordon & Share Repurchase Valuation/i);
+  assert.ok(lesson.parts[3].code?.includes('DividendAndBuybackValuationKernel'));
+  assert.ok(lesson.parts[3].output?.includes('WALTER\'S VALUATION MODEL'));
+
+  // Part 5: Master CFO Cockpit
+  assert.match(lesson.parts[4].title, /Executive Capital Structure & Financial Policy Control Tower/i);
+  assert.ok(lesson.parts[4].code?.includes('Milestone4GrandControlTower'));
+  assert.ok(lesson.parts[4].output?.includes('MILESTONE 4 COMPLETE'));
+});
+
+test('Block 138: B.Com Finance Day 22: DCF Equity Valuation & Multiples Snippets Verification', () => {
+  const lesson = getLongLesson('bcom-finance', 22);
+  assert.ok(lesson);
+  assert.match(lesson.title, /Equity Valuation: DCF Free Cash Flow & Multiples Valuation/i);
+
+  // Part 1: FCFF
+  assert.match(lesson.parts[0].title, /Unlevered Free Cash Flow to Firm \(FCFF\) Pipeline Architecture/i);
+  assert.ok(lesson.parts[0].code?.includes('FreeCashFlowEngine'));
+  assert.ok(lesson.parts[0].output?.includes('Cumulative PV of 5-Year Explicit FCFF'));
+
+  // Part 2: Terminal Value
+  assert.match(lesson.parts[1].title, /Terminal Value \(TV\) & The Enterprise-to-Equity Value Bridge/i);
+  assert.ok(lesson.parts[1].code?.includes('EquityValueBridgeEngine'));
+  assert.ok(lesson.parts[1].output?.includes('INTRINSIC FAIR PRICE PER SHARE'));
+
+  // Part 3: Relative Valuation Multiples
+  assert.match(lesson.parts[2].title, /Relative Valuation Multiples: P\/E, EV\/EBITDA & Benchmark Comps/i);
+  assert.ok(lesson.parts[2].code?.includes('RelativeValuationEngine'));
+  assert.ok(lesson.parts[2].output?.includes('PRICE-TO-EARNINGS (P/E) RELATIVE VALUATION'));
+
+  // Part 4: Valuation Football Field & Sensitivity
+  assert.match(lesson.parts[3].title, /Valuation Triangulation: Football Field Chart & DCF Sensitivity Matrix/i);
+  assert.ok(lesson.parts[3].code?.includes('ValuationSensitivityEngine'));
+  assert.ok(lesson.parts[3].output?.includes('VALUATION FOOTBALL FIELD SUMMARY'));
+
+  // Part 5: Master Equity Research Suite
+  assert.match(lesson.parts[4].title, /Enterprise Equity Valuation & Investment Research Master Suite/i);
+  assert.ok(lesson.parts[4].code?.includes('EquityResearchMasterSuite'));
+  assert.ok(lesson.parts[4].output?.includes('ENTERPRISE EQUITY RESEARCH & VALUATION MASTER AUDIT'));
+});
+
+test('Block 138: B.Com Finance Day 23: Modern Portfolio Theory Snippets Verification', () => {
+  const lesson = getLongLesson('bcom-finance', 23);
+  assert.ok(lesson);
+  assert.match(lesson.title, /Modern Portfolio Theory: Risk, Return & the Markowitz Efficient Frontier/i);
+
+  // Part 1: Standalone Risk & Return
+  assert.match(lesson.parts[0].title, /Foundations of Portfolio Theory: Risk, Return & Diversification/i);
+  assert.ok(lesson.parts[0].code?.includes('calculate_asset_metrics'));
+  assert.ok(lesson.parts[0].output?.includes('Asset A (Equities)'));
+
+  // Part 2: Covariance & Correlation
+  assert.match(lesson.parts[1].title, /Two-Asset Portfolio Return & Covariance Dynamics/i);
+  assert.ok(lesson.parts[1].code?.includes('calculate_covariance_correlation'));
+  assert.ok(lesson.parts[1].output?.includes('Correlation Coefficient (rho_AB)'));
+
+  // Part 3: Minimum Variance Portfolio
+  assert.match(lesson.parts[2].title, /Mathematical Derivation of the Minimum Variance Portfolio/i);
+  assert.ok(lesson.parts[2].code?.includes('compute_mvp_weights'));
+  assert.ok(lesson.parts[2].output?.includes('Weight in Asset A (Equities)'));
+
+  // Part 4: Efficient Frontier
+  assert.match(lesson.parts[3].title, /Generating the Markowitz Efficient Frontier & Opportunity Set/i);
+  assert.ok(lesson.parts[3].code?.includes('generate_efficient_frontier'));
+  assert.ok(lesson.parts[3].output?.includes('Weight A'));
+
+  // Part 5: Matrix Covariance
+  assert.match(lesson.parts[4].title, /Multi-Asset Covariance Matrix Formulation & Optimal Capital Allocation/i);
+  assert.ok(lesson.parts[4].code?.includes('portfolio_matrix_stats'));
+  assert.ok(lesson.parts[4].output?.includes('Balanced Portfolio'));
+});
+
+test('Block 138: B.Com Finance Day 24: CAPM & Security Market Line Snippets Verification', () => {
+  const lesson = getLongLesson('bcom-finance', 24);
+  assert.ok(lesson);
+  assert.match(lesson.title, /Capital Asset Pricing Model \(CAPM\) & the Security Market Line \(SML\)/i);
+
+  // Part 1: Systematic Risk Beta
+  assert.match(lesson.parts[0].title, /Transition from Total Risk to Systematic Risk & Beta Derivation/i);
+  assert.ok(lesson.parts[0].code?.includes('calculate_beta_and_risk_metrics'));
+  assert.ok(lesson.parts[0].output?.includes('Systematic Risk Beta (beta_i)'));
+
+  // Part 2: SML & CAPM
+  assert.match(lesson.parts[1].title, /Security Market Line \(SML\) & CAPM Pricing Equation/i);
+  assert.ok(lesson.parts[1].code?.includes('capm_expected_return'));
+  assert.ok(lesson.parts[1].output?.includes('Market Risk Premium (Rm - Rf)'));
+
+  // Part 3: Jensen's Alpha Mispricing
+  assert.match(lesson.parts[2].title, /SML Pricing Discrepancies & Jensen's Alpha Identification/i);
+  assert.ok(lesson.parts[2].code?.includes('evaluate_security_mispricing'));
+  assert.ok(lesson.parts[2].output?.includes("Jensen's Alpha (alpha)"));
+
+  // Part 4: Portfolio Beta & Futures Hedge
+  assert.match(lesson.parts[3].title, /Portfolio Beta Aggregation & Synthetic Hedging Strategies/i);
+  assert.ok(lesson.parts[3].code?.includes('calculate_portfolio_beta'));
+  assert.ok(lesson.parts[3].code?.includes('hedge_portfolio_with_index'));
+  assert.ok(lesson.parts[3].output?.includes('Short Index Contracts'));
+
+  // Part 5: CML vs SML
+  assert.match(lesson.parts[4].title, /Capital Market Line \(CML\) vs Security Market Line \(SML\)/i);
+  assert.ok(lesson.parts[4].code?.includes('compare_cml_and_sml'));
+  assert.ok(lesson.parts[4].output?.includes('Capital Market Line (CML)'));
+});
+
+test('Block 138: B.Com Finance Day 25: Portfolio Performance Measurement Snippets Verification', () => {
+  const lesson = getLongLesson('bcom-finance', 25);
+  assert.ok(lesson);
+  assert.match(lesson.title, /Portfolio Performance Measurement: Sharpe, Treynor, Alpha & Information Ratio/i);
+
+  // Part 1: Sharpe Ratio
+  assert.match(lesson.parts[0].title, /The Sharpe Ratio & Total Risk-Adjusted Return/i);
+  assert.ok(lesson.parts[0].code?.includes('calculate_sharpe_ratio'));
+  assert.ok(lesson.parts[0].output?.includes('Alpha Tech Fund'));
+
+  // Part 2: Treynor Ratio
+  assert.match(lesson.parts[1].title, /The Treynor Ratio & Systematic Risk Efficiency/i);
+  assert.ok(lesson.parts[1].code?.includes('calculate_treynor_ratio'));
+  assert.ok(lesson.parts[1].output?.includes('Balanced Value Fund'));
+
+  // Part 3: Jensen's Alpha & Fama Decomposition
+  assert.match(lesson.parts[2].title, /Jensen's Alpha & Fama's Performance Decomposition/i);
+  assert.ok(lesson.parts[2].code?.includes('decompose_portfolio_performance'));
+  assert.ok(lesson.parts[2].output?.includes('Diversification Inefficiency Cost'));
+
+  // Part 4: Tracking Error & Information Ratio
+  assert.match(lesson.parts[3].title, /Tracking Error & The Information Ratio/i);
+  assert.ok(lesson.parts[3].code?.includes('calculate_information_ratio'));
+  assert.ok(lesson.parts[3].output?.includes('Information Ratio (IR = Alpha / TE)'));
+
+  // Part 5: Integrated Scorecard
+  assert.match(lesson.parts[4].title, /Integrated Performance Scorecard & Comprehensive Evaluation Matrix/i);
+  assert.ok(lesson.parts[4].code?.includes('generate_performance_scorecard'));
+  assert.ok(lesson.parts[4].output?.includes('Dynamic Growth'));
+});
+
+test('Block 138: B.Com Finance Days 21-25 Gate v2 Visual JSON Integrity Verification', () => {
+  const fs = require('fs');
+  const path = require('path');
+  const crypto = require('crypto');
+
+  for (let d = 21; d <= 25; d++) {
+    const pad = String(d).padStart(2, '0');
+    const visPath = path.join(__dirname, `../src/lib/data/lessonVisuals/bcom-finance/day-${pad}.json`);
+    assert.ok(fs.existsSync(visPath), `Visual JSON must exist for Day ${d}`);
+
+    const vis = JSON.parse(fs.readFileSync(visPath, 'utf8'));
+    assert.equal(vis.prefix, 'bcom-finance');
+    assert.equal(vis.day, d);
+    assert.equal(vis.entries.length, 5, `Day ${d} visual must contain exactly 5 entries`);
+
+    const lesson = getLongLesson('bcom-finance', d);
+    for (let i = 0; i < 5; i++) {
+      const entry = vis.entries[i];
+      const part = lesson.parts[i];
+
+      assert.equal(entry.spec.template, 'ledger-sheet', `Day ${d} Part ${i + 1} must use ledger-sheet template`);
+      assert.ok(entry.spec.steps.length >= 3, `Day ${d} Part ${i + 1} visual must have >= 3 steps`);
+
+      // Verify SHA-256 binding between code and visual entry
+      const expectedHash = crypto.createHash('sha256').update(part.code).digest('hex');
+      assert.equal(entry.codeHash, expectedHash, `Day ${d} Part ${i + 1} visual codeHash must match actual part.code`);
+    }
+  }
+});
