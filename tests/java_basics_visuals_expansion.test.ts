@@ -5,17 +5,22 @@ import path from 'node:path';
 import crypto from 'node:crypto';
 import { isCourseVisualsEnabled } from '../src/lib/visuals/enabledCourses';
 import { loadDayFile, getVisual, clearDayFileCache } from '../src/lib/visuals/loadVisuals';
-import { getLongLesson } from '../src/lib/data/longLessons';
+import { getLongLesson, estimateSpokenMinutes, estimateLessonMinutes } from '../src/lib/data/longLessons';
 import { getTappableLabelsForVisual } from '../src/lib/visuals/visualRules';
 
-test('Java Basics Visuals Expansion: Days 6 to 30 On-Disk Spec Verification', () => {
+test('Java Basics Visuals Expansion: Days 6 to 35 On-Disk Spec Verification', () => {
   clearDayFileCache();
   const prefix = 'java-basics';
   const expectedTemplate = 'stack-queue';
 
   assert.equal(isCourseVisualsEnabled(prefix), true, `Course "${prefix}" must be enabled in enabledCourses`);
 
-  for (const day of [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]) {
+  const daysToTest = [];
+  for (let d = 6; d <= 35; d++) {
+    daysToTest.push(d);
+  }
+
+  for (const day of daysToTest) {
     const dayPadded = String(day).padStart(2, '0');
     const filePath = path.resolve(process.cwd(), `src/lib/data/lessonVisuals/${prefix}/day-${dayPadded}.json`);
     assert.ok(fs.existsSync(filePath), `On-disk visual file missing: ${filePath}`);
@@ -56,8 +61,12 @@ test('Java Basics Visuals Expansion: Days 6 to 30 On-Disk Spec Verification', ()
 });
 
 test('Java Basics Duration Invariant: Days >= 11 Meet 20+ Spoken Min and 35-40 Total Min', () => {
-  const { estimateSpokenMinutes, estimateLessonMinutes } = require('../src/lib/data/longLessons');
-  for (const day of [11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]) {
+  const daysToTest = [];
+  for (let d = 11; d <= 35; d++) {
+    daysToTest.push(d);
+  }
+
+  for (const day of daysToTest) {
     const lesson = getLongLesson('java-basics', day);
     assert.ok(lesson);
     const spoken = estimateSpokenMinutes(lesson);
@@ -68,3 +77,41 @@ test('Java Basics Duration Invariant: Days >= 11 Meet 20+ Spoken Min and 35-40 T
   }
 });
 
+test('Java Basics Days 31-35 Domain & Masterclass Integrity Verification', () => {
+  const prefix = 'java-basics';
+
+  // Day 31: Classes, Heap Instances & Reference Pointer Mechanics
+  const d31 = getLongLesson(prefix, 31);
+  assert.ok(d31);
+  assert.equal(d31.parts.length, 5);
+  assert.match(d31.title, /Classes, Heap Instances & Reference Pointer Mechanics/);
+  assert.ok(d31.parts.some(p => (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('0x7f01a0') || (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('mark word') || (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('Compressed OOPs')));
+
+  // Day 32: Constructors, State Initialization & The this Keyword
+  const d32 = getLongLesson(prefix, 32);
+  assert.ok(d32);
+  assert.equal(d32.parts.length, 5);
+  assert.match(d32.title, /Constructors, State Initialization & The this Keyword/);
+  assert.ok(d32.parts.some(p => (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('parameter shadowing') || (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('constructor chaining') || (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('this(')));
+
+  // Day 33: Data Hiding: Private Fields, Defensive Getters/Setters & Immutability
+  const d33 = getLongLesson(prefix, 33);
+  assert.ok(d33);
+  assert.equal(d33.parts.length, 5);
+  assert.match(d33.title, /Data Hiding: Private Fields, Defensive Getters\/Setters & Immutability/);
+  assert.ok(d33.parts.some(p => (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('Defensive Copying') || (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('Value Object') || (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('private')));
+
+  // Day 34: Static State (Metaspace Class Variables) vs Heap Instance State
+  const d34 = getLongLesson(prefix, 34);
+  assert.ok(d34);
+  assert.equal(d34.parts.length, 5);
+  assert.match(d34.title, /Static State \(Metaspace Class Variables\) vs Heap Instance State/);
+  assert.ok(d34.parts.some(p => (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('Metaspace') || (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('ClassLoader') || (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('static {')));
+
+  // Day 35: Milestone 6: Enterprise Bank Account Domain Model
+  const d35 = getLongLesson(prefix, 35);
+  assert.ok(d35);
+  assert.equal(d35.parts.length, 5);
+  assert.match(d35.title, /Milestone 6.*Enterprise Bank Account Domain Model/);
+  assert.ok(d35.parts.some(p => (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('EnterpriseBankAccount') || (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('atomic') || (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('audit')));
+});

@@ -1,0 +1,414 @@
+{
+  "schemaVersion": 1,
+  "prefix": "java-basics",
+  "day": 33,
+  "promptSha": "java-basics-day-33-spec",
+  "model": "curriculum-visual-synthesizer-v2",
+  "entries": [
+    {
+      "partTitle": "The Core Invariant of Encapsulation & The 4 JVM Access Modifiers",
+      "codeHash": "14bbe948866ba89387c4f9f0e5e57da2a2a2d4d8ad5e2d99d3eeae39b6d44cf7",
+      "spec": {
+        "template": "stack-queue",
+        "title": "Day 33 Part 1 \u2014 JVM Call Stack & Heap State",
+        "mode": "stack",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Allocate stack frame and inspect reference pointers for The Core Invariant of Encapsulation & Th.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "DomainService.execute()",
+              "AccountRepository.find()"
+            ],
+            "action": "push",
+            "actionItem": "AccountRepository.find()",
+            "tones": [
+              "ok",
+              "data",
+              "data"
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Push active validation frame onto JVM thread call stack.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "DomainService.execute()",
+              "AccountRepository.find()",
+              "InvariantValidator.verify()"
+            ],
+            "action": "push",
+            "actionItem": "InvariantValidator.verify()",
+            "tones": [
+              "ok",
+              "ok",
+              "data",
+              "data"
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Pop completed validator frame after confirming heap state invariant.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "DomainService.execute()",
+              "AccountRepository.find()"
+            ],
+            "action": "pop",
+            "actionItem": "InvariantValidator.verify() -> true",
+            "tones": [
+              "ok",
+              "ok",
+              "ok"
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute state transition and verify heap reference pointers intact.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "DomainService.execute()",
+              "DomainService.commit()"
+            ],
+            "action": "push",
+            "actionItem": "DomainService.commit() -> 0x7f01a0",
+            "tones": [
+              "ok",
+              "ok",
+              "accent"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Defensive Mutators (Setters) with Precondition Gate Validation",
+      "codeHash": "babfe2cfbe34672de1091d38db1affe05f9855ac1bd793bc63842c0e4de3bbd7",
+      "spec": {
+        "template": "stack-queue",
+        "title": "Day 33 Part 2 \u2014 JVM Call Stack & Heap State",
+        "mode": "stack",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Allocate stack frame and inspect reference pointers for Defensive Mutators (Setters) with Precon.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "DomainService.execute()",
+              "AccountRepository.find()"
+            ],
+            "action": "push",
+            "actionItem": "AccountRepository.find()",
+            "tones": [
+              "ok",
+              "data",
+              "data"
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Push active validation frame onto JVM thread call stack.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "DomainService.execute()",
+              "AccountRepository.find()",
+              "InvariantValidator.verify()"
+            ],
+            "action": "push",
+            "actionItem": "InvariantValidator.verify()",
+            "tones": [
+              "ok",
+              "ok",
+              "data",
+              "data"
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Pop completed validator frame after confirming heap state invariant.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "DomainService.execute()",
+              "AccountRepository.find()"
+            ],
+            "action": "pop",
+            "actionItem": "InvariantValidator.verify() -> true",
+            "tones": [
+              "ok",
+              "ok",
+              "ok"
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute state transition and verify heap reference pointers intact.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "DomainService.execute()",
+              "DomainService.commit()"
+            ],
+            "action": "push",
+            "actionItem": "DomainService.commit() -> 0x7f01a0",
+            "tones": [
+              "ok",
+              "ok",
+              "accent"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Defensive Copying & Preventing Object Leakage via Mutable References",
+      "codeHash": "e8570e9b8efb87f8d54cc44da276d38980160cbc2cc7db37bfe32fe8c0dca043",
+      "spec": {
+        "template": "stack-queue",
+        "title": "Day 33 Part 3 \u2014 JVM Call Stack & Heap State",
+        "mode": "stack",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Allocate stack frame and inspect reference pointers for Defensive Copying & Preventing Object Le.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "DomainService.execute()",
+              "AccountRepository.find()"
+            ],
+            "action": "push",
+            "actionItem": "AccountRepository.find()",
+            "tones": [
+              "ok",
+              "data",
+              "data"
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Push active validation frame onto JVM thread call stack.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "DomainService.execute()",
+              "AccountRepository.find()",
+              "InvariantValidator.verify()"
+            ],
+            "action": "push",
+            "actionItem": "InvariantValidator.verify()",
+            "tones": [
+              "ok",
+              "ok",
+              "data",
+              "data"
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Pop completed validator frame after confirming heap state invariant.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "DomainService.execute()",
+              "AccountRepository.find()"
+            ],
+            "action": "pop",
+            "actionItem": "InvariantValidator.verify() -> true",
+            "tones": [
+              "ok",
+              "ok",
+              "ok"
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute state transition and verify heap reference pointers intact.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "DomainService.execute()",
+              "DomainService.commit()"
+            ],
+            "action": "push",
+            "actionItem": "DomainService.commit() -> 0x7f01a0",
+            "tones": [
+              "ok",
+              "ok",
+              "accent"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Value Objects & The Mechanics of True Java Immutability",
+      "codeHash": "7675185df8ae585f1e0c1140572c5fdbacb80ce84c734787808d3f1c06fe1e4d",
+      "spec": {
+        "template": "stack-queue",
+        "title": "Day 33 Part 4 \u2014 JVM Call Stack & Heap State",
+        "mode": "stack",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Allocate stack frame and inspect reference pointers for Value Objects & The Mechanics of True Ja.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "DomainService.execute()",
+              "AccountRepository.find()"
+            ],
+            "action": "push",
+            "actionItem": "AccountRepository.find()",
+            "tones": [
+              "ok",
+              "data",
+              "data"
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Push active validation frame onto JVM thread call stack.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "DomainService.execute()",
+              "AccountRepository.find()",
+              "InvariantValidator.verify()"
+            ],
+            "action": "push",
+            "actionItem": "InvariantValidator.verify()",
+            "tones": [
+              "ok",
+              "ok",
+              "data",
+              "data"
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Pop completed validator frame after confirming heap state invariant.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "DomainService.execute()",
+              "AccountRepository.find()"
+            ],
+            "action": "pop",
+            "actionItem": "InvariantValidator.verify() -> true",
+            "tones": [
+              "ok",
+              "ok",
+              "ok"
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute state transition and verify heap reference pointers intact.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "DomainService.execute()",
+              "DomainService.commit()"
+            ],
+            "action": "push",
+            "actionItem": "DomainService.commit() -> 0x7f01a0",
+            "tones": [
+              "ok",
+              "ok",
+              "accent"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Diagnostic Lab: Closing Direct Field Bypass Vulnerabilities in Banking Models",
+      "codeHash": "a849418070b91e429d95c949de52fd84c1e8ee677e49190e05d5a468a00d6d54",
+      "spec": {
+        "template": "stack-queue",
+        "title": "Day 33 Part 5 \u2014 JVM Call Stack & Heap State",
+        "mode": "stack",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Allocate stack frame and inspect reference pointers for Diagnostic Lab: Closing Direct Field Byp.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "DomainService.execute()",
+              "AccountRepository.find()"
+            ],
+            "action": "push",
+            "actionItem": "AccountRepository.find()",
+            "tones": [
+              "ok",
+              "data",
+              "data"
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Push active validation frame onto JVM thread call stack.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "DomainService.execute()",
+              "AccountRepository.find()",
+              "InvariantValidator.verify()"
+            ],
+            "action": "push",
+            "actionItem": "InvariantValidator.verify()",
+            "tones": [
+              "ok",
+              "ok",
+              "data",
+              "data"
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Pop completed validator frame after confirming heap state invariant.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "DomainService.execute()",
+              "AccountRepository.find()"
+            ],
+            "action": "pop",
+            "actionItem": "InvariantValidator.verify() -> true",
+            "tones": [
+              "ok",
+              "ok",
+              "ok"
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute state transition and verify heap reference pointers intact.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "DomainService.execute()",
+              "DomainService.commit()"
+            ],
+            "action": "push",
+            "actionItem": "DomainService.commit() -> 0x7f01a0",
+            "tones": [
+              "ok",
+              "ok",
+              "accent"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
