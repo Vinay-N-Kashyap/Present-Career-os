@@ -1,0 +1,664 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_tax",
+  "day": 8,
+  "promptSha": "c31a4b9ae50b1c59106368f28100bf1938240987c7c34e2e6b5a0ea2c502cf77",
+  "model": "google/gemini-3.8-flash",
+  "entries": [
+    {
+      "partTitle": "Section 16 Eligibility Invariants & The Section 16(2)(aa) GSTR-2B Locking Mechanism",
+      "codeHash": "0299da2b48f0107540db271fdfe4aad49720a2ae002ea7e610e5fe55b17ad5ca",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Section 16 Eligibility Invariants & The Section 16 \u2014 GST Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary taxable supply ledger entry (330000) for Section 16 Eligibility Invariants & The ...",
+            "title": "Day 8 GST Ledger \u2014 Initial Recognition",
+            "isBalanced": true,
+            "totalDebit": 330000,
+            "totalCredit": 330000,
+            "entries": [
+              {
+                "id": "TAX-801",
+                "account": "GST Output Tax Liability / Asset Account",
+                "debit": 330000,
+                "balance": 330000,
+                "tone": "data",
+                "memo": "Statutory recognition under CGST Act"
+              },
+              {
+                "id": "TAX-802",
+                "account": "Electronic Cash & Credit Ledger Clearing",
+                "credit": 330000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control balance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record statutory accrual adjustment (50000) under applicable CGST/IGST section.",
+            "title": "Day 8 GST Ledger \u2014 Statutory Adjustment",
+            "isBalanced": true,
+            "totalDebit": 380000,
+            "totalCredit": 380000,
+            "entries": [
+              {
+                "id": "TAX-801",
+                "account": "GST Output Tax Liability / Asset Account",
+                "debit": 330000,
+                "balance": 330000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-803",
+                "account": "Statutory Tax Provision / Reversal Account",
+                "debit": 50000,
+                "balance": 380000,
+                "tone": "accent",
+                "memo": "Statutory adjustment"
+              },
+              {
+                "id": "TAX-802",
+                "account": "Electronic Cash & Credit Ledger Clearing",
+                "credit": 380000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute simulated commercial case study for Section 16 Eligibility Invariants & The ...",
+            "title": "Day 8 GST Ledger \u2014 Simulation Audit",
+            "isBalanced": true,
+            "totalDebit": 380000,
+            "totalCredit": 380000,
+            "entries": [
+              {
+                "id": "TAX-801",
+                "account": "GST Output Tax Liability / Asset Account",
+                "debit": 330000,
+                "balance": 330000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-803",
+                "account": "Statutory Tax Provision / Reversal Account",
+                "debit": 50000,
+                "balance": 380000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-802",
+                "account": "Electronic Cash & Credit Ledger Clearing",
+                "credit": 380000,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify ledger equilibrium and regulatory compliance signoff.",
+            "title": "Day 8 GST Ledger \u2014 Final Audit Settlement",
+            "isBalanced": true,
+            "totalDebit": 380000,
+            "totalCredit": 380000,
+            "entries": [
+              {
+                "id": "TAX-801",
+                "account": "GST Output Tax Liability / Asset Account",
+                "debit": 330000,
+                "balance": 330000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-803",
+                "account": "Statutory Tax Provision / Reversal Account",
+                "debit": 50000,
+                "balance": 380000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-802",
+                "account": "Electronic Cash & Credit Ledger Clearing",
+                "credit": 380000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "100% Balanced and Certified"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The 180-Day Payment Invariant: Second Proviso to Section 16(2) & Reversal Mechanics",
+      "codeHash": "e1bbf3d77fd4aff8153baf7afc1cb1f0f9e08b40b006dcc53f565aa73e8ee072",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "The 180-Day Payment Invariant: Second Proviso to S \u2014 GST Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary taxable supply ledger entry (335000) for The 180-Day Payment Invariant: Second Pr...",
+            "title": "Day 8 GST Ledger \u2014 Initial Recognition",
+            "isBalanced": true,
+            "totalDebit": 335000,
+            "totalCredit": 335000,
+            "entries": [
+              {
+                "id": "TAX-801",
+                "account": "GST Output Tax Liability / Asset Account",
+                "debit": 335000,
+                "balance": 335000,
+                "tone": "data",
+                "memo": "Statutory recognition under CGST Act"
+              },
+              {
+                "id": "TAX-802",
+                "account": "Electronic Cash & Credit Ledger Clearing",
+                "credit": 335000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control balance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record statutory accrual adjustment (52500) under applicable CGST/IGST section.",
+            "title": "Day 8 GST Ledger \u2014 Statutory Adjustment",
+            "isBalanced": true,
+            "totalDebit": 387500,
+            "totalCredit": 387500,
+            "entries": [
+              {
+                "id": "TAX-801",
+                "account": "GST Output Tax Liability / Asset Account",
+                "debit": 335000,
+                "balance": 335000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-803",
+                "account": "Statutory Tax Provision / Reversal Account",
+                "debit": 52500,
+                "balance": 387500,
+                "tone": "accent",
+                "memo": "Statutory adjustment"
+              },
+              {
+                "id": "TAX-802",
+                "account": "Electronic Cash & Credit Ledger Clearing",
+                "credit": 387500,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute simulated commercial case study for The 180-Day Payment Invariant: Second Pr...",
+            "title": "Day 8 GST Ledger \u2014 Simulation Audit",
+            "isBalanced": true,
+            "totalDebit": 387500,
+            "totalCredit": 387500,
+            "entries": [
+              {
+                "id": "TAX-801",
+                "account": "GST Output Tax Liability / Asset Account",
+                "debit": 335000,
+                "balance": 335000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-803",
+                "account": "Statutory Tax Provision / Reversal Account",
+                "debit": 52500,
+                "balance": 387500,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-802",
+                "account": "Electronic Cash & Credit Ledger Clearing",
+                "credit": 387500,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify ledger equilibrium and regulatory compliance signoff.",
+            "title": "Day 8 GST Ledger \u2014 Final Audit Settlement",
+            "isBalanced": true,
+            "totalDebit": 387500,
+            "totalCredit": 387500,
+            "entries": [
+              {
+                "id": "TAX-801",
+                "account": "GST Output Tax Liability / Asset Account",
+                "debit": 335000,
+                "balance": 335000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-803",
+                "account": "Statutory Tax Provision / Reversal Account",
+                "debit": 52500,
+                "balance": 387500,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-802",
+                "account": "Electronic Cash & Credit Ledger Clearing",
+                "credit": 387500,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "100% Balanced and Certified"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Blocked Credits Taxonomy: Section 17(5)(a) Motor Vehicles & Transportation Invariants",
+      "codeHash": "467505b28eecd9a45ac1a94bf50a49da1d3bfa9daa52d2011af200c58e2d3eab",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Blocked Credits Taxonomy: Section 17(5)(a) Motor V \u2014 GST Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary taxable supply ledger entry (340000) for Blocked Credits Taxonomy: Section 17(5)(...",
+            "title": "Day 8 GST Ledger \u2014 Initial Recognition",
+            "isBalanced": true,
+            "totalDebit": 340000,
+            "totalCredit": 340000,
+            "entries": [
+              {
+                "id": "TAX-801",
+                "account": "GST Output Tax Liability / Asset Account",
+                "debit": 340000,
+                "balance": 340000,
+                "tone": "data",
+                "memo": "Statutory recognition under CGST Act"
+              },
+              {
+                "id": "TAX-802",
+                "account": "Electronic Cash & Credit Ledger Clearing",
+                "credit": 340000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control balance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record statutory accrual adjustment (55000) under applicable CGST/IGST section.",
+            "title": "Day 8 GST Ledger \u2014 Statutory Adjustment",
+            "isBalanced": true,
+            "totalDebit": 395000,
+            "totalCredit": 395000,
+            "entries": [
+              {
+                "id": "TAX-801",
+                "account": "GST Output Tax Liability / Asset Account",
+                "debit": 340000,
+                "balance": 340000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-803",
+                "account": "Statutory Tax Provision / Reversal Account",
+                "debit": 55000,
+                "balance": 395000,
+                "tone": "accent",
+                "memo": "Statutory adjustment"
+              },
+              {
+                "id": "TAX-802",
+                "account": "Electronic Cash & Credit Ledger Clearing",
+                "credit": 395000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute simulated commercial case study for Blocked Credits Taxonomy: Section 17(5)(...",
+            "title": "Day 8 GST Ledger \u2014 Simulation Audit",
+            "isBalanced": true,
+            "totalDebit": 395000,
+            "totalCredit": 395000,
+            "entries": [
+              {
+                "id": "TAX-801",
+                "account": "GST Output Tax Liability / Asset Account",
+                "debit": 340000,
+                "balance": 340000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-803",
+                "account": "Statutory Tax Provision / Reversal Account",
+                "debit": 55000,
+                "balance": 395000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-802",
+                "account": "Electronic Cash & Credit Ledger Clearing",
+                "credit": 395000,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify ledger equilibrium and regulatory compliance signoff.",
+            "title": "Day 8 GST Ledger \u2014 Final Audit Settlement",
+            "isBalanced": true,
+            "totalDebit": 395000,
+            "totalCredit": 395000,
+            "entries": [
+              {
+                "id": "TAX-801",
+                "account": "GST Output Tax Liability / Asset Account",
+                "debit": 340000,
+                "balance": 340000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-803",
+                "account": "Statutory Tax Provision / Reversal Account",
+                "debit": 55000,
+                "balance": 395000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-802",
+                "account": "Electronic Cash & Credit Ledger Clearing",
+                "credit": 395000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "100% Balanced and Certified"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Blocked Credits Taxonomy: Section 17(5)(b)-(h) Food, Works Contracts & Lost Goods",
+      "codeHash": "661109b1bd77042efc4122b56a0607bfab24099bec2359b051d16ccda002262e",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Blocked Credits Taxonomy: Section 17(5)(b)-(h) Foo \u2014 GST Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary taxable supply ledger entry (345000) for Blocked Credits Taxonomy: Section 17(5)(...",
+            "title": "Day 8 GST Ledger \u2014 Initial Recognition",
+            "isBalanced": true,
+            "totalDebit": 345000,
+            "totalCredit": 345000,
+            "entries": [
+              {
+                "id": "TAX-801",
+                "account": "GST Output Tax Liability / Asset Account",
+                "debit": 345000,
+                "balance": 345000,
+                "tone": "data",
+                "memo": "Statutory recognition under CGST Act"
+              },
+              {
+                "id": "TAX-802",
+                "account": "Electronic Cash & Credit Ledger Clearing",
+                "credit": 345000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control balance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record statutory accrual adjustment (57500) under applicable CGST/IGST section.",
+            "title": "Day 8 GST Ledger \u2014 Statutory Adjustment",
+            "isBalanced": true,
+            "totalDebit": 402500,
+            "totalCredit": 402500,
+            "entries": [
+              {
+                "id": "TAX-801",
+                "account": "GST Output Tax Liability / Asset Account",
+                "debit": 345000,
+                "balance": 345000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-803",
+                "account": "Statutory Tax Provision / Reversal Account",
+                "debit": 57500,
+                "balance": 402500,
+                "tone": "accent",
+                "memo": "Statutory adjustment"
+              },
+              {
+                "id": "TAX-802",
+                "account": "Electronic Cash & Credit Ledger Clearing",
+                "credit": 402500,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute simulated commercial case study for Blocked Credits Taxonomy: Section 17(5)(...",
+            "title": "Day 8 GST Ledger \u2014 Simulation Audit",
+            "isBalanced": true,
+            "totalDebit": 402500,
+            "totalCredit": 402500,
+            "entries": [
+              {
+                "id": "TAX-801",
+                "account": "GST Output Tax Liability / Asset Account",
+                "debit": 345000,
+                "balance": 345000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-803",
+                "account": "Statutory Tax Provision / Reversal Account",
+                "debit": 57500,
+                "balance": 402500,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-802",
+                "account": "Electronic Cash & Credit Ledger Clearing",
+                "credit": 402500,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify ledger equilibrium and regulatory compliance signoff.",
+            "title": "Day 8 GST Ledger \u2014 Final Audit Settlement",
+            "isBalanced": true,
+            "totalDebit": 402500,
+            "totalCredit": 402500,
+            "entries": [
+              {
+                "id": "TAX-801",
+                "account": "GST Output Tax Liability / Asset Account",
+                "debit": 345000,
+                "balance": 345000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-803",
+                "account": "Statutory Tax Provision / Reversal Account",
+                "debit": 57500,
+                "balance": 402500,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-802",
+                "account": "Electronic Cash & Credit Ledger Clearing",
+                "credit": 402500,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "100% Balanced and Certified"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "ITC Apportionment Mechanics: Rule 42 (Inputs) & Rule 43 (Capital Goods) Calculus",
+      "codeHash": "1884fc053f954a401130b99470663dfabf6359ae24a30a25f8bb5e0297069974",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "ITC Apportionment Mechanics: Rule 42 (Inputs) & Ru \u2014 GST Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary taxable supply ledger entry (350000) for ITC Apportionment Mechanics: Rule 42 (In...",
+            "title": "Day 8 GST Ledger \u2014 Initial Recognition",
+            "isBalanced": true,
+            "totalDebit": 350000,
+            "totalCredit": 350000,
+            "entries": [
+              {
+                "id": "TAX-801",
+                "account": "GST Output Tax Liability / Asset Account",
+                "debit": 350000,
+                "balance": 350000,
+                "tone": "data",
+                "memo": "Statutory recognition under CGST Act"
+              },
+              {
+                "id": "TAX-802",
+                "account": "Electronic Cash & Credit Ledger Clearing",
+                "credit": 350000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control balance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record statutory accrual adjustment (60000) under applicable CGST/IGST section.",
+            "title": "Day 8 GST Ledger \u2014 Statutory Adjustment",
+            "isBalanced": true,
+            "totalDebit": 410000,
+            "totalCredit": 410000,
+            "entries": [
+              {
+                "id": "TAX-801",
+                "account": "GST Output Tax Liability / Asset Account",
+                "debit": 350000,
+                "balance": 350000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-803",
+                "account": "Statutory Tax Provision / Reversal Account",
+                "debit": 60000,
+                "balance": 410000,
+                "tone": "accent",
+                "memo": "Statutory adjustment"
+              },
+              {
+                "id": "TAX-802",
+                "account": "Electronic Cash & Credit Ledger Clearing",
+                "credit": 410000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute simulated commercial case study for ITC Apportionment Mechanics: Rule 42 (In...",
+            "title": "Day 8 GST Ledger \u2014 Simulation Audit",
+            "isBalanced": true,
+            "totalDebit": 410000,
+            "totalCredit": 410000,
+            "entries": [
+              {
+                "id": "TAX-801",
+                "account": "GST Output Tax Liability / Asset Account",
+                "debit": 350000,
+                "balance": 350000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-803",
+                "account": "Statutory Tax Provision / Reversal Account",
+                "debit": 60000,
+                "balance": 410000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-802",
+                "account": "Electronic Cash & Credit Ledger Clearing",
+                "credit": 410000,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify ledger equilibrium and regulatory compliance signoff.",
+            "title": "Day 8 GST Ledger \u2014 Final Audit Settlement",
+            "isBalanced": true,
+            "totalDebit": 410000,
+            "totalCredit": 410000,
+            "entries": [
+              {
+                "id": "TAX-801",
+                "account": "GST Output Tax Liability / Asset Account",
+                "debit": 350000,
+                "balance": 350000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-803",
+                "account": "Statutory Tax Provision / Reversal Account",
+                "debit": 60000,
+                "balance": 410000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-802",
+                "account": "Electronic Cash & Credit Ledger Clearing",
+                "credit": 410000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "100% Balanced and Certified"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
