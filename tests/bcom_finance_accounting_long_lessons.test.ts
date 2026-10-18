@@ -2128,5 +2128,239 @@ test('Block 136: B.Com Finance Days 11-15 Gate v2 Visual JSON Integrity Verifica
   }
 });
 
+// ============================================================================
+// BLOCK 137: B.COM FINANCE DAYS 16-20 (CAPITAL STRUCTURE & WORKING CAPITAL)
+// ============================================================================
+
+test('Block 137: B.Com Finance Days 16-20 Structural & Invariant Verification', () => {
+  for (let d = 16; d <= 20; d++) {
+    const lesson = getLongLesson('bcom-finance', d);
+    assert.ok(lesson, `bcom-finance Day ${d} lesson must be defined`);
+    assert.equal(lesson.coursePrefix, 'bcom-finance');
+    assert.equal(lesson.day, d);
+    assert.equal(lesson.parts.length, 5, `Day ${d} must contain exactly 5 parts`);
+
+    const expectedMinutes = 45;
+    assert.equal(lesson.minutes, expectedMinutes, `Day ${d} duration must be ${expectedMinutes}m`);
+
+    assert.ok(lesson.goal && lesson.goal.length > 30, `Day ${d} must have comprehensive goal`);
+    assert.ok(lesson.recap && lesson.recap.length > 30, `Day ${d} must have comprehensive recap`);
+    assert.ok(lesson.summary && lesson.summary.length >= 4, `Day ${d} must have >= 4 summary bullet points`);
+    assert.ok(lesson.projectStep && lesson.projectStep.title && lesson.projectStep.steps.length >= 4, `Day ${d} projectStep must have >= 4 steps`);
+
+    let totalWords = 0;
+    for (let i = 0; i < 5; i++) {
+      const p = lesson.parts[i];
+      assert.ok(p.title && p.title.length > 0, `Day ${d} Part ${i + 1} title missing`);
+      assert.ok(p.say && p.say.length >= 1, `Day ${d} Part ${i + 1} say missing`);
+      
+      const partWords = p.say.join(' ').trim().split(/\s+/).filter(Boolean).length;
+      totalWords += partWords;
+      assert.ok(partWords >= 580, `Day ${d} Part ${i + 1} word count ${partWords} < 580`);
+
+      assert.ok(p.code && (p.code.includes('class ') || p.code.includes('def ')), `Day ${d} Part ${i + 1} code missing`);
+      assert.ok(p.output && p.output.length > 0, `Day ${d} Part ${i + 1} output missing`);
+      assert.ok(p.codeNotes && p.codeNotes.length >= 2, `Day ${d} Part ${i + 1} codeNotes missing`);
+      assert.ok(p.tryIt && p.tryIt.length > 0, `Day ${d} Part ${i + 1} tryIt missing`);
+
+      const check = p.check as any;
+      assert.ok(check && check.question && check.question.length > 10, `Day ${d} Part ${i + 1} check question missing`);
+      assert.equal(check.options.length, 4, `Day ${d} Part ${i + 1} check must have 4 options`);
+      assert.equal(check.answer, 0, `Day ${d} Part ${i + 1} check answer must be 0`);
+      assert.equal(check.answerIndex, 0, `Day ${d} Part ${i + 1} check answerIndex must be 0`);
+      assert.ok(check.why && check.why.length > 10, `Day ${d} Part ${i + 1} check why missing`);
+      assert.equal(check.explanation, check.why, `Day ${d} Part ${i + 1} explanation must match why`);
+    }
+
+    assert.ok(totalWords >= 2950, `Day ${d} total words ${totalWords} < 2950`);
+  }
+});
+
+test('Block 137: B.Com Finance Day 16: Leverage (DOL, DFL, DCL & Indifference) Snippets Verification', () => {
+  const lesson = getLongLesson('bcom-finance', 16);
+  assert.ok(lesson);
+  assert.equal(lesson.title, 'Operating, Financial & Combined Leverage: DOL, DFL & DCL');
+
+  // Part 1: Operating Leverage (DOL)
+  assert.match(lesson.parts[0].title, /Operating Leverage.*DOL Mechanics/i);
+  assert.ok(lesson.parts[0].code?.includes('OperatingCostStructure'));
+  assert.ok(lesson.parts[0].output?.includes('INSTITUTIONAL OPERATING LEVERAGE (DOL) AUDIT'));
+
+  // Part 2: Financial Leverage (DFL)
+  assert.match(lesson.parts[1].title, /Financial Leverage.*DFL Mechanics/i);
+  assert.ok(lesson.parts[1].code?.includes('CapitalDebtProfile'));
+  assert.ok(lesson.parts[1].output?.includes('INSTITUTIONAL FINANCIAL LEVERAGE (DFL) AUDIT'));
+
+  // Part 3: Combined Leverage (DCL)
+  assert.match(lesson.parts[2].title, /Combined Leverage.*DCL Synthesis/i);
+  assert.ok(lesson.parts[2].code?.includes('EnterpriseFirmStructure'));
+  assert.ok(lesson.parts[2].output?.includes('INSTITUTIONAL DEGREE OF COMBINED LEVERAGE (DCL) AUDIT'));
+
+  // Part 4: EBIT-EPS Indifference Point
+  assert.match(lesson.parts[3].title, /EBIT-EPS Indifference Analysis/i);
+  assert.ok(lesson.parts[3].code?.includes('CapitalFinancingPlan'));
+  assert.ok(lesson.parts[3].output?.includes('INSTITUTIONAL EBIT-EPS INDIFFERENCE POINT AUDIT'));
+
+  // Part 5: Enterprise Leverage Governance
+  assert.match(lesson.parts[4].title, /Enterprise Leverage Governance & Risk Management Suite/i);
+  assert.ok(lesson.parts[4].code?.includes('CorporateDivisionProfile'));
+  assert.ok(lesson.parts[4].output?.includes('ENTERPRISE LEVERAGE GOVERNANCE & RISK MANAGEMENT MASTER AUDIT'));
+});
+
+test('Block 137: B.Com Finance Day 17: Break-Even Analysis & Margin of Safety Snippets Verification', () => {
+  const lesson = getLongLesson('bcom-finance', 17);
+  assert.ok(lesson);
+  assert.equal(lesson.title, 'Break-Even Analysis & Margin of Safety');
+
+  // Part 1: Contribution Margin & P/V Ratio
+  assert.match(lesson.parts[0].title, /Contribution Margin Economics & Profit-Volume \(P\/V\) Ratio/i);
+  assert.ok(lesson.parts[0].code?.includes('ProductLineUnitEconomics'));
+  assert.ok(lesson.parts[0].output?.includes('INSTITUTIONAL CONTRIBUTION MARGIN & P/V RATIO AUDIT'));
+
+  // Part 2: Break-Even Point (BEP)
+  assert.match(lesson.parts[1].title, /Break-Even Point \(BEP\) Formulation/i);
+  assert.ok(lesson.parts[1].code?.includes('FacilityOperatingProfile'));
+  assert.ok(lesson.parts[1].output?.includes('INSTITUTIONAL BREAK-EVEN POINT (BEP) AUDIT'));
+
+  // Part 3: Margin of Safety (MOS)
+  assert.match(lesson.parts[2].title, /Margin of Safety \(MOS\): Cushion Analysis/i);
+  assert.ok(lesson.parts[2].code?.includes('CommercialSalesPerformance'));
+  assert.ok(lesson.parts[2].output?.includes('INSTITUTIONAL MARGIN OF SAFETY (MOS) AUDIT'));
+
+  // Part 4: Target Profit Sales Planning
+  assert.match(lesson.parts[3].title, /Target Profit Volume Planning & Tax-Adjusted Sales Models/i);
+  assert.ok(lesson.parts[3].code?.includes('TargetProfitObjectives'));
+  assert.ok(lesson.parts[3].output?.includes('INSTITUTIONAL TARGET PROFIT PLANNING AUDIT'));
+
+  // Part 5: Multi-Product CVP Master Suite
+  assert.match(lesson.parts[4].title, /Enterprise CVP Multi-Product Break-Even & Governance Suite/i);
+  assert.ok(lesson.parts[4].code?.includes('ProductLineSpecification'));
+  assert.ok(lesson.parts[4].output?.includes('ENTERPRISE MULTI-PRODUCT CVP BREAK-EVEN & GOVERNANCE AUDIT'));
+});
+
+test('Block 137: B.Com Finance Day 18: Working Capital & Cash Budgeting Snippets Verification', () => {
+  const lesson = getLongLesson('bcom-finance', 18);
+  assert.ok(lesson);
+  assert.equal(lesson.title, 'Working Capital Management & Quarterly Cash Budgeting');
+
+  // Part 1: CCC & Operating Cycle
+  assert.match(lesson.parts[0].title, /Working Capital Architecture: Gross vs Net & The Operating Cycle/i);
+  assert.ok(lesson.parts[0].code?.includes('WorkingCapitalProfile'));
+  assert.ok(lesson.parts[0].output?.includes('INSTITUTIONAL CASH CONVERSION CYCLE (CCC) AUDIT'));
+
+  // Part 2: Working Capital Financing Policies
+  assert.match(lesson.parts[1].title, /Working Capital Financing Policies/i);
+  assert.ok(lesson.parts[1].code?.includes('CorporateAssetRequirements'));
+  assert.ok(lesson.parts[1].output?.includes('INSTITUTIONAL WORKING CAPITAL FINANCING POLICY AUDIT'));
+
+  // Part 3: Cash Budgeting
+  assert.match(lesson.parts[2].title, /Quarterly Cash Budgeting & Rolling Liquidity Schedules/i);
+  assert.ok(lesson.parts[2].code?.includes('MonthlyCashForecast'));
+  assert.ok(lesson.parts[2].output?.includes('INSTITUTIONAL QUARTERLY CASH BUDGET & OVERDRAFT AUDIT'));
+
+  // Part 4: Receivables & Credit Policy
+  assert.match(lesson.parts[3].title, /Receivables Management: Credit Terms & Bad Debt Optimization/i);
+  assert.ok(lesson.parts[3].code?.includes('CreditPolicySpecification'));
+  assert.ok(lesson.parts[3].output?.includes('INSTITUTIONAL TRADE CREDIT POLICY OPTIMIZATION AUDIT'));
+
+  // Part 5: Working Capital Control Tower
+  assert.match(lesson.parts[4].title, /Enterprise Working Capital Liquidity & Treasury Control Tower/i);
+  assert.ok(lesson.parts[4].code?.includes('EnterpriseBalanceSheetAudit'));
+  assert.ok(lesson.parts[4].output?.includes('ENTERPRISE WORKING CAPITAL & TREASURY CONTROL TOWER AUDIT'));
+});
+
+test('Block 137: B.Com Finance Day 19: Capital Structure Theories & MM Snippets Verification', () => {
+  const lesson = getLongLesson('bcom-finance', 19);
+  assert.ok(lesson);
+  assert.equal(lesson.title, 'Capital Structure Theories: Modigliani-Miller (MM) Theorem');
+
+  // Part 1: NI vs NOI
+  assert.match(lesson.parts[0].title, /Traditional Capital Structure: Net Income \(NI\) vs Net Operating Income \(NOI\)/i);
+  assert.ok(lesson.parts[0].code?.includes('CapitalStructureScenario'));
+  assert.ok(lesson.parts[0].output?.includes('INSTITUTIONAL NI VS NOI CAPITAL STRUCTURE AUDIT'));
+
+  // Part 2: MM No Taxes Arbitrage
+  assert.match(lesson.parts[1].title, /Modigliani-Miller \(MM\) Theorem: Irrelevance & Arbitrage/i);
+  assert.ok(lesson.parts[1].code?.includes('FirmValuationProfile'));
+  assert.ok(lesson.parts[1].output?.includes('INSTITUTIONAL MODIGLIANI-MILLER HOMEMADE LEVERAGE ARBITRAGE AUDIT'));
+
+  // Part 3: MM With Corporate Taxes
+  assert.match(lesson.parts[2].title, /Modigliani-Miller with Corporate Taxes/i);
+  assert.ok(lesson.parts[2].code?.includes('CorporateTaxValuationCase'));
+  assert.ok(lesson.parts[2].output?.includes('INSTITUTIONAL MODIGLIANI-MILLER WITH CORPORATE TAXES AUDIT'));
+
+  // Part 4: Static Trade-Off Theory
+  assert.match(lesson.parts[3].title, /Static Trade-Off Theory: Tax Shields vs Financial Distress Costs/i);
+  assert.ok(lesson.parts[3].code?.includes('TradeOffFirmProfile'));
+  assert.ok(lesson.parts[3].output?.includes('INSTITUTIONAL STATIC TRADE-OFF CAPITAL STRUCTURE AUDIT'));
+
+  // Part 5: Capital Structure Governance Suite
+  assert.match(lesson.parts[4].title, /Enterprise Capital Structure Governance & Valuation Suite/i);
+  assert.ok(lesson.parts[4].code?.includes('EnterpriseCapitalPolicyInput'));
+  assert.ok(lesson.parts[4].output?.includes('ENTERPRISE CAPITAL STRUCTURE GOVERNANCE & VALUATION AUDIT'));
+});
+
+test('Block 137: B.Com Finance Day 20: Dividend Policy Theories Snippets Verification', () => {
+  const lesson = getLongLesson('bcom-finance', 20);
+  assert.ok(lesson);
+  assert.equal(lesson.title, "Dividend Policy Theories: Walter's Model & Gordon's Model");
+
+  // Part 1: Walter's Model
+  assert.match(lesson.parts[0].title, /Walter's Dividend Valuation Model/i);
+  assert.ok(lesson.parts[0].code?.includes('CorporateEarningsProfile'));
+  assert.ok(lesson.parts[0].output?.includes("INSTITUTIONAL WALTER'S DIVIDEND VALUATION AUDIT"));
+
+  // Part 2: Gordon's Model
+  assert.match(lesson.parts[1].title, /Gordon's Model: Bird-in-the-Hand Theory/i);
+  assert.ok(lesson.parts[1].code?.includes('GordonStockProfile'));
+  assert.ok(lesson.parts[1].output?.includes('INSTITUTIONAL GORDON DIVIDEND GROWTH MODEL AUDIT'));
+
+  // Part 3: MM Dividend Irrelevance
+  assert.match(lesson.parts[2].title, /Modigliani-Miller \(MM\) Dividend Irrelevance Theorem/i);
+  assert.ok(lesson.parts[2].code?.includes('CorporateDividendCase'));
+  assert.ok(lesson.parts[2].output?.includes('INSTITUTIONAL MODIGLIANI-MILLER DIVIDEND IRRELEVANCE AUDIT'));
+
+  // Part 4: Share Repurchases vs Dividends
+  assert.match(lesson.parts[3].title, /Share Repurchases \(Buybacks\) vs Cash Dividends/i);
+  assert.ok(lesson.parts[3].code?.includes('CapitalDistributionPlan'));
+  assert.ok(lesson.parts[3].output?.includes('INSTITUTIONAL SHARE REPURCHASE VS CASH DIVIDEND AUDIT'));
+
+  // Part 5: Master Dividend Governance Suite
+  assert.match(lesson.parts[4].title, /Enterprise Dividend Policy Master Optimization & Governance Suite/i);
+  assert.ok(lesson.parts[4].code?.includes('BoardDividendContext'));
+  assert.ok(lesson.parts[4].output?.includes('ENTERPRISE DIVIDEND POLICY MASTER GOVERNANCE AUDIT'));
+});
+
+test('Block 137: B.Com Finance Days 16-20 Gate v2 Visual JSON Integrity Verification', () => {
+  const fs = require('fs');
+  const path = require('path');
+  const crypto = require('crypto');
+
+  for (let d = 16; d <= 20; d++) {
+    const pad = String(d).padStart(2, '0');
+    const visPath = path.join(__dirname, `../src/lib/data/lessonVisuals/bcom-finance/day-${pad}.json`);
+    assert.ok(fs.existsSync(visPath), `Visual JSON must exist for Day ${d}`);
+
+    const vis = JSON.parse(fs.readFileSync(visPath, 'utf8'));
+    assert.equal(vis.prefix, 'bcom-finance');
+    assert.equal(vis.day, d);
+    assert.equal(vis.entries.length, 5, `Day ${d} visual must contain exactly 5 entries`);
+
+    const lesson = getLongLesson('bcom-finance', d);
+    for (let i = 0; i < 5; i++) {
+      const entry = vis.entries[i];
+      const part = lesson.parts[i];
+
+      assert.equal(entry.spec.template, 'ledger-sheet', `Day ${d} Part ${i + 1} must use ledger-sheet template`);
+      assert.ok(entry.spec.steps.length >= 3, `Day ${d} Part ${i + 1} visual must have >= 3 steps`);
+
+      // Verify SHA-256 binding between code and visual entry
+      const expectedHash = crypto.createHash('sha256').update(part.code).digest('hex');
+      assert.equal(entry.codeHash, expectedHash, `Day ${d} Part ${i + 1} visual codeHash must match actual part.code`);
+    }
+  }
+});
+
+
 
 
