@@ -1893,4 +1893,240 @@ test('Block 135: B.Com Finance Days 6-10 Gate v2 Visual JSON Integrity Verificat
   }
 });
 
+// ============================================================================
+// BLOCK 136: B.COM FINANCE DAYS 11-15 (MILESTONE 3 CAPSTONE)
+// ============================================================================
+
+test('Block 136: B.Com Finance Days 11-15 Structural & Invariant Verification', () => {
+  for (let d = 11; d <= 15; d++) {
+    const lesson = getLongLesson('bcom-finance', d);
+    assert.ok(lesson, `bcom-finance Day ${d} lesson must be defined`);
+    assert.equal(lesson.coursePrefix, 'bcom-finance');
+    assert.equal(lesson.day, d);
+    assert.equal(lesson.parts.length, 5, `Day ${d} must contain exactly 5 parts`);
+
+    const expectedMinutes = d === 15 ? 50 : 45;
+    assert.equal(lesson.minutes, expectedMinutes, `Day ${d} duration must be ${expectedMinutes}m`);
+
+    assert.ok(lesson.goal && lesson.goal.length > 30, `Day ${d} must have comprehensive goal`);
+    assert.ok(lesson.recap && lesson.recap.length > 30, `Day ${d} must have comprehensive recap`);
+    assert.ok(lesson.summary && lesson.summary.length >= 4, `Day ${d} must have >= 4 summary bullet points`);
+    assert.ok(lesson.projectStep && lesson.projectStep.title && lesson.projectStep.steps.length >= 4, `Day ${d} projectStep must have >= 4 steps`);
+
+    let totalWords = 0;
+    for (let i = 0; i < 5; i++) {
+      const p = lesson.parts[i];
+      assert.ok(p.title && p.title.length > 0, `Day ${d} Part ${i + 1} title missing`);
+      assert.ok(p.say && p.say.length >= 1, `Day ${d} Part ${i + 1} say missing`);
+      
+      const partWords = p.say.join(' ').trim().split(/\s+/).filter(Boolean).length;
+      totalWords += partWords;
+      assert.ok(partWords >= 580, `Day ${d} Part ${i + 1} word count ${partWords} < 580`);
+
+      assert.ok(p.code && (p.code.includes('class ') || p.code.includes('def ')), `Day ${d} Part ${i + 1} code missing`);
+      assert.ok(p.output && p.output.length > 0, `Day ${d} Part ${i + 1} output missing`);
+      assert.ok(p.codeNotes && p.codeNotes.length >= 2, `Day ${d} Part ${i + 1} codeNotes missing`);
+      assert.ok(p.tryIt && p.tryIt.length > 0, `Day ${d} Part ${i + 1} tryIt missing`);
+
+      const check = p.check as any;
+      assert.ok(check && check.question && check.question.length > 10, `Day ${d} Part ${i + 1} check question missing`);
+      assert.equal(check.options.length, 4, `Day ${d} Part ${i + 1} check must have 4 options`);
+      assert.equal(check.answer, 0, `Day ${d} Part ${i + 1} check answer must be 0`);
+      assert.equal(check.answerIndex, 0, `Day ${d} Part ${i + 1} check answerIndex must be 0`);
+      assert.ok(check.why && check.why.length > 10, `Day ${d} Part ${i + 1} check why missing`);
+      assert.equal(check.explanation, check.why, `Day ${d} Part ${i + 1} explanation must match why`);
+    }
+
+    assert.ok(totalWords >= 2950, `Day ${d} total words ${totalWords} < 2950`);
+  }
+});
+
+test('Block 136: B.Com Finance Day 11: Payback Period & Profitability Index Snippets Verification', () => {
+  const lesson = getLongLesson('bcom-finance', 11);
+  assert.ok(lesson);
+  assert.equal(lesson.title, 'Capital Budgeting: Payback Period & Profitability Index (PI)');
+
+  // Part 1: Simple Payback Period
+  assert.match(lesson.parts[0].title, /Simple Payback Period/i);
+  assert.ok(lesson.parts[0].code?.includes('CapitalOutlayProject'));
+  assert.ok(lesson.parts[0].output?.includes('INSTITUTIONAL CAPITAL BUDGETING: SIMPLE PAYBACK AUDIT'));
+
+  // Part 2: Discounted Payback Period
+  assert.match(lesson.parts[1].title, /Discounted Payback Period/i);
+  assert.ok(lesson.parts[1].code?.includes('DiscountedPaybackCase'));
+  assert.ok(lesson.parts[1].output?.includes('DISCOUNTED VS SIMPLE PAYBACK PERIOD: TIME-VALUE AUDIT'));
+
+  // Part 3: Profitability Index (PI)
+  assert.match(lesson.parts[2].title, /Profitability Index \(PI\)/i);
+  assert.ok(lesson.parts[2].code?.includes('EfficiencyCandidate'));
+  assert.ok(lesson.parts[2].output?.includes('INSTITUTIONAL PROFITABILITY INDEX (BENEFIT-COST) AUDIT'));
+
+  // Part 4: Capital Rationing Optimization
+  assert.match(lesson.parts[3].title, /Capital Rationing Optimization/i);
+  assert.ok(lesson.parts[3].code?.includes('RationingProposal'));
+  assert.ok(lesson.parts[3].output?.includes('CAPITAL RATIONING & PROFITABILITY INDEX ALLOCATION AUDIT'));
+
+  // Part 5: Enterprise Capital Appraisal Suite
+  assert.match(lesson.parts[4].title, /Enterprise Capital Appraisal & Liquidity Governance Suite/i);
+  assert.ok(lesson.parts[4].code?.includes('MasterInvestmentProject'));
+  assert.ok(lesson.parts[4].output?.includes('ENTERPRISE CAPITAL APPRAISAL & LIQUIDITY GOVERNANCE AUDIT'));
+});
+
+test('Block 136: B.Com Finance Day 12: Cost of Debt (Kd) & Tax Shield Snippets Verification', () => {
+  const lesson = getLongLesson('bcom-finance', 12);
+  assert.ok(lesson);
+  assert.equal(lesson.title, 'Cost of Capital: Cost of Debt (Kd) & Tax Shield');
+
+  // Part 1: Pre-Tax vs After-Tax Kd
+  assert.match(lesson.parts[0].title, /Pre-Tax vs Effective After-Tax Cost of Debt/i);
+  assert.ok(lesson.parts[0].code?.includes('DebtFinancingFacility'));
+  assert.ok(lesson.parts[0].output?.includes('INSTITUTIONAL DEBT FINANCING: PRE-TAX VS AFTER-TAX AUDIT'));
+
+  // Part 2: Corporate Interest Tax Shield
+  assert.match(lesson.parts[1].title, /Corporate Interest Tax Shield/i);
+  assert.ok(lesson.parts[1].code?.includes('CorporateDebtStructure'));
+  assert.ok(lesson.parts[1].output?.includes('MODIGLIANI-MILLER CORPORATE INTEREST TAX SHIELD AUDIT'));
+
+  // Part 3: Flotation Costs
+  assert.match(lesson.parts[2].title, /Flotation Costs/i);
+  assert.ok(lesson.parts[2].code?.includes('BondIssuancePlan'));
+  assert.ok(lesson.parts[2].output?.includes('PUBLIC DEBT FLOTATION COSTS & ISSUANCE PROCEEDS AUDIT'));
+
+  // Part 4: Redeemable Debentures
+  assert.match(lesson.parts[3].title, /Redeemable Debentures/i);
+  assert.ok(lesson.parts[3].code?.includes('RedeemableDebenture'));
+  assert.ok(lesson.parts[3].output?.includes('REDEEMABLE DEBENTURE COST OF DEBT APPROXIMATION AUDIT'));
+
+  // Part 5: Debt Structure Master Suite
+  assert.match(lesson.parts[4].title, /Enterprise Debt Capital Structure & Tax Shield Master Suite/i);
+  assert.ok(lesson.parts[4].code?.includes('DebtTranche'));
+  assert.ok(lesson.parts[4].output?.includes('ENTERPRISE MULTI-TRANCHE DEBT & TAX SHIELD MASTER AUDIT'));
+});
+
+test('Block 136: B.Com Finance Day 13: Cost of Equity (Ke) via CAPM & Dividend Growth Snippets Verification', () => {
+  const lesson = getLongLesson('bcom-finance', 13);
+  assert.ok(lesson);
+  assert.equal(lesson.title, 'Cost of Capital: Cost of Equity (Ke) via CAPM & Dividend Growth');
+
+  // Part 1: CAPM & Systematic Risk
+  assert.match(lesson.parts[0].title, /Capital Asset Pricing Model \(CAPM\)/i);
+  assert.ok(lesson.parts[0].code?.includes('CapmEquitySecurity'));
+  assert.ok(lesson.parts[0].output?.includes('CAPITAL ASSET PRICING MODEL (CAPM) COST OF EQUITY AUDIT'));
+
+  // Part 2: Gordon Growth Model
+  assert.match(lesson.parts[1].title, /Gordon Constant Growth Dividend Model/i);
+  assert.ok(lesson.parts[1].code?.includes('DividendStockQuote'));
+  assert.ok(lesson.parts[1].output?.includes('GORDON CONSTANT GROWTH DIVIDEND DISCOUNT AUDIT'));
+
+  // Part 3: Dual-Model Triangulation
+  assert.match(lesson.parts[2].title, /Dual-Model Ke Triangulation/i);
+  assert.ok(lesson.parts[2].code?.includes('EquityValuationProfile'));
+  assert.ok(lesson.parts[2].output?.includes('DUAL-MODEL COST OF EQUITY (CAPM VS GORDON) TRIANGULATION'));
+
+  // Part 4: Preference Capital (Kp)
+  assert.match(lesson.parts[3].title, /Cost of Preference Capital \(Kp\)/i);
+  assert.ok(lesson.parts[3].code?.includes('PreferenceShareIssue'));
+  assert.ok(lesson.parts[3].output?.includes('PREFERENCE SHARE CAPITAL (Kp) FINANCING COST AUDIT'));
+
+  // Part 5: Enterprise Equity Master Suite
+  assert.match(lesson.parts[4].title, /Enterprise Equity & Hybrid Capital Valuation Suite/i);
+  assert.ok(lesson.parts[4].code?.includes('CorporateEquityStructure'));
+  assert.ok(lesson.parts[4].output?.includes('ENTERPRISE EQUITY & HYBRID CAPITAL HURDLE RATE AUDIT'));
+});
+
+test('Block 136: B.Com Finance Day 14: WACC & Blended Financing Cost Snippets Verification', () => {
+  const lesson = getLongLesson('bcom-finance', 14);
+  assert.ok(lesson);
+  assert.equal(lesson.title, 'Weighted Average Cost of Capital (WACC) & Blended Financing Cost');
+
+  // Part 1: WACC Equation & Weights
+  assert.match(lesson.parts[0].title, /The WACC Equation & Capital Structure Weighting/i);
+  assert.ok(lesson.parts[0].code?.includes('EnterpriseCapitalization'));
+  assert.ok(lesson.parts[0].output?.includes('ENTERPRISE WEIGHTED AVERAGE COST OF CAPITAL (WACC) AUDIT'));
+
+  // Part 2: Market vs Book Value
+  assert.match(lesson.parts[1].title, /Market Value vs Book Value Weighting Schemes/i);
+  assert.ok(lesson.parts[1].code?.includes('CapitalStructureData'));
+  assert.ok(lesson.parts[1].output?.includes('WACC WEIGHTING SCHEMES: BOOK VALUE VS MARKET VALUE AUDIT'));
+
+  // Part 3: Hurdle Rate & Divisional Adjustments
+  assert.match(lesson.parts[2].title, /WACC as Project Hurdle Rate & Divisional Risk Adjustments/i);
+  assert.ok(lesson.parts[2].code?.includes('CapitalProjectCandidate'));
+  assert.ok(lesson.parts[2].output?.includes('DIVISIONAL RISK ADJUSTMENT & TAILORED WACC HURDLE AUDIT'));
+
+  // Part 4: Capital Structure Optimization
+  assert.match(lesson.parts[3].title, /Capital Structure Optimization/i);
+  assert.ok(lesson.parts[3].code?.includes('CapitalStructureOptimizer'));
+  assert.ok(lesson.parts[3].output?.includes('CAPITAL STRUCTURE OPTIMIZATION: WACC MINIMIZATION AUDIT'));
+
+  // Part 5: Enterprise Hurdle Allocation Suite
+  assert.match(lesson.parts[4].title, /Enterprise Corporate Hurdle Rate & Capital Allocation Suite/i);
+  assert.ok(lesson.parts[4].code?.includes('CorporateProposal'));
+  assert.ok(lesson.parts[4].output?.includes('ENTERPRISE CORPORATE HURDLE RATE & CAPITAL ALLOCATION AUDIT'));
+});
+
+test('Block 136: B.Com Finance Day 15 Capstone: Integrated Capital Budgeting & WACC Engine Snippets Verification', () => {
+  const lesson = getLongLesson('bcom-finance', 15);
+  assert.ok(lesson);
+  assert.match(lesson.title, /MILESTONE 3.*Complete Capital Budgeting & Cost of Capital Valuation Engine/i);
+
+  // Part 1: Enterprise WACC & Multi-Period DCF
+  assert.match(lesson.parts[0].title, /Enterprise WACC & Multi-Period DCF Master Synthesis/i);
+  assert.ok(lesson.parts[0].code?.includes('MasterValuationCase'));
+  assert.ok(lesson.parts[0].output?.includes('⭐ MILESTONE 3 CAPSTONE: WACC & DCF CAPITAL BUDGETING MASTER'));
+
+  // Part 2: Capital Equipment Replacement & EAC
+  assert.match(lesson.parts[1].title, /Capital Equipment Replacement & Equivalent Annual Cost \(EAC\)/i);
+  assert.ok(lesson.parts[1].code?.includes('EquipmentReplacementCase'));
+  assert.ok(lesson.parts[1].output?.includes('CAPITAL EQUIPMENT REPLACEMENT & MODERNIZATION AUDIT'));
+
+  // Part 3: EBIT-EPS Indifference Point
+  assert.match(lesson.parts[2].title, /EBIT-EPS Indifference Point & Financial Financing Plans/i);
+  assert.ok(lesson.parts[2].code?.includes('FinancingPlan'));
+  assert.ok(lesson.parts[2].output?.includes('EBIT-EPS INDIFFERENCE POINT FINANCIAL FINANCING AUDIT'));
+
+  // Part 4: Capital Rationing Matrix
+  assert.match(lesson.parts[3].title, /Multi-Project Capital Rationing Matrix & Boundary Analysis/i);
+  assert.ok(lesson.parts[3].code?.includes('CapexProposal'));
+  assert.ok(lesson.parts[3].output?.includes('CAPITAL RATIONING MATRIX & MULTI-PROJECT OPTIMIZATION'));
+
+  // Part 5: Grand Milestone 3 Capstone
+  assert.match(lesson.parts[4].title, /Milestone 3 Capstone: Integrated Capital Budgeting & Valuation Suite/i);
+  assert.ok(lesson.parts[4].code?.includes('StrategicProposal'));
+  assert.ok(lesson.parts[4].output?.includes('⭐ MILESTONE 3 CAPSTONE: CAPITAL BUDGETING & WACC MASTER AUDIT'));
+  assert.ok(lesson.parts[4].output?.includes('MILESTONE_3_CFO_CAPITAL_BUDGETING_WACC_MASTER_CERTIFIED'));
+  assert.ok(lesson.parts[4].output?.includes('MILESTONE 3 COMPLETE: CAPITAL BUDGETING & WACC MASTER ATTAINED!'));
+});
+
+test('Block 136: B.Com Finance Days 11-15 Gate v2 Visual JSON Integrity Verification', () => {
+  const fs = require('fs');
+  const path = require('path');
+  const crypto = require('crypto');
+
+  for (let d = 11; d <= 15; d++) {
+    const pad = String(d).padStart(2, '0');
+    const visPath = path.join(__dirname, `../src/lib/data/lessonVisuals/bcom-finance/day-${pad}.json`);
+    assert.ok(fs.existsSync(visPath), `Visual JSON must exist for Day ${d}`);
+
+    const vis = JSON.parse(fs.readFileSync(visPath, 'utf8'));
+    assert.equal(vis.prefix, 'bcom-finance');
+    assert.equal(vis.day, d);
+    assert.equal(vis.entries.length, 5, `Day ${d} visual must contain exactly 5 entries`);
+
+    const lesson = getLongLesson('bcom-finance', d);
+    for (let i = 0; i < 5; i++) {
+      const entry = vis.entries[i];
+      const part = lesson.parts[i];
+
+      assert.equal(entry.spec.template, 'ledger-sheet', `Day ${d} Part ${i + 1} must use ledger-sheet template`);
+      assert.ok(entry.spec.steps.length >= 3, `Day ${d} Part ${i + 1} visual must have >= 3 steps`);
+
+      // Verify SHA-256 binding between code and visual entry
+      const expectedHash = crypto.createHash('sha256').update(part.code).digest('hex');
+      assert.equal(entry.codeHash, expectedHash, `Day ${d} Part ${i + 1} visual codeHash must match actual part.code`);
+    }
+  }
+});
+
+
 
