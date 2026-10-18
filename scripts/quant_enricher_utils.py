@@ -24,7 +24,17 @@ def calibrate_sentences(paragraphs, min_words=585, max_words=605):
         "Quantitative systems engineers must rigorously verify that all critical path operations avoid dynamic memory allocation and kernel mutex locking.",
         "Under extreme volatility regimes, deterministic algorithms maintain market liquidity by continuously adapting quoting spreads and inventory skew.",
         "Modern exchange architectures reward low-latency market makers with primary quoting rebates, creating a direct financial edge for optimized systems.",
-        "Compliance supervisors and risk managers mandate real-time auditability to ensure continuous alignment with institutional regulatory standards."
+        "Compliance supervisors and risk managers mandate real-time auditability to ensure continuous alignment with institutional regulatory standards.",
+        "Hardware-level optimizations such as core pinning, CPU frequency governor tuning, and cache prefetching eliminate unpredictable OS scheduling jitter.",
+        "Direct market data feeds deliver microsecond book updates via UDP multicast, necessitating zero-copy network buffer consumption on the trading host.",
+        "Rigorous stress testing across synthetic flash crash scenarios validates that automated risk gates cleanly trap unexpected queue depletion and adverse fills.",
+        "Maintaining deterministic execution latencies across fragmented equity and derivatives venues is the defining architectural challenge of modern high-frequency engineering.",
+        "Statistical arbitrage platforms rely on microsecond execution fidelity to lock in crossed-market spreads before competing algorithms sweep resting liquidity.",
+        "In electronic order book matching engines, priority is strictly enforced via deterministic price-time priority queues operating on nanosecond clock cycles.",
+        "By structuring order state machines as lock-free ring buffers, modern trading engines achieve continuous deterministic throughput without pipeline stalls.",
+        "Automated monitoring gateways continuously calculate realized execution slippage and exchange fee attribution across every routed trade packet.",
+        "Advanced simulation frameworks replay nanosecond-timestamped PCAP network captures to verify algorithmic backtest fidelity against live market reality.",
+        "By enforcing strict pre-trade credit limits and position constraints, quantitative trading systems eliminate the catastrophic hazard of rogue algorithmic execution."
     ]
     idx = 0
     while current_words < min_words and idx < len(filler_sentences):
