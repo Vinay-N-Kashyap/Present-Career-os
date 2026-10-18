@@ -8,7 +8,7 @@ import { loadDayFile, getVisual, clearDayFileCache } from '../src/lib/visuals/lo
 import { getLongLesson, estimateSpokenMinutes, estimateLessonMinutes } from '../src/lib/data/longLessons';
 import { getTappableLabelsForVisual } from '../src/lib/visuals/visualRules';
 
-test('Java Basics Visuals Expansion: Days 6 to 55 On-Disk Spec Verification', () => {
+test('Java Basics Visuals Expansion: Days 6 to 60 On-Disk Spec Verification', () => {
   clearDayFileCache();
   const prefix = 'java-basics';
   const expectedTemplate = 'stack-queue';
@@ -16,7 +16,7 @@ test('Java Basics Visuals Expansion: Days 6 to 55 On-Disk Spec Verification', ()
   assert.equal(isCourseVisualsEnabled(prefix), true, `Course "${prefix}" must be enabled in enabledCourses`);
 
   const daysToTest = [];
-  for (let d = 6; d <= 55; d++) {
+  for (let d = 6; d <= 60; d++) {
     daysToTest.push(d);
   }
 
@@ -62,7 +62,7 @@ test('Java Basics Visuals Expansion: Days 6 to 55 On-Disk Spec Verification', ()
 
 test('Java Basics Duration Invariant: Days >= 11 Meet 20+ Spoken Min and 35-40 Total Min', () => {
   const daysToTest = [];
-  for (let d = 11; d <= 55; d++) {
+  for (let d = 11; d <= 60; d++) {
     daysToTest.push(d);
   }
 
@@ -77,7 +77,7 @@ test('Java Basics Duration Invariant: Days >= 11 Meet 20+ Spoken Min and 35-40 T
   }
 });
 
-test('Java Basics Days 31-55 Domain & Masterclass Integrity Verification', () => {
+test('Java Basics Days 31-60 Domain & Masterclass Integrity Verification', () => {
   const prefix = 'java-basics';
 
   // Day 31: Classes, Heap Instances & Reference Pointer Mechanics
@@ -249,4 +249,39 @@ test('Java Basics Days 31-55 Domain & Masterclass Integrity Verification', () =>
   assert.equal(d55.parts.length, 5);
   assert.match(d55.title, /Milestone 10.*Producer-Consumer/);
   assert.ok(d55.parts.some(p => (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('wait()') || (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('notifyAll()') || (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('Spurious Wakeup')));
+
+  // Day 56: Modern Concurrency: ExecutorService, ThreadPoolExecutor & Thread Pool Tuning
+  const d56 = getLongLesson(prefix, 56);
+  assert.ok(d56);
+  assert.equal(d56.parts.length, 5);
+  assert.match(d56.title, /ExecutorService.*ThreadPoolExecutor/);
+  assert.ok(d56.parts.some(p => (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('Brian Goetz') || (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('CallerRunsPolicy') || (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('newCachedThreadPool')));
+
+  // Day 57: Atomic Primitives: AtomicInteger, AtomicReference & Lock-Free CAS Loops
+  const d57 = getLongLesson(prefix, 57);
+  assert.ok(d57);
+  assert.equal(d57.parts.length, 5);
+  assert.match(d57.title, /Atomic Primitives.*Lock-Free CAS/);
+  assert.ok(d57.parts.some(p => (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('CMPXCHG') || (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('LongAdder') || (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('Treiber')));
+
+  // Day 58: Enterprise Database Connectivity: JDBC, Connection Pooling (HikariCP) & Transactions
+  const d58 = getLongLesson(prefix, 58);
+  assert.ok(d58);
+  assert.equal(d58.parts.length, 5);
+  assert.match(d58.title, /Enterprise Database Connectivity.*JDBC.*HikariCP/);
+  assert.ok(d58.parts.some(p => (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('HikariCP') || (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('PreparedStatement') || (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('setAutoCommit(false)')));
+
+  // Day 59: High-Throughput Streams, Lambdas & Modern Functional Processing Pipelines
+  const d59 = getLongLesson(prefix, 59);
+  assert.ok(d59);
+  assert.equal(d59.parts.length, 5);
+  assert.match(d59.title, /High-Throughput Streams.*Functional Processing/);
+  assert.ok(d59.parts.some(p => (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('Loop Fusion') || (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('groupingBy') || (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('ForkJoinPool')));
+
+  // Day 60: Month 2 Master Capstone Gate: LedgerCore Enterprise Settlement Engine & Live Architecture Viva
+  const d60 = getLongLesson(prefix, 60);
+  assert.ok(d60);
+  assert.equal(d60.parts.length, 5);
+  assert.match(d60.title, /Month 2 Master Capstone Gate.*LedgerCore/);
+  assert.ok(d60.parts.some(p => (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('LedgerCore') || (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('100,000') || (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('Coffman')));
 });
