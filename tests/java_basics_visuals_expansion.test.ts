@@ -8,7 +8,7 @@ import { loadDayFile, getVisual, clearDayFileCache } from '../src/lib/visuals/lo
 import { getLongLesson, estimateSpokenMinutes, estimateLessonMinutes } from '../src/lib/data/longLessons';
 import { getTappableLabelsForVisual } from '../src/lib/visuals/visualRules';
 
-test('Java Basics Visuals Expansion: Days 6 to 50 On-Disk Spec Verification', () => {
+test('Java Basics Visuals Expansion: Days 6 to 55 On-Disk Spec Verification', () => {
   clearDayFileCache();
   const prefix = 'java-basics';
   const expectedTemplate = 'stack-queue';
@@ -16,7 +16,7 @@ test('Java Basics Visuals Expansion: Days 6 to 50 On-Disk Spec Verification', ()
   assert.equal(isCourseVisualsEnabled(prefix), true, `Course "${prefix}" must be enabled in enabledCourses`);
 
   const daysToTest = [];
-  for (let d = 6; d <= 50; d++) {
+  for (let d = 6; d <= 55; d++) {
     daysToTest.push(d);
   }
 
@@ -62,7 +62,7 @@ test('Java Basics Visuals Expansion: Days 6 to 50 On-Disk Spec Verification', ()
 
 test('Java Basics Duration Invariant: Days >= 11 Meet 20+ Spoken Min and 35-40 Total Min', () => {
   const daysToTest = [];
-  for (let d = 11; d <= 50; d++) {
+  for (let d = 11; d <= 55; d++) {
     daysToTest.push(d);
   }
 
@@ -77,7 +77,7 @@ test('Java Basics Duration Invariant: Days >= 11 Meet 20+ Spoken Min and 35-40 T
   }
 });
 
-test('Java Basics Days 31-50 Domain & Masterclass Integrity Verification', () => {
+test('Java Basics Days 31-55 Domain & Masterclass Integrity Verification', () => {
   const prefix = 'java-basics';
 
   // Day 31: Classes, Heap Instances & Reference Pointer Mechanics
@@ -214,4 +214,39 @@ test('Java Basics Days 31-50 Domain & Masterclass Integrity Verification', () =>
   assert.equal(d50.parts.length, 5);
   assert.match(d50.title, /Milestone 9.*Order Book/);
   assert.ok(d50.parts.some(p => (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('Order Book') || (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('Composite') || (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('50,000')));
+
+  // Day 51: Operating System Threads vs Java Thread & Runnable
+  const d51 = getLongLesson(prefix, 51);
+  assert.ok(d51);
+  assert.equal(d51.parts.length, 5);
+  assert.match(d51.title, /Operating System Threads vs Java Thread/);
+  assert.ok(d51.parts.some(p => (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('1:1') || (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('start()') || (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('join()')));
+
+  // Day 52: Race Conditions, Critical Sections & The Lost Update Anomaly
+  const d52 = getLongLesson(prefix, 52);
+  assert.ok(d52);
+  assert.equal(d52.parts.length, 5);
+  assert.match(d52.title, /Race Conditions/);
+  assert.ok(d52.parts.some(p => (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('count++') || (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('getfield') || (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('Check-Then-Act')));
+
+  // Day 53: Intrinsic Locks: synchronized Blocks, Methods & Monitor Mechanics
+  const d53 = getLongLesson(prefix, 53);
+  assert.ok(d53);
+  assert.equal(d53.parts.length, 5);
+  assert.match(d53.title, /Intrinsic Locks/);
+  assert.ok(d53.parts.some(p => (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('monitorenter') || (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('Reentrancy') || (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('ordered lock')));
+
+  // Day 54: The Java Memory Model (JMM): volatile Keyword, CPU Caches & Happens-Before Order
+  const d54 = getLongLesson(prefix, 54);
+  assert.ok(d54);
+  assert.equal(d54.parts.length, 5);
+  assert.match(d54.title, /Java Memory Model/);
+  assert.ok(d54.parts.some(p => (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('Happens-Before') || (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('volatile') || (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('Double-Checked')));
+
+  // Day 55: Milestone 10: Thread-Safe Concurrent Producer-Consumer Work Queue with wait() / notifyAll()
+  const d55 = getLongLesson(prefix, 55);
+  assert.ok(d55);
+  assert.equal(d55.parts.length, 5);
+  assert.match(d55.title, /Milestone 10.*Producer-Consumer/);
+  assert.ok(d55.parts.some(p => (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('wait()') || (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('notifyAll()') || (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('Spurious Wakeup')));
 });
