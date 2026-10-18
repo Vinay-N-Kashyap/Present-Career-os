@@ -1,0 +1,687 @@
+{
+  "schemaVersion": 2,
+  "prefix": "react-basics",
+  "day": 41,
+  "promptSha": "block9_generated",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Server-Client Dichotomy: Why Client-Side Bundles Exploded and the Architectural Evolution of React Server Components",
+      "codeHash": "be6e703ba4681684ebc950fad8abce1262c0dd45896b0d08b6fed387f12bac6d",
+      "spec": {
+        "template": "compare",
+        "title": "Architectural Comparison: Traditional SSR vs React Server Components",
+        "left": {
+          "label": "Traditional SSR",
+          "items": [
+            "Ships 100% component code to browser",
+            "Client hydrates entire DOM tree",
+            "Heavy dependencies bloat bundle",
+            "Double execution penalty"
+          ]
+        },
+        "right": {
+          "label": "React Server Components",
+          "items": [
+            "0 KB server component client bundle",
+            "Only interactive islands hydrate",
+            "Heavy libraries stay on Node.js",
+            "Direct database & backend access"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Traditional SSR ships all component code to the client, causing severe bundle bloat and hydration delays.",
+            "values": {
+              "left": {
+                "items": [
+                  "100% Code Shipped",
+                  "Mandatory Hydration",
+                  "Heavy Bundles",
+                  "Double Execution"
+                ]
+              },
+              "right": {
+                "items": [
+                  "0 KB Server Bundle",
+                  "Selective Hydration",
+                  "Zero-Bundle Deps",
+                  "Direct DB Access"
+                ]
+              }
+            },
+            "tones": {
+              "left": "error",
+              "right": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Server Components execute strictly on the server and are never bundled into client JavaScript.",
+            "values": {
+              "left": {
+                "items": [
+                  "Client-Side Overhead",
+                  "DOM Traversal Tax",
+                  "3MB Vendor Bundle",
+                  "Slow TTI"
+                ]
+              },
+              "right": {
+                "items": [
+                  "Zero Client Bytes",
+                  "Fast Streaming",
+                  "Offloaded AST",
+                  "Instant TTI"
+                ]
+              }
+            },
+            "tones": {
+              "left": "error",
+              "right": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Server components access backend databases and microservices directly over high-speed internal networks.",
+            "values": {
+              "left": {
+                "items": [
+                  "REST API Boilerplate",
+                  "Network Waterfalls",
+                  "Manual Endpoints",
+                  "Double Fetch"
+                ]
+              },
+              "right": {
+                "items": [
+                  "Direct SQL / ORM",
+                  "Sub-1ms Data Bus",
+                  "Zero Endpoints",
+                  "Single Response"
+                ]
+              }
+            },
+            "tones": {
+              "left": "error",
+              "right": "ok"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "RSC achieves up to 96.9% reduction in client JavaScript payloads while preserving rich interactivity.",
+            "values": {
+              "left": {
+                "items": [
+                  "723 KB Client Bundle",
+                  "103ms Hydration Cost",
+                  "1188ms TTI Score",
+                  "Red Web Vitals"
+                ]
+              },
+              "right": {
+                "items": [
+                  "22 KB Client Bundle",
+                  "8ms Hydration Cost",
+                  "41ms TTI Score",
+                  "Green Web Vitals"
+                ]
+              }
+            },
+            "tones": {
+              "left": "error",
+              "right": "ok"
+            }
+          }
+        ]
+      },
+      "filled": true
+    },
+    {
+      "partTitle": "The \"use client\" Boundary: Directive Semantics, Island Leaves vs Server Roots & Serialization Invariants",
+      "codeHash": "6778a36d21b737ef663a7406829ff479901a6e8dbb08746a5c22d51f320b7bd0",
+      "spec": {
+        "template": "flow",
+        "title": "The 'use client' Directive & Serialization Boundary",
+        "nodes": [
+          {
+            "id": "server_root",
+            "label": "Server Component Root",
+            "tappable": false
+          },
+          {
+            "id": "props_guard",
+            "label": "Props Serialization Guard",
+            "tappable": false
+          },
+          {
+            "id": "rsc_wire",
+            "label": "RSC Wire Stream ($L1)",
+            "tappable": false
+          },
+          {
+            "id": "client_leaf",
+            "label": "Client Island Leaf",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The 'use client' directive defines a strict boundary across the module dependency graph.",
+            "values": {
+              "server_root": {
+                "text": "\"Server Root\""
+              },
+              "props_guard": {
+                "text": "\"Validating\""
+              },
+              "rsc_wire": {
+                "text": "\"Encoding\""
+              },
+              "client_leaf": {
+                "text": "\"Hydrating\""
+              }
+            },
+            "tones": {
+              "server_root": "ok",
+              "props_guard": "data",
+              "rsc_wire": "data",
+              "client_leaf": "idle"
+            },
+            "arrows": [
+              [
+                "server_root",
+                "props_guard"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "All props crossing the boundary must be strictly JSON-serializable primitives or React elements.",
+            "values": {
+              "server_root": {
+                "text": "\"Evaluated\""
+              },
+              "props_guard": {
+                "text": "\"JSON Checked\""
+              },
+              "rsc_wire": {
+                "text": "\"Stream Ready\""
+              },
+              "client_leaf": {
+                "text": "\"Standby\""
+              }
+            },
+            "tones": {
+              "server_root": "ok",
+              "props_guard": "ok",
+              "rsc_wire": "data",
+              "client_leaf": "idle"
+            },
+            "arrows": [
+              [
+                "props_guard",
+                "rsc_wire"
+              ]
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Passing functions or class instances across the boundary triggers a fatal serialization error.",
+            "values": {
+              "server_root": {
+                "text": "\"Evaluated\""
+              },
+              "props_guard": {
+                "text": "\"Functions Blocked\""
+              },
+              "rsc_wire": {
+                "text": "\"Halted\""
+              },
+              "client_leaf": {
+                "text": "\"Error\""
+              }
+            },
+            "tones": {
+              "server_root": "ok",
+              "props_guard": "error",
+              "rsc_wire": "idle",
+              "client_leaf": "error"
+            },
+            "arrows": [
+              [
+                "props_guard",
+                "client_leaf"
+              ]
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Server components passed as children slots are evaluated on the server with zero client bundle leakage.",
+            "values": {
+              "server_root": {
+                "text": "\"Children Slot\""
+              },
+              "props_guard": {
+                "text": "\"Slot Passed\""
+              },
+              "rsc_wire": {
+                "text": "\"$L Ref Emitted\""
+              },
+              "client_leaf": {
+                "text": "\"Rendered Slot\""
+              }
+            },
+            "tones": {
+              "server_root": "ok",
+              "props_guard": "ok",
+              "rsc_wire": "ok",
+              "client_leaf": "ok"
+            },
+            "arrows": [
+              [
+                "rsc_wire",
+                "client_leaf"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": true
+    },
+    {
+      "partTitle": "Zero-Bundle-Size Heavy Dependencies: Offloading Complex Libraries Completely to the Server Runtime",
+      "codeHash": "c72c0e2087d9f42fa1efd16aab7391cda30f774f3465958edeaf2ebdb68b86c4",
+      "spec": {
+        "template": "boxes",
+        "title": "Zero-Bundle-Size Heavy Dependency Offloading",
+        "boxes": [
+          {
+            "id": "node_runtime",
+            "label": "Node.js Server Runtime (340 KB Shiki / Markdown Parser)",
+            "tappable": false
+          },
+          {
+            "id": "ast_compiler",
+            "label": "Server AST Compiler & Code Tokenizer",
+            "tappable": false
+          },
+          {
+            "id": "static_dom",
+            "label": "Semantic HTML Virtual DOM Nodes",
+            "tappable": false
+          },
+          {
+            "id": "client_bundle",
+            "label": "Client Bundle Shipped (0.00 KB Dependencies)",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Heavy dependencies like Shiki, Remark, and Moment.js execute exclusively on the server.",
+            "values": {
+              "node_runtime": {
+                "text": "\"Executing Shiki\""
+              },
+              "ast_compiler": {
+                "text": "\"Tokenizing\""
+              },
+              "static_dom": {
+                "text": "\"Pending\""
+              },
+              "client_bundle": {
+                "text": "\"0 KB\""
+              }
+            },
+            "tones": {
+              "node_runtime": "ok",
+              "ast_compiler": "data",
+              "static_dom": "idle",
+              "client_bundle": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "The server compiler transforms markdown and code blocks into plain virtual DOM element nodes.",
+            "values": {
+              "node_runtime": {
+                "text": "\"Done\""
+              },
+              "ast_compiler": {
+                "text": "\"AST Generated\""
+              },
+              "static_dom": {
+                "text": "\"h1, pre, code\""
+              },
+              "client_bundle": {
+                "text": "\"0 KB\""
+              }
+            },
+            "tones": {
+              "node_runtime": "ok",
+              "ast_compiler": "ok",
+              "static_dom": "data",
+              "client_bundle": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "The client receives only the rendered HTML markup; zero parser bytes are transmitted.",
+            "values": {
+              "node_runtime": {
+                "text": "\"Cached in Redis\""
+              },
+              "ast_compiler": {
+                "text": "\"Purged\""
+              },
+              "static_dom": {
+                "text": "\"Streamed\""
+              },
+              "client_bundle": {
+                "text": "\"0 KB Shipped\""
+              }
+            },
+            "tones": {
+              "node_runtime": "ok",
+              "ast_compiler": "idle",
+              "static_dom": "ok",
+              "client_bundle": "ok"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Mobile CPU cores stay cool with zero client-side AST traversals or regex execution.",
+            "values": {
+              "node_runtime": {
+                "text": "\"Server Handled\""
+              },
+              "ast_compiler": {
+                "text": "\"Zero Client CPU\""
+              },
+              "static_dom": {
+                "text": "\"Instant Paint\""
+              },
+              "client_bundle": {
+                "text": "\"100% Lean\""
+              }
+            },
+            "tones": {
+              "node_runtime": "ok",
+              "ast_compiler": "ok",
+              "static_dom": "ok",
+              "client_bundle": "ok"
+            }
+          }
+        ]
+      },
+      "filled": true
+    },
+    {
+      "partTitle": "Deep Dive into the RSC Wire Stream Format: Line-by-Line Tokenized Serialization & Reference Resolution",
+      "codeHash": "32041a437505122cc052904a897f3a7e9cbbacf82d8ce6074aa14d4e1e38968b",
+      "spec": {
+        "template": "states",
+        "title": "RSC Wire Stream Protocol: Line-by-Line Tokenization",
+        "states": [
+          {
+            "id": "stream_start",
+            "label": "TCP Stream Opened",
+            "desc": "Initial chunked HTTP connection established."
+          },
+          {
+            "id": "module_ref",
+            "label": "M1 Module Manifest",
+            "desc": "Declares client module path and bundle chunk ID."
+          },
+          {
+            "id": "element_payload",
+            "label": "J0 Virtual DOM Payload",
+            "desc": "Streams JSON element tree with $L1 lazy references."
+          },
+          {
+            "id": "client_reconcile",
+            "label": "Progressive Deserialization",
+            "desc": "Client constructs VDOM and attaches live island listeners."
+          }
+        ],
+        "current": "stream_start",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The RSC wire format is a line-delimited stream prefixed with single-character control tags.",
+            "values": {
+              "stream_start": {
+                "text": "\"Connected\""
+              },
+              "module_ref": {
+                "text": "\"Pending\""
+              },
+              "element_payload": {
+                "text": "\"Pending\""
+              },
+              "client_reconcile": {
+                "text": "\"Waiting\""
+              }
+            },
+            "tones": {
+              "stream_start": "ok",
+              "module_ref": "idle",
+              "element_payload": "idle",
+              "client_reconcile": "idle"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "'M' lines define client component module manifests for parallel bundle prefetching.",
+            "values": {
+              "stream_start": {
+                "text": "\"Streaming\""
+              },
+              "module_ref": {
+                "text": "\"M1: AddToCart.js\""
+              },
+              "element_payload": {
+                "text": "\"Pending\""
+              },
+              "client_reconcile": {
+                "text": "\"Preloading M1\""
+              }
+            },
+            "tones": {
+              "stream_start": "ok",
+              "module_ref": "data",
+              "element_payload": "idle",
+              "client_reconcile": "data"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "'J' lines stream the virtual DOM tree, using '$L' tokens to reference client module slots.",
+            "values": {
+              "stream_start": {
+                "text": "\"Streaming\""
+              },
+              "module_ref": {
+                "text": "\"M1 Ready\""
+              },
+              "element_payload": {
+                "text": "\"J0: div, $L1\""
+              },
+              "client_reconcile": {
+                "text": "\"Diffing VDOM\""
+              }
+            },
+            "tones": {
+              "stream_start": "ok",
+              "module_ref": "ok",
+              "element_payload": "data",
+              "client_reconcile": "data"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "The client reconstructs the Fiber tree, attaching interactive event handlers to client leaves.",
+            "values": {
+              "stream_start": {
+                "text": "\"Stream Complete\""
+              },
+              "module_ref": {
+                "text": "\"Bound\""
+              },
+              "element_payload": {
+                "text": "\"Committed\""
+              },
+              "client_reconcile": {
+                "text": "\"Interactive VDOM\""
+              }
+            },
+            "tones": {
+              "stream_start": "ok",
+              "module_ref": "ok",
+              "element_payload": "ok",
+              "client_reconcile": "ok"
+            }
+          }
+        ]
+      },
+      "filled": true
+    },
+    {
+      "partTitle": "Complete RSC Runtime Simulator: Virtual Server Tree Serialization & Client-Side Fiber Reconstruction",
+      "codeHash": "3fc0ef9a8c2dece4fd67b46a9bec0c4a64e7616dfe4c7bb29d6cce7796618a58",
+      "spec": {
+        "template": "component-tree",
+        "title": "End-to-End Hybrid RSC Tree Topology",
+        "items": [
+          {
+            "id": "root",
+            "label": "ServerProductPage (Server Component)",
+            "depth": 0,
+            "status": "active"
+          },
+          {
+            "id": "header",
+            "label": "ProductHeader (Server Component)",
+            "depth": 1,
+            "status": "active"
+          },
+          {
+            "id": "specs",
+            "label": "ServerMarkdownSpecs (Server Component)",
+            "depth": 1,
+            "status": "active"
+          },
+          {
+            "id": "cart_island",
+            "label": "InteractiveAddToCart (Client Island)",
+            "depth": 1,
+            "status": "active"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The server component root renders top-level layouts and queries backend databases.",
+            "values": {
+              "root": {
+                "text": "\"Server Executing\""
+              },
+              "header": {
+                "text": "\"Queued\""
+              },
+              "specs": {
+                "text": "\"Queued\""
+              },
+              "cart_island": {
+                "text": "\"Boundary\""
+              }
+            },
+            "tones": {
+              "root": "ok",
+              "header": "idle",
+              "specs": "idle",
+              "cart_island": "idle"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Server children render to static VDOM with zero client dependency bundle leakage.",
+            "values": {
+              "root": {
+                "text": "\"Server Done\""
+              },
+              "header": {
+                "text": "\"Rendered\""
+              },
+              "specs": {
+                "text": "\"Rendered 0KB\""
+              },
+              "cart_island": {
+                "text": "\"Boundary\""
+              }
+            },
+            "tones": {
+              "root": "ok",
+              "header": "ok",
+              "specs": "ok",
+              "cart_island": "data"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Client components are serialized as module references (M1) and lazy references ($L1).",
+            "values": {
+              "root": {
+                "text": "\"Emitting Wire\""
+              },
+              "header": {
+                "text": "\"J0 Chunk\""
+              },
+              "specs": {
+                "text": "\"J0 Chunk\""
+              },
+              "cart_island": {
+                "text": "\"M1 + $L1 Ref\""
+              }
+            },
+            "tones": {
+              "root": "ok",
+              "header": "ok",
+              "specs": "ok",
+              "cart_island": "data"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "The client reconciles the hybrid tree, binding live event listeners to interactive islands.",
+            "values": {
+              "root": {
+                "text": "\"Server Root Clean\""
+              },
+              "header": {
+                "text": "\"Static DOM\""
+              },
+              "specs": {
+                "text": "\"Static DOM\""
+              },
+              "cart_island": {
+                "text": "\"Hydrated & Bound\""
+              }
+            },
+            "tones": {
+              "root": "ok",
+              "header": "ok",
+              "specs": "ok",
+              "cart_island": "ok"
+            }
+          }
+        ]
+      },
+      "filled": true
+    }
+  ]
+}

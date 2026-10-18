@@ -1,0 +1,715 @@
+{
+  "schemaVersion": 2,
+  "prefix": "react-basics",
+  "day": 45,
+  "promptSha": "block9_generated",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Enterprise Architectural Blueprint: Hybrid RSC Topology, Client Island Boundaries, Streaming Suspense Skeletons & Mutative Actions",
+      "codeHash": "3dd8d18df92583f9c4637d673daa6a3364c4666e6ab96ee6c3f9bef5a31926e0",
+      "spec": {
+        "template": "component-tree",
+        "title": "Milestone 8 Hybrid RSC Architecture: Complete Enterprise Topology",
+        "items": [
+          {
+            "id": "cat_root",
+            "label": "ProductCatalogServerLayout (Server Component)",
+            "depth": 0,
+            "status": "active"
+          },
+          {
+            "id": "spec_node",
+            "label": "ServerProductDescription (Zero-Bundle Specs)",
+            "depth": 1,
+            "status": "active"
+          },
+          {
+            "id": "qty_island",
+            "label": "InteractiveQuantityPicker (Client Island)",
+            "depth": 1,
+            "status": "active"
+          },
+          {
+            "id": "cart_island",
+            "label": "InteractiveAddToCartButton (Client Island)",
+            "depth": 1,
+            "status": "active"
+          },
+          {
+            "id": "reviews_stream",
+            "label": "CustomerReviewsStreamingBoundary (Suspense Boundary)",
+            "depth": 1,
+            "status": "active"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The catalog layout executes on the server, querying database inventory and markdown specs.",
+            "values": {
+              "cat_root": {
+                "text": "\"Server Root\""
+              },
+              "spec_node": {
+                "text": "\"Queued\""
+              },
+              "qty_island": {
+                "text": "\"Boundary\""
+              },
+              "cart_island": {
+                "text": "\"Boundary\""
+              },
+              "reviews_stream": {
+                "text": "\"Suspense Slot\""
+              }
+            },
+            "tones": {
+              "cat_root": "ok",
+              "spec_node": "idle",
+              "qty_island": "data",
+              "cart_island": "data",
+              "reviews_stream": "data"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Heavy markdown and syntax tokenizers execute with 0 KB client bundle overhead.",
+            "values": {
+              "cat_root": {
+                "text": "\"Layout Shell\""
+              },
+              "spec_node": {
+                "text": "\"Rendered 0KB\""
+              },
+              "qty_island": {
+                "text": "\"M1 Module\""
+              },
+              "cart_island": {
+                "text": "\"M2 Module\""
+              },
+              "reviews_stream": {
+                "text": "\"B:reviews Slot\""
+              }
+            },
+            "tones": {
+              "cat_root": "ok",
+              "spec_node": "ok",
+              "qty_island": "data",
+              "cart_island": "data",
+              "reviews_stream": "data"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Interactive cart islands hydrate selectively with user-click priority promotion.",
+            "values": {
+              "cat_root": {
+                "text": "\"Static Shell\""
+              },
+              "spec_node": {
+                "text": "\"Static DOM\""
+              },
+              "qty_island": {
+                "text": "\"Hydrated\""
+              },
+              "cart_island": {
+                "text": "\"Hydrated & Bound\""
+              },
+              "reviews_stream": {
+                "text": "\"Streaming...\""
+              }
+            },
+            "tones": {
+              "cat_root": "ok",
+              "spec_node": "ok",
+              "qty_island": "ok",
+              "cart_island": "ok",
+              "reviews_stream": "data"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Customer reviews stream out-of-order, completing the full hybrid application lifecycle.",
+            "values": {
+              "cat_root": {
+                "text": "\"Certified\""
+              },
+              "spec_node": {
+                "text": "\"Zero Leaks\""
+              },
+              "qty_island": {
+                "text": "\"Active\""
+              },
+              "cart_island": {
+                "text": "\"Active\""
+              },
+              "reviews_stream": {
+                "text": "\"Swapped & Hydrated\""
+              }
+            },
+            "tones": {
+              "cat_root": "ok",
+              "spec_node": "ok",
+              "qty_island": "ok",
+              "cart_island": "ok",
+              "reviews_stream": "ok"
+            }
+          }
+        ]
+      },
+      "filled": true
+    },
+    {
+      "partTitle": "Server Component Catalog Engine: Zero-Bundle Markdown Product Specs, Server-Side Inventory Queries & Streaming Shell Generation",
+      "codeHash": "f17a193ddf486e8d8586c25f3d0767b13b2d1a80834ebc0c43214cf80e2f79ff",
+      "spec": {
+        "template": "flow",
+        "title": "Server Component Catalog Engine Pipeline",
+        "nodes": [
+          {
+            "id": "inv_db",
+            "label": "Direct Database Query (PostgreSQL / Memory)",
+            "tappable": false
+          },
+          {
+            "id": "spec_compiler",
+            "label": "Server Markdown & Spec Compiler",
+            "tappable": false
+          },
+          {
+            "id": "shell_gen",
+            "label": "HTML Shell Generation (<4ms)",
+            "tappable": false
+          },
+          {
+            "id": "stream_output",
+            "label": "Zero-Bundle Streamed Delivery",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The catalog engine retrieves real-time product records directly from backend storage.",
+            "values": {
+              "inv_db": {
+                "text": "\"2 Products Loaded\""
+              },
+              "spec_compiler": {
+                "text": "\"Pending\""
+              },
+              "shell_gen": {
+                "text": "\"Pending\""
+              },
+              "stream_output": {
+                "text": "\"Standby\""
+              }
+            },
+            "tones": {
+              "inv_db": "ok",
+              "spec_compiler": "idle",
+              "shell_gen": "idle",
+              "stream_output": "idle"
+            },
+            "arrows": [
+              [
+                "inv_db",
+                "spec_compiler"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Server-side parsers compile technical hardware specifications into semantic HTML tags.",
+            "values": {
+              "inv_db": {
+                "text": "\"Done\""
+              },
+              "spec_compiler": {
+                "text": "\"Watts & VRAM Parsed\""
+              },
+              "shell_gen": {
+                "text": "\"Compiling\""
+              },
+              "stream_output": {
+                "text": "\"Standby\""
+              }
+            },
+            "tones": {
+              "inv_db": "ok",
+              "spec_compiler": "ok",
+              "shell_gen": "data",
+              "stream_output": "idle"
+            },
+            "arrows": [
+              [
+                "spec_compiler",
+                "shell_gen"
+              ]
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The engine constructs the initial HTML shell, embedding the Suspense B:reviews template.",
+            "values": {
+              "inv_db": {
+                "text": "\"Done\""
+              },
+              "spec_compiler": {
+                "text": "\"Done\""
+              },
+              "shell_gen": {
+                "text": "\"Shell Ready (4ms)\""
+              },
+              "stream_output": {
+                "text": "\"Streaming\""
+              }
+            },
+            "tones": {
+              "inv_db": "ok",
+              "spec_compiler": "ok",
+              "shell_gen": "ok",
+              "stream_output": "data"
+            },
+            "arrows": [
+              [
+                "shell_gen",
+                "stream_output"
+              ]
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "The shell flushes immediately, delivering sub-50ms TTFB with exactly 0 KB client dependencies.",
+            "values": {
+              "inv_db": {
+                "text": "\"Pooled DB\""
+              },
+              "spec_compiler": {
+                "text": "\"0 KB Shipped\""
+              },
+              "shell_gen": {
+                "text": "\"TTFB: 38ms\""
+              },
+              "stream_output": {
+                "text": "\"Flushed & Preloading\""
+              }
+            },
+            "tones": {
+              "inv_db": "ok",
+              "spec_compiler": "ok",
+              "shell_gen": "ok",
+              "stream_output": "ok"
+            }
+          }
+        ]
+      },
+      "filled": true
+    },
+    {
+      "partTitle": "Streaming Hydration & Interactive Islands: Out-of-Order Reviews Streaming, Add-to-Cart Island, and User-Click Hydration Prioritization",
+      "codeHash": "709a28153a69ba19055d0ab71e585cf6b8c2314a0d359d84f11d25752245333d",
+      "spec": {
+        "template": "states",
+        "title": "Streaming Reviews & Selective Hydration Lifecycle",
+        "states": [
+          {
+            "id": "st_skeleton",
+            "label": "Shell Fallback (B:rev)",
+            "desc": "Initial shell renders template placeholder and review spinner."
+          },
+          {
+            "id": "st_chunk",
+            "label": "Out-of-Order Chunk (S:rev)",
+            "desc": "Reviews HTML emitted with $RC inline DOM replacement script."
+          },
+          {
+            "id": "st_swap",
+            "label": "Seamless DOM Swap",
+            "desc": "Fallback replaced with verified 5-star customer reviews."
+          },
+          {
+            "id": "st_selective",
+            "label": "Selective Island Hydration",
+            "desc": "AddToCart hydrates with priority promotion upon user click."
+          }
+        ],
+        "current": "st_skeleton",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The initial shell displays an animated review skeleton while the customer reads product pricing.",
+            "values": {
+              "st_skeleton": {
+                "text": "\"B:rev Active\""
+              },
+              "st_chunk": {
+                "text": "\"Querying DB\""
+              },
+              "st_swap": {
+                "text": "\"Pending\""
+              },
+              "st_selective": {
+                "text": "\"Cart Ready\""
+              }
+            },
+            "tones": {
+              "st_skeleton": "data",
+              "st_chunk": "data",
+              "st_swap": "idle",
+              "st_selective": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "When reviews resolve on the server, an out-of-order chunk is written with inline $RC script.",
+            "values": {
+              "st_skeleton": {
+                "text": "\"Targeting B:rev\""
+              },
+              "st_chunk": {
+                "text": "\"S:rev Emitted\""
+              },
+              "st_swap": {
+                "text": "\"Replacing\""
+              },
+              "st_selective": {
+                "text": "\"Cart Bound\""
+              }
+            },
+            "tones": {
+              "st_skeleton": "ok",
+              "st_chunk": "ok",
+              "st_swap": "data",
+              "st_selective": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "$RC swaps the live verified reviews into the DOM with zero cumulative layout shift (CLS).",
+            "values": {
+              "st_skeleton": {
+                "text": "\"Removed\""
+              },
+              "st_chunk": {
+                "text": "\"Unpacked\""
+              },
+              "st_swap": {
+                "text": "\"Reviews Mounted\""
+              },
+              "st_selective": {
+                "text": "\"Cart Bound\""
+              }
+            },
+            "tones": {
+              "st_skeleton": "idle",
+              "st_chunk": "ok",
+              "st_swap": "ok",
+              "st_selective": "ok"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "User clicks on AddToCart trigger immediate priority promotion and event replay.",
+            "values": {
+              "st_skeleton": {
+                "text": "\"Done\""
+              },
+              "st_chunk": {
+                "text": "\"Done\""
+              },
+              "st_swap": {
+                "text": "\"Stable DOM\""
+              },
+              "st_selective": {
+                "text": "\"Replay Executed\""
+              }
+            },
+            "tones": {
+              "st_skeleton": "ok",
+              "st_chunk": "ok",
+              "st_swap": "ok",
+              "st_selective": "ok"
+            }
+          }
+        ]
+      },
+      "filled": true
+    },
+    {
+      "partTitle": "Server Action Cart Mutation & Optimistic Inventory Reservation: useActionState Cart Checkout, useOptimistic Stock Decrement, and Server Cache Revalidation",
+      "codeHash": "12a753a00995b7f78cdf052bfef7f01a8c2139e2766a07f147b531dc30de8133",
+      "spec": {
+        "template": "flow",
+        "title": "Server Action Checkout & Optimistic Reservation",
+        "nodes": [
+          {
+            "id": "click_buy",
+            "label": "Customer Taps 'Add to Cart'",
+            "tappable": false
+          },
+          {
+            "id": "opt_cart",
+            "label": "useOptimistic Projection (Cart +2)",
+            "tappable": false
+          },
+          {
+            "id": "action_rpc",
+            "label": "Server Action (reserveAndCheckoutAction)",
+            "tappable": false
+          },
+          {
+            "id": "commit_reval",
+            "label": "ACID Commit & revalidatePath",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The customer taps Add to Cart; useOptimistic increments the cart count immediately in 0ms.",
+            "values": {
+              "click_buy": {
+                "text": "\"Tapped (2 Units)\""
+              },
+              "opt_cart": {
+                "text": "\"CartCount: 2\""
+              },
+              "action_rpc": {
+                "text": "\"In-Flight\""
+              },
+              "commit_reval": {
+                "text": "\"Standby\""
+              }
+            },
+            "tones": {
+              "click_buy": "data",
+              "opt_cart": "ok",
+              "action_rpc": "data",
+              "commit_reval": "idle"
+            },
+            "arrows": [
+              [
+                "click_buy",
+                "opt_cart"
+              ],
+              [
+                "click_buy",
+                "action_rpc"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The form action executes as an enhanced RPC (or native POST if JavaScript is disabled).",
+            "values": {
+              "click_buy": {
+                "text": "\"Active\""
+              },
+              "opt_cart": {
+                "text": "\"Optimistic Active\""
+              },
+              "action_rpc": {
+                "text": "\"Server Validating\""
+              },
+              "commit_reval": {
+                "text": "\"Checking Stock\""
+              }
+            },
+            "tones": {
+              "click_buy": "ok",
+              "opt_cart": "ok",
+              "action_rpc": "data",
+              "commit_reval": "data"
+            },
+            "arrows": [
+              [
+                "action_rpc",
+                "commit_reval"
+              ]
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "If inventory is available, stock decrements from 10 to 8, and the order commits securely.",
+            "values": {
+              "click_buy": {
+                "text": "\"Success\""
+              },
+              "opt_cart": {
+                "text": "\"Committed (2)\""
+              },
+              "action_rpc": {
+                "text": "\"Transaction OK\""
+              },
+              "commit_reval": {
+                "text": "\"Stock: 8 (Committed)\""
+              }
+            },
+            "tones": {
+              "click_buy": "ok",
+              "opt_cart": "ok",
+              "action_rpc": "ok",
+              "commit_reval": "ok"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "If out of stock, React automatically rolls back the optimistic cart count atomically.",
+            "values": {
+              "click_buy": {
+                "text": "\"Failed\""
+              },
+              "opt_cart": {
+                "text": "\"Rolled Back to 2\""
+              },
+              "action_rpc": {
+                "text": "\"Error: Insufficient\""
+              },
+              "commit_reval": {
+                "text": "\"Consistent (8)\""
+              }
+            },
+            "tones": {
+              "click_buy": "error",
+              "opt_cart": "error",
+              "action_rpc": "error",
+              "commit_reval": "ok"
+            }
+          }
+        ]
+      },
+      "filled": true
+    },
+    {
+      "partTitle": "Production Verification Suite & Performance Audit: Validating 0ms Total Blocking Time, Zero Client Dependency Leaks, Sub-100ms TTFB Streaming, and Complete Form Fallbacks",
+      "codeHash": "d67e3d03c0d33508043c81bc6ad979637fa7b3a96a822aafc16dc37d48c1b122",
+      "spec": {
+        "template": "boxes",
+        "title": "Milestone 8 Production Performance & Reliability Audit",
+        "boxes": [
+          {
+            "id": "tbt_box",
+            "label": "Total Blocking Time (TBT): 0ms (60 FPS PASS)",
+            "tappable": false
+          },
+          {
+            "id": "ttfb_box",
+            "label": "Time to First Byte (TTFB): 38ms (Sub-50ms PASS)",
+            "tappable": false
+          },
+          {
+            "id": "deps_box",
+            "label": "Client Shipped Dependencies: 0 KB (Zero-Bundle PASS)",
+            "tappable": false
+          },
+          {
+            "id": "fall_box",
+            "label": "Zero-JS Form & Rollback Safeguards: VERIFIED (PASS)",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Audit Criterion 1: Total Blocking Time is certified at exactly 0ms with zero long tasks.",
+            "values": {
+              "tbt_box": {
+                "text": "\"0ms (60 FPS)\""
+              },
+              "ttfb_box": {
+                "text": "\"Auditing\""
+              },
+              "deps_box": {
+                "text": "\"Auditing\""
+              },
+              "fall_box": {
+                "text": "\"Auditing\""
+              }
+            },
+            "tones": {
+              "tbt_box": "ok",
+              "ttfb_box": "data",
+              "deps_box": "data",
+              "fall_box": "data"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Audit Criterion 2: Time to First Byte flushes in 38ms, easily beating the 100ms benchmark.",
+            "values": {
+              "tbt_box": {
+                "text": "\"PASS\""
+              },
+              "ttfb_box": {
+                "text": "\"38ms (PASS)\""
+              },
+              "deps_box": {
+                "text": "\"Auditing\""
+              },
+              "fall_box": {
+                "text": "\"Auditing\""
+              }
+            },
+            "tones": {
+              "tbt_box": "ok",
+              "ttfb_box": "ok",
+              "deps_box": "data",
+              "fall_box": "data"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Audit Criterion 3: Zero client dependency leakage: 0 KB parser code in browser bundle.",
+            "values": {
+              "tbt_box": {
+                "text": "\"PASS\""
+              },
+              "ttfb_box": {
+                "text": "\"PASS\""
+              },
+              "deps_box": {
+                "text": "\"0 KB (PASS)\""
+              },
+              "fall_box": {
+                "text": "\"Auditing\""
+              }
+            },
+            "tones": {
+              "tbt_box": "ok",
+              "ttfb_box": "ok",
+              "deps_box": "ok",
+              "fall_box": "data"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Overall Production Certification: GRADE A+ ENTERPRISE PRODUCTION READY.",
+            "values": {
+              "tbt_box": {
+                "text": "\"PASS (0ms)\""
+              },
+              "ttfb_box": {
+                "text": "\"PASS (38ms)\""
+              },
+              "deps_box": {
+                "text": "\"PASS (0KB)\""
+              },
+              "fall_box": {
+                "text": "\"PASS (Certified)\""
+              }
+            },
+            "tones": {
+              "tbt_box": "ok",
+              "ttfb_box": "ok",
+              "deps_box": "ok",
+              "fall_box": "ok"
+            }
+          }
+        ]
+      },
+      "filled": true
+    }
+  ]
+}

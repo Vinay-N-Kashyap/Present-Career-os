@@ -1,0 +1,697 @@
+{
+  "schemaVersion": 2,
+  "prefix": "react-basics",
+  "day": 44,
+  "promptSha": "block9_generated",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Evolution of React Mutations: From Imperative Fetch Handlers and Redux Thunks to Declarative Server Actions",
+      "codeHash": "368623c8d9dd2824a022758dbedc17d0f787ec8a8b8eda342cd2cb91e74ef7d0",
+      "spec": {
+        "template": "compare",
+        "title": "Mutation Paradigms: Classical REST APIs vs React Server Actions",
+        "left": {
+          "label": "Classical REST Mutations",
+          "items": [
+            "Manual onSubmit preventDefault",
+            "Custom fetch POST & JSON serialization",
+            "Dedicated API route & middleware",
+            "Double round trip (Mutate + Re-fetch)"
+          ]
+        },
+        "right": {
+          "label": "React Server Actions ('use server')",
+          "items": [
+            "Direct <form action={fn}> binding",
+            "Native FormData & zero serialization",
+            "Zero API endpoints or routing tables",
+            "Single round trip (Mutate + RSC Revalidate)"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Classical REST requires extensive boilerplate: event handlers, fetch wrappers, and API controllers.",
+            "values": {
+              "left": {
+                "items": [
+                  "24 Lines Boilerplate",
+                  "Manual JSON",
+                  "Custom Endpoints",
+                  "Double Fetch"
+                ]
+              },
+              "right": {
+                "items": [
+                  "3 Lines Code",
+                  "Native FormData",
+                  "Zero Endpoints",
+                  "Single Response"
+                ]
+              }
+            },
+            "tones": {
+              "left": "error",
+              "right": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Server Actions eliminate manual endpoints: asynchronous server functions are called directly from JSX.",
+            "values": {
+              "left": {
+                "items": [
+                  "API Drift",
+                  "Manual Types",
+                  "Broken Scripts",
+                  "No Fallback"
+                ]
+              },
+              "right": {
+                "items": [
+                  "Inferred Types",
+                  "100% Type-Safe",
+                  "Automatic RPC",
+                  "Zero-JS Ready"
+                ]
+              }
+            },
+            "tones": {
+              "left": "error",
+              "right": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Server Actions integrate with RSC cache revalidation, updating the UI in a single network round trip.",
+            "values": {
+              "left": {
+                "items": [
+                  "Two Round Trips",
+                  "Stale UI Caches",
+                  "Manual Query Keys",
+                  "Race Conditions"
+                ]
+              },
+              "right": {
+                "items": [
+                  "One Round Trip",
+                  "revalidatePath()",
+                  "Server Authority",
+                  "Atomic Update"
+                ]
+              }
+            },
+            "tones": {
+              "left": "error",
+              "right": "ok"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Server Actions reduce mutation boilerplate by 88% while providing automated CSRF protection.",
+            "values": {
+              "left": {
+                "items": [
+                  "18ms Overhead",
+                  "Complex Auth",
+                  "Redux Sagas",
+                  "High Friction"
+                ]
+              },
+              "right": {
+                "items": [
+                  "2ms Overhead",
+                  "Built-in CSRF",
+                  "Declarative Action",
+                  "Peak Velocity"
+                ]
+              }
+            },
+            "tones": {
+              "left": "error",
+              "right": "ok"
+            }
+          }
+        ]
+      },
+      "filled": true
+    },
+    {
+      "partTitle": "Progressive Enhancement & Native HTML Form Submissions: Zero-JS Form POST Fallbacks, FormData Parsing, and Automatic JSON RPC Upgrades",
+      "codeHash": "7d00429cdfa31b1756ebdb096c5dff53ea9b614610fb570c033a26e40e83efea",
+      "spec": {
+        "template": "flow",
+        "title": "Progressive Enhancement: Zero-JS Form POST vs Enhanced Client RPC",
+        "nodes": [
+          {
+            "id": "form_submit",
+            "label": "User Submits Purchase Form",
+            "tappable": false
+          },
+          {
+            "id": "zero_js_mode",
+            "label": "Zero-JS Native HTTP POST Mode",
+            "tappable": false
+          },
+          {
+            "id": "enhanced_rpc",
+            "label": "Enhanced Fetch RPC Stream Mode",
+            "tappable": false
+          },
+          {
+            "id": "db_mutation",
+            "label": "Authoritative Database Mutation",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The user submits a purchase form; React supports both Zero-JS and enhanced modes natively.",
+            "values": {
+              "form_submit": {
+                "text": "\"Submit Event\""
+              },
+              "zero_js_mode": {
+                "text": "\"Ready\""
+              },
+              "enhanced_rpc": {
+                "text": "\"Ready\""
+              },
+              "db_mutation": {
+                "text": "\"Standby\""
+              }
+            },
+            "tones": {
+              "form_submit": "data",
+              "zero_js_mode": "ok",
+              "enhanced_rpc": "ok",
+              "db_mutation": "idle"
+            },
+            "arrows": [
+              [
+                "form_submit",
+                "zero_js_mode"
+              ],
+              [
+                "form_submit",
+                "enhanced_rpc"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "If JavaScript is disabled or downloading, the browser falls back to native HTTP POST.",
+            "values": {
+              "form_submit": {
+                "text": "\"Zero-JS Detected\""
+              },
+              "zero_js_mode": {
+                "text": "\"URL-Encoded Body\""
+              },
+              "enhanced_rpc": {
+                "text": "\"Bypassed\""
+              },
+              "db_mutation": {
+                "text": "\"Executing\""
+              }
+            },
+            "tones": {
+              "form_submit": "ok",
+              "zero_js_mode": "ok",
+              "enhanced_rpc": "idle",
+              "db_mutation": "data"
+            },
+            "arrows": [
+              [
+                "zero_js_mode",
+                "db_mutation"
+              ]
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "When hydrated, React intercepts the form and dispatches an asynchronous fetch RPC with Next-Action headers.",
+            "values": {
+              "form_submit": {
+                "text": "\"Hydrated\""
+              },
+              "zero_js_mode": {
+                "text": "\"Enhanced\""
+              },
+              "enhanced_rpc": {
+                "text": "\"Next-Action RPC\""
+              },
+              "db_mutation": {
+                "text": "\"Executing\""
+              }
+            },
+            "tones": {
+              "form_submit": "ok",
+              "zero_js_mode": "idle",
+              "enhanced_rpc": "ok",
+              "db_mutation": "data"
+            },
+            "arrows": [
+              [
+                "enhanced_rpc",
+                "db_mutation"
+              ]
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Both pathways mutate the database securely, ensuring bulletproof application resilience.",
+            "values": {
+              "form_submit": {
+                "text": "\"Complete\""
+              },
+              "zero_js_mode": {
+                "text": "\"303 Redirect\""
+              },
+              "enhanced_rpc": {
+                "text": "\"Smooth Transition\""
+              },
+              "db_mutation": {
+                "text": "\"ACID Committed\""
+              }
+            },
+            "tones": {
+              "form_submit": "ok",
+              "zero_js_mode": "ok",
+              "enhanced_rpc": "ok",
+              "db_mutation": "ok"
+            }
+          }
+        ]
+      },
+      "filled": true
+    },
+    {
+      "partTitle": "The useActionState & useFormStatus Hook Architecture: Managing Mutative Pending States, Form Submission Metadata, and Action Result Payloads",
+      "codeHash": "64bfdc94f5ecf31b871eeb425e775e97f520ac71dd567c29886433798cd580db",
+      "spec": {
+        "template": "states",
+        "title": "React 19 useActionState & useFormStatus Lifecycle",
+        "states": [
+          {
+            "id": "act_idle",
+            "label": "Idle State",
+            "desc": "Initial state: { count: 0, error: null }."
+          },
+          {
+            "id": "act_pending",
+            "label": "isPending: True",
+            "desc": "Transition starts; submit button displays loading spinner."
+          },
+          {
+            "id": "act_exec",
+            "label": "Server Action Execution",
+            "desc": "Server processes FormData and executes validation logic."
+          },
+          {
+            "id": "act_commit",
+            "label": "State Committed",
+            "desc": "Action returns updated state; UI re-renders cleanly."
+          }
+        ],
+        "current": "act_idle",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "useActionState initializes with baseline state and binds the server action function.",
+            "values": {
+              "act_idle": {
+                "text": "\"count: 0, pending: false\""
+              },
+              "act_pending": {
+                "text": "\"Idle\""
+              },
+              "act_exec": {
+                "text": "\"Idle\""
+              },
+              "act_commit": {
+                "text": "\"Idle\""
+              }
+            },
+            "tones": {
+              "act_idle": "ok",
+              "act_pending": "idle",
+              "act_exec": "idle",
+              "act_commit": "idle"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Upon form submission, isPending toggles to true; useFormStatus updates child buttons automatically.",
+            "values": {
+              "act_idle": {
+                "text": "\"Submitting\""
+              },
+              "act_pending": {
+                "text": "\"isPending: true\""
+              },
+              "act_exec": {
+                "text": "\"Network RPC In-Flight\""
+              },
+              "act_commit": {
+                "text": "\"Standby\""
+              }
+            },
+            "tones": {
+              "act_idle": "data",
+              "act_pending": "ok",
+              "act_exec": "data",
+              "act_commit": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "The Server Action executes on Node.js, validating inputs and updating database state.",
+            "values": {
+              "act_idle": {
+                "text": "\"Waiting\""
+              },
+              "act_pending": {
+                "text": "\"Pending\""
+              },
+              "act_exec": {
+                "text": "\"Database Committed\""
+              },
+              "act_commit": {
+                "text": "\"Payload Returned\""
+              }
+            },
+            "tones": {
+              "act_idle": "data",
+              "act_pending": "data",
+              "act_exec": "ok",
+              "act_commit": "data"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "State is updated atomically, loading flags reset to false, and validation feedback displays.",
+            "values": {
+              "act_idle": {
+                "text": "\"Ready\""
+              },
+              "act_pending": {
+                "text": "\"isPending: false\""
+              },
+              "act_exec": {
+                "text": "\"Done\""
+              },
+              "act_commit": {
+                "text": "\"count: 3, success: true\""
+              }
+            },
+            "tones": {
+              "act_idle": "ok",
+              "act_pending": "ok",
+              "act_exec": "ok",
+              "act_commit": "ok"
+            }
+          }
+        ]
+      },
+      "filled": true
+    },
+    {
+      "partTitle": "Optimistic UI Updates with useOptimistic: Immediate Client State Projection, Rollback Safeguards, and Server-Driven Path Revalidation",
+      "codeHash": "c02073c116434f95672d1ad6bd4d3b6df82e8a160684ed5fb89c5fc845e2df68",
+      "spec": {
+        "template": "flow",
+        "title": "Optimistic UI Updates with useOptimistic & Rollback Safeguards",
+        "nodes": [
+          {
+            "id": "user_action",
+            "label": "User Requests Item Reservation",
+            "tappable": false
+          },
+          {
+            "id": "optimistic_proj",
+            "label": "Immediate Client Projection (0ms)",
+            "tappable": false
+          },
+          {
+            "id": "server_action",
+            "label": "Server Action Database Check",
+            "tappable": false
+          },
+          {
+            "id": "reconcile_step",
+            "label": "Commit or Automatic Rollback",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The user initiates a cart purchase; useOptimistic projects the updated count in 0 milliseconds.",
+            "values": {
+              "user_action": {
+                "text": "\"Buy 2 Units\""
+              },
+              "optimistic_proj": {
+                "text": "\"Cart: 2, Stock: 8\""
+              },
+              "server_action": {
+                "text": "\"Dispatched\""
+              },
+              "reconcile_step": {
+                "text": "\"Pending\""
+              }
+            },
+            "tones": {
+              "user_action": "data",
+              "optimistic_proj": "ok",
+              "server_action": "data",
+              "reconcile_step": "idle"
+            },
+            "arrows": [
+              [
+                "user_action",
+                "optimistic_proj"
+              ],
+              [
+                "user_action",
+                "server_action"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The UI updates immediately with zero perceptible lag while the server action executes.",
+            "values": {
+              "user_action": {
+                "text": "\"Active\""
+              },
+              "optimistic_proj": {
+                "text": "\"Instant Feedback\""
+              },
+              "server_action": {
+                "text": "\"Checking Inventory\""
+              },
+              "reconcile_step": {
+                "text": "\"Waiting\""
+              }
+            },
+            "tones": {
+              "user_action": "ok",
+              "optimistic_proj": "ok",
+              "server_action": "data",
+              "reconcile_step": "idle"
+            },
+            "arrows": [
+              [
+                "server_action",
+                "reconcile_step"
+              ]
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "If the database has stock, the mutation commits and authoritative server state synchronizes.",
+            "values": {
+              "user_action": {
+                "text": "\"Success\""
+              },
+              "optimistic_proj": {
+                "text": "\"Committed\""
+              },
+              "server_action": {
+                "text": "\"Stock Verified (8)\""
+              },
+              "reconcile_step": {
+                "text": "\"Success Confirmed\""
+              }
+            },
+            "tones": {
+              "user_action": "ok",
+              "optimistic_proj": "ok",
+              "server_action": "ok",
+              "reconcile_step": "ok"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "If out of stock, React automatically discards the projection and rolls back to server stock atomically.",
+            "values": {
+              "user_action": {
+                "text": "\"Failed\""
+              },
+              "optimistic_proj": {
+                "text": "\"Rolled Back\""
+              },
+              "server_action": {
+                "text": "\"Rejected: 0 Units\""
+              },
+              "reconcile_step": {
+                "text": "\"Atomic Rollback Safe\""
+              }
+            },
+            "tones": {
+              "user_action": "error",
+              "optimistic_proj": "error",
+              "server_action": "error",
+              "reconcile_step": "ok"
+            }
+          }
+        ]
+      },
+      "filled": true
+    },
+    {
+      "partTitle": "End-to-End Server Action RPC & Optimistic Reconciliation Simulator: Building an RPC Form Dispatcher with Async Action Handlers, Optimistic UI State, and Rollback Mechanics",
+      "codeHash": "1e4f1089f541b5790bb1a14dd17f545f9bb4a0443bc04a0ee523317aac5ee030",
+      "spec": {
+        "template": "boxes",
+        "title": "End-to-End Server Action RPC & Reconciliation Engine",
+        "boxes": [
+          {
+            "id": "client_dispatcher",
+            "label": "Client Form Dispatcher (useOptimistic)",
+            "tappable": false
+          },
+          {
+            "id": "rpc_gateway",
+            "label": "Secure RPC Gateway (Next-Action)",
+            "tappable": false
+          },
+          {
+            "id": "authoritative_db",
+            "label": "Authoritative Database (ACID Inventory Lock)",
+            "tappable": false
+          },
+          {
+            "id": "cache_revalidate",
+            "label": "RSC Cache Revalidation (revalidatePath)",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The client dispatcher packages user inputs and projects optimistic UI updates.",
+            "values": {
+              "client_dispatcher": {
+                "text": "\"Optimistic Cart +1\""
+              },
+              "rpc_gateway": {
+                "text": "\"POST Form\""
+              },
+              "authoritative_db": {
+                "text": "\"Stock: 50\""
+              },
+              "cache_revalidate": {
+                "text": "\"Standby\""
+              }
+            },
+            "tones": {
+              "client_dispatcher": "ok",
+              "rpc_gateway": "data",
+              "authoritative_db": "ok",
+              "cache_revalidate": "idle"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "The RPC gateway validates authentication cookies and invokes the server function securely.",
+            "values": {
+              "client_dispatcher": {
+                "text": "\"In-Flight\""
+              },
+              "rpc_gateway": {
+                "text": "\"Action Verified\""
+              },
+              "authoritative_db": {
+                "text": "\"Row Locked\""
+              },
+              "cache_revalidate": {
+                "text": "\"Standby\""
+              }
+            },
+            "tones": {
+              "client_dispatcher": "data",
+              "rpc_gateway": "ok",
+              "authoritative_db": "data",
+              "cache_revalidate": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "The database executes an atomic inventory decrement: remaining inventory becomes 45.",
+            "values": {
+              "client_dispatcher": {
+                "text": "\"Optimistic OK\""
+              },
+              "rpc_gateway": {
+                "text": "\"200 OK\""
+              },
+              "authoritative_db": {
+                "text": "\"Stock: 45\""
+              },
+              "cache_revalidate": {
+                "text": "\"Purging Cache\""
+              }
+            },
+            "tones": {
+              "client_dispatcher": "ok",
+              "rpc_gateway": "ok",
+              "authoritative_db": "ok",
+              "cache_revalidate": "data"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "revalidatePath purges stale server caches, streaming updated catalog data in the same response.",
+            "values": {
+              "client_dispatcher": {
+                "text": "\"Synced\""
+              },
+              "rpc_gateway": {
+                "text": "\"Response Streamed\""
+              },
+              "authoritative_db": {
+                "text": "\"Consistent (45)\""
+              },
+              "cache_revalidate": {
+                "text": "\"Caches Revalidated\""
+              }
+            },
+            "tones": {
+              "client_dispatcher": "ok",
+              "rpc_gateway": "ok",
+              "authoritative_db": "ok",
+              "cache_revalidate": "ok"
+            }
+          }
+        ]
+      },
+      "filled": true
+    }
+  ]
+}
