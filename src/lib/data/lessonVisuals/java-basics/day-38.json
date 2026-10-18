@@ -1,0 +1,414 @@
+{
+  "schemaVersion": 1,
+  "prefix": "java-basics",
+  "day": 38,
+  "promptSha": "java-basics-day-38-spec",
+  "model": "curriculum-visual-synthesizer-v2",
+  "entries": [
+    {
+      "partTitle": "Reference Identity (==) vs Logical Equality (equals()) in Heap Memory",
+      "codeHash": "24819b0a3b6fc0758b655e61c89a20c9c070dbf386df0ef3cd46f4aac75b54af",
+      "spec": {
+        "template": "stack-queue",
+        "title": "Day 38 Part 1 — JVM Call Stack & Heap State",
+        "mode": "stack",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Allocate stack frame and inspect reference pointers for Reference Identity (==) v.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "DomainService.execute()",
+              "Day38Subsystem.init()"
+            ],
+            "action": "push",
+            "actionItem": "Day38Subsystem.init()",
+            "tones": [
+              "ok",
+              "data",
+              "data"
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Push active execution frame onto JVM thread call stack.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "DomainService.execute()",
+              "Day38Subsystem.init()",
+              "Part1Executor.run()"
+            ],
+            "action": "push",
+            "actionItem": "Part1Executor.run()",
+            "tones": [
+              "ok",
+              "ok",
+              "data",
+              "data"
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Pop completed execution frame after verifying heap state invariant.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "DomainService.execute()",
+              "Day38Subsystem.init()"
+            ],
+            "action": "pop",
+            "actionItem": "Part1Executor.run()",
+            "tones": [
+              "ok",
+              "data",
+              "data"
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Push interactive mutation frame to test edge cases and boundary guards.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "DomainService.execute()",
+              "TryItRunner.mutate()"
+            ],
+            "action": "push",
+            "actionItem": "TryItRunner.mutate()",
+            "tones": [
+              "ok",
+              "ok",
+              "accent"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Mathematical Contract of equals() and hashCode()",
+      "codeHash": "072b3ea59bbf70d1f10af60508307e3033c3b4579fc5d7c1d789a8941f21f5ea",
+      "spec": {
+        "template": "stack-queue",
+        "title": "Day 38 Part 2 — JVM Call Stack & Heap State",
+        "mode": "stack",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Allocate stack frame and inspect reference pointers for The Mathematical Contract.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "DomainService.execute()",
+              "Day38Subsystem.init()"
+            ],
+            "action": "push",
+            "actionItem": "Day38Subsystem.init()",
+            "tones": [
+              "ok",
+              "data",
+              "data"
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Push active execution frame onto JVM thread call stack.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "DomainService.execute()",
+              "Day38Subsystem.init()",
+              "Part2Executor.run()"
+            ],
+            "action": "push",
+            "actionItem": "Part2Executor.run()",
+            "tones": [
+              "ok",
+              "ok",
+              "data",
+              "data"
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Pop completed execution frame after verifying heap state invariant.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "DomainService.execute()",
+              "Day38Subsystem.init()"
+            ],
+            "action": "pop",
+            "actionItem": "Part2Executor.run()",
+            "tones": [
+              "ok",
+              "data",
+              "data"
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Push interactive mutation frame to test edge cases and boundary guards.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "DomainService.execute()",
+              "TryItRunner.mutate()"
+            ],
+            "action": "push",
+            "actionItem": "TryItRunner.mutate()",
+            "tones": [
+              "ok",
+              "ok",
+              "accent"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Detective Lab: The Phantom Key in the HashMap",
+      "codeHash": "aeb79e0a550de6c8b50d184302fc7d75832022e4fce4538b825c284bdb130fb4",
+      "spec": {
+        "template": "stack-queue",
+        "title": "Day 38 Part 3 — JVM Call Stack & Heap State",
+        "mode": "stack",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Allocate stack frame and inspect reference pointers for Detective Lab: The Phanto.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "DomainService.execute()",
+              "Day38Subsystem.init()"
+            ],
+            "action": "push",
+            "actionItem": "Day38Subsystem.init()",
+            "tones": [
+              "ok",
+              "data",
+              "data"
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Push active execution frame onto JVM thread call stack.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "DomainService.execute()",
+              "Day38Subsystem.init()",
+              "Part3Executor.run()"
+            ],
+            "action": "push",
+            "actionItem": "Part3Executor.run()",
+            "tones": [
+              "ok",
+              "ok",
+              "data",
+              "data"
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Pop completed execution frame after verifying heap state invariant.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "DomainService.execute()",
+              "Day38Subsystem.init()"
+            ],
+            "action": "pop",
+            "actionItem": "Part3Executor.run()",
+            "tones": [
+              "ok",
+              "data",
+              "data"
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Push interactive mutation frame to test edge cases and boundary guards.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "DomainService.execute()",
+              "TryItRunner.mutate()"
+            ],
+            "action": "push",
+            "actionItem": "TryItRunner.mutate()",
+            "tones": [
+              "ok",
+              "ok",
+              "accent"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Mastery Assignment: Bulletproof Domain Entity Identity",
+      "codeHash": "e289f4dbc098fac697dcc6fdd070a7b6ad2d7e7f2ed15af88c83b783bf0dce02",
+      "spec": {
+        "template": "stack-queue",
+        "title": "Day 38 Part 4 — JVM Call Stack & Heap State",
+        "mode": "stack",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Allocate stack frame and inspect reference pointers for Mastery Assignment: Bulle.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "DomainService.execute()",
+              "Day38Subsystem.init()"
+            ],
+            "action": "push",
+            "actionItem": "Day38Subsystem.init()",
+            "tones": [
+              "ok",
+              "data",
+              "data"
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Push active execution frame onto JVM thread call stack.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "DomainService.execute()",
+              "Day38Subsystem.init()",
+              "Part4Executor.run()"
+            ],
+            "action": "push",
+            "actionItem": "Part4Executor.run()",
+            "tones": [
+              "ok",
+              "ok",
+              "data",
+              "data"
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Pop completed execution frame after verifying heap state invariant.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "DomainService.execute()",
+              "Day38Subsystem.init()"
+            ],
+            "action": "pop",
+            "actionItem": "Part4Executor.run()",
+            "tones": [
+              "ok",
+              "data",
+              "data"
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Push interactive mutation frame to test edge cases and boundary guards.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "DomainService.execute()",
+              "TryItRunner.mutate()"
+            ],
+            "action": "push",
+            "actionItem": "TryItRunner.mutate()",
+            "tones": [
+              "ok",
+              "ok",
+              "accent"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Incident Lab: Memory Address Hash Code Outage",
+      "codeHash": "71c19dfc3aefc4b96e7417a35a0469ffc40d8165e1cc16280a6ef90afbd20f6f",
+      "spec": {
+        "template": "stack-queue",
+        "title": "Day 38 Part 5 — JVM Call Stack & Heap State",
+        "mode": "stack",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Allocate stack frame and inspect reference pointers for Production Incident Lab: .",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "DomainService.execute()",
+              "Day38Subsystem.init()"
+            ],
+            "action": "push",
+            "actionItem": "Day38Subsystem.init()",
+            "tones": [
+              "ok",
+              "data",
+              "data"
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Push active execution frame onto JVM thread call stack.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "DomainService.execute()",
+              "Day38Subsystem.init()",
+              "Part5Executor.run()"
+            ],
+            "action": "push",
+            "actionItem": "Part5Executor.run()",
+            "tones": [
+              "ok",
+              "ok",
+              "data",
+              "data"
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Pop completed execution frame after verifying heap state invariant.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "DomainService.execute()",
+              "Day38Subsystem.init()"
+            ],
+            "action": "pop",
+            "actionItem": "Part5Executor.run()",
+            "tones": [
+              "ok",
+              "data",
+              "data"
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Push interactive mutation frame to test edge cases and boundary guards.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "DomainService.execute()",
+              "TryItRunner.mutate()"
+            ],
+            "action": "push",
+            "actionItem": "TryItRunner.mutate()",
+            "tones": [
+              "ok",
+              "ok",
+              "accent"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

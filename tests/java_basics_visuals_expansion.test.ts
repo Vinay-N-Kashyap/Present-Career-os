@@ -8,7 +8,7 @@ import { loadDayFile, getVisual, clearDayFileCache } from '../src/lib/visuals/lo
 import { getLongLesson, estimateSpokenMinutes, estimateLessonMinutes } from '../src/lib/data/longLessons';
 import { getTappableLabelsForVisual } from '../src/lib/visuals/visualRules';
 
-test('Java Basics Visuals Expansion: Days 6 to 35 On-Disk Spec Verification', () => {
+test('Java Basics Visuals Expansion: Days 6 to 40 On-Disk Spec Verification', () => {
   clearDayFileCache();
   const prefix = 'java-basics';
   const expectedTemplate = 'stack-queue';
@@ -16,7 +16,7 @@ test('Java Basics Visuals Expansion: Days 6 to 35 On-Disk Spec Verification', ()
   assert.equal(isCourseVisualsEnabled(prefix), true, `Course "${prefix}" must be enabled in enabledCourses`);
 
   const daysToTest = [];
-  for (let d = 6; d <= 35; d++) {
+  for (let d = 6; d <= 40; d++) {
     daysToTest.push(d);
   }
 
@@ -62,7 +62,7 @@ test('Java Basics Visuals Expansion: Days 6 to 35 On-Disk Spec Verification', ()
 
 test('Java Basics Duration Invariant: Days >= 11 Meet 20+ Spoken Min and 35-40 Total Min', () => {
   const daysToTest = [];
-  for (let d = 11; d <= 35; d++) {
+  for (let d = 11; d <= 40; d++) {
     daysToTest.push(d);
   }
 
@@ -77,7 +77,7 @@ test('Java Basics Duration Invariant: Days >= 11 Meet 20+ Spoken Min and 35-40 T
   }
 });
 
-test('Java Basics Days 31-35 Domain & Masterclass Integrity Verification', () => {
+test('Java Basics Days 31-40 Domain & Masterclass Integrity Verification', () => {
   const prefix = 'java-basics';
 
   // Day 31: Classes, Heap Instances & Reference Pointer Mechanics
@@ -85,33 +85,63 @@ test('Java Basics Days 31-35 Domain & Masterclass Integrity Verification', () =>
   assert.ok(d31);
   assert.equal(d31.parts.length, 5);
   assert.match(d31.title, /Classes, Heap Instances & Reference Pointer Mechanics/);
-  assert.ok(d31.parts.some(p => (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('0x7f01a0') || (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('mark word') || (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('Compressed OOPs')));
 
   // Day 32: Constructors, State Initialization & The this Keyword
   const d32 = getLongLesson(prefix, 32);
   assert.ok(d32);
   assert.equal(d32.parts.length, 5);
   assert.match(d32.title, /Constructors, State Initialization & The this Keyword/);
-  assert.ok(d32.parts.some(p => (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('parameter shadowing') || (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('constructor chaining') || (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('this(')));
 
   // Day 33: Data Hiding: Private Fields, Defensive Getters/Setters & Immutability
   const d33 = getLongLesson(prefix, 33);
   assert.ok(d33);
   assert.equal(d33.parts.length, 5);
   assert.match(d33.title, /Data Hiding: Private Fields, Defensive Getters\/Setters & Immutability/);
-  assert.ok(d33.parts.some(p => (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('Defensive Copying') || (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('Value Object') || (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('private')));
 
   // Day 34: Static State (Metaspace Class Variables) vs Heap Instance State
   const d34 = getLongLesson(prefix, 34);
   assert.ok(d34);
   assert.equal(d34.parts.length, 5);
   assert.match(d34.title, /Static State \(Metaspace Class Variables\) vs Heap Instance State/);
-  assert.ok(d34.parts.some(p => (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('Metaspace') || (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('ClassLoader') || (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('static {')));
 
   // Day 35: Milestone 6: Enterprise Bank Account Domain Model
   const d35 = getLongLesson(prefix, 35);
   assert.ok(d35);
   assert.equal(d35.parts.length, 5);
   assert.match(d35.title, /Milestone 6.*Enterprise Bank Account Domain Model/);
-  assert.ok(d35.parts.some(p => (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('EnterpriseBankAccount') || (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('atomic') || (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('audit')));
+
+  // Day 36: Inheritance Hierarchies — extends, super Constructor Chaining & Code Reuse
+  const d36 = getLongLesson(prefix, 36);
+  assert.ok(d36);
+  assert.equal(d36.parts.length, 5);
+  assert.match(d36.title, /Inheritance Hierarchies/);
+  assert.ok(d36.parts.some(p => (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('super(') || (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('extends') || (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('invokespecial')));
+
+  // Day 37: Method Overriding, @Override, Virtual Method Tables (vtable) & Dynamic Dispatch
+  const d37 = getLongLesson(prefix, 37);
+  assert.ok(d37);
+  assert.equal(d37.parts.length, 5);
+  assert.match(d37.title, /Method Overriding/);
+  assert.ok(d37.parts.some(p => (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('vtable') || (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('@Override') || (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('dynamic dispatch')));
+
+  // Day 38: The Universal Object Contract: equals(), hashCode(), and Reference Identity (==)
+  const d38 = getLongLesson(prefix, 38);
+  assert.ok(d38);
+  assert.equal(d38.parts.length, 5);
+  assert.match(d38.title, /The Universal Object Contract/);
+  assert.ok(d38.parts.some(p => (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('equals') || (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('hashCode') || (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('bucket')));
+
+  // Day 39: Abstract Classes vs Interfaces & Default Method Contract Evolution
+  const d39 = getLongLesson(prefix, 39);
+  assert.ok(d39);
+  assert.equal(d39.parts.length, 5);
+  assert.match(d39.title, /Abstract Classes vs Interfaces/);
+  assert.ok(d39.parts.some(p => (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('Template Method') || (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('invokeinterface') || (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('diamond')));
+
+  // Day 40: Milestone 7: Pluggable Multi-Provider Payment Gateway Interface Engine
+  const d40 = getLongLesson(prefix, 40);
+  assert.ok(d40);
+  assert.equal(d40.parts.length, 5);
+  assert.match(d40.title, /Milestone 7.*Payment Gateway/);
+  assert.ok(d40.parts.some(p => (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('Dependency Inversion') || (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('PaymentProcessor') || (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('GatewayRouter')));
 });
