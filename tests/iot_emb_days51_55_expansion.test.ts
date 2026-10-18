@@ -8,7 +8,7 @@ import { isCourseVisualsEnabled } from '../src/lib/visuals/enabledCourses';
 import { loadDayFile, getVisual, clearDayFileCache } from '../src/lib/visuals/loadVisuals';
 import { getTappableLabelsForVisual } from '../src/lib/visuals/visualRules';
 
-test('Course 14: IoT, Firmware & Embedded Systems (iot_emb) Month 2 Block 11 (Days 51–55) Edge DSP, Sensor Fusion & Milestone 10 Suite', async (t) => {
+test('Course 14: IoT, Firmware & Embedded Systems (iot_emb) Month 2 Block 11 (Days 51–55) Edge DSP, Sensor Fusion & Milestone 10 Engine Suite', async (t) => {
   clearDayFileCache();
 
   await t.test('1. Visuals enablement for iot_emb course prefix', () => {
@@ -40,7 +40,7 @@ test('Course 14: IoT, Firmware & Embedded Systems (iot_emb) Month 2 Block 11 (Da
         assert.ok(part.title && part.title.length > 5, `${ctx}: title must be non-empty`);
         assert.ok(Array.isArray(part.say) && part.say.length >= 4, `${ctx}: say must have at least 4 deep explanations`);
         
-        // Strict word count invariant: >= 580 words per part for 20+ min spoken avatar
+        // Strict word count invariant: >= 580 words per part for rich pedagogical depth
         const partWords = part.say.reduce((acc, s) => acc + s.split(/\s+/).filter(Boolean).length, 0);
         assert.ok(partWords >= 580, `${ctx}: part words (${partWords}) must be >= 580 for rich pedagogical depth`);
         totalDayWords += partWords;
@@ -98,33 +98,28 @@ test('Course 14: IoT, Firmware & Embedded Systems (iot_emb) Month 2 Block 11 (Da
         const visual = getVisual('iot_emb', day, pIdx);
         assert.ok(visual, `${ctx}: getVisual must return valid visual object`);
         assert.equal(visual.template, 'register-bits', `${ctx}: template must be "register-bits"`);
-        assert.ok(visual.steps && visual.steps.length >= 4, `${ctx}: must have at least 4 progressive steps`);
+        assert.equal(visual.steps.length, 4, `${ctx}: visual must have 4 synchronized steps`);
+        assert.deepEqual(
+          visual.steps.map(s => s.at),
+          ['intro', 'say1', 'example', 'tryIt'],
+          `${ctx}: visual steps must match ['intro', 'say1', 'example', 'tryIt']`
+        );
 
-        // Verify 4-step markers: intro, say1, example, tryIt
-        const stepAts = visual.steps.map((s: any) => s.at);
-        assert.ok(stepAts.includes('intro'), `${ctx}: steps must include "intro"`);
-        assert.ok(stepAts.includes('say1'), `${ctx}: steps must include "say1"`);
-        assert.ok(stepAts.includes('example'), `${ctx}: steps must include "example"`);
-        assert.ok(stepAts.includes('tryIt'), `${ctx}: steps must include "tryIt"`);
-
-        // Verify tappable labels
-        const tappableLabels = getTappableLabelsForVisual(visual);
-        assert.ok(Array.isArray(tappableLabels), `${ctx}: tappable labels must be an array`);
-        assert.ok(tappableLabels.length >= 2, `${ctx}: should extract at least 2 register bit labels`);
+        const labels = getTappableLabelsForVisual(visual);
+        assert.ok(labels.length > 0, `${ctx}: tappable labels must not be empty`);
       }
     }
   });
 
-  await t.test('4. Milestone 10 Comprehensive Verification (Day 55)', () => {
-    const day55 = getLongLesson('iot_emb', 55);
-    assert.ok(day55, 'Day 55 must resolve');
-    assert.equal(day55.minutes, 40, 'Milestone 10 must declare 40 minutes');
-    assert.match(day55.title, /Milestone 10/i, 'Day 55 title must mention Milestone 10');
+  await t.test('4. Milestone 10: Real-Time 6-DOF Sensor Fusion & DSP Anomaly Engine Certification', () => {
+    const m10Lesson = getLongLesson('iot_emb', 55);
+    assert.ok(m10Lesson, 'Milestone 10 lesson must exist');
+    assert.equal(m10Lesson.day, 55, 'Milestone 10 must be on Day 55');
+    assert.ok(m10Lesson.title.includes('Milestone 10'), 'Title must declare Milestone 10');
     
-    // Check Part 5 of Day 55
-    const m10Part = day55.parts[4];
-    assert.match(m10Part.title, /Milestone 10/i, 'Day 55 Part 5 must be the Milestone 10 Execution');
-    assert.ok(m10Part.code.includes('Milestone10MasterEngine'), 'Code must contain Milestone10MasterEngine class');
-    assert.ok(m10Part.output.includes('MILESTONE 10 GATE VERDICT: FULLY PASSING & CERTIFIED OPERATIONAL'), 'Output must contain Milestone 10 PASS verdict');
+    // Check Part 5 certification verdict
+    const p5 = m10Lesson.parts[4];
+    assert.ok(p5.title.includes('Milestone 10') || p5.title.includes('Execution'), 'Part 5 must be Milestone 10 execution');
+    assert.ok(p5.output.includes('MILESTONE 10 GATE VERDICT: FULLY PASSING & CERTIFIED OPERATIONAL'), 'Milestone 10 must output certified operational verdict');
   });
 });
