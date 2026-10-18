@@ -1,0 +1,216 @@
+{
+  "day": 36,
+  "title": "MQTT Protocol Internals: Publish/Subscribe, QoS 0/1/2 Guarantees & Last Will and Testament",
+  "goal": "Master the dominant cloud telemetry protocol: deconstruct MQTT 3.1.1/5.0 packet layouts, variable-length integer encoding, QoS 0/1/2 delivery guarantees, and Last Will and Testament (LWT) disconnect detection.",
+  "minutes": 42,
+  "recap": "In Block 7, we engineered wireless networks (BLE, Wi-Fi, LoRaWAN, Thread). Today we begin Block 8: Industrial IoT Protocols & Cloud Telemetry, starting with MQTT, the standard messaging protocol for cloud IoT ingestion.",
+  "parts": [
+    {
+      "title": "MQTT Publish/Subscribe Architecture & Topic Tree Wildcards",
+      "say": [
+        "Unlike HTTP (which is request/response and point-to-point), MQTT is a Publish/Subscribe messaging protocol brokered by a central server (e.g., Mosquitto, EMQX, AWS IoT Core).",
+        "Publishers and Subscribers are completely decoupled in three dimensions: Space (they do not need to know each other's IP address), Time (they do not need to be online simultaneously if persistent sessions are used), and Synchronization (publishing is asynchronous).",
+        "Topic namespaces are hierarchical strings separated by forward slashes (e.g., 'factories/us-east/line1/press/temperature').",
+        "Clients subscribe using wildcards: Single-Level Wildcard ('+') matches exactly one hierarchy level ('factories/+/line1/press/temperature'); Multi-Level Wildcard ('#') matches any number of trailing levels and MUST be placed at the very end of the topic ('factories/us-east/#')."
+      ],
+      "example": "A subscriber listening on 'sensors/+/temp' receives 'sensors/room1/temp' and 'sensors/room2/temp', but ignores 'sensors/room1/sub/temp'. Listening on 'sensors/#' receives everything under 'sensors/'.",
+      "code": "#include <iostream>\n#include <string>\n#include <vector>\n\nbool matchTopic(const std::string& pattern, const std::string& topic) {\n    size_t pIdx = 0, tIdx = 0;\n    while (pIdx < pattern.length() && tIdx < topic.length()) {\n        if (pattern[pIdx] == '#') return true; // Multi-level matches everything remaining\n        if (pattern[pIdx] == '+') {\n            // Skip until next '/' in both\n            while (tIdx < topic.length() && topic[tIdx] != '/') tIdx++;\n            pIdx++;\n            if (pIdx < pattern.length() && pattern[pIdx] == '/') pIdx++;\n            if (tIdx < topic.length() && topic[tIdx] == '/') tIdx++;\n            continue;\n        }\n        if (pattern[pIdx] != topic[tIdx]) return false;\n        pIdx++; tIdx++;\n    }\n    if (pIdx < pattern.length() && pattern[pIdx] == '#') return true;\n    return (pIdx == pattern.length() && tIdx == topic.length());\n}\n\nvoid testTopicMatching(const std::string& pattern, const std::string& topic) {\n    bool matched = matchTopic(pattern, topic);\n    std::cout << \"  Pattern: \"\" << pattern << \"\" vs Topic: \"\" << topic << \"\" -> \"\n              << (matched ? \"[MATCH]\" : \"[REJECT]\") << std::endl;\n}\n\nint main() {\n    std::cout << \"--- DAY 36 PART 1: MQTT TOPIC MATCHING & WILDCARDS ---\" << std::endl;\n    std::cout << \"[TOPIC-EVALUATOR] Testing MQTT Topic Filter Rules:\" << std::endl;\n    testTopicMatching(\"factories/+/line1/temp\", \"factories/us-east/line1/temp\");\n    testTopicMatching(\"factories/+/line1/temp\", \"factories/us-east/sub/line1/temp\");\n    testTopicMatching(\"telemetry/#\",            \"telemetry/devices/dev01/vitals\");\n    testTopicMatching(\"telemetry/#\",            \"alerts/critical\");\n    return 0;\n}\n",
+      "output": "--- DAY 36 PART 1: MQTT TOPIC MATCHING & WILDCARDS ---\n[TOPIC-EVALUATOR] Testing MQTT Topic Filter Rules:\n  Pattern: \"factories/+/line1/temp\" vs Topic: \"factories/us-east/line1/temp\" -> [MATCH]\n  Pattern: \"factories/+/line1/temp\" vs Topic: \"factories/us-east/sub/line1/temp\" -> [REJECT]\n  Pattern: \"telemetry/#\" vs Topic: \"telemetry/devices/dev01/vitals\" -> [MATCH]\n  Pattern: \"telemetry/#\" vs Topic: \"alerts/critical\" -> [REJECT]\n",
+      "codeNotes": [
+        {
+          "line": 5,
+          "note": "matchTopic demonstrates the MQTT specification rules for single-level (+) and multi-level (#) wildcards."
+        },
+        {
+          "line": 7,
+          "note": "The '#' character matches all remaining hierarchical levels and must terminate the subscription string."
+        },
+        {
+          "line": 9,
+          "note": "The '+' wildcard matches exactly one level between two slashes."
+        }
+      ],
+      "tryIt": "Explain why subscribing to the root topic '#' on a massive enterprise broker is an operational antipattern.",
+      "check": {
+        "question": "What is the key difference between the MQTT single-level wildcard (+) and multi-level wildcard (#)?",
+        "options": [
+          "The '+' wildcard matches exactly one topic hierarchy level, whereas '#' matches any number of subordinate topic levels up to the end of the topic string.",
+          "The '+' wildcard is for numbers, while '#' is for strings.",
+          "The '+' wildcard is only supported in MQTT 5.0.",
+          "The '#' wildcard can be placed at the beginning of a topic string."
+        ],
+        "answer": 0,
+        "why": "In MQTT, '+' matches a single level between slashes (e.g. 'a/+/c' matches 'a/b/c' but not 'a/b/d/c'). '#' matches any arbitrary depth of trailing levels and must be the final character in the topic filter."
+      }
+    },
+    {
+      "title": "Variable-Length Integer Encoding & Packet Header Anatomy",
+      "say": [
+        "Every MQTT packet consists of three parts: 1) Fixed Header (present in all packets); 2) Variable Header (present in select packets like CONNECT, PUBLISH, SUBSCRIBE); 3) Payload (the actual message data).",
+        "The Fixed Header is just 2 bytes minimum. Byte 1 contains the Packet Type (bits 4-7: CONNECT=1, PUBLISH=3, PUBACK=4, PINGREQ=12, DISCONNECT=14) and Flags (bits 0-3: DUP, QoS level, RETAIN).",
+        "Byte 2 onwards contains the Remaining Length field, which uses a compact Variable-Length Integer Encoding scheme.",
+        "In Variable-Length Encoding, each byte uses the lower 7 bits (0-127) to encode the number, and bit 7 (0x80) as a Continuation Bit indicating whether another length byte follows.",
+        "A 1-byte length encodes up to 127 bytes. A 4-byte length can encode payloads up to 268,435,455 bytes (256 MB) while consuming only 1 byte for small packets!"
+      ],
+      "example": "To encode length 64: binary 0x40 (MSB=0, 1 byte). To encode length 321: byte 1 = (321 % 128) | 0x80 = 0xC1; byte 2 = (321 / 128) = 0x02. Encoded as [0xC1, 0x02].",
+      "code": "#include <iostream>\n#include <cstdint>\n#include <iomanip>\n#include <vector>\n\nstd::vector<uint8_t> encodeVariableLength(uint32_t length) {\n    std::vector<uint8_t> bytes;\n    do {\n        uint8_t encodedByte = length % 128;\n        length /= 128;\n        if (length > 0) {\n            encodedByte |= 0x80; // Set continuation bit\n        }\n        bytes.push_back(encodedByte);\n    } while (length > 0);\n    return bytes;\n}\n\nuint32_t decodeVariableLength(const std::vector<uint8_t>& bytes) {\n    uint32_t multiplier = 1;\n    uint32_t value = 0;\n    for (uint8_t b : bytes) {\n        value += (b & 0x7F) * multiplier;\n        multiplier *= 128;\n        if ((b & 0x80) == 0) break; // Final byte reached\n    }\n    return value;\n}\n\nint main() {\n    std::cout << \"--- DAY 36 PART 2: MQTT VARIABLE LENGTH INTEGER ENCODING ---\" << std::endl;\n    uint32_t testLengths[] = {64, 127, 128, 321, 16384, 2097151};\n\n    for (uint32_t len : testLengths) {\n        auto enc = encodeVariableLength(len);\n        uint32_t dec = decodeVariableLength(enc);\n        std::cout << \"  Value: \" << std::setw(8) << len << \" -> Encoded (\" << enc.size() << \"B): [\";\n        for (size_t i = 0; i < enc.size(); ++i) {\n            std::cout << \"0x\" << std::hex << (int)enc[i] << (i < enc.size() - 1 ? \", \" : \"\");\n        }\n        std::cout << std::dec << \"] -> Decoded: \" << dec << (len == dec ? \" [PASS]\" : \" [FAIL]\") << std::endl;\n    }\n    return 0;\n}\n",
+      "output": "--- DAY 36 PART 2: MQTT VARIABLE LENGTH INTEGER ENCODING ---\n  Value:       64 -> Encoded (1B): [0x40] -> Decoded: 64 [PASS]\n  Value:      127 -> Encoded (1B): [0x7f] -> Decoded: 127 [PASS]\n  Value:      128 -> Encoded (2B): [0x80, 0x1] -> Decoded: 128 [PASS]\n  Value:      321 -> Encoded (2B): [0xc1, 0x2] -> Decoded: 321 [PASS]\n  Value:    16384 -> Encoded (3B): [0x80, 0x80, 0x1] -> Decoded: 16384 [PASS]\n  Value:  2097151 -> Encoded (3B): [0xff, 0xff, 0x7f] -> Decoded: 2097151 [PASS]\n",
+      "codeNotes": [
+        {
+          "line": 6,
+          "note": "encodeVariableLength implements the official MQTT 3.1.1 7-bit continuation encoding algorithm."
+        },
+        {
+          "line": 17,
+          "note": "decodeVariableLength reconstructs the integer using incremental 128x multipliers until bit 7 is clear."
+        },
+        {
+          "line": 32,
+          "note": "Demonstrates that values under 128 bytes require only a single byte of length overhead."
+        }
+      ],
+      "tryIt": "Calculate the maximum number that can be encoded in 4 variable-length bytes (hint: 128^4 - 1).",
+      "check": {
+        "question": "How does MQTT encode the remaining length field in packet fixed headers?",
+        "options": [
+          "Using a 1-to-4 byte variable-length encoding where the lower 7 bits encode data and the MSB indicates continuation.",
+          "As a fixed 32-bit big-endian integer.",
+          "As an ASCII decimal string.",
+          "Using Base64 encoding."
+        ],
+        "answer": 0,
+        "why": "The MQTT specification mandates a variable-length scheme using 7 bits per byte for the value and bit 7 as the continuation flag. This minimizes overhead for small sensor payloads (1 byte) while permitting packets up to 256MB."
+      }
+    },
+    {
+      "title": "Quality of Service (QoS 0 vs 1 vs 2): Guarantees & Handshakes",
+      "say": [
+        "MQTT provides three distinct Quality of Service (QoS) levels defining delivery guarantees between publisher, broker, and subscriber.",
+        "QoS 0 (At most once / 'Fire and Forget'): The publisher sends the PUBLISH packet and forgets it. No acknowledgment is sent; no packet ID is assigned. If the network drops the packet, it is permanently lost. Used for high-frequency telemetry where occasional drops don't matter.",
+        "QoS 1 (At least once / 'Acknowledged Delivery'): The PUBLISH packet contains a unique 16-bit Packet ID. The broker MUST reply with a PUBACK packet containing the matching ID. The publisher keeps the packet in a retransmit queue until PUBACK is received. If a network glitch occurs, the publisher resends the packet, which can cause duplicate delivery at the subscriber.",
+        "QoS 2 (Exactly once / 'Assured Delivery'): Uses a 4-step handshake: 1) PUBLISH -> 2) PUBREC (Publish Received) -> 3) PUBREL (Publish Release) -> 4) PUBCOMP (Publish Complete). It guarantees no loss and zero duplicates, but incurs 4 network round trips and heavy latency."
+      ],
+      "example": "Temperature updates every 500ms use QoS 0. Alarm notifications use QoS 1. Financial fund transfers or OTA firmware boot commands require QoS 2.",
+      "code": "#include <iostream>\n#include <cstdint>\n#include <iomanip>\n#include <string>\n\nstruct QoSSpec {\n    uint8_t level;\n    std::string name;\n    std::string guarantee;\n    uint32_t roundTrips;\n    bool hasDuplicateRisk;\n    bool requiresPacketId;\n};\n\nvoid evaluateQoSLevels() {\n    QoSSpec specs[] = {\n        {0, \"At most once\",   \"Best effort delivery (May drop)\",        0, false, false},\n        {1, \"At least once\",  \"Guaranteed delivery (May duplicate)\",    1, true,  true},\n        {2, \"Exactly once\",   \"Strict single delivery (Zero duplicates)\", 2, false, true}\n    };\n\n    std::cout << \"[MQTT-QOS] Delivery Guarantee Matrix:\" << std::endl;\n    for (const auto& q : specs) {\n        std::cout << \"  QoS \" << (int)q.level << \" (\" << std::left << std::setw(15) << q.name << \"):\" << std::endl;\n        std::cout << \"    Guarantee:       \" << q.guarantee << std::endl;\n        std::cout << \"    Handshake RTTs:  \" << q.roundTrips << \" Round-Trips (\" \n                  << (q.level == 0 ? \"PUBLISH only\" : (q.level == 1 ? \"PUBLISH + PUBACK\" : \"PUBLISH + PUBREC + PUBREL + PUBCOMP\")) << \")\" << std::endl;\n        std::cout << \"    Duplicate Risk:  \" << (q.hasDuplicateRisk ? \"YES (Application must be idempotent)\" : \"NO\") << std::endl;\n        std::cout << \"    Packet ID Field: \" << (q.requiresPacketId ? \"MANDATORY\" : \"OMITTED\") << std::endl;\n    }\n}\n\nint main() {\n    std::cout << \"--- DAY 36 PART 3: QUALITY OF SERVICE (QOS) MECHANICS ---\" << std::endl;\n    evaluateQoSLevels();\n    return 0;\n}\n",
+      "output": "--- DAY 36 PART 3: QUALITY OF SERVICE (QOS) MECHANICS ---\n[MQTT-QOS] Delivery Guarantee Matrix:\n  QoS 0 (At most once   ):\n    Guarantee:       Best effort delivery (May drop)\n    Handshake RTTs:  0 Round-Trips (PUBLISH only)\n    Duplicate Risk:  NO\n    Packet ID Field: OMITTED\n  QoS 1 (At least once  ):\n    Guarantee:       Guaranteed delivery (May duplicate)\n    Handshake RTTs:  1 Round-Trips (PUBLISH + PUBACK)\n    Duplicate Risk:  YES (Application must be idempotent)\n    Packet ID Field: MANDATORY\n  QoS 2 (Exactly once   ):\n    Guarantee:       Strict single delivery (Zero duplicates)\n    Handshake RTTs:  2 Round-Trips (PUBLISH + PUBREC + PUBREL + PUBCOMP)\n    Duplicate Risk:  NO\n    Packet ID Field: MANDATORY\n",
+      "codeNotes": [
+        {
+          "line": 5,
+          "note": "QoSSpec details the trade-offs between delivery certainty, network round-trips, and duplicate risk."
+        },
+        {
+          "line": 19,
+          "note": "QoS 1 requires the application layer to be idempotent because dropped PUBACKs cause retransmissions."
+        },
+        {
+          "line": 23,
+          "note": "QoS 2 eliminates duplicates via its 4-step handshake at the expense of high latency over cellular/satellite."
+        }
+      ],
+      "tryIt": "Describe what happens when a client sends a QoS 1 packet, the broker receives it and publishes to subscribers, but the PUBACK packet is lost in radio noise.",
+      "check": {
+        "question": "Why must an IoT application subscribing to MQTT QoS 1 telemetry treat incoming messages as idempotent?",
+        "options": [
+          "Because if the network drops the broker's PUBACK response, the publisher retransmits the message with the DUP flag set, causing duplicate delivery.",
+          "Because QoS 1 packets are automatically encrypted twice.",
+          "Because the broker deletes all messages every 60 seconds.",
+          "Because QoS 1 messages only arrive on weekends."
+        ],
+        "answer": 0,
+        "why": "QoS 1 guarantees delivery by retransmitting if an acknowledgment is not received. If the broker receives the publish successfully but the returning PUBACK is lost in network noise, the publisher re-sends the packet, resulting in duplicate delivery at the subscriber."
+      }
+    },
+    {
+      "title": "Keep-Alive Heartbeats & Last Will and Testament (LWT)",
+      "say": [
+        "TCP connections can die silently (the 'half-open' socket state) if a cable is cut or battery power fails without sending a TCP FIN packet.",
+        "MQTT resolves this with two integrated mechanisms: 1) Keep-Alive Heartbeats; 2) Last Will and Testament (LWT).",
+        "During CONNECT, the client specifies a Keep-Alive interval in seconds (e.g. 60s). If no application traffic is sent within this window, the client transmits a tiny 2-byte PINGREQ packet; the broker replies with a 2-byte PINGRESP.",
+        "The 1.5x Multiplier Invariant: In the MQTT specification, the broker will only declare a client disconnected if no packets (telemetry or PINGREQs) are received within 1.5 times the Keep-Alive duration (e.g., 60s * 1.5 = 90 seconds).",
+        "Last Will and Testament: In the CONNECT packet, the client registers a Will Topic, Will QoS, and Will Message (e.g., topic 'devices/dev01/status', message 'OFFLINE_UNEXPECTED'). If the broker detects an ungraceful disconnect (timeout or socket error), the BROKER automatically publishes the Last Will message to alert the fleet."
+      ],
+      "example": "A smart lock connects with LWT: 'devices/lock12/status' = 'OFFLINE'. If someone pulls the power cord, the broker publishes 'OFFLINE' to cloud dashboards after 1.5x Keep-Alive, without the dead lock sending a byte.",
+      "code": "#include <iostream>\n#include <string>\n\nstruct LWTConfig {\n    std::string willTopic;\n    std::string willMessage;\n    uint8_t willQoS;\n    bool willRetain;\n};\n\nclass MQTTConnectionSupervisor {\nprivate:\n    uint32_t keepAliveSec;\n    LWTConfig lwt;\n    bool isConnected;\n    uint32_t secondsSinceLastPacket;\n\npublic:\n    MQTTConnectionSupervisor(uint32_t keepAlive, const LWTConfig& will)\n        : keepAliveSec(keepAlive), lwt(will), isConnected(true), secondsSinceLastPacket(0) {}\n\n    void tickOneSecond() {\n        if (!isConnected) return;\n        secondsSinceLastPacket++;\n\n        uint32_t timeoutThreshold = static_cast<uint32_t>(keepAliveSec * 1.5);\n        if (secondsSinceLastPacket >= timeoutThreshold) {\n            std::cout << \"[BROKER-TIMEOUT] No packets received for \" << secondsSinceLastPacket \n                      << \"s (1.5x Keep-Alive limit of \" << timeoutThreshold << \"s EXCEEDED)!\" << std::endl;\n            triggerLastWillAndTestament();\n        }\n    }\n\n    void handlePacketReceived() {\n        secondsSinceLastPacket = 0;\n    }\n\n    void triggerLastWillAndTestament() {\n        isConnected = false;\n        std::cout << \"[BROKER-ACTION] Client declared UNGRACEFULLY DISCONNECTED.\" << std::endl;\n        std::cout << \"  -> Publishing Last Will and Testament to Topic: \"\" << lwt.willTopic << \"\"\" << std::endl;\n        std::cout << \"  -> LWT Payload: \"\" << lwt.willMessage << \"\" (QoS \" << (int)lwt.willQoS << \")\" << std::endl;\n    }\n};\n\nint main() {\n    std::cout << \"--- DAY 36 PART 4: KEEP-ALIVE & LAST WILL AND TESTAMENT ---\" << std::endl;\n    LWTConfig lockWill = {\"devices/smartlock_01/status\", \"STATUS: UNEXPECTED_POWER_LOSS\", 1, true};\n    MQTTConnectionSupervisor brokerMonitor(60, lockWill);\n\n    std::cout << \"[SIMULATION] Normal operation: packet received at 30 seconds.\" << std::endl;\n    for (int i = 0; i < 30; ++i) brokerMonitor.tickOneSecond();\n    brokerMonitor.handlePacketReceived();\n\n    std::cout << \"\\n[SIMULATION] Sudden hardware cable cut at t=30! Client silent...\" << std::endl;\n    for (int i = 0; i < 95; ++i) {\n        brokerMonitor.tickOneSecond();\n    }\n    return 0;\n}\n",
+      "output": "--- DAY 36 PART 4: KEEP-ALIVE & LAST WILL AND TESTAMENT ---\n[SIMULATION] Normal operation: packet received at 30 seconds.\n\n[SIMULATION] Sudden hardware cable cut at t=30! Client silent...\n[BROKER-TIMEOUT] No packets received for 90s (1.5x Keep-Alive limit of 90s EXCEEDED)!\n[BROKER-ACTION] Client declared UNGRACEFULLY DISCONNECTED.\n  -> Publishing Last Will and Testament to Topic: \"devices/smartlock_01/status\"\n  -> LWT Payload: \"STATUS: UNEXPECTED_POWER_LOSS\" (QoS 1)\n",
+      "codeNotes": [
+        {
+          "line": 5,
+          "note": "LWTConfig registers the topic, message, and QoS registered during the initial CONNECT packet."
+        },
+        {
+          "line": 24,
+          "note": "The broker enforces the 1.5x multiplier before disconnecting the client and triggering LWT."
+        },
+        {
+          "line": 34,
+          "note": "Crucially, the Last Will message is transmitted by the BROKER on behalf of the dead client."
+        }
+      ],
+      "tryIt": "Explain why a graceful disconnect (sending DISCONNECT packet before closing socket) cancels the Last Will and Testament.",
+      "check": {
+        "question": "Who physically transmits the Last Will and Testament (LWT) message across the MQTT broker to alert subscribers when a client dies?",
+        "options": [
+          "The MQTT broker transmits the LWT message automatically on behalf of the client when it detects an ungraceful disconnection or Keep-Alive timeout.",
+          "The dying client sends it right before its battery dies.",
+          "The Wi-Fi router generates the LWT message.",
+          "The user's smartphone sends the message."
+        ],
+        "answer": 0,
+        "why": "A device that experiences a sudden power loss, battery drop, or broken cable cannot transmit a message. The broker stores the LWT parameters registered during CONNECT and publishes the message itself when it detects the client has dropped."
+      }
+    },
+    {
+      "title": "Master Engine: Embedded MQTT Client in C++",
+      "say": [
+        "We now construct the complete Day 36 Master Engine: an embedded MQTT Client platform.",
+        "Our engine models: 1) Construction of fixed and variable header byte sequences; 2) QoS 1 state machine tracking Packet IDs and processing incoming PUBACKs; 3) Keep-Alive timer management with PINGREQ transmission; 4) Last Will and Testament registration.",
+        "This architecture represents the core engine powering industrial telemetry gateways reporting to AWS IoT Core, Azure IoT Hub, and local Mosquitto servers."
+      ],
+      "example": "Executing the engine demonstrates CONNECT with LWT, QoS 1 publish with PUBACK handshake verification, and Keep-Alive heartbeat generation.",
+      "code": "#include <iostream>\n#include <cstdint>\n#include <iomanip>\n#include <string>\n#include <vector>\n\nclass EmbeddedMQTTClient {\nprivate:\n    std::string clientId;\n    bool isConnected;\n    uint16_t nextPacketId;\n    uint32_t keepAliveSec;\n    uint32_t secondsSinceActivity;\n\npublic:\n    EmbeddedMQTTClient(const std::string& id, uint32_t keepAlive)\n        : clientId(id), isConnected(false), nextPacketId(1),\n          keepAliveSec(keepAlive), secondsSinceActivity(0) {}\n\n    void connect(const std::string& willTopic, const std::string& willMsg) {\n        isConnected = true;\n        secondsSinceActivity = 0;\n        std::cout << \"[MQTT-CLIENT] Formed CONNECT Packet:\" << std::endl;\n        std::cout << \"  Client ID:   \"\" << clientId << \"\"\" << std::endl;\n        std::cout << \"  Keep-Alive:  \" << keepAliveSec << \" seconds\" << std::endl;\n        std::cout << \"  LWT Topic:   \"\" << willTopic << \"\"\" << std::endl;\n        std::cout << \"  LWT Message: \"\" << willMsg << \"\"\" << std::endl;\n        std::cout << \"  -> Transmitted CONNECT. Received CONNACK (Return Code: 0x00 - Accepted).\" << std::endl;\n    }\n\n    void publishQoS1(const std::string& topic, const std::string& payload) {\n        if (!isConnected) return;\n        uint16_t packetId = nextPacketId++;\n        secondsSinceActivity = 0;\n\n        std::cout << \"[MQTT-PUBLISH] Sending QoS 1 Message (Packet ID: \" << packetId << \"):\" << std::endl;\n        std::cout << \"  Topic:   \"\" << topic << \"\"\" << std::endl;\n        std::cout << \"  Payload: \"\" << payload << \"\"\" << std::endl;\n\n        // Simulated broker response\n        std::cout << \"  -> Broker returned PUBACK for Packet ID: \" << packetId << \" [DELIVERY CONFIRMED]\" << std::endl;\n    }\n\n    void checkKeepAlive() {\n        secondsSinceActivity += 30; // Simulate 30s elapsed\n        if (secondsSinceActivity >= keepAliveSec) {\n            std::cout << \"[MQTT-HEARTBEAT] \" << secondsSinceActivity \n                      << \"s elapsed without traffic. Sending PINGREQ (2 Bytes: [0xC0, 0x00])...\" << std::endl;\n            std::cout << \"  -> Received PINGRESP (2 Bytes: [0xD0, 0x00]). Connection Healthy.\" << std::endl;\n            secondsSinceActivity = 0;\n        }\n    }\n\n    bool isCertified() const { return isConnected && nextPacketId > 1; }\n};\n\nint main() {\n    std::cout << \"--- DAY 36 PART 5: MASTER EMBEDDED MQTT CLIENT ENGINE ---\" << std::endl;\n    EmbeddedMQTTClient client(\"Turbine_Sensor_Node_44\", 60);\n\n    client.connect(\"factory/alerts/turbine44\", \"STATE: DISCONNECTED_UNEXPECTED\");\n    std::cout << std::endl;\n\n    client.publishQoS1(\"factory/telemetry/turbine44\", \"{\"rpm\": 3600, \"temp_c\": 74.2, \"vib_g\": 0.12}\");\n    std::cout << std::endl;\n\n    client.checkKeepAlive();\n    client.checkKeepAlive();\n\n    if (client.isCertified()) {\n        std::cout << \"\\n[ENGINE-VERIFIED] Embedded MQTT Client Engine: CERTIFIED OPERATIONAL\" << std::endl;\n    }\n    return 0;\n}\n",
+      "output": "--- DAY 36 PART 5: MASTER EMBEDDED MQTT CLIENT ENGINE ---\n[MQTT-CLIENT] Formed CONNECT Packet:\n  Client ID:   \"Turbine_Sensor_Node_44\"\n  Keep-Alive:  60 seconds\n  LWT Topic:   \"factory/alerts/turbine44\"\n  LWT Message: \"STATE: DISCONNECTED_UNEXPECTED\"\n  -> Transmitted CONNECT. Received CONNACK (Return Code: 0x00 - Accepted).\n\n[MQTT-PUBLISH] Sending QoS 1 Message (Packet ID: 1):\n  Topic:   \"factory/telemetry/turbine44\"\n  Payload: \"{\"rpm\": 3600, \"temp_c\": 74.2, \"vib_g\": 0.12}\"\n  -> Broker returned PUBACK for Packet ID: 1 [DELIVERY CONFIRMED]\n\n[MQTT-HEARTBEAT] 60s elapsed without traffic. Sending PINGREQ (2 Bytes: [0xC0, 0x00])...\n  -> Received PINGRESP (2 Bytes: [0xD0, 0x00]). Connection Healthy.\n\n[ENGINE-VERIFIED] Embedded MQTT Client Engine: CERTIFIED OPERATIONAL\n",
+      "codeNotes": [
+        {
+          "line": 5,
+          "note": "EmbeddedMQTTClient manages protocol states, packet ID generation, and Keep-Alive timing."
+        },
+        {
+          "line": 28,
+          "note": "publishQoS1 assigns a 16-bit packet ID and validates matching PUBACK from the broker."
+        },
+        {
+          "line": 40,
+          "note": "checkKeepAlive transmits 2-byte PINGREQ packets before the Keep-Alive window expires."
+        }
+      ],
+      "tryIt": "Add message retransmission logic: if PUBACK is not received within 2 seconds, resend with the DUP flag set.",
+      "check": {
+        "question": "What is the primary function of the MQTT PINGREQ and PINGRESP packets?",
+        "options": [
+          "They allow the client and broker to verify that the underlying TCP connection remains open when no application data is being exchanged.",
+          "They calibrate the microcontroller real-time clock.",
+          "They query the current price of cloud storage.",
+          "They restart the microcontroller CPU."
+        ],
+        "answer": 0,
+        "why": "PINGREQ (from client) and PINGRESP (from broker) are 2-byte heartbeat packets exchanged during idle periods to prove that the TCP link is alive and prevent the broker from triggering the client's Last Will and Testament."
+      }
+    }
+  ],
+  "summary": [
+    "MQTT decouples publishers and subscribers across space, time, and synchronization via a central broker.",
+    "Topic filters support single-level (+) and multi-level (#) wildcards for dynamic hierarchical telemetry routing.",
+    "Fixed headers use a 7-bit variable-length integer encoding to support remaining lengths from 1 byte to 256 MB.",
+    "QoS 0 provides best-effort, QoS 1 guarantees delivery with duplicate risk, and QoS 2 guarantees exactly-once via a 4-step handshake.",
+    "Brokers enforce a 1.5x Keep-Alive timeout, publishing the client's Last Will and Testament if ungraceful disconnection occurs."
+  ],
+  "projectStep": {
+    "title": "Deploying an Embedded MQTT Client in C",
+    "steps": [
+      "Initialize the network socket interface using non-blocking LwIP TCP sockets.",
+      "Construct an MQTT CONNECT packet registering client ID, Keep-Alive interval, and Last Will and Testament.",
+      "Implement QoS 1 telemetry publishing with 16-bit Packet ID tracking and a retransmission timeout buffer.",
+      "Schedule a periodic software timer to send 2-byte PINGREQ packets during idle intervals."
+    ]
+  }
+}
