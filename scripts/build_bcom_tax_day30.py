@@ -1,0 +1,413 @@
+"""
+Build Day 30 JSON for Course: bcom_tax (Corporate Taxation & GST)
+Topic: FINAL GRAND MASTER CAPSTONE: The Chief Tax Officer (CTO) Enterprise Operating System
+"""
+import json
+import os
+
+day_data = {
+    "day": 30,
+    "title": "FINAL GRAND MASTER CAPSTONE: The Chief Tax Officer (CTO) Enterprise Operating System",
+    "parts": [
+        {
+            "title": "CTO Cockpit Architecture & Unified Master Data Pipelines",
+            "say": [
+                "Welcome to Day 30: The Final Grand Master Capstone of Corporate Taxation & GST. Over the preceding 29 days, we traversed the full spectrum of fiscal law: corporate income tax computations under Sections 28 to 44D, MAT under Section 115JB, concessional regimes under Section 115BAA/115BAB, GST supply architecture and input tax credit waterfalls, transfer pricing range concepts under Rule 10CA, cross-border withholding and DTAA treaties under Section 195, faceless scrutiny defense under Section 144B, and boardroom governance under Ind AS 12. Today, we unite these statutory frameworks into the pinnacle of enterprise tax engineering: The Chief Tax Officer (CTO) Enterprise Operating System.",
+                "In Part 1, we establish the foundation: The Unified Master Tax Data Pipeline. Corporate conglomerates operating scores of subsidiaries, industrial manufacturing plants, and omnichannel distribution hubs face massive data fragmentation. General ledgers, ERP billing engines, human resource payroll databases, and government portal feeds operate in disconnected silos.",
+                "Our Python master pipeline ingests corporate metadata from across the enterprise: trial balance P&L accounts, vendor procurement ledgers, e-invoice registries, and cross-border remittance logs. The pipeline standardizes transaction records into a unified statutory schema, tagging each financial line with direct tax section classifications, GST taxability flags, transfer pricing tested party assignments, and Ind AS 12 temporary difference markers.",
+                "Furthermore, the pipeline automates live health checks across the enterprise: flagging unauthenticated e-invoices violating Rule 48(4), identifying Section 43B statutory dues nearing the return filing deadline, and detecting un-repatriated secondary adjustments under Section 92CE, establishing an unassailable baseline for corporate tax leadership."
+            ],
+            "example": "An enterprise tax engine ingests Rs 500 Crore of annual transactional data. The pipeline auto-categorizes 25,000 journal entries: tagging Rs 350 Crore as GST taxable B2B supplies (with IRN), isolating Rs 45 Crore of overseas software billings for Section 195 withholding checks, and flagging Rs 12 Crore of accelerated tax depreciation for Ind AS 12 DTL recognition.",
+            "code": '''class MasterTaxDataPipeline:
+    def __init__(self, enterprise_name: str, group_turnover_cr: float):
+        self.enterprise_name = enterprise_name
+        self.group_turnover_cr = group_turnover_cr
+        self.ledger_entries = []
+
+    def ingest_transaction(self, tx_id: str, desc: str, gross_amount_cr: float, tx_type: str, has_irn: bool = True, is_cross_border: bool = False, tds_deducted: bool = True):
+        entry = {
+            "tx_id": tx_id,
+            "desc": desc,
+            "amount_cr": gross_amount_cr,
+            "type": tx_type,  # 'domestic_supply', 'cross_border_payment', 'capex_addition', 'pnl_expense'
+            "has_irn": has_irn,
+            "is_cross_border": is_cross_border,
+            "tds_deducted": tds_deducted,
+            "compliance_flags": []
+        }
+        
+        # Immediate Statutory Invariant Auditing
+        if tx_type == "domestic_supply" and not has_irn and self.group_turnover_cr > 5.0:
+            entry["compliance_flags"].append("Rule 48(5) Fatal Defect: Missing IRN on B2B supply")
+        if tx_type == "cross_border_payment" and not tds_deducted:
+            entry["compliance_flags"].append("Sec 40(a)(i) Risk: Unpaid TDS triggers 100% expense disallowance")
+            
+        self.ledger_entries.append(entry)
+        return entry
+
+    def generate_pipeline_health_report(self) -> dict:
+        total_tx = len(self.ledger_entries)
+        flagged_tx = sum(1 for e in self.ledger_entries if len(e["compliance_flags"]) > 0)
+        total_volume_cr = sum(e["amount_cr"] for e in self.ledger_entries)
+        
+        return {
+            "enterprise": self.enterprise_name,
+            "total_transactions_ingested": total_tx,
+            "aggregate_volume_cr": total_volume_cr,
+            "flawed_transactions": flagged_tx,
+            "pipeline_integrity_pct": ((total_tx - flagged_tx) / total_tx * 100.0) if total_tx > 0 else 100.0,
+            "system_status": "CERTIFIED CLEAN" if flagged_tx == 0 else "ACTION REQUIRED"
+        }
+
+pipeline = MasterTaxDataPipeline("Conglomerate Global India Ltd", group_turnover_cr=500.0)
+pipeline.ingest_transaction("TX-001", "B2B Finished Goods Outward", gross_amount_cr=25.0, tx_type="domestic_supply", has_irn=True)
+pipeline.ingest_transaction("TX-002", "Overseas Engineering Royalty", gross_amount_cr=4.5, tx_type="cross_border_payment", tds_deducted=True)
+pipeline.ingest_transaction("TX-003", "Domestic Cloud Hosting Inward", gross_amount_cr=1.2, tx_type="pnl_expense", tds_deducted=False)
+
+report = pipeline.generate_pipeline_health_report()
+print(f"Master Tax Pipeline — {report['enterprise']}:")
+print(f"  Transactions Ingested : {report['total_transactions_ingested']} (INR {report['aggregate_volume_cr']:.2f} Cr)")
+print(f"  Flawed Transactions   : {report['flawed_transactions']}")
+print(f"  Pipeline Integrity    : {report['pipeline_integrity_pct']:.2f}% ({report['system_status']})")
+''',
+            "tryIt": "Ingest a domestic supply with has_irn=False to observe the pipeline immediately flagging the Rule 48(5) statutory invoice defect.",
+            "check": {
+                "question": "What is the primary architectural purpose of deploying a Master Tax Data Pipeline within an enterprise Chief Tax Officer cockpit?",
+                "options": [
+                    "To ingest fragmented ERP, billing, and portal data into a unified schema and automatically detect statutory compliance defects in real time",
+                    "To generate speculative cryptocurrency investments for corporate treasury",
+                    "To eliminate the need for maintaining accounting ledgers",
+                    "To artificially inflate corporate revenues before public listing"
+                ],
+                "answerIndex": 0,
+                "why": "The Master Tax Data Pipeline standardizes enterprise data and validates transactions against statutory invariants (e.g. Rule 48(4) e-invoicing, Section 40(a)(i) TDS, Section 43B payments) before reporting."
+            }
+        },
+        {
+            "title": "Corporate Direct Tax Engine: PGBP, MAT Sec 115JB & Concessional Optima",
+            "say": [
+                "In Part 2 of our Grand Capstone, we orchestrate the core direct tax computation: The Enterprise Corporate Income Tax Engine under Sections 28 to 115JB.",
+                "Our module executes full-scope corporate tax assessment: (1) calculating accounting Profit Before Tax (PBT); (2) applying positive and negative statutory PGBP adjustments—adding back Section 32 book depreciation, Section 36(1)(va) delayed PF, Section 40(a)(ia) TDS defaults, and Section 43B unpaid statutory dues, while deducting statutory block tax depreciation and Section 35 R&D incentives; and (3) computing gross taxable income and corporate tax at normal rates (25%/30% + surcharge and cess).",
+                "Simultaneously, the engine calculates Book Profit under Section 115JB Schedule III adjustments: adding back provisions for doubtful debts, deferred taxes, and proposed dividends, deducting Clause (iii) lower of brought-forward business loss or unabsorbed depreciation, and computing Minimum Alternate Tax (MAT) at 15% (effective 17.472%).",
+                "The engine then executes a Net Present Value (NPV) multi-year comparative financial simulation evaluating whether the enterprise should remain in the legacy regime (utilizing accumulated Section 115JAA MAT credits) or exercise the irrevocable election under Section 115BAA to migrate to the flat 22% (effective 25.168%) concessional regime with zero MAT, delivering audited capital allocation advice to the CFO."
+            ],
+            "example": "An industrial corporation reports Rs 80 Crore PBT. Under normal provisions, taxable income after Section 32 block depreciation is Rs 65 Crore (tax Rs 16.36 Cr at 25.168%). Book profit under Section 115JB is Rs 75 Crore (MAT Rs 13.10 Cr at 17.472%). Because normal tax exceeds MAT, the company pays normal tax. Having Rs 15 Crore of historical MAT credit, the engine models credit absorption vs Section 115BAA migration, proving that remaining in the legacy regime saves Rs 3.26 Crore over the 3-year forecast horizon.",
+            "code": '''class CorporateIncomeTaxEngine:
+    def __init__(self, pbt_cr: float, book_depr_cr: float, tax_depr_cr: float, sec43b_unpaid_cr: float, accumulated_mat_credit_cr: float):
+        self.pbt_cr = pbt_cr
+        self.book_depr_cr = book_depr_cr
+        self.tax_depr_cr = tax_depr_cr
+        self.sec43b_unpaid_cr = sec43b_unpaid_cr
+        self.mat_credit_available_cr = accumulated_mat_credit_cr
+
+    def compute_normal_tax(self) -> dict:
+        taxable_pgbp = self.pbt_cr + self.book_depr_cr + self.sec43b_unpaid_cr - self.tax_depr_cr
+        taxable_pgbp = max(0.0, taxable_pgbp)
+        
+        # Effective rate under Section 115BAA: 22% * 1.10 (surcharge) * 1.04 (cess) = 25.168%
+        # Effective rate under Legacy: 25% * 1.07 * 1.04 = 27.82% (if turnover <= 400 Cr)
+        legacy_tax_rate = 27.82
+        concessional_rate = 25.168
+        
+        normal_tax_legacy = taxable_pgbp * (legacy_tax_rate / 100.0)
+        concessional_tax = taxable_pgbp * (concessional_rate / 100.0)
+        
+        return {
+            "taxable_pgbp_income_cr": taxable_pgbp,
+            "legacy_normal_tax_cr": normal_tax_legacy,
+            "concessional_115baa_tax_cr": concessional_tax
+        }
+
+    def compute_mat_sec115jb(self, book_profit_additions_cr: float, loss_depr_deduction_cr: float) -> dict:
+        book_profit = self.pbt_cr + book_profit_additions_cr - loss_depr_deduction_cr
+        book_profit = max(0.0, book_profit)
+        
+        # Effective MAT rate: 15% * 1.07 * 1.04 = 16.692% (or 17.472% if turnover > 10 Cr)
+        mat_rate = 17.472
+        mat_tax = book_profit * (mat_rate / 100.0)
+        
+        return {
+            "book_profit_cr": book_profit,
+            "mat_tax_payable_cr": mat_tax
+        }
+
+    def optimize_regime_decision(self, book_profit_additions_cr: float, loss_depr_deduction_cr: float) -> dict:
+        normal_info = self.compute_normal_tax()
+        mat_info = self.compute_mat_sec115jb(book_profit_additions_cr, loss_depr_deduction_cr)
+        
+        legacy_tax_liability = max(normal_info["legacy_normal_tax_cr"], mat_info["mat_tax_payable_cr"])
+        
+        # If legacy normal > MAT, absorb MAT credit up to difference
+        credit_absorbed = 0.0
+        if normal_info["legacy_normal_tax_cr"] > mat_info["mat_tax_payable_cr"] and self.mat_credit_available_cr > 0:
+            credit_absorbed = min(self.mat_credit_available_cr, normal_info["legacy_normal_tax_cr"] - mat_info["mat_tax_payable_cr"])
+            net_legacy_cash_outflow = legacy_tax_liability - credit_absorbed
+        else:
+            net_legacy_cash_outflow = legacy_tax_liability
+            
+        concessional_cash_outflow = normal_info["concessional_115baa_tax_cr"]  # Zero MAT, zero credit
+        
+        verdict = "Migrate to Concessional 115BAA (22%)" if concessional_cash_outflow < net_legacy_cash_outflow else "Retain Legacy Regime (Absorb MAT Credit)"
+        
+        return {
+            "normal_taxable_income_cr": normal_info["taxable_pgbp_income_cr"],
+            "legacy_normal_tax_cr": normal_info["legacy_normal_tax_cr"],
+            "book_profit_cr": mat_info["book_profit_cr"],
+            "mat_tax_cr": mat_info["mat_tax_payable_cr"],
+            "mat_credit_absorbed_cr": credit_absorbed,
+            "net_legacy_cash_tax_cr": net_legacy_cash_outflow,
+            "concessional_115baa_cash_tax_cr": concessional_cash_outflow,
+            "optimal_strategic_decision": verdict
+        }
+
+cit_engine = CorporateIncomeTaxEngine(pbt_cr=80.0, book_depr_cr=12.0, tax_depr_cr=20.0, sec43b_unpaid_cr=3.0, accumulated_mat_credit_cr=15.0)
+regime_opt = cit_engine.optimize_regime_decision(book_profit_additions_cr=5.0, loss_depr_deduction_cr=2.0)
+
+print("Corporate Direct Tax & MAT Optimization:")
+print(f"  Taxable PGBP Income: INR {regime_opt['normal_taxable_income_cr']:.2f} Cr | Book Profit: INR {regime_opt['book_profit_cr']:.2f} Cr")
+print(f"  Legacy Normal Tax: INR {regime_opt['legacy_normal_tax_cr']:.2f} Cr | MAT: INR {regime_opt['mat_tax_cr']:.2f} Cr")
+print(f"  MAT Credit Absorbed: INR {regime_opt['mat_credit_absorbed_cr']:.2f} Cr")
+print(f"  Net Legacy Cash Tax: INR {regime_opt['net_legacy_cash_tax_cr']:.2f} Cr")
+print(f"  Concessional 115BAA Tax: INR {regime_opt['concessional_115baa_cash_tax_cr']:.2f} Cr")
+print(f"  Strategic Recommendation: {regime_opt['optimal_strategic_decision']}")
+''',
+            "tryIt": "Set accumulated_mat_credit_cr to 0.0 to observe how the absence of MAT credits immediately favors migrating to the 22% Section 115BAA concessional regime.",
+            "check": {
+                "question": "What is the primary trade-off when deciding between remaining in the legacy corporate tax regime versus electing the Section 115BAA concessional regime?",
+                "options": [
+                    "Section 115BAA offers a lower flat rate of 22% with zero MAT, but permanently forfeits accumulated Section 115JAA MAT credits and weighted deductions",
+                    "Section 115BAA increases the corporate tax rate to 50% for high-turnover companies",
+                    "Remaining in the legacy regime exempts the company from filing audited balance sheets",
+                    "Section 115BAA applies only to foreign companies operating in offshore tax havens"
+                ],
+                "answerIndex": 0,
+                "why": "Under Section 115BAA, companies enjoy a lower base tax rate of 22% and exemption from MAT under Section 115JB, but must permanently forfeit accumulated MAT credits under Section 115JAA and specific statutory deductions."
+            }
+        },
+        {
+            "title": "Indirect Tax Engine: Real-Time GST, GSTR-1/3B/2B & E-Way Transit Command",
+            "say": [
+                "In Part 3 of our Grand Capstone, we operationalize indirect tax execution: The Enterprise Indirect Tax & Transit Command Engine.",
+                "Our Python module unites monthly return processing with real-time digital surveillance: (1) aggregating outward supplies into Form GSTR-1 tables, validating 6-digit HSN codes, and matching taxable turnover with Table 3.1 of Form GSTR-3B; (2) executing automated 3-way matching between ERP purchase registers, physical goods receipt notes (GRN), and auto-drafted Form GSTR-2B feeds, enforcing Section 16(2)(aa) credit locking; (3) computing Section 17(5) permanent blocked credits and Rule 42/43 common credit reversals; and (4) executing the Rule 88A tax offset waterfall to minimize cash challan outflows in Form PMT-06.",
+                "Simultaneously, the engine connects to live transit monitoring: validating Rule 48(4) e-invoice compliance for every dispatch, computing SHA-256 IRN hashes, generating e-way bill validity timelines based on transport distance under Rule 138(10), and monitoring FASTag toll logs to protect logistics shipments from detention under Section 129.",
+                "The engine delivers complete indirect tax visibility: tracking the balance of the Electronic Cash Ledger and Electronic Credit Ledger in real time."
+            ],
+            "example": "A multi-plant conglomerate generates Rs 100 Crore in monthly outward billing (Rs 18 Crore IGST). It matches Rs 14 Crore in vendor credit against GSTR-2B, identifies Rs 1 Crore in blocked credits under Section 17(5), calculates Rule 42 reversal of Rs 50 Lakh, and executes the Rule 88A offset, paying Rs 5.5 Crore in cash via PMT-06 with 100% electronic reconciliation.",
+            "code": '''class EnterpriseIndirectTaxEngine:
+    def __init__(self, monthly_outward_tax_cr: float, erp_inward_itc_cr: float, gstr2b_matched_itc_cr: float):
+        self.outward_tax_cr = monthly_outward_tax_cr
+        self.erp_inward_itc_cr = erp_inward_itc_cr
+        self.gstr2b_matched_itc_cr = gstr2b_matched_itc_cr
+
+    def execute_monthly_itc_waterfall(self, sec17_5_blocked_cr: float, rule42_exempt_reversal_cr: float) -> dict:
+        # Rule: Only GSTR-2B matched credit is legally claimable under Sec 16(2)(aa)
+        provisional_unmatched_cr = max(0.0, self.erp_inward_itc_cr - self.gstr2b_matched_itc_cr)
+        eligible_gross_itc = self.gstr2b_matched_itc_cr
+        
+        # Net Eligible ITC after Section 17(5) and Rule 42 reversals
+        net_claimable_itc = max(0.0, eligible_gross_itc - sec17_5_blocked_cr - rule42_exempt_reversal_cr)
+        
+        # Rule 88A Tax Offset
+        net_cash_payable_cr = max(0.0, self.outward_tax_cr - net_claimable_itc)
+        carried_forward_itc_cr = max(0.0, net_claimable_itc - self.outward_tax_cr)
+        
+        return {
+            "gross_output_liability_cr": self.outward_tax_cr,
+            "gstr2b_eligible_itc_cr": eligible_gross_itc,
+            "unmatched_vendor_credit_quarantined_cr": provisional_unmatched_cr,
+            "sec17_5_blocked_reversals_cr": sec17_5_blocked_cr,
+            "rule42_common_reversals_cr": rule42_exempt_reversal_cr,
+            "net_utilized_itc_cr": min(net_claimable_itc, self.outward_tax_cr),
+            "net_cash_challan_pmt06_cr": net_cash_payable_cr,
+            "closing_credit_ledger_cr": carried_forward_itc_cr
+        }
+
+gst_engine = EnterpriseIndirectTaxEngine(monthly_outward_tax_cr=18.0, erp_inward_itc_cr=15.0, gstr2b_matched_itc_cr=14.0)
+waterfall = gst_engine.execute_monthly_itc_waterfall(sec17_5_blocked_cr=1.0, rule42_exempt_reversal_cr=0.50)
+
+print("Indirect Tax Monthly Waterfall (Rule 88A Execution):")
+print(f"  Gross Outward Output Tax : INR {waterfall['gross_output_liability_cr']:.2f} Cr")
+print(f"  GSTR-2B Verified Credit  : INR {waterfall['gstr2b_eligible_itc_cr']:.2f} Cr")
+print(f"  Quarantined Unmatched ITC: INR {waterfall['unmatched_vendor_credit_quarantined_cr']:.2f} Cr (Sec 16(2)(aa))")
+print(f"  Net Utilized ITC         : INR {waterfall['net_utilized_itc_cr']:.2f} Cr")
+print(f"  Net Cash Challan (PMT-06): INR {waterfall['net_cash_challan_pmt06_cr']:.2f} Cr")
+print(f"  Closing Credit Ledger    : INR {waterfall['closing_credit_ledger_cr']:.2f} Cr")
+''',
+            "tryIt": "Increase gstr2b_matched_itc_cr to 22.0 Cr to observe the cash challan dropping to 0.00 Cr and excess credit carrying forward in the Electronic Credit Ledger.",
+            "check": {
+                "question": "Under Section 16(2)(aa) of the CGST Act, what happens to Input Tax Credit booked in general ledgers that does not appear in the vendor's auto-populated Form GSTR-2B?",
+                "options": [
+                    "It cannot be claimed in Form GSTR-3B and must be quarantined until the vendor uploads the invoice",
+                    "It can be claimed provisionally up to 50% of total tax",
+                    "It is automatically refunded by the state government within 15 days",
+                    "It is converted into corporate equity shares"
+                ],
+                "answerIndex": 0,
+                "why": "Section 16(2)(aa) strictly conditions credit availment on the invoice details being furnished by the supplier in Form GSTR-1 and communicated to the recipient in Form GSTR-2B."
+            }
+        },
+        {
+            "title": "Cross-Border Transfer Pricing & International Tax Defense Module",
+            "say": [
+                "In Part 4 of our Grand Capstone, we orchestrate cross-border risk management: The Global Transfer Pricing & International Tax Defense Module.",
+                "Our Python module monitors cross-border intra-group value chains: (1) tracking Associated Enterprise (AE) parameters under Section 92A(2), identifying equity, debt, and management control thresholds across overseas affiliates; (2) assembling multi-year benchmarking datasets of comparable uncontrolled companies under Rule 10CA, constructing the statutory 35th-to-65th percentile range, and simulating Transfer Pricing Officer (TPO) median adjustments where tested operating margins fall outside the corridor; (3) managing post-audit secondary adjustments under Section 92CE, monitoring the 90-day repatriation window, and evaluating Section 92CE(2A) 20.9664% one-time tax buyout trade-offs; and (4) auditing thin capitalisation interest limits under Section 94B (30% EBITDA cap) with 8-year carried forward schedules.",
+                "Simultaneously, the module manages cross-border treasury disbursements: applying the Section 90(2) 'more beneficial' rule to select between domestic rates and bilateral DTAA treaty rates, auditing Tax Residency Certificates (TRC) under Section 90(4) and Form 10F disclosures under Section 90(5), and automating Form 15CA/CB documentation before international wires execute.",
+                "The module delivers ironclad international tax risk management: eliminating Section 40(a)(i) disallowances, safeguarding treaty benefits, and defending global supply chain structures."
+            ],
+            "example": "A software conglomerate monitors $120M in cross-border software engineering billings. The module benchmarks tested margin (14.2%) against 15 comparables (range 13.8%-17.5%, median 15.5%), confirming full Section 92C compliance. It audits $10M in European cloud license remittances, verifies TRC and Form 10F, secures Form 15CB CA certification, and deducts 10% DTAA TDS, protecting Rs 85 Crore of deductions from Section 40(a)(i) disallowance.",
+            "code": '''class GlobalTransferPricingDefense:
+    def __init__(self, ebitda_cr: float, overseas_ae_debt_interest_cr: float):
+        self.ebitda_cr = ebitda_cr
+        self.ae_interest_cr = overseas_ae_debt_interest_cr
+
+    def audit_thin_capitalisation_sec94b(self) -> dict:
+        # Capped at 30% of EBITDA under Section 94B(1)
+        cap_30pct = self.ebitda_cr * 0.30
+        allowable = min(self.ae_interest_cr, cap_30pct)
+        disallowed = max(0.0, self.ae_interest_cr - cap_30pct)
+        
+        return {
+            "ebitda_cr": self.ebitda_cr,
+            "ae_interest_expense_cr": self.ae_interest_cr,
+            "statutory_30pct_cap_cr": cap_30pct,
+            "allowable_interest_deduction_cr": allowable,
+            "disallowed_carried_forward_cr": disallowed,
+            "max_carry_forward_years": 8
+        }
+
+    def benchmark_tnmm_margin(self, tested_cost_cr: float, billed_revenue_cr: float, comps_optc_pct: list) -> dict:
+        actual_margin = ((billed_revenue_cr - tested_cost_cr) / tested_cost_cr) * 100.0
+        sorted_comps = sorted(comps_optc_pct)
+        n = len(sorted_comps)
+        
+        p35 = sorted_comps[int(0.35 * n)]
+        p50 = sorted_comps[int(0.50 * n)]
+        p65 = sorted_comps[int(0.65 * n)]
+        
+        in_range = p35 <= actual_margin <= p65
+        upward_adjustment_cr = 0.0 if in_range else max(0.0, (tested_cost_cr * (1.0 + p50/100.0)) - billed_revenue_cr)
+        
+        return {
+            "actual_optc_margin_pct": actual_margin,
+            "range_35th_pct": p35,
+            "median_50th_pct": p50,
+            "range_65th_pct": p65,
+            "is_within_arm_length_range": in_range,
+            "simulated_tpo_adjustment_cr": upward_adjustment_cr
+        }
+
+tp_defense = GlobalTransferPricingDefense(ebitda_cr=40.0, overseas_ae_debt_interest_cr=15.0)
+thin_cap = tp_defense.audit_thin_capitalisation_sec94b()
+bench = tp_defense.benchmark_tnmm_margin(tested_cost_cr=80.0, billed_revenue_cr=92.0, comps_optc_pct=[11.5, 12.8, 13.5, 14.2, 14.8, 15.5, 16.0, 16.8, 17.5, 18.2])
+
+print("Cross-Border Transfer Pricing & Thin Cap Defense:")
+print(f"  EBITDA: INR {thin_cap['ebitda_cr']:.2f} Cr | 30% Cap: INR {thin_cap['statutory_30pct_cap_cr']:.2f} Cr")
+print(f"  Interest Allowed: INR {thin_cap['allowable_interest_deduction_cr']:.2f} Cr | Disallowed & Carried Forward: INR {thin_cap['disallowed_carried_forward_cr']:.2f} Cr")
+print(f"  TNMM Margin: {bench['actual_optc_margin_pct']:.2f}% (Range: {bench['range_35th_pct']:.2f}% - {bench['range_65th_pct']:.2f}%)")
+print(f"  Compliant with Arm's Length Range: {bench['is_within_arm_length_range']}")
+print(f"  TP Upward Adjustment: INR {bench['simulated_tpo_adjustment_cr']:.2f} Cr")
+''',
+            "tryIt": "Increase billed_revenue_cr to 93.0 Cr (16.25% margin) to observe the tested margin entering the upper half of the arm's length range.",
+            "check": {
+                "question": "Under Section 94B of the Income Tax Act, what is the maximum deductible interest expense permitted on borrowings from a foreign Associated Enterprise?",
+                "options": [
+                    "Capped at 30% of EBITDA; any excess interest is disallowed and carried forward for up to 8 assessment years",
+                    "Capped at 10% of gross commercial turnover",
+                    "100% deductible without any restriction if the loan is approved by RBI",
+                    "Capped at 50% of net operating profit after tax"
+                ],
+                "answerIndex": 0,
+                "why": "Section 94B(1) limits deductible interest paid to an AE to 30% of EBITDA, and Section 94B(4) permits the carried-forward set-off of disallowed interest for up to 8 assessment years."
+            }
+        },
+        {
+            "title": "Integrated Master Capstone: The Chief Tax Officer (CTO) Enterprise Operating System",
+            "say": [
+                "In this final, historic capstone part, we unite all specialized engines into the definitive corporate command architecture: The Chief Tax Officer (CTO) Enterprise Operating System.",
+                "The CTO Operating System represents the total synthesis of corporate taxation and GST: (1) Master Data Pipeline ingestion with real-time invariant auditing; (2) Corporate Direct Tax & MAT optimization under Section 115BAA/115JB; (3) Indirect Tax Monthly Waterfalls with Rule 88A execution and GSTR-2B credit locking; (4) Cross-Border Transfer Pricing defense under Rule 10CA with secondary adjustment NPV optimization; (5) Faceless Scrutiny Defense auditing limitation calendars under Section 143(2) and Section 144B; (6) Section 148A Reopening Defense challenging jurisdiction under the Kelvinator doctrine; and (7) Section 270AA Penalty Immunity execution via Form 68.",
+                "The operating system delivers an audited Executive Boardroom Cockpit: presenting the Consolidated Effective Tax Rate (Accounting ETR vs Cash ETR), Ind AS 12 Deferred Tax Asset/Liability balances, Ind AS 37 Contingent Liability risk models, and ESG Tax Transparency metrics under GRI 207.",
+                "Congratulations! Completing Day 30 certifies your master accreditation as a Chief Tax Officer and Senior Corporate Tax Architect, equipped to lead enterprise tax strategy, defend balance sheets, and engineer legally sound fiscal structures at the highest tier of global commerce."
+            ],
+            "example": "The Chief Tax Officer of an enterprise conglomerate runs the Master OS at fiscal year-end: computing Rs 120 Crore in direct corporate taxes under Section 115BAA (22%), processing Rs 180 Crore in net GST remittances via Rule 88A waterfalls, defending $150M in transfer pricing international transactions within the Rule 10CA range, securing Section 270AA immunity on Rs 2 Crore in scrutiny additions, and presenting an audited 24.2% Effective Tax Rate to the Board of Directors.",
+            "code": '''class ChiefTaxOfficerEnterpriseOS:
+    def __init__(self, group_name: str, group_turnover_cr: float, pbt_cr: float):
+        self.group_name = group_name
+        self.turnover_cr = group_turnover_cr
+        self.pbt_cr = pbt_cr
+        self.pipeline = MasterTaxDataPipeline(group_name, group_turnover_cr)
+        self.cit_engine = CorporateIncomeTaxEngine(pbt_cr=pbt_cr, book_depr_cr=15.0, tax_depr_cr=25.0, sec43b_unpaid_cr=2.0, accumulated_mat_credit_cr=8.0)
+        self.gst_engine = EnterpriseIndirectTaxEngine(monthly_outward_tax_cr=15.0, erp_inward_itc_cr=12.0, gstr2b_matched_itc_cr=11.5)
+        self.tp_defense = GlobalTransferPricingDefense(ebitda_cr=60.0, overseas_ae_debt_interest_cr=12.0)
+
+    def execute_grand_master_cockpit(self) -> dict:
+        # 1. Pipeline Integrity
+        self.pipeline.ingest_transaction("TX-MASTER-01", "Core Operations Outward", gross_amount_cr=self.turnover_cr, tx_type="domestic_supply", has_irn=True)
+        pipe_health = self.pipeline.generate_pipeline_health_report()
+        
+        # 2. Direct Tax & Concessional Optimization
+        cit_opt = self.cit_engine.optimize_regime_decision(book_profit_additions_cr=4.0, loss_depr_deduction_cr=1.0)
+        
+        # 3. Monthly GST Waterfall
+        gst_waterfall = self.gst_engine.execute_monthly_itc_waterfall(sec17_5_blocked_cr=0.80, rule42_exempt_reversal_cr=0.30)
+        
+        # 4. Transfer Pricing Benchmarking
+        tp_res = self.tp_defense.benchmark_tnmm_margin(
+            tested_cost_cr=100.0,
+            billed_revenue_cr=116.0,
+            comps_optc_pct=[12.0, 13.5, 14.5, 15.0, 15.8, 16.5, 17.2, 18.0]
+        )
+        
+        # 5. Executive Boardroom Metrics
+        total_cash_tax_disbursed_cr = cit_opt["concessional_115baa_cash_tax_cr"] + (gst_waterfall["net_cash_challan_pmt06_cr"] * 12.0)
+        effective_tax_rate_pct = (cit_opt["concessional_115baa_cash_tax_cr"] / self.pbt_cr) * 100.0
+        
+        return {
+            "group_name": self.group_name,
+            "pipeline_integrity": f"{pipe_health['pipeline_integrity_pct']:.2f}% ({pipe_health['system_status']})",
+            "direct_tax_regime": cit_opt["optimal_strategic_decision"],
+            "annual_direct_tax_cr": cit_opt["concessional_115baa_cash_tax_cr"],
+            "monthly_gst_cash_cr": gst_waterfall["net_cash_challan_pmt06_cr"],
+            "tp_compliance_status": "100% Compliant within Rule 10CA Range" if tp_res["is_within_arm_length_range"] else "Adjustment Required",
+            "annual_total_cash_taxes_cr": total_cash_tax_disbursed_cr,
+            "accounting_effective_tax_rate": f"{effective_tax_rate_pct:.2f}%",
+            "esg_transparency_score": "GRI 207 Certified (Grade A+)",
+            "final_board_signoff": "MASTER ACCREDITATION CONFERRED — CHIEF TAX OFFICER (CTO)"
+        }
+
+cto_os = ChiefTaxOfficerEnterpriseOS("Apex Conglomerate Holdings India Ltd", group_turnover_cr=1200.0, pbt_cr=150.0)
+master_dossier = cto_os.execute_grand_master_cockpit()
+
+print("=" * 80)
+print(f"CHIEF TAX OFFICER (CTO) ENTERPRISE OPERATING SYSTEM — {master_dossier['group_name'].upper()}")
+print("=" * 80)
+print(f"  Master Data Pipeline       : {master_dossier['pipeline_integrity']}")
+print(f"  Direct Tax Strategy        : {master_dossier['direct_tax_regime']}")
+print(f"  Annual Direct Corporate Tax: INR {master_dossier['annual_direct_tax_cr']:.2f} Crores")
+print(f"  Monthly GST Cash Challan   : INR {master_dossier['monthly_gst_cash_cr']:.2f} Crores")
+print(f"  Transfer Pricing Defense   : {master_dossier['tp_compliance_status']}")
+print(f"  Consolidated Cash Taxes    : INR {master_dossier['annual_total_cash_taxes_cr']:.2f} Crores")
+print(f"  Accounting Effective Rate  : {master_dossier['accounting_effective_tax_rate']}")
+print(f"  ESG Tax Transparency      : {master_dossier['esg_transparency_score']}")
+print(f"  Boardroom Accreditation    : {master_dossier['final_board_signoff']}")
+print("=" * 80)
+''',
+            "tryIt": "Execute the Grand Master Cockpit to observe the unified corporate tax dashboard certifying direct tax, indirect tax, transfer pricing, and ESG compliance.",
+            "check": {
+                "question": "What is the ultimate strategic objective of the Chief Tax Officer (CTO) Enterprise Operating System in modern corporate governance?",
+                "options": [
+                    "To synthesize direct tax, indirect tax, transfer pricing, controversy defense, and Ind AS 12 reporting into an audited, real-time command cockpit that optimizes ETR, eliminates penalties, and protects enterprise value",
+                    "To completely automate the evasion of statutory corporate taxes",
+                    "To replace all human employees with offshore consulting firms",
+                    "To eliminate all physical documentation from corporate warehouses"
+                ],
+                "answerIndex": 0,
+                "why": "The CTO Enterprise Operating System unites direct and indirect tax data, optimizes effective tax rates, automates compliance across government portals, and provides audited governance for the Board of Directors."
+            }
+        }
+    ]
+}
+
+with open("scripts/bcom_tax_day30_data.json", "w", encoding="utf-8") as f:
+    json.dump(day_data, f, indent=2)
+
+print("Successfully built scripts/bcom_tax_day30_data.json")

@@ -1,0 +1,664 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_tax",
+  "day": 26,
+  "promptSha": "a10fe4dcab62b9afd18f3b6d4f48c03c1b6b9cbe23eef18158bf1d0e3607a304",
+  "model": "google/gemini-3.8-flash",
+  "entries": [
+    {
+      "partTitle": "Section 44AB Audit Mandate, Thresholds & Form 3CA/3CB Framework",
+      "codeHash": "26783a45e743c50da7484d77dfa05d8292e53b0e24ee7366002e230ad73aa2c9",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Section 44AB Audit Mandate, Thresholds & Form 3CA/ \u2014 Tax Governance Ledger",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary enterprise tax / governance ledger (1430000) for Section 44AB Audit Mandate, Thresholds &...",
+            "title": "Day 26 Enterprise Tax Ledger \u2014 Master Entry",
+            "isBalanced": true,
+            "totalDebit": 1430000,
+            "totalCredit": 1430000,
+            "entries": [
+              {
+                "id": "TAX-2601",
+                "account": "Enterprise Tax Provision / Liability Clearing",
+                "debit": 1430000,
+                "balance": 1430000,
+                "tone": "data",
+                "memo": "Statutory recognition under Income Tax / GST Act"
+              },
+              {
+                "id": "TAX-2602",
+                "account": "Statutory Settlement & Electronic Cash Ledger",
+                "credit": 1430000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Clearing control balance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record statutory adjustment / reconciliation entry (125000) under applicable code.",
+            "title": "Day 26 Enterprise Tax Ledger \u2014 Statutory Adjustment",
+            "isBalanced": true,
+            "totalDebit": 1555000,
+            "totalCredit": 1555000,
+            "entries": [
+              {
+                "id": "TAX-2601",
+                "account": "Enterprise Tax Provision / Liability Clearing",
+                "debit": 1430000,
+                "balance": 1430000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-2603",
+                "account": "Form 3CD / GSTR-9C Statutory Reconciliation Reserve",
+                "debit": 125000,
+                "balance": 1555000,
+                "tone": "accent",
+                "memo": "Statutory reconciliation adjustment"
+              },
+              {
+                "id": "TAX-2602",
+                "account": "Statutory Settlement & Electronic Cash Ledger",
+                "credit": 1555000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute simulated enterprise case study for Section 44AB Audit Mandate, Thresholds &...",
+            "title": "Day 26 Enterprise Tax Ledger \u2014 Executive Audit",
+            "isBalanced": true,
+            "totalDebit": 1555000,
+            "totalCredit": 1555000,
+            "entries": [
+              {
+                "id": "TAX-2601",
+                "account": "Enterprise Tax Provision / Liability Clearing",
+                "debit": 1430000,
+                "balance": 1430000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-2603",
+                "account": "Form 3CD / GSTR-9C Statutory Reconciliation Reserve",
+                "debit": 125000,
+                "balance": 1555000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-2602",
+                "account": "Statutory Settlement & Electronic Cash Ledger",
+                "credit": 1555000,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify ledger equilibrium and enterprise tax signoff.",
+            "title": "Day 26 Enterprise Tax Ledger \u2014 Final Signoff",
+            "isBalanced": true,
+            "totalDebit": 1555000,
+            "totalCredit": 1555000,
+            "entries": [
+              {
+                "id": "TAX-2601",
+                "account": "Enterprise Tax Provision / Liability Clearing",
+                "debit": 1430000,
+                "balance": 1430000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-2603",
+                "account": "Form 3CD / GSTR-9C Statutory Reconciliation Reserve",
+                "debit": 125000,
+                "balance": 1555000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-2602",
+                "account": "Statutory Settlement & Electronic Cash Ledger",
+                "credit": 1555000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "100% Balanced and Certified by Chief Tax Officer"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Form 3CD PGBP Disallowance Clauses (Clauses 20, 21, 26 & 27)",
+      "codeHash": "eecdec7d41962bd29bf78d7de99274c31117fb74d25617792d573a7b90565d2f",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Form 3CD PGBP Disallowance Clauses (Clauses 20, 21 \u2014 Tax Governance Ledger",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary enterprise tax / governance ledger (1445000) for Form 3CD PGBP Disallowance Clauses (Clau...",
+            "title": "Day 26 Enterprise Tax Ledger \u2014 Master Entry",
+            "isBalanced": true,
+            "totalDebit": 1445000,
+            "totalCredit": 1445000,
+            "entries": [
+              {
+                "id": "TAX-2601",
+                "account": "Enterprise Tax Provision / Liability Clearing",
+                "debit": 1445000,
+                "balance": 1445000,
+                "tone": "data",
+                "memo": "Statutory recognition under Income Tax / GST Act"
+              },
+              {
+                "id": "TAX-2602",
+                "account": "Statutory Settlement & Electronic Cash Ledger",
+                "credit": 1445000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Clearing control balance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record statutory adjustment / reconciliation entry (132500) under applicable code.",
+            "title": "Day 26 Enterprise Tax Ledger \u2014 Statutory Adjustment",
+            "isBalanced": true,
+            "totalDebit": 1577500,
+            "totalCredit": 1577500,
+            "entries": [
+              {
+                "id": "TAX-2601",
+                "account": "Enterprise Tax Provision / Liability Clearing",
+                "debit": 1445000,
+                "balance": 1445000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-2603",
+                "account": "Form 3CD / GSTR-9C Statutory Reconciliation Reserve",
+                "debit": 132500,
+                "balance": 1577500,
+                "tone": "accent",
+                "memo": "Statutory reconciliation adjustment"
+              },
+              {
+                "id": "TAX-2602",
+                "account": "Statutory Settlement & Electronic Cash Ledger",
+                "credit": 1577500,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute simulated enterprise case study for Form 3CD PGBP Disallowance Clauses (Clau...",
+            "title": "Day 26 Enterprise Tax Ledger \u2014 Executive Audit",
+            "isBalanced": true,
+            "totalDebit": 1577500,
+            "totalCredit": 1577500,
+            "entries": [
+              {
+                "id": "TAX-2601",
+                "account": "Enterprise Tax Provision / Liability Clearing",
+                "debit": 1445000,
+                "balance": 1445000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-2603",
+                "account": "Form 3CD / GSTR-9C Statutory Reconciliation Reserve",
+                "debit": 132500,
+                "balance": 1577500,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-2602",
+                "account": "Statutory Settlement & Electronic Cash Ledger",
+                "credit": 1577500,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify ledger equilibrium and enterprise tax signoff.",
+            "title": "Day 26 Enterprise Tax Ledger \u2014 Final Signoff",
+            "isBalanced": true,
+            "totalDebit": 1577500,
+            "totalCredit": 1577500,
+            "entries": [
+              {
+                "id": "TAX-2601",
+                "account": "Enterprise Tax Provision / Liability Clearing",
+                "debit": 1445000,
+                "balance": 1445000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-2603",
+                "account": "Form 3CD / GSTR-9C Statutory Reconciliation Reserve",
+                "debit": 132500,
+                "balance": 1577500,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-2602",
+                "account": "Statutory Settlement & Electronic Cash Ledger",
+                "credit": 1577500,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "100% Balanced and Certified by Chief Tax Officer"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Related Party Reporting & Deemed Dividends (Clauses 23, 31 & 36A)",
+      "codeHash": "e86ea542d5e40f2df709f4036db8392c9a89fdb3ada78f8aa361f159f893ea5d",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Related Party Reporting & Deemed Dividends (Clause \u2014 Tax Governance Ledger",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary enterprise tax / governance ledger (1460000) for Related Party Reporting & Deemed Dividen...",
+            "title": "Day 26 Enterprise Tax Ledger \u2014 Master Entry",
+            "isBalanced": true,
+            "totalDebit": 1460000,
+            "totalCredit": 1460000,
+            "entries": [
+              {
+                "id": "TAX-2601",
+                "account": "Enterprise Tax Provision / Liability Clearing",
+                "debit": 1460000,
+                "balance": 1460000,
+                "tone": "data",
+                "memo": "Statutory recognition under Income Tax / GST Act"
+              },
+              {
+                "id": "TAX-2602",
+                "account": "Statutory Settlement & Electronic Cash Ledger",
+                "credit": 1460000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Clearing control balance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record statutory adjustment / reconciliation entry (140000) under applicable code.",
+            "title": "Day 26 Enterprise Tax Ledger \u2014 Statutory Adjustment",
+            "isBalanced": true,
+            "totalDebit": 1600000,
+            "totalCredit": 1600000,
+            "entries": [
+              {
+                "id": "TAX-2601",
+                "account": "Enterprise Tax Provision / Liability Clearing",
+                "debit": 1460000,
+                "balance": 1460000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-2603",
+                "account": "Form 3CD / GSTR-9C Statutory Reconciliation Reserve",
+                "debit": 140000,
+                "balance": 1600000,
+                "tone": "accent",
+                "memo": "Statutory reconciliation adjustment"
+              },
+              {
+                "id": "TAX-2602",
+                "account": "Statutory Settlement & Electronic Cash Ledger",
+                "credit": 1600000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute simulated enterprise case study for Related Party Reporting & Deemed Dividen...",
+            "title": "Day 26 Enterprise Tax Ledger \u2014 Executive Audit",
+            "isBalanced": true,
+            "totalDebit": 1600000,
+            "totalCredit": 1600000,
+            "entries": [
+              {
+                "id": "TAX-2601",
+                "account": "Enterprise Tax Provision / Liability Clearing",
+                "debit": 1460000,
+                "balance": 1460000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-2603",
+                "account": "Form 3CD / GSTR-9C Statutory Reconciliation Reserve",
+                "debit": 140000,
+                "balance": 1600000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-2602",
+                "account": "Statutory Settlement & Electronic Cash Ledger",
+                "credit": 1600000,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify ledger equilibrium and enterprise tax signoff.",
+            "title": "Day 26 Enterprise Tax Ledger \u2014 Final Signoff",
+            "isBalanced": true,
+            "totalDebit": 1600000,
+            "totalCredit": 1600000,
+            "entries": [
+              {
+                "id": "TAX-2601",
+                "account": "Enterprise Tax Provision / Liability Clearing",
+                "debit": 1460000,
+                "balance": 1460000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-2603",
+                "account": "Form 3CD / GSTR-9C Statutory Reconciliation Reserve",
+                "debit": 140000,
+                "balance": 1600000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-2602",
+                "account": "Statutory Settlement & Electronic Cash Ledger",
+                "credit": 1600000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "100% Balanced and Certified by Chief Tax Officer"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Clause 44: Cross-Verification of Expenditure with GST Registered Entities",
+      "codeHash": "cc5883277f3209cb977e5131b3df8a408de51cf81421e53347571ba5ec6554da",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Clause 44: Cross-Verification of Expenditure with  \u2014 Tax Governance Ledger",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary enterprise tax / governance ledger (1475000) for Clause 44: Cross-Verification of Expendi...",
+            "title": "Day 26 Enterprise Tax Ledger \u2014 Master Entry",
+            "isBalanced": true,
+            "totalDebit": 1475000,
+            "totalCredit": 1475000,
+            "entries": [
+              {
+                "id": "TAX-2601",
+                "account": "Enterprise Tax Provision / Liability Clearing",
+                "debit": 1475000,
+                "balance": 1475000,
+                "tone": "data",
+                "memo": "Statutory recognition under Income Tax / GST Act"
+              },
+              {
+                "id": "TAX-2602",
+                "account": "Statutory Settlement & Electronic Cash Ledger",
+                "credit": 1475000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Clearing control balance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record statutory adjustment / reconciliation entry (147500) under applicable code.",
+            "title": "Day 26 Enterprise Tax Ledger \u2014 Statutory Adjustment",
+            "isBalanced": true,
+            "totalDebit": 1622500,
+            "totalCredit": 1622500,
+            "entries": [
+              {
+                "id": "TAX-2601",
+                "account": "Enterprise Tax Provision / Liability Clearing",
+                "debit": 1475000,
+                "balance": 1475000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-2603",
+                "account": "Form 3CD / GSTR-9C Statutory Reconciliation Reserve",
+                "debit": 147500,
+                "balance": 1622500,
+                "tone": "accent",
+                "memo": "Statutory reconciliation adjustment"
+              },
+              {
+                "id": "TAX-2602",
+                "account": "Statutory Settlement & Electronic Cash Ledger",
+                "credit": 1622500,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute simulated enterprise case study for Clause 44: Cross-Verification of Expendi...",
+            "title": "Day 26 Enterprise Tax Ledger \u2014 Executive Audit",
+            "isBalanced": true,
+            "totalDebit": 1622500,
+            "totalCredit": 1622500,
+            "entries": [
+              {
+                "id": "TAX-2601",
+                "account": "Enterprise Tax Provision / Liability Clearing",
+                "debit": 1475000,
+                "balance": 1475000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-2603",
+                "account": "Form 3CD / GSTR-9C Statutory Reconciliation Reserve",
+                "debit": 147500,
+                "balance": 1622500,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-2602",
+                "account": "Statutory Settlement & Electronic Cash Ledger",
+                "credit": 1622500,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify ledger equilibrium and enterprise tax signoff.",
+            "title": "Day 26 Enterprise Tax Ledger \u2014 Final Signoff",
+            "isBalanced": true,
+            "totalDebit": 1622500,
+            "totalCredit": 1622500,
+            "entries": [
+              {
+                "id": "TAX-2601",
+                "account": "Enterprise Tax Provision / Liability Clearing",
+                "debit": 1475000,
+                "balance": 1475000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-2603",
+                "account": "Form 3CD / GSTR-9C Statutory Reconciliation Reserve",
+                "debit": 147500,
+                "balance": 1622500,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-2602",
+                "account": "Statutory Settlement & Electronic Cash Ledger",
+                "credit": 1622500,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "100% Balanced and Certified by Chief Tax Officer"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Direct Tax & GST 3-Way Reconciliations (Turnover, Inward ITC & Clause 44)",
+      "codeHash": "7cda776b84b564d3268c3af78e5dad9788136b8229405b863af3c85b62e836bb",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Direct Tax & GST 3-Way Reconciliations (Turnover,  \u2014 Tax Governance Ledger",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary enterprise tax / governance ledger (1490000) for Direct Tax & GST 3-Way Reconciliations (...",
+            "title": "Day 26 Enterprise Tax Ledger \u2014 Master Entry",
+            "isBalanced": true,
+            "totalDebit": 1490000,
+            "totalCredit": 1490000,
+            "entries": [
+              {
+                "id": "TAX-2601",
+                "account": "Enterprise Tax Provision / Liability Clearing",
+                "debit": 1490000,
+                "balance": 1490000,
+                "tone": "data",
+                "memo": "Statutory recognition under Income Tax / GST Act"
+              },
+              {
+                "id": "TAX-2602",
+                "account": "Statutory Settlement & Electronic Cash Ledger",
+                "credit": 1490000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Clearing control balance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record statutory adjustment / reconciliation entry (155000) under applicable code.",
+            "title": "Day 26 Enterprise Tax Ledger \u2014 Statutory Adjustment",
+            "isBalanced": true,
+            "totalDebit": 1645000,
+            "totalCredit": 1645000,
+            "entries": [
+              {
+                "id": "TAX-2601",
+                "account": "Enterprise Tax Provision / Liability Clearing",
+                "debit": 1490000,
+                "balance": 1490000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-2603",
+                "account": "Form 3CD / GSTR-9C Statutory Reconciliation Reserve",
+                "debit": 155000,
+                "balance": 1645000,
+                "tone": "accent",
+                "memo": "Statutory reconciliation adjustment"
+              },
+              {
+                "id": "TAX-2602",
+                "account": "Statutory Settlement & Electronic Cash Ledger",
+                "credit": 1645000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute simulated enterprise case study for Direct Tax & GST 3-Way Reconciliations (...",
+            "title": "Day 26 Enterprise Tax Ledger \u2014 Executive Audit",
+            "isBalanced": true,
+            "totalDebit": 1645000,
+            "totalCredit": 1645000,
+            "entries": [
+              {
+                "id": "TAX-2601",
+                "account": "Enterprise Tax Provision / Liability Clearing",
+                "debit": 1490000,
+                "balance": 1490000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-2603",
+                "account": "Form 3CD / GSTR-9C Statutory Reconciliation Reserve",
+                "debit": 155000,
+                "balance": 1645000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-2602",
+                "account": "Statutory Settlement & Electronic Cash Ledger",
+                "credit": 1645000,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify ledger equilibrium and enterprise tax signoff.",
+            "title": "Day 26 Enterprise Tax Ledger \u2014 Final Signoff",
+            "isBalanced": true,
+            "totalDebit": 1645000,
+            "totalCredit": 1645000,
+            "entries": [
+              {
+                "id": "TAX-2601",
+                "account": "Enterprise Tax Provision / Liability Clearing",
+                "debit": 1490000,
+                "balance": 1490000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-2603",
+                "account": "Form 3CD / GSTR-9C Statutory Reconciliation Reserve",
+                "debit": 155000,
+                "balance": 1645000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-2602",
+                "account": "Statutory Settlement & Electronic Cash Ledger",
+                "credit": 1645000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "100% Balanced and Certified by Chief Tax Officer"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
