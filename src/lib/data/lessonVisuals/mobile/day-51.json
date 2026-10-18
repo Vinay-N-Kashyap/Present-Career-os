@@ -1,0 +1,1089 @@
+{
+  "schemaVersion": 1,
+  "prefix": "mobile",
+  "day": 51,
+  "promptSha": "mobile-day-51-testing-profiler-spec",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "iOS Jetsam Memory Limits & VM Tracker Dirty Memory Topology",
+      "codeHash": "a4a1cecaeabfcdae776c89d89c3816ea607dfb2a8b16d6a88226399b3816e593",
+      "spec": {
+        "template": "component-tree",
+        "rootId": "AppRoot",
+        "nodes": [
+          {
+            "id": "AppRoot",
+            "name": "<MobileTestingProfilerShell />",
+            "props": {
+              "profiler": "HERMES_NATIVE_DIAGNOSTICS",
+              "testRunner": "JEST_RNTL_MAESTRO_HARNESS"
+            },
+            "children": [
+              {
+                "id": "HermesProfilerNode",
+                "name": "<HermesProfilerNode />",
+                "props": {
+                  "heapDiagnostics": "DIRTY_MEMORY_UNDER_650MB",
+                  "retainCycleAssertion": "ZERO_LEAK_CONFIRMED"
+                }
+              },
+              {
+                "id": "RntlComponentTestNode",
+                "name": "<RntlComponentTestNode />",
+                "props": {
+                  "accessibilityQueries": "GET_BY_ROLE_ACCESSIBLE",
+                  "nativeModuleMocks": "PURE_JSI_MOCKS_REGISTERED"
+                }
+              },
+              {
+                "id": "MaestroE2eRunnerNode",
+                "name": "<MaestroE2eRunnerNode />",
+                "props": {
+                  "flowExecution": "DECLARATIVE_YAML_RUNNER",
+                  "hardwareEmulation": "AIRPLANE_MODE_HEADLESS_CI"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize Hermes memory profiler and allocation monitor for iOS Jetsam Memory Limits & VM .",
+            "activeId": "HermesProfilerNode",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "HermesProfilerNode",
+                "name": "<HermesProfilerNode />",
+                "props": {
+                  "status": "HEAP_ALLOCATION_TRACER_ACTIVE"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute hermetic component tests and query accessible role nodes.",
+            "activeId": "RntlComponentTestNode",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "RntlComponentTestNode",
+                "name": "<RntlComponentTestNode />",
+                "props": {
+                  "queryState": "ACCESSIBLE_ROLE_TREE_VALIDATED"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute declarative Maestro E2E flows with automatic visual settling.",
+            "activeId": "MaestroE2eRunnerNode",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "MaestroE2eRunnerNode",
+                "name": "<MaestroE2eRunnerNode />",
+                "props": {
+                  "e2eFlow": "ALL_4_SMOKE_FLOWS_PASSED"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Certify zero-leak retention and complete CI verification gate.",
+            "activeId": "AppRoot",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppRoot",
+                "name": "<MobileTestingProfilerShell />",
+                "props": {
+                  "certification": "ENTERPRISE_TEST_HARNESS_PASSED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "rootId": "AppRoot",
+        "nodes": [
+          {
+            "id": "AppRoot",
+            "name": "<MobileTestingProfilerShell />",
+            "props": {
+              "profiler": "HERMES_NATIVE_DIAGNOSTICS",
+              "testRunner": "JEST_RNTL_MAESTRO_HARNESS"
+            },
+            "children": [
+              {
+                "id": "HermesProfilerNode",
+                "name": "<HermesProfilerNode />",
+                "props": {
+                  "heapDiagnostics": "DIRTY_MEMORY_UNDER_650MB",
+                  "retainCycleAssertion": "ZERO_LEAK_CONFIRMED"
+                }
+              },
+              {
+                "id": "RntlComponentTestNode",
+                "name": "<RntlComponentTestNode />",
+                "props": {
+                  "accessibilityQueries": "GET_BY_ROLE_ACCESSIBLE",
+                  "nativeModuleMocks": "PURE_JSI_MOCKS_REGISTERED"
+                }
+              },
+              {
+                "id": "MaestroE2eRunnerNode",
+                "name": "<MaestroE2eRunnerNode />",
+                "props": {
+                  "flowExecution": "DECLARATIVE_YAML_RUNNER",
+                  "hardwareEmulation": "AIRPLANE_MODE_HEADLESS_CI"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize Hermes memory profiler and allocation monitor for iOS Jetsam Memory Limits & VM .",
+            "activeId": "HermesProfilerNode",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "HermesProfilerNode",
+                "name": "<HermesProfilerNode />",
+                "props": {
+                  "status": "HEAP_ALLOCATION_TRACER_ACTIVE"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute hermetic component tests and query accessible role nodes.",
+            "activeId": "RntlComponentTestNode",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "RntlComponentTestNode",
+                "name": "<RntlComponentTestNode />",
+                "props": {
+                  "queryState": "ACCESSIBLE_ROLE_TREE_VALIDATED"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute declarative Maestro E2E flows with automatic visual settling.",
+            "activeId": "MaestroE2eRunnerNode",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "MaestroE2eRunnerNode",
+                "name": "<MaestroE2eRunnerNode />",
+                "props": {
+                  "e2eFlow": "ALL_4_SMOKE_FLOWS_PASSED"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Certify zero-leak retention and complete CI verification gate.",
+            "activeId": "AppRoot",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppRoot",
+                "name": "<MobileTestingProfilerShell />",
+                "props": {
+                  "certification": "ENTERPRISE_TEST_HARNESS_PASSED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Detached RCTView Retain Cycle Detection in Xcode Instruments",
+      "codeHash": "7e54d7b2682b59d1121288b17e2d138484a805931cddf6284928046d2fe105b4",
+      "spec": {
+        "template": "component-tree",
+        "rootId": "AppRoot",
+        "nodes": [
+          {
+            "id": "AppRoot",
+            "name": "<MobileTestingProfilerShell />",
+            "props": {
+              "profiler": "HERMES_NATIVE_DIAGNOSTICS",
+              "testRunner": "JEST_RNTL_MAESTRO_HARNESS"
+            },
+            "children": [
+              {
+                "id": "HermesProfilerNode",
+                "name": "<HermesProfilerNode />",
+                "props": {
+                  "heapDiagnostics": "DIRTY_MEMORY_UNDER_650MB",
+                  "retainCycleAssertion": "ZERO_LEAK_CONFIRMED"
+                }
+              },
+              {
+                "id": "RntlComponentTestNode",
+                "name": "<RntlComponentTestNode />",
+                "props": {
+                  "accessibilityQueries": "GET_BY_ROLE_ACCESSIBLE",
+                  "nativeModuleMocks": "PURE_JSI_MOCKS_REGISTERED"
+                }
+              },
+              {
+                "id": "MaestroE2eRunnerNode",
+                "name": "<MaestroE2eRunnerNode />",
+                "props": {
+                  "flowExecution": "DECLARATIVE_YAML_RUNNER",
+                  "hardwareEmulation": "AIRPLANE_MODE_HEADLESS_CI"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize Hermes memory profiler and allocation monitor for Detached RCTView Retain Cycle .",
+            "activeId": "HermesProfilerNode",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "HermesProfilerNode",
+                "name": "<HermesProfilerNode />",
+                "props": {
+                  "status": "HEAP_ALLOCATION_TRACER_ACTIVE"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute hermetic component tests and query accessible role nodes.",
+            "activeId": "RntlComponentTestNode",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "RntlComponentTestNode",
+                "name": "<RntlComponentTestNode />",
+                "props": {
+                  "queryState": "ACCESSIBLE_ROLE_TREE_VALIDATED"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute declarative Maestro E2E flows with automatic visual settling.",
+            "activeId": "MaestroE2eRunnerNode",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "MaestroE2eRunnerNode",
+                "name": "<MaestroE2eRunnerNode />",
+                "props": {
+                  "e2eFlow": "ALL_4_SMOKE_FLOWS_PASSED"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Certify zero-leak retention and complete CI verification gate.",
+            "activeId": "AppRoot",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppRoot",
+                "name": "<MobileTestingProfilerShell />",
+                "props": {
+                  "certification": "ENTERPRISE_TEST_HARNESS_PASSED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "rootId": "AppRoot",
+        "nodes": [
+          {
+            "id": "AppRoot",
+            "name": "<MobileTestingProfilerShell />",
+            "props": {
+              "profiler": "HERMES_NATIVE_DIAGNOSTICS",
+              "testRunner": "JEST_RNTL_MAESTRO_HARNESS"
+            },
+            "children": [
+              {
+                "id": "HermesProfilerNode",
+                "name": "<HermesProfilerNode />",
+                "props": {
+                  "heapDiagnostics": "DIRTY_MEMORY_UNDER_650MB",
+                  "retainCycleAssertion": "ZERO_LEAK_CONFIRMED"
+                }
+              },
+              {
+                "id": "RntlComponentTestNode",
+                "name": "<RntlComponentTestNode />",
+                "props": {
+                  "accessibilityQueries": "GET_BY_ROLE_ACCESSIBLE",
+                  "nativeModuleMocks": "PURE_JSI_MOCKS_REGISTERED"
+                }
+              },
+              {
+                "id": "MaestroE2eRunnerNode",
+                "name": "<MaestroE2eRunnerNode />",
+                "props": {
+                  "flowExecution": "DECLARATIVE_YAML_RUNNER",
+                  "hardwareEmulation": "AIRPLANE_MODE_HEADLESS_CI"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize Hermes memory profiler and allocation monitor for Detached RCTView Retain Cycle .",
+            "activeId": "HermesProfilerNode",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "HermesProfilerNode",
+                "name": "<HermesProfilerNode />",
+                "props": {
+                  "status": "HEAP_ALLOCATION_TRACER_ACTIVE"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute hermetic component tests and query accessible role nodes.",
+            "activeId": "RntlComponentTestNode",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "RntlComponentTestNode",
+                "name": "<RntlComponentTestNode />",
+                "props": {
+                  "queryState": "ACCESSIBLE_ROLE_TREE_VALIDATED"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute declarative Maestro E2E flows with automatic visual settling.",
+            "activeId": "MaestroE2eRunnerNode",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "MaestroE2eRunnerNode",
+                "name": "<MaestroE2eRunnerNode />",
+                "props": {
+                  "e2eFlow": "ALL_4_SMOKE_FLOWS_PASSED"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Certify zero-leak retention and complete CI verification gate.",
+            "activeId": "AppRoot",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppRoot",
+                "name": "<MobileTestingProfilerShell />",
+                "props": {
+                  "certification": "ENTERPRISE_TEST_HARNESS_PASSED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Hermes Heap Snapshot Auditing via Chrome DevTools Protocol",
+      "codeHash": "09c812261996f21272a9c3b1fb630b835826c44225e5d432ede8bc1e0caf4538",
+      "spec": {
+        "template": "component-tree",
+        "rootId": "AppRoot",
+        "nodes": [
+          {
+            "id": "AppRoot",
+            "name": "<MobileTestingProfilerShell />",
+            "props": {
+              "profiler": "HERMES_NATIVE_DIAGNOSTICS",
+              "testRunner": "JEST_RNTL_MAESTRO_HARNESS"
+            },
+            "children": [
+              {
+                "id": "HermesProfilerNode",
+                "name": "<HermesProfilerNode />",
+                "props": {
+                  "heapDiagnostics": "DIRTY_MEMORY_UNDER_650MB",
+                  "retainCycleAssertion": "ZERO_LEAK_CONFIRMED"
+                }
+              },
+              {
+                "id": "RntlComponentTestNode",
+                "name": "<RntlComponentTestNode />",
+                "props": {
+                  "accessibilityQueries": "GET_BY_ROLE_ACCESSIBLE",
+                  "nativeModuleMocks": "PURE_JSI_MOCKS_REGISTERED"
+                }
+              },
+              {
+                "id": "MaestroE2eRunnerNode",
+                "name": "<MaestroE2eRunnerNode />",
+                "props": {
+                  "flowExecution": "DECLARATIVE_YAML_RUNNER",
+                  "hardwareEmulation": "AIRPLANE_MODE_HEADLESS_CI"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize Hermes memory profiler and allocation monitor for Hermes Heap Snapshot Auditing .",
+            "activeId": "HermesProfilerNode",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "HermesProfilerNode",
+                "name": "<HermesProfilerNode />",
+                "props": {
+                  "status": "HEAP_ALLOCATION_TRACER_ACTIVE"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute hermetic component tests and query accessible role nodes.",
+            "activeId": "RntlComponentTestNode",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "RntlComponentTestNode",
+                "name": "<RntlComponentTestNode />",
+                "props": {
+                  "queryState": "ACCESSIBLE_ROLE_TREE_VALIDATED"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute declarative Maestro E2E flows with automatic visual settling.",
+            "activeId": "MaestroE2eRunnerNode",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "MaestroE2eRunnerNode",
+                "name": "<MaestroE2eRunnerNode />",
+                "props": {
+                  "e2eFlow": "ALL_4_SMOKE_FLOWS_PASSED"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Certify zero-leak retention and complete CI verification gate.",
+            "activeId": "AppRoot",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppRoot",
+                "name": "<MobileTestingProfilerShell />",
+                "props": {
+                  "certification": "ENTERPRISE_TEST_HARNESS_PASSED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "rootId": "AppRoot",
+        "nodes": [
+          {
+            "id": "AppRoot",
+            "name": "<MobileTestingProfilerShell />",
+            "props": {
+              "profiler": "HERMES_NATIVE_DIAGNOSTICS",
+              "testRunner": "JEST_RNTL_MAESTRO_HARNESS"
+            },
+            "children": [
+              {
+                "id": "HermesProfilerNode",
+                "name": "<HermesProfilerNode />",
+                "props": {
+                  "heapDiagnostics": "DIRTY_MEMORY_UNDER_650MB",
+                  "retainCycleAssertion": "ZERO_LEAK_CONFIRMED"
+                }
+              },
+              {
+                "id": "RntlComponentTestNode",
+                "name": "<RntlComponentTestNode />",
+                "props": {
+                  "accessibilityQueries": "GET_BY_ROLE_ACCESSIBLE",
+                  "nativeModuleMocks": "PURE_JSI_MOCKS_REGISTERED"
+                }
+              },
+              {
+                "id": "MaestroE2eRunnerNode",
+                "name": "<MaestroE2eRunnerNode />",
+                "props": {
+                  "flowExecution": "DECLARATIVE_YAML_RUNNER",
+                  "hardwareEmulation": "AIRPLANE_MODE_HEADLESS_CI"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize Hermes memory profiler and allocation monitor for Hermes Heap Snapshot Auditing .",
+            "activeId": "HermesProfilerNode",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "HermesProfilerNode",
+                "name": "<HermesProfilerNode />",
+                "props": {
+                  "status": "HEAP_ALLOCATION_TRACER_ACTIVE"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute hermetic component tests and query accessible role nodes.",
+            "activeId": "RntlComponentTestNode",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "RntlComponentTestNode",
+                "name": "<RntlComponentTestNode />",
+                "props": {
+                  "queryState": "ACCESSIBLE_ROLE_TREE_VALIDATED"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute declarative Maestro E2E flows with automatic visual settling.",
+            "activeId": "MaestroE2eRunnerNode",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "MaestroE2eRunnerNode",
+                "name": "<MaestroE2eRunnerNode />",
+                "props": {
+                  "e2eFlow": "ALL_4_SMOKE_FLOWS_PASSED"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Certify zero-leak retention and complete CI verification gate.",
+            "activeId": "AppRoot",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppRoot",
+                "name": "<MobileTestingProfilerShell />",
+                "props": {
+                  "certification": "ENTERPRISE_TEST_HARNESS_PASSED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "High-Resolution Camera Image Buffer Clamping & Downsampling",
+      "codeHash": "378796f4329c97978a1fb4118023c9ea3eccf980f1d23bfc60aac6518ba11361",
+      "spec": {
+        "template": "component-tree",
+        "rootId": "AppRoot",
+        "nodes": [
+          {
+            "id": "AppRoot",
+            "name": "<MobileTestingProfilerShell />",
+            "props": {
+              "profiler": "HERMES_NATIVE_DIAGNOSTICS",
+              "testRunner": "JEST_RNTL_MAESTRO_HARNESS"
+            },
+            "children": [
+              {
+                "id": "HermesProfilerNode",
+                "name": "<HermesProfilerNode />",
+                "props": {
+                  "heapDiagnostics": "DIRTY_MEMORY_UNDER_650MB",
+                  "retainCycleAssertion": "ZERO_LEAK_CONFIRMED"
+                }
+              },
+              {
+                "id": "RntlComponentTestNode",
+                "name": "<RntlComponentTestNode />",
+                "props": {
+                  "accessibilityQueries": "GET_BY_ROLE_ACCESSIBLE",
+                  "nativeModuleMocks": "PURE_JSI_MOCKS_REGISTERED"
+                }
+              },
+              {
+                "id": "MaestroE2eRunnerNode",
+                "name": "<MaestroE2eRunnerNode />",
+                "props": {
+                  "flowExecution": "DECLARATIVE_YAML_RUNNER",
+                  "hardwareEmulation": "AIRPLANE_MODE_HEADLESS_CI"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize Hermes memory profiler and allocation monitor for High-Resolution Camera Image B.",
+            "activeId": "HermesProfilerNode",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "HermesProfilerNode",
+                "name": "<HermesProfilerNode />",
+                "props": {
+                  "status": "HEAP_ALLOCATION_TRACER_ACTIVE"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute hermetic component tests and query accessible role nodes.",
+            "activeId": "RntlComponentTestNode",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "RntlComponentTestNode",
+                "name": "<RntlComponentTestNode />",
+                "props": {
+                  "queryState": "ACCESSIBLE_ROLE_TREE_VALIDATED"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute declarative Maestro E2E flows with automatic visual settling.",
+            "activeId": "MaestroE2eRunnerNode",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "MaestroE2eRunnerNode",
+                "name": "<MaestroE2eRunnerNode />",
+                "props": {
+                  "e2eFlow": "ALL_4_SMOKE_FLOWS_PASSED"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Certify zero-leak retention and complete CI verification gate.",
+            "activeId": "AppRoot",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppRoot",
+                "name": "<MobileTestingProfilerShell />",
+                "props": {
+                  "certification": "ENTERPRISE_TEST_HARNESS_PASSED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "rootId": "AppRoot",
+        "nodes": [
+          {
+            "id": "AppRoot",
+            "name": "<MobileTestingProfilerShell />",
+            "props": {
+              "profiler": "HERMES_NATIVE_DIAGNOSTICS",
+              "testRunner": "JEST_RNTL_MAESTRO_HARNESS"
+            },
+            "children": [
+              {
+                "id": "HermesProfilerNode",
+                "name": "<HermesProfilerNode />",
+                "props": {
+                  "heapDiagnostics": "DIRTY_MEMORY_UNDER_650MB",
+                  "retainCycleAssertion": "ZERO_LEAK_CONFIRMED"
+                }
+              },
+              {
+                "id": "RntlComponentTestNode",
+                "name": "<RntlComponentTestNode />",
+                "props": {
+                  "accessibilityQueries": "GET_BY_ROLE_ACCESSIBLE",
+                  "nativeModuleMocks": "PURE_JSI_MOCKS_REGISTERED"
+                }
+              },
+              {
+                "id": "MaestroE2eRunnerNode",
+                "name": "<MaestroE2eRunnerNode />",
+                "props": {
+                  "flowExecution": "DECLARATIVE_YAML_RUNNER",
+                  "hardwareEmulation": "AIRPLANE_MODE_HEADLESS_CI"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize Hermes memory profiler and allocation monitor for High-Resolution Camera Image B.",
+            "activeId": "HermesProfilerNode",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "HermesProfilerNode",
+                "name": "<HermesProfilerNode />",
+                "props": {
+                  "status": "HEAP_ALLOCATION_TRACER_ACTIVE"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute hermetic component tests and query accessible role nodes.",
+            "activeId": "RntlComponentTestNode",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "RntlComponentTestNode",
+                "name": "<RntlComponentTestNode />",
+                "props": {
+                  "queryState": "ACCESSIBLE_ROLE_TREE_VALIDATED"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute declarative Maestro E2E flows with automatic visual settling.",
+            "activeId": "MaestroE2eRunnerNode",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "MaestroE2eRunnerNode",
+                "name": "<MaestroE2eRunnerNode />",
+                "props": {
+                  "e2eFlow": "ALL_4_SMOKE_FLOWS_PASSED"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Certify zero-leak retention and complete CI verification gate.",
+            "activeId": "AppRoot",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppRoot",
+                "name": "<MobileTestingProfilerShell />",
+                "props": {
+                  "certification": "ENTERPRISE_TEST_HARNESS_PASSED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Continuous Memory Assertion Watchdog Engines in Production CI",
+      "codeHash": "76657b6c6741d5c032048a064549c09539df4f50e908a7e23b2d308287dcb6e6",
+      "spec": {
+        "template": "component-tree",
+        "rootId": "AppRoot",
+        "nodes": [
+          {
+            "id": "AppRoot",
+            "name": "<MobileTestingProfilerShell />",
+            "props": {
+              "profiler": "HERMES_NATIVE_DIAGNOSTICS",
+              "testRunner": "JEST_RNTL_MAESTRO_HARNESS"
+            },
+            "children": [
+              {
+                "id": "HermesProfilerNode",
+                "name": "<HermesProfilerNode />",
+                "props": {
+                  "heapDiagnostics": "DIRTY_MEMORY_UNDER_650MB",
+                  "retainCycleAssertion": "ZERO_LEAK_CONFIRMED"
+                }
+              },
+              {
+                "id": "RntlComponentTestNode",
+                "name": "<RntlComponentTestNode />",
+                "props": {
+                  "accessibilityQueries": "GET_BY_ROLE_ACCESSIBLE",
+                  "nativeModuleMocks": "PURE_JSI_MOCKS_REGISTERED"
+                }
+              },
+              {
+                "id": "MaestroE2eRunnerNode",
+                "name": "<MaestroE2eRunnerNode />",
+                "props": {
+                  "flowExecution": "DECLARATIVE_YAML_RUNNER",
+                  "hardwareEmulation": "AIRPLANE_MODE_HEADLESS_CI"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize Hermes memory profiler and allocation monitor for Continuous Memory Assertion Wa.",
+            "activeId": "HermesProfilerNode",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "HermesProfilerNode",
+                "name": "<HermesProfilerNode />",
+                "props": {
+                  "status": "HEAP_ALLOCATION_TRACER_ACTIVE"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute hermetic component tests and query accessible role nodes.",
+            "activeId": "RntlComponentTestNode",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "RntlComponentTestNode",
+                "name": "<RntlComponentTestNode />",
+                "props": {
+                  "queryState": "ACCESSIBLE_ROLE_TREE_VALIDATED"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute declarative Maestro E2E flows with automatic visual settling.",
+            "activeId": "MaestroE2eRunnerNode",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "MaestroE2eRunnerNode",
+                "name": "<MaestroE2eRunnerNode />",
+                "props": {
+                  "e2eFlow": "ALL_4_SMOKE_FLOWS_PASSED"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Certify zero-leak retention and complete CI verification gate.",
+            "activeId": "AppRoot",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppRoot",
+                "name": "<MobileTestingProfilerShell />",
+                "props": {
+                  "certification": "ENTERPRISE_TEST_HARNESS_PASSED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "rootId": "AppRoot",
+        "nodes": [
+          {
+            "id": "AppRoot",
+            "name": "<MobileTestingProfilerShell />",
+            "props": {
+              "profiler": "HERMES_NATIVE_DIAGNOSTICS",
+              "testRunner": "JEST_RNTL_MAESTRO_HARNESS"
+            },
+            "children": [
+              {
+                "id": "HermesProfilerNode",
+                "name": "<HermesProfilerNode />",
+                "props": {
+                  "heapDiagnostics": "DIRTY_MEMORY_UNDER_650MB",
+                  "retainCycleAssertion": "ZERO_LEAK_CONFIRMED"
+                }
+              },
+              {
+                "id": "RntlComponentTestNode",
+                "name": "<RntlComponentTestNode />",
+                "props": {
+                  "accessibilityQueries": "GET_BY_ROLE_ACCESSIBLE",
+                  "nativeModuleMocks": "PURE_JSI_MOCKS_REGISTERED"
+                }
+              },
+              {
+                "id": "MaestroE2eRunnerNode",
+                "name": "<MaestroE2eRunnerNode />",
+                "props": {
+                  "flowExecution": "DECLARATIVE_YAML_RUNNER",
+                  "hardwareEmulation": "AIRPLANE_MODE_HEADLESS_CI"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize Hermes memory profiler and allocation monitor for Continuous Memory Assertion Wa.",
+            "activeId": "HermesProfilerNode",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "HermesProfilerNode",
+                "name": "<HermesProfilerNode />",
+                "props": {
+                  "status": "HEAP_ALLOCATION_TRACER_ACTIVE"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute hermetic component tests and query accessible role nodes.",
+            "activeId": "RntlComponentTestNode",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "RntlComponentTestNode",
+                "name": "<RntlComponentTestNode />",
+                "props": {
+                  "queryState": "ACCESSIBLE_ROLE_TREE_VALIDATED"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute declarative Maestro E2E flows with automatic visual settling.",
+            "activeId": "MaestroE2eRunnerNode",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "MaestroE2eRunnerNode",
+                "name": "<MaestroE2eRunnerNode />",
+                "props": {
+                  "e2eFlow": "ALL_4_SMOKE_FLOWS_PASSED"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Certify zero-leak retention and complete CI verification gate.",
+            "activeId": "AppRoot",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppRoot",
+                "name": "<MobileTestingProfilerShell />",
+                "props": {
+                  "certification": "ENTERPRISE_TEST_HARNESS_PASSED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
