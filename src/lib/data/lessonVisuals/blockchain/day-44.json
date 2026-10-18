@@ -1,0 +1,669 @@
+{
+  "schemaVersion": 1,
+  "prefix": "blockchain",
+  "day": 44,
+  "promptSha": "be5e5957d3d2dee69f9763ad8fdbaf12e6307dada826543a20beb267a70d8a3b",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "The 24KB Bytecode Limit (EIP-170) & The Multi-Facet Diamond Leap",
+      "codeHash": "4dec6415131b2e72da1ed9dfd6a2837466cd11040c3871df58d096d1c1fdbead",
+      "spec": {
+        "template": "sequence",
+        "title": "The 24KB Bytecode Limit (EIP-170) & The Multi-Facet Diamond Leap — Upgradeability & Proxy Sequence",
+        "actors": [
+          "User Transaction",
+          "Diamond Proxy Core",
+          "Selector Routing Table",
+          "Target Facet (Vault / Loupe)"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Caller submits transaction or upgrade proposal for The 24KB Bytecode Limit (EIP-1...",
+            "activeActor": "User Transaction",
+            "messages": [
+              {
+                "from": "User Transaction",
+                "to": "Diamond Proxy Core",
+                "label": "initiateCallOrUpgrade(payload) [Phase 1]",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Proxy evaluates execution context, caller identity, and routing table",
+            "activeActor": "Diamond Proxy Core",
+            "messages": [
+              {
+                "from": "Diamond Proxy Core",
+                "to": "Selector Routing Table",
+                "label": "delegateOrAuthorize(extractSelector) [Phase 2]",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execution of business logic and storage slot state mutation",
+            "activeActor": "Selector Routing Table",
+            "messages": [
+              {
+                "from": "Selector Routing Table",
+                "to": "Target Facet (Vault / Loupe)",
+                "label": "mutateStorageOrSlot(verifyIntegrity) [Phase 3]",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: State transition committed; returndata returned to caller",
+            "activeActor": "Diamond Proxy Core",
+            "messages": [
+              {
+                "from": "Diamond Proxy Core",
+                "to": "User Transaction",
+                "label": "CallSucceeded(storagePreserved ✓)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "The 24KB Bytecode Limit (EIP-170) & The Multi-Facet Diamond Leap — Upgradeability & Proxy Sequence",
+        "actors": [
+          "User Transaction",
+          "Diamond Proxy Core",
+          "Selector Routing Table",
+          "Target Facet (Vault / Loupe)"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Caller submits transaction or upgrade proposal for The 24KB Bytecode Limit (EIP-1...",
+            "activeActor": "User Transaction",
+            "messages": [
+              {
+                "from": "User Transaction",
+                "to": "Diamond Proxy Core",
+                "label": "initiateCallOrUpgrade(payload) [Phase 1]",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Proxy evaluates execution context, caller identity, and routing table",
+            "activeActor": "Diamond Proxy Core",
+            "messages": [
+              {
+                "from": "Diamond Proxy Core",
+                "to": "Selector Routing Table",
+                "label": "delegateOrAuthorize(extractSelector) [Phase 2]",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execution of business logic and storage slot state mutation",
+            "activeActor": "Selector Routing Table",
+            "messages": [
+              {
+                "from": "Selector Routing Table",
+                "to": "Target Facet (Vault / Loupe)",
+                "label": "mutateStorageOrSlot(verifyIntegrity) [Phase 3]",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: State transition committed; returndata returned to caller",
+            "activeActor": "Diamond Proxy Core",
+            "messages": [
+              {
+                "from": "Diamond Proxy Core",
+                "to": "User Transaction",
+                "label": "CallSucceeded(storagePreserved ✓)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "ERC-2535 Selector Routing Table & The diamondCut() Lifecycle",
+      "codeHash": "6759b2a93e838f1095b51b8f3e1297f7324b1a476472a3be6215ae0606898f42",
+      "spec": {
+        "template": "sequence",
+        "title": "ERC-2535 Selector Routing Table & The diamondCut() Lifecycle — Upgradeability & Proxy Sequence",
+        "actors": [
+          "User Transaction",
+          "Diamond Proxy Core",
+          "Selector Routing Table",
+          "Target Facet (Vault / Loupe)"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Caller submits transaction or upgrade proposal for ERC-2535 Selector Routing Tabl...",
+            "activeActor": "User Transaction",
+            "messages": [
+              {
+                "from": "User Transaction",
+                "to": "Diamond Proxy Core",
+                "label": "initiateCallOrUpgrade(payload) [Phase 1]",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Proxy evaluates execution context, caller identity, and routing table",
+            "activeActor": "Diamond Proxy Core",
+            "messages": [
+              {
+                "from": "Diamond Proxy Core",
+                "to": "Selector Routing Table",
+                "label": "delegateOrAuthorize(extractSelector) [Phase 2]",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execution of business logic and storage slot state mutation",
+            "activeActor": "Selector Routing Table",
+            "messages": [
+              {
+                "from": "Selector Routing Table",
+                "to": "Target Facet (Vault / Loupe)",
+                "label": "mutateStorageOrSlot(verifyIntegrity) [Phase 3]",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: State transition committed; returndata returned to caller",
+            "activeActor": "Diamond Proxy Core",
+            "messages": [
+              {
+                "from": "Diamond Proxy Core",
+                "to": "User Transaction",
+                "label": "CallSucceeded(storagePreserved ✓)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "ERC-2535 Selector Routing Table & The diamondCut() Lifecycle — Upgradeability & Proxy Sequence",
+        "actors": [
+          "User Transaction",
+          "Diamond Proxy Core",
+          "Selector Routing Table",
+          "Target Facet (Vault / Loupe)"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Caller submits transaction or upgrade proposal for ERC-2535 Selector Routing Tabl...",
+            "activeActor": "User Transaction",
+            "messages": [
+              {
+                "from": "User Transaction",
+                "to": "Diamond Proxy Core",
+                "label": "initiateCallOrUpgrade(payload) [Phase 1]",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Proxy evaluates execution context, caller identity, and routing table",
+            "activeActor": "Diamond Proxy Core",
+            "messages": [
+              {
+                "from": "Diamond Proxy Core",
+                "to": "Selector Routing Table",
+                "label": "delegateOrAuthorize(extractSelector) [Phase 2]",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execution of business logic and storage slot state mutation",
+            "activeActor": "Selector Routing Table",
+            "messages": [
+              {
+                "from": "Selector Routing Table",
+                "to": "Target Facet (Vault / Loupe)",
+                "label": "mutateStorageOrSlot(verifyIntegrity) [Phase 3]",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: State transition committed; returndata returned to caller",
+            "activeActor": "Diamond Proxy Core",
+            "messages": [
+              {
+                "from": "Diamond Proxy Core",
+                "to": "User Transaction",
+                "label": "CallSucceeded(storagePreserved ✓)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Detective Lab: Diamond Storage & AppStorage Pointer Isolation",
+      "codeHash": "bee86491ec76aae55f6adcb85ee1264dd6123392a13f5fdeb222155e695e503a",
+      "spec": {
+        "template": "sequence",
+        "title": "Detective Lab: Diamond Storage & AppStorage Pointer Isolation — Upgradeability & Proxy Sequence",
+        "actors": [
+          "User Transaction",
+          "Diamond Proxy Core",
+          "Selector Routing Table",
+          "Target Facet (Vault / Loupe)"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Caller submits transaction or upgrade proposal for Detective Lab: Diamond Storage...",
+            "activeActor": "User Transaction",
+            "messages": [
+              {
+                "from": "User Transaction",
+                "to": "Diamond Proxy Core",
+                "label": "initiateCallOrUpgrade(payload) [Phase 1]",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Proxy evaluates execution context, caller identity, and routing table",
+            "activeActor": "Diamond Proxy Core",
+            "messages": [
+              {
+                "from": "Diamond Proxy Core",
+                "to": "Selector Routing Table",
+                "label": "delegateOrAuthorize(extractSelector) [Phase 2]",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execution of business logic and storage slot state mutation",
+            "activeActor": "Selector Routing Table",
+            "messages": [
+              {
+                "from": "Selector Routing Table",
+                "to": "Target Facet (Vault / Loupe)",
+                "label": "mutateStorageOrSlot(verifyIntegrity) [Phase 3]",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: State transition committed; returndata returned to caller",
+            "activeActor": "Diamond Proxy Core",
+            "messages": [
+              {
+                "from": "Diamond Proxy Core",
+                "to": "User Transaction",
+                "label": "CallSucceeded(storagePreserved ✓)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Detective Lab: Diamond Storage & AppStorage Pointer Isolation — Upgradeability & Proxy Sequence",
+        "actors": [
+          "User Transaction",
+          "Diamond Proxy Core",
+          "Selector Routing Table",
+          "Target Facet (Vault / Loupe)"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Caller submits transaction or upgrade proposal for Detective Lab: Diamond Storage...",
+            "activeActor": "User Transaction",
+            "messages": [
+              {
+                "from": "User Transaction",
+                "to": "Diamond Proxy Core",
+                "label": "initiateCallOrUpgrade(payload) [Phase 1]",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Proxy evaluates execution context, caller identity, and routing table",
+            "activeActor": "Diamond Proxy Core",
+            "messages": [
+              {
+                "from": "Diamond Proxy Core",
+                "to": "Selector Routing Table",
+                "label": "delegateOrAuthorize(extractSelector) [Phase 2]",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execution of business logic and storage slot state mutation",
+            "activeActor": "Selector Routing Table",
+            "messages": [
+              {
+                "from": "Selector Routing Table",
+                "to": "Target Facet (Vault / Loupe)",
+                "label": "mutateStorageOrSlot(verifyIntegrity) [Phase 3]",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: State transition committed; returndata returned to caller",
+            "activeActor": "Diamond Proxy Core",
+            "messages": [
+              {
+                "from": "Diamond Proxy Core",
+                "to": "User Transaction",
+                "label": "CallSucceeded(storagePreserved ✓)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Diamond Loupe: Four Standard Inspection Functions",
+      "codeHash": "d7fdaaf56d430ab91ff29b7f0d931525558cf1d75debcf8951302cf04f3ee023",
+      "spec": {
+        "template": "sequence",
+        "title": "Diamond Loupe: Four Standard Inspection Functions — Upgradeability & Proxy Sequence",
+        "actors": [
+          "User Transaction",
+          "Diamond Proxy Core",
+          "Selector Routing Table",
+          "Target Facet (Vault / Loupe)"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Caller submits transaction or upgrade proposal for Diamond Loupe: Four Standard I...",
+            "activeActor": "User Transaction",
+            "messages": [
+              {
+                "from": "User Transaction",
+                "to": "Diamond Proxy Core",
+                "label": "initiateCallOrUpgrade(payload) [Phase 1]",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Proxy evaluates execution context, caller identity, and routing table",
+            "activeActor": "Diamond Proxy Core",
+            "messages": [
+              {
+                "from": "Diamond Proxy Core",
+                "to": "Selector Routing Table",
+                "label": "delegateOrAuthorize(extractSelector) [Phase 2]",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execution of business logic and storage slot state mutation",
+            "activeActor": "Selector Routing Table",
+            "messages": [
+              {
+                "from": "Selector Routing Table",
+                "to": "Target Facet (Vault / Loupe)",
+                "label": "mutateStorageOrSlot(verifyIntegrity) [Phase 3]",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: State transition committed; returndata returned to caller",
+            "activeActor": "Diamond Proxy Core",
+            "messages": [
+              {
+                "from": "Diamond Proxy Core",
+                "to": "User Transaction",
+                "label": "CallSucceeded(storagePreserved ✓)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Diamond Loupe: Four Standard Inspection Functions — Upgradeability & Proxy Sequence",
+        "actors": [
+          "User Transaction",
+          "Diamond Proxy Core",
+          "Selector Routing Table",
+          "Target Facet (Vault / Loupe)"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Caller submits transaction or upgrade proposal for Diamond Loupe: Four Standard I...",
+            "activeActor": "User Transaction",
+            "messages": [
+              {
+                "from": "User Transaction",
+                "to": "Diamond Proxy Core",
+                "label": "initiateCallOrUpgrade(payload) [Phase 1]",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Proxy evaluates execution context, caller identity, and routing table",
+            "activeActor": "Diamond Proxy Core",
+            "messages": [
+              {
+                "from": "Diamond Proxy Core",
+                "to": "Selector Routing Table",
+                "label": "delegateOrAuthorize(extractSelector) [Phase 2]",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execution of business logic and storage slot state mutation",
+            "activeActor": "Selector Routing Table",
+            "messages": [
+              {
+                "from": "Selector Routing Table",
+                "to": "Target Facet (Vault / Loupe)",
+                "label": "mutateStorageOrSlot(verifyIntegrity) [Phase 3]",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: State transition committed; returndata returned to caller",
+            "activeActor": "Diamond Proxy Core",
+            "messages": [
+              {
+                "from": "Diamond Proxy Core",
+                "to": "User Transaction",
+                "label": "CallSucceeded(storagePreserved ✓)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Multi-Facet Diamond Protocol & Verification Suite",
+      "codeHash": "b8725f0f1c68628b6f6733cc531c3488249c2bcb04efd468eb758fde85a8b383",
+      "spec": {
+        "template": "sequence",
+        "title": "Production Multi-Facet Diamond Protocol & Verification Suite — Upgradeability & Proxy Sequence",
+        "actors": [
+          "User Transaction",
+          "Diamond Proxy Core",
+          "Selector Routing Table",
+          "Target Facet (Vault / Loupe)"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Caller submits transaction or upgrade proposal for Production Multi-Facet Diamond...",
+            "activeActor": "User Transaction",
+            "messages": [
+              {
+                "from": "User Transaction",
+                "to": "Diamond Proxy Core",
+                "label": "initiateCallOrUpgrade(payload) [Phase 1]",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Proxy evaluates execution context, caller identity, and routing table",
+            "activeActor": "Diamond Proxy Core",
+            "messages": [
+              {
+                "from": "Diamond Proxy Core",
+                "to": "Selector Routing Table",
+                "label": "delegateOrAuthorize(extractSelector) [Phase 2]",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execution of business logic and storage slot state mutation",
+            "activeActor": "Selector Routing Table",
+            "messages": [
+              {
+                "from": "Selector Routing Table",
+                "to": "Target Facet (Vault / Loupe)",
+                "label": "mutateStorageOrSlot(verifyIntegrity) [Phase 3]",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: State transition committed; returndata returned to caller",
+            "activeActor": "Diamond Proxy Core",
+            "messages": [
+              {
+                "from": "Diamond Proxy Core",
+                "to": "User Transaction",
+                "label": "CallSucceeded(storagePreserved ✓)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Production Multi-Facet Diamond Protocol & Verification Suite — Upgradeability & Proxy Sequence",
+        "actors": [
+          "User Transaction",
+          "Diamond Proxy Core",
+          "Selector Routing Table",
+          "Target Facet (Vault / Loupe)"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Caller submits transaction or upgrade proposal for Production Multi-Facet Diamond...",
+            "activeActor": "User Transaction",
+            "messages": [
+              {
+                "from": "User Transaction",
+                "to": "Diamond Proxy Core",
+                "label": "initiateCallOrUpgrade(payload) [Phase 1]",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Proxy evaluates execution context, caller identity, and routing table",
+            "activeActor": "Diamond Proxy Core",
+            "messages": [
+              {
+                "from": "Diamond Proxy Core",
+                "to": "Selector Routing Table",
+                "label": "delegateOrAuthorize(extractSelector) [Phase 2]",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execution of business logic and storage slot state mutation",
+            "activeActor": "Selector Routing Table",
+            "messages": [
+              {
+                "from": "Selector Routing Table",
+                "to": "Target Facet (Vault / Loupe)",
+                "label": "mutateStorageOrSlot(verifyIntegrity) [Phase 3]",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: State transition committed; returndata returned to caller",
+            "activeActor": "Diamond Proxy Core",
+            "messages": [
+              {
+                "from": "Diamond Proxy Core",
+                "to": "User Transaction",
+                "label": "CallSucceeded(storagePreserved ✓)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

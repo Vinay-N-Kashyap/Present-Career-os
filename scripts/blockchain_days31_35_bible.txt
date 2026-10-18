@@ -1,0 +1,24 @@
+
+---
+Day 31 Automated Market Makers (AMM): Constant Product Formula (x · y = k), Slippage & Impermanent Loss Stage 3: Advanced Specialization & Scale Month 2 &bull; Block 7 &bull; 4 Quests 🎯 Spoken Goal &amp; Invariant: Goal: Step into 
+
+---
+Day 31 (4 Quests): bc-m2-d31-q1 Constant Product Swap Formula & Impermanent Loss Proof (concept) : 
+
+---
+Day 32 Concentrated Liquidity AMMs (Uniswap v3): Ticks, Price Ranges, Tick Math & Capital Efficiency Stage 3: Advanced Specialization & Scale Month 2 &bull; Block 7 &bull; 4 Quests 🎯 Spoken Goal &amp; Invariant: Goal: Analyze the crowning mathematical achievement of decentralized exchanges: Concentrated Liquidity (Uniswap v3). Contrast Uniswap v2 (where capital is spread uniformly across all prices from 0 to infinity, meaning 99% of deposited capital sits idle and unused) with Uniswap v3 (where liquidity providers allocate capital within discrete custom Price Ranges [p_lower, p_upper]). Unders
+
+---
+Day 32 (4 Quests): bc-m2-d32-q1 Uniswap v3 Concentrated Liquidity Mathematical 
+
+---
+Day 33 
+
+---
+Day 33 (4 Quests): bc-m2-d33-q1 
+
+---
+Day 34 Flash Loans & Arbitrage: Single-Transaction Uncollateralized Borrowing & Pool Invariants Stage 3: Advanced Specialization & Scale Month 2 &bull; Block 7 &bull; 4 Quests 🎯 Spoken Goal &amp; Invariant: Goal: Explore the unique superpower of blockchain computing impossible in traditional finance: Flash Loans. Understand how uncollateralized lending works without counterparty credit risk: borrow $100,000,000 with ZERO collateral, execute arbitrary smart contract logic (arbitrage, collateral swaps, liquidations), and repay the borrowed capital PLUS fee within the EXACT SAME ATOMIC TRANSACTIO
+
+---
+Day 34 (4 Quests): bc-m2-d34-q1 EIP-3156 Flash Loan Standard Formal Specification (concept) : 
