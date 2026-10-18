@@ -1,0 +1,424 @@
+{
+  "schemaVersion": 1,
+  "prefix": "java-basics",
+  "day": 45,
+  "promptSha": "java-basics-day-45-spec",
+  "model": "curriculum-visual-synthesizer-v2",
+  "entries": [
+    {
+      "partTitle": "Atomic Batch Ingestion Architecture & Rollback Protocol",
+      "codeHash": "47fa72b8b49e6705d06d5f87108b22a6a06ffc73a83fad80555cc163b54fde64",
+      "spec": {
+        "template": "stack-queue",
+        "title": "Day 45 Part 1 \u2014 JVM Call Stack & Heap State",
+        "mode": "stack",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Allocate stack frame and inspect reference pointers for Atomic Batch Ingestion Ar.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "DomainService.execute()",
+              "Day45Subsystem.init()"
+            ],
+            "action": "push",
+            "actionItem": "Day45Subsystem.init()",
+            "tones": [
+              "ok",
+              "data",
+              "data"
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Push active execution frame onto JVM thread call stack.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "DomainService.execute()",
+              "Day45Subsystem.init()",
+              "Part1Executor.run()"
+            ],
+            "action": "push",
+            "actionItem": "Part1Executor.run()",
+            "tones": [
+              "ok",
+              "ok",
+              "data",
+              "data"
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Pop completed execution frame after verifying heap state invariant.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "DomainService.execute()",
+              "Day45Subsystem.init()"
+            ],
+            "action": "pop",
+            "actionItem": "Part1Executor.run()",
+            "tones": [
+              "ok",
+              "data",
+              "data"
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Push tryIt verification frame and evaluate assertions.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "DomainService.execute()",
+              "Day45Subsystem.init()",
+              "AssertionRunner.verify()"
+            ],
+            "action": "push",
+            "actionItem": "AssertionRunner.verify()",
+            "tones": [
+              "ok",
+              "ok",
+              "data",
+              "ok"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Detective Lab: The Torn Batch Ingestion Data Corruption",
+      "codeHash": "3402ff5ba67935db6b24afe83937e56b8e5140f34024f1126bc3f86bf2470762",
+      "spec": {
+        "template": "stack-queue",
+        "title": "Day 45 Part 2 \u2014 JVM Call Stack & Heap State",
+        "mode": "stack",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Allocate stack frame and inspect reference pointers for Detective Lab: The Torn B.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "DomainService.execute()",
+              "Day45Subsystem.init()"
+            ],
+            "action": "push",
+            "actionItem": "Day45Subsystem.init()",
+            "tones": [
+              "ok",
+              "data",
+              "data"
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Push active execution frame onto JVM thread call stack.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "DomainService.execute()",
+              "Day45Subsystem.init()",
+              "Part2Executor.run()"
+            ],
+            "action": "push",
+            "actionItem": "Part2Executor.run()",
+            "tones": [
+              "ok",
+              "ok",
+              "data",
+              "data"
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Pop completed execution frame after verifying heap state invariant.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "DomainService.execute()",
+              "Day45Subsystem.init()"
+            ],
+            "action": "pop",
+            "actionItem": "Part2Executor.run()",
+            "tones": [
+              "ok",
+              "data",
+              "data"
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Push tryIt verification frame and evaluate assertions.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "DomainService.execute()",
+              "Day45Subsystem.init()",
+              "AssertionRunner.verify()"
+            ],
+            "action": "push",
+            "actionItem": "AssertionRunner.verify()",
+            "tones": [
+              "ok",
+              "ok",
+              "data",
+              "ok"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Mastery Assignment: Two-Phase Commit Order Batch Validator",
+      "codeHash": "9f4b44a29babb85d3596f38df6d1a9f58152b2c5ab5c6a6f54a004a3c934750f",
+      "spec": {
+        "template": "stack-queue",
+        "title": "Day 45 Part 3 \u2014 JVM Call Stack & Heap State",
+        "mode": "stack",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Allocate stack frame and inspect reference pointers for Mastery Assignment: Two-P.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "DomainService.execute()",
+              "Day45Subsystem.init()"
+            ],
+            "action": "push",
+            "actionItem": "Day45Subsystem.init()",
+            "tones": [
+              "ok",
+              "data",
+              "data"
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Push active execution frame onto JVM thread call stack.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "DomainService.execute()",
+              "Day45Subsystem.init()",
+              "Part3Executor.run()"
+            ],
+            "action": "push",
+            "actionItem": "Part3Executor.run()",
+            "tones": [
+              "ok",
+              "ok",
+              "data",
+              "data"
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Pop completed execution frame after verifying heap state invariant.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "DomainService.execute()",
+              "Day45Subsystem.init()"
+            ],
+            "action": "pop",
+            "actionItem": "Part3Executor.run()",
+            "tones": [
+              "ok",
+              "data",
+              "data"
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Push tryIt verification frame and evaluate assertions.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "DomainService.execute()",
+              "Day45Subsystem.init()",
+              "AssertionRunner.verify()"
+            ],
+            "action": "push",
+            "actionItem": "AssertionRunner.verify()",
+            "tones": [
+              "ok",
+              "ok",
+              "data",
+              "ok"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Incident Lab: Out-Of-Memory File Streaming Architecture",
+      "codeHash": "a2cb46f73fae4ac2cc3300bc4a44c7b7f575934398b4cfa003e87b997c182edc",
+      "spec": {
+        "template": "stack-queue",
+        "title": "Day 45 Part 4 \u2014 JVM Call Stack & Heap State",
+        "mode": "stack",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Allocate stack frame and inspect reference pointers for Production Incident Lab: .",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "DomainService.execute()",
+              "Day45Subsystem.init()"
+            ],
+            "action": "push",
+            "actionItem": "Day45Subsystem.init()",
+            "tones": [
+              "ok",
+              "data",
+              "data"
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Push active execution frame onto JVM thread call stack.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "DomainService.execute()",
+              "Day45Subsystem.init()",
+              "Part4Executor.run()"
+            ],
+            "action": "push",
+            "actionItem": "Part4Executor.run()",
+            "tones": [
+              "ok",
+              "ok",
+              "data",
+              "data"
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Pop completed execution frame after verifying heap state invariant.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "DomainService.execute()",
+              "Day45Subsystem.init()"
+            ],
+            "action": "pop",
+            "actionItem": "Part4Executor.run()",
+            "tones": [
+              "ok",
+              "data",
+              "data"
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Push tryIt verification frame and evaluate assertions.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "DomainService.execute()",
+              "Day45Subsystem.init()",
+              "AssertionRunner.verify()"
+            ],
+            "action": "push",
+            "actionItem": "AssertionRunner.verify()",
+            "tones": [
+              "ok",
+              "ok",
+              "data",
+              "ok"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Milestone 8 Capstone Viva Gate: Resilient Order Ingestion Engine",
+      "codeHash": "3b10daf2fd3546f7ed7ef8172134b5f81d5acc17a55b4ab1738e3e5178a7301b",
+      "spec": {
+        "template": "stack-queue",
+        "title": "Day 45 Part 5 \u2014 JVM Call Stack & Heap State",
+        "mode": "stack",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Allocate stack frame and inspect reference pointers for Milestone 8 Capstone Viva.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "DomainService.execute()",
+              "Day45Subsystem.init()"
+            ],
+            "action": "push",
+            "actionItem": "Day45Subsystem.init()",
+            "tones": [
+              "ok",
+              "data",
+              "data"
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Push active execution frame onto JVM thread call stack.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "DomainService.execute()",
+              "Day45Subsystem.init()",
+              "Part5Executor.run()"
+            ],
+            "action": "push",
+            "actionItem": "Part5Executor.run()",
+            "tones": [
+              "ok",
+              "ok",
+              "data",
+              "data"
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Pop completed execution frame after verifying heap state invariant.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "DomainService.execute()",
+              "Day45Subsystem.init()"
+            ],
+            "action": "pop",
+            "actionItem": "Part5Executor.run()",
+            "tones": [
+              "ok",
+              "data",
+              "data"
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Push tryIt verification frame and evaluate assertions.",
+            "mode": "stack",
+            "items": [
+              "main() Frame",
+              "DomainService.execute()",
+              "Day45Subsystem.init()",
+              "AssertionRunner.verify()"
+            ],
+            "action": "push",
+            "actionItem": "AssertionRunner.verify()",
+            "tones": [
+              "ok",
+              "ok",
+              "data",
+              "ok"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

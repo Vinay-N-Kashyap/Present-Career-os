@@ -8,7 +8,7 @@ import { loadDayFile, getVisual, clearDayFileCache } from '../src/lib/visuals/lo
 import { getLongLesson, estimateSpokenMinutes, estimateLessonMinutes } from '../src/lib/data/longLessons';
 import { getTappableLabelsForVisual } from '../src/lib/visuals/visualRules';
 
-test('Java Basics Visuals Expansion: Days 6 to 40 On-Disk Spec Verification', () => {
+test('Java Basics Visuals Expansion: Days 6 to 45 On-Disk Spec Verification', () => {
   clearDayFileCache();
   const prefix = 'java-basics';
   const expectedTemplate = 'stack-queue';
@@ -16,7 +16,7 @@ test('Java Basics Visuals Expansion: Days 6 to 40 On-Disk Spec Verification', ()
   assert.equal(isCourseVisualsEnabled(prefix), true, `Course "${prefix}" must be enabled in enabledCourses`);
 
   const daysToTest = [];
-  for (let d = 6; d <= 40; d++) {
+  for (let d = 6; d <= 45; d++) {
     daysToTest.push(d);
   }
 
@@ -62,7 +62,7 @@ test('Java Basics Visuals Expansion: Days 6 to 40 On-Disk Spec Verification', ()
 
 test('Java Basics Duration Invariant: Days >= 11 Meet 20+ Spoken Min and 35-40 Total Min', () => {
   const daysToTest = [];
-  for (let d = 11; d <= 40; d++) {
+  for (let d = 11; d <= 45; d++) {
     daysToTest.push(d);
   }
 
@@ -77,7 +77,7 @@ test('Java Basics Duration Invariant: Days >= 11 Meet 20+ Spoken Min and 35-40 T
   }
 });
 
-test('Java Basics Days 31-40 Domain & Masterclass Integrity Verification', () => {
+test('Java Basics Days 31-45 Domain & Masterclass Integrity Verification', () => {
   const prefix = 'java-basics';
 
   // Day 31: Classes, Heap Instances & Reference Pointer Mechanics
@@ -144,4 +144,39 @@ test('Java Basics Days 31-40 Domain & Masterclass Integrity Verification', () =>
   assert.equal(d40.parts.length, 5);
   assert.match(d40.title, /Milestone 7.*Payment Gateway/);
   assert.ok(d40.parts.some(p => (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('Dependency Inversion') || (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('PaymentProcessor') || (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('GatewayRouter')));
+
+  // Day 41: JVM Throwable Hierarchy: Throwable, Error, Exception & RuntimeException
+  const d41 = getLongLesson(prefix, 41);
+  assert.ok(d41);
+  assert.equal(d41.parts.length, 5);
+  assert.match(d41.title, /JVM Throwable Hierarchy/);
+  assert.ok(d41.parts.some(p => (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('OutOfMemoryError') || (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('athrow') || (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('Exception Table')));
+
+  // Day 42: Defensive Error Recovery: try-catch-finally Blocks & Exception Propagation
+  const d42 = getLongLesson(prefix, 42);
+  assert.ok(d42);
+  assert.equal(d42.parts.length, 5);
+  assert.match(d42.title, /Defensive Error Recovery/);
+  assert.ok(d42.parts.some(p => (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('Stack Unwinding') || (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('hijacked') || (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('lock.lock()')));
+
+  // Day 43: Resource Lifecycles: AutoCloseable, try-with-resources & Custom Fault Taxonomies
+  const d43 = getLongLesson(prefix, 43);
+  assert.ok(d43);
+  assert.equal(d43.parts.length, 5);
+  assert.match(d43.title, /Resource Lifecycles/);
+  assert.ok(d43.parts.some(p => (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('AutoCloseable') || (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('Too many open files') || (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('addSuppressed')));
+
+  // Day 44: JVM Garbage Collection Anatomy & Diagnosing Real Memory Leaks
+  const d44 = getLongLesson(prefix, 44);
+  assert.ok(d44);
+  assert.equal(d44.parts.length, 5);
+  assert.match(d44.title, /JVM Garbage Collection/);
+  assert.ok(d44.parts.some(p => (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('Generational Hypothesis') || (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('GC Root') || (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('ThreadLocal')));
+
+  // Day 45: Milestone 8: Resilient Order File Ingestion Engine with Auto-Rollback
+  const d45 = getLongLesson(prefix, 45);
+  assert.ok(d45);
+  assert.equal(d45.parts.length, 5);
+  assert.match(d45.title, /Milestone 8.*Resilient Order File Ingestion Engine/);
+  assert.ok(d45.parts.some(p => (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('All-Or-Nothing') || (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('Torn State') || (Array.isArray(p.say) ? p.say.join(' ') : p.say).includes('Two-Phase Commit')));
 });
