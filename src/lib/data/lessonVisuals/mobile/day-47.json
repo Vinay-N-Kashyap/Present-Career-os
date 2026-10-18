@@ -1,0 +1,1089 @@
+{
+  "schemaVersion": 1,
+  "prefix": "mobile",
+  "day": 47,
+  "promptSha": "mobile-day-47-offline-sync-spec",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "WatermelonDB Architecture & C++ SQLite JSI Adapter",
+      "codeHash": "03117e31881bf4531e4850a295756ed1f03a0eb909fbdcdf5b32f9a6870281cc",
+      "spec": {
+        "template": "component-tree",
+        "rootId": "AppRoot",
+        "nodes": [
+          {
+            "id": "AppRoot",
+            "name": "<OfflineFirstSecurityShell />",
+            "props": {
+              "vault": "SECURE_ENCLAVE_KEYSTORE",
+              "database": "WATERMELONDB_SQLITE_JSI"
+            },
+            "children": [
+              {
+                "id": "HardwareKeyVault",
+                "name": "<HardwareKeyStoreManager />",
+                "props": {
+                  "encryption": "AES_256_GCM_HARDWARE",
+                  "biometricGated": "FACEID_TRUE"
+                }
+              },
+              {
+                "id": "SqliteJsiEngine",
+                "name": "<WatermelonDbJsiEngine />",
+                "props": {
+                  "journalMode": "WAL_CONCURRENT",
+                  "throughput": "26000_RECS_PER_SEC"
+                }
+              },
+              {
+                "id": "DeltaSyncCoordinator",
+                "name": "<MonotonicDeltaSyncCoordinator />",
+                "props": {
+                  "conflictEngine": "THREE_WAY_MERGE",
+                  "atomicity": "ACID_TRANSACTION"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Authenticate via Secure Enclave hardware vault for WatermelonDB Architecture & C+.",
+            "activeId": "HardwareKeyVault",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "HardwareKeyVault",
+                "name": "<HardwareKeyStoreManager />",
+                "props": {
+                  "status": "KEY_RELEASED_AUTHENTICATED"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute indexed queries across 1,000,000 records in SQLite JSI WAL mode.",
+            "activeId": "SqliteJsiEngine",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "SqliteJsiEngine",
+                "name": "<WatermelonDbJsiEngine />",
+                "props": {
+                  "queryState": "INDEXED_COVERING_SCAN_1MS"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Apply monotonic delta changesets with ACID transactional atomicity.",
+            "activeId": "DeltaSyncCoordinator",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "DeltaSyncCoordinator",
+                "name": "<MonotonicDeltaSyncCoordinator />",
+                "props": {
+                  "syncState": "CHANGESET_COMMITTED_ATOMIC"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify zero data corruption and 10,000-record batch processing in 380ms.",
+            "activeId": "AppRoot",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppRoot",
+                "name": "<OfflineFirstSecurityShell />",
+                "props": {
+                  "certification": "OFFLINE_FIRST_SOVEREIGNTY_VERIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "rootId": "AppRoot",
+        "nodes": [
+          {
+            "id": "AppRoot",
+            "name": "<OfflineFirstSecurityShell />",
+            "props": {
+              "vault": "SECURE_ENCLAVE_KEYSTORE",
+              "database": "WATERMELONDB_SQLITE_JSI"
+            },
+            "children": [
+              {
+                "id": "HardwareKeyVault",
+                "name": "<HardwareKeyStoreManager />",
+                "props": {
+                  "encryption": "AES_256_GCM_HARDWARE",
+                  "biometricGated": "FACEID_TRUE"
+                }
+              },
+              {
+                "id": "SqliteJsiEngine",
+                "name": "<WatermelonDbJsiEngine />",
+                "props": {
+                  "journalMode": "WAL_CONCURRENT",
+                  "throughput": "26000_RECS_PER_SEC"
+                }
+              },
+              {
+                "id": "DeltaSyncCoordinator",
+                "name": "<MonotonicDeltaSyncCoordinator />",
+                "props": {
+                  "conflictEngine": "THREE_WAY_MERGE",
+                  "atomicity": "ACID_TRANSACTION"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Authenticate via Secure Enclave hardware vault for WatermelonDB Architecture & C+.",
+            "activeId": "HardwareKeyVault",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "HardwareKeyVault",
+                "name": "<HardwareKeyStoreManager />",
+                "props": {
+                  "status": "KEY_RELEASED_AUTHENTICATED"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute indexed queries across 1,000,000 records in SQLite JSI WAL mode.",
+            "activeId": "SqliteJsiEngine",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "SqliteJsiEngine",
+                "name": "<WatermelonDbJsiEngine />",
+                "props": {
+                  "queryState": "INDEXED_COVERING_SCAN_1MS"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Apply monotonic delta changesets with ACID transactional atomicity.",
+            "activeId": "DeltaSyncCoordinator",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "DeltaSyncCoordinator",
+                "name": "<MonotonicDeltaSyncCoordinator />",
+                "props": {
+                  "syncState": "CHANGESET_COMMITTED_ATOMIC"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify zero data corruption and 10,000-record batch processing in 380ms.",
+            "activeId": "AppRoot",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppRoot",
+                "name": "<OfflineFirstSecurityShell />",
+                "props": {
+                  "certification": "OFFLINE_FIRST_SOVEREIGNTY_VERIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Lazy Loading Model Hydration vs Eager Array Instantiation",
+      "codeHash": "4093b687b9ea6dbcbcf8781f76e1c5c1dd48cc2ab21f46b324fa892ad8fa169d",
+      "spec": {
+        "template": "component-tree",
+        "rootId": "AppRoot",
+        "nodes": [
+          {
+            "id": "AppRoot",
+            "name": "<OfflineFirstSecurityShell />",
+            "props": {
+              "vault": "SECURE_ENCLAVE_KEYSTORE",
+              "database": "WATERMELONDB_SQLITE_JSI"
+            },
+            "children": [
+              {
+                "id": "HardwareKeyVault",
+                "name": "<HardwareKeyStoreManager />",
+                "props": {
+                  "encryption": "AES_256_GCM_HARDWARE",
+                  "biometricGated": "FACEID_TRUE"
+                }
+              },
+              {
+                "id": "SqliteJsiEngine",
+                "name": "<WatermelonDbJsiEngine />",
+                "props": {
+                  "journalMode": "WAL_CONCURRENT",
+                  "throughput": "26000_RECS_PER_SEC"
+                }
+              },
+              {
+                "id": "DeltaSyncCoordinator",
+                "name": "<MonotonicDeltaSyncCoordinator />",
+                "props": {
+                  "conflictEngine": "THREE_WAY_MERGE",
+                  "atomicity": "ACID_TRANSACTION"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Authenticate via Secure Enclave hardware vault for Lazy Loading Model Hydration v.",
+            "activeId": "HardwareKeyVault",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "HardwareKeyVault",
+                "name": "<HardwareKeyStoreManager />",
+                "props": {
+                  "status": "KEY_RELEASED_AUTHENTICATED"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute indexed queries across 1,000,000 records in SQLite JSI WAL mode.",
+            "activeId": "SqliteJsiEngine",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "SqliteJsiEngine",
+                "name": "<WatermelonDbJsiEngine />",
+                "props": {
+                  "queryState": "INDEXED_COVERING_SCAN_1MS"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Apply monotonic delta changesets with ACID transactional atomicity.",
+            "activeId": "DeltaSyncCoordinator",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "DeltaSyncCoordinator",
+                "name": "<MonotonicDeltaSyncCoordinator />",
+                "props": {
+                  "syncState": "CHANGESET_COMMITTED_ATOMIC"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify zero data corruption and 10,000-record batch processing in 380ms.",
+            "activeId": "AppRoot",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppRoot",
+                "name": "<OfflineFirstSecurityShell />",
+                "props": {
+                  "certification": "OFFLINE_FIRST_SOVEREIGNTY_VERIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "rootId": "AppRoot",
+        "nodes": [
+          {
+            "id": "AppRoot",
+            "name": "<OfflineFirstSecurityShell />",
+            "props": {
+              "vault": "SECURE_ENCLAVE_KEYSTORE",
+              "database": "WATERMELONDB_SQLITE_JSI"
+            },
+            "children": [
+              {
+                "id": "HardwareKeyVault",
+                "name": "<HardwareKeyStoreManager />",
+                "props": {
+                  "encryption": "AES_256_GCM_HARDWARE",
+                  "biometricGated": "FACEID_TRUE"
+                }
+              },
+              {
+                "id": "SqliteJsiEngine",
+                "name": "<WatermelonDbJsiEngine />",
+                "props": {
+                  "journalMode": "WAL_CONCURRENT",
+                  "throughput": "26000_RECS_PER_SEC"
+                }
+              },
+              {
+                "id": "DeltaSyncCoordinator",
+                "name": "<MonotonicDeltaSyncCoordinator />",
+                "props": {
+                  "conflictEngine": "THREE_WAY_MERGE",
+                  "atomicity": "ACID_TRANSACTION"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Authenticate via Secure Enclave hardware vault for Lazy Loading Model Hydration v.",
+            "activeId": "HardwareKeyVault",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "HardwareKeyVault",
+                "name": "<HardwareKeyStoreManager />",
+                "props": {
+                  "status": "KEY_RELEASED_AUTHENTICATED"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute indexed queries across 1,000,000 records in SQLite JSI WAL mode.",
+            "activeId": "SqliteJsiEngine",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "SqliteJsiEngine",
+                "name": "<WatermelonDbJsiEngine />",
+                "props": {
+                  "queryState": "INDEXED_COVERING_SCAN_1MS"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Apply monotonic delta changesets with ACID transactional atomicity.",
+            "activeId": "DeltaSyncCoordinator",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "DeltaSyncCoordinator",
+                "name": "<MonotonicDeltaSyncCoordinator />",
+                "props": {
+                  "syncState": "CHANGESET_COMMITTED_ATOMIC"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify zero data corruption and 10,000-record batch processing in 380ms.",
+            "activeId": "AppRoot",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppRoot",
+                "name": "<OfflineFirstSecurityShell />",
+                "props": {
+                  "certification": "OFFLINE_FIRST_SOVEREIGNTY_VERIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "RxJS Observable Queries: observe() vs Manual State Synchronization",
+      "codeHash": "b761a9a3efaa1e3d1d8ff526953f895dc7cca58b420bedb6e08eeb9253fd0e1d",
+      "spec": {
+        "template": "component-tree",
+        "rootId": "AppRoot",
+        "nodes": [
+          {
+            "id": "AppRoot",
+            "name": "<OfflineFirstSecurityShell />",
+            "props": {
+              "vault": "SECURE_ENCLAVE_KEYSTORE",
+              "database": "WATERMELONDB_SQLITE_JSI"
+            },
+            "children": [
+              {
+                "id": "HardwareKeyVault",
+                "name": "<HardwareKeyStoreManager />",
+                "props": {
+                  "encryption": "AES_256_GCM_HARDWARE",
+                  "biometricGated": "FACEID_TRUE"
+                }
+              },
+              {
+                "id": "SqliteJsiEngine",
+                "name": "<WatermelonDbJsiEngine />",
+                "props": {
+                  "journalMode": "WAL_CONCURRENT",
+                  "throughput": "26000_RECS_PER_SEC"
+                }
+              },
+              {
+                "id": "DeltaSyncCoordinator",
+                "name": "<MonotonicDeltaSyncCoordinator />",
+                "props": {
+                  "conflictEngine": "THREE_WAY_MERGE",
+                  "atomicity": "ACID_TRANSACTION"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Authenticate via Secure Enclave hardware vault for RxJS Observable Queries: obser.",
+            "activeId": "HardwareKeyVault",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "HardwareKeyVault",
+                "name": "<HardwareKeyStoreManager />",
+                "props": {
+                  "status": "KEY_RELEASED_AUTHENTICATED"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute indexed queries across 1,000,000 records in SQLite JSI WAL mode.",
+            "activeId": "SqliteJsiEngine",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "SqliteJsiEngine",
+                "name": "<WatermelonDbJsiEngine />",
+                "props": {
+                  "queryState": "INDEXED_COVERING_SCAN_1MS"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Apply monotonic delta changesets with ACID transactional atomicity.",
+            "activeId": "DeltaSyncCoordinator",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "DeltaSyncCoordinator",
+                "name": "<MonotonicDeltaSyncCoordinator />",
+                "props": {
+                  "syncState": "CHANGESET_COMMITTED_ATOMIC"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify zero data corruption and 10,000-record batch processing in 380ms.",
+            "activeId": "AppRoot",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppRoot",
+                "name": "<OfflineFirstSecurityShell />",
+                "props": {
+                  "certification": "OFFLINE_FIRST_SOVEREIGNTY_VERIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "rootId": "AppRoot",
+        "nodes": [
+          {
+            "id": "AppRoot",
+            "name": "<OfflineFirstSecurityShell />",
+            "props": {
+              "vault": "SECURE_ENCLAVE_KEYSTORE",
+              "database": "WATERMELONDB_SQLITE_JSI"
+            },
+            "children": [
+              {
+                "id": "HardwareKeyVault",
+                "name": "<HardwareKeyStoreManager />",
+                "props": {
+                  "encryption": "AES_256_GCM_HARDWARE",
+                  "biometricGated": "FACEID_TRUE"
+                }
+              },
+              {
+                "id": "SqliteJsiEngine",
+                "name": "<WatermelonDbJsiEngine />",
+                "props": {
+                  "journalMode": "WAL_CONCURRENT",
+                  "throughput": "26000_RECS_PER_SEC"
+                }
+              },
+              {
+                "id": "DeltaSyncCoordinator",
+                "name": "<MonotonicDeltaSyncCoordinator />",
+                "props": {
+                  "conflictEngine": "THREE_WAY_MERGE",
+                  "atomicity": "ACID_TRANSACTION"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Authenticate via Secure Enclave hardware vault for RxJS Observable Queries: obser.",
+            "activeId": "HardwareKeyVault",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "HardwareKeyVault",
+                "name": "<HardwareKeyStoreManager />",
+                "props": {
+                  "status": "KEY_RELEASED_AUTHENTICATED"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute indexed queries across 1,000,000 records in SQLite JSI WAL mode.",
+            "activeId": "SqliteJsiEngine",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "SqliteJsiEngine",
+                "name": "<WatermelonDbJsiEngine />",
+                "props": {
+                  "queryState": "INDEXED_COVERING_SCAN_1MS"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Apply monotonic delta changesets with ACID transactional atomicity.",
+            "activeId": "DeltaSyncCoordinator",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "DeltaSyncCoordinator",
+                "name": "<MonotonicDeltaSyncCoordinator />",
+                "props": {
+                  "syncState": "CHANGESET_COMMITTED_ATOMIC"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify zero data corruption and 10,000-record batch processing in 380ms.",
+            "activeId": "AppRoot",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppRoot",
+                "name": "<OfflineFirstSecurityShell />",
+                "props": {
+                  "certification": "OFFLINE_FIRST_SOVEREIGNTY_VERIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Composite B-Tree Indexing & SQLite Query Execution Plans",
+      "codeHash": "da42565fbc8b7cc24d849ae063204eed69c6a29109ccf7cebd9c73536886130e",
+      "spec": {
+        "template": "component-tree",
+        "rootId": "AppRoot",
+        "nodes": [
+          {
+            "id": "AppRoot",
+            "name": "<OfflineFirstSecurityShell />",
+            "props": {
+              "vault": "SECURE_ENCLAVE_KEYSTORE",
+              "database": "WATERMELONDB_SQLITE_JSI"
+            },
+            "children": [
+              {
+                "id": "HardwareKeyVault",
+                "name": "<HardwareKeyStoreManager />",
+                "props": {
+                  "encryption": "AES_256_GCM_HARDWARE",
+                  "biometricGated": "FACEID_TRUE"
+                }
+              },
+              {
+                "id": "SqliteJsiEngine",
+                "name": "<WatermelonDbJsiEngine />",
+                "props": {
+                  "journalMode": "WAL_CONCURRENT",
+                  "throughput": "26000_RECS_PER_SEC"
+                }
+              },
+              {
+                "id": "DeltaSyncCoordinator",
+                "name": "<MonotonicDeltaSyncCoordinator />",
+                "props": {
+                  "conflictEngine": "THREE_WAY_MERGE",
+                  "atomicity": "ACID_TRANSACTION"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Authenticate via Secure Enclave hardware vault for Composite B-Tree Indexing & SQ.",
+            "activeId": "HardwareKeyVault",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "HardwareKeyVault",
+                "name": "<HardwareKeyStoreManager />",
+                "props": {
+                  "status": "KEY_RELEASED_AUTHENTICATED"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute indexed queries across 1,000,000 records in SQLite JSI WAL mode.",
+            "activeId": "SqliteJsiEngine",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "SqliteJsiEngine",
+                "name": "<WatermelonDbJsiEngine />",
+                "props": {
+                  "queryState": "INDEXED_COVERING_SCAN_1MS"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Apply monotonic delta changesets with ACID transactional atomicity.",
+            "activeId": "DeltaSyncCoordinator",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "DeltaSyncCoordinator",
+                "name": "<MonotonicDeltaSyncCoordinator />",
+                "props": {
+                  "syncState": "CHANGESET_COMMITTED_ATOMIC"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify zero data corruption and 10,000-record batch processing in 380ms.",
+            "activeId": "AppRoot",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppRoot",
+                "name": "<OfflineFirstSecurityShell />",
+                "props": {
+                  "certification": "OFFLINE_FIRST_SOVEREIGNTY_VERIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "rootId": "AppRoot",
+        "nodes": [
+          {
+            "id": "AppRoot",
+            "name": "<OfflineFirstSecurityShell />",
+            "props": {
+              "vault": "SECURE_ENCLAVE_KEYSTORE",
+              "database": "WATERMELONDB_SQLITE_JSI"
+            },
+            "children": [
+              {
+                "id": "HardwareKeyVault",
+                "name": "<HardwareKeyStoreManager />",
+                "props": {
+                  "encryption": "AES_256_GCM_HARDWARE",
+                  "biometricGated": "FACEID_TRUE"
+                }
+              },
+              {
+                "id": "SqliteJsiEngine",
+                "name": "<WatermelonDbJsiEngine />",
+                "props": {
+                  "journalMode": "WAL_CONCURRENT",
+                  "throughput": "26000_RECS_PER_SEC"
+                }
+              },
+              {
+                "id": "DeltaSyncCoordinator",
+                "name": "<MonotonicDeltaSyncCoordinator />",
+                "props": {
+                  "conflictEngine": "THREE_WAY_MERGE",
+                  "atomicity": "ACID_TRANSACTION"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Authenticate via Secure Enclave hardware vault for Composite B-Tree Indexing & SQ.",
+            "activeId": "HardwareKeyVault",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "HardwareKeyVault",
+                "name": "<HardwareKeyStoreManager />",
+                "props": {
+                  "status": "KEY_RELEASED_AUTHENTICATED"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute indexed queries across 1,000,000 records in SQLite JSI WAL mode.",
+            "activeId": "SqliteJsiEngine",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "SqliteJsiEngine",
+                "name": "<WatermelonDbJsiEngine />",
+                "props": {
+                  "queryState": "INDEXED_COVERING_SCAN_1MS"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Apply monotonic delta changesets with ACID transactional atomicity.",
+            "activeId": "DeltaSyncCoordinator",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "DeltaSyncCoordinator",
+                "name": "<MonotonicDeltaSyncCoordinator />",
+                "props": {
+                  "syncState": "CHANGESET_COMMITTED_ATOMIC"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify zero data corruption and 10,000-record batch processing in 380ms.",
+            "activeId": "AppRoot",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppRoot",
+                "name": "<OfflineFirstSecurityShell />",
+                "props": {
+                  "certification": "OFFLINE_FIRST_SOVEREIGNTY_VERIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "SQLite WAL Mode & Multi-Threaded Concurrent Read/Write Architecture",
+      "codeHash": "b9db0f76d9c64cfaf25919c62d8ca9e9fda9037f2edd7433b6e1de989ff6f7da",
+      "spec": {
+        "template": "component-tree",
+        "rootId": "AppRoot",
+        "nodes": [
+          {
+            "id": "AppRoot",
+            "name": "<OfflineFirstSecurityShell />",
+            "props": {
+              "vault": "SECURE_ENCLAVE_KEYSTORE",
+              "database": "WATERMELONDB_SQLITE_JSI"
+            },
+            "children": [
+              {
+                "id": "HardwareKeyVault",
+                "name": "<HardwareKeyStoreManager />",
+                "props": {
+                  "encryption": "AES_256_GCM_HARDWARE",
+                  "biometricGated": "FACEID_TRUE"
+                }
+              },
+              {
+                "id": "SqliteJsiEngine",
+                "name": "<WatermelonDbJsiEngine />",
+                "props": {
+                  "journalMode": "WAL_CONCURRENT",
+                  "throughput": "26000_RECS_PER_SEC"
+                }
+              },
+              {
+                "id": "DeltaSyncCoordinator",
+                "name": "<MonotonicDeltaSyncCoordinator />",
+                "props": {
+                  "conflictEngine": "THREE_WAY_MERGE",
+                  "atomicity": "ACID_TRANSACTION"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Authenticate via Secure Enclave hardware vault for SQLite WAL Mode & Multi-Thread.",
+            "activeId": "HardwareKeyVault",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "HardwareKeyVault",
+                "name": "<HardwareKeyStoreManager />",
+                "props": {
+                  "status": "KEY_RELEASED_AUTHENTICATED"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute indexed queries across 1,000,000 records in SQLite JSI WAL mode.",
+            "activeId": "SqliteJsiEngine",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "SqliteJsiEngine",
+                "name": "<WatermelonDbJsiEngine />",
+                "props": {
+                  "queryState": "INDEXED_COVERING_SCAN_1MS"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Apply monotonic delta changesets with ACID transactional atomicity.",
+            "activeId": "DeltaSyncCoordinator",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "DeltaSyncCoordinator",
+                "name": "<MonotonicDeltaSyncCoordinator />",
+                "props": {
+                  "syncState": "CHANGESET_COMMITTED_ATOMIC"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify zero data corruption and 10,000-record batch processing in 380ms.",
+            "activeId": "AppRoot",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppRoot",
+                "name": "<OfflineFirstSecurityShell />",
+                "props": {
+                  "certification": "OFFLINE_FIRST_SOVEREIGNTY_VERIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "rootId": "AppRoot",
+        "nodes": [
+          {
+            "id": "AppRoot",
+            "name": "<OfflineFirstSecurityShell />",
+            "props": {
+              "vault": "SECURE_ENCLAVE_KEYSTORE",
+              "database": "WATERMELONDB_SQLITE_JSI"
+            },
+            "children": [
+              {
+                "id": "HardwareKeyVault",
+                "name": "<HardwareKeyStoreManager />",
+                "props": {
+                  "encryption": "AES_256_GCM_HARDWARE",
+                  "biometricGated": "FACEID_TRUE"
+                }
+              },
+              {
+                "id": "SqliteJsiEngine",
+                "name": "<WatermelonDbJsiEngine />",
+                "props": {
+                  "journalMode": "WAL_CONCURRENT",
+                  "throughput": "26000_RECS_PER_SEC"
+                }
+              },
+              {
+                "id": "DeltaSyncCoordinator",
+                "name": "<MonotonicDeltaSyncCoordinator />",
+                "props": {
+                  "conflictEngine": "THREE_WAY_MERGE",
+                  "atomicity": "ACID_TRANSACTION"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Authenticate via Secure Enclave hardware vault for SQLite WAL Mode & Multi-Thread.",
+            "activeId": "HardwareKeyVault",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "HardwareKeyVault",
+                "name": "<HardwareKeyStoreManager />",
+                "props": {
+                  "status": "KEY_RELEASED_AUTHENTICATED"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute indexed queries across 1,000,000 records in SQLite JSI WAL mode.",
+            "activeId": "SqliteJsiEngine",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "SqliteJsiEngine",
+                "name": "<WatermelonDbJsiEngine />",
+                "props": {
+                  "queryState": "INDEXED_COVERING_SCAN_1MS"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Apply monotonic delta changesets with ACID transactional atomicity.",
+            "activeId": "DeltaSyncCoordinator",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "DeltaSyncCoordinator",
+                "name": "<MonotonicDeltaSyncCoordinator />",
+                "props": {
+                  "syncState": "CHANGESET_COMMITTED_ATOMIC"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify zero data corruption and 10,000-record batch processing in 380ms.",
+            "activeId": "AppRoot",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppRoot",
+                "name": "<OfflineFirstSecurityShell />",
+                "props": {
+                  "certification": "OFFLINE_FIRST_SOVEREIGNTY_VERIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
