@@ -1428,3 +1428,222 @@ test('Block 133: B.Com Accounting Days 21-25 Gate v2 Visual JSON Integrity Verif
   }
 });
 
+// ============================================================================
+// BLOCK 134: B.Com Accounting Days 26 to 30 (TASK-1379..1383)
+// Milestone 6: Advanced Corporate Tax Audit, Financial Diagnostics & Grand Master Capstone Suite
+// COURSE 22 100% COMPLETE (30/30 DAYS)
+// ============================================================================
+
+test('Block 134: B.Com Accounting Days 26-30 Structural & Invariant Verification', () => {
+  assert.equal(BCOM_ACCOUNTING_LONG_LESSONS.length, 30, 'Course 22 must contain all 30 days');
+
+  for (let d = 26; d <= 30; d++) {
+    const lesson = getLongLesson('bcom-accounting', d);
+    assert.ok(lesson, `bcom-accounting Day ${d} must be defined`);
+    assert.equal(lesson.coursePrefix, 'bcom-accounting');
+    assert.equal(lesson.day, d);
+    assert.equal(lesson.parts.length, 5, `Day ${d} must have exactly 5 parts`);
+
+    const expectedMinutes = d === 30 ? 50 : 45;
+    assert.equal(lesson.minutes, expectedMinutes, `Day ${d} minutes must be ${expectedMinutes}`);
+
+    let totalWords = 0;
+    for (let i = 0; i < 5; i++) {
+      const part = lesson.parts[i];
+      assert.ok(part.title && part.title.length > 0, `Day ${d} Part ${i + 1} title missing`);
+      const words = part.say.reduce((acc: number, s: string) => acc + s.trim().split(/\s+/).length, 0);
+      totalWords += words;
+      assert.ok(words >= 580, `Day ${d} Part ${i + 1} must have >= 580 words, got ${words}`);
+
+      assert.ok(part.example && part.example.length > 0, `Day ${d} Part ${i + 1} example missing`);
+      assert.ok(part.code && part.code.length > 0, `Day ${d} Part ${i + 1} code missing`);
+      assert.ok(part.output && part.output.length > 0, `Day ${d} Part ${i + 1} output missing`);
+
+      const chk = part.check as any;
+      assert.ok(chk && chk.question && chk.question.length > 10, `Day ${d} Part ${i + 1} check question missing`);
+      assert.equal(chk.options.length, 4, `Day ${d} Part ${i + 1} check must have 4 options`);
+      assert.equal(chk.answerIndex, 0, `Day ${d} Part ${i + 1} answerIndex must be 0`);
+      assert.equal(chk.answer, 0, `Day ${d} Part ${i + 1} answer must be 0`);
+      assert.ok(chk.explanation && chk.explanation.length > 10, `Day ${d} Part ${i + 1} explanation missing`);
+    }
+
+    assert.ok(totalWords >= 2950, `Day ${d} total words (${totalWords}) must be >= 2950`);
+    assert.ok(lesson.summary && lesson.summary.length >= 4, `Day ${d} summary must have >= 4 items`);
+    assert.ok(lesson.projectStep && lesson.projectStep.steps && lesson.projectStep.steps.length >= 4, `Day ${d} projectStep must have >= 4 steps`);
+  }
+});
+
+test('Block 134: B.Com Accounting Day 26: Capital Gains & Corporate Tax (Sec 115BAA)', () => {
+  const lesson = getLongLesson('bcom-accounting', 26);
+  assert.equal(lesson.day, 26);
+  assert.match(lesson.title, /Capital Gains Taxation & Corporate Income Tax/i);
+
+  // Part 1: Capital Asset Classification
+  assert.match(lesson.parts[0].title, /Capital Asset Classification/i);
+  assert.ok(lesson.parts[0].code?.includes('CapitalGainClassificationEngine'));
+
+  // Part 2: Section 112A & 111A
+  assert.match(lesson.parts[1].title, /Section 112A LTCG.*Section 111A STCG/i);
+  assert.ok(lesson.parts[1].code?.includes('EquityCapitalGainsTaxEngine'));
+
+  // Part 3: Section 115BAA
+  assert.match(lesson.parts[2].title, /Corporate Income Tax under Section 115BAA/i);
+  assert.ok(lesson.parts[2].code?.includes('Section115BAACorporateTaxEngine'));
+
+  // Part 4: Advance Tax & 234B/234C
+  assert.match(lesson.parts[3].title, /Advance Tax Schedules & Section 234B\/234C/i);
+  assert.ok(lesson.parts[3].code?.includes('AdvanceTaxComplianceEngine'));
+
+  // Part 5: Corporate Tax Dossier & ITR-6
+  assert.match(lesson.parts[4].title, /Corporate Tax Audit Dossier & Form ITR-6/i);
+  assert.ok(lesson.parts[4].code?.includes('CorporateTaxAuditDossier'));
+  assert.ok(lesson.parts[2].output?.includes('SECTION 115BAA CORPORATE INCOME TAX COMPUTATION AUDIT'));
+});
+
+test('Block 134: B.Com Accounting Day 27: Financial Statement Diagnostics & Ratio Analysis', () => {
+  const lesson = getLongLesson('bcom-accounting', 27);
+  assert.equal(lesson.day, 27);
+  assert.match(lesson.title, /Financial Statement Analysis.*Ratios/i);
+
+  // Part 1: Liquidity Ratio Diagnostics
+  assert.match(lesson.parts[0].title, /Liquidity Ratio Diagnostics.*Current Ratio.*Acid-Test/i);
+  assert.ok(lesson.parts[0].code?.includes('LiquidityDiagnosticsEngine'));
+
+  // Part 2: Solvency & Leverage Ratios
+  assert.match(lesson.parts[1].title, /Solvency & Leverage Ratios.*Debt-to-Equity/i);
+  assert.ok(lesson.parts[1].code?.includes('SolvencyLeverageEngine'));
+
+  // Part 3: Profitability Ratios & DuPont ROE
+  assert.match(lesson.parts[2].title, /Profitability Ratios & DuPont Return on Equity/i);
+  assert.ok(lesson.parts[2].code?.includes('DuPontProfitabilityEngine'));
+
+  // Part 4: Activity & Turnover Ratios
+  assert.match(lesson.parts[3].title, /Activity & Turnover Ratios.*Inventory Velocity/i);
+  assert.ok(lesson.parts[3].code?.includes('ActivityVelocityEngine'));
+
+  // Part 5: Comprehensive Health Dashboard
+  assert.match(lesson.parts[4].title, /Comprehensive Corporate Financial Health Diagnostic Dashboard/i);
+  assert.ok(lesson.parts[4].code?.includes('FinancialHealthDashboard'));
+  assert.ok(lesson.parts[2].output?.includes('3-STAGE DUPONT RETURN ON EQUITY (ROE) DECOMPOSITION AUDIT'));
+});
+
+test('Block 134: B.Com Accounting Day 28: AS-3 Cash Flow Statement Engineering', () => {
+  const lesson = getLongLesson('bcom-accounting', 28);
+  assert.equal(lesson.day, 28);
+  assert.match(lesson.title, /Cash Flow Statement \(AS-3\)/i);
+
+  // Part 1: AS-3 / Ind AS 7 Statutory Architecture
+  assert.match(lesson.parts[0].title, /AS-3 \/ Ind AS 7 Statutory Architecture/i);
+  assert.ok(lesson.parts[0].code?.includes('CashFlowClassificationEngine'));
+
+  // Part 2: Operating Activities Indirect Method
+  assert.match(lesson.parts[1].title, /Operating Cash Flows \(CFO\).*Non-Cash Addbacks/i);
+  assert.ok(lesson.parts[1].code?.includes('CfoIndirectEngine'));
+
+  // Part 3: Investing & Financing Activities
+  assert.match(lesson.parts[2].title, /Investing \(CFI\) & Financing \(CFF\) Activities/i);
+  assert.ok(lesson.parts[2].code?.includes('CfiCffReconstructionEngine'));
+
+  // Part 4: Complete AS-3 Cash Reconciliation & FCF
+  assert.match(lesson.parts[3].title, /Complete AS-3 Cash Reconciliation & Free Cash Flow/i);
+  assert.ok(lesson.parts[3].code?.includes('FreeCashFlowEngine'));
+
+  // Part 5: Executive Cash Flow Control Dossier
+  assert.match(lesson.parts[4].title, /Executive Cash Flow Control Dossier/i);
+  assert.ok(lesson.parts[4].code?.includes('CashFlowGovernanceDossier'));
+  assert.ok(lesson.parts[3].output?.includes('COMPLETE AS-3 CASH RECONCILIATION & FREE CASH FLOW AUDIT'));
+});
+
+test('Block 134: B.Com Accounting Day 29: Cloud Accounting, AI OCR & Forensic Audit', () => {
+  const lesson = getLongLesson('bcom-accounting', 29);
+  assert.equal(lesson.day, 29);
+  assert.match(lesson.title, /Cloud Accounting, AI Invoicing \(OCR\) & Forensic Fraud Detection/i);
+
+  // Part 1: Cloud ERP Ingestion
+  assert.match(lesson.parts[0].title, /Cloud Accounting Architectures & API-Driven Automated Ledger Ingestion/i);
+  assert.ok(lesson.parts[0].code?.includes('CloudLedgerPipeline'));
+
+  // Part 2: AI Invoice OCR
+  assert.match(lesson.parts[1].title, /AI-Powered OCR Invoicing & Intelligent Field Extraction Algorithms/i);
+  assert.ok(lesson.parts[1].code?.includes('InvoiceOCREngine'));
+
+  // Part 3: 3-Way Matching
+  assert.match(lesson.parts[2].title, /Automated 3-Way Reconciliation Matching Engine/i);
+  assert.ok(lesson.parts[2].code?.includes('ThreeWayMatchingEngine'));
+
+  // Part 4: Benford's Law
+  assert.match(lesson.parts[3].title, /Forensic Accounting & Fraud Detection via Benford's Law/i);
+  assert.ok(lesson.parts[3].code?.includes('BenfordsLawForensicAuditor'));
+  assert.ok(lesson.parts[3].output?.includes('FORENSIC BENFORD\'S LAW DIGITAL ANALYSIS'));
+
+  // Part 5: Red-Flag Diagnostics
+  assert.match(lesson.parts[4].title, /Red-Flag Anomaly Diagnostics, Audit Trail Verification & Internal Control Testing/i);
+  assert.ok(lesson.parts[4].code?.includes('ForensicRedFlagEngine'));
+  assert.ok(lesson.parts[4].output?.includes('FORENSIC RED-FLAG ANOMALY AUDIT REPORT'));
+});
+
+test('Block 134: B.Com Accounting Day 30: FINAL GRAND CAPSTONE', () => {
+  const lesson = getLongLesson('bcom-accounting', 30);
+  assert.equal(lesson.day, 30);
+  assert.match(lesson.title, /FINAL GRAND CAPSTONE/i);
+  assert.equal(lesson.minutes, 50, 'Day 30 capstone must be 50 minutes');
+
+  // Part 1: Capstone Phase 1
+  assert.match(lesson.parts[0].title, /Capstone Phase 1: Chart of Accounts Architecture/i);
+  assert.ok(lesson.parts[0].code?.includes('EnterpriseAccountingCore'));
+  assert.ok(lesson.parts[0].output?.includes('CAPSTONE PHASE 1: OPENING TRIAL BALANCE AUDIT'));
+
+  // Part 2: Capstone Phase 2
+  assert.match(lesson.parts[1].title, /Capstone Phase 2: Dual GST Commercial Invoicing/i);
+  assert.ok(lesson.parts[1].code?.includes('GSTCommercialSettlementEngine'));
+  assert.ok(lesson.parts[1].output?.includes('CAPSTONE PHASE 2: GST COMMERCIAL SETTLEMENT'));
+
+  // Part 3: Capstone Phase 3
+  assert.match(lesson.parts[2].title, /Capstone Phase 3: Payroll Statutory Compliance/i);
+  assert.ok(lesson.parts[2].code?.includes('StatutoryWithholdingEngine'));
+  assert.ok(lesson.parts[2].output?.includes('CAPSTONE PHASE 3: PAYROLL & STATUTORY WITHHOLDING AUDIT'));
+
+  // Part 4: Capstone Phase 4
+  assert.match(lesson.parts[3].title, /Capstone Phase 4: Ind AS Balance Sheet/i);
+  assert.ok(lesson.parts[3].code?.includes('IndASFinancialReportingEngine'));
+  assert.ok(lesson.parts[3].output?.includes('CAPSTONE PHASE 4: Ind AS FINANCIAL STATEMENTS & AS-3 AUDIT'));
+
+  // Part 5: Capstone Phase 5
+  assert.match(lesson.parts[4].title, /Capstone Phase 5: Comprehensive Tax Audit/i);
+  assert.ok(lesson.parts[4].code?.includes('TaxAuditAndHealthCertificationEngine'));
+  assert.ok(lesson.parts[4].output?.includes('CAPSTONE PHASE 5: SECTION 44AB TAX AUDIT'));
+  assert.ok(lesson.parts[4].output?.includes('GRAND MASTER CAPSTONE CONTROLLER CERTIFICATION ISSUED'));
+  assert.ok(lesson.parts[4].output?.includes('Digital Corporate Financial Controller & Tax Auditor'));
+});
+
+test('Block 134: B.Com Accounting Days 26-30 Gate v2 Visual JSON Integrity Verification', () => {
+  const fs = require('fs');
+  const path = require('path');
+  const crypto = require('crypto');
+
+  for (let d = 26; d <= 30; d++) {
+    const pad = String(d).padStart(2, '0');
+    const visPath = path.join(__dirname, `../src/lib/data/lessonVisuals/bcom-accounting/day-${pad}.json`);
+    assert.ok(fs.existsSync(visPath), `Visual JSON must exist for Day ${d}`);
+
+    const vis = JSON.parse(fs.readFileSync(visPath, 'utf8'));
+    assert.equal(vis.prefix, 'bcom-accounting');
+    assert.equal(vis.day, d);
+    assert.equal(vis.entries.length, 5, `Day ${d} visual must contain exactly 5 entries`);
+
+    const lesson = getLongLesson('bcom-accounting', d);
+    for (let i = 0; i < 5; i++) {
+      const entry = vis.entries[i];
+      const part = lesson.parts[i];
+
+      assert.equal(entry.spec.template, 'ledger-sheet', `Day ${d} Part ${i + 1} must use ledger-sheet template`);
+      assert.ok(entry.spec.steps.length >= 3, `Day ${d} Part ${i + 1} visual must have >= 3 steps`);
+
+      // Verify SHA-256 binding between code and visual entry
+      const expectedHash = crypto.createHash('sha256').update(part.code).digest('hex');
+      assert.equal(entry.codeHash, expectedHash, `Day ${d} Part ${i + 1} visual codeHash must match actual part.code`);
+    }
+  }
+});
+
+
