@@ -1,0 +1,501 @@
+"""
+Day 14 Builder: Financial Statements: Balance Sheet Marshalling & Working Capital
+Course: B.Com Digital Accounting & Taxation (bcom-accounting)
+Track: Commerce / Accounting
+Duration: 45 minutes
+Mode: 5 parts, each >= 580 words, total >= 2950 words.
+Visual: ledger-sheet Gate v2 template.
+All code blocks are real, executed, and outputs captured.
+"""
+
+import sys
+import io
+import json
+import os
+
+sys.stdout.reconfigure(encoding="utf-8")
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from visual_builder import count_words
+from accounting_budget_ensurer import ensure_accounting_day_budget
+
+def capture_exec(code_str: str) -> str:
+    old_stdout = sys.stdout
+    sys.stdout = buffer = io.StringIO()
+    try:
+        exec(code_str, {})
+        output = buffer.getvalue()
+    finally:
+        sys.stdout = old_stdout
+    return output
+
+# --- Part 1 Code: Balance Sheet Marshalling Engine (Permanence vs Liquidity) ---
+code_p1 = '''def marshal_balance_sheet(balance_sheet_items, marshalling_order):
+    assets = [item for item in balance_sheet_items if item['class'] == 'ASSET']
+    liabilities = [item for item in balance_sheet_items if item['class'] in ['LIABILITY', 'EQUITY']]
+
+    # Sorting priorities
+    # Liquidity Order: Cash -> Bank -> Debtors -> Inventory -> Fixed Assets
+    # Permanence Order: Fixed Assets -> Inventory -> Debtors -> Bank -> Cash
+    rank_liquidity = {
+        'CASH_EQUIVALENT': 1,
+        'MARKETABLE_SECURITIES': 2,
+        'TRADE_RECEIVABLES': 3,
+        'INVENTORY': 4,
+        'PREPAID_EXPENSES': 5,
+        'INTANGIBLE_ASSETS': 6,
+        'FIXED_ASSETS_TANGIBLE': 7,
+        'CURRENT_LIABILITIES': 1,
+        'LONG_TERM_DEBT': 2,
+        'SHAREHOLDER_EQUITY': 3
+    }
+
+    rank_permanence = {
+        'INTANGIBLE_ASSETS': 1,
+        'FIXED_ASSETS_TANGIBLE': 2,
+        'INVENTORY': 3,
+        'TRADE_RECEIVABLES': 4,
+        'MARKETABLE_SECURITIES': 5,
+        'CASH_EQUIVALENT': 6,
+        'PREPAID_EXPENSES': 7,
+        'SHAREHOLDER_EQUITY': 1,
+        'LONG_TERM_DEBT': 2,
+        'CURRENT_LIABILITIES': 3
+    }
+
+    ranking = rank_liquidity if marshalling_order == 'ORDER_OF_LIQUIDITY' else rank_permanence
+
+    sorted_assets = sorted(assets, key=lambda x: ranking.get(x['subcategory'], 99))
+    sorted_liabilities = sorted(liabilities, key=lambda x: ranking.get(x['subcategory'], 99))
+
+    total_assets = sum(a['amount'] for a in sorted_assets)
+    total_liab_eq = sum(l['amount'] for l in sorted_liabilities)
+    is_balanced = round(total_assets, 2) == round(total_liab_eq, 2)
+
+    return {
+        'marshalling_order_applied': marshalling_order,
+        'total_assets': round(total_assets, 2),
+        'total_liabilities_and_equity': round(total_liab_eq, 2),
+        'is_balance_sheet_in_equilibrium': is_balanced,
+        'marshalled_assets': [(a['name'], a['amount']) for a in sorted_assets],
+        'marshalled_liabilities': [(l['name'], l['amount']) for l in sorted_liabilities]
+    }
+
+bs_items = [
+    {'name': 'Cash in Hand & Bank', 'amount': 45000.0, 'class': 'ASSET', 'subcategory': 'CASH_EQUIVALENT'},
+    {'name': 'Sundry Debtors (Net)', 'amount': 95000.0, 'class': 'ASSET', 'subcategory': 'TRADE_RECEIVABLES'},
+    {'name': 'Closing Merchandise Inventory', 'amount': 120000.0, 'class': 'ASSET', 'subcategory': 'INVENTORY'},
+    {'name': 'Plant & Heavy Machinery', 'amount': 380000.0, 'class': 'ASSET', 'subcategory': 'FIXED_ASSETS_TANGIBLE'},
+    {'name': 'Factory Land & Buildings', 'amount': 450000.0, 'class': 'ASSET', 'subcategory': 'FIXED_ASSETS_TANGIBLE'},
+    {'name': 'Sundry Creditors (AP)', 'amount': 85000.0, 'class': 'LIABILITY', 'subcategory': 'CURRENT_LIABILITIES'},
+    {'name': 'Bank Overdraft Facility', 'amount': 35000.0, 'class': 'LIABILITY', 'subcategory': 'CURRENT_LIABILITIES'},
+    {'name': '10-Year Secured Bank Debentures', 'amount': 300000.0, 'class': 'LIABILITY', 'subcategory': 'LONG_TERM_DEBT'},
+    {'name': 'Equity Share Capital & Retained Earnings', 'amount': 670000.0, 'class': 'EQUITY', 'subcategory': 'SHAREHOLDER_EQUITY'}
+]
+
+res_p1_perm = marshal_balance_sheet(bs_items, 'ORDER_OF_PERMANENCE')
+print('Permanence Order Balance Sheet (Total: $' + str(res_p1_perm['total_assets']) + '):')
+print('  Equilibrium Verified: ' + str(res_p1_perm['is_balance_sheet_in_equilibrium']))
+for name, val in res_p1_perm['marshalled_assets']:
+    print('  Asset: ' + name + ' ($' + str(val) + ')')
+for name, val in res_p1_perm['marshalled_liabilities']:
+    print('  Liab/Eq: ' + name + ' ($' + str(val) + ')')
+'''
+
+out_p1 = capture_exec(code_p1)
+
+# --- Part 2 Code: Net Working Capital & Liquidity Ratio Diagnostics ---
+code_p2 = '''def calculate_working_capital_and_liquidity_ratios(balance_sheet_data):
+    current_assets = balance_sheet_data['current_assets']
+    current_liabilities = balance_sheet_data['current_liabilities']
+    inventory = balance_sheet_data.get('inventory', 0.0)
+    prepaid_expenses = balance_sheet_data.get('prepaid_expenses', 0.0)
+
+    # 1. Net Working Capital (NWC)
+    net_working_capital = current_assets - current_liabilities
+
+    # 2. Current Ratio (Ideal benchmark = 2.0:1)
+    current_ratio = current_assets / current_liabilities if current_liabilities > 0 else 0.0
+
+    # 3. Quick / Acid-Test Ratio (Quick Assets = CA - Inventory - Prepaid; Ideal = 1.0:1)
+    quick_assets = current_assets - inventory - prepaid_expenses
+    quick_ratio = quick_assets / current_liabilities if current_liabilities > 0 else 0.0
+
+    # 4. Cash Ratio / Absolute Liquidity (Cash + Marketable Securities / CL)
+    cash_equivalents = balance_sheet_data.get('cash_and_bank', 0.0)
+    cash_ratio = cash_equivalents / current_liabilities if current_liabilities > 0 else 0.0
+
+    return {
+        'current_assets_total': round(current_assets, 2),
+        'current_liabilities_total': round(current_liabilities, 2),
+        'net_working_capital': round(net_working_capital, 2),
+        'current_ratio': round(current_ratio, 2),
+        'quick_ratio': round(quick_ratio, 2),
+        'cash_ratio': round(cash_ratio, 2),
+        'is_liquidity_healthy': current_ratio >= 1.5 and quick_ratio >= 1.0
+    }
+
+wc_data = {
+    'current_assets': 260000.0,
+    'current_liabilities': 120000.0,
+    'inventory': 120000.0,
+    'prepaid_expenses': 5000.0,
+    'cash_and_bank': 45000.0
+}
+
+res_p2 = calculate_working_capital_and_liquidity_ratios(wc_data)
+print('Current Assets: $' + str(res_p2['current_assets_total']))
+print('Current Liabilities: $' + str(res_p2['current_liabilities_total']))
+print('Net Working Capital (CA - CL): $' + str(res_p2['net_working_capital']))
+print('Current Ratio: ' + str(res_p2['current_ratio']) + ':1')
+print('Quick Ratio (Acid-Test): ' + str(res_p2['quick_ratio']) + ':1')
+print('Cash Ratio: ' + str(res_p2['cash_ratio']) + ':1')
+print('Institutional Liquidity Healthy: ' + str(res_p2['is_liquidity_healthy']))
+'''
+
+out_p2 = capture_exec(code_p2)
+
+# --- Part 3 Code: Balance Sheet Structural Anatomy: Non-Current vs Current Classification ---
+code_p3 = '''def categorize_balance_sheet_subsystems(accounts_schedule):
+    taxonomy = {
+        'NON_CURRENT_ASSETS': [],
+        'CURRENT_ASSETS': [],
+        'SHAREHOLDER_EQUITY': [],
+        'NON_CURRENT_LIABILITIES': [],
+        'CURRENT_LIABILITIES': []
+    }
+
+    for acct in accounts_schedule:
+        name = acct['name']
+        amt = acct['balance']
+        section = acct['target_section']
+        taxonomy[section].append((name, amt))
+
+    summary_totals = {sec: round(sum(v[1] for v in items), 2) for sec, items in taxonomy.items()}
+    total_assets = summary_totals['NON_CURRENT_ASSETS'] + summary_totals['CURRENT_ASSETS']
+    total_claims = (
+        summary_totals['SHAREHOLDER_EQUITY'] + 
+        summary_totals['NON_CURRENT_LIABILITIES'] + 
+        summary_totals['CURRENT_LIABILITIES']
+    )
+
+    return {
+        'section_totals': summary_totals,
+        'total_assets': total_assets,
+        'total_claims': total_claims,
+        'is_accounting_equation_satisfied': round(total_assets, 2) == round(total_claims, 2),
+        'breakdown': taxonomy
+    }
+
+schedule = [
+    {'name': 'Freehold Land & Factory Site', 'balance': 500000.0, 'target_section': 'NON_CURRENT_ASSETS'},
+    {'name': 'Plant & Machinery (Net)', 'balance': 320000.0, 'target_section': 'NON_CURRENT_ASSETS'},
+    {'name': 'Patents & Proprietary Trademarks', 'balance': 80000.0, 'target_section': 'NON_CURRENT_ASSETS'},
+    {'name': 'Raw Material & Finished Inventory', 'balance': 110000.0, 'target_section': 'CURRENT_ASSETS'},
+    {'name': 'Trade Debtors (Accounts Receivable)', 'balance': 75000.0, 'target_section': 'CURRENT_ASSETS'},
+    {'name': 'Cash at Bank (Current Account)', 'balance': 55000.0, 'target_section': 'CURRENT_ASSETS'},
+    {'name': 'Common Share Capital', 'balance': 600000.0, 'target_section': 'SHAREHOLDER_EQUITY'},
+    {'name': 'General Reserves & Retained Profits', 'balance': 190000.0, 'target_section': 'SHAREHOLDER_EQUITY'},
+    {'name': '8.5% Secured Mortgages (15-Year)', 'balance': 250000.0, 'target_section': 'NON_CURRENT_LIABILITIES'},
+    {'name': 'Accounts Payable (Trade Creditors)', 'balance': 70000.0, 'target_section': 'CURRENT_LIABILITIES'},
+    {'name': 'Accrued Statutory Tax Provision', 'balance': 30000.0, 'target_section': 'CURRENT_LIABILITIES'}
+]
+
+res_p3 = categorize_balance_sheet_subsystems(schedule)
+print('Balance Sheet Anatomy Totals:')
+for sec, val in sorted(res_p3['section_totals'].items()):
+    print('  ' + sec + ': $' + str(val))
+print('Total Assets: $' + str(res_p3['total_assets']))
+print('Total Claims (Liabilities + Equity): $' + str(res_p3['total_claims']))
+print('Accounting Equation (Assets = Claims): ' + str(res_p3['is_accounting_equation_satisfied']))
+'''
+
+out_p3 = capture_exec(code_p3)
+
+# --- Part 4 Code: Capital Structure & Solvency Ratio Analysis (Debt-to-Equity & Proprietary) ---
+code_p4 = '''def calculate_capital_structure_and_solvency(balance_sheet_summary):
+    shareholder_equity = balance_sheet_summary['total_equity']
+    long_term_debt = balance_sheet_summary['total_non_current_debt']
+    current_liabilities = balance_sheet_summary['total_current_liabilities']
+    total_assets = balance_sheet_summary['total_assets']
+    
+    total_debt = long_term_debt + current_liabilities
+
+    # 1. Debt-to-Equity Ratio (Long-term Debt / Equity; Ideal <= 1.0 or 2.0 depending on sector)
+    debt_equity_ratio = long_term_debt / shareholder_equity if shareholder_equity > 0 else 0.0
+
+    # 2. Total Debt-to-Total Assets Ratio (Total Debt / Total Assets)
+    debt_asset_ratio = (total_debt / total_assets) * 100.0 if total_assets > 0 else 0.0
+
+    # 3. Proprietary Ratio (Equity / Total Assets; Ideal >= 50-60%)
+    proprietary_ratio = (shareholder_equity / total_assets) * 100.0 if total_assets > 0 else 0.0
+
+    # 4. Capital Gearing Ratio (Fixed-interest capital / Equity capital)
+    gearing_ratio = long_term_debt / shareholder_equity if shareholder_equity > 0 else 0.0
+
+    return {
+        'debt_to_equity_ratio': round(debt_equity_ratio, 2),
+        'debt_to_assets_pct': round(debt_asset_ratio, 2),
+        'proprietary_ratio_pct': round(proprietary_ratio, 2),
+        'capital_gearing_ratio': round(gearing_ratio, 2),
+        'is_enterprise_financially_solvent': proprietary_ratio >= 50.0 and debt_equity_ratio <= 1.5
+    }
+
+cap_data = {
+    'total_equity': 790000.0,
+    'total_non_current_debt': 250000.0,
+    'total_current_liabilities': 100000.0,
+    'total_assets': 1140000.0
+}
+
+res_p4 = calculate_capital_structure_and_solvency(cap_data)
+print('Debt-to-Equity Ratio: ' + str(res_p4['debt_to_equity_ratio']) + ':1')
+print('Total Debt-to-Assets: ' + str(res_p4['debt_to_assets_pct']) + '%')
+print('Proprietary Ratio (Equity / Assets): ' + str(res_p4['proprietary_ratio_pct']) + '%')
+print('Capital Gearing Ratio: ' + str(res_p4['capital_gearing_ratio']) + ':1')
+print('Long-Term Solvency Status: ' + str(res_p4['is_enterprise_financially_solvent']))
+'''
+
+out_p4 = capture_exec(code_p4)
+
+# --- Part 5 Code: Pre-Closing Trial Balance to Final Balance Sheet Audit Trail ---
+code_p5 = '''def verify_complete_trial_balance_to_balance_sheet_mapping(raw_trial_balance, adjustments):
+    # Proves the end-to-end integration of Trial Balance + Adjustments into Balance Sheet
+    tb = dict(raw_trial_balance)
+    
+    # Apply dual-aspect adjustments
+    for adj in adjustments:
+        acct = adj['account']
+        amt = adj['amount']
+        dr_cr = adj['side']
+        tb[acct] = tb.get(acct, 0.0) + (amt if dr_cr == 'DR' else -amt)
+
+    debit_assets_expenses = sum(v for v in tb.values() if v > 0)
+    credit_liabilities_revenues = abs(sum(v for v in tb.values() if v < 0))
+    is_balanced = round(debit_assets_expenses, 2) == round(credit_liabilities_revenues, 2)
+
+    return {
+        'total_adjusted_debits': round(debit_assets_expenses, 2),
+        'total_adjusted_credits': round(credit_liabilities_revenues, 2),
+        'is_trial_balance_in_equilibrium': is_balanced,
+        'accounts_audited_count': len(tb),
+        'audit_certification': 'AUDITED_BALANCE_SHEET_READY_FOR_PUBLICATION' if is_balanced else 'VARIANCE_EXCEPTION_FLAGGED'
+    }
+
+raw_tb = {
+    'Fixed Assets': 900000.0,
+    'Current Assets': 240000.0,
+    'Share Capital': -600000.0,
+    'Retained Earnings': -190000.0,
+    'Long-Term Debt': -250000.0,
+    'Current Liabilities': -100000.0
+}
+
+sample_adjustments = [
+    {'account': 'Current Assets', 'amount': 15000.0, 'side': 'DR'},           # Closing stock added
+    {'account': 'Current Liabilities', 'amount': 15000.0, 'side': 'CR'}        # Accrued expenses added
+]
+
+res_p5 = verify_complete_trial_balance_to_balance_sheet_mapping(raw_tb, sample_adjustments)
+print('Total Adjusted Debits: $' + str(res_p5['total_adjusted_debits']))
+print('Total Adjusted Credits: $' + str(res_p5['total_adjusted_credits']))
+print('Equilibrium Achieved: ' + str(res_p5['is_trial_balance_in_equilibrium']))
+print('Audit Certification: ' + res_p5['audit_certification'])
+'''
+
+out_p5 = capture_exec(code_p5)
+
+day14_raw = {
+    "coursePrefix": "bcom-accounting",
+    "day": 14,
+    "title": "Financial Statements: Balance Sheet Marshalling & Working Capital",
+    "minutes": 45,
+    "parts": [
+        {
+            "part": 1,
+            "title": "Balance Sheet Marshalling Architecture: Order of Permanence vs Order of Liquidity",
+            "code": code_p1,
+            "output": out_p1,
+            "example": "A corporate enterprise marshals its $1,090,000.00 Balance Sheet under the Order of Permanence, sequencing fixed assets ($830,000 in land, buildings, and plant) before liquid working assets ($260,000 in inventory, debtors, and cash), while aligning long-term equity capital ($670,000) and debentures ($300,000) above current liabilities ($120,000).",
+            "codeNotes": [
+                "Lines 1-38: Implements marshal_balance_sheet supporting both Order of Permanence and Order of Liquidity sorting algorithms.",
+                "Lines 40-52: Declares nine institutional balance sheet line items spanning fixed assets, working capital, debt, and equity.",
+                "Lines 54-61: Demonstrates permanence ordering and verifies two-sided equilibrium at $1,090,000.00."
+            ],
+            "tryIt": "Switch marshalling_order to 'ORDER_OF_LIQUIDITY' and observe how Cash and Bank move to the top of Assets while Current Liabilities move to the top of Liabilities.",
+            "check": {
+                "question": "What is the primary difference in presentation between the 'Order of Permanence' and the 'Order of Liquidity' on the Balance Sheet?",
+                "options": [
+                    "Order of Permanence lists least liquid, permanent assets (Land, Buildings, Plant) first, ending with Cash; Order of Liquidity lists the most liquid assets (Cash, Bank, Debtors) first, ending with permanent assets.",
+                    "Order of Permanence is used only for banks, while Order of Liquidity is used exclusively for governments.",
+                    "Order of Liquidity ignores equity capital entirely.",
+                    "There is no difference; assets are always listed in random alphabetical order."
+                ],
+                "answer": 0,
+                "why": "Marshalling refers to the systematic arrangement of assets and liabilities; Permanence order prioritizes long-term fixed assets (standard for corporations), while Liquidity order prioritizes cash and near-cash items (standard for banks and sole traders).",
+                "answerIndex": 0,
+                "explanation": "Marshalling refers to the systematic arrangement of assets and liabilities; Permanence order prioritizes long-term fixed assets (standard for corporations), while Liquidity order prioritizes cash and near-cash items (standard for banks and sole traders)."
+            },
+            "say": [
+                "The Balance Sheet represents the third and crowning structural division of the Final Accounts. Unlike the Trading Account and Profit & Loss Statement, which are nominal statements measuring performance over an entire fiscal period, the Balance Sheet is a classified statement of financial position at a single, frozen point in time (as of midnight on the closing date). It does not compute profit or loss; rather, it demonstrates how the enterprise's accumulated economic wealth is deployed across productive Assets, and how those assets were financed through External Liabilities and Owner Equity, embodying Fra Luca Pacioli's inviolable equation: Assets = Liabilities + Equity.",
+                "In enterprise financial reporting, an accountant cannot simply transcribe asset and liability accounts onto a page in random or alphabetical order. Presenting cash next to land, or listing long-term bonds next to petty trade payables, creates cognitive chaos and prevents financial analysts from evaluating liquidity and solvency. To impart structural clarity, accounting frameworks enforce the doctrine of Marshalling of Assets and Liabilities. Marshalling is defined as the systematic arrangement and grouping of assets and liabilities in a recognized, logical sequence.",
+                "In global accounting practice, marshalling is executed following one of two mutually exclusive structural paradigms: (1) The Order of Liquidity; and (2) The Order of Permanence. Under the Order of Liquidity, assets are arranged according to the speed and ease with which they can be converted into physical cash in the ordinary course of business. Assets flow from the most liquid to the least liquid: Cash in Hand, Cash at Bank, Marketable Securities, Sundry Debtors, Bills Receivable, Closing Inventory, Furniture, Machinery, and finally Freehold Land and Buildings. Correspondingly, liabilities flow from the most urgent short-term claims to permanent capital: Bank Overdraft, Sundry Creditors, Short-Term Loans, Long-Term Debentures, and Capital. The Order of Liquidity is mandatory for commercial banks, financial institutions, and sole proprietors who prioritize immediate debt solvency.",
+                "In stark contrast, industrial manufacturing corporations and joint-stock companies (under Schedule III of the Indian Companies Act and US GAAP / IFRS) universally deploy the Order of Permanence (Order of Capital Intensity). Under permanence order, the sequence is completely inverted: assets are listed starting from the most permanent, durable investments that form the core productive capacity of the enterprise, descending down to short-term liquid items. Assets flow: Goodwill and Intangibles, Freehold Land, Factory Buildings, Plant and Machinery, Merchandise Inventory, Sundry Debtors, and finally Cash at Bank and Cash in Hand. Liabilities follow identical logic: Equity Share Capital, Retained Reserves, Long-Term Secured Debentures, Term Loans, and finally Current Trade Payables.",
+                "In Part 1, we build an institutional Balance Sheet Marshalling Engine in Python. The software ingests unorganized balance sheet accounts, applies priority ranking dictionaries across liquidity and permanence regimes, and compiles structured statements while verifying mathematical equilibrium. In our executed benchmark modeling a $1,090,000.00 corporate balance sheet under permanence order, $830,000.00 in fixed capital assets precedes $260,000.00 in current working assets, while $670,000.00 in equity capital and $300,000.00 in 10-year debentures precede $120,000.00 in current trade liabilities, proving perfect dual-sided balance.",
+                "Mastery of balance sheet marshalling elevates financial reporting to institutional standards. By presenting assets and claims in disciplined permanence hierarchies, corporate controllers provide credit rating agencies, institutional investors, and regulatory boards with immediate transparency into enterprise capital structure."
+            ]
+        },
+        {
+            "part": 2,
+            "title": "Net Working Capital & Corporate Liquidity Ratios: Current, Quick & Cash Ratios",
+            "code": code_p2,
+            "output": out_p2,
+            "example": "A treasury analyst evaluates a corporate balance sheet with $260,000 in Current Assets and $120,000 in Current Liabilities, computing $140,000 in Net Working Capital, an ideal 2.17:1 Current Ratio, a strong 1.125:1 Quick (Acid-Test) Ratio, and a 0.375:1 Cash Ratio, certifying institutional short-term liquidity health.",
+            "codeNotes": [
+                "Lines 1-32: Implements calculate_working_capital_and_liquidity_ratios computing NWC and multi-tier liquidity ratios.",
+                "Lines 34-40: Models corporate working capital inputs spanning current assets, trade liabilities, inventory, and cash reserves.",
+                "Lines 42-49: Confirms $140,000 NWC, 2.17 Current Ratio, 1.13 Quick Ratio, and passes institutional liquidity health checks."
+            ],
+            "tryIt": "Increase current liabilities by $60,000 (to $180,000) and observe how the Current Ratio collapses to 1.44:1 while the Quick Ratio drops below the critical 1.0 threshold.",
+            "check": {
+                "question": "Why is inventory strictly excluded from Current Assets when calculating the Quick Ratio (Acid-Test Ratio)?",
+                "options": [
+                    "Because inventory cannot be converted into cash immediately at predictable values; goods must first find willing buyers and are subject to price discounts, damage, and customer collection lags.",
+                    "Because inventory belongs exclusively to the corporate board of directors.",
+                    "Because inventory has already been written off as a permanent tax loss.",
+                    "Because inventory is classified as a non-current intangible asset."
+                ],
+                "answer": 0,
+                "why": "The Quick Ratio tests immediate short-term liquidity; inventory is excluded because it requires marketing, selling, and debt collection before converting into cash, unlike debtors and bank balances.",
+                "answerIndex": 0,
+                "explanation": "The Quick Ratio tests immediate short-term liquidity; inventory is excluded because it requires marketing, selling, and debt collection before converting into cash, unlike debtors and bank balances."
+            },
+            "say": [
+                "While long-term solvency guarantees that an enterprise possesses sufficient total assets to satisfy its total debt obligations eventually, daily operational survival depends on an entirely different financial dimension: Short-Term Liquidity. An enterprise can own $50,000,000 in valuable factory real estate and advanced manufacturing machinery, yet face immediate involuntary bankruptcy if it cannot pay $200,000 in supplier invoices, electricity bills, or payroll due tomorrow morning. The financial metric engineered to evaluate this short-term operating cushion on the Balance Sheet is Net Working Capital (NWC).",
+                "Net Working Capital represents the operational liquid reserve of the business, defined by the fundamental balance sheet equation: Net Working Capital = Current Assets - Current Liabilities. Current Assets encompass all resources expected to be converted into cash, sold, or consumed within the normal operating cycle of the business (or 12 months): Cash, Marketable Securities, Sundry Debtors, Bills Receivable, Closing Stock, and Prepaid Expenses. Current Liabilities encompass all obligations expected to be settled within 12 months: Sundry Creditors, Bills Payable, Short-Term Bank Overdrafts, Outstanding Expenses, and Current Tax Provisions. Positive working capital indicates that the enterprise possesses an adequate liquidity buffer to absorb trading shocks without selling off productive fixed assets.",
+                "To benchmark working capital quality across enterprises of varying sizes, corporate finance deploys three standardized Liquidity Ratios: (1) The Current Ratio (Working Capital Ratio): Calculated as Current Assets / Current Liabilities. The traditional institutional rule-of-thumb benchmark is 2.0:1 ($2 of current assets for every $1 of current liabilities). A ratio significantly below 1.5 indicates dangerous liquidity strain and high default risk, while an excessively high ratio (e.g., 5.0:1) signals inefficient working capital management, such as hoarding idle, non-interest-bearing cash or accumulating dead inventory.",
+                "(2) The Quick Ratio (Acid-Test Ratio): While the Current Ratio treats all current assets equally, inventory and prepaid expenses cannot be mobilized immediately to pay urgent debts. Merchandise must be marketed, sold, delivered, and collected. To test immediate solvency under distress, the Quick Ratio is calculated as: Quick Ratio = Quick Assets / Current Liabilities, where Quick Assets = Current Assets - Closing Inventory - Prepaid Expenses. The standard institutional benchmark is 1.0:1 ($1 of immediate liquid cash and receivables for every $1 of current obligations). (3) The Cash Ratio (Absolute Liquidity Ratio): Calculated as (Cash & Bank + Marketable Securities) / Current Liabilities. It tests what percentage of short-term debt can be extinguished immediately with pure legal tender.",
+                "In Part 2, we build an institutional Working Capital and Liquidity Ratio Engine in Python. The software ingests balance sheet working capital schedules, computes NWC cushions, strips illiquid inventory and prepayments to derive quick assets, and evaluates multi-tier ratios against institutional benchmarks. In our executed benchmark analyzing a corporate balance sheet with $260,000.00 current assets and $120,000.00 current liabilities, the engine computes $140,000.00 in Net Working Capital, an optimal 2.17:1 Current Ratio, a solid 1.13:1 Quick Ratio, and a 0.38:1 Cash Ratio, certifying institutional short-term liquidity health.",
+                "Rigorous liquidity monitoring shields enterprises from unexpected cash crunches. By continuously calibrating working capital buffers and auditing quick ratios against debt maturity schedules, financial controllers maintain operational agility and unassailable credit standing."
+            ]
+        },
+        {
+            "part": 3,
+            "title": "Balance Sheet Structural Anatomy: Non-Current vs Current Classification (IAS 1 / Schedule III)",
+            "code": code_p3,
+            "output": out_p3,
+            "example": "A corporate accounting team classifies eleven ledger accounts into standardized balance sheet subsystems under IAS 1 / Schedule III, assembling $900,000 in Non-Current Assets, $240,000 in Current Assets, $790,000 in Shareholder Equity, $250,000 in Non-Current Debt, and $100,000 in Current Liabilities to prove total equation equilibrium at $1,140,000.00.",
+            "codeNotes": [
+                "Lines 1-28: Implements categorize_balance_sheet_subsystems sorting accounts into standard GAAP/IFRS balance sheet subsystems.",
+                "Lines 30-42: Declares eleven accounts spanning land, plant, intangibles, working inventory, receivables, equity, mortgages, and payables.",
+                "Lines 44-50: Confirms Total Assets ($1,140,000.00) perfectly matches Total Claims ($1,140,000.00), verifying complete equation balance."
+            ],
+            "tryIt": "Add an unrecorded deferred tax asset of $20,000 offset by an increase in retained earnings of $20,000 and verify that total balance sheet footings expand to $1,160,000.",
+            "check": {
+                "question": "Under modern statutory frameworks (IAS 1 and Schedule III), what is the definitive criterion for classifying an asset or liability as 'Current' versus 'Non-Current'?",
+                "options": [
+                    "The Operating Cycle Criterion: An asset is Current if it is expected to be realized within 12 months or within the normal operating cycle of the business; a liability is Current if it is due to be settled within 12 months. All other items are Non-Current.",
+                    "Current assets are items made of paper; non-current assets are items made of metal.",
+                    "Classification depends entirely on whether the item was purchased with a credit card.",
+                    "All physical assets are current; all financial assets are non-current."
+                ],
+                "answer": 0,
+                "why": "Under IAS 1 and modern corporate statutes, the 12-month boundary or the operating cycle defines current assets and liabilities; long-term productive investments and multi-year borrowings are classified as non-current.",
+                "answerIndex": 0,
+                "explanation": "Under IAS 1 and modern corporate statutes, the 12-month boundary or the operating cycle defines current assets and liabilities; long-term productive investments and multi-year borrowings are classified as non-current."
+            },
+            "say": [
+                "In global corporate accounting regulation—governed by International Accounting Standard (IAS) 1 ('Presentation of Financial Statements') and national corporate laws such as Schedule III of the Indian Companies Act 2013—the structure of the corporate Balance Sheet is rigidly codified. The historical, unclassified T-format where assets were dumped into a single column is completely obsolete for incorporated enterprises. Modern statutory standards mandate the Classified Statement of Financial Position, which divides the balance sheet into five mutually exclusive architectural subsystems.",
+                "On the Assets side, the statement is bifurcated into: Subsystem 1 (Non-Current Assets): Defined as assets that are not held primarily for trading and are not expected to be realized within twelve months after the reporting period. Non-Current Assets are further sub-classified into: (a) Property, Plant, and Equipment (tangible productive assets: freehold land, buildings, plant, machinery, motor vehicles, reported at cost less accumulated depreciation); (b) Intangible Assets (identifiable non-monetary assets without physical substance: goodwill, patents, software licenses, trademarks, capitalized R&D); (c) Non-Current Investments (long-term equity stakes in subsidiaries or joint ventures); and (d) Deferred Tax Assets. Subsystem 2 (Current Assets): Encompasses inventories, trade receivables, cash and cash equivalents, short-term loans, and other current assets expected to convert within 12 months.",
+                "On the Liabilities and Equity side, the statement is divided into three distinct claims: Subsystem 3 (Shareholders' Funds / Equity): Represents the permanent residual interest of the enterprise owners, sub-divided into Share Capital (common stock, preferred stock) and Reserves & Surplus (retained earnings, securities premium, general reserves, revaluation reserves). Subsystem 4 (Non-Current Liabilities): Represents long-term borrowings and obligations due after more than twelve months: long-term secured debentures, bank term loans, deferred tax liabilities, and long-term employee benefit provisions (pensions and gratuity). Subsystem 5 (Current Liabilities): Encompasses short-term borrowings (bank overdrafts), trade payables (sundry creditors), other financial liabilities (current portion of long-term debt), and short-term provisions (statutory tax and dividends).",
+                "The defining operational filter governing this classification is the Operating Cycle Criterion. The Operating Cycle is the time elapsed between the acquisition of raw materials for processing and their realization in cash from customer receivables. Where an entity's normal operating cycle is not clearly identifiable, its duration is legally assumed to be 12 months. Any asset or obligation whose realization or settlement falls within this operating cycle is Current; all remaining assets and claims are Non-Current. Maintaining this strict dichotomy prevents companies from disguising long-term debt as temporary payables or masking illiquid investments as working capital.",
+                "In Part 3, we build an institutional Balance Sheet Subsystem Categorization Suite in Python. The software digests unclassified commercial ledger schedules, maps items to the five statutory subsystems, computes section aggregates, and validates the master accounting equation. Our benchmark classifies eleven corporate accounts: Non-Current Assets ($900,000.00) plus Current Assets ($240,000.00) establish total assets of $1,140,000.00. Symmetrically, Shareholder Equity ($790,000.00) plus Non-Current Debt ($250,000.00) plus Current Liabilities ($100,000.00) establish total claims of $1,140,000.00, demonstrating complete structural harmony.",
+                "Mastery of balance sheet subsystem anatomy equips financial controllers to author audited annual reports that meet international regulatory standards. By categorizing assets and liabilities across precise temporal and operational boundaries, corporate finance teams deliver unassailable financial transparency to global debt and equity markets."
+            ]
+        },
+        {
+            "part": 4,
+            "title": "Capital Structure & Long-Term Solvency Analytics: Debt-to-Equity & Proprietary Ratios",
+            "code": code_p4,
+            "output": out_p4,
+            "example": "A credit rating analyst evaluates an enterprise capital structure totaling $1,140,000 across $790,000 in equity and $350,000 in total debt, computing a conservative 0.32:1 Debt-to-Equity ratio, a 30.7% Debt-to-Assets burden, and a fortress 69.3% Proprietary Ratio, certifying long-term solvency and low financial distress risk.",
+            "codeNotes": [
+                "Lines 1-25: Implements calculate_capital_structure_and_solvency evaluating leverage, asset coverage, and proprietary ratios.",
+                "Lines 27-32: Declares corporate balance sheet summary inputs spanning $790k equity, $250k long-term debt, and $1.14M total assets.",
+                "Lines 34-39: Confirms 0.32 D/E ratio, 69.3% proprietary ratio, and certifies strong long-term solvency status."
+            ],
+            "tryIt": "Double long-term debt to $500,000 and observe how the Debt-to-Equity ratio climbs to 0.63:1 while the Proprietary Ratio drops toward 50%.",
+            "check": {
+                "question": "What does a high 'Proprietary Ratio' (Shareholders' Equity / Total Assets) signify regarding corporate financial health?",
+                "options": [
+                    "It indicates a high degree of long-term financial security and low insolvency risk, because a large percentage of total assets is funded by permanent owner equity rather than debt creditors.",
+                    "It indicates that the company is on the verge of bankruptcy.",
+                    "It proves that the enterprise does not own any physical fixed assets.",
+                    "It means the company is legally required to liquidate all cash reserves."
+                ],
+                "answer": 0,
+                "why": "The Proprietary Ratio measures the proportion of total assets funded by shareholders; a ratio above 50-60% provides a strong safety buffer for creditors and insulates the firm against debt default during economic recessions.",
+                "answerIndex": 0,
+                "explanation": "The Proprietary Ratio measures the proportion of total assets funded by shareholders; a ratio above 50-60% provides a strong safety buffer for creditors and insulates the firm against debt default during economic recessions."
+            },
+            "say": [
+                "While liquidity ratios assess the enterprise's ability to survive the next 90 days, long-term investors, debenture holders, and commercial lenders evaluate an entirely different dimension of corporate health: Solvency and Capital Structure. Solvency refers to the capacity of the enterprise to meet its long-term financial obligations, pay contracted debenture interest without interruption, and repay the principal of long-term borrowings upon maturity. An enterprise with high short-term cash balances can still be fundamentally insolvent if it is crushed under an unsustainable mountain of long-term debt. To diagnose long-term financial risk, analysts evaluate the Capital Structure of the Balance Sheet.",
+                "Capital Structure refers to the permanent long-term financing mix of the business, balancing Debt Capital (fixed-interest debentures, bank mortgages, syndicated loans) against Equity Capital (common stock, retained earnings, general reserves). The primary solvency indicator derived from the balance sheet is the Debt-to-Equity Ratio (D/E Ratio), calculated as: Debt-to-Equity Ratio = Total Long-Term Debt / Shareholders' Equity. The D/E ratio measures the financial leverage of the business: what proportion of enterprise capital was provided by creditors relative to owners. In stable, capital-intensive manufacturing industries, a D/E ratio of 1.0:1 or 1.5:1 is considered acceptable; however, a ratio exceeding 2.5:1 indicates excessive debt gearing, leaving the enterprise vulnerable to interest rate spikes and cash flow defaults during macroeconomic downturns.",
+                "A second critical solvency metric is the Proprietary Ratio (Equity-to-Assets Ratio), calculated as: Proprietary Ratio = (Shareholders' Equity / Total Assets) * 100. It measures the exact percentage of total enterprise assets funded by owner equity capital. A proprietary ratio of 65% indicates that shareholders fund 65 cents of every asset dollar, leaving only 35 cents financed by external creditors. A high proprietary ratio represents a fortress balance sheet: creditors enjoy an enormous equity cushion protecting them against asset devaluation, and the enterprise carries negligible risk of forced debt liquidation.",
+                "Conversely, analysts evaluate the Capital Gearing Ratio (Leverage Ratio), defined as: Fixed Cost-Bearing Capital (Long-term Debt + Preferred Stock) / Variable Cost-Bearing Equity (Common Stock + Retained Earnings). When debt is high relative to equity, the firm is said to be Highly Geared (High Leverage). High gearing accelerates earnings per share during economic booms (because debt interest is fixed and tax-deductible), but causes catastrophic earnings collapse during recessions. Maintaining balanced capital gearing is the ultimate mandate of corporate financial strategy.",
+                "In Part 4, we build an institutional Capital Structure and Solvency Analytics Suite in Python. The software evaluates balance sheet capital components, computes debt-to-equity and proprietary coverage ratios, and benchmarks financial distress probabilities. In our executed benchmark analyzing an enterprise with $790,000.00 equity, $250,000.00 long-term debt, and $1,140,000.00 total assets, the engine computes a conservative 0.32:1 Debt-to-Equity ratio, a low 30.70% total debt-to-assets burden, a strong 69.30% Proprietary Ratio, and a 0.32:1 gearing ratio, certifying exceptional long-term solvency.",
+                "Mastery of capital structure analytics empowers financial controllers to advise executive boards on corporate financing decisions. By balancing debt leverage against proprietary equity buffers, finance leaders optimize the cost of capital (WACC) while guaranteeing eternal enterprise solvency."
+            ]
+        },
+        {
+            "part": 5,
+            "title": "Trial Balance to Balance Sheet Mapping Pipeline: Audit Trail & Equation Integrity",
+            "code": code_p5,
+            "output": out_p5,
+            "example": "At fiscal year-end, the controller runs the automated Trial Balance to Balance Sheet Mapping Pipeline, applying $15,000 in closing stock and accrued expense adjustments across six core ledgers, proving adjusted debits ($1,155,000) exactly equal adjusted credits ($1,155,000) to certify final audit readiness.",
+            "codeNotes": [
+                "Lines 1-25: Implements verify_complete_trial_balance_to_balance_sheet_mapping proving end-to-end ledger integration.",
+                "Lines 27-39: Declares raw trial balance footings and applies dual-aspect period-end adjustments across assets and liabilities.",
+                "Lines 41-45: Confirms adjusted debits and credits equal $1,155,000.00 and outputs AUDITED_BALANCE_SHEET_READY_FOR_PUBLICATION."
+            ],
+            "tryIt": "Introduce a $5,000 one-sided adjustment without a matching credit and verify that the mapping engine immediately triggers a VARIANCE_EXCEPTION_FLAGGED alert.",
+            "check": {
+                "question": "What is the ultimate mathematical condition that proves a Balance Sheet has been compiled correctly from the General Ledger and Trial Balance?",
+                "options": [
+                    "Total Assets must mathematically equal Total Liabilities plus Owner Equity, proving that the dual-aspect double-entry equilibrium has been maintained across all adjusting entries.",
+                    "The Balance Sheet must show zero accounts payable.",
+                    "Total Assets must equal exactly double the net profit.",
+                    "The bank balance must be zero dollars."
+                ],
+                "answer": 0,
+                "why": "The fundamental accounting equation Assets = Liabilities + Equity must be satisfied to the exact cent; equality proves that every debit has an equal credit across all historical and adjusting entries.",
+                "answerIndex": 0,
+                "explanation": "The fundamental accounting equation Assets = Liabilities + Equity must be satisfied to the exact cent; equality proves that every debit has an equal credit across all historical and adjusting entries."
+            },
+            "say": [
+                "The compilation of the Balance Sheet represents the final summit of the financial accounting cycle. Every journal entry recorded in subsidiary books, every posting transferred to ledger T-accounts, every casting checksum validated in the trial balance, every period-end accrual and depreciation provision adjusted, and every gross and net profit margin computed across the Trading and Profit & Loss accounts culminates on this single financial statement. The Balance Sheet is the definitive constitutional document of the enterprise: an immutable, audited record proving that for every asset owned by the business, a corresponding claim exists in favor of external creditors or equity shareholders.",
+                "The integrity of the Balance Sheet depends entirely on an unbroken, automated Trial Balance to Balance Sheet Mapping Pipeline. In modern enterprise ERP architectures (such as SAP S/4HANA, Oracle Cloud ERP, and Microsoft Dynamics 365), this transition is not executed through manual cut-and-paste spreadsheets; it is driven by rigorous chart-of-accounts mapping logic and automated period-end validation routines.",
+                "The pipeline executes three sequential validation gates: Gate 1 (Trial Balance Extraction & Clearing): All nominal accounts (Sales, Purchases, Expenses) are cleared to zero through the Trading and Profit & Loss accounts, and the resulting Net Profit is added to Capital/Retained Earnings. The remaining unadjusted real and personal accounts are imported into the mapping pipeline. Gate 2 (Dual-Aspect Adjustments Engine): All year-end adjustments—such as unrecorded closing inventory, accrued wages, prepaid insurance, bad debt provisions, and deferred tax liabilities—are applied with strict two-sided discipline. Every debit to an asset or expense is accompanied by an equal credit to a liability or equity reserve.",
+                "Gate 3 (Equilibrium & Statutory Formatting): The engine aggregates the adjusted real and personal ledger accounts into standardized balance sheet subsystems under the chosen marshalling order (permanence or liquidity). The engine computes total assets and total claims, executing an automated zero-variance equality test: Total Assets - (Total Liabilities + Total Equity) == 0.00. If the variance is zero to the exact penny, the pipeline issues an official Audit Certification: Audited Balance Sheet Ready for Publication. If even a one-cent discrepancy exists, the pipeline halts publication and alerts controllers to an unlocated posting anomaly.",
+                "In Part 5, we engineer an institutional Trial Balance to Balance Sheet Mapping Suite in Python. The software ingests raw trial balance balances, applies dual-aspect period-end adjustments across asset and liability ledgers, computes adjusted debit and credit footings, and certifies audit readiness. In our executed benchmark, $1,140,000.00 in raw trial balance items is adjusted by $15,000.00 in closing stock (DR Current Assets) and $15,000.00 in accrued expenses (CR Current Liabilities): the engine verifies that total adjusted debits of $1,155,000.00 perfectly equal total adjusted credits of $1,155,000.00, conferring the official certification of Audited Balance Sheet Ready for Publication.",
+                "Mastery of balance sheet marshalling, working capital liquidity analysis, subsystem taxonomy, long-term solvency ratios, and automated mapping pipelines completes the corporate controller's command over financial statements. Equipped with these rigorous frameworks, finance executives lead corporate accounting closes with speed, precision, and unshakeable fiduciary integrity."
+            ]
+        }
+    ]
+}
+
+def build_day14():
+    print("Building Day 14...")
+    total_w = ensure_accounting_day_budget(day14_raw)
+    print("Day 14 word count after ensurer:", total_w)
+    for idx, p in enumerate(day14_raw["parts"]):
+        w = count_words(p["say"])
+        print(f"  Part {idx+1}: {w} words")
+        assert w >= 580, f"Part {idx+1} words {w} < 580"
+    assert total_w >= 2950, f"Total words {total_w} < 2950"
+
+    with open("scripts/bcom_acc_day14_data.json", "w", encoding="utf-8") as f:
+        json.dump(day14_raw, f, indent=2, ensure_ascii=False)
+    print("Saved scripts/bcom_acc_day14_data.json successfully")
+
+if __name__ == "__main__":
+    build_day14()
