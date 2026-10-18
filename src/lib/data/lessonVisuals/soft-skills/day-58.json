@@ -1,0 +1,157 @@
+[
+  {
+    "codeHash": "e960a85e9d617ca0b32776b5e4749cf8f67fabdaf3cda8114c4e47752118c26c",
+    "title": "Day 58: NASA JPL Mishap Investigation Board: Mars Cli...",
+    "subtitle": "Technical Communication & Strategic Mastery \u2014 NASA JPL Mishap Investigation Board: Mars Climate Orbiter (Interface Forensics)",
+    "stages": [
+      {
+        "id": "s1",
+        "name": "Cross-Team Interface Forensics",
+        "subtext": "Lockheed Imperial vs NASA Metric",
+        "tone": "warn"
+      },
+      {
+        "id": "s2",
+        "name": "Nominal Branded Type System",
+        "subtext": "Compile-Time Dimensional Analysis",
+        "tone": "data"
+      },
+      {
+        "id": "s3",
+        "name": "API Schema Contract Linting",
+        "subtext": "Mandatory Explicit Unit Suffixes",
+        "tone": "data"
+      },
+      {
+        "id": "s4",
+        "name": "Runtime Anomaly Interception",
+        "subtext": "Physical Plausibility Trajectory Guards",
+        "tone": "ok"
+      }
+    ]
+  },
+  {
+    "codeHash": "8f5037ac1bb63f673e98502f288826ccdc7eeef2f40010725c988d39aa3e8d81",
+    "title": "Day 58: The Nominal Unit Type System: Compile-Time Di...",
+    "subtitle": "Technical Communication & Strategic Mastery \u2014 The Nominal Unit Type System: Compile-Time Dimensional Analysis",
+    "stages": [
+      {
+        "id": "s1",
+        "name": "Cross-Team Interface Forensics",
+        "subtext": "Lockheed Imperial vs NASA Metric",
+        "tone": "warn"
+      },
+      {
+        "id": "s2",
+        "name": "Nominal Branded Type System",
+        "subtext": "Compile-Time Dimensional Analysis",
+        "tone": "data"
+      },
+      {
+        "id": "s3",
+        "name": "API Schema Contract Linting",
+        "subtext": "Mandatory Explicit Unit Suffixes",
+        "tone": "data"
+      },
+      {
+        "id": "s4",
+        "name": "Runtime Anomaly Interception",
+        "subtext": "Physical Plausibility Trajectory Guards",
+        "tone": "ok"
+      }
+    ]
+  },
+  {
+    "codeHash": "1a69067db5999f5e96cd4e88b5dd4daae6f67f501a3a6131c96145a798ea79b6",
+    "title": "Day 58: API Interface Schema Unit Linter: Automated S...",
+    "subtitle": "Technical Communication & Strategic Mastery \u2014 API Interface Schema Unit Linter: Automated Schema Validator",
+    "stages": [
+      {
+        "id": "s1",
+        "name": "Cross-Team Interface Forensics",
+        "subtext": "Lockheed Imperial vs NASA Metric",
+        "tone": "warn"
+      },
+      {
+        "id": "s2",
+        "name": "Nominal Branded Type System",
+        "subtext": "Compile-Time Dimensional Analysis",
+        "tone": "data"
+      },
+      {
+        "id": "s3",
+        "name": "API Schema Contract Linting",
+        "subtext": "Mandatory Explicit Unit Suffixes",
+        "tone": "data"
+      },
+      {
+        "id": "s4",
+        "name": "Runtime Anomaly Interception",
+        "subtext": "Physical Plausibility Trajectory Guards",
+        "tone": "ok"
+      }
+    ]
+  },
+  {
+    "codeHash": "edbfc131756cef1a8ad0618a21c317051729d227123858b2b11ae337c40365a1",
+    "title": "Day 58: Orbital Descent Telemetry Anomaly Lab: Real-T...",
+    "subtitle": "Technical Communication & Strategic Mastery \u2014 Orbital Descent Telemetry Anomaly Lab: Real-Time Interface Interception",
+    "stages": [
+      {
+        "id": "s1",
+        "name": "Cross-Team Interface Forensics",
+        "subtext": "Lockheed Imperial vs NASA Metric",
+        "tone": "warn"
+      },
+      {
+        "id": "s2",
+        "name": "Nominal Branded Type System",
+        "subtext": "Compile-Time Dimensional Analysis",
+        "tone": "data"
+      },
+      {
+        "id": "s3",
+        "name": "API Schema Contract Linting",
+        "subtext": "Mandatory Explicit Unit Suffixes",
+        "tone": "data"
+      },
+      {
+        "id": "s4",
+        "name": "Runtime Anomaly Interception",
+        "subtext": "Physical Plausibility Trajectory Guards",
+        "tone": "ok"
+      }
+    ]
+  },
+  {
+    "codeHash": "ce68156e7ba73d88831391a3b78356fefe7fcaeeeb9106d1fd712c059971dd84",
+    "title": "Day 58: Day 58 Dimensional Type Safety & Interface Co...",
+    "subtitle": "Technical Communication & Strategic Mastery \u2014 Day 58 Dimensional Type Safety & Interface Contract Certification",
+    "stages": [
+      {
+        "id": "s1",
+        "name": "Cross-Team Interface Forensics",
+        "subtext": "Lockheed Imperial vs NASA Metric",
+        "tone": "warn"
+      },
+      {
+        "id": "s2",
+        "name": "Nominal Branded Type System",
+        "subtext": "Compile-Time Dimensional Analysis",
+        "tone": "data"
+      },
+      {
+        "id": "s3",
+        "name": "API Schema Contract Linting",
+        "subtext": "Mandatory Explicit Unit Suffixes",
+        "tone": "data"
+      },
+      {
+        "id": "s4",
+        "name": "Runtime Anomaly Interception",
+        "subtext": "Physical Plausibility Trajectory Guards",
+        "tone": "ok"
+      }
+    ]
+  }
+]

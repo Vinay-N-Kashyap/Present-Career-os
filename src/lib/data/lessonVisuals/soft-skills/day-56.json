@@ -1,0 +1,157 @@
+[
+  {
+    "codeHash": "0107e38ccaf553679d0e07e61d9e5d91c572f39fa343a82154213b2911209dbc",
+    "title": "Day 56: Human Factors & Cognitive Systems Engineering...",
+    "subtitle": "Technical Communication & Strategic Mastery \u2014 Human Factors & Cognitive Systems Engineering: The PORV Valve Telemetry Forensic Model",
+    "stages": [
+      {
+        "id": "s1",
+        "name": "Telemetry Command Invariant",
+        "subtext": "Command vs Actual Physical State",
+        "tone": "warn"
+      },
+      {
+        "id": "s2",
+        "name": "Alert Catalog Disambiguation",
+        "subtext": "Eliminating Echo Indicators",
+        "tone": "data"
+      },
+      {
+        "id": "s3",
+        "name": "Deep Closed-Loop Synthetic Probing",
+        "subtext": "Synthetic Write/Read Assertions",
+        "tone": "data"
+      },
+      {
+        "id": "s4",
+        "name": "Control Room Orthogonal Triage",
+        "subtext": "Physical Telemetry Corroboration",
+        "tone": "ok"
+      }
+    ]
+  },
+  {
+    "codeHash": "1b923e74ca5c8cb2e6d84e9cc86d4da17dac5244335ef23a9659c03d91289386",
+    "title": "Day 56: The Ambiguous Alert Eradication Audit: Comman...",
+    "subtitle": "Technical Communication & Strategic Mastery \u2014 The Ambiguous Alert Eradication Audit: Command vs State Catalog Scanner",
+    "stages": [
+      {
+        "id": "s1",
+        "name": "Telemetry Command Invariant",
+        "subtext": "Command vs Actual Physical State",
+        "tone": "warn"
+      },
+      {
+        "id": "s2",
+        "name": "Alert Catalog Disambiguation",
+        "subtext": "Eliminating Echo Indicators",
+        "tone": "data"
+      },
+      {
+        "id": "s3",
+        "name": "Deep Closed-Loop Synthetic Probing",
+        "subtext": "Synthetic Write/Read Assertions",
+        "tone": "data"
+      },
+      {
+        "id": "s4",
+        "name": "Control Room Orthogonal Triage",
+        "subtext": "Physical Telemetry Corroboration",
+        "tone": "ok"
+      }
+    ]
+  },
+  {
+    "codeHash": "40169ff0542a74b7dcb204ea3a850f2f63a34812a754943c27ea5bbef77242c2",
+    "title": "Day 56: Deep Functional Health Check Engine: Closed-L...",
+    "subtitle": "Technical Communication & Strategic Mastery \u2014 Deep Functional Health Check Engine: Closed-Loop Synthetic Probing",
+    "stages": [
+      {
+        "id": "s1",
+        "name": "Telemetry Command Invariant",
+        "subtext": "Command vs Actual Physical State",
+        "tone": "warn"
+      },
+      {
+        "id": "s2",
+        "name": "Alert Catalog Disambiguation",
+        "subtext": "Eliminating Echo Indicators",
+        "tone": "data"
+      },
+      {
+        "id": "s3",
+        "name": "Deep Closed-Loop Synthetic Probing",
+        "subtext": "Synthetic Write/Read Assertions",
+        "tone": "data"
+      },
+      {
+        "id": "s4",
+        "name": "Control Room Orthogonal Triage",
+        "subtext": "Physical Telemetry Corroboration",
+        "tone": "ok"
+      }
+    ]
+  },
+  {
+    "codeHash": "5c118012956ca8e65fea009afecdfbb5d7583ed1811519c47e7db1ab54e8c10e",
+    "title": "Day 56: Simulated Meltdown Control Room Triage Lab: C...",
+    "subtitle": "Technical Communication & Strategic Mastery \u2014 Simulated Meltdown Control Room Triage Lab: Conflicting Indicator Resolution",
+    "stages": [
+      {
+        "id": "s1",
+        "name": "Telemetry Command Invariant",
+        "subtext": "Command vs Actual Physical State",
+        "tone": "warn"
+      },
+      {
+        "id": "s2",
+        "name": "Alert Catalog Disambiguation",
+        "subtext": "Eliminating Echo Indicators",
+        "tone": "data"
+      },
+      {
+        "id": "s3",
+        "name": "Deep Closed-Loop Synthetic Probing",
+        "subtext": "Synthetic Write/Read Assertions",
+        "tone": "data"
+      },
+      {
+        "id": "s4",
+        "name": "Control Room Orthogonal Triage",
+        "subtext": "Physical Telemetry Corroboration",
+        "tone": "ok"
+      }
+    ]
+  },
+  {
+    "codeHash": "70183e423967ddf0bf78d2a2bc94e44fe01d6dbb292c043028ad37715ba2a3f7",
+    "title": "Day 56: Day 56 Observability & Human Factors Certific...",
+    "subtitle": "Technical Communication & Strategic Mastery \u2014 Day 56 Observability & Human Factors Certification: True State Invariant",
+    "stages": [
+      {
+        "id": "s1",
+        "name": "Telemetry Command Invariant",
+        "subtext": "Command vs Actual Physical State",
+        "tone": "warn"
+      },
+      {
+        "id": "s2",
+        "name": "Alert Catalog Disambiguation",
+        "subtext": "Eliminating Echo Indicators",
+        "tone": "data"
+      },
+      {
+        "id": "s3",
+        "name": "Deep Closed-Loop Synthetic Probing",
+        "subtext": "Synthetic Write/Read Assertions",
+        "tone": "data"
+      },
+      {
+        "id": "s4",
+        "name": "Control Room Orthogonal Triage",
+        "subtext": "Physical Telemetry Corroboration",
+        "tone": "ok"
+      }
+    ]
+  }
+]

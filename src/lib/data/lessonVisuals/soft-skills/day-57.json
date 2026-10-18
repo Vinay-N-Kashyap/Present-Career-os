@@ -1,0 +1,157 @@
+[
+  {
+    "codeHash": "0a4a34ebc10d16c91d7fa096ade346505cf3e8d9bf3a2d36d0d0e22a250b1101",
+    "title": "Day 57: SEC Administrative Summary: Knight Capital (R...",
+    "subtitle": "Technical Communication & Strategic Mastery \u2014 SEC Administrative Summary: Knight Capital (Root-Cause Deployment Forensics)",
+    "stages": [
+      {
+        "id": "s1",
+        "name": "Deployment Drift Forensics",
+        "subtext": "Knight Capital SMARS Root Cause",
+        "tone": "warn"
+      },
+      {
+        "id": "s2",
+        "name": "Financial Gateway Circuit Breaker",
+        "subtext": "Real-Time Loss & Velocity Sentinel",
+        "tone": "data"
+      },
+      {
+        "id": "s3",
+        "name": "Cryptographic Fleet Verification",
+        "subtext": "SHA-256 Digest Homogeneity Guard",
+        "tone": "data"
+      },
+      {
+        "id": "s4",
+        "name": "First-180-Seconds Containment",
+        "subtext": "Immediate Emergency Kill-Switch Protocol",
+        "tone": "ok"
+      }
+    ]
+  },
+  {
+    "codeHash": "af514b0d42e9134bf24422432902f4d139a735287dfca5886bfcca6598959205",
+    "title": "Day 57: The Financial Circuit Breaker Specification: ...",
+    "subtitle": "Technical Communication & Strategic Mastery \u2014 The Financial Circuit Breaker Specification: Real-Time Capital Exposure Limiter",
+    "stages": [
+      {
+        "id": "s1",
+        "name": "Deployment Drift Forensics",
+        "subtext": "Knight Capital SMARS Root Cause",
+        "tone": "warn"
+      },
+      {
+        "id": "s2",
+        "name": "Financial Gateway Circuit Breaker",
+        "subtext": "Real-Time Loss & Velocity Sentinel",
+        "tone": "data"
+      },
+      {
+        "id": "s3",
+        "name": "Cryptographic Fleet Verification",
+        "subtext": "SHA-256 Digest Homogeneity Guard",
+        "tone": "data"
+      },
+      {
+        "id": "s4",
+        "name": "First-180-Seconds Containment",
+        "subtext": "Immediate Emergency Kill-Switch Protocol",
+        "tone": "ok"
+      }
+    ]
+  },
+  {
+    "codeHash": "b9f5edd1de95115e53f9029ce13616128d6290e7b0deaae7eb461e5bf8af2c00",
+    "title": "Day 57: Fleet-Wide Deployment Hash Verifier: Automate...",
+    "subtitle": "Technical Communication & Strategic Mastery \u2014 Fleet-Wide Deployment Hash Verifier: Automated SHA-256 Cluster Guard",
+    "stages": [
+      {
+        "id": "s1",
+        "name": "Deployment Drift Forensics",
+        "subtext": "Knight Capital SMARS Root Cause",
+        "tone": "warn"
+      },
+      {
+        "id": "s2",
+        "name": "Financial Gateway Circuit Breaker",
+        "subtext": "Real-Time Loss & Velocity Sentinel",
+        "tone": "data"
+      },
+      {
+        "id": "s3",
+        "name": "Cryptographic Fleet Verification",
+        "subtext": "SHA-256 Digest Homogeneity Guard",
+        "tone": "data"
+      },
+      {
+        "id": "s4",
+        "name": "First-180-Seconds Containment",
+        "subtext": "Immediate Emergency Kill-Switch Protocol",
+        "tone": "ok"
+      }
+    ]
+  },
+  {
+    "codeHash": "4f0372b7005f32aa48dfb6a958d1b946de4e7eb0304e2273d77babe21e592d5e",
+    "title": "Day 57: 45-Minute Algorithmic Runaway Emergency Lab: ...",
+    "subtitle": "Technical Communication & Strategic Mastery \u2014 45-Minute Algorithmic Runaway Emergency Lab: Rapid Incident Escalation Protocol",
+    "stages": [
+      {
+        "id": "s1",
+        "name": "Deployment Drift Forensics",
+        "subtext": "Knight Capital SMARS Root Cause",
+        "tone": "warn"
+      },
+      {
+        "id": "s2",
+        "name": "Financial Gateway Circuit Breaker",
+        "subtext": "Real-Time Loss & Velocity Sentinel",
+        "tone": "data"
+      },
+      {
+        "id": "s3",
+        "name": "Cryptographic Fleet Verification",
+        "subtext": "SHA-256 Digest Homogeneity Guard",
+        "tone": "data"
+      },
+      {
+        "id": "s4",
+        "name": "First-180-Seconds Containment",
+        "subtext": "Immediate Emergency Kill-Switch Protocol",
+        "tone": "ok"
+      }
+    ]
+  },
+  {
+    "codeHash": "a76040e22083a2c16fd96de6623a4ac202ca75dfcf3499b1965a5df64905d7f2",
+    "title": "Day 57: Day 57 Deployment Governance & Kill-Switch Ce...",
+    "subtitle": "Technical Communication & Strategic Mastery \u2014 Day 57 Deployment Governance & Kill-Switch Certification: Atomic Operations",
+    "stages": [
+      {
+        "id": "s1",
+        "name": "Deployment Drift Forensics",
+        "subtext": "Knight Capital SMARS Root Cause",
+        "tone": "warn"
+      },
+      {
+        "id": "s2",
+        "name": "Financial Gateway Circuit Breaker",
+        "subtext": "Real-Time Loss & Velocity Sentinel",
+        "tone": "data"
+      },
+      {
+        "id": "s3",
+        "name": "Cryptographic Fleet Verification",
+        "subtext": "SHA-256 Digest Homogeneity Guard",
+        "tone": "data"
+      },
+      {
+        "id": "s4",
+        "name": "First-180-Seconds Containment",
+        "subtext": "Immediate Emergency Kill-Switch Protocol",
+        "tone": "ok"
+      }
+    ]
+  }
+]
