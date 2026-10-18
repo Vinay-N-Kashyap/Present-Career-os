@@ -1,0 +1,654 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom-accounting",
+  "day": 22,
+  "promptSha": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Reverse Charge Mechanism (RCM) Statutory Framework",
+      "codeHash": "ee346f663768098818e3dd52bd812471dc7d6b82c28187f3533cd3c97ff488e0",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Reverse Charge Mechanism (RCM) Statutory F... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary facility debit entry ($102,000) for Reverse Charge Mechanism (RCM) Stat...",
+            "title": "Day 22 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 102000,
+            "totalCredit": 102000,
+            "entries": [
+              {
+                "id": "JNL-2201",
+                "account": "Primary Operating Asset / Commercial Facility",
+                "debit": 102000,
+                "balance": 102000,
+                "tone": "data",
+                "memo": "Initial facility recognition"
+              },
+              {
+                "id": "JNL-2202",
+                "account": "Clearing & Settlement Control / Syndicate Funding",
+                "credit": 102000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary interest & fee accrual adjustment ($20,400).",
+            "title": "Day 22 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 122400,
+            "totalCredit": 122400,
+            "entries": [
+              {
+                "id": "JNL-2201",
+                "account": "Primary Operating Asset / Commercial Facility",
+                "debit": 102000,
+                "balance": 102000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-2203",
+                "account": "Accrued Facility Interest / Fee Receivable",
+                "debit": 20400,
+                "balance": 122400,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-2202",
+                "account": "Clearing & Settlement Control / Syndicate Funding",
+                "credit": 122400,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of institutional reserve provisioning & counterparty collateral.",
+            "title": "Day 22 Journal — Collateral & Reserve Alignment",
+            "isBalanced": true,
+            "totalDebit": 122400,
+            "totalCredit": 122400,
+            "entries": [
+              {
+                "id": "JNL-2201",
+                "account": "Primary Operating Asset / Commercial Facility",
+                "debit": 102000,
+                "balance": 102000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-2203",
+                "account": "Accrued Facility Interest / Fee Receivable",
+                "debit": 20400,
+                "balance": 122400,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-2202",
+                "account": "Clearing & Settlement Control / Syndicate Funding",
+                "credit": 122400,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Real-time balance sheet reconciliation and regulatory capital confirmation.",
+            "title": "Day 22 Journal — Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 122400,
+            "totalCredit": 122400,
+            "entries": [
+              {
+                "id": "JNL-2201",
+                "account": "Primary Operating Asset / Commercial Facility",
+                "debit": 102000,
+                "balance": 102000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-2203",
+                "account": "Accrued Facility Interest / Fee Receivable",
+                "debit": 20400,
+                "balance": 122400,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-2202",
+                "account": "Clearing & Settlement Control / Syndicate Funding",
+                "credit": 122400,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "RCM Accounting Entries & Self-Invoicing Architecture",
+      "codeHash": "6f6331730f494885818cc60dc42a6acc8ffe8d0a61deae4f30af93c461b9090e",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "RCM Accounting Entries & Self-Invoicing Ar... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary facility debit entry ($103,250) for RCM Accounting Entries & Self-Invoi...",
+            "title": "Day 22 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 103250,
+            "totalCredit": 103250,
+            "entries": [
+              {
+                "id": "JNL-2201",
+                "account": "Primary Operating Asset / Commercial Facility",
+                "debit": 103250,
+                "balance": 103250,
+                "tone": "data",
+                "memo": "Initial facility recognition"
+              },
+              {
+                "id": "JNL-2202",
+                "account": "Clearing & Settlement Control / Syndicate Funding",
+                "credit": 103250,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary interest & fee accrual adjustment ($20,650).",
+            "title": "Day 22 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 123900,
+            "totalCredit": 123900,
+            "entries": [
+              {
+                "id": "JNL-2201",
+                "account": "Primary Operating Asset / Commercial Facility",
+                "debit": 103250,
+                "balance": 103250,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-2203",
+                "account": "Accrued Facility Interest / Fee Receivable",
+                "debit": 20650,
+                "balance": 123900,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-2202",
+                "account": "Clearing & Settlement Control / Syndicate Funding",
+                "credit": 123900,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of institutional reserve provisioning & counterparty collateral.",
+            "title": "Day 22 Journal — Collateral & Reserve Alignment",
+            "isBalanced": true,
+            "totalDebit": 123900,
+            "totalCredit": 123900,
+            "entries": [
+              {
+                "id": "JNL-2201",
+                "account": "Primary Operating Asset / Commercial Facility",
+                "debit": 103250,
+                "balance": 103250,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-2203",
+                "account": "Accrued Facility Interest / Fee Receivable",
+                "debit": 20650,
+                "balance": 123900,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-2202",
+                "account": "Clearing & Settlement Control / Syndicate Funding",
+                "credit": 123900,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Real-time balance sheet reconciliation and regulatory capital confirmation.",
+            "title": "Day 22 Journal — Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 123900,
+            "totalCredit": 123900,
+            "entries": [
+              {
+                "id": "JNL-2201",
+                "account": "Primary Operating Asset / Commercial Facility",
+                "debit": 103250,
+                "balance": 103250,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-2203",
+                "account": "Accrued Facility Interest / Fee Receivable",
+                "debit": 20650,
+                "balance": 123900,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-2202",
+                "account": "Clearing & Settlement Control / Syndicate Funding",
+                "credit": 123900,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Electronic Way Bill Statutory Thresholds & Part-A/Part-B",
+      "codeHash": "e94ec9d2b55c841421144efe509594628fab70ad9ef69d06656f2e285e31d822",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Electronic Way Bill Statutory Thresholds &... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary facility debit entry ($104,500) for Electronic Way Bill Statutory Thres...",
+            "title": "Day 22 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 104500,
+            "totalCredit": 104500,
+            "entries": [
+              {
+                "id": "JNL-2201",
+                "account": "Primary Operating Asset / Commercial Facility",
+                "debit": 104500,
+                "balance": 104500,
+                "tone": "data",
+                "memo": "Initial facility recognition"
+              },
+              {
+                "id": "JNL-2202",
+                "account": "Clearing & Settlement Control / Syndicate Funding",
+                "credit": 104500,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary interest & fee accrual adjustment ($20,900).",
+            "title": "Day 22 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 125400,
+            "totalCredit": 125400,
+            "entries": [
+              {
+                "id": "JNL-2201",
+                "account": "Primary Operating Asset / Commercial Facility",
+                "debit": 104500,
+                "balance": 104500,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-2203",
+                "account": "Accrued Facility Interest / Fee Receivable",
+                "debit": 20900,
+                "balance": 125400,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-2202",
+                "account": "Clearing & Settlement Control / Syndicate Funding",
+                "credit": 125400,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of institutional reserve provisioning & counterparty collateral.",
+            "title": "Day 22 Journal — Collateral & Reserve Alignment",
+            "isBalanced": true,
+            "totalDebit": 125400,
+            "totalCredit": 125400,
+            "entries": [
+              {
+                "id": "JNL-2201",
+                "account": "Primary Operating Asset / Commercial Facility",
+                "debit": 104500,
+                "balance": 104500,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-2203",
+                "account": "Accrued Facility Interest / Fee Receivable",
+                "debit": 20900,
+                "balance": 125400,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-2202",
+                "account": "Clearing & Settlement Control / Syndicate Funding",
+                "credit": 125400,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Real-time balance sheet reconciliation and regulatory capital confirmation.",
+            "title": "Day 22 Journal — Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 125400,
+            "totalCredit": 125400,
+            "entries": [
+              {
+                "id": "JNL-2201",
+                "account": "Primary Operating Asset / Commercial Facility",
+                "debit": 104500,
+                "balance": 104500,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-2203",
+                "account": "Accrued Facility Interest / Fee Receivable",
+                "debit": 20900,
+                "balance": 125400,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-2202",
+                "account": "Clearing & Settlement Control / Syndicate Funding",
+                "credit": 125400,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "E-Way Bill Validity Calculation & Transit Protocols",
+      "codeHash": "c123b073dfecd58fff8a2a3a55aa924a4373b40c87f996e01575239b86173c6c",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "E-Way Bill Validity Calculation & Transit ... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary facility debit entry ($105,750) for E-Way Bill Validity Calculation & T...",
+            "title": "Day 22 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 105750,
+            "totalCredit": 105750,
+            "entries": [
+              {
+                "id": "JNL-2201",
+                "account": "Primary Operating Asset / Commercial Facility",
+                "debit": 105750,
+                "balance": 105750,
+                "tone": "data",
+                "memo": "Initial facility recognition"
+              },
+              {
+                "id": "JNL-2202",
+                "account": "Clearing & Settlement Control / Syndicate Funding",
+                "credit": 105750,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary interest & fee accrual adjustment ($21,150).",
+            "title": "Day 22 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 126900,
+            "totalCredit": 126900,
+            "entries": [
+              {
+                "id": "JNL-2201",
+                "account": "Primary Operating Asset / Commercial Facility",
+                "debit": 105750,
+                "balance": 105750,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-2203",
+                "account": "Accrued Facility Interest / Fee Receivable",
+                "debit": 21150,
+                "balance": 126900,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-2202",
+                "account": "Clearing & Settlement Control / Syndicate Funding",
+                "credit": 126900,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of institutional reserve provisioning & counterparty collateral.",
+            "title": "Day 22 Journal — Collateral & Reserve Alignment",
+            "isBalanced": true,
+            "totalDebit": 126900,
+            "totalCredit": 126900,
+            "entries": [
+              {
+                "id": "JNL-2201",
+                "account": "Primary Operating Asset / Commercial Facility",
+                "debit": 105750,
+                "balance": 105750,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-2203",
+                "account": "Accrued Facility Interest / Fee Receivable",
+                "debit": 21150,
+                "balance": 126900,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-2202",
+                "account": "Clearing & Settlement Control / Syndicate Funding",
+                "credit": 126900,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Real-time balance sheet reconciliation and regulatory capital confirmation.",
+            "title": "Day 22 Journal — Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 126900,
+            "totalCredit": 126900,
+            "entries": [
+              {
+                "id": "JNL-2201",
+                "account": "Primary Operating Asset / Commercial Facility",
+                "debit": 105750,
+                "balance": 105750,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-2203",
+                "account": "Accrued Facility Interest / Fee Receivable",
+                "debit": 21150,
+                "balance": 126900,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-2202",
+                "account": "Clearing & Settlement Control / Syndicate Funding",
+                "credit": 126900,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Logistics Compliance & Highway Inspection Audit Simulation",
+      "codeHash": "001a2ea086c579fe589efb42b4f4e4acd496f396b8503bcac41cff0551f62370",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Logistics Compliance & Highway Inspection ... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary facility debit entry ($107,000) for Logistics Compliance & Highway Insp...",
+            "title": "Day 22 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 107000,
+            "totalCredit": 107000,
+            "entries": [
+              {
+                "id": "JNL-2201",
+                "account": "Primary Operating Asset / Commercial Facility",
+                "debit": 107000,
+                "balance": 107000,
+                "tone": "data",
+                "memo": "Initial facility recognition"
+              },
+              {
+                "id": "JNL-2202",
+                "account": "Clearing & Settlement Control / Syndicate Funding",
+                "credit": 107000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary interest & fee accrual adjustment ($21,400).",
+            "title": "Day 22 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 128400,
+            "totalCredit": 128400,
+            "entries": [
+              {
+                "id": "JNL-2201",
+                "account": "Primary Operating Asset / Commercial Facility",
+                "debit": 107000,
+                "balance": 107000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-2203",
+                "account": "Accrued Facility Interest / Fee Receivable",
+                "debit": 21400,
+                "balance": 128400,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-2202",
+                "account": "Clearing & Settlement Control / Syndicate Funding",
+                "credit": 128400,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of institutional reserve provisioning & counterparty collateral.",
+            "title": "Day 22 Journal — Collateral & Reserve Alignment",
+            "isBalanced": true,
+            "totalDebit": 128400,
+            "totalCredit": 128400,
+            "entries": [
+              {
+                "id": "JNL-2201",
+                "account": "Primary Operating Asset / Commercial Facility",
+                "debit": 107000,
+                "balance": 107000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-2203",
+                "account": "Accrued Facility Interest / Fee Receivable",
+                "debit": 21400,
+                "balance": 128400,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-2202",
+                "account": "Clearing & Settlement Control / Syndicate Funding",
+                "credit": 128400,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Real-time balance sheet reconciliation and regulatory capital confirmation.",
+            "title": "Day 22 Journal — Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 128400,
+            "totalCredit": 128400,
+            "entries": [
+              {
+                "id": "JNL-2201",
+                "account": "Primary Operating Asset / Commercial Facility",
+                "debit": 107000,
+                "balance": 107000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-2203",
+                "account": "Accrued Facility Interest / Fee Receivable",
+                "debit": 21400,
+                "balance": 128400,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-2202",
+                "account": "Clearing & Settlement Control / Syndicate Funding",
+                "credit": 128400,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

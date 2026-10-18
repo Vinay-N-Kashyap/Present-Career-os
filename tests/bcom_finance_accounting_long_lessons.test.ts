@@ -1195,3 +1195,236 @@ test('Block 132: B.Com Accounting Days 16-20 Gate v2 Visual JSON Integrity Verif
     }
   }
 });
+
+// ============================================================================
+// BLOCK 5 (DAYS 21-25: TASK-1374..1378) - DIRECT TAXATION, PAYROLL & SEC 115BAC
+// ============================================================================
+
+test('Block 133: B.Com Accounting Days 21-25: Resolution & Structure Invariants', () => {
+  for (let d = 21; d <= 25; d++) {
+    const lesson = getLongLesson('bcom-accounting', d);
+    assert.ok(lesson, `bcom-accounting Day ${d} lesson must be defined`);
+    assert.equal(lesson.coursePrefix, 'bcom-accounting');
+    assert.equal(lesson.day, d);
+    assert.equal(lesson.parts.length, 5, `bcom-accounting Day ${d} must have exactly 5 parts`);
+    assert.equal(getLongLessonLanguage('bcom-accounting'), 'python');
+
+    const expectedMin = d === 25 ? 50 : 45;
+    assert.equal(lesson.minutes, expectedMin, `Day ${d} minutes must be ${expectedMin}`);
+
+    const spoken = estimateSpokenMinutes(lesson);
+    assert.ok(spoken >= 8, `Day ${d} spoken minutes (${spoken}) must be at least 8`);
+    const total = estimateLessonMinutes(lesson);
+    assert.ok(total >= 15, `Day ${d} total lesson minutes (${total}) must be at least 15`);
+
+    assert.ok(lesson.summary && lesson.summary.length >= 4, `Day ${d} summary must have >= 4 bullets`);
+    assert.ok(lesson.projectStep && lesson.projectStep.title && lesson.projectStep.steps.length >= 4, `Day ${d} projectStep must have title and >= 4 steps`);
+
+    for (let i = 0; i < lesson.parts.length; i++) {
+      const part = lesson.parts[i];
+      assert.ok(part.title.length > 0, `Day ${d} Part ${i + 1} must have a title`);
+
+      const words = part.say.join(' ').split(/\s+/).length;
+      assert.ok(words >= 580, `Day ${d} Part ${i + 1} word count (${words}) must be >= 580`);
+
+      assert.ok(part.example && part.example.length > 0, `Day ${d} Part ${i + 1} must have an example`);
+      assert.ok(part.code && part.code.includes('def '), `Day ${d} Part ${i + 1} code must contain Python functions`);
+      assert.ok(part.output && part.output.length > 0, `Day ${d} Part ${i + 1} must have expected output`);
+      assert.ok(part.tryIt && part.tryIt.length > 0, `Day ${d} Part ${i + 1} must have tryIt instructions`);
+
+      // Socratic Check Invariants
+      const check = part.check as any;
+      assert.ok(check.question.length > 10, `Day ${d} Part ${i + 1} check question must be descriptive`);
+      assert.equal(check.options.length, 4, `Day ${d} Part ${i + 1} check must have exactly 4 options`);
+      assert.equal(typeof check.answer, 'number', `Day ${d} Part ${i + 1} answer must be number`);
+      assert.equal(check.answer, 0, `Day ${d} Part ${i + 1} answer index must be 0`);
+      assert.ok(check.why && check.why.length > 15, `Day ${d} Part ${i + 1} why explanation must be rigorous`);
+      assert.equal(check.answerIndex, 0);
+      assert.equal(check.explanation, check.why);
+    }
+  }
+});
+
+test('Block 133: B.Com Accounting Day 21: Tally Prime Enterprise & GST Engine Snippets Verification', () => {
+  const lesson = getLongLesson('bcom-accounting', 21);
+  assert.equal(lesson.day, 21);
+
+  // Part 1: ERP Setup & GST Master Sync
+  assert.match(lesson.parts[0].title, /ERP Setup & GST Master Synchronization/i);
+  assert.ok(lesson.parts[0].code?.includes('EnterpriseMasterSyncEngine'));
+  assert.ok(lesson.parts[0].output?.includes('MASTER SYNCHRONIZATION STATUS: 100% VERIFIED'));
+
+  // Part 2: Automated Multi-Item Invoice Generation & GL Posting
+  assert.match(lesson.parts[1].title, /Automated Multi-Item Invoice Generation/i);
+  assert.ok(lesson.parts[1].code?.includes('EnterpriseInvoicingPipeline'));
+  assert.ok(lesson.parts[1].output?.includes('ENTERPRISE MULTI-ITEM INVOICE & GL POSTING SUMMARY'));
+
+  // Part 3: Automated Purchase Ingestion, Rule 36(4) Matching & ITC Lock
+  assert.match(lesson.parts[2].title, /Rule 36\(4\) Matching & ITC Lock/i);
+  assert.ok(lesson.parts[2].code?.includes('AutomatedItcReconciliationPipeline'));
+  assert.ok(lesson.parts[2].output?.includes('AUTOMATED PURCHASE INGESTION & RULE 36(4) ITC LOCK AUDIT'));
+
+  // Part 4: Dynamic Section 49 Tax Set-Off & Cash Ledger Optimization
+  assert.match(lesson.parts[3].title, /Dynamic Section 49 Tax Set-Off/i);
+  assert.ok(lesson.parts[3].code?.includes('EnterpriseGstOptimizer'));
+  assert.ok(lesson.parts[3].output?.includes('ENTERPRISE DYNAMIC SECTION 49 CLEARANCE OPTIMIZATION'));
+
+  // Part 5: Complete ERP to Return Pipeline & Controller Audit Dossier
+  assert.match(lesson.parts[4].title, /Complete ERP to Statutory Tax Return Pipeline/i);
+  assert.ok(lesson.parts[4].code?.includes('EnterpriseTaxAuditDossier'));
+  assert.ok(lesson.parts[4].output?.includes('ENTERPRISE TALLY PRIME & GST STATUTORY AUDIT DOSSIER'));
+});
+
+test('Block 133: B.Com Accounting Day 22: RCM & E-Way Bill Logistics Snippets Verification', () => {
+  const lesson = getLongLesson('bcom-accounting', 22);
+  assert.equal(lesson.day, 22);
+
+  // Part 1: Reverse Charge Mechanism (RCM) Statutory Framework
+  assert.match(lesson.parts[0].title, /Reverse Charge Mechanism \(RCM\) Statutory Framework/i);
+  assert.ok(lesson.parts[0].code?.includes('ReverseChargeEngine'));
+  assert.ok(lesson.parts[0].output?.includes('REVERSE CHARGE MECHANISM (RCM) AUDIT LOG'));
+
+  // Part 2: RCM Accounting Entries & Self-Invoicing Architecture
+  assert.match(lesson.parts[1].title, /RCM Accounting Entries & Self-Invoicing Architecture/i);
+  assert.ok(lesson.parts[1].code?.includes('RcmLedgerPostingPipeline'));
+  assert.ok(lesson.parts[1].output?.includes('RCM SELF-INVOICING (SEC 31(3)(f)) & GL POSTING AUDIT'));
+
+  // Part 3: Electronic Way Bill Statutory Thresholds & Part-A/Part-B
+  assert.match(lesson.parts[2].title, /Electronic Way Bill Statutory Thresholds & Part-A\/Part-B/i);
+  assert.ok(lesson.parts[2].code?.includes('EWayBillEngine'));
+  assert.ok(lesson.parts[2].output?.includes('E-Way Bill GENERATION & VALIDITY AUDIT'));
+
+  // Part 4: E-Way Bill Validity Calculation & Transit Protocols
+  assert.match(lesson.parts[3].title, /E-Way Bill Validity Calculation & Transit Protocols/i);
+  assert.ok(lesson.parts[3].code?.includes('def '));
+  assert.ok(lesson.parts[3].output?.length > 0);
+
+  // Part 5: Logistics Compliance & Highway Inspection Audit Simulation
+  assert.match(lesson.parts[4].title, /Logistics Compliance & Highway Inspection Audit Simulation/i);
+  assert.ok(lesson.parts[4].code?.includes('def '));
+  assert.ok(lesson.parts[4].output?.length > 0);
+});
+
+test('Block 133: B.Com Accounting Day 23: Corporate Payroll, EPF & ESI Snippets Verification', () => {
+  const lesson = getLongLesson('bcom-accounting', 23);
+  assert.equal(lesson.day, 23);
+
+  // Part 1: Salary Structure Components: Earnings, Allowances & CTC Decomposition
+  assert.match(lesson.parts[0].title, /Salary Structure Components.*CTC Decomposition/i);
+  assert.ok(lesson.parts[0].code?.includes('PayrollStructureEngine'));
+  assert.ok(lesson.parts[0].output?.includes('ENTERPRISE PAYROLL CTC STRUCTURE DECOMPOSITION'));
+
+  // Part 2: Employees' Provident Fund (EPF) Statutory Mechanics & EDLI
+  assert.match(lesson.parts[1].title, /Employees' Provident Fund \(EPF\) Statutory Mechanics & EDLI/i);
+  assert.ok(lesson.parts[1].code?.includes('EpfStatutoryEngine'));
+  assert.ok(lesson.parts[1].output?.includes('EPF STATUTORY CONTRIBUTION SCHEDULE (1952 ACT)'));
+
+  // Part 3: Employees' State Insurance (ESI) & State Professional Tax
+  assert.match(lesson.parts[2].title, /Employees' State Insurance \(ESI\) & State Professional Tax/i);
+  assert.ok(lesson.parts[2].code?.includes('EsiAndPtEngine'));
+  assert.ok(lesson.parts[2].output?.includes('ESI & PROFESSIONAL TAX STATUTORY AUDIT'));
+
+  // Part 4: Net Pay Calculation, Pay Slip Generation & TDS Integration
+  assert.match(lesson.parts[3].title, /Net Pay Calculation, Pay Slip Generation & TDS Integration/i);
+  assert.ok(lesson.parts[3].code?.includes('def '));
+  assert.ok(lesson.parts[3].output?.length > 0);
+
+  // Part 5: Enterprise Payroll Journal Posting & Statutory Remittance Accounting
+  assert.match(lesson.parts[4].title, /Enterprise Payroll Journal Posting & Statutory Remittance Accounting/i);
+  assert.ok(lesson.parts[4].code?.includes('def '));
+  assert.ok(lesson.parts[4].output?.length > 0);
+});
+
+test('Block 133: B.Com Accounting Day 24: TDS Withholding & Form 26Q Snippets Verification', () => {
+  const lesson = getLongLesson('bcom-accounting', 24);
+  assert.equal(lesson.day, 24);
+
+  // Part 1: TDS Statutory Machinery & TAN/PAN Validation
+  assert.match(lesson.parts[0].title, /TDS Statutory Machinery & TAN\/PAN Validation/i);
+  assert.ok(lesson.parts[0].code?.includes('TdsMasterValidator'));
+  assert.ok(lesson.parts[0].output?.includes('TDS STATUTORY DEDUCTOR MASTER AUDIT'));
+
+  // Part 2: Core Withholding Sections: 194C, 194J, 194I Thresholds
+  assert.match(lesson.parts[1].title, /Core Withholding Sections: 194C, 194J, 194I Thresholds/i);
+  assert.ok(lesson.parts[1].code?.includes('B2BTdsWithholdingClassifier'));
+  assert.ok(lesson.parts[1].output?.includes('B2B TDS STATUTORY WITHHOLDING AUDIT'));
+
+  // Part 3: Section 206AA Penal Provisions & Non-PAN Higher Withholding
+  assert.match(lesson.parts[2].title, /Section 206AA Penal Provisions & Non-PAN Higher Withholding/i);
+  assert.ok(lesson.parts[2].code?.includes('Section206AAEnforcementEngine'));
+  assert.ok(lesson.parts[2].output?.includes('SECTION 206AA PENAL NON-PAN WITHHOLDING AUDIT'));
+
+  // Part 4: Quarterly Form 26Q Compilation, Challan 281 & Sec 201(1A) Interest
+  assert.match(lesson.parts[3].title, /Quarterly Form 26Q Compilation/i);
+  assert.ok(lesson.parts[3].code?.includes('def '));
+  assert.ok(lesson.parts[3].output?.length > 0);
+
+  // Part 5: Form 26AS / AIS Cross-Reconciliation & Controller Withholding Audit
+  assert.match(lesson.parts[4].title, /Form 26AS \/ AIS Cross-Reconciliation/i);
+  assert.ok(lesson.parts[4].code?.includes('def '));
+  assert.ok(lesson.parts[4].output?.length > 0);
+});
+
+test('Block 133: B.Com Accounting Day 25 Capstone: Direct Income Tax & Section 115BAC Snippets Verification', () => {
+  const lesson = getLongLesson('bcom-accounting', 25);
+  assert.equal(lesson.day, 25);
+  assert.equal(lesson.minutes, 50);
+
+  // Part 1: Section 115BAC New Concessional Tax Regime Architecture
+  assert.match(lesson.parts[0].title, /Section 115BAC New Concessional Tax Regime Architecture/i);
+  assert.ok(lesson.parts[0].code?.includes('Section115BACEngine'));
+  assert.ok(lesson.parts[0].output?.includes('SECTION 115BAC NEW TAX REGIME COMPUTATION AUDIT'));
+
+  // Part 2: Old Tax Regime Architecture: Chapter VI-A Deductions & Section 24(b)
+  assert.match(lesson.parts[1].title, /Old Tax Regime Architecture: Chapter VI-A Deductions/i);
+  assert.ok(lesson.parts[1].code?.includes('OldRegimeEngine'));
+  assert.ok(lesson.parts[1].output?.includes('OLD TAX REGIME WITH CHAPTER VI-A DEDUCTIONS AUDIT'));
+
+  // Part 3: Algorithmic Regime Comparison & Breakeven Indifference Point
+  assert.match(lesson.parts[2].title, /Algorithmic Regime Comparison & Breakeven Indifference Point/i);
+  assert.ok(lesson.parts[2].code?.includes('TaxRegimeComparator'));
+  assert.ok(lesson.parts[2].output?.includes('DIRECT TAX DUAL REGIME COMPARATIVE OPTIMIZATION'));
+
+  // Part 4: Section 192 Monthly Salary Withholding Schedule & Form 16
+  assert.match(lesson.parts[3].title, /Section 192 Monthly Salary Withholding Schedule & Form 16/i);
+  assert.ok(lesson.parts[3].code?.includes('Section192WithholdingEngine'));
+  assert.ok(lesson.parts[3].output?.includes('SECTION 192 SALARY TDS WITHHOLDING & FORM 16 AUDIT'));
+
+  // Part 5: Financial Controller Direct Tax Compliance Dashboard & Accreditation
+  assert.match(lesson.parts[4].title, /Financial Controller Direct Tax Compliance Dashboard & Accreditation/i);
+  assert.ok(lesson.parts[4].code?.includes('CorporateDirectTaxDashboard'));
+  assert.ok(lesson.parts[4].output?.includes('EXECUTIVE CORPORATE DIRECT TAX CONTROL TOWER'));
+  assert.ok(lesson.parts[4].output?.includes('ACCREDITATION STATUS: MILESTONE 5 CAPSTONE COMPLETED SUCCESSFULLY'));
+  assert.ok(lesson.parts[4].output?.includes('STATUTORY VERDICT   : CERTIFIED CORPORATE CONTROLLER - DIRECT TAXATION'));
+});
+
+test('Block 133: B.Com Accounting Days 21-25 Gate v2 Visual JSON Integrity Verification', () => {
+  const fs = require('fs');
+  const path = require('path');
+  const crypto = require('crypto');
+
+  for (let d = 21; d <= 25; d++) {
+    const pad = String(d).padStart(2, '0');
+    const visPath = path.join(__dirname, `../src/lib/data/lessonVisuals/bcom-accounting/day-${pad}.json`);
+    assert.ok(fs.existsSync(visPath), `Visual JSON must exist for Day ${d}`);
+
+    const vis = JSON.parse(fs.readFileSync(visPath, 'utf8'));
+    assert.equal(vis.prefix, 'bcom-accounting');
+    assert.equal(vis.day, d);
+    assert.equal(vis.entries.length, 5, `Day ${d} visual must contain exactly 5 entries`);
+
+    const lesson = getLongLesson('bcom-accounting', d);
+    for (let i = 0; i < 5; i++) {
+      const entry = vis.entries[i];
+      const part = lesson.parts[i];
+
+      assert.equal(entry.spec.template, 'ledger-sheet', `Day ${d} Part ${i + 1} must use ledger-sheet template`);
+      assert.ok(entry.spec.steps.length >= 3, `Day ${d} Part ${i + 1} visual must have >= 3 steps`);
+
+      // Verify SHA-256 binding between code and visual entry
+      const expectedHash = crypto.createHash('sha256').update(part.code).digest('hex');
+      assert.equal(entry.codeHash, expectedHash, `Day ${d} Part ${i + 1} visual codeHash must match actual part.code`);
+    }
+  }
+});
+
