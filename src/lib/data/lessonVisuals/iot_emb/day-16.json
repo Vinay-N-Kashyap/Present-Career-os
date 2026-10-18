@@ -2,20 +2,20 @@
   "schemaVersion": 1,
   "prefix": "iot_emb",
   "day": 16,
-  "promptSha": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
-  "model": "anthropic/claude-3.5-sonnet",
+  "promptSha": "8568194e105325c1ccb614b12a20748b91af9f90643f24b1cd6b727cece0da9f",
+  "model": "google/gemini-3.8-flash",
   "entries": [
     {
-      "partTitle": "Multi-Master AHB Bus Matrix Architecture & DMA Controller Topology",
-      "codeHash": "a4cae4818a7878b350b06f88b337e5fc6f3910fd5dcb77f21da7c5ce84e8bce9",
+      "partTitle": "Multi-Master AHB Bus Matrix Architecture & Round-Robin Arbitration",
+      "codeHash": "6be4b0b18571de35d453e5f123b79de895e73f8f12c3a04515861cdcae648292",
       "spec": {
         "template": "register-bits",
-        "title": "Multi-Master AHB Bus Matrix Architecture & DM... — Register Bit Architecture",
+        "title": "Multi-Master AHB Bus Matrix Architecture & Ro — Register Bit Architecture",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Initialize IOT_EMB_CR1 with EN bit asserted (0x80).",
-            "registerName": "IOT_EMB_CR1",
+            "caption": "Step 1: Initialize Multi-Master AHB Bus Matrix Archite with hardware clock gate & EN=1.",
+            "registerName": "DMA_SxCR1",
             "bitWidth": 8,
             "hexValue": "0x80",
             "decimalValue": 128,
@@ -48,19 +48,19 @@
               },
               {
                 "index": 3,
-                "name": "CRC",
+                "name": "TC",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 2,
-                "name": "TX",
+                "name": "HT",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 1,
-                "name": "RX",
+                "name": "BUSY",
                 "value": 0,
                 "tone": "idle"
               },
@@ -74,8 +74,8 @@
           },
           {
             "at": "say1",
-            "caption": "Step 2: Peripheral asserts RDY & IRQ flags (0xE0) on IOT_EMB_CR1.",
-            "registerName": "IOT_EMB_CR1",
+            "caption": "Step 2: Assert RDY and IRQ flags under hardware interrupt preemption.",
+            "registerName": "DMA_SxCR1",
             "bitWidth": 8,
             "hexValue": "0xE0",
             "decimalValue": 224,
@@ -109,19 +109,19 @@
               },
               {
                 "index": 3,
-                "name": "CRC",
+                "name": "TC",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 2,
-                "name": "TX",
+                "name": "HT",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 1,
-                "name": "RX",
+                "name": "BUSY",
                 "value": 0,
                 "tone": "idle"
               },
@@ -135,8 +135,8 @@
           },
           {
             "at": "example",
-            "caption": "Step 3: Enable DMA burst & CRC verification bits (0xF8).",
-            "registerName": "IOT_EMB_CR1",
+            "caption": "Step 3: Enable DMA burst and Transfer Complete flags.",
+            "registerName": "DMA_SxCR1",
             "bitWidth": 8,
             "hexValue": "0xF8",
             "decimalValue": 248,
@@ -169,20 +169,20 @@
               },
               {
                 "index": 3,
-                "name": "CRC",
+                "name": "TC",
                 "value": 1,
                 "tone": "data",
                 "highlighted": true
               },
               {
                 "index": 2,
-                "name": "TX",
+                "name": "HT",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 1,
-                "name": "RX",
+                "name": "BUSY",
                 "value": 0,
                 "tone": "idle"
               },
@@ -196,8 +196,8 @@
           },
           {
             "at": "tryIt",
-            "caption": "Step 4: Full TX/RX frame committed with ERR=0 verified (0xFE).",
-            "registerName": "IOT_EMB_CR1",
+            "caption": "Step 4: Full ping-pong streaming active with zero-drop verified.",
+            "registerName": "DMA_SxCR1",
             "bitWidth": 8,
             "hexValue": "0xFE",
             "decimalValue": 254,
@@ -229,269 +229,20 @@
               },
               {
                 "index": 3,
-                "name": "CRC",
+                "name": "TC",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 2,
-                "name": "TX",
+                "name": "HT",
                 "value": 1,
                 "tone": "ok",
                 "highlighted": true
               },
               {
                 "index": 1,
-                "name": "RX",
-                "value": 1,
-                "tone": "ok",
-                "highlighted": true
-              },
-              {
-                "index": 0,
-                "name": "ERR",
-                "value": 0,
-                "tone": "ok"
-              }
-            ]
-          }
-        ]
-      },
-      "filled": {
-        "template": "register-bits",
-        "title": "Multi-Master AHB Bus Matrix Architecture & DM... — Register Bit Architecture",
-        "steps": [
-          {
-            "at": "intro",
-            "caption": "Step 1: Initialize IOT_EMB_CR1 with EN bit asserted (0x80).",
-            "registerName": "IOT_EMB_CR1",
-            "bitWidth": 8,
-            "hexValue": "0x80",
-            "decimalValue": 128,
-            "maskApplied": "1 << 7",
-            "bits": [
-              {
-                "index": 7,
-                "name": "EN",
-                "value": 1,
-                "tone": "ok",
-                "highlighted": true
-              },
-              {
-                "index": 6,
-                "name": "RDY",
-                "value": 0,
-                "tone": "idle"
-              },
-              {
-                "index": 5,
-                "name": "IRQ",
-                "value": 0,
-                "tone": "idle"
-              },
-              {
-                "index": 4,
-                "name": "DMA",
-                "value": 0,
-                "tone": "idle"
-              },
-              {
-                "index": 3,
-                "name": "CRC",
-                "value": 0,
-                "tone": "idle"
-              },
-              {
-                "index": 2,
-                "name": "TX",
-                "value": 0,
-                "tone": "idle"
-              },
-              {
-                "index": 1,
-                "name": "RX",
-                "value": 0,
-                "tone": "idle"
-              },
-              {
-                "index": 0,
-                "name": "ERR",
-                "value": 0,
-                "tone": "idle"
-              }
-            ]
-          },
-          {
-            "at": "say1",
-            "caption": "Step 2: Peripheral asserts RDY & IRQ flags (0xE0) on IOT_EMB_CR1.",
-            "registerName": "IOT_EMB_CR1",
-            "bitWidth": 8,
-            "hexValue": "0xE0",
-            "decimalValue": 224,
-            "maskApplied": "(1 << 6) | (1 << 5)",
-            "bits": [
-              {
-                "index": 7,
-                "name": "EN",
-                "value": 1,
-                "tone": "ok"
-              },
-              {
-                "index": 6,
-                "name": "RDY",
-                "value": 1,
-                "tone": "data",
-                "highlighted": true
-              },
-              {
-                "index": 5,
-                "name": "IRQ",
-                "value": 1,
-                "tone": "data",
-                "highlighted": true
-              },
-              {
-                "index": 4,
-                "name": "DMA",
-                "value": 0,
-                "tone": "idle"
-              },
-              {
-                "index": 3,
-                "name": "CRC",
-                "value": 0,
-                "tone": "idle"
-              },
-              {
-                "index": 2,
-                "name": "TX",
-                "value": 0,
-                "tone": "idle"
-              },
-              {
-                "index": 1,
-                "name": "RX",
-                "value": 0,
-                "tone": "idle"
-              },
-              {
-                "index": 0,
-                "name": "ERR",
-                "value": 0,
-                "tone": "idle"
-              }
-            ]
-          },
-          {
-            "at": "example",
-            "caption": "Step 3: Enable DMA burst & CRC verification bits (0xF8).",
-            "registerName": "IOT_EMB_CR1",
-            "bitWidth": 8,
-            "hexValue": "0xF8",
-            "decimalValue": 248,
-            "maskApplied": "(1 << 4) | (1 << 3)",
-            "bits": [
-              {
-                "index": 7,
-                "name": "EN",
-                "value": 1,
-                "tone": "ok"
-              },
-              {
-                "index": 6,
-                "name": "RDY",
-                "value": 1,
-                "tone": "ok"
-              },
-              {
-                "index": 5,
-                "name": "IRQ",
-                "value": 1,
-                "tone": "ok"
-              },
-              {
-                "index": 4,
-                "name": "DMA",
-                "value": 1,
-                "tone": "data",
-                "highlighted": true
-              },
-              {
-                "index": 3,
-                "name": "CRC",
-                "value": 1,
-                "tone": "data",
-                "highlighted": true
-              },
-              {
-                "index": 2,
-                "name": "TX",
-                "value": 0,
-                "tone": "idle"
-              },
-              {
-                "index": 1,
-                "name": "RX",
-                "value": 0,
-                "tone": "idle"
-              },
-              {
-                "index": 0,
-                "name": "ERR",
-                "value": 0,
-                "tone": "idle"
-              }
-            ]
-          },
-          {
-            "at": "tryIt",
-            "caption": "Step 4: Full TX/RX frame committed with ERR=0 verified (0xFE).",
-            "registerName": "IOT_EMB_CR1",
-            "bitWidth": 8,
-            "hexValue": "0xFE",
-            "decimalValue": 254,
-            "maskApplied": "~0x01",
-            "bits": [
-              {
-                "index": 7,
-                "name": "EN",
-                "value": 1,
-                "tone": "ok"
-              },
-              {
-                "index": 6,
-                "name": "RDY",
-                "value": 1,
-                "tone": "ok"
-              },
-              {
-                "index": 5,
-                "name": "IRQ",
-                "value": 1,
-                "tone": "ok"
-              },
-              {
-                "index": 4,
-                "name": "DMA",
-                "value": 1,
-                "tone": "ok"
-              },
-              {
-                "index": 3,
-                "name": "CRC",
-                "value": 1,
-                "tone": "ok"
-              },
-              {
-                "index": 2,
-                "name": "TX",
-                "value": 1,
-                "tone": "ok",
-                "highlighted": true
-              },
-              {
-                "index": 1,
-                "name": "RX",
+                "name": "BUSY",
                 "value": 1,
                 "tone": "ok",
                 "highlighted": true
@@ -500,7 +251,7 @@
                 "index": 0,
                 "name": "ERR",
                 "value": 0,
-                "tone": "ok"
+                "tone": "idle"
               }
             ]
           }
@@ -508,16 +259,16 @@
       }
     },
     {
-      "partTitle": "DMA Streams, Peripheral Request Channels & Priority Arbitration",
-      "codeHash": "680724a7fbe42f24f1e6de31074399bd2e1edc3f076ee19ef8cffdf8890f1468",
+      "partTitle": "DMA Streams, Channels & Hardware Trigger Multiplexing",
+      "codeHash": "c9e535523dcc45f74cccb56ca727fa900e3396a053c27225619b12b873c559ec",
       "spec": {
         "template": "register-bits",
-        "title": "DMA Streams, Peripheral Request Channels & Pr... — Register Bit Architecture",
+        "title": "DMA Streams, Channels & Hardware Trigger Mult — Register Bit Architecture",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Initialize IOT_EMB_CR2 with EN bit asserted (0x80).",
-            "registerName": "IOT_EMB_CR2",
+            "caption": "Step 1: Initialize DMA Streams, Channels & Hardware Tr with hardware clock gate & EN=1.",
+            "registerName": "DMA_SxCR2",
             "bitWidth": 8,
             "hexValue": "0x80",
             "decimalValue": 128,
@@ -550,19 +301,19 @@
               },
               {
                 "index": 3,
-                "name": "CRC",
+                "name": "TC",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 2,
-                "name": "TX",
+                "name": "HT",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 1,
-                "name": "RX",
+                "name": "BUSY",
                 "value": 0,
                 "tone": "idle"
               },
@@ -576,8 +327,8 @@
           },
           {
             "at": "say1",
-            "caption": "Step 2: Peripheral asserts RDY & IRQ flags (0xE0) on IOT_EMB_CR2.",
-            "registerName": "IOT_EMB_CR2",
+            "caption": "Step 2: Assert RDY and IRQ flags under hardware interrupt preemption.",
+            "registerName": "DMA_SxCR2",
             "bitWidth": 8,
             "hexValue": "0xE0",
             "decimalValue": 224,
@@ -611,19 +362,19 @@
               },
               {
                 "index": 3,
-                "name": "CRC",
+                "name": "TC",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 2,
-                "name": "TX",
+                "name": "HT",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 1,
-                "name": "RX",
+                "name": "BUSY",
                 "value": 0,
                 "tone": "idle"
               },
@@ -637,8 +388,8 @@
           },
           {
             "at": "example",
-            "caption": "Step 3: Enable DMA burst & CRC verification bits (0xF8).",
-            "registerName": "IOT_EMB_CR2",
+            "caption": "Step 3: Enable DMA burst and Transfer Complete flags.",
+            "registerName": "DMA_SxCR2",
             "bitWidth": 8,
             "hexValue": "0xF8",
             "decimalValue": 248,
@@ -671,20 +422,20 @@
               },
               {
                 "index": 3,
-                "name": "CRC",
+                "name": "TC",
                 "value": 1,
                 "tone": "data",
                 "highlighted": true
               },
               {
                 "index": 2,
-                "name": "TX",
+                "name": "HT",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 1,
-                "name": "RX",
+                "name": "BUSY",
                 "value": 0,
                 "tone": "idle"
               },
@@ -698,8 +449,8 @@
           },
           {
             "at": "tryIt",
-            "caption": "Step 4: Full TX/RX frame committed with ERR=0 verified (0xFE).",
-            "registerName": "IOT_EMB_CR2",
+            "caption": "Step 4: Full ping-pong streaming active with zero-drop verified.",
+            "registerName": "DMA_SxCR2",
             "bitWidth": 8,
             "hexValue": "0xFE",
             "decimalValue": 254,
@@ -731,269 +482,20 @@
               },
               {
                 "index": 3,
-                "name": "CRC",
+                "name": "TC",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 2,
-                "name": "TX",
+                "name": "HT",
                 "value": 1,
                 "tone": "ok",
                 "highlighted": true
               },
               {
                 "index": 1,
-                "name": "RX",
-                "value": 1,
-                "tone": "ok",
-                "highlighted": true
-              },
-              {
-                "index": 0,
-                "name": "ERR",
-                "value": 0,
-                "tone": "ok"
-              }
-            ]
-          }
-        ]
-      },
-      "filled": {
-        "template": "register-bits",
-        "title": "DMA Streams, Peripheral Request Channels & Pr... — Register Bit Architecture",
-        "steps": [
-          {
-            "at": "intro",
-            "caption": "Step 1: Initialize IOT_EMB_CR2 with EN bit asserted (0x80).",
-            "registerName": "IOT_EMB_CR2",
-            "bitWidth": 8,
-            "hexValue": "0x80",
-            "decimalValue": 128,
-            "maskApplied": "1 << 7",
-            "bits": [
-              {
-                "index": 7,
-                "name": "EN",
-                "value": 1,
-                "tone": "ok",
-                "highlighted": true
-              },
-              {
-                "index": 6,
-                "name": "RDY",
-                "value": 0,
-                "tone": "idle"
-              },
-              {
-                "index": 5,
-                "name": "IRQ",
-                "value": 0,
-                "tone": "idle"
-              },
-              {
-                "index": 4,
-                "name": "DMA",
-                "value": 0,
-                "tone": "idle"
-              },
-              {
-                "index": 3,
-                "name": "CRC",
-                "value": 0,
-                "tone": "idle"
-              },
-              {
-                "index": 2,
-                "name": "TX",
-                "value": 0,
-                "tone": "idle"
-              },
-              {
-                "index": 1,
-                "name": "RX",
-                "value": 0,
-                "tone": "idle"
-              },
-              {
-                "index": 0,
-                "name": "ERR",
-                "value": 0,
-                "tone": "idle"
-              }
-            ]
-          },
-          {
-            "at": "say1",
-            "caption": "Step 2: Peripheral asserts RDY & IRQ flags (0xE0) on IOT_EMB_CR2.",
-            "registerName": "IOT_EMB_CR2",
-            "bitWidth": 8,
-            "hexValue": "0xE0",
-            "decimalValue": 224,
-            "maskApplied": "(1 << 6) | (1 << 5)",
-            "bits": [
-              {
-                "index": 7,
-                "name": "EN",
-                "value": 1,
-                "tone": "ok"
-              },
-              {
-                "index": 6,
-                "name": "RDY",
-                "value": 1,
-                "tone": "data",
-                "highlighted": true
-              },
-              {
-                "index": 5,
-                "name": "IRQ",
-                "value": 1,
-                "tone": "data",
-                "highlighted": true
-              },
-              {
-                "index": 4,
-                "name": "DMA",
-                "value": 0,
-                "tone": "idle"
-              },
-              {
-                "index": 3,
-                "name": "CRC",
-                "value": 0,
-                "tone": "idle"
-              },
-              {
-                "index": 2,
-                "name": "TX",
-                "value": 0,
-                "tone": "idle"
-              },
-              {
-                "index": 1,
-                "name": "RX",
-                "value": 0,
-                "tone": "idle"
-              },
-              {
-                "index": 0,
-                "name": "ERR",
-                "value": 0,
-                "tone": "idle"
-              }
-            ]
-          },
-          {
-            "at": "example",
-            "caption": "Step 3: Enable DMA burst & CRC verification bits (0xF8).",
-            "registerName": "IOT_EMB_CR2",
-            "bitWidth": 8,
-            "hexValue": "0xF8",
-            "decimalValue": 248,
-            "maskApplied": "(1 << 4) | (1 << 3)",
-            "bits": [
-              {
-                "index": 7,
-                "name": "EN",
-                "value": 1,
-                "tone": "ok"
-              },
-              {
-                "index": 6,
-                "name": "RDY",
-                "value": 1,
-                "tone": "ok"
-              },
-              {
-                "index": 5,
-                "name": "IRQ",
-                "value": 1,
-                "tone": "ok"
-              },
-              {
-                "index": 4,
-                "name": "DMA",
-                "value": 1,
-                "tone": "data",
-                "highlighted": true
-              },
-              {
-                "index": 3,
-                "name": "CRC",
-                "value": 1,
-                "tone": "data",
-                "highlighted": true
-              },
-              {
-                "index": 2,
-                "name": "TX",
-                "value": 0,
-                "tone": "idle"
-              },
-              {
-                "index": 1,
-                "name": "RX",
-                "value": 0,
-                "tone": "idle"
-              },
-              {
-                "index": 0,
-                "name": "ERR",
-                "value": 0,
-                "tone": "idle"
-              }
-            ]
-          },
-          {
-            "at": "tryIt",
-            "caption": "Step 4: Full TX/RX frame committed with ERR=0 verified (0xFE).",
-            "registerName": "IOT_EMB_CR2",
-            "bitWidth": 8,
-            "hexValue": "0xFE",
-            "decimalValue": 254,
-            "maskApplied": "~0x01",
-            "bits": [
-              {
-                "index": 7,
-                "name": "EN",
-                "value": 1,
-                "tone": "ok"
-              },
-              {
-                "index": 6,
-                "name": "RDY",
-                "value": 1,
-                "tone": "ok"
-              },
-              {
-                "index": 5,
-                "name": "IRQ",
-                "value": 1,
-                "tone": "ok"
-              },
-              {
-                "index": 4,
-                "name": "DMA",
-                "value": 1,
-                "tone": "ok"
-              },
-              {
-                "index": 3,
-                "name": "CRC",
-                "value": 1,
-                "tone": "ok"
-              },
-              {
-                "index": 2,
-                "name": "TX",
-                "value": 1,
-                "tone": "ok",
-                "highlighted": true
-              },
-              {
-                "index": 1,
-                "name": "RX",
+                "name": "BUSY",
                 "value": 1,
                 "tone": "ok",
                 "highlighted": true
@@ -1002,7 +504,7 @@
                 "index": 0,
                 "name": "ERR",
                 "value": 0,
-                "tone": "ok"
+                "tone": "idle"
               }
             ]
           }
@@ -1010,16 +512,16 @@
       }
     },
     {
-      "partTitle": "Transfer Directions, Data Widths & Pointer Auto-Increment",
-      "codeHash": "a2740072ea9ab36abb30ac5e370cf1e86dab85f2fb4be0797a8b0d92774ea07e",
+      "partTitle": "Transfer Directions: Memory-to-Peripheral, Peripheral-to-Memory & Mem-to-Mem",
+      "codeHash": "9ae3b55c2df97a273fbb4dafd79b8946f7601e619b35a54204be2fffc529f2fa",
       "spec": {
         "template": "register-bits",
-        "title": "Transfer Directions, Data Widths & Pointer Au... — Register Bit Architecture",
+        "title": "Transfer Directions: Memory-to-Peripheral, Pe — Register Bit Architecture",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Initialize IOT_EMB_CR3 with EN bit asserted (0x80).",
-            "registerName": "IOT_EMB_CR3",
+            "caption": "Step 1: Initialize Transfer Directions: Memory-to-Peri with hardware clock gate & EN=1.",
+            "registerName": "DMA_SxCR3",
             "bitWidth": 8,
             "hexValue": "0x80",
             "decimalValue": 128,
@@ -1052,19 +554,19 @@
               },
               {
                 "index": 3,
-                "name": "CRC",
+                "name": "TC",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 2,
-                "name": "TX",
+                "name": "HT",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 1,
-                "name": "RX",
+                "name": "BUSY",
                 "value": 0,
                 "tone": "idle"
               },
@@ -1078,8 +580,8 @@
           },
           {
             "at": "say1",
-            "caption": "Step 2: Peripheral asserts RDY & IRQ flags (0xE0) on IOT_EMB_CR3.",
-            "registerName": "IOT_EMB_CR3",
+            "caption": "Step 2: Assert RDY and IRQ flags under hardware interrupt preemption.",
+            "registerName": "DMA_SxCR3",
             "bitWidth": 8,
             "hexValue": "0xE0",
             "decimalValue": 224,
@@ -1113,19 +615,19 @@
               },
               {
                 "index": 3,
-                "name": "CRC",
+                "name": "TC",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 2,
-                "name": "TX",
+                "name": "HT",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 1,
-                "name": "RX",
+                "name": "BUSY",
                 "value": 0,
                 "tone": "idle"
               },
@@ -1139,8 +641,8 @@
           },
           {
             "at": "example",
-            "caption": "Step 3: Enable DMA burst & CRC verification bits (0xF8).",
-            "registerName": "IOT_EMB_CR3",
+            "caption": "Step 3: Enable DMA burst and Transfer Complete flags.",
+            "registerName": "DMA_SxCR3",
             "bitWidth": 8,
             "hexValue": "0xF8",
             "decimalValue": 248,
@@ -1173,20 +675,20 @@
               },
               {
                 "index": 3,
-                "name": "CRC",
+                "name": "TC",
                 "value": 1,
                 "tone": "data",
                 "highlighted": true
               },
               {
                 "index": 2,
-                "name": "TX",
+                "name": "HT",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 1,
-                "name": "RX",
+                "name": "BUSY",
                 "value": 0,
                 "tone": "idle"
               },
@@ -1200,8 +702,8 @@
           },
           {
             "at": "tryIt",
-            "caption": "Step 4: Full TX/RX frame committed with ERR=0 verified (0xFE).",
-            "registerName": "IOT_EMB_CR3",
+            "caption": "Step 4: Full ping-pong streaming active with zero-drop verified.",
+            "registerName": "DMA_SxCR3",
             "bitWidth": 8,
             "hexValue": "0xFE",
             "decimalValue": 254,
@@ -1233,269 +735,20 @@
               },
               {
                 "index": 3,
-                "name": "CRC",
+                "name": "TC",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 2,
-                "name": "TX",
+                "name": "HT",
                 "value": 1,
                 "tone": "ok",
                 "highlighted": true
               },
               {
                 "index": 1,
-                "name": "RX",
-                "value": 1,
-                "tone": "ok",
-                "highlighted": true
-              },
-              {
-                "index": 0,
-                "name": "ERR",
-                "value": 0,
-                "tone": "ok"
-              }
-            ]
-          }
-        ]
-      },
-      "filled": {
-        "template": "register-bits",
-        "title": "Transfer Directions, Data Widths & Pointer Au... — Register Bit Architecture",
-        "steps": [
-          {
-            "at": "intro",
-            "caption": "Step 1: Initialize IOT_EMB_CR3 with EN bit asserted (0x80).",
-            "registerName": "IOT_EMB_CR3",
-            "bitWidth": 8,
-            "hexValue": "0x80",
-            "decimalValue": 128,
-            "maskApplied": "1 << 7",
-            "bits": [
-              {
-                "index": 7,
-                "name": "EN",
-                "value": 1,
-                "tone": "ok",
-                "highlighted": true
-              },
-              {
-                "index": 6,
-                "name": "RDY",
-                "value": 0,
-                "tone": "idle"
-              },
-              {
-                "index": 5,
-                "name": "IRQ",
-                "value": 0,
-                "tone": "idle"
-              },
-              {
-                "index": 4,
-                "name": "DMA",
-                "value": 0,
-                "tone": "idle"
-              },
-              {
-                "index": 3,
-                "name": "CRC",
-                "value": 0,
-                "tone": "idle"
-              },
-              {
-                "index": 2,
-                "name": "TX",
-                "value": 0,
-                "tone": "idle"
-              },
-              {
-                "index": 1,
-                "name": "RX",
-                "value": 0,
-                "tone": "idle"
-              },
-              {
-                "index": 0,
-                "name": "ERR",
-                "value": 0,
-                "tone": "idle"
-              }
-            ]
-          },
-          {
-            "at": "say1",
-            "caption": "Step 2: Peripheral asserts RDY & IRQ flags (0xE0) on IOT_EMB_CR3.",
-            "registerName": "IOT_EMB_CR3",
-            "bitWidth": 8,
-            "hexValue": "0xE0",
-            "decimalValue": 224,
-            "maskApplied": "(1 << 6) | (1 << 5)",
-            "bits": [
-              {
-                "index": 7,
-                "name": "EN",
-                "value": 1,
-                "tone": "ok"
-              },
-              {
-                "index": 6,
-                "name": "RDY",
-                "value": 1,
-                "tone": "data",
-                "highlighted": true
-              },
-              {
-                "index": 5,
-                "name": "IRQ",
-                "value": 1,
-                "tone": "data",
-                "highlighted": true
-              },
-              {
-                "index": 4,
-                "name": "DMA",
-                "value": 0,
-                "tone": "idle"
-              },
-              {
-                "index": 3,
-                "name": "CRC",
-                "value": 0,
-                "tone": "idle"
-              },
-              {
-                "index": 2,
-                "name": "TX",
-                "value": 0,
-                "tone": "idle"
-              },
-              {
-                "index": 1,
-                "name": "RX",
-                "value": 0,
-                "tone": "idle"
-              },
-              {
-                "index": 0,
-                "name": "ERR",
-                "value": 0,
-                "tone": "idle"
-              }
-            ]
-          },
-          {
-            "at": "example",
-            "caption": "Step 3: Enable DMA burst & CRC verification bits (0xF8).",
-            "registerName": "IOT_EMB_CR3",
-            "bitWidth": 8,
-            "hexValue": "0xF8",
-            "decimalValue": 248,
-            "maskApplied": "(1 << 4) | (1 << 3)",
-            "bits": [
-              {
-                "index": 7,
-                "name": "EN",
-                "value": 1,
-                "tone": "ok"
-              },
-              {
-                "index": 6,
-                "name": "RDY",
-                "value": 1,
-                "tone": "ok"
-              },
-              {
-                "index": 5,
-                "name": "IRQ",
-                "value": 1,
-                "tone": "ok"
-              },
-              {
-                "index": 4,
-                "name": "DMA",
-                "value": 1,
-                "tone": "data",
-                "highlighted": true
-              },
-              {
-                "index": 3,
-                "name": "CRC",
-                "value": 1,
-                "tone": "data",
-                "highlighted": true
-              },
-              {
-                "index": 2,
-                "name": "TX",
-                "value": 0,
-                "tone": "idle"
-              },
-              {
-                "index": 1,
-                "name": "RX",
-                "value": 0,
-                "tone": "idle"
-              },
-              {
-                "index": 0,
-                "name": "ERR",
-                "value": 0,
-                "tone": "idle"
-              }
-            ]
-          },
-          {
-            "at": "tryIt",
-            "caption": "Step 4: Full TX/RX frame committed with ERR=0 verified (0xFE).",
-            "registerName": "IOT_EMB_CR3",
-            "bitWidth": 8,
-            "hexValue": "0xFE",
-            "decimalValue": 254,
-            "maskApplied": "~0x01",
-            "bits": [
-              {
-                "index": 7,
-                "name": "EN",
-                "value": 1,
-                "tone": "ok"
-              },
-              {
-                "index": 6,
-                "name": "RDY",
-                "value": 1,
-                "tone": "ok"
-              },
-              {
-                "index": 5,
-                "name": "IRQ",
-                "value": 1,
-                "tone": "ok"
-              },
-              {
-                "index": 4,
-                "name": "DMA",
-                "value": 1,
-                "tone": "ok"
-              },
-              {
-                "index": 3,
-                "name": "CRC",
-                "value": 1,
-                "tone": "ok"
-              },
-              {
-                "index": 2,
-                "name": "TX",
-                "value": 1,
-                "tone": "ok",
-                "highlighted": true
-              },
-              {
-                "index": 1,
-                "name": "RX",
+                "name": "BUSY",
                 "value": 1,
                 "tone": "ok",
                 "highlighted": true
@@ -1504,7 +757,7 @@
                 "index": 0,
                 "name": "ERR",
                 "value": 0,
-                "tone": "ok"
+                "tone": "idle"
               }
             ]
           }
@@ -1512,16 +765,16 @@
       }
     },
     {
-      "partTitle": "Hardware FIFO Buffers, Thresholds (1/4, 1/2, 3/4, Full) & Burst Transfers",
-      "codeHash": "4b32f2cf8494bf586336fff778da83237bed718a207d9bdd347e04f9e3dc51e3",
+      "partTitle": "Hardware FIFO Thresholds & Burst Transfer Alignment",
+      "codeHash": "7c447a9fc01377df57a766f13222e10dfb58350cf1a44b063385c05c74b23f85",
       "spec": {
         "template": "register-bits",
-        "title": "Hardware FIFO Buffers, Thresholds (1/4, 1/2, ... — Register Bit Architecture",
+        "title": "Hardware FIFO Thresholds & Burst Transfer Ali — Register Bit Architecture",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Initialize IOT_EMB_CR4 with EN bit asserted (0x80).",
-            "registerName": "IOT_EMB_CR4",
+            "caption": "Step 1: Initialize Hardware FIFO Thresholds & Burst Tr with hardware clock gate & EN=1.",
+            "registerName": "DMA_SxCR4",
             "bitWidth": 8,
             "hexValue": "0x80",
             "decimalValue": 128,
@@ -1554,19 +807,19 @@
               },
               {
                 "index": 3,
-                "name": "CRC",
+                "name": "TC",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 2,
-                "name": "TX",
+                "name": "HT",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 1,
-                "name": "RX",
+                "name": "BUSY",
                 "value": 0,
                 "tone": "idle"
               },
@@ -1580,8 +833,8 @@
           },
           {
             "at": "say1",
-            "caption": "Step 2: Peripheral asserts RDY & IRQ flags (0xE0) on IOT_EMB_CR4.",
-            "registerName": "IOT_EMB_CR4",
+            "caption": "Step 2: Assert RDY and IRQ flags under hardware interrupt preemption.",
+            "registerName": "DMA_SxCR4",
             "bitWidth": 8,
             "hexValue": "0xE0",
             "decimalValue": 224,
@@ -1615,19 +868,19 @@
               },
               {
                 "index": 3,
-                "name": "CRC",
+                "name": "TC",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 2,
-                "name": "TX",
+                "name": "HT",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 1,
-                "name": "RX",
+                "name": "BUSY",
                 "value": 0,
                 "tone": "idle"
               },
@@ -1641,8 +894,8 @@
           },
           {
             "at": "example",
-            "caption": "Step 3: Enable DMA burst & CRC verification bits (0xF8).",
-            "registerName": "IOT_EMB_CR4",
+            "caption": "Step 3: Enable DMA burst and Transfer Complete flags.",
+            "registerName": "DMA_SxCR4",
             "bitWidth": 8,
             "hexValue": "0xF8",
             "decimalValue": 248,
@@ -1675,20 +928,20 @@
               },
               {
                 "index": 3,
-                "name": "CRC",
+                "name": "TC",
                 "value": 1,
                 "tone": "data",
                 "highlighted": true
               },
               {
                 "index": 2,
-                "name": "TX",
+                "name": "HT",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 1,
-                "name": "RX",
+                "name": "BUSY",
                 "value": 0,
                 "tone": "idle"
               },
@@ -1702,8 +955,8 @@
           },
           {
             "at": "tryIt",
-            "caption": "Step 4: Full TX/RX frame committed with ERR=0 verified (0xFE).",
-            "registerName": "IOT_EMB_CR4",
+            "caption": "Step 4: Full ping-pong streaming active with zero-drop verified.",
+            "registerName": "DMA_SxCR4",
             "bitWidth": 8,
             "hexValue": "0xFE",
             "decimalValue": 254,
@@ -1735,269 +988,20 @@
               },
               {
                 "index": 3,
-                "name": "CRC",
+                "name": "TC",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 2,
-                "name": "TX",
+                "name": "HT",
                 "value": 1,
                 "tone": "ok",
                 "highlighted": true
               },
               {
                 "index": 1,
-                "name": "RX",
-                "value": 1,
-                "tone": "ok",
-                "highlighted": true
-              },
-              {
-                "index": 0,
-                "name": "ERR",
-                "value": 0,
-                "tone": "ok"
-              }
-            ]
-          }
-        ]
-      },
-      "filled": {
-        "template": "register-bits",
-        "title": "Hardware FIFO Buffers, Thresholds (1/4, 1/2, ... — Register Bit Architecture",
-        "steps": [
-          {
-            "at": "intro",
-            "caption": "Step 1: Initialize IOT_EMB_CR4 with EN bit asserted (0x80).",
-            "registerName": "IOT_EMB_CR4",
-            "bitWidth": 8,
-            "hexValue": "0x80",
-            "decimalValue": 128,
-            "maskApplied": "1 << 7",
-            "bits": [
-              {
-                "index": 7,
-                "name": "EN",
-                "value": 1,
-                "tone": "ok",
-                "highlighted": true
-              },
-              {
-                "index": 6,
-                "name": "RDY",
-                "value": 0,
-                "tone": "idle"
-              },
-              {
-                "index": 5,
-                "name": "IRQ",
-                "value": 0,
-                "tone": "idle"
-              },
-              {
-                "index": 4,
-                "name": "DMA",
-                "value": 0,
-                "tone": "idle"
-              },
-              {
-                "index": 3,
-                "name": "CRC",
-                "value": 0,
-                "tone": "idle"
-              },
-              {
-                "index": 2,
-                "name": "TX",
-                "value": 0,
-                "tone": "idle"
-              },
-              {
-                "index": 1,
-                "name": "RX",
-                "value": 0,
-                "tone": "idle"
-              },
-              {
-                "index": 0,
-                "name": "ERR",
-                "value": 0,
-                "tone": "idle"
-              }
-            ]
-          },
-          {
-            "at": "say1",
-            "caption": "Step 2: Peripheral asserts RDY & IRQ flags (0xE0) on IOT_EMB_CR4.",
-            "registerName": "IOT_EMB_CR4",
-            "bitWidth": 8,
-            "hexValue": "0xE0",
-            "decimalValue": 224,
-            "maskApplied": "(1 << 6) | (1 << 5)",
-            "bits": [
-              {
-                "index": 7,
-                "name": "EN",
-                "value": 1,
-                "tone": "ok"
-              },
-              {
-                "index": 6,
-                "name": "RDY",
-                "value": 1,
-                "tone": "data",
-                "highlighted": true
-              },
-              {
-                "index": 5,
-                "name": "IRQ",
-                "value": 1,
-                "tone": "data",
-                "highlighted": true
-              },
-              {
-                "index": 4,
-                "name": "DMA",
-                "value": 0,
-                "tone": "idle"
-              },
-              {
-                "index": 3,
-                "name": "CRC",
-                "value": 0,
-                "tone": "idle"
-              },
-              {
-                "index": 2,
-                "name": "TX",
-                "value": 0,
-                "tone": "idle"
-              },
-              {
-                "index": 1,
-                "name": "RX",
-                "value": 0,
-                "tone": "idle"
-              },
-              {
-                "index": 0,
-                "name": "ERR",
-                "value": 0,
-                "tone": "idle"
-              }
-            ]
-          },
-          {
-            "at": "example",
-            "caption": "Step 3: Enable DMA burst & CRC verification bits (0xF8).",
-            "registerName": "IOT_EMB_CR4",
-            "bitWidth": 8,
-            "hexValue": "0xF8",
-            "decimalValue": 248,
-            "maskApplied": "(1 << 4) | (1 << 3)",
-            "bits": [
-              {
-                "index": 7,
-                "name": "EN",
-                "value": 1,
-                "tone": "ok"
-              },
-              {
-                "index": 6,
-                "name": "RDY",
-                "value": 1,
-                "tone": "ok"
-              },
-              {
-                "index": 5,
-                "name": "IRQ",
-                "value": 1,
-                "tone": "ok"
-              },
-              {
-                "index": 4,
-                "name": "DMA",
-                "value": 1,
-                "tone": "data",
-                "highlighted": true
-              },
-              {
-                "index": 3,
-                "name": "CRC",
-                "value": 1,
-                "tone": "data",
-                "highlighted": true
-              },
-              {
-                "index": 2,
-                "name": "TX",
-                "value": 0,
-                "tone": "idle"
-              },
-              {
-                "index": 1,
-                "name": "RX",
-                "value": 0,
-                "tone": "idle"
-              },
-              {
-                "index": 0,
-                "name": "ERR",
-                "value": 0,
-                "tone": "idle"
-              }
-            ]
-          },
-          {
-            "at": "tryIt",
-            "caption": "Step 4: Full TX/RX frame committed with ERR=0 verified (0xFE).",
-            "registerName": "IOT_EMB_CR4",
-            "bitWidth": 8,
-            "hexValue": "0xFE",
-            "decimalValue": 254,
-            "maskApplied": "~0x01",
-            "bits": [
-              {
-                "index": 7,
-                "name": "EN",
-                "value": 1,
-                "tone": "ok"
-              },
-              {
-                "index": 6,
-                "name": "RDY",
-                "value": 1,
-                "tone": "ok"
-              },
-              {
-                "index": 5,
-                "name": "IRQ",
-                "value": 1,
-                "tone": "ok"
-              },
-              {
-                "index": 4,
-                "name": "DMA",
-                "value": 1,
-                "tone": "ok"
-              },
-              {
-                "index": 3,
-                "name": "CRC",
-                "value": 1,
-                "tone": "ok"
-              },
-              {
-                "index": 2,
-                "name": "TX",
-                "value": 1,
-                "tone": "ok",
-                "highlighted": true
-              },
-              {
-                "index": 1,
-                "name": "RX",
+                "name": "BUSY",
                 "value": 1,
                 "tone": "ok",
                 "highlighted": true
@@ -2006,7 +1010,7 @@
                 "index": 0,
                 "name": "ERR",
                 "value": 0,
-                "tone": "ok"
+                "tone": "idle"
               }
             ]
           }
@@ -2014,16 +1018,16 @@
       }
     },
     {
-      "partTitle": "High-Speed Memory-to-Memory Benchmark: DMA Offloading vs CPU memcpy",
-      "codeHash": "b420c45cbc80b18e4fcbf90cf5babaae9367742106aa7cd03a23c57258d97c42",
+      "partTitle": "Building an Autonomous Zero-CPU UART DMA Reception Engine",
+      "codeHash": "307097857e6571adbad43bf800c9dd6f7d35c351cb34f6d2bf1f7ba1d3ac57d2",
       "spec": {
         "template": "register-bits",
-        "title": "High-Speed Memory-to-Memory Benchmark: DMA Of... — Register Bit Architecture",
+        "title": "Building an Autonomous Zero-CPU UART DMA Rece — Register Bit Architecture",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Initialize IOT_EMB_CR1 with EN bit asserted (0x80).",
-            "registerName": "IOT_EMB_CR1",
+            "caption": "Step 1: Initialize Building an Autonomous Zero-CPU UAR with hardware clock gate & EN=1.",
+            "registerName": "DMA_SxCR5",
             "bitWidth": 8,
             "hexValue": "0x80",
             "decimalValue": 128,
@@ -2056,19 +1060,19 @@
               },
               {
                 "index": 3,
-                "name": "CRC",
+                "name": "TC",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 2,
-                "name": "TX",
+                "name": "HT",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 1,
-                "name": "RX",
+                "name": "BUSY",
                 "value": 0,
                 "tone": "idle"
               },
@@ -2082,8 +1086,8 @@
           },
           {
             "at": "say1",
-            "caption": "Step 2: Peripheral asserts RDY & IRQ flags (0xE0) on IOT_EMB_CR1.",
-            "registerName": "IOT_EMB_CR1",
+            "caption": "Step 2: Assert RDY and IRQ flags under hardware interrupt preemption.",
+            "registerName": "DMA_SxCR5",
             "bitWidth": 8,
             "hexValue": "0xE0",
             "decimalValue": 224,
@@ -2117,19 +1121,19 @@
               },
               {
                 "index": 3,
-                "name": "CRC",
+                "name": "TC",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 2,
-                "name": "TX",
+                "name": "HT",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 1,
-                "name": "RX",
+                "name": "BUSY",
                 "value": 0,
                 "tone": "idle"
               },
@@ -2143,8 +1147,8 @@
           },
           {
             "at": "example",
-            "caption": "Step 3: Enable DMA burst & CRC verification bits (0xF8).",
-            "registerName": "IOT_EMB_CR1",
+            "caption": "Step 3: Enable DMA burst and Transfer Complete flags.",
+            "registerName": "DMA_SxCR5",
             "bitWidth": 8,
             "hexValue": "0xF8",
             "decimalValue": 248,
@@ -2177,20 +1181,20 @@
               },
               {
                 "index": 3,
-                "name": "CRC",
+                "name": "TC",
                 "value": 1,
                 "tone": "data",
                 "highlighted": true
               },
               {
                 "index": 2,
-                "name": "TX",
+                "name": "HT",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 1,
-                "name": "RX",
+                "name": "BUSY",
                 "value": 0,
                 "tone": "idle"
               },
@@ -2204,8 +1208,8 @@
           },
           {
             "at": "tryIt",
-            "caption": "Step 4: Full TX/RX frame committed with ERR=0 verified (0xFE).",
-            "registerName": "IOT_EMB_CR1",
+            "caption": "Step 4: Full ping-pong streaming active with zero-drop verified.",
+            "registerName": "DMA_SxCR5",
             "bitWidth": 8,
             "hexValue": "0xFE",
             "decimalValue": 254,
@@ -2237,269 +1241,20 @@
               },
               {
                 "index": 3,
-                "name": "CRC",
+                "name": "TC",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 2,
-                "name": "TX",
+                "name": "HT",
                 "value": 1,
                 "tone": "ok",
                 "highlighted": true
               },
               {
                 "index": 1,
-                "name": "RX",
-                "value": 1,
-                "tone": "ok",
-                "highlighted": true
-              },
-              {
-                "index": 0,
-                "name": "ERR",
-                "value": 0,
-                "tone": "ok"
-              }
-            ]
-          }
-        ]
-      },
-      "filled": {
-        "template": "register-bits",
-        "title": "High-Speed Memory-to-Memory Benchmark: DMA Of... — Register Bit Architecture",
-        "steps": [
-          {
-            "at": "intro",
-            "caption": "Step 1: Initialize IOT_EMB_CR1 with EN bit asserted (0x80).",
-            "registerName": "IOT_EMB_CR1",
-            "bitWidth": 8,
-            "hexValue": "0x80",
-            "decimalValue": 128,
-            "maskApplied": "1 << 7",
-            "bits": [
-              {
-                "index": 7,
-                "name": "EN",
-                "value": 1,
-                "tone": "ok",
-                "highlighted": true
-              },
-              {
-                "index": 6,
-                "name": "RDY",
-                "value": 0,
-                "tone": "idle"
-              },
-              {
-                "index": 5,
-                "name": "IRQ",
-                "value": 0,
-                "tone": "idle"
-              },
-              {
-                "index": 4,
-                "name": "DMA",
-                "value": 0,
-                "tone": "idle"
-              },
-              {
-                "index": 3,
-                "name": "CRC",
-                "value": 0,
-                "tone": "idle"
-              },
-              {
-                "index": 2,
-                "name": "TX",
-                "value": 0,
-                "tone": "idle"
-              },
-              {
-                "index": 1,
-                "name": "RX",
-                "value": 0,
-                "tone": "idle"
-              },
-              {
-                "index": 0,
-                "name": "ERR",
-                "value": 0,
-                "tone": "idle"
-              }
-            ]
-          },
-          {
-            "at": "say1",
-            "caption": "Step 2: Peripheral asserts RDY & IRQ flags (0xE0) on IOT_EMB_CR1.",
-            "registerName": "IOT_EMB_CR1",
-            "bitWidth": 8,
-            "hexValue": "0xE0",
-            "decimalValue": 224,
-            "maskApplied": "(1 << 6) | (1 << 5)",
-            "bits": [
-              {
-                "index": 7,
-                "name": "EN",
-                "value": 1,
-                "tone": "ok"
-              },
-              {
-                "index": 6,
-                "name": "RDY",
-                "value": 1,
-                "tone": "data",
-                "highlighted": true
-              },
-              {
-                "index": 5,
-                "name": "IRQ",
-                "value": 1,
-                "tone": "data",
-                "highlighted": true
-              },
-              {
-                "index": 4,
-                "name": "DMA",
-                "value": 0,
-                "tone": "idle"
-              },
-              {
-                "index": 3,
-                "name": "CRC",
-                "value": 0,
-                "tone": "idle"
-              },
-              {
-                "index": 2,
-                "name": "TX",
-                "value": 0,
-                "tone": "idle"
-              },
-              {
-                "index": 1,
-                "name": "RX",
-                "value": 0,
-                "tone": "idle"
-              },
-              {
-                "index": 0,
-                "name": "ERR",
-                "value": 0,
-                "tone": "idle"
-              }
-            ]
-          },
-          {
-            "at": "example",
-            "caption": "Step 3: Enable DMA burst & CRC verification bits (0xF8).",
-            "registerName": "IOT_EMB_CR1",
-            "bitWidth": 8,
-            "hexValue": "0xF8",
-            "decimalValue": 248,
-            "maskApplied": "(1 << 4) | (1 << 3)",
-            "bits": [
-              {
-                "index": 7,
-                "name": "EN",
-                "value": 1,
-                "tone": "ok"
-              },
-              {
-                "index": 6,
-                "name": "RDY",
-                "value": 1,
-                "tone": "ok"
-              },
-              {
-                "index": 5,
-                "name": "IRQ",
-                "value": 1,
-                "tone": "ok"
-              },
-              {
-                "index": 4,
-                "name": "DMA",
-                "value": 1,
-                "tone": "data",
-                "highlighted": true
-              },
-              {
-                "index": 3,
-                "name": "CRC",
-                "value": 1,
-                "tone": "data",
-                "highlighted": true
-              },
-              {
-                "index": 2,
-                "name": "TX",
-                "value": 0,
-                "tone": "idle"
-              },
-              {
-                "index": 1,
-                "name": "RX",
-                "value": 0,
-                "tone": "idle"
-              },
-              {
-                "index": 0,
-                "name": "ERR",
-                "value": 0,
-                "tone": "idle"
-              }
-            ]
-          },
-          {
-            "at": "tryIt",
-            "caption": "Step 4: Full TX/RX frame committed with ERR=0 verified (0xFE).",
-            "registerName": "IOT_EMB_CR1",
-            "bitWidth": 8,
-            "hexValue": "0xFE",
-            "decimalValue": 254,
-            "maskApplied": "~0x01",
-            "bits": [
-              {
-                "index": 7,
-                "name": "EN",
-                "value": 1,
-                "tone": "ok"
-              },
-              {
-                "index": 6,
-                "name": "RDY",
-                "value": 1,
-                "tone": "ok"
-              },
-              {
-                "index": 5,
-                "name": "IRQ",
-                "value": 1,
-                "tone": "ok"
-              },
-              {
-                "index": 4,
-                "name": "DMA",
-                "value": 1,
-                "tone": "ok"
-              },
-              {
-                "index": 3,
-                "name": "CRC",
-                "value": 1,
-                "tone": "ok"
-              },
-              {
-                "index": 2,
-                "name": "TX",
-                "value": 1,
-                "tone": "ok",
-                "highlighted": true
-              },
-              {
-                "index": 1,
-                "name": "RX",
+                "name": "BUSY",
                 "value": 1,
                 "tone": "ok",
                 "highlighted": true
@@ -2508,7 +1263,7 @@
                 "index": 0,
                 "name": "ERR",
                 "value": 0,
-                "tone": "ok"
+                "tone": "idle"
               }
             ]
           }
