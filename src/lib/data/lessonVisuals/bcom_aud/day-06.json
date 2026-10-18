@@ -1,0 +1,664 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_aud",
+  "day": 6,
+  "promptSha": "a3c6da65ae9f71de34e9cf9ea64864ce06b063b9a727ffcf2d19f52126e6a9ca",
+  "model": "google/gemini-3.8-flash",
+  "entries": [
+    {
+      "partTitle": "Overall Objectives of the Independent Auditor & Professional Skepticism: SA 200",
+      "codeHash": "269b3a078fb49d0b8bc62090553ebd5208afc8655e72bc50d12dcdf90f5ccf1a",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Overall Objectives of the Independent Auditor & Pr \u2014 Statutory Audit Ledger",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open statutory audit assurance verification ledger (960000) for Overall Objectives of the Independent Au...",
+            "title": "Day 6 Statutory Assurance Ledger \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 960000,
+            "totalCredit": 960000,
+            "entries": [
+              {
+                "id": "AUD-601",
+                "account": "Statutory Assurance & Substantive Testing Control",
+                "debit": 960000,
+                "balance": 960000,
+                "tone": "data",
+                "memo": "Initial recognition under Standards on Auditing"
+              },
+              {
+                "id": "AUD-602",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 960000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control balance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record statutory adjustment / sampling precision entry (145000) under applicable SA.",
+            "title": "Day 6 Statutory Assurance Ledger \u2014 Precision Adjustment",
+            "isBalanced": true,
+            "totalDebit": 1105000,
+            "totalCredit": 1105000,
+            "entries": [
+              {
+                "id": "AUD-601",
+                "account": "Statutory Assurance & Substantive Testing Control",
+                "debit": 960000,
+                "balance": 960000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-603",
+                "account": "CARO 2020 / IFCoFR Statutory Verification Reserve",
+                "debit": 145000,
+                "balance": 1105000,
+                "tone": "accent",
+                "memo": "Statutory audit adjustment"
+              },
+              {
+                "id": "AUD-602",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1105000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute simulated enterprise audit case study for Overall Objectives of the Independent Au...",
+            "title": "Day 6 Statutory Assurance Ledger \u2014 Substantive Audit",
+            "isBalanced": true,
+            "totalDebit": 1105000,
+            "totalCredit": 1105000,
+            "entries": [
+              {
+                "id": "AUD-601",
+                "account": "Statutory Assurance & Substantive Testing Control",
+                "debit": 960000,
+                "balance": 960000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-603",
+                "account": "CARO 2020 / IFCoFR Statutory Verification Reserve",
+                "debit": 145000,
+                "balance": 1105000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-602",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1105000,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify 100% balanced ledger closure and working paper archival for Overall Objectives of the Independent Au...",
+            "title": "Day 6 Statutory Assurance Ledger \u2014 Final Certified Balances",
+            "isBalanced": true,
+            "totalDebit": 1105000,
+            "totalCredit": 1105000,
+            "entries": [
+              {
+                "id": "AUD-601",
+                "account": "Statutory Assurance & Substantive Testing Control",
+                "debit": 960000,
+                "balance": 960000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-603",
+                "account": "CARO 2020 / IFCoFR Statutory Verification Reserve",
+                "debit": 145000,
+                "balance": 1105000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-602",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1105000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "100% Balanced and Certified by Lead Engagement Partner"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Agreeing Engagement Terms & Quality Control for Audits: SA 210 & SA 220",
+      "codeHash": "a9b7ac3e76b57ce3a509363cd6f2bd1ab68aa76373e7ce5f0d2ff325ab702e2d",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Agreeing Engagement Terms & Quality Control for Au \u2014 Statutory Audit Ledger",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open statutory audit assurance verification ledger (978000) for Agreeing Engagement Terms & Quality Cont...",
+            "title": "Day 6 Statutory Assurance Ledger \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 978000,
+            "totalCredit": 978000,
+            "entries": [
+              {
+                "id": "AUD-601",
+                "account": "Statutory Assurance & Substantive Testing Control",
+                "debit": 978000,
+                "balance": 978000,
+                "tone": "data",
+                "memo": "Initial recognition under Standards on Auditing"
+              },
+              {
+                "id": "AUD-602",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 978000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control balance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record statutory adjustment / sampling precision entry (153500) under applicable SA.",
+            "title": "Day 6 Statutory Assurance Ledger \u2014 Precision Adjustment",
+            "isBalanced": true,
+            "totalDebit": 1131500,
+            "totalCredit": 1131500,
+            "entries": [
+              {
+                "id": "AUD-601",
+                "account": "Statutory Assurance & Substantive Testing Control",
+                "debit": 978000,
+                "balance": 978000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-603",
+                "account": "CARO 2020 / IFCoFR Statutory Verification Reserve",
+                "debit": 153500,
+                "balance": 1131500,
+                "tone": "accent",
+                "memo": "Statutory audit adjustment"
+              },
+              {
+                "id": "AUD-602",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1131500,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute simulated enterprise audit case study for Agreeing Engagement Terms & Quality Cont...",
+            "title": "Day 6 Statutory Assurance Ledger \u2014 Substantive Audit",
+            "isBalanced": true,
+            "totalDebit": 1131500,
+            "totalCredit": 1131500,
+            "entries": [
+              {
+                "id": "AUD-601",
+                "account": "Statutory Assurance & Substantive Testing Control",
+                "debit": 978000,
+                "balance": 978000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-603",
+                "account": "CARO 2020 / IFCoFR Statutory Verification Reserve",
+                "debit": 153500,
+                "balance": 1131500,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-602",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1131500,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify 100% balanced ledger closure and working paper archival for Agreeing Engagement Terms & Quality Cont...",
+            "title": "Day 6 Statutory Assurance Ledger \u2014 Final Certified Balances",
+            "isBalanced": true,
+            "totalDebit": 1131500,
+            "totalCredit": 1131500,
+            "entries": [
+              {
+                "id": "AUD-601",
+                "account": "Statutory Assurance & Substantive Testing Control",
+                "debit": 978000,
+                "balance": 978000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-603",
+                "account": "CARO 2020 / IFCoFR Statutory Verification Reserve",
+                "debit": 153500,
+                "balance": 1131500,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-602",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1131500,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "100% Balanced and Certified by Lead Engagement Partner"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Audit Documentation & Evidence Retention Architecture: SA 230",
+      "codeHash": "db9cd52ecf8272538e16f4d9d8ac2155e7798de2d101fba0c6f8b365ab991472",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Audit Documentation & Evidence Retention Architect \u2014 Statutory Audit Ledger",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open statutory audit assurance verification ledger (996000) for Audit Documentation & Evidence Retention...",
+            "title": "Day 6 Statutory Assurance Ledger \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 996000,
+            "totalCredit": 996000,
+            "entries": [
+              {
+                "id": "AUD-601",
+                "account": "Statutory Assurance & Substantive Testing Control",
+                "debit": 996000,
+                "balance": 996000,
+                "tone": "data",
+                "memo": "Initial recognition under Standards on Auditing"
+              },
+              {
+                "id": "AUD-602",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 996000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control balance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record statutory adjustment / sampling precision entry (162000) under applicable SA.",
+            "title": "Day 6 Statutory Assurance Ledger \u2014 Precision Adjustment",
+            "isBalanced": true,
+            "totalDebit": 1158000,
+            "totalCredit": 1158000,
+            "entries": [
+              {
+                "id": "AUD-601",
+                "account": "Statutory Assurance & Substantive Testing Control",
+                "debit": 996000,
+                "balance": 996000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-603",
+                "account": "CARO 2020 / IFCoFR Statutory Verification Reserve",
+                "debit": 162000,
+                "balance": 1158000,
+                "tone": "accent",
+                "memo": "Statutory audit adjustment"
+              },
+              {
+                "id": "AUD-602",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1158000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute simulated enterprise audit case study for Audit Documentation & Evidence Retention...",
+            "title": "Day 6 Statutory Assurance Ledger \u2014 Substantive Audit",
+            "isBalanced": true,
+            "totalDebit": 1158000,
+            "totalCredit": 1158000,
+            "entries": [
+              {
+                "id": "AUD-601",
+                "account": "Statutory Assurance & Substantive Testing Control",
+                "debit": 996000,
+                "balance": 996000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-603",
+                "account": "CARO 2020 / IFCoFR Statutory Verification Reserve",
+                "debit": 162000,
+                "balance": 1158000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-602",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1158000,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify 100% balanced ledger closure and working paper archival for Audit Documentation & Evidence Retention...",
+            "title": "Day 6 Statutory Assurance Ledger \u2014 Final Certified Balances",
+            "isBalanced": true,
+            "totalDebit": 1158000,
+            "totalCredit": 1158000,
+            "entries": [
+              {
+                "id": "AUD-601",
+                "account": "Statutory Assurance & Substantive Testing Control",
+                "debit": 996000,
+                "balance": 996000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-603",
+                "account": "CARO 2020 / IFCoFR Statutory Verification Reserve",
+                "debit": 162000,
+                "balance": 1158000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-602",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1158000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "100% Balanced and Certified by Lead Engagement Partner"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Audit Planning, Strategy & Direction: SA 300",
+      "codeHash": "8a32c5cabd973a4c115eef2357e46ad393ae1a1a1ed058c10bf40ee316dfe1a1",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Audit Planning, Strategy & Direction: SA 300 \u2014 Statutory Audit Ledger",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open statutory audit assurance verification ledger (1014000) for Audit Planning, Strategy & Direction: SA...",
+            "title": "Day 6 Statutory Assurance Ledger \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 1014000,
+            "totalCredit": 1014000,
+            "entries": [
+              {
+                "id": "AUD-601",
+                "account": "Statutory Assurance & Substantive Testing Control",
+                "debit": 1014000,
+                "balance": 1014000,
+                "tone": "data",
+                "memo": "Initial recognition under Standards on Auditing"
+              },
+              {
+                "id": "AUD-602",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1014000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control balance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record statutory adjustment / sampling precision entry (170500) under applicable SA.",
+            "title": "Day 6 Statutory Assurance Ledger \u2014 Precision Adjustment",
+            "isBalanced": true,
+            "totalDebit": 1184500,
+            "totalCredit": 1184500,
+            "entries": [
+              {
+                "id": "AUD-601",
+                "account": "Statutory Assurance & Substantive Testing Control",
+                "debit": 1014000,
+                "balance": 1014000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-603",
+                "account": "CARO 2020 / IFCoFR Statutory Verification Reserve",
+                "debit": 170500,
+                "balance": 1184500,
+                "tone": "accent",
+                "memo": "Statutory audit adjustment"
+              },
+              {
+                "id": "AUD-602",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1184500,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute simulated enterprise audit case study for Audit Planning, Strategy & Direction: SA...",
+            "title": "Day 6 Statutory Assurance Ledger \u2014 Substantive Audit",
+            "isBalanced": true,
+            "totalDebit": 1184500,
+            "totalCredit": 1184500,
+            "entries": [
+              {
+                "id": "AUD-601",
+                "account": "Statutory Assurance & Substantive Testing Control",
+                "debit": 1014000,
+                "balance": 1014000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-603",
+                "account": "CARO 2020 / IFCoFR Statutory Verification Reserve",
+                "debit": 170500,
+                "balance": 1184500,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-602",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1184500,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify 100% balanced ledger closure and working paper archival for Audit Planning, Strategy & Direction: SA...",
+            "title": "Day 6 Statutory Assurance Ledger \u2014 Final Certified Balances",
+            "isBalanced": true,
+            "totalDebit": 1184500,
+            "totalCredit": 1184500,
+            "entries": [
+              {
+                "id": "AUD-601",
+                "account": "Statutory Assurance & Substantive Testing Control",
+                "debit": 1014000,
+                "balance": 1014000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-603",
+                "account": "CARO 2020 / IFCoFR Statutory Verification Reserve",
+                "debit": 170500,
+                "balance": 1184500,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-602",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1184500,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "100% Balanced and Certified by Lead Engagement Partner"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Identifying Risks of Material Misstatement & Materiality: SA 315 & SA 320",
+      "codeHash": "54d10c75c6954283438bd8319d0c4cb83a9671107a2f6ac19117249cabd77824",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Identifying Risks of Material Misstatement & Mater \u2014 Statutory Audit Ledger",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open statutory audit assurance verification ledger (1032000) for Identifying Risks of Material Misstateme...",
+            "title": "Day 6 Statutory Assurance Ledger \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 1032000,
+            "totalCredit": 1032000,
+            "entries": [
+              {
+                "id": "AUD-601",
+                "account": "Statutory Assurance & Substantive Testing Control",
+                "debit": 1032000,
+                "balance": 1032000,
+                "tone": "data",
+                "memo": "Initial recognition under Standards on Auditing"
+              },
+              {
+                "id": "AUD-602",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1032000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control balance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record statutory adjustment / sampling precision entry (179000) under applicable SA.",
+            "title": "Day 6 Statutory Assurance Ledger \u2014 Precision Adjustment",
+            "isBalanced": true,
+            "totalDebit": 1211000,
+            "totalCredit": 1211000,
+            "entries": [
+              {
+                "id": "AUD-601",
+                "account": "Statutory Assurance & Substantive Testing Control",
+                "debit": 1032000,
+                "balance": 1032000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-603",
+                "account": "CARO 2020 / IFCoFR Statutory Verification Reserve",
+                "debit": 179000,
+                "balance": 1211000,
+                "tone": "accent",
+                "memo": "Statutory audit adjustment"
+              },
+              {
+                "id": "AUD-602",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1211000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute simulated enterprise audit case study for Identifying Risks of Material Misstateme...",
+            "title": "Day 6 Statutory Assurance Ledger \u2014 Substantive Audit",
+            "isBalanced": true,
+            "totalDebit": 1211000,
+            "totalCredit": 1211000,
+            "entries": [
+              {
+                "id": "AUD-601",
+                "account": "Statutory Assurance & Substantive Testing Control",
+                "debit": 1032000,
+                "balance": 1032000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-603",
+                "account": "CARO 2020 / IFCoFR Statutory Verification Reserve",
+                "debit": 179000,
+                "balance": 1211000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-602",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1211000,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify 100% balanced ledger closure and working paper archival for Identifying Risks of Material Misstateme...",
+            "title": "Day 6 Statutory Assurance Ledger \u2014 Final Certified Balances",
+            "isBalanced": true,
+            "totalDebit": 1211000,
+            "totalCredit": 1211000,
+            "entries": [
+              {
+                "id": "AUD-601",
+                "account": "Statutory Assurance & Substantive Testing Control",
+                "debit": 1032000,
+                "balance": 1032000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-603",
+                "account": "CARO 2020 / IFCoFR Statutory Verification Reserve",
+                "debit": 179000,
+                "balance": 1211000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-602",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1211000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "100% Balanced and Certified by Lead Engagement Partner"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

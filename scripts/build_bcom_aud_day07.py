@@ -1,0 +1,423 @@
+"""
+Build Day 7 JSON for Course: bcom_aud (Auditing & Forensic Accounting)
+Topic: Internal Financial Controls over Financial Reporting (IFCoFR), Test of Controls & Sampling: SAs 330, 450 & 530
+"""
+import json
+
+day_data = {
+    "day": 7,
+    "title": "Internal Financial Controls (IFCoFR), Test of Controls & Audit Sampling: SAs 330, 450 & 530",
+    "parts": [
+        {
+            "title": "The Auditor's Responses to Assessed Risks: Tests of Controls vs Substantive Procedures: SA 330",
+            "say": [
+                "Standard on Auditing (SA) 330 addresses the auditor's statutory responsibility to design and implement overall responses to address the assessed risks of material misstatement at the financial statement level, and to design and perform further audit procedures whose nature, timing, and extent are responsive to the assessed risks of material misstatement at the assertion level. The auditor cannot simply perform standardized audit checklists; every single audit test must be statistically and legally linked to an identified risk of material misstatement.",
+                "Further audit procedures comprise two distinct statutory categories: Tests of Controls (ToC) and Substantive Procedures. Tests of Controls are audit procedures designed to evaluate the operating effectiveness of controls in preventing, or detecting and correcting, material misstatements at the assertion level. Substantive Procedures are audit procedures designed to detect material misstatements at the assertion level, comprising: (a) Tests of Details (of classes of transactions, account balances, and disclosures); and (b) Substantive Analytical Procedures.",
+                "Under SA 330, the auditor is legally required to perform Tests of Controls under two mandatory circumstances: (1) when the auditor's risk assessment includes an expectation that controls are operating effectively (the auditor intends to rely on controls to reduce substantive testing); or (2) when substantive procedures alone cannot provide sufficient appropriate audit evidence at the assertion level (for example, in highly automated electronic commerce environments where transactions are initiated, recorded, processed, and reported purely electronically without manual documentation).",
+                "Crucially, irrespective of the assessed risks of material misstatement or the verified effectiveness of internal controls, SA 330 legally mandates that the auditor shall design and perform substantive procedures for each material class of transactions, account balance, and disclosure. The auditor is strictly prohibited from relying 100% on internal controls to eliminate substantive audit testing."
+            ],
+            "example": "In auditing a national logistics enterprise processing 500,000 monthly freight invoices electronically, the auditor performs Tests of Controls over automated 3-way matching algorithms between purchase orders, electronic gate passes, and carrier invoices. Once automated controls pass testing across 45 sampled dates, the auditor relies on the control system and reduces substantive invoice vouchers from 10,000 manual items down to 250 high-value items, satisfying SA 330 while maintaining high audit assurance.",
+            "code": '''def formulate_sa330_audit_testing_mix(
+    assertion_risk_level: str, # "LOW", "MODERATE", "HIGH"
+    automated_system_prevalence: bool,
+    controls_designed_effectively: bool,
+    controls_operating_tested_effective: bool,
+    account_materiality_inr_cr: float
+) -> dict:
+    # Rule 1: Dual testing condition
+    rely_on_controls = controls_designed_effectively and controls_operating_tested_effective
+    
+    if assertion_risk_level == "HIGH":
+        if rely_on_controls:
+            strategy = "COMBINED_APPROACH_MODERATE_SUBSTANTIVE"
+            substantive_sample_pct = 35.0
+            test_of_controls_scope = "EXTENSIVE_AUTOMATED_AND_MANUAL_TOC"
+        else:
+            strategy = "SUBSTANTIVE_ONLY_MAXIMUM_TESTING"
+            substantive_sample_pct = 85.0
+            test_of_controls_scope = "NO_RELIANCE_ON_CONTROLS"
+    elif assertion_risk_level == "MODERATE":
+        if rely_on_controls:
+            strategy = "COMBINED_APPROACH_BALANCED"
+            substantive_sample_pct = 20.0
+            test_of_controls_scope = "STANDARD_TOC_SAMPLE_25_TO_45_ITEMS"
+        else:
+            strategy = "EXTENSIVE_SUBSTANTIVE_PROCEDURES"
+            substantive_sample_pct = 50.0
+            test_of_controls_scope = "NO_RELIANCE_ON_CONTROLS"
+    else: # LOW
+        strategy = "ANALYTICAL_AND_MINIMAL_SUBSTANTIVE"
+        substantive_sample_pct = 10.0
+        test_of_controls_scope = "INQUIRY_AND_OBSERVATION"
+        
+    # Statutory Invariant: Substantive testing cannot be zero
+    min_substantive_items = max(25, int(account_materiality_inr_cr * 5))
+    
+    return {
+        "assertion_risk": assertion_risk_level,
+        "controls_reliance_authorized": rely_on_controls,
+        "testing_strategy": strategy,
+        "toc_testing_scope": test_of_controls_scope,
+        "substantive_sample_percentage": substantive_sample_pct,
+        "mandatory_substantive_sample_floor": min_substantive_items
+    }
+
+sa330_plan = formulate_sa330_audit_testing_mix(
+    assertion_risk_level="HIGH",
+    automated_system_prevalence=True,
+    controls_designed_effectively=True,
+    controls_operating_tested_effective=True,
+    account_materiality_inr_cr=12.5
+)
+print("SA 330 Audit Testing Mix & Risk Response Engine:")
+print(f"  Testing Strategy       : {sa330_plan['testing_strategy']}")
+print(f"  Control Reliance Status: {sa330_plan['controls_reliance_authorized']}")
+print(f"  ToC Testing Scope      : {sa330_plan['toc_testing_scope']}")
+print(f"  Substantive Sample Pct : {sa330_plan['substantive_sample_percentage']}%")
+print(f"  Mandatory Sample Floor : {sa330_plan['mandatory_substantive_sample_floor']} items")
+''',
+            "tryIt": "Set controls_operating_tested_effective to False to observe the engine pivot automatically to SUBSTANTIVE_ONLY_MAXIMUM_TESTING with an 85% sampling load.",
+            "check": {
+                "question": "Under SA 330, is the statutory auditor ever permitted to completely eliminate substantive testing for a material class of transactions by relying 100% on tested internal controls?",
+                "options": [
+                    "No, SA 330 legally mandates that irrespective of assessed risks or control effectiveness, the auditor shall perform substantive procedures for each material class of transactions, account balance, and disclosure",
+                    "Yes, provided the entity uses an enterprise SAP system with SOC 1 Type 2 certification",
+                    "Yes, if the Audit Committee provides an unconditional indemnity bond protecting the audit firm",
+                    "Only if the transactions are under Rs 1 Crore in value"
+                ],
+                "answerIndex": 0,
+                "why": "SA 330 Paragraph 18 strictly mandates that irrespective of the assessed risks of material misstatement, the auditor shall design and perform substantive procedures for each material class of transactions, account balance, and disclosure."
+            }
+        },
+        {
+            "title": "Internal Financial Controls over Financial Reporting (IFCoFR) under Section 143(3)(i)",
+            "say": [
+                "In India, Section 143(3)(i) of the Companies Act, 2013 imposes an onerous statutory reporting responsibility on the statutory auditor: the auditor's report must state whether the company has adequate internal financial controls with reference to financial statements in place and the operating effectiveness of such controls (IFCoFR Reporting). This requirement is distinct from and far more rigorous than auditing financial statement numbers alone.",
+                "The Institute of Chartered Accountants of India (ICAI) issued the 'Guidance Note on Audit of Internal Financial Controls Over Financial Reporting', which establishes the benchmark framework based on the COSO (Committee of Sponsoring Organizations of the Treadway Commission) Internal Control - Integrated Framework. IFCoFR encompasses controls over: (1) maintenance of records that accurately and fairly reflect transactions and dispositions of assets; (2) reasonable assurance that transactions are recorded as necessary to permit preparation of financial statements in accordance with Ind AS / AS; (3) receipts and expenditures are made only with management authorization; and (4) timely prevention or detection of unauthorized acquisition, use, or disposition of the company's assets.",
+                "To evaluate IFCoFR, the auditor identifies Entity-Level Controls (ELCs) and Process-Level Controls (PLCs). For every significant business process (Procure-to-Pay, Order-to-Cash, Hire-to-Retire, Record-to-Report, Treasury), the auditor creates a Risk and Control Matrix (RCM). The auditor performs a 'Walkthrough' for each major transaction class—tracing a single transaction from origination through computer systems to general ledger posting to verify control design.",
+                "A control deficiency exists when the design or operation of a control does not allow management or employees, in the normal course of performing their assigned functions, to prevent or detect misstatements on a timely basis. Deficiencies are classified into three severity tiers: (1) Control Deficiency; (2) Significant Deficiency; and (3) Material Weakness. A Material Weakness is a deficiency, or a combination of deficiencies, in internal financial control over financial reporting, such that there is a reasonable possibility that a material misstatement of the company's financial statements will not be prevented or detected on a timely basis. If even one Material Weakness exists at year-end, the auditor must issue a Modified (Qualified or Adverse) IFCoFR opinion under Section 143(3)(i)."
+            ],
+            "example": "During an IFCoFR audit of an infrastructure corporation, the auditor discovers that the Chief Financial Officer possesses unilateral master user administrative privileges in SAP permitting manual journal vouchers to be posted directly to revenue accounts without dual maker-checker authorization. The auditor classifies this unsegregated access as a Material Weakness because it allows management override of controls. Even if no actual fraud was detected during sampling, the presence of the Material Weakness compels the auditor to issue an Adverse IFCoFR opinion in Annexure B to the independent auditor's report.",
+            "code": '''def evaluate_ifcofr_deficiencies(
+    total_controls_tested: int,
+    design_deficiencies: int,
+    operating_deficiencies: int,
+    segregation_of_duties_conflicts: int,
+    management_override_possible: bool,
+    potential_financial_impact_cr: float,
+    overall_materiality_cr: float
+) -> dict:
+    has_material_weakness = False
+    weakness_reasons = []
+    
+    # Quantitative Materiality Test
+    if potential_financial_impact_cr >= overall_materiality_cr:
+        has_material_weakness = True
+        weakness_reasons.append(f"Financial exposure (INR {potential_financial_impact_cr} Cr) exceeds overall materiality (INR {overall_materiality_cr} Cr)")
+        
+    # Qualitative Critical Flaws
+    if management_override_possible:
+        has_material_weakness = True
+        weakness_reasons.append("Unrestricted management override capability in ERP general ledger")
+        
+    if segregation_of_duties_conflicts >= 3:
+        has_material_weakness = True
+        weakness_reasons.append(f"Multiple pervasive Segregation of Duties conflicts ({segregation_of_duties_conflicts} critical conflicts)")
+        
+    if has_material_weakness:
+        ifcofr_opinion = "ADVERSE_OPINION_MATERIAL_WEAKNESS_EXISTS"
+    elif design_deficiencies > 0 or operating_deficiencies > 0:
+        ifcofr_opinion = "UNMODIFIED_WITH_SIGNIFICANT_DEFICIENCY_LETTER_TO_TCWG"
+    else:
+        ifcofr_opinion = "UNMODIFIED_CLEAN_IFCOFR_OPINION"
+        
+    return {
+        "controls_tested_count": total_controls_tested,
+        "material_weakness_present": has_material_weakness,
+        "ifcofr_statutory_opinion": ifcofr_opinion,
+        "material_weakness_rationale": weakness_reasons,
+        "reporting_annexure": "Annexure B to Independent Auditor Report (Companies Act Sec 143(3)(i))"
+    }
+
+ifcofr_audit = evaluate_ifcofr_deficiencies(
+    total_controls_tested=120,
+    design_deficiencies=2,
+    operating_deficiencies=4,
+    segregation_of_duties_conflicts=3,
+    management_override_possible=True,
+    potential_financial_impact_cr=8.5,
+    overall_materiality_cr=5.0
+)
+print("IFCoFR Statutory Audit Evaluation Engine (Sec 143(3)(i)):")
+print(f"  Material Weakness Present : {ifcofr_audit['material_weakness_present']}")
+print(f"  Statutory Audit Opinion   : {ifcofr_audit['ifcofr_statutory_opinion']}")
+print(f"  Reporting Destination     : {ifcofr_audit['reporting_annexure']}")
+print("  Findings & Deficiencies   :")
+for r in ifcofr_audit['material_weakness_rationale']:
+    print(f"    * {r}")
+''',
+            "tryIt": "Set management_override_possible to False and lower potential_financial_impact_cr to 1.5 Cr to observe the opinion upgrade from Adverse to an Unmodified Clean opinion with TCWG reporting.",
+            "check": {
+                "question": "What is the statutory consequence under Section 143(3)(i) of the Companies Act, 2013 if the auditor identifies a single unmitigated Material Weakness in internal financial controls at the balance sheet date?",
+                "options": [
+                    "The statutory auditor must issue an Adverse or Qualified audit opinion on the adequacy and operating effectiveness of the company's internal financial controls over financial reporting",
+                    "The auditor must immediately arrest the Chief Financial Officer under PMLA regulations",
+                    "The company's corporate charter is automatically suspended by the Registrar of Companies (ROC)",
+                    "The auditor can ignore the finding provided the balance sheet numbers are mathematically balanced"
+                ],
+                "answerIndex": 0,
+                "why": "Under the ICAI Guidance Note on IFCoFR and Section 143(3)(i), the existence of even one unmitigated Material Weakness at the balance sheet date legally precludes an unqualified opinion, requiring a modified (qualified or adverse) IFCoFR audit report."
+            }
+        },
+        {
+            "title": "Evaluation of Misstatements Identified During the Audit: SA 450",
+            "say": [
+                "Standard on Auditing (SA) 450 deals with the auditor's statutory responsibility to evaluate the effect of identified misstatements on the audit and of uncorrected misstatements, if any, on the financial statements. Misstatement is defined as a difference between the amount, classification, presentation, or disclosure of a reported financial statement item and the amount, classification, presentation, or disclosure that is required for the item to be in accordance with the applicable financial reporting framework (Ind AS / AS).",
+                "SA 450 categorizes misstatements into three distinct forms: (1) Factual Misstatements—misstatements about which there is no doubt (e.g., an invoice recorded at Rs 10 Lakh instead of Rs 1 Lakh due to a clear data entry transposition); (2) Judgmental Misstatements—differences arising from the judgments of management concerning accounting estimates that the auditor considers unreasonable, or the selection or application of accounting policies that the auditor considers inappropriate; and (3) Projected Misstatements—the auditor's best estimate of misstatements in populations, involving the projection of misstatements identified in audit samples to the entire populations under SA 530.",
+                "The auditor must accumulate all misstatements identified during the audit, other than those that are clearly trivial (de minimis threshold established under SA 320). The auditor must communicate on a timely basis all misstatements accumulated during the audit with the appropriate level of management and request that management correct those misstatements.",
+                "If management refuses to correct some or all of the communicated misstatements, the auditor must obtain an understanding of management's reasons for not making the corrections and take that understanding into account when evaluating whether the financial statements as a whole are free from material misstatement. Prior to evaluating the effect of uncorrected misstatements, the auditor shall reassess materiality determined in accordance with SA 320 to confirm whether it remains appropriate in the context of the entity's actual financial results. Finally, the auditor communicates uncorrected misstatements to Those Charged with Governance (TCWG) and requests a written representation under SA 580 that uncorrected misstatements are immaterial."
+            ],
+            "example": "During an annual audit, the team identifies Rs 3.8 Crore in uncorrected misstatements on the Summary of Unadjusted Differences (SUAD), comprising Rs 1.5 Crore in factual cut-off errors, Rs 1.3 Crore in judgmental inventory write-downs, and Rs 1.0 Crore in projected sampling misstatements. Because overall materiality is Rs 5.0 Crore, the total unadjusted misstatement (Rs 3.8 Crore) does not exceed materiality. However, because it exceeds performance materiality (Rs 3.5 Crore), the auditor demands management correct the factual errors before signing, bringing total uncorrected errors down to Rs 2.3 Crore.",
+            "code": '''def evaluate_sa450_misstatement_schedule(
+    overall_materiality_cr: float,
+    performance_materiality_cr: float,
+    clearly_trivial_threshold_cr: float,
+    misstatements_list: list
+) -> dict:
+    accumulated_misstatements = []
+    total_factual_cr = 0.0
+    total_judgmental_cr = 0.0
+    total_projected_cr = 0.0
+    
+    for m in misstatements_list:
+        val = m["amount_cr"]
+        if val <= clearly_trivial_threshold_cr:
+            continue # Disregard trivial items
+            
+        accumulated_misstatements.append(m)
+        m_type = m["type"].upper()
+        if m_type == "FACTUAL":
+            total_factual_cr += val
+        elif m_type == "JUDGMENTAL":
+            total_judgmental_cr += val
+        elif m_type == "PROJECTED":
+            total_projected_cr += val
+            
+    total_accumulated_cr = total_factual_cr + total_judgmental_cr + total_projected_cr
+    
+    is_material_individually_or_aggregate = total_accumulated_cr >= overall_materiality_cr
+    exceeds_performance_materiality = total_accumulated_cr >= performance_materiality_cr
+    
+    if is_material_individually_or_aggregate:
+        action = "QUALIFIED_OR_ADVERSE_OPINION_REQUIRED_IF_MANAGEMENT_REFUSES_CORRECTION"
+    elif exceeds_performance_materiality:
+        action = "DEMAND_MANAGEMENT_CORRECT_FACTUAL_ITEMS_TO_REDUCE_AGGREGATE_RISK"
+    else:
+        action = "OBTAIN_TCWG_WRITTEN_REPRESENTATION_SA580_UNMODIFIED_OPINION"
+        
+    return {
+        "accumulated_items_count": len(accumulated_misstatements),
+        "total_factual_misstatement_cr": round(total_factual_cr, 3),
+        "total_judgmental_misstatement_cr": round(total_judgmental_cr, 3),
+        "total_projected_misstatement_cr": round(total_projected_cr, 3),
+        "total_accumulated_misstatement_cr": round(total_accumulated_cr, 3),
+        "is_material_to_financial_statements": is_material_individually_or_aggregate,
+        "recommended_audit_action": action
+    }
+
+audit_errors = [
+    {"desc": "Cut-off invoice error", "amount_cr": 1.5, "type": "FACTUAL"},
+    {"desc": "Inventory obsolescence valuation", "amount_cr": 1.3, "type": "JUDGMENTAL"},
+    {"desc": "MUS sample error projection", "amount_cr": 1.0, "type": "PROJECTED"},
+    {"desc": "Office petty cash voucher mismatch", "amount_cr": 0.005, "type": "FACTUAL"}
+]
+
+sa450_res = evaluate_sa450_misstatement_schedule(
+    overall_materiality_cr=5.0,
+    performance_materiality_cr=3.5,
+    clearly_trivial_threshold_cr=0.20,
+    misstatements_list=audit_errors
+)
+print("SA 450 Summary of Unadjusted Audit Differences (SUAD) Analysis:")
+print(f"  Accumulated Errors     : {sa450_res['accumulated_items_count']} items")
+print(f"  Factual Misstatements  : INR {sa450_res['total_factual_misstatement_cr']} Cr")
+print(f"  Judgmental Differences : INR {sa450_res['total_judgmental_misstatement_cr']} Cr")
+print(f"  Projected Sampling Err : INR {sa450_res['total_projected_misstatement_cr']} Cr")
+print(f"  Total Unadjusted Error : INR {sa450_res['total_accumulated_misstatement_cr']} Cr")
+print(f"  Material to Statements : {sa450_res['is_material_to_financial_statements']}")
+print(f"  Action Protocol        : {sa450_res['recommended_audit_action']}")
+''',
+            "tryIt": "Add an unrecorded litigation liability of Rs 2.5 Crore (Factual) to see total misstatements exceed overall materiality (Rs 5.0 Cr), triggering mandatory opinion qualification.",
+            "check": {
+                "question": "Under SA 450, what action must the statutory auditor take if total uncorrected misstatements accumulated on the SUAD exceed overall materiality and management refuses to adjust the financial statements?",
+                "options": [
+                    "The auditor must modify the statutory audit opinion (issue a Qualified or Adverse opinion) in accordance with SA 705",
+                    "The auditor must post the journal entries into the client's accounting software directly",
+                    "The auditor is permitted to increase materiality retroactively to make the errors disappear",
+                    "The auditor must file an immediate civil lawsuit in the High Court against the Chief Accountant"
+                ],
+                "answerIndex": 0,
+                "why": "SA 450 Paragraph 11 establishes that if management refuses to correct misstatements communicated by the auditor, and the uncorrected misstatements are material individually or in aggregate, the auditor shall modify the opinion in the auditor's report in accordance with SA 705."
+            }
+        },
+        {
+            "title": "Audit Sampling Architecture & Sample Size Determination: SA 530",
+            "say": [
+                "Standard on Auditing (SA) 530 applies when the auditor has decided to use audit sampling in performing audit procedures. Audit sampling is defined as the application of audit procedures to less than 100% of items within a population of audit relevance such that all sampling units have a chance of selection in order to provide the auditor with a reasonable basis on which to draw conclusions about the entire population.",
+                "SA 530 distinguishes between Statistical Sampling (an approach to sampling that has the characteristics of random selection of the sample units and the use of probability theory to evaluate sample results, including measurement of sampling risk) and Non-Statistical Sampling. The auditor faces two types of risk: (1) Sampling Risk—the risk that the auditor's conclusion based on a sample may be different from the conclusion if the entire population were subjected to the same audit procedure; and (2) Non-Sampling Risk—the risk that the auditor reaches an erroneous conclusion for any reason not related to sampling risk (such as using inappropriate audit procedures or misinterpreting audit evidence).",
+                "In testing controls, sampling risk manifests as: (a) Risk of Over-Reliance (assessing control risk lower than it actually is, impairing audit effectiveness and leading to inappropriate clean opinions); and (b) Risk of Under-Reliance (assessing control risk higher than it is, affecting audit efficiency). In substantive testing, sampling risk manifests as: (a) Risk of Incorrect Acceptance (material misstatement does not exist when in fact it does, impairing audit effectiveness); and (b) Risk of Incorrect Rejection (material misstatement exists when it does not, affecting audit efficiency).",
+                "When designing an audit sample under SA 530, the auditor must consider the purpose of the audit procedure and the characteristics of the population from which the sample will be drawn. The sample size can be determined using statistical formulas based on the tolerable rate of deviation (for tests of controls) or tolerable misstatement (for substantive tests of details). Tolerable misstatement is the monetary amount set by the auditor in respect of which the auditor seeks to obtain an appropriate level of assurance that the monetary amount set by the auditor is not exceeded by the actual misstatement in the population (directly linked to performance materiality)."
+            ],
+            "example": "In auditing a Rs 200 Crore accounts receivable ledger containing 8,500 customer balances, the auditor sets tolerable misstatement at Rs 3.5 Crore and tolerable error rate at 5%. Using statistical sampling with a 95% confidence factor (reliability coefficient 3.0), the auditor computes a sample size of 171 accounts. Testing discovers two pricing errors totaling Rs 150,000 in the sample, which projects to an estimated population error of Rs 745,000, well below tolerable misstatement.",
+            "code": '''import math
+
+def calculate_sa530_substantive_sample_size(
+    population_book_value_inr_cr: float,
+    population_items_count: int,
+    tolerable_misstatement_inr_cr: float,
+    expected_misstatement_inr_cr: float,
+    confidence_level_pct: float = 95.0
+) -> dict:
+    # Reliability Factors for Classical Variables / MUS Sampling (Poisson distribution)
+    # 95% confidence: 3.0; 90% confidence: 2.31; 80% confidence: 1.61
+    confidence_factors = {99.0: 4.61, 95.0: 3.0, 90.0: 2.31, 80.0: 1.61}
+    rf = confidence_factors.get(confidence_level_pct, 3.0)
+    
+    # Sampling Interval = Tolerable Misstatement / Reliability Factor
+    sampling_interval_cr = (tolerable_misstatement_inr_cr - (expected_misstatement_inr_cr * 1.6)) / rf
+    sampling_interval_cr = max(0.01, sampling_interval_cr)
+    
+    # Sample Size = Total Population Book Value / Sampling Interval
+    sample_size = math.ceil(population_book_value_inr_cr / sampling_interval_cr)
+    sample_size = min(population_items_count, max(30, sample_size))
+    
+    sampling_fraction_pct = (sample_size / population_items_count) * 100.0
+    
+    return {
+        "population_book_value_cr": population_book_value_inr_cr,
+        "population_items_count": population_items_count,
+        "tolerable_misstatement_cr": tolerable_misstatement_inr_cr,
+        "confidence_level_pct": confidence_level_pct,
+        "reliability_factor": rf,
+        "calculated_sampling_interval_cr": round(sampling_interval_cr, 4),
+        "statistically_valid_sample_size": sample_size,
+        "population_coverage_pct": round(sampling_fraction_pct, 2)
+    }
+
+mus_calc = calculate_sa530_substantive_sample_size(
+    population_book_value_inr_cr=250.0,
+    population_items_count=6500,
+    tolerable_misstatement_inr_cr=3.5,
+    expected_misstatement_inr_cr=0.5,
+    confidence_level_pct=95.0
+)
+print("SA 530 Statistical Audit Sampling Engine (Monetary Unit Sampling):")
+print(f"  Population Book Value  : INR {mus_calc['population_book_value_cr']} Crores ({mus_calc['population_items_count']} items)")
+print(f"  Tolerable Misstatement : INR {mus_calc['tolerable_misstatement_cr']} Crores")
+print(f"  Sampling Interval      : INR {mus_calc['calculated_sampling_interval_cr']} Crores")
+print(f"  Statistical Sample Size: {mus_calc['statistically_valid_sample_size']} items")
+print(f"  Population Unit Sampled: {mus_calc['population_coverage_pct']}% of records")
+''',
+            "tryIt": "Reduce tolerable_misstatement_inr_cr from 3.5 to 1.5 Cr to observe the required sample size expand significantly to maintain 95% statistical confidence.",
+            "check": {
+                "question": "What is the definition and danger of the 'Risk of Over-Reliance' in testing controls under SA 530?",
+                "options": [
+                    "The risk that the auditor assesses control risk lower than it actually is, leading the auditor to mistakenly believe controls are effective and inappropriately reduce substantive testing, directly impairing audit effectiveness",
+                    "The risk that the auditor works excessive overtime hours beyond statutory labor standards",
+                    "The risk that the client pays the audit fee before the audit opinion is delivered",
+                    "The risk that physical computer hardware fails during automated test procedures"
+                ],
+                "answerIndex": 0,
+                "why": "SA 530 Paragraph 5 defines the Risk of Over-Reliance as the risk that the assessed level of control risk based on the sample is less than the true operating effectiveness of the control, which dangerously compromises audit effectiveness by falsely justifying reduced substantive testing."
+            }
+        },
+        {
+            "title": "Projecting Sample Misstatements & Upper Error Limit Calculations: SA 530",
+            "say": [
+                "Under SA 530, for tests of details, the auditor shall project misstatements found in the sample to the population. The auditor cannot simply conclude that the population error is equal to the sample error; the projected misstatement plus anomalous misstatement, if any, is the auditor's best estimate of misstatement in the entire population.",
+                "In Monetary Unit Sampling (MUS) and Classical Ratio Estimation, when a sample item contains a monetary error, the auditor computes the Tainting Percentage: Tainting = (Book Value - Audit Value) / Book Value. If an item's book value exceeds the sampling interval (Top-Stratum item), the actual dollar error is added directly without sampling risk inflation. For items smaller than the sampling interval, the Projected Error = Tainting Percentage * Sampling Interval.",
+                "To evaluate whether the population as a whole is materially misstated, the auditor must calculate the Upper Error Limit (UEL). The Upper Error Limit represents the maximum monetary error that could exist in the population at the specified confidence level (e.g., 95%). The UEL is computed as: Basic Precision (Sampling Interval * Reliability Factor at zero errors) + Total Projected Misstatement + Incremental Allowance for Precision Risk.",
+                "If the Upper Error Limit exceeds Tolerable Misstatement (UEL > TM), the auditor cannot accept the population as fairly stated. The auditor must: (1) request management to investigate the identified misstatements and the potential for further misstatements, making appropriate adjustments; (2) tailor the nature, timing, and extent of further audit procedures (such as testing additional samples); or (3) consider the effect on the auditor's report under SA 705."
+            ],
+            "example": "In an accounts payable population with a sampling interval of Rs 50 Lakh, testing reveals three tainted invoices: Item 1 has a 10% tainting (Projected Error = Rs 5 Lakh); Item 2 has a 25% tainting (Projected Error = Rs 12.5 Lakh); Item 3 has a 40% tainting (Projected Error = Rs 20 Lakh). Total projected error is Rs 37.5 Lakh. Basic precision is Rs 1.5 Crore. The calculated Upper Error Limit is Rs 2.15 Crore. Because Tolerable Misstatement is Rs 3.0 Crore, UEL < TM, and the auditor concludes with 95% confidence that accounts payable is not materially misstated.",
+            "code": '''def calculate_mus_upper_error_limit(
+    sampling_interval_inr: float,
+    tolerable_misstatement_inr: float,
+    confidence_level_pct: float,
+    sample_taintings: list # list of floats between 0.0 and 1.0
+) -> dict:
+    # Reliability factors for 95% confidence: 0 errors: 3.00, 1: 4.75, 2: 6.30, 3: 7.76
+    # Incremental factor weights for precision allowance
+    rf_0 = 3.00
+    incremental_weights = [1.75, 1.55, 1.46, 1.40, 1.35]
+    
+    # 1. Basic Precision = Sampling Interval * Zero-Error Reliability Factor
+    basic_precision = sampling_interval_inr * rf_0
+    
+    # 2. Projected Misstatements
+    # Sort taintings descending to maximize conservative upper bound
+    sorted_taints = sorted([t for t in sample_taintings if t > 0.0], reverse=True)
+    
+    projected_errors = []
+    incremental_allowances = []
+    
+    for idx, taint in enumerate(sorted_taints):
+        proj_err = taint * sampling_interval_inr
+        projected_errors.append(proj_err)
+        
+        weight = incremental_weights[idx] if idx < len(incremental_weights) else 1.30
+        inc_allowance = (weight - 1.0) * proj_err
+        incremental_allowances.append(inc_allowance)
+        
+    total_projected_error = sum(projected_errors)
+    total_incremental_allowance = sum(incremental_allowances)
+    
+    # 3. Upper Error Limit (UEL)
+    upper_error_limit = basic_precision + total_projected_error + total_incremental_allowance
+    
+    is_population_acceptable = upper_error_limit <= tolerable_misstatement_inr
+    
+    return {
+        "basic_precision_inr": round(basic_precision, 2),
+        "total_projected_error_inr": round(total_projected_error, 2),
+        "incremental_precision_allowance_inr": round(total_incremental_allowance, 2),
+        "upper_error_limit_uel_inr": round(upper_error_limit, 2),
+        "tolerable_misstatement_inr": round(tolerable_misstatement_inr, 2),
+        "population_acceptable": is_population_acceptable,
+        "audit_decision": "POPULATION_FAIRLY_STATED_ACCEPT" if is_population_acceptable else "REJECT_POPULATION_EXPAND_TESTING_OR_ADJUST"
+    }
+
+mus_eval = calculate_mus_upper_error_limit(
+    sampling_interval_inr=5000000.0, # Rs 50 Lakh
+    tolerable_misstatement_inr=30000000.0, # Rs 3.0 Crore
+    confidence_level_pct=95.0,
+    sample_taintings=[0.40, 0.25, 0.10]
+)
+print("SA 530 Monetary Unit Sampling Upper Error Limit (UEL) Simulator:")
+print(f"  Basic Precision       : INR {mus_eval['basic_precision_inr']:,.2f}")
+print(f"  Projected Misstatement: INR {mus_eval['total_projected_error_inr']:,.2f}")
+print(f"  Precision Allowance   : INR {mus_eval['incremental_precision_allowance_inr']:,.2f}")
+print(f"  Upper Error Limit(UEL): INR {mus_eval['upper_error_limit_uel_inr']:,.2f}")
+print(f"  Tolerable Misstatement: INR {mus_eval['tolerable_misstatement_inr']:,.2f}")
+print(f"  Auditor Conclusion    : {mus_eval['audit_decision']}")
+''',
+            "tryIt": "Add three additional high taintings [0.80, 0.70, 0.60] to the sample to see the Upper Error Limit breach the Rs 3.0 Crore Tolerable Misstatement threshold, triggering population rejection.",
+            "check": {
+                "question": "In statistical audit sampling under SA 530, what is the Upper Error Limit (UEL) and how does it dictate the auditor's conclusion?",
+                "options": [
+                    "The UEL is the maximum monetary error that could exist in the population at the target confidence level (comprising Basic Precision + Projected Misstatement + Incremental Precision Allowance); if UEL exceeds Tolerable Misstatement, the auditor cannot conclude that the population is fairly stated",
+                    "The UEL is the maximum tax refund that a company can claim under Income Tax Section 237",
+                    "The UEL is the statutory maximum audit fee that a Chartered Accountant can bill a listed company",
+                    "The UEL is the physical storage limit for electronic audit working papers"
+                ],
+                "answerIndex": 0,
+                "why": "SA 530 Paragraph 13 requires the auditor to evaluate whether the projected misstatement combined with the allowance for sampling risk (the Upper Error Limit) exceeds tolerable misstatement before concluding on population fairness."
+            }
+        }
+    ]
+}
+
+if __name__ == "__main__":
+    with open("scripts/bcom_aud_day07_data.json", "w", encoding="utf-8") as f:
+        json.dump(day_data, f, indent=2)
+    print("Generated scripts/bcom_aud_day07_data.json successfully!")
