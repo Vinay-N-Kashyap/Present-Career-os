@@ -1,0 +1,669 @@
+{
+  "schemaVersion": 1,
+  "prefix": "blockchain",
+  "day": 37,
+  "promptSha": "57bc4359b9734c040f9b5f151d2f6b68d10837adb817d80a467a5554a75953a5",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Spot Price Flash Loan Distortions & The AMM Invariant Weakness",
+      "codeHash": "1f94c6a10ad963cdf0721fe9d60cda079bb66c8eea7ee57a5be2a2f49360cfe6",
+      "spec": {
+        "template": "sequence",
+        "title": "Spot Price Flash Loan Distortions & The AMM Invariant Weakness — Oracle & Interoperability Sequence",
+        "actors": [
+          "Attacker Agent",
+          "Spot AMM Pair",
+          "Victim Lending Pool",
+          "Deviation Guard"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Protocol monitors state and parameters for Spot Price Flash Loan Distorti...",
+            "activeActor": "Attacker Agent",
+            "messages": [
+              {
+                "from": "Attacker Agent",
+                "to": "Spot AMM Pair",
+                "label": "initiateOperation(prepareParameters) [Phase 1]",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Engine executes state transition and updates core invariant",
+            "activeActor": "Spot AMM Pair",
+            "messages": [
+              {
+                "from": "Spot AMM Pair",
+                "to": "Victim Lending Pool",
+                "label": "executeStateTransition(verifyInvariant) [Phase 2]",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of freshness, deviation, or cross-chain signature bounds",
+            "activeActor": "Victim Lending Pool",
+            "messages": [
+              {
+                "from": "Victim Lending Pool",
+                "to": "Deviation Guard",
+                "label": "verifyAccountingAndSafety(checkBoundary) [Phase 3]",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Block settled atomically; invariant preserved and state committed",
+            "activeActor": "Spot AMM Pair",
+            "messages": [
+              {
+                "from": "Spot AMM Pair",
+                "to": "Attacker Agent",
+                "label": "OperationCommitted(invariantVerified ✓)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Spot Price Flash Loan Distortions & The AMM Invariant Weakness — Oracle & Interoperability Sequence",
+        "actors": [
+          "Attacker Agent",
+          "Spot AMM Pair",
+          "Victim Lending Pool",
+          "Deviation Guard"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Protocol monitors state and parameters for Spot Price Flash Loan Distorti...",
+            "activeActor": "Attacker Agent",
+            "messages": [
+              {
+                "from": "Attacker Agent",
+                "to": "Spot AMM Pair",
+                "label": "initiateOperation(prepareParameters) [Phase 1]",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Engine executes state transition and updates core invariant",
+            "activeActor": "Spot AMM Pair",
+            "messages": [
+              {
+                "from": "Spot AMM Pair",
+                "to": "Victim Lending Pool",
+                "label": "executeStateTransition(verifyInvariant) [Phase 2]",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of freshness, deviation, or cross-chain signature bounds",
+            "activeActor": "Victim Lending Pool",
+            "messages": [
+              {
+                "from": "Victim Lending Pool",
+                "to": "Deviation Guard",
+                "label": "verifyAccountingAndSafety(checkBoundary) [Phase 3]",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Block settled atomically; invariant preserved and state committed",
+            "activeActor": "Spot AMM Pair",
+            "messages": [
+              {
+                "from": "Spot AMM Pair",
+                "to": "Attacker Agent",
+                "label": "OperationCommitted(invariantVerified ✓)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Historical Exploit Forensic: bZx, Harvest Finance & Mango Markets",
+      "codeHash": "fd153ce31356136bdc40bca6f289dc15a5a3fc9b0f787f213727309795b6d187",
+      "spec": {
+        "template": "sequence",
+        "title": "Historical Exploit Forensic: bZx, Harvest Finance & Mango Markets — Oracle & Interoperability Sequence",
+        "actors": [
+          "Attacker Agent",
+          "Spot AMM Pair",
+          "Victim Lending Pool",
+          "Deviation Guard"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Protocol monitors state and parameters for Historical Exploit Forensic: b...",
+            "activeActor": "Attacker Agent",
+            "messages": [
+              {
+                "from": "Attacker Agent",
+                "to": "Spot AMM Pair",
+                "label": "initiateOperation(prepareParameters) [Phase 1]",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Engine executes state transition and updates core invariant",
+            "activeActor": "Spot AMM Pair",
+            "messages": [
+              {
+                "from": "Spot AMM Pair",
+                "to": "Victim Lending Pool",
+                "label": "executeStateTransition(verifyInvariant) [Phase 2]",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of freshness, deviation, or cross-chain signature bounds",
+            "activeActor": "Victim Lending Pool",
+            "messages": [
+              {
+                "from": "Victim Lending Pool",
+                "to": "Deviation Guard",
+                "label": "verifyAccountingAndSafety(checkBoundary) [Phase 3]",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Block settled atomically; invariant preserved and state committed",
+            "activeActor": "Spot AMM Pair",
+            "messages": [
+              {
+                "from": "Spot AMM Pair",
+                "to": "Attacker Agent",
+                "label": "OperationCommitted(invariantVerified ✓)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Historical Exploit Forensic: bZx, Harvest Finance & Mango Markets — Oracle & Interoperability Sequence",
+        "actors": [
+          "Attacker Agent",
+          "Spot AMM Pair",
+          "Victim Lending Pool",
+          "Deviation Guard"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Protocol monitors state and parameters for Historical Exploit Forensic: b...",
+            "activeActor": "Attacker Agent",
+            "messages": [
+              {
+                "from": "Attacker Agent",
+                "to": "Spot AMM Pair",
+                "label": "initiateOperation(prepareParameters) [Phase 1]",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Engine executes state transition and updates core invariant",
+            "activeActor": "Spot AMM Pair",
+            "messages": [
+              {
+                "from": "Spot AMM Pair",
+                "to": "Victim Lending Pool",
+                "label": "executeStateTransition(verifyInvariant) [Phase 2]",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of freshness, deviation, or cross-chain signature bounds",
+            "activeActor": "Victim Lending Pool",
+            "messages": [
+              {
+                "from": "Victim Lending Pool",
+                "to": "Deviation Guard",
+                "label": "verifyAccountingAndSafety(checkBoundary) [Phase 3]",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Block settled atomically; invariant preserved and state committed",
+            "activeActor": "Spot AMM Pair",
+            "messages": [
+              {
+                "from": "Spot AMM Pair",
+                "to": "Attacker Agent",
+                "label": "OperationCommitted(invariantVerified ✓)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Detective Lab: Volatility Circuit Breakers & Bounded Deviation Filters",
+      "codeHash": "967e921a11cfcc573c6183aaa9291c8b1d04c0e3185facd794dae7ae307344ce",
+      "spec": {
+        "template": "sequence",
+        "title": "Detective Lab: Volatility Circuit Breakers & Bounded Deviation Filters — Oracle & Interoperability Sequence",
+        "actors": [
+          "Attacker Agent",
+          "Spot AMM Pair",
+          "Victim Lending Pool",
+          "Deviation Guard"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Protocol monitors state and parameters for Detective Lab: Volatility Circ...",
+            "activeActor": "Attacker Agent",
+            "messages": [
+              {
+                "from": "Attacker Agent",
+                "to": "Spot AMM Pair",
+                "label": "initiateOperation(prepareParameters) [Phase 1]",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Engine executes state transition and updates core invariant",
+            "activeActor": "Spot AMM Pair",
+            "messages": [
+              {
+                "from": "Spot AMM Pair",
+                "to": "Victim Lending Pool",
+                "label": "executeStateTransition(verifyInvariant) [Phase 2]",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of freshness, deviation, or cross-chain signature bounds",
+            "activeActor": "Victim Lending Pool",
+            "messages": [
+              {
+                "from": "Victim Lending Pool",
+                "to": "Deviation Guard",
+                "label": "verifyAccountingAndSafety(checkBoundary) [Phase 3]",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Block settled atomically; invariant preserved and state committed",
+            "activeActor": "Spot AMM Pair",
+            "messages": [
+              {
+                "from": "Spot AMM Pair",
+                "to": "Attacker Agent",
+                "label": "OperationCommitted(invariantVerified ✓)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Detective Lab: Volatility Circuit Breakers & Bounded Deviation Filters — Oracle & Interoperability Sequence",
+        "actors": [
+          "Attacker Agent",
+          "Spot AMM Pair",
+          "Victim Lending Pool",
+          "Deviation Guard"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Protocol monitors state and parameters for Detective Lab: Volatility Circ...",
+            "activeActor": "Attacker Agent",
+            "messages": [
+              {
+                "from": "Attacker Agent",
+                "to": "Spot AMM Pair",
+                "label": "initiateOperation(prepareParameters) [Phase 1]",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Engine executes state transition and updates core invariant",
+            "activeActor": "Spot AMM Pair",
+            "messages": [
+              {
+                "from": "Spot AMM Pair",
+                "to": "Victim Lending Pool",
+                "label": "executeStateTransition(verifyInvariant) [Phase 2]",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of freshness, deviation, or cross-chain signature bounds",
+            "activeActor": "Victim Lending Pool",
+            "messages": [
+              {
+                "from": "Victim Lending Pool",
+                "to": "Deviation Guard",
+                "label": "verifyAccountingAndSafety(checkBoundary) [Phase 3]",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Block settled atomically; invariant preserved and state committed",
+            "activeActor": "Spot AMM Pair",
+            "messages": [
+              {
+                "from": "Spot AMM Pair",
+                "to": "Attacker Agent",
+                "label": "OperationCommitted(invariantVerified ✓)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Dynamic Close Factors & Asymmetric Liquidation Bounds",
+      "codeHash": "79319da78580685ea642872ff7eede1a0eed0fb68c9aeecaae0d611c949677ec",
+      "spec": {
+        "template": "sequence",
+        "title": "Dynamic Close Factors & Asymmetric Liquidation Bounds — Oracle & Interoperability Sequence",
+        "actors": [
+          "Attacker Agent",
+          "Spot AMM Pair",
+          "Victim Lending Pool",
+          "Deviation Guard"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Protocol monitors state and parameters for Dynamic Close Factors & Asymme...",
+            "activeActor": "Attacker Agent",
+            "messages": [
+              {
+                "from": "Attacker Agent",
+                "to": "Spot AMM Pair",
+                "label": "initiateOperation(prepareParameters) [Phase 1]",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Engine executes state transition and updates core invariant",
+            "activeActor": "Spot AMM Pair",
+            "messages": [
+              {
+                "from": "Spot AMM Pair",
+                "to": "Victim Lending Pool",
+                "label": "executeStateTransition(verifyInvariant) [Phase 2]",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of freshness, deviation, or cross-chain signature bounds",
+            "activeActor": "Victim Lending Pool",
+            "messages": [
+              {
+                "from": "Victim Lending Pool",
+                "to": "Deviation Guard",
+                "label": "verifyAccountingAndSafety(checkBoundary) [Phase 3]",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Block settled atomically; invariant preserved and state committed",
+            "activeActor": "Spot AMM Pair",
+            "messages": [
+              {
+                "from": "Spot AMM Pair",
+                "to": "Attacker Agent",
+                "label": "OperationCommitted(invariantVerified ✓)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Dynamic Close Factors & Asymmetric Liquidation Bounds — Oracle & Interoperability Sequence",
+        "actors": [
+          "Attacker Agent",
+          "Spot AMM Pair",
+          "Victim Lending Pool",
+          "Deviation Guard"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Protocol monitors state and parameters for Dynamic Close Factors & Asymme...",
+            "activeActor": "Attacker Agent",
+            "messages": [
+              {
+                "from": "Attacker Agent",
+                "to": "Spot AMM Pair",
+                "label": "initiateOperation(prepareParameters) [Phase 1]",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Engine executes state transition and updates core invariant",
+            "activeActor": "Spot AMM Pair",
+            "messages": [
+              {
+                "from": "Spot AMM Pair",
+                "to": "Victim Lending Pool",
+                "label": "executeStateTransition(verifyInvariant) [Phase 2]",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of freshness, deviation, or cross-chain signature bounds",
+            "activeActor": "Victim Lending Pool",
+            "messages": [
+              {
+                "from": "Victim Lending Pool",
+                "to": "Deviation Guard",
+                "label": "verifyAccountingAndSafety(checkBoundary) [Phase 3]",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Block settled atomically; invariant preserved and state committed",
+            "activeActor": "Spot AMM Pair",
+            "messages": [
+              {
+                "from": "Spot AMM Pair",
+                "to": "Attacker Agent",
+                "label": "OperationCommitted(invariantVerified ✓)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Anti-Oracle Manipulation Defense Suite & Exploit Immunity Certification",
+      "codeHash": "c31baaa2aaa7e8614e1948f89ffbcd70588b4902570cae7be08744e081c85f92",
+      "spec": {
+        "template": "sequence",
+        "title": "Anti-Oracle Manipulation Defense Suite & Exploit Immunity Certification — Oracle & Interoperability Sequence",
+        "actors": [
+          "Attacker Agent",
+          "Spot AMM Pair",
+          "Victim Lending Pool",
+          "Deviation Guard"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Protocol monitors state and parameters for Anti-Oracle Manipulation Defen...",
+            "activeActor": "Attacker Agent",
+            "messages": [
+              {
+                "from": "Attacker Agent",
+                "to": "Spot AMM Pair",
+                "label": "initiateOperation(prepareParameters) [Phase 1]",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Engine executes state transition and updates core invariant",
+            "activeActor": "Spot AMM Pair",
+            "messages": [
+              {
+                "from": "Spot AMM Pair",
+                "to": "Victim Lending Pool",
+                "label": "executeStateTransition(verifyInvariant) [Phase 2]",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of freshness, deviation, or cross-chain signature bounds",
+            "activeActor": "Victim Lending Pool",
+            "messages": [
+              {
+                "from": "Victim Lending Pool",
+                "to": "Deviation Guard",
+                "label": "verifyAccountingAndSafety(checkBoundary) [Phase 3]",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Block settled atomically; invariant preserved and state committed",
+            "activeActor": "Spot AMM Pair",
+            "messages": [
+              {
+                "from": "Spot AMM Pair",
+                "to": "Attacker Agent",
+                "label": "OperationCommitted(invariantVerified ✓)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Anti-Oracle Manipulation Defense Suite & Exploit Immunity Certification — Oracle & Interoperability Sequence",
+        "actors": [
+          "Attacker Agent",
+          "Spot AMM Pair",
+          "Victim Lending Pool",
+          "Deviation Guard"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Protocol monitors state and parameters for Anti-Oracle Manipulation Defen...",
+            "activeActor": "Attacker Agent",
+            "messages": [
+              {
+                "from": "Attacker Agent",
+                "to": "Spot AMM Pair",
+                "label": "initiateOperation(prepareParameters) [Phase 1]",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Engine executes state transition and updates core invariant",
+            "activeActor": "Spot AMM Pair",
+            "messages": [
+              {
+                "from": "Spot AMM Pair",
+                "to": "Victim Lending Pool",
+                "label": "executeStateTransition(verifyInvariant) [Phase 2]",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of freshness, deviation, or cross-chain signature bounds",
+            "activeActor": "Victim Lending Pool",
+            "messages": [
+              {
+                "from": "Victim Lending Pool",
+                "to": "Deviation Guard",
+                "label": "verifyAccountingAndSafety(checkBoundary) [Phase 3]",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Block settled atomically; invariant preserved and state committed",
+            "activeActor": "Spot AMM Pair",
+            "messages": [
+              {
+                "from": "Spot AMM Pair",
+                "to": "Attacker Agent",
+                "label": "OperationCommitted(invariantVerified ✓)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
