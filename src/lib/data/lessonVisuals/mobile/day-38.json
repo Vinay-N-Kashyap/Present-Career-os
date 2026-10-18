@@ -1,0 +1,1089 @@
+{
+  "schemaVersion": 1,
+  "prefix": "mobile",
+  "day": 38,
+  "promptSha": "mobile-day-38-newarch-spec",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "TurboModules Lazy Loading Architecture & Cold Startup Optimization",
+      "codeHash": "230e114ca4c450f4264e54d77dcb65b5bc69be3a4f2a3d32a513d73fac23d490",
+      "spec": {
+        "template": "component-tree",
+        "rootId": "AppRoot",
+        "nodes": [
+          {
+            "id": "AppRoot",
+            "name": "<NewArchitectureShell />",
+            "props": {
+              "runtime": "Hermes JSI",
+              "renderer": "Fabric C++"
+            },
+            "children": [
+              {
+                "id": "JsiRuntimeHost",
+                "name": "<JsiHostObjectRuntime />",
+                "props": {
+                  "memoryMode": "DIRECT_C_POINTER",
+                  "serializationCostMs": 0.0
+                }
+              },
+              {
+                "id": "FabricShadowTree",
+                "name": "<FabricShadowTreeManager />",
+                "props": {
+                  "immutability": "STRUCTURAL_SHARING",
+                  "layoutEngine": "Yoga C++"
+                }
+              },
+              {
+                "id": "TurboModuleManager",
+                "name": "<TurboModuleEngine />",
+                "props": {
+                  "loadingStrategy": "LAZY_ON_DEMAND",
+                  "typeContract": "CODEGEN_VERIFIED"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Bind JSI HostObject memory pointers for TurboModules Lazy Loading Arch.",
+            "activeId": "JsiRuntimeHost",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "JsiRuntimeHost",
+                "name": "<JsiHostObjectRuntime />",
+                "props": {
+                  "status": "JSI_HOST_BOUND"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Clone immutable C++ Shadow Tree and compute Yoga layout concurrently.",
+            "activeId": "FabricShadowTree",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "FabricShadowTree",
+                "name": "<FabricShadowTreeManager />",
+                "props": {
+                  "shadowState": "CLONED_IMMUTABLE"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Resolve lazy TurboModule specifications and execute synchronous native C++ methods.",
+            "activeId": "TurboModuleManager",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "TurboModuleManager",
+                "name": "<TurboModuleEngine />",
+                "props": {
+                  "execution": "SYNCHRONOUS_JSI"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify zero bridge serialization overhead and zero native memory leaks.",
+            "activeId": "AppRoot",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppRoot",
+                "name": "<NewArchitectureShell />",
+                "props": {
+                  "certification": "NEW_ARCHITECTURE_VERIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "rootId": "AppRoot",
+        "nodes": [
+          {
+            "id": "AppRoot",
+            "name": "<NewArchitectureShell />",
+            "props": {
+              "runtime": "Hermes JSI",
+              "renderer": "Fabric C++"
+            },
+            "children": [
+              {
+                "id": "JsiRuntimeHost",
+                "name": "<JsiHostObjectRuntime />",
+                "props": {
+                  "memoryMode": "DIRECT_C_POINTER",
+                  "serializationCostMs": 0.0
+                }
+              },
+              {
+                "id": "FabricShadowTree",
+                "name": "<FabricShadowTreeManager />",
+                "props": {
+                  "immutability": "STRUCTURAL_SHARING",
+                  "layoutEngine": "Yoga C++"
+                }
+              },
+              {
+                "id": "TurboModuleManager",
+                "name": "<TurboModuleEngine />",
+                "props": {
+                  "loadingStrategy": "LAZY_ON_DEMAND",
+                  "typeContract": "CODEGEN_VERIFIED"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Bind JSI HostObject memory pointers for TurboModules Lazy Loading Arch.",
+            "activeId": "JsiRuntimeHost",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "JsiRuntimeHost",
+                "name": "<JsiHostObjectRuntime />",
+                "props": {
+                  "status": "JSI_HOST_BOUND"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Clone immutable C++ Shadow Tree and compute Yoga layout concurrently.",
+            "activeId": "FabricShadowTree",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "FabricShadowTree",
+                "name": "<FabricShadowTreeManager />",
+                "props": {
+                  "shadowState": "CLONED_IMMUTABLE"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Resolve lazy TurboModule specifications and execute synchronous native C++ methods.",
+            "activeId": "TurboModuleManager",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "TurboModuleManager",
+                "name": "<TurboModuleEngine />",
+                "props": {
+                  "execution": "SYNCHRONOUS_JSI"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify zero bridge serialization overhead and zero native memory leaks.",
+            "activeId": "AppRoot",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppRoot",
+                "name": "<NewArchitectureShell />",
+                "props": {
+                  "certification": "NEW_ARCHITECTURE_VERIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "React Native Codegen: TypeScript Specification Contracts & Type Safety",
+      "codeHash": "6b31778b0b1d7f77f7a27a128cea0218a25bf69ce01ddf3788255c085c995979",
+      "spec": {
+        "template": "component-tree",
+        "rootId": "AppRoot",
+        "nodes": [
+          {
+            "id": "AppRoot",
+            "name": "<NewArchitectureShell />",
+            "props": {
+              "runtime": "Hermes JSI",
+              "renderer": "Fabric C++"
+            },
+            "children": [
+              {
+                "id": "JsiRuntimeHost",
+                "name": "<JsiHostObjectRuntime />",
+                "props": {
+                  "memoryMode": "DIRECT_C_POINTER",
+                  "serializationCostMs": 0.0
+                }
+              },
+              {
+                "id": "FabricShadowTree",
+                "name": "<FabricShadowTreeManager />",
+                "props": {
+                  "immutability": "STRUCTURAL_SHARING",
+                  "layoutEngine": "Yoga C++"
+                }
+              },
+              {
+                "id": "TurboModuleManager",
+                "name": "<TurboModuleEngine />",
+                "props": {
+                  "loadingStrategy": "LAZY_ON_DEMAND",
+                  "typeContract": "CODEGEN_VERIFIED"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Bind JSI HostObject memory pointers for React Native Codegen: TypeScri.",
+            "activeId": "JsiRuntimeHost",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "JsiRuntimeHost",
+                "name": "<JsiHostObjectRuntime />",
+                "props": {
+                  "status": "JSI_HOST_BOUND"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Clone immutable C++ Shadow Tree and compute Yoga layout concurrently.",
+            "activeId": "FabricShadowTree",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "FabricShadowTree",
+                "name": "<FabricShadowTreeManager />",
+                "props": {
+                  "shadowState": "CLONED_IMMUTABLE"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Resolve lazy TurboModule specifications and execute synchronous native C++ methods.",
+            "activeId": "TurboModuleManager",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "TurboModuleManager",
+                "name": "<TurboModuleEngine />",
+                "props": {
+                  "execution": "SYNCHRONOUS_JSI"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify zero bridge serialization overhead and zero native memory leaks.",
+            "activeId": "AppRoot",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppRoot",
+                "name": "<NewArchitectureShell />",
+                "props": {
+                  "certification": "NEW_ARCHITECTURE_VERIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "rootId": "AppRoot",
+        "nodes": [
+          {
+            "id": "AppRoot",
+            "name": "<NewArchitectureShell />",
+            "props": {
+              "runtime": "Hermes JSI",
+              "renderer": "Fabric C++"
+            },
+            "children": [
+              {
+                "id": "JsiRuntimeHost",
+                "name": "<JsiHostObjectRuntime />",
+                "props": {
+                  "memoryMode": "DIRECT_C_POINTER",
+                  "serializationCostMs": 0.0
+                }
+              },
+              {
+                "id": "FabricShadowTree",
+                "name": "<FabricShadowTreeManager />",
+                "props": {
+                  "immutability": "STRUCTURAL_SHARING",
+                  "layoutEngine": "Yoga C++"
+                }
+              },
+              {
+                "id": "TurboModuleManager",
+                "name": "<TurboModuleEngine />",
+                "props": {
+                  "loadingStrategy": "LAZY_ON_DEMAND",
+                  "typeContract": "CODEGEN_VERIFIED"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Bind JSI HostObject memory pointers for React Native Codegen: TypeScri.",
+            "activeId": "JsiRuntimeHost",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "JsiRuntimeHost",
+                "name": "<JsiHostObjectRuntime />",
+                "props": {
+                  "status": "JSI_HOST_BOUND"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Clone immutable C++ Shadow Tree and compute Yoga layout concurrently.",
+            "activeId": "FabricShadowTree",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "FabricShadowTree",
+                "name": "<FabricShadowTreeManager />",
+                "props": {
+                  "shadowState": "CLONED_IMMUTABLE"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Resolve lazy TurboModule specifications and execute synchronous native C++ methods.",
+            "activeId": "TurboModuleManager",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "TurboModuleManager",
+                "name": "<TurboModuleEngine />",
+                "props": {
+                  "execution": "SYNCHRONOUS_JSI"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify zero bridge serialization overhead and zero native memory leaks.",
+            "activeId": "AppRoot",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppRoot",
+                "name": "<NewArchitectureShell />",
+                "props": {
+                  "certification": "NEW_ARCHITECTURE_VERIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "TurboModuleRegistry Resolution & C++ Host Object Registration",
+      "codeHash": "51f28f334d2997f751975b312b0594e4908e18959b36a049ff938efd03218875",
+      "spec": {
+        "template": "component-tree",
+        "rootId": "AppRoot",
+        "nodes": [
+          {
+            "id": "AppRoot",
+            "name": "<NewArchitectureShell />",
+            "props": {
+              "runtime": "Hermes JSI",
+              "renderer": "Fabric C++"
+            },
+            "children": [
+              {
+                "id": "JsiRuntimeHost",
+                "name": "<JsiHostObjectRuntime />",
+                "props": {
+                  "memoryMode": "DIRECT_C_POINTER",
+                  "serializationCostMs": 0.0
+                }
+              },
+              {
+                "id": "FabricShadowTree",
+                "name": "<FabricShadowTreeManager />",
+                "props": {
+                  "immutability": "STRUCTURAL_SHARING",
+                  "layoutEngine": "Yoga C++"
+                }
+              },
+              {
+                "id": "TurboModuleManager",
+                "name": "<TurboModuleEngine />",
+                "props": {
+                  "loadingStrategy": "LAZY_ON_DEMAND",
+                  "typeContract": "CODEGEN_VERIFIED"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Bind JSI HostObject memory pointers for TurboModuleRegistry Resolution.",
+            "activeId": "JsiRuntimeHost",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "JsiRuntimeHost",
+                "name": "<JsiHostObjectRuntime />",
+                "props": {
+                  "status": "JSI_HOST_BOUND"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Clone immutable C++ Shadow Tree and compute Yoga layout concurrently.",
+            "activeId": "FabricShadowTree",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "FabricShadowTree",
+                "name": "<FabricShadowTreeManager />",
+                "props": {
+                  "shadowState": "CLONED_IMMUTABLE"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Resolve lazy TurboModule specifications and execute synchronous native C++ methods.",
+            "activeId": "TurboModuleManager",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "TurboModuleManager",
+                "name": "<TurboModuleEngine />",
+                "props": {
+                  "execution": "SYNCHRONOUS_JSI"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify zero bridge serialization overhead and zero native memory leaks.",
+            "activeId": "AppRoot",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppRoot",
+                "name": "<NewArchitectureShell />",
+                "props": {
+                  "certification": "NEW_ARCHITECTURE_VERIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "rootId": "AppRoot",
+        "nodes": [
+          {
+            "id": "AppRoot",
+            "name": "<NewArchitectureShell />",
+            "props": {
+              "runtime": "Hermes JSI",
+              "renderer": "Fabric C++"
+            },
+            "children": [
+              {
+                "id": "JsiRuntimeHost",
+                "name": "<JsiHostObjectRuntime />",
+                "props": {
+                  "memoryMode": "DIRECT_C_POINTER",
+                  "serializationCostMs": 0.0
+                }
+              },
+              {
+                "id": "FabricShadowTree",
+                "name": "<FabricShadowTreeManager />",
+                "props": {
+                  "immutability": "STRUCTURAL_SHARING",
+                  "layoutEngine": "Yoga C++"
+                }
+              },
+              {
+                "id": "TurboModuleManager",
+                "name": "<TurboModuleEngine />",
+                "props": {
+                  "loadingStrategy": "LAZY_ON_DEMAND",
+                  "typeContract": "CODEGEN_VERIFIED"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Bind JSI HostObject memory pointers for TurboModuleRegistry Resolution.",
+            "activeId": "JsiRuntimeHost",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "JsiRuntimeHost",
+                "name": "<JsiHostObjectRuntime />",
+                "props": {
+                  "status": "JSI_HOST_BOUND"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Clone immutable C++ Shadow Tree and compute Yoga layout concurrently.",
+            "activeId": "FabricShadowTree",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "FabricShadowTree",
+                "name": "<FabricShadowTreeManager />",
+                "props": {
+                  "shadowState": "CLONED_IMMUTABLE"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Resolve lazy TurboModule specifications and execute synchronous native C++ methods.",
+            "activeId": "TurboModuleManager",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "TurboModuleManager",
+                "name": "<TurboModuleEngine />",
+                "props": {
+                  "execution": "SYNCHRONOUS_JSI"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify zero bridge serialization overhead and zero native memory leaks.",
+            "activeId": "AppRoot",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppRoot",
+                "name": "<NewArchitectureShell />",
+                "props": {
+                  "certification": "NEW_ARCHITECTURE_VERIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Synchronous Cryptographic Hash Specification (NativeCryptoSpec.ts)",
+      "codeHash": "3e38b7dcf3115e9fed5e2a590874a327feeffec99c0296994e015a666ef5bda2",
+      "spec": {
+        "template": "component-tree",
+        "rootId": "AppRoot",
+        "nodes": [
+          {
+            "id": "AppRoot",
+            "name": "<NewArchitectureShell />",
+            "props": {
+              "runtime": "Hermes JSI",
+              "renderer": "Fabric C++"
+            },
+            "children": [
+              {
+                "id": "JsiRuntimeHost",
+                "name": "<JsiHostObjectRuntime />",
+                "props": {
+                  "memoryMode": "DIRECT_C_POINTER",
+                  "serializationCostMs": 0.0
+                }
+              },
+              {
+                "id": "FabricShadowTree",
+                "name": "<FabricShadowTreeManager />",
+                "props": {
+                  "immutability": "STRUCTURAL_SHARING",
+                  "layoutEngine": "Yoga C++"
+                }
+              },
+              {
+                "id": "TurboModuleManager",
+                "name": "<TurboModuleEngine />",
+                "props": {
+                  "loadingStrategy": "LAZY_ON_DEMAND",
+                  "typeContract": "CODEGEN_VERIFIED"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Bind JSI HostObject memory pointers for Synchronous Cryptographic Hash.",
+            "activeId": "JsiRuntimeHost",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "JsiRuntimeHost",
+                "name": "<JsiHostObjectRuntime />",
+                "props": {
+                  "status": "JSI_HOST_BOUND"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Clone immutable C++ Shadow Tree and compute Yoga layout concurrently.",
+            "activeId": "FabricShadowTree",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "FabricShadowTree",
+                "name": "<FabricShadowTreeManager />",
+                "props": {
+                  "shadowState": "CLONED_IMMUTABLE"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Resolve lazy TurboModule specifications and execute synchronous native C++ methods.",
+            "activeId": "TurboModuleManager",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "TurboModuleManager",
+                "name": "<TurboModuleEngine />",
+                "props": {
+                  "execution": "SYNCHRONOUS_JSI"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify zero bridge serialization overhead and zero native memory leaks.",
+            "activeId": "AppRoot",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppRoot",
+                "name": "<NewArchitectureShell />",
+                "props": {
+                  "certification": "NEW_ARCHITECTURE_VERIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "rootId": "AppRoot",
+        "nodes": [
+          {
+            "id": "AppRoot",
+            "name": "<NewArchitectureShell />",
+            "props": {
+              "runtime": "Hermes JSI",
+              "renderer": "Fabric C++"
+            },
+            "children": [
+              {
+                "id": "JsiRuntimeHost",
+                "name": "<JsiHostObjectRuntime />",
+                "props": {
+                  "memoryMode": "DIRECT_C_POINTER",
+                  "serializationCostMs": 0.0
+                }
+              },
+              {
+                "id": "FabricShadowTree",
+                "name": "<FabricShadowTreeManager />",
+                "props": {
+                  "immutability": "STRUCTURAL_SHARING",
+                  "layoutEngine": "Yoga C++"
+                }
+              },
+              {
+                "id": "TurboModuleManager",
+                "name": "<TurboModuleEngine />",
+                "props": {
+                  "loadingStrategy": "LAZY_ON_DEMAND",
+                  "typeContract": "CODEGEN_VERIFIED"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Bind JSI HostObject memory pointers for Synchronous Cryptographic Hash.",
+            "activeId": "JsiRuntimeHost",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "JsiRuntimeHost",
+                "name": "<JsiHostObjectRuntime />",
+                "props": {
+                  "status": "JSI_HOST_BOUND"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Clone immutable C++ Shadow Tree and compute Yoga layout concurrently.",
+            "activeId": "FabricShadowTree",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "FabricShadowTree",
+                "name": "<FabricShadowTreeManager />",
+                "props": {
+                  "shadowState": "CLONED_IMMUTABLE"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Resolve lazy TurboModule specifications and execute synchronous native C++ methods.",
+            "activeId": "TurboModuleManager",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "TurboModuleManager",
+                "name": "<TurboModuleEngine />",
+                "props": {
+                  "execution": "SYNCHRONOUS_JSI"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify zero bridge serialization overhead and zero native memory leaks.",
+            "activeId": "AppRoot",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppRoot",
+                "name": "<NewArchitectureShell />",
+                "props": {
+                  "certification": "NEW_ARCHITECTURE_VERIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Codegen Build Pipeline, Header Synthesis & Xcode/NDK Compilation",
+      "codeHash": "8fb652c5d621003783b8240e9994197c7939a40d8ec78fa4c09fd75beef17fe0",
+      "spec": {
+        "template": "component-tree",
+        "rootId": "AppRoot",
+        "nodes": [
+          {
+            "id": "AppRoot",
+            "name": "<NewArchitectureShell />",
+            "props": {
+              "runtime": "Hermes JSI",
+              "renderer": "Fabric C++"
+            },
+            "children": [
+              {
+                "id": "JsiRuntimeHost",
+                "name": "<JsiHostObjectRuntime />",
+                "props": {
+                  "memoryMode": "DIRECT_C_POINTER",
+                  "serializationCostMs": 0.0
+                }
+              },
+              {
+                "id": "FabricShadowTree",
+                "name": "<FabricShadowTreeManager />",
+                "props": {
+                  "immutability": "STRUCTURAL_SHARING",
+                  "layoutEngine": "Yoga C++"
+                }
+              },
+              {
+                "id": "TurboModuleManager",
+                "name": "<TurboModuleEngine />",
+                "props": {
+                  "loadingStrategy": "LAZY_ON_DEMAND",
+                  "typeContract": "CODEGEN_VERIFIED"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Bind JSI HostObject memory pointers for Codegen Build Pipeline, Header.",
+            "activeId": "JsiRuntimeHost",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "JsiRuntimeHost",
+                "name": "<JsiHostObjectRuntime />",
+                "props": {
+                  "status": "JSI_HOST_BOUND"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Clone immutable C++ Shadow Tree and compute Yoga layout concurrently.",
+            "activeId": "FabricShadowTree",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "FabricShadowTree",
+                "name": "<FabricShadowTreeManager />",
+                "props": {
+                  "shadowState": "CLONED_IMMUTABLE"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Resolve lazy TurboModule specifications and execute synchronous native C++ methods.",
+            "activeId": "TurboModuleManager",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "TurboModuleManager",
+                "name": "<TurboModuleEngine />",
+                "props": {
+                  "execution": "SYNCHRONOUS_JSI"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify zero bridge serialization overhead and zero native memory leaks.",
+            "activeId": "AppRoot",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppRoot",
+                "name": "<NewArchitectureShell />",
+                "props": {
+                  "certification": "NEW_ARCHITECTURE_VERIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "rootId": "AppRoot",
+        "nodes": [
+          {
+            "id": "AppRoot",
+            "name": "<NewArchitectureShell />",
+            "props": {
+              "runtime": "Hermes JSI",
+              "renderer": "Fabric C++"
+            },
+            "children": [
+              {
+                "id": "JsiRuntimeHost",
+                "name": "<JsiHostObjectRuntime />",
+                "props": {
+                  "memoryMode": "DIRECT_C_POINTER",
+                  "serializationCostMs": 0.0
+                }
+              },
+              {
+                "id": "FabricShadowTree",
+                "name": "<FabricShadowTreeManager />",
+                "props": {
+                  "immutability": "STRUCTURAL_SHARING",
+                  "layoutEngine": "Yoga C++"
+                }
+              },
+              {
+                "id": "TurboModuleManager",
+                "name": "<TurboModuleEngine />",
+                "props": {
+                  "loadingStrategy": "LAZY_ON_DEMAND",
+                  "typeContract": "CODEGEN_VERIFIED"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Bind JSI HostObject memory pointers for Codegen Build Pipeline, Header.",
+            "activeId": "JsiRuntimeHost",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "JsiRuntimeHost",
+                "name": "<JsiHostObjectRuntime />",
+                "props": {
+                  "status": "JSI_HOST_BOUND"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Clone immutable C++ Shadow Tree and compute Yoga layout concurrently.",
+            "activeId": "FabricShadowTree",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "FabricShadowTree",
+                "name": "<FabricShadowTreeManager />",
+                "props": {
+                  "shadowState": "CLONED_IMMUTABLE"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Resolve lazy TurboModule specifications and execute synchronous native C++ methods.",
+            "activeId": "TurboModuleManager",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "TurboModuleManager",
+                "name": "<TurboModuleEngine />",
+                "props": {
+                  "execution": "SYNCHRONOUS_JSI"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify zero bridge serialization overhead and zero native memory leaks.",
+            "activeId": "AppRoot",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppRoot",
+                "name": "<NewArchitectureShell />",
+                "props": {
+                  "certification": "NEW_ARCHITECTURE_VERIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
