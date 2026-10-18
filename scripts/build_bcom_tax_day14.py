@@ -1,0 +1,520 @@
+"""
+Build script for bcom_tax Day 14: Corporate Capital Gains & Section 50/50C/50CA Special Regimes
+"""
+import json
+
+day14_data = {
+    "day": 14,
+    "title": "Corporate Capital Gains & Section 50/50C/50CA Special Regimes",
+    "course": "Corporate Taxation & GST",
+    "duration": "38 mins",
+    "parts": [
+        {
+            "id": 1,
+            "title": "Depreciable Asset Dynamics: Section 50 Deemed Short-Term Capital Gains Mechanics",
+            "say": (
+                "Welcome to Day 14 of Corporate Taxation & GST. Today, we master the intricate statutory intersections between corporate capital assets, balance sheet restructuring, and specialized capital gains tax regimes. In corporate operations, capital assets are rarely held merely for passive investment; they are continuously upgraded, replaced, spun off, or restructured through M&A transactions. Understanding how capital gains are computed under statutory override sections is vital for corporate M&A advisors and tax directors.\n\n"
+                "The first major statutory override is Section 50 of the Income Tax Act, which governs capital gains on 'Depreciable Assets'. Under standard capital gains rules (Section 45 to 48), assets held for more than 24 or 36 months qualify as Long-Term Capital Assets, eligible for preferential tax rates and indexation benefits. However, Section 50 establishes an absolute, non-negotiable legal fiction: Capital gains arising from the transfer of any depreciable asset belonging to a Block of Assets under Section 32 shall ALWAYS be deemed to be 'Short-Term Capital Gains' (STCG), regardless of whether the asset was owned for three days or thirty years!\n\n"
+                "Under Section 50, a capital gain crystallizes in exactly two statutory scenarios: (Scenario 1) When the net sale consideration (moneys payable) received on the sale of one or more assets in the block exceeds the aggregate sum of [Opening Written Down Value of the Block + Actual Cost of Additions during the year]. In this case, the closing WDV becomes NIL, the block value is wiped out, and the negative balance is taxed as Short-Term Capital Gains; (Scenario 2) When all the assets in the block are transferred, sold, or demolished, such that the physical block ceases to exist. Even if the sale consideration is less than the opening WDV plus additions, no depreciation can be claimed because there is no physical asset remaining; the unrecovered balance is recognized as a Short-Term Capital Loss.\n\n"
+                "In this first part, we construct an enterprise Section 50 Depreciable Asset & STCG Engine in Python. We monitor block asset disposals, evaluate block liquidation thresholds, identify when sale proceeds breach depreciable base ceilings, compute deemed Short-Term Capital Gains, and generate tax ledger entries."
+            ),
+            "code": (
+                "import json\n"
+                "from dataclasses import dataclass\n"
+                "from typing import Dict\n"
+                "\n"
+                "@dataclass\n"
+                "class BlockLiquidationEvent:\n"
+                "    block_name: str\n"
+                "    opening_wdv: float\n"
+                "    additions_during_year: float\n"
+                "    sale_consideration_received: float\n"
+                "    all_assets_physically_transferred: bool\n"
+                "    corporate_tax_rate: float\n"
+                "\n"
+                "class Section50Engine:\n"
+                "    @staticmethod\n"
+                "    def evaluate_section50(event: BlockLiquidationEvent) -> Dict:\n"
+                "        total_block_cost_base = event.opening_wdv + event.additions_during_year\n"
+                "        balance_after_sale = total_block_cost_base - event.sale_consideration_received\n"
+                "        \n"
+                "        is_stcg = False\n"
+                "        is_stcl = False\n"
+                "        capital_gain_or_loss = 0.0\n"
+                "        closing_wdv = 0.0\n"
+                "        statutory_verdict = ''\n"
+                "        \n"
+                "        if balance_after_sale < 0:\n"
+                "            # Scenario 1: Sale consideration exceeds block cost base\n"
+                "            is_stcg = True\n"
+                "            capital_gain_or_loss = abs(balance_after_sale)\n"
+                "            closing_wdv = 0.0\n"
+                "            statutory_verdict = (\n"
+                "                f'Sec 50(1) Triggered: Sale consideration ({event.sale_consideration_received}) exceeds '\n"
+                "                f'Opening WDV + Additions ({total_block_cost_base}). Deemed Short-Term Capital Gain.'\n"
+                "            )\n"
+                "        elif event.all_assets_physically_transferred:\n"
+                "            # Scenario 2: Block ceases to exist physically\n"
+                "            if balance_after_sale > 0:\n"
+                "                is_stcl = True\n"
+                "                capital_gain_or_loss = balance_after_sale\n"
+                "                closing_wdv = 0.0\n"
+                "                statutory_verdict = (\n"
+                "                    f'Sec 50(2) Triggered: All assets transferred. Unrecovered balance of '\n"
+                "                    f'{balance_after_sale} recognized as Short-Term Capital Loss.'\n"
+                "                )\n"
+                "        else:\n"
+                "            # Standard depreciation continues\n"
+                "            closing_wdv = balance_after_sale\n"
+                "            statutory_verdict = f'Normal Block Operation: Closing WDV of {closing_wdv} eligible for Section 32 depreciation.'\n"
+                "            \n"
+                "        tax_on_stcg = capital_gain_or_loss * event.corporate_tax_rate if is_stcg else 0.0\n"
+                "        \n"
+                "        return {\n"
+                "            'block': event.block_name,\n"
+                "            'cost_base_pool': round(total_block_cost_base, 2),\n"
+                "            'sale_consideration': round(event.sale_consideration_received, 2),\n"
+                "            'deemed_stcg_sec50': round(capital_gain_or_loss, 2) if is_stcg else 0.0,\n"
+                "            'deemed_stcl_sec50': round(capital_gain_or_loss, 2) if is_stcl else 0.0,\n"
+                "            'tax_payable_on_stcg': round(tax_on_stcg, 2),\n"
+                "            'closing_wdv_for_next_year': round(closing_wdv, 2),\n"
+                "            'legal_analysis': statutory_verdict\n"
+                "        }\n"
+                "\n"
+                "event1 = BlockLiquidationEvent(\n"
+                "    block_name='Data Center Servers & Networking (40%)',\n"
+                "    opening_wdv=15000000.0, additions_during_year=5000000.0,\n"
+                "    sale_consideration_received=28000000.0, all_assets_physically_transferred=False,\n"
+                "    corporate_tax_rate=0.25168\n"
+                ")\n"
+                "engine = Section50Engine()\n"
+                "res = engine.evaluate_section50(event1)\n"
+                "print(json.dumps(res, indent=2))\n"
+            ),
+            "codeNotes": "Simulates Section 50 CGST deemed Short-Term Capital Gains, computing capital gains whenever sale consideration exceeds total block opening WDV plus additions.",
+            "example": (
+                "A corporation has a server block with $15M opening WDV and $5M new additions ($20M total base). It sells 3 obsolete mainframes for $28M. Because $28M exceeds the $20M base, the closing WDV becomes $0 and the $8,000,000 surplus is conclusively deemed Short-Term Capital Gains under Section 50, attracting $2.01M in corporate tax."
+            ),
+            "tryIt": "Set sale_consideration_received to 12,000,000.0 and all_assets_physically_transferred to True. Observe how Section 50(2) recognizes an $8,000,000 Short-Term Capital Loss.",
+            "check": {
+                "question": "Under Section 50 of the Income Tax Act, how are capital gains arising from the transfer of depreciable assets belonging to a block of assets categorized?",
+                "options": [
+                    "Conclusively as Short-Term Capital Gains, regardless of the period of holding.",
+                    "As Long-Term Capital Gains if the underlying asset was held for more than 36 months.",
+                    "As exempt business income, provided the proceeds are reinvested in agricultural land.",
+                    "As an offset against future Section 80JJAA employment deduction entitlements."
+                ],
+                "answerIndex": 0,
+                "why": "Section 50 contains a statutory legal fiction stating that any capital gains arising from the transfer of depreciable assets forming part of a block of assets shall be deemed to be capital gains arising from the transfer of short-term capital assets."
+            }
+        },
+        {
+            "id": 2,
+            "title": "Slump Sale Architecture: Section 50B Invariants & Rule 11UAE Net Worth Methodology",
+            "say": (
+                "In corporate mergers and acquisitions, enterprises frequently divest entire business divisions—such as a pharmaceutical company selling its formulations division, or an FMCG giant spinning off its dairy unit—as a going concern. If the transaction is structured as an itemized asset sale, every machine, vehicle, building, and patent must be individually valued, triggering complex piecemeal capital gains, GST, and stamp duties. To provide commercial efficiency, corporate law enables the 'Slump Sale' mechanism under Section 50B of the Income Tax Act.\n\n"
+                "Under Section 2(42C), a 'Slump Sale' is defined as the transfer of one or more undertakings as a result of the sale for a lump sum consideration without values being assigned to the individual assets and liabilities in such sales. Under Section 50B, the capital gain is computed through a specialized statutory equation: Capital Gain = [Full Value of Consideration under Rule 11UAE] minus [Net Worth of the Undertaking].\n\n"
+                "Determining the 'Net Worth' under Explanation 1 to Section 50B is mathematically rigorous: (1) In respect of depreciable assets, the Written Down Value (WDV) of the block as determined under Section 43(6) is adopted; (2) In respect of capital assets on which 100% deduction was claimed under Section 35AD (e.g., cold chains), the value is taken as NIL; (3) In respect of other assets, the book value (excluding revaluation reserves) is adopted; and (4) All liabilities of the undertaking are deducted from aggregate assets. Crucially, Section 50B forbids Indexation Benefits: even if the undertaking was held for 20 years, no indexation is permitted! If the undertaking was owned for more than 36 months, the gain is taxed as Long-Term Capital Gain; otherwise, as Short-Term Capital Gain.\n\n"
+                "In this second part, we program an enterprise Section 50B Slump Sale & Rule 11UAE Net Worth Engine in Python. We ingest divisional balance sheets, compute statutory net worth across depreciable and non-depreciable asset classes, enforce the revaluation reserve deduction rule, and calculate certified Section 50B capital gains."
+            ),
+            "code": (
+                "import json\n"
+                "from dataclasses import dataclass\n"
+                "from typing import Dict, List\n"
+                "\n"
+                "@dataclass\n"
+                "class UndertakingAssetProfile:\n"
+                "    asset_name: str\n"
+                "    book_value: float\n"
+                "    tax_wdv_for_depreciable: float # For Sec 32 assets\n"
+                "    is_depreciable: bool\n"
+                "    is_sec35ad_100pct_deducted: bool\n"
+                "    is_revaluation_reserve_component: bool\n"
+                "\n"
+                "@dataclass\n"
+                "class SlumpSaleTransaction:\n"
+                "    undertaking_title: str\n"
+                "    lump_sum_sale_consideration: float\n"
+                "    holding_period_months: int\n"
+                "    assets: List[UndertakingAssetProfile]\n"
+                "    total_liabilities_undertaking: float\n"
+                "    expenses_on_transfer: float\n"
+                "\n"
+                "class Section50BEngine:\n"
+                "    @staticmethod\n"
+                "    def compute_slump_sale(sale: SlumpSaleTransaction) -> Dict:\n"
+                "        aggregate_asset_value = 0.0\n"
+                "        asset_breakdown = []\n"
+                "        \n"
+                "        for a in sale.assets:\n"
+                "            statutory_val = 0.0\n"
+                "            if a.is_revaluation_reserve_component:\n"
+                "                # Explanation 1: Revaluation ignored\n"
+                "                statutory_val = 0.0\n"
+                "                note = 'Excluded: Revaluation reserves ignored in Net Worth calculation.'\n"
+                "            elif a.is_sec35ad_100pct_deducted:\n"
+                "                statutory_val = 0.0\n"
+                "                note = 'Sec 35AD asset: Valued at NIL.'\n"
+                "            elif a.is_depreciable:\n"
+                "                statutory_val = a.tax_wdv_for_depreciable\n"
+                "                note = f'Depreciable asset: Valued at tax WDV ({statutory_val}).'\n"
+                "            else:\n"
+                "                statutory_val = a.book_value\n"
+                "                note = f'Other asset: Valued at book value ({statutory_val}).'\n"
+                "                \n"
+                "            aggregate_asset_value += statutory_val\n"
+                "            asset_breakdown.append({'asset': a.asset_name, 'statutory_value': statutory_val, 'note': note})\n"
+                "            \n"
+                "        # Net Worth = Aggregate Assets - Total Liabilities\n"
+                "        net_worth = aggregate_asset_value - sale.total_liabilities_undertaking\n"
+                "        \n"
+                "        # Capital Gain = Consideration - Net Worth - Transfer Expenses\n"
+                "        net_consideration = sale.lump_sum_sale_consideration - sale.expenses_on_transfer\n"
+                "        capital_gain = net_consideration - net_worth\n"
+                "        \n"
+                "        # Holding period test: > 36 months -> LTCG; <= 36 months -> STCG\n"
+                "        is_ltcg = sale.holding_period_months > 36\n"
+                "        gain_type = 'LONG_TERM_CAPITAL_GAIN (No Indexation)' if is_ltcg else 'SHORT_TERM_CAPITAL_GAIN'\n"
+                "        \n"
+                "        return {\n"
+                "            'undertaking': sale.undertaking_title,\n"
+                "            'lump_sum_consideration': sale.lump_sum_sale_consideration,\n"
+                "            'aggregate_statutory_assets': round(aggregate_asset_value, 2),\n"
+                "            'total_liabilities_deducted': round(sale.total_liabilities_undertaking, 2),\n"
+                "            'statutory_net_worth_sec50b': round(net_worth, 2),\n"
+                "            'net_capital_gain_loss': round(capital_gain, 2),\n"
+                "            'capital_gain_classification': gain_type,\n"
+                "            'holding_period_months': sale.holding_period_months,\n"
+                "            'indexation_benefit_allowed': False\n"
+                "        }\n"
+                "\n"
+                "div_assets = [\n"
+                "    UndertakingAssetProfile('Factory Land & Freehold Plot', 40000000.0, 0.0, False, False, False),\n"
+                "    UndertakingAssetProfile('Land Revaluation Reserve Surplus', 20000000.0, 0.0, False, False, True), # Excluded!\n"
+                "    UndertakingAssetProfile('Manufacturing Plant & Equipment', 50000000.0, 30000000.0, True, False, False), # Tax WDV used\n"
+                "    UndertakingAssetProfile('Trade Debtors & Current Assets', 15000000.0, 0.0, False, False, False)\n"
+                "]\n"
+                "slump_deal = SlumpSaleTransaction(\n"
+                "    undertaking_title='Consumer Healthcare Formulations Division',\n"
+                "    lump_sum_sale_consideration=150000000.0, holding_period_months=48,\n"
+                "    assets=div_assets, total_liabilities_undertaking=25000000.0,\n"
+                "    expenses_on_transfer=2000000.0\n"
+                ")\n"
+                "engine = Section50BEngine()\n"
+                "res = engine.compute_slump_sale(slump_deal)\n"
+                "print(json.dumps(res, indent=2))\n"
+            ),
+            "codeNotes": "Executes Section 50B Slump Sale Net Worth calculation, substituting tax WDV for depreciable assets, purging revaluation reserves, and verifying zero indexation.",
+            "example": (
+                "An enterprise sells its healthcare unit held for 48 months for $150M lump sum. Assets comprise $40M land (book value), $20M revaluation surplus (ignored), $30M machinery (tax WDV, book was $50M), and $15M receivables ($85M total statutory assets). Minus $25M liabilities yields $60M Net Worth. Capital gain is $148M net consideration minus $60M net worth = $88,000,000 Long-Term Capital Gain without indexation."
+            ),
+            "tryIt": "Set holding_period_months to 24 and verify that gain_type changes to SHORT_TERM_CAPITAL_GAIN under Section 50B(1).",
+            "check": {
+                "question": "Under Section 50B of the Income Tax Act governing Slump Sales, what is the statutory treatment regarding indexation benefits for long-term undertakings?",
+                "options": [
+                    "Indexation benefits under the second proviso to Section 48 are strictly forbidden and not allowed.",
+                    "Indexation is allowed on physical buildings but prohibited on trade receivables.",
+                    "Indexation is permitted using the Wholesale Price Index rather than the Cost Inflation Index.",
+                    "Indexation is doubled as an M&A corporate restructuring incentive."
+                ],
+                "answerIndex": 0,
+                "why": "Section 50B(2) explicitly provides that the benefit of indexation under the second proviso to Section 48 shall NOT be available in the case of a slump sale."
+            }
+        },
+        {
+            "id": 3,
+            "title": "Real Estate Full Value: Section 50C Deeming Fiction & The 10% Safe Harbor Tolerance",
+            "say": (
+                "In real estate transactions, tax authorities faced widespread undervaluation where buyers and sellers agreed on a declared contract price while settling significant balances in unaccounted cash to evade capital gains taxes and municipal stamp duties. To eliminate this avoidance channel, Parliament enacted Section 50C—introducing a statutory deeming fiction for the transfer of land, buildings, or both.\n\n"
+                "Under Section 50C(1), where the consideration declared in the deed is LESS than the Stamp Duty Value (SDV) adopted or assessed by the state stamp valuation authority (Circle Rate / Ready Reckoner Rate), the Stamp Duty Value shall be deemed to be the 'Full Value of Consideration' for computing capital gains in the hands of the seller! (Simultaneously, under Section 56(2)(x), the difference is taxed as deemed 'Income from Other Sources' in the hands of the buyer).\n\n"
+                "However, recognizing that market valuations vary across micro-localities, Parliament introduced the '10% Safe Harbor Band' in the third proviso to Section 50C(1). Under this safe harbor: Where the Stamp Duty Value does NOT exceed 110% of the actual consideration received, the declared actual consideration shall be accepted as the full value of consideration! Furthermore, under the first proviso, where the date of agreement fixing the consideration and the date of registration are different, the Stamp Duty Value on the DATE OF AGREEMENT can be adopted, provided that at least part of the consideration was paid by electronic banking channels on or before the agreement date.\n\n"
+                "In this third part, we build an enterprise Section 50C Real Estate Capital Gains Screener in Python. We evaluate declared deed prices against state stamp valuation benchmarks, test the 110% safe harbor variance band, verify agreement date banking payments, and compute deemed capital gains liabilities."
+            ),
+            "code": (
+                "import json\n"
+                "from dataclasses import dataclass\n"
+                "from typing import Dict\n"
+                "\n"
+                "@dataclass\n"
+                "class RealEstateTransfer:\n"
+                "    property_id: str\n"
+                "    actual_agreement_consideration: float\n"
+                "    stamp_duty_value_registration_date: float\n"
+                "    stamp_duty_value_agreement_date: float\n"
+                "    advance_paid_by_banking_channels_on_agreement: bool\n"
+                "    indexed_cost_of_acquisition: float\n"
+                "    transfer_expenses: float\n"
+                "    is_long_term: bool\n"
+                "\n"
+                "class Section50CEngine:\n"
+                "    @staticmethod\n"
+                "    def evaluate_real_estate_sale(t: RealEstateTransfer) -> Dict:\n"
+                "        # Step 1: Select applicable Stamp Duty Value (Agreement Date vs Registration Date)\n"
+                "        if t.advance_paid_by_banking_channels_on_agreement:\n"
+                "            applicable_sdv = t.stamp_duty_value_agreement_date\n"
+                "            sdv_rule = 'Proviso 1 applied: Advance paid via banking channel on agreement date. Agreement date SDV adopted.'\n"
+                "        else:\n"
+                "            applicable_sdv = t.stamp_duty_value_registration_date\n"
+                "            sdv_rule = 'Registration date SDV adopted (No electronic advance on agreement date).'\n"
+                "            \n"
+                "        # Step 2: Test 10% Safe Harbor Tolerance (Third Proviso to Sec 50C(1))\n"
+                "        # SDV <= 110% of Actual Consideration -> Actual Consideration accepted!\n"
+                "        safe_harbor_limit = t.actual_agreement_consideration * 1.10\n"
+                "        within_safe_harbor = applicable_sdv <= safe_harbor_limit\n"
+                "        \n"
+                "        if within_safe_harbor:\n"
+                "            deemed_full_value = t.actual_agreement_consideration\n"
+                "            valuation_status = f'SAFE HARBOR ACTIVE: Applicable SDV ({applicable_sdv}) <= 110% of actual ({safe_harbor_limit}). Actual consideration accepted.'\n"
+                "        else:\n"
+                "            deemed_full_value = applicable_sdv\n"
+                "            valuation_status = f'SAFE HARBOR BREACHED: Applicable SDV ({applicable_sdv}) exceeds 110% of actual ({safe_harbor_limit}). SDV deemed Full Value.'\n"
+                "            \n"
+                "        # Capital Gain Calculation\n"
+                "        net_consideration = deemed_full_value - t.transfer_expenses\n"
+                "        capital_gain = net_consideration - t.indexed_cost_of_acquisition\n"
+                "        \n"
+                "        return {\n"
+                "            'property_id': t.property_id,\n"
+                "            'actual_declared_consideration': t.actual_agreement_consideration,\n"
+                "            'applicable_stamp_duty_value': applicable_sdv,\n"
+                "            '110pct_safe_harbor_ceiling': round(safe_harbor_limit, 2),\n"
+                "            'safe_harbor_invoked': within_safe_harbor,\n"
+                "            'deemed_full_value_of_consideration_sec50c': round(deemed_full_value, 2),\n"
+                "            'indexed_cost_deducted': round(t.indexed_cost_of_acquisition, 2),\n"
+                "            'taxable_capital_gain': round(capital_gain, 2),\n"
+                "            'capital_gain_type': 'LONG_TERM' if t.is_long_term else 'SHORT_TERM',\n"
+                "            'statutory_analysis': valuation_status,\n"
+                "            'sdv_selection_basis': sdv_rule\n"
+                "        }\n"
+                "\n"
+                "# Test Case: Land sale where SDV is 108% of actual consideration (Within Safe Harbor)\n"
+                "land_deal = RealEstateTransfer(\n"
+                "    property_id='PROP-PLOT-901', actual_agreement_consideration=10000000.0,\n"
+                "    stamp_duty_value_registration_date=11500000.0, stamp_duty_value_agreement_date=10800000.0,\n"
+                "    advance_paid_by_banking_channels_on_agreement=True, indexed_cost_of_acquisition=4500000.0,\n"
+                "    transfer_expenses=200000.0, is_long_term=True\n"
+                ")\n"
+                "engine = Section50CEngine()\n"
+                "res = engine.evaluate_real_estate_sale(land_deal)\n"
+                "print(json.dumps(res, indent=2))\n"
+            ),
+            "codeNotes": "Validates Section 50C deeming fiction, testing the 110% safe harbor threshold and agreement date banking advance safe harbor provisions.",
+            "example": (
+                "A company sells corporate land for $10M (actual price). Agreement date Stamp Duty Value is $10.8M. Because an advance was received via RTGS on the agreement date, $10.8M is evaluated. Since $10.8M does not exceed 110% of $10M ($11M ceiling), the 10% safe harbor applies: the actual $10M price is accepted, saving the company tax on $800,000 of deemed income."
+            ),
+            "tryIt": "Set advance_paid_by_banking_channels_on_agreement to False and observe how the registration date SDV of 11.5M breaches the 110% safe harbor, becoming the deemed full value.",
+            "check": {
+                "question": "Under the third proviso to Section 50C(1) of the Income Tax Act, what is the maximum permissible percentage variance between Stamp Duty Value and actual consideration before the Stamp Duty Value is deemed to be the full value of consideration?",
+                "options": [
+                    "The Stamp Duty Value must not exceed 110% (10% variance) of the actual consideration received.",
+                    "The Stamp Duty Value must not exceed 125% of the actual consideration received.",
+                    "The Stamp Duty Value must not exceed 105% of the actual consideration received.",
+                    "Zero variance: any difference even of INR 1 forces adoption of the Stamp Duty Value."
+                ],
+                "answerIndex": 0,
+                "why": "The third proviso to Section 50C(1) explicitly provides that where the stamp duty value does not exceed one hundred and ten percent (110%) of the consideration received, the consideration so received shall be deemed to be the full value of the consideration."
+            }
+        },
+        {
+            "id": 4,
+            "title": "Unquoted Shares Valuation: Section 50CA & Rule 11UA Fair Market Value Invariants",
+            "say": (
+                "Just as Section 50C polices real estate undervaluation, Section 50CA of the Income Tax Act governs the transfer of unquoted corporate shares. Prior to Section 50CA, corporate promoters and private equity investors frequently transferred unquoted equity shares of private limited holding companies at artificial face values (e.g., $1 per share) to avoid capital gains, while the underlying company held valuable industrial land, patents, or real estate.\n\n"
+                "To eradicate this valuation loophole, Section 50CA provides that: Where the consideration received or accruing as a result of the transfer of a share of a company other than a quoted share is LESS than the Fair Market Value (FMV) of such share determined in accordance with prescribed rules, the value so determined shall be deemed to be the 'Full Value of Consideration' for computing capital gains in the hands of the seller!\n\n"
+                "The mathematical determination of FMV for Section 50CA is governed by Rule 11UA(1)(c)(b) of the Income Tax Rules. Under Rule 11UA, the Fair Market Value is determined through a comprehensive balance sheet asset-adjustment formula: Book Value of Assets minus Liabilities, but with critical statutory revaluations: (1) Immovable property (land and buildings) must be adopted at its Stamp Duty Value; (2) Quoted securities must be adopted at prevailing stock exchange market prices; (3) Jewelry and precious metals must be adopted at open market valuer rates; and (4) The resulting adjusted net book value is divided by total issued paid-up equity shares. If private shares are sold below this Rule 11UA benchmark, Section 50CA taxes the seller on the deemed gap, while Section 56(2)(x) simultaneously taxes the buyer on deemed gift income!\n\n"
+                "In this fourth part, we engineer an enterprise Section 50CA & Rule 11UA Unquoted Share Valuation Engine in Python. We parse private balance sheets, apply mandatory stamp value adjustments to underlying land holdings, compute per-share Rule 11UA Fair Market Value, and evaluate transfer pricing tax exposure."
+            ),
+            "code": (
+                "import json\n"
+                "from dataclasses import dataclass\n"
+                "from typing import Dict\n"
+                "\n"
+                "@dataclass\n"
+                "class PrivateCompanyBalanceSheet:\n"
+                "    company_name: str\n"
+                "    total_issued_equity_shares: int\n"
+                "    book_value_of_all_assets: float\n"
+                "    book_value_of_immovable_property: float\n"
+                "    stamp_duty_value_of_immovable_property: float # Mandatory revaluation\n"
+                "    total_liabilities_excluding_capital_reserves: float\n"
+                "    actual_agreed_sale_price_per_share: float\n"
+                "    number_of_shares_transferred: int\n"
+                "    cost_of_acquisition_per_share: float\n"
+                "\n"
+                "class Section50CAEngine:\n"
+                "    @staticmethod\n"
+                "    def compute_share_fmv_sec50ca(bs: PrivateCompanyBalanceSheet) -> Dict:\n"
+                "        # Rule 11UA(1)(c)(b) Adjusted Net Worth Formula:\n"
+                "        # Adjusted Assets = Book Assets - Book Value of Immovable Property + Stamp Duty Value of Immovable Property\n"
+                "        adjusted_assets = (\n"
+                "            bs.book_value_of_all_assets -\n"
+                "            bs.book_value_of_immovable_property +\n"
+                "            bs.stamp_duty_value_of_immovable_property\n"
+                "        )\n"
+                "        \n"
+                "        # Adjusted Equity Value = Adjusted Assets - Outside Liabilities\n"
+                "        adjusted_net_equity_value = adjusted_assets - bs.total_liabilities_excluding_capital_reserves\n"
+                "        \n"
+                "        # Rule 11UA Per Share FMV\n"
+                "        rule_11ua_fmv_per_share = adjusted_net_equity_value / bs.total_issued_equity_shares if bs.total_issued_equity_shares > 0 else 0.0\n"
+                "        \n"
+                "        # Test Section 50CA trigger: Is agreed price < Rule 11UA FMV?\n"
+                "        is_sec50ca_triggered = bs.actual_agreed_sale_price_per_share < rule_11ua_fmv_per_share\n"
+                "        deemed_price_per_share = max(bs.actual_agreed_sale_price_per_share, rule_11ua_fmv_per_share)\n"
+                "        \n"
+                "        # Capital Gain Calculation for seller\n"
+                "        total_deemed_consideration = deemed_price_per_share * bs.number_of_shares_transferred\n"
+                "        total_actual_consideration = bs.actual_agreed_sale_price_per_share * bs.number_of_shares_transferred\n"
+                "        total_cost = bs.cost_of_acquisition_per_share * bs.number_of_shares_transferred\n"
+                "        \n"
+                "        taxable_capital_gain = total_deemed_consideration - total_cost\n"
+                "        phantom_deemed_taxable_spread = total_deemed_consideration - total_actual_consideration\n"
+                "        \n"
+                "        return {\n"
+                "            'company': bs.company_name,\n"
+                "            'rule_11ua_adjusted_net_assets': round(adjusted_net_equity_value, 2),\n"
+                "            'statutory_fmv_per_share_rule11ua': round(rule_11ua_fmv_per_share, 2),\n"
+                "            'actual_sale_price_per_share': round(bs.actual_agreed_sale_price_per_share, 2),\n"
+                "            'sec50ca_deeming_triggered': is_sec50ca_triggered,\n"
+                "            'deemed_full_value_per_share': round(deemed_price_per_share, 2),\n"
+                "            'total_taxable_capital_gain': round(taxable_capital_gain, 2),\n"
+                "            'phantom_taxable_consideration_spread': round(phantom_deemed_taxable_spread, 2),\n"
+                "            'statutory_finding': (\n"
+                "                f'Section 50CA Triggered: Agreed price ({bs.actual_agreed_sale_price_per_share}) is below Rule 11UA FMV ({round(rule_11ua_fmv_per_share, 2)}). '\n"
+                "                f'Tax assessed on deemed consideration of {total_deemed_consideration}.'\n"
+                "                if is_sec50ca_triggered else\n"
+                "                'Compliant: Sale price meets or exceeds Rule 11UA Fair Market Value.'\n"
+                "            )\n"
+                "        }\n"
+                "\n"
+                "private_firm = PrivateCompanyBalanceSheet(\n"
+                "    company_name='Apex Logistics Holdings Pvt Ltd',\n"
+                "    total_issued_equity_shares=1000000,\n"
+                "    book_value_of_all_assets=120000000.0,\n"
+                "    book_value_of_immovable_property=30000000.0,\n"
+                "    stamp_duty_value_of_immovable_property=80000000.0, # 50M land revaluation\n"
+                "    total_liabilities_excluding_capital_reserves=40000000.0,\n"
+                "    actual_agreed_sale_price_per_share=80.0,            # Seller agreed at $80\n"
+                "    number_of_shares_transferred=200000,\n"
+                "    cost_of_acquisition_per_share=25.0\n"
+                ")\n"
+                "engine = Section50CAEngine()\n"
+                "res = engine.compute_share_fmv_sec50ca(private_firm)\n"
+                "print(json.dumps(res, indent=2))\n"
+            ),
+            "codeNotes": "Executes Section 50CA and Rule 11UA Fair Market Value calculus for unquoted shares, substituting Stamp Duty Value for immovable property and computing deemed capital gains.",
+            "example": (
+                "A private company's book assets are $120M, but its land has an $80M Stamp Duty Value ($50M surplus over $30M book). Adjusted assets are $170M minus $40M liabilities = $130M net equity. For 1,000,000 shares, Rule 11UA FMV is $130 per share. An investor selling 200,000 shares at $80 is deemed under Section 50CA to have received $130, adding $10,000,000 of phantom capital gains."
+            ),
+            "tryIt": "Set actual_agreed_sale_price_per_share to 150.0 (above FMV) and verify that Section 50CA is not triggered.",
+            "check": {
+                "question": "Under Section 50CA of the Income Tax Act read with Rule 11UA, how must the Fair Market Value of unquoted equity shares be determined when the company holds immovable property?",
+                "options": [
+                    "The immovable property must be valued at its Stamp Duty Value rather than its historical accounting book value.",
+                    "The shares must be valued strictly at their par face value certified by the company secretary.",
+                    "The value must be determined by taking 50% of the company's gross annual revenue.",
+                    "The immovable property is completely ignored, and only cash and bank balances are counted."
+                ],
+                "answerIndex": 0,
+                "why": "Rule 11UA(1)(c)(b) specifically mandates that in computing the fair market value of unquoted equity shares, the value of any immovable property shall be adopted as the stamp duty value assessed by the government valuation authority."
+            }
+        },
+        {
+            "id": 5,
+            "title": "Corporate Share Buyback Taxation: Section 115QA vs The Finance Act 2024 Regime",
+            "say": (
+                "To conclude our analysis of corporate capital restructuring, we examine the seismic legislative evolution of 'Share Buybacks' under corporate tax law. Historically, corporate share repurchases were used as a tax-arbitrage vehicle to distribute accumulated corporate profits to high-net-worth promoters and shareholders while bypassing dividend distribution taxes.\n\n"
+                "To counter this, Parliament enacted Section 115QA—imposing a 20% Buyback Distribution Tax (plus 12% surcharge and 4% cess, creating an effective 23.296% tax) directly on the domestic company repurchasing its shares. Under Section 115QA, the company paid the tax on 'Distributed Income' (buyback price minus amount received on issue), and the income was 100% exempt in the hands of the selling shareholder under Section 10(34A).\n\n"
+                "However, the Finance Act 2024 executed a revolutionary overhaul of corporate buyback taxation, effective October 1, 2024! The Finance Act 2024 completely abolished the company-level tax under Section 115QA and fundamentally restructured buyback economics: (1) The entire gross buyback consideration received by the shareholder is now deemed to be a 'Dividend' under Section 2(22)(f), taxable directly in the hands of the shareholder at their applicable slab/corporate rate; and (2) The original cost of acquisition of the repurchased shares is treated as a Capital Loss (short-term or long-term) in the hands of the shareholder under Section 46A! This capital loss can be carried forward and set off against future capital gains.\n\n"
+                "In this fifth part, we build an enterprise Buyback Tax Strategy Engine in Python. We model the financial impact of share repurchases before and after the Finance Act 2024 overhaul, compare corporate cash drains against shareholder dividend tax brackets, calculate generated capital losses, and formulate optimized share repurchase strategies."
+            ),
+            "code": (
+                "import json\n"
+                "from dataclasses import dataclass\n"
+                "from typing import Dict\n"
+                "\n"
+                "@dataclass\n"
+                "class ShareBuybackDeal:\n"
+                "    deal_title: str\n"
+                "    number_of_shares_bought_back: int\n"
+                "    buyback_price_per_share: float\n"
+                "    issue_price_per_share: float\n"
+                "    shareholder_cost_per_share: float\n"
+                "    shareholder_tax_bracket: float # e.g., 0.3588 (peak individual)\n"
+                "\n"
+                "class BuybackTaxStrategyEngine:\n"
+                "    @staticmethod\n"
+                "    def compare_buyback_regimes(b: ShareBuybackDeal) -> Dict:\n"
+                "        total_buyback_value = b.number_of_shares_bought_back * b.buyback_price_per_share\n"
+                "        total_issue_value = b.number_of_shares_bought_back * b.issue_price_per_share\n"
+                "        total_shareholder_cost = b.number_of_shares_bought_back * b.shareholder_cost_per_share\n"
+                "        \n"
+                "        # Regime 1: Historic Section 115QA (Company pays 23.296% on distributed income)\n"
+                "        distributed_income = max(0.0, total_buyback_value - total_issue_value)\n"
+                "        company_tax_115qa = distributed_income * 0.23296\n"
+                "        shareholder_tax_115qa = 0.0  # Exempt under Sec 10(34A)\n"
+                "        net_cash_to_shareholder_old = total_buyback_value\n"
+                "        total_tax_paid_old = company_tax_115qa\n"
+                "        \n"
+                "        # Regime 2: Finance Act 2024 (Deemed Dividend in Shareholder Hands Sec 2(22)(f))\n"
+                "        company_tax_2024 = 0.0       # Company pays zero tax\n"
+                "        # Entire consideration treated as dividend in shareholder hands\n"
+                "        shareholder_dividend_tax = total_buyback_value * b.shareholder_tax_bracket\n"
+                "        net_cash_to_shareholder_2024 = total_buyback_value - shareholder_dividend_tax\n"
+                "        # Shareholder gets Capital Loss equal to cost of acquisition under Sec 46A\n"
+                "        capital_loss_generated = total_shareholder_cost\n"
+                "        total_tax_paid_2024 = shareholder_dividend_tax\n"
+                "        \n"
+                "        return {\n"
+                "            'deal': b.deal_title,\n"
+                "            'gross_buyback_proceeds': round(total_buyback_value, 2),\n"
+                "            'historic_sec115qa_regime': {\n"
+                "                'company_tax_burden': round(company_tax_115qa, 2),\n"
+                "                'shareholder_tax_burden': 0.0,\n"
+                "                'net_cash_received_by_shareholder': round(net_cash_to_shareholder_old, 2),\n"
+                "                'capital_loss_created': 0.0\n"
+                "            },\n"
+                "            'finance_act_2024_regime': {\n"
+                "                'company_tax_burden': 0.0,\n"
+                "                'shareholder_dividend_tax_sec2_22_f': round(shareholder_dividend_tax, 2),\n"
+                "                'net_cash_received_by_shareholder': round(net_cash_to_shareholder_2024, 2),\n"
+                "                'capital_loss_generated_sec46a': round(capital_loss_generated, 2),\n"
+                "                'future_tax_shield_from_capital_loss': round(capital_loss_generated * 0.125, 2)\n"
+                "            },\n"
+                "            'net_tax_differential_total': round(total_tax_paid_2024 - total_tax_paid_old, 2)\n"
+                "        }\n"
+                "\n"
+                "deal1 = ShareBuybackDeal(\n"
+                "    deal_title='Infosys Enterprise Share Repurchase Program',\n"
+                "    number_of_shares_bought_back=1000000, buyback_price_per_share=1800.0,\n"
+                "    issue_price_per_share=100.0, shareholder_cost_per_share=1200.0,\n"
+                "    shareholder_tax_bracket=0.3588 # Peak individual bracket\n"
+                ")\n"
+                "engine = BuybackTaxStrategyEngine()\n"
+                "res = engine.compare_buyback_regimes(deal1)\n"
+                "print(json.dumps(res, indent=2))\n"
+            ),
+            "codeNotes": "Models corporate share buyback taxation across historic Section 115QA company-level tax and the Finance Act 2024 deemed dividend regime under Section 2(22)(f).",
+            "example": (
+                "A company buys back 1,000,000 shares for $1,800M (issue price $100M). Under historic Section 115QA, the company paid $396M tax, and the shareholder received $1,800M tax-free. Under Finance Act 2024, the company pays $0 tax, but the shareholder pays $645.8M in dividend tax while receiving a $1,200M capital loss to offset against future capital gains."
+            ),
+            "tryIt": "Set shareholder_tax_bracket to 0.25168 (corporate shareholder) and observe the tax reduction compared to peak individual rates.",
+            "check": {
+                "question": "Under the direct tax amendments introduced by the Finance Act 2024, how is consideration received by a shareholder from a domestic company on a share buyback taxed?",
+                "options": [
+                    "As a deemed dividend under Section 2(22)(f) in the hands of the shareholder, with the original cost treated as a capital loss under Section 46A.",
+                    "Exclusively as exempt income under Section 10(34A) with a 20% tax paid by the company under Section 115QA.",
+                    "As a business turnover receipt subject to mandatory GST under Schedule II.",
+                    "As a tax-free capital reduction credited directly to general reserves."
+                ],
+                "answerIndex": 0,
+                "why": "The Finance Act 2024 amended Section 2(22) by inserting sub-clause (f) to treat share buyback proceeds as deemed dividends in the hands of shareholders, while Section 46A allows the acquisition cost as a capital loss."
+            }
+        }
+    ]
+}
+
+if __name__ == "__main__":
+    with open("scripts/bcom_tax_day14_data.json", "w", encoding="utf-8") as f:
+        json.dump(day14_data, f, indent=2)
+    print("Successfully built scripts/bcom_tax_day14_data.json")
