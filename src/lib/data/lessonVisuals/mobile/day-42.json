@@ -1,0 +1,1089 @@
+{
+  "schemaVersion": 1,
+  "prefix": "mobile",
+  "day": 42,
+  "promptSha": "mobile-day-42-eventbus-spec",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "APNs Device Tokens vs Firebase Cloud Messaging (FCM) Architecture",
+      "codeHash": "5c86375010675e3ca0c2959bfefe81ccc1b146162982533c2dd560f83d56727b",
+      "spec": {
+        "template": "component-tree",
+        "rootId": "AppRoot",
+        "nodes": [
+          {
+            "id": "AppRoot",
+            "name": "<EventDispatcherShell />",
+            "props": {
+              "linkingMode": "UNIVERSAL_LINKS",
+              "pushGateway": "APNS_FCM_MULTIPLEX"
+            },
+            "children": [
+              {
+                "id": "DeepLinkCoordinator",
+                "name": "<UniversalLinkCoordinator />",
+                "props": {
+                  "domainVerification": "CRYPTOGRAPHIC_HTTPS",
+                  "coldStartQueue": "SYNCHRONIZED"
+                }
+              },
+              {
+                "id": "PushNotificationEngine",
+                "name": "<PushNotificationManager />",
+                "props": {
+                  "tokenRegistry": "FCM_UNIFIED",
+                  "silentSync": "SQLITE_DIRECT"
+                }
+              },
+              {
+                "id": "AppStateController",
+                "name": "<AppStateLifecycleController />",
+                "props": {
+                  "memoryPruning": "JETSAM_EVASION",
+                  "socketManagement": "GRACEFUL_TEARDOWN"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Parse and authenticate external entry vectors for APNs Device Tokens vs Firebase.",
+            "activeId": "DeepLinkCoordinator",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "DeepLinkCoordinator",
+                "name": "<UniversalLinkCoordinator />",
+                "props": {
+                  "status": "DOMAIN_VERIFIED"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Dispatch push tokens and synchronize silent background SQLite deltas.",
+            "activeId": "PushNotificationEngine",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "PushNotificationEngine",
+                "name": "<PushNotificationManager />",
+                "props": {
+                  "syncState": "SILENT_SQLITE_COMMITTED"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Coordinate AppState transitions and gracefully suspend background sockets.",
+            "activeId": "AppStateController",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppStateController",
+                "name": "<AppStateLifecycleController />",
+                "props": {
+                  "lifecycle": "BACKGROUND_PRUNED"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Drain pending navigation queue on NavigationContainer ready with zero crashes.",
+            "activeId": "AppRoot",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppRoot",
+                "name": "<EventDispatcherShell />",
+                "props": {
+                  "certification": "REAL_TIME_DISPATCHER_VERIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "rootId": "AppRoot",
+        "nodes": [
+          {
+            "id": "AppRoot",
+            "name": "<EventDispatcherShell />",
+            "props": {
+              "linkingMode": "UNIVERSAL_LINKS",
+              "pushGateway": "APNS_FCM_MULTIPLEX"
+            },
+            "children": [
+              {
+                "id": "DeepLinkCoordinator",
+                "name": "<UniversalLinkCoordinator />",
+                "props": {
+                  "domainVerification": "CRYPTOGRAPHIC_HTTPS",
+                  "coldStartQueue": "SYNCHRONIZED"
+                }
+              },
+              {
+                "id": "PushNotificationEngine",
+                "name": "<PushNotificationManager />",
+                "props": {
+                  "tokenRegistry": "FCM_UNIFIED",
+                  "silentSync": "SQLITE_DIRECT"
+                }
+              },
+              {
+                "id": "AppStateController",
+                "name": "<AppStateLifecycleController />",
+                "props": {
+                  "memoryPruning": "JETSAM_EVASION",
+                  "socketManagement": "GRACEFUL_TEARDOWN"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Parse and authenticate external entry vectors for APNs Device Tokens vs Firebase.",
+            "activeId": "DeepLinkCoordinator",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "DeepLinkCoordinator",
+                "name": "<UniversalLinkCoordinator />",
+                "props": {
+                  "status": "DOMAIN_VERIFIED"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Dispatch push tokens and synchronize silent background SQLite deltas.",
+            "activeId": "PushNotificationEngine",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "PushNotificationEngine",
+                "name": "<PushNotificationManager />",
+                "props": {
+                  "syncState": "SILENT_SQLITE_COMMITTED"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Coordinate AppState transitions and gracefully suspend background sockets.",
+            "activeId": "AppStateController",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppStateController",
+                "name": "<AppStateLifecycleController />",
+                "props": {
+                  "lifecycle": "BACKGROUND_PRUNED"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Drain pending navigation queue on NavigationContainer ready with zero crashes.",
+            "activeId": "AppRoot",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppRoot",
+                "name": "<EventDispatcherShell />",
+                "props": {
+                  "certification": "REAL_TIME_DISPATCHER_VERIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "APNs HTTP/2 Protocol & Cryptographic JWT Bearer Authentication",
+      "codeHash": "807d704c8ca42f00e415b34432c175c731ad4ee977b083297103d5f1a5a96436",
+      "spec": {
+        "template": "component-tree",
+        "rootId": "AppRoot",
+        "nodes": [
+          {
+            "id": "AppRoot",
+            "name": "<EventDispatcherShell />",
+            "props": {
+              "linkingMode": "UNIVERSAL_LINKS",
+              "pushGateway": "APNS_FCM_MULTIPLEX"
+            },
+            "children": [
+              {
+                "id": "DeepLinkCoordinator",
+                "name": "<UniversalLinkCoordinator />",
+                "props": {
+                  "domainVerification": "CRYPTOGRAPHIC_HTTPS",
+                  "coldStartQueue": "SYNCHRONIZED"
+                }
+              },
+              {
+                "id": "PushNotificationEngine",
+                "name": "<PushNotificationManager />",
+                "props": {
+                  "tokenRegistry": "FCM_UNIFIED",
+                  "silentSync": "SQLITE_DIRECT"
+                }
+              },
+              {
+                "id": "AppStateController",
+                "name": "<AppStateLifecycleController />",
+                "props": {
+                  "memoryPruning": "JETSAM_EVASION",
+                  "socketManagement": "GRACEFUL_TEARDOWN"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Parse and authenticate external entry vectors for APNs HTTP/2 Protocol & Cryptog.",
+            "activeId": "DeepLinkCoordinator",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "DeepLinkCoordinator",
+                "name": "<UniversalLinkCoordinator />",
+                "props": {
+                  "status": "DOMAIN_VERIFIED"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Dispatch push tokens and synchronize silent background SQLite deltas.",
+            "activeId": "PushNotificationEngine",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "PushNotificationEngine",
+                "name": "<PushNotificationManager />",
+                "props": {
+                  "syncState": "SILENT_SQLITE_COMMITTED"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Coordinate AppState transitions and gracefully suspend background sockets.",
+            "activeId": "AppStateController",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppStateController",
+                "name": "<AppStateLifecycleController />",
+                "props": {
+                  "lifecycle": "BACKGROUND_PRUNED"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Drain pending navigation queue on NavigationContainer ready with zero crashes.",
+            "activeId": "AppRoot",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppRoot",
+                "name": "<EventDispatcherShell />",
+                "props": {
+                  "certification": "REAL_TIME_DISPATCHER_VERIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "rootId": "AppRoot",
+        "nodes": [
+          {
+            "id": "AppRoot",
+            "name": "<EventDispatcherShell />",
+            "props": {
+              "linkingMode": "UNIVERSAL_LINKS",
+              "pushGateway": "APNS_FCM_MULTIPLEX"
+            },
+            "children": [
+              {
+                "id": "DeepLinkCoordinator",
+                "name": "<UniversalLinkCoordinator />",
+                "props": {
+                  "domainVerification": "CRYPTOGRAPHIC_HTTPS",
+                  "coldStartQueue": "SYNCHRONIZED"
+                }
+              },
+              {
+                "id": "PushNotificationEngine",
+                "name": "<PushNotificationManager />",
+                "props": {
+                  "tokenRegistry": "FCM_UNIFIED",
+                  "silentSync": "SQLITE_DIRECT"
+                }
+              },
+              {
+                "id": "AppStateController",
+                "name": "<AppStateLifecycleController />",
+                "props": {
+                  "memoryPruning": "JETSAM_EVASION",
+                  "socketManagement": "GRACEFUL_TEARDOWN"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Parse and authenticate external entry vectors for APNs HTTP/2 Protocol & Cryptog.",
+            "activeId": "DeepLinkCoordinator",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "DeepLinkCoordinator",
+                "name": "<UniversalLinkCoordinator />",
+                "props": {
+                  "status": "DOMAIN_VERIFIED"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Dispatch push tokens and synchronize silent background SQLite deltas.",
+            "activeId": "PushNotificationEngine",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "PushNotificationEngine",
+                "name": "<PushNotificationManager />",
+                "props": {
+                  "syncState": "SILENT_SQLITE_COMMITTED"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Coordinate AppState transitions and gracefully suspend background sockets.",
+            "activeId": "AppStateController",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppStateController",
+                "name": "<AppStateLifecycleController />",
+                "props": {
+                  "lifecycle": "BACKGROUND_PRUNED"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Drain pending navigation queue on NavigationContainer ready with zero crashes.",
+            "activeId": "AppRoot",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppRoot",
+                "name": "<EventDispatcherShell />",
+                "props": {
+                  "certification": "REAL_TIME_DISPATCHER_VERIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Notification Payload Topologies: Alert vs Data-Only Silent Payloads",
+      "codeHash": "4c6d63c664bb3255701707b6d4eba04eb9fb2be79a2f17a40c0680517485d7c8",
+      "spec": {
+        "template": "component-tree",
+        "rootId": "AppRoot",
+        "nodes": [
+          {
+            "id": "AppRoot",
+            "name": "<EventDispatcherShell />",
+            "props": {
+              "linkingMode": "UNIVERSAL_LINKS",
+              "pushGateway": "APNS_FCM_MULTIPLEX"
+            },
+            "children": [
+              {
+                "id": "DeepLinkCoordinator",
+                "name": "<UniversalLinkCoordinator />",
+                "props": {
+                  "domainVerification": "CRYPTOGRAPHIC_HTTPS",
+                  "coldStartQueue": "SYNCHRONIZED"
+                }
+              },
+              {
+                "id": "PushNotificationEngine",
+                "name": "<PushNotificationManager />",
+                "props": {
+                  "tokenRegistry": "FCM_UNIFIED",
+                  "silentSync": "SQLITE_DIRECT"
+                }
+              },
+              {
+                "id": "AppStateController",
+                "name": "<AppStateLifecycleController />",
+                "props": {
+                  "memoryPruning": "JETSAM_EVASION",
+                  "socketManagement": "GRACEFUL_TEARDOWN"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Parse and authenticate external entry vectors for Notification Payload Topologie.",
+            "activeId": "DeepLinkCoordinator",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "DeepLinkCoordinator",
+                "name": "<UniversalLinkCoordinator />",
+                "props": {
+                  "status": "DOMAIN_VERIFIED"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Dispatch push tokens and synchronize silent background SQLite deltas.",
+            "activeId": "PushNotificationEngine",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "PushNotificationEngine",
+                "name": "<PushNotificationManager />",
+                "props": {
+                  "syncState": "SILENT_SQLITE_COMMITTED"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Coordinate AppState transitions and gracefully suspend background sockets.",
+            "activeId": "AppStateController",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppStateController",
+                "name": "<AppStateLifecycleController />",
+                "props": {
+                  "lifecycle": "BACKGROUND_PRUNED"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Drain pending navigation queue on NavigationContainer ready with zero crashes.",
+            "activeId": "AppRoot",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppRoot",
+                "name": "<EventDispatcherShell />",
+                "props": {
+                  "certification": "REAL_TIME_DISPATCHER_VERIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "rootId": "AppRoot",
+        "nodes": [
+          {
+            "id": "AppRoot",
+            "name": "<EventDispatcherShell />",
+            "props": {
+              "linkingMode": "UNIVERSAL_LINKS",
+              "pushGateway": "APNS_FCM_MULTIPLEX"
+            },
+            "children": [
+              {
+                "id": "DeepLinkCoordinator",
+                "name": "<UniversalLinkCoordinator />",
+                "props": {
+                  "domainVerification": "CRYPTOGRAPHIC_HTTPS",
+                  "coldStartQueue": "SYNCHRONIZED"
+                }
+              },
+              {
+                "id": "PushNotificationEngine",
+                "name": "<PushNotificationManager />",
+                "props": {
+                  "tokenRegistry": "FCM_UNIFIED",
+                  "silentSync": "SQLITE_DIRECT"
+                }
+              },
+              {
+                "id": "AppStateController",
+                "name": "<AppStateLifecycleController />",
+                "props": {
+                  "memoryPruning": "JETSAM_EVASION",
+                  "socketManagement": "GRACEFUL_TEARDOWN"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Parse and authenticate external entry vectors for Notification Payload Topologie.",
+            "activeId": "DeepLinkCoordinator",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "DeepLinkCoordinator",
+                "name": "<UniversalLinkCoordinator />",
+                "props": {
+                  "status": "DOMAIN_VERIFIED"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Dispatch push tokens and synchronize silent background SQLite deltas.",
+            "activeId": "PushNotificationEngine",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "PushNotificationEngine",
+                "name": "<PushNotificationManager />",
+                "props": {
+                  "syncState": "SILENT_SQLITE_COMMITTED"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Coordinate AppState transitions and gracefully suspend background sockets.",
+            "activeId": "AppStateController",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppStateController",
+                "name": "<AppStateLifecycleController />",
+                "props": {
+                  "lifecycle": "BACKGROUND_PRUNED"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Drain pending navigation queue on NavigationContainer ready with zero crashes.",
+            "activeId": "AppRoot",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppRoot",
+                "name": "<EventDispatcherShell />",
+                "props": {
+                  "certification": "REAL_TIME_DISPATCHER_VERIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "FCM Token Invalidation Lifecycle & Database Registry Pruning",
+      "codeHash": "506b1ccffa01dfedade1254881175d333c882590f286f0dab27f5d4ae00cefcb",
+      "spec": {
+        "template": "component-tree",
+        "rootId": "AppRoot",
+        "nodes": [
+          {
+            "id": "AppRoot",
+            "name": "<EventDispatcherShell />",
+            "props": {
+              "linkingMode": "UNIVERSAL_LINKS",
+              "pushGateway": "APNS_FCM_MULTIPLEX"
+            },
+            "children": [
+              {
+                "id": "DeepLinkCoordinator",
+                "name": "<UniversalLinkCoordinator />",
+                "props": {
+                  "domainVerification": "CRYPTOGRAPHIC_HTTPS",
+                  "coldStartQueue": "SYNCHRONIZED"
+                }
+              },
+              {
+                "id": "PushNotificationEngine",
+                "name": "<PushNotificationManager />",
+                "props": {
+                  "tokenRegistry": "FCM_UNIFIED",
+                  "silentSync": "SQLITE_DIRECT"
+                }
+              },
+              {
+                "id": "AppStateController",
+                "name": "<AppStateLifecycleController />",
+                "props": {
+                  "memoryPruning": "JETSAM_EVASION",
+                  "socketManagement": "GRACEFUL_TEARDOWN"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Parse and authenticate external entry vectors for FCM Token Invalidation Lifecyc.",
+            "activeId": "DeepLinkCoordinator",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "DeepLinkCoordinator",
+                "name": "<UniversalLinkCoordinator />",
+                "props": {
+                  "status": "DOMAIN_VERIFIED"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Dispatch push tokens and synchronize silent background SQLite deltas.",
+            "activeId": "PushNotificationEngine",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "PushNotificationEngine",
+                "name": "<PushNotificationManager />",
+                "props": {
+                  "syncState": "SILENT_SQLITE_COMMITTED"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Coordinate AppState transitions and gracefully suspend background sockets.",
+            "activeId": "AppStateController",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppStateController",
+                "name": "<AppStateLifecycleController />",
+                "props": {
+                  "lifecycle": "BACKGROUND_PRUNED"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Drain pending navigation queue on NavigationContainer ready with zero crashes.",
+            "activeId": "AppRoot",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppRoot",
+                "name": "<EventDispatcherShell />",
+                "props": {
+                  "certification": "REAL_TIME_DISPATCHER_VERIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "rootId": "AppRoot",
+        "nodes": [
+          {
+            "id": "AppRoot",
+            "name": "<EventDispatcherShell />",
+            "props": {
+              "linkingMode": "UNIVERSAL_LINKS",
+              "pushGateway": "APNS_FCM_MULTIPLEX"
+            },
+            "children": [
+              {
+                "id": "DeepLinkCoordinator",
+                "name": "<UniversalLinkCoordinator />",
+                "props": {
+                  "domainVerification": "CRYPTOGRAPHIC_HTTPS",
+                  "coldStartQueue": "SYNCHRONIZED"
+                }
+              },
+              {
+                "id": "PushNotificationEngine",
+                "name": "<PushNotificationManager />",
+                "props": {
+                  "tokenRegistry": "FCM_UNIFIED",
+                  "silentSync": "SQLITE_DIRECT"
+                }
+              },
+              {
+                "id": "AppStateController",
+                "name": "<AppStateLifecycleController />",
+                "props": {
+                  "memoryPruning": "JETSAM_EVASION",
+                  "socketManagement": "GRACEFUL_TEARDOWN"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Parse and authenticate external entry vectors for FCM Token Invalidation Lifecyc.",
+            "activeId": "DeepLinkCoordinator",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "DeepLinkCoordinator",
+                "name": "<UniversalLinkCoordinator />",
+                "props": {
+                  "status": "DOMAIN_VERIFIED"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Dispatch push tokens and synchronize silent background SQLite deltas.",
+            "activeId": "PushNotificationEngine",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "PushNotificationEngine",
+                "name": "<PushNotificationManager />",
+                "props": {
+                  "syncState": "SILENT_SQLITE_COMMITTED"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Coordinate AppState transitions and gracefully suspend background sockets.",
+            "activeId": "AppStateController",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppStateController",
+                "name": "<AppStateLifecycleController />",
+                "props": {
+                  "lifecycle": "BACKGROUND_PRUNED"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Drain pending navigation queue on NavigationContainer ready with zero crashes.",
+            "activeId": "AppRoot",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppRoot",
+                "name": "<EventDispatcherShell />",
+                "props": {
+                  "certification": "REAL_TIME_DISPATCHER_VERIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Topic Subscriptions, Channel Partitioning & Push Fanout Engines",
+      "codeHash": "d1686b788bb094329cd5c42515f20368d4209713002209a83c5dacc38fdd99f9",
+      "spec": {
+        "template": "component-tree",
+        "rootId": "AppRoot",
+        "nodes": [
+          {
+            "id": "AppRoot",
+            "name": "<EventDispatcherShell />",
+            "props": {
+              "linkingMode": "UNIVERSAL_LINKS",
+              "pushGateway": "APNS_FCM_MULTIPLEX"
+            },
+            "children": [
+              {
+                "id": "DeepLinkCoordinator",
+                "name": "<UniversalLinkCoordinator />",
+                "props": {
+                  "domainVerification": "CRYPTOGRAPHIC_HTTPS",
+                  "coldStartQueue": "SYNCHRONIZED"
+                }
+              },
+              {
+                "id": "PushNotificationEngine",
+                "name": "<PushNotificationManager />",
+                "props": {
+                  "tokenRegistry": "FCM_UNIFIED",
+                  "silentSync": "SQLITE_DIRECT"
+                }
+              },
+              {
+                "id": "AppStateController",
+                "name": "<AppStateLifecycleController />",
+                "props": {
+                  "memoryPruning": "JETSAM_EVASION",
+                  "socketManagement": "GRACEFUL_TEARDOWN"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Parse and authenticate external entry vectors for Topic Subscriptions, Channel P.",
+            "activeId": "DeepLinkCoordinator",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "DeepLinkCoordinator",
+                "name": "<UniversalLinkCoordinator />",
+                "props": {
+                  "status": "DOMAIN_VERIFIED"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Dispatch push tokens and synchronize silent background SQLite deltas.",
+            "activeId": "PushNotificationEngine",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "PushNotificationEngine",
+                "name": "<PushNotificationManager />",
+                "props": {
+                  "syncState": "SILENT_SQLITE_COMMITTED"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Coordinate AppState transitions and gracefully suspend background sockets.",
+            "activeId": "AppStateController",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppStateController",
+                "name": "<AppStateLifecycleController />",
+                "props": {
+                  "lifecycle": "BACKGROUND_PRUNED"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Drain pending navigation queue on NavigationContainer ready with zero crashes.",
+            "activeId": "AppRoot",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppRoot",
+                "name": "<EventDispatcherShell />",
+                "props": {
+                  "certification": "REAL_TIME_DISPATCHER_VERIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "rootId": "AppRoot",
+        "nodes": [
+          {
+            "id": "AppRoot",
+            "name": "<EventDispatcherShell />",
+            "props": {
+              "linkingMode": "UNIVERSAL_LINKS",
+              "pushGateway": "APNS_FCM_MULTIPLEX"
+            },
+            "children": [
+              {
+                "id": "DeepLinkCoordinator",
+                "name": "<UniversalLinkCoordinator />",
+                "props": {
+                  "domainVerification": "CRYPTOGRAPHIC_HTTPS",
+                  "coldStartQueue": "SYNCHRONIZED"
+                }
+              },
+              {
+                "id": "PushNotificationEngine",
+                "name": "<PushNotificationManager />",
+                "props": {
+                  "tokenRegistry": "FCM_UNIFIED",
+                  "silentSync": "SQLITE_DIRECT"
+                }
+              },
+              {
+                "id": "AppStateController",
+                "name": "<AppStateLifecycleController />",
+                "props": {
+                  "memoryPruning": "JETSAM_EVASION",
+                  "socketManagement": "GRACEFUL_TEARDOWN"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Parse and authenticate external entry vectors for Topic Subscriptions, Channel P.",
+            "activeId": "DeepLinkCoordinator",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "DeepLinkCoordinator",
+                "name": "<UniversalLinkCoordinator />",
+                "props": {
+                  "status": "DOMAIN_VERIFIED"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Dispatch push tokens and synchronize silent background SQLite deltas.",
+            "activeId": "PushNotificationEngine",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "PushNotificationEngine",
+                "name": "<PushNotificationManager />",
+                "props": {
+                  "syncState": "SILENT_SQLITE_COMMITTED"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Coordinate AppState transitions and gracefully suspend background sockets.",
+            "activeId": "AppStateController",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "AppStateController",
+                "name": "<AppStateLifecycleController />",
+                "props": {
+                  "lifecycle": "BACKGROUND_PRUNED"
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Drain pending navigation queue on NavigationContainer ready with zero crashes.",
+            "activeId": "AppRoot",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppRoot",
+                "name": "<EventDispatcherShell />",
+                "props": {
+                  "certification": "REAL_TIME_DISPATCHER_VERIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
