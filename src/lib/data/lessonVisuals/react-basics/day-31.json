@@ -1,0 +1,933 @@
+{
+  "schemaVersion": 1,
+  "prefix": "react-basics",
+  "day": 31,
+  "promptSha": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "From Stack Reconciler to Fiber: Why Synchronous Tree Traversal Froze the Main Thread",
+      "codeHash": "518fbe7052e8a5884bb2802b836dcecf564dda031d68bac9f8ad2577ad25f2ba",
+      "spec": {
+        "template": "flow",
+        "title": "Synchronous Stack Reconciliation vs Concurrent Fiber Pipeline",
+        "nodes": [
+          {
+            "id": "n1",
+            "label": "Call Stack",
+            "tappable": false
+          },
+          {
+            "id": "n2",
+            "label": "Fiber Slice",
+            "tappable": false
+          },
+          {
+            "id": "n3",
+            "label": "Time Check",
+            "tappable": false
+          },
+          {
+            "id": "n4",
+            "label": "Commit",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Synchronous rendering monopolizes the call stack until the entire tree finishes.",
+            "values": {
+              "n1": {
+                "text": "\"Monolithic\""
+              },
+              "n2": {
+                "text": "\"None\""
+              },
+              "n3": {
+                "text": "\"None\""
+              },
+              "n4": {
+                "text": "\"Blocked\""
+              }
+            },
+            "tones": {
+              "n1": "error",
+              "n2": "idle",
+              "n3": "idle",
+              "n4": "idle"
+            },
+            "arrows": [
+              [
+                "n1",
+                "n4"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Fiber breaks rendering into discrete units of work yielding cooperatively to the browser.",
+            "values": {
+              "n1": {
+                "text": "\"Yielded\""
+              },
+              "n2": {
+                "text": "\"Slice-1\""
+              },
+              "n3": {
+                "text": "\"Active\""
+              },
+              "n4": {
+                "text": "\"Pending\""
+              }
+            },
+            "tones": {
+              "n1": "idle",
+              "n2": "data",
+              "n3": "data",
+              "n4": "idle"
+            },
+            "arrows": [
+              [
+                "n1",
+                "n2"
+              ],
+              [
+                "n2",
+                "n3"
+              ]
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The work loop checks shouldYield() after each fiber before processing the next unit.",
+            "values": {
+              "n1": {
+                "text": "\"Browser 60fps\""
+              },
+              "n2": {
+                "text": "\"Slice-2\""
+              },
+              "n3": {
+                "text": "\"Yield Check\""
+              },
+              "n4": {
+                "text": "\"Pending\""
+              }
+            },
+            "tones": {
+              "n1": "ok",
+              "n2": "data",
+              "n3": "ok",
+              "n4": "idle"
+            },
+            "arrows": [
+              [
+                "n2",
+                "n3"
+              ]
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Once all fiber nodes are reconciled, the finished tree commits synchronously in one paint.",
+            "values": {
+              "n1": {
+                "text": "\"Completed\""
+              },
+              "n2": {
+                "text": "\"Tree Done\""
+              },
+              "n3": {
+                "text": "\"Passed\""
+              },
+              "n4": {
+                "text": "\"Flushed\""
+              }
+            },
+            "tones": {
+              "n1": "ok",
+              "n2": "ok",
+              "n3": "ok",
+              "n4": "ok"
+            },
+            "arrows": [
+              [
+                "n3",
+                "n4"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Synchronous Stack Reconciliation vs Concurrent Fiber Pipeline",
+        "nodes": [
+          {
+            "id": "n1",
+            "label": "Call Stack",
+            "tappable": false
+          },
+          {
+            "id": "n2",
+            "label": "Fiber Slice",
+            "tappable": false
+          },
+          {
+            "id": "n3",
+            "label": "Time Check",
+            "tappable": false
+          },
+          {
+            "id": "n4",
+            "label": "Commit",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Synchronous rendering monopolizes the call stack until the entire tree finishes.",
+            "values": {
+              "n1": {
+                "text": "\"Monolithic\""
+              },
+              "n2": {
+                "text": "\"None\""
+              },
+              "n3": {
+                "text": "\"None\""
+              },
+              "n4": {
+                "text": "\"Blocked\""
+              }
+            },
+            "tones": {
+              "n1": "error",
+              "n2": "idle",
+              "n3": "idle",
+              "n4": "idle"
+            },
+            "arrows": [
+              [
+                "n1",
+                "n4"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Fiber breaks rendering into discrete units of work yielding cooperatively to the browser.",
+            "values": {
+              "n1": {
+                "text": "\"Yielded\""
+              },
+              "n2": {
+                "text": "\"Slice-1\""
+              },
+              "n3": {
+                "text": "\"Active\""
+              },
+              "n4": {
+                "text": "\"Pending\""
+              }
+            },
+            "tones": {
+              "n1": "idle",
+              "n2": "data",
+              "n3": "data",
+              "n4": "idle"
+            },
+            "arrows": [
+              [
+                "n1",
+                "n2"
+              ],
+              [
+                "n2",
+                "n3"
+              ]
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The work loop checks shouldYield() after each fiber before processing the next unit.",
+            "values": {
+              "n1": {
+                "text": "\"Browser 60fps\""
+              },
+              "n2": {
+                "text": "\"Slice-2\""
+              },
+              "n3": {
+                "text": "\"Yield Check\""
+              },
+              "n4": {
+                "text": "\"Pending\""
+              }
+            },
+            "tones": {
+              "n1": "ok",
+              "n2": "data",
+              "n3": "ok",
+              "n4": "idle"
+            },
+            "arrows": [
+              [
+                "n2",
+                "n3"
+              ]
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Once all fiber nodes are reconciled, the finished tree commits synchronously in one paint.",
+            "values": {
+              "n1": {
+                "text": "\"Completed\""
+              },
+              "n2": {
+                "text": "\"Tree Done\""
+              },
+              "n3": {
+                "text": "\"Passed\""
+              },
+              "n4": {
+                "text": "\"Flushed\""
+              }
+            },
+            "tones": {
+              "n1": "ok",
+              "n2": "ok",
+              "n3": "ok",
+              "n4": "ok"
+            },
+            "arrows": [
+              [
+                "n3",
+                "n4"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Fiber Node Topology: Child, Sibling, Return, and the Traversal Pointer Walk",
+      "codeHash": "c58dcbff5858cd659381aa6b5d2ae626c1fef1037153a7208125d75b4b8526c3",
+      "spec": {
+        "template": "component-tree",
+        "title": "Fiber Linked-List Structure (child, sibling, return)",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "FiberRoot",
+            "tone": "idle"
+          },
+          {
+            "id": "app",
+            "name": "App",
+            "tone": "data"
+          },
+          {
+            "id": "sidebar",
+            "name": "Sidebar",
+            "tone": "ok"
+          },
+          {
+            "id": "content",
+            "name": "Content",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Every fiber node points to its first child, its next sibling, and its return parent.",
+            "activeId": "root",
+            "tone": "idle"
+          },
+          {
+            "at": "say2",
+            "caption": "App is the first child of FiberRoot with return link pointing back to root.",
+            "activeId": "app",
+            "tone": "data"
+          },
+          {
+            "at": "say3",
+            "caption": "Sidebar and Content are sibling nodes connected horizontally via sibling pointer.",
+            "activeId": "sidebar",
+            "tone": "ok"
+          },
+          {
+            "at": "say4",
+            "caption": "This singly-linked list structure enables interruptible depth-first traversal.",
+            "activeId": "content",
+            "tone": "ok"
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "title": "Fiber Linked-List Structure (child, sibling, return)",
+        "nodes": [
+          {
+            "id": "root",
+            "name": "FiberRoot",
+            "tone": "idle"
+          },
+          {
+            "id": "app",
+            "name": "App",
+            "tone": "data"
+          },
+          {
+            "id": "sidebar",
+            "name": "Sidebar",
+            "tone": "ok"
+          },
+          {
+            "id": "content",
+            "name": "Content",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Every fiber node points to its first child, its next sibling, and its return parent.",
+            "activeId": "root",
+            "tone": "idle"
+          },
+          {
+            "at": "say2",
+            "caption": "App is the first child of FiberRoot with return link pointing back to root.",
+            "activeId": "app",
+            "tone": "data"
+          },
+          {
+            "at": "say3",
+            "caption": "Sidebar and Content are sibling nodes connected horizontally via sibling pointer.",
+            "activeId": "sidebar",
+            "tone": "ok"
+          },
+          {
+            "at": "say4",
+            "caption": "This singly-linked list structure enables interruptible depth-first traversal.",
+            "activeId": "content",
+            "tone": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Double Buffering: Current vs Work-in-Progress Trees and Atomic DOM Commit",
+      "codeHash": "a6a5df0e3c7259be34b906b0965bcf83ad7c579ad2c12dd2ac8ba45f9e8e4397",
+      "spec": {
+        "template": "compare",
+        "title": "Dual-Buffering: current Tree vs workInProgress Tree",
+        "leftLabel": "Current Tree (Screen)",
+        "rightLabel": "WorkInProgress Tree (Memory)",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The current tree represents what is physically visible on screen.",
+            "left": {
+              "code": "console.log(current.stateNode);",
+              "result": {
+                "text": "\"Mounted DOM\""
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "console.log(workInProgress);",
+              "result": {
+                "text": "\"null\""
+              },
+              "tone": "idle"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Updates construct alternate fiber clones in memory without touching the live screen.",
+            "left": {
+              "code": "console.log(current.stateNode);",
+              "result": {
+                "text": "\"Mounted DOM\""
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "console.log(workInProgress.state);",
+              "result": {
+                "text": "\"Drafting v2\""
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Fiber nodes reuse unchanged subtrees through alternate pointers to prevent GC thrashing.",
+            "left": {
+              "code": "console.log(current.memoizedProps);",
+              "result": {
+                "text": "\"Props v1\""
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "console.log(workInProgress.memoizedProps);",
+              "result": {
+                "text": "\"Props v2\""
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Upon completion, React flips the root pointer to swap workInProgress into current instantly.",
+            "left": {
+              "code": "console.log(root.current);",
+              "result": {
+                "text": "\"Swapped to v2\""
+              },
+              "tone": "idle"
+            },
+            "right": {
+              "code": "console.log(root.current);",
+              "result": {
+                "text": "\"Now Active\""
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Dual-Buffering: current Tree vs workInProgress Tree",
+        "leftLabel": "Current Tree (Screen)",
+        "rightLabel": "WorkInProgress Tree (Memory)",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The current tree represents what is physically visible on screen.",
+            "left": {
+              "code": "console.log(current.stateNode);",
+              "result": {
+                "text": "\"Mounted DOM\""
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "console.log(workInProgress);",
+              "result": {
+                "text": "\"null\""
+              },
+              "tone": "idle"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Updates construct alternate fiber clones in memory without touching the live screen.",
+            "left": {
+              "code": "console.log(current.stateNode);",
+              "result": {
+                "text": "\"Mounted DOM\""
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "console.log(workInProgress.state);",
+              "result": {
+                "text": "\"Drafting v2\""
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Fiber nodes reuse unchanged subtrees through alternate pointers to prevent GC thrashing.",
+            "left": {
+              "code": "console.log(current.memoizedProps);",
+              "result": {
+                "text": "\"Props v1\""
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "console.log(workInProgress.memoizedProps);",
+              "result": {
+                "text": "\"Props v2\""
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Upon completion, React flips the root pointer to swap workInProgress into current instantly.",
+            "left": {
+              "code": "console.log(root.current);",
+              "result": {
+                "text": "\"Swapped to v2\""
+              },
+              "tone": "idle"
+            },
+            "right": {
+              "code": "console.log(root.current);",
+              "result": {
+                "text": "\"Now Active\""
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Scheduler and Cooperative Multitasking: 5ms Time Slices with shouldYield",
+      "codeHash": "e8670d3523553f9fa321fffcade9fe9066e83975f56e7cac46b525d19ee77a9c",
+      "spec": {
+        "template": "boxes",
+        "title": "Fiber Priority Lanes & Preemption",
+        "boxes": [
+          {
+            "id": "sync",
+            "label": "SyncLane (Keystrokes)",
+            "tappable": false
+          },
+          {
+            "id": "input",
+            "label": "InputContinuousLane (Scroll)",
+            "tappable": false
+          },
+          {
+            "id": "default",
+            "label": "DefaultLane (Data Fetch)",
+            "tappable": false
+          },
+          {
+            "id": "idle",
+            "label": "IdleLane (Telemetry)",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "React encodes update priorities using 31 distinct 32-bit bitmask lanes.",
+            "values": {
+              "sync": {
+                "text": "\"0b0001\""
+              },
+              "input": {
+                "text": "\"0b0010\""
+              },
+              "default": {
+                "text": "\"0b0100\""
+              },
+              "idle": {
+                "text": "\"0b1000\""
+              }
+            },
+            "tones": {
+              "sync": "idle",
+              "input": "idle",
+              "default": "idle",
+              "idle": "idle"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "SyncLane handles urgent user inputs that cannot tolerate a single frame of lag.",
+            "values": {
+              "sync": {
+                "text": "\"Active Urgent\""
+              },
+              "input": {
+                "text": "\"Queued\""
+              },
+              "default": {
+                "text": "\"Queued\""
+              },
+              "idle": {
+                "text": "\"Queued\""
+              }
+            },
+            "tones": {
+              "sync": "ok",
+              "input": "idle",
+              "default": "idle",
+              "idle": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "A high-priority Sync update preempts and restarts an in-progress DefaultLane transition.",
+            "values": {
+              "sync": {
+                "text": "\"Preempting\""
+              },
+              "input": {
+                "text": "\"Yielding\""
+              },
+              "default": {
+                "text": "\"Suspended\""
+              },
+              "idle": {
+                "text": "\"Deferred\""
+              }
+            },
+            "tones": {
+              "sync": "ok",
+              "input": "idle",
+              "default": "data",
+              "idle": "idle"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Starvation mitigation ensures long-waiting low-priority lanes expire and elevate to sync.",
+            "values": {
+              "sync": {
+                "text": "\"Complete\""
+              },
+              "input": {
+                "text": "\"Complete\""
+              },
+              "default": {
+                "text": "\"Elevated!\""
+              },
+              "idle": {
+                "text": "\"Processed\""
+              }
+            },
+            "tones": {
+              "sync": "idle",
+              "input": "idle",
+              "default": "ok",
+              "idle": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "Fiber Priority Lanes & Preemption",
+        "boxes": [
+          {
+            "id": "sync",
+            "label": "SyncLane (Keystrokes)",
+            "tappable": false
+          },
+          {
+            "id": "input",
+            "label": "InputContinuousLane (Scroll)",
+            "tappable": false
+          },
+          {
+            "id": "default",
+            "label": "DefaultLane (Data Fetch)",
+            "tappable": false
+          },
+          {
+            "id": "idle",
+            "label": "IdleLane (Telemetry)",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "React encodes update priorities using 31 distinct 32-bit bitmask lanes.",
+            "values": {
+              "sync": {
+                "text": "\"0b0001\""
+              },
+              "input": {
+                "text": "\"0b0010\""
+              },
+              "default": {
+                "text": "\"0b0100\""
+              },
+              "idle": {
+                "text": "\"0b1000\""
+              }
+            },
+            "tones": {
+              "sync": "idle",
+              "input": "idle",
+              "default": "idle",
+              "idle": "idle"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "SyncLane handles urgent user inputs that cannot tolerate a single frame of lag.",
+            "values": {
+              "sync": {
+                "text": "\"Active Urgent\""
+              },
+              "input": {
+                "text": "\"Queued\""
+              },
+              "default": {
+                "text": "\"Queued\""
+              },
+              "idle": {
+                "text": "\"Queued\""
+              }
+            },
+            "tones": {
+              "sync": "ok",
+              "input": "idle",
+              "default": "idle",
+              "idle": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "A high-priority Sync update preempts and restarts an in-progress DefaultLane transition.",
+            "values": {
+              "sync": {
+                "text": "\"Preempting\""
+              },
+              "input": {
+                "text": "\"Yielding\""
+              },
+              "default": {
+                "text": "\"Suspended\""
+              },
+              "idle": {
+                "text": "\"Deferred\""
+              }
+            },
+            "tones": {
+              "sync": "ok",
+              "input": "idle",
+              "default": "data",
+              "idle": "idle"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Starvation mitigation ensures long-waiting low-priority lanes expire and elevate to sync.",
+            "values": {
+              "sync": {
+                "text": "\"Complete\""
+              },
+              "input": {
+                "text": "\"Complete\""
+              },
+              "default": {
+                "text": "\"Elevated!\""
+              },
+              "idle": {
+                "text": "\"Processed\""
+              }
+            },
+            "tones": {
+              "sync": "idle",
+              "input": "idle",
+              "default": "ok",
+              "idle": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Simulating an Interruptible Concurrent Fiber Work Loop in Pure JavaScript",
+      "codeHash": "e756c31950d157797aa6166e570fa789d984b7afd96339fedcf2821de4c65361",
+      "spec": {
+        "template": "states",
+        "title": "Fiber Work Loop Lifecycle States",
+        "states": [
+          {
+            "id": "s1",
+            "label": "PENDING"
+          },
+          {
+            "id": "s2",
+            "label": "RECONCILING"
+          },
+          {
+            "id": "s3",
+            "label": "COMMITTING"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Fiber nodes enter PENDING state when an update is scheduled.",
+            "activeId": "s1",
+            "tone": "idle"
+          },
+          {
+            "at": "say2",
+            "caption": "The work loop transitions nodes into RECONCILING as units of work are evaluated.",
+            "activeId": "s2",
+            "tone": "data"
+          },
+          {
+            "at": "say3",
+            "caption": "Should yield checks can pause and resume the RECONCILING phase.",
+            "activeId": "s2",
+            "tone": "data"
+          },
+          {
+            "at": "say4",
+            "caption": "When all fibers are ready, COMMITTING flushes mutations synchronously to the DOM.",
+            "activeId": "s3",
+            "tone": "ok"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "Fiber Work Loop Lifecycle States",
+        "states": [
+          {
+            "id": "s1",
+            "label": "PENDING"
+          },
+          {
+            "id": "s2",
+            "label": "RECONCILING"
+          },
+          {
+            "id": "s3",
+            "label": "COMMITTING"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Fiber nodes enter PENDING state when an update is scheduled.",
+            "activeId": "s1",
+            "tone": "idle"
+          },
+          {
+            "at": "say2",
+            "caption": "The work loop transitions nodes into RECONCILING as units of work are evaluated.",
+            "activeId": "s2",
+            "tone": "data"
+          },
+          {
+            "at": "say3",
+            "caption": "Should yield checks can pause and resume the RECONCILING phase.",
+            "activeId": "s2",
+            "tone": "data"
+          },
+          {
+            "at": "say4",
+            "caption": "When all fibers are ready, COMMITTING flushes mutations synchronously to the DOM.",
+            "activeId": "s3",
+            "tone": "ok"
+          }
+        ]
+      }
+    }
+  ]
+}
