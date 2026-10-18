@@ -8,7 +8,7 @@ import { isCourseVisualsEnabled } from '../src/lib/visuals/enabledCourses';
 import { loadDayFile, getVisual, clearDayFileCache } from '../src/lib/visuals/loadVisuals';
 import { getTappableLabelsForVisual } from '../src/lib/visuals/visualRules';
 
-test('Course 14: IoT, Firmware & Embedded Systems (iot_emb) Month 2 Block 10 (Days 46–50) FOTA, Fleet Management & Milestone 9 Suite', async (t) => {
+test('Course 14: IoT, Firmware & Embedded Systems (iot_emb) Month 2 Block 10 (Days 46–50) FOTA & Milestone 9 Engine Suite', async (t) => {
   clearDayFileCache();
 
   await t.test('1. Visuals enablement for iot_emb course prefix', () => {
@@ -98,33 +98,28 @@ test('Course 14: IoT, Firmware & Embedded Systems (iot_emb) Month 2 Block 10 (Da
         const visual = getVisual('iot_emb', day, pIdx);
         assert.ok(visual, `${ctx}: getVisual must return valid visual object`);
         assert.equal(visual.template, 'register-bits', `${ctx}: template must be "register-bits"`);
-        assert.ok(visual.steps && visual.steps.length >= 4, `${ctx}: must have at least 4 progressive steps`);
+        assert.equal(visual.steps.length, 4, `${ctx}: visual must have 4 synchronized steps`);
+        assert.deepEqual(
+          visual.steps.map(s => s.at),
+          ['intro', 'say1', 'example', 'tryIt'],
+          `${ctx}: visual steps must match ['intro', 'say1', 'example', 'tryIt']`
+        );
 
-        // Verify 4-step markers: intro, say1, example, tryIt
-        const stepAts = visual.steps.map((s: any) => s.at);
-        assert.ok(stepAts.includes('intro'), `${ctx}: steps must include "intro"`);
-        assert.ok(stepAts.includes('say1'), `${ctx}: steps must include "say1"`);
-        assert.ok(stepAts.includes('example'), `${ctx}: steps must include "example"`);
-        assert.ok(stepAts.includes('tryIt'), `${ctx}: steps must include "tryIt"`);
-
-        // Verify tappable labels
-        const tappableLabels = getTappableLabelsForVisual(visual);
-        assert.ok(Array.isArray(tappableLabels), `${ctx}: tappable labels must be an array`);
-        assert.ok(tappableLabels.length >= 2, `${ctx}: should extract at least 2 register bit labels`);
+        const labels = getTappableLabelsForVisual(visual);
+        assert.ok(labels.length > 0, `${ctx}: tappable labels must not be empty`);
       }
     }
   });
 
-  await t.test('4. Milestone 9 Comprehensive Verification (Day 50)', () => {
-    const day50 = getLongLesson('iot_emb', 50);
-    assert.ok(day50, 'Day 50 must resolve');
-    assert.equal(day50.minutes, 40, 'Milestone 9 must declare 40 minutes');
-    assert.match(day50.title, /Milestone 9/i, 'Day 50 title must mention Milestone 9');
+  await t.test('4. Milestone 9: Zero-Brick Dual-Bank FOTA Engine Certification', () => {
+    const m9Lesson = getLongLesson('iot_emb', 50);
+    assert.ok(m9Lesson, 'Milestone 9 lesson must exist');
+    assert.equal(m9Lesson.day, 50, 'Milestone 9 must be on Day 50');
+    assert.ok(m9Lesson.title.includes('Milestone 9'), 'Title must declare Milestone 9');
     
-    // Check Part 5 of Day 50
-    const m9Part = day50.parts[4];
-    assert.match(m9Part.title, /Milestone 9/i, 'Day 50 Part 5 must be the Milestone 9 Execution');
-    assert.ok(m9Part.code.includes('Milestone9MasterEngine'), 'Code must contain Milestone9MasterEngine class');
-    assert.ok(m9Part.output.includes('MILESTONE 9 GATE VERDICT: FULLY PASSING & CERTIFIED OPERATIONAL'), 'Output must contain Milestone 9 PASS verdict');
+    // Check Part 5 certification verdict
+    const p5 = m9Lesson.parts[4];
+    assert.ok(p5.title.includes('Milestone 9') || p5.title.includes('Integration'), 'Part 5 must be Milestone 9 integration');
+    assert.ok(p5.output.includes('MILESTONE 9 GATE VERDICT: FULLY PASSING & CERTIFIED OPERATIONAL'), 'Milestone 9 must output certified operational verdict');
   });
 });

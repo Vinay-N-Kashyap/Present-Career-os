@@ -2,20 +2,20 @@
   "schemaVersion": 1,
   "prefix": "iot_emb",
   "day": 48,
-  "promptSha": "0334c0f0761887c68b4798bb96a5a7b2d3c42bac6aa5e3f1dc963458235d9a45",
-  "model": "antigravity/curriculum-pipeline",
+  "promptSha": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
+  "model": "anthropic/claude-3.5-sonnet",
   "entries": [
     {
-      "partTitle": "Failure Modes of Remote Firmware Deployments: The Brick Spectrum",
-      "codeHash": "4dc49ff587f1755ae15023d3cee58e20f660a291636a382a5f2b4d16c25b5755",
+      "partTitle": "The Trial Boot Probation Window: Why Signatures Alone Are Not Enough",
+      "codeHash": "53e9bb78d45f0c9a47d4fc636b728da836b910336c9e85a3f770027372d8321e",
       "spec": {
         "template": "register-bits",
-        "title": "Failure Modes of Remote Firmware Deployments: The Brick Spectrum — Register Bit Architecture",
+        "title": "The Trial Boot Probation Window: Why Signatur... — Register Bit Architecture",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Initialize Failure Modes of Remote Firmware with EN=1 & hardware security boundary active.",
-            "registerName": "FOTA_RBK_CR1",
+            "caption": "Step 1: Initialize IOT_EMB_CR1 with EN bit asserted (0x80).",
+            "registerName": "IOT_EMB_CR1",
             "bitWidth": 8,
             "hexValue": "0x80",
             "decimalValue": 128,
@@ -30,43 +30,43 @@
               },
               {
                 "index": 6,
-                "name": "LOCK",
+                "name": "RDY",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 5,
-                "name": "BUSY",
+                "name": "IRQ",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 4,
-                "name": "VALID",
+                "name": "DMA",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 3,
-                "name": "AUTH",
+                "name": "CRC",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 2,
-                "name": "SEC",
+                "name": "TX",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 1,
-                "name": "ROLL",
+                "name": "RX",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 0,
-                "name": "FAULT",
+                "name": "ERR",
                 "value": 0,
                 "tone": "idle"
               }
@@ -74,12 +74,12 @@
           },
           {
             "at": "say1",
-            "caption": "Step 2: Cryptographic computation active - LOCK=1 and BUSY=1.",
-            "registerName": "FOTA_RBK_CR1",
+            "caption": "Step 2: Peripheral asserts RDY & IRQ flags (0xE0) on IOT_EMB_CR1.",
+            "registerName": "IOT_EMB_CR1",
             "bitWidth": 8,
             "hexValue": "0xE0",
             "decimalValue": 224,
-            "maskApplied": "(1 << 7) | (1 << 6) | (1 << 5)",
+            "maskApplied": "(1 << 6) | (1 << 5)",
             "bits": [
               {
                 "index": 7,
@@ -89,45 +89,45 @@
               },
               {
                 "index": 6,
-                "name": "LOCK",
+                "name": "RDY",
                 "value": 1,
-                "tone": "ok",
+                "tone": "data",
                 "highlighted": true
               },
               {
                 "index": 5,
-                "name": "BUSY",
+                "name": "IRQ",
                 "value": 1,
-                "tone": "warn",
+                "tone": "data",
                 "highlighted": true
               },
               {
                 "index": 4,
-                "name": "VALID",
+                "name": "DMA",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 3,
-                "name": "AUTH",
+                "name": "CRC",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 2,
-                "name": "SEC",
+                "name": "TX",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 1,
-                "name": "ROLL",
+                "name": "RX",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 0,
-                "name": "FAULT",
+                "name": "ERR",
                 "value": 0,
                 "tone": "idle"
               }
@@ -135,12 +135,12 @@
           },
           {
             "at": "example",
-            "caption": "Step 3: Verification complete - VALID=1 and AUTH=1.",
-            "registerName": "FOTA_RBK_CR1",
+            "caption": "Step 3: Enable DMA burst & CRC verification bits (0xF8).",
+            "registerName": "IOT_EMB_CR1",
             "bitWidth": 8,
-            "hexValue": "0xD8",
-            "decimalValue": 216,
-            "maskApplied": "(1 << 7) | (1 << 6) | (1 << 4) | (1 << 3)",
+            "hexValue": "0xF8",
+            "decimalValue": 248,
+            "maskApplied": "(1 << 4) | (1 << 3)",
             "bits": [
               {
                 "index": 7,
@@ -150,45 +150,45 @@
               },
               {
                 "index": 6,
-                "name": "LOCK",
+                "name": "RDY",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 5,
-                "name": "BUSY",
-                "value": 0,
-                "tone": "idle"
+                "name": "IRQ",
+                "value": 1,
+                "tone": "ok"
               },
               {
                 "index": 4,
-                "name": "VALID",
+                "name": "DMA",
                 "value": 1,
-                "tone": "ok",
+                "tone": "data",
                 "highlighted": true
               },
               {
                 "index": 3,
-                "name": "AUTH",
+                "name": "CRC",
                 "value": 1,
-                "tone": "ok",
+                "tone": "data",
                 "highlighted": true
               },
               {
                 "index": 2,
-                "name": "SEC",
+                "name": "TX",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 1,
-                "name": "ROLL",
+                "name": "RX",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 0,
-                "name": "FAULT",
+                "name": "ERR",
                 "value": 0,
                 "tone": "idle"
               }
@@ -196,12 +196,12 @@
           },
           {
             "at": "tryIt",
-            "caption": "Step 4: Certified state - SEC=1 asserted with zero hardware faults.",
-            "registerName": "FOTA_RBK_CR1",
+            "caption": "Step 4: Full TX/RX frame committed with ERR=0 verified (0xFE).",
+            "registerName": "IOT_EMB_CR1",
             "bitWidth": 8,
-            "hexValue": "0xDC",
-            "decimalValue": 220,
-            "maskApplied": "0xD8 | (1 << 2)",
+            "hexValue": "0xFE",
+            "decimalValue": 254,
+            "maskApplied": "~0x01",
             "bits": [
               {
                 "index": 7,
@@ -211,46 +211,296 @@
               },
               {
                 "index": 6,
-                "name": "LOCK",
+                "name": "RDY",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 5,
-                "name": "BUSY",
-                "value": 0,
-                "tone": "idle"
+                "name": "IRQ",
+                "value": 1,
+                "tone": "ok"
               },
               {
                 "index": 4,
-                "name": "VALID",
+                "name": "DMA",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 3,
-                "name": "AUTH",
+                "name": "CRC",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 2,
-                "name": "SEC",
+                "name": "TX",
                 "value": 1,
                 "tone": "ok",
                 "highlighted": true
               },
               {
                 "index": 1,
-                "name": "ROLL",
+                "name": "RX",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 0,
+                "name": "ERR",
+                "value": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "register-bits",
+        "title": "The Trial Boot Probation Window: Why Signatur... — Register Bit Architecture",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize IOT_EMB_CR1 with EN bit asserted (0x80).",
+            "registerName": "IOT_EMB_CR1",
+            "bitWidth": 8,
+            "hexValue": "0x80",
+            "decimalValue": 128,
+            "maskApplied": "1 << 7",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "RDY",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 5,
+                "name": "IRQ",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 4,
+                "name": "DMA",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "CRC",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "TX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "RX",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 0,
-                "name": "FAULT",
+                "name": "ERR",
                 "value": 0,
                 "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Peripheral asserts RDY & IRQ flags (0xE0) on IOT_EMB_CR1.",
+            "registerName": "IOT_EMB_CR1",
+            "bitWidth": 8,
+            "hexValue": "0xE0",
+            "decimalValue": 224,
+            "maskApplied": "(1 << 6) | (1 << 5)",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EN",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "RDY",
+                "value": 1,
+                "tone": "data",
+                "highlighted": true
+              },
+              {
+                "index": 5,
+                "name": "IRQ",
+                "value": 1,
+                "tone": "data",
+                "highlighted": true
+              },
+              {
+                "index": 4,
+                "name": "DMA",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "CRC",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "TX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "RX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "ERR",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Enable DMA burst & CRC verification bits (0xF8).",
+            "registerName": "IOT_EMB_CR1",
+            "bitWidth": 8,
+            "hexValue": "0xF8",
+            "decimalValue": 248,
+            "maskApplied": "(1 << 4) | (1 << 3)",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EN",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "RDY",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "IRQ",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "DMA",
+                "value": 1,
+                "tone": "data",
+                "highlighted": true
+              },
+              {
+                "index": 3,
+                "name": "CRC",
+                "value": 1,
+                "tone": "data",
+                "highlighted": true
+              },
+              {
+                "index": 2,
+                "name": "TX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "RX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "ERR",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Full TX/RX frame committed with ERR=0 verified (0xFE).",
+            "registerName": "IOT_EMB_CR1",
+            "bitWidth": 8,
+            "hexValue": "0xFE",
+            "decimalValue": 254,
+            "maskApplied": "~0x01",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EN",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "RDY",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "IRQ",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "DMA",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "CRC",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "TX",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 1,
+                "name": "RX",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 0,
+                "name": "ERR",
+                "value": 0,
+                "tone": "ok"
               }
             ]
           }
@@ -258,16 +508,16 @@
       }
     },
     {
-      "partTitle": "Hardware Watchdog Timers (IWDG / WWDG) as the Ultimate Execution Arbiter",
-      "codeHash": "e348a3026ffa517dfd5f4b460e7eb7ae687029157eca21e12e3872a7dcccbf5f",
+      "partTitle": "Autonomous Canary Hardware Self-Testing Suite",
+      "codeHash": "9fb7dc98218509d383f8d639a440a416631d9f623f42fe38db1b89f1f4269f36",
       "spec": {
         "template": "register-bits",
-        "title": "Hardware Watchdog Timers (IWDG / WWDG) as the Ultimate Execution Arbiter — Register Bit Architecture",
+        "title": "Autonomous Canary Hardware Self-Testing Suite — Register Bit Architecture",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Initialize Hardware Watchdog Timers (IWDG / with EN=1 & hardware security boundary active.",
-            "registerName": "FOTA_RBK_CR2",
+            "caption": "Step 1: Initialize IOT_EMB_CR2 with EN bit asserted (0x80).",
+            "registerName": "IOT_EMB_CR2",
             "bitWidth": 8,
             "hexValue": "0x80",
             "decimalValue": 128,
@@ -282,43 +532,43 @@
               },
               {
                 "index": 6,
-                "name": "LOCK",
+                "name": "RDY",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 5,
-                "name": "BUSY",
+                "name": "IRQ",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 4,
-                "name": "VALID",
+                "name": "DMA",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 3,
-                "name": "AUTH",
+                "name": "CRC",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 2,
-                "name": "SEC",
+                "name": "TX",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 1,
-                "name": "ROLL",
+                "name": "RX",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 0,
-                "name": "FAULT",
+                "name": "ERR",
                 "value": 0,
                 "tone": "idle"
               }
@@ -326,12 +576,12 @@
           },
           {
             "at": "say1",
-            "caption": "Step 2: Cryptographic computation active - LOCK=1 and BUSY=1.",
-            "registerName": "FOTA_RBK_CR2",
+            "caption": "Step 2: Peripheral asserts RDY & IRQ flags (0xE0) on IOT_EMB_CR2.",
+            "registerName": "IOT_EMB_CR2",
             "bitWidth": 8,
             "hexValue": "0xE0",
             "decimalValue": 224,
-            "maskApplied": "(1 << 7) | (1 << 6) | (1 << 5)",
+            "maskApplied": "(1 << 6) | (1 << 5)",
             "bits": [
               {
                 "index": 7,
@@ -341,45 +591,45 @@
               },
               {
                 "index": 6,
-                "name": "LOCK",
+                "name": "RDY",
                 "value": 1,
-                "tone": "ok",
+                "tone": "data",
                 "highlighted": true
               },
               {
                 "index": 5,
-                "name": "BUSY",
+                "name": "IRQ",
                 "value": 1,
-                "tone": "warn",
+                "tone": "data",
                 "highlighted": true
               },
               {
                 "index": 4,
-                "name": "VALID",
+                "name": "DMA",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 3,
-                "name": "AUTH",
+                "name": "CRC",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 2,
-                "name": "SEC",
+                "name": "TX",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 1,
-                "name": "ROLL",
+                "name": "RX",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 0,
-                "name": "FAULT",
+                "name": "ERR",
                 "value": 0,
                 "tone": "idle"
               }
@@ -387,12 +637,12 @@
           },
           {
             "at": "example",
-            "caption": "Step 3: Verification complete - VALID=1 and AUTH=1.",
-            "registerName": "FOTA_RBK_CR2",
+            "caption": "Step 3: Enable DMA burst & CRC verification bits (0xF8).",
+            "registerName": "IOT_EMB_CR2",
             "bitWidth": 8,
-            "hexValue": "0xD8",
-            "decimalValue": 216,
-            "maskApplied": "(1 << 7) | (1 << 6) | (1 << 4) | (1 << 3)",
+            "hexValue": "0xF8",
+            "decimalValue": 248,
+            "maskApplied": "(1 << 4) | (1 << 3)",
             "bits": [
               {
                 "index": 7,
@@ -402,45 +652,45 @@
               },
               {
                 "index": 6,
-                "name": "LOCK",
+                "name": "RDY",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 5,
-                "name": "BUSY",
-                "value": 0,
-                "tone": "idle"
+                "name": "IRQ",
+                "value": 1,
+                "tone": "ok"
               },
               {
                 "index": 4,
-                "name": "VALID",
+                "name": "DMA",
                 "value": 1,
-                "tone": "ok",
+                "tone": "data",
                 "highlighted": true
               },
               {
                 "index": 3,
-                "name": "AUTH",
+                "name": "CRC",
                 "value": 1,
-                "tone": "ok",
+                "tone": "data",
                 "highlighted": true
               },
               {
                 "index": 2,
-                "name": "SEC",
+                "name": "TX",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 1,
-                "name": "ROLL",
+                "name": "RX",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 0,
-                "name": "FAULT",
+                "name": "ERR",
                 "value": 0,
                 "tone": "idle"
               }
@@ -448,12 +698,12 @@
           },
           {
             "at": "tryIt",
-            "caption": "Step 4: Certified state - SEC=1 asserted with zero hardware faults.",
-            "registerName": "FOTA_RBK_CR2",
+            "caption": "Step 4: Full TX/RX frame committed with ERR=0 verified (0xFE).",
+            "registerName": "IOT_EMB_CR2",
             "bitWidth": 8,
-            "hexValue": "0xDC",
-            "decimalValue": 220,
-            "maskApplied": "0xD8 | (1 << 2)",
+            "hexValue": "0xFE",
+            "decimalValue": 254,
+            "maskApplied": "~0x01",
             "bits": [
               {
                 "index": 7,
@@ -463,46 +713,296 @@
               },
               {
                 "index": 6,
-                "name": "LOCK",
+                "name": "RDY",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 5,
-                "name": "BUSY",
-                "value": 0,
-                "tone": "idle"
+                "name": "IRQ",
+                "value": 1,
+                "tone": "ok"
               },
               {
                 "index": 4,
-                "name": "VALID",
+                "name": "DMA",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 3,
-                "name": "AUTH",
+                "name": "CRC",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 2,
-                "name": "SEC",
+                "name": "TX",
                 "value": 1,
                 "tone": "ok",
                 "highlighted": true
               },
               {
                 "index": 1,
-                "name": "ROLL",
+                "name": "RX",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 0,
+                "name": "ERR",
+                "value": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "register-bits",
+        "title": "Autonomous Canary Hardware Self-Testing Suite — Register Bit Architecture",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize IOT_EMB_CR2 with EN bit asserted (0x80).",
+            "registerName": "IOT_EMB_CR2",
+            "bitWidth": 8,
+            "hexValue": "0x80",
+            "decimalValue": 128,
+            "maskApplied": "1 << 7",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "RDY",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 5,
+                "name": "IRQ",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 4,
+                "name": "DMA",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "CRC",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "TX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "RX",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 0,
-                "name": "FAULT",
+                "name": "ERR",
                 "value": 0,
                 "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Peripheral asserts RDY & IRQ flags (0xE0) on IOT_EMB_CR2.",
+            "registerName": "IOT_EMB_CR2",
+            "bitWidth": 8,
+            "hexValue": "0xE0",
+            "decimalValue": 224,
+            "maskApplied": "(1 << 6) | (1 << 5)",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EN",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "RDY",
+                "value": 1,
+                "tone": "data",
+                "highlighted": true
+              },
+              {
+                "index": 5,
+                "name": "IRQ",
+                "value": 1,
+                "tone": "data",
+                "highlighted": true
+              },
+              {
+                "index": 4,
+                "name": "DMA",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "CRC",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "TX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "RX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "ERR",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Enable DMA burst & CRC verification bits (0xF8).",
+            "registerName": "IOT_EMB_CR2",
+            "bitWidth": 8,
+            "hexValue": "0xF8",
+            "decimalValue": 248,
+            "maskApplied": "(1 << 4) | (1 << 3)",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EN",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "RDY",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "IRQ",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "DMA",
+                "value": 1,
+                "tone": "data",
+                "highlighted": true
+              },
+              {
+                "index": 3,
+                "name": "CRC",
+                "value": 1,
+                "tone": "data",
+                "highlighted": true
+              },
+              {
+                "index": 2,
+                "name": "TX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "RX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "ERR",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Full TX/RX frame committed with ERR=0 verified (0xFE).",
+            "registerName": "IOT_EMB_CR2",
+            "bitWidth": 8,
+            "hexValue": "0xFE",
+            "decimalValue": 254,
+            "maskApplied": "~0x01",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EN",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "RDY",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "IRQ",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "DMA",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "CRC",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "TX",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 1,
+                "name": "RX",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 0,
+                "name": "ERR",
+                "value": 0,
+                "tone": "ok"
               }
             ]
           }
@@ -510,16 +1010,16 @@
       }
     },
     {
-      "partTitle": "The Trial Boot Probationary Window & Application Self-Testing Gates",
-      "codeHash": "f52beaadc4e658ccb58923cc98928728a43d1b1cbe77a300d3fcc0fc71f12f4c",
+      "partTitle": "Non-Volatile Boot Records & Crash Loop Counters",
+      "codeHash": "4cdd041419b617aabd8a12b4ae4570de22edc335f074eeeb6a39c99b16047a47",
       "spec": {
         "template": "register-bits",
-        "title": "The Trial Boot Probationary Window & Application Self-Testing Gates — Register Bit Architecture",
+        "title": "Non-Volatile Boot Records & Crash Loop Counters — Register Bit Architecture",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Initialize The Trial Boot Probationary Wind with EN=1 & hardware security boundary active.",
-            "registerName": "FOTA_RBK_CR3",
+            "caption": "Step 1: Initialize IOT_EMB_CR3 with EN bit asserted (0x80).",
+            "registerName": "IOT_EMB_CR3",
             "bitWidth": 8,
             "hexValue": "0x80",
             "decimalValue": 128,
@@ -534,43 +1034,43 @@
               },
               {
                 "index": 6,
-                "name": "LOCK",
+                "name": "RDY",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 5,
-                "name": "BUSY",
+                "name": "IRQ",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 4,
-                "name": "VALID",
+                "name": "DMA",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 3,
-                "name": "AUTH",
+                "name": "CRC",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 2,
-                "name": "SEC",
+                "name": "TX",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 1,
-                "name": "ROLL",
+                "name": "RX",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 0,
-                "name": "FAULT",
+                "name": "ERR",
                 "value": 0,
                 "tone": "idle"
               }
@@ -578,12 +1078,12 @@
           },
           {
             "at": "say1",
-            "caption": "Step 2: Cryptographic computation active - LOCK=1 and BUSY=1.",
-            "registerName": "FOTA_RBK_CR3",
+            "caption": "Step 2: Peripheral asserts RDY & IRQ flags (0xE0) on IOT_EMB_CR3.",
+            "registerName": "IOT_EMB_CR3",
             "bitWidth": 8,
             "hexValue": "0xE0",
             "decimalValue": 224,
-            "maskApplied": "(1 << 7) | (1 << 6) | (1 << 5)",
+            "maskApplied": "(1 << 6) | (1 << 5)",
             "bits": [
               {
                 "index": 7,
@@ -593,45 +1093,45 @@
               },
               {
                 "index": 6,
-                "name": "LOCK",
+                "name": "RDY",
                 "value": 1,
-                "tone": "ok",
+                "tone": "data",
                 "highlighted": true
               },
               {
                 "index": 5,
-                "name": "BUSY",
+                "name": "IRQ",
                 "value": 1,
-                "tone": "warn",
+                "tone": "data",
                 "highlighted": true
               },
               {
                 "index": 4,
-                "name": "VALID",
+                "name": "DMA",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 3,
-                "name": "AUTH",
+                "name": "CRC",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 2,
-                "name": "SEC",
+                "name": "TX",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 1,
-                "name": "ROLL",
+                "name": "RX",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 0,
-                "name": "FAULT",
+                "name": "ERR",
                 "value": 0,
                 "tone": "idle"
               }
@@ -639,12 +1139,12 @@
           },
           {
             "at": "example",
-            "caption": "Step 3: Verification complete - VALID=1 and AUTH=1.",
-            "registerName": "FOTA_RBK_CR3",
+            "caption": "Step 3: Enable DMA burst & CRC verification bits (0xF8).",
+            "registerName": "IOT_EMB_CR3",
             "bitWidth": 8,
-            "hexValue": "0xD8",
-            "decimalValue": 216,
-            "maskApplied": "(1 << 7) | (1 << 6) | (1 << 4) | (1 << 3)",
+            "hexValue": "0xF8",
+            "decimalValue": 248,
+            "maskApplied": "(1 << 4) | (1 << 3)",
             "bits": [
               {
                 "index": 7,
@@ -654,45 +1154,45 @@
               },
               {
                 "index": 6,
-                "name": "LOCK",
+                "name": "RDY",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 5,
-                "name": "BUSY",
-                "value": 0,
-                "tone": "idle"
+                "name": "IRQ",
+                "value": 1,
+                "tone": "ok"
               },
               {
                 "index": 4,
-                "name": "VALID",
+                "name": "DMA",
                 "value": 1,
-                "tone": "ok",
+                "tone": "data",
                 "highlighted": true
               },
               {
                 "index": 3,
-                "name": "AUTH",
+                "name": "CRC",
                 "value": 1,
-                "tone": "ok",
+                "tone": "data",
                 "highlighted": true
               },
               {
                 "index": 2,
-                "name": "SEC",
+                "name": "TX",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 1,
-                "name": "ROLL",
+                "name": "RX",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 0,
-                "name": "FAULT",
+                "name": "ERR",
                 "value": 0,
                 "tone": "idle"
               }
@@ -700,12 +1200,12 @@
           },
           {
             "at": "tryIt",
-            "caption": "Step 4: Certified state - SEC=1 asserted with zero hardware faults.",
-            "registerName": "FOTA_RBK_CR3",
+            "caption": "Step 4: Full TX/RX frame committed with ERR=0 verified (0xFE).",
+            "registerName": "IOT_EMB_CR3",
             "bitWidth": 8,
-            "hexValue": "0xDC",
-            "decimalValue": 220,
-            "maskApplied": "0xD8 | (1 << 2)",
+            "hexValue": "0xFE",
+            "decimalValue": 254,
+            "maskApplied": "~0x01",
             "bits": [
               {
                 "index": 7,
@@ -715,46 +1215,296 @@
               },
               {
                 "index": 6,
-                "name": "LOCK",
+                "name": "RDY",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 5,
-                "name": "BUSY",
-                "value": 0,
-                "tone": "idle"
+                "name": "IRQ",
+                "value": 1,
+                "tone": "ok"
               },
               {
                 "index": 4,
-                "name": "VALID",
+                "name": "DMA",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 3,
-                "name": "AUTH",
+                "name": "CRC",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 2,
-                "name": "SEC",
+                "name": "TX",
                 "value": 1,
                 "tone": "ok",
                 "highlighted": true
               },
               {
                 "index": 1,
-                "name": "ROLL",
+                "name": "RX",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 0,
+                "name": "ERR",
+                "value": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "register-bits",
+        "title": "Non-Volatile Boot Records & Crash Loop Counters — Register Bit Architecture",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize IOT_EMB_CR3 with EN bit asserted (0x80).",
+            "registerName": "IOT_EMB_CR3",
+            "bitWidth": 8,
+            "hexValue": "0x80",
+            "decimalValue": 128,
+            "maskApplied": "1 << 7",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "RDY",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 5,
+                "name": "IRQ",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 4,
+                "name": "DMA",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "CRC",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "TX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "RX",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 0,
-                "name": "FAULT",
+                "name": "ERR",
                 "value": 0,
                 "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Peripheral asserts RDY & IRQ flags (0xE0) on IOT_EMB_CR3.",
+            "registerName": "IOT_EMB_CR3",
+            "bitWidth": 8,
+            "hexValue": "0xE0",
+            "decimalValue": 224,
+            "maskApplied": "(1 << 6) | (1 << 5)",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EN",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "RDY",
+                "value": 1,
+                "tone": "data",
+                "highlighted": true
+              },
+              {
+                "index": 5,
+                "name": "IRQ",
+                "value": 1,
+                "tone": "data",
+                "highlighted": true
+              },
+              {
+                "index": 4,
+                "name": "DMA",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "CRC",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "TX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "RX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "ERR",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Enable DMA burst & CRC verification bits (0xF8).",
+            "registerName": "IOT_EMB_CR3",
+            "bitWidth": 8,
+            "hexValue": "0xF8",
+            "decimalValue": 248,
+            "maskApplied": "(1 << 4) | (1 << 3)",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EN",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "RDY",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "IRQ",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "DMA",
+                "value": 1,
+                "tone": "data",
+                "highlighted": true
+              },
+              {
+                "index": 3,
+                "name": "CRC",
+                "value": 1,
+                "tone": "data",
+                "highlighted": true
+              },
+              {
+                "index": 2,
+                "name": "TX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "RX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "ERR",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Full TX/RX frame committed with ERR=0 verified (0xFE).",
+            "registerName": "IOT_EMB_CR3",
+            "bitWidth": 8,
+            "hexValue": "0xFE",
+            "decimalValue": 254,
+            "maskApplied": "~0x01",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EN",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "RDY",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "IRQ",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "DMA",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "CRC",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "TX",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 1,
+                "name": "RX",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 0,
+                "name": "ERR",
+                "value": 0,
+                "tone": "ok"
               }
             ]
           }
@@ -762,16 +1512,16 @@
       }
     },
     {
-      "partTitle": "Factory Golden Image Partitions & Emergency Recovery Subsystems",
-      "codeHash": "cffa8d1b2087d182aa990053d56e73d476dc67061c367308a652e46b991003f3",
+      "partTitle": "Hardware Watchdog (IWDG) Integration & Probation Timeouts",
+      "codeHash": "488bea32fb9a84ef89e29b150abf1a5e1e99c0101d79cddd87f0ce62d1244467",
       "spec": {
         "template": "register-bits",
-        "title": "Factory Golden Image Partitions & Emergency Recovery Subsystems — Register Bit Architecture",
+        "title": "Hardware Watchdog (IWDG) Integration & Probat... — Register Bit Architecture",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Initialize Factory Golden Image Partitions  with EN=1 & hardware security boundary active.",
-            "registerName": "FOTA_RBK_CR4",
+            "caption": "Step 1: Initialize IOT_EMB_CR4 with EN bit asserted (0x80).",
+            "registerName": "IOT_EMB_CR4",
             "bitWidth": 8,
             "hexValue": "0x80",
             "decimalValue": 128,
@@ -786,43 +1536,43 @@
               },
               {
                 "index": 6,
-                "name": "LOCK",
+                "name": "RDY",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 5,
-                "name": "BUSY",
+                "name": "IRQ",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 4,
-                "name": "VALID",
+                "name": "DMA",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 3,
-                "name": "AUTH",
+                "name": "CRC",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 2,
-                "name": "SEC",
+                "name": "TX",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 1,
-                "name": "ROLL",
+                "name": "RX",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 0,
-                "name": "FAULT",
+                "name": "ERR",
                 "value": 0,
                 "tone": "idle"
               }
@@ -830,12 +1580,12 @@
           },
           {
             "at": "say1",
-            "caption": "Step 2: Cryptographic computation active - LOCK=1 and BUSY=1.",
-            "registerName": "FOTA_RBK_CR4",
+            "caption": "Step 2: Peripheral asserts RDY & IRQ flags (0xE0) on IOT_EMB_CR4.",
+            "registerName": "IOT_EMB_CR4",
             "bitWidth": 8,
             "hexValue": "0xE0",
             "decimalValue": 224,
-            "maskApplied": "(1 << 7) | (1 << 6) | (1 << 5)",
+            "maskApplied": "(1 << 6) | (1 << 5)",
             "bits": [
               {
                 "index": 7,
@@ -845,45 +1595,45 @@
               },
               {
                 "index": 6,
-                "name": "LOCK",
+                "name": "RDY",
                 "value": 1,
-                "tone": "ok",
+                "tone": "data",
                 "highlighted": true
               },
               {
                 "index": 5,
-                "name": "BUSY",
+                "name": "IRQ",
                 "value": 1,
-                "tone": "warn",
+                "tone": "data",
                 "highlighted": true
               },
               {
                 "index": 4,
-                "name": "VALID",
+                "name": "DMA",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 3,
-                "name": "AUTH",
+                "name": "CRC",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 2,
-                "name": "SEC",
+                "name": "TX",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 1,
-                "name": "ROLL",
+                "name": "RX",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 0,
-                "name": "FAULT",
+                "name": "ERR",
                 "value": 0,
                 "tone": "idle"
               }
@@ -891,12 +1641,12 @@
           },
           {
             "at": "example",
-            "caption": "Step 3: Verification complete - VALID=1 and AUTH=1.",
-            "registerName": "FOTA_RBK_CR4",
+            "caption": "Step 3: Enable DMA burst & CRC verification bits (0xF8).",
+            "registerName": "IOT_EMB_CR4",
             "bitWidth": 8,
-            "hexValue": "0xD8",
-            "decimalValue": 216,
-            "maskApplied": "(1 << 7) | (1 << 6) | (1 << 4) | (1 << 3)",
+            "hexValue": "0xF8",
+            "decimalValue": 248,
+            "maskApplied": "(1 << 4) | (1 << 3)",
             "bits": [
               {
                 "index": 7,
@@ -906,45 +1656,45 @@
               },
               {
                 "index": 6,
-                "name": "LOCK",
+                "name": "RDY",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 5,
-                "name": "BUSY",
-                "value": 0,
-                "tone": "idle"
+                "name": "IRQ",
+                "value": 1,
+                "tone": "ok"
               },
               {
                 "index": 4,
-                "name": "VALID",
+                "name": "DMA",
                 "value": 1,
-                "tone": "ok",
+                "tone": "data",
                 "highlighted": true
               },
               {
                 "index": 3,
-                "name": "AUTH",
+                "name": "CRC",
                 "value": 1,
-                "tone": "ok",
+                "tone": "data",
                 "highlighted": true
               },
               {
                 "index": 2,
-                "name": "SEC",
+                "name": "TX",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 1,
-                "name": "ROLL",
+                "name": "RX",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 0,
-                "name": "FAULT",
+                "name": "ERR",
                 "value": 0,
                 "tone": "idle"
               }
@@ -952,12 +1702,12 @@
           },
           {
             "at": "tryIt",
-            "caption": "Step 4: Certified state - SEC=1 asserted with zero hardware faults.",
-            "registerName": "FOTA_RBK_CR4",
+            "caption": "Step 4: Full TX/RX frame committed with ERR=0 verified (0xFE).",
+            "registerName": "IOT_EMB_CR4",
             "bitWidth": 8,
-            "hexValue": "0xDC",
-            "decimalValue": 220,
-            "maskApplied": "0xD8 | (1 << 2)",
+            "hexValue": "0xFE",
+            "decimalValue": 254,
+            "maskApplied": "~0x01",
             "bits": [
               {
                 "index": 7,
@@ -967,46 +1717,296 @@
               },
               {
                 "index": 6,
-                "name": "LOCK",
+                "name": "RDY",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 5,
-                "name": "BUSY",
-                "value": 0,
-                "tone": "idle"
+                "name": "IRQ",
+                "value": 1,
+                "tone": "ok"
               },
               {
                 "index": 4,
-                "name": "VALID",
+                "name": "DMA",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 3,
-                "name": "AUTH",
+                "name": "CRC",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 2,
-                "name": "SEC",
+                "name": "TX",
                 "value": 1,
                 "tone": "ok",
                 "highlighted": true
               },
               {
                 "index": 1,
-                "name": "ROLL",
+                "name": "RX",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 0,
+                "name": "ERR",
+                "value": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "register-bits",
+        "title": "Hardware Watchdog (IWDG) Integration & Probat... — Register Bit Architecture",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize IOT_EMB_CR4 with EN bit asserted (0x80).",
+            "registerName": "IOT_EMB_CR4",
+            "bitWidth": 8,
+            "hexValue": "0x80",
+            "decimalValue": 128,
+            "maskApplied": "1 << 7",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "RDY",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 5,
+                "name": "IRQ",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 4,
+                "name": "DMA",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "CRC",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "TX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "RX",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 0,
-                "name": "FAULT",
+                "name": "ERR",
                 "value": 0,
                 "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Peripheral asserts RDY & IRQ flags (0xE0) on IOT_EMB_CR4.",
+            "registerName": "IOT_EMB_CR4",
+            "bitWidth": 8,
+            "hexValue": "0xE0",
+            "decimalValue": 224,
+            "maskApplied": "(1 << 6) | (1 << 5)",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EN",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "RDY",
+                "value": 1,
+                "tone": "data",
+                "highlighted": true
+              },
+              {
+                "index": 5,
+                "name": "IRQ",
+                "value": 1,
+                "tone": "data",
+                "highlighted": true
+              },
+              {
+                "index": 4,
+                "name": "DMA",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "CRC",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "TX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "RX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "ERR",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Enable DMA burst & CRC verification bits (0xF8).",
+            "registerName": "IOT_EMB_CR4",
+            "bitWidth": 8,
+            "hexValue": "0xF8",
+            "decimalValue": 248,
+            "maskApplied": "(1 << 4) | (1 << 3)",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EN",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "RDY",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "IRQ",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "DMA",
+                "value": 1,
+                "tone": "data",
+                "highlighted": true
+              },
+              {
+                "index": 3,
+                "name": "CRC",
+                "value": 1,
+                "tone": "data",
+                "highlighted": true
+              },
+              {
+                "index": 2,
+                "name": "TX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "RX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "ERR",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Full TX/RX frame committed with ERR=0 verified (0xFE).",
+            "registerName": "IOT_EMB_CR4",
+            "bitWidth": 8,
+            "hexValue": "0xFE",
+            "decimalValue": 254,
+            "maskApplied": "~0x01",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EN",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "RDY",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "IRQ",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "DMA",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "CRC",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "TX",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 1,
+                "name": "RX",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 0,
+                "name": "ERR",
+                "value": 0,
+                "tone": "ok"
               }
             ]
           }
@@ -1014,16 +2014,16 @@
       }
     },
     {
-      "partTitle": "Master Engine: Resilient Dual-Bank Rollback & Recovery Engine in C++",
-      "codeHash": "f8abce7602b0e62941ed867a19c0c3701b02332d0ad840c879a7d6546998abce",
+      "partTitle": "Immutable Golden Factory Image Fallback & Disaster Recovery",
+      "codeHash": "e84ab1f46ad5dd431033e785b43ce41b2e4b6b153f32608b054f6ea1b30055ff",
       "spec": {
         "template": "register-bits",
-        "title": "Master Engine: Resilient Dual-Bank Rollback & Recovery Engine in C++ — Register Bit Architecture",
+        "title": "Immutable Golden Factory Image Fallback & Dis... — Register Bit Architecture",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Initialize Master Engine: Resilient Dual-Ba with EN=1 & hardware security boundary active.",
-            "registerName": "FOTA_RBK_CR5",
+            "caption": "Step 1: Initialize IOT_EMB_CR1 with EN bit asserted (0x80).",
+            "registerName": "IOT_EMB_CR1",
             "bitWidth": 8,
             "hexValue": "0x80",
             "decimalValue": 128,
@@ -1038,43 +2038,43 @@
               },
               {
                 "index": 6,
-                "name": "LOCK",
+                "name": "RDY",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 5,
-                "name": "BUSY",
+                "name": "IRQ",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 4,
-                "name": "VALID",
+                "name": "DMA",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 3,
-                "name": "AUTH",
+                "name": "CRC",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 2,
-                "name": "SEC",
+                "name": "TX",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 1,
-                "name": "ROLL",
+                "name": "RX",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 0,
-                "name": "FAULT",
+                "name": "ERR",
                 "value": 0,
                 "tone": "idle"
               }
@@ -1082,12 +2082,12 @@
           },
           {
             "at": "say1",
-            "caption": "Step 2: Cryptographic computation active - LOCK=1 and BUSY=1.",
-            "registerName": "FOTA_RBK_CR5",
+            "caption": "Step 2: Peripheral asserts RDY & IRQ flags (0xE0) on IOT_EMB_CR1.",
+            "registerName": "IOT_EMB_CR1",
             "bitWidth": 8,
             "hexValue": "0xE0",
             "decimalValue": 224,
-            "maskApplied": "(1 << 7) | (1 << 6) | (1 << 5)",
+            "maskApplied": "(1 << 6) | (1 << 5)",
             "bits": [
               {
                 "index": 7,
@@ -1097,45 +2097,45 @@
               },
               {
                 "index": 6,
-                "name": "LOCK",
+                "name": "RDY",
                 "value": 1,
-                "tone": "ok",
+                "tone": "data",
                 "highlighted": true
               },
               {
                 "index": 5,
-                "name": "BUSY",
+                "name": "IRQ",
                 "value": 1,
-                "tone": "warn",
+                "tone": "data",
                 "highlighted": true
               },
               {
                 "index": 4,
-                "name": "VALID",
+                "name": "DMA",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 3,
-                "name": "AUTH",
+                "name": "CRC",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 2,
-                "name": "SEC",
+                "name": "TX",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 1,
-                "name": "ROLL",
+                "name": "RX",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 0,
-                "name": "FAULT",
+                "name": "ERR",
                 "value": 0,
                 "tone": "idle"
               }
@@ -1143,12 +2143,12 @@
           },
           {
             "at": "example",
-            "caption": "Step 3: Verification complete - VALID=1 and AUTH=1.",
-            "registerName": "FOTA_RBK_CR5",
+            "caption": "Step 3: Enable DMA burst & CRC verification bits (0xF8).",
+            "registerName": "IOT_EMB_CR1",
             "bitWidth": 8,
-            "hexValue": "0xD8",
-            "decimalValue": 216,
-            "maskApplied": "(1 << 7) | (1 << 6) | (1 << 4) | (1 << 3)",
+            "hexValue": "0xF8",
+            "decimalValue": 248,
+            "maskApplied": "(1 << 4) | (1 << 3)",
             "bits": [
               {
                 "index": 7,
@@ -1158,45 +2158,45 @@
               },
               {
                 "index": 6,
-                "name": "LOCK",
+                "name": "RDY",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 5,
-                "name": "BUSY",
-                "value": 0,
-                "tone": "idle"
+                "name": "IRQ",
+                "value": 1,
+                "tone": "ok"
               },
               {
                 "index": 4,
-                "name": "VALID",
+                "name": "DMA",
                 "value": 1,
-                "tone": "ok",
+                "tone": "data",
                 "highlighted": true
               },
               {
                 "index": 3,
-                "name": "AUTH",
+                "name": "CRC",
                 "value": 1,
-                "tone": "ok",
+                "tone": "data",
                 "highlighted": true
               },
               {
                 "index": 2,
-                "name": "SEC",
+                "name": "TX",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 1,
-                "name": "ROLL",
+                "name": "RX",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 0,
-                "name": "FAULT",
+                "name": "ERR",
                 "value": 0,
                 "tone": "idle"
               }
@@ -1204,12 +2204,12 @@
           },
           {
             "at": "tryIt",
-            "caption": "Step 4: Certified state - SEC=1 asserted with zero hardware faults.",
-            "registerName": "FOTA_RBK_CR5",
+            "caption": "Step 4: Full TX/RX frame committed with ERR=0 verified (0xFE).",
+            "registerName": "IOT_EMB_CR1",
             "bitWidth": 8,
-            "hexValue": "0xDC",
-            "decimalValue": 220,
-            "maskApplied": "0xD8 | (1 << 2)",
+            "hexValue": "0xFE",
+            "decimalValue": 254,
+            "maskApplied": "~0x01",
             "bits": [
               {
                 "index": 7,
@@ -1219,46 +2219,296 @@
               },
               {
                 "index": 6,
-                "name": "LOCK",
+                "name": "RDY",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 5,
-                "name": "BUSY",
-                "value": 0,
-                "tone": "idle"
+                "name": "IRQ",
+                "value": 1,
+                "tone": "ok"
               },
               {
                 "index": 4,
-                "name": "VALID",
+                "name": "DMA",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 3,
-                "name": "AUTH",
+                "name": "CRC",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 2,
-                "name": "SEC",
+                "name": "TX",
                 "value": 1,
                 "tone": "ok",
                 "highlighted": true
               },
               {
                 "index": 1,
-                "name": "ROLL",
+                "name": "RX",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 0,
+                "name": "ERR",
+                "value": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "register-bits",
+        "title": "Immutable Golden Factory Image Fallback & Dis... — Register Bit Architecture",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize IOT_EMB_CR1 with EN bit asserted (0x80).",
+            "registerName": "IOT_EMB_CR1",
+            "bitWidth": 8,
+            "hexValue": "0x80",
+            "decimalValue": 128,
+            "maskApplied": "1 << 7",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "RDY",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 5,
+                "name": "IRQ",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 4,
+                "name": "DMA",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "CRC",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "TX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "RX",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 0,
-                "name": "FAULT",
+                "name": "ERR",
                 "value": 0,
                 "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Peripheral asserts RDY & IRQ flags (0xE0) on IOT_EMB_CR1.",
+            "registerName": "IOT_EMB_CR1",
+            "bitWidth": 8,
+            "hexValue": "0xE0",
+            "decimalValue": 224,
+            "maskApplied": "(1 << 6) | (1 << 5)",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EN",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "RDY",
+                "value": 1,
+                "tone": "data",
+                "highlighted": true
+              },
+              {
+                "index": 5,
+                "name": "IRQ",
+                "value": 1,
+                "tone": "data",
+                "highlighted": true
+              },
+              {
+                "index": 4,
+                "name": "DMA",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "CRC",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "TX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "RX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "ERR",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Enable DMA burst & CRC verification bits (0xF8).",
+            "registerName": "IOT_EMB_CR1",
+            "bitWidth": 8,
+            "hexValue": "0xF8",
+            "decimalValue": 248,
+            "maskApplied": "(1 << 4) | (1 << 3)",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EN",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "RDY",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "IRQ",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "DMA",
+                "value": 1,
+                "tone": "data",
+                "highlighted": true
+              },
+              {
+                "index": 3,
+                "name": "CRC",
+                "value": 1,
+                "tone": "data",
+                "highlighted": true
+              },
+              {
+                "index": 2,
+                "name": "TX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "RX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "ERR",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Full TX/RX frame committed with ERR=0 verified (0xFE).",
+            "registerName": "IOT_EMB_CR1",
+            "bitWidth": 8,
+            "hexValue": "0xFE",
+            "decimalValue": 254,
+            "maskApplied": "~0x01",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EN",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "RDY",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "IRQ",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "DMA",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "CRC",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "TX",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 1,
+                "name": "RX",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 0,
+                "name": "ERR",
+                "value": 0,
+                "tone": "ok"
               }
             ]
           }
