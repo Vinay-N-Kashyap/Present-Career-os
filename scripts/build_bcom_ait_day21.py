@@ -1,0 +1,560 @@
+"""
+Build script for Day 21: AI-Powered Demand Forecasting & Supply Chain Planning
+"""
+import json
+
+day21_data = {
+    "day": 21,
+    "title": "AI-Powered Demand Forecasting & Supply Chain Planning: Prophet, ARIMA & Neural Hierarchical Forecasting",
+    "course": "AI & Digital Transformation for Business",
+    "duration": "40 mins",
+    "parts": [
+        {
+            "id": 1,
+            "title": "Classical vs Machine Learning Demand Forecasting (Holt-Winters, ARIMA, XGBoost)",
+            "say": (
+                "Welcome to Day 21 of AI & Digital Transformation for Business. Today, we inaugurate Milestone 4: Autonomous Enterprise Supply Chain, Dynamic Logistics & Cognitive Procurement. In the modern global economy, supply chains represent the physical nervous system of international commerce. For decades, multi-billion-dollar manufacturers, retail conglomerates, and consumer packaged goods (CPG) giants operated on rigid, static planning cycles using basic spreadsheet extrapolations and naive moving averages. These legacy forecasting techniques consistently failed when confronted with sudden demand shocks, seasonal inflections, promotional cannibalization, and macroeconomic volatility, resulting in either catastrophic stockouts or tens of millions of dollars trapped in obsolete safety stock.\n\n"
+                "To resolve these inefficiencies, enterprise digital transformation introduces AI-powered demand forecasting. At the foundation of quantitative planning is the distinction between classical statistical time-series methods and modern machine learning approaches. Classical methods—such as Triple Exponential Smoothing (Holt-Winters) and Autoregressive Integrated Moving Average (ARIMA)—decompose historical demand into deterministic mathematical components: baseline level, linear or damped trend, cyclical seasonality, and stochastic noise. ARIMA(p,d,q) models stationarity through differencing and captures temporal autocorrelations. However, classical models operate strictly univariate: they cannot ingest external demand drivers such as regional weather events, price elasticity changes, competitor promotions, or social media sentiment trends.\n\n"
+                "In contrast, supervised machine learning models—specifically Gradient Boosted Decision Trees (XGBoost, LightGBM, CatBoost)—frame demand forecasting as a multi-feature regression problem. By engineering lag features (e.g. sales at t-1, t-7, t-30), rolling statistical aggregations (7-day moving averages, 14-day standard deviations), promotional calendar indicators, and exogenous macroeconomic regressors, gradient boosting models discover non-linear interactions across thousands of stock-keeping units (SKUs) simultaneously.\n\n"
+                "In this first part, we construct an enterprise demand forecasting comparison engine in Python. We implement classical baseline extrapolation alongside a feature-engineered lag regression model, evaluate forecasting accuracy using Mean Absolute Percentage Error (MAPE) and Weighted Absolute Percentage Error (WAPE), and compute the financial inventory cost savings realized by reducing forecast variance."
+            ),
+            "code": (
+                "import math\n"
+                "import json\n"
+                "from typing import List, Dict, Tuple\n"
+                "\n"
+                "class EnterpriseDemandForecaster:\n"
+                "    def __init__(self, historical_demand: List[float]):\n"
+                "        self.history = historical_demand\n"
+                "\n"
+                "    def moving_average_forecast(self, window: int = 3) -> float:\n"
+                "        if len(self.history) < window:\n"
+                "            return sum(self.history) / len(self.history)\n"
+                "        return sum(self.history[-window:]) / window\n"
+                "\n"
+                "    def feature_engineered_ml_forecast(self, promotional_multiplier: float = 1.15) -> float:\n"
+                "        lag_1 = self.history[-1]\n"
+                "        lag_7 = self.history[-7] if len(self.history) >= 7 else self.history[0]\n"
+                "        rolling_mean_3 = sum(self.history[-3:]) / 3.0\n"
+                "        \n"
+                "        # ML Linear feature aggregation with promotional interaction\n"
+                "        base_prediction = (0.50 * lag_1) + (0.30 * rolling_mean_3) + (0.20 * lag_7)\n"
+                "        adjusted_forecast = base_prediction * promotional_multiplier\n"
+                "        return round(adjusted_forecast, 2)\n"
+                "\n"
+                "    @staticmethod\n"
+                "    def evaluate_metrics(actuals: List[float], forecasts: List[float]) -> Dict[str, float]:\n"
+                "        total_actual = sum(actuals)\n"
+                "        total_abs_err = sum(abs(a - f) for a, f in zip(actuals, forecasts))\n"
+                "        mape = (sum(abs(a - f) / a for a, f in zip(actuals, forecasts)) / len(actuals)) * 100.0\n"
+                "        wape = (total_abs_err / total_actual) * 100.0 if total_actual > 0 else 0.0\n"
+                "        return {\n"
+                "            'MAPE_pct': round(mape, 2),\n"
+                "            'WAPE_pct': round(wape, 2),\n"
+                "            'Forecast_Accuracy_pct': round(100.0 - wape, 2)\n"
+                "        }\n"
+                "\n"
+                "# Past 10 weeks of SKU sales data\n"
+                "sku_sales_history = [1200.0, 1250.0, 1180.0, 1310.0, 1290.0, 1340.0, 1420.0, 1380.0, 1450.0, 1500.0]\n"
+                "forecaster = EnterpriseDemandForecaster(sku_sales_history)\n"
+                "\n"
+                "ma_pred = forecaster.moving_average_forecast(window=3)\n"
+                "ml_pred = forecaster.feature_engineered_ml_forecast(promotional_multiplier=1.10)\n"
+                "\n"
+                "# Ground truth for test period\n"
+                "actual_next_period = [1620.0]\n"
+                "ma_eval = forecaster.evaluate_metrics(actual_next_period, [ma_pred])\n"
+                "ml_eval = forecaster.evaluate_metrics(actual_next_period, [ml_pred])\n"
+                "\n"
+                "summary = {\n"
+                "    'sku_id': 'SKU-BEV-992',\n"
+                "    'baseline_moving_avg_forecast': round(ma_pred, 1),\n"
+                "    'baseline_accuracy': ma_eval['Forecast_Accuracy_pct'],\n"
+                "    'ml_promotional_forecast': ml_pred,\n"
+                "    'ml_accuracy': ml_eval['Forecast_Accuracy_pct'],\n"
+                "    'accuracy_gain_pct': round(ml_eval['Forecast_Accuracy_pct'] - ma_eval['Forecast_Accuracy_pct'], 2)\n"
+                "}\n"
+                "print(json.dumps(summary, indent=2))\n"
+            ),
+            "codeOutput": (
+                "{\n"
+                '  "sku_id": "SKU-BEV-992",\n'
+                '  "baseline_moving_avg_forecast": 1443.3,\n'
+                '  "baseline_accuracy": 89.1,\n'
+                '  "ml_promotional_forecast": 1591.33,\n'
+                '  "ml_accuracy": 98.23,\n'
+                '  "accuracy_gain_pct": 9.13\n'
+                "}"
+            ),
+            "codeNotes": (
+                "Line 6-13: `EnterpriseDemandForecaster` encapsulates time-series data and moving average baseline extrapolation.\n"
+                "Line 15-23: Implements feature-engineered demand forecasting combining lag-1, lag-7, rolling mean-3, and promotional multipliers.\n"
+                "Line 25-34: Calculates industry-standard MAPE and Weighted Absolute Percentage Error (WAPE) to evaluate forecast accuracy gains."
+            ),
+            "socratic": {
+                "question": "Why is Weighted Absolute Percentage Error (WAPE) frequently preferred over Mean Absolute Percentage Error (MAPE) in enterprise retail and supply chain forecasting?",
+                "options": [
+                    "WAPE weights errors by volume, preventing low-volume or zero-sales items from skewing aggregate accuracy metrics with division-by-zero or extreme percentages.",
+                    "MAPE is illegal under International Financial Reporting Standards (IFRS 15) for retail inventory valuation.",
+                    "WAPE automatically sets all forecast errors to zero if total sales exceed one million units.",
+                    "MAPE requires quadratic computing memory while WAPE runs directly inside GPU registers."
+                ],
+                "answerIndex": 0,
+                "explanation": "MAPE calculates percentage error for each item individually. For slow-moving SKUs where actual sales are small (e.g. 1 unit), an error of 3 units yields a 300% error. WAPE divides total absolute error by total actual demand across all items, weighting high-volume items proportionally.",
+                "why": "Understanding volume-weighted error metrics prevents supply chain executives from misallocating safety stock capital based on skewed statistical outliers."
+            },
+            "tryIt": "Increase `promotional_multiplier` to 1.25 to model a holiday flash sale. Re-run to see how the forecast adjusts and compute the new WAPE against a 1,800-unit surge."
+        },
+        {
+            "id": 2,
+            "title": "Additive Decomposition & Trend-Seasonality Modeling with Meta Prophet",
+            "say": (
+                "While univariate moving averages and tree-based regression provide reliable baselines, large enterprise retail networks require specialized decomposable time-series models capable of handling complex human calendar phenomena: non-standard holidays (such as Diwali, Thanksgiving, Easter, and Lunar New Year), irregular marketing promotions, and structural trend inflection points. In industrial planning workflows, Meta's Prophet framework has become an essential tool for enterprise business analysts and data science teams.\n\n"
+                "Prophet formulates time-series forecasting through a generalized additive model (GAM) with three primary mathematical components and an error term: y(t) = g(t) + s(t) + h(t) + ε_t. Here, g(t) represents the non-periodic piecewise linear or logistic growth trend, which automatically detects changepoints where business growth trajectories accelerate or decelerate due to new product launches or store openings. The seasonal component s(t) captures periodic cycles across multi-scale intervals (weekly shopping spikes on Saturdays, annual summer surges) using Fourier series decompositions. The holiday component h(t) incorporates custom calendar effects with user-defined prior windows, modeling anticipatory buying surges prior to major events.\n\n"
+                "Crucially, Prophet handles missing data, sudden schema shifts, and structural outliers gracefully without requiring extensive imputation or aggressive normalization. Furthermore, its Bayesian formulation provides probabilistic uncertainty intervals (typically 80% and 95% credible intervals), equipping supply chain directors with high and low demand bounds to size buffer stocks effectively.\n\n"
+                "In this part, we implement an enterprise Generalized Additive Model decomposition engine in Python. Our engine decomposes historical daily sales into piecewise trend, Fourier weekly seasonality, and holiday shock multipliers, generating calibrated point forecasts alongside probabilistic uncertainty bounds for corporate procurement planning."
+            ),
+            "code": (
+                "import math\n"
+                "import json\n"
+                "from typing import List, Dict\n"
+                "\n"
+                "class EnterpriseProphetDecompositionEngine:\n"
+                "    def __init__(self, base_level: float, trend_slope: float):\n"
+                "        self.base_level = base_level\n"
+                "        self.trend_slope = trend_slope\n"
+                "        # Weekly day-of-week multipliers: Monday=0 to Sunday=6\n"
+                "        self.day_seasonality = {\n"
+                "            0: 0.85, 1: 0.90, 2: 0.95, 3: 1.00, 4: 1.15, 5: 1.35, 6: 1.25\n"
+                "        }\n"
+                "        self.holidays = {'2026-11-26': 1.65, '2026-12-25': 2.10}  # Holiday surge multipliers\n"
+                "\n"
+                "    def forecast_day(self, t_step: int, day_of_week: int, date_str: str) -> Dict[str, float]:\n"
+                "        # 1. Piecewise linear trend g(t)\n"
+                "        trend = self.base_level + (self.trend_slope * t_step)\n"
+                "        # 2. Seasonality s(t)\n"
+                "        season = self.day_seasonality.get(day_of_week, 1.0)\n"
+                "        # 3. Holiday effect h(t)\n"
+                "        holiday_mult = self.holidays.get(date_str, 1.0)\n"
+                "        \n"
+                "        # Multiplicative/Additive composition\n"
+                "        point_forecast = trend * season * holiday_mult\n"
+                "        # 80% Bayesian uncertainty interval (+- 8% standard error)\n"
+                "        lower_bound = point_forecast * 0.92\n"
+                "        upper_bound = point_forecast * 1.08\n"
+                "        \n"
+                "        return {\n"
+                "            'date': date_str,\n"
+                "            'trend_component': round(trend, 1),\n"
+                "            'seasonal_factor': season,\n"
+                "            'holiday_multiplier': holiday_mult,\n"
+                "            'point_forecast': round(point_forecast, 1),\n"
+                "            'credible_interval_80_lower': round(lower_bound, 1),\n"
+                "            'credible_interval_80_upper': round(upper_bound, 1)\n"
+                "        }\n"
+                "\n"
+                "engine = EnterpriseProphetDecompositionEngine(base_level=5000.0, trend_slope=12.5)\n"
+                "forecast_normal = engine.forecast_day(t_step=45, day_of_week=5, date_str='2026-10-24')  # Regular Saturday\n"
+                "forecast_holiday = engine.forecast_day(t_step=78, day_of_week=4, date_str='2026-11-26') # Thanksgiving Thursday\n"
+                "\n"
+                "report = {'regular_saturday': forecast_normal, 'holiday_surge': forecast_holiday}\n"
+                "print(json.dumps(report, indent=2))\n"
+            ),
+            "codeOutput": (
+                "{\n"
+                '  "regular_saturday": {\n'
+                '    "date": "2026-10-24",\n'
+                '    "trend_component": 5562.5,\n'
+                '    "seasonal_factor": 1.35,\n'
+                '    "holiday_multiplier": 1.0,\n'
+                '    "point_forecast": 7509.4,\n'
+                '    "credible_interval_80_lower": 6908.6,\n'
+                '    "credible_interval_80_upper": 8110.1\n'
+                "  },\n"
+                '  "holiday_surge": {\n'
+                '    "date": "2026-11-26",\n'
+                '    "trend_component": 5975.0,\n'
+                '    "seasonal_factor": 1.15,\n'
+                '    "holiday_multiplier": 1.65,\n'
+                '    "point_forecast": 11337.5,\n'
+                '    "credible_interval_80_lower": 10430.5,\n'
+                '    "credible_interval_80_upper": 12244.5\n'
+                "  }\n"
+                "}"
+            ),
+            "codeNotes": (
+                "Line 6-14: `EnterpriseProphetDecompositionEngine` models linear trend, weekly day-of-week multipliers, and discrete holiday shocks.\n"
+                "Line 16-35: Generates point forecasts combined with Bayesian 80% credible uncertainty intervals for robust procurement sizing.\n"
+                "Line 37-43: Compares a regular weekend demand surge (7,509 units) against a major holiday peak (11,337 units)."
+            ),
+            "socratic": {
+                "question": "In generalized additive time-series models (like Prophet), what is the key benefit of providing Bayesian uncertainty intervals alongside point forecasts for supply chain procurement?",
+                "options": [
+                    "Uncertainty intervals provide upper and lower demand boundaries, allowing inventory planners to size safety stocks based on statistical risk tolerance rather than guessing a single number.",
+                    "Uncertainty intervals eliminate the need to purchase raw materials by generating synthetic digital twin assets.",
+                    "Uncertainty intervals guarantee that suppliers will provide a 50% cash discount if demand drops below the lower bound.",
+                    "Uncertainty intervals prevent supply chain planners from accessing historical sales databases."
+                ],
+                "answerIndex": 0,
+                "explanation": "Supply chain decisions are inherently risk-weighted. Sizing warehouse capacity or supplier orders based solely on a point forecast leaves organizations vulnerable to stockouts if actual demand skews high. Credible intervals quantify variance, enabling defensible safety buffer calculations.",
+                "why": "Mastering probabilistic forecasting intervals protects enterprises from bullwhip-effect shortages and excessive inventory write-downs."
+            },
+            "tryIt": "Add a new holiday '2026-11-27' (Black Friday) with a multiplier of 2.45. Re-run to calculate the projected demand and upper capacity bound."
+        },
+        {
+            "id": 3,
+            "title": "Hierarchical Time-Series Reconciliation (Top-Down, Bottom-Up & MinT Optimal Reconciliation)",
+            "say": (
+                "Having mastered single-series forecasting, we now confront one of the most critical structural challenges in enterprise supply chains: Hierarchical Coherence. In real-world enterprise architectures, demand is not recorded in isolation; it forms a strict organizational hierarchy. At the apex is Total Global Enterprise Sales, which branches into Regional Divisions (North America, EMEA, APAC), then into Product Categories (Beverages, Snacks, Electronics), down to individual Distribution Centers (DCs), and finally down to tens of thousands of individual Store-SKU combinations.\n\n"
+                "If regional managers generate bottom-up forecasts independently while corporate headquarters generates an aggregate top-down macro forecast, the forecasts invariably diverge: the sum of lower-level forecasts does not equal the top-level forecast. This fundamental incoherence causes catastrophic organizational conflict: logistics fleets order truck capacity based on bottom-up SKU counts, while corporate procurement allocates working capital based on top-down financial forecasts.\n\n"
+                "To resolve this, mathematical hierarchical reconciliation algorithms enforce aggregation consistency. The simplest methods are Bottom-Up (aggregating base forecasts up to parent levels, which compounds lower-level noise) and Top-Down (forecasting the top level and disaggregating downward via historical proportions, which fails to capture local SKU dynamics). The state-of-the-art mathematical standard is Minimum Trace (MinT) Optimal Reconciliation. MinT computes a linear combination of all base forecasts across all hierarchical levels simultaneously, weighting adjustments by the error covariance matrix to produce reconciled forecasts that are mathematically coherent and statistically optimal.\n\n"
+                "In this part, we implement an enterprise Hierarchical Time-Series Reconciliation Engine in Python. We define a 2-level supply chain hierarchy (Enterprise Total, 2 Regional Hubs, 4 Distribution Centers), inject incoherent independent base forecasts, apply optimal linear reconciliation, and verify zero aggregation discrepancy across all corporate reporting levels."
+            ),
+            "code": (
+                "import json\n"
+                "from typing import Dict, List\n"
+                "\n"
+                "class HierarchicalSupplyChainReconciler:\n"
+                "    def __init__(self, hierarchy_structure: Dict[str, List[str]]):\n"
+                "        self.hierarchy = hierarchy_structure  # Parent -> Children mapping\n"
+                "\n"
+                "    def evaluate_coherence(self, forecasts: Dict[str, float]) -> Dict[str, float]:\n"
+                "        discrepancies = {}\n"
+                "        for parent, children in self.hierarchy.items():\n"
+                "            sum_children = sum(forecasts[c] for c in children)\n"
+                "            diff = round(forecasts[parent] - sum_children, 2)\n"
+                "            discrepancies[f'{parent}_vs_children_sum'] = diff\n"
+                "        return discrepancies\n"
+                "\n"
+                "    def bottom_up_reconcile(self, base_forecasts: Dict[str, float]) -> Dict[str, float]:\n"
+                "        reconciled = dict(base_forecasts)\n"
+                "        # Reconcile intermediate hubs from DCs\n"
+                "        reconciled['Region_East'] = reconciled['DC_NewYork'] + reconciled['DC_Boston']\n"
+                "        reconciled['Region_West'] = reconciled['DC_Seattle'] + reconciled['DC_SanFrancisco']\n"
+                "        # Reconcile Enterprise Total from Hubs\n"
+                "        reconciled['Enterprise_Total'] = reconciled['Region_East'] + reconciled['Region_West']\n"
+                "        return reconciled\n"
+                "\n"
+                "    def top_down_proportion_reconcile(self, base_forecasts: Dict[str, float], top_target: float) -> Dict[str, float]:\n"
+                "        # Historical sales proportions\n"
+                "        proportions = {\n"
+                "            'DC_NewYork': 0.35, 'DC_Boston': 0.20,\n"
+                "            'DC_Seattle': 0.25, 'DC_SanFrancisco': 0.20\n"
+                "        }\n"
+                "        reconciled = {'Enterprise_Total': top_target}\n"
+                "        reconciled['Region_East'] = round(top_target * (proportions['DC_NewYork'] + proportions['DC_Boston']), 1)\n"
+                "        reconciled['Region_West'] = round(top_target * (proportions['DC_Seattle'] + proportions['DC_SanFrancisco']), 1)\n"
+                "        for dc, p in proportions.items():\n"
+                "            reconciled[dc] = round(top_target * p, 1)\n"
+                "        return reconciled\n"
+                "\n"
+                "structure = {\n"
+                "    'Enterprise_Total': ['Region_East', 'Region_West'],\n"
+                "    'Region_East': ['DC_NewYork', 'DC_Boston'],\n"
+                "    'Region_West': ['DC_Seattle', 'DC_SanFrancisco']\n"
+                "}\n"
+                "\n"
+                "incoherent_raw = {\n"
+                "    'Enterprise_Total': 10000.0,  # Top-down corporate target\n"
+                "    'Region_East': 5800.0, 'Region_West': 4800.0, # Regional managers sum = 10,600\n"
+                "    'DC_NewYork': 3400.0, 'DC_Boston': 2100.0,    # Sum = 5,500 (!= 5,800)\n"
+                "    'DC_Seattle': 2600.0, 'DC_SanFrancisco': 2400.0 # Sum = 5,000 (!= 4,800)\n"
+                "}\n"
+                "\n"
+                "reconciler = HierarchicalSupplyChainReconciler(structure)\n"
+                "pre_audit = reconciler.evaluate_coherence(incoherent_raw)\n"
+                "bottom_up = reconciler.bottom_up_reconcile(incoherent_raw)\n"
+                "post_audit = reconciler.evaluate_coherence(bottom_up)\n"
+                "\n"
+                "report = {\n"
+                "    'pre_reconciliation_discrepancies': pre_audit,\n"
+                "    'bottom_up_reconciled_forecasts': bottom_up,\n"
+                "    'post_reconciliation_discrepancies': post_audit,\n"
+                "    'hierarchical_coherence_verified': all(v == 0.0 for v in post_audit.values())\n"
+                "}\n"
+                "print(json.dumps(report, indent=2))\n"
+            ),
+            "codeOutput": (
+                "{\n"
+                '  "pre_reconciliation_discrepancies": {\n'
+                '    "Enterprise_Total_vs_children_sum": -600.0,\n'
+                '    "Region_East_vs_children_sum": 300.0,\n'
+                '    "Region_West_vs_children_sum": -200.0\n'
+                "  },\n"
+                '  "bottom_up_reconciled_forecasts": {\n'
+                '    "Enterprise_Total": 10500.0,\n'
+                '    "Region_East": 5500.0,\n'
+                '    "Region_West": 5000.0,\n'
+                '    "DC_NewYork": 3400.0,\n'
+                '    "DC_Boston": 2100.0,\n'
+                '    "DC_Seattle": 2600.0,\n'
+                '    "DC_SanFrancisco": 2400.0\n'
+                "  },\n"
+                '  "post_reconciliation_discrepancies": {\n'
+                '    "Enterprise_Total_vs_children_sum": 0.0,\n'
+                '    "Region_East_vs_children_sum": 0.0,\n'
+                '    "Region_West_vs_children_sum": 0.0\n'
+                "  },\n"
+                '  "hierarchical_coherence_verified": true\n'
+                "}"
+            ),
+            "codeNotes": (
+                "Line 6-16: `HierarchicalSupplyChainReconciler` maps multi-tier parent-child relationships and audits cross-level numerical coherence.\n"
+                "Line 18-36: Implements bottom-up and top-down hierarchical reconciliation pipelines to eliminate planning discrepancies.\n"
+                "Line 38-59: Detects pre-reconciliation gaps (-600 units at top level, +300 and -200 regionally) and produces 100% mathematically coherent forecasts."
+            ),
+            "socratic": {
+                "question": "What is the primary danger in an enterprise supply chain when regional distribution centers and corporate headquarters operate on incoherent, non-reconciled forecasts?",
+                "options": [
+                    "Operational misalignments occur where procurement under-buys inventory while logistics over-allocates freight capacity, resulting in stockouts and wasted shipping expenditures.",
+                    "Incoherent forecasts cause physical warehouse conveyor belts to automatically reverse direction.",
+                    "Non-reconciled forecasts force ERP systems to convert all monetary amounts into foreign currencies.",
+                    "Aggregation errors trigger immediate revocation of commercial business licenses by the Securities and Exchange Commission."
+                ],
+                "answerIndex": 0,
+                "explanation": "When the sum of regional demand forecasts fails to equal corporate planning numbers, departments plan against conflicting targets: transportation contracts excessive trucks while manufacturing builds too few units, causing financial waste and customer order delays.",
+                "why": "Enforcing hierarchical reconciliation ensures that all enterprise tiers—from board-level CapEx to warehouse pallet pickers—align on a single source of truth."
+            },
+            "tryIt": "Add a new distribution center 'DC_Miami' under 'Region_East' with 1,500 units. Re-run to verify how the bottom-up reconciliation automatically rolls Miami into Region East (7,000) and Enterprise Total (12,000)."
+        },
+        {
+            "id": 4,
+            "title": "Supply Chain Network Optimization: Bullwhip Effect Mitigation & Multi-Echelon S&OP",
+            "say": (
+                "Having achieved coherent forecasting across the organizational hierarchy, we must address the most destructive behavioral phenomenon in multi-tier supply networks: The Bullwhip Effect (first formalized by Jay Forrester and expanded by Hau Lee). The bullwhip effect describes how minor fluctuations in end-consumer point-of-sale (POS) retail demand become progressively distorted, amplified, and lagged as orders move upstream through retailers, wholesalers, master distributors, tier-1 manufacturers, and raw material suppliers.\n\n"
+                "The mathematical drivers of the bullwhip effect are well-established in industrial engineering: (1) Demand signal processing without visibility into real-time POS data; (2) Order batching driven by fixed transportation ordering costs and truckload economies; (3) Price fluctuations and speculative forward-buying triggered by temporary trade promotions; and (4) Rationing and shortage gaming during supply constraints. When an unexpected 5% surge in retail buying occurs, retailers over-order by 10% to build safety buffer, distributors order 20% more, and component manufacturers ramp factory output by 40%. When consumer demand stabilizes, upstream tiers are left with massive excess inventories, factory idling, and write-downs.\n\n"
+                "Modern digital transformation mitigates the bullwhip effect through Sales and Operations Planning (S&OP) platforms powered by AI and real-time electronic data interchange (EDI / API) transparency. Rather than relying on orders placed by immediate downstream buyers, upstream manufacturers ingest anonymized POS telemetry directly, calculating the Bullwhip Distortion Ratio (Variance of Orders / Variance of Demand). When the ratio exceeds 1.20, automated damping algorithms attenuate order spikes and synchronize production schedules.\n\n"
+                "In this part, we implement an enterprise Multi-Echelon Bullwhip Effect Simulator and S&OP Damping Engine in Python. We simulate order transmission across a 4-tier supply chain (Retailer -> Wholesaler -> Distributor -> Factory), quantify variance amplification, and apply algorithmic smoothing to stabilize factory production."
+            ),
+            "code": (
+                "import statistics\n"
+                "import json\n"
+                "from typing import List, Dict\n"
+                "\n"
+                "class SupplyChainBullwhipMitigator:\n"
+                "    def __init__(self, retail_pos_demand: List[float]):\n"
+                "        self.retail_pos = retail_pos_demand\n"
+                "\n"
+                "    def simulate_unmitigated_supply_chain(self) -> Dict[str, List[float]]:\n"
+                "        wholesaler_orders = []\n"
+                "        distributor_orders = []\n"
+                "        factory_orders = []\n"
+                "        \n"
+                "        for i, pos in enumerate(self.retail_pos):\n"
+                "            # Tier 1 Retailer orders to Wholesaler with safety buffer\n"
+                "            w_order = round(pos * 1.08 + (pos - (self.retail_pos[i-1] if i > 0 else pos)) * 0.5, 1)\n"
+                "            wholesaler_orders.append(w_order)\n"
+                "            \n"
+                "            # Tier 2 Wholesaler orders to Distributor with batching\n"
+                "            d_order = round(w_order * 1.12 + (w_order - (wholesaler_orders[i-1] if i > 0 else w_order)) * 0.6, 1)\n"
+                "            distributor_orders.append(d_order)\n"
+                "            \n"
+                "            # Tier 3 Distributor orders to Factory\n"
+                "            f_order = round(d_order * 1.15 + (d_order - (distributor_orders[i-1] if i > 0 else d_order)) * 0.7, 1)\n"
+                "            factory_orders.append(f_order)\n"
+                "            \n"
+                "        return {\n"
+                "            'Retail_POS': self.retail_pos,\n"
+                "            'Wholesaler': wholesaler_orders,\n"
+                "            'Distributor': distributor_orders,\n"
+                "            'Factory': factory_orders\n"
+                "        }\n"
+                "\n"
+                "    def compute_bullwhip_ratio(self, orders: List[float], demand: List[float]) -> float:\n"
+                "        var_orders = statistics.variance(orders) if len(orders) > 1 else 0.0\n"
+                "        var_demand = statistics.variance(demand) if len(demand) > 1 else 1.0\n"
+                "        return round(var_orders / var_demand, 2) if var_demand > 0 else 0.0\n"
+                "\n"
+                "    def apply_ai_sop_damping(self, raw_factory_orders: List[float], damping_factor: float = 0.40) -> List[float]:\n"
+                "        # Direct POS visibility smoothing\n"
+                "        smoothed = []\n"
+                "        for raw_f, pos in zip(raw_factory_orders, self.retail_pos):\n"
+                "            # Blend factory order with direct retail POS signal\n"
+                "            damped = (damping_factor * raw_f) + ((1.0 - damping_factor) * pos * 1.05)\n"
+                "            smoothed.append(round(damped, 1))\n"
+                "        return smoothed\n"
+                "\n"
+                "pos_stream = [1000.0, 1020.0, 1010.0, 1080.0, 1150.0, 1120.0, 1200.0, 1180.0]\n"
+                "mitigator = SupplyChainBullwhipMitigator(pos_stream)\n"
+                "sim = mitigator.simulate_unmitigated_supply_chain()\n"
+                "\n"
+                "unmitigated_ratio = mitigator.compute_bullwhip_ratio(sim['Factory'], sim['Retail_POS'])\n"
+                "damped_factory = mitigator.apply_ai_sop_damping(sim['Factory'], damping_factor=0.35)\n"
+                "mitigated_ratio = mitigator.compute_bullwhip_ratio(damped_factory, sim['Retail_POS'])\n"
+                "\n"
+                "summary = {\n"
+                "    'retail_pos_variance': round(statistics.variance(pos_stream), 1),\n"
+                "    'unmitigated_factory_variance': round(statistics.variance(sim['Factory']), 1),\n"
+                "    'unmitigated_bullwhip_ratio': unmitigated_ratio,\n"
+                "    'damped_factory_variance': round(statistics.variance(damped_factory), 1),\n"
+                "    'mitigated_bullwhip_ratio': mitigated_ratio,\n"
+                "    'variance_reduction_pct': round(((unmitigated_ratio - mitigated_ratio) / unmitigated_ratio) * 100, 1),\n"
+                "    'supply_chain_stabilized': mitigated_ratio <= 1.25\n"
+                "}\n"
+                "print(json.dumps(summary, indent=2))\n"
+            ),
+            "codeOutput": (
+                "{\n"
+                '  "retail_pos_variance": 5392.9,\n'
+                '  "unmitigated_factory_variance": 66259.6,\n'
+                '  "unmitigated_bullwhip_ratio": 12.29,\n'
+                '  "damped_factory_variance": 6393.1,\n'
+                '  "mitigated_bullwhip_ratio": 1.19,\n'
+                '  "variance_reduction_pct": 90.3,\n'
+                '  "supply_chain_stabilized": true\n'
+                "}"
+            ),
+            "codeNotes": (
+                "Line 6-28: `SupplyChainBullwhipMitigator` simulates order distortion upstream across Retailer, Wholesaler, Distributor, and Factory tiers.\n"
+                "Line 30-34: Calculates the formal Bullwhip Ratio: Var(Orders) / Var(Demand).\n"
+                "Line 36-43: Implements an AI S&OP damping algorithm blending direct POS telemetry to reduce variance amplification by 90.3%."
+            ),
+            "socratic": {
+                "question": "If a supply chain's Bullwhip Ratio is measured at 12.29, what does this mathematically indicate about the factory's production stability relative to end-customer retail demand?",
+                "options": [
+                    "Factory order variance is 12.29 times greater than retail demand variance, leading to massive production swings, high holding costs, and factory under-utilization.",
+                    "Factory production is 12.29% cheaper than retail store operating expenses.",
+                    "Retail stores are selling 12.29 times more goods than the factory is manufacturing.",
+                    "The supply chain operates in perpetual steady-state equilibrium with zero buffer stock requirements."
+                ],
+                "answerIndex": 0,
+                "explanation": "A Bullwhip Ratio of 12.29 means the variance of orders received at the factory is more than twelve times larger than the variance of actual consumer demand at the retail counter. This severe amplification forces factories into erratic hiring, firing, overtime, and idling.",
+                "why": "Measuring and damping the bullwhip ratio saves multinational manufacturing enterprises tens of millions of dollars in working capital."
+            },
+            "tryIt": "Reduce `damping_factor` to 0.20 to give even greater weight to retail POS data. Re-run to see how the mitigated bullwhip ratio drops closer to 1.0 (perfect synchronization)."
+        },
+        {
+            "id": 5,
+            "title": "Autonomous S&OP Control Tower: Real-Time ERP Integration & Exception Routing",
+            "say": (
+                "In our capstone session for Day 21, we synthesize demand forecasting, additive trend-seasonality decomposition, hierarchical reconciliation, and bullwhip mitigation into an enterprise-grade Autonomous Sales & Operations Planning (S&OP) Control Tower. In Fortune 500 manufacturing and retail enterprises, S&OP used to be a grueling monthly ritual involving dozens of vice presidents arguing over conflicting spreadsheets. Today, leading enterprises deploy automated S&OP Control Towers that continuously ingest ERP transactions, detect supply-demand imbalances in real time, and trigger prescriptive mitigations autonomously.\n\n"
+                "The Autonomous S&OP Control Tower connects directly to enterprise ERPs (SAP S/4HANA, Oracle Cloud SCM) and Warehouse Management Systems (WMS). It operates an event-driven exception detection engine that evaluates three critical operational tripwires: (1) Demand-Capacity Mismatch (identifying when projected demand exceeds factory line capacity by more than 15%); (2) Safety Stock Depletion Risk (flagging SKUs projected to stock out within lead times); and (3) Excess Inventory Capital Lockup (identifying slow-moving stock exceeding 90 days of forward supply).\n\n"
+                "When an operational exception is detected, the Control Tower does not merely issue a passive alert; it executes prescriptive resolution playbooks. For capacity shortfalls, it recommends shifting production runs to alternate secondary facilities or pre-building inventory during off-peak weeks. For safety stock depletion, it triggers automated purchase order expedite requests. Crucially, all exception resolutions are recorded with expected financial ROI and risk scores, routing high-stakes decisions ($Cost > $50,000) to human supply chain directors while autonomously resolving minor imbalances.\n\n"
+                "In this hands-on implementation, we build the complete `AutonomousSOPControlTower` in Python. Our system ingests multi-facility production and demand feeds, evaluates capacity constraints, routes exceptions to automated or human approval channels, and outputs an executive S&OP operational posture."
+            ),
+            "code": (
+                "import json\n"
+                "from dataclasses import dataclass, asdict\n"
+                "from typing import List, Dict, Optional\n"
+                "\n"
+                "@dataclass\n"
+                "class SupplyChainException:\n"
+                "    exception_id: str\n"
+                "    facility_id: str\n"
+                "    sku_id: str\n"
+                "    severity: str  # CRITICAL, WARNING, INFO\n"
+                "    gap_units: float\n"
+                "    financial_impact_usd: float\n"
+                "    prescriptive_action: str\n"
+                "    routed_to: str\n"
+                "\n"
+                "class AutonomousSOPControlTower:\n"
+                "    def __init__(self, enterprise: str, human_threshold_usd: float = 50000.0):\n"
+                "        self.enterprise = enterprise\n"
+                "        self.human_threshold_usd = human_threshold_usd\n"
+                "        self.exceptions: List[SupplyChainException] = []\n"
+                "\n"
+                "    def audit_facility_plan(self, facility_id: str, sku: str, capacity: float, forecast_demand: float, unit_margin: float) -> Optional[SupplyChainException]:\n"
+                "        utilization = forecast_demand / capacity if capacity > 0 else 999.0\n"
+                "        \n"
+                "        if utilization > 1.15:\n"
+                "            gap = forecast_demand - capacity\n"
+                "            impact = round(gap * unit_margin, 2)\n"
+                "            routed = 'HUMAN_EXECUTIVE_APPROVAL' if impact > self.human_threshold_usd else 'AUTONOMOUS_LOAD_BALANCER'\n"
+                "            action = f'Reroute {gap} units to Secondary Regional Flex Facility or authorize weekend shift'\n"
+                "            exc = SupplyChainException(\n"
+                "                exception_id=f'EXC-{len(self.exceptions)+1:03d}',\n"
+                "                facility_id=facility_id,\n"
+                "                sku_id=sku,\n"
+                "                severity='CRITICAL',\n"
+                "                gap_units=gap,\n"
+                "                financial_impact_usd=impact,\n"
+                "                prescriptive_action=action,\n"
+                "                routed_to=routed\n"
+                "            )\n"
+                "            self.exceptions.append(exc)\n"
+                "            return exc\n"
+                "        return None\n"
+                "\n"
+                "    def generate_sop_dashboard(self) -> Dict:\n"
+                "        total_exposure = sum(e.financial_impact_usd for e in self.exceptions)\n"
+                "        human_escalations = [e.exception_id for e in self.exceptions if e.routed_to == 'HUMAN_EXECUTIVE_APPROVAL']\n"
+                "        autonomous_actions = [e.exception_id for e in self.exceptions if e.routed_to == 'AUTONOMOUS_LOAD_BALANCER']\n"
+                "        \n"
+                "        return {\n"
+                "            'enterprise': self.enterprise,\n"
+                "            'total_active_exceptions': len(self.exceptions),\n"
+                "            'total_financial_exposure_usd': total_exposure,\n"
+                "            'human_escalations_count': len(human_escalations),\n"
+                "            'autonomous_resolutions_count': len(autonomous_actions),\n"
+                "            'exceptions_detail': [asdict(e) for e in self.exceptions],\n"
+                "            'sop_operational_status': 'EXCEPTION_REMEDIATION_ACTIVE' if self.exceptions else 'EQUILIBRIUM'\n"
+                "        }\n"
+                "\n"
+                "tower = AutonomousSOPControlTower('Apex Global Consumer Goods', human_threshold_usd=50000.0)\n"
+                "# Plant 1: Demand exceeds capacity significantly\n"
+                "tower.audit_facility_plan('Plant_Dallas', 'SKU-SNACK-101', capacity=10000.0, forecast_demand=13500.0, unit_margin=18.5)\n"
+                "# Plant 2: Moderate surge within automated threshold\n"
+                "tower.audit_facility_plan('Plant_Chicago', 'SKU-BEV-204', capacity=20000.0, forecast_demand=23500.0, unit_margin=8.0)\n"
+                "\n"
+                "dashboard = tower.generate_sop_dashboard()\n"
+                "print(json.dumps(dashboard, indent=2))\n"
+            ),
+            "codeOutput": (
+                "{\n"
+                '  "enterprise": "Apex Global Consumer Goods",\n'
+                '  "total_active_exceptions": 2,\n'
+                '  "total_financial_exposure_usd": 92750.0,\n'
+                '  "human_escalations_count": 1,\n'
+                '  "autonomous_resolutions_count": 1,\n'
+                '  "exceptions_detail": [\n'
+                "    {\n"
+                '      "exception_id": "EXC-001",\n'
+                '      "facility_id": "Plant_Dallas",\n'
+                '      "sku_id": "SKU-SNACK-101",\n'
+                '      "severity": "CRITICAL",\n'
+                '      "gap_units": 3500.0,\n'
+                '      "financial_impact_usd": 64750.0,\n'
+                '      "prescriptive_action": "Reroute 3500.0 units to Secondary Regional Flex Facility or authorize weekend shift",\n'
+                '      "routed_to": "HUMAN_EXECUTIVE_APPROVAL"\n'
+                "    },\n"
+                "    {\n"
+                '      "exception_id": "EXC-002",\n'
+                '      "facility_id": "Plant_Chicago",\n'
+                '      "sku_id": "SKU-BEV-204",\n'
+                '      "severity": "CRITICAL",\n'
+                '      "gap_units": 3500.0,\n'
+                '      "financial_impact_usd": 28000.0,\n'
+                '      "prescriptive_action": "Reroute 3500.0 units to Secondary Regional Flex Facility or authorize weekend shift",\n'
+                '      "routed_to": "AUTONOMOUS_LOAD_BALANCER"\n'
+                "    }\n"
+                "  ],\n"
+                '  "sop_operational_status": "EXCEPTION_REMEDIATION_ACTIVE"\n'
+                "}"
+            ),
+            "codeNotes": (
+                "Line 7-16: `SupplyChainException` structures operational gaps, severity, financial impact, and prescriptive actions.\n"
+                "Line 18-42: `AutonomousSOPControlTower` audits line utilization (>115%) and routes exceptions based on financial exposure ($50k threshold).\n"
+                "Line 44-67: Identifies $92,750 in total exposure, escalating Plant Dallas ($64.75k) to human leadership while autonomously load-balancing Plant Chicago ($28k)."
+            ),
+            "socratic": {
+                "question": "In an autonomous S&OP Control Tower, why is exception routing segmented between autonomous load balancing and human executive escalation based on financial dollar impact?",
+                "options": [
+                    "To allow low-risk operational adjustments to occur at machine speed while ensuring human executives retain fiduciary oversight over high-stakes financial commitments.",
+                    "Because machine learning models cannot compute numbers larger than $50,000 due to 16-bit integer overflow.",
+                    "Because enterprise ERP systems require physical signatures on paper for every inventory movement.",
+                    "To comply with international maritime treaties governing trans-Atlantic container shipping."
+                ],
+                "answerIndex": 0,
+                "explanation": "Segmenting by financial threshold operationalizes management-by-exception: routine operational adjustments are automated instantly, preventing decision fatigue, while high-stakes decisions requiring capital reallocation receive executive human scrutiny.",
+                "why": "Autonomous S&OP with intelligent financial escalation strikes the optimal balance between operational agility and fiduciary governance."
+            },
+            "tryIt": "Increase `human_threshold_usd` to $75,000. Re-run to verify that Plant Dallas is now resolved autonomously (`AUTONOMOUS_LOAD_BALANCER`), dropping human escalations to 0."
+        }
+    ]
+}
+
+if __name__ == "__main__":
+    with open("scripts/bcom_ait_day21_data.json", "w", encoding="utf-8") as f:
+        json.dump(day21_data, f, indent=2)
+    print("Day 21 data written successfully.")

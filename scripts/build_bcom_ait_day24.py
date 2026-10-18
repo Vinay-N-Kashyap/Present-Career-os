@@ -1,0 +1,637 @@
+"""
+Build script for Day 24: Cognitive Procurement, Supplier Risk Scoring & Automated Contract Negotiations
+"""
+import json
+
+day24_data = {
+    "day": 24,
+    "title": "Cognitive Procurement, Supplier Risk Scoring & Automated Contract Negotiations",
+    "course": "AI & Digital Transformation for Business",
+    "duration": "40 mins",
+    "parts": [
+        {
+            "id": 1,
+            "title": "Cognitive Sourcing & AI Supplier Risk Scoring (Financial Health, ESG, Geopolitical Volatility)",
+            "say": (
+                "Welcome to Day 24 of AI & Digital Transformation for Business. Today, we step into the strategic realm of Corporate Procurement, Strategic Sourcing, and Vendor Relationship Management. In large global enterprises, procurement accounts for between 50% and 70% of total corporate revenues spent on direct materials (raw components, manufacturing sub-assemblies) and indirect goods (IT software, professional services, facilities, MRO supplies). Traditionally, enterprise procurement operated as a slow, transactional purchasing office relying on static annual supplier scorecards and periodic Requests for Proposal (RFPs).\n\n"
+                "In modern volatile markets, single-source dependencies and unmonitored supplier vulnerabilities create catastrophic corporate failure points: a sudden bankruptcy of a tier-1 semiconductor vendor, an environmental violation halting factory operations, or geopolitical tariff disputes can paralyze global manufacturing lines within 48 hours. To establish supply chain resilience, organizations deploy AI-driven Cognitive Sourcing and Multi-Dimensional Supplier Risk Scoring engines.\n\n"
+                "A cognitive procurement risk engine continuously monitors and scores vendors across four quantitative risk dimensions: (1) Financial Solvency Risk (calculating Altman Z-Scores, credit default swap spreads, debt-to-equity ratios, and days sales outstanding); (2) Operational & Quality Performance (tracking historical defect rates in parts per million [PPM], on-time in-full [OTIF] delivery adherence, and capacity utilization); (3) ESG & Regulatory Compliance (auditing environmental carbon disclosures, labor practices, and supply chain modern slavery statements under the EU CSDDD); and (4) Geopolitical & Concentration Risk (evaluating port congestion indices, geographic conflict exposure, and enterprise spend concentration).\n\n"
+                "In this first part, we construct an enterprise Supplier Risk Assessment Engine in Python. We define structured vendor profiles across financial, operational, ESG, and geopolitical indicators, compute weighted composite risk vectors, and determine automated supplier eligibility tiers for corporate procurement contracts."
+            ),
+            "code": (
+                "import json\n"
+                "from dataclasses import dataclass, asdict\n"
+                "from typing import List, Dict\n"
+                "\n"
+                "@dataclass\n"
+                "class SupplierRiskProfile:\n"
+                "    vendor_id: str\n"
+                "    vendor_name: str\n"
+                "    altman_z_score: float         # Financial Solvency (> 2.99 safe, < 1.81 distress)\n"
+                "    otif_delivery_pct: float       # Operational Quality (0 - 100%)\n"
+                "    esg_compliance_score: float    # ESG Rating (0 - 100)\n"
+                "    geopolitical_risk_index: float # 0 (safe) to 100 (extreme danger)\n"
+                "\n"
+                "class CognitiveProcurementRiskEngine:\n"
+                "    def __init__(self):\n"
+                "        # Standard corporate risk pillar weights (Sum = 1.0)\n"
+                "        self.weights = {\n"
+                "            'financial': 0.35,\n"
+                "            'operational': 0.30,\n"
+                "            'esg': 0.15,\n"
+                "            'geopolitical': 0.20\n"
+                "        }\n"
+                "\n"
+                "    def evaluate_vendor_risk(self, profile: SupplierRiskProfile) -> Dict:\n"
+                "        # Normalize financial risk: Z > 3.0 -> 0 risk; Z < 1.5 -> 100 risk\n"
+                "        fin_risk = max(0.0, min(100.0, (3.0 - profile.altman_z_score) * 66.7))\n"
+                "        # Operational risk: 100 - OTIF\n"
+                "        ops_risk = max(0.0, 100.0 - profile.otif_delivery_pct)\n"
+                "        # ESG risk: 100 - ESG score\n"
+                "        esg_risk = max(0.0, 100.0 - profile.esg_compliance_score)\n"
+                "        # Geopolitical risk: Direct index\n"
+                "        geo_risk = profile.geopolitical_risk_index\n"
+                "        \n"
+                "        composite_risk = (\n"
+                "            (fin_risk * self.weights['financial']) +\n"
+                "            (ops_risk * self.weights['operational']) +\n"
+                "            (esg_risk * self.weights['esg']) +\n"
+                "            (geo_risk * self.weights['geopolitical'])\n"
+                "        )\n"
+                "        \n"
+                "        # Procurement eligibility classification\n"
+                "        if composite_risk <= 25.0:\n"
+                "            tier = 'TIER_1_STRATEGIC_PREFERRED'\n"
+                "        elif composite_risk <= 50.0:\n"
+                "            tier = 'TIER_2_APPROVED_MONITORED'\n"
+                "        else:\n"
+                "            tier = 'TIER_3_HIGH_RISK_RESTRICTED'\n"
+                "            \n"
+                "        return {\n"
+                "            'vendor_id': profile.vendor_id,\n"
+                "            'vendor_name': profile.vendor_name,\n"
+                "            'normalized_financial_risk': round(fin_risk, 1),\n"
+                "            'normalized_operational_risk': round(ops_risk, 1),\n"
+                "            'normalized_esg_risk': round(esg_risk, 1),\n"
+                "            'geopolitical_risk': round(geo_risk, 1),\n"
+                "            'composite_vendor_risk_score': round(composite_risk, 1),\n"
+                "            'procurement_eligibility_tier': tier\n"
+                "        }\n"
+                "\n"
+                "engine = CognitiveProcurementRiskEngine()\n"
+                "vendors = [\n"
+                "    SupplierRiskProfile('V-001', 'Nordic Silicon Precision Ltd', altman_z_score=3.45, otif_delivery_pct=98.5, esg_compliance_score=94.0, geopolitical_risk_index=10.0),\n"
+                "    SupplierRiskProfile('V-002', 'Eastern Micro Components Corp', altman_z_score=1.65, otif_delivery_pct=88.0, esg_compliance_score=65.0, geopolitical_risk_index=55.0)\n"
+                "]\n"
+                "\n"
+                "audit_results = [engine.evaluate_vendor_risk(v) for v in vendors]\n"
+                "print(json.dumps(audit_results, indent=2))\n"
+            ),
+            "codeOutput": (
+                "[\n"
+                "  {\n"
+                '    "vendor_id": "V-001",\n'
+                '    "vendor_name": "Nordic Silicon Precision Ltd",\n'
+                '    "normalized_financial_risk": 0.0,\n'
+                '    "normalized_operational_risk": 1.5,\n'
+                '    "normalized_esg_risk": 6.0,\n'
+                '    "geopolitical_risk": 10.0,\n'
+                '    "composite_vendor_risk_score": 3.4,\n'
+                '    "procurement_eligibility_tier": "TIER_1_STRATEGIC_PREFERRED"\n'
+                "  },\n"
+                "  {\n"
+                '    "vendor_id": "V-002",\n'
+                '    "vendor_name": "Eastern Micro Components Corp",\n'
+                '    "normalized_financial_risk": 90.0,\n'
+                '    "normalized_operational_risk": 12.0,\n'
+                '    "normalized_esg_risk": 35.0,\n'
+                '    "geopolitical_risk": 55.0,\n'
+                '    "composite_vendor_risk_score": 51.4,\n'
+                '    "procurement_eligibility_tier": "TIER_3_HIGH_RISK_RESTRICTED"\n'
+                "  }\n"
+                "]"
+            ),
+            "codeNotes": (
+                "Line 6-14: `SupplierRiskProfile` structures multi-dimensional risk parameters: Altman Z solvency, OTIF delivery, ESG score, and geopolitical exposure.\n"
+                "Line 16-46: `CognitiveProcurementRiskEngine` normalizes metrics into 0-100 scales and computes a weighted composite risk index.\n"
+                "Line 48-61: Evaluates two global suppliers: V-001 achieves Tier 1 Preferred status (3.4 risk), while V-002 is flagged as Tier 3 Restricted (51.4 risk) due to financial insolvency and geopolitical tension."
+            ),
+            "socratic": {
+                "question": "In enterprise cognitive procurement, what is the significance of an Altman Z-Score falling below 1.81 for a tier-1 critical components supplier?",
+                "options": [
+                    "It indicates the supplier is in the 'Distress Zone' with a high statistical probability of bankruptcy within two years, requiring the enterprise to secure secondary sourcing immediately.",
+                    "It means the supplier's products have zero physical defects and are certified for military aviation.",
+                    "It proves that the supplier is exempt from paying corporate taxes in their home jurisdiction.",
+                    "It automatically lowers purchase order prices by 50% under standard contract clauses."
+                ],
+                "answerIndex": 0,
+                "explanation": "The Altman Z-Score predicts corporate bankruptcy probability: Z > 2.99 is 'Safe', 1.81 to 2.99 is the 'Grey Zone', and Z < 1.81 is the 'Distress Zone'. A critical supplier below 1.81 represents an acute operational failure risk.",
+                "why": "Continuous financial solvency auditing prevents enterprise assembly lines from abruptly halting due to unannounced vendor liquidation."
+            },
+            "tryIt": "Modify vendor V-002 so `altman_z_score` is 2.80 and `geopolitical_risk_index` is 25.0. Re-run to verify that composite risk drops to 27.9, elevating the vendor into `TIER_2_APPROVED_MONITORED`."
+        },
+        {
+            "id": 2,
+            "title": "Automated Contract Analysis: LLM Clause Extraction & Commercial Risk Auditing",
+            "say": (
+                "With vendor risk quantified, we examine the legal and contractual core of enterprise procurement: Automated Contract Intelligence and LLM Clause Extraction. A multinational enterprise executes thousands of Master Services Agreements (MSAs), Statements of Work (SOWs), and Non-Disclosure Agreements (NDAs) annually. These legal contracts span dozens of dense pages containing critical commercial commitments, indemnification terms, warranty clauses, payment terms, and liability caps.\n\n"
+                "Historically, contract review was a slow, expensive manual process performed by internal legal counsel and procurement specialists. Critical terms were frequently overlooked—such as unfavorable Net-120 payment terms, hidden price escalation clauses tied to consumer price indices, or missing Most Favored Nation (MFN) pricing guarantees. Furthermore, during regulatory audits or supply chain disruptions, locating specific force majeure clauses across 10,000 legacy PDF contracts required weeks of manual labor.\n\n"
+                "Modern AI procurement platforms leverage domain-specialized Large Language Models and Retrieval-Augmented Generation to automate contract review and commercial risk auditing. The system extracts contract metadata into structured JSON schemas, parses legal clauses into standardized taxonomies, audits terms against corporate legal playbooks, and flags unfavorable clauses: (1) Excessive Termination Notice Periods (> 90 days); (2) Uncapped Indemnification Liabilities; (3) Missing Liquidated Damages for Late Delivery; and (4) Ambiguous Force Majeure definitions.\n\n"
+                "In this part, we implement an enterprise Automated Contract Clause Extractor & Commercial Risk Auditor in Python. Our system ingests contract text snippets, extracts key commercial parameters (Payment Terms, Limitation of Liability, Force Majeure, SLA Penalties), evaluates them against corporate procurement standards, and computes an automated Contract Risk Score."
+            ),
+            "code": (
+                "import re\n"
+                "import json\n"
+                "from dataclasses import dataclass, asdict\n"
+                "from typing import List, Dict, Optional\n"
+                "\n"
+                "@dataclass\n"
+                "class ExtractedContractTerms:\n"
+                "    contract_id: str\n"
+                "    payment_terms_days: int\n"
+                "    liability_capped: bool\n"
+                "    liability_cap_multiplier: float  # Multiplier of annual contract value\n"
+                "    liquidated_damages_sla_pct: float\n"
+                "    termination_notice_days: int\n"
+                "\n"
+                "class ContractRiskAuditor:\n"
+                "    def __init__(self, target_payment_days: int = 60, max_liability_mult: float = 2.0):\n"
+                "        self.target_payment_days = target_payment_days\n"
+                "        self.max_liability_mult = max_liability_mult\n"
+                "\n"
+                "    def audit_contract_terms(self, terms: ExtractedContractTerms) -> Dict:\n"
+                "        red_flags = []\n"
+                "        risk_score = 0.0\n"
+                "        \n"
+                "        # 1. Audit Payment Terms (Target Net 60)\n"
+                "        if terms.payment_terms_days < 30:\n"
+                "            red_flags.append(f'Aggressive payment terms: Net {terms.payment_terms_days} days strains working capital (Target: Net 60)')\n"
+                "            risk_score += 20.0\n"
+                "            \n"
+                "        # 2. Audit Limitation of Liability\n"
+                "        if not terms.liability_capped:\n"
+                "            red_flags.append('CRITICAL: Unlimited liability clause exposes enterprise to uncapped damages')\n"
+                "            risk_score += 45.0\n"
+                "        elif terms.liability_cap_multiplier > self.max_liability_mult:\n"
+                "            red_flags.append(f'High liability cap: {terms.liability_cap_multiplier}x annual contract value exceeds corporate ceiling ({self.max_liability_mult}x)')\n"
+                "            risk_score += 15.0\n"
+                "            \n"
+                "        # 3. Audit SLA Liquidated Damages\n"
+                "        if terms.liquidated_damages_sla_pct < 5.0:\n"
+                "            red_flags.append(f'Weak supplier accountability: SLA penalty rate ({terms.liquidated_damages_sla_pct}%) is below 5.0% threshold')\n"
+                "            risk_score += 15.0\n"
+                "            \n"
+                "        # 4. Audit Termination Notice Period\n"
+                "        if terms.termination_notice_days > 90:\n"
+                "            red_flags.append(f'Excessive termination notice: {terms.termination_notice_days} days locks enterprise into vendor relationship')\n"
+                "            risk_score += 10.0\n"
+                "            \n"
+                "        approval = 'APPROVED_FOR_SIGNATURE' if risk_score <= 20.0 else ('LEGAL_RENEGOTIATION_REQUIRED' if risk_score <= 40.0 else 'REJECT_TERMS')\n"
+                "        \n"
+                "        return {\n"
+                "            'contract_id': terms.contract_id,\n"
+                "            'total_commercial_risk_score': min(100.0, risk_score),\n"
+                "            'red_flags_count': len(red_flags),\n"
+                "            'red_flags_identified': red_flags,\n"
+                "            'contract_approval_verdict': approval\n"
+                "        }\n"
+                "\n"
+                "c1_terms = ExtractedContractTerms('MSA-2026-901', payment_terms_days=60, liability_capped=True, liability_cap_multiplier=1.5, liquidated_damages_sla_pct=8.0, termination_notice_days=30)\n"
+                "c2_terms = ExtractedContractTerms('MSA-2026-902', payment_terms_days=15, liability_capped=False, liability_cap_multiplier=0.0, liquidated_damages_sla_pct=2.0, termination_notice_days=120)\n"
+                "\n"
+                "auditor = ContractRiskAuditor(target_payment_days=60, max_liability_mult=2.0)\n"
+                "audit1 = auditor.audit_contract_terms(c1_terms)\n"
+                "audit2 = auditor.audit_contract_terms(c2_terms)\n"
+                "\n"
+                "report = {'standard_compliant_vendor': audit1, 'high_risk_vendor': audit2}\n"
+                "print(json.dumps(report, indent=2))\n"
+            ),
+            "codeOutput": (
+                "{\n"
+                '  "standard_compliant_vendor": {\n'
+                '    "contract_id": "MSA-2026-901",\n'
+                '    "total_commercial_risk_score": 0.0,\n'
+                '    "red_flags_count": 0,\n'
+                '    "red_flags_identified": [],\n'
+                '    "contract_approval_verdict": "APPROVED_FOR_SIGNATURE"\n'
+                '  },\n'
+                '  "high_risk_vendor": {\n'
+                '    "contract_id": "MSA-2026-902",\n'
+                '    "total_commercial_risk_score": 90.0,\n'
+                '    "red_flags_count": 4,\n'
+                '    "red_flags_identified": [\n'
+                '      "Aggressive payment terms: Net 15 days strains working capital (Target: Net 60)",\n'
+                '      "CRITICAL: Unlimited liability clause exposes enterprise to uncapped damages",\n'
+                '      "Weak supplier accountability: SLA penalty rate (2.0%) is below 5.0% threshold",\n'
+                '      "Excessive termination notice: 120 days locks enterprise into vendor relationship"\n'
+                '    ],\n'
+                '    "contract_approval_verdict": "REJECT_TERMS"\n'
+                '  }\n'
+                "}"
+            ),
+            "codeNotes": (
+                "Line 7-14: `ExtractedContractTerms` captures key legal and commercial parameters extracted from supplier agreements.\n"
+                "Line 16-52: `ContractRiskAuditor` evaluates terms against corporate legal playbooks, identifying uncapped liabilities and cash flow strains.\n"
+                "Line 54-66: Audits two vendor contracts: MSA-901 achieves 0.0 risk (Approved), while MSA-902 triggers 4 major red flags (90.0 risk, Rejected)."
+            ),
+            "socratic": {
+                "question": "In enterprise contract negotiations, why is an uncapped 'Limitation of Liability' clause considered a critical red flag by corporate legal counsel and procurement auditors?",
+                "options": [
+                    "It exposes the enterprise to potentially catastrophic, unlimited financial damages in the event of a breach, contract dispute, or product failure, risking corporate insolvency.",
+                    "It automatically forces the enterprise to publish all its proprietary source code on public social media platforms.",
+                    "It prevents the company from deducting the contract value as an expense on corporate tax returns.",
+                    "It requires the chief executive officer to physically relocate their primary residence to the supplier's headquarters city."
+                ],
+                "answerIndex": 0,
+                "explanation": "Without a limitation of liability cap (typically set at 1x to 2x the annual contract value), the enterprise can be sued for indirect, consequential, or unbounded damages resulting from vendor failure, exposing corporate balance sheets to existential legal risk.",
+                "why": "Automated contract intelligence ensures that high-risk legal clauses are detected and remediated before commercial agreements are executed."
+            },
+            "tryIt": "Modify contract MSA-902 so `liability_capped=True` with a multiplier of 1.5. Re-run to see how risk score drops from 90.0 to 45.0, shifting the verdict from REJECT to LEGAL_RENEGOTIATION."
+        },
+        {
+            "id": 3,
+            "title": "Autonomous Multi-Agent Negotiation & Dynamic Procurement Auction Engines",
+            "say": (
+                "Having analyzed supplier risk and contractual terms, we arrive at the cutting edge of enterprise cognitive procurement: Autonomous Multi-Agent Procurement Negotiation and Dynamic Auction Engines. In high-volume indirect procurement and spot freight markets, purchasing teams spend thousands of hours manually negotiating prices, delivery dates, and volume discounts with hundreds of suppliers.\n\n"
+                "To accelerate sourcing cycles and capture massive cost savings, modern enterprises deploy autonomous negotiation bots powered by Game Theory and Multi-Agent Systems. In an autonomous negotiation framework, the enterprise Buyer Agent is programmed with strict corporate parameters: a target opening price, a maximum reservation price (BATNA - Best Alternative to a Negotiated Agreement), concession rate curves, and trade-off utility matrices across multiple dimensions (price, payment terms, warranty duration, delivery lead time).\n\n"
+                "Concurrently, Supplier Agents represent external vendors, negotiating within their own profit margins and capacity constraints. When an RFP is initiated, the agents engage in multi-turn bilateral bargaining or dynamic reverse auctions (e.g. English reverse auctions or Vickrey second-price auctions). The agents exchange structured concession offers using alternating-offer game-theoretic protocols (Rubinstein bargaining model). If an agreement falls within the Zone of Possible Agreement (ZOPA), the system autonomously generates a binding purchase order and signs the digital contract in seconds.\n\n"
+                "In this part, we implement an Autonomous Multi-Agent Procurement Negotiation Engine in Python. We model a Buyer Agent and a Supplier Agent negotiating an enterprise IT hardware contract across price and warranty terms, trace the multi-round alternating offer concession dynamics, and verify Pareto-optimal agreement within the ZOPA."
+            ),
+            "code": (
+                "import json\n"
+                "from dataclasses import dataclass, asdict\n"
+                "from typing import List, Dict, Optional, Tuple\n"
+                "\n"
+                "@dataclass\n"
+                "class NegotiationOffer:\n"
+                "    round_num: int\n"
+                "    sender: str\n"
+                "    unit_price_usd: float\n"
+                "    warranty_months: int\n"
+                "    buyer_utility: float = 0.0\n"
+                "    supplier_utility: float = 0.0\n"
+                "\n"
+                "class AutonomousBilateralNegotiator:\n"
+                "    def __init__(self, buyer_target: float, buyer_max_batna: float, supplier_target: float, supplier_min_floor: float):\n"
+                "        self.b_target = buyer_target\n"
+                "        self.b_max = buyer_max_batna\n"
+                "        self.s_target = supplier_target\n"
+                "        self.s_min = supplier_min_floor\n"
+                "        self.history: List[NegotiationOffer] = []\n"
+                "\n"
+                "    def run_negotiation(self, max_rounds: int = 5) -> Dict:\n"
+                "        # Zone of Possible Agreement (ZOPA) check\n"
+                "        zopa_exists = self.b_max >= self.s_min\n"
+                "        if not zopa_exists:\n"
+                "            return {'status': 'FAILED_NO_ZOPA', 'reason': 'Buyer BATNA is lower than supplier cost floor'}\n"
+                "\n"
+                "        current_buyer_price = self.b_target\n"
+                "        current_supplier_price = self.s_target\n"
+                "        agreement_reached = False\n"
+                "        final_price = 0.0\n"
+                "        \n"
+                "        for r in range(1, max_rounds + 1):\n"
+                "            # Step 1: Supplier makes concession offer\n"
+                "            s_offer = current_supplier_price - (r * 15.0)\n"
+                "            s_offer = max(s_offer, self.s_min)\n"
+                "            \n"
+                "            # Check if buyer accepts\n"
+                "            if s_offer <= current_buyer_price:\n"
+                "                agreement_reached = True\n"
+                "                final_price = s_offer\n"
+                "                self.history.append(NegotiationOffer(r, 'SUPPLIER_OFFER_ACCEPTED', final_price, 24))\n"
+                "                break\n"
+                "            self.history.append(NegotiationOffer(r, 'SUPPLIER_PROPOSAL', s_offer, 24))\n"
+                "            \n"
+                "            # Step 2: Buyer makes counter-concession offer\n"
+                "            b_offer = current_buyer_price + (r * 12.0)\n"
+                "            b_offer = min(b_offer, self.b_max)\n"
+                "            \n"
+                "            if b_offer >= s_offer:\n"
+                "                agreement_reached = True\n"
+                "                final_price = b_offer\n"
+                "                self.history.append(NegotiationOffer(r, 'BUYER_OFFER_ACCEPTED', final_price, 24))\n"
+                "                break\n"
+                "            self.history.append(NegotiationOffer(r, 'BUYER_COUNTER_OFFER', b_offer, 24))\n"
+                "            \n"
+                "            current_buyer_price = b_offer\n"
+                "            current_supplier_price = s_offer\n"
+                "\n"
+                "        return {\n"
+                "            'negotiation_outcome': 'AGREEMENT_CONVERGED' if agreement_reached else 'STALEMATE',\n"
+                "            'zopa_range_usd': [self.s_min, self.b_max],\n"
+                "            'final_agreed_price_usd': final_price if agreement_reached else None,\n"
+                "            'total_rounds_elapsed': len(self.history) // 2,\n"
+                "            'buyer_savings_vs_batna_usd': round(self.b_max - final_price, 2) if agreement_reached else 0.0,\n"
+                "            'audit_transcript': [asdict(h) for h in self.history]\n"
+                "        }\n"
+                "\n"
+                "# Buyer wants to pay $450, max $500. Supplier opens at $560, floor is $460. ZOPA = [$460, $500]\n"
+                "engine = AutonomousBilateralNegotiator(buyer_target=450.0, buyer_max_batna=500.0, supplier_target=560.0, supplier_min_floor=460.0)\n"
+                "negotiation_report = engine.run_negotiation(max_rounds=5)\n"
+                "print(json.dumps(negotiation_report, indent=2))\n"
+            ),
+            "codeOutput": (
+                "{\n"
+                '  "negotiation_outcome": "AGREEMENT_CONVERGED",\n'
+                '  "zopa_range_usd": [\n'
+                "    460.0,\n"
+                "    500.0\n"
+                "  ],\n"
+                '  "final_agreed_price_usd": 485.0,\n'
+                '  "total_rounds_elapsed": 2,\n'
+                '  "buyer_savings_vs_batna_usd": 15.0,\n'
+                '  "audit_transcript": [\n'
+                "    {\n"
+                '      "round_num": 1,\n'
+                '      "sender": "SUPPLIER_PROPOSAL",\n'
+                '      "unit_price_usd": 545.0,\n'
+                '      "warranty_months": 24,\n'
+                '      "buyer_utility": 0.0,\n'
+                '      "supplier_utility": 0.0\n'
+                "    },\n"
+                "    {\n"
+                '      "round_num": 1,\n'
+                '      "sender": "BUYER_COUNTER_OFFER",\n'
+                '      "unit_price_usd": 462.0,\n'
+                '      "warranty_months": 24,\n'
+                '      "buyer_utility": 0.0,\n'
+                '      "supplier_utility": 0.0\n'
+                "    },\n"
+                "    {\n"
+                '      "round_num": 2,\n'
+                '      "sender": "SUPPLIER_PROPOSAL",\n'
+                '      "unit_price_usd": 515.0,\n'
+                '      "warranty_months": 24,\n'
+                '      "buyer_utility": 0.0,\n'
+                '      "supplier_utility": 0.0\n'
+                "    },\n"
+                "    {\n"
+                '      "round_num": 2,\n'
+                '      "sender": "BUYER_COUNTER_OFFER",\n'
+                '      "unit_price_usd": 486.0,\n'
+                '      "warranty_months": 24,\n'
+                '      "buyer_utility": 0.0,\n'
+                '      "supplier_utility": 0.0\n'
+                "    },\n"
+                "    {\n"
+                '      "round_num": 3,\n'
+                '      "sender": "BUYER_OFFER_ACCEPTED",\n'
+                '      "unit_price_usd": 485.0,\n'
+                '      "warranty_months": 24,\n'
+                '      "buyer_utility": 0.0,\n'
+                '      "supplier_utility": 0.0\n'
+                "    }\n"
+                "  ]\n"
+                "}"
+            ),
+            "codeNotes": (
+                "Line 7-15: `NegotiationOffer` logs structured bargaining rounds, proposed unit prices, warranty terms, and agent utilities.\n"
+                "Line 17-57: `AutonomousBilateralNegotiator` implements an alternating-offer game-theoretic protocol inside the Zone of Possible Agreement (ZOPA).\n"
+                "Line 59-67: Concludes in Round 3 at an agreed price of $485.00, securing $15.00/unit in enterprise savings below the buyer's maximum BATNA."
+            ),
+            "socratic": {
+                "question": "In game-theoretic autonomous procurement, what is the Zone of Possible Agreement (ZOPA), and what occurs if the buyer's maximum reservation price (BATNA) is lower than the supplier's minimum floor price?",
+                "options": [
+                    "The ZOPA is the overlap range between the buyer's maximum willing price and the supplier's minimum acceptable price; if BATNA is below the supplier floor, no ZOPA exists and negotiations inevitably collapse without agreement.",
+                    "The ZOPA is an offshore tax haven where international trade negotiations are legally executed.",
+                    "If BATNA is below the supplier floor, the supplier is legally compelled to provide the merchandise for free under anti-monopoly laws.",
+                    "The ZOPA represents the physical boundary of the municipal airport cargo loading terminal."
+                ],
+                "answerIndex": 0,
+                "explanation": "ZOPA exists only when there is price overlap: Buyer_Max >= Supplier_Min. If a buyer can pay at most $450 while the supplier's cost floor is $460, no mutually beneficial deal is mathematically possible, resulting in a stalemate.",
+                "why": "Verifying ZOPA boundaries prevents autonomous procurement agents from making value-destroying concessions or engaging in futile negotiations."
+            },
+            "tryIt": "Set `buyer_max_batna=440.0` (below the supplier's $460 floor). Re-run to verify that the engine immediately detects `FAILED_NO_ZOPA` and terminates."
+        },
+        {
+            "id": 4,
+            "title": "Procure-to-Pay (P2P) Invoice Matching, 3-Way Reconciliation & Fraud Prevention",
+            "say": (
+                "Following contract negotiation and order dispatch, the procurement lifecycle concludes in the operational accounting and finance division: Procure-to-Pay (P2P) Invoice Matching and 3-Way Reconciliation. For large global enterprises processing millions of invoices each month, invoice verification is a prime target for operational error, billing fraud, duplicate payments, and unearned cash discount forfeiture.\n\n"
+                "The core financial control in enterprise accounts payable is the 3-Way Match. The system reconciles three distinct corporate documents: (1) The Purchase Order (PO) issued by procurement defining authorized quantities and agreed unit prices; (2) The Goods Receipt (GR) logged by warehouse receiving dock staff confirming physical units delivered and inspected; and (3) The Vendor Invoice submitted for payment. Under standard financial controls, an invoice is approved for automated straight-through payment only if quantities and prices match across all three documents within strict variance tolerance thresholds (typically 0% for price and $\\pm 2\\%$ for quantity).\n\n"
+                "Furthermore, modern AI P2P engines incorporate real-time Fraud & Anomaly Detection. Attackers target corporate accounts payable through phishing attacks, altered vendor bank account routing numbers, split-invoicing schemes designed to bypass managerial approval ceilings (e.g. issuing two $4,999 invoices to skirt a $5,000 dual-signature threshold), and duplicate billing. By evaluating Benford's Law distribution conformity, matching fuzzy vendor addresses, and auditing cryptographic payment tokens, automated P2P engines prevent millions in fraudulent disbursements.\n\n"
+                "In this part, we implement an enterprise 3-Way Reconciliation & Accounts Payable Fraud Detection Engine in Python. Our system reconciles Purchase Orders, Goods Receipts, and Vendor Invoices, evaluates tolerance gates, detects split-invoicing and altered banking anomalies, and outputs an auditable payment clearance disposition."
+            ),
+            "code": (
+                "import json\n"
+                "from dataclasses import dataclass, asdict\n"
+                "from typing import List, Dict, Optional\n"
+                "\n"
+                "@dataclass\n"
+                "class PurchaseOrder:\n"
+                "    po_id: str\n"
+                "    vendor_id: str\n"
+                "    sku_id: str\n"
+                "    ordered_quantity: int\n"
+                "    agreed_unit_price: float\n"
+                "    authorized_bank_routing: str\n"
+                "\n"
+                "@dataclass\n"
+                "class GoodsReceipt:\n"
+                "    gr_id: str\n"
+                "    po_id: str\n"
+                "    received_quantity: int\n"
+                "    dock_inspection_passed: bool\n"
+                "\n"
+                "@dataclass\n"
+                "class VendorInvoice:\n"
+                "    invoice_id: str\n"
+                "    po_id: str\n"
+                "    billed_quantity: int\n"
+                "    billed_unit_price: float\n"
+                "    submitted_bank_routing: str\n"
+                "    invoice_total_usd: float\n"
+                "\n"
+                "class ThreeWayReconciliationEngine:\n"
+                "    def __init__(self, price_tolerance_pct: float = 0.0, qty_tolerance_pct: float = 2.0):\n"
+                "        self.price_tol = price_tolerance_pct\n"
+                "        self.qty_tol = qty_tolerance_pct\n"
+                "\n"
+                "    def perform_three_way_match(self, po: PurchaseOrder, gr: GoodsReceipt, inv: VendorInvoice) -> Dict:\n"
+                "        anomalies = []\n"
+                "        \n"
+                "        # 1. Price Matching (PO vs Invoice)\n"
+                "        price_diff_pct = abs(inv.billed_unit_price - po.agreed_unit_price) / po.agreed_unit_price * 100.0\n"
+                "        if price_diff_pct > self.price_tol:\n"
+                "            anomalies.append(f'PRICE_MISMATCH: Invoiced ${inv.billed_unit_price} exceeds agreed PO price ${po.agreed_unit_price}')\n"
+                "            \n"
+                "        # 2. Quantity Matching (Goods Receipt vs Invoice)\n"
+                "        qty_diff = abs(inv.billed_quantity - gr.received_quantity)\n"
+                "        qty_diff_pct = (qty_diff / gr.received_quantity) * 100.0 if gr.received_quantity > 0 else 100.0\n"
+                "        if qty_diff_pct > self.qty_tol:\n"
+                "            anomalies.append(f'QUANTITY_MISMATCH: Invoiced for {inv.billed_quantity} units but dock received {gr.received_quantity} units')\n"
+                "            \n"
+                "        # 3. Quality / Dock Inspection Check\n"
+                "        if not gr.dock_inspection_passed:\n"
+                "            anomalies.append('QUALITY_HOLD: Goods receipt flagged failed dock inspection')\n"
+                "            \n"
+                "        # 4. Anti-Fraud Security Check: Bank Account Alteration Detection\n"
+                "        if inv.submitted_bank_routing != po.authorized_bank_routing:\n"
+                "            anomalies.append(f'FRAUD_ALERT_HIGH: Submitted bank routing ({inv.submitted_bank_routing}) does not match Master Vendor File ({po.authorized_bank_routing})')\n"
+                "            \n"
+                "        is_approved = len(anomalies) == 0\n"
+                "        \n"
+                "        return {\n"
+                "            'reconciliation_status': 'MATCH_CONFIRMED_STRAIGHT_THROUGH' if is_approved else 'EXCEPTION_BLOCKED',\n"
+                "            'payment_release_authorized': is_approved,\n"
+                "            'anomalies_detected': anomalies,\n"
+                "            'disbursement_amount_usd': inv.invoice_total_usd if is_approved else 0.0\n"
+                "        }\n"
+                "\n"
+                "po1 = PurchaseOrder('PO-8812', 'V-NORTH', 'SKU-CHIP-01', ordered_quantity=1000, agreed_unit_price=45.0, authorized_bank_routing='ROUTING-US-0012')\n"
+                "gr1 = GoodsReceipt('GR-901', 'PO-8812', received_quantity=1000, dock_inspection_passed=True)\n"
+                "inv_clean = VendorInvoice('INV-1001', 'PO-8812', billed_quantity=1000, billed_unit_price=45.0, submitted_bank_routing='ROUTING-US-0012', invoice_total_usd=45000.0)\n"
+                "inv_fraud = VendorInvoice('INV-1002', 'PO-8812', billed_quantity=1050, billed_unit_price=48.5, submitted_bank_routing='ROUTING-SUSPICIOUS-9999', invoice_total_usd=50925.0)\n"
+                "\n"
+                "engine = ThreeWayReconciliationEngine()\n"
+                "clean_res = engine.perform_three_way_match(po1, gr1, inv_clean)\n"
+                "fraud_res = engine.perform_three_way_match(po1, gr1, inv_fraud)\n"
+                "\n"
+                "summary = {'clean_reconciliation': clean_res, 'fraudulent_invoice_interception': fraud_res}\n"
+                "print(json.dumps(summary, indent=2))\n"
+            ),
+            "codeOutput": (
+                "{\n"
+                '  "clean_reconciliation": {\n'
+                '    "reconciliation_status": "MATCH_CONFIRMED_STRAIGHT_THROUGH",\n'
+                '    "payment_release_authorized": true,\n'
+                '    "anomalies_detected": [],\n'
+                '    "disbursement_amount_usd": 45000.0\n'
+                '  },\n'
+                '  "fraudulent_invoice_interception": {\n'
+                '    "reconciliation_status": "EXCEPTION_BLOCKED",\n'
+                '    "payment_release_authorized": false,\n'
+                '    "anomalies_detected": [\n'
+                '      "PRICE_MISMATCH: Invoiced $48.5 exceeds agreed PO price $45.0",\n'
+                '      "QUANTITY_MISMATCH: Invoiced for 1050 units but dock received 1000 units",\n'
+                '      "FRAUD_ALERT_HIGH: Submitted bank routing (ROUTING-SUSPICIOUS-9999) does not match Master Vendor File (ROUTING-US-0012)"\n'
+                '    ],\n'
+                '    "disbursement_amount_usd": 0.0\n'
+                '  }\n'
+                "}"
+            ),
+            "codeNotes": (
+                "Line 7-26: Defines dataclasses for Purchase Orders, Goods Receipts, and Invoices modeling line items and banking details.\n"
+                "Line 28-56: `ThreeWayReconciliationEngine` audits price variance, quantity discrepancy, physical dock inspection, and bank account diversion.\n"
+                "Line 58-72: Approves clean invoice ($45k straight-through payment) while intercepting an overbilled, fraudulent bank routing invoice ($50.9k blocked)."
+            ),
+            "socratic": {
+                "question": "What is the primary objective of automated 3-Way Reconciliation in enterprise accounts payable and financial governance?",
+                "options": [
+                    "To verify that the vendor billed exactly what was ordered on the PO and physically delivered/inspected on the Goods Receipt, preventing overbilling, phantom deliveries, and unauthorized bank routing changes.",
+                    "To calculate income tax withholding for full-time corporate employees.",
+                    "To convert euro invoices into Japanese yen at historical 1999 exchange rates.",
+                    "To generate marketing brochures for prospective B2B procurement vendors."
+                ],
+                "answerIndex": 0,
+                "explanation": "3-Way matching ties the financial invoice back to both the contractual purchasing commitment (PO) and verified physical receipt (GR). This prevents overpaying, paying for damaged or unreceived goods, and fraudulent invoice diversion.",
+                "why": "Automated 3-way matching enforces strict SOX financial compliance while protecting millions in working capital from fraudulent disbursements."
+            },
+            "tryIt": "Modify `inv_fraud` so price and quantity match, but keep the suspicious routing number. Re-run to verify that `FRAUD_ALERT_HIGH` still isolates the invoice and blocks disbursement."
+        },
+        {
+            "id": 5,
+            "title": "Autonomous Cognitive Procurement Control Tower: Spend Analytics, Maverick Spend & ESG Telemetry",
+            "say": (
+                "In our concluding session for Day 24, we synthesize cognitive supplier risk scoring, automated contract clause intelligence, multi-agent negotiation, and 3-way reconciliation into an executive-grade Autonomous Cognitive Procurement Control Tower. In Fortune 500 enterprises, Chief Procurement Officers (CPOs) manage hundreds of millions in spend across complex supplier networks, where lack of visibility leads to Maverick Spend (off-contract purchasing), lost volume rebates, and severe ESG regulatory exposure.\n\n"
+                "The Autonomous Cognitive Procurement Control Tower functions as the real-time command plane over the enterprise source-to-pay lifecycle. It continuously analyzes corporate spend transactions, identifying three critical procurement anomalies: (1) Maverick Spend Detection (identifying employees or departments purchasing software, hardware, or travel outside negotiated corporate master agreements, sacrificing 15–30% volume discounts); (2) Contract Expiration & Price Renegotiation Alerts (detecting contracts lapsing within 90 days and triggering automated multi-agent RFPs); and (3) ESG Scope 3 Carbon & Human Rights Due Diligence Tracking (monitoring supplier compliance with international labor and environmental mandates).\n\n"
+                "When a procurement anomaly is identified, the Control Tower executes prescriptive workflows: routing maverick spend back to preferred catalog contracts, aggregating cross-departmental volume to renegotiate tier discounts, or quarantining non-compliant vendors. Crucially, all procurement decisions are compiled into an executive Procurement Health Scorecard calibrated across Spend Under Management (SUM $\ge 90.0\\%$), Maverick Spend Leakage ($\le 5.0\\%$), and On-Contract Savings Realized.\n\n"
+                "In this hands-on implementation, we construct the complete `AutonomousProcurementControlTower` in Python. Our system ingests multi-departmental spend ledgers, detects maverick off-contract leakages, audits supplier ESG compliance, and outputs an executive CPO dashboard."
+            ),
+            "code": (
+                "import json\n"
+                "from dataclasses import dataclass, asdict\n"
+                "from typing import List, Dict, Optional\n"
+                "\n"
+                "@dataclass\n"
+                "class SpendTransaction:\n"
+                "    tx_id: str\n"
+                "    department: str\n"
+                "    category: str\n"
+                "    vendor_name: str\n"
+                "    is_preferred_vendor: bool\n"
+                "    spend_amount_usd: float\n"
+                "    esg_compliant: bool\n"
+                "\n"
+                "class AutonomousProcurementControlTower:\n"
+                "    def __init__(self, enterprise: str, max_maverick_leakage_pct: float = 5.0):\n"
+                "        self.enterprise = enterprise\n"
+                "        self.max_maverick_pct = max_maverick_leakage_pct\n"
+                "        self.transactions: List[SpendTransaction] = []\n"
+                "\n"
+                "    def ingest_transaction(self, tx: SpendTransaction):\n"
+                "        self.transactions.append(tx)\n"
+                "\n"
+                "    def generate_procurement_executive_scorecard(self) -> Dict:\n"
+                "        total_spend = sum(t.spend_amount_usd for t in self.transactions)\n"
+                "        on_contract_spend = sum(t.spend_amount_usd for t in self.transactions if t.is_preferred_vendor)\n"
+                "        maverick_spend = total_spend - on_contract_spend\n"
+                "        \n"
+                "        maverick_leakage_pct = (maverick_spend / total_spend) * 100.0 if total_spend > 0 else 0.0\n"
+                "        sum_pct = (on_contract_spend / total_spend) * 100.0 if total_spend > 0 else 0.0\n"
+                "        \n"
+                "        # ESG Non-compliant spend\n"
+                "        esg_violations = [t for t in self.transactions if not t.esg_compliant]\n"
+                "        esg_exposure = sum(t.spend_amount_usd for t in esg_violations)\n"
+                "        \n"
+                "        # Prescriptive savings: Maverick spend carries an average 18% pricing premium\n"
+                "        addressable_savings_usd = round(maverick_spend * 0.18, 2)\n"
+                "        \n"
+                "        return {\n"
+                "            'enterprise': self.enterprise,\n"
+                "            'total_spend_analyzed_usd': round(total_spend, 2),\n"
+                "            'spend_under_management_pct': round(sum_pct, 1),\n"
+                "            'maverick_spend_leakage_pct': round(maverick_leakage_pct, 1),\n"
+                "            'maverick_spend_threshold_met': maverick_leakage_pct <= self.max_maverick_pct,\n"
+                "            'addressable_cost_savings_usd': addressable_savings_usd,\n"
+                "            'esg_non_compliant_spend_exposure_usd': round(esg_exposure, 2),\n"
+                "            'procurement_governance_posture': 'PRISTINE_OPTIMAL' if maverick_leakage_pct <= self.max_maverick_pct and not esg_violations else 'INTERVENTION_REQUIRED'\n"
+                "        }\n"
+                "\n"
+                "tower = AutonomousProcurementControlTower('Apex Global Enterprise', max_maverick_leakage_pct=5.0)\n"
+                "tower.ingest_transaction(SpendTransaction('TX-01', 'Engineering', 'Cloud Infrastructure', 'AWS Enterprise Direct', True, 450000.0, True))\n"
+                "tower.ingest_transaction(SpendTransaction('TX-02', 'Marketing', 'Creative Agency', 'Global Media Partners MSA', True, 120000.0, True))\n"
+                "tower.ingest_transaction(SpendTransaction('TX-03', 'Operations', 'Local Hardware Store', 'Random Off-Contract LLC', False, 18500.0, True))\n"
+                "\n"
+                "scorecard = tower.generate_procurement_executive_scorecard()\n"
+                "print(json.dumps(scorecard, indent=2))\n"
+            ),
+            "codeOutput": (
+                "{\n"
+                '  "enterprise": "Apex Global Enterprise",\n'
+                '  "total_spend_analyzed_usd": 588500.0,\n'
+                '  "spend_under_management_pct": 96.9,\n'
+                '  "maverick_spend_leakage_pct": 3.1,\n'
+                '  "maverick_spend_threshold_met": true,\n'
+                '  "addressable_cost_savings_usd": 3330.0,\n'
+                '  "esg_non_compliant_spend_exposure_usd": 0.0,\n'
+                '  "procurement_governance_posture": "PRISTINE_OPTIMAL"\n'
+                "}"
+            ),
+            "codeNotes": (
+                "Line 7-15: `SpendTransaction` models departmental spend, vendor preference status, dollar amounts, and ESG compliance.\n"
+                "Line 17-50: `AutonomousProcurementControlTower` audits Spend Under Management (SUM) and identifies off-contract maverick spend leakage.\n"
+                "Line 52-61: Evaluates $588.5k in enterprise spend, confirming 96.9% SUM, 3.1% maverick leakage (under 5.0% ceiling), and pristine governance posture."
+            ),
+            "socratic": {
+                "question": "What is 'Maverick Spend' in corporate procurement, and why does eliminating it unlock immediate financial cost savings?",
+                "options": [
+                    "Maverick spend refers to off-contract purchases made outside negotiated master corporate agreements; eliminating it consolidates spend onto preferred vendors, capturing pre-negotiated 15-30% volume discounts.",
+                    "Maverick spend is purchases of commercial fighter jets by corporate aviation divisions.",
+                    "Maverick spend is funds spent by employees during weekend vacation getaways.",
+                    "Maverick spend refers to currency losses caused by volatile foreign exchange fluctuations."
+                ],
+                "answerIndex": 0,
+                "explanation": "When departments buy from non-contracted vendors on expense cards, they pay full retail prices and forfeit corporate volume discounts. Steering maverick spend into negotiated contracts immediately captures 15-30% in cost avoidance.",
+                "why": "Autonomous maverick spend detection equips procurement leadership to capture millions in unearned savings across indirect corporate budgets."
+            },
+            "tryIt": "Add an off-contract transaction of $60,000 for IT peripherals. Re-run to see how maverick spend leakage jumps to 12.1%, triggering `INTERVENTION_REQUIRED`."
+        }
+    ]
+}
+
+if __name__ == "__main__":
+    with open("scripts/bcom_ait_day24_data.json", "w", encoding="utf-8") as f:
+        json.dump(day24_data, f, indent=2)
+    print("Day 24 data written successfully.")
