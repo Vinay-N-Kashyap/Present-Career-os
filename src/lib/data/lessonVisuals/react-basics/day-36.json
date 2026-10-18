@@ -1,0 +1,971 @@
+{
+  "schemaVersion": 1,
+  "prefix": "react-basics",
+  "day": 36,
+  "promptSha": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Anatomy of the 16.6ms Frame: V-Sync, Browser Rendering Pipelines & Main Thread Monopolization",
+      "codeHash": "050076cc28027fbdd372fe772cc4859fffafd974b67df6e8b4bab1a0fe5c0506",
+      "spec": {
+        "template": "flow",
+        "title": "Anatomy of the 16.6ms Frame Budget: V-Sync & Browser Rendering Pipeline",
+        "nodes": [
+          {
+            "id": "vsync",
+            "label": "Hardware V-Sync",
+            "tappable": false
+          },
+          {
+            "id": "js",
+            "label": "JavaScript Execution",
+            "tappable": false
+          },
+          {
+            "id": "layout",
+            "label": "Style & Layout Reflow",
+            "tappable": false
+          },
+          {
+            "id": "gpu",
+            "label": "GPU Paint & Composite",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The 60Hz display refreshes every 16.6ms; all browser work must finish within this window.",
+            "values": {
+              "vsync": {
+                "text": "\"60Hz Tick\""
+              },
+              "js": {
+                "text": "\"Budget Start\""
+              },
+              "layout": {
+                "text": "\"Queued\""
+              },
+              "gpu": {
+                "text": "\"Queued\""
+              }
+            },
+            "tones": {
+              "vsync": "ok",
+              "js": "data",
+              "layout": "idle",
+              "gpu": "idle"
+            },
+            "arrows": [
+              [
+                "vsync",
+                "js"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Monolithic synchronous JavaScript exceeding 16.6ms causes dropped frames and visible jank.",
+            "values": {
+              "vsync": {
+                "text": "\"Tick Missed\""
+              },
+              "js": {
+                "text": "\"50ms Long Task\""
+              },
+              "layout": {
+                "text": "\"Blocked\""
+              },
+              "gpu": {
+                "text": "\"Starved\""
+              }
+            },
+            "tones": {
+              "vsync": "error",
+              "js": "error",
+              "layout": "idle",
+              "gpu": "idle"
+            },
+            "arrows": [
+              [
+                "js",
+                "layout"
+              ]
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Cooperative multitasking breaks JavaScript work into 5ms slices, preserving layout and paint time.",
+            "values": {
+              "vsync": {
+                "text": "\"Stable 60fps\""
+              },
+              "js": {
+                "text": "\"5ms Slice\""
+              },
+              "layout": {
+                "text": "\"5ms Reflow\""
+              },
+              "gpu": {
+                "text": "\"6.6ms Paint\""
+              }
+            },
+            "tones": {
+              "vsync": "ok",
+              "js": "ok",
+              "layout": "ok",
+              "gpu": "ok"
+            },
+            "arrows": [
+              [
+                "js",
+                "layout"
+              ],
+              [
+                "layout",
+                "gpu"
+              ]
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Double-buffering swaps back-buffer to front-buffer cleanly on the V-Sync vertical blanking interval.",
+            "values": {
+              "vsync": {
+                "text": "\"V-Blank Pulse\""
+              },
+              "js": {
+                "text": "\"Idle\""
+              },
+              "layout": {
+                "text": "\"Complete\""
+              },
+              "gpu": {
+                "text": "\"Buffer Swapped\""
+              }
+            },
+            "tones": {
+              "vsync": "ok",
+              "js": "idle",
+              "layout": "ok",
+              "gpu": "ok"
+            },
+            "arrows": [
+              [
+                "layout",
+                "gpu"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Anatomy of the 16.6ms Frame Budget: V-Sync & Browser Rendering Pipeline",
+        "nodes": [
+          {
+            "id": "vsync",
+            "label": "Hardware V-Sync",
+            "tappable": false
+          },
+          {
+            "id": "js",
+            "label": "JavaScript Execution",
+            "tappable": false
+          },
+          {
+            "id": "layout",
+            "label": "Style & Layout Reflow",
+            "tappable": false
+          },
+          {
+            "id": "gpu",
+            "label": "GPU Paint & Composite",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The 60Hz display refreshes every 16.6ms; all browser work must finish within this window.",
+            "values": {
+              "vsync": {
+                "text": "\"60Hz Tick\""
+              },
+              "js": {
+                "text": "\"Budget Start\""
+              },
+              "layout": {
+                "text": "\"Queued\""
+              },
+              "gpu": {
+                "text": "\"Queued\""
+              }
+            },
+            "tones": {
+              "vsync": "ok",
+              "js": "data",
+              "layout": "idle",
+              "gpu": "idle"
+            },
+            "arrows": [
+              [
+                "vsync",
+                "js"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Monolithic synchronous JavaScript exceeding 16.6ms causes dropped frames and visible jank.",
+            "values": {
+              "vsync": {
+                "text": "\"Tick Missed\""
+              },
+              "js": {
+                "text": "\"50ms Long Task\""
+              },
+              "layout": {
+                "text": "\"Blocked\""
+              },
+              "gpu": {
+                "text": "\"Starved\""
+              }
+            },
+            "tones": {
+              "vsync": "error",
+              "js": "error",
+              "layout": "idle",
+              "gpu": "idle"
+            },
+            "arrows": [
+              [
+                "js",
+                "layout"
+              ]
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "Cooperative multitasking breaks JavaScript work into 5ms slices, preserving layout and paint time.",
+            "values": {
+              "vsync": {
+                "text": "\"Stable 60fps\""
+              },
+              "js": {
+                "text": "\"5ms Slice\""
+              },
+              "layout": {
+                "text": "\"5ms Reflow\""
+              },
+              "gpu": {
+                "text": "\"6.6ms Paint\""
+              }
+            },
+            "tones": {
+              "vsync": "ok",
+              "js": "ok",
+              "layout": "ok",
+              "gpu": "ok"
+            },
+            "arrows": [
+              [
+                "js",
+                "layout"
+              ],
+              [
+                "layout",
+                "gpu"
+              ]
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Double-buffering swaps back-buffer to front-buffer cleanly on the V-Sync vertical blanking interval.",
+            "values": {
+              "vsync": {
+                "text": "\"V-Blank Pulse\""
+              },
+              "js": {
+                "text": "\"Idle\""
+              },
+              "layout": {
+                "text": "\"Complete\""
+              },
+              "gpu": {
+                "text": "\"Buffer Swapped\""
+              }
+            },
+            "tones": {
+              "vsync": "ok",
+              "js": "idle",
+              "layout": "ok",
+              "gpu": "ok"
+            },
+            "arrows": [
+              [
+                "layout",
+                "gpu"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The setTimeout Clamping Hazard: Why Browsers Enforce 4ms Minimums on Nested Timers",
+      "codeHash": "af405f6e0b723d53835928f9d85e832efdaa492c43bfcae78cd64e97f9d56765",
+      "spec": {
+        "template": "compare",
+        "title": "HTML5 Timer Clamping: setTimeout vs Macro-Task Slicing",
+        "leftLabel": "Nested setTimeout (> 5 levels)",
+        "rightLabel": "Zero-Latency Macro-Tasks",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "HTML5 mandates a 4ms minimum delay once setTimeout nests deeper than 5 consecutive levels.",
+            "left": {
+              "code": "setTimeout(fn, 0); // clamped to 4ms",
+              "result": {
+                "text": "\"4ms Clamped\""
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "channel.port2.postMessage(null);",
+              "result": {
+                "text": "\"0ms Delay\""
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "In a 20-slice computation, 4ms clamping introduces 60ms of dead idle time with zero CPU utilization.",
+            "left": {
+              "code": "console.log(wastedClampTime);",
+              "result": {
+                "text": "\"60ms Dead Time\""
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "console.log(wastedClampTime);",
+              "result": {
+                "text": "\"0ms Dead Time\""
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "MessageChannel fires as a top-priority macro-task without any artificial timer penalties.",
+            "left": {
+              "code": "console.log(idleOverhead);",
+              "result": {
+                "text": "\"60% Overhead\""
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "console.log(idleOverhead);",
+              "result": {
+                "text": "\"0% Overhead\""
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "React Scheduler relies on MessageChannel to guarantee instantaneous cooperative re-entry.",
+            "left": {
+              "code": "console.log(userExperience);",
+              "result": {
+                "text": "\"Laggy\""
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "console.log(userExperience);",
+              "result": {
+                "text": "\"Silky Smooth\""
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "HTML5 Timer Clamping: setTimeout vs Macro-Task Slicing",
+        "leftLabel": "Nested setTimeout (> 5 levels)",
+        "rightLabel": "Zero-Latency Macro-Tasks",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "HTML5 mandates a 4ms minimum delay once setTimeout nests deeper than 5 consecutive levels.",
+            "left": {
+              "code": "setTimeout(fn, 0); // clamped to 4ms",
+              "result": {
+                "text": "\"4ms Clamped\""
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "channel.port2.postMessage(null);",
+              "result": {
+                "text": "\"0ms Delay\""
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "In a 20-slice computation, 4ms clamping introduces 60ms of dead idle time with zero CPU utilization.",
+            "left": {
+              "code": "console.log(wastedClampTime);",
+              "result": {
+                "text": "\"60ms Dead Time\""
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "console.log(wastedClampTime);",
+              "result": {
+                "text": "\"0ms Dead Time\""
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "MessageChannel fires as a top-priority macro-task without any artificial timer penalties.",
+            "left": {
+              "code": "console.log(idleOverhead);",
+              "result": {
+                "text": "\"60% Overhead\""
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "console.log(idleOverhead);",
+              "result": {
+                "text": "\"0% Overhead\""
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "React Scheduler relies on MessageChannel to guarantee instantaneous cooperative re-entry.",
+            "left": {
+              "code": "console.log(userExperience);",
+              "result": {
+                "text": "\"Laggy\""
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "console.log(userExperience);",
+              "result": {
+                "text": "\"Silky Smooth\""
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Architecture of React's Scheduler: Leveraging MessageChannel for Zero-Latency Macro-Tasks",
+      "codeHash": "f38061759f2142ea7aff5887a7e7b5c0215bd1dda0c72dd8530afb13c31b44a0",
+      "spec": {
+        "template": "states",
+        "title": "React Scheduler MessageChannel State Machine",
+        "states": [
+          {
+            "id": "ms1",
+            "label": "QUEUE_IDLE"
+          },
+          {
+            "id": "ms2",
+            "label": "MACRO_TASK_SCHEDULED"
+          },
+          {
+            "id": "ms3",
+            "label": "RECONCILING_SLICE"
+          },
+          {
+            "id": "ms4",
+            "label": "YIELDED_TO_PAINT"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Scheduler rests in QUEUE_IDLE state awaiting incoming units of work.",
+            "activeId": "ms1",
+            "tone": "idle"
+          },
+          {
+            "at": "say2",
+            "caption": "Calling postMacroTask() triggers channel.port2.postMessage and moves to MACRO_TASK_SCHEDULED.",
+            "activeId": "ms2",
+            "tone": "data"
+          },
+          {
+            "at": "say3",
+            "caption": "port1.onmessage fires; workLoop reconciles fiber nodes in RECONCILING_SLICE.",
+            "activeId": "ms3",
+            "tone": "data"
+          },
+          {
+            "at": "say4",
+            "caption": "When slice exceeds 5ms, scheduler yields control to browser paint and re-queues.",
+            "activeId": "ms4",
+            "tone": "ok"
+          }
+        ]
+      },
+      "filled": {
+        "template": "states",
+        "title": "React Scheduler MessageChannel State Machine",
+        "states": [
+          {
+            "id": "ms1",
+            "label": "QUEUE_IDLE"
+          },
+          {
+            "id": "ms2",
+            "label": "MACRO_TASK_SCHEDULED"
+          },
+          {
+            "id": "ms3",
+            "label": "RECONCILING_SLICE"
+          },
+          {
+            "id": "ms4",
+            "label": "YIELDED_TO_PAINT"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Scheduler rests in QUEUE_IDLE state awaiting incoming units of work.",
+            "activeId": "ms1",
+            "tone": "idle"
+          },
+          {
+            "at": "say2",
+            "caption": "Calling postMacroTask() triggers channel.port2.postMessage and moves to MACRO_TASK_SCHEDULED.",
+            "activeId": "ms2",
+            "tone": "data"
+          },
+          {
+            "at": "say3",
+            "caption": "port1.onmessage fires; workLoop reconciles fiber nodes in RECONCILING_SLICE.",
+            "activeId": "ms3",
+            "tone": "data"
+          },
+          {
+            "at": "say4",
+            "caption": "When slice exceeds 5ms, scheduler yields control to browser paint and re-queues.",
+            "activeId": "ms4",
+            "tone": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cooperative Multitasking and the shouldYield() Heuristic: 5ms Time-Slicing Windows",
+      "codeHash": "7b2f74b609229e5480bfcadd98c51f5439b732a2d42005d6b0785771507120ae",
+      "spec": {
+        "template": "boxes",
+        "title": "shouldYield() 5ms Heuristic & Frame Budget Breakdown",
+        "boxes": [
+          {
+            "id": "b_budget",
+            "label": "16.6ms Total Frame",
+            "tappable": false
+          },
+          {
+            "id": "b_slice",
+            "label": "React Slice (5ms)",
+            "tappable": false
+          },
+          {
+            "id": "b_layout",
+            "label": "Style & Layout (5ms)",
+            "tappable": false
+          },
+          {
+            "id": "b_paint",
+            "label": "GPU Paint (6.6ms)",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The 16.6ms frame budget must accommodate all JavaScript, style recalculation, layout, and paint.",
+            "values": {
+              "b_budget": {
+                "text": "\"16.6ms\""
+              },
+              "b_slice": {
+                "text": "\"5ms\""
+              },
+              "b_layout": {
+                "text": "\"5ms\""
+              },
+              "b_paint": {
+                "text": "\"6.6ms\""
+              }
+            },
+            "tones": {
+              "b_budget": "ok",
+              "b_slice": "data",
+              "b_layout": "data",
+              "b_paint": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "React Scheduler fixes slice duration to 5ms, guaranteeing ample headroom for browser layout.",
+            "values": {
+              "b_budget": {
+                "text": "\"Active Frame\""
+              },
+              "b_slice": {
+                "text": "\"Running\""
+              },
+              "b_layout": {
+                "text": "\"Headroom 11ms\""
+              },
+              "b_paint": {
+                "text": "\"Headroom 6ms\""
+              }
+            },
+            "tones": {
+              "b_budget": "ok",
+              "b_slice": "ok",
+              "b_layout": "data",
+              "b_paint": "data"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "The shouldYield() heuristic evaluates performance.now() - startTime after every single fiber node.",
+            "values": {
+              "b_budget": {
+                "text": "\"Audit Pass\""
+              },
+              "b_slice": {
+                "text": "\"Elapsed >= 5ms\""
+              },
+              "b_layout": {
+                "text": "\"Yield Triggered\""
+              },
+              "b_paint": {
+                "text": "\"Ready\""
+              }
+            },
+            "tones": {
+              "b_budget": "ok",
+              "b_slice": "error",
+              "b_layout": "ok",
+              "b_paint": "ok"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Zero frames are dropped because rendering yields cleanly before the 16.6ms hardware V-Sync pulse.",
+            "values": {
+              "b_budget": {
+                "text": "\"0 Dropped\""
+              },
+              "b_slice": {
+                "text": "\"5ms Met\""
+              },
+              "b_layout": {
+                "text": "\"Flawless\""
+              },
+              "b_paint": {
+                "text": "\"60 FPS Confirmed\""
+              }
+            },
+            "tones": {
+              "b_budget": "ok",
+              "b_slice": "ok",
+              "b_layout": "ok",
+              "b_paint": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "boxes",
+        "title": "shouldYield() 5ms Heuristic & Frame Budget Breakdown",
+        "boxes": [
+          {
+            "id": "b_budget",
+            "label": "16.6ms Total Frame",
+            "tappable": false
+          },
+          {
+            "id": "b_slice",
+            "label": "React Slice (5ms)",
+            "tappable": false
+          },
+          {
+            "id": "b_layout",
+            "label": "Style & Layout (5ms)",
+            "tappable": false
+          },
+          {
+            "id": "b_paint",
+            "label": "GPU Paint (6.6ms)",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The 16.6ms frame budget must accommodate all JavaScript, style recalculation, layout, and paint.",
+            "values": {
+              "b_budget": {
+                "text": "\"16.6ms\""
+              },
+              "b_slice": {
+                "text": "\"5ms\""
+              },
+              "b_layout": {
+                "text": "\"5ms\""
+              },
+              "b_paint": {
+                "text": "\"6.6ms\""
+              }
+            },
+            "tones": {
+              "b_budget": "ok",
+              "b_slice": "data",
+              "b_layout": "data",
+              "b_paint": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "React Scheduler fixes slice duration to 5ms, guaranteeing ample headroom for browser layout.",
+            "values": {
+              "b_budget": {
+                "text": "\"Active Frame\""
+              },
+              "b_slice": {
+                "text": "\"Running\""
+              },
+              "b_layout": {
+                "text": "\"Headroom 11ms\""
+              },
+              "b_paint": {
+                "text": "\"Headroom 6ms\""
+              }
+            },
+            "tones": {
+              "b_budget": "ok",
+              "b_slice": "ok",
+              "b_layout": "data",
+              "b_paint": "data"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "The shouldYield() heuristic evaluates performance.now() - startTime after every single fiber node.",
+            "values": {
+              "b_budget": {
+                "text": "\"Audit Pass\""
+              },
+              "b_slice": {
+                "text": "\"Elapsed >= 5ms\""
+              },
+              "b_layout": {
+                "text": "\"Yield Triggered\""
+              },
+              "b_paint": {
+                "text": "\"Ready\""
+              }
+            },
+            "tones": {
+              "b_budget": "ok",
+              "b_slice": "error",
+              "b_layout": "ok",
+              "b_paint": "ok"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Zero frames are dropped because rendering yields cleanly before the 16.6ms hardware V-Sync pulse.",
+            "values": {
+              "b_budget": {
+                "text": "\"0 Dropped\""
+              },
+              "b_slice": {
+                "text": "\"5ms Met\""
+              },
+              "b_layout": {
+                "text": "\"Flawless\""
+              },
+              "b_paint": {
+                "text": "\"60 FPS Confirmed\""
+              }
+            },
+            "tones": {
+              "b_budget": "ok",
+              "b_slice": "ok",
+              "b_layout": "ok",
+              "b_paint": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Building a Production MessageChannel Cooperative Task Scheduler in JavaScript",
+      "codeHash": "6ec90faf6a25b2b11c4506ebf3a9aebecce10ba0f3f332febf6a443f6d73e8ce",
+      "spec": {
+        "template": "wireframe",
+        "title": "Chrome DevTools Performance Timeline: Monolithic vs Sliced",
+        "wireframe": {
+          "header": "Chrome DevTools Performance Profiler",
+          "controls": [
+            "Total Blocking Time: 0ms",
+            "Frame Rate: 60 FPS",
+            "Interaction: Responsive"
+          ],
+          "viewport": {
+            "totalHeightPx": 240,
+            "renderedRange": "Main Thread: 5ms Slices [||||] (Zero Red Hatched Long Tasks)",
+            "opacity": 1.0
+          }
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Traditional monolithic tasks display red-hatched long task warnings exceeding 50ms.",
+            "values": {
+              "timeline": {
+                "text": "\"Long Task: 150ms (FAIL)\""
+              }
+            },
+            "tones": {
+              "timeline": "error"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Cooperative scheduler segments execution into uniform 5ms macro-tasks.",
+            "values": {
+              "timeline": {
+                "text": "\"5ms Slices: [||||]\""
+              }
+            },
+            "tones": {
+              "timeline": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Chrome DevTools reports Total Blocking Time (TBT) drops to exactly 0 milliseconds.",
+            "values": {
+              "tbt": {
+                "text": "\"TBT: 0ms (PASS)\""
+              }
+            },
+            "tones": {
+              "tbt": "ok"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Interaction to Next Paint (INP) achieves top-tier score, certifying production web performance.",
+            "values": {
+              "inp": {
+                "text": "\"INP: < 16ms (GOOD)\""
+              }
+            },
+            "tones": {
+              "inp": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "wireframe",
+        "title": "Chrome DevTools Performance Timeline: Monolithic vs Sliced",
+        "wireframe": {
+          "header": "Chrome DevTools Performance Profiler",
+          "controls": [
+            "Total Blocking Time: 0ms",
+            "Frame Rate: 60 FPS",
+            "Interaction: Responsive"
+          ],
+          "viewport": {
+            "totalHeightPx": 240,
+            "renderedRange": "Main Thread: 5ms Slices [||||] (Zero Red Hatched Long Tasks)",
+            "opacity": 1.0
+          }
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Traditional monolithic tasks display red-hatched long task warnings exceeding 50ms.",
+            "values": {
+              "timeline": {
+                "text": "\"Long Task: 150ms (FAIL)\""
+              }
+            },
+            "tones": {
+              "timeline": "error"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Cooperative scheduler segments execution into uniform 5ms macro-tasks.",
+            "values": {
+              "timeline": {
+                "text": "\"5ms Slices: [||||]\""
+              }
+            },
+            "tones": {
+              "timeline": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Chrome DevTools reports Total Blocking Time (TBT) drops to exactly 0 milliseconds.",
+            "values": {
+              "tbt": {
+                "text": "\"TBT: 0ms (PASS)\""
+              }
+            },
+            "tones": {
+              "tbt": "ok"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Interaction to Next Paint (INP) achieves top-tier score, certifying production web performance.",
+            "values": {
+              "inp": {
+                "text": "\"INP: < 16ms (GOOD)\""
+              }
+            },
+            "tones": {
+              "inp": "ok"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
