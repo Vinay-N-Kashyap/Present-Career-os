@@ -1,0 +1,2519 @@
+{
+  "schemaVersion": 1,
+  "prefix": "iot_edge",
+  "day": 16,
+  "promptSha": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "The Silicon Quantization Mandate: Memory, Bandwidth & Power Physics",
+      "codeHash": "2b1b5d1e4637f2d311045adb638382d2d78366cfad5d9bfce10eadbdc8f105a4",
+      "spec": {
+        "template": "register-bits",
+        "title": "The Silicon Quantization Mandate: Memory, Ban... — Register Bit Architecture",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize IOT_EDGE_CR1 with EN bit asserted (0x80).",
+            "registerName": "IOT_EDGE_CR1",
+            "bitWidth": 8,
+            "hexValue": "0x80",
+            "decimalValue": 128,
+            "maskApplied": "1 << 7",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "RDY",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 5,
+                "name": "IRQ",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 4,
+                "name": "DMA",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "CRC",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "TX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "RX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "ERR",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Peripheral asserts RDY & IRQ flags (0xE0) on IOT_EDGE_CR1.",
+            "registerName": "IOT_EDGE_CR1",
+            "bitWidth": 8,
+            "hexValue": "0xE0",
+            "decimalValue": 224,
+            "maskApplied": "(1 << 6) | (1 << 5)",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EN",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "RDY",
+                "value": 1,
+                "tone": "data",
+                "highlighted": true
+              },
+              {
+                "index": 5,
+                "name": "IRQ",
+                "value": 1,
+                "tone": "data",
+                "highlighted": true
+              },
+              {
+                "index": 4,
+                "name": "DMA",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "CRC",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "TX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "RX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "ERR",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Enable DMA burst & CRC verification bits (0xF8).",
+            "registerName": "IOT_EDGE_CR1",
+            "bitWidth": 8,
+            "hexValue": "0xF8",
+            "decimalValue": 248,
+            "maskApplied": "(1 << 4) | (1 << 3)",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EN",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "RDY",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "IRQ",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "DMA",
+                "value": 1,
+                "tone": "data",
+                "highlighted": true
+              },
+              {
+                "index": 3,
+                "name": "CRC",
+                "value": 1,
+                "tone": "data",
+                "highlighted": true
+              },
+              {
+                "index": 2,
+                "name": "TX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "RX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "ERR",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Full TX/RX frame committed with ERR=0 verified (0xFE).",
+            "registerName": "IOT_EDGE_CR1",
+            "bitWidth": 8,
+            "hexValue": "0xFE",
+            "decimalValue": 254,
+            "maskApplied": "~0x01",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EN",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "RDY",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "IRQ",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "DMA",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "CRC",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "TX",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 1,
+                "name": "RX",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 0,
+                "name": "ERR",
+                "value": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "register-bits",
+        "title": "The Silicon Quantization Mandate: Memory, Ban... — Register Bit Architecture",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize IOT_EDGE_CR1 with EN bit asserted (0x80).",
+            "registerName": "IOT_EDGE_CR1",
+            "bitWidth": 8,
+            "hexValue": "0x80",
+            "decimalValue": 128,
+            "maskApplied": "1 << 7",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "RDY",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 5,
+                "name": "IRQ",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 4,
+                "name": "DMA",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "CRC",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "TX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "RX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "ERR",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Peripheral asserts RDY & IRQ flags (0xE0) on IOT_EDGE_CR1.",
+            "registerName": "IOT_EDGE_CR1",
+            "bitWidth": 8,
+            "hexValue": "0xE0",
+            "decimalValue": 224,
+            "maskApplied": "(1 << 6) | (1 << 5)",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EN",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "RDY",
+                "value": 1,
+                "tone": "data",
+                "highlighted": true
+              },
+              {
+                "index": 5,
+                "name": "IRQ",
+                "value": 1,
+                "tone": "data",
+                "highlighted": true
+              },
+              {
+                "index": 4,
+                "name": "DMA",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "CRC",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "TX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "RX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "ERR",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Enable DMA burst & CRC verification bits (0xF8).",
+            "registerName": "IOT_EDGE_CR1",
+            "bitWidth": 8,
+            "hexValue": "0xF8",
+            "decimalValue": 248,
+            "maskApplied": "(1 << 4) | (1 << 3)",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EN",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "RDY",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "IRQ",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "DMA",
+                "value": 1,
+                "tone": "data",
+                "highlighted": true
+              },
+              {
+                "index": 3,
+                "name": "CRC",
+                "value": 1,
+                "tone": "data",
+                "highlighted": true
+              },
+              {
+                "index": 2,
+                "name": "TX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "RX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "ERR",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Full TX/RX frame committed with ERR=0 verified (0xFE).",
+            "registerName": "IOT_EDGE_CR1",
+            "bitWidth": 8,
+            "hexValue": "0xFE",
+            "decimalValue": 254,
+            "maskApplied": "~0x01",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EN",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "RDY",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "IRQ",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "DMA",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "CRC",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "TX",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 1,
+                "name": "RX",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 0,
+                "name": "ERR",
+                "value": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Affine Quantization Mathematics: Scale, Zero-Point & Clamping",
+      "codeHash": "1fa25893dc0710f12b60dc18efc3ba159385b18fbfc15ac6e3541415d7a1ffb5",
+      "spec": {
+        "template": "register-bits",
+        "title": "Affine Quantization Mathematics: Scale, Zero-... — Register Bit Architecture",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize IOT_EDGE_CR2 with EN bit asserted (0x80).",
+            "registerName": "IOT_EDGE_CR2",
+            "bitWidth": 8,
+            "hexValue": "0x80",
+            "decimalValue": 128,
+            "maskApplied": "1 << 7",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "RDY",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 5,
+                "name": "IRQ",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 4,
+                "name": "DMA",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "CRC",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "TX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "RX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "ERR",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Peripheral asserts RDY & IRQ flags (0xE0) on IOT_EDGE_CR2.",
+            "registerName": "IOT_EDGE_CR2",
+            "bitWidth": 8,
+            "hexValue": "0xE0",
+            "decimalValue": 224,
+            "maskApplied": "(1 << 6) | (1 << 5)",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EN",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "RDY",
+                "value": 1,
+                "tone": "data",
+                "highlighted": true
+              },
+              {
+                "index": 5,
+                "name": "IRQ",
+                "value": 1,
+                "tone": "data",
+                "highlighted": true
+              },
+              {
+                "index": 4,
+                "name": "DMA",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "CRC",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "TX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "RX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "ERR",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Enable DMA burst & CRC verification bits (0xF8).",
+            "registerName": "IOT_EDGE_CR2",
+            "bitWidth": 8,
+            "hexValue": "0xF8",
+            "decimalValue": 248,
+            "maskApplied": "(1 << 4) | (1 << 3)",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EN",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "RDY",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "IRQ",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "DMA",
+                "value": 1,
+                "tone": "data",
+                "highlighted": true
+              },
+              {
+                "index": 3,
+                "name": "CRC",
+                "value": 1,
+                "tone": "data",
+                "highlighted": true
+              },
+              {
+                "index": 2,
+                "name": "TX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "RX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "ERR",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Full TX/RX frame committed with ERR=0 verified (0xFE).",
+            "registerName": "IOT_EDGE_CR2",
+            "bitWidth": 8,
+            "hexValue": "0xFE",
+            "decimalValue": 254,
+            "maskApplied": "~0x01",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EN",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "RDY",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "IRQ",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "DMA",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "CRC",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "TX",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 1,
+                "name": "RX",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 0,
+                "name": "ERR",
+                "value": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "register-bits",
+        "title": "Affine Quantization Mathematics: Scale, Zero-... — Register Bit Architecture",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize IOT_EDGE_CR2 with EN bit asserted (0x80).",
+            "registerName": "IOT_EDGE_CR2",
+            "bitWidth": 8,
+            "hexValue": "0x80",
+            "decimalValue": 128,
+            "maskApplied": "1 << 7",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "RDY",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 5,
+                "name": "IRQ",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 4,
+                "name": "DMA",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "CRC",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "TX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "RX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "ERR",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Peripheral asserts RDY & IRQ flags (0xE0) on IOT_EDGE_CR2.",
+            "registerName": "IOT_EDGE_CR2",
+            "bitWidth": 8,
+            "hexValue": "0xE0",
+            "decimalValue": 224,
+            "maskApplied": "(1 << 6) | (1 << 5)",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EN",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "RDY",
+                "value": 1,
+                "tone": "data",
+                "highlighted": true
+              },
+              {
+                "index": 5,
+                "name": "IRQ",
+                "value": 1,
+                "tone": "data",
+                "highlighted": true
+              },
+              {
+                "index": 4,
+                "name": "DMA",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "CRC",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "TX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "RX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "ERR",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Enable DMA burst & CRC verification bits (0xF8).",
+            "registerName": "IOT_EDGE_CR2",
+            "bitWidth": 8,
+            "hexValue": "0xF8",
+            "decimalValue": 248,
+            "maskApplied": "(1 << 4) | (1 << 3)",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EN",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "RDY",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "IRQ",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "DMA",
+                "value": 1,
+                "tone": "data",
+                "highlighted": true
+              },
+              {
+                "index": 3,
+                "name": "CRC",
+                "value": 1,
+                "tone": "data",
+                "highlighted": true
+              },
+              {
+                "index": 2,
+                "name": "TX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "RX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "ERR",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Full TX/RX frame committed with ERR=0 verified (0xFE).",
+            "registerName": "IOT_EDGE_CR2",
+            "bitWidth": 8,
+            "hexValue": "0xFE",
+            "decimalValue": 254,
+            "maskApplied": "~0x01",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EN",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "RDY",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "IRQ",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "DMA",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "CRC",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "TX",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 1,
+                "name": "RX",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 0,
+                "name": "ERR",
+                "value": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Symmetric vs Asymmetric Quantization: Dynamic Range Efficiency",
+      "codeHash": "1a6591bacf41c7376112c71df8b6819f59ffd69fc6c0f95a0231d0f0e6b243db",
+      "spec": {
+        "template": "register-bits",
+        "title": "Symmetric vs Asymmetric Quantization: Dynamic... — Register Bit Architecture",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize IOT_EDGE_CR3 with EN bit asserted (0x80).",
+            "registerName": "IOT_EDGE_CR3",
+            "bitWidth": 8,
+            "hexValue": "0x80",
+            "decimalValue": 128,
+            "maskApplied": "1 << 7",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "RDY",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 5,
+                "name": "IRQ",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 4,
+                "name": "DMA",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "CRC",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "TX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "RX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "ERR",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Peripheral asserts RDY & IRQ flags (0xE0) on IOT_EDGE_CR3.",
+            "registerName": "IOT_EDGE_CR3",
+            "bitWidth": 8,
+            "hexValue": "0xE0",
+            "decimalValue": 224,
+            "maskApplied": "(1 << 6) | (1 << 5)",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EN",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "RDY",
+                "value": 1,
+                "tone": "data",
+                "highlighted": true
+              },
+              {
+                "index": 5,
+                "name": "IRQ",
+                "value": 1,
+                "tone": "data",
+                "highlighted": true
+              },
+              {
+                "index": 4,
+                "name": "DMA",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "CRC",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "TX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "RX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "ERR",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Enable DMA burst & CRC verification bits (0xF8).",
+            "registerName": "IOT_EDGE_CR3",
+            "bitWidth": 8,
+            "hexValue": "0xF8",
+            "decimalValue": 248,
+            "maskApplied": "(1 << 4) | (1 << 3)",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EN",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "RDY",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "IRQ",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "DMA",
+                "value": 1,
+                "tone": "data",
+                "highlighted": true
+              },
+              {
+                "index": 3,
+                "name": "CRC",
+                "value": 1,
+                "tone": "data",
+                "highlighted": true
+              },
+              {
+                "index": 2,
+                "name": "TX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "RX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "ERR",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Full TX/RX frame committed with ERR=0 verified (0xFE).",
+            "registerName": "IOT_EDGE_CR3",
+            "bitWidth": 8,
+            "hexValue": "0xFE",
+            "decimalValue": 254,
+            "maskApplied": "~0x01",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EN",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "RDY",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "IRQ",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "DMA",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "CRC",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "TX",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 1,
+                "name": "RX",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 0,
+                "name": "ERR",
+                "value": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "register-bits",
+        "title": "Symmetric vs Asymmetric Quantization: Dynamic... — Register Bit Architecture",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize IOT_EDGE_CR3 with EN bit asserted (0x80).",
+            "registerName": "IOT_EDGE_CR3",
+            "bitWidth": 8,
+            "hexValue": "0x80",
+            "decimalValue": 128,
+            "maskApplied": "1 << 7",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "RDY",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 5,
+                "name": "IRQ",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 4,
+                "name": "DMA",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "CRC",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "TX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "RX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "ERR",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Peripheral asserts RDY & IRQ flags (0xE0) on IOT_EDGE_CR3.",
+            "registerName": "IOT_EDGE_CR3",
+            "bitWidth": 8,
+            "hexValue": "0xE0",
+            "decimalValue": 224,
+            "maskApplied": "(1 << 6) | (1 << 5)",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EN",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "RDY",
+                "value": 1,
+                "tone": "data",
+                "highlighted": true
+              },
+              {
+                "index": 5,
+                "name": "IRQ",
+                "value": 1,
+                "tone": "data",
+                "highlighted": true
+              },
+              {
+                "index": 4,
+                "name": "DMA",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "CRC",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "TX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "RX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "ERR",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Enable DMA burst & CRC verification bits (0xF8).",
+            "registerName": "IOT_EDGE_CR3",
+            "bitWidth": 8,
+            "hexValue": "0xF8",
+            "decimalValue": 248,
+            "maskApplied": "(1 << 4) | (1 << 3)",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EN",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "RDY",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "IRQ",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "DMA",
+                "value": 1,
+                "tone": "data",
+                "highlighted": true
+              },
+              {
+                "index": 3,
+                "name": "CRC",
+                "value": 1,
+                "tone": "data",
+                "highlighted": true
+              },
+              {
+                "index": 2,
+                "name": "TX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "RX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "ERR",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Full TX/RX frame committed with ERR=0 verified (0xFE).",
+            "registerName": "IOT_EDGE_CR3",
+            "bitWidth": 8,
+            "hexValue": "0xFE",
+            "decimalValue": 254,
+            "maskApplied": "~0x01",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EN",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "RDY",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "IRQ",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "DMA",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "CRC",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "TX",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 1,
+                "name": "RX",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 0,
+                "name": "ERR",
+                "value": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Fixed-Point Integer Matrix Multiplication: Scale Decomposition (M0 * 2^-n)",
+      "codeHash": "58e9bd3e779c75cb7bbe2cd55c4cea7918b92499a6c6375f45cef6e0d23630c3",
+      "spec": {
+        "template": "register-bits",
+        "title": "Fixed-Point Integer Matrix Multiplication: Sc... — Register Bit Architecture",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize IOT_EDGE_CR4 with EN bit asserted (0x80).",
+            "registerName": "IOT_EDGE_CR4",
+            "bitWidth": 8,
+            "hexValue": "0x80",
+            "decimalValue": 128,
+            "maskApplied": "1 << 7",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "RDY",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 5,
+                "name": "IRQ",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 4,
+                "name": "DMA",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "CRC",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "TX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "RX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "ERR",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Peripheral asserts RDY & IRQ flags (0xE0) on IOT_EDGE_CR4.",
+            "registerName": "IOT_EDGE_CR4",
+            "bitWidth": 8,
+            "hexValue": "0xE0",
+            "decimalValue": 224,
+            "maskApplied": "(1 << 6) | (1 << 5)",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EN",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "RDY",
+                "value": 1,
+                "tone": "data",
+                "highlighted": true
+              },
+              {
+                "index": 5,
+                "name": "IRQ",
+                "value": 1,
+                "tone": "data",
+                "highlighted": true
+              },
+              {
+                "index": 4,
+                "name": "DMA",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "CRC",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "TX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "RX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "ERR",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Enable DMA burst & CRC verification bits (0xF8).",
+            "registerName": "IOT_EDGE_CR4",
+            "bitWidth": 8,
+            "hexValue": "0xF8",
+            "decimalValue": 248,
+            "maskApplied": "(1 << 4) | (1 << 3)",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EN",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "RDY",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "IRQ",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "DMA",
+                "value": 1,
+                "tone": "data",
+                "highlighted": true
+              },
+              {
+                "index": 3,
+                "name": "CRC",
+                "value": 1,
+                "tone": "data",
+                "highlighted": true
+              },
+              {
+                "index": 2,
+                "name": "TX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "RX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "ERR",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Full TX/RX frame committed with ERR=0 verified (0xFE).",
+            "registerName": "IOT_EDGE_CR4",
+            "bitWidth": 8,
+            "hexValue": "0xFE",
+            "decimalValue": 254,
+            "maskApplied": "~0x01",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EN",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "RDY",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "IRQ",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "DMA",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "CRC",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "TX",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 1,
+                "name": "RX",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 0,
+                "name": "ERR",
+                "value": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "register-bits",
+        "title": "Fixed-Point Integer Matrix Multiplication: Sc... — Register Bit Architecture",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize IOT_EDGE_CR4 with EN bit asserted (0x80).",
+            "registerName": "IOT_EDGE_CR4",
+            "bitWidth": 8,
+            "hexValue": "0x80",
+            "decimalValue": 128,
+            "maskApplied": "1 << 7",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "RDY",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 5,
+                "name": "IRQ",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 4,
+                "name": "DMA",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "CRC",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "TX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "RX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "ERR",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Peripheral asserts RDY & IRQ flags (0xE0) on IOT_EDGE_CR4.",
+            "registerName": "IOT_EDGE_CR4",
+            "bitWidth": 8,
+            "hexValue": "0xE0",
+            "decimalValue": 224,
+            "maskApplied": "(1 << 6) | (1 << 5)",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EN",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "RDY",
+                "value": 1,
+                "tone": "data",
+                "highlighted": true
+              },
+              {
+                "index": 5,
+                "name": "IRQ",
+                "value": 1,
+                "tone": "data",
+                "highlighted": true
+              },
+              {
+                "index": 4,
+                "name": "DMA",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "CRC",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "TX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "RX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "ERR",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Enable DMA burst & CRC verification bits (0xF8).",
+            "registerName": "IOT_EDGE_CR4",
+            "bitWidth": 8,
+            "hexValue": "0xF8",
+            "decimalValue": 248,
+            "maskApplied": "(1 << 4) | (1 << 3)",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EN",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "RDY",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "IRQ",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "DMA",
+                "value": 1,
+                "tone": "data",
+                "highlighted": true
+              },
+              {
+                "index": 3,
+                "name": "CRC",
+                "value": 1,
+                "tone": "data",
+                "highlighted": true
+              },
+              {
+                "index": 2,
+                "name": "TX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "RX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "ERR",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Full TX/RX frame committed with ERR=0 verified (0xFE).",
+            "registerName": "IOT_EDGE_CR4",
+            "bitWidth": 8,
+            "hexValue": "0xFE",
+            "decimalValue": 254,
+            "maskApplied": "~0x01",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EN",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "RDY",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "IRQ",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "DMA",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "CRC",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "TX",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 1,
+                "name": "RX",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 0,
+                "name": "ERR",
+                "value": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "⭐ CAPSTONE: Production INT8 Quantization Audit Engine & Noise Analyzer",
+      "codeHash": "3d436713108bb9f9b08fba6e6dc3d977149751dd2de67d6aac3499ca6a19c86d",
+      "spec": {
+        "template": "register-bits",
+        "title": "⭐ CAPSTONE: Production INT8 Quantization Audi... — Register Bit Architecture",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize IOT_EDGE_CR1 with EN bit asserted (0x80).",
+            "registerName": "IOT_EDGE_CR1",
+            "bitWidth": 8,
+            "hexValue": "0x80",
+            "decimalValue": 128,
+            "maskApplied": "1 << 7",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "RDY",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 5,
+                "name": "IRQ",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 4,
+                "name": "DMA",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "CRC",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "TX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "RX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "ERR",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Peripheral asserts RDY & IRQ flags (0xE0) on IOT_EDGE_CR1.",
+            "registerName": "IOT_EDGE_CR1",
+            "bitWidth": 8,
+            "hexValue": "0xE0",
+            "decimalValue": 224,
+            "maskApplied": "(1 << 6) | (1 << 5)",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EN",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "RDY",
+                "value": 1,
+                "tone": "data",
+                "highlighted": true
+              },
+              {
+                "index": 5,
+                "name": "IRQ",
+                "value": 1,
+                "tone": "data",
+                "highlighted": true
+              },
+              {
+                "index": 4,
+                "name": "DMA",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "CRC",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "TX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "RX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "ERR",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Enable DMA burst & CRC verification bits (0xF8).",
+            "registerName": "IOT_EDGE_CR1",
+            "bitWidth": 8,
+            "hexValue": "0xF8",
+            "decimalValue": 248,
+            "maskApplied": "(1 << 4) | (1 << 3)",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EN",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "RDY",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "IRQ",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "DMA",
+                "value": 1,
+                "tone": "data",
+                "highlighted": true
+              },
+              {
+                "index": 3,
+                "name": "CRC",
+                "value": 1,
+                "tone": "data",
+                "highlighted": true
+              },
+              {
+                "index": 2,
+                "name": "TX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "RX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "ERR",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Full TX/RX frame committed with ERR=0 verified (0xFE).",
+            "registerName": "IOT_EDGE_CR1",
+            "bitWidth": 8,
+            "hexValue": "0xFE",
+            "decimalValue": 254,
+            "maskApplied": "~0x01",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EN",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "RDY",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "IRQ",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "DMA",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "CRC",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "TX",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 1,
+                "name": "RX",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 0,
+                "name": "ERR",
+                "value": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "register-bits",
+        "title": "⭐ CAPSTONE: Production INT8 Quantization Audi... — Register Bit Architecture",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize IOT_EDGE_CR1 with EN bit asserted (0x80).",
+            "registerName": "IOT_EDGE_CR1",
+            "bitWidth": 8,
+            "hexValue": "0x80",
+            "decimalValue": 128,
+            "maskApplied": "1 << 7",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "RDY",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 5,
+                "name": "IRQ",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 4,
+                "name": "DMA",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "CRC",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "TX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "RX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "ERR",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Peripheral asserts RDY & IRQ flags (0xE0) on IOT_EDGE_CR1.",
+            "registerName": "IOT_EDGE_CR1",
+            "bitWidth": 8,
+            "hexValue": "0xE0",
+            "decimalValue": 224,
+            "maskApplied": "(1 << 6) | (1 << 5)",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EN",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "RDY",
+                "value": 1,
+                "tone": "data",
+                "highlighted": true
+              },
+              {
+                "index": 5,
+                "name": "IRQ",
+                "value": 1,
+                "tone": "data",
+                "highlighted": true
+              },
+              {
+                "index": 4,
+                "name": "DMA",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "CRC",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "TX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "RX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "ERR",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Enable DMA burst & CRC verification bits (0xF8).",
+            "registerName": "IOT_EDGE_CR1",
+            "bitWidth": 8,
+            "hexValue": "0xF8",
+            "decimalValue": 248,
+            "maskApplied": "(1 << 4) | (1 << 3)",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EN",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "RDY",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "IRQ",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "DMA",
+                "value": 1,
+                "tone": "data",
+                "highlighted": true
+              },
+              {
+                "index": 3,
+                "name": "CRC",
+                "value": 1,
+                "tone": "data",
+                "highlighted": true
+              },
+              {
+                "index": 2,
+                "name": "TX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "RX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "ERR",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Full TX/RX frame committed with ERR=0 verified (0xFE).",
+            "registerName": "IOT_EDGE_CR1",
+            "bitWidth": 8,
+            "hexValue": "0xFE",
+            "decimalValue": 254,
+            "maskApplied": "~0x01",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EN",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "RDY",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "IRQ",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "DMA",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "CRC",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "TX",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 1,
+                "name": "RX",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 0,
+                "name": "ERR",
+                "value": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
