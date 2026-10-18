@@ -1,0 +1,344 @@
+{
+  "schemaVersion": 1,
+  "prefix": "quant-systems",
+  "day": 32,
+  "promptSha": "11999fdd6ceec1312eabdf6c996b12880d6f3749446f15e4487e86e1eee799b3",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Analytical First-Order Greeks: Delta, Vega, Theta & Rho",
+      "codeHash": "629cb03532ea4993734f4375f79b8b35e50a73d0e8e319ed04bda92b3167b58c",
+      "spec": {
+        "template": "states",
+        "title": "Analytical First-Order Greeks: Delta, Vega, Theta & Rho \u2014 Quant Systems State Engine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Init State"
+          },
+          {
+            "id": "st2",
+            "label": "Eval Kernel"
+          },
+          {
+            "id": "st3",
+            "label": "Invariant Check"
+          },
+          {
+            "id": "st4",
+            "label": "Certified State"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Init State): Initialize deterministic state for Analytical First-Order Greeks.",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Eval Kernel with zero-allocation microarchitectural pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "initialize()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Invariant Check and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "State 4 (Certified State): Production certification complete with verified terminal output.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "verify()"
+            },
+            "tone": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Second-Order Curvature & Cross-Greeks: Gamma, Vanna & Volga",
+      "codeHash": "dd01b1bd21b785a83c774678ccee9fa4e734530a1d7b8030241ef6d8c752209f",
+      "spec": {
+        "template": "states",
+        "title": "Second-Order Curvature & Cross-Greeks: Gamma, Vanna & Volga \u2014 Quant Systems State Engine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Init State"
+          },
+          {
+            "id": "st2",
+            "label": "Eval Kernel"
+          },
+          {
+            "id": "st3",
+            "label": "Invariant Check"
+          },
+          {
+            "id": "st4",
+            "label": "Certified State"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Init State): Initialize deterministic state for Second-Order Curvature & Cross-Greeks.",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Eval Kernel with zero-allocation microarchitectural pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "initialize()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Invariant Check and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "State 4 (Certified State): Production certification complete with verified terminal output.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "verify()"
+            },
+            "tone": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Short Gamma Explosion Forensics & Flash Crash Delta Drift",
+      "codeHash": "6d3fa812a1a7312f54e8ed61d31240dcc762219861455b686a8a4fcba1bbefd9",
+      "spec": {
+        "template": "states",
+        "title": "Short Gamma Explosion Forensics & Flash Crash Delta Drift \u2014 Quant Systems State Engine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Init State"
+          },
+          {
+            "id": "st2",
+            "label": "Eval Kernel"
+          },
+          {
+            "id": "st3",
+            "label": "Invariant Check"
+          },
+          {
+            "id": "st4",
+            "label": "Certified State"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Init State): Initialize deterministic state for Short Gamma Explosion Forensics & Flash Crash Delta Drift.",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Eval Kernel with zero-allocation microarchitectural pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "initialize()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Invariant Check and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "State 4 (Certified State): Production certification complete with verified terminal output.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "verify()"
+            },
+            "tone": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "High-Frequency Multi-Strike Portfolio Greeks Aggregator Engine",
+      "codeHash": "2851f4af1796ae22f00e52c19285ed1635149327cfe825fcdce9f47b4fbea1b1",
+      "spec": {
+        "template": "states",
+        "title": "High-Frequency Multi-Strike Portfolio Greeks Aggregator Engine \u2014 Quant Systems State Engine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Init State"
+          },
+          {
+            "id": "st2",
+            "label": "Eval Kernel"
+          },
+          {
+            "id": "st3",
+            "label": "Invariant Check"
+          },
+          {
+            "id": "st4",
+            "label": "Certified State"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Init State): Initialize deterministic state for High-Frequency Multi-Strike Portfolio Greeks Aggregator Engine.",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Eval Kernel with zero-allocation microarchitectural pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "initialize()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Invariant Check and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "State 4 (Certified State): Production certification complete with verified terminal output.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "verify()"
+            },
+            "tone": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Multi-Factor Stress Testing, Spot-Vol Scenarios & Basel III Defense",
+      "codeHash": "ffef6871443d134d85f609d82b909bad6806e4cbee3b99e30ec17f2406413ff5",
+      "spec": {
+        "template": "states",
+        "title": "Multi-Factor Stress Testing, Spot-Vol Scenarios & Basel III Defense \u2014 Quant Systems State Engine",
+        "states": [
+          {
+            "id": "st1",
+            "label": "Init State"
+          },
+          {
+            "id": "st2",
+            "label": "Eval Kernel"
+          },
+          {
+            "id": "st3",
+            "label": "Invariant Check"
+          },
+          {
+            "id": "st4",
+            "label": "Certified State"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "State 1 (Init State): Initialize deterministic state for Multi-Factor Stress Testing, Spot-Vol Scenarios & Basel III Defense.",
+            "currentState": "st1",
+            "tone": "data"
+          },
+          {
+            "at": "say1",
+            "caption": "Transition to Eval Kernel with zero-allocation microarchitectural pipeline.",
+            "currentState": "st2",
+            "transition": {
+              "from": "st1",
+              "to": "st2",
+              "label": "initialize()"
+            },
+            "tone": "data"
+          },
+          {
+            "at": "example",
+            "caption": "Transition to Invariant Check and evaluate hot-path latency invariant.",
+            "currentState": "st3",
+            "transition": {
+              "from": "st2",
+              "to": "st3",
+              "label": "evaluate()"
+            },
+            "tone": "ok"
+          },
+          {
+            "at": "tryIt",
+            "caption": "State 4 (Certified State): Production certification complete with verified terminal output.",
+            "currentState": "st4",
+            "transition": {
+              "from": "st3",
+              "to": "st4",
+              "label": "verify()"
+            },
+            "tone": "ok"
+          }
+        ]
+      }
+    }
+  ]
+}
