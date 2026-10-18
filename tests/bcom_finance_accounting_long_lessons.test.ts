@@ -2591,3 +2591,231 @@ test('Block 138: B.Com Finance Days 21-25 Gate v2 Visual JSON Integrity Verifica
     }
   }
 });
+
+test('Block 139: B.Com Finance Days 26-30 Invariants (Word Count >= 2950, 5 Parts >= 580, Socratic Check strictly answerIndex 0)', () => {
+  for (let d = 26; d <= 30; d++) {
+    const lesson = getLongLesson('bcom-finance', d);
+    assert.ok(lesson, `bcom-finance Day ${d} lesson must be defined`);
+    assert.equal(lesson.coursePrefix, 'bcom-finance');
+    assert.equal(lesson.day, d);
+    assert.equal(lesson.parts.length, 5, `Day ${d} must have exactly 5 parts`);
+    const expectedMin = d === 30 ? 50 : 45;
+    assert.equal(lesson.minutes, expectedMin, `Day ${d} duration must be ${expectedMin} minutes`);
+    assert.ok(lesson.goal && lesson.goal.length > 20, `Day ${d} goal must be informative`);
+    assert.ok(lesson.recap && lesson.recap.length > 20, `Day ${d} recap must be informative`);
+    assert.ok(lesson.summary && lesson.summary.length >= 3, `Day ${d} summary must have >= 3 points`);
+    assert.ok(lesson.projectStep && lesson.projectStep.title, `Day ${d} projectStep must have a title`);
+    assert.ok(lesson.projectStep.steps && lesson.projectStep.steps.length >= 3, `Day ${d} projectStep must have >= 3 steps`);
+
+    let totalWords = 0;
+    for (let i = 0; i < 5; i++) {
+      const p = lesson.parts[i];
+      assert.ok(p.title && p.title.length > 5, `Day ${d} Part ${i + 1} title must be non-empty`);
+      
+      const partWords = p.say.reduce((acc: number, s: string) => acc + s.trim().split(/\s+/).filter(Boolean).length, 0);
+      totalWords += partWords;
+      assert.ok(partWords >= 580, `Day ${d} Part ${i + 1} (${p.title}) words ${partWords} must be >= 580`);
+
+      assert.ok(p.code && (p.code.includes('class ') || p.code.includes('def ')), `Day ${d} Part ${i + 1} code missing`);
+      assert.ok(p.output && p.output.length > 0, `Day ${d} Part ${i + 1} output missing`);
+      assert.ok(p.codeNotes && p.codeNotes.length >= 1, `Day ${d} Part ${i + 1} codeNotes missing`);
+      assert.ok(p.tryIt && p.tryIt.length > 0, `Day ${d} Part ${i + 1} tryIt missing`);
+
+      const check = p.check as any;
+      assert.ok(check && check.question && check.question.length > 10, `Day ${d} Part ${i + 1} check question missing`);
+      assert.equal(check.options.length, 4, `Day ${d} Part ${i + 1} check must have 4 options`);
+      assert.equal(check.answer, 0, `Day ${d} Part ${i + 1} check answer must be 0`);
+      assert.equal(check.answerIndex, 0, `Day ${d} Part ${i + 1} check answerIndex must be 0`);
+      assert.ok(check.why && check.why.length > 10, `Day ${d} Part ${i + 1} check why missing`);
+      assert.equal(check.explanation, check.why, `Day ${d} Part ${i + 1} explanation must match why`);
+    }
+
+    assert.ok(totalWords >= 2950, `Day ${d} total words ${totalWords} < 2950`);
+  }
+});
+
+test('Block 139: B.Com Finance Day 26: Derivatives & Risk Management Snippets Verification', () => {
+  const lesson = getLongLesson('bcom-finance', 26);
+  assert.ok(lesson);
+  assert.match(lesson.title, /Derivatives & Financial Risk Management/i);
+
+  // Part 1: Forward Pricing
+  assert.match(lesson.parts[0].title, /Foundations of Financial Derivatives & Forward Contracts/i);
+  assert.ok(lesson.parts[0].code?.includes('calculate_forward_price'));
+  assert.ok(lesson.parts[0].output?.includes('Theoretical Forward Premium'));
+
+  // Part 2: Futures M2M
+  assert.match(lesson.parts[1].title, /Futures Contracts, Daily Settlement & Institutional Hedging Mechanics/i);
+  assert.ok(lesson.parts[1].code?.includes('simulate_futures_daily_marking_to_market'));
+  assert.ok(lesson.parts[1].output?.includes('Margin Call'));
+
+  // Part 3: Options & Put-Call Parity
+  assert.match(lesson.parts[2].title, /Options Contracts: Payoff Profiles, Put-Call Parity & Intrinsic Value/i);
+  assert.ok(lesson.parts[2].code?.includes('evaluate_option_payoff'));
+  assert.ok(lesson.parts[2].output?.includes('Put-Call Parity Verification'));
+
+  // Part 4: Interest Rate Swaps
+  assert.match(lesson.parts[3].title, /Interest Rate Swaps \(IRS\) & Corporate Debt Liability Hedging/i);
+  assert.ok(lesson.parts[3].code?.includes('simulate_interest_rate_swap'));
+  assert.ok(lesson.parts[3].output?.includes('Interest Rate Swap Execution'));
+
+  // Part 5: Options Collar
+  assert.match(lesson.parts[4].title, /Integrated Enterprise Risk Management: Protective Puts & Options Collars/i);
+  assert.ok(lesson.parts[4].code?.includes('simulate_options_collar_hedging'));
+  assert.ok(lesson.parts[4].output?.includes('Zero-Cost Options Collar Hedge'));
+});
+
+test('Block 139: B.Com Finance Day 27: Mergers & Acquisitions (M&A) Snippets Verification', () => {
+  const lesson = getLongLesson('bcom-finance', 27);
+  assert.ok(lesson);
+  assert.match(lesson.title, /Mergers & Acquisitions \(M&A\): Valuation, Synergies & Accretion\/Dilution/i);
+
+  // Part 1: Synergies
+  assert.match(lesson.parts[0].title, /Strategic Motives, M&A Typologies & Synergy Quantification/i);
+  assert.ok(lesson.parts[0].code?.includes('calculate_synergy_valuation'));
+  assert.ok(lesson.parts[0].output?.includes('PV of Perpetual Synergies'));
+
+  // Part 2: Maximum Offer & Premium
+  assert.match(lesson.parts[1].title, /Acquisition Financing, Maximum Offer Price & Takeover Premium Mechanics/i);
+  assert.ok(lesson.parts[1].code?.includes('calculate_maximum_offer_and_npv'));
+  assert.ok(lesson.parts[1].output?.includes('Maximum Allowable Offer Price'));
+
+  // Part 3: Accretion / Dilution
+  assert.match(lesson.parts[2].title, /Post-Merger EPS Accretion \/ Dilution Analysis & Deal Structuring/i);
+  assert.ok(lesson.parts[2].code?.includes('evaluate_eps_accretion_dilution'));
+  assert.ok(lesson.parts[2].output?.includes('100% Stock Financed'));
+
+  // Part 4: Exchange Ratio Bounds
+  assert.match(lesson.parts[3].title, /Share Exchange Ratio Mechanics & Boundary Bargaining/i);
+  assert.ok(lesson.parts[3].code?.includes('calculate_exchange_ratio_bounds'));
+  assert.ok(lesson.parts[3].output?.includes('Feasible Bargaining Range'));
+
+  // Part 5: Anti-Takeover Defenses
+  assert.match(lesson.parts[4].title, /Corporate Restructuring & Anti-Takeover Governance Defense/i);
+  assert.ok(lesson.parts[4].code?.includes('simulate_anti_takeover_defenses'));
+  assert.ok(lesson.parts[4].output?.includes('Poison Pill'));
+});
+
+test('Block 139: B.Com Finance Day 28: International Financial Management Snippets Verification', () => {
+  const lesson = getLongLesson('bcom-finance', 28);
+  assert.ok(lesson);
+  assert.match(lesson.title, /International Financial Management & FX Exposure/i);
+
+  // Part 1: FX Exposure Typologies
+  assert.match(lesson.parts[0].title, /The Three Types of Foreign Exchange \(FX\) Risk Exposure/i);
+  assert.ok(lesson.parts[0].code?.includes('classify_fx_exposures'));
+  assert.ok(lesson.parts[0].output?.includes('Transaction Exposure'));
+
+  // Part 2: PPP
+  assert.match(lesson.parts[1].title, /Purchasing Power Parity \(PPP\) & Relative Price Dynamics/i);
+  assert.ok(lesson.parts[1].code?.includes('calculate_ppp_future_spot'));
+  assert.ok(lesson.parts[1].output?.includes('PPP Expected Spot Rate in 1 Year'));
+
+  // Part 3: CIRP & Arbitrage
+  assert.match(lesson.parts[2].title, /Covered Interest Rate Parity \(CIRP\) & Covered Arbitrage Mechanics/i);
+  assert.ok(lesson.parts[2].code?.includes('verify_covered_interest_rate_parity'));
+  assert.ok(lesson.parts[2].output?.includes('Theoretical CIRP Forward Rate'));
+
+  // Part 4: Forward vs MMH
+  assert.match(lesson.parts[3].title, /Hedging Transaction Exposure: Forward Market vs Money Market Hedges/i);
+  assert.ok(lesson.parts[3].code?.includes('compare_fx_hedging_strategies'));
+  assert.ok(lesson.parts[3].output?.includes('FORWARD MARKET HEDGE'));
+
+  // Part 5: Multilateral Netting
+  assert.match(lesson.parts[4].title, /Centralized Treasury Netting & Cross-Currency Cash Pooling/i);
+  assert.ok(lesson.parts[4].code?.includes('simulate_multilateral_netting'));
+  assert.ok(lesson.parts[4].output?.includes('Multilateral Centralized Treasury Netting Engine'));
+});
+
+test('Block 139: B.Com Finance Day 29: Behavioral Finance & Corporate Governance Snippets Verification', () => {
+  const lesson = getLongLesson('bcom-finance', 29);
+  assert.ok(lesson);
+  assert.match(lesson.title, /Behavioral Finance, Market Anomalies & Corporate Governance/i);
+
+  // Part 1: EMH Forms
+  assert.match(lesson.parts[0].title, /The Efficient Market Hypothesis \(EMH\) vs Behavioral Realities/i);
+  assert.ok(lesson.parts[0].code?.includes('compare_emh_forms'));
+  assert.ok(lesson.parts[0].output?.includes('Weak-Form Efficiency'));
+
+  // Part 2: Prospect Theory
+  assert.match(lesson.parts[1].title, /Prospect Theory & Cognitive Investor Biases/i);
+  assert.ok(lesson.parts[1].code?.includes('calculate_prospect_theory_utility'));
+  assert.ok(lesson.parts[1].output?.includes('Loss Aversion lambda = 2.25'));
+
+  // Part 3: Market Anomalies
+  assert.match(lesson.parts[2].title, /Market Anomalies: Momentum, Value, and Herding Behavior/i);
+  assert.ok(lesson.parts[2].code?.includes('evaluate_investment_anomalies'));
+  assert.ok(lesson.parts[2].output?.includes('Post-Earnings Announcement Drift'));
+
+  // Part 4: Agency Problem
+  assert.match(lesson.parts[3].title, /Corporate Governance: The Agency Problem & Board Oversight/i);
+  assert.ok(lesson.parts[3].code?.includes('model_agency_conflict'));
+  assert.ok(lesson.parts[3].output?.includes('Variable Pay Alignment Ratio'));
+
+  // Part 5: Corporate Stewardship & SOX
+  assert.match(lesson.parts[4].title, /Corporate Stewardship, ESG Metrics & Regulatory Compliance Frameworks/i);
+  assert.ok(lesson.parts[4].code?.includes('evaluate_corporate_stewardship_framework'));
+  assert.ok(lesson.parts[4].output?.includes('Sarbanes-Oxley Act (SOX)'));
+});
+
+test('Block 139: B.Com Finance Day 30: 🏆 FINAL GRAND CAPSTONE Snippets Verification', () => {
+  const lesson = getLongLesson('bcom-finance', 30);
+  assert.ok(lesson);
+  assert.match(lesson.title, /FINAL GRAND CAPSTONE/i);
+
+  // Part 1: Phase 1 CapEx & WACC
+  assert.match(lesson.parts[0].title, /Capstone Phase 1: Enterprise Capital Budgeting, WACC & Leverage Synthesis/i);
+  assert.ok(lesson.parts[0].code?.includes('execute_capstone_phase_1'));
+  assert.ok(lesson.parts[0].output?.includes('CAPSTONE PHASE 1: CORPORATE CAPITAL STRUCTURE & LEVERAGE AUDIT'));
+
+  // Part 2: Phase 2 DCF & M&A
+  assert.match(lesson.parts[1].title, /Capstone Phase 2: Intrinsic DCF Equity Valuation & M&A Acquisition Bridge/i);
+  assert.ok(lesson.parts[1].code?.includes('execute_capstone_phase_2'));
+  assert.ok(lesson.parts[1].output?.includes('CAPSTONE PHASE 2: DCF INTRINSIC VALUATION & M&A DUE DILIGENCE'));
+
+  // Part 3: Phase 3 Treasury & FX
+  assert.match(lesson.parts[2].title, /Capstone Phase 3: Global Treasury, FX Netting & Interest Rate Hedging/i);
+  assert.ok(lesson.parts[2].code?.includes('execute_capstone_phase_3'));
+  assert.ok(lesson.parts[2].output?.includes('CAPSTONE PHASE 3: GLOBAL TREASURY & DERIVATIVE HEDGING AUDIT'));
+
+  // Part 4: Phase 4 Portfolio Attribution
+  assert.match(lesson.parts[3].title, /Capstone Phase 4: Markowitz Portfolio Optimization & Performance Scorecard/i);
+  assert.ok(lesson.parts[3].code?.includes('execute_capstone_phase_4'));
+  assert.ok(lesson.parts[3].output?.includes('CAPSTONE PHASE 4: MULTI-ASSET PORTFOLIO OPTIMIZATION & ATTRIBUTION'));
+
+  // Part 5: Phase 5 Grand CFO Command Center
+  assert.match(lesson.parts[4].title, /Capstone Phase 5: Grand Executive CFO Command Center & Master Accreditation/i);
+  assert.ok(lesson.parts[4].code?.includes('execute_grand_cfo_command_center'));
+  assert.ok(lesson.parts[4].output?.includes('FINAL GRAND CAPSTONE: EXECUTIVE CFO COMMAND CENTER AUDIT'));
+  assert.ok(lesson.parts[4].output?.includes('GRAND_MASTER_CFO_ENTERPRISE_FINANCE_AND_PORTFOLIO_MANAGEMENT_CERTIFIED'));
+});
+
+test('Block 139: B.Com Finance Days 26-30 Gate v2 Visual JSON Integrity Verification', () => {
+  const fs = require('fs');
+  const path = require('path');
+  const crypto = require('crypto');
+
+  for (let d = 26; d <= 30; d++) {
+    const pad = String(d).padStart(2, '0');
+    const visPath = path.join(__dirname, `../src/lib/data/lessonVisuals/bcom-finance/day-${pad}.json`);
+    assert.ok(fs.existsSync(visPath), `Visual JSON must exist for Day ${d}`);
+
+    const vis = JSON.parse(fs.readFileSync(visPath, 'utf8'));
+    assert.equal(vis.prefix, 'bcom-finance');
+    assert.equal(vis.day, d);
+    assert.equal(vis.entries.length, 5, `Day ${d} visual must contain exactly 5 entries`);
+
+    const lesson = getLongLesson('bcom-finance', d);
+    for (let i = 0; i < 5; i++) {
+      const entry = vis.entries[i];
+      const part = lesson.parts[i];
+
+      assert.equal(entry.spec.template, 'ledger-sheet', `Day ${d} Part ${i + 1} must use ledger-sheet template`);
+      assert.ok(entry.spec.steps.length >= 3, `Day ${d} Part ${i + 1} visual must have >= 3 steps`);
+
+      // Verify SHA-256 binding between code and visual entry
+      const expectedHash = crypto.createHash('sha256').update(part.code).digest('hex');
+      assert.equal(entry.codeHash, expectedHash, `Day ${d} Part ${i + 1} visual codeHash must match actual part.code`);
+    }
+  }
+});
