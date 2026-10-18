@@ -1,0 +1,669 @@
+{
+  "schemaVersion": 1,
+  "prefix": "blockchain",
+  "day": 53,
+  "promptSha": "3b018e0095eb6bc00f3a975b19b46dd03cfe719ed6f58e8a6124e3fc47d7a020",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "The EOA Limitation & ERC-4337 Architecture Overview",
+      "codeHash": "78645d6aee3838c78ecf2efd86be0f7028c5a475f343e316eee9f378ce7f07a6",
+      "spec": {
+        "template": "sequence",
+        "title": "The EOA Limitation & ERC-4337 Architecture Overview — ZK & Account Abstraction Sequence",
+        "actors": [
+          "User / Smart Account",
+          "Bundler Mempool",
+          "Canonical EntryPoint (0x5FF1)",
+          "Sponsoring Paymaster"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialization of cryptographic payload or UserOperation for The EOA Limitation & ERC-4337 ...",
+            "activeActor": "User / Smart Account",
+            "messages": [
+              {
+                "from": "User / Smart Account",
+                "to": "Bundler Mempool",
+                "label": "initiateProofOrUserOp(constructWitness) [Phase 1]",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Constraint evaluation, simulation, or mempool validation",
+            "activeActor": "Bundler Mempool",
+            "messages": [
+              {
+                "from": "Bundler Mempool",
+                "to": "Canonical EntryPoint (0x5FF1)",
+                "label": "evaluateConstraintOrSimulate(verifySoundness) [Phase 2]",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of pairing precompile, paymaster signature, or emergency containment",
+            "activeActor": "Canonical EntryPoint (0x5FF1)",
+            "messages": [
+              {
+                "from": "Canonical EntryPoint (0x5FF1)",
+                "to": "Sponsoring Paymaster",
+                "label": "verifyOnChainOrSettle(executePrecompile) [Phase 3]",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Cryptographic verification settled and confirmed; state invariant sealed",
+            "activeActor": "Bundler Mempool",
+            "messages": [
+              {
+                "from": "Bundler Mempool",
+                "to": "User / Smart Account",
+                "label": "ProofOrOperationFinalized(verified ✓)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "The EOA Limitation & ERC-4337 Architecture Overview — ZK & Account Abstraction Sequence",
+        "actors": [
+          "User / Smart Account",
+          "Bundler Mempool",
+          "Canonical EntryPoint (0x5FF1)",
+          "Sponsoring Paymaster"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialization of cryptographic payload or UserOperation for The EOA Limitation & ERC-4337 ...",
+            "activeActor": "User / Smart Account",
+            "messages": [
+              {
+                "from": "User / Smart Account",
+                "to": "Bundler Mempool",
+                "label": "initiateProofOrUserOp(constructWitness) [Phase 1]",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Constraint evaluation, simulation, or mempool validation",
+            "activeActor": "Bundler Mempool",
+            "messages": [
+              {
+                "from": "Bundler Mempool",
+                "to": "Canonical EntryPoint (0x5FF1)",
+                "label": "evaluateConstraintOrSimulate(verifySoundness) [Phase 2]",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of pairing precompile, paymaster signature, or emergency containment",
+            "activeActor": "Canonical EntryPoint (0x5FF1)",
+            "messages": [
+              {
+                "from": "Canonical EntryPoint (0x5FF1)",
+                "to": "Sponsoring Paymaster",
+                "label": "verifyOnChainOrSettle(executePrecompile) [Phase 3]",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Cryptographic verification settled and confirmed; state invariant sealed",
+            "activeActor": "Bundler Mempool",
+            "messages": [
+              {
+                "from": "Bundler Mempool",
+                "to": "User / Smart Account",
+                "label": "ProofOrOperationFinalized(verified ✓)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "UserOperation Struct & Two-Phase Execution (Validation vs Execution)",
+      "codeHash": "7d9933f503bc0f7a89385b0fe241647b944f661877cbe678f9e3e3e72d60fc7e",
+      "spec": {
+        "template": "sequence",
+        "title": "UserOperation Struct & Two-Phase Execution (Validation vs Execution) — ZK & Account Abstraction Sequence",
+        "actors": [
+          "User / Smart Account",
+          "Bundler Mempool",
+          "Canonical EntryPoint (0x5FF1)",
+          "Sponsoring Paymaster"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialization of cryptographic payload or UserOperation for UserOperation Struct & Two-Pha...",
+            "activeActor": "User / Smart Account",
+            "messages": [
+              {
+                "from": "User / Smart Account",
+                "to": "Bundler Mempool",
+                "label": "initiateProofOrUserOp(constructWitness) [Phase 1]",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Constraint evaluation, simulation, or mempool validation",
+            "activeActor": "Bundler Mempool",
+            "messages": [
+              {
+                "from": "Bundler Mempool",
+                "to": "Canonical EntryPoint (0x5FF1)",
+                "label": "evaluateConstraintOrSimulate(verifySoundness) [Phase 2]",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of pairing precompile, paymaster signature, or emergency containment",
+            "activeActor": "Canonical EntryPoint (0x5FF1)",
+            "messages": [
+              {
+                "from": "Canonical EntryPoint (0x5FF1)",
+                "to": "Sponsoring Paymaster",
+                "label": "verifyOnChainOrSettle(executePrecompile) [Phase 3]",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Cryptographic verification settled and confirmed; state invariant sealed",
+            "activeActor": "Bundler Mempool",
+            "messages": [
+              {
+                "from": "Bundler Mempool",
+                "to": "User / Smart Account",
+                "label": "ProofOrOperationFinalized(verified ✓)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "UserOperation Struct & Two-Phase Execution (Validation vs Execution) — ZK & Account Abstraction Sequence",
+        "actors": [
+          "User / Smart Account",
+          "Bundler Mempool",
+          "Canonical EntryPoint (0x5FF1)",
+          "Sponsoring Paymaster"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialization of cryptographic payload or UserOperation for UserOperation Struct & Two-Pha...",
+            "activeActor": "User / Smart Account",
+            "messages": [
+              {
+                "from": "User / Smart Account",
+                "to": "Bundler Mempool",
+                "label": "initiateProofOrUserOp(constructWitness) [Phase 1]",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Constraint evaluation, simulation, or mempool validation",
+            "activeActor": "Bundler Mempool",
+            "messages": [
+              {
+                "from": "Bundler Mempool",
+                "to": "Canonical EntryPoint (0x5FF1)",
+                "label": "evaluateConstraintOrSimulate(verifySoundness) [Phase 2]",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of pairing precompile, paymaster signature, or emergency containment",
+            "activeActor": "Canonical EntryPoint (0x5FF1)",
+            "messages": [
+              {
+                "from": "Canonical EntryPoint (0x5FF1)",
+                "to": "Sponsoring Paymaster",
+                "label": "verifyOnChainOrSettle(executePrecompile) [Phase 3]",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Cryptographic verification settled and confirmed; state invariant sealed",
+            "activeActor": "Bundler Mempool",
+            "messages": [
+              {
+                "from": "Bundler Mempool",
+                "to": "User / Smart Account",
+                "label": "ProofOrOperationFinalized(verified ✓)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Detective Lab: Paymaster Reserve Draining & Sybil Gas Exhaustion",
+      "codeHash": "c75257f42740551c95d28f95c3e8c208a956c9d77ea447d8c1a80b5fb2d5eb05",
+      "spec": {
+        "template": "sequence",
+        "title": "Detective Lab: Paymaster Reserve Draining & Sybil Gas Exhaustion — ZK & Account Abstraction Sequence",
+        "actors": [
+          "User / Smart Account",
+          "Bundler Mempool",
+          "Canonical EntryPoint (0x5FF1)",
+          "Sponsoring Paymaster"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialization of cryptographic payload or UserOperation for Detective Lab: Paymaster Reser...",
+            "activeActor": "User / Smart Account",
+            "messages": [
+              {
+                "from": "User / Smart Account",
+                "to": "Bundler Mempool",
+                "label": "initiateProofOrUserOp(constructWitness) [Phase 1]",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Constraint evaluation, simulation, or mempool validation",
+            "activeActor": "Bundler Mempool",
+            "messages": [
+              {
+                "from": "Bundler Mempool",
+                "to": "Canonical EntryPoint (0x5FF1)",
+                "label": "evaluateConstraintOrSimulate(verifySoundness) [Phase 2]",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of pairing precompile, paymaster signature, or emergency containment",
+            "activeActor": "Canonical EntryPoint (0x5FF1)",
+            "messages": [
+              {
+                "from": "Canonical EntryPoint (0x5FF1)",
+                "to": "Sponsoring Paymaster",
+                "label": "verifyOnChainOrSettle(executePrecompile) [Phase 3]",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Cryptographic verification settled and confirmed; state invariant sealed",
+            "activeActor": "Bundler Mempool",
+            "messages": [
+              {
+                "from": "Bundler Mempool",
+                "to": "User / Smart Account",
+                "label": "ProofOrOperationFinalized(verified ✓)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Detective Lab: Paymaster Reserve Draining & Sybil Gas Exhaustion — ZK & Account Abstraction Sequence",
+        "actors": [
+          "User / Smart Account",
+          "Bundler Mempool",
+          "Canonical EntryPoint (0x5FF1)",
+          "Sponsoring Paymaster"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialization of cryptographic payload or UserOperation for Detective Lab: Paymaster Reser...",
+            "activeActor": "User / Smart Account",
+            "messages": [
+              {
+                "from": "User / Smart Account",
+                "to": "Bundler Mempool",
+                "label": "initiateProofOrUserOp(constructWitness) [Phase 1]",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Constraint evaluation, simulation, or mempool validation",
+            "activeActor": "Bundler Mempool",
+            "messages": [
+              {
+                "from": "Bundler Mempool",
+                "to": "Canonical EntryPoint (0x5FF1)",
+                "label": "evaluateConstraintOrSimulate(verifySoundness) [Phase 2]",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of pairing precompile, paymaster signature, or emergency containment",
+            "activeActor": "Canonical EntryPoint (0x5FF1)",
+            "messages": [
+              {
+                "from": "Canonical EntryPoint (0x5FF1)",
+                "to": "Sponsoring Paymaster",
+                "label": "verifyOnChainOrSettle(executePrecompile) [Phase 3]",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Cryptographic verification settled and confirmed; state invariant sealed",
+            "activeActor": "Bundler Mempool",
+            "messages": [
+              {
+                "from": "Bundler Mempool",
+                "to": "User / Smart Account",
+                "label": "ProofOrOperationFinalized(verified ✓)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Sponsoring Paymaster & Gasless Transactions via paymasterAndData",
+      "codeHash": "2a8aa1887df38c77a215f8efa1d2b661ed3b992ebea6f2cb3300e68599c90655",
+      "spec": {
+        "template": "sequence",
+        "title": "Sponsoring Paymaster & Gasless Transactions via paymasterAndData — ZK & Account Abstraction Sequence",
+        "actors": [
+          "User / Smart Account",
+          "Bundler Mempool",
+          "Canonical EntryPoint (0x5FF1)",
+          "Sponsoring Paymaster"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialization of cryptographic payload or UserOperation for Sponsoring Paymaster & Gasless...",
+            "activeActor": "User / Smart Account",
+            "messages": [
+              {
+                "from": "User / Smart Account",
+                "to": "Bundler Mempool",
+                "label": "initiateProofOrUserOp(constructWitness) [Phase 1]",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Constraint evaluation, simulation, or mempool validation",
+            "activeActor": "Bundler Mempool",
+            "messages": [
+              {
+                "from": "Bundler Mempool",
+                "to": "Canonical EntryPoint (0x5FF1)",
+                "label": "evaluateConstraintOrSimulate(verifySoundness) [Phase 2]",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of pairing precompile, paymaster signature, or emergency containment",
+            "activeActor": "Canonical EntryPoint (0x5FF1)",
+            "messages": [
+              {
+                "from": "Canonical EntryPoint (0x5FF1)",
+                "to": "Sponsoring Paymaster",
+                "label": "verifyOnChainOrSettle(executePrecompile) [Phase 3]",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Cryptographic verification settled and confirmed; state invariant sealed",
+            "activeActor": "Bundler Mempool",
+            "messages": [
+              {
+                "from": "Bundler Mempool",
+                "to": "User / Smart Account",
+                "label": "ProofOrOperationFinalized(verified ✓)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Sponsoring Paymaster & Gasless Transactions via paymasterAndData — ZK & Account Abstraction Sequence",
+        "actors": [
+          "User / Smart Account",
+          "Bundler Mempool",
+          "Canonical EntryPoint (0x5FF1)",
+          "Sponsoring Paymaster"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialization of cryptographic payload or UserOperation for Sponsoring Paymaster & Gasless...",
+            "activeActor": "User / Smart Account",
+            "messages": [
+              {
+                "from": "User / Smart Account",
+                "to": "Bundler Mempool",
+                "label": "initiateProofOrUserOp(constructWitness) [Phase 1]",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Constraint evaluation, simulation, or mempool validation",
+            "activeActor": "Bundler Mempool",
+            "messages": [
+              {
+                "from": "Bundler Mempool",
+                "to": "Canonical EntryPoint (0x5FF1)",
+                "label": "evaluateConstraintOrSimulate(verifySoundness) [Phase 2]",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of pairing precompile, paymaster signature, or emergency containment",
+            "activeActor": "Canonical EntryPoint (0x5FF1)",
+            "messages": [
+              {
+                "from": "Canonical EntryPoint (0x5FF1)",
+                "to": "Sponsoring Paymaster",
+                "label": "verifyOnChainOrSettle(executePrecompile) [Phase 3]",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Cryptographic verification settled and confirmed; state invariant sealed",
+            "activeActor": "Bundler Mempool",
+            "messages": [
+              {
+                "from": "Bundler Mempool",
+                "to": "User / Smart Account",
+                "label": "ProofOrOperationFinalized(verified ✓)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production ERC-4337 Smart Account & EntryPoint Execution Suite",
+      "codeHash": "b9968e8e59f3047bfb2f0f65a10e7b6e056ae166939cb50b2d083e25d1b3d3a4",
+      "spec": {
+        "template": "sequence",
+        "title": "Production ERC-4337 Smart Account & EntryPoint Execution Suite — ZK & Account Abstraction Sequence",
+        "actors": [
+          "User / Smart Account",
+          "Bundler Mempool",
+          "Canonical EntryPoint (0x5FF1)",
+          "Sponsoring Paymaster"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialization of cryptographic payload or UserOperation for Production ERC-4337 Smart Acco...",
+            "activeActor": "User / Smart Account",
+            "messages": [
+              {
+                "from": "User / Smart Account",
+                "to": "Bundler Mempool",
+                "label": "initiateProofOrUserOp(constructWitness) [Phase 1]",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Constraint evaluation, simulation, or mempool validation",
+            "activeActor": "Bundler Mempool",
+            "messages": [
+              {
+                "from": "Bundler Mempool",
+                "to": "Canonical EntryPoint (0x5FF1)",
+                "label": "evaluateConstraintOrSimulate(verifySoundness) [Phase 2]",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of pairing precompile, paymaster signature, or emergency containment",
+            "activeActor": "Canonical EntryPoint (0x5FF1)",
+            "messages": [
+              {
+                "from": "Canonical EntryPoint (0x5FF1)",
+                "to": "Sponsoring Paymaster",
+                "label": "verifyOnChainOrSettle(executePrecompile) [Phase 3]",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Cryptographic verification settled and confirmed; state invariant sealed",
+            "activeActor": "Bundler Mempool",
+            "messages": [
+              {
+                "from": "Bundler Mempool",
+                "to": "User / Smart Account",
+                "label": "ProofOrOperationFinalized(verified ✓)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "sequence",
+        "title": "Production ERC-4337 Smart Account & EntryPoint Execution Suite — ZK & Account Abstraction Sequence",
+        "actors": [
+          "User / Smart Account",
+          "Bundler Mempool",
+          "Canonical EntryPoint (0x5FF1)",
+          "Sponsoring Paymaster"
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialization of cryptographic payload or UserOperation for Production ERC-4337 Smart Acco...",
+            "activeActor": "User / Smart Account",
+            "messages": [
+              {
+                "from": "User / Smart Account",
+                "to": "Bundler Mempool",
+                "label": "initiateProofOrUserOp(constructWitness) [Phase 1]",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Constraint evaluation, simulation, or mempool validation",
+            "activeActor": "Bundler Mempool",
+            "messages": [
+              {
+                "from": "Bundler Mempool",
+                "to": "Canonical EntryPoint (0x5FF1)",
+                "label": "evaluateConstraintOrSimulate(verifySoundness) [Phase 2]",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of pairing precompile, paymaster signature, or emergency containment",
+            "activeActor": "Canonical EntryPoint (0x5FF1)",
+            "messages": [
+              {
+                "from": "Canonical EntryPoint (0x5FF1)",
+                "to": "Sponsoring Paymaster",
+                "label": "verifyOnChainOrSettle(executePrecompile) [Phase 3]",
+                "tone": "alert"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Cryptographic verification settled and confirmed; state invariant sealed",
+            "activeActor": "Bundler Mempool",
+            "messages": [
+              {
+                "from": "Bundler Mempool",
+                "to": "User / Smart Account",
+                "label": "ProofOrOperationFinalized(verified ✓)",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
