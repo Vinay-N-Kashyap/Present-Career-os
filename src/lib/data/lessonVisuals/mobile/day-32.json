@@ -1,0 +1,1089 @@
+{
+  "schemaVersion": 1,
+  "prefix": "mobile",
+  "day": 32,
+  "promptSha": "mobile-day-32-reanimated-spec",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Shared Values Memory Model & C++ View Descriptors",
+      "codeHash": "b6731c8792381b128463b7b666950765bbf439f7eb4f5b8a8a1ad364143871a4",
+      "spec": {
+        "template": "component-tree",
+        "rootId": "AppRoot",
+        "nodes": [
+          {
+            "id": "AppRoot",
+            "name": "<MobileAppShell />",
+            "props": {
+              "theme": "dark",
+              "fps": 120
+            },
+            "children": [
+              {
+                "id": "WorkletRuntime",
+                "name": "<WorkletRuntimeHost />",
+                "props": {
+                  "thread": "UI_MAIN",
+                  "hermesJsi": "ACTIVE"
+                }
+              },
+              {
+                "id": "GestureSurface",
+                "name": "<GestureHandlerSurface />",
+                "props": {
+                  "recognizer": "PAN_NATIVE",
+                  "velocityTracking": "SYNCHRONIZED"
+                }
+              },
+              {
+                "id": "PhysicsViewport",
+                "name": "<FluidPhysicsViewport />",
+                "props": {
+                  "springDamping": 1.0,
+                  "transformGpu": "ENABLED"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount native UI worklet runtime and Hermes JSI pointers for Shared Values Memory Model & C.",
+            "activeId": "WorkletRuntime",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "WorkletRuntime",
+                "name": "<WorkletRuntimeHost />",
+                "props": {
+                  "status": "HERMES_JSI_BOUND"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Intercept touch state machine natively via <GestureHandlerSurface />.",
+            "activeId": "GestureSurface",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "GestureSurface",
+                "name": "<GestureHandlerSurface />",
+                "props": {
+                  "touchState": "ACTIVE_TRACKING"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute zero-bridge 120 FPS spring physics in <FluidPhysicsViewport />.",
+            "activeId": "PhysicsViewport",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "PhysicsViewport",
+                "name": "<FluidPhysicsViewport />",
+                "props": {
+                  "fps": 120
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify 120Hz VSync timing and zero bridge serialization invariants.",
+            "activeId": "AppRoot",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppRoot",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "certification": "FLUID_120FPS_VERIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "rootId": "AppRoot",
+        "nodes": [
+          {
+            "id": "AppRoot",
+            "name": "<MobileAppShell />",
+            "props": {
+              "theme": "dark",
+              "fps": 120
+            },
+            "children": [
+              {
+                "id": "WorkletRuntime",
+                "name": "<WorkletRuntimeHost />",
+                "props": {
+                  "thread": "UI_MAIN",
+                  "hermesJsi": "ACTIVE"
+                }
+              },
+              {
+                "id": "GestureSurface",
+                "name": "<GestureHandlerSurface />",
+                "props": {
+                  "recognizer": "PAN_NATIVE",
+                  "velocityTracking": "SYNCHRONIZED"
+                }
+              },
+              {
+                "id": "PhysicsViewport",
+                "name": "<FluidPhysicsViewport />",
+                "props": {
+                  "springDamping": 1.0,
+                  "transformGpu": "ENABLED"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount native UI worklet runtime and Hermes JSI pointers for Shared Values Memory Model & C.",
+            "activeId": "WorkletRuntime",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "WorkletRuntime",
+                "name": "<WorkletRuntimeHost />",
+                "props": {
+                  "status": "HERMES_JSI_BOUND"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Intercept touch state machine natively via <GestureHandlerSurface />.",
+            "activeId": "GestureSurface",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "GestureSurface",
+                "name": "<GestureHandlerSurface />",
+                "props": {
+                  "touchState": "ACTIVE_TRACKING"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute zero-bridge 120 FPS spring physics in <FluidPhysicsViewport />.",
+            "activeId": "PhysicsViewport",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "PhysicsViewport",
+                "name": "<FluidPhysicsViewport />",
+                "props": {
+                  "fps": 120
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify 120Hz VSync timing and zero bridge serialization invariants.",
+            "activeId": "AppRoot",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppRoot",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "certification": "FLUID_120FPS_VERIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Detective Lab: Layout Reflow Stutter vs GPU-Accelerated Transform",
+      "codeHash": "2693f11e4a246c113e20de3bff7351ab7593dadcb95cb0b1ce1945d514bf708e",
+      "spec": {
+        "template": "component-tree",
+        "rootId": "AppRoot",
+        "nodes": [
+          {
+            "id": "AppRoot",
+            "name": "<MobileAppShell />",
+            "props": {
+              "theme": "dark",
+              "fps": 120
+            },
+            "children": [
+              {
+                "id": "WorkletRuntime",
+                "name": "<WorkletRuntimeHost />",
+                "props": {
+                  "thread": "UI_MAIN",
+                  "hermesJsi": "ACTIVE"
+                }
+              },
+              {
+                "id": "GestureSurface",
+                "name": "<GestureHandlerSurface />",
+                "props": {
+                  "recognizer": "PAN_NATIVE",
+                  "velocityTracking": "SYNCHRONIZED"
+                }
+              },
+              {
+                "id": "PhysicsViewport",
+                "name": "<FluidPhysicsViewport />",
+                "props": {
+                  "springDamping": 1.0,
+                  "transformGpu": "ENABLED"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount native UI worklet runtime and Hermes JSI pointers for Detective Lab: Layout Reflow S.",
+            "activeId": "WorkletRuntime",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "WorkletRuntime",
+                "name": "<WorkletRuntimeHost />",
+                "props": {
+                  "status": "HERMES_JSI_BOUND"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Intercept touch state machine natively via <GestureHandlerSurface />.",
+            "activeId": "GestureSurface",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "GestureSurface",
+                "name": "<GestureHandlerSurface />",
+                "props": {
+                  "touchState": "ACTIVE_TRACKING"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute zero-bridge 120 FPS spring physics in <FluidPhysicsViewport />.",
+            "activeId": "PhysicsViewport",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "PhysicsViewport",
+                "name": "<FluidPhysicsViewport />",
+                "props": {
+                  "fps": 120
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify 120Hz VSync timing and zero bridge serialization invariants.",
+            "activeId": "AppRoot",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppRoot",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "certification": "FLUID_120FPS_VERIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "rootId": "AppRoot",
+        "nodes": [
+          {
+            "id": "AppRoot",
+            "name": "<MobileAppShell />",
+            "props": {
+              "theme": "dark",
+              "fps": 120
+            },
+            "children": [
+              {
+                "id": "WorkletRuntime",
+                "name": "<WorkletRuntimeHost />",
+                "props": {
+                  "thread": "UI_MAIN",
+                  "hermesJsi": "ACTIVE"
+                }
+              },
+              {
+                "id": "GestureSurface",
+                "name": "<GestureHandlerSurface />",
+                "props": {
+                  "recognizer": "PAN_NATIVE",
+                  "velocityTracking": "SYNCHRONIZED"
+                }
+              },
+              {
+                "id": "PhysicsViewport",
+                "name": "<FluidPhysicsViewport />",
+                "props": {
+                  "springDamping": 1.0,
+                  "transformGpu": "ENABLED"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount native UI worklet runtime and Hermes JSI pointers for Detective Lab: Layout Reflow S.",
+            "activeId": "WorkletRuntime",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "WorkletRuntime",
+                "name": "<WorkletRuntimeHost />",
+                "props": {
+                  "status": "HERMES_JSI_BOUND"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Intercept touch state machine natively via <GestureHandlerSurface />.",
+            "activeId": "GestureSurface",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "GestureSurface",
+                "name": "<GestureHandlerSurface />",
+                "props": {
+                  "touchState": "ACTIVE_TRACKING"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute zero-bridge 120 FPS spring physics in <FluidPhysicsViewport />.",
+            "activeId": "PhysicsViewport",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "PhysicsViewport",
+                "name": "<FluidPhysicsViewport />",
+                "props": {
+                  "fps": 120
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify 120Hz VSync timing and zero bridge serialization invariants.",
+            "activeId": "AppRoot",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppRoot",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "certification": "FLUID_120FPS_VERIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Mastery Assignment: 120 FPS Interpolated Financial Gauge",
+      "codeHash": "b32dd817d046bd92e56223aaea98535038f4c787bc5fab3470ee4a9ee9a4336b",
+      "spec": {
+        "template": "component-tree",
+        "rootId": "AppRoot",
+        "nodes": [
+          {
+            "id": "AppRoot",
+            "name": "<MobileAppShell />",
+            "props": {
+              "theme": "dark",
+              "fps": 120
+            },
+            "children": [
+              {
+                "id": "WorkletRuntime",
+                "name": "<WorkletRuntimeHost />",
+                "props": {
+                  "thread": "UI_MAIN",
+                  "hermesJsi": "ACTIVE"
+                }
+              },
+              {
+                "id": "GestureSurface",
+                "name": "<GestureHandlerSurface />",
+                "props": {
+                  "recognizer": "PAN_NATIVE",
+                  "velocityTracking": "SYNCHRONIZED"
+                }
+              },
+              {
+                "id": "PhysicsViewport",
+                "name": "<FluidPhysicsViewport />",
+                "props": {
+                  "springDamping": 1.0,
+                  "transformGpu": "ENABLED"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount native UI worklet runtime and Hermes JSI pointers for Mastery Assignment: 120 FPS In.",
+            "activeId": "WorkletRuntime",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "WorkletRuntime",
+                "name": "<WorkletRuntimeHost />",
+                "props": {
+                  "status": "HERMES_JSI_BOUND"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Intercept touch state machine natively via <GestureHandlerSurface />.",
+            "activeId": "GestureSurface",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "GestureSurface",
+                "name": "<GestureHandlerSurface />",
+                "props": {
+                  "touchState": "ACTIVE_TRACKING"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute zero-bridge 120 FPS spring physics in <FluidPhysicsViewport />.",
+            "activeId": "PhysicsViewport",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "PhysicsViewport",
+                "name": "<FluidPhysicsViewport />",
+                "props": {
+                  "fps": 120
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify 120Hz VSync timing and zero bridge serialization invariants.",
+            "activeId": "AppRoot",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppRoot",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "certification": "FLUID_120FPS_VERIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "rootId": "AppRoot",
+        "nodes": [
+          {
+            "id": "AppRoot",
+            "name": "<MobileAppShell />",
+            "props": {
+              "theme": "dark",
+              "fps": 120
+            },
+            "children": [
+              {
+                "id": "WorkletRuntime",
+                "name": "<WorkletRuntimeHost />",
+                "props": {
+                  "thread": "UI_MAIN",
+                  "hermesJsi": "ACTIVE"
+                }
+              },
+              {
+                "id": "GestureSurface",
+                "name": "<GestureHandlerSurface />",
+                "props": {
+                  "recognizer": "PAN_NATIVE",
+                  "velocityTracking": "SYNCHRONIZED"
+                }
+              },
+              {
+                "id": "PhysicsViewport",
+                "name": "<FluidPhysicsViewport />",
+                "props": {
+                  "springDamping": 1.0,
+                  "transformGpu": "ENABLED"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount native UI worklet runtime and Hermes JSI pointers for Mastery Assignment: 120 FPS In.",
+            "activeId": "WorkletRuntime",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "WorkletRuntime",
+                "name": "<WorkletRuntimeHost />",
+                "props": {
+                  "status": "HERMES_JSI_BOUND"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Intercept touch state machine natively via <GestureHandlerSurface />.",
+            "activeId": "GestureSurface",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "GestureSurface",
+                "name": "<GestureHandlerSurface />",
+                "props": {
+                  "touchState": "ACTIVE_TRACKING"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute zero-bridge 120 FPS spring physics in <FluidPhysicsViewport />.",
+            "activeId": "PhysicsViewport",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "PhysicsViewport",
+                "name": "<FluidPhysicsViewport />",
+                "props": {
+                  "fps": 120
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify 120Hz VSync timing and zero bridge serialization invariants.",
+            "activeId": "AppRoot",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppRoot",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "certification": "FLUID_120FPS_VERIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Incident Lab: Shared Value Memory Leak on Unmount",
+      "codeHash": "4cae74b3f584269ca384bbd2b06e5056b22729430a18082be6c4dd1d15aaacb6",
+      "spec": {
+        "template": "component-tree",
+        "rootId": "AppRoot",
+        "nodes": [
+          {
+            "id": "AppRoot",
+            "name": "<MobileAppShell />",
+            "props": {
+              "theme": "dark",
+              "fps": 120
+            },
+            "children": [
+              {
+                "id": "WorkletRuntime",
+                "name": "<WorkletRuntimeHost />",
+                "props": {
+                  "thread": "UI_MAIN",
+                  "hermesJsi": "ACTIVE"
+                }
+              },
+              {
+                "id": "GestureSurface",
+                "name": "<GestureHandlerSurface />",
+                "props": {
+                  "recognizer": "PAN_NATIVE",
+                  "velocityTracking": "SYNCHRONIZED"
+                }
+              },
+              {
+                "id": "PhysicsViewport",
+                "name": "<FluidPhysicsViewport />",
+                "props": {
+                  "springDamping": 1.0,
+                  "transformGpu": "ENABLED"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount native UI worklet runtime and Hermes JSI pointers for Production Incident Lab: Share.",
+            "activeId": "WorkletRuntime",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "WorkletRuntime",
+                "name": "<WorkletRuntimeHost />",
+                "props": {
+                  "status": "HERMES_JSI_BOUND"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Intercept touch state machine natively via <GestureHandlerSurface />.",
+            "activeId": "GestureSurface",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "GestureSurface",
+                "name": "<GestureHandlerSurface />",
+                "props": {
+                  "touchState": "ACTIVE_TRACKING"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute zero-bridge 120 FPS spring physics in <FluidPhysicsViewport />.",
+            "activeId": "PhysicsViewport",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "PhysicsViewport",
+                "name": "<FluidPhysicsViewport />",
+                "props": {
+                  "fps": 120
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify 120Hz VSync timing and zero bridge serialization invariants.",
+            "activeId": "AppRoot",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppRoot",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "certification": "FLUID_120FPS_VERIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "rootId": "AppRoot",
+        "nodes": [
+          {
+            "id": "AppRoot",
+            "name": "<MobileAppShell />",
+            "props": {
+              "theme": "dark",
+              "fps": 120
+            },
+            "children": [
+              {
+                "id": "WorkletRuntime",
+                "name": "<WorkletRuntimeHost />",
+                "props": {
+                  "thread": "UI_MAIN",
+                  "hermesJsi": "ACTIVE"
+                }
+              },
+              {
+                "id": "GestureSurface",
+                "name": "<GestureHandlerSurface />",
+                "props": {
+                  "recognizer": "PAN_NATIVE",
+                  "velocityTracking": "SYNCHRONIZED"
+                }
+              },
+              {
+                "id": "PhysicsViewport",
+                "name": "<FluidPhysicsViewport />",
+                "props": {
+                  "springDamping": 1.0,
+                  "transformGpu": "ENABLED"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount native UI worklet runtime and Hermes JSI pointers for Production Incident Lab: Share.",
+            "activeId": "WorkletRuntime",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "WorkletRuntime",
+                "name": "<WorkletRuntimeHost />",
+                "props": {
+                  "status": "HERMES_JSI_BOUND"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Intercept touch state machine natively via <GestureHandlerSurface />.",
+            "activeId": "GestureSurface",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "GestureSurface",
+                "name": "<GestureHandlerSurface />",
+                "props": {
+                  "touchState": "ACTIVE_TRACKING"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute zero-bridge 120 FPS spring physics in <FluidPhysicsViewport />.",
+            "activeId": "PhysicsViewport",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "PhysicsViewport",
+                "name": "<FluidPhysicsViewport />",
+                "props": {
+                  "fps": 120
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify 120Hz VSync timing and zero bridge serialization invariants.",
+            "activeId": "AppRoot",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppRoot",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "certification": "FLUID_120FPS_VERIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "withTiming Easing Profiles & Smooth Cubic Bezier Curves",
+      "codeHash": "704f8b12fc67357d6b606a8dc80eaeeb3ce7bae156de35f4ac05b060dccd2c2a",
+      "spec": {
+        "template": "component-tree",
+        "rootId": "AppRoot",
+        "nodes": [
+          {
+            "id": "AppRoot",
+            "name": "<MobileAppShell />",
+            "props": {
+              "theme": "dark",
+              "fps": 120
+            },
+            "children": [
+              {
+                "id": "WorkletRuntime",
+                "name": "<WorkletRuntimeHost />",
+                "props": {
+                  "thread": "UI_MAIN",
+                  "hermesJsi": "ACTIVE"
+                }
+              },
+              {
+                "id": "GestureSurface",
+                "name": "<GestureHandlerSurface />",
+                "props": {
+                  "recognizer": "PAN_NATIVE",
+                  "velocityTracking": "SYNCHRONIZED"
+                }
+              },
+              {
+                "id": "PhysicsViewport",
+                "name": "<FluidPhysicsViewport />",
+                "props": {
+                  "springDamping": 1.0,
+                  "transformGpu": "ENABLED"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount native UI worklet runtime and Hermes JSI pointers for withTiming Easing Profiles & S.",
+            "activeId": "WorkletRuntime",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "WorkletRuntime",
+                "name": "<WorkletRuntimeHost />",
+                "props": {
+                  "status": "HERMES_JSI_BOUND"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Intercept touch state machine natively via <GestureHandlerSurface />.",
+            "activeId": "GestureSurface",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "GestureSurface",
+                "name": "<GestureHandlerSurface />",
+                "props": {
+                  "touchState": "ACTIVE_TRACKING"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute zero-bridge 120 FPS spring physics in <FluidPhysicsViewport />.",
+            "activeId": "PhysicsViewport",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "PhysicsViewport",
+                "name": "<FluidPhysicsViewport />",
+                "props": {
+                  "fps": 120
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify 120Hz VSync timing and zero bridge serialization invariants.",
+            "activeId": "AppRoot",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppRoot",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "certification": "FLUID_120FPS_VERIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "component-tree",
+        "rootId": "AppRoot",
+        "nodes": [
+          {
+            "id": "AppRoot",
+            "name": "<MobileAppShell />",
+            "props": {
+              "theme": "dark",
+              "fps": 120
+            },
+            "children": [
+              {
+                "id": "WorkletRuntime",
+                "name": "<WorkletRuntimeHost />",
+                "props": {
+                  "thread": "UI_MAIN",
+                  "hermesJsi": "ACTIVE"
+                }
+              },
+              {
+                "id": "GestureSurface",
+                "name": "<GestureHandlerSurface />",
+                "props": {
+                  "recognizer": "PAN_NATIVE",
+                  "velocityTracking": "SYNCHRONIZED"
+                }
+              },
+              {
+                "id": "PhysicsViewport",
+                "name": "<FluidPhysicsViewport />",
+                "props": {
+                  "springDamping": 1.0,
+                  "transformGpu": "ENABLED"
+                }
+              }
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Mount native UI worklet runtime and Hermes JSI pointers for withTiming Easing Profiles & S.",
+            "activeId": "WorkletRuntime",
+            "tone": "primary",
+            "nodes": [
+              {
+                "id": "WorkletRuntime",
+                "name": "<WorkletRuntimeHost />",
+                "props": {
+                  "status": "HERMES_JSI_BOUND"
+                },
+                "tone": "primary"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Intercept touch state machine natively via <GestureHandlerSurface />.",
+            "activeId": "GestureSurface",
+            "tone": "accent",
+            "nodes": [
+              {
+                "id": "GestureSurface",
+                "name": "<GestureHandlerSurface />",
+                "props": {
+                  "touchState": "ACTIVE_TRACKING"
+                },
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute zero-bridge 120 FPS spring physics in <FluidPhysicsViewport />.",
+            "activeId": "PhysicsViewport",
+            "tone": "data",
+            "nodes": [
+              {
+                "id": "PhysicsViewport",
+                "name": "<FluidPhysicsViewport />",
+                "props": {
+                  "fps": 120
+                },
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify 120Hz VSync timing and zero bridge serialization invariants.",
+            "activeId": "AppRoot",
+            "tone": "ok",
+            "nodes": [
+              {
+                "id": "AppRoot",
+                "name": "<MobileAppShell />",
+                "props": {
+                  "certification": "FLUID_120FPS_VERIFIED"
+                },
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
