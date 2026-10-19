@@ -1,0 +1,25 @@
+import subprocess
+
+tasks = [
+    # Day 46
+    ('function isSnapshotTorn(startSnapshot, commitSnapshot) {\n  return startSnapshot !== commitSnapshot;\n}\nif (typeof isSnapshotTorn !== "function") throw new Error("isSnapshotTorn not found");\nif (isSnapshotTorn("150", "155") !== true) throw new Error("Torn snapshot check failed");\nif (isSnapshotTorn("150", "150") !== false) throw new Error("Clean snapshot check failed");'),
+    ('function memoizeSliceSelector(prevSlice, nextSlice) {\n  return prevSlice && prevSlice.val === nextSlice.val ? prevSlice : nextSlice;\n}\nif (typeof memoizeSliceSelector !== "function") throw new Error("memoizeSliceSelector not found");\nconst s1 = { val: 42 };\nconst s2 = { val: 42 };\nif (memoizeSliceSelector(s1, s2) !== s1) throw new Error("Stable reference check failed");\nconst s3 = { val: 99 };\nif (memoizeSliceSelector(s1, s3) !== s3) throw new Error("Mutated reference check failed");'),
+    # Day 47
+    ('function canTransition(currentState, event, guardPassed) {\n  return currentState === "IDLE" && event === "SUBMIT" && guardPassed === true;\n}\nif (typeof canTransition !== "function") throw new Error("canTransition not found");\nif (canTransition("IDLE", "SUBMIT", true) !== true) throw new Error("Valid transition check failed");\nif (canTransition("IDLE", "SUBMIT", false) !== false) throw new Error("Blocked guard check failed");\nif (canTransition("LOADING", "SUBMIT", true) !== false) throw new Error("Invalid state check failed");'),
+    ('function enqueueActorMessage(mailbox, msg) {\n  return [...mailbox, { ...msg, timestamp: 1700000000000 }];\n}\nif (typeof enqueueActorMessage !== "function") throw new Error("enqueueActorMessage not found");\nconst res = enqueueActorMessage([{ type: "PING" }], { type: "TICK" });\nif (res.length !== 2 || res[1].type !== "TICK" || res[1].timestamp !== 1700000000000) throw new Error("Mailbox enqueue check failed");'),
+    # Day 48
+    ('function resolveSharedSingleton(v1, v2) {\n  return v1 >= v2 ? v1 : v2;\n}\nif (typeof resolveSharedSingleton !== "function") throw new Error("resolveSharedSingleton not found");\nif (resolveSharedSingleton("18.3.1", "18.2.0") !== "18.3.1") throw new Error("Highest version check failed");\nif (resolveSharedSingleton("18.1.0", "18.2.0") !== "18.2.0") throw new Error("Ascending version check failed");'),
+    ('function shouldAbortRemoteLoad(latencyMs, maxTimeoutMs) {\n  return latencyMs > maxTimeoutMs;\n}\nif (typeof shouldAbortRemoteLoad !== "function") throw new Error("shouldAbortRemoteLoad not found");\nif (shouldAbortRemoteLoad(3500, 3000) !== true) throw new Error("Timeout check failed");\nif (shouldAbortRemoteLoad(1200, 3000) !== false) throw new Error("Within-budget check failed");'),
+    # Day 49
+    ('function computePropDiff(oldProps, newProps) {\n  return oldProps.text !== newProps.text ? { text: newProps.text } : null;\n}\nif (typeof computePropDiff !== "function") throw new Error("computePropDiff not found");\nconst diff = computePropDiff({ text: "A" }, { text: "B" });\nif (!diff || diff.text !== "B") throw new Error("Prop diff check failed");\nif (computePropDiff({ text: "A" }, { text: "A" }) !== null) throw new Error("Unchanged diff check failed");'),
+    ('function createVirtualNode(type, props) {\n  return { type, props: { ...props }, children: [] };\n}\nif (typeof createVirtualNode !== "function") throw new Error("createVirtualNode not found");\nconst node = createVirtualNode("box", { color: "cyan" });\nif (node.type !== "box" || node.props.color !== "cyan" || !Array.isArray(node.children)) throw new Error("Virtual node allocation check failed");'),
+    # Day 50
+    ('function isTradingDeskTopologyValid(remotesCount, instrumentsCount, hasSharedSingleton) {\n  return remotesCount >= 3 && instrumentsCount >= 5 && hasSharedSingleton === true;\n}\nif (typeof isTradingDeskTopologyValid !== "function") throw new Error("isTradingDeskTopologyValid not found");\nif (isTradingDeskTopologyValid(3, 5, true) !== true) throw new Error("Valid topology check failed");\nif (isTradingDeskTopologyValid(2, 5, true) !== false) throw new Error("Insufficient remotes check failed");'),
+    ('function auditMilestone9Compliance(tornFrames, renderLatencyMs, duplicateOrdersBlocked) {\n  const ok = tornFrames === 0 && renderLatencyMs <= 5 && duplicateOrdersBlocked;\n  return { isCompliant: ok, grade: ok ? "GRADE A+ PRODUCTION READY" : "NON-COMPLIANT" };\n}\nif (typeof auditMilestone9Compliance !== "function") throw new Error("auditMilestone9Compliance not found");\nconst rep = auditMilestone9Compliance(0, 3.2, true);\nif (rep.isCompliant !== true || rep.grade !== "GRADE A+ PRODUCTION READY") throw new Error("Compliant desk check failed");\nconst rep2 = auditMilestone9Compliance(2, 3.2, true);\nif (rep2.isCompliant !== false || rep2.grade !== "NON-COMPLIANT") throw new Error("Torn desk check failed");')
+]
+
+for idx, t in enumerate(tasks):
+    res = subprocess.run(['node', '-e', t], capture_output=True, text=True)
+    assert res.returncode == 0, f'Task {idx+1} failed: {res.stderr}'
+    print(f'Task {idx+1}: PASS')
+print('ALL 10 EXAM & ASSIGNMENT TASKS PASSED!')
