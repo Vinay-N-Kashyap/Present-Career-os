@@ -1,0 +1,591 @@
+{
+  "schemaVersion": 2,
+  "prefix": "node-web",
+  "day": 32,
+  "promptSha": "block7_expansion",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Kafka Cluster Topology: Brokers, Topics, Partitions & Replication Factor",
+      "codeHash": "f14afc20877563c92679d3b83019733814a9a20525af34e38f98f8e4cac87e11",
+      "spec": {
+        "template": "flow",
+        "title": "Apache Kafka Commit Log & Partition Ingestion Topology",
+        "nodes": [
+          {
+            "id": "prod",
+            "label": "Kafka Producer",
+            "sub": "Partition Key: user-401",
+            "status": "ok"
+          },
+          {
+            "id": "b1",
+            "label": "Broker Leader (P0)",
+            "sub": "In-Sync Replicas: 3",
+            "status": "ok"
+          },
+          {
+            "id": "b2",
+            "label": "Broker Follower (P1)",
+            "sub": "Replicating Log",
+            "status": "ok"
+          },
+          {
+            "id": "cg",
+            "label": "Consumer Group",
+            "sub": "3 Active Worker Pods",
+            "status": "ok"
+          }
+        ],
+        "edges": [
+          {
+            "from": "prod",
+            "to": "b1",
+            "label": "acks=all"
+          },
+          {
+            "from": "b1",
+            "to": "b2",
+            "label": "ISR Sync"
+          },
+          {
+            "from": "b1",
+            "to": "cg",
+            "label": "Fetch Batch"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "simulateKafkaTopicTopology initializes 8 partitions across 3 brokers.",
+            "values": {
+              "prod": {
+                "status": "Ready"
+              },
+              "b1": {
+                "status": "Active"
+              },
+              "b2": {
+                "status": "Syncing"
+              },
+              "cg": {
+                "status": "Idle"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Producers route records to partition leaders based on MurmurHash2 keys.",
+            "values": {
+              "prod": {
+                "status": "Publishing"
+              },
+              "b1": {
+                "status": "Active"
+              },
+              "b2": {
+                "status": "Syncing"
+              },
+              "cg": {
+                "status": "Idle"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Leader writes message to append-only disk commit log at next offset.",
+            "values": {
+              "prod": {
+                "status": "Acked"
+              },
+              "b1": {
+                "status": "Committed"
+              },
+              "b2": {
+                "status": "Replicated"
+              },
+              "cg": {
+                "status": "Polling"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Consumer group workers pull batches in parallel without partition conflicts.",
+            "values": {
+              "prod": {
+                "status": "Idle"
+              },
+              "b1": {
+                "status": "Active"
+              },
+              "b2": {
+                "status": "Active"
+              },
+              "cg": {
+                "status": "Consuming"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Producer Partitioning Strategies: Key Hashing, Murmur2 & Sticky Partitioner",
+      "codeHash": "bc58750dcd5cc4b13865e78f1c317f48667beec566e4b2faf63aa9fe61d1e3a7",
+      "spec": {
+        "template": "boxes",
+        "title": "Deterministic Partition Key Hashing & Distribution",
+        "boxes": [
+          {
+            "id": "k1",
+            "label": "Key: user-102"
+          },
+          {
+            "id": "p1",
+            "label": "Target Partition"
+          },
+          {
+            "id": "k2",
+            "label": "Key: user-103"
+          },
+          {
+            "id": "p2",
+            "label": "Target Partition"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "computePartitionHash executes MurmurHash2 key mapping.",
+            "values": {
+              "k1": {
+                "text": "user-102"
+              },
+              "p1": {
+                "text": "P2"
+              },
+              "k2": {
+                "text": "user-103"
+              },
+              "p2": {
+                "text": "P5"
+              }
+            },
+            "tones": {
+              "k1": "data",
+              "p1": "active",
+              "k2": "data",
+              "p2": "active"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Identical keys route deterministically to the exact same partition.",
+            "values": {
+              "k1": {
+                "text": "user-102"
+              },
+              "p1": {
+                "text": "P2 (FIFO)"
+              },
+              "k2": {
+                "text": "user-103"
+              },
+              "p2": {
+                "text": "P5 (FIFO)"
+              }
+            },
+            "tones": {
+              "k1": "data",
+              "p1": "accent",
+              "k2": "data",
+              "p2": "accent"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Per-entity ordering is preserved across all lifecycle updates.",
+            "values": {
+              "k1": {
+                "text": "user-102-upd"
+              },
+              "p1": {
+                "text": "P2 (seq 41)"
+              },
+              "k2": {
+                "text": "user-103-upd"
+              },
+              "p2": {
+                "text": "P5 (seq 12)"
+              }
+            },
+            "tones": {
+              "k1": "data",
+              "p1": "accent",
+              "k2": "data",
+              "p2": "accent"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Load balances evenly across all 8 available broker partitions.",
+            "values": {
+              "k1": {
+                "text": "Spread ok"
+              },
+              "p1": {
+                "text": "Balanced"
+              },
+              "k2": {
+                "text": "Spread ok"
+              },
+              "p2": {
+                "text": "Balanced"
+              }
+            },
+            "tones": {
+              "k1": "active",
+              "p1": "active",
+              "k2": "active",
+              "p2": "active"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Consumer Groups & Scalable Parallelism: Partition Assignment & Rebalance Protocols",
+      "codeHash": "e87194c1f9fe2bbfa344647be9dd23a01f2020b63f86af7609ad87929e92977e",
+      "spec": {
+        "template": "states",
+        "title": "Consumer Group Rebalance Protocol State Machine",
+        "states": [
+          {
+            "id": "stable",
+            "label": "Stable Consumption"
+          },
+          {
+            "id": "preparing",
+            "label": "Preparing Rebalance (heartbeat missed)"
+          },
+          {
+            "id": "syncing",
+            "label": "SyncGroup (cooperative assignment)"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "simulateConsumerRebalance monitors worker pod membership.",
+            "values": {
+              "stable": {
+                "active": true
+              },
+              "preparing": {
+                "active": false
+              },
+              "syncing": {
+                "active": false
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Worker crash triggers coordinator rebalance notification.",
+            "values": {
+              "stable": {
+                "active": false
+              },
+              "preparing": {
+                "active": true
+              },
+              "syncing": {
+                "active": false
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "CooperativeStickyAssignor reallocates orphaned partitions without stop-the-world pauses.",
+            "values": {
+              "stable": {
+                "active": false
+              },
+              "preparing": {
+                "active": false
+              },
+              "syncing": {
+                "active": true
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "All partitions re-assigned and workers resume processing smoothly.",
+            "values": {
+              "stable": {
+                "active": true
+              },
+              "preparing": {
+                "active": false
+              },
+              "syncing": {
+                "active": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Offset Commit Semantics: At-Least-Once, At-Most-Once & Exactly-Once (Idempotence)",
+      "codeHash": "83c5ca9964175250fe215a79f823074f75d4a376bc3fa197b924fa91cf611263",
+      "spec": {
+        "template": "flow",
+        "title": "At-Least-Once Manual Offset Commit Pipeline",
+        "nodes": [
+          {
+            "id": "fetch",
+            "label": "Poll Batch",
+            "sub": "Offsets 100-109",
+            "status": "ok"
+          },
+          {
+            "id": "proc",
+            "label": "Business Logic",
+            "sub": "Database Mutation",
+            "status": "ok"
+          },
+          {
+            "id": "commit",
+            "label": "commitOffsetsSync",
+            "sub": "Committed: 110",
+            "status": "ok"
+          },
+          {
+            "id": "broker",
+            "label": "__consumer_offsets",
+            "sub": "Persisted in Broker",
+            "status": "ok"
+          }
+        ],
+        "edges": [
+          {
+            "from": "fetch",
+            "to": "proc",
+            "label": "Process"
+          },
+          {
+            "from": "proc",
+            "to": "commit",
+            "label": "Success"
+          },
+          {
+            "from": "commit",
+            "to": "broker",
+            "label": "Acknowledge"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "executeManualOffsetCommit pulls batch from partition offset 100.",
+            "values": {
+              "fetch": {
+                "status": "Active"
+              },
+              "proc": {
+                "status": "Idle"
+              },
+              "commit": {
+                "status": "Idle"
+              },
+              "broker": {
+                "status": "Idle"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Worker processes records atomically before updating broker offset.",
+            "values": {
+              "fetch": {
+                "status": "Complete"
+              },
+              "proc": {
+                "status": "Active"
+              },
+              "commit": {
+                "status": "Idle"
+              },
+              "broker": {
+                "status": "Idle"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "commitSync records offset 110 to the internal __consumer_offsets topic.",
+            "values": {
+              "fetch": {
+                "status": "Complete"
+              },
+              "proc": {
+                "status": "Complete"
+              },
+              "commit": {
+                "status": "Active"
+              },
+              "broker": {
+                "status": "Updating"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Crash recovery resumes cleanly from offset 110 with zero dropped events.",
+            "values": {
+              "fetch": {
+                "status": "Ready"
+              },
+              "proc": {
+                "status": "Ready"
+              },
+              "commit": {
+                "status": "Complete"
+              },
+              "broker": {
+                "status": "Synchronized"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "End-to-End Kafka Streaming Pipeline: Telemetry Ingestion & Lag Monitoring",
+      "codeHash": "2a40678082bdcf80b260e0c53b252595ed0969755793ef483856d48f29595f4f",
+      "spec": {
+        "template": "compare",
+        "title": "Healthy vs Degraded Kafka Consumer Lag Telemetry",
+        "left": {
+          "label": "Healthy Ingestion",
+          "sub": "Consumers keep pace with producer ingress"
+        },
+        "right": {
+          "label": "Severe Lag Accumulation",
+          "sub": "Slow consumers or dead worker pods"
+        },
+        "rows": [
+          {
+            "id": "lag",
+            "label": "Consumer Lag (records)"
+          },
+          {
+            "id": "leo",
+            "label": "Log End Offset (LEO)"
+          },
+          {
+            "id": "committed",
+            "label": "Committed Offset"
+          },
+          {
+            "id": "alert",
+            "label": "Alert Status"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "auditConsumerLag computes distance between LEO and committed offset.",
+            "values": {
+              "lag": {
+                "left": "14",
+                "right": "24500"
+              },
+              "leo": {
+                "left": "50000",
+                "right": "74500"
+              },
+              "committed": {
+                "left": "49986",
+                "right": "50000"
+              },
+              "alert": {
+                "left": "NORMAL",
+                "right": "CRITICAL"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "A slow downstream database creates processing bottlenecks.",
+            "values": {
+              "lag": {
+                "left": "12",
+                "right": "35000"
+              },
+              "leo": {
+                "left": "52000",
+                "right": "85000"
+              },
+              "committed": {
+                "left": "51988",
+                "right": "50000"
+              },
+              "alert": {
+                "left": "NORMAL",
+                "right": "PAGERDUTY"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Horizontal autoscaling adds 4 consumer pods to drain backlogs.",
+            "values": {
+              "lag": {
+                "left": "15",
+                "right": "12000"
+              },
+              "leo": {
+                "left": "54000",
+                "right": "88000"
+              },
+              "committed": {
+                "left": "53985",
+                "right": "76000"
+              },
+              "alert": {
+                "left": "NORMAL",
+                "right": "DRAINING"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Lag returns to nominal levels under 50 records per partition.",
+            "values": {
+              "lag": {
+                "left": "8",
+                "right": "22"
+              },
+              "leo": {
+                "left": "56000",
+                "right": "90000"
+              },
+              "committed": {
+                "left": "55992",
+                "right": "89978"
+              },
+              "alert": {
+                "left": "NORMAL",
+                "right": "RESOLVED"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,591 @@
+{
+  "schemaVersion": 2,
+  "prefix": "node-web",
+  "day": 33,
+  "promptSha": "block7_expansion",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "AMQP Model & RabbitMQ Topology: Exchanges, Queues & Bindings",
+      "codeHash": "06440cd2aa7b22a4a8f65cefc927a63ac29888aa2ce303c5b7c2e073d9965235",
+      "spec": {
+        "template": "flow",
+        "title": "AMQP Exchange-to-Queue Routing Architecture",
+        "nodes": [
+          {
+            "id": "pub",
+            "label": "Publisher",
+            "sub": "Routing Key: order.created",
+            "status": "ok"
+          },
+          {
+            "id": "ex",
+            "label": "Topic Exchange",
+            "sub": "order.events",
+            "status": "ok"
+          },
+          {
+            "id": "q1",
+            "label": "Fulfillment Queue",
+            "sub": "Binding: order.*",
+            "status": "ok"
+          },
+          {
+            "id": "q2",
+            "label": "Audit Log Queue",
+            "sub": "Binding: #",
+            "status": "ok"
+          }
+        ],
+        "edges": [
+          {
+            "from": "pub",
+            "to": "ex",
+            "label": "Publish"
+          },
+          {
+            "from": "ex",
+            "to": "q1",
+            "label": "Pattern Match"
+          },
+          {
+            "from": "ex",
+            "to": "q2",
+            "label": "Wildcard Match"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "simulateRabbitMqExchange inspects AMQP exchange bindings.",
+            "values": {
+              "pub": {
+                "status": "Ready"
+              },
+              "ex": {
+                "status": "Configured"
+              },
+              "q1": {
+                "status": "Bound"
+              },
+              "q2": {
+                "status": "Bound"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Publisher routes message with routing key 'order.created'.",
+            "values": {
+              "pub": {
+                "status": "Publishing"
+              },
+              "ex": {
+                "status": "Evaluating"
+              },
+              "q1": {
+                "status": "Waiting"
+              },
+              "q2": {
+                "status": "Waiting"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Topic exchange evaluates pattern matches against bound queues.",
+            "values": {
+              "pub": {
+                "status": "Idle"
+              },
+              "ex": {
+                "status": "Dispatched"
+              },
+              "q1": {
+                "status": "Enqueued"
+              },
+              "q2": {
+                "status": "Enqueued"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Both target queues receive message copies according to AMQP rules.",
+            "values": {
+              "pub": {
+                "status": "Idle"
+              },
+              "ex": {
+                "status": "Ready"
+              },
+              "q1": {
+                "status": "Ready"
+              },
+              "q2": {
+                "status": "Ready"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Routing Patterns: Direct, Fanout & Topic Wildcard Matching",
+      "codeHash": "60b9890f25b85b986d6c7ccc742ec65fa31a83123da6e171b198feecdc6b23f2",
+      "spec": {
+        "template": "states",
+        "title": "RabbitMQ Publisher Confirmation State Machine",
+        "states": [
+          {
+            "id": "unconfirmed",
+            "label": "Unconfirmed In-Flight"
+          },
+          {
+            "id": "ack",
+            "label": "Broker ACK (disk persisted)"
+          },
+          {
+            "id": "nack",
+            "label": "Broker NACK (queue full / reject)"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "simulatePublisherConfirms activates channel confirmation mode.",
+            "values": {
+              "unconfirmed": {
+                "active": true
+              },
+              "ack": {
+                "active": false
+              },
+              "nack": {
+                "active": false
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Broker flushes message to disk and replicates to quorum members.",
+            "values": {
+              "unconfirmed": {
+                "active": true
+              },
+              "ack": {
+                "active": false
+              },
+              "nack": {
+                "active": false
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Broker returns positive basic.ack with message delivery tag.",
+            "values": {
+              "unconfirmed": {
+                "active": false
+              },
+              "ack": {
+                "active": true
+              },
+              "nack": {
+                "active": false
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "If disk fails or queue limit hit, basic.nack triggers publisher retry.",
+            "values": {
+              "unconfirmed": {
+                "active": false
+              },
+              "ack": {
+                "active": false
+              },
+              "nack": {
+                "active": true
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Consumer Prefetch Limits & Channel Flow Control (QoS Backpressure)",
+      "codeHash": "6051465a65e3529c4b3c792e8172cf40f5b23740a4d09901b8a1d8e885c6b4b3",
+      "spec": {
+        "template": "flow",
+        "title": "Dead-Letter Exchange (DLX) Fault Recovery Pipeline",
+        "nodes": [
+          {
+            "id": "pri",
+            "label": "Primary Queue",
+            "sub": "x-dead-letter-exchange",
+            "status": "ok"
+          },
+          {
+            "id": "worker",
+            "label": "Consumer Worker",
+            "sub": "basic.reject(requeue=false)",
+            "status": "ok"
+          },
+          {
+            "id": "dlx",
+            "label": "DLX Exchange",
+            "sub": "Direct Routing",
+            "status": "ok"
+          },
+          {
+            "id": "dlq",
+            "label": "Quarantine DLQ",
+            "sub": "Persisted for Inspection",
+            "status": "ok"
+          }
+        ],
+        "edges": [
+          {
+            "from": "pri",
+            "to": "worker",
+            "label": "Deliver"
+          },
+          {
+            "from": "worker",
+            "to": "dlx",
+            "label": "Reject / Expire"
+          },
+          {
+            "from": "dlx",
+            "to": "dlq",
+            "label": "Quarantine"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "simulateDeadLetterRouting configures primary queue with DLX headers.",
+            "values": {
+              "pri": {
+                "status": "Configured"
+              },
+              "worker": {
+                "status": "Ready"
+              },
+              "dlx": {
+                "status": "Listening"
+              },
+              "dlq": {
+                "status": "Empty"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Corrupted message fails parsing and worker rejects with requeue=false.",
+            "values": {
+              "pri": {
+                "status": "Delivered"
+              },
+              "worker": {
+                "status": "Rejecting"
+              },
+              "dlx": {
+                "status": "Listening"
+              },
+              "dlq": {
+                "status": "Empty"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "RabbitMQ routes rejected message to dead-letter exchange automatically.",
+            "values": {
+              "pri": {
+                "status": "Evicted"
+              },
+              "worker": {
+                "status": "Idle"
+              },
+              "dlx": {
+                "status": "Routing"
+              },
+              "dlq": {
+                "status": "Receiving"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Quarantine DLQ preserves message and headers for engineer audit.",
+            "values": {
+              "pri": {
+                "status": "Idle"
+              },
+              "worker": {
+                "status": "Ready"
+              },
+              "dlx": {
+                "status": "Idle"
+              },
+              "dlq": {
+                "status": "Quarantined"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Message Acknowledgments & Dead-Letter Exchanges (DLX / DLQ)",
+      "codeHash": "d4bb97074e0cd19295c1e7afaa66ece3de584d546268b6d4fd1a2227dd2d457e",
+      "spec": {
+        "template": "boxes",
+        "title": "AMQP Priority Queue Scheduling & Dispatching",
+        "boxes": [
+          {
+            "id": "hp",
+            "label": "High Priority (10)"
+          },
+          {
+            "id": "mp",
+            "label": "Medium Priority (5)"
+          },
+          {
+            "id": "lp",
+            "label": "Low Priority (1)"
+          },
+          {
+            "id": "order",
+            "label": "Dispatch Sequence"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "executePriorityScheduling configures x-max-priority = 10.",
+            "values": {
+              "hp": {
+                "text": "2 tasks"
+              },
+              "mp": {
+                "text": "3 tasks"
+              },
+              "lp": {
+                "text": "5 tasks"
+              },
+              "order": {
+                "text": "Pending"
+              }
+            },
+            "tones": {
+              "hp": "active",
+              "mp": "data",
+              "lp": "idle",
+              "order": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Priority 10 items bypass low-priority tasks accumulated in queue.",
+            "values": {
+              "hp": {
+                "text": "Dispatched"
+              },
+              "mp": {
+                "text": "Queued"
+              },
+              "lp": {
+                "text": "Queued"
+              },
+              "order": {
+                "text": "HP first"
+              }
+            },
+            "tones": {
+              "hp": "accent",
+              "mp": "data",
+              "lp": "idle",
+              "order": "active"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Medium priority jobs are dispatched next once high priority drains.",
+            "values": {
+              "hp": {
+                "text": "0 remaining"
+              },
+              "mp": {
+                "text": "Dispatched"
+              },
+              "lp": {
+                "text": "Queued"
+              },
+              "order": {
+                "text": "MP second"
+              }
+            },
+            "tones": {
+              "hp": "idle",
+              "mp": "accent",
+              "lp": "idle",
+              "order": "active"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Low priority bulk tasks process during off-peak consumer capacity.",
+            "values": {
+              "hp": {
+                "text": "0"
+              },
+              "mp": {
+                "text": "0"
+              },
+              "lp": {
+                "text": "Dispatched"
+              },
+              "order": {
+                "text": "Complete"
+              }
+            },
+            "tones": {
+              "hp": "idle",
+              "mp": "idle",
+              "lp": "accent",
+              "order": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Resilient Microservice Queue Pipeline: Transactional Email & Notification Worker",
+      "codeHash": "13a344d746229ad042f7a486adbdab7c0d6c307b5686166b339d8c763d03471e",
+      "spec": {
+        "template": "compare",
+        "title": "Classic Mirrored Queues vs Raft Quorum Queues",
+        "left": {
+          "label": "Classic Mirrored Queues",
+          "sub": "Deprecated master-slave replication"
+        },
+        "right": {
+          "label": "Raft Quorum Queues",
+          "sub": "Modern consensus-backed durability"
+        },
+        "rows": [
+          {
+            "id": "consensus",
+            "label": "Replication Protocol"
+          },
+          {
+            "id": "splitbrain",
+            "label": "Split-Brain Safety"
+          },
+          {
+            "id": "failover",
+            "label": "Leader Failover"
+          },
+          {
+            "id": "throughput",
+            "label": "High-Throughput IO"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "evaluateRabbitMqClustering contrasts replication algorithms.",
+            "values": {
+              "consensus": {
+                "left": "Ad-hoc sync",
+                "right": "Raft Consensus"
+              },
+              "splitbrain": {
+                "left": "Vulnerable",
+                "right": "Mathematically Safe"
+              },
+              "failover": {
+                "left": "Potential Data Loss",
+                "right": "Zero Data Loss"
+              },
+              "throughput": {
+                "left": "Degrades with Nodes",
+                "right": "Sustained Parallel I/O"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Network partitions in classic mirroring risk unrecoverable state desync.",
+            "values": {
+              "consensus": {
+                "left": "Desync risk",
+                "right": "Strict Majority"
+              },
+              "splitbrain": {
+                "left": "Partition Hazard",
+                "right": "Isolated Minority"
+              },
+              "failover": {
+                "left": "Unsynchronized slave",
+                "right": "Elected Raft Leader"
+              },
+              "throughput": {
+                "left": "Variable",
+                "right": "Predictable"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Quorum queues require majority consensus before acknowledging writes.",
+            "values": {
+              "consensus": {
+                "left": "Single master",
+                "right": "Quorum of 3/5"
+              },
+              "splitbrain": {
+                "left": "High risk",
+                "right": "Zero risk"
+              },
+              "failover": {
+                "left": "Manual intervention",
+                "right": "Sub-second automatic"
+              },
+              "throughput": {
+                "left": "Bottlenecked",
+                "right": "Optimized RocksDB storage"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Modern enterprise deployments mandate Quorum Queues for critical data.",
+            "values": {
+              "consensus": {
+                "left": "Deprecated",
+                "right": "Industry Standard"
+              },
+              "splitbrain": {
+                "left": "Avoid in Prod",
+                "right": "Production Certified"
+              },
+              "failover": {
+                "left": "Unsafe",
+                "right": "High Availability"
+              },
+              "throughput": {
+                "left": "Sub-optimal",
+                "right": "Maximum Resilience"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

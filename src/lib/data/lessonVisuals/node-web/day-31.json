@@ -1,0 +1,591 @@
+{
+  "schemaVersion": 2,
+  "prefix": "node-web",
+  "day": 31,
+  "promptSha": "block7_expansion",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Libuv Event Loop Phases: Timers, Pending Callbacks, Poll, Check & Close",
+      "codeHash": "d3cc51f8b8ba6b5b7820ef7874ba888e6e46836350d5ed479c95f20ecb8a50d9",
+      "spec": {
+        "template": "flow",
+        "title": "libuv Event Loop Phase Transition Execution",
+        "nodes": [
+          {
+            "id": "timers",
+            "label": "Timers Phase",
+            "sub": "setTimeout / setInterval",
+            "status": "ok"
+          },
+          {
+            "id": "pending",
+            "label": "Pending I/O",
+            "sub": "Deferred System Callbacks",
+            "status": "ok"
+          },
+          {
+            "id": "poll",
+            "label": "Poll Phase",
+            "sub": "Network I/O & File Descriptors",
+            "status": "ok"
+          },
+          {
+            "id": "check",
+            "label": "Check Phase",
+            "sub": "setImmediate callbacks",
+            "status": "ok"
+          }
+        ],
+        "edges": [
+          {
+            "from": "timers",
+            "to": "pending",
+            "label": "Tick"
+          },
+          {
+            "from": "pending",
+            "to": "poll",
+            "label": "Poll I/O"
+          },
+          {
+            "from": "poll",
+            "to": "check",
+            "label": "Immediate"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "simulateLibuvEventLoop tracks microtask and macrotask execution orders.",
+            "values": {
+              "timers": {
+                "status": "Active"
+              },
+              "pending": {
+                "status": "Idle"
+              },
+              "poll": {
+                "status": "Idle"
+              },
+              "check": {
+                "status": "Idle"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "process.nextTick and Promise microtasks drain with priority between phases.",
+            "values": {
+              "timers": {
+                "status": "Draining"
+              },
+              "pending": {
+                "status": "Queued"
+              },
+              "poll": {
+                "status": "Idle"
+              },
+              "check": {
+                "status": "Idle"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Poll phase fetches incoming TCP connections and dispatches events.",
+            "values": {
+              "timers": {
+                "status": "Complete"
+              },
+              "pending": {
+                "status": "Complete"
+              },
+              "poll": {
+                "status": "Active"
+              },
+              "check": {
+                "status": "Idle"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Check phase runs setImmediate callbacks right after polling completes.",
+            "values": {
+              "timers": {
+                "status": "Complete"
+              },
+              "pending": {
+                "status": "Complete"
+              },
+              "poll": {
+                "status": "Complete"
+              },
+              "check": {
+                "status": "Active"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Microtasks vs Macrotasks: process.nextTick vs Promise.then Execution Priority",
+      "codeHash": "87f7e9f5189fb9377ef507e2de14df66c61092b7e4a69e9ec702ce630b692c70",
+      "spec": {
+        "template": "boxes",
+        "title": "Node.js Worker Thread Pool Resource Allocation",
+        "boxes": [
+          {
+            "id": "b1",
+            "label": "Active Workers"
+          },
+          {
+            "id": "b2",
+            "label": "Queued CPU Tasks"
+          },
+          {
+            "id": "b3",
+            "label": "Completed Executions"
+          },
+          {
+            "id": "b4",
+            "label": "Total Elapsed Time"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "dispatchWorkerPool initializes 4 isolated V8 execution threads.",
+            "values": {
+              "b1": {
+                "text": "4"
+              },
+              "b2": {
+                "text": "10"
+              },
+              "b3": {
+                "text": "0"
+              },
+              "b4": {
+                "text": "0ms"
+              }
+            },
+            "tones": {
+              "b1": "active",
+              "b2": "data",
+              "b3": "idle",
+              "b4": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "CPU-heavy cryptographic tasks are distributed via MessageChannel buffers.",
+            "values": {
+              "b1": {
+                "text": "4"
+              },
+              "b2": {
+                "text": "6"
+              },
+              "b3": {
+                "text": "4"
+              },
+              "b4": {
+                "text": "12ms"
+              }
+            },
+            "tones": {
+              "b1": "active",
+              "b2": "active",
+              "b3": "data",
+              "b4": "data"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Workers offload computation without blocking the primary event loop.",
+            "values": {
+              "b1": {
+                "text": "2"
+              },
+              "b2": {
+                "text": "2"
+              },
+              "b3": {
+                "text": "8"
+              },
+              "b4": {
+                "text": "24ms"
+              }
+            },
+            "tones": {
+              "b1": "active",
+              "b2": "data",
+              "b3": "data",
+              "b4": "data"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "All 10 tasks complete across worker threads, returning results cleanly.",
+            "values": {
+              "b1": {
+                "text": "0"
+              },
+              "b2": {
+                "text": "0"
+              },
+              "b3": {
+                "text": "10"
+              },
+              "b4": {
+                "text": "31ms"
+              }
+            },
+            "tones": {
+              "b1": "idle",
+              "b2": "idle",
+              "b3": "accent",
+              "b4": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "CPU-Bound Task Offloading: Worker Threads & SharedArrayBuffer Concurrency",
+      "codeHash": "c5c7978d975ce1e3e79922637f20869ec35676191ec222034c29c2c5c0b40c8f",
+      "spec": {
+        "template": "states",
+        "title": "Backpressured Stream Flow Control State Machine",
+        "states": [
+          {
+            "id": "flow",
+            "label": "Flowing State (write ok)"
+          },
+          {
+            "id": "pressured",
+            "label": "Backpressure Active (high watermark)"
+          },
+          {
+            "id": "draining",
+            "label": "Drain Emitted (resuming ingest)"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "simulateStreamBackpressure monitors buffer queue size against threshold.",
+            "values": {
+              "flow": {
+                "active": true
+              },
+              "pressured": {
+                "active": false
+              },
+              "draining": {
+                "active": false
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Ingress velocity exceeds highWatermark, returning false to pause writes.",
+            "values": {
+              "flow": {
+                "active": false
+              },
+              "pressured": {
+                "active": true
+              },
+              "draining": {
+                "active": false
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Underlying network transport drains accumulated packets from socket buffer.",
+            "values": {
+              "flow": {
+                "active": false
+              },
+              "pressured": {
+                "active": false
+              },
+              "draining": {
+                "active": true
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Drain event triggers emitter resume, restoring high-speed flowing mode.",
+            "values": {
+              "flow": {
+                "active": true
+              },
+              "pressured": {
+                "active": false
+              },
+              "draining": {
+                "active": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Custom Typed Event Emitters: Listener Management & Memory Leak Detection",
+      "codeHash": "b49317bde0383368ba28c1ccd12e00836ef501cc5c25a77787e336f2f1cd6c56",
+      "spec": {
+        "template": "flow",
+        "title": "AsyncLocalStorage Distributed Context Propagation",
+        "nodes": [
+          {
+            "id": "req",
+            "label": "Inbound Request",
+            "sub": "X-Trace-ID: trc-901",
+            "status": "ok"
+          },
+          {
+            "id": "als",
+            "label": "AsyncLocalStorage",
+            "sub": "Store Bindings",
+            "status": "ok"
+          },
+          {
+            "id": "db",
+            "label": "Database Query",
+            "sub": "Async Boundary Hop",
+            "status": "ok"
+          },
+          {
+            "id": "res",
+            "label": "Telemetry Emitter",
+            "sub": "Trace Correlated",
+            "status": "ok"
+          }
+        ],
+        "edges": [
+          {
+            "from": "req",
+            "to": "als",
+            "label": "run(store)"
+          },
+          {
+            "from": "als",
+            "to": "db",
+            "label": "Async I/O"
+          },
+          {
+            "from": "db",
+            "to": "res",
+            "label": "Context Preserved"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "simulateAsyncLocalStorage initializes execution store with traceId.",
+            "values": {
+              "req": {
+                "status": "Active"
+              },
+              "als": {
+                "status": "Ready"
+              },
+              "db": {
+                "status": "Idle"
+              },
+              "res": {
+                "status": "Idle"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Context propagates seamlessly across asynchronous event loop ticks.",
+            "values": {
+              "req": {
+                "status": "Complete"
+              },
+              "als": {
+                "status": "Active"
+              },
+              "db": {
+                "status": "Queued"
+              },
+              "res": {
+                "status": "Idle"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Database worker reads current traceId without parameter drilling.",
+            "values": {
+              "req": {
+                "status": "Complete"
+              },
+              "als": {
+                "status": "Active"
+              },
+              "db": {
+                "status": "Active"
+              },
+              "res": {
+                "status": "Idle"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Log audit record contains verified traceId across all downstream calls.",
+            "values": {
+              "req": {
+                "status": "Complete"
+              },
+              "als": {
+                "status": "Complete"
+              },
+              "db": {
+                "status": "Complete"
+              },
+              "res": {
+                "status": "Active"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Event-Driven Microservice Pipeline: Non-Blocking Order Ingestion & Telemetry",
+      "codeHash": "17c5ecf7c09aa18f3dfdd7d547c1fe29e9a3ba775584702fc0a5681318a580c6",
+      "spec": {
+        "template": "compare",
+        "title": "Healthy vs Saturated Event Loop Latency Profiles",
+        "left": {
+          "label": "Healthy Event Loop",
+          "sub": "Non-blocking async I/O"
+        },
+        "right": {
+          "label": "Blocked Event Loop",
+          "sub": "Synchronous CPU saturation"
+        },
+        "rows": [
+          {
+            "id": "lag",
+            "label": "Event Loop Lag"
+          },
+          {
+            "id": "p99",
+            "label": "P99 Request Latency"
+          },
+          {
+            "id": "cpu",
+            "label": "Thread Saturation"
+          },
+          {
+            "id": "status",
+            "label": "Readiness Probe"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "monitorEventLoopLag measures delay between scheduling and execution.",
+            "values": {
+              "lag": {
+                "left": "1.2ms",
+                "right": "84.5ms"
+              },
+              "p99": {
+                "left": "14ms",
+                "right": "420ms"
+              },
+              "cpu": {
+                "left": "12%",
+                "right": "98%"
+              },
+              "status": {
+                "left": "OK",
+                "right": "FAIL"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Heavy JSON operations or crypto spikes increase event loop lag.",
+            "values": {
+              "lag": {
+                "left": "1.4ms",
+                "right": "120.0ms"
+              },
+              "p99": {
+                "left": "15ms",
+                "right": "580ms"
+              },
+              "cpu": {
+                "left": "15%",
+                "right": "100%"
+              },
+              "status": {
+                "left": "OK",
+                "right": "CRITICAL"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Telemetry alerts fire when lag exceeds the 20ms production threshold.",
+            "values": {
+              "lag": {
+                "left": "1.1ms",
+                "right": "150.2ms"
+              },
+              "p99": {
+                "left": "12ms",
+                "right": "750ms"
+              },
+              "cpu": {
+                "left": "14%",
+                "right": "100%"
+              },
+              "status": {
+                "left": "OK",
+                "right": "TRIPPED"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Worker thread offloading restores low latency and healthy probes.",
+            "values": {
+              "lag": {
+                "left": "1.2ms",
+                "right": "1.5ms"
+              },
+              "p99": {
+                "left": "14ms",
+                "right": "16ms"
+              },
+              "cpu": {
+                "left": "12%",
+                "right": "18%"
+              },
+              "status": {
+                "left": "OK",
+                "right": "RECOVERED"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,631 @@
+{
+  "schemaVersion": 2,
+  "prefix": "node-web",
+  "day": 35,
+  "promptSha": "block7_expansion",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Architecture Topology: Outbox Pattern, Relational DB & Kafka Broker Sync",
+      "codeHash": "e7cae49e8b74f73887ca30ed5a52b3669729338f6d7fa289fd86bb414ba6cfc1",
+      "spec": {
+        "template": "flow",
+        "title": "Milestone 6 Distributed Event-Driven Order Engine Topology",
+        "nodes": [
+          {
+            "id": "db",
+            "label": "PostgreSQL Outbox",
+            "sub": "Local ACID Transaction",
+            "status": "ok"
+          },
+          {
+            "id": "cdc",
+            "label": "Debezium CDC",
+            "sub": "WAL Stream Reader (2.4ms)",
+            "status": "ok"
+          },
+          {
+            "id": "kfk",
+            "label": "Kafka Cluster",
+            "sub": "8 Partitions / ISR=3",
+            "status": "ok"
+          },
+          {
+            "id": "wrk",
+            "label": "Idempotent Workers",
+            "sub": "Prefetch: 50 / Redis Dedupe",
+            "status": "ok"
+          }
+        ],
+        "edges": [
+          {
+            "from": "db",
+            "to": "cdc",
+            "label": "pgoutput WAL"
+          },
+          {
+            "from": "cdc",
+            "to": "kfk",
+            "label": "acks=all"
+          },
+          {
+            "from": "kfk",
+            "to": "wrk",
+            "label": "Partition Assign"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "synthesizeOrderEngineTopology validates all 5 core platform subsystems.",
+            "values": {
+              "db": {
+                "status": "Checking"
+              },
+              "cdc": {
+                "status": "Checking"
+              },
+              "kfk": {
+                "status": "Checking"
+              },
+              "wrk": {
+                "status": "Checking"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Order insertion and domain event outbox write commit in single ACID transaction.",
+            "values": {
+              "db": {
+                "status": "Committed"
+              },
+              "cdc": {
+                "status": "Listening"
+              },
+              "kfk": {
+                "status": "Ready"
+              },
+              "wrk": {
+                "status": "Idle"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Debezium CDC tails WAL stream, publishing events to Kafka in under 3 milliseconds.",
+            "values": {
+              "db": {
+                "status": "Online"
+              },
+              "cdc": {
+                "status": "Streaming"
+              },
+              "kfk": {
+                "status": "Ingesting"
+              },
+              "wrk": {
+                "status": "Polling"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Idempotent worker pods process incoming messages with zero duplicate leakage.",
+            "values": {
+              "db": {
+                "status": "Online"
+              },
+              "cdc": {
+                "status": "Online"
+              },
+              "kfk": {
+                "status": "Online"
+              },
+              "wrk": {
+                "status": "Online"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Transactional Outbox Relayer: Polling / CDC & At-Least-Once Kafka Publishing",
+      "codeHash": "239602ad669f6085b94fc8b76913f1a2ab98ff1a43ce9ffa059392d3999566da",
+      "spec": {
+        "template": "boxes",
+        "title": "Transactional Outbox Relayer & Kafka Partition Mapping",
+        "boxes": [
+          {
+            "id": "b1",
+            "label": "Pending Outbox Batch"
+          },
+          {
+            "id": "b2",
+            "label": "Relayed to Kafka"
+          },
+          {
+            "id": "b3",
+            "label": "Target Partition"
+          },
+          {
+            "id": "b4",
+            "label": "Updated DB Status"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "relayOutboxRecords inspects pending events in outbox table batch.",
+            "values": {
+              "b1": {
+                "text": "3 records"
+              },
+              "b2": {
+                "text": "0"
+              },
+              "b3": {
+                "text": "None"
+              },
+              "b4": {
+                "text": "PENDING"
+              }
+            },
+            "tones": {
+              "b1": "data",
+              "b2": "idle",
+              "b3": "idle",
+              "b4": "data"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Aggregate root orderId hashes deterministically across 8 Kafka partitions.",
+            "values": {
+              "b1": {
+                "text": "3 records"
+              },
+              "b2": {
+                "text": "2 published"
+              },
+              "b3": {
+                "text": "P2 / P3"
+              },
+              "b4": {
+                "text": "In-Flight"
+              }
+            },
+            "tones": {
+              "b1": "data",
+              "b2": "active",
+              "b3": "active",
+              "b4": "active"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Kafka in-sync replicas confirm message receipt under acks=all.",
+            "values": {
+              "b1": {
+                "text": "0 pending"
+              },
+              "b2": {
+                "text": "2 acked"
+              },
+              "b3": {
+                "text": "Committed"
+              },
+              "b4": {
+                "text": "PROCESSED"
+              }
+            },
+            "tones": {
+              "b1": "idle",
+              "b2": "accent",
+              "b3": "data",
+              "b4": "accent"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Outbox records updated atomically, preventing duplicate event generation.",
+            "values": {
+              "b1": {
+                "text": "Synchronized"
+              },
+              "b2": {
+                "text": "Complete"
+              },
+              "b3": {
+                "text": "Preserved"
+              },
+              "b4": {
+                "text": "Clean"
+              }
+            },
+            "tones": {
+              "b1": "active",
+              "b2": "accent",
+              "b3": "active",
+              "b4": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Idempotent Consumer & Deduplication Engine: Processing with State Consistency",
+      "codeHash": "67e507b4482f1d1d52fe147618394c8b07c64caaa5bece1a40f2e3f6242f2d85",
+      "spec": {
+        "template": "states",
+        "title": "Idempotent Consumer Deduplication State Machine",
+        "states": [
+          {
+            "id": "new_msg",
+            "label": "New Message (execute mutation & save key)"
+          },
+          {
+            "id": "dupe_msg",
+            "label": "Duplicate Detected (skip execution, commit offset)"
+          },
+          {
+            "id": "committed",
+            "label": "Offset Committed Cleanly"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "executeIdempotentConsumer receives incoming message batch.",
+            "values": {
+              "new_msg": {
+                "active": true
+              },
+              "dupe_msg": {
+                "active": false
+              },
+              "committed": {
+                "active": false
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Message with duplicate key key_001 is intercepted by deduplication store.",
+            "values": {
+              "new_msg": {
+                "active": false
+              },
+              "dupe_msg": {
+                "active": true
+              },
+              "committed": {
+                "active": false
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Duplicate business execution bypassed while offset commit succeeds.",
+            "values": {
+              "new_msg": {
+                "active": false
+              },
+              "dupe_msg": {
+                "active": true
+              },
+              "committed": {
+                "active": true
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "New keys key_002 and key_003 execute mutations and store keys atomically.",
+            "values": {
+              "new_msg": {
+                "active": true
+              },
+              "dupe_msg": {
+                "active": false
+              },
+              "committed": {
+                "active": true
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Distributed Dead-Letter Routing & Poison Pill Recovery Engine",
+      "codeHash": "3e3b100aa1610f72e7615fbdb2d64ac6b0a2e5ea951eac73526d640d721cb59e",
+      "spec": {
+        "template": "flow",
+        "title": "Dead-Letter Quarantine & Poison Pill Isolation",
+        "nodes": [
+          {
+            "id": "ingress",
+            "label": "Ingress Stream",
+            "sub": "3 Messages Inspected",
+            "status": "ok"
+          },
+          {
+            "id": "eval",
+            "label": "Retry & Schema Evaluator",
+            "sub": "Max Retries: 3",
+            "status": "ok"
+          },
+          {
+            "id": "healthy",
+            "label": "Healthy Pipeline",
+            "sub": "Processed Successfully",
+            "status": "ok"
+          },
+          {
+            "id": "dlq",
+            "label": "Dead-Letter Quarantine",
+            "sub": "orders.dlq (Diagnostic Headers)",
+            "status": "fail"
+          }
+        ],
+        "edges": [
+          {
+            "from": "ingress",
+            "to": "eval",
+            "label": "Inspect"
+          },
+          {
+            "from": "eval",
+            "to": "healthy",
+            "label": "Pass"
+          },
+          {
+            "from": "eval",
+            "to": "dlq",
+            "label": "Exceeded / Corrupt"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "quarantinePoisonPills scans incoming message payloads and delivery counts.",
+            "values": {
+              "ingress": {
+                "status": "Inspecting"
+              },
+              "eval": {
+                "status": "Active"
+              },
+              "healthy": {
+                "status": "Idle"
+              },
+              "dlq": {
+                "status": "Empty"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Malformed record m3 triggers fatal corruption and bypasses further retries.",
+            "values": {
+              "ingress": {
+                "status": "Active"
+              },
+              "eval": {
+                "status": "Corrupted"
+              },
+              "healthy": {
+                "status": "Idle"
+              },
+              "dlq": {
+                "status": "Receiving"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Message m2 exceeding max retry threshold diverts immediately to DLQ.",
+            "values": {
+              "ingress": {
+                "status": "Active"
+              },
+              "eval": {
+                "status": "Exceeded"
+              },
+              "healthy": {
+                "status": "Active"
+              },
+              "dlq": {
+                "status": "Quarantining"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Healthy message m1 continues processing unimpeded without partition stalls.",
+            "values": {
+              "ingress": {
+                "status": "Complete"
+              },
+              "eval": {
+                "status": "Complete"
+              },
+              "healthy": {
+                "status": "Processed"
+              },
+              "dlq": {
+                "status": "Quarantined"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production SLA Audit & Milestone 6 Verification Suite (Grade A+ Certification)",
+      "codeHash": "a833d6437effeaf02b9d7ced876b9ba48e1635fd620a861956eb2d8d356308b7",
+      "spec": {
+        "template": "compare",
+        "title": "Milestone 6 Production SLA Verification & Certification Scorecard",
+        "left": {
+          "label": "Production SLA Target",
+          "sub": "Enterprise contractual threshold"
+        },
+        "right": {
+          "label": "Engine Actual Metric",
+          "sub": "Empirical benchmark result"
+        },
+        "rows": [
+          {
+            "id": "outbox",
+            "label": "Outbox Relay Latency"
+          },
+          {
+            "id": "publish",
+            "label": "Kafka Publish Latency"
+          },
+          {
+            "id": "tput",
+            "label": "Consumer Throughput"
+          },
+          {
+            "id": "dedupe",
+            "label": "Deduplication Accuracy"
+          },
+          {
+            "id": "lag",
+            "label": "Max Observed Lag"
+          },
+          {
+            "id": "dlq",
+            "label": "DLQ Poison Pill Isolation"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "verifyMilestone6SlaSuite audits all 6 critical production vectors.",
+            "values": {
+              "outbox": {
+                "left": "<=10.0ms",
+                "right": "3.2ms"
+              },
+              "publish": {
+                "left": "<=5.0ms",
+                "right": "1.8ms"
+              },
+              "tput": {
+                "left": ">=10,000 msg/s",
+                "right": "25,000 msg/s"
+              },
+              "dedupe": {
+                "left": "100%",
+                "right": "100%"
+              },
+              "lag": {
+                "left": "<=50 records",
+                "right": "12 records"
+              },
+              "dlq": {
+                "left": "100%",
+                "right": "100%"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Outbox and Kafka latencies surpass enterprise targets by over 60%.",
+            "values": {
+              "outbox": {
+                "left": "PASS",
+                "right": "3.2ms (FAST)"
+              },
+              "publish": {
+                "left": "PASS",
+                "right": "1.8ms (FAST)"
+              },
+              "tput": {
+                "left": "PASS",
+                "right": "25k msg/s"
+              },
+              "dedupe": {
+                "left": "PASS",
+                "right": "100%"
+              },
+              "lag": {
+                "left": "PASS",
+                "right": "12"
+              },
+              "dlq": {
+                "left": "PASS",
+                "right": "100%"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Throughput reaches 25,000 msg/s with 100% deduplication accuracy.",
+            "values": {
+              "outbox": {
+                "left": "PASS",
+                "right": "Optimal"
+              },
+              "publish": {
+                "left": "PASS",
+                "right": "Optimal"
+              },
+              "tput": {
+                "left": "PASS",
+                "right": "2.5x Target"
+              },
+              "dedupe": {
+                "left": "PASS",
+                "right": "Zero Duplicates"
+              },
+              "lag": {
+                "left": "PASS",
+                "right": "Minimal"
+              },
+              "dlq": {
+                "left": "PASS",
+                "right": "100% Isolated"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Platform satisfies all 6 SLAs and earns Grade A+ Production Certification.",
+            "values": {
+              "outbox": {
+                "left": "CERTIFIED",
+                "right": "A+"
+              },
+              "publish": {
+                "left": "CERTIFIED",
+                "right": "A+"
+              },
+              "tput": {
+                "left": "CERTIFIED",
+                "right": "A+"
+              },
+              "dedupe": {
+                "left": "CERTIFIED",
+                "right": "A+"
+              },
+              "lag": {
+                "left": "CERTIFIED",
+                "right": "A+"
+              },
+              "dlq": {
+                "left": "CERTIFIED",
+                "right": "A+"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

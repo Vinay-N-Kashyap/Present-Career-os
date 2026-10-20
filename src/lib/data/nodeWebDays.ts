@@ -319,4 +319,60 @@ export const NODE_WEB_DAYS: DayConfig[] = [
       'Deploying a fully tested, observable, and resilient backend service.'
     ]
   }
+,
+{
+  "day": 31,
+  "title": "Advanced Event-Driven Microservices: Asynchronous Event Loops, Worker Threads & Event Emitters",
+  "desc": "Master the V8/libuv single-threaded concurrency model, multi-core worker threads offloading, streaming backpressure control, and distributed async tracing.",
+  "syllabus": [
+    "Libuv event loop phase execution: timers, pending I/O, poll phase, and setImmediate check queue.",
+    "Offloading CPU-bound tasks to worker threads using MessageChannel and SharedArrayBuffer memory.",
+    "Implementing high-watermark backpressure flow control across streaming EventEmitter pipelines.",
+    "Distributed asynchronous context propagation and correlation tracing using AsyncLocalStorage."
+  ]
+},
+{
+  "day": 32,
+  "title": "Distributed Message Brokers: Apache Kafka Architecture, Partitions, Consumer Groups & Offsets",
+  "desc": "Architect high-throughput streaming systems with Apache Kafka, mastering commit logs, deterministic partition key routing, consumer group rebalances, and manual offset tracking.",
+  "syllabus": [
+    "Apache Kafka distributed commit log architecture, broker clusters, and topic partitioning.",
+    "Deterministic partition key routing with MurmurHash2 and in-sync replica (ISR) durability.",
+    "Consumer group coordinator protocols, heartbeat monitoring, and cooperative sticky rebalances.",
+    "At-least-once manual offset commit workflows and real-time consumer lag monitoring."
+  ]
+},
+{
+  "day": 33,
+  "title": "AMQP & Message Queuing: RabbitMQ Exchanges, Queues, Dead-Letter Exchanges & Acknowledgments",
+  "desc": "Master enterprise AMQP messaging with RabbitMQ, implementing Direct, Topic, and Fanout exchanges, publisher confirms, dead-letter exchanges, and high-availability Quorum Queues.",
+  "syllabus": [
+    "AMQP protocol architecture: Direct, Topic, Fanout, and Headers exchanges to queue bindings.",
+    "Publisher confirms and consumer acknowledgments (basic.ack, basic.nack, basic.reject).",
+    "Dead-Letter Exchanges (DLX) and automated quarantine for poisoned or expired messages.",
+    "Priority queue scheduling and high-availability Raft Quorum Queues vs classic mirroring."
+  ]
+},
+{
+  "day": 34,
+  "title": "Redis Streams & Consumer Groups: High-Throughput In-Memory Streaming & Pending Acknowledgment Lists",
+  "desc": "Master in-memory streaming with Redis Streams in Node.js: analyze Radix Tree stream structures, consumer groups, Pending Acknowledgment Lists (PEL), consumer claiming, and stream capping.",
+  "syllabus": [
+    "Redis Streams append-only architecture: Radix Tree indexing and Listpack macro-node storage.",
+    "Consumer groups and distributed reading using XREADGROUP with the special '>' operator.",
+    "Pending Acknowledgment List (PEL) state tracking and XPENDING idle duration inspection.",
+    "Autonomous task recovery using XAUTOCLAIM and memory bounding with MAXLEN stream capping."
+  ]
+},
+{
+  "day": 35,
+  "title": "Milestone 6: Distributed Event-Driven Order Processing Engine with Kafka & Outbox Pattern",
+  "desc": "Architect, implement, and certify an enterprise-grade Distributed Event-Driven Order Processing Engine synthesizing Kafka topic partitioning, Transactional Outbox pattern, idempotent consumer deduplication, and consumer lag monitoring into a Grade A+ certified backend platform.",
+  "syllabus": [
+    "Transactional Outbox Pattern: eliminating the dual-write vulnerability with local ACID transactions.",
+    "PostgreSQL Write-Ahead Log (WAL) CDC relaying with Debezium and sub-5ms Kafka publishing.",
+    "Deterministic idempotent consumer deduplication enforcing 100% duplicate delivery protection.",
+    "Automated Dead-Letter Queue quarantine and 6-vector production SLA Grade A+ certification."
+  ]
+}
 ];

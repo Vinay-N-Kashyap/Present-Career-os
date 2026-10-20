@@ -1,0 +1,591 @@
+{
+  "schemaVersion": 2,
+  "prefix": "node-web",
+  "day": 34,
+  "promptSha": "block7_expansion",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Redis Streams Data Structure: Radix Trees, Entry IDs & Append Semantics (XADD)",
+      "codeHash": "54cd07e2ef52bb7c6701f36b6ab99be8283b591083860536526bf7c18a810869",
+      "spec": {
+        "template": "boxes",
+        "title": "Redis Stream Radix Tree & Listpack Storage",
+        "boxes": [
+          {
+            "id": "ts",
+            "label": "Millisecond Timestamp"
+          },
+          {
+            "id": "seq",
+            "label": "Sequence Index"
+          },
+          {
+            "id": "lp",
+            "label": "Listpack Macro-Node"
+          },
+          {
+            "id": "mem",
+            "label": "RAM Consumption"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "appendRedisStreamEntry executes XADD appending entry to stream.",
+            "values": {
+              "ts": {
+                "text": "1710000000000"
+              },
+              "seq": {
+                "text": "0"
+              },
+              "lp": {
+                "text": "Node 1"
+              },
+              "mem": {
+                "text": "64 bytes"
+              }
+            },
+            "tones": {
+              "ts": "data",
+              "seq": "data",
+              "lp": "active",
+              "mem": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Radix tree indexes entries efficiently by 64-bit millisecond key.",
+            "values": {
+              "ts": {
+                "text": "1710000000001"
+              },
+              "seq": {
+                "text": "0"
+              },
+              "lp": {
+                "text": "Node 1"
+              },
+              "mem": {
+                "text": "96 bytes"
+              }
+            },
+            "tones": {
+              "ts": "data",
+              "seq": "data",
+              "lp": "active",
+              "mem": "idle"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Common field names are compressed across entries in the same Listpack.",
+            "values": {
+              "ts": {
+                "text": "1710000000001"
+              },
+              "seq": {
+                "text": "1"
+              },
+              "lp": {
+                "text": "Compressed"
+              },
+              "mem": {
+                "text": "112 bytes"
+              }
+            },
+            "tones": {
+              "ts": "data",
+              "seq": "accent",
+              "lp": "accent",
+              "mem": "data"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Stream operations achieve microsecond latency with minimal RAM overhead.",
+            "values": {
+              "ts": {
+                "text": "Indexed"
+              },
+              "seq": {
+                "text": "Sorted"
+              },
+              "lp": {
+                "text": "Optimized"
+              },
+              "mem": {
+                "text": "<1KB total"
+              }
+            },
+            "tones": {
+              "ts": "active",
+              "seq": "active",
+              "lp": "active",
+              "mem": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Consumer Groups & Stream Ingestion: XREADGROUP & Message Distribution",
+      "codeHash": "84c626ed7dd7f5967696c1e66221d48816b600d8dd98e823e085248e29f86169",
+      "spec": {
+        "template": "flow",
+        "title": "Redis Streams Consumer Group Ingestion Pipeline",
+        "nodes": [
+          {
+            "id": "str",
+            "label": "Redis Stream",
+            "sub": "XADD stream:orders",
+            "status": "ok"
+          },
+          {
+            "id": "grp",
+            "label": "Consumer Group",
+            "sub": "XGROUP CREATE orders_grp $",
+            "status": "ok"
+          },
+          {
+            "id": "w1",
+            "label": "Worker Pod 1",
+            "sub": "XREADGROUP > (Assigned)",
+            "status": "ok"
+          },
+          {
+            "id": "w2",
+            "label": "Worker Pod 2",
+            "sub": "XREADGROUP > (Assigned)",
+            "status": "ok"
+          }
+        ],
+        "edges": [
+          {
+            "from": "str",
+            "to": "grp",
+            "label": "Append"
+          },
+          {
+            "from": "grp",
+            "to": "w1",
+            "label": "Dispatched"
+          },
+          {
+            "from": "grp",
+            "to": "w2",
+            "label": "Dispatched"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "readRedisStreamGroup creates consumer group with initial cursor.",
+            "values": {
+              "str": {
+                "status": "Active"
+              },
+              "grp": {
+                "status": "Configured"
+              },
+              "w1": {
+                "status": "Idle"
+              },
+              "w2": {
+                "status": "Idle"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Worker 1 requests new entries using the special '>' operator.",
+            "values": {
+              "str": {
+                "status": "Active"
+              },
+              "grp": {
+                "status": "Dispatching"
+              },
+              "w1": {
+                "status": "Assigned"
+              },
+              "w2": {
+                "status": "Idle"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Worker 2 pulls subsequent entries without duplicate delivery.",
+            "values": {
+              "str": {
+                "status": "Active"
+              },
+              "grp": {
+                "status": "Dispatching"
+              },
+              "w1": {
+                "status": "Processing"
+              },
+              "w2": {
+                "status": "Assigned"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Entries move to the Pending Acknowledgment List awaiting explicit XACK.",
+            "values": {
+              "str": {
+                "status": "Idle"
+              },
+              "grp": {
+                "status": "Tracking PEL"
+              },
+              "w1": {
+                "status": "Acknowledged"
+              },
+              "w2": {
+                "status": "Acknowledged"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Pending Acknowledgment List (PEL): Tracking In-Flight Messages & XPENDING",
+      "codeHash": "e8affa3659554cd4b71a8fdc17c09c798d06af4202be5e1a4e8bc0be70cfe92e",
+      "spec": {
+        "template": "states",
+        "title": "Pending Acknowledgment List (PEL) Entry Lifecycle",
+        "states": [
+          {
+            "id": "pel_pending",
+            "label": "In-Flight PEL (delivered to consumer)"
+          },
+          {
+            "id": "pel_ack",
+            "label": "Acknowledged (XACK - evicted from PEL)"
+          },
+          {
+            "id": "pel_stale",
+            "label": "Stale / Idle (candidate for XCLAIM)"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "inspectPendingAcknowledgmentList queries PEL via XPENDING.",
+            "values": {
+              "pel_pending": {
+                "active": true
+              },
+              "pel_ack": {
+                "active": false
+              },
+              "pel_stale": {
+                "active": false
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Consumer finishes processing and emits XACK, removing entry cleanly.",
+            "values": {
+              "pel_pending": {
+                "active": false
+              },
+              "pel_ack": {
+                "active": true
+              },
+              "pel_stale": {
+                "active": false
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "If consumer terminates unexpectedly, message remains in PEL accumulating idle time.",
+            "values": {
+              "pel_pending": {
+                "active": false
+              },
+              "pel_ack": {
+                "active": false
+              },
+              "pel_stale": {
+                "active": true
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Idle duration exceeding threshold flags entry for automatic recovery.",
+            "values": {
+              "pel_pending": {
+                "active": false
+              },
+              "pel_ack": {
+                "active": false
+              },
+              "pel_stale": {
+                "active": true
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Consumer Fault Recovery: Message Claiming with XCLAIM & Dead Consumer Eviction",
+      "codeHash": "371324652f141f58664b9766797b5dba55f4ed6aeb58e4e3ac2d3f84d0664753",
+      "spec": {
+        "template": "flow",
+        "title": "Autonomous Stale Message Claiming & Recovery",
+        "nodes": [
+          {
+            "id": "dead",
+            "label": "Crashed Worker 1",
+            "sub": "Unacknowledged PEL entries",
+            "status": "fail"
+          },
+          {
+            "id": "pel",
+            "label": "Redis Stream PEL",
+            "sub": "Idle Time > 30,000ms",
+            "status": "ok"
+          },
+          {
+            "id": "claim",
+            "label": "XAUTOCLAIM Scan",
+            "sub": "Atomic PEL Ownership Transfer",
+            "status": "ok"
+          },
+          {
+            "id": "rec",
+            "label": "Healthy Worker 2",
+            "sub": "Processing Reclaimed Message",
+            "status": "ok"
+          }
+        ],
+        "edges": [
+          {
+            "from": "dead",
+            "to": "pel",
+            "label": "Orphaned"
+          },
+          {
+            "from": "pel",
+            "to": "claim",
+            "label": "Filter Stale"
+          },
+          {
+            "from": "claim",
+            "to": "rec",
+            "label": "Reassign"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "claimStaleStreamMessage executes XAUTOCLAIM to detect abandoned tasks.",
+            "values": {
+              "dead": {
+                "status": "Dead"
+              },
+              "pel": {
+                "status": "Auditing"
+              },
+              "claim": {
+                "status": "Scanning"
+              },
+              "rec": {
+                "status": "Idle"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Messages with idle time > 30 seconds are identified in the PEL.",
+            "values": {
+              "dead": {
+                "status": "Dead"
+              },
+              "pel": {
+                "status": "Identified"
+              },
+              "claim": {
+                "status": "Active"
+              },
+              "rec": {
+                "status": "Idle"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Redis atomically transfers ownership and increments the delivery counter.",
+            "values": {
+              "dead": {
+                "status": "Dead"
+              },
+              "pel": {
+                "status": "Updated"
+              },
+              "claim": {
+                "status": "Transferred"
+              },
+              "rec": {
+                "status": "Assigned"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Surviving worker finishes task execution and emits XACK cleanly.",
+            "values": {
+              "dead": {
+                "status": "Evicted"
+              },
+              "pel": {
+                "status": "Cleared"
+              },
+              "claim": {
+                "status": "Idle"
+              },
+              "rec": {
+                "status": "Acked"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Stream Compaction & Memory Optimization: XTRIM, MAXLEN & High-Throughput Telemetry",
+      "codeHash": "67e1a84ff62a26259d7d1b9b223864f8389ef6745ca97e1af54044a9e1c9db9a",
+      "spec": {
+        "template": "compare",
+        "title": "Unbounded Stream Growth vs MAXLEN Capping",
+        "left": {
+          "label": "Unbounded Stream",
+          "sub": "Appending without eviction limits"
+        },
+        "right": {
+          "label": "MAXLEN ~ 100,000 Capped",
+          "sub": "Approximate Listpack macro-node trimming"
+        },
+        "rows": [
+          {
+            "id": "ram",
+            "label": "RAM Consumption"
+          },
+          {
+            "id": "oom",
+            "label": "OOM Crash Hazard"
+          },
+          {
+            "id": "cpu",
+            "label": "Trimming Overhead"
+          },
+          {
+            "id": "retention",
+            "label": "Data Window"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "trimRedisStream enforces strict memory ceiling via MAXLEN.",
+            "values": {
+              "ram": {
+                "left": "16 GB (grows)",
+                "right": "240 MB (constant)"
+              },
+              "oom": {
+                "left": "Severe Risk",
+                "right": "Zero Risk"
+              },
+              "cpu": {
+                "left": "0%",
+                "right": "<2% (approximate)"
+              },
+              "retention": {
+                "left": "All History",
+                "right": "Recent 100k events"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "The tilde operator (~) optimizes CPU by trimming whole Listpack nodes.",
+            "values": {
+              "ram": {
+                "left": "24 GB",
+                "right": "242 MB"
+              },
+              "oom": {
+                "left": "Warning Threshold",
+                "right": "Stable"
+              },
+              "cpu": {
+                "left": "0%",
+                "right": "1.4%"
+              },
+              "retention": {
+                "left": "All History",
+                "right": "Target window"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Unbounded streams eventually exhaust server memory and trigger OOM killer.",
+            "values": {
+              "ram": {
+                "left": "32 GB (OOM)",
+                "right": "239 MB"
+              },
+              "oom": {
+                "left": "CRASHED",
+                "right": "Protected"
+              },
+              "cpu": {
+                "left": "N/A",
+                "right": "1.2%"
+              },
+              "retention": {
+                "left": "Lost on crash",
+                "right": "Preserved"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Capped streams ensure high-speed, reliable in-memory streaming pipelines.",
+            "values": {
+              "ram": {
+                "left": "Offline",
+                "right": "240 MB"
+              },
+              "oom": {
+                "left": "Failed",
+                "right": "Healthy"
+              },
+              "cpu": {
+                "left": "N/A",
+                "right": "Nominal"
+              },
+              "retention": {
+                "left": "Corrupted",
+                "right": "Certified"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
