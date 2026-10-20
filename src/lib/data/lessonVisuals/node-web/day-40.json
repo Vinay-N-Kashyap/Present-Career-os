@@ -1,0 +1,498 @@
+{
+  "schemaVersion": 2,
+  "prefix": "node-web",
+  "day": 40,
+  "promptSha": "block8_expansion",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Gateway Architecture Topology: Redis Cluster, Redlock & Reservation State Machine",
+      "codeHash": "076fa5712f4924b41e7a38a8ed6bccc21e51b830b2d4df744c3fe5a9af3df706",
+      "spec": {
+        "template": "states",
+        "title": "Milestone 7 Distributed Reservation Finite State Machine",
+        "states": [
+          {
+            "id": "PENDING",
+            "label": "Hold Initiated",
+            "active": false
+          },
+          {
+            "id": "HELD",
+            "label": "Stock Reserved (TTL 15m)",
+            "active": false
+          },
+          {
+            "id": "COMMITTED",
+            "label": "Order Paid & Finalized",
+            "active": false
+          },
+          {
+            "id": "EXPIRED",
+            "label": "Abandoned / Restored",
+            "active": false
+          }
+        ],
+        "transitions": [
+          {
+            "from": "PENDING",
+            "to": "HELD",
+            "label": "Lua Debit Success"
+          },
+          {
+            "from": "HELD",
+            "to": "COMMITTED",
+            "label": "Payment Authorized"
+          },
+          {
+            "from": "HELD",
+            "to": "EXPIRED",
+            "label": "Reaper Reclaims Stock"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Client initiates checkout; gateway places atomic hold on inventory in Redis.",
+            "values": {
+              "activeState": "PENDING"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Reservation enters HELD state with 15-minute expiration timestamp in Sorted Set.",
+            "values": {
+              "activeState": "HELD"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Successful payment transitions reservation to COMMITTED; outbox writes to PostgreSQL.",
+            "values": {
+              "activeState": "COMMITTED"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "If payment is abandoned, expiration reaper transitions to EXPIRED and restores inventory.",
+            "values": {
+              "activeState": "EXPIRED"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Atomic Inventory Reservation Script: Redis Lua Execution & Over-Allocation Prevention",
+      "codeHash": "1b73f98affed2983281fd2ddc719dbfa72e051febf5ab1b1c7b93466aee8ef69",
+      "spec": {
+        "template": "flow",
+        "title": "Atomic Redis Lua Reservation Execution Flow",
+        "nodes": [
+          {
+            "id": "req",
+            "label": "Checkout Ingress",
+            "sub": "Active Engine",
+            "status": "ok"
+          },
+          {
+            "id": "lua",
+            "label": "Atomic Lua Script",
+            "sub": "Active Engine",
+            "status": "ok"
+          },
+          {
+            "id": "stock",
+            "label": "{inventory}:stock",
+            "sub": "Active Engine",
+            "status": "ok"
+          },
+          {
+            "id": "holds",
+            "label": "{inventory}:holds",
+            "sub": "Active Engine",
+            "status": "ok"
+          }
+        ],
+        "edges": [
+          {
+            "from": "req",
+            "to": "lua",
+            "label": "EVALSHA sku, qty"
+          },
+          {
+            "from": "lua",
+            "to": "stock",
+            "label": "DECRBY qty"
+          },
+          {
+            "from": "lua",
+            "to": "holds",
+            "label": "HSET resId qty"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Checkout gateway invokes atomic Lua script via EVALSHA with product SKU and quantity.",
+            "values": {
+              "req": {
+                "status": "Online"
+              },
+              "lua": {
+                "status": "Online"
+              },
+              "stock": {
+                "status": "Online"
+              },
+              "holds": {
+                "status": "Online"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Script checks available stock; if insufficient, aborts and returns ERR_INSUFFICIENT_STOCK.",
+            "values": {
+              "req": {
+                "status": "Processing"
+              },
+              "lua": {
+                "status": "Processing"
+              },
+              "stock": {
+                "status": "Processing"
+              },
+              "holds": {
+                "status": "Processing"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "If stock is available, script debits stock and registers hold in Redis Hash atomically.",
+            "values": {
+              "req": {
+                "status": "Committed"
+              },
+              "lua": {
+                "status": "Committed"
+              },
+              "stock": {
+                "status": "Committed"
+              },
+              "holds": {
+                "status": "Committed"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Script registers expiration timestamp in Sorted Set for automated reaper sweeps.",
+            "values": {
+              "req": {
+                "status": "Online"
+              },
+              "lua": {
+                "status": "Online"
+              },
+              "stock": {
+                "status": "Online"
+              },
+              "holds": {
+                "status": "Online"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Distributed Mutex & Fencing Token Concurrency Gate: Out-of-Order Lock Rejection",
+      "codeHash": "f131dfe8cd8bffdbff23412f82f344bb8cb392e1c8973eaf2a379a8dffcb8faf",
+      "spec": {
+        "template": "compare",
+        "title": "Fencing Token Protection: Valid Modern Write vs Stale GC Pause Write",
+        "left": {
+          "title": "Modern Client 2 Write (Token 102)",
+          "points": [
+            "Acquired lock after Client 1 lease expired",
+            "Issued fencing token 102",
+            "Storage gate validates 102 > 0 -> COMMITTED"
+          ]
+        },
+        "right": {
+          "title": "Stale Client 1 Write (Token 101)",
+          "points": [
+            "Awoke from 15-second GC pause unaware lock expired",
+            "Presents stale fencing token 101",
+            "Storage gate detects 101 <= 102 -> REJECTED"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Client 1 acquires lock with token 101 but suffers prolonged GC pause.",
+            "values": {
+              "activeSide": "left"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Client 2 acquires lock with token 102, finishes work, and commits to database.",
+            "values": {
+              "activeSide": "right"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Client 1 wakes up from pause and attempts to commit stale write with token 101.",
+            "values": {
+              "activeSide": "both"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Downstream database gate rejects token 101, preserving Client 2 data integrity.",
+            "values": {
+              "activeSide": "both"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Two-Phase Commit Reservation Cleanup & Expiration Reaper: Deadlock Avoidance",
+      "codeHash": "b37745b4a0ed5f8533f5616d713c8ec53caaaedbc6cd7f66336ad182936c70b4",
+      "spec": {
+        "template": "flow",
+        "title": "Automated Expiration Reaper Two-Phase Reclamation Pipeline",
+        "nodes": [
+          {
+            "id": "cron",
+            "label": "Reaper Leader Pod",
+            "sub": "Active Engine",
+            "status": "ok"
+          },
+          {
+            "id": "zset",
+            "label": "Redis Expiry ZSET",
+            "sub": "Active Engine",
+            "status": "ok"
+          },
+          {
+            "id": "eval",
+            "label": "Atomic Lua Restore",
+            "sub": "Active Engine",
+            "status": "ok"
+          },
+          {
+            "id": "pool",
+            "label": "Available Stock Pool",
+            "sub": "Active Engine",
+            "status": "ok"
+          }
+        ],
+        "edges": [
+          {
+            "from": "cron",
+            "to": "zset",
+            "label": "ZRANGEBYSCORE 0 now"
+          },
+          {
+            "from": "zset",
+            "to": "eval",
+            "label": "Expired Candidates"
+          },
+          {
+            "from": "eval",
+            "to": "pool",
+            "label": "INCRBY qty"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Designated reaper leader pod queries expiry Sorted Set for reservations past TTL.",
+            "values": {
+              "cron": {
+                "status": "Online"
+              },
+              "zset": {
+                "status": "Online"
+              },
+              "eval": {
+                "status": "Online"
+              },
+              "pool": {
+                "status": "Online"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "For each expired candidate, reaper initiates atomic Lua state transition verification.",
+            "values": {
+              "cron": {
+                "status": "Processing"
+              },
+              "zset": {
+                "status": "Processing"
+              },
+              "eval": {
+                "status": "Processing"
+              },
+              "pool": {
+                "status": "Processing"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "If reservation is still HELD, script deletes hold and restores quantity to stock pool.",
+            "values": {
+              "cron": {
+                "status": "Committed"
+              },
+              "zset": {
+                "status": "Committed"
+              },
+              "eval": {
+                "status": "Committed"
+              },
+              "pool": {
+                "status": "Committed"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "If reservation was already COMMITTED, script safely skips inventory restoration.",
+            "values": {
+              "cron": {
+                "status": "Online"
+              },
+              "zset": {
+                "status": "Online"
+              },
+              "eval": {
+                "status": "Online"
+              },
+              "pool": {
+                "status": "Online"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production SLA Verification Suite & Milestone 7 Certification (Grade A+)",
+      "codeHash": "08fd091471b90c8478ed724935f827dbe690dadcbd49a0b7499ef8b3673a8d90",
+      "spec": {
+        "template": "boxes",
+        "title": "Milestone 7 Production SLA Verification & Grade A+ Certification",
+        "items": [
+          {
+            "id": "p99",
+            "title": "P99 Latency SLA",
+            "desc": "Sub-5ms response time under 10,000 concurrent requests",
+            "status": "ok"
+          },
+          {
+            "id": "zero_os",
+            "title": "Zero Oversell Guarantee",
+            "desc": "Absolute linearizability with zero negative inventory drift",
+            "status": "ok"
+          },
+          {
+            "id": "fencing",
+            "title": "Fencing Enforcement",
+            "desc": "100% rejection rate for stale out-of-order writes",
+            "status": "ok"
+          },
+          {
+            "id": "reaper",
+            "title": "Reaper Accuracy",
+            "desc": "100% reclamation of abandoned holds within 1 sweep cycle",
+            "status": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Automated chaos harness subjects reservation gateway to synthetic network partitions.",
+            "values": {
+              "p99": {
+                "status": "Inspecting"
+              },
+              "zero_os": {
+                "status": "Inspecting"
+              },
+              "fencing": {
+                "status": "Inspecting"
+              },
+              "reaper": {
+                "status": "Inspecting"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "P99 latency benchmarks verify 3.4ms response time across Redis cluster nodes.",
+            "values": {
+              "p99": {
+                "status": "Synchronized"
+              },
+              "zero_os": {
+                "status": "Synchronized"
+              },
+              "fencing": {
+                "status": "Synchronized"
+              },
+              "reaper": {
+                "status": "Synchronized"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Concurrent burst tests prove zero oversell violations across 50,000 requests.",
+            "values": {
+              "p99": {
+                "status": "Synchronized"
+              },
+              "zero_os": {
+                "status": "Synchronized"
+              },
+              "fencing": {
+                "status": "Synchronized"
+              },
+              "reaper": {
+                "status": "Synchronized"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Evaluation suite issues Grade A+ Enterprise Certification for Milestone 7.",
+            "values": {
+              "p99": {
+                "status": "Synchronized"
+              },
+              "zero_os": {
+                "status": "Synchronized"
+              },
+              "fencing": {
+                "status": "Synchronized"
+              },
+              "reaper": {
+                "status": "Synchronized"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

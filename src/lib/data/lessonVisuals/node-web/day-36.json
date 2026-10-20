@@ -1,0 +1,444 @@
+{
+  "schemaVersion": 2,
+  "prefix": "node-web",
+  "day": 36,
+  "promptSha": "block8_expansion",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Redis Cluster Sharding: 16,384 Hash Slots & Hash Tag Locality",
+      "codeHash": "84921866891b6e29f990767e13c1af77a16ee34b50ac124a005b125cb8ce3413",
+      "spec": {
+        "template": "flow",
+        "title": "Redis Cluster CRC16 Slot Routing & Hash Tag Colocation",
+        "nodes": [
+          {
+            "id": "clt",
+            "label": "Node.js Client",
+            "sub": "Active Engine",
+            "status": "ok"
+          },
+          {
+            "id": "crc",
+            "label": "CRC16 Engine",
+            "sub": "Active Engine",
+            "status": "ok"
+          },
+          {
+            "id": "s1",
+            "label": "Shard 1 (0-5460)",
+            "sub": "Active Engine",
+            "status": "ok"
+          },
+          {
+            "id": "s2",
+            "label": "Shard 2 (5461-10922)",
+            "sub": "Active Engine",
+            "status": "ok"
+          }
+        ],
+        "edges": [
+          {
+            "from": "clt",
+            "to": "crc",
+            "label": "Key Hash Tag"
+          },
+          {
+            "from": "crc",
+            "to": "s1",
+            "label": "Slot 4200"
+          },
+          {
+            "from": "crc",
+            "to": "s2",
+            "label": "Slot 8400"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Node.js client inspects key for curly brace hash tag prefix.",
+            "values": {
+              "clt": {
+                "status": "Online"
+              },
+              "crc": {
+                "status": "Online"
+              },
+              "s1": {
+                "status": "Online"
+              },
+              "s2": {
+                "status": "Online"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "CRC16 checksum calculates modulo 16384 slot destination.",
+            "values": {
+              "clt": {
+                "status": "Processing"
+              },
+              "crc": {
+                "status": "Processing"
+              },
+              "s1": {
+                "status": "Processing"
+              },
+              "s2": {
+                "status": "Processing"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Keys sharing identical hash tags route deterministically to identical shards.",
+            "values": {
+              "clt": {
+                "status": "Committed"
+              },
+              "crc": {
+                "status": "Committed"
+              },
+              "s1": {
+                "status": "Committed"
+              },
+              "s2": {
+                "status": "Committed"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Atomic multi-key Lua scripts execute locally on single shard with zero cross-slot errors.",
+            "values": {
+              "clt": {
+                "status": "Online"
+              },
+              "crc": {
+                "status": "Online"
+              },
+              "s1": {
+                "status": "Online"
+              },
+              "s2": {
+                "status": "Online"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Memory Eviction Policies: LRU vs LFU & maxmemory-policy Ceilings",
+      "codeHash": "5c5e2b12d6ec20da8c084325bfd9940d261032dec4e9905fde2553800bb8ed9b",
+      "spec": {
+        "template": "states",
+        "title": "Redis Cluster Master-Replica Failover State Transition",
+        "states": [
+          {
+            "id": "HEALTHY",
+            "label": "Primary Active",
+            "active": false
+          },
+          {
+            "id": "PFAIL",
+            "label": "Possible Fail Detected",
+            "active": false
+          },
+          {
+            "id": "FAIL",
+            "label": "Epoch Quorum Consensus",
+            "active": false
+          },
+          {
+            "id": "PROMOTED",
+            "label": "Replica Promoted",
+            "active": false
+          }
+        ],
+        "transitions": [
+          {
+            "from": "HEALTHY",
+            "to": "PFAIL",
+            "label": "Missed PING"
+          },
+          {
+            "from": "PFAIL",
+            "to": "FAIL",
+            "label": "Majority Gossip"
+          },
+          {
+            "from": "FAIL",
+            "to": "PROMOTED",
+            "label": "Replica Election"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Cluster nodes periodically heartbeat via gossip protocol over bus port.",
+            "values": {
+              "activeState": "HEALTHY"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Node flags unresponsive peer with PFAIL flag after timeout threshold.",
+            "values": {
+              "activeState": "PFAIL"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Majority of cluster masters confirm failure and broadcast authoritative FAIL message.",
+            "values": {
+              "activeState": "FAIL"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Assigned replica initiates election, assumes master status, and broadcasts new slot ownership.",
+            "values": {
+              "activeState": "PROMOTED"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "High-Throughput Pipeline Batching: Multiplexing Commands & RTT Reduction",
+      "codeHash": "5a1476026ed38c1aefcb2c0a45a253dd05f6f5a2faa07ef5bdd57fd906827928",
+      "spec": {
+        "template": "compare",
+        "title": "Redis Memory Eviction Policies: allkeys-lru vs volatile-lfu",
+        "left": {
+          "title": "LRU (Least Recently Used)",
+          "points": [
+            "Tracks timestamp of last access",
+            "Evicts keys with oldest idle duration",
+            "Ideal for general-purpose application caches"
+          ]
+        },
+        "right": {
+          "title": "LFU (Least Frequently Used)",
+          "points": [
+            "Tracks frequency logarithmic counter",
+            "Protects hot persistent keys from temporary burst eviction",
+            "Ideal for long-tail access patterns"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Redis checks maxmemory limit before writing new cache entries.",
+            "values": {
+              "activeSide": "left"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "LRU identifies keys with the longest idle duration across sample pool.",
+            "values": {
+              "activeSide": "right"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "LFU preserves frequently accessed historical keys even after brief lulls.",
+            "values": {
+              "activeSide": "both"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Engineers select eviction policy based on workload burstiness and memory footprint.",
+            "values": {
+              "activeSide": "both"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cache Invalidation Patterns: Cache-Aside & Stampede Mitigation with Mutex Locks",
+      "codeHash": "0748a8ac9e2a84004157f238d7a1b2685a1e3a3547c934b2619afcdae26696ae",
+      "spec": {
+        "template": "compare",
+        "title": "Pipeline Batching vs MGET: Round-Trip Latency Reduction",
+        "left": {
+          "title": "Unpipelined Execution",
+          "points": [
+            "1 command per network RTT",
+            "10 commands = 10ms network penalty",
+            "High socket write syscall overhead"
+          ]
+        },
+        "right": {
+          "title": "Pipeline Batching",
+          "points": [
+            "10 commands in 1 network RTT",
+            "10 commands = 1ms total latency",
+            "Single socket flush buffering multiple commands"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Client accumulates commands in memory buffer before flushing to socket.",
+            "values": {
+              "activeSide": "left"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Redis server processes all queued commands in succession on primary thread.",
+            "values": {
+              "activeSide": "right"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "All responses return in a single consolidated network packet.",
+            "values": {
+              "activeSide": "both"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Pipeline batching achieves 10x throughput improvement across distributed networks.",
+            "values": {
+              "activeSide": "both"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cluster Resiliency: MOVED / ASK Redirection & Failover Protocols",
+      "codeHash": "1f210281d0a3afe133bb70900f7754e4b245b3b2011cb7d66a212bad35d57945",
+      "spec": {
+        "template": "flow",
+        "title": "ioredis Production Cluster Client Connection Topology",
+        "nodes": [
+          {
+            "id": "app",
+            "label": "Express Gateway",
+            "sub": "Active Engine",
+            "status": "ok"
+          },
+          {
+            "id": "ioredis",
+            "label": "ioredis Cluster Pool",
+            "sub": "Active Engine",
+            "status": "ok"
+          },
+          {
+            "id": "n1",
+            "label": "Primary Node A",
+            "sub": "Active Engine",
+            "status": "ok"
+          },
+          {
+            "id": "n2",
+            "label": "Primary Node B",
+            "sub": "Active Engine",
+            "status": "ok"
+          }
+        ],
+        "edges": [
+          {
+            "from": "app",
+            "to": "ioredis",
+            "label": "Query Command"
+          },
+          {
+            "from": "ioredis",
+            "to": "n1",
+            "label": "Direct Slot Route"
+          },
+          {
+            "from": "ioredis",
+            "to": "n2",
+            "label": "MOVED Fallback"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "ioredis client queries CLUSTER SLOTS upon initialization to cache topology.",
+            "values": {
+              "app": {
+                "status": "Online"
+              },
+              "ioredis": {
+                "status": "Online"
+              },
+              "n1": {
+                "status": "Online"
+              },
+              "n2": {
+                "status": "Online"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Commands route directly to the authoritative primary node for each key slot.",
+            "values": {
+              "app": {
+                "status": "Processing"
+              },
+              "ioredis": {
+                "status": "Processing"
+              },
+              "n1": {
+                "status": "Processing"
+              },
+              "n2": {
+                "status": "Processing"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "If cluster resharding occurs, client catches MOVED redirect and refreshes slot table.",
+            "values": {
+              "app": {
+                "status": "Committed"
+              },
+              "ioredis": {
+                "status": "Committed"
+              },
+              "n1": {
+                "status": "Committed"
+              },
+              "n2": {
+                "status": "Committed"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Persistent socket pooling prevents reconnect latency during high-velocity traffic.",
+            "values": {
+              "app": {
+                "status": "Online"
+              },
+              "ioredis": {
+                "status": "Online"
+              },
+              "n1": {
+                "status": "Online"
+              },
+              "n2": {
+                "status": "Online"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

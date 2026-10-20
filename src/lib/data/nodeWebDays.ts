@@ -374,5 +374,60 @@ export const NODE_WEB_DAYS: DayConfig[] = [
     "Deterministic idempotent consumer deduplication enforcing 100% duplicate delivery protection.",
     "Automated Dead-Letter Queue quarantine and 6-vector production SLA Grade A+ certification."
   ]
+},
+{
+  "day": 36,
+  "title": "High-Performance In-Memory Caching: Redis Cluster Sharding, Key Eviction Policies & Pipeline Batching",
+  "desc": "Master Redis Cluster sharding in Node.js: analyze CRC16 slot distribution (16384 slots), hash tags for co-location, master-replica failover gossip, LRU/LFU eviction policies, and pipeline batching.",
+  "syllabus": [
+    "Redis Cluster topology: 16384 virtual hash slots, CRC16 hashing, and hash tags for co-location.",
+    "Gossip protocol node communication, PFAIL/FAIL state transitions, and replica failover election.",
+    "Memory eviction algorithms: allkeys-lru, volatile-lru, allkeys-lfu, volatile-lfu, and volatile-ttl.",
+    "Pipeline batching vs MGET/MSET: RTT latency reduction, socket buffering, and slot multiplexing."
+  ]
+},
+{
+  "day": 37,
+  "title": "Distributed Locking & Concurrency Control: Redlock Algorithm, Lease Renewals & Fencing Tokens",
+  "desc": "Master distributed locking in Node.js: analyze single-instance vs multi-master Redlock quorum consensus, clock drift compensation, the Kleppmann GC pause dilemma, monotonically increasing fencing tokens, and renewal heartbeats.",
+  "syllabus": [
+    "Single-instance locks vs Redlock algorithm: quorum consensus across N independent Redis masters.",
+    "Clock drift calculation, validity time limits, and non-blocking try-lock with randomized backoff.",
+    "The Martin Kleppmann GC pause hazard: out-of-order write interception via Fencing Tokens.",
+    "Distributed lease renewal heartbeats via background interval loops and atomic Lua renewal."
+  ]
+},
+{
+  "day": 38,
+  "title": "Connection Pooling & Resource Sizing: Generic-Pool, Socket Reuse & PostgreSQL pgBouncer Gateways",
+  "desc": "Master database connection pooling in Node.js: analyze TCP/TLS handshake overhead, generic-pool resource lifecycles, PostgreSQL backend process memory limits, pgBouncer multiplexing modes, and Little's Law sizing.",
+  "syllabus": [
+    "Database connection lifecycle overhead: TCP 3-way handshakes, TLS negotiation, and PostgreSQL RAM limits.",
+    "Node.js connection pool management: max, min, acquireTimeoutMillis, idleTimeoutMillis, and evictors.",
+    "PostgreSQL pgBouncer architecture: Session, Transaction, and Statement pooling multiplexing trade-offs.",
+    "Connection sizing mathematics: Little's Law, CPU core bounds, and graceful pool draining on SIGTERM."
+  ]
+},
+{
+  "day": 39,
+  "title": "Distributed Rate Limiting & Sliding Windows: Token Bucket, Leaky Bucket & Redis Lua Scripting",
+  "desc": "Master API traffic shaping and abuse mitigation in Node.js: analyze Fixed Window boundary burst vulnerabilities, Sliding Window Logs, Sliding Window Weighted Counters, Token Bucket algorithms, atomic Redis Lua scripts, and RFC 6585 headers.",
+  "syllabus": [
+    "Rate limiting algorithms: Fixed Window counter vulnerabilities and edge boundary burst hazards.",
+    "Sliding Window Logs in Redis Sorted Sets vs Sliding Window Counter weighted approximation math.",
+    "Token Bucket burst tolerance vs Leaky Bucket constant-rate smoothing with lazy mathematical refill.",
+    "Atomic single-round-trip enforcement via Redis EVALSHA Lua scripting and RFC 6585 (HTTP 429) headers."
+  ]
+},
+{
+  "day": 40,
+  "title": "Milestone 7: Low-Latency Distributed Inventory Reservation Gateway with Redlock & Lua Caching",
+  "desc": "Architect, implement, and certify an enterprise-grade Low-Latency Distributed Inventory Reservation Gateway in Node.js: synthesize Redis Cluster sharding, Redlock distributed locking with monotonically increasing fencing tokens, atomic inventory debiting via Redis Lua scripts, automated expiration reapers, and complete production SLA verification into a Grade A+ certified platform.",
+  "syllabus": [
+    "In-Memory Inventory Gateway topology and finite state machine: PENDING, HELD, COMMITTED, and EXPIRED.",
+    "Atomic Lua script reservation engine: sub-millisecond stock checks, hold registration, and zero overselling.",
+    "Distributed Mutex & Fencing Token Concurrency Gate: intercepting out-of-order writes from paused workers.",
+    "Automated Expiration Reaper: sweeping abandoned holds and certifying Grade A+ sub-5ms P99 production SLAs."
+  ]
 }
 ];

@@ -1,0 +1,415 @@
+{
+  "schemaVersion": 2,
+  "prefix": "node-web",
+  "day": 38,
+  "promptSha": "block8_expansion",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "TCP Handshake Overhead & Socket Reuse: The Cost of Ephemeral Connections",
+      "codeHash": "4c5956a54dde30f0d5733942f330ce5f37b790f7a7214d70137cc5959ea35aaf",
+      "spec": {
+        "template": "compare",
+        "title": "Connection Pooling: Direct Connection Exhaustion vs Pooled Multiplexing",
+        "left": {
+          "title": "Unbounded Direct Connections",
+          "points": [
+            "Each Node.js pod opens 100 direct sockets",
+            "PostgreSQL forks process per connection (10MB RAM)",
+            "Context switching collapses database CPU"
+          ]
+        },
+        "right": {
+          "title": "Pooled Gateway Multiplexing",
+          "points": [
+            "Node.js uses bounded generic-pool (10 conn)",
+            "pgBouncer multiplexes 5000 clients over 50 server conns",
+            "Near-zero memory bloat and predictable 1ms latency"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "PostgreSQL allocates a dedicated backend OS process for every direct TCP connection.",
+            "values": {
+              "activeSide": "left"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "High connection concurrency induces severe Linux kernel context switching overhead.",
+            "values": {
+              "activeSide": "right"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Connection pool buffers excess requests in FIFO queue rather than exhausting sockets.",
+            "values": {
+              "activeSide": "both"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Database operates at maximum IOPS throughput with minimal operating system overhead.",
+            "values": {
+              "activeSide": "both"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "In-Memory Connection Pooling: Lifecycle States & Generic-Pool Mechanics",
+      "codeHash": "7e53ca3755817dcc39f4b28323fda84c7117a2ec27636bb7bd91ab74b1cbbcfa",
+      "spec": {
+        "template": "boxes",
+        "title": "Node.js Generic-Pool Resource Lifecycle Dynamics",
+        "items": [
+          {
+            "id": "idle",
+            "title": "Idle Connection Pool",
+            "desc": "Pre-warmed TCP sockets awaiting queries",
+            "status": "ok"
+          },
+          {
+            "id": "active",
+            "title": "Active Leased Pool",
+            "desc": "Sockets currently executing SQL transactions",
+            "status": "ok"
+          },
+          {
+            "id": "wait",
+            "title": "Acquire Wait Queue",
+            "desc": "Backlogged promises awaiting available socket",
+            "status": "ok"
+          },
+          {
+            "id": "reaper",
+            "title": "Eviction Reaper",
+            "desc": "Background timer terminating idle expired connections",
+            "status": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Application requests connection via pool.acquire() promise resolver.",
+            "values": {
+              "idle": {
+                "status": "Inspecting"
+              },
+              "active": {
+                "status": "Inspecting"
+              },
+              "wait": {
+                "status": "Inspecting"
+              },
+              "reaper": {
+                "status": "Inspecting"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Pool leases pre-warmed idle connection or establishes new socket up to max cap.",
+            "values": {
+              "idle": {
+                "status": "Synchronized"
+              },
+              "active": {
+                "status": "Synchronized"
+              },
+              "wait": {
+                "status": "Synchronized"
+              },
+              "reaper": {
+                "status": "Synchronized"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "If pool is exhausted, incoming requests queue up until timeout threshold.",
+            "values": {
+              "idle": {
+                "status": "Synchronized"
+              },
+              "active": {
+                "status": "Synchronized"
+              },
+              "wait": {
+                "status": "Synchronized"
+              },
+              "reaper": {
+                "status": "Synchronized"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Upon query completion, client calls pool.release() to recycle socket immediately.",
+            "values": {
+              "idle": {
+                "status": "Synchronized"
+              },
+              "active": {
+                "status": "Synchronized"
+              },
+              "wait": {
+                "status": "Synchronized"
+              },
+              "reaper": {
+                "status": "Synchronized"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "PostgreSQL Concurrency Cost: Process-Per-Connection Architecture & RAM Sizing",
+      "codeHash": "234ee27844df516c8d72bd6a8155cc43ff60ec736fcdad266e91e0d953b885b5",
+      "spec": {
+        "template": "compare",
+        "title": "PostgreSQL pgBouncer Modes: Session vs Transaction Pooling",
+        "left": {
+          "title": "Session Pooling",
+          "points": [
+            "Connection bound to client for full session",
+            "Supports PREPARE statements and LISTEN/NOTIFY",
+            "Low multiplexing ratio"
+          ]
+        },
+        "right": {
+          "title": "Transaction Pooling",
+          "points": [
+            "Connection released back to pool after COMMIT",
+            "Achieves 100x client multiplexing ratio",
+            "Prohibits session-level state and SET variables"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Session pooling assigns server connection until client terminates TCP socket.",
+            "values": {
+              "activeSide": "left"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Transaction pooling reclaims connection the millisecond COMMIT or ROLLBACK executes.",
+            "values": {
+              "activeSide": "right"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Thousands of Node.js pods share small pool of 50 PostgreSQL server backends.",
+            "values": {
+              "activeSide": "both"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Transaction pooling delivers maximum throughput for REST API stateless workloads.",
+            "values": {
+              "activeSide": "both"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Connection Proxying: pgBouncer Transaction Pooling & Multiplexing",
+      "codeHash": "060de61ea374f1148103a9732c475e704a7052af2b48d7e96d8f2175efa3b845",
+      "spec": {
+        "template": "boxes",
+        "title": "Connection Pool Sizing: Little's Law & CPU Core Sizing",
+        "items": [
+          {
+            "id": "littles",
+            "title": "Little's Law Formula",
+            "desc": "L = lambda * W (Concurrency = Arrival Rate * Service Time)",
+            "status": "ok"
+          },
+          {
+            "id": "cores",
+            "title": "PostgreSQL Sizing Rule",
+            "desc": "Connections = (2 * CPU Cores) + Disk Spindle Effective Count",
+            "status": "ok"
+          },
+          {
+            "id": "saturation",
+            "title": "Saturation Cliff",
+            "desc": "Adding connections beyond hardware limit degrades throughput",
+            "status": "ok"
+          },
+          {
+            "id": "sizing",
+            "title": "Production Sizing",
+            "desc": "16-core DB server thrives at 32-40 active connections",
+            "status": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Little's Law determines required concurrent connections from arrival rate and query duration.",
+            "values": {
+              "littles": {
+                "status": "Inspecting"
+              },
+              "cores": {
+                "status": "Inspecting"
+              },
+              "saturation": {
+                "status": "Inspecting"
+              },
+              "sizing": {
+                "status": "Inspecting"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "PostgreSQL documentation recommends pool size = (2 * CPU cores) + disk count.",
+            "values": {
+              "littles": {
+                "status": "Synchronized"
+              },
+              "cores": {
+                "status": "Synchronized"
+              },
+              "saturation": {
+                "status": "Synchronized"
+              },
+              "sizing": {
+                "status": "Synchronized"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Exceeding physical CPU cores forces CPU context switching rather than parallel work.",
+            "values": {
+              "littles": {
+                "status": "Synchronized"
+              },
+              "cores": {
+                "status": "Synchronized"
+              },
+              "saturation": {
+                "status": "Synchronized"
+              },
+              "sizing": {
+                "status": "Synchronized"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Optimal pool sizing maximizes query execution throughput and minimizes tail latency.",
+            "values": {
+              "littles": {
+                "status": "Synchronized"
+              },
+              "cores": {
+                "status": "Synchronized"
+              },
+              "saturation": {
+                "status": "Synchronized"
+              },
+              "sizing": {
+                "status": "Synchronized"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Pool Starvation, Health Probes & Deadlock Avoidance: Acquisition Timeouts",
+      "codeHash": "80065461b8578097cedb3baf6209bcc3af14a12b9f4407411efccf2e22d69b1d",
+      "spec": {
+        "template": "states",
+        "title": "Resilient Connection Pool Health Check & Draining State Machine",
+        "states": [
+          {
+            "id": "HEALTHY",
+            "label": "All Sockets Active",
+            "active": false
+          },
+          {
+            "id": "DEGRADED",
+            "label": "Socket Error / Reconnect",
+            "active": false
+          },
+          {
+            "id": "DRAINING",
+            "label": "Graceful Drain on SIGTERM",
+            "active": false
+          },
+          {
+            "id": "CLOSED",
+            "label": "Pool Terminated",
+            "active": false
+          }
+        ],
+        "transitions": [
+          {
+            "from": "HEALTHY",
+            "to": "DEGRADED",
+            "label": "Network Blip"
+          },
+          {
+            "from": "DEGRADED",
+            "to": "HEALTHY",
+            "label": "Heartbeat Ping OK"
+          },
+          {
+            "from": "HEALTHY",
+            "to": "DRAINING",
+            "label": "SIGTERM Received"
+          },
+          {
+            "from": "DRAINING",
+            "to": "CLOSED",
+            "label": "All Released"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Pool periodically validates idle sockets using SELECT 1 health check ping.",
+            "values": {
+              "activeState": "HEALTHY"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Dead or unresponsive sockets are pruned and replaced with fresh TCP connections.",
+            "values": {
+              "activeState": "DEGRADED"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Upon receiving SIGTERM, pool enters DRAINING state, rejecting new acquire calls.",
+            "values": {
+              "activeState": "DRAINING"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Active queries finish execution cleanly before pool gracefully closes all sockets.",
+            "values": {
+              "activeState": "CLOSED"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

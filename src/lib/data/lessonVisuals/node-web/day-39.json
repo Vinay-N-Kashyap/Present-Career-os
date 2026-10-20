@@ -1,0 +1,444 @@
+{
+  "schemaVersion": 2,
+  "prefix": "node-web",
+  "day": 39,
+  "promptSha": "block8_expansion",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Rate Limiting Paradigms: Fixed Window vs Sliding Window Log & Boundary Bursts",
+      "codeHash": "daddfe0ac90f909943d4d9a0c588173c21a87fc1c0680f01bcd38d54c04dc398",
+      "spec": {
+        "template": "compare",
+        "title": "Rate Limiting Paradigms: Fixed Window vs Sliding Window Log",
+        "left": {
+          "title": "Fixed Window Counter",
+          "points": [
+            "INCR rate:user:12:00 with 60s TTL",
+            "Memory efficient (1 integer per user)",
+            "Vulnerable to double-limit bursts across window boundary"
+          ]
+        },
+        "right": {
+          "title": "Sliding Window Log (ZSET)",
+          "points": [
+            "Stores exact Unix timestamps in Redis Sorted Set",
+            "100% boundary burst protection",
+            "High memory overhead storing timestamp per request"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Fixed windows reset counters at discrete 1-minute clock boundaries.",
+            "values": {
+              "activeSide": "left"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Attackers burst max limit at 12:00:59 and another burst at 12:01:01.",
+            "values": {
+              "activeSide": "right"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Sliding window logs remove expired timestamps and count active items in rolling 60s.",
+            "values": {
+              "activeSide": "both"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Sliding window logs enforce strict mathematical rates across any rolling interval.",
+            "values": {
+              "activeSide": "both"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Sliding Window Counter Algorithm: Weighted Approximation for High-Throughput Gateways",
+      "codeHash": "66c0cdbe4f51e7d74764857f49dec54ff6b838f49849a67bb91c663b4edc1cf4",
+      "spec": {
+        "template": "flow",
+        "title": "Sliding Window Counter Weighted Approximation Algorithm",
+        "nodes": [
+          {
+            "id": "prev",
+            "label": "Previous Window Count",
+            "sub": "Active Engine",
+            "status": "ok"
+          },
+          {
+            "id": "curr",
+            "label": "Current Window Count",
+            "sub": "Active Engine",
+            "status": "ok"
+          },
+          {
+            "id": "weight",
+            "label": "Time Fraction Weight",
+            "sub": "Active Engine",
+            "status": "ok"
+          },
+          {
+            "id": "gate",
+            "label": "Quota Evaluator",
+            "sub": "Active Engine",
+            "status": "ok"
+          }
+        ],
+        "edges": [
+          {
+            "from": "prev",
+            "to": "weight",
+            "label": "Multiply (1 - elapsed/window)"
+          },
+          {
+            "from": "curr",
+            "to": "gate",
+            "label": "Add to Current Count"
+          },
+          {
+            "from": "weight",
+            "to": "gate",
+            "label": "Weighted Sum"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Rate limiter reads previous window count and current window count from Redis.",
+            "values": {
+              "prev": {
+                "status": "Online"
+              },
+              "curr": {
+                "status": "Online"
+              },
+              "weight": {
+                "status": "Online"
+              },
+              "gate": {
+                "status": "Online"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Calculates weight factor representing overlap of previous window in rolling frame.",
+            "values": {
+              "prev": {
+                "status": "Processing"
+              },
+              "curr": {
+                "status": "Processing"
+              },
+              "weight": {
+                "status": "Processing"
+              },
+              "gate": {
+                "status": "Processing"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Sums current count and weighted previous count to approximate rolling traffic.",
+            "values": {
+              "prev": {
+                "status": "Committed"
+              },
+              "curr": {
+                "status": "Committed"
+              },
+              "weight": {
+                "status": "Committed"
+              },
+              "gate": {
+                "status": "Committed"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Consumes only 2 integer keys in Redis while providing near-perfect sliding accuracy.",
+            "values": {
+              "prev": {
+                "status": "Online"
+              },
+              "curr": {
+                "status": "Online"
+              },
+              "weight": {
+                "status": "Online"
+              },
+              "gate": {
+                "status": "Online"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Token Bucket & Leaky Bucket: Burst Tolerance vs Smooth Constant Rate Outflow",
+      "codeHash": "e93f237f5a449b34bc82b3a514a95de18f244d645aff9b7c1eedf64158413379",
+      "spec": {
+        "template": "compare",
+        "title": "Token Bucket vs Leaky Bucket Traffic Shaping",
+        "left": {
+          "title": "Token Bucket Algorithm",
+          "points": [
+            "Tokens refilled at constant rate R up to capacity C",
+            "Permits instant burst up to capacity C",
+            "Preferred for user-facing interactive APIs"
+          ]
+        },
+        "right": {
+          "title": "Leaky Bucket Algorithm",
+          "points": [
+            "Requests enter bucket and leak out at constant rate",
+            "Completely eliminates bursts, outputting smooth flow",
+            "Preferred for pacing writes to fragile legacy systems"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Token bucket enables web clients to burst 10 requests to load full page assets.",
+            "values": {
+              "activeSide": "left"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Subsequent continuous traffic is bounded by steady-state refill rate.",
+            "values": {
+              "activeSide": "right"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Leaky bucket queues requests and processes them at strictly fixed intervals.",
+            "values": {
+              "activeSide": "both"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Engineers select token bucket for burst tolerance and leaky bucket for traffic smoothing.",
+            "values": {
+              "activeSide": "both"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Atomic Redis Lua Scripting: EVALSHA Execution & Single Round-Trip Enforcement",
+      "codeHash": "0e57006b3f1f12184f9265a61eaea44d0985e9d5d1ae1082c29ac77cc3948831",
+      "spec": {
+        "template": "flow",
+        "title": "Atomic Redis Lua Rate Limiter Script Execution Pipeline",
+        "nodes": [
+          {
+            "id": "clt",
+            "label": "Express Middleware",
+            "sub": "Active Engine",
+            "status": "ok"
+          },
+          {
+            "id": "sha",
+            "label": "EVALSHA Cache",
+            "sub": "Active Engine",
+            "status": "ok"
+          },
+          {
+            "id": "lua",
+            "label": "Redis Lua Engine",
+            "sub": "Active Engine",
+            "status": "ok"
+          },
+          {
+            "id": "resp",
+            "label": "RFC 6585 Headers",
+            "sub": "Active Engine",
+            "status": "ok"
+          }
+        ],
+        "edges": [
+          {
+            "from": "clt",
+            "to": "sha",
+            "label": "EVALSHA <hash>"
+          },
+          {
+            "from": "sha",
+            "to": "lua",
+            "label": "Atomic Script Exec"
+          },
+          {
+            "from": "lua",
+            "to": "resp",
+            "label": "Allowed / Blocked + TTL"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Express middleware submits EVALSHA request with client identifier key.",
+            "values": {
+              "clt": {
+                "status": "Online"
+              },
+              "sha": {
+                "status": "Online"
+              },
+              "lua": {
+                "status": "Online"
+              },
+              "resp": {
+                "status": "Online"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Redis executes pre-compiled Lua script atomically on its main processing thread.",
+            "values": {
+              "clt": {
+                "status": "Processing"
+              },
+              "sha": {
+                "status": "Processing"
+              },
+              "lua": {
+                "status": "Processing"
+              },
+              "resp": {
+                "status": "Processing"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Script calculates lazy token refill, checks quota, decrements balance, and sets TTL.",
+            "values": {
+              "clt": {
+                "status": "Committed"
+              },
+              "sha": {
+                "status": "Committed"
+              },
+              "lua": {
+                "status": "Committed"
+              },
+              "resp": {
+                "status": "Committed"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Returns remaining tokens and reset seconds, mapped to RFC 6585 response headers.",
+            "values": {
+              "clt": {
+                "status": "Online"
+              },
+              "sha": {
+                "status": "Online"
+              },
+              "lua": {
+                "status": "Online"
+              },
+              "resp": {
+                "status": "Online"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "API Gateway Integration: Dynamic Rate Limits, Tiered Quotas & RFC 6585 (429)",
+      "codeHash": "fb101ebc34cdc75d413369a00471f1ac17674b0c64e064c3eba87246d88bb9f0",
+      "spec": {
+        "template": "states",
+        "title": "API Gateway Rate Limiting Enforcement & RFC 6585 State Machine",
+        "states": [
+          {
+            "id": "ALLOWED_200",
+            "label": "Within Quota (HTTP 200)",
+            "active": false
+          },
+          {
+            "id": "WARNING_200",
+            "label": "Quota Low (< 10% Left)",
+            "active": false
+          },
+          {
+            "id": "THROTTLED_429",
+            "label": "Quota Exceeded (HTTP 429)",
+            "active": false
+          },
+          {
+            "id": "RESET",
+            "label": "Window Reset",
+            "active": false
+          }
+        ],
+        "transitions": [
+          {
+            "from": "ALLOWED_200",
+            "to": "WARNING_200",
+            "label": "Usage > 90%"
+          },
+          {
+            "from": "WARNING_200",
+            "to": "THROTTLED_429",
+            "label": "Tokens Exhausted"
+          },
+          {
+            "from": "THROTTLED_429",
+            "to": "RESET",
+            "label": "Retry-After Elapsed"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Gateway inspects incoming request and resolves client subscription tier.",
+            "values": {
+              "activeState": "ALLOWED_200"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Response headers include RateLimit-Limit, RateLimit-Remaining, and RateLimit-Reset.",
+            "values": {
+              "activeState": "WARNING_200"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "If quota is exhausted, gateway intercepts request and returns HTTP 429 Too Many Requests.",
+            "values": {
+              "activeState": "THROTTLED_429"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Retry-After header instructs client SDK when to resume requests without human friction.",
+            "values": {
+              "activeState": "RESET"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1109,6 +1109,158 @@ export const NODE_WEB_30_DAYS_CONFIGS: DayConfig[] = [
       "const s2 = auditOrderEngineSla({ relayLatencyMs: 12.0, throughput: 25000, dlqIsolationPct: 100 });",
       "if (s2.pass !== false || s2.grade !== 'FAIL') throw new Error('Failed s2 failure check');"
     )
+  },
+
+  // ── DAY 36: High-Performance In-Memory Caching: Redis Cluster Sharding ──────────────────────────────
+  {
+    ...NODE_WEB_DAYS[35],
+    eTitle: "Calculate Redis Cluster Slot",
+    eDesc: "Write `calculateRedisSlot(key: string): number` extracting `{tag}` if present, summing character codes, and returning `sum % 16384`.",
+    eLanguage: "typescript",
+    eStarter: lines("function calculateRedisSlot(key) {", "  // Return slot modulo 16384", "  return 0;", "}"),
+    eHint: "const m = key.match(/\\{([^}]+)\\}/); const s = m ? m[1] : key; let h = 0; for (let i = 0; i < s.length; i++) h += s.charCodeAt(i); return h % 16384;",
+    eTest: lines(
+      "if (typeof calculateRedisSlot !== 'function') throw new Error('calculateRedisSlot not found');",
+      "const s1 = calculateRedisSlot('user:101');",
+      "if (typeof s1 !== 'number' || s1 < 0 || s1 >= 16384) throw new Error('Invalid slot for s1: ' + s1);",
+      "const s2 = calculateRedisSlot('{inventory:sku_iphone}:stock');",
+      "const s3 = calculateRedisSlot('{inventory:sku_iphone}:holds');",
+      "if (s2 !== s3) throw new Error('Hash tagged keys must map to identical slot: ' + s2 + ' vs ' + s3);"
+    ),
+    aTitle: "Evaluate Cache Eviction Policy",
+    aDesc: "Write `evaluateEvictionPolicy(policy: string, maxMemoryReached: boolean): { evict: boolean; policy: string }` checking if memory is reached and policy starts with allkeys- or volatile-.",
+    aLanguage: "typescript",
+    aStarter: lines("function evaluateEvictionPolicy(policy, maxMemoryReached) {", "  // Evaluate eviction policy", "  return { evict: false, policy: policy };", "}"),
+    aHint: "const canEvict = maxMemoryReached && (policy.startsWith('allkeys-') || policy.startsWith('volatile-')); return { evict: canEvict, policy };",
+    aTest: lines(
+      "if (typeof evaluateEvictionPolicy !== 'function') throw new Error('evaluateEvictionPolicy not found');",
+      "const r1 = evaluateEvictionPolicy('allkeys-lru', true);",
+      "if (r1.evict !== true || r1.policy !== 'allkeys-lru') throw new Error('Failed r1 allkeys-lru: ' + JSON.stringify(r1));",
+      "const r2 = evaluateEvictionPolicy('noeviction', true);",
+      "if (r2.evict !== false) throw new Error('Failed r2 noeviction check');",
+      "const r3 = evaluateEvictionPolicy('allkeys-lru', false);",
+      "if (r3.evict !== false) throw new Error('Failed r3 under-limit check');"
+    )
+  },
+
+  // ── DAY 37: Distributed Locking & Concurrency Control: Redlock & Fencing Tokens ─────────────────────
+  {
+    ...NODE_WEB_DAYS[36],
+    eTitle: "Validate Redlock Quorum",
+    eDesc: "Write `validateRedlockQuorum(nodeVotes: boolean[], totalNodes: number): boolean` returning true if granted votes >= floor(totalNodes / 2) + 1.",
+    eLanguage: "typescript",
+    eStarter: lines("function validateRedlockQuorum(nodeVotes, totalNodes) {", "  // Return quorum boolean", "  return false;", "}"),
+    eHint: "const needed = Math.floor(totalNodes / 2) + 1; const granted = nodeVotes.filter(Boolean).length; return granted >= needed;",
+    eTest: lines(
+      "if (typeof validateRedlockQuorum !== 'function') throw new Error('validateRedlockQuorum not found');",
+      "const q1 = validateRedlockQuorum([true, true, true, false, false], 5);",
+      "if (q1 !== true) throw new Error('Expected true for 3 of 5 votes');",
+      "const q2 = validateRedlockQuorum([true, true, false, false, false], 5);",
+      "if (q2 !== false) throw new Error('Expected false for 2 of 5 votes');",
+      "const q3 = validateRedlockQuorum([true, true], 3);",
+      "if (q3 !== true) throw new Error('Expected true for 2 of 3 votes');"
+    ),
+    aTitle: "Verify Fencing Token Storage Gate",
+    aDesc: "Write `verifyFencingGate(highestSeenToken: number, incomingToken: number): { allow: boolean; highestToken: number }` allowing write if incoming > highestSeen.",
+    aLanguage: "typescript",
+    aStarter: lines("function verifyFencingGate(highestSeenToken, incomingToken) {", "  // Verify incoming fencing token", "  return { allow: false, highestToken: highestSeenToken };", "}"),
+    aHint: "const allow = incomingToken > highestSeenToken; return { allow, highestToken: allow ? incomingToken : highestSeenToken };",
+    aTest: lines(
+      "if (typeof verifyFencingGate !== 'function') throw new Error('verifyFencingGate not found');",
+      "const g1 = verifyFencingGate(100, 105);",
+      "if (g1.allow !== true || g1.highestToken !== 105) throw new Error('Failed g1 valid write: ' + JSON.stringify(g1));",
+      "const g2 = verifyFencingGate(105, 102);",
+      "if (g2.allow !== false || g2.highestToken !== 105) throw new Error('Failed g2 stale write rejection: ' + JSON.stringify(g2));"
+    )
+  },
+
+  // ── DAY 38: Connection Pooling & Resource Sizing ────────────────────────────────────────────────────
+  {
+    ...NODE_WEB_DAYS[37],
+    eTitle: "Calculate Little's Law Concurrency",
+    eDesc: "Write `calculatePoolConcurrency(arrivalRatePerSec: number, avgServiceTimeSec: number): number` returning `Math.ceil(arrivalRatePerSec * avgServiceTimeSec)`.",
+    eLanguage: "typescript",
+    eStarter: lines("function calculatePoolConcurrency(arrivalRatePerSec, avgServiceTimeSec) {", "  // Return required active connections", "  return 0;", "}"),
+    eHint: "return Math.ceil(arrivalRatePerSec * avgServiceTimeSec);",
+    eTest: lines(
+      "if (typeof calculatePoolConcurrency !== 'function') throw new Error('calculatePoolConcurrency not found');",
+      "const c1 = calculatePoolConcurrency(500, 0.02);",
+      "if (c1 !== 10) throw new Error('Expected 10 for 500 * 0.02, got ' + c1);",
+      "const c2 = calculatePoolConcurrency(1000, 0.05);",
+      "if (c2 !== 50) throw new Error('Expected 50 for 1000 * 0.05, got ' + c2);"
+    ),
+    aTitle: "Audit pgBouncer Mode Compatibility",
+    aDesc: "Write `auditBouncerMode(mode: string, features: string[]): { compatible: boolean; reason?: string }` rejecting TRANSACTION mode if features contain 'LISTEN' or 'PREPARE'.",
+    aLanguage: "typescript",
+    aStarter: lines("function auditBouncerMode(mode, features) {", "  // Audit compatibility", "  return { compatible: false };", "}"),
+    aHint: "if (mode === 'TRANSACTION' && (features.includes('LISTEN') || features.includes('PREPARE'))) return { compatible: false, reason: 'UNSUPPORTED_SESSION_FEATURE' }; return { compatible: true };",
+    aTest: lines(
+      "if (typeof auditBouncerMode !== 'function') throw new Error('auditBouncerMode not found');",
+      "const b1 = auditBouncerMode('TRANSACTION', ['LISTEN']);",
+      "if (b1.compatible !== false || b1.reason !== 'UNSUPPORTED_SESSION_FEATURE') throw new Error('Failed b1 LISTEN rejection: ' + JSON.stringify(b1));",
+      "const b2 = auditBouncerMode('TRANSACTION', ['SELECT', 'INSERT']);",
+      "if (b2.compatible !== true) throw new Error('Failed b2 stateless query check');",
+      "const b3 = auditBouncerMode('SESSION', ['LISTEN']);",
+      "if (b3.compatible !== true) throw new Error('Failed b3 session compatibility');"
+    )
+  },
+
+  // ── DAY 39: Distributed Rate Limiting & Sliding Windows ─────────────────────────────────────────────
+  {
+    ...NODE_WEB_DAYS[38],
+    eTitle: "Calculate Sliding Window Counter",
+    eDesc: "Write `calculateSlidingCounter(prevCount: number, currCount: number, elapsedMs: number, windowMs: number): number` approximating rolling requests.",
+    eLanguage: "typescript",
+    eStarter: lines("function calculateSlidingCounter(prevCount, currCount, elapsedMs, windowMs) {", "  // Return estimated count", "  return 0;", "}"),
+    eHint: "const weight = Math.max(0, (windowMs - elapsedMs) / windowMs); return Math.round((prevCount * weight) + currCount);",
+    eTest: lines(
+      "if (typeof calculateSlidingCounter !== 'function') throw new Error('calculateSlidingCounter not found');",
+      "const sc1 = calculateSlidingCounter(80, 30, 15000, 60000);",
+      "if (sc1 !== 90) throw new Error('Expected 90 for 80 * 0.75 + 30, got ' + sc1);",
+      "const sc2 = calculateSlidingCounter(100, 20, 60000, 60000);",
+      "if (sc2 !== 20) throw new Error('Expected 20 for 100 * 0 + 20, got ' + sc2);"
+    ),
+    aTitle: "Format RFC 6585 Rate Limit Headers",
+    aDesc: "Write `formatRfcRateLimit(limit: number, currentUsage: number, resetSec: number): { status: number; headers: Record<string, string> }`.",
+    aLanguage: "typescript",
+    aStarter: lines("function formatRfcRateLimit(limit, currentUsage, resetSec) {", "  // Return status and headers", "  return { status: 200, headers: {} };", "}"),
+    aHint: "const exceeded = currentUsage >= limit; const remaining = Math.max(0, limit - currentUsage); const headers = { 'RateLimit-Limit': String(limit), 'RateLimit-Remaining': String(remaining), 'RateLimit-Reset': String(resetSec) }; if (exceeded) headers['Retry-After'] = String(resetSec); return { status: exceeded ? 429 : 200, headers };",
+    aTest: lines(
+      "if (typeof formatRfcRateLimit !== 'function') throw new Error('formatRfcRateLimit not found');",
+      "const h1 = formatRfcRateLimit(100, 45, 30);",
+      "if (h1.status !== 200 || h1.headers['RateLimit-Remaining'] !== '55') throw new Error('Failed h1 200 check: ' + JSON.stringify(h1));",
+      "const h2 = formatRfcRateLimit(100, 100, 15);",
+      "if (h2.status !== 429 || h2.headers['Retry-After'] !== '15' || h2.headers['RateLimit-Remaining'] !== '0') throw new Error('Failed h2 429 check: ' + JSON.stringify(h2));"
+    )
+  },
+
+  // ── DAY 40: Milestone 7: Low-Latency Distributed Inventory Reservation Gateway ──────────────────────
+  {
+    ...NODE_WEB_DAYS[39],
+    eTitle: "Evaluate Stock Reservation",
+    eDesc: "Write `evaluateStockReservation(currentStock: number, requestedQty: number, reservationId: string): { granted: boolean; remainingStock: number; reservationId: string }`.",
+    eLanguage: "typescript",
+    eStarter: lines("function evaluateStockReservation(currentStock, requestedQty, reservationId) {", "  // Return stock reservation result", "  return { granted: false, remainingStock: currentStock, reservationId: reservationId };", "}"),
+    eHint: "if (requestedQty <= currentStock) return { granted: true, remainingStock: currentStock - requestedQty, reservationId }; return { granted: false, remainingStock: currentStock, reservationId };",
+    eTest: lines(
+      "if (typeof evaluateStockReservation !== 'function') throw new Error('evaluateStockReservation not found');",
+      "const ev1 = evaluateStockReservation(10, 3, 'res_01');",
+      "if (ev1.granted !== true || ev1.remainingStock !== 7) throw new Error('Failed ev1 reservation grant: ' + JSON.stringify(ev1));",
+      "const ev2 = evaluateStockReservation(2, 5, 'res_02');",
+      "if (ev2.granted !== false || ev2.remainingStock !== 2) throw new Error('Failed ev2 insufficient stock: ' + JSON.stringify(ev2));"
+    ),
+    aTitle: "Certify Milestone 7 Gateway SLA",
+    aDesc: "Write `certifyGatewaySla(metrics: { p99Ms: number; oversellCount: number; fencingRejectionRate: number; reaperRate: number }): { certified: boolean; grade: string }` checking p99 <= 5.0, oversell === 0, fencing === 1.0, reaper === 1.0.",
+    aLanguage: "typescript",
+    aStarter: lines("function certifyGatewaySla(metrics) {", "  // Certify gateway SLA", "  return { certified: false, grade: 'FAIL' };", "}"),
+    aHint: "const ok = metrics.p99Ms <= 5.0 && metrics.oversellCount === 0 && metrics.fencingRejectionRate === 1.0 && metrics.reaperRate === 1.0; return { certified: ok, grade: ok ? 'A+' : 'FAIL' };",
+    aTest: lines(
+      "if (typeof certifyGatewaySla !== 'function') throw new Error('certifyGatewaySla not found');",
+      "const s1 = certifyGatewaySla({ p99Ms: 3.4, oversellCount: 0, fencingRejectionRate: 1.0, reaperRate: 1.0 });",
+      "if (s1.certified !== true || s1.grade !== 'A+') throw new Error('Failed s1 Grade A+: ' + JSON.stringify(s1));",
+      "const s2 = certifyGatewaySla({ p99Ms: 7.2, oversellCount: 0, fencingRejectionRate: 1.0, reaperRate: 1.0 });",
+      "if (s2.certified !== false || s2.grade !== 'FAIL') throw new Error('Failed s2 latency failure check');"
+    )
   }
 ];
 

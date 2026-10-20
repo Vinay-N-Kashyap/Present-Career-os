@@ -1,0 +1,450 @@
+{
+  "schemaVersion": 2,
+  "prefix": "node-web",
+  "day": 37,
+  "promptSha": "block8_expansion",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Single-Instance Mutex Locking: Atomic SET NX PX & Safe Lua Release",
+      "codeHash": "552e3462f2cf9016edc51c7da17b7b673848f4aa97ab62d03fcca9866a73e4a5",
+      "spec": {
+        "template": "compare",
+        "title": "Distributed Locking: Single-Instance vs Multi-Node Redlock",
+        "left": {
+          "title": "Single-Instance Redis Lock",
+          "points": [
+            "SET key uuid NX PX 10000",
+            "Fast sub-millisecond acquisition",
+            "Vulnerable to master crash before replication"
+          ]
+        },
+        "right": {
+          "title": "Multi-Node Redlock Quorum",
+          "points": [
+            "Acquires lock across N independent masters",
+            "Requires majority quorum (floor(N/2)+1)",
+            "Resilient against node crashes and split-brain failures"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Single-instance locks fail silently if master crashes before asynchronous replication.",
+            "values": {
+              "activeSide": "left"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Redlock contacts 5 independent Redis masters sequentially with short timeouts.",
+            "values": {
+              "activeSide": "right"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Quorum is achieved when at least 3 out of 5 nodes grant the lock.",
+            "values": {
+              "activeSide": "both"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Client computes validity time subtracting elapsed acquisition latency from lease TTL.",
+            "values": {
+              "activeSide": "both"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Multi-Master Distributed Consensus: The Redlock Algorithm & Quorum Math",
+      "codeHash": "7707ab53973f1628d5bffc4fa9e0fa70f2e470a58ec5fbd3aad67baa13ba28c3",
+      "spec": {
+        "template": "flow",
+        "title": "Redlock Quorum Acquisition & Consensus Protocol",
+        "nodes": [
+          {
+            "id": "clt",
+            "label": "Worker Pod",
+            "sub": "Active Engine",
+            "status": "ok"
+          },
+          {
+            "id": "m1",
+            "label": "Master Node 1",
+            "sub": "Active Engine",
+            "status": "ok"
+          },
+          {
+            "id": "m2",
+            "label": "Master Node 2",
+            "sub": "Active Engine",
+            "status": "ok"
+          },
+          {
+            "id": "m3",
+            "label": "Master Node 3",
+            "sub": "Active Engine",
+            "status": "ok"
+          }
+        ],
+        "edges": [
+          {
+            "from": "clt",
+            "to": "m1",
+            "label": "SET NX PX"
+          },
+          {
+            "from": "clt",
+            "to": "m2",
+            "label": "SET NX PX"
+          },
+          {
+            "from": "clt",
+            "to": "m3",
+            "label": "SET NX PX"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Worker pod generates unique UUID and queries all master nodes in parallel.",
+            "values": {
+              "clt": {
+                "status": "Online"
+              },
+              "m1": {
+                "status": "Online"
+              },
+              "m2": {
+                "status": "Online"
+              },
+              "m3": {
+                "status": "Online"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Each node independently grants lock if key does not currently exist.",
+            "values": {
+              "clt": {
+                "status": "Processing"
+              },
+              "m1": {
+                "status": "Processing"
+              },
+              "m2": {
+                "status": "Processing"
+              },
+              "m3": {
+                "status": "Processing"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Worker counts successful acquisitions against quorum threshold within time budget.",
+            "values": {
+              "clt": {
+                "status": "Committed"
+              },
+              "m1": {
+                "status": "Committed"
+              },
+              "m2": {
+                "status": "Committed"
+              },
+              "m3": {
+                "status": "Committed"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "If quorum is achieved, worker proceeds; otherwise, it releases all partial locks.",
+            "values": {
+              "clt": {
+                "status": "Online"
+              },
+              "m1": {
+                "status": "Online"
+              },
+              "m2": {
+                "status": "Online"
+              },
+              "m3": {
+                "status": "Online"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Lease Extensions & Asynchronous Watchdog Timers: Preventing Premature Expiration",
+      "codeHash": "d18c5f19c5ec0cbb5ed7373958bf09e91734c0dfb4fa4ad0929f07cd33e178b7",
+      "spec": {
+        "template": "states",
+        "title": "The Kleppmann Dilemma: GC Pause Lock Invalidation Hazard",
+        "states": [
+          {
+            "id": "LOCKED",
+            "label": "Client 1 Active",
+            "active": false
+          },
+          {
+            "id": "PAUSED",
+            "label": "GC Pause (15s)",
+            "active": false
+          },
+          {
+            "id": "EXPIRED",
+            "label": "Lock Expired in Redis",
+            "active": false
+          },
+          {
+            "id": "CORRUPT",
+            "label": "Unsafe Stale Write",
+            "active": false
+          }
+        ],
+        "transitions": [
+          {
+            "from": "LOCKED",
+            "to": "PAUSED",
+            "label": "Process Freeze"
+          },
+          {
+            "from": "PAUSED",
+            "to": "EXPIRED",
+            "label": "TTL Elapsed"
+          },
+          {
+            "from": "EXPIRED",
+            "to": "CORRUPT",
+            "label": "Out-of-Order Write"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Client 1 acquires distributed lock with 10-second expiration lease.",
+            "values": {
+              "activeState": "LOCKED"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Client 1 suffers long garbage collection pause, freezing execution thread.",
+            "values": {
+              "activeState": "PAUSED"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Redis lock lease expires, allowing Client 2 to acquire the lock and write.",
+            "values": {
+              "activeState": "EXPIRED"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Client 1 wakes up and blindly writes to storage, corrupting data without fencing.",
+            "values": {
+              "activeState": "CORRUPT"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Concurrency Hazards: GC Pauses, Clock Drift & Kleppmann's Critique",
+      "codeHash": "099aa8622bdf297d9f2fe615323137bfb77cad993ba9830794c9617524bdea1b",
+      "spec": {
+        "template": "boxes",
+        "title": "Fencing Tokens: Monotonically Increasing Epoch Counters",
+        "items": [
+          {
+            "id": "tk_gen",
+            "title": "Token Generator",
+            "desc": "Atomically increments monotonically increasing counter",
+            "status": "ok"
+          },
+          {
+            "id": "hdr",
+            "title": "Transport Header",
+            "desc": "Attaches X-Fencing-Token to downstream RPCs",
+            "status": "ok"
+          },
+          {
+            "id": "db_gate",
+            "title": "Database Gate",
+            "desc": "Rejects writes where token <= highest observed",
+            "status": "ok"
+          },
+          {
+            "id": "audit",
+            "title": "Audit Log",
+            "desc": "Maintains immutable history of committed tokens",
+            "status": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Distributed lock manager issues monotonically increasing fencing token upon lock grant.",
+            "values": {
+              "tk_gen": {
+                "status": "Inspecting"
+              },
+              "hdr": {
+                "status": "Inspecting"
+              },
+              "db_gate": {
+                "status": "Inspecting"
+              },
+              "audit": {
+                "status": "Inspecting"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Client attaches fencing token to every downstream database modification request.",
+            "values": {
+              "tk_gen": {
+                "status": "Synchronized"
+              },
+              "hdr": {
+                "status": "Synchronized"
+              },
+              "db_gate": {
+                "status": "Synchronized"
+              },
+              "audit": {
+                "status": "Synchronized"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Downstream database gate compares token against highest observed token on record.",
+            "values": {
+              "tk_gen": {
+                "status": "Synchronized"
+              },
+              "hdr": {
+                "status": "Synchronized"
+              },
+              "db_gate": {
+                "status": "Synchronized"
+              },
+              "audit": {
+                "status": "Synchronized"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Stale writes from paused clients are rejected with STALE_FENCING_TOKEN error.",
+            "values": {
+              "tk_gen": {
+                "status": "Synchronized"
+              },
+              "hdr": {
+                "status": "Synchronized"
+              },
+              "db_gate": {
+                "status": "Synchronized"
+              },
+              "audit": {
+                "status": "Synchronized"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Monotonic Fencing Tokens: Safe Storage Gateways & Out-of-Order Lock Rejection",
+      "codeHash": "91f25c5896dbd6863720e87397571fb4b0aad408a9f6acf66fe87eac676ffb68",
+      "spec": {
+        "template": "states",
+        "title": "Distributed Lock Lease Renewal Heartbeat State Machine",
+        "states": [
+          {
+            "id": "ACQUIRED",
+            "label": "Initial Lease 10s",
+            "active": false
+          },
+          {
+            "id": "WORKING",
+            "label": "Task In Progress",
+            "active": false
+          },
+          {
+            "id": "EXTENDED",
+            "label": "Heartbeat Renewed +10s",
+            "active": false
+          },
+          {
+            "id": "RELEASED",
+            "label": "Task Finished",
+            "active": false
+          }
+        ],
+        "transitions": [
+          {
+            "from": "ACQUIRED",
+            "to": "WORKING",
+            "label": "Start Work"
+          },
+          {
+            "from": "WORKING",
+            "to": "EXTENDED",
+            "label": "Heartbeat Timer"
+          },
+          {
+            "from": "EXTENDED",
+            "to": "RELEASED",
+            "label": "Atomic Lua DEL"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Lock acquired with initial 10-second TTL to guard against sudden worker crashes.",
+            "values": {
+              "activeState": "ACQUIRED"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Background timer fires at 1/3 TTL interval while processing thread is active.",
+            "values": {
+              "activeState": "WORKING"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Atomic Lua script extends Redis key TTL if and only if UUID still matches.",
+            "values": {
+              "activeState": "EXTENDED"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Upon completion, worker cancels heartbeat timer and deletes lock key atomically.",
+            "values": {
+              "activeState": "RELEASED"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

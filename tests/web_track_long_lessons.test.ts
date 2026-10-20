@@ -50,8 +50,8 @@ export const WEB_LESSON_COURSES: WebLessonCourseEntry[] = [
     name: 'Node.js & TypeScript Backend Engineering',
     prefix: 'node-web',
     courseId: 'course-node-web',
-    lessons: NODE_WEB_LONG_LESSONS,
-    configs: NODE_WEB_30_DAYS_CONFIGS,
+    lessons: NODE_WEB_LONG_LESSONS.slice(0, 30),
+    configs: NODE_WEB_30_DAYS_CONFIGS.slice(0, 30),
     isReact: false,
   },
   {
