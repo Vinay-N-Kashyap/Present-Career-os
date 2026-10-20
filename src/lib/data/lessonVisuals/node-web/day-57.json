@@ -1,0 +1,632 @@
+{
+  "schemaVersion": 2,
+  "prefix": "node-web",
+  "day": 57,
+  "promptSha": "node-web-b12-gate-v2-prompt-sha",
+  "model": "manual-gate-v2-generator",
+  "entries": [
+    {
+      "partTitle": "The Dual-Write Problem & The Transactional Outbox Pattern",
+      "codeHash": "fade39b452ef1ba5518102a4570e10720a54cbfa1841ba115761429e8c494ce2",
+      "spec": {
+        "template": "flow",
+        "title": "The Transactional Outbox Pattern: Atomic Local Transactions",
+        "nodes": [
+          {
+            "id": "app",
+            "label": "Node.js Service",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "tx",
+            "label": "Local ACID Transaction",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "orders",
+            "label": "Orders Table",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "outbox",
+            "label": "Outbox Table",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "cdc",
+            "label": "CDC Relay",
+            "sub": "Active Stage",
+            "status": "ok"
+          }
+        ],
+        "edges": [
+          {
+            "from": "app",
+            "to": "tx",
+            "label": "BEGIN Transaction"
+          },
+          {
+            "from": "tx",
+            "to": "orders",
+            "label": "INSERT INTO orders"
+          },
+          {
+            "from": "tx",
+            "to": "outbox",
+            "label": "INSERT INTO outbox"
+          },
+          {
+            "from": "tx",
+            "to": "app",
+            "label": "COMMIT"
+          },
+          {
+            "from": "outbox",
+            "to": "cdc",
+            "label": "FOR UPDATE SKIP LOCKED Poll"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Application opens a single local ACID transaction in PostgreSQL.",
+            "values": {
+              "app": {
+                "status": "Online"
+              },
+              "tx": {
+                "status": "Online"
+              },
+              "orders": {
+                "status": "Online"
+              },
+              "outbox": {
+                "status": "Online"
+              },
+              "cdc": {
+                "status": "Online"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Order entity and outbox event are inserted atomically in same transaction.",
+            "values": {
+              "app": {
+                "status": "Processing"
+              },
+              "tx": {
+                "status": "Processing"
+              },
+              "orders": {
+                "status": "Processing"
+              },
+              "outbox": {
+                "status": "Processing"
+              },
+              "cdc": {
+                "status": "Processing"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Database write-ahead log guarantees atomic commit or rollback.",
+            "values": {
+              "app": {
+                "status": "Committed"
+              },
+              "tx": {
+                "status": "Committed"
+              },
+              "orders": {
+                "status": "Committed"
+              },
+              "outbox": {
+                "status": "Committed"
+              },
+              "cdc": {
+                "status": "Committed"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Asynchronous relay safely harvests uncommitted outbox events.",
+            "values": {
+              "app": {
+                "status": "Online"
+              },
+              "tx": {
+                "status": "Online"
+              },
+              "orders": {
+                "status": "Online"
+              },
+              "outbox": {
+                "status": "Online"
+              },
+              "cdc": {
+                "status": "Online"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Change Data Capture (CDC): Debezium, Write-Ahead Logs (WAL) & Outbox Relay",
+      "codeHash": "a528fb3bc1ab920dae2ada8deddb92305bfcc369108f1e3ca3d253caed672ea1",
+      "spec": {
+        "template": "compare",
+        "title": "Dual-Write Anti-Pattern vs Transactional Outbox",
+        "left": {
+          "title": "Naive Dual-Write Anti-Pattern",
+          "points": [
+            "Commit DB then publish to Kafka",
+            "Network drop causes lost events",
+            "Publish first causes phantom events",
+            "Violates distributed atomicity"
+          ]
+        },
+        "right": {
+          "title": "Transactional Outbox Architecture",
+          "points": [
+            "Atomic commit of DB entity + outbox event",
+            "Zero distributed 2PC locking",
+            "CDC or SKIP LOCKED relay guarantees delivery",
+            "Guarantees At-Least-Once event publishing"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Dual-writes suffer from network timeouts and partial failure splits.",
+            "values": {
+              "activeSide": "left"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Transactional outbox unifies state mutation and event staging in one ACID unit.",
+            "values": {
+              "activeSide": "right"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Background relay decouples messaging latency from user HTTP response.",
+            "values": {
+              "activeSide": "both"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Downstream systems receive guaranteed At-Least-Once event streams.",
+            "values": {
+              "activeSide": "both"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Event Sourcing Core: Append-Only Event Stores, Aggregate Roots & State Reconstruction",
+      "codeHash": "b0b21640aa0ba18820521fef1e65ec5befa3cc5d21c8f2c51781f354f4c09618",
+      "spec": {
+        "template": "boxes",
+        "title": "Event Sourcing Engine: Append-Only Event Store Architecture",
+        "items": [
+          {
+            "id": "events",
+            "title": "Immutable Event Stream",
+            "desc": "Append-only log recording every domain fact with monotonic sequence numbers.",
+            "status": "ok"
+          },
+          {
+            "id": "aggregate",
+            "title": "Aggregate Rehydration",
+            "desc": "Reconstructs current state in memory by replaying historical events from genesis.",
+            "status": "ok"
+          },
+          {
+            "id": "snapshot",
+            "title": "Periodic Snapshots",
+            "desc": "Compressed state checkpoints taken every N events to optimize rehydration latency.",
+            "status": "ok"
+          },
+          {
+            "id": "optimistic",
+            "title": "Optimistic Concurrency",
+            "desc": "Expected version checks prevent concurrent write conflicts and event corruption.",
+            "status": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Domain events are persisted as immutable chronological records.",
+            "values": {
+              "events": {
+                "status": "Inspecting"
+              },
+              "aggregate": {
+                "status": "Inspecting"
+              },
+              "snapshot": {
+                "status": "Inspecting"
+              },
+              "optimistic": {
+                "status": "Inspecting"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Aggregates rehydrate state deterministically by replaying event logs.",
+            "values": {
+              "events": {
+                "status": "Synchronized"
+              },
+              "aggregate": {
+                "status": "Synchronized"
+              },
+              "snapshot": {
+                "status": "Synchronized"
+              },
+              "optimistic": {
+                "status": "Synchronized"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Snapshots truncate event replay time for high-velocity aggregates.",
+            "values": {
+              "events": {
+                "status": "Synchronized"
+              },
+              "aggregate": {
+                "status": "Synchronized"
+              },
+              "snapshot": {
+                "status": "Synchronized"
+              },
+              "optimistic": {
+                "status": "Synchronized"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Version guards ensure single-writer consistency across distributed nodes.",
+            "values": {
+              "events": {
+                "status": "Synchronized"
+              },
+              "aggregate": {
+                "status": "Synchronized"
+              },
+              "snapshot": {
+                "status": "Synchronized"
+              },
+              "optimistic": {
+                "status": "Synchronized"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Command Query Responsibility Segregation (CQRS): Read Projections & Materialized Views",
+      "codeHash": "a5074d42d12d4b1dc5b6444c51b5765f110186a6b746e5c01d9a01c5447eb8e9",
+      "spec": {
+        "template": "flow",
+        "title": "Command Query Responsibility Segregation (CQRS) Data Flow",
+        "nodes": [
+          {
+            "id": "command",
+            "label": "Write Command",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "eventStore",
+            "label": "Event Store (Write)",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "kafka",
+            "label": "Kafka Event Bus",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "projector",
+            "label": "Async Projector",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "readModel",
+            "label": "Denormalized View (Read)",
+            "sub": "Active Stage",
+            "status": "ok"
+          }
+        ],
+        "edges": [
+          {
+            "from": "command",
+            "to": "eventStore",
+            "label": "Append Domain Event"
+          },
+          {
+            "from": "eventStore",
+            "to": "kafka",
+            "label": "Publish Event Stream"
+          },
+          {
+            "from": "kafka",
+            "to": "projector",
+            "label": "Consume Event Batch"
+          },
+          {
+            "from": "projector",
+            "to": "readModel",
+            "label": "Update Query Materialization"
+          },
+          {
+            "from": "readModel",
+            "to": "command",
+            "label": "Sub-Millisecond Read Serving"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Commands append immutable events directly to write-side event store.",
+            "values": {
+              "command": {
+                "status": "Online"
+              },
+              "eventStore": {
+                "status": "Online"
+              },
+              "kafka": {
+                "status": "Online"
+              },
+              "projector": {
+                "status": "Online"
+              },
+              "readModel": {
+                "status": "Online"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Domain events are published asynchronously to Kafka event streams.",
+            "values": {
+              "command": {
+                "status": "Processing"
+              },
+              "eventStore": {
+                "status": "Processing"
+              },
+              "kafka": {
+                "status": "Processing"
+              },
+              "projector": {
+                "status": "Processing"
+              },
+              "readModel": {
+                "status": "Processing"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Read projectors consume events and build optimized read materializations.",
+            "values": {
+              "command": {
+                "status": "Committed"
+              },
+              "eventStore": {
+                "status": "Committed"
+              },
+              "kafka": {
+                "status": "Committed"
+              },
+              "projector": {
+                "status": "Committed"
+              },
+              "readModel": {
+                "status": "Committed"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Queries hit denormalized views directly with zero table join overhead.",
+            "values": {
+              "command": {
+                "status": "Online"
+              },
+              "eventStore": {
+                "status": "Online"
+              },
+              "kafka": {
+                "status": "Online"
+              },
+              "projector": {
+                "status": "Online"
+              },
+              "readModel": {
+                "status": "Online"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production CQRS & Event Sourcing Pipeline: Concurrency Conflicts & Replay Verification",
+      "codeHash": "e619d196c566bde37a75c2ed50eff80f3c6c5241ead07c6e4c612b82b638e47b",
+      "spec": {
+        "template": "flow",
+        "title": "Production Outbox & CQRS Pipeline SLA Verification",
+        "nodes": [
+          {
+            "id": "harness",
+            "label": "SLA Test Harness",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "outbox",
+            "label": "Outbox ACID Staging",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "cdc",
+            "label": "CDC Relay Engine",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "projector",
+            "label": "CQRS Projector",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "audit",
+            "label": "Grade A+ Certifier",
+            "sub": "Active Stage",
+            "status": "ok"
+          }
+        ],
+        "edges": [
+          {
+            "from": "harness",
+            "to": "outbox",
+            "label": "Atomic Dual-Insert"
+          },
+          {
+            "from": "outbox",
+            "to": "cdc",
+            "label": "Harvest Staged Records"
+          },
+          {
+            "from": "cdc",
+            "to": "projector",
+            "label": "Stream to Read Projector"
+          },
+          {
+            "from": "projector",
+            "to": "audit",
+            "label": "Verify Projection State"
+          },
+          {
+            "from": "audit",
+            "to": "harness",
+            "label": "Grade A+ Outbox & CQRS Certified"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Harness stages orders and outbox records in atomic ACID transactions.",
+            "values": {
+              "harness": {
+                "status": "Online"
+              },
+              "outbox": {
+                "status": "Online"
+              },
+              "cdc": {
+                "status": "Online"
+              },
+              "projector": {
+                "status": "Online"
+              },
+              "audit": {
+                "status": "Online"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "CDC relay harvests uncommitted records and dispatches to stream.",
+            "values": {
+              "harness": {
+                "status": "Processing"
+              },
+              "outbox": {
+                "status": "Processing"
+              },
+              "cdc": {
+                "status": "Processing"
+              },
+              "projector": {
+                "status": "Processing"
+              },
+              "audit": {
+                "status": "Processing"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Read projector materializes denormalized customer views.",
+            "values": {
+              "harness": {
+                "status": "Committed"
+              },
+              "outbox": {
+                "status": "Committed"
+              },
+              "cdc": {
+                "status": "Committed"
+              },
+              "projector": {
+                "status": "Committed"
+              },
+              "audit": {
+                "status": "Committed"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Verification harness validates zero event loss and awards Grade A+.",
+            "values": {
+              "harness": {
+                "status": "Online"
+              },
+              "outbox": {
+                "status": "Online"
+              },
+              "cdc": {
+                "status": "Online"
+              },
+              "projector": {
+                "status": "Online"
+              },
+              "audit": {
+                "status": "Online"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

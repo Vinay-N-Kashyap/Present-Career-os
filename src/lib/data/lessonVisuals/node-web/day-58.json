@@ -1,0 +1,561 @@
+{
+  "schemaVersion": 2,
+  "prefix": "node-web",
+  "day": 58,
+  "promptSha": "node-web-b12-gate-v2-prompt-sha",
+  "model": "manual-gate-v2-generator",
+  "entries": [
+    {
+      "partTitle": "Distributed Transactions Across Microservices: The Saga Pattern & ACID Limits",
+      "codeHash": "1ce00aa2dd7ed46ac3860dd75024d7659bb0f7c4a1a4b0280453ff9f5bfd3a0a",
+      "spec": {
+        "template": "flow",
+        "title": "Distributed Saga Pattern: Forward Transactions & Backward Compensation",
+        "nodes": [
+          {
+            "id": "order",
+            "label": "Order Service (T1)",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "payment",
+            "label": "Payment Service (T2)",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "inventory",
+            "label": "Inventory Service (T3)",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "cPayment",
+            "label": "Compensate Payment (C2)",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "cOrder",
+            "label": "Compensate Order (C1)",
+            "sub": "Active Stage",
+            "status": "ok"
+          }
+        ],
+        "edges": [
+          {
+            "from": "order",
+            "to": "payment",
+            "label": "Step 1: Create Order -> Charge Payment"
+          },
+          {
+            "from": "payment",
+            "to": "inventory",
+            "label": "Step 2: Reserve Inventory"
+          },
+          {
+            "from": "inventory",
+            "to": "cPayment",
+            "label": "Step 3: Out of Stock! Trigger C2"
+          },
+          {
+            "from": "cPayment",
+            "to": "cOrder",
+            "label": "Refund Payment -> Cancel Order (C1)"
+          },
+          {
+            "from": "cOrder",
+            "to": "order",
+            "label": "Consistent Rollback Complete"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Forward transactions commit locally in each service without distributed locks.",
+            "values": {
+              "order": {
+                "status": "Online"
+              },
+              "payment": {
+                "status": "Online"
+              },
+              "inventory": {
+                "status": "Online"
+              },
+              "cPayment": {
+                "status": "Online"
+              },
+              "cOrder": {
+                "status": "Online"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Inventory service encounters out-of-stock condition.",
+            "values": {
+              "order": {
+                "status": "Processing"
+              },
+              "payment": {
+                "status": "Processing"
+              },
+              "inventory": {
+                "status": "Processing"
+              },
+              "cPayment": {
+                "status": "Processing"
+              },
+              "cOrder": {
+                "status": "Processing"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Saga unwinds previously committed transactions in reverse LIFO order.",
+            "values": {
+              "order": {
+                "status": "Committed"
+              },
+              "payment": {
+                "status": "Committed"
+              },
+              "inventory": {
+                "status": "Committed"
+              },
+              "cPayment": {
+                "status": "Committed"
+              },
+              "cOrder": {
+                "status": "Committed"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Compensations restore consistent distributed business state without 2PC.",
+            "values": {
+              "order": {
+                "status": "Online"
+              },
+              "payment": {
+                "status": "Online"
+              },
+              "inventory": {
+                "status": "Online"
+              },
+              "cPayment": {
+                "status": "Online"
+              },
+              "cOrder": {
+                "status": "Online"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Choreography-Based Sagas: Domain Event Chains & Distributed Deadlocks",
+      "codeHash": "5bcc02fd92ee49f22d0576f51be6c58eaa80a731ed91a4dd9a8c2259dc0751c3",
+      "spec": {
+        "template": "compare",
+        "title": "Saga Architectures: Choreography vs Orchestration",
+        "left": {
+          "title": "Choreography (Decentralized Events)",
+          "points": [
+            "Services coordinate autonomously via domain events",
+            "No central point of failure coordinator",
+            "Suffers from distributed spaghetti at scale",
+            "Prone to cyclic deadlocks and poor observability"
+          ]
+        },
+        "right": {
+          "title": "Orchestration (Central State Machine)",
+          "points": [
+            "Central state machine commands participants",
+            "Explicit end-to-end workflow visibility",
+            "Participants remain decoupled from saga logic",
+            "Straightforward state querying and timeout management"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Choreography works well for simple linear flows between 2 services.",
+            "values": {
+              "activeSide": "left"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Orchestration centralizes workflow definitions in a single state machine.",
+            "values": {
+              "activeSide": "right"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Orchestrators track timeouts, retries, and compensation stacks durably.",
+            "values": {
+              "activeSide": "both"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Enterprise systems mandate orchestration for complex business workflows.",
+            "values": {
+              "activeSide": "both"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Orchestration-Based Sagas: Central State Machines & Compensation Workflows",
+      "codeHash": "10102ae0368b7b19379306c9e7c8a20ce58292c60b32a578ed957881ca0a5c33",
+      "spec": {
+        "template": "states",
+        "title": "Saga Orchestrator State Machine Transitions",
+        "states": [
+          {
+            "id": "initial",
+            "label": "INITIAL"
+          },
+          {
+            "id": "order_pending",
+            "label": "ORDER_PENDING"
+          },
+          {
+            "id": "payment_charged",
+            "label": "PAYMENT_CHARGED"
+          },
+          {
+            "id": "compensating",
+            "label": "COMPENSATING (LIFO)"
+          },
+          {
+            "id": "failed",
+            "label": "FAILED (Symmetric State)"
+          }
+        ],
+        "transitions": [
+          {
+            "from": "initial",
+            "to": "order_pending",
+            "label": "Create Order"
+          },
+          {
+            "from": "order_pending",
+            "to": "payment_charged",
+            "label": "Charge Card"
+          },
+          {
+            "from": "payment_charged",
+            "to": "compensating",
+            "label": "Inventory Depleted"
+          },
+          {
+            "from": "compensating",
+            "to": "failed",
+            "label": "Rollback Finished"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Orchestrator initiates saga and transitions to ORDER_PENDING.",
+            "values": {
+              "activeState": "initial"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Payment charged successfully; orchestrator pushes compensation handler.",
+            "values": {
+              "activeState": "order_pending"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Inventory allocation fails; orchestrator immediately triggers COMPENSATING.",
+            "values": {
+              "activeState": "payment_charged"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Compensation stack unwound in LIFO order; saga transitions to clean FAILED state.",
+            "values": {
+              "activeState": "compensating"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Failure Handling & Idempotency: Out-of-Order Events & Forward/Backward Recovery",
+      "codeHash": "3f5d029e435c8c0649fc288e986b7c4ac793b59890fa842ac30f5b86888f4824",
+      "spec": {
+        "template": "boxes",
+        "title": "Idempotency Barriers & Failure Handling Mechanisms",
+        "items": [
+          {
+            "id": "idempotencyKey",
+            "title": "Idempotency Key Cache",
+            "desc": "Unique ${sagaId}:${step} key guarantees duplicate requests return cached results.",
+            "status": "ok"
+          },
+          {
+            "id": "semanticFencing",
+            "title": "Semantic Fencing Epochs",
+            "desc": "Rejects out-of-order stale commands on cancelled or completed entities.",
+            "status": "ok"
+          },
+          {
+            "id": "exponentialBackoff",
+            "title": "Exponential Backoff & Jitter",
+            "desc": "Prevents thundering herds during transient network and database retries.",
+            "status": "ok"
+          },
+          {
+            "id": "deadLetterQueue",
+            "title": "Dead Letter Queue (DLQ)",
+            "desc": "Isolates poison pill messages for manual operator inspection.",
+            "status": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Idempotency keys prevent double-charging cards during network retries.",
+            "values": {
+              "idempotencyKey": {
+                "status": "Inspecting"
+              },
+              "semanticFencing": {
+                "status": "Inspecting"
+              },
+              "exponentialBackoff": {
+                "status": "Inspecting"
+              },
+              "deadLetterQueue": {
+                "status": "Inspecting"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Semantic fencing rejects delayed commands arriving after cancellation.",
+            "values": {
+              "idempotencyKey": {
+                "status": "Synchronized"
+              },
+              "semanticFencing": {
+                "status": "Synchronized"
+              },
+              "exponentialBackoff": {
+                "status": "Synchronized"
+              },
+              "deadLetterQueue": {
+                "status": "Synchronized"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Exponential jittered backoff spreads out retry pressure gracefully.",
+            "values": {
+              "idempotencyKey": {
+                "status": "Synchronized"
+              },
+              "semanticFencing": {
+                "status": "Synchronized"
+              },
+              "exponentialBackoff": {
+                "status": "Synchronized"
+              },
+              "deadLetterQueue": {
+                "status": "Synchronized"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Dead letter queues prevent poison pills from blocking message partitions.",
+            "values": {
+              "idempotencyKey": {
+                "status": "Synchronized"
+              },
+              "semanticFencing": {
+                "status": "Synchronized"
+              },
+              "exponentialBackoff": {
+                "status": "Synchronized"
+              },
+              "deadLetterQueue": {
+                "status": "Synchronized"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Distributed Saga Execution Suite & Consistency Verification",
+      "codeHash": "115b43f16c8ef33095ba59819bfdc94bc734e1476850f342450d2253820f65bf",
+      "spec": {
+        "template": "flow",
+        "title": "Distributed Saga SLA Verification Harness",
+        "nodes": [
+          {
+            "id": "harness",
+            "label": "SLA Harness",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "fsm",
+            "label": "State Machine Logger",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "lifo",
+            "label": "LIFO Compensation Engine",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "idempotency",
+            "label": "Idempotent Barrier",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "cert",
+            "label": "Grade A+ Certifier",
+            "sub": "Active Stage",
+            "status": "ok"
+          }
+        ],
+        "edges": [
+          {
+            "from": "harness",
+            "to": "fsm",
+            "label": "Evaluate State Transitions"
+          },
+          {
+            "from": "fsm",
+            "to": "lifo",
+            "label": "Verify Reverse Compensation"
+          },
+          {
+            "from": "lifo",
+            "to": "idempotency",
+            "label": "Test Duplicate Suppression"
+          },
+          {
+            "from": "idempotency",
+            "to": "cert",
+            "label": "Assert All SLAs"
+          },
+          {
+            "from": "cert",
+            "to": "harness",
+            "label": "Grade A+ Distributed Saga Certified"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Harness validates durable state machine transition logging.",
+            "values": {
+              "harness": {
+                "status": "Online"
+              },
+              "fsm": {
+                "status": "Online"
+              },
+              "lifo": {
+                "status": "Online"
+              },
+              "idempotency": {
+                "status": "Online"
+              },
+              "cert": {
+                "status": "Online"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "LIFO compensation engine unwinds committed steps symmetrically.",
+            "values": {
+              "harness": {
+                "status": "Processing"
+              },
+              "fsm": {
+                "status": "Processing"
+              },
+              "lifo": {
+                "status": "Processing"
+              },
+              "idempotency": {
+                "status": "Processing"
+              },
+              "cert": {
+                "status": "Processing"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Idempotency barrier suppresses duplicate retry requests.",
+            "values": {
+              "harness": {
+                "status": "Committed"
+              },
+              "fsm": {
+                "status": "Committed"
+              },
+              "lifo": {
+                "status": "Committed"
+              },
+              "idempotency": {
+                "status": "Committed"
+              },
+              "cert": {
+                "status": "Committed"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Certification harness awards Grade A+ for production saga consistency.",
+            "values": {
+              "harness": {
+                "status": "Online"
+              },
+              "fsm": {
+                "status": "Online"
+              },
+              "lifo": {
+                "status": "Online"
+              },
+              "idempotency": {
+                "status": "Online"
+              },
+              "cert": {
+                "status": "Online"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

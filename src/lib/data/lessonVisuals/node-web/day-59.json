@@ -1,0 +1,632 @@
+{
+  "schemaVersion": 2,
+  "prefix": "node-web",
+  "day": 59,
+  "promptSha": "node-web-b12-gate-v2-prompt-sha",
+  "model": "manual-gate-v2-generator",
+  "entries": [
+    {
+      "partTitle": "Distributed Caching Architecture & Redis Cluster Sharding",
+      "codeHash": "18972e4fec1e8e76eeb6eebe2df4d3471f02911b516cfb93c0e0d750a481ceeb",
+      "spec": {
+        "template": "flow",
+        "title": "Redis Cluster 16384 Hash Slot Sharding & Hash Tags",
+        "nodes": [
+          {
+            "id": "client",
+            "label": "Node.js Client",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "router",
+            "label": "CRC16 Hash Router",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "nodeA",
+            "label": "Node A (Slots 0-5460)",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "nodeB",
+            "label": "Node B (Slots 5461-10922)",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "nodeC",
+            "label": "Node C (Slots 10923-16383)",
+            "sub": "Active Stage",
+            "status": "ok"
+          }
+        ],
+        "edges": [
+          {
+            "from": "client",
+            "to": "router",
+            "label": "Key: '{user:991}.profile'"
+          },
+          {
+            "from": "router",
+            "to": "nodeB",
+            "label": "CRC16('user:991') -> Slot 8402"
+          },
+          {
+            "from": "client",
+            "to": "router",
+            "label": "Key: '{user:991}.orders'"
+          },
+          {
+            "from": "router",
+            "to": "nodeB",
+            "label": "CRC16('user:991') -> Slot 8402"
+          },
+          {
+            "from": "nodeB",
+            "to": "client",
+            "label": "Atomic Colocated Response"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Client routes keys through deterministic CRC16 slot calculation.",
+            "values": {
+              "client": {
+                "status": "Online"
+              },
+              "router": {
+                "status": "Online"
+              },
+              "nodeA": {
+                "status": "Online"
+              },
+              "nodeB": {
+                "status": "Online"
+              },
+              "nodeC": {
+                "status": "Online"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Hash tags '{...}' isolate key hashing strictly to tagged substring.",
+            "values": {
+              "client": {
+                "status": "Processing"
+              },
+              "router": {
+                "status": "Processing"
+              },
+              "nodeA": {
+                "status": "Processing"
+              },
+              "nodeB": {
+                "status": "Processing"
+              },
+              "nodeC": {
+                "status": "Processing"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Related user profile and order keys land on identical master node.",
+            "values": {
+              "client": {
+                "status": "Committed"
+              },
+              "router": {
+                "status": "Committed"
+              },
+              "nodeA": {
+                "status": "Committed"
+              },
+              "nodeB": {
+                "status": "Committed"
+              },
+              "nodeC": {
+                "status": "Committed"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Colocation guarantees cross-key multi-operations execute without CROSSSLOT errors.",
+            "values": {
+              "client": {
+                "status": "Online"
+              },
+              "router": {
+                "status": "Online"
+              },
+              "nodeA": {
+                "status": "Online"
+              },
+              "nodeB": {
+                "status": "Online"
+              },
+              "nodeC": {
+                "status": "Online"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cache Invalidation & Consistency Patterns: Cache-Aside, Write-Through & Write-Behind",
+      "codeHash": "63d5a0d2aa0d7b543163494383eb78447d5e3d240e4b62396277d40a15eb5b2b",
+      "spec": {
+        "template": "compare",
+        "title": "Cache-Aside Invalidation: Delete (DEL) vs Update",
+        "left": {
+          "title": "Direct Cache Update Anti-Pattern",
+          "points": [
+            "Updates cache key on every DB write",
+            "Concurrent writes interleave unpredictably",
+            "Older value overwrites newer value in cache",
+            "Causes permanent silent data corruption"
+          ]
+        },
+        "right": {
+          "title": "Cache-Aside Invalidation (DEL)",
+          "points": [
+            "Deletes cache key on DB write",
+            "Subsequent read forces fresh DB fetch",
+            "Eliminates concurrent write races entirely",
+            "Industry standard for relational cache consistency"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Updating cache directly causes race conditions under concurrent writes.",
+            "values": {
+              "activeSide": "left"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Deleting cache keys forces authoritative refreshes from database.",
+            "values": {
+              "activeSide": "right"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Cache-aside guarantees eventual consistency without desynchronization.",
+            "values": {
+              "activeSide": "both"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Simple, robust invalidation eliminates silent data divergence permanently.",
+            "values": {
+              "activeSide": "both"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cache Stampede (Thundering Herd) Protection & Probabilistic Early Expiration",
+      "codeHash": "8f46da79ad4fc0dd77c0c2a5e59c435c10b47a3b801340451fb769c3326b9e5f",
+      "spec": {
+        "template": "flow",
+        "title": "Cache Stampede (Thundering Herd) Mutex Protection",
+        "nodes": [
+          {
+            "id": "requests",
+            "label": "10,000 Concurrent Requests",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "cache",
+            "label": "Redis Cache (Key Expired)",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "mutex",
+            "label": "Distributed Mutex (SETNX)",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "leader",
+            "label": "1 Leader Thread (DB Query)",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "followers",
+            "label": "9,999 Follower Threads (Wait & Read)",
+            "sub": "Active Stage",
+            "status": "ok"
+          }
+        ],
+        "edges": [
+          {
+            "from": "requests",
+            "to": "cache",
+            "label": "Simultaneous Cache Miss"
+          },
+          {
+            "from": "cache",
+            "to": "mutex",
+            "label": "Acquire Lock 'SET lock:key NX EX 5'"
+          },
+          {
+            "from": "mutex",
+            "to": "leader",
+            "label": "Lock Granted (Query PostgreSQL)"
+          },
+          {
+            "from": "mutex",
+            "to": "followers",
+            "label": "Lock Busy (Wait / Read Fresh Cache)"
+          },
+          {
+            "from": "leader",
+            "to": "cache",
+            "label": "Cache Populated & Lock Released"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Hot key expires in Redis while thousands of requests arrive.",
+            "values": {
+              "requests": {
+                "status": "Online"
+              },
+              "cache": {
+                "status": "Online"
+              },
+              "mutex": {
+                "status": "Online"
+              },
+              "leader": {
+                "status": "Online"
+              },
+              "followers": {
+                "status": "Online"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Distributed mutex (SETNX) allows only single leader thread through.",
+            "values": {
+              "requests": {
+                "status": "Processing"
+              },
+              "cache": {
+                "status": "Processing"
+              },
+              "mutex": {
+                "status": "Processing"
+              },
+              "leader": {
+                "status": "Processing"
+              },
+              "followers": {
+                "status": "Processing"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Leader queries database and repopulates Redis cache entry.",
+            "values": {
+              "requests": {
+                "status": "Committed"
+              },
+              "cache": {
+                "status": "Committed"
+              },
+              "mutex": {
+                "status": "Committed"
+              },
+              "leader": {
+                "status": "Committed"
+              },
+              "followers": {
+                "status": "Committed"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Followers share refreshed cache entry with zero database connection exhaustion.",
+            "values": {
+              "requests": {
+                "status": "Online"
+              },
+              "cache": {
+                "status": "Online"
+              },
+              "mutex": {
+                "status": "Online"
+              },
+              "leader": {
+                "status": "Online"
+              },
+              "followers": {
+                "status": "Online"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "High-Throughput Write-Behind Pipelines & Batch Coalescing",
+      "codeHash": "d94a7218d7901cada4011c9fd92945aae3d0c7be23e1db41aba538e7512ebd56",
+      "spec": {
+        "template": "boxes",
+        "title": "High-Throughput Write-Behind Pipeline Architecture",
+        "items": [
+          {
+            "id": "buffer",
+            "title": "In-Memory Write Buffer",
+            "desc": "Ingests user mutations in RAM in microseconds, returning instant 200 OK responses.",
+            "status": "ok"
+          },
+          {
+            "id": "coalescer",
+            "title": "Batch Mutation Coalescer",
+            "desc": "Collapses hundreds of increments on same entity into a single consolidated SQL update.",
+            "status": "ok"
+          },
+          {
+            "id": "flush",
+            "title": "Timed / Sized Flush Engine",
+            "desc": "Synchronizes coalesced batches to PostgreSQL at scheduled intervals or buffer thresholds.",
+            "status": "ok"
+          },
+          {
+            "id": "durability",
+            "title": "Append-Only Stream Log",
+            "desc": "Persists uncommitted write buffers to Redis Streams to prevent data loss on reboot.",
+            "status": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Write mutations buffer in memory with sub-millisecond client acknowledgment.",
+            "values": {
+              "buffer": {
+                "status": "Inspecting"
+              },
+              "coalescer": {
+                "status": "Inspecting"
+              },
+              "flush": {
+                "status": "Inspecting"
+              },
+              "durability": {
+                "status": "Inspecting"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Batch coalescing collapses multiple increments into single SQL statements.",
+            "values": {
+              "buffer": {
+                "status": "Synchronized"
+              },
+              "coalescer": {
+                "status": "Synchronized"
+              },
+              "flush": {
+                "status": "Synchronized"
+              },
+              "durability": {
+                "status": "Synchronized"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Scheduled background flusher syncs coalesced updates to persistent disk.",
+            "values": {
+              "buffer": {
+                "status": "Synchronized"
+              },
+              "coalescer": {
+                "status": "Synchronized"
+              },
+              "flush": {
+                "status": "Synchronized"
+              },
+              "durability": {
+                "status": "Synchronized"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Write amplification slashed by over 75%, preserving database capacity.",
+            "values": {
+              "buffer": {
+                "status": "Synchronized"
+              },
+              "coalescer": {
+                "status": "Synchronized"
+              },
+              "flush": {
+                "status": "Synchronized"
+              },
+              "durability": {
+                "status": "Synchronized"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Redis Caching & Invalidation Verification Suite",
+      "codeHash": "66f92464c6cc77ca38ac87187d5132acb279942e07fd842ace92dce968b5ebbc",
+      "spec": {
+        "template": "flow",
+        "title": "Production Redis Caching SLA Verification Suite",
+        "nodes": [
+          {
+            "id": "harness",
+            "label": "SLA Harness",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "sharding",
+            "label": "CRC16 Hash Slot Verifier",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "invalidation",
+            "label": "Cache-Aside Invalidation Engine",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "stampede",
+            "label": "Stampede Mutex Suppressor",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "cert",
+            "label": "Grade A+ Certifier",
+            "sub": "Active Stage",
+            "status": "ok"
+          }
+        ],
+        "edges": [
+          {
+            "from": "harness",
+            "to": "sharding",
+            "label": "Test Hash Tag Colocation"
+          },
+          {
+            "from": "sharding",
+            "to": "invalidation",
+            "label": "Verify Key Eviction on Write"
+          },
+          {
+            "from": "invalidation",
+            "to": "stampede",
+            "label": "Simulate 5x Concurrent Misses"
+          },
+          {
+            "from": "stampede",
+            "to": "cert",
+            "label": "Check Write Coalescing Ratio"
+          },
+          {
+            "from": "cert",
+            "to": "harness",
+            "label": "Grade A+ Caching SLA Certified"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Harness validates deterministic hash tag slot colocation in Redis Cluster.",
+            "values": {
+              "harness": {
+                "status": "Online"
+              },
+              "sharding": {
+                "status": "Online"
+              },
+              "invalidation": {
+                "status": "Online"
+              },
+              "stampede": {
+                "status": "Online"
+              },
+              "cert": {
+                "status": "Online"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Cache-aside invalidation verified with zero stale read anomalies.",
+            "values": {
+              "harness": {
+                "status": "Processing"
+              },
+              "sharding": {
+                "status": "Processing"
+              },
+              "invalidation": {
+                "status": "Processing"
+              },
+              "stampede": {
+                "status": "Processing"
+              },
+              "cert": {
+                "status": "Processing"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Stampede mutex successfully collapses concurrent misses to single query.",
+            "values": {
+              "harness": {
+                "status": "Committed"
+              },
+              "sharding": {
+                "status": "Committed"
+              },
+              "invalidation": {
+                "status": "Committed"
+              },
+              "stampede": {
+                "status": "Committed"
+              },
+              "cert": {
+                "status": "Committed"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Write-behind coalescing reduces database writes by over 60%, awarding Grade A+.",
+            "values": {
+              "harness": {
+                "status": "Online"
+              },
+              "sharding": {
+                "status": "Online"
+              },
+              "invalidation": {
+                "status": "Online"
+              },
+              "stampede": {
+                "status": "Online"
+              },
+              "cert": {
+                "status": "Online"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

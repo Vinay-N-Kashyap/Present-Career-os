@@ -1,0 +1,658 @@
+{
+  "schemaVersion": 2,
+  "prefix": "node-web",
+  "day": 60,
+  "promptSha": "node-web-b12-gate-v2-prompt-sha",
+  "model": "manual-gate-v2-generator",
+  "entries": [
+    {
+      "partTitle": "Capstone Architecture Blueprint: The Unified Event-Driven Microservices Hub",
+      "codeHash": "606b564adc4773fc336b261c40a8a249b9d7514c85b2878a39af416134a8a3fd",
+      "spec": {
+        "template": "flow",
+        "title": "Milestone 10 Unified Event-Driven Microservices Hub Topology",
+        "nodes": [
+          {
+            "id": "gateway",
+            "label": "API Gateway Ingress",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "orderService",
+            "label": "Order Service (Outbox CDC)",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "kafka",
+            "label": "Kafka Event Streaming Hub",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "saga",
+            "label": "Saga Orchestrator (FSM)",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "redis",
+            "label": "Redis Cluster & Write-Behind",
+            "sub": "Active Stage",
+            "status": "ok"
+          }
+        ],
+        "edges": [
+          {
+            "from": "gateway",
+            "to": "orderService",
+            "label": "Ingress Order Request"
+          },
+          {
+            "from": "orderService",
+            "to": "kafka",
+            "label": "Atomic CDC Outbox Event Stream"
+          },
+          {
+            "from": "kafka",
+            "to": "saga",
+            "label": "Trigger Distributed Checkout Saga"
+          },
+          {
+            "from": "saga",
+            "to": "redis",
+            "label": "Colocated Cache & Buffer Queries"
+          },
+          {
+            "from": "redis",
+            "to": "gateway",
+            "label": "Sub-Millisecond Read Projections"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "API gateway receives customer orders and routes to Order Service.",
+            "values": {
+              "gateway": {
+                "status": "Online"
+              },
+              "orderService": {
+                "status": "Online"
+              },
+              "kafka": {
+                "status": "Online"
+              },
+              "saga": {
+                "status": "Online"
+              },
+              "redis": {
+                "status": "Online"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Order Service commits order and outbox atomically, streaming to Kafka.",
+            "values": {
+              "gateway": {
+                "status": "Processing"
+              },
+              "orderService": {
+                "status": "Processing"
+              },
+              "kafka": {
+                "status": "Processing"
+              },
+              "saga": {
+                "status": "Processing"
+              },
+              "redis": {
+                "status": "Processing"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Saga Orchestrator drives multi-service fulfillment with LIFO compensations.",
+            "values": {
+              "gateway": {
+                "status": "Committed"
+              },
+              "orderService": {
+                "status": "Committed"
+              },
+              "kafka": {
+                "status": "Committed"
+              },
+              "saga": {
+                "status": "Committed"
+              },
+              "redis": {
+                "status": "Committed"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Redis Cluster and write-behind pipelines deliver sub-millisecond throughput.",
+            "values": {
+              "gateway": {
+                "status": "Online"
+              },
+              "orderService": {
+                "status": "Online"
+              },
+              "kafka": {
+                "status": "Online"
+              },
+              "saga": {
+                "status": "Online"
+              },
+              "redis": {
+                "status": "Online"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Transactional Outbox & Event Streaming Core: CDC & Partitioned Topics",
+      "codeHash": "1195be441ca4a506b41334abbdd503b978eadb49c21f8db4fa2397b2b81aef35",
+      "spec": {
+        "template": "flow",
+        "title": "Transactional Outbox & Partitioned Kafka Event Streaming",
+        "nodes": [
+          {
+            "id": "orderTx",
+            "label": "PostgreSQL Local ACID Tx",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "outbox",
+            "label": "Outbox Table (UUIDv7)",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "cdc",
+            "label": "Debezium CDC Engine",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "p0",
+            "label": "Kafka Partition 0 (cust_88)",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "p1",
+            "label": "Kafka Partition 1 (cust_89)",
+            "sub": "Active Stage",
+            "status": "ok"
+          }
+        ],
+        "edges": [
+          {
+            "from": "orderTx",
+            "to": "outbox",
+            "label": "Atomic Commit in Same Tx"
+          },
+          {
+            "from": "outbox",
+            "to": "cdc",
+            "label": "Byte-Level WAL Capture"
+          },
+          {
+            "from": "cdc",
+            "to": "p0",
+            "label": "Key=cust_88 (Strict FIFO Order)"
+          },
+          {
+            "from": "cdc",
+            "to": "p1",
+            "label": "Key=cust_89 (Strict FIFO Order)"
+          },
+          {
+            "from": "p0",
+            "to": "orderTx",
+            "label": "At-Least-Once Delivery"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Local PostgreSQL transaction commits order and outbox records atomically.",
+            "values": {
+              "orderTx": {
+                "status": "Online"
+              },
+              "outbox": {
+                "status": "Online"
+              },
+              "cdc": {
+                "status": "Online"
+              },
+              "p0": {
+                "status": "Online"
+              },
+              "p1": {
+                "status": "Online"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "CDC engine reads Write-Ahead Log without polling query overhead.",
+            "values": {
+              "orderTx": {
+                "status": "Processing"
+              },
+              "outbox": {
+                "status": "Processing"
+              },
+              "cdc": {
+                "status": "Processing"
+              },
+              "p0": {
+                "status": "Processing"
+              },
+              "p1": {
+                "status": "Processing"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Deterministic partition keying preserves strict per-customer FIFO order.",
+            "values": {
+              "orderTx": {
+                "status": "Committed"
+              },
+              "outbox": {
+                "status": "Committed"
+              },
+              "cdc": {
+                "status": "Committed"
+              },
+              "p0": {
+                "status": "Committed"
+              },
+              "p1": {
+                "status": "Committed"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Downstream consumers scale horizontally across independent partitions.",
+            "values": {
+              "orderTx": {
+                "status": "Online"
+              },
+              "outbox": {
+                "status": "Online"
+              },
+              "cdc": {
+                "status": "Online"
+              },
+              "p0": {
+                "status": "Online"
+              },
+              "p1": {
+                "status": "Online"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Distributed Saga Orchestrator & Multi-Service Compensation Engine",
+      "codeHash": "ddd816932265e7a18101237a63b311098e9e3872335994a65072cb270d8fe6a1",
+      "spec": {
+        "template": "states",
+        "title": "Milestone 10 Distributed Saga Orchestrator Lifecycle",
+        "states": [
+          {
+            "id": "initial",
+            "label": "INITIAL"
+          },
+          {
+            "id": "order_staged",
+            "label": "ORDER_STAGED"
+          },
+          {
+            "id": "payment_charged",
+            "label": "PAYMENT_CHARGED"
+          },
+          {
+            "id": "compensating",
+            "label": "COMPENSATING (LIFO Stack)"
+          },
+          {
+            "id": "failed",
+            "label": "FAILED (Symmetric Rollback)"
+          }
+        ],
+        "transitions": [
+          {
+            "from": "initial",
+            "to": "order_staged",
+            "label": "OrderPlaced Event"
+          },
+          {
+            "from": "order_staged",
+            "to": "payment_charged",
+            "label": "Charge Payment"
+          },
+          {
+            "from": "payment_charged",
+            "to": "compensating",
+            "label": "Inventory Out-of-Stock"
+          },
+          {
+            "from": "compensating",
+            "to": "failed",
+            "label": "Refund & Cancel Finished"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Orchestrator consumes OrderPlaced event and stages order transaction.",
+            "values": {
+              "activeState": "initial"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Payment service charges customer and registers refund compensation handler.",
+            "values": {
+              "activeState": "order_staged"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Inventory allocation fails; orchestrator transitions to COMPENSATING.",
+            "values": {
+              "activeState": "payment_charged"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Compensation stack unwinds in LIFO order, restoring consistent state.",
+            "values": {
+              "activeState": "compensating"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "High-Throughput Caching, Stampede Protection & Write-Behind Coalescer",
+      "codeHash": "fff7937b63f557154b2e19274561a89cbad0eef341998a8f45ece0cdf9a93ccb",
+      "spec": {
+        "template": "boxes",
+        "title": "Milestone 10 High-Throughput Caching & Write-Behind Tier",
+        "items": [
+          {
+            "id": "hashTags",
+            "title": "Redis Cluster Hash Tags",
+            "desc": "Collocates '{user:88}.profile' and '{user:88}.orders' on same slot, eliminating CROSSSLOT errors.",
+            "status": "ok"
+          },
+          {
+            "id": "stampedeMutex",
+            "title": "Thundering Herd Mutex",
+            "desc": "SETNX lock ensures only one worker queries DB during hot cache expirations.",
+            "status": "ok"
+          },
+          {
+            "id": "writeCoalescer",
+            "title": "Write-Behind Batch Coalescer",
+            "desc": "Buffers high-frequency mutations in RAM and executes consolidated bulk SQL updates.",
+            "status": "ok"
+          },
+          {
+            "id": "cacheAside",
+            "title": "Cache-Aside Invalidation",
+            "desc": "Deletes cache keys on database updates to guarantee race-free eventual consistency.",
+            "status": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Hash tags collocate related domain entities on identical Redis cluster nodes.",
+            "values": {
+              "hashTags": {
+                "status": "Inspecting"
+              },
+              "stampedeMutex": {
+                "status": "Inspecting"
+              },
+              "writeCoalescer": {
+                "status": "Inspecting"
+              },
+              "cacheAside": {
+                "status": "Inspecting"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Distributed mutex locks prevent thundering herds from crashing databases.",
+            "values": {
+              "hashTags": {
+                "status": "Synchronized"
+              },
+              "stampedeMutex": {
+                "status": "Synchronized"
+              },
+              "writeCoalescer": {
+                "status": "Synchronized"
+              },
+              "cacheAside": {
+                "status": "Synchronized"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Write-behind coalescer slashes database write amplification by over 75%.",
+            "values": {
+              "hashTags": {
+                "status": "Synchronized"
+              },
+              "stampedeMutex": {
+                "status": "Synchronized"
+              },
+              "writeCoalescer": {
+                "status": "Synchronized"
+              },
+              "cacheAside": {
+                "status": "Synchronized"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Cache-aside invalidation guarantees strict eventual consistency.",
+            "values": {
+              "hashTags": {
+                "status": "Synchronized"
+              },
+              "stampedeMutex": {
+                "status": "Synchronized"
+              },
+              "writeCoalescer": {
+                "status": "Synchronized"
+              },
+              "cacheAside": {
+                "status": "Synchronized"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Milestone 10 Capstone End-to-End Enterprise Certification & SLA Verification",
+      "codeHash": "977ad63c6ca8e77c8406740d8b0219529321ff8e0f39dadb69d6440204ef18b0",
+      "spec": {
+        "template": "flow",
+        "title": "Milestone 10 Capstone End-to-End Enterprise Certification",
+        "nodes": [
+          {
+            "id": "harness",
+            "label": "Milestone 10 Harness",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "outboxSla",
+            "label": "Pillar 1: Outbox & Kafka",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "sagaSla",
+            "label": "Pillar 2: Saga & LIFO Rollback",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "cachingSla",
+            "label": "Pillar 3: Redis & Write-Behind",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "award",
+            "label": "Grade A+ Milestone 10 Capstone Certification",
+            "sub": "Active Stage",
+            "status": "ok"
+          }
+        ],
+        "edges": [
+          {
+            "from": "harness",
+            "to": "outboxSla",
+            "label": "Validate CDC Atomicity"
+          },
+          {
+            "from": "outboxSla",
+            "to": "sagaSla",
+            "label": "Assert LIFO Compensation"
+          },
+          {
+            "from": "sagaSla",
+            "to": "cachingSla",
+            "label": "Test Stampede & Coalescing"
+          },
+          {
+            "from": "cachingSla",
+            "to": "award",
+            "label": "Confirm 5 Non-Negotiable SLAs"
+          },
+          {
+            "from": "award",
+            "to": "harness",
+            "label": "Grade A+ Enterprise Architecture Certified"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Harness validates atomic outbox staging and deterministic Kafka partitioning.",
+            "values": {
+              "harness": {
+                "status": "Online"
+              },
+              "outboxSla": {
+                "status": "Online"
+              },
+              "sagaSla": {
+                "status": "Online"
+              },
+              "cachingSla": {
+                "status": "Online"
+              },
+              "award": {
+                "status": "Online"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Saga orchestrator confirms symmetric LIFO compensation and idempotency.",
+            "values": {
+              "harness": {
+                "status": "Processing"
+              },
+              "outboxSla": {
+                "status": "Processing"
+              },
+              "sagaSla": {
+                "status": "Processing"
+              },
+              "cachingSla": {
+                "status": "Processing"
+              },
+              "award": {
+                "status": "Processing"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Redis cluster testing validates slot colocation, stampede suppression, and batching.",
+            "values": {
+              "harness": {
+                "status": "Committed"
+              },
+              "outboxSla": {
+                "status": "Committed"
+              },
+              "sagaSla": {
+                "status": "Committed"
+              },
+              "cachingSla": {
+                "status": "Committed"
+              },
+              "award": {
+                "status": "Committed"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Final verification harness issues official Grade A+ Milestone 10 Capstone Certification.",
+            "values": {
+              "harness": {
+                "status": "Online"
+              },
+              "outboxSla": {
+                "status": "Online"
+              },
+              "sagaSla": {
+                "status": "Online"
+              },
+              "cachingSla": {
+                "status": "Online"
+              },
+              "award": {
+                "status": "Online"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

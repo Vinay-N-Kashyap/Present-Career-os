@@ -594,5 +594,60 @@ export const NODE_WEB_DAYS: DayConfig[] = [
       "Protocol transcoding & adaptive rate limiting: token bucket throttling with downstream latency backpressure feedback.",
       "Resilient edge cluster dispatching & capstone SLA certification: least-connections balancing, circuit breakers, and Grade A+ certification."
     ]
+  },
+  {
+    day: 56,
+    title: "Event-Driven Microservices with Kafka: Consumer Groups, Partition Offsets & Rebalance Listeners",
+    desc: "Master Apache Kafka event streaming in Node.js: architect high-throughput producers with batching and Snappy compression, configure consumer groups with cooperative sticky rebalance protocols, handle partition revocation listeners, and enforce strictly ordered at-least-once message processing.",
+    syllabus: [
+      "Kafka architecture: Distributed commit logs, brokers, partitions, replication factors, and ISR quorums.",
+      "Producer semantics: linger.ms, batch.size, snappy compression, idempotent producers, and acks=all durability.",
+      "Consumer groups & partition rebalancing: Eager vs Cooperative Sticky protocols and manual offset commit checkpoints.",
+      "Rebalance listeners & graceful shutdown: onPartitionsRevoked offset flushing, timeout budgets, and seek recovery."
+    ]
+  },
+  {
+    day: 57,
+    title: "CQRS, Event Sourcing & Transactional Outbox: Event Stores & Change Data Capture",
+    desc: "Master distributed data consistency in Node.js: eliminate dual-write hazards with the Transactional Outbox pattern, harvest uncommitted database events via Debezium CDC and SKIP LOCKED relays, architect append-only Event Sourcing stores with optimistic versioning, and build asynchronous CQRS read projections.",
+    syllabus: [
+      "Dual-write vulnerability: Race conditions, partial write splits, and Transactional Outbox atomic local ACID transactions.",
+      "Change Data Capture (CDC): Debezium WAL log tailing, PostgreSQL SKIP LOCKED polling, and table partitioning.",
+      "Event Sourcing core: Append-only immutable event store, aggregate rehydration, and periodic snapshotting.",
+      "Command Query Responsibility Segregation (CQRS): Asynchronous read projections and sub-millisecond query materialization."
+    ]
+  },
+  {
+    day: 58,
+    title: "Distributed Sagas & Compensation Workflows: Orchestrator vs Choreography & Idempotent Retries",
+    desc: "Master distributed transaction architecture in Node.js: analyze ACID limitations across microservices, contrast Choreography vs Orchestration saga patterns, construct durable state-machine-backed orchestrators, implement compensating transactions with reverse LIFO execution, and enforce strict idempotency barriers with semantic fencing against out-of-order events.",
+    syllabus: [
+      "ACID limits in distributed microservices: 2PC locking bottlenecks, BASE consistency, and Hector Garcia-Molina Sagas.",
+      "Choreography vs Orchestration: Decentralized domain events, distributed spaghetti deadlocks, and central state machines.",
+      "Compensating transactions & state machines: Durable step transitions, reverse LIFO compensation stacks, and rollback guarantees.",
+      "Failure handling & idempotency: Unique idempotency keys, semantic fencing epochs, and jittered exponential backoff."
+    ]
+  },
+  {
+    day: 59,
+    title: "High-Throughput Caching & Write-Behind Pipelines: Redis Cluster, Cache Invalidation & Stampede Protection",
+    desc: "Master high-throughput distributed caching in Node.js: architect Redis Cluster with 16384 hash slots and hash tags, implement race-free cache-aside invalidation patterns, eliminate thundering herd cache stampedes using distributed mutex locking, and design write-behind pipelines with batch mutation coalescing.",
+    syllabus: [
+      "Redis Cluster architecture: 16,384 hash slots, CRC16 hashing, hash tag colocation, and master-replica failover.",
+      "Cache invalidation patterns: Cache-Aside lazy loading, delete vs update race hazards, and write-through caching.",
+      "Cache stampede (thundering herd) protection: Distributed mutex locking with SETNX, and probabilistic early expiration (XFetch).",
+      "High-throughput write-behind pipelines: In-memory mutation buffers, batch coalescing, and bulk database synchronization."
+    ]
+  },
+  {
+    day: 60,
+    title: "🏆 Milestone 10 Capstone: High-Throughput Event-Driven Microservices Hub with Kafka Streaming, Outbox Pattern & Distributed Sagas",
+    desc: "Architect, build, and certify the Milestone 10 Capstone Hub: a unified high-throughput event-driven microservices platform integrating atomic Transactional Outbox with CDC streaming, distributed checkout sagas with LIFO compensation, strict idempotency barriers, Redis Cluster hash tag sharding with stampede mutex locks, and high-speed write-behind batch coalescing.",
+    syllabus: [
+      "Milestone architecture blueprint: Unified event-driven hub, service topology registry, and Kafka cluster integration.",
+      "Transactional Outbox & event streaming core: Atomic PostgreSQL ACID transactions, CDC relay, and deterministic partition routing.",
+      "Distributed Saga Orchestrator & compensation engine: Centralized state machine, LIFO backward rollbacks, and idempotency.",
+      "High-throughput caching & write-behind tier: Redis Cluster hash tags, stampede mutex suppression, batch coalescing, and Grade A+ certification."
+    ]
   }
 ];

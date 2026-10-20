@@ -1,0 +1,557 @@
+{
+  "schemaVersion": 2,
+  "prefix": "node-web",
+  "day": 56,
+  "promptSha": "node-web-b12-gate-v2-prompt-sha",
+  "model": "manual-gate-v2-generator",
+  "entries": [
+    {
+      "partTitle": "Apache Kafka Architecture & Event Streaming Fundamentals: Topics, Partitions & Brokers",
+      "codeHash": "4cb0e8c45fe682491535f71aa2c3dd42f0405309590fa0c760b96d8d0442b645",
+      "spec": {
+        "template": "flow",
+        "title": "Kafka Distributed Partition Streaming Architecture",
+        "nodes": [
+          {
+            "id": "producer",
+            "label": "Kafka Producer",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "broker",
+            "label": "Broker Cluster",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "p0",
+            "label": "Partition 0",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "p1",
+            "label": "Partition 1",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "consumer",
+            "label": "Consumer Group",
+            "sub": "Active Stage",
+            "status": "ok"
+          }
+        ],
+        "edges": [
+          {
+            "from": "producer",
+            "to": "broker",
+            "label": "Batch Send (linger.ms=5)"
+          },
+          {
+            "from": "broker",
+            "to": "p0",
+            "label": "Hash Key Routing"
+          },
+          {
+            "from": "broker",
+            "to": "p1",
+            "label": "Round-Robin Routing"
+          },
+          {
+            "from": "p0",
+            "to": "consumer",
+            "label": "At-Least-Once Pull"
+          },
+          {
+            "from": "p1",
+            "to": "consumer",
+            "label": "At-Least-Once Pull"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Producers batch messages with Snappy compression before network dispatch.",
+            "values": {
+              "producer": {
+                "status": "Online"
+              },
+              "broker": {
+                "status": "Online"
+              },
+              "p0": {
+                "status": "Online"
+              },
+              "p1": {
+                "status": "Online"
+              },
+              "consumer": {
+                "status": "Online"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Kafka brokers append records to immutable commit logs across partitions.",
+            "values": {
+              "producer": {
+                "status": "Processing"
+              },
+              "broker": {
+                "status": "Processing"
+              },
+              "p0": {
+                "status": "Processing"
+              },
+              "p1": {
+                "status": "Processing"
+              },
+              "consumer": {
+                "status": "Processing"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Consumer groups pull messages in parallel with partition assignment.",
+            "values": {
+              "producer": {
+                "status": "Committed"
+              },
+              "broker": {
+                "status": "Committed"
+              },
+              "p0": {
+                "status": "Committed"
+              },
+              "p1": {
+                "status": "Committed"
+              },
+              "consumer": {
+                "status": "Committed"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Offloaded partition streams scale horizontally across distributed brokers.",
+            "values": {
+              "producer": {
+                "status": "Online"
+              },
+              "broker": {
+                "status": "Online"
+              },
+              "p0": {
+                "status": "Online"
+              },
+              "p1": {
+                "status": "Online"
+              },
+              "consumer": {
+                "status": "Online"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Producer Semantics: Batching, Compression, Idempotence & Acks Invariants",
+      "codeHash": "8bed864a7082e4748b9132737d63fa0f67a59bd432aa44488fa46c66c1d23ae8",
+      "spec": {
+        "template": "compare",
+        "title": "Kafka Producer Semantics: acks=0 vs acks=all",
+        "left": {
+          "title": "Fire-and-Forget (acks=0)",
+          "points": [
+            "Zero network round-trip wait",
+            "Maximum write throughput",
+            "High message loss risk on broker crash",
+            "Suitable only for non-critical telemetry"
+          ]
+        },
+        "right": {
+          "title": "Idempotent Durability (acks=all)",
+          "points": [
+            "Waits for all in-sync replicas (ISR)",
+            "Strict zero message loss guarantee",
+            "Enables idempotent producer PID/sequence",
+            "Enterprise standard for financial transactions"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "acks=0 fires packets into socket buffer without acknowledgment.",
+            "values": {
+              "activeSide": "left"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "acks=all waits for complete ISR quorum disk commits.",
+            "values": {
+              "activeSide": "right"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Idempotent producers prevent duplicate records on retry.",
+            "values": {
+              "activeSide": "both"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Critical transaction pipelines mandate acks=all and min.insync.replicas=2.",
+            "values": {
+              "activeSide": "both"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Consumer Groups & Partition Assignment: Cooperative Sticky Rebalancing & Offset Commits",
+      "codeHash": "ea8ed249680a0f9fc9bf15700e90eae2eb1701e3cf167acb9f1382a1251369c2",
+      "spec": {
+        "template": "boxes",
+        "title": "Kafka Consumer Group Partition Rebalance Protocols",
+        "items": [
+          {
+            "id": "eager",
+            "title": "Eager Rebalance Protocol",
+            "desc": "Revokes all partitions from all consumers during rebalance, causing total stop-the-world pauses.",
+            "status": "ok"
+          },
+          {
+            "id": "cooperative",
+            "title": "Cooperative Sticky Protocol",
+            "desc": "Revokes only migrated partitions incrementally, allowing continuous processing on unaffected partitions.",
+            "status": "ok"
+          },
+          {
+            "id": "heartbeat",
+            "title": "Heartbeat & Liveness Thread",
+            "desc": "Maintains session leases with group coordinator independently of message processing event loop.",
+            "status": "ok"
+          },
+          {
+            "id": "offsets",
+            "title": "Committed Offset Checkpoints",
+            "desc": "Persists consumer position in __consumer_offsets topic with manual synchronous or asynchronous commits.",
+            "status": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Eager protocol halts entire consumer fleet during partition rebalancing.",
+            "values": {
+              "eager": {
+                "status": "Inspecting"
+              },
+              "cooperative": {
+                "status": "Inspecting"
+              },
+              "heartbeat": {
+                "status": "Inspecting"
+              },
+              "offsets": {
+                "status": "Inspecting"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Cooperative sticky assignor isolates partition shifts without fleet stoppage.",
+            "values": {
+              "eager": {
+                "status": "Synchronized"
+              },
+              "cooperative": {
+                "status": "Synchronized"
+              },
+              "heartbeat": {
+                "status": "Synchronized"
+              },
+              "offsets": {
+                "status": "Synchronized"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Background heartbeat thread prevents premature member evictions.",
+            "values": {
+              "eager": {
+                "status": "Synchronized"
+              },
+              "cooperative": {
+                "status": "Synchronized"
+              },
+              "heartbeat": {
+                "status": "Synchronized"
+              },
+              "offsets": {
+                "status": "Synchronized"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Committed offsets provide strict resume checkpoints upon failure.",
+            "values": {
+              "eager": {
+                "status": "Synchronized"
+              },
+              "cooperative": {
+                "status": "Synchronized"
+              },
+              "heartbeat": {
+                "status": "Synchronized"
+              },
+              "offsets": {
+                "status": "Synchronized"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Rebalance Listeners & Graceful Shutdown: Revocation Handling, Draining & State Store Preservation",
+      "codeHash": "f7d905e4f509403a4c8a44c141fe1aac878c9a075b68df0896e8c20eb88eb855",
+      "spec": {
+        "template": "states",
+        "title": "Consumer Rebalance Listener Lifecycle & Offset Commit States",
+        "states": [
+          {
+            "id": "processing",
+            "label": "Active Message Processing"
+          },
+          {
+            "id": "revoking",
+            "label": "Partitions Revoking"
+          },
+          {
+            "id": "committing",
+            "label": "Flushing Offset Checkpoint"
+          },
+          {
+            "id": "assigned",
+            "label": "Partitions Assigned & Resumed"
+          }
+        ],
+        "transitions": [
+          {
+            "from": "processing",
+            "to": "revoking",
+            "label": "Rebalance Triggered"
+          },
+          {
+            "from": "revoking",
+            "to": "committing",
+            "label": "onPartitionsRevoked"
+          },
+          {
+            "from": "committing",
+            "to": "assigned",
+            "label": "onPartitionsAssigned"
+          },
+          {
+            "from": "assigned",
+            "to": "processing",
+            "label": "Resume Poll Loop"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Consumer actively polls and processes records from assigned partitions.",
+            "values": {
+              "activeState": "processing"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Coordinator signals rebalance; listener intercepts partition revocation.",
+            "values": {
+              "activeState": "revoking"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Consumer synchronously commits offsets and flushes pending writes to disk.",
+            "values": {
+              "activeState": "committing"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "New partition assignments received; consumer seeks to committed offsets.",
+            "values": {
+              "activeState": "assigned"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Kafka Streaming Pipeline & Exactly-Once Processing (EOS) Verification",
+      "codeHash": "272aa373a91abba0b27795effc241651c64ac6811046884e814c70ded7b97e95",
+      "spec": {
+        "template": "flow",
+        "title": "End-to-End Kafka Streaming Pipeline SLA Verification",
+        "nodes": [
+          {
+            "id": "ingress",
+            "label": "Event Ingress",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "producer",
+            "label": "Idempotent Producer",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "broker",
+            "label": "Kafka Cluster",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "consumer",
+            "label": "Cooperative Consumer",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "audit",
+            "label": "SLA Certifier",
+            "sub": "Active Stage",
+            "status": "ok"
+          }
+        ],
+        "edges": [
+          {
+            "from": "ingress",
+            "to": "producer",
+            "label": "Validated Event Payload"
+          },
+          {
+            "from": "producer",
+            "to": "broker",
+            "label": "Deterministic Partition Write"
+          },
+          {
+            "from": "broker",
+            "to": "consumer",
+            "label": "Cooperative Stream Pull"
+          },
+          {
+            "from": "consumer",
+            "to": "audit",
+            "label": "Processed Batch Checkpoint"
+          },
+          {
+            "from": "audit",
+            "to": "ingress",
+            "label": "Grade A+ Certification"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Ingress records arrive with monotonic sequence numbers.",
+            "values": {
+              "ingress": {
+                "status": "Online"
+              },
+              "producer": {
+                "status": "Online"
+              },
+              "broker": {
+                "status": "Online"
+              },
+              "consumer": {
+                "status": "Online"
+              },
+              "audit": {
+                "status": "Online"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Idempotent producer dispatches batches across partition keys.",
+            "values": {
+              "ingress": {
+                "status": "Processing"
+              },
+              "producer": {
+                "status": "Processing"
+              },
+              "broker": {
+                "status": "Processing"
+              },
+              "consumer": {
+                "status": "Processing"
+              },
+              "audit": {
+                "status": "Processing"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Cooperative consumer streams records without stop-the-world pauses.",
+            "values": {
+              "ingress": {
+                "status": "Committed"
+              },
+              "producer": {
+                "status": "Committed"
+              },
+              "broker": {
+                "status": "Committed"
+              },
+              "consumer": {
+                "status": "Committed"
+              },
+              "audit": {
+                "status": "Committed"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Verification harness certifies zero message loss and Grade A+ throughput.",
+            "values": {
+              "ingress": {
+                "status": "Online"
+              },
+              "producer": {
+                "status": "Online"
+              },
+              "broker": {
+                "status": "Online"
+              },
+              "consumer": {
+                "status": "Online"
+              },
+              "audit": {
+                "status": "Online"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
