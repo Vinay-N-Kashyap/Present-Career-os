@@ -429,5 +429,60 @@ export const NODE_WEB_DAYS: DayConfig[] = [
     "Distributed Mutex & Fencing Token Concurrency Gate: intercepting out-of-order writes from paused workers.",
     "Automated Expiration Reaper: sweeping abandoned holds and certifying Grade A+ sub-5ms P99 production SLAs."
   ]
-}
+},
+  {
+    day: 41,
+    title: "Advanced Asynchronous Concurrency Patterns: AsyncLocalStorage, Async Hooks & Request Context Tracing",
+    desc: "Master asynchronous execution tracking and context propagation in Node.js: analyze the async resource lifecycle, async_hooks C++ bindings, AsyncLocalStorage storage isolation, context leakage hazards, and OpenTelemetry trace propagation.",
+    syllabus: [
+      "Single-threaded continuation tracking: AsyncLocalStorage execution isolation across concurrent interleaved requests.",
+      "Node.js async_hooks internals: asyncId and triggerAsyncId parent-child ancestry chains.",
+      "Context continuation preservation: resolving broken third-party callback chains via explicit store binding.",
+      "Distributed tracing architecture: parsing and injecting W3C TraceContext traceparent headers across microservices."
+    ]
+  },
+  {
+    day: 42,
+    title: "Production Memory Management & Profiling: V8 Heap Snapshots, Leak Detection & Allocation Timelines",
+    desc: "Master production memory profiling and garbage collection diagnostics in Node.js: analyze V8 generational heap architecture, Scavenge vs Mark-Sweep cycles, heap snapshot retainers, and memory leak mitigation.",
+    syllabus: [
+      "V8 memory layout: Young Generation (Eden/Semi-spaces), Old Generation (Tenured), and off-heap Buffer limits.",
+      "Generational garbage collection algorithms: Cheney copying scavenger vs Mark-Sweep-Compact cycles.",
+      "Common Node.js memory leak patterns: unbounded global caches, detached DOM/timers, and closure retention.",
+      "Heap snapshot diagnostics: comparative snapshot analysis, Retainer Trees, Shallow vs Retained sizes."
+    ]
+  },
+  {
+    day: 43,
+    title: "Low-Latency Binary Protocols: Protocol Buffers, MessagePack & Binary WebSocket Serialization",
+    desc: "Master binary serialization and network wire protocol engineering in Node.js: analyze JSON serialization CPU/GC bottlenecks, Protocol Buffers Tag-Length-Value encoding, Varint/ZigZag bitwise math, and MessagePack framing.",
+    syllabus: [
+      "Binary protocols vs JSON: wire bandwidth compression, zero string tokenization, and V8 GC overhead elimination.",
+      "Protocol Buffers wire specification: Tag-Length-Value encoding, field numbers, and wire type mappings.",
+      "Varint bit manipulation and ZigZag signed integer encoding for ultra-compact integer transport.",
+      "MessagePack dynamic binary serialization and high-throughput binary WebSocket broadcast pipelines."
+    ]
+  },
+  {
+    day: 44,
+    title: "High-Performance Networking: HTTP/2 Multiplexing, ALPN Negotiation & gRPC Services in Node.js",
+    desc: "Master modern network transport protocols in Node.js: analyze HTTP/1.1 Head-of-Line blocking, HTTP/2 binary framing and stream multiplexing, TLS ALPN negotiation, credit-based flow control, and enterprise gRPC microservice architectures.",
+    syllabus: [
+      "HTTP/1.1 Head-of-Line blocking vs HTTP/2 single-TCP connection binary frame interleaving.",
+      "TLS ALPN protocol negotiation, SETTINGS parameter exchange, and credit-based WINDOW_UPDATE flow control.",
+      "gRPC architectural foundations: HTTP/2 POST routing, length-prefixed framing, and status trailers.",
+      "Four gRPC streaming models and enterprise Interceptor pipelines for authentication and deadline budgeting."
+    ]
+  },
+  {
+    day: 45,
+    title: "🏆 Milestone 8: High-Throughput Binary Telemetry Aggregator with gRPC & AsyncLocalStorage",
+    desc: "Architect, implement, and benchmark an enterprise-grade, high-throughput binary telemetry ingestion and aggregation engine combining gRPC unary and streaming endpoints, Varint Protocol Buffers serialization, zero-copy buffer pooling, AsyncLocalStorage distributed trace propagation, and real-time sliding window statistical metrics.",
+    syllabus: [
+      "Ingress topology design: persistent HTTP/2 gRPC streaming, non-blocking ring buffers, and backpressure.",
+      "Zero-copy Varint Protobuf decoding: bitwise decoding and pre-allocated buffer pool recycling.",
+      "Real-time stream aggregation: sliding window time buckets and in-place O(1) statistical accumulators.",
+      "Distributed context propagation via AsyncLocalStorage interceptors and Grade A+ production SLA verification."
+    ]
+  }
 ];

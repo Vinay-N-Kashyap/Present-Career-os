@@ -1,0 +1,548 @@
+{
+  "schemaVersion": 2,
+  "prefix": "node-web",
+  "day": 41,
+  "promptSha": "block9_expansion",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Asynchronous Context Problem: Propagating State Without Argument Drilling",
+      "codeHash": "24b5882dfeda237db59e9c66e6d586f06f41be9afebc4bfb7a0d3ae2259769dc",
+      "spec": {
+        "template": "compare",
+        "title": "Context Drilling vs Continuation-Local Storage",
+        "left": {
+          "title": "Explicit Context Drilling",
+          "points": [
+            "Requires passing ctx parameter through every function signature",
+            "Violates separation of concerns across clean architecture layers",
+            "High refactoring friction when adding new telemetry fields"
+          ]
+        },
+        "right": {
+          "title": "Continuation-Local Storage (ALS)",
+          "points": [
+            "Zero parameter drilling: ambient context access via getStore()",
+            "Preserves clean function signatures across nested tiers",
+            "Seamless integration with async/await and Promise chains"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Traditional architectures pass request context as an explicit parameter through every helper.",
+            "values": {
+              "activeSide": "left"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "AsyncLocalStorage binds context to the active continuation without modifying function signatures.",
+            "values": {
+              "activeSide": "right"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Nested domain services retrieve active tenant and trace data ambiently.",
+            "values": {
+              "activeSide": "both"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Execution isolation ensures concurrent interleaved requests never leak state.",
+            "values": {
+              "activeSide": "both"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "AsyncLocalStorage Mechanics: Store Initialization, Execution Isolation & Nested Contexts",
+      "codeHash": "600aa7c36304c9496df20de63c0df9629ba6271d7a0a2243eded745379a7d5d9",
+      "spec": {
+        "template": "boxes",
+        "title": "AsyncLocalStorage Execution Store Hierarchy",
+        "items": [
+          {
+            "id": "root",
+            "title": "Root Continuation",
+            "desc": "Parent execution boundary initialized by als.run()",
+            "status": "ok"
+          },
+          {
+            "id": "child",
+            "title": "Child Async Task",
+            "desc": "Inherits active store across Promise microtask ticks",
+            "status": "ok"
+          },
+          {
+            "id": "nested",
+            "title": "Nested Override",
+            "desc": "Inner als.run() creates scoped child store",
+            "status": "ok"
+          },
+          {
+            "id": "cleanup",
+            "title": "Store Restoration",
+            "desc": "Finally block guarantees restoration of prior store",
+            "status": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Root continuation establishes ambient execution context at request ingress.",
+            "values": {
+              "root": {
+                "status": "Inspecting"
+              },
+              "child": {
+                "status": "Inspecting"
+              },
+              "nested": {
+                "status": "Inspecting"
+              },
+              "cleanup": {
+                "status": "Inspecting"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Downstream async tasks inherit active store across Promise microtasks.",
+            "values": {
+              "root": {
+                "status": "Synchronized"
+              },
+              "child": {
+                "status": "Synchronized"
+              },
+              "nested": {
+                "status": "Synchronized"
+              },
+              "cleanup": {
+                "status": "Synchronized"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Nested calls can temporarily override context without affecting parent scope.",
+            "values": {
+              "root": {
+                "status": "Synchronized"
+              },
+              "child": {
+                "status": "Synchronized"
+              },
+              "nested": {
+                "status": "Synchronized"
+              },
+              "cleanup": {
+                "status": "Synchronized"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Defensive cleanup guarantees prompt store restoration upon completion.",
+            "values": {
+              "root": {
+                "status": "Synchronized"
+              },
+              "child": {
+                "status": "Synchronized"
+              },
+              "nested": {
+                "status": "Synchronized"
+              },
+              "cleanup": {
+                "status": "Synchronized"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Under the Hood: async_hooks Lifecycle (init, before, after, destroy, promiseResolve)",
+      "codeHash": "b1e7e7f2f0c43fdc8c27c828fe0baa0f907e9bc983086181fcfb5ee0693e5898",
+      "spec": {
+        "template": "flow",
+        "title": "async_hooks C++ Resource Tracking Lifecycle",
+        "nodes": [
+          {
+            "id": "init",
+            "label": "init Hook",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "before",
+            "label": "before Hook",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "exec",
+            "label": "Execution Phase",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "after",
+            "label": "after Hook",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "destroy",
+            "label": "destroy Hook",
+            "sub": "Active Stage",
+            "status": "ok"
+          }
+        ],
+        "edges": [
+          {
+            "from": "init",
+            "to": "before",
+            "label": "Schedule C++ Task"
+          },
+          {
+            "from": "before",
+            "to": "exec",
+            "label": "Enter Scope"
+          },
+          {
+            "from": "exec",
+            "to": "after",
+            "label": "Exit Scope"
+          },
+          {
+            "from": "after",
+            "to": "destroy",
+            "label": "Resource Free"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Node.js C++ layer emits init hook assigning asyncId and triggerAsyncId.",
+            "values": {
+              "init": {
+                "status": "Online"
+              },
+              "before": {
+                "status": "Online"
+              },
+              "exec": {
+                "status": "Online"
+              },
+              "after": {
+                "status": "Online"
+              },
+              "destroy": {
+                "status": "Online"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Before hook executes immediately before user callback invocation.",
+            "values": {
+              "init": {
+                "status": "Processing"
+              },
+              "before": {
+                "status": "Processing"
+              },
+              "exec": {
+                "status": "Processing"
+              },
+              "after": {
+                "status": "Processing"
+              },
+              "destroy": {
+                "status": "Processing"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "User callback executes with ambient async context restored.",
+            "values": {
+              "init": {
+                "status": "Committed"
+              },
+              "before": {
+                "status": "Committed"
+              },
+              "exec": {
+                "status": "Committed"
+              },
+              "after": {
+                "status": "Committed"
+              },
+              "destroy": {
+                "status": "Committed"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Destroy hook fires once V8 garbage collector reclaims the async resource.",
+            "values": {
+              "init": {
+                "status": "Online"
+              },
+              "before": {
+                "status": "Online"
+              },
+              "exec": {
+                "status": "Online"
+              },
+              "after": {
+                "status": "Online"
+              },
+              "destroy": {
+                "status": "Online"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Context Leakage & Concurrency Hazards: Broken Continuations in Callback APIs",
+      "codeHash": "2f2059722d3acc6cb1837dca71af9c6f722c315903cf0113e867a2f7997ef51c",
+      "spec": {
+        "template": "states",
+        "title": "Broken Callback Context Restoration Boundary",
+        "items": [
+          {
+            "id": "st_init",
+            "name": "Native Event Loop Context",
+            "state": "active"
+          },
+          {
+            "id": "st_unbind",
+            "name": "Legacy Third-Party Callback",
+            "state": "orphaned"
+          },
+          {
+            "id": "st_bind",
+            "name": "Bound ALS Continuation",
+            "state": "restored"
+          },
+          {
+            "id": "st_done",
+            "name": "Completed Async Task",
+            "state": "idle"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Legacy callback registration detaches from active AsyncResource context.",
+            "values": {
+              "st_init": {
+                "state": "idle"
+              },
+              "st_unbind": {
+                "state": "idle"
+              },
+              "st_bind": {
+                "state": "idle"
+              },
+              "st_done": {
+                "state": "idle"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Calling getStore() inside unbound third-party callback returns undefined.",
+            "values": {
+              "st_init": {
+                "state": "active"
+              },
+              "st_unbind": {
+                "state": "active"
+              },
+              "st_bind": {
+                "state": "active"
+              },
+              "st_done": {
+                "state": "active"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Applying asyncLocalStorage.bind() captures ambient context explicitly.",
+            "values": {
+              "st_init": {
+                "state": "transitioning"
+              },
+              "st_unbind": {
+                "state": "transitioning"
+              },
+              "st_bind": {
+                "state": "transitioning"
+              },
+              "st_done": {
+                "state": "transitioning"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Bound callback executes with restored execution continuation.",
+            "values": {
+              "st_init": {
+                "state": "idle"
+              },
+              "st_unbind": {
+                "state": "idle"
+              },
+              "st_bind": {
+                "state": "idle"
+              },
+              "st_done": {
+                "state": "idle"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "OpenTelemetry Distributed Tracing: W3C TraceContext (traceparent) & Span Correlation",
+      "codeHash": "7cce1e9a247a6c9fe900ab6d8c8cab7c6c4ff22a32de4e4209a6b7fae9f557af",
+      "spec": {
+        "template": "flow",
+        "title": "W3C Distributed TraceContext Propagation Pipeline",
+        "nodes": [
+          {
+            "id": "http_in",
+            "label": "Inbound Request",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "parse",
+            "label": "W3C Parser",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "span",
+            "label": "Child Span Creator",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "http_out",
+            "label": "Outbound Client",
+            "sub": "Active Stage",
+            "status": "ok"
+          }
+        ],
+        "edges": [
+          {
+            "from": "http_in",
+            "to": "parse",
+            "label": "traceparent header"
+          },
+          {
+            "from": "parse",
+            "to": "span",
+            "label": "Extract traceId"
+          },
+          {
+            "from": "span",
+            "to": "http_out",
+            "label": "Inject new spanId"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Inbound HTTP request arrives with standard W3C traceparent header.",
+            "values": {
+              "http_in": {
+                "status": "Online"
+              },
+              "parse": {
+                "status": "Online"
+              },
+              "span": {
+                "status": "Online"
+              },
+              "http_out": {
+                "status": "Online"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Parser extracts 32-character traceId, 16-character parentId, and traceFlags.",
+            "values": {
+              "http_in": {
+                "status": "Processing"
+              },
+              "parse": {
+                "status": "Processing"
+              },
+              "span": {
+                "status": "Processing"
+              },
+              "http_out": {
+                "status": "Processing"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Service generates unique child spanId while preserving global traceId.",
+            "values": {
+              "http_in": {
+                "status": "Committed"
+              },
+              "parse": {
+                "status": "Committed"
+              },
+              "span": {
+                "status": "Committed"
+              },
+              "http_out": {
+                "status": "Committed"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Outbound client injects updated traceparent header into downstream RPC calls.",
+            "values": {
+              "http_in": {
+                "status": "Online"
+              },
+              "parse": {
+                "status": "Online"
+              },
+              "span": {
+                "status": "Online"
+              },
+              "http_out": {
+                "status": "Online"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

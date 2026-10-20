@@ -1,0 +1,548 @@
+{
+  "schemaVersion": 2,
+  "prefix": "node-web",
+  "day": 44,
+  "promptSha": "block9_expansion",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "HTTP/1.1 Head-of-Line Blocking vs HTTP/2 Single-TCP Binary Framing Multiplexing",
+      "codeHash": "c670ace4145d80185be407d1c4c0e98e288306666f98ab21d70dcfaf12f7bdbe",
+      "spec": {
+        "template": "compare",
+        "title": "HTTP/1.1 HOL Blocking vs HTTP/2 Interleaved Stream Multiplexing",
+        "left": {
+          "title": "HTTP/1.1 Parallel Sockets",
+          "points": [
+            "Single socket processes only 1 request/response at a time",
+            "Slow request blocks all queued requests behind it (HOL Blocking)",
+            "Workaround requires opening multiple TCP sockets with heavy TLS overhead"
+          ]
+        },
+        "right": {
+          "title": "HTTP/2 Single TCP Connection",
+          "points": [
+            "Splits connection into independent bidirectional logical streams",
+            "Interleaves binary HEADERS and DATA frames from concurrent requests",
+            "Eliminates application-layer Head-of-Line blocking completely"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "HTTP/1.1 queues sequential requests on a single socket, causing severe blocking.",
+            "values": {
+              "activeSide": "left"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "HTTP/2 introduces a binary framing layer over a single persistent TCP connection.",
+            "values": {
+              "activeSide": "right"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Frames from different streams carry unique stream IDs and are interleaved on the wire.",
+            "values": {
+              "activeSide": "both"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "A slow payload on Stream 1 does not impede fast responses on Stream 3.",
+            "values": {
+              "activeSide": "both"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "TLS ALPN Protocol Negotiation & Flow Control Windows (SETTINGS, WINDOW_UPDATE)",
+      "codeHash": "70989ec8cd17558a854cc3ccdbd907e60b68c3e4baba6cedaf98e1324e8bcc12",
+      "spec": {
+        "template": "flow",
+        "title": "TLS ALPN Protocol Negotiation & Dual-Window Flow Control",
+        "nodes": [
+          {
+            "id": "hello",
+            "label": "TLS ClientHello",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "alpn",
+            "label": "ALPN Negotiation",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "settings",
+            "label": "SETTINGS Frames",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "window",
+            "label": "WINDOW_UPDATE",
+            "sub": "Active Stage",
+            "status": "ok"
+          }
+        ],
+        "edges": [
+          {
+            "from": "hello",
+            "to": "alpn",
+            "label": "Advertise 'h2'"
+          },
+          {
+            "from": "alpn",
+            "to": "settings",
+            "label": "Handshake Confirmed"
+          },
+          {
+            "from": "settings",
+            "to": "window",
+            "label": "Manage Credit Windows"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Client advertises HTTP/2 support via ALPN extension in TLS ClientHello.",
+            "values": {
+              "hello": {
+                "status": "Online"
+              },
+              "alpn": {
+                "status": "Online"
+              },
+              "settings": {
+                "status": "Online"
+              },
+              "window": {
+                "status": "Online"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Server confirms 'h2' negotiation in ServerHello without extra round trips.",
+            "values": {
+              "hello": {
+                "status": "Processing"
+              },
+              "alpn": {
+                "status": "Processing"
+              },
+              "settings": {
+                "status": "Processing"
+              },
+              "window": {
+                "status": "Processing"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Peers exchange SETTINGS frames to establish stream concurrency and table sizes.",
+            "values": {
+              "hello": {
+                "status": "Committed"
+              },
+              "alpn": {
+                "status": "Committed"
+              },
+              "settings": {
+                "status": "Committed"
+              },
+              "window": {
+                "status": "Committed"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "WINDOW_UPDATE frames dynamically replenish byte credits to prevent buffer overflow.",
+            "values": {
+              "hello": {
+                "status": "Online"
+              },
+              "alpn": {
+                "status": "Online"
+              },
+              "settings": {
+                "status": "Online"
+              },
+              "window": {
+                "status": "Online"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "gRPC Architectural Fundamentals: HTTP/2 Underpinnings, Protobuf Contracts & Type Safety",
+      "codeHash": "5594beeb4e8e3debc343c17ffc4b329df5020468f433880b5c9a846e8f0d0906",
+      "spec": {
+        "template": "boxes",
+        "title": "gRPC Architectural Fundamentals & Method Routing",
+        "items": [
+          {
+            "id": "path",
+            "title": "HTTP/2 POST Mapping",
+            "desc": "Path mapped to /package.Service/Method name",
+            "status": "ok"
+          },
+          {
+            "id": "content",
+            "title": "Content-Type Header",
+            "desc": "Strictly set to application/grpc (+proto)",
+            "status": "ok"
+          },
+          {
+            "id": "prefix",
+            "title": "5-Byte Message Framing",
+            "desc": "1-byte compressed flag + 4-byte big-endian length",
+            "status": "ok"
+          },
+          {
+            "id": "status",
+            "title": "grpc-status Trailer",
+            "desc": "Dedicated status trailer returned in final HEADERS frame",
+            "status": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Every gRPC method call maps directly to an HTTP/2 POST request path.",
+            "values": {
+              "path": {
+                "status": "Inspecting"
+              },
+              "content": {
+                "status": "Inspecting"
+              },
+              "prefix": {
+                "status": "Inspecting"
+              },
+              "status": {
+                "status": "Inspecting"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Application/grpc content type ensures binary Protocol Buffer transport.",
+            "values": {
+              "path": {
+                "status": "Synchronized"
+              },
+              "content": {
+                "status": "Synchronized"
+              },
+              "prefix": {
+                "status": "Synchronized"
+              },
+              "status": {
+                "status": "Synchronized"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "5-byte framing enables length-prefixed streaming over DATA frames.",
+            "values": {
+              "path": {
+                "status": "Synchronized"
+              },
+              "content": {
+                "status": "Synchronized"
+              },
+              "prefix": {
+                "status": "Synchronized"
+              },
+              "status": {
+                "status": "Synchronized"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Standardized grpc-status trailer conveys explicit error codes independently.",
+            "values": {
+              "path": {
+                "status": "Synchronized"
+              },
+              "content": {
+                "status": "Synchronized"
+              },
+              "prefix": {
+                "status": "Synchronized"
+              },
+              "status": {
+                "status": "Synchronized"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Unary vs Streaming RPC Models: Server-Streaming, Client-Streaming & Bidirectional Duplex",
+      "codeHash": "7bb25d081bcf210e8773959791fb346524d72f945bd6016a4881cfa8215fd728",
+      "spec": {
+        "template": "states",
+        "title": "Four gRPC RPC Communication Models: Unary to Duplex",
+        "items": [
+          {
+            "id": "m_unary",
+            "name": "Unary RPC",
+            "state": "active"
+          },
+          {
+            "id": "m_server",
+            "name": "Server Streaming RPC",
+            "state": "active"
+          },
+          {
+            "id": "m_client",
+            "name": "Client Streaming RPC",
+            "state": "active"
+          },
+          {
+            "id": "m_bidi",
+            "name": "Bidirectional Duplex RPC",
+            "state": "active"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Unary model: Single request message produces a single response message.",
+            "values": {
+              "m_unary": {
+                "state": "idle"
+              },
+              "m_server": {
+                "state": "idle"
+              },
+              "m_client": {
+                "state": "idle"
+              },
+              "m_bidi": {
+                "state": "idle"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Server-streaming model: Single request initiates a continuous stream of responses.",
+            "values": {
+              "m_unary": {
+                "state": "active"
+              },
+              "m_server": {
+                "state": "active"
+              },
+              "m_client": {
+                "state": "active"
+              },
+              "m_bidi": {
+                "state": "active"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Client-streaming model: Continuous stream of requests finishes with one response.",
+            "values": {
+              "m_unary": {
+                "state": "transitioning"
+              },
+              "m_server": {
+                "state": "transitioning"
+              },
+              "m_client": {
+                "state": "transitioning"
+              },
+              "m_bidi": {
+                "state": "transitioning"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Bidirectional duplex model: Both peers stream messages concurrently in real time.",
+            "values": {
+              "m_unary": {
+                "state": "idle"
+              },
+              "m_server": {
+                "state": "idle"
+              },
+              "m_client": {
+                "state": "idle"
+              },
+              "m_bidi": {
+                "state": "idle"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production gRPC Interceptors: Metadata Propagation, Deadline Budgets & Circuit Breakers",
+      "codeHash": "788e32b7411c440a6a75177d83e106df73497239428d2150742d6f2c08ed46f6",
+      "spec": {
+        "template": "flow",
+        "title": "Enterprise gRPC Interceptor Chain & Deadline Budget Pipeline",
+        "nodes": [
+          {
+            "id": "inbound",
+            "label": "RPC Ingress",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "auth",
+            "label": "Auth Interceptor",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "deadline",
+            "label": "Deadline Interceptor",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "trace",
+            "label": "Trace Interceptor",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "handler",
+            "label": "Service Handler",
+            "sub": "Active Stage",
+            "status": "ok"
+          }
+        ],
+        "edges": [
+          {
+            "from": "inbound",
+            "to": "auth",
+            "label": "Check Metadata"
+          },
+          {
+            "from": "auth",
+            "to": "deadline",
+            "label": "Verify Budget"
+          },
+          {
+            "from": "deadline",
+            "to": "trace",
+            "label": "Bind ALS Context"
+          },
+          {
+            "from": "trace",
+            "to": "handler",
+            "label": "Execute Business Logic"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Inbound RPC arrives at server and enters the interceptor pipeline.",
+            "values": {
+              "inbound": {
+                "status": "Online"
+              },
+              "auth": {
+                "status": "Online"
+              },
+              "deadline": {
+                "status": "Online"
+              },
+              "trace": {
+                "status": "Online"
+              },
+              "handler": {
+                "status": "Online"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Auth interceptor validates bearer tokens in incoming metadata headers.",
+            "values": {
+              "inbound": {
+                "status": "Processing"
+              },
+              "auth": {
+                "status": "Processing"
+              },
+              "deadline": {
+                "status": "Processing"
+              },
+              "trace": {
+                "status": "Processing"
+              },
+              "handler": {
+                "status": "Processing"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Deadline interceptor evaluates remaining budget and aborts expired calls.",
+            "values": {
+              "inbound": {
+                "status": "Committed"
+              },
+              "auth": {
+                "status": "Committed"
+              },
+              "deadline": {
+                "status": "Committed"
+              },
+              "trace": {
+                "status": "Committed"
+              },
+              "handler": {
+                "status": "Committed"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Trace interceptor extracts W3C traceparent and binds AsyncLocalStorage context.",
+            "values": {
+              "inbound": {
+                "status": "Online"
+              },
+              "auth": {
+                "status": "Online"
+              },
+              "deadline": {
+                "status": "Online"
+              },
+              "trace": {
+                "status": "Online"
+              },
+              "handler": {
+                "status": "Online"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

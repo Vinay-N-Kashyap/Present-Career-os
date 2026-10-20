@@ -1,0 +1,529 @@
+{
+  "schemaVersion": 2,
+  "prefix": "node-web",
+  "day": 43,
+  "promptSha": "block9_expansion",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Text Serialization Tax: CPU Overhead of JSON.stringify & JSON.parse at Scale",
+      "codeHash": "09852523c06d667a9f92fbbbd004fdf202e79c4e44f6afc1b9ed1720f02565ab",
+      "spec": {
+        "template": "compare",
+        "title": "Textual JSON vs Binary Protocols: Latency & CPU Overhead",
+        "left": {
+          "title": "JSON Textual Serialization",
+          "points": [
+            "Requires string parsing, character escaping, and property key transmission",
+            "Allocates millions of short-lived young generation strings in V8",
+            "High wire bandwidth overhead due to repeated metadata keys"
+          ]
+        },
+        "right": {
+          "title": "Binary Serialization (Protobuf/MsgPack)",
+          "points": [
+            "Compact Tag-Length-Value encoding without transmitting property names",
+            "Zero string parsing overhead; direct binary decoding via bitwise ops",
+            "Reduces wire payload size by 60% to 80% and cuts CPU usage by 70%"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "JSON format redundantly repeats key strings for every single record on the wire.",
+            "values": {
+              "activeSide": "left"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Binary protocols encode schema fields as compact integer tags and type markers.",
+            "values": {
+              "activeSide": "right"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "V8 decodes binary payloads directly into typed memory structures.",
+            "values": {
+              "activeSide": "both"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Binary streaming drastically cuts wire bandwidth and garbage collection pauses.",
+            "values": {
+              "activeSide": "both"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Protocol Buffers Wire Format: Varints, Tag-Length-Value (TLV) & Zigzag Encoding",
+      "codeHash": "e9961e3cf9ae5324b099860949664b476231b8e702f7c785aba07670f2a1f1c7",
+      "spec": {
+        "template": "boxes",
+        "title": "Protocol Buffers Tag-Length-Value Wire Format",
+        "items": [
+          {
+            "id": "tag",
+            "title": "Field Tag",
+            "desc": "(fieldNumber << 3) | wireType encoded as Varint",
+            "status": "ok"
+          },
+          {
+            "id": "type_0",
+            "title": "Wire Type 0",
+            "desc": "Varint integers, booleans, and enum values",
+            "status": "ok"
+          },
+          {
+            "id": "type_1",
+            "title": "Wire Type 1",
+            "desc": "Fixed 64-bit floating point and integer numbers",
+            "status": "ok"
+          },
+          {
+            "id": "type_2",
+            "title": "Wire Type 2",
+            "desc": "Length-delimited byte arrays, strings, and sub-messages",
+            "status": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Field tag combines 1-based field number with 3-bit wire type identifier.",
+            "values": {
+              "tag": {
+                "status": "Inspecting"
+              },
+              "type_0": {
+                "status": "Inspecting"
+              },
+              "type_1": {
+                "status": "Inspecting"
+              },
+              "type_2": {
+                "status": "Inspecting"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Varint encoding compresses integers using 7 payload bits per byte.",
+            "values": {
+              "tag": {
+                "status": "Synchronized"
+              },
+              "type_0": {
+                "status": "Synchronized"
+              },
+              "type_1": {
+                "status": "Synchronized"
+              },
+              "type_2": {
+                "status": "Synchronized"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Fixed-width types provide fast direct memory copying for float64 and uint64.",
+            "values": {
+              "tag": {
+                "status": "Synchronized"
+              },
+              "type_0": {
+                "status": "Synchronized"
+              },
+              "type_1": {
+                "status": "Synchronized"
+              },
+              "type_2": {
+                "status": "Synchronized"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Length-delimited fields carry explicit byte length headers for binary payloads.",
+            "values": {
+              "tag": {
+                "status": "Synchronized"
+              },
+              "type_0": {
+                "status": "Synchronized"
+              },
+              "type_1": {
+                "status": "Synchronized"
+              },
+              "type_2": {
+                "status": "Synchronized"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "MessagePack Dynamic Binary Serialization: Type Prefixes & Compact Packing",
+      "codeHash": "8418b0a05374fafb4d87ed70f57431bae0ed077477b0521513f899a6966e12ff",
+      "spec": {
+        "template": "flow",
+        "title": "Varint & ZigZag Encoding Bitwise Architecture",
+        "nodes": [
+          {
+            "id": "input",
+            "label": "Integer Input",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "zigzag",
+            "label": "ZigZag Folding",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "varint",
+            "label": "7-Bit Chunking",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "wire",
+            "label": "Wire Bytes",
+            "sub": "Active Stage",
+            "status": "ok"
+          }
+        ],
+        "edges": [
+          {
+            "from": "input",
+            "to": "zigzag",
+            "label": "Signed Int (-1)"
+          },
+          {
+            "from": "zigzag",
+            "to": "varint",
+            "label": "(n << 1) ^ (n >> 31)"
+          },
+          {
+            "from": "varint",
+            "to": "wire",
+            "label": "Set MSB = 1"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Signed integers undergo ZigZag encoding to map negative numbers to small positive ints.",
+            "values": {
+              "input": {
+                "status": "Online"
+              },
+              "zigzag": {
+                "status": "Online"
+              },
+              "varint": {
+                "status": "Online"
+              },
+              "wire": {
+                "status": "Online"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Input value is split into 7-bit payload chunks from least to most significant.",
+            "values": {
+              "input": {
+                "status": "Processing"
+              },
+              "zigzag": {
+                "status": "Processing"
+              },
+              "varint": {
+                "status": "Processing"
+              },
+              "wire": {
+                "status": "Processing"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "MSB (Most Significant Bit, 0x80) is set to 1 for all continuation bytes.",
+            "values": {
+              "input": {
+                "status": "Committed"
+              },
+              "zigzag": {
+                "status": "Committed"
+              },
+              "varint": {
+                "status": "Committed"
+              },
+              "wire": {
+                "status": "Committed"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Final byte clears MSB to 0, signaling the end of the Varint sequence.",
+            "values": {
+              "input": {
+                "status": "Online"
+              },
+              "zigzag": {
+                "status": "Online"
+              },
+              "varint": {
+                "status": "Online"
+              },
+              "wire": {
+                "status": "Online"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Zero-Copy Binary Manipulation: TypedArrays, ArrayBuffer & Buffer Subarray Slicing",
+      "codeHash": "b2c1b3d8bfa7ab53c300c9521ac4974477a47d73176d22e91bc610f0afe15132",
+      "spec": {
+        "template": "boxes",
+        "title": "MessagePack Type Markers & Dynamic Binary Serialization",
+        "items": [
+          {
+            "id": "fixint",
+            "title": "Positive / Negative Fixint",
+            "desc": "Compact 1-byte encoding for integers from -32 to 127",
+            "status": "ok"
+          },
+          {
+            "id": "fixstr",
+            "title": "FixStr Header",
+            "desc": "Single byte header for strings up to 31 bytes length",
+            "status": "ok"
+          },
+          {
+            "id": "fixmap",
+            "title": "FixMap Header",
+            "desc": "Single byte header for key-value maps with <= 15 entries",
+            "status": "ok"
+          },
+          {
+            "id": "bin_ext",
+            "title": "Binary & Ext Types",
+            "desc": "Explicit type headers for raw byte arrays and timestamps",
+            "status": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "MessagePack uses prefix byte markers to denote type and length simultaneously.",
+            "values": {
+              "fixint": {
+                "status": "Inspecting"
+              },
+              "fixstr": {
+                "status": "Inspecting"
+              },
+              "fixmap": {
+                "status": "Inspecting"
+              },
+              "bin_ext": {
+                "status": "Inspecting"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Small integers and short strings encode in a single byte without schema files.",
+            "values": {
+              "fixint": {
+                "status": "Synchronized"
+              },
+              "fixstr": {
+                "status": "Synchronized"
+              },
+              "fixmap": {
+                "status": "Synchronized"
+              },
+              "bin_ext": {
+                "status": "Synchronized"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Key-value maps encode efficiently without requiring textual JSON delimiters.",
+            "values": {
+              "fixint": {
+                "status": "Synchronized"
+              },
+              "fixstr": {
+                "status": "Synchronized"
+              },
+              "fixmap": {
+                "status": "Synchronized"
+              },
+              "bin_ext": {
+                "status": "Synchronized"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Extension types support high-precision timestamps and binary buffers.",
+            "values": {
+              "fixint": {
+                "status": "Synchronized"
+              },
+              "fixstr": {
+                "status": "Synchronized"
+              },
+              "fixmap": {
+                "status": "Synchronized"
+              },
+              "bin_ext": {
+                "status": "Synchronized"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "High-Throughput Binary WebSocket Frame Multiplexing & Micro-Benchmark Suite",
+      "codeHash": "24715070dd42538bb90bbe039cc6929c6b28527ab0380be1295ae020542bad14",
+      "spec": {
+        "template": "flow",
+        "title": "Binary WebSocket High-Throughput Order Stream Pipeline",
+        "nodes": [
+          {
+            "id": "order",
+            "label": "Order Matching Engine",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "serialize",
+            "label": "Binary Encoder",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "socket",
+            "label": "WebSocket Gateway",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "client",
+            "label": "Trading Terminal",
+            "sub": "Active Stage",
+            "status": "ok"
+          }
+        ],
+        "edges": [
+          {
+            "from": "order",
+            "to": "serialize",
+            "label": "Raw Tick"
+          },
+          {
+            "from": "serialize",
+            "to": "socket",
+            "label": "Protobuf Frame"
+          },
+          {
+            "from": "socket",
+            "to": "client",
+            "label": "Binary Stream"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Trading engine emits high-velocity market data ticks to gateway.",
+            "values": {
+              "order": {
+                "status": "Online"
+              },
+              "serialize": {
+                "status": "Online"
+              },
+              "socket": {
+                "status": "Online"
+              },
+              "client": {
+                "status": "Online"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Serializer encodes tick into compact Protocol Buffer binary frames.",
+            "values": {
+              "order": {
+                "status": "Processing"
+              },
+              "serialize": {
+                "status": "Processing"
+              },
+              "socket": {
+                "status": "Processing"
+              },
+              "client": {
+                "status": "Processing"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "WebSocket gateway broadcasts binary frames over persistent TCP sockets.",
+            "values": {
+              "order": {
+                "status": "Committed"
+              },
+              "serialize": {
+                "status": "Committed"
+              },
+              "socket": {
+                "status": "Committed"
+              },
+              "client": {
+                "status": "Committed"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Trading terminal decodes binary payload with sub-millisecond latency.",
+            "values": {
+              "order": {
+                "status": "Online"
+              },
+              "serialize": {
+                "status": "Online"
+              },
+              "socket": {
+                "status": "Online"
+              },
+              "client": {
+                "status": "Online"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

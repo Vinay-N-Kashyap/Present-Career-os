@@ -1,0 +1,529 @@
+{
+  "schemaVersion": 2,
+  "prefix": "node-web",
+  "day": 42,
+  "promptSha": "block9_expansion",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "V8 Memory Layout: Semi-Space Scavenger, Old Generation Mark-Sweep & Compaction",
+      "codeHash": "35fabcfa9e1836a9623bec3ac2e4b84dfaa0e63abafb950691fd0919569e74a7",
+      "spec": {
+        "template": "boxes",
+        "title": "V8 Memory Architecture: Heap vs Stack vs Off-Heap Buffers",
+        "items": [
+          {
+            "id": "young",
+            "title": "Young Generation",
+            "desc": "Eden and Semi-spaces for short-lived allocations",
+            "status": "ok"
+          },
+          {
+            "id": "old",
+            "title": "Old Generation",
+            "desc": "Tenured objects surviving multiple Scavenge cycles",
+            "status": "ok"
+          },
+          {
+            "id": "large",
+            "title": "Large Object Space",
+            "desc": "Allocations exceeding pointer thresholds",
+            "status": "ok"
+          },
+          {
+            "id": "off_heap",
+            "title": "Off-Heap Buffers",
+            "desc": "Native C++ memory allocated outside V8 heap limits",
+            "status": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Young generation manages transient objects with high-speed Scavenge cycles.",
+            "values": {
+              "young": {
+                "status": "Inspecting"
+              },
+              "old": {
+                "status": "Inspecting"
+              },
+              "large": {
+                "status": "Inspecting"
+              },
+              "off_heap": {
+                "status": "Inspecting"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Tenured surviving objects migrate to Old generation via promotion.",
+            "values": {
+              "young": {
+                "status": "Synchronized"
+              },
+              "old": {
+                "status": "Synchronized"
+              },
+              "large": {
+                "status": "Synchronized"
+              },
+              "off_heap": {
+                "status": "Synchronized"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Large object space bypasses standard garbage collection compaction.",
+            "values": {
+              "young": {
+                "status": "Synchronized"
+              },
+              "old": {
+                "status": "Synchronized"
+              },
+              "large": {
+                "status": "Synchronized"
+              },
+              "off_heap": {
+                "status": "Synchronized"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Off-heap buffers interact directly with operating system kernel sockets.",
+            "values": {
+              "young": {
+                "status": "Synchronized"
+              },
+              "old": {
+                "status": "Synchronized"
+              },
+              "large": {
+                "status": "Synchronized"
+              },
+              "off_heap": {
+                "status": "Synchronized"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Three Classical Node.js Memory Leaks: Forgotten Closures, Lingering Event Listeners & Caches",
+      "codeHash": "ff2018105c1bb2665c983f8138efc0a2b4f3a47095e2dcd5357212df542f0038",
+      "spec": {
+        "template": "compare",
+        "title": "Generational Garbage Collection: Young Scavenge vs Old Mark-Sweep",
+        "left": {
+          "title": "Scavenge GC (Young Gen)",
+          "points": [
+            "Runs frequently on Eden and Semi-space buffers (sub-millisecond)",
+            "Uses Cheney copying algorithm between To and From spaces",
+            "Extremely fast with minor CPU overhead"
+          ]
+        },
+        "right": {
+          "title": "Mark-Sweep-Compact (Old Gen)",
+          "points": [
+            "Runs periodically on Tenured space when memory pressure spikes",
+            "Traverses entire object graph from GC roots to identify live objects",
+            "Introduces Stop-The-World latency pauses under high heap sizes"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Scavenger rapidly copies surviving young objects between semi-spaces.",
+            "values": {
+              "activeSide": "left"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Surviving objects are promoted to the old generation space.",
+            "values": {
+              "activeSide": "right"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Mark-Sweep marks all reachable roots across the old generation heap.",
+            "values": {
+              "activeSide": "both"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Compaction eliminates heap fragmentation to preserve contiguous memory.",
+            "values": {
+              "activeSide": "both"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Programmatic Heap Profiling: v8.getHeapSnapshot() & Allocation Sampling Timelines",
+      "codeHash": "9f566dd21bd2a1b65813c64f10dabb7f4a380a43b14036f679f0a0961fdadfb7",
+      "spec": {
+        "template": "flow",
+        "title": "Memory Leak Signatures & Detached Closure Retainers",
+        "nodes": [
+          {
+            "id": "root",
+            "label": "Global / Static Scope",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "leak",
+            "label": "Unbounded Collection",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "closure",
+            "label": "Retained Closure",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "heap",
+            "label": "Heap Exhaustion",
+            "sub": "Active Stage",
+            "status": "ok"
+          }
+        ],
+        "edges": [
+          {
+            "from": "root",
+            "to": "leak",
+            "label": "Accidental Retention"
+          },
+          {
+            "from": "leak",
+            "to": "closure",
+            "label": "Hold Variable Reference"
+          },
+          {
+            "from": "closure",
+            "to": "heap",
+            "label": "Prevent V8 Reclamation"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Accidental global or module-level collections retain object references.",
+            "values": {
+              "root": {
+                "status": "Online"
+              },
+              "leak": {
+                "status": "Online"
+              },
+              "closure": {
+                "status": "Online"
+              },
+              "heap": {
+                "status": "Online"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Event listener closures inadvertently hold outer lexical scope variables.",
+            "values": {
+              "root": {
+                "status": "Processing"
+              },
+              "leak": {
+                "status": "Processing"
+              },
+              "closure": {
+                "status": "Processing"
+              },
+              "heap": {
+                "status": "Processing"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "V8 garbage collector cannot reclaim objects linked to active GC roots.",
+            "values": {
+              "root": {
+                "status": "Committed"
+              },
+              "leak": {
+                "status": "Committed"
+              },
+              "closure": {
+                "status": "Committed"
+              },
+              "heap": {
+                "status": "Committed"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Continuous allocation without eviction leads directly to out-of-memory crashes.",
+            "values": {
+              "root": {
+                "status": "Online"
+              },
+              "leak": {
+                "status": "Online"
+              },
+              "closure": {
+                "status": "Online"
+              },
+              "heap": {
+                "status": "Online"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Retaining Trees & Distance Metrics: Dominator Trees, Shallow vs Retained Size",
+      "codeHash": "503d2e9dc3c0af8f017893a901d840c476a01620f4c61fcc464c859edbc8a219",
+      "spec": {
+        "template": "boxes",
+        "title": "Heap Snapshot Comparison & Retainer Tree Analysis",
+        "items": [
+          {
+            "id": "snap1",
+            "title": "Baseline Snapshot",
+            "desc": "Initial memory profile at application startup",
+            "status": "ok"
+          },
+          {
+            "id": "snap2",
+            "title": "Peak Load Snapshot",
+            "desc": "Memory profile under sustained concurrent load",
+            "status": "ok"
+          },
+          {
+            "id": "delta",
+            "title": "Delta Analysis",
+            "desc": "Objects with positive delta count and zero reclamation",
+            "status": "ok"
+          },
+          {
+            "id": "retainer",
+            "title": "Retainer Path",
+            "desc": "Shortest path to GC root identifying the leak source",
+            "status": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Capture baseline heap snapshot before initiating synthetic workload.",
+            "values": {
+              "snap1": {
+                "status": "Inspecting"
+              },
+              "snap2": {
+                "status": "Inspecting"
+              },
+              "delta": {
+                "status": "Inspecting"
+              },
+              "retainer": {
+                "status": "Inspecting"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Capture post-workload snapshot and calculate object allocation deltas.",
+            "values": {
+              "snap1": {
+                "status": "Synchronized"
+              },
+              "snap2": {
+                "status": "Synchronized"
+              },
+              "delta": {
+                "status": "Synchronized"
+              },
+              "retainer": {
+                "status": "Synchronized"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Filter snapshot by constructor name and inspect Shallow vs Retained sizes.",
+            "values": {
+              "snap1": {
+                "status": "Synchronized"
+              },
+              "snap2": {
+                "status": "Synchronized"
+              },
+              "delta": {
+                "status": "Synchronized"
+              },
+              "retainer": {
+                "status": "Synchronized"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Traverse the Retainer Tree to identify the exact variable preventing collection.",
+            "values": {
+              "snap1": {
+                "status": "Synchronized"
+              },
+              "snap2": {
+                "status": "Synchronized"
+              },
+              "delta": {
+                "status": "Synchronized"
+              },
+              "retainer": {
+                "status": "Synchronized"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Memory Watchdogs: Automated Heap Evacuation & Graceful Worker Recycling",
+      "codeHash": "3168d8fd1b4c3b66730296e84ea86498c855b9687b0926be2dce0642b6223237",
+      "spec": {
+        "template": "flow",
+        "title": "Production Memory Leak Isolation Engine Pipeline",
+        "nodes": [
+          {
+            "id": "monitor",
+            "label": "RSS / Heap Monitor",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "trigger",
+            "label": "Threshold Trigger",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "profile",
+            "label": "Heap Profiler",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "isolate",
+            "label": "Root Remediation",
+            "sub": "Active Stage",
+            "status": "ok"
+          }
+        ],
+        "edges": [
+          {
+            "from": "monitor",
+            "to": "trigger",
+            "label": "Memory > 85%"
+          },
+          {
+            "from": "trigger",
+            "to": "profile",
+            "label": "Generate Snapshot"
+          },
+          {
+            "from": "profile",
+            "to": "isolate",
+            "label": "Inspect Retainers"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Continuous background telemetry tracks heapUsed and RSS trends.",
+            "values": {
+              "monitor": {
+                "status": "Online"
+              },
+              "trigger": {
+                "status": "Online"
+              },
+              "profile": {
+                "status": "Online"
+              },
+              "isolate": {
+                "status": "Online"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Memory growth exceeding dynamic thresholds triggers diagnostic capture.",
+            "values": {
+              "monitor": {
+                "status": "Processing"
+              },
+              "trigger": {
+                "status": "Processing"
+              },
+              "profile": {
+                "status": "Processing"
+              },
+              "isolate": {
+                "status": "Processing"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Profiler captures V8 heap snapshot to persistent diagnostic storage.",
+            "values": {
+              "monitor": {
+                "status": "Committed"
+              },
+              "trigger": {
+                "status": "Committed"
+              },
+              "profile": {
+                "status": "Committed"
+              },
+              "isolate": {
+                "status": "Committed"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Retainer analysis identifies leaking event listeners and unbounded caches.",
+            "values": {
+              "monitor": {
+                "status": "Online"
+              },
+              "trigger": {
+                "status": "Online"
+              },
+              "profile": {
+                "status": "Online"
+              },
+              "isolate": {
+                "status": "Online"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
