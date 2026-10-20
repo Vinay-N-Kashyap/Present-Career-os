@@ -1,0 +1,611 @@
+{
+  "schemaVersion": 2,
+  "prefix": "node-web",
+  "day": 50,
+  "promptSha": "block10_expansion",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Milestone 9 Architecture Topology: Raft Consensus Core, Ephemeral Leases & Distributed Lock Engine",
+      "codeHash": "24e5403163ce8b82c9b1421ab043cccd11ced9a36938b16b73e0f7318951a75d",
+      "spec": {
+        "template": "flow",
+        "title": "Milestone 9 Consensus Cluster & Distributed Locking Topology",
+        "nodes": [
+          {
+            "id": "client",
+            "label": "Microservice Client",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "leader",
+            "label": "Raft Consensus Leader",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "quorum",
+            "label": "Majority Followers",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "fencing",
+            "label": "Downstream Fencing Gate",
+            "sub": "Active Stage",
+            "status": "ok"
+          }
+        ],
+        "edges": [
+          {
+            "from": "client",
+            "to": "leader",
+            "label": "AcquireLock(TTL=5000ms)"
+          },
+          {
+            "from": "leader",
+            "to": "quorum",
+            "label": "Replicate Lease Entry"
+          },
+          {
+            "from": "quorum",
+            "to": "leader",
+            "label": "Quorum Commit Ack"
+          },
+          {
+            "from": "leader",
+            "to": "fencing",
+            "label": "Issue Fencing Token"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Client submits distributed lock lease request to Raft leader.",
+            "values": {
+              "client": {
+                "status": "Online"
+              },
+              "leader": {
+                "status": "Online"
+              },
+              "quorum": {
+                "status": "Online"
+              },
+              "fencing": {
+                "status": "Online"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Leader replicates lock lease entry across majority quorum of followers.",
+            "values": {
+              "client": {
+                "status": "Processing"
+              },
+              "leader": {
+                "status": "Processing"
+              },
+              "quorum": {
+                "status": "Processing"
+              },
+              "fencing": {
+                "status": "Processing"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Follower quorum commits lease entry to durable consensus log.",
+            "values": {
+              "client": {
+                "status": "Committed"
+              },
+              "leader": {
+                "status": "Committed"
+              },
+              "quorum": {
+                "status": "Committed"
+              },
+              "fencing": {
+                "status": "Committed"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Leader returns granted lease with monotonically increasing fencing token.",
+            "values": {
+              "client": {
+                "status": "Online"
+              },
+              "leader": {
+                "status": "Online"
+              },
+              "quorum": {
+                "status": "Online"
+              },
+              "fencing": {
+                "status": "Online"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Raft Term & Heartbeat Engine: Follower-to-Candidate Transitions & Majority Quorum Elections",
+      "codeHash": "7df566ed69c54170ee9ef7e806ae143daca4aff0a24912e90da569947bf07e2b",
+      "spec": {
+        "template": "states",
+        "title": "Milestone 9 Raft Cluster Node Election & Failover States",
+        "items": [
+          {
+            "id": "follower",
+            "name": "FOLLOWER",
+            "state": "active"
+          },
+          {
+            "id": "candidate",
+            "name": "CANDIDATE",
+            "state": "idle"
+          },
+          {
+            "id": "leader",
+            "name": "LEADER",
+            "state": "idle"
+          },
+          {
+            "id": "dead",
+            "name": "CRASHED",
+            "state": "idle"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Follower processes consensus heartbeats from active leader.",
+            "values": {
+              "follower": {
+                "state": "idle"
+              },
+              "candidate": {
+                "state": "idle"
+              },
+              "leader": {
+                "state": "idle"
+              },
+              "dead": {
+                "state": "idle"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Upon heartbeat silence, follower promotes to CANDIDATE for next term.",
+            "values": {
+              "follower": {
+                "state": "active"
+              },
+              "candidate": {
+                "state": "active"
+              },
+              "leader": {
+                "state": "active"
+              },
+              "dead": {
+                "state": "active"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Candidate collects majority quorum votes and becomes cluster LEADER.",
+            "values": {
+              "follower": {
+                "state": "transitioning"
+              },
+              "candidate": {
+                "state": "transitioning"
+              },
+              "leader": {
+                "state": "transitioning"
+              },
+              "dead": {
+                "state": "transitioning"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Leader crash triggers instantaneous successor election.",
+            "values": {
+              "follower": {
+                "state": "idle"
+              },
+              "candidate": {
+                "state": "idle"
+              },
+              "leader": {
+                "state": "idle"
+              },
+              "dead": {
+                "state": "idle"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Distributed Mutex & Fencing Token Protocol: Linearizable Lease Grants & Monotonic Fencing Counters",
+      "codeHash": "febf66fd19f8732d2f08fbd534f1239dce57f8c0b93ba6d4441a679f65263446",
+      "spec": {
+        "template": "flow",
+        "title": "Distributed Mutex & Monotonic Fencing Token Protocol",
+        "nodes": [
+          {
+            "id": "client1",
+            "label": "Client 1 (Paused)",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "client2",
+            "label": "Client 2 (Active)",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "storage",
+            "label": "Storage Fencing Gate",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "db",
+            "label": "Committed Database",
+            "sub": "Active Stage",
+            "status": "ok"
+          }
+        ],
+        "edges": [
+          {
+            "from": "client2",
+            "to": "storage",
+            "label": "Write(Token=1002)"
+          },
+          {
+            "from": "storage",
+            "to": "db",
+            "label": "Commit High-Water Mark"
+          },
+          {
+            "from": "client1",
+            "to": "storage",
+            "label": "Stale Write(Token=1001)"
+          },
+          {
+            "from": "storage",
+            "to": "client1",
+            "label": "REJECT: INVALID_TOKEN"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Client 1 acquires lock (Token 1001) but enters prolonged GC pause.",
+            "values": {
+              "client1": {
+                "status": "Online"
+              },
+              "client2": {
+                "status": "Online"
+              },
+              "storage": {
+                "status": "Online"
+              },
+              "db": {
+                "status": "Online"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Lease expires; Client 2 acquires lock (Token 1002) and commits cleanly.",
+            "values": {
+              "client1": {
+                "status": "Processing"
+              },
+              "client2": {
+                "status": "Processing"
+              },
+              "storage": {
+                "status": "Processing"
+              },
+              "db": {
+                "status": "Processing"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Client 1 resumes and attempts write with stale Token 1001.",
+            "values": {
+              "client1": {
+                "status": "Committed"
+              },
+              "client2": {
+                "status": "Committed"
+              },
+              "storage": {
+                "status": "Committed"
+              },
+              "db": {
+                "status": "Committed"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Storage gate rejects Client 1 write, protecting data integrity.",
+            "values": {
+              "client1": {
+                "status": "Online"
+              },
+              "client2": {
+                "status": "Online"
+              },
+              "storage": {
+                "status": "Online"
+              },
+              "db": {
+                "status": "Online"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Dynamic Cluster Membership & Automated Failover: Heartbeat Loss, Leader Failover & Lease Migration",
+      "codeHash": "4b05b7ecbb7472000f8c575febd2ec59cfffd9874254dd5598cbfccb5114be14",
+      "spec": {
+        "template": "flow",
+        "title": "Cluster Failover & Log-Backed Lease Reconstruction",
+        "nodes": [
+          {
+            "id": "leader1",
+            "label": "Old Leader (Crashed)",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "log",
+            "label": "Replicated Consensus Log",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "leader2",
+            "label": "New Elected Leader",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "leases",
+            "label": "Restored Lease State",
+            "sub": "Active Stage",
+            "status": "ok"
+          }
+        ],
+        "edges": [
+          {
+            "from": "leader1",
+            "to": "log",
+            "label": "Committed Leases 1-100"
+          },
+          {
+            "from": "log",
+            "to": "leader2",
+            "label": "Replay Log on Election"
+          },
+          {
+            "from": "leader2",
+            "to": "leases",
+            "label": "Reconstruct Active Leases"
+          },
+          {
+            "from": "leases",
+            "to": "leader2",
+            "label": "Reap Expired TTLs"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Active leases are durably replicated into the Raft consensus log.",
+            "values": {
+              "leader1": {
+                "status": "Online"
+              },
+              "log": {
+                "status": "Online"
+              },
+              "leader2": {
+                "status": "Online"
+              },
+              "leases": {
+                "status": "Online"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Old leader crashes; new leader is elected by majority quorum.",
+            "values": {
+              "leader1": {
+                "status": "Processing"
+              },
+              "log": {
+                "status": "Processing"
+              },
+              "leader2": {
+                "status": "Processing"
+              },
+              "leases": {
+                "status": "Processing"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "New leader replays replicated log to reconstruct active leases.",
+            "values": {
+              "leader1": {
+                "status": "Committed"
+              },
+              "log": {
+                "status": "Committed"
+              },
+              "leader2": {
+                "status": "Committed"
+              },
+              "leases": {
+                "status": "Committed"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Lease continuity is maintained without dropping locks or deadlocks.",
+            "values": {
+              "leader1": {
+                "status": "Online"
+              },
+              "log": {
+                "status": "Online"
+              },
+              "leader2": {
+                "status": "Online"
+              },
+              "leases": {
+                "status": "Online"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production SLA Chaos Verification Suite & Milestone 9 Certification (Grade A+)",
+      "codeHash": "8269814c492fc9b7f5e07eee58c37475ce819dae67681cd05acd6178920600d2",
+      "spec": {
+        "template": "boxes",
+        "title": "Milestone 9 Production SLA Chaos Suite & Grade A+ Certification",
+        "items": [
+          {
+            "id": "election",
+            "title": "Sub-250ms Failover SLA",
+            "desc": "Leader failover resolved under 250ms with zero split-brain",
+            "status": "ok"
+          },
+          {
+            "id": "fencing",
+            "title": "Fencing Token Invariant",
+            "desc": "100% interception of stale writes from paused zombie clients",
+            "status": "ok"
+          },
+          {
+            "id": "durability",
+            "title": "Quorum Durability",
+            "desc": "Zero data loss across minority node hardware crashes",
+            "status": "ok"
+          },
+          {
+            "id": "certified",
+            "title": "Milestone 9 Certified",
+            "desc": "Grade A+ Enterprise Consensus Cluster & Lock Manager",
+            "status": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Full verification harness executes 100 concurrent lease operations.",
+            "values": {
+              "election": {
+                "status": "Inspecting"
+              },
+              "fencing": {
+                "status": "Inspecting"
+              },
+              "durability": {
+                "status": "Inspecting"
+              },
+              "certified": {
+                "status": "Inspecting"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Chaos harness kills leader and asserts instantaneous election.",
+            "values": {
+              "election": {
+                "status": "Synchronized"
+              },
+              "fencing": {
+                "status": "Synchronized"
+              },
+              "durability": {
+                "status": "Synchronized"
+              },
+              "certified": {
+                "status": "Synchronized"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Fencing token gate blocks stale writes from simulated paused clients.",
+            "values": {
+              "election": {
+                "status": "Synchronized"
+              },
+              "fencing": {
+                "status": "Synchronized"
+              },
+              "durability": {
+                "status": "Synchronized"
+              },
+              "certified": {
+                "status": "Synchronized"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Evaluation suite awards Grade A+ Enterprise Certification.",
+            "values": {
+              "election": {
+                "status": "Synchronized"
+              },
+              "fencing": {
+                "status": "Synchronized"
+              },
+              "durability": {
+                "status": "Synchronized"
+              },
+              "certified": {
+                "status": "Synchronized"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

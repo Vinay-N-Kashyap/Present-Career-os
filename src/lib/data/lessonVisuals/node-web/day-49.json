@@ -1,0 +1,463 @@
+{
+  "schemaVersion": 2,
+  "prefix": "node-web",
+  "day": 49,
+  "promptSha": "block10_expansion",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Service Discovery Topologies: Server-Side Proxies vs Client-Side Discovery & Service Registries",
+      "codeHash": "edcaed051601d1680019422247be7d657fee1ed2af6017ef2e918178111b6fcd",
+      "spec": {
+        "template": "compare",
+        "title": "Server-Side vs Client-Side Service Discovery",
+        "left": {
+          "title": "Server-Side Load Balancer",
+          "points": [
+            "Single point of failure and centralized network bottleneck",
+            "Extra network hop adds latency to every internal RPC call",
+            "Hard to implement advanced application-aware routing algorithms"
+          ]
+        },
+        "right": {
+          "title": "Client-Side Dynamic Discovery",
+          "points": [
+            "Clients query service registry and cache instance topology locally",
+            "Direct client-to-instance connections with zero extra hops",
+            "Enables smart routing (Peak-EWMA, Power of Two Choices, Canaries)"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Centralized load balancers introduce latency and scaling limits.",
+            "values": {
+              "activeSide": "left"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Client-side discovery enables direct zero-hop RPC routing.",
+            "values": {
+              "activeSide": "right"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Local caches protect clients against registry outages.",
+            "values": {
+              "activeSide": "both"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Client-side routing unlocks adaptive, latency-aware balancing.",
+            "values": {
+              "activeSide": "both"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Dynamic Registration & Ephemeral Heartbeats: Time-To-Live (TTL) Leases in Consul & etcd",
+      "codeHash": "750470070d474e1e38419ded64c7b3d2eef1603ef35b3b05f85d95290ef01118",
+      "spec": {
+        "template": "flow",
+        "title": "Ephemeral Service Registry & Heartbeat Lifecycle",
+        "nodes": [
+          {
+            "id": "service",
+            "label": "Microservice Instance",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "registry",
+            "label": "Consul/etcd Registry",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "reaper",
+            "label": "Lease Reaper",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "client",
+            "label": "Client Router",
+            "sub": "Active Stage",
+            "status": "ok"
+          }
+        ],
+        "edges": [
+          {
+            "from": "service",
+            "to": "registry",
+            "label": "Register(TTL=500ms)"
+          },
+          {
+            "from": "service",
+            "to": "registry",
+            "label": "Heartbeat Keepalive"
+          },
+          {
+            "from": "reaper",
+            "to": "registry",
+            "label": "Purge Expired Leases"
+          },
+          {
+            "from": "registry",
+            "to": "client",
+            "label": "Topology Update Watch"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Microservice boots and registers ephemeral lease with short TTL.",
+            "values": {
+              "service": {
+                "status": "Online"
+              },
+              "registry": {
+                "status": "Online"
+              },
+              "reaper": {
+                "status": "Online"
+              },
+              "client": {
+                "status": "Online"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Periodic background heartbeats refresh lease expiration timestamp.",
+            "values": {
+              "service": {
+                "status": "Processing"
+              },
+              "registry": {
+                "status": "Processing"
+              },
+              "reaper": {
+                "status": "Processing"
+              },
+              "client": {
+                "status": "Processing"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Lease reaper sweeps and evicts instances that fail to heartbeat.",
+            "values": {
+              "service": {
+                "status": "Committed"
+              },
+              "registry": {
+                "status": "Committed"
+              },
+              "reaper": {
+                "status": "Committed"
+              },
+              "client": {
+                "status": "Committed"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Client routers receive real-time topology notifications via watch API.",
+            "values": {
+              "service": {
+                "status": "Online"
+              },
+              "registry": {
+                "status": "Online"
+              },
+              "reaper": {
+                "status": "Online"
+              },
+              "client": {
+                "status": "Online"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Active vs Passive Health Checking: HTTP Probes, TCP Handshakes & Flapping Dampeners",
+      "codeHash": "794d2173215a6435cf21f49837dcf8b216ed79b81f410623bd316bd76ee34d2c",
+      "spec": {
+        "template": "boxes",
+        "title": "Health Checking & Flapping Protection Architecture",
+        "items": [
+          {
+            "id": "liveness",
+            "title": "Liveness Probes",
+            "desc": "Detects deadlocked event loops and triggers process restart",
+            "status": "ok"
+          },
+          {
+            "id": "readiness",
+            "title": "Readiness Probes",
+            "desc": "Verifies database/cache dependencies before routing traffic",
+            "status": "ok"
+          },
+          {
+            "id": "outlier",
+            "title": "Passive Outlier Detection",
+            "desc": "Quarantines instances returning consecutive 5xx errors",
+            "status": "ok"
+          },
+          {
+            "id": "flapping",
+            "title": "Flapping Dampener",
+            "desc": "Doubles eviction penalty exponentially for unstable nodes",
+            "status": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Active probes verify service process and dependency health.",
+            "values": {
+              "liveness": {
+                "status": "Inspecting"
+              },
+              "readiness": {
+                "status": "Inspecting"
+              },
+              "outlier": {
+                "status": "Inspecting"
+              },
+              "flapping": {
+                "status": "Inspecting"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Passive outlier detection ejects degraded instances within milliseconds.",
+            "values": {
+              "liveness": {
+                "status": "Synchronized"
+              },
+              "readiness": {
+                "status": "Synchronized"
+              },
+              "outlier": {
+                "status": "Synchronized"
+              },
+              "flapping": {
+                "status": "Synchronized"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Flapping dampeners stop rapid oscillating failovers.",
+            "values": {
+              "liveness": {
+                "status": "Synchronized"
+              },
+              "readiness": {
+                "status": "Synchronized"
+              },
+              "outlier": {
+                "status": "Synchronized"
+              },
+              "flapping": {
+                "status": "Synchronized"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Quarantine policies protect clients from degraded microservices.",
+            "values": {
+              "liveness": {
+                "status": "Synchronized"
+              },
+              "readiness": {
+                "status": "Synchronized"
+              },
+              "outlier": {
+                "status": "Synchronized"
+              },
+              "flapping": {
+                "status": "Synchronized"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Client-Side Load Balancing Algorithms: Round-Robin, Weighted Response Time & Peak-EWMA in Node.js",
+      "codeHash": "8b7557ebb6f7cfed69c4633d0cb87d0fa3b6fcda7d9bedf72ce004f9668a7086",
+      "spec": {
+        "template": "compare",
+        "title": "Round-Robin vs Peak-EWMA Load Balancing",
+        "left": {
+          "title": "Naive Round-Robin Routing",
+          "points": [
+            "Sends requests sequentially without considering instance latency",
+            "Dumps traffic onto slow, degraded, or garbage-collecting nodes",
+            "Higher tail latencies (P99) under heterogeneous workloads"
+          ]
+        },
+        "right": {
+          "title": "Peak-EWMA Adaptive Routing",
+          "points": [
+            "Calculates cost = EWMA latency * (InFlight Requests + 1)",
+            "Steers traffic away from overloaded or paused instances",
+            "Reduces P99 latency by up to 60% in multi-tenant environments"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Round-robin routes blindly into slow or stalling backends.",
+            "values": {
+              "activeSide": "left"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Peak-EWMA tracks moving average latencies and in-flight requests.",
+            "values": {
+              "activeSide": "right"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Adaptive load balancing prioritizes fastest available instances.",
+            "values": {
+              "activeSide": "both"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Tail latency percentiles improve dramatically across clusters.",
+            "values": {
+              "activeSide": "both"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Service Discovery Harness & Dynamic Failover SLA Verification",
+      "codeHash": "51e9d27696726ce76e626a97c9d5bc449597bab33a0943f5249b4ffc4ece68ea",
+      "spec": {
+        "template": "boxes",
+        "title": "Production Service Discovery & Dynamic Failover SLA Suite",
+        "items": [
+          {
+            "id": "latency",
+            "title": "Sub-100ms Discovery",
+            "desc": "New instances routed to within 100ms of registration",
+            "status": "ok"
+          },
+          {
+            "id": "blackhole",
+            "title": "Zero Black Hole Routing",
+            "desc": "Crashed instances evicted with zero dropped requests",
+            "status": "ok"
+          },
+          {
+            "id": "adaptive",
+            "title": "Peak-EWMA Optimal Distribution",
+            "desc": "Fast instances receive proportional load allocation",
+            "status": "ok"
+          },
+          {
+            "id": "certification",
+            "title": "Service Discovery Grade A+",
+            "desc": "Certified high-availability dynamic networking",
+            "status": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Test harness registers multi-instance microservice cluster.",
+            "values": {
+              "latency": {
+                "status": "Inspecting"
+              },
+              "blackhole": {
+                "status": "Inspecting"
+              },
+              "adaptive": {
+                "status": "Inspecting"
+              },
+              "certification": {
+                "status": "Inspecting"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Peak-EWMA algorithm routes traffic based on live latency metrics.",
+            "values": {
+              "latency": {
+                "status": "Synchronized"
+              },
+              "blackhole": {
+                "status": "Synchronized"
+              },
+              "adaptive": {
+                "status": "Synchronized"
+              },
+              "certification": {
+                "status": "Synchronized"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Simulated instance hard crash triggers immediate registry eviction.",
+            "values": {
+              "latency": {
+                "status": "Synchronized"
+              },
+              "blackhole": {
+                "status": "Synchronized"
+              },
+              "adaptive": {
+                "status": "Synchronized"
+              },
+              "certification": {
+                "status": "Synchronized"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Verification suite certifies Grade A+ enterprise service discovery.",
+            "values": {
+              "latency": {
+                "status": "Synchronized"
+              },
+              "blackhole": {
+                "status": "Synchronized"
+              },
+              "adaptive": {
+                "status": "Synchronized"
+              },
+              "certification": {
+                "status": "Synchronized"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

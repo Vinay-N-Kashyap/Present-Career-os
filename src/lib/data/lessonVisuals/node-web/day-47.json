@@ -1,0 +1,535 @@
+{
+  "schemaVersion": 2,
+  "prefix": "node-web",
+  "day": 47,
+  "promptSha": "block10_expansion",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Distributed Consensus Challenge: Paxos vs Raft & CAP Theorem Trade-Offs in Node.js",
+      "codeHash": "4986bf2fa0d79c8b249a7e70e5150d9b8f528497d1c97a0e5d607841f356b92a",
+      "spec": {
+        "template": "compare",
+        "title": "Two-Phase Commit (2PC) vs Raft Consensus Protocol",
+        "left": {
+          "title": "Two-Phase Commit (2PC)",
+          "points": [
+            "Blocking consensus protocol vulnerable to coordinator crashes",
+            "Requires 100% participant agreement to commit state changes",
+            "Causes system-wide stalls if any node becomes unreachable"
+          ]
+        },
+        "right": {
+          "title": "Raft Consensus Protocol",
+          "points": [
+            "Non-blocking consensus operating across majority quorums (N/2 + 1)",
+            "Automated leader election with randomized election timeouts",
+            "Tolerates minority node failures (F < N/2) without downtime"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Traditional 2PC blocks indefinitely when the coordinator fails.",
+            "values": {
+              "activeSide": "left"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Raft relies on majority quorum replication to prevent stalls.",
+            "values": {
+              "activeSide": "right"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Randomized election timeouts guarantee reliable leader election.",
+            "values": {
+              "activeSide": "both"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Raft ensures linearizable state machine replication across clusters.",
+            "values": {
+              "activeSide": "both"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Raft Leader Election & Heartbeat Timers: Follower, Candidate & Leader State Transitions",
+      "codeHash": "01dd45c2b3a1fe184471e9a4002a749a00d6dd07f1bc8a588500ac144aea9f3f",
+      "spec": {
+        "template": "states",
+        "title": "Raft Consensus Node Roles & State Transitions",
+        "items": [
+          {
+            "id": "follower",
+            "name": "FOLLOWER",
+            "state": "active"
+          },
+          {
+            "id": "candidate",
+            "name": "CANDIDATE",
+            "state": "idle"
+          },
+          {
+            "id": "leader",
+            "name": "LEADER",
+            "state": "idle"
+          },
+          {
+            "id": "isolated",
+            "name": "ISOLATED",
+            "state": "idle"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Follower awaits heartbeat RPCs from the active cluster leader.",
+            "values": {
+              "follower": {
+                "state": "idle"
+              },
+              "candidate": {
+                "state": "idle"
+              },
+              "leader": {
+                "state": "idle"
+              },
+              "isolated": {
+                "state": "idle"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Election timeout fires: follower promotes to CANDIDATE and solicits votes.",
+            "values": {
+              "follower": {
+                "state": "active"
+              },
+              "candidate": {
+                "state": "active"
+              },
+              "leader": {
+                "state": "active"
+              },
+              "isolated": {
+                "state": "active"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Candidate collects majority quorum of votes and becomes LEADER.",
+            "values": {
+              "follower": {
+                "state": "transitioning"
+              },
+              "candidate": {
+                "state": "transitioning"
+              },
+              "leader": {
+                "state": "transitioning"
+              },
+              "isolated": {
+                "state": "transitioning"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Partitioned leader reverts to FOLLOWER upon detecting higher term.",
+            "values": {
+              "follower": {
+                "state": "idle"
+              },
+              "candidate": {
+                "state": "idle"
+              },
+              "leader": {
+                "state": "idle"
+              },
+              "isolated": {
+                "state": "idle"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Distributed Log Replication & Two-Phase Commit: Term Numbers, Log Indexes & Quorum Commit",
+      "codeHash": "57f14b503fadf9cdb8193dd3e6ab7881073c054a0ca0e1969a4354a9e29bca39",
+      "spec": {
+        "template": "flow",
+        "title": "Raft Leader Election & Quorum Voting Protocol",
+        "nodes": [
+          {
+            "id": "follower",
+            "label": "Candidate Node",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "peerA",
+            "label": "Peer Node A",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "peerB",
+            "label": "Peer Node B",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "leader",
+            "label": "Elected Leader",
+            "sub": "Active Stage",
+            "status": "ok"
+          }
+        ],
+        "edges": [
+          {
+            "from": "follower",
+            "to": "peerA",
+            "label": "RequestVote(Term=2)"
+          },
+          {
+            "from": "follower",
+            "to": "peerB",
+            "label": "RequestVote(Term=2)"
+          },
+          {
+            "from": "peerA",
+            "to": "leader",
+            "label": "VoteGranted (Quorum 2/3)"
+          },
+          {
+            "from": "peerB",
+            "to": "leader",
+            "label": "VoteGranted (Quorum 3/3)"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Candidate increments term and broadcasts RequestVote RPCs.",
+            "values": {
+              "follower": {
+                "status": "Online"
+              },
+              "peerA": {
+                "status": "Online"
+              },
+              "peerB": {
+                "status": "Online"
+              },
+              "leader": {
+                "status": "Online"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Peers verify candidate log freshness and grant affirmative votes.",
+            "values": {
+              "follower": {
+                "status": "Processing"
+              },
+              "peerA": {
+                "status": "Processing"
+              },
+              "peerB": {
+                "status": "Processing"
+              },
+              "leader": {
+                "status": "Processing"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Majority quorum threshold is reached across living nodes.",
+            "values": {
+              "follower": {
+                "status": "Committed"
+              },
+              "peerA": {
+                "status": "Committed"
+              },
+              "peerB": {
+                "status": "Committed"
+              },
+              "leader": {
+                "status": "Committed"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Candidate assumes leadership and broadcasts immediate heartbeats.",
+            "values": {
+              "follower": {
+                "status": "Online"
+              },
+              "peerA": {
+                "status": "Online"
+              },
+              "peerB": {
+                "status": "Online"
+              },
+              "leader": {
+                "status": "Online"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Network Partitions & Split-Brain Mitigation: Majority Quorums, Stale Leader Fencing & Election Timeouts",
+      "codeHash": "10766ff154df46259403070c611fe5b2209dccf59104e28a4a7df7b3ecd72008",
+      "spec": {
+        "template": "flow",
+        "title": "Raft Log Replication & Two-Phase State Machine Commit",
+        "nodes": [
+          {
+            "id": "client",
+            "label": "Client Request",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "leader",
+            "label": "Raft Leader",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "quorum",
+            "label": "Majority Quorum",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "rsm",
+            "label": "Replicated State Machine",
+            "sub": "Active Stage",
+            "status": "ok"
+          }
+        ],
+        "edges": [
+          {
+            "from": "client",
+            "to": "leader",
+            "label": "Mutate Command"
+          },
+          {
+            "from": "leader",
+            "to": "quorum",
+            "label": "AppendEntries RPC"
+          },
+          {
+            "from": "quorum",
+            "to": "leader",
+            "label": "Ack Replication"
+          },
+          {
+            "from": "leader",
+            "to": "rsm",
+            "label": "Apply CommitIndex"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Client submits state mutation command to the active leader.",
+            "values": {
+              "client": {
+                "status": "Online"
+              },
+              "leader": {
+                "status": "Online"
+              },
+              "quorum": {
+                "status": "Online"
+              },
+              "rsm": {
+                "status": "Online"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Leader appends entry to WAL and replicates across follower quorum.",
+            "values": {
+              "client": {
+                "status": "Processing"
+              },
+              "leader": {
+                "status": "Processing"
+              },
+              "quorum": {
+                "status": "Processing"
+              },
+              "rsm": {
+                "status": "Processing"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Majority of followers acknowledge durable log entry replication.",
+            "values": {
+              "client": {
+                "status": "Committed"
+              },
+              "leader": {
+                "status": "Committed"
+              },
+              "quorum": {
+                "status": "Committed"
+              },
+              "rsm": {
+                "status": "Committed"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Leader commits entry and applies mutation to state machine.",
+            "values": {
+              "client": {
+                "status": "Online"
+              },
+              "leader": {
+                "status": "Online"
+              },
+              "quorum": {
+                "status": "Online"
+              },
+              "rsm": {
+                "status": "Online"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production In-Memory Raft Cluster Simulation & Consensus SLA Verification",
+      "codeHash": "c8ddfeaa30709b476e008a565d08246a34e5ea686ae402ab7cd81bc639252302",
+      "spec": {
+        "template": "boxes",
+        "title": "Production Raft Cluster SLA & Failover Verification Suite",
+        "items": [
+          {
+            "id": "election",
+            "title": "Sub-250ms Failover",
+            "desc": "Leader crash detected and resolved under 250ms SLA",
+            "status": "ok"
+          },
+          {
+            "id": "splitbrain",
+            "title": "Zero Split-Brain",
+            "desc": "Majority quorum precludes simultaneous dual leaders",
+            "status": "ok"
+          },
+          {
+            "id": "safety",
+            "title": "Log Safety Invariant",
+            "desc": "Leader never overwrites committed log entries",
+            "status": "ok"
+          },
+          {
+            "id": "recovery",
+            "title": "WAL Recovery",
+            "desc": "100% state machine restoration from persistent log",
+            "status": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Chaos harness simulates sudden leader crash during active workload.",
+            "values": {
+              "election": {
+                "status": "Inspecting"
+              },
+              "splitbrain": {
+                "status": "Inspecting"
+              },
+              "safety": {
+                "status": "Inspecting"
+              },
+              "recovery": {
+                "status": "Inspecting"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Followers detect timeout and elect new leader within 250ms threshold.",
+            "values": {
+              "election": {
+                "status": "Synchronized"
+              },
+              "splitbrain": {
+                "status": "Synchronized"
+              },
+              "safety": {
+                "status": "Synchronized"
+              },
+              "recovery": {
+                "status": "Synchronized"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Network partition tests confirm zero split-brain leadership anomalies.",
+            "values": {
+              "election": {
+                "status": "Synchronized"
+              },
+              "splitbrain": {
+                "status": "Synchronized"
+              },
+              "safety": {
+                "status": "Synchronized"
+              },
+              "recovery": {
+                "status": "Synchronized"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Production SLA suite certifies enterprise Grade A+ Raft consensus.",
+            "values": {
+              "election": {
+                "status": "Synchronized"
+              },
+              "splitbrain": {
+                "status": "Synchronized"
+              },
+              "safety": {
+                "status": "Synchronized"
+              },
+              "recovery": {
+                "status": "Synchronized"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

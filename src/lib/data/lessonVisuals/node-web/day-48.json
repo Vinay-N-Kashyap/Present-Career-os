@@ -1,0 +1,508 @@
+{
+  "schemaVersion": 2,
+  "prefix": "node-web",
+  "day": 48,
+  "promptSha": "block10_expansion",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Cascading Failures in Microservices: The Downstream Latency Death Spiral & Thread Pool Starvation",
+      "codeHash": "6906905e2d18c15051345f2ef8e8ad48899855a00dd8f8f3eae59fa5da56b301",
+      "spec": {
+        "template": "flow",
+        "title": "Cascading Failure Propagation in Microservice Graphs",
+        "nodes": [
+          {
+            "id": "blip",
+            "label": "Downstream Blip",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "threads",
+            "label": "Connection Starvation",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "queues",
+            "label": "Queue Saturation",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "cascade",
+            "label": "Cascading Blackout",
+            "sub": "Active Stage",
+            "status": "ok"
+          }
+        ],
+        "edges": [
+          {
+            "from": "blip",
+            "to": "threads",
+            "label": "Slow Latency (5s)"
+          },
+          {
+            "from": "threads",
+            "to": "queues",
+            "label": "Pool Exhaustion"
+          },
+          {
+            "from": "queues",
+            "to": "cascade",
+            "label": "Upstream Timeouts"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Transient slow responses at leaf microservice tie up upstream connections.",
+            "values": {
+              "blip": {
+                "status": "Online"
+              },
+              "threads": {
+                "status": "Online"
+              },
+              "queues": {
+                "status": "Online"
+              },
+              "cascade": {
+                "status": "Online"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "HTTP connection pools saturate waiting for slow network sockets.",
+            "values": {
+              "blip": {
+                "status": "Processing"
+              },
+              "threads": {
+                "status": "Processing"
+              },
+              "queues": {
+                "status": "Processing"
+              },
+              "cascade": {
+                "status": "Processing"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Request queues overflow, starving critical CPU event loop cycles.",
+            "values": {
+              "blip": {
+                "status": "Committed"
+              },
+              "threads": {
+                "status": "Committed"
+              },
+              "queues": {
+                "status": "Committed"
+              },
+              "cascade": {
+                "status": "Committed"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Cascading failures bring down entire microservice cluster.",
+            "values": {
+              "blip": {
+                "status": "Online"
+              },
+              "threads": {
+                "status": "Online"
+              },
+              "queues": {
+                "status": "Online"
+              },
+              "cascade": {
+                "status": "Online"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Circuit Breaker Pattern: Closed, Open & Half-Open State Machines with Cockatiel",
+      "codeHash": "e3de3938b21b836bd252f8b7f1b51f386e66be619a62cc7374707e637c76cb5f",
+      "spec": {
+        "template": "states",
+        "title": "Circuit Breaker Finite State Machine Transitions",
+        "items": [
+          {
+            "id": "closed",
+            "name": "CLOSED",
+            "state": "active"
+          },
+          {
+            "id": "open",
+            "name": "OPEN",
+            "state": "idle"
+          },
+          {
+            "id": "halfopen",
+            "name": "HALF_OPEN",
+            "state": "idle"
+          },
+          {
+            "id": "tripped",
+            "name": "TRIPPED",
+            "state": "idle"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Circuit is CLOSED: all requests flow directly to downstream service.",
+            "values": {
+              "closed": {
+                "state": "idle"
+              },
+              "open": {
+                "state": "idle"
+              },
+              "halfopen": {
+                "state": "idle"
+              },
+              "tripped": {
+                "state": "idle"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Consecutive error threshold breached: circuit trips to OPEN.",
+            "values": {
+              "closed": {
+                "state": "active"
+              },
+              "open": {
+                "state": "active"
+              },
+              "halfopen": {
+                "state": "active"
+              },
+              "tripped": {
+                "state": "active"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "In OPEN state: requests fast-fail immediately without network calls.",
+            "values": {
+              "closed": {
+                "state": "transitioning"
+              },
+              "open": {
+                "state": "transitioning"
+              },
+              "halfopen": {
+                "state": "transitioning"
+              },
+              "tripped": {
+                "state": "transitioning"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Reset timeout elapses: circuit enters HALF_OPEN to trial canary probes.",
+            "values": {
+              "closed": {
+                "state": "idle"
+              },
+              "open": {
+                "state": "idle"
+              },
+              "halfopen": {
+                "state": "idle"
+              },
+              "tripped": {
+                "state": "idle"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Bulkhead Isolation & Concurrency Throttling: Partitioning Thread Pools, Connection Limits & Resource Quotas",
+      "codeHash": "1ce079f29632e35a6ce3dd123c0483ec0ac05874481a66320c405b3a72d0d6a1",
+      "spec": {
+        "template": "boxes",
+        "title": "Bulkhead Resource Isolation & Concurrency Throttling",
+        "items": [
+          {
+            "id": "checkout",
+            "title": "Checkout Bulkhead",
+            "desc": "Dedicated 50-connection pool reserved for revenue paths",
+            "status": "ok"
+          },
+          {
+            "id": "analytics",
+            "title": "Analytics Bulkhead",
+            "desc": "Restricted 10-connection pool prevents telemetry starvation",
+            "status": "ok"
+          },
+          {
+            "id": "search",
+            "title": "Search Bulkhead",
+            "desc": "Isolated concurrency limits search burst impact",
+            "status": "ok"
+          },
+          {
+            "id": "fallback",
+            "title": "Graceful Fallback",
+            "desc": "Degraded cached responses return when limits reached",
+            "status": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Bulkhead isolation partitions system resources into independent pools.",
+            "values": {
+              "checkout": {
+                "status": "Inspecting"
+              },
+              "analytics": {
+                "status": "Inspecting"
+              },
+              "search": {
+                "status": "Inspecting"
+              },
+              "fallback": {
+                "status": "Inspecting"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Checkout workflows remain fully functional during background spikes.",
+            "values": {
+              "checkout": {
+                "status": "Synchronized"
+              },
+              "analytics": {
+                "status": "Synchronized"
+              },
+              "search": {
+                "status": "Synchronized"
+              },
+              "fallback": {
+                "status": "Synchronized"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Concurrency throttling prevents downstream service saturation.",
+            "values": {
+              "checkout": {
+                "status": "Synchronized"
+              },
+              "analytics": {
+                "status": "Synchronized"
+              },
+              "search": {
+                "status": "Synchronized"
+              },
+              "fallback": {
+                "status": "Synchronized"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Graceful fallbacks ensure positive end-user experience during stress.",
+            "values": {
+              "checkout": {
+                "status": "Synchronized"
+              },
+              "analytics": {
+                "status": "Synchronized"
+              },
+              "search": {
+                "status": "Synchronized"
+              },
+              "fallback": {
+                "status": "Synchronized"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Exponential Backoff, Jitter & Retry Budgets: Preventing Thundering Herd Resurrections",
+      "codeHash": "fb5107d38436946b513b998e8acdf3c5ca6c3626bfc9419af9f7c1a6fd19e0fd",
+      "spec": {
+        "template": "compare",
+        "title": "Naive Retries vs Exponential Backoff with Full Jitter",
+        "left": {
+          "title": "Naive Immediate Retries",
+          "points": [
+            "Retries sent immediately upon network failure",
+            "Synchronized retries create massive thundering herd spikes",
+            "Overwhelms recovering services and worsens downtime"
+          ]
+        },
+        "right": {
+          "title": "Exponential Backoff with Full Jitter",
+          "points": [
+            "Delay doubles exponentially with each failed attempt",
+            "Full Jitter randomizes retry distribution across time window",
+            "Retry budgets cap retry volume to 10% of total traffic"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Immediate retries exacerbate outages through thundering herd effects.",
+            "values": {
+              "activeSide": "left"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Exponential backoff spreads retry attempts across wider intervals.",
+            "values": {
+              "activeSide": "right"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Full Jitter eliminates synchronized traffic spikes permanently.",
+            "values": {
+              "activeSide": "both"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Retry budgets protect degraded downstreams from overload.",
+            "values": {
+              "activeSide": "both"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Chaos Engineering Simulator & Failure Isolation SLA Verification",
+      "codeHash": "4b8aa91e72314b9c92cb68f5648b8c01a55d1b4b372653339606fd26c6a2eebc",
+      "spec": {
+        "template": "boxes",
+        "title": "Production Chaos Engineering & Failure Isolation SLA Suite",
+        "items": [
+          {
+            "id": "fastfail",
+            "title": "Sub-Millisecond Fast-Fail",
+            "desc": "Circuit OPEN returns fallbacks under 1ms",
+            "status": "ok"
+          },
+          {
+            "id": "corepath",
+            "title": "100% Core Path Uptime",
+            "desc": "Zero checkout failures during downstream outage",
+            "status": "ok"
+          },
+          {
+            "id": "recovery",
+            "title": "Automated Self-Healing",
+            "desc": "Circuit recovers to CLOSED upon downstream stabilization",
+            "status": "ok"
+          },
+          {
+            "id": "sla",
+            "title": "Resilience Grade A+",
+            "desc": "Certified 99.99% availability under active chaos injection",
+            "status": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Chaos harness injects latency spikes and 100% crash rates.",
+            "values": {
+              "fastfail": {
+                "status": "Inspecting"
+              },
+              "corepath": {
+                "status": "Inspecting"
+              },
+              "recovery": {
+                "status": "Inspecting"
+              },
+              "sla": {
+                "status": "Inspecting"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Circuit breakers trip instantly, dropping latencies to sub-1ms fallbacks.",
+            "values": {
+              "fastfail": {
+                "status": "Synchronized"
+              },
+              "corepath": {
+                "status": "Synchronized"
+              },
+              "recovery": {
+                "status": "Synchronized"
+              },
+              "sla": {
+                "status": "Synchronized"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Bulkheads protect revenue-generating checkout transactions.",
+            "values": {
+              "fastfail": {
+                "status": "Synchronized"
+              },
+              "corepath": {
+                "status": "Synchronized"
+              },
+              "recovery": {
+                "status": "Synchronized"
+              },
+              "sla": {
+                "status": "Synchronized"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Verification suite certifies Grade A+ enterprise resilience.",
+            "values": {
+              "fastfail": {
+                "status": "Synchronized"
+              },
+              "corepath": {
+                "status": "Synchronized"
+              },
+              "recovery": {
+                "status": "Synchronized"
+              },
+              "sla": {
+                "status": "Synchronized"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
