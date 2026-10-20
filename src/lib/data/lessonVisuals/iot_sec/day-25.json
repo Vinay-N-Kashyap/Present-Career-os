@@ -6,11 +6,11 @@
   "model": "anthropic/claude-3.5-sonnet",
   "entries": [
     {
-      "partTitle": "Milestone Architecture: The Unified FOTA, Anti-Rollback & DICE Attestation Pipeline",
-      "codeHash": "448955a81ff11c82f6ac746a92b15e7967cf17a1af7efe8d8e2107eb4f90ff24",
+      "partTitle": "Milestone 5 Architectural Integration: Unifying FOTA, Anti-Rollback & DICE Attestation into a Single Resilient Device Security Core",
+      "codeHash": "256e631e95c40dd320ba3eb47f2e4e7db847d8394a72fd883cc8353d613b1589",
       "spec": {
         "template": "register-bits",
-        "title": "Milestone Architecture: The Unified FOTA, Ant... — Register Bit Architecture",
+        "title": "Milestone 5 Architectural Integration: Unifyi... — Register Bit Architecture",
         "steps": [
           {
             "at": "intro",
@@ -259,7 +259,7 @@
       },
       "filled": {
         "template": "register-bits",
-        "title": "Milestone Architecture: The Unified FOTA, Ant... — Register Bit Architecture",
+        "title": "Milestone 5 Architectural Integration: Unifyi... — Register Bit Architecture",
         "steps": [
           {
             "at": "intro",
@@ -508,11 +508,11 @@
       }
     },
     {
-      "partTitle": "Dual-Bank Staging & Asymmetric Manifest Digest Chain Ingestion",
-      "codeHash": "2714ee23e1b0010c93452c8c9e53c038954c932749a71c3ca2bcea7932567b35",
+      "partTitle": "End-to-End Cryptographic Ingestion & Pre-Flash Version Fencing Pipeline",
+      "codeHash": "e8af13385d604e1601328bff547813645f00d982701596600cc0822c4f3dc06c",
       "spec": {
         "template": "register-bits",
-        "title": "Dual-Bank Staging & Asymmetric Manifest Diges... — Register Bit Architecture",
+        "title": "End-to-End Cryptographic Ingestion & Pre-Flas... — Register Bit Architecture",
         "steps": [
           {
             "at": "intro",
@@ -761,7 +761,7 @@
       },
       "filled": {
         "template": "register-bits",
-        "title": "Dual-Bank Staging & Asymmetric Manifest Diges... — Register Bit Architecture",
+        "title": "End-to-End Cryptographic Ingestion & Pre-Flas... — Register Bit Architecture",
         "steps": [
           {
             "at": "intro",
@@ -1010,11 +1010,11 @@
       }
     },
     {
-      "partTitle": "Anti-Rollback Enforcement & The Atomic Trial-Commit Sequence",
-      "codeHash": "5a06ddbf175b8834901bcddb3b1e96e6e52f9126233346be8d999909942a4e26",
+      "partTitle": "Supervised Trial Boot, Hardware Watchdog Fallback & Two-Phase eFuse Burning",
+      "codeHash": "e94c98dfe8d773ad269fc75697ef2716ea7a7c24d4205589010131954f49ef05",
       "spec": {
         "template": "register-bits",
-        "title": "Anti-Rollback Enforcement & The Atomic Trial-... — Register Bit Architecture",
+        "title": "Supervised Trial Boot, Hardware Watchdog Fall... — Register Bit Architecture",
         "steps": [
           {
             "at": "intro",
@@ -1263,7 +1263,7 @@
       },
       "filled": {
         "template": "register-bits",
-        "title": "Anti-Rollback Enforcement & The Atomic Trial-... — Register Bit Architecture",
+        "title": "Supervised Trial Boot, Hardware Watchdog Fall... — Register Bit Architecture",
         "steps": [
           {
             "at": "intro",
@@ -1512,11 +1512,11 @@
       }
     },
     {
-      "partTitle": "TCG DICE Measurement & Attestation Token Verification",
-      "codeHash": "d0c985a087e2069cc784ece65fb53f60ed1370cd61003216871aa445f24d0ce8",
+      "partTitle": "TCG DICE Measured Boot Chain & Cloud Remote Attestation Evidence Verification",
+      "codeHash": "5a34749d67b2edb05c21670fd4aec95ac0687d02855f0c7ed154ab3d40ca04b9",
       "spec": {
         "template": "register-bits",
-        "title": "TCG DICE Measurement & Attestation Token Veri... — Register Bit Architecture",
+        "title": "TCG DICE Measured Boot Chain & Cloud Remote A... — Register Bit Architecture",
         "steps": [
           {
             "at": "intro",
@@ -1765,7 +1765,7 @@
       },
       "filled": {
         "template": "register-bits",
-        "title": "TCG DICE Measurement & Attestation Token Veri... — Register Bit Architecture",
+        "title": "TCG DICE Measured Boot Chain & Cloud Remote A... — Register Bit Architecture",
         "steps": [
           {
             "at": "intro",
@@ -2014,11 +2014,11 @@
       }
     },
     {
-      "partTitle": "The Complete ApexMilestone5FotaAttestationEngine Execution",
-      "codeHash": "485bccdb3213f263d4153581f27a7a3e411dd9f76adce312a8d57cf0e7ba0b53",
+      "partTitle": "Complete Device Lifecycle Security Verification, Adversarial Fault Injection & Production SLA Certification",
+      "codeHash": "e48fe3841cdcd7e6b95ad9ad14b6db18da6af52093b76897cc919f5f14644cfa",
       "spec": {
         "template": "register-bits",
-        "title": "The Complete ApexMilestone5FotaAttestationEng... — Register Bit Architecture",
+        "title": "Complete Device Lifecycle Security Verificati... — Register Bit Architecture",
         "steps": [
           {
             "at": "intro",
@@ -2267,7 +2267,7 @@
       },
       "filled": {
         "template": "register-bits",
-        "title": "The Complete ApexMilestone5FotaAttestationEng... — Register Bit Architecture",
+        "title": "Complete Device Lifecycle Security Verificati... — Register Bit Architecture",
         "steps": [
           {
             "at": "intro",

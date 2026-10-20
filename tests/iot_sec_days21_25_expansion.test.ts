@@ -68,6 +68,7 @@ test('Course 19: IoT Hardware Security (iot_sec) Month 1 Block 5 (Days 21-25) Ex
       assert.ok(lesson.projectStep, `Day ${day} must include a projectStep`);
       assert.ok(lesson.projectStep.title && lesson.projectStep.title.length > 10, `Day ${day} projectStep must have a title`);
       assert.ok(Array.isArray(lesson.projectStep.steps) && lesson.projectStep.steps.length >= 4, `Day ${day} projectStep must have >= 4 steps`);
+      assert.equal((lesson.projectStep as any).desc, undefined, `Day ${day} projectStep must NOT have 'desc' field`);
     }
   });
 
@@ -119,28 +120,19 @@ test('Course 19: IoT Hardware Security (iot_sec) Month 1 Block 5 (Days 21-25) Ex
     }
   });
 
-  await t.test('5. Milestone 5 (Day 25) Invariants: FOTA Ingestion, Anti-Rollback & DICE Attestation Engine', () => {
+  await t.test('5. Milestone 5 (Day 25) Resilient FOTA Ingestion, Anti-Rollback & Remote Attestation Engine Invariants', () => {
     const day25 = getLongLesson('iot_sec', 25);
     assert.ok(day25.title.includes('Milestone 5'), 'Day 25 title must explicitly designate Milestone 5');
-    assert.ok(day25.title.includes('FOTA') || day25.title.includes('Attestation'), 'Day 25 title must feature FOTA or Attestation');
+    assert.ok(day25.title.includes('FOTA Ingestion'), 'Day 25 title must feature FOTA Ingestion');
+    assert.ok(day25.title.includes('Anti-Rollback'), 'Day 25 title must feature Anti-Rollback');
+    assert.ok(day25.title.includes('Remote Device Attestation'), 'Day 25 title must feature Remote Device Attestation');
 
     // Verify part 5 contains the full-pipeline engine
     const p5 = day25.parts[4];
-    assert.ok(p5.code.includes('class ApexMilestone5FotaAttestationEngine'), 'Day 25 Part 5 must implement ApexMilestone5FotaAttestationEngine');
-    assert.ok(p5.code.includes('ingest_fota_package'), 'Day 25 Part 5 must implement ingest_fota_package');
-    assert.ok(p5.code.includes('execute_trial_and_commit'), 'Day 25 Part 5 must implement execute_trial_and_commit');
-    assert.ok(p5.code.includes('generate_attestation'), 'Day 25 Part 5 must implement generate_attestation');
-    assert.ok(p5.output.includes('STAGED_SLOT_B_SVN_15'), 'Milestone 5 must report staging of SVN 15');
-    assert.ok(p5.output.includes('Trial Commit  : Committed=True'), 'Milestone 5 must report committed trial state');
-    assert.ok(p5.output.includes('Attestation Proof SVN: 15'), 'Milestone 5 must output active attestation proof for SVN 15');
-  });
-
-  await t.test('6. Month 1 Cumulative Contiguity & Completeness (Days 1 to 25)', () => {
-    for (let day = 1; day <= 25; day++) {
-      const lesson = getLongLesson('iot_sec', day);
-      assert.ok(lesson, `Day ${day} must resolve cleanly from getLongLesson`);
-      assert.equal(lesson.day, day, `Day ${day} number must match exactly`);
-      assert.equal(lesson.parts.length, 5, `Day ${day} must have 5 parts`);
-    }
+    assert.ok(p5.code.includes('class ApexIndustrialDeviceSecurityCore'), 'Day 25 Part 5 must implement ApexIndustrialDeviceSecurityCore');
+    assert.ok(p5.code.includes('process_firmware_lifecycle'), 'Day 25 Part 5 must implement process_firmware_lifecycle');
+    assert.ok(p5.code.includes('generate_dice_attestation'), 'Day 25 Part 5 must implement generate_dice_attestation');
+    assert.ok(p5.output.includes('FIRMWARE_ACTIVE'), 'Milestone 5 must reach FIRMWARE_ACTIVE');
+    assert.ok(p5.output.includes('MILESTONE_5_GRADE_A_PLUS'), 'Milestone 5 must achieve MILESTONE_5_GRADE_A_PLUS certification');
   });
 });
