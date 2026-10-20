@@ -9,7 +9,7 @@ import { isCourseVisualsEnabled } from '../src/lib/visuals/enabledCourses';
 import { loadDayFile, getVisual, clearDayFileCache } from '../src/lib/visuals/loadVisuals';
 import { getTappableLabelsForVisual } from '../src/lib/visuals/visualRules';
 
-test('Course 19: IoT Hardware Security (iot_sec) Month 1 Block 6 (Days 26-30) Expansion & Capstone 1 Grand Viva Gate Suite', async (t) => {
+test('Course 19: IoT Hardware Security (iot_sec) Month 1 Block 6 (Days 26-30) Expansion & Milestone 6 Grand Capstone Verification Suite', async (t) => {
   clearDayFileCache();
 
   await t.test('1. Visuals enablement for iot_sec course prefix', () => {
@@ -120,20 +120,17 @@ test('Course 19: IoT Hardware Security (iot_sec) Month 1 Block 6 (Days 26-30) Ex
     }
   });
 
-  await t.test('5. Capstone 1 (Day 30) ApexSentry Industrial Secure Edge Sentinel & Grand Viva Gate Invariants', () => {
+  await t.test('5. Milestone 6 (Day 30) Month 1 Grand Capstone Engine Invariants', () => {
     const day30 = getLongLesson('iot_sec', 30);
-    assert.ok(day30.title.includes('Capstone 1'), 'Day 30 title must explicitly designate Capstone 1');
-    assert.ok(day30.title.includes('ApexSentry'), 'Day 30 title must feature ApexSentry');
-    assert.ok(day30.title.includes('Cryptographic Hardware Root of Trust'), 'Day 30 title must feature Cryptographic Hardware Root of Trust');
-    assert.ok(day30.title.includes('Capstone Viva Gate'), 'Day 30 title must feature Capstone Viva Gate');
+    assert.ok(day30.title.includes('Milestone 6'), 'Day 30 title must explicitly designate Milestone 6');
+    assert.ok(day30.title.includes('Industrial IoT Security'), 'Day 30 title must feature Industrial IoT Security');
+    assert.ok(day30.title.includes('Capstone'), 'Day 30 title must feature Capstone');
 
-    // Verify part 5 contains the grand master engine
+    // Verify part 5 contains the full-pipeline engine
     const p5 = day30.parts[4];
-    assert.ok(p5.code.includes('class ApexSentryGrandMasterEngine'), 'Day 30 Part 5 must implement ApexSentryGrandMasterEngine');
-    assert.ok(p5.code.includes('power_on_self_test'), 'Day 30 Part 5 must implement power_on_self_test');
-    assert.ok(p5.code.includes('trigger_tamper_zeroization'), 'Day 30 Part 5 must implement trigger_tamper_zeroization');
-    assert.ok(p5.output.includes('APEX_SENTINEL_ONLINE'), 'Capstone 1 must reach APEX_SENTINEL_ONLINE');
-    assert.ok(p5.output.includes('HARDWARE_ZEROIZED_LOCKDOWN'), 'Capstone 1 must achieve HARDWARE_ZEROIZED_LOCKDOWN on tamper');
-    assert.ok(p5.output.includes('PASSED_WITH_DISTINCTION'), 'Capstone 1 must achieve PASSED_WITH_DISTINCTION viva defense');
+    assert.ok(p5.code.includes('class ApexIndustrialSecurityEnclave'), 'Day 30 Part 5 must implement ApexIndustrialSecurityEnclave');
+    assert.ok(p5.code.includes('execute_end_to_end_enclave_validation'), 'Day 30 Part 5 must implement execute_end_to_end_enclave_validation');
+    assert.ok(p5.output.includes('Grand Capstone Validation Passed: True'), 'Milestone 6 must reach Grand Capstone Validation Passed: True');
+    assert.ok(p5.output.includes('MONTH_1_GRAND_CAPSTONE_GRADE_A_PLUS'), 'Milestone 6 must reach MONTH_1_GRAND_CAPSTONE_GRADE_A_PLUS');
   });
 });

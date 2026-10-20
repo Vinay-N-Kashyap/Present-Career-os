@@ -6,11 +6,11 @@
   "model": "anthropic/claude-3.5-sonnet",
   "entries": [
     {
-      "partTitle": "ApexSentry Master Architecture & Cryptographic Security Blueprint",
-      "codeHash": "cdff3f7e644db48bee44cfb4ce40f07d682a2fd9c04dfa32b2eb95f890cfd2af",
+      "partTitle": "Architectural Synthesis: Unifying Silicon Root of Trust, TrustZone, MPU & Secure FOTA",
+      "codeHash": "74a6db1afba0febc7e49a512591081f42f9e7d967e1174bd25057719f8b397e3",
       "spec": {
         "template": "register-bits",
-        "title": "ApexSentry Master Architecture & Cryptographi... — Register Bit Architecture",
+        "title": "Architectural Synthesis: Unifying Silicon Roo... — Register Bit Architecture",
         "steps": [
           {
             "at": "intro",
@@ -259,7 +259,7 @@
       },
       "filled": {
         "template": "register-bits",
-        "title": "ApexSentry Master Architecture & Cryptographi... — Register Bit Architecture",
+        "title": "Architectural Synthesis: Unifying Silicon Roo... — Register Bit Architecture",
         "steps": [
           {
             "at": "intro",
@@ -508,11 +508,11 @@
       }
     },
     {
-      "partTitle": "Bare-Metal Silicon Root of Trust & Memory Bus Shield Verification",
-      "codeHash": "d9bdac1a203da11dcb013067d85d4f7b7713c0490516d6e856ec00600ae64e2b",
+      "partTitle": "Autonomous Boot, PUF Key Reconstruction & TCG DICE Attestation Pipeline",
+      "codeHash": "9ad76f140d7abb7a512a620351acb82085659353214dbc3a37c2e3c6fd816e6e",
       "spec": {
         "template": "register-bits",
-        "title": "Bare-Metal Silicon Root of Trust & Memory Bus... — Register Bit Architecture",
+        "title": "Autonomous Boot, PUF Key Reconstruction & TCG... — Register Bit Architecture",
         "steps": [
           {
             "at": "intro",
@@ -761,7 +761,7 @@
       },
       "filled": {
         "template": "register-bits",
-        "title": "Bare-Metal Silicon Root of Trust & Memory Bus... — Register Bit Architecture",
+        "title": "Autonomous Boot, PUF Key Reconstruction & TCG... — Register Bit Architecture",
         "steps": [
           {
             "at": "intro",
@@ -1010,11 +1010,11 @@
       }
     },
     {
-      "partTitle": "TrustZone MPU Sandboxing & Bare-Metal Mutual TLS 1.3 Handshake",
-      "codeHash": "e396040e5d2c45123be220294272d2a7eb4e5e1baeb4700972075fa8688fbcd6",
+      "partTitle": "Real-Time Operational Defense: Modbus Protocol Firewall, Defensive Slicing & Encrypted NVS",
+      "codeHash": "3c003c3c277d83319bbca6abd956b77a5db4dae58ad18ccd347a1e6b3a0dbcb0",
       "spec": {
         "template": "register-bits",
-        "title": "TrustZone MPU Sandboxing & Bare-Metal Mutual ... — Register Bit Architecture",
+        "title": "Real-Time Operational Defense: Modbus Protoco... — Register Bit Architecture",
         "steps": [
           {
             "at": "intro",
@@ -1263,7 +1263,7 @@
       },
       "filled": {
         "template": "register-bits",
-        "title": "TrustZone MPU Sandboxing & Bare-Metal Mutual ... — Register Bit Architecture",
+        "title": "Real-Time Operational Defense: Modbus Protoco... — Register Bit Architecture",
         "steps": [
           {
             "at": "intro",
@@ -1512,11 +1512,11 @@
       }
     },
     {
-      "partTitle": "Resilient Dual-Bank FOTA, Anti-Rollback & TCG DICE Remote Attestation",
-      "codeHash": "a8974fc4279f171cbc116cf41006df613bf59831ffd7f9718f05dc18f6ed3f8a",
+      "partTitle": "Adversarial Incident Response: Multi-Sensor Tamper Detection, Emergency Zeroization & Forensic Audit",
+      "codeHash": "ab0de34cee03ca87096bc54a0f3727850a896d1077bddb405ba1a21f834c2b53",
       "spec": {
         "template": "register-bits",
-        "title": "Resilient Dual-Bank FOTA, Anti-Rollback & TCG... — Register Bit Architecture",
+        "title": "Adversarial Incident Response: Multi-Sensor T... — Register Bit Architecture",
         "steps": [
           {
             "at": "intro",
@@ -1765,7 +1765,7 @@
       },
       "filled": {
         "template": "register-bits",
-        "title": "Resilient Dual-Bank FOTA, Anti-Rollback & TCG... — Register Bit Architecture",
+        "title": "Adversarial Incident Response: Multi-Sensor T... — Register Bit Architecture",
         "steps": [
           {
             "at": "intro",
@@ -2014,11 +2014,11 @@
       }
     },
     {
-      "partTitle": "ApexSentryGrandMasterEngine: Full-Pipeline Production Edge Sentinel & Grand Capstone Viva Defense",
-      "codeHash": "2c9b98b06259b6de65366053c8060fd8afdd5a3e91710929ccd0b98cbd7c3351",
+      "partTitle": "Production Grand Capstone: The Autonomous Industrial Security Enclave & Masterclass Certification",
+      "codeHash": "3364b5c3ac84259dc7f62b9907bc0af327849ee294be9d0fa6fda3ee363845bc",
       "spec": {
         "template": "register-bits",
-        "title": "ApexSentryGrandMasterEngine: Full-Pipeline Pr... — Register Bit Architecture",
+        "title": "Production Grand Capstone: The Autonomous Ind... — Register Bit Architecture",
         "steps": [
           {
             "at": "intro",
@@ -2267,7 +2267,7 @@
       },
       "filled": {
         "template": "register-bits",
-        "title": "ApexSentryGrandMasterEngine: Full-Pipeline Pr... — Register Bit Architecture",
+        "title": "Production Grand Capstone: The Autonomous Ind... — Register Bit Architecture",
         "steps": [
           {
             "at": "intro",

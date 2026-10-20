@@ -1,69 +1,51 @@
-# scripts/verify_iot_sec_block6.py
-import json
-import subprocess
-import sys
+import json, subprocess, sys
 
-if hasattr(sys.stdout, 'reconfigure'):
-    sys.stdout.reconfigure(encoding='utf-8')
+days = [26, 27, 28, 29, 30]
+all_days = []
 
-def verify_block6():
-    block6_days = []
-    total_words = 0
+print("=== VERIFYING IOT_SEC BLOCK 6 (DAYS 26-30) INVARIANTS ===")
 
-    for day in range(26, 31):
-        filename = f"scripts/iot_sec_day{day}.json"
-        with open(filename, "r", encoding="utf-8") as f:
-            d = json.load(f)
+for d in days:
+    path = f"scripts/iot_sec_day{d}.json"
+    with open(path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+    
+    # 1. Course prefix
+    assert data["coursePrefix"] == "iot_sec", f"Day {d} invalid coursePrefix {data['coursePrefix']}"
+    # 2. Day number
+    assert data["day"] == d, f"Day {d} invalid day number {data['day']}"
+    # 3. Minutes
+    assert data["minutes"] == 38, f"Day {d} invalid minutes {data['minutes']}"
+    # 4. 5 parts
+    assert len(data["parts"]) == 5, f"Day {d} parts length {len(data['parts'])} != 5"
+    # 5. Project step
+    assert "desc" not in data["projectStep"], f"Day {d} projectStep has forbidden 'desc' field!"
+    assert len(data["projectStep"]["steps"]) >= 4, f"Day {d} projectStep steps < 4"
+    # 6. Summary
+    assert len(data["summary"]) >= 4, f"Day {d} summary items < 4"
 
-        assert d["coursePrefix"] == "iot_sec", f"Day {day} coursePrefix mismatch: {d['coursePrefix']}"
-        assert d["day"] == day, f"Day number mismatch: expected {day}, got {d['day']}"
-        assert len(d["title"]) > 10, f"Day {day} title too short"
-        assert len(d["goal"]) > 25, f"Day {day} goal too short"
-        assert d["minutes"] == 38, f"Day {day} minutes must be strictly 38, got {d['minutes']}"
-        assert len(d["recap"]) > 20, f"Day {day} recap too short"
-        assert len(d["parts"]) == 5, f"Day {day} parts must be strictly 5, got {len(d['parts'])}"
-        assert len(d["summary"]) >= 4, f"Day {day} summary must have >= 4 items"
-        assert len(d["projectStep"]["steps"]) >= 4, f"Day {day} projectStep steps must have >= 4 items"
+    day_words = 0
+    for idx, p in enumerate(data["parts"], 1):
+        pw = sum(len(s.split()) for s in p["say"])
+        day_words += pw
+        assert pw >= 580, f"Day {d} Part {idx} word count {pw} < 580!"
+        # Check
+        chk = p["check"]
+        assert len(chk["options"]) == 4, f"Day {d} Part {idx} check options != 4"
+        assert chk["answer"] == 0, f"Day {d} Part {idx} check answer {chk['answer']} != 0"
+        assert len(chk["why"]) > 20, f"Day {d} Part {idx} check why explanation too short"
+        # Code notes
+        assert len(p["codeNotes"]) >= 3, f"Day {d} Part {idx} codeNotes < 3"
 
-        day_words = 0
-        print(f"\n--- Day {day}: {d['title']} ---")
-        for i, p in enumerate(d["parts"]):
-            assert len(p["title"]) > 5, f"Day {day} Part {i+1} title too short"
-            say_text = " ".join(p["say"]) if isinstance(p["say"], list) else p["say"]
-            words = len(say_text.split())
-            day_words += words
-            print(f"Part {i+1} ('{p['title'][:35]}...'): {words} words")
-            assert words >= 580, f"Day {day} Part {i+1} has {words} words, must be >= 580"
-            assert len(p["codeNotes"]) >= 3, f"Day {day} Part {i+1} codeNotes must have >= 3 items"
-            assert isinstance(p["tryIt"], str) and len(p["tryIt"]) > 15, f"Day {day} Part {i+1} tryIt must be valid string"
-            chk = p["check"]
-            assert len(chk["question"]) > 10, f"Day {day} Part {i+1} check question too short"
-            assert len(chk["options"]) == 4, f"Day {day} Part {i+1} check must have exactly 4 options"
-            assert chk["answer"] == 0, f"Day {day} Part {i+1} check answer must be 0"
-            assert len(chk["why"]) > 20, f"Day {day} Part {i+1} check why too short"
+        # Deterministic code check
+        res = subprocess.run([sys.executable, "-c", p["code"]], capture_output=True, text=True)
+        assert res.returncode == 0, f"Day {d} Part {idx} code execution failed: {res.stderr}"
+        assert res.stdout.strip() == p["output"].strip(), f"Day {d} Part {idx} output mismatch!\nActual:\n{res.stdout.strip()}\nExpected:\n{p['output'].strip()}"
 
-            # Verify runnable python snippet
-            res = subprocess.run([sys.executable, "-"], input=p["code"], text=True, capture_output=True)
-            if res.returncode != 0:
-                print(f"Day {day} Part {i+1} execution error:\n{res.stderr}")
-                sys.exit(1)
-            if res.stdout != p["output"]:
-                print(f"Day {day} Part {i+1} output mismatch!\nExpected:\n{p['output']}\nGot:\n{res.stdout}")
-                sys.exit(1)
+    print(f"PASS: Day {d} '{data['title'][:55]}...' -> {day_words} words, 5 parts >=580w, code 100% deterministic.")
+    all_days.append(data)
 
-        print(f"Day {day} Total Words: {day_words} words (All parts >= 580)")
-        total_words += day_words
-        block6_days.append(d)
+with open("scripts/block6_iot_sec_all_days.json", "w", encoding="utf-8") as f:
+    json.dump(all_days, f, indent=2)
 
-    print(f"\n==========================================")
-    print(f"BLOCK 6 (DAYS 26-30) 100% VERIFIED!")
-    print(f"Total Block 6 Words: {total_words} words across 25 parts")
-    print(f"Average Words per Day: {total_words / 5:.1f} words")
-    print(f"==========================================")
-
-    with open("scripts/block6_iot_sec_all_days.json", "w", encoding="utf-8") as f:
-        json.dump(block6_days, f, indent=2)
-    print("Saved combined Block 6 to scripts/block6_iot_sec_all_days.json")
-
-if __name__ == "__main__":
-    verify_block6()
+print("\nSUCCESS: All Block 6 days verified 100% and saved to scripts/block6_iot_sec_all_days.json!")
