@@ -1,4 +1,3 @@
-# scripts/append_iot_sec_days41_45.py
 import json
 
 def append_days():
