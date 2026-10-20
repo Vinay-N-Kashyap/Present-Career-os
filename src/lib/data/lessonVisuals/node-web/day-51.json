@@ -1,0 +1,520 @@
+{
+  "schemaVersion": 2,
+  "prefix": "node-web",
+  "day": 51,
+  "promptSha": "block11_expansion",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Stream Engine Architecture: Duplex/Transform Pipelines, Flowing vs Paused Modes & Memory Caps",
+      "codeHash": "7d5bc800d509053138d37710b45a28f251859bc3d8c30d27129bf4cf3bfd3a8f",
+      "spec": {
+        "template": "flow",
+        "title": "Stream Engine Pipeline Architecture: Duplex & Transform Streams",
+        "nodes": [
+          {
+            "id": "src",
+            "label": "Readable Ingress Source",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "buf",
+            "label": "16KB Bounded Buffer",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "transform",
+            "label": "Transform Stream Engine",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "sink",
+            "label": "Writable Destination Sink",
+            "sub": "Active Stage",
+            "status": "ok"
+          }
+        ],
+        "edges": [
+          {
+            "from": "src",
+            "to": "buf",
+            "label": "Push Data Chunk"
+          },
+          {
+            "from": "buf",
+            "to": "transform",
+            "label": "Bounded Feed"
+          },
+          {
+            "from": "transform",
+            "to": "sink",
+            "label": "Pipelined Stream"
+          },
+          {
+            "from": "sink",
+            "to": "buf",
+            "label": "Backpressure Feedback"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Readable stream emits bounded 16KB data chunks incrementally.",
+            "values": {
+              "src": {
+                "status": "Online"
+              },
+              "buf": {
+                "status": "Online"
+              },
+              "transform": {
+                "status": "Online"
+              },
+              "sink": {
+                "status": "Online"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Transform stream projects and mutates chunks in isolated V8 heap buffers.",
+            "values": {
+              "src": {
+                "status": "Processing"
+              },
+              "buf": {
+                "status": "Processing"
+              },
+              "transform": {
+                "status": "Processing"
+              },
+              "sink": {
+                "status": "Processing"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Writable sink consumes transformed payload without accumulating memory.",
+            "values": {
+              "src": {
+                "status": "Committed"
+              },
+              "buf": {
+                "status": "Committed"
+              },
+              "transform": {
+                "status": "Committed"
+              },
+              "sink": {
+                "status": "Committed"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Stream.pipeline guarantees deterministic teardown upon error emission.",
+            "values": {
+              "src": {
+                "status": "Online"
+              },
+              "buf": {
+                "status": "Online"
+              },
+              "transform": {
+                "status": "Online"
+              },
+              "sink": {
+                "status": "Online"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Backpressure Engineering: HighWaterMark Tuning, Drain Events & Zero-Leak Buffer Pipelines",
+      "codeHash": "c9fcb8c4eda83d39064a9fa177f961164901a86e6de8d9f270dad2ae21523930",
+      "spec": {
+        "template": "states",
+        "title": "Stream Backpressure Flow Control State Machine",
+        "states": [
+          {
+            "id": "flowing",
+            "label": "Flowing State (Pumping Chunks)"
+          },
+          {
+            "id": "paused",
+            "label": "Paused State (High-Water Mark Tripped)"
+          },
+          {
+            "id": "draining",
+            "label": "Draining State (Buffer Flushed)"
+          }
+        ],
+        "transitions": [
+          {
+            "from": "flowing",
+            "to": "paused",
+            "label": "write() returns false"
+          },
+          {
+            "from": "paused",
+            "to": "draining",
+            "label": "Kernel buffer drains"
+          },
+          {
+            "from": "draining",
+            "to": "flowing",
+            "label": "Emit 'drain' event"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Producer writes chunks rapidly until internal buffer reaches highWaterMark.",
+            "values": {
+              "activeState": "flowing"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Writable stream returns false; producer pauses upstream read stream.",
+            "values": {
+              "activeState": "paused"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Operating system socket flushes queued bytes to downstream consumer.",
+            "values": {
+              "activeState": "draining"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Stream emits 'drain'; producer resumes high-speed chunk transmission.",
+            "values": {
+              "activeState": "flowing"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Object Mode vs Binary Serialization: Stream Chunking, Framing & JSON/Protobuf Stream Parsers",
+      "codeHash": "827d4125dca32fee233a43616c12906009979231105a01aadb088403ecb59148",
+      "spec": {
+        "template": "compare",
+        "title": "Streaming Serialization: Object Mode vs Length-Prefixed Binary",
+        "left": {
+          "title": "Object Mode Streams",
+          "points": [
+            "Buffers discrete JavaScript objects by item count",
+            "highWaterMark counts individual objects (e.g., 16 items)",
+            "Ideal for internal application pipelines and ETL workflows",
+            "Higher per-item V8 pointer and GC overhead"
+          ]
+        },
+        "right": {
+          "title": "Length-Prefixed Binary Framing",
+          "points": [
+            "Packs variable-length records into raw binary Buffers",
+            "Prefixed with 4-byte big-endian payload length header",
+            "Eliminates delimiter scanning and JSON serialization overhead",
+            "Sub-millisecond wire deserialization and constant memory bounds"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Object Mode streams buffer discrete JavaScript objects in memory.",
+            "values": {
+              "activeSide": "left"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Binary framing packs length-prefixed bytes for maximum wire throughput.",
+            "values": {
+              "activeSide": "right"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Framed parser extracts complete records from TCP chunk fragments.",
+            "values": {
+              "activeSide": "both"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Zero data truncation across streaming chunk boundaries.",
+            "values": {
+              "activeSide": "both"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Reactive Stream Multiplexing: Forking, Merging & Windowed Batching Aggregators",
+      "codeHash": "48b2a1cbc4a11aaaa5da5a90f9f2aba1ac3abf292373ccdc1da6dee5357dfa97",
+      "spec": {
+        "template": "flow",
+        "title": "Reactive Stream Multiplexing & Dual-Trigger Window Aggregator",
+        "nodes": [
+          {
+            "id": "ingress",
+            "label": "High-Speed Ingress Feed",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "fork",
+            "label": "Stream Fork Demux",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "audit",
+            "label": "Passive Audit Stream",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "batcher",
+            "label": "Windowed Batch Aggregator",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "db",
+            "label": "Bulk Database Storage",
+            "sub": "Active Stage",
+            "status": "ok"
+          }
+        ],
+        "edges": [
+          {
+            "from": "ingress",
+            "to": "fork",
+            "label": "Raw Event Stream"
+          },
+          {
+            "from": "fork",
+            "to": "audit",
+            "label": "Async Tap Copy"
+          },
+          {
+            "from": "fork",
+            "to": "batcher",
+            "label": "Bounded Feed"
+          },
+          {
+            "from": "batcher",
+            "to": "db",
+            "label": "Flush Batch (Count=5 or TTL=100ms)"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Ingress stream forks data to audit sinks and batch aggregators concurrently.",
+            "values": {
+              "ingress": {
+                "status": "Online"
+              },
+              "fork": {
+                "status": "Online"
+              },
+              "audit": {
+                "status": "Online"
+              },
+              "batcher": {
+                "status": "Online"
+              },
+              "db": {
+                "status": "Online"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Batch aggregator buffers items until count threshold (5 items) is reached.",
+            "values": {
+              "ingress": {
+                "status": "Processing"
+              },
+              "fork": {
+                "status": "Processing"
+              },
+              "audit": {
+                "status": "Processing"
+              },
+              "batcher": {
+                "status": "Processing"
+              },
+              "db": {
+                "status": "Processing"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Timer trigger flushes micro-batches if ingress slows to prevent stale state.",
+            "values": {
+              "ingress": {
+                "status": "Committed"
+              },
+              "fork": {
+                "status": "Committed"
+              },
+              "audit": {
+                "status": "Committed"
+              },
+              "batcher": {
+                "status": "Committed"
+              },
+              "db": {
+                "status": "Committed"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Bulk persistence completes with minimal database round-trip overhead.",
+            "values": {
+              "ingress": {
+                "status": "Online"
+              },
+              "fork": {
+                "status": "Online"
+              },
+              "audit": {
+                "status": "Online"
+              },
+              "batcher": {
+                "status": "Online"
+              },
+              "db": {
+                "status": "Online"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Stream Processing Pipeline & Backpressure SLA Verification",
+      "codeHash": "a4e87bcc71672819268740cbffe869218db792b7bcd3bc68de2fde8d29163a27",
+      "spec": {
+        "template": "boxes",
+        "title": "Day 51 Production Stream Processing SLA Verification",
+        "items": [
+          {
+            "id": "mem",
+            "title": "Bounded Memory SLA",
+            "desc": "Constant heap consumption under burst multi-megabyte streams",
+            "status": "ok"
+          },
+          {
+            "id": "backpressure",
+            "title": "Backpressure Coordination",
+            "desc": "100% pause compliance when buffer trips high-water mark",
+            "status": "ok"
+          },
+          {
+            "id": "framing",
+            "title": "Binary Frame Integrity",
+            "desc": "Zero packet corruption across split TCP chunk boundaries",
+            "status": "ok"
+          },
+          {
+            "id": "certified",
+            "title": "Streaming Grade A+",
+            "desc": "Certified High-Throughput Stream Pipeline Engine",
+            "status": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Verification harness injects high-speed burst chunks through pipeline.",
+            "values": {
+              "mem": {
+                "status": "Inspecting"
+              },
+              "backpressure": {
+                "status": "Inspecting"
+              },
+              "framing": {
+                "status": "Inspecting"
+              },
+              "certified": {
+                "status": "Inspecting"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Backpressure controller halts producer and verifies 'drain' resumption.",
+            "values": {
+              "mem": {
+                "status": "Synchronized"
+              },
+              "backpressure": {
+                "status": "Synchronized"
+              },
+              "framing": {
+                "status": "Synchronized"
+              },
+              "certified": {
+                "status": "Synchronized"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Length-prefixed binary parser extracts 100% intact records.",
+            "values": {
+              "mem": {
+                "status": "Synchronized"
+              },
+              "backpressure": {
+                "status": "Synchronized"
+              },
+              "framing": {
+                "status": "Synchronized"
+              },
+              "certified": {
+                "status": "Synchronized"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Harness certifies Grade A+ Stream Processing SLA compliance.",
+            "values": {
+              "mem": {
+                "status": "Synchronized"
+              },
+              "backpressure": {
+                "status": "Synchronized"
+              },
+              "framing": {
+                "status": "Synchronized"
+              },
+              "certified": {
+                "status": "Synchronized"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -539,5 +539,60 @@ export const NODE_WEB_DAYS: DayConfig[] = [
       "Distributed lock manager with monotonic fencing tokens: solving Martin Kleppmann's GC pause dilemma.",
       "Production SLA chaos verification: sub-250ms failover, stale write interception, and Grade A+ certification."
     ]
+  },
+  {
+    day: 51,
+    title: "High-Throughput Stream Processing & Reactive Pipelines: Transform Streams, Backpressure & Memory Bounds",
+    desc: "Master high-throughput stream processing in Node.js: architect Duplex and Transform stream pipelines, engineer backpressure controls with highWaterMark tuning and drain event synchronization, implement length-prefixed binary framing, and build windowed batch aggregators.",
+    syllabus: [
+      "Stream engine architecture: Readable, Writable, Duplex, and Transform primitives with bounded memory.",
+      "Backpressure engineering: highWaterMark thresholds, write() return semantics, and 'drain' event synchronization.",
+      "Object Mode streams vs length-prefixed binary framing: packing variable-length records with 4-byte headers.",
+      "Reactive stream multiplexing: stream forking, fan-in merging, and dual-trigger windowed batch aggregation."
+    ]
+  },
+  {
+    day: 52,
+    title: "Edge Security, TLS Offloading & Zero-Trust Identity: mTLS, Ephemeral Certificates, JWKS & RBAC",
+    desc: "Master enterprise edge security and zero-trust identity architectures in Node.js: implement TLS 1.3 handshakes, mutual TLS (mTLS) with client certificate validation and CA pinning, asymmetric JWKS token verification, and granular RBAC matrices.",
+    syllabus: [
+      "Zero-trust security at the edge: TLS 1.3 handshake lifecycle, AEAD cipher suites, and ALPN protocol negotiation.",
+      "Mutual TLS (mTLS) client certificate verification: Subject Alternative Name (SAN) parsing and CRL revocation checking.",
+      "Cryptographic token verification: asymmetric RS256/ES256 signatures, Key ID (kid) lookups, and JWKS key rotation.",
+      "Fine-grained role-based access control (RBAC): scope validation, role inheritance, and defense-in-depth security."
+    ]
+  },
+  {
+    day: 53,
+    title: "Full-Lifecycle Distributed Observability: OpenTelemetry SDK, Trace Context Injection & Prometheus Histograms",
+    desc: "Master full-lifecycle distributed observability in Node.js: implement OpenTelemetry semantic conventions, engineer W3C TraceContext propagation across parent-child span hierarchies, instrument Prometheus counters, gauges, and latency histograms, and build structured correlation logging.",
+    syllabus: [
+      "Modern observability foundations: Three Pillars (traces, metrics, logs) and vendor-neutral OpenTelemetry conventions.",
+      "W3C TraceContext propagation: 16-byte traceId parsing, child span creation, and downstream header injection.",
+      "Prometheus metrics instrumentation: Counter, Gauge, and exponential Histogram latency bucket percentiles.",
+      "High-throughput structured JSON logging: AsyncLocalStorage ambient context binding and automatic trace correlation."
+    ]
+  },
+  {
+    day: 54,
+    title: "Dynamic Reverse Proxying, Protocol Translation & WebSocket Multiplexing: HTTP/1.1 to gRPC & WebSocket Hubs",
+    desc: "Master dynamic reverse proxying, protocol translation, and real-time WebSocket multiplexing in Node.js: implement Radix route dispatching and header rewriting, construct gRPC-JSON transcoding with 5-byte framing and status mapping, and build least-connections load balancing with circuit breakers.",
+    syllabus: [
+      "Reverse proxy fundamentals: Radix prefix route matching, untrusted header stripping, and X-Forwarded-* injection.",
+      "Protocol translation: RESTful JSON over HTTP/1.1 to binary gRPC over HTTP/2 with bidirectional status code mapping.",
+      "WebSocket connection multiplexing: RFC 6455 upgrade handshakes, heartbeat ping/pong tracking, and channel pub/sub.",
+      "Load balancing & circuit breaking: least-connections distribution, active health probes, and outlier ejection."
+    ]
+  },
+  {
+    day: 55,
+    title: "🏆 Milestone 10 (Core): High-Throughput Edge Routing & Policy Engine with Transcoding & Adaptive Rate Limiting",
+    desc: "Architect, build, and certify the Milestone 10 Core Engine: a unified high-throughput edge routing and policy gateway uniting multi-tenant Radix prefix routing, zero-trust mTLS and JWKS security enforcement, adaptive token bucket rate limiting with latency backpressure, bidirectional REST-to-gRPC transcoding, and resilient least-connections dispatching with circuit breakers and W3C distributed tracing.",
+    syllabus: [
+      "Milestone architecture: linear ingress pipeline, pipeline invariants, and multi-tenant Radix route isolation.",
+      "Zero-trust security enforcement: mTLS transport barrier, JWKS signature verification, and RBAC matrix evaluation.",
+      "Protocol transcoding & adaptive rate limiting: token bucket throttling with downstream latency backpressure feedback.",
+      "Resilient edge cluster dispatching & capstone SLA certification: least-connections balancing, circuit breakers, and Grade A+ certification."
+    ]
   }
 ];

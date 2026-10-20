@@ -1,0 +1,569 @@
+{
+  "schemaVersion": 2,
+  "prefix": "node-web",
+  "day": 52,
+  "promptSha": "block11_expansion",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Zero-Trust Security at the Edge: TLS 1.3 Handshakes, ALPN Negotiation & Session Ticket Resumption",
+      "codeHash": "b6320546e824a8e2c645ab82b9641f77fadbfcdcc96847b8a66e9301d4f2fec0",
+      "spec": {
+        "template": "flow",
+        "title": "Zero-Trust Edge Security: TLS 1.3 Handshake & ALPN Negotiation",
+        "nodes": [
+          {
+            "id": "client",
+            "label": "Edge Client / Browser",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "edge",
+            "label": "Edge Security Gateway",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "alpn",
+            "label": "ALPN Protocol Engine",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "psk",
+            "label": "0-RTT Session Cache",
+            "sub": "Active Stage",
+            "status": "ok"
+          }
+        ],
+        "edges": [
+          {
+            "from": "client",
+            "to": "edge",
+            "label": "ClientHello (TLS 1.3, Ciphers, ALPN=['h2'])"
+          },
+          {
+            "from": "edge",
+            "to": "alpn",
+            "label": "Match Mutual Protocol"
+          },
+          {
+            "from": "alpn",
+            "to": "edge",
+            "label": "Select 'h2'"
+          },
+          {
+            "from": "edge",
+            "to": "psk",
+            "label": "Issue 0-RTT PSK Ticket"
+          },
+          {
+            "from": "edge",
+            "to": "client",
+            "label": "ServerHello + EncryptedExtensions"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Client initiates TLS 1.3 handshake with modern AEAD cipher proposals.",
+            "values": {
+              "client": {
+                "status": "Online"
+              },
+              "edge": {
+                "status": "Online"
+              },
+              "alpn": {
+                "status": "Online"
+              },
+              "psk": {
+                "status": "Online"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Gateway matches cipher suites and negotiates application protocol (h2) via ALPN.",
+            "values": {
+              "client": {
+                "status": "Processing"
+              },
+              "edge": {
+                "status": "Processing"
+              },
+              "alpn": {
+                "status": "Processing"
+              },
+              "psk": {
+                "status": "Processing"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Ephemeral key exchange establishes forward-secret session keys.",
+            "values": {
+              "client": {
+                "status": "Committed"
+              },
+              "edge": {
+                "status": "Committed"
+              },
+              "alpn": {
+                "status": "Committed"
+              },
+              "psk": {
+                "status": "Committed"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Session ticket is issued for instant 0-RTT connection resumption.",
+            "values": {
+              "client": {
+                "status": "Online"
+              },
+              "edge": {
+                "status": "Online"
+              },
+              "alpn": {
+                "status": "Online"
+              },
+              "psk": {
+                "status": "Online"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Mutual TLS (mTLS) Authentication: Client Certificate Validation, CA Pinning & CRL/OCSP Revocation",
+      "codeHash": "1b87da3e09372a13b88c3134fd9389db3653965cd987d4c44521060032155027",
+      "spec": {
+        "template": "flow",
+        "title": "Mutual TLS (mTLS) Client Certificate Validation & Revocation Pipeline",
+        "nodes": [
+          {
+            "id": "client",
+            "label": "Calling Microservice",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "gateway",
+            "label": "Edge mTLS Gate",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "ca",
+            "label": "Pinned Internal Root CA",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "crl",
+            "label": "CRL / OCSP Revocation Registry",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "service",
+            "label": "Protected Origin Service",
+            "sub": "Active Stage",
+            "status": "ok"
+          }
+        ],
+        "edges": [
+          {
+            "from": "client",
+            "to": "gateway",
+            "label": "Present X.509 Certificate"
+          },
+          {
+            "from": "gateway",
+            "to": "ca",
+            "label": "Verify Issuer Signature & Temporal Validity"
+          },
+          {
+            "from": "gateway",
+            "to": "crl",
+            "label": "Check Serial in Revocation List"
+          },
+          {
+            "from": "crl",
+            "to": "gateway",
+            "label": "Status: CLEAR (Unrevoked)"
+          },
+          {
+            "from": "gateway",
+            "to": "service",
+            "label": "Dispatch with Verified Identity"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Client presents X.509 certificate during TLS handshake.",
+            "values": {
+              "client": {
+                "status": "Online"
+              },
+              "gateway": {
+                "status": "Online"
+              },
+              "ca": {
+                "status": "Online"
+              },
+              "crl": {
+                "status": "Online"
+              },
+              "service": {
+                "status": "Online"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Gateway validates certificate against pinned internal Certificate Authority.",
+            "values": {
+              "client": {
+                "status": "Processing"
+              },
+              "gateway": {
+                "status": "Processing"
+              },
+              "ca": {
+                "status": "Processing"
+              },
+              "crl": {
+                "status": "Processing"
+              },
+              "service": {
+                "status": "Processing"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Serial number is verified against real-time revocation registry.",
+            "values": {
+              "client": {
+                "status": "Committed"
+              },
+              "gateway": {
+                "status": "Committed"
+              },
+              "ca": {
+                "status": "Committed"
+              },
+              "crl": {
+                "status": "Committed"
+              },
+              "service": {
+                "status": "Committed"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Cryptographically authenticated client is granted access to origin services.",
+            "values": {
+              "client": {
+                "status": "Online"
+              },
+              "gateway": {
+                "status": "Online"
+              },
+              "ca": {
+                "status": "Online"
+              },
+              "crl": {
+                "status": "Online"
+              },
+              "service": {
+                "status": "Online"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cryptographic Token Verification: Asymmetric RSA/ECDSA Signatures, Key ID (kid) & JWKS Key Rotation",
+      "codeHash": "16089a19051967e5f9e3dc52a93c1f6e8af51417489cd2a07d7f9776ed0ef27c",
+      "spec": {
+        "template": "compare",
+        "title": "Stateless Token Verification: Symmetric Secret vs Asymmetric JWKS",
+        "left": {
+          "title": "Symmetric HS256 Signing",
+          "points": [
+            "Shared secret key stored on auth server and all microservices",
+            "Single compromised service allows rogue token forging everywhere",
+            "Key rotation requires synchronized restart across all services",
+            "Architectural anti-pattern for zero-trust microservice meshes"
+          ]
+        },
+        "right": {
+          "title": "Asymmetric RS256/ES256 & JWKS",
+          "points": [
+            "Auth server signs with private key; services verify with public key",
+            "Compromised microservice cannot forge tokens for other services",
+            "Standardized Key ID (kid) enables automated live key rotation",
+            "Public keys retrieved dynamically from /.well-known/jwks.json"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Symmetric signing exposes all services if a single secret leaks.",
+            "values": {
+              "activeSide": "left"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Asymmetric JWKS decouples signing private keys from verification public keys.",
+            "values": {
+              "activeSide": "right"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Gateways cache public keys in memory and rotate keys via 'kid' lookup.",
+            "values": {
+              "activeSide": "both"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Guarantees cryptographic zero-trust identity isolation across microservices.",
+            "values": {
+              "activeSide": "both"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Fine-Grained Role-Based Access Control (RBAC): Dynamic Scopes, Permission Matrices & Least Privilege",
+      "codeHash": "c0a56fba399d95dc85d6e468f78668a42131a2cb7645a43dc97f5e88f8d69bc6",
+      "spec": {
+        "template": "boxes",
+        "title": "Fine-Grained Role-Based Access Control (RBAC) & Scope Matrix",
+        "items": [
+          {
+            "id": "admin",
+            "title": "Admin Role",
+            "desc": "Full wildcard permission (*) across all domain resources",
+            "status": "ok"
+          },
+          {
+            "id": "engineer",
+            "title": "Engineer Role",
+            "desc": "Scoped write/read access to engineering endpoints (orders:*)",
+            "status": "ok"
+          },
+          {
+            "id": "auditor",
+            "title": "Auditor Role",
+            "desc": "Strict read-only access (reports:read, orders:read)",
+            "status": "ok"
+          },
+          {
+            "id": "enforcer",
+            "title": "Least-Privilege Gate",
+            "desc": "Zero privilege escalation; rejects unauthorized scopes with 403",
+            "status": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "RBAC engine inspects authenticated JWT roles and scope array.",
+            "values": {
+              "admin": {
+                "status": "Inspecting"
+              },
+              "engineer": {
+                "status": "Inspecting"
+              },
+              "auditor": {
+                "status": "Inspecting"
+              },
+              "enforcer": {
+                "status": "Inspecting"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Request action is evaluated against role-permission mapping rules.",
+            "values": {
+              "admin": {
+                "status": "Synchronized"
+              },
+              "engineer": {
+                "status": "Synchronized"
+              },
+              "auditor": {
+                "status": "Synchronized"
+              },
+              "enforcer": {
+                "status": "Synchronized"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Wildcard matching permits authorized sub-actions cleanly.",
+            "values": {
+              "admin": {
+                "status": "Synchronized"
+              },
+              "engineer": {
+                "status": "Synchronized"
+              },
+              "auditor": {
+                "status": "Synchronized"
+              },
+              "enforcer": {
+                "status": "Synchronized"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Unauthorized attempts trigger immediate HTTP 403 Forbidden rejection.",
+            "values": {
+              "admin": {
+                "status": "Synchronized"
+              },
+              "engineer": {
+                "status": "Synchronized"
+              },
+              "auditor": {
+                "status": "Synchronized"
+              },
+              "enforcer": {
+                "status": "Synchronized"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Edge Security Gateway & Zero-Trust Authentication SLA Verification Suite",
+      "codeHash": "da805d02f259e13538e192a8da9cfb1bc88746e351b57147f56c56df4a4d91aa",
+      "spec": {
+        "template": "boxes",
+        "title": "Day 52 Production Edge Security SLA Verification",
+        "items": [
+          {
+            "id": "tls",
+            "title": "TLS 1.3 / ALPN SLA",
+            "desc": "100% rejection of legacy TLS < 1.3 with verified cipher agreement",
+            "status": "ok"
+          },
+          {
+            "id": "mtls",
+            "title": "mTLS Revocation Invariant",
+            "desc": "Zero admission of revoked certificates or untrusted issuers",
+            "status": "ok"
+          },
+          {
+            "id": "jwt",
+            "title": "JWKS Signature Integrity",
+            "desc": "Instant rejection of expired tokens or mismatched key identifiers",
+            "status": "ok"
+          },
+          {
+            "id": "certified",
+            "title": "Security Grade A+",
+            "desc": "Certified Zero-Trust Edge Security Architecture",
+            "status": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Verification harness simulates multi-tenant cryptographic ingress requests.",
+            "values": {
+              "tls": {
+                "status": "Inspecting"
+              },
+              "mtls": {
+                "status": "Inspecting"
+              },
+              "jwt": {
+                "status": "Inspecting"
+              },
+              "certified": {
+                "status": "Inspecting"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "mTLS gate blocks compromised certificates and passes legitimate services.",
+            "values": {
+              "tls": {
+                "status": "Synchronized"
+              },
+              "mtls": {
+                "status": "Synchronized"
+              },
+              "jwt": {
+                "status": "Synchronized"
+              },
+              "certified": {
+                "status": "Synchronized"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "JWT verifier rejects expired tokens and enforces strict role constraints.",
+            "values": {
+              "tls": {
+                "status": "Synchronized"
+              },
+              "mtls": {
+                "status": "Synchronized"
+              },
+              "jwt": {
+                "status": "Synchronized"
+              },
+              "certified": {
+                "status": "Synchronized"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Harness certifies Grade A+ Edge Security SLA compliance.",
+            "values": {
+              "tls": {
+                "status": "Synchronized"
+              },
+              "mtls": {
+                "status": "Synchronized"
+              },
+              "jwt": {
+                "status": "Synchronized"
+              },
+              "certified": {
+                "status": "Synchronized"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1551,6 +1551,162 @@ export const NODE_WEB_30_DAYS_CONFIGS: DayConfig[] = [
       "const cert2 = certifyMilestone9Sla({ failoverMs: 350, splitBrainCount: 0, staleWritesBlocked: 2, leasesProcessed: 120 });",
       "if (cert2.certified !== false || cert2.grade !== 'FAIL') throw new Error('Failed cert2 failover limit: ' + JSON.stringify(cert2));"
     )
+  },
+
+  // ── DAY 51: High-Throughput Stream Processing & Reactive Pipelines ─────────────
+  {
+    ...NODE_WEB_DAYS[50],
+    eTitle: "Calculate Stream Backpressure State",
+    eDesc: "Write `calculateStreamBackpressureState(bufferedBytes: number, highWaterMark: number): { shouldPause: boolean; ratio: number }` calculating ratio as Number((bufferedBytes / highWaterMark).toFixed(2)) and shouldPause as bufferedBytes >= highWaterMark.",
+    eLanguage: "typescript",
+    eStarter: lines("function calculateStreamBackpressureState(bufferedBytes, highWaterMark) {", "  // Return backpressure state", "  return { shouldPause: false, ratio: 0 };", "}"),
+    eHint: "const ratio = Number((bufferedBytes / highWaterMark).toFixed(2)); return { shouldPause: bufferedBytes >= highWaterMark, ratio };",
+    eTest: lines(
+      "if (typeof calculateStreamBackpressureState !== 'function') throw new Error('calculateStreamBackpressureState not found');",
+      "const s1 = calculateStreamBackpressureState(16384, 16384);",
+      "if (s1.shouldPause !== true || s1.ratio !== 1.0) throw new Error('Failed at highWaterMark: ' + JSON.stringify(s1));",
+      "const s2 = calculateStreamBackpressureState(8192, 16384);",
+      "if (s2.shouldPause !== false || s2.ratio !== 0.5) throw new Error('Failed below highWaterMark: ' + JSON.stringify(s2));",
+      "const s3 = calculateStreamBackpressureState(24576, 16384);",
+      "if (s3.shouldPause !== true || s3.ratio !== 1.5) throw new Error('Failed above highWaterMark: ' + JSON.stringify(s3));"
+    ),
+    aTitle: "Certify Stream Processing Pipeline SLA",
+    aDesc: "Write `certifyStreamPipelineSla(metrics: { peakMemoryBytes: number; maxAllowedMemoryBytes: number; droppedChunks: number; backpressurePauses: number }): { certified: boolean; grade: string }` verifying peakMemoryBytes <= maxAllowedMemoryBytes, droppedChunks === 0, and backpressurePauses >= 1.",
+    aLanguage: "typescript",
+    aStarter: lines("function certifyStreamPipelineSla(metrics) {", "  // Return SLA certification", "  return { certified: false, grade: 'FAIL' };", "}"),
+    aHint: "const pass = metrics.peakMemoryBytes <= metrics.maxAllowedMemoryBytes && metrics.droppedChunks === 0 && metrics.backpressurePauses >= 1; return { certified: pass, grade: pass ? 'A+' : 'FAIL' };",
+    aTest: lines(
+      "if (typeof certifyStreamPipelineSla !== 'function') throw new Error('certifyStreamPipelineSla not found');",
+      "const cert1 = certifyStreamPipelineSla({ peakMemoryBytes: 32768, maxAllowedMemoryBytes: 65536, droppedChunks: 0, backpressurePauses: 2 });",
+      "if (cert1.certified !== true || cert1.grade !== 'A+') throw new Error('Failed cert1 Grade A+: ' + JSON.stringify(cert1));",
+      "const cert2 = certifyStreamPipelineSla({ peakMemoryBytes: 131072, maxAllowedMemoryBytes: 65536, droppedChunks: 0, backpressurePauses: 2 });",
+      "if (cert2.certified !== false || cert2.grade !== 'FAIL') throw new Error('Failed cert2 memory limit: ' + JSON.stringify(cert2));"
+    )
+  },
+
+  // ── DAY 52: Edge Security, TLS Offloading & Zero-Trust Identity ─────────────────
+  {
+    ...NODE_WEB_DAYS[51],
+    eTitle: "Validate Client Certificate Expiration",
+    eDesc: "Write `validateCertificateValidity(notBefore: number, notAfter: number, currentMs: number): boolean` returning true if currentMs is between notBefore and notAfter (inclusive).",
+    eLanguage: "typescript",
+    eStarter: lines("function validateCertificateValidity(notBefore, notAfter, currentMs) {", "  // Return whether certificate timestamp is valid", "  return false;", "}"),
+    eHint: "return currentMs >= notBefore && currentMs <= notAfter;",
+    eTest: lines(
+      "if (typeof validateCertificateValidity !== 'function') throw new Error('validateCertificateValidity not found');",
+      "if (validateCertificateValidity(1000, 2000, 1500) !== true) throw new Error('Failed valid timestamp check');",
+      "if (validateCertificateValidity(1000, 2000, 500) !== false) throw new Error('Failed premature timestamp check');",
+      "if (validateCertificateValidity(1000, 2000, 2500) !== false) throw new Error('Failed expired timestamp check');"
+    ),
+    aTitle: "Evaluate RBAC Scope Authorization",
+    aDesc: "Write `evaluateRbacAuthorization(userScopes: string[], requiredAction: string): boolean` returning true if userScopes includes '*' or requiredAction, or a wildcard prefix matching requiredAction (e.g., 'orders:*' matches 'orders:read').",
+    aLanguage: "typescript",
+    aStarter: lines("function evaluateRbacAuthorization(userScopes, requiredAction) {", "  // Return whether user is authorized for action", "  return false;", "}"),
+    aHint: "return userScopes.some(scope => scope === '*' || scope === requiredAction || (scope.endsWith(':*') && requiredAction.startsWith(scope.slice(0, -1))));",
+    aTest: lines(
+      "if (typeof evaluateRbacAuthorization !== 'function') throw new Error('evaluateRbacAuthorization not found');",
+      "if (evaluateRbacAuthorization(['*'], 'payments:create') !== true) throw new Error('Failed global wildcard check');",
+      "if (evaluateRbacAuthorization(['orders:*'], 'orders:read') !== true) throw new Error('Failed prefix wildcard check');",
+      "if (evaluateRbacAuthorization(['orders:read'], 'orders:delete') !== false) throw new Error('Failed unauthorized action check');"
+    )
+  },
+
+  // ── DAY 53: Full-Lifecycle Distributed Observability ───────────────────────────
+  {
+    ...NODE_WEB_DAYS[52],
+    eTitle: "Parse W3C Traceparent Header",
+    eDesc: "Write `parseW3cTraceparent(header: string): { isValid: boolean; traceId: string | null; parentSpanId: string | null; sampled: boolean }` parsing '00-{32hex}-{16hex}-{flags}'.",
+    eLanguage: "typescript",
+    eStarter: lines("function parseW3cTraceparent(header) {", "  // Parse W3C traceparent header", "  return { isValid: false, traceId: null, parentSpanId: null, sampled: false };", "}"),
+    eHint: "const parts = header.split('-'); if (parts.length === 4 && parts[0] === '00' && parts[1].length === 32 && parts[2].length === 16) return { isValid: true, traceId: parts[1], parentSpanId: parts[2], sampled: parts[3] === '01' }; return { isValid: false, traceId: null, parentSpanId: null, sampled: false };",
+    eTest: lines(
+      "if (typeof parseW3cTraceparent !== 'function') throw new Error('parseW3cTraceparent not found');",
+      "const t1 = parseW3cTraceparent('00-4bf92f3577b34da6a3ce929d0e0e4736-00f067aa0ba902b7-01');",
+      "if (t1.isValid !== true || t1.traceId !== '4bf92f3577b34da6a3ce929d0e0e4736' || t1.sampled !== true) throw new Error('Failed valid traceparent parse: ' + JSON.stringify(t1));",
+      "const t2 = parseW3cTraceparent('invalid-header-format');",
+      "if (t2.isValid !== false) throw new Error('Failed invalid traceparent rejection');"
+    ),
+    aTitle: "Place Histogram Observation in Discrete Buckets",
+    aDesc: "Write `placeHistogramObservation(durationMs: number, buckets: number[]): number[]` returning array of upper bounds (le) that durationMs is less than or equal to.",
+    aLanguage: "typescript",
+    aStarter: lines("function placeHistogramObservation(durationMs, buckets) {", "  // Return matching bucket bounds", "  return [];", "}"),
+    aHint: "return buckets.filter(b => durationMs <= b);",
+    aTest: lines(
+      "if (typeof placeHistogramObservation !== 'function') throw new Error('placeHistogramObservation not found');",
+      "const b1 = placeHistogramObservation(42, [10, 25, 50, 100, 250, 500]);",
+      "if (b1.length !== 4 || b1[0] !== 50 || b1[1] !== 100) throw new Error('Failed bucket placement 42ms: ' + JSON.stringify(b1));",
+      "const b2 = placeHistogramObservation(5, [10, 25, 50]);",
+      "if (b2.length !== 3) throw new Error('Failed bucket placement 5ms');"
+    )
+  },
+
+  // ── DAY 54: Dynamic Reverse Proxying & WebSocket Multiplexing ──────────────────
+  {
+    ...NODE_WEB_DAYS[53],
+    eTitle: "Translate gRPC Status to HTTP Status",
+    eDesc: "Write `translateGrpcStatus(grpcCode: number): number` mapping 0 -> 200, 3 -> 400, 5 -> 404, 7 -> 403, 14 -> 503, default -> 500.",
+    eLanguage: "typescript",
+    eStarter: lines("function translateGrpcStatus(grpcCode) {", "  // Return mapped HTTP status code", "  return 500;", "}"),
+    eHint: "const map = { 0: 200, 3: 400, 5: 404, 7: 403, 14: 503 }; return map[grpcCode] || 500;",
+    eTest: lines(
+      "if (typeof translateGrpcStatus !== 'function') throw new Error('translateGrpcStatus not found');",
+      "if (translateGrpcStatus(0) !== 200) throw new Error('0 should map to 200');",
+      "if (translateGrpcStatus(3) !== 400) throw new Error('3 should map to 400');",
+      "if (translateGrpcStatus(5) !== 404) throw new Error('5 should map to 404');",
+      "if (translateGrpcStatus(14) !== 503) throw new Error('14 should map to 503');",
+      "if (translateGrpcStatus(99) !== 500) throw new Error('99 should default to 500');"
+    ),
+    aTitle: "Select Least-Connections Upstream Node",
+    aDesc: "Write `selectLeastConnectionsNode(nodes: Array<{ id: string; activeConnections: number; state: string }>): string | null` selecting healthy node (state !== 'OPEN') with lowest activeConnections.",
+    aLanguage: "typescript",
+    aStarter: lines("function selectLeastConnectionsNode(nodes) {", "  // Return selected node ID", "  return null;", "}"),
+    aHint: "const healthy = nodes.filter(n => n.state !== 'OPEN'); if (healthy.length === 0) return null; healthy.sort((a, b) => a.activeConnections - b.activeConnections); return healthy[0].id;",
+    aTest: lines(
+      "if (typeof selectLeastConnectionsNode !== 'function') throw new Error('selectLeastConnectionsNode not found');",
+      "const n1 = selectLeastConnectionsNode([",
+      "  { id: 'node_a', activeConnections: 5, state: 'CLOSED' },",
+      "  { id: 'node_b', activeConnections: 2, state: 'CLOSED' },",
+      "  { id: 'node_c', activeConnections: 1, state: 'OPEN' }",
+      "]);",
+      "if (n1 !== 'node_b') throw new Error('Failed least-connections selection (node_c is OPEN): ' + n1);",
+      "const n2 = selectLeastConnectionsNode([{ id: 'node_x', activeConnections: 0, state: 'OPEN' }]);",
+      "if (n2 !== null) throw new Error('Should return null if all nodes OPEN');"
+    )
+  },
+
+  // ── DAY 55: Milestone 10 (Core): High-Throughput Edge Routing & Policy Engine ───
+  {
+    ...NODE_WEB_DAYS[54],
+    eTitle: "Calculate Adaptive Token Bucket Refill",
+    eDesc: "Write `calculateAdaptiveTokenRefill(currentTokens: number, capacity: number, elapsedSec: number, refillRatePerSec: number, upstreamLatencyMs: number): number` where refill rate is halved if upstreamLatencyMs > 200, capped at capacity.",
+    eLanguage: "typescript",
+    eStarter: lines("function calculateAdaptiveTokenRefill(currentTokens, capacity, elapsedSec, refillRatePerSec, upstreamLatencyMs) {", "  // Return updated token count", "  return 0;", "}"),
+    eHint: "const effectiveRefill = upstreamLatencyMs > 200 ? refillRatePerSec * 0.5 : refillRatePerSec; return Number(Math.min(capacity, currentTokens + elapsedSec * effectiveRefill).toFixed(2));",
+    eTest: lines(
+      "if (typeof calculateAdaptiveTokenRefill !== 'function') throw new Error('calculateAdaptiveTokenRefill not found');",
+      "const tok1 = calculateAdaptiveTokenRefill(10, 50, 2, 5, 50);",
+      "if (tok1 !== 20.0) throw new Error('Failed normal refill: ' + tok1);",
+      "const tok2 = calculateAdaptiveTokenRefill(10, 50, 2, 5, 250);",
+      "if (tok2 !== 15.0) throw new Error('Failed throttled refill under latency backpressure: ' + tok2);",
+      "const tok3 = calculateAdaptiveTokenRefill(48, 50, 2, 5, 50);",
+      "if (tok3 !== 50.0) throw new Error('Failed capacity cap: ' + tok3);"
+    ),
+    aTitle: "Certify Milestone 10 Capstone Edge Gateway SLA",
+    aDesc: "Write `certifyMilestone10Capstone(results: { routePassed: boolean; securityPassed: boolean; rateLimitPassed: boolean; grpcPassed: boolean; circuitBreakerPassed: boolean; otelPassed: boolean; gatewayLatencyMs: number }): { certified: boolean; grade: string }` requiring all flags true and gatewayLatencyMs < 1.0.",
+    aLanguage: "typescript",
+    aStarter: lines("function certifyMilestone10Capstone(results) {", "  // Return Milestone 10 certification", "  return { certified: false, grade: 'FAIL' };", "}"),
+    aHint: "const pass = results.routePassed && results.securityPassed && results.rateLimitPassed && results.grpcPassed && results.circuitBreakerPassed && results.otelPassed && results.gatewayLatencyMs < 1.0; return { certified: pass, grade: pass ? 'A+' : 'FAIL' };",
+    aTest: lines(
+      "if (typeof certifyMilestone10Capstone !== 'function') throw new Error('certifyMilestone10Capstone not found');",
+      "const c1 = certifyMilestone10Capstone({",
+      "  routePassed: true, securityPassed: true, rateLimitPassed: true, grpcPassed: true, circuitBreakerPassed: true, otelPassed: true, gatewayLatencyMs: 0.42",
+      "});",
+      "if (c1.certified !== true || c1.grade !== 'A+') throw new Error('Failed c1 Grade A+: ' + JSON.stringify(c1));",
+      "const c2 = certifyMilestone10Capstone({",
+      "  routePassed: true, securityPassed: true, rateLimitPassed: true, grpcPassed: true, circuitBreakerPassed: true, otelPassed: true, gatewayLatencyMs: 1.5",
+      "});",
+      "if (c2.certified !== false || c2.grade !== 'FAIL') throw new Error('Failed c2 gatewayLatencyMs limit: ' + JSON.stringify(c2));"
+    )
   }
 ];
 

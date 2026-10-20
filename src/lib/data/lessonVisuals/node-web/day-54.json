@@ -1,0 +1,591 @@
+{
+  "schemaVersion": 2,
+  "prefix": "node-web",
+  "day": 54,
+  "promptSha": "block11_expansion",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Reverse Proxy Fundamentals & Dynamic Route Dispatching: Path Matching, Header Rewriting & Target Selection",
+      "codeHash": "025ed844d4edee856c0e2127e3d09feb28e432366312f263de0144636bd9ac7e",
+      "spec": {
+        "template": "flow",
+        "title": "Dynamic Reverse Proxy Route Dispatching & Header Sanitization",
+        "nodes": [
+          {
+            "id": "client",
+            "label": "Public Inbound Client",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "proxy",
+            "label": "Dynamic Reverse Proxy",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "radix",
+            "label": "Radix Prefix Route Trie",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "upstream",
+            "label": "Private Backend Origin",
+            "sub": "Active Stage",
+            "status": "ok"
+          }
+        ],
+        "edges": [
+          {
+            "from": "client",
+            "to": "proxy",
+            "label": "HTTP/1.1 Request with Untrusted Headers"
+          },
+          {
+            "from": "proxy",
+            "to": "radix",
+            "label": "Match Path Prefix (/api/v1/billing/*)"
+          },
+          {
+            "from": "radix",
+            "to": "proxy",
+            "label": "Target: http://billing-svc.internal:4000"
+          },
+          {
+            "from": "proxy",
+            "to": "upstream",
+            "label": "Dispatch with X-Forwarded-* & Path Rewriting"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Proxy intercepts inbound request and matches path against dynamic routing trie.",
+            "values": {
+              "client": {
+                "status": "Online"
+              },
+              "proxy": {
+                "status": "Online"
+              },
+              "radix": {
+                "status": "Online"
+              },
+              "upstream": {
+                "status": "Online"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Untrusted spoofing headers (x-internal-secret) are stripped permanently.",
+            "values": {
+              "client": {
+                "status": "Processing"
+              },
+              "proxy": {
+                "status": "Processing"
+              },
+              "radix": {
+                "status": "Processing"
+              },
+              "upstream": {
+                "status": "Processing"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Standard X-Forwarded-For, Proto, and Host headers are injected.",
+            "values": {
+              "client": {
+                "status": "Committed"
+              },
+              "proxy": {
+                "status": "Committed"
+              },
+              "radix": {
+                "status": "Committed"
+              },
+              "upstream": {
+                "status": "Committed"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Rewritten path is dispatched to upstream service via persistent socket pool.",
+            "values": {
+              "client": {
+                "status": "Online"
+              },
+              "proxy": {
+                "status": "Online"
+              },
+              "radix": {
+                "status": "Online"
+              },
+              "upstream": {
+                "status": "Online"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Protocol Translation: HTTP/1.1 JSON to gRPC Protocol Buffers & Status Code Mapping",
+      "codeHash": "0f1a348025a6ebd8c5d4404e76bb06b94ff48d36c7774aa724693531c1da8b5c",
+      "spec": {
+        "template": "flow",
+        "title": "Protocol Translation: HTTP/1.1 JSON to gRPC Protobuf Framing",
+        "nodes": [
+          {
+            "id": "rest",
+            "label": "RESTful JSON Client",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "transcoder",
+            "label": "gRPC-JSON Transcoder",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "grpc_frame",
+            "label": "5-Byte Header + Protobuf Binary",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "backend",
+            "label": "Internal gRPC Microservice",
+            "sub": "Active Stage",
+            "status": "ok"
+          }
+        ],
+        "edges": [
+          {
+            "from": "rest",
+            "to": "transcoder",
+            "label": "POST /v1/users { JSON payload }"
+          },
+          {
+            "from": "transcoder",
+            "to": "grpc_frame",
+            "label": "Build Frame (comp=0, len=N)"
+          },
+          {
+            "from": "grpc_frame",
+            "to": "backend",
+            "label": "HTTP/2 DATA Frame (application/grpc)"
+          },
+          {
+            "from": "backend",
+            "to": "transcoder",
+            "label": "gRPC Trailers (grpc-status: 0)"
+          },
+          {
+            "from": "transcoder",
+            "to": "rest",
+            "label": "HTTP 200 OK + JSON Response"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Web client submits standard RESTful JSON request over HTTP/1.1.",
+            "values": {
+              "rest": {
+                "status": "Online"
+              },
+              "transcoder": {
+                "status": "Online"
+              },
+              "grpc_frame": {
+                "status": "Online"
+              },
+              "backend": {
+                "status": "Online"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Transcoder validates schema and serializes payload into binary Protocol Buffer.",
+            "values": {
+              "rest": {
+                "status": "Processing"
+              },
+              "transcoder": {
+                "status": "Processing"
+              },
+              "grpc_frame": {
+                "status": "Processing"
+              },
+              "backend": {
+                "status": "Processing"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Constructs 5-byte gRPC frame and dispatches over HTTP/2 stream.",
+            "values": {
+              "rest": {
+                "status": "Committed"
+              },
+              "transcoder": {
+                "status": "Committed"
+              },
+              "grpc_frame": {
+                "status": "Committed"
+              },
+              "backend": {
+                "status": "Committed"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Translates gRPC status trailers bidirectionally to standard HTTP status codes.",
+            "values": {
+              "rest": {
+                "status": "Online"
+              },
+              "transcoder": {
+                "status": "Online"
+              },
+              "grpc_frame": {
+                "status": "Online"
+              },
+              "backend": {
+                "status": "Online"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "WebSocket Connection Multiplexing: Upgrade Handshakes, Heartbeats & Channel-Based Pub/Sub Routing",
+      "codeHash": "e6889b586c94134be8c1f6a0eb8b4590b4977558d9ca9968dc9fbfd6e1481ad1",
+      "spec": {
+        "template": "flow",
+        "title": "WebSocket Connection Multiplexing & Channel Pub/Sub Hub",
+        "nodes": [
+          {
+            "id": "browser",
+            "label": "Browser Client",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "hub",
+            "label": "Edge WebSocket Multiplex Hub",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "channels",
+            "label": "Topic Channel Registry",
+            "sub": "Active Stage",
+            "status": "ok"
+          },
+          {
+            "id": "workers",
+            "label": "Backend Event Publishers",
+            "sub": "Active Stage",
+            "status": "ok"
+          }
+        ],
+        "edges": [
+          {
+            "from": "browser",
+            "to": "hub",
+            "label": "GET /ws Upgrade Handshake (Sec-WebSocket-Key)"
+          },
+          {
+            "from": "hub",
+            "to": "browser",
+            "label": "HTTP 101 Switching Protocols (Sec-WebSocket-Accept)"
+          },
+          {
+            "from": "browser",
+            "to": "hub",
+            "label": "Subscribe to 'orders:live'"
+          },
+          {
+            "from": "workers",
+            "to": "hub",
+            "label": "Publish Event to 'orders:live'"
+          },
+          {
+            "from": "hub",
+            "to": "browser",
+            "label": "Multiplexed Broadcast to Subscribed Sockets"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Edge hub completes RFC 6455 upgrade handshake and maintains persistent socket.",
+            "values": {
+              "browser": {
+                "status": "Online"
+              },
+              "hub": {
+                "status": "Online"
+              },
+              "channels": {
+                "status": "Online"
+              },
+              "workers": {
+                "status": "Online"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Multiplexes millions of client sockets to avoid backend connection exhaustion.",
+            "values": {
+              "browser": {
+                "status": "Processing"
+              },
+              "hub": {
+                "status": "Processing"
+              },
+              "channels": {
+                "status": "Processing"
+              },
+              "workers": {
+                "status": "Processing"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Heartbeat ping/pong frames detect and prune dead zombie sockets.",
+            "values": {
+              "browser": {
+                "status": "Committed"
+              },
+              "hub": {
+                "status": "Committed"
+              },
+              "channels": {
+                "status": "Committed"
+              },
+              "workers": {
+                "status": "Committed"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Channel-based pub/sub fans out live events to subscribers with sub-ms latency.",
+            "values": {
+              "browser": {
+                "status": "Online"
+              },
+              "hub": {
+                "status": "Online"
+              },
+              "channels": {
+                "status": "Online"
+              },
+              "workers": {
+                "status": "Online"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Load Balancing Strategies & Active Health Checking: Round-Robin, Least-Connections & Circuit Breakers",
+      "codeHash": "cba62db1fe62fba4d80bdf14b6d47b731db338a7172aefad7cbc391453a25520",
+      "spec": {
+        "template": "states",
+        "title": "Upstream Cluster Outlier Detection & Circuit Breaker State Machine",
+        "states": [
+          {
+            "id": "CLOSED",
+            "label": "CLOSED State (Healthy, Traffic Permitted)"
+          },
+          {
+            "id": "OPEN",
+            "label": "OPEN State (Tripped, Traffic Blocked)"
+          },
+          {
+            "id": "HALF_OPEN",
+            "label": "HALF-OPEN State (Canary Probe Testing)"
+          }
+        ],
+        "transitions": [
+          {
+            "from": "CLOSED",
+            "to": "OPEN",
+            "label": "3 Consecutive Upstream Failures"
+          },
+          {
+            "from": "OPEN",
+            "to": "HALF_OPEN",
+            "label": "Cool-down Timer Expires"
+          },
+          {
+            "from": "HALF_OPEN",
+            "to": "CLOSED",
+            "label": "Canary Request Succeeds"
+          },
+          {
+            "from": "HALF_OPEN",
+            "to": "OPEN",
+            "label": "Canary Request Fails"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Load balancer routes requests via least-connections among healthy nodes.",
+            "values": {
+              "activeState": "CLOSED"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Instance encountering 3 consecutive errors trips circuit breaker to OPEN.",
+            "values": {
+              "activeState": "OPEN"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Faulty node is ejected from rotation, shielding it from thundering herds.",
+            "values": {
+              "activeState": "HALF_OPEN"
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Cool-down timer triggers HALF-OPEN canary to test recovery before restoring traffic.",
+            "values": {
+              "activeState": "CLOSED"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Edge Gateway Suite: End-to-End Reverse Proxying & Multiplexing Verification",
+      "codeHash": "0f683917f5999eb47518565d9f06f6d7571b9c402d4036bc02c52c2c331ea079",
+      "spec": {
+        "template": "boxes",
+        "title": "Day 54 Production Edge Gateway SLA Verification",
+        "items": [
+          {
+            "id": "route_sla",
+            "title": "Dynamic Route Matching",
+            "desc": "100% prefix matching accuracy and security header sanitization",
+            "status": "ok"
+          },
+          {
+            "id": "transcode_sla",
+            "title": "gRPC Transcoding",
+            "desc": "5-byte binary framing and bidirectional gRPC-HTTP status mapping",
+            "status": "ok"
+          },
+          {
+            "id": "ws_sla",
+            "title": "RFC 6455 WebSockets",
+            "desc": "Compliant upgrade handshake and channel-based event multiplexing",
+            "status": "ok"
+          },
+          {
+            "id": "certified",
+            "title": "Gateway Grade A+",
+            "desc": "Certified Dynamic Reverse Proxy & Multiplexing Architecture",
+            "status": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Verification harness dispatches routes across HTTP and gRPC subsystems.",
+            "values": {
+              "route_sla": {
+                "status": "Inspecting"
+              },
+              "transcode_sla": {
+                "status": "Inspecting"
+              },
+              "ws_sla": {
+                "status": "Inspecting"
+              },
+              "certified": {
+                "status": "Inspecting"
+              }
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "WebSocket upgrade challenge and channel broadcasting validated.",
+            "values": {
+              "route_sla": {
+                "status": "Synchronized"
+              },
+              "transcode_sla": {
+                "status": "Synchronized"
+              },
+              "ws_sla": {
+                "status": "Synchronized"
+              },
+              "certified": {
+                "status": "Synchronized"
+              }
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Circuit breaker trips upon simulated node errors, preserving cluster availability.",
+            "values": {
+              "route_sla": {
+                "status": "Synchronized"
+              },
+              "transcode_sla": {
+                "status": "Synchronized"
+              },
+              "ws_sla": {
+                "status": "Synchronized"
+              },
+              "certified": {
+                "status": "Synchronized"
+              }
+            }
+          },
+          {
+            "at": "say7",
+            "caption": "Harness certifies Grade A+ Edge Gateway Architecture compliance.",
+            "values": {
+              "route_sla": {
+                "status": "Synchronized"
+              },
+              "transcode_sla": {
+                "status": "Synchronized"
+              },
+              "ws_sla": {
+                "status": "Synchronized"
+              },
+              "certified": {
+                "status": "Synchronized"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
