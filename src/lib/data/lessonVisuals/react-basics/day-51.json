@@ -1,0 +1,673 @@
+{
+  "schemaVersion": 2,
+  "prefix": "react-basics",
+  "day": 51,
+  "promptSha": "block11_generated",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Nested Layout Hierarchy, Segment Preservation & Scroll Restoration",
+      "codeHash": "ee46504092b71f367672a5b4d9f1e7fa4c3a7a7ad72b525d0efdb29b5c7f5468",
+      "spec": {
+        "template": "component-tree",
+        "title": "Next.js App Router Nested Layouts & Shared State Hierarchy",
+        "root": {
+          "id": "root_layout",
+          "name": "RootLayout (html, body, GlobalNav)",
+          "children": [
+            {
+              "id": "dashboard_layout",
+              "name": "DashboardLayout (Sidebar, UserProfile)",
+              "children": [
+                {
+                  "id": "analytics_page",
+                  "name": "AnalyticsPage (Charts, LiveCards)"
+                },
+                {
+                  "id": "settings_page",
+                  "name": "SettingsPage (ProfileForm)"
+                }
+              ]
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "RootLayout mounts top-level HTML and global navigation bar once.",
+            "values": {
+              "root_layout": {
+                "state": "Mounted"
+              },
+              "dashboard_layout": {
+                "state": "Idle"
+              },
+              "analytics_page": {
+                "state": "Idle"
+              },
+              "settings_page": {
+                "state": "Idle"
+              }
+            },
+            "tones": {
+              "root_layout": "ok",
+              "dashboard_layout": "idle",
+              "analytics_page": "idle",
+              "settings_page": "idle"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "DashboardLayout wraps internal administrative routes, persisting sidebar state.",
+            "values": {
+              "root_layout": {
+                "state": "Preserved"
+              },
+              "dashboard_layout": {
+                "state": "Mounted"
+              },
+              "analytics_page": {
+                "state": "Idle"
+              },
+              "settings_page": {
+                "state": "Idle"
+              }
+            },
+            "tones": {
+              "root_layout": "ok",
+              "dashboard_layout": "ok",
+              "analytics_page": "idle",
+              "settings_page": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Navigating from Analytics to Settings swaps only leaf page components.",
+            "values": {
+              "root_layout": {
+                "state": "No Re-render"
+              },
+              "dashboard_layout": {
+                "state": "State Intact"
+              },
+              "analytics_page": {
+                "state": "Unmounted"
+              },
+              "settings_page": {
+                "state": "Mounted"
+              }
+            },
+            "tones": {
+              "root_layout": "ok",
+              "dashboard_layout": "ok",
+              "analytics_page": "idle",
+              "settings_page": "ok"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Nested layouts completely eliminate layout thrashing and maintain 60 FPS transitions.",
+            "values": {
+              "root_layout": {
+                "state": "Persistent"
+              },
+              "dashboard_layout": {
+                "state": "Zero Reflow"
+              },
+              "analytics_page": {
+                "state": "Cached"
+              },
+              "settings_page": {
+                "state": "Active"
+              }
+            },
+            "tones": {
+              "root_layout": "ok",
+              "dashboard_layout": "ok",
+              "analytics_page": "idle",
+              "settings_page": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Route Groups ((marketing) vs (dashboard)): Multi-Root Layouts Without URL Pollution",
+      "codeHash": "fe213cde8174776a82f064d4b4fe888f0731979de3fb8190138d69d9f46f3fb7",
+      "spec": {
+        "template": "compare",
+        "title": "Route Groups URL Architecture: Clean Public URLs vs Visual Grouping",
+        "left": {
+          "label": "Physical File Directory Structure",
+          "items": [
+            "app/(marketing)/about/page.tsx",
+            "app/(dashboard)/analytics/page.tsx",
+            "Route group folder in parens (marketing)",
+            "Isolated layout tree for marketing landing"
+          ]
+        },
+        "right": {
+          "label": "Resolved Public URL Path",
+          "items": [
+            "https://platform.com/about",
+            "https://platform.com/analytics",
+            "Parenthesis omitted from public path",
+            "Zero URL pollution with clean routing"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Route groups organize folders without altering the browser URL path.",
+            "values": {
+              "left": {
+                "items": [
+                  "app/(marketing)/about",
+                  "Group parenthesised",
+                  "Layout scoped",
+                  "No URL segment"
+                ]
+              },
+              "right": {
+                "items": [
+                  "/about",
+                  "Clean public path",
+                  "Zero folder clutter",
+                  "SEO optimized"
+                ]
+              }
+            },
+            "tones": {
+              "left": "data",
+              "right": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Marketing routes use a lightweight layout without internal sidebar chrome.",
+            "values": {
+              "left": {
+                "items": [
+                  "(marketing)/layout.tsx",
+                  "Public landing header",
+                  "Lead gen footer",
+                  "Zero auth chrome"
+                ]
+              },
+              "right": {
+                "items": [
+                  "Public Layout Rendered",
+                  "Fast static hydration",
+                  "Marketing CTA ready",
+                  "Zero dashboard bloat"
+                ]
+              }
+            },
+            "tones": {
+              "left": "data",
+              "right": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Dashboard routes use an authenticated layout with sidebar and user menus.",
+            "values": {
+              "left": {
+                "items": [
+                  "(dashboard)/layout.tsx",
+                  "Authenticated sidebar",
+                  "Real-time websocket",
+                  "User profile badge"
+                ]
+              },
+              "right": {
+                "items": [
+                  "Secure Layout Rendered",
+                  "Protected session",
+                  "Live stream attached",
+                  "Enterprise layout"
+                ]
+              }
+            },
+            "tones": {
+              "left": "data",
+              "right": "ok"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Route groups enable multiple root layouts across distinct application sub-domains.",
+            "values": {
+              "left": {
+                "items": [
+                  "Multi-Root Architecture",
+                  "Independent Head Tags",
+                  "Granular Theme Bundles",
+                  "Modular Organization"
+                ]
+              },
+              "right": {
+                "items": [
+                  "Unified Domain Name",
+                  "Clean URL Routes",
+                  "Optimized CSS Bundles",
+                  "Enterprise Certified"
+                ]
+              }
+            },
+            "tones": {
+              "left": "ok",
+              "right": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Parallel Routes (@analytics, @feed): Independent Loading & Error Boundaries",
+      "codeHash": "d85f6782f1a9303fc7e0c19068193834d5661684bfcf7839b87356af371b5336",
+      "spec": {
+        "template": "boxes",
+        "title": "Parallel Routes: Named Slots & Independent Hydration Streams",
+        "boxes": [
+          {
+            "id": "parent_layout",
+            "label": "Dashboard Layout (props.children, props.analytics, props.feed)",
+            "tappable": false
+          },
+          {
+            "id": "slot_analytics",
+            "label": "@analytics Slot (Independent Suspense Boundary)",
+            "tappable": false
+          },
+          {
+            "id": "slot_feed",
+            "label": "@feed Slot (Live Financial Ticker Stream)",
+            "tappable": false
+          },
+          {
+            "id": "slot_default",
+            "label": "default.tsx Fallback (Unmatched Route Recovery)",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Parallel routes allow rendering multiple page slots simultaneously in the same layout.",
+            "values": {
+              "parent_layout": {
+                "text": "\"Mounting Slots\""
+              },
+              "slot_analytics": {
+                "text": "\"Stream Initialized\""
+              },
+              "slot_feed": {
+                "text": "\"Stream Initialized\""
+              },
+              "slot_default": {
+                "text": "\"Standby\""
+              }
+            },
+            "tones": {
+              "parent_layout": "data",
+              "slot_analytics": "data",
+              "slot_feed": "data",
+              "slot_default": "idle"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Slots execute data fetching concurrently without blocking each other.",
+            "values": {
+              "parent_layout": {
+                "text": "\"Layout Rendered\""
+              },
+              "slot_analytics": {
+                "text": "\"Computing PnL (45ms)\""
+              },
+              "slot_feed": {
+                "text": "\"Live Ticker Connected\""
+              },
+              "slot_default": {
+                "text": "\"Standby\""
+              }
+            },
+            "tones": {
+              "parent_layout": "ok",
+              "slot_analytics": "data",
+              "slot_feed": "ok",
+              "slot_default": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Each slot maintains its own error boundary and loading state.",
+            "values": {
+              "parent_layout": {
+                "text": "\"Layout Healthy\""
+              },
+              "slot_analytics": {
+                "text": "\"Analytics Hydrated\""
+              },
+              "slot_feed": {
+                "text": "\"Real-Time Feed Hydrated\""
+              },
+              "slot_default": {
+                "text": "\"Inactive\""
+              }
+            },
+            "tones": {
+              "parent_layout": "ok",
+              "slot_analytics": "ok",
+              "slot_feed": "ok",
+              "slot_default": "idle"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "default.tsx ensures graceful fallback when child routes navigate independently.",
+            "values": {
+              "parent_layout": {
+                "text": "\"Fully Synchronized\""
+              },
+              "slot_analytics": {
+                "text": "\"60 FPS Live\""
+              },
+              "slot_feed": {
+                "text": "\"Stream Active\""
+              },
+              "slot_default": {
+                "text": "\"Guarded\""
+              }
+            },
+            "tones": {
+              "parent_layout": "ok",
+              "slot_analytics": "ok",
+              "slot_feed": "ok",
+              "slot_default": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Intercepting Routes ((.), (..), (...)): Context-Preserving Modal Overlays & Deep Linking",
+      "codeHash": "654d8cb8f007e431739601e87b4f427868b29609041abf07821c01b724d2cc40",
+      "spec": {
+        "template": "flow",
+        "title": "Intercepting Routes: Soft Navigation Modal vs Hard Refresh Full Page",
+        "nodes": [
+          {
+            "id": "feed_click",
+            "label": "User Clicks Photo #42",
+            "tappable": false
+          },
+          {
+            "id": "intercept_match",
+            "label": "Intercept Route (..)photo/[id]",
+            "tappable": false
+          },
+          {
+            "id": "modal_overlay",
+            "label": "Render Modal in @modal Slot",
+            "tappable": false
+          },
+          {
+            "id": "hard_refresh",
+            "label": "Direct URL /photo/42 Access",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Client-side soft navigation triggers route interception matching (..) convention.",
+            "values": {
+              "feed_click": {
+                "text": "\"Soft Click\""
+              },
+              "intercept_match": {
+                "text": "\"Evaluating\""
+              },
+              "modal_overlay": {
+                "text": "\"Idle\""
+              },
+              "hard_refresh": {
+                "text": "\"Idle\""
+              }
+            },
+            "tones": {
+              "feed_click": "data",
+              "intercept_match": "data",
+              "modal_overlay": "idle",
+              "hard_refresh": "idle"
+            },
+            "arrows": [
+              [
+                "feed_click",
+                "intercept_match"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "App Router updates browser URL to /photo/42 while keeping feed page mounted.",
+            "values": {
+              "feed_click": {
+                "text": "\"Feed Kept in Background\""
+              },
+              "intercept_match": {
+                "text": "\"Intercepted\""
+              },
+              "modal_overlay": {
+                "text": "\"Opening Modal\""
+              },
+              "hard_refresh": {
+                "text": "\"Idle\""
+              }
+            },
+            "tones": {
+              "feed_click": "ok",
+              "intercept_match": "ok",
+              "modal_overlay": "data",
+              "hard_refresh": "idle"
+            },
+            "arrows": [
+              [
+                "intercept_match",
+                "modal_overlay"
+              ]
+            ]
+          },
+          {
+            "at": "say3",
+            "caption": "The photo renders inside a modal overlay slot without unmounting the feed context.",
+            "values": {
+              "feed_click": {
+                "text": "\"Feed Interactive\""
+              },
+              "intercept_match": {
+                "text": "\"URL: /photo/42\""
+              },
+              "modal_overlay": {
+                "text": "\"Modal Active\""
+              },
+              "hard_refresh": {
+                "text": "\"Bypassed\""
+              }
+            },
+            "tones": {
+              "feed_click": "ok",
+              "intercept_match": "ok",
+              "modal_overlay": "ok",
+              "hard_refresh": "idle"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "A hard browser refresh or direct link navigates directly to the standalone photo page.",
+            "values": {
+              "feed_click": {
+                "text": "\"N/A\""
+              },
+              "intercept_match": {
+                "text": "\"N/A\""
+              },
+              "modal_overlay": {
+                "text": "\"Closed\""
+              },
+              "hard_refresh": {
+                "text": "\"Dedicated Standalone Page\""
+              }
+            },
+            "tones": {
+              "feed_click": "idle",
+              "intercept_match": "idle",
+              "modal_overlay": "idle",
+              "hard_refresh": "ok"
+            },
+            "arrows": [
+              [
+                "hard_refresh",
+                "hard_refresh"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The App Router Tree Traversal Engine & Production Layout Diffing Benchmark",
+      "codeHash": "c0cc27171dcbe464a14f8df53b121ea5939646be3c1c8120c86db64099e7b001",
+      "spec": {
+        "template": "compare",
+        "title": "Architectural Audit: Legacy Pages Router vs App Router Architecture",
+        "left": {
+          "label": "Legacy Next.js Pages Router",
+          "items": [
+            "Root _app.tsx re-renders on route changes",
+            "No built-in nested layout persistence",
+            "Custom modal hacks lose shareable URLs",
+            "Waterfall client-side data fetching"
+          ]
+        },
+        "right": {
+          "label": "Modern App Router Architecture",
+          "items": [
+            "Persistent nested layouts with zero reflow",
+            "Parallel slots with independent Suspense",
+            "Intercepting routes provide shareable URLs",
+            "Server Components stream flight data directly"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "App Router eliminates wasteful re-renders of parent navigation chrome.",
+            "values": {
+              "left": {
+                "items": [
+                  "Full Tree Re-render",
+                  "Sidebar State Lost",
+                  "Flicker on Navigation",
+                  "High CPU Load"
+                ]
+              },
+              "right": {
+                "items": [
+                  "Leaf Node Swap Only",
+                  "Sidebar State Intact",
+                  "Zero Screen Flicker",
+                  "Smooth 60 FPS"
+                ]
+              }
+            },
+            "tones": {
+              "left": "error",
+              "right": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Parallel routes allow independent loading streams for complex dashboards.",
+            "values": {
+              "left": {
+                "items": [
+                  "Sequential Fetching",
+                  "Slowest Query Blocks All",
+                  "Blank White Screen",
+                  "High Bounce Rate"
+                ]
+              },
+              "right": {
+                "items": [
+                  "Concurrent Slot Streams",
+                  "Fastest Slots Hydrate First",
+                  "Progressive UI",
+                  "Instant Engagement"
+                ]
+              }
+            },
+            "tones": {
+              "left": "error",
+              "right": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Intercepting routes combine fluid modal UX with deep bookmarkable URLs.",
+            "values": {
+              "left": {
+                "items": [
+                  "Unshareable Modal State",
+                  "Back Button Closes Page",
+                  "Broken Deep Links",
+                  "Confusing UX"
+                ]
+              },
+              "right": {
+                "items": [
+                  "Shareable URL /photo/42",
+                  "Back Button Dismisses Modal",
+                  "Perfect Deep Linking",
+                  "Native App Feel"
+                ]
+              }
+            },
+            "tones": {
+              "left": "error",
+              "right": "ok"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "App Router delivers enterprise-grade performance and architectural scalability.",
+            "values": {
+              "left": {
+                "items": [
+                  "Monolithic Page Tree",
+                  "Fragile Global State",
+                  "High Maintenance Overhead",
+                  "Legacy Tech Debt"
+                ]
+              },
+              "right": {
+                "items": [
+                  "Modular Route Domains",
+                  "Isolated Slot Failures",
+                  "Zero Layout Thrash",
+                  "Enterprise Ready"
+                ]
+              }
+            },
+            "tones": {
+              "left": "error",
+              "right": "ok"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,673 @@
+{
+  "schemaVersion": 2,
+  "prefix": "react-basics",
+  "day": 53,
+  "promptSha": "block11_generated",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Rendering Spectrum: Static Site Generation (SSG), SSR, ISR vs Partial Prerendering (PPR)",
+      "codeHash": "4a0468769bbd29fea04eed288cce58456373aae3ebb08533635271ff2ede4bae",
+      "spec": {
+        "template": "compare",
+        "title": "Standard SSR vs Partial Prerendering (PPR) Streaming Architecture",
+        "left": {
+          "label": "Standard SSR (Blocking Server)",
+          "items": [
+            "Server waits for slowest database query",
+            "High Time to First Byte (TTFB 800ms+)",
+            "Users stare at blank white screen",
+            "Complete re-render of static navigation chrome"
+          ]
+        },
+        "right": {
+          "label": "Partial Prerendering (PPR) with Static Shell",
+          "items": [
+            "Instant static shell served from edge (< 20ms)",
+            "Immediate First Contentful Paint (FCP)",
+            "Dynamic holes stream concurrently via Suspense",
+            "Cumulative Layout Shift (CLS) = 0.000"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Standard SSR delays the entire response until the slowest dynamic query resolves.",
+            "values": {
+              "left": {
+                "items": [
+                  "Slow DB Query: 650ms",
+                  "TTFB: 780ms",
+                  "White Screen of Death",
+                  "High Bounce Rate"
+                ]
+              },
+              "right": {
+                "items": [
+                  "Static Shell: 14ms",
+                  "TTFB: 18ms",
+                  "Instant Chrome Rendered",
+                  "Zero Bounce Rate"
+                ]
+              }
+            },
+            "tones": {
+              "left": "error",
+              "right": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "PPR delivers the static header, layout, and navbars in the very first network chunk.",
+            "values": {
+              "left": {
+                "items": [
+                  "No Shell Available",
+                  "User Waiting...",
+                  "CPU Idling in Browser",
+                  "Poor User Experience"
+                ]
+              },
+              "right": {
+                "items": [
+                  "Nav & Sidebar Ready",
+                  "User Reading Content",
+                  "Browser Ready to Paint",
+                  "Native App Responsiveness"
+                ]
+              }
+            },
+            "tones": {
+              "left": "error",
+              "right": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Dynamic holes stream in progressively, replacing skeleton placeholders in-place.",
+            "values": {
+              "left": {
+                "items": [
+                  "Monolithic HTML Flush",
+                  "Massive DOM Replacement",
+                  "High Memory Spike",
+                  "Janky Render"
+                ]
+              },
+              "right": {
+                "items": [
+                  "Targeted Slot Hydration",
+                  "Skeleton Replacement",
+                  "Smooth Progressive Paint",
+                  "Zero Memory Spikes"
+                ]
+              }
+            },
+            "tones": {
+              "left": "data",
+              "right": "ok"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "PPR combines the speed of static sites with the live power of dynamic servers.",
+            "values": {
+              "left": {
+                "items": [
+                  "High Cloud Server Cost",
+                  "Brittle Under Load Spikes",
+                  "Sluggish Mobile Speed",
+                  "Legacy Architecture"
+                ]
+              },
+              "right": {
+                "items": [
+                  "Ultra Low Origin Load",
+                  "Survives Viral Spikes",
+                  "Blazing Mobile Performance",
+                  "React 19 Next-Gen"
+                ]
+              }
+            },
+            "tones": {
+              "left": "error",
+              "right": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Static Shell Generation & Dynamic Streaming Holes: The Postponed React Element Protocol",
+      "codeHash": "3e629a41a4fedec1803aa52b8a385d0f1f41feda2873ce06346711ee087ba87b",
+      "spec": {
+        "template": "boxes",
+        "title": "PPR Layout Decomposition: Static Shell vs Dynamic Streaming Holes",
+        "boxes": [
+          {
+            "id": "static_shell",
+            "label": "Static Shell (Header, Navigation, Footer - Cached at Edge)",
+            "tappable": false
+          },
+          {
+            "id": "dynamic_hole_1",
+            "label": "Dynamic Hole #1: User Cart Widget (<Suspense fallback={<CartSkeleton/>}>)",
+            "tappable": false
+          },
+          {
+            "id": "dynamic_hole_2",
+            "label": "Dynamic Hole #2: Real-Time Stock Feed (<Suspense fallback={<FeedSkeleton/>}>)",
+            "tappable": false
+          },
+          {
+            "id": "bounding_contract",
+            "label": "Skeleton Bounding Box Contract (Zero Layout Shift - CLS: 0.000)",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Next.js compiles the static shell at build time; edge nodes cache it globally.",
+            "values": {
+              "static_shell": {
+                "text": "\"Edge Cached 100%\""
+              },
+              "dynamic_hole_1": {
+                "text": "\"Demarcated with Suspense\""
+              },
+              "dynamic_hole_2": {
+                "text": "\"Demarcated with Suspense\""
+              },
+              "bounding_contract": {
+                "text": "\"Enforced\""
+              }
+            },
+            "tones": {
+              "static_shell": "ok",
+              "dynamic_hole_1": "data",
+              "dynamic_hole_2": "data",
+              "bounding_contract": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Browser receives the static shell instantly; skeletons hold reserved layout boxes.",
+            "values": {
+              "static_shell": {
+                "text": "\"Painted on Screen (18ms)\""
+              },
+              "dynamic_hole_1": {
+                "text": "\"CartSkeleton Active\""
+              },
+              "dynamic_hole_2": {
+                "text": "\"FeedSkeleton Active\""
+              },
+              "bounding_contract": {
+                "text": "\"CLS = 0.000\""
+              }
+            },
+            "tones": {
+              "static_shell": "ok",
+              "dynamic_hole_1": "data",
+              "dynamic_hole_2": "data",
+              "bounding_contract": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Server resolves database queries asynchronously and streams chunks over HTTP.",
+            "values": {
+              "static_shell": {
+                "text": "\"Untouched\""
+              },
+              "dynamic_hole_1": {
+                "text": "\"Cart Streamed (35ms)\""
+              },
+              "dynamic_hole_2": {
+                "text": "\"Feed Streamed (60ms)\""
+              },
+              "bounding_contract": {
+                "text": "\"Seamless Swap\""
+              }
+            },
+            "tones": {
+              "static_shell": "ok",
+              "dynamic_hole_1": "ok",
+              "dynamic_hole_2": "ok",
+              "bounding_contract": "ok"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "The page reaches fully interactive readiness without a single visual jump.",
+            "values": {
+              "static_shell": {
+                "text": "\"Fully Hydrated\""
+              },
+              "dynamic_hole_1": {
+                "text": "\"Cart Interactive\""
+              },
+              "dynamic_hole_2": {
+                "text": "\"Live Ticker Connected\""
+              },
+              "bounding_contract": {
+                "text": "\"Grade A+ Performance\""
+              }
+            },
+            "tones": {
+              "static_shell": "ok",
+              "dynamic_hole_1": "ok",
+              "dynamic_hole_2": "ok",
+              "bounding_contract": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "React Cache (cache()) & Request-Scoped Memoization Across Asynchronous Server Trees",
+      "codeHash": "56ed3a558233b6f174445acbb20b8812648dc5637788a615e03492ab85aad087",
+      "spec": {
+        "template": "flow",
+        "title": "Request-Scoped Memoization via React cache() Function",
+        "nodes": [
+          {
+            "id": "incoming_req",
+            "label": "Incoming User Request",
+            "tappable": false
+          },
+          {
+            "id": "comp_a",
+            "label": "Component A (Header Profile)",
+            "tappable": false
+          },
+          {
+            "id": "cache_lookup",
+            "label": "React cache() Registry",
+            "tappable": false
+          },
+          {
+            "id": "db_fetch",
+            "label": "Database Fetch (Single Execution)",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Component A requests user data via cached fetcher function.",
+            "values": {
+              "incoming_req": {
+                "text": "\"User Req\""
+              },
+              "comp_a": {
+                "text": "\"fetchUser('101')\""
+              },
+              "cache_lookup": {
+                "text": "\"Cache Miss\""
+              },
+              "db_fetch": {
+                "text": "\"Executing Query...\""
+              }
+            },
+            "tones": {
+              "incoming_req": "data",
+              "comp_a": "data",
+              "cache_lookup": "error",
+              "db_fetch": "data"
+            },
+            "arrows": [
+              [
+                "comp_a",
+                "cache_lookup"
+              ],
+              [
+                "cache_lookup",
+                "db_fetch"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Database query resolves; result is stored in request-scoped cache registry.",
+            "values": {
+              "incoming_req": {
+                "text": "\"Active\""
+              },
+              "comp_a": {
+                "text": "\"Rendered\""
+              },
+              "cache_lookup": {
+                "text": "\"Result Cached\""
+              },
+              "db_fetch": {
+                "text": "\"Query Done (12ms)\""
+              }
+            },
+            "tones": {
+              "incoming_req": "ok",
+              "comp_a": "ok",
+              "cache_lookup": "ok",
+              "db_fetch": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Component B requests the exact same user data later in the component tree.",
+            "values": {
+              "incoming_req": {
+                "text": "\"Active\""
+              },
+              "comp_a": {
+                "text": "\"Intact\""
+              },
+              "cache_lookup": {
+                "text": "\"Cache HIT!\""
+              },
+              "db_fetch": {
+                "text": "\"Bypassed (0ms)\""
+              }
+            },
+            "tones": {
+              "incoming_req": "ok",
+              "comp_a": "ok",
+              "cache_lookup": "ok",
+              "db_fetch": "ok"
+            },
+            "arrows": [
+              [
+                "cache_lookup",
+                "comp_a"
+              ]
+            ]
+          },
+          {
+            "at": "say4",
+            "caption": "Request-scoped memoization eliminates N+1 query overhead completely.",
+            "values": {
+              "incoming_req": {
+                "text": "\"Request Finished\""
+              },
+              "comp_a": {
+                "text": "\"Profile Ready\""
+              },
+              "cache_lookup": {
+                "text": "\"Cleared On Finish\""
+              },
+              "db_fetch": {
+                "text": "\"Zero Leaks Across Users\""
+              }
+            },
+            "tones": {
+              "incoming_req": "ok",
+              "comp_a": "ok",
+              "cache_lookup": "ok",
+              "db_fetch": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Next.js Unstable_cache & Incremental Tag Revalidation (revalidateTag) Mechanics",
+      "codeHash": "164f3f964f1e7907885537765d5dd280a456e362424679d878019438aef61bfe",
+      "spec": {
+        "template": "boxes",
+        "title": "Granular Tag-Based Edge Cache Invalidation Mesh",
+        "boxes": [
+          {
+            "id": "data_mutation",
+            "label": "Backend Mutation (Server Action updateInventory())",
+            "tappable": false
+          },
+          {
+            "id": "revalidate_tag",
+            "label": "revalidateTag('inventory-sku-99')",
+            "tappable": false
+          },
+          {
+            "id": "edge_purge",
+            "label": "Edge CDN Global Purge Broadcast (< 15ms)",
+            "tappable": false
+          },
+          {
+            "id": "next_request",
+            "label": "Subsequent Request Fetches Fresh Origin Data",
+            "tappable": false
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "User or admin submits a mutation updating stock inventory in the database.",
+            "values": {
+              "data_mutation": {
+                "text": "\"Stock Set to 0\""
+              },
+              "revalidate_tag": {
+                "text": "\"Pending\""
+              },
+              "edge_purge": {
+                "text": "\"Standby\""
+              },
+              "next_request": {
+                "text": "\"Standby\""
+              }
+            },
+            "tones": {
+              "data_mutation": "data",
+              "revalidate_tag": "idle",
+              "edge_purge": "idle",
+              "next_request": "idle"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Next.js invokes revalidateTag with the targeted product entity tag.",
+            "values": {
+              "data_mutation": {
+                "text": "\"Committed\""
+              },
+              "revalidate_tag": {
+                "text": "\"Tag Invalidated\""
+              },
+              "edge_purge": {
+                "text": "\"Broadcasting Purge\""
+              },
+              "next_request": {
+                "text": "\"Standby\""
+              }
+            },
+            "tones": {
+              "data_mutation": "ok",
+              "revalidate_tag": "ok",
+              "edge_purge": "data",
+              "next_request": "idle"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Edge CDN mesh purges only cached entries matching that specific tag.",
+            "values": {
+              "data_mutation": {
+                "text": "\"Finished\""
+              },
+              "revalidate_tag": {
+                "text": "\"Tag Cleared\""
+              },
+              "edge_purge": {
+                "text": "\"Purged Globally in 12ms\""
+              },
+              "next_request": {
+                "text": "\"Incoming User\""
+              }
+            },
+            "tones": {
+              "data_mutation": "ok",
+              "revalidate_tag": "ok",
+              "edge_purge": "ok",
+              "next_request": "data"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Unrelated product pages remain cached; stale inventory data is eliminated worldwide.",
+            "values": {
+              "data_mutation": {
+                "text": "\"Audit Logged\""
+              },
+              "revalidate_tag": {
+                "text": "\"Mesh In Sync\""
+              },
+              "edge_purge": {
+                "text": "\"99.4% Hit Ratio Maintained\""
+              },
+              "next_request": {
+                "text": "\"Serves Fresh Stock: 0\""
+              }
+            },
+            "tones": {
+              "data_mutation": "ok",
+              "revalidate_tag": "ok",
+              "edge_purge": "ok",
+              "next_request": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production PPR Streaming Simulation & Benchmark: Sub-10ms TTFB with Zero Layout Shift",
+      "codeHash": "7a79d2989fe38369d5812500cf3a4f3883a28b34fa5a923c563630ad70add252",
+      "spec": {
+        "template": "compare",
+        "title": "Streaming Stability Audit: Unbounded Stream vs Skeleton Bounding Box Contract",
+        "left": {
+          "label": "Unbounded Naive Streaming",
+          "items": [
+            "Dynamic content jumps onto screen abruptly",
+            "Cumulative Layout Shift (CLS) spikes to 0.28",
+            "Users accidentally click wrong buttons",
+            "Failed Google Core Web Vitals audit"
+          ]
+        },
+        "right": {
+          "label": "Skeleton Bounding Box Contract",
+          "items": [
+            "Fallback matches exact dimensions of rendered card",
+            "Cumulative Layout Shift (CLS) = 0.000",
+            "Zero unexpected visual jumping",
+            "Certified 100% Core Web Vitals Compliant"
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Unbounded streaming components cause jarring layout shifts when bytes arrive.",
+            "values": {
+              "left": {
+                "items": [
+                  "No Pre-allocated Space",
+                  "Text Reflows 120px",
+                  "Content Jumps Down",
+                  "High User Frustration"
+                ]
+              },
+              "right": {
+                "items": [
+                  "Explicit Height/Width",
+                  "Exact Aspect Ratio",
+                  "Zero Text Reflow",
+                  "Silky Smooth Rendering"
+                ]
+              }
+            },
+            "tones": {
+              "left": "error",
+              "right": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "High CLS scores severely penalize organic search engine search rankings.",
+            "values": {
+              "left": {
+                "items": [
+                  "CLS: 0.28 (Poor)",
+                  "SEO Penalty Applied",
+                  "Lower Search Traffic",
+                  "High Bounce Rates"
+                ]
+              },
+              "right": {
+                "items": [
+                  "CLS: 0.000 (Good)",
+                  "Maximum SEO Boost",
+                  "Higher Search Rank",
+                  "Peak Conversion Rate"
+                ]
+              }
+            },
+            "tones": {
+              "left": "error",
+              "right": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Bounding box fallbacks preserve user scroll position and tap targets reliably.",
+            "values": {
+              "left": {
+                "items": [
+                  "Mis-clicked Action Buttons",
+                  "Accidental Purchases",
+                  "Broken User Journeys",
+                  "Support Tickets Spiking"
+                ]
+              },
+              "right": {
+                "items": [
+                  "Precise Tap Target Stability",
+                  "Accurate User Clicks",
+                  "Flawless Purchase Flow",
+                  "Delighted Users"
+                ]
+              }
+            },
+            "tones": {
+              "left": "error",
+              "right": "ok"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "PPR with strict bounding box contracts delivers the pinnacle of web engineering.",
+            "values": {
+              "left": {
+                "items": [
+                  "Amateur Web Setup",
+                  "Fragile User Experience",
+                  "Unreliable Streaming",
+                  "Grade D Performance"
+                ]
+              },
+              "right": {
+                "items": [
+                  "Enterprise Grade Web App",
+                  "Flawless User Experience",
+                  "Resilient PPR Streaming",
+                  "Grade A+ Certified"
+                ]
+              }
+            },
+            "tones": {
+              "left": "error",
+              "right": "ok"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
