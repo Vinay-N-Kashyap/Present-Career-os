@@ -1,6 +1,20 @@
 # Antigravity IDE & Multi-Agent Workspace Instructions
 
-Welcome to the **PinIT Career OS** codebase.
+Welcome to the **PinIT Career OS** codebase - **Branch C Workspace**.
+
+---
+
+## 🚨 Active Branch Mandate: Branch C Curriculum Expansion
+* **Branch Name**: `agent/branch-c-platform-admin-faculty`
+* **Assigned Mission**: **Commerce Month 2 Enterprise Expansion (Courses 8 to 14)**
+  - Course 08: `bcom_ent` (Entrepreneurship & Venture Incubation) - Days 31–60
+  - Course 09: `bcom_law` (Corporate Law, IBC & Compliance) - Days 31–60
+  - Course 10: `bcom_ops` (Operations Management & Logistics) - Days 31–60
+  - Course 11: `bcom_scrm` (Supply Chain & Vendor Risk Management) - Days 31–60
+  - Course 12: `bcom_tax` (Direct & Indirect Taxation) - Days 31–60
+  - Course 13: `bcom_ait` (AI & Fintech in Business Systems) - Days 31–60
+  - Course 14: `bcom_ana` (Business Analytics & Decision Models) - Days 6–60
+* **Detailed Blueprint**: See [`BRANCH_C_TASK_ASSIGNMENT.md`](./BRANCH_C_TASK_ASSIGNMENT.md) for full syllabus, pedagogical invariants (>=580 words/part), and Gate v2 visual requirements.
 
 ---
 
@@ -18,6 +32,8 @@ All agent sessions, conversation transcripts, task histories, and architectural 
 ---
 
 ## 🛡️ Multi-Agent Concurrency & Branch Isolation
-* If working on this main repository, ensure you are on the intended branch (`main`).
-* If working on a dedicated agent branch (e.g. `agent/antigravity` or `agent/claude`), work in your assigned worktree folder to avoid collisions.
+* You are operating on **Branch C** (`agent/branch-c-platform-admin-faculty`) in worktree `Present-Career-os-platform`.
+* Branch A is actively building Tech/IoT Month 2 in `Present-Career-os`.
+* Branch B is actively building Commerce Month 2 (Courses 1-7) in `Present-Career-os-commerce`.
+* Do not edit Courses 1 to 7 to prevent merge conflicts.
 * When completing major milestones, update `C:\Users\Admin\Desktop\projects\memory of agent\PROJECT_MEMORY.md` with your changes.

@@ -1,0 +1,664 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_tax",
+  "day": 22,
+  "promptSha": "f908d977218fce93280ff3f5db01baad329b7b38b9c478663853414b1fbb5882",
+  "model": "google/gemini-3.8-flash",
+  "entries": [
+    {
+      "partTitle": "Income Escaping Assessment Scope under Section 147",
+      "codeHash": "0d10cdd8e56770bd2774f9cc9fc9598c3551b46f19125d4ab40c8e73182e2e4c",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Income Escaping Assessment Scope under Section 147 \u2014 Tax Controversy Ledger",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary tax demand / controversy ledger (1100000) for Income Escaping Assessment Scope under S...",
+            "title": "Day 22 Tax Controversy Ledger \u2014 Demand Recognition",
+            "isBalanced": true,
+            "totalDebit": 1100000,
+            "totalCredit": 1100000,
+            "entries": [
+              {
+                "id": "TAX-2201",
+                "account": "Disputed Tax Demand / Assessment Provision",
+                "debit": 1100000,
+                "balance": 1100000,
+                "tone": "data",
+                "memo": "Statutory demand under Section 143(3) / 147 / 156"
+              },
+              {
+                "id": "TAX-2202",
+                "account": "Contingent Tax Liability / Appellate Clearing",
+                "credit": 1100000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Disputed demand balance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record appellate deposit / stay adjustment (110000) under applicable tax sections.",
+            "title": "Day 22 Tax Controversy Ledger \u2014 Statutory Deposit",
+            "isBalanced": true,
+            "totalDebit": 1210000,
+            "totalCredit": 1210000,
+            "entries": [
+              {
+                "id": "TAX-2201",
+                "account": "Disputed Tax Demand / Assessment Provision",
+                "debit": 1100000,
+                "balance": 1100000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-2203",
+                "account": "ITAT 20% Stay Deposit / Sec 270AA Clearing",
+                "debit": 110000,
+                "balance": 1210000,
+                "tone": "accent",
+                "memo": "Statutory stay deposit / Immunity payment"
+              },
+              {
+                "id": "TAX-2202",
+                "account": "Contingent Tax Liability / Appellate Clearing",
+                "credit": 1210000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute simulated litigation case study for Income Escaping Assessment Scope under S...",
+            "title": "Day 22 Tax Controversy Ledger \u2014 Tribunal Audit",
+            "isBalanced": true,
+            "totalDebit": 1210000,
+            "totalCredit": 1210000,
+            "entries": [
+              {
+                "id": "TAX-2201",
+                "account": "Disputed Tax Demand / Assessment Provision",
+                "debit": 1100000,
+                "balance": 1100000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-2203",
+                "account": "ITAT 20% Stay Deposit / Sec 270AA Clearing",
+                "debit": 110000,
+                "balance": 1210000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-2202",
+                "account": "Contingent Tax Liability / Appellate Clearing",
+                "credit": 1210000,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify ledger equilibrium and controversy resolution signoff.",
+            "title": "Day 22 Tax Controversy Ledger \u2014 Final Settlement",
+            "isBalanced": true,
+            "totalDebit": 1210000,
+            "totalCredit": 1210000,
+            "entries": [
+              {
+                "id": "TAX-2201",
+                "account": "Disputed Tax Demand / Assessment Provision",
+                "debit": 1100000,
+                "balance": 1100000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-2203",
+                "account": "ITAT 20% Stay Deposit / Sec 270AA Clearing",
+                "debit": 110000,
+                "balance": 1210000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-2202",
+                "account": "Contingent Tax Liability / Appellate Clearing",
+                "credit": 1210000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "100% Balanced and Certified"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Mandatory Pre-Notice Inquiries under Section 148A",
+      "codeHash": "76912057eb3b132937d3e50a76a824250959c92066c86734b65525a09a93702e",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Mandatory Pre-Notice Inquiries under Section 148A \u2014 Tax Controversy Ledger",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary tax demand / controversy ledger (1112500) for Mandatory Pre-Notice Inquiries under Sec...",
+            "title": "Day 22 Tax Controversy Ledger \u2014 Demand Recognition",
+            "isBalanced": true,
+            "totalDebit": 1112500,
+            "totalCredit": 1112500,
+            "entries": [
+              {
+                "id": "TAX-2201",
+                "account": "Disputed Tax Demand / Assessment Provision",
+                "debit": 1112500,
+                "balance": 1112500,
+                "tone": "data",
+                "memo": "Statutory demand under Section 143(3) / 147 / 156"
+              },
+              {
+                "id": "TAX-2202",
+                "account": "Contingent Tax Liability / Appellate Clearing",
+                "credit": 1112500,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Disputed demand balance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record appellate deposit / stay adjustment (116000) under applicable tax sections.",
+            "title": "Day 22 Tax Controversy Ledger \u2014 Statutory Deposit",
+            "isBalanced": true,
+            "totalDebit": 1228500,
+            "totalCredit": 1228500,
+            "entries": [
+              {
+                "id": "TAX-2201",
+                "account": "Disputed Tax Demand / Assessment Provision",
+                "debit": 1112500,
+                "balance": 1112500,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-2203",
+                "account": "ITAT 20% Stay Deposit / Sec 270AA Clearing",
+                "debit": 116000,
+                "balance": 1228500,
+                "tone": "accent",
+                "memo": "Statutory stay deposit / Immunity payment"
+              },
+              {
+                "id": "TAX-2202",
+                "account": "Contingent Tax Liability / Appellate Clearing",
+                "credit": 1228500,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute simulated litigation case study for Mandatory Pre-Notice Inquiries under Sec...",
+            "title": "Day 22 Tax Controversy Ledger \u2014 Tribunal Audit",
+            "isBalanced": true,
+            "totalDebit": 1228500,
+            "totalCredit": 1228500,
+            "entries": [
+              {
+                "id": "TAX-2201",
+                "account": "Disputed Tax Demand / Assessment Provision",
+                "debit": 1112500,
+                "balance": 1112500,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-2203",
+                "account": "ITAT 20% Stay Deposit / Sec 270AA Clearing",
+                "debit": 116000,
+                "balance": 1228500,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-2202",
+                "account": "Contingent Tax Liability / Appellate Clearing",
+                "credit": 1228500,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify ledger equilibrium and controversy resolution signoff.",
+            "title": "Day 22 Tax Controversy Ledger \u2014 Final Settlement",
+            "isBalanced": true,
+            "totalDebit": 1228500,
+            "totalCredit": 1228500,
+            "entries": [
+              {
+                "id": "TAX-2201",
+                "account": "Disputed Tax Demand / Assessment Provision",
+                "debit": 1112500,
+                "balance": 1112500,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-2203",
+                "account": "ITAT 20% Stay Deposit / Sec 270AA Clearing",
+                "debit": 116000,
+                "balance": 1228500,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-2202",
+                "account": "Contingent Tax Liability / Appellate Clearing",
+                "credit": 1228500,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "100% Balanced and Certified"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Statutory Limitation Deadlines & High-Value Reopenings (Section 149)",
+      "codeHash": "8fe8e2a749e815b16618efe2781e4f9df7183586c10976ebe9469707019806ec",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Statutory Limitation Deadlines & High-Value Reopen \u2014 Tax Controversy Ledger",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary tax demand / controversy ledger (1125000) for Statutory Limitation Deadlines & High-Va...",
+            "title": "Day 22 Tax Controversy Ledger \u2014 Demand Recognition",
+            "isBalanced": true,
+            "totalDebit": 1125000,
+            "totalCredit": 1125000,
+            "entries": [
+              {
+                "id": "TAX-2201",
+                "account": "Disputed Tax Demand / Assessment Provision",
+                "debit": 1125000,
+                "balance": 1125000,
+                "tone": "data",
+                "memo": "Statutory demand under Section 143(3) / 147 / 156"
+              },
+              {
+                "id": "TAX-2202",
+                "account": "Contingent Tax Liability / Appellate Clearing",
+                "credit": 1125000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Disputed demand balance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record appellate deposit / stay adjustment (122000) under applicable tax sections.",
+            "title": "Day 22 Tax Controversy Ledger \u2014 Statutory Deposit",
+            "isBalanced": true,
+            "totalDebit": 1247000,
+            "totalCredit": 1247000,
+            "entries": [
+              {
+                "id": "TAX-2201",
+                "account": "Disputed Tax Demand / Assessment Provision",
+                "debit": 1125000,
+                "balance": 1125000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-2203",
+                "account": "ITAT 20% Stay Deposit / Sec 270AA Clearing",
+                "debit": 122000,
+                "balance": 1247000,
+                "tone": "accent",
+                "memo": "Statutory stay deposit / Immunity payment"
+              },
+              {
+                "id": "TAX-2202",
+                "account": "Contingent Tax Liability / Appellate Clearing",
+                "credit": 1247000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute simulated litigation case study for Statutory Limitation Deadlines & High-Va...",
+            "title": "Day 22 Tax Controversy Ledger \u2014 Tribunal Audit",
+            "isBalanced": true,
+            "totalDebit": 1247000,
+            "totalCredit": 1247000,
+            "entries": [
+              {
+                "id": "TAX-2201",
+                "account": "Disputed Tax Demand / Assessment Provision",
+                "debit": 1125000,
+                "balance": 1125000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-2203",
+                "account": "ITAT 20% Stay Deposit / Sec 270AA Clearing",
+                "debit": 122000,
+                "balance": 1247000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-2202",
+                "account": "Contingent Tax Liability / Appellate Clearing",
+                "credit": 1247000,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify ledger equilibrium and controversy resolution signoff.",
+            "title": "Day 22 Tax Controversy Ledger \u2014 Final Settlement",
+            "isBalanced": true,
+            "totalDebit": 1247000,
+            "totalCredit": 1247000,
+            "entries": [
+              {
+                "id": "TAX-2201",
+                "account": "Disputed Tax Demand / Assessment Provision",
+                "debit": 1125000,
+                "balance": 1125000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-2203",
+                "account": "ITAT 20% Stay Deposit / Sec 270AA Clearing",
+                "debit": 122000,
+                "balance": 1247000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-2202",
+                "account": "Contingent Tax Liability / Appellate Clearing",
+                "credit": 1247000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "100% Balanced and Certified"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Specified Authority Approvals under Section 151",
+      "codeHash": "91248e023e2269415567072245214467c07d7b588b59be7a26e865f64732c7e2",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Specified Authority Approvals under Section 151 \u2014 Tax Controversy Ledger",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary tax demand / controversy ledger (1137500) for Specified Authority Approvals under Sect...",
+            "title": "Day 22 Tax Controversy Ledger \u2014 Demand Recognition",
+            "isBalanced": true,
+            "totalDebit": 1137500,
+            "totalCredit": 1137500,
+            "entries": [
+              {
+                "id": "TAX-2201",
+                "account": "Disputed Tax Demand / Assessment Provision",
+                "debit": 1137500,
+                "balance": 1137500,
+                "tone": "data",
+                "memo": "Statutory demand under Section 143(3) / 147 / 156"
+              },
+              {
+                "id": "TAX-2202",
+                "account": "Contingent Tax Liability / Appellate Clearing",
+                "credit": 1137500,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Disputed demand balance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record appellate deposit / stay adjustment (128000) under applicable tax sections.",
+            "title": "Day 22 Tax Controversy Ledger \u2014 Statutory Deposit",
+            "isBalanced": true,
+            "totalDebit": 1265500,
+            "totalCredit": 1265500,
+            "entries": [
+              {
+                "id": "TAX-2201",
+                "account": "Disputed Tax Demand / Assessment Provision",
+                "debit": 1137500,
+                "balance": 1137500,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-2203",
+                "account": "ITAT 20% Stay Deposit / Sec 270AA Clearing",
+                "debit": 128000,
+                "balance": 1265500,
+                "tone": "accent",
+                "memo": "Statutory stay deposit / Immunity payment"
+              },
+              {
+                "id": "TAX-2202",
+                "account": "Contingent Tax Liability / Appellate Clearing",
+                "credit": 1265500,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute simulated litigation case study for Specified Authority Approvals under Sect...",
+            "title": "Day 22 Tax Controversy Ledger \u2014 Tribunal Audit",
+            "isBalanced": true,
+            "totalDebit": 1265500,
+            "totalCredit": 1265500,
+            "entries": [
+              {
+                "id": "TAX-2201",
+                "account": "Disputed Tax Demand / Assessment Provision",
+                "debit": 1137500,
+                "balance": 1137500,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-2203",
+                "account": "ITAT 20% Stay Deposit / Sec 270AA Clearing",
+                "debit": 128000,
+                "balance": 1265500,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-2202",
+                "account": "Contingent Tax Liability / Appellate Clearing",
+                "credit": 1265500,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify ledger equilibrium and controversy resolution signoff.",
+            "title": "Day 22 Tax Controversy Ledger \u2014 Final Settlement",
+            "isBalanced": true,
+            "totalDebit": 1265500,
+            "totalCredit": 1265500,
+            "entries": [
+              {
+                "id": "TAX-2201",
+                "account": "Disputed Tax Demand / Assessment Provision",
+                "debit": 1137500,
+                "balance": 1137500,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-2203",
+                "account": "ITAT 20% Stay Deposit / Sec 270AA Clearing",
+                "debit": 128000,
+                "balance": 1265500,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-2202",
+                "account": "Contingent Tax Liability / Appellate Clearing",
+                "credit": 1265500,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "100% Balanced and Certified"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Search Assessments & Reopening Architecture (Section 132 & 148)",
+      "codeHash": "509b7331c20eeae50322c9d219c2a416af9f6ed43fcd98161d0d4e37ee47b839",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Search Assessments & Reopening Architecture (Secti \u2014 Tax Controversy Ledger",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary tax demand / controversy ledger (1150000) for Search Assessments & Reopening Architect...",
+            "title": "Day 22 Tax Controversy Ledger \u2014 Demand Recognition",
+            "isBalanced": true,
+            "totalDebit": 1150000,
+            "totalCredit": 1150000,
+            "entries": [
+              {
+                "id": "TAX-2201",
+                "account": "Disputed Tax Demand / Assessment Provision",
+                "debit": 1150000,
+                "balance": 1150000,
+                "tone": "data",
+                "memo": "Statutory demand under Section 143(3) / 147 / 156"
+              },
+              {
+                "id": "TAX-2202",
+                "account": "Contingent Tax Liability / Appellate Clearing",
+                "credit": 1150000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Disputed demand balance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record appellate deposit / stay adjustment (134000) under applicable tax sections.",
+            "title": "Day 22 Tax Controversy Ledger \u2014 Statutory Deposit",
+            "isBalanced": true,
+            "totalDebit": 1284000,
+            "totalCredit": 1284000,
+            "entries": [
+              {
+                "id": "TAX-2201",
+                "account": "Disputed Tax Demand / Assessment Provision",
+                "debit": 1150000,
+                "balance": 1150000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-2203",
+                "account": "ITAT 20% Stay Deposit / Sec 270AA Clearing",
+                "debit": 134000,
+                "balance": 1284000,
+                "tone": "accent",
+                "memo": "Statutory stay deposit / Immunity payment"
+              },
+              {
+                "id": "TAX-2202",
+                "account": "Contingent Tax Liability / Appellate Clearing",
+                "credit": 1284000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute simulated litigation case study for Search Assessments & Reopening Architect...",
+            "title": "Day 22 Tax Controversy Ledger \u2014 Tribunal Audit",
+            "isBalanced": true,
+            "totalDebit": 1284000,
+            "totalCredit": 1284000,
+            "entries": [
+              {
+                "id": "TAX-2201",
+                "account": "Disputed Tax Demand / Assessment Provision",
+                "debit": 1150000,
+                "balance": 1150000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-2203",
+                "account": "ITAT 20% Stay Deposit / Sec 270AA Clearing",
+                "debit": 134000,
+                "balance": 1284000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-2202",
+                "account": "Contingent Tax Liability / Appellate Clearing",
+                "credit": 1284000,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify ledger equilibrium and controversy resolution signoff.",
+            "title": "Day 22 Tax Controversy Ledger \u2014 Final Settlement",
+            "isBalanced": true,
+            "totalDebit": 1284000,
+            "totalCredit": 1284000,
+            "entries": [
+              {
+                "id": "TAX-2201",
+                "account": "Disputed Tax Demand / Assessment Provision",
+                "debit": 1150000,
+                "balance": 1150000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-2203",
+                "account": "ITAT 20% Stay Deposit / Sec 270AA Clearing",
+                "debit": 134000,
+                "balance": 1284000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-2202",
+                "account": "Contingent Tax Liability / Appellate Clearing",
+                "credit": 1284000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "100% Balanced and Certified"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

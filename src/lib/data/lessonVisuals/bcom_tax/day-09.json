@@ -1,0 +1,664 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_tax",
+  "day": 9,
+  "promptSha": "aba83ae5fbf23a0bb3cfbcf35b17abe57200aaac74d632a2a8816def916a84ac",
+  "model": "google/gemini-3.8-flash",
+  "entries": [
+    {
+      "partTitle": "Dual GST Constitutional Matrix: Section 7 & 8 IGST Act Inter-State vs Intra-State Tax",
+      "codeHash": "9708332aba983c05c008f8c9366cf2f549e3225896b528e84e7ceecb1114df7d",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Dual GST Constitutional Matrix: Section 7 & 8 IGST \u2014 GST Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary taxable supply ledger entry (340000) for Dual GST Constitutional Matrix: Section ...",
+            "title": "Day 9 GST Ledger \u2014 Initial Recognition",
+            "isBalanced": true,
+            "totalDebit": 340000,
+            "totalCredit": 340000,
+            "entries": [
+              {
+                "id": "TAX-901",
+                "account": "GST Output Tax Liability / Asset Account",
+                "debit": 340000,
+                "balance": 340000,
+                "tone": "data",
+                "memo": "Statutory recognition under CGST Act"
+              },
+              {
+                "id": "TAX-902",
+                "account": "Electronic Cash & Credit Ledger Clearing",
+                "credit": 340000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control balance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record statutory accrual adjustment (50000) under applicable CGST/IGST section.",
+            "title": "Day 9 GST Ledger \u2014 Statutory Adjustment",
+            "isBalanced": true,
+            "totalDebit": 390000,
+            "totalCredit": 390000,
+            "entries": [
+              {
+                "id": "TAX-901",
+                "account": "GST Output Tax Liability / Asset Account",
+                "debit": 340000,
+                "balance": 340000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-903",
+                "account": "Statutory Tax Provision / Reversal Account",
+                "debit": 50000,
+                "balance": 390000,
+                "tone": "accent",
+                "memo": "Statutory adjustment"
+              },
+              {
+                "id": "TAX-902",
+                "account": "Electronic Cash & Credit Ledger Clearing",
+                "credit": 390000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute simulated commercial case study for Dual GST Constitutional Matrix: Section ...",
+            "title": "Day 9 GST Ledger \u2014 Simulation Audit",
+            "isBalanced": true,
+            "totalDebit": 390000,
+            "totalCredit": 390000,
+            "entries": [
+              {
+                "id": "TAX-901",
+                "account": "GST Output Tax Liability / Asset Account",
+                "debit": 340000,
+                "balance": 340000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-903",
+                "account": "Statutory Tax Provision / Reversal Account",
+                "debit": 50000,
+                "balance": 390000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-902",
+                "account": "Electronic Cash & Credit Ledger Clearing",
+                "credit": 390000,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify ledger equilibrium and regulatory compliance signoff.",
+            "title": "Day 9 GST Ledger \u2014 Final Audit Settlement",
+            "isBalanced": true,
+            "totalDebit": 390000,
+            "totalCredit": 390000,
+            "entries": [
+              {
+                "id": "TAX-901",
+                "account": "GST Output Tax Liability / Asset Account",
+                "debit": 340000,
+                "balance": 340000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-903",
+                "account": "Statutory Tax Provision / Reversal Account",
+                "debit": 50000,
+                "balance": 390000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-902",
+                "account": "Electronic Cash & Credit Ledger Clearing",
+                "credit": 390000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "100% Balanced and Certified"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Place of Supply for Goods: Section 10 Mechanics & The Bill-To Ship-To Architecture",
+      "codeHash": "b8e50272ef7b39dad9c9a43dd63028d05cea5aec65d3031971f6ce1a296dfc55",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Place of Supply for Goods: Section 10 Mechanics &  \u2014 GST Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary taxable supply ledger entry (345000) for Place of Supply for Goods: Section 10 Me...",
+            "title": "Day 9 GST Ledger \u2014 Initial Recognition",
+            "isBalanced": true,
+            "totalDebit": 345000,
+            "totalCredit": 345000,
+            "entries": [
+              {
+                "id": "TAX-901",
+                "account": "GST Output Tax Liability / Asset Account",
+                "debit": 345000,
+                "balance": 345000,
+                "tone": "data",
+                "memo": "Statutory recognition under CGST Act"
+              },
+              {
+                "id": "TAX-902",
+                "account": "Electronic Cash & Credit Ledger Clearing",
+                "credit": 345000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control balance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record statutory accrual adjustment (52500) under applicable CGST/IGST section.",
+            "title": "Day 9 GST Ledger \u2014 Statutory Adjustment",
+            "isBalanced": true,
+            "totalDebit": 397500,
+            "totalCredit": 397500,
+            "entries": [
+              {
+                "id": "TAX-901",
+                "account": "GST Output Tax Liability / Asset Account",
+                "debit": 345000,
+                "balance": 345000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-903",
+                "account": "Statutory Tax Provision / Reversal Account",
+                "debit": 52500,
+                "balance": 397500,
+                "tone": "accent",
+                "memo": "Statutory adjustment"
+              },
+              {
+                "id": "TAX-902",
+                "account": "Electronic Cash & Credit Ledger Clearing",
+                "credit": 397500,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute simulated commercial case study for Place of Supply for Goods: Section 10 Me...",
+            "title": "Day 9 GST Ledger \u2014 Simulation Audit",
+            "isBalanced": true,
+            "totalDebit": 397500,
+            "totalCredit": 397500,
+            "entries": [
+              {
+                "id": "TAX-901",
+                "account": "GST Output Tax Liability / Asset Account",
+                "debit": 345000,
+                "balance": 345000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-903",
+                "account": "Statutory Tax Provision / Reversal Account",
+                "debit": 52500,
+                "balance": 397500,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-902",
+                "account": "Electronic Cash & Credit Ledger Clearing",
+                "credit": 397500,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify ledger equilibrium and regulatory compliance signoff.",
+            "title": "Day 9 GST Ledger \u2014 Final Audit Settlement",
+            "isBalanced": true,
+            "totalDebit": 397500,
+            "totalCredit": 397500,
+            "entries": [
+              {
+                "id": "TAX-901",
+                "account": "GST Output Tax Liability / Asset Account",
+                "debit": 345000,
+                "balance": 345000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-903",
+                "account": "Statutory Tax Provision / Reversal Account",
+                "debit": 52500,
+                "balance": 397500,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-902",
+                "account": "Electronic Cash & Credit Ledger Clearing",
+                "credit": 397500,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "100% Balanced and Certified"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Place of Supply for Domestic Services: Section 12 B2B vs B2C Jurisdictional Framework",
+      "codeHash": "5c2ef07213c74caa38130571906f6f3fcbf3c54d0621aae45a2e48ec0fef835e",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Place of Supply for Domestic Services: Section 12  \u2014 GST Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary taxable supply ledger entry (350000) for Place of Supply for Domestic Services: S...",
+            "title": "Day 9 GST Ledger \u2014 Initial Recognition",
+            "isBalanced": true,
+            "totalDebit": 350000,
+            "totalCredit": 350000,
+            "entries": [
+              {
+                "id": "TAX-901",
+                "account": "GST Output Tax Liability / Asset Account",
+                "debit": 350000,
+                "balance": 350000,
+                "tone": "data",
+                "memo": "Statutory recognition under CGST Act"
+              },
+              {
+                "id": "TAX-902",
+                "account": "Electronic Cash & Credit Ledger Clearing",
+                "credit": 350000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control balance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record statutory accrual adjustment (55000) under applicable CGST/IGST section.",
+            "title": "Day 9 GST Ledger \u2014 Statutory Adjustment",
+            "isBalanced": true,
+            "totalDebit": 405000,
+            "totalCredit": 405000,
+            "entries": [
+              {
+                "id": "TAX-901",
+                "account": "GST Output Tax Liability / Asset Account",
+                "debit": 350000,
+                "balance": 350000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-903",
+                "account": "Statutory Tax Provision / Reversal Account",
+                "debit": 55000,
+                "balance": 405000,
+                "tone": "accent",
+                "memo": "Statutory adjustment"
+              },
+              {
+                "id": "TAX-902",
+                "account": "Electronic Cash & Credit Ledger Clearing",
+                "credit": 405000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute simulated commercial case study for Place of Supply for Domestic Services: S...",
+            "title": "Day 9 GST Ledger \u2014 Simulation Audit",
+            "isBalanced": true,
+            "totalDebit": 405000,
+            "totalCredit": 405000,
+            "entries": [
+              {
+                "id": "TAX-901",
+                "account": "GST Output Tax Liability / Asset Account",
+                "debit": 350000,
+                "balance": 350000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-903",
+                "account": "Statutory Tax Provision / Reversal Account",
+                "debit": 55000,
+                "balance": 405000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-902",
+                "account": "Electronic Cash & Credit Ledger Clearing",
+                "credit": 405000,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify ledger equilibrium and regulatory compliance signoff.",
+            "title": "Day 9 GST Ledger \u2014 Final Audit Settlement",
+            "isBalanced": true,
+            "totalDebit": 405000,
+            "totalCredit": 405000,
+            "entries": [
+              {
+                "id": "TAX-901",
+                "account": "GST Output Tax Liability / Asset Account",
+                "debit": 350000,
+                "balance": 350000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-903",
+                "account": "Statutory Tax Provision / Reversal Account",
+                "debit": 55000,
+                "balance": 405000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-902",
+                "account": "Electronic Cash & Credit Ledger Clearing",
+                "credit": 405000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "100% Balanced and Certified"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cross-Border Services & Intermediaries: Section 13 Controversy & OIDAR Mechanics",
+      "codeHash": "b613b1bb8c4e6b62e0030a573e5289d47acd61926935bc8b042d231a19c95266",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Cross-Border Services & Intermediaries: Section 13 \u2014 GST Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary taxable supply ledger entry (355000) for Cross-Border Services & Intermediaries: ...",
+            "title": "Day 9 GST Ledger \u2014 Initial Recognition",
+            "isBalanced": true,
+            "totalDebit": 355000,
+            "totalCredit": 355000,
+            "entries": [
+              {
+                "id": "TAX-901",
+                "account": "GST Output Tax Liability / Asset Account",
+                "debit": 355000,
+                "balance": 355000,
+                "tone": "data",
+                "memo": "Statutory recognition under CGST Act"
+              },
+              {
+                "id": "TAX-902",
+                "account": "Electronic Cash & Credit Ledger Clearing",
+                "credit": 355000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control balance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record statutory accrual adjustment (57500) under applicable CGST/IGST section.",
+            "title": "Day 9 GST Ledger \u2014 Statutory Adjustment",
+            "isBalanced": true,
+            "totalDebit": 412500,
+            "totalCredit": 412500,
+            "entries": [
+              {
+                "id": "TAX-901",
+                "account": "GST Output Tax Liability / Asset Account",
+                "debit": 355000,
+                "balance": 355000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-903",
+                "account": "Statutory Tax Provision / Reversal Account",
+                "debit": 57500,
+                "balance": 412500,
+                "tone": "accent",
+                "memo": "Statutory adjustment"
+              },
+              {
+                "id": "TAX-902",
+                "account": "Electronic Cash & Credit Ledger Clearing",
+                "credit": 412500,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute simulated commercial case study for Cross-Border Services & Intermediaries: ...",
+            "title": "Day 9 GST Ledger \u2014 Simulation Audit",
+            "isBalanced": true,
+            "totalDebit": 412500,
+            "totalCredit": 412500,
+            "entries": [
+              {
+                "id": "TAX-901",
+                "account": "GST Output Tax Liability / Asset Account",
+                "debit": 355000,
+                "balance": 355000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-903",
+                "account": "Statutory Tax Provision / Reversal Account",
+                "debit": 57500,
+                "balance": 412500,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-902",
+                "account": "Electronic Cash & Credit Ledger Clearing",
+                "credit": 412500,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify ledger equilibrium and regulatory compliance signoff.",
+            "title": "Day 9 GST Ledger \u2014 Final Audit Settlement",
+            "isBalanced": true,
+            "totalDebit": 412500,
+            "totalCredit": 412500,
+            "entries": [
+              {
+                "id": "TAX-901",
+                "account": "GST Output Tax Liability / Asset Account",
+                "debit": 355000,
+                "balance": 355000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-903",
+                "account": "Statutory Tax Provision / Reversal Account",
+                "debit": 57500,
+                "balance": 412500,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-902",
+                "account": "Electronic Cash & Credit Ledger Clearing",
+                "credit": 412500,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "100% Balanced and Certified"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Zero-Rated Supplies & SEZ Operations: Section 16 IGST Act & LUT Execution Protocols",
+      "codeHash": "86ca73858e53de0fc6c8c8aa1382626a01c18c7abb30d8256f41f884927b321d",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Zero-Rated Supplies & SEZ Operations: Section 16 I \u2014 GST Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary taxable supply ledger entry (360000) for Zero-Rated Supplies & SEZ Operations: Se...",
+            "title": "Day 9 GST Ledger \u2014 Initial Recognition",
+            "isBalanced": true,
+            "totalDebit": 360000,
+            "totalCredit": 360000,
+            "entries": [
+              {
+                "id": "TAX-901",
+                "account": "GST Output Tax Liability / Asset Account",
+                "debit": 360000,
+                "balance": 360000,
+                "tone": "data",
+                "memo": "Statutory recognition under CGST Act"
+              },
+              {
+                "id": "TAX-902",
+                "account": "Electronic Cash & Credit Ledger Clearing",
+                "credit": 360000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control balance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record statutory accrual adjustment (60000) under applicable CGST/IGST section.",
+            "title": "Day 9 GST Ledger \u2014 Statutory Adjustment",
+            "isBalanced": true,
+            "totalDebit": 420000,
+            "totalCredit": 420000,
+            "entries": [
+              {
+                "id": "TAX-901",
+                "account": "GST Output Tax Liability / Asset Account",
+                "debit": 360000,
+                "balance": 360000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-903",
+                "account": "Statutory Tax Provision / Reversal Account",
+                "debit": 60000,
+                "balance": 420000,
+                "tone": "accent",
+                "memo": "Statutory adjustment"
+              },
+              {
+                "id": "TAX-902",
+                "account": "Electronic Cash & Credit Ledger Clearing",
+                "credit": 420000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute simulated commercial case study for Zero-Rated Supplies & SEZ Operations: Se...",
+            "title": "Day 9 GST Ledger \u2014 Simulation Audit",
+            "isBalanced": true,
+            "totalDebit": 420000,
+            "totalCredit": 420000,
+            "entries": [
+              {
+                "id": "TAX-901",
+                "account": "GST Output Tax Liability / Asset Account",
+                "debit": 360000,
+                "balance": 360000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-903",
+                "account": "Statutory Tax Provision / Reversal Account",
+                "debit": 60000,
+                "balance": 420000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-902",
+                "account": "Electronic Cash & Credit Ledger Clearing",
+                "credit": 420000,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify ledger equilibrium and regulatory compliance signoff.",
+            "title": "Day 9 GST Ledger \u2014 Final Audit Settlement",
+            "isBalanced": true,
+            "totalDebit": 420000,
+            "totalCredit": 420000,
+            "entries": [
+              {
+                "id": "TAX-901",
+                "account": "GST Output Tax Liability / Asset Account",
+                "debit": 360000,
+                "balance": 360000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-903",
+                "account": "Statutory Tax Provision / Reversal Account",
+                "debit": 60000,
+                "balance": 420000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-902",
+                "account": "Electronic Cash & Credit Ledger Clearing",
+                "credit": 420000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "100% Balanced and Certified"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
