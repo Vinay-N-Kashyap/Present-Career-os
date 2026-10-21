@@ -50,6 +50,7 @@ test('Course 19: IoT Hardware Security (iot_sec) Month 2 Block 11 (Days 51-55) E
         assert.ok(part.code && part.code.length > 50, `${ctx}: code must contain substantive runnable code`);
         assert.ok(part.output && part.output.length > 0, `${ctx}: output must specify expected terminal output`);
         assert.ok(Array.isArray(part.codeNotes) && part.codeNotes.length >= 3, `${ctx}: codeNotes must have >= 3 items`);
+        assert.ok(part.codeNotes.every(cn => typeof cn === 'string'), `${ctx}: all codeNotes must be strings`);
         assert.ok(typeof part.tryIt === 'string' && part.tryIt.length > 15, `${ctx}: tryIt must be a plain string challenge`);
 
         // Check question verification
@@ -119,14 +120,18 @@ test('Course 19: IoT Hardware Security (iot_sec) Month 2 Block 11 (Days 51-55) E
     }
   });
 
-  await t.test('5. Milestone 11 (Day 55) QuantumShield Dual-Engine Hybrid Root of Trust Platform Invariants', () => {
+  await t.test('5. Milestone 11 (Day 55) QuantumShield Hybrid Classical-PQC Coprocessor & NTT Accelerator Invariants', () => {
     const day55 = getLongLesson('iot_sec', 55);
     assert.ok(day55.title.includes('Milestone 11'), 'Day 55 title must explicitly designate Milestone 11');
     assert.ok(day55.title.includes('QuantumShield'), 'Day 55 title must feature QuantumShield');
+    assert.ok(day55.title.includes('NTT Accelerator'), 'Day 55 title must feature NTT Accelerator');
 
     // Verify part 5 contains the full certification engine
     const p5 = day55.parts[4];
-    assert.ok(p5.code.includes('class QuantumShieldRootOfTrustEngine'), 'Day 55 Part 5 must implement QuantumShieldRootOfTrustEngine');
-    assert.ok(p5.output.includes('QUANTUMSHIELD_CERTIFIED_GRADE_A_PLUS'), 'Milestone 11 must reach QUANTUMSHIELD_CERTIFIED_GRADE_A_PLUS');
+    assert.ok(p5.code.includes('class QuantumShieldHybridSecureBootCoprocessor'), 'Day 55 Part 5 must implement QuantumShieldHybridSecureBootCoprocessor');
+    assert.ok(p5.code.includes('class NTTAcceleratorEngine'), 'Day 55 Part 5 must implement NTTAcceleratorEngine');
+    assert.ok(p5.code.includes('execute_quantum_shield_certification_bench'), 'Day 55 Part 5 must implement execute_quantum_shield_certification_bench');
+    assert.ok(p5.output.includes('QUANTUM_SHIELD_PQC_CERTIFIED'), 'Milestone 11 must reach QUANTUM_SHIELD_PQC_CERTIFIED');
+    assert.ok(p5.output.includes('MILESTONE_11_GRADE_A_PLUS'), 'Milestone 11 must reach MILESTONE_11_GRADE_A_PLUS');
   });
 });
