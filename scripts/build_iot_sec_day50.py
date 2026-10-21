@@ -260,7 +260,7 @@ class BCH15_7_2_Codec:
             s_val = 0
             for pos in range(15):
                 if received_15b[pos]:
-                    s_val = self.gf.add(s_val, self.gf.power(2, (pos * i) % 15))
+                    s_val = self.gf.add(s_val, self.gf.power(2, ((14 - pos) * i) % 15))
             s[i - 1] = s_val
 
         if all(val == 0 for val in s):
@@ -270,24 +270,20 @@ class BCH15_7_2_Codec:
         s1, s2, s3, s4 = s[0], s[1], s[2], s[3]
 
         # Case 1: Single bit error (t=1)
-        if self.gf.multiply(s1, s3) == self.gf.multiply(s2, s2) and s1 != 0:
-            pos = self.gf.log_table[s1]
+        if self.gf.multiply(s1, s1) == s2 and self.gf.multiply(s1, s2) == s3 and s1 != 0:
+            e = self.gf.log_table[s1]
+            pos = (14 - e) % 15
             corrected[pos] ^= 1
             return corrected
 
         # Case 2: Double bit error (t=2) Chien Search
         if s1 != 0:
+            num = self.gf.add(s3, self.gf.multiply(s1, s2))
+            lambda_2 = self.gf.multiply(num, self.gf.power(s1, 14))
             lambda_1 = s1
-            denom = s1
-            num = self.gf.add(self.gf.multiply(s1, s3), s4)
-            lambda_2 = 0
-            for cand in range(16):
-                if self.gf.multiply(cand, denom) == num:
-                    lambda_2 = cand
-                    break
-
             for pos in range(15):
-                x_val = self.gf.power(2, (15 - pos) % 15)
+                p = (pos - 14) % 15
+                x_val = self.gf.power(2, p)
                 term1 = self.gf.multiply(lambda_1, x_val)
                 term2 = self.gf.multiply(lambda_2, self.gf.power(x_val, 2))
                 if self.gf.add(1, self.gf.add(term1, term2)) == 0:
@@ -407,6 +403,7 @@ Fuzzy Extractor Verdict: CODE_OFFSET_RECONSTRUCTION_100_PERCENT_BIT_EXACT"""
         "The interaction between online health monitors and the system Power Management Unit (PMU) is tightly coupled. In noisy automotive environments, transient voltage sags caused by starter motor engagement or high-power CAN-FD transceiver switching can induce temporary noise spikes. The audit bench coordinates with dedicated analog supply supervisor lines: if a brownout event coincides with an APT perturbation, the PMU holds the TRNG in reset until voltage stabilizes, preventing false tamper triggers while ensuring full security against intentional power glitch injection attacks.",
         "Statistical verification of the conditioned stream is further reinforced by on-chip Discrete Fourier Transform (DFT) spectral testing. By monitoring the frequency distribution of conditioned bits via an embedded FFT accelerator, the audit bench verifies that no spurious periodic components or harmonic resonance spikes (which would indicate external clock leakage or injection locking) are present in the cryptographic output.",
         "Under ISO/IEC 19790 and FIPS 140-3 testing protocols, the audit bench must also undergo periodic on-demand self-tests. Firmware can trigger an internal built-in self-test (BIST) sequence during system idle windows. The BIST injects known synthetic pseudo-noise patterns into the health test registers to verify that the alarm comparators, interrupt lines, and zeroization strobes trip reliably at the exact designed mathematical thresholds, guaranteeing zero latent hardware defects in the safety monitoring circuitry.",
+        "From an architectural standpoint, passing the full NIST SP 800-22 hypothesis testing battery requires continuous stochastic decoupling between adjacent sampling clocks. In our physical testbench, entropy samples harvested from metastable ring oscillator phase jitter are processed through a cryptographic conditioning pipeline consisting of an AES-CBC-MAC compression stage followed by a SHA-256 sponge extractor. This guarantees that any residual spatial or temporal correlation is eliminated before bits are released to application key derivation registers.",
         "In Part 4, we build and test this complete audit bench under both normal operational conditions and active RF injection attacks."
     ]
 
@@ -625,7 +622,7 @@ class BCH15_7_2_Codec:
             s_val = 0
             for pos in range(15):
                 if received_15b[pos]:
-                    s_val = self.gf.add(s_val, self.gf.power(2, (pos * i) % 15))
+                    s_val = self.gf.add(s_val, self.gf.power(2, ((14 - pos) * i) % 15))
             s[i - 1] = s_val
 
         if all(val == 0 for val in s):
@@ -633,23 +630,19 @@ class BCH15_7_2_Codec:
 
         corrected = list(received_15b)
         s1, s2, s3, s4 = s[0], s[1], s[2], s[3]
-        if self.gf.multiply(s1, s3) == self.gf.multiply(s2, s2) and s1 != 0:
-            pos = self.gf.log_table[s1]
+        if self.gf.multiply(s1, s1) == s2 and self.gf.multiply(s1, s2) == s3 and s1 != 0:
+            e = self.gf.log_table[s1]
+            pos = (14 - e) % 15
             corrected[pos] ^= 1
             return corrected
 
         if s1 != 0:
+            num = self.gf.add(s3, self.gf.multiply(s1, s2))
+            lambda_2 = self.gf.multiply(num, self.gf.power(s1, 14))
             lambda_1 = s1
-            denom = s1
-            num = self.gf.add(self.gf.multiply(s1, s3), s4)
-            lambda_2 = 0
-            for cand in range(16):
-                if self.gf.multiply(cand, denom) == num:
-                    lambda_2 = cand
-                    break
-
             for pos in range(15):
-                x_val = self.gf.power(2, (15 - pos) % 15)
+                p = (pos - 14) % 15
+                x_val = self.gf.power(2, p)
                 term1 = self.gf.multiply(lambda_1, x_val)
                 term2 = self.gf.multiply(lambda_2, self.gf.power(x_val, 2))
                 if self.gf.add(1, self.gf.add(term1, term2)) == 0:
