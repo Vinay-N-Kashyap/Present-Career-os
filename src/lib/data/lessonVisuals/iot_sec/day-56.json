@@ -1,0 +1,1269 @@
+{
+  "schemaVersion": 1,
+  "prefix": "iot_sec",
+  "day": 56,
+  "promptSha": "c66ab513ce135586a3825912e61531cfe1fd3ef7795b75af2fa291d6a0661e0f",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Industrial Mesh Threat Surface & IEEE 802.15.4 Link-Layer Security Architecture",
+      "codeHash": "4b238f3b3aa68d9dbec15a01f86c4623cf8787db11699e5025e35d2f14b1d970",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 56 Part 1 — Industrial Mesh Threat Surface — Register Architecture",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Arm hardware register MESH_CTRL_REG for Industrial Mesh Threat Surface &.",
+            "registerName": "MESH_CTRL_REG",
+            "bitWidth": 8,
+            "hexValue": "0x80",
+            "decimalValue": 128,
+            "maskApplied": "1 << 7",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "RDY",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 5,
+                "name": "MESH",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 4,
+                "name": "CCM",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "SL4",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "LOCK",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "ERR",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "IRQ",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Latch sampling bits into MESH_CTRL_REG and assert validation flag.",
+            "registerName": "MESH_CTRL_REG",
+            "bitWidth": 8,
+            "hexValue": "0xC4",
+            "decimalValue": 196,
+            "maskApplied": "(1 << 7) | (1 << 6) | (1 << 2)",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EN",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "RDY",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 5,
+                "name": "MESH",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 4,
+                "name": "CCM",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "SL4",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "LOCK",
+                "value": 1,
+                "tone": "accent",
+                "highlighted": true
+              },
+              {
+                "index": 1,
+                "name": "ERR",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "IRQ",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute hardware transformation in MESH_CTRL_REG with pipeline status.",
+            "registerName": "MESH_CTRL_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFA",
+            "decimalValue": 250,
+            "maskApplied": "0xFA",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EN",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "RDY",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "MESH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 4,
+                "name": "CCM",
+                "value": 1,
+                "tone": "accent",
+                "highlighted": true
+              },
+              {
+                "index": 3,
+                "name": "SL4",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "LOCK",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "ERR",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 0,
+                "name": "IRQ",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Lock register MESH_CTRL_REG upon verified hardware completion.",
+            "registerName": "MESH_CTRL_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EN",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "RDY",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "MESH",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "CCM",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "SL4",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "LOCK",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 1,
+                "name": "ERR",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 0,
+                "name": "IRQ",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "MAC Frame Counter Synchronization & Deterministic Sliding-Window Anti-Replay Defense",
+      "codeHash": "d76487887679777a5a2ae696353159363df0419b16bfb409ff3d45d4750e0a25",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 56 Part 2 — MAC Frame Counter Synchronizat — Register Architecture",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Arm hardware register AES_CCM_NONCE_REG for MAC Frame Counter Synchronizatio.",
+            "registerName": "AES_CCM_NONCE_REG",
+            "bitWidth": 8,
+            "hexValue": "0x80",
+            "decimalValue": 128,
+            "maskApplied": "1 << 7",
+            "bits": [
+              {
+                "index": 7,
+                "name": "INIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "VALID",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 5,
+                "name": "WIN",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 4,
+                "name": "IPHC",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "STBL",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "IO_ENC",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "TRIP",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "DONE",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Latch sampling bits into AES_CCM_NONCE_REG and assert validation flag.",
+            "registerName": "AES_CCM_NONCE_REG",
+            "bitWidth": 8,
+            "hexValue": "0xC4",
+            "decimalValue": 196,
+            "maskApplied": "(1 << 7) | (1 << 6) | (1 << 2)",
+            "bits": [
+              {
+                "index": 7,
+                "name": "INIT",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "VALID",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 5,
+                "name": "WIN",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 4,
+                "name": "IPHC",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "STBL",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "IO_ENC",
+                "value": 1,
+                "tone": "accent",
+                "highlighted": true
+              },
+              {
+                "index": 1,
+                "name": "TRIP",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "DONE",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute hardware transformation in AES_CCM_NONCE_REG with pipeline status.",
+            "registerName": "AES_CCM_NONCE_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFA",
+            "decimalValue": 250,
+            "maskApplied": "0xFA",
+            "bits": [
+              {
+                "index": 7,
+                "name": "INIT",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "VALID",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "WIN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 4,
+                "name": "IPHC",
+                "value": 1,
+                "tone": "accent",
+                "highlighted": true
+              },
+              {
+                "index": 3,
+                "name": "STBL",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "IO_ENC",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "TRIP",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 0,
+                "name": "DONE",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Lock register AES_CCM_NONCE_REG upon verified hardware completion.",
+            "registerName": "AES_CCM_NONCE_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "INIT",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "VALID",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "WIN",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "IPHC",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "STBL",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "IO_ENC",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 1,
+                "name": "TRIP",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 0,
+                "name": "DONE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "6LoWPAN Header Compression (IPHC/NHC) & Cryptographic Boundary Integrity",
+      "codeHash": "8397640b5273bf20c4b6f0ad72623bb43a474df2fffd068c3fcfd279418127bd",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 56 Part 3 — 6LoWPAN Header Compression (IP — Register Architecture",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Arm hardware register SLIDING_WIN_REG for 6LoWPAN Header Compression (IPHC.",
+            "registerName": "SLIDING_WIN_REG",
+            "bitWidth": 8,
+            "hexValue": "0x80",
+            "decimalValue": 128,
+            "maskApplied": "1 << 7",
+            "bits": [
+              {
+                "index": 7,
+                "name": "ARM",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "GATE",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 5,
+                "name": "PULSE",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 4,
+                "name": "DIV",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "PROOF",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "EDGE",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "SYNC",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "ALRM",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Latch sampling bits into SLIDING_WIN_REG and assert validation flag.",
+            "registerName": "SLIDING_WIN_REG",
+            "bitWidth": 8,
+            "hexValue": "0xC4",
+            "decimalValue": 196,
+            "maskApplied": "(1 << 7) | (1 << 6) | (1 << 2)",
+            "bits": [
+              {
+                "index": 7,
+                "name": "ARM",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "GATE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 5,
+                "name": "PULSE",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 4,
+                "name": "DIV",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "PROOF",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "EDGE",
+                "value": 1,
+                "tone": "accent",
+                "highlighted": true
+              },
+              {
+                "index": 1,
+                "name": "SYNC",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "ALRM",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute hardware transformation in SLIDING_WIN_REG with pipeline status.",
+            "registerName": "SLIDING_WIN_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFA",
+            "decimalValue": 250,
+            "maskApplied": "0xFA",
+            "bits": [
+              {
+                "index": 7,
+                "name": "ARM",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "GATE",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "PULSE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 4,
+                "name": "DIV",
+                "value": 1,
+                "tone": "accent",
+                "highlighted": true
+              },
+              {
+                "index": 3,
+                "name": "PROOF",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "EDGE",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "SYNC",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 0,
+                "name": "ALRM",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Lock register SLIDING_WIN_REG upon verified hardware completion.",
+            "registerName": "SLIDING_WIN_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "ARM",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "GATE",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "PULSE",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "DIV",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "PROOF",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "EDGE",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 1,
+                "name": "SYNC",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 0,
+                "name": "ALRM",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Thread Commissioning Protocol (MeshCop) & EC-J-PAKE Zero-Trust Credential Exchange",
+      "codeHash": "da007945b9c612eb412448991a3b20c47909c6a1fafcf9f9282e0c7cfb176416",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 56 Part 4 — Thread Commissioning Protocol  — Register Architecture",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Arm hardware register IPHC_COMP_REG for Thread Commissioning Protocol (M.",
+            "registerName": "IPHC_COMP_REG",
+            "bitWidth": 8,
+            "hexValue": "0x80",
+            "decimalValue": 128,
+            "maskApplied": "1 << 7",
+            "bits": [
+              {
+                "index": 7,
+                "name": "SEC",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "ZERO",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 5,
+                "name": "CLBR",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 4,
+                "name": "MERKLE",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "WARN",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "STAT",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "OVF",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "FLT",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Latch sampling bits into IPHC_COMP_REG and assert validation flag.",
+            "registerName": "IPHC_COMP_REG",
+            "bitWidth": 8,
+            "hexValue": "0xC4",
+            "decimalValue": 196,
+            "maskApplied": "(1 << 7) | (1 << 6) | (1 << 2)",
+            "bits": [
+              {
+                "index": 7,
+                "name": "SEC",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "ZERO",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 5,
+                "name": "CLBR",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 4,
+                "name": "MERKLE",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "WARN",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "STAT",
+                "value": 1,
+                "tone": "accent",
+                "highlighted": true
+              },
+              {
+                "index": 1,
+                "name": "OVF",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "FLT",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute hardware transformation in IPHC_COMP_REG with pipeline status.",
+            "registerName": "IPHC_COMP_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFA",
+            "decimalValue": 250,
+            "maskApplied": "0xFA",
+            "bits": [
+              {
+                "index": 7,
+                "name": "SEC",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "ZERO",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "CLBR",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 4,
+                "name": "MERKLE",
+                "value": 1,
+                "tone": "accent",
+                "highlighted": true
+              },
+              {
+                "index": 3,
+                "name": "WARN",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "STAT",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "OVF",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 0,
+                "name": "FLT",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Lock register IPHC_COMP_REG upon verified hardware completion.",
+            "registerName": "IPHC_COMP_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "SEC",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "ZERO",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "CLBR",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "MERKLE",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "WARN",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "STAT",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 1,
+                "name": "OVF",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 0,
+                "name": "FLT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "End-to-End Zero-Trust Industrial Mesh Security Subsystem & Multi-Hop Validation",
+      "codeHash": "bf174adc853978e2736d9e1f8c5c214a1162d786b3392384eebcdd8dd9b2af70",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 56 Part 5 — End-to-End Zero-Trust Industri — Register Architecture",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Arm hardware register JPAKE_COMM_REG for End-to-End Zero-Trust Industrial.",
+            "registerName": "JPAKE_COMM_REG",
+            "bitWidth": 8,
+            "hexValue": "0x80",
+            "decimalValue": 128,
+            "maskApplied": "1 << 7",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "RDY",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 5,
+                "name": "MESH",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 4,
+                "name": "CCM",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "SL4",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "LOCK",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "ERR",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "IRQ",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Latch sampling bits into JPAKE_COMM_REG and assert validation flag.",
+            "registerName": "JPAKE_COMM_REG",
+            "bitWidth": 8,
+            "hexValue": "0xC4",
+            "decimalValue": 196,
+            "maskApplied": "(1 << 7) | (1 << 6) | (1 << 2)",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EN",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "RDY",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 5,
+                "name": "MESH",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 4,
+                "name": "CCM",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "SL4",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "LOCK",
+                "value": 1,
+                "tone": "accent",
+                "highlighted": true
+              },
+              {
+                "index": 1,
+                "name": "ERR",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "IRQ",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute hardware transformation in JPAKE_COMM_REG with pipeline status.",
+            "registerName": "JPAKE_COMM_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFA",
+            "decimalValue": 250,
+            "maskApplied": "0xFA",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EN",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "RDY",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "MESH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 4,
+                "name": "CCM",
+                "value": 1,
+                "tone": "accent",
+                "highlighted": true
+              },
+              {
+                "index": 3,
+                "name": "SL4",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "LOCK",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "ERR",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 0,
+                "name": "IRQ",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Lock register JPAKE_COMM_REG upon verified hardware completion.",
+            "registerName": "JPAKE_COMM_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EN",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "RDY",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "MESH",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "CCM",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "SL4",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "LOCK",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 1,
+                "name": "ERR",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 0,
+                "name": "IRQ",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
