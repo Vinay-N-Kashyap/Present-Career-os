@@ -175,17 +175,18 @@ export function checkDayFile(fileInput: string | any, options?: GateCheckOptions
     };
   }
 
-  // --- R1: Exactly 6 entries, partTitle matches real part title ---
+  // --- R1: Exactly matching entries, partTitle matches real part title ---
   const entries = file.entries;
-  if (!Array.isArray(entries) || entries.length !== 6) {
-    errors.push(`R1: Day file must have exactly 6 entries, found ${entries?.length ?? 0}`);
+  const lesson: LongLesson | null = getLongLesson(file.prefix, file.day);
+  const expectedCount = lesson?.parts?.length ?? 5;
+  if (!Array.isArray(entries) || entries.length !== expectedCount) {
+    errors.push(`R1: Day file must have exactly ${expectedCount} entries, found ${entries?.length ?? 0}`);
   }
 
-  const lesson: LongLesson | null = getLongLesson(file.prefix, file.day);
   if (!lesson) {
     errors.push(`R1: Lesson not found for course "${file.prefix}" day ${file.day}`);
   } else if (Array.isArray(entries)) {
-    for (let i = 0; i < Math.min(entries.length, 6); i++) {
+    for (let i = 0; i < Math.min(entries.length, lesson.parts.length); i++) {
       const entry = entries[i];
       const realTitle = lesson.parts[i]?.title;
       if (entry?.partTitle !== realTitle) {
@@ -338,6 +339,8 @@ export function checkDayFile(fileInput: string | any, options?: GateCheckOptions
           } else {
             rank = 2000;
           }
+        } else if (at === 'intro') {
+          rank = 0;
         } else {
           errors.push(`R4: Entry [${i}] step [${s}] unknown at value "${at}"`);
         }
@@ -562,7 +565,7 @@ export function checkDayFile(fileInput: string | any, options?: GateCheckOptions
     }
   }
 
-  // --- R10: At least 3 of 6 parts have a picture, otherwise marked needs-review ---
+  // --- R10: At least 3 parts have a picture, otherwise marked needs-review ---
   if (Array.isArray(entries)) {
     let pictureCount = 0;
     for (const entry of entries) {
@@ -570,9 +573,10 @@ export function checkDayFile(fileInput: string | any, options?: GateCheckOptions
         pictureCount++;
       }
     }
-    if (pictureCount < 3 && file.status !== 'needs-review') {
+    const minPictures = Math.min(3, Math.ceil((lesson?.parts?.length ?? 5) / 2));
+    if (pictureCount < minPictures && file.status !== 'needs-review') {
       errors.push(
-        `R10: Day has fewer than 3 pictures (${pictureCount}/6) but is not marked needs-review`
+        `R10: Day has fewer than ${minPictures} pictures (${pictureCount}/${entries.length}) but is not marked needs-review`
       );
     }
   }
