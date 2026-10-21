@@ -1,0 +1,1269 @@
+{
+  "schemaVersion": 1,
+  "prefix": "iot_net",
+  "day": 34,
+  "promptSha": "98b3f1cd6594d607e6ab7e7c15b68ff5255a4bb2b4d4681a0fa6fd5968f565c4",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Standard Ethernet Limitations, Non-Determinism & IEEE 802.1AS gPTP Precision Clock Synchronization",
+      "codeHash": "da3d299c574030b06a74b018644724c2a16d159869064c3f4be7c2d3a71cb548",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 34 Part 1 \u2014 Standard Ethernet Limitations, N \u2014 Register Architecture",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Arm hardware register TSN_GPTP_DELAY_REG for Standard Ethernet Limitations, N.",
+            "registerName": "TSN_GPTP_DELAY_REG",
+            "bitWidth": 8,
+            "hexValue": "0x80",
+            "decimalValue": 128,
+            "maskApplied": "1 << 7",
+            "bits": [
+              {
+                "index": 7,
+                "name": "CRC16",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "DE_RE",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 5,
+                "name": "T15",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 4,
+                "name": "T35",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "MBAP",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "PDU",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "POLL",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "EXC_OK",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Latch sampling bits into TSN_GPTP_DELAY_REG and assert validation flag.",
+            "registerName": "TSN_GPTP_DELAY_REG",
+            "bitWidth": 8,
+            "hexValue": "0xC4",
+            "decimalValue": 196,
+            "maskApplied": "(1 << 7) | (1 << 6) | (1 << 2)",
+            "bits": [
+              {
+                "index": 7,
+                "name": "CRC16",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "DE_RE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 5,
+                "name": "T15",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 4,
+                "name": "T35",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "MBAP",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "PDU",
+                "value": 1,
+                "tone": "accent",
+                "highlighted": true
+              },
+              {
+                "index": 1,
+                "name": "POLL",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "EXC_OK",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute hardware transformation in TSN_GPTP_DELAY_REG with pipeline status.",
+            "registerName": "TSN_GPTP_DELAY_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFA",
+            "decimalValue": 250,
+            "maskApplied": "0xFA",
+            "bits": [
+              {
+                "index": 7,
+                "name": "CRC16",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "DE_RE",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "T15",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 4,
+                "name": "T35",
+                "value": 1,
+                "tone": "accent",
+                "highlighted": true
+              },
+              {
+                "index": 3,
+                "name": "MBAP",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "PDU",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "POLL",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 0,
+                "name": "EXC_OK",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Lock register TSN_GPTP_DELAY_REG upon verified hardware completion.",
+            "registerName": "TSN_GPTP_DELAY_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "CRC16",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "DE_RE",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "T15",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "T35",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "MBAP",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "PDU",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 1,
+                "name": "POLL",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 0,
+                "name": "EXC_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "IEEE 802.1Qbv Time-Aware Shaper (TAS), Gate Control Lists & Cyclic Scheduling",
+      "codeHash": "fe8a0585db6e75602a478f9dcc3c049f9d97b7cdaa2d6068235a07c6c3411e2c",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 34 Part 2 \u2014 IEEE 802.1Qbv Time-Aware Shaper  \u2014 Register Architecture",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Arm hardware register TSN_TAS_GCL_SCHED_REG for IEEE 802.1Qbv Time-Aware Shaper .",
+            "registerName": "TSN_TAS_GCL_SCHED_REG",
+            "bitWidth": 8,
+            "hexValue": "0x80",
+            "decimalValue": 128,
+            "maskApplied": "1 << 7",
+            "bits": [
+              {
+                "index": 7,
+                "name": "ARB_WON",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "RECESS",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 5,
+                "name": "DOMIN",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 4,
+                "name": "STUFF",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "FD_BRS",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "DLC64",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "SOCK_OK",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "BUS_OFF",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Latch sampling bits into TSN_TAS_GCL_SCHED_REG and assert validation flag.",
+            "registerName": "TSN_TAS_GCL_SCHED_REG",
+            "bitWidth": 8,
+            "hexValue": "0xC4",
+            "decimalValue": 196,
+            "maskApplied": "(1 << 7) | (1 << 6) | (1 << 2)",
+            "bits": [
+              {
+                "index": 7,
+                "name": "ARB_WON",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "RECESS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 5,
+                "name": "DOMIN",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 4,
+                "name": "STUFF",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "FD_BRS",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "DLC64",
+                "value": 1,
+                "tone": "accent",
+                "highlighted": true
+              },
+              {
+                "index": 1,
+                "name": "SOCK_OK",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "BUS_OFF",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute hardware transformation in TSN_TAS_GCL_SCHED_REG with pipeline status.",
+            "registerName": "TSN_TAS_GCL_SCHED_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFA",
+            "decimalValue": 250,
+            "maskApplied": "0xFA",
+            "bits": [
+              {
+                "index": 7,
+                "name": "ARB_WON",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "RECESS",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "DOMIN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 4,
+                "name": "STUFF",
+                "value": 1,
+                "tone": "accent",
+                "highlighted": true
+              },
+              {
+                "index": 3,
+                "name": "FD_BRS",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "DLC64",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "SOCK_OK",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 0,
+                "name": "BUS_OFF",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Lock register TSN_TAS_GCL_SCHED_REG upon verified hardware completion.",
+            "registerName": "TSN_TAS_GCL_SCHED_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "ARB_WON",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "RECESS",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "DOMIN",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "STUFF",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "FD_BRS",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "DLC64",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 1,
+                "name": "SOCK_OK",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 0,
+                "name": "BUS_OFF",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "IEEE 802.1Qbu / 802.3br Frame Preemption & Interspersed Express Traffic",
+      "codeHash": "94ebd530ba9d761ce058d6a2d08974b64a51e4aed68e4968f1decb8eef32a2b3",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 34 Part 3 \u2014 IEEE 802.1Qbu / 802.3br Frame Pr \u2014 Register Architecture",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Arm hardware register TSN_PREEMPT_SLIC_REG for IEEE 802.1Qbu / 802.3br Frame Pr.",
+            "registerName": "TSN_PREEMPT_SLIC_REG",
+            "bitWidth": 8,
+            "hexValue": "0x80",
+            "decimalValue": 128,
+            "maskApplied": "1 << 7",
+            "bits": [
+              {
+                "index": 7,
+                "name": "ROOT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "OBJECT",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 5,
+                "name": "VAR",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 4,
+                "name": "METHOD",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "UASC",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "TOKEN",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "DEADB",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "NOTIFY",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Latch sampling bits into TSN_PREEMPT_SLIC_REG and assert validation flag.",
+            "registerName": "TSN_PREEMPT_SLIC_REG",
+            "bitWidth": 8,
+            "hexValue": "0xC4",
+            "decimalValue": 196,
+            "maskApplied": "(1 << 7) | (1 << 6) | (1 << 2)",
+            "bits": [
+              {
+                "index": 7,
+                "name": "ROOT",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "OBJECT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 5,
+                "name": "VAR",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 4,
+                "name": "METHOD",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "UASC",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "TOKEN",
+                "value": 1,
+                "tone": "accent",
+                "highlighted": true
+              },
+              {
+                "index": 1,
+                "name": "DEADB",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "NOTIFY",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute hardware transformation in TSN_PREEMPT_SLIC_REG with pipeline status.",
+            "registerName": "TSN_PREEMPT_SLIC_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFA",
+            "decimalValue": 250,
+            "maskApplied": "0xFA",
+            "bits": [
+              {
+                "index": 7,
+                "name": "ROOT",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "OBJECT",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "VAR",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 4,
+                "name": "METHOD",
+                "value": 1,
+                "tone": "accent",
+                "highlighted": true
+              },
+              {
+                "index": 3,
+                "name": "UASC",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "TOKEN",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "DEADB",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 0,
+                "name": "NOTIFY",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Lock register TSN_PREEMPT_SLIC_REG upon verified hardware completion.",
+            "registerName": "TSN_PREEMPT_SLIC_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "ROOT",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "OBJECT",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "VAR",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "METHOD",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "UASC",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "TOKEN",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 1,
+                "name": "DEADB",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 0,
+                "name": "NOTIFY",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "IEEE 802.1CB Frame Replication & Elimination for Reliability (FRER)",
+      "codeHash": "033c40253d9e32618e45a62b1d57ec743086f973f40e4cbfae0c0f2acd88fb38",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 34 Part 4 \u2014 IEEE 802.1CB Frame Replication & \u2014 Register Architecture",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Arm hardware register TSN_FRER_REDUND_REG for IEEE 802.1CB Frame Replication &.",
+            "registerName": "TSN_FRER_REDUND_REG",
+            "bitWidth": 8,
+            "hexValue": "0x80",
+            "decimalValue": 128,
+            "maskApplied": "1 << 7",
+            "bits": [
+              {
+                "index": 7,
+                "name": "GPTP",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "BMCA",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 5,
+                "name": "PDELAY",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 4,
+                "name": "TAS_GCL",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "GUARD",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "PREEMPT",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "FRER",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "LOCK",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Latch sampling bits into TSN_FRER_REDUND_REG and assert validation flag.",
+            "registerName": "TSN_FRER_REDUND_REG",
+            "bitWidth": 8,
+            "hexValue": "0xC4",
+            "decimalValue": 196,
+            "maskApplied": "(1 << 7) | (1 << 6) | (1 << 2)",
+            "bits": [
+              {
+                "index": 7,
+                "name": "GPTP",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "BMCA",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 5,
+                "name": "PDELAY",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 4,
+                "name": "TAS_GCL",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "GUARD",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "PREEMPT",
+                "value": 1,
+                "tone": "accent",
+                "highlighted": true
+              },
+              {
+                "index": 1,
+                "name": "FRER",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "LOCK",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute hardware transformation in TSN_FRER_REDUND_REG with pipeline status.",
+            "registerName": "TSN_FRER_REDUND_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFA",
+            "decimalValue": 250,
+            "maskApplied": "0xFA",
+            "bits": [
+              {
+                "index": 7,
+                "name": "GPTP",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "BMCA",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "PDELAY",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 4,
+                "name": "TAS_GCL",
+                "value": 1,
+                "tone": "accent",
+                "highlighted": true
+              },
+              {
+                "index": 3,
+                "name": "GUARD",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "PREEMPT",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "FRER",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 0,
+                "name": "LOCK",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Lock register TSN_FRER_REDUND_REG upon verified hardware completion.",
+            "registerName": "TSN_FRER_REDUND_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "GPTP",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "BMCA",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "PDELAY",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "TAS_GCL",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "GUARD",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "PREEMPT",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 1,
+                "name": "FRER",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 0,
+                "name": "LOCK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Masterclass Synthesis: Full Industrial TSN Protocol Engine Platform Audit",
+      "codeHash": "50ed6dd6a7b2d5ec03488c1cec6a2ad93c1d05641691a3a79b9231852f0c35fc",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 34 Part 5 \u2014 Masterclass Synthesis: Full Indu \u2014 Register Architecture",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Arm hardware register TSN_DETERM_AUDIT_REG for Masterclass Synthesis: Full Indu.",
+            "registerName": "TSN_DETERM_AUDIT_REG",
+            "bitWidth": 8,
+            "hexValue": "0x80",
+            "decimalValue": 128,
+            "maskApplied": "1 << 7",
+            "bits": [
+              {
+                "index": 7,
+                "name": "ROUTER",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "MODBUS",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 5,
+                "name": "CAN_FD",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 4,
+                "name": "OPCUA",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "TSN_Q7",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "SLICED",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "HITLESS",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "CERT_OK",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Latch sampling bits into TSN_DETERM_AUDIT_REG and assert validation flag.",
+            "registerName": "TSN_DETERM_AUDIT_REG",
+            "bitWidth": 8,
+            "hexValue": "0xC4",
+            "decimalValue": 196,
+            "maskApplied": "(1 << 7) | (1 << 6) | (1 << 2)",
+            "bits": [
+              {
+                "index": 7,
+                "name": "ROUTER",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "MODBUS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 5,
+                "name": "CAN_FD",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 4,
+                "name": "OPCUA",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "TSN_Q7",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "SLICED",
+                "value": 1,
+                "tone": "accent",
+                "highlighted": true
+              },
+              {
+                "index": 1,
+                "name": "HITLESS",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "CERT_OK",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute hardware transformation in TSN_DETERM_AUDIT_REG with pipeline status.",
+            "registerName": "TSN_DETERM_AUDIT_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFA",
+            "decimalValue": 250,
+            "maskApplied": "0xFA",
+            "bits": [
+              {
+                "index": 7,
+                "name": "ROUTER",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "MODBUS",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "CAN_FD",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 4,
+                "name": "OPCUA",
+                "value": 1,
+                "tone": "accent",
+                "highlighted": true
+              },
+              {
+                "index": 3,
+                "name": "TSN_Q7",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "SLICED",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "HITLESS",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 0,
+                "name": "CERT_OK",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Lock register TSN_DETERM_AUDIT_REG upon verified hardware completion.",
+            "registerName": "TSN_DETERM_AUDIT_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "ROUTER",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "MODBUS",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "CAN_FD",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "OPCUA",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "TSN_Q7",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "SLICED",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 1,
+                "name": "HITLESS",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 0,
+                "name": "CERT_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

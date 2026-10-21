@@ -1,0 +1,1269 @@
+{
+  "schemaVersion": 1,
+  "prefix": "iot_net",
+  "day": 32,
+  "promptSha": "a87d6ad0324a9200012ac61312148fc487e99ad1d2c0b5adb2b8a24a4297385a",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "CAN Physical Layer, Differential Signaling & Non-Destructive Bitwise Arbitration",
+      "codeHash": "669a237fd0cbb8a73de18e5eec45b79e5f2b2e53d08e1c90f70e0f87bd8e6b32",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 32 Part 1 \u2014 CAN Physical Layer, Differential \u2014 Register Architecture",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Arm hardware register CAN_ARBITRATION_REG for CAN Physical Layer, Differential.",
+            "registerName": "CAN_ARBITRATION_REG",
+            "bitWidth": 8,
+            "hexValue": "0x80",
+            "decimalValue": 128,
+            "maskApplied": "1 << 7",
+            "bits": [
+              {
+                "index": 7,
+                "name": "CRC16",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "DE_RE",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 5,
+                "name": "T15",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 4,
+                "name": "T35",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "MBAP",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "PDU",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "POLL",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "EXC_OK",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Latch sampling bits into CAN_ARBITRATION_REG and assert validation flag.",
+            "registerName": "CAN_ARBITRATION_REG",
+            "bitWidth": 8,
+            "hexValue": "0xC4",
+            "decimalValue": 196,
+            "maskApplied": "(1 << 7) | (1 << 6) | (1 << 2)",
+            "bits": [
+              {
+                "index": 7,
+                "name": "CRC16",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "DE_RE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 5,
+                "name": "T15",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 4,
+                "name": "T35",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "MBAP",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "PDU",
+                "value": 1,
+                "tone": "accent",
+                "highlighted": true
+              },
+              {
+                "index": 1,
+                "name": "POLL",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "EXC_OK",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute hardware transformation in CAN_ARBITRATION_REG with pipeline status.",
+            "registerName": "CAN_ARBITRATION_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFA",
+            "decimalValue": 250,
+            "maskApplied": "0xFA",
+            "bits": [
+              {
+                "index": 7,
+                "name": "CRC16",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "DE_RE",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "T15",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 4,
+                "name": "T35",
+                "value": 1,
+                "tone": "accent",
+                "highlighted": true
+              },
+              {
+                "index": 3,
+                "name": "MBAP",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "PDU",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "POLL",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 0,
+                "name": "EXC_OK",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Lock register CAN_ARBITRATION_REG upon verified hardware completion.",
+            "registerName": "CAN_ARBITRATION_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "CRC16",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "DE_RE",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "T15",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "T35",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "MBAP",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "PDU",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 1,
+                "name": "POLL",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 0,
+                "name": "EXC_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "CAN 2.0 Frame Structure, CRC-15 Mathematics & Dynamic Bit Stuffing",
+      "codeHash": "e4a332f439402280d42b9c29cf386a0d0a3ef2da967dd9fa4f6d996cc4b5ae79",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 32 Part 2 \u2014 CAN 2.0 Frame Structure, CRC-15  \u2014 Register Architecture",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Arm hardware register CAN_BIT_STUFFING_REG for CAN 2.0 Frame Structure, CRC-15 .",
+            "registerName": "CAN_BIT_STUFFING_REG",
+            "bitWidth": 8,
+            "hexValue": "0x80",
+            "decimalValue": 128,
+            "maskApplied": "1 << 7",
+            "bits": [
+              {
+                "index": 7,
+                "name": "ARB_WON",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "RECESS",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 5,
+                "name": "DOMIN",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 4,
+                "name": "STUFF",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "FD_BRS",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "DLC64",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "SOCK_OK",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "BUS_OFF",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Latch sampling bits into CAN_BIT_STUFFING_REG and assert validation flag.",
+            "registerName": "CAN_BIT_STUFFING_REG",
+            "bitWidth": 8,
+            "hexValue": "0xC4",
+            "decimalValue": 196,
+            "maskApplied": "(1 << 7) | (1 << 6) | (1 << 2)",
+            "bits": [
+              {
+                "index": 7,
+                "name": "ARB_WON",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "RECESS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 5,
+                "name": "DOMIN",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 4,
+                "name": "STUFF",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "FD_BRS",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "DLC64",
+                "value": 1,
+                "tone": "accent",
+                "highlighted": true
+              },
+              {
+                "index": 1,
+                "name": "SOCK_OK",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "BUS_OFF",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute hardware transformation in CAN_BIT_STUFFING_REG with pipeline status.",
+            "registerName": "CAN_BIT_STUFFING_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFA",
+            "decimalValue": 250,
+            "maskApplied": "0xFA",
+            "bits": [
+              {
+                "index": 7,
+                "name": "ARB_WON",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "RECESS",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "DOMIN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 4,
+                "name": "STUFF",
+                "value": 1,
+                "tone": "accent",
+                "highlighted": true
+              },
+              {
+                "index": 3,
+                "name": "FD_BRS",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "DLC64",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "SOCK_OK",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 0,
+                "name": "BUS_OFF",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Lock register CAN_BIT_STUFFING_REG upon verified hardware completion.",
+            "registerName": "CAN_BIT_STUFFING_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "ARB_WON",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "RECESS",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "DOMIN",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "STUFF",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "FD_BRS",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "DLC64",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 1,
+                "name": "SOCK_OK",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 0,
+                "name": "BUS_OFF",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "CAN-FD (Flexible Data-Rate) Architecture, Dual Baud Rates & 64-Byte Payloads",
+      "codeHash": "7fc9429fa981eadff1f66784574e545bbbe6c848f488d23f9c1905cd77c4a4f5",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 32 Part 3 \u2014 CAN-FD (Flexible Data-Rate) Arch \u2014 Register Architecture",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Arm hardware register CAN_FD_BRS_SPEED_REG for CAN-FD (Flexible Data-Rate) Arch.",
+            "registerName": "CAN_FD_BRS_SPEED_REG",
+            "bitWidth": 8,
+            "hexValue": "0x80",
+            "decimalValue": 128,
+            "maskApplied": "1 << 7",
+            "bits": [
+              {
+                "index": 7,
+                "name": "ROOT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "OBJECT",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 5,
+                "name": "VAR",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 4,
+                "name": "METHOD",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "UASC",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "TOKEN",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "DEADB",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "NOTIFY",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Latch sampling bits into CAN_FD_BRS_SPEED_REG and assert validation flag.",
+            "registerName": "CAN_FD_BRS_SPEED_REG",
+            "bitWidth": 8,
+            "hexValue": "0xC4",
+            "decimalValue": 196,
+            "maskApplied": "(1 << 7) | (1 << 6) | (1 << 2)",
+            "bits": [
+              {
+                "index": 7,
+                "name": "ROOT",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "OBJECT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 5,
+                "name": "VAR",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 4,
+                "name": "METHOD",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "UASC",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "TOKEN",
+                "value": 1,
+                "tone": "accent",
+                "highlighted": true
+              },
+              {
+                "index": 1,
+                "name": "DEADB",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "NOTIFY",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute hardware transformation in CAN_FD_BRS_SPEED_REG with pipeline status.",
+            "registerName": "CAN_FD_BRS_SPEED_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFA",
+            "decimalValue": 250,
+            "maskApplied": "0xFA",
+            "bits": [
+              {
+                "index": 7,
+                "name": "ROOT",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "OBJECT",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "VAR",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 4,
+                "name": "METHOD",
+                "value": 1,
+                "tone": "accent",
+                "highlighted": true
+              },
+              {
+                "index": 3,
+                "name": "UASC",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "TOKEN",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "DEADB",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 0,
+                "name": "NOTIFY",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Lock register CAN_FD_BRS_SPEED_REG upon verified hardware completion.",
+            "registerName": "CAN_FD_BRS_SPEED_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "ROOT",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "OBJECT",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "VAR",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "METHOD",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "UASC",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "TOKEN",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 1,
+                "name": "DEADB",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 0,
+                "name": "NOTIFY",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Linux SocketCAN Architecture, Hardware Filtering & Edge-to-Cloud Forwarding",
+      "codeHash": "b8dee36a01238427395567febba6bb9be497c236514c073440286518d04b205d",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 32 Part 4 \u2014 Linux SocketCAN Architecture, Ha \u2014 Register Architecture",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Arm hardware register CAN_SOCKET_FILTER_REG for Linux SocketCAN Architecture, Ha.",
+            "registerName": "CAN_SOCKET_FILTER_REG",
+            "bitWidth": 8,
+            "hexValue": "0x80",
+            "decimalValue": 128,
+            "maskApplied": "1 << 7",
+            "bits": [
+              {
+                "index": 7,
+                "name": "GPTP",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "BMCA",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 5,
+                "name": "PDELAY",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 4,
+                "name": "TAS_GCL",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "GUARD",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "PREEMPT",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "FRER",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "LOCK",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Latch sampling bits into CAN_SOCKET_FILTER_REG and assert validation flag.",
+            "registerName": "CAN_SOCKET_FILTER_REG",
+            "bitWidth": 8,
+            "hexValue": "0xC4",
+            "decimalValue": 196,
+            "maskApplied": "(1 << 7) | (1 << 6) | (1 << 2)",
+            "bits": [
+              {
+                "index": 7,
+                "name": "GPTP",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "BMCA",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 5,
+                "name": "PDELAY",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 4,
+                "name": "TAS_GCL",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "GUARD",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "PREEMPT",
+                "value": 1,
+                "tone": "accent",
+                "highlighted": true
+              },
+              {
+                "index": 1,
+                "name": "FRER",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "LOCK",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute hardware transformation in CAN_SOCKET_FILTER_REG with pipeline status.",
+            "registerName": "CAN_SOCKET_FILTER_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFA",
+            "decimalValue": 250,
+            "maskApplied": "0xFA",
+            "bits": [
+              {
+                "index": 7,
+                "name": "GPTP",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "BMCA",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "PDELAY",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 4,
+                "name": "TAS_GCL",
+                "value": 1,
+                "tone": "accent",
+                "highlighted": true
+              },
+              {
+                "index": 3,
+                "name": "GUARD",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "PREEMPT",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "FRER",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 0,
+                "name": "LOCK",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Lock register CAN_SOCKET_FILTER_REG upon verified hardware completion.",
+            "registerName": "CAN_SOCKET_FILTER_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "GPTP",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "BMCA",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "PDELAY",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "TAS_GCL",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "GUARD",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "PREEMPT",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 1,
+                "name": "FRER",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 0,
+                "name": "LOCK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Masterclass Synthesis: Full Industrial CAN / CAN-FD Platform Verification Audit",
+      "codeHash": "405989df18709191833ba41a8d6e7213adfe5d0fae397fd2684ff05bdb68ecc3",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 32 Part 5 \u2014 Masterclass Synthesis: Full Indu \u2014 Register Architecture",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Arm hardware register CAN_FD_AUDIT_MAST_REG for Masterclass Synthesis: Full Indu.",
+            "registerName": "CAN_FD_AUDIT_MAST_REG",
+            "bitWidth": 8,
+            "hexValue": "0x80",
+            "decimalValue": 128,
+            "maskApplied": "1 << 7",
+            "bits": [
+              {
+                "index": 7,
+                "name": "ROUTER",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "MODBUS",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 5,
+                "name": "CAN_FD",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 4,
+                "name": "OPCUA",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "TSN_Q7",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "SLICED",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "HITLESS",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "CERT_OK",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Latch sampling bits into CAN_FD_AUDIT_MAST_REG and assert validation flag.",
+            "registerName": "CAN_FD_AUDIT_MAST_REG",
+            "bitWidth": 8,
+            "hexValue": "0xC4",
+            "decimalValue": 196,
+            "maskApplied": "(1 << 7) | (1 << 6) | (1 << 2)",
+            "bits": [
+              {
+                "index": 7,
+                "name": "ROUTER",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "MODBUS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 5,
+                "name": "CAN_FD",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 4,
+                "name": "OPCUA",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "TSN_Q7",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "SLICED",
+                "value": 1,
+                "tone": "accent",
+                "highlighted": true
+              },
+              {
+                "index": 1,
+                "name": "HITLESS",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "CERT_OK",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute hardware transformation in CAN_FD_AUDIT_MAST_REG with pipeline status.",
+            "registerName": "CAN_FD_AUDIT_MAST_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFA",
+            "decimalValue": 250,
+            "maskApplied": "0xFA",
+            "bits": [
+              {
+                "index": 7,
+                "name": "ROUTER",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "MODBUS",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "CAN_FD",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 4,
+                "name": "OPCUA",
+                "value": 1,
+                "tone": "accent",
+                "highlighted": true
+              },
+              {
+                "index": 3,
+                "name": "TSN_Q7",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "SLICED",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "HITLESS",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 0,
+                "name": "CERT_OK",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Lock register CAN_FD_AUDIT_MAST_REG upon verified hardware completion.",
+            "registerName": "CAN_FD_AUDIT_MAST_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "ROUTER",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "MODBUS",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "CAN_FD",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "OPCUA",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "TSN_Q7",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "SLICED",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 1,
+                "name": "HITLESS",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 0,
+                "name": "CERT_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
