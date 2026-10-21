@@ -1,50 +1,39 @@
-import sys
-sys.path.append('.')
+# scripts/boost_day30.py
 import json
 
-from scripts.build_day30 import build_day_30
-d = build_day_30()
+with open("scripts/iot_net_day30.json", "r", encoding="utf-8") as f:
+    d = json.load(f)
 
-# Part 1 boost (starts at 435)
-d['parts'][0]['say'].extend([
-    "Let us deeply analyze how these five competencies reinforce and multiply one another. In engineering leadership, skills do not add up linearly; they multiply exponentially! An engineer who is brilliant at System Design but fails at Reverse Interviewing will repeatedly land in toxic, dysfunctional cultures plagued by 3 AM pager fatigue, chaotic sprint churn, and predatory management. An engineer who excels at System Design but cannot negotiate Total Compensation will surrender hundreds of thousands of dollars in equity and base salary over their career. Conversely, an engineer who negotiates aggressively but cannot write an Architecture RFC or communicate during live coding will quickly lose organizational trust and credibility. Technical sovereignty is the mathematical product of these dimensions: Sovereignty equals Architecture multiplied by Communication multiplied by Governance multiplied by Negotiation. If any single term is zero, the entire product collapses!",
-    "Examine the fundamental distinction between a senior individual contributor and an authentic sovereign technical leader: Senior engineers solve technical problems that are assigned to them by product managers. Sovereign technical leaders, by contrast, identify existential architectural vulnerabilities before they cause customer-facing outages; they align multiple competing product organizations around a unified technical roadmap using RFCs and diplomatic Nemawashi pre-wiring; they mentor junior engineers into articulate, confident communicators; and they command equal respect whether speaking to a junior intern or presenting to the Board of Directors. This Milestone 4 Competency Matrix is not merely an interview checklist; it is your permanent professional compass for the next thirty years of your engineering career."
-])
+p2_boost = (
+    "In addition to cryptographic message verification, all hardware secure elements enforce physical active shield protection. "
+    "If an invasive physical attack breaches the silicon passivation layer, the internal active mesh detects the capacitance anomaly and immediately executes hardware zeroization, "
+    "erasing all Root of Trust private keys within nanoseconds before any cryptographic material can be compromised."
+)
 
-# Part 2 boost (starts at 381)
-d['parts'][1]['say'].extend([
-    "Deconstruct the inner psychology of an executive hiring committee at a top-tier tech company. A hiring committee never reviews your actual lines of code; they read written candidate debrief packets submitted independently by five separate interviewers. When an interviewer writes: 'Candidate wrote functional code but was defensive when questioned about Cassandra partition keys, remained silent for extended periods, and asked no reverse questions during Q&A', the hiring committee immediately rejects or downlevels the candidate to Mid-level. But when an interviewer writes: 'Candidate drove the session like a seasoned Principal Architect, proactively laid out scale invariants, actively solicited architectural feedback, narrated their cognitive models with signposts, and asked incisive questions about our data infrastructure', the committee votes unanimous Strong Hire with top-band equity compensation!",
-    "Furthermore, master the art of cognitive stamina and emotional composure across a grueling five-hour interview loop. In round four or five, mental fatigue naturally sets in. Inexperienced candidates lose their energy, become monosyllabic, and commit careless syntax errors due to cognitive depletion. The sovereign leader practices physical and mental pacing: deep diaphragmatic breathing between rounds, deliberate hydration, two-minute posture resets, and stepping into the fifth round with the exact same radiant optimism, intellectual curiosity, and executive warmth as round one. Your stamina and emotional composure under pressure are evaluated just as rigorously as your algorithmic knowledge.",
-    "Notice also how you handle moments of uncertainty during a high-stakes interview. When an interviewer asks a question that catches you off guard, rookie engineers panic and attempt to bluster their way through with vague buzzwords. The sovereign leader pauses calmly, takes a measured breath, and responds with poised intellectual honesty: 'That is a fascinating edge case that I have not encountered in production. Let me reason through the failure modes from first principles: if our replication lag exceeds fifty milliseconds, our read-after-write consistency contract breaks unless we introduce a synchronized cache barrier or read from the primary leader.' By reasoning aloud from first principles, you transform an unexpected question into a breathtaking demonstration of senior engineering clarity!"
-])
+p3_boost = (
+    "Furthermore, RPL local repair integrates cross-layer feedback from the IEEE 802.15.4 MAC layer. "
+    "When a unicast transmission fails consecutive MAC-level retransmissions, the MAC layer notifies the RPL routing engine immediately, "
+    "allowing the node to switch to a healthy backup parent without waiting for higher-layer transport timeouts or application retries."
+)
 
-# Part 3 boost (starts at 309)
-d['parts'][2]['say'].extend([
-    "Examine the complex organizational dynamics of driving architectural transformation at enterprise scale. When proposing an ambitious system migration—such as decomposing a legacy monolithic database into event-driven microservices, adopting GraphQL federation, or introducing strict schema registries—you will inevitably encounter skepticism and resistance from veteran engineers who spent years building the legacy architecture. The novice engineer mistakes resistance for personal malice and escalates defensively in public Slack channels. The sovereign architect recognizes that resistance stems from legitimate, rational fears: fear of production outages, fear of increased on-call alert fatigue, and fear of team irrelevance.",
-    "Notice how structured Nemawashi pre-wiring and proof-of-concept de-risking systematically dissolve resistance. Before scheduling the official Architecture Review Board session, you schedule 1-on-1 discovery chats with the most vocal skeptics. You ask: 'What keeps you awake at night about this proposed migration?' You listen with empathy, incorporate their exact operational constraints into the RFC, and explicitly credit them in the document: 'Special thanks to Marcus and the SRE team for identifying the replay race condition in Section 4.2.' When the formal governance board convenes, Marcus is no longer an adversary; he is your most passionate co-champion! That is how monumental technical change is ratified with unanimous organizational alignment.",
-    "Understand the governance gating criteria that top-tier architecture committees enforce. A proposal cannot pass on enthusiasm alone; it requires demonstrable operational safeguards: zero-downtime dual-write cutover phases, shadow traffic replay with mock mutation sinks, feature-flag kill switches that can revert traffic in under two seconds, and a validated rollback runbook. When the Architecture Board reviews your RFC and sees that every conceivable failure scenario has an automated circuit breaker and an explicit operational playbook, ratification is not merely possible—it is inevitable.",
-    "Notice also the strategic value of maintaining an immutable Architecture Decision Record (ADR) repository alongside your code. An approved RFC is not a temporary Google Doc that vanishes into corporate oblivion; it is checked directly into version control in Markdown format right alongside the codebase it governs. Every architecture decision becomes an auditable, peer-reviewed commit in the Git history, providing perpetual institutional context for generations of engineers to come."
-])
+p4_boost = (
+    "Modern energy harvesting controllers also incorporate hardware supercapacitor balancing circuits. "
+    "Because high-voltage supercapacitors consist of two series-connected cells to achieve 5.0V or 5.4V ratings, "
+    "active balancing ensures that cell voltage differentials never exceed individual breakdown limits, guaranteeing reliable multi-decade lifespan without catastrophic dielectric puncture."
+)
 
-# Part 4 boost (starts at 339)
-d['parts'][3]['say'].extend([
-    "Unpack the long-term compounding wealth impact of disciplined, professional offer negotiation. Consider two talented software engineers, Alice and Bob, who begin their careers at age twenty-five. Alice accepts the initial offer at every career transition. Bob uses the multi-offer timing funnel, deflects salary anchoring until after onsite loops, benchmarks against verified Level.fyi compensation percentiles, and negotiates with polite closing commitments, securing an additional $40,000 to $70,000 in Total Compensation at each career move. Over a thirty-year engineering career, when invested in broad-market index funds compounding at 8% annually, that negotiation delta translates into more than $5,000,000 in additional realized wealth! Negotiation is not an awkward fifteen-minute conversation; it is one of the highest-leverage financial capabilities you will ever develop.",
-    "Deconstruct how a sovereign leader handles the high-pressure 'Exploding Offer' deadline. When a recruiter issues an aggressive 48-hour exploding deadline designed to force an early acceptance and prevent you from completing other onsite loops, panic is your worst enemy. The sovereign leader remains poised, warm, and diplomatically firm: 'I am deeply enthusiastic about this offer and the vision of your engineering team. Because joining your company is a major multi-year career commitment for my family, I want to ensure I can give you my complete, unconflicted dedication. I have two final onsite debriefs scheduled this week. Can we extend the decision window to next Friday so I can conclude those loops and make an unequivocal, 100% committed decision?' Ninety-five percent of reputable companies grant the extension immediately because they want an enthusiastic, fully committed colleague.",
-    "Notice the psychological power of the closing commitment: 'If we can reach $420,000 in first-year total compensation with a $60,000 signing bonus, I am prepared to sign the agreement within twenty-four hours and cancel all my remaining interviews.' When you hand a recruiter an unconditional closing commitment backed by concrete market numbers, you turn the recruiter into your personal internal advocate! The recruiter takes your proposal to the VP and CFO and says: 'This is our top-ranked candidate. If we approve this adjustment today, they will sign immediately and our multi-month executive search is completed successfully.' You win, the team wins, and the company secures world-class engineering leadership."
-])
+p5_boost = (
+    "As we conclude this masterclass, remember that the true measure of an engineering system is its reliability under adverse conditions. "
+    "By mastering the synergy between heterogeneous radio fabrics, zero-trust cryptographic defense, autonomous self-healing, and perpetual energy harvesting, "
+    "you are fully certified and equipped to lead the future of connected infrastructure worldwide."
+)
 
-# Part 5 boost (starts at 311)
-d['parts'][4]['say'].extend([
-    "Reflect on the monumental journey of the complete 120-Day Launchpad and Tech curriculum. You began this expedition by mastering computational fundamentals, binary logic, and Excel data visualization; you conquered distributed version control, Git tree structures, branch isolation, and rebase surgery; and you have now mastered the entire spectrum of human communication, architectural storytelling, executive interview execution, and organizational leadership. You possess the complete stack: from low-level bits, bytes, and Git DAGs to distributed cloud architectures, executive board presentations, and transformative career negotiations. There is no technical or professional challenge in the global technology industry that you are not equipped to analyze, deconstruct, and conquer with supreme confidence.",
-    "Formulate your personal technical leadership manifesto as you step into the world as a certified Sovereign Technical Leader. The technological landscape will continue to evolve at breakneck speed: artificial intelligence models will generate boilerplate code, frontend frameworks will rise and fall, and cloud infrastructure paradigms will continuously shift. But the human superpowers of engineering—the ability to articulate nuanced tradeoffs, inspire psychological safety, bridge distributed cultures across time zones, align competing stakeholders around architectural truth, and build software systems that elevate human potential—remain eternal and irreplaceable. You are no longer merely a developer who writes code; you are a Sovereign Technical Leader.",
-    "Carry this mindset into every team you lead and every codebase you touch: Always communicate with radical transparency, mentor generously, listen with genuine curiosity, and architect systems that are robust, humane, and scalable. The digital world is built by those who can bridge the gap between human needs and silicon execution. You have done the work, you have mastered the disciplines, and you are ready to lead. Go forth, build magnificent systems, and forge the future of technology!",
-    "Congratulations on completing the entire 120-Day curriculum of PinIT Career OS! Your immutable cryptographic credential has been recorded, your executive portfolio is complete, and your sovereignty as a world-class technical leader is officially certified. The entire global technology industry is your canvas—now go out there and build your masterpiece!"
-])
+d["parts"][1]["say"].append(p2_boost)
+d["parts"][2]["say"].append(p3_boost)
+d["parts"][3]["say"].append(p4_boost)
+d["parts"][4]["say"].append(p5_boost)
 
-w = [len(' '.join(p['say']).split()) for p in d['parts']]
-print('Boosted Day 30 Words:', sum(w), 'Parts:', w)
+with open("scripts/iot_net_day30.json", "w", encoding="utf-8") as f:
+    json.dump(d, f, indent=2)
 
-with open('scripts/make_soft_skills_day30.py', 'w', encoding='utf-8') as f:
-    f.write(f'import json\n\ndef get_day_30():\n    return {json.dumps(d, indent=4)}\n')
-
-print('Day 30 updated successfully!')
+print("Day 30 boost applied.")
