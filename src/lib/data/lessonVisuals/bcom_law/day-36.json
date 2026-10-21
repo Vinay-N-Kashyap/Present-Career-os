@@ -1,0 +1,294 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_law",
+  "day": 36,
+  "promptSha": "prompt_sha_bcom_law_day36_cirp_initiation_v1",
+  "model": "google/gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Legislative Architecture of IBC 2016, Section 4 Default Threshold & Clean Slate Doctrine",
+      "codeHash": "8f36dd98e008ea51db191866557e65db379b724e2edf51e40ae802b84fb306f9",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Legislative Architecture of IBC 2016, Section 4 Default Threshold & Clean Slate Doctrine Governance Architecture",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Statutory Architecture",
+            "subtext": "Consolidation of fragmented insolvency laws"
+          },
+          {
+            "id": "s2",
+            "name": "Default Threshold",
+            "subtext": "One crore minimum limit under Section 4"
+          },
+          {
+            "id": "s3",
+            "name": "Clean Slate Doctrine",
+            "subtext": "Extinguishment of past undisclosed liabilities"
+          },
+          {
+            "id": "s4",
+            "name": "Time Bound Tempo",
+            "subtext": "Mandatory three hundred and thirty day cap"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Insolvency legislative frameworks consolidate enterprise restructuring.",
+            "activeStageId": "s1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say1",
+            "caption": "Prior insolvency laws caused catastrophic capital destruction.",
+            "activeStageId": "s2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Equipment manufacturer defaults fall below jurisdictional thresholds.",
+            "activeStageId": "s3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Jurisdiction engines test default thresholds and evaluate maintainability.",
+            "activeStageId": "s4",
+            "statusBadge": "done"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Section 7 Application by Financial Creditors: Debt, Default & Mandatory Adjudicating Authority Timeline",
+      "codeHash": "a1b339f22ff2b19913fbb412e32087ecc469f601f27a7fa6bed97a6dd1872efc",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Section 7 Application by Financial Creditors: Debt, Default & Mandatory Adjudicating Authority Timeline Governance Architecture",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Financial Debt Test",
+            "subtext": "Consideration for time value of money"
+          },
+          {
+            "id": "s2",
+            "name": "Information Utility",
+            "subtext": "Conclusive evidence from NeSL record of default"
+          },
+          {
+            "id": "s3",
+            "name": "IRP Nomination",
+            "subtext": "Mandatory proposal with valid assignment certificate"
+          },
+          {
+            "id": "s4",
+            "name": "Fourteen Day Rule",
+            "subtext": "Statutory timeline for NCLT admission order"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Financial creditor applications trigger statutory corporate resolution.",
+            "activeStageId": "s1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say1",
+            "caption": "Financial debt financing considers the time value of money.",
+            "activeStageId": "s2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Commercial bank credit facilities prove debt and default conclusively.",
+            "activeStageId": "s3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Financial creditor validators test default records and statutory timelines.",
+            "activeStageId": "s4",
+            "statusBadge": "done"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Section 9 Operational Creditors: Section 8 Demand Notice & The Pre-Existing Dispute Defense (Mobilox Innovations)",
+      "codeHash": "cfd99eaf876b1724e7fabcda5078e57d66685974628793bb92d806dd420c65a6",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Section 9 Operational Creditors: Section 8 Demand Notice & The Pre-Existing Dispute Defense (Mobilox Innovations) Governance Architecture",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Section 8 Notice",
+            "subtext": "Ten day statutory demand notice in Form 3"
+          },
+          {
+            "id": "s2",
+            "name": "Mobilox Doctrine",
+            "subtext": "Plausible pre existing dispute requirement"
+          },
+          {
+            "id": "s3",
+            "name": "Pre Notice Chronology",
+            "subtext": "Dispute documented prior to demand notice"
+          },
+          {
+            "id": "s4",
+            "name": "Tribunal Adjudication",
+            "subtext": "Dismissal where genuine dispute exists"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Operational creditors enforce commercial claims through statutory notices.",
+            "activeStageId": "s1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say1",
+            "caption": "Commercial suppliers sustain daily enterprise business operations.",
+            "activeStageId": "s2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Software vendor claims face dismissal under pre existing dispute rules.",
+            "activeStageId": "s3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Operational creditor evaluators apply dispute doctrines to test claims.",
+            "activeStageId": "s4",
+            "statusBadge": "done"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Section 14 Statutory Moratorium: Asset Freezing, Stay on Legal Proceedings & Supply of Essential Goods",
+      "codeHash": "f67540cf082d9840d5b76ac5327cc10fe40ccd7e32ad5d9a6606c4ab60176a2d",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Section 14 Statutory Moratorium: Asset Freezing, Stay on Legal Proceedings & Supply of Essential Goods Governance Architecture",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Universal Stay",
+            "subtext": "Prohibition of suits and judicial executions"
+          },
+          {
+            "id": "s2",
+            "name": "Asset Encumbrance Bar",
+            "subtext": "Freezing of corporate debtor property rights"
+          },
+          {
+            "id": "s3",
+            "name": "Essential Supplies",
+            "subtext": "Non interruption of water power and telecom"
+          },
+          {
+            "id": "s4",
+            "name": "Guarantor Carve Out",
+            "subtext": "Enforcement against personal guarantors allowed"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Statutory moratoriums establish comprehensive corporate asset freezes.",
+            "activeStageId": "s1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say1",
+            "caption": "Adjudicating authorities declare immediate statutory protective shields.",
+            "activeStageId": "s2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Commercial bank auction faces immediate statutory moratorium protection.",
+            "activeStageId": "s3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Moratorium audit engines evaluate stays and essential utility protections.",
+            "activeStageId": "s4",
+            "statusBadge": "done"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Anti-Pattern Defense & Outage Puzzle: The Manufactured Operational Debt & Contested Section 9 Dispute",
+      "codeHash": "3570eeada27393f9faae0adb8e5df9768e5f54b4eb6ce7056fc61a57f01f05b1",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Anti-Pattern Defense & Outage Puzzle: The Manufactured Operational Debt & Contested Section 9 Dispute Governance Architecture",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Malicious Petition",
+            "subtext": "Section 65 penalties for fraudulent initiation"
+          },
+          {
+            "id": "s2",
+            "name": "GST Reconciliation",
+            "subtext": "Input tax credit matching exposes sham disputes"
+          },
+          {
+            "id": "s3",
+            "name": "Arbitration Overlap",
+            "subtext": "Section 34 challenge bars insolvency petition"
+          },
+          {
+            "id": "s4",
+            "name": "Contemporaneous Proof",
+            "subtext": "Goods receipt notes and NeSL registration"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Manufactured operational disputes trigger severe judicial scrutiny.",
+            "activeStageId": "s1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say1",
+            "caption": "Corporate legal warfare involves artificial operational claims.",
+            "activeStageId": "s2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Contractor invoice disputes face forensic tax reconciliation analysis.",
+            "activeStageId": "s3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Crisis diagnostic engines detect fabricated claims and statutory penalties.",
+            "activeStageId": "s4",
+            "statusBadge": "done"
+          }
+        ]
+      }
+    }
+  ]
+}

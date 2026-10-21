@@ -1,0 +1,294 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_law",
+  "day": 39,
+  "promptSha": "prompt_sha_bcom_law_day39_resolution_plan_waterfall_v1",
+  "model": "google/gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Form G Invitation for Expression of Interest (EoI), Information Memorandum & Evaluation Matrix",
+      "codeHash": "3eb6fe0c0344a220af9c0f5997231623de28fcb1b3f74798340c3c88cf08deec",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Form G Invitation for Expression of Interest (EoI), Information Memorandum & Evaluation Matrix Governance Framework",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Form G Invitation",
+            "subtext": "Public invitation for resolution plans"
+          },
+          {
+            "id": "s2",
+            "name": "Eligibility Filters",
+            "subtext": "Minimum net worth and turnover criteria"
+          },
+          {
+            "id": "s3",
+            "name": "Information Memorandum",
+            "subtext": "Virtual data room and asset diligence"
+          },
+          {
+            "id": "s4",
+            "name": "Evaluation Matrix",
+            "subtext": "Objective scoring of turnaround plans"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Competitive market processes invite prospective enterprise resolution plans.",
+            "activeStageId": "s1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say1",
+            "caption": "Competitive bidding frameworks invite prospective enterprise resolution plans.",
+            "activeStageId": "s2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Distressed cement manufacturer criteria establish objective balance sheets.",
+            "activeStageId": "s3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Prospective applicant engines test eligibility and verify data room access.",
+            "activeStageId": "s4",
+            "statusBadge": "done"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Section 29A Mandatory Disqualification Filters & The ArcelorMittal Doctrine",
+      "codeHash": "5da0ff6558e44135cb0a008792d57fdcf582d7c9d790358c032089486ccbaf36",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Section 29A Mandatory Disqualification Filters & The ArcelorMittal Doctrine Governance Framework",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Section 29A Filters",
+            "subtext": "Ten statutory disqualification clauses"
+          },
+          {
+            "id": "s2",
+            "name": "NPA Promoter Bar",
+            "subtext": "One year default under clause c"
+          },
+          {
+            "id": "s3",
+            "name": "ArcelorMittal Doctrine",
+            "subtext": "Curing ineligibility by full debt repayment"
+          },
+          {
+            "id": "s4",
+            "name": "MSME Carve Out",
+            "subtext": "Section 240A promoter exemptions"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Statutory ineligibility filters disqualify habitual enterprise defaulters.",
+            "activeStageId": "s1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say1",
+            "caption": "Habitual corporate defaulters face comprehensive statutory disqualification.",
+            "activeStageId": "s2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Overseas conglomerate bids face disqualification under default doctrines.",
+            "activeStageId": "s3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Screening validators evaluate default records and test cure requirements.",
+            "activeStageId": "s4",
+            "statusBadge": "done"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Section 30 Compliance Review by RP & Section 30(4) CoC Approval: 66% Supermajority",
+      "codeHash": "a6b42fbc8468109eca7d9e56e96635b7432e26605cfd8deea30fa7b18c47e9e7",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Section 30 Compliance Review by RP & Section 30(4) CoC Approval: 66% Supermajority Governance Framework",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Gate 1 RP Review",
+            "subtext": "Section 30(2) statutory certifications"
+          },
+          {
+            "id": "s2",
+            "name": "Creditor Protections",
+            "subtext": "Liquidation floor for operational lenders"
+          },
+          {
+            "id": "s3",
+            "name": "CoC Supermajority",
+            "subtext": "Sixty-six percent affirmative voting threshold"
+          },
+          {
+            "id": "s4",
+            "name": "Form H Submission",
+            "subtext": "Compliance certification to tribunal"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Statutory compliance reviews precede committee commercial plan approvals.",
+            "activeStageId": "s1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say1",
+            "caption": "Resolution plans undergo comprehensive statutory compliance certifications.",
+            "activeStageId": "s2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Automotive components manufacturer plans provide full process cost priority.",
+            "activeStageId": "s3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Compliance engines verify creditor protections and test supermajority votes.",
+            "activeStageId": "s4",
+            "statusBadge": "done"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Section 31 NCLT Sanction & Section 53 Liquidation Waterfall Priorities",
+      "codeHash": "0485881e09bd965883a446487f6a09b2ce0b10f0f097dc75ad02dcb1a6385d7c",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Section 31 NCLT Sanction & Section 53 Liquidation Waterfall Priorities Governance Framework",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Section 31 Sanction",
+            "subtext": "NCLT approval binding all stakeholders"
+          },
+          {
+            "id": "s2",
+            "name": "Clean Slate Doctrine",
+            "subtext": "Extinguishment of past government claims"
+          },
+          {
+            "id": "s3",
+            "name": "Section 53 Waterfall",
+            "subtext": "Six tier statutory priority distribution"
+          },
+          {
+            "id": "s4",
+            "name": "Workmen Pari Passu",
+            "subtext": "Secured and labor equality under law"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Judicial approvals establish binding nationwide corporate restructuring.",
+            "activeStageId": "s1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say1",
+            "caption": "Judicial sanctions bind enterprise stakeholders under statutory authorities.",
+            "activeStageId": "s2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Infrastructure firm plans extinguish legacy commercial tax department claims.",
+            "activeStageId": "s3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Liquidation waterfall engines calculate priority distributions across tiers.",
+            "activeStageId": "s4",
+            "statusBadge": "done"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Anti-Pattern Defense & Outage Puzzle: The Backdoor Promoter Bid & Shadow Ineligibility Crisis",
+      "codeHash": "aacc7562187222548b4ee7a526c867d0745cddce8a14e24f9364d6e03e464459",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Anti-Pattern Defense & Outage Puzzle: The Backdoor Promoter Bid & Shadow Ineligibility Crisis Governance Framework",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Shadow Bidder Detection",
+            "subtext": "Tracing ultimate beneficial ownership"
+          },
+          {
+            "id": "s2",
+            "name": "Offshore Veil Piercing",
+            "subtext": "SWIFT wire forensic capital tracking"
+          },
+          {
+            "id": "s3",
+            "name": "Call Option Invalidation",
+            "subtext": "Striking down fraudulent side agreements"
+          },
+          {
+            "id": "s4",
+            "name": "Deposit Forfeiture",
+            "subtext": "Statutory penalty and tribunal reporting"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Forensic screening detects clandestine backdoor bids by tainted promoters.",
+            "activeStageId": "s1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say1",
+            "caption": "Restructuring litigation requires vigilant scrutiny against shadow bidders.",
+            "activeStageId": "s2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Offshore shell entities face disqualification upon forensic banking audits.",
+            "activeStageId": "s3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Shadow promoter diagnostics trace offshore funds and forfeit deposits.",
+            "activeStageId": "s4",
+            "statusBadge": "done"
+          }
+        ]
+      }
+    }
+  ]
+}

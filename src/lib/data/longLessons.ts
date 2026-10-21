@@ -101,6 +101,9 @@ export interface LongLesson {
   course?: string;
   day: number;
   title: string;
+  desc?: string;
+  description?: string;
+  visualBinding?: any;
   /** One sentence: what the student can do after this lesson. */
   goal?: string;
   /** Rough lesson length in minutes (lesson only, not practice). */
