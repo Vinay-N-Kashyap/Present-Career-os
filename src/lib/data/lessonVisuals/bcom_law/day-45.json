@@ -1,0 +1,294 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_law",
+  "day": 45,
+  "promptSha": "prompt_sha_bcom_law_day45_cross_border_capstone_v1",
+  "model": "google/gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "The Multi-Jurisdictional Insolvency Crisis: Conflicting Injunctions & Forum Shopping",
+      "codeHash": "424c670832f8a9190e6fff86c808264785276f62f55af0236cf72cf5e94f5ea2",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "The Multi-Jurisdictional Insolvency Crisis: Conflicting Injunctions & Forum Shopping Architecture",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Multi-Jurisdiction Scope",
+            "subtext": "Sovereign clashes across international venues"
+          },
+          {
+            "id": "s2",
+            "name": "Universalism Model",
+            "subtext": "UNCITRAL principles prioritizing unified administration"
+          },
+          {
+            "id": "s3",
+            "name": "Anti-Suit Injunctions",
+            "subtext": "Foreign court orders seeking to paralyze domestic CIRP"
+          },
+          {
+            "id": "s4",
+            "name": "Section 238 Primacy",
+            "subtext": "IBC statutory override protecting national sovereignty"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Global corporate enterprises operate through complex multinational networks.",
+            "activeStageId": "s1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say1",
+            "caption": "Global corporate enterprises operate through complex multinational networks.",
+            "activeStageId": "s2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Global corporate enterprises operate through complex multinational networks.",
+            "activeStageId": "s3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Cross-border jurisdictional conflict engines evaluate multi-jurisdiction risk.",
+            "activeStageId": "s4",
+            "statusBadge": "done"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Divergent COMI Determinations & Judicial Conflict Resolution",
+      "codeHash": "7d03f63fe9ced7a8bab0263148fcd975332255db68248ca2deada916a4aafcd1",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Divergent COMI Determinations & Judicial Conflict Resolution Architecture",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Registered Presumption",
+            "subtext": "Rebuttable statutory assumption under Model Law"
+          },
+          {
+            "id": "s2",
+            "name": "Third-Party Test",
+            "subtext": "Objective ascertainability by commercial lenders"
+          },
+          {
+            "id": "s3",
+            "name": "Jet Airways Doctrine",
+            "subtext": "Anchoring COMI in primary executive headquarters"
+          },
+          {
+            "id": "s4",
+            "name": "Main Proceeding Relief",
+            "subtext": "Mandatory international stay and asset protections"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Cross border insolvency proceedings unlock immediate worldwide relief.",
+            "activeStageId": "s1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say1",
+            "caption": "Cross border insolvency proceedings unlock immediate worldwide relief.",
+            "activeStageId": "s2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Cross border insolvency proceedings unlock immediate worldwide relief.",
+            "activeStageId": "s3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Ascertainability engines evaluate rebuttable presumptions and proceedings.",
+            "activeStageId": "s4",
+            "statusBadge": "done"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cross-Border Communication Protocols: Judicial Comity & Structured Coordination",
+      "codeHash": "3b2e4d2761b16bcb2bd041f20cb8b891bcd86fad26a5b8283effdd7548845a51",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Cross-Border Communication Protocols: Judicial Comity & Structured Coordination Architecture",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Judicial Comity",
+            "subtext": "Voluntary coordination between sovereign tribunals"
+          },
+          {
+            "id": "s2",
+            "name": "CoC Observer Status",
+            "subtext": "Foreign trustee participation without voting distortion"
+          },
+          {
+            "id": "s3",
+            "name": "Asset Standstill",
+            "subtext": "Freezing overseas auctions to protect unified value"
+          },
+          {
+            "id": "s4",
+            "name": "Rule 11 Sanction",
+            "subtext": "Inherent tribunal powers approving bilateral protocols"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Cross border insolvency protocols establish coordinated operational roadmaps.",
+            "activeStageId": "s1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say1",
+            "caption": "Cross border insolvency protocols establish coordinated operational roadmaps.",
+            "activeStageId": "s2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Cross border insolvency protocols establish coordinated operational roadmaps.",
+            "activeStageId": "s3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Protocol evaluation engines test observer status and asset preservation.",
+            "activeStageId": "s4",
+            "statusBadge": "done"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Asset Tracing, Repatriation & Clawback of Offshore Siphoned Wealth",
+      "codeHash": "5161a2359353d9c83d93837766ff62f6ab6aaa8f24c3720acb156da3ca38cdc6",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Asset Tracing, Repatriation & Clawback of Offshore Siphoned Wealth Architecture",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Offshore Siphoning",
+            "subtext": "Promoters diverting capital into tax haven shells"
+          },
+          {
+            "id": "s2",
+            "name": "Section 235 Request",
+            "subtext": "Letters of Request to reciprocal foreign courts"
+          },
+          {
+            "id": "s3",
+            "name": "US Chapter 15 Stay",
+            "subtext": "Worldwide automatic stay and Rule 2004 discovery"
+          },
+          {
+            "id": "s4",
+            "name": "Section 32A Clean Slate",
+            "subtext": "Immunity against PMLA attachment for clean bidders"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Promoters siphoning corporate wealth offshore face asset recovery actions.",
+            "activeStageId": "s1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say1",
+            "caption": "Promoters siphoning corporate wealth offshore face asset recovery actions.",
+            "activeStageId": "s2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Promoters siphoning corporate wealth offshore face asset recovery actions.",
+            "activeStageId": "s3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Offshore asset recovery simulators model discovery and enforce immunity.",
+            "activeStageId": "s4",
+            "statusBadge": "done"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Milestone 9 Capstone Outage Puzzle: The Multi-Jurisdictional Cross-Border Default Outage",
+      "codeHash": "f466a2c1cf6c6d85b700aaa66bee8ce91b91b8579500b3e5a4ba61823ed00a7d",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Milestone 9 Capstone Outage Puzzle: The Multi-Jurisdictional Cross-Border Default Outage Architecture",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Four-Front Crisis",
+            "subtext": "Rotterdam, Singapore, Delaware, and Mumbai collision"
+          },
+          {
+            "id": "s2",
+            "name": "Standstill Protocol",
+            "subtext": "Halting Dutch auction to preserve inventory value"
+          },
+          {
+            "id": "s3",
+            "name": "Chapter 15 Clawback",
+            "subtext": "Recovering siphoned patents from Delaware trust"
+          },
+          {
+            "id": "s4",
+            "name": "Unified Global Plan",
+            "subtext": "Eighty percent recovery saving eight thousand jobs"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Multi jurisdictional cross border insolvency outages test corporate defense.",
+            "activeStageId": "s1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say1",
+            "caption": "Multi jurisdictional cross border insolvency outages test corporate defense.",
+            "activeStageId": "s2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Multi jurisdictional cross border insolvency outages test corporate defense.",
+            "activeStageId": "s3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Capstone Outage engines resolve multi-jurisdictional crises and recovery.",
+            "activeStageId": "s4",
+            "statusBadge": "done"
+          }
+        ]
+      }
+    }
+  ]
+}

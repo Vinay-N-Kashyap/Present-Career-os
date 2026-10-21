@@ -1,0 +1,294 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_law",
+  "day": 41,
+  "promptSha": "prompt_sha_bcom_law_day41_cross_border_uncitral_v1",
+  "model": "google/gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Cross-Border Insolvency Jurisprudence, Territorialism vs Universalism & Sections 234-235",
+      "codeHash": "d26d6ee469109f9726bd70cc027d256c4436c0742c24cc5e1e26b95333c18c35",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Cross-Border Insolvency Jurisprudence, Territorialism vs Universalism & Sections 234-235 Governance Architecture",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Territorialism vs Universalism",
+            "subtext": "Doctrinal clash in cross border debt"
+          },
+          {
+            "id": "s2",
+            "name": "Bilateral Treaty Limits",
+            "subtext": "Section 234 and 235 procedural bottlenecks"
+          },
+          {
+            "id": "s3",
+            "name": "Injeti Srinivas Committee",
+            "subtext": "Recommendations for adopting Model Law"
+          },
+          {
+            "id": "s4",
+            "name": "Draft Part Z Framework",
+            "subtext": "Legislative blueprint for cross border regime"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Cross border insolvency frameworks coordinate multinational corporate defaults.",
+            "activeStageId": "s1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say1",
+            "caption": "Globalized capital flows create complex multinational corporate defaults.",
+            "activeStageId": "s2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Solar panel manufacturers encounter severe cross border treaty barriers.",
+            "activeStageId": "s3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Cross border regulatory engines compare bilateral treaty frameworks.",
+            "activeStageId": "s4",
+            "statusBadge": "done"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The UNCITRAL Model Law on Cross-Border Insolvency: Four Key Pillars",
+      "codeHash": "40e28ad7519538e474141fa3ed58553163e350975d85b88711ee02a0bbb8ff75",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "The UNCITRAL Model Law on Cross-Border Insolvency: Four Key Pillars Governance Architecture",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Direct Access",
+            "subtext": "Foreign representatives appearing before tribunal"
+          },
+          {
+            "id": "s2",
+            "name": "Recognition Framework",
+            "subtext": "Statutory recognition of foreign proceedings"
+          },
+          {
+            "id": "s3",
+            "name": "Relief Architecture",
+            "subtext": "Automatic stays and discretionary asset freezes"
+          },
+          {
+            "id": "s4",
+            "name": "Direct Cooperation",
+            "subtext": "Court to court communication channels"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "International model laws establish predictable cross border judicial bridges.",
+            "activeStageId": "s1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say1",
+            "caption": "Model law frameworks eliminate cross border commercial gridlock.",
+            "activeStageId": "s2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Global telecommunications assets receive automatic statutory protections.",
+            "activeStageId": "s3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Model law validators test direct access and automatic moratoriums.",
+            "activeStageId": "s4",
+            "statusBadge": "done"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Determining Center of Main Interests (COMI) & The Jet Airways Landmark Protocol",
+      "codeHash": "f2367eb28eb4b071a06a656c14b6bbe00ec003448e63bed803c45f78b0147bbc",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Determining Center of Main Interests (COMI) & The Jet Airways Landmark Protocol Governance Architecture",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Registered Office Rule",
+            "subtext": "Rebuttable presumption of debtor location"
+          },
+          {
+            "id": "s2",
+            "name": "COMI Ascertainability",
+            "subtext": "Habitual administration verifiable by creditors"
+          },
+          {
+            "id": "s3",
+            "name": "Jet Airways Protocol",
+            "subtext": "First cross border recognition in India"
+          },
+          {
+            "id": "s4",
+            "name": "Joint Cooperation",
+            "subtext": "Bilateral protocol with Dutch bankruptcy court"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Jurisdictional nerve centers determine primary corporate insolvency forums.",
+            "activeStageId": "s1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say1",
+            "caption": "Center of main interests governs primary cross border insolvency forums.",
+            "activeStageId": "s2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Delaware corporate entities maintain true operational nerve centers.",
+            "activeStageId": "s3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Determination engines apply factual factors and test cross border protocols.",
+            "activeStageId": "s4",
+            "statusBadge": "done"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Foreign Main vs Foreign Non-Main Proceedings: Dual-Track Moratoriums & Asset Realization",
+      "codeHash": "a3f6a22da28824c41370f19eb507fa2825b660a39077964e8cca434bc3c7047d",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Foreign Main vs Foreign Non-Main Proceedings: Dual-Track Moratoriums & Asset Realization Governance Architecture",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Foreign Main Proceeding",
+            "subtext": "Proceedings in debtor primary COMI jurisdiction"
+          },
+          {
+            "id": "s2",
+            "name": "Automatic Moratorium",
+            "subtext": "Immediate statutory freeze under main status"
+          },
+          {
+            "id": "s3",
+            "name": "Non Main Proceeding",
+            "subtext": "Proceedings where debtor has an establishment"
+          },
+          {
+            "id": "s4",
+            "name": "Discretionary Protection",
+            "subtext": "Tailored relief balancing domestic creditors"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Foreign proceedings govern extraterritorial asset realization frameworks.",
+            "activeStageId": "s1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say1",
+            "caption": "Dual track insolvency proceedings govern extraterritorial asset realizations.",
+            "activeStageId": "s2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Multinational retail store chains restructure under foreign main orders.",
+            "activeStageId": "s3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Dual track classifiers evaluate establishments and test local relief.",
+            "activeStageId": "s4",
+            "statusBadge": "done"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Anti-Pattern Defense & Outage Puzzle: The Multi-Jurisdictional Forum Shopping & Foreign Asset Flight Crisis",
+      "codeHash": "a1330c83fde0a787bc4ec790c707ba33f6d8387a7600a514e73aa97b6326ef5a",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Anti-Pattern Defense & Outage Puzzle: The Multi-Jurisdictional Forum Shopping & Foreign Asset Flight Crisis Governance Architecture",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Forum Shopping Detection",
+            "subtext": "Shifting COMI on eve of default"
+          },
+          {
+            "id": "s2",
+            "name": "Conflicting Injunctions",
+            "subtext": "Cross border anti suit litigation"
+          },
+          {
+            "id": "s3",
+            "name": "Public Policy Exception",
+            "subtext": "Article 6 defense protecting sovereignty"
+          },
+          {
+            "id": "s4",
+            "name": "Hotchpot Rule",
+            "subtext": "Article 32 parity distribution enforcement"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Adversarial forum shopping threatens equitable cross border asset recovery.",
+            "activeStageId": "s1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say1",
+            "caption": "Cross border restructuring litigation confronts abusive forum shopping.",
+            "activeStageId": "s2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Pharmaceutical promoters attempt offshore asset flight through shell entities.",
+            "activeStageId": "s3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Crisis diagnostic engines detect forum shopping and enforce hotchpot rules.",
+            "activeStageId": "s4",
+            "statusBadge": "done"
+          }
+        ]
+      }
+    }
+  ]
+}
