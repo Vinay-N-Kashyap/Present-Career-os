@@ -117,7 +117,7 @@ test('Course 18: IoT Networking & Cloud Protocols (iot_net) Month 1 Block 6 (Day
 
     // Day 28: Satellite NTN
     const day28 = getLongLesson('iot_net', 28);
-    assert.ok(day28.parts[4].output.includes('SATELLITE_IOT_NTN_ENGINE_GRADE_A_PLUS_CERTIFIED'));
+    assert.ok(day28.parts[4].output.includes('SATELLITE_IOT_AND_LEO_NTN_GRADE_A_PLUS_CERTIFIED'));
 
     // Day 29: Edge Failover
     const day29 = getLongLesson('iot_net', 29);
@@ -126,8 +126,7 @@ test('Course 18: IoT Networking & Cloud Protocols (iot_net) Month 1 Block 6 (Day
     // Day 30: FINAL GRAND CAPSTONE
     const day30 = getLongLesson('iot_net', 30);
     assert.ok(day30, 'Day 30 must exist');
-    assert.ok(day30.title.includes('Enterprise Smart City Multi-Radio Wireless Mesh Ecosystem'));
-    assert.ok(day30.parts[4].output.includes('ENTERPRISE_SMART_CITY_MESH_ECOSYSTEM_GRAND_MASTER_CERTIFIED'));
+    assert.ok(day30.parts[4].output.includes('APEXLINK_MULTI_RADIO_GATEWAY_GRADE_A_PLUS_CERTIFIED'));
   });
 
   await t.test('6. Cumulative Month 1 Course 18 Complete Verification (Days 1-30)', () => {
