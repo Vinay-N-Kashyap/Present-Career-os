@@ -2,6 +2,9 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import { usePersonalAvatarMemory }    from './hooks/usePersonalAvatarMemory';
 import { useFacialEmotionDetection }  from './hooks/useFacialEmotionDetection';
 import { matchBestAlternative, matchNavigationIntent, getGrammarVocabulary } from './hooks/useVoiceNavigation';
+import { parseWakeWord } from '@/lib/avatar/wakeWordParser';
+import { isNextTaskIntent, isValidSnapshotTimestamp, getAuthoritativeNextTask } from '@/lib/avatar/deterministicAdvisor';
+import { COURSES_REGISTRY } from '@/lib/data/coursesData';
 import { analyzeVoiceFrames, analyzeVoiceSamples, verifyVoiceSignature, calculateSpectralFeatures, extractMelFilterbank, AcousticFrame, VoicePrint } from './hooks/useVoiceBiometrics';
 import { saveVoicePrintToSupabase, getVoicePrintFromSupabase } from '@/lib/supabaseService';
 import * as THREE from 'three';
@@ -159,6 +162,13 @@ export default function AvatarMentorWidget({
   const rendererRef = useRef<THREE.WebGLRenderer | null>(null);
   const streamRef = useRef<MediaStream | null>(null);
   const animFrameRef = useRef<number | null>(null);
+  // Voice input deduplication & debounce guards
+  const lastSentMsgRef = useRef<string>('');
+  const lastSentTimeRef = useRef<number>(0);
+  const speechDebounceTimerRef = useRef<any>(null);
+
+  const [speechCooldown, setSpeechCooldown] = useState(false);
+  const speechCooldownTimerRef = useRef<any>(null);
 
   useEffect(() => {
     voiceFreqRef.current = voiceFreq;
@@ -167,6 +177,21 @@ export default function AvatarMentorWidget({
   useEffect(() => {
     voicePrintRef.current = voicePrint;
   }, [voicePrint]);
+
+  // Post-speech 400ms acoustic echo cooldown to prevent mic feedback loop
+  useEffect(() => {
+    if (speaking) {
+      setSpeechCooldown(true);
+      if (speechCooldownTimerRef.current) clearTimeout(speechCooldownTimerRef.current);
+    } else {
+      speechCooldownTimerRef.current = setTimeout(() => {
+        setSpeechCooldown(false);
+      }, 400);
+    }
+    return () => {
+      if (speechCooldownTimerRef.current) clearTimeout(speechCooldownTimerRef.current);
+    };
+  }, [speaking]);
 
   // Sync voice print from Supabase & localStorage on load
   useEffect(() => {
@@ -521,9 +546,9 @@ export default function AvatarMentorWidget({
 
   // Build ML-powered quick prompts
   const quickPrompts = [
+    '🎯 What should I study next?',
     `📊 How do I improve my Career Score from ${careerProfile?.ats_score||0}?`,
-    '🎯 What missions should I do today?',
-    '📚 What should I study next?',
+    '⚡ What missions should I do today?',
     '💼 Am I ready for job interviews?',
     ...mlRecs.slice(0,2).map(r => `${r.icon} Show me ${r.label.toLowerCase()} options`),
   ].slice(0, 5);
@@ -542,6 +567,15 @@ export default function AvatarMentorWidget({
   const sendMessage = useCallback(async (text?: string) => {
     const msg = (text || input).trim();
     if (!msg || loading) return;
+
+    // Deduplication guard: ignore identical messages dispatched within 1500ms
+    const now = Date.now();
+    if (lastSentMsgRef.current === msg.toLowerCase() && now - lastSentTimeRef.current < 1500) {
+      return;
+    }
+    lastSentMsgRef.current = msg.toLowerCase();
+    lastSentTimeRef.current = now;
+
     setInput('');
     setMessages(prev => [...prev, { role: 'user', content: msg }]);
     setMessages(prev => {
@@ -553,7 +587,16 @@ export default function AvatarMentorWidget({
     setSubtitleRole('user');
 
     // ── Client-side navigation & conversational command parser ──
-    const lower = msg.toLowerCase();
+    const wakeResult = parseWakeWord(msg, teacherId);
+    if (wakeResult.hasWakeWord && wakeResult.isStandaloneWake) {
+      const greeting = `Yes, I am listening! How can I help you today?`;
+      setMessages(prev => [...prev, { role: 'assistant', content: greeting }]);
+      await speakReply(greeting);
+      return;
+    }
+
+    const effectiveMsg = (wakeResult.hasWakeWord && wakeResult.command ? wakeResult.command : msg).trim();
+    const lower = effectiveMsg.toLowerCase();
 
     // 1. Exit conversational mode check
     if (isConversing && (lower.includes('bye') || lower.includes('goodbye') || lower.includes('stop talking') || lower.includes('minimize') || lower.includes('close'))) {
@@ -565,8 +608,8 @@ export default function AvatarMentorWidget({
       return;
     }
 
-    // 2. Priority check check
-    if (lower.includes('priority') || lower.includes('what to do') || lower.includes('preyourrity') || lower.includes('preyourity')) {
+    // 2. Priority check (only when not asking for deterministic next curriculum task)
+    if (!isNextTaskIntent(effectiveMsg) && (lower.includes('priority') || lower.includes('what to do') || lower.includes('preyourrity') || lower.includes('preyourity'))) {
       const recommendation = (() => {
         const streak = careerProfile?.mission_streak || 0;
         const trust = careerProfile?.trust_score || 0;
@@ -651,7 +694,7 @@ export default function AvatarMentorWidget({
     }
 
     // ── Voice Navigation Engine — exhaustive route matching with confidence scoring ──
-    const navResult = matchNavigationIntent(msg);
+    const navResult = matchNavigationIntent(effectiveMsg);
     if (navResult.matched && navResult.confidence >= 0.7) {
       // High confidence → navigate immediately with voice confirmation
       console.log(`[VoiceNav] sendMessage HIGH confidence (${(navResult.confidence * 100).toFixed(0)}%) → ${navResult.path} (${navResult.displayName})`);
@@ -677,9 +720,25 @@ export default function AvatarMentorWidget({
     }
 
 
+    // 0ms Client-Side Session Micro-Cache (5-min TTL)
+    const sessionCacheKey = `pinit_cache_${teacherId}_${effectiveMsg.toLowerCase()}`;
+    if (typeof window !== 'undefined') {
+      try {
+        const cachedRaw = sessionStorage.getItem(sessionCacheKey);
+        if (cachedRaw) {
+          const parsedCache = JSON.parse(cachedRaw);
+          if (Date.now() - parsedCache.timestamp < 5 * 60 * 1000 && parsedCache.reply) {
+            setMessages(prev => [...prev, { role: 'assistant', content: parsedCache.reply }]);
+            await speakReply(parsedCache.reply);
+            return;
+          }
+        }
+      } catch {}
+    }
+
     setLoading(true);
 
-    const emotionalCtx = emotionAIRef.current.getEmotionalContext(msg);
+    const emotionalCtx = emotionAIRef.current.getEmotionalContext(effectiveMsg);
     const historyForAPI = memoryRef.current.getConversationContext(10)
       .map((c: { userMessage?: string; avatarResponse?: string; role?: string; content?: string }) =>
         c.userMessage
@@ -692,23 +751,100 @@ export default function AvatarMentorWidget({
         method: 'POST', headers: { 'Content-Type': 'application/json' },
         credentials: 'include',
         body: JSON.stringify({
-          message: msg,
+          message: effectiveMsg,
           history: historyForAPI,
           teacherId,
           careerContext: { ...careerProfile, activeQuest }
         }),
       });
-      const { reply } = await res.json();
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        const errMsg = data?.message || data?.error || 'Unable to get response from mentor. Please try again.';
+        setMessages(prev => [...prev, { role: 'assistant', content: errMsg }]);
+        await speakReply(errMsg);
+        return;
+      }
+      const reply = data?.reply || '';
       const cleanReply = sanitizeLLMOutput(reply);
       setMessages(prev => [...prev, { role: 'assistant', content: cleanReply }]);
-      memoryRef.current.storeConversation(msg, cleanReply, { emotion: emotionalCtx.detectedEmotion, engagement: 0.8 });
+      memoryRef.current.storeConversation(effectiveMsg, cleanReply, { emotion: emotionalCtx.detectedEmotion, engagement: 0.8 });
+      
+      // Persist to 5-min session cache for 0ms repeat answers
+      if (typeof window !== 'undefined' && cleanReply) {
+        try {
+          sessionStorage.setItem(sessionCacheKey, JSON.stringify({ reply: cleanReply, timestamp: Date.now() }));
+        } catch {}
+      }
+
+      // Persist verified progress snapshot locally if advisor answered
+      if (typeof window !== 'undefined' && userId && data?.advisorResult) {
+        try {
+          const activeCourseId = careerProfile?.activeCourseId || careerProfile?.courseId || 'fullstack-mastery';
+          const localDoneRaw = localStorage.getItem(`pinit_${userId}_completed_quests`) || localStorage.getItem('pinit_completed_quests');
+          const localDone = localDoneRaw ? JSON.parse(localDoneRaw) : [];
+          const snap = {
+            userId,
+            courseId: data.advisorResult.courseId || activeCourseId,
+            completedQuestIds: Array.isArray(localDone) ? localDone : [],
+            syncedAt: Date.now(),
+          };
+          localStorage.setItem(`pinit_${userId}_verified_progress`, JSON.stringify(snap));
+        } catch {}
+      }
+
       await speakReply(cleanReply);
     } catch {
-      setMessages(prev => [...prev, { role: 'assistant', content: 'Connection issue. Please try again.' }]);
+      if (isNextTaskIntent(effectiveMsg)) {
+        let fallbackMessage = "I cannot verify your latest progress while offline. Please reconnect to confirm your next task.";
+        try {
+          let snapshotToUse: any = null;
+          const cached = localStorage.getItem(`pinit_${userId}_verified_progress`);
+          if (cached) {
+            const parsed = JSON.parse(cached);
+            if (isValidSnapshotTimestamp(parsed.syncedAt, 24 * 60 * 60 * 1000)) {
+              snapshotToUse = parsed;
+            }
+          }
+          // Secondary bridge: construct from locally verified completed quests if primary snapshot absent
+          if (!snapshotToUse) {
+            const localQuestsRaw = localStorage.getItem(`pinit_${userId}_completed_quests`) || localStorage.getItem('pinit_completed_quests');
+            if (localQuestsRaw) {
+              const questsArr = JSON.parse(localQuestsRaw);
+              if (Array.isArray(questsArr)) {
+                const activeCourseId = careerProfile?.activeCourseId || careerProfile?.courseId || 'fullstack-mastery';
+                snapshotToUse = {
+                  userId: userId || 'local_student',
+                  courseId: activeCourseId,
+                  completedQuestIds: questsArr,
+                  syncedAt: Date.now(),
+                };
+              }
+            }
+          }
+
+          if (snapshotToUse) {
+            const course = COURSES_REGISTRY.find(c => c.id === snapshotToUse.courseId) || COURSES_REGISTRY[0];
+            const localCurriculum = (course?.quests || []).map(q => ({
+              questId: q.id,
+              courseId: course?.id || snapshotToUse.courseId,
+              title: q.title
+            }));
+            const localAdvisor = getAuthoritativeNextTask(snapshotToUse, snapshotToUse.userId, localCurriculum);
+            if (localAdvisor.status === 'VERIFIED_TASK' || localAdvisor.status === 'COURSE_COMPLETED') {
+              const syncDate = new Date(snapshotToUse.syncedAt).toLocaleTimeString();
+              fallbackMessage = `${localAdvisor.speechText} (Offline Snapshot synced at ${syncDate})`;
+            }
+          }
+        } catch {}
+        setMessages(prev => [...prev, { role: 'assistant', content: fallbackMessage }]);
+        await speakReply(fallbackMessage);
+      } else {
+        setMessages(prev => [...prev, { role: 'assistant', content: 'Connection issue. Please try again.' }]);
+      }
     } finally {
       setLoading(false);
     }
-  }, [input, loading, isConversing, onEnlarge, careerProfile, onTabShift, teacherId, activeQuest, speakReply]);
+  }, [input, loading, isConversing, onEnlarge, careerProfile, onTabShift, teacherId, activeQuest, speakReply, userId]);
 
   // Keep track of latest speaking/loading states in refs to avoid stale closures in SpeechRecognition handlers
   const speakingRef = useRef(speaking);
@@ -751,8 +887,8 @@ export default function AvatarMentorWidget({
     const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
     if (!SpeechRecognition) return;
 
-    // Echo Gate: Disable speech recognition while AI is speaking or loading to prevent feedback loops
-    if (speaking || loading) {
+    // Echo Gate: Disable speech recognition while AI is speaking, loading, or in 400ms cooldown to prevent feedback loops
+    if (speaking || loading || speechCooldown) {
       setRecognizing(false);
       return;
     }
@@ -786,7 +922,7 @@ export default function AvatarMentorWidget({
 
         recognition.onresult = (e: any) => {
           // Double guard against AI voice capture
-          if (speakingRef.current || loadingRef.current) return;
+          if (speakingRef.current || loadingRef.current || speechCooldown) return;
 
           const allAlternatives: string[] = [];
           const resultCount = e.results[0]?.length || 0;
@@ -810,59 +946,37 @@ export default function AvatarMentorWidget({
 
           const text = transcript.trim().toLowerCase();
 
-          // In active conversation mode, dispatch speech directly to AI mentor
+          // In active conversation mode, dispatch speech to AI mentor with 300ms debounce
           if (conversingRef.current) {
             console.log("[Conversing] Direct speech parsed:", transcript);
-            sendMessageRef.current(transcript);
+            if (speechDebounceTimerRef.current) {
+              clearTimeout(speechDebounceTimerRef.current);
+            }
+            speechDebounceTimerRef.current = setTimeout(() => {
+              if (!speakingRef.current && !loadingRef.current) {
+                sendMessageRef.current(transcript);
+              }
+            }, 300);
             return;
           }
 
-          // Clean phoneme matching for teacher names (accidental words & offensive terms removed)
-          const cleanText = text.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()?]/g, "").trim();
-          const fuzzyMatchPriya = /\b(priya|preya|pria)\b/i.test(cleanText);
-          const fuzzyMatchKashyap = /\b(kashyap|kash)\b/i.test(cleanText);
-          const fuzzyMatchKarthic = /\b(karthic|karthik|kartik)\b/i.test(cleanText);
-          const fuzzyMatchMaya = /\b(maya|maia)\b/i.test(cleanText);
-          const fuzzyMatchDivya = /\b(divya|divia)\b/i.test(cleanText);
+          // Use robust word-boundary wake-word parser (resilient to commas, collisions, standalone wake words)
+          const parsed = parseWakeWord(transcript, teacherId);
 
-          let matchedWakeWord = false;
-          let matchedTeacherKey = '';
-          
-          if (fuzzyMatchPriya) {
-            matchedWakeWord = true;
-            matchedTeacherKey = 'priya';
-          } else if (fuzzyMatchKashyap) {
-            matchedWakeWord = true;
-            matchedTeacherKey = 'kashyap';
-          } else if (fuzzyMatchKarthic) {
-            matchedWakeWord = true;
-            matchedTeacherKey = 'karthic';
-          } else if (fuzzyMatchMaya) {
-            matchedWakeWord = true;
-            matchedTeacherKey = 'maya';
-          } else if (fuzzyMatchDivya) {
-            matchedWakeWord = true;
-            matchedTeacherKey = 'divya';
-          }
-
-          if (matchedWakeWord) {
-            console.log("Wake word detected:", transcript, "Matched teacher:", matchedTeacherKey);
+          if (parsed.hasWakeWord) {
+            console.log("Wake word detected:", transcript, "Matched mentor:", parsed.mentor);
             setIsMinimized(false);
 
-            // Strip wake word prefixes cleanly from query (clean keywords only)
-            const cleaned = transcript
-              .replace(/\b(hey|hay|hi|hello)\b/gi, '')
-              .replace(new RegExp(`\\b(${matchedTeacherKey}|priya|preya|pria|kashyap|kash|karthic|karthik|kartik|maya|maia|divya|divia)\\b`, 'gi'), '')
-              .trim();
+            if (parsed.isStandaloneWake) {
+              const greeting = `Yes, I am listening! How can I help you today?`;
+              setMessages(prev => [...prev, { role: 'assistant', content: greeting }]);
+              speakReplyRef.current(greeting);
+              return;
+            }
 
+            const cleaned = parsed.command;
             if (cleaned.length > 0) {
-              const cleanedAlts = allAlternatives.map(alt =>
-                alt.replace(/\b(hey|hay|hi|hello)\b/gi, '')
-                   .replace(new RegExp(`\\b(${matchedTeacherKey}|priya|preya|pria|kashyap|kash|karthic|karthik|kartik|maya|maia|divya|divia)\\b`, 'gi'), '')
-                   .trim()
-              ).filter(a => a.length > 0);
-
-              const navResult = matchBestAlternative(cleanedAlts.length > 0 ? cleanedAlts : [cleaned]);
+              const navResult = matchBestAlternative([cleaned]);
 
               if (navResult.matched && navResult.confidence >= 0.7) {
                 const confirmation = `Sure! Taking you to ${navResult.displayName} now.`;
@@ -895,6 +1009,7 @@ export default function AvatarMentorWidget({
         recognition.onerror = (err: any) => {
           if (err.error === 'not-allowed') {
             console.warn("Speech recognition access denied.");
+            toast.error("Microphone Blocked 🎤", "Microphone access was denied. Please allow microphone permissions in your browser address bar.");
             shouldListen = false;
             micDeniedRef.current = true;
             setIsConversing(false);
@@ -925,7 +1040,7 @@ export default function AvatarMentorWidget({
         } catch {}
       }
     };
-  }, [teacherId, setIsMinimized, speaking, loading, isConversing]);
+  }, [teacherId, setIsMinimized, speaking, loading, isConversing, speechCooldown]);
 
   // Auto-close (minimize) timer when not responding/speaking
   useEffect(() => {
@@ -934,8 +1049,8 @@ export default function AvatarMentorWidget({
     // If minimized, do nothing
     if (isMinimized) return;
 
-    // If AI is currently loading or speaking, do not close, and clear any timer
-    if (loading || speaking) return;
+    // If AI is currently loading or speaking, or in active voice conversation, do not close, and clear any timer
+    if (loading || speaking || isConversing) return;
 
     // If the user has typed something, don't close
     if (input.trim().length > 0) return;
@@ -950,7 +1065,7 @@ export default function AvatarMentorWidget({
     return () => {
       clearTimeout(timer);
     };
-  }, [loading, speaking, isMinimized, input, setIsMinimized, onlyAvatar, minimized]);
+  }, [loading, speaking, isMinimized, input, setIsMinimized, onlyAvatar, minimized, isConversing]);
 
   if (isMinimized && !onlyAvatar) {
     return (
@@ -1100,7 +1215,14 @@ export default function AvatarMentorWidget({
         />
         <button
           type="button"
-          onClick={() => setIsConversing(prev => !prev)}
+          onClick={() => {
+            const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
+            if (!SpeechRecognition) {
+              toast.info("Voice Input Notice 🎙️", "Live speech recognition is optimized for Chrome & Edge. Switched to instant text mode.");
+              return;
+            }
+            setIsConversing(prev => !prev);
+          }}
           title={isConversing ? 'Mute voice conversation' : 'Start voice conversation'}
           style={{
             background: isConversing ? 'rgba(239, 68, 68, 0.2)' : 'var(--bg3)',

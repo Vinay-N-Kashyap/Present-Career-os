@@ -1,7 +1,16 @@
 import { NextResponse } from 'next/server';
-import { requireUserFromRequest } from '@/lib/server/requireAuth';
+import { requireUserFromRequest, getBearerToken, getAuthoritativeSupabaseClient } from '@/lib/server/requireAuth';
 import { sanitizeLLMOutput } from '@/lib/sanitizeLLM';
 import { checkRateLimit, getClientIp } from '@/lib/server/rateLimit';
+import { resolveAvatarFeatureState } from '@/lib/avatar/avatarFeatureFlags';
+import { loadAvatarMemoryTriState, TriStateMemoryResult } from '@/lib/avatar/memoryStore';
+import { buildMentorSystemPrompt } from '@/lib/avatar/mentorPromptBuilder';
+import { isNextTaskIntent, getAuthoritativeNextTask, StudentProgressSnapshot, CurriculumItem } from '@/lib/avatar/deterministicAdvisor';
+import { COURSES_REGISTRY } from '@/lib/data/coursesData';
+import { mentorResponseCache } from '@/lib/avatar/responseCache';
+
+// Light phatic queries that can use a micro model or deterministic warm response
+export const LIGHT_QUERY_REGEX = /^(?:h(?:i|ello|ey)|thanks?|thank\s*you|ok(?:ay)?|yes|no|bye|good\s*(?:morning|evening|night)|sure|got\s*it|cool|nice|wow|great)\s*[.!?]*$/i;
 
 interface MentorChatRequest {
   message?: string;
@@ -21,16 +30,28 @@ interface MentorChatRequest {
 export async function POST(req: Request) {
   try {
     const ip = getClientIp(req);
-    const rl = checkRateLimit(`llm_${ip}`, { limit: 30, windowMs: 60_000 });
-    if (!rl.allowed) {
+    // Shared IP burst ceiling raised from 30 to 120/min to accommodate classrooms sharing a single router
+    const ipRl = checkRateLimit(`llm_ip_${ip}`, { limit: 120, windowMs: 60_000 });
+    if (!ipRl.allowed) {
       return NextResponse.json(
-        { error: 'RATE_LIMIT', message: 'Too many requests. Wait a moment.' },
-        { status: 429, headers: { 'Retry-After': String(rl.resetSec) } }
+        { error: 'RATE_LIMIT', message: 'Network traffic limit reached. Please wait a moment.' },
+        { status: 429, headers: { 'Retry-After': String(ipRl.resetSec) } }
       );
     }
 
     const gated = await requireUserFromRequest(req);
     if (gated.error) return gated.error;
+
+    // Per-user rate limit (25 req/min) prevents a single student from abusing shared IP quota
+    if (gated.user?.id) {
+      const userRl = checkRateLimit(`llm_user_${gated.user.id}`, { limit: 25, windowMs: 60_000 });
+      if (!userRl.allowed) {
+        return NextResponse.json(
+          { error: 'RATE_LIMIT', message: 'Too many requests. Please pause for a moment before your next question.' },
+          { status: 429, headers: { 'Retry-After': String(userRl.resetSec) } }
+        );
+      }
+    }
 
     const body: MentorChatRequest = await req.json();
     const userMessage = (body.message || body.query || '').trim();
@@ -63,18 +84,150 @@ ${body.currentSlide.codeSnippet ? `- Slide Code Snippet:\n\`\`\`\n${body.current
 IMPORTANT: The student's question is about this specific slide! Explain the concepts directly referencing this slide's title and key takeaways.`
       : '';
 
-    const systemPrompt = `You are an elite, empathetic Technical Career Mentor at PinIT Career OS${body.teacherId ? ` (Persona: ${body.teacherId})` : ''}.
-You are directly mentoring ${studentName}, who is aiming for the role of "${targetRole}".
-CURRENT STUDENT CONTEXT:
-- Active Learning Quest: "${questTitle}"
-- Critical Skill Gaps to close: ${missingSkills.length > 0 ? missingSkills.join(', ') : 'No critical gaps flagged yet'}
-- Current ATS Resume Score: ${atsScore}/100${slideContextPrompt}
+    const flagState = resolveAvatarFeatureState();
+    let memoryState: TriStateMemoryResult | undefined;
+    if (flagState.mode === 'v2_advisor' && gated.user?.id) {
+      memoryState = await loadAvatarMemoryTriState(gated.user.id);
+    }
 
-YOUR INSTRUCTIONS:
-1. Provide actionable, concise, pragmatic advice tailored to their role and active quest.
-2. If the student asks about what to focus on, explicitly address their specific skill gaps (${missingSkills.slice(0, 3).join(', ') || 'foundation principles'}) and guide them through their active quest "${questTitle}".
-3. Never use generic platitudes. Be encouraging, precise, and practical. Keep responses under 3 paragraphs.
-4. Maintain a warm, encouraging, yet rigorous Socratic mentor tone.`;
+    const systemPrompt = buildMentorSystemPrompt(
+      {
+        studentName,
+        targetRole,
+        questTitle,
+        missingSkills,
+        atsScore,
+        teacherId: body.teacherId,
+        slideContextPrompt,
+      },
+      memoryState,
+      flagState.mode
+    );
+
+    // In V2 Advisor mode: Intercept anchored next-task intent with deterministic curriculum resolver (0ms LLM hallucination)
+    if (flagState.mode === 'v2_advisor' && isNextTaskIntent(userMessage) && gated.user?.id) {
+      const token = getBearerToken(req);
+      const supabase = getAuthoritativeSupabaseClient(token);
+      const { data: userProfile } = await supabase
+        .from('users')
+        .select('id, completed_quests, onboarding_answers, updated_at')
+        .eq('id', gated.user.id)
+        .maybeSingle();
+
+      const ob = (userProfile?.onboarding_answers || {}) as Record<string, any>;
+      const activeCourseId = 
+        body.careerContext?.activeCourseId ||
+        body.careerContext?.courseId ||
+        (typeof body.activeQuest === 'object' && body.activeQuest !== null ? (body.activeQuest as any).courseId : undefined) ||
+        ob.active_course ||
+        ob.selected_course ||
+        ob.courseId ||
+        ob.track ||
+        'fullstack-mastery';
+
+      const course = COURSES_REGISTRY.find(c => c.id === activeCourseId) || COURSES_REGISTRY[0];
+      const resolvedCourseId = course?.id || activeCourseId;
+      const curriculum: CurriculumItem[] = (course?.quests || []).map(q => ({
+        questId: q.id,
+        courseId: resolvedCourseId,
+        title: q.title,
+      }));
+
+      const snapshot: StudentProgressSnapshot = {
+        userId: gated.user.id,
+        courseId: resolvedCourseId,
+        completedQuestIds: Array.isArray(userProfile?.completed_quests) ? userProfile.completed_quests : [],
+        syncedAt: Date.now(),
+      };
+
+      const advisorResult = getAuthoritativeNextTask(snapshot, gated.user.id, curriculum);
+      const cleanReply = sanitizeLLMOutput(advisorResult.speechText);
+
+      const wantsStreamEarly = Boolean(body.stream) || Boolean(req.headers.get('accept')?.includes('text/event-stream'));
+      if (wantsStreamEarly) {
+        const encoder = new TextEncoder();
+        const streamResponse = new ReadableStream({
+          start(controller) {
+            controller.enqueue(encoder.encode(`data: ${JSON.stringify({ token: cleanReply })}\n\n`));
+            controller.enqueue(encoder.encode('data: [DONE]\n\n'));
+            controller.close();
+          }
+        });
+        return new Response(streamResponse, {
+          headers: {
+            'Content-Type': 'text/event-stream; charset=utf-8',
+            'Cache-Control': 'no-cache, no-transform',
+            'Connection': 'keep-alive',
+          }
+        });
+      }
+
+      return NextResponse.json({
+        ok: true,
+        reply: cleanReply,
+        simulated: false,
+        deterministic: true,
+        advisorResult,
+        context: {
+          studentName,
+          targetRole,
+          activeQuest: questTitle,
+          missingSkills,
+          atsScore,
+        }
+      });
+    }
+
+    const wantsStream = Boolean(body.stream) || Boolean(req.headers.get('accept')?.includes('text/event-stream'));
+
+    // Determine model tier: light phatic query vs full technical inquiry
+    const isLightQuery = LIGHT_QUERY_REGEX.test(userMessage);
+    const selectedModel = isLightQuery ? 'llama-3.2-3b-preview' : 'llama-3.1-8b-instant';
+    const selectedMaxTokens = isLightQuery ? 120 : 350;
+
+    // In V2 Advisor mode: Check In-Memory LRU Response Cache (0ms, 0 tokens)
+    const cacheKey = mentorResponseCache.generateKey(userMessage, body.teacherId || 'priya', targetRole, questTitle);
+    const shouldBypassCache = mentorResponseCache.shouldBypass({
+      hasSlideContext: Boolean(body.currentSlide),
+      hasCodeSnippet: Boolean(body.currentSlide?.codeSnippet),
+      historyLength: history.length,
+    });
+
+    if (flagState.mode === 'v2_advisor' && !shouldBypassCache) {
+      const cachedReply = mentorResponseCache.get(cacheKey);
+      if (cachedReply) {
+        if (wantsStream) {
+          const encoder = new TextEncoder();
+          const streamResponse = new ReadableStream({
+            start(controller) {
+              controller.enqueue(encoder.encode(`data: ${JSON.stringify({ token: cachedReply })}\n\n`));
+              controller.enqueue(encoder.encode('data: [DONE]\n\n'));
+              controller.close();
+            }
+          });
+          return new Response(streamResponse, {
+            headers: {
+              'Content-Type': 'text/event-stream; charset=utf-8',
+              'Cache-Control': 'no-cache, no-transform',
+              'Connection': 'keep-alive',
+            }
+          });
+        }
+        return NextResponse.json({
+          ok: true,
+          reply: cachedReply,
+          simulated: false,
+          cached: true,
+          context: {
+            studentName,
+            targetRole,
+            activeQuest: questTitle,
+            missingSkills,
+            atsScore,
+          }
+        });
+      }
+    }
 
     // Try calling Groq / OpenRouter
     const groqKeysStr = process.env.GROQ_API_KEYS || '';
@@ -83,8 +236,6 @@ YOUR INSTRUCTIONS:
       groqKeys.push(process.env.GROQ_API_KEY);
     }
     const openRouterKey = process.env.OPENROUTER_API_KEY;
-
-    const wantsStream = Boolean(body.stream) || Boolean(req.headers.get('accept')?.includes('text/event-stream'));
 
     // Streaming Groq branch for sub-60ms TTFT
     if (wantsStream) {
@@ -98,13 +249,13 @@ YOUR INSTRUCTIONS:
                 'Authorization': `Bearer ${key}`
               },
               body: JSON.stringify({
-                model: 'llama-3.1-8b-instant',
+                model: selectedModel,
                 messages: [
                   { role: 'system', content: systemPrompt },
                   ...history,
                   { role: 'user', content: userMessage }
                 ],
-                max_tokens: 350,
+                max_tokens: selectedMaxTokens,
                 temperature: 0.7,
                 stream: true
               }),
@@ -205,13 +356,13 @@ YOUR INSTRUCTIONS:
               'Authorization': `Bearer ${key}`
             },
             body: JSON.stringify({
-              model: 'llama-3.1-8b-instant',
+              model: selectedModel,
               messages: [
                 { role: 'system', content: systemPrompt },
                 ...history,
                 { role: 'user', content: userMessage }
               ],
-              max_tokens: 350,
+              max_tokens: selectedMaxTokens,
               temperature: 0.7
             }),
             signal: AbortSignal.timeout(3500)
@@ -289,6 +440,11 @@ YOUR INSTRUCTIONS:
     }
 
     const cleanReply = sanitizeLLMOutput(llmResponse);
+
+    // In V2 Advisor mode: populate LRU response cache for un-bypassed requests
+    if (flagState.mode === 'v2_advisor' && !shouldBypassCache && cleanReply && !isSimulated) {
+      mentorResponseCache.set(cacheKey, cleanReply);
+    }
 
     return NextResponse.json({
       ok: true,
