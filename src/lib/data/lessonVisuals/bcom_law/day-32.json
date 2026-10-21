@@ -1,0 +1,294 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_law",
+  "day": 32,
+  "promptSha": "prompt_sha_bcom_law_day32_committees_v1",
+  "model": "google/gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Section 177 Audit Committee Composition, Financial Literacy & Mandatory Oversight Scope",
+      "codeHash": "1409feec17c0de0394d18a47ed1f216bb5640656600e4d8cea7179632a2a6c6e",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Section 177 Audit Committee Composition, Financial Literacy & Mandatory Oversight Scope Governance Architecture",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Committee Mandate",
+            "subtext": "Listing and financial thresholds"
+          },
+          {
+            "id": "s2",
+            "name": "Independent Majority",
+            "subtext": "Two thirds listing quota"
+          },
+          {
+            "id": "s3",
+            "name": "Financial Literacy",
+            "subtext": "Accounting expertise requirement"
+          },
+          {
+            "id": "s4",
+            "name": "Oversight Scope",
+            "subtext": "Statutory audit and related parties"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Audit committee governance enforces statutory financial integrity.",
+            "activeStageId": "s1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say1",
+            "caption": "Corporate governance requires independent supervisory oversight.",
+            "activeStageId": "s2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Renewable energy enterprises enforce rigorous committee vetoes.",
+            "activeStageId": "s3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Statutory validator rules test independent majority invariants.",
+            "activeStageId": "s4",
+            "statusBadge": "done"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Section 178 Nomination & Remuneration Committee (NRC): Board Diversity & Key Managerial Personnel (KMP) Policy",
+      "codeHash": "8ee3d578b10d1d5a2d97828d46080654e272b514680f6b712d57df85783a03b9",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Section 178 Nomination & Remuneration Committee (NRC): Board Diversity & Key Managerial Personnel (KMP) Policy Governance Architecture",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Nomination Mandate",
+            "subtext": "Section thresholds and non executive rules"
+          },
+          {
+            "id": "s2",
+            "name": "Independent Quorum",
+            "subtext": "Not less than one half independent"
+          },
+          {
+            "id": "s3",
+            "name": "Succession Charter",
+            "subtext": "Key managerial personnel policy"
+          },
+          {
+            "id": "s4",
+            "name": "Remuneration Rules",
+            "subtext": "Balanced fixed and incentive pay"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Nomination committee standards govern executive leadership succession.",
+            "activeStageId": "s1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say1",
+            "caption": "Corporate boards mandate transparent executive meritocracy.",
+            "activeStageId": "s2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Executive search frameworks structure objective performance clawbacks.",
+            "activeStageId": "s3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Nomination committee validator tests executive remuneration benchmarks.",
+            "activeStageId": "s4",
+            "statusBadge": "done"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Stakeholders Relationship Committee & Vigil Mechanism / Whistleblower Framework under Section 177(9)",
+      "codeHash": "6f6a07d9a5e45bfd2258b008d2b4914f756923897254fed86adc0f0ffeaed0b4",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Stakeholders Relationship Committee & Vigil Mechanism / Whistleblower Framework under Section 177(9) Governance Architecture",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Stakeholder Mandate",
+            "subtext": "One thousand security holder trigger"
+          },
+          {
+            "id": "s2",
+            "name": "Investor Redressal",
+            "subtext": "Dividends and share transfer tracking"
+          },
+          {
+            "id": "s3",
+            "name": "Vigil Framework",
+            "subtext": "Whistleblower protection against victimization"
+          },
+          {
+            "id": "s4",
+            "name": "Direct Access",
+            "subtext": "Bypassing executive management to chair"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stakeholders relationship mechanisms protect capital contributors.",
+            "activeStageId": "s1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say1",
+            "caption": "Corporate governance provides vital conduits for investor grievances.",
+            "activeStageId": "s2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Internal accounting whistleblowers escalate evidence to audit chairs.",
+            "activeStageId": "s3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stakeholder vigil engine verifies investor grievance safeguards.",
+            "activeStageId": "s4",
+            "statusBadge": "done"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Corporate Social Responsibility (CSR) Committee under Section 135: 2% Net Profit Statutory Formula & Excess Set-Offs",
+      "codeHash": "c28179e64ecb67990f7705b47dc7cf2ef475ef8e8edd088c7eb357c44890926e",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Corporate Social Responsibility (CSR) Committee under Section 135: 2% Net Profit Statutory Formula & Excess Set-Offs Governance Architecture",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Applicability Trigger",
+            "subtext": "Net worth turnover or profit thresholds"
+          },
+          {
+            "id": "s2",
+            "name": "Profit Formula",
+            "subtext": "Two percent of three year average profit"
+          },
+          {
+            "id": "s3",
+            "name": "Section Adjustments",
+            "subtext": "Excluding capital gains and dividends"
+          },
+          {
+            "id": "s4",
+            "name": "Excess Setoff",
+            "subtext": "Carry forward for three succeeding years"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Corporate social responsibility establishes statutory reinvestment.",
+            "activeStageId": "s1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say1",
+            "caption": "Mandatory social compacts require dedicated corporate contributions.",
+            "activeStageId": "s2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Pharmaceutical enterprise investments qualify for statutory setoffs.",
+            "activeStageId": "s3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Statutory calculator determines mandatory allocations and setoffs.",
+            "activeStageId": "s4",
+            "statusBadge": "done"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Anti-Pattern Defense & Outage Puzzle: The Unqualified Audit Committee & Defective CSR Calculation Crisis",
+      "codeHash": "40b32bbe849346dd7ad68936f9a058fe0cf8cce56b91571d90b547bbb69d30af",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Anti-Pattern Defense & Outage Puzzle: The Unqualified Audit Committee & Defective CSR Calculation Crisis Governance Architecture",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Outage Diagnosis",
+            "subtext": "Detecting defective committee composition"
+          },
+          {
+            "id": "s2",
+            "name": "Profit Distortion",
+            "subtext": "Unadjusted book profit discrepancies"
+          },
+          {
+            "id": "s3",
+            "name": "Deficit Liability",
+            "subtext": "Statutory penalty for unspent funds"
+          },
+          {
+            "id": "s4",
+            "name": "Remedial Protocol",
+            "subtext": "Reconstitution and compounding application"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Defective committee structures trigger severe regulatory scrutiny.",
+            "activeStageId": "s1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say1",
+            "caption": "Governance failure patterns undermine corporate filing integrity.",
+            "activeStageId": "s2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Logistics enterprises face enforcement for improper profit calculations.",
+            "activeStageId": "s3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Diagnostic outage analyzer identifies defective committee structures.",
+            "activeStageId": "s4",
+            "statusBadge": "done"
+          }
+        ]
+      }
+    }
+  ]
+}

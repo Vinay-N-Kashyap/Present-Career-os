@@ -1,0 +1,294 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_law",
+  "day": 31,
+  "promptSha": "prompt_sha_bcom_law_day31_governance_v1",
+  "model": "google/gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Section 149(4) Board Composition, Minimum Public Company Thresholds & Gender Diversity Mandates",
+      "codeHash": "cdc277a9d4ed2b8fd9fc55860e60300920c6196df9f1197ecc3ad7477fee55f5",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Section 149(4) Board Composition, Minimum Public Company Thresholds & Gender Diversity Mandates Governance Architecture",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Board Thresholds",
+            "subtext": "Statutory director floors and ceilings"
+          },
+          {
+            "id": "s2",
+            "name": "Gender Mandate",
+            "subtext": "Women director appointment rules"
+          },
+          {
+            "id": "s3",
+            "name": "Independent Quorum",
+            "subtext": "Public enterprise one third quota"
+          },
+          {
+            "id": "s4",
+            "name": "Statutory Grace",
+            "subtext": "Intermittent vacancy remediation"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Corporate governance establishes statutory board structures.",
+            "activeStageId": "s1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say1",
+            "caption": "Indian legal architecture governs corporate enterprise boards.",
+            "activeStageId": "s2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Publicly listed manufacturing boards require rigorous governance.",
+            "activeStageId": "s3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Statutory rules govern enterprise board constitution.",
+            "activeStageId": "s4",
+            "statusBadge": "done"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Section 149(6) Independent Director Eligibility: Pecuniary Relationship & Negative Tests",
+      "codeHash": "2a94da50102177bc7aad069cab50170e0a22aa04f431e9d500056e4046655d6d",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Section 149(6) Independent Director Eligibility: Pecuniary Relationship & Negative Tests Governance Architecture",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Promoter Bar",
+            "subtext": "Absolute exclusion of founder proxies"
+          },
+          {
+            "id": "s2",
+            "name": "Pecuniary Test",
+            "subtext": "Turnover and transaction limits"
+          },
+          {
+            "id": "s3",
+            "name": "Relative Limits",
+            "subtext": "Immediate family KMP disqualifications"
+          },
+          {
+            "id": "s4",
+            "name": "Professional Firm",
+            "subtext": "Ten percent advisory ceiling"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Independent directors must maintain complete commercial independence.",
+            "activeStageId": "s1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say1",
+            "caption": "Corporate boards enforce strict statutory independence criteria.",
+            "activeStageId": "s2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Corporate lawyer appointments require scrutiny of professional fees.",
+            "activeStageId": "s3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Professional advisory candidate limits define statutory eligibility.",
+            "activeStageId": "s4",
+            "statusBadge": "done"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Schedule IV Code for Independent Directors: Separate Meetings & D&O Insurance Safeguards",
+      "codeHash": "b34bb0ab47eaba50c797e3920c83986ebfdb05ce9e7f4b463faf3abcc7635b07",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Schedule IV Code for Independent Directors: Separate Meetings & D&O Insurance Safeguards Governance Architecture",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Schedule Invariants",
+            "subtext": "Professional conduct and duties"
+          },
+          {
+            "id": "s2",
+            "name": "Separate Caucus",
+            "subtext": "Independent annual executive review"
+          },
+          {
+            "id": "s3",
+            "name": "Fee Regulation",
+            "subtext": "Sitting fees and profit commission"
+          },
+          {
+            "id": "s4",
+            "name": "Insurance Shield",
+            "subtext": "Mandatory liability indemnification"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Independent directors fulfill affirmative oversight responsibilities.",
+            "activeStageId": "s1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say1",
+            "caption": "Passive participants cannot satisfy professional governance codes.",
+            "activeStageId": "s2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Executive management proposals require confidential fiduciary review.",
+            "activeStageId": "s3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Independent separate caucus rules mandate governance meetings.",
+            "activeStageId": "s4",
+            "statusBadge": "done"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Fiduciary Liability of Non-Executive & Independent Directors under Section 149(12)",
+      "codeHash": "6915b593e09eecabf4a789e50462fadd315e1e71c78394ab60b1c179b6dd2b92",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Fiduciary Liability of Non-Executive & Independent Directors under Section 149(12) Governance Architecture",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Fiduciary Balance",
+            "subtext": "Operational vs non executive duty"
+          },
+          {
+            "id": "s2",
+            "name": "Board Attribution",
+            "subtext": "Knowledge through formal proceedings"
+          },
+          {
+            "id": "s3",
+            "name": "Recorded Dissent",
+            "subtext": "Formal objection in statutory minutes"
+          },
+          {
+            "id": "s4",
+            "name": "Diligence Defense",
+            "subtext": "Proactive questioning safe harbor"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Corporate jurisprudence balances accountability against unfair exposure.",
+            "activeStageId": "s1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say1",
+            "caption": "Rigorous corporate governance protects diligent board fiduciaries.",
+            "activeStageId": "s2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Executive management fraud triggers scrutiny of board processes.",
+            "activeStageId": "s3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Statutory circumstances define independent director liability.",
+            "activeStageId": "s4",
+            "statusBadge": "done"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Anti-Pattern Defense & Outage Puzzle: The Compromised Independent Director & Pecuniary Disqualification",
+      "codeHash": "7b3e16ec9c689cf0ae3c2a8465a497a19cbea77d4b68c442168299d0669bf81d",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Anti-Pattern Defense & Outage Puzzle: The Compromised Independent Director & Pecuniary Disqualification Governance Architecture",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Crisis Detection",
+            "subtext": "Forensic audit of director ties"
+          },
+          {
+            "id": "s2",
+            "name": "Pecuniary Breach",
+            "subtext": "Statutory disqualification by law"
+          },
+          {
+            "id": "s3",
+            "name": "Quorum Collapse",
+            "subtext": "Interested director exclusions"
+          },
+          {
+            "id": "s4",
+            "name": "Remedial Filing",
+            "subtext": "Statutory forms and reconstitution"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Corporate governance failure modes require vigilant secretarial audit.",
+            "activeStageId": "s1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say1",
+            "caption": "Perilous failure patterns undermine boardroom decision integrity.",
+            "activeStageId": "s2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Infrastructure corporation committees face retroactive disqualification.",
+            "activeStageId": "s3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Pecuniary disqualification crisis triggers boardroom remediation.",
+            "activeStageId": "s4",
+            "statusBadge": "done"
+          }
+        ]
+      }
+    }
+  ]
+}

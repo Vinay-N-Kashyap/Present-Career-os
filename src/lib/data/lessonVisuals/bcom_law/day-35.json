@@ -1,0 +1,294 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_law",
+  "day": 35,
+  "promptSha": "prompt_sha_bcom_law_day35_capstone_v1",
+  "model": "google/gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Enterprise Board Composition & Independent Director Pecuniary Audit Engine",
+      "codeHash": "67d4e9216ad07998d20c25bf5f4e68479bb85ba3c31e73d4f88b8b5270702b93",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Enterprise Board Composition & Independent Director Pecuniary Audit Engine Governance Architecture",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Board Architecture",
+            "subtext": "Tiering and statutory quota invariants"
+          },
+          {
+            "id": "s2",
+            "name": "Eligibility Screen",
+            "subtext": "Pecuniary promoter and relative tests"
+          },
+          {
+            "id": "s3",
+            "name": "Real Time Monitor",
+            "subtext": "Continuous transactional conflict checks"
+          },
+          {
+            "id": "s4",
+            "name": "IICA Databank",
+            "subtext": "Proficiency testing and annual declaration"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Independent director appointments require shareholder general meeting approvals.",
+            "activeStageId": "s1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say1",
+            "caption": "Procedural validity requires explanatory statements and registrar filings.",
+            "activeStageId": "s2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Global conglomerates enforce mandatory quotas and independent seats.",
+            "activeStageId": "s3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Independence algorithms evaluate quotas and director eligibility barriers.",
+            "activeStageId": "s4",
+            "statusBadge": "done"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Section 177 Audit Committee & Section 135 CSR Statutory Allocation Simulator",
+      "codeHash": "6785fcc3738f66dbaf6d5efc1d1a816e4f56e8385342e3ab2f3f35582d2c685f",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Section 177 Audit Committee & Section 135 CSR Statutory Allocation Simulator Governance Architecture",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Committee Validity",
+            "subtext": "Independent majority and financial literacy"
+          },
+          {
+            "id": "s2",
+            "name": "Section Profit",
+            "subtext": "Excluding extraordinary capital receipts"
+          },
+          {
+            "id": "s3",
+            "name": "Two Percent Mandate",
+            "subtext": "Three year average profit computation"
+          },
+          {
+            "id": "s4",
+            "name": "Excess Carryforward",
+            "subtext": "Three year set off credit application"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Audit committee oversight connects with statutory social capital.",
+            "activeStageId": "s1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say1",
+            "caption": "Financial integrity and social responsibility require audited alignment.",
+            "activeStageId": "s2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Industrial conglomerates exclude capital gains from net profit formulas.",
+            "activeStageId": "s3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Committee simulators verify composition and compute profit allocations.",
+            "activeStageId": "s4",
+            "statusBadge": "done"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Multi-Party Related Party Transaction (RPT) Screening & Omnibus Quota Validator",
+      "codeHash": "0b72a20882f1c57aa98c7abe07891cc209ba7e86304a98ebc5760d0d0df6709f",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Multi-Party Related Party Transaction (RPT) Screening & Omnibus Quota Validator Governance Architecture",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Party Classification",
+            "subtext": "Section definitions and relative checks"
+          },
+          {
+            "id": "s2",
+            "name": "Arm's Length Defense",
+            "subtext": "Transfer pricing CUP benchmark verification"
+          },
+          {
+            "id": "s3",
+            "name": "Omnibus Authorization",
+            "subtext": "Rule criteria and quarterly monitoring"
+          },
+          {
+            "id": "s4",
+            "name": "Minority Voting",
+            "subtext": "SEBI promoter bar and public approval"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Related party contracts require formal justification in board reports.",
+            "activeStageId": "s1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say1",
+            "caption": "Material contract terms require disclosure to protect shareholders.",
+            "activeStageId": "s2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Component supply contracts require majority of minority approval.",
+            "activeStageId": "s3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Screening suites test entity classifications and minority voting outcomes.",
+            "activeStageId": "s4",
+            "statusBadge": "done"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "SS-1 Boardroom Quorum & Video-Conferencing Voting State Machine",
+      "codeHash": "34c1921d85184dfe3f403df474d56fe365924035930177eaa0d960c03d2be5bc",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "SS-1 Boardroom Quorum & Video-Conferencing Voting State Machine Governance Architecture",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Notice Verification",
+            "subtext": "Seven day notice and agenda circulation"
+          },
+          {
+            "id": "s2",
+            "name": "Active Deliberation",
+            "subtext": "Quorum tracking and interested recusal"
+          },
+          {
+            "id": "s3",
+            "name": "Connectivity Monitor",
+            "subtext": "Heartbeat tracking and automatic pause"
+          },
+          {
+            "id": "s4",
+            "name": "Minute Authentication",
+            "subtext": "Statutory circulation and signing rules"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Judicial enforcement gives statutory backing to minutes recording standards.",
+            "activeStageId": "s1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say1",
+            "caption": "Hybrid boardroom meetings enforce strict secretarial standards.",
+            "activeStageId": "s2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Hybrid board meetings require continuous active disinterested quorum.",
+            "activeStageId": "s3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Boardroom state machines evaluate connectivity and quorum maintenance.",
+            "activeStageId": "s4",
+            "statusBadge": "done"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Milestone 7 Grand Control Tower: The Corporate Governance & Secretarial Audit Simulator",
+      "codeHash": "18b65e072955f47a8b8ed77e0e10f44b63870e9c4ebbf7a67761245518b8d160",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Milestone 7 Grand Control Tower: The Corporate Governance & Secretarial Audit Simulator Governance Architecture",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Board Pillar",
+            "subtext": "Composition and independence scoring"
+          },
+          {
+            "id": "s2",
+            "name": "Financial Pillar",
+            "subtext": "Audit committee and Section CSR check"
+          },
+          {
+            "id": "s3",
+            "name": "Transaction Pillar",
+            "subtext": "RPT screening and minority vote check"
+          },
+          {
+            "id": "s4",
+            "name": "Meeting Pillar",
+            "subtext": "Quorum tracking and secretarial audit"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Corporate governance control towers orchestrate enterprise compliance.",
+            "activeStageId": "s1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say1",
+            "caption": "Grand governance architectures synthesize statutory regulatory standards.",
+            "activeStageId": "s2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Diversified industrial enterprises earn certified compliance ratings.",
+            "activeStageId": "s3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Master control towers synthesize governance pillars into composite scores.",
+            "activeStageId": "s4",
+            "statusBadge": "done"
+          }
+        ]
+      }
+    }
+  ]
+}
