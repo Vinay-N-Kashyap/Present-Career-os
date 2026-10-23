@@ -1,0 +1,1425 @@
+{
+  "schemaVersion": 1,
+  "prefix": "iot_net",
+  "coursePrefix": "iot_net",
+  "day": 42,
+  "title": "LoRaWAN MAC: Device Classes A/B/C, OTAA Join & AES-128 Security",
+  "promptSha": "lorawan-l2-mac-otaa-crypto-day42-v2",
+  "model": "gpt-4o",
+  "codeHash": "26b6d7110239232949b16a70d4a66fa33fd2ea52c38117a98b9b9f010ae68fce",
+  "spec": {
+    "template": "register-bits"
+  },
+  "entries": [
+    {
+      "partTitle": "LoRaWAN Network Architecture, Star-of-Stars Topology & Device Classes A/B/C Mechanics",
+      "codeHash": "26b6d7110239232949b16a70d4a66fa33fd2ea52c38117a98b9b9f010ae68fce",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 42 Part 1 — LoRaWAN Device Classes A/B/C Reception Window State Machine",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Initialize LoRaWAN Class A MAC: Uplink transmission initiated over physical air interface.",
+            "registerName": "LORA_MAC_CLASS_CTRL_REG",
+            "bitWidth": 8,
+            "hexValue": "0x81",
+            "decimalValue": 129,
+            "maskApplied": "0x81",
+            "bits": [
+              {
+                "index": 7,
+                "name": "TX_ACTIVE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "PING_ACTIVE",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "BCN_LOCKED",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "RX1_OPEN",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "RX2_OPEN",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "MODE_B",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "MODE_C",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "CLASS_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Uplink complete: Power amplifier asleep, hardware timer opens RX1 window at T+1.0s.",
+            "registerName": "LORA_MAC_CLASS_CTRL_REG",
+            "bitWidth": 8,
+            "hexValue": "0x88",
+            "decimalValue": 136,
+            "maskApplied": "0x88",
+            "bits": [
+              {
+                "index": 7,
+                "name": "TX_ACTIVE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "PING_ACTIVE",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "BCN_LOCKED",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "RX1_OPEN",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "RX2_OPEN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "MODE_B",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "MODE_C",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "CLASS_EN",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "RX1 preamble acquisition timeout: Radio switches frequency and opens RX2 window at T+2.0s.",
+            "registerName": "LORA_MAC_CLASS_CTRL_REG",
+            "bitWidth": 8,
+            "hexValue": "0x90",
+            "decimalValue": 144,
+            "maskApplied": "0x90",
+            "bits": [
+              {
+                "index": 7,
+                "name": "TX_ACTIVE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "PING_ACTIVE",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "BCN_LOCKED",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "RX1_OPEN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "RX2_OPEN",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "MODE_B",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "MODE_C",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "CLASS_EN",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Switch node profile to Class C: Continuous listening enabled across all non-transmitting periods.",
+            "registerName": "LORA_MAC_CLASS_CTRL_REG",
+            "bitWidth": 8,
+            "hexValue": "0xC0",
+            "decimalValue": 192,
+            "maskApplied": "0xC0",
+            "bits": [
+              {
+                "index": 7,
+                "name": "TX_ACTIVE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "PING_ACTIVE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "BCN_LOCKED",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "RX1_OPEN",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "RX2_OPEN",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "MODE_B",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "MODE_C",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "CLASS_EN",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Over-The-Air Activation (OTAA) Join Request / Accept Handshake & DevNonce Invariants",
+      "codeHash": "4a5a34fd7837391b663a0042bdb8941398c60c3b8543cb75bf7a5ca88f350da0",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 42 Part 2 — Over-The-Air Activation (OTAA) Cryptographic Handshake & DevNonce",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Dispatch Join-Request frame: Non-volatile monotonic DevNonce latched and signed.",
+            "registerName": "LORA_OTAA_JOIN_REG",
+            "bitWidth": 8,
+            "hexValue": "0xC0",
+            "decimalValue": 192,
+            "maskApplied": "0xC0",
+            "bits": [
+              {
+                "index": 7,
+                "name": "SESSION_ACTIVE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "APP_S_KEY_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "NWK_S_KEY_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "JOINNONCE_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "JOIN_ACCEPT_RX",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "MIC_VERIFIED",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "DEVNONCE_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "JOIN_REQ_TX",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Join Server verifies Join-Request AES-CMAC MIC under root AppKey successfully.",
+            "registerName": "LORA_OTAA_JOIN_REG",
+            "bitWidth": 8,
+            "hexValue": "0xE0",
+            "decimalValue": 224,
+            "maskApplied": "0xE0",
+            "bits": [
+              {
+                "index": 7,
+                "name": "SESSION_ACTIVE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "APP_S_KEY_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "NWK_S_KEY_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "JOINNONCE_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "JOIN_ACCEPT_RX",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "MIC_VERIFIED",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "DEVNONCE_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "JOIN_REQ_TX",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Demodulate Join-Accept frame: Validate JoinNonce freshness and derive NwkSKey & AppSKey.",
+            "registerName": "LORA_OTAA_JOIN_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFC",
+            "decimalValue": 252,
+            "maskApplied": "0xFC",
+            "bits": [
+              {
+                "index": 7,
+                "name": "SESSION_ACTIVE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "APP_S_KEY_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "NWK_S_KEY_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "JOINNONCE_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "JOIN_ACCEPT_RX",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "MIC_VERIFIED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "DEVNONCE_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "JOIN_REQ_TX",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Commit activated OTAA session: Allocate 32-bit DevAddr and arm operational state machine.",
+            "registerName": "LORA_OTAA_JOIN_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "SESSION_ACTIVE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "APP_S_KEY_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "NWK_S_KEY_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "JOINNONCE_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "JOIN_ACCEPT_RX",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "MIC_VERIFIED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "DEVNONCE_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "JOIN_REQ_TX",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Dual-Key Cryptography: AES-128-CTR Payload Encryption & AES-CMAC MIC Verification",
+      "codeHash": "3f73311c5d68e0c4e8674610e5734399dd8668b57a3d2470bd529f0c870ebb43",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 42 Part 3 — Dual-Key Cryptography: AES-128-CTR Confidentiality & AES-CMAC Integrity",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Activate hardware crypto core: Construct counter block A_i incorporating DevAddr and FCnt.",
+            "registerName": "LORA_CRYPTO_ENGINE_REG",
+            "bitWidth": 8,
+            "hexValue": "0xE0",
+            "decimalValue": 224,
+            "maskApplied": "0xE0",
+            "bits": [
+              {
+                "index": 7,
+                "name": "CIPHER_DONE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "MIC_INSERTED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "CMAC_CALC",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "BLOCK_B0_GEN",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "PAYLOAD_ENC",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "BLOCK_AI_GEN",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "AES_CTR_ACT",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "CRYPTO_EN",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Generate AES-128-CTR keystream and encrypt FRMPayload under AppSKey with zero padding overhead.",
+            "registerName": "LORA_CRYPTO_ENGINE_REG",
+            "bitWidth": 8,
+            "hexValue": "0xF0",
+            "decimalValue": 240,
+            "maskApplied": "0xF0",
+            "bits": [
+              {
+                "index": 7,
+                "name": "CIPHER_DONE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "MIC_INSERTED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "CMAC_CALC",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "BLOCK_B0_GEN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "PAYLOAD_ENC",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "BLOCK_AI_GEN",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "AES_CTR_ACT",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "CRYPTO_EN",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Construct integrity block B_0 and compute RFC 4493 AES-128-CMAC signature under NwkSKey.",
+            "registerName": "LORA_CRYPTO_ENGINE_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFC",
+            "decimalValue": 252,
+            "maskApplied": "0xFC",
+            "bits": [
+              {
+                "index": 7,
+                "name": "CIPHER_DONE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "MIC_INSERTED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "CMAC_CALC",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "BLOCK_B0_GEN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "PAYLOAD_ENC",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "BLOCK_AI_GEN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "AES_CTR_ACT",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "CRYPTO_EN",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Append 4-byte MIC to physical frame: Output fully authenticated, multi-tenant secure payload.",
+            "registerName": "LORA_CRYPTO_ENGINE_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "CIPHER_DONE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "MIC_INSERTED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "CMAC_CALC",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "BLOCK_B0_GEN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "PAYLOAD_ENC",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "BLOCK_AI_GEN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "AES_CTR_ACT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "CRYPTO_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Frame Counter (FCnt) Synchronization, Replay Attack Mitigation & MAC Commands",
+      "codeHash": "a06799167a0b16de9d70c8e162097e658a596f3e12dd34a85e40e41cf73c94ee",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 42 Part 4 — Frame Counter (FCnt) Synchronization, Replay Mitigation & MAC Commands",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Verify monotonic FCnt sequence: Confirm incoming counter exceeds previous value to block replay.",
+            "registerName": "LORA_FCNT_MAC_CTRL_REG",
+            "bitWidth": 8,
+            "hexValue": "0xE0",
+            "decimalValue": 224,
+            "maskApplied": "0xE0",
+            "bits": [
+              {
+                "index": 7,
+                "name": "DUTY_CYC_ACK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "DEV_STAT_ANS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "LINK_CHK_ANS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "FOPTS_PRESENT",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "ROLLOVER_LOK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "GAP_WITHIN_MAX",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "REPLAY_PASS",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "FCNT_SYNC",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Synchronize 16-bit physical FHDR counter with 32-bit internal cryptographic rollover state.",
+            "registerName": "LORA_FCNT_MAC_CTRL_REG",
+            "bitWidth": 8,
+            "hexValue": "0xF0",
+            "decimalValue": 240,
+            "maskApplied": "0xF0",
+            "bits": [
+              {
+                "index": 7,
+                "name": "DUTY_CYC_ACK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "DEV_STAT_ANS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "LINK_CHK_ANS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "FOPTS_PRESENT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "ROLLOVER_LOK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "GAP_WITHIN_MAX",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "REPLAY_PASS",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "FCNT_SYNC",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Extract in-band FOpts header field: Process LinkCheckReq link margin and DevStatusReq battery status.",
+            "registerName": "LORA_FCNT_MAC_CTRL_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFC",
+            "decimalValue": 252,
+            "maskApplied": "0xFC",
+            "bits": [
+              {
+                "index": 7,
+                "name": "DUTY_CYC_ACK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "DEV_STAT_ANS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "LINK_CHK_ANS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "FOPTS_PRESENT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "ROLLOVER_LOK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "GAP_WITHIN_MAX",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "REPLAY_PASS",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "FCNT_SYNC",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Commit LinkADR and DutyCycle MAC responses: Lock dynamic RF configuration into end device.",
+            "registerName": "LORA_FCNT_MAC_CTRL_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "DUTY_CYC_ACK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "DEV_STAT_ANS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "LINK_CHK_ANS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "FOPTS_PRESENT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "ROLLOVER_LOK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "GAP_WITHIN_MAX",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "REPLAY_PASS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "FCNT_SYNC",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Masterclass Synthesis: Full LoRaWAN L2 1.0.4 MAC & OTAA State Machine Engine",
+      "codeHash": "6b28cc123d77e83ea07f5235597dd7143a0b1fb6afccf9c01a2ead6fd3a49234",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 42 Part 5 — Masterclass Synthesis: Full LoRaWAN L2 1.0.4 MAC & OTAA State Machine Engine",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Initialize LoRaWAN L2 1.0.4 stack: Complete OTAA cryptographic handshake and derive session keys.",
+            "registerName": "LORA_MASTER_MAC_REG",
+            "bitWidth": 8,
+            "hexValue": "0xC0",
+            "decimalValue": 192,
+            "maskApplied": "0xC0",
+            "bits": [
+              {
+                "index": 7,
+                "name": "CERT_TOKEN_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "RX_WINDOWS_RDY",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "TELEMETRY_TX",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "CMAC_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "CIPHER_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "FCNT_LOCK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "OTAA_JOINED",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "MAC_INITIALIZED",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Lock 32-bit frame counter sequencer and activate dual-key AES-CTR/CMAC isolation pipeline.",
+            "registerName": "LORA_MASTER_MAC_REG",
+            "bitWidth": 8,
+            "hexValue": "0xF0",
+            "decimalValue": 240,
+            "maskApplied": "0xF0",
+            "bits": [
+              {
+                "index": 7,
+                "name": "CERT_TOKEN_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "RX_WINDOWS_RDY",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "TELEMETRY_TX",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "CMAC_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "CIPHER_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "FCNT_LOCK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "OTAA_JOINED",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "MAC_INITIALIZED",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Dispatch authenticated telemetry frame: Verify 4-byte MIC and arm microsecond RX1/RX2 timers.",
+            "registerName": "LORA_MASTER_MAC_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFC",
+            "decimalValue": 252,
+            "maskApplied": "0xFC",
+            "bits": [
+              {
+                "index": 7,
+                "name": "CERT_TOKEN_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "RX_WINDOWS_RDY",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "TELEMETRY_TX",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "CMAC_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "CIPHER_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "FCNT_LOCK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "OTAA_JOINED",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "MAC_INITIALIZED",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Emit enterprise certification token LORAWAN_MAC_OTAA_SECURITY_GRADE_A_PLUS_CERTIFIED.",
+            "registerName": "LORA_MASTER_MAC_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "CERT_TOKEN_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "RX_WINDOWS_RDY",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "TELEMETRY_TX",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "CMAC_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "CIPHER_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "FCNT_LOCK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "OTAA_JOINED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "MAC_INITIALIZED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
