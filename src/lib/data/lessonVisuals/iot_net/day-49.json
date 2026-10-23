@@ -1,0 +1,1425 @@
+{
+  "schemaVersion": 1,
+  "prefix": "iot_net",
+  "coursePrefix": "iot_net",
+  "day": 49,
+  "title": "Thread Border Router & IP Convergence: Bidirectional IPv6 Routing, NAT64 & Matter",
+  "promptSha": "thread-border-router-ip-convergence-day49-v2",
+  "model": "gpt-4o",
+  "codeHash": "3d73281bef3fd6887731ba8e40b92c5eea7c6f96cc39ee4ec2f5b7f4a87c13d1",
+  "spec": {
+    "template": "register-bits"
+  },
+  "entries": [
+    {
+      "partTitle": "Day 49 Part 1 — Thread Border Router Architecture & Bidirectional IPv6 Routing",
+      "codeHash": "3d73281bef3fd6887731ba8e40b92c5eea7c6f96cc39ee4ec2f5b7f4a87c13d1",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 49 Part 1 — Thread Border Router Architecture & Bidirectional IPv6 Routing",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Configure dual interfaces: Bring up Ethernet eth0 and IEEE 802.15.4 wpan0.",
+            "registerName": "THREAD_BORDER_ROUTER_REG",
+            "bitWidth": 8,
+            "hexValue": "0x83",
+            "decimalValue": 131,
+            "maskApplied": "0x83",
+            "bits": [
+              {
+                "index": 7,
+                "name": "BR_ACTIVE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "ROUTE_PREF_HIGH",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "IPHC_COMPRESS_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "RLOC16_MAP_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "WPAN_IF_UP",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "ETH_IF_UP",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "NDP_PROXY_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "OMR_PREFIX_ADV",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Publish Off-Mesh Routable (OMR) prefix into Thread Network Data and enable SLAAC.",
+            "registerName": "THREAD_BORDER_ROUTER_REG",
+            "bitWidth": 8,
+            "hexValue": "0x87",
+            "decimalValue": 135,
+            "maskApplied": "0x87",
+            "bits": [
+              {
+                "index": 7,
+                "name": "BR_ACTIVE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "ROUTE_PREF_HIGH",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "IPHC_COMPRESS_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "RLOC16_MAP_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "WPAN_IF_UP",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "ETH_IF_UP",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "NDP_PROXY_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "OMR_PREFIX_ADV",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Intercept external NDP Neighbor Solicitation and proxy reply with Border Router MAC.",
+            "registerName": "THREAD_BORDER_ROUTER_REG",
+            "bitWidth": 8,
+            "hexValue": "0xAF",
+            "decimalValue": 175,
+            "maskApplied": "0xAF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "BR_ACTIVE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "ROUTE_PREF_HIGH",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "IPHC_COMPRESS_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "RLOC16_MAP_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "WPAN_IF_UP",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "ETH_IF_UP",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "NDP_PROXY_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "OMR_PREFIX_ADV",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Execute bidirectional packet forwarding: Resolve RLOC16 and apply LOWPAN_IPHC compression.",
+            "registerName": "THREAD_BORDER_ROUTER_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "BR_ACTIVE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "ROUTE_PREF_HIGH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "IPHC_COMPRESS_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "RLOC16_MAP_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "WPAN_IF_UP",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "ETH_IF_UP",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "NDP_PROXY_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "OMR_PREFIX_ADV",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Day 49 Part 2 — NAT64 / DNS64 Translation Layer for IPv6-Only Constrained Nodes",
+      "codeHash": "162770df10fd992fd6852d27a01ed428b2b88907574f7150344eef1943d98973",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 49 Part 2 — NAT64 / DNS64 Translation Layer for IPv6-Only Constrained Nodes",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Enable DNS64 resolver: Intercept AAAA queries and detect missing IPv6 records.",
+            "registerName": "THREAD_NAT64_DNS64_REG",
+            "bitWidth": 8,
+            "hexValue": "0x81",
+            "decimalValue": 129,
+            "maskApplied": "0x81",
+            "bits": [
+              {
+                "index": 7,
+                "name": "NAT64_TRANS_DONE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "CHECKSUM_ADJ_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "UDP_TIMEOUT_SET",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "PORT_MAP_TRACK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "NAT_POOL_ALLOC",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "V4_SYNTH_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "WELL_KNOWN_PREF",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "DNS64_RESOLVER_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Synthesize IPv6 address: Prepend RFC 6052 64:ff9b::/96 prefix to 32-bit IPv4 address.",
+            "registerName": "THREAD_NAT64_DNS64_REG",
+            "bitWidth": 8,
+            "hexValue": "0x87",
+            "decimalValue": 135,
+            "maskApplied": "0x87",
+            "bits": [
+              {
+                "index": 7,
+                "name": "NAT64_TRANS_DONE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "CHECKSUM_ADJ_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "UDP_TIMEOUT_SET",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "PORT_MAP_TRACK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "NAT_POOL_ALLOC",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "V4_SYNTH_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "WELL_KNOWN_PREF",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "DNS64_RESOLVER_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Allocate stateful NAT64 5-tuple session binding and assign ephemeral public port.",
+            "registerName": "THREAD_NAT64_DNS64_REG",
+            "bitWidth": 8,
+            "hexValue": "0xBF",
+            "decimalValue": 191,
+            "maskApplied": "0xBF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "NAT64_TRANS_DONE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "CHECKSUM_ADJ_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "UDP_TIMEOUT_SET",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "PORT_MAP_TRACK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "NAT_POOL_ALLOC",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "V4_SYNTH_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "WELL_KNOWN_PREF",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "DNS64_RESOLVER_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Translate outbound IPv6 datagram to IPv4 and execute RFC 1624 incremental checksum update.",
+            "registerName": "THREAD_NAT64_DNS64_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "NAT64_TRANS_DONE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "CHECKSUM_ADJ_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "UDP_TIMEOUT_SET",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "PORT_MAP_TRACK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "NAT_POOL_ALLOC",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "V4_SYNTH_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "WELL_KNOWN_PREF",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "DNS64_RESOLVER_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Day 49 Part 3 — Thread Backbone Router (BBR) & Multi-Mesh Multicast Synchronization",
+      "codeHash": "d0556717a5563d4ccad774716ba8172ebfb432ad8537f9eb8ddbd2cb0926efc6",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 49 Part 3 — Thread Backbone Router (BBR) & Multi-Mesh Multicast Synchronization",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Join Thread Backbone Domain and evaluate candidate list for Primary BBR election.",
+            "registerName": "THREAD_BBR_SYNC_REG",
+            "bitWidth": 8,
+            "hexValue": "0x81",
+            "decimalValue": 129,
+            "maskApplied": "0x81",
+            "bits": [
+              {
+                "index": 7,
+                "name": "BBR_CONVERGED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "MOBILITY_SYNC_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "PROXY_FWD_EN",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "BACKBONE_QUERY_TX",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "MCAST_REALM_LATCH",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "MLD_SNOOP_EN",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "PBBR_ELECT_WIN",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "BBR_DOMAIN_JOIN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Win Primary BBR election: Assert PBBR status and publish service record to Network Data.",
+            "registerName": "THREAD_BBR_SYNC_REG",
+            "bitWidth": 8,
+            "hexValue": "0x83",
+            "decimalValue": 131,
+            "maskApplied": "0x83",
+            "bits": [
+              {
+                "index": 7,
+                "name": "BBR_CONVERGED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "MOBILITY_SYNC_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "PROXY_FWD_EN",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "BACKBONE_QUERY_TX",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "MCAST_REALM_LATCH",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "MLD_SNOOP_EN",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "PBBR_ELECT_WIN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "BBR_DOMAIN_JOIN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Listen to on-mesh MLD reports and register realm-local multicast group ff05:: on backbone.",
+            "registerName": "THREAD_BBR_SYNC_REG",
+            "bitWidth": 8,
+            "hexValue": "0xBF",
+            "decimalValue": 191,
+            "maskApplied": "0xBF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "BBR_CONVERGED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "MOBILITY_SYNC_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "PROXY_FWD_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "BACKBONE_QUERY_TX",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "MCAST_REALM_LATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "MLD_SNOOP_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "PBBR_ELECT_WIN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "BBR_DOMAIN_JOIN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Proxy external Matter/mDNS multicast queries into 802.15.4 mesh while suppressing duplicates.",
+            "registerName": "THREAD_BBR_SYNC_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "BBR_CONVERGED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "MOBILITY_SYNC_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "PROXY_FWD_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "BACKBONE_QUERY_TX",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "MCAST_REALM_LATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "MLD_SNOOP_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "PBBR_ELECT_WIN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "BBR_DOMAIN_JOIN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Day 49 Part 4 — Matter-over-Thread Transport & TCP/UDP Session Establishment",
+      "codeHash": "823e7076b5ae34a82a3c87e67333f0ec85012187b85f5b5f39d9082a9b40bc45",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 49 Part 4 — Matter-over-Thread Transport & TCP/UDP Session Establishment",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Initialize Matter transport: Bind operational socket to UDP port 5540.",
+            "registerName": "THREAD_MATTER_TRANS_REG",
+            "bitWidth": 8,
+            "hexValue": "0x83",
+            "decimalValue": 131,
+            "maskApplied": "0x83",
+            "bits": [
+              {
+                "index": 7,
+                "name": "MATTER_TRANS_READY",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "FRAG_6LOWPAN_EN",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "SESSION_KEY_LATCH",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "SIGMA_I_VERIF",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "CASE_HANDSHAKE",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "PASE_ONBOARD_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "UDP_5540_BOUND",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "MATTER_PORT_OPEN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Execute CASE Sigma-I handshake: Exchange Node Operational Certificates and derive AES-CCM keys.",
+            "registerName": "THREAD_MATTER_TRANS_REG",
+            "bitWidth": 8,
+            "hexValue": "0x8F",
+            "decimalValue": 143,
+            "maskApplied": "0x8F",
+            "bits": [
+              {
+                "index": 7,
+                "name": "MATTER_TRANS_READY",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "FRAG_6LOWPAN_EN",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "SESSION_KEY_LATCH",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "SIGMA_I_VERIF",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "CASE_HANDSHAKE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "PASE_ONBOARD_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "UDP_5540_BOUND",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "MATTER_PORT_OPEN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Transmit multi-hop Matter command frame: Fragment 300-byte payload across 6LoWPAN frames.",
+            "registerName": "THREAD_MATTER_TRANS_REG",
+            "bitWidth": 8,
+            "hexValue": "0xBF",
+            "decimalValue": 191,
+            "maskApplied": "0xBF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "MATTER_TRANS_READY",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "FRAG_6LOWPAN_EN",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "SESSION_KEY_LATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "SIGMA_I_VERIF",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "CASE_HANDSHAKE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "PASE_ONBOARD_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "UDP_5540_BOUND",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "MATTER_PORT_OPEN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Deliver end-to-end encrypted cluster command to edge node with sub-20ms verified latency.",
+            "registerName": "THREAD_MATTER_TRANS_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "MATTER_TRANS_READY",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "FRAG_6LOWPAN_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "SESSION_KEY_LATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "SIGMA_I_VERIF",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "CASE_HANDSHAKE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "PASE_ONBOARD_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "UDP_5540_BOUND",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "MATTER_PORT_OPEN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Day 49 Part 5 — Masterclass Synthesis: Comprehensive Thread Border Router Engine",
+      "codeHash": "8e2ff506ddf40be7ae7e1476341d3468d1082f39401e6ba64c6ca616d201cbe8",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 49 Part 5 — Masterclass Synthesis: Comprehensive Thread Border Router Engine",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Initialize ThreadBorderRouterGateway: Bind Linux kernel interfaces wpan0 and eth0.",
+            "registerName": "THREAD_MASTER_BR_REG",
+            "bitWidth": 8,
+            "hexValue": "0x81",
+            "decimalValue": 129,
+            "maskApplied": "0x81",
+            "bits": [
+              {
+                "index": 7,
+                "name": "BORDER_ROUTER_CERT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "TOKEN_LATCH_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "TELEMETRY_LOG_EN",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "MATTER_DISPATCH_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "BBR_MCAST_PASS",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "NAT64_ACTIVE",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "OMR_ROUTING_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "BR_CORE_INIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Route inbound enterprise Matter traffic to edge RLOC and translate cloud telemetry via NAT64.",
+            "registerName": "THREAD_MASTER_BR_REG",
+            "bitWidth": 8,
+            "hexValue": "0x8F",
+            "decimalValue": 143,
+            "maskApplied": "0x8F",
+            "bits": [
+              {
+                "index": 7,
+                "name": "BORDER_ROUTER_CERT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "TOKEN_LATCH_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "TELEMETRY_LOG_EN",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "MATTER_DISPATCH_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "BBR_MCAST_PASS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "NAT64_ACTIVE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "OMR_ROUTING_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "BR_CORE_INIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Proxy realm-local multicast discovery and verify real-time gateway telemetry counters.",
+            "registerName": "THREAD_MASTER_BR_REG",
+            "bitWidth": 8,
+            "hexValue": "0xBF",
+            "decimalValue": 191,
+            "maskApplied": "0xBF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "BORDER_ROUTER_CERT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "TOKEN_LATCH_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "TELEMETRY_LOG_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "MATTER_DISPATCH_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "BBR_MCAST_PASS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "NAT64_ACTIVE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "OMR_ROUTING_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "BR_CORE_INIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Complete full convergence test suite and emit token THREAD_BORDER_ROUTER_IP_CONVERGENCE_GRADE_A_PLUS_CERTIFIED.",
+            "registerName": "THREAD_MASTER_BR_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "BORDER_ROUTER_CERT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "TOKEN_LATCH_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "TELEMETRY_LOG_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "MATTER_DISPATCH_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "BBR_MCAST_PASS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "NAT64_ACTIVE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "OMR_ROUTING_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "BR_CORE_INIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
