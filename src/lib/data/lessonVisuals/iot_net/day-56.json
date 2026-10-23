@@ -1,0 +1,1425 @@
+{
+  "schemaVersion": 1,
+  "prefix": "iot_net",
+  "coursePrefix": "iot_net",
+  "day": 56,
+  "title": "Cloud IoT Device Shadows & Digital Twins: AWS IoT Core, Azure IoT Hub & State Reconciliation",
+  "promptSha": "cloud-device-shadows-digital-twins-day56-v2",
+  "model": "gpt-4o",
+  "codeHash": "d5a30294305256f944bd64acc3aadbbbcb809b7a9671177459656a01b1cfd556",
+  "spec": {
+    "template": "register-bits"
+  },
+  "entries": [
+    {
+      "partTitle": "Cloud Device Shadow Architecture: Desired vs Reported State & Delta Generation",
+      "codeHash": "d5a30294305256f944bd64acc3aadbbbcb809b7a9671177459656a01b1cfd556",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 56 Part 1 — Cloud Device Shadow Architecture: Desired vs Reported State & Delta Generation",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Initialize cloud device shadow engine: Register physical thing SMART_HVAC_PUMP_04.",
+            "registerName": "SHADOW_DELTA_SYNC_REG",
+            "bitWidth": 8,
+            "hexValue": "0x81",
+            "decimalValue": 129,
+            "maskApplied": "0x81",
+            "bits": [
+              {
+                "index": 7,
+                "name": "SHADOW_SYNC_VALID",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "VERSION_MATCH",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "MQTT_BROKER_ACK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "DELTA_TOPIC_PUB",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "DELTA_CALC_ACTIVE",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "REPORTED_LATCH_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "DESIRED_LATCH_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "SHADOW_ENGINE_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Ingest initial reported state: Latch pump_speed_rpm 1200 and valve_open False at Version 1.",
+            "registerName": "SHADOW_DELTA_SYNC_REG",
+            "bitWidth": 8,
+            "hexValue": "0xE7",
+            "decimalValue": 231,
+            "maskApplied": "0xE7",
+            "bits": [
+              {
+                "index": 7,
+                "name": "SHADOW_SYNC_VALID",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "VERSION_MATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "MQTT_BROKER_ACK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "DELTA_TOPIC_PUB",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "DELTA_CALC_ACTIVE",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "REPORTED_LATCH_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "DESIRED_LATCH_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "SHADOW_ENGINE_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Cloud operator updates desired state: Advance to Version 2 and compute discrepancy.",
+            "registerName": "SHADOW_DELTA_SYNC_REG",
+            "bitWidth": 8,
+            "hexValue": "0xEF",
+            "decimalValue": 239,
+            "maskApplied": "0xEF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "SHADOW_SYNC_VALID",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "VERSION_MATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "MQTT_BROKER_ACK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "DELTA_TOPIC_PUB",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "DELTA_CALC_ACTIVE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "REPORTED_LATCH_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "DESIRED_LATCH_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "SHADOW_ENGINE_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Publish delta document to $aws/things/SMART_HVAC_PUMP_04/shadow/update/delta.",
+            "registerName": "SHADOW_DELTA_SYNC_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "SHADOW_SYNC_VALID",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "VERSION_MATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "MQTT_BROKER_ACK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "DELTA_TOPIC_PUB",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "DELTA_CALC_ACTIVE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "REPORTED_LATCH_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "DESIRED_LATCH_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "SHADOW_ENGINE_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Digital Twin State Reconciliation Engine & Asynchronous Field Actuation",
+      "codeHash": "553a8a661288a54c173c93058fbaf0f3e9d2f4107dccc02db2274347eed66bc3",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 56 Part 2 — Digital Twin State Reconciliation Engine & Asynchronous Field Actuation",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Activate field reconciliation loop: Subscribe to shadow delta updates over secure MQTT.",
+            "registerName": "TWIN_RECONCILE_REG",
+            "bitWidth": 8,
+            "hexValue": "0x81",
+            "decimalValue": 129,
+            "maskApplied": "0x81",
+            "bits": [
+              {
+                "index": 7,
+                "name": "RECONCILE_CONVERGED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "REPORTED_ACK_SENT",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "NO_PHANTOM_CONV",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "SENSOR_CONFIRM_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "RELAY_LATCH_DRIVE",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "ACTUATOR_PWM_SET",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "DELTA_INGEST_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "RECONCILER_ACTIVE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Parse delta target setpoints: Accelerate pump drive to 1800 RPM and energize valve relay.",
+            "registerName": "TWIN_RECONCILE_REG",
+            "bitWidth": 8,
+            "hexValue": "0xDC",
+            "decimalValue": 220,
+            "maskApplied": "0xDC",
+            "bits": [
+              {
+                "index": 7,
+                "name": "RECONCILE_CONVERGED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "REPORTED_ACK_SENT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "NO_PHANTOM_CONV",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "SENSOR_CONFIRM_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "RELAY_LATCH_DRIVE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "ACTUATOR_PWM_SET",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "DELTA_INGEST_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "RECONCILER_ACTIVE",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Confirm mechanical limit switch closure: Prevent phantom convergence in cloud twin.",
+            "registerName": "TWIN_RECONCILE_REG",
+            "bitWidth": 8,
+            "hexValue": "0xBE",
+            "decimalValue": 190,
+            "maskApplied": "0xBE",
+            "bits": [
+              {
+                "index": 7,
+                "name": "RECONCILE_CONVERGED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "REPORTED_ACK_SENT",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "NO_PHANTOM_CONV",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "SENSOR_CONFIRM_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "RELAY_LATCH_DRIVE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "ACTUATOR_PWM_SET",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "DELTA_INGEST_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "RECONCILER_ACTIVE",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Acknowledge physical state convergence: Publish updated reported state to cloud shadow.",
+            "registerName": "TWIN_RECONCILE_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "RECONCILE_CONVERGED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "REPORTED_ACK_SENT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "NO_PHANTOM_CONV",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "SENSOR_CONFIRM_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "RELAY_LATCH_DRIVE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "ACTUATOR_PWM_SET",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "DELTA_INGEST_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "RECONCILER_ACTIVE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Versioned Optimistic Concurrency Control & Conflict Resolution",
+      "codeHash": "efc570ee84e8589137d1843f9fe1d9212370dd9ffd0df90ce473b43a19eb8f51",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 56 Part 3 — Versioned Optimistic Concurrency Control & Conflict Resolution",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Enable optimistic concurrency control: Track active document Version 10 in cloud registry.",
+            "registerName": "SHADOW_LOCK_REG",
+            "bitWidth": 8,
+            "hexValue": "0x81",
+            "decimalValue": 129,
+            "maskApplied": "0x81",
+            "bits": [
+              {
+                "index": 7,
+                "name": "LOCK_ARBITRATION_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "METADATA_TIME_STAMP",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "ATOMIC_INC_VER",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "STALE_CONFLICT_409",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "VER_MATCH_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "ACTIVE_VER_COMPARE",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "EXPECTED_VER_LATCH",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "OPT_LOCK_ENABLE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Evaluate stale client update (expecting Version 9): Flag version mismatch and reject with HTTP 409.",
+            "registerName": "SHADOW_LOCK_REG",
+            "bitWidth": 8,
+            "hexValue": "0xB9",
+            "decimalValue": 185,
+            "maskApplied": "0xB9",
+            "bits": [
+              {
+                "index": 7,
+                "name": "LOCK_ARBITRATION_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "METADATA_TIME_STAMP",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "ATOMIC_INC_VER",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "STALE_CONFLICT_409",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "VER_MATCH_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "ACTIVE_VER_COMPARE",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "EXPECTED_VER_LATCH",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "OPT_LOCK_ENABLE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Evaluate valid client update (expecting Version 10): Accept mutation and atomically advance to Version 11.",
+            "registerName": "SHADOW_LOCK_REG",
+            "bitWidth": 8,
+            "hexValue": "0xEF",
+            "decimalValue": 239,
+            "maskApplied": "0xEF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "LOCK_ARBITRATION_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "METADATA_TIME_STAMP",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "ATOMIC_INC_VER",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "STALE_CONFLICT_409",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "VER_MATCH_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "ACTIVE_VER_COMPARE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "EXPECTED_VER_LATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "OPT_LOCK_ENABLE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Timestamp metadata block with sub-microsecond Unix epoch: Maintain mathematical serializability.",
+            "registerName": "SHADOW_LOCK_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "LOCK_ARBITRATION_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "METADATA_TIME_STAMP",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "ATOMIC_INC_VER",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "STALE_CONFLICT_409",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "VER_MATCH_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "ACTIVE_VER_COMPARE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "EXPECTED_VER_LATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "OPT_LOCK_ENABLE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Azure IoT Hub Device Twins & Desired Properties Patch Handling",
+      "codeHash": "2be205cef1a4bcf3e11657a7c71e771a649d7e66012fe1ec68798dbb10d42da0",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 56 Part 4 — Azure IoT Hub Device Twins & Desired Properties Patch Handling",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Initialize Azure IoT Hub device twin: Bind turbine monitor edge node to IoT Hub registry.",
+            "registerName": "AZURE_TWIN_PATCH_REG",
+            "bitWidth": 8,
+            "hexValue": "0x81",
+            "decimalValue": 129,
+            "maskApplied": "0x81",
+            "bits": [
+              {
+                "index": 7,
+                "name": "AZURE_TWIN_CONVERGED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "DTDL_GRAPH_SYNC",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "LAST_APPLIED_VER_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "REPORTED_PATCH_ACK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "CONFIG_APPLY_PASS",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "VERSION_METADATA_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "DESIRED_PATCH_IN",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "AZURE_TWIN_ENABLE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Ingest desired properties patch ($version=2): Reconfigure telemetry sampling interval to 10 seconds.",
+            "registerName": "AZURE_TWIN_PATCH_REG",
+            "bitWidth": 8,
+            "hexValue": "0xDF",
+            "decimalValue": 223,
+            "maskApplied": "0xDF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "AZURE_TWIN_CONVERGED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "DTDL_GRAPH_SYNC",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "LAST_APPLIED_VER_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "REPORTED_PATCH_ACK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "CONFIG_APPLY_PASS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "VERSION_METADATA_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "DESIRED_PATCH_IN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "AZURE_TWIN_ENABLE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Acknowledge patch via reported properties: Set last_applied_desired_version to 2.",
+            "registerName": "AZURE_TWIN_PATCH_REG",
+            "bitWidth": 8,
+            "hexValue": "0xEF",
+            "decimalValue": 239,
+            "maskApplied": "0xEF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "AZURE_TWIN_CONVERGED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "DTDL_GRAPH_SYNC",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "LAST_APPLIED_VER_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "REPORTED_PATCH_ACK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "CONFIG_APPLY_PASS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "VERSION_METADATA_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "DESIRED_PATCH_IN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "AZURE_TWIN_ENABLE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Synchronize with Azure Digital Twins DTDL graph: Confirm zero unapplied desired properties.",
+            "registerName": "AZURE_TWIN_PATCH_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "AZURE_TWIN_CONVERGED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "DTDL_GRAPH_SYNC",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "LAST_APPLIED_VER_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "REPORTED_PATCH_ACK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "CONFIG_APPLY_PASS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "VERSION_METADATA_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "DESIRED_PATCH_IN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "AZURE_TWIN_ENABLE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Masterclass Synthesis: Bidirectional Cloud Digital Twin Synchronization Engine",
+      "codeHash": "683b881f94e473c9399c5eb5f7449fc7c0fa6c7118f7538c978a01ca06caec94",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 56 Part 5 — Masterclass Synthesis: Bidirectional Cloud Digital Twin Synchronization Engine",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Initialize CloudDigitalTwinSynchronizationEngine: Bind CNC milling machine twin core.",
+            "registerName": "TWIN_MASTER_ENGINE_REG",
+            "bitWidth": 8,
+            "hexValue": "0x81",
+            "decimalValue": 129,
+            "maskApplied": "0x81",
+            "bits": [
+              {
+                "index": 7,
+                "name": "TWIN_ENGINE_CERTIFIED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "TOKEN_LATCH_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "MULTI_CLOUD_BRIDGE_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "DELTA_ZERO_VERIFIED",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "CLOSED_LOOP_ACTUATE",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "CONCURRENCY_GUARD_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "CLOUD_DESIRED_INGEST",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "TWIN_MASTER_INIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Execute cloud directive: Accelerate spindle from 1500 to 3200 RPM and advance twin to Version 3.",
+            "registerName": "TWIN_MASTER_ENGINE_REG",
+            "bitWidth": 8,
+            "hexValue": "0xDF",
+            "decimalValue": 223,
+            "maskApplied": "0xDF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "TWIN_ENGINE_CERTIFIED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "TOKEN_LATCH_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "MULTI_CLOUD_BRIDGE_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "DELTA_ZERO_VERIFIED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "CLOSED_LOOP_ACTUATE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "CONCURRENCY_GUARD_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "CLOUD_DESIRED_INGEST",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "TWIN_MASTER_INIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Block concurrent stale command (version conflict): Increment conflict counter and protect hardware.",
+            "registerName": "TWIN_MASTER_ENGINE_REG",
+            "bitWidth": 8,
+            "hexValue": "0xBF",
+            "decimalValue": 191,
+            "maskApplied": "0xBF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "TWIN_ENGINE_CERTIFIED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "TOKEN_LATCH_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "MULTI_CLOUD_BRIDGE_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "DELTA_ZERO_VERIFIED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "CLOSED_LOOP_ACTUATE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "CONCURRENCY_GUARD_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "CLOUD_DESIRED_INGEST",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "TWIN_MASTER_INIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Verify 100% digital twin synchronization and latch CLOUD_DEVICE_SHADOW_ENGINE_GRADE_A_PLUS_CERTIFIED.",
+            "registerName": "TWIN_MASTER_ENGINE_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "TWIN_ENGINE_CERTIFIED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "TOKEN_LATCH_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "MULTI_CLOUD_BRIDGE_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "DELTA_ZERO_VERIFIED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "CLOSED_LOOP_ACTUATE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "CONCURRENCY_GUARD_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "CLOUD_DESIRED_INGEST",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "TWIN_MASTER_INIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
