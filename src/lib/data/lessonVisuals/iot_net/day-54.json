@@ -1,0 +1,1425 @@
+{
+  "schemaVersion": 1,
+  "prefix": "iot_net",
+  "coursePrefix": "iot_net",
+  "day": 54,
+  "title": "Industrial Ethernet & Time-Sensitive Networking (TSN): 802.1Qbv TAS, 802.1Qbu Preemption & gPTP",
+  "promptSha": "industrial-ethernet-tsn-day54-v2",
+  "model": "gpt-4o",
+  "codeHash": "646fc9c8b7237d17f91d70be987aace4d07aeba9549539132e5b747e170f90f0",
+  "spec": {
+    "template": "register-bits"
+  },
+  "entries": [
+    {
+      "partTitle": "IEEE 802.1Qbv Time-Aware Shaper (TAS) & Gate Control Lists (GCL)",
+      "codeHash": "646fc9c8b7237d17f91d70be987aace4d07aeba9549539132e5b747e170f90f0",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 54 Part 1 — IEEE 802.1Qbv Time-Aware Shaper (TAS) & Gate Control Lists (GCL)",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Initialize 802.1Qbv TAS scheduler: Program 1000 us cycle time across 8 priority queues.",
+            "registerName": "TSN_TAS_GCL_SCHED_REG",
+            "bitWidth": 8,
+            "hexValue": "0x81",
+            "decimalValue": 129,
+            "maskApplied": "0x81",
+            "bits": [
+              {
+                "index": 7,
+                "name": "TAS_SCHED_VALID",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "OVERRUN_PREVENT",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "EPOCH_TICK_SYNC",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "TIME_SLICE_MATCH",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "GUARD_BAND_EN",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "GATE_BE_OPEN",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "GATE_EXPRESS_OPEN",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "GCL_CYCLE_ACTIVE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Activate Express time slice (0-300 us): Open gates for TC7/TC6 and close best-effort.",
+            "registerName": "TSN_TAS_GCL_SCHED_REG",
+            "bitWidth": 8,
+            "hexValue": "0xCF",
+            "decimalValue": 207,
+            "maskApplied": "0xCF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "TAS_SCHED_VALID",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "OVERRUN_PREVENT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "EPOCH_TICK_SYNC",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "TIME_SLICE_MATCH",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "GUARD_BAND_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "GATE_BE_OPEN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "GATE_EXPRESS_OPEN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "GCL_CYCLE_ACTIVE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Engage administrative Guard Band at offset 800 us: Block low-priority transmission overruns.",
+            "registerName": "TSN_TAS_GCL_SCHED_REG",
+            "bitWidth": 8,
+            "hexValue": "0xBF",
+            "decimalValue": 191,
+            "maskApplied": "0xBF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "TAS_SCHED_VALID",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "OVERRUN_PREVENT",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "EPOCH_TICK_SYNC",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "TIME_SLICE_MATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "GUARD_BAND_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "GATE_BE_OPEN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "GATE_EXPRESS_OPEN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "GCL_CYCLE_ACTIVE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Verify zero queue delay for servo torque frame and complete isolation of background telemetry.",
+            "registerName": "TSN_TAS_GCL_SCHED_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "TAS_SCHED_VALID",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "OVERRUN_PREVENT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "EPOCH_TICK_SYNC",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "TIME_SLICE_MATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "GUARD_BAND_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "GATE_BE_OPEN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "GATE_EXPRESS_OPEN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "GCL_CYCLE_ACTIVE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "IEEE 802.1Qbu & 802.3br Frame Preemption & mPacket Framing",
+      "codeHash": "bb5dc8587e2b9d44640569f01d9fefe0f5a10e999def1f5e9670818a6e45286a",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 54 Part 2 — IEEE 802.1Qbu & 802.3br Frame Preemption & mPacket Framing",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Detect arrival of express emergency-stop frame while pMAC is serializing bulk telemetry.",
+            "registerName": "TSN_FRAME_PREEMPT_REG",
+            "bitWidth": 8,
+            "hexValue": "0xC0",
+            "decimalValue": 192,
+            "maskApplied": "0xC0",
+            "bits": [
+              {
+                "index": 7,
+                "name": "PREEMPT_PASS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "REASSEMBLY_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "RESUME_MAC_TX",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "FRAG_CRC_CHECK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "MPACKET_FRAG_START",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "HOLD_MAC_TX",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "EXPRESS_DETECT",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "PREEMPT_ACTIVE",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Preempt pMAC transmission: Terminate initial fragment with SMD-S0 and 32-bit mCRC checksum.",
+            "registerName": "TSN_FRAME_PREEMPT_REG",
+            "bitWidth": 8,
+            "hexValue": "0xDF",
+            "decimalValue": 223,
+            "maskApplied": "0xDF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "PREEMPT_PASS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "REASSEMBLY_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "RESUME_MAC_TX",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "FRAG_CRC_CHECK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "MPACKET_FRAG_START",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "HOLD_MAC_TX",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "EXPRESS_DETECT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "PREEMPT_ACTIVE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Transmit express frame using SMD-E delimiter with sub-100ns MAC Merge switching latency.",
+            "registerName": "TSN_FRAME_PREEMPT_REG",
+            "bitWidth": 8,
+            "hexValue": "0xEF",
+            "decimalValue": 239,
+            "maskApplied": "0xEF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "PREEMPT_PASS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "REASSEMBLY_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "RESUME_MAC_TX",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "FRAG_CRC_CHECK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "MPACKET_FRAG_START",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "HOLD_MAC_TX",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "EXPRESS_DETECT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "PREEMPT_ACTIVE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Resume remaining 120 bytes using SMD-C0: Receiver verifies seamless bit-perfect reassembly.",
+            "registerName": "TSN_FRAME_PREEMPT_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "PREEMPT_PASS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "REASSEMBLY_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "RESUME_MAC_TX",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "FRAG_CRC_CHECK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "MPACKET_FRAG_START",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "HOLD_MAC_TX",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "EXPRESS_DETECT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "PREEMPT_ACTIVE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "IEEE 802.1AS Generalized Precision Time Protocol (gPTP) Clock Synchronization",
+      "codeHash": "16954303c857663c13f81b8e859c20c81b634694128bf0a4589b8f468bd442d1",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 54 Part 3 — IEEE 802.1AS Generalized Precision Time Protocol (gPTP) Clock Synchronization",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Enable gPTP port engine: Lock to Grandmaster clock source via Best Master Clock Algorithm.",
+            "registerName": "TSN_GPTP_SYNC_REG",
+            "bitWidth": 8,
+            "hexValue": "0xC1",
+            "decimalValue": 193,
+            "maskApplied": "0xC1",
+            "bits": [
+              {
+                "index": 7,
+                "name": "AS_SYNC_CONVERGED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "SUB_US_OFFSET_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "FOLLOW_UP_LATCH",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "PROP_DELAY_COMP",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "PDELAY_RESP_RCVD",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "PDELAY_REQ_SENT",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "GRANDMASTER_LOCK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "GPTP_PORT_ENABLE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Exchange Pdelay_Req and Pdelay_Resp frames: Latch nanosecond hardware MII timestamps t1-t4.",
+            "registerName": "TSN_GPTP_SYNC_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFD",
+            "decimalValue": 253,
+            "maskApplied": "0xFD",
+            "bits": [
+              {
+                "index": 7,
+                "name": "AS_SYNC_CONVERGED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "SUB_US_OFFSET_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "FOLLOW_UP_LATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "PROP_DELAY_COMP",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "PDELAY_RESP_RCVD",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "PDELAY_REQ_SENT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "GRANDMASTER_LOCK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "GPTP_PORT_ENABLE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Calculate peer link propagation delay: Compensate for 460.0 ns fiber transit delay.",
+            "registerName": "TSN_GPTP_SYNC_REG",
+            "bitWidth": 8,
+            "hexValue": "0xBF",
+            "decimalValue": 191,
+            "maskApplied": "0xBF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "AS_SYNC_CONVERGED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "SUB_US_OFFSET_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "FOLLOW_UP_LATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "PROP_DELAY_COMP",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "PDELAY_RESP_RCVD",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "PDELAY_REQ_SENT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "GRANDMASTER_LOCK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "GPTP_PORT_ENABLE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Apply Follow_Up drift correction: Lock local bridge clock with sub-100ns deterministic jitter.",
+            "registerName": "TSN_GPTP_SYNC_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "AS_SYNC_CONVERGED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "SUB_US_OFFSET_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "FOLLOW_UP_LATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "PROP_DELAY_COMP",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "PDELAY_RESP_RCVD",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "PDELAY_REQ_SENT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "GRANDMASTER_LOCK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "GPTP_PORT_ENABLE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Industrial Ethernet Protocols: PROFINET Real-Time (RT) & EtherNet/IP CIP Framing",
+      "codeHash": "7bcb004b932cbf1800ccc93eb42ab43d1276555bab3ac54d61ec8e7b82d200aa",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 54 Part 4 — Industrial Ethernet Protocols: PROFINET Real-Time (RT) & EtherNet/IP CIP Framing",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Enable Layer 2 PROFINET RT engine: Bind dedicated Ethernet frame parser to EtherType 0x8892.",
+            "registerName": "TSN_PROFINET_RT_REG",
+            "bitWidth": 8,
+            "hexValue": "0xC1",
+            "decimalValue": 193,
+            "maskApplied": "0xC1",
+            "bits": [
+              {
+                "index": 7,
+                "name": "IND_ETHERNET_PASS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "IO_CONTROLLER_SYNC",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "ENCAP_CMD_MATCH",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "ETHERNET_IP_CIP",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "DATA_STATUS_VALID",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "CYCLE_COUNTER_INC",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "ETHERTYPE_8892_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "PROFINET_RT_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Unpack FrameID 0x8001: Extract 43 bytes of real-time drive speed and torque telemetry.",
+            "registerName": "TSN_PROFINET_RT_REG",
+            "bitWidth": 8,
+            "hexValue": "0xDF",
+            "decimalValue": 223,
+            "maskApplied": "0xDF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "IND_ETHERNET_PASS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "IO_CONTROLLER_SYNC",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "ENCAP_CMD_MATCH",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "ETHERNET_IP_CIP",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "DATA_STATUS_VALID",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "CYCLE_COUNTER_INC",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "ETHERTYPE_8892_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "PROFINET_RT_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Validate DataStatus byte (0x35): Confirm primary provider status and active PLC Run mode.",
+            "registerName": "TSN_PROFINET_RT_REG",
+            "bitWidth": 8,
+            "hexValue": "0xEF",
+            "decimalValue": 239,
+            "maskApplied": "0xEF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "IND_ETHERNET_PASS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "IO_CONTROLLER_SYNC",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "ENCAP_CMD_MATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "ETHERNET_IP_CIP",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "DATA_STATUS_VALID",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "CYCLE_COUNTER_INC",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "ETHERTYPE_8892_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "PROFINET_RT_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Bridge cyclic I/O into TSN scheduled queue: Verify deterministic delivery in under 1 millisecond.",
+            "registerName": "TSN_PROFINET_RT_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "IND_ETHERNET_PASS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "IO_CONTROLLER_SYNC",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "ENCAP_CMD_MATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "ETHERNET_IP_CIP",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "DATA_STATUS_VALID",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "CYCLE_COUNTER_INC",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "ETHERTYPE_8892_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "PROFINET_RT_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Masterclass Synthesis: Deterministic TSN Switch Simulator & Verification Token",
+      "codeHash": "5e3f6e2a40ddba0f0863509942f5e89735cc45c368db5709e3e3c00cc994f74a",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 54 Part 5 — Masterclass Synthesis: Deterministic TSN Switch Simulator & Verification Token",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Initialize DeterministicTsnSwitchEngine: Align local clock to Grandmaster with -210 ns offset.",
+            "registerName": "TSN_MASTER_ENGINE_REG",
+            "bitWidth": 8,
+            "hexValue": "0x91",
+            "decimalValue": 145,
+            "maskApplied": "0x91",
+            "bits": [
+              {
+                "index": 7,
+                "name": "TSN_CERTIFIED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "TOKEN_LATCH_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "DETERMINISTIC_PASS",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "PROFINET_FRAME_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "GPTP_CLOCK_DISC",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "PREEMPT_ENGINE_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "GCL_SCHEDULE_RUN",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "TSN_MASTER_INIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Load GCL schedule: Allocate express robot slot, best-effort window, and 150 us guard band.",
+            "registerName": "TSN_MASTER_ENGINE_REG",
+            "bitWidth": 8,
+            "hexValue": "0xDF",
+            "decimalValue": 223,
+            "maskApplied": "0xDF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "TSN_CERTIFIED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "TOKEN_LATCH_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "DETERMINISTIC_PASS",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "PROFINET_FRAME_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "GPTP_CLOCK_DISC",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "PREEMPT_ENGINE_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "GCL_SCHEDULE_RUN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "TSN_MASTER_INIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Execute mixed traffic stream: Pass express frame, route PROFINET RT, and block guard-band burst.",
+            "registerName": "TSN_MASTER_ENGINE_REG",
+            "bitWidth": 8,
+            "hexValue": "0xBF",
+            "decimalValue": 191,
+            "maskApplied": "0xBF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "TSN_CERTIFIED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "TOKEN_LATCH_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "DETERMINISTIC_PASS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "PROFINET_FRAME_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "GPTP_CLOCK_DISC",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "PREEMPT_ENGINE_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "GCL_SCHEDULE_RUN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "TSN_MASTER_INIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Verify zero packet drops for control loops and latch TSN_DETERMINISTIC_NETWORK_ENGINE_GRADE_A_PLUS_CERTIFIED.",
+            "registerName": "TSN_MASTER_ENGINE_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "TSN_CERTIFIED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "TOKEN_LATCH_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "DETERMINISTIC_PASS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "PROFINET_FRAME_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "GPTP_CLOCK_DISC",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "PREEMPT_ENGINE_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "GCL_SCHEDULE_RUN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "TSN_MASTER_INIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
