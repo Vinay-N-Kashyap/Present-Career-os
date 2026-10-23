@@ -1,0 +1,1425 @@
+{
+  "schemaVersion": 1,
+  "prefix": "iot_net",
+  "coursePrefix": "iot_net",
+  "day": 45,
+  "title": "🏆 Milestone 9 Capstone: LoRaWAN Network Server & ADR Simulation Engine",
+  "promptSha": "lorawan-lns-adr-capstone-day45-v2",
+  "model": "gpt-4o",
+  "codeHash": "2899454ed8b4fedee168bf5a70461e453862984279f59af08ebd5d5d2090da14",
+  "spec": {
+    "template": "register-bits"
+  },
+  "entries": [
+    {
+      "partTitle": "Multi-Gateway Concentrator Array & Packet Forwarder Ingestion Pipeline",
+      "codeHash": "2899454ed8b4fedee168bf5a70461e453862984279f59af08ebd5d5d2090da14",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 45 Part 1 — Multi-Gateway Concentrator Array & Packet Forwarder Ingestion Pipeline",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Initialize multi-channel concentrator front-end: Enable 8 parallel IF channels and calibrate thermal noise floor.",
+            "registerName": "LORA_CAPSTONE_INGEST_REG",
+            "bitWidth": 8,
+            "hexValue": "0xC0",
+            "decimalValue": 192,
+            "maskApplied": "0xC0",
+            "bits": [
+              {
+                "index": 7,
+                "name": "INGEST_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "METRIC_CAPTURE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "BACKHAUL_UDP",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "TIMESTAMP_SYNC",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "BUFFER_ALLOC",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "BURST_DETECT",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "MULTI_CHAN_RX",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "CONCENTRATOR_EN",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Ingest multi-gateway RF wavefronts across Amsterdam topology: Latch arrival timestamps and compute log-distance path loss.",
+            "registerName": "LORA_CAPSTONE_INGEST_REG",
+            "bitWidth": 8,
+            "hexValue": "0xF0",
+            "decimalValue": 240,
+            "maskApplied": "0xF0",
+            "bits": [
+              {
+                "index": 7,
+                "name": "INGEST_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "METRIC_CAPTURE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "BACKHAUL_UDP",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "TIMESTAMP_SYNC",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "BUFFER_ALLOC",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "BURST_DETECT",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "MULTI_CHAN_RX",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "CONCENTRATOR_EN",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Package demodulated frames into Semtech UDP PUSH_DATA datagrams with per-gateway RSSI and SNR telemetry.",
+            "registerName": "LORA_CAPSTONE_INGEST_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFC",
+            "decimalValue": 252,
+            "maskApplied": "0xFC",
+            "bits": [
+              {
+                "index": 7,
+                "name": "INGEST_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "METRIC_CAPTURE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "BACKHAUL_UDP",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "TIMESTAMP_SYNC",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "BUFFER_ALLOC",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "BURST_DETECT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "MULTI_CHAN_RX",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "CONCENTRATOR_EN",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Commit metropolitan gateway roster and arm statutory duty-cycle monitoring across all base stations.",
+            "registerName": "LORA_CAPSTONE_INGEST_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "INGEST_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "METRIC_CAPTURE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "BACKHAUL_UDP",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "TIMESTAMP_SYNC",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "BUFFER_ALLOC",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "BURST_DETECT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "MULTI_CHAN_RX",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "CONCENTRATOR_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Radio Frequency Collision Modeling & Quasi-Orthogonal Demodulation",
+      "codeHash": "913e4a644b5830287d52759dd9926d2964f270ca8f99b1a05b9feba841179bba",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 45 Part 2 — Radio Frequency Collision Modeling & Quasi-Orthogonal Demodulation",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Detect overlapping transmissions in time and frequency: Evaluate Spreading Factor alignment across colliding frames.",
+            "registerName": "LORA_CAPSTONE_COLLISION_REG",
+            "bitWidth": 8,
+            "hexValue": "0xC0",
+            "decimalValue": 192,
+            "maskApplied": "0xC0",
+            "bits": [
+              {
+                "index": 7,
+                "name": "COLLISION_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "SIR_MARGIN_LOCK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "PACKET_DISCARD",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "DEMOD_SUCCESS",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "POWER_DELTA_EVAL",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "QUASI_ORTHO_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "CO_CHAN_CAPTURE",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "AIRTIME_COLLIDE",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Evaluate Co-Channel Capture Effect: Confirm 9.0 dB power delta exceeds 6.0 dB SIR threshold to demodulate dominant packet.",
+            "registerName": "LORA_CAPSTONE_COLLISION_REG",
+            "bitWidth": 8,
+            "hexValue": "0xD4",
+            "decimalValue": 212,
+            "maskApplied": "0xD4",
+            "bits": [
+              {
+                "index": 7,
+                "name": "COLLISION_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "SIR_MARGIN_LOCK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "PACKET_DISCARD",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "DEMOD_SUCCESS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "POWER_DELTA_EVAL",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "QUASI_ORTHO_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "CO_CHAN_CAPTURE",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "AIRTIME_COLLIDE",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Evaluate Cross-SF Quasi-Orthogonality: Verify 16 dB inter-SF isolation allows concurrent demodulation of SF7 and SF10.",
+            "registerName": "LORA_CAPSTONE_COLLISION_REG",
+            "bitWidth": 8,
+            "hexValue": "0xDC",
+            "decimalValue": 220,
+            "maskApplied": "0xDC",
+            "bits": [
+              {
+                "index": 7,
+                "name": "COLLISION_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "SIR_MARGIN_LOCK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "PACKET_DISCARD",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "DEMOD_SUCCESS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "POWER_DELTA_EVAL",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "QUASI_ORTHO_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "CO_CHAN_CAPTURE",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "AIRTIME_COLLIDE",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Commit collision arbitration outcomes and discard annihilated frames failing CRC integrity checks.",
+            "registerName": "LORA_CAPSTONE_COLLISION_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "COLLISION_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "SIR_MARGIN_LOCK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "PACKET_DISCARD",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "DEMOD_SUCCESS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "POWER_DELTA_EVAL",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "QUASI_ORTHO_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "CO_CHAN_CAPTURE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "AIRTIME_COLLIDE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Multi-Tenant OTAA Session Management & Dual-Key Zero-Trust Cryptography",
+      "codeHash": "a00fcf03c6fdf6e84726d60e57f7cce67047e98de931064a2fe5a573945f4e3b",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 45 Part 3 — Multi-Tenant OTAA Session Management & Dual-Key Zero-Trust Cryptography",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Process OTAA Join-Request: Enforce strictly monotonic DevNonce tracking to permanently eliminate replay attacks.",
+            "registerName": "LORA_CAPSTONE_SESSION_REG",
+            "bitWidth": 8,
+            "hexValue": "0xC0",
+            "decimalValue": 192,
+            "maskApplied": "0xC0",
+            "bits": [
+              {
+                "index": 7,
+                "name": "SESSION_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "ANTI_REPLAY_LOK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "FCNT_ROLLOVER",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "APP_KEY_STORE",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "NWK_KEY_STORE",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "JS_DERIVATION",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "DEVNONCE_MONO",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "OTAA_ROSTER_EN",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Execute Join Server session derivation: Generate decoupled NwkSKey (routing) and AppSKey (confidentiality).",
+            "registerName": "LORA_CAPSTONE_SESSION_REG",
+            "bitWidth": 8,
+            "hexValue": "0xF8",
+            "decimalValue": 248,
+            "maskApplied": "0xF8",
+            "bits": [
+              {
+                "index": 7,
+                "name": "SESSION_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "ANTI_REPLAY_LOK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "FCNT_ROLLOVER",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "APP_KEY_STORE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "NWK_KEY_STORE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "JS_DERIVATION",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "DEVNONCE_MONO",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "OTAA_ROSTER_EN",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Arm 32-bit Frame Counter sequencer with AES-CTR stream encryption and AES-CMAC integrity signing.",
+            "registerName": "LORA_CAPSTONE_SESSION_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFC",
+            "decimalValue": 252,
+            "maskApplied": "0xFC",
+            "bits": [
+              {
+                "index": 7,
+                "name": "SESSION_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "ANTI_REPLAY_LOK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "FCNT_ROLLOVER",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "APP_KEY_STORE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "NWK_KEY_STORE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "JS_DERIVATION",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "DEVNONCE_MONO",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "OTAA_ROSTER_EN",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Commit activated endpoint session into multi-tenant cloud routing tables with zero-trust privilege isolation.",
+            "registerName": "LORA_CAPSTONE_SESSION_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "SESSION_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "ANTI_REPLAY_LOK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "FCNT_ROLLOVER",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "APP_KEY_STORE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "NWK_KEY_STORE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "JS_DERIVATION",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "DEVNONCE_MONO",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "OTAA_ROSTER_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Dynamic Server-Side ADR Convergence & Gateway Duty-Cycle Arbitration",
+      "codeHash": "1bc971ba62e2d93eee944fa56700f479b1b3afcfcbc23445041e184b8dacb162",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 45 Part 4 — Dynamic Server-Side ADR Convergence & Gateway Duty-Cycle Arbitration",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Accumulate 20-frame observation history: Extract maximum reported demodulation SNR across multi-gateway paths.",
+            "registerName": "LORA_CAPSTONE_ADR_REG",
+            "bitWidth": 8,
+            "hexValue": "0xC0",
+            "decimalValue": 192,
+            "maskApplied": "0xC0",
+            "bits": [
+              {
+                "index": 7,
+                "name": "ADR_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "LINK_ADR_DISPATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "GW_DC_AUDITED",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "TXPWR_THROTTLED",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "DR_OPTIMIZED",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "MARGIN_3DB_STEP",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "SNR_MULTI_GW",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "ADR_LOOP_EN",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Calculate +17.5 dB SNR margin: Execute Stage 1 to elevate data rate from DR0 (SF12) to DR5 (SF7).",
+            "registerName": "LORA_CAPSTONE_ADR_REG",
+            "bitWidth": 8,
+            "hexValue": "0xF8",
+            "decimalValue": 248,
+            "maskApplied": "0xF8",
+            "bits": [
+              {
+                "index": 7,
+                "name": "ADR_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "LINK_ADR_DISPATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "GW_DC_AUDITED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "TXPWR_THROTTLED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "DR_OPTIMIZED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "MARGIN_3DB_STEP",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "SNR_MULTI_GW",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "ADR_LOOP_EN",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Execute Stage 2: Throttle transmit power amplifier to +11 dBm and arbitrate gateway duty-cycle headroom.",
+            "registerName": "LORA_CAPSTONE_ADR_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFC",
+            "decimalValue": 252,
+            "maskApplied": "0xFC",
+            "bits": [
+              {
+                "index": 7,
+                "name": "ADR_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "LINK_ADR_DISPATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "GW_DC_AUDITED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "TXPWR_THROTTLED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "DR_OPTIMIZED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "MARGIN_3DB_STEP",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "SNR_MULTI_GW",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "ADR_LOOP_EN",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Dispatch LinkADRReq downlink through GW_ALPHA, compressing packet airtime by 95.3% while preserving ETSI compliance.",
+            "registerName": "LORA_CAPSTONE_ADR_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "ADR_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "LINK_ADR_DISPATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "GW_DC_AUDITED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "TXPWR_THROTTLED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "DR_OPTIMIZED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "MARGIN_3DB_STEP",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "SNR_MULTI_GW",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "ADR_LOOP_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Masterclass Synthesis: The Complete LoRaWAN Network Server & ADR Engine",
+      "codeHash": "dd99ca5632f23f7943da6a24417117e7ed4d35096a283e6a1e9eca06e3a4839c",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 45 Part 5 — Masterclass Synthesis: The Complete LoRaWAN Network Server & ADR Engine",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Initialize LoRaWANCapstoneMasterEngine: Orchestrate multi-gateway concentrators, security, and ADR pipelines.",
+            "registerName": "LORA_CAPSTONE_MASTER_REG",
+            "bitWidth": 8,
+            "hexValue": "0xC0",
+            "decimalValue": 192,
+            "maskApplied": "0xC0",
+            "bits": [
+              {
+                "index": 7,
+                "name": "CERT_V45_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "DOWNLINK_LOCKED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "AIRTIME_COMPLIANT",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "ADR_CONVERGED",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "COLLISION_RESOLVED",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "DEDUP_ACTIVE",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "FLEET_JOINED",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "LNS_ENGINE_INIT",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Execute 25-cycle metropolitan fleet simulation: Ingest 75 datagrams and deduplicate to 25 unique frames.",
+            "registerName": "LORA_CAPSTONE_MASTER_REG",
+            "bitWidth": 8,
+            "hexValue": "0xF0",
+            "decimalValue": 240,
+            "maskApplied": "0xF0",
+            "bits": [
+              {
+                "index": 7,
+                "name": "CERT_V45_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "DOWNLINK_LOCKED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "AIRTIME_COMPLIANT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "ADR_CONVERGED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "COLLISION_RESOLVED",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "DEDUP_ACTIVE",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "FLEET_JOINED",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "LNS_ENGINE_INIT",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Trigger closed-loop ADR convergence: Collapse airtime from 1,318.91 ms to 61.70 ms across all active nodes.",
+            "registerName": "LORA_CAPSTONE_MASTER_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFC",
+            "decimalValue": 252,
+            "maskApplied": "0xFC",
+            "bits": [
+              {
+                "index": 7,
+                "name": "CERT_V45_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "DOWNLINK_LOCKED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "AIRTIME_COMPLIANT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "ADR_CONVERGED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "COLLISION_RESOLVED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "DEDUP_ACTIVE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "FLEET_JOINED",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "LNS_ENGINE_INIT",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Emit enterprise milestone token LORAWAN_NETWORK_SERVER_ENGINE_GRADE_A_PLUS_CERTIFIED and finalize Block 9.",
+            "registerName": "LORA_CAPSTONE_MASTER_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "CERT_V45_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "DOWNLINK_LOCKED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "AIRTIME_COMPLIANT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "ADR_CONVERGED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "COLLISION_RESOLVED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "DEDUP_ACTIVE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "FLEET_JOINED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "LNS_ENGINE_INIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
