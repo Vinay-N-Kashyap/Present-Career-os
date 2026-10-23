@@ -1,0 +1,1532 @@
+{
+  "schemaVersion": 1,
+  "prefix": "iot_net",
+  "coursePrefix": "iot_net",
+  "day": 38,
+  "title": "Day 38: Sub-GHz Long-Range Mesh: Wi-SUN Field Area Networks & IEEE 802.15.4g/4e",
+  "promptSha": "1ba08c46e4fb7316fa82c546701ed159dfb115e6bba98a8922904cda59226ea1",
+  "model": "anthropic/claude-3.5-sonnet",
+  "codeHash": "db0fe847216604035e28deaac55ef1325ac542cad20be07e9a5c9fdf19750f20",
+  "spec": {
+    "template": "register-bits",
+    "title": "Day 38 Part 1 - Wi-SUN Field Area Network (FAN) ",
+    "steps": [
+      {
+        "at": "say1",
+        "step": "say1",
+        "caption": "Step 1: Initialize FIELD_AREA_REG for Wi-SUN Field Area Network (FAN) .",
+        "registerName": "FIELD_AREA_REG",
+        "bitWidth": 8,
+        "hexValue": "0x80",
+        "decimalValue": 128,
+        "maskApplied": "1 << 7",
+        "bits": [
+          {
+            "index": 7,
+            "name": "FIELD",
+            "value": 1,
+            "tone": "ok",
+            "highlighted": true
+          },
+          {
+            "index": 6,
+            "name": "AREA",
+            "value": 0,
+            "tone": "idle"
+          },
+          {
+            "index": 5,
+            "name": "NETWORK",
+            "value": 0,
+            "tone": "idle"
+          },
+          {
+            "index": 4,
+            "name": "ARCHITEC",
+            "value": 0,
+            "tone": "idle"
+          },
+          {
+            "index": 3,
+            "name": "IEEE",
+            "value": 0,
+            "tone": "idle"
+          },
+          {
+            "index": 2,
+            "name": "WELCOME",
+            "value": 0,
+            "tone": "idle"
+          },
+          {
+            "index": 1,
+            "name": "COURSE",
+            "value": 0,
+            "tone": "idle"
+          },
+          {
+            "index": 0,
+            "name": "WIRELESS",
+            "value": 0,
+            "tone": "idle"
+          }
+        ]
+      },
+      {
+        "at": "say2",
+        "step": "say2",
+        "caption": "Step 2: Configure operational bitfields in FIELD_AREA_REG.",
+        "registerName": "FIELD_AREA_REG",
+        "bitWidth": 8,
+        "hexValue": "0xE0",
+        "decimalValue": 224,
+        "maskApplied": "0xE0",
+        "bits": [
+          {
+            "index": 7,
+            "name": "FIELD",
+            "value": 1,
+            "tone": "accent"
+          },
+          {
+            "index": 6,
+            "name": "AREA",
+            "value": 1,
+            "tone": "accent"
+          },
+          {
+            "index": 5,
+            "name": "NETWORK",
+            "value": 1,
+            "tone": "accent",
+            "highlighted": true
+          },
+          {
+            "index": 4,
+            "name": "ARCHITEC",
+            "value": 0,
+            "tone": "idle"
+          },
+          {
+            "index": 3,
+            "name": "IEEE",
+            "value": 0,
+            "tone": "idle"
+          },
+          {
+            "index": 2,
+            "name": "WELCOME",
+            "value": 0,
+            "tone": "idle"
+          },
+          {
+            "index": 1,
+            "name": "COURSE",
+            "value": 0,
+            "tone": "idle"
+          },
+          {
+            "index": 0,
+            "name": "WIRELESS",
+            "value": 0,
+            "tone": "idle"
+          }
+        ]
+      },
+      {
+        "at": "example",
+        "step": "example",
+        "caption": "Step 3: Execute frame & verify state in FIELD_AREA_REG.",
+        "registerName": "FIELD_AREA_REG",
+        "bitWidth": 8,
+        "hexValue": "0xF6",
+        "decimalValue": 246,
+        "maskApplied": "0xF6",
+        "bits": [
+          {
+            "index": 7,
+            "name": "FIELD",
+            "value": 1,
+            "tone": "warn"
+          },
+          {
+            "index": 6,
+            "name": "AREA",
+            "value": 1,
+            "tone": "warn"
+          },
+          {
+            "index": 5,
+            "name": "NETWORK",
+            "value": 1,
+            "tone": "warn"
+          },
+          {
+            "index": 4,
+            "name": "ARCHITEC",
+            "value": 1,
+            "tone": "warn"
+          },
+          {
+            "index": 3,
+            "name": "IEEE",
+            "value": 0,
+            "tone": "idle"
+          },
+          {
+            "index": 2,
+            "name": "WELCOME",
+            "value": 1,
+            "tone": "warn"
+          },
+          {
+            "index": 1,
+            "name": "COURSE",
+            "value": 1,
+            "tone": "warn",
+            "highlighted": true
+          },
+          {
+            "index": 0,
+            "name": "WIRELESS",
+            "value": 0,
+            "tone": "idle"
+          }
+        ]
+      },
+      {
+        "at": "tryIt",
+        "step": "tryIt",
+        "caption": "Step 4: Commit verified output in FIELD_AREA_REG.",
+        "registerName": "FIELD_AREA_REG",
+        "bitWidth": 8,
+        "hexValue": "0xFF",
+        "decimalValue": 255,
+        "maskApplied": "0xFF",
+        "bits": [
+          {
+            "index": 7,
+            "name": "FIELD",
+            "value": 1,
+            "tone": "ok"
+          },
+          {
+            "index": 6,
+            "name": "AREA",
+            "value": 1,
+            "tone": "ok"
+          },
+          {
+            "index": 5,
+            "name": "NETWORK",
+            "value": 1,
+            "tone": "ok"
+          },
+          {
+            "index": 4,
+            "name": "ARCHITEC",
+            "value": 1,
+            "tone": "ok"
+          },
+          {
+            "index": 3,
+            "name": "IEEE",
+            "value": 1,
+            "tone": "ok"
+          },
+          {
+            "index": 2,
+            "name": "WELCOME",
+            "value": 1,
+            "tone": "ok"
+          },
+          {
+            "index": 1,
+            "name": "COURSE",
+            "value": 1,
+            "tone": "ok"
+          },
+          {
+            "index": 0,
+            "name": "WIRELESS",
+            "value": 1,
+            "tone": "ok",
+            "highlighted": true
+          }
+        ]
+      }
+    ]
+  },
+  "entries": [
+    {
+      "partTitle": "Wi-SUN Field Area Network (FAN) Architecture & IEEE 802.15.4g Sub-GHz PHY",
+      "codeHash": "db0fe847216604035e28deaac55ef1325ac542cad20be07e9a5c9fdf19750f20",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 38 Part 1 - Wi-SUN Field Area Network (FAN) ",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Step 1: Initialize FIELD_AREA_REG for Wi-SUN Field Area Network (FAN) .",
+            "registerName": "FIELD_AREA_REG",
+            "bitWidth": 8,
+            "hexValue": "0x80",
+            "decimalValue": 128,
+            "maskApplied": "1 << 7",
+            "bits": [
+              {
+                "index": 7,
+                "name": "FIELD",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "AREA",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 5,
+                "name": "NETWORK",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 4,
+                "name": "ARCHITEC",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "IEEE",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "WELCOME",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "COURSE",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "WIRELESS",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Step 2: Configure operational bitfields in FIELD_AREA_REG.",
+            "registerName": "FIELD_AREA_REG",
+            "bitWidth": 8,
+            "hexValue": "0xE0",
+            "decimalValue": 224,
+            "maskApplied": "0xE0",
+            "bits": [
+              {
+                "index": 7,
+                "name": "FIELD",
+                "value": 1,
+                "tone": "accent"
+              },
+              {
+                "index": 6,
+                "name": "AREA",
+                "value": 1,
+                "tone": "accent"
+              },
+              {
+                "index": 5,
+                "name": "NETWORK",
+                "value": 1,
+                "tone": "accent",
+                "highlighted": true
+              },
+              {
+                "index": 4,
+                "name": "ARCHITEC",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "IEEE",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "WELCOME",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "COURSE",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "WIRELESS",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Step 3: Execute frame & verify state in FIELD_AREA_REG.",
+            "registerName": "FIELD_AREA_REG",
+            "bitWidth": 8,
+            "hexValue": "0xF6",
+            "decimalValue": 246,
+            "maskApplied": "0xF6",
+            "bits": [
+              {
+                "index": 7,
+                "name": "FIELD",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 6,
+                "name": "AREA",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 5,
+                "name": "NETWORK",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 4,
+                "name": "ARCHITEC",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 3,
+                "name": "IEEE",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "WELCOME",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 1,
+                "name": "COURSE",
+                "value": 1,
+                "tone": "warn",
+                "highlighted": true
+              },
+              {
+                "index": 0,
+                "name": "WIRELESS",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Step 4: Commit verified output in FIELD_AREA_REG.",
+            "registerName": "FIELD_AREA_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "FIELD",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "AREA",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "NETWORK",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "ARCHITEC",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "IEEE",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "WELCOME",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 1,
+                "name": "COURSE",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 0,
+                "name": "WIRELESS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Time-Slotted Channel Hopping (TSCH): Slotframes, ASN Progression & Jamming Mitigation",
+      "codeHash": "31b7d3791b5b7bfa30a8d02f205afc36d88163c9bc0fa06c2f7bec61505179df",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 38 Part 2 - Time-Slotted Channel Hopping (TS",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Step 1: Initialize TIME_SLOTTED_REG for Time-Slotted Channel Hopping (TS.",
+            "registerName": "TIME_SLOTTED_REG",
+            "bitWidth": 8,
+            "hexValue": "0x80",
+            "decimalValue": 128,
+            "maskApplied": "1 << 7",
+            "bits": [
+              {
+                "index": 7,
+                "name": "TIME",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "SLOTTED",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 5,
+                "name": "CHANNEL",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 4,
+                "name": "HOPPING",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "TSCH",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "SLOTFRAM",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "PROGRESS",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "JAMMING",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Step 2: Configure operational bitfields in TIME_SLOTTED_REG.",
+            "registerName": "TIME_SLOTTED_REG",
+            "bitWidth": 8,
+            "hexValue": "0xE0",
+            "decimalValue": 224,
+            "maskApplied": "0xE0",
+            "bits": [
+              {
+                "index": 7,
+                "name": "TIME",
+                "value": 1,
+                "tone": "accent"
+              },
+              {
+                "index": 6,
+                "name": "SLOTTED",
+                "value": 1,
+                "tone": "accent"
+              },
+              {
+                "index": 5,
+                "name": "CHANNEL",
+                "value": 1,
+                "tone": "accent",
+                "highlighted": true
+              },
+              {
+                "index": 4,
+                "name": "HOPPING",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "TSCH",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "SLOTFRAM",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "PROGRESS",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "JAMMING",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Step 3: Execute frame & verify state in TIME_SLOTTED_REG.",
+            "registerName": "TIME_SLOTTED_REG",
+            "bitWidth": 8,
+            "hexValue": "0xF6",
+            "decimalValue": 246,
+            "maskApplied": "0xF6",
+            "bits": [
+              {
+                "index": 7,
+                "name": "TIME",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 6,
+                "name": "SLOTTED",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 5,
+                "name": "CHANNEL",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 4,
+                "name": "HOPPING",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 3,
+                "name": "TSCH",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "SLOTFRAM",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 1,
+                "name": "PROGRESS",
+                "value": 1,
+                "tone": "warn",
+                "highlighted": true
+              },
+              {
+                "index": 0,
+                "name": "JAMMING",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Step 4: Commit verified output in TIME_SLOTTED_REG.",
+            "registerName": "TIME_SLOTTED_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "TIME",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "SLOTTED",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "CHANNEL",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "HOPPING",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "TSCH",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "SLOTFRAM",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 1,
+                "name": "PROGRESS",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 0,
+                "name": "JAMMING",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Wi-SUN Security & Network Access Control: IEEE 802.1X, EAP-TLS & GTK Key Rotation",
+      "codeHash": "5ba37f7bf59a096e2a3ae6e74cdf8ad7136543d5b20d2b50306dc9c1a6b293a5",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 38 Part 3 - Wi-SUN Security & Network Access",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Step 1: Initialize SECURITY_NETWORK_REG for Wi-SUN Security & Network Access.",
+            "registerName": "SECURITY_NETWORK_REG",
+            "bitWidth": 8,
+            "hexValue": "0x80",
+            "decimalValue": 128,
+            "maskApplied": "1 << 7",
+            "bits": [
+              {
+                "index": 7,
+                "name": "SECURITY",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "NETWORK",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 5,
+                "name": "ACCESS",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 4,
+                "name": "CONTROL",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "IEEE",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "ROTATION",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "BECAUSE",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "FIELD",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Step 2: Configure operational bitfields in SECURITY_NETWORK_REG.",
+            "registerName": "SECURITY_NETWORK_REG",
+            "bitWidth": 8,
+            "hexValue": "0xE0",
+            "decimalValue": 224,
+            "maskApplied": "0xE0",
+            "bits": [
+              {
+                "index": 7,
+                "name": "SECURITY",
+                "value": 1,
+                "tone": "accent"
+              },
+              {
+                "index": 6,
+                "name": "NETWORK",
+                "value": 1,
+                "tone": "accent"
+              },
+              {
+                "index": 5,
+                "name": "ACCESS",
+                "value": 1,
+                "tone": "accent",
+                "highlighted": true
+              },
+              {
+                "index": 4,
+                "name": "CONTROL",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "IEEE",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "ROTATION",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "BECAUSE",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "FIELD",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Step 3: Execute frame & verify state in SECURITY_NETWORK_REG.",
+            "registerName": "SECURITY_NETWORK_REG",
+            "bitWidth": 8,
+            "hexValue": "0xF6",
+            "decimalValue": 246,
+            "maskApplied": "0xF6",
+            "bits": [
+              {
+                "index": 7,
+                "name": "SECURITY",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 6,
+                "name": "NETWORK",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 5,
+                "name": "ACCESS",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 4,
+                "name": "CONTROL",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 3,
+                "name": "IEEE",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "ROTATION",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 1,
+                "name": "BECAUSE",
+                "value": 1,
+                "tone": "warn",
+                "highlighted": true
+              },
+              {
+                "index": 0,
+                "name": "FIELD",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Step 4: Commit verified output in SECURITY_NETWORK_REG.",
+            "registerName": "SECURITY_NETWORK_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "SECURITY",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "NETWORK",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "ACCESS",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "CONTROL",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "IEEE",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "ROTATION",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 1,
+                "name": "BECAUSE",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 0,
+                "name": "FIELD",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "RPL Mesh Routing over Sub-GHz: DODAG Trees, MRHOF & Expected Transmission Count (ETX)",
+      "codeHash": "bfc8aa87d21c55402d3dc3007fc3c238ee6d7c7e5ed24cdf26600a2a8e8dd314",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 38 Part 4 - RPL Mesh Routing over Sub-GHz: D",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Step 1: Initialize MESH_ROUTING_REG for RPL Mesh Routing over Sub-GHz: D.",
+            "registerName": "MESH_ROUTING_REG",
+            "bitWidth": 8,
+            "hexValue": "0x80",
+            "decimalValue": 128,
+            "maskApplied": "1 << 7",
+            "bits": [
+              {
+                "index": 7,
+                "name": "MESH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "ROUTING",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 5,
+                "name": "OVER",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 4,
+                "name": "DODAG",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "TREES",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "MRHOF",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "EXPECTED",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "TRANSMIS",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Step 2: Configure operational bitfields in MESH_ROUTING_REG.",
+            "registerName": "MESH_ROUTING_REG",
+            "bitWidth": 8,
+            "hexValue": "0xE0",
+            "decimalValue": 224,
+            "maskApplied": "0xE0",
+            "bits": [
+              {
+                "index": 7,
+                "name": "MESH",
+                "value": 1,
+                "tone": "accent"
+              },
+              {
+                "index": 6,
+                "name": "ROUTING",
+                "value": 1,
+                "tone": "accent"
+              },
+              {
+                "index": 5,
+                "name": "OVER",
+                "value": 1,
+                "tone": "accent",
+                "highlighted": true
+              },
+              {
+                "index": 4,
+                "name": "DODAG",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "TREES",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "MRHOF",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "EXPECTED",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "TRANSMIS",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Step 3: Execute frame & verify state in MESH_ROUTING_REG.",
+            "registerName": "MESH_ROUTING_REG",
+            "bitWidth": 8,
+            "hexValue": "0xF6",
+            "decimalValue": 246,
+            "maskApplied": "0xF6",
+            "bits": [
+              {
+                "index": 7,
+                "name": "MESH",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 6,
+                "name": "ROUTING",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 5,
+                "name": "OVER",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 4,
+                "name": "DODAG",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 3,
+                "name": "TREES",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "MRHOF",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 1,
+                "name": "EXPECTED",
+                "value": 1,
+                "tone": "warn",
+                "highlighted": true
+              },
+              {
+                "index": 0,
+                "name": "TRANSMIS",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Step 4: Commit verified output in MESH_ROUTING_REG.",
+            "registerName": "MESH_ROUTING_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "MESH",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "ROUTING",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "OVER",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "DODAG",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "TREES",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "MRHOF",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 1,
+                "name": "EXPECTED",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 0,
+                "name": "TRANSMIS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Masterclass Synthesis: Industrial Wi-SUN FAN Multi-Hop Deterministic TSCH Mesh Simulator",
+      "codeHash": "350731d2715816333c72174758414c7b88d75da663dd9a98b512f0f666656835",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 38 Part 5 - Masterclass Synthesis: Industria",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Step 1: Initialize MASTERCLASS_SYNTHESI_REG for Masterclass Synthesis: Industr",
+            "registerName": "MASTERCLASS_SYNTHESI_REG",
+            "bitWidth": 8,
+            "hexValue": "0x80",
+            "decimalValue": 128,
+            "maskApplied": "1 << 7",
+            "bits": [
+              {
+                "index": 7,
+                "name": "MASTERCL",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "SYNTHESI",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 5,
+                "name": "INDUSTRI",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 4,
+                "name": "MULTI",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "DETERMIN",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "TSCH",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "MESH",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "SIMULATO",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Step 2: Configure operational bitfields in MASTERCLASS_SYNTHESI_REG.",
+            "registerName": "MASTERCLASS_SYNTHESI_REG",
+            "bitWidth": 8,
+            "hexValue": "0xE0",
+            "decimalValue": 224,
+            "maskApplied": "0xE0",
+            "bits": [
+              {
+                "index": 7,
+                "name": "MASTERCL",
+                "value": 1,
+                "tone": "accent"
+              },
+              {
+                "index": 6,
+                "name": "SYNTHESI",
+                "value": 1,
+                "tone": "accent"
+              },
+              {
+                "index": 5,
+                "name": "INDUSTRI",
+                "value": 1,
+                "tone": "accent",
+                "highlighted": true
+              },
+              {
+                "index": 4,
+                "name": "MULTI",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "DETERMIN",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "TSCH",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "MESH",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "SIMULATO",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Step 3: Execute frame & verify state in MASTERCLASS_SYNTHESI_REG.",
+            "registerName": "MASTERCLASS_SYNTHESI_REG",
+            "bitWidth": 8,
+            "hexValue": "0xF6",
+            "decimalValue": 246,
+            "maskApplied": "0xF6",
+            "bits": [
+              {
+                "index": 7,
+                "name": "MASTERCL",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 6,
+                "name": "SYNTHESI",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 5,
+                "name": "INDUSTRI",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 4,
+                "name": "MULTI",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 3,
+                "name": "DETERMIN",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "TSCH",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 1,
+                "name": "MESH",
+                "value": 1,
+                "tone": "warn",
+                "highlighted": true
+              },
+              {
+                "index": 0,
+                "name": "SIMULATO",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Step 4: Commit verified output in MASTERCLASS_SYNTHESI_REG.",
+            "registerName": "MASTERCLASS_SYNTHESI_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "MASTERCL",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "SYNTHESI",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "INDUSTRI",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "MULTI",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "DETERMIN",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "TSCH",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 1,
+                "name": "MESH",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 0,
+                "name": "SIMULATO",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

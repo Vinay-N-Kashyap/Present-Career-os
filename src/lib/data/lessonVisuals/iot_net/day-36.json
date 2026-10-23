@@ -1,0 +1,1532 @@
+{
+  "schemaVersion": 1,
+  "prefix": "iot_net",
+  "coursePrefix": "iot_net",
+  "day": 36,
+  "title": "3GPP 5G NR RedCap (Rel-17) & Massive Cellular IoT Edge Architecture",
+  "promptSha": "84f90f565a033df464fd408441c79864adc75ec106c262c71785b65932847122",
+  "model": "anthropic/claude-3.5-sonnet",
+  "codeHash": "2546fe08a150a8b28019c21801a63319018998ff05e2f957b966cfd3dac57dff",
+  "spec": {
+    "template": "register-bits",
+    "title": "Day 36 Part 1 - 5G NR RedCap Architecture, RF Co",
+    "steps": [
+      {
+        "at": "say1",
+        "step": "say1",
+        "caption": "Step 1: Initialize REDCAP_ARCHITEC_REG for 5G NR RedCap Architecture, RF Co.",
+        "registerName": "REDCAP_ARCHITEC_REG",
+        "bitWidth": 8,
+        "hexValue": "0x80",
+        "decimalValue": 128,
+        "maskApplied": "1 << 7",
+        "bits": [
+          {
+            "index": 7,
+            "name": "REDCAP",
+            "value": 1,
+            "tone": "ok",
+            "highlighted": true
+          },
+          {
+            "index": 6,
+            "name": "ARCHITEC",
+            "value": 0,
+            "tone": "idle"
+          },
+          {
+            "index": 5,
+            "name": "COMPLEXI",
+            "value": 0,
+            "tone": "idle"
+          },
+          {
+            "index": 4,
+            "name": "REDUCTIO",
+            "value": 0,
+            "tone": "idle"
+          },
+          {
+            "index": 3,
+            "name": "EMBB",
+            "value": 0,
+            "tone": "idle"
+          },
+          {
+            "index": 2,
+            "name": "MMTC",
+            "value": 0,
+            "tone": "idle"
+          },
+          {
+            "index": 1,
+            "name": "TRADEOFF",
+            "value": 0,
+            "tone": "idle"
+          },
+          {
+            "index": 0,
+            "name": "ROLLOUT",
+            "value": 0,
+            "tone": "idle"
+          }
+        ]
+      },
+      {
+        "at": "say2",
+        "step": "say2",
+        "caption": "Step 2: Configure operational bitfields in REDCAP_ARCHITEC_REG.",
+        "registerName": "REDCAP_ARCHITEC_REG",
+        "bitWidth": 8,
+        "hexValue": "0xE0",
+        "decimalValue": 224,
+        "maskApplied": "0xE0",
+        "bits": [
+          {
+            "index": 7,
+            "name": "REDCAP",
+            "value": 1,
+            "tone": "accent"
+          },
+          {
+            "index": 6,
+            "name": "ARCHITEC",
+            "value": 1,
+            "tone": "accent"
+          },
+          {
+            "index": 5,
+            "name": "COMPLEXI",
+            "value": 1,
+            "tone": "accent",
+            "highlighted": true
+          },
+          {
+            "index": 4,
+            "name": "REDUCTIO",
+            "value": 0,
+            "tone": "idle"
+          },
+          {
+            "index": 3,
+            "name": "EMBB",
+            "value": 0,
+            "tone": "idle"
+          },
+          {
+            "index": 2,
+            "name": "MMTC",
+            "value": 0,
+            "tone": "idle"
+          },
+          {
+            "index": 1,
+            "name": "TRADEOFF",
+            "value": 0,
+            "tone": "idle"
+          },
+          {
+            "index": 0,
+            "name": "ROLLOUT",
+            "value": 0,
+            "tone": "idle"
+          }
+        ]
+      },
+      {
+        "at": "example",
+        "step": "example",
+        "caption": "Step 3: Execute frame & verify state in REDCAP_ARCHITEC_REG.",
+        "registerName": "REDCAP_ARCHITEC_REG",
+        "bitWidth": 8,
+        "hexValue": "0xF6",
+        "decimalValue": 246,
+        "maskApplied": "0xF6",
+        "bits": [
+          {
+            "index": 7,
+            "name": "REDCAP",
+            "value": 1,
+            "tone": "warn"
+          },
+          {
+            "index": 6,
+            "name": "ARCHITEC",
+            "value": 1,
+            "tone": "warn"
+          },
+          {
+            "index": 5,
+            "name": "COMPLEXI",
+            "value": 1,
+            "tone": "warn"
+          },
+          {
+            "index": 4,
+            "name": "REDUCTIO",
+            "value": 1,
+            "tone": "warn"
+          },
+          {
+            "index": 3,
+            "name": "EMBB",
+            "value": 0,
+            "tone": "idle"
+          },
+          {
+            "index": 2,
+            "name": "MMTC",
+            "value": 1,
+            "tone": "warn"
+          },
+          {
+            "index": 1,
+            "name": "TRADEOFF",
+            "value": 1,
+            "tone": "warn",
+            "highlighted": true
+          },
+          {
+            "index": 0,
+            "name": "ROLLOUT",
+            "value": 0,
+            "tone": "idle"
+          }
+        ]
+      },
+      {
+        "at": "tryIt",
+        "step": "tryIt",
+        "caption": "Step 4: Commit verified output in REDCAP_ARCHITEC_REG.",
+        "registerName": "REDCAP_ARCHITEC_REG",
+        "bitWidth": 8,
+        "hexValue": "0xFF",
+        "decimalValue": 255,
+        "maskApplied": "0xFF",
+        "bits": [
+          {
+            "index": 7,
+            "name": "REDCAP",
+            "value": 1,
+            "tone": "ok"
+          },
+          {
+            "index": 6,
+            "name": "ARCHITEC",
+            "value": 1,
+            "tone": "ok"
+          },
+          {
+            "index": 5,
+            "name": "COMPLEXI",
+            "value": 1,
+            "tone": "ok"
+          },
+          {
+            "index": 4,
+            "name": "REDUCTIO",
+            "value": 1,
+            "tone": "ok"
+          },
+          {
+            "index": 3,
+            "name": "EMBB",
+            "value": 1,
+            "tone": "ok"
+          },
+          {
+            "index": 2,
+            "name": "MMTC",
+            "value": 1,
+            "tone": "ok"
+          },
+          {
+            "index": 1,
+            "name": "TRADEOFF",
+            "value": 1,
+            "tone": "ok"
+          },
+          {
+            "index": 0,
+            "name": "ROLLOUT",
+            "value": 1,
+            "tone": "ok",
+            "highlighted": true
+          }
+        ]
+      }
+    ]
+  },
+  "entries": [
+    {
+      "partTitle": "5G NR RedCap Architecture, RF Complexity Reduction & eMBB vs mMTC Tradeoffs",
+      "codeHash": "2546fe08a150a8b28019c21801a63319018998ff05e2f957b966cfd3dac57dff",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 36 Part 1 - 5G NR RedCap Architecture, RF Co",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Step 1: Initialize REDCAP_ARCHITEC_REG for 5G NR RedCap Architecture, RF Co.",
+            "registerName": "REDCAP_ARCHITEC_REG",
+            "bitWidth": 8,
+            "hexValue": "0x80",
+            "decimalValue": 128,
+            "maskApplied": "1 << 7",
+            "bits": [
+              {
+                "index": 7,
+                "name": "REDCAP",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "ARCHITEC",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 5,
+                "name": "COMPLEXI",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 4,
+                "name": "REDUCTIO",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "EMBB",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "MMTC",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "TRADEOFF",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "ROLLOUT",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Step 2: Configure operational bitfields in REDCAP_ARCHITEC_REG.",
+            "registerName": "REDCAP_ARCHITEC_REG",
+            "bitWidth": 8,
+            "hexValue": "0xE0",
+            "decimalValue": 224,
+            "maskApplied": "0xE0",
+            "bits": [
+              {
+                "index": 7,
+                "name": "REDCAP",
+                "value": 1,
+                "tone": "accent"
+              },
+              {
+                "index": 6,
+                "name": "ARCHITEC",
+                "value": 1,
+                "tone": "accent"
+              },
+              {
+                "index": 5,
+                "name": "COMPLEXI",
+                "value": 1,
+                "tone": "accent",
+                "highlighted": true
+              },
+              {
+                "index": 4,
+                "name": "REDUCTIO",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "EMBB",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "MMTC",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "TRADEOFF",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "ROLLOUT",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Step 3: Execute frame & verify state in REDCAP_ARCHITEC_REG.",
+            "registerName": "REDCAP_ARCHITEC_REG",
+            "bitWidth": 8,
+            "hexValue": "0xF6",
+            "decimalValue": 246,
+            "maskApplied": "0xF6",
+            "bits": [
+              {
+                "index": 7,
+                "name": "REDCAP",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 6,
+                "name": "ARCHITEC",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 5,
+                "name": "COMPLEXI",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 4,
+                "name": "REDUCTIO",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 3,
+                "name": "EMBB",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "MMTC",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 1,
+                "name": "TRADEOFF",
+                "value": 1,
+                "tone": "warn",
+                "highlighted": true
+              },
+              {
+                "index": 0,
+                "name": "ROLLOUT",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Step 4: Commit verified output in REDCAP_ARCHITEC_REG.",
+            "registerName": "REDCAP_ARCHITEC_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "REDCAP",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "ARCHITEC",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "COMPLEXI",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "REDUCTIO",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "EMBB",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "MMTC",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 1,
+                "name": "TRADEOFF",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 0,
+                "name": "ROLLOUT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Dynamic Bandwidth Part (BWP) Switching & Energy-Saving RRM Relaxation",
+      "codeHash": "d589d90c0c58c03851c717594270f136f78191803f5d8ebc3816ac63647cadb4",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 36 Part 2 - Dynamic Bandwidth Part (BWP) Swi",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Step 1: Initialize DYNAMIC_BANDWIDT_REG for Dynamic Bandwidth Part (BWP) Swi.",
+            "registerName": "DYNAMIC_BANDWIDT_REG",
+            "bitWidth": 8,
+            "hexValue": "0x80",
+            "decimalValue": 128,
+            "maskApplied": "1 << 7",
+            "bits": [
+              {
+                "index": 7,
+                "name": "DYNAMIC",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "BANDWIDT",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 5,
+                "name": "SWITCHIN",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 4,
+                "name": "ENERGY",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "SAVING",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "RELAXATI",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "WHILE",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "REDUCING",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Step 2: Configure operational bitfields in DYNAMIC_BANDWIDT_REG.",
+            "registerName": "DYNAMIC_BANDWIDT_REG",
+            "bitWidth": 8,
+            "hexValue": "0xE0",
+            "decimalValue": 224,
+            "maskApplied": "0xE0",
+            "bits": [
+              {
+                "index": 7,
+                "name": "DYNAMIC",
+                "value": 1,
+                "tone": "accent"
+              },
+              {
+                "index": 6,
+                "name": "BANDWIDT",
+                "value": 1,
+                "tone": "accent"
+              },
+              {
+                "index": 5,
+                "name": "SWITCHIN",
+                "value": 1,
+                "tone": "accent",
+                "highlighted": true
+              },
+              {
+                "index": 4,
+                "name": "ENERGY",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "SAVING",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "RELAXATI",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "WHILE",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "REDUCING",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Step 3: Execute frame & verify state in DYNAMIC_BANDWIDT_REG.",
+            "registerName": "DYNAMIC_BANDWIDT_REG",
+            "bitWidth": 8,
+            "hexValue": "0xF6",
+            "decimalValue": 246,
+            "maskApplied": "0xF6",
+            "bits": [
+              {
+                "index": 7,
+                "name": "DYNAMIC",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 6,
+                "name": "BANDWIDT",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 5,
+                "name": "SWITCHIN",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 4,
+                "name": "ENERGY",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 3,
+                "name": "SAVING",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "RELAXATI",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 1,
+                "name": "WHILE",
+                "value": 1,
+                "tone": "warn",
+                "highlighted": true
+              },
+              {
+                "index": 0,
+                "name": "REDUCING",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Step 4: Commit verified output in DYNAMIC_BANDWIDT_REG.",
+            "registerName": "DYNAMIC_BANDWIDT_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "DYNAMIC",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "BANDWIDT",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "SWITCHIN",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "ENERGY",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "SAVING",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "RELAXATI",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 1,
+                "name": "WHILE",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 0,
+                "name": "REDUCING",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Half-Duplex FDD (HD-FDD) Architecture & Collision Elimination Guard Periods",
+      "codeHash": "a8bdb0e1521d3e8d65159bf636c13518eb598d4771a612f767634cccf9385994",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 36 Part 3 - Half-Duplex FDD (HD-FDD) Archite",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Step 1: Initialize HALF_DUPLEX_REG for Half-Duplex FDD (HD-FDD) Archite.",
+            "registerName": "HALF_DUPLEX_REG",
+            "bitWidth": 8,
+            "hexValue": "0x80",
+            "decimalValue": 128,
+            "maskApplied": "1 << 7",
+            "bits": [
+              {
+                "index": 7,
+                "name": "HALF",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "DUPLEX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 5,
+                "name": "ARCHITEC",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 4,
+                "name": "COLLISIO",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "ELIMINAT",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "GUARD",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "PERIODS",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "CELLULAR",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Step 2: Configure operational bitfields in HALF_DUPLEX_REG.",
+            "registerName": "HALF_DUPLEX_REG",
+            "bitWidth": 8,
+            "hexValue": "0xE0",
+            "decimalValue": 224,
+            "maskApplied": "0xE0",
+            "bits": [
+              {
+                "index": 7,
+                "name": "HALF",
+                "value": 1,
+                "tone": "accent"
+              },
+              {
+                "index": 6,
+                "name": "DUPLEX",
+                "value": 1,
+                "tone": "accent"
+              },
+              {
+                "index": 5,
+                "name": "ARCHITEC",
+                "value": 1,
+                "tone": "accent",
+                "highlighted": true
+              },
+              {
+                "index": 4,
+                "name": "COLLISIO",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "ELIMINAT",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "GUARD",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "PERIODS",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "CELLULAR",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Step 3: Execute frame & verify state in HALF_DUPLEX_REG.",
+            "registerName": "HALF_DUPLEX_REG",
+            "bitWidth": 8,
+            "hexValue": "0xF6",
+            "decimalValue": 246,
+            "maskApplied": "0xF6",
+            "bits": [
+              {
+                "index": 7,
+                "name": "HALF",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 6,
+                "name": "DUPLEX",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 5,
+                "name": "ARCHITEC",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 4,
+                "name": "COLLISIO",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 3,
+                "name": "ELIMINAT",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "GUARD",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 1,
+                "name": "PERIODS",
+                "value": 1,
+                "tone": "warn",
+                "highlighted": true
+              },
+              {
+                "index": 0,
+                "name": "CELLULAR",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Step 4: Commit verified output in HALF_DUPLEX_REG.",
+            "registerName": "HALF_DUPLEX_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "HALF",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "DUPLEX",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "ARCHITEC",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "COLLISIO",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "ELIMINAT",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "GUARD",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 1,
+                "name": "PERIODS",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 0,
+                "name": "CELLULAR",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "5G Core (5GC) Service-Based Architecture & Industrial 5QI QoS Flow Mapping",
+      "codeHash": "6bc871fbe1c0e3ef8804674755f4f3ca79ee5060c7afe1761cc94366da507d70",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 36 Part 4 - 5G Core (5GC) Service-Based Arch",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Step 1: Initialize CORE_SERVICE_REG for 5G Core (5GC) Service-Based Arch.",
+            "registerName": "CORE_SERVICE_REG",
+            "bitWidth": 8,
+            "hexValue": "0x80",
+            "decimalValue": 128,
+            "maskApplied": "1 << 7",
+            "bits": [
+              {
+                "index": 7,
+                "name": "CORE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "SERVICE",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 5,
+                "name": "BASED",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 4,
+                "name": "ARCHITEC",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "INDUSTRI",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "FLOW",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "MAPPING",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "WHILE",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Step 2: Configure operational bitfields in CORE_SERVICE_REG.",
+            "registerName": "CORE_SERVICE_REG",
+            "bitWidth": 8,
+            "hexValue": "0xE0",
+            "decimalValue": 224,
+            "maskApplied": "0xE0",
+            "bits": [
+              {
+                "index": 7,
+                "name": "CORE",
+                "value": 1,
+                "tone": "accent"
+              },
+              {
+                "index": 6,
+                "name": "SERVICE",
+                "value": 1,
+                "tone": "accent"
+              },
+              {
+                "index": 5,
+                "name": "BASED",
+                "value": 1,
+                "tone": "accent",
+                "highlighted": true
+              },
+              {
+                "index": 4,
+                "name": "ARCHITEC",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "INDUSTRI",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "FLOW",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "MAPPING",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "WHILE",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Step 3: Execute frame & verify state in CORE_SERVICE_REG.",
+            "registerName": "CORE_SERVICE_REG",
+            "bitWidth": 8,
+            "hexValue": "0xF6",
+            "decimalValue": 246,
+            "maskApplied": "0xF6",
+            "bits": [
+              {
+                "index": 7,
+                "name": "CORE",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 6,
+                "name": "SERVICE",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 5,
+                "name": "BASED",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 4,
+                "name": "ARCHITEC",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 3,
+                "name": "INDUSTRI",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "FLOW",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 1,
+                "name": "MAPPING",
+                "value": 1,
+                "tone": "warn",
+                "highlighted": true
+              },
+              {
+                "index": 0,
+                "name": "WHILE",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Step 4: Commit verified output in CORE_SERVICE_REG.",
+            "registerName": "CORE_SERVICE_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "CORE",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "SERVICE",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "BASED",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "ARCHITEC",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "INDUSTRI",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "FLOW",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 1,
+                "name": "MAPPING",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 0,
+                "name": "WHILE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Masterclass Synthesis: Full 5G NR RedCap Edge Specification Verification Audit",
+      "codeHash": "53796d9fdfaff2b9a8e8a78b0e4d78af95803a67816614fa10c87e51b966aac0",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 36 Part 5 - Masterclass Synthesis: Full 5G N",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Step 1: Initialize MASTERCLASS_SYNTHESI_REG for Masterclass Synthesis: Full 5G",
+            "registerName": "MASTERCLASS_SYNTHESI_REG",
+            "bitWidth": 8,
+            "hexValue": "0x80",
+            "decimalValue": 128,
+            "maskApplied": "1 << 7",
+            "bits": [
+              {
+                "index": 7,
+                "name": "MASTERCL",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "SYNTHESI",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 5,
+                "name": "FULL",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 4,
+                "name": "REDCAP",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "EDGE",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "SPECIFIC",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "VERIFICA",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "AUDIT",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Step 2: Configure operational bitfields in MASTERCLASS_SYNTHESI_REG.",
+            "registerName": "MASTERCLASS_SYNTHESI_REG",
+            "bitWidth": 8,
+            "hexValue": "0xE0",
+            "decimalValue": 224,
+            "maskApplied": "0xE0",
+            "bits": [
+              {
+                "index": 7,
+                "name": "MASTERCL",
+                "value": 1,
+                "tone": "accent"
+              },
+              {
+                "index": 6,
+                "name": "SYNTHESI",
+                "value": 1,
+                "tone": "accent"
+              },
+              {
+                "index": 5,
+                "name": "FULL",
+                "value": 1,
+                "tone": "accent",
+                "highlighted": true
+              },
+              {
+                "index": 4,
+                "name": "REDCAP",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "EDGE",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "SPECIFIC",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "VERIFICA",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "AUDIT",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Step 3: Execute frame & verify state in MASTERCLASS_SYNTHESI_REG.",
+            "registerName": "MASTERCLASS_SYNTHESI_REG",
+            "bitWidth": 8,
+            "hexValue": "0xF6",
+            "decimalValue": 246,
+            "maskApplied": "0xF6",
+            "bits": [
+              {
+                "index": 7,
+                "name": "MASTERCL",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 6,
+                "name": "SYNTHESI",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 5,
+                "name": "FULL",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 4,
+                "name": "REDCAP",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 3,
+                "name": "EDGE",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "SPECIFIC",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 1,
+                "name": "VERIFICA",
+                "value": 1,
+                "tone": "warn",
+                "highlighted": true
+              },
+              {
+                "index": 0,
+                "name": "AUDIT",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Step 4: Commit verified output in MASTERCLASS_SYNTHESI_REG.",
+            "registerName": "MASTERCLASS_SYNTHESI_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "MASTERCL",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "SYNTHESI",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "FULL",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "REDCAP",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "EDGE",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "SPECIFIC",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 1,
+                "name": "VERIFICA",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 0,
+                "name": "AUDIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

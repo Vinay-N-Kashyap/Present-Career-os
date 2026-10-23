@@ -1,0 +1,1532 @@
+{
+  "schemaVersion": 1,
+  "prefix": "iot_net",
+  "coursePrefix": "iot_net",
+  "day": 39,
+  "title": "Day 39: LTE-M (Cat-M1) VoLTE, Mobility Handover & Cellular Positioning (OTDOA, ECID)",
+  "promptSha": "af5763f0e49a7d9d6ff1822263d6e10879e96b280a0ac46f97fdff121e8abed1",
+  "model": "anthropic/claude-3.5-sonnet",
+  "codeHash": "b97f016cdfb55e5b9fd140dcb12c7b3037663485f0f2aad01e9b71f45647686f",
+  "spec": {
+    "template": "register-bits",
+    "title": "Day 39 Part 1 - Part 1: 3GPP LTE-M (Cat-M1) Arch",
+    "steps": [
+      {
+        "at": "say1",
+        "step": "say1",
+        "caption": "Step 1: Initialize ARCHITECTURE_NARROWBA_REG for Part 1: 3GPP LTE-M (Cat-M1) A",
+        "registerName": "ARCHITECTURE_NARROWBA_REG",
+        "bitWidth": 8,
+        "hexValue": "0x80",
+        "decimalValue": 128,
+        "maskApplied": "1 << 7",
+        "bits": [
+          {
+            "index": 7,
+            "name": "ARCHITEC",
+            "value": 1,
+            "tone": "ok",
+            "highlighted": true
+          },
+          {
+            "index": 6,
+            "name": "NARROWBA",
+            "value": 0,
+            "tone": "idle"
+          },
+          {
+            "index": 5,
+            "name": "MODES",
+            "value": 0,
+            "tone": "idle"
+          },
+          {
+            "index": 4,
+            "name": "WELCOME",
+            "value": 0,
+            "tone": "idle"
+          },
+          {
+            "index": 3,
+            "name": "COURSE",
+            "value": 0,
+            "tone": "idle"
+          },
+          {
+            "index": 2,
+            "name": "WIRELESS",
+            "value": 0,
+            "tone": "idle"
+          },
+          {
+            "index": 1,
+            "name": "NETWORKS",
+            "value": 0,
+            "tone": "idle"
+          },
+          {
+            "index": 0,
+            "name": "PROTOCOL",
+            "value": 0,
+            "tone": "idle"
+          }
+        ]
+      },
+      {
+        "at": "say2",
+        "step": "say2",
+        "caption": "Step 2: Configure operational bitfields in ARCHITECTURE_NARROWBA_REG.",
+        "registerName": "ARCHITECTURE_NARROWBA_REG",
+        "bitWidth": 8,
+        "hexValue": "0xE0",
+        "decimalValue": 224,
+        "maskApplied": "0xE0",
+        "bits": [
+          {
+            "index": 7,
+            "name": "ARCHITEC",
+            "value": 1,
+            "tone": "accent"
+          },
+          {
+            "index": 6,
+            "name": "NARROWBA",
+            "value": 1,
+            "tone": "accent"
+          },
+          {
+            "index": 5,
+            "name": "MODES",
+            "value": 1,
+            "tone": "accent",
+            "highlighted": true
+          },
+          {
+            "index": 4,
+            "name": "WELCOME",
+            "value": 0,
+            "tone": "idle"
+          },
+          {
+            "index": 3,
+            "name": "COURSE",
+            "value": 0,
+            "tone": "idle"
+          },
+          {
+            "index": 2,
+            "name": "WIRELESS",
+            "value": 0,
+            "tone": "idle"
+          },
+          {
+            "index": 1,
+            "name": "NETWORKS",
+            "value": 0,
+            "tone": "idle"
+          },
+          {
+            "index": 0,
+            "name": "PROTOCOL",
+            "value": 0,
+            "tone": "idle"
+          }
+        ]
+      },
+      {
+        "at": "example",
+        "step": "example",
+        "caption": "Step 3: Execute frame & verify state in ARCHITECTURE_NARROWBA_REG.",
+        "registerName": "ARCHITECTURE_NARROWBA_REG",
+        "bitWidth": 8,
+        "hexValue": "0xF6",
+        "decimalValue": 246,
+        "maskApplied": "0xF6",
+        "bits": [
+          {
+            "index": 7,
+            "name": "ARCHITEC",
+            "value": 1,
+            "tone": "warn"
+          },
+          {
+            "index": 6,
+            "name": "NARROWBA",
+            "value": 1,
+            "tone": "warn"
+          },
+          {
+            "index": 5,
+            "name": "MODES",
+            "value": 1,
+            "tone": "warn"
+          },
+          {
+            "index": 4,
+            "name": "WELCOME",
+            "value": 1,
+            "tone": "warn"
+          },
+          {
+            "index": 3,
+            "name": "COURSE",
+            "value": 0,
+            "tone": "idle"
+          },
+          {
+            "index": 2,
+            "name": "WIRELESS",
+            "value": 1,
+            "tone": "warn"
+          },
+          {
+            "index": 1,
+            "name": "NETWORKS",
+            "value": 1,
+            "tone": "warn",
+            "highlighted": true
+          },
+          {
+            "index": 0,
+            "name": "PROTOCOL",
+            "value": 0,
+            "tone": "idle"
+          }
+        ]
+      },
+      {
+        "at": "tryIt",
+        "step": "tryIt",
+        "caption": "Step 4: Commit verified output in ARCHITECTURE_NARROWBA_REG.",
+        "registerName": "ARCHITECTURE_NARROWBA_REG",
+        "bitWidth": 8,
+        "hexValue": "0xFF",
+        "decimalValue": 255,
+        "maskApplied": "0xFF",
+        "bits": [
+          {
+            "index": 7,
+            "name": "ARCHITEC",
+            "value": 1,
+            "tone": "ok"
+          },
+          {
+            "index": 6,
+            "name": "NARROWBA",
+            "value": 1,
+            "tone": "ok"
+          },
+          {
+            "index": 5,
+            "name": "MODES",
+            "value": 1,
+            "tone": "ok"
+          },
+          {
+            "index": 4,
+            "name": "WELCOME",
+            "value": 1,
+            "tone": "ok"
+          },
+          {
+            "index": 3,
+            "name": "COURSE",
+            "value": 1,
+            "tone": "ok"
+          },
+          {
+            "index": 2,
+            "name": "WIRELESS",
+            "value": 1,
+            "tone": "ok"
+          },
+          {
+            "index": 1,
+            "name": "NETWORKS",
+            "value": 1,
+            "tone": "ok"
+          },
+          {
+            "index": 0,
+            "name": "PROTOCOL",
+            "value": 1,
+            "tone": "ok",
+            "highlighted": true
+          }
+        ]
+      }
+    ]
+  },
+  "entries": [
+    {
+      "partTitle": "Part 1: 3GPP LTE-M (Cat-M1) Architecture, 1.4 MHz Narrowband & CE Modes A/B",
+      "codeHash": "b97f016cdfb55e5b9fd140dcb12c7b3037663485f0f2aad01e9b71f45647686f",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 39 Part 1 - Part 1: 3GPP LTE-M (Cat-M1) Arch",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Step 1: Initialize ARCHITECTURE_NARROWBA_REG for Part 1: 3GPP LTE-M (Cat-M1) A",
+            "registerName": "ARCHITECTURE_NARROWBA_REG",
+            "bitWidth": 8,
+            "hexValue": "0x80",
+            "decimalValue": 128,
+            "maskApplied": "1 << 7",
+            "bits": [
+              {
+                "index": 7,
+                "name": "ARCHITEC",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "NARROWBA",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 5,
+                "name": "MODES",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 4,
+                "name": "WELCOME",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "COURSE",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "WIRELESS",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "NETWORKS",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "PROTOCOL",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Step 2: Configure operational bitfields in ARCHITECTURE_NARROWBA_REG.",
+            "registerName": "ARCHITECTURE_NARROWBA_REG",
+            "bitWidth": 8,
+            "hexValue": "0xE0",
+            "decimalValue": 224,
+            "maskApplied": "0xE0",
+            "bits": [
+              {
+                "index": 7,
+                "name": "ARCHITEC",
+                "value": 1,
+                "tone": "accent"
+              },
+              {
+                "index": 6,
+                "name": "NARROWBA",
+                "value": 1,
+                "tone": "accent"
+              },
+              {
+                "index": 5,
+                "name": "MODES",
+                "value": 1,
+                "tone": "accent",
+                "highlighted": true
+              },
+              {
+                "index": 4,
+                "name": "WELCOME",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "COURSE",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "WIRELESS",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "NETWORKS",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "PROTOCOL",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Step 3: Execute frame & verify state in ARCHITECTURE_NARROWBA_REG.",
+            "registerName": "ARCHITECTURE_NARROWBA_REG",
+            "bitWidth": 8,
+            "hexValue": "0xF6",
+            "decimalValue": 246,
+            "maskApplied": "0xF6",
+            "bits": [
+              {
+                "index": 7,
+                "name": "ARCHITEC",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 6,
+                "name": "NARROWBA",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 5,
+                "name": "MODES",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 4,
+                "name": "WELCOME",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 3,
+                "name": "COURSE",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "WIRELESS",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 1,
+                "name": "NETWORKS",
+                "value": 1,
+                "tone": "warn",
+                "highlighted": true
+              },
+              {
+                "index": 0,
+                "name": "PROTOCOL",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Step 4: Commit verified output in ARCHITECTURE_NARROWBA_REG.",
+            "registerName": "ARCHITECTURE_NARROWBA_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "ARCHITEC",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "NARROWBA",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "MODES",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "WELCOME",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "COURSE",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "WIRELESS",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 1,
+                "name": "NETWORKS",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 0,
+                "name": "PROTOCOL",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Part 2: Connected Mode Mobility, RRC Reconfiguration & Event A3 Handover",
+      "codeHash": "aa138db1e575685569d234fd97b11497bccfcb70686c28a2bc63234a7153bac2",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 39 Part 2 - Part 2: Connected Mode Mobility,",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Step 1: Initialize CONNECTED_MODE_REG for Part 2: Connected Mode Mobility,.",
+            "registerName": "CONNECTED_MODE_REG",
+            "bitWidth": 8,
+            "hexValue": "0x80",
+            "decimalValue": 128,
+            "maskApplied": "1 << 7",
+            "bits": [
+              {
+                "index": 7,
+                "name": "CONNECTE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "MODE",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 5,
+                "name": "MOBILITY",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 4,
+                "name": "RECONFIG",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "EVENT",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "HANDOVER",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "DEFINING",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "ARCHITEC",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Step 2: Configure operational bitfields in CONNECTED_MODE_REG.",
+            "registerName": "CONNECTED_MODE_REG",
+            "bitWidth": 8,
+            "hexValue": "0xE0",
+            "decimalValue": 224,
+            "maskApplied": "0xE0",
+            "bits": [
+              {
+                "index": 7,
+                "name": "CONNECTE",
+                "value": 1,
+                "tone": "accent"
+              },
+              {
+                "index": 6,
+                "name": "MODE",
+                "value": 1,
+                "tone": "accent"
+              },
+              {
+                "index": 5,
+                "name": "MOBILITY",
+                "value": 1,
+                "tone": "accent",
+                "highlighted": true
+              },
+              {
+                "index": 4,
+                "name": "RECONFIG",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "EVENT",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "HANDOVER",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "DEFINING",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "ARCHITEC",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Step 3: Execute frame & verify state in CONNECTED_MODE_REG.",
+            "registerName": "CONNECTED_MODE_REG",
+            "bitWidth": 8,
+            "hexValue": "0xF6",
+            "decimalValue": 246,
+            "maskApplied": "0xF6",
+            "bits": [
+              {
+                "index": 7,
+                "name": "CONNECTE",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 6,
+                "name": "MODE",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 5,
+                "name": "MOBILITY",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 4,
+                "name": "RECONFIG",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 3,
+                "name": "EVENT",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "HANDOVER",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 1,
+                "name": "DEFINING",
+                "value": 1,
+                "tone": "warn",
+                "highlighted": true
+              },
+              {
+                "index": 0,
+                "name": "ARCHITEC",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Step 4: Commit verified output in CONNECTED_MODE_REG.",
+            "registerName": "CONNECTED_MODE_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "CONNECTE",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "MODE",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "MOBILITY",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "RECONFIG",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "EVENT",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "HANDOVER",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 1,
+                "name": "DEFINING",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 0,
+                "name": "ARCHITEC",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Part 3: VoLTE over LTE-M: Semi-Persistent Scheduling (SPS), TTI Bundling & QCI 1",
+      "codeHash": "bbb3c7848f4a74a5e51c56907107a36421d54aa3b82c7ad2b4f7d696b08b00bc",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 39 Part 3 - Part 3: VoLTE over LTE-M: Semi-P",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Step 1: Initialize VOLTE_OVER_REG for Part 3: VoLTE over LTE-M: Semi-P.",
+            "registerName": "VOLTE_OVER_REG",
+            "bitWidth": 8,
+            "hexValue": "0x80",
+            "decimalValue": 128,
+            "maskApplied": "1 << 7",
+            "bits": [
+              {
+                "index": 7,
+                "name": "VOLTE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "OVER",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 5,
+                "name": "SEMI",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 4,
+                "name": "PERSISTE",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "SCHEDULI",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "BUNDLING",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "UNIQUE",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "GAME",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Step 2: Configure operational bitfields in VOLTE_OVER_REG.",
+            "registerName": "VOLTE_OVER_REG",
+            "bitWidth": 8,
+            "hexValue": "0xE0",
+            "decimalValue": 224,
+            "maskApplied": "0xE0",
+            "bits": [
+              {
+                "index": 7,
+                "name": "VOLTE",
+                "value": 1,
+                "tone": "accent"
+              },
+              {
+                "index": 6,
+                "name": "OVER",
+                "value": 1,
+                "tone": "accent"
+              },
+              {
+                "index": 5,
+                "name": "SEMI",
+                "value": 1,
+                "tone": "accent",
+                "highlighted": true
+              },
+              {
+                "index": 4,
+                "name": "PERSISTE",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "SCHEDULI",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "BUNDLING",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "UNIQUE",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "GAME",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Step 3: Execute frame & verify state in VOLTE_OVER_REG.",
+            "registerName": "VOLTE_OVER_REG",
+            "bitWidth": 8,
+            "hexValue": "0xF6",
+            "decimalValue": 246,
+            "maskApplied": "0xF6",
+            "bits": [
+              {
+                "index": 7,
+                "name": "VOLTE",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 6,
+                "name": "OVER",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 5,
+                "name": "SEMI",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 4,
+                "name": "PERSISTE",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 3,
+                "name": "SCHEDULI",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "BUNDLING",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 1,
+                "name": "UNIQUE",
+                "value": 1,
+                "tone": "warn",
+                "highlighted": true
+              },
+              {
+                "index": 0,
+                "name": "GAME",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Step 4: Commit verified output in VOLTE_OVER_REG.",
+            "registerName": "VOLTE_OVER_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "VOLTE",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "OVER",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "SEMI",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "PERSISTE",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "SCHEDULI",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "BUNDLING",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 1,
+                "name": "UNIQUE",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 0,
+                "name": "GAME",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Part 4: Cellular Positioning & Localization: OTDOA & Enhanced Cell ID (ECID)",
+      "codeHash": "cc9d65f1e45e2b2828aa36ad8921dd01f554725b52468b6c2f60ed005abf3f32",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 39 Part 4 - Part 4: Cellular Positioning & L",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Step 1: Initialize CELLULAR_POSITION_REG for Part 4: Cellular Positioning & L.",
+            "registerName": "CELLULAR_POSITION_REG",
+            "bitWidth": 8,
+            "hexValue": "0x80",
+            "decimalValue": 128,
+            "maskApplied": "1 << 7",
+            "bits": [
+              {
+                "index": 7,
+                "name": "CELLULAR",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "POSITION",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 5,
+                "name": "LOCALIZA",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 4,
+                "name": "OTDOA",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "ENHANCED",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "CELL",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "ECID",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "ASSET",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Step 2: Configure operational bitfields in CELLULAR_POSITION_REG.",
+            "registerName": "CELLULAR_POSITION_REG",
+            "bitWidth": 8,
+            "hexValue": "0xE0",
+            "decimalValue": 224,
+            "maskApplied": "0xE0",
+            "bits": [
+              {
+                "index": 7,
+                "name": "CELLULAR",
+                "value": 1,
+                "tone": "accent"
+              },
+              {
+                "index": 6,
+                "name": "POSITION",
+                "value": 1,
+                "tone": "accent"
+              },
+              {
+                "index": 5,
+                "name": "LOCALIZA",
+                "value": 1,
+                "tone": "accent",
+                "highlighted": true
+              },
+              {
+                "index": 4,
+                "name": "OTDOA",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "ENHANCED",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "CELL",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "ECID",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "ASSET",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Step 3: Execute frame & verify state in CELLULAR_POSITION_REG.",
+            "registerName": "CELLULAR_POSITION_REG",
+            "bitWidth": 8,
+            "hexValue": "0xF6",
+            "decimalValue": 246,
+            "maskApplied": "0xF6",
+            "bits": [
+              {
+                "index": 7,
+                "name": "CELLULAR",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 6,
+                "name": "POSITION",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 5,
+                "name": "LOCALIZA",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 4,
+                "name": "OTDOA",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 3,
+                "name": "ENHANCED",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "CELL",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 1,
+                "name": "ECID",
+                "value": 1,
+                "tone": "warn",
+                "highlighted": true
+              },
+              {
+                "index": 0,
+                "name": "ASSET",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Step 4: Commit verified output in CELLULAR_POSITION_REG.",
+            "registerName": "CELLULAR_POSITION_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "CELLULAR",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "POSITION",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "LOCALIZA",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "OTDOA",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "ENHANCED",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "CELL",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 1,
+                "name": "ECID",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 0,
+                "name": "ASSET",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Part 5: Masterclass Synthesis & Pure Python LTE-M RRC Handover & Positioning Engine",
+      "codeHash": "80bcde6bd7a93f8d3dec25728edc632e1798170a108cc86b10de740d509db2fb",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 39 Part 5 - Part 5: Masterclass Synthesis & ",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Step 1: Initialize MASTERCLASS_SYNTHESI_REG for Part 5: Masterclass Synthesis ",
+            "registerName": "MASTERCLASS_SYNTHESI_REG",
+            "bitWidth": 8,
+            "hexValue": "0x80",
+            "decimalValue": 128,
+            "maskApplied": "1 << 7",
+            "bits": [
+              {
+                "index": 7,
+                "name": "MASTERCL",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "SYNTHESI",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 5,
+                "name": "PURE",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 4,
+                "name": "PYTHON",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "HANDOVER",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "POSITION",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "ENGINE",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "REACH",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Step 2: Configure operational bitfields in MASTERCLASS_SYNTHESI_REG.",
+            "registerName": "MASTERCLASS_SYNTHESI_REG",
+            "bitWidth": 8,
+            "hexValue": "0xE0",
+            "decimalValue": 224,
+            "maskApplied": "0xE0",
+            "bits": [
+              {
+                "index": 7,
+                "name": "MASTERCL",
+                "value": 1,
+                "tone": "accent"
+              },
+              {
+                "index": 6,
+                "name": "SYNTHESI",
+                "value": 1,
+                "tone": "accent"
+              },
+              {
+                "index": 5,
+                "name": "PURE",
+                "value": 1,
+                "tone": "accent",
+                "highlighted": true
+              },
+              {
+                "index": 4,
+                "name": "PYTHON",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "HANDOVER",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "POSITION",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "ENGINE",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "REACH",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Step 3: Execute frame & verify state in MASTERCLASS_SYNTHESI_REG.",
+            "registerName": "MASTERCLASS_SYNTHESI_REG",
+            "bitWidth": 8,
+            "hexValue": "0xF6",
+            "decimalValue": 246,
+            "maskApplied": "0xF6",
+            "bits": [
+              {
+                "index": 7,
+                "name": "MASTERCL",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 6,
+                "name": "SYNTHESI",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 5,
+                "name": "PURE",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 4,
+                "name": "PYTHON",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 3,
+                "name": "HANDOVER",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "POSITION",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 1,
+                "name": "ENGINE",
+                "value": 1,
+                "tone": "warn",
+                "highlighted": true
+              },
+              {
+                "index": 0,
+                "name": "REACH",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Step 4: Commit verified output in MASTERCLASS_SYNTHESI_REG.",
+            "registerName": "MASTERCLASS_SYNTHESI_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "MASTERCL",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "SYNTHESI",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "PURE",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "PYTHON",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "HANDOVER",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "POSITION",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 1,
+                "name": "ENGINE",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 0,
+                "name": "REACH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

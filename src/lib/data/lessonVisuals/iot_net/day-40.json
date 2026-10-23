@@ -1,0 +1,1532 @@
+{
+  "schemaVersion": 1,
+  "prefix": "iot_net",
+  "coursePrefix": "iot_net",
+  "day": 40,
+  "title": "Day 40: Milestone 8 Capstone - Cellular & LPWAN Convergence Edge Gateway Engine",
+  "promptSha": "6e596700767f0b147ed571220bca43015f590e6bf9189b3f606e065c800bb477",
+  "model": "anthropic/claude-3.5-sonnet",
+  "codeHash": "3ae2885300ae201a586e98980f9e04b3fee9cc2c696d3169a92b80ccbbfbfd86",
+  "spec": {
+    "template": "register-bits",
+    "title": "Day 40 Part 1 - Part 1: Multi-RAT Capability Env",
+    "steps": [
+      {
+        "at": "say1",
+        "step": "say1",
+        "caption": "Step 1: Initialize MULTI_CAPABILI_REG for Part 1: Multi-RAT Capability Env.",
+        "registerName": "MULTI_CAPABILI_REG",
+        "bitWidth": 8,
+        "hexValue": "0x80",
+        "decimalValue": 128,
+        "maskApplied": "1 << 7",
+        "bits": [
+          {
+            "index": 7,
+            "name": "MULTI",
+            "value": 1,
+            "tone": "ok",
+            "highlighted": true
+          },
+          {
+            "index": 6,
+            "name": "CAPABILI",
+            "value": 0,
+            "tone": "idle"
+          },
+          {
+            "index": 5,
+            "name": "ENVELOPE",
+            "value": 0,
+            "tone": "idle"
+          },
+          {
+            "index": 4,
+            "name": "REGISTRY",
+            "value": 0,
+            "tone": "idle"
+          },
+          {
+            "index": 3,
+            "name": "WELCOME",
+            "value": 0,
+            "tone": "idle"
+          },
+          {
+            "index": 2,
+            "name": "CONVERGE",
+            "value": 0,
+            "tone": "idle"
+          },
+          {
+            "index": 1,
+            "name": "ENGINE",
+            "value": 0,
+            "tone": "idle"
+          },
+          {
+            "index": 0,
+            "name": "FLEETS",
+            "value": 0,
+            "tone": "idle"
+          }
+        ]
+      },
+      {
+        "at": "say2",
+        "step": "say2",
+        "caption": "Step 2: Configure operational bitfields in MULTI_CAPABILI_REG.",
+        "registerName": "MULTI_CAPABILI_REG",
+        "bitWidth": 8,
+        "hexValue": "0xE0",
+        "decimalValue": 224,
+        "maskApplied": "0xE0",
+        "bits": [
+          {
+            "index": 7,
+            "name": "MULTI",
+            "value": 1,
+            "tone": "accent"
+          },
+          {
+            "index": 6,
+            "name": "CAPABILI",
+            "value": 1,
+            "tone": "accent"
+          },
+          {
+            "index": 5,
+            "name": "ENVELOPE",
+            "value": 1,
+            "tone": "accent",
+            "highlighted": true
+          },
+          {
+            "index": 4,
+            "name": "REGISTRY",
+            "value": 0,
+            "tone": "idle"
+          },
+          {
+            "index": 3,
+            "name": "WELCOME",
+            "value": 0,
+            "tone": "idle"
+          },
+          {
+            "index": 2,
+            "name": "CONVERGE",
+            "value": 0,
+            "tone": "idle"
+          },
+          {
+            "index": 1,
+            "name": "ENGINE",
+            "value": 0,
+            "tone": "idle"
+          },
+          {
+            "index": 0,
+            "name": "FLEETS",
+            "value": 0,
+            "tone": "idle"
+          }
+        ]
+      },
+      {
+        "at": "example",
+        "step": "example",
+        "caption": "Step 3: Execute frame & verify state in MULTI_CAPABILI_REG.",
+        "registerName": "MULTI_CAPABILI_REG",
+        "bitWidth": 8,
+        "hexValue": "0xF6",
+        "decimalValue": 246,
+        "maskApplied": "0xF6",
+        "bits": [
+          {
+            "index": 7,
+            "name": "MULTI",
+            "value": 1,
+            "tone": "warn"
+          },
+          {
+            "index": 6,
+            "name": "CAPABILI",
+            "value": 1,
+            "tone": "warn"
+          },
+          {
+            "index": 5,
+            "name": "ENVELOPE",
+            "value": 1,
+            "tone": "warn"
+          },
+          {
+            "index": 4,
+            "name": "REGISTRY",
+            "value": 1,
+            "tone": "warn"
+          },
+          {
+            "index": 3,
+            "name": "WELCOME",
+            "value": 0,
+            "tone": "idle"
+          },
+          {
+            "index": 2,
+            "name": "CONVERGE",
+            "value": 1,
+            "tone": "warn"
+          },
+          {
+            "index": 1,
+            "name": "ENGINE",
+            "value": 1,
+            "tone": "warn",
+            "highlighted": true
+          },
+          {
+            "index": 0,
+            "name": "FLEETS",
+            "value": 0,
+            "tone": "idle"
+          }
+        ]
+      },
+      {
+        "at": "tryIt",
+        "step": "tryIt",
+        "caption": "Step 4: Commit verified output in MULTI_CAPABILI_REG.",
+        "registerName": "MULTI_CAPABILI_REG",
+        "bitWidth": 8,
+        "hexValue": "0xFF",
+        "decimalValue": 255,
+        "maskApplied": "0xFF",
+        "bits": [
+          {
+            "index": 7,
+            "name": "MULTI",
+            "value": 1,
+            "tone": "ok"
+          },
+          {
+            "index": 6,
+            "name": "CAPABILI",
+            "value": 1,
+            "tone": "ok"
+          },
+          {
+            "index": 5,
+            "name": "ENVELOPE",
+            "value": 1,
+            "tone": "ok"
+          },
+          {
+            "index": 4,
+            "name": "REGISTRY",
+            "value": 1,
+            "tone": "ok"
+          },
+          {
+            "index": 3,
+            "name": "WELCOME",
+            "value": 1,
+            "tone": "ok"
+          },
+          {
+            "index": 2,
+            "name": "CONVERGE",
+            "value": 1,
+            "tone": "ok"
+          },
+          {
+            "index": 1,
+            "name": "ENGINE",
+            "value": 1,
+            "tone": "ok"
+          },
+          {
+            "index": 0,
+            "name": "FLEETS",
+            "value": 1,
+            "tone": "ok",
+            "highlighted": true
+          }
+        ]
+      }
+    ]
+  },
+  "entries": [
+    {
+      "partTitle": "Part 1: Multi-RAT Capability Envelope Registry",
+      "codeHash": "3ae2885300ae201a586e98980f9e04b3fee9cc2c696d3169a92b80ccbbfbfd86",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 40 Part 1 - Part 1: Multi-RAT Capability Env",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Step 1: Initialize MULTI_CAPABILI_REG for Part 1: Multi-RAT Capability Env.",
+            "registerName": "MULTI_CAPABILI_REG",
+            "bitWidth": 8,
+            "hexValue": "0x80",
+            "decimalValue": 128,
+            "maskApplied": "1 << 7",
+            "bits": [
+              {
+                "index": 7,
+                "name": "MULTI",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "CAPABILI",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 5,
+                "name": "ENVELOPE",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 4,
+                "name": "REGISTRY",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "WELCOME",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "CONVERGE",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "ENGINE",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "FLEETS",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Step 2: Configure operational bitfields in MULTI_CAPABILI_REG.",
+            "registerName": "MULTI_CAPABILI_REG",
+            "bitWidth": 8,
+            "hexValue": "0xE0",
+            "decimalValue": 224,
+            "maskApplied": "0xE0",
+            "bits": [
+              {
+                "index": 7,
+                "name": "MULTI",
+                "value": 1,
+                "tone": "accent"
+              },
+              {
+                "index": 6,
+                "name": "CAPABILI",
+                "value": 1,
+                "tone": "accent"
+              },
+              {
+                "index": 5,
+                "name": "ENVELOPE",
+                "value": 1,
+                "tone": "accent",
+                "highlighted": true
+              },
+              {
+                "index": 4,
+                "name": "REGISTRY",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "WELCOME",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "CONVERGE",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "ENGINE",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "FLEETS",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Step 3: Execute frame & verify state in MULTI_CAPABILI_REG.",
+            "registerName": "MULTI_CAPABILI_REG",
+            "bitWidth": 8,
+            "hexValue": "0xF6",
+            "decimalValue": 246,
+            "maskApplied": "0xF6",
+            "bits": [
+              {
+                "index": 7,
+                "name": "MULTI",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 6,
+                "name": "CAPABILI",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 5,
+                "name": "ENVELOPE",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 4,
+                "name": "REGISTRY",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 3,
+                "name": "WELCOME",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "CONVERGE",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 1,
+                "name": "ENGINE",
+                "value": 1,
+                "tone": "warn",
+                "highlighted": true
+              },
+              {
+                "index": 0,
+                "name": "FLEETS",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Step 4: Commit verified output in MULTI_CAPABILI_REG.",
+            "registerName": "MULTI_CAPABILI_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "MULTI",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "CAPABILI",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "ENVELOPE",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "REGISTRY",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "WELCOME",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "CONVERGE",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 1,
+                "name": "ENGINE",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 0,
+                "name": "FLEETS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Part 2: Multi-RAT Link Scoring Policy Engine",
+      "codeHash": "c8357c3a1c1e62c115c6d5ffdfba84f2c8c7f26142ccd22fdaf7cf433f28b4f5",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 40 Part 2 - Part 2: Multi-RAT Link Scoring P",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Step 1: Initialize MULTI_LINK_REG for Part 2: Multi-RAT Link Scoring P.",
+            "registerName": "MULTI_LINK_REG",
+            "bitWidth": 8,
+            "hexValue": "0x80",
+            "decimalValue": 128,
+            "maskApplied": "1 << 7",
+            "bits": [
+              {
+                "index": 7,
+                "name": "MULTI",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "LINK",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 5,
+                "name": "SCORING",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 4,
+                "name": "POLICY",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "ENGINE",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "SELECTIO",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "SCORING",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "BLENDS",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Step 2: Configure operational bitfields in MULTI_LINK_REG.",
+            "registerName": "MULTI_LINK_REG",
+            "bitWidth": 8,
+            "hexValue": "0xE0",
+            "decimalValue": 224,
+            "maskApplied": "0xE0",
+            "bits": [
+              {
+                "index": 7,
+                "name": "MULTI",
+                "value": 1,
+                "tone": "accent"
+              },
+              {
+                "index": 6,
+                "name": "LINK",
+                "value": 1,
+                "tone": "accent"
+              },
+              {
+                "index": 5,
+                "name": "SCORING",
+                "value": 1,
+                "tone": "accent",
+                "highlighted": true
+              },
+              {
+                "index": 4,
+                "name": "POLICY",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "ENGINE",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "SELECTIO",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "SCORING",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "BLENDS",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Step 3: Execute frame & verify state in MULTI_LINK_REG.",
+            "registerName": "MULTI_LINK_REG",
+            "bitWidth": 8,
+            "hexValue": "0xF6",
+            "decimalValue": 246,
+            "maskApplied": "0xF6",
+            "bits": [
+              {
+                "index": 7,
+                "name": "MULTI",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 6,
+                "name": "LINK",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 5,
+                "name": "SCORING",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 4,
+                "name": "POLICY",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 3,
+                "name": "ENGINE",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "SELECTIO",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 1,
+                "name": "SCORING",
+                "value": 1,
+                "tone": "warn",
+                "highlighted": true
+              },
+              {
+                "index": 0,
+                "name": "BLENDS",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Step 4: Commit verified output in MULTI_LINK_REG.",
+            "registerName": "MULTI_LINK_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "MULTI",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "LINK",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "SCORING",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "POLICY",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "ENGINE",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "SELECTIO",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 1,
+                "name": "SCORING",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 0,
+                "name": "BLENDS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Part 3: Edge Case Handling & Defensive Link Policies",
+      "codeHash": "4a9aabeaeaba41ad756a764b06ffddeae6537873f670849cb9ab9449017d4106",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 40 Part 3 - Part 3: Edge Case Handling & Def",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Step 1: Initialize EDGE_CASE_REG for Part 3: Edge Case Handling & Def.",
+            "registerName": "EDGE_CASE_REG",
+            "bitWidth": 8,
+            "hexValue": "0x80",
+            "decimalValue": 128,
+            "maskApplied": "1 << 7",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EDGE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "CASE",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 5,
+                "name": "HANDLING",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 4,
+                "name": "DEFENSIV",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "LINK",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "POLICIES",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "CASES",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "FAILURE",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Step 2: Configure operational bitfields in EDGE_CASE_REG.",
+            "registerName": "EDGE_CASE_REG",
+            "bitWidth": 8,
+            "hexValue": "0xE0",
+            "decimalValue": 224,
+            "maskApplied": "0xE0",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EDGE",
+                "value": 1,
+                "tone": "accent"
+              },
+              {
+                "index": 6,
+                "name": "CASE",
+                "value": 1,
+                "tone": "accent"
+              },
+              {
+                "index": 5,
+                "name": "HANDLING",
+                "value": 1,
+                "tone": "accent",
+                "highlighted": true
+              },
+              {
+                "index": 4,
+                "name": "DEFENSIV",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "LINK",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "POLICIES",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "CASES",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "FAILURE",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Step 3: Execute frame & verify state in EDGE_CASE_REG.",
+            "registerName": "EDGE_CASE_REG",
+            "bitWidth": 8,
+            "hexValue": "0xF6",
+            "decimalValue": 246,
+            "maskApplied": "0xF6",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EDGE",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 6,
+                "name": "CASE",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 5,
+                "name": "HANDLING",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 4,
+                "name": "DEFENSIV",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 3,
+                "name": "LINK",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "POLICIES",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 1,
+                "name": "CASES",
+                "value": 1,
+                "tone": "warn",
+                "highlighted": true
+              },
+              {
+                "index": 0,
+                "name": "FAILURE",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Step 4: Commit verified output in EDGE_CASE_REG.",
+            "registerName": "EDGE_CASE_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EDGE",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "CASE",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "HANDLING",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "DEFENSIV",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "LINK",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "POLICIES",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 1,
+                "name": "CASES",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 0,
+                "name": "FAILURE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Part 4: Real-World Port Terminal Fleet Convergence Validation",
+      "codeHash": "c43acbff59e23bd9eed2ead39d4596c15d1ffb82af34961bb7e15b4f37cda266",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 40 Part 4 - Part 4: Real-World Port Terminal",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Step 1: Initialize REAL_WORLD_REG for Part 4: Real-World Port Terminal.",
+            "registerName": "REAL_WORLD_REG",
+            "bitWidth": 8,
+            "hexValue": "0x80",
+            "decimalValue": 128,
+            "maskApplied": "1 << 7",
+            "bits": [
+              {
+                "index": 7,
+                "name": "REAL",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "WORLD",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 5,
+                "name": "PORT",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 4,
+                "name": "TERMINAL",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "FLEET",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "CONVERGE",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "VALIDATI",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "WORLD",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Step 2: Configure operational bitfields in REAL_WORLD_REG.",
+            "registerName": "REAL_WORLD_REG",
+            "bitWidth": 8,
+            "hexValue": "0xE0",
+            "decimalValue": 224,
+            "maskApplied": "0xE0",
+            "bits": [
+              {
+                "index": 7,
+                "name": "REAL",
+                "value": 1,
+                "tone": "accent"
+              },
+              {
+                "index": 6,
+                "name": "WORLD",
+                "value": 1,
+                "tone": "accent"
+              },
+              {
+                "index": 5,
+                "name": "PORT",
+                "value": 1,
+                "tone": "accent",
+                "highlighted": true
+              },
+              {
+                "index": 4,
+                "name": "TERMINAL",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "FLEET",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "CONVERGE",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "VALIDATI",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "WORLD",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Step 3: Execute frame & verify state in REAL_WORLD_REG.",
+            "registerName": "REAL_WORLD_REG",
+            "bitWidth": 8,
+            "hexValue": "0xF6",
+            "decimalValue": 246,
+            "maskApplied": "0xF6",
+            "bits": [
+              {
+                "index": 7,
+                "name": "REAL",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 6,
+                "name": "WORLD",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 5,
+                "name": "PORT",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 4,
+                "name": "TERMINAL",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 3,
+                "name": "FLEET",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "CONVERGE",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 1,
+                "name": "VALIDATI",
+                "value": 1,
+                "tone": "warn",
+                "highlighted": true
+              },
+              {
+                "index": 0,
+                "name": "WORLD",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Step 4: Commit verified output in REAL_WORLD_REG.",
+            "registerName": "REAL_WORLD_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "REAL",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "WORLD",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "PORT",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "TERMINAL",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "FLEET",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "CONVERGE",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 1,
+                "name": "VALIDATI",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 0,
+                "name": "WORLD",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Part 5: Masterclass Synthesis & Production Edge Gateway Controller",
+      "codeHash": "37a2749fd78c509b1fee2f91fb248f89349a625a61df71e16034d78b7293bffc",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 40 Part 5 - Part 5: Masterclass Synthesis & ",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Step 1: Initialize MASTERCLASS_SYNTHESI_REG for Part 5: Masterclass Synthesis ",
+            "registerName": "MASTERCLASS_SYNTHESI_REG",
+            "bitWidth": 8,
+            "hexValue": "0x80",
+            "decimalValue": 128,
+            "maskApplied": "1 << 7",
+            "bits": [
+              {
+                "index": 7,
+                "name": "MASTERCL",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "SYNTHESI",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 5,
+                "name": "PRODUCTI",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 4,
+                "name": "EDGE",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "GATEWAY",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "CONTROLL",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "CAPSTONE",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "SYNTHESI",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Step 2: Configure operational bitfields in MASTERCLASS_SYNTHESI_REG.",
+            "registerName": "MASTERCLASS_SYNTHESI_REG",
+            "bitWidth": 8,
+            "hexValue": "0xE0",
+            "decimalValue": 224,
+            "maskApplied": "0xE0",
+            "bits": [
+              {
+                "index": 7,
+                "name": "MASTERCL",
+                "value": 1,
+                "tone": "accent"
+              },
+              {
+                "index": 6,
+                "name": "SYNTHESI",
+                "value": 1,
+                "tone": "accent"
+              },
+              {
+                "index": 5,
+                "name": "PRODUCTI",
+                "value": 1,
+                "tone": "accent",
+                "highlighted": true
+              },
+              {
+                "index": 4,
+                "name": "EDGE",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "GATEWAY",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "CONTROLL",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "CAPSTONE",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "SYNTHESI",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Step 3: Execute frame & verify state in MASTERCLASS_SYNTHESI_REG.",
+            "registerName": "MASTERCLASS_SYNTHESI_REG",
+            "bitWidth": 8,
+            "hexValue": "0xF6",
+            "decimalValue": 246,
+            "maskApplied": "0xF6",
+            "bits": [
+              {
+                "index": 7,
+                "name": "MASTERCL",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 6,
+                "name": "SYNTHESI",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 5,
+                "name": "PRODUCTI",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 4,
+                "name": "EDGE",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 3,
+                "name": "GATEWAY",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "CONTROLL",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 1,
+                "name": "CAPSTONE",
+                "value": 1,
+                "tone": "warn",
+                "highlighted": true
+              },
+              {
+                "index": 0,
+                "name": "SYNTHESI",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Step 4: Commit verified output in MASTERCLASS_SYNTHESI_REG.",
+            "registerName": "MASTERCLASS_SYNTHESI_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "MASTERCL",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "SYNTHESI",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "PRODUCTI",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "EDGE",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "GATEWAY",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "CONTROLL",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 1,
+                "name": "CAPSTONE",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 0,
+                "name": "SYNTHESI",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

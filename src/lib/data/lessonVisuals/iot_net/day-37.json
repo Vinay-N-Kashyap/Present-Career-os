@@ -1,0 +1,1532 @@
+{
+  "schemaVersion": 1,
+  "prefix": "iot_net",
+  "coursePrefix": "iot_net",
+  "day": 37,
+  "title": "3GPP NB-IoT Release 16 & 17 Advanced Power Saving, PSM, eDRX & EDT",
+  "promptSha": "7501e6d41fa8bdf517203e4caaefede30be304c569407634d32a29d04ec471ab",
+  "model": "anthropic/claude-3.5-sonnet",
+  "codeHash": "3312d682a644160dc4eab803abfde2103282f6b41852630db1860f45dcdcacf5",
+  "spec": {
+    "template": "register-bits",
+    "title": "Day 37 Part 1 - 3GPP NB-IoT RF Architecture, 164",
+    "steps": [
+      {
+        "at": "say1",
+        "step": "say1",
+        "caption": "Step 1: Initialize ARCHITECTURE_LINK_REG for 3GPP NB-IoT RF Architecture, 164.",
+        "registerName": "ARCHITECTURE_LINK_REG",
+        "bitWidth": 8,
+        "hexValue": "0x80",
+        "decimalValue": 128,
+        "maskApplied": "1 << 7",
+        "bits": [
+          {
+            "index": 7,
+            "name": "ARCHITEC",
+            "value": 1,
+            "tone": "ok",
+            "highlighted": true
+          },
+          {
+            "index": 6,
+            "name": "LINK",
+            "value": 0,
+            "tone": "idle"
+          },
+          {
+            "index": 5,
+            "name": "BUDGET",
+            "value": 0,
+            "tone": "idle"
+          },
+          {
+            "index": 4,
+            "name": "SINGLE",
+            "value": 0,
+            "tone": "idle"
+          },
+          {
+            "index": 3,
+            "name": "TONE",
+            "value": 0,
+            "tone": "idle"
+          },
+          {
+            "index": 2,
+            "name": "MODULATI",
+            "value": 0,
+            "tone": "idle"
+          },
+          {
+            "index": 1,
+            "name": "WHILE",
+            "value": 0,
+            "tone": "idle"
+          },
+          {
+            "index": 0,
+            "name": "REDCAP",
+            "value": 0,
+            "tone": "idle"
+          }
+        ]
+      },
+      {
+        "at": "say2",
+        "step": "say2",
+        "caption": "Step 2: Configure operational bitfields in ARCHITECTURE_LINK_REG.",
+        "registerName": "ARCHITECTURE_LINK_REG",
+        "bitWidth": 8,
+        "hexValue": "0xE0",
+        "decimalValue": 224,
+        "maskApplied": "0xE0",
+        "bits": [
+          {
+            "index": 7,
+            "name": "ARCHITEC",
+            "value": 1,
+            "tone": "accent"
+          },
+          {
+            "index": 6,
+            "name": "LINK",
+            "value": 1,
+            "tone": "accent"
+          },
+          {
+            "index": 5,
+            "name": "BUDGET",
+            "value": 1,
+            "tone": "accent",
+            "highlighted": true
+          },
+          {
+            "index": 4,
+            "name": "SINGLE",
+            "value": 0,
+            "tone": "idle"
+          },
+          {
+            "index": 3,
+            "name": "TONE",
+            "value": 0,
+            "tone": "idle"
+          },
+          {
+            "index": 2,
+            "name": "MODULATI",
+            "value": 0,
+            "tone": "idle"
+          },
+          {
+            "index": 1,
+            "name": "WHILE",
+            "value": 0,
+            "tone": "idle"
+          },
+          {
+            "index": 0,
+            "name": "REDCAP",
+            "value": 0,
+            "tone": "idle"
+          }
+        ]
+      },
+      {
+        "at": "example",
+        "step": "example",
+        "caption": "Step 3: Execute frame & verify state in ARCHITECTURE_LINK_REG.",
+        "registerName": "ARCHITECTURE_LINK_REG",
+        "bitWidth": 8,
+        "hexValue": "0xF6",
+        "decimalValue": 246,
+        "maskApplied": "0xF6",
+        "bits": [
+          {
+            "index": 7,
+            "name": "ARCHITEC",
+            "value": 1,
+            "tone": "warn"
+          },
+          {
+            "index": 6,
+            "name": "LINK",
+            "value": 1,
+            "tone": "warn"
+          },
+          {
+            "index": 5,
+            "name": "BUDGET",
+            "value": 1,
+            "tone": "warn"
+          },
+          {
+            "index": 4,
+            "name": "SINGLE",
+            "value": 1,
+            "tone": "warn"
+          },
+          {
+            "index": 3,
+            "name": "TONE",
+            "value": 0,
+            "tone": "idle"
+          },
+          {
+            "index": 2,
+            "name": "MODULATI",
+            "value": 1,
+            "tone": "warn"
+          },
+          {
+            "index": 1,
+            "name": "WHILE",
+            "value": 1,
+            "tone": "warn",
+            "highlighted": true
+          },
+          {
+            "index": 0,
+            "name": "REDCAP",
+            "value": 0,
+            "tone": "idle"
+          }
+        ]
+      },
+      {
+        "at": "tryIt",
+        "step": "tryIt",
+        "caption": "Step 4: Commit verified output in ARCHITECTURE_LINK_REG.",
+        "registerName": "ARCHITECTURE_LINK_REG",
+        "bitWidth": 8,
+        "hexValue": "0xFF",
+        "decimalValue": 255,
+        "maskApplied": "0xFF",
+        "bits": [
+          {
+            "index": 7,
+            "name": "ARCHITEC",
+            "value": 1,
+            "tone": "ok"
+          },
+          {
+            "index": 6,
+            "name": "LINK",
+            "value": 1,
+            "tone": "ok"
+          },
+          {
+            "index": 5,
+            "name": "BUDGET",
+            "value": 1,
+            "tone": "ok"
+          },
+          {
+            "index": 4,
+            "name": "SINGLE",
+            "value": 1,
+            "tone": "ok"
+          },
+          {
+            "index": 3,
+            "name": "TONE",
+            "value": 1,
+            "tone": "ok"
+          },
+          {
+            "index": 2,
+            "name": "MODULATI",
+            "value": 1,
+            "tone": "ok"
+          },
+          {
+            "index": 1,
+            "name": "WHILE",
+            "value": 1,
+            "tone": "ok"
+          },
+          {
+            "index": 0,
+            "name": "REDCAP",
+            "value": 1,
+            "tone": "ok",
+            "highlighted": true
+          }
+        ]
+      }
+    ]
+  },
+  "entries": [
+    {
+      "partTitle": "3GPP NB-IoT RF Architecture, 164 dB Link Budget & Single-Tone Modulation",
+      "codeHash": "3312d682a644160dc4eab803abfde2103282f6b41852630db1860f45dcdcacf5",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 37 Part 1 - 3GPP NB-IoT RF Architecture, 164",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Step 1: Initialize ARCHITECTURE_LINK_REG for 3GPP NB-IoT RF Architecture, 164.",
+            "registerName": "ARCHITECTURE_LINK_REG",
+            "bitWidth": 8,
+            "hexValue": "0x80",
+            "decimalValue": 128,
+            "maskApplied": "1 << 7",
+            "bits": [
+              {
+                "index": 7,
+                "name": "ARCHITEC",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "LINK",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 5,
+                "name": "BUDGET",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 4,
+                "name": "SINGLE",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "TONE",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "MODULATI",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "WHILE",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "REDCAP",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Step 2: Configure operational bitfields in ARCHITECTURE_LINK_REG.",
+            "registerName": "ARCHITECTURE_LINK_REG",
+            "bitWidth": 8,
+            "hexValue": "0xE0",
+            "decimalValue": 224,
+            "maskApplied": "0xE0",
+            "bits": [
+              {
+                "index": 7,
+                "name": "ARCHITEC",
+                "value": 1,
+                "tone": "accent"
+              },
+              {
+                "index": 6,
+                "name": "LINK",
+                "value": 1,
+                "tone": "accent"
+              },
+              {
+                "index": 5,
+                "name": "BUDGET",
+                "value": 1,
+                "tone": "accent",
+                "highlighted": true
+              },
+              {
+                "index": 4,
+                "name": "SINGLE",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "TONE",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "MODULATI",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "WHILE",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "REDCAP",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Step 3: Execute frame & verify state in ARCHITECTURE_LINK_REG.",
+            "registerName": "ARCHITECTURE_LINK_REG",
+            "bitWidth": 8,
+            "hexValue": "0xF6",
+            "decimalValue": 246,
+            "maskApplied": "0xF6",
+            "bits": [
+              {
+                "index": 7,
+                "name": "ARCHITEC",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 6,
+                "name": "LINK",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 5,
+                "name": "BUDGET",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 4,
+                "name": "SINGLE",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 3,
+                "name": "TONE",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "MODULATI",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 1,
+                "name": "WHILE",
+                "value": 1,
+                "tone": "warn",
+                "highlighted": true
+              },
+              {
+                "index": 0,
+                "name": "REDCAP",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Step 4: Commit verified output in ARCHITECTURE_LINK_REG.",
+            "registerName": "ARCHITECTURE_LINK_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "ARCHITEC",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "LINK",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "BUDGET",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "SINGLE",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "TONE",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "MODULATI",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 1,
+                "name": "WHILE",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 0,
+                "name": "REDCAP",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Power Saving Mode (PSM) Architecture & TS 24.008 Timer Serialization",
+      "codeHash": "013b0ad367bbe56b473ae68d221743bf2cac7d834dc5d33c27bfc3a980a63790",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 37 Part 2 - Power Saving Mode (PSM) Architec",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Step 1: Initialize POWER_SAVING_REG for Power Saving Mode (PSM) Architec.",
+            "registerName": "POWER_SAVING_REG",
+            "bitWidth": 8,
+            "hexValue": "0x80",
+            "decimalValue": 128,
+            "maskApplied": "1 << 7",
+            "bits": [
+              {
+                "index": 7,
+                "name": "POWER",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "SAVING",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 5,
+                "name": "MODE",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 4,
+                "name": "ARCHITEC",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "TIMER",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "SERIALIZ",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "WHILE",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "POWER",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Step 2: Configure operational bitfields in POWER_SAVING_REG.",
+            "registerName": "POWER_SAVING_REG",
+            "bitWidth": 8,
+            "hexValue": "0xE0",
+            "decimalValue": 224,
+            "maskApplied": "0xE0",
+            "bits": [
+              {
+                "index": 7,
+                "name": "POWER",
+                "value": 1,
+                "tone": "accent"
+              },
+              {
+                "index": 6,
+                "name": "SAVING",
+                "value": 1,
+                "tone": "accent"
+              },
+              {
+                "index": 5,
+                "name": "MODE",
+                "value": 1,
+                "tone": "accent",
+                "highlighted": true
+              },
+              {
+                "index": 4,
+                "name": "ARCHITEC",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "TIMER",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "SERIALIZ",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "WHILE",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "POWER",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Step 3: Execute frame & verify state in POWER_SAVING_REG.",
+            "registerName": "POWER_SAVING_REG",
+            "bitWidth": 8,
+            "hexValue": "0xF6",
+            "decimalValue": 246,
+            "maskApplied": "0xF6",
+            "bits": [
+              {
+                "index": 7,
+                "name": "POWER",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 6,
+                "name": "SAVING",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 5,
+                "name": "MODE",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 4,
+                "name": "ARCHITEC",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 3,
+                "name": "TIMER",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "SERIALIZ",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 1,
+                "name": "WHILE",
+                "value": 1,
+                "tone": "warn",
+                "highlighted": true
+              },
+              {
+                "index": 0,
+                "name": "POWER",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Step 4: Commit verified output in POWER_SAVING_REG.",
+            "registerName": "POWER_SAVING_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "POWER",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "SAVING",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "MODE",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "ARCHITEC",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "TIMER",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "SERIALIZ",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 1,
+                "name": "WHILE",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 0,
+                "name": "POWER",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "extended Discontinuous Reception (eDRX) & Paging Time Window (PTW) Mechanics",
+      "codeHash": "21e9bcff33ad9e5a8fc00cddf477c4b6530da3d210addee1bd6538fe538cd7e3",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 37 Part 3 - extended Discontinuous Reception",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Step 1: Initialize EXTENDED_DISCONTI_REG for extended Discontinuous Reception.",
+            "registerName": "EXTENDED_DISCONTI_REG",
+            "bitWidth": 8,
+            "hexValue": "0x80",
+            "decimalValue": 128,
+            "maskApplied": "1 << 7",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EXTENDED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "DISCONTI",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 5,
+                "name": "RECEPTIO",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 4,
+                "name": "EDRX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "PAGING",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "TIME",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "WINDOW",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "MECHANIC",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Step 2: Configure operational bitfields in EXTENDED_DISCONTI_REG.",
+            "registerName": "EXTENDED_DISCONTI_REG",
+            "bitWidth": 8,
+            "hexValue": "0xE0",
+            "decimalValue": 224,
+            "maskApplied": "0xE0",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EXTENDED",
+                "value": 1,
+                "tone": "accent"
+              },
+              {
+                "index": 6,
+                "name": "DISCONTI",
+                "value": 1,
+                "tone": "accent"
+              },
+              {
+                "index": 5,
+                "name": "RECEPTIO",
+                "value": 1,
+                "tone": "accent",
+                "highlighted": true
+              },
+              {
+                "index": 4,
+                "name": "EDRX",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "PAGING",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "TIME",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "WINDOW",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "MECHANIC",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Step 3: Execute frame & verify state in EXTENDED_DISCONTI_REG.",
+            "registerName": "EXTENDED_DISCONTI_REG",
+            "bitWidth": 8,
+            "hexValue": "0xF6",
+            "decimalValue": 246,
+            "maskApplied": "0xF6",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EXTENDED",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 6,
+                "name": "DISCONTI",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 5,
+                "name": "RECEPTIO",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 4,
+                "name": "EDRX",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 3,
+                "name": "PAGING",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "TIME",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 1,
+                "name": "WINDOW",
+                "value": 1,
+                "tone": "warn",
+                "highlighted": true
+              },
+              {
+                "index": 0,
+                "name": "MECHANIC",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Step 4: Commit verified output in EXTENDED_DISCONTI_REG.",
+            "registerName": "EXTENDED_DISCONTI_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EXTENDED",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "DISCONTI",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "RECEPTIO",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "EDRX",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "PAGING",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "TIME",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 1,
+                "name": "WINDOW",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 0,
+                "name": "MECHANIC",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Early Data Transmission (EDT) & Control Plane vs User Plane Optimizations",
+      "codeHash": "cb2941286350c134919ceb41d414bf08911a3528a95e4abfd3d2d6dc2d6fd473",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 37 Part 4 - Early Data Transmission (EDT) & ",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Step 1: Initialize EARLY_DATA_REG for Early Data Transmission (EDT) & .",
+            "registerName": "EARLY_DATA_REG",
+            "bitWidth": 8,
+            "hexValue": "0x80",
+            "decimalValue": 128,
+            "maskApplied": "1 << 7",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EARLY",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "DATA",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 5,
+                "name": "TRANSMIS",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 4,
+                "name": "CONTROL",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "PLANE",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "USER",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "OPTIMIZA",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "EVEN",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Step 2: Configure operational bitfields in EARLY_DATA_REG.",
+            "registerName": "EARLY_DATA_REG",
+            "bitWidth": 8,
+            "hexValue": "0xE0",
+            "decimalValue": 224,
+            "maskApplied": "0xE0",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EARLY",
+                "value": 1,
+                "tone": "accent"
+              },
+              {
+                "index": 6,
+                "name": "DATA",
+                "value": 1,
+                "tone": "accent"
+              },
+              {
+                "index": 5,
+                "name": "TRANSMIS",
+                "value": 1,
+                "tone": "accent",
+                "highlighted": true
+              },
+              {
+                "index": 4,
+                "name": "CONTROL",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "PLANE",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "USER",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "OPTIMIZA",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "EVEN",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Step 3: Execute frame & verify state in EARLY_DATA_REG.",
+            "registerName": "EARLY_DATA_REG",
+            "bitWidth": 8,
+            "hexValue": "0xF6",
+            "decimalValue": 246,
+            "maskApplied": "0xF6",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EARLY",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 6,
+                "name": "DATA",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 5,
+                "name": "TRANSMIS",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 4,
+                "name": "CONTROL",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 3,
+                "name": "PLANE",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "USER",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 1,
+                "name": "OPTIMIZA",
+                "value": 1,
+                "tone": "warn",
+                "highlighted": true
+              },
+              {
+                "index": 0,
+                "name": "EVEN",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Step 4: Commit verified output in EARLY_DATA_REG.",
+            "registerName": "EARLY_DATA_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EARLY",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "DATA",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "TRANSMIS",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "CONTROL",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "PLANE",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "USER",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 1,
+                "name": "OPTIMIZA",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 0,
+                "name": "EVEN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Masterclass Synthesis: 10-15 Year Industrial Battery Lifetime Engineering Audit",
+      "codeHash": "ff1a2e9301b6e077dc94c0e2a20365a9a0a5b3a170420a160fd7cd3f67c922e4",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 37 Part 5 - Masterclass Synthesis: 10-15 Yea",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Step 1: Initialize MASTERCLASS_SYNTHESI_REG for Masterclass Synthesis: 10-15 Y",
+            "registerName": "MASTERCLASS_SYNTHESI_REG",
+            "bitWidth": 8,
+            "hexValue": "0x80",
+            "decimalValue": 128,
+            "maskApplied": "1 << 7",
+            "bits": [
+              {
+                "index": 7,
+                "name": "MASTERCL",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "SYNTHESI",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 5,
+                "name": "YEAR",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 4,
+                "name": "INDUSTRI",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "BATTERY",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "LIFETIME",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "ENGINEER",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "AUDIT",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Step 2: Configure operational bitfields in MASTERCLASS_SYNTHESI_REG.",
+            "registerName": "MASTERCLASS_SYNTHESI_REG",
+            "bitWidth": 8,
+            "hexValue": "0xE0",
+            "decimalValue": 224,
+            "maskApplied": "0xE0",
+            "bits": [
+              {
+                "index": 7,
+                "name": "MASTERCL",
+                "value": 1,
+                "tone": "accent"
+              },
+              {
+                "index": 6,
+                "name": "SYNTHESI",
+                "value": 1,
+                "tone": "accent"
+              },
+              {
+                "index": 5,
+                "name": "YEAR",
+                "value": 1,
+                "tone": "accent",
+                "highlighted": true
+              },
+              {
+                "index": 4,
+                "name": "INDUSTRI",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "BATTERY",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "LIFETIME",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "ENGINEER",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "AUDIT",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Step 3: Execute frame & verify state in MASTERCLASS_SYNTHESI_REG.",
+            "registerName": "MASTERCLASS_SYNTHESI_REG",
+            "bitWidth": 8,
+            "hexValue": "0xF6",
+            "decimalValue": 246,
+            "maskApplied": "0xF6",
+            "bits": [
+              {
+                "index": 7,
+                "name": "MASTERCL",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 6,
+                "name": "SYNTHESI",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 5,
+                "name": "YEAR",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 4,
+                "name": "INDUSTRI",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 3,
+                "name": "BATTERY",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "LIFETIME",
+                "value": 1,
+                "tone": "warn"
+              },
+              {
+                "index": 1,
+                "name": "ENGINEER",
+                "value": 1,
+                "tone": "warn",
+                "highlighted": true
+              },
+              {
+                "index": 0,
+                "name": "AUDIT",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Step 4: Commit verified output in MASTERCLASS_SYNTHESI_REG.",
+            "registerName": "MASTERCLASS_SYNTHESI_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "MASTERCL",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 6,
+                "name": "SYNTHESI",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "YEAR",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "INDUSTRI",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "BATTERY",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "LIFETIME",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 1,
+                "name": "ENGINEER",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 0,
+                "name": "AUDIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
