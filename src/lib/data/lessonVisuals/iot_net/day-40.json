@@ -9,125 +9,125 @@
   "codeHash": "3ae2885300ae201a586e98980f9e04b3fee9cc2c696d3169a92b80ccbbfbfd86",
   "spec": {
     "template": "register-bits",
-    "title": "Day 40 Part 1 - Part 1: Multi-RAT Capability Env",
+    "title": "Day 40 Part 1 — Part 1: Multi-RAT Capability Envelope Registr",
     "steps": [
       {
         "at": "say1",
         "step": "say1",
-        "caption": "Step 1: Initialize MULTI_CAPABILI_REG for Part 1: Multi-RAT Capability Env.",
-        "registerName": "MULTI_CAPABILI_REG",
+        "caption": "Initialize MULTI_RAT_REGISTRY_REG: Register RedCap, NB-IoT, Wi-SUN, and LTE-M interfaces.",
+        "registerName": "MULTI_RAT_REGISTRY_REG",
         "bitWidth": 8,
-        "hexValue": "0x80",
-        "decimalValue": 128,
-        "maskApplied": "1 << 7",
+        "hexValue": "0xF1",
+        "decimalValue": 241,
+        "maskApplied": "0xF1",
         "bits": [
           {
             "index": 7,
-            "name": "MULTI",
+            "name": "REDCAP_EN",
             "value": 1,
             "tone": "ok",
             "highlighted": true
           },
           {
             "index": 6,
-            "name": "CAPABILI",
-            "value": 0,
-            "tone": "idle"
+            "name": "NBIOT_EN",
+            "value": 1,
+            "tone": "ok"
           },
           {
             "index": 5,
-            "name": "ENVELOPE",
-            "value": 0,
-            "tone": "idle"
+            "name": "WISUN_EN",
+            "value": 1,
+            "tone": "ok"
           },
           {
             "index": 4,
-            "name": "REGISTRY",
-            "value": 0,
-            "tone": "idle"
+            "name": "LTEM_EN",
+            "value": 1,
+            "tone": "ok"
           },
           {
             "index": 3,
-            "name": "WELCOME",
+            "name": "PROB_ACT",
             "value": 0,
             "tone": "idle"
           },
           {
             "index": 2,
-            "name": "CONVERGE",
+            "name": "PROF_LOAD",
             "value": 0,
             "tone": "idle"
           },
           {
             "index": 1,
-            "name": "ENGINE",
+            "name": "CAP_SYNC",
             "value": 0,
             "tone": "idle"
           },
           {
             "index": 0,
-            "name": "FLEETS",
-            "value": 0,
-            "tone": "idle"
+            "name": "REG_INIT",
+            "value": 1,
+            "tone": "ok"
           }
         ]
       },
       {
         "at": "say2",
         "step": "say2",
-        "caption": "Step 2: Configure operational bitfields in MULTI_CAPABILI_REG.",
-        "registerName": "MULTI_CAPABILI_REG",
+        "caption": "Profile endpoint constraints: battery SOC, payload bytes, mobility, and latency tolerance.",
+        "registerName": "MULTI_RAT_REGISTRY_REG",
         "bitWidth": 8,
-        "hexValue": "0xE0",
-        "decimalValue": 224,
-        "maskApplied": "0xE0",
+        "hexValue": "0xB6",
+        "decimalValue": 182,
+        "maskApplied": "0xB6",
         "bits": [
           {
             "index": 7,
-            "name": "MULTI",
+            "name": "REDCAP_EN",
             "value": 1,
-            "tone": "accent"
-          },
-          {
-            "index": 6,
-            "name": "CAPABILI",
-            "value": 1,
-            "tone": "accent"
-          },
-          {
-            "index": 5,
-            "name": "ENVELOPE",
-            "value": 1,
-            "tone": "accent",
+            "tone": "ok",
             "highlighted": true
           },
           {
-            "index": 4,
-            "name": "REGISTRY",
+            "index": 6,
+            "name": "NBIOT_EN",
             "value": 0,
             "tone": "idle"
           },
           {
+            "index": 5,
+            "name": "WISUN_EN",
+            "value": 1,
+            "tone": "ok"
+          },
+          {
+            "index": 4,
+            "name": "LTEM_EN",
+            "value": 1,
+            "tone": "ok"
+          },
+          {
             "index": 3,
-            "name": "WELCOME",
+            "name": "PROB_ACT",
             "value": 0,
             "tone": "idle"
           },
           {
             "index": 2,
-            "name": "CONVERGE",
-            "value": 0,
-            "tone": "idle"
+            "name": "PROF_LOAD",
+            "value": 1,
+            "tone": "ok"
           },
           {
             "index": 1,
-            "name": "ENGINE",
-            "value": 0,
-            "tone": "idle"
+            "name": "CAP_SYNC",
+            "value": 1,
+            "tone": "ok"
           },
           {
             "index": 0,
-            "name": "FLEETS",
+            "name": "REG_INIT",
             "value": 0,
             "tone": "idle"
           }
@@ -136,59 +136,59 @@
       {
         "at": "example",
         "step": "example",
-        "caption": "Step 3: Execute frame & verify state in MULTI_CAPABILI_REG.",
-        "registerName": "MULTI_CAPABILI_REG",
+        "caption": "Synchronize multi-RAT capability envelope across edge hardware abstraction layer.",
+        "registerName": "MULTI_RAT_REGISTRY_REG",
         "bitWidth": 8,
-        "hexValue": "0xF6",
-        "decimalValue": 246,
-        "maskApplied": "0xF6",
+        "hexValue": "0xFE",
+        "decimalValue": 254,
+        "maskApplied": "0xFE",
         "bits": [
           {
             "index": 7,
-            "name": "MULTI",
+            "name": "REDCAP_EN",
             "value": 1,
-            "tone": "warn"
-          },
-          {
-            "index": 6,
-            "name": "CAPABILI",
-            "value": 1,
-            "tone": "warn"
-          },
-          {
-            "index": 5,
-            "name": "ENVELOPE",
-            "value": 1,
-            "tone": "warn"
-          },
-          {
-            "index": 4,
-            "name": "REGISTRY",
-            "value": 1,
-            "tone": "warn"
-          },
-          {
-            "index": 3,
-            "name": "WELCOME",
-            "value": 0,
-            "tone": "idle"
-          },
-          {
-            "index": 2,
-            "name": "CONVERGE",
-            "value": 1,
-            "tone": "warn"
-          },
-          {
-            "index": 1,
-            "name": "ENGINE",
-            "value": 1,
-            "tone": "warn",
+            "tone": "ok",
             "highlighted": true
           },
           {
+            "index": 6,
+            "name": "NBIOT_EN",
+            "value": 1,
+            "tone": "ok"
+          },
+          {
+            "index": 5,
+            "name": "WISUN_EN",
+            "value": 1,
+            "tone": "ok"
+          },
+          {
+            "index": 4,
+            "name": "LTEM_EN",
+            "value": 1,
+            "tone": "ok"
+          },
+          {
+            "index": 3,
+            "name": "PROB_ACT",
+            "value": 1,
+            "tone": "ok"
+          },
+          {
+            "index": 2,
+            "name": "PROF_LOAD",
+            "value": 1,
+            "tone": "ok"
+          },
+          {
+            "index": 1,
+            "name": "CAP_SYNC",
+            "value": 1,
+            "tone": "ok"
+          },
+          {
             "index": 0,
-            "name": "FLEETS",
+            "name": "REG_INIT",
             "value": 0,
             "tone": "idle"
           }
@@ -197,8 +197,8 @@
       {
         "at": "tryIt",
         "step": "tryIt",
-        "caption": "Step 4: Commit verified output in MULTI_CAPABILI_REG.",
-        "registerName": "MULTI_CAPABILI_REG",
+        "caption": "Commit active multi-RAT gateway registry for dynamic protocol convergence.",
+        "registerName": "MULTI_RAT_REGISTRY_REG",
         "bitWidth": 8,
         "hexValue": "0xFF",
         "decimalValue": 255,
@@ -206,52 +206,52 @@
         "bits": [
           {
             "index": 7,
-            "name": "MULTI",
+            "name": "REDCAP_EN",
             "value": 1,
-            "tone": "ok"
+            "tone": "ok",
+            "highlighted": true
           },
           {
             "index": 6,
-            "name": "CAPABILI",
+            "name": "NBIOT_EN",
             "value": 1,
             "tone": "ok"
           },
           {
             "index": 5,
-            "name": "ENVELOPE",
+            "name": "WISUN_EN",
             "value": 1,
             "tone": "ok"
           },
           {
             "index": 4,
-            "name": "REGISTRY",
+            "name": "LTEM_EN",
             "value": 1,
             "tone": "ok"
           },
           {
             "index": 3,
-            "name": "WELCOME",
+            "name": "PROB_ACT",
             "value": 1,
             "tone": "ok"
           },
           {
             "index": 2,
-            "name": "CONVERGE",
+            "name": "PROF_LOAD",
             "value": 1,
             "tone": "ok"
           },
           {
             "index": 1,
-            "name": "ENGINE",
+            "name": "CAP_SYNC",
             "value": 1,
             "tone": "ok"
           },
           {
             "index": 0,
-            "name": "FLEETS",
+            "name": "REG_INIT",
             "value": 1,
-            "tone": "ok",
-            "highlighted": true
+            "tone": "ok"
           }
         ]
       }
@@ -263,125 +263,125 @@
       "codeHash": "3ae2885300ae201a586e98980f9e04b3fee9cc2c696d3169a92b80ccbbfbfd86",
       "spec": {
         "template": "register-bits",
-        "title": "Day 40 Part 1 - Part 1: Multi-RAT Capability Env",
+        "title": "Day 40 Part 1 — Part 1: Multi-RAT Capability Envelope Registr",
         "steps": [
           {
             "at": "say1",
             "step": "say1",
-            "caption": "Step 1: Initialize MULTI_CAPABILI_REG for Part 1: Multi-RAT Capability Env.",
-            "registerName": "MULTI_CAPABILI_REG",
+            "caption": "Initialize MULTI_RAT_REGISTRY_REG: Register RedCap, NB-IoT, Wi-SUN, and LTE-M interfaces.",
+            "registerName": "MULTI_RAT_REGISTRY_REG",
             "bitWidth": 8,
-            "hexValue": "0x80",
-            "decimalValue": 128,
-            "maskApplied": "1 << 7",
+            "hexValue": "0xF1",
+            "decimalValue": 241,
+            "maskApplied": "0xF1",
             "bits": [
               {
                 "index": 7,
-                "name": "MULTI",
+                "name": "REDCAP_EN",
                 "value": 1,
                 "tone": "ok",
                 "highlighted": true
               },
               {
                 "index": 6,
-                "name": "CAPABILI",
-                "value": 0,
-                "tone": "idle"
+                "name": "NBIOT_EN",
+                "value": 1,
+                "tone": "ok"
               },
               {
                 "index": 5,
-                "name": "ENVELOPE",
-                "value": 0,
-                "tone": "idle"
+                "name": "WISUN_EN",
+                "value": 1,
+                "tone": "ok"
               },
               {
                 "index": 4,
-                "name": "REGISTRY",
-                "value": 0,
-                "tone": "idle"
+                "name": "LTEM_EN",
+                "value": 1,
+                "tone": "ok"
               },
               {
                 "index": 3,
-                "name": "WELCOME",
+                "name": "PROB_ACT",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 2,
-                "name": "CONVERGE",
+                "name": "PROF_LOAD",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 1,
-                "name": "ENGINE",
+                "name": "CAP_SYNC",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 0,
-                "name": "FLEETS",
-                "value": 0,
-                "tone": "idle"
+                "name": "REG_INIT",
+                "value": 1,
+                "tone": "ok"
               }
             ]
           },
           {
             "at": "say2",
             "step": "say2",
-            "caption": "Step 2: Configure operational bitfields in MULTI_CAPABILI_REG.",
-            "registerName": "MULTI_CAPABILI_REG",
+            "caption": "Profile endpoint constraints: battery SOC, payload bytes, mobility, and latency tolerance.",
+            "registerName": "MULTI_RAT_REGISTRY_REG",
             "bitWidth": 8,
-            "hexValue": "0xE0",
-            "decimalValue": 224,
-            "maskApplied": "0xE0",
+            "hexValue": "0xB6",
+            "decimalValue": 182,
+            "maskApplied": "0xB6",
             "bits": [
               {
                 "index": 7,
-                "name": "MULTI",
+                "name": "REDCAP_EN",
                 "value": 1,
-                "tone": "accent"
-              },
-              {
-                "index": 6,
-                "name": "CAPABILI",
-                "value": 1,
-                "tone": "accent"
-              },
-              {
-                "index": 5,
-                "name": "ENVELOPE",
-                "value": 1,
-                "tone": "accent",
+                "tone": "ok",
                 "highlighted": true
               },
               {
-                "index": 4,
-                "name": "REGISTRY",
+                "index": 6,
+                "name": "NBIOT_EN",
                 "value": 0,
                 "tone": "idle"
               },
               {
+                "index": 5,
+                "name": "WISUN_EN",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "LTEM_EN",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
                 "index": 3,
-                "name": "WELCOME",
+                "name": "PROB_ACT",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 2,
-                "name": "CONVERGE",
-                "value": 0,
-                "tone": "idle"
+                "name": "PROF_LOAD",
+                "value": 1,
+                "tone": "ok"
               },
               {
                 "index": 1,
-                "name": "ENGINE",
-                "value": 0,
-                "tone": "idle"
+                "name": "CAP_SYNC",
+                "value": 1,
+                "tone": "ok"
               },
               {
                 "index": 0,
-                "name": "FLEETS",
+                "name": "REG_INIT",
                 "value": 0,
                 "tone": "idle"
               }
@@ -390,59 +390,59 @@
           {
             "at": "example",
             "step": "example",
-            "caption": "Step 3: Execute frame & verify state in MULTI_CAPABILI_REG.",
-            "registerName": "MULTI_CAPABILI_REG",
+            "caption": "Synchronize multi-RAT capability envelope across edge hardware abstraction layer.",
+            "registerName": "MULTI_RAT_REGISTRY_REG",
             "bitWidth": 8,
-            "hexValue": "0xF6",
-            "decimalValue": 246,
-            "maskApplied": "0xF6",
+            "hexValue": "0xFE",
+            "decimalValue": 254,
+            "maskApplied": "0xFE",
             "bits": [
               {
                 "index": 7,
-                "name": "MULTI",
+                "name": "REDCAP_EN",
                 "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 6,
-                "name": "CAPABILI",
-                "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 5,
-                "name": "ENVELOPE",
-                "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 4,
-                "name": "REGISTRY",
-                "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 3,
-                "name": "WELCOME",
-                "value": 0,
-                "tone": "idle"
-              },
-              {
-                "index": 2,
-                "name": "CONVERGE",
-                "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 1,
-                "name": "ENGINE",
-                "value": 1,
-                "tone": "warn",
+                "tone": "ok",
                 "highlighted": true
               },
               {
+                "index": 6,
+                "name": "NBIOT_EN",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "WISUN_EN",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "LTEM_EN",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "PROB_ACT",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "PROF_LOAD",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 1,
+                "name": "CAP_SYNC",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
                 "index": 0,
-                "name": "FLEETS",
+                "name": "REG_INIT",
                 "value": 0,
                 "tone": "idle"
               }
@@ -451,8 +451,8 @@
           {
             "at": "tryIt",
             "step": "tryIt",
-            "caption": "Step 4: Commit verified output in MULTI_CAPABILI_REG.",
-            "registerName": "MULTI_CAPABILI_REG",
+            "caption": "Commit active multi-RAT gateway registry for dynamic protocol convergence.",
+            "registerName": "MULTI_RAT_REGISTRY_REG",
             "bitWidth": 8,
             "hexValue": "0xFF",
             "decimalValue": 255,
@@ -460,52 +460,52 @@
             "bits": [
               {
                 "index": 7,
-                "name": "MULTI",
+                "name": "REDCAP_EN",
                 "value": 1,
-                "tone": "ok"
+                "tone": "ok",
+                "highlighted": true
               },
               {
                 "index": 6,
-                "name": "CAPABILI",
+                "name": "NBIOT_EN",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 5,
-                "name": "ENVELOPE",
+                "name": "WISUN_EN",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 4,
-                "name": "REGISTRY",
+                "name": "LTEM_EN",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 3,
-                "name": "WELCOME",
+                "name": "PROB_ACT",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 2,
-                "name": "CONVERGE",
+                "name": "PROF_LOAD",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 1,
-                "name": "ENGINE",
+                "name": "CAP_SYNC",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 0,
-                "name": "FLEETS",
+                "name": "REG_INIT",
                 "value": 1,
-                "tone": "ok",
-                "highlighted": true
+                "tone": "ok"
               }
             ]
           }
@@ -517,125 +517,125 @@
       "codeHash": "c8357c3a1c1e62c115c6d5ffdfba84f2c8c7f26142ccd22fdaf7cf433f28b4f5",
       "spec": {
         "template": "register-bits",
-        "title": "Day 40 Part 2 - Part 2: Multi-RAT Link Scoring P",
+        "title": "Day 40 Part 2 — Part 2: Multi-RAT Link Scoring Policy Engine",
         "steps": [
           {
             "at": "say1",
             "step": "say1",
-            "caption": "Step 1: Initialize MULTI_LINK_REG for Part 2: Multi-RAT Link Scoring P.",
-            "registerName": "MULTI_LINK_REG",
+            "caption": "Initialize MULTI_RAT_SCORING_REG: Configure multi-criteria link utility weights.",
+            "registerName": "MULTI_RAT_SCORING_REG",
             "bitWidth": 8,
-            "hexValue": "0x80",
-            "decimalValue": 128,
-            "maskApplied": "1 << 7",
+            "hexValue": "0x81",
+            "decimalValue": 129,
+            "maskApplied": "0x81",
             "bits": [
               {
                 "index": 7,
-                "name": "MULTI",
+                "name": "RSRP_WT",
                 "value": 1,
                 "tone": "ok",
                 "highlighted": true
               },
               {
                 "index": 6,
-                "name": "LINK",
+                "name": "SNR_WT",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 5,
-                "name": "SCORING",
+                "name": "BATT_WT",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 4,
-                "name": "POLICY",
+                "name": "PL_SZ_WT",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 3,
-                "name": "ENGINE",
+                "name": "MOBIL_WT",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 2,
-                "name": "SELECTIO",
+                "name": "SCORE_OK",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 1,
-                "name": "SCORING",
+                "name": "RANK_1",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 0,
-                "name": "BLENDS",
-                "value": 0,
-                "tone": "idle"
+                "name": "DECIS_RDY",
+                "value": 1,
+                "tone": "ok"
               }
             ]
           },
           {
             "at": "say2",
             "step": "say2",
-            "caption": "Step 2: Configure operational bitfields in MULTI_LINK_REG.",
-            "registerName": "MULTI_LINK_REG",
+            "caption": "Compute weighted utility scores across all 4 RATs combining RF margin and energy cost.",
+            "registerName": "MULTI_RAT_SCORING_REG",
             "bitWidth": 8,
-            "hexValue": "0xE0",
-            "decimalValue": 224,
-            "maskApplied": "0xE0",
+            "hexValue": "0xF8",
+            "decimalValue": 248,
+            "maskApplied": "0xF8",
             "bits": [
               {
                 "index": 7,
-                "name": "MULTI",
+                "name": "RSRP_WT",
                 "value": 1,
-                "tone": "accent"
-              },
-              {
-                "index": 6,
-                "name": "LINK",
-                "value": 1,
-                "tone": "accent"
-              },
-              {
-                "index": 5,
-                "name": "SCORING",
-                "value": 1,
-                "tone": "accent",
+                "tone": "ok",
                 "highlighted": true
               },
               {
+                "index": 6,
+                "name": "SNR_WT",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "BATT_WT",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
                 "index": 4,
-                "name": "POLICY",
-                "value": 0,
-                "tone": "idle"
+                "name": "PL_SZ_WT",
+                "value": 1,
+                "tone": "ok"
               },
               {
                 "index": 3,
-                "name": "ENGINE",
-                "value": 0,
-                "tone": "idle"
+                "name": "MOBIL_WT",
+                "value": 1,
+                "tone": "ok"
               },
               {
                 "index": 2,
-                "name": "SELECTIO",
+                "name": "SCORE_OK",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 1,
-                "name": "SCORING",
+                "name": "RANK_1",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 0,
-                "name": "BLENDS",
+                "name": "DECIS_RDY",
                 "value": 0,
                 "tone": "idle"
               }
@@ -644,59 +644,59 @@
           {
             "at": "example",
             "step": "example",
-            "caption": "Step 3: Execute frame & verify state in MULTI_LINK_REG.",
-            "registerName": "MULTI_LINK_REG",
+            "caption": "Rank candidate interfaces and select highest scoring RAT matching SLA requirements.",
+            "registerName": "MULTI_RAT_SCORING_REG",
             "bitWidth": 8,
-            "hexValue": "0xF6",
-            "decimalValue": 246,
-            "maskApplied": "0xF6",
+            "hexValue": "0xFE",
+            "decimalValue": 254,
+            "maskApplied": "0xFE",
             "bits": [
               {
                 "index": 7,
-                "name": "MULTI",
+                "name": "RSRP_WT",
                 "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 6,
-                "name": "LINK",
-                "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 5,
-                "name": "SCORING",
-                "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 4,
-                "name": "POLICY",
-                "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 3,
-                "name": "ENGINE",
-                "value": 0,
-                "tone": "idle"
-              },
-              {
-                "index": 2,
-                "name": "SELECTIO",
-                "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 1,
-                "name": "SCORING",
-                "value": 1,
-                "tone": "warn",
+                "tone": "ok",
                 "highlighted": true
               },
               {
+                "index": 6,
+                "name": "SNR_WT",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "BATT_WT",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "PL_SZ_WT",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "MOBIL_WT",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "SCORE_OK",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 1,
+                "name": "RANK_1",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
                 "index": 0,
-                "name": "BLENDS",
+                "name": "DECIS_RDY",
                 "value": 0,
                 "tone": "idle"
               }
@@ -705,8 +705,8 @@
           {
             "at": "tryIt",
             "step": "tryIt",
-            "caption": "Step 4: Commit verified output in MULTI_LINK_REG.",
-            "registerName": "MULTI_LINK_REG",
+            "caption": "Commit optimal RAT routing decision with deterministic mathematical scoring.",
+            "registerName": "MULTI_RAT_SCORING_REG",
             "bitWidth": 8,
             "hexValue": "0xFF",
             "decimalValue": 255,
@@ -714,52 +714,52 @@
             "bits": [
               {
                 "index": 7,
-                "name": "MULTI",
+                "name": "RSRP_WT",
                 "value": 1,
-                "tone": "ok"
+                "tone": "ok",
+                "highlighted": true
               },
               {
                 "index": 6,
-                "name": "LINK",
+                "name": "SNR_WT",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 5,
-                "name": "SCORING",
+                "name": "BATT_WT",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 4,
-                "name": "POLICY",
+                "name": "PL_SZ_WT",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 3,
-                "name": "ENGINE",
+                "name": "MOBIL_WT",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 2,
-                "name": "SELECTIO",
+                "name": "SCORE_OK",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 1,
-                "name": "SCORING",
+                "name": "RANK_1",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 0,
-                "name": "BLENDS",
+                "name": "DECIS_RDY",
                 "value": 1,
-                "tone": "ok",
-                "highlighted": true
+                "tone": "ok"
               }
             ]
           }
@@ -771,125 +771,125 @@
       "codeHash": "4a9aabeaeaba41ad756a764b06ffddeae6537873f670849cb9ab9449017d4106",
       "spec": {
         "template": "register-bits",
-        "title": "Day 40 Part 3 - Part 3: Edge Case Handling & Def",
+        "title": "Day 40 Part 3 — Part 3: Edge Case Handling & Defensive Link P",
         "steps": [
           {
             "at": "say1",
             "step": "say1",
-            "caption": "Step 1: Initialize EDGE_CASE_REG for Part 3: Edge Case Handling & Def.",
-            "registerName": "EDGE_CASE_REG",
+            "caption": "Initialize MULTI_RAT_DEFENSE_REG: Arm 2.0 dB link hysteresis and 60s minimum dwell timer.",
+            "registerName": "MULTI_RAT_DEFENSE_REG",
             "bitWidth": 8,
-            "hexValue": "0x80",
-            "decimalValue": 128,
-            "maskApplied": "1 << 7",
+            "hexValue": "0x81",
+            "decimalValue": 129,
+            "maskApplied": "0x81",
             "bits": [
               {
                 "index": 7,
-                "name": "EDGE",
+                "name": "HYST_LOCK",
                 "value": 1,
                 "tone": "ok",
                 "highlighted": true
               },
               {
                 "index": 6,
-                "name": "CASE",
+                "name": "FLAP_BLK",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 5,
-                "name": "HANDLING",
+                "name": "BATT_CRIT",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 4,
-                "name": "DEFENSIV",
+                "name": "PAYLD_OVR",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 3,
-                "name": "LINK",
+                "name": "COV_LOSS",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 2,
-                "name": "POLICIES",
+                "name": "RETRY_DEC",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 1,
-                "name": "CASES",
+                "name": "FALLBACK",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 0,
-                "name": "FAILURE",
-                "value": 0,
-                "tone": "idle"
+                "name": "GUARD_OK",
+                "value": 1,
+                "tone": "ok"
               }
             ]
           },
           {
             "at": "say2",
             "step": "say2",
-            "caption": "Step 2: Configure operational bitfields in EDGE_CASE_REG.",
-            "registerName": "EDGE_CASE_REG",
+            "caption": "Block ping-pong switching flapping between RedCap and LTE-M under multipath fade.",
+            "registerName": "MULTI_RAT_DEFENSE_REG",
             "bitWidth": 8,
-            "hexValue": "0xE0",
-            "decimalValue": 224,
-            "maskApplied": "0xE0",
+            "hexValue": "0xEA",
+            "decimalValue": 234,
+            "maskApplied": "0xEA",
             "bits": [
               {
                 "index": 7,
-                "name": "EDGE",
+                "name": "HYST_LOCK",
                 "value": 1,
-                "tone": "accent"
-              },
-              {
-                "index": 6,
-                "name": "CASE",
-                "value": 1,
-                "tone": "accent"
-              },
-              {
-                "index": 5,
-                "name": "HANDLING",
-                "value": 1,
-                "tone": "accent",
+                "tone": "ok",
                 "highlighted": true
               },
               {
+                "index": 6,
+                "name": "FLAP_BLK",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "BATT_CRIT",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
                 "index": 4,
-                "name": "DEFENSIV",
+                "name": "PAYLD_OVR",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 3,
-                "name": "LINK",
-                "value": 0,
-                "tone": "idle"
+                "name": "COV_LOSS",
+                "value": 1,
+                "tone": "ok"
               },
               {
                 "index": 2,
-                "name": "POLICIES",
+                "name": "RETRY_DEC",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 1,
-                "name": "CASES",
-                "value": 0,
-                "tone": "idle"
+                "name": "FALLBACK",
+                "value": 1,
+                "tone": "ok"
               },
               {
                 "index": 0,
-                "name": "FAILURE",
+                "name": "GUARD_OK",
                 "value": 0,
                 "tone": "idle"
               }
@@ -898,59 +898,59 @@
           {
             "at": "example",
             "step": "example",
-            "caption": "Step 3: Execute frame & verify state in EDGE_CASE_REG.",
-            "registerName": "EDGE_CASE_REG",
+            "caption": "Force low-power NB-IoT fallback on critical battery (<20% SOC) and route video to RedCap.",
+            "registerName": "MULTI_RAT_DEFENSE_REG",
             "bitWidth": 8,
-            "hexValue": "0xF6",
-            "decimalValue": 246,
-            "maskApplied": "0xF6",
+            "hexValue": "0xFE",
+            "decimalValue": 254,
+            "maskApplied": "0xFE",
             "bits": [
               {
                 "index": 7,
-                "name": "EDGE",
+                "name": "HYST_LOCK",
                 "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 6,
-                "name": "CASE",
-                "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 5,
-                "name": "HANDLING",
-                "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 4,
-                "name": "DEFENSIV",
-                "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 3,
-                "name": "LINK",
-                "value": 0,
-                "tone": "idle"
-              },
-              {
-                "index": 2,
-                "name": "POLICIES",
-                "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 1,
-                "name": "CASES",
-                "value": 1,
-                "tone": "warn",
+                "tone": "ok",
                 "highlighted": true
               },
               {
+                "index": 6,
+                "name": "FLAP_BLK",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "BATT_CRIT",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "PAYLD_OVR",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "COV_LOSS",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "RETRY_DEC",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 1,
+                "name": "FALLBACK",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
                 "index": 0,
-                "name": "FAILURE",
+                "name": "GUARD_OK",
                 "value": 0,
                 "tone": "idle"
               }
@@ -959,8 +959,8 @@
           {
             "at": "tryIt",
             "step": "tryIt",
-            "caption": "Step 4: Commit verified output in EDGE_CASE_REG.",
-            "registerName": "EDGE_CASE_REG",
+            "caption": "Commit defensive link policy guardrails with guaranteed edge resilience.",
+            "registerName": "MULTI_RAT_DEFENSE_REG",
             "bitWidth": 8,
             "hexValue": "0xFF",
             "decimalValue": 255,
@@ -968,52 +968,52 @@
             "bits": [
               {
                 "index": 7,
-                "name": "EDGE",
+                "name": "HYST_LOCK",
                 "value": 1,
-                "tone": "ok"
+                "tone": "ok",
+                "highlighted": true
               },
               {
                 "index": 6,
-                "name": "CASE",
+                "name": "FLAP_BLK",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 5,
-                "name": "HANDLING",
+                "name": "BATT_CRIT",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 4,
-                "name": "DEFENSIV",
+                "name": "PAYLD_OVR",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 3,
-                "name": "LINK",
+                "name": "COV_LOSS",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 2,
-                "name": "POLICIES",
+                "name": "RETRY_DEC",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 1,
-                "name": "CASES",
+                "name": "FALLBACK",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 0,
-                "name": "FAILURE",
+                "name": "GUARD_OK",
                 "value": 1,
-                "tone": "ok",
-                "highlighted": true
+                "tone": "ok"
               }
             ]
           }
@@ -1025,125 +1025,125 @@
       "codeHash": "c43acbff59e23bd9eed2ead39d4596c15d1ffb82af34961bb7e15b4f37cda266",
       "spec": {
         "template": "register-bits",
-        "title": "Day 40 Part 4 - Part 4: Real-World Port Terminal",
+        "title": "Day 40 Part 4 — Part 4: Real-World Port Terminal Fleet Conver",
         "steps": [
           {
             "at": "say1",
             "step": "say1",
-            "caption": "Step 1: Initialize REAL_WORLD_REG for Part 4: Real-World Port Terminal.",
-            "registerName": "REAL_WORLD_REG",
+            "caption": "Initialize MULTI_RAT_PORT_SIM_REG: Ingest port terminal heterogeneous IoT fleet.",
+            "registerName": "MULTI_RAT_PORT_SIM_REG",
             "bitWidth": 8,
-            "hexValue": "0x80",
-            "decimalValue": 128,
-            "maskApplied": "1 << 7",
+            "hexValue": "0x81",
+            "decimalValue": 129,
+            "maskApplied": "0x81",
             "bits": [
               {
                 "index": 7,
-                "name": "REAL",
+                "name": "MTR_NBIOT",
                 "value": 1,
                 "tone": "ok",
                 "highlighted": true
               },
               {
                 "index": 6,
-                "name": "WORLD",
+                "name": "COLD_LTEM",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 5,
-                "name": "PORT",
+                "name": "CAM_REDCAP",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 4,
-                "name": "TERMINAL",
+                "name": "FLEET_SYNC",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 3,
-                "name": "FLEET",
+                "name": "LOSS_ZERO",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 2,
-                "name": "CONVERGE",
+                "name": "SOC_MGD",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 1,
-                "name": "VALIDATI",
+                "name": "SLA_MET",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 0,
-                "name": "WORLD",
-                "value": 0,
-                "tone": "idle"
+                "name": "PORT_VAL",
+                "value": 1,
+                "tone": "ok"
               }
             ]
           },
           {
             "at": "say2",
             "step": "say2",
-            "caption": "Step 2: Configure operational bitfields in REAL_WORLD_REG.",
-            "registerName": "REAL_WORLD_REG",
+            "caption": "Route static water meters to NB-IoT, mobile cold-chain to LTE-M, and CCTV to RedCap.",
+            "registerName": "MULTI_RAT_PORT_SIM_REG",
             "bitWidth": 8,
-            "hexValue": "0xE0",
-            "decimalValue": 224,
-            "maskApplied": "0xE0",
+            "hexValue": "0xEC",
+            "decimalValue": 236,
+            "maskApplied": "0xEC",
             "bits": [
               {
                 "index": 7,
-                "name": "REAL",
+                "name": "MTR_NBIOT",
                 "value": 1,
-                "tone": "accent"
-              },
-              {
-                "index": 6,
-                "name": "WORLD",
-                "value": 1,
-                "tone": "accent"
-              },
-              {
-                "index": 5,
-                "name": "PORT",
-                "value": 1,
-                "tone": "accent",
+                "tone": "ok",
                 "highlighted": true
               },
               {
+                "index": 6,
+                "name": "COLD_LTEM",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "CAM_REDCAP",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
                 "index": 4,
-                "name": "TERMINAL",
+                "name": "FLEET_SYNC",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 3,
-                "name": "FLEET",
-                "value": 0,
-                "tone": "idle"
+                "name": "LOSS_ZERO",
+                "value": 1,
+                "tone": "ok"
               },
               {
                 "index": 2,
-                "name": "CONVERGE",
-                "value": 0,
-                "tone": "idle"
+                "name": "SOC_MGD",
+                "value": 1,
+                "tone": "ok"
               },
               {
                 "index": 1,
-                "name": "VALIDATI",
+                "name": "SLA_MET",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 0,
-                "name": "WORLD",
+                "name": "PORT_VAL",
                 "value": 0,
                 "tone": "idle"
               }
@@ -1152,59 +1152,59 @@
           {
             "at": "example",
             "step": "example",
-            "caption": "Step 3: Execute frame & verify state in REAL_WORLD_REG.",
-            "registerName": "REAL_WORLD_REG",
+            "caption": "Verify 100% SLA fulfillment, 0 packet loss, and 95% fleet energy optimization.",
+            "registerName": "MULTI_RAT_PORT_SIM_REG",
             "bitWidth": 8,
-            "hexValue": "0xF6",
-            "decimalValue": 246,
-            "maskApplied": "0xF6",
+            "hexValue": "0xFE",
+            "decimalValue": 254,
+            "maskApplied": "0xFE",
             "bits": [
               {
                 "index": 7,
-                "name": "REAL",
+                "name": "MTR_NBIOT",
                 "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 6,
-                "name": "WORLD",
-                "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 5,
-                "name": "PORT",
-                "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 4,
-                "name": "TERMINAL",
-                "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 3,
-                "name": "FLEET",
-                "value": 0,
-                "tone": "idle"
-              },
-              {
-                "index": 2,
-                "name": "CONVERGE",
-                "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 1,
-                "name": "VALIDATI",
-                "value": 1,
-                "tone": "warn",
+                "tone": "ok",
                 "highlighted": true
               },
               {
+                "index": 6,
+                "name": "COLD_LTEM",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "CAM_REDCAP",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "FLEET_SYNC",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "LOSS_ZERO",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "SOC_MGD",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 1,
+                "name": "SLA_MET",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
                 "index": 0,
-                "name": "WORLD",
+                "name": "PORT_VAL",
                 "value": 0,
                 "tone": "idle"
               }
@@ -1213,8 +1213,8 @@
           {
             "at": "tryIt",
             "step": "tryIt",
-            "caption": "Step 4: Commit verified output in REAL_WORLD_REG.",
-            "registerName": "REAL_WORLD_REG",
+            "caption": "Commit end-to-end industrial multi-RAT fleet deployment validation.",
+            "registerName": "MULTI_RAT_PORT_SIM_REG",
             "bitWidth": 8,
             "hexValue": "0xFF",
             "decimalValue": 255,
@@ -1222,52 +1222,52 @@
             "bits": [
               {
                 "index": 7,
-                "name": "REAL",
+                "name": "MTR_NBIOT",
                 "value": 1,
-                "tone": "ok"
+                "tone": "ok",
+                "highlighted": true
               },
               {
                 "index": 6,
-                "name": "WORLD",
+                "name": "COLD_LTEM",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 5,
-                "name": "PORT",
+                "name": "CAM_REDCAP",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 4,
-                "name": "TERMINAL",
+                "name": "FLEET_SYNC",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 3,
-                "name": "FLEET",
+                "name": "LOSS_ZERO",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 2,
-                "name": "CONVERGE",
+                "name": "SOC_MGD",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 1,
-                "name": "VALIDATI",
+                "name": "SLA_MET",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 0,
-                "name": "WORLD",
+                "name": "PORT_VAL",
                 "value": 1,
-                "tone": "ok",
-                "highlighted": true
+                "tone": "ok"
               }
             ]
           }
@@ -1279,64 +1279,64 @@
       "codeHash": "37a2749fd78c509b1fee2f91fb248f89349a625a61df71e16034d78b7293bffc",
       "spec": {
         "template": "register-bits",
-        "title": "Day 40 Part 5 - Part 5: Masterclass Synthesis & ",
+        "title": "Day 40 Part 5 — Part 5: Masterclass Synthesis & Production Ed",
         "steps": [
           {
             "at": "say1",
             "step": "say1",
-            "caption": "Step 1: Initialize MASTERCLASS_SYNTHESI_REG for Part 5: Masterclass Synthesis ",
-            "registerName": "MASTERCLASS_SYNTHESI_REG",
+            "caption": "Initialize CONVERGENCE_MASTER_ENGINE_REG: Verify all 4 RAT interfaces and scoring policies.",
+            "registerName": "CONVERGENCE_MASTER_ENGINE_REG",
             "bitWidth": 8,
-            "hexValue": "0x80",
-            "decimalValue": 128,
-            "maskApplied": "1 << 7",
+            "hexValue": "0xC0",
+            "decimalValue": 192,
+            "maskApplied": "0xC0",
             "bits": [
               {
                 "index": 7,
-                "name": "MASTERCL",
+                "name": "4RAT_RDY",
                 "value": 1,
                 "tone": "ok",
                 "highlighted": true
               },
               {
                 "index": 6,
-                "name": "SYNTHESI",
-                "value": 0,
-                "tone": "idle"
+                "name": "SCORE_ACT",
+                "value": 1,
+                "tone": "ok"
               },
               {
                 "index": 5,
-                "name": "PRODUCTI",
+                "name": "DEF_ACTIVE",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 4,
-                "name": "EDGE",
+                "name": "FLEET_OK",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 3,
-                "name": "GATEWAY",
+                "name": "CERT_EXEC",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 2,
-                "name": "CONTROLL",
+                "name": "GRADE_AP",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 1,
-                "name": "CAPSTONE",
+                "name": "SEAL_VALID",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 0,
-                "name": "SYNTHESI",
+                "name": "GATEWAY_OK",
                 "value": 0,
                 "tone": "idle"
               }
@@ -1345,59 +1345,59 @@
           {
             "at": "say2",
             "step": "say2",
-            "caption": "Step 2: Configure operational bitfields in MASTERCLASS_SYNTHESI_REG.",
-            "registerName": "MASTERCLASS_SYNTHESI_REG",
+            "caption": "Assert active defensive anti-flapping guardrails and fleet simulation validation.",
+            "registerName": "CONVERGENCE_MASTER_ENGINE_REG",
             "bitWidth": 8,
-            "hexValue": "0xE0",
-            "decimalValue": 224,
-            "maskApplied": "0xE0",
+            "hexValue": "0xF0",
+            "decimalValue": 240,
+            "maskApplied": "0xF0",
             "bits": [
               {
                 "index": 7,
-                "name": "MASTERCL",
+                "name": "4RAT_RDY",
                 "value": 1,
-                "tone": "accent"
-              },
-              {
-                "index": 6,
-                "name": "SYNTHESI",
-                "value": 1,
-                "tone": "accent"
-              },
-              {
-                "index": 5,
-                "name": "PRODUCTI",
-                "value": 1,
-                "tone": "accent",
+                "tone": "ok",
                 "highlighted": true
               },
               {
+                "index": 6,
+                "name": "SCORE_ACT",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "DEF_ACTIVE",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
                 "index": 4,
-                "name": "EDGE",
-                "value": 0,
-                "tone": "idle"
+                "name": "FLEET_OK",
+                "value": 1,
+                "tone": "ok"
               },
               {
                 "index": 3,
-                "name": "GATEWAY",
+                "name": "CERT_EXEC",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 2,
-                "name": "CONTROLL",
+                "name": "GRADE_AP",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 1,
-                "name": "CAPSTONE",
+                "name": "SEAL_VALID",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 0,
-                "name": "SYNTHESI",
+                "name": "GATEWAY_OK",
                 "value": 0,
                 "tone": "idle"
               }
@@ -1406,59 +1406,59 @@
           {
             "at": "example",
             "step": "example",
-            "caption": "Step 3: Execute frame & verify state in MASTERCLASS_SYNTHESI_REG.",
-            "registerName": "MASTERCLASS_SYNTHESI_REG",
+            "caption": "Execute full convergence engine benchmark and assert cryptographic milestone token.",
+            "registerName": "CONVERGENCE_MASTER_ENGINE_REG",
             "bitWidth": 8,
-            "hexValue": "0xF6",
-            "decimalValue": 246,
-            "maskApplied": "0xF6",
+            "hexValue": "0xFE",
+            "decimalValue": 254,
+            "maskApplied": "0xFE",
             "bits": [
               {
                 "index": 7,
-                "name": "MASTERCL",
+                "name": "4RAT_RDY",
                 "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 6,
-                "name": "SYNTHESI",
-                "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 5,
-                "name": "PRODUCTI",
-                "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 4,
-                "name": "EDGE",
-                "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 3,
-                "name": "GATEWAY",
-                "value": 0,
-                "tone": "idle"
-              },
-              {
-                "index": 2,
-                "name": "CONTROLL",
-                "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 1,
-                "name": "CAPSTONE",
-                "value": 1,
-                "tone": "warn",
+                "tone": "ok",
                 "highlighted": true
               },
               {
+                "index": 6,
+                "name": "SCORE_ACT",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "DEF_ACTIVE",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "FLEET_OK",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "CERT_EXEC",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "GRADE_AP",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 1,
+                "name": "SEAL_VALID",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
                 "index": 0,
-                "name": "SYNTHESI",
+                "name": "GATEWAY_OK",
                 "value": 0,
                 "tone": "idle"
               }
@@ -1467,8 +1467,8 @@
           {
             "at": "tryIt",
             "step": "tryIt",
-            "caption": "Step 4: Commit verified output in MASTERCLASS_SYNTHESI_REG.",
-            "registerName": "MASTERCLASS_SYNTHESI_REG",
+            "caption": "Commit Grade A+ Milestone 8 Convergence Edge Gateway Engine certification.",
+            "registerName": "CONVERGENCE_MASTER_ENGINE_REG",
             "bitWidth": 8,
             "hexValue": "0xFF",
             "decimalValue": 255,
@@ -1476,52 +1476,52 @@
             "bits": [
               {
                 "index": 7,
-                "name": "MASTERCL",
+                "name": "4RAT_RDY",
                 "value": 1,
-                "tone": "ok"
+                "tone": "ok",
+                "highlighted": true
               },
               {
                 "index": 6,
-                "name": "SYNTHESI",
+                "name": "SCORE_ACT",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 5,
-                "name": "PRODUCTI",
+                "name": "DEF_ACTIVE",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 4,
-                "name": "EDGE",
+                "name": "FLEET_OK",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 3,
-                "name": "GATEWAY",
+                "name": "CERT_EXEC",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 2,
-                "name": "CONTROLL",
+                "name": "GRADE_AP",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 1,
-                "name": "CAPSTONE",
+                "name": "SEAL_VALID",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 0,
-                "name": "SYNTHESI",
+                "name": "GATEWAY_OK",
                 "value": 1,
-                "tone": "ok",
-                "highlighted": true
+                "tone": "ok"
               }
             ]
           }

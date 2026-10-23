@@ -3,131 +3,131 @@
   "prefix": "iot_net",
   "coursePrefix": "iot_net",
   "day": 37,
-  "title": "3GPP NB-IoT Release 16 & 17 Advanced Power Saving, PSM, eDRX & EDT",
-  "promptSha": "7501e6d41fa8bdf517203e4caaefede30be304c569407634d32a29d04ec471ab",
+  "title": "Day 37: 3GPP NB-IoT Release 16 & 17 Advanced Power Saving, PSM, eDRX & EDT",
+  "promptSha": "2ce13ff36e0d0b5c76c82c8943a6e4fce713b0fea3d343de374ddfcc7d301d21",
   "model": "anthropic/claude-3.5-sonnet",
   "codeHash": "3312d682a644160dc4eab803abfde2103282f6b41852630db1860f45dcdcacf5",
   "spec": {
     "template": "register-bits",
-    "title": "Day 37 Part 1 - 3GPP NB-IoT RF Architecture, 164",
+    "title": "Day 37 Part 1 — 3GPP NB-IoT RF Architecture, 164 dB Link Budg",
     "steps": [
       {
         "at": "say1",
         "step": "say1",
-        "caption": "Step 1: Initialize ARCHITECTURE_LINK_REG for 3GPP NB-IoT RF Architecture, 164.",
-        "registerName": "ARCHITECTURE_LINK_REG",
+        "caption": "Initialize NBIOT_RF_CARRIER_REG: Select 180 kHz single-PRB standalone carrier.",
+        "registerName": "NBIOT_RF_CARRIER_REG",
         "bitWidth": 8,
-        "hexValue": "0x80",
-        "decimalValue": 128,
-        "maskApplied": "1 << 7",
+        "hexValue": "0x81",
+        "decimalValue": 129,
+        "maskApplied": "0x81",
         "bits": [
           {
             "index": 7,
-            "name": "ARCHITEC",
+            "name": "IN_BAND",
             "value": 1,
             "tone": "ok",
             "highlighted": true
           },
           {
             "index": 6,
-            "name": "LINK",
+            "name": "GUARD_BD",
             "value": 0,
             "tone": "idle"
           },
           {
             "index": 5,
-            "name": "BUDGET",
+            "name": "STANDALN",
             "value": 0,
             "tone": "idle"
           },
           {
             "index": 4,
-            "name": "SINGLE",
+            "name": "SUB_3K75",
             "value": 0,
             "tone": "idle"
           },
           {
             "index": 3,
-            "name": "TONE",
+            "name": "SUB_15K",
             "value": 0,
             "tone": "idle"
           },
           {
             "index": 2,
-            "name": "MODULATI",
+            "name": "NPUSCH_1",
             "value": 0,
             "tone": "idle"
           },
           {
             "index": 1,
-            "name": "WHILE",
+            "name": "MCL_164D",
             "value": 0,
             "tone": "idle"
           },
           {
             "index": 0,
-            "name": "REDCAP",
-            "value": 0,
-            "tone": "idle"
+            "name": "PHY_LOCK",
+            "value": 1,
+            "tone": "ok"
           }
         ]
       },
       {
         "at": "say2",
         "step": "say2",
-        "caption": "Step 2: Configure operational bitfields in ARCHITECTURE_LINK_REG.",
-        "registerName": "ARCHITECTURE_LINK_REG",
+        "caption": "Configure 3.75 kHz single-tone subcarrier spacing for extreme coverage enhancement.",
+        "registerName": "NBIOT_RF_CARRIER_REG",
         "bitWidth": 8,
-        "hexValue": "0xE0",
-        "decimalValue": 224,
-        "maskApplied": "0xE0",
+        "hexValue": "0xA4",
+        "decimalValue": 164,
+        "maskApplied": "0xA4",
         "bits": [
           {
             "index": 7,
-            "name": "ARCHITEC",
+            "name": "IN_BAND",
             "value": 1,
-            "tone": "accent"
-          },
-          {
-            "index": 6,
-            "name": "LINK",
-            "value": 1,
-            "tone": "accent"
-          },
-          {
-            "index": 5,
-            "name": "BUDGET",
-            "value": 1,
-            "tone": "accent",
+            "tone": "ok",
             "highlighted": true
           },
           {
+            "index": 6,
+            "name": "GUARD_BD",
+            "value": 0,
+            "tone": "idle"
+          },
+          {
+            "index": 5,
+            "name": "STANDALN",
+            "value": 1,
+            "tone": "ok"
+          },
+          {
             "index": 4,
-            "name": "SINGLE",
+            "name": "SUB_3K75",
             "value": 0,
             "tone": "idle"
           },
           {
             "index": 3,
-            "name": "TONE",
+            "name": "SUB_15K",
             "value": 0,
             "tone": "idle"
           },
           {
             "index": 2,
-            "name": "MODULATI",
-            "value": 0,
-            "tone": "idle"
+            "name": "NPUSCH_1",
+            "value": 1,
+            "tone": "ok"
           },
           {
             "index": 1,
-            "name": "WHILE",
+            "name": "MCL_164D",
             "value": 0,
             "tone": "idle"
           },
           {
             "index": 0,
-            "name": "REDCAP",
+            "name": "PHY_LOCK",
             "value": 0,
             "tone": "idle"
           }
@@ -136,59 +136,59 @@
       {
         "at": "example",
         "step": "example",
-        "caption": "Step 3: Execute frame & verify state in ARCHITECTURE_LINK_REG.",
-        "registerName": "ARCHITECTURE_LINK_REG",
+        "caption": "Assert 164 dB MCL link budget threshold across subterranean penetration channel.",
+        "registerName": "NBIOT_RF_CARRIER_REG",
         "bitWidth": 8,
-        "hexValue": "0xF6",
-        "decimalValue": 246,
-        "maskApplied": "0xF6",
+        "hexValue": "0xFE",
+        "decimalValue": 254,
+        "maskApplied": "0xFE",
         "bits": [
           {
             "index": 7,
-            "name": "ARCHITEC",
+            "name": "IN_BAND",
             "value": 1,
-            "tone": "warn"
-          },
-          {
-            "index": 6,
-            "name": "LINK",
-            "value": 1,
-            "tone": "warn"
-          },
-          {
-            "index": 5,
-            "name": "BUDGET",
-            "value": 1,
-            "tone": "warn"
-          },
-          {
-            "index": 4,
-            "name": "SINGLE",
-            "value": 1,
-            "tone": "warn"
-          },
-          {
-            "index": 3,
-            "name": "TONE",
-            "value": 0,
-            "tone": "idle"
-          },
-          {
-            "index": 2,
-            "name": "MODULATI",
-            "value": 1,
-            "tone": "warn"
-          },
-          {
-            "index": 1,
-            "name": "WHILE",
-            "value": 1,
-            "tone": "warn",
+            "tone": "ok",
             "highlighted": true
           },
           {
+            "index": 6,
+            "name": "GUARD_BD",
+            "value": 1,
+            "tone": "ok"
+          },
+          {
+            "index": 5,
+            "name": "STANDALN",
+            "value": 1,
+            "tone": "ok"
+          },
+          {
+            "index": 4,
+            "name": "SUB_3K75",
+            "value": 1,
+            "tone": "ok"
+          },
+          {
+            "index": 3,
+            "name": "SUB_15K",
+            "value": 1,
+            "tone": "ok"
+          },
+          {
+            "index": 2,
+            "name": "NPUSCH_1",
+            "value": 1,
+            "tone": "ok"
+          },
+          {
+            "index": 1,
+            "name": "MCL_164D",
+            "value": 1,
+            "tone": "ok"
+          },
+          {
             "index": 0,
-            "name": "REDCAP",
+            "name": "PHY_LOCK",
             "value": 0,
             "tone": "idle"
           }
@@ -197,8 +197,8 @@
       {
         "at": "tryIt",
         "step": "tryIt",
-        "caption": "Step 4: Commit verified output in ARCHITECTURE_LINK_REG.",
-        "registerName": "ARCHITECTURE_LINK_REG",
+        "caption": "Commit physical layer lock on NB-IoT narrowband carrier channel.",
+        "registerName": "NBIOT_RF_CARRIER_REG",
         "bitWidth": 8,
         "hexValue": "0xFF",
         "decimalValue": 255,
@@ -206,52 +206,52 @@
         "bits": [
           {
             "index": 7,
-            "name": "ARCHITEC",
+            "name": "IN_BAND",
             "value": 1,
-            "tone": "ok"
+            "tone": "ok",
+            "highlighted": true
           },
           {
             "index": 6,
-            "name": "LINK",
+            "name": "GUARD_BD",
             "value": 1,
             "tone": "ok"
           },
           {
             "index": 5,
-            "name": "BUDGET",
+            "name": "STANDALN",
             "value": 1,
             "tone": "ok"
           },
           {
             "index": 4,
-            "name": "SINGLE",
+            "name": "SUB_3K75",
             "value": 1,
             "tone": "ok"
           },
           {
             "index": 3,
-            "name": "TONE",
+            "name": "SUB_15K",
             "value": 1,
             "tone": "ok"
           },
           {
             "index": 2,
-            "name": "MODULATI",
+            "name": "NPUSCH_1",
             "value": 1,
             "tone": "ok"
           },
           {
             "index": 1,
-            "name": "WHILE",
+            "name": "MCL_164D",
             "value": 1,
             "tone": "ok"
           },
           {
             "index": 0,
-            "name": "REDCAP",
+            "name": "PHY_LOCK",
             "value": 1,
-            "tone": "ok",
-            "highlighted": true
+            "tone": "ok"
           }
         ]
       }
@@ -263,125 +263,125 @@
       "codeHash": "3312d682a644160dc4eab803abfde2103282f6b41852630db1860f45dcdcacf5",
       "spec": {
         "template": "register-bits",
-        "title": "Day 37 Part 1 - 3GPP NB-IoT RF Architecture, 164",
+        "title": "Day 37 Part 1 — 3GPP NB-IoT RF Architecture, 164 dB Link Budg",
         "steps": [
           {
             "at": "say1",
             "step": "say1",
-            "caption": "Step 1: Initialize ARCHITECTURE_LINK_REG for 3GPP NB-IoT RF Architecture, 164.",
-            "registerName": "ARCHITECTURE_LINK_REG",
+            "caption": "Initialize NBIOT_RF_CARRIER_REG: Select 180 kHz single-PRB standalone carrier.",
+            "registerName": "NBIOT_RF_CARRIER_REG",
             "bitWidth": 8,
-            "hexValue": "0x80",
-            "decimalValue": 128,
-            "maskApplied": "1 << 7",
+            "hexValue": "0x81",
+            "decimalValue": 129,
+            "maskApplied": "0x81",
             "bits": [
               {
                 "index": 7,
-                "name": "ARCHITEC",
+                "name": "IN_BAND",
                 "value": 1,
                 "tone": "ok",
                 "highlighted": true
               },
               {
                 "index": 6,
-                "name": "LINK",
+                "name": "GUARD_BD",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 5,
-                "name": "BUDGET",
+                "name": "STANDALN",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 4,
-                "name": "SINGLE",
+                "name": "SUB_3K75",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 3,
-                "name": "TONE",
+                "name": "SUB_15K",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 2,
-                "name": "MODULATI",
+                "name": "NPUSCH_1",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 1,
-                "name": "WHILE",
+                "name": "MCL_164D",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 0,
-                "name": "REDCAP",
-                "value": 0,
-                "tone": "idle"
+                "name": "PHY_LOCK",
+                "value": 1,
+                "tone": "ok"
               }
             ]
           },
           {
             "at": "say2",
             "step": "say2",
-            "caption": "Step 2: Configure operational bitfields in ARCHITECTURE_LINK_REG.",
-            "registerName": "ARCHITECTURE_LINK_REG",
+            "caption": "Configure 3.75 kHz single-tone subcarrier spacing for extreme coverage enhancement.",
+            "registerName": "NBIOT_RF_CARRIER_REG",
             "bitWidth": 8,
-            "hexValue": "0xE0",
-            "decimalValue": 224,
-            "maskApplied": "0xE0",
+            "hexValue": "0xA4",
+            "decimalValue": 164,
+            "maskApplied": "0xA4",
             "bits": [
               {
                 "index": 7,
-                "name": "ARCHITEC",
+                "name": "IN_BAND",
                 "value": 1,
-                "tone": "accent"
-              },
-              {
-                "index": 6,
-                "name": "LINK",
-                "value": 1,
-                "tone": "accent"
-              },
-              {
-                "index": 5,
-                "name": "BUDGET",
-                "value": 1,
-                "tone": "accent",
+                "tone": "ok",
                 "highlighted": true
               },
               {
+                "index": 6,
+                "name": "GUARD_BD",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 5,
+                "name": "STANDALN",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
                 "index": 4,
-                "name": "SINGLE",
+                "name": "SUB_3K75",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 3,
-                "name": "TONE",
+                "name": "SUB_15K",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 2,
-                "name": "MODULATI",
-                "value": 0,
-                "tone": "idle"
+                "name": "NPUSCH_1",
+                "value": 1,
+                "tone": "ok"
               },
               {
                 "index": 1,
-                "name": "WHILE",
+                "name": "MCL_164D",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 0,
-                "name": "REDCAP",
+                "name": "PHY_LOCK",
                 "value": 0,
                 "tone": "idle"
               }
@@ -390,59 +390,59 @@
           {
             "at": "example",
             "step": "example",
-            "caption": "Step 3: Execute frame & verify state in ARCHITECTURE_LINK_REG.",
-            "registerName": "ARCHITECTURE_LINK_REG",
+            "caption": "Assert 164 dB MCL link budget threshold across subterranean penetration channel.",
+            "registerName": "NBIOT_RF_CARRIER_REG",
             "bitWidth": 8,
-            "hexValue": "0xF6",
-            "decimalValue": 246,
-            "maskApplied": "0xF6",
+            "hexValue": "0xFE",
+            "decimalValue": 254,
+            "maskApplied": "0xFE",
             "bits": [
               {
                 "index": 7,
-                "name": "ARCHITEC",
+                "name": "IN_BAND",
                 "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 6,
-                "name": "LINK",
-                "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 5,
-                "name": "BUDGET",
-                "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 4,
-                "name": "SINGLE",
-                "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 3,
-                "name": "TONE",
-                "value": 0,
-                "tone": "idle"
-              },
-              {
-                "index": 2,
-                "name": "MODULATI",
-                "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 1,
-                "name": "WHILE",
-                "value": 1,
-                "tone": "warn",
+                "tone": "ok",
                 "highlighted": true
               },
               {
+                "index": 6,
+                "name": "GUARD_BD",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "STANDALN",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "SUB_3K75",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "SUB_15K",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "NPUSCH_1",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 1,
+                "name": "MCL_164D",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
                 "index": 0,
-                "name": "REDCAP",
+                "name": "PHY_LOCK",
                 "value": 0,
                 "tone": "idle"
               }
@@ -451,8 +451,8 @@
           {
             "at": "tryIt",
             "step": "tryIt",
-            "caption": "Step 4: Commit verified output in ARCHITECTURE_LINK_REG.",
-            "registerName": "ARCHITECTURE_LINK_REG",
+            "caption": "Commit physical layer lock on NB-IoT narrowband carrier channel.",
+            "registerName": "NBIOT_RF_CARRIER_REG",
             "bitWidth": 8,
             "hexValue": "0xFF",
             "decimalValue": 255,
@@ -460,52 +460,52 @@
             "bits": [
               {
                 "index": 7,
-                "name": "ARCHITEC",
+                "name": "IN_BAND",
                 "value": 1,
-                "tone": "ok"
+                "tone": "ok",
+                "highlighted": true
               },
               {
                 "index": 6,
-                "name": "LINK",
+                "name": "GUARD_BD",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 5,
-                "name": "BUDGET",
+                "name": "STANDALN",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 4,
-                "name": "SINGLE",
+                "name": "SUB_3K75",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 3,
-                "name": "TONE",
+                "name": "SUB_15K",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 2,
-                "name": "MODULATI",
+                "name": "NPUSCH_1",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 1,
-                "name": "WHILE",
+                "name": "MCL_164D",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 0,
-                "name": "REDCAP",
+                "name": "PHY_LOCK",
                 "value": 1,
-                "tone": "ok",
-                "highlighted": true
+                "tone": "ok"
               }
             ]
           }
@@ -517,64 +517,64 @@
       "codeHash": "013b0ad367bbe56b473ae68d221743bf2cac7d834dc5d33c27bfc3a980a63790",
       "spec": {
         "template": "register-bits",
-        "title": "Day 37 Part 2 - Power Saving Mode (PSM) Architec",
+        "title": "Day 37 Part 2 — Power Saving Mode (PSM) Architecture & TS 24.",
         "steps": [
           {
             "at": "say1",
             "step": "say1",
-            "caption": "Step 1: Initialize POWER_SAVING_REG for Power Saving Mode (PSM) Architec.",
-            "registerName": "POWER_SAVING_REG",
+            "caption": "Initialize NBIOT_PSM_TIMER_REG: Enable 3GPP Rel-12 Power Saving Mode.",
+            "registerName": "NBIOT_PSM_TIMER_REG",
             "bitWidth": 8,
             "hexValue": "0x80",
             "decimalValue": 128,
-            "maskApplied": "1 << 7",
+            "maskApplied": "0x80",
             "bits": [
               {
                 "index": 7,
-                "name": "POWER",
+                "name": "PSM_EN",
                 "value": 1,
                 "tone": "ok",
                 "highlighted": true
               },
               {
                 "index": 6,
-                "name": "SAVING",
+                "name": "T3412_2M",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 5,
-                "name": "MODE",
+                "name": "T3412_HR",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 4,
-                "name": "ARCHITEC",
+                "name": "T3324_2S",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 3,
-                "name": "TIMER",
+                "name": "T3324_1M",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 2,
-                "name": "SERIALIZ",
+                "name": "HIBERN8",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 1,
-                "name": "WHILE",
+                "name": "NAS_SAV",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 0,
-                "name": "POWER",
+                "name": "SLEEP_OK",
                 "value": 0,
                 "tone": "idle"
               }
@@ -583,59 +583,59 @@
           {
             "at": "say2",
             "step": "say2",
-            "caption": "Step 2: Configure operational bitfields in POWER_SAVING_REG.",
-            "registerName": "POWER_SAVING_REG",
+            "caption": "Serialize T3412 extended periodic TAU timer to 24 hours and T3324 to 10 seconds.",
+            "registerName": "NBIOT_PSM_TIMER_REG",
             "bitWidth": 8,
-            "hexValue": "0xE0",
-            "decimalValue": 224,
-            "maskApplied": "0xE0",
+            "hexValue": "0xB6",
+            "decimalValue": 182,
+            "maskApplied": "0xB6",
             "bits": [
               {
                 "index": 7,
-                "name": "POWER",
+                "name": "PSM_EN",
                 "value": 1,
-                "tone": "accent"
-              },
-              {
-                "index": 6,
-                "name": "SAVING",
-                "value": 1,
-                "tone": "accent"
-              },
-              {
-                "index": 5,
-                "name": "MODE",
-                "value": 1,
-                "tone": "accent",
+                "tone": "ok",
                 "highlighted": true
               },
               {
-                "index": 4,
-                "name": "ARCHITEC",
+                "index": 6,
+                "name": "T3412_2M",
                 "value": 0,
                 "tone": "idle"
               },
               {
+                "index": 5,
+                "name": "T3412_HR",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "T3324_2S",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
                 "index": 3,
-                "name": "TIMER",
+                "name": "T3324_1M",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 2,
-                "name": "SERIALIZ",
-                "value": 0,
-                "tone": "idle"
+                "name": "HIBERN8",
+                "value": 1,
+                "tone": "ok"
               },
               {
                 "index": 1,
-                "name": "WHILE",
-                "value": 0,
-                "tone": "idle"
+                "name": "NAS_SAV",
+                "value": 1,
+                "tone": "ok"
               },
               {
                 "index": 0,
-                "name": "POWER",
+                "name": "SLEEP_OK",
                 "value": 0,
                 "tone": "idle"
               }
@@ -644,59 +644,59 @@
           {
             "at": "example",
             "step": "example",
-            "caption": "Step 3: Execute frame & verify state in POWER_SAVING_REG.",
-            "registerName": "POWER_SAVING_REG",
+            "caption": "Enter sub-microamp hibernation while retaining full NAS security context.",
+            "registerName": "NBIOT_PSM_TIMER_REG",
             "bitWidth": 8,
-            "hexValue": "0xF6",
-            "decimalValue": 246,
-            "maskApplied": "0xF6",
+            "hexValue": "0xFE",
+            "decimalValue": 254,
+            "maskApplied": "0xFE",
             "bits": [
               {
                 "index": 7,
-                "name": "POWER",
+                "name": "PSM_EN",
                 "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 6,
-                "name": "SAVING",
-                "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 5,
-                "name": "MODE",
-                "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 4,
-                "name": "ARCHITEC",
-                "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 3,
-                "name": "TIMER",
-                "value": 0,
-                "tone": "idle"
-              },
-              {
-                "index": 2,
-                "name": "SERIALIZ",
-                "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 1,
-                "name": "WHILE",
-                "value": 1,
-                "tone": "warn",
+                "tone": "ok",
                 "highlighted": true
               },
               {
+                "index": 6,
+                "name": "T3412_2M",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "T3412_HR",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "T3324_2S",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "T3324_1M",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "HIBERN8",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 1,
+                "name": "NAS_SAV",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
                 "index": 0,
-                "name": "POWER",
+                "name": "SLEEP_OK",
                 "value": 0,
                 "tone": "idle"
               }
@@ -705,8 +705,8 @@
           {
             "at": "tryIt",
             "step": "tryIt",
-            "caption": "Step 4: Commit verified output in POWER_SAVING_REG.",
-            "registerName": "POWER_SAVING_REG",
+            "caption": "Commit deep PSM sleep mode transition with 10-year battery preservation.",
+            "registerName": "NBIOT_PSM_TIMER_REG",
             "bitWidth": 8,
             "hexValue": "0xFF",
             "decimalValue": 255,
@@ -714,52 +714,52 @@
             "bits": [
               {
                 "index": 7,
-                "name": "POWER",
+                "name": "PSM_EN",
                 "value": 1,
-                "tone": "ok"
+                "tone": "ok",
+                "highlighted": true
               },
               {
                 "index": 6,
-                "name": "SAVING",
+                "name": "T3412_2M",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 5,
-                "name": "MODE",
+                "name": "T3412_HR",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 4,
-                "name": "ARCHITEC",
+                "name": "T3324_2S",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 3,
-                "name": "TIMER",
+                "name": "T3324_1M",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 2,
-                "name": "SERIALIZ",
+                "name": "HIBERN8",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 1,
-                "name": "WHILE",
+                "name": "NAS_SAV",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 0,
-                "name": "POWER",
+                "name": "SLEEP_OK",
                 "value": 1,
-                "tone": "ok",
-                "highlighted": true
+                "tone": "ok"
               }
             ]
           }
@@ -771,125 +771,125 @@
       "codeHash": "21e9bcff33ad9e5a8fc00cddf477c4b6530da3d210addee1bd6538fe538cd7e3",
       "spec": {
         "template": "register-bits",
-        "title": "Day 37 Part 3 - extended Discontinuous Reception",
+        "title": "Day 37 Part 3 — extended Discontinuous Reception (eDRX) & Pag",
         "steps": [
           {
             "at": "say1",
             "step": "say1",
-            "caption": "Step 1: Initialize EXTENDED_DISCONTI_REG for extended Discontinuous Reception.",
-            "registerName": "EXTENDED_DISCONTI_REG",
+            "caption": "Initialize NBIOT_EDRX_PAGING_REG: Enable extended Discontinuous Reception.",
+            "registerName": "NBIOT_EDRX_PAGING_REG",
             "bitWidth": 8,
-            "hexValue": "0x80",
-            "decimalValue": 128,
-            "maskApplied": "1 << 7",
+            "hexValue": "0x81",
+            "decimalValue": 129,
+            "maskApplied": "0x81",
             "bits": [
               {
                 "index": 7,
-                "name": "EXTENDED",
+                "name": "EDRX_EN",
                 "value": 1,
                 "tone": "ok",
                 "highlighted": true
               },
               {
                 "index": 6,
-                "name": "DISCONTI",
+                "name": "CYC_5M",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 5,
-                "name": "RECEPTIO",
+                "name": "CYC_20M",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 4,
-                "name": "EDRX",
+                "name": "CYC_40M",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 3,
-                "name": "PAGING",
+                "name": "PTW_2S",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 2,
-                "name": "TIME",
+                "name": "PTW_5S",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 1,
-                "name": "WINDOW",
+                "name": "PAGING_W",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 0,
-                "name": "MECHANIC",
-                "value": 0,
-                "tone": "idle"
+                "name": "SYNC_P",
+                "value": 1,
+                "tone": "ok"
               }
             ]
           },
           {
             "at": "say2",
             "step": "say2",
-            "caption": "Step 2: Configure operational bitfields in EXTENDED_DISCONTI_REG.",
-            "registerName": "EXTENDED_DISCONTI_REG",
+            "caption": "Configure 20.48-minute eDRX sleep cycle with 5.12-second Paging Time Window.",
+            "registerName": "NBIOT_EDRX_PAGING_REG",
             "bitWidth": 8,
-            "hexValue": "0xE0",
-            "decimalValue": 224,
-            "maskApplied": "0xE0",
+            "hexValue": "0xA6",
+            "decimalValue": 166,
+            "maskApplied": "0xA6",
             "bits": [
               {
                 "index": 7,
-                "name": "EXTENDED",
+                "name": "EDRX_EN",
                 "value": 1,
-                "tone": "accent"
-              },
-              {
-                "index": 6,
-                "name": "DISCONTI",
-                "value": 1,
-                "tone": "accent"
-              },
-              {
-                "index": 5,
-                "name": "RECEPTIO",
-                "value": 1,
-                "tone": "accent",
+                "tone": "ok",
                 "highlighted": true
               },
               {
+                "index": 6,
+                "name": "CYC_5M",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 5,
+                "name": "CYC_20M",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
                 "index": 4,
-                "name": "EDRX",
+                "name": "CYC_40M",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 3,
-                "name": "PAGING",
+                "name": "PTW_2S",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 2,
-                "name": "TIME",
-                "value": 0,
-                "tone": "idle"
+                "name": "PTW_5S",
+                "value": 1,
+                "tone": "ok"
               },
               {
                 "index": 1,
-                "name": "WINDOW",
-                "value": 0,
-                "tone": "idle"
+                "name": "PAGING_W",
+                "value": 1,
+                "tone": "ok"
               },
               {
                 "index": 0,
-                "name": "MECHANIC",
+                "name": "SYNC_P",
                 "value": 0,
                 "tone": "idle"
               }
@@ -898,59 +898,59 @@
           {
             "at": "example",
             "step": "example",
-            "caption": "Step 3: Execute frame & verify state in EXTENDED_DISCONTI_REG.",
-            "registerName": "EXTENDED_DISCONTI_REG",
+            "caption": "Arm downlink paging receiver inside PTW interval, verifying wake-up signal.",
+            "registerName": "NBIOT_EDRX_PAGING_REG",
             "bitWidth": 8,
-            "hexValue": "0xF6",
-            "decimalValue": 246,
-            "maskApplied": "0xF6",
+            "hexValue": "0xFE",
+            "decimalValue": 254,
+            "maskApplied": "0xFE",
             "bits": [
               {
                 "index": 7,
-                "name": "EXTENDED",
+                "name": "EDRX_EN",
                 "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 6,
-                "name": "DISCONTI",
-                "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 5,
-                "name": "RECEPTIO",
-                "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 4,
-                "name": "EDRX",
-                "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 3,
-                "name": "PAGING",
-                "value": 0,
-                "tone": "idle"
-              },
-              {
-                "index": 2,
-                "name": "TIME",
-                "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 1,
-                "name": "WINDOW",
-                "value": 1,
-                "tone": "warn",
+                "tone": "ok",
                 "highlighted": true
               },
               {
+                "index": 6,
+                "name": "CYC_5M",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "CYC_20M",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "CYC_40M",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "PTW_2S",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "PTW_5S",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 1,
+                "name": "PAGING_W",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
                 "index": 0,
-                "name": "MECHANIC",
+                "name": "SYNC_P",
                 "value": 0,
                 "tone": "idle"
               }
@@ -959,8 +959,8 @@
           {
             "at": "tryIt",
             "step": "tryIt",
-            "caption": "Step 4: Commit verified output in EXTENDED_DISCONTI_REG.",
-            "registerName": "EXTENDED_DISCONTI_REG",
+            "caption": "Commit synchronized eDRX cycle for reachable, low-power telemetry.",
+            "registerName": "NBIOT_EDRX_PAGING_REG",
             "bitWidth": 8,
             "hexValue": "0xFF",
             "decimalValue": 255,
@@ -968,52 +968,52 @@
             "bits": [
               {
                 "index": 7,
-                "name": "EXTENDED",
+                "name": "EDRX_EN",
                 "value": 1,
-                "tone": "ok"
+                "tone": "ok",
+                "highlighted": true
               },
               {
                 "index": 6,
-                "name": "DISCONTI",
+                "name": "CYC_5M",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 5,
-                "name": "RECEPTIO",
+                "name": "CYC_20M",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 4,
-                "name": "EDRX",
+                "name": "CYC_40M",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 3,
-                "name": "PAGING",
+                "name": "PTW_2S",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 2,
-                "name": "TIME",
+                "name": "PTW_5S",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 1,
-                "name": "WINDOW",
+                "name": "PAGING_W",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 0,
-                "name": "MECHANIC",
+                "name": "SYNC_P",
                 "value": 1,
-                "tone": "ok",
-                "highlighted": true
+                "tone": "ok"
               }
             ]
           }
@@ -1025,64 +1025,64 @@
       "codeHash": "cb2941286350c134919ceb41d414bf08911a3528a95e4abfd3d2d6dc2d6fd473",
       "spec": {
         "template": "register-bits",
-        "title": "Day 37 Part 4 - Early Data Transmission (EDT) & ",
+        "title": "Day 37 Part 4 — Early Data Transmission (EDT) & Control Plane",
         "steps": [
           {
             "at": "say1",
             "step": "say1",
-            "caption": "Step 1: Initialize EARLY_DATA_REG for Early Data Transmission (EDT) & .",
-            "registerName": "EARLY_DATA_REG",
+            "caption": "Initialize NBIOT_EDT_TRANS_REG: Arm Control Plane Early Data Transmission.",
+            "registerName": "NBIOT_EDT_TRANS_REG",
             "bitWidth": 8,
-            "hexValue": "0x80",
-            "decimalValue": 128,
-            "maskApplied": "1 << 7",
+            "hexValue": "0x88",
+            "decimalValue": 136,
+            "maskApplied": "0x88",
             "bits": [
               {
                 "index": 7,
-                "name": "EARLY",
+                "name": "EDT_CP",
                 "value": 1,
                 "tone": "ok",
                 "highlighted": true
               },
               {
                 "index": 6,
-                "name": "DATA",
+                "name": "EDT_UP",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 5,
-                "name": "TRANSMIS",
+                "name": "MSG3_DAT",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 4,
-                "name": "CONTROL",
+                "name": "TBS_1K",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 3,
-                "name": "PLANE",
-                "value": 0,
-                "tone": "idle"
+                "name": "RACH_EDT",
+                "value": 1,
+                "tone": "ok"
               },
               {
                 "index": 2,
-                "name": "USER",
+                "name": "ASYNC_TX",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 1,
-                "name": "OPTIMIZA",
+                "name": "PWR_SAV",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 0,
-                "name": "EVEN",
+                "name": "BURST_OK",
                 "value": 0,
                 "tone": "idle"
               }
@@ -1091,59 +1091,59 @@
           {
             "at": "say2",
             "step": "say2",
-            "caption": "Step 2: Configure operational bitfields in EARLY_DATA_REG.",
-            "registerName": "EARLY_DATA_REG",
+            "caption": "Encapsulate sensor telemetry payload into PRACH Msg3 Random Access transport block.",
+            "registerName": "NBIOT_EDT_TRANS_REG",
             "bitWidth": 8,
-            "hexValue": "0xE0",
-            "decimalValue": 224,
-            "maskApplied": "0xE0",
+            "hexValue": "0xDC",
+            "decimalValue": 220,
+            "maskApplied": "0xDC",
             "bits": [
               {
                 "index": 7,
-                "name": "EARLY",
+                "name": "EDT_CP",
                 "value": 1,
-                "tone": "accent"
-              },
-              {
-                "index": 6,
-                "name": "DATA",
-                "value": 1,
-                "tone": "accent"
-              },
-              {
-                "index": 5,
-                "name": "TRANSMIS",
-                "value": 1,
-                "tone": "accent",
+                "tone": "ok",
                 "highlighted": true
               },
               {
-                "index": 4,
-                "name": "CONTROL",
+                "index": 6,
+                "name": "EDT_UP",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "MSG3_DAT",
                 "value": 0,
                 "tone": "idle"
+              },
+              {
+                "index": 4,
+                "name": "TBS_1K",
+                "value": 1,
+                "tone": "ok"
               },
               {
                 "index": 3,
-                "name": "PLANE",
-                "value": 0,
-                "tone": "idle"
+                "name": "RACH_EDT",
+                "value": 1,
+                "tone": "ok"
               },
               {
                 "index": 2,
-                "name": "USER",
-                "value": 0,
-                "tone": "idle"
+                "name": "ASYNC_TX",
+                "value": 1,
+                "tone": "ok"
               },
               {
                 "index": 1,
-                "name": "OPTIMIZA",
+                "name": "PWR_SAV",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 0,
-                "name": "EVEN",
+                "name": "BURST_OK",
                 "value": 0,
                 "tone": "idle"
               }
@@ -1152,59 +1152,59 @@
           {
             "at": "example",
             "step": "example",
-            "caption": "Step 3: Execute frame & verify state in EARLY_DATA_REG.",
-            "registerName": "EARLY_DATA_REG",
+            "caption": "Transmit single-burst uplink packet without RRC Connected mode establishment.",
+            "registerName": "NBIOT_EDT_TRANS_REG",
             "bitWidth": 8,
-            "hexValue": "0xF6",
-            "decimalValue": 246,
-            "maskApplied": "0xF6",
+            "hexValue": "0xFE",
+            "decimalValue": 254,
+            "maskApplied": "0xFE",
             "bits": [
               {
                 "index": 7,
-                "name": "EARLY",
+                "name": "EDT_CP",
                 "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 6,
-                "name": "DATA",
-                "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 5,
-                "name": "TRANSMIS",
-                "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 4,
-                "name": "CONTROL",
-                "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 3,
-                "name": "PLANE",
-                "value": 0,
-                "tone": "idle"
-              },
-              {
-                "index": 2,
-                "name": "USER",
-                "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 1,
-                "name": "OPTIMIZA",
-                "value": 1,
-                "tone": "warn",
+                "tone": "ok",
                 "highlighted": true
               },
               {
+                "index": 6,
+                "name": "EDT_UP",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "MSG3_DAT",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "TBS_1K",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "RACH_EDT",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "ASYNC_TX",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 1,
+                "name": "PWR_SAV",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
                 "index": 0,
-                "name": "EVEN",
+                "name": "BURST_OK",
                 "value": 0,
                 "tone": "idle"
               }
@@ -1213,8 +1213,8 @@
           {
             "at": "tryIt",
             "step": "tryIt",
-            "caption": "Step 4: Commit verified output in EARLY_DATA_REG.",
-            "registerName": "EARLY_DATA_REG",
+            "caption": "Commit successful EDT data burst, saving 85% energy over legacy signaling.",
+            "registerName": "NBIOT_EDT_TRANS_REG",
             "bitWidth": 8,
             "hexValue": "0xFF",
             "decimalValue": 255,
@@ -1222,52 +1222,52 @@
             "bits": [
               {
                 "index": 7,
-                "name": "EARLY",
+                "name": "EDT_CP",
                 "value": 1,
-                "tone": "ok"
+                "tone": "ok",
+                "highlighted": true
               },
               {
                 "index": 6,
-                "name": "DATA",
+                "name": "EDT_UP",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 5,
-                "name": "TRANSMIS",
+                "name": "MSG3_DAT",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 4,
-                "name": "CONTROL",
+                "name": "TBS_1K",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 3,
-                "name": "PLANE",
+                "name": "RACH_EDT",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 2,
-                "name": "USER",
+                "name": "ASYNC_TX",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 1,
-                "name": "OPTIMIZA",
+                "name": "PWR_SAV",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 0,
-                "name": "EVEN",
+                "name": "BURST_OK",
                 "value": 1,
-                "tone": "ok",
-                "highlighted": true
+                "tone": "ok"
               }
             ]
           }
@@ -1279,64 +1279,64 @@
       "codeHash": "ff1a2e9301b6e077dc94c0e2a20365a9a0a5b3a170420a160fd7cd3f67c922e4",
       "spec": {
         "template": "register-bits",
-        "title": "Day 37 Part 5 - Masterclass Synthesis: 10-15 Yea",
+        "title": "Day 37 Part 5 — Masterclass Synthesis: 10-15 Year Industrial ",
         "steps": [
           {
             "at": "say1",
             "step": "say1",
-            "caption": "Step 1: Initialize MASTERCLASS_SYNTHESI_REG for Masterclass Synthesis: 10-15 Y",
-            "registerName": "MASTERCLASS_SYNTHESI_REG",
+            "caption": "Initialize NBIOT_BATT_LIFETIME_REG: Profile 5,000 mAh LiSOCl2 cell capacity.",
+            "registerName": "NBIOT_BATT_LIFETIME_REG",
             "bitWidth": 8,
-            "hexValue": "0x80",
-            "decimalValue": 128,
-            "maskApplied": "1 << 7",
+            "hexValue": "0xC0",
+            "decimalValue": 192,
+            "maskApplied": "0xC0",
             "bits": [
               {
                 "index": 7,
-                "name": "MASTERCL",
+                "name": "SOC_99",
                 "value": 1,
                 "tone": "ok",
                 "highlighted": true
               },
               {
                 "index": 6,
-                "name": "SYNTHESI",
-                "value": 0,
-                "tone": "idle"
+                "name": "CAP_5000",
+                "value": 1,
+                "tone": "ok"
               },
               {
                 "index": 5,
-                "name": "YEAR",
+                "name": "SLEEP_UA",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 4,
-                "name": "INDUSTRI",
+                "name": "TX_MA",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 3,
-                "name": "BATTERY",
+                "name": "YRS_10",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 2,
-                "name": "LIFETIME",
+                "name": "YRS_15",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 1,
-                "name": "ENGINEER",
+                "name": "DEG_SAFE",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 0,
-                "name": "AUDIT",
+                "name": "GRADE_A",
                 "value": 0,
                 "tone": "idle"
               }
@@ -1345,59 +1345,59 @@
           {
             "at": "say2",
             "step": "say2",
-            "caption": "Step 2: Configure operational bitfields in MASTERCLASS_SYNTHESI_REG.",
-            "registerName": "MASTERCLASS_SYNTHESI_REG",
+            "caption": "Account for 2.5 uA sleep current, 220 mA transmit bursts, and annual self-discharge.",
+            "registerName": "NBIOT_BATT_LIFETIME_REG",
             "bitWidth": 8,
-            "hexValue": "0xE0",
-            "decimalValue": 224,
-            "maskApplied": "0xE0",
+            "hexValue": "0xF0",
+            "decimalValue": 240,
+            "maskApplied": "0xF0",
             "bits": [
               {
                 "index": 7,
-                "name": "MASTERCL",
+                "name": "SOC_99",
                 "value": 1,
-                "tone": "accent"
-              },
-              {
-                "index": 6,
-                "name": "SYNTHESI",
-                "value": 1,
-                "tone": "accent"
-              },
-              {
-                "index": 5,
-                "name": "YEAR",
-                "value": 1,
-                "tone": "accent",
+                "tone": "ok",
                 "highlighted": true
               },
               {
+                "index": 6,
+                "name": "CAP_5000",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "SLEEP_UA",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
                 "index": 4,
-                "name": "INDUSTRI",
-                "value": 0,
-                "tone": "idle"
+                "name": "TX_MA",
+                "value": 1,
+                "tone": "ok"
               },
               {
                 "index": 3,
-                "name": "BATTERY",
+                "name": "YRS_10",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 2,
-                "name": "LIFETIME",
+                "name": "YRS_15",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 1,
-                "name": "ENGINEER",
+                "name": "DEG_SAFE",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 0,
-                "name": "AUDIT",
+                "name": "GRADE_A",
                 "value": 0,
                 "tone": "idle"
               }
@@ -1406,59 +1406,59 @@
           {
             "at": "example",
             "step": "example",
-            "caption": "Step 3: Execute frame & verify state in MASTERCLASS_SYNTHESI_REG.",
-            "registerName": "MASTERCLASS_SYNTHESI_REG",
+            "caption": "Calculate 14.8-year projected battery lifetime under daily 100-byte reporting schedule.",
+            "registerName": "NBIOT_BATT_LIFETIME_REG",
             "bitWidth": 8,
-            "hexValue": "0xF6",
-            "decimalValue": 246,
-            "maskApplied": "0xF6",
+            "hexValue": "0xFE",
+            "decimalValue": 254,
+            "maskApplied": "0xFE",
             "bits": [
               {
                 "index": 7,
-                "name": "MASTERCL",
+                "name": "SOC_99",
                 "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 6,
-                "name": "SYNTHESI",
-                "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 5,
-                "name": "YEAR",
-                "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 4,
-                "name": "INDUSTRI",
-                "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 3,
-                "name": "BATTERY",
-                "value": 0,
-                "tone": "idle"
-              },
-              {
-                "index": 2,
-                "name": "LIFETIME",
-                "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 1,
-                "name": "ENGINEER",
-                "value": 1,
-                "tone": "warn",
+                "tone": "ok",
                 "highlighted": true
               },
               {
+                "index": 6,
+                "name": "CAP_5000",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "SLEEP_UA",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "TX_MA",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "YRS_10",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "YRS_15",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 1,
+                "name": "DEG_SAFE",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
                 "index": 0,
-                "name": "AUDIT",
+                "name": "GRADE_A",
                 "value": 0,
                 "tone": "idle"
               }
@@ -1467,8 +1467,8 @@
           {
             "at": "tryIt",
             "step": "tryIt",
-            "caption": "Step 4: Commit verified output in MASTERCLASS_SYNTHESI_REG.",
-            "registerName": "MASTERCLASS_SYNTHESI_REG",
+            "caption": "Commit verified 15-year industrial battery lifetime certification.",
+            "registerName": "NBIOT_BATT_LIFETIME_REG",
             "bitWidth": 8,
             "hexValue": "0xFF",
             "decimalValue": 255,
@@ -1476,52 +1476,52 @@
             "bits": [
               {
                 "index": 7,
-                "name": "MASTERCL",
+                "name": "SOC_99",
                 "value": 1,
-                "tone": "ok"
+                "tone": "ok",
+                "highlighted": true
               },
               {
                 "index": 6,
-                "name": "SYNTHESI",
+                "name": "CAP_5000",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 5,
-                "name": "YEAR",
+                "name": "SLEEP_UA",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 4,
-                "name": "INDUSTRI",
+                "name": "TX_MA",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 3,
-                "name": "BATTERY",
+                "name": "YRS_10",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 2,
-                "name": "LIFETIME",
+                "name": "YRS_15",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 1,
-                "name": "ENGINEER",
+                "name": "DEG_SAFE",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 0,
-                "name": "AUDIT",
+                "name": "GRADE_A",
                 "value": 1,
-                "tone": "ok",
-                "highlighted": true
+                "tone": "ok"
               }
             ]
           }

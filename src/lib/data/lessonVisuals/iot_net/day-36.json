@@ -3,70 +3,70 @@
   "prefix": "iot_net",
   "coursePrefix": "iot_net",
   "day": 36,
-  "title": "3GPP 5G NR RedCap (Rel-17) & Massive Cellular IoT Edge Architecture",
-  "promptSha": "84f90f565a033df464fd408441c79864adc75ec106c262c71785b65932847122",
+  "title": "Day 36: 3GPP 5G NR RedCap (Rel-17) & Massive Cellular IoT Edge Architecture",
+  "promptSha": "b3889df17cc0f6c362c4d85b08c55e69ec0d4c8024d4eeddba7b12ce9ad4941d",
   "model": "anthropic/claude-3.5-sonnet",
   "codeHash": "2546fe08a150a8b28019c21801a63319018998ff05e2f957b966cfd3dac57dff",
   "spec": {
     "template": "register-bits",
-    "title": "Day 36 Part 1 - 5G NR RedCap Architecture, RF Co",
+    "title": "Day 36 Part 1 — 5G NR RedCap Architecture, RF Complexity Redu",
     "steps": [
       {
         "at": "say1",
         "step": "say1",
-        "caption": "Step 1: Initialize REDCAP_ARCHITEC_REG for 5G NR RedCap Architecture, RF Co.",
-        "registerName": "REDCAP_ARCHITEC_REG",
+        "caption": "Initialize NR_REDCAP_RF_CTRL_REG: Cap FR1 bandwidth to 20 MHz and assert baseline 1RX.",
+        "registerName": "NR_REDCAP_RF_CTRL_REG",
         "bitWidth": 8,
-        "hexValue": "0x80",
-        "decimalValue": 128,
-        "maskApplied": "1 << 7",
+        "hexValue": "0x84",
+        "decimalValue": 132,
+        "maskApplied": "0x84",
         "bits": [
           {
             "index": 7,
-            "name": "REDCAP",
+            "name": "FR1_20M",
             "value": 1,
             "tone": "ok",
             "highlighted": true
           },
           {
             "index": 6,
-            "name": "ARCHITEC",
+            "name": "FR2_100M",
             "value": 0,
             "tone": "idle"
           },
           {
             "index": 5,
-            "name": "COMPLEXI",
+            "name": "RX_1R",
             "value": 0,
             "tone": "idle"
           },
           {
             "index": 4,
-            "name": "REDUCTIO",
+            "name": "RX_2R",
             "value": 0,
             "tone": "idle"
           },
           {
             "index": 3,
-            "name": "EMBB",
+            "name": "64QAM_EN",
             "value": 0,
             "tone": "idle"
           },
           {
             "index": 2,
-            "name": "MMTC",
-            "value": 0,
-            "tone": "idle"
+            "name": "CA_DIS",
+            "value": 1,
+            "tone": "ok"
           },
           {
             "index": 1,
-            "name": "TRADEOFF",
+            "name": "FD_FDD",
             "value": 0,
             "tone": "idle"
           },
           {
             "index": 0,
-            "name": "ROLLOUT",
+            "name": "MOD_OK",
             "value": 0,
             "tone": "idle"
           }
@@ -75,59 +75,59 @@
       {
         "at": "say2",
         "step": "say2",
-        "caption": "Step 2: Configure operational bitfields in REDCAP_ARCHITEC_REG.",
-        "registerName": "REDCAP_ARCHITEC_REG",
+        "caption": "Configure 64-QAM modulation limit and enable HD-FDD mode.",
+        "registerName": "NR_REDCAP_RF_CTRL_REG",
         "bitWidth": 8,
-        "hexValue": "0xE0",
-        "decimalValue": 224,
-        "maskApplied": "0xE0",
+        "hexValue": "0x96",
+        "decimalValue": 150,
+        "maskApplied": "0x96",
         "bits": [
           {
             "index": 7,
-            "name": "REDCAP",
+            "name": "FR1_20M",
             "value": 1,
-            "tone": "accent"
-          },
-          {
-            "index": 6,
-            "name": "ARCHITEC",
-            "value": 1,
-            "tone": "accent"
-          },
-          {
-            "index": 5,
-            "name": "COMPLEXI",
-            "value": 1,
-            "tone": "accent",
+            "tone": "ok",
             "highlighted": true
           },
           {
-            "index": 4,
-            "name": "REDUCTIO",
+            "index": 6,
+            "name": "FR2_100M",
             "value": 0,
             "tone": "idle"
           },
           {
+            "index": 5,
+            "name": "RX_1R",
+            "value": 0,
+            "tone": "idle"
+          },
+          {
+            "index": 4,
+            "name": "RX_2R",
+            "value": 1,
+            "tone": "ok"
+          },
+          {
             "index": 3,
-            "name": "EMBB",
+            "name": "64QAM_EN",
             "value": 0,
             "tone": "idle"
           },
           {
             "index": 2,
-            "name": "MMTC",
-            "value": 0,
-            "tone": "idle"
+            "name": "CA_DIS",
+            "value": 1,
+            "tone": "ok"
           },
           {
             "index": 1,
-            "name": "TRADEOFF",
-            "value": 0,
-            "tone": "idle"
+            "name": "FD_FDD",
+            "value": 1,
+            "tone": "ok"
           },
           {
             "index": 0,
-            "name": "ROLLOUT",
+            "name": "MOD_OK",
             "value": 0,
             "tone": "idle"
           }
@@ -136,59 +136,59 @@
       {
         "at": "example",
         "step": "example",
-        "caption": "Step 3: Execute frame & verify state in REDCAP_ARCHITEC_REG.",
-        "registerName": "REDCAP_ARCHITEC_REG",
+        "caption": "Latch 2RX antenna diversity and disable carrier aggregation for BOM reduction.",
+        "registerName": "NR_REDCAP_RF_CTRL_REG",
         "bitWidth": 8,
-        "hexValue": "0xF6",
-        "decimalValue": 246,
-        "maskApplied": "0xF6",
+        "hexValue": "0xBA",
+        "decimalValue": 186,
+        "maskApplied": "0xBA",
         "bits": [
           {
             "index": 7,
-            "name": "REDCAP",
+            "name": "FR1_20M",
             "value": 1,
-            "tone": "warn"
+            "tone": "ok",
+            "highlighted": true
           },
           {
             "index": 6,
-            "name": "ARCHITEC",
-            "value": 1,
-            "tone": "warn"
-          },
-          {
-            "index": 5,
-            "name": "COMPLEXI",
-            "value": 1,
-            "tone": "warn"
-          },
-          {
-            "index": 4,
-            "name": "REDUCTIO",
-            "value": 1,
-            "tone": "warn"
-          },
-          {
-            "index": 3,
-            "name": "EMBB",
+            "name": "FR2_100M",
             "value": 0,
             "tone": "idle"
           },
           {
-            "index": 2,
-            "name": "MMTC",
+            "index": 5,
+            "name": "RX_1R",
             "value": 1,
-            "tone": "warn"
+            "tone": "ok"
+          },
+          {
+            "index": 4,
+            "name": "RX_2R",
+            "value": 1,
+            "tone": "ok"
+          },
+          {
+            "index": 3,
+            "name": "64QAM_EN",
+            "value": 1,
+            "tone": "ok"
+          },
+          {
+            "index": 2,
+            "name": "CA_DIS",
+            "value": 0,
+            "tone": "idle"
           },
           {
             "index": 1,
-            "name": "TRADEOFF",
+            "name": "FD_FDD",
             "value": 1,
-            "tone": "warn",
-            "highlighted": true
+            "tone": "ok"
           },
           {
             "index": 0,
-            "name": "ROLLOUT",
+            "name": "MOD_OK",
             "value": 0,
             "tone": "idle"
           }
@@ -197,8 +197,8 @@
       {
         "at": "tryIt",
         "step": "tryIt",
-        "caption": "Step 4: Commit verified output in REDCAP_ARCHITEC_REG.",
-        "registerName": "REDCAP_ARCHITEC_REG",
+        "caption": "Commit verified 3GPP Release 17 RedCap RF configuration state.",
+        "registerName": "NR_REDCAP_RF_CTRL_REG",
         "bitWidth": 8,
         "hexValue": "0xFF",
         "decimalValue": 255,
@@ -206,52 +206,52 @@
         "bits": [
           {
             "index": 7,
-            "name": "REDCAP",
+            "name": "FR1_20M",
             "value": 1,
-            "tone": "ok"
+            "tone": "ok",
+            "highlighted": true
           },
           {
             "index": 6,
-            "name": "ARCHITEC",
+            "name": "FR2_100M",
             "value": 1,
             "tone": "ok"
           },
           {
             "index": 5,
-            "name": "COMPLEXI",
+            "name": "RX_1R",
             "value": 1,
             "tone": "ok"
           },
           {
             "index": 4,
-            "name": "REDUCTIO",
+            "name": "RX_2R",
             "value": 1,
             "tone": "ok"
           },
           {
             "index": 3,
-            "name": "EMBB",
+            "name": "64QAM_EN",
             "value": 1,
             "tone": "ok"
           },
           {
             "index": 2,
-            "name": "MMTC",
+            "name": "CA_DIS",
             "value": 1,
             "tone": "ok"
           },
           {
             "index": 1,
-            "name": "TRADEOFF",
+            "name": "FD_FDD",
             "value": 1,
             "tone": "ok"
           },
           {
             "index": 0,
-            "name": "ROLLOUT",
+            "name": "MOD_OK",
             "value": 1,
-            "tone": "ok",
-            "highlighted": true
+            "tone": "ok"
           }
         ]
       }
@@ -263,64 +263,64 @@
       "codeHash": "2546fe08a150a8b28019c21801a63319018998ff05e2f957b966cfd3dac57dff",
       "spec": {
         "template": "register-bits",
-        "title": "Day 36 Part 1 - 5G NR RedCap Architecture, RF Co",
+        "title": "Day 36 Part 1 — 5G NR RedCap Architecture, RF Complexity Redu",
         "steps": [
           {
             "at": "say1",
             "step": "say1",
-            "caption": "Step 1: Initialize REDCAP_ARCHITEC_REG for 5G NR RedCap Architecture, RF Co.",
-            "registerName": "REDCAP_ARCHITEC_REG",
+            "caption": "Initialize NR_REDCAP_RF_CTRL_REG: Cap FR1 bandwidth to 20 MHz and assert baseline 1RX.",
+            "registerName": "NR_REDCAP_RF_CTRL_REG",
             "bitWidth": 8,
-            "hexValue": "0x80",
-            "decimalValue": 128,
-            "maskApplied": "1 << 7",
+            "hexValue": "0x84",
+            "decimalValue": 132,
+            "maskApplied": "0x84",
             "bits": [
               {
                 "index": 7,
-                "name": "REDCAP",
+                "name": "FR1_20M",
                 "value": 1,
                 "tone": "ok",
                 "highlighted": true
               },
               {
                 "index": 6,
-                "name": "ARCHITEC",
+                "name": "FR2_100M",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 5,
-                "name": "COMPLEXI",
+                "name": "RX_1R",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 4,
-                "name": "REDUCTIO",
+                "name": "RX_2R",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 3,
-                "name": "EMBB",
+                "name": "64QAM_EN",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 2,
-                "name": "MMTC",
-                "value": 0,
-                "tone": "idle"
+                "name": "CA_DIS",
+                "value": 1,
+                "tone": "ok"
               },
               {
                 "index": 1,
-                "name": "TRADEOFF",
+                "name": "FD_FDD",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 0,
-                "name": "ROLLOUT",
+                "name": "MOD_OK",
                 "value": 0,
                 "tone": "idle"
               }
@@ -329,59 +329,59 @@
           {
             "at": "say2",
             "step": "say2",
-            "caption": "Step 2: Configure operational bitfields in REDCAP_ARCHITEC_REG.",
-            "registerName": "REDCAP_ARCHITEC_REG",
+            "caption": "Configure 64-QAM modulation limit and enable HD-FDD mode.",
+            "registerName": "NR_REDCAP_RF_CTRL_REG",
             "bitWidth": 8,
-            "hexValue": "0xE0",
-            "decimalValue": 224,
-            "maskApplied": "0xE0",
+            "hexValue": "0x96",
+            "decimalValue": 150,
+            "maskApplied": "0x96",
             "bits": [
               {
                 "index": 7,
-                "name": "REDCAP",
+                "name": "FR1_20M",
                 "value": 1,
-                "tone": "accent"
-              },
-              {
-                "index": 6,
-                "name": "ARCHITEC",
-                "value": 1,
-                "tone": "accent"
-              },
-              {
-                "index": 5,
-                "name": "COMPLEXI",
-                "value": 1,
-                "tone": "accent",
+                "tone": "ok",
                 "highlighted": true
               },
               {
-                "index": 4,
-                "name": "REDUCTIO",
+                "index": 6,
+                "name": "FR2_100M",
                 "value": 0,
                 "tone": "idle"
               },
               {
+                "index": 5,
+                "name": "RX_1R",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 4,
+                "name": "RX_2R",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
                 "index": 3,
-                "name": "EMBB",
+                "name": "64QAM_EN",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 2,
-                "name": "MMTC",
-                "value": 0,
-                "tone": "idle"
+                "name": "CA_DIS",
+                "value": 1,
+                "tone": "ok"
               },
               {
                 "index": 1,
-                "name": "TRADEOFF",
-                "value": 0,
-                "tone": "idle"
+                "name": "FD_FDD",
+                "value": 1,
+                "tone": "ok"
               },
               {
                 "index": 0,
-                "name": "ROLLOUT",
+                "name": "MOD_OK",
                 "value": 0,
                 "tone": "idle"
               }
@@ -390,59 +390,59 @@
           {
             "at": "example",
             "step": "example",
-            "caption": "Step 3: Execute frame & verify state in REDCAP_ARCHITEC_REG.",
-            "registerName": "REDCAP_ARCHITEC_REG",
+            "caption": "Latch 2RX antenna diversity and disable carrier aggregation for BOM reduction.",
+            "registerName": "NR_REDCAP_RF_CTRL_REG",
             "bitWidth": 8,
-            "hexValue": "0xF6",
-            "decimalValue": 246,
-            "maskApplied": "0xF6",
+            "hexValue": "0xBA",
+            "decimalValue": 186,
+            "maskApplied": "0xBA",
             "bits": [
               {
                 "index": 7,
-                "name": "REDCAP",
+                "name": "FR1_20M",
                 "value": 1,
-                "tone": "warn"
+                "tone": "ok",
+                "highlighted": true
               },
               {
                 "index": 6,
-                "name": "ARCHITEC",
-                "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 5,
-                "name": "COMPLEXI",
-                "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 4,
-                "name": "REDUCTIO",
-                "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 3,
-                "name": "EMBB",
+                "name": "FR2_100M",
                 "value": 0,
                 "tone": "idle"
               },
               {
-                "index": 2,
-                "name": "MMTC",
+                "index": 5,
+                "name": "RX_1R",
                 "value": 1,
-                "tone": "warn"
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "RX_2R",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "64QAM_EN",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "CA_DIS",
+                "value": 0,
+                "tone": "idle"
               },
               {
                 "index": 1,
-                "name": "TRADEOFF",
+                "name": "FD_FDD",
                 "value": 1,
-                "tone": "warn",
-                "highlighted": true
+                "tone": "ok"
               },
               {
                 "index": 0,
-                "name": "ROLLOUT",
+                "name": "MOD_OK",
                 "value": 0,
                 "tone": "idle"
               }
@@ -451,8 +451,8 @@
           {
             "at": "tryIt",
             "step": "tryIt",
-            "caption": "Step 4: Commit verified output in REDCAP_ARCHITEC_REG.",
-            "registerName": "REDCAP_ARCHITEC_REG",
+            "caption": "Commit verified 3GPP Release 17 RedCap RF configuration state.",
+            "registerName": "NR_REDCAP_RF_CTRL_REG",
             "bitWidth": 8,
             "hexValue": "0xFF",
             "decimalValue": 255,
@@ -460,52 +460,52 @@
             "bits": [
               {
                 "index": 7,
-                "name": "REDCAP",
+                "name": "FR1_20M",
                 "value": 1,
-                "tone": "ok"
+                "tone": "ok",
+                "highlighted": true
               },
               {
                 "index": 6,
-                "name": "ARCHITEC",
+                "name": "FR2_100M",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 5,
-                "name": "COMPLEXI",
+                "name": "RX_1R",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 4,
-                "name": "REDUCTIO",
+                "name": "RX_2R",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 3,
-                "name": "EMBB",
+                "name": "64QAM_EN",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 2,
-                "name": "MMTC",
+                "name": "CA_DIS",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 1,
-                "name": "TRADEOFF",
+                "name": "FD_FDD",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 0,
-                "name": "ROLLOUT",
+                "name": "MOD_OK",
                 "value": 1,
-                "tone": "ok",
-                "highlighted": true
+                "tone": "ok"
               }
             ]
           }
@@ -517,64 +517,64 @@
       "codeHash": "d589d90c0c58c03851c717594270f136f78191803f5d8ebc3816ac63647cadb4",
       "spec": {
         "template": "register-bits",
-        "title": "Day 36 Part 2 - Dynamic Bandwidth Part (BWP) Swi",
+        "title": "Day 36 Part 2 — Dynamic Bandwidth Part (BWP) Switching & Ener",
         "steps": [
           {
             "at": "say1",
             "step": "say1",
-            "caption": "Step 1: Initialize DYNAMIC_BANDWIDT_REG for Dynamic Bandwidth Part (BWP) Swi.",
-            "registerName": "DYNAMIC_BANDWIDT_REG",
+            "caption": "Initialize NR_BWP_DYNAMIC_CTRL_REG: Activate default 5 MHz idle monitoring BWP.",
+            "registerName": "NR_BWP_DYNAMIC_CTRL_REG",
             "bitWidth": 8,
-            "hexValue": "0x80",
-            "decimalValue": 128,
-            "maskApplied": "1 << 7",
+            "hexValue": "0x82",
+            "decimalValue": 130,
+            "maskApplied": "0x82",
             "bits": [
               {
                 "index": 7,
-                "name": "DYNAMIC",
+                "name": "BWP_ACT",
                 "value": 1,
                 "tone": "ok",
                 "highlighted": true
               },
               {
                 "index": 6,
-                "name": "BANDWIDT",
+                "name": "BWP_5M",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 5,
-                "name": "SWITCHIN",
+                "name": "BWP_20M",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 4,
-                "name": "ENERGY",
+                "name": "RRM_RLX",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 3,
-                "name": "SAVING",
+                "name": "DORMANT",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 2,
-                "name": "RELAXATI",
+                "name": "TIMER_EN",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 1,
-                "name": "WHILE",
-                "value": 0,
-                "tone": "idle"
+                "name": "DCI_10",
+                "value": 1,
+                "tone": "ok"
               },
               {
                 "index": 0,
-                "name": "REDUCING",
+                "name": "SW_ACK",
                 "value": 0,
                 "tone": "idle"
               }
@@ -583,59 +583,59 @@
           {
             "at": "say2",
             "step": "say2",
-            "caption": "Step 2: Configure operational bitfields in DYNAMIC_BANDWIDT_REG.",
-            "registerName": "DYNAMIC_BANDWIDT_REG",
+            "caption": "Trigger DCI 1_0 indication and switch to 20 MHz active transmission burst BWP.",
+            "registerName": "NR_BWP_DYNAMIC_CTRL_REG",
             "bitWidth": 8,
-            "hexValue": "0xE0",
-            "decimalValue": 224,
-            "maskApplied": "0xE0",
+            "hexValue": "0xA4",
+            "decimalValue": 164,
+            "maskApplied": "0xA4",
             "bits": [
               {
                 "index": 7,
-                "name": "DYNAMIC",
+                "name": "BWP_ACT",
                 "value": 1,
-                "tone": "accent"
-              },
-              {
-                "index": 6,
-                "name": "BANDWIDT",
-                "value": 1,
-                "tone": "accent"
-              },
-              {
-                "index": 5,
-                "name": "SWITCHIN",
-                "value": 1,
-                "tone": "accent",
+                "tone": "ok",
                 "highlighted": true
               },
               {
+                "index": 6,
+                "name": "BWP_5M",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 5,
+                "name": "BWP_20M",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
                 "index": 4,
-                "name": "ENERGY",
+                "name": "RRM_RLX",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 3,
-                "name": "SAVING",
+                "name": "DORMANT",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 2,
-                "name": "RELAXATI",
-                "value": 0,
-                "tone": "idle"
+                "name": "TIMER_EN",
+                "value": 1,
+                "tone": "ok"
               },
               {
                 "index": 1,
-                "name": "WHILE",
+                "name": "DCI_10",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 0,
-                "name": "REDUCING",
+                "name": "SW_ACK",
                 "value": 0,
                 "tone": "idle"
               }
@@ -644,59 +644,59 @@
           {
             "at": "example",
             "step": "example",
-            "caption": "Step 3: Execute frame & verify state in DYNAMIC_BANDWIDT_REG.",
-            "registerName": "DYNAMIC_BANDWIDT_REG",
+            "caption": "Arm inactivity timer and relax RRM measurement intervals for deep energy savings.",
+            "registerName": "NR_BWP_DYNAMIC_CTRL_REG",
             "bitWidth": 8,
-            "hexValue": "0xF6",
-            "decimalValue": 246,
-            "maskApplied": "0xF6",
+            "hexValue": "0xF4",
+            "decimalValue": 244,
+            "maskApplied": "0xF4",
             "bits": [
               {
                 "index": 7,
-                "name": "DYNAMIC",
+                "name": "BWP_ACT",
                 "value": 1,
-                "tone": "warn"
+                "tone": "ok",
+                "highlighted": true
               },
               {
                 "index": 6,
-                "name": "BANDWIDT",
+                "name": "BWP_5M",
                 "value": 1,
-                "tone": "warn"
+                "tone": "ok"
               },
               {
                 "index": 5,
-                "name": "SWITCHIN",
+                "name": "BWP_20M",
                 "value": 1,
-                "tone": "warn"
+                "tone": "ok"
               },
               {
                 "index": 4,
-                "name": "ENERGY",
+                "name": "RRM_RLX",
                 "value": 1,
-                "tone": "warn"
+                "tone": "ok"
               },
               {
                 "index": 3,
-                "name": "SAVING",
+                "name": "DORMANT",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 2,
-                "name": "RELAXATI",
+                "name": "TIMER_EN",
                 "value": 1,
-                "tone": "warn"
+                "tone": "ok"
               },
               {
                 "index": 1,
-                "name": "WHILE",
-                "value": 1,
-                "tone": "warn",
-                "highlighted": true
+                "name": "DCI_10",
+                "value": 0,
+                "tone": "idle"
               },
               {
                 "index": 0,
-                "name": "REDUCING",
+                "name": "SW_ACK",
                 "value": 0,
                 "tone": "idle"
               }
@@ -705,8 +705,8 @@
           {
             "at": "tryIt",
             "step": "tryIt",
-            "caption": "Step 4: Commit verified output in DYNAMIC_BANDWIDT_REG.",
-            "registerName": "DYNAMIC_BANDWIDT_REG",
+            "caption": "Commit dynamic BWP transition acknowledgement across 5GC control plane.",
+            "registerName": "NR_BWP_DYNAMIC_CTRL_REG",
             "bitWidth": 8,
             "hexValue": "0xFF",
             "decimalValue": 255,
@@ -714,52 +714,52 @@
             "bits": [
               {
                 "index": 7,
-                "name": "DYNAMIC",
+                "name": "BWP_ACT",
                 "value": 1,
-                "tone": "ok"
+                "tone": "ok",
+                "highlighted": true
               },
               {
                 "index": 6,
-                "name": "BANDWIDT",
+                "name": "BWP_5M",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 5,
-                "name": "SWITCHIN",
+                "name": "BWP_20M",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 4,
-                "name": "ENERGY",
+                "name": "RRM_RLX",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 3,
-                "name": "SAVING",
+                "name": "DORMANT",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 2,
-                "name": "RELAXATI",
+                "name": "TIMER_EN",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 1,
-                "name": "WHILE",
+                "name": "DCI_10",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 0,
-                "name": "REDUCING",
+                "name": "SW_ACK",
                 "value": 1,
-                "tone": "ok",
-                "highlighted": true
+                "tone": "ok"
               }
             ]
           }
@@ -771,64 +771,64 @@
       "codeHash": "a8bdb0e1521d3e8d65159bf636c13518eb598d4771a612f767634cccf9385994",
       "spec": {
         "template": "register-bits",
-        "title": "Day 36 Part 3 - Half-Duplex FDD (HD-FDD) Archite",
+        "title": "Day 36 Part 3 — Half-Duplex FDD (HD-FDD) Architecture & Colli",
         "steps": [
           {
             "at": "say1",
             "step": "say1",
-            "caption": "Step 1: Initialize HALF_DUPLEX_REG for Half-Duplex FDD (HD-FDD) Archite.",
-            "registerName": "HALF_DUPLEX_REG",
+            "caption": "Initialize NR_HDFDD_SLOT_CFG_REG: Enable Half-Duplex FDD operation.",
+            "registerName": "NR_HDFDD_SLOT_CFG_REG",
             "bitWidth": 8,
             "hexValue": "0x80",
             "decimalValue": 128,
-            "maskApplied": "1 << 7",
+            "maskApplied": "0x80",
             "bits": [
               {
                 "index": 7,
-                "name": "HALF",
+                "name": "HDFDD_EN",
                 "value": 1,
                 "tone": "ok",
                 "highlighted": true
               },
               {
                 "index": 6,
-                "name": "DUPLEX",
+                "name": "TX_SLOT",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 5,
-                "name": "ARCHITEC",
+                "name": "RX_SLOT",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 4,
-                "name": "COLLISIO",
+                "name": "GD_SYMB",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 3,
-                "name": "ELIMINAT",
+                "name": "COLL_FLG",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 2,
-                "name": "GUARD",
+                "name": "DL_BURST",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 1,
-                "name": "PERIODS",
+                "name": "UL_GRANT",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 0,
-                "name": "CELLULAR",
+                "name": "SLOT_OK",
                 "value": 0,
                 "tone": "idle"
               }
@@ -837,59 +837,59 @@
           {
             "at": "say2",
             "step": "say2",
-            "caption": "Step 2: Configure operational bitfields in HALF_DUPLEX_REG.",
-            "registerName": "HALF_DUPLEX_REG",
+            "caption": "Allocate downlink reception slot and program 2-symbol guard period.",
+            "registerName": "NR_HDFDD_SLOT_CFG_REG",
             "bitWidth": 8,
-            "hexValue": "0xE0",
-            "decimalValue": 224,
-            "maskApplied": "0xE0",
+            "hexValue": "0xA8",
+            "decimalValue": 168,
+            "maskApplied": "0xA8",
             "bits": [
               {
                 "index": 7,
-                "name": "HALF",
+                "name": "HDFDD_EN",
                 "value": 1,
-                "tone": "accent"
-              },
-              {
-                "index": 6,
-                "name": "DUPLEX",
-                "value": 1,
-                "tone": "accent"
-              },
-              {
-                "index": 5,
-                "name": "ARCHITEC",
-                "value": 1,
-                "tone": "accent",
+                "tone": "ok",
                 "highlighted": true
               },
               {
+                "index": 6,
+                "name": "TX_SLOT",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 5,
+                "name": "RX_SLOT",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
                 "index": 4,
-                "name": "COLLISIO",
+                "name": "GD_SYMB",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 3,
-                "name": "ELIMINAT",
-                "value": 0,
-                "tone": "idle"
+                "name": "COLL_FLG",
+                "value": 1,
+                "tone": "ok"
               },
               {
                 "index": 2,
-                "name": "GUARD",
+                "name": "DL_BURST",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 1,
-                "name": "PERIODS",
+                "name": "UL_GRANT",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 0,
-                "name": "CELLULAR",
+                "name": "SLOT_OK",
                 "value": 0,
                 "tone": "idle"
               }
@@ -898,59 +898,59 @@
           {
             "at": "example",
             "step": "example",
-            "caption": "Step 3: Execute frame & verify state in HALF_DUPLEX_REG.",
-            "registerName": "HALF_DUPLEX_REG",
+            "caption": "Grant uplink transmission slot, verifying zero collision overlap with guard symbols.",
+            "registerName": "NR_HDFDD_SLOT_CFG_REG",
             "bitWidth": 8,
-            "hexValue": "0xF6",
-            "decimalValue": 246,
-            "maskApplied": "0xF6",
+            "hexValue": "0xF2",
+            "decimalValue": 242,
+            "maskApplied": "0xF2",
             "bits": [
               {
                 "index": 7,
-                "name": "HALF",
+                "name": "HDFDD_EN",
                 "value": 1,
-                "tone": "warn"
+                "tone": "ok",
+                "highlighted": true
               },
               {
                 "index": 6,
-                "name": "DUPLEX",
+                "name": "TX_SLOT",
                 "value": 1,
-                "tone": "warn"
+                "tone": "ok"
               },
               {
                 "index": 5,
-                "name": "ARCHITEC",
+                "name": "RX_SLOT",
                 "value": 1,
-                "tone": "warn"
+                "tone": "ok"
               },
               {
                 "index": 4,
-                "name": "COLLISIO",
+                "name": "GD_SYMB",
                 "value": 1,
-                "tone": "warn"
+                "tone": "ok"
               },
               {
                 "index": 3,
-                "name": "ELIMINAT",
+                "name": "COLL_FLG",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 2,
-                "name": "GUARD",
-                "value": 1,
-                "tone": "warn"
+                "name": "DL_BURST",
+                "value": 0,
+                "tone": "idle"
               },
               {
                 "index": 1,
-                "name": "PERIODS",
+                "name": "UL_GRANT",
                 "value": 1,
-                "tone": "warn",
-                "highlighted": true
+                "tone": "ok"
               },
               {
                 "index": 0,
-                "name": "CELLULAR",
+                "name": "SLOT_OK",
                 "value": 0,
                 "tone": "idle"
               }
@@ -959,8 +959,8 @@
           {
             "at": "tryIt",
             "step": "tryIt",
-            "caption": "Step 4: Commit verified output in HALF_DUPLEX_REG.",
-            "registerName": "HALF_DUPLEX_REG",
+            "caption": "Commit conflict-free HD-FDD slot schedule with verified RF isolation.",
+            "registerName": "NR_HDFDD_SLOT_CFG_REG",
             "bitWidth": 8,
             "hexValue": "0xFF",
             "decimalValue": 255,
@@ -968,52 +968,52 @@
             "bits": [
               {
                 "index": 7,
-                "name": "HALF",
+                "name": "HDFDD_EN",
                 "value": 1,
-                "tone": "ok"
+                "tone": "ok",
+                "highlighted": true
               },
               {
                 "index": 6,
-                "name": "DUPLEX",
+                "name": "TX_SLOT",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 5,
-                "name": "ARCHITEC",
+                "name": "RX_SLOT",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 4,
-                "name": "COLLISIO",
+                "name": "GD_SYMB",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 3,
-                "name": "ELIMINAT",
+                "name": "COLL_FLG",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 2,
-                "name": "GUARD",
+                "name": "DL_BURST",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 1,
-                "name": "PERIODS",
+                "name": "UL_GRANT",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 0,
-                "name": "CELLULAR",
+                "name": "SLOT_OK",
                 "value": 1,
-                "tone": "ok",
-                "highlighted": true
+                "tone": "ok"
               }
             ]
           }
@@ -1025,125 +1025,125 @@
       "codeHash": "6bc871fbe1c0e3ef8804674755f4f3ca79ee5060c7afe1761cc94366da507d70",
       "spec": {
         "template": "register-bits",
-        "title": "Day 36 Part 4 - 5G Core (5GC) Service-Based Arch",
+        "title": "Day 36 Part 4 — 5G Core (5GC) Service-Based Architecture & In",
         "steps": [
           {
             "at": "say1",
             "step": "say1",
-            "caption": "Step 1: Initialize CORE_SERVICE_REG for 5G Core (5GC) Service-Based Arch.",
-            "registerName": "CORE_SERVICE_REG",
+            "caption": "Initialize NR_5GC_QOS_POLICY_REG: Activate 5G Service-Based Architecture QoS flow.",
+            "registerName": "NR_5GC_QOS_POLICY_REG",
             "bitWidth": 8,
-            "hexValue": "0x80",
-            "decimalValue": 128,
-            "maskApplied": "1 << 7",
+            "hexValue": "0x81",
+            "decimalValue": 129,
+            "maskApplied": "0x81",
             "bits": [
               {
                 "index": 7,
-                "name": "CORE",
+                "name": "5QI_ACT",
                 "value": 1,
                 "tone": "ok",
                 "highlighted": true
               },
               {
                 "index": 6,
-                "name": "SERVICE",
+                "name": "DELAY_BD",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 5,
-                "name": "BASED",
+                "name": "GFBR_VAL",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 4,
-                "name": "ARCHITEC",
+                "name": "MFBR_VAL",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 3,
-                "name": "INDUSTRI",
+                "name": "CRIT_TEL",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 2,
-                "name": "FLOW",
+                "name": "VID_STREAM",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 1,
-                "name": "MAPPING",
+                "name": "BEST_EFF",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 0,
-                "name": "WHILE",
-                "value": 0,
-                "tone": "idle"
+                "name": "FLOW_EST",
+                "value": 1,
+                "tone": "ok"
               }
             ]
           },
           {
             "at": "say2",
             "step": "say2",
-            "caption": "Step 2: Configure operational bitfields in CORE_SERVICE_REG.",
-            "registerName": "CORE_SERVICE_REG",
+            "caption": "Map critical industrial telemetry to bounded 5QI delay and GFBR allocation.",
+            "registerName": "NR_5GC_QOS_POLICY_REG",
             "bitWidth": 8,
-            "hexValue": "0xE0",
-            "decimalValue": 224,
-            "maskApplied": "0xE0",
+            "hexValue": "0xBC",
+            "decimalValue": 188,
+            "maskApplied": "0xBC",
             "bits": [
               {
                 "index": 7,
-                "name": "CORE",
+                "name": "5QI_ACT",
                 "value": 1,
-                "tone": "accent"
-              },
-              {
-                "index": 6,
-                "name": "SERVICE",
-                "value": 1,
-                "tone": "accent"
-              },
-              {
-                "index": 5,
-                "name": "BASED",
-                "value": 1,
-                "tone": "accent",
+                "tone": "ok",
                 "highlighted": true
               },
               {
-                "index": 4,
-                "name": "ARCHITEC",
+                "index": 6,
+                "name": "DELAY_BD",
                 "value": 0,
                 "tone": "idle"
+              },
+              {
+                "index": 5,
+                "name": "GFBR_VAL",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "MFBR_VAL",
+                "value": 1,
+                "tone": "ok"
               },
               {
                 "index": 3,
-                "name": "INDUSTRI",
-                "value": 0,
-                "tone": "idle"
+                "name": "CRIT_TEL",
+                "value": 1,
+                "tone": "ok"
               },
               {
                 "index": 2,
-                "name": "FLOW",
-                "value": 0,
-                "tone": "idle"
+                "name": "VID_STREAM",
+                "value": 1,
+                "tone": "ok"
               },
               {
                 "index": 1,
-                "name": "MAPPING",
+                "name": "BEST_EFF",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 0,
-                "name": "WHILE",
+                "name": "FLOW_EST",
                 "value": 0,
                 "tone": "idle"
               }
@@ -1152,59 +1152,59 @@
           {
             "at": "example",
             "step": "example",
-            "caption": "Step 3: Execute frame & verify state in CORE_SERVICE_REG.",
-            "registerName": "CORE_SERVICE_REG",
+            "caption": "Provision video streaming slice parameters with rate policing and packet filters.",
+            "registerName": "NR_5GC_QOS_POLICY_REG",
             "bitWidth": 8,
-            "hexValue": "0xF6",
-            "decimalValue": 246,
-            "maskApplied": "0xF6",
+            "hexValue": "0xFE",
+            "decimalValue": 254,
+            "maskApplied": "0xFE",
             "bits": [
               {
                 "index": 7,
-                "name": "CORE",
+                "name": "5QI_ACT",
                 "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 6,
-                "name": "SERVICE",
-                "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 5,
-                "name": "BASED",
-                "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 4,
-                "name": "ARCHITEC",
-                "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 3,
-                "name": "INDUSTRI",
-                "value": 0,
-                "tone": "idle"
-              },
-              {
-                "index": 2,
-                "name": "FLOW",
-                "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 1,
-                "name": "MAPPING",
-                "value": 1,
-                "tone": "warn",
+                "tone": "ok",
                 "highlighted": true
               },
               {
+                "index": 6,
+                "name": "DELAY_BD",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "GFBR_VAL",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "MFBR_VAL",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "CRIT_TEL",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "VID_STREAM",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 1,
+                "name": "BEST_EFF",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
                 "index": 0,
-                "name": "WHILE",
+                "name": "FLOW_EST",
                 "value": 0,
                 "tone": "idle"
               }
@@ -1213,8 +1213,8 @@
           {
             "at": "tryIt",
             "step": "tryIt",
-            "caption": "Step 4: Commit verified output in CORE_SERVICE_REG.",
-            "registerName": "CORE_SERVICE_REG",
+            "caption": "Commit established QoS telemetry flow with bounded latency guarantees.",
+            "registerName": "NR_5GC_QOS_POLICY_REG",
             "bitWidth": 8,
             "hexValue": "0xFF",
             "decimalValue": 255,
@@ -1222,52 +1222,52 @@
             "bits": [
               {
                 "index": 7,
-                "name": "CORE",
+                "name": "5QI_ACT",
                 "value": 1,
-                "tone": "ok"
+                "tone": "ok",
+                "highlighted": true
               },
               {
                 "index": 6,
-                "name": "SERVICE",
+                "name": "DELAY_BD",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 5,
-                "name": "BASED",
+                "name": "GFBR_VAL",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 4,
-                "name": "ARCHITEC",
+                "name": "MFBR_VAL",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 3,
-                "name": "INDUSTRI",
+                "name": "CRIT_TEL",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 2,
-                "name": "FLOW",
+                "name": "VID_STREAM",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 1,
-                "name": "MAPPING",
+                "name": "BEST_EFF",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 0,
-                "name": "WHILE",
+                "name": "FLOW_EST",
                 "value": 1,
-                "tone": "ok",
-                "highlighted": true
+                "tone": "ok"
               }
             ]
           }
@@ -1279,64 +1279,64 @@
       "codeHash": "53796d9fdfaff2b9a8e8a78b0e4d78af95803a67816614fa10c87e51b966aac0",
       "spec": {
         "template": "register-bits",
-        "title": "Day 36 Part 5 - Masterclass Synthesis: Full 5G N",
+        "title": "Day 36 Part 5 — Masterclass Synthesis: Full 5G NR RedCap Edge",
         "steps": [
           {
             "at": "say1",
             "step": "say1",
-            "caption": "Step 1: Initialize MASTERCLASS_SYNTHESI_REG for Masterclass Synthesis: Full 5G",
-            "registerName": "MASTERCLASS_SYNTHESI_REG",
+            "caption": "Initialize NR_REDCAP_MASTER_AUDIT_REG: Assert baseline RF and BWP sync locks.",
+            "registerName": "NR_REDCAP_MASTER_AUDIT_REG",
             "bitWidth": 8,
-            "hexValue": "0x80",
-            "decimalValue": 128,
-            "maskApplied": "1 << 7",
+            "hexValue": "0xC0",
+            "decimalValue": 192,
+            "maskApplied": "0xC0",
             "bits": [
               {
                 "index": 7,
-                "name": "MASTERCL",
+                "name": "RF_OK",
                 "value": 1,
                 "tone": "ok",
                 "highlighted": true
               },
               {
                 "index": 6,
-                "name": "SYNTHESI",
-                "value": 0,
-                "tone": "idle"
+                "name": "BWP_SYNC",
+                "value": 1,
+                "tone": "ok"
               },
               {
                 "index": 5,
-                "name": "FULL",
+                "name": "HD_LOCK",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 4,
-                "name": "REDCAP",
+                "name": "QOS_MAP",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 3,
-                "name": "EDGE",
+                "name": "SPEC_V17",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 2,
-                "name": "SPECIFIC",
+                "name": "BOM_SAV",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 1,
-                "name": "VERIFICA",
+                "name": "BATT_5YR",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 0,
-                "name": "AUDIT",
+                "name": "CERT_A",
                 "value": 0,
                 "tone": "idle"
               }
@@ -1345,59 +1345,59 @@
           {
             "at": "say2",
             "step": "say2",
-            "caption": "Step 2: Configure operational bitfields in MASTERCLASS_SYNTHESI_REG.",
-            "registerName": "MASTERCLASS_SYNTHESI_REG",
+            "caption": "Lock HD-FDD slot boundaries and verify 5GC QoS telemetry mappings.",
+            "registerName": "NR_REDCAP_MASTER_AUDIT_REG",
             "bitWidth": 8,
-            "hexValue": "0xE0",
-            "decimalValue": 224,
-            "maskApplied": "0xE0",
+            "hexValue": "0xF0",
+            "decimalValue": 240,
+            "maskApplied": "0xF0",
             "bits": [
               {
                 "index": 7,
-                "name": "MASTERCL",
+                "name": "RF_OK",
                 "value": 1,
-                "tone": "accent"
-              },
-              {
-                "index": 6,
-                "name": "SYNTHESI",
-                "value": 1,
-                "tone": "accent"
-              },
-              {
-                "index": 5,
-                "name": "FULL",
-                "value": 1,
-                "tone": "accent",
+                "tone": "ok",
                 "highlighted": true
               },
               {
+                "index": 6,
+                "name": "BWP_SYNC",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "HD_LOCK",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
                 "index": 4,
-                "name": "REDCAP",
-                "value": 0,
-                "tone": "idle"
+                "name": "QOS_MAP",
+                "value": 1,
+                "tone": "ok"
               },
               {
                 "index": 3,
-                "name": "EDGE",
+                "name": "SPEC_V17",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 2,
-                "name": "SPECIFIC",
+                "name": "BOM_SAV",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 1,
-                "name": "VERIFICA",
+                "name": "BATT_5YR",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 0,
-                "name": "AUDIT",
+                "name": "CERT_A",
                 "value": 0,
                 "tone": "idle"
               }
@@ -1406,59 +1406,59 @@
           {
             "at": "example",
             "step": "example",
-            "caption": "Step 3: Execute frame & verify state in MASTERCLASS_SYNTHESI_REG.",
-            "registerName": "MASTERCLASS_SYNTHESI_REG",
+            "caption": "Verify 65% BOM cost reduction and 5-year battery life calculation under Rel-17.",
+            "registerName": "NR_REDCAP_MASTER_AUDIT_REG",
             "bitWidth": 8,
-            "hexValue": "0xF6",
-            "decimalValue": 246,
-            "maskApplied": "0xF6",
+            "hexValue": "0xFE",
+            "decimalValue": 254,
+            "maskApplied": "0xFE",
             "bits": [
               {
                 "index": 7,
-                "name": "MASTERCL",
+                "name": "RF_OK",
                 "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 6,
-                "name": "SYNTHESI",
-                "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 5,
-                "name": "FULL",
-                "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 4,
-                "name": "REDCAP",
-                "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 3,
-                "name": "EDGE",
-                "value": 0,
-                "tone": "idle"
-              },
-              {
-                "index": 2,
-                "name": "SPECIFIC",
-                "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 1,
-                "name": "VERIFICA",
-                "value": 1,
-                "tone": "warn",
+                "tone": "ok",
                 "highlighted": true
               },
               {
+                "index": 6,
+                "name": "BWP_SYNC",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "HD_LOCK",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "QOS_MAP",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "SPEC_V17",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "BOM_SAV",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 1,
+                "name": "BATT_5YR",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
                 "index": 0,
-                "name": "AUDIT",
+                "name": "CERT_A",
                 "value": 0,
                 "tone": "idle"
               }
@@ -1467,8 +1467,8 @@
           {
             "at": "tryIt",
             "step": "tryIt",
-            "caption": "Step 4: Commit verified output in MASTERCLASS_SYNTHESI_REG.",
-            "registerName": "MASTERCLASS_SYNTHESI_REG",
+            "caption": "Commit full 5G NR RedCap masterclass specification certification.",
+            "registerName": "NR_REDCAP_MASTER_AUDIT_REG",
             "bitWidth": 8,
             "hexValue": "0xFF",
             "decimalValue": 255,
@@ -1476,52 +1476,52 @@
             "bits": [
               {
                 "index": 7,
-                "name": "MASTERCL",
+                "name": "RF_OK",
                 "value": 1,
-                "tone": "ok"
+                "tone": "ok",
+                "highlighted": true
               },
               {
                 "index": 6,
-                "name": "SYNTHESI",
+                "name": "BWP_SYNC",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 5,
-                "name": "FULL",
+                "name": "HD_LOCK",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 4,
-                "name": "REDCAP",
+                "name": "QOS_MAP",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 3,
-                "name": "EDGE",
+                "name": "SPEC_V17",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 2,
-                "name": "SPECIFIC",
+                "name": "BOM_SAV",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 1,
-                "name": "VERIFICA",
+                "name": "BATT_5YR",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 0,
-                "name": "AUDIT",
+                "name": "CERT_A",
                 "value": 1,
-                "tone": "ok",
-                "highlighted": true
+                "tone": "ok"
               }
             ]
           }

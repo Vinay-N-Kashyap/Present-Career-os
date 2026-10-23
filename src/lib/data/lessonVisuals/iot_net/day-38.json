@@ -9,125 +9,125 @@
   "codeHash": "db0fe847216604035e28deaac55ef1325ac542cad20be07e9a5c9fdf19750f20",
   "spec": {
     "template": "register-bits",
-    "title": "Day 38 Part 1 - Wi-SUN Field Area Network (FAN) ",
+    "title": "Day 38 Part 1 — Wi-SUN Field Area Network (FAN) Architecture ",
     "steps": [
       {
         "at": "say1",
         "step": "say1",
-        "caption": "Step 1: Initialize FIELD_AREA_REG for Wi-SUN Field Area Network (FAN) .",
-        "registerName": "FIELD_AREA_REG",
+        "caption": "Initialize WISUN_PHY_MOD_REG: Arm 868/915 MHz Sub-GHz multi-rate PHY.",
+        "registerName": "WISUN_PHY_MOD_REG",
         "bitWidth": 8,
-        "hexValue": "0x80",
-        "decimalValue": 128,
-        "maskApplied": "1 << 7",
+        "hexValue": "0x81",
+        "decimalValue": 129,
+        "maskApplied": "0x81",
         "bits": [
           {
             "index": 7,
-            "name": "FIELD",
+            "name": "SUB_GHZ",
             "value": 1,
             "tone": "ok",
             "highlighted": true
           },
           {
             "index": 6,
-            "name": "AREA",
+            "name": "2FSK_50K",
             "value": 0,
             "tone": "idle"
           },
           {
             "index": 5,
-            "name": "NETWORK",
+            "name": "2FSK_150",
             "value": 0,
             "tone": "idle"
           },
           {
             "index": 4,
-            "name": "ARCHITEC",
+            "name": "OFDM_OP1",
             "value": 0,
             "tone": "idle"
           },
           {
             "index": 3,
-            "name": "IEEE",
+            "name": "OFDM_OP2",
             "value": 0,
             "tone": "idle"
           },
           {
             "index": 2,
-            "name": "WELCOME",
+            "name": "CHAN_SPA",
             "value": 0,
             "tone": "idle"
           },
           {
             "index": 1,
-            "name": "COURSE",
+            "name": "FEC_RS",
             "value": 0,
             "tone": "idle"
           },
           {
             "index": 0,
-            "name": "WIRELESS",
-            "value": 0,
-            "tone": "idle"
+            "name": "RF_LOCKED",
+            "value": 1,
+            "tone": "ok"
           }
         ]
       },
       {
         "at": "say2",
         "step": "say2",
-        "caption": "Step 2: Configure operational bitfields in FIELD_AREA_REG.",
-        "registerName": "FIELD_AREA_REG",
+        "caption": "Configure 2-FSK 150 kbps modulation with Reed-Solomon forward error correction.",
+        "registerName": "WISUN_PHY_MOD_REG",
         "bitWidth": 8,
-        "hexValue": "0xE0",
-        "decimalValue": 224,
-        "maskApplied": "0xE0",
+        "hexValue": "0xA6",
+        "decimalValue": 166,
+        "maskApplied": "0xA6",
         "bits": [
           {
             "index": 7,
-            "name": "FIELD",
+            "name": "SUB_GHZ",
             "value": 1,
-            "tone": "accent"
-          },
-          {
-            "index": 6,
-            "name": "AREA",
-            "value": 1,
-            "tone": "accent"
-          },
-          {
-            "index": 5,
-            "name": "NETWORK",
-            "value": 1,
-            "tone": "accent",
+            "tone": "ok",
             "highlighted": true
           },
           {
+            "index": 6,
+            "name": "2FSK_50K",
+            "value": 0,
+            "tone": "idle"
+          },
+          {
+            "index": 5,
+            "name": "2FSK_150",
+            "value": 1,
+            "tone": "ok"
+          },
+          {
             "index": 4,
-            "name": "ARCHITEC",
+            "name": "OFDM_OP1",
             "value": 0,
             "tone": "idle"
           },
           {
             "index": 3,
-            "name": "IEEE",
+            "name": "OFDM_OP2",
             "value": 0,
             "tone": "idle"
           },
           {
             "index": 2,
-            "name": "WELCOME",
-            "value": 0,
-            "tone": "idle"
+            "name": "CHAN_SPA",
+            "value": 1,
+            "tone": "ok"
           },
           {
             "index": 1,
-            "name": "COURSE",
-            "value": 0,
-            "tone": "idle"
+            "name": "FEC_RS",
+            "value": 1,
+            "tone": "ok"
           },
           {
             "index": 0,
-            "name": "WIRELESS",
+            "name": "RF_LOCKED",
             "value": 0,
             "tone": "idle"
           }
@@ -136,59 +136,59 @@
       {
         "at": "example",
         "step": "example",
-        "caption": "Step 3: Execute frame & verify state in FIELD_AREA_REG.",
-        "registerName": "FIELD_AREA_REG",
+        "caption": "Validate 100 kHz channel spacing and RF receiver sensitivity of -108 dBm.",
+        "registerName": "WISUN_PHY_MOD_REG",
         "bitWidth": 8,
-        "hexValue": "0xF6",
-        "decimalValue": 246,
-        "maskApplied": "0xF6",
+        "hexValue": "0xFE",
+        "decimalValue": 254,
+        "maskApplied": "0xFE",
         "bits": [
           {
             "index": 7,
-            "name": "FIELD",
+            "name": "SUB_GHZ",
             "value": 1,
-            "tone": "warn"
-          },
-          {
-            "index": 6,
-            "name": "AREA",
-            "value": 1,
-            "tone": "warn"
-          },
-          {
-            "index": 5,
-            "name": "NETWORK",
-            "value": 1,
-            "tone": "warn"
-          },
-          {
-            "index": 4,
-            "name": "ARCHITEC",
-            "value": 1,
-            "tone": "warn"
-          },
-          {
-            "index": 3,
-            "name": "IEEE",
-            "value": 0,
-            "tone": "idle"
-          },
-          {
-            "index": 2,
-            "name": "WELCOME",
-            "value": 1,
-            "tone": "warn"
-          },
-          {
-            "index": 1,
-            "name": "COURSE",
-            "value": 1,
-            "tone": "warn",
+            "tone": "ok",
             "highlighted": true
           },
           {
+            "index": 6,
+            "name": "2FSK_50K",
+            "value": 1,
+            "tone": "ok"
+          },
+          {
+            "index": 5,
+            "name": "2FSK_150",
+            "value": 1,
+            "tone": "ok"
+          },
+          {
+            "index": 4,
+            "name": "OFDM_OP1",
+            "value": 1,
+            "tone": "ok"
+          },
+          {
+            "index": 3,
+            "name": "OFDM_OP2",
+            "value": 1,
+            "tone": "ok"
+          },
+          {
+            "index": 2,
+            "name": "CHAN_SPA",
+            "value": 1,
+            "tone": "ok"
+          },
+          {
+            "index": 1,
+            "name": "FEC_RS",
+            "value": 1,
+            "tone": "ok"
+          },
+          {
             "index": 0,
-            "name": "WIRELESS",
+            "name": "RF_LOCKED",
             "value": 0,
             "tone": "idle"
           }
@@ -197,8 +197,8 @@
       {
         "at": "tryIt",
         "step": "tryIt",
-        "caption": "Step 4: Commit verified output in FIELD_AREA_REG.",
-        "registerName": "FIELD_AREA_REG",
+        "caption": "Commit Sub-GHz IEEE 802.15.4g physical layer lock for long-range utility mesh.",
+        "registerName": "WISUN_PHY_MOD_REG",
         "bitWidth": 8,
         "hexValue": "0xFF",
         "decimalValue": 255,
@@ -206,52 +206,52 @@
         "bits": [
           {
             "index": 7,
-            "name": "FIELD",
+            "name": "SUB_GHZ",
             "value": 1,
-            "tone": "ok"
+            "tone": "ok",
+            "highlighted": true
           },
           {
             "index": 6,
-            "name": "AREA",
+            "name": "2FSK_50K",
             "value": 1,
             "tone": "ok"
           },
           {
             "index": 5,
-            "name": "NETWORK",
+            "name": "2FSK_150",
             "value": 1,
             "tone": "ok"
           },
           {
             "index": 4,
-            "name": "ARCHITEC",
+            "name": "OFDM_OP1",
             "value": 1,
             "tone": "ok"
           },
           {
             "index": 3,
-            "name": "IEEE",
+            "name": "OFDM_OP2",
             "value": 1,
             "tone": "ok"
           },
           {
             "index": 2,
-            "name": "WELCOME",
+            "name": "CHAN_SPA",
             "value": 1,
             "tone": "ok"
           },
           {
             "index": 1,
-            "name": "COURSE",
+            "name": "FEC_RS",
             "value": 1,
             "tone": "ok"
           },
           {
             "index": 0,
-            "name": "WIRELESS",
+            "name": "RF_LOCKED",
             "value": 1,
-            "tone": "ok",
-            "highlighted": true
+            "tone": "ok"
           }
         ]
       }
@@ -263,125 +263,125 @@
       "codeHash": "db0fe847216604035e28deaac55ef1325ac542cad20be07e9a5c9fdf19750f20",
       "spec": {
         "template": "register-bits",
-        "title": "Day 38 Part 1 - Wi-SUN Field Area Network (FAN) ",
+        "title": "Day 38 Part 1 — Wi-SUN Field Area Network (FAN) Architecture ",
         "steps": [
           {
             "at": "say1",
             "step": "say1",
-            "caption": "Step 1: Initialize FIELD_AREA_REG for Wi-SUN Field Area Network (FAN) .",
-            "registerName": "FIELD_AREA_REG",
+            "caption": "Initialize WISUN_PHY_MOD_REG: Arm 868/915 MHz Sub-GHz multi-rate PHY.",
+            "registerName": "WISUN_PHY_MOD_REG",
             "bitWidth": 8,
-            "hexValue": "0x80",
-            "decimalValue": 128,
-            "maskApplied": "1 << 7",
+            "hexValue": "0x81",
+            "decimalValue": 129,
+            "maskApplied": "0x81",
             "bits": [
               {
                 "index": 7,
-                "name": "FIELD",
+                "name": "SUB_GHZ",
                 "value": 1,
                 "tone": "ok",
                 "highlighted": true
               },
               {
                 "index": 6,
-                "name": "AREA",
+                "name": "2FSK_50K",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 5,
-                "name": "NETWORK",
+                "name": "2FSK_150",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 4,
-                "name": "ARCHITEC",
+                "name": "OFDM_OP1",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 3,
-                "name": "IEEE",
+                "name": "OFDM_OP2",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 2,
-                "name": "WELCOME",
+                "name": "CHAN_SPA",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 1,
-                "name": "COURSE",
+                "name": "FEC_RS",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 0,
-                "name": "WIRELESS",
-                "value": 0,
-                "tone": "idle"
+                "name": "RF_LOCKED",
+                "value": 1,
+                "tone": "ok"
               }
             ]
           },
           {
             "at": "say2",
             "step": "say2",
-            "caption": "Step 2: Configure operational bitfields in FIELD_AREA_REG.",
-            "registerName": "FIELD_AREA_REG",
+            "caption": "Configure 2-FSK 150 kbps modulation with Reed-Solomon forward error correction.",
+            "registerName": "WISUN_PHY_MOD_REG",
             "bitWidth": 8,
-            "hexValue": "0xE0",
-            "decimalValue": 224,
-            "maskApplied": "0xE0",
+            "hexValue": "0xA6",
+            "decimalValue": 166,
+            "maskApplied": "0xA6",
             "bits": [
               {
                 "index": 7,
-                "name": "FIELD",
+                "name": "SUB_GHZ",
                 "value": 1,
-                "tone": "accent"
-              },
-              {
-                "index": 6,
-                "name": "AREA",
-                "value": 1,
-                "tone": "accent"
-              },
-              {
-                "index": 5,
-                "name": "NETWORK",
-                "value": 1,
-                "tone": "accent",
+                "tone": "ok",
                 "highlighted": true
               },
               {
+                "index": 6,
+                "name": "2FSK_50K",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 5,
+                "name": "2FSK_150",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
                 "index": 4,
-                "name": "ARCHITEC",
+                "name": "OFDM_OP1",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 3,
-                "name": "IEEE",
+                "name": "OFDM_OP2",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 2,
-                "name": "WELCOME",
-                "value": 0,
-                "tone": "idle"
+                "name": "CHAN_SPA",
+                "value": 1,
+                "tone": "ok"
               },
               {
                 "index": 1,
-                "name": "COURSE",
-                "value": 0,
-                "tone": "idle"
+                "name": "FEC_RS",
+                "value": 1,
+                "tone": "ok"
               },
               {
                 "index": 0,
-                "name": "WIRELESS",
+                "name": "RF_LOCKED",
                 "value": 0,
                 "tone": "idle"
               }
@@ -390,59 +390,59 @@
           {
             "at": "example",
             "step": "example",
-            "caption": "Step 3: Execute frame & verify state in FIELD_AREA_REG.",
-            "registerName": "FIELD_AREA_REG",
+            "caption": "Validate 100 kHz channel spacing and RF receiver sensitivity of -108 dBm.",
+            "registerName": "WISUN_PHY_MOD_REG",
             "bitWidth": 8,
-            "hexValue": "0xF6",
-            "decimalValue": 246,
-            "maskApplied": "0xF6",
+            "hexValue": "0xFE",
+            "decimalValue": 254,
+            "maskApplied": "0xFE",
             "bits": [
               {
                 "index": 7,
-                "name": "FIELD",
+                "name": "SUB_GHZ",
                 "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 6,
-                "name": "AREA",
-                "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 5,
-                "name": "NETWORK",
-                "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 4,
-                "name": "ARCHITEC",
-                "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 3,
-                "name": "IEEE",
-                "value": 0,
-                "tone": "idle"
-              },
-              {
-                "index": 2,
-                "name": "WELCOME",
-                "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 1,
-                "name": "COURSE",
-                "value": 1,
-                "tone": "warn",
+                "tone": "ok",
                 "highlighted": true
               },
               {
+                "index": 6,
+                "name": "2FSK_50K",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "2FSK_150",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "OFDM_OP1",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "OFDM_OP2",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "CHAN_SPA",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 1,
+                "name": "FEC_RS",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
                 "index": 0,
-                "name": "WIRELESS",
+                "name": "RF_LOCKED",
                 "value": 0,
                 "tone": "idle"
               }
@@ -451,8 +451,8 @@
           {
             "at": "tryIt",
             "step": "tryIt",
-            "caption": "Step 4: Commit verified output in FIELD_AREA_REG.",
-            "registerName": "FIELD_AREA_REG",
+            "caption": "Commit Sub-GHz IEEE 802.15.4g physical layer lock for long-range utility mesh.",
+            "registerName": "WISUN_PHY_MOD_REG",
             "bitWidth": 8,
             "hexValue": "0xFF",
             "decimalValue": 255,
@@ -460,52 +460,52 @@
             "bits": [
               {
                 "index": 7,
-                "name": "FIELD",
+                "name": "SUB_GHZ",
                 "value": 1,
-                "tone": "ok"
+                "tone": "ok",
+                "highlighted": true
               },
               {
                 "index": 6,
-                "name": "AREA",
+                "name": "2FSK_50K",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 5,
-                "name": "NETWORK",
+                "name": "2FSK_150",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 4,
-                "name": "ARCHITEC",
+                "name": "OFDM_OP1",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 3,
-                "name": "IEEE",
+                "name": "OFDM_OP2",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 2,
-                "name": "WELCOME",
+                "name": "CHAN_SPA",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 1,
-                "name": "COURSE",
+                "name": "FEC_RS",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 0,
-                "name": "WIRELESS",
+                "name": "RF_LOCKED",
                 "value": 1,
-                "tone": "ok",
-                "highlighted": true
+                "tone": "ok"
               }
             ]
           }
@@ -517,125 +517,125 @@
       "codeHash": "31b7d3791b5b7bfa30a8d02f205afc36d88163c9bc0fa06c2f7bec61505179df",
       "spec": {
         "template": "register-bits",
-        "title": "Day 38 Part 2 - Time-Slotted Channel Hopping (TS",
+        "title": "Day 38 Part 2 — Time-Slotted Channel Hopping (TSCH): Slotfram",
         "steps": [
           {
             "at": "say1",
             "step": "say1",
-            "caption": "Step 1: Initialize TIME_SLOTTED_REG for Time-Slotted Channel Hopping (TS.",
-            "registerName": "TIME_SLOTTED_REG",
+            "caption": "Initialize WISUN_TSCH_SLOT_REG: Enable IEEE 802.15.4e Time-Slotted Channel Hopping.",
+            "registerName": "WISUN_TSCH_SLOT_REG",
             "bitWidth": 8,
-            "hexValue": "0x80",
-            "decimalValue": 128,
-            "maskApplied": "1 << 7",
+            "hexValue": "0x81",
+            "decimalValue": 129,
+            "maskApplied": "0x81",
             "bits": [
               {
                 "index": 7,
-                "name": "TIME",
+                "name": "TSCH_EN",
                 "value": 1,
                 "tone": "ok",
                 "highlighted": true
               },
               {
                 "index": 6,
-                "name": "SLOTTED",
+                "name": "ASN_INC",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 5,
-                "name": "CHANNEL",
+                "name": "SLOT_10M",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 4,
-                "name": "HOPPING",
+                "name": "CH_HOP_EN",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 3,
-                "name": "TSCH",
+                "name": "GUARD_TX",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 2,
-                "name": "SLOTFRAM",
+                "name": "ACK_WAIT",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 1,
-                "name": "PROGRESS",
+                "name": "ANTI_JAM",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 0,
-                "name": "JAMMING",
-                "value": 0,
-                "tone": "idle"
+                "name": "SYNC_ASN",
+                "value": 1,
+                "tone": "ok"
               }
             ]
           },
           {
             "at": "say2",
             "step": "say2",
-            "caption": "Step 2: Configure operational bitfields in TIME_SLOTTED_REG.",
-            "registerName": "TIME_SLOTTED_REG",
+            "caption": "Program 10 ms slotframe timing and initialize Absolute Slot Number (ASN) progression.",
+            "registerName": "WISUN_TSCH_SLOT_REG",
             "bitWidth": 8,
-            "hexValue": "0xE0",
-            "decimalValue": 224,
-            "maskApplied": "0xE0",
+            "hexValue": "0xEC",
+            "decimalValue": 236,
+            "maskApplied": "0xEC",
             "bits": [
               {
                 "index": 7,
-                "name": "TIME",
+                "name": "TSCH_EN",
                 "value": 1,
-                "tone": "accent"
-              },
-              {
-                "index": 6,
-                "name": "SLOTTED",
-                "value": 1,
-                "tone": "accent"
-              },
-              {
-                "index": 5,
-                "name": "CHANNEL",
-                "value": 1,
-                "tone": "accent",
+                "tone": "ok",
                 "highlighted": true
               },
               {
+                "index": 6,
+                "name": "ASN_INC",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "SLOT_10M",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
                 "index": 4,
-                "name": "HOPPING",
+                "name": "CH_HOP_EN",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 3,
-                "name": "TSCH",
-                "value": 0,
-                "tone": "idle"
+                "name": "GUARD_TX",
+                "value": 1,
+                "tone": "ok"
               },
               {
                 "index": 2,
-                "name": "SLOTFRAM",
-                "value": 0,
-                "tone": "idle"
+                "name": "ACK_WAIT",
+                "value": 1,
+                "tone": "ok"
               },
               {
                 "index": 1,
-                "name": "PROGRESS",
+                "name": "ANTI_JAM",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 0,
-                "name": "JAMMING",
+                "name": "SYNC_ASN",
                 "value": 0,
                 "tone": "idle"
               }
@@ -644,59 +644,59 @@
           {
             "at": "example",
             "step": "example",
-            "caption": "Step 3: Execute frame & verify state in TIME_SLOTTED_REG.",
-            "registerName": "TIME_SLOTTED_REG",
+            "caption": "Execute pseudo-random frequency hopping sequence across 64 channels to defeat RF jamming.",
+            "registerName": "WISUN_TSCH_SLOT_REG",
             "bitWidth": 8,
-            "hexValue": "0xF6",
-            "decimalValue": 246,
-            "maskApplied": "0xF6",
+            "hexValue": "0xFE",
+            "decimalValue": 254,
+            "maskApplied": "0xFE",
             "bits": [
               {
                 "index": 7,
-                "name": "TIME",
+                "name": "TSCH_EN",
                 "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 6,
-                "name": "SLOTTED",
-                "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 5,
-                "name": "CHANNEL",
-                "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 4,
-                "name": "HOPPING",
-                "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 3,
-                "name": "TSCH",
-                "value": 0,
-                "tone": "idle"
-              },
-              {
-                "index": 2,
-                "name": "SLOTFRAM",
-                "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 1,
-                "name": "PROGRESS",
-                "value": 1,
-                "tone": "warn",
+                "tone": "ok",
                 "highlighted": true
               },
               {
+                "index": 6,
+                "name": "ASN_INC",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "SLOT_10M",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "CH_HOP_EN",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "GUARD_TX",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "ACK_WAIT",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 1,
+                "name": "ANTI_JAM",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
                 "index": 0,
-                "name": "JAMMING",
+                "name": "SYNC_ASN",
                 "value": 0,
                 "tone": "idle"
               }
@@ -705,8 +705,8 @@
           {
             "at": "tryIt",
             "step": "tryIt",
-            "caption": "Step 4: Commit verified output in TIME_SLOTTED_REG.",
-            "registerName": "TIME_SLOTTED_REG",
+            "caption": "Commit synchronized TSCH slotframe progression with zero frame collisions.",
+            "registerName": "WISUN_TSCH_SLOT_REG",
             "bitWidth": 8,
             "hexValue": "0xFF",
             "decimalValue": 255,
@@ -714,52 +714,52 @@
             "bits": [
               {
                 "index": 7,
-                "name": "TIME",
+                "name": "TSCH_EN",
                 "value": 1,
-                "tone": "ok"
+                "tone": "ok",
+                "highlighted": true
               },
               {
                 "index": 6,
-                "name": "SLOTTED",
+                "name": "ASN_INC",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 5,
-                "name": "CHANNEL",
+                "name": "SLOT_10M",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 4,
-                "name": "HOPPING",
+                "name": "CH_HOP_EN",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 3,
-                "name": "TSCH",
+                "name": "GUARD_TX",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 2,
-                "name": "SLOTFRAM",
+                "name": "ACK_WAIT",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 1,
-                "name": "PROGRESS",
+                "name": "ANTI_JAM",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 0,
-                "name": "JAMMING",
+                "name": "SYNC_ASN",
                 "value": 1,
-                "tone": "ok",
-                "highlighted": true
+                "tone": "ok"
               }
             ]
           }
@@ -771,125 +771,125 @@
       "codeHash": "5ba37f7bf59a096e2a3ae6e74cdf8ad7136543d5b20d2b50306dc9c1a6b293a5",
       "spec": {
         "template": "register-bits",
-        "title": "Day 38 Part 3 - Wi-SUN Security & Network Access",
+        "title": "Day 38 Part 3 — Wi-SUN Security & Network Access Control: IEE",
         "steps": [
           {
             "at": "say1",
             "step": "say1",
-            "caption": "Step 1: Initialize SECURITY_NETWORK_REG for Wi-SUN Security & Network Access.",
-            "registerName": "SECURITY_NETWORK_REG",
+            "caption": "Initialize WISUN_SEC_KEY_REG: Initiate IEEE 802.1X certificate-based EAP-TLS authentication.",
+            "registerName": "WISUN_SEC_KEY_REG",
             "bitWidth": 8,
-            "hexValue": "0x80",
-            "decimalValue": 128,
-            "maskApplied": "1 << 7",
+            "hexValue": "0x81",
+            "decimalValue": 129,
+            "maskApplied": "0x81",
             "bits": [
               {
                 "index": 7,
-                "name": "SECURITY",
+                "name": "EAP_TLS",
                 "value": 1,
                 "tone": "ok",
                 "highlighted": true
               },
               {
                 "index": 6,
-                "name": "NETWORK",
+                "name": "GTK_ACT",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 5,
-                "name": "ACCESS",
+                "name": "GTK_ROT",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 4,
-                "name": "CONTROL",
+                "name": "MIC_32",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 3,
-                "name": "IEEE",
+                "name": "AES_CCM",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 2,
-                "name": "ROTATION",
+                "name": "AUTH_OK",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 1,
-                "name": "BECAUSE",
+                "name": "REPLAY_G",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 0,
-                "name": "FIELD",
-                "value": 0,
-                "tone": "idle"
+                "name": "SEC_LOCK",
+                "value": 1,
+                "tone": "ok"
               }
             ]
           },
           {
             "at": "say2",
             "step": "say2",
-            "caption": "Step 2: Configure operational bitfields in SECURITY_NETWORK_REG.",
-            "registerName": "SECURITY_NETWORK_REG",
+            "caption": "Derive Group Transient Keys (GTK) and arm AES-128-CCM link-layer encryption.",
+            "registerName": "WISUN_SEC_KEY_REG",
             "bitWidth": 8,
-            "hexValue": "0xE0",
-            "decimalValue": 224,
-            "maskApplied": "0xE0",
+            "hexValue": "0xBA",
+            "decimalValue": 186,
+            "maskApplied": "0xBA",
             "bits": [
               {
                 "index": 7,
-                "name": "SECURITY",
+                "name": "EAP_TLS",
                 "value": 1,
-                "tone": "accent"
-              },
-              {
-                "index": 6,
-                "name": "NETWORK",
-                "value": 1,
-                "tone": "accent"
-              },
-              {
-                "index": 5,
-                "name": "ACCESS",
-                "value": 1,
-                "tone": "accent",
+                "tone": "ok",
                 "highlighted": true
               },
               {
-                "index": 4,
-                "name": "CONTROL",
+                "index": 6,
+                "name": "GTK_ACT",
                 "value": 0,
                 "tone": "idle"
+              },
+              {
+                "index": 5,
+                "name": "GTK_ROT",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "MIC_32",
+                "value": 1,
+                "tone": "ok"
               },
               {
                 "index": 3,
-                "name": "IEEE",
-                "value": 0,
-                "tone": "idle"
+                "name": "AES_CCM",
+                "value": 1,
+                "tone": "ok"
               },
               {
                 "index": 2,
-                "name": "ROTATION",
+                "name": "AUTH_OK",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 1,
-                "name": "BECAUSE",
-                "value": 0,
-                "tone": "idle"
+                "name": "REPLAY_G",
+                "value": 1,
+                "tone": "ok"
               },
               {
                 "index": 0,
-                "name": "FIELD",
+                "name": "SEC_LOCK",
                 "value": 0,
                 "tone": "idle"
               }
@@ -898,59 +898,59 @@
           {
             "at": "example",
             "step": "example",
-            "caption": "Step 3: Execute frame & verify state in SECURITY_NETWORK_REG.",
-            "registerName": "SECURITY_NETWORK_REG",
+            "caption": "Enforce 32-bit Frame Counter replay protection and trigger scheduled GTK rotation.",
+            "registerName": "WISUN_SEC_KEY_REG",
             "bitWidth": 8,
-            "hexValue": "0xF6",
-            "decimalValue": 246,
-            "maskApplied": "0xF6",
+            "hexValue": "0xFE",
+            "decimalValue": 254,
+            "maskApplied": "0xFE",
             "bits": [
               {
                 "index": 7,
-                "name": "SECURITY",
+                "name": "EAP_TLS",
                 "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 6,
-                "name": "NETWORK",
-                "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 5,
-                "name": "ACCESS",
-                "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 4,
-                "name": "CONTROL",
-                "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 3,
-                "name": "IEEE",
-                "value": 0,
-                "tone": "idle"
-              },
-              {
-                "index": 2,
-                "name": "ROTATION",
-                "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 1,
-                "name": "BECAUSE",
-                "value": 1,
-                "tone": "warn",
+                "tone": "ok",
                 "highlighted": true
               },
               {
+                "index": 6,
+                "name": "GTK_ACT",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "GTK_ROT",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "MIC_32",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "AES_CCM",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "AUTH_OK",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 1,
+                "name": "REPLAY_G",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
                 "index": 0,
-                "name": "FIELD",
+                "name": "SEC_LOCK",
                 "value": 0,
                 "tone": "idle"
               }
@@ -959,8 +959,8 @@
           {
             "at": "tryIt",
             "step": "tryIt",
-            "caption": "Step 4: Commit verified output in SECURITY_NETWORK_REG.",
-            "registerName": "SECURITY_NETWORK_REG",
+            "caption": "Commit zero-trust cryptographic perimeter on Wi-SUN utility mesh router.",
+            "registerName": "WISUN_SEC_KEY_REG",
             "bitWidth": 8,
             "hexValue": "0xFF",
             "decimalValue": 255,
@@ -968,52 +968,52 @@
             "bits": [
               {
                 "index": 7,
-                "name": "SECURITY",
+                "name": "EAP_TLS",
                 "value": 1,
-                "tone": "ok"
+                "tone": "ok",
+                "highlighted": true
               },
               {
                 "index": 6,
-                "name": "NETWORK",
+                "name": "GTK_ACT",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 5,
-                "name": "ACCESS",
+                "name": "GTK_ROT",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 4,
-                "name": "CONTROL",
+                "name": "MIC_32",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 3,
-                "name": "IEEE",
+                "name": "AES_CCM",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 2,
-                "name": "ROTATION",
+                "name": "AUTH_OK",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 1,
-                "name": "BECAUSE",
+                "name": "REPLAY_G",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 0,
-                "name": "FIELD",
+                "name": "SEC_LOCK",
                 "value": 1,
-                "tone": "ok",
-                "highlighted": true
+                "tone": "ok"
               }
             ]
           }
@@ -1025,125 +1025,125 @@
       "codeHash": "bfc8aa87d21c55402d3dc3007fc3c238ee6d7c7e5ed24cdf26600a2a8e8dd314",
       "spec": {
         "template": "register-bits",
-        "title": "Day 38 Part 4 - RPL Mesh Routing over Sub-GHz: D",
+        "title": "Day 38 Part 4 — RPL Mesh Routing over Sub-GHz: DODAG Trees, M",
         "steps": [
           {
             "at": "say1",
             "step": "say1",
-            "caption": "Step 1: Initialize MESH_ROUTING_REG for RPL Mesh Routing over Sub-GHz: D.",
-            "registerName": "MESH_ROUTING_REG",
+            "caption": "Initialize WISUN_RPL_ROUTING_REG: Join RPL Destination-Oriented DAG topology.",
+            "registerName": "WISUN_RPL_ROUTING_REG",
             "bitWidth": 8,
-            "hexValue": "0x80",
-            "decimalValue": 128,
-            "maskApplied": "1 << 7",
+            "hexValue": "0x81",
+            "decimalValue": 129,
+            "maskApplied": "0x81",
             "bits": [
               {
                 "index": 7,
-                "name": "MESH",
+                "name": "DODAG_RT",
                 "value": 1,
                 "tone": "ok",
                 "highlighted": true
               },
               {
                 "index": 6,
-                "name": "ROUTING",
+                "name": "ROOT_BR",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 5,
-                "name": "OVER",
+                "name": "MRHOF_EN",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 4,
-                "name": "DODAG",
+                "name": "ETX_CALC",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 3,
-                "name": "TREES",
+                "name": "RANK_L1",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 2,
-                "name": "MRHOF",
+                "name": "RANK_L2",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 1,
-                "name": "EXPECTED",
+                "name": "DIS_TRG",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 0,
-                "name": "TRANSMIS",
-                "value": 0,
-                "tone": "idle"
+                "name": "DIO_OK",
+                "value": 1,
+                "tone": "ok"
               }
             ]
           },
           {
             "at": "say2",
             "step": "say2",
-            "caption": "Step 2: Configure operational bitfields in MESH_ROUTING_REG.",
-            "registerName": "MESH_ROUTING_REG",
+            "caption": "Configure Minimum Rank with Hysteresis Objective Function (MRHOF) based on ETX metrics.",
+            "registerName": "WISUN_RPL_ROUTING_REG",
             "bitWidth": 8,
-            "hexValue": "0xE0",
-            "decimalValue": 224,
-            "maskApplied": "0xE0",
+            "hexValue": "0xB6",
+            "decimalValue": 182,
+            "maskApplied": "0xB6",
             "bits": [
               {
                 "index": 7,
-                "name": "MESH",
+                "name": "DODAG_RT",
                 "value": 1,
-                "tone": "accent"
-              },
-              {
-                "index": 6,
-                "name": "ROUTING",
-                "value": 1,
-                "tone": "accent"
-              },
-              {
-                "index": 5,
-                "name": "OVER",
-                "value": 1,
-                "tone": "accent",
+                "tone": "ok",
                 "highlighted": true
               },
               {
-                "index": 4,
-                "name": "DODAG",
+                "index": 6,
+                "name": "ROOT_BR",
                 "value": 0,
                 "tone": "idle"
               },
               {
+                "index": 5,
+                "name": "MRHOF_EN",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "ETX_CALC",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
                 "index": 3,
-                "name": "TREES",
+                "name": "RANK_L1",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 2,
-                "name": "MRHOF",
-                "value": 0,
-                "tone": "idle"
+                "name": "RANK_L2",
+                "value": 1,
+                "tone": "ok"
               },
               {
                 "index": 1,
-                "name": "EXPECTED",
-                "value": 0,
-                "tone": "idle"
+                "name": "DIS_TRG",
+                "value": 1,
+                "tone": "ok"
               },
               {
                 "index": 0,
-                "name": "TRANSMIS",
+                "name": "DIO_OK",
                 "value": 0,
                 "tone": "idle"
               }
@@ -1152,59 +1152,59 @@
           {
             "at": "example",
             "step": "example",
-            "caption": "Step 3: Execute frame & verify state in MESH_ROUTING_REG.",
-            "registerName": "MESH_ROUTING_REG",
+            "caption": "Select primary parent node and compute DAG rank with 1.2 dB link hysteresis.",
+            "registerName": "WISUN_RPL_ROUTING_REG",
             "bitWidth": 8,
-            "hexValue": "0xF6",
-            "decimalValue": 246,
-            "maskApplied": "0xF6",
+            "hexValue": "0xFE",
+            "decimalValue": 254,
+            "maskApplied": "0xFE",
             "bits": [
               {
                 "index": 7,
-                "name": "MESH",
+                "name": "DODAG_RT",
                 "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 6,
-                "name": "ROUTING",
-                "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 5,
-                "name": "OVER",
-                "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 4,
-                "name": "DODAG",
-                "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 3,
-                "name": "TREES",
-                "value": 0,
-                "tone": "idle"
-              },
-              {
-                "index": 2,
-                "name": "MRHOF",
-                "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 1,
-                "name": "EXPECTED",
-                "value": 1,
-                "tone": "warn",
+                "tone": "ok",
                 "highlighted": true
               },
               {
+                "index": 6,
+                "name": "ROOT_BR",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "MRHOF_EN",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "ETX_CALC",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "RANK_L1",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "RANK_L2",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 1,
+                "name": "DIS_TRG",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
                 "index": 0,
-                "name": "TRANSMIS",
+                "name": "DIO_OK",
                 "value": 0,
                 "tone": "idle"
               }
@@ -1213,8 +1213,8 @@
           {
             "at": "tryIt",
             "step": "tryIt",
-            "caption": "Step 4: Commit verified output in MESH_ROUTING_REG.",
-            "registerName": "MESH_ROUTING_REG",
+            "caption": "Commit optimized multi-hop mesh route to border router gateway.",
+            "registerName": "WISUN_RPL_ROUTING_REG",
             "bitWidth": 8,
             "hexValue": "0xFF",
             "decimalValue": 255,
@@ -1222,52 +1222,52 @@
             "bits": [
               {
                 "index": 7,
-                "name": "MESH",
+                "name": "DODAG_RT",
                 "value": 1,
-                "tone": "ok"
+                "tone": "ok",
+                "highlighted": true
               },
               {
                 "index": 6,
-                "name": "ROUTING",
+                "name": "ROOT_BR",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 5,
-                "name": "OVER",
+                "name": "MRHOF_EN",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 4,
-                "name": "DODAG",
+                "name": "ETX_CALC",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 3,
-                "name": "TREES",
+                "name": "RANK_L1",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 2,
-                "name": "MRHOF",
+                "name": "RANK_L2",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 1,
-                "name": "EXPECTED",
+                "name": "DIS_TRG",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 0,
-                "name": "TRANSMIS",
+                "name": "DIO_OK",
                 "value": 1,
-                "tone": "ok",
-                "highlighted": true
+                "tone": "ok"
               }
             ]
           }
@@ -1279,64 +1279,64 @@
       "codeHash": "350731d2715816333c72174758414c7b88d75da663dd9a98b512f0f666656835",
       "spec": {
         "template": "register-bits",
-        "title": "Day 38 Part 5 - Masterclass Synthesis: Industria",
+        "title": "Day 38 Part 5 — Masterclass Synthesis: Industrial Wi-SUN FAN ",
         "steps": [
           {
             "at": "say1",
             "step": "say1",
-            "caption": "Step 1: Initialize MASTERCLASS_SYNTHESI_REG for Masterclass Synthesis: Industr",
-            "registerName": "MASTERCLASS_SYNTHESI_REG",
+            "caption": "Initialize WISUN_MASTER_MESH_REG: Assert PHY and TSCH slotframe synchronization.",
+            "registerName": "WISUN_MASTER_MESH_REG",
             "bitWidth": 8,
-            "hexValue": "0x80",
-            "decimalValue": 128,
-            "maskApplied": "1 << 7",
+            "hexValue": "0xC0",
+            "decimalValue": 192,
+            "maskApplied": "0xC0",
             "bits": [
               {
                 "index": 7,
-                "name": "MASTERCL",
+                "name": "PHY_SYNC",
                 "value": 1,
                 "tone": "ok",
                 "highlighted": true
               },
               {
                 "index": 6,
-                "name": "SYNTHESI",
-                "value": 0,
-                "tone": "idle"
+                "name": "TSCH_OK",
+                "value": 1,
+                "tone": "ok"
               },
               {
                 "index": 5,
-                "name": "INDUSTRI",
+                "name": "SEC_VAL",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 4,
-                "name": "MULTI",
+                "name": "RPL_CONV",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 3,
-                "name": "DETERMIN",
+                "name": "HOP_12CH",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 2,
-                "name": "TSCH",
+                "name": "LOSS_0",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 1,
-                "name": "MESH",
+                "name": "DETERM_1",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 0,
-                "name": "SIMULATO",
+                "name": "MESH_CERT",
                 "value": 0,
                 "tone": "idle"
               }
@@ -1345,59 +1345,59 @@
           {
             "at": "say2",
             "step": "say2",
-            "caption": "Step 2: Configure operational bitfields in MASTERCLASS_SYNTHESI_REG.",
-            "registerName": "MASTERCLASS_SYNTHESI_REG",
+            "caption": "Validate 802.1X mutual authentication and RPL DODAG mesh routing convergence.",
+            "registerName": "WISUN_MASTER_MESH_REG",
             "bitWidth": 8,
-            "hexValue": "0xE0",
-            "decimalValue": 224,
-            "maskApplied": "0xE0",
+            "hexValue": "0xF0",
+            "decimalValue": 240,
+            "maskApplied": "0xF0",
             "bits": [
               {
                 "index": 7,
-                "name": "MASTERCL",
+                "name": "PHY_SYNC",
                 "value": 1,
-                "tone": "accent"
-              },
-              {
-                "index": 6,
-                "name": "SYNTHESI",
-                "value": 1,
-                "tone": "accent"
-              },
-              {
-                "index": 5,
-                "name": "INDUSTRI",
-                "value": 1,
-                "tone": "accent",
+                "tone": "ok",
                 "highlighted": true
               },
               {
+                "index": 6,
+                "name": "TSCH_OK",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "SEC_VAL",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
                 "index": 4,
-                "name": "MULTI",
-                "value": 0,
-                "tone": "idle"
+                "name": "RPL_CONV",
+                "value": 1,
+                "tone": "ok"
               },
               {
                 "index": 3,
-                "name": "DETERMIN",
+                "name": "HOP_12CH",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 2,
-                "name": "TSCH",
+                "name": "LOSS_0",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 1,
-                "name": "MESH",
+                "name": "DETERM_1",
                 "value": 0,
                 "tone": "idle"
               },
               {
                 "index": 0,
-                "name": "SIMULATO",
+                "name": "MESH_CERT",
                 "value": 0,
                 "tone": "idle"
               }
@@ -1406,59 +1406,59 @@
           {
             "at": "example",
             "step": "example",
-            "caption": "Step 3: Execute frame & verify state in MASTERCLASS_SYNTHESI_REG.",
-            "registerName": "MASTERCLASS_SYNTHESI_REG",
+            "caption": "Execute 10-hop deterministic mesh delivery simulation with 99.999% packet reliability.",
+            "registerName": "WISUN_MASTER_MESH_REG",
             "bitWidth": 8,
-            "hexValue": "0xF6",
-            "decimalValue": 246,
-            "maskApplied": "0xF6",
+            "hexValue": "0xFE",
+            "decimalValue": 254,
+            "maskApplied": "0xFE",
             "bits": [
               {
                 "index": 7,
-                "name": "MASTERCL",
+                "name": "PHY_SYNC",
                 "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 6,
-                "name": "SYNTHESI",
-                "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 5,
-                "name": "INDUSTRI",
-                "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 4,
-                "name": "MULTI",
-                "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 3,
-                "name": "DETERMIN",
-                "value": 0,
-                "tone": "idle"
-              },
-              {
-                "index": 2,
-                "name": "TSCH",
-                "value": 1,
-                "tone": "warn"
-              },
-              {
-                "index": 1,
-                "name": "MESH",
-                "value": 1,
-                "tone": "warn",
+                "tone": "ok",
                 "highlighted": true
               },
               {
+                "index": 6,
+                "name": "TSCH_OK",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "SEC_VAL",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "RPL_CONV",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "HOP_12CH",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "LOSS_0",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 1,
+                "name": "DETERM_1",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
                 "index": 0,
-                "name": "SIMULATO",
+                "name": "MESH_CERT",
                 "value": 0,
                 "tone": "idle"
               }
@@ -1467,8 +1467,8 @@
           {
             "at": "tryIt",
             "step": "tryIt",
-            "caption": "Step 4: Commit verified output in MASTERCLASS_SYNTHESI_REG.",
-            "registerName": "MASTERCLASS_SYNTHESI_REG",
+            "caption": "Commit certified Wi-SUN FAN field area network deployment state.",
+            "registerName": "WISUN_MASTER_MESH_REG",
             "bitWidth": 8,
             "hexValue": "0xFF",
             "decimalValue": 255,
@@ -1476,52 +1476,52 @@
             "bits": [
               {
                 "index": 7,
-                "name": "MASTERCL",
+                "name": "PHY_SYNC",
                 "value": 1,
-                "tone": "ok"
+                "tone": "ok",
+                "highlighted": true
               },
               {
                 "index": 6,
-                "name": "SYNTHESI",
+                "name": "TSCH_OK",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 5,
-                "name": "INDUSTRI",
+                "name": "SEC_VAL",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 4,
-                "name": "MULTI",
+                "name": "RPL_CONV",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 3,
-                "name": "DETERMIN",
+                "name": "HOP_12CH",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 2,
-                "name": "TSCH",
+                "name": "LOSS_0",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 1,
-                "name": "MESH",
+                "name": "DETERM_1",
                 "value": 1,
                 "tone": "ok"
               },
               {
                 "index": 0,
-                "name": "SIMULATO",
+                "name": "MESH_CERT",
                 "value": 1,
-                "tone": "ok",
-                "highlighted": true
+                "tone": "ok"
               }
             ]
           }
