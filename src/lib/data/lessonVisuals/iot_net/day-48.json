@@ -1,0 +1,1425 @@
+{
+  "schemaVersion": 1,
+  "prefix": "iot_net",
+  "coursePrefix": "iot_net",
+  "day": 48,
+  "title": "Thread 1.3 & OpenThread: Mesh Link Establishment, Roles & CoAP Control",
+  "promptSha": "thread-openthread-mle-mesh-day48-v2",
+  "model": "gpt-4o",
+  "codeHash": "515e8df760ad641fbb5be653b351480339c289e3c56a0a92fe986ceeda4fb16e",
+  "spec": {
+    "template": "register-bits"
+  },
+  "entries": [
+    {
+      "partTitle": "Thread Protocol 1.3 Architecture, Node Roles & Partition Governance",
+      "codeHash": "515e8df760ad641fbb5be653b351480339c289e3c56a0a92fe986ceeda4fb16e",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 48 Part 1 — Thread Protocol 1.3 Architecture, Node Roles & Partition Governance",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Device powers up in detached state; scans channels and locks initial partition ID.",
+            "registerName": "THREAD_ROLE_STATE_REG",
+            "bitWidth": 8,
+            "hexValue": "0x81",
+            "decimalValue": 129,
+            "maskApplied": "0x81",
+            "bits": [
+              {
+                "index": 7,
+                "name": "ROLE_CONVERGED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "PART_ID_VALID",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "ROUTER_ID_LATCH",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "REED_STANDBY",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "LEADER_ELECTED",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "ROUTER_ROLE",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "CHILD_ATTACHED",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "DETACHED_MODE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Attach handshake completes; node acquires Child status and allocates RLOC16 address.",
+            "registerName": "THREAD_ROLE_STATE_REG",
+            "bitWidth": 8,
+            "hexValue": "0x83",
+            "decimalValue": 131,
+            "maskApplied": "0x83",
+            "bits": [
+              {
+                "index": 7,
+                "name": "ROLE_CONVERGED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "PART_ID_VALID",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "ROUTER_ID_LATCH",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "REED_STANDBY",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "LEADER_ELECTED",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "ROUTER_ROLE",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "CHILD_ATTACHED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "DETACHED_MODE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Autonomous router promotion: Router ID allocated and mesh routing role active.",
+            "registerName": "THREAD_ROLE_STATE_REG",
+            "bitWidth": 8,
+            "hexValue": "0xA7",
+            "decimalValue": 167,
+            "maskApplied": "0xA7",
+            "bits": [
+              {
+                "index": 7,
+                "name": "ROLE_CONVERGED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "PART_ID_VALID",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "ROUTER_ID_LATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "REED_STANDBY",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "LEADER_ELECTED",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "ROUTER_ROLE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "CHILD_ATTACHED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "DETACHED_MODE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Full partition governance: Leader arbitration active with maximum router capacity reached.",
+            "registerName": "THREAD_ROLE_STATE_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "ROLE_CONVERGED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "PART_ID_VALID",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "ROUTER_ID_LATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "REED_STANDBY",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "LEADER_ELECTED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "ROUTER_ROLE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "CHILD_ATTACHED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "DETACHED_MODE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Mesh Link Establishment (MLE): Handshakes, TLVs & Distance-Vector Routing",
+      "codeHash": "ed7a50a719dd212b28b29313ddc05f572dc855450af003bcc926b87efd88e508",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 48 Part 2 — Mesh Link Establishment (MLE) & Distance-Vector Route64 Metric",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Transmit MLE Link Request embedding randomized 32-bit Challenge TLV.",
+            "registerName": "THREAD_MLE_LINK_REG",
+            "bitWidth": 8,
+            "hexValue": "0x81",
+            "decimalValue": 129,
+            "maskApplied": "0x81",
+            "bits": [
+              {
+                "index": 7,
+                "name": "MLE_ESTABLISHED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "NEIGHBOR_LATCH",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "LINK_MARGIN_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "ROUTE64_VALID",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "FRAME_CTR_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "RESPONSE_VERIF",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "CHALLENGE_MATCH",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "MLE_REQUEST_TX",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Receive MLE Link Accept; verify challenge response token and validate frame counter.",
+            "registerName": "THREAD_MLE_LINK_REG",
+            "bitWidth": 8,
+            "hexValue": "0x8F",
+            "decimalValue": 143,
+            "maskApplied": "0x8F",
+            "bits": [
+              {
+                "index": 7,
+                "name": "MLE_ESTABLISHED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "NEIGHBOR_LATCH",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "LINK_MARGIN_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "ROUTE64_VALID",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "FRAME_CTR_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "RESPONSE_VERIF",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "CHALLENGE_MATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "MLE_REQUEST_TX",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Ingest Route64 TLV distance vector updates and calculate link margin from RSSI.",
+            "registerName": "THREAD_MLE_LINK_REG",
+            "bitWidth": 8,
+            "hexValue": "0xBF",
+            "decimalValue": 191,
+            "maskApplied": "0xBF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "MLE_ESTABLISHED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "NEIGHBOR_LATCH",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "LINK_MARGIN_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "ROUTE64_VALID",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "FRAME_CTR_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "RESPONSE_VERIF",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "CHALLENGE_MATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "MLE_REQUEST_TX",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Two-way symmetric link confirmed; neighbor table updated and Route64 path cost converged.",
+            "registerName": "THREAD_MLE_LINK_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "MLE_ESTABLISHED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "NEIGHBOR_LATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "LINK_MARGIN_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "ROUTE64_VALID",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "FRAME_CTR_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "RESPONSE_VERIF",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "CHALLENGE_MATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "MLE_REQUEST_TX",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Sleepy End Device (SED) Mechanics, CSL & Parent Child Table Buffering",
+      "codeHash": "50c5e58561d3686778f91ef991fa1a35d50c6354f605024726a8d97727018ab3",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 48 Part 3 — Sleepy End Devices (SED), Child Tables & Indirect Packet Buffering",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Parent allocates child table slot for Sleepy End Device with assigned timeout.",
+            "registerName": "THREAD_SED_POLL_REG",
+            "bitWidth": 8,
+            "hexValue": "0x81",
+            "decimalValue": 129,
+            "maskApplied": "0x81",
+            "bits": [
+              {
+                "index": 7,
+                "name": "POLL_CYCLE_DONE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "SLEEP_DEEP_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "CSL_SYNC_WAKE",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "DOWNLINK_BURST",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "FRAME_PEND_ACK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "MAC_DATA_REQ",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "INDIR_QUEUED",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "CHILD_TBL_ALLOC",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Incoming downlink packet arrives from mesh; parent buffers frame into indirect queue.",
+            "registerName": "THREAD_SED_POLL_REG",
+            "bitWidth": 8,
+            "hexValue": "0xC3",
+            "decimalValue": 195,
+            "maskApplied": "0xC3",
+            "bits": [
+              {
+                "index": 7,
+                "name": "POLL_CYCLE_DONE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "SLEEP_DEEP_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "CSL_SYNC_WAKE",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "DOWNLINK_BURST",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "FRAME_PEND_ACK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "MAC_DATA_REQ",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "INDIR_QUEUED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "CHILD_TBL_ALLOC",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "SED awakens and issues MAC Data Request poll; parent responds with Frame Pending asserted.",
+            "registerName": "THREAD_SED_POLL_REG",
+            "bitWidth": 8,
+            "hexValue": "0xCF",
+            "decimalValue": 207,
+            "maskApplied": "0xCF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "POLL_CYCLE_DONE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "SLEEP_DEEP_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "CSL_SYNC_WAKE",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "DOWNLINK_BURST",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "FRAME_PEND_ACK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "MAC_DATA_REQ",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "INDIR_QUEUED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "CHILD_TBL_ALLOC",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Downlink payload transmitted, confirmed with MAC ACK, and SED returns to ultra-low-power sleep.",
+            "registerName": "THREAD_SED_POLL_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "POLL_CYCLE_DONE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "SLEEP_DEEP_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "CSL_SYNC_WAKE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "DOWNLINK_BURST",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "FRAME_PEND_ACK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "MAC_DATA_REQ",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "INDIR_QUEUED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "CHILD_TBL_ALLOC",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Thread Commissioning: DTLS-PSK, Ephemeral Credentials & CoAP Management",
+      "codeHash": "d2bc6dde86f71b772b138794bd234e400f94333e11a5c87852dc6650653e28de",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 48 Part 4 — Commissioning & Security: MeshCoP, DTLS-PSK & Master Key Distribution",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Commissioner candidate registers with Thread Leader via CoAP MGMT_COMMISSIONER_SET.",
+            "registerName": "THREAD_COMMISSION_REG",
+            "bitWidth": 8,
+            "hexValue": "0x83",
+            "decimalValue": 131,
+            "maskApplied": "0x83",
+            "bits": [
+              {
+                "index": 7,
+                "name": "COMMISSION_DONE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "OPER_CREDS_SAVED",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "NET_KEY_ENC",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "BLOOM_FILTER_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "DTLS_PSK_TUNNEL",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "JOINER_DISC_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "MGMT_COMM_SET",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "COMM_CANDIDATE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Joiner sends discovery request; Joiner Router relays DTLS-PSK handshake using PSKd.",
+            "registerName": "THREAD_COMMISSION_REG",
+            "bitWidth": 8,
+            "hexValue": "0x8F",
+            "decimalValue": 143,
+            "maskApplied": "0x8F",
+            "bits": [
+              {
+                "index": 7,
+                "name": "COMMISSION_DONE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "OPER_CREDS_SAVED",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "NET_KEY_ENC",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "BLOOM_FILTER_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "DTLS_PSK_TUNNEL",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "JOINER_DISC_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "MGMT_COMM_SET",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "COMM_CANDIDATE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Verify Joiner EUI-64 against steering data Bloom filter and establish secure tunnel.",
+            "registerName": "THREAD_COMMISSION_REG",
+            "bitWidth": 8,
+            "hexValue": "0x9F",
+            "decimalValue": 159,
+            "maskApplied": "0x9F",
+            "bits": [
+              {
+                "index": 7,
+                "name": "COMMISSION_DONE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "OPER_CREDS_SAVED",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "NET_KEY_ENC",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "BLOOM_FILTER_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "DTLS_PSK_TUNNEL",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "JOINER_DISC_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "MGMT_COMM_SET",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "COMM_CANDIDATE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Push Master Network Key and network parameters; Joiner persists credentials to flash.",
+            "registerName": "THREAD_COMMISSION_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "COMMISSION_DONE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "OPER_CREDS_SAVED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "NET_KEY_ENC",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "BLOOM_FILTER_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "DTLS_PSK_TUNNEL",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "JOINER_DISC_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "MGMT_COMM_SET",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "COMM_CANDIDATE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Masterclass Synthesis: Full OpenThread 1.3 Mesh State Machine & Multi-Role Engine",
+      "codeHash": "94173a8f9868d867866c7a072319f17b38cb4d5694bd439a6f630178ab4e0fc4",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 48 Part 5 — Masterclass Synthesis: Full OpenThread 1.3 Mesh Link, CoAP Messaging & Certification Simulation Engine",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Initialize OpenThread instance: bind radio HAL, timer drivers, and initialize node state machine.",
+            "registerName": "THREAD_MASTER_MESH_REG",
+            "bitWidth": 8,
+            "hexValue": "0x81",
+            "decimalValue": 129,
+            "maskApplied": "0x81",
+            "bits": [
+              {
+                "index": 7,
+                "name": "FULL_ENGINE_PASS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "CERT_TOKEN_LATCH",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "MATTER_UDP_PASS",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "COAP_DISPATCH_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "ROUTE64_OPT",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "CHILD_INDIR_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "MLE_MESH_READY",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "OT_INST_INIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Form multi-hop mesh: elect Leader, promote active Routers, and synchronize Route64 tables.",
+            "registerName": "THREAD_MASTER_MESH_REG",
+            "bitWidth": 8,
+            "hexValue": "0x8F",
+            "decimalValue": 143,
+            "maskApplied": "0x8F",
+            "bits": [
+              {
+                "index": 7,
+                "name": "FULL_ENGINE_PASS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "CERT_TOKEN_LATCH",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "MATTER_UDP_PASS",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "COAP_DISPATCH_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "ROUTE64_OPT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "CHILD_INDIR_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "MLE_MESH_READY",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "OT_INST_INIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Dispatch CoAP control datagram across multi-hop path and deliver buffered payload to SED.",
+            "registerName": "THREAD_MASTER_MESH_REG",
+            "bitWidth": 8,
+            "hexValue": "0xBF",
+            "decimalValue": 191,
+            "maskApplied": "0xBF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "FULL_ENGINE_PASS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "CERT_TOKEN_LATCH",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "MATTER_UDP_PASS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "COAP_DISPATCH_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "ROUTE64_OPT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "CHILD_INDIR_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "MLE_MESH_READY",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "OT_INST_INIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Verify zero-loss Matter payload delivery and latch certification token THREAD_PROTOCOL_MLE_ENGINE_GRADE_A_PLUS_CERTIFIED.",
+            "registerName": "THREAD_MASTER_MESH_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "FULL_ENGINE_PASS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "CERT_TOKEN_LATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "MATTER_UDP_PASS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "COAP_DISPATCH_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "ROUTE64_OPT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "CHILD_INDIR_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "MLE_MESH_READY",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "OT_INST_INIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

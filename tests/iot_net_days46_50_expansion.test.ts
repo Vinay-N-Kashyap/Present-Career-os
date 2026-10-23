@@ -14,8 +14,8 @@ test('Course 18: IoT Networking & Cloud Protocols (iot_net) Month 2 Block 10 (Da
     assert.equal(isCourseVisualsEnabled('iot_net'), true, 'iot_net course prefix must have visuals support enabled');
   });
 
-  await t.test('2. LongLessons structural integrity, pedagogical depth, and invariants for Days 46-47', () => {
-    for (const day of [46, 47]) {
+  await t.test('2. LongLessons structural integrity, pedagogical depth, and invariants for Days 46-48', () => {
+    for (const day of [46, 47, 48]) {
       const lesson = getLongLesson('iot_net', day);
       assert.ok(lesson, `Day ${day} must exist in iotNetLongLessons.ts registry`);
       assert.equal(lesson.coursePrefix, 'iot_net', `Day ${day} coursePrefix must be 'iot_net'`);
@@ -54,8 +54,8 @@ test('Course 18: IoT Networking & Cloud Protocols (iot_net) Month 2 Block 10 (Da
     }
   });
 
-  await t.test('3. On-disk visual JSON files and raw SHA-256 codeHash contracts for Days 46-47', () => {
-    for (const day of [46, 47]) {
+  await t.test('3. On-disk visual JSON files and raw SHA-256 codeHash contracts for Days 46-48', () => {
+    for (const day of [46, 47, 48]) {
       const dayFile = loadDayFile('iot_net', day);
       assert.ok(dayFile, `loadDayFile('iot_net', ${day}) must successfully load`);
       assert.equal(dayFile.schemaVersion, 1, `Day ${day} schemaVersion must be 1`);
@@ -85,8 +85,8 @@ test('Course 18: IoT Networking & Cloud Protocols (iot_net) Month 2 Block 10 (Da
     }
   });
 
-  await t.test('4. Dynamic Python code execution and deterministic output verification for Days 46-47', () => {
-    for (const day of [46, 47]) {
+  await t.test('4. Dynamic Python code execution and deterministic output verification for Days 46-48', () => {
+    for (const day of [46, 47, 48]) {
       const lesson = getLongLesson('iot_net', day);
       for (let pIdx = 0; pIdx < lesson.parts.length; pIdx++) {
         const part = lesson.parts[pIdx];
@@ -106,7 +106,7 @@ test('Course 18: IoT Networking & Cloud Protocols (iot_net) Month 2 Block 10 (Da
     }
   });
 
-  await t.test('5. Milestone & Token verification for Days 46-47', () => {
+  await t.test('5. Milestone & Token verification for Days 46-48', () => {
     const day46 = getLongLesson('iot_net', 46);
     assert.ok(day46, 'Day 46 must exist');
     assert.ok(day46.parts[4].output.includes('LOWPAN_IPHC_ADAPTATION_ENGINE_GRADE_A_PLUS_CERTIFIED'));
@@ -114,5 +114,9 @@ test('Course 18: IoT Networking & Cloud Protocols (iot_net) Month 2 Block 10 (Da
     const day47 = getLongLesson('iot_net', 47);
     assert.ok(day47, 'Day 47 must exist');
     assert.ok(day47.parts[4].output.includes('RPL_DODAG_ROUTING_ENGINE_GRADE_A_PLUS_CERTIFIED'));
+
+    const day48 = getLongLesson('iot_net', 48);
+    assert.ok(day48, 'Day 48 must exist');
+    assert.ok(day48.parts[4].output.includes('THREAD_PROTOCOL_MLE_ENGINE_GRADE_A_PLUS_CERTIFIED'));
   });
 });
