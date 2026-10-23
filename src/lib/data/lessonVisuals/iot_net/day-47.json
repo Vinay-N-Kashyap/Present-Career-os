@@ -1,0 +1,1425 @@
+{
+  "schemaVersion": 1,
+  "prefix": "iot_net",
+  "coursePrefix": "iot_net",
+  "day": 47,
+  "title": "RPL Mesh Routing: DODAG Formation, Objective Functions & Trickle Timers",
+  "promptSha": "rpl-dodag-mrhof-trickle-day47-v2",
+  "model": "gpt-4o",
+  "codeHash": "0cd9cdd5733625234275aa7ef924f7a0276d24cc12630f4e13f570511779f0d8",
+  "spec": {
+    "template": "register-bits"
+  },
+  "entries": [
+    {
+      "partTitle": "RPL DODAG Architecture & ICMPv6 Control Messages (DIS, DIO, DAO, DAO-ACK)",
+      "codeHash": "0cd9cdd5733625234275aa7ef924f7a0276d24cc12630f4e13f570511779f0d8",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 47 Part 1 — RPL DODAG Architecture & ICMPv6 Control Messages (DIS, DIO, DAO, DAO-ACK)",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Initialize RPL control protocol: Register ICMPv6 Type 155 handler and parse RPL Instance ID.",
+            "registerName": "RPL_CONTROL_MSG_REG",
+            "bitWidth": 8,
+            "hexValue": "0x84",
+            "decimalValue": 132,
+            "maskApplied": "0x84",
+            "bits": [
+              {
+                "index": 7,
+                "name": "CTRL_MSG_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "VERSION_LATCH",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "RPL_INST_MATCH",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "DAO_ACK_RECV",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "DAO_UPWARD",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "DIO_ADVERTISE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "DIS_SOLICIT",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "ICMP6_TYPE155",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Construct DIO advertisement: Encode DODAG ID, Grounded flag, Storing Mode MOP, and Rank 256.",
+            "registerName": "RPL_CONTROL_MSG_REG",
+            "bitWidth": 8,
+            "hexValue": "0xA6",
+            "decimalValue": 166,
+            "maskApplied": "0xA6",
+            "bits": [
+              {
+                "index": 7,
+                "name": "CTRL_MSG_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "VERSION_LATCH",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "RPL_INST_MATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "DAO_ACK_RECV",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "DAO_UPWARD",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "DIO_ADVERTISE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "DIS_SOLICIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "ICMP6_TYPE155",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Broadcast DIO message across link-local all-RPL-nodes multicast address (FF02::1A).",
+            "registerName": "RPL_CONTROL_MSG_REG",
+            "bitWidth": 8,
+            "hexValue": "0xAF",
+            "decimalValue": 175,
+            "maskApplied": "0xAF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "CTRL_MSG_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "VERSION_LATCH",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "RPL_INST_MATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "DAO_ACK_RECV",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "DAO_UPWARD",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "DIO_ADVERTISE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "DIS_SOLICIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "ICMP6_TYPE155",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Receive upward DAO prefix registration from child node and return confirmed DAO-ACK.",
+            "registerName": "RPL_CONTROL_MSG_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "CTRL_MSG_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "VERSION_LATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "RPL_INST_MATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "DAO_ACK_RECV",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "DAO_UPWARD",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "DIO_ADVERTISE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "DIS_SOLICIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "ICMP6_TYPE155",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Trickle Timer Algorithm (RFC 6206): Rapid Convergence & Zero-Overhead Quiescence",
+      "codeHash": "078b7af2ee1d230dc9a0fc81690e6e57f3a6cd482a9d23f6b01616e7b9fa62bc",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 47 Part 2 — The Trickle Timer Algorithm (RFC 6206): Rapid Convergence & Zero-Overhead Quiescence",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Arm RFC 6206 Trickle timer: Initialize interval I to I_min (10 ms) and select random broadcast time t in [I/2, I).",
+            "registerName": "RPL_TRICKLE_TIMER_REG",
+            "bitWidth": 8,
+            "hexValue": "0xC0",
+            "decimalValue": 192,
+            "maskApplied": "0xC0",
+            "bits": [
+              {
+                "index": 7,
+                "name": "TRICKLE_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "INCONSIST_TRIGGER",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "SUPPRESS_FIRE",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "COUNTER_CONSIST",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "INTERVAL_DOUBLE",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "IMAX_EXPONENT",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "IMIN_RESET",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "TRICKLE_ARM",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Listen across interval: Increment consistency counter c upon hearing 3 consistent neighbor DIO announcements.",
+            "registerName": "RPL_TRICKLE_TIMER_REG",
+            "bitWidth": 8,
+            "hexValue": "0xD8",
+            "decimalValue": 216,
+            "maskApplied": "0xD8",
+            "bits": [
+              {
+                "index": 7,
+                "name": "TRICKLE_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "INCONSIST_TRIGGER",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "SUPPRESS_FIRE",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "COUNTER_CONSIST",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "INTERVAL_DOUBLE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "IMAX_EXPONENT",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "IMIN_RESET",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "TRICKLE_ARM",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Evaluate at time t: Consistency counter c exceeds redundancy constant k (3 >= 2), suppress DIO transmission.",
+            "registerName": "RPL_TRICKLE_TIMER_REG",
+            "bitWidth": 8,
+            "hexValue": "0xDC",
+            "decimalValue": 220,
+            "maskApplied": "0xDC",
+            "bits": [
+              {
+                "index": 7,
+                "name": "TRICKLE_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "INCONSIST_TRIGGER",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "SUPPRESS_FIRE",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "COUNTER_CONSIST",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "INTERVAL_DOUBLE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "IMAX_EXPONENT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "IMIN_RESET",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "TRICKLE_ARM",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Simulate topological inconsistency: Reset interval to I_min for instantaneous millisecond re-convergence.",
+            "registerName": "RPL_TRICKLE_TIMER_REG",
+            "bitWidth": 8,
+            "hexValue": "0xEE",
+            "decimalValue": 238,
+            "maskApplied": "0xEE",
+            "bits": [
+              {
+                "index": 7,
+                "name": "TRICKLE_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "INCONSIST_TRIGGER",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "SUPPRESS_FIRE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "COUNTER_CONSIST",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "INTERVAL_DOUBLE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "IMAX_EXPONENT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "IMIN_RESET",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "TRICKLE_ARM",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Rank Calculation, Monotonic Ordering & Objective Functions (OF0 vs MRHOF)",
+      "codeHash": "d7b50329167a3f60ad876d7c483e60bddc17a0853362e5272be8ba451b0ae8d0",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 47 Part 3 — Rank Calculation, Monotonic Ordering & Objective Functions (OF0 vs MRHOF)",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Initialize MRHOF objective function: Calculate link Expected Transmission Count (ETX) from MAC retry stats.",
+            "registerName": "RPL_RANK_MRHOF_REG",
+            "bitWidth": 8,
+            "hexValue": "0xC0",
+            "decimalValue": 192,
+            "maskApplied": "0xC0",
+            "bits": [
+              {
+                "index": 7,
+                "name": "MRHOF_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "OF0_HOP_COUNT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "LOOP_AVOID_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "RANK_MONOTONIC",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "PARENT_SWITCH",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "HYSTERESIS_LOCK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "ETX_METRIC_CALC",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "RANK_EVAL_EN",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Evaluate candidate NODE_B with minor improvement (76 units): Hysteresis threshold (192) suppresses route flap.",
+            "registerName": "RPL_RANK_MRHOF_REG",
+            "bitWidth": 8,
+            "hexValue": "0xE0",
+            "decimalValue": 224,
+            "maskApplied": "0xE0",
+            "bits": [
+              {
+                "index": 7,
+                "name": "MRHOF_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "OF0_HOP_COUNT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "LOOP_AVOID_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "RANK_MONOTONIC",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "PARENT_SWITCH",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "HYSTERESIS_LOCK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "ETX_METRIC_CALC",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "RANK_EVAL_EN",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "NODE_B link improves to ETX 1.0 (204 units improvement): Execute atomic parent switch and update rank to 512.",
+            "registerName": "RPL_RANK_MRHOF_REG",
+            "bitWidth": 8,
+            "hexValue": "0xF8",
+            "decimalValue": 248,
+            "maskApplied": "0xF8",
+            "bits": [
+              {
+                "index": 7,
+                "name": "MRHOF_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "OF0_HOP_COUNT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "LOOP_AVOID_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "RANK_MONOTONIC",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "PARENT_SWITCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "HYSTERESIS_LOCK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "ETX_METRIC_CALC",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "RANK_EVAL_EN",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Verify strictly monotonic rank progression to mathematically eliminate routing loops across mesh tree.",
+            "registerName": "RPL_RANK_MRHOF_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "MRHOF_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "OF0_HOP_COUNT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "LOOP_AVOID_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "RANK_MONOTONIC",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "PARENT_SWITCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "HYSTERESIS_LOCK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "ETX_METRIC_CALC",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "RANK_EVAL_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Downward Routing Topologies: Storing Mode vs Non-Storing Source Routing",
+      "codeHash": "e9bacea0f30208a19f4aaf7e863d01dfeda2f3dd87e65da1ecd998522b6f0b7d",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 47 Part 4 — Downward Routing Topologies: Storing Mode vs Non-Storing Source Routing",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Configure Mode of Operation (MOP): Select Storing Mode (MOP=2) for localized routing table lookups.",
+            "registerName": "RPL_DOWNWARD_ROUT_REG",
+            "bitWidth": 8,
+            "hexValue": "0xA4",
+            "decimalValue": 164,
+            "maskApplied": "0xA4",
+            "bits": [
+              {
+                "index": 7,
+                "name": "DOWNWARD_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "TRANSIT_OPTION",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "MOP_CONFIG",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "ROUTING_TABLE_SYNC",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "SRH_HEADER_GEN",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "DAO_PREFIX_LATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "NON_STORING_MODE",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "STORING_MODE",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Ingest child DAO message: Populate local forwarding table mapping destination IPv6 to next-hop MAC.",
+            "registerName": "RPL_DOWNWARD_ROUT_REG",
+            "bitWidth": 8,
+            "hexValue": "0xB5",
+            "decimalValue": 181,
+            "maskApplied": "0xB5",
+            "bits": [
+              {
+                "index": 7,
+                "name": "DOWNWARD_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "TRANSIT_OPTION",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "MOP_CONFIG",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "ROUTING_TABLE_SYNC",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "SRH_HEADER_GEN",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "DAO_PREFIX_LATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "NON_STORING_MODE",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "STORING_MODE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Switch root to Non-Storing Mode (MOP=1): Compute full BFS graph path and generate Source Routing Header (SRH).",
+            "registerName": "RPL_DOWNWARD_ROUT_REG",
+            "bitWidth": 8,
+            "hexValue": "0x5A",
+            "decimalValue": 90,
+            "maskApplied": "0x5A",
+            "bits": [
+              {
+                "index": 7,
+                "name": "DOWNWARD_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 6,
+                "name": "TRANSIT_OPTION",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "MOP_CONFIG",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "ROUTING_TABLE_SYNC",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "SRH_HEADER_GEN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "DAO_PREFIX_LATCH",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "NON_STORING_MODE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "STORING_MODE",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Forward downward packet along intermediate hops: Advance SRH pointer without local table memory consumption.",
+            "registerName": "RPL_DOWNWARD_ROUT_REG",
+            "bitWidth": 8,
+            "hexValue": "0x7F",
+            "decimalValue": 127,
+            "maskApplied": "0x7F",
+            "bits": [
+              {
+                "index": 7,
+                "name": "DOWNWARD_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 6,
+                "name": "TRANSIT_OPTION",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "MOP_CONFIG",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "ROUTING_TABLE_SYNC",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "SRH_HEADER_GEN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "DAO_PREFIX_LATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "NON_STORING_MODE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "STORING_MODE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Masterclass Synthesis: Full RPL Mesh Routing Engine with Multi-Hop Convergence",
+      "codeHash": "0c931227fa9216ed156569e11b848651c79950776d4ccf8aff9e7d6e5aee07e8",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 47 Part 5 — Masterclass Synthesis: Full RPL Mesh Routing Engine with Multi-Hop Convergence",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Initialize RPLMasterMeshEngine: Establish ROOT_GW at baseline Rank 256 and arm Trickle timers.",
+            "registerName": "RPL_MASTER_ENGINE_REG",
+            "bitWidth": 8,
+            "hexValue": "0xC0",
+            "decimalValue": 192,
+            "maskApplied": "0xC0",
+            "bits": [
+              {
+                "index": 7,
+                "name": "CERT_V47_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "METRIC_STABLE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "PACKET_FORWARDED",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "NO_LOOP_VERIFIED",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "MRHOF_OPTIMIZED",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "TRICKLE_QUIESCENT",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "MESH_DISCOVERY",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "DODAG_ROOT_INIT",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Form 6-node DODAG mesh tree across 3 hops: Nodes select optimal parents via MRHOF ETX path cost.",
+            "registerName": "RPL_MASTER_ENGINE_REG",
+            "bitWidth": 8,
+            "hexValue": "0xF0",
+            "decimalValue": 240,
+            "maskApplied": "0xF0",
+            "bits": [
+              {
+                "index": 7,
+                "name": "CERT_V47_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "METRIC_STABLE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "PACKET_FORWARDED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "NO_LOOP_VERIFIED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "MRHOF_OPTIMIZED",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "TRICKLE_QUIESCENT",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "MESH_DISCOVERY",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "DODAG_ROOT_INIT",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Route upward telemetry from leaf NODE_5 through intermediate hops: Validate strictly decreasing ranks.",
+            "registerName": "RPL_MASTER_ENGINE_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFC",
+            "decimalValue": 252,
+            "maskApplied": "0xFC",
+            "bits": [
+              {
+                "index": 7,
+                "name": "CERT_V47_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "METRIC_STABLE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "PACKET_FORWARDED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "NO_LOOP_VERIFIED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "MRHOF_OPTIMIZED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "TRICKLE_QUIESCENT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "MESH_DISCOVERY",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "DODAG_ROOT_INIT",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Commit converged mesh network and emit certification token RPL_DODAG_ROUTING_ENGINE_GRADE_A_PLUS_CERTIFIED.",
+            "registerName": "RPL_MASTER_ENGINE_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "CERT_V47_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "METRIC_STABLE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "PACKET_FORWARDED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "NO_LOOP_VERIFIED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "MRHOF_OPTIMIZED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "TRICKLE_QUIESCENT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "MESH_DISCOVERY",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "DODAG_ROOT_INIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
