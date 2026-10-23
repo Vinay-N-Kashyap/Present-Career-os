@@ -1,0 +1,1425 @@
+{
+  "schemaVersion": 1,
+  "prefix": "iot_net",
+  "coursePrefix": "iot_net",
+  "day": 53,
+  "title": "MQTT-SN Protocol: Constrained Gateways, Topic ID Registration & Sleepy Clients",
+  "promptSha": "mqtt-sn-constrained-gateway-day53-v2",
+  "model": "gpt-4o",
+  "codeHash": "85798ecc857703b35081aab5599b8d8603fbf3ba490b50fb1d1affc9da6f4711",
+  "spec": {
+    "template": "register-bits"
+  },
+  "entries": [
+    {
+      "partTitle": "Day 53 Part 1 — MQTT-SN Architecture, Transport Independence & Header Framing",
+      "codeHash": "85798ecc857703b35081aab5599b8d8603fbf3ba490b50fb1d1affc9da6f4711",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 53 Part 1 — MQTT-SN Architecture, Transport Independence & Header Framing",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Configure connectionless datagram transport: Enable 2-byte compact header framing.",
+            "registerName": "MQTTSN_HEADER_TRANS_REG",
+            "bitWidth": 8,
+            "hexValue": "0x83",
+            "decimalValue": 131,
+            "maskApplied": "0x83",
+            "bits": [
+              {
+                "index": 7,
+                "name": "MQTTSN_FRAME_VALID",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "QOS_M1_FIRE_FORGET",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "PUB_MSG_MATCH",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "CONNECT_DECODE_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "EXT_HDR_DETECT",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "LEN_255B_MAX",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "HEADER_2B_SELECT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "DATAGRAM_MODE_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Parse standard header: Extract 1-byte length (10B) and Message Type 0x04 (CONNECT).",
+            "registerName": "MQTTSN_HEADER_TRANS_REG",
+            "bitWidth": 8,
+            "hexValue": "0x8F",
+            "decimalValue": 143,
+            "maskApplied": "0x8F",
+            "bits": [
+              {
+                "index": 7,
+                "name": "MQTTSN_FRAME_VALID",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "QOS_M1_FIRE_FORGET",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "PUB_MSG_MATCH",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "CONNECT_DECODE_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "EXT_HDR_DETECT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "LEN_255B_MAX",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "HEADER_2B_SELECT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "DATAGRAM_MODE_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Detect extended header: Byte 0x01 flags 16-bit Big-Endian length (256B) for large payload.",
+            "registerName": "MQTTSN_HEADER_TRANS_REG",
+            "bitWidth": 8,
+            "hexValue": "0xBF",
+            "decimalValue": 191,
+            "maskApplied": "0xBF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "MQTTSN_FRAME_VALID",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "QOS_M1_FIRE_FORGET",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "PUB_MSG_MATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "CONNECT_DECODE_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "EXT_HDR_DETECT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "LEN_255B_MAX",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "HEADER_2B_SELECT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "DATAGRAM_MODE_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Enable QoS -1 unauthenticated transmission: Stream sensor payload in under 2 milliseconds.",
+            "registerName": "MQTTSN_HEADER_TRANS_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "MQTTSN_FRAME_VALID",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "QOS_M1_FIRE_FORGET",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "PUB_MSG_MATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "CONNECT_DECODE_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "EXT_HDR_DETECT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "LEN_255B_MAX",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "HEADER_2B_SELECT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "DATAGRAM_MODE_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Day 53 Part 2 — 2-Byte Topic ID Registration & Pre-defined Topic Names",
+      "codeHash": "fcdcc60562e8af484b84fda0e3e89b688e205546a7427d45a091d8389b42fe19",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 53 Part 2 — 2-Byte Topic ID Registration & Pre-defined Topic Names",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Receive REGISTER request containing full 32-character UTF-8 topic string.",
+            "registerName": "MQTTSN_TOPIC_REG_REG",
+            "bitWidth": 8,
+            "hexValue": "0x83",
+            "decimalValue": 131,
+            "maskApplied": "0x83",
+            "bits": [
+              {
+                "index": 7,
+                "name": "TOPIC_REG_CONVERGED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "MAPPING_TABLE_SYNC",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "SHORT_NAME_2CHAR",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "PREDEF_TOPIC_MATCH",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "REGACK_RESP_TX",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "TOPIC_ID_ALLOC",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "TOPIC_STR_PARSED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "REGISTER_REQ_IN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Allocate 16-bit Topic ID 0x0001 and return confirmed REGACK frame with RC=0x00.",
+            "registerName": "MQTTSN_TOPIC_REG_REG",
+            "bitWidth": 8,
+            "hexValue": "0x8F",
+            "decimalValue": 143,
+            "maskApplied": "0x8F",
+            "bits": [
+              {
+                "index": 7,
+                "name": "TOPIC_REG_CONVERGED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "MAPPING_TABLE_SYNC",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "SHORT_NAME_2CHAR",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "PREDEF_TOPIC_MATCH",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "REGACK_RESP_TX",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "TOPIC_ID_ALLOC",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "TOPIC_STR_PARSED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "REGISTER_REQ_IN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Map pre-defined Topic ID 1 to factory/cell1/status and route 2-character short topic.",
+            "registerName": "MQTTSN_TOPIC_REG_REG",
+            "bitWidth": 8,
+            "hexValue": "0xBF",
+            "decimalValue": 191,
+            "maskApplied": "0xBF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "TOPIC_REG_CONVERGED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "MAPPING_TABLE_SYNC",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "SHORT_NAME_2CHAR",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "PREDEF_TOPIC_MATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "REGACK_RESP_TX",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "TOPIC_ID_ALLOC",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "TOPIC_STR_PARSED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "REGISTER_REQ_IN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Transmit subsequent PUBLISH datagram using 2-byte Topic ID, saving 70 bytes per frame.",
+            "registerName": "MQTTSN_TOPIC_REG_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "TOPIC_REG_CONVERGED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "MAPPING_TABLE_SYNC",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "SHORT_NAME_2CHAR",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "PREDEF_TOPIC_MATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "REGACK_RESP_TX",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "TOPIC_ID_ALLOC",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "TOPIC_STR_PARSED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "REGISTER_REQ_IN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Day 53 Part 3 — Gateway Topologies: Transparent vs Aggregating Gateways",
+      "codeHash": "894b594a052b5011014ba4ce459157233fb95252381e15b7302984ba84fa3b0d",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 53 Part 3 — Gateway Topologies: Transparent vs Aggregating Gateways",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Broadcast periodic ADVERTISE beacons on physical fieldbus with Gateway ID 2 and 900s duration.",
+            "registerName": "MQTTSN_GATEWAY_MODE_REG",
+            "bitWidth": 8,
+            "hexValue": "0x83",
+            "decimalValue": 131,
+            "maskApplied": "0x83",
+            "bits": [
+              {
+                "index": 7,
+                "name": "GW_BRIDGE_READY",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "TCP_SOCKET_CONSERV",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "AGGREGATING_MODE",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "TRANSPARENT_MODE",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "GWINFO_RESP_TX",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "SEARCHGW_RECV",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "GW_ID_LATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "ADVERTISE_BC_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Respond to sensor SEARCHGW discovery query with targeted GWINFO transmission.",
+            "registerName": "MQTTSN_GATEWAY_MODE_REG",
+            "bitWidth": 8,
+            "hexValue": "0x8B",
+            "decimalValue": 139,
+            "maskApplied": "0x8B",
+            "bits": [
+              {
+                "index": 7,
+                "name": "GW_BRIDGE_READY",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "TCP_SOCKET_CONSERV",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "AGGREGATING_MODE",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "TRANSPARENT_MODE",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "GWINFO_RESP_TX",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "SEARCHGW_RECV",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "GW_ID_LATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "ADVERTISE_BC_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Enable Aggregating Gateway mode: Multiplex 5 field sensors across 1 shared broker TCP socket.",
+            "registerName": "MQTTSN_GATEWAY_MODE_REG",
+            "bitWidth": 8,
+            "hexValue": "0xBF",
+            "decimalValue": 191,
+            "maskApplied": "0xBF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "GW_BRIDGE_READY",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "TCP_SOCKET_CONSERV",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "AGGREGATING_MODE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "TRANSPARENT_MODE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "GWINFO_RESP_TX",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "SEARCHGW_RECV",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "GW_ID_LATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "ADVERTISE_BC_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Prevent TCP socket exhaustion on gateway and shield upstream cloud broker from churn.",
+            "registerName": "MQTTSN_GATEWAY_MODE_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "GW_BRIDGE_READY",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "TCP_SOCKET_CONSERV",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "AGGREGATING_MODE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "TRANSPARENT_MODE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "GWINFO_RESP_TX",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "SEARCHGW_RECV",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "GW_ID_LATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "ADVERTISE_BC_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Day 53 Part 4 — Asynchronous Device Sleep & Buffered Message Polling",
+      "codeHash": "494d9405c872e4b77a7c65cb1cbb7c0beecf160c02a44920ae3639433e8037a6",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 53 Part 4 — Asynchronous Device Sleep & Buffered Message Polling",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Receive DISCONNECT with 7200s Duration field: Transition client to ASLEEP state.",
+            "registerName": "MQTTSN_SLEEPY_POLL_REG",
+            "bitWidth": 8,
+            "hexValue": "0x83",
+            "decimalValue": 131,
+            "maskApplied": "0x83",
+            "bits": [
+              {
+                "index": 7,
+                "name": "SLEEP_CYCLE_PASS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "PINGRESP_SENT",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "DOWNLINK_BURST_TX",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "WAKEUP_PINGREQ_IN",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "CMD_QUEUE_LATCH",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "DOWNLINK_BUFFER_EN",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "CLIENT_ASLEEP_FLAG",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "DISCONNECT_DURATION",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Capture supervisory valve command from cloud and stage payload in gateway FIFO buffer.",
+            "registerName": "MQTTSN_SLEEPY_POLL_REG",
+            "bitWidth": 8,
+            "hexValue": "0x8F",
+            "decimalValue": 143,
+            "maskApplied": "0x8F",
+            "bits": [
+              {
+                "index": 7,
+                "name": "SLEEP_CYCLE_PASS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "PINGRESP_SENT",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "DOWNLINK_BURST_TX",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "WAKEUP_PINGREQ_IN",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "CMD_QUEUE_LATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "DOWNLINK_BUFFER_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "CLIENT_ASLEEP_FLAG",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "DISCONNECT_DURATION",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Client awakens on RTC timer: Receive PINGREQ with Client ID and flush 2 buffered commands.",
+            "registerName": "MQTTSN_SLEEPY_POLL_REG",
+            "bitWidth": 8,
+            "hexValue": "0xBF",
+            "decimalValue": 191,
+            "maskApplied": "0xBF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "SLEEP_CYCLE_PASS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "PINGRESP_SENT",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "DOWNLINK_BURST_TX",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "WAKEUP_PINGREQ_IN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "CMD_QUEUE_LATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "DOWNLINK_BUFFER_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "CLIENT_ASLEEP_FLAG",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "DISCONNECT_DURATION",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Return PINGRESP to signal buffer empty: Client returns to deep sleep in under 20 ms.",
+            "registerName": "MQTTSN_SLEEPY_POLL_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "SLEEP_CYCLE_PASS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "PINGRESP_SENT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "DOWNLINK_BURST_TX",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "WAKEUP_PINGREQ_IN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "CMD_QUEUE_LATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "DOWNLINK_BUFFER_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "CLIENT_ASLEEP_FLAG",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "DISCONNECT_DURATION",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Day 53 Part 5 — Masterclass Synthesis: Comprehensive MQTT-SN Industrial Gateway",
+      "codeHash": "437ef3ec141a81266b9c4211cb29951db0f86e5860d310e0776c0f03434363d8",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 53 Part 5 — Masterclass Synthesis: Comprehensive MQTT-SN Industrial Gateway",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Initialize MqttSnIndustrialGatewayMaster: Announce gateway presence on 802.15.4 fieldbus.",
+            "registerName": "MQTTSN_MASTER_ENGINE_REG",
+            "bitWidth": 8,
+            "hexValue": "0x81",
+            "decimalValue": 129,
+            "maskApplied": "0x81",
+            "bits": [
+              {
+                "index": 7,
+                "name": "MQTTSN_CERTIFIED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "TOKEN_LATCH_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "MTLS_UPSTREAM_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "STORE_FORWARD_EN",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "MQTT_BRIDGE_PASS",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "BINARY_INGEST_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "TOPIC_MAP_LATCH",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "GW_MASTER_INIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Register Topic ID 1 for boiler temperature and Topic ID 2 for pump vibration telemetry.",
+            "registerName": "MQTTSN_MASTER_ENGINE_REG",
+            "bitWidth": 8,
+            "hexValue": "0x8F",
+            "decimalValue": 143,
+            "maskApplied": "0x8F",
+            "bits": [
+              {
+                "index": 7,
+                "name": "MQTTSN_CERTIFIED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "TOKEN_LATCH_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "MTLS_UPSTREAM_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "STORE_FORWARD_EN",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "MQTT_BRIDGE_PASS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "BINARY_INGEST_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "TOPIC_MAP_LATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "GW_MASTER_INIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Bridge binary telemetry to enterprise MQTT broker with mTLS encryption and topic re-mapping.",
+            "registerName": "MQTTSN_MASTER_ENGINE_REG",
+            "bitWidth": 8,
+            "hexValue": "0xBF",
+            "decimalValue": 191,
+            "maskApplied": "0xBF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "MQTTSN_CERTIFIED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "TOKEN_LATCH_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "MTLS_UPSTREAM_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "STORE_FORWARD_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "MQTT_BRIDGE_PASS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "BINARY_INGEST_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "TOPIC_MAP_LATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "GW_MASTER_INIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Verify zero packet drops across sleepy cycles and latch token MQTTSN_CONSTRAINED_GATEWAY_ENGINE_GRADE_A_PLUS_CERTIFIED.",
+            "registerName": "MQTTSN_MASTER_ENGINE_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "MQTTSN_CERTIFIED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "TOKEN_LATCH_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "MTLS_UPSTREAM_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "STORE_FORWARD_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "MQTT_BRIDGE_PASS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "BINARY_INGEST_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "TOPIC_MAP_LATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "GW_MASTER_INIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
