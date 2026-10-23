@@ -1,0 +1,1532 @@
+{
+  "schemaVersion": 1,
+  "prefix": "iot_net",
+  "coursePrefix": "iot_net",
+  "day": 41,
+  "title": "Day 41: LoRa Physical Layer: Chirp Spread Spectrum, Spreading Factors & Time-on-Air",
+  "promptSha": "600f1464f4fb66208aab6435827fa8618558d5ad342700fa9aff236cbaf33f69",
+  "model": "anthropic/claude-3.5-sonnet",
+  "codeHash": "993596a391b215c82f32b9e816431423bb753cab0d113d5d110211b95126c81c",
+  "spec": {
+    "template": "register-bits",
+    "title": "Day 41 Part 1 — Chirp Spread Spectrum (CSS) Mechanics, Up/Dow",
+    "steps": [
+      {
+        "at": "say1",
+        "step": "say1",
+        "caption": "Initialize LORA_CSS_MODEM_REG: Enable Chirp Spread Spectrum and select 125 kHz bandwidth.",
+        "registerName": "LORA_CSS_MODEM_REG",
+        "bitWidth": 8,
+        "hexValue": "0x89",
+        "decimalValue": 137,
+        "maskApplied": "0x89",
+        "bits": [
+          {
+            "index": 7,
+            "name": "CSS_EN",
+            "value": 1,
+            "tone": "ok",
+            "highlighted": true
+          },
+          {
+            "index": 6,
+            "name": "SF_BIT2",
+            "value": 0,
+            "tone": "idle"
+          },
+          {
+            "index": 5,
+            "name": "SF_BIT1",
+            "value": 0,
+            "tone": "idle"
+          },
+          {
+            "index": 4,
+            "name": "SF_BIT0",
+            "value": 0,
+            "tone": "idle"
+          },
+          {
+            "index": 3,
+            "name": "BW_125K",
+            "value": 1,
+            "tone": "ok"
+          },
+          {
+            "index": 2,
+            "name": "BW_250K",
+            "value": 0,
+            "tone": "idle"
+          },
+          {
+            "index": 1,
+            "name": "UPCHIRP",
+            "value": 0,
+            "tone": "idle"
+          },
+          {
+            "index": 0,
+            "name": "SYNC_CH",
+            "value": 1,
+            "tone": "ok"
+          }
+        ]
+      },
+      {
+        "at": "say2",
+        "step": "say2",
+        "caption": "Configure Spreading Factor 7 (2^7 = 128 chips per symbol) with linear up-chirp sweep.",
+        "registerName": "LORA_CSS_MODEM_REG",
+        "bitWidth": 8,
+        "hexValue": "0xA9",
+        "decimalValue": 169,
+        "maskApplied": "0xA9",
+        "bits": [
+          {
+            "index": 7,
+            "name": "CSS_EN",
+            "value": 1,
+            "tone": "ok",
+            "highlighted": true
+          },
+          {
+            "index": 6,
+            "name": "SF_BIT2",
+            "value": 0,
+            "tone": "idle"
+          },
+          {
+            "index": 5,
+            "name": "SF_BIT1",
+            "value": 1,
+            "tone": "ok"
+          },
+          {
+            "index": 4,
+            "name": "SF_BIT0",
+            "value": 0,
+            "tone": "idle"
+          },
+          {
+            "index": 3,
+            "name": "BW_125K",
+            "value": 1,
+            "tone": "ok"
+          },
+          {
+            "index": 2,
+            "name": "BW_250K",
+            "value": 0,
+            "tone": "idle"
+          },
+          {
+            "index": 1,
+            "name": "UPCHIRP",
+            "value": 0,
+            "tone": "idle"
+          },
+          {
+            "index": 0,
+            "name": "SYNC_CH",
+            "value": 1,
+            "tone": "ok"
+          }
+        ]
+      },
+      {
+        "at": "example",
+        "step": "example",
+        "caption": "Latch cyclically shifted symbol chirp offset frequency into modulation pipeline.",
+        "registerName": "LORA_CSS_MODEM_REG",
+        "bitWidth": 8,
+        "hexValue": "0xBD",
+        "decimalValue": 189,
+        "maskApplied": "0xBD",
+        "bits": [
+          {
+            "index": 7,
+            "name": "CSS_EN",
+            "value": 1,
+            "tone": "ok",
+            "highlighted": true
+          },
+          {
+            "index": 6,
+            "name": "SF_BIT2",
+            "value": 0,
+            "tone": "idle"
+          },
+          {
+            "index": 5,
+            "name": "SF_BIT1",
+            "value": 1,
+            "tone": "ok"
+          },
+          {
+            "index": 4,
+            "name": "SF_BIT0",
+            "value": 1,
+            "tone": "ok"
+          },
+          {
+            "index": 3,
+            "name": "BW_125K",
+            "value": 1,
+            "tone": "ok"
+          },
+          {
+            "index": 2,
+            "name": "BW_250K",
+            "value": 1,
+            "tone": "ok"
+          },
+          {
+            "index": 1,
+            "name": "UPCHIRP",
+            "value": 0,
+            "tone": "idle"
+          },
+          {
+            "index": 0,
+            "name": "SYNC_CH",
+            "value": 1,
+            "tone": "ok"
+          }
+        ]
+      },
+      {
+        "at": "tryIt",
+        "step": "tryIt",
+        "caption": "Commit verified CSS physical layer modulation state with 1.024 ms symbol timing.",
+        "registerName": "LORA_CSS_MODEM_REG",
+        "bitWidth": 8,
+        "hexValue": "0xFF",
+        "decimalValue": 255,
+        "maskApplied": "0xFF",
+        "bits": [
+          {
+            "index": 7,
+            "name": "CSS_EN",
+            "value": 1,
+            "tone": "ok",
+            "highlighted": true
+          },
+          {
+            "index": 6,
+            "name": "SF_BIT2",
+            "value": 1,
+            "tone": "ok"
+          },
+          {
+            "index": 5,
+            "name": "SF_BIT1",
+            "value": 1,
+            "tone": "ok"
+          },
+          {
+            "index": 4,
+            "name": "SF_BIT0",
+            "value": 1,
+            "tone": "ok"
+          },
+          {
+            "index": 3,
+            "name": "BW_125K",
+            "value": 1,
+            "tone": "ok"
+          },
+          {
+            "index": 2,
+            "name": "BW_250K",
+            "value": 1,
+            "tone": "ok"
+          },
+          {
+            "index": 1,
+            "name": "UPCHIRP",
+            "value": 1,
+            "tone": "ok"
+          },
+          {
+            "index": 0,
+            "name": "SYNC_CH",
+            "value": 1,
+            "tone": "ok"
+          }
+        ]
+      }
+    ]
+  },
+  "entries": [
+    {
+      "partTitle": "Chirp Spread Spectrum (CSS) Mechanics, Up/Down-Chirps & Modulation Physics",
+      "codeHash": "993596a391b215c82f32b9e816431423bb753cab0d113d5d110211b95126c81c",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 41 Part 1 — Chirp Spread Spectrum (CSS) Mechanics, Up/Dow",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Initialize LORA_CSS_MODEM_REG: Enable Chirp Spread Spectrum and select 125 kHz bandwidth.",
+            "registerName": "LORA_CSS_MODEM_REG",
+            "bitWidth": 8,
+            "hexValue": "0x89",
+            "decimalValue": 137,
+            "maskApplied": "0x89",
+            "bits": [
+              {
+                "index": 7,
+                "name": "CSS_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "SF_BIT2",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 5,
+                "name": "SF_BIT1",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 4,
+                "name": "SF_BIT0",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "BW_125K",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "BW_250K",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "UPCHIRP",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "SYNC_CH",
+                "value": 1,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Configure Spreading Factor 7 (2^7 = 128 chips per symbol) with linear up-chirp sweep.",
+            "registerName": "LORA_CSS_MODEM_REG",
+            "bitWidth": 8,
+            "hexValue": "0xA9",
+            "decimalValue": 169,
+            "maskApplied": "0xA9",
+            "bits": [
+              {
+                "index": 7,
+                "name": "CSS_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "SF_BIT2",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 5,
+                "name": "SF_BIT1",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "SF_BIT0",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "BW_125K",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "BW_250K",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "UPCHIRP",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "SYNC_CH",
+                "value": 1,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Latch cyclically shifted symbol chirp offset frequency into modulation pipeline.",
+            "registerName": "LORA_CSS_MODEM_REG",
+            "bitWidth": 8,
+            "hexValue": "0xBD",
+            "decimalValue": 189,
+            "maskApplied": "0xBD",
+            "bits": [
+              {
+                "index": 7,
+                "name": "CSS_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "SF_BIT2",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 5,
+                "name": "SF_BIT1",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "SF_BIT0",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "BW_125K",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "BW_250K",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 1,
+                "name": "UPCHIRP",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "SYNC_CH",
+                "value": 1,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Commit verified CSS physical layer modulation state with 1.024 ms symbol timing.",
+            "registerName": "LORA_CSS_MODEM_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "CSS_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "SF_BIT2",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "SF_BIT1",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "SF_BIT0",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "BW_125K",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "BW_250K",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 1,
+                "name": "UPCHIRP",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 0,
+                "name": "SYNC_CH",
+                "value": 1,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Semtech SX1276/SX1262 Time-on-Air (ToA) Mathematical Model & Airtime Equations",
+      "codeHash": "8c47b9b4b6ced2a7b4625eddc3ac59b2e448e5193c001daacd606d00208344ce",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 41 Part 2 — Semtech SX1276/SX1262 Time-on-Air (ToA) Mathe",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Initialize LORA_TOA_CALC_REG: Arm 8-symbol preamble and explicit physical header.",
+            "registerName": "LORA_TOA_CALC_REG",
+            "bitWidth": 8,
+            "hexValue": "0x83",
+            "decimalValue": 131,
+            "maskApplied": "0x83",
+            "bits": [
+              {
+                "index": 7,
+                "name": "TOA_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "PRE_8SYM",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 5,
+                "name": "CR_4_5",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 4,
+                "name": "CR_4_8",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "CRC_EN",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "EXP_HDR",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "LDRO_ON",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 0,
+                "name": "TIMING_OK",
+                "value": 1,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Apply Semtech SX1276 payload symbol count formula with CR=4/5 and payload CRC.",
+            "registerName": "LORA_TOA_CALC_REG",
+            "bitWidth": 8,
+            "hexValue": "0xB3",
+            "decimalValue": 179,
+            "maskApplied": "0xB3",
+            "bits": [
+              {
+                "index": 7,
+                "name": "TOA_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "PRE_8SYM",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 5,
+                "name": "CR_4_5",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "CR_4_8",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "CRC_EN",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "EXP_HDR",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "LDRO_ON",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 0,
+                "name": "TIMING_OK",
+                "value": 1,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Activate Low Data Rate Optimization for symbols > 16ms and compute 61.7ms ToA.",
+            "registerName": "LORA_TOA_CALC_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFB",
+            "decimalValue": 251,
+            "maskApplied": "0xFB",
+            "bits": [
+              {
+                "index": 7,
+                "name": "TOA_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "PRE_8SYM",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "CR_4_5",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "CR_4_8",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "CRC_EN",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "EXP_HDR",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "LDRO_ON",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 0,
+                "name": "TIMING_OK",
+                "value": 1,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Commit regulatory duty-cycle compliant Time-on-Air schedule to MAC controller.",
+            "registerName": "LORA_TOA_CALC_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "TOA_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "PRE_8SYM",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "CR_4_5",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "CR_4_8",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "CRC_EN",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "EXP_HDR",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 1,
+                "name": "LDRO_ON",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 0,
+                "name": "TIMING_OK",
+                "value": 1,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Inter-SF Orthogonality, Quasi-Orthogonal Collision Boundaries & Capture Effect",
+      "codeHash": "396029c87982d1f9b3507fac3dcfb0ddff0a04f8d8908337e3ea0618b544d4a0",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 41 Part 3 — Inter-SF Orthogonality, Quasi-Orthogonal Coll",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Initialize LORA_QUASI_ORTHO_REG: Enable capture effect detector and inter-SF correlator.",
+            "registerName": "LORA_QUASI_ORTHO_REG",
+            "bitWidth": 8,
+            "hexValue": "0x81",
+            "decimalValue": 129,
+            "maskApplied": "0x81",
+            "bits": [
+              {
+                "index": 7,
+                "name": "CAP_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "SIR_6DB",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 5,
+                "name": "INTER_SF",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 4,
+                "name": "REJ_16DB",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "REJ_20DB",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "CO_SF_HIT",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "LEAK_BLK",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "COLL_RES",
+                "value": 1,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Detect co-channel collision; assert +6.0 dB SIR capture threshold for desired packet.",
+            "registerName": "LORA_QUASI_ORTHO_REG",
+            "bitWidth": 8,
+            "hexValue": "0xB1",
+            "decimalValue": 177,
+            "maskApplied": "0xB1",
+            "bits": [
+              {
+                "index": 7,
+                "name": "CAP_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "SIR_6DB",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 5,
+                "name": "INTER_SF",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "REJ_16DB",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "REJ_20DB",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "CO_SF_HIT",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "LEAK_BLK",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "COLL_RES",
+                "value": 1,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Apply quasi-orthogonal rejection matrix against near-far inter-SF interfering chirp.",
+            "registerName": "LORA_QUASI_ORTHO_REG",
+            "bitWidth": 8,
+            "hexValue": "0xF9",
+            "decimalValue": 249,
+            "maskApplied": "0xF9",
+            "bits": [
+              {
+                "index": 7,
+                "name": "CAP_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "SIR_6DB",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "INTER_SF",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "REJ_16DB",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "REJ_20DB",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "CO_SF_HIT",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "LEAK_BLK",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "COLL_RES",
+                "value": 1,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Commit collision-resistant packet demodulation state with verified CRC integrity.",
+            "registerName": "LORA_QUASI_ORTHO_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "CAP_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "SIR_6DB",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "INTER_SF",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "REJ_16DB",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "REJ_20DB",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "CO_SF_HIT",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 1,
+                "name": "LEAK_BLK",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 0,
+                "name": "COLL_RES",
+                "value": 1,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "LoRa Long-Range Link Budget, Hata/Log-Distance Path Loss & Battery Optimization",
+      "codeHash": "5fdb02ea3a60a23548ca2dbe38cb8901557955719325c3d8ac4fa78612251777",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 41 Part 4 — LoRa Long-Range Link Budget, Hata/Log-Distanc",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Initialize LORA_LINK_BUDGET_REG: Configure +14 dBm transmit power and 125 kHz noise floor.",
+            "registerName": "LORA_LINK_BUDGET_REG",
+            "bitWidth": 8,
+            "hexValue": "0x83",
+            "decimalValue": 131,
+            "maskApplied": "0x83",
+            "bits": [
+              {
+                "index": 7,
+                "name": "TX_14DB",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "TX_20DB",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 5,
+                "name": "SENS_124",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 4,
+                "name": "SENS_137",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "PL_EXP32",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "SHAD_8DB",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "MARGIN_OK",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 0,
+                "name": "LINK_VIAB",
+                "value": 1,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Calculate receiver sensitivity (-124.5 dBm @ SF7, -137.0 dBm @ SF12) and MAPL.",
+            "registerName": "LORA_LINK_BUDGET_REG",
+            "bitWidth": 8,
+            "hexValue": "0xB3",
+            "decimalValue": 179,
+            "maskApplied": "0xB3",
+            "bits": [
+              {
+                "index": 7,
+                "name": "TX_14DB",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "TX_20DB",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 5,
+                "name": "SENS_124",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "SENS_137",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "PL_EXP32",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "SHAD_8DB",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "MARGIN_OK",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 0,
+                "name": "LINK_VIAB",
+                "value": 1,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Evaluate log-distance path loss with 8 dB shadowing margin for 10 km rural link.",
+            "registerName": "LORA_LINK_BUDGET_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFB",
+            "decimalValue": 251,
+            "maskApplied": "0xFB",
+            "bits": [
+              {
+                "index": 7,
+                "name": "TX_14DB",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "TX_20DB",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "SENS_124",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "SENS_137",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "PL_EXP32",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "SHAD_8DB",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "MARGIN_OK",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 0,
+                "name": "LINK_VIAB",
+                "value": 1,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Commit viable long-range RF link configuration with positive fade margin.",
+            "registerName": "LORA_LINK_BUDGET_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "TX_14DB",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "TX_20DB",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "SENS_124",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "SENS_137",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "PL_EXP32",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "SHAD_8DB",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 1,
+                "name": "MARGIN_OK",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 0,
+                "name": "LINK_VIAB",
+                "value": 1,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Masterclass Synthesis: Full Semtech SX1276 Physical Layer Simulation Engine",
+      "codeHash": "2a1e231b2d2288ee042e7e99a91d73d8146ad325ffa3d9092ff2deb577afa883",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 41 Part 5 — Masterclass Synthesis: Full Semtech SX1276 Ph",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Initialize LORA_MASTER_PHY_REG: Lock CSS chirp modem and verify SX1276 ToA parameters.",
+            "registerName": "LORA_MASTER_PHY_REG",
+            "bitWidth": 8,
+            "hexValue": "0xC0",
+            "decimalValue": 192,
+            "maskApplied": "0xC0",
+            "bits": [
+              {
+                "index": 7,
+                "name": "PHY_INIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "CSS_LOCK",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "TOA_SYNC",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 4,
+                "name": "SIR_PASS",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 3,
+                "name": "LINK_EST",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "MJ_CALC",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "CERT_V41",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "MASTER_OK",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Validate capture effect SIR boundaries and compute multi-kilometer path loss margins.",
+            "registerName": "LORA_MASTER_PHY_REG",
+            "bitWidth": 8,
+            "hexValue": "0xF0",
+            "decimalValue": 240,
+            "maskApplied": "0xF0",
+            "bits": [
+              {
+                "index": 7,
+                "name": "PHY_INIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "CSS_LOCK",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "TOA_SYNC",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "SIR_PASS",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "LINK_EST",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 2,
+                "name": "MJ_CALC",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 1,
+                "name": "CERT_V41",
+                "value": 0,
+                "tone": "idle"
+              },
+              {
+                "index": 0,
+                "name": "MASTER_OK",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Calculate per-packet energy dissipation (6.11 mJ @ SF7) and verify battery lifespan.",
+            "registerName": "LORA_MASTER_PHY_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFE",
+            "decimalValue": 254,
+            "maskApplied": "0xFE",
+            "bits": [
+              {
+                "index": 7,
+                "name": "PHY_INIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "CSS_LOCK",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "TOA_SYNC",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "SIR_PASS",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "LINK_EST",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "MJ_CALC",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 1,
+                "name": "CERT_V41",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 0,
+                "name": "MASTER_OK",
+                "value": 0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Commit Grade A+ certified LoRa physical layer simulation engine deployment state.",
+            "registerName": "LORA_MASTER_PHY_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "PHY_INIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "CSS_LOCK",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 5,
+                "name": "TOA_SYNC",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 4,
+                "name": "SIR_PASS",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 3,
+                "name": "LINK_EST",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 2,
+                "name": "MJ_CALC",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 1,
+                "name": "CERT_V41",
+                "value": 1,
+                "tone": "ok"
+              },
+              {
+                "index": 0,
+                "name": "MASTER_OK",
+                "value": 1,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
