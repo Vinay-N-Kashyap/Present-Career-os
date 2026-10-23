@@ -1,0 +1,1425 @@
+{
+  "schemaVersion": 1,
+  "prefix": "iot_net",
+  "coursePrefix": "iot_net",
+  "day": 43,
+  "title": "Adaptive Data Rate (ADR), Channel Plans & Regional Duty-Cycle Compliance",
+  "promptSha": "lorawan-regional-adr-dutycycle-day43-v2",
+  "model": "gpt-4o",
+  "codeHash": "e82251955d01b9c1dc5c0d3564c9551a79a6a7f457d4f98a854fe8ad2d81811e",
+  "spec": {
+    "template": "register-bits"
+  },
+  "entries": [
+    {
+      "partTitle": "LoRaWAN Regional Channel Plans & Regulatory Spectrum Allocations (EU868, US915, IN865)",
+      "codeHash": "e82251955d01b9c1dc5c0d3564c9551a79a6a7f457d4f98a854fe8ad2d81811e",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 43 Part 1 — LoRaWAN Regional Channel Plans & Spectrum Allocations (EU868, US915, IN865)",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Initialize Regional Plan Manager: Select EU868 band profile and configure default 868.1/868.3/868.5 MHz channels.",
+            "registerName": "LORA_REGIONAL_PLAN_REG",
+            "bitWidth": 8,
+            "hexValue": "0x81",
+            "decimalValue": 129,
+            "maskApplied": "0x81",
+            "bits": [
+              {
+                "index": 7,
+                "name": "REG_INIT_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "SUB_BAND_LOCK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "HOP_TABLE_EN",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "CH_MASK_ACT",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "BAND_IN865",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "BAND_AS923",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "BAND_US915",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "BAND_EU868",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Apply 16-bit channel mask (ChMask): Enable extended channels 0 through 7 via OTAA CFList.",
+            "registerName": "LORA_REGIONAL_PLAN_REG",
+            "bitWidth": 8,
+            "hexValue": "0x8D",
+            "decimalValue": 141,
+            "maskApplied": "0x8D",
+            "bits": [
+              {
+                "index": 7,
+                "name": "REG_INIT_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "SUB_BAND_LOCK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "HOP_TABLE_EN",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "CH_MASK_ACT",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "BAND_IN865",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "BAND_AS923",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "BAND_US915",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "BAND_EU868",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Arm pseudo-random frequency hopping sequence across active channel bank to distribute interference.",
+            "registerName": "LORA_REGIONAL_PLAN_REG",
+            "bitWidth": 8,
+            "hexValue": "0x8F",
+            "decimalValue": 143,
+            "maskApplied": "0x8F",
+            "bits": [
+              {
+                "index": 7,
+                "name": "REG_INIT_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "SUB_BAND_LOCK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "HOP_TABLE_EN",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "CH_MASK_ACT",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "BAND_IN865",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "BAND_AS923",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "BAND_US915",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "BAND_EU868",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Switch regulatory profile to US915 Sub-band 2 (channels 8-15) with 500 kHz uplink channel support.",
+            "registerName": "LORA_REGIONAL_PLAN_REG",
+            "bitWidth": 8,
+            "hexValue": "0x5F",
+            "decimalValue": 95,
+            "maskApplied": "0x5F",
+            "bits": [
+              {
+                "index": 7,
+                "name": "REG_INIT_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 6,
+                "name": "SUB_BAND_LOCK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "HOP_TABLE_EN",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "CH_MASK_ACT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "BAND_IN865",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "BAND_AS923",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "BAND_US915",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "BAND_EU868",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "ETSI EN 300 220 Sub-band Duty-Cycle Quotas vs FCC Part 15.247 Dwell Time Limits",
+      "codeHash": "399b860b4e3e2a8c95d1c923b479c01f5118e3a50e443f31fb3aee22264f2744",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 43 Part 2 — ETSI EN 300 220 Sub-band Duty-Cycle Quotas vs FCC Part 15.247 Dwell Time Limits",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Activate statutory airtime compliance engine: Initialize 3,600-second rolling token bucket tracker.",
+            "registerName": "LORA_DUTY_CYCLE_REG",
+            "bitWidth": 8,
+            "hexValue": "0x81",
+            "decimalValue": 129,
+            "maskApplied": "0x81",
+            "bits": [
+              {
+                "index": 7,
+                "name": "AIRTIME_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "BACKOFF_WAIT",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "QUOTA_EXHAUST",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "FCC_DWELL_LMT",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "SUB_G3_10PCT",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "SUB_H_01PCT",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "SUB_G_1PCT",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "DC_ENFORCE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Enforce ETSI Sub-band g 1.0% duty-cycle ceiling (36.0 seconds max transmission time per hour).",
+            "registerName": "LORA_DUTY_CYCLE_REG",
+            "bitWidth": 8,
+            "hexValue": "0xC1",
+            "decimalValue": 193,
+            "maskApplied": "0xC1",
+            "bits": [
+              {
+                "index": 7,
+                "name": "AIRTIME_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "BACKOFF_WAIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "QUOTA_EXHAUST",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "FCC_DWELL_LMT",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "SUB_G3_10PCT",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "SUB_H_01PCT",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "SUB_G_1PCT",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "DC_ENFORCE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Detect excessive SF12 packet burst: Sub-band g quota exhausted, hardware radio forces mandatory back-off.",
+            "registerName": "LORA_DUTY_CYCLE_REG",
+            "bitWidth": 8,
+            "hexValue": "0xE6",
+            "decimalValue": 230,
+            "maskApplied": "0xE6",
+            "bits": [
+              {
+                "index": 7,
+                "name": "AIRTIME_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "BACKOFF_WAIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "QUOTA_EXHAUST",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "FCC_DWELL_LMT",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "SUB_G3_10PCT",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "SUB_H_01PCT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "SUB_G_1PCT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "DC_ENFORCE",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Enforce FCC 47 CFR Part 15.247 400 ms dwell time boundary: Reject over-length packets on 125 kHz channels.",
+            "registerName": "LORA_DUTY_CYCLE_REG",
+            "bitWidth": 8,
+            "hexValue": "0x91",
+            "decimalValue": 145,
+            "maskApplied": "0x91",
+            "bits": [
+              {
+                "index": 7,
+                "name": "AIRTIME_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "BACKOFF_WAIT",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "QUOTA_EXHAUST",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "FCC_DWELL_LMT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "SUB_G3_10PCT",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "SUB_H_01PCT",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "SUB_G_1PCT",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "DC_ENFORCE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Server-Side ADR Optimization Algorithm: SNR Margin & Step Allocation",
+      "codeHash": "1c16cab6abacf409dca83200e54541f0e3e631cecae0ccd37ec58d7d19bf4c98",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 43 Part 3 — The Server-Side ADR Optimization Algorithm: SNR Margin & Step Allocation",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Initialize ADR server controller: Collect 20 consecutive uplink frames into circular history buffer.",
+            "registerName": "LORA_ADR_SERVER_REG",
+            "bitWidth": 8,
+            "hexValue": "0xC0",
+            "decimalValue": 192,
+            "maskApplied": "0xC0",
+            "bits": [
+              {
+                "index": 7,
+                "name": "ADR_SRV_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "LINK_ADR_GEN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "NSTEP_DEC_PWR",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "NSTEP_INC_DR",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "MARGIN_EVAL",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "SNR_MAX_LOCK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "HIST_BUF_FULL",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "ADR_ACTIVE",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Extract maximum SNR across observation window and compute available link margin relative to DR0 sensitivity.",
+            "registerName": "LORA_ADR_SERVER_REG",
+            "bitWidth": 8,
+            "hexValue": "0xF0",
+            "decimalValue": 240,
+            "maskApplied": "0xF0",
+            "bits": [
+              {
+                "index": 7,
+                "name": "ADR_SRV_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "LINK_ADR_GEN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "NSTEP_DEC_PWR",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "NSTEP_INC_DR",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "MARGIN_EVAL",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "SNR_MAX_LOCK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "HIST_BUF_FULL",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "ADR_ACTIVE",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Allocate Nstep optimization: Stage 1 increases Data Rate from DR0 (SF12) to DR5 (SF7) to collapse airtime.",
+            "registerName": "LORA_ADR_SERVER_REG",
+            "bitWidth": 8,
+            "hexValue": "0xF8",
+            "decimalValue": 248,
+            "maskApplied": "0xF8",
+            "bits": [
+              {
+                "index": 7,
+                "name": "ADR_SRV_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "LINK_ADR_GEN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "NSTEP_DEC_PWR",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "NSTEP_INC_DR",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "MARGIN_EVAL",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "SNR_MAX_LOCK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "HIST_BUF_FULL",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "ADR_ACTIVE",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Allocate Stage 2: Reduce transmit power from 14 dBm down to 11 dBm and emit LinkADRReq command.",
+            "registerName": "LORA_ADR_SERVER_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "ADR_SRV_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "LINK_ADR_GEN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "NSTEP_DEC_PWR",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "NSTEP_INC_DR",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "MARGIN_EVAL",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "SNR_MAX_LOCK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "HIST_BUF_FULL",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "ADR_ACTIVE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "LinkADRReq Command Encoding & Device ADRACKReq Fallback State Machine",
+      "codeHash": "be88cfe1119a38a44d9d4493f5c4aa005c68c92ffe45fe1130ca3c4307199d76",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 43 Part 4 — LinkADRReq Command Encoding & Device ADRACKReq Fallback State Machine",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "End device demodulates LinkADRReq: Execute atomic tripartite validation across ChMask, DR, and Power.",
+            "registerName": "LORA_LINK_ADR_CMD_REG",
+            "bitWidth": 8,
+            "hexValue": "0xF0",
+            "decimalValue": 240,
+            "maskApplied": "0xF0",
+            "bits": [
+              {
+                "index": 7,
+                "name": "LINK_ADR_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "FALLBACK_SF",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "ADR_ACK_DLY",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "ADR_ACK_LMT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "POWER_ACK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "DATARATE_ACK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "CHMASK_ACK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "ADR_REQ_RX",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Transmit LinkADRAns acknowledgment byte (0x07): All 3 ACK bits set, confirming atomic reconfiguration.",
+            "registerName": "LORA_LINK_ADR_CMD_REG",
+            "bitWidth": 8,
+            "hexValue": "0xF1",
+            "decimalValue": 241,
+            "maskApplied": "0xF1",
+            "bits": [
+              {
+                "index": 7,
+                "name": "LINK_ADR_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "FALLBACK_SF",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "ADR_ACK_DLY",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "ADR_ACK_LMT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "POWER_ACK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "DATARATE_ACK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "CHMASK_ACK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "ADR_REQ_RX",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Simulate loss of downlink connectivity: Uplink counter exceeds ADR_ACK_LIMIT (64), assert ADRACKReq bit.",
+            "registerName": "LORA_LINK_ADR_CMD_REG",
+            "bitWidth": 8,
+            "hexValue": "0x18",
+            "decimalValue": 24,
+            "maskApplied": "0x18",
+            "bits": [
+              {
+                "index": 7,
+                "name": "LINK_ADR_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 6,
+                "name": "FALLBACK_SF",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "ADR_ACK_DLY",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "ADR_ACK_LMT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "POWER_ACK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "DATARATE_ACK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "CHMASK_ACK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "ADR_REQ_RX",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "ADR_ACK_DELAY (32 frames) expires without ACK: Node restores +14 dBm and steps down SF notch-by-notch.",
+            "registerName": "LORA_LINK_ADR_CMD_REG",
+            "bitWidth": 8,
+            "hexValue": "0x1E",
+            "decimalValue": 30,
+            "maskApplied": "0x1E",
+            "bits": [
+              {
+                "index": 7,
+                "name": "LINK_ADR_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 6,
+                "name": "FALLBACK_SF",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "ADR_ACK_DLY",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "ADR_ACK_LMT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "POWER_ACK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "DATARATE_ACK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "CHMASK_ACK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "ADR_REQ_RX",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Masterclass Synthesis: Full Regional ADR & Regulatory Airtime Simulation Engine",
+      "codeHash": "bc64e2347fc60f33043bdecc24632ac7e01d5529931bd2c0fdb5ac6247d79e43",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 43 Part 5 — Masterclass Synthesis: Full Regional ADR & Airtime Regulatory Simulation Engine",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Initialize RegionalADRMasterEngine: Load EU868 parameters and arm 1.0% statutory airtime tracker.",
+            "registerName": "LORA_MASTER_ADR_REG",
+            "bitWidth": 8,
+            "hexValue": "0xC0",
+            "decimalValue": 192,
+            "maskApplied": "0xC0",
+            "bits": [
+              {
+                "index": 7,
+                "name": "CERT_V43_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "TOKEN_BUCKET_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "FALLBACK_RDY",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "ADR_CONVERGED",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "BUFFER_SYNC",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "DUTY_CYCLE_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "REGIONAL_LOCK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "SYS_INITIALIZED",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Execute telemetry cycle 1 at SF12: Record 1,318 ms time-on-air and deduct airtime from hourly budget.",
+            "registerName": "LORA_MASTER_ADR_REG",
+            "bitWidth": 8,
+            "hexValue": "0xE0",
+            "decimalValue": 224,
+            "maskApplied": "0xE0",
+            "bits": [
+              {
+                "index": 7,
+                "name": "CERT_V43_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "TOKEN_BUCKET_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "FALLBACK_RDY",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "ADR_CONVERGED",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "BUFFER_SYNC",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "DUTY_CYCLE_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "REGIONAL_LOCK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "SYS_INITIALIZED",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Complete 20-frame observation: ADR converges, stepping node to SF7 and cutting airtime by 95.3%.",
+            "registerName": "LORA_MASTER_ADR_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFC",
+            "decimalValue": 252,
+            "maskApplied": "0xFC",
+            "bits": [
+              {
+                "index": 7,
+                "name": "CERT_V43_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "TOKEN_BUCKET_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "FALLBACK_RDY",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "ADR_CONVERGED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "BUFFER_SYNC",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "DUTY_CYCLE_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "REGIONAL_LOCK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "SYS_INITIALIZED",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Verify closed-loop network stability and emit certification token LORAWAN_REGIONAL_ADR_ENGINE_GRADE_A_PLUS_CERTIFIED.",
+            "registerName": "LORA_MASTER_ADR_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "CERT_V43_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "TOKEN_BUCKET_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "FALLBACK_RDY",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "ADR_CONVERGED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "BUFFER_SYNC",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "DUTY_CYCLE_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "REGIONAL_LOCK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "SYS_INITIALIZED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
