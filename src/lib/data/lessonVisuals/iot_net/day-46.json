@@ -1,0 +1,1425 @@
+{
+  "schemaVersion": 1,
+  "prefix": "iot_net",
+  "coursePrefix": "iot_net",
+  "day": 46,
+  "title": "6LoWPAN Adaptation Layer: Fragmentation, Reassembly & LOWPAN_IPHC Compression",
+  "promptSha": "lowpan-iphc-nhc-adaptation-day46-v2",
+  "model": "gpt-4o",
+  "codeHash": "42924a61ab38a96f9cfc75144f9bad77cf175f2b8ceef80eafd8a6c96a943d04",
+  "spec": {
+    "template": "register-bits"
+  },
+  "entries": [
+    {
+      "partTitle": "The IPv6 MTU Paradox & IEEE 802.15.4 Physical Constraints (RFC 4944)",
+      "codeHash": "42924a61ab38a96f9cfc75144f9bad77cf175f2b8ceef80eafd8a6c96a943d04",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 46 Part 1 — The IPv6 MTU Paradox & IEEE 802.15.4 Physical Constraints (RFC 4944)",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Initialize RFC 4944 fragmentation engine: Evaluate 250-byte IPv6 datagram against 102-byte IEEE 802.15.4 MTU.",
+            "registerName": "LOWPAN_FRAG_CTRL_REG",
+            "bitWidth": 8,
+            "hexValue": "0x81",
+            "decimalValue": 129,
+            "maskApplied": "0x81",
+            "bits": [
+              {
+                "index": 7,
+                "name": "FRAG_DISPATCH_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "PAYLOAD_SPLIT",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "OFFSET_CALC",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "TAG_ALLOC",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "DATAGRAM_SIZE",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "FRAGN_HDR",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "FRAG1_HDR",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "FRAG_ACTIVE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Construct FRAG1 header: Encode 11-bit datagram size and allocate unique 16-bit transaction tag.",
+            "registerName": "LOWPAN_FRAG_CTRL_REG",
+            "bitWidth": 8,
+            "hexValue": "0xD9",
+            "decimalValue": 217,
+            "maskApplied": "0xD9",
+            "bits": [
+              {
+                "index": 7,
+                "name": "FRAG_DISPATCH_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "PAYLOAD_SPLIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "OFFSET_CALC",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "TAG_ALLOC",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "DATAGRAM_SIZE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "FRAGN_HDR",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "FRAG1_HDR",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "FRAG_ACTIVE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Construct FRAGN headers: Encode 8-byte scaled offset (offset // 8) for subsequent 96-byte payload slices.",
+            "registerName": "LOWPAN_FRAG_CTRL_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFD",
+            "decimalValue": 253,
+            "maskApplied": "0xFD",
+            "bits": [
+              {
+                "index": 7,
+                "name": "FRAG_DISPATCH_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "PAYLOAD_SPLIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "OFFSET_CALC",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "TAG_ALLOC",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "DATAGRAM_SIZE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "FRAGN_HDR",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "FRAG1_HDR",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "FRAG_ACTIVE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Commit fragmentation sequence: Transmit 3 compliant IEEE 802.15.4 radio frames across wireless mesh link.",
+            "registerName": "LOWPAN_FRAG_CTRL_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "FRAG_DISPATCH_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "PAYLOAD_SPLIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "OFFSET_CALC",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "TAG_ALLOC",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "DATAGRAM_SIZE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "FRAGN_HDR",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "FRAG1_HDR",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "FRAG_ACTIVE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "RFC 6282 LOWPAN_IPHC Base Header Compression Mechanics",
+      "codeHash": "ea93368d9b341cfbef22aaac2bb0b27a8fbfa8f6f608c7dc06a54ba039be68be",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 46 Part 2 — RFC 6282 LOWPAN_IPHC Base Header Compression Mechanics",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Initialize RFC 6282 LOWPAN_IPHC compressor: Assert 3-bit dispatch identifier 011b (0x60).",
+            "registerName": "LOWPAN_IPHC_BASE_REG",
+            "bitWidth": 8,
+            "hexValue": "0x80",
+            "decimalValue": 128,
+            "maskApplied": "0x80",
+            "bits": [
+              {
+                "index": 7,
+                "name": "IPHC_BASE_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "SAM_LINK_DERIV",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "SAC_STATELESS",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "CID_PRESENT",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "HLIM_COMPRESSED",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "NH_INLINE",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "TF_ELIDED",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "IPHC_DISPATCH",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Elide Traffic Class and Flow Label (TF=11b) and compress Hop Limit 64 to 2 bits (HLIM=10b).",
+            "registerName": "LOWPAN_IPHC_BASE_REG",
+            "bitWidth": 8,
+            "hexValue": "0xD0",
+            "decimalValue": 208,
+            "maskApplied": "0xD0",
+            "bits": [
+              {
+                "index": 7,
+                "name": "IPHC_BASE_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "SAM_LINK_DERIV",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "SAC_STATELESS",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "CID_PRESENT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "HLIM_COMPRESSED",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "NH_INLINE",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "TF_ELIDED",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "IPHC_DISPATCH",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Execute stateless MAC address elision: Derive 128-bit source and destination IPs directly from IEEE 802.15.4 frame.",
+            "registerName": "LOWPAN_IPHC_BASE_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFD",
+            "decimalValue": 253,
+            "maskApplied": "0xFD",
+            "bits": [
+              {
+                "index": 7,
+                "name": "IPHC_BASE_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "SAM_LINK_DERIV",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "SAC_STATELESS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "CID_PRESENT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "HLIM_COMPRESSED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "NH_INLINE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "TF_ELIDED",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "IPHC_DISPATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Collapse standard 40-byte IPv6 header into a 3-byte wire header, achieving 92.5% compression efficiency.",
+            "registerName": "LOWPAN_IPHC_BASE_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "IPHC_BASE_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "SAM_LINK_DERIV",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "SAC_STATELESS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "CID_PRESENT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "HLIM_COMPRESSED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "NH_INLINE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "TF_ELIDED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "IPHC_DISPATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Next Header Compression (NHC) for UDP & Context-Based Address Compression",
+      "codeHash": "e73d51252dece599c51fcb2b335ca61d38c2c8ac95c1bb8a98a19b98131b7414",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 46 Part 3 — Next Header Compression (NHC) for UDP & Context-Based Address Compression",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Activate LOWPAN_NHC transport compressor: Detect UDP next header and assert 5-bit dispatch 11110b.",
+            "registerName": "LOWPAN_NHC_UDP_REG",
+            "bitWidth": 8,
+            "hexValue": "0x80",
+            "decimalValue": 128,
+            "maskApplied": "0x80",
+            "bits": [
+              {
+                "index": 7,
+                "name": "NHC_COMP_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "UDP_4BYTE_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "DAM_CONTEXT",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "SAM_CONTEXT",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "CID_MATCH",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "CHKSUM_INLINE",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "PORT_4BIT_COMP",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "NHC_UDP_DISP",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Compress CoAP ports (0xF0B0-0xF0BF) down to 4-bit nibbles, packing source and destination into 1 byte (P=11b).",
+            "registerName": "LOWPAN_NHC_UDP_REG",
+            "bitWidth": 8,
+            "hexValue": "0xC0",
+            "decimalValue": 192,
+            "maskApplied": "0xC0",
+            "bits": [
+              {
+                "index": 7,
+                "name": "NHC_COMP_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "UDP_4BYTE_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "DAM_CONTEXT",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "SAM_CONTEXT",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "CID_MATCH",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "CHKSUM_INLINE",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "PORT_4BIT_COMP",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "NHC_UDP_DISP",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Elide redundant UDP Length field and match 64-bit global prefix against 6LoWPAN Context Table (CID=1).",
+            "registerName": "LOWPAN_NHC_UDP_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFA",
+            "decimalValue": 250,
+            "maskApplied": "0xFA",
+            "bits": [
+              {
+                "index": 7,
+                "name": "NHC_COMP_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "UDP_4BYTE_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "DAM_CONTEXT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "SAM_CONTEXT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "CID_MATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "CHKSUM_INLINE",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "PORT_4BIT_COMP",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "NHC_UDP_DISP",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Commit compressed UDP header: Output 4-byte transport header with inline 16-bit Internet checksum.",
+            "registerName": "LOWPAN_NHC_UDP_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "NHC_COMP_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "UDP_4BYTE_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "DAM_CONTEXT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "SAM_CONTEXT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "CID_MATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "CHKSUM_INLINE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "PORT_4BIT_COMP",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "NHC_UDP_DISP",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Fragmentation Reassembly Engine, Buffer Starvation & Reassembly Timeout",
+      "codeHash": "008ae7076a21679bc7f4244be842ffc90a4a375cf69c38e034efd9d684220ccd",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 46 Part 4 — Fragmentation Reassembly Engine, Buffer Starvation & Reassembly Timeout",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Ingest incoming 6LoWPAN fragment: Allocate reassembly buffer indexed by (src_mac, datagram_tag).",
+            "registerName": "LOWPAN_REASSEMBLY_REG",
+            "bitWidth": 8,
+            "hexValue": "0xC8",
+            "decimalValue": 200,
+            "maskApplied": "0xC8",
+            "bits": [
+              {
+                "index": 7,
+                "name": "PACKET_REASSEMBLED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "BUFFER_STARVE_DROP",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "TIMEOUT_TIMER_ARM",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "OUT_OF_ORDER_LATCH",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "BUFFER_ALLOC_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "OFFSET_SEEK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "TAG_MATCH",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "REASSEMBLY_EN",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Latch out-of-order FRAGN fragment (offset 96 to 191) directly into pre-allocated memory buffer.",
+            "registerName": "LOWPAN_REASSEMBLY_REG",
+            "bitWidth": 8,
+            "hexValue": "0xF8",
+            "decimalValue": 248,
+            "maskApplied": "0xF8",
+            "bits": [
+              {
+                "index": 7,
+                "name": "PACKET_REASSEMBLED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "BUFFER_STARVE_DROP",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "TIMEOUT_TIMER_ARM",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "OUT_OF_ORDER_LATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "BUFFER_ALLOC_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "OFFSET_SEEK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "TAG_MATCH",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "REASSEMBLY_EN",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Ingest FRAG1 (offset 0 to 95): Arm 3.0-second RFC 4944 reassembly timeout timer to prevent buffer starvation.",
+            "registerName": "LOWPAN_REASSEMBLY_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFC",
+            "decimalValue": 252,
+            "maskApplied": "0xFC",
+            "bits": [
+              {
+                "index": 7,
+                "name": "PACKET_REASSEMBLED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "BUFFER_STARVE_DROP",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "TIMEOUT_TIMER_ARM",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "OUT_OF_ORDER_LATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "BUFFER_ALLOC_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "OFFSET_SEEK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "TAG_MATCH",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "REASSEMBLY_EN",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Verify 100% datagram reconstruction: Deallocate buffer and dispatch reassembled packet to IPv6 stack.",
+            "registerName": "LOWPAN_REASSEMBLY_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "PACKET_REASSEMBLED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "BUFFER_STARVE_DROP",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "TIMEOUT_TIMER_ARM",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "OUT_OF_ORDER_LATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "BUFFER_ALLOC_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "OFFSET_SEEK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "TAG_MATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "REASSEMBLY_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Masterclass Synthesis: Full RFC 4944 / RFC 6282 6LoWPAN Adaptation Engine",
+      "codeHash": "e57ec3de736418024ffe7a80269f0c68611cdefefaefc27223a3289e6a4ef374",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 46 Part 5 — Masterclass Synthesis: Full RFC 4944 / RFC 6282 6LoWPAN Adaptation Engine",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Initialize LowPANMasterEngine: Configure IEEE 802.15.4 MAC interface and register global context prefixes.",
+            "registerName": "LOWPAN_MASTER_ENGINE_REG",
+            "bitWidth": 8,
+            "hexValue": "0xC0",
+            "decimalValue": 192,
+            "maskApplied": "0xC0",
+            "bits": [
+              {
+                "index": 7,
+                "name": "CERT_V46_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "UDP_DISPATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "INTEGRITY_VERIFIED",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "WIRE_REASSEMBLY",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "FRAG_DISPATCH",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "IPHC_COMPRESSED",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "IPV6_INGEST",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "STACK_INIT",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Compress 48 bytes of IPv6/UDP headers into 6 bytes using combined LOWPAN_IPHC and LOWPAN_NHC.",
+            "registerName": "LOWPAN_MASTER_ENGINE_REG",
+            "bitWidth": 8,
+            "hexValue": "0xF0",
+            "decimalValue": 240,
+            "maskApplied": "0xF0",
+            "bits": [
+              {
+                "index": 7,
+                "name": "CERT_V46_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "UDP_DISPATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "INTEGRITY_VERIFIED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "WIRE_REASSEMBLY",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "FRAG_DISPATCH",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "IPHC_COMPRESSED",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "IPV6_INGEST",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "STACK_INIT",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Execute RFC 4944 fragmentation and out-of-order reassembly across simulated lossy mesh channels.",
+            "registerName": "LOWPAN_MASTER_ENGINE_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFC",
+            "decimalValue": 252,
+            "maskApplied": "0xFC",
+            "bits": [
+              {
+                "index": 7,
+                "name": "CERT_V46_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "UDP_DISPATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "INTEGRITY_VERIFIED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "WIRE_REASSEMBLY",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "FRAG_DISPATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "IPHC_COMPRESSED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "IPV6_INGEST",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "STACK_INIT",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Verify 100% payload integrity and emit certification token LOWPAN_IPHC_ADAPTATION_ENGINE_GRADE_A_PLUS_CERTIFIED.",
+            "registerName": "LOWPAN_MASTER_ENGINE_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "CERT_V46_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "UDP_DISPATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "INTEGRITY_VERIFIED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "WIRE_REASSEMBLY",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "FRAG_DISPATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "IPHC_COMPRESSED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "IPV6_INGEST",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "STACK_INIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
