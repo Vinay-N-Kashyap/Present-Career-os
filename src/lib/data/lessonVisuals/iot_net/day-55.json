@@ -1,0 +1,1425 @@
+{
+  "schemaVersion": 1,
+  "prefix": "iot_net",
+  "coursePrefix": "iot_net",
+  "day": 55,
+  "title": "Milestone 11 Capstone: Multi-Protocol Industrial Edge Gateway & OT-to-Cloud Pipeline Engine",
+  "promptSha": "milestone-11-industrial-gateway-capstone-day55-v2",
+  "model": "gpt-4o",
+  "codeHash": "3a23fb4f2ba66c443ae696ccb1e302db5fd65cc4287f14d1064990a3a0f061a3",
+  "spec": {
+    "template": "register-bits"
+  },
+  "entries": [
+    {
+      "partTitle": "Industrial Edge Gateway Architecture & Interface Topology",
+      "codeHash": "3a23fb4f2ba66c443ae696ccb1e302db5fd65cc4287f14d1064990a3a0f061a3",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 55 Part 1 — Industrial Edge Gateway Architecture & Interface Topology",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Initialize multi-interface industrial edge gateway: Audit physical layer controllers.",
+            "registerName": "IND_GW_ARCH_REG",
+            "bitWidth": 8,
+            "hexValue": "0x81",
+            "decimalValue": 129,
+            "maskApplied": "0x81",
+            "bits": [
+              {
+                "index": 7,
+                "name": "GW_ARCH_READY",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "SECURITY_BOUNDARY_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "FIREWALL_ZONE_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "TSN_PORT_UP",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "MQTTSN_RADIO_UP",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "OPC_UA_TCP_UP",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "MODBUS_RS485_UP",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "OT_PHY_INTERFACES_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Verify OT serial and Ethernet links: Modbus RS-485 UP, OPC UA 100BASE-TX UP.",
+            "registerName": "IND_GW_ARCH_REG",
+            "bitWidth": 8,
+            "hexValue": "0xE7",
+            "decimalValue": 231,
+            "maskApplied": "0xE7",
+            "bits": [
+              {
+                "index": 7,
+                "name": "GW_ARCH_READY",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "SECURITY_BOUNDARY_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "FIREWALL_ZONE_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "TSN_PORT_UP",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "MQTTSN_RADIO_UP",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "OPC_UA_TCP_UP",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "MODBUS_RS485_UP",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "OT_PHY_INTERFACES_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Bring up IEEE 802.15.4 wireless modem and Gigabit TSN deterministic switch port.",
+            "registerName": "IND_GW_ARCH_REG",
+            "bitWidth": 8,
+            "hexValue": "0xBF",
+            "decimalValue": 191,
+            "maskApplied": "0xBF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "GW_ARCH_READY",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "SECURITY_BOUNDARY_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "FIREWALL_ZONE_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "TSN_PORT_UP",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "MQTTSN_RADIO_UP",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "OPC_UA_TCP_UP",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "MODBUS_RS485_UP",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "OT_PHY_INTERFACES_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Engage ISA/IEC 62443 security boundary lock: Confirm zero listening ports on WAN uplink.",
+            "registerName": "IND_GW_ARCH_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "GW_ARCH_READY",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "SECURITY_BOUNDARY_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "FIREWALL_ZONE_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "TSN_PORT_UP",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "MQTTSN_RADIO_UP",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "OPC_UA_TCP_UP",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "MODBUS_RS485_UP",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "OT_PHY_INTERFACES_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "High-Performance Multi-Protocol Field Ingestion Engine",
+      "codeHash": "57bffb58fbd58f2bdde62d6d92c60657f51eafc300b5bf7e0e9c66980fa47707",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 55 Part 2 — High-Performance Multi-Protocol Field Ingestion Engine",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Launch asynchronous ingestion engine: Dispatch dedicated workers for each fieldbus driver.",
+            "registerName": "IND_GW_INGEST_REG",
+            "bitWidth": 8,
+            "hexValue": "0x81",
+            "decimalValue": 129,
+            "maskApplied": "0x81",
+            "bits": [
+              {
+                "index": 7,
+                "name": "INGEST_CYCLE_PASS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "ZERO_FRAME_DROP",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "INGEST_FIFO_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "TSN_EXPRESS_LATCH",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "MQTTSN_RECV_PACKET",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "OPC_SUB_NOTIFY",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "MODBUS_POLL_TICK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "INGEST_ENGINE_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Decode synchronous Modbus RTU response: Extract 16-bit register value 1850 with valid CRC-16.",
+            "registerName": "IND_GW_INGEST_REG",
+            "bitWidth": 8,
+            "hexValue": "0xC7",
+            "decimalValue": 199,
+            "maskApplied": "0xC7",
+            "bits": [
+              {
+                "index": 7,
+                "name": "INGEST_CYCLE_PASS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "ZERO_FRAME_DROP",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "INGEST_FIFO_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "TSN_EXPRESS_LATCH",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "MQTTSN_RECV_PACKET",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "OPC_SUB_NOTIFY",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "MODBUS_POLL_TICK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "INGEST_ENGINE_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Ingest OPC UA double variant (45.85 degC) and unpack 8-byte MQTT-SN datagram.",
+            "registerName": "IND_GW_INGEST_REG",
+            "bitWidth": 8,
+            "hexValue": "0xEF",
+            "decimalValue": 239,
+            "maskApplied": "0xEF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "INGEST_CYCLE_PASS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "ZERO_FRAME_DROP",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "INGEST_FIFO_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "TSN_EXPRESS_LATCH",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "MQTTSN_RECV_PACKET",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "OPC_SUB_NOTIFY",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "MODBUS_POLL_TICK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "INGEST_ENGINE_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Commit unpacked records to lock-free FIFO queue with zero dropped frames across all protocols.",
+            "registerName": "IND_GW_INGEST_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "INGEST_CYCLE_PASS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "ZERO_FRAME_DROP",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "INGEST_FIFO_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "TSN_EXPRESS_LATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "MQTTSN_RECV_PACKET",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "OPC_SUB_NOTIFY",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "MODBUS_POLL_TICK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "INGEST_ENGINE_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Industrial Data Normalization & Semantic Information Modeling",
+      "codeHash": "d8a1715052a575ed36ee868187133600465617088056752b3c9f1984fe5a1997",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 55 Part 3 — Industrial Data Normalization & Semantic Information Modeling",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Activate SemanticDataNormalizer: Bind incoming records to ISA-95 asset hierarchy model.",
+            "registerName": "IND_GW_SEMANTIC_NORM_REG",
+            "bitWidth": 8,
+            "hexValue": "0x81",
+            "decimalValue": 129,
+            "maskApplied": "0x81",
+            "bits": [
+              {
+                "index": 7,
+                "name": "SEMANTIC_NORM_PASS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "NORM_BUFFER_LATCH",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "SCHEMA_VALID_JSON",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "SPARKPLUG_B_PAYLOAD",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "SCALE_FACTOR_APPLY",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "TIMESTAMP_UTC_LOCK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "NODEID_EXTRACT_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "SEMANTIC_MAPPER_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Map Modbus register 40001 to PLANT_DETROIT.WELDING_CELL_04.MAIN_PUMP_01 rotational_speed.",
+            "registerName": "IND_GW_SEMANTIC_NORM_REG",
+            "bitWidth": 8,
+            "hexValue": "0xC7",
+            "decimalValue": 199,
+            "maskApplied": "0xC7",
+            "bits": [
+              {
+                "index": 7,
+                "name": "SEMANTIC_NORM_PASS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "NORM_BUFFER_LATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "SCHEMA_VALID_JSON",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "SPARKPLUG_B_PAYLOAD",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "SCALE_FACTOR_APPLY",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "TIMESTAMP_UTC_LOCK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "NODEID_EXTRACT_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "SEMANTIC_MAPPER_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Apply engineering unit scaling (RPM, degC) and synchronize deterministic ISO-8601 UTC timestamp.",
+            "registerName": "IND_GW_SEMANTIC_NORM_REG",
+            "bitWidth": 8,
+            "hexValue": "0xEF",
+            "decimalValue": 239,
+            "maskApplied": "0xEF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "SEMANTIC_NORM_PASS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "NORM_BUFFER_LATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "SCHEMA_VALID_JSON",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "SPARKPLUG_B_PAYLOAD",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "SCALE_FACTOR_APPLY",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "TIMESTAMP_UTC_LOCK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "NODEID_EXTRACT_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "SEMANTIC_MAPPER_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Serialize normalized JSON payload with verified schema structure and 100% quality flag.",
+            "registerName": "IND_GW_SEMANTIC_NORM_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "SEMANTIC_NORM_PASS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "NORM_BUFFER_LATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "SCHEMA_VALID_JSON",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "SPARKPLUG_B_PAYLOAD",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "SCALE_FACTOR_APPLY",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "TIMESTAMP_UTC_LOCK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "NODEID_EXTRACT_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "SEMANTIC_MAPPER_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Edge Store-and-Forward Buffering & Offline Resiliency",
+      "codeHash": "527071b8566960a34dbcf362cd8a41107ed8fb7410feedfe969a296a11a92184",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 55 Part 4 — Edge Store-and-Forward Buffering & Offline Resiliency",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Publish telemetry live to cloud broker: Confirm immediate transmission over online WAN uplink.",
+            "registerName": "IND_GW_RESILIENCY_REG",
+            "bitWidth": 8,
+            "hexValue": "0xC1",
+            "decimalValue": 193,
+            "maskApplied": "0xC1",
+            "bits": [
+              {
+                "index": 7,
+                "name": "RESILIENCY_ENGINE_PASS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "MTLS_SESSION_SECURE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "OFFLINE_RESILIENCY_PASS",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "DETERMINISTIC_QOS",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "FIFO_DRAIN_BURST",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "FLASH_QUEUE_APPEND",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "CLOUD_LINK_ONLINE",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "STORE_FORWARD_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Detect WAN disconnect event: Transition to autonomous offline buffering in non-volatile flash FIFO.",
+            "registerName": "IND_GW_RESILIENCY_REG",
+            "bitWidth": 8,
+            "hexValue": "0xA5",
+            "decimalValue": 165,
+            "maskApplied": "0xA5",
+            "bits": [
+              {
+                "index": 7,
+                "name": "RESILIENCY_ENGINE_PASS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "MTLS_SESSION_SECURE",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "OFFLINE_RESILIENCY_PASS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "DETERMINISTIC_QOS",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "FIFO_DRAIN_BURST",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "FLASH_QUEUE_APPEND",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "CLOUD_LINK_ONLINE",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "STORE_FORWARD_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Stage subsequent factory events locally without blocking fieldbus polling or dropping telemetry.",
+            "registerName": "IND_GW_RESILIENCY_REG",
+            "bitWidth": 8,
+            "hexValue": "0xBD",
+            "decimalValue": 189,
+            "maskApplied": "0xBD",
+            "bits": [
+              {
+                "index": 7,
+                "name": "RESILIENCY_ENGINE_PASS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "MTLS_SESSION_SECURE",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "OFFLINE_RESILIENCY_PASS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "DETERMINISTIC_QOS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "FIFO_DRAIN_BURST",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "FLASH_QUEUE_APPEND",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "CLOUD_LINK_ONLINE",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "STORE_FORWARD_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Restore WAN connection: Burst buffered backlog to cloud and verify 100% zero data loss.",
+            "registerName": "IND_GW_RESILIENCY_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "RESILIENCY_ENGINE_PASS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "MTLS_SESSION_SECURE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "OFFLINE_RESILIENCY_PASS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "DETERMINISTIC_QOS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "FIFO_DRAIN_BURST",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "FLASH_QUEUE_APPEND",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "CLOUD_LINK_ONLINE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "STORE_FORWARD_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "🏆 Milestone 11 Capstone: Multi-Protocol Industrial Edge Gateway Master Engine",
+      "codeHash": "58604bedc6362e81b2dd70f46be8811b4db203bc5717d90e086d1878f16de146",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 55 Part 5 — 🏆 Milestone 11 Capstone: Multi-Protocol Industrial Edge Gateway Master Engine",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Initialize IndustrialEdgeGatewayMasterEngine: Orchestrate multi-protocol fieldbus translation.",
+            "registerName": "IND_GW_MASTER_CAPSTONE_REG",
+            "bitWidth": 8,
+            "hexValue": "0x81",
+            "decimalValue": 129,
+            "maskApplied": "0x81",
+            "bits": [
+              {
+                "index": 7,
+                "name": "IND_GATEWAY_CERTIFIED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "TOKEN_LATCH_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "ZERO_DATA_LOSS_PASS",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "CLOUD_EGRESS_STREAM_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "STORE_FORWARD_ACTIVE",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "SEMANTIC_PIPELINE_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "FIELD_INGEST_CONVERGED",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "CAPSTONE_MASTER_INIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Ingest Modbus, OPC UA, and MQTT-SN frames: Apply ISA-95 normalization and unit scaling.",
+            "registerName": "IND_GW_MASTER_CAPSTONE_REG",
+            "bitWidth": 8,
+            "hexValue": "0xE7",
+            "decimalValue": 231,
+            "maskApplied": "0xE7",
+            "bits": [
+              {
+                "index": 7,
+                "name": "IND_GATEWAY_CERTIFIED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "TOKEN_LATCH_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "ZERO_DATA_LOSS_PASS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "CLOUD_EGRESS_STREAM_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "STORE_FORWARD_ACTIVE",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "SEMANTIC_PIPELINE_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "FIELD_INGEST_CONVERGED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "CAPSTONE_MASTER_INIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Simulate WAN link glitch: Buffer furnace telemetry in local flash, recover, and flush burst.",
+            "registerName": "IND_GW_MASTER_CAPSTONE_REG",
+            "bitWidth": 8,
+            "hexValue": "0xBF",
+            "decimalValue": 191,
+            "maskApplied": "0xBF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "IND_GATEWAY_CERTIFIED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "TOKEN_LATCH_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "ZERO_DATA_LOSS_PASS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "CLOUD_EGRESS_STREAM_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "STORE_FORWARD_ACTIVE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "SEMANTIC_PIPELINE_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "FIELD_INGEST_CONVERGED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "CAPSTONE_MASTER_INIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Verify 100% cloud telemetry arrival and latch INDUSTRIAL_IOT_GATEWAY_ENGINE_GRADE_A_PLUS_CERTIFIED.",
+            "registerName": "IND_GW_MASTER_CAPSTONE_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "IND_GATEWAY_CERTIFIED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "TOKEN_LATCH_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "ZERO_DATA_LOSS_PASS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "CLOUD_EGRESS_STREAM_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "STORE_FORWARD_ACTIVE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "SEMANTIC_PIPELINE_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "FIELD_INGEST_CONVERGED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "CAPSTONE_MASTER_INIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

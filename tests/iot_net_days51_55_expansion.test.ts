@@ -14,8 +14,8 @@ test('Course 18: IoT Networking & Cloud Protocols (iot_net) Month 2 Block 11 (Da
     assert.equal(isCourseVisualsEnabled('iot_net'), true, 'iot_net course prefix must have visuals support enabled');
   });
 
-  await t.test('2. LongLessons structural integrity, pedagogical depth, and invariants for Days 51-54', () => {
-    for (const day of [51, 52, 53, 54]) {
+  await t.test('2. LongLessons structural integrity, pedagogical depth, and invariants for Days 51-55', () => {
+    for (const day of [51, 52, 53, 54, 55]) {
       const lesson = getLongLesson('iot_net', day);
       assert.ok(lesson, `Day ${day} must exist in iotNetLongLessons.ts registry`);
       assert.equal(lesson.coursePrefix, 'iot_net', `Day ${day} coursePrefix must be 'iot_net'`);
@@ -54,8 +54,8 @@ test('Course 18: IoT Networking & Cloud Protocols (iot_net) Month 2 Block 11 (Da
     }
   });
 
-  await t.test('3. On-disk visual JSON files and raw SHA-256 codeHash contracts for Days 51-54', () => {
-    for (const day of [51, 52, 53, 54]) {
+  await t.test('3. On-disk visual JSON files and raw SHA-256 codeHash contracts for Days 51-55', () => {
+    for (const day of [51, 52, 53, 54, 55]) {
       const dayFile = loadDayFile('iot_net', day);
       assert.ok(dayFile, `loadDayFile('iot_net', ${day}) must successfully load`);
       assert.equal(dayFile.schemaVersion, 1, `Day ${day} schemaVersion must be 1`);
@@ -85,8 +85,8 @@ test('Course 18: IoT Networking & Cloud Protocols (iot_net) Month 2 Block 11 (Da
     }
   });
 
-  await t.test('4. Dynamic Python code execution and deterministic output verification for Days 51-54', () => {
-    for (const day of [51, 52, 53, 54]) {
+  await t.test('4. Dynamic Python code execution and deterministic output verification for Days 51-55', () => {
+    for (const day of [51, 52, 53, 54, 55]) {
       const lesson = getLongLesson('iot_net', day);
       for (let pIdx = 0; pIdx < lesson.parts.length; pIdx++) {
         const part = lesson.parts[pIdx];
@@ -106,7 +106,7 @@ test('Course 18: IoT Networking & Cloud Protocols (iot_net) Month 2 Block 11 (Da
     }
   });
 
-  await t.test('5. Milestone & Token verification for Days 51-54', () => {
+  await t.test('5. Milestone & Token verification for Days 51-55', () => {
     const day51 = getLongLesson('iot_net', 51);
     assert.ok(day51, 'Day 51 must exist');
     assert.ok(day51.parts[4].output.includes('MODBUS_INDUSTRIAL_PROTOCOL_ENGINE_GRADE_A_PLUS_CERTIFIED'));
@@ -122,5 +122,9 @@ test('Course 18: IoT Networking & Cloud Protocols (iot_net) Month 2 Block 11 (Da
     const day54 = getLongLesson('iot_net', 54);
     assert.ok(day54, 'Day 54 must exist');
     assert.ok(day54.parts[4].output.includes('TSN_DETERMINISTIC_NETWORK_ENGINE_GRADE_A_PLUS_CERTIFIED'));
+
+    const day55 = getLongLesson('iot_net', 55);
+    assert.ok(day55, 'Day 55 must exist');
+    assert.ok(day55.parts[4].output.includes('INDUSTRIAL_IOT_GATEWAY_ENGINE_GRADE_A_PLUS_CERTIFIED'));
   });
 });
