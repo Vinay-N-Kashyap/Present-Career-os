@@ -1,0 +1,1425 @@
+{
+  "schemaVersion": 1,
+  "prefix": "iot_net",
+  "coursePrefix": "iot_net",
+  "day": 58,
+  "title": "Zero-Touch Provisioning (ZTP) & EST (RFC 7030), Cloud Device Fleet Provisioning (AWS / Azure DPS)",
+  "promptSha": "ztp-est-fleet-provisioning-day58-v2",
+  "model": "gpt-4o",
+  "codeHash": "f50b11db9397bcfcf72ee93851f0a5093e951053bf93f96471bdf5c190241cbf",
+  "spec": {
+    "template": "register-bits"
+  },
+  "entries": [
+    {
+      "partTitle": "Zero-Touch Provisioning (ZTP) Architecture & Claim Certificate Bootstrap",
+      "codeHash": "f50b11db9397bcfcf72ee93851f0a5093e951053bf93f96471bdf5c190241cbf",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 58 Part 1 — Zero-Touch Provisioning (ZTP) Architecture & Claim Certificate Bootstrap",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Power up unprovisioned gateway: Detect missing production configuration and enter ZTP mode.",
+            "registerName": "ZTP_BOOTSTRAP_REG",
+            "bitWidth": 8,
+            "hexValue": "0x81",
+            "decimalValue": 129,
+            "maskApplied": "0x81",
+            "bits": [
+              {
+                "index": 7,
+                "name": "ZTP_BOOTSTRAP_READY",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "ENROLL_AUTH_PASS",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "NONCE_CHALLENGE",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "WHITELIST_CHECK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "MTLS_BOOTSTRAP_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "HW_SERIAL_FETCH",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "CLAIM_CERT_LATCH",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "ZTP_BOOTSTRAP_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Load factory Claim Certificate: Bind restricted bootstrap credentials from secure flash.",
+            "registerName": "ZTP_BOOTSTRAP_REG",
+            "bitWidth": 8,
+            "hexValue": "0xDC",
+            "decimalValue": 220,
+            "maskApplied": "0xDC",
+            "bits": [
+              {
+                "index": 7,
+                "name": "ZTP_BOOTSTRAP_READY",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "ENROLL_AUTH_PASS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "NONCE_CHALLENGE",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "WHITELIST_CHECK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "MTLS_BOOTSTRAP_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "HW_SERIAL_FETCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "CLAIM_CERT_LATCH",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "ZTP_BOOTSTRAP_EN",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Transmit hardware MAC serial to cloud bootstrap broker over cellular backhaul.",
+            "registerName": "ZTP_BOOTSTRAP_REG",
+            "bitWidth": 8,
+            "hexValue": "0xBE",
+            "decimalValue": 190,
+            "maskApplied": "0xBE",
+            "bits": [
+              {
+                "index": 7,
+                "name": "ZTP_BOOTSTRAP_READY",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "ENROLL_AUTH_PASS",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "NONCE_CHALLENGE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "WHITELIST_CHECK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "MTLS_BOOTSTRAP_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "HW_SERIAL_FETCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "CLAIM_CERT_LATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "ZTP_BOOTSTRAP_EN",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Validate claim against ERP whitelist and receive ephemeral cryptographic nonce token.",
+            "registerName": "ZTP_BOOTSTRAP_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "ZTP_BOOTSTRAP_READY",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "ENROLL_AUTH_PASS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "NONCE_CHALLENGE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "WHITELIST_CHECK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "MTLS_BOOTSTRAP_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "HW_SERIAL_FETCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "CLAIM_CERT_LATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "ZTP_BOOTSTRAP_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "RFC 7030 Enrollment over Secure Transport (EST) & Autonomous Lifecycle Management",
+      "codeHash": "81363682ed36008a111f544daf5415246e6564ef1d989f54866b7bd5da4f5322",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 58 Part 2 — RFC 7030 Enrollment over Secure Transport (EST) & Autonomous Lifecycle Management",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Initialize RFC 7030 EST client: Dial /cacerts endpoint to update root CA trust store.",
+            "registerName": "EST_RFC7030_REG",
+            "bitWidth": 8,
+            "hexValue": "0x81",
+            "decimalValue": 129,
+            "maskApplied": "0x81",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EST_LIFECYCLE_ACTIVE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "PROD_CERT_LATCH",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "CA_SIGN_VERIFIED",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "SIMPLEENROLL_REQ",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "PKCS10_CSR_GEN",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "ON_CHIP_KEYGEN",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "CACERTS_FETCH_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "EST_CLIENT_INIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Execute on-chip keypair generation inside ATECC608A: Private key permanently sealed.",
+            "registerName": "EST_RFC7030_REG",
+            "bitWidth": 8,
+            "hexValue": "0xDF",
+            "decimalValue": 223,
+            "maskApplied": "0xDF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EST_LIFECYCLE_ACTIVE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "PROD_CERT_LATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "CA_SIGN_VERIFIED",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "SIMPLEENROLL_REQ",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "PKCS10_CSR_GEN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "ON_CHIP_KEYGEN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "CACERTS_FETCH_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "EST_CLIENT_INIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Format PKCS#10 Certificate Signing Request (CSR) with requested Subject Distinguished Name.",
+            "registerName": "EST_RFC7030_REG",
+            "bitWidth": 8,
+            "hexValue": "0xEF",
+            "decimalValue": 239,
+            "maskApplied": "0xEF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EST_LIFECYCLE_ACTIVE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "PROD_CERT_LATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "CA_SIGN_VERIFIED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "SIMPLEENROLL_REQ",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "PKCS10_CSR_GEN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "ON_CHIP_KEYGEN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "CACERTS_FETCH_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "EST_CLIENT_INIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Transmit /simpleenroll request and latch issued production certificate serial into non-volatile storage.",
+            "registerName": "EST_RFC7030_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "EST_LIFECYCLE_ACTIVE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "PROD_CERT_LATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "CA_SIGN_VERIFIED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "SIMPLEENROLL_REQ",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "PKCS10_CSR_GEN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "ON_CHIP_KEYGEN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "CACERTS_FETCH_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "EST_CLIENT_INIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "AWS IoT Fleet Provisioning by Claim: Provisioning Templates & Dynamic Resource Binding",
+      "codeHash": "4970dc6ce631946c8608598be050527a426824b899905869c08c4e8878500e2d",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 58 Part 3 — AWS IoT Fleet Provisioning by Claim: Provisioning Templates & Dynamic Resource Binding",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Establish mTLS to AWS IoT Core using factory claim certificate and subscribe to response topics.",
+            "registerName": "AWS_FLEET_PROV_REG",
+            "bitWidth": 8,
+            "hexValue": "0x81",
+            "decimalValue": 129,
+            "maskApplied": "0x81",
+            "bits": [
+              {
+                "index": 7,
+                "name": "AWS_FLEET_CONVERGED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "PROD_CONFIG_LATCH",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "IAM_POLICY_BIND",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "THING_REG_PASS",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "TEMPLATE_PARSE_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "CERT_OWN_TOKEN",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "CLAIM_MQTT_PUB",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "AWS_PROV_INIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Publish to $aws/certificates/create/json: Receive unique certificateId and ownership token.",
+            "registerName": "AWS_FLEET_PROV_REG",
+            "bitWidth": 8,
+            "hexValue": "0xDF",
+            "decimalValue": 223,
+            "maskApplied": "0xDF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "AWS_FLEET_CONVERGED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "PROD_CONFIG_LATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "IAM_POLICY_BIND",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "THING_REG_PASS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "TEMPLATE_PARSE_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "CERT_OWN_TOKEN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "CLAIM_MQTT_PUB",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "AWS_PROV_INIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Submit ownership token and parameters to IndustrialGatewayFleetTemplate provisioning topic.",
+            "registerName": "AWS_FLEET_PROV_REG",
+            "bitWidth": 8,
+            "hexValue": "0xEF",
+            "decimalValue": 239,
+            "maskApplied": "0xEF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "AWS_FLEET_CONVERGED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "PROD_CONFIG_LATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "IAM_POLICY_BIND",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "THING_REG_PASS",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "TEMPLATE_PARSE_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "CERT_OWN_TOKEN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "CLAIM_MQTT_PUB",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "AWS_PROV_INIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Register Thing resource, attach least-privilege IAM policy, and switch to production credentials.",
+            "registerName": "AWS_FLEET_PROV_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "AWS_FLEET_CONVERGED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "PROD_CONFIG_LATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "IAM_POLICY_BIND",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "THING_REG_PASS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "TEMPLATE_PARSE_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "CERT_OWN_TOKEN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "CLAIM_MQTT_PUB",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "AWS_PROV_INIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Azure IoT Hub Device Provisioning Service (DPS): Dynamic Allocation & Multi-Region Orchestration",
+      "codeHash": "8e51c6888933c76957fde635eb67fdf858daa3d32838e86d8b97f9aea309d6c5",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 58 Part 4 — Azure IoT Hub Device Provisioning Service (DPS): Dynamic Allocation & Multi-Region Orchestration",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Initialize Azure DPS client: Configure ID Scope 0ne004A812C and global provisioning endpoint.",
+            "registerName": "AZURE_DPS_REG",
+            "bitWidth": 8,
+            "hexValue": "0x81",
+            "decimalValue": 129,
+            "maskApplied": "0x81",
+            "bits": [
+              {
+                "index": 7,
+                "name": "DPS_FLEET_READY",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "ASSIGNED_STATE_LATCH",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "TWIN_BOOTSTRAP_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "HUB_ROUTING_PASS",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "GEO_ALLOC_EVAL",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "X509_GROUP_ATTEST",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "GLOBAL_ENDPOINT_CONNECT",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "DPS_SCOPE_INIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Present X.509 leaf certificate signed by enterprise Sub-CA for Enrollment Group attestation.",
+            "registerName": "AZURE_DPS_REG",
+            "bitWidth": 8,
+            "hexValue": "0xB9",
+            "decimalValue": 185,
+            "maskApplied": "0xB9",
+            "bits": [
+              {
+                "index": 7,
+                "name": "DPS_FLEET_READY",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "ASSIGNED_STATE_LATCH",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "TWIN_BOOTSTRAP_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "HUB_ROUTING_PASS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "GEO_ALLOC_EVAL",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "X509_GROUP_ATTEST",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "GLOBAL_ENDPOINT_CONNECT",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "DPS_SCOPE_INIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Evaluate geo-latency allocation policy: Route robot arm gateway to closest regional hub (us-west).",
+            "registerName": "AZURE_DPS_REG",
+            "bitWidth": 8,
+            "hexValue": "0xEF",
+            "decimalValue": 239,
+            "maskApplied": "0xEF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "DPS_FLEET_READY",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "ASSIGNED_STATE_LATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "TWIN_BOOTSTRAP_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "HUB_ROUTING_PASS",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "GEO_ALLOC_EVAL",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "X509_GROUP_ATTEST",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "GLOBAL_ENDPOINT_CONNECT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "DPS_SCOPE_INIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Latch ASSIGNED state, disconnect from DPS, and establish permanent connection to target IoT Hub.",
+            "registerName": "AZURE_DPS_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "DPS_FLEET_READY",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "ASSIGNED_STATE_LATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "TWIN_BOOTSTRAP_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "HUB_ROUTING_PASS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "GEO_ALLOC_EVAL",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "X509_GROUP_ATTEST",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "GLOBAL_ENDPOINT_CONNECT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "DPS_SCOPE_INIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Masterclass Synthesis: Automated Multi-Cloud Zero-Touch Fleet Provisioning Engine",
+      "codeHash": "a5ec85d7e9c70679bb968544d70f79618c90ee62c05414dc012a6a89480141de",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 58 Part 5 — Masterclass Synthesis: Automated Multi-Cloud Zero-Touch Fleet Provisioning Engine",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Instantiate ZeroTouchFleetProvisioningEngine: Initialize multi-cloud fleet enrollment pipelines.",
+            "registerName": "ZTP_MASTER_FLEET_REG",
+            "bitWidth": 8,
+            "hexValue": "0x81",
+            "decimalValue": 129,
+            "maskApplied": "0x81",
+            "bits": [
+              {
+                "index": 7,
+                "name": "ZTP_ENGINE_CERTIFIED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "TOKEN_LATCH_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "TELEMETRY_STATS_PUB",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "ROGUE_INTERCEPT_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "CREDENTIAL_ROLLOVER",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "MULTI_CLOUD_ROUTER",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "FACTORY_CLAIM_GUARD",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "ZTP_MASTER_INIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Onboard wind turbine sensors: Route Blade Sensor 01 to AWS IoT Core and Sensor 02 to Azure DPS.",
+            "registerName": "ZTP_MASTER_FLEET_REG",
+            "bitWidth": 8,
+            "hexValue": "0xDF",
+            "decimalValue": 223,
+            "maskApplied": "0xDF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "ZTP_ENGINE_CERTIFIED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "TOKEN_LATCH_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "TELEMETRY_STATS_PUB",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "ROGUE_INTERCEPT_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "CREDENTIAL_ROLLOVER",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "MULTI_CLOUD_ROUTER",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "FACTORY_CLAIM_GUARD",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "ZTP_MASTER_INIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Intercept rogue device attempt bearing invalid claim credentials and increment audit telemetry counter.",
+            "registerName": "ZTP_MASTER_FLEET_REG",
+            "bitWidth": 8,
+            "hexValue": "0xEF",
+            "decimalValue": 239,
+            "maskApplied": "0xEF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "ZTP_ENGINE_CERTIFIED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "TOKEN_LATCH_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "TELEMETRY_STATS_PUB",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "ROGUE_INTERCEPT_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "CREDENTIAL_ROLLOVER",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "MULTI_CLOUD_ROUTER",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "FACTORY_CLAIM_GUARD",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "ZTP_MASTER_INIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Verify 100% zero-touch multi-cloud fleet convergence and latch ZTP_FLEET_PROVISIONING_ENGINE_GRADE_A_PLUS_CERTIFIED.",
+            "registerName": "ZTP_MASTER_FLEET_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "ZTP_ENGINE_CERTIFIED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "TOKEN_LATCH_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "TELEMETRY_STATS_PUB",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "ROGUE_INTERCEPT_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "CREDENTIAL_ROLLOVER",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "MULTI_CLOUD_ROUTER",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "FACTORY_CLAIM_GUARD",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "ZTP_MASTER_INIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
