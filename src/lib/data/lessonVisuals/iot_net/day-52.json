@@ -1,0 +1,1425 @@
+{
+  "schemaVersion": 1,
+  "prefix": "iot_net",
+  "coursePrefix": "iot_net",
+  "day": 52,
+  "title": "OPC UA: Information Modeling, AddressSpace Nodes, Binary Encoding & Secure Transport",
+  "promptSha": "opc-ua-industrial-info-model-day52-v2",
+  "model": "gpt-4o",
+  "codeHash": "b4f5229457aa15715cf94a54d6f149544654a13894a51847e7730a2f1148626a",
+  "spec": {
+    "template": "register-bits"
+  },
+  "entries": [
+    {
+      "partTitle": "Day 52 Part 1 — OPC UA Architecture & AddressSpace Information Modeling",
+      "codeHash": "b4f5229457aa15715cf94a54d6f149544654a13894a51847e7730a2f1148626a",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 52 Part 1 — OPC UA Architecture & AddressSpace Information Modeling",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Initialize OPC UA AddressSpace: Instantiate standard Root (ns=0;i=84) and Objects folders.",
+            "registerName": "OPC_UA_ADDRSPACE_REG",
+            "bitWidth": 8,
+            "hexValue": "0x83",
+            "decimalValue": 131,
+            "maskApplied": "0x83",
+            "bits": [
+              {
+                "index": 7,
+                "name": "BROWSE_TREE_PASS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "REF_HAS_COMPONENT",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "REF_ORGANIZES",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "METHOD_NODE_ADD",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "VARIABLE_NODE_ADD",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "OBJECT_NODE_ADD",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "ROOT_FOLDER_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "ADDRSPACE_INIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Create ObjectNode for CentrifugalPump_01 linked to Objects folder via Organizes reference.",
+            "registerName": "OPC_UA_ADDRSPACE_REG",
+            "bitWidth": 8,
+            "hexValue": "0x87",
+            "decimalValue": 135,
+            "maskApplied": "0x87",
+            "bits": [
+              {
+                "index": 7,
+                "name": "BROWSE_TREE_PASS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "REF_HAS_COMPONENT",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "REF_ORGANIZES",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "METHOD_NODE_ADD",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "VARIABLE_NODE_ADD",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "OBJECT_NODE_ADD",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "ROOT_FOLDER_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "ADDRSPACE_INIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Attach VariableNodes MotorSpeed and BearingTemperature via HasComponent references.",
+            "registerName": "OPC_UA_ADDRSPACE_REG",
+            "bitWidth": 8,
+            "hexValue": "0xBF",
+            "decimalValue": 191,
+            "maskApplied": "0xBF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "BROWSE_TREE_PASS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "REF_HAS_COMPONENT",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "REF_ORGANIZES",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "METHOD_NODE_ADD",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "VARIABLE_NODE_ADD",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "OBJECT_NODE_ADD",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "ROOT_FOLDER_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "ADDRSPACE_INIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Execute Browse service: Discover full industrial asset topology and component properties.",
+            "registerName": "OPC_UA_ADDRSPACE_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "BROWSE_TREE_PASS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "REF_HAS_COMPONENT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "REF_ORGANIZES",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "METHOD_NODE_ADD",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "VARIABLE_NODE_ADD",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "OBJECT_NODE_ADD",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "ROOT_FOLDER_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "ADDRSPACE_INIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Day 52 Part 2 — NodeId Formats & DataValue Diagnostic Structures",
+      "codeHash": "ba6bdfaa2e7127a3245f01346ef5405bebfaa6947a20389954e4356bbf7355da",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 52 Part 2 — NodeId Formats & DataValue Diagnostic Structures",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Resolve Namespace Index: Map ns=2 to custom plant URI and parse NodeId identifier.",
+            "registerName": "OPC_UA_NODEID_REG",
+            "bitWidth": 8,
+            "hexValue": "0x81",
+            "decimalValue": 129,
+            "maskApplied": "0x81",
+            "bits": [
+              {
+                "index": 7,
+                "name": "DATA_DIAG_PASS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "SRV_TIMESTAMP_SET",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "SRC_TIMESTAMP_SET",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "STATUS_GOOD_0X0",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "DATAVALUE_CONTAIN",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "STRING_ID_MATCH",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "NUMERIC_ID_MATCH",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "NS_INDEX_RESOLV",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Encapsulate sensor reading within DataValue: Assign float value and StatusCode Good (0x00000000).",
+            "registerName": "OPC_UA_NODEID_REG",
+            "bitWidth": 8,
+            "hexValue": "0x8F",
+            "decimalValue": 143,
+            "maskApplied": "0x8F",
+            "bits": [
+              {
+                "index": 7,
+                "name": "DATA_DIAG_PASS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "SRV_TIMESTAMP_SET",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "SRC_TIMESTAMP_SET",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "STATUS_GOOD_0X0",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "DATAVALUE_CONTAIN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "STRING_ID_MATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "NUMERIC_ID_MATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "NS_INDEX_RESOLV",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Record microsecond UTC SourceTimestamp (sensor sample) and ServerTimestamp (ingestion).",
+            "registerName": "OPC_UA_NODEID_REG",
+            "bitWidth": 8,
+            "hexValue": "0xBF",
+            "decimalValue": 191,
+            "maskApplied": "0xBF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "DATA_DIAG_PASS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "SRV_TIMESTAMP_SET",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "SRC_TIMESTAMP_SET",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "STATUS_GOOD_0X0",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "DATAVALUE_CONTAIN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "STRING_ID_MATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "NUMERIC_ID_MATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "NS_INDEX_RESOLV",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Format full diagnostic telemetry record and verify legal compliance audit trail.",
+            "registerName": "OPC_UA_NODEID_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "DATA_DIAG_PASS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "SRV_TIMESTAMP_SET",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "SRC_TIMESTAMP_SET",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "STATUS_GOOD_0X0",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "DATAVALUE_CONTAIN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "STRING_ID_MATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "NUMERIC_ID_MATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "NS_INDEX_RESOLV",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Day 52 Part 3 — OPC UA Binary Encoding (UADP) & Serialization Engine",
+      "codeHash": "435177b188f4c82a999e4e034406a3d5c9440ac3d1ad344669940df27427f160",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 52 Part 3 — OPC UA Binary Encoding (UADP) & Serialization Engine",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Initialize OPC UA Binary encoder: Configure Little-Endian serialization for numeric primitives.",
+            "registerName": "OPC_UA_BINARY_ENC_REG",
+            "bitWidth": 8,
+            "hexValue": "0x81",
+            "decimalValue": 129,
+            "maskApplied": "0x81",
+            "bits": [
+              {
+                "index": 7,
+                "name": "BINARY_STREAM_PASS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "EXTENSION_OBJ_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "ARRAY_PACK_CONTIG",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "NULL_STR_0XFFFF",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "STR_LEN_PREFIX_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "FLOAT32_ENCODE_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "INT32_ENCODE_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "UADP_LITTLE_ENDIAN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Encode length-prefixed UTF-8 string: Prefix 4-byte Int32 length followed by raw byte payload.",
+            "registerName": "OPC_UA_BINARY_ENC_REG",
+            "bitWidth": 8,
+            "hexValue": "0x8B",
+            "decimalValue": 139,
+            "maskApplied": "0x8B",
+            "bits": [
+              {
+                "index": 7,
+                "name": "BINARY_STREAM_PASS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "EXTENSION_OBJ_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "ARRAY_PACK_CONTIG",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "NULL_STR_0XFFFF",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "STR_LEN_PREFIX_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "FLOAT32_ENCODE_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "INT32_ENCODE_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "UADP_LITTLE_ENDIAN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Serialize multi-variable packet: Pack node name, Int32 speed (1750 RPM), and Float temp (68.45 C).",
+            "registerName": "OPC_UA_BINARY_ENC_REG",
+            "bitWidth": 8,
+            "hexValue": "0xBF",
+            "decimalValue": 191,
+            "maskApplied": "0xBF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "BINARY_STREAM_PASS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "EXTENSION_OBJ_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "ARRAY_PACK_CONTIG",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "NULL_STR_0XFFFF",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "STR_LEN_PREFIX_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "FLOAT32_ENCODE_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "INT32_ENCODE_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "UADP_LITTLE_ENDIAN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Verify zero-copy buffer deserialization and confirm 100% lossless binary round-trip.",
+            "registerName": "OPC_UA_BINARY_ENC_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "BINARY_STREAM_PASS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "EXTENSION_OBJ_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "ARRAY_PACK_CONTIG",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "NULL_STR_0XFFFF",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "STR_LEN_PREFIX_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "FLOAT32_ENCODE_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "INT32_ENCODE_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "UADP_LITTLE_ENDIAN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Day 52 Part 4 — Secure Channel Architecture: OPC.TCP & Security Token Negotiation",
+      "codeHash": "f3fe1a747d387034f1fd662af1d05a2a0b74e7160020b3f258783b67beff77ad",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 52 Part 4 — Secure Channel Architecture: OPC.TCP & Security Token Negotiation",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Establish raw TCP connection on port 4840: Complete Hello (HEL) and Acknowledge (ACK) handshake.",
+            "registerName": "OPC_UA_SEC_CHANNEL_REG",
+            "bitWidth": 8,
+            "hexValue": "0x83",
+            "decimalValue": 131,
+            "maskApplied": "0x83",
+            "bits": [
+              {
+                "index": 7,
+                "name": "SEC_CHANNEL_ACTIVE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "AES256_SESSION_LATCH",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "NONCE_32B_DERIVE",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "X509_CA_VERIFY",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "ASYMM_CERT_EXCH",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "SEC_POLICY_NEGOT",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "HELLO_ACK_SYNC",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "OPCTCP_PORT_4840",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Issue OpenSecureChannel request: Negotiate Basic256Sha256 security policy with SignAndEncrypt mode.",
+            "registerName": "OPC_UA_SEC_CHANNEL_REG",
+            "bitWidth": 8,
+            "hexValue": "0x8F",
+            "decimalValue": 143,
+            "maskApplied": "0x8F",
+            "bits": [
+              {
+                "index": 7,
+                "name": "SEC_CHANNEL_ACTIVE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "AES256_SESSION_LATCH",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "NONCE_32B_DERIVE",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "X509_CA_VERIFY",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "ASYMM_CERT_EXCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "SEC_POLICY_NEGOT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "HELLO_ACK_SYNC",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "OPCTCP_PORT_4840",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Exchange X.509 digital certificates and 32-byte nonces; verify CA signature trust chains.",
+            "registerName": "OPC_UA_SEC_CHANNEL_REG",
+            "bitWidth": 8,
+            "hexValue": "0xBF",
+            "decimalValue": 191,
+            "maskApplied": "0xBF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "SEC_CHANNEL_ACTIVE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "AES256_SESSION_LATCH",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "NONCE_32B_DERIVE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "X509_CA_VERIFY",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "ASYMM_CERT_EXCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "SEC_POLICY_NEGOT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "HELLO_ACK_SYNC",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "OPCTCP_PORT_4840",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Derive symmetric AES-256 session keys and latch active secure channel state.",
+            "registerName": "OPC_UA_SEC_CHANNEL_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "SEC_CHANNEL_ACTIVE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "AES256_SESSION_LATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "NONCE_32B_DERIVE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "X509_CA_VERIFY",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "ASYMM_CERT_EXCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "SEC_POLICY_NEGOT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "HELLO_ACK_SYNC",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "OPCTCP_PORT_4840",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Day 52 Part 5 — Masterclass Synthesis: Comprehensive OPC UA Industrial Server Engine",
+      "codeHash": "73017a98568b72c504e24b803bf5a9403ab1b13267094516d58fdc76251def6e",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 52 Part 5 — Masterclass Synthesis: Comprehensive OPC UA Industrial Server Engine",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Initialize OpcUaMasterServerEngine: Register TurbineSpeed variable with 3600 RPM baseline.",
+            "registerName": "OPC_UA_MASTER_SRV_REG",
+            "bitWidth": 8,
+            "hexValue": "0x81",
+            "decimalValue": 129,
+            "maskApplied": "0x81",
+            "bits": [
+              {
+                "index": 7,
+                "name": "OPCUA_SERVER_CERT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "TOKEN_LATCH_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "NOTIFICATION_FIRE",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "PUB_INTERVAL_TICK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "DEADBAND_EVAL_EN",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "MONITORED_ITEM_REG",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "SUBSCRIPTION_CREATE",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "SRV_ENGINE_INIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Create Subscription with 250ms interval and attach MonitoredItem with 5.0 RPM deadband.",
+            "registerName": "OPC_UA_MASTER_SRV_REG",
+            "bitWidth": 8,
+            "hexValue": "0x8F",
+            "decimalValue": 143,
+            "maskApplied": "0x8F",
+            "bits": [
+              {
+                "index": 7,
+                "name": "OPCUA_SERVER_CERT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "TOKEN_LATCH_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "NOTIFICATION_FIRE",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "PUB_INTERVAL_TICK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "DEADBAND_EVAL_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "MONITORED_ITEM_REG",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "SUBSCRIPTION_CREATE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "SRV_ENGINE_INIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Sample sensor reading 3602 RPM: Fluctuation (< 5.0) suppressed by deadband filter.",
+            "registerName": "OPC_UA_MASTER_SRV_REG",
+            "bitWidth": 8,
+            "hexValue": "0xBF",
+            "decimalValue": 191,
+            "maskApplied": "0xBF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "OPCUA_SERVER_CERT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "TOKEN_LATCH_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "NOTIFICATION_FIRE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "PUB_INTERVAL_TICK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "DEADBAND_EVAL_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "MONITORED_ITEM_REG",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "SUBSCRIPTION_CREATE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "SRV_ENGINE_INIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Sample sensor reading 3608.5 RPM: Exceeds deadband; fire notification and latch token.",
+            "registerName": "OPC_UA_MASTER_SRV_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "OPCUA_SERVER_CERT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "TOKEN_LATCH_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "NOTIFICATION_FIRE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "PUB_INTERVAL_TICK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "DEADBAND_EVAL_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "MONITORED_ITEM_REG",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "SUBSCRIPTION_CREATE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "SRV_ENGINE_INIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
