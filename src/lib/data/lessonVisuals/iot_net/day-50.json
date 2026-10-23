@@ -1,0 +1,1425 @@
+{
+  "schemaVersion": 1,
+  "prefix": "iot_net",
+  "coursePrefix": "iot_net",
+  "day": 50,
+  "title": "Milestone 10 Capstone: 6LoWPAN, RPL & Thread 1.3 Border Router Simulation Engine",
+  "promptSha": "milestone-10-capstone-thread-border-router-day50-v2",
+  "model": "gpt-4o",
+  "codeHash": "15336dfcb00738f11504e0c9ac28b5842133e363069aec46518683f326275619",
+  "spec": {
+    "template": "register-bits"
+  },
+  "entries": [
+    {
+      "partTitle": "Day 50 Part 1 — Milestone 10 Capstone: Unified Multi-Hop Architecture & Role Coordinator",
+      "codeHash": "15336dfcb00738f11504e0c9ac28b5842133e363069aec46518683f326275619",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 50 Part 1 — Milestone 10 Capstone: Unified Multi-Hop Architecture & Role Coordinator",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Initialize IEEE 802.15.4 physical channel 25 and lock PAN ID 0xFACE.",
+            "registerName": "CAPSTONE_TOPOLOGY_REG",
+            "bitWidth": 8,
+            "hexValue": "0x81",
+            "decimalValue": 129,
+            "maskApplied": "0x81",
+            "bits": [
+              {
+                "index": 7,
+                "name": "TOPOLOGY_CONVERGED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "ROUTE64_SYNC_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "REED_STANDBY_EN",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "CHILD_TABLE_BOUND",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "ROUTER_ID_ALLOC",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "LEADER_RLOC_0",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "CH_CCA_SCAN_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "PAN_ID_LATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Assert Border Router Leader at RLOC 0x0000 and allocate Router ID 1 (0x0400).",
+            "registerName": "CAPSTONE_TOPOLOGY_REG",
+            "bitWidth": 8,
+            "hexValue": "0x87",
+            "decimalValue": 135,
+            "maskApplied": "0x87",
+            "bits": [
+              {
+                "index": 7,
+                "name": "TOPOLOGY_CONVERGED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "ROUTE64_SYNC_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "REED_STANDBY_EN",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "CHILD_TABLE_BOUND",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "ROUTER_ID_ALLOC",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "LEADER_RLOC_0",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "CH_CCA_SCAN_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "PAN_ID_LATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Attach Sleepy End Device child at RLOC 0x0401 and populate parent child table.",
+            "registerName": "CAPSTONE_TOPOLOGY_REG",
+            "bitWidth": 8,
+            "hexValue": "0xBF",
+            "decimalValue": 191,
+            "maskApplied": "0xBF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "TOPOLOGY_CONVERGED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "ROUTE64_SYNC_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "REED_STANDBY_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "CHILD_TABLE_BOUND",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "ROUTER_ID_ALLOC",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "LEADER_RLOC_0",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "CH_CCA_SCAN_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "PAN_ID_LATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Complete multi-hop mesh convergence: Synchronize Route64 distance-vector matrix.",
+            "registerName": "CAPSTONE_TOPOLOGY_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "TOPOLOGY_CONVERGED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "ROUTE64_SYNC_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "REED_STANDBY_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "CHILD_TABLE_BOUND",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "ROUTER_ID_ALLOC",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "LEADER_RLOC_0",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "CH_CCA_SCAN_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "PAN_ID_LATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Day 50 Part 2 — Dynamic Packet Processing Pipeline: 6LoWPAN IPHC & Fragmentation",
+      "codeHash": "ffa0e7771512e1c4e5baf81eaaf68c4c796d22ea8c5ebaa1cdc9620d25099b52",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 50 Part 2 — Dynamic Packet Processing Pipeline: 6LoWPAN IPHC & Fragmentation",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Apply RFC 6282 LOWPAN_IPHC compression: Elide common mesh IPv6 prefixes.",
+            "registerName": "CAPSTONE_PIPELINE_REG",
+            "bitWidth": 8,
+            "hexValue": "0x83",
+            "decimalValue": 131,
+            "maskApplied": "0x83",
+            "bits": [
+              {
+                "index": 7,
+                "name": "PIPELINE_VALID",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "REASSEMBLY_ARM",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "FRAGN_OFFSET_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "FRAG1_HDR_GEN",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "SAVINGS_40B_PASS",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "UDP_NHC_COMPRESS",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "ELIDED_PREFIX_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "IPHC_DISPATCH_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Execute LOWPAN_NHC: Compress 8-byte UDP header to 4 bytes, saving 41 bytes total.",
+            "registerName": "CAPSTONE_PIPELINE_REG",
+            "bitWidth": 8,
+            "hexValue": "0x8F",
+            "decimalValue": 143,
+            "maskApplied": "0x8F",
+            "bits": [
+              {
+                "index": 7,
+                "name": "PIPELINE_VALID",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "REASSEMBLY_ARM",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "FRAGN_OFFSET_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "FRAG1_HDR_GEN",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "SAVINGS_40B_PASS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "UDP_NHC_COMPRESS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "ELIDED_PREFIX_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "IPHC_DISPATCH_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Decompose 250-byte Matter payload into 8-byte aligned FRAG1 and FRAGN fragments.",
+            "registerName": "CAPSTONE_PIPELINE_REG",
+            "bitWidth": 8,
+            "hexValue": "0xBF",
+            "decimalValue": 191,
+            "maskApplied": "0xBF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "PIPELINE_VALID",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "REASSEMBLY_ARM",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "FRAGN_OFFSET_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "FRAG1_HDR_GEN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "SAVINGS_40B_PASS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "UDP_NHC_COMPRESS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "ELIDED_PREFIX_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "IPHC_DISPATCH_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Reassemble fragments in receiver buffer with active watchdog timer validation.",
+            "registerName": "CAPSTONE_PIPELINE_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "PIPELINE_VALID",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "REASSEMBLY_ARM",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "FRAGN_OFFSET_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "FRAG1_HDR_GEN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "SAVINGS_40B_PASS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "UDP_NHC_COMPRESS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "ELIDED_PREFIX_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "IPHC_DISPATCH_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Day 50 Part 3 — Border Router Ingress/Egress: Dual-Homed Bridging & NAT64 Translation",
+      "codeHash": "ca81c34020029c6d7590587c46cb74a96b989bb7af15c43cee1fa093480110a9",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 50 Part 3 — Border Router Ingress/Egress: Dual-Homed Bridging & NAT64 Translation",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Bring up dual-homed interfaces: Bind Linux eth0 and IEEE 802.15.4 wpan0.",
+            "registerName": "CAPSTONE_GATEWAY_REG",
+            "bitWidth": 8,
+            "hexValue": "0x81",
+            "decimalValue": 129,
+            "maskApplied": "0x81",
+            "bits": [
+              {
+                "index": 7,
+                "name": "GATEWAY_BRIDGED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "CHECKSUM_ADJ_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "PORT_MAP_ALLOC",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "NAT64_DNS64_SYNTH",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "RLOC_FORWARD_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "NDP_PROXY_MATCH",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "OMR_PREFIX_ADV",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "DUAL_HOMED_INIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Route inbound enterprise Matter UDP 5540 packet directly to edge RLOC 0x0401.",
+            "registerName": "CAPSTONE_GATEWAY_REG",
+            "bitWidth": 8,
+            "hexValue": "0x8F",
+            "decimalValue": 143,
+            "maskApplied": "0x8F",
+            "bits": [
+              {
+                "index": 7,
+                "name": "GATEWAY_BRIDGED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "CHECKSUM_ADJ_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "PORT_MAP_ALLOC",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "NAT64_DNS64_SYNTH",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "RLOC_FORWARD_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "NDP_PROXY_MATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "OMR_PREFIX_ADV",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "DUAL_HOMED_INIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Intercept outbound telemetry to 64:ff9b::/96 and map to stateful NAT64 port.",
+            "registerName": "CAPSTONE_GATEWAY_REG",
+            "bitWidth": 8,
+            "hexValue": "0xBF",
+            "decimalValue": 191,
+            "maskApplied": "0xBF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "GATEWAY_BRIDGED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "CHECKSUM_ADJ_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "PORT_MAP_ALLOC",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "NAT64_DNS64_SYNTH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "RLOC_FORWARD_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "NDP_PROXY_MATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "OMR_PREFIX_ADV",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "DUAL_HOMED_INIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Recalculate transport checksums via RFC 1624 and forward to WAN IPv4 gateway.",
+            "registerName": "CAPSTONE_GATEWAY_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "GATEWAY_BRIDGED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "CHECKSUM_ADJ_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "PORT_MAP_ALLOC",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "NAT64_DNS64_SYNTH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "RLOC_FORWARD_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "NDP_PROXY_MATCH",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "OMR_PREFIX_ADV",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "DUAL_HOMED_INIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Day 50 Part 4 — Resilience, Churn & Fault Recovery: Partition Healing & Trickle Reset",
+      "codeHash": "d044f21b2210524a062c4ebd5ca164ecc5c932a25be33a3880099816f8e02170",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 50 Part 4 — Resilience, Churn & Fault Recovery: Partition Healing & Trickle Reset",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Monitor radio link quality: Track LQI, RSSI, and MAC retry statistics.",
+            "registerName": "CAPSTONE_RECOVERY_REG",
+            "bitWidth": 8,
+            "hexValue": "0x81",
+            "decimalValue": 129,
+            "maskApplied": "0x81",
+            "bits": [
+              {
+                "index": 7,
+                "name": "RECOVERY_COMPLETE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "FAILOVER_EXEC",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "HYSTERESIS_CHECK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "BACKUP_CANDIDATE",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "TRICKLE_RESET_IMIN",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "LINK_FAIL_ASSERT",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "RETRY_EXHAUST_DET",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "ETX_MONITOR_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Simulate router RF failure: Detect MAC retry exhaustion and assert link dead.",
+            "registerName": "CAPSTONE_RECOVERY_REG",
+            "bitWidth": 8,
+            "hexValue": "0x87",
+            "decimalValue": 135,
+            "maskApplied": "0x87",
+            "bits": [
+              {
+                "index": 7,
+                "name": "RECOVERY_COMPLETE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "FAILOVER_EXEC",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "HYSTERESIS_CHECK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "BACKUP_CANDIDATE",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "TRICKLE_RESET_IMIN",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "LINK_FAIL_ASSERT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "RETRY_EXHAUST_DET",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "ETX_MONITOR_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Trigger topological inconsistency: Reset Trickle timer interval to I_min (10 ms).",
+            "registerName": "CAPSTONE_RECOVERY_REG",
+            "bitWidth": 8,
+            "hexValue": "0xBF",
+            "decimalValue": 191,
+            "maskApplied": "0xBF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "RECOVERY_COMPLETE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "FAILOVER_EXEC",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "HYSTERESIS_CHECK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "BACKUP_CANDIDATE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "TRICKLE_RESET_IMIN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "LINK_FAIL_ASSERT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "RETRY_EXHAUST_DET",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "ETX_MONITOR_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Execute atomic parent failover to ROUTER_02: Update next-hop pointer with zero data loss.",
+            "registerName": "CAPSTONE_RECOVERY_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "RECOVERY_COMPLETE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "FAILOVER_EXEC",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "HYSTERESIS_CHECK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "BACKUP_CANDIDATE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "TRICKLE_RESET_IMIN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "LINK_FAIL_ASSERT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "RETRY_EXHAUST_DET",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "ETX_MONITOR_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Day 50 Part 5 — Masterclass Synthesis: Full Capstone Simulation Engine & Certification Audit",
+      "codeHash": "18dfa74fc47aa204da7d1960827440822aad8be063983bfa6ec75a8aff7fc69d",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 50 Part 5 — Masterclass Synthesis: Full Capstone Simulation Engine & Certification Audit",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Initialize CapstoneMeshMasterEngine: Orchestrate multi-hop mesh on Channel 25.",
+            "registerName": "CAPSTONE_MASTER_CERT_REG",
+            "bitWidth": 8,
+            "hexValue": "0x81",
+            "decimalValue": 129,
+            "maskApplied": "0x81",
+            "bits": [
+              {
+                "index": 7,
+                "name": "CAPSTONE_CERTIFIED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "TOKEN_LATCH_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "TELEMETRY_PASS",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "RECOVERY_GRADE_A",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "GATEWAY_GRADE_A",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "IPHC_GRADE_A",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "TOPO_GRADE_A",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "CAPSTONE_INIT_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Execute comprehensive test cycle: Route 12 Matter packets and compress headers.",
+            "registerName": "CAPSTONE_MASTER_CERT_REG",
+            "bitWidth": 8,
+            "hexValue": "0x8F",
+            "decimalValue": 143,
+            "maskApplied": "0x8F",
+            "bits": [
+              {
+                "index": 7,
+                "name": "CAPSTONE_CERTIFIED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "TOKEN_LATCH_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "TELEMETRY_PASS",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "RECOVERY_GRADE_A",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "GATEWAY_GRADE_A",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "IPHC_GRADE_A",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "TOPO_GRADE_A",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "CAPSTONE_INIT_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Survive simulated link failure with zero dropped frames and verify NAT64 sessions.",
+            "registerName": "CAPSTONE_MASTER_CERT_REG",
+            "bitWidth": 8,
+            "hexValue": "0xBF",
+            "decimalValue": 191,
+            "maskApplied": "0xBF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "CAPSTONE_CERTIFIED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "TOKEN_LATCH_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "TELEMETRY_PASS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "RECOVERY_GRADE_A",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "GATEWAY_GRADE_A",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "IPHC_GRADE_A",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "TOPO_GRADE_A",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "CAPSTONE_INIT_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Satisfy all Grade A+ invariants and latch token THREAD_BORDER_ROUTER_CAPSTONE_ENGINE_GRADE_A_PLUS_CERTIFIED.",
+            "registerName": "CAPSTONE_MASTER_CERT_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "CAPSTONE_CERTIFIED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "TOKEN_LATCH_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "TELEMETRY_PASS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "RECOVERY_GRADE_A",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "GATEWAY_GRADE_A",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "IPHC_GRADE_A",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "TOPO_GRADE_A",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "CAPSTONE_INIT_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
