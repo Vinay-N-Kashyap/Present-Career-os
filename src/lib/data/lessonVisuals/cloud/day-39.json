@@ -1,0 +1,362 @@
+{
+  "schemaVersion": 2,
+  "prefix": "cloud",
+  "day": 39,
+  "entries": [
+    {
+      "partTitle": "AWS AppSync GraphQL Architecture: Managed WebSockets, Subscriptions & Filtered Fan-Out",
+      "codeHash": "27e46fd491a7c1a4344259dc1c061f969c365ff3339397bceb225812b4400ec7",
+      "spec": {
+        "template": "workflow",
+        "workflow": {
+          "title": "AWS AppSync GraphQL Architecture: Managed WebSockets, Subscriptions & Filtered Fan-Out",
+          "nodes": [
+            {
+              "id": "client",
+              "label": "WebSocket Client",
+              "status": "active"
+            },
+            {
+              "id": "appsync",
+              "label": "AppSync Gateway",
+              "status": "active"
+            },
+            {
+              "id": "resolver",
+              "label": "APPSYNC_JS Resolver P1",
+              "status": "active"
+            },
+            {
+              "id": "dynamo",
+              "label": "Amazon DynamoDB",
+              "status": "active"
+            }
+          ],
+          "edges": [
+            {
+              "from": "client",
+              "to": "appsync",
+              "label": "GraphQL Mutation"
+            },
+            {
+              "from": "appsync",
+              "to": "resolver",
+              "label": "Direct Invoke"
+            },
+            {
+              "from": "resolver",
+              "to": "dynamo",
+              "label": "Native Wire Call"
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "focus": "client",
+            "annotation": "Frontend clients establish persistent WebSockets with AppSync edge."
+          },
+          {
+            "at": "say2",
+            "focus": "appsync",
+            "annotation": "AppSync routes mutations and filters subscriptions by matching arguments."
+          },
+          {
+            "at": "example",
+            "focus": "resolver",
+            "annotation": "Native APPSYNC_JS resolvers execute in microsecond V8 isolates without Lambda."
+          },
+          {
+            "at": "tryIt",
+            "focus": "dynamo",
+            "annotation": "Direct DynamoDB calls commit state changes with optimistic concurrency locking."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Direct Data Sources: Native APPSYNC_JS vs Legacy Lambda Proxy Anti-Patterns",
+      "codeHash": "84cb8c95c6494b7aac6df43724d9245e654fe49f1ccc48706cff35894422bac8",
+      "spec": {
+        "template": "workflow",
+        "workflow": {
+          "title": "Direct Data Sources: Native APPSYNC_JS vs Legacy Lambda Proxy Anti-Patterns",
+          "nodes": [
+            {
+              "id": "client",
+              "label": "WebSocket Client",
+              "status": "active"
+            },
+            {
+              "id": "appsync",
+              "label": "AppSync Gateway",
+              "status": "active"
+            },
+            {
+              "id": "resolver",
+              "label": "APPSYNC_JS Resolver P2",
+              "status": "active"
+            },
+            {
+              "id": "dynamo",
+              "label": "Amazon DynamoDB",
+              "status": "active"
+            }
+          ],
+          "edges": [
+            {
+              "from": "client",
+              "to": "appsync",
+              "label": "GraphQL Mutation"
+            },
+            {
+              "from": "appsync",
+              "to": "resolver",
+              "label": "Direct Invoke"
+            },
+            {
+              "from": "resolver",
+              "to": "dynamo",
+              "label": "Native Wire Call"
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "focus": "client",
+            "annotation": "Frontend clients establish persistent WebSockets with AppSync edge."
+          },
+          {
+            "at": "say2",
+            "focus": "appsync",
+            "annotation": "AppSync routes mutations and filters subscriptions by matching arguments."
+          },
+          {
+            "at": "example",
+            "focus": "resolver",
+            "annotation": "Native APPSYNC_JS resolvers execute in microsecond V8 isolates without Lambda."
+          },
+          {
+            "at": "tryIt",
+            "focus": "dynamo",
+            "annotation": "Direct DynamoDB calls commit state changes with optimistic concurrency locking."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Advanced Pipeline Resolvers: Multi-Function Chaining, DynamoDB Transactions & Audit Logging",
+      "codeHash": "bf04cb90af8180fba0cff24d81cf576919f187eb3a27803879d82934b1b9f9f8",
+      "spec": {
+        "template": "workflow",
+        "workflow": {
+          "title": "Advanced Pipeline Resolvers: Multi-Function Chaining, DynamoDB Transactions & Audit Logging",
+          "nodes": [
+            {
+              "id": "client",
+              "label": "WebSocket Client",
+              "status": "active"
+            },
+            {
+              "id": "appsync",
+              "label": "AppSync Gateway",
+              "status": "active"
+            },
+            {
+              "id": "resolver",
+              "label": "APPSYNC_JS Resolver P3",
+              "status": "active"
+            },
+            {
+              "id": "dynamo",
+              "label": "Amazon DynamoDB",
+              "status": "active"
+            }
+          ],
+          "edges": [
+            {
+              "from": "client",
+              "to": "appsync",
+              "label": "GraphQL Mutation"
+            },
+            {
+              "from": "appsync",
+              "to": "resolver",
+              "label": "Direct Invoke"
+            },
+            {
+              "from": "resolver",
+              "to": "dynamo",
+              "label": "Native Wire Call"
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "focus": "client",
+            "annotation": "Frontend clients establish persistent WebSockets with AppSync edge."
+          },
+          {
+            "at": "say2",
+            "focus": "appsync",
+            "annotation": "AppSync routes mutations and filters subscriptions by matching arguments."
+          },
+          {
+            "at": "example",
+            "focus": "resolver",
+            "annotation": "Native APPSYNC_JS resolvers execute in microsecond V8 isolates without Lambda."
+          },
+          {
+            "at": "tryIt",
+            "focus": "dynamo",
+            "annotation": "Direct DynamoDB calls commit state changes with optimistic concurrency locking."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Security: Multi-Auth Modes, Cognito User Pools & Field-Level @auth Directives",
+      "codeHash": "a66a7d2a041a3f2f06ac962e1ef4c9fe55cf49fc702fd93c90aaedac913c481e",
+      "spec": {
+        "template": "workflow",
+        "workflow": {
+          "title": "Enterprise Security: Multi-Auth Modes, Cognito User Pools & Field-Level @auth Directives",
+          "nodes": [
+            {
+              "id": "client",
+              "label": "WebSocket Client",
+              "status": "active"
+            },
+            {
+              "id": "appsync",
+              "label": "AppSync Gateway",
+              "status": "active"
+            },
+            {
+              "id": "resolver",
+              "label": "APPSYNC_JS Resolver P4",
+              "status": "active"
+            },
+            {
+              "id": "dynamo",
+              "label": "Amazon DynamoDB",
+              "status": "active"
+            }
+          ],
+          "edges": [
+            {
+              "from": "client",
+              "to": "appsync",
+              "label": "GraphQL Mutation"
+            },
+            {
+              "from": "appsync",
+              "to": "resolver",
+              "label": "Direct Invoke"
+            },
+            {
+              "from": "resolver",
+              "to": "dynamo",
+              "label": "Native Wire Call"
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "focus": "client",
+            "annotation": "Frontend clients establish persistent WebSockets with AppSync edge."
+          },
+          {
+            "at": "say2",
+            "focus": "appsync",
+            "annotation": "AppSync routes mutations and filters subscriptions by matching arguments."
+          },
+          {
+            "at": "example",
+            "focus": "resolver",
+            "annotation": "Native APPSYNC_JS resolvers execute in microsecond V8 isolates without Lambda."
+          },
+          {
+            "at": "tryIt",
+            "focus": "dynamo",
+            "annotation": "Direct DynamoDB calls commit state changes with optimistic concurrency locking."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Masterclass Synthesis: Production Collaborative Document Architecture & WebSocket SRE",
+      "codeHash": "31f8bd42a9b588b802c6bc48a513840825849faddc5d20b8158389cdf7162722",
+      "spec": {
+        "template": "workflow",
+        "workflow": {
+          "title": "Masterclass Synthesis: Production Collaborative Document Architecture & WebSocket SRE",
+          "nodes": [
+            {
+              "id": "client",
+              "label": "WebSocket Client",
+              "status": "active"
+            },
+            {
+              "id": "appsync",
+              "label": "AppSync Gateway",
+              "status": "active"
+            },
+            {
+              "id": "resolver",
+              "label": "APPSYNC_JS Resolver P5",
+              "status": "active"
+            },
+            {
+              "id": "dynamo",
+              "label": "Amazon DynamoDB",
+              "status": "active"
+            }
+          ],
+          "edges": [
+            {
+              "from": "client",
+              "to": "appsync",
+              "label": "GraphQL Mutation"
+            },
+            {
+              "from": "appsync",
+              "to": "resolver",
+              "label": "Direct Invoke"
+            },
+            {
+              "from": "resolver",
+              "to": "dynamo",
+              "label": "Native Wire Call"
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "focus": "client",
+            "annotation": "Frontend clients establish persistent WebSockets with AppSync edge."
+          },
+          {
+            "at": "say2",
+            "focus": "appsync",
+            "annotation": "AppSync routes mutations and filters subscriptions by matching arguments."
+          },
+          {
+            "at": "example",
+            "focus": "resolver",
+            "annotation": "Native APPSYNC_JS resolvers execute in microsecond V8 isolates without Lambda."
+          },
+          {
+            "at": "tryIt",
+            "focus": "dynamo",
+            "annotation": "Direct DynamoDB calls commit state changes with optimistic concurrency locking."
+          }
+        ]
+      }
+    }
+  ]
+}
