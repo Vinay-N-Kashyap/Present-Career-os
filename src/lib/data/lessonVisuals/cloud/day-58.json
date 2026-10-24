@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 2,
+  "prefix": "cloud",
+  "day": 58,
+  "entries": [
+    {
+      "partIndex": 1,
+      "partTitle": "Serverless API Ingress: REST vs HTTP vs WebSocket Gateway Architectures",
+      "codeHash": "c9f5c6cd5c86ce215490d74632e4381d55931886ee51f5caa62cb9b7a869d909",
+      "spec": {
+        "template": "compare",
+        "left": {
+          "title": "Unprotected Ingress",
+          "badge": "Security Exposure",
+          "items": [
+            "Exposes backend compute directly to public web.",
+            "Lacks unified authentication and WAF filtering.",
+            "High latency without global edge caching."
+          ]
+        },
+        "right": {
+          "title": "API Gateway Tier",
+          "badge": "Managed Edge Ingress",
+          "items": [
+            "Single secure front door for all microservices.",
+            "HTTP APIs reduce latency by sixty percent.",
+            "WebSockets establish full-duplex TCP sockets."
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "annotation": "Exposing backend microservices directly to the web causes security risks."
+          },
+          {
+            "at": "say2",
+            "annotation": "API Gateway acts as the managed secure front door for cloud applications."
+          },
+          {
+            "at": "example",
+            "annotation": "Engine routes incoming requests across rest http and websocket protocols."
+          },
+          {
+            "at": "tryIt",
+            "annotation": "Protocol optimized routing delivers low latency and strict edge isolation."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 2,
+      "partTitle": "Ingress Governance: Token Bucket Throttling, Usage Plans & Lambda Authorizers",
+      "codeHash": "534a9b99ffb0c5f134bf5e416237aa49ab8022822c39ed2e9240dee8340aba84",
+      "spec": {
+        "template": "compare",
+        "left": {
+          "title": "Unthrottled APIs",
+          "badge": "Noisy Neighbor Risk",
+          "items": [
+            "Runaway client scripts saturate database pools.",
+            "Lacks commercial usage plan enforcement.",
+            "Authorizer overhead on repetitive client requests."
+          ]
+        },
+        "right": {
+          "title": "Token Bucket Guard",
+          "badge": "Governed Ingress",
+          "items": [
+            "Token bucket algorithm limits rate and burst.",
+            "Rejects excess calls at the edge with HTTP four twenty nine.",
+            "Authorizer result caching eliminates cold starts."
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "annotation": "Unthrottled api traffic allows rogue clients to saturate database pools."
+          },
+          {
+            "at": "say2",
+            "annotation": "Token bucket rate limiting throttles excessive requests at edge locations."
+          },
+          {
+            "at": "example",
+            "annotation": "Rate limiter enforces usage plans and throttles requests exceeding limits."
+          },
+          {
+            "at": "tryIt",
+            "annotation": "Tiered usage plans provide client isolation and commercial sla guarantees."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 3,
+      "partTitle": "Managed GraphQL: AWS AppSync Schema Directives, Pipeline & JS Resolvers",
+      "codeHash": "0f10af03e37fda3ae5190f18a3dac9399414ff87518127eec7d86af4c1fcba90",
+      "spec": {
+        "template": "compare",
+        "left": {
+          "title": "REST Over-Fetching",
+          "badge": "Bandwidth Waste",
+          "items": [
+            "Multiple HTTP roundtrips to render single screen.",
+            "Over-fetching wastes mobile bandwidth and battery.",
+            "Under-fetching causes sequential API request waterfalls."
+          ]
+        },
+        "right": {
+          "title": "AppSync GraphQL",
+          "badge": "Tailored Payload",
+          "items": [
+            "Single query retrieves exactly required fields.",
+            "JavaScript resolvers aggregate multi-source data.",
+            "Schema directives enforce field-level security."
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "annotation": "Traditional REST APIs suffer from over fetching and multiple roundtrips."
+          },
+          {
+            "at": "say2",
+            "annotation": "AppSync GraphQL delivers tailored payloads from multiple data sources."
+          },
+          {
+            "at": "example",
+            "annotation": "Resolver pipeline satisfies diverse operations across catalog and orders."
+          },
+          {
+            "at": "tryIt",
+            "annotation": "Single endpoint GraphQL aggregation slashes client latency and data usage."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 4,
+      "partTitle": "Real-Time Ingress: API Gateway WebSockets & Managed AppSync Subscriptions",
+      "codeHash": "9616171e80c64e2443ada3b620f25d952af59ea3ff2a09664df2102b084b1e30",
+      "spec": {
+        "template": "compare",
+        "left": {
+          "title": "HTTP Polling",
+          "badge": "Connection Inefficiency",
+          "items": [
+            "Clients repeatedly query servers for new state.",
+            "Drains mobile battery and floods web servers.",
+            "Delayed notification of critical business events."
+          ]
+        },
+        "right": {
+          "title": "WebSocket Push",
+          "badge": "Real-Time Push",
+          "items": [
+            "Persistent full-duplex TCP socket connection.",
+            "Pushes live events to clients in milliseconds.",
+            "Connection registry tracks active client sockets."
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "annotation": "HTTP long polling wastes server resources and drains mobile device battery."
+          },
+          {
+            "at": "say2",
+            "annotation": "WebSocket connections establish persistent bidirectional socket links."
+          },
+          {
+            "at": "example",
+            "annotation": "Manager maintains socket registry and broadcasts real time stock updates."
+          },
+          {
+            "at": "tryIt",
+            "annotation": "Real time push notifications deliver live updates within milliseconds."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 5,
+      "partTitle": "Enterprise Ingress Synthesis: Unified REST, GraphQL & WebSocket Edge Tier",
+      "codeHash": "9e573749d99da94d47eb0748f2107414b52aa4a2c242d7ea84ca46ab509f979a",
+      "spec": {
+        "template": "compare",
+        "left": {
+          "title": "Fragmented Ingress",
+          "badge": "Operational Overhead",
+          "items": [
+            "Isolated gateways managed with inconsistent security.",
+            "Lacks centralized tracing across protocols.",
+            "No unified cryptographic verification token."
+          ]
+        },
+        "right": {
+          "title": "Hybrid Edge Ingress",
+          "badge": "Unified Architecture",
+          "items": [
+            "Synthesizes REST, GraphQL, and WebSocket gateways.",
+            "WAF, JWT authorizers, and X-Ray tracing unified.",
+            "Emits cryptographic confirmation token upon test."
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "annotation": "Managing disparate ingress gateways leads to inconsistent security rules."
+          },
+          {
+            "at": "say2",
+            "annotation": "Unified hybrid edge tier coordinates REST GraphQL and WebSocket ingress."
+          },
+          {
+            "at": "example",
+            "annotation": "Platform synthesizes authentication rate limiting and low latency routing."
+          },
+          {
+            "at": "tryIt",
+            "annotation": "Synthesis confirms hybrid ingress operational and emits verified token."
+          }
+        ]
+      }
+    }
+  ]
+}
