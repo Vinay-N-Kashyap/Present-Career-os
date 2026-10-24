@@ -1,0 +1,779 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "dsa-optim",
+  "day": 37,
+  "promptSha": "e7f9de13106bcc392f9d5afb6fa5b9094c719afb4c34b69c2e13943f783e46bf",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Failure Functions, Border Arrays & The Classical Prefix Function Pi",
+      "codeHash": "56392c9fcd40badb070518e8dafa3e070662fcd0a4b680ee4cfb646592666670",
+      "filled": {
+        "template": "table",
+        "title": "Failure Functions, Border Arrays & The C Matrix",
+        "columns": [
+          "Prefix Substring",
+          "Longest Proper Border",
+          "Computed Pi Value"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Linear pattern matching eliminates rewinding upon character mismatch.",
+            "rows": [
+              [
+                "Prefix s[0..0] ('a')",
+                "Empty String Set",
+                "0 Integer Border"
+              ],
+              [
+                "Prefix s[0..1] ('aa')",
+                "Proper Border 'a'",
+                "1 Integer Border"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Seminal cornerstone defines prefix function for longest proper borders.",
+            "rows": [
+              [
+                "Prefix s[0..4] ('aabaa')",
+                "Proper Border 'aa'",
+                "2 Integer Border"
+              ],
+              [
+                "Prefix s[0..6] ('aabaaab')",
+                "Proper Border 'aab'",
+                "3 Integer Border"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Document indexing parser computes border arrays across wiki headers.",
+            "rows": [
+              [
+                "Document Marker A",
+                "Linear Border Scan",
+                "Inductive Advance"
+              ],
+              [
+                "Document Marker B",
+                "Fallback j = pi[j-1]",
+                "O(N) Amortized Pass"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Prefix oracle computes borders that expand and contract in linear time.",
+            "rows": [
+              [
+                "Prefix Function Pi",
+                "Zero Text Backtracking",
+                "Sub-millisecond SLA"
+              ],
+              [
+                "Border Array Table",
+                "Deterministic Invariant",
+                "Optimal Precomputation"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Failure Functions, Border Arrays & The C Matrix",
+        "columns": [
+          "Prefix Substring",
+          "Longest Proper Border",
+          "Computed Pi Value"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Linear pattern matching eliminates rewinding upon character mismatch.",
+            "rows": [
+              [
+                "Prefix s[0..0] ('a')",
+                "Empty String Set",
+                "0 Integer Border"
+              ],
+              [
+                "Prefix s[0..1] ('aa')",
+                "Proper Border 'a'",
+                "1 Integer Border"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Seminal cornerstone defines prefix function for longest proper borders.",
+            "rows": [
+              [
+                "Prefix s[0..4] ('aabaa')",
+                "Proper Border 'aa'",
+                "2 Integer Border"
+              ],
+              [
+                "Prefix s[0..6] ('aabaaab')",
+                "Proper Border 'aab'",
+                "3 Integer Border"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Document indexing parser computes border arrays across wiki headers.",
+            "rows": [
+              [
+                "Document Marker A",
+                "Linear Border Scan",
+                "Inductive Advance"
+              ],
+              [
+                "Document Marker B",
+                "Fallback j = pi[j-1]",
+                "O(N) Amortized Pass"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Prefix oracle computes borders that expand and contract in linear time.",
+            "rows": [
+              [
+                "Prefix Function Pi",
+                "Zero Text Backtracking",
+                "Sub-millisecond SLA"
+              ],
+              [
+                "Border Array Table",
+                "Deterministic Invariant",
+                "Optimal Precomputation"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Knuth-Morris-Pratt (KMP) Linear Pattern Matching Engine",
+      "codeHash": "6300022699db943cdbf69c49aff0c93cccafe655566592ecc4931a47ba98ca53",
+      "filled": {
+        "template": "table",
+        "title": "The Knuth-Morris-Pratt (KMP) Linear Patt Matrix",
+        "columns": [
+          "KMP Matching State",
+          "Text Pointer Action",
+          "Pattern Pointer Action"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Search algorithm discovers pattern occurrences in linear execution time.",
+            "rows": [
+              [
+                "Character Match",
+                "Strict Advance i++",
+                "Pattern Pointer j++"
+              ],
+              [
+                "Character Mismatch",
+                "Zero Backtrack Fixed i",
+                "Fallback j = pi[j-1]"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Pattern pointer advances strictly forward without rewinding text indices.",
+            "rows": [
+              [
+                "Full Pattern Hit",
+                "Occurrence at i-m+1",
+                "Transition j = pi[m-1]"
+              ],
+              [
+                "Streaming Socket",
+                "Monotonic Forward Sweep",
+                "Hardware Buffer Flush"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Border firewall inspects transit packet payloads at wire speed.",
+            "rows": [
+              [
+                "Transit Packet Scan",
+                "40 Gbps Interface",
+                "Real-time Payload"
+              ],
+              [
+                "Malware Signature",
+                "Exact Offset Discovery",
+                "Firewall Intercept"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Matcher executes instantaneous state fallbacks finding exact offset.",
+            "rows": [
+              [
+                "ReDoS Protection",
+                "Linear O(N+M) Guarantee",
+                "Anti-Denial Exploit"
+              ],
+              [
+                "Carrier Execution",
+                "Constant Per-Byte Cost",
+                "Deterministic Safety"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "The Knuth-Morris-Pratt (KMP) Linear Patt Matrix",
+        "columns": [
+          "KMP Matching State",
+          "Text Pointer Action",
+          "Pattern Pointer Action"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Search algorithm discovers pattern occurrences in linear execution time.",
+            "rows": [
+              [
+                "Character Match",
+                "Strict Advance i++",
+                "Pattern Pointer j++"
+              ],
+              [
+                "Character Mismatch",
+                "Zero Backtrack Fixed i",
+                "Fallback j = pi[j-1]"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Pattern pointer advances strictly forward without rewinding text indices.",
+            "rows": [
+              [
+                "Full Pattern Hit",
+                "Occurrence at i-m+1",
+                "Transition j = pi[m-1]"
+              ],
+              [
+                "Streaming Socket",
+                "Monotonic Forward Sweep",
+                "Hardware Buffer Flush"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Border firewall inspects transit packet payloads at wire speed.",
+            "rows": [
+              [
+                "Transit Packet Scan",
+                "40 Gbps Interface",
+                "Real-time Payload"
+              ],
+              [
+                "Malware Signature",
+                "Exact Offset Discovery",
+                "Firewall Intercept"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Matcher executes instantaneous state fallbacks finding exact offset.",
+            "rows": [
+              [
+                "ReDoS Protection",
+                "Linear O(N+M) Guarantee",
+                "Anti-Denial Exploit"
+              ],
+              [
+                "Carrier Execution",
+                "Constant Per-Byte Cost",
+                "Deterministic Safety"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "String Periodicity, Repetitions & Compression via Border Arrays",
+      "codeHash": "d92548a3b637a1cd26455a28e3138f8166083ff80e987cb269d089af0a0f54ea",
+      "filled": {
+        "template": "table",
+        "title": "String Periodicity, Repetitions & Compre Matrix",
+        "columns": [
+          "Periodicity Metric",
+          "Border Array State",
+          "Run-Length Encoding"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Prefix function uncovers structural string periodicity and symmetries.",
+            "rows": [
+              [
+                "String 'abcabcabcabc'",
+                "Longest Border pi[11]=9",
+                "Candidate Period k=3"
+              ],
+              [
+                "Divisibility Check",
+                "12 mod 3 === 0 Valid",
+                "Repeat Count r=4"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Period border duality determines smallest periodic repetition.",
+            "rows": [
+              [
+                "String 'aabaabaabaab'",
+                "Longest Border pi[11]=9",
+                "Candidate Period k=3"
+              ],
+              [
+                "Divisibility Check",
+                "12 mod 3 === 0 Valid",
+                "Repeat Count r=4"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Telemetry pipeline analyzes periodic vibration waveforms from sensor.",
+            "rows": [
+              [
+                "Turbine Vibration",
+                "Sinusoidal Waveform",
+                "Sensor Oscillation"
+              ],
+              [
+                "Bearing Imbalance",
+                "Periodic Run Flagged",
+                "RLE Compression Pass"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Analyzer checks modular divisibility discovering repeating unit.",
+            "rows": [
+              [
+                "Irregular Sequence",
+                "Border pi[15]=0",
+                "Non-periodic Unit"
+              ],
+              [
+                "Period-Border Duality",
+                "Linear O(N) Screening",
+                "Zero False Compressions"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "String Periodicity, Repetitions & Compre Matrix",
+        "columns": [
+          "Periodicity Metric",
+          "Border Array State",
+          "Run-Length Encoding"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Prefix function uncovers structural string periodicity and symmetries.",
+            "rows": [
+              [
+                "String 'abcabcabcabc'",
+                "Longest Border pi[11]=9",
+                "Candidate Period k=3"
+              ],
+              [
+                "Divisibility Check",
+                "12 mod 3 === 0 Valid",
+                "Repeat Count r=4"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Period border duality determines smallest periodic repetition.",
+            "rows": [
+              [
+                "String 'aabaabaabaab'",
+                "Longest Border pi[11]=9",
+                "Candidate Period k=3"
+              ],
+              [
+                "Divisibility Check",
+                "12 mod 3 === 0 Valid",
+                "Repeat Count r=4"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Telemetry pipeline analyzes periodic vibration waveforms from sensor.",
+            "rows": [
+              [
+                "Turbine Vibration",
+                "Sinusoidal Waveform",
+                "Sensor Oscillation"
+              ],
+              [
+                "Bearing Imbalance",
+                "Periodic Run Flagged",
+                "RLE Compression Pass"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Analyzer checks modular divisibility discovering repeating unit.",
+            "rows": [
+              [
+                "Irregular Sequence",
+                "Border pi[15]=0",
+                "Non-periodic Unit"
+              ],
+              [
+                "Period-Border Duality",
+                "Linear O(N) Screening",
+                "Zero False Compressions"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Deterministic Finite Automaton (DFA) Prefix Automaton",
+      "codeHash": "d95fc465e4446789c9b34d6e779cdb702c28695074acbd2537f929d979e4ec96",
+      "filled": {
+        "template": "table",
+        "title": "The Deterministic Finite Automaton (DFA) Matrix",
+        "columns": [
+          "DFA Transition Phase",
+          "State Function Input",
+          "Output Target State"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Deterministic automaton executes character transitions without loop jitter.",
+            "rows": [
+              [
+                "State 0 on Char 'a'",
+                "Advance to Match Prefix",
+                "Target State 1"
+              ],
+              [
+                "State 1 on Char 'b'",
+                "Advance to Match Prefix",
+                "Target State 2"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Prefix automaton maps alphabet characters into state transitions.",
+            "rows": [
+              [
+                "State 2 on Char 'a'",
+                "Full Pattern Reached",
+                "Target State 3 (Hit)"
+              ],
+              [
+                "State 2 on Char 'c'",
+                "Fallback via Pi Array",
+                "Precomputed State 0"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Matching engine scans exchange protocol messages via single table lookup.",
+            "rows": [
+              [
+                "Stock Exchange Feed",
+                "FIX Message Stream",
+                "25 Gbps Interface"
+              ],
+              [
+                "Surveillance Rule",
+                "CancelReplaceOrd Alert",
+                "Sub-microsecond SLA"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Simulate stream verifies automaton state transitions and pattern matches.",
+            "rows": [
+              [
+                "Memory Architecture",
+                "64-byte Cache Alignment",
+                "Zero DRAM Page Miss"
+              ],
+              [
+                "DFA Matrix Lookup",
+                "Single Machine Op",
+                "Hardware Wire Speed"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "The Deterministic Finite Automaton (DFA) Matrix",
+        "columns": [
+          "DFA Transition Phase",
+          "State Function Input",
+          "Output Target State"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Deterministic automaton executes character transitions without loop jitter.",
+            "rows": [
+              [
+                "State 0 on Char 'a'",
+                "Advance to Match Prefix",
+                "Target State 1"
+              ],
+              [
+                "State 1 on Char 'b'",
+                "Advance to Match Prefix",
+                "Target State 2"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Prefix automaton maps alphabet characters into state transitions.",
+            "rows": [
+              [
+                "State 2 on Char 'a'",
+                "Full Pattern Reached",
+                "Target State 3 (Hit)"
+              ],
+              [
+                "State 2 on Char 'c'",
+                "Fallback via Pi Array",
+                "Precomputed State 0"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Matching engine scans exchange protocol messages via single table lookup.",
+            "rows": [
+              [
+                "Stock Exchange Feed",
+                "FIX Message Stream",
+                "25 Gbps Interface"
+              ],
+              [
+                "Surveillance Rule",
+                "CancelReplaceOrd Alert",
+                "Sub-microsecond SLA"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Simulate stream verifies automaton state transitions and pattern matches.",
+            "rows": [
+              [
+                "Memory Architecture",
+                "64-byte Cache Alignment",
+                "Zero DRAM Page Miss"
+              ],
+              [
+                "DFA Matrix Lookup",
+                "Single Machine Op",
+                "Hardware Wire Speed"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Application: Real-Time Stream Log Pattern Filter & Metric Counter",
+      "codeHash": "2d85f9e0a0dc1df953acfd7f8c6231e235221fc0f22497a9022f4c16ee4b38cf",
+      "filled": {
+        "template": "table",
+        "title": "Enterprise Application: Real-Time Stream Matrix",
+        "columns": [
+          "Log Surveillance Phase",
+          "Chunk State Transfer",
+          "Incident Telemetry"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Cloud observability architecture monitors streaming logs in real time.",
+            "rows": [
+              [
+                "Ingress Chunk 1",
+                "Initial State j=0",
+                "1 Split Match at 81"
+              ],
+              [
+                "Chunk 1 Boundary Exit",
+                "State Saved j=nextState",
+                "Zero Buffer Copy"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Matcher processes streaming chunks with deterministic linear throughput.",
+            "rows": [
+              [
+                "Ingress Chunk 2",
+                "Resumed from nextState",
+                "1 Match at Offset 81"
+              ],
+              [
+                "Incident Detection",
+                "502_BAD_GATEWAY Found",
+                "CRITICAL Severity Alert"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Proxy daemon detects gateway timeout triggering automated circuit breaker.",
+            "rows": [
+              [
+                "Circuit Breaker",
+                "Automated Remediation",
+                "Downstream Failover"
+              ],
+              [
+                "Prometheus Metric",
+                "OpenTelemetry Stream",
+                "Cluster Histogram Up"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Scanner bridges log chunk boundaries preserving active pattern state.",
+            "rows": [
+              [
+                "Multi-Core Sharding",
+                "Consistent Hash Ring",
+                "Zero Lock Contention"
+              ],
+              [
+                "Streaming Benchmark",
+                ">500 MB/s Core Rate",
+                "Carrier SLA Compliance"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Enterprise Application: Real-Time Stream Matrix",
+        "columns": [
+          "Log Surveillance Phase",
+          "Chunk State Transfer",
+          "Incident Telemetry"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Cloud observability architecture monitors streaming logs in real time.",
+            "rows": [
+              [
+                "Ingress Chunk 1",
+                "Initial State j=0",
+                "1 Split Match at 81"
+              ],
+              [
+                "Chunk 1 Boundary Exit",
+                "State Saved j=nextState",
+                "Zero Buffer Copy"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Matcher processes streaming chunks with deterministic linear throughput.",
+            "rows": [
+              [
+                "Ingress Chunk 2",
+                "Resumed from nextState",
+                "1 Match at Offset 81"
+              ],
+              [
+                "Incident Detection",
+                "502_BAD_GATEWAY Found",
+                "CRITICAL Severity Alert"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Proxy daemon detects gateway timeout triggering automated circuit breaker.",
+            "rows": [
+              [
+                "Circuit Breaker",
+                "Automated Remediation",
+                "Downstream Failover"
+              ],
+              [
+                "Prometheus Metric",
+                "OpenTelemetry Stream",
+                "Cluster Histogram Up"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Scanner bridges log chunk boundaries preserving active pattern state.",
+            "rows": [
+              [
+                "Multi-Core Sharding",
+                "Consistent Hash Ring",
+                "Zero Lock Contention"
+              ],
+              [
+                "Streaming Benchmark",
+                ">500 MB/s Core Rate",
+                "Carrier SLA Compliance"
+              ]
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
