@@ -1,0 +1,659 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom-accounting",
+  "day": 45,
+  "promptSha": "prompt_sha_bcom_accounting_day45_v1",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Strategic Role of the Group CFO & Architectural M&A Synthesis",
+      "codeHash": "4d0dc2c13510e141b2aa52c9d55ef3287610a4084546287a2236a5400961f2ae",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Strategic Role of the Group CFO & Archit... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($66,005,000) for Strategic Role of the Group CFO & Archit...",
+            "title": "Day 45 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 66005000,
+            "totalCredit": 66005000,
+            "entries": [
+              {
+                "id": "JNL-4501",
+                "account": "Multi-National Group Consolidated Assets & Investments",
+                "debit": 66005000,
+                "balance": 66005000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 45"
+              },
+              {
+                "id": "JNL-4502",
+                "account": "Consolidated Capital, NCI & Partnership Reserves",
+                "credit": 66005000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & consolidation elimination accrual ($4,584,301).",
+            "title": "Day 45 Journal \u2014 Consolidation & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 70589301,
+            "totalCredit": 70589301,
+            "entries": [
+              {
+                "id": "JNL-4501",
+                "account": "Multi-National Group Consolidated Assets & Investments",
+                "debit": 66005000,
+                "balance": 66005000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4503",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 4584301,
+                "balance": 70589301,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4502",
+                "account": "Consolidated Capital, NCI & Partnership Reserves",
+                "credit": 70589301,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 45 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 70589301,
+            "totalCredit": 70589301,
+            "entries": [
+              {
+                "id": "JNL-4501",
+                "account": "Multi-National Group Consolidated Assets & Investments",
+                "debit": 66005000,
+                "balance": 66005000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4503",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 4584301,
+                "balance": 70589301,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4502",
+                "account": "Consolidated Capital, NCI & Partnership Reserves",
+                "credit": 70589301,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 45 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 70589301,
+            "totalCredit": 70589301,
+            "entries": [
+              {
+                "id": "JNL-4501",
+                "account": "Multi-National Group Consolidated Assets & Investments",
+                "debit": 66005000,
+                "balance": 66005000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4503",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 4584301,
+                "balance": 70589301,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4502",
+                "account": "Consolidated Capital, NCI & Partnership Reserves",
+                "credit": 70589301,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Module 1: Executing the Acquisition Method & Purchase Price Allocation (Ind AS 103)",
+      "codeHash": "4d0dc2c13510e141b2aa52c9d55ef3287610a4084546287a2236a5400961f2ae",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Module 1: Executing the Acquisition Meth... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($66,010,000) for Module 1: Executing the Acquisition Meth...",
+            "title": "Day 45 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 66010000,
+            "totalCredit": 66010000,
+            "entries": [
+              {
+                "id": "JNL-4501",
+                "account": "Multi-National Group Consolidated Assets & Investments",
+                "debit": 66010000,
+                "balance": 66010000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 45"
+              },
+              {
+                "id": "JNL-4502",
+                "account": "Consolidated Capital, NCI & Partnership Reserves",
+                "credit": 66010000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & consolidation elimination accrual ($4,584,301).",
+            "title": "Day 45 Journal \u2014 Consolidation & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 70594301,
+            "totalCredit": 70594301,
+            "entries": [
+              {
+                "id": "JNL-4501",
+                "account": "Multi-National Group Consolidated Assets & Investments",
+                "debit": 66010000,
+                "balance": 66010000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4503",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 4584301,
+                "balance": 70594301,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4502",
+                "account": "Consolidated Capital, NCI & Partnership Reserves",
+                "credit": 70594301,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 45 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 70594301,
+            "totalCredit": 70594301,
+            "entries": [
+              {
+                "id": "JNL-4501",
+                "account": "Multi-National Group Consolidated Assets & Investments",
+                "debit": 66010000,
+                "balance": 66010000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4503",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 4584301,
+                "balance": 70594301,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4502",
+                "account": "Consolidated Capital, NCI & Partnership Reserves",
+                "credit": 70594301,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 45 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 70594301,
+            "totalCredit": 70594301,
+            "entries": [
+              {
+                "id": "JNL-4501",
+                "account": "Multi-National Group Consolidated Assets & Investments",
+                "debit": 66010000,
+                "balance": 66010000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4503",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 4584301,
+                "balance": 70594301,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4502",
+                "account": "Consolidated Capital, NCI & Partnership Reserves",
+                "credit": 70594301,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Module 2: Group Consolidation, Intra-Group Eliminations & Profit Attribution (Ind AS 110)",
+      "codeHash": "4d0dc2c13510e141b2aa52c9d55ef3287610a4084546287a2236a5400961f2ae",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Module 2: Group Consolidation, Intra-Gro... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($66,015,000) for Module 2: Group Consolidation, Intra-Gro...",
+            "title": "Day 45 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 66015000,
+            "totalCredit": 66015000,
+            "entries": [
+              {
+                "id": "JNL-4501",
+                "account": "Multi-National Group Consolidated Assets & Investments",
+                "debit": 66015000,
+                "balance": 66015000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 45"
+              },
+              {
+                "id": "JNL-4502",
+                "account": "Consolidated Capital, NCI & Partnership Reserves",
+                "credit": 66015000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & consolidation elimination accrual ($4,584,301).",
+            "title": "Day 45 Journal \u2014 Consolidation & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 70599301,
+            "totalCredit": 70599301,
+            "entries": [
+              {
+                "id": "JNL-4501",
+                "account": "Multi-National Group Consolidated Assets & Investments",
+                "debit": 66015000,
+                "balance": 66015000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4503",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 4584301,
+                "balance": 70599301,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4502",
+                "account": "Consolidated Capital, NCI & Partnership Reserves",
+                "credit": 70599301,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 45 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 70599301,
+            "totalCredit": 70599301,
+            "entries": [
+              {
+                "id": "JNL-4501",
+                "account": "Multi-National Group Consolidated Assets & Investments",
+                "debit": 66015000,
+                "balance": 66015000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4503",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 4584301,
+                "balance": 70599301,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4502",
+                "account": "Consolidated Capital, NCI & Partnership Reserves",
+                "credit": 70599301,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 45 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 70599301,
+            "totalCredit": 70599301,
+            "entries": [
+              {
+                "id": "JNL-4501",
+                "account": "Multi-National Group Consolidated Assets & Investments",
+                "debit": 66015000,
+                "balance": 66015000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4503",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 4584301,
+                "balance": 70599301,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4502",
+                "account": "Consolidated Capital, NCI & Partnership Reserves",
+                "credit": 70599301,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Module 3 & Module 4: Joint Partnerships (Ind AS 111 / 28) & Statutory Disclosures (Ind AS 112)",
+      "codeHash": "4d0dc2c13510e141b2aa52c9d55ef3287610a4084546287a2236a5400961f2ae",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Module 3 & Module 4: Joint Partnerships ... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($66,020,000) for Module 3 & Module 4: Joint Partnerships ...",
+            "title": "Day 45 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 66020000,
+            "totalCredit": 66020000,
+            "entries": [
+              {
+                "id": "JNL-4501",
+                "account": "Multi-National Group Consolidated Assets & Investments",
+                "debit": 66020000,
+                "balance": 66020000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 45"
+              },
+              {
+                "id": "JNL-4502",
+                "account": "Consolidated Capital, NCI & Partnership Reserves",
+                "credit": 66020000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & consolidation elimination accrual ($4,584,301).",
+            "title": "Day 45 Journal \u2014 Consolidation & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 70604301,
+            "totalCredit": 70604301,
+            "entries": [
+              {
+                "id": "JNL-4501",
+                "account": "Multi-National Group Consolidated Assets & Investments",
+                "debit": 66020000,
+                "balance": 66020000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4503",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 4584301,
+                "balance": 70604301,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4502",
+                "account": "Consolidated Capital, NCI & Partnership Reserves",
+                "credit": 70604301,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 45 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 70604301,
+            "totalCredit": 70604301,
+            "entries": [
+              {
+                "id": "JNL-4501",
+                "account": "Multi-National Group Consolidated Assets & Investments",
+                "debit": 66020000,
+                "balance": 66020000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4503",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 4584301,
+                "balance": 70604301,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4502",
+                "account": "Consolidated Capital, NCI & Partnership Reserves",
+                "credit": 70604301,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 45 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 70604301,
+            "totalCredit": 70604301,
+            "entries": [
+              {
+                "id": "JNL-4501",
+                "account": "Multi-National Group Consolidated Assets & Investments",
+                "debit": 66020000,
+                "balance": 66020000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4503",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 4584301,
+                "balance": 70604301,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4502",
+                "account": "Consolidated Capital, NCI & Partnership Reserves",
+                "credit": 70604301,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Grand Milestone 9 Execution, Validation & Certification",
+      "codeHash": "4d0dc2c13510e141b2aa52c9d55ef3287610a4084546287a2236a5400961f2ae",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Grand Milestone 9 Execution, Validation ... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($66,025,000) for Grand Milestone 9 Execution, Validation ...",
+            "title": "Day 45 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 66025000,
+            "totalCredit": 66025000,
+            "entries": [
+              {
+                "id": "JNL-4501",
+                "account": "Multi-National Group Consolidated Assets & Investments",
+                "debit": 66025000,
+                "balance": 66025000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 45"
+              },
+              {
+                "id": "JNL-4502",
+                "account": "Consolidated Capital, NCI & Partnership Reserves",
+                "credit": 66025000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & consolidation elimination accrual ($4,584,301).",
+            "title": "Day 45 Journal \u2014 Consolidation & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 70609301,
+            "totalCredit": 70609301,
+            "entries": [
+              {
+                "id": "JNL-4501",
+                "account": "Multi-National Group Consolidated Assets & Investments",
+                "debit": 66025000,
+                "balance": 66025000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4503",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 4584301,
+                "balance": 70609301,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4502",
+                "account": "Consolidated Capital, NCI & Partnership Reserves",
+                "credit": 70609301,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 45 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 70609301,
+            "totalCredit": 70609301,
+            "entries": [
+              {
+                "id": "JNL-4501",
+                "account": "Multi-National Group Consolidated Assets & Investments",
+                "debit": 66025000,
+                "balance": 66025000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4503",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 4584301,
+                "balance": 70609301,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4502",
+                "account": "Consolidated Capital, NCI & Partnership Reserves",
+                "credit": 70609301,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 45 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 70609301,
+            "totalCredit": 70609301,
+            "entries": [
+              {
+                "id": "JNL-4501",
+                "account": "Multi-National Group Consolidated Assets & Investments",
+                "debit": 66025000,
+                "balance": 66025000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4503",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 4584301,
+                "balance": 70609301,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4502",
+                "account": "Consolidated Capital, NCI & Partnership Reserves",
+                "credit": 70609301,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

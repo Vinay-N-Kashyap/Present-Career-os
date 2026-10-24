@@ -1,0 +1,659 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom-accounting",
+  "day": 44,
+  "promptSha": "prompt_sha_bcom_accounting_day44_v1",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Strategic Objective & Core Governance Architecture of Ind AS 112",
+      "codeHash": "0301530bdb297d96e5eecb46866f5c169c44fb4663a1cee560bc8a7f8543d38d",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Strategic Objective & Core Governance Ar... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($5,005,000) for Strategic Objective & Core Governance Ar...",
+            "title": "Day 44 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 5005000,
+            "totalCredit": 5005000,
+            "entries": [
+              {
+                "id": "JNL-4401",
+                "account": "Statutory Group Interest Assets & Disclosure Reserves",
+                "debit": 5005000,
+                "balance": 5005000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 44"
+              },
+              {
+                "id": "JNL-4402",
+                "account": "Structured Entity Liabilities & NCI Balances",
+                "credit": 5005000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & consolidation elimination accrual ($1,500,000).",
+            "title": "Day 44 Journal \u2014 Consolidation & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 6505000,
+            "totalCredit": 6505000,
+            "entries": [
+              {
+                "id": "JNL-4401",
+                "account": "Statutory Group Interest Assets & Disclosure Reserves",
+                "debit": 5005000,
+                "balance": 5005000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4403",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 1500000,
+                "balance": 6505000,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4402",
+                "account": "Structured Entity Liabilities & NCI Balances",
+                "credit": 6505000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 44 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 6505000,
+            "totalCredit": 6505000,
+            "entries": [
+              {
+                "id": "JNL-4401",
+                "account": "Statutory Group Interest Assets & Disclosure Reserves",
+                "debit": 5005000,
+                "balance": 5005000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4403",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 1500000,
+                "balance": 6505000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4402",
+                "account": "Structured Entity Liabilities & NCI Balances",
+                "credit": 6505000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 44 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 6505000,
+            "totalCredit": 6505000,
+            "entries": [
+              {
+                "id": "JNL-4401",
+                "account": "Statutory Group Interest Assets & Disclosure Reserves",
+                "debit": 5005000,
+                "balance": 5005000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4403",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 1500000,
+                "balance": 6505000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4402",
+                "account": "Structured Entity Liabilities & NCI Balances",
+                "credit": 6505000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Disclosures for Subsidiaries & Material Non-Controlling Interests (NCI)",
+      "codeHash": "0301530bdb297d96e5eecb46866f5c169c44fb4663a1cee560bc8a7f8543d38d",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Disclosures for Subsidiaries & Material ... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($5,010,000) for Disclosures for Subsidiaries & Material ...",
+            "title": "Day 44 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 5010000,
+            "totalCredit": 5010000,
+            "entries": [
+              {
+                "id": "JNL-4401",
+                "account": "Statutory Group Interest Assets & Disclosure Reserves",
+                "debit": 5010000,
+                "balance": 5010000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 44"
+              },
+              {
+                "id": "JNL-4402",
+                "account": "Structured Entity Liabilities & NCI Balances",
+                "credit": 5010000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & consolidation elimination accrual ($1,500,000).",
+            "title": "Day 44 Journal \u2014 Consolidation & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 6510000,
+            "totalCredit": 6510000,
+            "entries": [
+              {
+                "id": "JNL-4401",
+                "account": "Statutory Group Interest Assets & Disclosure Reserves",
+                "debit": 5010000,
+                "balance": 5010000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4403",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 1500000,
+                "balance": 6510000,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4402",
+                "account": "Structured Entity Liabilities & NCI Balances",
+                "credit": 6510000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 44 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 6510000,
+            "totalCredit": 6510000,
+            "entries": [
+              {
+                "id": "JNL-4401",
+                "account": "Statutory Group Interest Assets & Disclosure Reserves",
+                "debit": 5010000,
+                "balance": 5010000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4403",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 1500000,
+                "balance": 6510000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4402",
+                "account": "Structured Entity Liabilities & NCI Balances",
+                "credit": 6510000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 44 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 6510000,
+            "totalCredit": 6510000,
+            "entries": [
+              {
+                "id": "JNL-4401",
+                "account": "Statutory Group Interest Assets & Disclosure Reserves",
+                "debit": 5010000,
+                "balance": 5010000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4403",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 1500000,
+                "balance": 6510000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4402",
+                "account": "Structured Entity Liabilities & NCI Balances",
+                "credit": 6510000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Disclosures for Joint Arrangements & Associates (Ind AS 112 Paragraph 20\u201323)",
+      "codeHash": "0301530bdb297d96e5eecb46866f5c169c44fb4663a1cee560bc8a7f8543d38d",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Disclosures for Joint Arrangements & Ass... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($5,015,000) for Disclosures for Joint Arrangements & Ass...",
+            "title": "Day 44 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 5015000,
+            "totalCredit": 5015000,
+            "entries": [
+              {
+                "id": "JNL-4401",
+                "account": "Statutory Group Interest Assets & Disclosure Reserves",
+                "debit": 5015000,
+                "balance": 5015000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 44"
+              },
+              {
+                "id": "JNL-4402",
+                "account": "Structured Entity Liabilities & NCI Balances",
+                "credit": 5015000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & consolidation elimination accrual ($1,500,000).",
+            "title": "Day 44 Journal \u2014 Consolidation & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 6515000,
+            "totalCredit": 6515000,
+            "entries": [
+              {
+                "id": "JNL-4401",
+                "account": "Statutory Group Interest Assets & Disclosure Reserves",
+                "debit": 5015000,
+                "balance": 5015000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4403",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 1500000,
+                "balance": 6515000,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4402",
+                "account": "Structured Entity Liabilities & NCI Balances",
+                "credit": 6515000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 44 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 6515000,
+            "totalCredit": 6515000,
+            "entries": [
+              {
+                "id": "JNL-4401",
+                "account": "Statutory Group Interest Assets & Disclosure Reserves",
+                "debit": 5015000,
+                "balance": 5015000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4403",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 1500000,
+                "balance": 6515000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4402",
+                "account": "Structured Entity Liabilities & NCI Balances",
+                "credit": 6515000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 44 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 6515000,
+            "totalCredit": 6515000,
+            "entries": [
+              {
+                "id": "JNL-4401",
+                "account": "Statutory Group Interest Assets & Disclosure Reserves",
+                "debit": 5015000,
+                "balance": 5015000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4403",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 1500000,
+                "balance": 6515000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4402",
+                "account": "Structured Entity Liabilities & NCI Balances",
+                "credit": 6515000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Disclosures for Unconsolidated Structured Entities (Ind AS 112 Paragraph 24\u201331)",
+      "codeHash": "0301530bdb297d96e5eecb46866f5c169c44fb4663a1cee560bc8a7f8543d38d",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Disclosures for Unconsolidated Structure... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($5,020,000) for Disclosures for Unconsolidated Structure...",
+            "title": "Day 44 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 5020000,
+            "totalCredit": 5020000,
+            "entries": [
+              {
+                "id": "JNL-4401",
+                "account": "Statutory Group Interest Assets & Disclosure Reserves",
+                "debit": 5020000,
+                "balance": 5020000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 44"
+              },
+              {
+                "id": "JNL-4402",
+                "account": "Structured Entity Liabilities & NCI Balances",
+                "credit": 5020000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & consolidation elimination accrual ($1,500,000).",
+            "title": "Day 44 Journal \u2014 Consolidation & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 6520000,
+            "totalCredit": 6520000,
+            "entries": [
+              {
+                "id": "JNL-4401",
+                "account": "Statutory Group Interest Assets & Disclosure Reserves",
+                "debit": 5020000,
+                "balance": 5020000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4403",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 1500000,
+                "balance": 6520000,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4402",
+                "account": "Structured Entity Liabilities & NCI Balances",
+                "credit": 6520000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 44 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 6520000,
+            "totalCredit": 6520000,
+            "entries": [
+              {
+                "id": "JNL-4401",
+                "account": "Statutory Group Interest Assets & Disclosure Reserves",
+                "debit": 5020000,
+                "balance": 5020000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4403",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 1500000,
+                "balance": 6520000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4402",
+                "account": "Structured Entity Liabilities & NCI Balances",
+                "credit": 6520000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 44 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 6520000,
+            "totalCredit": 6520000,
+            "entries": [
+              {
+                "id": "JNL-4401",
+                "account": "Statutory Group Interest Assets & Disclosure Reserves",
+                "debit": 5020000,
+                "balance": 5020000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4403",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 1500000,
+                "balance": 6520000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4402",
+                "account": "Structured Entity Liabilities & NCI Balances",
+                "credit": 6520000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Executing the Python Disclosures Suite & Group Governance Sign-Off",
+      "codeHash": "0301530bdb297d96e5eecb46866f5c169c44fb4663a1cee560bc8a7f8543d38d",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Executing the Python Disclosures Suite &... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($5,025,000) for Executing the Python Disclosures Suite &...",
+            "title": "Day 44 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 5025000,
+            "totalCredit": 5025000,
+            "entries": [
+              {
+                "id": "JNL-4401",
+                "account": "Statutory Group Interest Assets & Disclosure Reserves",
+                "debit": 5025000,
+                "balance": 5025000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 44"
+              },
+              {
+                "id": "JNL-4402",
+                "account": "Structured Entity Liabilities & NCI Balances",
+                "credit": 5025000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & consolidation elimination accrual ($1,500,000).",
+            "title": "Day 44 Journal \u2014 Consolidation & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 6525000,
+            "totalCredit": 6525000,
+            "entries": [
+              {
+                "id": "JNL-4401",
+                "account": "Statutory Group Interest Assets & Disclosure Reserves",
+                "debit": 5025000,
+                "balance": 5025000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4403",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 1500000,
+                "balance": 6525000,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4402",
+                "account": "Structured Entity Liabilities & NCI Balances",
+                "credit": 6525000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 44 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 6525000,
+            "totalCredit": 6525000,
+            "entries": [
+              {
+                "id": "JNL-4401",
+                "account": "Statutory Group Interest Assets & Disclosure Reserves",
+                "debit": 5025000,
+                "balance": 5025000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4403",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 1500000,
+                "balance": 6525000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4402",
+                "account": "Structured Entity Liabilities & NCI Balances",
+                "credit": 6525000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 44 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 6525000,
+            "totalCredit": 6525000,
+            "entries": [
+              {
+                "id": "JNL-4401",
+                "account": "Statutory Group Interest Assets & Disclosure Reserves",
+                "debit": 5025000,
+                "balance": 5025000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4403",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 1500000,
+                "balance": 6525000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4402",
+                "account": "Structured Entity Liabilities & NCI Balances",
+                "credit": 6525000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
