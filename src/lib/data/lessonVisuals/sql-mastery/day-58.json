@@ -1,0 +1,829 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "sql-mastery",
+  "day": 58,
+  "promptSha": "b2362e8e3070ffffaa4b131d05b5fcc9ce7d8e0caa95c1fc37268c275155f321",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Row-Level Security (RLS) & Multi-Tenant Isolation Architecture",
+      "codeHash": "926015ec6381767689a06c4d0bb1735982db9b8078317f8bc8bc9cf766e4d948",
+      "spec": {
+        "template": "compare",
+        "title": "Enterprise Security Architecture - Part 1",
+        "leftLabel": "Vulnerable Security Architecture",
+        "rightLabel": "Hardened Enterprise Defense",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Enterprise security architecture enforces defense in depth boundaries.",
+            "left": {
+              "code": "Application-level WHERE tenant_id filters",
+              "result": {
+                "text": "forgotten filter leaks data across tenants"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Database Row-Level Security (RLS) with FORCE",
+              "result": {
+                "text": "kernel enforces isolation on all table queries"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Modern enterprise platforms implement engine level row security policies.",
+            "left": {
+              "code": "Plaintext sensitive storage on disk",
+              "result": {
+                "text": "backup theft exposes social security numbers"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "AES-256 encryption with blind HMAC indexing",
+              "result": {
+                "text": "data undecipherable without HSM master keys"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Commercial office building enforces smart electronic keycard permissions.",
+            "left": {
+              "code": "Unhardened SECURITY DEFINER procedure",
+              "result": {
+                "text": "search path injection grants attacker superuser"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "SET search_path = pg_catalog, pg_temp",
+              "result": {
+                "text": "function pinned to trusted system catalogs"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect security policy matrix and enterprise security objectives.",
+            "left": {
+              "code": "Standard mutable audit table",
+              "result": {
+                "text": "compromised admin deletes incriminating logs"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Cryptographic SHA-256 hash chaining",
+              "result": {
+                "text": "mathematically immutable tamper-evident ledger"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Enterprise Security Architecture - Part 1",
+        "leftLabel": "Vulnerable Security Architecture",
+        "rightLabel": "Hardened Enterprise Defense",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Enterprise security architecture enforces defense in depth boundaries.",
+            "left": {
+              "code": "Application-level WHERE tenant_id filters",
+              "result": {
+                "text": "forgotten filter leaks data across tenants"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Database Row-Level Security (RLS) with FORCE",
+              "result": {
+                "text": "kernel enforces isolation on all table queries"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Modern enterprise platforms implement engine level row security policies.",
+            "left": {
+              "code": "Plaintext sensitive storage on disk",
+              "result": {
+                "text": "backup theft exposes social security numbers"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "AES-256 encryption with blind HMAC indexing",
+              "result": {
+                "text": "data undecipherable without HSM master keys"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Commercial office building enforces smart electronic keycard permissions.",
+            "left": {
+              "code": "Unhardened SECURITY DEFINER procedure",
+              "result": {
+                "text": "search path injection grants attacker superuser"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "SET search_path = pg_catalog, pg_temp",
+              "result": {
+                "text": "function pinned to trusted system catalogs"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect security policy matrix and enterprise security objectives.",
+            "left": {
+              "code": "Standard mutable audit table",
+              "result": {
+                "text": "compromised admin deletes incriminating logs"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Cryptographic SHA-256 hash chaining",
+              "result": {
+                "text": "mathematically immutable tamper-evident ledger"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Session Contexts, Application Tenancy & Zero-Trust Policies",
+      "codeHash": "547c874179b92c7c76a8a741266614ecb5119c63d57209d3a6a899f372e5bf5c",
+      "spec": {
+        "template": "compare",
+        "title": "Enterprise Security Architecture - Part 2",
+        "leftLabel": "Vulnerable Security Architecture",
+        "rightLabel": "Hardened Enterprise Defense",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Enterprise platforms face session tenancy context resolution challenges.",
+            "left": {
+              "code": "Application-level WHERE tenant_id filters",
+              "result": {
+                "text": "forgotten filter leaks data across tenants"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Database Row-Level Security (RLS) with FORCE",
+              "result": {
+                "text": "kernel enforces isolation on all table queries"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Application servers connect using shared database connection pools.",
+            "left": {
+              "code": "Plaintext sensitive storage on disk",
+              "result": {
+                "text": "backup theft exposes social security numbers"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "AES-256 encryption with blind HMAC indexing",
+              "result": {
+                "text": "data undecipherable without HSM master keys"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Concierge staff attaches color coded tags to shared luggage carts.",
+            "left": {
+              "code": "Unhardened SECURITY DEFINER procedure",
+              "result": {
+                "text": "search path injection grants attacker superuser"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "SET search_path = pg_catalog, pg_temp",
+              "result": {
+                "text": "function pinned to trusted system catalogs"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect session tenancy benchmarks and production scalability ratings.",
+            "left": {
+              "code": "Standard mutable audit table",
+              "result": {
+                "text": "compromised admin deletes incriminating logs"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Cryptographic SHA-256 hash chaining",
+              "result": {
+                "text": "mathematically immutable tamper-evident ledger"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Enterprise Security Architecture - Part 2",
+        "leftLabel": "Vulnerable Security Architecture",
+        "rightLabel": "Hardened Enterprise Defense",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Enterprise platforms face session tenancy context resolution challenges.",
+            "left": {
+              "code": "Application-level WHERE tenant_id filters",
+              "result": {
+                "text": "forgotten filter leaks data across tenants"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Database Row-Level Security (RLS) with FORCE",
+              "result": {
+                "text": "kernel enforces isolation on all table queries"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Application servers connect using shared database connection pools.",
+            "left": {
+              "code": "Plaintext sensitive storage on disk",
+              "result": {
+                "text": "backup theft exposes social security numbers"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "AES-256 encryption with blind HMAC indexing",
+              "result": {
+                "text": "data undecipherable without HSM master keys"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Concierge staff attaches color coded tags to shared luggage carts.",
+            "left": {
+              "code": "Unhardened SECURITY DEFINER procedure",
+              "result": {
+                "text": "search path injection grants attacker superuser"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "SET search_path = pg_catalog, pg_temp",
+              "result": {
+                "text": "function pinned to trusted system catalogs"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect session tenancy benchmarks and production scalability ratings.",
+            "left": {
+              "code": "Standard mutable audit table",
+              "result": {
+                "text": "compromised admin deletes incriminating logs"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Cryptographic SHA-256 hash chaining",
+              "result": {
+                "text": "mathematically immutable tamper-evident ledger"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Column-Level Encryption, Cryptographic Hashing & Key Management",
+      "codeHash": "b5e6354035f1aa557f5980ec33546abbfc3a0972ca814a2e7a0281c5571d4d5c",
+      "spec": {
+        "template": "compare",
+        "title": "Enterprise Security Architecture - Part 3",
+        "leftLabel": "Vulnerable Security Architecture",
+        "rightLabel": "Hardened Enterprise Defense",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Regulatory compliance standards mandate column level encryption at rest.",
+            "left": {
+              "code": "Application-level WHERE tenant_id filters",
+              "result": {
+                "text": "forgotten filter leaks data across tenants"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Database Row-Level Security (RLS) with FORCE",
+              "result": {
+                "text": "kernel enforces isolation on all table queries"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Sensitive data columns remain undecipherable without cryptographic keys.",
+            "left": {
+              "code": "Plaintext sensitive storage on disk",
+              "result": {
+                "text": "backup theft exposes social security numbers"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "AES-256 encryption with blind HMAC indexing",
+              "result": {
+                "text": "data undecipherable without HSM master keys"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Armored courier transport delivers secured cryptographic lockboxes.",
+            "left": {
+              "code": "Unhardened SECURITY DEFINER procedure",
+              "result": {
+                "text": "search path injection grants attacker superuser"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "SET search_path = pg_catalog, pg_temp",
+              "result": {
+                "text": "function pinned to trusted system catalogs"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect column cryptography matrix and enterprise compliance targets.",
+            "left": {
+              "code": "Standard mutable audit table",
+              "result": {
+                "text": "compromised admin deletes incriminating logs"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Cryptographic SHA-256 hash chaining",
+              "result": {
+                "text": "mathematically immutable tamper-evident ledger"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Enterprise Security Architecture - Part 3",
+        "leftLabel": "Vulnerable Security Architecture",
+        "rightLabel": "Hardened Enterprise Defense",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Regulatory compliance standards mandate column level encryption at rest.",
+            "left": {
+              "code": "Application-level WHERE tenant_id filters",
+              "result": {
+                "text": "forgotten filter leaks data across tenants"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Database Row-Level Security (RLS) with FORCE",
+              "result": {
+                "text": "kernel enforces isolation on all table queries"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Sensitive data columns remain undecipherable without cryptographic keys.",
+            "left": {
+              "code": "Plaintext sensitive storage on disk",
+              "result": {
+                "text": "backup theft exposes social security numbers"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "AES-256 encryption with blind HMAC indexing",
+              "result": {
+                "text": "data undecipherable without HSM master keys"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Armored courier transport delivers secured cryptographic lockboxes.",
+            "left": {
+              "code": "Unhardened SECURITY DEFINER procedure",
+              "result": {
+                "text": "search path injection grants attacker superuser"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "SET search_path = pg_catalog, pg_temp",
+              "result": {
+                "text": "function pinned to trusted system catalogs"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect column cryptography matrix and enterprise compliance targets.",
+            "left": {
+              "code": "Standard mutable audit table",
+              "result": {
+                "text": "compromised admin deletes incriminating logs"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Cryptographic SHA-256 hash chaining",
+              "result": {
+                "text": "mathematically immutable tamper-evident ledger"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "SECURITY DEFINER Hardening, Principle of Least Privilege & Privilege Escalation Defenses",
+      "codeHash": "8b953aa022f1a774b7ca49f954294ac23b33a00439953a3ddf5253e73cf2d05f",
+      "spec": {
+        "template": "compare",
+        "title": "Enterprise Security Architecture - Part 4",
+        "leftLabel": "Vulnerable Security Architecture",
+        "rightLabel": "Hardened Enterprise Defense",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Enterprise procedures execute functions with elevated security roles.",
+            "left": {
+              "code": "Application-level WHERE tenant_id filters",
+              "result": {
+                "text": "forgotten filter leaks data across tenants"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Database Row-Level Security (RLS) with FORCE",
+              "result": {
+                "text": "kernel enforces isolation on all table queries"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Security definer functions execute using privileged creator permissions.",
+            "left": {
+              "code": "Plaintext sensitive storage on disk",
+              "result": {
+                "text": "backup theft exposes social security numbers"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "AES-256 encryption with blind HMAC indexing",
+              "result": {
+                "text": "data undecipherable without HSM master keys"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Municipal records clerk retrieves certified records from archival vaults.",
+            "left": {
+              "code": "Unhardened SECURITY DEFINER procedure",
+              "result": {
+                "text": "search path injection grants attacker superuser"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "SET search_path = pg_catalog, pg_temp",
+              "result": {
+                "text": "function pinned to trusted system catalogs"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect security defense matrix and operational security impacts.",
+            "left": {
+              "code": "Standard mutable audit table",
+              "result": {
+                "text": "compromised admin deletes incriminating logs"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Cryptographic SHA-256 hash chaining",
+              "result": {
+                "text": "mathematically immutable tamper-evident ledger"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Enterprise Security Architecture - Part 4",
+        "leftLabel": "Vulnerable Security Architecture",
+        "rightLabel": "Hardened Enterprise Defense",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Enterprise procedures execute functions with elevated security roles.",
+            "left": {
+              "code": "Application-level WHERE tenant_id filters",
+              "result": {
+                "text": "forgotten filter leaks data across tenants"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Database Row-Level Security (RLS) with FORCE",
+              "result": {
+                "text": "kernel enforces isolation on all table queries"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Security definer functions execute using privileged creator permissions.",
+            "left": {
+              "code": "Plaintext sensitive storage on disk",
+              "result": {
+                "text": "backup theft exposes social security numbers"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "AES-256 encryption with blind HMAC indexing",
+              "result": {
+                "text": "data undecipherable without HSM master keys"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Municipal records clerk retrieves certified records from archival vaults.",
+            "left": {
+              "code": "Unhardened SECURITY DEFINER procedure",
+              "result": {
+                "text": "search path injection grants attacker superuser"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "SET search_path = pg_catalog, pg_temp",
+              "result": {
+                "text": "function pinned to trusted system catalogs"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect security defense matrix and operational security impacts.",
+            "left": {
+              "code": "Standard mutable audit table",
+              "result": {
+                "text": "compromised admin deletes incriminating logs"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Cryptographic SHA-256 hash chaining",
+              "result": {
+                "text": "mathematically immutable tamper-evident ledger"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Forensic Audit Logging, Tamper-Evident Ledgers & Cryptographic Verification Runbooks",
+      "codeHash": "bf1b3cc01d56a139d330738abdb79f3d9596a8bf2bcdbd3fc5874bf95b1d5902",
+      "spec": {
+        "template": "compare",
+        "title": "Enterprise Security Architecture - Part 5",
+        "leftLabel": "Vulnerable Security Architecture",
+        "rightLabel": "Hardened Enterprise Defense",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Forensic audit logging builds tamper evident cryptographic ledgers.",
+            "left": {
+              "code": "Application-level WHERE tenant_id filters",
+              "result": {
+                "text": "forgotten filter leaks data across tenants"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Database Row-Level Security (RLS) with FORCE",
+              "result": {
+                "text": "kernel enforces isolation on all table queries"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Regulatory compliance frameworks mandate immutable audit logging trails.",
+            "left": {
+              "code": "Plaintext sensitive storage on disk",
+              "result": {
+                "text": "backup theft exposes social security numbers"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "AES-256 encryption with blind HMAC indexing",
+              "result": {
+                "text": "data undecipherable without HSM master keys"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Maritime shipping containers receive serialized tamper evident seals.",
+            "left": {
+              "code": "Unhardened SECURITY DEFINER procedure",
+              "result": {
+                "text": "search path injection grants attacker superuser"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "SET search_path = pg_catalog, pg_temp",
+              "result": {
+                "text": "function pinned to trusted system catalogs"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect forensic audit runbook and regulatory compliance mandates.",
+            "left": {
+              "code": "Standard mutable audit table",
+              "result": {
+                "text": "compromised admin deletes incriminating logs"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Cryptographic SHA-256 hash chaining",
+              "result": {
+                "text": "mathematically immutable tamper-evident ledger"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Enterprise Security Architecture - Part 5",
+        "leftLabel": "Vulnerable Security Architecture",
+        "rightLabel": "Hardened Enterprise Defense",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Forensic audit logging builds tamper evident cryptographic ledgers.",
+            "left": {
+              "code": "Application-level WHERE tenant_id filters",
+              "result": {
+                "text": "forgotten filter leaks data across tenants"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Database Row-Level Security (RLS) with FORCE",
+              "result": {
+                "text": "kernel enforces isolation on all table queries"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Regulatory compliance frameworks mandate immutable audit logging trails.",
+            "left": {
+              "code": "Plaintext sensitive storage on disk",
+              "result": {
+                "text": "backup theft exposes social security numbers"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "AES-256 encryption with blind HMAC indexing",
+              "result": {
+                "text": "data undecipherable without HSM master keys"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Maritime shipping containers receive serialized tamper evident seals.",
+            "left": {
+              "code": "Unhardened SECURITY DEFINER procedure",
+              "result": {
+                "text": "search path injection grants attacker superuser"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "SET search_path = pg_catalog, pg_temp",
+              "result": {
+                "text": "function pinned to trusted system catalogs"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect forensic audit runbook and regulatory compliance mandates.",
+            "left": {
+              "code": "Standard mutable audit table",
+              "result": {
+                "text": "compromised admin deletes incriminating logs"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Cryptographic SHA-256 hash chaining",
+              "result": {
+                "text": "mathematically immutable tamper-evident ledger"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
