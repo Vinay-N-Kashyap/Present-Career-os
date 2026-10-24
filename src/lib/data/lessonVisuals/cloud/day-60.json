@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 2,
+  "prefix": "cloud",
+  "day": 60,
+  "entries": [
+    {
+      "partIndex": 1,
+      "partTitle": "Capstone Ingress: Global Anycast Routing, Edge WAF Defense & Unified Gateways",
+      "codeHash": "4d54f6a89dfb5b8c5fffc78f5173dc225a94d281087033788730323175299952",
+      "spec": {
+        "template": "compare",
+        "left": {
+          "title": "Unprotected Direct Ingress",
+          "badge": "Vulnerability Risk",
+          "items": [
+            "Exposes backend compute directly to internet.",
+            "Lacks anycast routing and edge WAF filtering.",
+            "High international packet transit latency."
+          ]
+        },
+        "right": {
+          "title": "Master Ingress Edge",
+          "badge": "Zero-Trust Defense",
+          "items": [
+            "Over six hundred edge locations filter DDoS.",
+            "CloudFront and WAF block threats at line rate.",
+            "Unified API Gateways isolate private subnets."
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "annotation": "Direct public ingress exposes backend microservices to DDoS attacks."
+          },
+          {
+            "at": "say2",
+            "annotation": "CloudFront and WAF inspect global packets at edge locations worldwide."
+          },
+          {
+            "at": "example",
+            "annotation": "Edge tier permits authorized requests and blocks malicious attacks."
+          },
+          {
+            "at": "tryIt",
+            "annotation": "Private link and anycast routing deliver secure low latency ingress."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 2,
+      "partTitle": "Capstone Storage: Sub-10ms Polyglot Tier - Valkey, DynamoDB & Aurora Global",
+      "codeHash": "d886ef99c121bde6d3d83a89f0cbf47c1a59b594ed8d6cb623ffc39b46eeb8cf",
+      "spec": {
+        "template": "compare",
+        "left": {
+          "title": "Monolithic Database Tier",
+          "badge": "Contention Bottleneck",
+          "items": [
+            "Forces all access patterns into single engine.",
+            "Lock contention degrades flash sale checkouts.",
+            "High cross-region failover data loss risk."
+          ]
+        },
+        "right": {
+          "title": "Polyglot Data Tier",
+          "badge": "Sub-10ms Verified",
+          "items": [
+            "Valkey cache serves hot reads in one millisecond.",
+            "DynamoDB single table commits orders atomically.",
+            "Aurora maintains strict financial ledgers with zero RPO."
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "annotation": "Monolithic relational databases suffer severe lock contention at scale."
+          },
+          {
+            "at": "say2",
+            "annotation": "Polyglot persistence allocates workloads to specialized data engines."
+          },
+          {
+            "at": "example",
+            "annotation": "Orchestrator commits orders in DynamoDB Aurora and caches in Valkey."
+          },
+          {
+            "at": "tryIt",
+            "annotation": "Multi-tier storage achieves sub ten millisecond composite user latency."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 3,
+      "partTitle": "Capstone Orchestration: Asynchronous Choreography & Distributed Saga Workflows",
+      "codeHash": "6785c2d199abbddba5b249b7130df1b14271884a36d6d1443bd9648e10fd2092",
+      "spec": {
+        "template": "compare",
+        "left": {
+          "title": "Tightly Coupled Calls",
+          "badge": "Cascading Outages",
+          "items": [
+            "Synchronous REST chains cause cascading timeouts.",
+            "Lacks automated compensating rollback logic.",
+            "Poison pills block downstream processing queues."
+          ]
+        },
+        "right": {
+          "title": "Choreographed Saga Tier",
+          "badge": "Resilient Execution",
+          "items": [
+            "EventBridge and SNS fan-out decouple services.",
+            "SQS FIFO queues absorb traffic surges safely.",
+            "Step Functions sagas coordinate automatic rollbacks."
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "annotation": "Synchronous service coupling causes cascading failures under heavy load."
+          },
+          {
+            "at": "say2",
+            "annotation": "Asynchronous event choreography decouples publishers from consumers."
+          },
+          {
+            "at": "example",
+            "annotation": "Engine coordinates multi-step checkout saga with full verification."
+          },
+          {
+            "at": "tryIt",
+            "annotation": "Step Functions sagas execute compensating rollbacks upon step failure."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 4,
+      "partTitle": "Capstone Lakehouse: S3 Apache Iceberg, Streaming Athena Analytics & FinOps Governance",
+      "codeHash": "a7d531f3807b339a9139494aa9f30ab83031285b10be867383e0dc44f064d823",
+      "spec": {
+        "template": "compare",
+        "left": {
+          "title": "Legacy Data Warehouse",
+          "badge": "Scan Bottlenecks",
+          "items": [
+            "Uncompressed row scans inflate cloud storage costs.",
+            "Lacks ACID transactions on raw object storage.",
+            "Manual schema migrations cause analytics downtime."
+          ]
+        },
+        "right": {
+          "title": "Modern S3 Lakehouse",
+          "badge": "Ninety Percent Pruned",
+          "items": [
+            "Apache Iceberg provides ACID transactions on S3.",
+            "Columnar Parquet prunes scan volume by ninety percent.",
+            "Automated lifecycle tiering cuts storage expenses."
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "annotation": "Legacy row based warehouses incur exorbitant analytical scan costs."
+          },
+          {
+            "at": "say2",
+            "annotation": "Apache Iceberg brings ACID transactions and partitioning to object storage."
+          },
+          {
+            "at": "example",
+            "annotation": "Projector streams order events to Parquet partitions with scan pruning."
+          },
+          {
+            "at": "tryIt",
+            "annotation": "Serverless Athena SQL delivers real time business intelligence at scale."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 5,
+      "partTitle": "Grand Master Accreditation: 60-Day Curriculum Graduation & Architect Simulator",
+      "codeHash": "dc1b17147089136caed517de2af465b42807dbb8d0e11754bf6cb169bc070864",
+      "spec": {
+        "template": "compare",
+        "left": {
+          "title": "Uncertified Engineer",
+          "badge": "Architectural Gaps",
+          "items": [
+            "Partial understanding of cloud native design patterns.",
+            "Struggles with multi-region active-active failover.",
+            "Lacks comprehensive hands-on accreditation token."
+          ]
+        },
+        "right": {
+          "title": "Master Cloud Architect",
+          "badge": "Accredited Excellence",
+          "items": [
+            "All sixty instructional days conquered 100 percent.",
+            "Sub-10ms latency and four-nines availability verified.",
+            "Awarded official master accreditation token."
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "annotation": "Fragmented cloud knowledge leads to fragile and costly architectures."
+          },
+          {
+            "at": "say2",
+            "annotation": "Master cloud architects design resilient and cost optimized platforms."
+          },
+          {
+            "at": "example",
+            "annotation": "Simulator confirms sub ten millisecond latency and high availability."
+          },
+          {
+            "at": "tryIt",
+            "annotation": "Curriculum graduation awards master cloud architect accreditation."
+          }
+        ]
+      }
+    }
+  ]
+}

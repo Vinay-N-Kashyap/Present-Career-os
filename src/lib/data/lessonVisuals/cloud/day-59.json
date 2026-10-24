@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 2,
+  "prefix": "cloud",
+  "day": 59,
+  "entries": [
+    {
+      "partIndex": 1,
+      "partTitle": "Reliability Pillar: High Availability Engineering, MTTR Reduction & Fault Domains",
+      "codeHash": "da91569f97e46d45afec025edb2529988c5b37c71836cabc3829e9bc53414bf0",
+      "spec": {
+        "template": "compare",
+        "left": {
+          "title": "Single Zone System",
+          "badge": "Outage Vulnerable",
+          "items": [
+            "Single datacenter failure triggers full outage.",
+            "Manual recovery requires hours of downtime.",
+            "Lacks chaos engineering verification drills."
+          ]
+        },
+        "right": {
+          "title": "Well-Architected Multi-AZ",
+          "badge": "Self-Healing Reliability",
+          "items": [
+            "Multi-AZ deployment eliminates single points of failure.",
+            "Automated self-healing achieves four nines uptime.",
+            "Cell-based architecture isolates blast radius."
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "annotation": "Single datacenter deployments suffer catastrophic downtime during outages."
+          },
+          {
+            "at": "say2",
+            "annotation": "Multi-AZ architectures eliminate single failure points across layers."
+          },
+          {
+            "at": "example",
+            "annotation": "Engine calculates uptime availability percentage and confirms four nines."
+          },
+          {
+            "at": "tryIt",
+            "annotation": "Automated self-healing and cell architecture ensure continuous reliability."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 2,
+      "partTitle": "Security Pillar: Zero-Trust Identity, KMS Envelope Encryption & Network Isolation",
+      "codeHash": "ea12a0fd1839976c784867290f5954e313c29a2755ff020438f52bfa0cb4ef35",
+      "spec": {
+        "template": "compare",
+        "left": {
+          "title": "Perimeter Security",
+          "badge": "Lateral Movement",
+          "items": [
+            "Relies on vulnerable network perimeter firewalls.",
+            "Hardcoded credentials risk git repository leaks.",
+            "Direct KMS calls hit account rate limits."
+          ]
+        },
+        "right": {
+          "title": "Zero-Trust & Envelope",
+          "badge": "Cryptographic Isolation",
+          "items": [
+            "IAM least privilege and temporary STS tokens.",
+            "KMS envelope encryption protects petabytes of data.",
+            "GuardDuty machine learning detects threat activity."
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "annotation": "Perimeter only security fails when internal network credentials leak."
+          },
+          {
+            "at": "say2",
+            "annotation": "Zero-trust architecture enforces least privilege identity across all APIs."
+          },
+          {
+            "at": "example",
+            "annotation": "Security engine generates master envelope keys with secure data lengths."
+          },
+          {
+            "at": "tryIt",
+            "annotation": "Envelope encryption secures petabyte scale data without rate throttling."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 3,
+      "partTitle": "Cost Optimization: AWS Graviton Migration, S3 Intelligent-Tiering & FinOps Allocation",
+      "codeHash": "8a70a534ce4ff4e53f4ad95ef4d0661d4d2032f355cf343e24e37e3ea3cba3ea",
+      "spec": {
+        "template": "compare",
+        "left": {
+          "title": "Unmonitored Compute",
+          "badge": "FinOps Waste",
+          "items": [
+            "Over-provisioned x86 instances run idle.",
+            "Unused data remains permanently in standard S3.",
+            "Lacks cost allocation tagging and anomaly alerts."
+          ]
+        },
+        "right": {
+          "title": "Graviton & Intelligent S3",
+          "badge": "Optimized Cloud ROI",
+          "items": [
+            "Graviton delivers twenty percent compute cost savings.",
+            "S3 Intelligent-Tiering automatically cuts storage bills.",
+            "Savings Plans and Spot instances maximize efficiency."
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "annotation": "Unmonitored cloud spending rapidly erodes corporate profit margins."
+          },
+          {
+            "at": "say2",
+            "annotation": "Graviton processors deliver superior compute performance at lower costs."
+          },
+          {
+            "at": "example",
+            "annotation": "Engine calculates monthly savings achieved through Graviton migration."
+          },
+          {
+            "at": "tryIt",
+            "annotation": "FinOps cost allocation tags provide financial transparency across domains."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 4,
+      "partTitle": "Multi-Region Resilience: Active-Active Routing, Route 53 Health Checks & RTO/RPO",
+      "codeHash": "677b8e339d9e7f2779d3565698da7b6b7b2c2723728c90aa4fea16085fde70f1",
+      "spec": {
+        "template": "compare",
+        "left": {
+          "title": "Single Region Cloud",
+          "badge": "Regional Blackout Risk",
+          "items": [
+            "Vulnerable to undersea cable cuts and power loss.",
+            "High international user latency across oceans.",
+            "Cold standby DR requires hours of manual recovery."
+          ]
+        },
+        "right": {
+          "title": "Active-Active Multi-Region",
+          "badge": "Zero Downtime DR",
+          "items": [
+            "Simultaneously serves traffic across multiple regions.",
+            "Route 53 health checks auto-failover in seconds.",
+            "Asynchronous data replication achieves sub-second lag."
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "annotation": "Single region architectures cannot survive catastrophic regional outages."
+          },
+          {
+            "at": "say2",
+            "annotation": "Active-active multi-region deployments serve live global user traffic."
+          },
+          {
+            "at": "example",
+            "annotation": "Router directs traffic to primary region and auto fails over if degraded."
+          },
+          {
+            "at": "tryIt",
+            "annotation": "Asynchronous replication achieves sub second recovery points globally."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 5,
+      "partTitle": "Well-Architected Synthesis: Enterprise Review, Audit Scoring & Verification Token",
+      "codeHash": "0b40fe005a5059f41f6f21fcc9e58086df13d0da79b43bf8ec301947f7cf3f97",
+      "spec": {
+        "template": "compare",
+        "left": {
+          "title": "Unreviewed Architecture",
+          "badge": "Hidden Production Risks",
+          "items": [
+            "Accumulates high risk issues and technical debt.",
+            "Lacks multi-pillar compliance verification.",
+            "No formal audit readiness confirmation token."
+          ]
+        },
+        "right": {
+          "title": "Well-Architected Score",
+          "badge": "Accredited Resilience",
+          "items": [
+            "One hundred percent score in reliability and security.",
+            "Verified multi-region active-active capability.",
+            "Emits cryptographic confirmation token upon test."
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "annotation": "Unreviewed cloud systems carry hidden architectural and security risks."
+          },
+          {
+            "at": "say2",
+            "annotation": "Well-Architected reviews systematically evaluate workloads against pillars."
+          },
+          {
+            "at": "example",
+            "annotation": "Auditor evaluates platform metrics across reliability security and cost."
+          },
+          {
+            "at": "tryIt",
+            "annotation": "Synthesis confirms enterprise readiness and emits verified capstone token."
+          }
+        ]
+      }
+    }
+  ]
+}
