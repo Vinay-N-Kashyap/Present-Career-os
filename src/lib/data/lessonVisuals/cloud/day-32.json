@@ -1,0 +1,304 @@
+{
+  "schemaVersion": 2,
+  "prefix": "cloud",
+  "day": 32,
+  "promptSha": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
+  "model": "google/gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Cluster Autoscaler Architectural Bottlenecks & ASG Inefficiencies",
+      "codeHash": "fe95f631fed57facf222ea8d47a786e6d0c7e70b6e6039fdfa6a67948d095b90",
+      "spec": {
+        "template": "workflow",
+        "title": "Cluster Autoscaler vs Karpenter Provisioning Lifecycle Comparison",
+        "stages": [
+          {
+            "id": "pending",
+            "name": "Pending Pod Trigger",
+            "subtext": "Unscheduled Resource Demand"
+          },
+          {
+            "id": "eval",
+            "name": "Provisioning Engine",
+            "subtext": "ASG Loop vs Direct Watch"
+          },
+          {
+            "id": "ec2api",
+            "name": "Cloud Fleet API",
+            "subtext": "UpdateASG vs CreateFleet"
+          },
+          {
+            "id": "ready",
+            "name": "Node Ready State",
+            "subtext": "270s vs 44s Time-to-Ready"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Cluster Autoscaler periodically polls the API server and increments ASG counts.",
+            "activeStageId": "pending",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say2",
+            "caption": "ASGs require homogeneous instance sizing, stranding unallocated CPU and RAM.",
+            "activeStageId": "eval",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Karpenter bypasses ASGs, evaluating pending pods directly against the EC2 catalog.",
+            "activeStageId": "ec2api",
+            "statusBadge": "verified"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Direct CreateFleet calls launch right-sized nodes in under 45 seconds.",
+            "activeStageId": "ready",
+            "statusBadge": "verified"
+          }
+        ]
+      },
+      "filled": {
+        "active": true
+      }
+    },
+    {
+      "partTitle": "Karpenter Architecture: Group-Less Provisioning & Direct Fleet APIs",
+      "codeHash": "8c06dbe06cfdc37db5264cc3039f7c67a0c3a85218090f6cdb48a32b1091639b",
+      "spec": {
+        "template": "workflow",
+        "title": "Karpenter Dynamic Bin-Packing & Group-Less Provisioning Architecture",
+        "stages": [
+          {
+            "id": "watch",
+            "name": "Kube-API Watcher",
+            "subtext": "Instant Event-Driven Trigger"
+          },
+          {
+            "id": "binpack",
+            "name": "Bin-Packing Engine",
+            "subtext": "Multi-Pod Resource Summation"
+          },
+          {
+            "id": "fleet",
+            "name": "EC2 CreateFleet API",
+            "subtext": "140+ Candidate Instance Shapes"
+          },
+          {
+            "id": "join",
+            "name": "Lightweight Node Join",
+            "subtext": "Bottlerocket / AL2023 OS"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Karpenter watches unscheduled pods without waiting for periodic polling intervals.",
+            "activeStageId": "watch",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say2",
+            "caption": "Bin-packing algorithm computes the exact optimal instance size for the batch.",
+            "activeStageId": "binpack",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Direct EC2 CreateFleet call provisions tight-fitting compute with zero idle waste.",
+            "activeStageId": "fleet",
+            "statusBadge": "verified"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Pre-warmed AMIs join the EKS cluster and transition to Ready in 40 seconds.",
+            "activeStageId": "join",
+            "statusBadge": "verified"
+          }
+        ]
+      },
+      "filled": {
+        "active": true
+      }
+    },
+    {
+      "partTitle": "Karpenter NodePool & EC2NodeClass CRDs: Dynamic Fleet Diversification",
+      "codeHash": "339094165307f41a21712a2d0c22922dad0bcd73f0cf2009da7b664d1cf3618b",
+      "spec": {
+        "template": "workflow",
+        "title": "Karpenter NodePool & EC2NodeClass Declarative Specifications",
+        "stages": [
+          {
+            "id": "nodepool",
+            "name": "NodePool CRD",
+            "subtext": "K8s Scheduling & Weight Rules"
+          },
+          {
+            "id": "nodeclass",
+            "name": "EC2NodeClass CRD",
+            "subtext": "AWS Subnets, IAM & AMIs"
+          },
+          {
+            "id": "tagDiscover",
+            "name": "Subnet Tag Discovery",
+            "subtext": "karpenter.sh/discovery Dynamic Tags"
+          },
+          {
+            "id": "graviton",
+            "name": "Architecture Diversification",
+            "subtext": "x86 amd64 & ARM64 Graviton"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "NodePool CRD specifies permitted instance families, architectures, and capacity types.",
+            "activeStageId": "nodepool",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say2",
+            "caption": "EC2NodeClass binds AWS IAM roles, security groups, and root EBS volume configs.",
+            "activeStageId": "nodeclass",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Tag discovery dynamically detects private subnets across all Availability Zones.",
+            "activeStageId": "tagDiscover",
+            "statusBadge": "verified"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Automatic Graviton arm64 fallback delivers up to 40% better price-performance.",
+            "activeStageId": "graviton",
+            "statusBadge": "verified"
+          }
+        ]
+      },
+      "filled": {
+        "active": true
+      }
+    },
+    {
+      "partTitle": "Node Consolidation, Spot Interruption Handling & PDB Invariants",
+      "codeHash": "9cd616383ba4d7463fe9ec30e2898405713e17c87f7ce65a83dc2db0be3dd684",
+      "spec": {
+        "template": "workflow",
+        "title": "Node Consolidation, Spot Interruption Handling & PDB Invariants",
+        "stages": [
+          {
+            "id": "watchConsol",
+            "name": "Consolidation Watcher",
+            "subtext": "Continuous Underutilization Scan"
+          },
+          {
+            "id": "pdbCheck",
+            "name": "PDB Safety Gate",
+            "subtext": "minAvailable / maxUnavailable Rules"
+          },
+          {
+            "id": "eventBridge",
+            "name": "Spot Interruption Handler",
+            "subtext": "2-Minute Warning Warning Hook"
+          },
+          {
+            "id": "drainCordon",
+            "name": "Zero-Downtime Migration",
+            "subtext": "Cordon, Pre-Warm & Drain"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Karpenter continuously consolidates underutilized nodes into cheaper instances.",
+            "activeStageId": "watchConsol",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say2",
+            "caption": "PodDisruptionBudgets block node draining if active replicas drop below threshold.",
+            "activeStageId": "pdbCheck",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "AWS EventBridge routes 2-minute Spot interruption warnings to Karpenter.",
+            "activeStageId": "eventBridge",
+            "statusBadge": "verified"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Replacement nodes launch before termination, ensuring zero application downtime.",
+            "activeStageId": "drainCordon",
+            "statusBadge": "verified"
+          }
+        ]
+      },
+      "filled": {
+        "active": true
+      }
+    },
+    {
+      "partTitle": "Masterclass Synthesis: Autonomous Karpenter Fleet Scaling & Disruption Engine",
+      "codeHash": "dcd4438b39478e6e156787bfa40ce65ba58d30d239764db8e7253c6540563281",
+      "spec": {
+        "template": "workflow",
+        "title": "Autonomous Karpenter Fleet Scaling & Disruption Engine",
+        "stages": [
+          {
+            "id": "engineCore",
+            "name": "Fleet Engine Core",
+            "subtext": "Multi-Instance Scheduler"
+          },
+          {
+            "id": "interruption",
+            "name": "Spot Eviction Controller",
+            "subtext": "Active Node Drain Pipeline"
+          },
+          {
+            "id": "prewarm",
+            "name": "Pre-Warmed Replacement",
+            "subtext": "Immediate Node Join & Pod Transfer"
+          },
+          {
+            "id": "certGrade",
+            "name": "Enterprise Certification",
+            "subtext": "KARPENTER_FLEET_SCALING_ENGINE_CERTIFIED"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The autonomous engine orchestrates dynamic fleet provisioning across AZs.",
+            "activeStageId": "engineCore",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say2",
+            "caption": "Spot interruption events trigger automated cordoning and pre-warming.",
+            "activeStageId": "interruption",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Replacement compute joins cluster seamlessly before spot instance termination.",
+            "activeStageId": "prewarm",
+            "statusBadge": "verified"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Execution verification confirms 100% deterministic SLA protection.",
+            "activeStageId": "certGrade",
+            "statusBadge": "verified"
+          }
+        ]
+      },
+      "filled": {
+        "active": true
+      }
+    }
+  ]
+}

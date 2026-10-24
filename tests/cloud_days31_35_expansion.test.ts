@@ -38,8 +38,8 @@ test('Course 16: Cloud Native AWS Architecture (cloud) Month 2 Block 7 Expansion
     assert.equal(isCourseVisualsEnabled('cloud'), true, 'cloud course prefix must have visuals support enabled');
   });
 
-  await t.test('2. LongLessons structural integrity, pedagogical depth, and invariants for Day 31', () => {
-    for (const day of [31]) {
+  await t.test('2. LongLessons structural integrity, pedagogical depth, and invariants for Days 31-32', () => {
+    for (const day of [31, 32]) {
       const lesson = getLongLesson('cloud', day) || CLOUD_WEB_LONG_LESSONS.find(l => l.day === day);
       assert.ok(lesson, `Day ${day} must exist in cloudWebLongLessons.ts registry`);
       assert.equal(lesson.coursePrefix, 'cloud', `Day ${day} coursePrefix must be 'cloud'`);
@@ -81,8 +81,8 @@ test('Course 16: Cloud Native AWS Architecture (cloud) Month 2 Block 7 Expansion
     }
   });
 
-  await t.test('3. Visuals file verification, step synchronizations, and SHA-256 bindings for Day 31', () => {
-    for (const day of [31]) {
+  await t.test('3. Visuals file verification, step synchronizations, and SHA-256 bindings for Days 31-32', () => {
+    for (const day of [31, 32]) {
       const dayFile = loadDayFile('cloud', day);
       assert.ok(dayFile, `Visuals day file for Day ${day} must exist and load successfully`);
       assert.equal(dayFile.schemaVersion, 2, `Day ${day} visual file schemaVersion must be 2`);
@@ -111,12 +111,14 @@ test('Course 16: Cloud Native AWS Architecture (cloud) Month 2 Block 7 Expansion
     }
   });
 
-  await t.test('4. Deterministic execution sandbox verification for Day 31 code snippets', async () => {
-    const lesson = getLongLesson('cloud', 31) || CLOUD_WEB_LONG_LESSONS.find(l => l.day === 31)!;
-    for (let i = 0; i < lesson.parts.length; i++) {
-      const part = lesson.parts[i];
-      const actual = await runTypeScriptSnippet(part.code!);
-      assert.equal(actual.trim(), part.output!.trim(), `Day 31 Part ${i + 1} sandbox stdout mismatch`);
+  await t.test('4. Deterministic execution sandbox verification for Days 31-32 code snippets', async () => {
+    for (const day of [31, 32]) {
+      const lesson = getLongLesson('cloud', day) || CLOUD_WEB_LONG_LESSONS.find(l => l.day === day)!;
+      for (let i = 0; i < lesson.parts.length; i++) {
+        const part = lesson.parts[i];
+        const actual = await runTypeScriptSnippet(part.code!);
+        assert.equal(actual.trim(), part.output!.trim(), `Day ${day} Part ${i + 1} sandbox stdout mismatch`);
+      }
     }
   });
 });
