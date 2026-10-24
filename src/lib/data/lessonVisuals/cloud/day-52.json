@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 2,
+  "prefix": "cloud",
+  "day": 52,
+  "entries": [
+    {
+      "partIndex": 1,
+      "partTitle": "Redis Cluster Architecture: CRC16 Hash Slot Sharding & Hash Tags",
+      "codeHash": "b527cafe0305326fa4407b24faca3188d9e0ec9a81270ae949ccb995a019377c",
+      "spec": {
+        "template": "compare",
+        "left": {
+          "title": "Standalone Redis Node",
+          "badge": "Single Shard Bottleneck",
+          "items": [
+            "Single threaded process bound to memory limits.",
+            "No horizontal partitioning across shards.",
+            "Lacks automated slot distribution mechanisms."
+          ]
+        },
+        "right": {
+          "title": "Redis Clustered Tier",
+          "badge": "Sharded Architecture",
+          "items": [
+            "Sixteen thousand logical hash slots.",
+            "Even distribution across primary shards.",
+            "Hash tags enforce co-located multi-key slots."
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "annotation": "Standalone single instances face CPU and memory saturation."
+          },
+          {
+            "at": "say2",
+            "annotation": "Cluster sharding partitions data across thousands of slots."
+          },
+          {
+            "at": "example",
+            "annotation": "Router calculates hash slot using cyclic redundancy check."
+          },
+          {
+            "at": "tryIt",
+            "annotation": "Hash tags guarantee keys map to identical shard partitions."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 2,
+      "partTitle": "Memory Management & Eviction Policies: allkeys-lru, volatile-lru & OOM Defense",
+      "codeHash": "94d0bbcbb9507fee200b756958b82e6a109c10874ddd064f2fb32f4679292de0",
+      "spec": {
+        "template": "compare",
+        "left": {
+          "title": "Unbounded Noeviction",
+          "badge": "OOM Failure Risk",
+          "items": [
+            "Rejects write commands when memory reaches capacity.",
+            "Throws disruptive out of memory errors.",
+            "Causes cascading microservice downtime."
+          ]
+        },
+        "right": {
+          "title": "Configured Eviction",
+          "badge": "Resilient Memory Tier",
+          "items": [
+            "Least recently used keys evicted dynamically.",
+            "Frequently accessed working set stays resident.",
+            "Reserved memory buffers background replication."
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "annotation": "Saturated physical memory triggers out of memory write errors."
+          },
+          {
+            "at": "say2",
+            "annotation": "Eviction policies automatically reclaim memory for new writes."
+          },
+          {
+            "at": "example",
+            "annotation": "Store removes oldest keys when capacity reaches ceiling."
+          },
+          {
+            "at": "tryIt",
+            "annotation": "Least recently used eviction preserves active working sets."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 3,
+      "partTitle": "Caching Topologies: Cache-Aside (Lazy Loading) vs. Write-Through & Write-Back",
+      "codeHash": "3022d55a82b0d28c95a903e54a27f4e1da44610a0c9de7d07f3e7ecf8336a88f",
+      "spec": {
+        "template": "compare",
+        "left": {
+          "title": "Cache-Aside Pattern",
+          "badge": "Lazy Loading Strategy",
+          "items": [
+            "Reads query cache first then fall back to database.",
+            "Only requested active data resides in memory.",
+            "Potential for data staleness until expiration."
+          ]
+        },
+        "right": {
+          "title": "Write-Through Pattern",
+          "badge": "Synchronous Freshness",
+          "items": [
+            "Simultaneously writes to cache and database.",
+            "Guarantees absolute freshness on subsequent reads.",
+            "Higher write latency across dual storage layers."
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "annotation": "Cache topologies define data synchronization between stores."
+          },
+          {
+            "at": "say2",
+            "annotation": "Lazy loading reads from database on cache miss scenarios."
+          },
+          {
+            "at": "example",
+            "annotation": "Simulator tracks hit ratios and database read counts."
+          },
+          {
+            "at": "tryIt",
+            "annotation": "Write through updates ensure absolute cache freshness."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 4,
+      "partTitle": "Cache Stampede & Thundering Herd Defense: Mutex Locking & Probabilistic Early Expiration",
+      "codeHash": "264b89f6b10ccb0b37087c3efdae342bb5db45de74d3750aca511391a2ff9343",
+      "spec": {
+        "template": "compare",
+        "left": {
+          "title": "Unprotected Stampede",
+          "badge": "Cascading Collapse",
+          "items": [
+            "Expired hot keys trigger simultaneous misses.",
+            "Thousands of concurrent queries hit database.",
+            "Connection pools exhaust causing outages."
+          ]
+        },
+        "right": {
+          "title": "Mutex Lock Defense",
+          "badge": "Single Invalidation Query",
+          "items": [
+            "First thread acquires atomic distributed lock.",
+            "Single query computes fresh cache value.",
+            "Remaining threads read cached results or fallback."
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "annotation": "Simultaneous cache misses overwhelm primary database pools."
+          },
+          {
+            "at": "say2",
+            "annotation": "Distributed mutex locking coordinates database query access."
+          },
+          {
+            "at": "example",
+            "annotation": "Defender restricts database queries to single thread."
+          },
+          {
+            "at": "tryIt",
+            "annotation": "Concurrent requests receive computed cache without collapse."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 5,
+      "partTitle": "ElastiCache Resiliency, Multi-AZ Auto-Failover & The Valkey Transition",
+      "codeHash": "d921965f63d9dd87a99959a6666479da7ac99d4b06f9d5af302e0d9b588d69de",
+      "spec": {
+        "template": "compare",
+        "left": {
+          "title": "Legacy Single-AZ",
+          "badge": "Extended Downtime",
+          "items": [
+            "Single point of failure during hardware degradation.",
+            "Manual intervention required to restore service.",
+            "Proprietary license transitions introduce friction."
+          ]
+        },
+        "right": {
+          "title": "Multi-AZ Valkey Cluster",
+          "badge": "Automated High Availability",
+          "items": [
+            "Automatic replica promotion within seconds.",
+            "Complete open source wire protocol compatibility.",
+            "Thirty-three percent infrastructure cost savings."
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "annotation": "Primary node outages disrupt single zone caching clusters."
+          },
+          {
+            "at": "say2",
+            "annotation": "Multi zone replication triggers automatic replica promotion."
+          },
+          {
+            "at": "example",
+            "annotation": "Cluster controller simulates failure and rapid failover."
+          },
+          {
+            "at": "tryIt",
+            "annotation": "Valkey engine delivers resilient open source performance."
+          }
+        ]
+      }
+    }
+  ]
+}
