@@ -1,0 +1,314 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_law",
+  "day": 58,
+  "promptSha": "prompt_sha_bcom_law_day58_governance_v1",
+  "model": "google/gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Bilateral Investment Treaties (BITs) & Substantive Standards of Investor Protection",
+      "codeHash": "a9014b37c59f7a2cf723ae72f55e18c3eb7e475164542323bdb63f7a4cacba1b",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Bilateral Investment Treaties (BITs) & Sub... Compliance Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Regulatory Mandate",
+            "subtext": "Statutory Threshold Audit",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Quantitative Analysis",
+            "subtext": "Metric Calculation & Reconciliation",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Governance Control",
+            "subtext": "Board Oversight & Defense",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Statutory Clearance",
+            "subtext": "Immunity & Compliance Pass",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1: Initialize Bilateral Investment Treaties (BITs) &...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS"
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2: Evaluate statutory corporate parameters and legal tests.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS"
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3: Apply Board governance oversight and compliance controls.",
+            "activeStageId": "s3",
+            "statusBadge": "ACTIVE"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4: Execute deterministic Python engine and verify compliance.",
+            "activeStageId": "s4",
+            "statusBadge": "DONE"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "India's 2016 Model BIT, White Industries Precedent & Retrospective Tax Awards",
+      "codeHash": "a9014b37c59f7a2cf723ae72f55e18c3eb7e475164542323bdb63f7a4cacba1b",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "India's 2016 Model BIT, White Industries P... Compliance Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Regulatory Mandate",
+            "subtext": "Statutory Threshold Audit",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Quantitative Analysis",
+            "subtext": "Metric Calculation & Reconciliation",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Governance Control",
+            "subtext": "Board Oversight & Defense",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Statutory Clearance",
+            "subtext": "Immunity & Compliance Pass",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1: Initialize India's 2016 Model BIT, White Industri...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS"
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2: Evaluate statutory corporate parameters and legal tests.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS"
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3: Apply Board governance oversight and compliance controls.",
+            "activeStageId": "s3",
+            "statusBadge": "ACTIVE"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4: Execute deterministic Python engine and verify compliance.",
+            "activeStageId": "s4",
+            "statusBadge": "DONE"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enforcement of Foreign Awards under Section 48 of the Arbitration and Conciliation Act 1996",
+      "codeHash": "a9014b37c59f7a2cf723ae72f55e18c3eb7e475164542323bdb63f7a4cacba1b",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Enforcement of Foreign Awards under Sectio... Compliance Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Regulatory Mandate",
+            "subtext": "Statutory Threshold Audit",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Quantitative Analysis",
+            "subtext": "Metric Calculation & Reconciliation",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Governance Control",
+            "subtext": "Board Oversight & Defense",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Statutory Clearance",
+            "subtext": "Immunity & Compliance Pass",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1: Initialize Enforcement of Foreign Awards under Se...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS"
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2: Evaluate statutory corporate parameters and legal tests.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS"
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3: Apply Board governance oversight and compliance controls.",
+            "activeStageId": "s3",
+            "statusBadge": "ACTIVE"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4: Execute deterministic Python engine and verify compliance.",
+            "activeStageId": "s4",
+            "statusBadge": "DONE"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Public Policy Defense, Renusagar Doctrine & Elimination of Patent Illegality Review",
+      "codeHash": "a9014b37c59f7a2cf723ae72f55e18c3eb7e475164542323bdb63f7a4cacba1b",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "The Public Policy Defense, Renusagar Doctr... Compliance Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Regulatory Mandate",
+            "subtext": "Statutory Threshold Audit",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Quantitative Analysis",
+            "subtext": "Metric Calculation & Reconciliation",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Governance Control",
+            "subtext": "Board Oversight & Defense",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Statutory Clearance",
+            "subtext": "Immunity & Compliance Pass",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1: Initialize The Public Policy Defense, Renusagar D...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS"
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2: Evaluate statutory corporate parameters and legal tests.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS"
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3: Apply Board governance oversight and compliance controls.",
+            "activeStageId": "s3",
+            "statusBadge": "ACTIVE"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4: Execute deterministic Python engine and verify compliance.",
+            "activeStageId": "s4",
+            "statusBadge": "DONE"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Sovereign Immunity, Foreign Asset Attachment & Arbitral Execution Simulator",
+      "codeHash": "a9014b37c59f7a2cf723ae72f55e18c3eb7e475164542323bdb63f7a4cacba1b",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Sovereign Immunity, Foreign Asset Attachme... Compliance Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Regulatory Mandate",
+            "subtext": "Statutory Threshold Audit",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Quantitative Analysis",
+            "subtext": "Metric Calculation & Reconciliation",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Governance Control",
+            "subtext": "Board Oversight & Defense",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Statutory Clearance",
+            "subtext": "Immunity & Compliance Pass",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1: Initialize Sovereign Immunity, Foreign Asset Atta...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS"
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2: Evaluate statutory corporate parameters and legal tests.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS"
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3: Apply Board governance oversight and compliance controls.",
+            "activeStageId": "s3",
+            "statusBadge": "ACTIVE"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4: Execute deterministic Python engine and verify compliance.",
+            "activeStageId": "s4",
+            "statusBadge": "DONE"
+          }
+        ]
+      }
+    }
+  ]
+}

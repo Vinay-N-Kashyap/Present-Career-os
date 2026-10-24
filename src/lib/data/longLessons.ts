@@ -98,6 +98,8 @@ export interface LongLessonPart {
 }
 
 export interface LongLesson {
+  id?: string;
+  course?: string;
   coursePrefix?: string;
   day: number;
   title: string;
