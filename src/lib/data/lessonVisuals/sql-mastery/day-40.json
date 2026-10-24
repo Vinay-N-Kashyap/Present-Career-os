@@ -1,0 +1,829 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "sql-mastery",
+  "day": 40,
+  "promptSha": "cd4d5841c03e197afef8216fa33fea2f4715e1d34d279dd7c446be0bd9659cf5",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Outage Incident Report: Flash-Sale Ticket Overselling, Lost Updates & Double-Spend Disasters",
+      "codeHash": "ea6ddc29785a8ec203235c7b5a7f85b027b64a6cba81dd5337b3d3f668391e15",
+      "spec": {
+        "template": "compare",
+        "title": "Capstone Concurrency Architecture - Part 1",
+        "leftLabel": "Outage Baseline Vulnerabilities",
+        "rightLabel": "Remediated High-Concurrency Architecture",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Milestone architectural capstone synthesizes database concurrency.",
+            "left": {
+              "code": "Naive read-modify-write loop",
+              "result": {
+                "text": "catastrophic lost updates and overselling"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Discrete row SKIP LOCKED claims",
+              "result": {
+                "text": "zero double-spends and parallel scaling"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "High severity production outage strikes flash sale ticketing.",
+            "left": {
+              "code": "Unordered multi-row locking",
+              "result": {
+                "text": "frequent cyclic deadlock aborts"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Canonical ascending lock ordering",
+              "result": {
+                "text": "mathematically guaranteed zero deadlocks"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Boutique shoppers grab single designer dress simultaneously.",
+            "left": {
+              "code": "Uncoordinated chaotic resource access",
+              "result": {
+                "text": "massive customer conflict and churn"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Disciplined parallel partition gates",
+              "result": {
+                "text": "frictionless five-nines service delivery"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect flash sale outage metrics and financial liabilities.",
+            "left": {
+              "code": "Unverified concurrency assumptions",
+              "result": {
+                "text": "hidden high-load operational failure"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Empirical stress-tested verification",
+              "result": {
+                "text": "proven sub-5ms enterprise performance"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Capstone Concurrency Architecture - Part 1",
+        "leftLabel": "Outage Baseline Vulnerabilities",
+        "rightLabel": "Remediated High-Concurrency Architecture",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Milestone architectural capstone synthesizes database concurrency.",
+            "left": {
+              "code": "Naive read-modify-write loop",
+              "result": {
+                "text": "catastrophic lost updates and overselling"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Discrete row SKIP LOCKED claims",
+              "result": {
+                "text": "zero double-spends and parallel scaling"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "High severity production outage strikes flash sale ticketing.",
+            "left": {
+              "code": "Unordered multi-row locking",
+              "result": {
+                "text": "frequent cyclic deadlock aborts"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Canonical ascending lock ordering",
+              "result": {
+                "text": "mathematically guaranteed zero deadlocks"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Boutique shoppers grab single designer dress simultaneously.",
+            "left": {
+              "code": "Uncoordinated chaotic resource access",
+              "result": {
+                "text": "massive customer conflict and churn"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Disciplined parallel partition gates",
+              "result": {
+                "text": "frictionless five-nines service delivery"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect flash sale outage metrics and financial liabilities.",
+            "left": {
+              "code": "Unverified concurrency assumptions",
+              "result": {
+                "text": "hidden high-load operational failure"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Empirical stress-tested verification",
+              "result": {
+                "text": "proven sub-5ms enterprise performance"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Root Cause Diagnostics: Lost Updates under Read Committed Isolation & Stale Read-Modify-Write Cycles",
+      "codeHash": "9016023ce188fac9245db9cd504aa830a45f13ccc11052eb6780080de8a34599",
+      "spec": {
+        "template": "compare",
+        "title": "Capstone Concurrency Architecture - Part 2",
+        "leftLabel": "Outage Baseline Vulnerabilities",
+        "rightLabel": "Remediated High-Concurrency Architecture",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Root cause dissection reveals lost update execution anomalies.",
+            "left": {
+              "code": "Naive read-modify-write loop",
+              "result": {
+                "text": "catastrophic lost updates and overselling"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Discrete row SKIP LOCKED claims",
+              "result": {
+                "text": "zero double-spends and parallel scaling"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Concurrent worker threads observe identical initial inventory.",
+            "left": {
+              "code": "Unordered multi-row locking",
+              "result": {
+                "text": "frequent cyclic deadlock aborts"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Canonical ascending lock ordering",
+              "result": {
+                "text": "mathematically guaranteed zero deadlocks"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Whiteboard shopping list displays inaccurate remaining inventory.",
+            "left": {
+              "code": "Uncoordinated chaotic resource access",
+              "result": {
+                "text": "massive customer conflict and churn"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Disciplined parallel partition gates",
+              "result": {
+                "text": "frictionless five-nines service delivery"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect worker execution traces and lost update state mutations.",
+            "left": {
+              "code": "Unverified concurrency assumptions",
+              "result": {
+                "text": "hidden high-load operational failure"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Empirical stress-tested verification",
+              "result": {
+                "text": "proven sub-5ms enterprise performance"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Capstone Concurrency Architecture - Part 2",
+        "leftLabel": "Outage Baseline Vulnerabilities",
+        "rightLabel": "Remediated High-Concurrency Architecture",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Root cause dissection reveals lost update execution anomalies.",
+            "left": {
+              "code": "Naive read-modify-write loop",
+              "result": {
+                "text": "catastrophic lost updates and overselling"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Discrete row SKIP LOCKED claims",
+              "result": {
+                "text": "zero double-spends and parallel scaling"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Concurrent worker threads observe identical initial inventory.",
+            "left": {
+              "code": "Unordered multi-row locking",
+              "result": {
+                "text": "frequent cyclic deadlock aborts"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Canonical ascending lock ordering",
+              "result": {
+                "text": "mathematically guaranteed zero deadlocks"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Whiteboard shopping list displays inaccurate remaining inventory.",
+            "left": {
+              "code": "Uncoordinated chaotic resource access",
+              "result": {
+                "text": "massive customer conflict and churn"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Disciplined parallel partition gates",
+              "result": {
+                "text": "frictionless five-nines service delivery"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect worker execution traces and lost update state mutations.",
+            "left": {
+              "code": "Unverified concurrency assumptions",
+              "result": {
+                "text": "hidden high-load operational failure"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Empirical stress-tested verification",
+              "result": {
+                "text": "proven sub-5ms enterprise performance"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Architectural Remediation: Optimistic Locking with Version Vectors vs Pessimistic SELECT FOR UPDATE",
+      "codeHash": "9ff52815bb557a99fb28f1e12d88cc171cad340e28565de6c82a2117701f3702",
+      "spec": {
+        "template": "compare",
+        "title": "Capstone Concurrency Architecture - Part 3",
+        "leftLabel": "Outage Baseline Vulnerabilities",
+        "rightLabel": "Remediated High-Concurrency Architecture",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Architectural remedies evaluate optimistic versus pessimistic locking.",
+            "left": {
+              "code": "Naive read-modify-write loop",
+              "result": {
+                "text": "catastrophic lost updates and overselling"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Discrete row SKIP LOCKED claims",
+              "result": {
+                "text": "zero double-spends and parallel scaling"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Optimistic concurrency control assumes low transactional conflict.",
+            "left": {
+              "code": "Unordered multi-row locking",
+              "result": {
+                "text": "frequent cyclic deadlock aborts"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Canonical ascending lock ordering",
+              "result": {
+                "text": "mathematically guaranteed zero deadlocks"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Town water fountain runners organize into orderly queue lines.",
+            "left": {
+              "code": "Uncoordinated chaotic resource access",
+              "result": {
+                "text": "massive customer conflict and churn"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Disciplined parallel partition gates",
+              "result": {
+                "text": "frictionless five-nines service delivery"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect inventory versioning policies and concurrency strategies.",
+            "left": {
+              "code": "Unverified concurrency assumptions",
+              "result": {
+                "text": "hidden high-load operational failure"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Empirical stress-tested verification",
+              "result": {
+                "text": "proven sub-5ms enterprise performance"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Capstone Concurrency Architecture - Part 3",
+        "leftLabel": "Outage Baseline Vulnerabilities",
+        "rightLabel": "Remediated High-Concurrency Architecture",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Architectural remedies evaluate optimistic versus pessimistic locking.",
+            "left": {
+              "code": "Naive read-modify-write loop",
+              "result": {
+                "text": "catastrophic lost updates and overselling"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Discrete row SKIP LOCKED claims",
+              "result": {
+                "text": "zero double-spends and parallel scaling"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Optimistic concurrency control assumes low transactional conflict.",
+            "left": {
+              "code": "Unordered multi-row locking",
+              "result": {
+                "text": "frequent cyclic deadlock aborts"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Canonical ascending lock ordering",
+              "result": {
+                "text": "mathematically guaranteed zero deadlocks"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Town water fountain runners organize into orderly queue lines.",
+            "left": {
+              "code": "Uncoordinated chaotic resource access",
+              "result": {
+                "text": "massive customer conflict and churn"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Disciplined parallel partition gates",
+              "result": {
+                "text": "frictionless five-nines service delivery"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect inventory versioning policies and concurrency strategies.",
+            "left": {
+              "code": "Unverified concurrency assumptions",
+              "result": {
+                "text": "hidden high-load operational failure"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Empirical stress-tested verification",
+              "result": {
+                "text": "proven sub-5ms enterprise performance"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "High-Throughput Ticket Reservation Engine: Queue Partitioning, Dynamic Expiry & Advisory Locks",
+      "codeHash": "06fd19d8ac68641410d77c5593e70ad9f581053ce5bdd1c90f29d50e99c70f4b",
+      "spec": {
+        "template": "compare",
+        "title": "Capstone Concurrency Architecture - Part 4",
+        "leftLabel": "Outage Baseline Vulnerabilities",
+        "rightLabel": "Remediated High-Concurrency Architecture",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Production reservation engines coordinate multi stage lifecycles.",
+            "left": {
+              "code": "Naive read-modify-write loop",
+              "result": {
+                "text": "catastrophic lost updates and overselling"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Discrete row SKIP LOCKED claims",
+              "result": {
+                "text": "zero double-spends and parallel scaling"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Dynamic expiration leases prevent held carts from blocking sales.",
+            "left": {
+              "code": "Unordered multi-row locking",
+              "result": {
+                "text": "frequent cyclic deadlock aborts"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Canonical ascending lock ordering",
+              "result": {
+                "text": "mathematically guaranteed zero deadlocks"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Concert box office clerk applies five minute timer on reservations.",
+            "left": {
+              "code": "Uncoordinated chaotic resource access",
+              "result": {
+                "text": "massive customer conflict and churn"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Disciplined parallel partition gates",
+              "result": {
+                "text": "frictionless five-nines service delivery"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect partition bucket allocations and throughput metrics.",
+            "left": {
+              "code": "Unverified concurrency assumptions",
+              "result": {
+                "text": "hidden high-load operational failure"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Empirical stress-tested verification",
+              "result": {
+                "text": "proven sub-5ms enterprise performance"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Capstone Concurrency Architecture - Part 4",
+        "leftLabel": "Outage Baseline Vulnerabilities",
+        "rightLabel": "Remediated High-Concurrency Architecture",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Production reservation engines coordinate multi stage lifecycles.",
+            "left": {
+              "code": "Naive read-modify-write loop",
+              "result": {
+                "text": "catastrophic lost updates and overselling"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Discrete row SKIP LOCKED claims",
+              "result": {
+                "text": "zero double-spends and parallel scaling"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Dynamic expiration leases prevent held carts from blocking sales.",
+            "left": {
+              "code": "Unordered multi-row locking",
+              "result": {
+                "text": "frequent cyclic deadlock aborts"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Canonical ascending lock ordering",
+              "result": {
+                "text": "mathematically guaranteed zero deadlocks"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Concert box office clerk applies five minute timer on reservations.",
+            "left": {
+              "code": "Uncoordinated chaotic resource access",
+              "result": {
+                "text": "massive customer conflict and churn"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Disciplined parallel partition gates",
+              "result": {
+                "text": "frictionless five-nines service delivery"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect partition bucket allocations and throughput metrics.",
+            "left": {
+              "code": "Unverified concurrency assumptions",
+              "result": {
+                "text": "hidden high-load operational failure"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Empirical stress-tested verification",
+              "result": {
+                "text": "proven sub-5ms enterprise performance"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Verification: Stress Testing Concurrency Guardrails, Automated Retry Handlers & Audit",
+      "codeHash": "0cfbd5dbc579c345847f3b1cce4d2aa41a22b475e130558d603458b58a945350",
+      "spec": {
+        "template": "compare",
+        "title": "Capstone Concurrency Architecture - Part 5",
+        "leftLabel": "Outage Baseline Vulnerabilities",
+        "rightLabel": "Remediated High-Concurrency Architecture",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Production verification stress tests concurrency guardrails.",
+            "left": {
+              "code": "Naive read-modify-write loop",
+              "result": {
+                "text": "catastrophic lost updates and overselling"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Discrete row SKIP LOCKED claims",
+              "result": {
+                "text": "zero double-spends and parallel scaling"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Automated distributed load testing simulates peak sale traffic.",
+            "left": {
+              "code": "Unordered multi-row locking",
+              "result": {
+                "text": "frequent cyclic deadlock aborts"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Canonical ascending lock ordering",
+              "result": {
+                "text": "mathematically guaranteed zero deadlocks"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Automotive engineers stress test vehicle brakes on steep slopes.",
+            "left": {
+              "code": "Uncoordinated chaotic resource access",
+              "result": {
+                "text": "massive customer conflict and churn"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Disciplined parallel partition gates",
+              "result": {
+                "text": "frictionless five-nines service delivery"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect capstone concurrency audit improvements and status.",
+            "left": {
+              "code": "Unverified concurrency assumptions",
+              "result": {
+                "text": "hidden high-load operational failure"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Empirical stress-tested verification",
+              "result": {
+                "text": "proven sub-5ms enterprise performance"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Capstone Concurrency Architecture - Part 5",
+        "leftLabel": "Outage Baseline Vulnerabilities",
+        "rightLabel": "Remediated High-Concurrency Architecture",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Production verification stress tests concurrency guardrails.",
+            "left": {
+              "code": "Naive read-modify-write loop",
+              "result": {
+                "text": "catastrophic lost updates and overselling"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Discrete row SKIP LOCKED claims",
+              "result": {
+                "text": "zero double-spends and parallel scaling"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Automated distributed load testing simulates peak sale traffic.",
+            "left": {
+              "code": "Unordered multi-row locking",
+              "result": {
+                "text": "frequent cyclic deadlock aborts"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Canonical ascending lock ordering",
+              "result": {
+                "text": "mathematically guaranteed zero deadlocks"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Automotive engineers stress test vehicle brakes on steep slopes.",
+            "left": {
+              "code": "Uncoordinated chaotic resource access",
+              "result": {
+                "text": "massive customer conflict and churn"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Disciplined parallel partition gates",
+              "result": {
+                "text": "frictionless five-nines service delivery"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect capstone concurrency audit improvements and status.",
+            "left": {
+              "code": "Unverified concurrency assumptions",
+              "result": {
+                "text": "hidden high-load operational failure"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Empirical stress-tested verification",
+              "result": {
+                "text": "proven sub-5ms enterprise performance"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
