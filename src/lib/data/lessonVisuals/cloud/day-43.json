@@ -1,0 +1,362 @@
+{
+  "schemaVersion": 2,
+  "prefix": "cloud",
+  "day": 43,
+  "entries": [
+    {
+      "partTitle": "AWS KMS Architecture & Multi-Region Keys (MRK): Cross-Region Decryption & Disaster Recovery",
+      "codeHash": "c129ff4d79e8c70dc717553f89be775b054115584189019832b5eddea6e4b140",
+      "spec": {
+        "template": "workflow",
+        "workflow": {
+          "title": "AWS KMS Architecture & Multi-Region Keys (MRK): Cross-Region Decryption & Disaster Recovery",
+          "nodes": [
+            {
+              "id": "client_app",
+              "label": "Client Application / Workload",
+              "status": "active"
+            },
+            {
+              "id": "kms_hsm_gateway",
+              "label": "AWS KMS / CloudHSM Appliance",
+              "status": "active"
+            },
+            {
+              "id": "cryptographic_envelope",
+              "label": "Envelope DEK & Cache Manager",
+              "status": "active"
+            },
+            {
+              "id": "ciphertext_store",
+              "label": "Encrypted Immutable Storage",
+              "status": "active"
+            }
+          ],
+          "edges": [
+            {
+              "from": "client_app",
+              "to": "kms_hsm_gateway",
+              "label": "Request DEK / MRK Decrypt"
+            },
+            {
+              "from": "kms_hsm_gateway",
+              "to": "cryptographic_envelope",
+              "label": "Return Wrapped Key & Context"
+            },
+            {
+              "from": "cryptographic_envelope",
+              "to": "ciphertext_store",
+              "label": "Store AES-256-GCM Envelope"
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "focus": "client_app",
+            "annotation": "Applications request cryptographic operations using Multi-Region Keys or dedicated CloudHSM appliances."
+          },
+          {
+            "at": "say2",
+            "focus": "kms_hsm_gateway",
+            "annotation": "KMS and CloudHSM enforce FIPS 140-2 Level 3 hardware boundaries and M-of-N quorum dual-party authentication."
+          },
+          {
+            "at": "example",
+            "focus": "cryptographic_envelope",
+            "annotation": "Envelope encryption reuses cached data keys to prevent throttling while binding cryptographic context."
+          },
+          {
+            "at": "tryIt",
+            "focus": "ciphertext_store",
+            "annotation": "Ciphertext remains mathematically secure on immutable storage, enabling instant crypto-shredding on key destruction."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Dedicated Hardware Security: AWS CloudHSM, Custom Key Stores & M-of-N Quorum Governance",
+      "codeHash": "3214d9598819a93adff7a2d30dfe10d02e3d5857156a204857b900ba4549953e",
+      "spec": {
+        "template": "workflow",
+        "workflow": {
+          "title": "Dedicated Hardware Security: AWS CloudHSM, Custom Key Stores & M-of-N Quorum Governance",
+          "nodes": [
+            {
+              "id": "client_app",
+              "label": "Client Application / Workload",
+              "status": "active"
+            },
+            {
+              "id": "kms_hsm_gateway",
+              "label": "AWS KMS / CloudHSM Appliance",
+              "status": "active"
+            },
+            {
+              "id": "cryptographic_envelope",
+              "label": "Envelope DEK & Cache Manager",
+              "status": "active"
+            },
+            {
+              "id": "ciphertext_store",
+              "label": "Encrypted Immutable Storage",
+              "status": "active"
+            }
+          ],
+          "edges": [
+            {
+              "from": "client_app",
+              "to": "kms_hsm_gateway",
+              "label": "Request DEK / MRK Decrypt"
+            },
+            {
+              "from": "kms_hsm_gateway",
+              "to": "cryptographic_envelope",
+              "label": "Return Wrapped Key & Context"
+            },
+            {
+              "from": "cryptographic_envelope",
+              "to": "ciphertext_store",
+              "label": "Store AES-256-GCM Envelope"
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "focus": "client_app",
+            "annotation": "Applications request cryptographic operations using Multi-Region Keys or dedicated CloudHSM appliances."
+          },
+          {
+            "at": "say2",
+            "focus": "kms_hsm_gateway",
+            "annotation": "KMS and CloudHSM enforce FIPS 140-2 Level 3 hardware boundaries and M-of-N quorum dual-party authentication."
+          },
+          {
+            "at": "example",
+            "focus": "cryptographic_envelope",
+            "annotation": "Envelope encryption reuses cached data keys to prevent throttling while binding cryptographic context."
+          },
+          {
+            "at": "tryIt",
+            "focus": "ciphertext_store",
+            "annotation": "Ciphertext remains mathematically secure on immutable storage, enabling instant crypto-shredding on key destruction."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Envelope Encryption & High-Throughput Data Key Caching: AWS Encryption SDK & KMS Rate Limits",
+      "codeHash": "0590d4a599433694c9f248669395a89c4749582a6bf1f1c41cf071da580201d7",
+      "spec": {
+        "template": "workflow",
+        "workflow": {
+          "title": "Envelope Encryption & High-Throughput Data Key Caching: AWS Encryption SDK & KMS Rate Limits",
+          "nodes": [
+            {
+              "id": "client_app",
+              "label": "Client Application / Workload",
+              "status": "active"
+            },
+            {
+              "id": "kms_hsm_gateway",
+              "label": "AWS KMS / CloudHSM Appliance",
+              "status": "active"
+            },
+            {
+              "id": "cryptographic_envelope",
+              "label": "Envelope DEK & Cache Manager",
+              "status": "active"
+            },
+            {
+              "id": "ciphertext_store",
+              "label": "Encrypted Immutable Storage",
+              "status": "active"
+            }
+          ],
+          "edges": [
+            {
+              "from": "client_app",
+              "to": "kms_hsm_gateway",
+              "label": "Request DEK / MRK Decrypt"
+            },
+            {
+              "from": "kms_hsm_gateway",
+              "to": "cryptographic_envelope",
+              "label": "Return Wrapped Key & Context"
+            },
+            {
+              "from": "cryptographic_envelope",
+              "to": "ciphertext_store",
+              "label": "Store AES-256-GCM Envelope"
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "focus": "client_app",
+            "annotation": "Applications request cryptographic operations using Multi-Region Keys or dedicated CloudHSM appliances."
+          },
+          {
+            "at": "say2",
+            "focus": "kms_hsm_gateway",
+            "annotation": "KMS and CloudHSM enforce FIPS 140-2 Level 3 hardware boundaries and M-of-N quorum dual-party authentication."
+          },
+          {
+            "at": "example",
+            "focus": "cryptographic_envelope",
+            "annotation": "Envelope encryption reuses cached data keys to prevent throttling while binding cryptographic context."
+          },
+          {
+            "at": "tryIt",
+            "focus": "ciphertext_store",
+            "annotation": "Ciphertext remains mathematically secure on immutable storage, enabling instant crypto-shredding on key destruction."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cryptographic Erasure (Crypto-Shredding) for GDPR Compliance on Immutable Media",
+      "codeHash": "af21ead13a5c411510e75371318170db035467ef8463964f8ee5ea15d75f0946",
+      "spec": {
+        "template": "workflow",
+        "workflow": {
+          "title": "Cryptographic Erasure (Crypto-Shredding) for GDPR Compliance on Immutable Media",
+          "nodes": [
+            {
+              "id": "client_app",
+              "label": "Client Application / Workload",
+              "status": "active"
+            },
+            {
+              "id": "kms_hsm_gateway",
+              "label": "AWS KMS / CloudHSM Appliance",
+              "status": "active"
+            },
+            {
+              "id": "cryptographic_envelope",
+              "label": "Envelope DEK & Cache Manager",
+              "status": "active"
+            },
+            {
+              "id": "ciphertext_store",
+              "label": "Encrypted Immutable Storage",
+              "status": "active"
+            }
+          ],
+          "edges": [
+            {
+              "from": "client_app",
+              "to": "kms_hsm_gateway",
+              "label": "Request DEK / MRK Decrypt"
+            },
+            {
+              "from": "kms_hsm_gateway",
+              "to": "cryptographic_envelope",
+              "label": "Return Wrapped Key & Context"
+            },
+            {
+              "from": "cryptographic_envelope",
+              "to": "ciphertext_store",
+              "label": "Store AES-256-GCM Envelope"
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "focus": "client_app",
+            "annotation": "Applications request cryptographic operations using Multi-Region Keys or dedicated CloudHSM appliances."
+          },
+          {
+            "at": "say2",
+            "focus": "kms_hsm_gateway",
+            "annotation": "KMS and CloudHSM enforce FIPS 140-2 Level 3 hardware boundaries and M-of-N quorum dual-party authentication."
+          },
+          {
+            "at": "example",
+            "focus": "cryptographic_envelope",
+            "annotation": "Envelope encryption reuses cached data keys to prevent throttling while binding cryptographic context."
+          },
+          {
+            "at": "tryIt",
+            "focus": "ciphertext_store",
+            "annotation": "Ciphertext remains mathematically secure on immutable storage, enabling instant crypto-shredding on key destruction."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Masterclass Synthesis: Enterprise Key Governance, Key Rotation & SRE Disaster Recovery Runbook",
+      "codeHash": "02928ab4e45e1925d8a7094cd9b15e1562f190ba81178aea8999be770b3d1db2",
+      "spec": {
+        "template": "workflow",
+        "workflow": {
+          "title": "Masterclass Synthesis: Enterprise Key Governance, Key Rotation & SRE Disaster Recovery Runbook",
+          "nodes": [
+            {
+              "id": "client_app",
+              "label": "Client Application / Workload",
+              "status": "active"
+            },
+            {
+              "id": "kms_hsm_gateway",
+              "label": "AWS KMS / CloudHSM Appliance",
+              "status": "active"
+            },
+            {
+              "id": "cryptographic_envelope",
+              "label": "Envelope DEK & Cache Manager",
+              "status": "active"
+            },
+            {
+              "id": "ciphertext_store",
+              "label": "Encrypted Immutable Storage",
+              "status": "active"
+            }
+          ],
+          "edges": [
+            {
+              "from": "client_app",
+              "to": "kms_hsm_gateway",
+              "label": "Request DEK / MRK Decrypt"
+            },
+            {
+              "from": "kms_hsm_gateway",
+              "to": "cryptographic_envelope",
+              "label": "Return Wrapped Key & Context"
+            },
+            {
+              "from": "cryptographic_envelope",
+              "to": "ciphertext_store",
+              "label": "Store AES-256-GCM Envelope"
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "focus": "client_app",
+            "annotation": "Applications request cryptographic operations using Multi-Region Keys or dedicated CloudHSM appliances."
+          },
+          {
+            "at": "say2",
+            "focus": "kms_hsm_gateway",
+            "annotation": "KMS and CloudHSM enforce FIPS 140-2 Level 3 hardware boundaries and M-of-N quorum dual-party authentication."
+          },
+          {
+            "at": "example",
+            "focus": "cryptographic_envelope",
+            "annotation": "Envelope encryption reuses cached data keys to prevent throttling while binding cryptographic context."
+          },
+          {
+            "at": "tryIt",
+            "focus": "ciphertext_store",
+            "annotation": "Ciphertext remains mathematically secure on immutable storage, enabling instant crypto-shredding on key destruction."
+          }
+        ]
+      }
+    }
+  ]
+}
