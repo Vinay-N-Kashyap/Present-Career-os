@@ -1910,8 +1910,8 @@ test('Block 216 (TASK-1126..1130): Domain specifics & deterministic Python code 
 });
 
 test('COURSE 29 GRAND MASTER COMPLETION: bcom_law Days 1–30 Full Curriculum Invariant', () => {
-  // Verify all 30 days are registered and retrievable
-  assert.equal(BCOM_LAW_LONG_LESSONS.length, 30, 'bcom_law must contain exactly 30 days');
+  // Verify at least 30 days are registered and retrievable (Month 1 + Month 2 expansion)
+  assert.ok(BCOM_LAW_LONG_LESSONS.length >= 30, 'bcom_law must contain at least 30 days');
 
   for (let day = 1; day <= 30; day++) {
     const lesson = getLongLesson('bcom_law', day);

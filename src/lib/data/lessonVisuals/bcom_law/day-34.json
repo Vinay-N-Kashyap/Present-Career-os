@@ -1,0 +1,294 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_law",
+  "day": 34,
+  "promptSha": "prompt_sha_bcom_law_day34_meetings_v1",
+  "model": "google/gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "ICSI Secretarial Standard-1 (SS-1) on Board Meetings: 7-Day Notice, Agenda & Inspection Rights",
+      "codeHash": "61163e1896ad85d3605cba34bc7aebea22d50dcaee0aacf9f62084b416c5e4bd",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "ICSI Secretarial Standard-1 (SS-1) on Board Meetings: 7-Day Notice, Agenda & Inspection Rights Governance Architecture",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Statutory Calendar",
+            "subtext": "Four annual meetings and gap limits"
+          },
+          {
+            "id": "s2",
+            "name": "Notice Dispatch",
+            "subtext": "Seven day notice and agenda circulation"
+          },
+          {
+            "id": "s3",
+            "name": "Urgent Exception",
+            "subtext": "Independent director presence or ratification"
+          },
+          {
+            "id": "s4",
+            "name": "Records Retention",
+            "subtext": "Eight year preservation of minutes"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Boardroom deliberations establish legally binding corporate decisions.",
+            "activeStageId": "s1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say1",
+            "caption": "Boardroom minutes require circulation and statutory chairperson signing.",
+            "activeStageId": "s2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Emergency board meetings require independent director ratification.",
+            "activeStageId": "s3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Notice validator algorithms test statutory notice and ratification rules.",
+            "activeStageId": "s4",
+            "statusBadge": "done"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Quorum Invariants under Section 174: One-Third Rule, Video Conferencing Restrictions & Interested Directors",
+      "codeHash": "fc22aa8f9d10ca3af1eab1476f73a22cf13836aa0f7bab1d43fcc57ae44c8017",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Quorum Invariants under Section 174: One-Third Rule, Video Conferencing Restrictions & Interested Directors Governance Architecture",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Quorum Threshold",
+            "subtext": "Higher of two or one third rounded up"
+          },
+          {
+            "id": "s2",
+            "name": "Virtual Attendance",
+            "subtext": "Video conferencing identity and roll call"
+          },
+          {
+            "id": "s3",
+            "name": "Interested Recusal",
+            "subtext": "Exclusion of conflicted directors"
+          },
+          {
+            "id": "s4",
+            "name": "Statutory Adjournment",
+            "subtext": "Automatic deferral for want of quorum"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Quorum requirements guarantee representative deliberative assemblies.",
+            "activeStageId": "s1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say1",
+            "caption": "Mandatory quorum thresholds prevent controlling faction dominance.",
+            "activeStageId": "s2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Disinterested directors constitute lawful quorum for property contracts.",
+            "activeStageId": "s3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Quorum assessment engines evaluate thresholds and director disqualifications.",
+            "activeStageId": "s4",
+            "statusBadge": "done"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Passing Resolutions by Circulation under Section 175: Physical & Electronic Verification Thresholds",
+      "codeHash": "85c2156f329bb758901221ef23b21ab7e296620fcd493ad0195531cf5a069171",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Passing Resolutions by Circulation under Section 175: Physical & Electronic Verification Thresholds Governance Architecture",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Simultaneous Draft",
+            "subtext": "Circulation to all directors worldwide"
+          },
+          {
+            "id": "s2",
+            "name": "Majority Assent",
+            "subtext": "Approval by majority entitled to vote"
+          },
+          {
+            "id": "s3",
+            "name": "One Third Demand",
+            "subtext": "Minority right to compel physical meeting"
+          },
+          {
+            "id": "s4",
+            "name": "Reserved Prohibitions",
+            "subtext": "Section reserved matter exclusions"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Passing resolutions by circulation accelerates corporate administration.",
+            "activeStageId": "s1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say1",
+            "caption": "Circulation frameworks permit efficient intermediate board actions.",
+            "activeStageId": "s2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Acquisition resolutions require formal synchronous board deliberation.",
+            "activeStageId": "s3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Circular resolution validators test meeting demands and reserved powers.",
+            "activeStageId": "s4",
+            "statusBadge": "done"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Secretarial Standard-2 (SS-2) on General Meetings: 21-Day Notice, Postal Ballots, E-Voting & Scrutinizer Reports",
+      "codeHash": "20cb8e0ae9cdd54b53da238f27fba34d34f25168792622bc455ec5097a01bc0f",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Secretarial Standard-2 (SS-2) on General Meetings: 21-Day Notice, Postal Ballots, E-Voting & Scrutinizer Reports Governance Architecture",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Clear Days Rule",
+            "subtext": "Twenty one clear days notice standard"
+          },
+          {
+            "id": "s2",
+            "name": "Shorter Notice",
+            "subtext": "Ninety five percent member consent"
+          },
+          {
+            "id": "s3",
+            "name": "Electronic Voting",
+            "subtext": "Mandatory e voting for listed entities"
+          },
+          {
+            "id": "s4",
+            "name": "Scrutinizer Report",
+            "subtext": "Independent audit and declaration"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "General meetings empower equity shareholders in corporate democracy.",
+            "activeStageId": "s1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say1",
+            "caption": "Secretarial standards codify rigorous general meeting procedures.",
+            "activeStageId": "s2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Defective notice periods invalidate general shareholder resolutions.",
+            "activeStageId": "s3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Meeting calculators determine clear days notice and electronic voting rules.",
+            "activeStageId": "s4",
+            "statusBadge": "done"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Anti-Pattern Defense & Outage Puzzle: The Defective Circular Resolution & Disputed Boardroom Quorum Outage",
+      "codeHash": "510b2ab37e8c245932594f6869d6619ddddc6f7e94a837d78131a910e6ec5765",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Anti-Pattern Defense & Outage Puzzle: The Defective Circular Resolution & Disputed Boardroom Quorum Outage Governance Architecture",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Outage Discovery",
+            "subtext": "Detecting illegal circular authorizations"
+          },
+          {
+            "id": "s2",
+            "name": "Quorum Dropout",
+            "subtext": "Virtual connectivity loss during voting"
+          },
+          {
+            "id": "s3",
+            "name": "Minutes Tampering",
+            "subtext": "Criminal liability for false recording"
+          },
+          {
+            "id": "s4",
+            "name": "Session Gatekeeper",
+            "subtext": "Biometric heartbeat quorum enforcement"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Defective circular resolutions trigger severe corporate litigation.",
+            "activeStageId": "s1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say1",
+            "caption": "Corporate secretarial audits expose invalid boardroom resolutions.",
+            "activeStageId": "s2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Debenture issuance circulars face immediate judicial invalidation.",
+            "activeStageId": "s3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Diagnostic outage analyzers detect illegal circulars and quorum collapses.",
+            "activeStageId": "s4",
+            "statusBadge": "done"
+          }
+        ]
+      }
+    }
+  ]
+}

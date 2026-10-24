@@ -1,0 +1,294 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_law",
+  "day": 38,
+  "promptSha": "prompt_sha_bcom_law_day38_coc_governance_v1",
+  "model": "google/gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Section 21 Constitution of Committee of Creditors: Composition & Voting Share Formula",
+      "codeHash": "c75246cb5debe6ded27d898713ac2d082b90bd53d05211bfdcd75d0613625f66",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Section 21 Constitution of Committee of Creditors: Composition & Voting Share Formula Governance Framework",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "CoC Constitution",
+            "subtext": "Filing report with tribunal within thirty days"
+          },
+          {
+            "id": "s2",
+            "name": "Voting Share Formula",
+            "subtext": "Admitted financial debt proportion denominator"
+          },
+          {
+            "id": "s3",
+            "name": "Related Party Exclusion",
+            "subtext": "First proviso voting rights revocation"
+          },
+          {
+            "id": "s4",
+            "name": "Observer Participation",
+            "subtext": "Operational creditor representation rights"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Creditors govern enterprise insolvency through democratic committee voting.",
+            "activeStageId": "s1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say1",
+            "caption": "Creditor democracy empowers financial lenders in enterprise insolvency.",
+            "activeStageId": "s2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Consortium commercial banks calibrate voting shares across lenders.",
+            "activeStageId": "s3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Voting share calculators filter related parties and calibrate shares.",
+            "activeStageId": "s4",
+            "statusBadge": "done"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Section 22 First Meeting of CoC: Confirmation or Replacement of IRP by 66% Majority",
+      "codeHash": "7a2e1ad547a04cf5727b474c12d1dd99d776bd2e8cc1fd656ec5134f283e3636",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Section 22 First Meeting of CoC: Confirmation or Replacement of IRP by 66% Majority Governance Framework",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "First Meeting Mandate",
+            "subtext": "Convene within seven days of constitution"
+          },
+          {
+            "id": "s2",
+            "name": "Confirmation Ballot",
+            "subtext": "Sixty-six percent voting share threshold"
+          },
+          {
+            "id": "s3",
+            "name": "Replacement Protocol",
+            "subtext": "Application to tribunal with IBBI confirmation"
+          },
+          {
+            "id": "s4",
+            "name": "Executive Handover",
+            "subtext": "Transfer of digital ledgers and going concern control"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Inaugural creditor meetings determine professional executive appointments.",
+            "activeStageId": "s1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say1",
+            "caption": "First creditor meetings establish executive restructuring leadership.",
+            "activeStageId": "s2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Senior restructuring practitioners assume command upon supermajority votes.",
+            "activeStageId": "s3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Replacement validators test voting percentages and evaluate outcomes.",
+            "activeStageId": "s4",
+            "statusBadge": "done"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Section 28 Statutory Actions Requiring Prior CoC Approval: 66% Special Resolution Powers",
+      "codeHash": "ce27f2cfa4294fe9b481f23cab6234a8dd19b1d09045547b6fd2cc3d8db2caf6",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Section 28 Statutory Actions Requiring Prior CoC Approval: 66% Special Resolution Powers Governance Framework",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Negative Covenants",
+            "subtext": "Thirteen restricted statutory actions"
+          },
+          {
+            "id": "s2",
+            "name": "Interim Finance Approval",
+            "subtext": "Credit creation requiring supermajority assent"
+          },
+          {
+            "id": "s3",
+            "name": "Asset Disposal Restraints",
+            "subtext": "Barring asset encumbrance without committee vote"
+          },
+          {
+            "id": "s4",
+            "name": "Void Action Consequence",
+            "subtext": "Ultra vires transactions rendered null and void"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Statutory negative covenants restrict unauthorized corporate transactions.",
+            "activeStageId": "s1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say1",
+            "caption": "Resolution professionals face strict statutory checks against overreach.",
+            "activeStageId": "s2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Emergency financing proposals require sixty six percent committee assent.",
+            "activeStageId": "s3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Negative covenant engines test restricted actions and verify prior assent.",
+            "activeStageId": "s4",
+            "statusBadge": "done"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Section 24 Meeting Protocols: Notice Timelines, Quorum Invariants & Electronic Voting Mechanics",
+      "codeHash": "419da990ee4b900aa17f2c5e38f32638516d2f69a98cec3bcac1e880a156eeb6",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Section 24 Meeting Protocols: Notice Timelines, Quorum Invariants & Electronic Voting Mechanics Governance Framework",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Notice Timelines",
+            "subtext": "Five day notice reducible to twenty-four hours"
+          },
+          {
+            "id": "s2",
+            "name": "Quorum Invariant",
+            "subtext": "Thirty-three percent financial creditor presence"
+          },
+          {
+            "id": "s3",
+            "name": "Audio Visual Attendance",
+            "subtext": "Virtual boardroom participation protocols"
+          },
+          {
+            "id": "s4",
+            "name": "Electronic Voting Window",
+            "subtext": "Twenty-four to forty-eight hour secure ballot"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Procedural legitimacy requires strict compliance with meeting rules.",
+            "activeStageId": "s1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say1",
+            "caption": "Meeting protocols guarantee procedural transparency and quorum minimums.",
+            "activeStageId": "s2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Emergency meetings verify quorum standards before electronic balloting.",
+            "activeStageId": "s3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Meeting compliance engines test notice timelines and quorum invariants.",
+            "activeStageId": "s4",
+            "statusBadge": "done"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Anti-Pattern Defense & Outage Puzzle: The Deadlocked CoC & Deliberate Voting Paralysis Crisis",
+      "codeHash": "128a3cb79f6f6f63cd8b8b8cbeff553477dc477934d55adc402cab6e433f35ac",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Anti-Pattern Defense & Outage Puzzle: The Deadlocked CoC & Deliberate Voting Paralysis Crisis Governance Framework",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Deadlock Diagnostics",
+            "subtext": "Consortium lender disagreement stalling approvals"
+          },
+          {
+            "id": "s2",
+            "name": "Voting Share Deadband",
+            "subtext": "Failure to achieve sixty-six percent threshold"
+          },
+          {
+            "id": "s3",
+            "name": "Liquidation Warning",
+            "subtext": "Section 33 trigger upon statutory expiry"
+          },
+          {
+            "id": "s4",
+            "name": "Judicial Intervention",
+            "subtext": "Tribunal directions breaking deliberate obstruction"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Consortium deadlocks threaten enterprise liquidation during insolvency.",
+            "activeStageId": "s1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say1",
+            "caption": "Creditor voting paralysis endangers viable business rescue efforts.",
+            "activeStageId": "s2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Tribunal directions compel financial institutions to break voting deadlocks.",
+            "activeStageId": "s3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Deadlock diagnostic engines detect abstention paralysis and evaluate remedies.",
+            "activeStageId": "s4",
+            "statusBadge": "done"
+          }
+        ]
+      }
+    }
+  ]
+}

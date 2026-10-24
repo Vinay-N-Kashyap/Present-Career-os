@@ -1,0 +1,294 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_law",
+  "day": 33,
+  "promptSha": "prompt_sha_bcom_law_day33_rpt_v1",
+  "model": "google/gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Section 188 Scope: Identifying Related Parties under Section 2(76) & Covered Commercial Transactions",
+      "codeHash": "662c892720c8382d91507b3e180d77a1fda14504114c6d547ba3b0b67f0519f3",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Section 188 Scope: Identifying Related Parties under Section 2(76) & Covered Commercial Transactions Governance Architecture",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Party Identification",
+            "subtext": "Section definitions and relative checks"
+          },
+          {
+            "id": "s2",
+            "name": "Contract Net",
+            "subtext": "Seven covered commercial arrangements"
+          },
+          {
+            "id": "s3",
+            "name": "Board Deliberation",
+            "subtext": "Meeting quorum and interested recusal"
+          },
+          {
+            "id": "s4",
+            "name": "SEBI Promoter Scope",
+            "subtext": "Ten percent equity listing criteria"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Related party governance prevents promoter self dealing.",
+            "activeStageId": "s1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say1",
+            "caption": "The statutory register of contracts requires permanent preservation.",
+            "activeStageId": "s2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Steel corporation procurement contracts require formal recusal.",
+            "activeStageId": "s3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Identifier algorithms classify entities and evaluate approval requirements.",
+            "activeStageId": "s4",
+            "statusBadge": "done"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Audit Committee Omnibus Approvals & Material RPT Thresholds under Rule 15 of Companies (Meetings of Board) Rules",
+      "codeHash": "cc97091bef4449dd2f2aad4801769e35abefd85b9f8c86324a6d3f8a834d4e92",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Audit Committee Omnibus Approvals & Material RPT Thresholds under Rule 15 of Companies (Meetings of Board) Rules Governance Architecture",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Omnibus Criteria",
+            "subtext": "Repetitive transactions and annual validity"
+          },
+          {
+            "id": "s2",
+            "name": "Quarterly Review",
+            "subtext": "Audit committee monitoring of volume"
+          },
+          {
+            "id": "s3",
+            "name": "Statutory Thresholds",
+            "subtext": "Ten percent turnover or net worth limits"
+          },
+          {
+            "id": "s4",
+            "name": "SEBI Materiality",
+            "subtext": "One thousand crore transaction trigger"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Audit committee omnibus approvals balance velocity with oversight.",
+            "activeStageId": "s1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say1",
+            "caption": "Commercial transactions require systematic fiduciary authorization.",
+            "activeStageId": "s2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Commercial vehicle procurement exceeds statutory materiality ceilings.",
+            "activeStageId": "s3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Materiality analyzers calculate statutory thresholds and approval triggers.",
+            "activeStageId": "s4",
+            "statusBadge": "done"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Shareholder Prior Approval Mechanics: Voting Bar on Interested Related Parties & SEBI LODR Regulation 23",
+      "codeHash": "9d2e98f3e39f072a942cefa6f5be3a3f91febfa99fd9829153fd782da66e96f8",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Shareholder Prior Approval Mechanics: Voting Bar on Interested Related Parties & SEBI LODR Regulation 23 Governance Architecture",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Voting Disqualification",
+            "subtext": "Bar on all interested related entities"
+          },
+          {
+            "id": "s2",
+            "name": "Explanatory Statement",
+            "subtext": "Mandatory material disclosure in notice"
+          },
+          {
+            "id": "s3",
+            "name": "Majority of Minority",
+            "subtext": "Public shareholder democratic approval"
+          },
+          {
+            "id": "s4",
+            "name": "Semi-Annual Filing",
+            "subtext": "Standardized disclosure to exchanges"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Democratic shareholder voting bars eliminate promoter self dealing.",
+            "activeStageId": "s1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say1",
+            "caption": "Electronic voting scrutinizers verify depository registers.",
+            "activeStageId": "s2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Infrastructure developer asset sales require minority ratification.",
+            "activeStageId": "s3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Voting engines test public shareholder approval outcomes under regulations.",
+            "activeStageId": "s4",
+            "statusBadge": "done"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Arm's-Length Transaction Defense & Transfer Pricing Documentation under Income Tax Act Section 92C",
+      "codeHash": "132155842795e6d954bb20b99906589f9e3d229c418161b4245327156f7622e0",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "The Arm's-Length Transaction Defense & Transfer Pricing Documentation under Income Tax Act Section 92C Governance Architecture",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Statutory Exception",
+            "subtext": "Ordinary course of business safe harbor"
+          },
+          {
+            "id": "s2",
+            "name": "Arm's Length Defense",
+            "subtext": "Transactions as if parties were unrelated"
+          },
+          {
+            "id": "s3",
+            "name": "Transfer Pricing",
+            "subtext": "Comparable uncontrolled price valuation"
+          },
+          {
+            "id": "s4",
+            "name": "Benchmarking Report",
+            "subtext": "Independent chartered accountant audit"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "The arm length transaction defense provides statutory safe harbors.",
+            "activeStageId": "s1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say1",
+            "caption": "Commercial contracts in ordinary course of business require benchmarks.",
+            "activeStageId": "s2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Office building lease rates require independent valuation reports.",
+            "activeStageId": "s3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Transfer pricing validators evaluate variance and safe harbor rules.",
+            "activeStageId": "s4",
+            "statusBadge": "done"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Anti-Pattern Defense & Outage Puzzle: The Undisclosed Related Party Real Estate Lease & Director Disqualification",
+      "codeHash": "1722c139717cdc922338abb90938034fbb4e96e09a0f420fdeca8bd4d4c57377",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Anti-Pattern Defense & Outage Puzzle: The Undisclosed Related Party Real Estate Lease & Director Disqualification Governance Architecture",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Concealed Contract",
+            "subtext": "Failure to disclose interest under statute"
+          },
+          {
+            "id": "s2",
+            "name": "Three Month Clock",
+            "subtext": "Statutory ratification deadline"
+          },
+          {
+            "id": "s3",
+            "name": "Office Vacation",
+            "subtext": "Automatic loss of directorship by law"
+          },
+          {
+            "id": "s4",
+            "name": "Personal Liability",
+            "subtext": "Civil indemnification and statutory fines"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Undisclosed related party contracts trigger severe director penalties.",
+            "activeStageId": "s1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say1",
+            "caption": "Unauthorized director contracts trigger court recovery proceedings.",
+            "activeStageId": "s2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Managing director warehouse leases face voidability and vacation.",
+            "activeStageId": "s3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Diagnostic engines assess contract voidability and statutory penalties.",
+            "activeStageId": "s4",
+            "statusBadge": "done"
+          }
+        ]
+      }
+    }
+  ]
+}

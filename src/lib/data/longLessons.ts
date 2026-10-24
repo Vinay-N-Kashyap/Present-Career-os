@@ -110,6 +110,8 @@ export interface LongLesson {
   /** Short reminder of the previous day, spoken at the start. */
   recap?: string;
   overview?: string;
+  description?: string;
+  desc?: string;
   parts: LongLessonPart[];
   /** Key points to remember, shown at the end. */
   summary?: string[];
