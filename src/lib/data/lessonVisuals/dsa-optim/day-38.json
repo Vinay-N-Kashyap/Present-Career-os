@@ -1,0 +1,779 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "dsa-optim",
+  "day": 38,
+  "promptSha": "dsa-optim-day-38-z-algorithm-lcp-pipeline",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "The Z-Array Definition, Z-Box Invariant [L, R], and Linear O(N) Construction",
+      "codeHash": "2b229b6650086db6773cc27b04b5dec9218be1ab2e26a429c50a666a02936b68",
+      "filled": {
+        "template": "table",
+        "title": "Linear Z-Box Geometric State Machine.",
+        "columns": [
+          "Index Position",
+          "Relative Geometric State",
+          "Amortized Action"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Linear string processing computes prefix overlap arrays in linear time.",
+            "rows": [
+              [
+                "Index Outside Box",
+                "No Prior Knowledge",
+                "Explicit Compare Loop"
+              ],
+              [
+                "Index Inside Box",
+                "Mirrored Value Cached",
+                "Direct Constant Time Copy"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Active reference interval eliminates quadratic nested string comparisons.",
+            "rows": [
+              [
+                "Index Outside Box",
+                "No Prior Knowledge",
+                "Explicit Compare Loop"
+              ],
+              [
+                "Index Inside Box",
+                "Mirrored Value Cached",
+                "Direct Constant Time Copy"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Database compiler indexes product inventory codes using prefix filters.",
+            "rows": [
+              [
+                "Index Outside Box",
+                "No Prior Knowledge",
+                "Explicit Compare Loop"
+              ],
+              [
+                "Index Inside Box",
+                "Mirrored Value Cached",
+                "Direct Constant Time Copy"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Interval pointers maintain active window avoiding redundant comparisons.",
+            "rows": [
+              [
+                "Index Outside Box",
+                "No Prior Knowledge",
+                "Explicit Compare Loop"
+              ],
+              [
+                "Index Inside Box",
+                "Mirrored Value Cached",
+                "Direct Constant Time Copy"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Linear Z-Box Geometric State Machine.",
+        "columns": [
+          "Index Position",
+          "Relative Geometric State",
+          "Amortized Action"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Linear string processing computes prefix overlap arrays in linear time.",
+            "rows": [
+              [
+                "Index Outside Box",
+                "No Prior Knowledge",
+                "Explicit Compare Loop"
+              ],
+              [
+                "Index Inside Box",
+                "Mirrored Value Cached",
+                "Direct Constant Time Copy"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Active reference interval eliminates quadratic nested string comparisons.",
+            "rows": [
+              [
+                "Index Outside Box",
+                "No Prior Knowledge",
+                "Explicit Compare Loop"
+              ],
+              [
+                "Index Inside Box",
+                "Mirrored Value Cached",
+                "Direct Constant Time Copy"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Database compiler indexes product inventory codes using prefix filters.",
+            "rows": [
+              [
+                "Index Outside Box",
+                "No Prior Knowledge",
+                "Explicit Compare Loop"
+              ],
+              [
+                "Index Inside Box",
+                "Mirrored Value Cached",
+                "Direct Constant Time Copy"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Interval pointers maintain active window avoiding redundant comparisons.",
+            "rows": [
+              [
+                "Index Outside Box",
+                "No Prior Knowledge",
+                "Explicit Compare Loop"
+              ],
+              [
+                "Index Inside Box",
+                "Mirrored Value Cached",
+                "Direct Constant Time Copy"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Linear Exact Pattern Matching via S = P + '$' + T and Suffix-Prefix Boundary Discovery",
+      "codeHash": "dded3b9beb8dfc9ad1e7b3e895d8c1fb62697432fffad7de302368d6e486943c",
+      "filled": {
+        "template": "table",
+        "title": "Concatenated Pattern Matching Pipeline.",
+        "columns": [
+          "Sequence Segment",
+          "Delimiter Role",
+          "Match Detection"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Pattern matching identifies exact substring occurrences in linear time.",
+            "rows": [
+              [
+                "Pattern Prefix",
+                "Sentinel Prevents Overlap",
+                "Pattern Length Bound"
+              ],
+              [
+                "Text Body",
+                "Exact Occurrence Filter",
+                "Instant Match Discovery"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Unique sentinel character bounds search window preventing overflow.",
+            "rows": [
+              [
+                "Pattern Prefix",
+                "Sentinel Prevents Overlap",
+                "Pattern Length Bound"
+              ],
+              [
+                "Text Body",
+                "Exact Occurrence Filter",
+                "Instant Match Discovery"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Intrusion detection firewall scans packet buffers for attack signatures.",
+            "rows": [
+              [
+                "Pattern Prefix",
+                "Sentinel Prevents Overlap",
+                "Pattern Length Bound"
+              ],
+              [
+                "Text Body",
+                "Exact Occurrence Filter",
+                "Instant Match Discovery"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Concatenated string separates search pattern using delimiter character.",
+            "rows": [
+              [
+                "Pattern Prefix",
+                "Sentinel Prevents Overlap",
+                "Pattern Length Bound"
+              ],
+              [
+                "Text Body",
+                "Exact Occurrence Filter",
+                "Instant Match Discovery"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Concatenated Pattern Matching Pipeline.",
+        "columns": [
+          "Sequence Segment",
+          "Delimiter Role",
+          "Match Detection"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Pattern matching identifies exact substring occurrences in linear time.",
+            "rows": [
+              [
+                "Pattern Prefix",
+                "Sentinel Prevents Overlap",
+                "Pattern Length Bound"
+              ],
+              [
+                "Text Body",
+                "Exact Occurrence Filter",
+                "Instant Match Discovery"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Unique sentinel character bounds search window preventing overflow.",
+            "rows": [
+              [
+                "Pattern Prefix",
+                "Sentinel Prevents Overlap",
+                "Pattern Length Bound"
+              ],
+              [
+                "Text Body",
+                "Exact Occurrence Filter",
+                "Instant Match Discovery"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Intrusion detection firewall scans packet buffers for attack signatures.",
+            "rows": [
+              [
+                "Pattern Prefix",
+                "Sentinel Prevents Overlap",
+                "Pattern Length Bound"
+              ],
+              [
+                "Text Body",
+                "Exact Occurrence Filter",
+                "Instant Match Discovery"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Concatenated string separates search pattern using delimiter character.",
+            "rows": [
+              [
+                "Pattern Prefix",
+                "Sentinel Prevents Overlap",
+                "Pattern Length Bound"
+              ],
+              [
+                "Text Body",
+                "Exact Occurrence Filter",
+                "Instant Match Discovery"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Equivalence and Duality between Z-Array and Prefix Function Pi",
+      "codeHash": "fedc1388fc7f6ad7ba85cd1659cc742052a5098bcf04ea53f7aa368f1c24388e",
+      "filled": {
+        "template": "table",
+        "title": "Equivalence and Duality Matrix.",
+        "columns": [
+          "Representation Type",
+          "Structural Perspective",
+          "Runtime Transformation"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Algorithmic duality maps prefix functions into linear array metrics.",
+            "rows": [
+              [
+                "Prefix Function Pi",
+                "Backward Border Suffix",
+                "Linear Invariant Sweep"
+              ],
+              [
+                "Z-Array Metric",
+                "Forward Substring Span",
+                "Two Phase Conversion"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Prefix border hierarchy captures structural string periodicity.",
+            "rows": [
+              [
+                "Prefix Function Pi",
+                "Backward Border Suffix",
+                "Linear Invariant Sweep"
+              ],
+              [
+                "Z-Array Metric",
+                "Forward Substring Span",
+                "Two Phase Conversion"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Distributed search engine converts string metrics for index optimization.",
+            "rows": [
+              [
+                "Prefix Function Pi",
+                "Backward Border Suffix",
+                "Linear Invariant Sweep"
+              ],
+              [
+                "Z-Array Metric",
+                "Forward Substring Span",
+                "Two Phase Conversion"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Linear conversion sweep propagates border lengths across string indices.",
+            "rows": [
+              [
+                "Prefix Function Pi",
+                "Backward Border Suffix",
+                "Linear Invariant Sweep"
+              ],
+              [
+                "Z-Array Metric",
+                "Forward Substring Span",
+                "Two Phase Conversion"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Equivalence and Duality Matrix.",
+        "columns": [
+          "Representation Type",
+          "Structural Perspective",
+          "Runtime Transformation"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Algorithmic duality maps prefix functions into linear array metrics.",
+            "rows": [
+              [
+                "Prefix Function Pi",
+                "Backward Border Suffix",
+                "Linear Invariant Sweep"
+              ],
+              [
+                "Z-Array Metric",
+                "Forward Substring Span",
+                "Two Phase Conversion"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Prefix border hierarchy captures structural string periodicity.",
+            "rows": [
+              [
+                "Prefix Function Pi",
+                "Backward Border Suffix",
+                "Linear Invariant Sweep"
+              ],
+              [
+                "Z-Array Metric",
+                "Forward Substring Span",
+                "Two Phase Conversion"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Distributed search engine converts string metrics for index optimization.",
+            "rows": [
+              [
+                "Prefix Function Pi",
+                "Backward Border Suffix",
+                "Linear Invariant Sweep"
+              ],
+              [
+                "Z-Array Metric",
+                "Forward Substring Span",
+                "Two Phase Conversion"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Linear conversion sweep propagates border lengths across string indices.",
+            "rows": [
+              [
+                "Prefix Function Pi",
+                "Backward Border Suffix",
+                "Linear Invariant Sweep"
+              ],
+              [
+                "Z-Array Metric",
+                "Forward Substring Span",
+                "Two Phase Conversion"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "String Matching with Wildcards / Don't-Care Characters and Fast Pattern Matching",
+      "codeHash": "1e06c9e62a506af7ce8c2ac0e745f8f68d1aa4ef6bf4b96b025638993791a1e5",
+      "filled": {
+        "template": "table",
+        "title": "Dual Z-Array Approximate Matcher.",
+        "columns": [
+          "Scanning Direction",
+          "Evaluation Target",
+          "Invariant Condition"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Approximate string matching tolerates substitution errors in text data.",
+            "rows": [
+              [
+                "Forward Z-Array",
+                "Longest Common Prefix",
+                "Mismatch Offset Detection"
+              ],
+              [
+                "Backward Z-Array",
+                "Longest Common Suffix",
+                "Hamming Distance Bound"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Dual forward backward scans evaluate candidate windows in linear time.",
+            "rows": [
+              [
+                "Forward Z-Array",
+                "Longest Common Prefix",
+                "Mismatch Offset Detection"
+              ],
+              [
+                "Backward Z-Array",
+                "Longest Common Suffix",
+                "Hamming Distance Bound"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Contract transcription pipeline locates noisy clauses with error bounds.",
+            "rows": [
+              [
+                "Forward Z-Array",
+                "Longest Common Prefix",
+                "Mismatch Offset Detection"
+              ],
+              [
+                "Backward Z-Array",
+                "Longest Common Suffix",
+                "Hamming Distance Bound"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Forward and backward arrays identify single mismatch mutation offsets.",
+            "rows": [
+              [
+                "Forward Z-Array",
+                "Longest Common Prefix",
+                "Mismatch Offset Detection"
+              ],
+              [
+                "Backward Z-Array",
+                "Longest Common Suffix",
+                "Hamming Distance Bound"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Dual Z-Array Approximate Matcher.",
+        "columns": [
+          "Scanning Direction",
+          "Evaluation Target",
+          "Invariant Condition"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Approximate string matching tolerates substitution errors in text data.",
+            "rows": [
+              [
+                "Forward Z-Array",
+                "Longest Common Prefix",
+                "Mismatch Offset Detection"
+              ],
+              [
+                "Backward Z-Array",
+                "Longest Common Suffix",
+                "Hamming Distance Bound"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Dual forward backward scans evaluate candidate windows in linear time.",
+            "rows": [
+              [
+                "Forward Z-Array",
+                "Longest Common Prefix",
+                "Mismatch Offset Detection"
+              ],
+              [
+                "Backward Z-Array",
+                "Longest Common Suffix",
+                "Hamming Distance Bound"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Contract transcription pipeline locates noisy clauses with error bounds.",
+            "rows": [
+              [
+                "Forward Z-Array",
+                "Longest Common Prefix",
+                "Mismatch Offset Detection"
+              ],
+              [
+                "Backward Z-Array",
+                "Longest Common Suffix",
+                "Hamming Distance Bound"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Forward and backward arrays identify single mismatch mutation offsets.",
+            "rows": [
+              [
+                "Forward Z-Array",
+                "Longest Common Prefix",
+                "Mismatch Offset Detection"
+              ],
+              [
+                "Backward Z-Array",
+                "Longest Common Suffix",
+                "Hamming Distance Bound"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Application: Genome Sequence Variant Scanner & Structural Mutation Oracle",
+      "codeHash": "5ad798017f657430116e285d729025e19456dbbf2d337179c6c1a95727a0599a",
+      "filled": {
+        "template": "table",
+        "title": "Genomic Sequence Variant Scanner.",
+        "columns": [
+          "Sequence Element",
+          "Clinical Interpretation",
+          "Diagnostic Pipeline"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Clinical variant scanner aligns sequencing reads against reference loci.",
+            "rows": [
+              [
+                "Reference Assembly",
+                "Chromosomal Locus Mapping",
+                "Deterministic Alignment"
+              ],
+              [
+                "Sequencing Read",
+                "Single Nucleotide Variant",
+                "Confidence Score Calibration"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Genomic scanner packages structured mutation records for diagnostics.",
+            "rows": [
+              [
+                "Reference Assembly",
+                "Chromosomal Locus Mapping",
+                "Deterministic Alignment"
+              ],
+              [
+                "Sequencing Read",
+                "Single Nucleotide Variant",
+                "Confidence Score Calibration"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Cancer sequencing pipeline detects genetic alterations with confidence.",
+            "rows": [
+              [
+                "Reference Assembly",
+                "Chromosomal Locus Mapping",
+                "Deterministic Alignment"
+              ],
+              [
+                "Sequencing Read",
+                "Single Nucleotide Variant",
+                "Confidence Score Calibration"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Variant scanner emits structured mutation reports from sequencing reads.",
+            "rows": [
+              [
+                "Reference Assembly",
+                "Chromosomal Locus Mapping",
+                "Deterministic Alignment"
+              ],
+              [
+                "Sequencing Read",
+                "Single Nucleotide Variant",
+                "Confidence Score Calibration"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Genomic Sequence Variant Scanner.",
+        "columns": [
+          "Sequence Element",
+          "Clinical Interpretation",
+          "Diagnostic Pipeline"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Clinical variant scanner aligns sequencing reads against reference loci.",
+            "rows": [
+              [
+                "Reference Assembly",
+                "Chromosomal Locus Mapping",
+                "Deterministic Alignment"
+              ],
+              [
+                "Sequencing Read",
+                "Single Nucleotide Variant",
+                "Confidence Score Calibration"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Genomic scanner packages structured mutation records for diagnostics.",
+            "rows": [
+              [
+                "Reference Assembly",
+                "Chromosomal Locus Mapping",
+                "Deterministic Alignment"
+              ],
+              [
+                "Sequencing Read",
+                "Single Nucleotide Variant",
+                "Confidence Score Calibration"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Cancer sequencing pipeline detects genetic alterations with confidence.",
+            "rows": [
+              [
+                "Reference Assembly",
+                "Chromosomal Locus Mapping",
+                "Deterministic Alignment"
+              ],
+              [
+                "Sequencing Read",
+                "Single Nucleotide Variant",
+                "Confidence Score Calibration"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Variant scanner emits structured mutation reports from sequencing reads.",
+            "rows": [
+              [
+                "Reference Assembly",
+                "Chromosomal Locus Mapping",
+                "Deterministic Alignment"
+              ],
+              [
+                "Sequencing Read",
+                "Single Nucleotide Variant",
+                "Confidence Score Calibration"
+              ]
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
