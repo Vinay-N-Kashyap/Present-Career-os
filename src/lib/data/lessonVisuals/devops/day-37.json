@@ -1,0 +1,829 @@
+{
+  "schemaVersion": 2,
+  "prefix": "devops",
+  "day": 37,
+  "promptSha": "38a670003c12730aa4ae8f3939cbbbcae4666d0054bbdd4e02529709b8a84395",
+  "model": "google/gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "W3C TraceContext Specification: traceparent, tracestate, 16-Byte TraceID & Distributed Context Propagation",
+      "codeHash": "4f8d18cf2709e7ad969e570bdce12f3552d0408ae0c08e8344c9657731996de7",
+      "spec": {
+        "template": "compare",
+        "title": "DevOps architecture analysis for W3C TraceContext Specification: tra",
+        "leftLabel": "Standard Infrastructure",
+        "rightLabel": "Target Implementation",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Evaluating system passed and validating triggers.",
+            "left": {
+              "code": "baselinePassed",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetTriggers",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Evaluating system traceid and validating world.",
+            "left": {
+              "code": "baselineTraceid",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetWorld",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Evaluating system order and validating checkout.",
+            "left": {
+              "code": "baselineOrder",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetCheckout",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Evaluating system evaluates and validating intact.",
+            "left": {
+              "code": "baselineEvaluates",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetIntact",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "DevOps architecture analysis for W3C TraceContext Specification: tra",
+        "leftLabel": "Standard Infrastructure",
+        "rightLabel": "Target Implementation",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Evaluating system passed and validating triggers.",
+            "left": {
+              "code": "baselinePassed",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetTriggers",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Evaluating system traceid and validating world.",
+            "left": {
+              "code": "baselineTraceid",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetWorld",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Evaluating system order and validating checkout.",
+            "left": {
+              "code": "baselineOrder",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetCheckout",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Evaluating system evaluates and validating intact.",
+            "left": {
+              "code": "baselineEvaluates",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetIntact",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "OpenTelemetry SDK Architecture: TracerProvider, Span Processors (Batch vs Simple) & In-Memory Span Buffering",
+      "codeHash": "0a8edd44dca44f811420a515df02c7a394025f3a3e10b28a0e0cf3ace3a8c0cf",
+      "spec": {
+        "template": "compare",
+        "title": "DevOps architecture analysis for OpenTelemetry SDK Architecture: Tra",
+        "leftLabel": "Standard Infrastructure",
+        "rightLabel": "Target Implementation",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Evaluating system efficiently and validating runtime.",
+            "left": {
+              "code": "baselineEfficiently",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetRuntime",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Evaluating system order and validating controller.",
+            "left": {
+              "code": "baselineOrder",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetController",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Evaluating system engineer and validating high.",
+            "left": {
+              "code": "baselineEngineer",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetHigh",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Evaluating system spans and validating processor.",
+            "left": {
+              "code": "baselineSpans",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetProcessor",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "DevOps architecture analysis for OpenTelemetry SDK Architecture: Tra",
+        "leftLabel": "Standard Infrastructure",
+        "rightLabel": "Target Implementation",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Evaluating system efficiently and validating runtime.",
+            "left": {
+              "code": "baselineEfficiently",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetRuntime",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Evaluating system order and validating controller.",
+            "left": {
+              "code": "baselineOrder",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetController",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Evaluating system engineer and validating high.",
+            "left": {
+              "code": "baselineEngineer",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetHigh",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Evaluating system spans and validating processor.",
+            "left": {
+              "code": "baselineSpans",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetProcessor",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "OpenTelemetry Collector Pipelines: Receivers, Processors (Memory Limiter, Batch), and Exporters (OTLP gRPC)",
+      "codeHash": "6fd123942bb2c9bd2ce5a90175351da3005c2d12969f2c9a12c88fbe7f72e20b",
+      "spec": {
+        "template": "compare",
+        "title": "DevOps architecture analysis for OpenTelemetry Collector Pipelines: ",
+        "leftLabel": "Standard Infrastructure",
+        "rightLabel": "Target Implementation",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Evaluating system proxy and validating routing.",
+            "left": {
+              "code": "baselineProxy",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetRouting",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Evaluating system decouples and validating proxy.",
+            "left": {
+              "code": "baselineDecouples",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetProxy",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Evaluating system friction and validating enterprise.",
+            "left": {
+              "code": "baselineFriction",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetEnterprise",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Evaluating system processor and validating batch.",
+            "left": {
+              "code": "baselineProcessor",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetBatch",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "DevOps architecture analysis for OpenTelemetry Collector Pipelines: ",
+        "leftLabel": "Standard Infrastructure",
+        "rightLabel": "Target Implementation",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Evaluating system proxy and validating routing.",
+            "left": {
+              "code": "baselineProxy",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetRouting",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Evaluating system decouples and validating proxy.",
+            "left": {
+              "code": "baselineDecouples",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetProxy",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Evaluating system friction and validating enterprise.",
+            "left": {
+              "code": "baselineFriction",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetEnterprise",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Evaluating system processor and validating batch.",
+            "left": {
+              "code": "baselineProcessor",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetBatch",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Distributed Tracing Sampling Strategies: Head-Based Probabilistic Sampling vs Tail-Based Latency & Error Sampling",
+      "codeHash": "0adc1c54d5c8a7f07be4f3077aa06283f67a7d421d7ad54abc47aa5e0f886f6d",
+      "spec": {
+        "template": "compare",
+        "title": "DevOps architecture analysis for Distributed Tracing Sampling Strate",
+        "leftLabel": "Standard Infrastructure",
+        "rightLabel": "Target Implementation",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Evaluating system http and validating operationally.",
+            "left": {
+              "code": "baselineHttp",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetOperationally",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Evaluating system fundamentally and validating bifurcates.",
+            "left": {
+              "code": "baselineFundamentally",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetBifurcates",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Evaluating system http and validating retaining.",
+            "left": {
+              "code": "baselineHttp",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetRetaining",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Evaluating system preserving and validating normal.",
+            "left": {
+              "code": "baselinePreserving",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetNormal",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "DevOps architecture analysis for Distributed Tracing Sampling Strate",
+        "leftLabel": "Standard Infrastructure",
+        "rightLabel": "Target Implementation",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Evaluating system http and validating operationally.",
+            "left": {
+              "code": "baselineHttp",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetOperationally",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Evaluating system fundamentally and validating bifurcates.",
+            "left": {
+              "code": "baselineFundamentally",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetBifurcates",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Evaluating system http and validating retaining.",
+            "left": {
+              "code": "baselineHttp",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetRetaining",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Evaluating system preserving and validating normal.",
+            "left": {
+              "code": "baselinePreserving",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetNormal",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Trace-to-Metric & Trace-to-Log Correlation: Exemplars, Baggage API & Root Cause Localization",
+      "codeHash": "7aba0d969cce2d79d6475e0cd2908d14b82c17e3416cf677837fbf9139c5ba95",
+      "spec": {
+        "template": "compare",
+        "title": "DevOps architecture analysis for Trace-to-Metric & Trace-to-Log Corr",
+        "leftLabel": "Standard Infrastructure",
+        "rightLabel": "Target Implementation",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Evaluating system level and validating keywords.",
+            "left": {
+              "code": "baselineLevel",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetKeywords",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Evaluating system http and validating seconds.",
+            "left": {
+              "code": "baselineHttp",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetSeconds",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Evaluating system database and validating trace.",
+            "left": {
+              "code": "baselineDatabase",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetTrace",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Evaluating system resolves and validating trace.",
+            "left": {
+              "code": "baselineResolves",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetTrace",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "DevOps architecture analysis for Trace-to-Metric & Trace-to-Log Corr",
+        "leftLabel": "Standard Infrastructure",
+        "rightLabel": "Target Implementation",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Evaluating system level and validating keywords.",
+            "left": {
+              "code": "baselineLevel",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetKeywords",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Evaluating system http and validating seconds.",
+            "left": {
+              "code": "baselineHttp",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetSeconds",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Evaluating system database and validating trace.",
+            "left": {
+              "code": "baselineDatabase",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetTrace",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Evaluating system resolves and validating trace.",
+            "left": {
+              "code": "baselineResolves",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetTrace",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

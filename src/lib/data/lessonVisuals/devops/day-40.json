@@ -1,0 +1,829 @@
+{
+  "schemaVersion": 2,
+  "prefix": "devops",
+  "day": 40,
+  "promptSha": "41900864d8241cee6e6d9258f5999c85d7b7bbb02d9f6e387c8d96b9a61b15f7",
+  "model": "google/gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "LitmusChaos & Chaos Mesh Architecture: PodChaos, NetworkChaos, StressChaos & Declarative ChaosExperiments",
+      "codeHash": "736e038ef044d5428f80b2179058967d029d4fcface6f7a5352fa0d06abea3e3",
+      "spec": {
+        "template": "compare",
+        "title": "DevOps architecture analysis for LitmusChaos & Chaos Mesh Architectu",
+        "leftLabel": "Standard Infrastructure",
+        "rightLabel": "Target Implementation",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Evaluating system order and validating disasters.",
+            "left": {
+              "code": "baselineOrder",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetDisasters",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Evaluating system audited and validating declarative.",
+            "left": {
+              "code": "baselineAudited",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetDeclarative",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Evaluating system http and validating fintech.",
+            "left": {
+              "code": "baselineHttp",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetFintech",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Evaluating system count and validating active.",
+            "left": {
+              "code": "baselineCount",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetActive",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "DevOps architecture analysis for LitmusChaos & Chaos Mesh Architectu",
+        "leftLabel": "Standard Infrastructure",
+        "rightLabel": "Target Implementation",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Evaluating system order and validating disasters.",
+            "left": {
+              "code": "baselineOrder",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetDisasters",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Evaluating system audited and validating declarative.",
+            "left": {
+              "code": "baselineAudited",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetDeclarative",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Evaluating system http and validating fintech.",
+            "left": {
+              "code": "baselineHttp",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetFintech",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Evaluating system count and validating active.",
+            "left": {
+              "code": "baselineCount",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetActive",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "SLO Error Budget Calculation & Automated Chaos Steady-State Verification",
+      "codeHash": "9d687df3dd6d3f4c374c5e18936b290388aeea3f3d35de9ee0f17582baf441a4",
+      "spec": {
+        "template": "compare",
+        "title": "DevOps architecture analysis for SLO Error Budget Calculation & Auto",
+        "leftLabel": "Standard Infrastructure",
+        "rightLabel": "Target Implementation",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Evaluating system level and validating google.",
+            "left": {
+              "code": "baselineLevel",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetGoogle",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Evaluating system level and validating http.",
+            "left": {
+              "code": "baselineLevel",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetHttp",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Evaluating system seconds and validating automated.",
+            "left": {
+              "code": "baselineSeconds",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetAutomated",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Evaluating system rate and validating failedrequests.",
+            "left": {
+              "code": "baselineRate",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetFailedrequests",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "DevOps architecture analysis for SLO Error Budget Calculation & Auto",
+        "leftLabel": "Standard Infrastructure",
+        "rightLabel": "Target Implementation",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Evaluating system level and validating google.",
+            "left": {
+              "code": "baselineLevel",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetGoogle",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Evaluating system level and validating http.",
+            "left": {
+              "code": "baselineLevel",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetHttp",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Evaluating system seconds and validating automated.",
+            "left": {
+              "code": "baselineSeconds",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetAutomated",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Evaluating system rate and validating failedrequests.",
+            "left": {
+              "code": "baselineRate",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetFailedrequests",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Distributed Observability Synthesis: OpenTelemetry Traces, Prometheus Metrics & Loki Logs Unified in Grafana",
+      "codeHash": "714815dad4bbeb32abfb31272d7a91d1a1b55f654bd171cb3b5e2d4aab69eadf",
+      "spec": {
+        "template": "compare",
+        "title": "DevOps architecture analysis for Distributed Observability Synthesis",
+        "leftLabel": "Standard Infrastructure",
+        "rightLabel": "Target Implementation",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Evaluating system runtime and validating enterprise.",
+            "left": {
+              "code": "baselineRuntime",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetEnterprise",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Evaluating system anomaly and validating alerting.",
+            "left": {
+              "code": "baselineAnomaly",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetAlerting",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Evaluating system seconds and validating outage.",
+            "left": {
+              "code": "baselineSeconds",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetOutage",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Evaluating system tripillarscorrelated and validating traceid.",
+            "left": {
+              "code": "baselineTripillarscorrelated",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetTraceid",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "DevOps architecture analysis for Distributed Observability Synthesis",
+        "leftLabel": "Standard Infrastructure",
+        "rightLabel": "Target Implementation",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Evaluating system runtime and validating enterprise.",
+            "left": {
+              "code": "baselineRuntime",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetEnterprise",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Evaluating system anomaly and validating alerting.",
+            "left": {
+              "code": "baselineAnomaly",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetAlerting",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Evaluating system seconds and validating outage.",
+            "left": {
+              "code": "baselineSeconds",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetOutage",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Evaluating system tripillarscorrelated and validating traceid.",
+            "left": {
+              "code": "baselineTripillarscorrelated",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetTraceid",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Automated Self-Healing Incident Mitigation: KEDA Event-Driven Scaling, Node Problem Detector & Pod Remediation",
+      "codeHash": "19ed72cc4848129e725780ebfb9048fd98b14fb719c8f98ff46afc8ba90cffa2",
+      "spec": {
+        "template": "compare",
+        "title": "DevOps architecture analysis for Automated Self-Healing Incident Mit",
+        "leftLabel": "Standard Infrastructure",
+        "rightLabel": "Target Implementation",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Evaluating system occurring and validating degrading.",
+            "left": {
+              "code": "baselineOccurring",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetDegrading",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Evaluating system autoscaling and validating autoscalers.",
+            "left": {
+              "code": "baselineAutoscaling",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetAutoscalers",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Evaluating system order and validating without.",
+            "left": {
+              "code": "baselineOrder",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetWithout",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Evaluating system updates and validating third.",
+            "left": {
+              "code": "baselineUpdates",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetThird",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "DevOps architecture analysis for Automated Self-Healing Incident Mit",
+        "leftLabel": "Standard Infrastructure",
+        "rightLabel": "Target Implementation",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Evaluating system occurring and validating degrading.",
+            "left": {
+              "code": "baselineOccurring",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetDegrading",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Evaluating system autoscaling and validating autoscalers.",
+            "left": {
+              "code": "baselineAutoscaling",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetAutoscalers",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Evaluating system order and validating without.",
+            "left": {
+              "code": "baselineOrder",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetWithout",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Evaluating system updates and validating third.",
+            "left": {
+              "code": "baselineUpdates",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetThird",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Milestone 8 Capstone Synthesis: Enterprise Production Observability & SRE Reliability Accreditation",
+      "codeHash": "3f0b6d0a6ec71400b6dc3aeb9dd05c9d7a9608a4e3c166d7cf51f9e2a7c267bf",
+      "spec": {
+        "template": "compare",
+        "title": "DevOps architecture analysis for Milestone 8 Capstone Synthesis: Ent",
+        "leftLabel": "Standard Infrastructure",
+        "rightLabel": "Target Implementation",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Evaluating system runtime and validating pillars.",
+            "left": {
+              "code": "baselineRuntime",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetPillars",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Evaluating system accreditation and validating enterprise.",
+            "left": {
+              "code": "baselineAccreditation",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetEnterprise",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Evaluating system crash and validating accreditation.",
+            "left": {
+              "code": "baselineCrash",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetAccreditation",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Evaluating system reliability and validating denied.",
+            "left": {
+              "code": "baselineReliability",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetDenied",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "DevOps architecture analysis for Milestone 8 Capstone Synthesis: Ent",
+        "leftLabel": "Standard Infrastructure",
+        "rightLabel": "Target Implementation",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Evaluating system runtime and validating pillars.",
+            "left": {
+              "code": "baselineRuntime",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetPillars",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Evaluating system accreditation and validating enterprise.",
+            "left": {
+              "code": "baselineAccreditation",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetEnterprise",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Evaluating system crash and validating accreditation.",
+            "left": {
+              "code": "baselineCrash",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetAccreditation",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Evaluating system reliability and validating denied.",
+            "left": {
+              "code": "baselineReliability",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetDenied",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

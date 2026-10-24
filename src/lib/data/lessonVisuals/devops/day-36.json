@@ -1,0 +1,829 @@
+{
+  "schemaVersion": 2,
+  "prefix": "devops",
+  "day": 36,
+  "promptSha": "a5a3cbba6e37de67ab0820344fa94755f593134fd30d8ac2b09a8dd380cbc757",
+  "model": "google/gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Prometheus TSDB Architecture: In-Memory Head Chunks, WAL Replay, Block Compaction & Two-Hour Windows",
+      "codeHash": "be7aee70f7d8301fa200e95a7bc5a994945f40aa3f52e8d46b90b61e5d4f4c6c",
+      "spec": {
+        "template": "compare",
+        "title": "DevOps architecture analysis for Prometheus TSDB Architecture: In-Me",
+        "leftLabel": "Standard Infrastructure",
+        "rightLabel": "Target Implementation",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Evaluating system level and validating relational.",
+            "left": {
+              "code": "baselineLevel",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetRelational",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Evaluating system http and validating mantissa.",
+            "left": {
+              "code": "baselineHttp",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetMantissa",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Evaluating system active and validating fintech.",
+            "left": {
+              "code": "baselineActive",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetFintech",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Evaluating system captures and validating without.",
+            "left": {
+              "code": "baselineCaptures",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetWithout",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "DevOps architecture analysis for Prometheus TSDB Architecture: In-Me",
+        "leftLabel": "Standard Infrastructure",
+        "rightLabel": "Target Implementation",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Evaluating system level and validating relational.",
+            "left": {
+              "code": "baselineLevel",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetRelational",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Evaluating system http and validating mantissa.",
+            "left": {
+              "code": "baselineHttp",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetMantissa",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Evaluating system active and validating fintech.",
+            "left": {
+              "code": "baselineActive",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetFintech",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Evaluating system captures and validating without.",
+            "left": {
+              "code": "baselineCaptures",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetWithout",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "PromQL Engine Mechanics: Instant Vectors, Range Vectors, Subqueries & High-Cardinality Hash Joining",
+      "codeHash": "20424a9eef2cbbb5356a5d25b947817b2ad21ce596e70a2dc746488039a11dd3",
+      "spec": {
+        "template": "compare",
+        "title": "DevOps architecture analysis for PromQL Engine Mechanics: Instant Ve",
+        "leftLabel": "Standard Infrastructure",
+        "rightLabel": "Target Implementation",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Evaluating system relational and validating crash.",
+            "left": {
+              "code": "baselineRelational",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetCrash",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Evaluating system http and validating spanning.",
+            "left": {
+              "code": "baselineHttp",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetSpanning",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Evaluating system consuming and validating without.",
+            "left": {
+              "code": "baselineConsuming",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetWithout",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Evaluating system joins and validating against.",
+            "left": {
+              "code": "baselineJoins",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetAgainst",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "DevOps architecture analysis for PromQL Engine Mechanics: Instant Ve",
+        "leftLabel": "Standard Infrastructure",
+        "rightLabel": "Target Implementation",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Evaluating system relational and validating crash.",
+            "left": {
+              "code": "baselineRelational",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetCrash",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Evaluating system http and validating spanning.",
+            "left": {
+              "code": "baselineHttp",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetSpanning",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Evaluating system consuming and validating without.",
+            "left": {
+              "code": "baselineConsuming",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetWithout",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Evaluating system joins and validating against.",
+            "left": {
+              "code": "baselineJoins",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetAgainst",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Recording Rules & Metric Downsampling: Slashing Dashboard Latency & Long-Term Compaction",
+      "codeHash": "425ce96b056e5afa0aa1fd4dbdb7ff4803d502344e3d8de4dd0212c9baa0216d",
+      "spec": {
+        "template": "compare",
+        "title": "DevOps architecture analysis for Recording Rules & Metric Downsampli",
+        "leftLabel": "Standard Infrastructure",
+        "rightLabel": "Target Implementation",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Evaluating system opens and validating creates.",
+            "left": {
+              "code": "baselineOpens",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetCreates",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Evaluating system seconds and validating calculating.",
+            "left": {
+              "code": "baselineSeconds",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetCalculating",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Evaluating system seconds and validating creating.",
+            "left": {
+              "code": "baselineSeconds",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetCreating",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Evaluating system scale and validating time.",
+            "left": {
+              "code": "baselineScale",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetTime",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "DevOps architecture analysis for Recording Rules & Metric Downsampli",
+        "leftLabel": "Standard Infrastructure",
+        "rightLabel": "Target Implementation",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Evaluating system opens and validating creates.",
+            "left": {
+              "code": "baselineOpens",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetCreates",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Evaluating system seconds and validating calculating.",
+            "left": {
+              "code": "baselineSeconds",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetCalculating",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Evaluating system seconds and validating creating.",
+            "left": {
+              "code": "baselineSeconds",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetCreating",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Evaluating system scale and validating time.",
+            "left": {
+              "code": "baselineScale",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetTime",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Prometheus Remote Write Protocol: WAL Streaming, Sharded Queues & Thanos/Cortex Backends",
+      "codeHash": "dc44c83a879eae5c601ea096b91762b8c0de80e166b497c7f29dd0e7f0437ce5",
+      "spec": {
+        "template": "compare",
+        "title": "DevOps architecture analysis for Prometheus Remote Write Protocol: W",
+        "leftLabel": "Standard Infrastructure",
+        "rightLabel": "Target Implementation",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Evaluating system efficient and validating unbacked.",
+            "left": {
+              "code": "baselineEfficient",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetUnbacked",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Evaluating system uses and validating victoriametrics.",
+            "left": {
+              "code": "baselineUses",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetVictoriametrics",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Evaluating system connectivity and validating local.",
+            "left": {
+              "code": "baselineConnectivity",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetLocal",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Evaluating system prevent and validating maxshards.",
+            "left": {
+              "code": "baselinePrevent",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetMaxshards",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "DevOps architecture analysis for Prometheus Remote Write Protocol: W",
+        "leftLabel": "Standard Infrastructure",
+        "rightLabel": "Target Implementation",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Evaluating system efficient and validating unbacked.",
+            "left": {
+              "code": "baselineEfficient",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetUnbacked",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Evaluating system uses and validating victoriametrics.",
+            "left": {
+              "code": "baselineUses",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetVictoriametrics",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Evaluating system connectivity and validating local.",
+            "left": {
+              "code": "baselineConnectivity",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetLocal",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Evaluating system prevent and validating maxshards.",
+            "left": {
+              "code": "baselinePrevent",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetMaxshards",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Alertmanager Architecture: Grouping, Inhibiting, Silencing & High-Availability Mesh Gossip",
+      "codeHash": "acd47c9e9497c4c4f13d024116f3a199cf30be68e3207a215d4f975ccf7610e3",
+      "spec": {
+        "template": "compare",
+        "title": "DevOps architecture analysis for Alertmanager Architecture: Grouping",
+        "leftLabel": "Standard Infrastructure",
+        "rightLabel": "Target Implementation",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Evaluating system crashing and validating miss.",
+            "left": {
+              "code": "baselineCrashing",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetMiss",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Evaluating system inhibiting and validating http.",
+            "left": {
+              "code": "baselineInhibiting",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetHttp",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Evaluating system delivering and validating incident.",
+            "left": {
+              "code": "baselineDelivering",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetIncident",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Evaluating system dispatching and validating nodenetworkdown.",
+            "left": {
+              "code": "baselineDispatching",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetNodenetworkdown",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "DevOps architecture analysis for Alertmanager Architecture: Grouping",
+        "leftLabel": "Standard Infrastructure",
+        "rightLabel": "Target Implementation",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Evaluating system crashing and validating miss.",
+            "left": {
+              "code": "baselineCrashing",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetMiss",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Evaluating system inhibiting and validating http.",
+            "left": {
+              "code": "baselineInhibiting",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetHttp",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Evaluating system delivering and validating incident.",
+            "left": {
+              "code": "baselineDelivering",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetIncident",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Evaluating system dispatching and validating nodenetworkdown.",
+            "left": {
+              "code": "baselineDispatching",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetNodenetworkdown",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

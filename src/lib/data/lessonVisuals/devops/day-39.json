@@ -1,0 +1,829 @@
+{
+  "schemaVersion": 2,
+  "prefix": "devops",
+  "day": 39,
+  "promptSha": "769f418df668edf944cb8d5512b7aa087e240d15c8cb0cbe51b698908a58ffd7",
+  "model": "google/gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Continuous Profiling Foundations: CPU Stack Sampling, pprof Format & Runtime Overhead Mitigation",
+      "codeHash": "981de714af229d4503d1d746b6f1aade4b1a8670081bb529649983416700d245",
+      "spec": {
+        "template": "compare",
+        "title": "DevOps architecture analysis for Continuous Profiling Foundations: C",
+        "leftLabel": "Standard Infrastructure",
+        "rightLabel": "Target Implementation",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Evaluating system attach and validating crash.",
+            "left": {
+              "code": "baselineAttach",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetCrash",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Evaluating system level and validating collection.",
+            "left": {
+              "code": "baselineLevel",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetCollection",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Evaluating system replacing and validating millisecond.",
+            "left": {
+              "code": "baselineReplacing",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetMillisecond",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Evaluating system profiler and validating json.",
+            "left": {
+              "code": "baselineProfiler",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetJson",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "DevOps architecture analysis for Continuous Profiling Foundations: C",
+        "leftLabel": "Standard Infrastructure",
+        "rightLabel": "Target Implementation",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Evaluating system attach and validating crash.",
+            "left": {
+              "code": "baselineAttach",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetCrash",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Evaluating system level and validating collection.",
+            "left": {
+              "code": "baselineLevel",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetCollection",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Evaluating system replacing and validating millisecond.",
+            "left": {
+              "code": "baselineReplacing",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetMillisecond",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Evaluating system profiler and validating json.",
+            "left": {
+              "code": "baselineProfiler",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetJson",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Flamegraph Visualization Mechanics: Collapsed Stack Traces, Icicle Graphs & Differential Profiling",
+      "codeHash": "242465984bb750bb177904e5c09fb3f0132ad2d2a62891e34cdc83142573f8ff",
+      "spec": {
+        "template": "compare",
+        "title": "DevOps architecture analysis for Flamegraph Visualization Mechanics:",
+        "leftLabel": "Standard Infrastructure",
+        "rightLabel": "Target Implementation",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Evaluating system incomprehensible and validating line.",
+            "left": {
+              "code": "baselineIncomprehensible",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetLine",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Evaluating system visualization and validating string.",
+            "left": {
+              "code": "baselineVisualization",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetString",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Evaluating system pyroscope and validating differential.",
+            "left": {
+              "code": "baselinePyroscope",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetDifferential",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Evaluating system function and validating dynamically.",
+            "left": {
+              "code": "baselineFunction",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetDynamically",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "DevOps architecture analysis for Flamegraph Visualization Mechanics:",
+        "leftLabel": "Standard Infrastructure",
+        "rightLabel": "Target Implementation",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Evaluating system incomprehensible and validating line.",
+            "left": {
+              "code": "baselineIncomprehensible",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetLine",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Evaluating system visualization and validating string.",
+            "left": {
+              "code": "baselineVisualization",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetString",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Evaluating system pyroscope and validating differential.",
+            "left": {
+              "code": "baselinePyroscope",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetDifferential",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Evaluating system function and validating dynamically.",
+            "left": {
+              "code": "baselineFunction",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetDynamically",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Off-CPU & Memory Leak Profiling: Scheduler Context Switching, futex Lock Contention & Allocation Profiling",
+      "codeHash": "2cabbb55540c6063c70d21e651ec6b41e980493353b1885b38bd0a444bb12025",
+      "spec": {
+        "template": "compare",
+        "title": "DevOps architecture analysis for Off-CPU & Memory Leak Profiling: Sc",
+        "leftLabel": "Standard Infrastructure",
+        "rightLabel": "Target Implementation",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Evaluating system consuming and validating burning.",
+            "left": {
+              "code": "baselineConsuming",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetBurning",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Evaluating system database and validating contention.",
+            "left": {
+              "code": "baselineDatabase",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetContention",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Evaluating system seconds and validating helper.",
+            "left": {
+              "code": "baselineSeconds",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetHelper",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Evaluating system reason and validating away.",
+            "left": {
+              "code": "baselineReason",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetAway",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "DevOps architecture analysis for Off-CPU & Memory Leak Profiling: Sc",
+        "leftLabel": "Standard Infrastructure",
+        "rightLabel": "Target Implementation",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Evaluating system consuming and validating burning.",
+            "left": {
+              "code": "baselineConsuming",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetBurning",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Evaluating system database and validating contention.",
+            "left": {
+              "code": "baselineDatabase",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetContention",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Evaluating system seconds and validating helper.",
+            "left": {
+              "code": "baselineSeconds",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetHelper",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Evaluating system reason and validating away.",
+            "left": {
+              "code": "baselineReason",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetAway",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "eBPF Kernel Observability with Parca & Pyroscope: BPF Perf Ring Buffers & DWARF Stack Unwinding",
+      "codeHash": "2e56a87d1860477b468db74564940246f9c3e64665846056586e43acc80d687c",
+      "spec": {
+        "template": "compare",
+        "title": "DevOps architecture analysis for eBPF Kernel Observability with Parc",
+        "leftLabel": "Standard Infrastructure",
+        "rightLabel": "Target Implementation",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Evaluating system attach and validating enterprise.",
+            "left": {
+              "code": "baselineAttach",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetEnterprise",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Evaluating system without and validating extended.",
+            "left": {
+              "code": "baselineWithout",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetExtended",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Evaluating system pages and validating high.",
+            "left": {
+              "code": "baselinePages",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetHigh",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Evaluating system seamlessly and validating stitches.",
+            "left": {
+              "code": "baselineSeamlessly",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetStitches",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "DevOps architecture analysis for eBPF Kernel Observability with Parc",
+        "leftLabel": "Standard Infrastructure",
+        "rightLabel": "Target Implementation",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Evaluating system attach and validating enterprise.",
+            "left": {
+              "code": "baselineAttach",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetEnterprise",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Evaluating system without and validating extended.",
+            "left": {
+              "code": "baselineWithout",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetExtended",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Evaluating system pages and validating high.",
+            "left": {
+              "code": "baselinePages",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetHigh",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Evaluating system seamlessly and validating stitches.",
+            "left": {
+              "code": "baselineSeamlessly",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetStitches",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Network & I/O Latency Profiling with eBPF: tcp_connect, sock_ops & BIO Block I/O Queue Delays",
+      "codeHash": "812b22e2833776971de336fdd5f74819a7c6f71e64d92e3da7d8996019d7953c",
+      "spec": {
+        "template": "compare",
+        "title": "DevOps architecture analysis for Network & I/O Latency Profiling wit",
+        "leftLabel": "Standard Infrastructure",
+        "rightLabel": "Target Implementation",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Evaluating system level and validating retransmissions.",
+            "left": {
+              "code": "baselineLevel",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetRetransmissions",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Evaluating system attach and validating captures.",
+            "left": {
+              "code": "baselineAttach",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetCaptures",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Evaluating system normal and validating connect.",
+            "left": {
+              "code": "baselineNormal",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetConnect",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Evaluating system average and validating recomputing.",
+            "left": {
+              "code": "baselineAverage",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetRecomputing",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "DevOps architecture analysis for Network & I/O Latency Profiling wit",
+        "leftLabel": "Standard Infrastructure",
+        "rightLabel": "Target Implementation",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Evaluating system level and validating retransmissions.",
+            "left": {
+              "code": "baselineLevel",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetRetransmissions",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Evaluating system attach and validating captures.",
+            "left": {
+              "code": "baselineAttach",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetCaptures",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Evaluating system normal and validating connect.",
+            "left": {
+              "code": "baselineNormal",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetConnect",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Evaluating system average and validating recomputing.",
+            "left": {
+              "code": "baselineAverage",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetRecomputing",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
