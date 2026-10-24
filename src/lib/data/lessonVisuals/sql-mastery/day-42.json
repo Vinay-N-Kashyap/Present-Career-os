@@ -1,0 +1,829 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "sql-mastery",
+  "day": 42,
+  "promptSha": "b863a586c9b77235d5b99c372b4b74975e30ee80fcf9776408edc4722c142110",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Asynchronous Replication Defaults: The Recovery Point Objective vs Throughput Tradeoff",
+      "codeHash": "f8c5190aaaeeee68edd2016978dae66353e569ac2285f9741c45298be7af6fa8",
+      "spec": {
+        "template": "compare",
+        "title": "Synchronous Durability Engineering - Part 1",
+        "leftLabel": "Vulnerable / Monolithic Configuration",
+        "rightLabel": "Resilient Tiered Synchronous Architecture",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Synchronous versus asynchronous replication defines consistency.",
+            "left": {
+              "code": "Unmonitored async lag window",
+              "result": {
+                "text": "catastrophic transaction loss on crash"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Synchronous quorum replication",
+              "result": {
+                "text": "absolute zero data loss guarantee"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Asynchronous streaming replication operates as the default engine setting.",
+            "left": {
+              "code": "Rigid global synchronous commit",
+              "result": {
+                "text": "severe write throughput bottleneck"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Granular commit level tuning",
+              "result": {
+                "text": "optimized latency per transaction profile"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Restaurant kitchen chef spikes dinner orders on paper spindle.",
+            "left": {
+              "code": "Uncoordinated manual failover",
+              "result": {
+                "text": "prolonged primary connection freeze"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Automated consensus quorum agent",
+              "result": {
+                "text": "sub-second dynamic failover mitigation"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect replication mode tradeoffs between commit latency and throughput.",
+            "left": {
+              "code": "Single priority sync standby",
+              "result": {
+                "text": "vulnerable to single node tail latency"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Multi-node quorum consensus",
+              "result": {
+                "text": "blazing fast quorum commit velocity"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Synchronous Durability Engineering - Part 1",
+        "leftLabel": "Vulnerable / Monolithic Configuration",
+        "rightLabel": "Resilient Tiered Synchronous Architecture",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Synchronous versus asynchronous replication defines consistency.",
+            "left": {
+              "code": "Unmonitored async lag window",
+              "result": {
+                "text": "catastrophic transaction loss on crash"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Synchronous quorum replication",
+              "result": {
+                "text": "absolute zero data loss guarantee"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Asynchronous streaming replication operates as the default engine setting.",
+            "left": {
+              "code": "Rigid global synchronous commit",
+              "result": {
+                "text": "severe write throughput bottleneck"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Granular commit level tuning",
+              "result": {
+                "text": "optimized latency per transaction profile"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Restaurant kitchen chef spikes dinner orders on paper spindle.",
+            "left": {
+              "code": "Uncoordinated manual failover",
+              "result": {
+                "text": "prolonged primary connection freeze"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Automated consensus quorum agent",
+              "result": {
+                "text": "sub-second dynamic failover mitigation"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect replication mode tradeoffs between commit latency and throughput.",
+            "left": {
+              "code": "Single priority sync standby",
+              "result": {
+                "text": "vulnerable to single node tail latency"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Multi-node quorum consensus",
+              "result": {
+                "text": "blazing fast quorum commit velocity"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Synchronous Commit Levels: off, local, remote_write, on, and remote_apply",
+      "codeHash": "f81cc8809232eff48e06c49690c333470042969c6f2291de503145d1379cd3b9",
+      "spec": {
+        "template": "compare",
+        "title": "Synchronous Durability Engineering - Part 2",
+        "leftLabel": "Vulnerable / Monolithic Configuration",
+        "rightLabel": "Resilient Tiered Synchronous Architecture",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Synchronous replication guarantees zero recovery point objectives.",
+            "left": {
+              "code": "Unmonitored async lag window",
+              "result": {
+                "text": "catastrophic transaction loss on crash"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Synchronous quorum replication",
+              "result": {
+                "text": "absolute zero data loss guarantee"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Synchronous commit levels govern exact transaction durability milestones.",
+            "left": {
+              "code": "Rigid global synchronous commit",
+              "result": {
+                "text": "severe write throughput bottleneck"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Granular commit level tuning",
+              "result": {
+                "text": "optimized latency per transaction profile"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Foreign embassy diplomats lock treaty inside subterranean vault.",
+            "left": {
+              "code": "Uncoordinated manual failover",
+              "result": {
+                "text": "prolonged primary connection freeze"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Automated consensus quorum agent",
+              "result": {
+                "text": "sub-second dynamic failover mitigation"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect synchronous commit matrix and standby durability requirements.",
+            "left": {
+              "code": "Single priority sync standby",
+              "result": {
+                "text": "vulnerable to single node tail latency"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Multi-node quorum consensus",
+              "result": {
+                "text": "blazing fast quorum commit velocity"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Synchronous Durability Engineering - Part 2",
+        "leftLabel": "Vulnerable / Monolithic Configuration",
+        "rightLabel": "Resilient Tiered Synchronous Architecture",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Synchronous replication guarantees zero recovery point objectives.",
+            "left": {
+              "code": "Unmonitored async lag window",
+              "result": {
+                "text": "catastrophic transaction loss on crash"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Synchronous quorum replication",
+              "result": {
+                "text": "absolute zero data loss guarantee"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Synchronous commit levels govern exact transaction durability milestones.",
+            "left": {
+              "code": "Rigid global synchronous commit",
+              "result": {
+                "text": "severe write throughput bottleneck"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Granular commit level tuning",
+              "result": {
+                "text": "optimized latency per transaction profile"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Foreign embassy diplomats lock treaty inside subterranean vault.",
+            "left": {
+              "code": "Uncoordinated manual failover",
+              "result": {
+                "text": "prolonged primary connection freeze"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Automated consensus quorum agent",
+              "result": {
+                "text": "sub-second dynamic failover mitigation"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect synchronous commit matrix and standby durability requirements.",
+            "left": {
+              "code": "Single priority sync standby",
+              "result": {
+                "text": "vulnerable to single node tail latency"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Multi-node quorum consensus",
+              "result": {
+                "text": "blazing fast quorum commit velocity"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Synchronous Standby Names: Priority vs Quorum Topologies (FIRST vs ANY)",
+      "codeHash": "f942a0086884ac9f7ba06fc2d258e314f7726836fedda6bb2f3d8582e72b5ea6",
+      "spec": {
+        "template": "compare",
+        "title": "Synchronous Durability Engineering - Part 3",
+        "leftLabel": "Vulnerable / Monolithic Configuration",
+        "rightLabel": "Resilient Tiered Synchronous Architecture",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Synchronous standby configuration determines cluster resilience profiles.",
+            "left": {
+              "code": "Unmonitored async lag window",
+              "result": {
+                "text": "catastrophic transaction loss on crash"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Synchronous quorum replication",
+              "result": {
+                "text": "absolute zero data loss guarantee"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Priority based standby selection designates primary active replica.",
+            "left": {
+              "code": "Rigid global synchronous commit",
+              "result": {
+                "text": "severe write throughput bottleneck"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Granular commit level tuning",
+              "result": {
+                "text": "optimized latency per transaction profile"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Corporate board directors vote on emergency funding expenditures.",
+            "left": {
+              "code": "Uncoordinated manual failover",
+              "result": {
+                "text": "prolonged primary connection freeze"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Automated consensus quorum agent",
+              "result": {
+                "text": "sub-second dynamic failover mitigation"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect synchronous standby topologies and quorum consensus rules.",
+            "left": {
+              "code": "Single priority sync standby",
+              "result": {
+                "text": "vulnerable to single node tail latency"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Multi-node quorum consensus",
+              "result": {
+                "text": "blazing fast quorum commit velocity"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Synchronous Durability Engineering - Part 3",
+        "leftLabel": "Vulnerable / Monolithic Configuration",
+        "rightLabel": "Resilient Tiered Synchronous Architecture",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Synchronous standby configuration determines cluster resilience profiles.",
+            "left": {
+              "code": "Unmonitored async lag window",
+              "result": {
+                "text": "catastrophic transaction loss on crash"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Synchronous quorum replication",
+              "result": {
+                "text": "absolute zero data loss guarantee"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Priority based standby selection designates primary active replica.",
+            "left": {
+              "code": "Rigid global synchronous commit",
+              "result": {
+                "text": "severe write throughput bottleneck"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Granular commit level tuning",
+              "result": {
+                "text": "optimized latency per transaction profile"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Corporate board directors vote on emergency funding expenditures.",
+            "left": {
+              "code": "Uncoordinated manual failover",
+              "result": {
+                "text": "prolonged primary connection freeze"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Automated consensus quorum agent",
+              "result": {
+                "text": "sub-second dynamic failover mitigation"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect synchronous standby topologies and quorum consensus rules.",
+            "left": {
+              "code": "Single priority sync standby",
+              "result": {
+                "text": "vulnerable to single node tail latency"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Multi-node quorum consensus",
+              "result": {
+                "text": "blazing fast quorum commit velocity"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Quorum Collapse, Primary Hangs & The Split-Brain Dilemma",
+      "codeHash": "d8aab2382fc53ff2540f7986908cfabd749a9387cb68d0b0fe0b2e6a498a9ab5",
+      "spec": {
+        "template": "compare",
+        "title": "Synchronous Durability Engineering - Part 4",
+        "leftLabel": "Vulnerable / Monolithic Configuration",
+        "rightLabel": "Resilient Tiered Synchronous Architecture",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Synchronous replication architectures encounter dangerous failure modes.",
+            "left": {
+              "code": "Unmonitored async lag window",
+              "result": {
+                "text": "catastrophic transaction loss on crash"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Synchronous quorum replication",
+              "result": {
+                "text": "absolute zero data loss guarantee"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Quorum collapse scenarios emerge during cross zone network partitions.",
+            "left": {
+              "code": "Rigid global synchronous commit",
+              "result": {
+                "text": "severe write throughput bottleneck"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Granular commit level tuning",
+              "result": {
+                "text": "optimized latency per transaction profile"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Armored bank vault guards require dual physical keys to unlock safe.",
+            "left": {
+              "code": "Uncoordinated manual failover",
+              "result": {
+                "text": "prolonged primary connection freeze"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Automated consensus quorum agent",
+              "result": {
+                "text": "sub-second dynamic failover mitigation"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect quorum collapse scenarios and automated consensus remediations.",
+            "left": {
+              "code": "Single priority sync standby",
+              "result": {
+                "text": "vulnerable to single node tail latency"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Multi-node quorum consensus",
+              "result": {
+                "text": "blazing fast quorum commit velocity"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Synchronous Durability Engineering - Part 4",
+        "leftLabel": "Vulnerable / Monolithic Configuration",
+        "rightLabel": "Resilient Tiered Synchronous Architecture",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Synchronous replication architectures encounter dangerous failure modes.",
+            "left": {
+              "code": "Unmonitored async lag window",
+              "result": {
+                "text": "catastrophic transaction loss on crash"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Synchronous quorum replication",
+              "result": {
+                "text": "absolute zero data loss guarantee"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Quorum collapse scenarios emerge during cross zone network partitions.",
+            "left": {
+              "code": "Rigid global synchronous commit",
+              "result": {
+                "text": "severe write throughput bottleneck"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Granular commit level tuning",
+              "result": {
+                "text": "optimized latency per transaction profile"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Armored bank vault guards require dual physical keys to unlock safe.",
+            "left": {
+              "code": "Uncoordinated manual failover",
+              "result": {
+                "text": "prolonged primary connection freeze"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Automated consensus quorum agent",
+              "result": {
+                "text": "sub-second dynamic failover mitigation"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect quorum collapse scenarios and automated consensus remediations.",
+            "left": {
+              "code": "Single priority sync standby",
+              "result": {
+                "text": "vulnerable to single node tail latency"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Multi-node quorum consensus",
+              "result": {
+                "text": "blazing fast quorum commit velocity"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Tiered Transaction Commit Architecture: Dynamic Per-Session & Per-Transaction Overrides",
+      "codeHash": "fed984b4275b1ae361002f0fc94886b05e8348e1c6a50ffaf4d29ede2fcd4aba",
+      "spec": {
+        "template": "compare",
+        "title": "Synchronous Durability Engineering - Part 5",
+        "leftLabel": "Vulnerable / Monolithic Configuration",
+        "rightLabel": "Resilient Tiered Synchronous Architecture",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Dynamic tiered transaction commit architecture balances performance.",
+            "left": {
+              "code": "Unmonitored async lag window",
+              "result": {
+                "text": "catastrophic transaction loss on crash"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Synchronous quorum replication",
+              "result": {
+                "text": "absolute zero data loss guarantee"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Granular durability partitioning dismantles monolithic database modes.",
+            "left": {
+              "code": "Rigid global synchronous commit",
+              "result": {
+                "text": "severe write throughput bottleneck"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Granular commit level tuning",
+              "result": {
+                "text": "optimized latency per transaction profile"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Postal courier transports registered bank draft in locked titanium case.",
+            "left": {
+              "code": "Uncoordinated manual failover",
+              "result": {
+                "text": "prolonged primary connection freeze"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Automated consensus quorum agent",
+              "result": {
+                "text": "sub-second dynamic failover mitigation"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect enterprise tiered commit policies and throughput profiles.",
+            "left": {
+              "code": "Single priority sync standby",
+              "result": {
+                "text": "vulnerable to single node tail latency"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Multi-node quorum consensus",
+              "result": {
+                "text": "blazing fast quorum commit velocity"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Synchronous Durability Engineering - Part 5",
+        "leftLabel": "Vulnerable / Monolithic Configuration",
+        "rightLabel": "Resilient Tiered Synchronous Architecture",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Dynamic tiered transaction commit architecture balances performance.",
+            "left": {
+              "code": "Unmonitored async lag window",
+              "result": {
+                "text": "catastrophic transaction loss on crash"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Synchronous quorum replication",
+              "result": {
+                "text": "absolute zero data loss guarantee"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Granular durability partitioning dismantles monolithic database modes.",
+            "left": {
+              "code": "Rigid global synchronous commit",
+              "result": {
+                "text": "severe write throughput bottleneck"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Granular commit level tuning",
+              "result": {
+                "text": "optimized latency per transaction profile"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Postal courier transports registered bank draft in locked titanium case.",
+            "left": {
+              "code": "Uncoordinated manual failover",
+              "result": {
+                "text": "prolonged primary connection freeze"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Automated consensus quorum agent",
+              "result": {
+                "text": "sub-second dynamic failover mitigation"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect enterprise tiered commit policies and throughput profiles.",
+            "left": {
+              "code": "Single priority sync standby",
+              "result": {
+                "text": "vulnerable to single node tail latency"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Multi-node quorum consensus",
+              "result": {
+                "text": "blazing fast quorum commit velocity"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
