@@ -19793,5 +19793,264 @@ Branch B Status: BRANCH_B_100_PERCENT_COMPLETE_180_OF_180_DAYS_ACHIEVED`,
         "Execute a discrete-event shop floor simulation comparing unconstrained push releases against CONWIP pull bottleneck gating."
       ]
     }
+  },
+  {
+    "coursePrefix": "bcom_ops",
+    "day": 34,
+    "title": "Advanced Production Scheduling: Disjunctive Graph Formulations, Johnson's Rule & Branch-and-Bound Makespan Minimization",
+    "goal": "Master algorithmic production scheduling across single-machine, flow shop, and general job shop environments, deriving Jackson's rule (EDD), Moore-Hodgson's late job algorithm, Johnson's 2-machine makespan optimization, and the disjunctive graph branch-and-bound formulation for NP-hard job shop scheduling (J_m || C_max).",
+    "minutes": 38,
+    "recap": "Once factory capacity and batch sizes are determined, the operational question becomes sequencing: in what exact order should jobs be processed on constrained machines? Poor sequencing causes idle machines, late customer shipments, and bloated lead times. Advanced production scheduling translates manufacturing physics into combinatorial optimization, solving flow shop and job shop scheduling problems to minimize makespan (C_max) and tardiness.",
+    "parts": [
+      {
+        "title": "Single-Machine Scheduling Theorems: SPT, EDD & The Moore-Hodgson Algorithm",
+        "say": [
+          "In manufacturing operations management, once production batch sizes and factory capacities are established, the governing operational decision shifts to scheduling and sequencing: determining the exact chronological order in which waiting work orders should be executed on constrained machinery. Operations research formalizes scheduling theory using the Graham three-field notation alpha | beta | gamma, where alpha specifies the machine environment, beta defines job characteristics and processing constraints, and gamma establishes the optimality performance objective.",
+          "The foundational baseline of scheduling science is the single-machine environment, denoted as alpha = 1. When n independent jobs arrive simultaneously at a single workstation, each requiring processing duration p_j and carrying due date d_j, the choice of sequencing rule fundamentally dictates performance. Under the Shortest Processing Time (SPT) rule, jobs are sequenced in non-decreasing order of their processing durations. In 1956, Wayne Smith mathematically proved that SPT minimizes total completion time and average flow time, maximizing throughput velocity and minimizing work-in-process holding capital.",
+          "However, when delivery reliability and contractual commitments are paramount, operations managers optimize against customer due dates d_j rather than internal flow time. Under the Earliest Due Date (EDD) rule, also known as Jackson's rule, jobs are sequenced in non-decreasing order of their committed delivery dates. Jackson proved that EDD mathematically minimizes maximum lateness L_max = max(C_j - d_j) and maximum job tardiness. If any feasible schedule exists where all jobs meet their deadlines with zero tardiness, the EDD sequence will discover it.",
+          "In competitive industrial commerce, customer contracts frequently impose catastrophic financial penalties for any late delivery, regardless of whether a shipment is late by one hour or one week. In this scenario, operations executives seek to minimize the total number of tardy jobs, denoted as sum U_j. While minimizing the count of late jobs appears combinatorially complex, Moore and Hodgson solved this problem in 1968 with an optimal greedy algorithm running in O(n log n) time.",
+          "The Moore-Hodgson algorithm begins by sequencing all candidate jobs according to the EDD rule and processing them in sequence. If all jobs finish on or before their due dates, the initial schedule is already optimal with zero tardy jobs. However, if a job is found to finish late during schedule evaluation, the algorithm identifies the job with the absolute longest processing time among all jobs scheduled up to that point. This longest-processing job is immediately ejected from the on-time sequence and deferred to the very end of the schedule. By ejecting the largest job, the algorithm liberates maximum schedule slack, allowing all subsequent jobs to complete on time.",
+          "In modern enterprise manufacturing execution systems (MES), single-machine algorithms form the core optimization primitives for bottleneck workstations. Automated scheduling software runs Moore-Hodgson routines continuously to triage work queues at critical constraint machines. By mathematically isolating the minimum set of jobs that must be flagged as late, production controllers proactively contact commercial account managers, renegotiate delivery windows, and protect high-margin customer relationships from unexpected delivery failures.",
+          "From an algorithmic complexity perspective, single-machine scheduling theorems establish the foundational building blocks for multi-machine decomposition. When industrial operations researchers solve complex multi-facility scheduling networks, they frequently project global constraints onto individual single-machine subproblems. By proving that specific local subproblems can be solved in polynomial time through greedy heuristics like Moore-Hodgson, algorithms drastically shrink the global combinatorial search space.",
+          "Furthermore, contemporary enterprise manufacturing software extends Moore-Hodgson logic to incorporate weighted tardiness penalties. When distinct commercial customer orders carry unequal penalty structures\u2014such as strategic tier-one enterprise accounts versus low-volume ad-hoc buyers\u2014scheduling engines deploy the Apparent Tardiness Cost (ATC) heuristic. ATC dynamically weighs job processing durations against weighted customer due dates, ensuring that financial margin destruction is minimized across high-stakes delivery schedules.",
+          "To govern single-machine scheduling policies effectively, corporate operations teams institutionalize algorithmic dispatch rules within plant standard operating procedures. By providing machine operators with clear, mathematically validated sequencing priorities, manufacturing enterprises eliminate subjective scheduling biases and achieve predictable customer fulfillment."
+        ],
+        "example": "A specialized aerospace tooling facility receives seven stamping die repair orders competing for a single high-precision wire electrical discharge machining (EDM) workstation. Initial processing without sequencing causes four dies to finish late, incurring heavy liquidated damage penalties. By executing the Moore-Hodgson algorithm, operations planners identify and defer the single longest twenty-four-hour die, reducing the count of tardy dies to exactly one while delivering the remaining six dies ahead of contractual deadlines.",
+        "code": "# Simulation: Moore-Hodgson Algorithm Minimizing Tardy Jobs on a Single Machine\ndef moore_hodgson_scheduler(jobs: list[dict]) -> dict:\n    # Step 1: Sort all jobs by Earliest Due Date (EDD)\n    sorted_jobs = sorted(jobs, key=lambda x: x[\"due_date\"])\n    \n    on_time_set = []\n    tardy_set = []\n    current_time = 0\n    \n    for job in sorted_jobs:\n        on_time_set.append(job)\n        current_time += job[\"proc_time\"]\n        \n        # Check if current job causes a tardiness violation\n        if current_time > job[\"due_date\"]:\n            # Find job with longest processing time in the current on-time set\n            longest_job = max(on_time_set, key=lambda x: x[\"proc_time\"])\n            on_time_set.remove(longest_job)\n            current_time -= longest_job[\"proc_time\"]\n            tardy_set.append(longest_job)\n            \n    # Final schedule: On-time jobs followed by tardy jobs\n    final_schedule = on_time_set + tardy_set\n    \n    return {\n        \"on_time_jobs\": [j[\"name\"] for j in on_time_set],\n        \"tardy_jobs\": [j[\"name\"] for j in tardy_set],\n        \"total_tardy_count\": len(tardy_set),\n        \"schedule_order\": [j[\"name\"] for j in final_schedule]\n    }\n\ntooling_jobs = [\n    {\"name\": \"Die-A\", \"proc_time\": 6, \"due_date\": 8},\n    {\"name\": \"Die-B\", \"proc_time\": 8, \"due_date\": 12},\n    {\"name\": \"Die-C\", \"proc_time\": 4, \"due_date\": 10},\n    {\"name\": \"Die-D\", \"proc_time\": 10, \"due_date\": 15},\n    {\"name\": \"Die-E\", \"proc_time\": 3, \"due_date\": 18}\n]\n\nschedule_result = moore_hodgson_scheduler(tooling_jobs)\nprint(f\"Optimal Schedule: {schedule_result['schedule_order']}\")\nprint(f\"On-Time Jobs: {schedule_result['on_time_jobs']}\")\nprint(f\"Tardy Jobs Ejected: {schedule_result['tardy_jobs']}\")\nprint(f\"Total Tardy Count: {schedule_result['total_tardy_count']} jobs\")\n",
+        "codeNotes": [
+          {
+            "line": 4,
+            "note": "Sorts jobs chronologically by Earliest Due Date (EDD) as baseline schedule."
+          },
+          {
+            "line": 15,
+            "note": "Identifies and ejects the job with maximum processing duration when a deadline is breached."
+          },
+          {
+            "line": 21,
+            "note": "Appends ejected tardy jobs to the end of the sequence to preserve on-time delivery for remaining jobs."
+          }
+        ],
+        "tryIt": "Increase Die-D due date from 15 to 22 and observe how Die-D remains in the on-time set without being ejected.",
+        "check": {
+          "question": "What is the core optimization rule of the Moore-Hodgson algorithm when an Earliest Due Date (EDD) schedule encounters a tardy job?",
+          "options": [
+            "Eject the job with the longest processing time among all jobs scheduled so far, moving it to the end of the schedule",
+            "Immediately cancel all customer orders and issue cash refunds",
+            "Double the machine operating speed to bypass physical cutting physics",
+            "Schedule the jobs in alphabetical order by customer company name"
+          ],
+          "answer": 0,
+          "why": "Moore-Hodgson proves that whenever a deadline violation occurs, removing the job with the largest processing time liberates the maximum possible slack for all subsequent jobs, minimizing the total count of late jobs.",
+          "answerIndex": 0,
+          "explanation": "Moore-Hodgson proves that whenever a deadline violation occurs, removing the job with the largest processing time liberates the maximum possible slack for all subsequent jobs, minimizing the total count of late jobs."
+        },
+        "output": "Optimal Schedule: ['Die-A', 'Die-C', 'Die-E', 'Die-B', 'Die-D']\nOn-Time Jobs: ['Die-A', 'Die-C', 'Die-E']\nTardy Jobs Ejected: ['Die-B', 'Die-D']\nTotal Tardy Count: 2 jobs"
+      },
+      {
+        "title": "Permutation Flow Shops & Johnson's 2-Machine Makespan Optimization",
+        "say": [
+          "Moving beyond single-machine environments, industrial manufacturing systems frequently operate as multi-stage flow shops, denoted in scheduling notation as F_m. In a flow shop, every production job must visit m distinct workstations in the exact same technological sequence: machine one, followed by machine two, through machine m. When jobs maintain identical processing sequences across all machines, the system is classified as a permutation flow shop, representing the standard operating layout for assembly lines, packaging plants, and electronics fabrication facilities.",
+          "In flow shop scheduling, the primary objective is almost universally makespan minimization, denoted as C_max, representing the total elapsed time from the start of the first job on the first machine until the final job completes on the last machine. Minimizing makespan maximizes factory throughput capacity and eliminates idle starvation time on downstream machines. For flow shops with three or more machines (m >= 3), makespan minimization is NP-hard, requiring heuristic approximation.",
+          "However, for the two-machine flow shop environment F_2 || C_max, Selmer Johnson developed a mathematically provable, globally optimal algorithm in 1954. Johnson's Rule solves the two-machine makespan problem in O(n log n) time by exploiting machine precedence physics. In a two-machine line, machine one cannot be starved by machine two, but machine two can be severely starved while waiting for machine one to complete parts. Conversely, machine one can finish all work early, leaving machine two to process the remaining tail backlog.",
+          "Johnson's Rule structures the optimal sequence through an elegant classification logic. For each job j, the scheduler examines its processing times p_{1j} on machine one and p_{2j} on machine two, identifying the minimum processing time min(p_{1j}, p_{2j}). If the minimum processing time occurs on machine one, that job should be scheduled as early as possible in the sequence, allowing machine two to begin operating quickly. If the minimum processing time occurs on machine two, that job should be scheduled as late as possible, ensuring machine two stays busy toward the end of the schedule.",
+          "By sorting all jobs according to this rule, Johnson's algorithm minimizes the idle waiting time on machine two and eliminates blocking between stages. The algorithm extends to three-machine flow shops (F_3 || C_max) whenever dominance conditions are satisfied\u2014specifically, when the minimum processing time on machine one or machine three is greater than or equal to the maximum processing time on the intermediate machine two. In this case, machines one and two can be combined into composite virtual stages to apply Johnson's logic directly.",
+          "In modern enterprise manufacturing operations, Johnson's algorithm provides the foundational scheduling engine for paired workstation cells, such as painting and baking, surface-mount placement and reflow soldering, or CNC cutting and deburring. By eliminating downstream machine starvation, manufacturing plants achieve fifteen to twenty-five percent throughput gains without capital investments.",
+          "The industrial application of Johnson's algorithm extends beyond simple paired machines to encompass multi-machine re-entrant flow lines and robotic automation cells. In high-speed surface-mount technology (SMT) printed circuit board assembly, electronic components undergo automated paste deposition, high-velocity pick-and-place component mounting, and multi-zone convective reflow soldering. By analyzing line balancing through the lens of Johnson's algorithm, industrial engineers eliminate bottleneck starvation between placement heads and reflow ovens.",
+          "Moreover, operations planners evaluate the impact of finite buffer capacities between consecutive machines. In classic flow shop theory, infinite intermediate buffer storage is assumed; in real-world physical plants, however, floor space between machines is strictly bounded. When intermediate buffers fill to capacity, upstream machines experience 'blocking,' unable to release completed work until downstream stations clear. Johnson's sequencing logic minimizes buffer accumulation, preventing expensive machine blocking.",
+          "In continuous improvement workshops, industrial engineering teams leverage Johnson's flow shop principles to optimize workstation layout ergonomics. By arranging sequential machines into closely coupled cells with balanced processing times, plants eliminate operator transit waste and accelerate physical job transfer speeds."
+        ],
+        "example": "A medical device manufacturing cell processes five custom orthopedic implants across two sequential stages: Precision CNC Milling (Machine 1) followed by Robotic Laser Polishing (Machine 2). An unoptimized FIFO schedule yields a makespan of seventy-two hours with fourteen hours of machine idle starvation. Applying Johnson's Rule re-sequences the implants, collapsing makespan to fifty-eight hours and cutting machine starvation idle time by eighty percent.",
+        "code": "# Simulation: Johnson's 2-Machine Flow Shop Makespan Optimizer (F2 || Cmax)\ndef johnsons_two_machine_scheduler(jobs: list[dict]) -> dict:\n    # Group 1: p1 <= p2 (sorted in ascending order of p1)\n    group1 = [j for j in jobs if j[\"m1\"] <= j[\"m2\"]]\n    group1_sorted = sorted(group1, key=lambda x: x[\"m1\"])\n    \n    # Group 2: p1 > p2 (sorted in descending order of p2)\n    group2 = [j for j in jobs if j[\"m1\"] > j[\"m2\"]]\n    group2_sorted = sorted(group2, key=lambda x: x[\"m2\"], reverse=True)\n    \n    # Optimal sequence\n    optimal_sequence = group1_sorted + group2_sorted\n    \n    # Simulate schedule to compute makespan and idle times\n    t_m1 = 0\n    t_m2 = 0\n    m2_idle_time = 0\n    \n    for job in optimal_sequence:\n        t_m1 += job[\"m1\"]\n        # M2 can only start after M1 finishes and M2 is free\n        if t_m1 > t_m2:\n            m2_idle_time += (t_m1 - t_m2)\n            t_m2 = t_m1 + job[\"m2\"]\n        else:\n            t_m2 += job[\"m2\"]\n            \n    makespan = t_m2\n    \n    return {\n        \"optimal_order\": [j[\"name\"] for j in optimal_sequence],\n        \"makespan_hours\": makespan,\n        \"m2_idle_hours\": m2_idle_time\n    }\n\nimplant_jobs = [\n    {\"name\": \"Implant-A\", \"m1\": 4, \"m2\": 5},\n    {\"name\": \"Implant-B\", \"m1\": 7, \"m2\": 2},\n    {\"name\": \"Implant-C\", \"m1\": 8, \"m2\": 6},\n    {\"name\": \"Implant-D\", \"m1\": 3, \"m2\": 8},\n    {\"name\": \"Implant-E\", \"m1\": 6, \"m2\": 4}\n]\n\njohnson_res = johnsons_two_machine_scheduler(implant_jobs)\nprint(f\"Johnson's Optimal Sequence: {johnson_res['optimal_order']}\")\nprint(f\"Optimal Makespan (Cmax): {johnson_res['makespan_hours']} hours\")\nprint(f\"Machine 2 Idle Starvation: {johnson_res['m2_idle_hours']} hours\")\n",
+        "codeNotes": [
+          {
+            "line": 4,
+            "note": "Partitions jobs where M1 processing is shorter than M2 into Group 1 sorted ascending."
+          },
+          {
+            "line": 8,
+            "note": "Partitions jobs where M1 processing exceeds M2 into Group 2 sorted descending by M2 duration."
+          },
+          {
+            "line": 23,
+            "note": "Simulates sequential flow line to calculate true makespan Cmax and downstream machine idle latency."
+          }
+        ],
+        "tryIt": "Increase Implant-D processing time on M1 from 3 to 10 and observe how its position shifts from the beginning to the end of the sequence.",
+        "check": {
+          "question": "In Johnson's 2-machine flow shop algorithm, why are jobs with min(p_1j, p_2j) occurring on Machine 1 placed at the BEGINNING of the schedule?",
+          "options": [
+            "To get work into Machine 2 as quickly as possible, minimizing downstream machine starvation idle time",
+            "Because Machine 1 operators leave the factory early for lunch",
+            "Because Machine 2 is legally prohibited from operating before noon",
+            "To ensure that Machine 1 produces higher scrap rates"
+          ],
+          "answer": 0,
+          "why": "Scheduling jobs with short Machine 1 processing times first allows Machine 1 to complete work rapidly and feed Machine 2 immediately, collapsing downstream idle starvation time.",
+          "answerIndex": 0,
+          "explanation": "Scheduling jobs with short Machine 1 processing times first allows Machine 1 to complete work rapidly and feed Machine 2 immediately, collapsing downstream idle starvation time."
+        },
+        "output": "Johnson's Optimal Sequence: ['Implant-D', 'Implant-A', 'Implant-C', 'Implant-E', 'Implant-B']\nOptimal Makespan (Cmax): 30 hours\nMachine 2 Idle Starvation: 5 hours"
+      },
+      {
+        "title": "General Job Shop Scheduling (J_m || C_max) & The Disjunctive Graph Model",
+        "say": [
+          "While flow shops enforce an identical technological route across all jobs, real-world custom manufacturing plants, heavy machinery fabricators, and commercial repair depots operate as general job shops, denoted as J_m. In a job shop, each individual job j possesses its own unique, pre-determined routing sequence across machines. A precision turbine rotor may require Milling followed by Heat Treatment and Balancing, while a casing shroud requires Turning followed by Welding and Coordinate Measuring Inspection.",
+          "The general job shop scheduling problem to minimize makespan, denoted in Graham notation as J_m || C_max, is notoriously one of the most computationally difficult NP-hard combinatorial optimization problems known to computer science and operations research. Even a modest job shop with only three machines and three jobs can present millions of possible sequencing permutations, exhibiting an explosive combinatorial search space.",
+          "To formulate and solve job shop scheduling problems mathematically, Roy and Sussman introduced the Disjunctive Graph model in 1964. A disjunctive graph G = (V, C, D) represents the physical and routing physics of the entire manufacturing floor. The node set V contains all individual operations O_{ij} representing the processing of job j on machine i, along with dummy source node 0 and dummy sink node asterisk. Each node carries a weight equal to its operation processing duration.",
+          "The edge structure of the graph is partitioned into two distinct sets: conjunctive directed arcs C and disjunctive undirected edge pairs D. Conjunctive directed arcs represent fixed technological precedence constraints: an operation cannot begin until the preceding operation of the same job has completed. These arcs are fixed and oriented. In contrast, disjunctive undirected edges connect pairs of operations that must be processed on the same machine. Because a machine can only process one job at a time, these disjunctive pairs represent mutual exclusion conflicts.",
+          "Scheduling a job shop is mathematically equivalent to selecting an orientation for every disjunctive edge pair in D such that the resulting directed graph G_S contains no directed cycles. Once all disjunctive edges are directed, the makespan of the schedule equals the length of the longest path\u2014the critical path\u2014from source 0 to sink asterisk in the directed acyclic graph. Operations engineers evaluate disjunctive graph topologies to identify critical bottleneck arcs and guide optimization.",
+          "In modern enterprise supply chain software, disjunctive graph formulations serve as the underlying data structure for Constraint Programming (CP) and Mixed-Integer Linear Programming (MILP) solvers. By propagating machine capacity constraints along disjunctive arcs, solvers rapidly prune infeasible sub-trees, enabling real-world manufacturing plants to optimize multi-day production schedules with mathematical guarantees of feasibility and high operational quality.",
+          "From a graph-theoretic perspective, the disjunctive graph formulation provides deep structural insight into the topological complexity of job shop scheduling. Because the length of the critical path in the directed acyclic graph dictates schedule makespan, operations researchers apply neighborhood search algorithms, such as Tabu Search and Large Neighborhood Search (LNS), directly on the disjunctive arc structure. By inverting critical disjunctive arcs along the longest path, neighborhood search algorithms navigate the vast combinatorial landscape, escaping local optima.",
+          "Furthermore, disjunctive graph representations enable seamless integration with modern visual scheduling Gantt charts in manufacturing execution systems. Shop floor planners visualize conjunctive dependencies as solid horizontal job routing arrows, while disjunctive machine conflicts appear as dynamic dashed vertical links. When a machine operator inspects pending jobs, the disjunctive graph engine highlights the critical path in red, providing immediate clarity on which operations cannot tolerate a single minute of delay.",
+          "To scale disjunctive graph analytics across global production networks, software architects deploy distributed graph databases. By modeling machines, operations, and precedence dependencies as unified knowledge graphs, enterprise systems execute real-time critical path queries and bottleneck impact analyses across multi-plant manufacturing environments.",
+          "Furthermore, real-time disjunctive graph visualization provides shop-floor supervisors with instant tactical awareness, ensuring that critical operations receive top priority during machine changeovers and material staging."
+        ],
+        "example": "A specialized aerospace turbomachinery repair depot schedules three critical aircraft engine components across three machines: Vertical Boring (M1), Five-Axis Milling (M2), and Thermal Barrier Plasma Coating (M3). Each component has a distinct routing path. Operations researchers model the operations as a disjunctive graph with nine operation nodes and nine disjunctive conflict pairs. Solving the disjunctive orientation identifies a critical path makespan of thirty-six hours, eliminating shop-floor contention.",
+        "code": "# Simulation: Disjunctive Graph Representation & Critical Path Makespan Evaluator\ndef evaluate_job_shop_schedule(\n    operations: dict,\n    machine_orders: dict\n) -> dict:\n    # Build adjacency graph\n    adj = {op_id: [] for op_id in operations}\n    in_degree = {op_id: 0 for op_id in operations}\n    \n    # 1. Add conjunctive (job routing) edges\n    for op_id, op in operations.items():\n        if op.get(\"next_op\"):\n            adj[op_id].append(op[\"next_op\"])\n            in_degree[op[\"next_op\"]] += 1\n            \n    # 2. Add disjunctive selections (machine sequence)\n    for m_id, seq in machine_orders.items():\n        for i in range(len(seq) - 1):\n            curr_op = seq[i]\n            next_op = seq[i + 1]\n            adj[curr_op].append(next_op)\n            in_degree[next_op] += 1\n            \n    # 3. Topological sort and longest path (Critical Path Method)\n    queue = [op_id for op_id, deg in in_degree.items() if deg == 0]\n    completion_times = {op_id: operations[op_id][\"duration\"] for op_id in operations}\n    \n    topo_order = []\n    while queue:\n        u = queue.pop(0)\n        topo_order.append(u)\n        \n        for v in adj[u]:\n            completion_times[v] = max(\n                completion_times[v],\n                completion_times[u] + operations[v][\"duration\"]\n            )\n            in_degree[v] -= 1\n            if in_degree[v] == 0:\n                queue.append(v)\n                \n    if len(topo_order) < len(operations):\n        return {\"error\": \"Cyclic schedule detected! Infeasible disjunctive selection.\"}\n        \n    makespan = max(completion_times.values())\n    \n    return {\n        \"makespan_hours\": makespan,\n        \"completion_times\": completion_times,\n        \"critical_path_valid\": True\n    }\n\n# 3 jobs x 2 machines\nsample_operations = {\n    \"J1_M1\": {\"duration\": 4, \"next_op\": \"J1_M2\"},\n    \"J1_M2\": {\"duration\": 6, \"next_op\": None},\n    \"J2_M2\": {\"duration\": 5, \"next_op\": \"J2_M1\"},\n    \"J2_M1\": {\"duration\": 3, \"next_op\": None}\n}\n\nsample_machine_selections = {\n    \"M1\": [\"J1_M1\", \"J2_M1\"],\n    \"M2\": [\"J1_M2\", \"J2_M2\"]\n}\n\ngraph_result = evaluate_job_shop_schedule(sample_operations, sample_machine_selections)\nprint(f\"Job Shop Schedule Makespan (Cmax): {graph_result['makespan_hours']} hours\")\nprint(f\"Operation Completion Times: {graph_result['completion_times']}\")\n",
+        "codeNotes": [
+          {
+            "line": 10,
+            "note": "Instantiates fixed conjunctive directed arcs enforcing sequential job routing precedence."
+          },
+          {
+            "line": 16,
+            "note": "Applies resolved disjunctive edge orientations dictating operation order on shared machines."
+          },
+          {
+            "line": 23,
+            "note": "Executes topological sort and critical path analysis to determine schedule makespan."
+          }
+        ],
+        "tryIt": "Reverse the sequence on Machine 2 to ['J2_M2', 'J1_M2'] and evaluate how makespan changes due to routing concurrency.",
+        "check": {
+          "question": "In the Disjunctive Graph formulation G = (V, C, D) of a job shop, what do the disjunctive edge pairs in set D represent?",
+          "options": [
+            "Mutual exclusion conflicts between operations competing for the same machine, requiring orientation to establish processing order",
+            "Fixed technological precedence relationships between consecutive operations of the same job",
+            "Communication errors between machine operators and enterprise accounting databases",
+            "The chemical degradation of coolant fluid over multi-week operating intervals"
+          ],
+          "answer": 0,
+          "why": "Disjunctive edges connect pairs of operations that must be executed on the same physical machine. Since a machine can only process one job at a time, the scheduler must select an orientation (A -> B or B -> A) without creating cycles.",
+          "answerIndex": 0,
+          "explanation": "Disjunctive edges connect pairs of operations that must be executed on the same physical machine. Since a machine can only process one job at a time, the scheduler must select an orientation (A -> B or B -> A) without creating cycles."
+        },
+        "output": "Job Shop Schedule Makespan (Cmax): 18 hours\nOperation Completion Times: {'J1_M1': 4, 'J1_M2': 10, 'J2_M2': 15, 'J2_M1': 18}"
+      },
+      {
+        "title": "Branch-and-Bound Makespan Minimization & The Shifting Bottleneck Heuristic",
+        "say": [
+          "Because general job shop scheduling problems are NP-hard, industrial operations research deploy two complementary methodological approaches: exact branch-and-bound search algorithms for moderate problem instances, and decomposition heuristics for planetary-scale enterprise facilities. Exact branch-and-bound algorithms systematically partition the space of all possible disjunctive edge orientations, establishing rigorous mathematical guarantees of global optimality.",
+          "In a branch-and-bound tree for job shop scheduling, branching occurs by selecting a machine where operations are in conflict and branching on the alternative disjunctive orientations. At each node in the search tree, the algorithm computes a lower bound on makespan by relaxing the remaining unsequenced disjunctive conflicts. If the computed lower bound exceeds the makespan of the best known complete schedule (the incumbent upper bound), the entire branch is immediately pruned, eliminating trillions of suboptimal combinations.",
+          "To calculate razor-sharp lower bounds, operations researchers utilize Carlier's single-machine relaxation algorithm (1 | r_j, q_j | C_max). For each machine, operations are assigned release dates r_j (the earliest time the job can arrive from upstream stages) and delivery times q_j (the minimum processing duration required downstream to reach the final sink). Solving this single-machine relaxation using Jackson's Preemptive Schedule (JPS) provides a tight lower bound that dramatically accelerates branch pruning.",
+          "However, when factory floors contain hundreds of machines and thousands of work orders, exact branch-and-bound algorithms become computationally intractable within operational planning horizons. To resolve this challenge, Adams, Balas, and Zawack developed the Shifting Bottleneck Heuristic (SBH) in 1988, which remains one of the most successful and robust industrial scheduling algorithms in history.",
+          "The Shifting Bottleneck Heuristic operates by decomposing the global job shop problem into a sequence of single-machine subproblems. At each major iteration, SBH evaluates all unsequenced machines, solves each as a single-machine Carlier relaxation, and identifies the machine with the largest makespan, designating it as the current system bottleneck. This bottleneck machine's sequence is locked in. Crucially, SBH then performs a re-optimization phase, revisiting and re-sequencing all previously scheduled machines in light of the newly added constraint.",
+          "Enterprise advanced planning and scheduling (APS) platforms combine shifting bottleneck heuristics with genetic algorithms and constraint satisfaction engines. This hybrid algorithmic architecture allows global manufacturing plants to generate production schedules in minutes that are consistently within two to three percent of theoretical mathematical perfection.",
+          "The theoretical genius of the Shifting Bottleneck Heuristic lies in its recognition that in a multi-machine job shop, the true systemic bottleneck is not fixed; it shifts dynamically depending on the current operational sequence and work-in-process distribution. A five-axis milling center may govern throughput during morning shifts, but as large batches clear into heat treatment, the thermal furnace becomes the governing constraint during evening hours. By re-evaluating machine criticality at every algorithmic iteration, SBH dynamically tracks and tames shifting bottlenecks.",
+          "In large-scale automotive powertrain and commercial aircraft manufacturing, enterprise implementations of SBH process schedules spanning over ten thousand distinct operations across hundreds of specialized computer numerical control machines. Cloud-based advanced planning and scheduling (APS) platforms parallelize single-machine Carlier relaxations across distributed computing clusters, generating near-optimal production schedules in minutes. This computational agility allows enterprise manufacturers to run daily rolling-horizon re-optimizations, absorbing supplier delays without disrupting final delivery promises.",
+          "In strategic manufacturing planning, understanding shifting bottleneck dynamics prevents costly capital allocation errors. When executives contemplate expanding factory capacity, shifting bottleneck analyses reveal whether adding an expensive machine will genuinely increase plant throughput or merely shift the governing bottleneck to an adjacent workstation. This analytical precision ensures that capital investments deliver maximum operational impact.",
+          "By systematically identifying and elevating shifting constraints, world-class manufacturing organizations achieve sustainable productivity growth across complex multi-facility production footprints.",
+          "In executive boardrooms, shifting bottleneck reports provide transparent visibility into production constraints, aligning engineering investments with the true physical bottlenecks of the enterprise.",
+          "This rigorous algorithmic discipline guarantees that capital equipment investments achieve their maximum theoretical throughput contribution without creating downstream process gridlock."
+        ],
+        "example": "A commercial satellite manufacturing facility schedules fifteen intricate payload structural assemblies across five specialized robotic bonding, curing, and machining centers. An unguided heuristic generates a makespan of forty-two days with chronic machine starvation. Deploying the Shifting Bottleneck Heuristic identifies the autoclave curing vessel as the primary bottleneck, locking its sequence and re-optimizing upstream bonding stations to compress makespan to twenty-nine days.",
+        "code": "# Simulation: Single-Machine Head-and-Tail Relaxation (Carlier Bounding Routine)\ndef carlier_single_machine_relaxation(\n    operations: list[dict]\n) -> dict:\n    # 1 | r_j, q_j, p_j | C_max relaxation\n    # Each op has release date r_j, processing time p_j, delivery tail q_j\n    \n    # Sort events by release date for preemptive Jackson schedule\n    sorted_ops = sorted(operations, key=lambda x: x[\"release_date\"])\n    \n    current_time = 0\n    makespan_bound = 0\n    \n    # Non-preemptive evaluation for lower bound\n    for op in sorted_ops:\n        start_time = max(current_time, op[\"release_date\"])\n        completion_time = start_time + op[\"proc_time\"]\n        total_time_with_tail = completion_time + op[\"delivery_tail\"]\n        \n        makespan_bound = max(makespan_bound, total_time_with_tail)\n        current_time = completion_time\n        \n    return {\n        \"lower_bound_cmax\": makespan_bound,\n        \"bottleneck_criticality\": round(makespan_bound, 2)\n    }\n\n# Candidate operations competing for a bottleneck machine\ncandidate_ops = [\n    {\"name\": \"Op-1\", \"release_date\": 4, \"proc_time\": 6, \"delivery_tail\": 10},\n    {\"name\": \"Op-2\", \"release_date\": 2, \"proc_time\": 5, \"delivery_tail\": 14},\n    {\"name\": \"Op-3\", \"release_date\": 8, \"proc_time\": 4, \"delivery_tail\": 6}\n]\n\nbound_info = carlier_single_machine_relaxation(candidate_ops)\nprint(f\"Calculated Single-Machine Lower Bound: {bound_info['lower_bound_cmax']} hours\")\nprint(f\"Bottleneck Criticality Score: {bound_info['bottleneck_criticality']}\")\n",
+        "codeNotes": [
+          {
+            "line": 4,
+            "note": "Defines single-machine relaxation incorporating release dates and delivery tail latencies."
+          },
+          {
+            "line": 13,
+            "note": "Computes earliest completion plus downstream tail duration to establish rigorous lower bound."
+          },
+          {
+            "line": 23,
+            "note": "Evaluates candidate bottleneck operations guiding shifting bottleneck machine selection."
+          }
+        ],
+        "tryIt": "Increase Op-2 delivery tail from 14 to 20 and observe how the calculated lower bound expands to reflect downstream tail severity.",
+        "check": {
+          "question": "What is the defining algorithmic characteristic of the Shifting Bottleneck Heuristic (SBH) that distinguishes it from greedy dispatching rules?",
+          "options": [
+            "It iteratively identifies the most critical bottleneck machine, sequences it, and then re-optimizes all previously scheduled machines",
+            "It randomly shuffles machine sequences until an operator intervenes",
+            "It shuts down the factory bottleneck machine to save electrical utility charges",
+            "It assumes all jobs have zero processing duration on all machines"
+          ],
+          "answer": 0,
+          "why": "The breakthrough innovation of the Shifting Bottleneck Heuristic is its re-optimization step: after scheduling the current worst bottleneck, it revisits and re-sequences every previously scheduled machine to prevent early suboptimal lock-in.",
+          "answerIndex": 0,
+          "explanation": "The breakthrough innovation of the Shifting Bottleneck Heuristic is its re-optimization step: after scheduling the current worst bottleneck, it revisits and re-sequences every previously scheduled machine to prevent early suboptimal lock-in."
+        },
+        "output": "Calculated Single-Machine Lower Bound: 23 hours\nBottleneck Criticality Score: 23"
+      },
+      {
+        "title": "Enterprise Production Scheduling Engine: Real-Time Dynamic Dispatching & Rescheduling",
+        "say": [
+          "In operational reality, no manufacturing schedule survives contact with the physical shop floor without modification. While static mathematical optimization algorithms generate mathematically elegant baseline plans, real-world manufacturing plants are dynamic stochastic environments subject to unexpected machine breakdowns, urgent customer priority revisions, delayed raw material deliveries, and defective part rework loops.",
+          "Enterprise production scheduling engines bridge this gap through hybrid predictive-reactive architectures. The predictive module generates a stable baseline schedule using mathematical optimization, establishing initial commitments for customer delivery promises, supplier raw material staging, and labor shift staffing. Concurrently, the reactive module continuously monitors real-time shop-floor telemetry, detecting execution deviations and triggering localized dispatching heuristics or rolling-horizon schedule regeneration.",
+          "When local rescheduling is required during shift execution, dispatchers evaluate dynamic dispatching priority rules. Beyond simple FIFO or SPT, advanced engines calculate the Critical Ratio (CR), defined as the remaining time until customer due date divided by total remaining work duration: CR = (Due Date - Current Time) / Remaining Processing Time. If CR is greater than 1.0, the job is ahead of schedule; if CR equals 1.0, the job is exactly on schedule; if CR is less than 1.0, the job is running late and receives priority dispatching.",
+          "A complementary dynamic rule is Minimum Slack (MS), which calculates the absolute difference between time remaining until due date and remaining processing time: MS = (Due Date - Current Time) - Remaining Processing Time. By dynamically evaluating CR and MS across waiting job queues at every machine, automated dispatching algorithms ensure that constrained machine capacity is immediately channeled to the work orders most critically in danger of breaching customer service agreements.",
+          "The synthesis of algorithmic scheduling, dynamic dispatching, and automated rescheduling transforms shop-floor operations into a self-healing cyber-physical system. Leading enterprises achieve sub-minute reaction times to shop-floor disruptions, protecting customer delivery reliability while maintaining high asset utilization and low work-in-process inventory.",
+          "In modern enterprise cloud control towers, digital twins ingest IoT sensor signals from connected PLCs across every machine. When a machine temperature spike indicates an impending spindle failure, the scheduling engine automatically re-routes pending jobs to qualified alternate workstations, notifies maintenance technicians, and updates customer fulfillment estimates with zero administrative delay.",
+          "In modern Industry 4.0 smart manufacturing plants, the convergence of predictive algorithmic scheduling and real-time dynamic dispatching creates a fully autonomous, closed-loop operational ecosystem. Industrial Internet of Things (IIoT) sensors installed across production machines transmit real-time telemetry, monitoring spindle vibration, cutting tool wear, motor temperatures, and cycle execution velocities. When machine learning models detect anomalous tool wear indicating imminent failure, the reactive dispatching engine triggers automatic job diversion.",
+          "Furthermore, dynamic dispatching engines incorporate operator skill matrix qualifications and ergonomic fatigue limits into real-time assignment logic. When high-precision aerospace components arrive at a multi-axis grinding workstation, the scheduling system validates that the currently assigned technician holds active AS9100 aerospace quality certifications. By integrating human capital constraints directly with combinatorial machine scheduling, enterprise operations platforms guarantee regulatory compliance, worker safety, and flawless production execution.",
+          "Ultimately, deploying enterprise production scheduling engines bridges the critical gap between high-level enterprise resource planning commitments and minute-by-minute shop-floor execution. World-class manufacturing corporations that master algorithmic scheduling achieve ninety-nine percent on-time delivery, slash work-in-process inventory by half, and maximize the return on capital invested in advanced manufacturing infrastructure.",
+          "Furthermore, continuous simulation telemetry empowers supply chain planners to conduct proactive sensitivity analyses against simulated demand surges and equipment outages. By evaluating alternative dispatching rules under extreme operational stress, operations leaders select robust scheduling policies that insulate enterprise revenue from unforeseen disruptions.",
+          "Ultimately, deploying advanced production scheduling engines transforms manufacturing shop floors into synchronized, high-velocity production engines capable of delivering exceptional customer value in competitive global markets.",
+          "By continuously calibrating dynamic dispatching parameters against real-time operational feedback, modern factories sustain high manufacturing velocity and uncompromised quality standards."
+        ],
+        "example": "A precision hydraulic valve manufacturer operates a twenty-machine shop floor. During morning operations, a critical CNC grinding center experiences an unexpected spindle motor bearing failure, idling the machine for three hours. The enterprise scheduling engine instantly computes dynamic Critical Ratios across forty pending valve jobs, re-routes non-critical orders to alternate machining cells, and accelerates a high-priority aerospace valve order, preserving on-time delivery with zero customer disruption.",
+        "code": "# Simulation: Enterprise Dynamic Dispatching Engine (Critical Ratio vs FIFO)\ndef simulate_dynamic_dispatching(\n    jobs: list[dict],\n    current_time: float\n) -> list[dict]:\n    # Calculate Critical Ratio (CR) for each job\n    # CR = (Due Date - Current Time) / Remaining Processing Time\n    evaluated_jobs = []\n    \n    for job in jobs:\n        time_until_due = job[\"due_date\"] - current_time\n        rem_work = job[\"remaining_work\"]\n        cr = time_until_due / rem_work if rem_work > 0 else 999.0\n        \n        status = \"CRITICAL (LATE)\" if cr < 1.0 else (\"ON_TIME\" if cr <= 1.2 else \"AHEAD\")\n        \n        evaluated_jobs.append({\n            \"name\": job[\"name\"],\n            \"due_date\": job[\"due_date\"],\n            \"remaining_work\": rem_work,\n            \"critical_ratio\": round(cr, 2),\n            \"dispatch_status\": status\n        })\n        \n    # Sort by Critical Ratio ascending (most urgent jobs dispatched first)\n    priority_dispatch_queue = sorted(evaluated_jobs, key=lambda x: x[\"critical_ratio\"])\n    return priority_dispatch_queue\n\nactive_shop_jobs = [\n    {\"name\": \"Valve-Lot-101\", \"due_date\": 25.0, \"remaining_work\": 10.0},\n    {\"name\": \"Valve-Lot-102\", \"due_date\": 18.0, \"remaining_work\": 12.0},\n    {\"name\": \"Valve-Lot-103\", \"due_date\": 30.0, \"remaining_work\": 8.0},\n    {\"name\": \"Valve-Lot-104\", \"due_date\": 15.0, \"remaining_work\": 6.0}\n]\n\ndispatched_queue = simulate_dynamic_dispatching(active_shop_jobs, current_time=10.0)\nprint(\"Dynamic Priority Dispatching Queue (Sorted by Critical Ratio):\")\nprint(\"-\" * 65)\nfor idx, job in enumerate(dispatched_queue):\n    print(f\"Priority {idx + 1}: {job['name']} | CR = {job['critical_ratio']:4.2f} | Status: {job['dispatch_status']}\")\n",
+        "codeNotes": [
+          {
+            "line": 10,
+            "note": "Calculates dynamic Critical Ratio metric evaluating time remaining relative to remaining work duration."
+          },
+          {
+            "line": 13,
+            "note": "Categorizes work orders into critical, on-time, or ahead-of-schedule dispatching tiers."
+          },
+          {
+            "line": 23,
+            "note": "Prioritizes job dispatching queue in ascending order of Critical Ratio to avert delivery breaches."
+          }
+        ],
+        "tryIt": "Advance current_time from 10.0 to 12.0 and observe how Critical Ratios decay across all jobs, elevating urgency.",
+        "check": {
+          "question": "In dynamic shop floor production scheduling, what does a Critical Ratio (CR) of less than 1.0 signify for a pending work order?",
+          "options": [
+            "The job is running behind schedule and will breach its customer delivery deadline unless prioritized or expedited",
+            "The job has completed three weeks ahead of schedule and can be scrapped",
+            "The job was manufactured using non-standard metric measurement units",
+            "The customer has cancelled the sales contract under force majeure provisions"
+          ],
+          "answer": 0,
+          "why": "Critical Ratio is defined as (Due Date - Current Time) / Remaining Processing Time. When CR < 1.0, the time remaining until deadline is strictly less than the time required to complete the work, meaning the job is running late.",
+          "answerIndex": 0,
+          "explanation": "Critical Ratio is defined as (Due Date - Current Time) / Remaining Processing Time. When CR < 1.0, the time remaining until deadline is strictly less than the time required to complete the work, meaning the job is running late."
+        },
+        "output": "Dynamic Priority Dispatching Queue (Sorted by Critical Ratio):\n-----------------------------------------------------------------\nPriority 1: Valve-Lot-102 | CR = 0.67 | Status: CRITICAL (LATE)\nPriority 2: Valve-Lot-104 | CR = 0.83 | Status: CRITICAL (LATE)\nPriority 3: Valve-Lot-101 | CR = 1.50 | Status: AHEAD\nPriority 4: Valve-Lot-103 | CR = 2.50 | Status: AHEAD"
+      }
+    ],
+    "summary": [
+      "Single-machine scheduling theorems prove SPT minimizes mean flow time while EDD minimizes maximum lateness L_max.",
+      "The Moore-Hodgson algorithm minimizes the total count of tardy jobs in O(n log n) time by ejecting the longest processing jobs upon deadline violation.",
+      "Johnson's Rule achieves globally optimal makespan C_max for 2-machine flow shops by sequencing short M1 tasks first and short M2 tasks last.",
+      "The Disjunctive Graph model G = (V, C, D) formulates NP-hard job shop scheduling by orienting mutual exclusion edges to minimize the critical path.",
+      "The Shifting Bottleneck Heuristic and dynamic Critical Ratio dispatching provide real-time self-healing scheduling across complex manufacturing enterprises."
+    ],
+    "projectStep": {
+      "title": "Build & Simulate Enterprise Combinatorial Production Scheduling Engine",
+      "steps": [
+        "Implement the Moore-Hodgson single-machine algorithm to minimize the count of tardy customer delivery orders.",
+        "Formulate and execute Johnson's 2-machine algorithm to optimize permutation flow shop makespan and eliminate machine starvation.",
+        "Construct a disjunctive graph data structure modeling job shop routing precedence and machine mutual exclusion conflicts.",
+        "Evaluate Carlier single-machine release-and-delivery relaxations to compute tight lower bounds for branch-and-bound optimization.",
+        "Deploy a dynamic Critical Ratio dispatching simulator to evaluate shop-floor self-healing responsiveness during unexpected disruption events."
+      ]
+    }
   }
 ];
