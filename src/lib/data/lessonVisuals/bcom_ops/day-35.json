@@ -1,0 +1,764 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "bcom_ops",
+  "day": 35,
+  "promptSha": "f116c3de1c20e99296f80bf06008f7f492ac607a92db10d05f5d2f158939334f",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Capstone Architecture: End-to-End Enterprise Operations Integration",
+      "codeHash": "2082d529da70f273b4390648f819976bb3f15dc1f87777656d36d89e4a98d4c5",
+      "filled": {},
+      "spec": {
+        "template": "funnel",
+        "title": "Capstone Architecture: End-to-End Enterp Execution Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Global industrial corporations achieve operational performance.",
+            "activeStageId": "stage_1",
+            "stages": [
+              {
+                "id": "stage_1",
+                "label": "Network Integration",
+                "value": 100,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "stage_2",
+                "label": "Flow Control",
+                "value": 75,
+                "percentage": 75,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_3",
+                "label": "Job Sequencing",
+                "value": 50,
+                "percentage": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_4",
+                "label": "Master Audit",
+                "value": 25,
+                "percentage": 25,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Milestone capstone introduces integrated operations engine.",
+            "activeStageId": "stage_2",
+            "stages": [
+              {
+                "id": "stage_1",
+                "label": "Network Integration",
+                "value": 100,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "stage_2",
+                "label": "Flow Control",
+                "value": 75,
+                "percentage": 75,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_3",
+                "label": "Job Sequencing",
+                "value": 50,
+                "percentage": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_4",
+                "label": "Master Audit",
+                "value": 25,
+                "percentage": 25,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Surgical robotics manufacturer integrates microchip procurement.",
+            "activeStageId": "stage_3",
+            "stages": [
+              {
+                "id": "stage_1",
+                "label": "Network Integration",
+                "value": 100,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "stage_2",
+                "label": "Flow Control",
+                "value": 75,
+                "percentage": 75,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_3",
+                "label": "Job Sequencing",
+                "value": 50,
+                "percentage": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_4",
+                "label": "Master Audit",
+                "value": 25,
+                "percentage": 25,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Increase global plant parameters to observe network scope scaling.",
+            "activeStageId": "stage_4",
+            "stages": [
+              {
+                "id": "stage_1",
+                "label": "Network Integration",
+                "value": 100,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "stage_2",
+                "label": "Flow Control",
+                "value": 75,
+                "percentage": 75,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_3",
+                "label": "Job Sequencing",
+                "value": 50,
+                "percentage": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_4",
+                "label": "Master Audit",
+                "value": 25,
+                "percentage": 25,
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Module 1 Integration: Stochastic Inventory & Multi-Echelon Buffer Positioning",
+      "codeHash": "59965357848026b1d4f2dae040bee42607b23dc49e09ccfc2c2be65dc6be63f3",
+      "filled": {},
+      "spec": {
+        "template": "funnel",
+        "title": "Module 1 Integration: Stochastic Invento Execution Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Computational pillar executes stochastic multi echelon optimization.",
+            "activeStageId": "stage_1",
+            "stages": [
+              {
+                "id": "stage_1",
+                "label": "Network Integration",
+                "value": 100,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "stage_2",
+                "label": "Flow Control",
+                "value": 75,
+                "percentage": 75,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_3",
+                "label": "Job Sequencing",
+                "value": 50,
+                "percentage": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_4",
+                "label": "Master Audit",
+                "value": 25,
+                "percentage": 25,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Executing recursive decomposition across global supply networks.",
+            "activeStageId": "stage_2",
+            "stages": [
+              {
+                "id": "stage_1",
+                "label": "Network Integration",
+                "value": 100,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "stage_2",
+                "label": "Flow Control",
+                "value": 75,
+                "percentage": 75,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_3",
+                "label": "Job Sequencing",
+                "value": 50,
+                "percentage": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_4",
+                "label": "Master Audit",
+                "value": 25,
+                "percentage": 25,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Medical robotics manufacturer optimizes regional distribution centers.",
+            "activeStageId": "stage_3",
+            "stages": [
+              {
+                "id": "stage_1",
+                "label": "Network Integration",
+                "value": 100,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "stage_2",
+                "label": "Flow Control",
+                "value": 75,
+                "percentage": 75,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_3",
+                "label": "Job Sequencing",
+                "value": 50,
+                "percentage": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_4",
+                "label": "Master Audit",
+                "value": 25,
+                "percentage": 25,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Increase demand standard deviation to observe echelon buffer expansions.",
+            "activeStageId": "stage_4",
+            "stages": [
+              {
+                "id": "stage_1",
+                "label": "Network Integration",
+                "value": 100,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "stage_2",
+                "label": "Flow Control",
+                "value": 75,
+                "percentage": 75,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_3",
+                "label": "Job Sequencing",
+                "value": 50,
+                "percentage": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_4",
+                "label": "Master Audit",
+                "value": 25,
+                "percentage": 25,
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Module 2 Integration: Factory Physics Flow Dynamics & High-Utilization Dampers",
+      "codeHash": "5f06f5389d8c6fdc21116583c8f27ab8dd75f8cad967c1a1732d568bc867b51f",
+      "filled": {},
+      "spec": {
+        "template": "funnel",
+        "title": "Module 2 Integration: Factory Physics Fl Execution Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Computational pillar evaluates factory physics flow dynamics.",
+            "activeStageId": "stage_1",
+            "stages": [
+              {
+                "id": "stage_1",
+                "label": "Network Integration",
+                "value": 100,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "stage_2",
+                "label": "Flow Control",
+                "value": 75,
+                "percentage": 75,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_3",
+                "label": "Job Sequencing",
+                "value": 50,
+                "percentage": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_4",
+                "label": "Master Audit",
+                "value": 25,
+                "percentage": 25,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Monitors shop floor flow physics through queue calculations.",
+            "activeStageId": "stage_2",
+            "stages": [
+              {
+                "id": "stage_1",
+                "label": "Network Integration",
+                "value": 100,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "stage_2",
+                "label": "Flow Control",
+                "value": 75,
+                "percentage": 75,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_3",
+                "label": "Job Sequencing",
+                "value": 50,
+                "percentage": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_4",
+                "label": "Master Audit",
+                "value": 25,
+                "percentage": 25,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Precision machining cell experiences sudden demand surges.",
+            "activeStageId": "stage_3",
+            "stages": [
+              {
+                "id": "stage_1",
+                "label": "Network Integration",
+                "value": 100,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "stage_2",
+                "label": "Flow Control",
+                "value": 75,
+                "percentage": 75,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_3",
+                "label": "Job Sequencing",
+                "value": 50,
+                "percentage": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_4",
+                "label": "Master Audit",
+                "value": 25,
+                "percentage": 25,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Reduce bottleneck utilization parameters to observe queue collapse.",
+            "activeStageId": "stage_4",
+            "stages": [
+              {
+                "id": "stage_1",
+                "label": "Network Integration",
+                "value": 100,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "stage_2",
+                "label": "Flow Control",
+                "value": 75,
+                "percentage": 75,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_3",
+                "label": "Job Sequencing",
+                "value": 50,
+                "percentage": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_4",
+                "label": "Master Audit",
+                "value": 25,
+                "percentage": 25,
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Module 3 Integration: Combinatorial Scheduling & Disjunctive Bottleneck Optimization",
+      "codeHash": "f1df609b10651784d37a68c6b3402d33166af27a79cef5c4888b8d354897f3f1",
+      "filled": {},
+      "spec": {
+        "template": "funnel",
+        "title": "Module 3 Integration: Combinatorial Sche Execution Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Computational pillar executes combinatorial job shop optimization.",
+            "activeStageId": "stage_1",
+            "stages": [
+              {
+                "id": "stage_1",
+                "label": "Network Integration",
+                "value": 100,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "stage_2",
+                "label": "Flow Control",
+                "value": 75,
+                "percentage": 75,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_3",
+                "label": "Job Sequencing",
+                "value": 50,
+                "percentage": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_4",
+                "label": "Master Audit",
+                "value": 25,
+                "percentage": 25,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Scheduling across single machine bottleneck stages effectively.",
+            "activeStageId": "stage_2",
+            "stages": [
+              {
+                "id": "stage_1",
+                "label": "Network Integration",
+                "value": 100,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "stage_2",
+                "label": "Flow Control",
+                "value": 75,
+                "percentage": 75,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_3",
+                "label": "Job Sequencing",
+                "value": 50,
+                "percentage": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_4",
+                "label": "Master Audit",
+                "value": 25,
+                "percentage": 25,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Commercial satellite components factory processes payload modules.",
+            "activeStageId": "stage_3",
+            "stages": [
+              {
+                "id": "stage_1",
+                "label": "Network Integration",
+                "value": 100,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "stage_2",
+                "label": "Flow Control",
+                "value": 75,
+                "percentage": 75,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_3",
+                "label": "Job Sequencing",
+                "value": 50,
+                "percentage": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_4",
+                "label": "Master Audit",
+                "value": 25,
+                "percentage": 25,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Advance shop time parameters to observe critical priority shifts.",
+            "activeStageId": "stage_4",
+            "stages": [
+              {
+                "id": "stage_1",
+                "label": "Network Integration",
+                "value": 100,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "stage_2",
+                "label": "Flow Control",
+                "value": 75,
+                "percentage": 75,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_3",
+                "label": "Job Sequencing",
+                "value": 50,
+                "percentage": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_4",
+                "label": "Master Audit",
+                "value": 25,
+                "percentage": 25,
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Grand Milestone 7 Synthesis: Master Operations Control Suite & Performance Audit",
+      "codeHash": "ef746e1f768253eeaff26ee9021737c8d375b24268af59799c63d851dc7a9310",
+      "filled": {},
+      "spec": {
+        "template": "funnel",
+        "title": "The Grand Milestone 7 Synthesis: Master  Execution Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Orchestrating grand synthesis of enterprise operations suite.",
+            "activeStageId": "stage_1",
+            "stages": [
+              {
+                "id": "stage_1",
+                "label": "Network Integration",
+                "value": 100,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "stage_2",
+                "label": "Flow Control",
+                "value": 75,
+                "percentage": 75,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_3",
+                "label": "Job Sequencing",
+                "value": 50,
+                "percentage": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_4",
+                "label": "Master Audit",
+                "value": 25,
+                "percentage": 25,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Master suite orchestrator runs multi quarter simulation benchmarks.",
+            "activeStageId": "stage_2",
+            "stages": [
+              {
+                "id": "stage_1",
+                "label": "Network Integration",
+                "value": 100,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "stage_2",
+                "label": "Flow Control",
+                "value": 75,
+                "percentage": 75,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_3",
+                "label": "Job Sequencing",
+                "value": 50,
+                "percentage": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_4",
+                "label": "Master Audit",
+                "value": 25,
+                "percentage": 25,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Executive board presentation of synthesized digital twin suites.",
+            "activeStageId": "stage_3",
+            "stages": [
+              {
+                "id": "stage_1",
+                "label": "Network Integration",
+                "value": 100,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "stage_2",
+                "label": "Flow Control",
+                "value": 75,
+                "percentage": 75,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_3",
+                "label": "Job Sequencing",
+                "value": 50,
+                "percentage": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_4",
+                "label": "Master Audit",
+                "value": 25,
+                "percentage": 25,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Adjust machine breakdown frequency to verify master certification.",
+            "activeStageId": "stage_4",
+            "stages": [
+              {
+                "id": "stage_1",
+                "label": "Network Integration",
+                "value": 100,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "stage_2",
+                "label": "Flow Control",
+                "value": 75,
+                "percentage": 75,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_3",
+                "label": "Job Sequencing",
+                "value": 50,
+                "percentage": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_4",
+                "label": "Master Audit",
+                "value": 25,
+                "percentage": 25,
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
