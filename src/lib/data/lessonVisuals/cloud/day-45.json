@@ -1,0 +1,362 @@
+{
+  "schemaVersion": 2,
+  "prefix": "cloud",
+  "day": 45,
+  "entries": [
+    {
+      "partTitle": "Multi-Account PCI-DSS Foundation: Landing Zones, OU Isolation & SCP Perimeter Guardrails",
+      "codeHash": "2da4c0e6d94f28fe31223f4bf55743b97623be0daa9b7caf1eb63bb608cb0d6c",
+      "spec": {
+        "template": "workflow",
+        "workflow": {
+          "title": "Multi-Account PCI-DSS Foundation: Landing Zones, OU Isolation & SCP Perimeter Guardrails",
+          "nodes": [
+            {
+              "id": "public_dmz",
+              "label": "Public DMZ & Edge WAF",
+              "status": "active"
+            },
+            {
+              "id": "inspection_hub",
+              "label": "Network Firewall & Transit Gateway",
+              "status": "active"
+            },
+            {
+              "id": "hsm_vault",
+              "label": "CloudHSM Edge Tokenization Vault",
+              "status": "active"
+            },
+            {
+              "id": "cde_core",
+              "label": "Isolated CDE Payment Core",
+              "status": "active"
+            }
+          ],
+          "edges": [
+            {
+              "from": "public_dmz",
+              "to": "inspection_hub",
+              "label": "Route Request via TGW"
+            },
+            {
+              "from": "inspection_hub",
+              "to": "hsm_vault",
+              "label": "Tokenize PAN via PrivateLink"
+            },
+            {
+              "from": "hsm_vault",
+              "to": "cde_core",
+              "label": "Deliver Surrogate Token"
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "focus": "public_dmz",
+            "annotation": "Inbound payment transactions enter public DMZ and are inspected by AWS WAF for OWASP threats."
+          },
+          {
+            "at": "say2",
+            "focus": "inspection_hub",
+            "annotation": "Transit Gateway route tables enforce Layer 3 isolation and route traffic to Suricata DPI firewall."
+          },
+          {
+            "at": "example",
+            "focus": "hsm_vault",
+            "annotation": "Dedicated CloudHSM appliances tokenize raw card numbers, replacing PANs with surrogate tokens."
+          },
+          {
+            "at": "tryIt",
+            "focus": "cde_core",
+            "annotation": "Payment core processes non-sensitive tokens using short-lived OIDC STS credentials with zero static keys."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "CDE Network Segmentation: Transit Gateway Isolation & Stateful Firewall Inspection",
+      "codeHash": "061cea777e25f6fae9415276cb4d035582c772c1563efe1fb7e7fd8eca4330f1",
+      "spec": {
+        "template": "workflow",
+        "workflow": {
+          "title": "CDE Network Segmentation: Transit Gateway Isolation & Stateful Firewall Inspection",
+          "nodes": [
+            {
+              "id": "public_dmz",
+              "label": "Public DMZ & Edge WAF",
+              "status": "active"
+            },
+            {
+              "id": "inspection_hub",
+              "label": "Network Firewall & Transit Gateway",
+              "status": "active"
+            },
+            {
+              "id": "hsm_vault",
+              "label": "CloudHSM Edge Tokenization Vault",
+              "status": "active"
+            },
+            {
+              "id": "cde_core",
+              "label": "Isolated CDE Payment Core",
+              "status": "active"
+            }
+          ],
+          "edges": [
+            {
+              "from": "public_dmz",
+              "to": "inspection_hub",
+              "label": "Route Request via TGW"
+            },
+            {
+              "from": "inspection_hub",
+              "to": "hsm_vault",
+              "label": "Tokenize PAN via PrivateLink"
+            },
+            {
+              "from": "hsm_vault",
+              "to": "cde_core",
+              "label": "Deliver Surrogate Token"
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "focus": "public_dmz",
+            "annotation": "Inbound payment transactions enter public DMZ and are inspected by AWS WAF for OWASP threats."
+          },
+          {
+            "at": "say2",
+            "focus": "inspection_hub",
+            "annotation": "Transit Gateway route tables enforce Layer 3 isolation and route traffic to Suricata DPI firewall."
+          },
+          {
+            "at": "example",
+            "focus": "hsm_vault",
+            "annotation": "Dedicated CloudHSM appliances tokenize raw card numbers, replacing PANs with surrogate tokens."
+          },
+          {
+            "at": "tryIt",
+            "focus": "cde_core",
+            "annotation": "Payment core processes non-sensitive tokens using short-lived OIDC STS credentials with zero static keys."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Edge Tokenization & In-Transit Protection: AWS CloudHSM & PrivateLink Vault Architecture",
+      "codeHash": "4537a28a826fb78547cfdcb96b35a7884ec393bbd2b601253c95db4ddc5097a5",
+      "spec": {
+        "template": "workflow",
+        "workflow": {
+          "title": "Edge Tokenization & In-Transit Protection: AWS CloudHSM & PrivateLink Vault Architecture",
+          "nodes": [
+            {
+              "id": "public_dmz",
+              "label": "Public DMZ & Edge WAF",
+              "status": "active"
+            },
+            {
+              "id": "inspection_hub",
+              "label": "Network Firewall & Transit Gateway",
+              "status": "active"
+            },
+            {
+              "id": "hsm_vault",
+              "label": "CloudHSM Edge Tokenization Vault",
+              "status": "active"
+            },
+            {
+              "id": "cde_core",
+              "label": "Isolated CDE Payment Core",
+              "status": "active"
+            }
+          ],
+          "edges": [
+            {
+              "from": "public_dmz",
+              "to": "inspection_hub",
+              "label": "Route Request via TGW"
+            },
+            {
+              "from": "inspection_hub",
+              "to": "hsm_vault",
+              "label": "Tokenize PAN via PrivateLink"
+            },
+            {
+              "from": "hsm_vault",
+              "to": "cde_core",
+              "label": "Deliver Surrogate Token"
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "focus": "public_dmz",
+            "annotation": "Inbound payment transactions enter public DMZ and are inspected by AWS WAF for OWASP threats."
+          },
+          {
+            "at": "say2",
+            "focus": "inspection_hub",
+            "annotation": "Transit Gateway route tables enforce Layer 3 isolation and route traffic to Suricata DPI firewall."
+          },
+          {
+            "at": "example",
+            "focus": "hsm_vault",
+            "annotation": "Dedicated CloudHSM appliances tokenize raw card numbers, replacing PANs with surrogate tokens."
+          },
+          {
+            "at": "tryIt",
+            "focus": "cde_core",
+            "annotation": "Payment core processes non-sensitive tokens using short-lived OIDC STS credentials with zero static keys."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Zero Static Credentials in CDE: OIDC CI/CD Federation & Ephemeral STS Sessions",
+      "codeHash": "e1489e30501f8c563b8aa59bdbfcd73a040dc46cfbfad6125982d9238d28cd2f",
+      "spec": {
+        "template": "workflow",
+        "workflow": {
+          "title": "Zero Static Credentials in CDE: OIDC CI/CD Federation & Ephemeral STS Sessions",
+          "nodes": [
+            {
+              "id": "public_dmz",
+              "label": "Public DMZ & Edge WAF",
+              "status": "active"
+            },
+            {
+              "id": "inspection_hub",
+              "label": "Network Firewall & Transit Gateway",
+              "status": "active"
+            },
+            {
+              "id": "hsm_vault",
+              "label": "CloudHSM Edge Tokenization Vault",
+              "status": "active"
+            },
+            {
+              "id": "cde_core",
+              "label": "Isolated CDE Payment Core",
+              "status": "active"
+            }
+          ],
+          "edges": [
+            {
+              "from": "public_dmz",
+              "to": "inspection_hub",
+              "label": "Route Request via TGW"
+            },
+            {
+              "from": "inspection_hub",
+              "to": "hsm_vault",
+              "label": "Tokenize PAN via PrivateLink"
+            },
+            {
+              "from": "hsm_vault",
+              "to": "cde_core",
+              "label": "Deliver Surrogate Token"
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "focus": "public_dmz",
+            "annotation": "Inbound payment transactions enter public DMZ and are inspected by AWS WAF for OWASP threats."
+          },
+          {
+            "at": "say2",
+            "focus": "inspection_hub",
+            "annotation": "Transit Gateway route tables enforce Layer 3 isolation and route traffic to Suricata DPI firewall."
+          },
+          {
+            "at": "example",
+            "focus": "hsm_vault",
+            "annotation": "Dedicated CloudHSM appliances tokenize raw card numbers, replacing PANs with surrogate tokens."
+          },
+          {
+            "at": "tryIt",
+            "focus": "cde_core",
+            "annotation": "Payment core processes non-sensitive tokens using short-lived OIDC STS credentials with zero static keys."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "\u2b50 Milestone 8 Synthesis: Full-Mesh PCI-DSS Compliance Validator & SRE Runbook",
+      "codeHash": "83e4cfb3ba2d61ead349006f43390b1b0170faae5e8a3744711a5fb21fb5bcc6",
+      "spec": {
+        "template": "workflow",
+        "workflow": {
+          "title": "\u2b50 Milestone 8 Synthesis: Full-Mesh PCI-DSS Compliance Validator & SRE Runbook",
+          "nodes": [
+            {
+              "id": "public_dmz",
+              "label": "Public DMZ & Edge WAF",
+              "status": "active"
+            },
+            {
+              "id": "inspection_hub",
+              "label": "Network Firewall & Transit Gateway",
+              "status": "active"
+            },
+            {
+              "id": "hsm_vault",
+              "label": "CloudHSM Edge Tokenization Vault",
+              "status": "active"
+            },
+            {
+              "id": "cde_core",
+              "label": "Isolated CDE Payment Core",
+              "status": "active"
+            }
+          ],
+          "edges": [
+            {
+              "from": "public_dmz",
+              "to": "inspection_hub",
+              "label": "Route Request via TGW"
+            },
+            {
+              "from": "inspection_hub",
+              "to": "hsm_vault",
+              "label": "Tokenize PAN via PrivateLink"
+            },
+            {
+              "from": "hsm_vault",
+              "to": "cde_core",
+              "label": "Deliver Surrogate Token"
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "focus": "public_dmz",
+            "annotation": "Inbound payment transactions enter public DMZ and are inspected by AWS WAF for OWASP threats."
+          },
+          {
+            "at": "say2",
+            "focus": "inspection_hub",
+            "annotation": "Transit Gateway route tables enforce Layer 3 isolation and route traffic to Suricata DPI firewall."
+          },
+          {
+            "at": "example",
+            "focus": "hsm_vault",
+            "annotation": "Dedicated CloudHSM appliances tokenize raw card numbers, replacing PANs with surrogate tokens."
+          },
+          {
+            "at": "tryIt",
+            "focus": "cde_core",
+            "annotation": "Payment core processes non-sensitive tokens using short-lived OIDC STS credentials with zero static keys."
+          }
+        ]
+      }
+    }
+  ]
+}
