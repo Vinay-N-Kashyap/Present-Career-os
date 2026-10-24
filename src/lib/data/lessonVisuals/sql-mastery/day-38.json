@@ -1,0 +1,829 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "sql-mastery",
+  "day": 38,
+  "promptSha": "d6e53e43c545b5f999503ff8866c664cae95638aafb51b016d13139a2ef80a97",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "The Anatomy of Two-Phase Commit: Prepare Phase, In-Doubt Transactions & Commit Prepared",
+      "codeHash": "a677a0438cf6ae110fbdf5a526167f0f6f9c5b931de05e88d712143aafa1839e",
+      "spec": {
+        "template": "compare",
+        "title": "Distributed Two-Phase Commit & Consensus - Part 1",
+        "leftLabel": "Classical Blocking 2PC Architecture",
+        "rightLabel": "Fault-Tolerant Consensus & Non-Blocking 2PC",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Distributed transactional coordination across partitioned shards.",
+            "left": {
+              "code": "Single coordinator dependency",
+              "result": {
+                "text": "coordinator crash halts entire cluster"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Distributed quorum consensus",
+              "result": {
+                "text": "majority nodes sustain continuous operation"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Application coordinator manages independent participant nodes.",
+            "left": {
+              "code": "Unbounded in-doubt transaction wait",
+              "result": {
+                "text": "held locks starve application queries"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Replicated transaction status ranges",
+              "result": {
+                "text": "surviving nodes complete transaction"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Aerospace mission director coordinates dual launch pad ignition.",
+            "left": {
+              "code": "Single authority point of stall",
+              "result": {
+                "text": "global operations freeze completely"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Autonomous quorum majority agreement",
+              "result": {
+                "text": "rapid non-blocking execution"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect prepared transaction state and coordinator status.",
+            "left": {
+              "code": "Unmonitored cross-shard dependencies",
+              "result": {
+                "text": "silent deadlock and resource leaks"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Automated telemetry and watchdog gates",
+              "result": {
+                "text": "guaranteed five-nines distributed uptime"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Distributed Two-Phase Commit & Consensus - Part 1",
+        "leftLabel": "Classical Blocking 2PC Architecture",
+        "rightLabel": "Fault-Tolerant Consensus & Non-Blocking 2PC",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Distributed transactional coordination across partitioned shards.",
+            "left": {
+              "code": "Single coordinator dependency",
+              "result": {
+                "text": "coordinator crash halts entire cluster"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Distributed quorum consensus",
+              "result": {
+                "text": "majority nodes sustain continuous operation"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Application coordinator manages independent participant nodes.",
+            "left": {
+              "code": "Unbounded in-doubt transaction wait",
+              "result": {
+                "text": "held locks starve application queries"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Replicated transaction status ranges",
+              "result": {
+                "text": "surviving nodes complete transaction"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Aerospace mission director coordinates dual launch pad ignition.",
+            "left": {
+              "code": "Single authority point of stall",
+              "result": {
+                "text": "global operations freeze completely"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Autonomous quorum majority agreement",
+              "result": {
+                "text": "rapid non-blocking execution"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect prepared transaction state and coordinator status.",
+            "left": {
+              "code": "Unmonitored cross-shard dependencies",
+              "result": {
+                "text": "silent deadlock and resource leaks"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Automated telemetry and watchdog gates",
+              "result": {
+                "text": "guaranteed five-nines distributed uptime"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Write-Ahead Log Footprint of 2PC: Two-Phase State Machine, pg_prepared_xacts & Disk Durability",
+      "codeHash": "e8a8bebb60fa3214371ca77fd893d1df17448be15a5846cc71f4de5722b2e97d",
+      "spec": {
+        "template": "compare",
+        "title": "Distributed Two-Phase Commit & Consensus - Part 2",
+        "leftLabel": "Classical Blocking 2PC Architecture",
+        "rightLabel": "Fault-Tolerant Consensus & Non-Blocking 2PC",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Crash resilience requires persistent physical storage logs.",
+            "left": {
+              "code": "Single coordinator dependency",
+              "result": {
+                "text": "coordinator crash halts entire cluster"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Distributed quorum consensus",
+              "result": {
+                "text": "majority nodes sustain continuous operation"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Internal kernel function records complete transaction state.",
+            "left": {
+              "code": "Unbounded in-doubt transaction wait",
+              "result": {
+                "text": "held locks starve application queries"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Replicated transaction status ranges",
+              "result": {
+                "text": "surviving nodes complete transaction"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Waterproof expedition logbook preserves status in steel safe.",
+            "left": {
+              "code": "Single authority point of stall",
+              "result": {
+                "text": "global operations freeze completely"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Autonomous quorum majority agreement",
+              "result": {
+                "text": "rapid non-blocking execution"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect global transaction identifiers and storage states.",
+            "left": {
+              "code": "Unmonitored cross-shard dependencies",
+              "result": {
+                "text": "silent deadlock and resource leaks"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Automated telemetry and watchdog gates",
+              "result": {
+                "text": "guaranteed five-nines distributed uptime"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Distributed Two-Phase Commit & Consensus - Part 2",
+        "leftLabel": "Classical Blocking 2PC Architecture",
+        "rightLabel": "Fault-Tolerant Consensus & Non-Blocking 2PC",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Crash resilience requires persistent physical storage logs.",
+            "left": {
+              "code": "Single coordinator dependency",
+              "result": {
+                "text": "coordinator crash halts entire cluster"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Distributed quorum consensus",
+              "result": {
+                "text": "majority nodes sustain continuous operation"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Internal kernel function records complete transaction state.",
+            "left": {
+              "code": "Unbounded in-doubt transaction wait",
+              "result": {
+                "text": "held locks starve application queries"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Replicated transaction status ranges",
+              "result": {
+                "text": "surviving nodes complete transaction"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Waterproof expedition logbook preserves status in steel safe.",
+            "left": {
+              "code": "Single authority point of stall",
+              "result": {
+                "text": "global operations freeze completely"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Autonomous quorum majority agreement",
+              "result": {
+                "text": "rapid non-blocking execution"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect global transaction identifiers and storage states.",
+            "left": {
+              "code": "Unmonitored cross-shard dependencies",
+              "result": {
+                "text": "silent deadlock and resource leaks"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Automated telemetry and watchdog gates",
+              "result": {
+                "text": "guaranteed five-nines distributed uptime"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Orphaned Prepared Transaction Crisis: Catalog Bloat, Vacuum Freezes & Automated Janitors",
+      "codeHash": "423dd691b24866423e5d7f1f98d7e0515b139958861edb4061f73aa8f7394f3c",
+      "spec": {
+        "template": "compare",
+        "title": "Distributed Two-Phase Commit & Consensus - Part 3",
+        "leftLabel": "Classical Blocking 2PC Architecture",
+        "rightLabel": "Fault-Tolerant Consensus & Non-Blocking 2PC",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Orphaned prepared transactions threaten relational database clusters.",
+            "left": {
+              "code": "Single coordinator dependency",
+              "result": {
+                "text": "coordinator crash halts entire cluster"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Distributed quorum consensus",
+              "result": {
+                "text": "majority nodes sustain continuous operation"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Coordinator crashes leave prepared transactions dormant forever.",
+            "left": {
+              "code": "Unbounded in-doubt transaction wait",
+              "result": {
+                "text": "held locks starve application queries"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Replicated transaction status ranges",
+              "result": {
+                "text": "surviving nodes complete transaction"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Safety deposit vault key remains turned in master locker.",
+            "left": {
+              "code": "Single authority point of stall",
+              "result": {
+                "text": "global operations freeze completely"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Autonomous quorum majority agreement",
+              "result": {
+                "text": "rapid non-blocking execution"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect transaction age thresholds and freeze risk alerts.",
+            "left": {
+              "code": "Unmonitored cross-shard dependencies",
+              "result": {
+                "text": "silent deadlock and resource leaks"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Automated telemetry and watchdog gates",
+              "result": {
+                "text": "guaranteed five-nines distributed uptime"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Distributed Two-Phase Commit & Consensus - Part 3",
+        "leftLabel": "Classical Blocking 2PC Architecture",
+        "rightLabel": "Fault-Tolerant Consensus & Non-Blocking 2PC",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Orphaned prepared transactions threaten relational database clusters.",
+            "left": {
+              "code": "Single coordinator dependency",
+              "result": {
+                "text": "coordinator crash halts entire cluster"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Distributed quorum consensus",
+              "result": {
+                "text": "majority nodes sustain continuous operation"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Coordinator crashes leave prepared transactions dormant forever.",
+            "left": {
+              "code": "Unbounded in-doubt transaction wait",
+              "result": {
+                "text": "held locks starve application queries"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Replicated transaction status ranges",
+              "result": {
+                "text": "surviving nodes complete transaction"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Safety deposit vault key remains turned in master locker.",
+            "left": {
+              "code": "Single authority point of stall",
+              "result": {
+                "text": "global operations freeze completely"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Autonomous quorum majority agreement",
+              "result": {
+                "text": "rapid non-blocking execution"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect transaction age thresholds and freeze risk alerts.",
+            "left": {
+              "code": "Unmonitored cross-shard dependencies",
+              "result": {
+                "text": "silent deadlock and resource leaks"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Automated telemetry and watchdog gates",
+              "result": {
+                "text": "guaranteed five-nines distributed uptime"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Distributed Deadlocks: Cross-Shard Wait-For Graphs, Cycle Detection & Timeout Fail-Safes",
+      "codeHash": "276f7b42c5b3a01345f1b6a1313433baf3759fc269add14a9bb785c1a127c737",
+      "spec": {
+        "template": "compare",
+        "title": "Distributed Two-Phase Commit & Consensus - Part 4",
+        "leftLabel": "Classical Blocking 2PC Architecture",
+        "rightLabel": "Fault-Tolerant Consensus & Non-Blocking 2PC",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Sharded database architectures confront distributed deadlocks.",
+            "left": {
+              "code": "Single coordinator dependency",
+              "result": {
+                "text": "coordinator crash halts entire cluster"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Distributed quorum consensus",
+              "result": {
+                "text": "majority nodes sustain continuous operation"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Local lock managers lack cross shard dependency visibility.",
+            "left": {
+              "code": "Unbounded in-doubt transaction wait",
+              "result": {
+                "text": "held locks starve application queries"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Replicated transaction status ranges",
+              "result": {
+                "text": "surviving nodes complete transaction"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "International container ships wait on cross port documentation.",
+            "left": {
+              "code": "Single authority point of stall",
+              "result": {
+                "text": "global operations freeze completely"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Autonomous quorum majority agreement",
+              "result": {
+                "text": "rapid non-blocking execution"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Analyze cross shard lock dependencies and cycle abort rules.",
+            "left": {
+              "code": "Unmonitored cross-shard dependencies",
+              "result": {
+                "text": "silent deadlock and resource leaks"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Automated telemetry and watchdog gates",
+              "result": {
+                "text": "guaranteed five-nines distributed uptime"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Distributed Two-Phase Commit & Consensus - Part 4",
+        "leftLabel": "Classical Blocking 2PC Architecture",
+        "rightLabel": "Fault-Tolerant Consensus & Non-Blocking 2PC",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Sharded database architectures confront distributed deadlocks.",
+            "left": {
+              "code": "Single coordinator dependency",
+              "result": {
+                "text": "coordinator crash halts entire cluster"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Distributed quorum consensus",
+              "result": {
+                "text": "majority nodes sustain continuous operation"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Local lock managers lack cross shard dependency visibility.",
+            "left": {
+              "code": "Unbounded in-doubt transaction wait",
+              "result": {
+                "text": "held locks starve application queries"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Replicated transaction status ranges",
+              "result": {
+                "text": "surviving nodes complete transaction"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "International container ships wait on cross port documentation.",
+            "left": {
+              "code": "Single authority point of stall",
+              "result": {
+                "text": "global operations freeze completely"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Autonomous quorum majority agreement",
+              "result": {
+                "text": "rapid non-blocking execution"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Analyze cross shard lock dependencies and cycle abort rules.",
+            "left": {
+              "code": "Unmonitored cross-shard dependencies",
+              "result": {
+                "text": "silent deadlock and resource leaks"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Automated telemetry and watchdog gates",
+              "result": {
+                "text": "guaranteed five-nines distributed uptime"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Modern Consensus vs 2PC: Raft / Paxos Log Replication vs XA / 2PC in Distributed SQL",
+      "codeHash": "67cd3da0ee5a14308ba87d414ab607fc524c7e4afaaecb81fc5cd6687b28ec4a",
+      "spec": {
+        "template": "compare",
+        "title": "Distributed Two-Phase Commit & Consensus - Part 5",
+        "leftLabel": "Classical Blocking 2PC Architecture",
+        "rightLabel": "Fault-Tolerant Consensus & Non-Blocking 2PC",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Distributed consensus replaces blocking two phase commit protocols.",
+            "left": {
+              "code": "Single coordinator dependency",
+              "result": {
+                "text": "coordinator crash halts entire cluster"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Distributed quorum consensus",
+              "result": {
+                "text": "majority nodes sustain continuous operation"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Classical two phase commit stalls when coordinator crashes.",
+            "left": {
+              "code": "Unbounded in-doubt transaction wait",
+              "result": {
+                "text": "held locks starve application queries"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Replicated transaction status ranges",
+              "result": {
+                "text": "surviving nodes complete transaction"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Courtroom jury rendered verdict by majority quorum decision.",
+            "left": {
+              "code": "Single authority point of stall",
+              "result": {
+                "text": "global operations freeze completely"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Autonomous quorum majority agreement",
+              "result": {
+                "text": "rapid non-blocking execution"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Compare coordinator failure profiles and write availability.",
+            "left": {
+              "code": "Unmonitored cross-shard dependencies",
+              "result": {
+                "text": "silent deadlock and resource leaks"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Automated telemetry and watchdog gates",
+              "result": {
+                "text": "guaranteed five-nines distributed uptime"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Distributed Two-Phase Commit & Consensus - Part 5",
+        "leftLabel": "Classical Blocking 2PC Architecture",
+        "rightLabel": "Fault-Tolerant Consensus & Non-Blocking 2PC",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Distributed consensus replaces blocking two phase commit protocols.",
+            "left": {
+              "code": "Single coordinator dependency",
+              "result": {
+                "text": "coordinator crash halts entire cluster"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Distributed quorum consensus",
+              "result": {
+                "text": "majority nodes sustain continuous operation"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Classical two phase commit stalls when coordinator crashes.",
+            "left": {
+              "code": "Unbounded in-doubt transaction wait",
+              "result": {
+                "text": "held locks starve application queries"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Replicated transaction status ranges",
+              "result": {
+                "text": "surviving nodes complete transaction"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Courtroom jury rendered verdict by majority quorum decision.",
+            "left": {
+              "code": "Single authority point of stall",
+              "result": {
+                "text": "global operations freeze completely"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Autonomous quorum majority agreement",
+              "result": {
+                "text": "rapid non-blocking execution"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Compare coordinator failure profiles and write availability.",
+            "left": {
+              "code": "Unmonitored cross-shard dependencies",
+              "result": {
+                "text": "silent deadlock and resource leaks"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Automated telemetry and watchdog gates",
+              "result": {
+                "text": "guaranteed five-nines distributed uptime"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
