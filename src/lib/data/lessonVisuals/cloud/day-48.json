@@ -1,0 +1,317 @@
+{
+  "schemaVersion": 2,
+  "prefix": "cloud",
+  "day": 48,
+  "entries": [
+    {
+      "partTitle": "CDK Construct Hierarchy & Synthesis Lifecycle: App, Stack, Node Tree & Token Resolution",
+      "codeHash": "82b6173b9f7a32b7690a4d8fee75fee8b2d8221de01566c818d9678127573b3a",
+      "spec": {
+        "template": "compare",
+        "compare": {
+          "title": "CDK Construct Hierarchy & Synthesis Lifecycle: App, Stack, Node Tree & Token Resolution",
+          "leftLabel": "Brittle Static CloudFormation",
+          "rightLabel": "Object-Oriented CDK Construct Tree",
+          "leftAttributes": [
+            {
+              "name": "Architecture",
+              "value": "Static declarative JSON or YAML files."
+            },
+            {
+              "name": "Validation",
+              "value": "Syntax linting only at deployment time."
+            },
+            {
+              "name": "Reusability",
+              "value": "Copy-paste boilerplate without types."
+            }
+          ],
+          "rightAttributes": [
+            {
+              "name": "Architecture",
+              "value": "Hierarchical typed construct tree."
+            },
+            {
+              "name": "Validation",
+              "value": "Compile-time validation and token resolution."
+            },
+            {
+              "name": "Reusability",
+              "value": "Strongly typed modular components."
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "focus": "left",
+            "annotation": "CloudFormation templates struggle without construct tree validation."
+          },
+          {
+            "at": "say2",
+            "focus": "right",
+            "annotation": "Modern CDK applications organize infrastructure into typed construct trees."
+          },
+          {
+            "at": "example",
+            "focus": "both",
+            "annotation": "Construct hierarchies enable automated token resolution and synthesis."
+          },
+          {
+            "at": "tryIt",
+            "focus": "right",
+            "annotation": "Typed construct trees eliminate configuration drift across teams."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Construct Layers & Abstractions: L1 Primitives, L2 Curated Resources & L3 Architectural Patterns",
+      "codeHash": "5487c72a02ccf29fa3a4dc479d3bc0e6cce06ffa88dd8089fd0c961b5980e649",
+      "spec": {
+        "template": "compare",
+        "compare": {
+          "title": "Construct Layers & Abstractions: L1 Primitives, L2 Curated Resources & L3 Architectural Patterns",
+          "leftLabel": "Unadorned L1 CloudFormation Primitives",
+          "rightLabel": "Curated L2 & L3 Construct Abstractions",
+          "leftAttributes": [
+            {
+              "name": "Configuration",
+              "value": "Manual configuration of every parameter."
+            },
+            {
+              "name": "Security Defaults",
+              "value": "Zero default security or encryption rules."
+            },
+            {
+              "name": "Permissions",
+              "value": "Verbose handcrafted IAM policy strings."
+            }
+          ],
+          "rightAttributes": [
+            {
+              "name": "Configuration",
+              "value": "Sensible defaults and architectural patterns."
+            },
+            {
+              "name": "Security Defaults",
+              "value": "Built-in encryption and public access blocks."
+            },
+            {
+              "name": "Permissions",
+              "value": "Intent-based methods generating least privilege."
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "focus": "left",
+            "annotation": "Primitive CloudFormation resources require manual parameter configuration."
+          },
+          {
+            "at": "say2",
+            "focus": "right",
+            "annotation": "Curated constructs embed security best practices and encryption defaults."
+          },
+          {
+            "at": "example",
+            "focus": "both",
+            "annotation": "Higher level constructs compose complete architectural service patterns."
+          },
+          {
+            "at": "tryIt",
+            "focus": "right",
+            "annotation": "Enterprise teams achieve rapid developer velocity using curated patterns."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "CDK Aspects & Policy-as-Code: Visitor Pattern, IAspect Traversal & Compile-Time Enforcement",
+      "codeHash": "e73e02b9df57a4e1864d2ad8fd77ba919927f7f39721aa72df4994cadba29e9b",
+      "spec": {
+        "template": "compare",
+        "compare": {
+          "title": "CDK Aspects & Policy-as-Code: Visitor Pattern, IAspect Traversal & Compile-Time Enforcement",
+          "leftLabel": "Manual Reviews & Post-Deploy Scans",
+          "rightLabel": "CDK Aspects Visitor Pattern Enforcement",
+          "leftAttributes": [
+            {
+              "name": "Enforcement Timing",
+              "value": "Delayed post-deployment runtime alerts."
+            },
+            {
+              "name": "Coverage",
+              "value": "Inconsistent manual pull request reviews."
+            },
+            {
+              "name": "Remediation",
+              "value": "Reactive incident response and manual fixes."
+            }
+          ],
+          "rightAttributes": [
+            {
+              "name": "Enforcement Timing",
+              "value": "Immediate compile-time build rejection."
+            },
+            {
+              "name": "Coverage",
+              "value": "Automated traversal of every construct node."
+            },
+            {
+              "name": "Remediation",
+              "value": "Automated tree mutation and tagging."
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "focus": "left",
+            "annotation": "Manual review processes miss critical security flaws during deployments."
+          },
+          {
+            "at": "say2",
+            "focus": "right",
+            "annotation": "The visitor pattern inspects every resource node during preparation."
+          },
+          {
+            "at": "example",
+            "focus": "both",
+            "annotation": "Aspects enforce mandatory tags and encryption before template synthesis."
+          },
+          {
+            "at": "tryIt",
+            "focus": "right",
+            "annotation": "Policy as code guarantees organizational compliance across deployments."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Unit Testing & Compliance Assertions: @aws-cdk/assertions, Fine-Grained Matching & Snapshot Testing",
+      "codeHash": "4383dd6640da6d03cc73e09caaf5620f84654e922bf6d13be587fd833522d426",
+      "spec": {
+        "template": "compare",
+        "compare": {
+          "title": "Unit Testing & Compliance Assertions: @aws-cdk/assertions, Fine-Grained Matching & Snapshot Testing",
+          "leftLabel": "Brittle Full-Template Snapshots",
+          "rightLabel": "Fine-Grained Assertions & Intent Testing",
+          "leftAttributes": [
+            {
+              "name": "Assertion Scope",
+              "value": "Fragile full-template JSON diff matching."
+            },
+            {
+              "name": "Maintenance",
+              "value": "Frequent false alarms on harmless updates."
+            },
+            {
+              "name": "Focus",
+              "value": "Blind approval of large snapshot updates."
+            }
+          ],
+          "rightAttributes": [
+            {
+              "name": "Assertion Scope",
+              "value": "Targeted validation of security properties."
+            },
+            {
+              "name": "Maintenance",
+              "value": "Resilient to harmless upstream CDK changes."
+            },
+            {
+              "name": "Focus",
+              "value": "Strict verification of non-negotiable invariants."
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "focus": "left",
+            "annotation": "Full template snapshots often suffer from false positive alert fatigue."
+          },
+          {
+            "at": "say2",
+            "focus": "right",
+            "annotation": "Fine-grained assertions verify critical security properties directly."
+          },
+          {
+            "at": "example",
+            "focus": "both",
+            "annotation": "Matchers assert resource counts and cryptographic key configurations."
+          },
+          {
+            "at": "tryIt",
+            "focus": "right",
+            "annotation": "Automated assertions provide mathematical certainty for cloud releases."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "CDK Pipelines & Enterprise Self-Mutating CI/CD: Wave Deployments, Cross-Account Stages & Incident Triage",
+      "codeHash": "e4e26467e9d6a8a72e20fad79d0c4ec41191122baf67117a300010d86295163f",
+      "spec": {
+        "template": "compare",
+        "compare": {
+          "title": "CDK Pipelines & Enterprise Self-Mutating CI/CD: Wave Deployments, Cross-Account Stages & Incident Triage",
+          "leftLabel": "External Scripted Runner Pipelines",
+          "rightLabel": "Self-Mutating Multi-Wave CDK Pipelines",
+          "leftAttributes": [
+            {
+              "name": "Pipeline Updates",
+              "value": "Manual workflow file updates on each change."
+            },
+            {
+              "name": "Rollout Topology",
+              "value": "Sequential manual deployments per account."
+            },
+            {
+              "name": "Recovery",
+              "value": "Manual triage of failed rollback stack states."
+            }
+          ],
+          "rightAttributes": [
+            {
+              "name": "Pipeline Updates",
+              "value": "Automatic self-mutation when code changes."
+            },
+            {
+              "name": "Rollout Topology",
+              "value": "Parallel waves across regions and accounts."
+            },
+            {
+              "name": "Recovery",
+              "value": "Deterministic rollback continuation and recovery."
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "focus": "left",
+            "annotation": "Traditional pipelines require manual updates on infrastructure shifts."
+          },
+          {
+            "at": "say2",
+            "focus": "right",
+            "annotation": "Self-mutating pipelines update their own stages automatically from code."
+          },
+          {
+            "at": "example",
+            "focus": "both",
+            "annotation": "Deployment waves coordinate multi-account and multi-region releases safely."
+          },
+          {
+            "at": "tryIt",
+            "focus": "right",
+            "annotation": "Automated pipeline stages deliver infrastructure reliably across systems."
+          }
+        ]
+      }
+    }
+  ]
+}
