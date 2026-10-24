@@ -1,0 +1,362 @@
+{
+  "schemaVersion": 2,
+  "prefix": "cloud",
+  "day": 44,
+  "entries": [
+    {
+      "partTitle": "AWS Transit Gateway (TGW) Architecture: Hub-and-Spoke Routing & Route Table Isolation",
+      "codeHash": "f1c58e1fe3eb64c15806fdb60dd318df64fad8f85bfd04fad296500a9367f94f",
+      "spec": {
+        "template": "workflow",
+        "workflow": {
+          "title": "AWS Transit Gateway (TGW) Architecture: Hub-and-Spoke Routing & Route Table Isolation",
+          "nodes": [
+            {
+              "id": "spoke_vpc",
+              "label": "Application Spoke VPC",
+              "status": "active"
+            },
+            {
+              "id": "transit_gateway",
+              "label": "AWS Transit Gateway (TGW)",
+              "status": "active"
+            },
+            {
+              "id": "inspection_firewall",
+              "label": "Inspection VPC & Network Firewall",
+              "status": "active"
+            },
+            {
+              "id": "privatelink_target",
+              "label": "PrivateLink / Backbone Peer",
+              "status": "active"
+            }
+          ],
+          "edges": [
+            {
+              "from": "spoke_vpc",
+              "to": "transit_gateway",
+              "label": "Forward Packet via TGW Attach"
+            },
+            {
+              "from": "transit_gateway",
+              "to": "inspection_firewall",
+              "label": "Route to Suricata DPI Engine"
+            },
+            {
+              "from": "inspection_firewall",
+              "to": "privatelink_target",
+              "label": "Forward to Hyperplane / Peer"
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "focus": "spoke_vpc",
+            "annotation": "Spoke VPCs attach to Transit Gateway without requiring full-mesh point-to-point peering."
+          },
+          {
+            "at": "say2",
+            "focus": "transit_gateway",
+            "annotation": "Transit Gateway route tables enforce Layer 3 isolation and route traffic to inspection hubs."
+          },
+          {
+            "at": "example",
+            "focus": "inspection_firewall",
+            "annotation": "AWS Network Firewall executes stateful Suricata inspection, dropping unauthorized C2 traffic."
+          },
+          {
+            "at": "tryIt",
+            "focus": "privatelink_target",
+            "annotation": "PrivateLink and TGW Peering route traffic privately over AWS backbone with MACsec encryption."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Centralized Ingress & Egress Inspection: AWS Network Firewall & Suricata Deep Packet Inspection",
+      "codeHash": "6f4ab13ff17af8d3ac0a8b409d6329a8b89aac957c670ed9b045ddca0e49e693",
+      "spec": {
+        "template": "workflow",
+        "workflow": {
+          "title": "Centralized Ingress & Egress Inspection: AWS Network Firewall & Suricata Deep Packet Inspection",
+          "nodes": [
+            {
+              "id": "spoke_vpc",
+              "label": "Application Spoke VPC",
+              "status": "active"
+            },
+            {
+              "id": "transit_gateway",
+              "label": "AWS Transit Gateway (TGW)",
+              "status": "active"
+            },
+            {
+              "id": "inspection_firewall",
+              "label": "Inspection VPC & Network Firewall",
+              "status": "active"
+            },
+            {
+              "id": "privatelink_target",
+              "label": "PrivateLink / Backbone Peer",
+              "status": "active"
+            }
+          ],
+          "edges": [
+            {
+              "from": "spoke_vpc",
+              "to": "transit_gateway",
+              "label": "Forward Packet via TGW Attach"
+            },
+            {
+              "from": "transit_gateway",
+              "to": "inspection_firewall",
+              "label": "Route to Suricata DPI Engine"
+            },
+            {
+              "from": "inspection_firewall",
+              "to": "privatelink_target",
+              "label": "Forward to Hyperplane / Peer"
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "focus": "spoke_vpc",
+            "annotation": "Spoke VPCs attach to Transit Gateway without requiring full-mesh point-to-point peering."
+          },
+          {
+            "at": "say2",
+            "focus": "transit_gateway",
+            "annotation": "Transit Gateway route tables enforce Layer 3 isolation and route traffic to inspection hubs."
+          },
+          {
+            "at": "example",
+            "focus": "inspection_firewall",
+            "annotation": "AWS Network Firewall executes stateful Suricata inspection, dropping unauthorized C2 traffic."
+          },
+          {
+            "at": "tryIt",
+            "focus": "privatelink_target",
+            "annotation": "PrivateLink and TGW Peering route traffic privately over AWS backbone with MACsec encryption."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "AWS PrivateLink & VPC Endpoint Services: Secure Private Access Across Overlapping CIDRs",
+      "codeHash": "024b28fe13f69f789f3167505c2407ed60b592f2465926ad4c3e3d1c9bea0fa4",
+      "spec": {
+        "template": "workflow",
+        "workflow": {
+          "title": "AWS PrivateLink & VPC Endpoint Services: Secure Private Access Across Overlapping CIDRs",
+          "nodes": [
+            {
+              "id": "spoke_vpc",
+              "label": "Application Spoke VPC",
+              "status": "active"
+            },
+            {
+              "id": "transit_gateway",
+              "label": "AWS Transit Gateway (TGW)",
+              "status": "active"
+            },
+            {
+              "id": "inspection_firewall",
+              "label": "Inspection VPC & Network Firewall",
+              "status": "active"
+            },
+            {
+              "id": "privatelink_target",
+              "label": "PrivateLink / Backbone Peer",
+              "status": "active"
+            }
+          ],
+          "edges": [
+            {
+              "from": "spoke_vpc",
+              "to": "transit_gateway",
+              "label": "Forward Packet via TGW Attach"
+            },
+            {
+              "from": "transit_gateway",
+              "to": "inspection_firewall",
+              "label": "Route to Suricata DPI Engine"
+            },
+            {
+              "from": "inspection_firewall",
+              "to": "privatelink_target",
+              "label": "Forward to Hyperplane / Peer"
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "focus": "spoke_vpc",
+            "annotation": "Spoke VPCs attach to Transit Gateway without requiring full-mesh point-to-point peering."
+          },
+          {
+            "at": "say2",
+            "focus": "transit_gateway",
+            "annotation": "Transit Gateway route tables enforce Layer 3 isolation and route traffic to inspection hubs."
+          },
+          {
+            "at": "example",
+            "focus": "inspection_firewall",
+            "annotation": "AWS Network Firewall executes stateful Suricata inspection, dropping unauthorized C2 traffic."
+          },
+          {
+            "at": "tryIt",
+            "focus": "privatelink_target",
+            "annotation": "PrivateLink and TGW Peering route traffic privately over AWS backbone with MACsec encryption."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cross-Region Transit Gateway Peering & Global Cloud WAN: High-Speed Encrypted Backbone",
+      "codeHash": "103edffb6095b8bba8be5c299a164b5d85c54068d66d95e04e71a621660538c9",
+      "spec": {
+        "template": "workflow",
+        "workflow": {
+          "title": "Cross-Region Transit Gateway Peering & Global Cloud WAN: High-Speed Encrypted Backbone",
+          "nodes": [
+            {
+              "id": "spoke_vpc",
+              "label": "Application Spoke VPC",
+              "status": "active"
+            },
+            {
+              "id": "transit_gateway",
+              "label": "AWS Transit Gateway (TGW)",
+              "status": "active"
+            },
+            {
+              "id": "inspection_firewall",
+              "label": "Inspection VPC & Network Firewall",
+              "status": "active"
+            },
+            {
+              "id": "privatelink_target",
+              "label": "PrivateLink / Backbone Peer",
+              "status": "active"
+            }
+          ],
+          "edges": [
+            {
+              "from": "spoke_vpc",
+              "to": "transit_gateway",
+              "label": "Forward Packet via TGW Attach"
+            },
+            {
+              "from": "transit_gateway",
+              "to": "inspection_firewall",
+              "label": "Route to Suricata DPI Engine"
+            },
+            {
+              "from": "inspection_firewall",
+              "to": "privatelink_target",
+              "label": "Forward to Hyperplane / Peer"
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "focus": "spoke_vpc",
+            "annotation": "Spoke VPCs attach to Transit Gateway without requiring full-mesh point-to-point peering."
+          },
+          {
+            "at": "say2",
+            "focus": "transit_gateway",
+            "annotation": "Transit Gateway route tables enforce Layer 3 isolation and route traffic to inspection hubs."
+          },
+          {
+            "at": "example",
+            "focus": "inspection_firewall",
+            "annotation": "AWS Network Firewall executes stateful Suricata inspection, dropping unauthorized C2 traffic."
+          },
+          {
+            "at": "tryIt",
+            "focus": "privatelink_target",
+            "annotation": "PrivateLink and TGW Peering route traffic privately over AWS backbone with MACsec encryption."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Masterclass Synthesis: Zero-Trust Enterprise Network Mesh & SRE NOC Runbook",
+      "codeHash": "284fb38ba3159a72c7acb40a8c5525efbf07eed945e584227e8d63492dc19aa3",
+      "spec": {
+        "template": "workflow",
+        "workflow": {
+          "title": "Masterclass Synthesis: Zero-Trust Enterprise Network Mesh & SRE NOC Runbook",
+          "nodes": [
+            {
+              "id": "spoke_vpc",
+              "label": "Application Spoke VPC",
+              "status": "active"
+            },
+            {
+              "id": "transit_gateway",
+              "label": "AWS Transit Gateway (TGW)",
+              "status": "active"
+            },
+            {
+              "id": "inspection_firewall",
+              "label": "Inspection VPC & Network Firewall",
+              "status": "active"
+            },
+            {
+              "id": "privatelink_target",
+              "label": "PrivateLink / Backbone Peer",
+              "status": "active"
+            }
+          ],
+          "edges": [
+            {
+              "from": "spoke_vpc",
+              "to": "transit_gateway",
+              "label": "Forward Packet via TGW Attach"
+            },
+            {
+              "from": "transit_gateway",
+              "to": "inspection_firewall",
+              "label": "Route to Suricata DPI Engine"
+            },
+            {
+              "from": "inspection_firewall",
+              "to": "privatelink_target",
+              "label": "Forward to Hyperplane / Peer"
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "focus": "spoke_vpc",
+            "annotation": "Spoke VPCs attach to Transit Gateway without requiring full-mesh point-to-point peering."
+          },
+          {
+            "at": "say2",
+            "focus": "transit_gateway",
+            "annotation": "Transit Gateway route tables enforce Layer 3 isolation and route traffic to inspection hubs."
+          },
+          {
+            "at": "example",
+            "focus": "inspection_firewall",
+            "annotation": "AWS Network Firewall executes stateful Suricata inspection, dropping unauthorized C2 traffic."
+          },
+          {
+            "at": "tryIt",
+            "focus": "privatelink_target",
+            "annotation": "PrivateLink and TGW Peering route traffic privately over AWS backbone with MACsec encryption."
+          }
+        ]
+      }
+    }
+  ]
+}
