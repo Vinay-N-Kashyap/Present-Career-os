@@ -1,0 +1,829 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "sql-mastery",
+  "day": 54,
+  "promptSha": "b9565e62631d9b82d5343b4cf67500374c9c116aa662c4e9af3be6133111988e",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "JIT Compilation Architecture: LLVM Integration & Expression De-virtualization",
+      "codeHash": "f5f8995732b438232b0e54330d1deaf54911dfea5bfe85b7ddd48a189642dd85",
+      "spec": {
+        "template": "compare",
+        "title": "JIT Compilation Internals - Part 1",
+        "leftLabel": "Interpreted Classical Execution",
+        "rightLabel": "LLVM JIT-Compiled Acceleration",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Modern database execution engines leverage just in time compilation.",
+            "left": {
+              "code": "Interpreted expression AST traversal",
+              "result": {
+                "text": "indirect function calls stall CPU branch predictor"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "LLVM native machine code execution",
+              "result": {
+                "text": "unrolled direct machine instructions; 3x faster"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Classic relational database engines execute interpreted syntax trees.",
+            "left": {
+              "code": "Iterative heap_deform_tuple loop",
+              "result": {
+                "text": "wastes 50-100 clock cycles per row calculating offsets"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "JIT compile-time offset inlining",
+              "result": {
+                "text": "direct base pointer offset loads in 4 clock cycles"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Symphony orchestra conductor plays music continuously without pauses.",
+            "left": {
+              "code": "Low jit_above_cost on OLTP",
+              "result": {
+                "text": "adds 20ms compilation penalty to 2ms lookup"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "jit_above_cost = 100000 on OLAP",
+              "result": {
+                "text": "spends 20ms once; reduces 30s scan down to 5s"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect compilation architecture models and instruction dispatch models.",
+            "left": {
+              "code": "Unmonitored JIT compilation timing",
+              "result": {
+                "text": "hidden compilation overhead on small queries"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "EXPLAIN ANALYZE JIT telemetry",
+              "result": {
+                "text": "granular emission, inlining, and optimization times"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "JIT Compilation Internals - Part 1",
+        "leftLabel": "Interpreted Classical Execution",
+        "rightLabel": "LLVM JIT-Compiled Acceleration",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Modern database execution engines leverage just in time compilation.",
+            "left": {
+              "code": "Interpreted expression AST traversal",
+              "result": {
+                "text": "indirect function calls stall CPU branch predictor"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "LLVM native machine code execution",
+              "result": {
+                "text": "unrolled direct machine instructions; 3x faster"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Classic relational database engines execute interpreted syntax trees.",
+            "left": {
+              "code": "Iterative heap_deform_tuple loop",
+              "result": {
+                "text": "wastes 50-100 clock cycles per row calculating offsets"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "JIT compile-time offset inlining",
+              "result": {
+                "text": "direct base pointer offset loads in 4 clock cycles"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Symphony orchestra conductor plays music continuously without pauses.",
+            "left": {
+              "code": "Low jit_above_cost on OLTP",
+              "result": {
+                "text": "adds 20ms compilation penalty to 2ms lookup"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "jit_above_cost = 100000 on OLAP",
+              "result": {
+                "text": "spends 20ms once; reduces 30s scan down to 5s"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect compilation architecture models and instruction dispatch models.",
+            "left": {
+              "code": "Unmonitored JIT compilation timing",
+              "result": {
+                "text": "hidden compilation overhead on small queries"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "EXPLAIN ANALYZE JIT telemetry",
+              "result": {
+                "text": "granular emission, inlining, and optimization times"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Tuple Deforming Acceleration & Expression De-virtualization",
+      "codeHash": "ad30d0fd8bc13d4506d34e8e6ec0837f889976f88fe95e771aaabff7abf81a74",
+      "spec": {
+        "template": "compare",
+        "title": "JIT Compilation Internals - Part 2",
+        "leftLabel": "Interpreted Classical Execution",
+        "rightLabel": "LLVM JIT-Compiled Acceleration",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Tuple deforming acceleration provides dramatic performance breakthroughs.",
+            "left": {
+              "code": "Interpreted expression AST traversal",
+              "result": {
+                "text": "indirect function calls stall CPU branch predictor"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "LLVM native machine code execution",
+              "result": {
+                "text": "unrolled direct machine instructions; 3x faster"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Relational databases store records in compact physical binary formats.",
+            "left": {
+              "code": "Iterative heap_deform_tuple loop",
+              "result": {
+                "text": "wastes 50-100 clock cycles per row calculating offsets"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "JIT compile-time offset inlining",
+              "result": {
+                "text": "direct base pointer offset loads in 4 clock cycles"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Airport baggage handler unloads cargo containers using robotic scanners.",
+            "left": {
+              "code": "Low jit_above_cost on OLTP",
+              "result": {
+                "text": "adds 20ms compilation penalty to 2ms lookup"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "jit_above_cost = 100000 on OLAP",
+              "result": {
+                "text": "spends 20ms once; reduces 30s scan down to 5s"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect tuple deforming acceleration query and analytical throughput gains.",
+            "left": {
+              "code": "Unmonitored JIT compilation timing",
+              "result": {
+                "text": "hidden compilation overhead on small queries"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "EXPLAIN ANALYZE JIT telemetry",
+              "result": {
+                "text": "granular emission, inlining, and optimization times"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "JIT Compilation Internals - Part 2",
+        "leftLabel": "Interpreted Classical Execution",
+        "rightLabel": "LLVM JIT-Compiled Acceleration",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Tuple deforming acceleration provides dramatic performance breakthroughs.",
+            "left": {
+              "code": "Interpreted expression AST traversal",
+              "result": {
+                "text": "indirect function calls stall CPU branch predictor"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "LLVM native machine code execution",
+              "result": {
+                "text": "unrolled direct machine instructions; 3x faster"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Relational databases store records in compact physical binary formats.",
+            "left": {
+              "code": "Iterative heap_deform_tuple loop",
+              "result": {
+                "text": "wastes 50-100 clock cycles per row calculating offsets"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "JIT compile-time offset inlining",
+              "result": {
+                "text": "direct base pointer offset loads in 4 clock cycles"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Airport baggage handler unloads cargo containers using robotic scanners.",
+            "left": {
+              "code": "Low jit_above_cost on OLTP",
+              "result": {
+                "text": "adds 20ms compilation penalty to 2ms lookup"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "jit_above_cost = 100000 on OLAP",
+              "result": {
+                "text": "spends 20ms once; reduces 30s scan down to 5s"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect tuple deforming acceleration query and analytical throughput gains.",
+            "left": {
+              "code": "Unmonitored JIT compilation timing",
+              "result": {
+                "text": "hidden compilation overhead on small queries"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "EXPLAIN ANALYZE JIT telemetry",
+              "result": {
+                "text": "granular emission, inlining, and optimization times"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "JIT Cost Thresholds & Tuning Knobs: jit_above_cost & Inlining",
+      "codeHash": "0d6a86afd2ef4210b43b85981b36c5359581fe4e57594e93715afe9d2f5785e1",
+      "spec": {
+        "template": "compare",
+        "title": "JIT Compilation Internals - Part 3",
+        "leftLabel": "Interpreted Classical Execution",
+        "rightLabel": "LLVM JIT-Compiled Acceleration",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Database engines implement sophisticated cost based threshold hierarchies.",
+            "left": {
+              "code": "Interpreted expression AST traversal",
+              "result": {
+                "text": "indirect function calls stall CPU branch predictor"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "LLVM native machine code execution",
+              "result": {
+                "text": "unrolled direct machine instructions; 3x faster"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Primary configuration parameters govern compilation actions on queries.",
+            "left": {
+              "code": "Iterative heap_deform_tuple loop",
+              "result": {
+                "text": "wastes 50-100 clock cycles per row calculating offsets"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "JIT compile-time offset inlining",
+              "result": {
+                "text": "direct base pointer offset loads in 4 clock cycles"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Industrial manufacturing facility produces custom metal brackets.",
+            "left": {
+              "code": "Low jit_above_cost on OLTP",
+              "result": {
+                "text": "adds 20ms compilation penalty to 2ms lookup"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "jit_above_cost = 100000 on OLAP",
+              "result": {
+                "text": "spends 20ms once; reduces 30s scan down to 5s"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect cost threshold specifications and compilation action triggers.",
+            "left": {
+              "code": "Unmonitored JIT compilation timing",
+              "result": {
+                "text": "hidden compilation overhead on small queries"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "EXPLAIN ANALYZE JIT telemetry",
+              "result": {
+                "text": "granular emission, inlining, and optimization times"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "JIT Compilation Internals - Part 3",
+        "leftLabel": "Interpreted Classical Execution",
+        "rightLabel": "LLVM JIT-Compiled Acceleration",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Database engines implement sophisticated cost based threshold hierarchies.",
+            "left": {
+              "code": "Interpreted expression AST traversal",
+              "result": {
+                "text": "indirect function calls stall CPU branch predictor"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "LLVM native machine code execution",
+              "result": {
+                "text": "unrolled direct machine instructions; 3x faster"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Primary configuration parameters govern compilation actions on queries.",
+            "left": {
+              "code": "Iterative heap_deform_tuple loop",
+              "result": {
+                "text": "wastes 50-100 clock cycles per row calculating offsets"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "JIT compile-time offset inlining",
+              "result": {
+                "text": "direct base pointer offset loads in 4 clock cycles"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Industrial manufacturing facility produces custom metal brackets.",
+            "left": {
+              "code": "Low jit_above_cost on OLTP",
+              "result": {
+                "text": "adds 20ms compilation penalty to 2ms lookup"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "jit_above_cost = 100000 on OLAP",
+              "result": {
+                "text": "spends 20ms once; reduces 30s scan down to 5s"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect cost threshold specifications and compilation action triggers.",
+            "left": {
+              "code": "Unmonitored JIT compilation timing",
+              "result": {
+                "text": "hidden compilation overhead on small queries"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "EXPLAIN ANALYZE JIT telemetry",
+              "result": {
+                "text": "granular emission, inlining, and optimization times"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "JIT Memory Overhead & Resource Governance in High-Concurrency Systems",
+      "codeHash": "51cf3deb65f62ca0064c5679593a1af8529aa32352821ac2a8961c9778490bd6",
+      "spec": {
+        "template": "compare",
+        "title": "JIT Compilation Internals - Part 4",
+        "leftLabel": "Interpreted Classical Execution",
+        "rightLabel": "LLVM JIT-Compiled Acceleration",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Compilation introduces resource challenges that engineers must govern.",
+            "left": {
+              "code": "Interpreted expression AST traversal",
+              "result": {
+                "text": "indirect function calls stall CPU branch predictor"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "LLVM native machine code execution",
+              "result": {
+                "text": "unrolled direct machine instructions; 3x faster"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Compiling expressions requires allocating memory in backend processes.",
+            "left": {
+              "code": "Iterative heap_deform_tuple loop",
+              "result": {
+                "text": "wastes 50-100 clock cycles per row calculating offsets"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "JIT compile-time offset inlining",
+              "result": {
+                "text": "direct base pointer offset loads in 4 clock cycles"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Commercial catering kitchen chefs prepare upscale banquet meals smoothly.",
+            "left": {
+              "code": "Low jit_above_cost on OLTP",
+              "result": {
+                "text": "adds 20ms compilation penalty to 2ms lookup"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "jit_above_cost = 100000 on OLAP",
+              "result": {
+                "text": "spends 20ms once; reduces 30s scan down to 5s"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect resource governance matrix and production safety policies.",
+            "left": {
+              "code": "Unmonitored JIT compilation timing",
+              "result": {
+                "text": "hidden compilation overhead on small queries"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "EXPLAIN ANALYZE JIT telemetry",
+              "result": {
+                "text": "granular emission, inlining, and optimization times"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "JIT Compilation Internals - Part 4",
+        "leftLabel": "Interpreted Classical Execution",
+        "rightLabel": "LLVM JIT-Compiled Acceleration",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Compilation introduces resource challenges that engineers must govern.",
+            "left": {
+              "code": "Interpreted expression AST traversal",
+              "result": {
+                "text": "indirect function calls stall CPU branch predictor"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "LLVM native machine code execution",
+              "result": {
+                "text": "unrolled direct machine instructions; 3x faster"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Compiling expressions requires allocating memory in backend processes.",
+            "left": {
+              "code": "Iterative heap_deform_tuple loop",
+              "result": {
+                "text": "wastes 50-100 clock cycles per row calculating offsets"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "JIT compile-time offset inlining",
+              "result": {
+                "text": "direct base pointer offset loads in 4 clock cycles"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Commercial catering kitchen chefs prepare upscale banquet meals smoothly.",
+            "left": {
+              "code": "Low jit_above_cost on OLTP",
+              "result": {
+                "text": "adds 20ms compilation penalty to 2ms lookup"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "jit_above_cost = 100000 on OLAP",
+              "result": {
+                "text": "spends 20ms once; reduces 30s scan down to 5s"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect resource governance matrix and production safety policies.",
+            "left": {
+              "code": "Unmonitored JIT compilation timing",
+              "result": {
+                "text": "hidden compilation overhead on small queries"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "EXPLAIN ANALYZE JIT telemetry",
+              "result": {
+                "text": "granular emission, inlining, and optimization times"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Diagnostic Forensics: EXPLAIN ANALYZE JIT Telemetry & SRE Runbooks",
+      "codeHash": "c434bbdabc32fb0f2065236974a18b77bd668c2344ade196467782e05ef47414",
+      "spec": {
+        "template": "compare",
+        "title": "JIT Compilation Internals - Part 5",
+        "leftLabel": "Interpreted Classical Execution",
+        "rightLabel": "LLVM JIT-Compiled Acceleration",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Production diagnostic forensics analyze execution plans and telemetry.",
+            "left": {
+              "code": "Interpreted expression AST traversal",
+              "result": {
+                "text": "indirect function calls stall CPU branch predictor"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "LLVM native machine code execution",
+              "result": {
+                "text": "unrolled direct machine instructions; 3x faster"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Database diagnostic telemetry blocks reveal execution plan timings.",
+            "left": {
+              "code": "Iterative heap_deform_tuple loop",
+              "result": {
+                "text": "wastes 50-100 clock cycles per row calculating offsets"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "JIT compile-time offset inlining",
+              "result": {
+                "text": "direct base pointer offset loads in 4 clock cycles"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Racing team engineers monitor diagnostic telemetry during pit stops.",
+            "left": {
+              "code": "Low jit_above_cost on OLTP",
+              "result": {
+                "text": "adds 20ms compilation penalty to 2ms lookup"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "jit_above_cost = 100000 on OLAP",
+              "result": {
+                "text": "spends 20ms once; reduces 30s scan down to 5s"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect explain diagnostic telemetry query and tracked metrics.",
+            "left": {
+              "code": "Unmonitored JIT compilation timing",
+              "result": {
+                "text": "hidden compilation overhead on small queries"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "EXPLAIN ANALYZE JIT telemetry",
+              "result": {
+                "text": "granular emission, inlining, and optimization times"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "JIT Compilation Internals - Part 5",
+        "leftLabel": "Interpreted Classical Execution",
+        "rightLabel": "LLVM JIT-Compiled Acceleration",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Production diagnostic forensics analyze execution plans and telemetry.",
+            "left": {
+              "code": "Interpreted expression AST traversal",
+              "result": {
+                "text": "indirect function calls stall CPU branch predictor"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "LLVM native machine code execution",
+              "result": {
+                "text": "unrolled direct machine instructions; 3x faster"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Database diagnostic telemetry blocks reveal execution plan timings.",
+            "left": {
+              "code": "Iterative heap_deform_tuple loop",
+              "result": {
+                "text": "wastes 50-100 clock cycles per row calculating offsets"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "JIT compile-time offset inlining",
+              "result": {
+                "text": "direct base pointer offset loads in 4 clock cycles"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Racing team engineers monitor diagnostic telemetry during pit stops.",
+            "left": {
+              "code": "Low jit_above_cost on OLTP",
+              "result": {
+                "text": "adds 20ms compilation penalty to 2ms lookup"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "jit_above_cost = 100000 on OLAP",
+              "result": {
+                "text": "spends 20ms once; reduces 30s scan down to 5s"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect explain diagnostic telemetry query and tracked metrics.",
+            "left": {
+              "code": "Unmonitored JIT compilation timing",
+              "result": {
+                "text": "hidden compilation overhead on small queries"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "EXPLAIN ANALYZE JIT telemetry",
+              "result": {
+                "text": "granular emission, inlining, and optimization times"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
