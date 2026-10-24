@@ -1,0 +1,659 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom-accounting",
+  "day": 40,
+  "promptSha": "prompt_sha_bcom_accounting_day40_v1",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Strategic Role of the Chief Accounting Officer & Capital Structure Governance",
+      "codeHash": "de0b716f2925900e9677c6ce1c311418643874f1327215c44a5994e928212f5f",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Strategic Role of the Chief Accounting O... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($6,184,597) for Strategic Role of the Chief Accounting O...",
+            "title": "Day 40 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 6184597,
+            "totalCredit": 6184597,
+            "entries": [
+              {
+                "id": "JNL-4001",
+                "account": "Consolidated Corporate Equity & Valuation Adjustments",
+                "debit": 6184597,
+                "balance": 6184597,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 40"
+              },
+              {
+                "id": "JNL-4002",
+                "account": "Integrated Tax, Capital & Provision Liabilities",
+                "credit": 6184597,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & amortization accrual ($650,000).",
+            "title": "Day 40 Journal \u2014 Accrual / Amortization Adjustment",
+            "isBalanced": true,
+            "totalDebit": 6834597,
+            "totalCredit": 6834597,
+            "entries": [
+              {
+                "id": "JNL-4001",
+                "account": "Consolidated Corporate Equity & Valuation Adjustments",
+                "debit": 6184597,
+                "balance": 6184597,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4003",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 650000,
+                "balance": 6834597,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4002",
+                "account": "Integrated Tax, Capital & Provision Liabilities",
+                "credit": 6834597,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory disclosures.",
+            "title": "Day 40 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 6834597,
+            "totalCredit": 6834597,
+            "entries": [
+              {
+                "id": "JNL-4001",
+                "account": "Consolidated Corporate Equity & Valuation Adjustments",
+                "debit": 6184597,
+                "balance": 6184597,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4003",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 650000,
+                "balance": 6834597,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4002",
+                "account": "Integrated Tax, Capital & Provision Liabilities",
+                "credit": 6834597,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 40 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 6834597,
+            "totalCredit": 6834597,
+            "entries": [
+              {
+                "id": "JNL-4001",
+                "account": "Consolidated Corporate Equity & Valuation Adjustments",
+                "debit": 6184597,
+                "balance": 6184597,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4003",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 650000,
+                "balance": 6834597,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4002",
+                "account": "Integrated Tax, Capital & Provision Liabilities",
+                "credit": 6834597,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Module 1: Enterprise Share-Based Compensation Architecture & Forfeiture Modeling (Ind AS 102)",
+      "codeHash": "de0b716f2925900e9677c6ce1c311418643874f1327215c44a5994e928212f5f",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Module 1: Enterprise Share-Based Compens... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($6,189,597) for Module 1: Enterprise Share-Based Compens...",
+            "title": "Day 40 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 6189597,
+            "totalCredit": 6189597,
+            "entries": [
+              {
+                "id": "JNL-4001",
+                "account": "Consolidated Corporate Equity & Valuation Adjustments",
+                "debit": 6189597,
+                "balance": 6189597,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 40"
+              },
+              {
+                "id": "JNL-4002",
+                "account": "Integrated Tax, Capital & Provision Liabilities",
+                "credit": 6189597,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & amortization accrual ($650,000).",
+            "title": "Day 40 Journal \u2014 Accrual / Amortization Adjustment",
+            "isBalanced": true,
+            "totalDebit": 6839597,
+            "totalCredit": 6839597,
+            "entries": [
+              {
+                "id": "JNL-4001",
+                "account": "Consolidated Corporate Equity & Valuation Adjustments",
+                "debit": 6189597,
+                "balance": 6189597,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4003",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 650000,
+                "balance": 6839597,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4002",
+                "account": "Integrated Tax, Capital & Provision Liabilities",
+                "credit": 6839597,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory disclosures.",
+            "title": "Day 40 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 6839597,
+            "totalCredit": 6839597,
+            "entries": [
+              {
+                "id": "JNL-4001",
+                "account": "Consolidated Corporate Equity & Valuation Adjustments",
+                "debit": 6189597,
+                "balance": 6189597,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4003",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 650000,
+                "balance": 6839597,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4002",
+                "account": "Integrated Tax, Capital & Provision Liabilities",
+                "credit": 6839597,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 40 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 6839597,
+            "totalCredit": 6839597,
+            "entries": [
+              {
+                "id": "JNL-4001",
+                "account": "Consolidated Corporate Equity & Valuation Adjustments",
+                "debit": 6189597,
+                "balance": 6189597,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4003",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 650000,
+                "balance": 6839597,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4002",
+                "account": "Integrated Tax, Capital & Provision Liabilities",
+                "credit": 6839597,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Module 2: Balance Sheet Deferred Tax Engine & Section 115BAA Netting (Ind AS 12)",
+      "codeHash": "de0b716f2925900e9677c6ce1c311418643874f1327215c44a5994e928212f5f",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Module 2: Balance Sheet Deferred Tax Eng... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($6,194,597) for Module 2: Balance Sheet Deferred Tax Eng...",
+            "title": "Day 40 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 6194597,
+            "totalCredit": 6194597,
+            "entries": [
+              {
+                "id": "JNL-4001",
+                "account": "Consolidated Corporate Equity & Valuation Adjustments",
+                "debit": 6194597,
+                "balance": 6194597,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 40"
+              },
+              {
+                "id": "JNL-4002",
+                "account": "Integrated Tax, Capital & Provision Liabilities",
+                "credit": 6194597,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & amortization accrual ($650,000).",
+            "title": "Day 40 Journal \u2014 Accrual / Amortization Adjustment",
+            "isBalanced": true,
+            "totalDebit": 6844597,
+            "totalCredit": 6844597,
+            "entries": [
+              {
+                "id": "JNL-4001",
+                "account": "Consolidated Corporate Equity & Valuation Adjustments",
+                "debit": 6194597,
+                "balance": 6194597,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4003",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 650000,
+                "balance": 6844597,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4002",
+                "account": "Integrated Tax, Capital & Provision Liabilities",
+                "credit": 6844597,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory disclosures.",
+            "title": "Day 40 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 6844597,
+            "totalCredit": 6844597,
+            "entries": [
+              {
+                "id": "JNL-4001",
+                "account": "Consolidated Corporate Equity & Valuation Adjustments",
+                "debit": 6194597,
+                "balance": 6194597,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4003",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 650000,
+                "balance": 6844597,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4002",
+                "account": "Integrated Tax, Capital & Provision Liabilities",
+                "credit": 6844597,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 40 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 6844597,
+            "totalCredit": 6844597,
+            "entries": [
+              {
+                "id": "JNL-4001",
+                "account": "Consolidated Corporate Equity & Valuation Adjustments",
+                "debit": 6194597,
+                "balance": 6194597,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4003",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 650000,
+                "balance": 6844597,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4002",
+                "account": "Integrated Tax, Capital & Provision Liabilities",
+                "credit": 6844597,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Modules 3 & 4: Capital Structure Dilution (Ind AS 33) & Provisions Discounting (Ind AS 37)",
+      "codeHash": "de0b716f2925900e9677c6ce1c311418643874f1327215c44a5994e928212f5f",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Modules 3 & 4: Capital Structure Dilutio... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($6,199,597) for Modules 3 & 4: Capital Structure Dilutio...",
+            "title": "Day 40 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 6199597,
+            "totalCredit": 6199597,
+            "entries": [
+              {
+                "id": "JNL-4001",
+                "account": "Consolidated Corporate Equity & Valuation Adjustments",
+                "debit": 6199597,
+                "balance": 6199597,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 40"
+              },
+              {
+                "id": "JNL-4002",
+                "account": "Integrated Tax, Capital & Provision Liabilities",
+                "credit": 6199597,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & amortization accrual ($650,000).",
+            "title": "Day 40 Journal \u2014 Accrual / Amortization Adjustment",
+            "isBalanced": true,
+            "totalDebit": 6849597,
+            "totalCredit": 6849597,
+            "entries": [
+              {
+                "id": "JNL-4001",
+                "account": "Consolidated Corporate Equity & Valuation Adjustments",
+                "debit": 6199597,
+                "balance": 6199597,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4003",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 650000,
+                "balance": 6849597,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4002",
+                "account": "Integrated Tax, Capital & Provision Liabilities",
+                "credit": 6849597,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory disclosures.",
+            "title": "Day 40 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 6849597,
+            "totalCredit": 6849597,
+            "entries": [
+              {
+                "id": "JNL-4001",
+                "account": "Consolidated Corporate Equity & Valuation Adjustments",
+                "debit": 6199597,
+                "balance": 6199597,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4003",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 650000,
+                "balance": 6849597,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4002",
+                "account": "Integrated Tax, Capital & Provision Liabilities",
+                "credit": 6849597,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 40 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 6849597,
+            "totalCredit": 6849597,
+            "entries": [
+              {
+                "id": "JNL-4001",
+                "account": "Consolidated Corporate Equity & Valuation Adjustments",
+                "debit": 6199597,
+                "balance": 6199597,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4003",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 650000,
+                "balance": 6849597,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4002",
+                "account": "Integrated Tax, Capital & Provision Liabilities",
+                "credit": 6849597,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Grand Milestone 8 Capstone Execution & Capital Reporting Certification",
+      "codeHash": "de0b716f2925900e9677c6ce1c311418643874f1327215c44a5994e928212f5f",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "The Grand Milestone 8 Capstone Execution... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($6,204,597) for The Grand Milestone 8 Capstone Execution...",
+            "title": "Day 40 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 6204597,
+            "totalCredit": 6204597,
+            "entries": [
+              {
+                "id": "JNL-4001",
+                "account": "Consolidated Corporate Equity & Valuation Adjustments",
+                "debit": 6204597,
+                "balance": 6204597,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 40"
+              },
+              {
+                "id": "JNL-4002",
+                "account": "Integrated Tax, Capital & Provision Liabilities",
+                "credit": 6204597,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & amortization accrual ($650,000).",
+            "title": "Day 40 Journal \u2014 Accrual / Amortization Adjustment",
+            "isBalanced": true,
+            "totalDebit": 6854597,
+            "totalCredit": 6854597,
+            "entries": [
+              {
+                "id": "JNL-4001",
+                "account": "Consolidated Corporate Equity & Valuation Adjustments",
+                "debit": 6204597,
+                "balance": 6204597,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4003",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 650000,
+                "balance": 6854597,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4002",
+                "account": "Integrated Tax, Capital & Provision Liabilities",
+                "credit": 6854597,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory disclosures.",
+            "title": "Day 40 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 6854597,
+            "totalCredit": 6854597,
+            "entries": [
+              {
+                "id": "JNL-4001",
+                "account": "Consolidated Corporate Equity & Valuation Adjustments",
+                "debit": 6204597,
+                "balance": 6204597,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4003",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 650000,
+                "balance": 6854597,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4002",
+                "account": "Integrated Tax, Capital & Provision Liabilities",
+                "credit": 6854597,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 40 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 6854597,
+            "totalCredit": 6854597,
+            "entries": [
+              {
+                "id": "JNL-4001",
+                "account": "Consolidated Corporate Equity & Valuation Adjustments",
+                "debit": 6204597,
+                "balance": 6204597,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4003",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 650000,
+                "balance": 6854597,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4002",
+                "account": "Integrated Tax, Capital & Provision Liabilities",
+                "credit": 6854597,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

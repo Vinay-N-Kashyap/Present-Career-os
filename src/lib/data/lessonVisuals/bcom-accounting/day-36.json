@@ -1,0 +1,659 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom-accounting",
+  "day": 36,
+  "promptSha": "prompt_sha_bcom_accounting_day36_v1",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Scope of Ind AS 102, Equity-Settled vs Cash-Settled Archetypes & Legal Mandates",
+      "codeHash": "2f1b7c0b0e09156b297a3a349fd9e4c738258191d5b76aa33138fc1cc06e5437",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Scope of Ind AS 102, Equity-Settled vs C... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($575,000) for Scope of Ind AS 102, Equity-Settled vs C...",
+            "title": "Day 36 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 575000,
+            "totalCredit": 575000,
+            "entries": [
+              {
+                "id": "JNL-3601",
+                "account": "Employee Benefit Expense (P&L)",
+                "debit": 575000,
+                "balance": 575000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 36"
+              },
+              {
+                "id": "JNL-3602",
+                "account": "Share-Based Payment Reserve (Other Equity)",
+                "credit": 575000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & amortization accrual ($50,000).",
+            "title": "Day 36 Journal \u2014 Accrual / Amortization Adjustment",
+            "isBalanced": true,
+            "totalDebit": 625000,
+            "totalCredit": 625000,
+            "entries": [
+              {
+                "id": "JNL-3601",
+                "account": "Employee Benefit Expense (P&L)",
+                "debit": 575000,
+                "balance": 575000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3603",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 50000,
+                "balance": 625000,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-3602",
+                "account": "Share-Based Payment Reserve (Other Equity)",
+                "credit": 625000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory disclosures.",
+            "title": "Day 36 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 625000,
+            "totalCredit": 625000,
+            "entries": [
+              {
+                "id": "JNL-3601",
+                "account": "Employee Benefit Expense (P&L)",
+                "debit": 575000,
+                "balance": 575000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3603",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 50000,
+                "balance": 625000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3602",
+                "account": "Share-Based Payment Reserve (Other Equity)",
+                "credit": 625000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 36 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 625000,
+            "totalCredit": 625000,
+            "entries": [
+              {
+                "id": "JNL-3601",
+                "account": "Employee Benefit Expense (P&L)",
+                "debit": 575000,
+                "balance": 575000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3603",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 50000,
+                "balance": 625000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3602",
+                "account": "Share-Based Payment Reserve (Other Equity)",
+                "credit": 625000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Grant-Date Fair Value Principle, Option Pricing Models & Vesting Conditions",
+      "codeHash": "2f1b7c0b0e09156b297a3a349fd9e4c738258191d5b76aa33138fc1cc06e5437",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Grant-Date Fair Value Principle, Option ... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($580,000) for Grant-Date Fair Value Principle, Option ...",
+            "title": "Day 36 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 580000,
+            "totalCredit": 580000,
+            "entries": [
+              {
+                "id": "JNL-3601",
+                "account": "Employee Benefit Expense (P&L)",
+                "debit": 580000,
+                "balance": 580000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 36"
+              },
+              {
+                "id": "JNL-3602",
+                "account": "Share-Based Payment Reserve (Other Equity)",
+                "credit": 580000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & amortization accrual ($50,000).",
+            "title": "Day 36 Journal \u2014 Accrual / Amortization Adjustment",
+            "isBalanced": true,
+            "totalDebit": 630000,
+            "totalCredit": 630000,
+            "entries": [
+              {
+                "id": "JNL-3601",
+                "account": "Employee Benefit Expense (P&L)",
+                "debit": 580000,
+                "balance": 580000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3603",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 50000,
+                "balance": 630000,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-3602",
+                "account": "Share-Based Payment Reserve (Other Equity)",
+                "credit": 630000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory disclosures.",
+            "title": "Day 36 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 630000,
+            "totalCredit": 630000,
+            "entries": [
+              {
+                "id": "JNL-3601",
+                "account": "Employee Benefit Expense (P&L)",
+                "debit": 580000,
+                "balance": 580000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3603",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 50000,
+                "balance": 630000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3602",
+                "account": "Share-Based Payment Reserve (Other Equity)",
+                "credit": 630000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 36 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 630000,
+            "totalCredit": 630000,
+            "entries": [
+              {
+                "id": "JNL-3601",
+                "account": "Employee Benefit Expense (P&L)",
+                "debit": 580000,
+                "balance": 580000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3603",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 50000,
+                "balance": 630000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3602",
+                "account": "Share-Based Payment Reserve (Other Equity)",
+                "credit": 630000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Graded Vesting Attribution Schedules vs Cliff Vesting & Front-Loaded P&L Impact",
+      "codeHash": "2f1b7c0b0e09156b297a3a349fd9e4c738258191d5b76aa33138fc1cc06e5437",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Graded Vesting Attribution Schedules vs ... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($585,000) for Graded Vesting Attribution Schedules vs ...",
+            "title": "Day 36 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 585000,
+            "totalCredit": 585000,
+            "entries": [
+              {
+                "id": "JNL-3601",
+                "account": "Employee Benefit Expense (P&L)",
+                "debit": 585000,
+                "balance": 585000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 36"
+              },
+              {
+                "id": "JNL-3602",
+                "account": "Share-Based Payment Reserve (Other Equity)",
+                "credit": 585000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & amortization accrual ($50,000).",
+            "title": "Day 36 Journal \u2014 Accrual / Amortization Adjustment",
+            "isBalanced": true,
+            "totalDebit": 635000,
+            "totalCredit": 635000,
+            "entries": [
+              {
+                "id": "JNL-3601",
+                "account": "Employee Benefit Expense (P&L)",
+                "debit": 585000,
+                "balance": 585000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3603",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 50000,
+                "balance": 635000,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-3602",
+                "account": "Share-Based Payment Reserve (Other Equity)",
+                "credit": 635000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory disclosures.",
+            "title": "Day 36 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 635000,
+            "totalCredit": 635000,
+            "entries": [
+              {
+                "id": "JNL-3601",
+                "account": "Employee Benefit Expense (P&L)",
+                "debit": 585000,
+                "balance": 585000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3603",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 50000,
+                "balance": 635000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3602",
+                "account": "Share-Based Payment Reserve (Other Equity)",
+                "credit": 635000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 36 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 635000,
+            "totalCredit": 635000,
+            "entries": [
+              {
+                "id": "JNL-3601",
+                "account": "Employee Benefit Expense (P&L)",
+                "debit": 585000,
+                "balance": 585000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3603",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 50000,
+                "balance": 635000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3602",
+                "account": "Share-Based Payment Reserve (Other Equity)",
+                "credit": 635000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cash-Settled Stock Appreciation Rights (SARs) & Reporting Date Fair Value Remeasurement",
+      "codeHash": "2f1b7c0b0e09156b297a3a349fd9e4c738258191d5b76aa33138fc1cc06e5437",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Cash-Settled Stock Appreciation Rights (... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($590,000) for Cash-Settled Stock Appreciation Rights (...",
+            "title": "Day 36 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 590000,
+            "totalCredit": 590000,
+            "entries": [
+              {
+                "id": "JNL-3601",
+                "account": "Employee Benefit Expense (P&L)",
+                "debit": 590000,
+                "balance": 590000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 36"
+              },
+              {
+                "id": "JNL-3602",
+                "account": "Share-Based Payment Reserve (Other Equity)",
+                "credit": 590000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & amortization accrual ($50,000).",
+            "title": "Day 36 Journal \u2014 Accrual / Amortization Adjustment",
+            "isBalanced": true,
+            "totalDebit": 640000,
+            "totalCredit": 640000,
+            "entries": [
+              {
+                "id": "JNL-3601",
+                "account": "Employee Benefit Expense (P&L)",
+                "debit": 590000,
+                "balance": 590000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3603",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 50000,
+                "balance": 640000,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-3602",
+                "account": "Share-Based Payment Reserve (Other Equity)",
+                "credit": 640000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory disclosures.",
+            "title": "Day 36 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 640000,
+            "totalCredit": 640000,
+            "entries": [
+              {
+                "id": "JNL-3601",
+                "account": "Employee Benefit Expense (P&L)",
+                "debit": 590000,
+                "balance": 590000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3603",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 50000,
+                "balance": 640000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3602",
+                "account": "Share-Based Payment Reserve (Other Equity)",
+                "credit": 640000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 36 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 640000,
+            "totalCredit": 640000,
+            "entries": [
+              {
+                "id": "JNL-3601",
+                "account": "Employee Benefit Expense (P&L)",
+                "debit": 590000,
+                "balance": 590000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3603",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 50000,
+                "balance": 640000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3602",
+                "account": "Share-Based Payment Reserve (Other Equity)",
+                "credit": 640000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Python Share-Based Payments Simulator Execution & Ind AS 102 Certification",
+      "codeHash": "2f1b7c0b0e09156b297a3a349fd9e4c738258191d5b76aa33138fc1cc06e5437",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Python Share-Based Payments Simulator Ex... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($595,000) for Python Share-Based Payments Simulator Ex...",
+            "title": "Day 36 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 595000,
+            "totalCredit": 595000,
+            "entries": [
+              {
+                "id": "JNL-3601",
+                "account": "Employee Benefit Expense (P&L)",
+                "debit": 595000,
+                "balance": 595000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 36"
+              },
+              {
+                "id": "JNL-3602",
+                "account": "Share-Based Payment Reserve (Other Equity)",
+                "credit": 595000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & amortization accrual ($50,000).",
+            "title": "Day 36 Journal \u2014 Accrual / Amortization Adjustment",
+            "isBalanced": true,
+            "totalDebit": 645000,
+            "totalCredit": 645000,
+            "entries": [
+              {
+                "id": "JNL-3601",
+                "account": "Employee Benefit Expense (P&L)",
+                "debit": 595000,
+                "balance": 595000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3603",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 50000,
+                "balance": 645000,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-3602",
+                "account": "Share-Based Payment Reserve (Other Equity)",
+                "credit": 645000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory disclosures.",
+            "title": "Day 36 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 645000,
+            "totalCredit": 645000,
+            "entries": [
+              {
+                "id": "JNL-3601",
+                "account": "Employee Benefit Expense (P&L)",
+                "debit": 595000,
+                "balance": 595000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3603",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 50000,
+                "balance": 645000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3602",
+                "account": "Share-Based Payment Reserve (Other Equity)",
+                "credit": 645000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 36 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 645000,
+            "totalCredit": 645000,
+            "entries": [
+              {
+                "id": "JNL-3601",
+                "account": "Employee Benefit Expense (P&L)",
+                "debit": 595000,
+                "balance": 595000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3603",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 50000,
+                "balance": 645000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3602",
+                "account": "Share-Based Payment Reserve (Other Equity)",
+                "credit": 645000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

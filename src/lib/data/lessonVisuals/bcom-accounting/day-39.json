@@ -1,0 +1,659 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom-accounting",
+  "day": 39,
+  "promptSha": "prompt_sha_bcom_accounting_day39_v1",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Elimination of 'Big Bath' Reserving, The Tripartite Framework & Constructive Obligations",
+      "codeHash": "855cdd375320d4a3a18eb879971e28c98ca48b97a0f2ec1e2d5b235f887ea41e",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Elimination of 'Big Bath' Reserving, The... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($413,350) for Elimination of 'Big Bath' Reserving, The...",
+            "title": "Day 39 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 413350,
+            "totalCredit": 413350,
+            "entries": [
+              {
+                "id": "JNL-3901",
+                "account": "Plant Restoration Asset (PPE) / Restructuring Expense",
+                "debit": 413350,
+                "balance": 413350,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 39"
+              },
+              {
+                "id": "JNL-3902",
+                "account": "Provision for Decommissioning & Restructuring Liabilities",
+                "credit": 413350,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & amortization accrual ($32,668).",
+            "title": "Day 39 Journal \u2014 Accrual / Amortization Adjustment",
+            "isBalanced": true,
+            "totalDebit": 446018,
+            "totalCredit": 446018,
+            "entries": [
+              {
+                "id": "JNL-3901",
+                "account": "Plant Restoration Asset (PPE) / Restructuring Expense",
+                "debit": 413350,
+                "balance": 413350,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3903",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 32668,
+                "balance": 446018,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-3902",
+                "account": "Provision for Decommissioning & Restructuring Liabilities",
+                "credit": 446018,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory disclosures.",
+            "title": "Day 39 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 446018,
+            "totalCredit": 446018,
+            "entries": [
+              {
+                "id": "JNL-3901",
+                "account": "Plant Restoration Asset (PPE) / Restructuring Expense",
+                "debit": 413350,
+                "balance": 413350,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3903",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 32668,
+                "balance": 446018,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3902",
+                "account": "Provision for Decommissioning & Restructuring Liabilities",
+                "credit": 446018,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 39 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 446018,
+            "totalCredit": 446018,
+            "entries": [
+              {
+                "id": "JNL-3901",
+                "account": "Plant Restoration Asset (PPE) / Restructuring Expense",
+                "debit": 413350,
+                "balance": 413350,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3903",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 32668,
+                "balance": 446018,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3902",
+                "account": "Provision for Decommissioning & Restructuring Liabilities",
+                "credit": 446018,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Three Mandatory Recognition Criteria, Past Obligating Events & Maintenance Disallowance",
+      "codeHash": "855cdd375320d4a3a18eb879971e28c98ca48b97a0f2ec1e2d5b235f887ea41e",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "The Three Mandatory Recognition Criteria... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($418,350) for The Three Mandatory Recognition Criteria...",
+            "title": "Day 39 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 418350,
+            "totalCredit": 418350,
+            "entries": [
+              {
+                "id": "JNL-3901",
+                "account": "Plant Restoration Asset (PPE) / Restructuring Expense",
+                "debit": 418350,
+                "balance": 418350,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 39"
+              },
+              {
+                "id": "JNL-3902",
+                "account": "Provision for Decommissioning & Restructuring Liabilities",
+                "credit": 418350,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & amortization accrual ($32,668).",
+            "title": "Day 39 Journal \u2014 Accrual / Amortization Adjustment",
+            "isBalanced": true,
+            "totalDebit": 451018,
+            "totalCredit": 451018,
+            "entries": [
+              {
+                "id": "JNL-3901",
+                "account": "Plant Restoration Asset (PPE) / Restructuring Expense",
+                "debit": 418350,
+                "balance": 418350,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3903",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 32668,
+                "balance": 451018,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-3902",
+                "account": "Provision for Decommissioning & Restructuring Liabilities",
+                "credit": 451018,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory disclosures.",
+            "title": "Day 39 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 451018,
+            "totalCredit": 451018,
+            "entries": [
+              {
+                "id": "JNL-3901",
+                "account": "Plant Restoration Asset (PPE) / Restructuring Expense",
+                "debit": 418350,
+                "balance": 418350,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3903",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 32668,
+                "balance": 451018,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3902",
+                "account": "Provision for Decommissioning & Restructuring Liabilities",
+                "credit": 451018,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 39 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 451018,
+            "totalCredit": 451018,
+            "entries": [
+              {
+                "id": "JNL-3901",
+                "account": "Plant Restoration Asset (PPE) / Restructuring Expense",
+                "debit": 418350,
+                "balance": 418350,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3903",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 32668,
+                "balance": 451018,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3902",
+                "account": "Provision for Decommissioning & Restructuring Liabilities",
+                "credit": 451018,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Measurement Principles: Best Estimate, Present Value Discounting & Finance Cost Unwinding",
+      "codeHash": "855cdd375320d4a3a18eb879971e28c98ca48b97a0f2ec1e2d5b235f887ea41e",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Measurement Principles: Best Estimate, P... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($423,350) for Measurement Principles: Best Estimate, P...",
+            "title": "Day 39 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 423350,
+            "totalCredit": 423350,
+            "entries": [
+              {
+                "id": "JNL-3901",
+                "account": "Plant Restoration Asset (PPE) / Restructuring Expense",
+                "debit": 423350,
+                "balance": 423350,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 39"
+              },
+              {
+                "id": "JNL-3902",
+                "account": "Provision for Decommissioning & Restructuring Liabilities",
+                "credit": 423350,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & amortization accrual ($32,668).",
+            "title": "Day 39 Journal \u2014 Accrual / Amortization Adjustment",
+            "isBalanced": true,
+            "totalDebit": 456018,
+            "totalCredit": 456018,
+            "entries": [
+              {
+                "id": "JNL-3901",
+                "account": "Plant Restoration Asset (PPE) / Restructuring Expense",
+                "debit": 423350,
+                "balance": 423350,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3903",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 32668,
+                "balance": 456018,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-3902",
+                "account": "Provision for Decommissioning & Restructuring Liabilities",
+                "credit": 456018,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory disclosures.",
+            "title": "Day 39 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 456018,
+            "totalCredit": 456018,
+            "entries": [
+              {
+                "id": "JNL-3901",
+                "account": "Plant Restoration Asset (PPE) / Restructuring Expense",
+                "debit": 423350,
+                "balance": 423350,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3903",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 32668,
+                "balance": 456018,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3902",
+                "account": "Provision for Decommissioning & Restructuring Liabilities",
+                "credit": 456018,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 39 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 456018,
+            "totalCredit": 456018,
+            "entries": [
+              {
+                "id": "JNL-3901",
+                "account": "Plant Restoration Asset (PPE) / Restructuring Expense",
+                "debit": 423350,
+                "balance": 423350,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3903",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 32668,
+                "balance": 456018,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3902",
+                "account": "Provision for Decommissioning & Restructuring Liabilities",
+                "credit": 456018,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Restructuring Provisions: Detailed Formal Plans, Valid Expectations & Operating Disallowances",
+      "codeHash": "855cdd375320d4a3a18eb879971e28c98ca48b97a0f2ec1e2d5b235f887ea41e",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Restructuring Provisions: Detailed Forma... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($428,350) for Restructuring Provisions: Detailed Forma...",
+            "title": "Day 39 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 428350,
+            "totalCredit": 428350,
+            "entries": [
+              {
+                "id": "JNL-3901",
+                "account": "Plant Restoration Asset (PPE) / Restructuring Expense",
+                "debit": 428350,
+                "balance": 428350,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 39"
+              },
+              {
+                "id": "JNL-3902",
+                "account": "Provision for Decommissioning & Restructuring Liabilities",
+                "credit": 428350,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & amortization accrual ($32,668).",
+            "title": "Day 39 Journal \u2014 Accrual / Amortization Adjustment",
+            "isBalanced": true,
+            "totalDebit": 461018,
+            "totalCredit": 461018,
+            "entries": [
+              {
+                "id": "JNL-3901",
+                "account": "Plant Restoration Asset (PPE) / Restructuring Expense",
+                "debit": 428350,
+                "balance": 428350,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3903",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 32668,
+                "balance": 461018,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-3902",
+                "account": "Provision for Decommissioning & Restructuring Liabilities",
+                "credit": 461018,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory disclosures.",
+            "title": "Day 39 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 461018,
+            "totalCredit": 461018,
+            "entries": [
+              {
+                "id": "JNL-3901",
+                "account": "Plant Restoration Asset (PPE) / Restructuring Expense",
+                "debit": 428350,
+                "balance": 428350,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3903",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 32668,
+                "balance": 461018,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3902",
+                "account": "Provision for Decommissioning & Restructuring Liabilities",
+                "credit": 461018,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 39 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 461018,
+            "totalCredit": 461018,
+            "entries": [
+              {
+                "id": "JNL-3901",
+                "account": "Plant Restoration Asset (PPE) / Restructuring Expense",
+                "debit": 428350,
+                "balance": 428350,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3903",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 32668,
+                "balance": 461018,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3902",
+                "account": "Provision for Decommissioning & Restructuring Liabilities",
+                "credit": 461018,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Python Provisions Engine Execution, Tripartite Classification & Ind AS 37 Certification",
+      "codeHash": "855cdd375320d4a3a18eb879971e28c98ca48b97a0f2ec1e2d5b235f887ea41e",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Python Provisions Engine Execution, Trip... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($433,350) for Python Provisions Engine Execution, Trip...",
+            "title": "Day 39 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 433350,
+            "totalCredit": 433350,
+            "entries": [
+              {
+                "id": "JNL-3901",
+                "account": "Plant Restoration Asset (PPE) / Restructuring Expense",
+                "debit": 433350,
+                "balance": 433350,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 39"
+              },
+              {
+                "id": "JNL-3902",
+                "account": "Provision for Decommissioning & Restructuring Liabilities",
+                "credit": 433350,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & amortization accrual ($32,668).",
+            "title": "Day 39 Journal \u2014 Accrual / Amortization Adjustment",
+            "isBalanced": true,
+            "totalDebit": 466018,
+            "totalCredit": 466018,
+            "entries": [
+              {
+                "id": "JNL-3901",
+                "account": "Plant Restoration Asset (PPE) / Restructuring Expense",
+                "debit": 433350,
+                "balance": 433350,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3903",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 32668,
+                "balance": 466018,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-3902",
+                "account": "Provision for Decommissioning & Restructuring Liabilities",
+                "credit": 466018,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory disclosures.",
+            "title": "Day 39 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 466018,
+            "totalCredit": 466018,
+            "entries": [
+              {
+                "id": "JNL-3901",
+                "account": "Plant Restoration Asset (PPE) / Restructuring Expense",
+                "debit": 433350,
+                "balance": 433350,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3903",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 32668,
+                "balance": 466018,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3902",
+                "account": "Provision for Decommissioning & Restructuring Liabilities",
+                "credit": 466018,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 39 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 466018,
+            "totalCredit": 466018,
+            "entries": [
+              {
+                "id": "JNL-3901",
+                "account": "Plant Restoration Asset (PPE) / Restructuring Expense",
+                "debit": 433350,
+                "balance": 433350,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3903",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 32668,
+                "balance": 466018,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3902",
+                "account": "Provision for Decommissioning & Restructuring Liabilities",
+                "credit": 466018,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
