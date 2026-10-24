@@ -1,0 +1,829 @@
+{
+  "schemaVersion": 2,
+  "prefix": "devops",
+  "day": 56,
+  "promptSha": "29f440ff0dd1e8b12fb51ed4ea70a7cc544e65015d87619e59585dd0a799406b",
+  "model": "google/gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "The Multi-Cloud Imperative: Escaping Proprietary Cloud Lock-In with Control Planes",
+      "codeHash": "5441cb01e5abb9e9855962cc885a2de92b7d1784fd184f14ffc77f7f3a3dd6c8",
+      "spec": {
+        "template": "compare",
+        "title": "DevOps architecture analysis for The Multi-Cloud Imperative: Escapin",
+        "leftLabel": "Standard Infrastructure",
+        "rightLabel": "Target Implementation",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Evaluating system mesh and validating eleven.",
+            "left": {
+              "code": "baselineMesh",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetEleven",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Evaluating system organizations and validating company.",
+            "left": {
+              "code": "baselineOrganizations",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetCompany",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Evaluating system turning and validating automatically.",
+            "left": {
+              "code": "baselineTurning",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetAutomatically",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Evaluating system synchronized and validating backupretentiondays.",
+            "left": {
+              "code": "baselineSynchronized",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetBackupretentiondays",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "DevOps architecture analysis for The Multi-Cloud Imperative: Escapin",
+        "leftLabel": "Standard Infrastructure",
+        "rightLabel": "Target Implementation",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Evaluating system mesh and validating eleven.",
+            "left": {
+              "code": "baselineMesh",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetEleven",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Evaluating system organizations and validating company.",
+            "left": {
+              "code": "baselineOrganizations",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetCompany",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Evaluating system turning and validating automatically.",
+            "left": {
+              "code": "baselineTurning",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetAutomatically",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Evaluating system synchronized and validating backupretentiondays.",
+            "left": {
+              "code": "baselineSynchronized",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetBackupretentiondays",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Crossplane Architecture: Providers, Managed Resources (MRs), and Custom APIs",
+      "codeHash": "49a88fb70661b604a71bb58123df0f45fc09db72fa4edeea77141bdcf1f434f4",
+      "spec": {
+        "template": "compare",
+        "title": "DevOps architecture analysis for Crossplane Architecture: Providers,",
+        "leftLabel": "Standard Infrastructure",
+        "rightLabel": "Target Implementation",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Evaluating system understand and validating extensible.",
+            "left": {
+              "code": "baselineUnderstand",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetExtensible",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Evaluating system starts and validating specialized.",
+            "left": {
+              "code": "baselineStarts",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetSpecialized",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Evaluating system package and validating confirmed.",
+            "left": {
+              "code": "baselinePackage",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetConfirmed",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Evaluating system operational and validating status.",
+            "left": {
+              "code": "baselineOperational",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetStatus",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "DevOps architecture analysis for Crossplane Architecture: Providers,",
+        "leftLabel": "Standard Infrastructure",
+        "rightLabel": "Target Implementation",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Evaluating system understand and validating extensible.",
+            "left": {
+              "code": "baselineUnderstand",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetExtensible",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Evaluating system starts and validating specialized.",
+            "left": {
+              "code": "baselineStarts",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetSpecialized",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Evaluating system package and validating confirmed.",
+            "left": {
+              "code": "baselinePackage",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetConfirmed",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Evaluating system operational and validating status.",
+            "left": {
+              "code": "baselineOperational",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetStatus",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Composite Resource Definitions (XRDs) & Compositions: Platform-as-a-Service Abstractions",
+      "codeHash": "3be9e7424714238724da9aa559faa2c2779f959ce3dc057895e5cbe6c932b7c5",
+      "spec": {
+        "template": "compare",
+        "title": "DevOps architecture analysis for Composite Resource Definitions (XRD",
+        "leftLabel": "Standard Infrastructure",
+        "rightLabel": "Target Implementation",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Evaluating system provision and validating designed.",
+            "left": {
+              "code": "baselineProvision",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetDesigned",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Evaluating system resource and validating deliver.",
+            "left": {
+              "code": "baselineResource",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetDeliver",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Evaluating system ounces and validating pizzas.",
+            "left": {
+              "code": "baselineOunces",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetPizzas",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Evaluating system tier and validating medium.",
+            "left": {
+              "code": "baselineTier",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetMedium",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "DevOps architecture analysis for Composite Resource Definitions (XRD",
+        "leftLabel": "Standard Infrastructure",
+        "rightLabel": "Target Implementation",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Evaluating system provision and validating designed.",
+            "left": {
+              "code": "baselineProvision",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetDesigned",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Evaluating system resource and validating deliver.",
+            "left": {
+              "code": "baselineResource",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetDeliver",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Evaluating system ounces and validating pizzas.",
+            "left": {
+              "code": "baselineOunces",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetPizzas",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Evaluating system tier and validating medium.",
+            "left": {
+              "code": "baselineTier",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetMedium",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "GitOps Control Plane Orchestration: Unifying Crossplane and ArgoCD",
+      "codeHash": "43d829ea6c7baa586665fab47077b6d8efc79cf2b0cd9b629432d479b13b7bf2",
+      "spec": {
+        "template": "compare",
+        "title": "DevOps architecture analysis for GitOps Control Plane Orchestration:",
+        "leftLabel": "Standard Infrastructure",
+        "rightLabel": "Target Implementation",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Evaluating system crossplane and validating delivery.",
+            "left": {
+              "code": "baselineCrossplane",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetDelivery",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Evaluating system team and validating manifests.",
+            "left": {
+              "code": "baselineTeam",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetManifests",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Evaluating system safe and validating registers.",
+            "left": {
+              "code": "baselineSafe",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetRegisters",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Evaluating system billing and validating distribution.",
+            "left": {
+              "code": "baselineBilling",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetDistribution",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "DevOps architecture analysis for GitOps Control Plane Orchestration:",
+        "leftLabel": "Standard Infrastructure",
+        "rightLabel": "Target Implementation",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Evaluating system crossplane and validating delivery.",
+            "left": {
+              "code": "baselineCrossplane",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetDelivery",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Evaluating system team and validating manifests.",
+            "left": {
+              "code": "baselineTeam",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetManifests",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Evaluating system safe and validating registers.",
+            "left": {
+              "code": "baselineSafe",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetRegisters",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Evaluating system billing and validating distribution.",
+            "left": {
+              "code": "baselineBilling",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetDistribution",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Multi-Cloud Invariants: Drift Detection, External Secret Stores & Drift Remediation",
+      "codeHash": "a5695eb1b472d678014cb062a6ebe626d160c22f1677315c66a6c3a53c4e7e73",
+      "spec": {
+        "template": "compare",
+        "title": "DevOps architecture analysis for Production Multi-Cloud Invariants: ",
+        "leftLabel": "Standard Infrastructure",
+        "rightLabel": "Target Implementation",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Evaluating system negotiable and validating demands.",
+            "left": {
+              "code": "baselineNegotiable",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetDemands",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Evaluating system configurable and validating jitter.",
+            "left": {
+              "code": "baselineConfigurable",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetJitter",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Evaluating system deposit and validating bank.",
+            "left": {
+              "code": "baselineDeposit",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetBank",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Evaluating system test and validating automated.",
+            "left": {
+              "code": "baselineTest",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetAutomated",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "DevOps architecture analysis for Production Multi-Cloud Invariants: ",
+        "leftLabel": "Standard Infrastructure",
+        "rightLabel": "Target Implementation",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Evaluating system negotiable and validating demands.",
+            "left": {
+              "code": "baselineNegotiable",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetDemands",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Evaluating system configurable and validating jitter.",
+            "left": {
+              "code": "baselineConfigurable",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetJitter",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Evaluating system deposit and validating bank.",
+            "left": {
+              "code": "baselineDeposit",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetBank",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Evaluating system test and validating automated.",
+            "left": {
+              "code": "baselineTest",
+              "result": {
+                "text": "standard"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "targetAutomated",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

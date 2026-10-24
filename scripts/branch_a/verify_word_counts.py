@@ -3,7 +3,9 @@ import os
 
 sys.path.append(os.path.abspath('scripts/branch_a'))
 
-for day in [51, 52, 53, 54, 55]:
+days_to_check = [56, 57, 58, 59, 60]
+
+for day in days_to_check:
     mod_name = f"day{day}_content"
     try:
         mod = __import__(mod_name)
