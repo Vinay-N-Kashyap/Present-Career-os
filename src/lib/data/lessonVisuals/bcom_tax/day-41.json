@@ -1,0 +1,127 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "bcom_tax",
+  "day": 41,
+  "entries": [
+    {
+      "partIndex": 0,
+      "spec": {
+        "title": "Customs Boundary & Taxable Event",
+        "steps": [
+          {
+            "label": "Territorial Waters",
+            "caption": "Vessel crosses the maritime boundary into national territorial waters."
+          },
+          {
+            "label": "Customs Boundary",
+            "caption": "Customs jurisdiction attaches under the statutory charging provision."
+          },
+          {
+            "label": "Continuous Process",
+            "caption": "Importation continues until goods cross the physical customs barrier."
+          },
+          {
+            "label": "Tariff Date Lock",
+            "caption": "Tariff rates lock on the presentation date of bill of entry."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 1,
+      "spec": {
+        "title": "Import Clearance Lifecycle",
+        "steps": [
+          {
+            "label": "Arrival Manifest",
+            "caption": "Master delivers the electronic cargo manifest prior to vessel arrival."
+          },
+          {
+            "label": "Entry Inwards",
+            "caption": "Proper customs officer reviews records and grants entry inwards order."
+          },
+          {
+            "label": "Bill of Entry",
+            "caption": "Importer files white bill of entry for immediate home consumption."
+          },
+          {
+            "label": "Out of Charge",
+            "caption": "Inspector completes examination and issues the out of charge release."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 2,
+      "spec": {
+        "title": "High Seas Sales Contract Mechanics",
+        "steps": [
+          {
+            "label": "Title Endorsement",
+            "caption": "Consignee endorses negotiable bill of lading while goods are on high seas."
+          },
+          {
+            "label": "Contract Transfer",
+            "caption": "Contract transfers title to buyer prior to customs port clearance."
+          },
+          {
+            "label": "Schedule Three Scope",
+            "caption": "Transaction qualifies as statutory non-supply exempt from sales tax."
+          },
+          {
+            "label": "Customs Assessment",
+            "caption": "Customs assessment calculates duties on the final contract price."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 3,
+      "spec": {
+        "title": "Export Clearance & Let Export Order",
+        "steps": [
+          {
+            "label": "Trade Code Setup",
+            "caption": "Exporter registers verified trade identification code on customs portal."
+          },
+          {
+            "label": "Entry Outwards",
+            "caption": "Master secures entry outwards authorization before embarking cargo."
+          },
+          {
+            "label": "Inspection Review",
+            "caption": "Officer inspects goods and verifies mandatory non-prohibition checks."
+          },
+          {
+            "label": "Let Export Order",
+            "caption": "Proper officer issues let export order allowing loading onto vessel."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 4,
+      "spec": {
+        "title": "Deterministic Customs Assessment Engine",
+        "steps": [
+          {
+            "label": "Currency Conversion",
+            "caption": "Simulator converts foreign invoice currency at notified exchange rates."
+          },
+          {
+            "label": "Basic Customs Duty",
+            "caption": "Engine computes basic customs duty on the statutory assessable base."
+          },
+          {
+            "label": "Social Welfare Fee",
+            "caption": "Surcharge attaches at ten percent on the primary basic customs duty."
+          },
+          {
+            "label": "Integrated Tax Base",
+            "caption": "Integrated tax applies on cumulative sum of assessable base and duties."
+          }
+        ]
+      }
+    }
+  ]
+}

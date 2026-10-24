@@ -1,0 +1,127 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "bcom_tax",
+  "day": 43,
+  "entries": [
+    {
+      "partIndex": 0,
+      "spec": {
+        "title": "Statutory Exemption Framework",
+        "steps": [
+          {
+            "label": "Exemption Power",
+            "caption": "Central government issues statutory notifications in public interest."
+          },
+          {
+            "label": "Strict Construction",
+            "caption": "Constitutional bench rules ambiguity resolves in favor of revenue."
+          },
+          {
+            "label": "Sunset Clause",
+            "caption": "Conditional customs exemptions expire after two financial years."
+          },
+          {
+            "label": "End Use Monitoring",
+            "caption": "Concessional rate rules require digital bonds and consumption logs."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 1,
+      "spec": {
+        "title": "Pilferage, Abatement & Remission",
+        "steps": [
+          {
+            "label": "Pilferage Relief",
+            "caption": "Importer bears no liability for goods pilfered before clearance."
+          },
+          {
+            "label": "Custodian Liability",
+            "caption": "Terminal custodian assumes statutory liability for pilfered cargo."
+          },
+          {
+            "label": "Proportional Abatement",
+            "caption": "Damaged goods duty is abated in direct ratio to diminution in value."
+          },
+          {
+            "label": "Duty Remission",
+            "caption": "Accrued customs duty is fully remitted upon accidental destruction."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 2,
+      "spec": {
+        "title": "Bonded Manufacturing Under MOOWR",
+        "steps": [
+          {
+            "label": "Facility Licensing",
+            "caption": "Manufacturing unit receives bonded warehouse license under statute."
+          },
+          {
+            "label": "Capital Deferment",
+            "caption": "Customs duties on imported machinery are deferred indefinitely."
+          },
+          {
+            "label": "Export Duty Waiver",
+            "caption": "Raw material customs duties are completely waived upon final export."
+          },
+          {
+            "label": "Domestic Clearance",
+            "caption": "Domestic clearances pay duty solely on consumed raw material fraction."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 3,
+      "spec": {
+        "title": "Duty Drawback Channels",
+        "steps": [
+          {
+            "label": "Unused Re-Exports",
+            "caption": "Ninety-eight percent of customs duty is refunded on unused goods."
+          },
+          {
+            "label": "Used Goods Scale",
+            "caption": "Sliding scale reduces drawback based on duration of domestic use."
+          },
+          {
+            "label": "Industry Rates",
+            "caption": "All industry rates provide standardized average drawback percentages."
+          },
+          {
+            "label": "Market Value Cap",
+            "caption": "Drawback is denied if claimed amount exceeds domestic market value."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 4,
+      "spec": {
+        "title": "Bonded Inventory Optimization Engine",
+        "steps": [
+          {
+            "label": "Abatement Formula",
+            "caption": "Engine computes proportional duty abatement for damaged consignments."
+          },
+          {
+            "label": "Bonded Lot Tracking",
+            "caption": "Software tracks capital assets and raw material inventory batches."
+          },
+          {
+            "label": "Drawback Optimizer",
+            "caption": "System evaluates industry rates against brand rate cost records."
+          },
+          {
+            "label": "Statutory Ledger",
+            "caption": "Automated engine generates compliance registers for customs audit."
+          }
+        ]
+      }
+    }
+  ]
+}
