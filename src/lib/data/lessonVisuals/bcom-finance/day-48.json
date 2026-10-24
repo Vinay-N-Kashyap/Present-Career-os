@@ -1,0 +1,316 @@
+{
+  "prefix": "bcom-finance",
+  "day": 48,
+  "visuals": [
+    {
+      "step": "part-1",
+      "template": "ledger-sheet",
+      "data": {
+        "title": "LBO Ledger: Private Equity Returns Framewo",
+        "caption": "Returns attribution ledger reconciling value creation gains.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 2500000000.0,
+          "totalCredit": 2500000000.0,
+          "rows": [
+            {
+              "account": "Acquired Enterprise Value",
+              "debit": 2500000000.0,
+              "credit": 0.0
+            },
+            {
+              "account": "Total Debt Financed",
+              "debit": 0.0,
+              "credit": 1500000000.0
+            },
+            {
+              "account": "Sponsor Equity Invested",
+              "debit": 0.0,
+              "credit": 1000000000.0
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Transaction Structuring",
+            "description": "Establish purchase price multiples and capital tranches."
+          },
+          {
+            "id": "say1",
+            "label": "Waterfall Execution",
+            "description": "Model cash flow generation and debt paydown trajectories."
+          },
+          {
+            "id": "example",
+            "label": "Returns Decomposition",
+            "description": "Decompose equity gains across operational and financial drivers."
+          },
+          {
+            "id": "tryIt",
+            "label": "Committee Verification",
+            "description": "Verify debt covenant compliance and emit cryptographic pass token."
+          }
+        ]
+      },
+      "codeBindings": [
+        {
+          "sourceCodeHash": "091f66d5c4d1526963c5f5d971ba1aaa5afb005a5a1b8a7cdda9306e6a7d315b",
+          "variablePath": "engine.run",
+          "highlightLines": [
+            1,
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "step": "part-2",
+      "template": "ledger-sheet",
+      "data": {
+        "title": "LBO Ledger: The DuPont-Style LBO Value Cre",
+        "caption": "Returns attribution ledger reconciling value creation gains.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 2500000000.0,
+          "totalCredit": 2500000000.0,
+          "rows": [
+            {
+              "account": "Acquired Enterprise Value",
+              "debit": 2500000000.0,
+              "credit": 0.0
+            },
+            {
+              "account": "Total Debt Financed",
+              "debit": 0.0,
+              "credit": 1500000000.0
+            },
+            {
+              "account": "Sponsor Equity Invested",
+              "debit": 0.0,
+              "credit": 1000000000.0
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Transaction Structuring",
+            "description": "Establish purchase price multiples and capital tranches."
+          },
+          {
+            "id": "say1",
+            "label": "Waterfall Execution",
+            "description": "Model cash flow generation and debt paydown trajectories."
+          },
+          {
+            "id": "example",
+            "label": "Returns Decomposition",
+            "description": "Decompose equity gains across operational and financial drivers."
+          },
+          {
+            "id": "tryIt",
+            "label": "Committee Verification",
+            "description": "Verify debt covenant compliance and emit cryptographic pass token."
+          }
+        ]
+      },
+      "codeBindings": [
+        {
+          "sourceCodeHash": "091f66d5c4d1526963c5f5d971ba1aaa5afb005a5a1b8a7cdda9306e6a7d315b",
+          "variablePath": "engine.run",
+          "highlightLines": [
+            1,
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "step": "part-3",
+      "template": "ledger-sheet",
+      "data": {
+        "title": "LBO Ledger: Management Equity Rollovers & ",
+        "caption": "Returns attribution ledger reconciling value creation gains.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 2500000000.0,
+          "totalCredit": 2500000000.0,
+          "rows": [
+            {
+              "account": "Acquired Enterprise Value",
+              "debit": 2500000000.0,
+              "credit": 0.0
+            },
+            {
+              "account": "Total Debt Financed",
+              "debit": 0.0,
+              "credit": 1500000000.0
+            },
+            {
+              "account": "Sponsor Equity Invested",
+              "debit": 0.0,
+              "credit": 1000000000.0
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Transaction Structuring",
+            "description": "Establish purchase price multiples and capital tranches."
+          },
+          {
+            "id": "say1",
+            "label": "Waterfall Execution",
+            "description": "Model cash flow generation and debt paydown trajectories."
+          },
+          {
+            "id": "example",
+            "label": "Returns Decomposition",
+            "description": "Decompose equity gains across operational and financial drivers."
+          },
+          {
+            "id": "tryIt",
+            "label": "Committee Verification",
+            "description": "Verify debt covenant compliance and emit cryptographic pass token."
+          }
+        ]
+      },
+      "codeBindings": [
+        {
+          "sourceCodeHash": "091f66d5c4d1526963c5f5d971ba1aaa5afb005a5a1b8a7cdda9306e6a7d315b",
+          "variablePath": "engine.run",
+          "highlightLines": [
+            1,
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "step": "part-4",
+      "template": "ledger-sheet",
+      "data": {
+        "title": "LBO Ledger: Multi-Dimensional Sensitivity ",
+        "caption": "Returns attribution ledger reconciling value creation gains.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 2500000000.0,
+          "totalCredit": 2500000000.0,
+          "rows": [
+            {
+              "account": "Acquired Enterprise Value",
+              "debit": 2500000000.0,
+              "credit": 0.0
+            },
+            {
+              "account": "Total Debt Financed",
+              "debit": 0.0,
+              "credit": 1500000000.0
+            },
+            {
+              "account": "Sponsor Equity Invested",
+              "debit": 0.0,
+              "credit": 1000000000.0
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Transaction Structuring",
+            "description": "Establish purchase price multiples and capital tranches."
+          },
+          {
+            "id": "say1",
+            "label": "Waterfall Execution",
+            "description": "Model cash flow generation and debt paydown trajectories."
+          },
+          {
+            "id": "example",
+            "label": "Returns Decomposition",
+            "description": "Decompose equity gains across operational and financial drivers."
+          },
+          {
+            "id": "tryIt",
+            "label": "Committee Verification",
+            "description": "Verify debt covenant compliance and emit cryptographic pass token."
+          }
+        ]
+      },
+      "codeBindings": [
+        {
+          "sourceCodeHash": "091f66d5c4d1526963c5f5d971ba1aaa5afb005a5a1b8a7cdda9306e6a7d315b",
+          "variablePath": "engine.run",
+          "highlightLines": [
+            1,
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "step": "part-5",
+      "template": "ledger-sheet",
+      "data": {
+        "title": "LBO Ledger: Production LBO Returns Engine:",
+        "caption": "Returns attribution ledger reconciling value creation gains.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 2500000000.0,
+          "totalCredit": 2500000000.0,
+          "rows": [
+            {
+              "account": "Acquired Enterprise Value",
+              "debit": 2500000000.0,
+              "credit": 0.0
+            },
+            {
+              "account": "Total Debt Financed",
+              "debit": 0.0,
+              "credit": 1500000000.0
+            },
+            {
+              "account": "Sponsor Equity Invested",
+              "debit": 0.0,
+              "credit": 1000000000.0
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Transaction Structuring",
+            "description": "Establish purchase price multiples and capital tranches."
+          },
+          {
+            "id": "say1",
+            "label": "Waterfall Execution",
+            "description": "Model cash flow generation and debt paydown trajectories."
+          },
+          {
+            "id": "example",
+            "label": "Returns Decomposition",
+            "description": "Decompose equity gains across operational and financial drivers."
+          },
+          {
+            "id": "tryIt",
+            "label": "Committee Verification",
+            "description": "Verify debt covenant compliance and emit cryptographic pass token."
+          }
+        ]
+      },
+      "codeBindings": [
+        {
+          "sourceCodeHash": "091f66d5c4d1526963c5f5d971ba1aaa5afb005a5a1b8a7cdda9306e6a7d315b",
+          "variablePath": "engine.run",
+          "highlightLines": [
+            1,
+            10
+          ]
+        }
+      ]
+    }
+  ]
+}
