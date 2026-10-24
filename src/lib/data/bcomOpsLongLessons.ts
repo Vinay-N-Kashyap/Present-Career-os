@@ -20811,5 +20811,242 @@ Branch B Status: BRANCH_B_100_PERCENT_COMPLETE_180_OF_180_DAYS_ACHIEVED`,
         "Compute percentage of total variation (%TV) and Number of Distinct Data Categories (ndc), verifying that %TV is below 10% and ndc is at least 5 for production sign-off."
       ]
     }
+  },
+  {
+    "day": 38,
+    "coursePrefix": "bcom_ops",
+    "title": "Design of Experiments (DOE): Full Factorial 2^k, Fractional Factorial Resolution IV/V & Taguchi Orthogonal Arrays",
+    "minutes": 38,
+    "parts": [
+      {
+        "title": "Principles of Experimental Design: Factorial Structure, Orthogonality, Confounding & Sparsity-of-Effects Principle",
+        "say": [
+          "In modern industrial operations management and manufacturing process optimization, continuous improvement initiatives frequently stall when engineering teams rely on archaic One-Factor-at-a-Time (OFAT) experimental approaches. Under the OFAT methodology, an engineer varies a single operational parameter\u2014such as furnace temperature\u2014while holding all other variables, such as conveyor line speed and chamber pressure, rigidly fixed at nominal baseline setpoints. This intuitive approach suffers from two catastrophic operational flaws that severely handicap manufacturing competitiveness. First, OFAT experimentation is monumentally inefficient in resource utilization, requiring a vast number of experimental runs to explore a multi-dimensional parameter space. Second, and far more critically, OFAT is fundamentally incapable of detecting factor interactions. In complex physical systems such as semiconductor plasma etching, polymer injection molding, or biochemical fermentation, the optimal setting of one factor almost always depends dynamically on the level of another factor. If temperature and pressure interact synergistically to accelerate reaction kinetics, an OFAT experiment will completely miss the global optimum, settling instead for a mediocre local setting while consuming substantial engineering budgets and production downtime.",
+          "The geometric topography of manufacturing response surfaces explains why OFAT experimentation inevitably fails in real-world factory environments. Multi-variable industrial processes rarely exhibit flat, independent response landscapes where each parameter exerts an isolated linear effect. Instead, physical processes feature complex multi-dimensional response hills, rising ridges, and saddle points created by thermodynamic, chemical, and mechanical couplings. When an engineer adjusts a single factor while locking all others, the experimental trajectory is restricted to a narrow, one-dimensional slice across this multi-dimensional terrain. If the slice does not intersect the true ridge of maximum yield, the investigation reaches an artificial plateau that falsely appears optimal. Ronald Fisher resolved this dilemma by demonstrating that varying factors simultaneously across an integrated matrix provides exhaustive visibility into the entire multi-dimensional space, exposing hidden ridges and interaction valleys that single-variable testing can never uncover.",
+          "To establish complete mathematical rigor, Fisher developed the foundational framework of orthogonal factorial experimental design. In a two-level factorial architecture, each factor is evaluated at two standardized levels designated as low and high, mathematically encoded as minus one and plus one. The foundational mathematical property governing these designs is orthogonality. Two factor columns in an experimental matrix are strictly orthogonal if their inner product across all design runs sums to exactly zero. Orthogonality guarantees that the estimation of each main effect and interaction contrast is completely independent and uncorrelated with every other effect in the design. In matrix notation, the transpose of the design matrix multiplied by itself yields a perfectly diagonal matrix, eliminating multicollinearity and ensuring that adding or removing an insignificant factor from the subsequent regression analysis does not alter the numerical estimates of the remaining active factors.",
+          "Factorial experimentation is anchored theoretically by two foundational empirical principles: the Sparsity-of-Effects Principle and the Hierarchical Ordering Principle. The Sparsity-of-Effects Principle, also known as the Pareto principle of experimental design, asserts that in any high-dimensional physical manufacturing system, the observed response variability is overwhelmingly driven by a vital few main effects and low-order two-factor interactions, while higher-order interactions (three-factor and higher) are statistically negligible and behave indistinguishably from random background noise. The Hierarchical Ordering Principle further stipulates that main effects are statistically more likely to be active than two-factor interactions, which in turn are far more likely to be active than three-factor interactions. When production capacity or material costs restrict total trial runs, operations engineers leverage these principles to construct fractional designs, deliberately confounding negligible higher-order interactions with primary drivers to extract maximum diagnostic intelligence from minimal experimental trials.",
+          "When experimental resources, production capacity, or material costs restrict the total number of trial runs that can be executed, operations engineers leverage confounding and aliasing to construct fractional designs. Confounding occurs when two or more physical effects cannot be separated mathematically because their respective design columns in the matrix are identical or linearly dependent. In a full factorial design, all main effects and interactions are completely unconfounded and orthogonal. In a fractional design, by contrast, deliberate confounding is engineered so that high-order, negligible interactions are aliased with primary main effects or critical two-factor interactions. Mastery of design resolution, generator selection, and alias structure analysis empowers operations managers to extract maximum diagnostic intelligence from minimum experimental trials, reducing experimental cycle times by up to eighty-seven percent while maintaining uncompromising statistical rigor."
+        ],
+        "example": "An electronics manufacturing facility optimizes a surface mount solder paste stencil printing process across squeegee pressure, print speed, and separation velocity. Utilizing an orthogonal two-level factorial design with eight runs, the team identifies a strong interaction between squeegee pressure and print speed that had been completely masked under previous single-variable testing.",
+        "tryIt": "Vary the factor contrast weights to observe how orthogonality ensures independent main effect calculations without parameter cross-talk.",
+        "check": {
+          "question": "Why is the traditional One-Factor-at-a-Time (OFAT) experimental methodology fundamentally inferior to orthogonal factorial design in industrial process optimization?",
+          "options": [
+            "OFAT is unable to detect factor interactions and requires far more experimental runs to explore a multi-dimensional parameter space.",
+            "OFAT automatically generates Resolution V fractional designs without requiring defining relations.",
+            "OFAT eliminates all random experimental error by holding ambient factory temperature at absolute zero.",
+            "OFAT maximizes the Taguchi Signal-to-Noise ratio by converting all continuous factors into binary attributes."
+          ],
+          "answer": 0,
+          "answerIndex": 0,
+          "why": "OFAT experimentation holds all other variables fixed while varying one factor, making it blind to synergistic or antagonistic factor interactions. Factorial designs vary factors simultaneously across an orthogonal matrix, detecting interactions with superior statistical efficiency."
+        },
+        "code": "runs = [\n    (-1, -1, -1, 14.2),\n    ( 1, -1, -1, 18.5),\n    (-1,  1, -1, 15.1),\n    ( 1,  1, -1, 22.4),\n    (-1, -1,  1, 16.8),\n    ( 1, -1,  1, 21.0),\n    (-1,  1,  1, 17.5),\n    ( 1,  1,  1, 25.6)\n]\nn = len(runs)\nmain_effects = {}\nfor factor_idx, name in enumerate(['A', 'B', 'C']):\n    contrast = sum(row[factor_idx] * row[3] for row in runs)\n    effect = (2.0 / n) * contrast\n    main_effects[name] = effect\n    print(f'Factor {name} Effect: {effect:+.3f}')",
+        "output": "Factor A Effect: +5.975\nFactor B Effect: +2.525\nFactor C Effect: +2.675",
+        "codeNotes": [
+          {
+            "line": 1,
+            "note": "Defines 8-run 2^3 factorial design with coded levels and empirical response"
+          },
+          {
+            "line": 13,
+            "note": "Computes inner product contrast between factor column and response vector"
+          },
+          {
+            "line": 14,
+            "note": "Calculates physical main effect size scaled by 2 divided by total run count"
+          },
+          {
+            "line": 16,
+            "note": "Prints estimated main effects showing Factor A as primary process driver"
+          }
+        ]
+      },
+      {
+        "title": "Two-Level Full Factorial Designs (2^k): Main Effects, Interaction Contrasts & Yates's Algorithm",
+        "say": [
+          "The workhorse of industrial parameter optimization is the two-level full factorial design, denoted mathematically as two to the power of k, where k represents the number of independent process factors under investigation. In a two to the power of three full factorial design, three distinct operational factors are evaluated across eight treatment runs, forming the geometric vertices of a three-dimensional cube in coded factor space. Each experimental run represents a unique combination of low and high factor settings, mapped from physical engineering units into normalized dimensionless coordinates spanning negative one to positive one. Coded coordinates eliminate dimensional scale disparities between diverse physical parameters, ensuring that temperature in degrees Celsius, pressure in megapascals, and feed rate in millimeters per minute can be directly compared on an equitable mathematical basis.",
+          "In a two to the power of k design, calculating main effects and interaction contrasts follows straightforward matrix multiplication principles. A contrast is the linear combination of experimental responses weighted by the plus or minus signs in the corresponding factor column. The main effect of factor A measures the average change in process response when factor A moves from its low level to its high level, calculated mathematically as two divided by the total number of runs multiplied by the contrast sum. In an ordinary least squares regression model, the regression coefficient beta for factor A equals exactly half of its main effect estimate. The two-factor interaction column AB is constructed by multiplying the algebraic signs of the individual columns for A and B element by element across all design rows. If the resulting interaction effect AB is positive and statistically significant, it indicates that increasing factor A produces an even greater performance boost when factor B is high than when factor B is low, revealing vital synergistic mechanics that govern the underlying physics of the manufacturing process.",
+          "To accelerate the computation of all two to the power of k contrasts without requiring manual matrix inversion, industrial statisticians frequently employ Frank Yates's algorithm. Yates's algorithm arranges the treatment combinations in standard run order, starting from the all-low baseline run, and executes k successive cycles of paired additions and subtractions. In each cycle, the upper half of the new column is generated by adding adjacent pairs of numbers from the preceding column, while the lower half is generated by subtracting the first number of each pair from the second. After k iterations, the final column directly yields the exact contrast totals for the grand mean, all main effects, and all interaction terms. This elegant recursive formulation provides massive computational efficiency, forming the algorithmic backbone of automated experimental design engines deployed in modern digital manufacturing platforms.",
+          "Statistical evaluation of a full factorial experiment culminates in the Analysis of Variance (ANOVA) table. The sum of squares for each individual effect equals the square of its contrast divided by the total number of experimental runs. Because the design is perfectly orthogonal, the sum of squares for all main effects and interactions sums directly to the model sum of squares without covariance overlap. When replication runs are available at each design point or at the center point of the design, a pure experimental error sum of squares can be extracted to compute F-test statistics and p-values. If replication is absent due to tight manufacturing schedules, the Sparsity-of-Effects Principle allows engineers to pool insignificant higher-order interactions into a surrogate residual error term, enabling formal hypothesis testing of vital main effects and two-factor interactions to certify process improvements.",
+          "A vital augmentation to two-level factorial designs is the incorporation of replicated center points, where all quantitative factors are set exactly halfway between their low and high operating levels, encoded as zero. Center points provide two immense operational advantages: they allow the calculation of an independent, model-free estimate of pure experimental error without requiring full design replication, and they provide a single degree of freedom test for overall quadratic curvature. If the average response observed at the center points differs significantly from the average response observed at the factorial cube vertices, the linear plane is insufficient to model process physics, warning operations engineers that quadratic terms are active and that response surface methodology must be deployed."
+        ],
+        "example": "A precision CNC milling cell investigates spindle speed, feed rate, and axial depth of cut on surface roughness using an eight-run full factorial design. The ANOVA decomposition reveals that spindle speed accounts for sixty-eight percent of total variation, while the interaction between speed and feed rate accounts for nearly six percent, guiding precise feed-override programming.",
+        "tryIt": "Adjust the response values for the high-factor runs to observe how interaction sums of squares shift dynamically in the ANOVA table.",
+        "check": {
+          "question": "How is the interaction column for two factors (such as AB) constructed in a two-level full factorial experimental matrix?",
+          "options": [
+            "By multiplying the algebraic signs (+1 and -1) of factor A and factor B element-wise across each design row.",
+            "By adding the physical engineering units of factor A and factor B together for each trial.",
+            "By dividing the grand sample mean by the number of distinct replication trials.",
+            "By running Frank Yates's algorithm in reverse order to invert the variance components."
+          ],
+          "answer": 0,
+          "answerIndex": 0,
+          "why": "In two-level factorial designs, interaction columns are generated by taking the element-by-element product of the coded levels (+1 and -1) of their constituent factors, preserving design orthogonality."
+        },
+        "code": "runs = [\n    (-1, -1, -1, 14.2), ( 1, -1, -1, 18.5),\n    (-1,  1, -1, 15.1), ( 1,  1, -1, 22.4),\n    (-1, -1,  1, 16.8), ( 1, -1,  1, 21.0),\n    (-1,  1,  1, 17.5), ( 1,  1,  1, 25.6)\n]\nn = 8\ncontrasts = {\n    'A': sum(r[0] * r[3] for r in runs),\n    'B': sum(r[1] * r[3] for r in runs),\n    'C': sum(r[2] * r[3] for r in runs),\n    'AB': sum(r[0] * r[1] * r[3] for r in runs),\n    'AC': sum(r[0] * r[2] * r[3] for r in runs),\n    'BC': sum(r[1] * r[2] * r[3] for r in runs),\n    'ABC': sum(r[0] * r[1] * r[2] * r[3] for r in runs)\n}\nss = {k: (v**2) / n for k, v in contrasts.items()}\neffects = {k: (2.0 / n) * v for k, v in contrasts.items()}\n\nfor k in ['A', 'B', 'C', 'AB', 'AC', 'BC', 'ABC']:\n    print(f'{k:>3}: Effect = {effects[k]:+6.3f} | SS = {ss[k]:6.3f}')",
+        "output": "  A: Effect = +5.975 | SS = 71.401\n  B: Effect = +2.525 | SS = 12.751\n  C: Effect = +2.675 | SS = 14.311\n AB: Effect = +1.725 | SS =  5.951\n AC: Effect = +0.175 | SS =  0.061\n BC: Effect = +0.125 | SS =  0.031\nABC: Effect = +0.225 | SS =  0.101",
+        "codeNotes": [
+          {
+            "line": 7,
+            "note": "Constructs all main effect, two-way interaction, and three-way interaction contrasts"
+          },
+          {
+            "line": 15,
+            "note": "Computes exact sum of squares for each effect as contrast squared divided by N"
+          },
+          {
+            "line": 16,
+            "note": "Calculates physical effect estimates scaled by 2 divided by N"
+          },
+          {
+            "line": 19,
+            "note": "Outputs formatted ANOVA summary revealing primary drivers and AB synergy"
+          }
+        ]
+      },
+      {
+        "title": "Fractional Factorial Screening (2^(k-p)): Generators, Defining Relations & Resolution III, IV, and V Properties",
+        "say": [
+          "As the number of process factors k expands to five, six, seven, or more variables during early-stage process development, the total number of runs required by a full factorial design scales exponentially as two to the power of k. Evaluating seven factors in a full factorial requires one hundred twenty-eight experimental trials. In capital-intensive industries such as aerospace composite curing, semiconductor chemical vapor deposition, or pharmaceutical synthesis, executing over one hundred trials is economically unfeasible and operationally disruptive. Fortunately, the Sparsity-of-Effects Principle guarantees that out of the one hundred twenty-seven total degrees of freedom in a seven-factor experiment, the overwhelming majority belong to three-factor, four-factor, and higher interactions that are physically non-existent. Fractional factorial designs, denoted as two to the power of k minus p, exploit this redundancy by running only a carefully chosen fraction\u2014such as one-half, one-fourth, or one-eighth\u2014of the full factorial design, drastically reducing experimental trials while extracting the essential process intelligence.",
+          "Constructing a fractional factorial design requires selecting design generators and establishing the defining relation. In a one-half fraction of a four-factor design, denoted as two to the power of four minus one, the engineer begins with a full factorial in the first three base factors A, B, and C, totaling eight runs. The fourth factor D is then generated by setting its column equal to the three-factor interaction product of the base factors, such that D equals A times B times C. Multiplying both sides of this generator by D yields the defining relation I equals A times B times C times D, where I represents the identity column of all plus ones. The defining relation serves as the algebraic key to the entire alias structure of the fractional experiment. By multiplying any factor contrast by the defining relation using modulo-two exponent arithmetic, the engineer immediately reveals which effects are inextricably aliased together.",
+          "The diagnostic capability and risk profile of a fractional factorial design are characterized by its Resolution, traditionally denoted by Roman numerals III, IV, and V. A Resolution III design has a defining relation whose shortest word contains three letters. In Resolution III designs, main effects are aliased with two-factor interactions; for example, factor A might be aliased with the BC interaction. Consequently, Resolution III designs represent high-risk screening tools permissible only for rough preliminary triage where interactions are assumed to be non-existent. A Resolution IV design has a defining relation whose shortest word contains four letters, such as I equals ABCD. In Resolution IV designs, all main effects are completely clear of two-factor interactions, but two-factor interactions are aliased with each other in pairs, such as AB aliased with CD. Resolution IV provides an outstanding industrial compromise, guaranteeing uncorrupted main effect estimates at minimal experimental cost.",
+          "A Resolution V design has a defining relation whose shortest word contains five letters, such as I equals ABCDE in a thirty-two run fractional design for five factors. In Resolution V designs, all main effects and all two-factor interactions are completely clear of each other, being aliased only with three-factor or higher interactions. Resolution V represents the gold standard for high-precision manufacturing optimization, providing complete clarity on all primary physical drivers and pairwise synergies without requiring full factorial execution. When ambiguous aliased pairs arise in Resolution IV screening, operations engineers execute targeted fold-over runs\u2014reversing the signs of one or all factors in a complementary second fraction\u2014to mathematically break the aliases and achieve definitive causal isolation.",
+          "To select the most robust fractional design among competing generator choices, quality engineers evaluate the design aberration. A minimum aberration design is one that minimizes the number of words of minimum length in its defining relation, ensuring that primary factor effects are confounded with as few low-order interactions as mathematically possible. By combining minimum aberration generator selection with sequential fold-over strategies, manufacturing enterprises can screen fifteen to twenty candidate variables in thirty-two runs, isolating the critical few drivers that govern factory throughput and product reliability."
+        ],
+        "example": "A pharmaceutical tablet compression team screens six formulation excipients and process parameters using a sixteen-run Resolution IV fractional factorial design. The design cleanly isolates all six main effects without two-factor interaction contamination, cutting required experimental runs from sixty-four down to sixteen and accelerating clinical batch validation by three weeks.",
+        "tryIt": "Inspect the defining relation to identify which two-factor interaction pairs become aliased when factor D is generated from A times B times C.",
+        "check": {
+          "question": "What is the defining structural property of a Resolution IV fractional factorial design?",
+          "options": [
+            "All main effects are completely clear of two-factor interactions, though two-factor interactions are aliased with each other in pairs.",
+            "All main effects are heavily aliased with two-factor interactions, preventing independent effect estimation.",
+            "All two-factor interactions are completely clear of each other and aliased only with four-factor terms.",
+            "The design requires running exactly two to the power of k trials without any fractional reduction."
+          ],
+          "answer": 0,
+          "answerIndex": 0,
+          "why": "A Resolution IV design (such as 2^(4-1) with I=ABCD) has words of length 4 in its defining relation. This guarantees that all main effects are completely unconfounded by two-factor interactions, although two-factor interactions are aliased with each other."
+        },
+        "code": "runs_base = [\n    (-1, -1, -1), ( 1, -1, -1),\n    (-1,  1, -1), ( 1,  1, -1),\n    (-1, -1,  1), ( 1, -1,  1),\n    (-1,  1,  1), ( 1,  1,  1)\n]\nfrac_design = []\nfor a, b, c in runs_base:\n    d = a * b * c\n    frac_design.append((a, b, c, d))\n\nprint(f'Fractional 2^(4-1) Design Generated: {len(frac_design)} runs (50% reduction)')\nprint('Defining Relation: I = ABCD (Resolution IV)')\nprint('Aliased Pairs: [AB = CD], [AC = BD], [AD = BC]')",
+        "output": "Fractional 2^(4-1) Design Generated: 8 runs (50% reduction)\nDefining Relation: I = ABCD (Resolution IV)\nAliased Pairs: [AB = CD], [AC = BD], [AD = BC]",
+        "codeNotes": [
+          {
+            "line": 1,
+            "note": "Defines 8-run full factorial base matrix for factors A, B, and C"
+          },
+          {
+            "line": 9,
+            "note": "Generates fourth factor D as the product of A, B, and C (generator D = ABC)"
+          },
+          {
+            "line": 12,
+            "note": "Reports 50% trial reduction achieving Resolution IV design structure"
+          },
+          {
+            "line": 14,
+            "note": "Displays alias patterns showing pairwise confounding among two-factor interactions"
+          }
+        ]
+      },
+      {
+        "title": "Taguchi Robust Parameter Design: Orthogonal Arrays (L8, L18), Control vs. Noise Factors & Signal-to-Noise (S/N) Ratios",
+        "say": [
+          "In the 1980s, Japanese quality pioneer Genichi Taguchi introduced a revolutionary philosophy of experimental design that transformed global manufacturing excellence: Robust Parameter Design. Traditional quality engineering focused almost exclusively on tightening manufacturing tolerances and installing expensive environmental controls to force production within specification boundaries. Taguchi recognized that this approach was economically unsustainable and fundamentally flawed. Instead, Taguchi advocated designing products and manufacturing processes to be inherently robust against uncontrollable environmental, operational, and material variations, termed Noise Factors. By systematically selecting the optimal combination of controllable design parameters, an enterprise can minimize output sensitivity to ambient temperature swings, raw material batch fluctuations, machine wear, and operator technique without incurring capital expenditure for cleanrooms or ultra-tight component tolerances.",
+          "Taguchi's philosophy is rooted in the Quality Loss Function, which quantifies the financial loss imparted to society when a product characteristic deviates from its nominal target value. Traditional quality models assumed that any product falling within specification limits inflicted zero loss, while any product outside limits was scrapped. Taguchi demonstrated that customer dissatisfaction, warranty costs, and field failures escalate quadratically as a function of squared deviation from target, expressed as L of y equals k times the quantity y minus m squared. To minimize this quadratic loss across real-world operational environments, engineers must focus simultaneously on two objectives: shifting the process mean precisely onto the target dimension and crushing process variance to near-zero levels.",
+          "To execute robust parameter design, Taguchi structured experiments around the Inner Array and Outer Array architecture. The Inner Array consists of controllable factors that the manufacturing engineer can freely adjust on the machine or in the product specification, organized using standard Taguchi Orthogonal Arrays such as the L8, L9, L18, or L27. The Outer Array, by contrast, deliberately introduces noise factors that cannot be controlled during full-scale commercial production, such as extreme ambient humidity, incoming resin melt flow index variation, or electrical line voltage fluctuation. For every single trial run in the inner controllable array, the entire outer noise array is executed, subjecting each proposed parameter recipe to intentional operational stress. This dual-matrix structure forces the experimental response to reveal which parameter configurations maintain stable performance despite severe environmental disturbances.",
+          "Taguchi replaced traditional mean response optimization with the Signal-to-Noise (S/N) ratio, measured in decibels. The S/N ratio serves as an objective objective function that simultaneously rewards achieving the target mean while severely penalizing response variance. Taguchi formulated three primary classes of S/N ratios depending on the engineering objective: Smaller-the-Better, Larger-the-Better, and Nominal-the-Best. For defect counts, surface roughness, tool wear, and parasitic vibration, the Smaller-the-Better ratio calculates as negative ten times the base-ten logarithm of the mean of squared responses. For tensile strength, fuel economy, battery cycle life, and catalytic yield, the Larger-the-Better ratio calculates as negative ten times the logarithm of the mean of inverted squared responses. For critical dimensions, nominal voltages, and fluid flow rates, the Nominal-the-Best ratio evaluates ten times the logarithm of the squared sample mean divided by the sample variance.",
+          "Taguchi optimization proceeds through an elegant two-step procedure that decouples variance reduction from target centering. In the first step, engineers identify control factors that exhibit strong effects on the Signal-to-Noise ratio and set them to maximize the S/N ratio, effectively crushing process variability and achieving maximum robustness against noise. In the second step, engineers locate signal or adjustment factors\u2014factors that exhibit strong influence on the process mean but have negligible impact on the S/N ratio\u2014and tune them to shift the average process response precisely onto the nominal customer specification. By mastering Taguchi orthogonal arrays and S/N ratio mechanics, operations leaders build high-reliability manufacturing processes that achieve six-sigma quality in the most unforgiving industrial environments."
+        ],
+        "example": "An automotive aluminum casting foundry optimizes high-pressure die casting parameters using an L8 Taguchi orthogonal array with an outer noise array representing raw ingot silicon variation. Maximizing the Smaller-the-Better S/N ratio for porosity reduces internal pore volume by seventy-four percent and boosts foundry yield from eighty-eight to ninety-seven percent.",
+        "tryIt": "Calculate the Smaller-the-Better S/N ratio across multiple defect counts to verify that lower values yield higher decibel performance metrics.",
+        "check": {
+          "question": "In Taguchi Robust Parameter Design, what is the core operational purpose of maximizing the Signal-to-Noise (S/N) ratio?",
+          "options": [
+            "To identify control factor settings that minimize process sensitivity to uncontrollable environmental and material noise factors.",
+            "To increase the absolute sound volume produced by automated industrial machinery on the factory floor.",
+            "To replace all preventive maintenance routines with post-production scrap sorting.",
+            "To eliminate the need for conducting ANOVA calculations on experimental response data."
+          ],
+          "answer": 0,
+          "answerIndex": 0,
+          "why": "Taguchi's S/N ratio serves as an objective optimization function that measures performance robustness against uncontrollable noise factors. Maximizing S/N minimizes output variance before adjustment factors are used to center the mean."
+        },
+        "code": "import math\n\ndef taguchi_sn_smaller(y_vals):\n    msd = sum(y**2 for y in y_vals) / len(y_vals)\n    return -10.0 * math.log10(msd)\n\ndef taguchi_sn_larger(y_vals):\n    msd = sum(1.0 / (y**2) for y in y_vals) / len(y_vals)\n    return -10.0 * math.log10(msd)\n\ndef taguchi_sn_nominal(y_vals):\n    m = sum(y_vals) / len(y_vals)\n    s2 = sum((y - m)**2 for y in y_vals) / (len(y_vals) - 1)\n    return 10.0 * math.log10((m**2) / s2)\n\nroughness = [1.2, 1.4, 1.1, 1.3]\nsn_stb = taguchi_sn_smaller(roughness)\n\nstrength = [85.2, 88.4, 84.9, 87.1]\nsn_ltb = taguchi_sn_larger(strength)\n\nprint(f'Surface Roughness (STB) S/N: {sn_stb:+.2f} dB')\nprint(f'Tensile Strength (LTB) S/N: {sn_ltb:+.2f} dB')",
+        "output": "Surface Roughness (STB) S/N: -1.97 dB\nTensile Strength (LTB) S/N: +38.73 dB",
+        "codeNotes": [
+          {
+            "line": 3,
+            "note": "Implements Taguchi Smaller-the-Better S/N formula penalizing mean squared deviations"
+          },
+          {
+            "line": 7,
+            "note": "Implements Larger-the-Better S/N formula penalizing inverted squared deviations"
+          },
+          {
+            "line": 11,
+            "note": "Implements Nominal-the-Best S/N formula balancing squared mean over variance"
+          },
+          {
+            "line": 21,
+            "note": "Outputs logarithmic decibel performance metrics for precision manufacturing"
+          }
+        ]
+      },
+      {
+        "title": "Production-Grade Python DOE Engine: Automated Contrast Matrix Generation, Alias Pattern Tracing & Pareto Effect Analysis",
+        "say": [
+          "To automate experimental design workflows across modern digital factories, industrial software engineers implement production-grade DOE engines in Python. In high-throughput advanced manufacturing environments\u2014such as automated SMT pick-and-place lines, robotic laser welding cells, and biopharmaceutical bioreactors\u2014process optimization cannot rely on intermittent manual statistical consulting. Modern Industry 4.0 architectures demand embedded, algorithmic DOE engines capable of programmatically generating candidate design matrices, validating orthogonality and balance, executing automated parameter sequencing via Manufacturing Execution Systems (MES), and computing contrast matrices, effect sizes, and ANOVA tables in real time.",
+          "The core algorithmic engine is encapsulated within the DOEEngine class. Upon receiving an arbitrary list of factor names, design matrix dictionaries, and empirical response vectors, the engine computes contrast vectors across all design columns via vectorized inner products. It scales contrasts by two over the total run count to yield physical main effects and interaction estimates, while simultaneously computing individual sums of squares and percentage contributions to total process variation. Crucially, the engine executes automated Pareto effect sorting, ranking all evaluated factors and interactions by their percentage contribution to response variability. This instantaneous prioritization allows process engineers to immediately distinguish the vital few active drivers from the trivial many background noise terms without parsing cumbersome statistical output files.",
+          "In addition to basic contrast analysis, production DOE engines incorporate diagnostic verification routines to evaluate model adequacy. The engine computes residual errors, checks for normality among unassigned contrast terms, and identifies potential curvature by evaluating center point responses against factorial vertices. If center points exhibit a statistically significant deviation from the linear plane, the engine automatically flags the presence of quadratic curvature, advising the engineering team to augment the two-level design with axial runs to form a Central Composite Design (CCD) for response surface optimization. This built-in diagnostic intelligence prevents operations teams from mistakenly deploying linear models to inherently non-linear chemical and thermal manufacturing phenomena.",
+          "Furthermore, production-grade DOE engines integrate automated normal probability plotting of effects, historically known as Daniel plots, as well as half-normal probability plots. In unreplicated screening designs where no pure error estimate is available from replicates, standard ANOVA F-tests cannot be computed directly. Daniel demonstrated that when all factor effects are inactive noise, their estimated contrasts will conform to a normal distribution centered at zero. By projecting effect magnitudes against standard normal quantiles, the engine automatically detects active factors that deviate noticeably from the linear noise line, providing an objective, algorithmic substitute for visual plotting in lights-out manufacturing environments.",
+          "To guarantee absolute mathematical integrity during uncrewed autonomous experimentation, the production DOE engine incorporates automated D-optimality and V-optimality scoring algorithms. In situations where physical machine geometries or metallurgical boundaries prevent operating at specific vertex combinations of the hypercube, the engine algorithmically generates coordinate-exchange candidate sets, maximizing the determinant of the information matrix to maintain maximum parameter estimation efficiency despite geometric constraints. Furthermore, the engine tracks sequential cumulative variance across successive experimental batches, computing statistical power curves to inform engineering leadership when sufficient evidence has been accumulated to terminate exploratory trials. By pairing algorithmic design generation with automated statistical stopping criteria, the enterprise optimizes capital allocation and eliminates redundant testing cycles.",
+          "Integrating the Python DOE engine directly into shop-floor supervisory control and data acquisition (SCADA) networks unlocks autonomous process optimization. When a new product revision is introduced or raw material suppliers are switched, the SCADA controller triggers the DOEEngine to execute an automated screening sequence during scheduled setup windows. As automated optical inspection cameras and in-line sensors capture finished part telemetry, the engine processes response vectors, updates regression response models, and transmits optimized recipe setpoints directly to machine programmable logic controllers (PLCs). Closed-loop parameter optimization eliminates human tuning subjectivity, slashing new product introduction ramp times from weeks to hours and establishing unbreakable operational agility."
+        ],
+        "example": "A smart semiconductor packaging plant deploys the DOEEngine class to optimize wire bonding ultrasonic power, bond force, and dwell time. The automated engine analyzes an eight-run full factorial matrix in twelve milliseconds, identifying ultrasonic power as the primary driver accounting for sixty-eight point three percent of bond pull strength variation.",
+        "tryIt": "Input custom response values to observe how the engine updates Pareto rankings and percentage contribution metrics instantaneously.",
+        "check": {
+          "question": "What is the primary industrial benefit of generating a Pareto effect ranking in the automated DOEEngine?",
+          "options": [
+            "It immediately separates the vital few active process factors from the trivial many noise terms, directing engineering focus to high-impact drivers.",
+            "It converts all fractional designs into unconstrained quadratic polynomial neural networks.",
+            "It eliminates the need for establishing control boundaries or conducting measurement systems analysis.",
+            "It forces all experimental response variables to follow an exact Cauchy distribution."
+          ],
+          "answer": 0,
+          "answerIndex": 0,
+          "why": "Pareto ranking sorts factor effects by their percentage contribution to total sum of squares, enabling operations teams to instantly identify the primary process drivers (Sparsity of Effects) without wading through complex statistical tables."
+        },
+        "code": "class DOEEngine:\n    def __init__(self, factors, design_matrix, responses):\n        self.factors = factors\n        self.matrix = design_matrix\n        self.y = responses\n        self.n = len(responses)\n\n    def analyze(self):\n        effects = {}\n        ss_dict = {}\n        for factor in self.factors:\n            contrast = sum(row[factor] * y for row, y in zip(self.matrix, self.y))\n            effect = (2.0 / self.n) * contrast\n            ss = (contrast ** 2) / self.n\n            effects[factor] = effect\n            ss_dict[factor] = ss\n\n        total_ss = sum(ss_dict.values())\n        pareto = sorted(ss_dict.items(), key=lambda x: x[1], reverse=True)\n\n        print('=== DESIGN OF EXPERIMENTS PARETO ANALYSIS ===')\n        for rank, (name, ss) in enumerate(pareto, 1):\n            pct = (ss / total_ss) * 100\n            print(f'Rank {rank}: Factor {name:<6} | Effect: {effects[name]:+6.3f} | SS: {ss:6.2f} ({pct:5.1f}%)')\n\nfactors = ['A', 'B', 'C', 'AB', 'AC', 'BC', 'ABC']\nmatrix = [\n    {'A': -1, 'B': -1, 'C': -1, 'AB':  1, 'AC':  1, 'BC':  1, 'ABC': -1},\n    {'A':  1, 'B': -1, 'C': -1, 'AB': -1, 'AC': -1, 'BC':  1, 'ABC':  1},\n    {'A': -1, 'B':  1, 'C': -1, 'AB': -1, 'AC':  1, 'BC': -1, 'ABC':  1},\n    {'A':  1, 'B':  1, 'C': -1, 'AB':  1, 'AC': -1, 'BC': -1, 'ABC': -1},\n    {'A': -1, 'B': -1, 'C':  1, 'AB':  1, 'AC': -1, 'BC': -1, 'ABC':  1},\n    {'A':  1, 'B': -1, 'C':  1, 'AB': -1, 'AC':  1, 'BC': -1, 'ABC': -1},\n    {'A': -1, 'B':  1, 'C':  1, 'AB': -1, 'AC': -1, 'BC':  1, 'ABC': -1},\n    {'A':  1, 'B':  1, 'C':  1, 'AB':  1, 'AC':  1, 'BC':  1, 'ABC':  1}\n]\nresponses = [14.2, 18.5, 15.1, 22.4, 16.8, 21.0, 17.5, 25.6]\nengine = DOEEngine(factors, matrix, responses)\nengine.analyze()",
+        "output": "=== DESIGN OF EXPERIMENTS PARETO ANALYSIS ===\nRank 1: Factor A      | Effect: +5.975 | SS:  71.40 ( 68.3%)\nRank 2: Factor C      | Effect: +2.675 | SS:  14.31 ( 13.7%)\nRank 3: Factor B      | Effect: +2.525 | SS:  12.75 ( 12.2%)\nRank 4: Factor AB     | Effect: +1.725 | SS:   5.95 (  5.7%)\nRank 5: Factor ABC    | Effect: +0.225 | SS:   0.10 (  0.1%)\nRank 6: Factor AC     | Effect: +0.175 | SS:   0.06 (  0.1%)\nRank 7: Factor BC     | Effect: +0.125 | SS:   0.03 (  0.0%)",
+        "codeNotes": [
+          {
+            "line": 1,
+            "note": "Defines DOEEngine class orchestrating automated contrast and Pareto analysis"
+          },
+          {
+            "line": 10,
+            "note": "Computes inner product contrasts across arbitrary coded design columns"
+          },
+          {
+            "line": 18,
+            "note": "Sorts effects by sum of squares magnitude to generate Pareto ranking"
+          },
+          {
+            "line": 34,
+            "note": "Executes analysis on industrial SMT stencil printing experimental data"
+          }
+        ]
+      }
+    ],
+    "projectStep": {
+      "title": "Industrial Case Study: High-Volume SMT Stencil Printing Parameter Optimization Engine",
+      "steps": [
+        "Construct an orthogonal 2^3 full factorial design exploring squeegee pressure, print speed, and stencil separation velocity with replicated center points.",
+        "Execute automated ANOVA contrast decomposition, computing main effects, two-factor interaction terms, and percentage contributions to response variance.",
+        "Generate Pareto effect charts and calculate Taguchi Smaller-the-Better Signal-to-Noise ratios, deploying optimal recipe setpoints directly to machine PLCs."
+      ]
+    }
   }
 ];
