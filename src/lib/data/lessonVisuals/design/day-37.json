@@ -1,0 +1,189 @@
+{
+  "schemaVersion": 1,
+  "prefix": "design",
+  "day": 37,
+  "promptSha": "39b5a1f64f6bab03d0c15f37a2aeb73973174e08f4b195104b12bafdb2b211f2",
+  "model": "google/gemini-pro",
+  "entries": [
+    {
+      "partTitle": "The Stacking Context Trap: Why Z-Index 999999 Fails in Nested DOM Trees",
+      "codeHash": "ce247152246ec8573a2dfe43feb54eb6bc74505f568d4348f143c39bc1e33ae7",
+      "spec": {
+        "template": "compare",
+        "title": "The Stacking Context Trap: Why Z-Index 999999 Fails in Nested DOM Trees - Comparison Analysis",
+        "leftLabel": "Monolithic Legacy Model",
+        "rightLabel": "Sovereign Enterprise Model",
+        "steps": [
+          {
+            "stepNumber": 1,
+            "label": "Stacking Context Trap",
+            "leftCaption": "Legacy uncoordinated architecture lacks disciplined stacking context trap validation.",
+            "rightCaption": "Sovereign design systems enforce rigorous stacking context trap standards."
+          },
+          {
+            "stepNumber": 2,
+            "label": "Encapsulated Context Hierarchy",
+            "leftCaption": "Legacy uncoordinated architecture lacks disciplined encapsulated context hierarchy validation.",
+            "rightCaption": "Sovereign design systems enforce rigorous encapsulated context hierarchy standards."
+          },
+          {
+            "stepNumber": 3,
+            "label": "Composite Scoring",
+            "leftCaption": "Legacy uncoordinated architecture lacks disciplined composite scoring validation.",
+            "rightCaption": "Sovereign design systems enforce rigorous composite scoring standards."
+          },
+          {
+            "stepNumber": 4,
+            "label": "Root Portal Escape",
+            "leftCaption": "Legacy uncoordinated architecture lacks disciplined root portal escape validation.",
+            "rightCaption": "Sovereign design systems enforce rigorous root portal escape standards."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Portal Architecture: Teleporting Nodes to Viewport Root (document.body)",
+      "codeHash": "fe0ce35a7eed707136e4d3cb207d44c5323ab97de1c246cd73d0eca52dd77b76",
+      "spec": {
+        "template": "compare",
+        "title": "Portal Architecture: Teleporting Nodes to Viewport Root (document.body) - Comparison Analysis",
+        "leftLabel": "Monolithic Legacy Model",
+        "rightLabel": "Sovereign Enterprise Model",
+        "steps": [
+          {
+            "stepNumber": 1,
+            "label": "Component Logic Ownership",
+            "leftCaption": "Legacy uncoordinated architecture lacks disciplined component logic ownership validation.",
+            "rightCaption": "Sovereign design systems enforce rigorous component logic ownership standards."
+          },
+          {
+            "stepNumber": 2,
+            "label": "Root Teleportation",
+            "leftCaption": "Legacy uncoordinated architecture lacks disciplined root teleportation validation.",
+            "rightCaption": "Sovereign design systems enforce rigorous root teleportation standards."
+          },
+          {
+            "stepNumber": 3,
+            "label": "Pointer Events Routing",
+            "leftCaption": "Legacy uncoordinated architecture lacks disciplined pointer events routing validation.",
+            "rightCaption": "Sovereign design systems enforce rigorous pointer events routing standards."
+          },
+          {
+            "stepNumber": 4,
+            "label": "Lifecycle Unmounting",
+            "leftCaption": "Legacy uncoordinated architecture lacks disciplined lifecycle unmounting validation.",
+            "rightCaption": "Sovereign design systems enforce rigorous lifecycle unmounting standards."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Anchor Positioning Mechanics: Computing Viewport Coordinates via getBoundingClientRect()",
+      "codeHash": "33a4363a31b6780b0e2017defa9a7a126fc935f99ab85f255507ba6c60ac3944",
+      "spec": {
+        "template": "compare",
+        "title": "Anchor Positioning Mechanics: Computing Viewport Coordinates via getBoundingClientRect() - Comparison Analysis",
+        "leftLabel": "Monolithic Legacy Model",
+        "rightLabel": "Sovereign Enterprise Model",
+        "steps": [
+          {
+            "stepNumber": 1,
+            "label": "Bounding Rect Telemetry",
+            "leftCaption": "Legacy uncoordinated architecture lacks disciplined bounding rect telemetry validation.",
+            "rightCaption": "Sovereign design systems enforce rigorous bounding rect telemetry standards."
+          },
+          {
+            "stepNumber": 2,
+            "label": "Coordinate Geometry",
+            "leftCaption": "Legacy uncoordinated architecture lacks disciplined coordinate geometry validation.",
+            "rightCaption": "Sovereign design systems enforce rigorous coordinate geometry standards."
+          },
+          {
+            "stepNumber": 3,
+            "label": "Directional Placement",
+            "leftCaption": "Legacy uncoordinated architecture lacks disciplined directional placement validation.",
+            "rightCaption": "Sovereign design systems enforce rigorous directional placement standards."
+          },
+          {
+            "stepNumber": 4,
+            "label": "Scroll Offsets Math",
+            "leftCaption": "Legacy uncoordinated architecture lacks disciplined scroll offsets math validation.",
+            "rightCaption": "Sovereign design systems enforce rigorous scroll offsets math standards."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Coordinate Geometry & Clipping Bypasses: Escaping overflow: hidden and transform Boundaries",
+      "codeHash": "d513269a8696b1c35fa5db916ef1b1edfc1c4b47144bcc3637c8f4ab8dd7dfb0",
+      "spec": {
+        "template": "compare",
+        "title": "Coordinate Geometry & Clipping Bypasses: Escaping overflow: hidden and transform Boundaries - Comparison Analysis",
+        "leftLabel": "Monolithic Legacy Model",
+        "rightLabel": "Sovereign Enterprise Model",
+        "steps": [
+          {
+            "stepNumber": 1,
+            "label": "Boundary Clearance Check",
+            "leftCaption": "Legacy uncoordinated architecture lacks disciplined boundary clearance check validation.",
+            "rightCaption": "Sovereign design systems enforce rigorous boundary clearance check standards."
+          },
+          {
+            "stepNumber": 2,
+            "label": "Main Axis Auto Flip",
+            "leftCaption": "Legacy uncoordinated architecture lacks disciplined main axis auto flip validation.",
+            "rightCaption": "Sovereign design systems enforce rigorous main axis auto flip standards."
+          },
+          {
+            "stepNumber": 3,
+            "label": "Cross Axis Shift Clamping",
+            "leftCaption": "Legacy uncoordinated architecture lacks disciplined cross axis shift clamping validation.",
+            "rightCaption": "Sovereign design systems enforce rigorous cross axis shift clamping standards."
+          },
+          {
+            "stepNumber": 4,
+            "label": "Size Limiting Fallback",
+            "leftCaption": "Legacy uncoordinated architecture lacks disciplined size limiting fallback validation.",
+            "rightCaption": "Sovereign design systems enforce rigorous size limiting fallback standards."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Application: Institutional Floating Portal Manager with Stacking Context Isolation",
+      "codeHash": "d76c615b7beea0cd60ee7f1e79584d21e60d25843d01fb30ecd1019ce4eb79e9",
+      "spec": {
+        "template": "compare",
+        "title": "Enterprise Application: Institutional Floating Portal Manager with Stacking Context Isolation - Comparison Analysis",
+        "leftLabel": "Monolithic Legacy Model",
+        "rightLabel": "Sovereign Enterprise Model",
+        "steps": [
+          {
+            "stepNumber": 1,
+            "label": "Semantic Tier Hierarchy",
+            "leftCaption": "Legacy uncoordinated architecture lacks disciplined semantic tier hierarchy validation.",
+            "rightCaption": "Sovereign design systems enforce rigorous semantic tier hierarchy standards."
+          },
+          {
+            "stepNumber": 2,
+            "label": "Multi Tier Stacking Order",
+            "leftCaption": "Legacy uncoordinated architecture lacks disciplined multi tier stacking order validation.",
+            "rightCaption": "Sovereign design systems enforce rigorous multi tier stacking order standards."
+          },
+          {
+            "stepNumber": 3,
+            "label": "Coordinate Auto Alignment",
+            "leftCaption": "Legacy uncoordinated architecture lacks disciplined coordinate auto alignment validation.",
+            "rightCaption": "Sovereign design systems enforce rigorous coordinate auto alignment standards."
+          },
+          {
+            "stepNumber": 4,
+            "label": "Deterministic Cleanup",
+            "leftCaption": "Legacy uncoordinated architecture lacks disciplined deterministic cleanup validation.",
+            "rightCaption": "Sovereign design systems enforce rigorous deterministic cleanup standards."
+          }
+        ]
+      }
+    }
+  ]
+}

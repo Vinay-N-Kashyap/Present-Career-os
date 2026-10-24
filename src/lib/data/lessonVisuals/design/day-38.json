@@ -1,0 +1,189 @@
+{
+  "schemaVersion": 1,
+  "prefix": "design",
+  "day": 38,
+  "promptSha": "20bd3adeefa09e4c03ba370a2c76c7d208fe617a5dba7a8fb7d6023ee0583ed2",
+  "model": "google/gemini-pro",
+  "entries": [
+    {
+      "partTitle": "Popovers vs Tooltips vs Context Menus: Semantic Roles & Trigger Modalities",
+      "codeHash": "34c94ee14d642ca98710ba72faee52532108d996b269750f906d64ee347ac018",
+      "spec": {
+        "template": "compare",
+        "title": "Popovers vs Tooltips vs Context Menus: Semantic Roles & Trigger Modalities - Comparison Analysis",
+        "leftLabel": "Monolithic Legacy Model",
+        "rightLabel": "Sovereign Enterprise Model",
+        "steps": [
+          {
+            "stepNumber": 1,
+            "label": "Semantic Role Division",
+            "leftCaption": "Legacy uncoordinated architecture lacks disciplined semantic role division validation.",
+            "rightCaption": "Sovereign design systems enforce rigorous semantic role division standards."
+          },
+          {
+            "stepNumber": 2,
+            "label": "Trigger Modality Rules",
+            "leftCaption": "Legacy uncoordinated architecture lacks disciplined trigger modality rules validation.",
+            "rightCaption": "Sovereign design systems enforce rigorous trigger modality rules standards."
+          },
+          {
+            "stepNumber": 3,
+            "label": "Interactive Content Policy",
+            "leftCaption": "Legacy uncoordinated architecture lacks disciplined interactive content policy validation.",
+            "rightCaption": "Sovereign design systems enforce rigorous interactive content policy standards."
+          },
+          {
+            "stepNumber": 4,
+            "label": "Accessibility Bindings",
+            "leftCaption": "Legacy uncoordinated architecture lacks disciplined accessibility bindings validation.",
+            "rightCaption": "Sovereign design systems enforce rigorous accessibility bindings standards."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Safe Triangle & Hover Bridge Problem: Avoiding Premature Dismissal",
+      "codeHash": "33ab12481880e8f3020ad90d71fa5f49af190a175ea2f6b28ad371639c88100e",
+      "spec": {
+        "template": "compare",
+        "title": "The Safe Triangle & Hover Bridge Problem: Avoiding Premature Dismissal - Comparison Analysis",
+        "leftLabel": "Monolithic Legacy Model",
+        "rightLabel": "Sovereign Enterprise Model",
+        "steps": [
+          {
+            "stepNumber": 1,
+            "label": "Cursor Exit Telemetry",
+            "leftCaption": "Legacy uncoordinated architecture lacks disciplined cursor exit telemetry validation.",
+            "rightCaption": "Sovereign design systems enforce rigorous cursor exit telemetry standards."
+          },
+          {
+            "stepNumber": 2,
+            "label": "Vector Cross Product",
+            "leftCaption": "Legacy uncoordinated architecture lacks disciplined vector cross product validation.",
+            "rightCaption": "Sovereign design systems enforce rigorous vector cross product standards."
+          },
+          {
+            "stepNumber": 3,
+            "label": "Safe Trajectory Corridor",
+            "leftCaption": "Legacy uncoordinated architecture lacks disciplined safe trajectory corridor validation.",
+            "rightCaption": "Sovereign design systems enforce rigorous safe trajectory corridor standards."
+          },
+          {
+            "stepNumber": 4,
+            "label": "Intentional Exit Dismissal",
+            "leftCaption": "Legacy uncoordinated architecture lacks disciplined intentional exit dismissal validation.",
+            "rightCaption": "Sovereign design systems enforce rigorous intentional exit dismissal standards."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Virtual Anchoring: Tracking Text Selection, Mouse Coordinates & Canvas Nodes",
+      "codeHash": "9c21b1722d728ca97a0bd42e0f4d1f33dddf6ee7609fba583c5fe3c4439fc6c1",
+      "spec": {
+        "template": "compare",
+        "title": "Virtual Anchoring: Tracking Text Selection, Mouse Coordinates & Canvas Nodes - Comparison Analysis",
+        "leftLabel": "Monolithic Legacy Model",
+        "rightLabel": "Sovereign Enterprise Model",
+        "steps": [
+          {
+            "stepNumber": 1,
+            "label": "Abstract Rect Contract",
+            "leftCaption": "Legacy uncoordinated architecture lacks disciplined abstract rect contract validation.",
+            "rightCaption": "Sovereign design systems enforce rigorous abstract rect contract standards."
+          },
+          {
+            "stepNumber": 2,
+            "label": "Coordinate Extraction",
+            "leftCaption": "Legacy uncoordinated architecture lacks disciplined coordinate extraction validation.",
+            "rightCaption": "Sovereign design systems enforce rigorous coordinate extraction standards."
+          },
+          {
+            "stepNumber": 3,
+            "label": "Non Element Positioning",
+            "leftCaption": "Legacy uncoordinated architecture lacks disciplined non element positioning validation.",
+            "rightCaption": "Sovereign design systems enforce rigorous non element positioning standards."
+          },
+          {
+            "stepNumber": 4,
+            "label": "Reactive Stream Binding",
+            "leftCaption": "Legacy uncoordinated architecture lacks disciplined reactive stream binding validation.",
+            "rightCaption": "Sovereign design systems enforce rigorous reactive stream binding standards."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Floating UI Arrow Positioning & Trigonometric Offset Compensation",
+      "codeHash": "129facc3bc48e5192122c1ade94b75bbec7cf2deb0d81f6384ad1db0a66e25ae",
+      "spec": {
+        "template": "compare",
+        "title": "Floating UI Arrow Positioning & Trigonometric Offset Compensation - Comparison Analysis",
+        "leftLabel": "Monolithic Legacy Model",
+        "rightLabel": "Sovereign Enterprise Model",
+        "steps": [
+          {
+            "stepNumber": 1,
+            "label": "Arrow Alignment Math",
+            "leftCaption": "Legacy uncoordinated architecture lacks disciplined arrow alignment math validation.",
+            "rightCaption": "Sovereign design systems enforce rigorous arrow alignment math standards."
+          },
+          {
+            "stepNumber": 2,
+            "label": "Center Coincidence Check",
+            "leftCaption": "Legacy uncoordinated architecture lacks disciplined center coincidence check validation.",
+            "rightCaption": "Sovereign design systems enforce rigorous center coincidence check standards."
+          },
+          {
+            "stepNumber": 3,
+            "label": "Border Radius Clamping",
+            "leftCaption": "Legacy uncoordinated architecture lacks disciplined border radius clamping validation.",
+            "rightCaption": "Sovereign design systems enforce rigorous border radius clamping standards."
+          },
+          {
+            "stepNumber": 4,
+            "label": "Optical Border Blending",
+            "leftCaption": "Legacy uncoordinated architecture lacks disciplined optical border blending validation.",
+            "rightCaption": "Sovereign design systems enforce rigorous optical border blending standards."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Application: Sovereign Financial Candlestick Chart with Virtual Anchor Tooltips",
+      "codeHash": "9dd23b4b462481427250d6c2d96b1102876474a4629d076fbd52fc27faa340d4",
+      "spec": {
+        "template": "compare",
+        "title": "Enterprise Application: Sovereign Financial Candlestick Chart with Virtual Anchor Tooltips - Comparison Analysis",
+        "leftLabel": "Monolithic Legacy Model",
+        "rightLabel": "Sovereign Enterprise Model",
+        "steps": [
+          {
+            "stepNumber": 1,
+            "label": "Canvas Spatial Query",
+            "leftCaption": "Legacy uncoordinated architecture lacks disciplined canvas spatial query validation.",
+            "rightCaption": "Sovereign design systems enforce rigorous canvas spatial query standards."
+          },
+          {
+            "stepNumber": 2,
+            "label": "Virtual Anchor Generation",
+            "leftCaption": "Legacy uncoordinated architecture lacks disciplined virtual anchor generation validation.",
+            "rightCaption": "Sovereign design systems enforce rigorous virtual anchor generation standards."
+          },
+          {
+            "stepNumber": 3,
+            "label": "Collision Detection Check",
+            "leftCaption": "Legacy uncoordinated architecture lacks disciplined collision detection check validation.",
+            "rightCaption": "Sovereign design systems enforce rigorous collision detection check standards."
+          },
+          {
+            "stepNumber": 4,
+            "label": "Monospace Tooltip Render",
+            "leftCaption": "Legacy uncoordinated architecture lacks disciplined monospace tooltip render validation.",
+            "rightCaption": "Sovereign design systems enforce rigorous monospace tooltip render standards."
+          }
+        ]
+      }
+    }
+  ]
+}

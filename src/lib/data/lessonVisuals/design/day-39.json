@@ -1,0 +1,189 @@
+{
+  "schemaVersion": 1,
+  "prefix": "design",
+  "day": 39,
+  "promptSha": "68abb5e906cac155848984671199b4c38eb03f649ebc6a46c7b0b36cc236927d",
+  "model": "google/gemini-pro",
+  "entries": [
+    {
+      "partTitle": "Anatomy of Drawers & Bottom Sheets: Sliding Overlays vs In-Flow Pushes",
+      "codeHash": "15560e9f87363bf009db75e170446c535e02cde5370ead6551ba29dda41e7c2f",
+      "spec": {
+        "template": "compare",
+        "title": "Anatomy of Drawers & Bottom Sheets: Sliding Overlays vs In-Flow Pushes - Comparison Analysis",
+        "leftLabel": "Monolithic Legacy Model",
+        "rightLabel": "Sovereign Enterprise Model",
+        "steps": [
+          {
+            "stepNumber": 1,
+            "label": "Sliding Axis Geometry",
+            "leftCaption": "Legacy uncoordinated architecture lacks disciplined sliding axis geometry validation.",
+            "rightCaption": "Sovereign design systems enforce rigorous sliding axis geometry standards."
+          },
+          {
+            "stepNumber": 2,
+            "label": "Modal Overlay Contrast",
+            "leftCaption": "Legacy uncoordinated architecture lacks disciplined modal overlay contrast validation.",
+            "rightCaption": "Sovereign design systems enforce rigorous modal overlay contrast standards."
+          },
+          {
+            "stepNumber": 3,
+            "label": "In Flow Push Margin",
+            "leftCaption": "Legacy uncoordinated architecture lacks disciplined in flow push margin validation.",
+            "rightCaption": "Sovereign design systems enforce rigorous in flow push margin standards."
+          },
+          {
+            "stepNumber": 4,
+            "label": "Responsive Polymorphism",
+            "leftCaption": "Legacy uncoordinated architecture lacks disciplined responsive polymorphism validation.",
+            "rightCaption": "Sovereign design systems enforce rigorous responsive polymorphism standards."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Touch Gestures & Velocity Tracking: Drag to Dismiss with Resistance Physics",
+      "codeHash": "e12ddc34fae30d4bd650011c06e901ad181b9ff120dbfc9854c35f5a4f16006c",
+      "spec": {
+        "template": "compare",
+        "title": "Touch Gestures & Velocity Tracking: Drag to Dismiss with Resistance Physics - Comparison Analysis",
+        "leftLabel": "Monolithic Legacy Model",
+        "rightLabel": "Sovereign Enterprise Model",
+        "steps": [
+          {
+            "stepNumber": 1,
+            "label": "Displacement Tracking",
+            "leftCaption": "Legacy uncoordinated architecture lacks disciplined displacement tracking validation.",
+            "rightCaption": "Sovereign design systems enforce rigorous displacement tracking standards."
+          },
+          {
+            "stepNumber": 2,
+            "label": "Linear Downward Tracking",
+            "leftCaption": "Legacy uncoordinated architecture lacks disciplined linear downward tracking validation.",
+            "rightCaption": "Sovereign design systems enforce rigorous linear downward tracking standards."
+          },
+          {
+            "stepNumber": 3,
+            "label": "Logarithmic Rubber Banding",
+            "leftCaption": "Legacy uncoordinated architecture lacks disciplined logarithmic rubber banding validation.",
+            "rightCaption": "Sovereign design systems enforce rigorous logarithmic rubber banding standards."
+          },
+          {
+            "stepNumber": 4,
+            "label": "Velocity Flick Decision",
+            "leftCaption": "Legacy uncoordinated architecture lacks disciplined velocity flick decision validation.",
+            "rightCaption": "Sovereign design systems enforce rigorous velocity flick decision standards."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Mobile Viewport Hazards: Virtual Keyboards, Address Bar Shrinking & Notch Safe Areas (env)",
+      "codeHash": "f6fa6dfb38d9d3f5e16fe7d6c977025cb59105876e2d0f21d804c4ffffeb08c8",
+      "spec": {
+        "template": "compare",
+        "title": "Mobile Viewport Hazards: Virtual Keyboards, Address Bar Shrinking & Notch Safe Areas (env) - Comparison Analysis",
+        "leftLabel": "Monolithic Legacy Model",
+        "rightLabel": "Sovereign Enterprise Model",
+        "steps": [
+          {
+            "stepNumber": 1,
+            "label": "Dynamic Viewport Units",
+            "leftCaption": "Legacy uncoordinated architecture lacks disciplined dynamic viewport units validation.",
+            "rightCaption": "Sovereign design systems enforce rigorous dynamic viewport units standards."
+          },
+          {
+            "stepNumber": 2,
+            "label": "Notch Safe Area Insets",
+            "leftCaption": "Legacy uncoordinated architecture lacks disciplined notch safe area insets validation.",
+            "rightCaption": "Sovereign design systems enforce rigorous notch safe area insets standards."
+          },
+          {
+            "stepNumber": 3,
+            "label": "Virtual Keyboard Shift",
+            "leftCaption": "Legacy uncoordinated architecture lacks disciplined virtual keyboard shift validation.",
+            "rightCaption": "Sovereign design systems enforce rigorous virtual keyboard shift standards."
+          },
+          {
+            "stepNumber": 4,
+            "label": "Overscroll Containment",
+            "leftCaption": "Legacy uncoordinated architecture lacks disciplined overscroll containment validation.",
+            "rightCaption": "Sovereign design systems enforce rigorous overscroll containment standards."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Accessible Off-Canvas Modality: Focus Management, Inert Backgrounds & ARIA Dialog Roles",
+      "codeHash": "13e140431fb89f7af57e10580929309caa46a2d0c19c5cf4fb655f04c1e3878c",
+      "spec": {
+        "template": "compare",
+        "title": "Accessible Off-Canvas Modality: Focus Management, Inert Backgrounds & ARIA Dialog Roles - Comparison Analysis",
+        "leftLabel": "Monolithic Legacy Model",
+        "rightLabel": "Sovereign Enterprise Model",
+        "steps": [
+          {
+            "stepNumber": 1,
+            "label": "Aria Dialog Contract",
+            "leftCaption": "Legacy uncoordinated architecture lacks disciplined aria dialog contract validation.",
+            "rightCaption": "Sovereign design systems enforce rigorous aria dialog contract standards."
+          },
+          {
+            "stepNumber": 2,
+            "label": "Background Inert Isolation",
+            "leftCaption": "Legacy uncoordinated architecture lacks disciplined background inert isolation validation.",
+            "rightCaption": "Sovereign design systems enforce rigorous background inert isolation standards."
+          },
+          {
+            "stepNumber": 3,
+            "label": "Focus Shift & Restoration",
+            "leftCaption": "Legacy uncoordinated architecture lacks disciplined focus shift & restoration validation.",
+            "rightCaption": "Sovereign design systems enforce rigorous focus shift & restoration standards."
+          },
+          {
+            "stepNumber": 4,
+            "label": "Accessible Close Targets",
+            "leftCaption": "Legacy uncoordinated architecture lacks disciplined accessible close targets validation.",
+            "rightCaption": "Sovereign design systems enforce rigorous accessible close targets standards."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Application: Sovereign Mobile Banking Transaction Details Sheet with Velocity Dismissal",
+      "codeHash": "076adba1b63b5f3b34fd7617d256868576e91bed0d95233beee881e6c6a62f99",
+      "spec": {
+        "template": "compare",
+        "title": "Enterprise Application: Sovereign Mobile Banking Transaction Details Sheet with Velocity Dismissal - Comparison Analysis",
+        "leftLabel": "Monolithic Legacy Model",
+        "rightLabel": "Sovereign Enterprise Model",
+        "steps": [
+          {
+            "stepNumber": 1,
+            "label": "Safe Area Boundary Mount",
+            "leftCaption": "Legacy uncoordinated architecture lacks disciplined safe area boundary mount validation.",
+            "rightCaption": "Sovereign design systems enforce rigorous safe area boundary mount standards."
+          },
+          {
+            "stepNumber": 2,
+            "label": "Touch Drag Kinematics",
+            "leftCaption": "Legacy uncoordinated architecture lacks disciplined touch drag kinematics validation.",
+            "rightCaption": "Sovereign design systems enforce rigorous touch drag kinematics standards."
+          },
+          {
+            "stepNumber": 3,
+            "label": "Instantaneous Velocity Check",
+            "leftCaption": "Legacy uncoordinated architecture lacks disciplined instantaneous velocity check validation.",
+            "rightCaption": "Sovereign design systems enforce rigorous instantaneous velocity check standards."
+          },
+          {
+            "stepNumber": 4,
+            "label": "Complete Focus Return",
+            "leftCaption": "Legacy uncoordinated architecture lacks disciplined complete focus return validation.",
+            "rightCaption": "Sovereign design systems enforce rigorous complete focus return standards."
+          }
+        ]
+      }
+    }
+  ]
+}

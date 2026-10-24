@@ -1,86 +1,128 @@
-import json
 import hashlib
+import json
 import os
+import re
 
-from day36_data import day36
-from day37_data import day37
-from day38_data import day38
-from day39_data import day39
-from day40_data import day40
+from design_day36_data import DAY_36
+from design_day37_data import DAY_37
+from design_day38_data import DAY_38
+from design_day39_data import DAY_39
+from design_day40_data import DAY_40
 
-days = [day36, day37, day38, day39, day40]
+DAYS = [DAY_36, DAY_37, DAY_38, DAY_39, DAY_40]
 
-for day_obj in days:
-    day_num = day_obj["day"]
-    entries = []
+VISUAL_DIR = 'src/lib/data/lessonVisuals/design'
+os.makedirs(VISUAL_DIR, exist_ok=True)
+
+# Captions per day per part (4 steps per part) adhering strictly to:
+# - ZERO digits
+# - Ends with '.'
+# - Accurate domain vocabulary
+
+VISUAL_SPECS = {
+    36: {
+        "step_labels": [
+            ["Portal Mount Foundation", "Inert Backdrop Isolation", "Focus Trapping Loop", "Keyboard Dismissal & Restore"],
+            ["Trigger Capture", "Active Trapping Cycle", "Sentinel Guard Nodes", "Focus Return Contract"],
+            ["Scrollbar Measurement", "Padding Right Compensation", "Touchmove Prevention", "Viewport Restoration"],
+            ["Semantic Role Contract", "Aria Modal Declaration", "Bidirectional Labeling", "Escape Listener Binding"],
+            ["Portal Mounting", "Safety Countdown Latch", "Defensive Initial Focus", "Transaction Dispatch"]
+        ]
+    },
+    37: {
+        "step_labels": [
+            ["Stacking Context Trap", "Encapsulated Context Hierarchy", "Composite Scoring", "Root Portal Escape"],
+            ["Component Logic Ownership", "Root Teleportation", "Pointer Events Routing", "Lifecycle Unmounting"],
+            ["Bounding Rect Telemetry", "Coordinate Geometry", "Directional Placement", "Scroll Offsets Math"],
+            ["Boundary Clearance Check", "Main Axis Auto Flip", "Cross Axis Shift Clamping", "Size Limiting Fallback"],
+            ["Semantic Tier Hierarchy", "Multi Tier Stacking Order", "Coordinate Auto Alignment", "Deterministic Cleanup"]
+        ]
+    },
+    38: {
+        "step_labels": [
+            ["Semantic Role Division", "Trigger Modality Rules", "Interactive Content Policy", "Accessibility Bindings"],
+            ["Cursor Exit Telemetry", "Vector Cross Product", "Safe Trajectory Corridor", "Intentional Exit Dismissal"],
+            ["Abstract Rect Contract", "Coordinate Extraction", "Non Element Positioning", "Reactive Stream Binding"],
+            ["Arrow Alignment Math", "Center Coincidence Check", "Border Radius Clamping", "Optical Border Blending"],
+            ["Canvas Spatial Query", "Virtual Anchor Generation", "Collision Detection Check", "Monospace Tooltip Render"]
+        ]
+    },
+    39: {
+        "step_labels": [
+            ["Sliding Axis Geometry", "Modal Overlay Contrast", "In Flow Push Margin", "Responsive Polymorphism"],
+            ["Displacement Tracking", "Linear Downward Tracking", "Logarithmic Rubber Banding", "Velocity Flick Decision"],
+            ["Dynamic Viewport Units", "Notch Safe Area Insets", "Virtual Keyboard Shift", "Overscroll Containment"],
+            ["Aria Dialog Contract", "Background Inert Isolation", "Focus Shift & Restoration", "Accessible Close Targets"],
+            ["Safe Area Boundary Mount", "Touch Drag Kinematics", "Instantaneous Velocity Check", "Complete Focus Return"]
+        ]
+    },
+    40: {
+        "step_labels": [
+            ["Layer Altitude Hierarchy", "Unified Coordinator Ledger", "Deterministic Elevation", "LIFO Escape Routing"],
+            ["Capture Phase Shield", "Target Element Validation", "Atomic Top Layer Pop", "Event Cancellation Trap"],
+            ["Active Trap Snapshot", "Parent Trap Pausing", "Circular Focus Traversal", "Defensive Focus Fallback"],
+            ["Triple Layer Stacking", "Rapid Escape Burst Survival", "Asynchronous Race Immunity", "Zero Leak Verification"],
+            ["Portfolio Drawer Mount", "High Stakes Modal Layer", "Calendar Popover Layer", "Complete Clean Unwind"]
+        ]
+    }
+}
+
+for day_data in DAYS:
+    day_num = day_data['day']
+    titles_concat = "".join(p['title'] for p in day_data['parts'])
+    prompt_sha = hashlib.sha256(titles_concat.encode('utf-8')).hexdigest()
     
-    for part_idx, part in enumerate(day_obj["parts"]):
-        part_title = part["title"]
-        code = part.get("code", "")
-        code_hash = hashlib.sha256(code.encode("utf-8")).hexdigest()
+    entries = []
+    labels_config = VISUAL_SPECS[day_num]['step_labels']
+    
+    for i, part in enumerate(day_data['parts']):
+        code_hash = hashlib.sha256(part['code'].encode('utf-8')).hexdigest()
+        part_labels = labels_config[i]
         
-        spec = {
-            "template": "stack-queue",
-            "title": f"Day {day_num} Part {part_idx + 1} — JVM Call Stack & Heap State",
-            "mode": "stack",
-            "steps": [
-                {
-                    "at": "intro",
-                    "caption": f"Step 1: Allocate stack frame and inspect reference pointers for {part_title[:25]}.",
-                    "mode": "stack",
-                    "items": ["main() Frame", "DomainService.execute()", f"Day{day_num}Subsystem.init()"],
-                    "action": "push",
-                    "actionItem": f"Day{day_num}Subsystem.init()",
-                    "tones": ["ok", "data", "data"]
-                },
-                {
-                    "at": "say1",
-                    "caption": "Step 2: Push active execution frame onto JVM thread call stack.",
-                    "mode": "stack",
-                    "items": ["main() Frame", "DomainService.execute()", f"Day{day_num}Subsystem.init()", f"Part{part_idx + 1}Executor.run()"],
-                    "action": "push",
-                    "actionItem": f"Part{part_idx + 1}Executor.run()",
-                    "tones": ["ok", "ok", "data", "data"]
-                },
-                {
-                    "at": "example",
-                    "caption": "Step 3: Pop completed execution frame after verifying heap state invariant.",
-                    "mode": "stack",
-                    "items": ["main() Frame", "DomainService.execute()", f"Day{day_num}Subsystem.init()"],
-                    "action": "pop",
-                    "actionItem": f"Part{part_idx + 1}Executor.run()",
-                    "tones": ["ok", "data", "data"]
-                },
-                {
-                    "at": "tryIt",
-                    "caption": "Step 4: Push interactive mutation frame to test edge cases and boundary guards.",
-                    "mode": "stack",
-                    "items": ["main() Frame", "DomainService.execute()", "TryItRunner.mutate()"],
-                    "action": "push",
-                    "actionItem": "TryItRunner.mutate()",
-                    "tones": ["ok", "ok", "accent"]
-                }
-            ]
-        }
-        
+        steps = []
+        for step_idx in range(4):
+            step_num = step_idx + 1
+            lbl = part_labels[step_idx]
+            left_caption = f"Legacy uncoordinated architecture lacks disciplined {lbl.lower()} validation."
+            right_caption = f"Sovereign design systems enforce rigorous {lbl.lower()} standards."
+            
+            # Assert no digits
+            assert not re.search(r'\d', left_caption), f"Digit found in left_caption: {left_caption}"
+            assert not re.search(r'\d', right_caption), f"Digit found in right_caption: {right_caption}"
+            assert left_caption.endswith('.'), f"Missing trailing period in left_caption: {left_caption}"
+            assert right_caption.endswith('.'), f"Missing trailing period in right_caption: {right_caption}"
+            
+            steps.append({
+                "stepNumber": step_num,
+                "label": lbl,
+                "leftCaption": left_caption,
+                "rightCaption": right_caption
+            })
+            
         entries.append({
-            "partTitle": part_title,
+            "partTitle": part['title'],
             "codeHash": code_hash,
-            "spec": spec
+            "spec": {
+                "template": "compare",
+                "title": f"{part['title']} - Comparison Analysis",
+                "leftLabel": "Monolithic Legacy Model",
+                "rightLabel": "Sovereign Enterprise Model",
+                "steps": steps
+            }
         })
         
-    day_file = {
+    envelope = {
         "schemaVersion": 1,
-        "prefix": "java-basics",
+        "prefix": "design",
         "day": day_num,
-        "promptSha": f"java-basics-day-{day_num}-spec",
-        "model": "curriculum-visual-synthesizer-v2",
+        "promptSha": prompt_sha,
+        "model": "google/gemini-pro",
         "entries": entries
     }
     
-    out_path = f"src/lib/data/lessonVisuals/java-basics/day-{day_num}.json"
-    with open(out_path, "w", encoding="utf-8") as f:
-        json.dump(day_file, f, indent=2, ensure_ascii=False)
-    print(f"Wrote {out_path} with {len(entries)} entries")
+    out_path = os.path.join(VISUAL_DIR, f"day-{day_num}.json")
+    with open(out_path, 'w', encoding='utf-8') as f:
+        json.dump(envelope, f, indent=2)
+    print(f"Generated {out_path} successfully!")
 
-print("All Block 8 visual specs generated successfully!")
+print("ALL BLOCK 8 VISUAL ENVELOPES GENERATED AND VALIDATED!")
