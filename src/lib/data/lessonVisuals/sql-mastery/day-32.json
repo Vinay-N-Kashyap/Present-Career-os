@@ -1,0 +1,1267 @@
+{
+  "schemaVersion": "2.0",
+  "prefix": "sql-mastery",
+  "day": 32,
+  "promptSha": "10b48a2abcc03eadd89577e2b9c3444a6d229f048300481270b835165f18ceee",
+  "model": "manual-expert",
+  "entries": [
+    {
+      "partTitle": "B+ Tree Physical Layout: Slotted Pages, Fillfactor, Leaf Page Doubly Linked Lists & High-Concurrency Latching",
+      "codeHash": "0bc7cdfc5bd79b2fda89101350b0f9e680efd0f53b231e08f8bdc09814944f54",
+      "spec": {
+        "template": "compare",
+        "title": "B-Tree Slotted Page Fillfactor Allocation Tradeoffs",
+        "leftLabel": "Full Fillfactor Allocation",
+        "rightLabel": "Reduced Fillfactor Headroom",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "In relational database architecture the tree remains foundational.",
+            "left": {
+              "code": "fillfactor = 100% density",
+              "result": {
+                "text": "zero free space headroom"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "fillfactor = 75% density",
+              "result": {
+                "text": "reserved update headroom"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "The physical architecture of a single database page follows slotted layout.",
+            "left": {
+              "code": "pd_lower meets pd_upper",
+              "result": {
+                "text": "immediate page split risk"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "free space between pointers",
+              "result": {
+                "text": "absorbs in-place updates"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "A corporate physical archive storing client document binders in vaults.",
+            "left": {
+              "code": "Overflowing binder split in two",
+              "result": {
+                "text": "costly archive reorganization"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Empty binder sleeves reserved",
+              "result": {
+                "text": "smooth document filing"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Execute the slotted page layout query to evaluate fillfactor free space.",
+            "left": {
+              "code": "Imminent Leaf Page Split",
+              "result": {
+                "text": "critical split risk"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Absorbing Concurrent Inserts",
+              "result": {
+                "text": "healthy operation"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "B-Tree Slotted Page Fillfactor Allocation Tradeoffs",
+        "leftLabel": "Full Fillfactor Allocation",
+        "rightLabel": "Reduced Fillfactor Headroom",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "In relational database architecture the tree remains foundational.",
+            "left": {
+              "code": "fillfactor = 100% density",
+              "result": {
+                "text": "zero free space headroom"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "fillfactor = 75% density",
+              "result": {
+                "text": "reserved update headroom"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "The physical architecture of a single database page follows slotted layout.",
+            "left": {
+              "code": "pd_lower meets pd_upper",
+              "result": {
+                "text": "immediate page split risk"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "free space between pointers",
+              "result": {
+                "text": "absorbs in-place updates"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "A corporate physical archive storing client document binders in vaults.",
+            "left": {
+              "code": "Overflowing binder split in two",
+              "result": {
+                "text": "costly archive reorganization"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Empty binder sleeves reserved",
+              "result": {
+                "text": "smooth document filing"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Execute the slotted page layout query to evaluate fillfactor free space.",
+            "left": {
+              "code": "Imminent Leaf Page Split",
+              "result": {
+                "text": "critical split risk"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Absorbing Concurrent Inserts",
+              "result": {
+                "text": "healthy operation"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "LSM-Trees (Log-Structured Merge Trees): MemTable, Write-Ahead Log (WAL), SSTables & Leveled Compaction",
+      "codeHash": "aa06456591fd4963c1fd124eb75ad38fc5c01082d76db48b665ebbaa7bb1f33c",
+      "spec": {
+        "template": "table",
+        "title": "Log-Structured Merge Tree Tier Characteristics",
+        "columns": [
+          "storage_tier",
+          "memory_media",
+          "immutability_state",
+          "compaction_role"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Streaming architectures revealed physical limitations of random disk writes.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "MemTable"
+                  },
+                  {
+                    "text": "Dynamic RAM"
+                  },
+                  {
+                    "text": "Mutable Active"
+                  },
+                  {
+                    "text": "Absorbs nanosecond writes"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "LSM engines convert random writes into high speed sequential disk appends.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "MemTable"
+                  },
+                  {
+                    "text": "Dynamic RAM"
+                  },
+                  {
+                    "text": "Mutable Active"
+                  },
+                  {
+                    "text": "Absorbs nanosecond writes"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Level Zero SSTable"
+                  },
+                  {
+                    "text": "NVMe Storage"
+                  },
+                  {
+                    "text": "Immutable Flushed"
+                  },
+                  {
+                    "text": "Sequential batch write"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "A fast paced emergency room hospital intake desk illustrates LSM triage.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "MemTable"
+                  },
+                  {
+                    "text": "Dynamic RAM"
+                  },
+                  {
+                    "text": "Mutable Active"
+                  },
+                  {
+                    "text": "Absorbs nanosecond writes"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Level Zero SSTable"
+                  },
+                  {
+                    "text": "NVMe Storage"
+                  },
+                  {
+                    "text": "Immutable Flushed"
+                  },
+                  {
+                    "text": "Sequential batch write"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Leveled Compaction"
+                  },
+                  {
+                    "text": "NVMe Storage"
+                  },
+                  {
+                    "text": "Compacted Merge"
+                  },
+                  {
+                    "text": "Purges tombstones"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Execute the LSM hierarchy query to evaluate background compaction triggers.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "MemTable"
+                  },
+                  {
+                    "text": "RAM"
+                  },
+                  {
+                    "text": "Live"
+                  },
+                  {
+                    "text": "Active"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "L0 Files"
+                  },
+                  {
+                    "text": "NVMe"
+                  },
+                  {
+                    "text": "Frozen"
+                  },
+                  {
+                    "text": "Overlapping"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "L1 to LN"
+                  },
+                  {
+                    "text": "NVMe"
+                  },
+                  {
+                    "text": "Sorted"
+                  },
+                  {
+                    "text": "Non-overlapping"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Log-Structured Merge Tree Tier Characteristics",
+        "columns": [
+          "storage_tier",
+          "memory_media",
+          "immutability_state",
+          "compaction_role"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Streaming architectures revealed physical limitations of random disk writes.",
+            "rows": [
+              {
+                "cells": [
+                  "MemTable",
+                  "Dynamic RAM",
+                  "Mutable Active",
+                  "Absorbs nanosecond writes"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "LSM engines convert random writes into high speed sequential disk appends.",
+            "rows": [
+              {
+                "cells": [
+                  "MemTable",
+                  "Dynamic RAM",
+                  "Mutable Active",
+                  "Absorbs nanosecond writes"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Level Zero SSTable",
+                  "NVMe Storage",
+                  "Immutable Flushed",
+                  "Sequential batch write"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "A fast paced emergency room hospital intake desk illustrates LSM triage.",
+            "rows": [
+              {
+                "cells": [
+                  "MemTable",
+                  "Dynamic RAM",
+                  "Mutable Active",
+                  "Absorbs nanosecond writes"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Level Zero SSTable",
+                  "NVMe Storage",
+                  "Immutable Flushed",
+                  "Sequential batch write"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Leveled Compaction",
+                  "NVMe Storage",
+                  "Compacted Merge",
+                  "Purges tombstones"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Execute the LSM hierarchy query to evaluate background compaction triggers.",
+            "rows": [
+              {
+                "cells": [
+                  "MemTable",
+                  "RAM",
+                  "Live",
+                  "Active"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "L0 Files",
+                  "NVMe",
+                  "Frozen",
+                  "Overlapping"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "L1 to LN",
+                  "NVMe",
+                  "Sorted",
+                  "Non-overlapping"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Write Amplification Factor (WAF) & Read Amplification: Analytical Modeling and Comparative Benchmark",
+      "codeHash": "3d9a0d69cd659673cc8ba564e02b1ac2e44d77bd0698c3a6311236c1fffb5b22",
+      "spec": {
+        "template": "table",
+        "title": "Write Amplification Factor and Flash Wear Benchmarks",
+        "columns": [
+          "storage_architecture",
+          "payload_bytes",
+          "bytes_written",
+          "waf_ratio"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Understanding amplification factors determines storage hardware lifespan.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "B-Tree Page Flush"
+                  },
+                  {
+                    "text": "Tiny Payload"
+                  },
+                  {
+                    "text": "Eight Kilobytes"
+                  },
+                  {
+                    "text": "Over one hundred"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Formally write amplification factor is defined as physical over logical bytes.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "B-Tree Page Flush"
+                  },
+                  {
+                    "text": "Tiny Payload"
+                  },
+                  {
+                    "text": "Eight Kilobytes"
+                  },
+                  {
+                    "text": "Over one hundred"
+                  }
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "LSM Sequential Append"
+                  },
+                  {
+                    "text": "Tiny Payload"
+                  },
+                  {
+                    "text": "Exact Bytes"
+                  },
+                  {
+                    "text": "Near one baseline"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "A cargo logistics company delivering letters illustrates fuel consumption.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "B-Tree Page Flush"
+                  },
+                  {
+                    "text": "Tiny Payload"
+                  },
+                  {
+                    "text": "Eight Kilobytes"
+                  },
+                  {
+                    "text": "Over one hundred"
+                  }
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "LSM Sequential Append"
+                  },
+                  {
+                    "text": "Tiny Payload"
+                  },
+                  {
+                    "text": "Exact Bytes"
+                  },
+                  {
+                    "text": "Near one baseline"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "LSM Compaction Pass"
+                  },
+                  {
+                    "text": "Batch Records"
+                  },
+                  {
+                    "text": "Compacted Run"
+                  },
+                  {
+                    "text": "Ten to thirty"
+                  }
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Execute the WAF benchmark query to examine in-place page flush overhead.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "B-Tree"
+                  },
+                  {
+                    "text": "Small updates"
+                  },
+                  {
+                    "text": "High write"
+                  },
+                  {
+                    "text": "Critical WAF"
+                  }
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "LSM Append"
+                  },
+                  {
+                    "text": "Appends"
+                  },
+                  {
+                    "text": "Minimal"
+                  },
+                  {
+                    "text": "Low WAF"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "LSM Compaction"
+                  },
+                  {
+                    "text": "Merges"
+                  },
+                  {
+                    "text": "Bounded"
+                  },
+                  {
+                    "text": "Controlled WAF"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Write Amplification Factor and Flash Wear Benchmarks",
+        "columns": [
+          "storage_architecture",
+          "payload_bytes",
+          "bytes_written",
+          "waf_ratio"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Understanding amplification factors determines storage hardware lifespan.",
+            "rows": [
+              {
+                "cells": [
+                  "B-Tree Page Flush",
+                  "Tiny Payload",
+                  "Eight Kilobytes",
+                  "Over one hundred"
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Formally write amplification factor is defined as physical over logical bytes.",
+            "rows": [
+              {
+                "cells": [
+                  "B-Tree Page Flush",
+                  "Tiny Payload",
+                  "Eight Kilobytes",
+                  "Over one hundred"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "LSM Sequential Append",
+                  "Tiny Payload",
+                  "Exact Bytes",
+                  "Near one baseline"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "A cargo logistics company delivering letters illustrates fuel consumption.",
+            "rows": [
+              {
+                "cells": [
+                  "B-Tree Page Flush",
+                  "Tiny Payload",
+                  "Eight Kilobytes",
+                  "Over one hundred"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "LSM Sequential Append",
+                  "Tiny Payload",
+                  "Exact Bytes",
+                  "Near one baseline"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "LSM Compaction Pass",
+                  "Batch Records",
+                  "Compacted Run",
+                  "Ten to thirty"
+                ],
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Execute the WAF benchmark query to examine in-place page flush overhead.",
+            "rows": [
+              {
+                "cells": [
+                  "B-Tree",
+                  "Small updates",
+                  "High write",
+                  "Critical WAF"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "LSM Append",
+                  "Appends",
+                  "Minimal",
+                  "Low WAF"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "LSM Compaction",
+                  "Merges",
+                  "Bounded",
+                  "Controlled WAF"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Specialized Indexes: GiST, GIN (Inverted Indexes for JSONB & Full-Text) and BRIN (Block Range Index for Append-Only Time Series)",
+      "codeHash": "01abee9e307b5737f72a58f3481fbbf8fc54aedf32ab32baea838f6131f4a728",
+      "spec": {
+        "template": "table",
+        "title": "PostgreSQL Specialized Index Characteristics",
+        "columns": [
+          "index_architecture",
+          "target_data_domain",
+          "storage_footprint",
+          "primary_strength"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Standard trees excel at scalar equality and range queries on integers.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Standard B-Tree"
+                  },
+                  {
+                    "text": "Scalar numbers dates"
+                  },
+                  {
+                    "text": "Large footprint"
+                  },
+                  {
+                    "text": "Logarithmic point lookups"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The generalized inverted index is premier for semi-structured data types.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Standard B-Tree"
+                  },
+                  {
+                    "text": "Scalar numbers dates"
+                  },
+                  {
+                    "text": "Large footprint"
+                  },
+                  {
+                    "text": "Logarithmic point lookups"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "GIN Inverted Index"
+                  },
+                  {
+                    "text": "JSONB documents arrays"
+                  },
+                  {
+                    "text": "Expansive posting list"
+                  },
+                  {
+                    "text": "Fast element search"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reference systems in a large library illustrate specialized index mappings.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Standard B-Tree"
+                  },
+                  {
+                    "text": "Scalar numbers dates"
+                  },
+                  {
+                    "text": "Large footprint"
+                  },
+                  {
+                    "text": "Logarithmic point lookups"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "GIN Inverted Index"
+                  },
+                  {
+                    "text": "JSONB documents arrays"
+                  },
+                  {
+                    "text": "Expansive posting list"
+                  },
+                  {
+                    "text": "Fast element search"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "BRIN Range Index"
+                  },
+                  {
+                    "text": "Append-only time series"
+                  },
+                  {
+                    "text": "Tiny summary blocks"
+                  },
+                  {
+                    "text": "Minimal storage footprint"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Execute the specialized index comparison query to evaluate BRIN savings.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Standard B-Tree"
+                  },
+                  {
+                    "text": "Scalar"
+                  },
+                  {
+                    "text": "Gigabytes"
+                  },
+                  {
+                    "text": "Precise lookups"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "GIN"
+                  },
+                  {
+                    "text": "JSONB"
+                  },
+                  {
+                    "text": "Gigabytes"
+                  },
+                  {
+                    "text": "Containment query"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "BRIN"
+                  },
+                  {
+                    "text": "Time series"
+                  },
+                  {
+                    "text": "Megabytes"
+                  },
+                  {
+                    "text": "Massive compression"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "PostgreSQL Specialized Index Characteristics",
+        "columns": [
+          "index_architecture",
+          "target_data_domain",
+          "storage_footprint",
+          "primary_strength"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Standard trees excel at scalar equality and range queries on integers.",
+            "rows": [
+              {
+                "cells": [
+                  "Standard B-Tree",
+                  "Scalar numbers dates",
+                  "Large footprint",
+                  "Logarithmic point lookups"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The generalized inverted index is premier for semi-structured data types.",
+            "rows": [
+              {
+                "cells": [
+                  "Standard B-Tree",
+                  "Scalar numbers dates",
+                  "Large footprint",
+                  "Logarithmic point lookups"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "GIN Inverted Index",
+                  "JSONB documents arrays",
+                  "Expansive posting list",
+                  "Fast element search"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reference systems in a large library illustrate specialized index mappings.",
+            "rows": [
+              {
+                "cells": [
+                  "Standard B-Tree",
+                  "Scalar numbers dates",
+                  "Large footprint",
+                  "Logarithmic point lookups"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "GIN Inverted Index",
+                  "JSONB documents arrays",
+                  "Expansive posting list",
+                  "Fast element search"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "BRIN Range Index",
+                  "Append-only time series",
+                  "Tiny summary blocks",
+                  "Minimal storage footprint"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Execute the specialized index comparison query to evaluate BRIN savings.",
+            "rows": [
+              {
+                "cells": [
+                  "Standard B-Tree",
+                  "Scalar",
+                  "Gigabytes",
+                  "Precise lookups"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "GIN",
+                  "JSONB",
+                  "Gigabytes",
+                  "Containment query"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "BRIN",
+                  "Time series",
+                  "Megabytes",
+                  "Massive compression"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Diagnostic Architecture Puzzle: High-Throughput Ingestion Failure \u2014 Diagnosing B-Tree Leaf Page Split Saturation and Switching to BRIN/LSM",
+      "codeHash": "31ad3172233648310b7743f5ba6e2ba8be95c0583349e259b72fec67d2a11105",
+      "spec": {
+        "template": "compare",
+        "title": "Random UUID B-Tree Split Degradation versus BRIN Remediation",
+        "leftLabel": "Random UUID B-Tree",
+        "rightLabel": "Monotonic BRIN Index",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "An industrial internet of things telematics platform ingesting events.",
+            "left": {
+              "code": "Random UUIDv4 B-Tree keys",
+              "result": {
+                "text": "constant page split saturation"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Block Range Index on timestamps",
+              "result": {
+                "text": "zero split append efficiency"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "During peak morning traffic the ingestion pipeline suffered failure.",
+            "left": {
+              "code": "Write latency: 850 ms",
+              "result": {
+                "text": "storage controller pinned"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Write latency: 0.60 ms",
+              "result": {
+                "text": "sub-millisecond throughput"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "A regional postal sorting facility illustrates filing cabinet bottlenecks.",
+            "left": {
+              "code": "Random filing shuffles drawers",
+              "result": {
+                "text": "highway traffic gridlock"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Chronological date-stamped bins",
+              "result": {
+                "text": "instant package processing"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Execute the telemetry incident audit query to evaluate page split bottlenecks.",
+            "left": {
+              "code": "Index Footprint: 84,000 MB",
+              "result": {
+                "text": "massive index bloat"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Index Footprint: 18 MB",
+              "result": {
+                "text": "healthy compression ratio"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Random UUID B-Tree Split Degradation versus BRIN Remediation",
+        "leftLabel": "Random UUID B-Tree",
+        "rightLabel": "Monotonic BRIN Index",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "An industrial internet of things telematics platform ingesting events.",
+            "left": {
+              "code": "Random UUIDv4 B-Tree keys",
+              "result": {
+                "text": "constant page split saturation"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Block Range Index on timestamps",
+              "result": {
+                "text": "zero split append efficiency"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "During peak morning traffic the ingestion pipeline suffered failure.",
+            "left": {
+              "code": "Write latency: 850 ms",
+              "result": {
+                "text": "storage controller pinned"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Write latency: 0.60 ms",
+              "result": {
+                "text": "sub-millisecond throughput"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "A regional postal sorting facility illustrates filing cabinet bottlenecks.",
+            "left": {
+              "code": "Random filing shuffles drawers",
+              "result": {
+                "text": "highway traffic gridlock"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Chronological date-stamped bins",
+              "result": {
+                "text": "instant package processing"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Execute the telemetry incident audit query to evaluate page split bottlenecks.",
+            "left": {
+              "code": "Index Footprint: 84,000 MB",
+              "result": {
+                "text": "massive index bloat"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Index Footprint: 18 MB",
+              "result": {
+                "text": "healthy compression ratio"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
