@@ -1,0 +1,659 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom-accounting",
+  "day": 56,
+  "promptSha": "prompt_sha_bcom_accounting_day56_v1",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Ind AS 1 Constitutional Framework, General Principles & Complete Set of Statements",
+      "codeHash": "3a8294d7b38bf814d55ca4fe2b0ba22d26a7c19edd850f7c94b032d67330ae83",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Ind AS 1 Constitutional Framework, Gener... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($80,005,000) for Ind AS 1 Constitutional Framework, Gener...",
+            "title": "Day 56 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 80005000,
+            "totalCredit": 80005000,
+            "entries": [
+              {
+                "id": "JNL-5601",
+                "account": "Non-Current Assets & Current Asset Reserves",
+                "debit": 80005000,
+                "balance": 80005000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 56"
+              },
+              {
+                "id": "JNL-5602",
+                "account": "Shareholders' Equity & Classified Debt Liabilities",
+                "credit": 80005000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & reporting adjustment accrual ($1,600,000).",
+            "title": "Day 56 Journal \u2014 Reporting & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 81605000,
+            "totalCredit": 81605000,
+            "entries": [
+              {
+                "id": "JNL-5601",
+                "account": "Non-Current Assets & Current Asset Reserves",
+                "debit": 80005000,
+                "balance": 80005000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5603",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 1600000,
+                "balance": 81605000,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5602",
+                "account": "Shareholders' Equity & Classified Debt Liabilities",
+                "credit": 81605000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 56 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 81605000,
+            "totalCredit": 81605000,
+            "entries": [
+              {
+                "id": "JNL-5601",
+                "account": "Non-Current Assets & Current Asset Reserves",
+                "debit": 80005000,
+                "balance": 80005000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5603",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 1600000,
+                "balance": 81605000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5602",
+                "account": "Shareholders' Equity & Classified Debt Liabilities",
+                "credit": 81605000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 56 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 81605000,
+            "totalCredit": 81605000,
+            "entries": [
+              {
+                "id": "JNL-5601",
+                "account": "Non-Current Assets & Current Asset Reserves",
+                "debit": 80005000,
+                "balance": 80005000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5603",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 1600000,
+                "balance": 81605000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5602",
+                "account": "Shareholders' Equity & Classified Debt Liabilities",
+                "credit": 81605000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Current vs Non-Current Balance Sheet Classification & Operating Cycle Criteria",
+      "codeHash": "3a8294d7b38bf814d55ca4fe2b0ba22d26a7c19edd850f7c94b032d67330ae83",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Current vs Non-Current Balance Sheet Cla... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($80,010,000) for Current vs Non-Current Balance Sheet Cla...",
+            "title": "Day 56 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 80010000,
+            "totalCredit": 80010000,
+            "entries": [
+              {
+                "id": "JNL-5601",
+                "account": "Non-Current Assets & Current Asset Reserves",
+                "debit": 80010000,
+                "balance": 80010000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 56"
+              },
+              {
+                "id": "JNL-5602",
+                "account": "Shareholders' Equity & Classified Debt Liabilities",
+                "credit": 80010000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & reporting adjustment accrual ($1,600,000).",
+            "title": "Day 56 Journal \u2014 Reporting & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 81610000,
+            "totalCredit": 81610000,
+            "entries": [
+              {
+                "id": "JNL-5601",
+                "account": "Non-Current Assets & Current Asset Reserves",
+                "debit": 80010000,
+                "balance": 80010000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5603",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 1600000,
+                "balance": 81610000,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5602",
+                "account": "Shareholders' Equity & Classified Debt Liabilities",
+                "credit": 81610000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 56 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 81610000,
+            "totalCredit": 81610000,
+            "entries": [
+              {
+                "id": "JNL-5601",
+                "account": "Non-Current Assets & Current Asset Reserves",
+                "debit": 80010000,
+                "balance": 80010000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5603",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 1600000,
+                "balance": 81610000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5602",
+                "account": "Shareholders' Equity & Classified Debt Liabilities",
+                "credit": 81610000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 56 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 81610000,
+            "totalCredit": 81610000,
+            "entries": [
+              {
+                "id": "JNL-5601",
+                "account": "Non-Current Assets & Current Asset Reserves",
+                "debit": 80010000,
+                "balance": 80010000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5603",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 1600000,
+                "balance": 81610000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5602",
+                "account": "Shareholders' Equity & Classified Debt Liabilities",
+                "credit": 81610000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Statement of Profit and Loss & The Two-Bucket Architecture of Other Comprehensive Income (OCI)",
+      "codeHash": "3a8294d7b38bf814d55ca4fe2b0ba22d26a7c19edd850f7c94b032d67330ae83",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Statement of Profit and Loss & The Two-B... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($80,015,000) for Statement of Profit and Loss & The Two-B...",
+            "title": "Day 56 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 80015000,
+            "totalCredit": 80015000,
+            "entries": [
+              {
+                "id": "JNL-5601",
+                "account": "Non-Current Assets & Current Asset Reserves",
+                "debit": 80015000,
+                "balance": 80015000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 56"
+              },
+              {
+                "id": "JNL-5602",
+                "account": "Shareholders' Equity & Classified Debt Liabilities",
+                "credit": 80015000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & reporting adjustment accrual ($1,600,000).",
+            "title": "Day 56 Journal \u2014 Reporting & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 81615000,
+            "totalCredit": 81615000,
+            "entries": [
+              {
+                "id": "JNL-5601",
+                "account": "Non-Current Assets & Current Asset Reserves",
+                "debit": 80015000,
+                "balance": 80015000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5603",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 1600000,
+                "balance": 81615000,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5602",
+                "account": "Shareholders' Equity & Classified Debt Liabilities",
+                "credit": 81615000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 56 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 81615000,
+            "totalCredit": 81615000,
+            "entries": [
+              {
+                "id": "JNL-5601",
+                "account": "Non-Current Assets & Current Asset Reserves",
+                "debit": 80015000,
+                "balance": 80015000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5603",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 1600000,
+                "balance": 81615000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5602",
+                "account": "Shareholders' Equity & Classified Debt Liabilities",
+                "credit": 81615000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 56 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 81615000,
+            "totalCredit": 81615000,
+            "entries": [
+              {
+                "id": "JNL-5601",
+                "account": "Non-Current Assets & Current Asset Reserves",
+                "debit": 80015000,
+                "balance": 80015000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5603",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 1600000,
+                "balance": 81615000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5602",
+                "account": "Shareholders' Equity & Classified Debt Liabilities",
+                "credit": 81615000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Statement of Changes in Equity (SOCIE) & Schedule III Division II Taxonomy",
+      "codeHash": "3a8294d7b38bf814d55ca4fe2b0ba22d26a7c19edd850f7c94b032d67330ae83",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Statement of Changes in Equity (SOCIE) &... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($80,020,000) for Statement of Changes in Equity (SOCIE) &...",
+            "title": "Day 56 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 80020000,
+            "totalCredit": 80020000,
+            "entries": [
+              {
+                "id": "JNL-5601",
+                "account": "Non-Current Assets & Current Asset Reserves",
+                "debit": 80020000,
+                "balance": 80020000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 56"
+              },
+              {
+                "id": "JNL-5602",
+                "account": "Shareholders' Equity & Classified Debt Liabilities",
+                "credit": 80020000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & reporting adjustment accrual ($1,600,000).",
+            "title": "Day 56 Journal \u2014 Reporting & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 81620000,
+            "totalCredit": 81620000,
+            "entries": [
+              {
+                "id": "JNL-5601",
+                "account": "Non-Current Assets & Current Asset Reserves",
+                "debit": 80020000,
+                "balance": 80020000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5603",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 1600000,
+                "balance": 81620000,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5602",
+                "account": "Shareholders' Equity & Classified Debt Liabilities",
+                "credit": 81620000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 56 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 81620000,
+            "totalCredit": 81620000,
+            "entries": [
+              {
+                "id": "JNL-5601",
+                "account": "Non-Current Assets & Current Asset Reserves",
+                "debit": 80020000,
+                "balance": 80020000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5603",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 1600000,
+                "balance": 81620000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5602",
+                "account": "Shareholders' Equity & Classified Debt Liabilities",
+                "credit": 81620000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 56 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 81620000,
+            "totalCredit": 81620000,
+            "entries": [
+              {
+                "id": "JNL-5601",
+                "account": "Non-Current Assets & Current Asset Reserves",
+                "debit": 80020000,
+                "balance": 80020000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5603",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 1600000,
+                "balance": 81620000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5602",
+                "account": "Shareholders' Equity & Classified Debt Liabilities",
+                "credit": 81620000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Ind AS 1 Taxonomy Platform, Balance Sheet Reconciliation & Day 56 Certification",
+      "codeHash": "3a8294d7b38bf814d55ca4fe2b0ba22d26a7c19edd850f7c94b032d67330ae83",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Enterprise Ind AS 1 Taxonomy Platform, B... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($80,025,000) for Enterprise Ind AS 1 Taxonomy Platform, B...",
+            "title": "Day 56 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 80025000,
+            "totalCredit": 80025000,
+            "entries": [
+              {
+                "id": "JNL-5601",
+                "account": "Non-Current Assets & Current Asset Reserves",
+                "debit": 80025000,
+                "balance": 80025000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 56"
+              },
+              {
+                "id": "JNL-5602",
+                "account": "Shareholders' Equity & Classified Debt Liabilities",
+                "credit": 80025000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & reporting adjustment accrual ($1,600,000).",
+            "title": "Day 56 Journal \u2014 Reporting & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 81625000,
+            "totalCredit": 81625000,
+            "entries": [
+              {
+                "id": "JNL-5601",
+                "account": "Non-Current Assets & Current Asset Reserves",
+                "debit": 80025000,
+                "balance": 80025000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5603",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 1600000,
+                "balance": 81625000,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5602",
+                "account": "Shareholders' Equity & Classified Debt Liabilities",
+                "credit": 81625000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 56 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 81625000,
+            "totalCredit": 81625000,
+            "entries": [
+              {
+                "id": "JNL-5601",
+                "account": "Non-Current Assets & Current Asset Reserves",
+                "debit": 80025000,
+                "balance": 80025000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5603",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 1600000,
+                "balance": 81625000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5602",
+                "account": "Shareholders' Equity & Classified Debt Liabilities",
+                "credit": 81625000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 56 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 81625000,
+            "totalCredit": 81625000,
+            "entries": [
+              {
+                "id": "JNL-5601",
+                "account": "Non-Current Assets & Current Asset Reserves",
+                "debit": 80025000,
+                "balance": 80025000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5603",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 1600000,
+                "balance": 81625000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5602",
+                "account": "Shareholders' Equity & Classified Debt Liabilities",
+                "credit": 81625000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

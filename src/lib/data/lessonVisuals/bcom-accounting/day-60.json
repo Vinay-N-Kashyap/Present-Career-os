@@ -1,0 +1,659 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom-accounting",
+  "day": 60,
+  "promptSha": "prompt_sha_bcom_accounting_day60_v1",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Executive Mandate of the Global Corporate Controller & Lead Statutory Audit Partner",
+      "codeHash": "a388afb2518b2b4946dc62888f6be8f947ef05aa350a36e48c6e9a7155c8039b",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Executive Mandate of the Global Corporat... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($124,005,000) for Executive Mandate of the Global Corporat...",
+            "title": "Day 60 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 124005000,
+            "totalCredit": 124005000,
+            "entries": [
+              {
+                "id": "JNL-6001",
+                "account": "Consolidated Multi-National Corporate Assets",
+                "debit": 124005000,
+                "balance": 124005000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 60"
+              },
+              {
+                "id": "JNL-6002",
+                "account": "Global Capital Reserves & Master Reporting Accounts",
+                "credit": 124005000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & reporting adjustment accrual ($16,566,400).",
+            "title": "Day 60 Journal \u2014 Reporting & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 140571400,
+            "totalCredit": 140571400,
+            "entries": [
+              {
+                "id": "JNL-6001",
+                "account": "Consolidated Multi-National Corporate Assets",
+                "debit": 124005000,
+                "balance": 124005000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-6003",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 16566400,
+                "balance": 140571400,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-6002",
+                "account": "Global Capital Reserves & Master Reporting Accounts",
+                "credit": 140571400,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 60 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 140571400,
+            "totalCredit": 140571400,
+            "entries": [
+              {
+                "id": "JNL-6001",
+                "account": "Consolidated Multi-National Corporate Assets",
+                "debit": 124005000,
+                "balance": 124005000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-6003",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 16566400,
+                "balance": 140571400,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-6002",
+                "account": "Global Capital Reserves & Master Reporting Accounts",
+                "credit": 140571400,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 60 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 140571400,
+            "totalCredit": 140571400,
+            "entries": [
+              {
+                "id": "JNL-6001",
+                "account": "Consolidated Multi-National Corporate Assets",
+                "debit": 124005000,
+                "balance": 124005000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-6003",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 16566400,
+                "balance": 140571400,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-6002",
+                "account": "Global Capital Reserves & Master Reporting Accounts",
+                "credit": 140571400,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Module 1: Comprehensive Financial Statement Assembly & Schedule III Taxonomy under Ind AS 1",
+      "codeHash": "a388afb2518b2b4946dc62888f6be8f947ef05aa350a36e48c6e9a7155c8039b",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Module 1: Comprehensive Financial Statem... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($124,010,000) for Module 1: Comprehensive Financial Statem...",
+            "title": "Day 60 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 124010000,
+            "totalCredit": 124010000,
+            "entries": [
+              {
+                "id": "JNL-6001",
+                "account": "Consolidated Multi-National Corporate Assets",
+                "debit": 124010000,
+                "balance": 124010000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 60"
+              },
+              {
+                "id": "JNL-6002",
+                "account": "Global Capital Reserves & Master Reporting Accounts",
+                "credit": 124010000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & reporting adjustment accrual ($16,566,400).",
+            "title": "Day 60 Journal \u2014 Reporting & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 140576400,
+            "totalCredit": 140576400,
+            "entries": [
+              {
+                "id": "JNL-6001",
+                "account": "Consolidated Multi-National Corporate Assets",
+                "debit": 124010000,
+                "balance": 124010000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-6003",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 16566400,
+                "balance": 140576400,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-6002",
+                "account": "Global Capital Reserves & Master Reporting Accounts",
+                "credit": 140576400,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 60 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 140576400,
+            "totalCredit": 140576400,
+            "entries": [
+              {
+                "id": "JNL-6001",
+                "account": "Consolidated Multi-National Corporate Assets",
+                "debit": 124010000,
+                "balance": 124010000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-6003",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 16566400,
+                "balance": 140576400,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-6002",
+                "account": "Global Capital Reserves & Master Reporting Accounts",
+                "credit": 140576400,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 60 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 140576400,
+            "totalCredit": 140576400,
+            "entries": [
+              {
+                "id": "JNL-6001",
+                "account": "Consolidated Multi-National Corporate Assets",
+                "debit": 124010000,
+                "balance": 124010000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-6003",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 16566400,
+                "balance": 140576400,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-6002",
+                "account": "Global Capital Reserves & Master Reporting Accounts",
+                "credit": 140576400,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Module 2: Ind AS 7 Statement of Cash Flows Indirect Reconciliation & Financing Roll-Forward",
+      "codeHash": "a388afb2518b2b4946dc62888f6be8f947ef05aa350a36e48c6e9a7155c8039b",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Module 2: Ind AS 7 Statement of Cash Flo... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($124,015,000) for Module 2: Ind AS 7 Statement of Cash Flo...",
+            "title": "Day 60 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 124015000,
+            "totalCredit": 124015000,
+            "entries": [
+              {
+                "id": "JNL-6001",
+                "account": "Consolidated Multi-National Corporate Assets",
+                "debit": 124015000,
+                "balance": 124015000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 60"
+              },
+              {
+                "id": "JNL-6002",
+                "account": "Global Capital Reserves & Master Reporting Accounts",
+                "credit": 124015000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & reporting adjustment accrual ($16,566,400).",
+            "title": "Day 60 Journal \u2014 Reporting & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 140581400,
+            "totalCredit": 140581400,
+            "entries": [
+              {
+                "id": "JNL-6001",
+                "account": "Consolidated Multi-National Corporate Assets",
+                "debit": 124015000,
+                "balance": 124015000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-6003",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 16566400,
+                "balance": 140581400,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-6002",
+                "account": "Global Capital Reserves & Master Reporting Accounts",
+                "credit": 140581400,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 60 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 140581400,
+            "totalCredit": 140581400,
+            "entries": [
+              {
+                "id": "JNL-6001",
+                "account": "Consolidated Multi-National Corporate Assets",
+                "debit": 124015000,
+                "balance": 124015000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-6003",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 16566400,
+                "balance": 140581400,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-6002",
+                "account": "Global Capital Reserves & Master Reporting Accounts",
+                "credit": 140581400,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 60 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 140581400,
+            "totalCredit": 140581400,
+            "entries": [
+              {
+                "id": "JNL-6001",
+                "account": "Consolidated Multi-National Corporate Assets",
+                "debit": 124015000,
+                "balance": 124015000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-6003",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 16566400,
+                "balance": 140581400,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-6002",
+                "account": "Global Capital Reserves & Master Reporting Accounts",
+                "credit": 140581400,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Module 3 & Module 4: Ind AS 8 Retrospective Error Restatements vs Prospective Estimates & Ind AS 10 Subsequent Events",
+      "codeHash": "a388afb2518b2b4946dc62888f6be8f947ef05aa350a36e48c6e9a7155c8039b",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Module 3 & Module 4: Ind AS 8 Retrospect... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($124,020,000) for Module 3 & Module 4: Ind AS 8 Retrospect...",
+            "title": "Day 60 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 124020000,
+            "totalCredit": 124020000,
+            "entries": [
+              {
+                "id": "JNL-6001",
+                "account": "Consolidated Multi-National Corporate Assets",
+                "debit": 124020000,
+                "balance": 124020000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 60"
+              },
+              {
+                "id": "JNL-6002",
+                "account": "Global Capital Reserves & Master Reporting Accounts",
+                "credit": 124020000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & reporting adjustment accrual ($16,566,400).",
+            "title": "Day 60 Journal \u2014 Reporting & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 140586400,
+            "totalCredit": 140586400,
+            "entries": [
+              {
+                "id": "JNL-6001",
+                "account": "Consolidated Multi-National Corporate Assets",
+                "debit": 124020000,
+                "balance": 124020000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-6003",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 16566400,
+                "balance": 140586400,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-6002",
+                "account": "Global Capital Reserves & Master Reporting Accounts",
+                "credit": 140586400,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 60 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 140586400,
+            "totalCredit": 140586400,
+            "entries": [
+              {
+                "id": "JNL-6001",
+                "account": "Consolidated Multi-National Corporate Assets",
+                "debit": 124020000,
+                "balance": 124020000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-6003",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 16566400,
+                "balance": 140586400,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-6002",
+                "account": "Global Capital Reserves & Master Reporting Accounts",
+                "credit": 140586400,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 60 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 140586400,
+            "totalCredit": 140586400,
+            "entries": [
+              {
+                "id": "JNL-6001",
+                "account": "Consolidated Multi-National Corporate Assets",
+                "debit": 124020000,
+                "balance": 124020000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-6003",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 16566400,
+                "balance": 140586400,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-6002",
+                "account": "Global Capital Reserves & Master Reporting Accounts",
+                "credit": 140586400,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Grand Milestone 12 Verification, Statutory Audit Sign-Off & Course 01 Graduation",
+      "codeHash": "a388afb2518b2b4946dc62888f6be8f947ef05aa350a36e48c6e9a7155c8039b",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Grand Milestone 12 Verification, Statuto... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($124,025,000) for Grand Milestone 12 Verification, Statuto...",
+            "title": "Day 60 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 124025000,
+            "totalCredit": 124025000,
+            "entries": [
+              {
+                "id": "JNL-6001",
+                "account": "Consolidated Multi-National Corporate Assets",
+                "debit": 124025000,
+                "balance": 124025000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 60"
+              },
+              {
+                "id": "JNL-6002",
+                "account": "Global Capital Reserves & Master Reporting Accounts",
+                "credit": 124025000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & reporting adjustment accrual ($16,566,400).",
+            "title": "Day 60 Journal \u2014 Reporting & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 140591400,
+            "totalCredit": 140591400,
+            "entries": [
+              {
+                "id": "JNL-6001",
+                "account": "Consolidated Multi-National Corporate Assets",
+                "debit": 124025000,
+                "balance": 124025000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-6003",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 16566400,
+                "balance": 140591400,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-6002",
+                "account": "Global Capital Reserves & Master Reporting Accounts",
+                "credit": 140591400,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 60 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 140591400,
+            "totalCredit": 140591400,
+            "entries": [
+              {
+                "id": "JNL-6001",
+                "account": "Consolidated Multi-National Corporate Assets",
+                "debit": 124025000,
+                "balance": 124025000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-6003",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 16566400,
+                "balance": 140591400,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-6002",
+                "account": "Global Capital Reserves & Master Reporting Accounts",
+                "credit": 140591400,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 60 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 140591400,
+            "totalCredit": 140591400,
+            "entries": [
+              {
+                "id": "JNL-6001",
+                "account": "Consolidated Multi-National Corporate Assets",
+                "debit": 124025000,
+                "balance": 124025000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-6003",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 16566400,
+                "balance": 140591400,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-6002",
+                "account": "Global Capital Reserves & Master Reporting Accounts",
+                "credit": 140591400,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
