@@ -1,0 +1,317 @@
+{
+  "schemaVersion": 2,
+  "prefix": "cloud",
+  "day": 51,
+  "entries": [
+    {
+      "partTitle": "Foundations of Single-Table Design: Why Relational Anti-Patterns Fail in DynamoDB",
+      "codeHash": "2abd405f2d51dc98e98d24838a7ce66db403d0badb48549629aecb318319c9c5",
+      "spec": {
+        "template": "compare",
+        "compare": {
+          "title": "Foundations of Single-Table Design: Why Relational Anti-Patterns Fail in DynamoDB",
+          "leftLabel": "Relational Multi-Table Anti-Pattern",
+          "rightLabel": "DynamoDB Single-Table Design",
+          "leftAttributes": [
+            {
+              "name": "Table Architecture",
+              "value": "Twenty separate normalized tables."
+            },
+            {
+              "name": "Query Overhead",
+              "value": "N+1 sequential HTTP network round-trips."
+            },
+            {
+              "name": "Latency Profile",
+              "value": "High p99 latency exceeding 250ms."
+            }
+          ],
+          "rightAttributes": [
+            {
+              "name": "Table Architecture",
+              "value": "One table with generic PK and SK keys."
+            },
+            {
+              "name": "Query Overhead",
+              "value": "Single Query retrieving item collections."
+            },
+            {
+              "name": "Latency Profile",
+              "value": "Consistent sub-ten-millisecond latency."
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "focus": "left",
+            "annotation": "Relational multi-table patterns cause severe sequential network delays."
+          },
+          {
+            "at": "say2",
+            "focus": "right",
+            "annotation": "Single table architectures group related items under identical keys."
+          },
+          {
+            "at": "example",
+            "focus": "both",
+            "annotation": "Co-located item collections fetch heterogeneous records in one query."
+          },
+          {
+            "at": "tryIt",
+            "focus": "right",
+            "annotation": "Generic key overloading delivers predictable single-digit latency."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Composite Sort Keys & Hierarchical Range Queries: begins_with and between Expressions",
+      "codeHash": "a1ec5858ccb35dfa502c93dde8f44113637ca775a8d3d0b1d478a756fb91c048",
+      "spec": {
+        "template": "compare",
+        "compare": {
+          "title": "Composite Sort Keys & Hierarchical Range Queries: begins_with and between Expressions",
+          "leftLabel": "Unindexed Full-Table Scans",
+          "rightLabel": "Composite Sort Key Range Queries",
+          "leftAttributes": [
+            {
+              "name": "Search Mechanics",
+              "value": "Expensive client-side and full-table scans."
+            },
+            {
+              "name": "Hierarchical Lookups",
+              "value": "Multiple separate query rounds per filter."
+            },
+            {
+              "name": "Cost Impact",
+              "value": "Massive read capacity consumption on scans."
+            }
+          ],
+          "rightAttributes": [
+            {
+              "name": "Search Mechanics",
+              "value": "Efficient begins_with prefix filtering."
+            },
+            {
+              "name": "Hierarchical Lookups",
+              "value": "Multi-level filtering in a single key condition."
+            },
+            {
+              "name": "Cost Impact",
+              "value": "Targeted read capacity consumption on matches."
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "focus": "left",
+            "annotation": "Full table scans waste immense read capacity and inflate cloud costs."
+          },
+          {
+            "at": "say2",
+            "focus": "right",
+            "annotation": "Composite sort keys concatenate hierarchical attributes with delimiters."
+          },
+          {
+            "at": "example",
+            "focus": "both",
+            "annotation": "Prefix filtering queries multiple organizational levels efficiently."
+          },
+          {
+            "at": "tryIt",
+            "focus": "right",
+            "annotation": "Hierarchical range expressions eliminate expensive unindexed scans."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Global Secondary Index (GSI) Overloading & The Inverted Index Pattern: Sparse Indexing",
+      "codeHash": "a6c00c24a40dc793716564f5478fe0c68ad62ccd2dec5f4c48d64dbea6158878",
+      "spec": {
+        "template": "compare",
+        "compare": {
+          "title": "Global Secondary Index (GSI) Overloading & The Inverted Index Pattern: Sparse Indexing",
+          "leftLabel": "Proliferation of Dedicated GSIs",
+          "rightLabel": "Overloaded & Sparse Secondary Indexes",
+          "leftAttributes": [
+            {
+              "name": "Index Count",
+              "value": "Breaching twenty GSI limits rapidly."
+            },
+            {
+              "name": "Storage Overhead",
+              "value": "Duplicating full tables across indexes."
+            },
+            {
+              "name": "Cost Profile",
+              "value": "High write amplification on all updates."
+            }
+          ],
+          "rightAttributes": [
+            {
+              "name": "Index Count",
+              "value": "One overloaded GSI serving dozens of patterns."
+            },
+            {
+              "name": "Storage Overhead",
+              "value": "Sparse indexes indexing only targeted items."
+            },
+            {
+              "name": "Cost Profile",
+              "value": "Minimal write amplification on updates."
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "focus": "left",
+            "annotation": "Excessive dedicated secondary indexes rapidly breach service limits."
+          },
+          {
+            "at": "say2",
+            "focus": "right",
+            "annotation": "Overloaded indexes satisfy diverse access patterns using generic keys."
+          },
+          {
+            "at": "example",
+            "focus": "both",
+            "annotation": "Sparse indexing includes only items with defined secondary attributes."
+          },
+          {
+            "at": "tryIt",
+            "focus": "right",
+            "annotation": "Inverted indexes allow bidirectional lookups across entity relationships."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Many-to-Many Relationships & Adjacency Lists: Graph Modeling in DynamoDB",
+      "codeHash": "ad79a44d38939f6e01c85e95c0bcdedbe67083a9b1ba07837b6c54050fb3ce03",
+      "spec": {
+        "template": "compare",
+        "compare": {
+          "title": "Many-to-Many Relationships & Adjacency Lists: Graph Modeling in DynamoDB",
+          "leftLabel": "Relational Junction Tables",
+          "rightLabel": "Bipartite Graph Adjacency Lists",
+          "leftAttributes": [
+            {
+              "name": "Relationship Model",
+              "value": "Junction tables requiring three-way joins."
+            },
+            {
+              "name": "Traversal Speed",
+              "value": "Unfeasible without relational query engine."
+            },
+            {
+              "name": "Metadata Storage",
+              "value": "Complex multi-table schema alterations."
+            }
+          ],
+          "rightAttributes": [
+            {
+              "name": "Relationship Model",
+              "value": "Bidirectional graph edges in a single table."
+            },
+            {
+              "name": "Traversal Speed",
+              "value": "Sub-ten-millisecond single-query traversal."
+            },
+            {
+              "name": "Metadata Storage",
+              "value": "Edge attributes stored directly on relationship items."
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "focus": "left",
+            "annotation": "Relational junction tables collapse without server-side SQL joins."
+          },
+          {
+            "at": "say2",
+            "focus": "right",
+            "annotation": "Adjacency lists represent graph edges as individual table items."
+          },
+          {
+            "at": "example",
+            "focus": "both",
+            "annotation": "Inverted secondary keys enable instant bidirectional relationship lookups."
+          },
+          {
+            "at": "tryIt",
+            "focus": "right",
+            "annotation": "Graph modeling in single-table schemas scales to millions of connections."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Atomic Transactions & Optimistic Concurrency Control: TransactWriteItems and Conditional Expressions",
+      "codeHash": "d49641999045df332713413f533b961fcfb956c63de1328078cc8418cc301d13",
+      "spec": {
+        "template": "compare",
+        "compare": {
+          "title": "Atomic Transactions & Optimistic Concurrency Control: TransactWriteItems and Conditional Expressions",
+          "leftLabel": "Pessimistic Locking & Deadlocks",
+          "rightLabel": "Atomic Transactions & Optimistic Concurrency",
+          "leftAttributes": [
+            {
+              "name": "Concurrency Control",
+              "value": "Blocking database row locks."
+            },
+            {
+              "name": "Consistency",
+              "value": "Fragile multi-step updates with partial failures."
+            },
+            {
+              "name": "Throughput",
+              "value": "Severe lock contention and transaction timeouts."
+            }
+          ],
+          "rightAttributes": [
+            {
+              "name": "Concurrency Control",
+              "value": "Optimistic concurrency control with version checks."
+            },
+            {
+              "name": "Consistency",
+              "value": "All-or-nothing ACID semantics across items."
+            },
+            {
+              "name": "Throughput",
+              "value": "High concurrency with zero database lock contention."
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "focus": "left",
+            "annotation": "Pessimistic row locks create severe contention in distributed databases."
+          },
+          {
+            "at": "say2",
+            "focus": "right",
+            "annotation": "TransactWriteItems executes atomic mutations across distributed items."
+          },
+          {
+            "at": "example",
+            "focus": "both",
+            "annotation": "Condition expressions enforce optimistic version checks without locking."
+          },
+          {
+            "at": "tryIt",
+            "focus": "right",
+            "annotation": "Atomic transactions maintain financial consistency across cloud services."
+          }
+        ]
+      }
+    }
+  ]
+}
