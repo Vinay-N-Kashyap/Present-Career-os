@@ -1,0 +1,232 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "bcom_ops",
+  "day": 58,
+  "entries": [
+    {
+      "partIndex": 0,
+      "spec": {
+        "template": "funnel",
+        "title": "Sustainable Operations Strategy: Triple Bottom Line & ISO 14040/14044 LCA Methodology",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Sustainable operations balances profits and planetary limits."
+          },
+          {
+            "step": "say2",
+            "caption": "Life cycle assessments evaluate impacts from cradle to grave."
+          },
+          {
+            "step": "example",
+            "caption": "Functional units normalize mass and energy flows for comparative audits."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Ecodesign principles eliminate waste during product development."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 1,
+      "spec": {
+        "template": "funnel",
+        "title": "Greenhouse Gas (GHG) Protocol: Scope 1, Scope 2, and Scope 3 Emissions Accounting",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Greenhouse gas protocols standardize corporate carbon footprint metrics."
+          },
+          {
+            "step": "say2",
+            "caption": "Direct emissions include stationary boilers and vehicle fleets."
+          },
+          {
+            "step": "example",
+            "caption": "Indirect energy emissions measure purchased electricity and steam usage."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Value chain emissions drive majority of industrial footprints."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 2,
+      "spec": {
+        "template": "funnel",
+        "title": "Circular Economy Closed Loops: Remanufacturing, Industrial Symbiosis & Cradle-to-Cradle",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Circular economy models replace linear extractive production systems."
+          },
+          {
+            "step": "say2",
+            "caption": "Value retention loops prioritize component reuse over recycling."
+          },
+          {
+            "step": "example",
+            "caption": "Industrial remanufacturing restores cores to specifications."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Reverse logistics networks coordinate core collection cycles."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 3,
+      "spec": {
+        "template": "funnel",
+        "title": "Renewable Energy Integration & Factory Energy Management Systems (ISO 50001)",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Energy management systems set industrial efficiency goals."
+          },
+          {
+            "step": "say2",
+            "caption": "Multivariate regression models normalize energy use against production."
+          },
+          {
+            "step": "example",
+            "caption": "Compressed air and motor retrofits yield large energy savings."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Waste heat recovery captures thermal energy from hot exhausts."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 4,
+      "spec": {
+        "template": "funnel",
+        "title": "ESG Governance, Scope 3 Supply Chain Transparency & Green Logistics Compliance",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Statutory disclosures mandate transparent double materiality."
+          },
+          {
+            "step": "say2",
+            "caption": "Digital traceability tracks raw material provenance across deep tiers."
+          },
+          {
+            "step": "example",
+            "caption": "Carbon border tariffs equalize climate compliance costs for importers."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Modal shift transfers long haul freight from air cargo to rail networks."
+          }
+        ]
+      }
+    }
+  ]
+}

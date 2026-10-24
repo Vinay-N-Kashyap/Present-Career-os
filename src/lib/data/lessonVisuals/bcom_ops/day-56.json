@@ -1,0 +1,232 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "bcom_ops",
+  "day": 56,
+  "entries": [
+    {
+      "partIndex": 0,
+      "spec": {
+        "template": "funnel",
+        "title": "Strategic Operations Framework: Skinner's Focused Factory & Hayes-Wheelwright Matrix",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Focused factories concentrate operations on coherent product families."
+          },
+          {
+            "step": "say2",
+            "caption": "Process architectures align diagonally with product volume requirements."
+          },
+          {
+            "step": "example",
+            "caption": "Operating off the diagonal creates severe operational traps."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Plants within a plant isolate diverse manufacturing tasks effectively."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 1,
+      "spec": {
+        "template": "funnel",
+        "title": "Trade-Off Theory vs. Cumulative Capabilities: Ferdows & De Meyer's Sand Cone Model",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Trade off theory assumes static operational performance limits."
+          },
+          {
+            "step": "say2",
+            "caption": "Cumulative models build capabilities in a sequential hierarchy."
+          },
+          {
+            "step": "example",
+            "caption": "Quality stability forms the non negotiable foundation of the sand cone."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Dependability and speed enable lasting enterprise cost efficiency."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 2,
+      "spec": {
+        "template": "funnel",
+        "title": "Manufacturing Agility, Mass Customization & Postponement Architectures",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Mass customization provides tailored goods at mass production scale."
+          },
+          {
+            "step": "say2",
+            "caption": "Decoupling points separate upstream forecast push from downstream pull."
+          },
+          {
+            "step": "example",
+            "caption": "Holding uncommitted generic platforms slashes total safety inventory."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Modular designs allow rapid late stage configuration for local markets."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 3,
+      "spec": {
+        "template": "funnel",
+        "title": "Competitive Priorities Formulation: Order Qualifiers, Order Winners & Trade-Off Resolution",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Order qualifiers represent baseline criteria required to enter markets."
+          },
+          {
+            "step": "say2",
+            "caption": "Order winners serve as decisive differentiators winning sales."
+          },
+          {
+            "step": "example",
+            "caption": "Competitive criteria evolve dynamically as rival capabilities improve."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Manufacturing infrastructure must match customer order winning factors."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 4,
+      "spec": {
+        "template": "funnel",
+        "title": "Enterprise Operations Execution: Strategy Maps, Balanced Scorecards & Value Disciplines",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Strategy maps establish cause and effect hypotheses across operations."
+          },
+          {
+            "step": "say2",
+            "caption": "Internal business processes translate strategic intent into daily value."
+          },
+          {
+            "step": "example",
+            "caption": "Leading indicators monitor drivers that predict future success."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Policy deployment aligns shop floor actions with corporate objectives."
+          }
+        ]
+      }
+    }
+  ]
+}
