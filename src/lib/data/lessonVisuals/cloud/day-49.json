@@ -1,0 +1,317 @@
+{
+  "schemaVersion": 2,
+  "prefix": "cloud",
+  "day": 49,
+  "entries": [
+    {
+      "partTitle": "Principles of Chaos Engineering & AWS Fault Injection Simulator (FIS) Architecture: Targets & Actions",
+      "codeHash": "f0187c1d0ce5ae49cc4ca87d9078074fc4c96d26df38369b9edf23a1b29118b3",
+      "spec": {
+        "template": "compare",
+        "compare": {
+          "title": "Principles of Chaos Engineering & AWS Fault Injection Simulator (FIS) Architecture: Targets & Actions",
+          "leftLabel": "Uncontrolled Ad-Hoc Scripts",
+          "rightLabel": "Managed AWS FIS Experiments",
+          "leftAttributes": [
+            {
+              "name": "Execution",
+              "value": "Uncoordinated manual shell scripts."
+            },
+            {
+              "name": "Safety",
+              "value": "Zero automated blast radius limits."
+            },
+            {
+              "name": "Auditing",
+              "value": "No IAM governance or execution logs."
+            }
+          ],
+          "rightAttributes": [
+            {
+              "name": "Execution",
+              "value": "Structured experiment template graphs."
+            },
+            {
+              "name": "Safety",
+              "value": "Strict percentage and count blast radius."
+            },
+            {
+              "name": "Auditing",
+              "value": "Native IAM roles and CloudTrail tracking."
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "focus": "left",
+            "annotation": "Uncontrolled scripts risk widespread catastrophic production outages."
+          },
+          {
+            "at": "say2",
+            "focus": "right",
+            "annotation": "Managed chaos templates define structured fault injection targets."
+          },
+          {
+            "at": "example",
+            "focus": "both",
+            "annotation": "Action execution limits enforce strict blast radius boundaries."
+          },
+          {
+            "at": "tryIt",
+            "focus": "right",
+            "annotation": "Hypothesis testing builds empirical confidence in cloud architectures."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Automated Stop Conditions & Safety Guardrails: CloudWatch Alarms & Circuit Breakers",
+      "codeHash": "8cb0cccccd7928d8509b3717359079c42e059eac4268602088ec9b7e4b846048",
+      "spec": {
+        "template": "compare",
+        "compare": {
+          "title": "Automated Stop Conditions & Safety Guardrails: CloudWatch Alarms & Circuit Breakers",
+          "leftLabel": "Unmonitored Blind Chaos",
+          "rightLabel": "Automated CloudWatch Stop Conditions",
+          "leftAttributes": [
+            {
+              "name": "Monitoring",
+              "value": "Manual human observation of dashboards."
+            },
+            {
+              "name": "Response",
+              "value": "Slow manual abort decisions during crises."
+            },
+            {
+              "name": "Rollback",
+              "value": "Tedious manual cleanup of broken state."
+            }
+          ],
+          "rightAttributes": [
+            {
+              "name": "Monitoring",
+              "value": "Continuous automated alarm evaluation."
+            },
+            {
+              "name": "Response",
+              "value": "Instant circuit breaker trip on threshold breach."
+            },
+            {
+              "name": "Rollback",
+              "value": "Automated cleanup and resource restoration."
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "focus": "left",
+            "annotation": "Blind experiments easily escalate into severe customer service impacts."
+          },
+          {
+            "at": "say2",
+            "focus": "right",
+            "annotation": "Automated stop conditions monitor critical business service alarms."
+          },
+          {
+            "at": "example",
+            "focus": "both",
+            "annotation": "Circuit breakers halt fault actions immediately upon error spikes."
+          },
+          {
+            "at": "tryIt",
+            "focus": "right",
+            "annotation": "Automated rollback guarantees system stability during chaos drills."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Availability Zone (AZ) Evacuation & Zonal Shift: Route 53 ARC & VPC Network Chaos",
+      "codeHash": "d91d80a891fdc6be5e1b5644ac20934889efea60a02ee387641e4cdd02d6b70c",
+      "spec": {
+        "template": "compare",
+        "compare": {
+          "title": "Availability Zone (AZ) Evacuation & Zonal Shift: Route 53 ARC & VPC Network Chaos",
+          "leftLabel": "Brittle Symmetrical Capacity",
+          "rightLabel": "Zonal Shift & Resilient N+1 Headroom",
+          "leftAttributes": [
+            {
+              "name": "Sizing",
+              "value": "Exact capacity with zero failover headroom."
+            },
+            {
+              "name": "Evacuation",
+              "value": "Slow manual DNS and load balancer edits."
+            },
+            {
+              "name": "Impact",
+              "value": "Cascading exhaustion across surviving zones."
+            }
+          ],
+          "rightAttributes": [
+            {
+              "name": "Sizing",
+              "value": "Deliberate N+1 capacity headroom in each zone."
+            },
+            {
+              "name": "Evacuation",
+              "value": "Automated zonal shift via Route Fifty Three ARC."
+            },
+            {
+              "name": "Impact",
+              "value": "Surviving zones absorb load without throttling."
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "focus": "left",
+            "annotation": "Under-provisioned zones collapse during complete zonal failover events."
+          },
+          {
+            "at": "say2",
+            "focus": "right",
+            "annotation": "Zonal shift redirects traffic away from impaired availability zones."
+          },
+          {
+            "at": "example",
+            "focus": "both",
+            "annotation": "Deliberate headroom prevents cascading overload on surviving nodes."
+          },
+          {
+            "at": "tryIt",
+            "focus": "right",
+            "annotation": "Validated evacuation ensures seamless continuity during data center loss."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Network Chaos Injection: Synthetic Packet Drops, Latency & Dependency Degradation",
+      "codeHash": "d2ada26734fc5af702c430c3d7b8acacc29446e2c883bb54ed76f26b6d16bb4f",
+      "spec": {
+        "template": "compare",
+        "compare": {
+          "title": "Network Chaos Injection: Synthetic Packet Drops, Latency & Dependency Degradation",
+          "leftLabel": "Fragile Blocking Synchronous Calls",
+          "rightLabel": "Circuit Breakers & Graceful Fallbacks",
+          "leftAttributes": [
+            {
+              "name": "Handling",
+              "value": "Unbounded timeouts and retry storms."
+            },
+            {
+              "name": "Coupling",
+              "value": "Cascading thread starvation across callers."
+            },
+            {
+              "name": "User Experience",
+              "value": "Complete service outage with HTTP five hundreds."
+            }
+          ],
+          "rightAttributes": [
+            {
+              "name": "Handling",
+              "value": "Exponential backoff with full randomized jitter."
+            },
+            {
+              "name": "Coupling",
+              "value": "Fast circuit breaker failover to cached data."
+            },
+            {
+              "name": "User Experience",
+              "value": "Graceful degradation with zero blocking."
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "focus": "left",
+            "annotation": "Gray failures tie up critical connection pools and exhaust threads."
+          },
+          {
+            "at": "say2",
+            "focus": "right",
+            "annotation": "Synthetic network chaos injects realistic packet drops and latency."
+          },
+          {
+            "at": "example",
+            "focus": "both",
+            "annotation": "Circuit breakers trip open to serve instant cached fallback data."
+          },
+          {
+            "at": "tryIt",
+            "focus": "right",
+            "annotation": "Graceful degradation preserves core customer checkout and browsing flows."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Resiliency GameDays & Production Incident Drills: Blameless Autopsies & Chaos Automation",
+      "codeHash": "8892dad3c54f0c56fd8102be0e15152737fc86691c6a238d9bd014f5c2f66a54",
+      "spec": {
+        "template": "compare",
+        "compare": {
+          "title": "Resiliency GameDays & Production Incident Drills: Blameless Autopsies & Chaos Automation",
+          "leftLabel": "Blame Culture & Punitive Audits",
+          "rightLabel": "Blameless GameDays & Continuous Drills",
+          "leftAttributes": [
+            {
+              "name": "Culture",
+              "value": "Punitive assignment of personal blame."
+            },
+            {
+              "name": "Frequency",
+              "value": "Rare manual drills during scheduled maintenance."
+            },
+            {
+              "name": "Learning",
+              "value": "Superficial checklists without metric tracking."
+            }
+          ],
+          "rightAttributes": [
+            {
+              "name": "Culture",
+              "value": "Blameless post-mortems celebrating discovery."
+            },
+            {
+              "name": "Frequency",
+              "value": "Automated continuous chaos in active pipelines."
+            },
+            {
+              "name": "Learning",
+              "value": "Quantitative tracking of detection and recovery times."
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "focus": "left",
+            "annotation": "Blame cultures punish engineers rather than fixing systemic flaws."
+          },
+          {
+            "at": "say2",
+            "focus": "right",
+            "annotation": "Collaborative GameDays build essential team operational muscle memory."
+          },
+          {
+            "at": "example",
+            "focus": "both",
+            "annotation": "Automated metrics measure precise detection and recovery duration."
+          },
+          {
+            "at": "tryIt",
+            "focus": "right",
+            "annotation": "Continuous chaos automation guarantees ongoing production resiliency."
+          }
+        ]
+      }
+    }
+  ]
+}
