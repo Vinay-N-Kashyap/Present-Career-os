@@ -1,0 +1,829 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "sql-mastery",
+  "day": 41,
+  "promptSha": "88af1c3f723f992f37e1ede9a60c08846cb89b7487f1202a2fca4d2969113b28",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Physical Replication Pipeline: WAL Senders, WAL Receivers & The Standby Startup Process",
+      "codeHash": "d9190f5f12a877f50367a6677d376fb0418c7d23f9d28ffb8011d2d2d0061d32",
+      "spec": {
+        "template": "compare",
+        "title": "Physical Replication Architecture - Part 1",
+        "leftLabel": "Vulnerable Standalone / Naive Replication",
+        "rightLabel": "Resilient Physical Streaming Replication",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Streaming replication provides continuous database synchronization.",
+            "left": {
+              "code": "Single database instance failure",
+              "result": {
+                "text": "catastrophic operational downtime"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Physical streaming standby replica",
+              "result": {
+                "text": "continuous byte-level disk cloning"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Standalone database instances represent single points of failure.",
+            "left": {
+              "code": "Unmonitored WAL purge failure",
+              "result": {
+                "text": "permanent standby desynchronization"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Durable physical replication slot",
+              "result": {
+                "text": "guaranteed WAL retention across network drops"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Backup newspaper printing press receives automated layout updates.",
+            "left": {
+              "code": "Uncoordinated manual disaster recovery",
+              "result": {
+                "text": "extended multi-hour service outage"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Automated timeline promotion",
+              "result": {
+                "text": "sub-second read-write master cutover"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect cluster replication node roles and active internal processes.",
+            "left": {
+              "code": "Unverified replication lag telemetry",
+              "result": {
+                "text": "silent stale data reading risk"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Multi-dimensional LSN telemetry",
+              "result": {
+                "text": "deterministic zero-lag replication state"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Physical Replication Architecture - Part 1",
+        "leftLabel": "Vulnerable Standalone / Naive Replication",
+        "rightLabel": "Resilient Physical Streaming Replication",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Streaming replication provides continuous database synchronization.",
+            "left": {
+              "code": "Single database instance failure",
+              "result": {
+                "text": "catastrophic operational downtime"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Physical streaming standby replica",
+              "result": {
+                "text": "continuous byte-level disk cloning"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Standalone database instances represent single points of failure.",
+            "left": {
+              "code": "Unmonitored WAL purge failure",
+              "result": {
+                "text": "permanent standby desynchronization"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Durable physical replication slot",
+              "result": {
+                "text": "guaranteed WAL retention across network drops"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Backup newspaper printing press receives automated layout updates.",
+            "left": {
+              "code": "Uncoordinated manual disaster recovery",
+              "result": {
+                "text": "extended multi-hour service outage"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Automated timeline promotion",
+              "result": {
+                "text": "sub-second read-write master cutover"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect cluster replication node roles and active internal processes.",
+            "left": {
+              "code": "Unverified replication lag telemetry",
+              "result": {
+                "text": "silent stale data reading risk"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Multi-dimensional LSN telemetry",
+              "result": {
+                "text": "deterministic zero-lag replication state"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Replication Slots: Preventing Standby Desynchronization & Managing WAL Disk Retention",
+      "codeHash": "cc828b5e8044bba8bb03d96488d93a6933e49420a009fe450034dd3d17beca59",
+      "spec": {
+        "template": "compare",
+        "title": "Physical Replication Architecture - Part 2",
+        "leftLabel": "Vulnerable Standalone / Naive Replication",
+        "rightLabel": "Resilient Physical Streaming Replication",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Physical replication management requires robust disconnect tolerance.",
+            "left": {
+              "code": "Single database instance failure",
+              "result": {
+                "text": "catastrophic operational downtime"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Physical streaming standby replica",
+              "result": {
+                "text": "continuous byte-level disk cloning"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Standard retention policies purge older write ahead log segments.",
+            "left": {
+              "code": "Unmonitored WAL purge failure",
+              "result": {
+                "text": "permanent standby desynchronization"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Durable physical replication slot",
+              "result": {
+                "text": "guaranteed WAL retention across network drops"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Library archival book slot reservation marker protects manuscripts.",
+            "left": {
+              "code": "Uncoordinated manual disaster recovery",
+              "result": {
+                "text": "extended multi-hour service outage"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Automated timeline promotion",
+              "result": {
+                "text": "sub-second read-write master cutover"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect replication slot types and write ahead log retention bytes.",
+            "left": {
+              "code": "Unverified replication lag telemetry",
+              "result": {
+                "text": "silent stale data reading risk"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Multi-dimensional LSN telemetry",
+              "result": {
+                "text": "deterministic zero-lag replication state"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Physical Replication Architecture - Part 2",
+        "leftLabel": "Vulnerable Standalone / Naive Replication",
+        "rightLabel": "Resilient Physical Streaming Replication",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Physical replication management requires robust disconnect tolerance.",
+            "left": {
+              "code": "Single database instance failure",
+              "result": {
+                "text": "catastrophic operational downtime"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Physical streaming standby replica",
+              "result": {
+                "text": "continuous byte-level disk cloning"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Standard retention policies purge older write ahead log segments.",
+            "left": {
+              "code": "Unmonitored WAL purge failure",
+              "result": {
+                "text": "permanent standby desynchronization"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Durable physical replication slot",
+              "result": {
+                "text": "guaranteed WAL retention across network drops"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Library archival book slot reservation marker protects manuscripts.",
+            "left": {
+              "code": "Uncoordinated manual disaster recovery",
+              "result": {
+                "text": "extended multi-hour service outage"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Automated timeline promotion",
+              "result": {
+                "text": "sub-second read-write master cutover"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect replication slot types and write ahead log retention bytes.",
+            "left": {
+              "code": "Unverified replication lag telemetry",
+              "result": {
+                "text": "silent stale data reading risk"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Multi-dimensional LSN telemetry",
+              "result": {
+                "text": "deterministic zero-lag replication state"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cascading Replication Topologies: Multi-Tier Fan-Out & Relieving Primary Network Load",
+      "codeHash": "5909e8425d99fcd588675bb46c2bff5531ce28b8c90735c6148ec0f0eacf5500",
+      "spec": {
+        "template": "compare",
+        "title": "Physical Replication Architecture - Part 3",
+        "leftLabel": "Vulnerable Standalone / Naive Replication",
+        "rightLabel": "Resilient Physical Streaming Replication",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Enterprise platforms scale analytical read traffic across replicas.",
+            "left": {
+              "code": "Single database instance failure",
+              "result": {
+                "text": "catastrophic operational downtime"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Physical streaming standby replica",
+              "result": {
+                "text": "continuous byte-level disk cloning"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Direct standby connections saturate primary network interface cards.",
+            "left": {
+              "code": "Unmonitored WAL purge failure",
+              "result": {
+                "text": "permanent standby desynchronization"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Durable physical replication slot",
+              "result": {
+                "text": "guaranteed WAL retention across network drops"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Television broadcast retransmits master satellite signal locally.",
+            "left": {
+              "code": "Uncoordinated manual disaster recovery",
+              "result": {
+                "text": "extended multi-hour service outage"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Automated timeline promotion",
+              "result": {
+                "text": "sub-second read-write master cutover"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect cascading hierarchy levels and network bandwidth savings.",
+            "left": {
+              "code": "Unverified replication lag telemetry",
+              "result": {
+                "text": "silent stale data reading risk"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Multi-dimensional LSN telemetry",
+              "result": {
+                "text": "deterministic zero-lag replication state"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Physical Replication Architecture - Part 3",
+        "leftLabel": "Vulnerable Standalone / Naive Replication",
+        "rightLabel": "Resilient Physical Streaming Replication",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Enterprise platforms scale analytical read traffic across replicas.",
+            "left": {
+              "code": "Single database instance failure",
+              "result": {
+                "text": "catastrophic operational downtime"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Physical streaming standby replica",
+              "result": {
+                "text": "continuous byte-level disk cloning"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Direct standby connections saturate primary network interface cards.",
+            "left": {
+              "code": "Unmonitored WAL purge failure",
+              "result": {
+                "text": "permanent standby desynchronization"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Durable physical replication slot",
+              "result": {
+                "text": "guaranteed WAL retention across network drops"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Television broadcast retransmits master satellite signal locally.",
+            "left": {
+              "code": "Uncoordinated manual disaster recovery",
+              "result": {
+                "text": "extended multi-hour service outage"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Automated timeline promotion",
+              "result": {
+                "text": "sub-second read-write master cutover"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect cascading hierarchy levels and network bandwidth savings.",
+            "left": {
+              "code": "Unverified replication lag telemetry",
+              "result": {
+                "text": "silent stale data reading risk"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Multi-dimensional LSN telemetry",
+              "result": {
+                "text": "deterministic zero-lag replication state"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Measuring & Monitoring Replication Lag: Byte Lag, Flush Lag & Write-Ahead Log Positions",
+      "codeHash": "82457479c0d1354f6baea01fec6c308687d7270e53cfd70e596274a18de93a0f",
+      "spec": {
+        "template": "compare",
+        "title": "Physical Replication Architecture - Part 4",
+        "leftLabel": "Vulnerable Standalone / Naive Replication",
+        "rightLabel": "Resilient Physical Streaming Replication",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "High availability architectures require replica synchronization.",
+            "left": {
+              "code": "Single database instance failure",
+              "result": {
+                "text": "catastrophic operational downtime"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Physical streaming standby replica",
+              "result": {
+                "text": "continuous byte-level disk cloning"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Replication lag measurements track four distinct physical coordinates.",
+            "left": {
+              "code": "Unmonitored WAL purge failure",
+              "result": {
+                "text": "permanent standby desynchronization"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Durable physical replication slot",
+              "result": {
+                "text": "guaranteed WAL retention across network drops"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "International banking ledger telex operators verify wire records.",
+            "left": {
+              "code": "Uncoordinated manual disaster recovery",
+              "result": {
+                "text": "extended multi-hour service outage"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Automated timeline promotion",
+              "result": {
+                "text": "sub-second read-write master cutover"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect replication lag diagnostics query and synchronization status.",
+            "left": {
+              "code": "Unverified replication lag telemetry",
+              "result": {
+                "text": "silent stale data reading risk"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Multi-dimensional LSN telemetry",
+              "result": {
+                "text": "deterministic zero-lag replication state"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Physical Replication Architecture - Part 4",
+        "leftLabel": "Vulnerable Standalone / Naive Replication",
+        "rightLabel": "Resilient Physical Streaming Replication",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "High availability architectures require replica synchronization.",
+            "left": {
+              "code": "Single database instance failure",
+              "result": {
+                "text": "catastrophic operational downtime"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Physical streaming standby replica",
+              "result": {
+                "text": "continuous byte-level disk cloning"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Replication lag measurements track four distinct physical coordinates.",
+            "left": {
+              "code": "Unmonitored WAL purge failure",
+              "result": {
+                "text": "permanent standby desynchronization"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Durable physical replication slot",
+              "result": {
+                "text": "guaranteed WAL retention across network drops"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "International banking ledger telex operators verify wire records.",
+            "left": {
+              "code": "Uncoordinated manual disaster recovery",
+              "result": {
+                "text": "extended multi-hour service outage"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Automated timeline promotion",
+              "result": {
+                "text": "sub-second read-write master cutover"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect replication lag diagnostics query and synchronization status.",
+            "left": {
+              "code": "Unverified replication lag telemetry",
+              "result": {
+                "text": "silent stale data reading risk"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Multi-dimensional LSN telemetry",
+              "result": {
+                "text": "deterministic zero-lag replication state"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Network Disconnect Recovery & Standby Promotion: pg_promote() & Timeline ID History",
+      "codeHash": "e4cbd4b8ce51224dad1c176efe7b07026465893fe82dd993c278593a10d7878f",
+      "spec": {
+        "template": "compare",
+        "title": "Physical Replication Architecture - Part 5",
+        "leftLabel": "Vulnerable Standalone / Naive Replication",
+        "rightLabel": "Resilient Physical Streaming Replication",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "High availability architectures execute automated standby promotion.",
+            "left": {
+              "code": "Single database instance failure",
+              "result": {
+                "text": "catastrophic operational downtime"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Physical streaming standby replica",
+              "result": {
+                "text": "continuous byte-level disk cloning"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Promoting standby replicas requires native administrative functions.",
+            "left": {
+              "code": "Unmonitored WAL purge failure",
+              "result": {
+                "text": "permanent standby desynchronization"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Durable physical replication slot",
+              "result": {
+                "text": "guaranteed WAL retention across network drops"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Northern fortress royal council crowns prince as official monarch.",
+            "left": {
+              "code": "Uncoordinated manual disaster recovery",
+              "result": {
+                "text": "extended multi-hour service outage"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Automated timeline promotion",
+              "result": {
+                "text": "sub-second read-write master cutover"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect promotion triggers and timeline branch increment status.",
+            "left": {
+              "code": "Unverified replication lag telemetry",
+              "result": {
+                "text": "silent stale data reading risk"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Multi-dimensional LSN telemetry",
+              "result": {
+                "text": "deterministic zero-lag replication state"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Physical Replication Architecture - Part 5",
+        "leftLabel": "Vulnerable Standalone / Naive Replication",
+        "rightLabel": "Resilient Physical Streaming Replication",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "High availability architectures execute automated standby promotion.",
+            "left": {
+              "code": "Single database instance failure",
+              "result": {
+                "text": "catastrophic operational downtime"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Physical streaming standby replica",
+              "result": {
+                "text": "continuous byte-level disk cloning"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Promoting standby replicas requires native administrative functions.",
+            "left": {
+              "code": "Unmonitored WAL purge failure",
+              "result": {
+                "text": "permanent standby desynchronization"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Durable physical replication slot",
+              "result": {
+                "text": "guaranteed WAL retention across network drops"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Northern fortress royal council crowns prince as official monarch.",
+            "left": {
+              "code": "Uncoordinated manual disaster recovery",
+              "result": {
+                "text": "extended multi-hour service outage"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Automated timeline promotion",
+              "result": {
+                "text": "sub-second read-write master cutover"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect promotion triggers and timeline branch increment status.",
+            "left": {
+              "code": "Unverified replication lag telemetry",
+              "result": {
+                "text": "silent stale data reading risk"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Multi-dimensional LSN telemetry",
+              "result": {
+                "text": "deterministic zero-lag replication state"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
