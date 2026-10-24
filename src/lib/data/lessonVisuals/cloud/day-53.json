@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 2,
+  "prefix": "cloud",
+  "day": 53,
+  "entries": [
+    {
+      "partIndex": 1,
+      "partTitle": "Aurora Distributed Storage Architecture: 4-of-6 Quorum, Log Is The Database & Multi-AZ Striping",
+      "codeHash": "7df1944ed4b9992beaeec5f52843921f6d50e326f16fd19f5e4ca9120375ed70",
+      "spec": {
+        "template": "compare",
+        "left": {
+          "title": "Monolithic Database",
+          "badge": "Coupled Storage Bottleneck",
+          "items": [
+            "Compute and single disk volume tightly coupled.",
+            "Writes full dirty memory pages across network.",
+            "High input output latency limits transaction speed."
+          ]
+        },
+        "right": {
+          "title": "Aurora Distributed Tier",
+          "badge": "Decoupled Log Engine",
+          "items": [
+            "Streams lightweight redo log records to storage.",
+            "Six copies replicated across three distinct zones.",
+            "Quorum model commits with four of six confirmations."
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "annotation": "Monolithic databases suffer input output storage write bottlenecks."
+          },
+          {
+            "at": "say2",
+            "annotation": "Aurora decouples compute nodes from distributed storage fleets."
+          },
+          {
+            "at": "example",
+            "annotation": "Engine verifies storage write quorum across healthy storage nodes."
+          },
+          {
+            "at": "tryIt",
+            "annotation": "Quorum commits survive entire availability zone infrastructure failure."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 2,
+      "partTitle": "Aurora Serverless v2 Auto-Scaling Mechanics: ACU Granularity & Instant In-Place Scaling",
+      "codeHash": "14a77bf10d4af3e2fbf36a7e0e28798bcc1e62f5783136198a17c00c28020223",
+      "spec": {
+        "template": "compare",
+        "left": {
+          "title": "Provisioned Compute",
+          "badge": "Capacity Mismatch",
+          "items": [
+            "Provisioning for peak causes massive idle waste.",
+            "Provisioning for average risks overload during surges.",
+            "Resizing instances requires disruptive database restarts."
+          ]
+        },
+        "right": {
+          "title": "Serverless v2 Scaling",
+          "badge": "Granular In-Place Auto-Scale",
+          "items": [
+            "Scales in granular fractional capacity unit increments.",
+            "Dynamically resizes buffer pools without dropped connections.",
+            "Eliminates infrastructure cost waste during quiet periods."
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "annotation": "Static capacity sizing causes infrastructure waste or database throttling."
+          },
+          {
+            "at": "say2",
+            "annotation": "Serverless scaling dynamically adjusts capacity in fractional increments."
+          },
+          {
+            "at": "example",
+            "annotation": "Scaler absorbs connection spikes by dynamically raising capacity units."
+          },
+          {
+            "at": "tryIt",
+            "annotation": "Granular scaling preserves active connections without downtime or restarts."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 3,
+      "partTitle": "High-Performance Read Scaling: Shared Storage Replicas & Custom Endpoints",
+      "codeHash": "ec6387c1aee5d84f4bfcc8c522dbced47de4cbe7132c4d26e1c74c9b9466adcf",
+      "spec": {
+        "template": "compare",
+        "left": {
+          "title": "Traditional Replicas",
+          "badge": "Storage Duplication",
+          "items": [
+            "Each replica maintains independent physical storage.",
+            "Streams heavy write logs causing minutes of lag.",
+            "Multiplies enterprise storage costs significantly."
+          ]
+        },
+        "right": {
+          "title": "Aurora Shared Storage",
+          "badge": "Zero Duplication Fleet",
+          "items": [
+            "Up to fifteen replicas attach to single shared volume.",
+            "Lightweight cache invalidations keep lag under ten milliseconds.",
+            "Custom endpoints isolate analytical queries from real time traffic."
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "annotation": "Traditional replication duplicates storage and incurs severe replica lag."
+          },
+          {
+            "at": "say2",
+            "annotation": "Aurora read replicas attach directly to single shared storage volume."
+          },
+          {
+            "at": "example",
+            "annotation": "Cluster fleet routes read requests across low latency replica nodes."
+          },
+          {
+            "at": "tryIt",
+            "annotation": "Shared storage architecture guarantees sub ten millisecond replica lag."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 4,
+      "partTitle": "Aurora Global Database: Cross-Region Storage Replication & Headless Disaster Recovery",
+      "codeHash": "5aa279a5df5172a9dd19047e8db9db6815bf9eee489a862d8a578ce7175d0cbc",
+      "spec": {
+        "template": "compare",
+        "left": {
+          "title": "Logical Cross-Region",
+          "badge": "High Compute Overhead",
+          "items": [
+            "Primary compute instance handles cross region transport.",
+            "Replication lag stretches across minutes under load.",
+            "Significant risk of data loss during regional outages."
+          ]
+        },
+        "right": {
+          "title": "Aurora Global Database",
+          "badge": "Storage Layer Transport",
+          "items": [
+            "Storage fleet replicates directly over private global network.",
+            "Sub second replication lag delivers near zero recovery point.",
+            "Planned failover executes role switchover with zero data loss."
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "annotation": "Traditional cross region replication degrades primary compute performance."
+          },
+          {
+            "at": "say2",
+            "annotation": "Aurora replicates at storage layer without consuming compute resources."
+          },
+          {
+            "at": "example",
+            "annotation": "Global database coordinates planned switchover across regional clusters."
+          },
+          {
+            "at": "tryIt",
+            "annotation": "Planned role switchover completes with zero data loss recovery point."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 5,
+      "partTitle": "Aurora Connection Pooling & High Availability: Amazon RDS Proxy & Fast Failover",
+      "codeHash": "1e3b8b0b32e2d53f23b2006a90b4a053cd493fb520191271dbad1c2d59f15e91",
+      "spec": {
+        "template": "compare",
+        "left": {
+          "title": "Direct DB Connections",
+          "badge": "Connection Exhaustion",
+          "items": [
+            "Ephemeral serverless functions exhaust connection pools.",
+            "High memory overhead per connection degrades database.",
+            "Failover requires waiting for slow client DNS propagation."
+          ]
+        },
+        "right": {
+          "title": "Amazon RDS Proxy",
+          "badge": "Multiplexed Pooling",
+          "items": [
+            "Multiplexes thousands of clients over compact connection pool.",
+            "Preserves client socket connections during failover events.",
+            "Reduces application observed failover downtime by sixty-six percent."
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "annotation": "Surging serverless functions exhaust relational database connection pools."
+          },
+          {
+            "at": "say2",
+            "annotation": "Database proxy multiplexes client sessions over persistent connection pool."
+          },
+          {
+            "at": "example",
+            "annotation": "Proxy manager handles client surge without exhausting backend database."
+          },
+          {
+            "at": "tryIt",
+            "annotation": "Connection pooling preserves client sockets during failover events."
+          }
+        ]
+      }
+    }
+  ]
+}
