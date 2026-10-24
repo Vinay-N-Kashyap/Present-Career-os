@@ -1,0 +1,1121 @@
+{
+  "schemaVersion": "2.0",
+  "prefix": "sql-mastery",
+  "day": 31,
+  "promptSha": "4edaf12b90e376cd09e18114c4438d51aad62d5fc39f93b0cc282ee994665a86",
+  "model": "manual-expert",
+  "entries": [
+    {
+      "partTitle": "Relational Algebra, AST Query Parsing & Cost-Based Optimizer (CBO) Cost Formulations",
+      "codeHash": "1e192b5c1e1724ededff31a73587385ff33ceadf47d3d078ddec2785f5c55d6b",
+      "spec": {
+        "template": "compare",
+        "title": "Planner Cost Formulations: Sequential versus Random Access",
+        "leftLabel": "Sequential Scan Cost",
+        "rightLabel": "Random Index Scan Cost",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Relational algebra transforms logical queries before cost evaluation begins.",
+            "left": {
+              "code": "pages * seq_page_cost + tuples * cpu_tuple_cost",
+              "result": {
+                "text": "linear disk read overhead"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "index_pages + random_heap_pages * random_page_cost",
+              "result": {
+                "text": "noncontiguous seek penalty"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "The optimizer calculates estimated page access costs across storage engines.",
+            "left": {
+              "code": "seq_page_cost = 1.0",
+              "result": {
+                "text": "baseline cost unit"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "random_page_cost = 1.1 on modern NVMe drives",
+              "result": {
+                "text": "eliminated seek latency"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Logistics parcel sorting relies on automated inventory scanner decisions.",
+            "left": {
+              "code": "Drive forklift down every warehouse aisle",
+              "result": {
+                "text": "predictable bulk transit"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Jump directly to tagged shelf coordinates",
+              "result": {
+                "text": "rapid selective retrieval"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Evaluate query cost models by adjusting random page parameter values.",
+            "left": {
+              "code": "random_page_cost = 4.0 (spinning HDD)",
+              "result": {
+                "text": "favors sequential table scan"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "random_page_cost = 1.1 (NVMe SSD)",
+              "result": {
+                "text": "favors indexed lookups"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Planner Cost Formulations: Sequential versus Random Access",
+        "leftLabel": "Sequential Scan Cost",
+        "rightLabel": "Random Index Scan Cost",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Relational algebra transforms logical queries before cost evaluation begins.",
+            "left": {
+              "code": "pages * seq_page_cost + tuples * cpu_tuple_cost",
+              "result": {
+                "text": "linear disk read overhead"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "index_pages + random_heap_pages * random_page_cost",
+              "result": {
+                "text": "noncontiguous seek penalty"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "The optimizer calculates estimated page access costs across storage engines.",
+            "left": {
+              "code": "seq_page_cost = 1.0",
+              "result": {
+                "text": "baseline cost unit"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "random_page_cost = 1.1 on modern NVMe drives",
+              "result": {
+                "text": "eliminated seek latency"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Logistics parcel sorting relies on automated inventory scanner decisions.",
+            "left": {
+              "code": "Drive forklift down every warehouse aisle",
+              "result": {
+                "text": "predictable bulk transit"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Jump directly to tagged shelf coordinates",
+              "result": {
+                "text": "rapid selective retrieval"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Evaluate query cost models by adjusting random page parameter values.",
+            "left": {
+              "code": "random_page_cost = 4.0 (spinning HDD)",
+              "result": {
+                "text": "favors sequential table scan"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "random_page_cost = 1.1 (NVMe SSD)",
+              "result": {
+                "text": "favors indexed lookups"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Scan Mechanics: Sequential Scan vs Index Scan vs Bitmap Index Scan & Page Prefetching",
+      "codeHash": "a5a1a28272cdece15f44ef443bd78d57a456e6e20a425de84b7d9b12a10db53c",
+      "spec": {
+        "template": "table",
+        "title": "Physical Table Scan Access Path Characteristics",
+        "columns": [
+          "scan_mode",
+          "selectivity_zone",
+          "io_pattern",
+          "primary_bottleneck"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Choosing the appropriate scan access path prevents catastrophic latency spikes.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Sequential Scan"
+                  },
+                  {
+                    "text": "Greater than twenty percent"
+                  },
+                  {
+                    "text": "Sequential Read Ahead"
+                  },
+                  {
+                    "text": "High bandwidth saturation"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Sequential reads allow hardware prefetching algorithms to maximize throughput.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Sequential Scan"
+                  },
+                  {
+                    "text": "Greater than twenty percent"
+                  },
+                  {
+                    "text": "Sequential Read Ahead"
+                  },
+                  {
+                    "text": "High bandwidth saturation"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Standard Index Scan"
+                  },
+                  {
+                    "text": "Below one percent"
+                  },
+                  {
+                    "text": "Random Heap Seeks"
+                  },
+                  {
+                    "text": "Disk head thrashing"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "A municipal library collection illustrates physical scan selection methods.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Sequential Scan"
+                  },
+                  {
+                    "text": "Greater than twenty percent"
+                  },
+                  {
+                    "text": "Sequential Read Ahead"
+                  },
+                  {
+                    "text": "High bandwidth saturation"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Standard Index Scan"
+                  },
+                  {
+                    "text": "Below one percent"
+                  },
+                  {
+                    "text": "Random Heap Seeks"
+                  },
+                  {
+                    "text": "Disk head thrashing"
+                  }
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Bitmap Heap Scan"
+                  },
+                  {
+                    "text": "One to ten percent"
+                  },
+                  {
+                    "text": "Sorted Block Reads"
+                  },
+                  {
+                    "text": "Bitmap memory overhead"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Execute the selectivity evaluation query to examine optimizer scan decisions.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Sequential Scan"
+                  },
+                  {
+                    "text": "Bulk table scans"
+                  },
+                  {
+                    "text": "Sequential"
+                  },
+                  {
+                    "text": "I/O bandwidth"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Standard Index Scan"
+                  },
+                  {
+                    "text": "Pinpoint queries"
+                  },
+                  {
+                    "text": "Random"
+                  },
+                  {
+                    "text": "Seek latency"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Bitmap Heap Scan"
+                  },
+                  {
+                    "text": "Intermediate batches"
+                  },
+                  {
+                    "text": "Sequentialized"
+                  },
+                  {
+                    "text": "Memory limit"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Physical Table Scan Access Path Characteristics",
+        "columns": [
+          "scan_mode",
+          "selectivity_zone",
+          "io_pattern",
+          "primary_bottleneck"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Choosing the appropriate scan access path prevents catastrophic latency spikes.",
+            "rows": [
+              {
+                "cells": [
+                  "Sequential Scan",
+                  "Greater than twenty percent",
+                  "Sequential Read Ahead",
+                  "High bandwidth saturation"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Sequential reads allow hardware prefetching algorithms to maximize throughput.",
+            "rows": [
+              {
+                "cells": [
+                  "Sequential Scan",
+                  "Greater than twenty percent",
+                  "Sequential Read Ahead",
+                  "High bandwidth saturation"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Standard Index Scan",
+                  "Below one percent",
+                  "Random Heap Seeks",
+                  "Disk head thrashing"
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "A municipal library collection illustrates physical scan selection methods.",
+            "rows": [
+              {
+                "cells": [
+                  "Sequential Scan",
+                  "Greater than twenty percent",
+                  "Sequential Read Ahead",
+                  "High bandwidth saturation"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Standard Index Scan",
+                  "Below one percent",
+                  "Random Heap Seeks",
+                  "Disk head thrashing"
+                ],
+                "tone": "error"
+              },
+              {
+                "cells": [
+                  "Bitmap Heap Scan",
+                  "One to ten percent",
+                  "Sorted Block Reads",
+                  "Bitmap memory overhead"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Execute the selectivity evaluation query to examine optimizer scan decisions.",
+            "rows": [
+              {
+                "cells": [
+                  "Sequential Scan",
+                  "Bulk table scans",
+                  "Sequential",
+                  "I/O bandwidth"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Standard Index Scan",
+                  "Pinpoint queries",
+                  "Random",
+                  "Seek latency"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "Bitmap Heap Scan",
+                  "Intermediate batches",
+                  "Sequentialized",
+                  "Memory limit"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Join Algorithms: Nested Loop, Hash Join (In-Memory & Multi-Batch Grace Hash) & Merge Join",
+      "codeHash": "6a946852108d2f1d3b507d88a54ce2b5a77b1ae6f1c1fd4d42259d825f4e8cea",
+      "spec": {
+        "template": "compare",
+        "title": "Join Execution Operators: In-Memory Hash Join versus Nested Loop Probing",
+        "leftLabel": "In-Memory Hash Join",
+        "rightLabel": "Nested Loop Index Probe",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "In relational algebra joins select concrete physical execution algorithms.",
+            "left": {
+              "code": "Builds hash table on inner relation",
+              "result": {
+                "text": "linear single pass scan"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "Scans inner table for each outer row",
+              "result": {
+                "text": "quadratic without indexes"
+              },
+              "tone": "error"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "The nested loop executor scans the inner relation for matching join keys.",
+            "left": {
+              "code": "Single build phase in memory",
+              "result": {
+                "text": "hash table resident"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "Iterative B-tree index traversals",
+              "result": {
+                "text": "logarithmic probe cost"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "An event registration desk matching attendee tickets illustrates join logic.",
+            "left": {
+              "code": "Sort tickets into alphabetized boxes",
+              "result": {
+                "text": "instant lookup efficiency"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "Search whole paper registry per guest",
+              "result": {
+                "text": "repetitive manual searching"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Execute relational inner joins to inspect department budget allocations.",
+            "left": {
+              "code": "Optimal for large unindexed sets",
+              "result": {
+                "text": "linear completion"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "Optimal for tiny outer sets",
+              "result": {
+                "text": "zero startup cost"
+              },
+              "tone": "data"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Join Execution Operators: In-Memory Hash Join versus Nested Loop Probing",
+        "leftLabel": "In-Memory Hash Join",
+        "rightLabel": "Nested Loop Index Probe",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "In relational algebra joins select concrete physical execution algorithms.",
+            "left": {
+              "code": "Builds hash table on inner relation",
+              "result": {
+                "text": "linear single pass scan"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "Scans inner table for each outer row",
+              "result": {
+                "text": "quadratic without indexes"
+              },
+              "tone": "error"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "The nested loop executor scans the inner relation for matching join keys.",
+            "left": {
+              "code": "Single build phase in memory",
+              "result": {
+                "text": "hash table resident"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "Iterative B-tree index traversals",
+              "result": {
+                "text": "logarithmic probe cost"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "An event registration desk matching attendee tickets illustrates join logic.",
+            "left": {
+              "code": "Sort tickets into alphabetized boxes",
+              "result": {
+                "text": "instant lookup efficiency"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "Search whole paper registry per guest",
+              "result": {
+                "text": "repetitive manual searching"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Execute relational inner joins to inspect department budget allocations.",
+            "left": {
+              "code": "Optimal for large unindexed sets",
+              "result": {
+                "text": "linear completion"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "Optimal for tiny outer sets",
+              "result": {
+                "text": "zero startup cost"
+              },
+              "tone": "data"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "EXPLAIN ANALYZE Deep Dive: Buffers, Loops, Execution Timings & WorkMem Spills to Disk",
+      "codeHash": "14f710586f65e9f09188ef624be7f200b9aa84518eb1f3e3ace7d3406ed090ef",
+      "spec": {
+        "template": "table",
+        "title": "EXPLAIN ANALYZE Buffer and Timing Diagnostics",
+        "columns": [
+          "plan_metric",
+          "interpretation",
+          "healthy_threshold",
+          "warning_indicator"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Database engineers rely on explain analyze to inspect optimizer decisions.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Actual vs Estimated Rows"
+                  },
+                  {
+                    "text": "Optimizer cardinality accuracy"
+                  },
+                  {
+                    "text": "Within twenty percent"
+                  },
+                  {
+                    "text": "Tenfold order difference"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Each execution node presents estimated preliminary costs alongside true runtime.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Actual vs Estimated Rows"
+                  },
+                  {
+                    "text": "Optimizer cardinality accuracy"
+                  },
+                  {
+                    "text": "Within twenty percent"
+                  },
+                  {
+                    "text": "Tenfold order difference"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Shared Hit vs Shared Read"
+                  },
+                  {
+                    "text": "Buffer pool cache efficiency"
+                  },
+                  {
+                    "text": "Greater than ninety-nine"
+                  },
+                  {
+                    "text": "Frequent disk reads"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "A restaurant kitchen operating during dinner mirrors execution plan metrics.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Actual vs Estimated Rows"
+                  },
+                  {
+                    "text": "Optimizer cardinality accuracy"
+                  },
+                  {
+                    "text": "Within twenty percent"
+                  },
+                  {
+                    "text": "Tenfold order difference"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Shared Hit vs Shared Read"
+                  },
+                  {
+                    "text": "Buffer pool cache efficiency"
+                  },
+                  {
+                    "text": "Greater than ninety-nine"
+                  },
+                  {
+                    "text": "Frequent disk reads"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Sort Method Disk Spill"
+                  },
+                  {
+                    "text": "Exceeding session memory limit"
+                  },
+                  {
+                    "text": "Zero bytes on disk"
+                  },
+                  {
+                    "text": "External merge sort"
+                  }
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Execute the query diagnostics analysis to detect buffer cache misses and spills.",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Actual vs Estimated Rows"
+                  },
+                  {
+                    "text": "Cardinality match"
+                  },
+                  {
+                    "text": "Accurate"
+                  },
+                  {
+                    "text": "Mismatch"
+                  }
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Shared Buffer Hits"
+                  },
+                  {
+                    "text": "Memory retrieval"
+                  },
+                  {
+                    "text": "High hit rate"
+                  },
+                  {
+                    "text": "Disk misses"
+                  }
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  {
+                    "text": "WorkMem Sort Allocation"
+                  },
+                  {
+                    "text": "In-memory quicksort"
+                  },
+                  {
+                    "text": "Clean"
+                  },
+                  {
+                    "text": "Spills"
+                  }
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "EXPLAIN ANALYZE Buffer and Timing Diagnostics",
+        "columns": [
+          "plan_metric",
+          "interpretation",
+          "healthy_threshold",
+          "warning_indicator"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Database engineers rely on explain analyze to inspect optimizer decisions.",
+            "rows": [
+              {
+                "cells": [
+                  "Actual vs Estimated Rows",
+                  "Optimizer cardinality accuracy",
+                  "Within twenty percent",
+                  "Tenfold order difference"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Each execution node presents estimated preliminary costs alongside true runtime.",
+            "rows": [
+              {
+                "cells": [
+                  "Actual vs Estimated Rows",
+                  "Optimizer cardinality accuracy",
+                  "Within twenty percent",
+                  "Tenfold order difference"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Shared Hit vs Shared Read",
+                  "Buffer pool cache efficiency",
+                  "Greater than ninety-nine",
+                  "Frequent disk reads"
+                ],
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "A restaurant kitchen operating during dinner mirrors execution plan metrics.",
+            "rows": [
+              {
+                "cells": [
+                  "Actual vs Estimated Rows",
+                  "Optimizer cardinality accuracy",
+                  "Within twenty percent",
+                  "Tenfold order difference"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Shared Hit vs Shared Read",
+                  "Buffer pool cache efficiency",
+                  "Greater than ninety-nine",
+                  "Frequent disk reads"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Sort Method Disk Spill",
+                  "Exceeding session memory limit",
+                  "Zero bytes on disk",
+                  "External merge sort"
+                ],
+                "tone": "error"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Execute the query diagnostics analysis to detect buffer cache misses and spills.",
+            "rows": [
+              {
+                "cells": [
+                  "Actual vs Estimated Rows",
+                  "Cardinality match",
+                  "Accurate",
+                  "Mismatch"
+                ],
+                "tone": "data"
+              },
+              {
+                "cells": [
+                  "Shared Buffer Hits",
+                  "Memory retrieval",
+                  "High hit rate",
+                  "Disk misses"
+                ],
+                "tone": "ok"
+              },
+              {
+                "cells": [
+                  "WorkMem Sort Allocation",
+                  "In-memory quicksort",
+                  "Clean",
+                  "Spills"
+                ],
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Diagnostic Outage & Mitigation: Resolving Runaway Query Spills and Bad Cardinality Estimation with Extended Statistics",
+      "codeHash": "da0ba8b55a2d94f8bb2633652a073ac7210019f1aaeec0f312de033c16f112f5",
+      "spec": {
+        "template": "compare",
+        "title": "Independent Column Assumption versus Multivariate Extended Statistics",
+        "leftLabel": "Default Independent Stats",
+        "rightLabel": "Multivariate Extended Stats",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The runaway query spill outage demonstrates critical performance degradation.",
+            "left": {
+              "code": "P(Country) * P(State)",
+              "result": {
+                "text": "estimated twelve rows"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Joint MCV Dependency Matrix",
+              "result": {
+                "text": "estimated eight hundred thousand rows"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "The slow query log extracted the failing customer address query.",
+            "left": {
+              "code": "Nested Loop Join chosen",
+              "result": {
+                "text": "eight hundred thousand random seeks"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Hash Join chosen",
+              "result": {
+                "text": "single pass linear scan"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "An international airline ticketing engine illustrates correlated variables.",
+            "left": {
+              "code": "London and Heathrow treated as independent",
+              "result": {
+                "text": "terminal congestion failure"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Geographic dependency recognized",
+              "result": {
+                "text": "smooth passenger boarding"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Execute the production incident audit query to analyze multivariate statistics.",
+            "left": {
+              "code": "Unextended Statistics Latency: 18,450 ms",
+              "result": {
+                "text": "outage critical"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Multivariate Statistics Latency: 4.25 ms",
+              "result": {
+                "text": "healthy resolution"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Independent Column Assumption versus Multivariate Extended Statistics",
+        "leftLabel": "Default Independent Stats",
+        "rightLabel": "Multivariate Extended Stats",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The runaway query spill outage demonstrates critical performance degradation.",
+            "left": {
+              "code": "P(Country) * P(State)",
+              "result": {
+                "text": "estimated twelve rows"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Joint MCV Dependency Matrix",
+              "result": {
+                "text": "estimated eight hundred thousand rows"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "The slow query log extracted the failing customer address query.",
+            "left": {
+              "code": "Nested Loop Join chosen",
+              "result": {
+                "text": "eight hundred thousand random seeks"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Hash Join chosen",
+              "result": {
+                "text": "single pass linear scan"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "An international airline ticketing engine illustrates correlated variables.",
+            "left": {
+              "code": "London and Heathrow treated as independent",
+              "result": {
+                "text": "terminal congestion failure"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Geographic dependency recognized",
+              "result": {
+                "text": "smooth passenger boarding"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Execute the production incident audit query to analyze multivariate statistics.",
+            "left": {
+              "code": "Unextended Statistics Latency: 18,450 ms",
+              "result": {
+                "text": "outage critical"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Multivariate Statistics Latency: 4.25 ms",
+              "result": {
+                "text": "healthy resolution"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
