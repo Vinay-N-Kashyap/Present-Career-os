@@ -1,0 +1,232 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "bcom_tax",
+  "day": 37,
+  "entries": [
+    {
+      "partIndex": 0,
+      "spec": {
+        "template": "funnel",
+        "title": "Constitutional and Statutory Basis of Export Refunds: Zero-Rated Supplies under Section 16 of the IGST Act",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Destination principles ensure goods are taxed at final consumption."
+          },
+          {
+            "step": "say2",
+            "caption": "Zero rated exports remove domestic indirect taxes from outbound trade."
+          },
+          {
+            "step": "example",
+            "caption": "Service exports require convertible foreign exchange realizations."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Qualifying exports unlock full unutilized input credit cash refunds."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 1,
+      "spec": {
+        "template": "funnel",
+        "title": "Letter of Undertaking (LUT) Architecture: Bond vs LUT, Export Invoices & Bank Realization Certificates (eBRC)",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Letters of undertaking replace expensive commercial surety bonds."
+          },
+          {
+            "step": "say2",
+            "caption": "Exporters undertake binding commitments to export goods expeditiously."
+          },
+          {
+            "step": "example",
+            "caption": "Service exports must realize foreign exchange within one full year."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Electronic bank realization certificates substantiate export claims."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 2,
+      "spec": {
+        "template": "funnel",
+        "title": "Rule 89(4) Refund of Unutilized ITC on Zero-Rated Supplies: Turnover Ratios & Maximum Refund Formulas",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Unutilized input tax credits liquidate into operational cash reserves."
+          },
+          {
+            "step": "say2",
+            "caption": "Export goods turnover adopts a statutory domestic benchmark ceiling."
+          },
+          {
+            "step": "example",
+            "caption": "Capital goods credits remain strictly excluded from refund formulas."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Turnover proportions govern maximum statutory refund calculations."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 3,
+      "spec": {
+        "template": "funnel",
+        "title": "Inverted Duty Structure (IDS) under Section 54(3)(ii) & Rule 89(5): Supreme Court Jurisprudence & Revised Formulas",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Higher input tax rates create structural balance sheet accumulations."
+          },
+          {
+            "step": "say2",
+            "caption": "Inverted duty structures generate statutory cash refund entitlements."
+          },
+          {
+            "step": "example",
+            "caption": "Supreme court precedents exclude input services from raw material tax."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Proportional outward tax deductions protect refundable credit pools."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 4,
+      "spec": {
+        "template": "funnel",
+        "title": "Enterprise Implementation: Algorithmic Inverted Duty Structure & Export Refund Calculation Cockpit",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Unified cockpits segregate raw materials from service procurements."
+          },
+          {
+            "step": "say2",
+            "caption": "Dual refund engines compute export and inverted claims concurrently."
+          },
+          {
+            "step": "example",
+            "caption": "Ledger balance ceilings cap total disbursements to available credits."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Audit manifests compile shipping bills and statutory certificates."
+          }
+        ]
+      }
+    }
+  ]
+}
