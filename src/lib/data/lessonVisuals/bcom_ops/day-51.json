@@ -1,0 +1,232 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "bcom_ops",
+  "day": 51,
+  "entries": [
+    {
+      "partIndex": 0,
+      "spec": {
+        "template": "funnel",
+        "title": "Architecture of Global Trade: Ocean, Air, Rail, and Road Freight Dynamics and Modal Selection Economics",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Ocean freight moves colossal trade volumes across international waters."
+          },
+          {
+            "step": "say2",
+            "caption": "Air cargo provides high velocity transport for valuable therapeutics."
+          },
+          {
+            "step": "example",
+            "caption": "Rail intermodal corridors link deepwater seaports with inland depots."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Total landed cost calculations balance freight rates with carrying costs."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 1,
+      "spec": {
+        "template": "funnel",
+        "title": "Incoterms 2020 Invariants: Risk Transfer, Cost Allocation, and Title Transfer (EXW, FOB, CIF, DDP)",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Incoterms define precise cost allocations and geographic risk transfers."
+          },
+          {
+            "step": "say2",
+            "caption": "Ex works places maximum administrative and transport burden on buyers."
+          },
+          {
+            "step": "example",
+            "caption": "Free on board transfers loss risk the instant cargo is loaded on ship."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Delivered duty paid mandates that sellers absorb import clearance duties."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 2,
+      "spec": {
+        "template": "funnel",
+        "title": "Containerization & Intermodal Logistics: TEU Economics, Drayage Networks, and Transshipment Hubs",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Standard intermodal steel containers enable seamless intermodal transfers."
+          },
+          {
+            "step": "say2",
+            "caption": "Quayside gantry cranes hoist containers into structural vessel cells."
+          },
+          {
+            "step": "example",
+            "caption": "Hub and spoke networks route mother vessels to transshipment ports."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Inland container depots provide customs bonded processing away from coasts."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 3,
+      "spec": {
+        "template": "funnel",
+        "title": "3D Container Loading Problem (CLP): Volumetric Weight, Axle Weight Distribution, and Stowage Heuristics",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Container loading heuristics maximize cubic space utilization in transit."
+          },
+          {
+            "step": "say2",
+            "caption": "Axle weight balancing ensures highway tractor stability during transport."
+          },
+          {
+            "step": "example",
+            "caption": "Placement algorithms respect cargo load bearing and orientation limits."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Volumetric weight rules ensure carriers bill for space when goods cube out."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 4,
+      "spec": {
+        "template": "funnel",
+        "title": "Global Freight Costing Engine: Multi-Leg Freight Optimization and Demurrage Detention Risk Modeling",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Multi leg costing engines calculate transit tariffs across ocean corridors."
+          },
+          {
+            "step": "say2",
+            "caption": "Bunker adjustment factors compensate for fluctuating marine fuel prices."
+          },
+          {
+            "step": "example",
+            "caption": "Demurrage charges penalize containers lingering inside marine terminals."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Predictive risk engines flag last free days to avoid detention penalties."
+          }
+        ]
+      }
+    }
+  ]
+}

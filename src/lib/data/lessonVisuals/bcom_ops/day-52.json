@@ -1,0 +1,232 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "bcom_ops",
+  "day": 52,
+  "entries": [
+    {
+      "partIndex": 0,
+      "spec": {
+        "template": "funnel",
+        "title": "Regulatory Architecture of Global Customs: World Customs Organization (WCO) and Cross-Border Clearance",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "World customs organizations harmonize global cross border trade standards."
+          },
+          {
+            "step": "say2",
+            "caption": "Authorized economic operators receive expedited customs clearance lanes."
+          },
+          {
+            "step": "example",
+            "caption": "Importers of record bear sole legal responsibility for entry declarations."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Advanced manifest filings screen international cargo for security hazards."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 1,
+      "spec": {
+        "template": "funnel",
+        "title": "Harmonized System (HS) Tariff Classification: General Rules of Interpretation (GRI 1-6) and Section Notes",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "The harmonized system organizes global merchandise into standard chapters."
+          },
+          {
+            "step": "say2",
+            "caption": "General rules of interpretation govern statutory product classification."
+          },
+          {
+            "step": "example",
+            "caption": "Section and chapter notes carry binding legal weight during tariff audits."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Essential character rules determine classifications for composite goods."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 2,
+      "spec": {
+        "template": "funnel",
+        "title": "Customs Valuation Mechanics: Transaction Value Method, Royalties, Assists, and Deductive Value",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Customs authorities assess ad valorem duties on dutiable cargo value."
+          },
+          {
+            "step": "say2",
+            "caption": "The transaction value method evaluates the price paid or payable cleanly."
+          },
+          {
+            "step": "example",
+            "caption": "Buyer provided tooling molds constitute statutory dutiable assists."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Condition of sale royalties must be added to dutiable customs valuation."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 3,
+      "spec": {
+        "template": "funnel",
+        "title": "Core International Trade Documentation: Commercial Invoice, Packing List, Bill of Lading, and Certificate of Origin",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Commercial invoices document financial transaction prices under perjury."
+          },
+          {
+            "step": "say2",
+            "caption": "Packing lists detail itemized carton counts and physical cargo weights."
+          },
+          {
+            "step": "example",
+            "caption": "Negotiable bills of lading serve as legal documents of cargo title."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Certificates of origin prove where merchandise was legally transformed."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 4,
+      "spec": {
+        "template": "funnel",
+        "title": "Customs Tariff & Duty Computation Engine: Anti-Dumping Duties, Countervailing Duties & FTA Origin Verification",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Automated duty engines compute basic customs tariffs across currencies."
+          },
+          {
+            "step": "say2",
+            "caption": "Anti dumping duties protect domestic manufacturing from unfair pricing."
+          },
+          {
+            "step": "example",
+            "caption": "Countervailing duties neutralize foreign government financial subsidies."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Rules of origin algorithms verify regional value content requirements."
+          }
+        ]
+      }
+    }
+  ]
+}

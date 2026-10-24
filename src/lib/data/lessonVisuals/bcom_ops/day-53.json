@@ -1,0 +1,232 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "bcom_ops",
+  "day": 53,
+  "entries": [
+    {
+      "partIndex": 0,
+      "spec": {
+        "template": "funnel",
+        "title": "Deepwater Container Port Ecosystems: Quayside, Staging Yard, Gate Complex, and Rail Intermodal Interfaces",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Deepwater container terminals coordinate quayside and staging yard cranes."
+          },
+          {
+            "step": "say2",
+            "caption": "Ship to shore gantry cranes hoist containers from cellular vessel holds."
+          },
+          {
+            "step": "example",
+            "caption": "The staging yard buffers vessel batch arrivals against inland trucking."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Automated terminal operating systems orchestrate physical port workflows."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 1,
+      "spec": {
+        "template": "funnel",
+        "title": "Berth Allocation Problem (BAP) and Quay Crane Scheduling Problem (QCSP): Combinatorial Formulations",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Berth allocation models assign arriving container ships along the quay."
+          },
+          {
+            "step": "say2",
+            "caption": "Continuous berthing formulations model ships as geometric rectangles."
+          },
+          {
+            "step": "example",
+            "caption": "Quay crane scheduling enforces strict linear non crossing constraints."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Safety clearance buffers prevent mechanical collisions between cranes."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 2,
+      "spec": {
+        "template": "funnel",
+        "title": "Yard Crane Dispatching and Container Stacking Strategies: Marshaling, Housekeeping Moves, and Dwell-Time Optimization",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Vertical container stacking creates unproductive reshuffle move delays."
+          },
+          {
+            "step": "say2",
+            "caption": "Yard cranes must hoist top containers to access buried bottom boxes."
+          },
+          {
+            "step": "example",
+            "caption": "Dwell time profiling stacks imminent departures on top yard tiers."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Export pre marshaling consolidates outbound containers before berthing."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 3,
+      "spec": {
+        "template": "funnel",
+        "title": "Automated Terminal Technologies: Automated Guided Vehicles (AGVs), OCR Gate Portals, and Digital Terminal Operating Systems (TOS)",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Remote controlled cranes operate via computer vision and control suites."
+          },
+          {
+            "step": "say2",
+            "caption": "Automated guided vehicles transport containers using electric power."
+          },
+          {
+            "step": "example",
+            "caption": "Automated stacking cranes handle container tiers with zero personnel."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Optical character recognition portals record container damage at gates."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 4,
+      "spec": {
+        "template": "funnel",
+        "title": "Port Berth & Crane Scheduling Simulator: Turnaround Time Minimization and Congestion Queue Modeling",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Discrete simulators model vessel arrivals and harbor anchorage queues."
+          },
+          {
+            "step": "say2",
+            "caption": "Spatial temporal heuristics find optimal berthing start timestamps."
+          },
+          {
+            "step": "example",
+            "caption": "Crane interference factors account for diminishing marginal productivity."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Local search algorithms swap berthing orders to minimize vessel delay."
+          }
+        ]
+      }
+    }
+  ]
+}
