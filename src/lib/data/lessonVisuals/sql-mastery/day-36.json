@@ -1,0 +1,829 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "sql-mastery",
+  "day": 36,
+  "promptSha": "71653bf11bca790da72484aef21dbfaae5f47e7ebcd94b4111a647bfed48cdd6",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Anatomy of MVCC: Tuple Headers, Physical XMIN/XMAX Markers & Transaction Snapshots",
+      "codeHash": "a60da766add498ca5194cd7bfb88fafa55cf94fc4fd6340bff85eae177189018",
+      "spec": {
+        "template": "compare",
+        "title": "MVCC Concurrency Architecture - Part 1",
+        "leftLabel": "Pessimistic Locking & Lock Contention",
+        "rightLabel": "Optimistic MVCC & Snapshot Isolation",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Relational engine architecture and concurrency control.",
+            "left": {
+              "code": "Exclusive lock blocks readers",
+              "result": {
+                "text": "high thread serialization latency"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Historical tuple versions in heap",
+              "result": {
+                "text": "zero reader writer blocking"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Multi version concurrency control avoids database locks.",
+            "left": {
+              "code": "Lock escalation and queue stall",
+              "result": {
+                "text": "connection pool exhaustion"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Snapshot horizon visibility check",
+              "result": {
+                "text": "consistent sub-millisecond reads"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Historical charter archives preserve legal record versions.",
+            "left": {
+              "code": "Blocking resource contention",
+              "result": {
+                "text": "systemic throughput collapse"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Non-blocking snapshot archive",
+              "result": {
+                "text": "parallel independent verification"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect simulated transaction markers and active row states.",
+            "left": {
+              "code": "Unverified concurrency anomalies",
+              "result": {
+                "text": "silent race condition risk"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Validated isolation semantics",
+              "result": {
+                "text": "deterministic transaction outcome"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "MVCC Concurrency Architecture - Part 1",
+        "leftLabel": "Pessimistic Locking & Lock Contention",
+        "rightLabel": "Optimistic MVCC & Snapshot Isolation",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Relational engine architecture and concurrency control.",
+            "left": {
+              "code": "Exclusive lock blocks readers",
+              "result": {
+                "text": "high thread serialization latency"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Historical tuple versions in heap",
+              "result": {
+                "text": "zero reader writer blocking"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Multi version concurrency control avoids database locks.",
+            "left": {
+              "code": "Lock escalation and queue stall",
+              "result": {
+                "text": "connection pool exhaustion"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Snapshot horizon visibility check",
+              "result": {
+                "text": "consistent sub-millisecond reads"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Historical charter archives preserve legal record versions.",
+            "left": {
+              "code": "Blocking resource contention",
+              "result": {
+                "text": "systemic throughput collapse"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Non-blocking snapshot archive",
+              "result": {
+                "text": "parallel independent verification"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect simulated transaction markers and active row states.",
+            "left": {
+              "code": "Unverified concurrency anomalies",
+              "result": {
+                "text": "silent race condition risk"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Validated isolation semantics",
+              "result": {
+                "text": "deterministic transaction outcome"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Read Committed Isolation: Statement-Level Snapshot Refreshing, Non-Repeatable Reads & Skew",
+      "codeHash": "8934d821e748e2a29f46000466571dc2b055c9a237218b46764c298e56210854",
+      "spec": {
+        "template": "compare",
+        "title": "MVCC Concurrency Architecture - Part 2",
+        "leftLabel": "Pessimistic Locking & Lock Contention",
+        "rightLabel": "Optimistic MVCC & Snapshot Isolation",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Read committed isolation prevents dirty data reads.",
+            "left": {
+              "code": "Exclusive lock blocks readers",
+              "result": {
+                "text": "high thread serialization latency"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Historical tuple versions in heap",
+              "result": {
+                "text": "zero reader writer blocking"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Fresh database snapshot generated per individual query.",
+            "left": {
+              "code": "Lock escalation and queue stall",
+              "result": {
+                "text": "connection pool exhaustion"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Snapshot horizon visibility check",
+              "result": {
+                "text": "consistent sub-millisecond reads"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Accounting clerk ledger displays altered balance values.",
+            "left": {
+              "code": "Blocking resource contention",
+              "result": {
+                "text": "systemic throughput collapse"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Non-blocking snapshot archive",
+              "result": {
+                "text": "parallel independent verification"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Execute snapshot query to detect non repeatable read anomalies.",
+            "left": {
+              "code": "Unverified concurrency anomalies",
+              "result": {
+                "text": "silent race condition risk"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Validated isolation semantics",
+              "result": {
+                "text": "deterministic transaction outcome"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "MVCC Concurrency Architecture - Part 2",
+        "leftLabel": "Pessimistic Locking & Lock Contention",
+        "rightLabel": "Optimistic MVCC & Snapshot Isolation",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Read committed isolation prevents dirty data reads.",
+            "left": {
+              "code": "Exclusive lock blocks readers",
+              "result": {
+                "text": "high thread serialization latency"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Historical tuple versions in heap",
+              "result": {
+                "text": "zero reader writer blocking"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Fresh database snapshot generated per individual query.",
+            "left": {
+              "code": "Lock escalation and queue stall",
+              "result": {
+                "text": "connection pool exhaustion"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Snapshot horizon visibility check",
+              "result": {
+                "text": "consistent sub-millisecond reads"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Accounting clerk ledger displays altered balance values.",
+            "left": {
+              "code": "Blocking resource contention",
+              "result": {
+                "text": "systemic throughput collapse"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Non-blocking snapshot archive",
+              "result": {
+                "text": "parallel independent verification"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Execute snapshot query to detect non repeatable read anomalies.",
+            "left": {
+              "code": "Unverified concurrency anomalies",
+              "result": {
+                "text": "silent race condition risk"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Validated isolation semantics",
+              "result": {
+                "text": "deterministic transaction outcome"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Repeatable Read Guarantees: Transaction-Level Snapshots, Write Conflicts & Error 40001",
+      "codeHash": "3caba5c8e624c5797849d812703f76f9d1e5441fdb83af4b32abaa5c7aef4ba3",
+      "spec": {
+        "template": "compare",
+        "title": "MVCC Concurrency Architecture - Part 3",
+        "leftLabel": "Pessimistic Locking & Lock Contention",
+        "rightLabel": "Optimistic MVCC & Snapshot Isolation",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Repeatable read guarantees immutable transaction snapshots.",
+            "left": {
+              "code": "Exclusive lock blocks readers",
+              "result": {
+                "text": "high thread serialization latency"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Historical tuple versions in heap",
+              "result": {
+                "text": "zero reader writer blocking"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Transaction level snapshot freezes database visibility state.",
+            "left": {
+              "code": "Lock escalation and queue stall",
+              "result": {
+                "text": "connection pool exhaustion"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Snapshot horizon visibility check",
+              "result": {
+                "text": "consistent sub-millisecond reads"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Wildlife panoramic photograph maintains fixed image details.",
+            "left": {
+              "code": "Blocking resource contention",
+              "result": {
+                "text": "systemic throughput collapse"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Non-blocking snapshot archive",
+              "result": {
+                "text": "parallel independent verification"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Execute repeatable read query to inspect write conflict states.",
+            "left": {
+              "code": "Unverified concurrency anomalies",
+              "result": {
+                "text": "silent race condition risk"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Validated isolation semantics",
+              "result": {
+                "text": "deterministic transaction outcome"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "MVCC Concurrency Architecture - Part 3",
+        "leftLabel": "Pessimistic Locking & Lock Contention",
+        "rightLabel": "Optimistic MVCC & Snapshot Isolation",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Repeatable read guarantees immutable transaction snapshots.",
+            "left": {
+              "code": "Exclusive lock blocks readers",
+              "result": {
+                "text": "high thread serialization latency"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Historical tuple versions in heap",
+              "result": {
+                "text": "zero reader writer blocking"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Transaction level snapshot freezes database visibility state.",
+            "left": {
+              "code": "Lock escalation and queue stall",
+              "result": {
+                "text": "connection pool exhaustion"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Snapshot horizon visibility check",
+              "result": {
+                "text": "consistent sub-millisecond reads"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Wildlife panoramic photograph maintains fixed image details.",
+            "left": {
+              "code": "Blocking resource contention",
+              "result": {
+                "text": "systemic throughput collapse"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Non-blocking snapshot archive",
+              "result": {
+                "text": "parallel independent verification"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Execute repeatable read query to inspect write conflict states.",
+            "left": {
+              "code": "Unverified concurrency anomalies",
+              "result": {
+                "text": "silent race condition risk"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Validated isolation semantics",
+              "result": {
+                "text": "deterministic transaction outcome"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Serializable Snapshot Isolation: Dependency Graphs, SIREAD Locks & rw-Antidependencies",
+      "codeHash": "b7db226b7606386440a6acc01e2f7496372917a4a12049ae240bc7be73a9f4a2",
+      "spec": {
+        "template": "compare",
+        "title": "MVCC Concurrency Architecture - Part 4",
+        "leftLabel": "Pessimistic Locking & Lock Contention",
+        "rightLabel": "Optimistic MVCC & Snapshot Isolation",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Write skew race conditions occur across concurrent transactions.",
+            "left": {
+              "code": "Exclusive lock blocks readers",
+              "result": {
+                "text": "high thread serialization latency"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Historical tuple versions in heap",
+              "result": {
+                "text": "zero reader writer blocking"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Hospital medical roster anomaly demonstrates write skew risks.",
+            "left": {
+              "code": "Lock escalation and queue stall",
+              "result": {
+                "text": "connection pool exhaustion"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Snapshot horizon visibility check",
+              "result": {
+                "text": "consistent sub-millisecond reads"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Joint checking account balances trigger simultaneous overdrafts.",
+            "left": {
+              "code": "Blocking resource contention",
+              "result": {
+                "text": "systemic throughput collapse"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Non-blocking snapshot archive",
+              "result": {
+                "text": "parallel independent verification"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect conflict graph cycles and automatic engine abort decisions.",
+            "left": {
+              "code": "Unverified concurrency anomalies",
+              "result": {
+                "text": "silent race condition risk"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Validated isolation semantics",
+              "result": {
+                "text": "deterministic transaction outcome"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "MVCC Concurrency Architecture - Part 4",
+        "leftLabel": "Pessimistic Locking & Lock Contention",
+        "rightLabel": "Optimistic MVCC & Snapshot Isolation",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Write skew race conditions occur across concurrent transactions.",
+            "left": {
+              "code": "Exclusive lock blocks readers",
+              "result": {
+                "text": "high thread serialization latency"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Historical tuple versions in heap",
+              "result": {
+                "text": "zero reader writer blocking"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Hospital medical roster anomaly demonstrates write skew risks.",
+            "left": {
+              "code": "Lock escalation and queue stall",
+              "result": {
+                "text": "connection pool exhaustion"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Snapshot horizon visibility check",
+              "result": {
+                "text": "consistent sub-millisecond reads"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Joint checking account balances trigger simultaneous overdrafts.",
+            "left": {
+              "code": "Blocking resource contention",
+              "result": {
+                "text": "systemic throughput collapse"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Non-blocking snapshot archive",
+              "result": {
+                "text": "parallel independent verification"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect conflict graph cycles and automatic engine abort decisions.",
+            "left": {
+              "code": "Unverified concurrency anomalies",
+              "result": {
+                "text": "silent race condition risk"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Validated isolation semantics",
+              "result": {
+                "text": "deterministic transaction outcome"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Concurrency Architecture: Automated Exponential Backoff, Jitter & Deadlock Avoidance",
+      "codeHash": "5be7aaba4c32a3f81fa0f0bcf8053f4ca5296a01482e81f86435eb82f23afc68",
+      "spec": {
+        "template": "compare",
+        "title": "MVCC Concurrency Architecture - Part 5",
+        "leftLabel": "Pessimistic Locking & Lock Contention",
+        "rightLabel": "Optimistic MVCC & Snapshot Isolation",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Production services navigate transient serialization failures.",
+            "left": {
+              "code": "Exclusive lock blocks readers",
+              "result": {
+                "text": "high thread serialization latency"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Historical tuple versions in heap",
+              "result": {
+                "text": "zero reader writer blocking"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Naive client retry logic triggers catastrophic serialization storms.",
+            "left": {
+              "code": "Lock escalation and queue stall",
+              "result": {
+                "text": "connection pool exhaustion"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Snapshot horizon visibility check",
+              "result": {
+                "text": "consistent sub-millisecond reads"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Randomized backoff delay intervals prevent vehicle bridge collisions.",
+            "left": {
+              "code": "Blocking resource contention",
+              "result": {
+                "text": "systemic throughput collapse"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Non-blocking snapshot archive",
+              "result": {
+                "text": "parallel independent verification"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Compare transaction success rates between retry strategies.",
+            "left": {
+              "code": "Unverified concurrency anomalies",
+              "result": {
+                "text": "silent race condition risk"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Validated isolation semantics",
+              "result": {
+                "text": "deterministic transaction outcome"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "MVCC Concurrency Architecture - Part 5",
+        "leftLabel": "Pessimistic Locking & Lock Contention",
+        "rightLabel": "Optimistic MVCC & Snapshot Isolation",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Production services navigate transient serialization failures.",
+            "left": {
+              "code": "Exclusive lock blocks readers",
+              "result": {
+                "text": "high thread serialization latency"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Historical tuple versions in heap",
+              "result": {
+                "text": "zero reader writer blocking"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Naive client retry logic triggers catastrophic serialization storms.",
+            "left": {
+              "code": "Lock escalation and queue stall",
+              "result": {
+                "text": "connection pool exhaustion"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Snapshot horizon visibility check",
+              "result": {
+                "text": "consistent sub-millisecond reads"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Randomized backoff delay intervals prevent vehicle bridge collisions.",
+            "left": {
+              "code": "Blocking resource contention",
+              "result": {
+                "text": "systemic throughput collapse"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Non-blocking snapshot archive",
+              "result": {
+                "text": "parallel independent verification"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Compare transaction success rates between retry strategies.",
+            "left": {
+              "code": "Unverified concurrency anomalies",
+              "result": {
+                "text": "silent race condition risk"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Validated isolation semantics",
+              "result": {
+                "text": "deterministic transaction outcome"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
