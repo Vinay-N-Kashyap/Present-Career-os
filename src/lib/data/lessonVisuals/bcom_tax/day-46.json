@@ -1,0 +1,127 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "bcom_tax",
+  "day": 46,
+  "entries": [
+    {
+      "partIndex": 0,
+      "spec": {
+        "title": "Summary Processing Mechanics",
+        "steps": [
+          {
+            "label": "Electronic Return",
+            "caption": "Centralized Processing Centre ingests electronic return records."
+          },
+          {
+            "label": "Algorithmic Check",
+            "caption": "System executes automated verification against internal schedules."
+          },
+          {
+            "label": "Prima Facie Notice",
+            "caption": "Electronic intimation notifies assessee of proposed variance."
+          },
+          {
+            "label": "Final Intimation",
+            "caption": "Processing concludes with automated refund or statutory demand."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 1,
+      "spec": {
+        "title": "Faceless Scrutiny Framework",
+        "steps": [
+          {
+            "label": "Automated Allocation",
+            "caption": "Artificial intelligence dynamically assigns case to assessment unit."
+          },
+          {
+            "label": "Verification Support",
+            "caption": "Verification unit executes digital cross checks with vendors."
+          },
+          {
+            "label": "Draft Variation",
+            "caption": "Assessment unit transmits draft variation notice to assessee."
+          },
+          {
+            "label": "Video Conference",
+            "caption": "Assessee presents technical arguments via electronic video hearing."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 2,
+      "spec": {
+        "title": "Best Judgment Adjudication",
+        "steps": [
+          {
+            "label": "Statutory Default",
+            "caption": "Assessee fails to comply with statutory notices or summons."
+          },
+          {
+            "label": "Objective Appraisal",
+            "caption": "Officer gathers external material without vindictive caprice."
+          },
+          {
+            "label": "Honest Estimate",
+            "caption": "Total income is assessed using balanced commercial benchmarks."
+          },
+          {
+            "label": "Protective Order",
+            "caption": "Parallel assessment protects revenue pending ownership clarity."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 3,
+      "spec": {
+        "title": "Special Audit Architecture",
+        "steps": [
+          {
+            "label": "Account Complexity",
+            "caption": "Specialized audit is directed due to intricate corporate accounts."
+          },
+          {
+            "label": "Prior Sanction",
+            "caption": "Commissioner grants written approval following natural justice."
+          },
+          {
+            "label": "Forensic Inspection",
+            "caption": "Nominated accountant evaluates specialized ledger inventory."
+          },
+          {
+            "label": "Limitation Exclusion",
+            "caption": "Statutory audit duration is excluded from assessment limitation."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 4,
+      "spec": {
+        "title": "Assessment Simulator Workflow",
+        "steps": [
+          {
+            "label": "Return Ingestion",
+            "caption": "Python engine parses electronic tax return records."
+          },
+          {
+            "label": "Adjustment Rules",
+            "caption": "Algorithmic rules verify audit disallowances and credit mismatches."
+          },
+          {
+            "label": "Limitation Check",
+            "caption": "System verifies statutory nine month deadline from fiscal year end."
+          },
+          {
+            "label": "Demand Generation",
+            "caption": "Engine computes final tax liability with interest additions."
+          }
+        ]
+      }
+    }
+  ]
+}

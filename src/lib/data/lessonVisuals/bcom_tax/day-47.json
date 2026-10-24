@@ -1,0 +1,127 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "bcom_tax",
+  "day": 47,
+  "entries": [
+    {
+      "partIndex": 0,
+      "spec": {
+        "title": "Reassessment Inception Flow",
+        "steps": [
+          {
+            "label": "Information Flag",
+            "caption": "Insight portal flags high risk transaction across risk strategy."
+          },
+          {
+            "label": "Escapement Review",
+            "caption": "Officer reviews flagged data suggesting taxable income escaped."
+          },
+          {
+            "label": "Prior Approval",
+            "caption": "Specified authority grants preliminary sanction for inquiry."
+          },
+          {
+            "label": "Jurisdiction Gate",
+            "caption": "Proceedings advance to statutory preliminary inquiry stage."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 1,
+      "spec": {
+        "title": "Section 148A Inquiry Stages",
+        "steps": [
+          {
+            "label": "Preliminary Inquiry",
+            "caption": "Officer gathers external data with prior statutory sanction."
+          },
+          {
+            "label": "Show Cause Notice",
+            "caption": "Assessee receives show cause notice with supporting evidence."
+          },
+          {
+            "label": "Assessee Response",
+            "caption": "Assessee files detailed rebuttal supported by commercial records."
+          },
+          {
+            "label": "Speaking Order",
+            "caption": "Officer passes reasoned order on fitness of reassessment."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 2,
+      "spec": {
+        "title": "Limitation Window Analysis",
+        "steps": [
+          {
+            "label": "Standard Window",
+            "caption": "Three year window permits reassessment for any escaped sum."
+          },
+          {
+            "label": "Extended Window",
+            "caption": "Ten year window requires fifty lakh rupee asset threshold."
+          },
+          {
+            "label": "Asset Representation",
+            "caption": "Escaped income must be represented by asset or book entry."
+          },
+          {
+            "label": "Statutory Sunset",
+            "caption": "Time barred past years cannot be revived under amended rules."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 3,
+      "spec": {
+        "title": "Sanction & Limitation Protocol",
+        "steps": [
+          {
+            "label": "Authority Rank",
+            "caption": "Higher rank approval is mandatory for notices beyond three years."
+          },
+          {
+            "label": "Independent Mind",
+            "caption": "Sanctioning authority records independent appraisal of evidence."
+          },
+          {
+            "label": "Writ Remedy",
+            "caption": "Defective sanction is challenged before constitutional court."
+          },
+          {
+            "label": "Order Deadline",
+            "caption": "Reassessment order must be completed within twelve months."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 4,
+      "spec": {
+        "title": "Reassessment Defense Simulator",
+        "steps": [
+          {
+            "label": "Notice Parsing",
+            "caption": "Engine ingests electronic notice and validates digital signature."
+          },
+          {
+            "label": "Limitation Audit",
+            "caption": "Algorithm computes elapsed duration from assessment year end."
+          },
+          {
+            "label": "Threshold Test",
+            "caption": "System checks whether alleged escapement meets statutory limit."
+          },
+          {
+            "label": "Remedy Strategy",
+            "caption": "Platform recommends writ petition or substantive defense response."
+          }
+        ]
+      }
+    }
+  ]
+}
