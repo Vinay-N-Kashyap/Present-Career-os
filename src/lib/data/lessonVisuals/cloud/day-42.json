@@ -1,0 +1,362 @@
+{
+  "schemaVersion": 2,
+  "prefix": "cloud",
+  "day": 42,
+  "entries": [
+    {
+      "partTitle": "IAM Permission Boundaries: Delegated Administration without Privilege Escalation",
+      "codeHash": "009177a2a8ac14dde6a5fbeb6f9be9f420dfc167e609af6524db0f43934d80bb",
+      "spec": {
+        "template": "workflow",
+        "workflow": {
+          "title": "IAM Permission Boundaries: Delegated Administration without Privilege Escalation",
+          "nodes": [
+            {
+              "id": "principal",
+              "label": "Identity / OIDC Runner",
+              "status": "active"
+            },
+            {
+              "id": "sts_gateway",
+              "label": "AWS STS / Identity Center",
+              "status": "active"
+            },
+            {
+              "id": "boundary_abac",
+              "label": "Boundary & ABAC Tag Filter",
+              "status": "active"
+            },
+            {
+              "id": "target_resource",
+              "label": "Target Cloud Resource",
+              "status": "active"
+            }
+          ],
+          "edges": [
+            {
+              "from": "principal",
+              "to": "sts_gateway",
+              "label": "Assume Role With Token"
+            },
+            {
+              "from": "sts_gateway",
+              "to": "boundary_abac",
+              "label": "Evaluate Boundary & Tags"
+            },
+            {
+              "from": "boundary_abac",
+              "to": "target_resource",
+              "label": "Authorize Ephemeral Session"
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "focus": "principal",
+            "annotation": "Principals and CI/CD runners request dynamic access using short-lived tokens without static keys."
+          },
+          {
+            "at": "say2",
+            "focus": "sts_gateway",
+            "annotation": "AWS STS and IAM Identity Center validate cryptographic claims and trust policies at the edge."
+          },
+          {
+            "at": "example",
+            "focus": "boundary_abac",
+            "annotation": "Permission boundaries block privilege escalation while ABAC matches principal and resource tags."
+          },
+          {
+            "at": "tryIt",
+            "focus": "target_resource",
+            "annotation": "Target AWS resources allow access only when boundary and tag conditions are mathematically satisfied."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Attribute-Based Access Control (ABAC) vs RBAC: Dynamic Tag-Based Authorization at Scale",
+      "codeHash": "f27e0735ddcd99365c821ad3629ed6240e48823be50855eb59b4f16b50b3f96d",
+      "spec": {
+        "template": "workflow",
+        "workflow": {
+          "title": "Attribute-Based Access Control (ABAC) vs RBAC: Dynamic Tag-Based Authorization at Scale",
+          "nodes": [
+            {
+              "id": "principal",
+              "label": "Identity / OIDC Runner",
+              "status": "active"
+            },
+            {
+              "id": "sts_gateway",
+              "label": "AWS STS / Identity Center",
+              "status": "active"
+            },
+            {
+              "id": "boundary_abac",
+              "label": "Boundary & ABAC Tag Filter",
+              "status": "active"
+            },
+            {
+              "id": "target_resource",
+              "label": "Target Cloud Resource",
+              "status": "active"
+            }
+          ],
+          "edges": [
+            {
+              "from": "principal",
+              "to": "sts_gateway",
+              "label": "Assume Role With Token"
+            },
+            {
+              "from": "sts_gateway",
+              "to": "boundary_abac",
+              "label": "Evaluate Boundary & Tags"
+            },
+            {
+              "from": "boundary_abac",
+              "to": "target_resource",
+              "label": "Authorize Ephemeral Session"
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "focus": "principal",
+            "annotation": "Principals and CI/CD runners request dynamic access using short-lived tokens without static keys."
+          },
+          {
+            "at": "say2",
+            "focus": "sts_gateway",
+            "annotation": "AWS STS and IAM Identity Center validate cryptographic claims and trust policies at the edge."
+          },
+          {
+            "at": "example",
+            "focus": "boundary_abac",
+            "annotation": "Permission boundaries block privilege escalation while ABAC matches principal and resource tags."
+          },
+          {
+            "at": "tryIt",
+            "focus": "target_resource",
+            "annotation": "Target AWS resources allow access only when boundary and tag conditions are mathematically satisfied."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Eliminating Static Credentials: OIDC Workload Identity Federation with GitHub Actions",
+      "codeHash": "5a6a58f18032e94d6b0b46c3160bf4c9c0819f8246745d9a3362a39a07c692b2",
+      "spec": {
+        "template": "workflow",
+        "workflow": {
+          "title": "Eliminating Static Credentials: OIDC Workload Identity Federation with GitHub Actions",
+          "nodes": [
+            {
+              "id": "principal",
+              "label": "Identity / OIDC Runner",
+              "status": "active"
+            },
+            {
+              "id": "sts_gateway",
+              "label": "AWS STS / Identity Center",
+              "status": "active"
+            },
+            {
+              "id": "boundary_abac",
+              "label": "Boundary & ABAC Tag Filter",
+              "status": "active"
+            },
+            {
+              "id": "target_resource",
+              "label": "Target Cloud Resource",
+              "status": "active"
+            }
+          ],
+          "edges": [
+            {
+              "from": "principal",
+              "to": "sts_gateway",
+              "label": "Assume Role With Token"
+            },
+            {
+              "from": "sts_gateway",
+              "to": "boundary_abac",
+              "label": "Evaluate Boundary & Tags"
+            },
+            {
+              "from": "boundary_abac",
+              "to": "target_resource",
+              "label": "Authorize Ephemeral Session"
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "focus": "principal",
+            "annotation": "Principals and CI/CD runners request dynamic access using short-lived tokens without static keys."
+          },
+          {
+            "at": "say2",
+            "focus": "sts_gateway",
+            "annotation": "AWS STS and IAM Identity Center validate cryptographic claims and trust policies at the edge."
+          },
+          {
+            "at": "example",
+            "focus": "boundary_abac",
+            "annotation": "Permission boundaries block privilege escalation while ABAC matches principal and resource tags."
+          },
+          {
+            "at": "tryIt",
+            "focus": "target_resource",
+            "annotation": "Target AWS resources allow access only when boundary and tag conditions are mathematically satisfied."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Identity Federation: IAM Identity Center (AWS SSO), Okta & SCIM Provisioning",
+      "codeHash": "f37c49011b853eebe6462450708a67c4882383bf495d07920b8fbf72e135d947",
+      "spec": {
+        "template": "workflow",
+        "workflow": {
+          "title": "Enterprise Identity Federation: IAM Identity Center (AWS SSO), Okta & SCIM Provisioning",
+          "nodes": [
+            {
+              "id": "principal",
+              "label": "Identity / OIDC Runner",
+              "status": "active"
+            },
+            {
+              "id": "sts_gateway",
+              "label": "AWS STS / Identity Center",
+              "status": "active"
+            },
+            {
+              "id": "boundary_abac",
+              "label": "Boundary & ABAC Tag Filter",
+              "status": "active"
+            },
+            {
+              "id": "target_resource",
+              "label": "Target Cloud Resource",
+              "status": "active"
+            }
+          ],
+          "edges": [
+            {
+              "from": "principal",
+              "to": "sts_gateway",
+              "label": "Assume Role With Token"
+            },
+            {
+              "from": "sts_gateway",
+              "to": "boundary_abac",
+              "label": "Evaluate Boundary & Tags"
+            },
+            {
+              "from": "boundary_abac",
+              "to": "target_resource",
+              "label": "Authorize Ephemeral Session"
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "focus": "principal",
+            "annotation": "Principals and CI/CD runners request dynamic access using short-lived tokens without static keys."
+          },
+          {
+            "at": "say2",
+            "focus": "sts_gateway",
+            "annotation": "AWS STS and IAM Identity Center validate cryptographic claims and trust policies at the edge."
+          },
+          {
+            "at": "example",
+            "focus": "boundary_abac",
+            "annotation": "Permission boundaries block privilege escalation while ABAC matches principal and resource tags."
+          },
+          {
+            "at": "tryIt",
+            "focus": "target_resource",
+            "annotation": "Target AWS resources allow access only when boundary and tag conditions are mathematically satisfied."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Masterclass Synthesis: Zero-Trust IAM Policy Architecture & Identity SRE Runbook",
+      "codeHash": "a04ddae66e2310fa4245a496a2231d599a3e0d0eaadf7bc26ba44efa052b68c8",
+      "spec": {
+        "template": "workflow",
+        "workflow": {
+          "title": "Masterclass Synthesis: Zero-Trust IAM Policy Architecture & Identity SRE Runbook",
+          "nodes": [
+            {
+              "id": "principal",
+              "label": "Identity / OIDC Runner",
+              "status": "active"
+            },
+            {
+              "id": "sts_gateway",
+              "label": "AWS STS / Identity Center",
+              "status": "active"
+            },
+            {
+              "id": "boundary_abac",
+              "label": "Boundary & ABAC Tag Filter",
+              "status": "active"
+            },
+            {
+              "id": "target_resource",
+              "label": "Target Cloud Resource",
+              "status": "active"
+            }
+          ],
+          "edges": [
+            {
+              "from": "principal",
+              "to": "sts_gateway",
+              "label": "Assume Role With Token"
+            },
+            {
+              "from": "sts_gateway",
+              "to": "boundary_abac",
+              "label": "Evaluate Boundary & Tags"
+            },
+            {
+              "from": "boundary_abac",
+              "to": "target_resource",
+              "label": "Authorize Ephemeral Session"
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "focus": "principal",
+            "annotation": "Principals and CI/CD runners request dynamic access using short-lived tokens without static keys."
+          },
+          {
+            "at": "say2",
+            "focus": "sts_gateway",
+            "annotation": "AWS STS and IAM Identity Center validate cryptographic claims and trust policies at the edge."
+          },
+          {
+            "at": "example",
+            "focus": "boundary_abac",
+            "annotation": "Permission boundaries block privilege escalation while ABAC matches principal and resource tags."
+          },
+          {
+            "at": "tryIt",
+            "focus": "target_resource",
+            "annotation": "Target AWS resources allow access only when boundary and tag conditions are mathematically satisfied."
+          }
+        ]
+      }
+    }
+  ]
+}

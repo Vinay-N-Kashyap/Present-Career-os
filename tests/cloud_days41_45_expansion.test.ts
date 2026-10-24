@@ -38,7 +38,7 @@ test('Course 16: Cloud Native AWS Architecture (cloud) Month 2 Block 9 Expansion
     assert.equal(isCourseVisualsEnabled('cloud'), true, 'cloud course prefix must have visuals support enabled');
   });
 
-  const availableDays = [41];
+  const availableDays = [41, 42];
 
   await t.test('2. LongLessons structural integrity, pedagogical depth, and invariants for Block 9', () => {
     for (const day of availableDays) {
