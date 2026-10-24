@@ -1,0 +1,367 @@
+{
+  "schemaVersion": 2,
+  "prefix": "cloud",
+  "day": 35,
+  "entries": [
+    {
+      "partIndex": 1,
+      "partTitle": "Enterprise EKS Platform Blueprint: Control Plane KMS Envelope Encryption, Audit Logging & IMDSv2 Isolation",
+      "codeHash": "4f1870fd07738a82262129da8de138294c83db27add8b3f0a94ee444ab1c5d03",
+      "spec": {
+        "template": "workflow",
+        "title": "EKS Control Plane Hardening & IMDSv2 Isolation",
+        "description": "Trace KMS envelope encryption for etcd secrets, CloudWatch audit logging, and IMDSv2 hop limit 1.",
+        "steps": [
+          {
+            "at": "say1",
+            "title": "Milestone 6 Blueprint",
+            "description": "Architectural synthesis uniting VPC CNI, Karpenter, ALB Ingress, and Istio mTLS.",
+            "data": {
+              "active": "platform_blueprint",
+              "nodes": [
+                "vpc_cni",
+                "karpenter",
+                "alb_controller",
+                "istio_mesh"
+              ],
+              "status": "BLUEPRINT_ESTABLISHED"
+            }
+          },
+          {
+            "at": "say2",
+            "title": "KMS Envelope Encryption",
+            "description": "Kubernetes API server encrypts DEK with AWS KMS CMK before persisting secrets to etcd.",
+            "data": {
+              "active": "kms_envelope",
+              "nodes": [
+                "k8s_secret",
+                "data_encryption_key",
+                "aws_kms_cmk",
+                "encrypted_etcd"
+              ],
+              "status": "ETCD_ENCRYPTED_AT_REST"
+            }
+          },
+          {
+            "at": "example",
+            "title": "IMDSv2 Workload Isolation",
+            "description": "Setting IMDSv2 hop limit to 1 prevents containerized pods from stealing host node IAM credentials.",
+            "data": {
+              "active": "imds_hop_limit",
+              "nodes": [
+                "pod_container",
+                "veth_hop",
+                "imds_hop_limit_1",
+                "credential_theft_blocked"
+              ],
+              "status": "IMDS_ISOLATION_ENFORCED"
+            }
+          },
+          {
+            "at": "tryIt",
+            "title": "EKS Pod Identity OIDC",
+            "description": "Pods assume dedicated least-privilege IAM roles via projected OIDC ServiceAccount tokens.",
+            "data": {
+              "active": "pod_identity_oidc",
+              "nodes": [
+                "service_account",
+                "oidc_token",
+                "sts_assume_role",
+                "least_privilege_aws"
+              ],
+              "status": "POD_IDENTITIES_BOUND"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 2,
+      "partTitle": "Dynamic Compute Tier: Karpenter Just-In-Time Spot Provisioning, Consolidation & PodDisruptionBudget Governance",
+      "codeHash": "82e84d6f55d63b5c22ec9e559260707977cc0d870fee076d8d1860efae059506",
+      "spec": {
+        "template": "workflow",
+        "title": "Karpenter Dynamic Compute & PDB Governance",
+        "description": "Analyze just-in-time Spot auto-provisioning and PodDisruptionBudget eviction protection.",
+        "steps": [
+          {
+            "at": "say1",
+            "title": "Just-In-Time EC2 Fleet Provisioning",
+            "description": "Karpenter watches scheduler queue, bin-packs pending pods, and launches Spot instances in under 45s.",
+            "data": {
+              "active": "karpenter_fleet",
+              "nodes": [
+                "pending_pods",
+                "karpenter_controller",
+                "ec2_fleet_api",
+                "spot_graviton_node"
+              ],
+              "status": "SPOT_PROVISIONED_42S"
+            }
+          },
+          {
+            "at": "say2",
+            "title": "Multi-Architecture Diversification",
+            "description": "NodePool mixes Graviton ARM64 and x86_64 across 20+ instance types for 70% cost savings.",
+            "data": {
+              "active": "spot_diversification",
+              "nodes": [
+                "c6g_arm64",
+                "m6i_x86",
+                "spot_market",
+                "70_pct_cost_cut"
+              ],
+              "status": "COMPUTE_DIVERSIFIED"
+            }
+          },
+          {
+            "at": "example",
+            "title": "PDB Consolidation Shield",
+            "description": "PodDisruptionBudget (minAvailable: 1) blocks node consolidation from evicting all replicas simultaneously.",
+            "data": {
+              "active": "pdb_protection",
+              "nodes": [
+                "consolidation_event",
+                "eviction_request",
+                "pdb_shield",
+                "eviction_rejected"
+              ],
+              "status": "PDB_VIOLATION_BLOCKED"
+            }
+          },
+          {
+            "at": "tryIt",
+            "title": "Graceful Interruption Draining",
+            "description": "EventBridge SQS receives 2-minute Spot warning, cordoning node and migrating pods seamlessly.",
+            "data": {
+              "active": "spot_interruption_drain",
+              "nodes": [
+                "spot_2min_warning",
+                "sqs_eventbridge",
+                "cordon_node",
+                "zero_downtime_drain"
+              ],
+              "status": "SPOT_DRAINED_GRACEFULLY"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 3,
+      "partTitle": "Edge-to-Pod Ingress: AWS Load Balancer Controller, IP-Mode Routing & Pod Readiness Gate Synchronization",
+      "codeHash": "b90c2cc45f66b40d114dcfc1f037f44589459a4b26966ecc409507ad98b08c00",
+      "spec": {
+        "template": "workflow",
+        "title": "Edge-to-Pod Ingress & Pod Readiness Gates",
+        "description": "Trace direct Pod IP routing, IngressGroup sharing, and target-health.elbv2.k8s.aws gates.",
+        "steps": [
+          {
+            "at": "say1",
+            "title": "Direct Pod IP Ingress",
+            "description": "ALB routes directly to pod VPC secondary ENI IPs, bypassing NodePort and kube-proxy NAT.",
+            "data": {
+              "active": "direct_ip_routing",
+              "nodes": [
+                "internet_client",
+                "multi_az_alb",
+                "vpc_secondary_eni",
+                "pod_target_port"
+              ],
+              "status": "SINGLE_HOP_INGRESS"
+            }
+          },
+          {
+            "at": "say2",
+            "title": "IngressGroup Multi-Tenant Merge",
+            "description": "Multiple namespace Ingress manifests share a consolidated ALB with automated ACM wildcard TLS.",
+            "data": {
+              "active": "ingress_group_merge",
+              "nodes": [
+                "shared_alb",
+                "acm_wildcard",
+                "ssl_redirect_301",
+                "consolidated_cost"
+              ],
+              "status": "ALB_CONSOLIDATED"
+            }
+          },
+          {
+            "at": "example",
+            "title": "Pod Readiness Gate Synchronization",
+            "description": "Target-health.elbv2.k8s.aws holds pod in unready state until AWS Target Group confirms healthy status.",
+            "data": {
+              "active": "readiness_gate_hold",
+              "nodes": [
+                "new_pod_launched",
+                "aws_tg_initial",
+                "readiness_gate_hold",
+                "old_pod_preserved"
+              ],
+              "status": "ZERO_502_ERRORS"
+            }
+          },
+          {
+            "at": "tryIt",
+            "title": "Connection Draining Completion",
+            "description": "Deregistration delay allows in-flight HTTP requests to complete before terminating retiring pods.",
+            "data": {
+              "active": "connection_drain",
+              "nodes": [
+                "deregistration_delay_30s",
+                "in_flight_served",
+                "sigterm_delivered",
+                "clean_shutdown"
+              ],
+              "status": "ROLLING_UPDATE_ZERO_DOWNTIME"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 4,
+      "partTitle": "Zero-Trust Microservice Mesh: Istio STRICT mTLS, Automated SPIFFE PKI & Declarative Layer 7 RBAC",
+      "codeHash": "6c0ea8fad5b154918d736e3d83f3d0c3c70f20d81cabf439abbdc027ac18eaee",
+      "spec": {
+        "template": "workflow",
+        "title": "Zero-Trust Microservice Mesh & STRICT mTLS",
+        "description": "Examine transparent Envoy interception, automated SPIFFE rotation, and Layer 7 AuthorizationPolicies.",
+        "steps": [
+          {
+            "at": "say1",
+            "title": "Transparent Envoy Sidecar Interception",
+            "description": "Linux iptables traps TCP packets, redirecting traffic to local Envoy proxy on port 15001/15006.",
+            "data": {
+              "active": "envoy_interception",
+              "nodes": [
+                "container_socket",
+                "iptables_chains",
+                "envoy_proxy",
+                "zero_code_changes"
+              ],
+              "status": "TRANSPARENT_INTERCEPTION"
+            }
+          },
+          {
+            "at": "say2",
+            "title": "STRICT mTLS Cryptographic Defense",
+            "description": "PeerAuthentication in STRICT mode drops all unencrypted plaintext with connection resets.",
+            "data": {
+              "active": "strict_peer_auth",
+              "nodes": [
+                "spiffe_identity",
+                "x509_12h_rotation",
+                "strict_mtls_tunnel",
+                "plaintext_rejected"
+              ],
+              "status": "STRICT_MTLS_ACTIVE"
+            }
+          },
+          {
+            "at": "example",
+            "title": "Layer 7 AuthorizationPolicy",
+            "description": "Envoy evaluates client SPIFFE principal, path, and method, dropping unauthorized calls with 403 Forbidden.",
+            "data": {
+              "active": "authz_policy_evaluation",
+              "nodes": [
+                "spiffe_principal",
+                "rbac_rules",
+                "admin_path_check",
+                "http_403_forbidden"
+              ],
+              "status": "RBAC_ENFORCED"
+            }
+          },
+          {
+            "at": "tryIt",
+            "title": "Canary Shifting & Outlier Ejection",
+            "description": "VirtualService splits traffic 90/10; circuit breaker ejects pods after 3 consecutive 5xx errors.",
+            "data": {
+              "active": "canary_circuit_breaker",
+              "nodes": [
+                "canary_90_10",
+                "outlier_detection",
+                "eject_bad_pod",
+                "cascading_failure_prevented"
+              ],
+              "status": "SELF_HEALING_MESH"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 5,
+      "partTitle": "\u2b50 MILESTONE 6 SYNTHESIS: Enterprise EKS Platform Verification & Production Capstone Engine",
+      "codeHash": "01d04aab267fe351dab4c96b2499315c4f35ebc1f427e3834b7108e083558db6",
+      "spec": {
+        "template": "workflow",
+        "title": "Milestone 6 Capstone Platform Synthesis",
+        "description": "Comprehensive architectural proof: Karpenter scale-up in 42s, PDB protection, STRICT mTLS, and ALB IP mode.",
+        "steps": [
+          {
+            "at": "say1",
+            "title": "Enterprise EKS Platform Integration",
+            "description": "Complete platform unification: hardened control plane, Karpenter, ALB, and Istio Zero Trust.",
+            "data": {
+              "active": "platform_unification",
+              "nodes": [
+                "hardened_control_plane",
+                "dynamic_karpenter",
+                "edge_alb",
+                "zero_trust_mesh"
+              ],
+              "status": "ENTERPRISE_PLATFORM_INTEGRATED"
+            }
+          },
+          {
+            "at": "say2",
+            "title": "Surge Scale-Out Verification",
+            "description": "Deployment scales from 2 to 100 pods in 42 seconds with Karpenter bin-packing Spot compute.",
+            "data": {
+              "active": "scale_surge_verified",
+              "nodes": [
+                "scale_2_to_100",
+                "karpenter_42s",
+                "spot_graviton_fleet",
+                "sla_beaten"
+              ],
+              "status": "SCALE_OUT_42S_VERIFIED"
+            }
+          },
+          {
+            "at": "example",
+            "title": "End-to-End Reliability Execution",
+            "description": "PodDisruptionBudgets protect consolidation; Pod Readiness Gates ensure zero dropped requests.",
+            "data": {
+              "active": "reliability_execution",
+              "nodes": [
+                "pdb_enforced",
+                "readiness_gate_synced",
+                "zero_downtime",
+                "sub_millisecond_hops"
+              ],
+              "status": "RELIABILITY_VERIFIED"
+            }
+          },
+          {
+            "at": "tryIt",
+            "title": "Milestone 6 Grade A+ Certification",
+            "description": "Platform proof validated across all security, compute, networking, and mesh invariants.",
+            "data": {
+              "active": "grade_a_certification",
+              "nodes": [
+                "kms_hardened",
+                "karpenter_spot",
+                "alb_ip_mode",
+                "grade_a_certified"
+              ],
+              "status": "GRADE_A_PLUS_PRODUCTION_CERTIFIED"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
