@@ -1,0 +1,819 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom-marketing",
+  "day": 18,
+  "promptSha": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "The POEM Framework & Strategic Public Relations Architecture",
+      "codeHash": "b32c062a10f854c271b9828ce8234fd18f03be405065b681af1b84c9bf99fe0f",
+      "spec": {
+        "template": "funnel",
+        "title": "The POEM Framework & Strategic Public Rela... \u2014 Conversion Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Top-of-funnel reach baseline (34,100 total audience entities).",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Audience Reach",
+                "value": 34100,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Cohort Intent",
+                "value": 16368,
+                "percentage": 48,
+                "dropoffRate": 52,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Target Segment Evaluation",
+                "value": 6874,
+                "percentage": 20,
+                "dropoffRate": 58,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Retained Active Customers",
+                "value": 2612,
+                "percentage": 7.6,
+                "dropoffRate": 62,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Qualification filters screen for economic viability (16,368 qualified entities).",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Audience Reach",
+                "value": 34100,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Cohort Intent",
+                "value": 16368,
+                "percentage": 48,
+                "dropoffRate": 52,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Target Segment Evaluation",
+                "value": 6874,
+                "percentage": 20,
+                "dropoffRate": 58,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Retained Active Customers",
+                "value": 2612,
+                "percentage": 7.6,
+                "dropoffRate": 62,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Targeting alignment yields high engagement depth (6,874 evaluating alternatives).",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Audience Reach",
+                "value": 34100,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Cohort Intent",
+                "value": 16368,
+                "percentage": 48,
+                "dropoffRate": 52,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Target Segment Evaluation",
+                "value": 6874,
+                "percentage": 20,
+                "dropoffRate": 58,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Retained Active Customers",
+                "value": 2612,
+                "percentage": 7.6,
+                "dropoffRate": 62,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Final unit conversion achieves stable unit economics (2,612 retained units).",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Audience Reach",
+                "value": 34100,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Cohort Intent",
+                "value": 16368,
+                "percentage": 48,
+                "dropoffRate": 52,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Target Segment Evaluation",
+                "value": 6874,
+                "percentage": 20,
+                "dropoffRate": 58,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Retained Active Customers",
+                "value": 2612,
+                "percentage": 7.6,
+                "dropoffRate": 62,
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Coombs' Situational Crisis Communication Theory (SCCT)",
+      "codeHash": "e5d3bd750a69bb77d1a9e31e8013dec1849fb83e210857f82a79ebe0dc1ff982",
+      "spec": {
+        "template": "funnel",
+        "title": "Coombs' Situational Crisis Communication T... \u2014 Conversion Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Top-of-funnel reach baseline (33,550 total audience entities).",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Audience Reach",
+                "value": 33550,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Cohort Intent",
+                "value": 16104,
+                "percentage": 48,
+                "dropoffRate": 52,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Target Segment Evaluation",
+                "value": 6763,
+                "percentage": 20,
+                "dropoffRate": 58,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Retained Active Customers",
+                "value": 2569,
+                "percentage": 7.6,
+                "dropoffRate": 62,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Qualification filters screen for economic viability (16,104 qualified entities).",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Audience Reach",
+                "value": 33550,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Cohort Intent",
+                "value": 16104,
+                "percentage": 48,
+                "dropoffRate": 52,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Target Segment Evaluation",
+                "value": 6763,
+                "percentage": 20,
+                "dropoffRate": 58,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Retained Active Customers",
+                "value": 2569,
+                "percentage": 7.6,
+                "dropoffRate": 62,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Targeting alignment yields high engagement depth (6,763 evaluating alternatives).",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Audience Reach",
+                "value": 33550,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Cohort Intent",
+                "value": 16104,
+                "percentage": 48,
+                "dropoffRate": 52,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Target Segment Evaluation",
+                "value": 6763,
+                "percentage": 20,
+                "dropoffRate": 58,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Retained Active Customers",
+                "value": 2569,
+                "percentage": 7.6,
+                "dropoffRate": 62,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Final unit conversion achieves stable unit economics (2,569 retained units).",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Audience Reach",
+                "value": 33550,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Cohort Intent",
+                "value": 16104,
+                "percentage": 48,
+                "dropoffRate": 52,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Target Segment Evaluation",
+                "value": 6763,
+                "percentage": 20,
+                "dropoffRate": 58,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Retained Active Customers",
+                "value": 2569,
+                "percentage": 7.6,
+                "dropoffRate": 62,
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Crisis Response Postures & The Golden Hour Protocol",
+      "codeHash": "792b9b7cad6c2dad7eacba2241c859344c81735aeef3c9f1076aadfda07d8815",
+      "spec": {
+        "template": "funnel",
+        "title": "Crisis Response Postures & The Golden Hour... \u2014 Conversion Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Top-of-funnel reach baseline (33,000 total audience entities).",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Audience Reach",
+                "value": 33000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Cohort Intent",
+                "value": 15840,
+                "percentage": 48,
+                "dropoffRate": 52,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Target Segment Evaluation",
+                "value": 6652,
+                "percentage": 20,
+                "dropoffRate": 58,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Retained Active Customers",
+                "value": 2527,
+                "percentage": 7.6,
+                "dropoffRate": 62,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Qualification filters screen for economic viability (15,840 qualified entities).",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Audience Reach",
+                "value": 33000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Cohort Intent",
+                "value": 15840,
+                "percentage": 48,
+                "dropoffRate": 52,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Target Segment Evaluation",
+                "value": 6652,
+                "percentage": 20,
+                "dropoffRate": 58,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Retained Active Customers",
+                "value": 2527,
+                "percentage": 7.6,
+                "dropoffRate": 62,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Targeting alignment yields high engagement depth (6,652 evaluating alternatives).",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Audience Reach",
+                "value": 33000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Cohort Intent",
+                "value": 15840,
+                "percentage": 48,
+                "dropoffRate": 52,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Target Segment Evaluation",
+                "value": 6652,
+                "percentage": 20,
+                "dropoffRate": 58,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Retained Active Customers",
+                "value": 2527,
+                "percentage": 7.6,
+                "dropoffRate": 62,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Final unit conversion achieves stable unit economics (2,527 retained units).",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Audience Reach",
+                "value": 33000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Cohort Intent",
+                "value": 15840,
+                "percentage": 48,
+                "dropoffRate": 52,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Target Segment Evaluation",
+                "value": 6652,
+                "percentage": 20,
+                "dropoffRate": 58,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Retained Active Customers",
+                "value": 2527,
+                "percentage": 7.6,
+                "dropoffRate": 62,
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Interactive Code Simulation: Quantitative Crisis Sentiment Tracking & Stock Impact",
+      "codeHash": "b4c26565175dc4ebcf06c076cb6a496aff2e5a5a8a9880dbab340c0b3e84e8c7",
+      "spec": {
+        "template": "funnel",
+        "title": "Interactive Code Simulation: Quantitative ... \u2014 Conversion Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Top-of-funnel reach baseline (32,450 total audience entities).",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Audience Reach",
+                "value": 32450,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Cohort Intent",
+                "value": 15576,
+                "percentage": 48,
+                "dropoffRate": 52,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Target Segment Evaluation",
+                "value": 6541,
+                "percentage": 20,
+                "dropoffRate": 58,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Retained Active Customers",
+                "value": 2485,
+                "percentage": 7.6,
+                "dropoffRate": 62,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Qualification filters screen for economic viability (15,576 qualified entities).",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Audience Reach",
+                "value": 32450,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Cohort Intent",
+                "value": 15576,
+                "percentage": 48,
+                "dropoffRate": 52,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Target Segment Evaluation",
+                "value": 6541,
+                "percentage": 20,
+                "dropoffRate": 58,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Retained Active Customers",
+                "value": 2485,
+                "percentage": 7.6,
+                "dropoffRate": 62,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Targeting alignment yields high engagement depth (6,541 evaluating alternatives).",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Audience Reach",
+                "value": 32450,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Cohort Intent",
+                "value": 15576,
+                "percentage": 48,
+                "dropoffRate": 52,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Target Segment Evaluation",
+                "value": 6541,
+                "percentage": 20,
+                "dropoffRate": 58,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Retained Active Customers",
+                "value": 2485,
+                "percentage": 7.6,
+                "dropoffRate": 62,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Final unit conversion achieves stable unit economics (2,485 retained units).",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Audience Reach",
+                "value": 32450,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Cohort Intent",
+                "value": 15576,
+                "percentage": 48,
+                "dropoffRate": 52,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Target Segment Evaluation",
+                "value": 6541,
+                "percentage": 20,
+                "dropoffRate": 58,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Retained Active Customers",
+                "value": 2485,
+                "percentage": 7.6,
+                "dropoffRate": 62,
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Corporate Reputation Moats, ESG Governance & Long-Term Brand Equity",
+      "codeHash": "774613d504f17e4979edd2397ea1d61ef9eca86fd28e8762f30c6fa9e76c4679",
+      "spec": {
+        "template": "funnel",
+        "title": "Corporate Reputation Moats, ESG Governance... \u2014 Conversion Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Top-of-funnel reach baseline (31,900 total audience entities).",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Audience Reach",
+                "value": 31900,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Cohort Intent",
+                "value": 15312,
+                "percentage": 48,
+                "dropoffRate": 52,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Target Segment Evaluation",
+                "value": 6431,
+                "percentage": 20,
+                "dropoffRate": 58,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Retained Active Customers",
+                "value": 2443,
+                "percentage": 7.6,
+                "dropoffRate": 62,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Qualification filters screen for economic viability (15,312 qualified entities).",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Audience Reach",
+                "value": 31900,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Cohort Intent",
+                "value": 15312,
+                "percentage": 48,
+                "dropoffRate": 52,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Target Segment Evaluation",
+                "value": 6431,
+                "percentage": 20,
+                "dropoffRate": 58,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Retained Active Customers",
+                "value": 2443,
+                "percentage": 7.6,
+                "dropoffRate": 62,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Targeting alignment yields high engagement depth (6,431 evaluating alternatives).",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Audience Reach",
+                "value": 31900,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Cohort Intent",
+                "value": 15312,
+                "percentage": 48,
+                "dropoffRate": 52,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Target Segment Evaluation",
+                "value": 6431,
+                "percentage": 20,
+                "dropoffRate": 58,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Retained Active Customers",
+                "value": 2443,
+                "percentage": 7.6,
+                "dropoffRate": 62,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Final unit conversion achieves stable unit economics (2,443 retained units).",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Audience Reach",
+                "value": 31900,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Cohort Intent",
+                "value": 15312,
+                "percentage": 48,
+                "dropoffRate": 52,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Target Segment Evaluation",
+                "value": 6431,
+                "percentage": 20,
+                "dropoffRate": 58,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Retained Active Customers",
+                "value": 2443,
+                "percentage": 7.6,
+                "dropoffRate": 62,
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

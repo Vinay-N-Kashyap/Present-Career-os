@@ -1,0 +1,314 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_law",
+  "day": 59,
+  "promptSha": "prompt_sha_bcom_law_day59_governance_v1",
+  "model": "google/gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Corporate Control Contests, Hostile Takeovers & Comparative Defense Arsenals",
+      "codeHash": "680b40c7727cdbccceb512e2128a6e05746f82487706688b81b0e3d9896c0b55",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Corporate Control Contests, Hostile Takeov... Compliance Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Regulatory Mandate",
+            "subtext": "Statutory Threshold Audit",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Quantitative Analysis",
+            "subtext": "Metric Calculation & Reconciliation",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Governance Control",
+            "subtext": "Board Oversight & Defense",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Statutory Clearance",
+            "subtext": "Immunity & Compliance Pass",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1: Initialize Corporate Control Contests, Hostile Ta...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS"
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2: Evaluate statutory corporate parameters and legal tests.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS"
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3: Apply Board governance oversight and compliance controls.",
+            "activeStageId": "s3",
+            "statusBadge": "ACTIVE"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4: Execute deterministic Python engine and verify compliance.",
+            "activeStageId": "s4",
+            "statusBadge": "DONE"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "SEBI SAST Regulations 2011: The 25% Initial Trigger & 5% Creeping Acquisition Rules",
+      "codeHash": "680b40c7727cdbccceb512e2128a6e05746f82487706688b81b0e3d9896c0b55",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "SEBI SAST Regulations 2011: The 25% Initia... Compliance Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Regulatory Mandate",
+            "subtext": "Statutory Threshold Audit",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Quantitative Analysis",
+            "subtext": "Metric Calculation & Reconciliation",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Governance Control",
+            "subtext": "Board Oversight & Defense",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Statutory Clearance",
+            "subtext": "Immunity & Compliance Pass",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1: Initialize SEBI SAST Regulations 2011: The 25% In...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS"
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2: Evaluate statutory corporate parameters and legal tests.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS"
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3: Apply Board governance oversight and compliance controls.",
+            "activeStageId": "s3",
+            "statusBadge": "ACTIVE"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4: Execute deterministic Python engine and verify compliance.",
+            "activeStageId": "s4",
+            "statusBadge": "DONE"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Open Offer Sizing (26% Minimum), Pricing Formulations & Regulation 17 Escrow Architecture",
+      "codeHash": "680b40c7727cdbccceb512e2128a6e05746f82487706688b81b0e3d9896c0b55",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Open Offer Sizing (26% Minimum), Pricing F... Compliance Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Regulatory Mandate",
+            "subtext": "Statutory Threshold Audit",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Quantitative Analysis",
+            "subtext": "Metric Calculation & Reconciliation",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Governance Control",
+            "subtext": "Board Oversight & Defense",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Statutory Clearance",
+            "subtext": "Immunity & Compliance Pass",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1: Initialize Open Offer Sizing (26% Minimum), Prici...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS"
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2: Evaluate statutory corporate parameters and legal tests.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS"
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3: Apply Board governance oversight and compliance controls.",
+            "activeStageId": "s3",
+            "statusBadge": "ACTIVE"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4: Execute deterministic Python engine and verify compliance.",
+            "activeStageId": "s4",
+            "statusBadge": "DONE"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Target Board Neutrality under Regulation 26 & White Knight Competitive Bids under Regulation 20",
+      "codeHash": "680b40c7727cdbccceb512e2128a6e05746f82487706688b81b0e3d9896c0b55",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Target Board Neutrality under Regulation 2... Compliance Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Regulatory Mandate",
+            "subtext": "Statutory Threshold Audit",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Quantitative Analysis",
+            "subtext": "Metric Calculation & Reconciliation",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Governance Control",
+            "subtext": "Board Oversight & Defense",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Statutory Clearance",
+            "subtext": "Immunity & Compliance Pass",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1: Initialize Target Board Neutrality under Regulati...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS"
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2: Evaluate statutory corporate parameters and legal tests.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS"
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3: Apply Board governance oversight and compliance controls.",
+            "activeStageId": "s3",
+            "statusBadge": "ACTIVE"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4: Execute deterministic Python engine and verify compliance.",
+            "activeStageId": "s4",
+            "statusBadge": "DONE"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Post-Offer Delisting under Regulation 5A, Penalties under Regulation 32 & Takeover Simulator",
+      "codeHash": "680b40c7727cdbccceb512e2128a6e05746f82487706688b81b0e3d9896c0b55",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Post-Offer Delisting under Regulation 5A, ... Compliance Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Regulatory Mandate",
+            "subtext": "Statutory Threshold Audit",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Quantitative Analysis",
+            "subtext": "Metric Calculation & Reconciliation",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Governance Control",
+            "subtext": "Board Oversight & Defense",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Statutory Clearance",
+            "subtext": "Immunity & Compliance Pass",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1: Initialize Post-Offer Delisting under Regulation ...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS"
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2: Evaluate statutory corporate parameters and legal tests.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS"
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3: Apply Board governance oversight and compliance controls.",
+            "activeStageId": "s3",
+            "statusBadge": "ACTIVE"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4: Execute deterministic Python engine and verify compliance.",
+            "activeStageId": "s4",
+            "statusBadge": "DONE"
+          }
+        ]
+      }
+    }
+  ]
+}

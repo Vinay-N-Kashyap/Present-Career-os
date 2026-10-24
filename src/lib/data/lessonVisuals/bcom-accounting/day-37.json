@@ -1,0 +1,659 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom-accounting",
+  "day": 37,
+  "promptSha": "prompt_sha_bcom_accounting_day37_v1",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Current Tax vs Deferred Tax & The Shift to the Balance Sheet Liability Method",
+      "codeHash": "a93a3509bd7bf26377d464f6978c4c47b33447c9edad8b0727a5eb92b589f78e",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Current Tax vs Deferred Tax & The Shift ... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($42,752) for Current Tax vs Deferred Tax & The Shift ...",
+            "title": "Day 37 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 42752,
+            "totalCredit": 42752,
+            "entries": [
+              {
+                "id": "JNL-3701",
+                "account": "Deferred Tax Expense (P&L)",
+                "debit": 42752,
+                "balance": 42752,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 37"
+              },
+              {
+                "id": "JNL-3702",
+                "account": "Net Deferred Tax Liability (Non-Current Liability)",
+                "credit": 42752,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & amortization accrual ($15,000).",
+            "title": "Day 37 Journal \u2014 Accrual / Amortization Adjustment",
+            "isBalanced": true,
+            "totalDebit": 57752,
+            "totalCredit": 57752,
+            "entries": [
+              {
+                "id": "JNL-3701",
+                "account": "Deferred Tax Expense (P&L)",
+                "debit": 42752,
+                "balance": 42752,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3703",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 15000,
+                "balance": 57752,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-3702",
+                "account": "Net Deferred Tax Liability (Non-Current Liability)",
+                "credit": 57752,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory disclosures.",
+            "title": "Day 37 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 57752,
+            "totalCredit": 57752,
+            "entries": [
+              {
+                "id": "JNL-3701",
+                "account": "Deferred Tax Expense (P&L)",
+                "debit": 42752,
+                "balance": 42752,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3703",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 15000,
+                "balance": 57752,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3702",
+                "account": "Net Deferred Tax Liability (Non-Current Liability)",
+                "credit": 57752,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 37 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 57752,
+            "totalCredit": 57752,
+            "entries": [
+              {
+                "id": "JNL-3701",
+                "account": "Deferred Tax Expense (P&L)",
+                "debit": 42752,
+                "balance": 42752,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3703",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 15000,
+                "balance": 57752,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3702",
+                "account": "Net Deferred Tax Liability (Non-Current Liability)",
+                "credit": 57752,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Tax Base Concept, Asset vs Liability Formulations & Initial Recognition Narrowing",
+      "codeHash": "a93a3509bd7bf26377d464f6978c4c47b33447c9edad8b0727a5eb92b589f78e",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "The Tax Base Concept, Asset vs Liability... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($47,752) for The Tax Base Concept, Asset vs Liability...",
+            "title": "Day 37 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 47752,
+            "totalCredit": 47752,
+            "entries": [
+              {
+                "id": "JNL-3701",
+                "account": "Deferred Tax Expense (P&L)",
+                "debit": 47752,
+                "balance": 47752,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 37"
+              },
+              {
+                "id": "JNL-3702",
+                "account": "Net Deferred Tax Liability (Non-Current Liability)",
+                "credit": 47752,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & amortization accrual ($15,000).",
+            "title": "Day 37 Journal \u2014 Accrual / Amortization Adjustment",
+            "isBalanced": true,
+            "totalDebit": 62752,
+            "totalCredit": 62752,
+            "entries": [
+              {
+                "id": "JNL-3701",
+                "account": "Deferred Tax Expense (P&L)",
+                "debit": 47752,
+                "balance": 47752,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3703",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 15000,
+                "balance": 62752,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-3702",
+                "account": "Net Deferred Tax Liability (Non-Current Liability)",
+                "credit": 62752,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory disclosures.",
+            "title": "Day 37 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 62752,
+            "totalCredit": 62752,
+            "entries": [
+              {
+                "id": "JNL-3701",
+                "account": "Deferred Tax Expense (P&L)",
+                "debit": 47752,
+                "balance": 47752,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3703",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 15000,
+                "balance": 62752,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3702",
+                "account": "Net Deferred Tax Liability (Non-Current Liability)",
+                "credit": 62752,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 37 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 62752,
+            "totalCredit": 62752,
+            "entries": [
+              {
+                "id": "JNL-3701",
+                "account": "Deferred Tax Expense (P&L)",
+                "debit": 47752,
+                "balance": 47752,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3703",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 15000,
+                "balance": 62752,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3702",
+                "account": "Net Deferred Tax Liability (Non-Current Liability)",
+                "credit": 62752,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Taxable vs Deductible Temporary Differences & The DTA Probability Threshold",
+      "codeHash": "a93a3509bd7bf26377d464f6978c4c47b33447c9edad8b0727a5eb92b589f78e",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Taxable vs Deductible Temporary Differen... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($52,752) for Taxable vs Deductible Temporary Differen...",
+            "title": "Day 37 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 52752,
+            "totalCredit": 52752,
+            "entries": [
+              {
+                "id": "JNL-3701",
+                "account": "Deferred Tax Expense (P&L)",
+                "debit": 52752,
+                "balance": 52752,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 37"
+              },
+              {
+                "id": "JNL-3702",
+                "account": "Net Deferred Tax Liability (Non-Current Liability)",
+                "credit": 52752,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & amortization accrual ($15,000).",
+            "title": "Day 37 Journal \u2014 Accrual / Amortization Adjustment",
+            "isBalanced": true,
+            "totalDebit": 67752,
+            "totalCredit": 67752,
+            "entries": [
+              {
+                "id": "JNL-3701",
+                "account": "Deferred Tax Expense (P&L)",
+                "debit": 52752,
+                "balance": 52752,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3703",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 15000,
+                "balance": 67752,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-3702",
+                "account": "Net Deferred Tax Liability (Non-Current Liability)",
+                "credit": 67752,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory disclosures.",
+            "title": "Day 37 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 67752,
+            "totalCredit": 67752,
+            "entries": [
+              {
+                "id": "JNL-3701",
+                "account": "Deferred Tax Expense (P&L)",
+                "debit": 52752,
+                "balance": 52752,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3703",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 15000,
+                "balance": 67752,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3702",
+                "account": "Net Deferred Tax Liability (Non-Current Liability)",
+                "credit": 67752,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 37 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 67752,
+            "totalCredit": 67752,
+            "entries": [
+              {
+                "id": "JNL-3701",
+                "account": "Deferred Tax Expense (P&L)",
+                "debit": 52752,
+                "balance": 52752,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3703",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 15000,
+                "balance": 67752,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3702",
+                "account": "Net Deferred Tax Liability (Non-Current Liability)",
+                "credit": 67752,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Substantively Enacted Tax Rates (Section 115BAA), MAT Credits & Balance Sheet Netting",
+      "codeHash": "a93a3509bd7bf26377d464f6978c4c47b33447c9edad8b0727a5eb92b589f78e",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Substantively Enacted Tax Rates (Section... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($57,752) for Substantively Enacted Tax Rates (Section...",
+            "title": "Day 37 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 57752,
+            "totalCredit": 57752,
+            "entries": [
+              {
+                "id": "JNL-3701",
+                "account": "Deferred Tax Expense (P&L)",
+                "debit": 57752,
+                "balance": 57752,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 37"
+              },
+              {
+                "id": "JNL-3702",
+                "account": "Net Deferred Tax Liability (Non-Current Liability)",
+                "credit": 57752,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & amortization accrual ($15,000).",
+            "title": "Day 37 Journal \u2014 Accrual / Amortization Adjustment",
+            "isBalanced": true,
+            "totalDebit": 72752,
+            "totalCredit": 72752,
+            "entries": [
+              {
+                "id": "JNL-3701",
+                "account": "Deferred Tax Expense (P&L)",
+                "debit": 57752,
+                "balance": 57752,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3703",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 15000,
+                "balance": 72752,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-3702",
+                "account": "Net Deferred Tax Liability (Non-Current Liability)",
+                "credit": 72752,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory disclosures.",
+            "title": "Day 37 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 72752,
+            "totalCredit": 72752,
+            "entries": [
+              {
+                "id": "JNL-3701",
+                "account": "Deferred Tax Expense (P&L)",
+                "debit": 57752,
+                "balance": 57752,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3703",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 15000,
+                "balance": 72752,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3702",
+                "account": "Net Deferred Tax Liability (Non-Current Liability)",
+                "credit": 72752,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 37 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 72752,
+            "totalCredit": 72752,
+            "entries": [
+              {
+                "id": "JNL-3701",
+                "account": "Deferred Tax Expense (P&L)",
+                "debit": 57752,
+                "balance": 57752,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3703",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 15000,
+                "balance": 72752,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3702",
+                "account": "Net Deferred Tax Liability (Non-Current Liability)",
+                "credit": 72752,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Python Deferred Tax Engine Execution & Ind AS 12 Balance Sheet Certification",
+      "codeHash": "a93a3509bd7bf26377d464f6978c4c47b33447c9edad8b0727a5eb92b589f78e",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Python Deferred Tax Engine Execution & I... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($62,752) for Python Deferred Tax Engine Execution & I...",
+            "title": "Day 37 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 62752,
+            "totalCredit": 62752,
+            "entries": [
+              {
+                "id": "JNL-3701",
+                "account": "Deferred Tax Expense (P&L)",
+                "debit": 62752,
+                "balance": 62752,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 37"
+              },
+              {
+                "id": "JNL-3702",
+                "account": "Net Deferred Tax Liability (Non-Current Liability)",
+                "credit": 62752,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & amortization accrual ($15,000).",
+            "title": "Day 37 Journal \u2014 Accrual / Amortization Adjustment",
+            "isBalanced": true,
+            "totalDebit": 77752,
+            "totalCredit": 77752,
+            "entries": [
+              {
+                "id": "JNL-3701",
+                "account": "Deferred Tax Expense (P&L)",
+                "debit": 62752,
+                "balance": 62752,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3703",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 15000,
+                "balance": 77752,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-3702",
+                "account": "Net Deferred Tax Liability (Non-Current Liability)",
+                "credit": 77752,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory disclosures.",
+            "title": "Day 37 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 77752,
+            "totalCredit": 77752,
+            "entries": [
+              {
+                "id": "JNL-3701",
+                "account": "Deferred Tax Expense (P&L)",
+                "debit": 62752,
+                "balance": 62752,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3703",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 15000,
+                "balance": 77752,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3702",
+                "account": "Net Deferred Tax Liability (Non-Current Liability)",
+                "credit": 77752,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 37 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 77752,
+            "totalCredit": 77752,
+            "entries": [
+              {
+                "id": "JNL-3701",
+                "account": "Deferred Tax Expense (P&L)",
+                "debit": 62752,
+                "balance": 62752,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3703",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 15000,
+                "balance": 77752,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3702",
+                "account": "Net Deferred Tax Liability (Non-Current Liability)",
+                "credit": 77752,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

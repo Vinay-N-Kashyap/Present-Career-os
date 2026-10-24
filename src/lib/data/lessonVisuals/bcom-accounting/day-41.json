@@ -1,0 +1,659 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom-accounting",
+  "day": 41,
+  "promptSha": "prompt_sha_bcom_accounting_day41_v1",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Scope, Governance & The Acquisition Method Framework (Ind AS 103)",
+      "codeHash": "401fc30c45ed7ddbe68f63ee90de0e7947b6398a154f7fa0798e56b68087ceb6",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Scope, Governance & The Acquisition Meth... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($14,505,000) for Scope, Governance & The Acquisition Meth...",
+            "title": "Day 41 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 14505000,
+            "totalCredit": 14505000,
+            "entries": [
+              {
+                "id": "JNL-4101",
+                "account": "Consolidated Goodwill / Net Identifiable Assets",
+                "debit": 14505000,
+                "balance": 14505000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 41"
+              },
+              {
+                "id": "JNL-4102",
+                "account": "Purchase Consideration & NCI Equity",
+                "credit": 14505000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & consolidation elimination accrual ($450,000).",
+            "title": "Day 41 Journal \u2014 Consolidation & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 14955000,
+            "totalCredit": 14955000,
+            "entries": [
+              {
+                "id": "JNL-4101",
+                "account": "Consolidated Goodwill / Net Identifiable Assets",
+                "debit": 14505000,
+                "balance": 14505000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4103",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 450000,
+                "balance": 14955000,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4102",
+                "account": "Purchase Consideration & NCI Equity",
+                "credit": 14955000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 41 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 14955000,
+            "totalCredit": 14955000,
+            "entries": [
+              {
+                "id": "JNL-4101",
+                "account": "Consolidated Goodwill / Net Identifiable Assets",
+                "debit": 14505000,
+                "balance": 14505000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4103",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 450000,
+                "balance": 14955000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4102",
+                "account": "Purchase Consideration & NCI Equity",
+                "credit": 14955000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 41 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 14955000,
+            "totalCredit": 14955000,
+            "entries": [
+              {
+                "id": "JNL-4101",
+                "account": "Consolidated Goodwill / Net Identifiable Assets",
+                "debit": 14505000,
+                "balance": 14505000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4103",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 450000,
+                "balance": 14955000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4102",
+                "account": "Purchase Consideration & NCI Equity",
+                "credit": 14955000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Measuring Consideration Transferred & Accounting for Acquisition Advisory Costs",
+      "codeHash": "401fc30c45ed7ddbe68f63ee90de0e7947b6398a154f7fa0798e56b68087ceb6",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Measuring Consideration Transferred & Ac... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($14,510,000) for Measuring Consideration Transferred & Ac...",
+            "title": "Day 41 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 14510000,
+            "totalCredit": 14510000,
+            "entries": [
+              {
+                "id": "JNL-4101",
+                "account": "Consolidated Goodwill / Net Identifiable Assets",
+                "debit": 14510000,
+                "balance": 14510000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 41"
+              },
+              {
+                "id": "JNL-4102",
+                "account": "Purchase Consideration & NCI Equity",
+                "credit": 14510000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & consolidation elimination accrual ($450,000).",
+            "title": "Day 41 Journal \u2014 Consolidation & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 14960000,
+            "totalCredit": 14960000,
+            "entries": [
+              {
+                "id": "JNL-4101",
+                "account": "Consolidated Goodwill / Net Identifiable Assets",
+                "debit": 14510000,
+                "balance": 14510000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4103",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 450000,
+                "balance": 14960000,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4102",
+                "account": "Purchase Consideration & NCI Equity",
+                "credit": 14960000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 41 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 14960000,
+            "totalCredit": 14960000,
+            "entries": [
+              {
+                "id": "JNL-4101",
+                "account": "Consolidated Goodwill / Net Identifiable Assets",
+                "debit": 14510000,
+                "balance": 14510000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4103",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 450000,
+                "balance": 14960000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4102",
+                "account": "Purchase Consideration & NCI Equity",
+                "credit": 14960000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 41 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 14960000,
+            "totalCredit": 14960000,
+            "entries": [
+              {
+                "id": "JNL-4101",
+                "account": "Consolidated Goodwill / Net Identifiable Assets",
+                "debit": 14510000,
+                "balance": 14510000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4103",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 450000,
+                "balance": 14960000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4102",
+                "account": "Purchase Consideration & NCI Equity",
+                "credit": 14960000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Purchase Price Allocation (PPA) & Deferred Tax on Fair Value Adjustments",
+      "codeHash": "401fc30c45ed7ddbe68f63ee90de0e7947b6398a154f7fa0798e56b68087ceb6",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Purchase Price Allocation (PPA) & Deferr... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($14,515,000) for Purchase Price Allocation (PPA) & Deferr...",
+            "title": "Day 41 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 14515000,
+            "totalCredit": 14515000,
+            "entries": [
+              {
+                "id": "JNL-4101",
+                "account": "Consolidated Goodwill / Net Identifiable Assets",
+                "debit": 14515000,
+                "balance": 14515000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 41"
+              },
+              {
+                "id": "JNL-4102",
+                "account": "Purchase Consideration & NCI Equity",
+                "credit": 14515000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & consolidation elimination accrual ($450,000).",
+            "title": "Day 41 Journal \u2014 Consolidation & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 14965000,
+            "totalCredit": 14965000,
+            "entries": [
+              {
+                "id": "JNL-4101",
+                "account": "Consolidated Goodwill / Net Identifiable Assets",
+                "debit": 14515000,
+                "balance": 14515000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4103",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 450000,
+                "balance": 14965000,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4102",
+                "account": "Purchase Consideration & NCI Equity",
+                "credit": 14965000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 41 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 14965000,
+            "totalCredit": 14965000,
+            "entries": [
+              {
+                "id": "JNL-4101",
+                "account": "Consolidated Goodwill / Net Identifiable Assets",
+                "debit": 14515000,
+                "balance": 14515000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4103",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 450000,
+                "balance": 14965000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4102",
+                "account": "Purchase Consideration & NCI Equity",
+                "credit": 14965000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 41 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 14965000,
+            "totalCredit": 14965000,
+            "entries": [
+              {
+                "id": "JNL-4101",
+                "account": "Consolidated Goodwill / Net Identifiable Assets",
+                "debit": 14515000,
+                "balance": 14515000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4103",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 450000,
+                "balance": 14965000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4102",
+                "account": "Purchase Consideration & NCI Equity",
+                "credit": 14965000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Goodwill vs Gain on Bargain Purchase & Non-Controlling Interest (NCI) Measurement",
+      "codeHash": "401fc30c45ed7ddbe68f63ee90de0e7947b6398a154f7fa0798e56b68087ceb6",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Goodwill vs Gain on Bargain Purchase & N... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($14,520,000) for Goodwill vs Gain on Bargain Purchase & N...",
+            "title": "Day 41 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 14520000,
+            "totalCredit": 14520000,
+            "entries": [
+              {
+                "id": "JNL-4101",
+                "account": "Consolidated Goodwill / Net Identifiable Assets",
+                "debit": 14520000,
+                "balance": 14520000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 41"
+              },
+              {
+                "id": "JNL-4102",
+                "account": "Purchase Consideration & NCI Equity",
+                "credit": 14520000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & consolidation elimination accrual ($450,000).",
+            "title": "Day 41 Journal \u2014 Consolidation & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 14970000,
+            "totalCredit": 14970000,
+            "entries": [
+              {
+                "id": "JNL-4101",
+                "account": "Consolidated Goodwill / Net Identifiable Assets",
+                "debit": 14520000,
+                "balance": 14520000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4103",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 450000,
+                "balance": 14970000,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4102",
+                "account": "Purchase Consideration & NCI Equity",
+                "credit": 14970000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 41 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 14970000,
+            "totalCredit": 14970000,
+            "entries": [
+              {
+                "id": "JNL-4101",
+                "account": "Consolidated Goodwill / Net Identifiable Assets",
+                "debit": 14520000,
+                "balance": 14520000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4103",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 450000,
+                "balance": 14970000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4102",
+                "account": "Purchase Consideration & NCI Equity",
+                "credit": 14970000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 41 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 14970000,
+            "totalCredit": 14970000,
+            "entries": [
+              {
+                "id": "JNL-4101",
+                "account": "Consolidated Goodwill / Net Identifiable Assets",
+                "debit": 14520000,
+                "balance": 14520000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4103",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 450000,
+                "balance": 14970000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4102",
+                "account": "Purchase Consideration & NCI Equity",
+                "credit": 14970000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Executing the Python M&A Engine & Post-Merger Financial Statement Synthesis",
+      "codeHash": "401fc30c45ed7ddbe68f63ee90de0e7947b6398a154f7fa0798e56b68087ceb6",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Executing the Python M&A Engine & Post-M... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($14,525,000) for Executing the Python M&A Engine & Post-M...",
+            "title": "Day 41 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 14525000,
+            "totalCredit": 14525000,
+            "entries": [
+              {
+                "id": "JNL-4101",
+                "account": "Consolidated Goodwill / Net Identifiable Assets",
+                "debit": 14525000,
+                "balance": 14525000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 41"
+              },
+              {
+                "id": "JNL-4102",
+                "account": "Purchase Consideration & NCI Equity",
+                "credit": 14525000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & consolidation elimination accrual ($450,000).",
+            "title": "Day 41 Journal \u2014 Consolidation & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 14975000,
+            "totalCredit": 14975000,
+            "entries": [
+              {
+                "id": "JNL-4101",
+                "account": "Consolidated Goodwill / Net Identifiable Assets",
+                "debit": 14525000,
+                "balance": 14525000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4103",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 450000,
+                "balance": 14975000,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4102",
+                "account": "Purchase Consideration & NCI Equity",
+                "credit": 14975000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 41 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 14975000,
+            "totalCredit": 14975000,
+            "entries": [
+              {
+                "id": "JNL-4101",
+                "account": "Consolidated Goodwill / Net Identifiable Assets",
+                "debit": 14525000,
+                "balance": 14525000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4103",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 450000,
+                "balance": 14975000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4102",
+                "account": "Purchase Consideration & NCI Equity",
+                "credit": 14975000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 41 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 14975000,
+            "totalCredit": 14975000,
+            "entries": [
+              {
+                "id": "JNL-4101",
+                "account": "Consolidated Goodwill / Net Identifiable Assets",
+                "debit": 14525000,
+                "balance": 14525000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4103",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 450000,
+                "balance": 14975000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4102",
+                "account": "Purchase Consideration & NCI Equity",
+                "credit": 14975000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

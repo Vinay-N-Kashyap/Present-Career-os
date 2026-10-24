@@ -1,0 +1,659 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom-accounting",
+  "day": 58,
+  "promptSha": "prompt_sha_bcom_accounting_day58_v1",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Ind AS 8 Constitutional Framework, Hierarchy of Guidance & Three Foundational Pillars",
+      "codeHash": "b64381c06f6aa5af0ebff81cbe40cb1cba26171145b82ddc2a514f3e3644ccdb",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Ind AS 8 Constitutional Framework, Hiera... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($20,005,000) for Ind AS 8 Constitutional Framework, Hiera...",
+            "title": "Day 58 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 20005000,
+            "totalCredit": 20005000,
+            "entries": [
+              {
+                "id": "JNL-5801",
+                "account": "Retained Earnings Equity Restatement Account",
+                "debit": 20005000,
+                "balance": 20005000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 58"
+              },
+              {
+                "id": "JNL-5802",
+                "account": "Prior Period Sales & Depreciation Adjustment Reserves",
+                "credit": 20005000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & reporting adjustment accrual ($1,122,480).",
+            "title": "Day 58 Journal \u2014 Reporting & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 21127480,
+            "totalCredit": 21127480,
+            "entries": [
+              {
+                "id": "JNL-5801",
+                "account": "Retained Earnings Equity Restatement Account",
+                "debit": 20005000,
+                "balance": 20005000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5803",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 1122480,
+                "balance": 21127480,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5802",
+                "account": "Prior Period Sales & Depreciation Adjustment Reserves",
+                "credit": 21127480,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 58 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 21127480,
+            "totalCredit": 21127480,
+            "entries": [
+              {
+                "id": "JNL-5801",
+                "account": "Retained Earnings Equity Restatement Account",
+                "debit": 20005000,
+                "balance": 20005000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5803",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 1122480,
+                "balance": 21127480,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5802",
+                "account": "Prior Period Sales & Depreciation Adjustment Reserves",
+                "credit": 21127480,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 58 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 21127480,
+            "totalCredit": 21127480,
+            "entries": [
+              {
+                "id": "JNL-5801",
+                "account": "Retained Earnings Equity Restatement Account",
+                "debit": 20005000,
+                "balance": 20005000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5803",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 1122480,
+                "balance": 21127480,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5802",
+                "account": "Prior Period Sales & Depreciation Adjustment Reserves",
+                "credit": 21127480,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Changes in Accounting Policies & Retrospective Application Standard",
+      "codeHash": "b64381c06f6aa5af0ebff81cbe40cb1cba26171145b82ddc2a514f3e3644ccdb",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Changes in Accounting Policies & Retrosp... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($20,010,000) for Changes in Accounting Policies & Retrosp...",
+            "title": "Day 58 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 20010000,
+            "totalCredit": 20010000,
+            "entries": [
+              {
+                "id": "JNL-5801",
+                "account": "Retained Earnings Equity Restatement Account",
+                "debit": 20010000,
+                "balance": 20010000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 58"
+              },
+              {
+                "id": "JNL-5802",
+                "account": "Prior Period Sales & Depreciation Adjustment Reserves",
+                "credit": 20010000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & reporting adjustment accrual ($1,122,480).",
+            "title": "Day 58 Journal \u2014 Reporting & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 21132480,
+            "totalCredit": 21132480,
+            "entries": [
+              {
+                "id": "JNL-5801",
+                "account": "Retained Earnings Equity Restatement Account",
+                "debit": 20010000,
+                "balance": 20010000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5803",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 1122480,
+                "balance": 21132480,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5802",
+                "account": "Prior Period Sales & Depreciation Adjustment Reserves",
+                "credit": 21132480,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 58 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 21132480,
+            "totalCredit": 21132480,
+            "entries": [
+              {
+                "id": "JNL-5801",
+                "account": "Retained Earnings Equity Restatement Account",
+                "debit": 20010000,
+                "balance": 20010000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5803",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 1122480,
+                "balance": 21132480,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5802",
+                "account": "Prior Period Sales & Depreciation Adjustment Reserves",
+                "credit": 21132480,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 58 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 21132480,
+            "totalCredit": 21132480,
+            "entries": [
+              {
+                "id": "JNL-5801",
+                "account": "Retained Earnings Equity Restatement Account",
+                "debit": 20010000,
+                "balance": 20010000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5803",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 1122480,
+                "balance": 21132480,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5802",
+                "account": "Prior Period Sales & Depreciation Adjustment Reserves",
+                "credit": 21132480,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Changes in Accounting Estimates & Prospective Recognition Standard",
+      "codeHash": "b64381c06f6aa5af0ebff81cbe40cb1cba26171145b82ddc2a514f3e3644ccdb",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Changes in Accounting Estimates & Prospe... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($20,015,000) for Changes in Accounting Estimates & Prospe...",
+            "title": "Day 58 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 20015000,
+            "totalCredit": 20015000,
+            "entries": [
+              {
+                "id": "JNL-5801",
+                "account": "Retained Earnings Equity Restatement Account",
+                "debit": 20015000,
+                "balance": 20015000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 58"
+              },
+              {
+                "id": "JNL-5802",
+                "account": "Prior Period Sales & Depreciation Adjustment Reserves",
+                "credit": 20015000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & reporting adjustment accrual ($1,122,480).",
+            "title": "Day 58 Journal \u2014 Reporting & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 21137480,
+            "totalCredit": 21137480,
+            "entries": [
+              {
+                "id": "JNL-5801",
+                "account": "Retained Earnings Equity Restatement Account",
+                "debit": 20015000,
+                "balance": 20015000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5803",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 1122480,
+                "balance": 21137480,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5802",
+                "account": "Prior Period Sales & Depreciation Adjustment Reserves",
+                "credit": 21137480,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 58 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 21137480,
+            "totalCredit": 21137480,
+            "entries": [
+              {
+                "id": "JNL-5801",
+                "account": "Retained Earnings Equity Restatement Account",
+                "debit": 20015000,
+                "balance": 20015000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5803",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 1122480,
+                "balance": 21137480,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5802",
+                "account": "Prior Period Sales & Depreciation Adjustment Reserves",
+                "credit": 21137480,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 58 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 21137480,
+            "totalCredit": 21137480,
+            "entries": [
+              {
+                "id": "JNL-5801",
+                "account": "Retained Earnings Equity Restatement Account",
+                "debit": 20015000,
+                "balance": 20015000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5803",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 1122480,
+                "balance": 21137480,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5802",
+                "account": "Prior Period Sales & Depreciation Adjustment Reserves",
+                "credit": 21137480,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Prior Period Errors & Retrospective Restatement Standard",
+      "codeHash": "b64381c06f6aa5af0ebff81cbe40cb1cba26171145b82ddc2a514f3e3644ccdb",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Prior Period Errors & Retrospective Rest... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($20,020,000) for Prior Period Errors & Retrospective Rest...",
+            "title": "Day 58 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 20020000,
+            "totalCredit": 20020000,
+            "entries": [
+              {
+                "id": "JNL-5801",
+                "account": "Retained Earnings Equity Restatement Account",
+                "debit": 20020000,
+                "balance": 20020000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 58"
+              },
+              {
+                "id": "JNL-5802",
+                "account": "Prior Period Sales & Depreciation Adjustment Reserves",
+                "credit": 20020000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & reporting adjustment accrual ($1,122,480).",
+            "title": "Day 58 Journal \u2014 Reporting & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 21142480,
+            "totalCredit": 21142480,
+            "entries": [
+              {
+                "id": "JNL-5801",
+                "account": "Retained Earnings Equity Restatement Account",
+                "debit": 20020000,
+                "balance": 20020000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5803",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 1122480,
+                "balance": 21142480,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5802",
+                "account": "Prior Period Sales & Depreciation Adjustment Reserves",
+                "credit": 21142480,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 58 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 21142480,
+            "totalCredit": 21142480,
+            "entries": [
+              {
+                "id": "JNL-5801",
+                "account": "Retained Earnings Equity Restatement Account",
+                "debit": 20020000,
+                "balance": 20020000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5803",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 1122480,
+                "balance": 21142480,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5802",
+                "account": "Prior Period Sales & Depreciation Adjustment Reserves",
+                "credit": 21142480,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 58 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 21142480,
+            "totalCredit": 21142480,
+            "entries": [
+              {
+                "id": "JNL-5801",
+                "account": "Retained Earnings Equity Restatement Account",
+                "debit": 20020000,
+                "balance": 20020000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5803",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 1122480,
+                "balance": 21142480,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5802",
+                "account": "Prior Period Sales & Depreciation Adjustment Reserves",
+                "credit": 21142480,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Ind AS 8 Platform, Retrospective & Prospective Verification & Day 58 Certification",
+      "codeHash": "b64381c06f6aa5af0ebff81cbe40cb1cba26171145b82ddc2a514f3e3644ccdb",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Enterprise Ind AS 8 Platform, Retrospect... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($20,025,000) for Enterprise Ind AS 8 Platform, Retrospect...",
+            "title": "Day 58 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 20025000,
+            "totalCredit": 20025000,
+            "entries": [
+              {
+                "id": "JNL-5801",
+                "account": "Retained Earnings Equity Restatement Account",
+                "debit": 20025000,
+                "balance": 20025000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 58"
+              },
+              {
+                "id": "JNL-5802",
+                "account": "Prior Period Sales & Depreciation Adjustment Reserves",
+                "credit": 20025000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & reporting adjustment accrual ($1,122,480).",
+            "title": "Day 58 Journal \u2014 Reporting & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 21147480,
+            "totalCredit": 21147480,
+            "entries": [
+              {
+                "id": "JNL-5801",
+                "account": "Retained Earnings Equity Restatement Account",
+                "debit": 20025000,
+                "balance": 20025000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5803",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 1122480,
+                "balance": 21147480,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5802",
+                "account": "Prior Period Sales & Depreciation Adjustment Reserves",
+                "credit": 21147480,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 58 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 21147480,
+            "totalCredit": 21147480,
+            "entries": [
+              {
+                "id": "JNL-5801",
+                "account": "Retained Earnings Equity Restatement Account",
+                "debit": 20025000,
+                "balance": 20025000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5803",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 1122480,
+                "balance": 21147480,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5802",
+                "account": "Prior Period Sales & Depreciation Adjustment Reserves",
+                "credit": 21147480,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 58 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 21147480,
+            "totalCredit": 21147480,
+            "entries": [
+              {
+                "id": "JNL-5801",
+                "account": "Retained Earnings Equity Restatement Account",
+                "debit": 20025000,
+                "balance": 20025000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5803",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 1122480,
+                "balance": 21147480,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5802",
+                "account": "Prior Period Sales & Depreciation Adjustment Reserves",
+                "credit": 21147480,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

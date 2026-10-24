@@ -1,0 +1,654 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom-finance",
+  "day": 31,
+  "promptSha": "ab8b3f0e314970d3c40bcd3c4386e4722a23037d738ef3f999c3508128281cdb",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Foundations of Multi-Stage DCF & Unlevered Free Cash Flow (UFCF)",
+      "codeHash": "56d55985e29f4d9276d0dc07fecb7d7405a961d9da75efbeb63c8eefef6e77dc",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Foundations of Multi-Stage DCF & Unlever \u2014 General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Open primary capital facility balance for Foundations of Multi-Stage DCF.",
+            "title": "Day 31 Ledger \u2014 Initial Facility Allocation",
+            "isBalanced": true,
+            "totalDebit": 131000,
+            "totalCredit": 131000,
+            "entries": [
+              {
+                "id": "JNL-3101",
+                "account": "Institutional Capital Facility / Operating Reserve",
+                "debit": 131000,
+                "balance": 131000,
+                "tone": "data",
+                "memo": "Initial facility booking"
+              },
+              {
+                "id": "JNL-3102",
+                "account": "Syndicate Settlement Clearing / Treasury Control",
+                "credit": 131000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement balance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Record secondary interest accrual and transaction fee adjustment.",
+            "title": "Day 31 Ledger \u2014 Transaction Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 157200,
+            "totalCredit": 157200,
+            "entries": [
+              {
+                "id": "JNL-3101",
+                "account": "Institutional Capital Facility / Operating Reserve",
+                "debit": 131000,
+                "balance": 131000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3103",
+                "account": "Accrued Transaction Advisory / Facility Expense",
+                "debit": 26200,
+                "balance": 157200,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-3102",
+                "account": "Syndicate Settlement Clearing / Treasury Control",
+                "credit": 157200,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Audit balance sheet covenant thresholds and collateral allocations.",
+            "title": "Day 31 Ledger \u2014 Credit Covenant Alignment",
+            "isBalanced": true,
+            "totalDebit": 157200,
+            "totalCredit": 157200,
+            "entries": [
+              {
+                "id": "JNL-3101",
+                "account": "Institutional Capital Facility / Operating Reserve",
+                "debit": 131000,
+                "balance": 131000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3103",
+                "account": "Accrued Transaction Advisory / Facility Expense",
+                "debit": 26200,
+                "balance": 157200,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3102",
+                "account": "Syndicate Settlement Clearing / Treasury Control",
+                "credit": 157200,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Execute real time general ledger reconciliation and final balanced sign off.",
+            "title": "Day 31 Ledger \u2014 Balanced Sign Off",
+            "isBalanced": true,
+            "totalDebit": 157200,
+            "totalCredit": 157200,
+            "entries": [
+              {
+                "id": "JNL-3101",
+                "account": "Institutional Capital Facility / Operating Reserve",
+                "debit": 131000,
+                "balance": 131000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3103",
+                "account": "Accrued Transaction Advisory / Facility Expense",
+                "debit": 26200,
+                "balance": 157200,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3102",
+                "account": "Syndicate Settlement Clearing / Treasury Control",
+                "credit": 157200,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Forecasting Drivers: Revenue, NOPAT, CapEx, Working Capital & Mid-Year Discounting",
+      "codeHash": "56d55985e29f4d9276d0dc07fecb7d7405a961d9da75efbeb63c8eefef6e77dc",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Forecasting Drivers: Revenue, NOPAT, Cap \u2014 General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Open primary capital facility balance for Forecasting Drivers: Revenue, .",
+            "title": "Day 31 Ledger \u2014 Initial Facility Allocation",
+            "isBalanced": true,
+            "totalDebit": 131250,
+            "totalCredit": 131250,
+            "entries": [
+              {
+                "id": "JNL-3101",
+                "account": "Institutional Capital Facility / Operating Reserve",
+                "debit": 131250,
+                "balance": 131250,
+                "tone": "data",
+                "memo": "Initial facility booking"
+              },
+              {
+                "id": "JNL-3102",
+                "account": "Syndicate Settlement Clearing / Treasury Control",
+                "credit": 131250,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement balance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Record secondary interest accrual and transaction fee adjustment.",
+            "title": "Day 31 Ledger \u2014 Transaction Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 157500,
+            "totalCredit": 157500,
+            "entries": [
+              {
+                "id": "JNL-3101",
+                "account": "Institutional Capital Facility / Operating Reserve",
+                "debit": 131250,
+                "balance": 131250,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3103",
+                "account": "Accrued Transaction Advisory / Facility Expense",
+                "debit": 26250,
+                "balance": 157500,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-3102",
+                "account": "Syndicate Settlement Clearing / Treasury Control",
+                "credit": 157500,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Audit balance sheet covenant thresholds and collateral allocations.",
+            "title": "Day 31 Ledger \u2014 Credit Covenant Alignment",
+            "isBalanced": true,
+            "totalDebit": 157500,
+            "totalCredit": 157500,
+            "entries": [
+              {
+                "id": "JNL-3101",
+                "account": "Institutional Capital Facility / Operating Reserve",
+                "debit": 131250,
+                "balance": 131250,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3103",
+                "account": "Accrued Transaction Advisory / Facility Expense",
+                "debit": 26250,
+                "balance": 157500,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3102",
+                "account": "Syndicate Settlement Clearing / Treasury Control",
+                "credit": 157500,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Execute real time general ledger reconciliation and final balanced sign off.",
+            "title": "Day 31 Ledger \u2014 Balanced Sign Off",
+            "isBalanced": true,
+            "totalDebit": 157500,
+            "totalCredit": 157500,
+            "entries": [
+              {
+                "id": "JNL-3101",
+                "account": "Institutional Capital Facility / Operating Reserve",
+                "debit": 131250,
+                "balance": 131250,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3103",
+                "account": "Accrued Transaction Advisory / Facility Expense",
+                "debit": 26250,
+                "balance": 157500,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3102",
+                "account": "Syndicate Settlement Clearing / Treasury Control",
+                "credit": 157500,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Terminal Value Methodologies: Gordon Growth Perpetual vs Exit Multiple Capitalization",
+      "codeHash": "56d55985e29f4d9276d0dc07fecb7d7405a961d9da75efbeb63c8eefef6e77dc",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Terminal Value Methodologies: Gordon Gro \u2014 General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Open primary capital facility balance for Terminal Value Methodologies: .",
+            "title": "Day 31 Ledger \u2014 Initial Facility Allocation",
+            "isBalanced": true,
+            "totalDebit": 131500,
+            "totalCredit": 131500,
+            "entries": [
+              {
+                "id": "JNL-3101",
+                "account": "Institutional Capital Facility / Operating Reserve",
+                "debit": 131500,
+                "balance": 131500,
+                "tone": "data",
+                "memo": "Initial facility booking"
+              },
+              {
+                "id": "JNL-3102",
+                "account": "Syndicate Settlement Clearing / Treasury Control",
+                "credit": 131500,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement balance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Record secondary interest accrual and transaction fee adjustment.",
+            "title": "Day 31 Ledger \u2014 Transaction Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 157800,
+            "totalCredit": 157800,
+            "entries": [
+              {
+                "id": "JNL-3101",
+                "account": "Institutional Capital Facility / Operating Reserve",
+                "debit": 131500,
+                "balance": 131500,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3103",
+                "account": "Accrued Transaction Advisory / Facility Expense",
+                "debit": 26300,
+                "balance": 157800,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-3102",
+                "account": "Syndicate Settlement Clearing / Treasury Control",
+                "credit": 157800,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Audit balance sheet covenant thresholds and collateral allocations.",
+            "title": "Day 31 Ledger \u2014 Credit Covenant Alignment",
+            "isBalanced": true,
+            "totalDebit": 157800,
+            "totalCredit": 157800,
+            "entries": [
+              {
+                "id": "JNL-3101",
+                "account": "Institutional Capital Facility / Operating Reserve",
+                "debit": 131500,
+                "balance": 131500,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3103",
+                "account": "Accrued Transaction Advisory / Facility Expense",
+                "debit": 26300,
+                "balance": 157800,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3102",
+                "account": "Syndicate Settlement Clearing / Treasury Control",
+                "credit": 157800,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Execute real time general ledger reconciliation and final balanced sign off.",
+            "title": "Day 31 Ledger \u2014 Balanced Sign Off",
+            "isBalanced": true,
+            "totalDebit": 157800,
+            "totalCredit": 157800,
+            "entries": [
+              {
+                "id": "JNL-3101",
+                "account": "Institutional Capital Facility / Operating Reserve",
+                "debit": 131500,
+                "balance": 131500,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3103",
+                "account": "Accrued Transaction Advisory / Facility Expense",
+                "debit": 26300,
+                "balance": 157800,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3102",
+                "account": "Syndicate Settlement Clearing / Treasury Control",
+                "credit": 157800,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Balance Sheet Reconciliation: Enterprise-to-Equity Bridge & Non-Operating Claims",
+      "codeHash": "56d55985e29f4d9276d0dc07fecb7d7405a961d9da75efbeb63c8eefef6e77dc",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Balance Sheet Reconciliation: Enterprise \u2014 General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Open primary capital facility balance for Balance Sheet Reconciliation: .",
+            "title": "Day 31 Ledger \u2014 Initial Facility Allocation",
+            "isBalanced": true,
+            "totalDebit": 131750,
+            "totalCredit": 131750,
+            "entries": [
+              {
+                "id": "JNL-3101",
+                "account": "Institutional Capital Facility / Operating Reserve",
+                "debit": 131750,
+                "balance": 131750,
+                "tone": "data",
+                "memo": "Initial facility booking"
+              },
+              {
+                "id": "JNL-3102",
+                "account": "Syndicate Settlement Clearing / Treasury Control",
+                "credit": 131750,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement balance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Record secondary interest accrual and transaction fee adjustment.",
+            "title": "Day 31 Ledger \u2014 Transaction Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 158100,
+            "totalCredit": 158100,
+            "entries": [
+              {
+                "id": "JNL-3101",
+                "account": "Institutional Capital Facility / Operating Reserve",
+                "debit": 131750,
+                "balance": 131750,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3103",
+                "account": "Accrued Transaction Advisory / Facility Expense",
+                "debit": 26350,
+                "balance": 158100,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-3102",
+                "account": "Syndicate Settlement Clearing / Treasury Control",
+                "credit": 158100,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Audit balance sheet covenant thresholds and collateral allocations.",
+            "title": "Day 31 Ledger \u2014 Credit Covenant Alignment",
+            "isBalanced": true,
+            "totalDebit": 158100,
+            "totalCredit": 158100,
+            "entries": [
+              {
+                "id": "JNL-3101",
+                "account": "Institutional Capital Facility / Operating Reserve",
+                "debit": 131750,
+                "balance": 131750,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3103",
+                "account": "Accrued Transaction Advisory / Facility Expense",
+                "debit": 26350,
+                "balance": 158100,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3102",
+                "account": "Syndicate Settlement Clearing / Treasury Control",
+                "credit": 158100,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Execute real time general ledger reconciliation and final balanced sign off.",
+            "title": "Day 31 Ledger \u2014 Balanced Sign Off",
+            "isBalanced": true,
+            "totalDebit": 158100,
+            "totalCredit": 158100,
+            "entries": [
+              {
+                "id": "JNL-3101",
+                "account": "Institutional Capital Facility / Operating Reserve",
+                "debit": 131750,
+                "balance": 131750,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3103",
+                "account": "Accrued Transaction Advisory / Facility Expense",
+                "debit": 26350,
+                "balance": 158100,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3102",
+                "account": "Syndicate Settlement Clearing / Treasury Control",
+                "credit": 158100,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Valuation Sensitivity Matrices, Monte Carlo Risk Simulation & Execution Verification",
+      "codeHash": "56d55985e29f4d9276d0dc07fecb7d7405a961d9da75efbeb63c8eefef6e77dc",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Valuation Sensitivity Matrices, Monte Ca \u2014 General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Open primary capital facility balance for Valuation Sensitivity Matrices.",
+            "title": "Day 31 Ledger \u2014 Initial Facility Allocation",
+            "isBalanced": true,
+            "totalDebit": 132000,
+            "totalCredit": 132000,
+            "entries": [
+              {
+                "id": "JNL-3101",
+                "account": "Institutional Capital Facility / Operating Reserve",
+                "debit": 132000,
+                "balance": 132000,
+                "tone": "data",
+                "memo": "Initial facility booking"
+              },
+              {
+                "id": "JNL-3102",
+                "account": "Syndicate Settlement Clearing / Treasury Control",
+                "credit": 132000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement balance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Record secondary interest accrual and transaction fee adjustment.",
+            "title": "Day 31 Ledger \u2014 Transaction Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 158400,
+            "totalCredit": 158400,
+            "entries": [
+              {
+                "id": "JNL-3101",
+                "account": "Institutional Capital Facility / Operating Reserve",
+                "debit": 132000,
+                "balance": 132000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3103",
+                "account": "Accrued Transaction Advisory / Facility Expense",
+                "debit": 26400,
+                "balance": 158400,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-3102",
+                "account": "Syndicate Settlement Clearing / Treasury Control",
+                "credit": 158400,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Audit balance sheet covenant thresholds and collateral allocations.",
+            "title": "Day 31 Ledger \u2014 Credit Covenant Alignment",
+            "isBalanced": true,
+            "totalDebit": 158400,
+            "totalCredit": 158400,
+            "entries": [
+              {
+                "id": "JNL-3101",
+                "account": "Institutional Capital Facility / Operating Reserve",
+                "debit": 132000,
+                "balance": 132000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3103",
+                "account": "Accrued Transaction Advisory / Facility Expense",
+                "debit": 26400,
+                "balance": 158400,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3102",
+                "account": "Syndicate Settlement Clearing / Treasury Control",
+                "credit": 158400,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Execute real time general ledger reconciliation and final balanced sign off.",
+            "title": "Day 31 Ledger \u2014 Balanced Sign Off",
+            "isBalanced": true,
+            "totalDebit": 158400,
+            "totalCredit": 158400,
+            "entries": [
+              {
+                "id": "JNL-3101",
+                "account": "Institutional Capital Facility / Operating Reserve",
+                "debit": 132000,
+                "balance": 132000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3103",
+                "account": "Accrued Transaction Advisory / Facility Expense",
+                "debit": 26400,
+                "balance": 158400,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3102",
+                "account": "Syndicate Settlement Clearing / Treasury Control",
+                "credit": 158400,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "coursePrefix": "bcom_dmkt",
+  "day": 27,
+  "title": "Data Privacy, Cookie Deprecation & First-Party Data Architecture",
+  "funnelSteps": [
+    {
+      "step": "PRIVACY_SANDBOX_ADOPTION",
+      "label": "Google Privacy Sandbox Topics API & Coarse Taxonomy Mapping",
+      "metric": "Zero Cross-Site Tracking",
+      "status": "COMPLETED",
+      "color": "#10B981"
+    },
+    {
+      "step": "FIRST_PARTY_CAPTURE_FUNNEL",
+      "label": "Progressive Profiling & Value-Exchange Lead Generation",
+      "metric": "100.0% Profile Completeness",
+      "status": "COMPLETED",
+      "color": "#3B82F6"
+    },
+    {
+      "step": "SERVER_SIDE_TAGGING_CAPI",
+      "label": "Server-Side GTM & SHA-256 Conversions API (CAPI) Pipelines",
+      "metric": "Match Quality: 9.2/10.0",
+      "status": "COMPLETED",
+      "color": "#6366F1"
+    },
+    {
+      "step": "CMP_STATUTORY_GOVERNANCE",
+      "label": "Consent Mode v2 & Multi-Jurisdictional Privacy (GDPR/DPDP)",
+      "metric": "100.0% Audit Trail Verified",
+      "status": "COMPLETED",
+      "color": "#F59E0B"
+    },
+    {
+      "step": "ENTERPRISE_PRIVACY_GATEWAY",
+      "label": "Institutional Privacy & Cookieless Architecture Gateway",
+      "metric": "100.0/100 DPCA Certified",
+      "status": "COMPLETED",
+      "color": "#8B5CF6"
+    }
+  ],
+  "kpis": [
+    {
+      "label": "Server Match Quality",
+      "value": "9.2 / 10.0"
+    },
+    {
+      "label": "Hashing Standard",
+      "value": "SHA-256 Cryptographic"
+    },
+    {
+      "label": "Consent Compliance",
+      "value": "100.0% Verified"
+    },
+    {
+      "label": "Composite DPCA Score",
+      "value": "100.0/100"
+    }
+  ]
+}

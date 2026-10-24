@@ -1,0 +1,659 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom-accounting",
+  "day": 51,
+  "promptSha": "prompt_sha_bcom_accounting_day51_v1",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Ind AS 36 Scope, Impairment Indicators & Cash-Generating Unit (CGU) Definition",
+      "codeHash": "ae5fbeab6c37aa4c4f10c5a240673dfb771b90e1c7f274e3676f875ee29641b5",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Ind AS 36 Scope, Impairment Indicators &... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($32,869,199) for Ind AS 36 Scope, Impairment Indicators &...",
+            "title": "Day 51 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 32869199,
+            "totalCredit": 32869199,
+            "entries": [
+              {
+                "id": "JNL-5101",
+                "account": "Impairment Loss Expense (P&L) / Valuation Reserves",
+                "debit": 32869199,
+                "balance": 32869199,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 51"
+              },
+              {
+                "id": "JNL-5102",
+                "account": "Accumulated Impairment - Goodwill, Machinery & Premises",
+                "credit": 32869199,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & impairment adjustment accrual ($11,135,801).",
+            "title": "Day 51 Journal \u2014 Valuation & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 44005000,
+            "totalCredit": 44005000,
+            "entries": [
+              {
+                "id": "JNL-5101",
+                "account": "Impairment Loss Expense (P&L) / Valuation Reserves",
+                "debit": 32869199,
+                "balance": 32869199,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5103",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 11135801,
+                "balance": 44005000,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5102",
+                "account": "Accumulated Impairment - Goodwill, Machinery & Premises",
+                "credit": 44005000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 51 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 44005000,
+            "totalCredit": 44005000,
+            "entries": [
+              {
+                "id": "JNL-5101",
+                "account": "Impairment Loss Expense (P&L) / Valuation Reserves",
+                "debit": 32869199,
+                "balance": 32869199,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5103",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 11135801,
+                "balance": 44005000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5102",
+                "account": "Accumulated Impairment - Goodwill, Machinery & Premises",
+                "credit": 44005000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 51 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 44005000,
+            "totalCredit": 44005000,
+            "entries": [
+              {
+                "id": "JNL-5101",
+                "account": "Impairment Loss Expense (P&L) / Valuation Reserves",
+                "debit": 32869199,
+                "balance": 32869199,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5103",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 11135801,
+                "balance": 44005000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5102",
+                "account": "Accumulated Impairment - Goodwill, Machinery & Premises",
+                "credit": 44005000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Recoverable Amount Architecture: Fair Value Less Costs of Disposal (FVLCOD) vs Value in Use (VIU)",
+      "codeHash": "ae5fbeab6c37aa4c4f10c5a240673dfb771b90e1c7f274e3676f875ee29641b5",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Recoverable Amount Architecture: Fair Va... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($32,874,199) for Recoverable Amount Architecture: Fair Va...",
+            "title": "Day 51 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 32874199,
+            "totalCredit": 32874199,
+            "entries": [
+              {
+                "id": "JNL-5101",
+                "account": "Impairment Loss Expense (P&L) / Valuation Reserves",
+                "debit": 32874199,
+                "balance": 32874199,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 51"
+              },
+              {
+                "id": "JNL-5102",
+                "account": "Accumulated Impairment - Goodwill, Machinery & Premises",
+                "credit": 32874199,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & impairment adjustment accrual ($11,135,801).",
+            "title": "Day 51 Journal \u2014 Valuation & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 44010000,
+            "totalCredit": 44010000,
+            "entries": [
+              {
+                "id": "JNL-5101",
+                "account": "Impairment Loss Expense (P&L) / Valuation Reserves",
+                "debit": 32874199,
+                "balance": 32874199,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5103",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 11135801,
+                "balance": 44010000,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5102",
+                "account": "Accumulated Impairment - Goodwill, Machinery & Premises",
+                "credit": 44010000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 51 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 44010000,
+            "totalCredit": 44010000,
+            "entries": [
+              {
+                "id": "JNL-5101",
+                "account": "Impairment Loss Expense (P&L) / Valuation Reserves",
+                "debit": 32874199,
+                "balance": 32874199,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5103",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 11135801,
+                "balance": 44010000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5102",
+                "account": "Accumulated Impairment - Goodwill, Machinery & Premises",
+                "credit": 44010000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 51 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 44010000,
+            "totalCredit": 44010000,
+            "entries": [
+              {
+                "id": "JNL-5101",
+                "account": "Impairment Loss Expense (P&L) / Valuation Reserves",
+                "debit": 32874199,
+                "balance": 32874199,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5103",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 11135801,
+                "balance": 44010000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5102",
+                "account": "Accumulated Impairment - Goodwill, Machinery & Premises",
+                "credit": 44010000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Impairment Loss Recognition & Waterfall Allocation: Goodwill Write-Down & Pro-Rata Distribution",
+      "codeHash": "ae5fbeab6c37aa4c4f10c5a240673dfb771b90e1c7f274e3676f875ee29641b5",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Impairment Loss Recognition & Waterfall ... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($32,879,199) for Impairment Loss Recognition & Waterfall ...",
+            "title": "Day 51 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 32879199,
+            "totalCredit": 32879199,
+            "entries": [
+              {
+                "id": "JNL-5101",
+                "account": "Impairment Loss Expense (P&L) / Valuation Reserves",
+                "debit": 32879199,
+                "balance": 32879199,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 51"
+              },
+              {
+                "id": "JNL-5102",
+                "account": "Accumulated Impairment - Goodwill, Machinery & Premises",
+                "credit": 32879199,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & impairment adjustment accrual ($11,135,801).",
+            "title": "Day 51 Journal \u2014 Valuation & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 44015000,
+            "totalCredit": 44015000,
+            "entries": [
+              {
+                "id": "JNL-5101",
+                "account": "Impairment Loss Expense (P&L) / Valuation Reserves",
+                "debit": 32879199,
+                "balance": 32879199,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5103",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 11135801,
+                "balance": 44015000,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5102",
+                "account": "Accumulated Impairment - Goodwill, Machinery & Premises",
+                "credit": 44015000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 51 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 44015000,
+            "totalCredit": 44015000,
+            "entries": [
+              {
+                "id": "JNL-5101",
+                "account": "Impairment Loss Expense (P&L) / Valuation Reserves",
+                "debit": 32879199,
+                "balance": 32879199,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5103",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 11135801,
+                "balance": 44015000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5102",
+                "account": "Accumulated Impairment - Goodwill, Machinery & Premises",
+                "credit": 44015000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 51 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 44015000,
+            "totalCredit": 44015000,
+            "entries": [
+              {
+                "id": "JNL-5101",
+                "account": "Impairment Loss Expense (P&L) / Valuation Reserves",
+                "debit": 32879199,
+                "balance": 32879199,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5103",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 11135801,
+                "balance": 44015000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5102",
+                "account": "Accumulated Impairment - Goodwill, Machinery & Premises",
+                "credit": 44015000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Subsequent Accounting, Depreciation Recalibration & Strict Reversal Rules",
+      "codeHash": "ae5fbeab6c37aa4c4f10c5a240673dfb771b90e1c7f274e3676f875ee29641b5",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Subsequent Accounting, Depreciation Reca... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($32,884,199) for Subsequent Accounting, Depreciation Reca...",
+            "title": "Day 51 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 32884199,
+            "totalCredit": 32884199,
+            "entries": [
+              {
+                "id": "JNL-5101",
+                "account": "Impairment Loss Expense (P&L) / Valuation Reserves",
+                "debit": 32884199,
+                "balance": 32884199,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 51"
+              },
+              {
+                "id": "JNL-5102",
+                "account": "Accumulated Impairment - Goodwill, Machinery & Premises",
+                "credit": 32884199,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & impairment adjustment accrual ($11,135,801).",
+            "title": "Day 51 Journal \u2014 Valuation & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 44020000,
+            "totalCredit": 44020000,
+            "entries": [
+              {
+                "id": "JNL-5101",
+                "account": "Impairment Loss Expense (P&L) / Valuation Reserves",
+                "debit": 32884199,
+                "balance": 32884199,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5103",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 11135801,
+                "balance": 44020000,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5102",
+                "account": "Accumulated Impairment - Goodwill, Machinery & Premises",
+                "credit": 44020000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 51 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 44020000,
+            "totalCredit": 44020000,
+            "entries": [
+              {
+                "id": "JNL-5101",
+                "account": "Impairment Loss Expense (P&L) / Valuation Reserves",
+                "debit": 32884199,
+                "balance": 32884199,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5103",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 11135801,
+                "balance": 44020000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5102",
+                "account": "Accumulated Impairment - Goodwill, Machinery & Premises",
+                "credit": 44020000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 51 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 44020000,
+            "totalCredit": 44020000,
+            "entries": [
+              {
+                "id": "JNL-5101",
+                "account": "Impairment Loss Expense (P&L) / Valuation Reserves",
+                "debit": 32884199,
+                "balance": 32884199,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5103",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 11135801,
+                "balance": 44020000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5102",
+                "account": "Accumulated Impairment - Goodwill, Machinery & Premises",
+                "credit": 44020000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Ind AS 36 Impairment Engine, Financial Statement Disclosures & Audit Certification",
+      "codeHash": "ae5fbeab6c37aa4c4f10c5a240673dfb771b90e1c7f274e3676f875ee29641b5",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Enterprise Ind AS 36 Impairment Engine, ... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($32,889,199) for Enterprise Ind AS 36 Impairment Engine, ...",
+            "title": "Day 51 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 32889199,
+            "totalCredit": 32889199,
+            "entries": [
+              {
+                "id": "JNL-5101",
+                "account": "Impairment Loss Expense (P&L) / Valuation Reserves",
+                "debit": 32889199,
+                "balance": 32889199,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 51"
+              },
+              {
+                "id": "JNL-5102",
+                "account": "Accumulated Impairment - Goodwill, Machinery & Premises",
+                "credit": 32889199,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & impairment adjustment accrual ($11,135,801).",
+            "title": "Day 51 Journal \u2014 Valuation & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 44025000,
+            "totalCredit": 44025000,
+            "entries": [
+              {
+                "id": "JNL-5101",
+                "account": "Impairment Loss Expense (P&L) / Valuation Reserves",
+                "debit": 32889199,
+                "balance": 32889199,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5103",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 11135801,
+                "balance": 44025000,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5102",
+                "account": "Accumulated Impairment - Goodwill, Machinery & Premises",
+                "credit": 44025000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 51 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 44025000,
+            "totalCredit": 44025000,
+            "entries": [
+              {
+                "id": "JNL-5101",
+                "account": "Impairment Loss Expense (P&L) / Valuation Reserves",
+                "debit": 32889199,
+                "balance": 32889199,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5103",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 11135801,
+                "balance": 44025000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5102",
+                "account": "Accumulated Impairment - Goodwill, Machinery & Premises",
+                "credit": 44025000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 51 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 44025000,
+            "totalCredit": 44025000,
+            "entries": [
+              {
+                "id": "JNL-5101",
+                "account": "Impairment Loss Expense (P&L) / Valuation Reserves",
+                "debit": 32889199,
+                "balance": 32889199,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5103",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 11135801,
+                "balance": 44025000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5102",
+                "account": "Accumulated Impairment - Goodwill, Machinery & Premises",
+                "credit": 44025000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,314 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_law",
+  "day": 52,
+  "promptSha": "prompt_sha_bcom_law_day52_governance_v1",
+  "model": "google/gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Part 1: Section 135(1) CSR Applicability & Committee Constitution",
+      "codeHash": "6d9cafeed88137ce2b9717c7494570bddfb2e82da99396be84fd1ba5677e8362",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Part 1: Section 135(1) CSR Applicability &... \u2014 Compliance Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Regulatory Mandate",
+            "subtext": "Statutory Threshold Audit",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Quantitative Analysis",
+            "subtext": "Metric Calculation & Reconciliation",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Governance Control",
+            "subtext": "Audit Committee & Board Oversight",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Statutory Clearance",
+            "subtext": "Immunity & Compliance Pass",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1: Initialize Part 1: Section 135(1) CSR Applicabili...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS"
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2: Evaluate statutory corporate parameters and legal tests.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS"
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3: Apply Board governance oversight and compliance controls.",
+            "activeStageId": "s3",
+            "statusBadge": "ACTIVE"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4: Execute deterministic Python engine and verify compliance.",
+            "activeStageId": "s4",
+            "statusBadge": "DONE"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Part 2: Section 198 Adjusted Net Profits & 2% Spend Obligation",
+      "codeHash": "c9fe63d9d308f001b68634011dc862a1325a9d006f8f060b665ebf64fff13861",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Part 2: Section 198 Adjusted Net Profits &... \u2014 Compliance Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Regulatory Mandate",
+            "subtext": "Statutory Threshold Audit",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Quantitative Analysis",
+            "subtext": "Metric Calculation & Reconciliation",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Governance Control",
+            "subtext": "Audit Committee & Board Oversight",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Statutory Clearance",
+            "subtext": "Immunity & Compliance Pass",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1: Initialize Part 2: Section 198 Adjusted Net Profi...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS"
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2: Evaluate statutory corporate parameters and legal tests.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS"
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3: Apply Board governance oversight and compliance controls.",
+            "activeStageId": "s3",
+            "statusBadge": "ACTIVE"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4: Execute deterministic Python engine and verify compliance.",
+            "activeStageId": "s4",
+            "statusBadge": "DONE"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Part 3: Schedule VII Permitted Activities & Statutory Exclusions",
+      "codeHash": "465f07db904db328c272745960bf13039b9b374b8e99155b8949f6bb2c243123",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Part 3: Schedule VII Permitted Activities ... \u2014 Compliance Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Regulatory Mandate",
+            "subtext": "Statutory Threshold Audit",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Quantitative Analysis",
+            "subtext": "Metric Calculation & Reconciliation",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Governance Control",
+            "subtext": "Audit Committee & Board Oversight",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Statutory Clearance",
+            "subtext": "Immunity & Compliance Pass",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1: Initialize Part 3: Schedule VII Permitted Activit...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS"
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2: Evaluate statutory corporate parameters and legal tests.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS"
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3: Apply Board governance oversight and compliance controls.",
+            "activeStageId": "s3",
+            "statusBadge": "ACTIVE"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4: Execute deterministic Python engine and verify compliance.",
+            "activeStageId": "s4",
+            "statusBadge": "DONE"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Part 4: Unspent CSR Funds & Section 135(7) Statutory Penalty Mechanics",
+      "codeHash": "b13c26415de8a9670ff4c27ec70752882c8e6e71b7e238badd24781086f84ce4",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Part 4: Unspent CSR Funds & Section 135(7)... \u2014 Compliance Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Regulatory Mandate",
+            "subtext": "Statutory Threshold Audit",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Quantitative Analysis",
+            "subtext": "Metric Calculation & Reconciliation",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Governance Control",
+            "subtext": "Audit Committee & Board Oversight",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Statutory Clearance",
+            "subtext": "Immunity & Compliance Pass",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1: Initialize Part 4: Unspent CSR Funds & Section 13...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS"
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2: Evaluate statutory corporate parameters and legal tests.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS"
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3: Apply Board governance oversight and compliance controls.",
+            "activeStageId": "s3",
+            "statusBadge": "ACTIVE"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4: Execute deterministic Python engine and verify compliance.",
+            "activeStageId": "s4",
+            "statusBadge": "DONE"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Part 5: Production Section 135 CSR Compliance & S.198 Net Profit Master Engine",
+      "codeHash": "4fc3833b6e822ad1e8d847cc7da7342414a8c193019f529f9431779934e7f576",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Part 5: Production Section 135 CSR Complia... \u2014 Compliance Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Regulatory Mandate",
+            "subtext": "Statutory Threshold Audit",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Quantitative Analysis",
+            "subtext": "Metric Calculation & Reconciliation",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Governance Control",
+            "subtext": "Audit Committee & Board Oversight",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Statutory Clearance",
+            "subtext": "Immunity & Compliance Pass",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1: Initialize Part 5: Production Section 135 CSR Com...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS"
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2: Evaluate statutory corporate parameters and legal tests.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS"
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3: Apply Board governance oversight and compliance controls.",
+            "activeStageId": "s3",
+            "statusBadge": "ACTIVE"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4: Execute deterministic Python engine and verify compliance.",
+            "activeStageId": "s4",
+            "statusBadge": "DONE"
+          }
+        ]
+      }
+    }
+  ]
+}

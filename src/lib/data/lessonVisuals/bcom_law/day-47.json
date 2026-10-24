@@ -1,0 +1,314 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_law",
+  "day": 47,
+  "promptSha": "prompt_sha_bcom_law_day47_cross_border_v1",
+  "model": "google/gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Part 1: Foreign Main vs. Foreign Non-Main Proceedings (Articles 2 & 17)",
+      "codeHash": "845192ba3079d233e207b0ae5b52922785c4ef5c3228d2603ff1662fca21edc6",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Part 1: Foreign Main vs. Foreign Non-Main ... \u2014 Cross-Border Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Jurisdiction & Forum",
+            "subtext": "COMI / Establishment Audit",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Statutory Moratorium",
+            "subtext": "Article 20 Worldwide Stay",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Cross-Border Recovery",
+            "subtext": "Clawback & Anti-Suit Relief",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Creditor Distribution",
+            "subtext": "Hotchpot Equalization",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1: Initialize Part 1: Foreign Main vs. Foreign Non-M...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS"
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2: Evaluate statutory cross-border criteria under UNCITRAL Model Law.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS"
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3: Apply judicial comity protocols and Article 22 creditor protections.",
+            "activeStageId": "s3",
+            "statusBadge": "ACTIVE"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4: Execute deterministic Python engine and verify compliance.",
+            "activeStageId": "s4",
+            "statusBadge": "DONE"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Part 2: Article 2(f) Establishment Verification & Jurisdictional Standing",
+      "codeHash": "732ac6196f322c1d9ea91346994f5b9f440b6a9e0b9f702ebde9feb913319b54",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Part 2: Article 2(f) Establishment Verific... \u2014 Cross-Border Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Jurisdiction & Forum",
+            "subtext": "COMI / Establishment Audit",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Statutory Moratorium",
+            "subtext": "Article 20 Worldwide Stay",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Cross-Border Recovery",
+            "subtext": "Clawback & Anti-Suit Relief",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Creditor Distribution",
+            "subtext": "Hotchpot Equalization",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1: Initialize Part 2: Article 2(f) Establishment Ver...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS"
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2: Evaluate statutory cross-border criteria under UNCITRAL Model Law.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS"
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3: Apply judicial comity protocols and Article 22 creditor protections.",
+            "activeStageId": "s3",
+            "statusBadge": "ACTIVE"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4: Execute deterministic Python engine and verify compliance.",
+            "activeStageId": "s4",
+            "statusBadge": "DONE"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Part 3: Section 234/235 Bilateral Treaties & Judicial Comity Protocols",
+      "codeHash": "67b680ab3c2890835a097ae21acc88091a24510a7c585c2c772c0d352e47664b",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Part 3: Section 234/235 Bilateral Treaties... \u2014 Cross-Border Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Jurisdiction & Forum",
+            "subtext": "COMI / Establishment Audit",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Statutory Moratorium",
+            "subtext": "Article 20 Worldwide Stay",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Cross-Border Recovery",
+            "subtext": "Clawback & Anti-Suit Relief",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Creditor Distribution",
+            "subtext": "Hotchpot Equalization",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1: Initialize Part 3: Section 234/235 Bilateral Trea...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS"
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2: Evaluate statutory cross-border criteria under UNCITRAL Model Law.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS"
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3: Apply judicial comity protocols and Article 22 creditor protections.",
+            "activeStageId": "s3",
+            "statusBadge": "ACTIVE"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4: Execute deterministic Python engine and verify compliance.",
+            "activeStageId": "s4",
+            "statusBadge": "DONE"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Part 4: Article 32 Hotchpot Equalization & Multi-Jurisdictional Creditor Parity",
+      "codeHash": "f8669cecb816c94f7c56f5c30919d91bb536a51ae3db63053512ceb0b4212fe8",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Part 4: Article 32 Hotchpot Equalization &... \u2014 Cross-Border Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Jurisdiction & Forum",
+            "subtext": "COMI / Establishment Audit",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Statutory Moratorium",
+            "subtext": "Article 20 Worldwide Stay",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Cross-Border Recovery",
+            "subtext": "Clawback & Anti-Suit Relief",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Creditor Distribution",
+            "subtext": "Hotchpot Equalization",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1: Initialize Part 4: Article 32 Hotchpot Equalizati...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS"
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2: Evaluate statutory cross-border criteria under UNCITRAL Model Law.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS"
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3: Apply judicial comity protocols and Article 22 creditor protections.",
+            "activeStageId": "s3",
+            "statusBadge": "ACTIVE"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4: Execute deterministic Python engine and verify compliance.",
+            "activeStageId": "s4",
+            "statusBadge": "DONE"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Part 5: Production Cross-Border Foreign Proceeding & Hotchpot Engine",
+      "codeHash": "3cbc7496faa3714555fc50c36df5232dadcb5db412b7b377a3b9c4ed9da769e2",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Part 5: Production Cross-Border Foreign Pr... \u2014 Cross-Border Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Jurisdiction & Forum",
+            "subtext": "COMI / Establishment Audit",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Statutory Moratorium",
+            "subtext": "Article 20 Worldwide Stay",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Cross-Border Recovery",
+            "subtext": "Clawback & Anti-Suit Relief",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Creditor Distribution",
+            "subtext": "Hotchpot Equalization",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1: Initialize Part 5: Production Cross-Border Foreig...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS"
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2: Evaluate statutory cross-border criteria under UNCITRAL Model Law.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS"
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3: Apply judicial comity protocols and Article 22 creditor protections.",
+            "activeStageId": "s3",
+            "statusBadge": "ACTIVE"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4: Execute deterministic Python engine and verify compliance.",
+            "activeStageId": "s4",
+            "statusBadge": "DONE"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,664 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_aud",
+  "day": 11,
+  "promptSha": "f418bbe0d037478fbd774786edb12bc06d51b5b5e92f9c983192c027489a14d6",
+  "model": "google/gemini-3.8-flash",
+  "entries": [
+    {
+      "partTitle": "Characteristics of Fraud & The Fraud Triangle: SA 240",
+      "codeHash": "62952e2bcc1a0ce91bc0e3ea7101de5da70076983be0bf1bc340ef1b34143e97",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Characteristics of Fraud & The Fraud Triangle: SA  \u2014 Forensic Audit Ledger",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open forensic assurance verification ledger (1290000) for Characteristics of Fraud & The Fraud Tri...",
+            "title": "Day 11 Forensic Assurance Ledger \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 1290000,
+            "totalCredit": 1290000,
+            "entries": [
+              {
+                "id": "AUD-1101",
+                "account": "Substantive Asset & Fraud Verification Control",
+                "debit": 1290000,
+                "balance": 1290000,
+                "tone": "data",
+                "memo": "Initial recognition under SA 240 / Ind AS Framework"
+              },
+              {
+                "id": "AUD-1102",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1290000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control balance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record forensic adjustment / impairment entry (165000) under applicable standard.",
+            "title": "Day 11 Forensic Assurance Ledger \u2014 Substantive Adjustment",
+            "isBalanced": true,
+            "totalDebit": 1455000,
+            "totalCredit": 1455000,
+            "entries": [
+              {
+                "id": "AUD-1101",
+                "account": "Substantive Asset & Fraud Verification Control",
+                "debit": 1290000,
+                "balance": 1290000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-1103",
+                "account": "Asset Impairment / Fraud Restatement Reserve",
+                "debit": 165000,
+                "balance": 1455000,
+                "tone": "accent",
+                "memo": "Substantive audit adjustment"
+              },
+              {
+                "id": "AUD-1102",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1455000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute simulated enterprise forensic case study for Characteristics of Fraud & The Fraud Tri...",
+            "title": "Day 11 Forensic Assurance Ledger \u2014 Substantive Audit",
+            "isBalanced": true,
+            "totalDebit": 1455000,
+            "totalCredit": 1455000,
+            "entries": [
+              {
+                "id": "AUD-1101",
+                "account": "Substantive Asset & Fraud Verification Control",
+                "debit": 1290000,
+                "balance": 1290000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-1103",
+                "account": "Asset Impairment / Fraud Restatement Reserve",
+                "debit": 165000,
+                "balance": 1455000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-1102",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1455000,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify 100% balanced ledger closure and working paper archival for Characteristics of Fraud & The Fraud Tri...",
+            "title": "Day 11 Forensic Assurance Ledger \u2014 Final Certified Balances",
+            "isBalanced": true,
+            "totalDebit": 1455000,
+            "totalCredit": 1455000,
+            "entries": [
+              {
+                "id": "AUD-1101",
+                "account": "Substantive Asset & Fraud Verification Control",
+                "debit": 1290000,
+                "balance": 1290000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-1103",
+                "account": "Asset Impairment / Fraud Restatement Reserve",
+                "debit": 165000,
+                "balance": 1455000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-1102",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1455000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "100% Balanced and Certified by Technical Audit Director"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Management Override of Controls & Journal Entry Testing (JET): SA 240",
+      "codeHash": "525cb3b352d381ad8ce1c5cc0ae164e49b735e86a030611efad67d0fe2ae2b57",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Management Override of Controls & Journal Entry Te \u2014 Forensic Audit Ledger",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open forensic assurance verification ledger (1310000) for Management Override of Controls & Journa...",
+            "title": "Day 11 Forensic Assurance Ledger \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 1310000,
+            "totalCredit": 1310000,
+            "entries": [
+              {
+                "id": "AUD-1101",
+                "account": "Substantive Asset & Fraud Verification Control",
+                "debit": 1310000,
+                "balance": 1310000,
+                "tone": "data",
+                "memo": "Initial recognition under SA 240 / Ind AS Framework"
+              },
+              {
+                "id": "AUD-1102",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1310000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control balance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record forensic adjustment / impairment entry (174500) under applicable standard.",
+            "title": "Day 11 Forensic Assurance Ledger \u2014 Substantive Adjustment",
+            "isBalanced": true,
+            "totalDebit": 1484500,
+            "totalCredit": 1484500,
+            "entries": [
+              {
+                "id": "AUD-1101",
+                "account": "Substantive Asset & Fraud Verification Control",
+                "debit": 1310000,
+                "balance": 1310000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-1103",
+                "account": "Asset Impairment / Fraud Restatement Reserve",
+                "debit": 174500,
+                "balance": 1484500,
+                "tone": "accent",
+                "memo": "Substantive audit adjustment"
+              },
+              {
+                "id": "AUD-1102",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1484500,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute simulated enterprise forensic case study for Management Override of Controls & Journa...",
+            "title": "Day 11 Forensic Assurance Ledger \u2014 Substantive Audit",
+            "isBalanced": true,
+            "totalDebit": 1484500,
+            "totalCredit": 1484500,
+            "entries": [
+              {
+                "id": "AUD-1101",
+                "account": "Substantive Asset & Fraud Verification Control",
+                "debit": 1310000,
+                "balance": 1310000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-1103",
+                "account": "Asset Impairment / Fraud Restatement Reserve",
+                "debit": 174500,
+                "balance": 1484500,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-1102",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1484500,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify 100% balanced ledger closure and working paper archival for Management Override of Controls & Journa...",
+            "title": "Day 11 Forensic Assurance Ledger \u2014 Final Certified Balances",
+            "isBalanced": true,
+            "totalDebit": 1484500,
+            "totalCredit": 1484500,
+            "entries": [
+              {
+                "id": "AUD-1101",
+                "account": "Substantive Asset & Fraud Verification Control",
+                "debit": 1310000,
+                "balance": 1310000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-1103",
+                "account": "Asset Impairment / Fraud Restatement Reserve",
+                "debit": 174500,
+                "balance": 1484500,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-1102",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1484500,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "100% Balanced and Certified by Technical Audit Director"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Review of Accounting Estimates for Bias & The Beneish M-Score: SA 240",
+      "codeHash": "a2b24b8e7b7352a39b0e8de092adde3c3430eadff28fe51a64e91a5387774b23",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Review of Accounting Estimates for Bias & The Bene \u2014 Forensic Audit Ledger",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open forensic assurance verification ledger (1330000) for Review of Accounting Estimates for Bias ...",
+            "title": "Day 11 Forensic Assurance Ledger \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 1330000,
+            "totalCredit": 1330000,
+            "entries": [
+              {
+                "id": "AUD-1101",
+                "account": "Substantive Asset & Fraud Verification Control",
+                "debit": 1330000,
+                "balance": 1330000,
+                "tone": "data",
+                "memo": "Initial recognition under SA 240 / Ind AS Framework"
+              },
+              {
+                "id": "AUD-1102",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1330000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control balance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record forensic adjustment / impairment entry (184000) under applicable standard.",
+            "title": "Day 11 Forensic Assurance Ledger \u2014 Substantive Adjustment",
+            "isBalanced": true,
+            "totalDebit": 1514000,
+            "totalCredit": 1514000,
+            "entries": [
+              {
+                "id": "AUD-1101",
+                "account": "Substantive Asset & Fraud Verification Control",
+                "debit": 1330000,
+                "balance": 1330000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-1103",
+                "account": "Asset Impairment / Fraud Restatement Reserve",
+                "debit": 184000,
+                "balance": 1514000,
+                "tone": "accent",
+                "memo": "Substantive audit adjustment"
+              },
+              {
+                "id": "AUD-1102",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1514000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute simulated enterprise forensic case study for Review of Accounting Estimates for Bias ...",
+            "title": "Day 11 Forensic Assurance Ledger \u2014 Substantive Audit",
+            "isBalanced": true,
+            "totalDebit": 1514000,
+            "totalCredit": 1514000,
+            "entries": [
+              {
+                "id": "AUD-1101",
+                "account": "Substantive Asset & Fraud Verification Control",
+                "debit": 1330000,
+                "balance": 1330000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-1103",
+                "account": "Asset Impairment / Fraud Restatement Reserve",
+                "debit": 184000,
+                "balance": 1514000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-1102",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1514000,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify 100% balanced ledger closure and working paper archival for Review of Accounting Estimates for Bias ...",
+            "title": "Day 11 Forensic Assurance Ledger \u2014 Final Certified Balances",
+            "isBalanced": true,
+            "totalDebit": 1514000,
+            "totalCredit": 1514000,
+            "entries": [
+              {
+                "id": "AUD-1101",
+                "account": "Substantive Asset & Fraud Verification Control",
+                "debit": 1330000,
+                "balance": 1330000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-1103",
+                "account": "Asset Impairment / Fraud Restatement Reserve",
+                "debit": 184000,
+                "balance": 1514000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-1102",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1514000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "100% Balanced and Certified by Technical Audit Director"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "First-Digit Benford's Law Chi-Square Fraud Analytics: Forensic Procedures",
+      "codeHash": "71176d909e6786b9dff314d185f57f74d659f9f8e450691a3d1b5f3d61072e48",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "First-Digit Benford's Law Chi-Square Fraud Analyti \u2014 Forensic Audit Ledger",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open forensic assurance verification ledger (1350000) for First-Digit Benford's Law Chi-Square Fra...",
+            "title": "Day 11 Forensic Assurance Ledger \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 1350000,
+            "totalCredit": 1350000,
+            "entries": [
+              {
+                "id": "AUD-1101",
+                "account": "Substantive Asset & Fraud Verification Control",
+                "debit": 1350000,
+                "balance": 1350000,
+                "tone": "data",
+                "memo": "Initial recognition under SA 240 / Ind AS Framework"
+              },
+              {
+                "id": "AUD-1102",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1350000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control balance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record forensic adjustment / impairment entry (193500) under applicable standard.",
+            "title": "Day 11 Forensic Assurance Ledger \u2014 Substantive Adjustment",
+            "isBalanced": true,
+            "totalDebit": 1543500,
+            "totalCredit": 1543500,
+            "entries": [
+              {
+                "id": "AUD-1101",
+                "account": "Substantive Asset & Fraud Verification Control",
+                "debit": 1350000,
+                "balance": 1350000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-1103",
+                "account": "Asset Impairment / Fraud Restatement Reserve",
+                "debit": 193500,
+                "balance": 1543500,
+                "tone": "accent",
+                "memo": "Substantive audit adjustment"
+              },
+              {
+                "id": "AUD-1102",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1543500,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute simulated enterprise forensic case study for First-Digit Benford's Law Chi-Square Fra...",
+            "title": "Day 11 Forensic Assurance Ledger \u2014 Substantive Audit",
+            "isBalanced": true,
+            "totalDebit": 1543500,
+            "totalCredit": 1543500,
+            "entries": [
+              {
+                "id": "AUD-1101",
+                "account": "Substantive Asset & Fraud Verification Control",
+                "debit": 1350000,
+                "balance": 1350000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-1103",
+                "account": "Asset Impairment / Fraud Restatement Reserve",
+                "debit": 193500,
+                "balance": 1543500,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-1102",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1543500,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify 100% balanced ledger closure and working paper archival for First-Digit Benford's Law Chi-Square Fra...",
+            "title": "Day 11 Forensic Assurance Ledger \u2014 Final Certified Balances",
+            "isBalanced": true,
+            "totalDebit": 1543500,
+            "totalCredit": 1543500,
+            "entries": [
+              {
+                "id": "AUD-1101",
+                "account": "Substantive Asset & Fraud Verification Control",
+                "debit": 1350000,
+                "balance": 1350000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-1103",
+                "account": "Asset Impairment / Fraud Restatement Reserve",
+                "debit": 193500,
+                "balance": 1543500,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-1102",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1543500,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "100% Balanced and Certified by Technical Audit Director"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Forensic Whistleblower Investigation Protocol & Conflict of Interest Graph: SA 240",
+      "codeHash": "0ca0feb3d320297885e1329acf4299256db88a8f5d278f94541e82881750f9e3",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Forensic Whistleblower Investigation Protocol & Co \u2014 Forensic Audit Ledger",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open forensic assurance verification ledger (1370000) for Forensic Whistleblower Investigation Pro...",
+            "title": "Day 11 Forensic Assurance Ledger \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 1370000,
+            "totalCredit": 1370000,
+            "entries": [
+              {
+                "id": "AUD-1101",
+                "account": "Substantive Asset & Fraud Verification Control",
+                "debit": 1370000,
+                "balance": 1370000,
+                "tone": "data",
+                "memo": "Initial recognition under SA 240 / Ind AS Framework"
+              },
+              {
+                "id": "AUD-1102",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1370000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control balance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record forensic adjustment / impairment entry (203000) under applicable standard.",
+            "title": "Day 11 Forensic Assurance Ledger \u2014 Substantive Adjustment",
+            "isBalanced": true,
+            "totalDebit": 1573000,
+            "totalCredit": 1573000,
+            "entries": [
+              {
+                "id": "AUD-1101",
+                "account": "Substantive Asset & Fraud Verification Control",
+                "debit": 1370000,
+                "balance": 1370000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-1103",
+                "account": "Asset Impairment / Fraud Restatement Reserve",
+                "debit": 203000,
+                "balance": 1573000,
+                "tone": "accent",
+                "memo": "Substantive audit adjustment"
+              },
+              {
+                "id": "AUD-1102",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1573000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute simulated enterprise forensic case study for Forensic Whistleblower Investigation Pro...",
+            "title": "Day 11 Forensic Assurance Ledger \u2014 Substantive Audit",
+            "isBalanced": true,
+            "totalDebit": 1573000,
+            "totalCredit": 1573000,
+            "entries": [
+              {
+                "id": "AUD-1101",
+                "account": "Substantive Asset & Fraud Verification Control",
+                "debit": 1370000,
+                "balance": 1370000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-1103",
+                "account": "Asset Impairment / Fraud Restatement Reserve",
+                "debit": 203000,
+                "balance": 1573000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-1102",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1573000,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify 100% balanced ledger closure and working paper archival for Forensic Whistleblower Investigation Pro...",
+            "title": "Day 11 Forensic Assurance Ledger \u2014 Final Certified Balances",
+            "isBalanced": true,
+            "totalDebit": 1573000,
+            "totalCredit": 1573000,
+            "entries": [
+              {
+                "id": "AUD-1101",
+                "account": "Substantive Asset & Fraud Verification Control",
+                "debit": 1370000,
+                "balance": 1370000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-1103",
+                "account": "Asset Impairment / Fraud Restatement Reserve",
+                "debit": 203000,
+                "balance": 1573000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-1102",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1573000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "100% Balanced and Certified by Technical Audit Director"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

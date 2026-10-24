@@ -1,0 +1,294 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_law",
+  "day": 40,
+  "promptSha": "prompt_sha_bcom_law_day40_capstone_cirp_simulator_v1",
+  "model": "google/gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Apex CIRP Architecture: End-to-End Statutory Pipeline from Default to Resolution",
+      "codeHash": "bd7c17e1db6552c077738ef2b27a3b0a1bbf295f1fae9d80b1e6d09098348127",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Apex CIRP Architecture: End-to-End Statutory Pipeline from Default to Resolution Architecture",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "CIRP Inception",
+            "subtext": "Section 4 threshold and Section 7 admission"
+          },
+          {
+            "id": "s2",
+            "name": "Custodial Takeover",
+            "subtext": "Section 17 board suspension and asset registry"
+          },
+          {
+            "id": "s3",
+            "name": "Public Summon",
+            "subtext": "Form A publication and claim submission"
+          },
+          {
+            "id": "s4",
+            "name": "Governance Transition",
+            "subtext": "CoC constitution within thirty days"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Insolvency statutory frameworks consolidate enterprise restructuring pipelines.",
+            "activeStageId": "s1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say1",
+            "caption": "Corporate insolvency frameworks operate under strict statutory timelines.",
+            "activeStageId": "s2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Manufacturing conglomerates resolve commercial defaults through four phases.",
+            "activeStageId": "s3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Pipeline engines test statutory milestone timelines and evaluate triggers.",
+            "activeStageId": "s4",
+            "statusBadge": "done"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Comprehensive Ineligibility & Claims Collation: Section 29A Screening & Form B/C/CA Debt Mapping",
+      "codeHash": "06b4a47b28a048de5f39c926dc554855fc8ebc0c942d1baa791810ca2cc5cf81",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Comprehensive Ineligibility & Claims Collation: Section 29A Screening & Form B/C/CA Debt Mapping Architecture",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Forensic Verification",
+            "subtext": "Reconciling claims with GSTN and NeSL"
+          },
+          {
+            "id": "s2",
+            "name": "Section 29A Auditing",
+            "subtext": "Connected persons and willful defaulters"
+          },
+          {
+            "id": "s3",
+            "name": "Related Party Stripping",
+            "subtext": "Revoking voting shares under Section 21"
+          },
+          {
+            "id": "s4",
+            "name": "Clean Debt Register",
+            "subtext": "Certified denominator for creditor democracy"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Forensic claim investigations establish unassailable creditor debt registers.",
+            "activeStageId": "s1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say1",
+            "caption": "Creditor claim collation requires rigorous forensic verification standards.",
+            "activeStageId": "s2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Chemical manufacturer claims undergo related party voting exclusions.",
+            "activeStageId": "s3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Ineligibility audit engines filter related debt and screen bidder profiles.",
+            "activeStageId": "s4",
+            "statusBadge": "done"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Committee of Creditors Control Tower: Voting Share Allocation & Section 28 Negative Covenants",
+      "codeHash": "89ab6e53b1bc84b263781b155c9d2ac8dd7f7fe4e8b432c357364e5d2f4f0b8d",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Committee of Creditors Control Tower: Voting Share Allocation & Section 28 Negative Covenants Architecture",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Supermajority Governance",
+            "subtext": "Sixty-six percent voting thresholds"
+          },
+          {
+            "id": "s2",
+            "name": "Negative Covenant Control",
+            "subtext": "Section 28 transaction authorization"
+          },
+          {
+            "id": "s3",
+            "name": "Procedural Invariants",
+            "subtext": "Thirty-three percent quorum and e-voting"
+          },
+          {
+            "id": "s4",
+            "name": "Deadlock Resolution",
+            "subtext": "Tribunal orders breaking consortium paralysis"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Creditor committees govern enterprise insolvency through democratic voting.",
+            "activeStageId": "s1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say1",
+            "caption": "Creditor governance frameworks establish supreme commercial authority.",
+            "activeStageId": "s2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Power generation plants approve emergency borrowings with committee assent.",
+            "activeStageId": "s3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Control tower engines test quorum rules and negative covenants.",
+            "activeStageId": "s4",
+            "statusBadge": "done"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Dual-Path Resolution vs Liquidation Engine: Section 30 Approval vs Section 53 Priority Waterfall",
+      "codeHash": "9212f06e6c536b8b3d366aa9d36dae08784f57cd90a5f0444ab4ac8295545007",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Dual-Path Resolution vs Liquidation Engine: Section 30 Approval vs Section 53 Priority Waterfall Architecture",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Resolution Plan Selection",
+            "subtext": "Competitive scoring against evaluation matrix"
+          },
+          {
+            "id": "s2",
+            "name": "Judicial Sanction",
+            "subtext": "Section 31 approval and clean slate protections"
+          },
+          {
+            "id": "s3",
+            "name": "Liquidation Contingency",
+            "subtext": "Section 33 order upon statutory failure"
+          },
+          {
+            "id": "s4",
+            "name": "Section 53 Waterfall",
+            "subtext": "Six tier priority distribution execution"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Judicial approvals establish binding nationwide corporate restructuring.",
+            "activeStageId": "s1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say1",
+            "caption": "Corporate revival frameworks deliver clean slate balance sheet protections.",
+            "activeStageId": "s2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Manufacturing company liquidation proceeds follow statutory priorities.",
+            "activeStageId": "s3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Dual path resolution engines test clean slate revivals and distributions.",
+            "activeStageId": "s4",
+            "statusBadge": "done"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Milestone 8 Grand Masterclass Simulator: The Apex Corporate Insolvency Resolution & Liquidation Engine",
+      "codeHash": "94f2ae13979278dab5a18c14e9b0b5a9039dbc721a4a7e9a2cfc71e6b66b6b62",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Milestone 8 Grand Masterclass Simulator: The Apex Corporate Insolvency Resolution & Liquidation Engine Architecture",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Grand CIRP Simulator",
+            "subtext": "Enterprise end-to-end statutory orchestration"
+          },
+          {
+            "id": "s2",
+            "name": "Real Time Claim Matching",
+            "subtext": "Automated Form B, C, and CA verification"
+          },
+          {
+            "id": "s3",
+            "name": "CoC Supermajority Engine",
+            "subtext": "Dynamic voting calculations and Section 28 gates"
+          },
+          {
+            "id": "s4",
+            "name": "Apex Restructuring Verdict",
+            "subtext": "Final resolution sanction or liquidation waterfall"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Grand simulation frameworks integrate comprehensive enterprise restructuring.",
+            "activeStageId": "s1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say1",
+            "caption": "Capstone masterclass simulations synthesize corporate insolvency doctrines.",
+            "activeStageId": "s2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Apex engineering enterprises achieve clean slate corporate revival.",
+            "activeStageId": "s3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Grand capstone simulators orchestrate complete restructuring pipelines.",
+            "activeStageId": "s4",
+            "statusBadge": "done"
+          }
+        ]
+      }
+    }
+  ]
+}

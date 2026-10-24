@@ -1,0 +1,314 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_law",
+  "day": 57,
+  "promptSha": "prompt_sha_bcom_law_day57_governance_v1",
+  "model": "google/gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "US OFAC Sanctions Architecture, SDN Lists & Secondary Sanctions Exposure",
+      "codeHash": "b82fc55f9567805d1289d04ea7ba71120f95319f93c29090c942ce519c234fc4",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "US OFAC Sanctions Architecture, SDN Lists ... Compliance Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Regulatory Mandate",
+            "subtext": "Statutory Threshold Audit",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Quantitative Analysis",
+            "subtext": "Metric Calculation & Reconciliation",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Governance Control",
+            "subtext": "Board Oversight & Defense",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Statutory Clearance",
+            "subtext": "Immunity & Compliance Pass",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1: Initialize US OFAC Sanctions Architecture, SDN Li...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS"
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2: Evaluate statutory corporate parameters and legal tests.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS"
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3: Apply Board governance oversight and compliance controls.",
+            "activeStageId": "s3",
+            "statusBadge": "ACTIVE"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4: Execute deterministic Python engine and verify compliance.",
+            "activeStageId": "s4",
+            "statusBadge": "DONE"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "FATF 40 Recommendations, Mutual Evaluations & Blacklist vs Grey List Dynamics",
+      "codeHash": "b82fc55f9567805d1289d04ea7ba71120f95319f93c29090c942ce519c234fc4",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "FATF 40 Recommendations, Mutual Evaluation... Compliance Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Regulatory Mandate",
+            "subtext": "Statutory Threshold Audit",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Quantitative Analysis",
+            "subtext": "Metric Calculation & Reconciliation",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Governance Control",
+            "subtext": "Board Oversight & Defense",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Statutory Clearance",
+            "subtext": "Immunity & Compliance Pass",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1: Initialize FATF 40 Recommendations, Mutual Evalua...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS"
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2: Evaluate statutory corporate parameters and legal tests.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS"
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3: Apply Board governance oversight and compliance controls.",
+            "activeStageId": "s3",
+            "statusBadge": "ACTIVE"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4: Execute deterministic Python engine and verify compliance.",
+            "activeStageId": "s4",
+            "statusBadge": "DONE"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "PMLA 2002 Framework, Section 12 Reporting Entities & the 2023 UBO 10% Rule",
+      "codeHash": "b82fc55f9567805d1289d04ea7ba71120f95319f93c29090c942ce519c234fc4",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "PMLA 2002 Framework, Section 12 Reporting ... Compliance Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Regulatory Mandate",
+            "subtext": "Statutory Threshold Audit",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Quantitative Analysis",
+            "subtext": "Metric Calculation & Reconciliation",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Governance Control",
+            "subtext": "Board Oversight & Defense",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Statutory Clearance",
+            "subtext": "Immunity & Compliance Pass",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1: Initialize PMLA 2002 Framework, Section 12 Report...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS"
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2: Evaluate statutory corporate parameters and legal tests.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS"
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3: Apply Board governance oversight and compliance controls.",
+            "activeStageId": "s3",
+            "statusBadge": "ACTIVE"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4: Execute deterministic Python engine and verify compliance.",
+            "activeStageId": "s4",
+            "statusBadge": "DONE"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "ED Provisional Attachment Powers & Section 32A IBC Clean Slate Corporate Immunity",
+      "codeHash": "b82fc55f9567805d1289d04ea7ba71120f95319f93c29090c942ce519c234fc4",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "ED Provisional Attachment Powers & Section... Compliance Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Regulatory Mandate",
+            "subtext": "Statutory Threshold Audit",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Quantitative Analysis",
+            "subtext": "Metric Calculation & Reconciliation",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Governance Control",
+            "subtext": "Board Oversight & Defense",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Statutory Clearance",
+            "subtext": "Immunity & Compliance Pass",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1: Initialize ED Provisional Attachment Powers & Sec...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS"
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2: Evaluate statutory corporate parameters and legal tests.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS"
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3: Apply Board governance oversight and compliance controls.",
+            "activeStageId": "s3",
+            "statusBadge": "ACTIVE"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4: Execute deterministic Python engine and verify compliance.",
+            "activeStageId": "s4",
+            "statusBadge": "DONE"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "FIU-IND Suspicious Transaction Reporting (STR) & Automated Sanctions Simulator",
+      "codeHash": "b82fc55f9567805d1289d04ea7ba71120f95319f93c29090c942ce519c234fc4",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "FIU-IND Suspicious Transaction Reporting (... Compliance Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Regulatory Mandate",
+            "subtext": "Statutory Threshold Audit",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Quantitative Analysis",
+            "subtext": "Metric Calculation & Reconciliation",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Governance Control",
+            "subtext": "Board Oversight & Defense",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Statutory Clearance",
+            "subtext": "Immunity & Compliance Pass",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1: Initialize FIU-IND Suspicious Transaction Reporti...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS"
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2: Evaluate statutory corporate parameters and legal tests.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS"
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3: Apply Board governance oversight and compliance controls.",
+            "activeStageId": "s3",
+            "statusBadge": "ACTIVE"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4: Execute deterministic Python engine and verify compliance.",
+            "activeStageId": "s4",
+            "statusBadge": "DONE"
+          }
+        ]
+      }
+    }
+  ]
+}

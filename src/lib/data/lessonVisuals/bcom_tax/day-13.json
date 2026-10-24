@@ -1,0 +1,664 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_tax",
+  "day": 13,
+  "promptSha": "dcdd39dd614559648e0e53a54ba1f2a1a6b94fe9770cc754e70a857ad5e75a7b",
+  "model": "google/gemini-3.8-flash",
+  "entries": [
+    {
+      "partTitle": "The 2019 Corporate Tax Revolution: Section 115BAA Architecture & Effective 25.168% Rate",
+      "codeHash": "2f915285fc96dd31fc80d6545587cdef8a6082ec4a7695d38b7eb9780a2503b0",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "The 2019 Corporate Tax Revolution: Section 115BAA  \u2014 Tax Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary taxable assessment ledger (545000) for The 2019 Corporate Tax Revolution: Secti...",
+            "title": "Day 13 Tax Ledger \u2014 Initial Assessment",
+            "isBalanced": true,
+            "totalDebit": 545000,
+            "totalCredit": 545000,
+            "entries": [
+              {
+                "id": "TAX-1301",
+                "account": "Corporate Tax Expense / Provision Account",
+                "debit": 545000,
+                "balance": 545000,
+                "tone": "data",
+                "memo": "Statutory computation under Income Tax Act"
+              },
+              {
+                "id": "TAX-1302",
+                "account": "Statutory Tax Payable / Cash Clearing Account",
+                "credit": 545000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Statutory assessment balance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record statutory adjustment / tax shield (75000) under applicable corporate tax section.",
+            "title": "Day 13 Tax Ledger \u2014 Statutory Adjustment",
+            "isBalanced": true,
+            "totalDebit": 620000,
+            "totalCredit": 620000,
+            "entries": [
+              {
+                "id": "TAX-1301",
+                "account": "Corporate Tax Expense / Provision Account",
+                "debit": 545000,
+                "balance": 545000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-1303",
+                "account": "MAT Credit / Disallowance Reserve Account",
+                "debit": 75000,
+                "balance": 620000,
+                "tone": "accent",
+                "memo": "Statutory computation adjustment"
+              },
+              {
+                "id": "TAX-1302",
+                "account": "Statutory Tax Payable / Cash Clearing Account",
+                "credit": 620000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute simulated computational case study for The 2019 Corporate Tax Revolution: Secti...",
+            "title": "Day 13 Tax Ledger \u2014 Audit Verification",
+            "isBalanced": true,
+            "totalDebit": 620000,
+            "totalCredit": 620000,
+            "entries": [
+              {
+                "id": "TAX-1301",
+                "account": "Corporate Tax Expense / Provision Account",
+                "debit": 545000,
+                "balance": 545000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-1303",
+                "account": "MAT Credit / Disallowance Reserve Account",
+                "debit": 75000,
+                "balance": 620000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-1302",
+                "account": "Statutory Tax Payable / Cash Clearing Account",
+                "credit": 620000,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify ledger equilibrium and corporate tax statutory signoff.",
+            "title": "Day 13 Tax Ledger \u2014 Final Settlement",
+            "isBalanced": true,
+            "totalDebit": 620000,
+            "totalCredit": 620000,
+            "entries": [
+              {
+                "id": "TAX-1301",
+                "account": "Corporate Tax Expense / Provision Account",
+                "debit": 545000,
+                "balance": 545000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-1303",
+                "account": "MAT Credit / Disallowance Reserve Account",
+                "debit": 75000,
+                "balance": 620000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-1302",
+                "account": "Statutory Tax Payable / Cash Clearing Account",
+                "credit": 620000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "100% Balanced and Certified"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Statutory Bargain: Forfeited Deductions & Ineligible Incentives under Section 115BAA(2)",
+      "codeHash": "25038a255796518c60fab5358a5a146af9ade367eb4b8bea4d87d910740fc7f3",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "The Statutory Bargain: Forfeited Deductions & Inel \u2014 Tax Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary taxable assessment ledger (552500) for The Statutory Bargain: Forfeited Deducti...",
+            "title": "Day 13 Tax Ledger \u2014 Initial Assessment",
+            "isBalanced": true,
+            "totalDebit": 552500,
+            "totalCredit": 552500,
+            "entries": [
+              {
+                "id": "TAX-1301",
+                "account": "Corporate Tax Expense / Provision Account",
+                "debit": 552500,
+                "balance": 552500,
+                "tone": "data",
+                "memo": "Statutory computation under Income Tax Act"
+              },
+              {
+                "id": "TAX-1302",
+                "account": "Statutory Tax Payable / Cash Clearing Account",
+                "credit": 552500,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Statutory assessment balance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record statutory adjustment / tax shield (78500) under applicable corporate tax section.",
+            "title": "Day 13 Tax Ledger \u2014 Statutory Adjustment",
+            "isBalanced": true,
+            "totalDebit": 631000,
+            "totalCredit": 631000,
+            "entries": [
+              {
+                "id": "TAX-1301",
+                "account": "Corporate Tax Expense / Provision Account",
+                "debit": 552500,
+                "balance": 552500,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-1303",
+                "account": "MAT Credit / Disallowance Reserve Account",
+                "debit": 78500,
+                "balance": 631000,
+                "tone": "accent",
+                "memo": "Statutory computation adjustment"
+              },
+              {
+                "id": "TAX-1302",
+                "account": "Statutory Tax Payable / Cash Clearing Account",
+                "credit": 631000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute simulated computational case study for The Statutory Bargain: Forfeited Deducti...",
+            "title": "Day 13 Tax Ledger \u2014 Audit Verification",
+            "isBalanced": true,
+            "totalDebit": 631000,
+            "totalCredit": 631000,
+            "entries": [
+              {
+                "id": "TAX-1301",
+                "account": "Corporate Tax Expense / Provision Account",
+                "debit": 552500,
+                "balance": 552500,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-1303",
+                "account": "MAT Credit / Disallowance Reserve Account",
+                "debit": 78500,
+                "balance": 631000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-1302",
+                "account": "Statutory Tax Payable / Cash Clearing Account",
+                "credit": 631000,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify ledger equilibrium and corporate tax statutory signoff.",
+            "title": "Day 13 Tax Ledger \u2014 Final Settlement",
+            "isBalanced": true,
+            "totalDebit": 631000,
+            "totalCredit": 631000,
+            "entries": [
+              {
+                "id": "TAX-1301",
+                "account": "Corporate Tax Expense / Provision Account",
+                "debit": 552500,
+                "balance": 552500,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-1303",
+                "account": "MAT Credit / Disallowance Reserve Account",
+                "debit": 78500,
+                "balance": 631000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-1302",
+                "account": "Statutory Tax Payable / Cash Clearing Account",
+                "credit": 631000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "100% Balanced and Certified"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Irrevocable Election & Complete MAT Immunity under Section 115JB(5A)",
+      "codeHash": "d6093b6115d69ad74292dc6aef04477e38c28e896fcd789389f7e8409d0d48a2",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "The Irrevocable Election & Complete MAT Immunity u \u2014 Tax Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary taxable assessment ledger (560000) for The Irrevocable Election & Complete MAT ...",
+            "title": "Day 13 Tax Ledger \u2014 Initial Assessment",
+            "isBalanced": true,
+            "totalDebit": 560000,
+            "totalCredit": 560000,
+            "entries": [
+              {
+                "id": "TAX-1301",
+                "account": "Corporate Tax Expense / Provision Account",
+                "debit": 560000,
+                "balance": 560000,
+                "tone": "data",
+                "memo": "Statutory computation under Income Tax Act"
+              },
+              {
+                "id": "TAX-1302",
+                "account": "Statutory Tax Payable / Cash Clearing Account",
+                "credit": 560000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Statutory assessment balance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record statutory adjustment / tax shield (82000) under applicable corporate tax section.",
+            "title": "Day 13 Tax Ledger \u2014 Statutory Adjustment",
+            "isBalanced": true,
+            "totalDebit": 642000,
+            "totalCredit": 642000,
+            "entries": [
+              {
+                "id": "TAX-1301",
+                "account": "Corporate Tax Expense / Provision Account",
+                "debit": 560000,
+                "balance": 560000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-1303",
+                "account": "MAT Credit / Disallowance Reserve Account",
+                "debit": 82000,
+                "balance": 642000,
+                "tone": "accent",
+                "memo": "Statutory computation adjustment"
+              },
+              {
+                "id": "TAX-1302",
+                "account": "Statutory Tax Payable / Cash Clearing Account",
+                "credit": 642000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute simulated computational case study for The Irrevocable Election & Complete MAT ...",
+            "title": "Day 13 Tax Ledger \u2014 Audit Verification",
+            "isBalanced": true,
+            "totalDebit": 642000,
+            "totalCredit": 642000,
+            "entries": [
+              {
+                "id": "TAX-1301",
+                "account": "Corporate Tax Expense / Provision Account",
+                "debit": 560000,
+                "balance": 560000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-1303",
+                "account": "MAT Credit / Disallowance Reserve Account",
+                "debit": 82000,
+                "balance": 642000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-1302",
+                "account": "Statutory Tax Payable / Cash Clearing Account",
+                "credit": 642000,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify ledger equilibrium and corporate tax statutory signoff.",
+            "title": "Day 13 Tax Ledger \u2014 Final Settlement",
+            "isBalanced": true,
+            "totalDebit": 642000,
+            "totalCredit": 642000,
+            "entries": [
+              {
+                "id": "TAX-1301",
+                "account": "Corporate Tax Expense / Provision Account",
+                "debit": 560000,
+                "balance": 560000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-1303",
+                "account": "MAT Credit / Disallowance Reserve Account",
+                "debit": 82000,
+                "balance": 642000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-1302",
+                "account": "Statutory Tax Payable / Cash Clearing Account",
+                "credit": 642000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "100% Balanced and Certified"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Section 115BAB: The Ultra-Concessional 15% Manufacturing Paradigm",
+      "codeHash": "ab973a63781c6572ae6fcb1c675fd30f0bb3cf57d83a52e8ff859c9b72b5cc87",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Section 115BAB: The Ultra-Concessional 15% Manufac \u2014 Tax Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary taxable assessment ledger (567500) for Section 115BAB: The Ultra-Concessional 1...",
+            "title": "Day 13 Tax Ledger \u2014 Initial Assessment",
+            "isBalanced": true,
+            "totalDebit": 567500,
+            "totalCredit": 567500,
+            "entries": [
+              {
+                "id": "TAX-1301",
+                "account": "Corporate Tax Expense / Provision Account",
+                "debit": 567500,
+                "balance": 567500,
+                "tone": "data",
+                "memo": "Statutory computation under Income Tax Act"
+              },
+              {
+                "id": "TAX-1302",
+                "account": "Statutory Tax Payable / Cash Clearing Account",
+                "credit": 567500,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Statutory assessment balance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record statutory adjustment / tax shield (85500) under applicable corporate tax section.",
+            "title": "Day 13 Tax Ledger \u2014 Statutory Adjustment",
+            "isBalanced": true,
+            "totalDebit": 653000,
+            "totalCredit": 653000,
+            "entries": [
+              {
+                "id": "TAX-1301",
+                "account": "Corporate Tax Expense / Provision Account",
+                "debit": 567500,
+                "balance": 567500,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-1303",
+                "account": "MAT Credit / Disallowance Reserve Account",
+                "debit": 85500,
+                "balance": 653000,
+                "tone": "accent",
+                "memo": "Statutory computation adjustment"
+              },
+              {
+                "id": "TAX-1302",
+                "account": "Statutory Tax Payable / Cash Clearing Account",
+                "credit": 653000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute simulated computational case study for Section 115BAB: The Ultra-Concessional 1...",
+            "title": "Day 13 Tax Ledger \u2014 Audit Verification",
+            "isBalanced": true,
+            "totalDebit": 653000,
+            "totalCredit": 653000,
+            "entries": [
+              {
+                "id": "TAX-1301",
+                "account": "Corporate Tax Expense / Provision Account",
+                "debit": 567500,
+                "balance": 567500,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-1303",
+                "account": "MAT Credit / Disallowance Reserve Account",
+                "debit": 85500,
+                "balance": 653000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-1302",
+                "account": "Statutory Tax Payable / Cash Clearing Account",
+                "credit": 653000,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify ledger equilibrium and corporate tax statutory signoff.",
+            "title": "Day 13 Tax Ledger \u2014 Final Settlement",
+            "isBalanced": true,
+            "totalDebit": 653000,
+            "totalCredit": 653000,
+            "entries": [
+              {
+                "id": "TAX-1301",
+                "account": "Corporate Tax Expense / Provision Account",
+                "debit": 567500,
+                "balance": 567500,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-1303",
+                "account": "MAT Credit / Disallowance Reserve Account",
+                "debit": 85500,
+                "balance": 653000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-1302",
+                "account": "Statutory Tax Payable / Cash Clearing Account",
+                "credit": 653000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "100% Balanced and Certified"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Strategic Crossover Framework: Old Regime vs Section 115BAA Multi-Year Decision Matrix",
+      "codeHash": "dbd93cb792b87b9840a7b41354628d1910142a710008320d2e8d9d557956ceab",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "The Strategic Crossover Framework: Old Regime vs S \u2014 Tax Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary taxable assessment ledger (575000) for The Strategic Crossover Framework: Old R...",
+            "title": "Day 13 Tax Ledger \u2014 Initial Assessment",
+            "isBalanced": true,
+            "totalDebit": 575000,
+            "totalCredit": 575000,
+            "entries": [
+              {
+                "id": "TAX-1301",
+                "account": "Corporate Tax Expense / Provision Account",
+                "debit": 575000,
+                "balance": 575000,
+                "tone": "data",
+                "memo": "Statutory computation under Income Tax Act"
+              },
+              {
+                "id": "TAX-1302",
+                "account": "Statutory Tax Payable / Cash Clearing Account",
+                "credit": 575000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Statutory assessment balance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record statutory adjustment / tax shield (89000) under applicable corporate tax section.",
+            "title": "Day 13 Tax Ledger \u2014 Statutory Adjustment",
+            "isBalanced": true,
+            "totalDebit": 664000,
+            "totalCredit": 664000,
+            "entries": [
+              {
+                "id": "TAX-1301",
+                "account": "Corporate Tax Expense / Provision Account",
+                "debit": 575000,
+                "balance": 575000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-1303",
+                "account": "MAT Credit / Disallowance Reserve Account",
+                "debit": 89000,
+                "balance": 664000,
+                "tone": "accent",
+                "memo": "Statutory computation adjustment"
+              },
+              {
+                "id": "TAX-1302",
+                "account": "Statutory Tax Payable / Cash Clearing Account",
+                "credit": 664000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute simulated computational case study for The Strategic Crossover Framework: Old R...",
+            "title": "Day 13 Tax Ledger \u2014 Audit Verification",
+            "isBalanced": true,
+            "totalDebit": 664000,
+            "totalCredit": 664000,
+            "entries": [
+              {
+                "id": "TAX-1301",
+                "account": "Corporate Tax Expense / Provision Account",
+                "debit": 575000,
+                "balance": 575000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-1303",
+                "account": "MAT Credit / Disallowance Reserve Account",
+                "debit": 89000,
+                "balance": 664000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-1302",
+                "account": "Statutory Tax Payable / Cash Clearing Account",
+                "credit": 664000,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify ledger equilibrium and corporate tax statutory signoff.",
+            "title": "Day 13 Tax Ledger \u2014 Final Settlement",
+            "isBalanced": true,
+            "totalDebit": 664000,
+            "totalCredit": 664000,
+            "entries": [
+              {
+                "id": "TAX-1301",
+                "account": "Corporate Tax Expense / Provision Account",
+                "debit": 575000,
+                "balance": 575000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-1303",
+                "account": "MAT Credit / Disallowance Reserve Account",
+                "debit": 89000,
+                "balance": 664000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-1302",
+                "account": "Statutory Tax Payable / Cash Clearing Account",
+                "credit": 664000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "100% Balanced and Certified"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

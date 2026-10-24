@@ -1,0 +1,659 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom-accounting",
+  "day": 53,
+  "promptSha": "prompt_sha_bcom_accounting_day53_v1",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Ind AS 113 Framework, Exit Price Invariant & Principal vs Most Advantageous Market",
+      "codeHash": "e85c9e68ae982abbe6244e8511b153ce454f33f04355063b93e4dc59e6483a0a",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Ind AS 113 Framework, Exit Price Invaria... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($52,055,000) for Ind AS 113 Framework, Exit Price Invaria...",
+            "title": "Day 53 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 52055000,
+            "totalCredit": 52055000,
+            "entries": [
+              {
+                "id": "JNL-5301",
+                "account": "Fair Value Portfolio Assets (Level 1, 2, 3 Tiers)",
+                "debit": 52055000,
+                "balance": 52055000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 53"
+              },
+              {
+                "id": "JNL-5302",
+                "account": "Fair Value Revaluation Surplus & OCI / P&L Reserves",
+                "credit": 52055000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & impairment adjustment accrual ($11,000,000).",
+            "title": "Day 53 Journal \u2014 Valuation & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 63055000,
+            "totalCredit": 63055000,
+            "entries": [
+              {
+                "id": "JNL-5301",
+                "account": "Fair Value Portfolio Assets (Level 1, 2, 3 Tiers)",
+                "debit": 52055000,
+                "balance": 52055000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5303",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 11000000,
+                "balance": 63055000,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5302",
+                "account": "Fair Value Revaluation Surplus & OCI / P&L Reserves",
+                "credit": 63055000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 53 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 63055000,
+            "totalCredit": 63055000,
+            "entries": [
+              {
+                "id": "JNL-5301",
+                "account": "Fair Value Portfolio Assets (Level 1, 2, 3 Tiers)",
+                "debit": 52055000,
+                "balance": 52055000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5303",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 11000000,
+                "balance": 63055000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5302",
+                "account": "Fair Value Revaluation Surplus & OCI / P&L Reserves",
+                "credit": 63055000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 53 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 63055000,
+            "totalCredit": 63055000,
+            "entries": [
+              {
+                "id": "JNL-5301",
+                "account": "Fair Value Portfolio Assets (Level 1, 2, 3 Tiers)",
+                "debit": 52055000,
+                "balance": 52055000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5303",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 11000000,
+                "balance": 63055000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5302",
+                "account": "Fair Value Revaluation Surplus & OCI / P&L Reserves",
+                "credit": 63055000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Highest and Best Use (HBU) for Non-Financial Assets: Physical, Legal & Financial Feasibility",
+      "codeHash": "e85c9e68ae982abbe6244e8511b153ce454f33f04355063b93e4dc59e6483a0a",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Highest and Best Use (HBU) for Non-Finan... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($52,060,000) for Highest and Best Use (HBU) for Non-Finan...",
+            "title": "Day 53 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 52060000,
+            "totalCredit": 52060000,
+            "entries": [
+              {
+                "id": "JNL-5301",
+                "account": "Fair Value Portfolio Assets (Level 1, 2, 3 Tiers)",
+                "debit": 52060000,
+                "balance": 52060000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 53"
+              },
+              {
+                "id": "JNL-5302",
+                "account": "Fair Value Revaluation Surplus & OCI / P&L Reserves",
+                "credit": 52060000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & impairment adjustment accrual ($11,000,000).",
+            "title": "Day 53 Journal \u2014 Valuation & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 63060000,
+            "totalCredit": 63060000,
+            "entries": [
+              {
+                "id": "JNL-5301",
+                "account": "Fair Value Portfolio Assets (Level 1, 2, 3 Tiers)",
+                "debit": 52060000,
+                "balance": 52060000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5303",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 11000000,
+                "balance": 63060000,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5302",
+                "account": "Fair Value Revaluation Surplus & OCI / P&L Reserves",
+                "credit": 63060000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 53 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 63060000,
+            "totalCredit": 63060000,
+            "entries": [
+              {
+                "id": "JNL-5301",
+                "account": "Fair Value Portfolio Assets (Level 1, 2, 3 Tiers)",
+                "debit": 52060000,
+                "balance": 52060000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5303",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 11000000,
+                "balance": 63060000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5302",
+                "account": "Fair Value Revaluation Surplus & OCI / P&L Reserves",
+                "credit": 63060000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 53 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 63060000,
+            "totalCredit": 63060000,
+            "entries": [
+              {
+                "id": "JNL-5301",
+                "account": "Fair Value Portfolio Assets (Level 1, 2, 3 Tiers)",
+                "debit": 52060000,
+                "balance": 52060000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5303",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 11000000,
+                "balance": 63060000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5302",
+                "account": "Fair Value Revaluation Surplus & OCI / P&L Reserves",
+                "credit": 63060000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Three Valuation Techniques: Market Approach, Income Approach & Cost Approach",
+      "codeHash": "e85c9e68ae982abbe6244e8511b153ce454f33f04355063b93e4dc59e6483a0a",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "The Three Valuation Techniques: Market A... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($52,065,000) for The Three Valuation Techniques: Market A...",
+            "title": "Day 53 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 52065000,
+            "totalCredit": 52065000,
+            "entries": [
+              {
+                "id": "JNL-5301",
+                "account": "Fair Value Portfolio Assets (Level 1, 2, 3 Tiers)",
+                "debit": 52065000,
+                "balance": 52065000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 53"
+              },
+              {
+                "id": "JNL-5302",
+                "account": "Fair Value Revaluation Surplus & OCI / P&L Reserves",
+                "credit": 52065000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & impairment adjustment accrual ($11,000,000).",
+            "title": "Day 53 Journal \u2014 Valuation & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 63065000,
+            "totalCredit": 63065000,
+            "entries": [
+              {
+                "id": "JNL-5301",
+                "account": "Fair Value Portfolio Assets (Level 1, 2, 3 Tiers)",
+                "debit": 52065000,
+                "balance": 52065000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5303",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 11000000,
+                "balance": 63065000,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5302",
+                "account": "Fair Value Revaluation Surplus & OCI / P&L Reserves",
+                "credit": 63065000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 53 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 63065000,
+            "totalCredit": 63065000,
+            "entries": [
+              {
+                "id": "JNL-5301",
+                "account": "Fair Value Portfolio Assets (Level 1, 2, 3 Tiers)",
+                "debit": 52065000,
+                "balance": 52065000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5303",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 11000000,
+                "balance": 63065000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5302",
+                "account": "Fair Value Revaluation Surplus & OCI / P&L Reserves",
+                "credit": 63065000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 53 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 63065000,
+            "totalCredit": 63065000,
+            "entries": [
+              {
+                "id": "JNL-5301",
+                "account": "Fair Value Portfolio Assets (Level 1, 2, 3 Tiers)",
+                "debit": 52065000,
+                "balance": 52065000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5303",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 11000000,
+                "balance": 63065000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5302",
+                "account": "Fair Value Revaluation Surplus & OCI / P&L Reserves",
+                "credit": 63065000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Three-Tier Fair Value Hierarchy (Levels 1, 2, and 3) & Mandatory Disclosures",
+      "codeHash": "e85c9e68ae982abbe6244e8511b153ce454f33f04355063b93e4dc59e6483a0a",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "The Three-Tier Fair Value Hierarchy (Lev... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($52,070,000) for The Three-Tier Fair Value Hierarchy (Lev...",
+            "title": "Day 53 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 52070000,
+            "totalCredit": 52070000,
+            "entries": [
+              {
+                "id": "JNL-5301",
+                "account": "Fair Value Portfolio Assets (Level 1, 2, 3 Tiers)",
+                "debit": 52070000,
+                "balance": 52070000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 53"
+              },
+              {
+                "id": "JNL-5302",
+                "account": "Fair Value Revaluation Surplus & OCI / P&L Reserves",
+                "credit": 52070000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & impairment adjustment accrual ($11,000,000).",
+            "title": "Day 53 Journal \u2014 Valuation & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 63070000,
+            "totalCredit": 63070000,
+            "entries": [
+              {
+                "id": "JNL-5301",
+                "account": "Fair Value Portfolio Assets (Level 1, 2, 3 Tiers)",
+                "debit": 52070000,
+                "balance": 52070000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5303",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 11000000,
+                "balance": 63070000,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5302",
+                "account": "Fair Value Revaluation Surplus & OCI / P&L Reserves",
+                "credit": 63070000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 53 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 63070000,
+            "totalCredit": 63070000,
+            "entries": [
+              {
+                "id": "JNL-5301",
+                "account": "Fair Value Portfolio Assets (Level 1, 2, 3 Tiers)",
+                "debit": 52070000,
+                "balance": 52070000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5303",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 11000000,
+                "balance": 63070000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5302",
+                "account": "Fair Value Revaluation Surplus & OCI / P&L Reserves",
+                "credit": 63070000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 53 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 63070000,
+            "totalCredit": 63070000,
+            "entries": [
+              {
+                "id": "JNL-5301",
+                "account": "Fair Value Portfolio Assets (Level 1, 2, 3 Tiers)",
+                "debit": 52070000,
+                "balance": 52070000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5303",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 11000000,
+                "balance": 63070000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5302",
+                "account": "Fair Value Revaluation Surplus & OCI / P&L Reserves",
+                "credit": 63070000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Ind AS 113 Software Engine, Statutory Footnote Modeling & Day 53 Certification",
+      "codeHash": "e85c9e68ae982abbe6244e8511b153ce454f33f04355063b93e4dc59e6483a0a",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Enterprise Ind AS 113 Software Engine, S... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($52,075,000) for Enterprise Ind AS 113 Software Engine, S...",
+            "title": "Day 53 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 52075000,
+            "totalCredit": 52075000,
+            "entries": [
+              {
+                "id": "JNL-5301",
+                "account": "Fair Value Portfolio Assets (Level 1, 2, 3 Tiers)",
+                "debit": 52075000,
+                "balance": 52075000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 53"
+              },
+              {
+                "id": "JNL-5302",
+                "account": "Fair Value Revaluation Surplus & OCI / P&L Reserves",
+                "credit": 52075000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & impairment adjustment accrual ($11,000,000).",
+            "title": "Day 53 Journal \u2014 Valuation & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 63075000,
+            "totalCredit": 63075000,
+            "entries": [
+              {
+                "id": "JNL-5301",
+                "account": "Fair Value Portfolio Assets (Level 1, 2, 3 Tiers)",
+                "debit": 52075000,
+                "balance": 52075000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5303",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 11000000,
+                "balance": 63075000,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5302",
+                "account": "Fair Value Revaluation Surplus & OCI / P&L Reserves",
+                "credit": 63075000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 53 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 63075000,
+            "totalCredit": 63075000,
+            "entries": [
+              {
+                "id": "JNL-5301",
+                "account": "Fair Value Portfolio Assets (Level 1, 2, 3 Tiers)",
+                "debit": 52075000,
+                "balance": 52075000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5303",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 11000000,
+                "balance": 63075000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5302",
+                "account": "Fair Value Revaluation Surplus & OCI / P&L Reserves",
+                "credit": 63075000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 53 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 63075000,
+            "totalCredit": 63075000,
+            "entries": [
+              {
+                "id": "JNL-5301",
+                "account": "Fair Value Portfolio Assets (Level 1, 2, 3 Tiers)",
+                "debit": 52075000,
+                "balance": 52075000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5303",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 11000000,
+                "balance": 63075000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5302",
+                "account": "Fair Value Revaluation Surplus & OCI / P&L Reserves",
+                "credit": 63075000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

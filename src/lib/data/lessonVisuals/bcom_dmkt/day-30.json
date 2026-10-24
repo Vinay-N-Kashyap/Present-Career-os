@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "coursePrefix": "bcom_dmkt",
+  "day": 30,
+  "title": "\ud83c\udfc6 COURSE 28 GRAND FINAL CAPSTONE: Enterprise Digital Marketing & Autonomous Growth Hacking Suite",
+  "funnelSteps": [
+    {
+      "step": "TIER1_SEO_SEM_ENGINE",
+      "label": "Tier 1: Organic Topic Clusters, E-E-A-T (97.5) & GSP Ad Auctions",
+      "metric": "E-E-A-T: 97.5 / QS: 10",
+      "status": "COMPLETED",
+      "color": "#10B981"
+    },
+    {
+      "step": "TIER2_PAID_MEDIA_TOWER",
+      "label": "Tier 2: Meta CAPI Lookalikes, LinkedIn ABM & Programmatic RTB",
+      "metric": "2M LAL / 80% Viewability",
+      "status": "COMPLETED",
+      "color": "#3B82F6"
+    },
+    {
+      "step": "TIER3_LIFECYCLE_CRO_ENGINE",
+      "label": "Tier 3: Video Hooks (40%), DMARC 99% Deliverability & CRO Rigor",
+      "metric": "DMARC 99% / +18.4% A/B",
+      "status": "COMPLETED",
+      "color": "#6366F1"
+    },
+    {
+      "step": "TIER4_ANALYTICS_MMM_HUB",
+      "label": "Tier 4: GA4 BigQuery, Shapley MTA & Econometric Geo-Lift (2.33x)",
+      "metric": "2.33x iROAS / $2.65M ARR",
+      "status": "COMPLETED",
+      "color": "#F59E0B"
+    },
+    {
+      "step": "TIER5_GRAND_MASTER_DEFENSE",
+      "label": "Tier 5: Sovereign CGO Boardroom Defense & 100% Course Completion",
+      "metric": "100.0/100 DMGM ($2.0M+ Value)",
+      "status": "COMPLETED",
+      "color": "#8B5CF6"
+    }
+  ],
+  "kpis": [
+    {
+      "label": "Total Enterprise Value",
+      "value": "$2,000,000.00+"
+    },
+    {
+      "label": "True Causal iROAS",
+      "value": "2.33x"
+    },
+    {
+      "label": "CLV:CAC Golden Ratio",
+      "value": "4.0x"
+    },
+    {
+      "label": "Master DMGM Score",
+      "value": "100.0/100"
+    }
+  ]
+}

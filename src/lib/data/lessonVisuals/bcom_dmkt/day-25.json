@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "coursePrefix": "bcom_dmkt",
+  "day": 25,
+  "title": "\u2b50 MILESTONE 5 CAPSTONE: Advanced Retargeting, Unit Economics, Conversational Commerce & Econometric MMM Engine",
+  "funnelSteps": [
+    {
+      "step": "TIER1_RETARGETING_TOWER",
+      "label": "Tier 1: Dynamic Catalog Sync & Zero-Fatigue Frequency Capping",
+      "metric": "100.0% Sync / Cap: 3/Day",
+      "status": "COMPLETED",
+      "color": "#10B981"
+    },
+    {
+      "step": "TIER2_UNIT_ECONOMICS_HUB",
+      "label": "Tier 2: Institutional Unit Economics & LTV:CAC Golden Ratio",
+      "metric": "4.0x Ratio / 5.0m Payback",
+      "status": "COMPLETED",
+      "color": "#3B82F6"
+    },
+    {
+      "step": "TIER3_CONVERSATIONAL_ENGINE",
+      "label": "Tier 3: WhatsApp Business Cloud Automation & COD Recovery",
+      "metric": "98% Read / 40% RTO Drop",
+      "status": "COMPLETED",
+      "color": "#6366F1"
+    },
+    {
+      "step": "TIER4_ECONOMETRIC_MMM_CALIBRATOR",
+      "label": "Tier 4: Top-Down Econometric MMM & Geo-Lift Incrementality",
+      "metric": "2.33x Causal iROAS",
+      "status": "COMPLETED",
+      "color": "#F59E0B"
+    },
+    {
+      "step": "TIER5_MASTER_COMMAND_TOWER",
+      "label": "Tier 5: Chief Growth Officer & Econometric Boardroom Defense",
+      "metric": "100.0/100 MGPI ($2.298M Value)",
+      "status": "COMPLETED",
+      "color": "#8B5CF6"
+    }
+  ],
+  "kpis": [
+    {
+      "label": "Total Enterprise Value",
+      "value": "$2,298,500.00"
+    },
+    {
+      "label": "CLV:CAC Golden Ratio",
+      "value": "4.0x"
+    },
+    {
+      "label": "Causal iROAS",
+      "value": "2.33x"
+    },
+    {
+      "label": "Master MGPI Score",
+      "value": "100.0/100"
+    }
+  ]
+}

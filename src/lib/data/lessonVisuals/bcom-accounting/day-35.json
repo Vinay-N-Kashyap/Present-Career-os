@@ -1,0 +1,659 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom-accounting",
+  "day": 35,
+  "promptSha": "prompt_sha_bcom_accounting_day35_v1",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "The Strategic Mandate of the Enterprise Financial Controller & Converged Ind AS Governance",
+      "codeHash": "aa465b5a9d60dd9bb268df218432b67c41c46d18e12fa5b677186f3776c2a065",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "The Strategic Mandate of the Enterprise ... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($3,113,428) for The Strategic Mandate of the Enterprise ...",
+            "title": "Day 35 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 3113428,
+            "totalCredit": 3113428,
+            "entries": [
+              {
+                "id": "JNL-3501",
+                "account": "Consolidated Net Operating & Converged Ind AS Assets",
+                "debit": 3113428,
+                "balance": 3113428,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 35"
+              },
+              {
+                "id": "JNL-3502",
+                "account": "Consolidated Enterprise Equity & Converged Reserves",
+                "credit": 3113428,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & amortization accrual ($134,442).",
+            "title": "Day 35 Journal \u2014 Accrual / Amortization Adjustment",
+            "isBalanced": true,
+            "totalDebit": 3247870,
+            "totalCredit": 3247870,
+            "entries": [
+              {
+                "id": "JNL-3501",
+                "account": "Consolidated Net Operating & Converged Ind AS Assets",
+                "debit": 3113428,
+                "balance": 3113428,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3503",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 134442,
+                "balance": 3247870,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-3502",
+                "account": "Consolidated Enterprise Equity & Converged Reserves",
+                "credit": 3247870,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory disclosures.",
+            "title": "Day 35 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 3247870,
+            "totalCredit": 3247870,
+            "entries": [
+              {
+                "id": "JNL-3501",
+                "account": "Consolidated Net Operating & Converged Ind AS Assets",
+                "debit": 3113428,
+                "balance": 3113428,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3503",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 134442,
+                "balance": 3247870,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3502",
+                "account": "Consolidated Enterprise Equity & Converged Reserves",
+                "credit": 3247870,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 35 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 3247870,
+            "totalCredit": 3247870,
+            "entries": [
+              {
+                "id": "JNL-3501",
+                "account": "Consolidated Net Operating & Converged Ind AS Assets",
+                "debit": 3113428,
+                "balance": 3113428,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3503",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 134442,
+                "balance": 3247870,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3502",
+                "account": "Consolidated Enterprise Equity & Converged Reserves",
+                "credit": 3247870,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Module 1: Enterprise Multi-Element Contract Revenue Allocation & Contract Liabilities (Ind AS 115)",
+      "codeHash": "aa465b5a9d60dd9bb268df218432b67c41c46d18e12fa5b677186f3776c2a065",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Module 1: Enterprise Multi-Element Contr... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($3,118,428) for Module 1: Enterprise Multi-Element Contr...",
+            "title": "Day 35 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 3118428,
+            "totalCredit": 3118428,
+            "entries": [
+              {
+                "id": "JNL-3501",
+                "account": "Consolidated Net Operating & Converged Ind AS Assets",
+                "debit": 3118428,
+                "balance": 3118428,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 35"
+              },
+              {
+                "id": "JNL-3502",
+                "account": "Consolidated Enterprise Equity & Converged Reserves",
+                "credit": 3118428,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & amortization accrual ($134,442).",
+            "title": "Day 35 Journal \u2014 Accrual / Amortization Adjustment",
+            "isBalanced": true,
+            "totalDebit": 3252870,
+            "totalCredit": 3252870,
+            "entries": [
+              {
+                "id": "JNL-3501",
+                "account": "Consolidated Net Operating & Converged Ind AS Assets",
+                "debit": 3118428,
+                "balance": 3118428,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3503",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 134442,
+                "balance": 3252870,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-3502",
+                "account": "Consolidated Enterprise Equity & Converged Reserves",
+                "credit": 3252870,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory disclosures.",
+            "title": "Day 35 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 3252870,
+            "totalCredit": 3252870,
+            "entries": [
+              {
+                "id": "JNL-3501",
+                "account": "Consolidated Net Operating & Converged Ind AS Assets",
+                "debit": 3118428,
+                "balance": 3118428,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3503",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 134442,
+                "balance": 3252870,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3502",
+                "account": "Consolidated Enterprise Equity & Converged Reserves",
+                "credit": 3252870,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 35 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 3252870,
+            "totalCredit": 3252870,
+            "entries": [
+              {
+                "id": "JNL-3501",
+                "account": "Consolidated Net Operating & Converged Ind AS Assets",
+                "debit": 3118428,
+                "balance": 3118428,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3503",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 134442,
+                "balance": 3252870,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3502",
+                "account": "Consolidated Enterprise Equity & Converged Reserves",
+                "credit": 3252870,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Module 2: ROU Asset Capitalization, P&L Front-Loading & EBITDA Reclassification (Ind AS 116)",
+      "codeHash": "aa465b5a9d60dd9bb268df218432b67c41c46d18e12fa5b677186f3776c2a065",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Module 2: ROU Asset Capitalization, P&L ... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($3,123,428) for Module 2: ROU Asset Capitalization, P&L ...",
+            "title": "Day 35 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 3123428,
+            "totalCredit": 3123428,
+            "entries": [
+              {
+                "id": "JNL-3501",
+                "account": "Consolidated Net Operating & Converged Ind AS Assets",
+                "debit": 3123428,
+                "balance": 3123428,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 35"
+              },
+              {
+                "id": "JNL-3502",
+                "account": "Consolidated Enterprise Equity & Converged Reserves",
+                "credit": 3123428,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & amortization accrual ($134,442).",
+            "title": "Day 35 Journal \u2014 Accrual / Amortization Adjustment",
+            "isBalanced": true,
+            "totalDebit": 3257870,
+            "totalCredit": 3257870,
+            "entries": [
+              {
+                "id": "JNL-3501",
+                "account": "Consolidated Net Operating & Converged Ind AS Assets",
+                "debit": 3123428,
+                "balance": 3123428,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3503",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 134442,
+                "balance": 3257870,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-3502",
+                "account": "Consolidated Enterprise Equity & Converged Reserves",
+                "credit": 3257870,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory disclosures.",
+            "title": "Day 35 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 3257870,
+            "totalCredit": 3257870,
+            "entries": [
+              {
+                "id": "JNL-3501",
+                "account": "Consolidated Net Operating & Converged Ind AS Assets",
+                "debit": 3123428,
+                "balance": 3123428,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3503",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 134442,
+                "balance": 3257870,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3502",
+                "account": "Consolidated Enterprise Equity & Converged Reserves",
+                "credit": 3257870,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 35 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 3257870,
+            "totalCredit": 3257870,
+            "entries": [
+              {
+                "id": "JNL-3501",
+                "account": "Consolidated Net Operating & Converged Ind AS Assets",
+                "debit": 3123428,
+                "balance": 3123428,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3503",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 134442,
+                "balance": 3257870,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3502",
+                "account": "Consolidated Enterprise Equity & Converged Reserves",
+                "credit": 3257870,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Modules 3 & 4: Level 3 DCF Valuation (Ind AS 113) & Stage 2 ECL Impairment (Ind AS 109)",
+      "codeHash": "aa465b5a9d60dd9bb268df218432b67c41c46d18e12fa5b677186f3776c2a065",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Modules 3 & 4: Level 3 DCF Valuation (In... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($3,128,428) for Modules 3 & 4: Level 3 DCF Valuation (In...",
+            "title": "Day 35 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 3128428,
+            "totalCredit": 3128428,
+            "entries": [
+              {
+                "id": "JNL-3501",
+                "account": "Consolidated Net Operating & Converged Ind AS Assets",
+                "debit": 3128428,
+                "balance": 3128428,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 35"
+              },
+              {
+                "id": "JNL-3502",
+                "account": "Consolidated Enterprise Equity & Converged Reserves",
+                "credit": 3128428,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & amortization accrual ($134,442).",
+            "title": "Day 35 Journal \u2014 Accrual / Amortization Adjustment",
+            "isBalanced": true,
+            "totalDebit": 3262870,
+            "totalCredit": 3262870,
+            "entries": [
+              {
+                "id": "JNL-3501",
+                "account": "Consolidated Net Operating & Converged Ind AS Assets",
+                "debit": 3128428,
+                "balance": 3128428,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3503",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 134442,
+                "balance": 3262870,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-3502",
+                "account": "Consolidated Enterprise Equity & Converged Reserves",
+                "credit": 3262870,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory disclosures.",
+            "title": "Day 35 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 3262870,
+            "totalCredit": 3262870,
+            "entries": [
+              {
+                "id": "JNL-3501",
+                "account": "Consolidated Net Operating & Converged Ind AS Assets",
+                "debit": 3128428,
+                "balance": 3128428,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3503",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 134442,
+                "balance": 3262870,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3502",
+                "account": "Consolidated Enterprise Equity & Converged Reserves",
+                "credit": 3262870,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 35 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 3262870,
+            "totalCredit": 3262870,
+            "entries": [
+              {
+                "id": "JNL-3501",
+                "account": "Consolidated Net Operating & Converged Ind AS Assets",
+                "debit": 3128428,
+                "balance": 3128428,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3503",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 134442,
+                "balance": 3262870,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3502",
+                "account": "Consolidated Enterprise Equity & Converged Reserves",
+                "credit": 3262870,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Grand Milestone 7 Capstone Execution & Enterprise Financial Controllership Certification",
+      "codeHash": "aa465b5a9d60dd9bb268df218432b67c41c46d18e12fa5b677186f3776c2a065",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "The Grand Milestone 7 Capstone Execution... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($3,133,428) for The Grand Milestone 7 Capstone Execution...",
+            "title": "Day 35 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 3133428,
+            "totalCredit": 3133428,
+            "entries": [
+              {
+                "id": "JNL-3501",
+                "account": "Consolidated Net Operating & Converged Ind AS Assets",
+                "debit": 3133428,
+                "balance": 3133428,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 35"
+              },
+              {
+                "id": "JNL-3502",
+                "account": "Consolidated Enterprise Equity & Converged Reserves",
+                "credit": 3133428,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & amortization accrual ($134,442).",
+            "title": "Day 35 Journal \u2014 Accrual / Amortization Adjustment",
+            "isBalanced": true,
+            "totalDebit": 3267870,
+            "totalCredit": 3267870,
+            "entries": [
+              {
+                "id": "JNL-3501",
+                "account": "Consolidated Net Operating & Converged Ind AS Assets",
+                "debit": 3133428,
+                "balance": 3133428,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3503",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 134442,
+                "balance": 3267870,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-3502",
+                "account": "Consolidated Enterprise Equity & Converged Reserves",
+                "credit": 3267870,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory disclosures.",
+            "title": "Day 35 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 3267870,
+            "totalCredit": 3267870,
+            "entries": [
+              {
+                "id": "JNL-3501",
+                "account": "Consolidated Net Operating & Converged Ind AS Assets",
+                "debit": 3133428,
+                "balance": 3133428,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3503",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 134442,
+                "balance": 3267870,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3502",
+                "account": "Consolidated Enterprise Equity & Converged Reserves",
+                "credit": 3267870,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 35 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 3267870,
+            "totalCredit": 3267870,
+            "entries": [
+              {
+                "id": "JNL-3501",
+                "account": "Consolidated Net Operating & Converged Ind AS Assets",
+                "debit": 3133428,
+                "balance": 3133428,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3503",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 134442,
+                "balance": 3267870,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3502",
+                "account": "Consolidated Enterprise Equity & Converged Reserves",
+                "credit": 3267870,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,291 @@
+{
+  "prefix": "bcom-finance",
+  "day": 41,
+  "visuals": [
+    {
+      "step": "part-1",
+      "template": "ledger-sheet",
+      "data": {
+        "title": "Risk Ledger: Market Risk Foundations: Volat",
+        "caption": "Market risk variance model reconciling portfolio loss.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 1000000.0,
+          "totalCredit": 1000000.0,
+          "rows": [
+            {
+              "account": "Risk Capital Reserve",
+              "debit": 1000000.0,
+              "credit": 0.0
+            },
+            {
+              "account": "Trading Equity Allocation",
+              "debit": 0.0,
+              "credit": 1000000.0
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Model Specification",
+            "description": "Establish structural parameters and regulatory thresholds."
+          },
+          {
+            "id": "say1",
+            "label": "Analytical Computation",
+            "description": "Compute statistical distributions and non-linear risk metrics."
+          },
+          {
+            "id": "example",
+            "label": "Institutional Reconciliation",
+            "description": "Reconcile balance sheet sensitivities against regulatory mandates."
+          },
+          {
+            "id": "tryIt",
+            "label": "Desk Verification",
+            "description": "Verify model convergence and emit cryptographic pass token."
+          }
+        ]
+      },
+      "codeBindings": [
+        {
+          "sourceCodeHash": "20a40fc957c33f164937a333defa11a8adb03f697124fc201d3b4be0b7b46fa2",
+          "variablePath": "engine.run",
+          "highlightLines": [
+            1,
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "step": "part-2",
+      "template": "ledger-sheet",
+      "data": {
+        "title": "Risk Ledger: Parametric Variance-Covariance",
+        "caption": "Market risk variance model reconciling portfolio loss.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 1000000.0,
+          "totalCredit": 1000000.0,
+          "rows": [
+            {
+              "account": "Risk Capital Reserve",
+              "debit": 1000000.0,
+              "credit": 0.0
+            },
+            {
+              "account": "Trading Equity Allocation",
+              "debit": 0.0,
+              "credit": 1000000.0
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Model Specification",
+            "description": "Establish structural parameters and regulatory thresholds."
+          },
+          {
+            "id": "say1",
+            "label": "Analytical Computation",
+            "description": "Compute statistical distributions and non-linear risk metrics."
+          },
+          {
+            "id": "example",
+            "label": "Institutional Reconciliation",
+            "description": "Reconcile balance sheet sensitivities against regulatory mandates."
+          },
+          {
+            "id": "tryIt",
+            "label": "Desk Verification",
+            "description": "Verify model convergence and emit cryptographic pass token."
+          }
+        ]
+      },
+      "codeBindings": [
+        {
+          "sourceCodeHash": "20a40fc957c33f164937a333defa11a8adb03f697124fc201d3b4be0b7b46fa2",
+          "variablePath": "engine.run",
+          "highlightLines": [
+            1,
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "step": "part-3",
+      "template": "ledger-sheet",
+      "data": {
+        "title": "Risk Ledger: Non-Parametric Risk Engines: H",
+        "caption": "Market risk variance model reconciling portfolio loss.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 1000000.0,
+          "totalCredit": 1000000.0,
+          "rows": [
+            {
+              "account": "Risk Capital Reserve",
+              "debit": 1000000.0,
+              "credit": 0.0
+            },
+            {
+              "account": "Trading Equity Allocation",
+              "debit": 0.0,
+              "credit": 1000000.0
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Model Specification",
+            "description": "Establish structural parameters and regulatory thresholds."
+          },
+          {
+            "id": "say1",
+            "label": "Analytical Computation",
+            "description": "Compute statistical distributions and non-linear risk metrics."
+          },
+          {
+            "id": "example",
+            "label": "Institutional Reconciliation",
+            "description": "Reconcile balance sheet sensitivities against regulatory mandates."
+          },
+          {
+            "id": "tryIt",
+            "label": "Desk Verification",
+            "description": "Verify model convergence and emit cryptographic pass token."
+          }
+        ]
+      },
+      "codeBindings": [
+        {
+          "sourceCodeHash": "20a40fc957c33f164937a333defa11a8adb03f697124fc201d3b4be0b7b46fa2",
+          "variablePath": "engine.run",
+          "highlightLines": [
+            1,
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "step": "part-4",
+      "template": "ledger-sheet",
+      "data": {
+        "title": "Risk Ledger: Beyond VaR: Expected Shortfall",
+        "caption": "Market risk variance model reconciling portfolio loss.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 1000000.0,
+          "totalCredit": 1000000.0,
+          "rows": [
+            {
+              "account": "Risk Capital Reserve",
+              "debit": 1000000.0,
+              "credit": 0.0
+            },
+            {
+              "account": "Trading Equity Allocation",
+              "debit": 0.0,
+              "credit": 1000000.0
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Model Specification",
+            "description": "Establish structural parameters and regulatory thresholds."
+          },
+          {
+            "id": "say1",
+            "label": "Analytical Computation",
+            "description": "Compute statistical distributions and non-linear risk metrics."
+          },
+          {
+            "id": "example",
+            "label": "Institutional Reconciliation",
+            "description": "Reconcile balance sheet sensitivities against regulatory mandates."
+          },
+          {
+            "id": "tryIt",
+            "label": "Desk Verification",
+            "description": "Verify model convergence and emit cryptographic pass token."
+          }
+        ]
+      },
+      "codeBindings": [
+        {
+          "sourceCodeHash": "20a40fc957c33f164937a333defa11a8adb03f697124fc201d3b4be0b7b46fa2",
+          "variablePath": "engine.run",
+          "highlightLines": [
+            1,
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "step": "part-5",
+      "template": "ledger-sheet",
+      "data": {
+        "title": "Risk Ledger: Production Market Risk Engine:",
+        "caption": "Market risk variance model reconciling portfolio loss.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 1000000.0,
+          "totalCredit": 1000000.0,
+          "rows": [
+            {
+              "account": "Risk Capital Reserve",
+              "debit": 1000000.0,
+              "credit": 0.0
+            },
+            {
+              "account": "Trading Equity Allocation",
+              "debit": 0.0,
+              "credit": 1000000.0
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Model Specification",
+            "description": "Establish structural parameters and regulatory thresholds."
+          },
+          {
+            "id": "say1",
+            "label": "Analytical Computation",
+            "description": "Compute statistical distributions and non-linear risk metrics."
+          },
+          {
+            "id": "example",
+            "label": "Institutional Reconciliation",
+            "description": "Reconcile balance sheet sensitivities against regulatory mandates."
+          },
+          {
+            "id": "tryIt",
+            "label": "Desk Verification",
+            "description": "Verify model convergence and emit cryptographic pass token."
+          }
+        ]
+      },
+      "codeBindings": [
+        {
+          "sourceCodeHash": "20a40fc957c33f164937a333defa11a8adb03f697124fc201d3b4be0b7b46fa2",
+          "variablePath": "engine.run",
+          "highlightLines": [
+            1,
+            10
+          ]
+        }
+      ]
+    }
+  ]
+}

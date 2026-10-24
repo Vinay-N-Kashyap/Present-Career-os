@@ -1,0 +1,291 @@
+{
+  "prefix": "bcom-finance",
+  "day": 43,
+  "visuals": [
+    {
+      "step": "part-1",
+      "template": "ledger-sheet",
+      "data": {
+        "title": "Risk Ledger: Structural Credit Foundations:",
+        "caption": "Structural credit model inverting corporate asset debt.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 1000000.0,
+          "totalCredit": 1000000.0,
+          "rows": [
+            {
+              "account": "Risk Capital Reserve",
+              "debit": 1000000.0,
+              "credit": 0.0
+            },
+            {
+              "account": "Trading Equity Allocation",
+              "debit": 0.0,
+              "credit": 1000000.0
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Model Specification",
+            "description": "Establish structural parameters and regulatory thresholds."
+          },
+          {
+            "id": "say1",
+            "label": "Analytical Computation",
+            "description": "Compute statistical distributions and non-linear risk metrics."
+          },
+          {
+            "id": "example",
+            "label": "Institutional Reconciliation",
+            "description": "Reconcile balance sheet sensitivities against regulatory mandates."
+          },
+          {
+            "id": "tryIt",
+            "label": "Desk Verification",
+            "description": "Verify model convergence and emit cryptographic pass token."
+          }
+        ]
+      },
+      "codeBindings": [
+        {
+          "sourceCodeHash": "bcbb4afc95bac43b948a7cb961aa27d6185d55af7466d7051d087d11e7e510dc",
+          "variablePath": "engine.run",
+          "highlightLines": [
+            1,
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "step": "part-2",
+      "template": "ledger-sheet",
+      "data": {
+        "title": "Risk Ledger: Non-Linear Asset Inversion: So",
+        "caption": "Structural credit model inverting corporate asset debt.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 1000000.0,
+          "totalCredit": 1000000.0,
+          "rows": [
+            {
+              "account": "Risk Capital Reserve",
+              "debit": 1000000.0,
+              "credit": 0.0
+            },
+            {
+              "account": "Trading Equity Allocation",
+              "debit": 0.0,
+              "credit": 1000000.0
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Model Specification",
+            "description": "Establish structural parameters and regulatory thresholds."
+          },
+          {
+            "id": "say1",
+            "label": "Analytical Computation",
+            "description": "Compute statistical distributions and non-linear risk metrics."
+          },
+          {
+            "id": "example",
+            "label": "Institutional Reconciliation",
+            "description": "Reconcile balance sheet sensitivities against regulatory mandates."
+          },
+          {
+            "id": "tryIt",
+            "label": "Desk Verification",
+            "description": "Verify model convergence and emit cryptographic pass token."
+          }
+        ]
+      },
+      "codeBindings": [
+        {
+          "sourceCodeHash": "bcbb4afc95bac43b948a7cb961aa27d6185d55af7466d7051d087d11e7e510dc",
+          "variablePath": "engine.run",
+          "highlightLines": [
+            1,
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "step": "part-3",
+      "template": "ledger-sheet",
+      "data": {
+        "title": "Risk Ledger: Distance to Default (DD) & KMV",
+        "caption": "Structural credit model inverting corporate asset debt.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 1000000.0,
+          "totalCredit": 1000000.0,
+          "rows": [
+            {
+              "account": "Risk Capital Reserve",
+              "debit": 1000000.0,
+              "credit": 0.0
+            },
+            {
+              "account": "Trading Equity Allocation",
+              "debit": 0.0,
+              "credit": 1000000.0
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Model Specification",
+            "description": "Establish structural parameters and regulatory thresholds."
+          },
+          {
+            "id": "say1",
+            "label": "Analytical Computation",
+            "description": "Compute statistical distributions and non-linear risk metrics."
+          },
+          {
+            "id": "example",
+            "label": "Institutional Reconciliation",
+            "description": "Reconcile balance sheet sensitivities against regulatory mandates."
+          },
+          {
+            "id": "tryIt",
+            "label": "Desk Verification",
+            "description": "Verify model convergence and emit cryptographic pass token."
+          }
+        ]
+      },
+      "codeBindings": [
+        {
+          "sourceCodeHash": "bcbb4afc95bac43b948a7cb961aa27d6185d55af7466d7051d087d11e7e510dc",
+          "variablePath": "engine.run",
+          "highlightLines": [
+            1,
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "step": "part-4",
+      "template": "ledger-sheet",
+      "data": {
+        "title": "Risk Ledger: Portfolio Credit Risk & Credit",
+        "caption": "Structural credit model inverting corporate asset debt.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 1000000.0,
+          "totalCredit": 1000000.0,
+          "rows": [
+            {
+              "account": "Risk Capital Reserve",
+              "debit": 1000000.0,
+              "credit": 0.0
+            },
+            {
+              "account": "Trading Equity Allocation",
+              "debit": 0.0,
+              "credit": 1000000.0
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Model Specification",
+            "description": "Establish structural parameters and regulatory thresholds."
+          },
+          {
+            "id": "say1",
+            "label": "Analytical Computation",
+            "description": "Compute statistical distributions and non-linear risk metrics."
+          },
+          {
+            "id": "example",
+            "label": "Institutional Reconciliation",
+            "description": "Reconcile balance sheet sensitivities against regulatory mandates."
+          },
+          {
+            "id": "tryIt",
+            "label": "Desk Verification",
+            "description": "Verify model convergence and emit cryptographic pass token."
+          }
+        ]
+      },
+      "codeBindings": [
+        {
+          "sourceCodeHash": "bcbb4afc95bac43b948a7cb961aa27d6185d55af7466d7051d087d11e7e510dc",
+          "variablePath": "engine.run",
+          "highlightLines": [
+            1,
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "step": "part-5",
+      "template": "ledger-sheet",
+      "data": {
+        "title": "Risk Ledger: Production Structural Credit E",
+        "caption": "Structural credit model inverting corporate asset debt.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 1000000.0,
+          "totalCredit": 1000000.0,
+          "rows": [
+            {
+              "account": "Risk Capital Reserve",
+              "debit": 1000000.0,
+              "credit": 0.0
+            },
+            {
+              "account": "Trading Equity Allocation",
+              "debit": 0.0,
+              "credit": 1000000.0
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Model Specification",
+            "description": "Establish structural parameters and regulatory thresholds."
+          },
+          {
+            "id": "say1",
+            "label": "Analytical Computation",
+            "description": "Compute statistical distributions and non-linear risk metrics."
+          },
+          {
+            "id": "example",
+            "label": "Institutional Reconciliation",
+            "description": "Reconcile balance sheet sensitivities against regulatory mandates."
+          },
+          {
+            "id": "tryIt",
+            "label": "Desk Verification",
+            "description": "Verify model convergence and emit cryptographic pass token."
+          }
+        ]
+      },
+      "codeBindings": [
+        {
+          "sourceCodeHash": "bcbb4afc95bac43b948a7cb961aa27d6185d55af7466d7051d087d11e7e510dc",
+          "variablePath": "engine.run",
+          "highlightLines": [
+            1,
+            10
+          ]
+        }
+      ]
+    }
+  ]
+}

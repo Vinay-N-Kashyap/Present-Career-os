@@ -1,0 +1,664 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_aud",
+  "day": 12,
+  "promptSha": "ffdce86afd2df4d3a2526378148ca9a1bd57cdb1f517cecc8e27bccc491ef20b",
+  "model": "google/gemini-3.8-flash",
+  "entries": [
+    {
+      "partTitle": "Ind AS 115 5-Step Model & Revenue Assertions: Existence vs Completeness",
+      "codeHash": "08ea136c5d2cf2ed29252c8320bb9eac4c4f480cb0687758a9617ea2ce3ac0f4",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Ind AS 115 5-Step Model & Revenue Assertions: Exis \u2014 Forensic Audit Ledger",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open forensic assurance verification ledger (1330000) for Ind AS 115 5-Step Model & Revenue Assert...",
+            "title": "Day 12 Forensic Assurance Ledger \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 1330000,
+            "totalCredit": 1330000,
+            "entries": [
+              {
+                "id": "AUD-1201",
+                "account": "Substantive Asset & Fraud Verification Control",
+                "debit": 1330000,
+                "balance": 1330000,
+                "tone": "data",
+                "memo": "Initial recognition under SA 240 / Ind AS Framework"
+              },
+              {
+                "id": "AUD-1202",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1330000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control balance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record forensic adjustment / impairment entry (165000) under applicable standard.",
+            "title": "Day 12 Forensic Assurance Ledger \u2014 Substantive Adjustment",
+            "isBalanced": true,
+            "totalDebit": 1495000,
+            "totalCredit": 1495000,
+            "entries": [
+              {
+                "id": "AUD-1201",
+                "account": "Substantive Asset & Fraud Verification Control",
+                "debit": 1330000,
+                "balance": 1330000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-1203",
+                "account": "Asset Impairment / Fraud Restatement Reserve",
+                "debit": 165000,
+                "balance": 1495000,
+                "tone": "accent",
+                "memo": "Substantive audit adjustment"
+              },
+              {
+                "id": "AUD-1202",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1495000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute simulated enterprise forensic case study for Ind AS 115 5-Step Model & Revenue Assert...",
+            "title": "Day 12 Forensic Assurance Ledger \u2014 Substantive Audit",
+            "isBalanced": true,
+            "totalDebit": 1495000,
+            "totalCredit": 1495000,
+            "entries": [
+              {
+                "id": "AUD-1201",
+                "account": "Substantive Asset & Fraud Verification Control",
+                "debit": 1330000,
+                "balance": 1330000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-1203",
+                "account": "Asset Impairment / Fraud Restatement Reserve",
+                "debit": 165000,
+                "balance": 1495000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-1202",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1495000,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify 100% balanced ledger closure and working paper archival for Ind AS 115 5-Step Model & Revenue Assert...",
+            "title": "Day 12 Forensic Assurance Ledger \u2014 Final Certified Balances",
+            "isBalanced": true,
+            "totalDebit": 1495000,
+            "totalCredit": 1495000,
+            "entries": [
+              {
+                "id": "AUD-1201",
+                "account": "Substantive Asset & Fraud Verification Control",
+                "debit": 1330000,
+                "balance": 1330000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-1203",
+                "account": "Asset Impairment / Fraud Restatement Reserve",
+                "debit": 165000,
+                "balance": 1495000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-1202",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1495000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "100% Balanced and Certified by Technical Audit Director"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Channel Stuffing Analytics, Side Agreements & Bill-and-Hold Arrangements: SA 240",
+      "codeHash": "a613649c2bd6b6a8ac3ee8031fd18fdc8486bbac16e8a6c4d060e8f68231bb85",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Channel Stuffing Analytics, Side Agreements & Bill \u2014 Forensic Audit Ledger",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open forensic assurance verification ledger (1350000) for Channel Stuffing Analytics, Side Agreeme...",
+            "title": "Day 12 Forensic Assurance Ledger \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 1350000,
+            "totalCredit": 1350000,
+            "entries": [
+              {
+                "id": "AUD-1201",
+                "account": "Substantive Asset & Fraud Verification Control",
+                "debit": 1350000,
+                "balance": 1350000,
+                "tone": "data",
+                "memo": "Initial recognition under SA 240 / Ind AS Framework"
+              },
+              {
+                "id": "AUD-1202",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1350000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control balance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record forensic adjustment / impairment entry (174500) under applicable standard.",
+            "title": "Day 12 Forensic Assurance Ledger \u2014 Substantive Adjustment",
+            "isBalanced": true,
+            "totalDebit": 1524500,
+            "totalCredit": 1524500,
+            "entries": [
+              {
+                "id": "AUD-1201",
+                "account": "Substantive Asset & Fraud Verification Control",
+                "debit": 1350000,
+                "balance": 1350000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-1203",
+                "account": "Asset Impairment / Fraud Restatement Reserve",
+                "debit": 174500,
+                "balance": 1524500,
+                "tone": "accent",
+                "memo": "Substantive audit adjustment"
+              },
+              {
+                "id": "AUD-1202",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1524500,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute simulated enterprise forensic case study for Channel Stuffing Analytics, Side Agreeme...",
+            "title": "Day 12 Forensic Assurance Ledger \u2014 Substantive Audit",
+            "isBalanced": true,
+            "totalDebit": 1524500,
+            "totalCredit": 1524500,
+            "entries": [
+              {
+                "id": "AUD-1201",
+                "account": "Substantive Asset & Fraud Verification Control",
+                "debit": 1350000,
+                "balance": 1350000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-1203",
+                "account": "Asset Impairment / Fraud Restatement Reserve",
+                "debit": 174500,
+                "balance": 1524500,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-1202",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1524500,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify 100% balanced ledger closure and working paper archival for Channel Stuffing Analytics, Side Agreeme...",
+            "title": "Day 12 Forensic Assurance Ledger \u2014 Final Certified Balances",
+            "isBalanced": true,
+            "totalDebit": 1524500,
+            "totalCredit": 1524500,
+            "entries": [
+              {
+                "id": "AUD-1201",
+                "account": "Substantive Asset & Fraud Verification Control",
+                "debit": 1350000,
+                "balance": 1350000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-1203",
+                "account": "Asset Impairment / Fraud Restatement Reserve",
+                "debit": 174500,
+                "balance": 1524500,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-1202",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1524500,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "100% Balanced and Certified by Technical Audit Director"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Substantive Revenue Cut-Off Testing & E-Invoicing Real-Time Triangulation: SA 240",
+      "codeHash": "3a13eb7f409d7e2fb3d316151f64612bf6bb9ffa15cc5d0c580e390a5fb92cc1",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Substantive Revenue Cut-Off Testing & E-Invoicing  \u2014 Forensic Audit Ledger",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open forensic assurance verification ledger (1370000) for Substantive Revenue Cut-Off Testing & E-...",
+            "title": "Day 12 Forensic Assurance Ledger \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 1370000,
+            "totalCredit": 1370000,
+            "entries": [
+              {
+                "id": "AUD-1201",
+                "account": "Substantive Asset & Fraud Verification Control",
+                "debit": 1370000,
+                "balance": 1370000,
+                "tone": "data",
+                "memo": "Initial recognition under SA 240 / Ind AS Framework"
+              },
+              {
+                "id": "AUD-1202",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1370000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control balance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record forensic adjustment / impairment entry (184000) under applicable standard.",
+            "title": "Day 12 Forensic Assurance Ledger \u2014 Substantive Adjustment",
+            "isBalanced": true,
+            "totalDebit": 1554000,
+            "totalCredit": 1554000,
+            "entries": [
+              {
+                "id": "AUD-1201",
+                "account": "Substantive Asset & Fraud Verification Control",
+                "debit": 1370000,
+                "balance": 1370000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-1203",
+                "account": "Asset Impairment / Fraud Restatement Reserve",
+                "debit": 184000,
+                "balance": 1554000,
+                "tone": "accent",
+                "memo": "Substantive audit adjustment"
+              },
+              {
+                "id": "AUD-1202",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1554000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute simulated enterprise forensic case study for Substantive Revenue Cut-Off Testing & E-...",
+            "title": "Day 12 Forensic Assurance Ledger \u2014 Substantive Audit",
+            "isBalanced": true,
+            "totalDebit": 1554000,
+            "totalCredit": 1554000,
+            "entries": [
+              {
+                "id": "AUD-1201",
+                "account": "Substantive Asset & Fraud Verification Control",
+                "debit": 1370000,
+                "balance": 1370000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-1203",
+                "account": "Asset Impairment / Fraud Restatement Reserve",
+                "debit": 184000,
+                "balance": 1554000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-1202",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1554000,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify 100% balanced ledger closure and working paper archival for Substantive Revenue Cut-Off Testing & E-...",
+            "title": "Day 12 Forensic Assurance Ledger \u2014 Final Certified Balances",
+            "isBalanced": true,
+            "totalDebit": 1554000,
+            "totalCredit": 1554000,
+            "entries": [
+              {
+                "id": "AUD-1201",
+                "account": "Substantive Asset & Fraud Verification Control",
+                "debit": 1370000,
+                "balance": 1370000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-1203",
+                "account": "Asset Impairment / Fraud Restatement Reserve",
+                "debit": 184000,
+                "balance": 1554000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-1202",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1554000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "100% Balanced and Certified by Technical Audit Director"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Long-Term Construction Contracts & POCM Manipulation: Ind AS 115",
+      "codeHash": "4a2a2930ec2cec6b0cabde6585cf217ef0e1b08eedb6bfe0cd594ffb6fd4a1ac",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Long-Term Construction Contracts & POCM Manipulati \u2014 Forensic Audit Ledger",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open forensic assurance verification ledger (1390000) for Long-Term Construction Contracts & POCM ...",
+            "title": "Day 12 Forensic Assurance Ledger \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 1390000,
+            "totalCredit": 1390000,
+            "entries": [
+              {
+                "id": "AUD-1201",
+                "account": "Substantive Asset & Fraud Verification Control",
+                "debit": 1390000,
+                "balance": 1390000,
+                "tone": "data",
+                "memo": "Initial recognition under SA 240 / Ind AS Framework"
+              },
+              {
+                "id": "AUD-1202",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1390000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control balance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record forensic adjustment / impairment entry (193500) under applicable standard.",
+            "title": "Day 12 Forensic Assurance Ledger \u2014 Substantive Adjustment",
+            "isBalanced": true,
+            "totalDebit": 1583500,
+            "totalCredit": 1583500,
+            "entries": [
+              {
+                "id": "AUD-1201",
+                "account": "Substantive Asset & Fraud Verification Control",
+                "debit": 1390000,
+                "balance": 1390000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-1203",
+                "account": "Asset Impairment / Fraud Restatement Reserve",
+                "debit": 193500,
+                "balance": 1583500,
+                "tone": "accent",
+                "memo": "Substantive audit adjustment"
+              },
+              {
+                "id": "AUD-1202",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1583500,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute simulated enterprise forensic case study for Long-Term Construction Contracts & POCM ...",
+            "title": "Day 12 Forensic Assurance Ledger \u2014 Substantive Audit",
+            "isBalanced": true,
+            "totalDebit": 1583500,
+            "totalCredit": 1583500,
+            "entries": [
+              {
+                "id": "AUD-1201",
+                "account": "Substantive Asset & Fraud Verification Control",
+                "debit": 1390000,
+                "balance": 1390000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-1203",
+                "account": "Asset Impairment / Fraud Restatement Reserve",
+                "debit": 193500,
+                "balance": 1583500,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-1202",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1583500,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify 100% balanced ledger closure and working paper archival for Long-Term Construction Contracts & POCM ...",
+            "title": "Day 12 Forensic Assurance Ledger \u2014 Final Certified Balances",
+            "isBalanced": true,
+            "totalDebit": 1583500,
+            "totalCredit": 1583500,
+            "entries": [
+              {
+                "id": "AUD-1201",
+                "account": "Substantive Asset & Fraud Verification Control",
+                "debit": 1390000,
+                "balance": 1390000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-1203",
+                "account": "Asset Impairment / Fraud Restatement Reserve",
+                "debit": 193500,
+                "balance": 1583500,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-1202",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1583500,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "100% Balanced and Certified by Technical Audit Director"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Substantive Receivables Circularization & Dispute Aging Forensics: SA 505",
+      "codeHash": "a0801c6a9f65b870307cc3db57c426a967425ccc59d5eee2f62b124f0ee052fd",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Substantive Receivables Circularization & Dispute  \u2014 Forensic Audit Ledger",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open forensic assurance verification ledger (1410000) for Substantive Receivables Circularization ...",
+            "title": "Day 12 Forensic Assurance Ledger \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 1410000,
+            "totalCredit": 1410000,
+            "entries": [
+              {
+                "id": "AUD-1201",
+                "account": "Substantive Asset & Fraud Verification Control",
+                "debit": 1410000,
+                "balance": 1410000,
+                "tone": "data",
+                "memo": "Initial recognition under SA 240 / Ind AS Framework"
+              },
+              {
+                "id": "AUD-1202",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1410000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control balance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record forensic adjustment / impairment entry (203000) under applicable standard.",
+            "title": "Day 12 Forensic Assurance Ledger \u2014 Substantive Adjustment",
+            "isBalanced": true,
+            "totalDebit": 1613000,
+            "totalCredit": 1613000,
+            "entries": [
+              {
+                "id": "AUD-1201",
+                "account": "Substantive Asset & Fraud Verification Control",
+                "debit": 1410000,
+                "balance": 1410000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-1203",
+                "account": "Asset Impairment / Fraud Restatement Reserve",
+                "debit": 203000,
+                "balance": 1613000,
+                "tone": "accent",
+                "memo": "Substantive audit adjustment"
+              },
+              {
+                "id": "AUD-1202",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1613000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute simulated enterprise forensic case study for Substantive Receivables Circularization ...",
+            "title": "Day 12 Forensic Assurance Ledger \u2014 Substantive Audit",
+            "isBalanced": true,
+            "totalDebit": 1613000,
+            "totalCredit": 1613000,
+            "entries": [
+              {
+                "id": "AUD-1201",
+                "account": "Substantive Asset & Fraud Verification Control",
+                "debit": 1410000,
+                "balance": 1410000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-1203",
+                "account": "Asset Impairment / Fraud Restatement Reserve",
+                "debit": 203000,
+                "balance": 1613000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-1202",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1613000,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify 100% balanced ledger closure and working paper archival for Substantive Receivables Circularization ...",
+            "title": "Day 12 Forensic Assurance Ledger \u2014 Final Certified Balances",
+            "isBalanced": true,
+            "totalDebit": 1613000,
+            "totalCredit": 1613000,
+            "entries": [
+              {
+                "id": "AUD-1201",
+                "account": "Substantive Asset & Fraud Verification Control",
+                "debit": 1410000,
+                "balance": 1410000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-1203",
+                "account": "Asset Impairment / Fraud Restatement Reserve",
+                "debit": 203000,
+                "balance": 1613000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-1202",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1613000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "100% Balanced and Certified by Technical Audit Director"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

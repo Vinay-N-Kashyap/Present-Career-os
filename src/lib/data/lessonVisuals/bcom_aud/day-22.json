@@ -1,0 +1,664 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_aud",
+  "day": 22,
+  "promptSha": "f27d697df51963335a9b545ae813acd345011f34c4af54d9a7de59614a595ad1",
+  "model": "google/gemini-3.8-flash",
+  "entries": [
+    {
+      "partTitle": "The Decision Matrix for Opinion Modifications: SA 705 Revised",
+      "codeHash": "ba354f9063041e5c3cd2c5b30f4d8a0830f960cd7ae6bfe18bc8383e941fa469",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "The Decision Matrix for Opinion Modifications: SA  \u2014 Statutory Audit Ledger",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open statutory audit reporting verification ledger (1930000) for The Decision Matrix for Opinion Modifica...",
+            "title": "Day 22 Statutory Reporting Ledger \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 1930000,
+            "totalCredit": 1930000,
+            "entries": [
+              {
+                "id": "AUD-2201",
+                "account": "Statutory Reporting & Opinion Assurance Control",
+                "debit": 1930000,
+                "balance": 1930000,
+                "tone": "data",
+                "memo": "Initial recognition under SA 700/705/701 / Companies Act Framework"
+              },
+              {
+                "id": "AUD-2202",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1930000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control balance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record statutory adjustment / reporting entry (205000) under applicable standard.",
+            "title": "Day 22 Statutory Reporting Ledger \u2014 Substantive Adjustment",
+            "isBalanced": true,
+            "totalDebit": 2135000,
+            "totalCredit": 2135000,
+            "entries": [
+              {
+                "id": "AUD-2201",
+                "account": "Statutory Reporting & Opinion Assurance Control",
+                "debit": 1930000,
+                "balance": 1930000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-2203",
+                "account": "Statutory Disclosure & Governance Restatement Reserve",
+                "debit": 205000,
+                "balance": 2135000,
+                "tone": "accent",
+                "memo": "Substantive audit reporting adjustment"
+              },
+              {
+                "id": "AUD-2202",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 2135000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute simulated enterprise statutory audit case study for The Decision Matrix for Opinion Modifica...",
+            "title": "Day 22 Statutory Reporting Ledger \u2014 Substantive Audit",
+            "isBalanced": true,
+            "totalDebit": 2135000,
+            "totalCredit": 2135000,
+            "entries": [
+              {
+                "id": "AUD-2201",
+                "account": "Statutory Reporting & Opinion Assurance Control",
+                "debit": 1930000,
+                "balance": 1930000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-2203",
+                "account": "Statutory Disclosure & Governance Restatement Reserve",
+                "debit": 205000,
+                "balance": 2135000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-2202",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 2135000,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify 100% balanced ledger closure and working paper archival for The Decision Matrix for Opinion Modifica...",
+            "title": "Day 22 Statutory Reporting Ledger \u2014 Final Certified Balances",
+            "isBalanced": true,
+            "totalDebit": 2135000,
+            "totalCredit": 2135000,
+            "entries": [
+              {
+                "id": "AUD-2201",
+                "account": "Statutory Reporting & Opinion Assurance Control",
+                "debit": 1930000,
+                "balance": 1930000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-2203",
+                "account": "Statutory Disclosure & Governance Restatement Reserve",
+                "debit": 205000,
+                "balance": 2135000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-2202",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 2135000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "100% Balanced and Certified by Senior Statutory Assurance Partner"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Qualified Opinion Drafting & Quantification: SA 705",
+      "codeHash": "e750626dcd3d78eeadd03711fa4c33d98b6af514b93b53b334021d7c265eda76",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Qualified Opinion Drafting & Quantification: SA 70 \u2014 Statutory Audit Ledger",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open statutory audit reporting verification ledger (1950000) for Qualified Opinion Drafting & Quantificat...",
+            "title": "Day 22 Statutory Reporting Ledger \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 1950000,
+            "totalCredit": 1950000,
+            "entries": [
+              {
+                "id": "AUD-2201",
+                "account": "Statutory Reporting & Opinion Assurance Control",
+                "debit": 1950000,
+                "balance": 1950000,
+                "tone": "data",
+                "memo": "Initial recognition under SA 700/705/701 / Companies Act Framework"
+              },
+              {
+                "id": "AUD-2202",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1950000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control balance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record statutory adjustment / reporting entry (214500) under applicable standard.",
+            "title": "Day 22 Statutory Reporting Ledger \u2014 Substantive Adjustment",
+            "isBalanced": true,
+            "totalDebit": 2164500,
+            "totalCredit": 2164500,
+            "entries": [
+              {
+                "id": "AUD-2201",
+                "account": "Statutory Reporting & Opinion Assurance Control",
+                "debit": 1950000,
+                "balance": 1950000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-2203",
+                "account": "Statutory Disclosure & Governance Restatement Reserve",
+                "debit": 214500,
+                "balance": 2164500,
+                "tone": "accent",
+                "memo": "Substantive audit reporting adjustment"
+              },
+              {
+                "id": "AUD-2202",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 2164500,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute simulated enterprise statutory audit case study for Qualified Opinion Drafting & Quantificat...",
+            "title": "Day 22 Statutory Reporting Ledger \u2014 Substantive Audit",
+            "isBalanced": true,
+            "totalDebit": 2164500,
+            "totalCredit": 2164500,
+            "entries": [
+              {
+                "id": "AUD-2201",
+                "account": "Statutory Reporting & Opinion Assurance Control",
+                "debit": 1950000,
+                "balance": 1950000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-2203",
+                "account": "Statutory Disclosure & Governance Restatement Reserve",
+                "debit": 214500,
+                "balance": 2164500,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-2202",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 2164500,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify 100% balanced ledger closure and working paper archival for Qualified Opinion Drafting & Quantificat...",
+            "title": "Day 22 Statutory Reporting Ledger \u2014 Final Certified Balances",
+            "isBalanced": true,
+            "totalDebit": 2164500,
+            "totalCredit": 2164500,
+            "entries": [
+              {
+                "id": "AUD-2201",
+                "account": "Statutory Reporting & Opinion Assurance Control",
+                "debit": 1950000,
+                "balance": 1950000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-2203",
+                "account": "Statutory Disclosure & Governance Restatement Reserve",
+                "debit": 214500,
+                "balance": 2164500,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-2202",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 2164500,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "100% Balanced and Certified by Senior Statutory Assurance Partner"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Adverse Opinions & Disclaimers of Opinion: Pervasive Impacts",
+      "codeHash": "6a3c85158758d7f648a5b53769d0d31f0a1cf4760b75b372fbde1c9fa0b222ac",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Adverse Opinions & Disclaimers of Opinion: Pervasi \u2014 Statutory Audit Ledger",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open statutory audit reporting verification ledger (1970000) for Adverse Opinions & Disclaimers of Opinio...",
+            "title": "Day 22 Statutory Reporting Ledger \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 1970000,
+            "totalCredit": 1970000,
+            "entries": [
+              {
+                "id": "AUD-2201",
+                "account": "Statutory Reporting & Opinion Assurance Control",
+                "debit": 1970000,
+                "balance": 1970000,
+                "tone": "data",
+                "memo": "Initial recognition under SA 700/705/701 / Companies Act Framework"
+              },
+              {
+                "id": "AUD-2202",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1970000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control balance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record statutory adjustment / reporting entry (224000) under applicable standard.",
+            "title": "Day 22 Statutory Reporting Ledger \u2014 Substantive Adjustment",
+            "isBalanced": true,
+            "totalDebit": 2194000,
+            "totalCredit": 2194000,
+            "entries": [
+              {
+                "id": "AUD-2201",
+                "account": "Statutory Reporting & Opinion Assurance Control",
+                "debit": 1970000,
+                "balance": 1970000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-2203",
+                "account": "Statutory Disclosure & Governance Restatement Reserve",
+                "debit": 224000,
+                "balance": 2194000,
+                "tone": "accent",
+                "memo": "Substantive audit reporting adjustment"
+              },
+              {
+                "id": "AUD-2202",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 2194000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute simulated enterprise statutory audit case study for Adverse Opinions & Disclaimers of Opinio...",
+            "title": "Day 22 Statutory Reporting Ledger \u2014 Substantive Audit",
+            "isBalanced": true,
+            "totalDebit": 2194000,
+            "totalCredit": 2194000,
+            "entries": [
+              {
+                "id": "AUD-2201",
+                "account": "Statutory Reporting & Opinion Assurance Control",
+                "debit": 1970000,
+                "balance": 1970000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-2203",
+                "account": "Statutory Disclosure & Governance Restatement Reserve",
+                "debit": 224000,
+                "balance": 2194000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-2202",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 2194000,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify 100% balanced ledger closure and working paper archival for Adverse Opinions & Disclaimers of Opinio...",
+            "title": "Day 22 Statutory Reporting Ledger \u2014 Final Certified Balances",
+            "isBalanced": true,
+            "totalDebit": 2194000,
+            "totalCredit": 2194000,
+            "entries": [
+              {
+                "id": "AUD-2201",
+                "account": "Statutory Reporting & Opinion Assurance Control",
+                "debit": 1970000,
+                "balance": 1970000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-2203",
+                "account": "Statutory Disclosure & Governance Restatement Reserve",
+                "debit": 224000,
+                "balance": 2194000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-2202",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 2194000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "100% Balanced and Certified by Senior Statutory Assurance Partner"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Emphasis of Matter & Other Matter Paragraphs: SA 706 Revised",
+      "codeHash": "7d4eb611d37d4826fa4fbe133606421c79035601ab256fa121f3ca1c695fc6cb",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Emphasis of Matter & Other Matter Paragraphs: SA 7 \u2014 Statutory Audit Ledger",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open statutory audit reporting verification ledger (1990000) for Emphasis of Matter & Other Matter Paragr...",
+            "title": "Day 22 Statutory Reporting Ledger \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 1990000,
+            "totalCredit": 1990000,
+            "entries": [
+              {
+                "id": "AUD-2201",
+                "account": "Statutory Reporting & Opinion Assurance Control",
+                "debit": 1990000,
+                "balance": 1990000,
+                "tone": "data",
+                "memo": "Initial recognition under SA 700/705/701 / Companies Act Framework"
+              },
+              {
+                "id": "AUD-2202",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1990000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control balance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record statutory adjustment / reporting entry (233500) under applicable standard.",
+            "title": "Day 22 Statutory Reporting Ledger \u2014 Substantive Adjustment",
+            "isBalanced": true,
+            "totalDebit": 2223500,
+            "totalCredit": 2223500,
+            "entries": [
+              {
+                "id": "AUD-2201",
+                "account": "Statutory Reporting & Opinion Assurance Control",
+                "debit": 1990000,
+                "balance": 1990000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-2203",
+                "account": "Statutory Disclosure & Governance Restatement Reserve",
+                "debit": 233500,
+                "balance": 2223500,
+                "tone": "accent",
+                "memo": "Substantive audit reporting adjustment"
+              },
+              {
+                "id": "AUD-2202",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 2223500,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute simulated enterprise statutory audit case study for Emphasis of Matter & Other Matter Paragr...",
+            "title": "Day 22 Statutory Reporting Ledger \u2014 Substantive Audit",
+            "isBalanced": true,
+            "totalDebit": 2223500,
+            "totalCredit": 2223500,
+            "entries": [
+              {
+                "id": "AUD-2201",
+                "account": "Statutory Reporting & Opinion Assurance Control",
+                "debit": 1990000,
+                "balance": 1990000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-2203",
+                "account": "Statutory Disclosure & Governance Restatement Reserve",
+                "debit": 233500,
+                "balance": 2223500,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-2202",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 2223500,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify 100% balanced ledger closure and working paper archival for Emphasis of Matter & Other Matter Paragr...",
+            "title": "Day 22 Statutory Reporting Ledger \u2014 Final Certified Balances",
+            "isBalanced": true,
+            "totalDebit": 2223500,
+            "totalCredit": 2223500,
+            "entries": [
+              {
+                "id": "AUD-2201",
+                "account": "Statutory Reporting & Opinion Assurance Control",
+                "debit": 1990000,
+                "balance": 1990000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-2203",
+                "account": "Statutory Disclosure & Governance Restatement Reserve",
+                "debit": 233500,
+                "balance": 2223500,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-2202",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 2223500,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "100% Balanced and Certified by Senior Statutory Assurance Partner"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Comprehensive Audit Opinion Formulation & Modification Dossier",
+      "codeHash": "a36d025ef6f5951d12ceeef4349105523c1fde7e16e6938db4fc55a89f65939b",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Comprehensive Audit Opinion Formulation & Modifica \u2014 Statutory Audit Ledger",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open statutory audit reporting verification ledger (2010000) for Comprehensive Audit Opinion Formulation ...",
+            "title": "Day 22 Statutory Reporting Ledger \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 2010000,
+            "totalCredit": 2010000,
+            "entries": [
+              {
+                "id": "AUD-2201",
+                "account": "Statutory Reporting & Opinion Assurance Control",
+                "debit": 2010000,
+                "balance": 2010000,
+                "tone": "data",
+                "memo": "Initial recognition under SA 700/705/701 / Companies Act Framework"
+              },
+              {
+                "id": "AUD-2202",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 2010000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control balance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record statutory adjustment / reporting entry (243000) under applicable standard.",
+            "title": "Day 22 Statutory Reporting Ledger \u2014 Substantive Adjustment",
+            "isBalanced": true,
+            "totalDebit": 2253000,
+            "totalCredit": 2253000,
+            "entries": [
+              {
+                "id": "AUD-2201",
+                "account": "Statutory Reporting & Opinion Assurance Control",
+                "debit": 2010000,
+                "balance": 2010000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-2203",
+                "account": "Statutory Disclosure & Governance Restatement Reserve",
+                "debit": 243000,
+                "balance": 2253000,
+                "tone": "accent",
+                "memo": "Substantive audit reporting adjustment"
+              },
+              {
+                "id": "AUD-2202",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 2253000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute simulated enterprise statutory audit case study for Comprehensive Audit Opinion Formulation ...",
+            "title": "Day 22 Statutory Reporting Ledger \u2014 Substantive Audit",
+            "isBalanced": true,
+            "totalDebit": 2253000,
+            "totalCredit": 2253000,
+            "entries": [
+              {
+                "id": "AUD-2201",
+                "account": "Statutory Reporting & Opinion Assurance Control",
+                "debit": 2010000,
+                "balance": 2010000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-2203",
+                "account": "Statutory Disclosure & Governance Restatement Reserve",
+                "debit": 243000,
+                "balance": 2253000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-2202",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 2253000,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify 100% balanced ledger closure and working paper archival for Comprehensive Audit Opinion Formulation ...",
+            "title": "Day 22 Statutory Reporting Ledger \u2014 Final Certified Balances",
+            "isBalanced": true,
+            "totalDebit": 2253000,
+            "totalCredit": 2253000,
+            "entries": [
+              {
+                "id": "AUD-2201",
+                "account": "Statutory Reporting & Opinion Assurance Control",
+                "debit": 2010000,
+                "balance": 2010000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-2203",
+                "account": "Statutory Disclosure & Governance Restatement Reserve",
+                "debit": 243000,
+                "balance": 2253000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-2202",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 2253000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "100% Balanced and Certified by Senior Statutory Assurance Partner"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "coursePrefix": "bcom_dmkt",
+  "day": 22,
+  "title": "Customer Lifetime Value to CAC Ratio (CLV:CAC >= 3:1) Architecture",
+  "funnelSteps": [
+    {
+      "step": "CAC_DECOMPOSITION",
+      "label": "Blended CAC vs Paid Channel Acquisition Cost Analysis",
+      "metric": "Paid CAC: $50.00 / Blended: $33.33",
+      "status": "COMPLETED",
+      "color": "#10B981"
+    },
+    {
+      "step": "CLV_MATHEMATICAL_MODELING",
+      "label": "Predictive Customer Lifetime Value (Gross Margin & Churn)",
+      "metric": "CLV: $1,800.00",
+      "status": "COMPLETED",
+      "color": "#3B82F6"
+    },
+    {
+      "step": "GOLDEN_RATIO_EVALUATION",
+      "label": "Golden Growth Ratio (CLV:CAC >= 3.0) Sustainability Check",
+      "metric": "Ratio: 4.0x (Elite)",
+      "status": "COMPLETED",
+      "color": "#6366F1"
+    },
+    {
+      "step": "CAC_PAYBACK_VELOCITY",
+      "label": "Capital Recovery Horizon & Cash Flow Reinvestment Pacing",
+      "metric": "Payback: 5.0 Months",
+      "status": "COMPLETED",
+      "color": "#F59E0B"
+    },
+    {
+      "step": "ENTERPRISE_UNIT_ECONOMICS_GATEWAY",
+      "label": "Institutional Growth Unit Economics Certification Gateway",
+      "metric": "100.0/100 UEI Certified",
+      "status": "COMPLETED",
+      "color": "#8B5CF6"
+    }
+  ],
+  "kpis": [
+    {
+      "label": "Paid Customer CAC",
+      "value": "$50.00"
+    },
+    {
+      "label": "Customer Lifetime Value",
+      "value": "$1,800.00"
+    },
+    {
+      "label": "CLV:CAC Golden Ratio",
+      "value": "4.0x"
+    },
+    {
+      "label": "CAC Payback Horizon",
+      "value": "5.0 Months"
+    }
+  ]
+}

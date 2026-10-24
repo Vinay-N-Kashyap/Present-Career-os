@@ -1,0 +1,659 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom-accounting",
+  "day": 50,
+  "promptSha": "prompt_sha_bcom_accounting_day50_v1",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Strategic Role of the Group CFO & Lead Forensic Auditor in Corporate Diagnostics",
+      "codeHash": "211271a213333487bf11f621cee4a67f22aebb272e40f257f1e33a06e8a50442",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Strategic Role of the Group CFO & Lead F... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($94,005,000) for Strategic Role of the Group CFO & Lead F...",
+            "title": "Day 50 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 94005000,
+            "totalCredit": 94005000,
+            "entries": [
+              {
+                "id": "JNL-5001",
+                "account": "Conglomerate Diagnostic Assets & Operational Funds",
+                "debit": 94005000,
+                "balance": 94005000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 50"
+              },
+              {
+                "id": "JNL-5002",
+                "account": "Corporate Capital Reserves, Debt & Solvency Accounts",
+                "credit": 94005000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & diagnostic adjustment accrual ($7,149,680).",
+            "title": "Day 50 Journal \u2014 Diagnostic & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 101154680,
+            "totalCredit": 101154680,
+            "entries": [
+              {
+                "id": "JNL-5001",
+                "account": "Conglomerate Diagnostic Assets & Operational Funds",
+                "debit": 94005000,
+                "balance": 94005000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5003",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 7149680,
+                "balance": 101154680,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5002",
+                "account": "Corporate Capital Reserves, Debt & Solvency Accounts",
+                "credit": 101154680,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 50 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 101154680,
+            "totalCredit": 101154680,
+            "entries": [
+              {
+                "id": "JNL-5001",
+                "account": "Conglomerate Diagnostic Assets & Operational Funds",
+                "debit": 94005000,
+                "balance": 94005000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5003",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 7149680,
+                "balance": 101154680,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5002",
+                "account": "Corporate Capital Reserves, Debt & Solvency Accounts",
+                "credit": 101154680,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 50 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 101154680,
+            "totalCredit": 101154680,
+            "entries": [
+              {
+                "id": "JNL-5001",
+                "account": "Conglomerate Diagnostic Assets & Operational Funds",
+                "debit": 94005000,
+                "balance": 94005000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5003",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 7149680,
+                "balance": 101154680,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5002",
+                "account": "Corporate Capital Reserves, Debt & Solvency Accounts",
+                "credit": 101154680,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Module 1: Enterprise Liquidity Architecture, Solvency Covenants & Working Capital Velocity",
+      "codeHash": "211271a213333487bf11f621cee4a67f22aebb272e40f257f1e33a06e8a50442",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Module 1: Enterprise Liquidity Architect... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($94,010,000) for Module 1: Enterprise Liquidity Architect...",
+            "title": "Day 50 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 94010000,
+            "totalCredit": 94010000,
+            "entries": [
+              {
+                "id": "JNL-5001",
+                "account": "Conglomerate Diagnostic Assets & Operational Funds",
+                "debit": 94010000,
+                "balance": 94010000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 50"
+              },
+              {
+                "id": "JNL-5002",
+                "account": "Corporate Capital Reserves, Debt & Solvency Accounts",
+                "credit": 94010000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & diagnostic adjustment accrual ($7,149,680).",
+            "title": "Day 50 Journal \u2014 Diagnostic & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 101159680,
+            "totalCredit": 101159680,
+            "entries": [
+              {
+                "id": "JNL-5001",
+                "account": "Conglomerate Diagnostic Assets & Operational Funds",
+                "debit": 94010000,
+                "balance": 94010000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5003",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 7149680,
+                "balance": 101159680,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5002",
+                "account": "Corporate Capital Reserves, Debt & Solvency Accounts",
+                "credit": 101159680,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 50 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 101159680,
+            "totalCredit": 101159680,
+            "entries": [
+              {
+                "id": "JNL-5001",
+                "account": "Conglomerate Diagnostic Assets & Operational Funds",
+                "debit": 94010000,
+                "balance": 94010000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5003",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 7149680,
+                "balance": 101159680,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5002",
+                "account": "Corporate Capital Reserves, Debt & Solvency Accounts",
+                "credit": 101159680,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 50 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 101159680,
+            "totalCredit": 101159680,
+            "entries": [
+              {
+                "id": "JNL-5001",
+                "account": "Conglomerate Diagnostic Assets & Operational Funds",
+                "debit": 94010000,
+                "balance": 94010000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5003",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 7149680,
+                "balance": 101159680,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5002",
+                "account": "Corporate Capital Reserves, Debt & Solvency Accounts",
+                "credit": 101159680,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Module 2: 5-Stage Extended DuPont ROE Decomposition, Capital Charge & Economic Value Added (EVA)",
+      "codeHash": "211271a213333487bf11f621cee4a67f22aebb272e40f257f1e33a06e8a50442",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Module 2: 5-Stage Extended DuPont ROE De... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($94,015,000) for Module 2: 5-Stage Extended DuPont ROE De...",
+            "title": "Day 50 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 94015000,
+            "totalCredit": 94015000,
+            "entries": [
+              {
+                "id": "JNL-5001",
+                "account": "Conglomerate Diagnostic Assets & Operational Funds",
+                "debit": 94015000,
+                "balance": 94015000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 50"
+              },
+              {
+                "id": "JNL-5002",
+                "account": "Corporate Capital Reserves, Debt & Solvency Accounts",
+                "credit": 94015000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & diagnostic adjustment accrual ($7,149,680).",
+            "title": "Day 50 Journal \u2014 Diagnostic & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 101164680,
+            "totalCredit": 101164680,
+            "entries": [
+              {
+                "id": "JNL-5001",
+                "account": "Conglomerate Diagnostic Assets & Operational Funds",
+                "debit": 94015000,
+                "balance": 94015000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5003",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 7149680,
+                "balance": 101164680,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5002",
+                "account": "Corporate Capital Reserves, Debt & Solvency Accounts",
+                "credit": 101164680,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 50 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 101164680,
+            "totalCredit": 101164680,
+            "entries": [
+              {
+                "id": "JNL-5001",
+                "account": "Conglomerate Diagnostic Assets & Operational Funds",
+                "debit": 94015000,
+                "balance": 94015000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5003",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 7149680,
+                "balance": 101164680,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5002",
+                "account": "Corporate Capital Reserves, Debt & Solvency Accounts",
+                "credit": 101164680,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 50 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 101164680,
+            "totalCredit": 101164680,
+            "entries": [
+              {
+                "id": "JNL-5001",
+                "account": "Conglomerate Diagnostic Assets & Operational Funds",
+                "debit": 94015000,
+                "balance": 94015000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5003",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 7149680,
+                "balance": 101164680,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5002",
+                "account": "Corporate Capital Reserves, Debt & Solvency Accounts",
+                "credit": 101164680,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Module 3 & Module 4: Leverage Dynamics, Altman Z-Score & Forensic Beneish M-Score Screening",
+      "codeHash": "211271a213333487bf11f621cee4a67f22aebb272e40f257f1e33a06e8a50442",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Module 3 & Module 4: Leverage Dynamics, ... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($94,020,000) for Module 3 & Module 4: Leverage Dynamics, ...",
+            "title": "Day 50 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 94020000,
+            "totalCredit": 94020000,
+            "entries": [
+              {
+                "id": "JNL-5001",
+                "account": "Conglomerate Diagnostic Assets & Operational Funds",
+                "debit": 94020000,
+                "balance": 94020000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 50"
+              },
+              {
+                "id": "JNL-5002",
+                "account": "Corporate Capital Reserves, Debt & Solvency Accounts",
+                "credit": 94020000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & diagnostic adjustment accrual ($7,149,680).",
+            "title": "Day 50 Journal \u2014 Diagnostic & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 101169680,
+            "totalCredit": 101169680,
+            "entries": [
+              {
+                "id": "JNL-5001",
+                "account": "Conglomerate Diagnostic Assets & Operational Funds",
+                "debit": 94020000,
+                "balance": 94020000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5003",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 7149680,
+                "balance": 101169680,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5002",
+                "account": "Corporate Capital Reserves, Debt & Solvency Accounts",
+                "credit": 101169680,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 50 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 101169680,
+            "totalCredit": 101169680,
+            "entries": [
+              {
+                "id": "JNL-5001",
+                "account": "Conglomerate Diagnostic Assets & Operational Funds",
+                "debit": 94020000,
+                "balance": 94020000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5003",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 7149680,
+                "balance": 101169680,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5002",
+                "account": "Corporate Capital Reserves, Debt & Solvency Accounts",
+                "credit": 101169680,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 50 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 101169680,
+            "totalCredit": 101169680,
+            "entries": [
+              {
+                "id": "JNL-5001",
+                "account": "Conglomerate Diagnostic Assets & Operational Funds",
+                "debit": 94020000,
+                "balance": 94020000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5003",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 7149680,
+                "balance": 101169680,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5002",
+                "account": "Corporate Capital Reserves, Debt & Solvency Accounts",
+                "credit": 101169680,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Grand Milestone 10 Verification, Audit Certification & Block 10 Completion",
+      "codeHash": "211271a213333487bf11f621cee4a67f22aebb272e40f257f1e33a06e8a50442",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Grand Milestone 10 Verification, Audit C... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($94,025,000) for Grand Milestone 10 Verification, Audit C...",
+            "title": "Day 50 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 94025000,
+            "totalCredit": 94025000,
+            "entries": [
+              {
+                "id": "JNL-5001",
+                "account": "Conglomerate Diagnostic Assets & Operational Funds",
+                "debit": 94025000,
+                "balance": 94025000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 50"
+              },
+              {
+                "id": "JNL-5002",
+                "account": "Corporate Capital Reserves, Debt & Solvency Accounts",
+                "credit": 94025000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & diagnostic adjustment accrual ($7,149,680).",
+            "title": "Day 50 Journal \u2014 Diagnostic & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 101174680,
+            "totalCredit": 101174680,
+            "entries": [
+              {
+                "id": "JNL-5001",
+                "account": "Conglomerate Diagnostic Assets & Operational Funds",
+                "debit": 94025000,
+                "balance": 94025000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5003",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 7149680,
+                "balance": 101174680,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5002",
+                "account": "Corporate Capital Reserves, Debt & Solvency Accounts",
+                "credit": 101174680,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 50 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 101174680,
+            "totalCredit": 101174680,
+            "entries": [
+              {
+                "id": "JNL-5001",
+                "account": "Conglomerate Diagnostic Assets & Operational Funds",
+                "debit": 94025000,
+                "balance": 94025000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5003",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 7149680,
+                "balance": 101174680,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5002",
+                "account": "Corporate Capital Reserves, Debt & Solvency Accounts",
+                "credit": 101174680,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 50 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 101174680,
+            "totalCredit": 101174680,
+            "entries": [
+              {
+                "id": "JNL-5001",
+                "account": "Conglomerate Diagnostic Assets & Operational Funds",
+                "debit": 94025000,
+                "balance": 94025000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5003",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 7149680,
+                "balance": 101174680,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5002",
+                "account": "Corporate Capital Reserves, Debt & Solvency Accounts",
+                "credit": 101174680,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

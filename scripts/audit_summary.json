@@ -1,0 +1,1763 @@
+[
+  {
+    "name": "Financial Accounting (Course 22)",
+    "prefix": "bcom-accounting",
+    "totalDays": 30,
+    "visualCount": 30,
+    "is30Days": true,
+    "is30Visuals": true,
+    "avgSayWordsPerDay": 2705,
+    "avgSpokenMinAt130Wpm": 20.8,
+    "minSpokenMin": 10,
+    "maxSpokenMin": 31,
+    "minLessonEst": 20,
+    "maxLessonEst": 41,
+    "partCountDefects": [],
+    "minutesFieldDefects": [
+      {
+        "day": 2,
+        "minutes": 45
+      },
+      {
+        "day": 3,
+        "minutes": 45
+      },
+      {
+        "day": 6,
+        "minutes": 45
+      },
+      {
+        "day": 7,
+        "minutes": 45
+      },
+      {
+        "day": 8,
+        "minutes": 45
+      },
+      {
+        "day": 9,
+        "minutes": 45
+      },
+      {
+        "day": 10,
+        "minutes": 50
+      },
+      {
+        "day": 11,
+        "minutes": 45
+      },
+      {
+        "day": 12,
+        "minutes": 45
+      },
+      {
+        "day": 13,
+        "minutes": 45
+      },
+      {
+        "day": 14,
+        "minutes": 45
+      },
+      {
+        "day": 15,
+        "minutes": 50
+      },
+      {
+        "day": 16,
+        "minutes": 45
+      },
+      {
+        "day": 17,
+        "minutes": 45
+      },
+      {
+        "day": 18,
+        "minutes": 45
+      },
+      {
+        "day": 19,
+        "minutes": 45
+      },
+      {
+        "day": 20,
+        "minutes": 50
+      },
+      {
+        "day": 21,
+        "minutes": 45
+      },
+      {
+        "day": 22,
+        "minutes": 45
+      },
+      {
+        "day": 23,
+        "minutes": 45
+      },
+      {
+        "day": 24,
+        "minutes": 45
+      },
+      {
+        "day": 25,
+        "minutes": 50
+      },
+      {
+        "day": 26,
+        "minutes": 45
+      },
+      {
+        "day": 27,
+        "minutes": 45
+      },
+      {
+        "day": 28,
+        "minutes": 45
+      },
+      {
+        "day": 29,
+        "minutes": 45
+      },
+      {
+        "day": 30,
+        "minutes": 50
+      }
+    ],
+    "lowSpokenDays": [
+      {
+        "day": 1,
+        "spokenMin": 10,
+        "sayWords": 745
+      },
+      {
+        "day": 2,
+        "spokenMin": 11,
+        "sayWords": 873
+      },
+      {
+        "day": 3,
+        "spokenMin": 10,
+        "sayWords": 727
+      },
+      {
+        "day": 4,
+        "spokenMin": 17,
+        "sayWords": 1503
+      },
+      {
+        "day": 5,
+        "spokenMin": 15,
+        "sayWords": 1298
+      }
+    ],
+    "missingVisualDaysCount": 0
+  },
+  {
+    "name": "Corporate Finance (Course 23)",
+    "prefix": "bcom-finance",
+    "totalDays": 30,
+    "visualCount": 30,
+    "is30Days": true,
+    "is30Visuals": true,
+    "avgSayWordsPerDay": 2639,
+    "avgSpokenMinAt130Wpm": 20.3,
+    "minSpokenMin": 10,
+    "maxSpokenMin": 43,
+    "minLessonEst": 20,
+    "maxLessonEst": 53,
+    "partCountDefects": [],
+    "minutesFieldDefects": [
+      {
+        "day": 2,
+        "minutes": 42
+      },
+      {
+        "day": 3,
+        "minutes": 45
+      },
+      {
+        "day": 4,
+        "minutes": 45
+      },
+      {
+        "day": 5,
+        "minutes": 50
+      },
+      {
+        "day": 6,
+        "minutes": 45
+      },
+      {
+        "day": 7,
+        "minutes": 45
+      },
+      {
+        "day": 8,
+        "minutes": 45
+      },
+      {
+        "day": 9,
+        "minutes": 45
+      },
+      {
+        "day": 10,
+        "minutes": 50
+      },
+      {
+        "day": 11,
+        "minutes": 45
+      },
+      {
+        "day": 12,
+        "minutes": 45
+      },
+      {
+        "day": 13,
+        "minutes": 45
+      },
+      {
+        "day": 14,
+        "minutes": 45
+      },
+      {
+        "day": 15,
+        "minutes": 50
+      },
+      {
+        "day": 16,
+        "minutes": 45
+      },
+      {
+        "day": 17,
+        "minutes": 45
+      },
+      {
+        "day": 18,
+        "minutes": 45
+      },
+      {
+        "day": 19,
+        "minutes": 45
+      },
+      {
+        "day": 20,
+        "minutes": 45
+      },
+      {
+        "day": 21,
+        "minutes": 45
+      },
+      {
+        "day": 22,
+        "minutes": 45
+      },
+      {
+        "day": 23,
+        "minutes": 45
+      },
+      {
+        "day": 24,
+        "minutes": 45
+      },
+      {
+        "day": 25,
+        "minutes": 45
+      },
+      {
+        "day": 26,
+        "minutes": 45
+      },
+      {
+        "day": 27,
+        "minutes": 45
+      },
+      {
+        "day": 28,
+        "minutes": 45
+      },
+      {
+        "day": 29,
+        "minutes": 45
+      },
+      {
+        "day": 30,
+        "minutes": 50
+      }
+    ],
+    "lowSpokenDays": [
+      {
+        "day": 1,
+        "spokenMin": 12,
+        "sayWords": 925
+      },
+      {
+        "day": 2,
+        "spokenMin": 12,
+        "sayWords": 930
+      },
+      {
+        "day": 3,
+        "spokenMin": 11,
+        "sayWords": 767
+      },
+      {
+        "day": 4,
+        "spokenMin": 11,
+        "sayWords": 818
+      },
+      {
+        "day": 5,
+        "spokenMin": 10,
+        "sayWords": 715
+      }
+    ],
+    "missingVisualDaysCount": 0
+  },
+  {
+    "name": "Business & Corporate Law (Course 24)",
+    "prefix": "bcom_law",
+    "totalDays": 30,
+    "visualCount": 30,
+    "is30Days": true,
+    "is30Visuals": true,
+    "avgSayWordsPerDay": 2814,
+    "avgSpokenMinAt130Wpm": 21.6,
+    "minSpokenMin": 10,
+    "maxSpokenMin": 31,
+    "minLessonEst": 20,
+    "maxLessonEst": 41,
+    "partCountDefects": [],
+    "minutesFieldDefects": [
+      {
+        "day": 2,
+        "minutes": 44
+      },
+      {
+        "day": 3,
+        "minutes": 45
+      },
+      {
+        "day": 4,
+        "minutes": 45
+      },
+      {
+        "day": 5,
+        "minutes": 50
+      },
+      {
+        "day": 6,
+        "minutes": 45
+      },
+      {
+        "day": 7,
+        "minutes": 45
+      },
+      {
+        "day": 8,
+        "minutes": 45
+      },
+      {
+        "day": 9,
+        "minutes": 45
+      },
+      {
+        "day": 10,
+        "minutes": 45
+      },
+      {
+        "day": 11,
+        "minutes": 45
+      },
+      {
+        "day": 12,
+        "minutes": 45
+      },
+      {
+        "day": 13,
+        "minutes": 45
+      },
+      {
+        "day": 14,
+        "minutes": 45
+      },
+      {
+        "day": 15,
+        "minutes": 45
+      },
+      {
+        "day": 16,
+        "minutes": 45
+      },
+      {
+        "day": 17,
+        "minutes": 45
+      },
+      {
+        "day": 18,
+        "minutes": 45
+      },
+      {
+        "day": 19,
+        "minutes": 45
+      },
+      {
+        "day": 20,
+        "minutes": 45
+      },
+      {
+        "day": 21,
+        "minutes": 45
+      },
+      {
+        "day": 22,
+        "minutes": 45
+      },
+      {
+        "day": 23,
+        "minutes": 45
+      },
+      {
+        "day": 24,
+        "minutes": 45
+      },
+      {
+        "day": 25,
+        "minutes": 45
+      },
+      {
+        "day": 26,
+        "minutes": 45
+      },
+      {
+        "day": 27,
+        "minutes": 45
+      },
+      {
+        "day": 28,
+        "minutes": 45
+      },
+      {
+        "day": 29,
+        "minutes": 45
+      },
+      {
+        "day": 30,
+        "minutes": 45
+      }
+    ],
+    "lowSpokenDays": [
+      {
+        "day": 1,
+        "spokenMin": 10,
+        "sayWords": 823
+      },
+      {
+        "day": 2,
+        "spokenMin": 12,
+        "sayWords": 953
+      },
+      {
+        "day": 3,
+        "spokenMin": 13,
+        "sayWords": 1137
+      },
+      {
+        "day": 4,
+        "spokenMin": 13,
+        "sayWords": 1109
+      },
+      {
+        "day": 5,
+        "spokenMin": 12,
+        "sayWords": 1028
+      }
+    ],
+    "missingVisualDaysCount": 0
+  },
+  {
+    "name": "Entrepreneurship & Business Planning (Course 25)",
+    "prefix": "bcom_ent",
+    "totalDays": 30,
+    "visualCount": 30,
+    "is30Days": true,
+    "is30Visuals": true,
+    "avgSayWordsPerDay": 2829,
+    "avgSpokenMinAt130Wpm": 21.8,
+    "minSpokenMin": 9,
+    "maxSpokenMin": 116,
+    "minLessonEst": 19,
+    "maxLessonEst": 126,
+    "partCountDefects": [],
+    "minutesFieldDefects": [
+      {
+        "day": 2,
+        "minutes": 42
+      },
+      {
+        "day": 6,
+        "minutes": 45
+      },
+      {
+        "day": 7,
+        "minutes": 45
+      },
+      {
+        "day": 8,
+        "minutes": 45
+      },
+      {
+        "day": 9,
+        "minutes": 45
+      },
+      {
+        "day": 10,
+        "minutes": 50
+      },
+      {
+        "day": 11,
+        "minutes": 45
+      },
+      {
+        "day": 12,
+        "minutes": 45
+      },
+      {
+        "day": 13,
+        "minutes": 45
+      },
+      {
+        "day": 14,
+        "minutes": 45
+      },
+      {
+        "day": 15,
+        "minutes": 50
+      },
+      {
+        "day": 16,
+        "minutes": 45
+      },
+      {
+        "day": 17,
+        "minutes": 45
+      },
+      {
+        "day": 18,
+        "minutes": 45
+      },
+      {
+        "day": 19,
+        "minutes": 45
+      },
+      {
+        "day": 20,
+        "minutes": 50
+      },
+      {
+        "day": 21,
+        "minutes": 45
+      },
+      {
+        "day": 22,
+        "minutes": 45
+      },
+      {
+        "day": 23,
+        "minutes": 45
+      },
+      {
+        "day": 24,
+        "minutes": 45
+      },
+      {
+        "day": 25,
+        "minutes": 50
+      },
+      {
+        "day": 26,
+        "minutes": 45
+      },
+      {
+        "day": 27,
+        "minutes": 45
+      },
+      {
+        "day": 28,
+        "minutes": 45
+      },
+      {
+        "day": 29,
+        "minutes": 45
+      },
+      {
+        "day": 30,
+        "minutes": 50
+      }
+    ],
+    "lowSpokenDays": [
+      {
+        "day": 1,
+        "spokenMin": 9,
+        "sayWords": 749
+      },
+      {
+        "day": 2,
+        "spokenMin": 12,
+        "sayWords": 952
+      },
+      {
+        "day": 3,
+        "spokenMin": 12,
+        "sayWords": 1042
+      },
+      {
+        "day": 4,
+        "spokenMin": 11,
+        "sayWords": 922
+      }
+    ],
+    "missingVisualDaysCount": 0
+  },
+  {
+    "name": "Supply Chain & Logistics Management (Course 26)",
+    "prefix": "bcom_scrm",
+    "totalDays": 30,
+    "visualCount": 30,
+    "is30Days": true,
+    "is30Visuals": true,
+    "avgSayWordsPerDay": 2760,
+    "avgSpokenMinAt130Wpm": 21.2,
+    "minSpokenMin": 8,
+    "maxSpokenMin": 36,
+    "minLessonEst": 18,
+    "maxLessonEst": 46,
+    "partCountDefects": [],
+    "minutesFieldDefects": [
+      {
+        "day": 2,
+        "minutes": 42
+      },
+      {
+        "day": 6,
+        "minutes": 45
+      },
+      {
+        "day": 7,
+        "minutes": 45
+      },
+      {
+        "day": 8,
+        "minutes": 45
+      },
+      {
+        "day": 9,
+        "minutes": 45
+      },
+      {
+        "day": 10,
+        "minutes": 50
+      },
+      {
+        "day": 11,
+        "minutes": 45
+      },
+      {
+        "day": 12,
+        "minutes": 45
+      },
+      {
+        "day": 13,
+        "minutes": 45
+      },
+      {
+        "day": 14,
+        "minutes": 45
+      },
+      {
+        "day": 15,
+        "minutes": 50
+      },
+      {
+        "day": 16,
+        "minutes": 45
+      },
+      {
+        "day": 17,
+        "minutes": 45
+      },
+      {
+        "day": 18,
+        "minutes": 45
+      },
+      {
+        "day": 19,
+        "minutes": 45
+      },
+      {
+        "day": 20,
+        "minutes": 50
+      },
+      {
+        "day": 21,
+        "minutes": 45
+      },
+      {
+        "day": 22,
+        "minutes": 45
+      },
+      {
+        "day": 23,
+        "minutes": 45
+      },
+      {
+        "day": 24,
+        "minutes": 45
+      },
+      {
+        "day": 25,
+        "minutes": 50
+      },
+      {
+        "day": 26,
+        "minutes": 45
+      },
+      {
+        "day": 27,
+        "minutes": 45
+      },
+      {
+        "day": 28,
+        "minutes": 45
+      },
+      {
+        "day": 29,
+        "minutes": 45
+      },
+      {
+        "day": 30,
+        "minutes": 50
+      }
+    ],
+    "lowSpokenDays": [
+      {
+        "day": 1,
+        "spokenMin": 8,
+        "sayWords": 713
+      },
+      {
+        "day": 2,
+        "spokenMin": 9,
+        "sayWords": 657
+      },
+      {
+        "day": 3,
+        "spokenMin": 12,
+        "sayWords": 1043
+      },
+      {
+        "day": 4,
+        "spokenMin": 12,
+        "sayWords": 1035
+      },
+      {
+        "day": 5,
+        "spokenMin": 12,
+        "sayWords": 1007
+      }
+    ],
+    "missingVisualDaysCount": 0
+  },
+  {
+    "name": "E-Commerce & Retail Management (Course 27)",
+    "prefix": "bcom_ecom",
+    "totalDays": 30,
+    "visualCount": 30,
+    "is30Days": true,
+    "is30Visuals": true,
+    "avgSayWordsPerDay": 2832,
+    "avgSpokenMinAt130Wpm": 21.8,
+    "minSpokenMin": 8,
+    "maxSpokenMin": 31,
+    "minLessonEst": 18,
+    "maxLessonEst": 41,
+    "partCountDefects": [],
+    "minutesFieldDefects": [
+      {
+        "day": 2,
+        "minutes": 44
+      }
+    ],
+    "lowSpokenDays": [
+      {
+        "day": 1,
+        "spokenMin": 8,
+        "sayWords": 708
+      },
+      {
+        "day": 2,
+        "spokenMin": 11,
+        "sayWords": 800
+      },
+      {
+        "day": 3,
+        "spokenMin": 16,
+        "sayWords": 1409
+      },
+      {
+        "day": 4,
+        "spokenMin": 16,
+        "sayWords": 1362
+      },
+      {
+        "day": 5,
+        "spokenMin": 16,
+        "sayWords": 1353
+      }
+    ],
+    "missingVisualDaysCount": 0
+  },
+  {
+    "name": "Digital Marketing & Analytics (Course 28 - DMKT)",
+    "prefix": "bcom_dmkt",
+    "totalDays": 30,
+    "visualCount": 30,
+    "is30Days": true,
+    "is30Visuals": true,
+    "avgSayWordsPerDay": 2801,
+    "avgSpokenMinAt130Wpm": 21.5,
+    "minSpokenMin": 9,
+    "maxSpokenMin": 195,
+    "minLessonEst": 19,
+    "maxLessonEst": 205,
+    "partCountDefects": [],
+    "minutesFieldDefects": [
+      {
+        "day": 2,
+        "minutes": 42
+      },
+      {
+        "day": 3,
+        "minutes": 45
+      },
+      {
+        "day": 4,
+        "minutes": 46
+      },
+      {
+        "day": 5,
+        "minutes": 48
+      },
+      {
+        "day": 10,
+        "minutes": 45
+      }
+    ],
+    "lowSpokenDays": [
+      {
+        "day": 1,
+        "spokenMin": 9,
+        "sayWords": 755
+      },
+      {
+        "day": 2,
+        "spokenMin": 10,
+        "sayWords": 668
+      },
+      {
+        "day": 3,
+        "spokenMin": 10,
+        "sayWords": 807
+      },
+      {
+        "day": 4,
+        "spokenMin": 9,
+        "sayWords": 755
+      },
+      {
+        "day": 5,
+        "spokenMin": 9,
+        "sayWords": 787
+      }
+    ],
+    "missingVisualDaysCount": 0
+  },
+  {
+    "name": "Marketing Strategy & Brand Equity (Course 28 - MKT)",
+    "prefix": "bcom-marketing",
+    "totalDays": 30,
+    "visualCount": 30,
+    "is30Days": true,
+    "is30Visuals": true,
+    "avgSayWordsPerDay": 2755,
+    "avgSpokenMinAt130Wpm": 21.2,
+    "minSpokenMin": 12,
+    "maxSpokenMin": 31,
+    "minLessonEst": 22,
+    "maxLessonEst": 41,
+    "partCountDefects": [],
+    "minutesFieldDefects": [
+      {
+        "day": 1,
+        "minutes": 42
+      },
+      {
+        "day": 2,
+        "minutes": 42
+      },
+      {
+        "day": 3,
+        "minutes": 44
+      },
+      {
+        "day": 4,
+        "minutes": 42
+      },
+      {
+        "day": 5,
+        "minutes": 45
+      },
+      {
+        "day": 6,
+        "minutes": 45
+      },
+      {
+        "day": 7,
+        "minutes": 45
+      },
+      {
+        "day": 8,
+        "minutes": 45
+      },
+      {
+        "day": 9,
+        "minutes": 45
+      },
+      {
+        "day": 10,
+        "minutes": 45
+      },
+      {
+        "day": 11,
+        "minutes": 45
+      },
+      {
+        "day": 12,
+        "minutes": 45
+      },
+      {
+        "day": 13,
+        "minutes": 45
+      },
+      {
+        "day": 14,
+        "minutes": 45
+      },
+      {
+        "day": 15,
+        "minutes": 45
+      },
+      {
+        "day": 16,
+        "minutes": 45
+      },
+      {
+        "day": 17,
+        "minutes": 45
+      },
+      {
+        "day": 18,
+        "minutes": 45
+      },
+      {
+        "day": 19,
+        "minutes": 45
+      },
+      {
+        "day": 20,
+        "minutes": 45
+      },
+      {
+        "day": 21,
+        "minutes": 45
+      },
+      {
+        "day": 22,
+        "minutes": 45
+      },
+      {
+        "day": 23,
+        "minutes": 45
+      },
+      {
+        "day": 24,
+        "minutes": 45
+      },
+      {
+        "day": 25,
+        "minutes": 45
+      },
+      {
+        "day": 26,
+        "minutes": 45
+      },
+      {
+        "day": 27,
+        "minutes": 45
+      },
+      {
+        "day": 28,
+        "minutes": 45
+      },
+      {
+        "day": 29,
+        "minutes": 45
+      },
+      {
+        "day": 30,
+        "minutes": 45
+      }
+    ],
+    "lowSpokenDays": [
+      {
+        "day": 1,
+        "spokenMin": 12,
+        "sayWords": 981
+      },
+      {
+        "day": 2,
+        "spokenMin": 13,
+        "sayWords": 1072
+      },
+      {
+        "day": 3,
+        "spokenMin": 13,
+        "sayWords": 1081
+      },
+      {
+        "day": 4,
+        "spokenMin": 14,
+        "sayWords": 1109
+      },
+      {
+        "day": 5,
+        "spokenMin": 13,
+        "sayWords": 1121
+      }
+    ],
+    "missingVisualDaysCount": 0
+  },
+  {
+    "name": "Banking & Financial Services (Course 29)",
+    "prefix": "bcom_ban",
+    "totalDays": 30,
+    "visualCount": 30,
+    "is30Days": true,
+    "is30Visuals": true,
+    "avgSayWordsPerDay": 2761,
+    "avgSpokenMinAt130Wpm": 21.2,
+    "minSpokenMin": 9,
+    "maxSpokenMin": 30,
+    "minLessonEst": 19,
+    "maxLessonEst": 40,
+    "partCountDefects": [],
+    "minutesFieldDefects": [
+      {
+        "day": 2,
+        "minutes": 42
+      },
+      {
+        "day": 3,
+        "minutes": 45
+      },
+      {
+        "day": 4,
+        "minutes": 45
+      },
+      {
+        "day": 5,
+        "minutes": 50
+      },
+      {
+        "day": 6,
+        "minutes": 45
+      },
+      {
+        "day": 7,
+        "minutes": 45
+      },
+      {
+        "day": 8,
+        "minutes": 45
+      },
+      {
+        "day": 9,
+        "minutes": 45
+      },
+      {
+        "day": 10,
+        "minutes": 45
+      },
+      {
+        "day": 11,
+        "minutes": 45
+      },
+      {
+        "day": 12,
+        "minutes": 45
+      },
+      {
+        "day": 13,
+        "minutes": 45
+      },
+      {
+        "day": 14,
+        "minutes": 45
+      },
+      {
+        "day": 15,
+        "minutes": 45
+      }
+    ],
+    "lowSpokenDays": [
+      {
+        "day": 1,
+        "spokenMin": 9,
+        "sayWords": 786
+      },
+      {
+        "day": 2,
+        "spokenMin": 12,
+        "sayWords": 904
+      },
+      {
+        "day": 3,
+        "spokenMin": 14,
+        "sayWords": 1153
+      },
+      {
+        "day": 4,
+        "spokenMin": 12,
+        "sayWords": 1007
+      },
+      {
+        "day": 5,
+        "spokenMin": 11,
+        "sayWords": 891
+      }
+    ],
+    "missingVisualDaysCount": 0
+  },
+  {
+    "name": "Operations Management & TQM (Course 30)",
+    "prefix": "bcom_ops",
+    "totalDays": 30,
+    "visualCount": 30,
+    "is30Days": true,
+    "is30Visuals": true,
+    "avgSayWordsPerDay": 2543,
+    "avgSpokenMinAt130Wpm": 19.6,
+    "minSpokenMin": 10,
+    "maxSpokenMin": 37,
+    "minLessonEst": 20,
+    "maxLessonEst": 47,
+    "partCountDefects": [],
+    "minutesFieldDefects": [
+      {
+        "day": 2,
+        "minutes": 42
+      },
+      {
+        "day": 3,
+        "minutes": 42
+      },
+      {
+        "day": 4,
+        "minutes": 44
+      },
+      {
+        "day": 5,
+        "minutes": 48
+      },
+      {
+        "day": 6,
+        "minutes": 45
+      },
+      {
+        "day": 7,
+        "minutes": 45
+      },
+      {
+        "day": 8,
+        "minutes": 45
+      },
+      {
+        "day": 9,
+        "minutes": 45
+      },
+      {
+        "day": 10,
+        "minutes": 45
+      },
+      {
+        "day": 11,
+        "minutes": 45
+      },
+      {
+        "day": 12,
+        "minutes": 45
+      },
+      {
+        "day": 13,
+        "minutes": 45
+      },
+      {
+        "day": 14,
+        "minutes": 45
+      },
+      {
+        "day": 15,
+        "minutes": 50
+      },
+      {
+        "day": 16,
+        "minutes": 45
+      },
+      {
+        "day": 17,
+        "minutes": 45
+      },
+      {
+        "day": 18,
+        "minutes": 45
+      },
+      {
+        "day": 19,
+        "minutes": 45
+      },
+      {
+        "day": 20,
+        "minutes": 50
+      },
+      {
+        "day": 21,
+        "minutes": 45
+      },
+      {
+        "day": 22,
+        "minutes": 45
+      },
+      {
+        "day": 23,
+        "minutes": 45
+      },
+      {
+        "day": 24,
+        "minutes": 45
+      },
+      {
+        "day": 25,
+        "minutes": 50
+      },
+      {
+        "day": 26,
+        "minutes": 45
+      },
+      {
+        "day": 27,
+        "minutes": 45
+      },
+      {
+        "day": 28,
+        "minutes": 45
+      },
+      {
+        "day": 29,
+        "minutes": 45
+      },
+      {
+        "day": 30,
+        "minutes": 50
+      }
+    ],
+    "lowSpokenDays": [
+      {
+        "day": 1,
+        "spokenMin": 10,
+        "sayWords": 699
+      },
+      {
+        "day": 2,
+        "spokenMin": 10,
+        "sayWords": 733
+      },
+      {
+        "day": 3,
+        "spokenMin": 14,
+        "sayWords": 1219
+      },
+      {
+        "day": 4,
+        "spokenMin": 13,
+        "sayWords": 1077
+      },
+      {
+        "day": 5,
+        "spokenMin": 12,
+        "sayWords": 983
+      }
+    ],
+    "missingVisualDaysCount": 0
+  },
+  {
+    "name": "AI, ERP & Tech in Business (Course 31)",
+    "prefix": "bcom_ait",
+    "totalDays": 30,
+    "visualCount": 30,
+    "is30Days": true,
+    "is30Visuals": true,
+    "avgSayWordsPerDay": 2923,
+    "avgSpokenMinAt130Wpm": 22.5,
+    "minSpokenMin": 10,
+    "maxSpokenMin": 36,
+    "minLessonEst": 20,
+    "maxLessonEst": 46,
+    "partCountDefects": [],
+    "minutesFieldDefects": [
+      {
+        "day": 2,
+        "minutes": 42
+      },
+      {
+        "day": 3,
+        "minutes": 42
+      },
+      {
+        "day": 4,
+        "minutes": 44
+      },
+      {
+        "day": 5,
+        "minutes": 48
+      },
+      {
+        "day": 15,
+        "minutes": 50
+      },
+      {
+        "day": 20,
+        "minutes": 50
+      },
+      {
+        "day": 25,
+        "minutes": 50
+      },
+      {
+        "day": 30,
+        "minutes": 50
+      }
+    ],
+    "lowSpokenDays": [
+      {
+        "day": 1,
+        "spokenMin": 10,
+        "sayWords": 714
+      },
+      {
+        "day": 2,
+        "spokenMin": 10,
+        "sayWords": 720
+      },
+      {
+        "day": 3,
+        "spokenMin": 11,
+        "sayWords": 915
+      },
+      {
+        "day": 4,
+        "spokenMin": 12,
+        "sayWords": 940
+      },
+      {
+        "day": 5,
+        "spokenMin": 10,
+        "sayWords": 819
+      }
+    ],
+    "missingVisualDaysCount": 0
+  },
+  {
+    "name": "Taxation & GST",
+    "prefix": "bcom_tax",
+    "totalDays": 5,
+    "visualCount": 5,
+    "is30Days": false,
+    "is30Visuals": false,
+    "avgSayWordsPerDay": 837,
+    "avgSpokenMinAt130Wpm": 6.4,
+    "minSpokenMin": 9,
+    "maxSpokenMin": 12,
+    "minLessonEst": 19,
+    "maxLessonEst": 22,
+    "partCountDefects": [],
+    "minutesFieldDefects": [
+      {
+        "day": 2,
+        "minutes": 42
+      },
+      {
+        "day": 3,
+        "minutes": 45
+      },
+      {
+        "day": 4,
+        "minutes": 45
+      },
+      {
+        "day": 5,
+        "minutes": 50
+      }
+    ],
+    "lowSpokenDays": [
+      {
+        "day": 1,
+        "spokenMin": 9,
+        "sayWords": 780
+      },
+      {
+        "day": 2,
+        "spokenMin": 12,
+        "sayWords": 917
+      },
+      {
+        "day": 3,
+        "spokenMin": 11,
+        "sayWords": 769
+      },
+      {
+        "day": 4,
+        "spokenMin": 11,
+        "sayWords": 817
+      },
+      {
+        "day": 5,
+        "spokenMin": 11,
+        "sayWords": 903
+      }
+    ],
+    "missingVisualDaysCount": 25
+  },
+  {
+    "name": "Auditing & Assurance",
+    "prefix": "bcom_aud",
+    "totalDays": 5,
+    "visualCount": 5,
+    "is30Days": false,
+    "is30Visuals": false,
+    "avgSayWordsPerDay": 826,
+    "avgSpokenMinAt130Wpm": 6.4,
+    "minSpokenMin": 10,
+    "maxSpokenMin": 11,
+    "minLessonEst": 20,
+    "maxLessonEst": 21,
+    "partCountDefects": [],
+    "minutesFieldDefects": [
+      {
+        "day": 2,
+        "minutes": 42
+      },
+      {
+        "day": 3,
+        "minutes": 45
+      },
+      {
+        "day": 4,
+        "minutes": 45
+      },
+      {
+        "day": 5,
+        "minutes": 50
+      }
+    ],
+    "lowSpokenDays": [
+      {
+        "day": 1,
+        "spokenMin": 10,
+        "sayWords": 850
+      },
+      {
+        "day": 2,
+        "spokenMin": 11,
+        "sayWords": 926
+      },
+      {
+        "day": 3,
+        "spokenMin": 10,
+        "sayWords": 744
+      },
+      {
+        "day": 4,
+        "spokenMin": 10,
+        "sayWords": 753
+      },
+      {
+        "day": 5,
+        "spokenMin": 11,
+        "sayWords": 857
+      }
+    ],
+    "missingVisualDaysCount": 25
+  },
+  {
+    "name": "Business Analytics & Forecasting",
+    "prefix": "bcom_ana",
+    "totalDays": 5,
+    "visualCount": 5,
+    "is30Days": false,
+    "is30Visuals": false,
+    "avgSayWordsPerDay": 830,
+    "avgSpokenMinAt130Wpm": 6.4,
+    "minSpokenMin": 10,
+    "maxSpokenMin": 12,
+    "minLessonEst": 20,
+    "maxLessonEst": 22,
+    "partCountDefects": [],
+    "minutesFieldDefects": [
+      {
+        "day": 2,
+        "minutes": 45
+      }
+    ],
+    "lowSpokenDays": [
+      {
+        "day": 1,
+        "spokenMin": 10,
+        "sayWords": 701
+      },
+      {
+        "day": 2,
+        "spokenMin": 10,
+        "sayWords": 777
+      },
+      {
+        "day": 3,
+        "spokenMin": 12,
+        "sayWords": 968
+      },
+      {
+        "day": 4,
+        "spokenMin": 11,
+        "sayWords": 880
+      },
+      {
+        "day": 5,
+        "spokenMin": 10,
+        "sayWords": 824
+      }
+    ],
+    "missingVisualDaysCount": 25
+  },
+  {
+    "name": "IoT Embedded Systems & MCU",
+    "prefix": "iot_emb",
+    "totalDays": 5,
+    "visualCount": 5,
+    "is30Days": false,
+    "is30Visuals": false,
+    "avgSayWordsPerDay": 850,
+    "avgSpokenMinAt130Wpm": 6.5,
+    "minSpokenMin": 7,
+    "maxSpokenMin": 13,
+    "minLessonEst": 17,
+    "maxLessonEst": 23,
+    "partCountDefects": [],
+    "minutesFieldDefects": [
+      {
+        "day": 1,
+        "minutes": 30
+      },
+      {
+        "day": 2,
+        "minutes": 45
+      },
+      {
+        "day": 4,
+        "minutes": 45
+      }
+    ],
+    "lowSpokenDays": [
+      {
+        "day": 1,
+        "spokenMin": 7,
+        "sayWords": 562
+      },
+      {
+        "day": 2,
+        "spokenMin": 9,
+        "sayWords": 671
+      },
+      {
+        "day": 3,
+        "spokenMin": 13,
+        "sayWords": 1100
+      },
+      {
+        "day": 4,
+        "spokenMin": 12,
+        "sayWords": 996
+      },
+      {
+        "day": 5,
+        "spokenMin": 11,
+        "sayWords": 919
+      }
+    ],
+    "missingVisualDaysCount": 25
+  },
+  {
+    "name": "IoT Edge Computing & TinyML",
+    "prefix": "iot_edge",
+    "totalDays": 5,
+    "visualCount": 5,
+    "is30Days": false,
+    "is30Visuals": false,
+    "avgSayWordsPerDay": 921,
+    "avgSpokenMinAt130Wpm": 7.1,
+    "minSpokenMin": 10,
+    "maxSpokenMin": 13,
+    "minLessonEst": 20,
+    "maxLessonEst": 23,
+    "partCountDefects": [],
+    "minutesFieldDefects": [
+      {
+        "day": 2,
+        "minutes": 45
+      }
+    ],
+    "lowSpokenDays": [
+      {
+        "day": 1,
+        "spokenMin": 11,
+        "sayWords": 792
+      },
+      {
+        "day": 2,
+        "spokenMin": 10,
+        "sayWords": 770
+      },
+      {
+        "day": 3,
+        "spokenMin": 13,
+        "sayWords": 1126
+      },
+      {
+        "day": 4,
+        "spokenMin": 12,
+        "sayWords": 1031
+      },
+      {
+        "day": 5,
+        "spokenMin": 11,
+        "sayWords": 888
+      }
+    ],
+    "missingVisualDaysCount": 25
+  },
+  {
+    "name": "IoT Networking & Wireless Protocols",
+    "prefix": "iot_net",
+    "totalDays": 5,
+    "visualCount": 5,
+    "is30Days": false,
+    "is30Visuals": false,
+    "avgSayWordsPerDay": 885,
+    "avgSpokenMinAt130Wpm": 6.8,
+    "minSpokenMin": 10,
+    "maxSpokenMin": 12,
+    "minLessonEst": 20,
+    "maxLessonEst": 22,
+    "partCountDefects": [],
+    "minutesFieldDefects": [
+      {
+        "day": 2,
+        "minutes": 45
+      }
+    ],
+    "lowSpokenDays": [
+      {
+        "day": 1,
+        "spokenMin": 11,
+        "sayWords": 823
+      },
+      {
+        "day": 2,
+        "spokenMin": 11,
+        "sayWords": 804
+      },
+      {
+        "day": 3,
+        "spokenMin": 12,
+        "sayWords": 975
+      },
+      {
+        "day": 4,
+        "spokenMin": 10,
+        "sayWords": 862
+      },
+      {
+        "day": 5,
+        "spokenMin": 11,
+        "sayWords": 960
+      }
+    ],
+    "missingVisualDaysCount": 25
+  },
+  {
+    "name": "IoT Security & Hardware Integrity",
+    "prefix": "iot_sec",
+    "totalDays": 5,
+    "visualCount": 5,
+    "is30Days": false,
+    "is30Visuals": false,
+    "avgSayWordsPerDay": 972,
+    "avgSpokenMinAt130Wpm": 7.5,
+    "minSpokenMin": 11,
+    "maxSpokenMin": 13,
+    "minLessonEst": 21,
+    "maxLessonEst": 23,
+    "partCountDefects": [],
+    "minutesFieldDefects": [
+      {
+        "day": 2,
+        "minutes": 45
+      }
+    ],
+    "lowSpokenDays": [
+      {
+        "day": 1,
+        "spokenMin": 11,
+        "sayWords": 809
+      },
+      {
+        "day": 2,
+        "spokenMin": 12,
+        "sayWords": 924
+      },
+      {
+        "day": 3,
+        "spokenMin": 12,
+        "sayWords": 1012
+      },
+      {
+        "day": 4,
+        "spokenMin": 13,
+        "sayWords": 1165
+      },
+      {
+        "day": 5,
+        "spokenMin": 11,
+        "sayWords": 952
+      }
+    ],
+    "missingVisualDaysCount": 25
+  }
+]

@@ -1,0 +1,659 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom-accounting",
+  "day": 38,
+  "promptSha": "prompt_sha_bcom_accounting_day38_v1",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Capital Market Mandate of EPS, SEBI LODR Disclosure & Numerator Adjustments",
+      "codeHash": "46daa21d9fde40d2fc08935dfdc3d87937e32bc8c1c417487ad140d25e27c87c",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Capital Market Mandate of EPS, SEBI LODR... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($6,005,000) for Capital Market Mandate of EPS, SEBI LODR...",
+            "title": "Day 38 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 6005000,
+            "totalCredit": 6005000,
+            "entries": [
+              {
+                "id": "JNL-3801",
+                "account": "Net Profit Available for Equity Shareholders",
+                "debit": 6005000,
+                "balance": 6005000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 38"
+              },
+              {
+                "id": "JNL-3802",
+                "account": "Diluted Capital Base Allocation / Retained Earnings",
+                "credit": 6005000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & amortization accrual ($179,597).",
+            "title": "Day 38 Journal \u2014 Accrual / Amortization Adjustment",
+            "isBalanced": true,
+            "totalDebit": 6184597,
+            "totalCredit": 6184597,
+            "entries": [
+              {
+                "id": "JNL-3801",
+                "account": "Net Profit Available for Equity Shareholders",
+                "debit": 6005000,
+                "balance": 6005000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3803",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 179597,
+                "balance": 6184597,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-3802",
+                "account": "Diluted Capital Base Allocation / Retained Earnings",
+                "credit": 6184597,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory disclosures.",
+            "title": "Day 38 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 6184597,
+            "totalCredit": 6184597,
+            "entries": [
+              {
+                "id": "JNL-3801",
+                "account": "Net Profit Available for Equity Shareholders",
+                "debit": 6005000,
+                "balance": 6005000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3803",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 179597,
+                "balance": 6184597,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3802",
+                "account": "Diluted Capital Base Allocation / Retained Earnings",
+                "credit": 6184597,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 38 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 6184597,
+            "totalCredit": 6184597,
+            "entries": [
+              {
+                "id": "JNL-3801",
+                "account": "Net Profit Available for Equity Shareholders",
+                "debit": 6005000,
+                "balance": 6005000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3803",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 179597,
+                "balance": 6184597,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3802",
+                "account": "Diluted Capital Base Allocation / Retained Earnings",
+                "credit": 6184597,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Denominator Architecture: WANOS Calculations & Retrospective Non-Cash Adjustments",
+      "codeHash": "46daa21d9fde40d2fc08935dfdc3d87937e32bc8c1c417487ad140d25e27c87c",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Denominator Architecture: WANOS Calculat... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($6,010,000) for Denominator Architecture: WANOS Calculat...",
+            "title": "Day 38 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 6010000,
+            "totalCredit": 6010000,
+            "entries": [
+              {
+                "id": "JNL-3801",
+                "account": "Net Profit Available for Equity Shareholders",
+                "debit": 6010000,
+                "balance": 6010000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 38"
+              },
+              {
+                "id": "JNL-3802",
+                "account": "Diluted Capital Base Allocation / Retained Earnings",
+                "credit": 6010000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & amortization accrual ($179,597).",
+            "title": "Day 38 Journal \u2014 Accrual / Amortization Adjustment",
+            "isBalanced": true,
+            "totalDebit": 6189597,
+            "totalCredit": 6189597,
+            "entries": [
+              {
+                "id": "JNL-3801",
+                "account": "Net Profit Available for Equity Shareholders",
+                "debit": 6010000,
+                "balance": 6010000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3803",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 179597,
+                "balance": 6189597,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-3802",
+                "account": "Diluted Capital Base Allocation / Retained Earnings",
+                "credit": 6189597,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory disclosures.",
+            "title": "Day 38 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 6189597,
+            "totalCredit": 6189597,
+            "entries": [
+              {
+                "id": "JNL-3801",
+                "account": "Net Profit Available for Equity Shareholders",
+                "debit": 6010000,
+                "balance": 6010000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3803",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 179597,
+                "balance": 6189597,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3802",
+                "account": "Diluted Capital Base Allocation / Retained Earnings",
+                "credit": 6189597,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 38 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 6189597,
+            "totalCredit": 6189597,
+            "entries": [
+              {
+                "id": "JNL-3801",
+                "account": "Net Profit Available for Equity Shareholders",
+                "debit": 6010000,
+                "balance": 6010000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3803",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 179597,
+                "balance": 6189597,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3802",
+                "account": "Diluted Capital Base Allocation / Retained Earnings",
+                "credit": 6189597,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Dilution Mechanics, Potential Ordinary Shares & The Anti-Dilution Principle",
+      "codeHash": "46daa21d9fde40d2fc08935dfdc3d87937e32bc8c1c417487ad140d25e27c87c",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Dilution Mechanics, Potential Ordinary S... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($6,015,000) for Dilution Mechanics, Potential Ordinary S...",
+            "title": "Day 38 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 6015000,
+            "totalCredit": 6015000,
+            "entries": [
+              {
+                "id": "JNL-3801",
+                "account": "Net Profit Available for Equity Shareholders",
+                "debit": 6015000,
+                "balance": 6015000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 38"
+              },
+              {
+                "id": "JNL-3802",
+                "account": "Diluted Capital Base Allocation / Retained Earnings",
+                "credit": 6015000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & amortization accrual ($179,597).",
+            "title": "Day 38 Journal \u2014 Accrual / Amortization Adjustment",
+            "isBalanced": true,
+            "totalDebit": 6194597,
+            "totalCredit": 6194597,
+            "entries": [
+              {
+                "id": "JNL-3801",
+                "account": "Net Profit Available for Equity Shareholders",
+                "debit": 6015000,
+                "balance": 6015000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3803",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 179597,
+                "balance": 6194597,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-3802",
+                "account": "Diluted Capital Base Allocation / Retained Earnings",
+                "credit": 6194597,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory disclosures.",
+            "title": "Day 38 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 6194597,
+            "totalCredit": 6194597,
+            "entries": [
+              {
+                "id": "JNL-3801",
+                "account": "Net Profit Available for Equity Shareholders",
+                "debit": 6015000,
+                "balance": 6015000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3803",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 179597,
+                "balance": 6194597,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3802",
+                "account": "Diluted Capital Base Allocation / Retained Earnings",
+                "credit": 6194597,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 38 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 6194597,
+            "totalCredit": 6194597,
+            "entries": [
+              {
+                "id": "JNL-3801",
+                "account": "Net Profit Available for Equity Shareholders",
+                "debit": 6015000,
+                "balance": 6015000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3803",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 179597,
+                "balance": 6194597,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3802",
+                "account": "Diluted Capital Base Allocation / Retained Earnings",
+                "credit": 6194597,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Treasury Stock Method for Options & The If-Converted Method for Debt",
+      "codeHash": "46daa21d9fde40d2fc08935dfdc3d87937e32bc8c1c417487ad140d25e27c87c",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "The Treasury Stock Method for Options & ... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($6,020,000) for The Treasury Stock Method for Options & ...",
+            "title": "Day 38 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 6020000,
+            "totalCredit": 6020000,
+            "entries": [
+              {
+                "id": "JNL-3801",
+                "account": "Net Profit Available for Equity Shareholders",
+                "debit": 6020000,
+                "balance": 6020000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 38"
+              },
+              {
+                "id": "JNL-3802",
+                "account": "Diluted Capital Base Allocation / Retained Earnings",
+                "credit": 6020000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & amortization accrual ($179,597).",
+            "title": "Day 38 Journal \u2014 Accrual / Amortization Adjustment",
+            "isBalanced": true,
+            "totalDebit": 6199597,
+            "totalCredit": 6199597,
+            "entries": [
+              {
+                "id": "JNL-3801",
+                "account": "Net Profit Available for Equity Shareholders",
+                "debit": 6020000,
+                "balance": 6020000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3803",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 179597,
+                "balance": 6199597,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-3802",
+                "account": "Diluted Capital Base Allocation / Retained Earnings",
+                "credit": 6199597,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory disclosures.",
+            "title": "Day 38 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 6199597,
+            "totalCredit": 6199597,
+            "entries": [
+              {
+                "id": "JNL-3801",
+                "account": "Net Profit Available for Equity Shareholders",
+                "debit": 6020000,
+                "balance": 6020000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3803",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 179597,
+                "balance": 6199597,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3802",
+                "account": "Diluted Capital Base Allocation / Retained Earnings",
+                "credit": 6199597,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 38 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 6199597,
+            "totalCredit": 6199597,
+            "entries": [
+              {
+                "id": "JNL-3801",
+                "account": "Net Profit Available for Equity Shareholders",
+                "debit": 6020000,
+                "balance": 6020000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3803",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 179597,
+                "balance": 6199597,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3802",
+                "account": "Diluted Capital Base Allocation / Retained Earnings",
+                "credit": 6199597,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Python EPS Engine Execution, Dilution Verification & Ind AS 33 Certification",
+      "codeHash": "46daa21d9fde40d2fc08935dfdc3d87937e32bc8c1c417487ad140d25e27c87c",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Python EPS Engine Execution, Dilution Ve... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($6,025,000) for Python EPS Engine Execution, Dilution Ve...",
+            "title": "Day 38 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 6025000,
+            "totalCredit": 6025000,
+            "entries": [
+              {
+                "id": "JNL-3801",
+                "account": "Net Profit Available for Equity Shareholders",
+                "debit": 6025000,
+                "balance": 6025000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 38"
+              },
+              {
+                "id": "JNL-3802",
+                "account": "Diluted Capital Base Allocation / Retained Earnings",
+                "credit": 6025000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & amortization accrual ($179,597).",
+            "title": "Day 38 Journal \u2014 Accrual / Amortization Adjustment",
+            "isBalanced": true,
+            "totalDebit": 6204597,
+            "totalCredit": 6204597,
+            "entries": [
+              {
+                "id": "JNL-3801",
+                "account": "Net Profit Available for Equity Shareholders",
+                "debit": 6025000,
+                "balance": 6025000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3803",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 179597,
+                "balance": 6204597,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-3802",
+                "account": "Diluted Capital Base Allocation / Retained Earnings",
+                "credit": 6204597,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory disclosures.",
+            "title": "Day 38 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 6204597,
+            "totalCredit": 6204597,
+            "entries": [
+              {
+                "id": "JNL-3801",
+                "account": "Net Profit Available for Equity Shareholders",
+                "debit": 6025000,
+                "balance": 6025000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3803",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 179597,
+                "balance": 6204597,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3802",
+                "account": "Diluted Capital Base Allocation / Retained Earnings",
+                "credit": 6204597,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 38 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 6204597,
+            "totalCredit": 6204597,
+            "entries": [
+              {
+                "id": "JNL-3801",
+                "account": "Net Profit Available for Equity Shareholders",
+                "debit": 6025000,
+                "balance": 6025000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3803",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 179597,
+                "balance": 6204597,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3802",
+                "account": "Diluted Capital Base Allocation / Retained Earnings",
+                "credit": 6204597,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

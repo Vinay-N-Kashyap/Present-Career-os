@@ -1,0 +1,294 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_law",
+  "day": 42,
+  "promptSha": "prompt_sha_bcom_law_day42_group_insolvency_videocon_v1",
+  "model": "google/gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Group Insolvency Dilemma: Corporate Personality vs Economic Enterprise Reality",
+      "codeHash": "45dfe8dbdbebbe544f62b82b144d9f9c8f8ed6848baaebd82d96648d67c58b9d",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Group Insolvency Dilemma: Corporate Personality vs Economic Enterprise Reality Architecture",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Salomon Principle",
+            "subtext": "Separate legal personality across group entities"
+          },
+          {
+            "id": "s2",
+            "name": "Economic Unity",
+            "subtext": "Integrated supply chains and co-dependent cash flows"
+          },
+          {
+            "id": "s3",
+            "name": "Fragmented CIRP Risk",
+            "subtext": "Piecemeal insolvency destroying enterprise value"
+          },
+          {
+            "id": "s4",
+            "name": "Working Group Framework",
+            "subtext": "Injeti Srinivas recommendations on group distress"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Modern commercial conglomerates operate through constellations of subsidiaries.",
+            "activeStageId": "s1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say1",
+            "caption": "Corporate personality doctrines clash with economic enterprise integration.",
+            "activeStageId": "s2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Infrastructure conglomerates consolidate complementary assets across entities.",
+            "activeStageId": "s3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Group interdependence engines evaluate complementary assets and maintainability.",
+            "activeStageId": "s4",
+            "statusBadge": "done"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Procedural Coordination vs Substantive Consolidation: Two Distinct Judicial Mechanisms",
+      "codeHash": "52a4c5631f51c02747e655e653ce79fa89b6a84436bf420e22255a98ec65884f",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Procedural Coordination vs Substantive Consolidation: Two Distinct Judicial Mechanisms Architecture",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Procedural Coordination",
+            "subtext": "Common bench and resolution professional"
+          },
+          {
+            "id": "s2",
+            "name": "Joint Consultations",
+            "subtext": "Synchronized meetings for enterprise alignment"
+          },
+          {
+            "id": "s3",
+            "name": "Substantive Consolidation",
+            "subtext": "Complete pooling of enterprise assets and debts"
+          },
+          {
+            "id": "s4",
+            "name": "Exceptional Remedy",
+            "subtext": "Stringent judicial bar against casual asset mingling"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Procedural coordination streamlines administrative hearings across entities.",
+            "activeStageId": "s1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say1",
+            "caption": "Insolvency frameworks distinguish procedural coordination from consolidation.",
+            "activeStageId": "s2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Telecommunications subsidiaries coordinate proceedings while preserving ledgers.",
+            "activeStageId": "s3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Coordination classifiers test balance sheet pooling and evaluate criteria.",
+            "activeStageId": "s4",
+            "statusBadge": "done"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Landmark Videocon Industries Jurisprudence: The Seven-Pronged Consolidation Test",
+      "codeHash": "356854b7050831987eee604da36e9cdaef693a28410a82668c0b6c141d60631c",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "The Landmark Videocon Industries Jurisprudence: The Seven-Pronged Consolidation Test Architecture",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Videocon Precedent",
+            "subtext": "Consolidation of thirteen group corporate debtors"
+          },
+          {
+            "id": "s2",
+            "name": "Common Control Factor",
+            "subtext": "Promoter dominance and intertwined management"
+          },
+          {
+            "id": "s3",
+            "name": "Commingled Assets",
+            "subtext": "Unsegregated accounting and pooled bank accounts"
+          },
+          {
+            "id": "s4",
+            "name": "Single Resolution Plan",
+            "subtext": "Integrated resolution of entire conglomerate"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Judicial consolidation doctrines resolve entangled corporate conglomerates.",
+            "activeStageId": "s1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say1",
+            "caption": "Consolidation doctrines resolve entangled corporate group liabilities.",
+            "activeStageId": "s2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Conglomerate group entities consolidate under seven pronged judicial tests.",
+            "activeStageId": "s3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Consolidation engines test criteria scores and evaluate judicial rulings.",
+            "activeStageId": "s4",
+            "statusBadge": "done"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cross-Guarantees, Intra-Group Debt & The Double Dipping Bar",
+      "codeHash": "477d24c1ae5be018839ab2a52563dbedf4fe0ba94bf7f8c5a91a63710e4ece01",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Cross-Guarantees, Intra-Group Debt & The Double Dipping Bar Architecture",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Cross Guarantee Networks",
+            "subtext": "Parent corporate guarantees for subsidiary loans"
+          },
+          {
+            "id": "s2",
+            "name": "Double Dipping Bar",
+            "subtext": "Preventing creditors from claiming duplicate payouts"
+          },
+          {
+            "id": "s3",
+            "name": "Intra Group Quashing",
+            "subtext": "Extinguishment of internal inter-company ledgers"
+          },
+          {
+            "id": "s4",
+            "name": "Equitable Subordination",
+            "subtext": "Subordinating insider claims to third party banks"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Cross guarantee networks create complex interlocking corporate liabilities.",
+            "activeStageId": "s1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say1",
+            "caption": "Interlocking guarantee structures require strict double dipping prohibitions.",
+            "activeStageId": "s2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Commercial bank lending syndicates adjust overlapping cross guarantee claims.",
+            "activeStageId": "s3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Guarantee audit engines quash circular liabilities and enforce recovery caps.",
+            "activeStageId": "s4",
+            "statusBadge": "done"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Anti-Pattern Defense & Outage Puzzle: The Siphoned Group Subsidiary & Fraudulent Consolidation Push",
+      "codeHash": "19de4fd259869c97f56c4cf144b021ddba98e9a52c2697e71de172e882d70c17",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Anti-Pattern Defense & Outage Puzzle: The Siphoned Group Subsidiary & Fraudulent Consolidation Push Architecture",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Siphoned Capital Detection",
+            "subtext": "Diverting loan funds through shell subsidiaries"
+          },
+          {
+            "id": "s2",
+            "name": "Fraudulent Consolidation",
+            "subtext": "Dumping liabilities into insolvent firms"
+          },
+          {
+            "id": "s3",
+            "name": "Independent Entity Defense",
+            "subtext": "Ring fencing solvent subsidiaries with distinct assets"
+          },
+          {
+            "id": "s4",
+            "name": "Calibrated NCLT Order",
+            "subtext": "Balancing distinct creditor property rights"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Predatory consolidation maneuvers threaten independent solvent subsidiaries.",
+            "activeStageId": "s1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say1",
+            "caption": "Restructuring litigation confronts abusive consolidation maneuvers.",
+            "activeStageId": "s2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Independent solvent pharmaceutical subsidiaries defeat parent consolidation.",
+            "activeStageId": "s3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Consolidation diagnostic engines protect solvent subsidiaries from contagion.",
+            "activeStageId": "s4",
+            "statusBadge": "done"
+          }
+        ]
+      }
+    }
+  ]
+}

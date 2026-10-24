@@ -1,0 +1,316 @@
+{
+  "prefix": "bcom-finance",
+  "day": 50,
+  "visuals": [
+    {
+      "step": "part-1",
+      "template": "ledger-sheet",
+      "data": {
+        "title": "LBO Ledger: Private Equity Mega-Fund Archi",
+        "caption": "Master private equity buyout ledger balancing debt equity.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 2500000000.0,
+          "totalCredit": 2500000000.0,
+          "rows": [
+            {
+              "account": "Acquired Enterprise Value",
+              "debit": 2500000000.0,
+              "credit": 0.0
+            },
+            {
+              "account": "Total Debt Financed",
+              "debit": 0.0,
+              "credit": 1500000000.0
+            },
+            {
+              "account": "Sponsor Equity Invested",
+              "debit": 0.0,
+              "credit": 1000000000.0
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Transaction Structuring",
+            "description": "Establish purchase price multiples and capital tranches."
+          },
+          {
+            "id": "say1",
+            "label": "Waterfall Execution",
+            "description": "Model cash flow generation and debt paydown trajectories."
+          },
+          {
+            "id": "example",
+            "label": "Returns Decomposition",
+            "description": "Decompose equity gains across operational and financial drivers."
+          },
+          {
+            "id": "tryIt",
+            "label": "Committee Verification",
+            "description": "Verify debt covenant compliance and emit cryptographic pass token."
+          }
+        ]
+      },
+      "codeBindings": [
+        {
+          "sourceCodeHash": "7fa6c28686f9790d965e455460de497f43f68e807d67386752f63fff54e6b2d4",
+          "variablePath": "engine.run",
+          "highlightLines": [
+            1,
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "step": "part-2",
+      "template": "ledger-sheet",
+      "data": {
+        "title": "LBO Ledger: Pillars 1 & 2 Synthesis: Capit",
+        "caption": "Master private equity buyout ledger balancing debt equity.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 2500000000.0,
+          "totalCredit": 2500000000.0,
+          "rows": [
+            {
+              "account": "Acquired Enterprise Value",
+              "debit": 2500000000.0,
+              "credit": 0.0
+            },
+            {
+              "account": "Total Debt Financed",
+              "debit": 0.0,
+              "credit": 1500000000.0
+            },
+            {
+              "account": "Sponsor Equity Invested",
+              "debit": 0.0,
+              "credit": 1000000000.0
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Transaction Structuring",
+            "description": "Establish purchase price multiples and capital tranches."
+          },
+          {
+            "id": "say1",
+            "label": "Waterfall Execution",
+            "description": "Model cash flow generation and debt paydown trajectories."
+          },
+          {
+            "id": "example",
+            "label": "Returns Decomposition",
+            "description": "Decompose equity gains across operational and financial drivers."
+          },
+          {
+            "id": "tryIt",
+            "label": "Committee Verification",
+            "description": "Verify debt covenant compliance and emit cryptographic pass token."
+          }
+        ]
+      },
+      "codeBindings": [
+        {
+          "sourceCodeHash": "7fa6c28686f9790d965e455460de497f43f68e807d67386752f63fff54e6b2d4",
+          "variablePath": "engine.run",
+          "highlightLines": [
+            1,
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "step": "part-3",
+      "template": "ledger-sheet",
+      "data": {
+        "title": "LBO Ledger: Pillars 3 & 4 Synthesis: Retur",
+        "caption": "Master private equity buyout ledger balancing debt equity.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 2500000000.0,
+          "totalCredit": 2500000000.0,
+          "rows": [
+            {
+              "account": "Acquired Enterprise Value",
+              "debit": 2500000000.0,
+              "credit": 0.0
+            },
+            {
+              "account": "Total Debt Financed",
+              "debit": 0.0,
+              "credit": 1500000000.0
+            },
+            {
+              "account": "Sponsor Equity Invested",
+              "debit": 0.0,
+              "credit": 1000000000.0
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Transaction Structuring",
+            "description": "Establish purchase price multiples and capital tranches."
+          },
+          {
+            "id": "say1",
+            "label": "Waterfall Execution",
+            "description": "Model cash flow generation and debt paydown trajectories."
+          },
+          {
+            "id": "example",
+            "label": "Returns Decomposition",
+            "description": "Decompose equity gains across operational and financial drivers."
+          },
+          {
+            "id": "tryIt",
+            "label": "Committee Verification",
+            "description": "Verify debt covenant compliance and emit cryptographic pass token."
+          }
+        ]
+      },
+      "codeBindings": [
+        {
+          "sourceCodeHash": "7fa6c28686f9790d965e455460de497f43f68e807d67386752f63fff54e6b2d4",
+          "variablePath": "engine.run",
+          "highlightLines": [
+            1,
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "step": "part-4",
+      "template": "ledger-sheet",
+      "data": {
+        "title": "LBO Ledger: Investment Committee Governanc",
+        "caption": "Master private equity buyout ledger balancing debt equity.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 2500000000.0,
+          "totalCredit": 2500000000.0,
+          "rows": [
+            {
+              "account": "Acquired Enterprise Value",
+              "debit": 2500000000.0,
+              "credit": 0.0
+            },
+            {
+              "account": "Total Debt Financed",
+              "debit": 0.0,
+              "credit": 1500000000.0
+            },
+            {
+              "account": "Sponsor Equity Invested",
+              "debit": 0.0,
+              "credit": 1000000000.0
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Transaction Structuring",
+            "description": "Establish purchase price multiples and capital tranches."
+          },
+          {
+            "id": "say1",
+            "label": "Waterfall Execution",
+            "description": "Model cash flow generation and debt paydown trajectories."
+          },
+          {
+            "id": "example",
+            "label": "Returns Decomposition",
+            "description": "Decompose equity gains across operational and financial drivers."
+          },
+          {
+            "id": "tryIt",
+            "label": "Committee Verification",
+            "description": "Verify debt covenant compliance and emit cryptographic pass token."
+          }
+        ]
+      },
+      "codeBindings": [
+        {
+          "sourceCodeHash": "7fa6c28686f9790d965e455460de497f43f68e807d67386752f63fff54e6b2d4",
+          "variablePath": "engine.run",
+          "highlightLines": [
+            1,
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "step": "part-5",
+      "template": "ledger-sheet",
+      "data": {
+        "title": "LBO Ledger: Production Capstone Simulator:",
+        "caption": "Master private equity buyout ledger balancing debt equity.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 2500000000.0,
+          "totalCredit": 2500000000.0,
+          "rows": [
+            {
+              "account": "Acquired Enterprise Value",
+              "debit": 2500000000.0,
+              "credit": 0.0
+            },
+            {
+              "account": "Total Debt Financed",
+              "debit": 0.0,
+              "credit": 1500000000.0
+            },
+            {
+              "account": "Sponsor Equity Invested",
+              "debit": 0.0,
+              "credit": 1000000000.0
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Transaction Structuring",
+            "description": "Establish purchase price multiples and capital tranches."
+          },
+          {
+            "id": "say1",
+            "label": "Waterfall Execution",
+            "description": "Model cash flow generation and debt paydown trajectories."
+          },
+          {
+            "id": "example",
+            "label": "Returns Decomposition",
+            "description": "Decompose equity gains across operational and financial drivers."
+          },
+          {
+            "id": "tryIt",
+            "label": "Committee Verification",
+            "description": "Verify debt covenant compliance and emit cryptographic pass token."
+          }
+        ]
+      },
+      "codeBindings": [
+        {
+          "sourceCodeHash": "7fa6c28686f9790d965e455460de497f43f68e807d67386752f63fff54e6b2d4",
+          "variablePath": "engine.run",
+          "highlightLines": [
+            1,
+            10
+          ]
+        }
+      ]
+    }
+  ]
+}

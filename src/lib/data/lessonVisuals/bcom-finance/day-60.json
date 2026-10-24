@@ -1,0 +1,416 @@
+{
+  "prefix": "bcom-finance",
+  "day": 60,
+  "visuals": [
+    {
+      "part": 1,
+      "template": "ledger-sheet",
+      "caption": "Ten billion dollar master global capital program.",
+      "data": {
+        "title": "Day 60 Part 1 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Consolidated Global Enterprise Transformed Assets",
+            "$10,000,000,000.00",
+            ""
+          ],
+          [
+            "Master Sovereign Advisory Liquidity Cushion",
+            "$1,000,000,000.00",
+            ""
+          ],
+          [
+            "Multi Tier Syndicated Private Equity Term Debt",
+            "",
+            "$4,000,000,000.00"
+          ],
+          [
+            "Structured Commercial Real Estate Securities Pool",
+            "",
+            "$1,500,000,000.00"
+          ],
+          [
+            "ICMA Accredited Sustainable Green Bond Tranche",
+            "",
+            "$1,500,000,000.00"
+          ],
+          [
+            "Sovereign Wealth Fund & Sponsor Master Equity",
+            "",
+            "$4,000,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$11,000,000,000.00",
+          "$11,000,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 60 Part 1)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 5
+          }
+        ]
+      },
+      "codeBinding": {
+        "language": "python",
+        "codeHash": "2ff911c6df0e3257ab1f683e6f30c9ea32096362c985144f95bb5c3d2eb3cb8e",
+        "verified": true
+      }
+    },
+    {
+      "part": 2,
+      "template": "ledger-sheet",
+      "caption": "Private equity buyout du pont value creation bridge.",
+      "data": {
+        "title": "Day 60 Part 2 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Consolidated Global Enterprise Transformed Assets",
+            "$10,000,000,000.00",
+            ""
+          ],
+          [
+            "Master Sovereign Advisory Liquidity Cushion",
+            "$1,000,000,000.00",
+            ""
+          ],
+          [
+            "Multi Tier Syndicated Private Equity Term Debt",
+            "",
+            "$4,000,000,000.00"
+          ],
+          [
+            "Structured Commercial Real Estate Securities Pool",
+            "",
+            "$1,500,000,000.00"
+          ],
+          [
+            "ICMA Accredited Sustainable Green Bond Tranche",
+            "",
+            "$1,500,000,000.00"
+          ],
+          [
+            "Sovereign Wealth Fund & Sponsor Master Equity",
+            "",
+            "$4,000,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$11,000,000,000.00",
+          "$11,000,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 60 Part 2)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 5
+          }
+        ]
+      },
+      "codeBinding": {
+        "language": "python",
+        "codeHash": "2ff911c6df0e3257ab1f683e6f30c9ea32096362c985144f95bb5c3d2eb3cb8e",
+        "verified": true
+      }
+    },
+    {
+      "part": 3,
+      "template": "ledger-sheet",
+      "caption": "Commercial real estate credit subordination waterfall.",
+      "data": {
+        "title": "Day 60 Part 3 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Consolidated Global Enterprise Transformed Assets",
+            "$10,000,000,000.00",
+            ""
+          ],
+          [
+            "Master Sovereign Advisory Liquidity Cushion",
+            "$1,000,000,000.00",
+            ""
+          ],
+          [
+            "Multi Tier Syndicated Private Equity Term Debt",
+            "",
+            "$4,000,000,000.00"
+          ],
+          [
+            "Structured Commercial Real Estate Securities Pool",
+            "",
+            "$1,500,000,000.00"
+          ],
+          [
+            "ICMA Accredited Sustainable Green Bond Tranche",
+            "",
+            "$1,500,000,000.00"
+          ],
+          [
+            "Sovereign Wealth Fund & Sponsor Master Equity",
+            "",
+            "$4,000,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$11,000,000,000.00",
+          "$11,000,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 60 Part 3)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 5
+          }
+        ]
+      },
+      "codeBinding": {
+        "language": "python",
+        "codeHash": "2ff911c6df0e3257ab1f683e6f30c9ea32096362c985144f95bb5c3d2eb3cb8e",
+        "verified": true
+      }
+    },
+    {
+      "part": 4,
+      "template": "ledger-sheet",
+      "caption": "Sovereign debt sustainability macro workout model.",
+      "data": {
+        "title": "Day 60 Part 4 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Consolidated Global Enterprise Transformed Assets",
+            "$10,000,000,000.00",
+            ""
+          ],
+          [
+            "Master Sovereign Advisory Liquidity Cushion",
+            "$1,000,000,000.00",
+            ""
+          ],
+          [
+            "Multi Tier Syndicated Private Equity Term Debt",
+            "",
+            "$4,000,000,000.00"
+          ],
+          [
+            "Structured Commercial Real Estate Securities Pool",
+            "",
+            "$1,500,000,000.00"
+          ],
+          [
+            "ICMA Accredited Sustainable Green Bond Tranche",
+            "",
+            "$1,500,000,000.00"
+          ],
+          [
+            "Sovereign Wealth Fund & Sponsor Master Equity",
+            "",
+            "$4,000,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$11,000,000,000.00",
+          "$11,000,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 60 Part 4)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 5
+          }
+        ]
+      },
+      "codeBinding": {
+        "language": "python",
+        "codeHash": "2ff911c6df0e3257ab1f683e6f30c9ea32096362c985144f95bb5c3d2eb3cb8e",
+        "verified": true
+      }
+    },
+    {
+      "part": 5,
+      "template": "ledger-sheet",
+      "caption": "Consolidated master corporate finance balance sheet.",
+      "data": {
+        "title": "Day 60 Part 5 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Consolidated Global Enterprise Transformed Assets",
+            "$10,000,000,000.00",
+            ""
+          ],
+          [
+            "Master Sovereign Advisory Liquidity Cushion",
+            "$1,000,000,000.00",
+            ""
+          ],
+          [
+            "Multi Tier Syndicated Private Equity Term Debt",
+            "",
+            "$4,000,000,000.00"
+          ],
+          [
+            "Structured Commercial Real Estate Securities Pool",
+            "",
+            "$1,500,000,000.00"
+          ],
+          [
+            "ICMA Accredited Sustainable Green Bond Tranche",
+            "",
+            "$1,500,000,000.00"
+          ],
+          [
+            "Sovereign Wealth Fund & Sponsor Master Equity",
+            "",
+            "$4,000,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$11,000,000,000.00",
+          "$11,000,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 60 Part 5)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 5
+          }
+        ]
+      },
+      "codeBinding": {
+        "language": "python",
+        "codeHash": "2ff911c6df0e3257ab1f683e6f30c9ea32096362c985144f95bb5c3d2eb3cb8e",
+        "verified": true
+      }
+    }
+  ]
+}

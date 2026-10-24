@@ -1,0 +1,446 @@
+"""
+Build Day 11 JSON for Course: bcom_aud (Auditing & Forensic Accounting)
+Topic: The Auditor's Responsibilities Relating to Fraud: SA 240 & Forensic Red Flag Indicators
+"""
+import json
+
+day_data = {
+    "day": 11,
+    "title": "The Auditor's Responsibilities Relating to Fraud & Forensic Anomaly Detection: SA 240",
+    "parts": [
+        {
+            "title": "Characteristics of Fraud & The Fraud Triangle: SA 240",
+            "say": [
+                "Standard on Auditing (SA) 240 deals with the auditor's responsibilities relating to fraud in an audit of financial statements. Misstatements in financial statements can arise from either fraud or error; the distinguishing factor between fraud and error is whether the underlying action that results in the misstatement of the financial statements is intentional or unintentional. Fraud is an intentional act by one or more individuals among management, those charged with governance, employees, or third parties, involving the use of deception to obtain an unjust or illegal advantage.",
+                "Although fraud is a broad legal concept, for the purposes of the SAs, the auditor is concerned with fraud that causes a material misstatement in the financial statements. SA 240 identifies two types of intentional misstatements that are relevant to the auditor: (1) Misstatements resulting from Fraudulent Financial Reporting (often termed 'management fraud' or 'cooking the books'); and (2) Misstatements resulting from Misappropriation of Assets (often termed 'employee defalcation' or embezzlement).",
+                "SA 240 explicitly incorporates the criminological model known as the Fraud Triangle, developed by Donald Cressey. Fraud typically involves three concurrent elements: (a) Incentive or Pressure—management or employees have an incentive or are under pressure to achieve aggressive earnings targets, maintain stock valuations, meet debt covenants, or cover personal financial distress; (b) Opportunity—circumstances exist, such as the absence of controls, ineffective controls, or the ability of management to override controls, that provide an opportunity to commit fraud; and (c) Attitude or Rationalization—individuals possess an attitude, character, or set of ethical values that allow them to knowingly and intentionally commit a dishonest act, or they rationalize the act ('everyone does it', 'the company owes me', or 'we will pay it back next quarter').",
+                "Crucially, SA 240 establishes a legal presumption of fraud risk in revenue recognition. When identifying and assessing the risks of material misstatement due to fraud, the auditor shall, based on a presumption that there are risks of fraud in revenue recognition, evaluate which types of revenue, revenue transactions, or assertions give rise to such risks. If the auditor concludes that the presumption is not applicable in the circumstances of the engagement, the auditor must explicitly document the reasons in the audit file under SA 230."
+            ],
+            "example": "In auditing a high-growth SaaS enterprise, executive bonuses are tied to reaching $100 million in Annual Recurring Revenue (Incentive). The Chief Revenue Officer can unilaterally approve sales contracts in Salesforce without legal review (Opportunity), and justifies backdating contracts signed on October 4 to September 30 by claiming 'the customer verbally committed in September' (Rationalization). Under SA 240, this complete Fraud Triangle triggers mandatory forensic audit procedures over Q3 revenue cutoff.",
+            "code": '''def evaluate_sa240_fraud_triangle_risk(
+    earnings_pressure_rating: str, # "LOW", "MODERATE", "HIGH", "EXTREME"
+    covenant_breach_proximity_pct: float,
+    control_override_vulnerabilities: int,
+    aggressive_accounting_tone: bool,
+    presumption_of_revenue_fraud_rebutted: bool
+) -> dict:
+    pressure_weights = {"LOW": 0.1, "MODERATE": 0.4, "HIGH": 0.8, "EXTREME": 1.0}
+    p_score = pressure_weights.get(earnings_pressure_rating.upper(), 0.5)
+    if covenant_breach_proximity_pct <= 5.0:
+        p_score = min(1.0, p_score + 0.30)
+        
+    # Opportunity score based on control bypasses
+    o_score = min(1.0, control_override_vulnerabilities * 0.25)
+    
+    # Rationalization score based on executive culture
+    r_score = 0.85 if aggressive_accounting_tone else 0.20
+    
+    # Composite Fraud Risk Score: Geometric mean of Fraud Triangle
+    composite_fraud_risk = (p_score * o_score * r_score) ** (1.0 / 3.0)
+    
+    if composite_fraud_risk >= 0.70:
+        risk_level = "CRITICAL_FRAUD_RISK_MANDATORY_FORENSIC_SCRUTINY"
+        substantive_strategy = "EXTENSIVE_FORENSIC_DATA_ANALYTICS_AND_SURPRISE_TESTING"
+    elif composite_fraud_risk >= 0.40:
+        risk_level = "ELEVATED_FRAUD_RISK"
+        substantive_strategy = "EXPANDED_SUBSTANTIVE_TESTING_AND_INTERVIEWS"
+    else:
+        risk_level = "LOW_FRAUD_RISK"
+        substantive_strategy = "STANDARD_SA240_PROCEDURES"
+        
+    revenue_presumption_valid = not presumption_of_revenue_fraud_rebutted
+    
+    return {
+        "incentive_pressure_score": round(p_score, 2),
+        "opportunity_score": round(o_score, 2),
+        "rationalization_score": round(r_score, 2),
+        "composite_fraud_risk": round(composite_fraud_risk, 3),
+        "fraud_risk_tier": risk_level,
+        "revenue_recognition_presumed_fraud_active": revenue_presumption_valid,
+        "mandated_audit_response": substantive_strategy
+    }
+
+fraud_eval = evaluate_sa240_fraud_triangle_risk(
+    earnings_pressure_rating="EXTREME",
+    covenant_breach_proximity_pct=3.5,
+    control_override_vulnerabilities=3,
+    aggressive_accounting_tone=True,
+    presumption_of_revenue_fraud_rebutted=False
+)
+print("SA 240 Fraud Triangle Quantitative Risk Evaluator:")
+print(f"  Incentive/Pressure     : {fraud_eval['incentive_pressure_score']}")
+print(f"  Opportunity Score      : {fraud_eval['opportunity_score']}")
+print(f"  Rationalization Score  : {fraud_eval['rationalization_score']}")
+print(f"  Composite Fraud Index  : {fraud_eval['composite_fraud_risk']}")
+print(f"  Fraud Risk Tier        : {fraud_eval['fraud_risk_tier']}")
+print(f"  Revenue Fraud Presumed : {fraud_eval['revenue_recognition_presumed_fraud_active']}")
+print(f"  Audit Strategy Response: {fraud_eval['mandated_audit_response']}")
+''',
+            "tryIt": "Set control_override_vulnerabilities to 0 and earnings_pressure_rating to LOW to observe the composite fraud index drop below 0.30, returning risk to standard procedures.",
+            "check": {
+                "question": "What is the statutory presumption established by SA 240 regarding risks of fraud in the audit of financial statements?",
+                "options": [
+                    "There is a statutory legal presumption that risks of fraud exist in revenue recognition, requiring the auditor to evaluate which revenue types or assertions carry fraud risk unless explicitly rebutted with documented evidence",
+                    "There is a presumption that all external suppliers collude with the accounts payable department",
+                    "There is a presumption that management always commits tax fraud in odd-numbered years",
+                    "There is a presumption that physical inventory is never stolen by warehouse employees"
+                ],
+                "answerIndex": 0,
+                "why": "SA 240 Paragraph 26 explicitly establishes a rebuttable presumption that there are risks of fraud in revenue recognition, mandating targeted procedures unless the auditor documents compelling contrary evidence."
+            }
+        },
+        {
+            "title": "Management Override of Controls & Journal Entry Testing (JET): SA 240",
+            "say": [
+                "Management is in a unique position to perpetrate fraud because of management's ability to manipulate accounting records and prepare fraudulent financial statements by overriding controls that otherwise appear to be operating effectively. Although the level of risk of management override of controls will vary from entity to entity, the risk is nonetheless present in all entities. Because of the unpredictable way in which such override could occur, SA 240 legally classifies management override of controls as a significant risk of material misstatement present on every single audit.",
+                "Irrespective of the auditor's assessment of the risks of management override of controls, SA 240 mandates that the auditor shall design and perform three non-negotiable audit procedures: (1) Test the appropriateness of journal entries recorded in the general ledger and other adjustments made in the preparation of the financial statements (Journal Entry Testing - JET); (2) Review accounting estimates for biases and evaluate whether the circumstances producing the bias, if any, represent a risk of material misstatement due to fraud; and (3) For significant transactions that are outside the normal course of business for the entity, or that otherwise appear to be unusual given the auditor's understanding of the entity and its environment, evaluate whether the business rationale (or lack thereof) suggests that the transactions may have been entered into to engage in fraudulent financial reporting or to conceal misappropriation of assets.",
+                "In executing Journal Entry Testing (JET), the auditor must deploy forensic data analytics across 100% of the population of general ledger journal vouchers. The auditor queries the transaction database for forensic red flag characteristics: (a) entries made to round monetary values (e.g., exactly Rs 5,00,000 or Rs 1,00,00,000); (b) entries posted on weekends, national holidays, or outside normal business hours; (c) entries authored by senior management personnel who rarely post operational entries; (d) entries containing suspense, plug, or round-trip ledger accounts; (e) entries made post-closing with backdated effective dates; and (f) entries posted without descriptive documentation or maker-checker approvals.",
+                "The auditor must obtain documentary evidence supporting every flagged high-risk entry. If an entry lacks commercial substance or exhibits management override, the auditor expands testing and considers the implications under Section 143(12) of the Companies Act."
+            ],
+            "example": "In an audit of an industrial manufacturing firm, the engagement team runs an automated JET query across 240,000 journal entries. The query isolates 18 high-risk vouchers: all were posted between 11:00 PM on December 31 and 3:00 AM on January 1, authored directly by the Chief Financial Officer, credited to revenue, and debited to 'Unbilled Construction Work-in-Progress' in round sums of Rs 50 Lakh. Substantive inspection reveals zero customer contracts supporting the entries, exposing a Rs 9 Crore management override to artificially meet year-end earnings forecasts.",
+            "code": '''def execute_sa240_journal_entry_testing(
+    total_entries_count: int,
+    journal_vouchers_sample: list
+) -> dict:
+    flagged_entries = []
+    
+    for jv in journal_vouchers_sample:
+        risk_flags = []
+        # Flag 1: Round monetary amounts (divisible by 100,000)
+        if jv["amount_inr"] % 100000 == 0 and jv["amount_inr"] >= 500000:
+            risk_flags.append("ROUND_AMOUNT_FLAG")
+            
+        # Flag 2: Weekend / Holiday posting
+        if jv["is_weekend"]:
+            risk_flags.append("WEEKEND_POSTING_FLAG")
+            
+        # Flag 3: Executive author (CFO, CEO, VP)
+        if jv["author_role"].upper() in ["CFO", "CEO", "CONTROLLER"]:
+            risk_flags.append("EXECUTIVE_OVERRIDE_AUTHOR")
+            
+        # Flag 4: Suspense or plug account
+        if "SUSPENSE" in jv["debit_account"].upper() or "UNBILLED" in jv["debit_account"].upper():
+            risk_flags.append("SUSPENSE_PLUG_ACCOUNT")
+            
+        # Flag 5: Lack of dual authorization
+        if not jv["has_dual_authorization"]:
+            risk_flags.append("UNAUTHORIZED_OVERRIDE")
+            
+        if len(risk_flags) >= 2:
+            flagged_entries.append({
+                "jv_id": jv["id"],
+                "amount_inr": jv["amount_inr"],
+                "author": jv["author_role"],
+                "flags": risk_flags,
+                "severity": "CRITICAL" if len(risk_flags) >= 3 else "HIGH"
+            })
+            
+    flagged_amount = sum(e["amount_inr"] for e in flagged_entries)
+    
+    return {
+        "total_population_vouchers": total_entries_count,
+        "flagged_high_risk_entries_count": len(flagged_entries),
+        "total_flagged_exposure_inr": flagged_amount,
+        "high_risk_vouchers": flagged_entries,
+        "jet_audit_status": "POTENTIAL_MANAGEMENT_OVERRIDE_DETECTED" if len(flagged_entries) > 0 else "NO_HIGH_RISK_ENTRIES_IDENTIFIED"
+    }
+
+sample_jvs = [
+    {"id": "JV-8801", "amount_inr": 5000000, "is_weekend": True, "author_role": "CFO", "debit_account": "Unbilled Revenue Suspense", "has_dual_authorization": False},
+    {"id": "JV-8802", "amount_inr": 124350, "is_weekend": False, "author_role": "Staff Accountant", "debit_account": "Operating Expense", "has_dual_authorization": True},
+    {"id": "JV-8803", "amount_inr": 10000000, "is_weekend": True, "author_role": "Controller", "debit_account": "Intercompany Suspense", "has_dual_authorization": False}
+]
+
+jet_results = execute_sa240_journal_entry_testing(total_entries_count=150000, journal_vouchers_sample=sample_jvs)
+print("SA 240 Journal Entry Testing (JET) Forensic Analytics Engine:")
+print(f"  Total Population Size  : {jet_results['total_population_vouchers']} vouchers")
+print(f"  Flagged High-Risk JVs  : {jet_results['flagged_high_risk_entries_count']}")
+print(f"  Flagged Exposure Amount: INR {jet_results['total_flagged_exposure_inr']:,.2f}")
+print(f"  Audit Diagnostic Verdict: {jet_results['jet_audit_status']}")
+print("  High-Risk Vouchers:")
+for v in jet_results['high_risk_vouchers']:
+    print(f"    * {v['jv_id']} (INR {v['amount_inr']:,.2f} by {v['author']}) -> {v['severity']}: {v['flags']}")
+''',
+            "tryIt": "Modify JV-8801 to have has_dual_authorization=True and author_role='Staff Accountant' to see the risk score drop below the critical threshold.",
+            "check": {
+                "question": "Under SA 240, why is Journal Entry Testing (JET) legally mandatory on every statutory audit regardless of assessed control risk?",
+                "options": [
+                    "Because management possesses the inherent ability to override controls that otherwise appear to be operating effectively, making management override a pervasive significant risk across all corporate entities",
+                    "Because all accounting entries must be submitted to the income tax department on floppy disks",
+                    "Because junior accountants make more mathematical mistakes on Fridays",
+                    "Because the software vendor charges a fee for each manual voucher"
+                ],
+                "answerIndex": 0,
+                "why": "SA 240 Paragraph 31 establishes that management override of controls is an inherent risk present in all entities that can circumvent effective controls, mandating substantive journal entry testing across every engagement."
+            }
+        },
+        {
+            "title": "Review of Accounting Estimates for Bias & The Beneish M-Score: SA 240",
+            "say": [
+                "Under SA 240, in reviewing accounting estimates for management bias, the auditor shall: (1) evaluate whether the judgments and decisions made by management in making the accounting estimates included in the financial statements, even if they are individually reasonable, indicate a possible bias on the part of the entity's management that may represent a risk of material misstatement due to fraud; and (2) perform a retrospective review of management judgments and assumptions related to significant accounting estimates reflected in the financial statements of the prior year.",
+                "Accounting estimates are uniquely fertile ground for financial statement manipulation because they rely on subjective management assumptions rather than verifiable objective invoices. Examples include: allowance for expected credit losses (ECL) under Ind AS 109; impairment of goodwill and long-lived assets under Ind AS 36; provision for decommissioning liabilities under Ind AS 37; and percentage of completion milestone estimates for long-term construction contracts under Ind AS 115.",
+                "To quantitatively detect systematic financial statement manipulation, forensic auditors deploy Professor Messod Beneish's Eight-Variable M-Score Econometric Model. The Beneish M-Score calculates eight financial ratios comparing the current year to the prior year: (1) DSRI - Days Sales in Receivables Index; (2) GMI - Gross Margin Index; (3) AQI - Asset Quality Index; (4) SGI - Sales Growth Index; (5) DEPI - Depreciation Index; (6) SGAI - Sales, General and Administrative expenses Index; (7) LVGI - Leverage Index; and (8) TATA - Total Accruals to Total Assets.",
+                "The Beneish M-Score formula is: M = -4.84 + (0.920 * DSRI) + (0.528 * GMI) + (0.404 * AQI) + (0.892 * SGI) + (0.115 * DEPI) - (0.172 * SGAI) + (4.037 * TATA) + (0.0327 * LVGI). A benchmark threshold of M > -1.78 indicates a high probability that the financial statements have been manipulated. The Beneish model famously identified financial manipulation at Enron and Satyam prior to their collapse."
+            ],
+            "example": "A technology conglomerate reports a 45% revenue increase, but its DSRI jumps to 1.85 (receivables growing much faster than sales), AQI spikes to 1.60 (unexplained deferred assets accumulating), and TATA reaches +0.12 (operating profits backed by accruals rather than cash). The auditor computes the Beneish M-Score: M = -0.95. Because -0.95 is greater than the -1.78 threshold, the model flags a high probability of fraudulent financial reporting, prompting immediate forensic audits of revenue cutoffs and asset capitalization.",
+            "code": '''def calculate_beneish_m_score(
+    dsri: float, # Days Sales in Receivables Index
+    gmi: float,  # Gross Margin Index
+    aqi: float,  # Asset Quality Index
+    sgi: float,  # Sales Growth Index
+    depi: float, # Depreciation Index
+    sgai: float, # SGA Expenses Index
+    lvgi: float, # Leverage Index
+    tata: float  # Total Accruals to Total Assets
+) -> dict:
+    # Beneish 8-Variable Linear Regression Equation
+    m_score = (
+        -4.84 + 
+        (0.920 * dsri) + 
+        (0.528 * gmi) + 
+        (0.404 * aqi) + 
+        (0.892 * sgi) + 
+        (0.115 * depi) - 
+        (0.172 * sgai) + 
+        (4.037 * tata) + 
+        (0.0327 * lvgi)
+    )
+    
+    # Statutory Benchmark: M > -1.78 indicates high likelihood of manipulation
+    BENCHMARK_THRESHOLD = -1.78
+    is_manipulation_probable = m_score > BENCHMARK_THRESHOLD
+    
+    red_flag_drivers = []
+    if dsri > 1.30: red_flag_drivers.append(f"DSRI high ({dsri:.2f}): Receivables growing abnormally faster than sales")
+    if gmi > 1.20: red_flag_drivers.append(f"GMI high ({gmi:.2f}): Gross margin deteriorating, creating pressure to falsify earnings")
+    if aqi > 1.25: red_flag_drivers.append(f"AQI high ({aqi:.2f}): Potentially capitalizing operating costs as non-current assets")
+    if sgi > 1.30: red_flag_drivers.append(f"SGI high ({sgi:.2f}): Rapid growth company prone to earnings management")
+    if tata > 0.08: red_flag_drivers.append(f"TATA high ({tata:.2f}): Earnings heavily driven by non-cash accruals rather than operating cash flows")
+    
+    return {
+        "beneish_m_score": round(m_score, 3),
+        "threshold": BENCHMARK_THRESHOLD,
+        "manipulation_probable": is_manipulation_probable,
+        "forensic_risk_tier": "HIGH_MANIPULATION_PROBABILITY" if is_manipulation_probable else "LOW_MANIPULATION_RISK",
+        "primary_drivers": red_flag_drivers
+    }
+
+beneish = calculate_beneish_m_score(
+    dsri=1.85,
+    gmi=1.25,
+    aqi=1.60,
+    sgi=1.45,
+    depi=1.05,
+    sgai=0.95,
+    lvgi=1.20,
+    tata=0.14
+)
+print("Beneish Eight-Variable M-Score Forensic Diagnostic Engine:")
+print(f"  Calculated M-Score     : {beneish['beneish_m_score']} (Benchmark: > -1.78 indicates fraud)")
+print(f"  Manipulation Probable  : {beneish['manipulation_probable']}")
+print(f"  Forensic Risk Rating   : {beneish['forensic_risk_tier']}")
+print("  Key Anomaly Drivers    :")
+for d in beneish['primary_drivers']:
+    print(f"    ! {d}")
+''',
+            "tryIt": "Adjust dsri to 1.05, aqi to 0.95, and tata to 0.01 to see the M-Score fall to -2.85 (well below -1.78), indicating low probability of manipulation.",
+            "check": {
+                "question": "In the Beneish Eight-Variable M-Score model, what does an M-Score of -1.15 indicate to a forensic auditor?",
+                "options": [
+                    "A high probability that the financial statements have been manipulated, because -1.15 is greater than the critical benchmark threshold of -1.78",
+                    "An exceptional degree of corporate governance with zero possibility of fraud",
+                    "That the company is bankrupt under the Altman Z-score model",
+                    "That the company is exempt from paying corporate income taxes"
+                ],
+                "answerIndex": 0,
+                "why": "The Beneish M-Score uses a critical cutoff of -1.78; any value greater (less negative or positive, such as -1.15) indicates a statistically significant likelihood of earnings manipulation."
+            }
+        },
+        {
+            "title": "First-Digit Benford's Law Chi-Square Fraud Analytics: Forensic Procedures",
+            "say": [
+                "When corporate fraudsters fabricate invoices, invent vendor disbursements, or create synthetic ledger transactions, they mistakenly assume that random digits look evenly distributed across numbers 1 through 9. In natural, unmanipulated accounting populations, numbers obey Benford's Law (the First-Digit Phenomenon), discovered by physicist Frank Benford in 1938.",
+                "Benford's Law establishes that in unconstrained multi-magnitude financial datasets, the probability of leading digit d (1 through 9) follows a logarithmic distribution: P(d) = log10(1 + 1/d). Under this distribution: Digit 1 appears as the leading digit 30.1% of the time; Digit 2 appears 17.6%; Digit 3 appears 12.5%; Digit 4 appears 9.7%; and Digit 9 appears only 4.6% of the time.",
+                "Forensic auditors compare observed first-digit distributions in client accounts payable, payroll, or procurement ledgers against theoretical Benford frequencies using the Chi-Square Goodness-of-Fit test: Chi2 = sum((Observed - Expected)^2 / Expected). With 8 degrees of freedom (df = 9 - 1), a Chi-Square value exceeding 15.51 indicates a statistically significant anomaly at the 95% confidence level (p < 0.05), while Chi2 > 20.09 indicates critical anomaly at the 99% confidence level.",
+                "Anomalous spikes in specific digits reveal underlying fraudulent patterns: for instance, a cluster of invoices starting with digit '4' or '9' often indicates transactions deliberately kept just below corporate approval thresholds (e.g., invoices for Rs 4,950 or Rs 9,800 to bypass dual signature requirements). Forensic auditors isolate the aberrant digit subset for 100% substantive inspection."
+            ],
+            "example": "A forensic auditor analyzes 8,200 vendor disbursement checks totaling Rs 45 Crore. While Digit 1 follows Benford's Law (30.2%), Digit 4 shows an abnormal spike, representing 28.5% of all disbursements (expected: 9.7%). The Chi-Square test yields Chi2 = 845.2 (p < 0.001). Filtering for digit '4' isolates 1,420 checks issued for Rs 4,850 to Rs 4,950 to three shell companies, exposing an internal employee procurement embezzlement scheme designed to bypass the Rs 5,000 dual-approval threshold.",
+            "code": '''import math
+
+def execute_benford_first_digit_chi_square(observed_counts_by_digit: dict) -> dict:
+    total_records = sum(observed_counts_by_digit.values())
+    
+    # Benford theoretical probabilities for digits 1-9
+    benford_expected_probs = {d: math.log10(1.0 + 1.0 / d) for d in range(1, 10)}
+    
+    chi_square_stat = 0.0
+    digit_diagnostics = []
+    
+    # Chi-Square critical value for 8 degrees of freedom at 99% confidence: 20.09
+    CRITICAL_VALUE_99 = 20.09
+    
+    for d in range(1, 10):
+        obs = observed_counts_by_digit.get(d, 0)
+        exp_prob = benford_expected_probs[d]
+        exp_count = total_records * exp_prob
+        
+        diff = obs - exp_count
+        chi_component = (diff ** 2) / exp_count if exp_count > 0 else 0.0
+        chi_square_stat += chi_component
+        
+        obs_pct = (obs / total_records) * 100.0 if total_records > 0 else 0.0
+        exp_pct = exp_prob * 100.0
+        
+        digit_diagnostics.append({
+            "digit": d,
+            "observed_count": obs,
+            "expected_count": round(exp_count, 1),
+            "observed_pct": round(obs_pct, 2),
+            "expected_pct": round(exp_pct, 2),
+            "deviation_pct": round(obs_pct - exp_pct, 2)
+        })
+        
+    is_anomaly_detected = chi_square_stat > CRITICAL_VALUE_99
+    
+    # Identify highest anomalous digit
+    aberrant_digit = max(digit_diagnostics, key=lambda x: abs(x["deviation_pct"]))
+    
+    return {
+        "total_records_analyzed": total_records,
+        "chi_square_statistic": round(chi_square_stat, 2),
+        "critical_threshold_99pct": CRITICAL_VALUE_99,
+        "anomaly_statistically_significant": is_anomaly_detected,
+        "most_aberrant_digit": aberrant_digit,
+        "forensic_determination": "STATISTICAL_FRAUD_ANOMALY_DETECTED" if is_anomaly_detected else "DATASET_CONFORMS_TO_NATURAL_BENFORD_DISTRIBUTION"
+    }
+
+# Synthetic disbursement dataset with artificial spike at digit 4
+sample_counts = {1: 2400, 2: 1400, 3: 1000, 4: 2100, 5: 600, 6: 450, 7: 350, 8: 300, 9: 200}
+benford_res = execute_benford_first_digit_chi_square(sample_counts)
+
+print("Forensic Benford's Law Chi-Square Fraud Detector:")
+print(f"  Total Records Audited : {benford_res['total_records_analyzed']}")
+print(f"  Chi-Square Statistic  : {benford_res['chi_square_statistic']} (Critical: {benford_res['critical_threshold_99pct']})")
+print(f"  Anomaly Significant   : {benford_res['anomaly_statistically_significant']}")
+print(f"  Forensic Determination: {benford_res['forensic_determination']}")
+print(f"  Aberrant Digit Spike  : Digit {benford_res['most_aberrant_digit']['digit']} observed at {benford_res['most_aberrant_digit']['observed_pct']}% (Expected: {benford_res['most_aberrant_digit']['expected_pct']}%)")
+''',
+            "tryIt": "Adjust digit 4 count from 2100 down to 800 (and add 1300 to digit 1) to observe the Chi-Square statistic plunge below 20.09, confirming natural conformity.",
+            "check": {
+                "question": "Under Benford's Law, what is the theoretical probability that a naturally occurring multi-magnitude accounting number begins with the digit '1'?",
+                "options": [
+                    "Approximately 30.1% of the time, following the logarithmic formula P(1) = log10(1 + 1/1) = log10(2)",
+                    "Exactly 11.1% of the time, because all 9 digits have an equal 1/9 chance of appearing",
+                    "50% of the time, because numbers are split between odd and even digits",
+                    "Zero percent, because corporate transactions never begin with digit 1"
+                ],
+                "answerIndex": 0,
+                "why": "Benford's Law proves that the probability of leading digit d is log10(1 + 1/d). For digit 1, log10(2) = 0.30103, meaning digit 1 naturally appears ~30.1% of the time."
+            }
+        },
+        {
+            "title": "Forensic Whistleblower Investigation Protocol & Conflict of Interest Graph: SA 240",
+            "say": [
+                "Under SA 240 and CARO 2020 Clause (xi)(c), the statutory auditor must consider whistleblower complaints received by the company during the year. Whistleblower tips represent the single most common mechanism through which corporate occupational fraud is discovered globally, accounting for over 42% of all detected fraud schemes according to the Association of Certified Fraud Examiners (ACFE).",
+                "When a whistleblower complaint alleges financial fraud, kickbacks, or management corruption, the forensic auditor follows a structured four-stage investigation protocol: (1) Triage & Credibility Scoring—evaluating whether the complaint provides specific, actionable factual allegations (e.g., specific vendor names, contract numbers, dates, monetary amounts) versus vague disgruntled employee grievances; (2) Evidence Preservation & Digital Forensics—securing server email archives, ERP transaction logs, and device bitstream images under chain of custody before targets can delete files; (3) Corroborative Substantive Testing—cross-referencing alleged transactions against independent bank records, tax filings, and shipping documents; and (4) Adversarial Investigative Interviews—conducting structured interviews with witnesses and subjects.",
+                "To detect corrupt procurement and shell company kickbacks, forensic auditors deploy Conflict of Interest Graph Analysis. The auditor extracts master employee records (names, addresses, national identification PAN/Aadhaar numbers, phone numbers, bank accounts) and merges them with master vendor files.",
+                "Running exact and fuzzy string-matching algorithms on tax IDs, registered addresses, phone numbers, and bank IFSC/account details isolates 'Collisions'. An address or bank collision between an internal procurement executive and an approved vendor provides prima facie evidence of a shell company conduit, triggering formal referrals under Section 143(12) of the Companies Act."
+            ],
+            "example": "A whistleblower letter accuses the Senior Logistics Director of awarding freight contracts to a favoured supplier. The forensic team merges the HR employee database with the active vendor master. Graph analysis identifies an exact bank account collision: freight vendor 'SpeedTrans Logistics' receives payments into an HDFC bank account registered under the personal PAN and residential address of the Logistics Director's spouse, proving an undisclosed conflict of interest and kickback embezzlement scheme.",
+            "code": '''def execute_employee_vendor_collision_audit(
+    employee_master: list,
+    vendor_master: list
+) -> dict:
+    collisions_detected = []
+    
+    # Index employee credentials
+    emp_pan_map = {e["pan"]: e for e in employee_master}
+    emp_addr_map = {e["address"].strip().upper(): e for e in employee_master}
+    emp_phone_map = {e["phone"]: e for e in employee_master}
+    emp_bank_map = {e["bank_acc"]: e for e in employee_master}
+    
+    for v in vendor_master:
+        v_name = v["vendor_name"]
+        
+        # Check PAN collision
+        if v["pan"] in emp_pan_map:
+            emp = emp_pan_map[v["pan"]]
+            collisions_detected.append({
+                "collision_type": "PAN_IDENTIFIER_MATCH",
+                "vendor": v_name,
+                "employee": emp["name"],
+                "employee_dept": emp["department"],
+                "disbursed_inr_cr": v["total_disbursements_cr"]
+            })
+            
+        # Check Address collision
+        elif v["address"].strip().upper() in emp_addr_map:
+            emp = emp_addr_map[v["address"].strip().upper()]
+            collisions_detected.append({
+                "collision_type": "RESIDENTIAL_ADDRESS_MATCH",
+                "vendor": v_name,
+                "employee": emp["name"],
+                "employee_dept": emp["department"],
+                "disbursed_inr_cr": v["total_disbursements_cr"]
+            })
+            
+        # Check Bank Account collision
+        elif v["bank_acc"] in emp_bank_map:
+            emp = emp_bank_map[v["bank_acc"]]
+            collisions_detected.append({
+                "collision_type": "BANK_ACCOUNT_COLLISION",
+                "vendor": v_name,
+                "employee": emp["name"],
+                "employee_dept": emp["department"],
+                "disbursed_inr_cr": v["total_disbursements_cr"]
+            })
+            
+    total_corrupt_spend = sum(c["disbursed_inr_cr"] for c in collisions_detected)
+    
+    return {
+        "employees_screened": len(employee_master),
+        "vendors_screened": len(vendor_master),
+        "collisions_count": len(collisions_detected),
+        "total_tainted_disbursements_cr": round(total_corrupt_spend, 2),
+        "conflict_of_interest_present": len(collisions_detected) > 0,
+        "collision_details": collisions_detected,
+        "statutory_action": "ISSUE_SECTION_143_12_FRAUD_REPORT" if total_corrupt_spend >= 1.0 else "INTERNAL_DISCIPLINARY_REFERRAL"
+    }
+
+employees = [
+    {"name": "Vikram Malhotra", "department": "Logistics & Procurement", "pan": "ABCDE1234F", "address": "42 Park Lane Mumbai", "phone": "9820011223", "bank_acc": "00221040081"}
+]
+vendors = [
+    {"vendor_name": "Apex Cargo Movers", "pan": "XYZPK9988A", "address": "15 Industrial Area Pune", "phone": "9811122233", "bank_acc": "00221040081", "total_disbursements_cr": 3.85}
+]
+
+audit_res = execute_employee_vendor_collision_audit(employees, vendors)
+print("Forensic Conflict of Interest & Shell Vendor Collision Engine:")
+print(f"  Employees / Vendors Screened: {audit_res['employees_screened']} / {audit_res['vendors_screened']}")
+print(f"  Collisions Detected         : {audit_res['collisions_count']}")
+print(f"  Tainted Disbursements       : INR {audit_res['total_tainted_disbursements_cr']} Crores")
+print(f"  Statutory Action Mandate    : {audit_res['statutory_action']}")
+print("  Collision Details:")
+for c in audit_res['collision_details']:
+    print(f"    * {c['collision_type']}: Vendor '{c['vendor']}' matches Employee '{c['employee']}' ({c['employee_dept']}) -> INR {c['disbursed_inr_cr']} Cr")
+''',
+            "tryIt": "Change Apex Cargo Movers bank_acc to '99887766554' to see collisions drop to zero and statutory action clear.",
+            "check": {
+                "question": "What is the primary objective of running conflict of interest collision analytics between master HR records and vendor files in forensic accounting?",
+                "options": [
+                    "To identify undisclosed related parties, fictitious shell company vendors, and corrupt kickback arrangements where employees or their relatives receive corporate disbursements",
+                    "To ensure all vendors receive annual holiday greeting cards from the HR department",
+                    "To verify that all corporate employees purchase company products",
+                    "To compute annual fringe benefit tax liabilities on company vehicles"
+                ],
+                "answerIndex": 0,
+                "why": "Cross-referencing employee identifiers (PAN, residential address, bank accounts) against vendor masters isolates shell companies created by corrupt employees to divert corporate funds."
+            }
+        }
+    ]
+}
+
+if __name__ == "__main__":
+    with open("scripts/bcom_aud_day11_data.json", "w", encoding="utf-8") as f:
+        json.dump(day_data, f, indent=2)
+    print("Generated scripts/bcom_aud_day11_data.json successfully!")

@@ -1,0 +1,366 @@
+{
+  "prefix": "bcom-finance",
+  "day": 54,
+  "visuals": [
+    {
+      "part": 1,
+      "template": "ledger-sheet",
+      "caption": "Green bond use of proceeds ring fenced ledger.",
+      "data": {
+        "title": "Day 54 Part 1 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Verified Green Capital Expenditure Projects",
+            "$1,000,000,000.00",
+            ""
+          ],
+          [
+            "European Union Carbon Allowance Reserve",
+            "$24,600,000.00",
+            ""
+          ],
+          [
+            "Senior Unsecured Green Bond Payable",
+            "",
+            "$1,000,000,000.00"
+          ],
+          [
+            "Carbon Compliance Forward Treasury Liability",
+            "",
+            "$24,600,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$1,024,600,000.00",
+          "$1,024,600,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 54 Part 1)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 3
+          }
+        ]
+      },
+      "codeBinding": {
+        "language": "python",
+        "codeHash": "1637e0c87baa791ccbd4727ee37f27664f382bbc87ea83fff827fc9e7e1abb9e",
+        "verified": true
+      }
+    },
+    {
+      "part": 2,
+      "template": "ledger-sheet",
+      "caption": "Second party opinion external verification audit.",
+      "data": {
+        "title": "Day 54 Part 2 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Verified Green Capital Expenditure Projects",
+            "$1,000,000,000.00",
+            ""
+          ],
+          [
+            "European Union Carbon Allowance Reserve",
+            "$24,600,000.00",
+            ""
+          ],
+          [
+            "Senior Unsecured Green Bond Payable",
+            "",
+            "$1,000,000,000.00"
+          ],
+          [
+            "Carbon Compliance Forward Treasury Liability",
+            "",
+            "$24,600,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$1,024,600,000.00",
+          "$1,024,600,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 54 Part 2)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 3
+          }
+        ]
+      },
+      "codeBinding": {
+        "language": "python",
+        "codeHash": "1637e0c87baa791ccbd4727ee37f27664f382bbc87ea83fff827fc9e7e1abb9e",
+        "verified": true
+      }
+    },
+    {
+      "part": 3,
+      "template": "ledger-sheet",
+      "caption": "Sustainability linked loan margin ratchet schedule.",
+      "data": {
+        "title": "Day 54 Part 3 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Verified Green Capital Expenditure Projects",
+            "$1,000,000,000.00",
+            ""
+          ],
+          [
+            "European Union Carbon Allowance Reserve",
+            "$24,600,000.00",
+            ""
+          ],
+          [
+            "Senior Unsecured Green Bond Payable",
+            "",
+            "$1,000,000,000.00"
+          ],
+          [
+            "Carbon Compliance Forward Treasury Liability",
+            "",
+            "$24,600,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$1,024,600,000.00",
+          "$1,024,600,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 54 Part 3)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 3
+          }
+        ]
+      },
+      "codeBinding": {
+        "language": "python",
+        "codeHash": "1637e0c87baa791ccbd4727ee37f27664f382bbc87ea83fff827fc9e7e1abb9e",
+        "verified": true
+      }
+    },
+    {
+      "part": 4,
+      "template": "ledger-sheet",
+      "caption": "Compliance carbon emissions allowance balance.",
+      "data": {
+        "title": "Day 54 Part 4 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Verified Green Capital Expenditure Projects",
+            "$1,000,000,000.00",
+            ""
+          ],
+          [
+            "European Union Carbon Allowance Reserve",
+            "$24,600,000.00",
+            ""
+          ],
+          [
+            "Senior Unsecured Green Bond Payable",
+            "",
+            "$1,000,000,000.00"
+          ],
+          [
+            "Carbon Compliance Forward Treasury Liability",
+            "",
+            "$24,600,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$1,024,600,000.00",
+          "$1,024,600,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 54 Part 4)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 3
+          }
+        ]
+      },
+      "codeBinding": {
+        "language": "python",
+        "codeHash": "1637e0c87baa791ccbd4727ee37f27664f382bbc87ea83fff827fc9e7e1abb9e",
+        "verified": true
+      }
+    },
+    {
+      "part": 5,
+      "template": "ledger-sheet",
+      "caption": "Sustainable treasury greenium savings optimization.",
+      "data": {
+        "title": "Day 54 Part 5 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Verified Green Capital Expenditure Projects",
+            "$1,000,000,000.00",
+            ""
+          ],
+          [
+            "European Union Carbon Allowance Reserve",
+            "$24,600,000.00",
+            ""
+          ],
+          [
+            "Senior Unsecured Green Bond Payable",
+            "",
+            "$1,000,000,000.00"
+          ],
+          [
+            "Carbon Compliance Forward Treasury Liability",
+            "",
+            "$24,600,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$1,024,600,000.00",
+          "$1,024,600,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 54 Part 5)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 3
+          }
+        ]
+      },
+      "codeBinding": {
+        "language": "python",
+        "codeHash": "1637e0c87baa791ccbd4727ee37f27664f382bbc87ea83fff827fc9e7e1abb9e",
+        "verified": true
+      }
+    }
+  ]
+}

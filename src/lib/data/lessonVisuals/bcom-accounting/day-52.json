@@ -1,0 +1,659 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom-accounting",
+  "day": 52,
+  "promptSha": "prompt_sha_bcom_accounting_day52_v1",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Ind AS 38 Scope, Definition & Identifiability Invariants",
+      "codeHash": "1744a2a64150fedd4ccf3239cc2603cd8181d48a15b092e5b2df53314beeebb4",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Ind AS 38 Scope, Definition & Identifiab... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($24,005,000) for Ind AS 38 Scope, Definition & Identifiab...",
+            "title": "Day 52 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 24005000,
+            "totalCredit": 24005000,
+            "entries": [
+              {
+                "id": "JNL-5201",
+                "account": "Intangible Assets - Capitalized Patents & Brand Equity",
+                "debit": 24005000,
+                "balance": 24005000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 52"
+              },
+              {
+                "id": "JNL-5202",
+                "account": "R&D Development Bank Clearing & Amortization Provision",
+                "credit": 24005000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & impairment adjustment accrual ($1,500,000).",
+            "title": "Day 52 Journal \u2014 Valuation & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 25505000,
+            "totalCredit": 25505000,
+            "entries": [
+              {
+                "id": "JNL-5201",
+                "account": "Intangible Assets - Capitalized Patents & Brand Equity",
+                "debit": 24005000,
+                "balance": 24005000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5203",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 1500000,
+                "balance": 25505000,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5202",
+                "account": "R&D Development Bank Clearing & Amortization Provision",
+                "credit": 25505000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 52 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 25505000,
+            "totalCredit": 25505000,
+            "entries": [
+              {
+                "id": "JNL-5201",
+                "account": "Intangible Assets - Capitalized Patents & Brand Equity",
+                "debit": 24005000,
+                "balance": 24005000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5203",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 1500000,
+                "balance": 25505000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5202",
+                "account": "R&D Development Bank Clearing & Amortization Provision",
+                "credit": 25505000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 52 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 25505000,
+            "totalCredit": 25505000,
+            "entries": [
+              {
+                "id": "JNL-5201",
+                "account": "Intangible Assets - Capitalized Patents & Brand Equity",
+                "debit": 24005000,
+                "balance": 24005000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5203",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 1500000,
+                "balance": 25505000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5202",
+                "account": "R&D Development Bank Clearing & Amortization Provision",
+                "credit": 25505000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Internally Generated Intangibles: Research Phase Expensing vs Development Capitalization (PIRATE Criteria)",
+      "codeHash": "1744a2a64150fedd4ccf3239cc2603cd8181d48a15b092e5b2df53314beeebb4",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Internally Generated Intangibles: Resear... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($24,010,000) for Internally Generated Intangibles: Resear...",
+            "title": "Day 52 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 24010000,
+            "totalCredit": 24010000,
+            "entries": [
+              {
+                "id": "JNL-5201",
+                "account": "Intangible Assets - Capitalized Patents & Brand Equity",
+                "debit": 24010000,
+                "balance": 24010000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 52"
+              },
+              {
+                "id": "JNL-5202",
+                "account": "R&D Development Bank Clearing & Amortization Provision",
+                "credit": 24010000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & impairment adjustment accrual ($1,500,000).",
+            "title": "Day 52 Journal \u2014 Valuation & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 25510000,
+            "totalCredit": 25510000,
+            "entries": [
+              {
+                "id": "JNL-5201",
+                "account": "Intangible Assets - Capitalized Patents & Brand Equity",
+                "debit": 24010000,
+                "balance": 24010000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5203",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 1500000,
+                "balance": 25510000,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5202",
+                "account": "R&D Development Bank Clearing & Amortization Provision",
+                "credit": 25510000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 52 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 25510000,
+            "totalCredit": 25510000,
+            "entries": [
+              {
+                "id": "JNL-5201",
+                "account": "Intangible Assets - Capitalized Patents & Brand Equity",
+                "debit": 24010000,
+                "balance": 24010000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5203",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 1500000,
+                "balance": 25510000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5202",
+                "account": "R&D Development Bank Clearing & Amortization Provision",
+                "credit": 25510000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 52 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 25510000,
+            "totalCredit": 25510000,
+            "entries": [
+              {
+                "id": "JNL-5201",
+                "account": "Intangible Assets - Capitalized Patents & Brand Equity",
+                "debit": 24010000,
+                "balance": 24010000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5203",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 1500000,
+                "balance": 25510000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5202",
+                "account": "R&D Development Bank Clearing & Amortization Provision",
+                "credit": 25510000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Useful Life Architecture: Finite vs Indefinite Useful Life, Amortization & Review Cycles",
+      "codeHash": "1744a2a64150fedd4ccf3239cc2603cd8181d48a15b092e5b2df53314beeebb4",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Useful Life Architecture: Finite vs Inde... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($24,015,000) for Useful Life Architecture: Finite vs Inde...",
+            "title": "Day 52 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 24015000,
+            "totalCredit": 24015000,
+            "entries": [
+              {
+                "id": "JNL-5201",
+                "account": "Intangible Assets - Capitalized Patents & Brand Equity",
+                "debit": 24015000,
+                "balance": 24015000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 52"
+              },
+              {
+                "id": "JNL-5202",
+                "account": "R&D Development Bank Clearing & Amortization Provision",
+                "credit": 24015000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & impairment adjustment accrual ($1,500,000).",
+            "title": "Day 52 Journal \u2014 Valuation & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 25515000,
+            "totalCredit": 25515000,
+            "entries": [
+              {
+                "id": "JNL-5201",
+                "account": "Intangible Assets - Capitalized Patents & Brand Equity",
+                "debit": 24015000,
+                "balance": 24015000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5203",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 1500000,
+                "balance": 25515000,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5202",
+                "account": "R&D Development Bank Clearing & Amortization Provision",
+                "credit": 25515000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 52 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 25515000,
+            "totalCredit": 25515000,
+            "entries": [
+              {
+                "id": "JNL-5201",
+                "account": "Intangible Assets - Capitalized Patents & Brand Equity",
+                "debit": 24015000,
+                "balance": 24015000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5203",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 1500000,
+                "balance": 25515000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5202",
+                "account": "R&D Development Bank Clearing & Amortization Provision",
+                "credit": 25515000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 52 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 25515000,
+            "totalCredit": 25515000,
+            "entries": [
+              {
+                "id": "JNL-5201",
+                "account": "Intangible Assets - Capitalized Patents & Brand Equity",
+                "debit": 24015000,
+                "balance": 24015000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5203",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 1500000,
+                "balance": 25515000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5202",
+                "account": "R&D Development Bank Clearing & Amortization Provision",
+                "credit": 25515000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Impairment Interaction under Ind AS 36, Derecognition & Schedule III / CARO Disclosures",
+      "codeHash": "1744a2a64150fedd4ccf3239cc2603cd8181d48a15b092e5b2df53314beeebb4",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Impairment Interaction under Ind AS 36, ... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($24,020,000) for Impairment Interaction under Ind AS 36, ...",
+            "title": "Day 52 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 24020000,
+            "totalCredit": 24020000,
+            "entries": [
+              {
+                "id": "JNL-5201",
+                "account": "Intangible Assets - Capitalized Patents & Brand Equity",
+                "debit": 24020000,
+                "balance": 24020000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 52"
+              },
+              {
+                "id": "JNL-5202",
+                "account": "R&D Development Bank Clearing & Amortization Provision",
+                "credit": 24020000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & impairment adjustment accrual ($1,500,000).",
+            "title": "Day 52 Journal \u2014 Valuation & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 25520000,
+            "totalCredit": 25520000,
+            "entries": [
+              {
+                "id": "JNL-5201",
+                "account": "Intangible Assets - Capitalized Patents & Brand Equity",
+                "debit": 24020000,
+                "balance": 24020000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5203",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 1500000,
+                "balance": 25520000,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5202",
+                "account": "R&D Development Bank Clearing & Amortization Provision",
+                "credit": 25520000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 52 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 25520000,
+            "totalCredit": 25520000,
+            "entries": [
+              {
+                "id": "JNL-5201",
+                "account": "Intangible Assets - Capitalized Patents & Brand Equity",
+                "debit": 24020000,
+                "balance": 24020000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5203",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 1500000,
+                "balance": 25520000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5202",
+                "account": "R&D Development Bank Clearing & Amortization Provision",
+                "credit": 25520000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 52 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 25520000,
+            "totalCredit": 25520000,
+            "entries": [
+              {
+                "id": "JNL-5201",
+                "account": "Intangible Assets - Capitalized Patents & Brand Equity",
+                "debit": 24020000,
+                "balance": 24020000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5203",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 1500000,
+                "balance": 25520000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5202",
+                "account": "R&D Development Bank Clearing & Amortization Provision",
+                "credit": 25520000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Ind AS 38 Software Platform, Programmatic Verification & Day 52 Completion",
+      "codeHash": "1744a2a64150fedd4ccf3239cc2603cd8181d48a15b092e5b2df53314beeebb4",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Enterprise Ind AS 38 Software Platform, ... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($24,025,000) for Enterprise Ind AS 38 Software Platform, ...",
+            "title": "Day 52 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 24025000,
+            "totalCredit": 24025000,
+            "entries": [
+              {
+                "id": "JNL-5201",
+                "account": "Intangible Assets - Capitalized Patents & Brand Equity",
+                "debit": 24025000,
+                "balance": 24025000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 52"
+              },
+              {
+                "id": "JNL-5202",
+                "account": "R&D Development Bank Clearing & Amortization Provision",
+                "credit": 24025000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & impairment adjustment accrual ($1,500,000).",
+            "title": "Day 52 Journal \u2014 Valuation & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 25525000,
+            "totalCredit": 25525000,
+            "entries": [
+              {
+                "id": "JNL-5201",
+                "account": "Intangible Assets - Capitalized Patents & Brand Equity",
+                "debit": 24025000,
+                "balance": 24025000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5203",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 1500000,
+                "balance": 25525000,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5202",
+                "account": "R&D Development Bank Clearing & Amortization Provision",
+                "credit": 25525000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 52 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 25525000,
+            "totalCredit": 25525000,
+            "entries": [
+              {
+                "id": "JNL-5201",
+                "account": "Intangible Assets - Capitalized Patents & Brand Equity",
+                "debit": 24025000,
+                "balance": 24025000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5203",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 1500000,
+                "balance": 25525000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5202",
+                "account": "R&D Development Bank Clearing & Amortization Provision",
+                "credit": 25525000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 52 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 25525000,
+            "totalCredit": 25525000,
+            "entries": [
+              {
+                "id": "JNL-5201",
+                "account": "Intangible Assets - Capitalized Patents & Brand Equity",
+                "debit": 24025000,
+                "balance": 24025000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5203",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 1500000,
+                "balance": 25525000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5202",
+                "account": "R&D Development Bank Clearing & Amortization Provision",
+                "credit": 25525000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

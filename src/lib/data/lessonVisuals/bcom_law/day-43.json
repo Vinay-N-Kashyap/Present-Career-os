@@ -1,0 +1,294 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_law",
+  "day": 43,
+  "promptSha": "prompt_sha_bcom_law_day43_pirp_msme_swiss_challenge_v1",
+  "model": "google/gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Genesis of PIRP: Chapter III-A Architecture & Eligibility Invariants (Section 54A)",
+      "codeHash": "57604b39cf50100ebf6ee90ef77a0e7d72bd0fbee0b7c1cbdd797a1c01efa4e5",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Genesis of PIRP: Chapter III-A Architecture & Eligibility Invariants (Section 54A) Architecture",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "MSME Thresholds",
+            "subtext": "Udyam registration and statutory default limits"
+          },
+          {
+            "id": "s2",
+            "name": "Corporate Approval",
+            "subtext": "Seventy-five percent shareholder special resolution"
+          },
+          {
+            "id": "s3",
+            "name": "Creditor Consent",
+            "subtext": "Sixty-six percent unrelated financial creditor vote"
+          },
+          {
+            "id": "s4",
+            "name": "NCLT Admission",
+            "subtext": "One hundred and twenty day statutory resolution window"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Small manufacturing enterprises initiate prepackaged restructuring frameworks.",
+            "activeStageId": "s1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say1",
+            "caption": "Standard corporate insolvency resolution threatens fragile small businesses.",
+            "activeStageId": "s2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Small manufacturing enterprises initiate prepackaged restructuring smoothly.",
+            "activeStageId": "s3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Eligibility engines evaluate turnover thresholds and test governance votes.",
+            "activeStageId": "s4",
+            "statusBadge": "done"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Hybrid Debtor-in-Possession Model: Governance & Creditor Oversight (Section 54H)",
+      "codeHash": "f79a981b60897d390f8f7400256b4ff648169324d6feaf76f46ba390ab650d51",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "The Hybrid Debtor-in-Possession Model: Governance & Creditor Oversight (Section 54H) Architecture",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Debtor Stewardship",
+            "subtext": "Board continues daily management and production"
+          },
+          {
+            "id": "s2",
+            "name": "Resolution Professional",
+            "subtext": "Statutory monitoring and claims verification"
+          },
+          {
+            "id": "s3",
+            "name": "CoC Veto Gates",
+            "subtext": "Prior approval for capital asset sales and debt"
+          },
+          {
+            "id": "s4",
+            "name": "Management Ouster",
+            "subtext": "Section 54J circuit breaker upon proven fraud"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Debtor in possession models preserve enterprise operational continuity.",
+            "activeStageId": "s1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say1",
+            "caption": "Debtor in possession governance preserves operational control and management.",
+            "activeStageId": "s2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Resolution professionals supervise capital asset sales to protect lenders.",
+            "activeStageId": "s3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Debtor governance action classifiers test capital asset disposal rules.",
+            "activeStageId": "s4",
+            "statusBadge": "done"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Base Resolution Plan Submission & Financial Creditor Impairment Thresholds (Section 54K)",
+      "codeHash": "5e20397e343146c40cc5d3127c5a83045f576e1338ec1362796761f7aa0b5906",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Base Resolution Plan Submission & Financial Creditor Impairment Thresholds (Section 54K) Architecture",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Base Plan Submission",
+            "subtext": "Debtor authors initial restructuring proposal"
+          },
+          {
+            "id": "s2",
+            "name": "Impairment Evaluation",
+            "subtext": "Assessing write-downs to operational creditors"
+          },
+          {
+            "id": "s3",
+            "name": "Section 54K Trigger",
+            "subtext": "Mandatory public bidding if claims are impaired"
+          },
+          {
+            "id": "s4",
+            "name": "Direct Approval",
+            "subtext": "Permitted only if operational claims are unimpaired"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Base resolution plans establish initial commercial restructuring terms.",
+            "activeStageId": "s1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say1",
+            "caption": "Corporate debtor submits base resolution plan to financial creditors.",
+            "activeStageId": "s2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Base resolution plans trigger competitive Swiss challenge bids upon haircuts.",
+            "activeStageId": "s3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Plan impairment engines test operational creditor haircuts and triggers.",
+            "activeStageId": "s4",
+            "statusBadge": "done"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Swiss Challenge Bidding Mechanism & Plan Finalization (Section 54K & Regulations)",
+      "codeHash": "df75125b1c4388649096e64bd2452a1dcc110219d9cc1bf0863330d9c206ba44",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "The Swiss Challenge Bidding Mechanism & Plan Finalization (Section 54K & Regulations) Architecture",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Public Form PIRP-6",
+            "subtext": "Inviting competing third-party resolution bids"
+          },
+          {
+            "id": "s2",
+            "name": "Significantly Better",
+            "subtext": "Testing score enhancement against Base Plan"
+          },
+          {
+            "id": "s3",
+            "name": "Promoter Right to Match",
+            "subtext": "Iterative bidding between debtor and bidder"
+          },
+          {
+            "id": "s4",
+            "name": "CoC Supermajority",
+            "subtext": "Sixty-six percent vote approving winning plan"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Swiss challenge bidding models invite competitive third party restructuring.",
+            "activeStageId": "s1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say1",
+            "caption": "Swiss challenge auction mechanism maximizes enterprise asset value.",
+            "activeStageId": "s2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Auction engines evaluate Swiss challenge bids to compare net present values.",
+            "activeStageId": "s3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Auction engines evaluate significantly better competing bids and match rights.",
+            "activeStageId": "s4",
+            "statusBadge": "done"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Anti-Pattern Defense & Outage Puzzle: The Sham MSME Registration & Predatory Haircut Squeeze",
+      "codeHash": "c30fb75c0e2c21c5b70406a52f5b13135ea0fe733f828712813aac3de919173b",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Anti-Pattern Defense & Outage Puzzle: The Sham MSME Registration & Predatory Haircut Squeeze Architecture",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Sham MSME Detection",
+            "subtext": "Auditing turnover and plant investment data"
+          },
+          {
+            "id": "s2",
+            "name": "Forensic GSTR Cross-Check",
+            "subtext": "Unmasking fraudulent Udyam certificates"
+          },
+          {
+            "id": "s3",
+            "name": "Predatory Haircut Defense",
+            "subtext": "Protecting micro-suppliers through open bidding"
+          },
+          {
+            "id": "s4",
+            "name": "Section 54N Conversion",
+            "subtext": "Immediate conversion to standard CIRP ouster"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Restructuring advisors confront adversarial abuses in insolvency practice.",
+            "activeStageId": "s1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say1",
+            "caption": "Promoters fraudulently engineer qualifications to evade displacement.",
+            "activeStageId": "s2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Consortium banks uncover falsified filings to dismiss fraudulent proceedings.",
+            "activeStageId": "s3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Dispute diagnostic engines identify sham registrations and enforce rules.",
+            "activeStageId": "s4",
+            "statusBadge": "done"
+          }
+        ]
+      }
+    }
+  ]
+}

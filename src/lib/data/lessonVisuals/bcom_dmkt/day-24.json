@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "coursePrefix": "bcom_dmkt",
+  "day": 24,
+  "title": "Marketing Mix Modeling (MMM) & Incrementality Geo-Testing Architecture",
+  "funnelSteps": [
+    {
+      "step": "TOP_DOWN_MMM_REGRESSION",
+      "label": "Econometric Time-Series Decomposition (Base vs Media Sales)",
+      "metric": "Base: $450k / Media: $225k",
+      "status": "COMPLETED",
+      "color": "#10B981"
+    },
+    {
+      "step": "ADSTOCK_AND_SATURATION",
+      "label": "Adstock Carryover Decay (Theta=0.50) & Hill Saturation",
+      "metric": "Diminishing Returns Modeled",
+      "status": "COMPLETED",
+      "color": "#3B82F6"
+    },
+    {
+      "step": "GEO_LIFT_EXPERIMENTATION",
+      "label": "Synthetic Counterfactual Geo-Testing & Regional Control",
+      "metric": "+$35k Lift (+21.21%)",
+      "status": "COMPLETED",
+      "color": "#6366F1"
+    },
+    {
+      "step": "CAUSAL_IROAS_GOVERNANCE",
+      "label": "Incremental ROAS (iROAS) vs Platform-Reported Cannibalization",
+      "metric": "Causal iROAS: 2.33x",
+      "status": "COMPLETED",
+      "color": "#F59E0B"
+    },
+    {
+      "step": "ENTERPRISE_MMM_GATEWAY",
+      "label": "Institutional Econometric Modeling & Causal Science Gateway",
+      "metric": "100.0/100 EMGI Certified",
+      "status": "COMPLETED",
+      "color": "#8B5CF6"
+    }
+  ],
+  "kpis": [
+    {
+      "label": "Baseline Organic Sales",
+      "value": "$450,000/Wk"
+    },
+    {
+      "label": "Adstock Half-Life (Theta)",
+      "value": "0.50 Decay"
+    },
+    {
+      "label": "Geo-Lift Incremental Lift",
+      "value": "+$35,000.00"
+    },
+    {
+      "label": "True Causal iROAS",
+      "value": "2.33x"
+    }
+  ]
+}

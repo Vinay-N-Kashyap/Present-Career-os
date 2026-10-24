@@ -1,0 +1,1709 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_ops",
+  "day": 13,
+  "promptSha": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Reverse Supply Chain Economics, Returns Gatekeeping & Fraud Prevention",
+      "codeHash": "33099bcc1d5f97eed43b845cf38fa20a97ffed166772e1194de8da4fab557be6",
+      "spec": {
+        "template": "workflow",
+        "title": "Reverse Supply Chain Economics, Returns Gatek... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Demand Forecast",
+            "subtext": "EOQ / Safety Stock",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Procurement & WIP",
+            "subtext": "Kanban Pull",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Six Sigma QA",
+            "subtext": "Control Limits",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Fulfillment SLA",
+            "subtext": "OTIF 99.4%",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Demand Forecast): Initialize Reverse Supply Chain Economics, Returns ...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Demand Forecast",
+                "subtext": "EOQ / Safety Stock",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Procurement & WIP",
+                "subtext": "Kanban Pull",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Six Sigma QA",
+                "subtext": "Control Limits",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Fulfillment SLA",
+                "subtext": "OTIF 99.4%",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Procurement & WIP): Process core workflow stage.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Demand Forecast",
+                "subtext": "EOQ / Safety Stock",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Procurement & WIP",
+                "subtext": "Kanban Pull",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Six Sigma QA",
+                "subtext": "Control Limits",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Fulfillment SLA",
+                "subtext": "OTIF 99.4%",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Six Sigma QA): Verify quality and invariants.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "Zero Defects",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Demand Forecast",
+                "subtext": "EOQ / Safety Stock",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Procurement & WIP",
+                "subtext": "Kanban Pull",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Six Sigma QA",
+                "subtext": "Control Limits",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Fulfillment SLA",
+                "subtext": "OTIF 99.4%",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Fulfillment SLA): Commit end-to-end delivery.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "SLA Met ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Demand Forecast",
+                "subtext": "EOQ / Safety Stock",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Procurement & WIP",
+                "subtext": "Kanban Pull",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Six Sigma QA",
+                "subtext": "Control Limits",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Fulfillment SLA",
+                "subtext": "OTIF 99.4%",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Reverse Supply Chain Economics, Returns Gatek... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Demand Forecast",
+            "subtext": "EOQ / Safety Stock",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Procurement & WIP",
+            "subtext": "Kanban Pull",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Six Sigma QA",
+            "subtext": "Control Limits",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Fulfillment SLA",
+            "subtext": "OTIF 99.4%",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Demand Forecast): Initialize Reverse Supply Chain Economics, Returns ...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Demand Forecast",
+                "subtext": "EOQ / Safety Stock",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Procurement & WIP",
+                "subtext": "Kanban Pull",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Six Sigma QA",
+                "subtext": "Control Limits",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Fulfillment SLA",
+                "subtext": "OTIF 99.4%",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Procurement & WIP): Process core workflow stage.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Demand Forecast",
+                "subtext": "EOQ / Safety Stock",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Procurement & WIP",
+                "subtext": "Kanban Pull",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Six Sigma QA",
+                "subtext": "Control Limits",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Fulfillment SLA",
+                "subtext": "OTIF 99.4%",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Six Sigma QA): Verify quality and invariants.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "Zero Defects",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Demand Forecast",
+                "subtext": "EOQ / Safety Stock",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Procurement & WIP",
+                "subtext": "Kanban Pull",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Six Sigma QA",
+                "subtext": "Control Limits",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Fulfillment SLA",
+                "subtext": "OTIF 99.4%",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Fulfillment SLA): Commit end-to-end delivery.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "SLA Met ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Demand Forecast",
+                "subtext": "EOQ / Safety Stock",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Procurement & WIP",
+                "subtext": "Kanban Pull",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Six Sigma QA",
+                "subtext": "Control Limits",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Fulfillment SLA",
+                "subtext": "OTIF 99.4%",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Product Return Disposition Tree & Multi-Tier Salvage Triage Matrix",
+      "codeHash": "7ef4389a6f633eab5dd2ca7d1c958d1da0fa379b5c8be0d23398bc2df122ae8e",
+      "spec": {
+        "template": "workflow",
+        "title": "Product Return Disposition Tree & Multi-Tier ... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Demand Forecast",
+            "subtext": "EOQ / Safety Stock",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Procurement & WIP",
+            "subtext": "Kanban Pull",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Six Sigma QA",
+            "subtext": "Control Limits",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Fulfillment SLA",
+            "subtext": "OTIF 99.4%",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Demand Forecast): Initialize Product Return Disposition Tree & Multi-...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Demand Forecast",
+                "subtext": "EOQ / Safety Stock",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Procurement & WIP",
+                "subtext": "Kanban Pull",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Six Sigma QA",
+                "subtext": "Control Limits",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Fulfillment SLA",
+                "subtext": "OTIF 99.4%",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Procurement & WIP): Process core workflow stage.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Demand Forecast",
+                "subtext": "EOQ / Safety Stock",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Procurement & WIP",
+                "subtext": "Kanban Pull",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Six Sigma QA",
+                "subtext": "Control Limits",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Fulfillment SLA",
+                "subtext": "OTIF 99.4%",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Six Sigma QA): Verify quality and invariants.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "Zero Defects",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Demand Forecast",
+                "subtext": "EOQ / Safety Stock",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Procurement & WIP",
+                "subtext": "Kanban Pull",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Six Sigma QA",
+                "subtext": "Control Limits",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Fulfillment SLA",
+                "subtext": "OTIF 99.4%",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Fulfillment SLA): Commit end-to-end delivery.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "SLA Met ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Demand Forecast",
+                "subtext": "EOQ / Safety Stock",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Procurement & WIP",
+                "subtext": "Kanban Pull",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Six Sigma QA",
+                "subtext": "Control Limits",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Fulfillment SLA",
+                "subtext": "OTIF 99.4%",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Product Return Disposition Tree & Multi-Tier ... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Demand Forecast",
+            "subtext": "EOQ / Safety Stock",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Procurement & WIP",
+            "subtext": "Kanban Pull",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Six Sigma QA",
+            "subtext": "Control Limits",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Fulfillment SLA",
+            "subtext": "OTIF 99.4%",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Demand Forecast): Initialize Product Return Disposition Tree & Multi-...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Demand Forecast",
+                "subtext": "EOQ / Safety Stock",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Procurement & WIP",
+                "subtext": "Kanban Pull",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Six Sigma QA",
+                "subtext": "Control Limits",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Fulfillment SLA",
+                "subtext": "OTIF 99.4%",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Procurement & WIP): Process core workflow stage.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Demand Forecast",
+                "subtext": "EOQ / Safety Stock",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Procurement & WIP",
+                "subtext": "Kanban Pull",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Six Sigma QA",
+                "subtext": "Control Limits",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Fulfillment SLA",
+                "subtext": "OTIF 99.4%",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Six Sigma QA): Verify quality and invariants.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "Zero Defects",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Demand Forecast",
+                "subtext": "EOQ / Safety Stock",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Procurement & WIP",
+                "subtext": "Kanban Pull",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Six Sigma QA",
+                "subtext": "Control Limits",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Fulfillment SLA",
+                "subtext": "OTIF 99.4%",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Fulfillment SLA): Commit end-to-end delivery.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "SLA Met ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Demand Forecast",
+                "subtext": "EOQ / Safety Stock",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Procurement & WIP",
+                "subtext": "Kanban Pull",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Six Sigma QA",
+                "subtext": "Control Limits",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Fulfillment SLA",
+                "subtext": "OTIF 99.4%",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Remanufacturing Operations & Closed-Loop Cannibalization Economics",
+      "codeHash": "d6cdc68d96247e9d39f6542f4d7889306f19bcce00d17292933edbf8ea504d20",
+      "spec": {
+        "template": "workflow",
+        "title": "Remanufacturing Operations & Closed-Loop Cann... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Demand Forecast",
+            "subtext": "EOQ / Safety Stock",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Procurement & WIP",
+            "subtext": "Kanban Pull",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Six Sigma QA",
+            "subtext": "Control Limits",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Fulfillment SLA",
+            "subtext": "OTIF 99.4%",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Demand Forecast): Initialize Remanufacturing Operations & Closed-Loop...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Demand Forecast",
+                "subtext": "EOQ / Safety Stock",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Procurement & WIP",
+                "subtext": "Kanban Pull",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Six Sigma QA",
+                "subtext": "Control Limits",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Fulfillment SLA",
+                "subtext": "OTIF 99.4%",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Procurement & WIP): Process core workflow stage.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Demand Forecast",
+                "subtext": "EOQ / Safety Stock",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Procurement & WIP",
+                "subtext": "Kanban Pull",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Six Sigma QA",
+                "subtext": "Control Limits",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Fulfillment SLA",
+                "subtext": "OTIF 99.4%",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Six Sigma QA): Verify quality and invariants.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "Zero Defects",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Demand Forecast",
+                "subtext": "EOQ / Safety Stock",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Procurement & WIP",
+                "subtext": "Kanban Pull",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Six Sigma QA",
+                "subtext": "Control Limits",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Fulfillment SLA",
+                "subtext": "OTIF 99.4%",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Fulfillment SLA): Commit end-to-end delivery.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "SLA Met ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Demand Forecast",
+                "subtext": "EOQ / Safety Stock",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Procurement & WIP",
+                "subtext": "Kanban Pull",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Six Sigma QA",
+                "subtext": "Control Limits",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Fulfillment SLA",
+                "subtext": "OTIF 99.4%",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Remanufacturing Operations & Closed-Loop Cann... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Demand Forecast",
+            "subtext": "EOQ / Safety Stock",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Procurement & WIP",
+            "subtext": "Kanban Pull",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Six Sigma QA",
+            "subtext": "Control Limits",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Fulfillment SLA",
+            "subtext": "OTIF 99.4%",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Demand Forecast): Initialize Remanufacturing Operations & Closed-Loop...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Demand Forecast",
+                "subtext": "EOQ / Safety Stock",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Procurement & WIP",
+                "subtext": "Kanban Pull",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Six Sigma QA",
+                "subtext": "Control Limits",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Fulfillment SLA",
+                "subtext": "OTIF 99.4%",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Procurement & WIP): Process core workflow stage.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Demand Forecast",
+                "subtext": "EOQ / Safety Stock",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Procurement & WIP",
+                "subtext": "Kanban Pull",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Six Sigma QA",
+                "subtext": "Control Limits",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Fulfillment SLA",
+                "subtext": "OTIF 99.4%",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Six Sigma QA): Verify quality and invariants.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "Zero Defects",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Demand Forecast",
+                "subtext": "EOQ / Safety Stock",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Procurement & WIP",
+                "subtext": "Kanban Pull",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Six Sigma QA",
+                "subtext": "Control Limits",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Fulfillment SLA",
+                "subtext": "OTIF 99.4%",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Fulfillment SLA): Commit end-to-end delivery.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "SLA Met ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Demand Forecast",
+                "subtext": "EOQ / Safety Stock",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Procurement & WIP",
+                "subtext": "Kanban Pull",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Six Sigma QA",
+                "subtext": "Control Limits",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Fulfillment SLA",
+                "subtext": "OTIF 99.4%",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Extended Producer Responsibility (EPR) Statutory Regulations & E-Waste Credit Trading",
+      "codeHash": "bcc723a60341b0e08040de4d0a9d244f0efb62284218a1c3ef70d90646be07e4",
+      "spec": {
+        "template": "workflow",
+        "title": "Extended Producer Responsibility (EPR) Statut... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Demand Forecast",
+            "subtext": "EOQ / Safety Stock",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Procurement & WIP",
+            "subtext": "Kanban Pull",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Six Sigma QA",
+            "subtext": "Control Limits",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Fulfillment SLA",
+            "subtext": "OTIF 99.4%",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Demand Forecast): Initialize Extended Producer Responsibility (EPR) S...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Demand Forecast",
+                "subtext": "EOQ / Safety Stock",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Procurement & WIP",
+                "subtext": "Kanban Pull",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Six Sigma QA",
+                "subtext": "Control Limits",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Fulfillment SLA",
+                "subtext": "OTIF 99.4%",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Procurement & WIP): Process core workflow stage.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Demand Forecast",
+                "subtext": "EOQ / Safety Stock",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Procurement & WIP",
+                "subtext": "Kanban Pull",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Six Sigma QA",
+                "subtext": "Control Limits",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Fulfillment SLA",
+                "subtext": "OTIF 99.4%",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Six Sigma QA): Verify quality and invariants.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "Zero Defects",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Demand Forecast",
+                "subtext": "EOQ / Safety Stock",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Procurement & WIP",
+                "subtext": "Kanban Pull",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Six Sigma QA",
+                "subtext": "Control Limits",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Fulfillment SLA",
+                "subtext": "OTIF 99.4%",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Fulfillment SLA): Commit end-to-end delivery.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "SLA Met ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Demand Forecast",
+                "subtext": "EOQ / Safety Stock",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Procurement & WIP",
+                "subtext": "Kanban Pull",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Six Sigma QA",
+                "subtext": "Control Limits",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Fulfillment SLA",
+                "subtext": "OTIF 99.4%",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Extended Producer Responsibility (EPR) Statut... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Demand Forecast",
+            "subtext": "EOQ / Safety Stock",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Procurement & WIP",
+            "subtext": "Kanban Pull",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Six Sigma QA",
+            "subtext": "Control Limits",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Fulfillment SLA",
+            "subtext": "OTIF 99.4%",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Demand Forecast): Initialize Extended Producer Responsibility (EPR) S...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Demand Forecast",
+                "subtext": "EOQ / Safety Stock",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Procurement & WIP",
+                "subtext": "Kanban Pull",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Six Sigma QA",
+                "subtext": "Control Limits",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Fulfillment SLA",
+                "subtext": "OTIF 99.4%",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Procurement & WIP): Process core workflow stage.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Demand Forecast",
+                "subtext": "EOQ / Safety Stock",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Procurement & WIP",
+                "subtext": "Kanban Pull",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Six Sigma QA",
+                "subtext": "Control Limits",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Fulfillment SLA",
+                "subtext": "OTIF 99.4%",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Six Sigma QA): Verify quality and invariants.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "Zero Defects",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Demand Forecast",
+                "subtext": "EOQ / Safety Stock",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Procurement & WIP",
+                "subtext": "Kanban Pull",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Six Sigma QA",
+                "subtext": "Control Limits",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Fulfillment SLA",
+                "subtext": "OTIF 99.4%",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Fulfillment SLA): Commit end-to-end delivery.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "SLA Met ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Demand Forecast",
+                "subtext": "EOQ / Safety Stock",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Procurement & WIP",
+                "subtext": "Kanban Pull",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Six Sigma QA",
+                "subtext": "Control Limits",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Fulfillment SLA",
+                "subtext": "OTIF 99.4%",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Circular Economy Return Recovery & Net Financial Optimization Engine",
+      "codeHash": "bd554793c6f2c424157d78ae38443f7aeca1f4385aac7ca29e3a306e86914753",
+      "spec": {
+        "template": "workflow",
+        "title": "Circular Economy Return Recovery & Net Financ... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Demand Forecast",
+            "subtext": "EOQ / Safety Stock",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Procurement & WIP",
+            "subtext": "Kanban Pull",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Six Sigma QA",
+            "subtext": "Control Limits",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Fulfillment SLA",
+            "subtext": "OTIF 99.4%",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Demand Forecast): Initialize Circular Economy Return Recovery & Net F...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Demand Forecast",
+                "subtext": "EOQ / Safety Stock",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Procurement & WIP",
+                "subtext": "Kanban Pull",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Six Sigma QA",
+                "subtext": "Control Limits",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Fulfillment SLA",
+                "subtext": "OTIF 99.4%",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Procurement & WIP): Process core workflow stage.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Demand Forecast",
+                "subtext": "EOQ / Safety Stock",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Procurement & WIP",
+                "subtext": "Kanban Pull",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Six Sigma QA",
+                "subtext": "Control Limits",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Fulfillment SLA",
+                "subtext": "OTIF 99.4%",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Six Sigma QA): Verify quality and invariants.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "Zero Defects",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Demand Forecast",
+                "subtext": "EOQ / Safety Stock",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Procurement & WIP",
+                "subtext": "Kanban Pull",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Six Sigma QA",
+                "subtext": "Control Limits",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Fulfillment SLA",
+                "subtext": "OTIF 99.4%",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Fulfillment SLA): Commit end-to-end delivery.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "SLA Met ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Demand Forecast",
+                "subtext": "EOQ / Safety Stock",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Procurement & WIP",
+                "subtext": "Kanban Pull",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Six Sigma QA",
+                "subtext": "Control Limits",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Fulfillment SLA",
+                "subtext": "OTIF 99.4%",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "workflow",
+        "title": "Circular Economy Return Recovery & Net Financ... — Operational Workflow",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Demand Forecast",
+            "subtext": "EOQ / Safety Stock",
+            "tone": "data"
+          },
+          {
+            "id": "s2",
+            "name": "Procurement & WIP",
+            "subtext": "Kanban Pull",
+            "tone": "data"
+          },
+          {
+            "id": "s3",
+            "name": "Six Sigma QA",
+            "subtext": "Control Limits",
+            "tone": "ok"
+          },
+          {
+            "id": "s4",
+            "name": "Fulfillment SLA",
+            "subtext": "OTIF 99.4%",
+            "tone": "ok"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Stage 1 (Demand Forecast): Initialize Circular Economy Return Recovery & Net F...",
+            "activeStageId": "s1",
+            "statusBadge": "INGRESS",
+            "throughput": "100% Ready",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Demand Forecast",
+                "subtext": "EOQ / Safety Stock",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Procurement & WIP",
+                "subtext": "Kanban Pull",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Six Sigma QA",
+                "subtext": "Control Limits",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Fulfillment SLA",
+                "subtext": "OTIF 99.4%",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Stage 2 (Procurement & WIP): Process core workflow stage.",
+            "activeStageId": "s2",
+            "statusBadge": "IN_PROGRESS",
+            "throughput": "Active",
+            "tone": "data",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Demand Forecast",
+                "subtext": "EOQ / Safety Stock",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Procurement & WIP",
+                "subtext": "Kanban Pull",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Six Sigma QA",
+                "subtext": "Control Limits",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Fulfillment SLA",
+                "subtext": "OTIF 99.4%",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stage 3 (Six Sigma QA): Verify quality and invariants.",
+            "activeStageId": "s3",
+            "statusBadge": "VALIDATED",
+            "throughput": "Zero Defects",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Demand Forecast",
+                "subtext": "EOQ / Safety Stock",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Procurement & WIP",
+                "subtext": "Kanban Pull",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Six Sigma QA",
+                "subtext": "Control Limits",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Fulfillment SLA",
+                "subtext": "OTIF 99.4%",
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Stage 4 (Fulfillment SLA): Commit end-to-end delivery.",
+            "activeStageId": "s4",
+            "statusBadge": "COMPLETED",
+            "throughput": "SLA Met ✓",
+            "tone": "ok",
+            "stages": [
+              {
+                "id": "s1",
+                "name": "Demand Forecast",
+                "subtext": "EOQ / Safety Stock",
+                "tone": "data"
+              },
+              {
+                "id": "s2",
+                "name": "Procurement & WIP",
+                "subtext": "Kanban Pull",
+                "tone": "data"
+              },
+              {
+                "id": "s3",
+                "name": "Six Sigma QA",
+                "subtext": "Control Limits",
+                "tone": "ok"
+              },
+              {
+                "id": "s4",
+                "name": "Fulfillment SLA",
+                "subtext": "OTIF 99.4%",
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

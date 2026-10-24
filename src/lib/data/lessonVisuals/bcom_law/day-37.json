@@ -1,0 +1,294 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_law",
+  "day": 37,
+  "promptSha": "prompt_sha_bcom_law_day37_irp_claims_collation_v1",
+  "model": "google/gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Section 16 Appointment of IRP, Section 17 Suspension of Board & Section 18 Management Powers",
+      "codeHash": "1cde6f1850f542fbf90a9f82f422f6d439cc53c1aea2393729740c6a7dbb5cc5",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Section 16 Appointment of IRP, Section 17 Suspension of Board & Section 18 Management Powers Architecture",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "IRP Appointment",
+            "subtext": "Section 16 fourteen-day mandate"
+          },
+          {
+            "id": "s2",
+            "name": "Board Suspension",
+            "subtext": "Section 17 management vesting"
+          },
+          {
+            "id": "s3",
+            "name": "Custody of Assets",
+            "subtext": "Section 18 taking control of ledgers and accounts"
+          },
+          {
+            "id": "s4",
+            "name": "Statutory Fiduciary",
+            "subtext": "Public servant immunity under Section 233"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Insolvency admission orders trigger statutory corporate executive transitions.",
+            "activeStageId": "s1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say1",
+            "caption": "Corporate insolvency triggers immediate statutory executive transitions.",
+            "activeStageId": "s2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Automobile parts supplier management faces immediate banking suspension.",
+            "activeStageId": "s3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Administrative transfers test board suspension and evaluate tribunal orders.",
+            "activeStageId": "s4",
+            "statusBadge": "done"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Section 15 Public Announcement in Form A: Statutory Deadlines & Notification Protocols",
+      "codeHash": "35cc48ed89b1e9c283bdf494d3ea9fc284e05ab9202c7995e26450f6512783c9",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Section 15 Public Announcement in Form A: Statutory Deadlines & Notification Protocols Architecture",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Form A Public Notice",
+            "subtext": "Mandatory publication within three days"
+          },
+          {
+            "id": "s2",
+            "name": "Dual Newspaper Notice",
+            "subtext": "Regional vernacular and English national"
+          },
+          {
+            "id": "s3",
+            "name": "IBBI Electronic Filing",
+            "subtext": "Publication on statutory insolvency website"
+          },
+          {
+            "id": "s4",
+            "name": "Fourteen Day Cutoff",
+            "subtext": "Statutory window for initial claim lodgment"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Public announcements initiate statutory insolvency claim submission windows.",
+            "activeStageId": "s1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say1",
+            "caption": "Statutory corporate timelines mandate immediate public stakeholder summons.",
+            "activeStageId": "s2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Equipment manufacturer claims proceed through formal publication notices.",
+            "activeStageId": "s3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Public announcement validators test publication deadlines and claim windows.",
+            "activeStageId": "s4",
+            "statusBadge": "done"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Collation and Verification of Claims: Form B (Operational), Form C (Financial) & Form CA (Class Claims)",
+      "codeHash": "02820a172ca0a1e6399a3eb943217b9c2a54102537a4f676674cf9ef05609e4e",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Collation and Verification of Claims: Form B (Operational), Form C (Financial) & Form CA (Class Claims) Architecture",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Form B Operational",
+            "subtext": "Invoices bills and statutory authority claims"
+          },
+          {
+            "id": "s2",
+            "name": "Form C Financial",
+            "subtext": "Bank loan sanctions and interest schedules"
+          },
+          {
+            "id": "s3",
+            "name": "Form CA Class Claims",
+            "subtext": "Real estate homebuyers and authorized representative"
+          },
+          {
+            "id": "s4",
+            "name": "Forensic Verification",
+            "subtext": "Validation against debtor ledgers and GST"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Claim collation frameworks verify creditor filings across statutory categories.",
+            "activeStageId": "s1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say1",
+            "caption": "Creditor claim collation establishes foundational insolvency debt registers.",
+            "activeStageId": "s2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Commercial bank loan covenants govern forensic claim interest calculations.",
+            "activeStageId": "s3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Claim collation engines verify creditor forms and detect penal interest.",
+            "activeStageId": "s4",
+            "statusBadge": "done"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Section 20 Management of Corporate Debtor as Going Concern & Interim Finance",
+      "codeHash": "044a72e45549d59d9186560b21dfe239e92a390204aed82ba631e367ab085429",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Section 20 Management of Corporate Debtor as Going Concern & Interim Finance Architecture",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Going Concern Mandate",
+            "subtext": "Preserving enterprise operations and employment"
+          },
+          {
+            "id": "s2",
+            "name": "Interim Finance",
+            "subtext": "Priority repayment status under Section 5(13)"
+          },
+          {
+            "id": "s3",
+            "name": "Vendor Continuity",
+            "subtext": "Protecting raw material supply and utilities"
+          },
+          {
+            "id": "s4",
+            "name": "Process Cost Governance",
+            "subtext": "Committee approval for insolvency expenses"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Going concern mandates preserve enterprise operational value during insolvency.",
+            "activeStageId": "s1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say1",
+            "caption": "Statutory insolvency mandates require enterprise going concern preservation.",
+            "activeStageId": "s2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Manufacturing plants utilize interim finance for operational stability.",
+            "activeStageId": "s3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Going concern evaluators calculate cash deficits and test finance feasibility.",
+            "activeStageId": "s4",
+            "statusBadge": "done"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Anti-Pattern Defense & Outage Puzzle: The Bogus Creditor Claim & Inflated Penal Interest Crisis",
+      "codeHash": "3692998e5ce1b1463b4f5c468c02eae95fdbae66fe2493fdc6244da844189838",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Anti-Pattern Defense & Outage Puzzle: The Bogus Creditor Claim & Inflated Penal Interest Crisis Architecture",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Bogus Claim Detection",
+            "subtext": "Forged contracts and fabricated interest claims"
+          },
+          {
+            "id": "s2",
+            "name": "Forensic Accounting",
+            "subtext": "Bank statement reconciliation and GST matching"
+          },
+          {
+            "id": "s3",
+            "name": "Disallowance Orders",
+            "subtext": "Rejection of unverified and fraudulent filings"
+          },
+          {
+            "id": "s4",
+            "name": "Related Party Disqualification",
+            "subtext": "Section 21 voting exclusions"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Forensic claim investigations detect fraudulent filings and related parties.",
+            "activeStageId": "s1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say1",
+            "caption": "Insolvency practice requires rigorous forensic scrutiny against phantom claims.",
+            "activeStageId": "s2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Offshore entity loan claims face promoter related party disqualification.",
+            "activeStageId": "s3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Forensic claim diagnostics detect related parties and enforce disqualifications.",
+            "activeStageId": "s4",
+            "statusBadge": "done"
+          }
+        ]
+      }
+    }
+  ]
+}

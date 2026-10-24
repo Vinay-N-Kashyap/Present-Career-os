@@ -1,0 +1,664 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_tax",
+  "day": 17,
+  "promptSha": "91f4577bcaf266c1ea51d7c1eccd88365b6788d7a91fc0c7a251d472251c8d34",
+  "model": "google/gemini-3.8-flash",
+  "entries": [
+    {
+      "partTitle": "Secondary Adjustments Mechanics & Repatriation Mandate (Section 92CE)",
+      "codeHash": "4619ce44271ed83c263b45ec7ee16863d3ae37d7e639891ed7e0491c9a062126",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Secondary Adjustments Mechanics & Repatriation Man \u2014 International Tax Ledger",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary international tax / TP ledger (790000) for Secondary Adjustments Mechanics & Repatr...",
+            "title": "Day 17 International Tax Ledger \u2014 Initial Recognition",
+            "isBalanced": true,
+            "totalDebit": 790000,
+            "totalCredit": 790000,
+            "entries": [
+              {
+                "id": "TAX-1701",
+                "account": "Cross-Border TP / Withholding Tax Clearing",
+                "debit": 790000,
+                "balance": 790000,
+                "tone": "data",
+                "memo": "Statutory recognition under Chapter X / Sec 195"
+              },
+              {
+                "id": "TAX-1702",
+                "account": "Foreign Enterprise Settlement / Cash Ledger",
+                "credit": 790000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement balance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record statutory adjustment / DTAA relief (95000) under applicable cross-border tax code.",
+            "title": "Day 17 International Tax Ledger \u2014 Statutory Adjustment",
+            "isBalanced": true,
+            "totalDebit": 885000,
+            "totalCredit": 885000,
+            "entries": [
+              {
+                "id": "TAX-1701",
+                "account": "Cross-Border TP / Withholding Tax Clearing",
+                "debit": 790000,
+                "balance": 790000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-1703",
+                "account": "Secondary Adjustment / DTAA Treaty Reserve",
+                "debit": 95000,
+                "balance": 885000,
+                "tone": "accent",
+                "memo": "Statutory TP adjustment / Treaty relief"
+              },
+              {
+                "id": "TAX-1702",
+                "account": "Foreign Enterprise Settlement / Cash Ledger",
+                "credit": 885000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute simulated cross-border case study for Secondary Adjustments Mechanics & Repatr...",
+            "title": "Day 17 International Tax Ledger \u2014 Simulation Audit",
+            "isBalanced": true,
+            "totalDebit": 885000,
+            "totalCredit": 885000,
+            "entries": [
+              {
+                "id": "TAX-1701",
+                "account": "Cross-Border TP / Withholding Tax Clearing",
+                "debit": 790000,
+                "balance": 790000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-1703",
+                "account": "Secondary Adjustment / DTAA Treaty Reserve",
+                "debit": 95000,
+                "balance": 885000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-1702",
+                "account": "Foreign Enterprise Settlement / Cash Ledger",
+                "credit": 885000,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify ledger equilibrium and international tax compliance signoff.",
+            "title": "Day 17 International Tax Ledger \u2014 Final Settlement",
+            "isBalanced": true,
+            "totalDebit": 885000,
+            "totalCredit": 885000,
+            "entries": [
+              {
+                "id": "TAX-1701",
+                "account": "Cross-Border TP / Withholding Tax Clearing",
+                "debit": 790000,
+                "balance": 790000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-1703",
+                "account": "Secondary Adjustment / DTAA Treaty Reserve",
+                "debit": 95000,
+                "balance": 885000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-1702",
+                "account": "Foreign Enterprise Settlement / Cash Ledger",
+                "credit": 885000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "100% Balanced and Certified"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Option to Pay Additional Tax under Section 92CE(2A)",
+      "codeHash": "9e0aa372d5e3beb9a059c6bd174804388236ec496978afb4f3e1bcde28cc3d65",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Option to Pay Additional Tax under Section 92CE(2A \u2014 International Tax Ledger",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary international tax / TP ledger (800000) for Option to Pay Additional Tax under Secti...",
+            "title": "Day 17 International Tax Ledger \u2014 Initial Recognition",
+            "isBalanced": true,
+            "totalDebit": 800000,
+            "totalCredit": 800000,
+            "entries": [
+              {
+                "id": "TAX-1701",
+                "account": "Cross-Border TP / Withholding Tax Clearing",
+                "debit": 800000,
+                "balance": 800000,
+                "tone": "data",
+                "memo": "Statutory recognition under Chapter X / Sec 195"
+              },
+              {
+                "id": "TAX-1702",
+                "account": "Foreign Enterprise Settlement / Cash Ledger",
+                "credit": 800000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement balance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record statutory adjustment / DTAA relief (100000) under applicable cross-border tax code.",
+            "title": "Day 17 International Tax Ledger \u2014 Statutory Adjustment",
+            "isBalanced": true,
+            "totalDebit": 900000,
+            "totalCredit": 900000,
+            "entries": [
+              {
+                "id": "TAX-1701",
+                "account": "Cross-Border TP / Withholding Tax Clearing",
+                "debit": 800000,
+                "balance": 800000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-1703",
+                "account": "Secondary Adjustment / DTAA Treaty Reserve",
+                "debit": 100000,
+                "balance": 900000,
+                "tone": "accent",
+                "memo": "Statutory TP adjustment / Treaty relief"
+              },
+              {
+                "id": "TAX-1702",
+                "account": "Foreign Enterprise Settlement / Cash Ledger",
+                "credit": 900000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute simulated cross-border case study for Option to Pay Additional Tax under Secti...",
+            "title": "Day 17 International Tax Ledger \u2014 Simulation Audit",
+            "isBalanced": true,
+            "totalDebit": 900000,
+            "totalCredit": 900000,
+            "entries": [
+              {
+                "id": "TAX-1701",
+                "account": "Cross-Border TP / Withholding Tax Clearing",
+                "debit": 800000,
+                "balance": 800000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-1703",
+                "account": "Secondary Adjustment / DTAA Treaty Reserve",
+                "debit": 100000,
+                "balance": 900000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-1702",
+                "account": "Foreign Enterprise Settlement / Cash Ledger",
+                "credit": 900000,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify ledger equilibrium and international tax compliance signoff.",
+            "title": "Day 17 International Tax Ledger \u2014 Final Settlement",
+            "isBalanced": true,
+            "totalDebit": 900000,
+            "totalCredit": 900000,
+            "entries": [
+              {
+                "id": "TAX-1701",
+                "account": "Cross-Border TP / Withholding Tax Clearing",
+                "debit": 800000,
+                "balance": 800000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-1703",
+                "account": "Secondary Adjustment / DTAA Treaty Reserve",
+                "debit": 100000,
+                "balance": 900000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-1702",
+                "account": "Foreign Enterprise Settlement / Cash Ledger",
+                "credit": 900000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "100% Balanced and Certified"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Thin Capitalisation & Interest Limitation Rules (Section 94B)",
+      "codeHash": "0c0d24e3c5581466db67c984988fda0ed6d0a51bc88569cf30db0d5846663e02",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Thin Capitalisation & Interest Limitation Rules (S \u2014 International Tax Ledger",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary international tax / TP ledger (810000) for Thin Capitalisation & Interest Limitatio...",
+            "title": "Day 17 International Tax Ledger \u2014 Initial Recognition",
+            "isBalanced": true,
+            "totalDebit": 810000,
+            "totalCredit": 810000,
+            "entries": [
+              {
+                "id": "TAX-1701",
+                "account": "Cross-Border TP / Withholding Tax Clearing",
+                "debit": 810000,
+                "balance": 810000,
+                "tone": "data",
+                "memo": "Statutory recognition under Chapter X / Sec 195"
+              },
+              {
+                "id": "TAX-1702",
+                "account": "Foreign Enterprise Settlement / Cash Ledger",
+                "credit": 810000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement balance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record statutory adjustment / DTAA relief (105000) under applicable cross-border tax code.",
+            "title": "Day 17 International Tax Ledger \u2014 Statutory Adjustment",
+            "isBalanced": true,
+            "totalDebit": 915000,
+            "totalCredit": 915000,
+            "entries": [
+              {
+                "id": "TAX-1701",
+                "account": "Cross-Border TP / Withholding Tax Clearing",
+                "debit": 810000,
+                "balance": 810000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-1703",
+                "account": "Secondary Adjustment / DTAA Treaty Reserve",
+                "debit": 105000,
+                "balance": 915000,
+                "tone": "accent",
+                "memo": "Statutory TP adjustment / Treaty relief"
+              },
+              {
+                "id": "TAX-1702",
+                "account": "Foreign Enterprise Settlement / Cash Ledger",
+                "credit": 915000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute simulated cross-border case study for Thin Capitalisation & Interest Limitatio...",
+            "title": "Day 17 International Tax Ledger \u2014 Simulation Audit",
+            "isBalanced": true,
+            "totalDebit": 915000,
+            "totalCredit": 915000,
+            "entries": [
+              {
+                "id": "TAX-1701",
+                "account": "Cross-Border TP / Withholding Tax Clearing",
+                "debit": 810000,
+                "balance": 810000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-1703",
+                "account": "Secondary Adjustment / DTAA Treaty Reserve",
+                "debit": 105000,
+                "balance": 915000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-1702",
+                "account": "Foreign Enterprise Settlement / Cash Ledger",
+                "credit": 915000,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify ledger equilibrium and international tax compliance signoff.",
+            "title": "Day 17 International Tax Ledger \u2014 Final Settlement",
+            "isBalanced": true,
+            "totalDebit": 915000,
+            "totalCredit": 915000,
+            "entries": [
+              {
+                "id": "TAX-1701",
+                "account": "Cross-Border TP / Withholding Tax Clearing",
+                "debit": 810000,
+                "balance": 810000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-1703",
+                "account": "Secondary Adjustment / DTAA Treaty Reserve",
+                "debit": 105000,
+                "balance": 915000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-1702",
+                "account": "Foreign Enterprise Settlement / Cash Ledger",
+                "credit": 915000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "100% Balanced and Certified"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "General Anti-Avoidance Rule (GAAR) Framework (Chapter X-A, Sec 95-102)",
+      "codeHash": "c58a2a155fd309a656801cbe4f78f715ce8302db490b41c3a0cff9e4f420f86d",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "General Anti-Avoidance Rule (GAAR) Framework (Chap \u2014 International Tax Ledger",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary international tax / TP ledger (820000) for General Anti-Avoidance Rule (GAAR) Frame...",
+            "title": "Day 17 International Tax Ledger \u2014 Initial Recognition",
+            "isBalanced": true,
+            "totalDebit": 820000,
+            "totalCredit": 820000,
+            "entries": [
+              {
+                "id": "TAX-1701",
+                "account": "Cross-Border TP / Withholding Tax Clearing",
+                "debit": 820000,
+                "balance": 820000,
+                "tone": "data",
+                "memo": "Statutory recognition under Chapter X / Sec 195"
+              },
+              {
+                "id": "TAX-1702",
+                "account": "Foreign Enterprise Settlement / Cash Ledger",
+                "credit": 820000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement balance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record statutory adjustment / DTAA relief (110000) under applicable cross-border tax code.",
+            "title": "Day 17 International Tax Ledger \u2014 Statutory Adjustment",
+            "isBalanced": true,
+            "totalDebit": 930000,
+            "totalCredit": 930000,
+            "entries": [
+              {
+                "id": "TAX-1701",
+                "account": "Cross-Border TP / Withholding Tax Clearing",
+                "debit": 820000,
+                "balance": 820000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-1703",
+                "account": "Secondary Adjustment / DTAA Treaty Reserve",
+                "debit": 110000,
+                "balance": 930000,
+                "tone": "accent",
+                "memo": "Statutory TP adjustment / Treaty relief"
+              },
+              {
+                "id": "TAX-1702",
+                "account": "Foreign Enterprise Settlement / Cash Ledger",
+                "credit": 930000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute simulated cross-border case study for General Anti-Avoidance Rule (GAAR) Frame...",
+            "title": "Day 17 International Tax Ledger \u2014 Simulation Audit",
+            "isBalanced": true,
+            "totalDebit": 930000,
+            "totalCredit": 930000,
+            "entries": [
+              {
+                "id": "TAX-1701",
+                "account": "Cross-Border TP / Withholding Tax Clearing",
+                "debit": 820000,
+                "balance": 820000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-1703",
+                "account": "Secondary Adjustment / DTAA Treaty Reserve",
+                "debit": 110000,
+                "balance": 930000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-1702",
+                "account": "Foreign Enterprise Settlement / Cash Ledger",
+                "credit": 930000,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify ledger equilibrium and international tax compliance signoff.",
+            "title": "Day 17 International Tax Ledger \u2014 Final Settlement",
+            "isBalanced": true,
+            "totalDebit": 930000,
+            "totalCredit": 930000,
+            "entries": [
+              {
+                "id": "TAX-1701",
+                "account": "Cross-Border TP / Withholding Tax Clearing",
+                "debit": 820000,
+                "balance": 820000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-1703",
+                "account": "Secondary Adjustment / DTAA Treaty Reserve",
+                "debit": 110000,
+                "balance": 930000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-1702",
+                "account": "Foreign Enterprise Settlement / Cash Ledger",
+                "credit": 930000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "100% Balanced and Certified"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "GAAR vs SAAR & Approving Panel Governance (Sec 100 & Sec 144BA)",
+      "codeHash": "fbc77fbaebf86dce281c40e357d90bcdb5877f7495b70031c5855e808427f41c",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "GAAR vs SAAR & Approving Panel Governance (Sec 100 \u2014 International Tax Ledger",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary international tax / TP ledger (830000) for GAAR vs SAAR & Approving Panel Governanc...",
+            "title": "Day 17 International Tax Ledger \u2014 Initial Recognition",
+            "isBalanced": true,
+            "totalDebit": 830000,
+            "totalCredit": 830000,
+            "entries": [
+              {
+                "id": "TAX-1701",
+                "account": "Cross-Border TP / Withholding Tax Clearing",
+                "debit": 830000,
+                "balance": 830000,
+                "tone": "data",
+                "memo": "Statutory recognition under Chapter X / Sec 195"
+              },
+              {
+                "id": "TAX-1702",
+                "account": "Foreign Enterprise Settlement / Cash Ledger",
+                "credit": 830000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement balance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record statutory adjustment / DTAA relief (115000) under applicable cross-border tax code.",
+            "title": "Day 17 International Tax Ledger \u2014 Statutory Adjustment",
+            "isBalanced": true,
+            "totalDebit": 945000,
+            "totalCredit": 945000,
+            "entries": [
+              {
+                "id": "TAX-1701",
+                "account": "Cross-Border TP / Withholding Tax Clearing",
+                "debit": 830000,
+                "balance": 830000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-1703",
+                "account": "Secondary Adjustment / DTAA Treaty Reserve",
+                "debit": 115000,
+                "balance": 945000,
+                "tone": "accent",
+                "memo": "Statutory TP adjustment / Treaty relief"
+              },
+              {
+                "id": "TAX-1702",
+                "account": "Foreign Enterprise Settlement / Cash Ledger",
+                "credit": 945000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute simulated cross-border case study for GAAR vs SAAR & Approving Panel Governanc...",
+            "title": "Day 17 International Tax Ledger \u2014 Simulation Audit",
+            "isBalanced": true,
+            "totalDebit": 945000,
+            "totalCredit": 945000,
+            "entries": [
+              {
+                "id": "TAX-1701",
+                "account": "Cross-Border TP / Withholding Tax Clearing",
+                "debit": 830000,
+                "balance": 830000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-1703",
+                "account": "Secondary Adjustment / DTAA Treaty Reserve",
+                "debit": 115000,
+                "balance": 945000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-1702",
+                "account": "Foreign Enterprise Settlement / Cash Ledger",
+                "credit": 945000,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify ledger equilibrium and international tax compliance signoff.",
+            "title": "Day 17 International Tax Ledger \u2014 Final Settlement",
+            "isBalanced": true,
+            "totalDebit": 945000,
+            "totalCredit": 945000,
+            "entries": [
+              {
+                "id": "TAX-1701",
+                "account": "Cross-Border TP / Withholding Tax Clearing",
+                "debit": 830000,
+                "balance": 830000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-1703",
+                "account": "Secondary Adjustment / DTAA Treaty Reserve",
+                "debit": 115000,
+                "balance": 945000,
+                "tone": "ok"
+              },
+              {
+                "id": "TAX-1702",
+                "account": "Foreign Enterprise Settlement / Cash Ledger",
+                "credit": 945000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "100% Balanced and Certified"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

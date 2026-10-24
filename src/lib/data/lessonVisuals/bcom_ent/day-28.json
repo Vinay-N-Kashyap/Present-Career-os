@@ -1,0 +1,1609 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_ent",
+  "day": 28,
+  "promptSha": "65191ecc1e17abc7bd917795ffd3f7e007eee11cc09ae71bd9d6180a0c1f4c11",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Quality of Earnings (QoE) & EBITDA Normalization",
+      "codeHash": "2ffc282c085ffca0298f32b2e69c177359b7bd1cebf653cce50b901332b6752c",
+      "spec": {
+        "template": "funnel",
+        "title": "Quality of Earnings (QoE) & EBITDA Norma - Sovereign Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Global pipeline evaluation (20,000 prospects).",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Pipeline Evaluated",
+                "value": 20000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Opportunities",
+                "value": 9000,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Due Diligence Filter",
+                "value": 3600,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Sovereign Execution",
+                "value": 1440,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Rigorous screening qualifies 45.0% of targets (9,000).",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Pipeline Evaluated",
+                "value": 20000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Opportunities",
+                "value": 9000,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "data"
+              },
+              {
+                "id": "target",
+                "label": "Due Diligence Filter",
+                "value": 3600,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Sovereign Execution",
+                "value": 1440,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Quantitative valuation confirms (3,600 high-conviction positions).",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Pipeline Evaluated",
+                "value": 20000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Opportunities",
+                "value": 9000,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Due Diligence Filter",
+                "value": 3600,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "data"
+              },
+              {
+                "id": "final",
+                "label": "Sovereign Execution",
+                "value": 1440,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Sovereign execution locks capital (1,440 institutional stakeholders).",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Pipeline Evaluated",
+                "value": 20000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Opportunities",
+                "value": 9000,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Due Diligence Filter",
+                "value": 3600,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Sovereign Execution",
+                "value": 1440,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "funnel",
+        "title": "Quality of Earnings (QoE) & EBITDA Norma - Sovereign Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Global pipeline evaluation (20,000 prospects).",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Pipeline Evaluated",
+                "value": 20000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Opportunities",
+                "value": 9000,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Due Diligence Filter",
+                "value": 3600,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Sovereign Execution",
+                "value": 1440,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Rigorous screening qualifies 45.0% of targets (9,000).",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Pipeline Evaluated",
+                "value": 20000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Opportunities",
+                "value": 9000,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "data"
+              },
+              {
+                "id": "target",
+                "label": "Due Diligence Filter",
+                "value": 3600,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Sovereign Execution",
+                "value": 1440,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Quantitative valuation confirms (3,600 high-conviction positions).",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Pipeline Evaluated",
+                "value": 20000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Opportunities",
+                "value": 9000,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Due Diligence Filter",
+                "value": 3600,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "data"
+              },
+              {
+                "id": "final",
+                "label": "Sovereign Execution",
+                "value": 1440,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Sovereign execution locks capital (1,440 institutional stakeholders).",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Pipeline Evaluated",
+                "value": 20000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Opportunities",
+                "value": 9000,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Due Diligence Filter",
+                "value": 3600,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Sovereign Execution",
+                "value": 1440,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Leveraged Buyout (LBO) Debt Sizing & Tranche Architecture",
+      "codeHash": "b124eae7e31004d59e2c50cdc08abe8fa79b7203a96295d9f19cf9b5792cb834",
+      "spec": {
+        "template": "funnel",
+        "title": "Leveraged Buyout (LBO) Debt Sizing & Tra - Sovereign Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Global pipeline evaluation (25,000 prospects).",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Pipeline Evaluated",
+                "value": 25000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Opportunities",
+                "value": 11250,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Due Diligence Filter",
+                "value": 4500,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Sovereign Execution",
+                "value": 1800,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Rigorous screening qualifies 45.0% of targets (11,250).",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Pipeline Evaluated",
+                "value": 25000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Opportunities",
+                "value": 11250,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "data"
+              },
+              {
+                "id": "target",
+                "label": "Due Diligence Filter",
+                "value": 4500,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Sovereign Execution",
+                "value": 1800,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Quantitative valuation confirms (4,500 high-conviction positions).",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Pipeline Evaluated",
+                "value": 25000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Opportunities",
+                "value": 11250,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Due Diligence Filter",
+                "value": 4500,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "data"
+              },
+              {
+                "id": "final",
+                "label": "Sovereign Execution",
+                "value": 1800,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Sovereign execution locks capital (1,800 institutional stakeholders).",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Pipeline Evaluated",
+                "value": 25000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Opportunities",
+                "value": 11250,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Due Diligence Filter",
+                "value": 4500,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Sovereign Execution",
+                "value": 1800,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "funnel",
+        "title": "Leveraged Buyout (LBO) Debt Sizing & Tra - Sovereign Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Global pipeline evaluation (25,000 prospects).",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Pipeline Evaluated",
+                "value": 25000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Opportunities",
+                "value": 11250,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Due Diligence Filter",
+                "value": 4500,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Sovereign Execution",
+                "value": 1800,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Rigorous screening qualifies 45.0% of targets (11,250).",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Pipeline Evaluated",
+                "value": 25000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Opportunities",
+                "value": 11250,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "data"
+              },
+              {
+                "id": "target",
+                "label": "Due Diligence Filter",
+                "value": 4500,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Sovereign Execution",
+                "value": 1800,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Quantitative valuation confirms (4,500 high-conviction positions).",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Pipeline Evaluated",
+                "value": 25000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Opportunities",
+                "value": 11250,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Due Diligence Filter",
+                "value": 4500,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "data"
+              },
+              {
+                "id": "final",
+                "label": "Sovereign Execution",
+                "value": 1800,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Sovereign execution locks capital (1,800 institutional stakeholders).",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Pipeline Evaluated",
+                "value": 25000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Opportunities",
+                "value": 11250,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Due Diligence Filter",
+                "value": 4500,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Sovereign Execution",
+                "value": 1800,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "LBO Returns Engine: MOIC, IRR & Cash Paydown Waterfall",
+      "codeHash": "9977316e1905ce0605cbbd9ba3ddb7c15cc60366ff63ba5d5bb7db5f5388ea21",
+      "spec": {
+        "template": "funnel",
+        "title": "LBO Returns Engine: MOIC, IRR & Cash Pay - Sovereign Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Global pipeline evaluation (18,000 prospects).",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Pipeline Evaluated",
+                "value": 18000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Opportunities",
+                "value": 8100,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Due Diligence Filter",
+                "value": 3240,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Sovereign Execution",
+                "value": 1296,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Rigorous screening qualifies 45.0% of targets (8,100).",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Pipeline Evaluated",
+                "value": 18000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Opportunities",
+                "value": 8100,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "data"
+              },
+              {
+                "id": "target",
+                "label": "Due Diligence Filter",
+                "value": 3240,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Sovereign Execution",
+                "value": 1296,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Quantitative valuation confirms (3,240 high-conviction positions).",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Pipeline Evaluated",
+                "value": 18000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Opportunities",
+                "value": 8100,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Due Diligence Filter",
+                "value": 3240,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "data"
+              },
+              {
+                "id": "final",
+                "label": "Sovereign Execution",
+                "value": 1296,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Sovereign execution locks capital (1,296 institutional stakeholders).",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Pipeline Evaluated",
+                "value": 18000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Opportunities",
+                "value": 8100,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Due Diligence Filter",
+                "value": 3240,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Sovereign Execution",
+                "value": 1296,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "funnel",
+        "title": "LBO Returns Engine: MOIC, IRR & Cash Pay - Sovereign Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Global pipeline evaluation (18,000 prospects).",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Pipeline Evaluated",
+                "value": 18000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Opportunities",
+                "value": 8100,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Due Diligence Filter",
+                "value": 3240,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Sovereign Execution",
+                "value": 1296,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Rigorous screening qualifies 45.0% of targets (8,100).",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Pipeline Evaluated",
+                "value": 18000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Opportunities",
+                "value": 8100,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "data"
+              },
+              {
+                "id": "target",
+                "label": "Due Diligence Filter",
+                "value": 3240,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Sovereign Execution",
+                "value": 1296,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Quantitative valuation confirms (3,240 high-conviction positions).",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Pipeline Evaluated",
+                "value": 18000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Opportunities",
+                "value": 8100,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Due Diligence Filter",
+                "value": 3240,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "data"
+              },
+              {
+                "id": "final",
+                "label": "Sovereign Execution",
+                "value": 1296,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Sovereign execution locks capital (1,296 institutional stakeholders).",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Pipeline Evaluated",
+                "value": 18000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Opportunities",
+                "value": 8100,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Due Diligence Filter",
+                "value": 3240,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Sovereign Execution",
+                "value": 1296,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Industry Rollup Synergies & Multiple Arbitrage Economics",
+      "codeHash": "390cef7e69b4f96ebfcc170ca035f157ac011734c040d919a9d06ce067453108",
+      "spec": {
+        "template": "funnel",
+        "title": "Industry Rollup Synergies & Multiple Arb - Sovereign Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Global pipeline evaluation (30,000 prospects).",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Pipeline Evaluated",
+                "value": 30000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Opportunities",
+                "value": 13500,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Due Diligence Filter",
+                "value": 5400,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Sovereign Execution",
+                "value": 2160,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Rigorous screening qualifies 45.0% of targets (13,500).",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Pipeline Evaluated",
+                "value": 30000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Opportunities",
+                "value": 13500,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "data"
+              },
+              {
+                "id": "target",
+                "label": "Due Diligence Filter",
+                "value": 5400,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Sovereign Execution",
+                "value": 2160,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Quantitative valuation confirms (5,400 high-conviction positions).",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Pipeline Evaluated",
+                "value": 30000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Opportunities",
+                "value": 13500,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Due Diligence Filter",
+                "value": 5400,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "data"
+              },
+              {
+                "id": "final",
+                "label": "Sovereign Execution",
+                "value": 2160,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Sovereign execution locks capital (2,160 institutional stakeholders).",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Pipeline Evaluated",
+                "value": 30000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Opportunities",
+                "value": 13500,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Due Diligence Filter",
+                "value": 5400,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Sovereign Execution",
+                "value": 2160,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "funnel",
+        "title": "Industry Rollup Synergies & Multiple Arb - Sovereign Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Global pipeline evaluation (30,000 prospects).",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Pipeline Evaluated",
+                "value": 30000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Opportunities",
+                "value": 13500,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Due Diligence Filter",
+                "value": 5400,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Sovereign Execution",
+                "value": 2160,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Rigorous screening qualifies 45.0% of targets (13,500).",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Pipeline Evaluated",
+                "value": 30000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Opportunities",
+                "value": 13500,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "data"
+              },
+              {
+                "id": "target",
+                "label": "Due Diligence Filter",
+                "value": 5400,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Sovereign Execution",
+                "value": 2160,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Quantitative valuation confirms (5,400 high-conviction positions).",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Pipeline Evaluated",
+                "value": 30000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Opportunities",
+                "value": 13500,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Due Diligence Filter",
+                "value": 5400,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "data"
+              },
+              {
+                "id": "final",
+                "label": "Sovereign Execution",
+                "value": 2160,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Sovereign execution locks capital (2,160 institutional stakeholders).",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Pipeline Evaluated",
+                "value": 30000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Opportunities",
+                "value": 13500,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Due Diligence Filter",
+                "value": 5400,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Sovereign Execution",
+                "value": 2160,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Master M&A Integration, Due Diligence & Control Tower",
+      "codeHash": "a0174abdc3e470d5b8ee81ed7535d6fb56af2885c894a68d77d97d110c86bec3",
+      "spec": {
+        "template": "funnel",
+        "title": "Master M&A Integration, Due Diligence &  - Sovereign Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Global pipeline evaluation (50,000 prospects).",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Pipeline Evaluated",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Opportunities",
+                "value": 25000,
+                "percentage": 50.0,
+                "dropoffRate": 50.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Due Diligence Filter",
+                "value": 10000,
+                "percentage": 20.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Sovereign Execution",
+                "value": 4000,
+                "percentage": 8.0,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Rigorous screening qualifies 50.0% of targets (25,000).",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Pipeline Evaluated",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Opportunities",
+                "value": 25000,
+                "percentage": 50.0,
+                "dropoffRate": 50.0,
+                "tone": "data"
+              },
+              {
+                "id": "target",
+                "label": "Due Diligence Filter",
+                "value": 10000,
+                "percentage": 20.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Sovereign Execution",
+                "value": 4000,
+                "percentage": 8.0,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Quantitative valuation confirms (10,000 high-conviction positions).",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Pipeline Evaluated",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Opportunities",
+                "value": 25000,
+                "percentage": 50.0,
+                "dropoffRate": 50.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Due Diligence Filter",
+                "value": 10000,
+                "percentage": 20.0,
+                "dropoffRate": 60.0,
+                "tone": "data"
+              },
+              {
+                "id": "final",
+                "label": "Sovereign Execution",
+                "value": 4000,
+                "percentage": 8.0,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Sovereign execution locks capital (4,000 institutional stakeholders).",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Pipeline Evaluated",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Opportunities",
+                "value": 25000,
+                "percentage": 50.0,
+                "dropoffRate": 50.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Due Diligence Filter",
+                "value": 10000,
+                "percentage": 20.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Sovereign Execution",
+                "value": 4000,
+                "percentage": 8.0,
+                "dropoffRate": 60.0,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "funnel",
+        "title": "Master M&A Integration, Due Diligence &  - Sovereign Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Global pipeline evaluation (50,000 prospects).",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Pipeline Evaluated",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Opportunities",
+                "value": 25000,
+                "percentage": 50.0,
+                "dropoffRate": 50.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Due Diligence Filter",
+                "value": 10000,
+                "percentage": 20.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Sovereign Execution",
+                "value": 4000,
+                "percentage": 8.0,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Rigorous screening qualifies 50.0% of targets (25,000).",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Pipeline Evaluated",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Opportunities",
+                "value": 25000,
+                "percentage": 50.0,
+                "dropoffRate": 50.0,
+                "tone": "data"
+              },
+              {
+                "id": "target",
+                "label": "Due Diligence Filter",
+                "value": 10000,
+                "percentage": 20.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Sovereign Execution",
+                "value": 4000,
+                "percentage": 8.0,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Quantitative valuation confirms (10,000 high-conviction positions).",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Pipeline Evaluated",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Opportunities",
+                "value": 25000,
+                "percentage": 50.0,
+                "dropoffRate": 50.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Due Diligence Filter",
+                "value": 10000,
+                "percentage": 20.0,
+                "dropoffRate": 60.0,
+                "tone": "data"
+              },
+              {
+                "id": "final",
+                "label": "Sovereign Execution",
+                "value": 4000,
+                "percentage": 8.0,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Sovereign execution locks capital (4,000 institutional stakeholders).",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Pipeline Evaluated",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Opportunities",
+                "value": 25000,
+                "percentage": 50.0,
+                "dropoffRate": 50.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Due Diligence Filter",
+                "value": 10000,
+                "percentage": 20.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Sovereign Execution",
+                "value": 4000,
+                "percentage": 8.0,
+                "dropoffRate": 60.0,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

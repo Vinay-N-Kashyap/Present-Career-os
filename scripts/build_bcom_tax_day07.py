@@ -1,0 +1,451 @@
+"""
+Build script for bcom_tax Day 7: Time of Supply & Valuation Architecture: Section 12, 13 & 15 Rules
+"""
+import json
+
+day07_data = {
+    "day": 7,
+    "title": "Time of Supply & Valuation Architecture: Section 12, 13 & 15 Rules",
+    "course": "Corporate Taxation & GST",
+    "duration": "38 mins",
+    "parts": [
+        {
+            "id": 1,
+            "title": "Time of Supply for Goods: Section 12 Determinism & The Notification 66/2017 Relief",
+            "say": (
+                "Welcome to Day 7 of Corporate Taxation & GST. Today, we delve into the dual operational engines that govern all indirect tax accounting: the 'Time of Supply' (which dictates the precise tax period in which GST liability crystallizes) and the 'Valuation of Supply' (which dictates the exact monetary base upon which the statutory tax percentage must be applied). Even when a transaction unambiguously qualifies as a taxable supply under Section 7, the enterprise cannot correctly file GSTR-1 or discharge tax in GSTR-3B without determining the exact statutory tax point under Section 12 or Section 13.\n\n"
+                "Under Section 12(2) of the CGST Act, the Time of Supply for goods is deterministically defined as the earliest of two milestone dates: (a) the date of issue of invoice by the supplier, or the last date on which the supplier is required to issue the invoice under Section 31 (which mandates that an invoice for goods must be issued on or before the removal of goods for supply to the recipient); or (b) the date on which the supplier receives payment with respect to the supply.\n\n"
+                "However, in the initial months of GST implementation, small and medium enterprises faced severe working capital strangulation because receiving commercial advances for goods triggered immediate GST liability before any manufacturing had occurred. To rescue business liquidity, the Government issued landmark Notification No. 66/2017-Central Tax. This notification exempts all registered persons (other than composition dealers) from paying GST on advances received for the supply of goods! Consequently, for goods under forward charge, the Time of Supply is now strictly governed by the date of invoice issuance (or removal of goods), completely decoupling advance cash collections from GST crystallization.\n\n"
+                "In this first part, we construct an enterprise Time of Supply for Goods Engine in Python. We ingest commercial delivery dates, invoice generation timestamps, and advance payment schedules, apply Section 12 statutory provisions read with Notification 66/2017, identify the exact tax filing period, and compute any interest liabilities triggered by delinquent invoice generation beyond Section 31 removal deadlines."
+            ),
+            "code": (
+                "import json\n"
+                "from datetime import datetime, date\n"
+                "from dataclasses import dataclass\n"
+                "from typing import Dict, List\n"
+                "\n"
+                "@dataclass\n"
+                "class GoodsSupplyEvent:\n"
+                "    order_id: str\n"
+                "    removal_date: str         # YYYY-MM-DD (Mandatory Sec 31 invoice deadline)\n"
+                "    invoice_date: str         # YYYY-MM-DD\n"
+                "    advance_received_date: str # YYYY-MM-DD\n"
+                "    payment_balance_date: str # YYYY-MM-DD\n"
+                "    invoice_value: float\n"
+                "    gst_rate: float\n"
+                "\n"
+                "class TimeOfSupplyGoodsEngine:\n"
+                "    @staticmethod\n"
+                "    def determine_tos(event: GoodsSupplyEvent) -> Dict:\n"
+                "        d_removal = datetime.strptime(event.removal_date, '%Y-%m-%d').date()\n"
+                "        d_invoice = datetime.strptime(event.invoice_date, '%Y-%m-%d').date()\n"
+                "        \n"
+                "        # Section 31(1): Invoice must be issued on or before removal of goods\n"
+                "        latest_permitted_invoice_date = d_removal\n"
+                "        \n"
+                "        # Section 12(2)(a): Earlier of actual invoice or last date required under Sec 31\n"
+                "        # Under Notification 66/2017-CT, advance payment date is EXEMPT for goods\n"
+                "        effective_tos_date = min(d_invoice, latest_permitted_invoice_date)\n"
+                "        \n"
+                "        is_invoice_delinquent = d_invoice > latest_permitted_invoice_date\n"
+                "        delay_days = (d_invoice - latest_permitted_invoice_date).days if is_invoice_delinquent else 0\n"
+                "        \n"
+                "        tax_period = effective_tos_date.strftime('%B %Y')\n"
+                "        gst_amount = event.invoice_value * event.gst_rate\n"
+                "        \n"
+                "        return {\n"
+                "            'order_id': event.order_id,\n"
+                "            'statutory_tos_date': str(effective_tos_date),\n"
+                "            'applicable_tax_return_period': tax_period,\n"
+                "            'is_invoice_delayed_beyond_removal': is_invoice_delinquent,\n"
+                "            'days_invoice_delayed': delay_days,\n"
+                "            'notification_66_2017_applied': True,\n"
+                "            'gst_liability': round(gst_amount, 2),\n"
+                "            'legal_basis': 'Sec 12(2)(a) CGST Act read with Notification 66/2017-CT (Advances Exempt for Goods)'\n"
+                "        }\n"
+                "\n"
+                "order1 = GoodsSupplyEvent(\n"
+                "    order_id='ORD-101', removal_date='2026-10-15', invoice_date='2026-10-14',\n"
+                "    advance_received_date='2026-09-20', payment_balance_date='2026-11-05',\n"
+                "    invoice_value=500000.0, gst_rate=0.18\n"
+                ")\n"
+                "res = TimeOfSupplyGoodsEngine.determine_tos(order1)\n"
+                "print(json.dumps(res, indent=2))\n"
+            ),
+            "codeNotes": "Calculates Time of Supply for goods under Section 12 CGST Act and Notification 66/2017-CT, verifying that advance payment dates do not crystallize GST on goods.",
+            "example": (
+                "A buyer pays a $100,000 cash advance for industrial machinery on September 1. The machinery is manufactured and removed from the factory with an invoice on October 15. Because Notification 66/2017 exempts advances on goods, Time of Supply is October 15 (October tax period). GST is paid in November GSTR-3B, not October."
+            ),
+            "tryIt": "Set invoice_date to '2026-10-25' (10 days after removal). Verify that effective_tos_date snaps back to the removal date '2026-10-15' under Section 31.",
+            "check": {
+                "question": "Under Section 12 of the CGST Act read with Notification No. 66/2017-Central Tax, what is the Time of Supply for a registered person supplying goods under forward charge?",
+                "options": [
+                    "The date of issue of invoice or the last date on which the invoice ought to have been issued under Section 31 (removal date).",
+                    "The date of receipt of advance commercial payment in the supplier's bank account.",
+                    "The date on which the customer signs the physical delivery acceptance acknowledgment.",
+                    "The last day of the fiscal quarter in which the manufacturing order was initiated."
+                ],
+                "answerIndex": 0,
+                "why": "Notification 66/2017-CT explicitly exempts suppliers of goods from paying tax on advances; hence, Time of Supply is determined solely by the earlier of invoice issuance or mandatory Section 31 removal date."
+            }
+        },
+        {
+            "id": 2,
+            "title": "Time of Supply for Services: Section 13 Rules & The 30-Day Invoice Issuance Mandate",
+            "say": (
+                "While suppliers of goods enjoy advance-payment exemption under Notification 66/2017, the legal framework governing the supply of 'Services' under Section 13 is vastly different and significantly more stringent. In the service economy, advance payments represent immediate taxable events, and the timeliness of invoice generation dictates which statutory clause governs tax liability.\n\n"
+                "Under Section 13(2) of the CGST Act, the Time of Supply for services is bifurcated based on whether the supplier complies with the Section 31(2) rule requiring an invoice to be issued within 30 days from the date of completion of the service (or 45 days for banking and financial institutions). If the invoice IS issued within the statutory 30-day window under Section 13(2)(a), the Time of Supply is the earlier of: (1) the date of issue of invoice, or (2) the date of receipt of payment. However, if the invoice is NOT issued within 30 days of service completion under Section 13(2)(b), the Time of Supply snaps back to the earlier of: (1) the date of completion of the service, or (2) the date of receipt of payment.\n\n"
+                "Crucially, advance payments for services remain 100% taxable at the moment of receipt! If an enterprise receives a $50,000 retainer on March 25 for management consulting services to be delivered in May, the Time of Supply for that $50,000 is March 25. The company must issue a Receipt Voucher under Section 31(3)(d), declare the advance in its March GSTR-1, and pay GST in its March GSTR-3B. When the final invoice is issued in May, the advance tax already paid is credited against the final tax obligation.\n\n"
+                "In this second part, we develop an enterprise Time of Supply for Services Engine in Python. We programmatically test whether service invoices were generated within the 30-day statutory safe harbor, identify whether advances or completion dates trigger earlier tax crystallization, compute receipt voucher liabilities, and evaluate Section 50 interest penalties for delayed tax declaration."
+            ),
+            "code": (
+                "import json\n"
+                "from datetime import datetime, date\n"
+                "from dataclasses import dataclass\n"
+                "from typing import Dict\n"
+                "\n"
+                "@dataclass\n"
+                "class ServiceSupplyEvent:\n"
+                "    engagement_id: str\n"
+                "    completion_date: str      # YYYY-MM-DD\n"
+                "    invoice_issue_date: str   # YYYY-MM-DD\n"
+                "    advance_payment_date: str # YYYY-MM-DD or ''\n"
+                "    final_payment_date: str   # YYYY-MM-DD\n"
+                "    advance_amount: float\n"
+                "    total_service_value: float\n"
+                "    gst_rate: float\n"
+                "\n"
+                "class TimeOfSupplyServicesEngine:\n"
+                "    @staticmethod\n"
+                "    def evaluate_service_tos(s: ServiceSupplyEvent) -> Dict:\n"
+                "        d_comp = datetime.strptime(s.completion_date, '%Y-%m-%d').date()\n"
+                "        d_inv = datetime.strptime(s.invoice_issue_date, '%Y-%m-%d').date()\n"
+                "        d_pay_final = datetime.strptime(s.final_payment_date, '%Y-%m-%d').date()\n"
+                "        \n"
+                "        # Test 30-day invoice issuance rule (Sec 31(2))\n"
+                "        days_to_invoice = (d_inv - d_comp).days\n"
+                "        issued_within_30_days = days_to_invoice <= 30\n"
+                "        \n"
+                "        # Advance handling: Advances for services ALWAYS attract GST immediately\n"
+                "        has_advance = s.advance_amount > 0.0 and s.advance_payment_date != ''\n"
+                "        advance_tos_date = s.advance_payment_date if has_advance else None\n"
+                "        \n"
+                "        # Main supply TOS determination\n"
+                "        if issued_within_30_days:\n"
+                "            # Sec 13(2)(a): Earlier of invoice date or final payment date\n"
+                "            main_tos_date = min(d_inv, d_pay_final)\n"
+                "            rule_used = 'Sec 13(2)(a): Invoice within 30 days -> Earlier of invoice or payment.'\n"
+                "        else:\n"
+                "            # Sec 13(2)(b): Invoice delayed -> Earlier of completion date or payment date\n"
+                "            main_tos_date = min(d_comp, d_pay_final)\n"
+                "            rule_used = 'Sec 13(2)(b): Invoice DELAYED (>30 days) -> Snaps back to earlier of completion or payment.'\n"
+                "            \n"
+                "        return {\n"
+                "            'engagement_id': s.engagement_id,\n"
+                "            'issued_within_30_days': issued_within_30_days,\n"
+                "            'days_taken_to_invoice': days_to_invoice,\n"
+                "            'statutory_rule_applied': rule_used,\n"
+                "            'advance_tos_date': advance_tos_date,\n"
+                "            'advance_gst_liability': round(s.advance_amount * s.gst_rate, 2),\n"
+                "            'balance_service_value': round(s.total_service_value - s.advance_amount, 2),\n"
+                "            'main_balance_tos_date': str(main_tos_date),\n"
+                "            'balance_gst_liability': round((s.total_service_value - s.advance_amount) * s.gst_rate, 2)\n"
+                "        }\n"
+                "\n"
+                "audit_service = ServiceSupplyEvent(\n"
+                "    engagement_id='ENG-501', completion_date='2026-08-10', invoice_issue_date='2026-09-25',\n"
+                "    advance_payment_date='2026-07-15', final_payment_date='2026-10-01',\n"
+                "    advance_amount=50000.0, total_service_value=200000.0, gst_rate=0.18\n"
+                ")\n"
+                "res = TimeOfSupplyServicesEngine.evaluate_service_tos(audit_service)\n"
+                "print(json.dumps(res, indent=2))\n"
+            ),
+            "codeNotes": "Enforces Section 13 CGST Act rules for services: advances trigger immediate tax liability, and delays beyond 30 days snap Time of Supply back to the completion date.",
+            "example": (
+                "A corporate law firm completes an M&A advisory engagement on June 1. It fails to issue an invoice until July 20 (50 days later). Because the invoice exceeded the 30-day limit, Section 13(2)(b) dictates that Time of Supply is June 1 (June tax period). The firm must pay GST in July with 18% per annum statutory interest for the 1-month delay."
+            ),
+            "tryIt": "Set invoice_issue_date to '2026-08-25' (15 days after completion). Verify that issued_within_30_days becomes True and Sec 13(2)(a) applies.",
+            "check": {
+                "question": "Under Section 13(2)(b) of the CGST Act, what happens to the Time of Supply for a service if the tax invoice is issued more than 30 days after the date of completion of the service?",
+                "options": [
+                    "The Time of Supply reverts to the earlier of the date of completion of service or the date of receipt of payment.",
+                    "The transaction is deemed a non-taxable grant under Schedule III.",
+                    "The supplier is allowed an automatic 90-day extension upon filing Form GST DRC-03.",
+                    "The tax liability is permanently waived, but an administrative late fee of $100 is assessed."
+                ],
+                "answerIndex": 0,
+                "why": "Section 13(2)(b) stipulates that if the invoice is not issued within 30 days of completion, the Time of Supply reverts to the earlier of the date of completion of service or the date of receipt of payment."
+            }
+        },
+        {
+            "id": 3,
+            "title": "Reverse Charge Mechanism (RCM): Section 9(3)/(4) & Time of Supply Invariants",
+            "say": (
+                "Under standard indirect tax operations (Forward Charge), the supplier of goods or services levies GST on the invoice, collects it from the recipient, and remits it to the government treasury. However, in specific vulnerable or unorganized sectors (such as goods transport agencies, legal services by advocates, import of services, or security services), tax authorities face extreme collection and evasion risks. To eliminate this leak, Section 9(3) and Section 9(4) of the CGST Act empower the government to mandate the 'Reverse Charge Mechanism' (RCM)—shifting the legal liability to pay tax entirely onto the recipient of the supply.\n\n"
+                "Operating under RCM fundamentally alters corporate compliance rules: (1) The recipient must generate a Self-Invoice under Section 31(3)(f) and a Payment Voucher under Section 31(3)(g); (2) Tax under RCM cannot be discharged by utilizing existing electronic Input Tax Credit balances; it MUST be paid strictly in cash via the Electronic Cash Ledger; and (3) Once paid in cash, the recipient can immediately claim that exact amount as Input Tax Credit (ITC) in the same tax period, provided credit restrictions under Section 17(5) do not apply.\n\n"
+                "The Time of Supply rules under RCM have their own strict statutory clocks. For goods under Section 12(3), the Time of Supply is the earliest of: (a) the date of receipt of goods, (b) the date of payment as recorded in the recipient's books, or (c) the 31st day immediately following the date of invoice issued by the supplier. For services under Section 13(3), the Time of Supply is the earlier of: (a) the date of payment in the recipient's books, or (b) the 61st day immediately following the date of invoice issued by the supplier! If an enterprise receives a legal invoice from an advocate on January 1 and delays payment until April, the 61st-day rule triggers tax crystallization on March 3, forcing payment in the March return.\n\n"
+                "In this third part, we program an enterprise Reverse Charge Mechanism & Compliance Engine in Python. We monitor inbound vendor categories against Section 9(3) notifications, enforce the 31-day (goods) and 61-day (services) statutory countdown clocks, generate automated self-invoicing records, and reconcile cash ledger payments with simultaneous ITC utilization."
+            ),
+            "code": (
+                "import json\n"
+                "from datetime import datetime, timedelta\n"
+                "from dataclasses import dataclass\n"
+                "from typing import Dict\n"
+                "\n"
+                "@dataclass\n"
+                "class RCMTransaction:\n"
+                "    rcm_id: str\n"
+                "    category: str             # 'LEGAL_SERVICES_ADVOCATE', 'GOODS_TRANSPORT_AGENCY', 'IMPORT_OF_SERVICE'\n"
+                "    supplier_invoice_date: str # YYYY-MM-DD\n"
+                "    goods_received_date: str   # YYYY-MM-DD or ''\n"
+                "    payment_recorded_date: str # YYYY-MM-DD or ''\n"
+                "    invoice_amount: float\n"
+                "    gst_rate: float\n"
+                "\n"
+                "class RCMEngine:\n"
+                "    @staticmethod\n"
+                "    def compute_rcm_tos(tx: RCMTransaction) -> Dict:\n"
+                "        d_inv = datetime.strptime(tx.supplier_invoice_date, '%Y-%m-%d').date()\n"
+                "        d_pay = datetime.strptime(tx.payment_recorded_date, '%Y-%m-%d').date() if tx.payment_recorded_date else None\n"
+                "        \n"
+                "        is_goods = tx.category == 'GOODS_TRANSPORT_AGENCY' and tx.goods_received_date != ''\n"
+                "        \n"
+                "        if is_goods:\n"
+                "            # Sec 12(3): Earliest of receipt, payment, or 31st day from invoice\n"
+                "            d_receipt = datetime.strptime(tx.goods_received_date, '%Y-%m-%d').date()\n"
+                "            day_31 = d_inv + timedelta(days=30)\n"
+                "            dates_to_compare = [d_receipt, day_31]\n"
+                "            if d_pay: dates_to_compare.append(d_pay)\n"
+                "            tos_date = min(dates_to_compare)\n"
+                "            rule_applied = 'Sec 12(3) Goods RCM (Earliest of Receipt, Payment, or 31st Day)'\n"
+                "        else:\n"
+                "            # Sec 13(3) Services: Earliest of payment or 61st day from invoice\n"
+                "            day_61 = d_inv + timedelta(days=60)\n"
+                "            dates_to_compare = [day_61]\n"
+                "            if d_pay: dates_to_compare.append(d_pay)\n"
+                "            tos_date = min(dates_to_compare)\n"
+                "            rule_applied = 'Sec 13(3) Services RCM (Earliest of Payment or 61st Day)'\n"
+                "            \n"
+                "        tax_amount = tx.invoice_amount * tx.gst_rate\n"
+                "        \n"
+                "        return {\n"
+                "            'rcm_id': tx.rcm_id,\n"
+                "            'category': tx.category,\n"
+                "            'supplier_invoice_date': tx.supplier_invoice_date,\n"
+                "            'rcm_time_of_supply': str(tos_date),\n"
+                "            'governing_statutory_rule': rule_applied,\n"
+                "            'cash_payment_mandate': round(tax_amount, 2),\n"
+                "            'can_use_credit_ledger_to_pay': False,\n"
+                "            'eligible_for_subsequent_itc': True,\n"
+                "            'self_invoice_mandate_sec31_3f': True\n"
+                "        }\n"
+                "\n"
+                "legal_tx = RCMTransaction(\n"
+                "    rcm_id='RCM-301', category='LEGAL_SERVICES_ADVOCATE',\n"
+                "    supplier_invoice_date='2026-01-10', goods_received_date='',\n"
+                "    payment_recorded_date='2026-04-15', invoice_amount=150000.0, gst_rate=0.18\n"
+                ")\n"
+                "res = RCMEngine.compute_rcm_tos(legal_tx)\n"
+                "print(json.dumps(res, indent=2))\n"
+            ),
+            "codeNotes": "Simulates Section 9(3) RCM rules for services under Section 13(3), calculating the 61st-day deadline trigger and enforcing mandatory cash ledger discharge.",
+            "example": (
+                "A corporation receives a $200,000 legal consulting invoice from a Senior Advocate on October 1. The company delays paying until December 20. Under Section 13(3), the 61st day is November 30. The Time of Supply crystallizes in November; the company must remit $36,000 GST in cash in its November GSTR-3B."
+            ),
+            "tryIt": "Test a scenario where payment is made on day 20 ('2026-01-30') and verify that the payment date supersedes the 61st-day trigger.",
+            "check": {
+                "question": "Under Section 13(3) of the CGST Act, what is the statutory deadline after which Time of Supply crystallizes for services taxed under the Reverse Charge Mechanism if payment has not yet been made?",
+                "options": [
+                    "The 61st day immediately following the date of invoice issued by the supplier.",
+                    "The 31st day immediately following the date of invoice issued by the supplier.",
+                    "The 180th day following the date of filing the annual GSTR-9 return.",
+                    "The date on which the supplier sends a formal legal demand notice."
+                ],
+                "answerIndex": 0,
+                "why": "Section 13(3)(b) mandates that if payment is not made earlier, the Time of Supply for services under RCM is the date immediately following 60 days (i.e., the 61st day) from the date of issue of invoice by the supplier."
+            }
+        },
+        {
+            "id": 4,
+            "title": "Valuation Architecture under Section 15: Transaction Value & Statutory Adjustments",
+            "say": (
+                "Once the taxable event is confirmed under Section 7 and the time point is established under Section 12 or 13, the enterprise must determine the precise monetary valuation upon which GST must be levied. Under Section 15(1) of the CGST Act, the default statutory benchmark is the 'Transaction Value'—defined as the price actually paid or payable for the supply of goods or services or both, provided two universal statutory preconditions are satisfied: (1) the supplier and recipient are NOT related persons; and (2) price is the sole consideration for the supply.\n\n"
+                "However, transaction value is rarely identical to the raw sticker price; Section 15(2) mandates five specific statutory additions to the price: (a) Any taxes, duties, cesses, fees, and charges levied under any law other than GST (e.g., municipal taxes, excise on petroleum, or customs duties); (b) Any amount that the supplier is legally liable to pay in relation to such supply but which has been incurred by the recipient of the supply (e.g., recipient pays testing or freight costs owed by the seller); (c) Incidental expenses, including commission and packing, charged by the supplier to the recipient; (d) Interest or late fees or penalties for delayed payment of any consideration; and (e) Subsidies directly linked to the price, excluding subsidies provided by the Central Government or State Governments.\n\n"
+                "Conversely, Section 15(3) governs the statutory exclusion of commercial discounts. To be legally deductible from the taxable base: (1) discounts given before or at the time of supply must be explicitly recorded in the invoice; and (2) post-supply discounts (such as year-end volume rebates) are only deductible if they were established under an agreement entered into before or at the time of supply, can be specifically linked to relevant invoices, and the recipient has reversed the proportionate Input Tax Credit attributable to such discount.\n\n"
+                "In this fourth part, we engineer an enterprise Section 15 Valuation & Taxable Base Calculator in Python. We ingest contract price components, evaluate municipal taxes, packing charges, and third-party liabilities incurred by buyers, test discount compliance under Section 15(3), and compute the net taxable value and GST liability."
+            ),
+            "code": (
+                "import json\n"
+                "from dataclasses import dataclass\n"
+                "from typing import Dict, List\n"
+                "\n"
+                "@dataclass\n"
+                "class ValuationScenario:\n"
+                "    contract_id: str\n"
+                "    base_price: float\n"
+                "    municipal_tax_local: float          # Sec 15(2)(a) Inclusion\n"
+                "    seller_liability_paid_by_buyer: float # Sec 15(2)(b) Inclusion\n"
+                "    packing_and_inspection_fees: float  # Sec 15(2)(c) Inclusion\n"
+                "    delayed_payment_interest: float     # Sec 15(2)(d) Inclusion\n"
+                "    government_subsidy_received: float  # Sec 15(2)(e) EXCLUSION\n"
+                "    commercial_subsidy_third_party: float # Sec 15(2)(e) INCLUSION\n"
+                "    trade_discount_on_invoice: float    # Sec 15(3)(a) Deductible\n"
+                "    gst_rate: float\n"
+                "\n"
+                "class Section15ValuationEngine:\n"
+                "    @staticmethod\n"
+                "    def compute_taxable_value(v: ValuationScenario) -> Dict:\n"
+                "        # Inclusions under Section 15(2)\n"
+                "        inclusions = (\n"
+                "            v.municipal_tax_local +\n"
+                "            v.seller_liability_paid_by_buyer +\n"
+                "            v.packing_and_inspection_fees +\n"
+                "            v.delayed_payment_interest +\n"
+                "            v.commercial_subsidy_third_party\n"
+                "        )\n"
+                "        # Exclusions: Govt subsidy is excluded from value; invoice trade discount is deducted\n"
+                "        deductions = v.trade_discount_on_invoice\n"
+                "        \n"
+                "        taxable_value = v.base_price + inclusions - deductions\n"
+                "        gst_tax = taxable_value * v.gst_rate\n"
+                "        total_invoice = taxable_value + gst_tax\n"
+                "        \n"
+                "        return {\n"
+                "            'contract_id': v.contract_id,\n"
+                "            'base_contract_price': v.base_price,\n"
+                "            'statutory_inclusions_sec15_2': round(inclusions, 2),\n"
+                "            'statutory_deductions_sec15_3': round(deductions, 2),\n"
+                "            'net_taxable_value_sec15': round(taxable_value, 2),\n"
+                "            'gst_rate': v.gst_rate,\n"
+                "            'gst_tax_payable': round(gst_tax, 2),\n"
+                "            'total_invoice_amount': round(total_invoice, 2),\n"
+                "            'govt_subsidy_excluded_amount': v.government_subsidy_received\n"
+                "        }\n"
+                "\n"
+                "scenario1 = ValuationScenario(\n"
+                "    contract_id='VAL-880',\n"
+                "    base_price=1000000.0, municipal_tax_local=25000.0,\n"
+                "    seller_liability_paid_by_buyer=15000.0, packing_and_inspection_fees=30000.0,\n"
+                "    delayed_payment_interest=5000.0, government_subsidy_received=100000.0,\n"
+                "    commercial_subsidy_third_party=50000.0, trade_discount_on_invoice=40000.0,\n"
+                "    gst_rate=0.18\n"
+                ")\n"
+                "res = Section15ValuationEngine.compute_taxable_value(scenario1)\n"
+                "print(json.dumps(res, indent=2))\n"
+            ),
+            "codeNotes": "Calculates net taxable supply value under Section 15 CGST Act, applying mandatory statutory additions (taxes, incidental charges, commercial subsidies) and valid invoice discounts.",
+            "example": (
+                "A manufacturer sells goods for $500,000, incurs $20,000 in specialized packing, receives a $30,000 commercial grant from an NGO, and gives a $25,000 discount recorded on the invoice. Section 15 taxable value is $500,000 + $20,000 + $30,000 - $25,000 = $525,000. At 18% GST, tax is $94,500."
+            ),
+            "tryIt": "Increase government_subsidy_received to 200,000 and verify that Government subsidies are NEVER added to the taxable supply base under Section 15(2)(e).",
+            "check": {
+                "question": "Under Section 15(2) of the CGST Act, which of the following subsidies must be ADDED to the transaction value to determine the taxable base for GST?",
+                "options": [
+                    "Subsidies provided directly by non-governmental commercial entities or third parties linked directly to price.",
+                    "Subsidies provided directly by the Central Government for green energy transition.",
+                    "Subsidies provided directly by State Governments for rural industrialization.",
+                    "Subsidies granted by municipal corporations for environmental rainwater harvesting."
+                ],
+                "answerIndex": 0,
+                "why": "Section 15(2)(e) specifically mandates the inclusion of subsidies directly linked to the price, but explicitly excludes subsidies provided by the Central Government and State Governments."
+            }
+        },
+        {
+            "id": 5,
+            "title": "Related-Party Valuation & Rule 28: Open Market Value vs Cost-Plus-10% Invariants",
+            "say": (
+                "When commercial transactions occur between independent, unrelated parties at arm's length, the transaction value under Section 15(1) is legally accepted as the true taxable base. However, when transactions take place between 'Related Persons' (as defined under Section 15 Explanation, such as holding-subsidiary companies, officers of each other's businesses, or family members) or between 'Distinct Persons' under Section 25 (different state branch registrations of the same legal entity), transaction value collapses. Because related entities can artificially manipulate internal transfer prices to minimize tax or shift profits, Section 15(4) read with the CGST Valuation Rules mandates alternate valuation mechanisms.\n\n"
+                "Under Rule 28 of the CGST Rules, the value of supply between distinct or related persons (other than an agent) must be determined through a strict hierarchical sequence: (a) The 'Open Market Value' (OMV) of such supply; (b) If OMV is not available, the value of goods or services of 'Like Kind and Quality'; (c) If value cannot be determined under (a) or (b), Rule 30 applies: 110% of the cost of production or manufacture or the cost of acquisition of such goods; and (d) Rule 31: Residual 'Best Judgment' method consistent with general valuation principles.\n\n"
+                "However, the second proviso to Rule 28 provides an enormous operational relief for corporate conglomerates: Where the recipient is eligible for 'Full Input Tax Credit (ITC)', the value declared in the invoice shall be deemed to be the open market value of the goods or services! This statutory fiction recognizes revenue neutrality: if Company A charges $10,000 or $100,000 to Branch B, and Branch B can claim 100% of that GST back as ITC, the government treasury suffers zero revenue loss. Therefore, tax auditors cannot challenge inter-branch valuation between distinct entities where the recipient possesses unrestricted ITC entitlement.\n\n"
+                "In this fifth part, we engineer an enterprise Rule 28 Related-Party Valuation Engine in Python. We implement the hierarchical cascade from Open Market Value to Rule 30 Cost-Plus-10%, evaluate recipient Input Tax Credit eligibility to activate the second proviso safe harbor, and generate automated transfer pricing compliance documentation."
+            ),
+            "code": (
+                "import json\n"
+                "from dataclasses import dataclass\n"
+                "from typing import Dict, Optional\n"
+                "\n"
+                "@dataclass\n"
+                "class RelatedPartySupply:\n"
+                "    transfer_id: str\n"
+                "    supplier_entity: str\n"
+                "    recipient_entity: str\n"
+                "    is_related_or_distinct: bool\n"
+                "    invoice_declared_price: float\n"
+                "    open_market_value: Optional[float]\n"
+                "    like_kind_quality_value: Optional[float]\n"
+                "    cost_of_production: float\n"
+                "    recipient_eligible_for_full_itc: bool\n"
+                "    gst_rate: float\n"
+                "\n"
+                "class Rule28ValuationEngine:\n"
+                "    @staticmethod\n"
+                "    def determine_related_valuation(r: RelatedPartySupply) -> Dict:\n"
+                "        if not r.is_related_or_distinct:\n"
+                "            # Unrelated party -> Sec 15(1) Transaction value stands\n"
+                "            final_value = r.invoice_declared_price\n"
+                "            method = 'Section 15(1): Arm\\'s Length Transaction Value'\n"
+                "        else:\n"
+                "            # Rule 28 Second Proviso Safe Harbor:\n"
+                "            # If recipient is eligible for FULL ITC, invoice value is deemed OMV\n"
+                "            if r.recipient_eligible_for_full_itc:\n"
+                "                final_value = r.invoice_declared_price\n"
+                "                method = 'Rule 28 Second Proviso: Recipient eligible for Full ITC -> Invoice value deemed OMV.'\n"
+                "            elif r.open_market_value is not None:\n"
+                "                final_value = r.open_market_value\n"
+                "                method = 'Rule 28(a): Open Market Value (OMV)'\n"
+                "            elif r.like_kind_quality_value is not None:\n"
+                "                final_value = r.like_kind_quality_value\n"
+                "                method = 'Rule 28(b): Value of Like Kind and Quality'\n"
+                "            else:\n"
+                "                # Rule 30: 110% of Cost of Production\n"
+                "                final_value = r.cost_of_production * 1.10\n"
+                "                method = 'Rule 30: Cost-Plus-10% (110% of production/acquisition cost)'\n"
+                "                \n"
+                "        gst_tax = final_value * r.gst_rate\n"
+                "        \n"
+                "        return {\n"
+                "            'transfer_id': r.transfer_id,\n"
+                "            'parties': f'{r.supplier_entity} -> {r.recipient_entity}',\n"
+                "            'is_related_or_distinct': r.is_related_or_distinct,\n"
+                "            'recipient_eligible_for_full_itc': r.recipient_eligible_for_full_itc,\n"
+                "            'valuation_methodology': method,\n"
+                "            'final_taxable_value': round(final_value, 2),\n"
+                "            'gst_rate': r.gst_rate,\n"
+                "            'gst_tax_liability': round(gst_tax, 2)\n"
+                "        }\n"
+                "\n"
+                "# Test Case 1: Inter-branch transfer with Full ITC (Proviso 2 Safe Harbor)\n"
+                "branch_transfer = RelatedPartySupply(\n"
+                "    transfer_id='REL-401', supplier_entity='HQ Karnataka (Distinct)',\n"
+                "    recipient_entity='Branch Maharashtra (Distinct)', is_related_or_distinct=True,\n"
+                "    invoice_declared_price=100000.0, open_market_value=180000.0,\n"
+                "    like_kind_quality_value=175000.0, cost_of_production=120000.0,\n"
+                "    recipient_eligible_for_full_itc=True, gst_rate=0.18\n"
+                ")\n"
+                "res = Rule28ValuationEngine.determine_related_valuation(branch_transfer)\n"
+                "print(json.dumps(res, indent=2))\n"
+            ),
+            "codeNotes": "Simulates Rule 28 CGST valuation rules between related or distinct persons, proving the application of the second proviso safe harbor when recipient is entitled to full ITC.",
+            "example": (
+                "A technology firm transfers proprietary hardware to its branch in another state, invoicing $100,000 despite an Open Market Value of $250,000. Because the branch is fully eligible for ITC on the input hardware, the second proviso to Rule 28 applies: the $100,000 declared invoice price is conclusively accepted by tax authorities as the deemed open market value."
+            ),
+            "tryIt": "Set recipient_eligible_for_full_itc=False and open_market_value=None. Observe how Rule 30 triggers, calculating valuation at 110% of cost (120,000 * 1.10 = 132,000).",
+            "check": {
+                "question": "Under the second proviso to Rule 28 of the CGST Rules, what valuation is legally accepted for supplies between distinct or related persons if the recipient is eligible for full Input Tax Credit?",
+                "options": [
+                    "The value declared in the invoice is conclusively deemed to be the open market value.",
+                    "The mandatory Rule 30 cost-plus-10% valuation benchmark must be enforced by a statutory auditor.",
+                    "The highest market price recorded on a recognized national commodities exchange in the last 30 days.",
+                    "The historical book value of the asset depreciated at standard straight-line rates."
+                ],
+                "answerIndex": 0,
+                "why": "The second proviso to Rule 28 explicitly provides that where the recipient is eligible for full input tax credit, the value declared in the invoice shall be deemed to be the open market value of the goods or services."
+            }
+        }
+    ]
+}
+
+if __name__ == "__main__":
+    with open("scripts/bcom_tax_day07_data.json", "w", encoding="utf-8") as f:
+        json.dump(day07_data, f, indent=2)
+    print("Successfully built scripts/bcom_tax_day07_data.json")

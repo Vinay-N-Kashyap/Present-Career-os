@@ -244,4 +244,482 @@ test('Block 33: bcom-marketing Day 5 parts uphold strict code, output, and check
   assert.match(lesson.parts[4].title, /K-Means Behavioral Clustering.*Centroid Assignment/i);
 });
 
+test('Block 192 (TASK-751..755): bcom-marketing Days 6–10 resolve with strict 5-part pedagogical invariants & 20+ min spoken audio', () => {
+  for (let day = 6; day <= 10; day++) {
+    const lesson = getLongLesson('bcom-marketing', day);
+    assert.ok(lesson, `bcom-marketing Day ${day} must resolve`);
+    assert.equal(lesson.day, day);
+    assert.equal(lesson.parts.length, 5, `Day ${day} must contain exactly 5 in-depth parts`);
+
+    // Verify alias resolution
+    const aliased = getLongLesson('bcom_mkt', day);
+    assert.ok(aliased, `bcom_mkt alias Day ${day} must resolve`);
+    assert.equal(aliased.title, lesson.title);
+
+    // Assert spoken audio duration (>= 20 min) and total duration (>= 35 min)
+    const spoken = estimateSpokenMinutes(lesson);
+    assert.ok(spoken >= 20, `Day ${day} spoken minutes (${spoken}) must be at least 20 minutes (>= 2,400 spoken words @ 120 wpm)`);
+    const total = estimateLessonMinutes(lesson);
+    assert.ok(total >= 35, `Day ${day} total lesson minutes (${total}) must be at least 35 minutes`);
+
+    // Verify summary and projectStep
+    assert.ok(Array.isArray(lesson.summary) && lesson.summary.length >= 3, `Day ${day} must have executive summary`);
+    assert.ok(lesson.projectStep && lesson.projectStep.title && lesson.projectStep.steps.length >= 3, `Day ${day} must have capstone projectStep`);
+
+    // Verify each part
+    lesson.parts.forEach((part, idx) => {
+      assert.ok(part.title, `Day ${day} Part ${idx + 1} must have a title`);
+      assert.ok(Array.isArray(part.say) && part.say.length >= 5, `Day ${day} Part ${idx + 1} must have >= 5 teaching paragraphs`);
+
+      const partWordCount = (part.say as string[]).reduce((sum, p) => sum + p.split(/\s+/).filter(Boolean).length, 0);
+      assert.ok(partWordCount >= 580, `Day ${day} Part ${idx + 1} word count (${partWordCount}) must be >= 580 words`);
+
+      assert.ok(part.example, `Day ${day} Part ${idx + 1} must include an everyday corporate example`);
+      assert.ok(part.code, `Day ${day} Part ${idx + 1} must include executable Python code`);
+      assert.ok(part.output, `Day ${day} Part ${idx + 1} must include expected console output`);
+      assert.ok(part.tryIt, `Day ${day} Part ${idx + 1} must include a tryIt interactive challenge`);
+
+      // Check quiz contract
+      assert.ok(part.check.question, `Day ${day} Part ${idx + 1} check must have question text`);
+      assert.equal(part.check.options.length, 4, `Day ${day} Part ${idx + 1} check must have exactly 4 diagnostic options`);
+      assert.equal(typeof part.check.answer, 'number', `Day ${day} Part ${idx + 1} check must have numerical answer`);
+      assert.ok(part.check.answer >= 0 && part.check.answer < part.check.options.length, `Day ${day} Part ${idx + 1} answer must be in options range`);
+      assert.ok(part.check.why, `Day ${day} Part ${idx + 1} check must have educational rationale`);
+    });
+  }
+});
+
+test('Block 192 (TASK-751..755): bcom-marketing Days 6–10 Gate v2 on-disk visual JSON files uphold cryptographic SHA-256 bindings', async () => {
+  const fs = await import('node:fs');
+  const path = await import('node:path');
+  const crypto = await import('node:crypto');
+  const { loadDayFile, getVisual, clearDayFileCache } = await import('../src/lib/visuals/loadVisuals');
+  const { getTappableLabelsForVisual } = await import('../src/lib/visuals/visualRules');
+
+  clearDayFileCache();
+
+  for (let day = 6; day <= 10; day++) {
+    const dayPadded = String(day).padStart(2, '0');
+    const filePath = path.resolve(process.cwd(), `src/lib/data/lessonVisuals/bcom-marketing/day-${dayPadded}.json`);
+    assert.ok(fs.existsSync(filePath), `On-disk visual file missing: ${filePath}`);
+
+    const dayFile = loadDayFile('bcom-marketing', day);
+    assert.ok(dayFile, `loadDayFile failed for bcom-marketing Day ${day}`);
+    assert.equal(dayFile.schemaVersion, 1);
+    assert.equal(dayFile.prefix, 'bcom-marketing');
+    assert.equal(dayFile.day, day);
+    assert.equal(dayFile.entries.length, 5, `Expected 5 entries in bcom-marketing Day ${day}`);
+
+    const lesson = getLongLesson('bcom-marketing', day)!;
+    for (let partIdx = 0; partIdx < 5; partIdx++) {
+      const entry = dayFile.entries[partIdx];
+      const part = lesson.parts[partIdx];
+
+      assert.equal(entry.partTitle, part.title, `partTitle mismatch at bcom-marketing Day ${day} Part ${partIdx}`);
+      const expectedHash = crypto.createHash('sha256').update(part.code || '').digest('hex');
+      assert.equal(entry.codeHash, expectedHash, `codeHash mismatch at bcom-marketing Day ${day} Part ${partIdx}`);
+
+      const visual = getVisual('bcom-marketing', day, partIdx);
+      assert.ok(visual, `getVisual returned null for bcom-marketing Day ${day} Part ${partIdx}`);
+      assert.equal(visual.template, 'funnel', `Expected template "funnel" for bcom-marketing`);
+      assert.equal(visual.steps.length, 4, `Expected 4 synchronized steps for bcom-marketing Day ${day} Part ${partIdx}`);
+      assert.deepEqual(
+        visual.steps.map(s => s.at),
+        ['intro', 'say1', 'example', 'tryIt'],
+        `Step markers must be ['intro', 'say1', 'example', 'tryIt']`
+      );
+
+      const labels = getTappableLabelsForVisual(visual);
+      assert.ok(labels.length > 0, `Expected non-empty tappable labels for bcom-marketing Day ${day} Part ${partIdx}`);
+    }
+  }
+});
+
+test('Block 193 (TASK-756..760): bcom-marketing Days 11–15 resolve with strict 5-part pedagogical invariants & 20+ min spoken audio', () => {
+  for (let day = 11; day <= 15; day++) {
+    const lesson = getLongLesson('bcom-marketing', day);
+    assert.ok(lesson, `bcom-marketing Day ${day} must resolve`);
+    assert.equal(lesson.day, day);
+    assert.equal(lesson.parts.length, 5, `Day ${day} must contain exactly 5 in-depth parts`);
+
+    // Verify alias resolution
+    const aliased = getLongLesson('bcom_mkt', day);
+    assert.ok(aliased, `bcom_mkt alias Day ${day} must resolve`);
+    assert.equal(aliased.title, lesson.title);
+
+    // Assert spoken audio duration (>= 20 min) and total duration (>= 35 min)
+    const spoken = estimateSpokenMinutes(lesson);
+    assert.ok(spoken >= 20, `Day ${day} spoken minutes (${spoken}) must be at least 20 minutes (>= 2,400 spoken words @ 120 wpm)`);
+    const total = estimateLessonMinutes(lesson);
+    assert.ok(total >= 35, `Day ${day} total lesson minutes (${total}) must be at least 35 minutes`);
+
+    // Verify summary and projectStep
+    assert.ok(Array.isArray(lesson.summary) && lesson.summary.length >= 3, `Day ${day} must have executive summary`);
+    assert.ok(lesson.projectStep && lesson.projectStep.title && lesson.projectStep.steps.length >= 3, `Day ${day} must have capstone projectStep`);
+
+    // Verify each part
+    lesson.parts.forEach((part, idx) => {
+      assert.ok(part.title, `Day ${day} Part ${idx + 1} must have a title`);
+      assert.ok(Array.isArray(part.say) && part.say.length >= 5, `Day ${day} Part ${idx + 1} must have >= 5 teaching paragraphs`);
+
+      const partWordCount = (part.say as string[]).reduce((sum, p) => sum + p.split(/\s+/).filter(Boolean).length, 0);
+      assert.ok(partWordCount >= 580, `Day ${day} Part ${idx + 1} word count (${partWordCount}) must be >= 580 words`);
+
+      assert.ok(part.example, `Day ${day} Part ${idx + 1} must include an everyday corporate example`);
+      assert.ok(part.code, `Day ${day} Part ${idx + 1} must include executable Python code`);
+      assert.ok(part.output, `Day ${day} Part ${idx + 1} must include expected console output`);
+      assert.ok(part.tryIt, `Day ${day} Part ${idx + 1} must include a tryIt interactive challenge`);
+
+      // Check quiz contract
+      assert.ok(part.check.question, `Day ${day} Part ${idx + 1} check must have question text`);
+      assert.equal(part.check.options.length, 4, `Day ${day} Part ${idx + 1} check must have exactly 4 diagnostic options`);
+      assert.equal(typeof part.check.answer, 'number', `Day ${day} Part ${idx + 1} check must have numerical answer`);
+      assert.ok(part.check.answer >= 0 && part.check.answer < part.check.options.length, `Day ${day} Part ${idx + 1} answer must be in options range`);
+      assert.ok(part.check.why, `Day ${day} Part ${idx + 1} check must have educational rationale`);
+    });
+  }
+});
+
+test('Block 193 (TASK-756..760): bcom-marketing Days 11–15 Gate v2 on-disk visual JSON files uphold cryptographic SHA-256 bindings', async () => {
+  const fs = await import('node:fs');
+  const path = await import('node:path');
+  const crypto = await import('node:crypto');
+  const { loadDayFile, getVisual, clearDayFileCache } = await import('../src/lib/visuals/loadVisuals');
+  const { getTappableLabelsForVisual } = await import('../src/lib/visuals/visualRules');
+
+  clearDayFileCache();
+
+  for (let day = 11; day <= 15; day++) {
+    const dayPadded = String(day).padStart(2, '0');
+    const filePath = path.resolve(process.cwd(), `src/lib/data/lessonVisuals/bcom-marketing/day-${dayPadded}.json`);
+    assert.ok(fs.existsSync(filePath), `On-disk visual file missing: ${filePath}`);
+
+    const dayFile = loadDayFile('bcom-marketing', day);
+    assert.ok(dayFile, `loadDayFile failed for bcom-marketing Day ${day}`);
+    assert.equal(dayFile.schemaVersion, 1);
+    assert.equal(dayFile.prefix, 'bcom-marketing');
+    assert.equal(dayFile.day, day);
+    assert.equal(dayFile.entries.length, 5, `Expected 5 entries in bcom-marketing Day ${day}`);
+
+    const lesson = getLongLesson('bcom-marketing', day)!;
+    for (let partIdx = 0; partIdx < 5; partIdx++) {
+      const entry = dayFile.entries[partIdx];
+      const part = lesson.parts[partIdx];
+
+      assert.equal(entry.partTitle, part.title, `partTitle mismatch at bcom-marketing Day ${day} Part ${partIdx}`);
+      const expectedHash = crypto.createHash('sha256').update(part.code || '').digest('hex');
+      assert.equal(entry.codeHash, expectedHash, `codeHash mismatch at bcom-marketing Day ${day} Part ${partIdx}`);
+
+      const visual = getVisual('bcom-marketing', day, partIdx);
+      assert.ok(visual, `getVisual returned null for bcom-marketing Day ${day} Part ${partIdx}`);
+      assert.equal(visual.template, 'funnel', `Expected template "funnel" for bcom-marketing`);
+      assert.equal(visual.steps.length, 4, `Expected 4 synchronized steps for bcom-marketing Day ${day} Part ${partIdx}`);
+      assert.deepEqual(
+        visual.steps.map(s => s.at),
+        ['intro', 'say1', 'example', 'tryIt'],
+        `Step markers must be ['intro', 'say1', 'example', 'tryIt']`
+      );
+
+      const labels = getTappableLabelsForVisual(visual);
+      assert.ok(labels.length > 0, `Expected non-empty tappable labels for bcom-marketing Day ${day} Part ${partIdx}`);
+    }
+  }
+});
+
+test('Block 194 (TASK-761..765): bcom-marketing Days 16–20 resolve with full 5-part pedagogical structure, 580+ words/part, and 35+ min duration', () => {
+  for (let day = 16; day <= 20; day++) {
+    const lesson = getLongLesson('bcom-marketing', day);
+    assert.ok(lesson, `bcom-marketing Day ${day} must resolve`);
+    assert.equal(lesson.day, day);
+    assert.equal(lesson.parts.length, 5, `Day ${day} must contain exactly 5 in-depth parts`);
+
+    // Verify alias resolution for bcom_mkt
+    const aliased = getLongLesson('bcom_mkt', day);
+    assert.ok(aliased, `bcom_mkt alias Day ${day} must resolve`);
+    assert.equal(aliased.title, lesson.title);
+
+    // Assert language mapping
+    assert.equal(getLongLessonLanguage('bcom-marketing'), 'python');
+    assert.equal(getLongLessonLanguage('bcom_mkt'), 'python');
+
+    // Assert spoken audio duration (>= 20 min) and total duration (>= 35 min)
+    const spoken = estimateSpokenMinutes(lesson);
+    assert.ok(spoken >= 20, `Day ${day} spoken minutes (${spoken}) must be at least 20 minutes (>= 2,400 spoken words @ 120 wpm)`);
+    const total = estimateLessonMinutes(lesson);
+    assert.ok(total >= 35, `Day ${day} total lesson minutes (${total}) must be at least 35 minutes`);
+
+    // Verify summary and projectStep
+    assert.ok(Array.isArray(lesson.summary) && lesson.summary.length >= 3, `Day ${day} must have executive summary`);
+    assert.ok(lesson.projectStep && lesson.projectStep.title && lesson.projectStep.steps.length >= 3, `Day ${day} must have capstone projectStep`);
+
+    // Verify each part
+    lesson.parts.forEach((part, idx) => {
+      assert.ok(part.title, `Day ${day} Part ${idx + 1} must have a title`);
+      assert.ok(Array.isArray(part.say) && part.say.length >= 5, `Day ${day} Part ${idx + 1} must have >= 5 teaching paragraphs`);
+
+      const partWordCount = (part.say as string[]).reduce((sum, p) => sum + p.split(/\s+/).filter(Boolean).length, 0);
+      assert.ok(partWordCount >= 580, `Day ${day} Part ${idx + 1} word count (${partWordCount}) must be >= 580 words`);
+
+      assert.ok(part.example, `Day ${day} Part ${idx + 1} must include an everyday corporate example`);
+      assert.ok(part.code, `Day ${day} Part ${idx + 1} must include executable Python code`);
+      assert.ok(part.output, `Day ${day} Part ${idx + 1} must include expected console output`);
+      assert.ok(part.tryIt, `Day ${day} Part ${idx + 1} must include a tryIt interactive challenge`);
+
+      // Check quiz contract
+      assert.ok(part.check.question, `Day ${day} Part ${idx + 1} check must have question text`);
+      assert.equal(part.check.options.length, 4, `Day ${day} Part ${idx + 1} check must have exactly 4 diagnostic options`);
+      assert.equal(typeof part.check.answer, 'number', `Day ${day} Part ${idx + 1} check must have numerical answer`);
+      assert.ok(part.check.answer >= 0 && part.check.answer < part.check.options.length, `Day ${day} Part ${idx + 1} answer must be in options range`);
+      assert.ok(part.check.why, `Day ${day} Part ${idx + 1} check must have educational rationale`);
+    });
+  }
+});
+
+test('Block 194 (TASK-761..765): bcom-marketing Days 16–20 Gate v2 on-disk visual JSON files uphold cryptographic SHA-256 bindings', async () => {
+  const fs = await import('node:fs');
+  const path = await import('node:path');
+  const crypto = await import('node:crypto');
+  const { loadDayFile, getVisual, clearDayFileCache } = await import('../src/lib/visuals/loadVisuals');
+  const { getTappableLabelsForVisual } = await import('../src/lib/visuals/visualRules');
+
+  clearDayFileCache();
+
+  for (let day = 16; day <= 20; day++) {
+    const dayPadded = String(day).padStart(2, '0');
+    const filePath = path.resolve(process.cwd(), `src/lib/data/lessonVisuals/bcom-marketing/day-${dayPadded}.json`);
+    assert.ok(fs.existsSync(filePath), `On-disk visual file missing: ${filePath}`);
+
+    const dayFile = loadDayFile('bcom-marketing', day);
+    assert.ok(dayFile, `loadDayFile failed for bcom-marketing Day ${day}`);
+    assert.equal(dayFile.schemaVersion, 1);
+    assert.equal(dayFile.prefix, 'bcom-marketing');
+    assert.equal(dayFile.day, day);
+    assert.equal(dayFile.entries.length, 5, `Expected 5 entries in bcom-marketing Day ${day}`);
+
+    const lesson = getLongLesson('bcom-marketing', day)!;
+    for (let partIdx = 0; partIdx < 5; partIdx++) {
+      const entry = dayFile.entries[partIdx];
+      const part = lesson.parts[partIdx];
+
+      assert.equal(entry.partTitle, part.title, `partTitle mismatch at bcom-marketing Day ${day} Part ${partIdx}`);
+      const expectedHash = crypto.createHash('sha256').update(part.code || '').digest('hex');
+      assert.equal(entry.codeHash, expectedHash, `codeHash mismatch at bcom-marketing Day ${day} Part ${partIdx}`);
+
+      const visual = getVisual('bcom-marketing', day, partIdx);
+      assert.ok(visual, `getVisual returned null for bcom-marketing Day ${day} Part ${partIdx}`);
+      assert.equal(visual.template, 'funnel', `Expected template "funnel" for bcom-marketing`);
+      assert.equal(visual.steps.length, 4, `Expected 4 synchronized steps for bcom-marketing Day ${day} Part ${partIdx}`);
+      assert.deepEqual(
+        visual.steps.map(s => s.at),
+        ['intro', 'say1', 'example', 'tryIt'],
+        `Step markers must be ['intro', 'say1', 'example', 'tryIt']`
+      );
+
+      const labels = getTappableLabelsForVisual(visual);
+      assert.ok(labels.length > 0, `Expected non-empty tappable labels for bcom-marketing Day ${day} Part ${partIdx}`);
+    }
+  }
+});
+
+test('Block 195 (TASK-766..770): bcom-marketing Days 21–25 resolve with full 5-part pedagogical structure, 580+ words/part, and 35+ min duration', () => {
+  for (let day = 21; day <= 25; day++) {
+    const lesson = getLongLesson('bcom-marketing', day);
+    assert.ok(lesson, `bcom-marketing Day ${day} must resolve`);
+    assert.equal(lesson.day, day);
+    assert.equal(lesson.parts.length, 5, `Day ${day} must contain exactly 5 in-depth parts`);
+
+    // Verify alias resolution for bcom_mkt
+    const aliased = getLongLesson('bcom_mkt', day);
+    assert.ok(aliased, `bcom_mkt alias Day ${day} must resolve`);
+    assert.equal(aliased.title, lesson.title);
+
+    // Assert language mapping
+    assert.equal(getLongLessonLanguage('bcom-marketing'), 'python');
+    assert.equal(getLongLessonLanguage('bcom_mkt'), 'python');
+
+    // Assert spoken audio duration (>= 20 min) and total duration (>= 35 min)
+    const spoken = estimateSpokenMinutes(lesson);
+    assert.ok(spoken >= 20, `Day ${day} spoken minutes (${spoken}) must be at least 20 minutes (>= 2,400 spoken words @ 120 wpm)`);
+    const total = estimateLessonMinutes(lesson);
+    assert.ok(total >= 35, `Day ${day} total lesson minutes (${total}) must be at least 35 minutes`);
+
+    // Verify summary and projectStep
+    assert.ok(Array.isArray(lesson.summary) && lesson.summary.length >= 3, `Day ${day} must have executive summary`);
+    assert.ok(lesson.projectStep && lesson.projectStep.title && lesson.projectStep.steps.length >= 3, `Day ${day} must have capstone projectStep`);
+
+    // Verify each part
+    lesson.parts.forEach((part, idx) => {
+      assert.ok(part.title, `Day ${day} Part ${idx + 1} must have a title`);
+      assert.ok(Array.isArray(part.say) && part.say.length >= 5, `Day ${day} Part ${idx + 1} must have >= 5 teaching paragraphs`);
+
+      const partWordCount = (part.say as string[]).reduce((sum, p) => sum + p.split(/\s+/).filter(Boolean).length, 0);
+      assert.ok(partWordCount >= 580, `Day ${day} Part ${idx + 1} word count (${partWordCount}) must be >= 580 words`);
+
+      assert.ok(part.example, `Day ${day} Part ${idx + 1} must include an everyday corporate example`);
+      assert.ok(part.code, `Day ${day} Part ${idx + 1} must include executable Python code`);
+      assert.ok(part.output, `Day ${day} Part ${idx + 1} must include expected console output`);
+      assert.ok(part.tryIt, `Day ${day} Part ${idx + 1} must include a tryIt interactive challenge`);
+
+      // Check quiz contract
+      assert.ok(part.check.question, `Day ${day} Part ${idx + 1} check must have question text`);
+      assert.equal(part.check.options.length, 4, `Day ${day} Part ${idx + 1} check must have exactly 4 diagnostic options`);
+      assert.equal(typeof part.check.answer, 'number', `Day ${day} Part ${idx + 1} check must have numerical answer`);
+      assert.ok(part.check.answer >= 0 && part.check.answer < part.check.options.length, `Day ${day} Part ${idx + 1} answer must be in options range`);
+      assert.ok(part.check.why, `Day ${day} Part ${idx + 1} check must have educational rationale`);
+    });
+  }
+});
+
+test('Block 195 (TASK-766..770): bcom-marketing Days 21–25 Gate v2 on-disk visual JSON files uphold cryptographic SHA-256 bindings', async () => {
+  const fs = await import('node:fs');
+  const path = await import('node:path');
+  const crypto = await import('node:crypto');
+  const { loadDayFile, getVisual, clearDayFileCache } = await import('../src/lib/visuals/loadVisuals');
+  const { getTappableLabelsForVisual } = await import('../src/lib/visuals/visualRules');
+
+  clearDayFileCache();
+
+  for (let day = 21; day <= 25; day++) {
+    const dayPadded = String(day).padStart(2, '0');
+    const filePath = path.resolve(process.cwd(), `src/lib/data/lessonVisuals/bcom-marketing/day-${dayPadded}.json`);
+    assert.ok(fs.existsSync(filePath), `On-disk visual file missing: ${filePath}`);
+
+    const dayFile = loadDayFile('bcom-marketing', day);
+    assert.ok(dayFile, `loadDayFile failed for bcom-marketing Day ${day}`);
+    assert.equal(dayFile.schemaVersion, 1);
+    assert.equal(dayFile.prefix, 'bcom-marketing');
+    assert.equal(dayFile.day, day);
+    assert.equal(dayFile.entries.length, 5, `Expected 5 entries in bcom-marketing Day ${day}`);
+
+    const lesson = getLongLesson('bcom-marketing', day)!;
+    for (let partIdx = 0; partIdx < 5; partIdx++) {
+      const entry = dayFile.entries[partIdx];
+      const part = lesson.parts[partIdx];
+
+      assert.equal(entry.partTitle, part.title, `partTitle mismatch at bcom-marketing Day ${day} Part ${partIdx}`);
+      const expectedHash = crypto.createHash('sha256').update(part.code || '').digest('hex');
+      assert.equal(entry.codeHash, expectedHash, `codeHash mismatch at bcom-marketing Day ${day} Part ${partIdx}`);
+
+      const visual = getVisual('bcom-marketing', day, partIdx);
+      assert.ok(visual, `getVisual returned null for bcom-marketing Day ${day} Part ${partIdx}`);
+      assert.equal(visual.template, 'funnel', `Expected template "funnel" for bcom-marketing`);
+      assert.equal(visual.steps.length, 4, `Expected 4 synchronized steps for bcom-marketing Day ${day} Part ${partIdx}`);
+      assert.deepEqual(
+        visual.steps.map(s => s.at),
+        ['intro', 'say1', 'example', 'tryIt'],
+        `Step markers must be ['intro', 'say1', 'example', 'tryIt']`
+      );
+
+      const labels = getTappableLabelsForVisual(visual);
+      assert.ok(labels.length > 0, `Expected non-empty tappable labels for bcom-marketing Day ${day} Part ${partIdx}`);
+    }
+  }
+});
+
+test('Block 196 (TASK-771..775): bcom-marketing Days 26–30 resolve with full 5-part pedagogical structure, 580+ words/part, and 35+ min duration', () => {
+  for (let day = 26; day <= 30; day++) {
+    const lesson = getLongLesson('bcom-marketing', day);
+    assert.ok(lesson, `bcom-marketing Day ${day} must resolve`);
+    assert.equal(lesson.day, day);
+    assert.equal(lesson.parts.length, 5, `Day ${day} must contain exactly 5 in-depth parts`);
+
+    // Verify alias resolution for bcom_mkt
+    const aliased = getLongLesson('bcom_mkt', day);
+    assert.ok(aliased, `bcom_mkt alias Day ${day} must resolve`);
+    assert.equal(aliased.title, lesson.title);
+
+    // Assert language mapping
+    assert.equal(getLongLessonLanguage('bcom-marketing'), 'python');
+    assert.equal(getLongLessonLanguage('bcom_mkt'), 'python');
+
+    // Assert spoken audio duration (>= 20 min) and total duration (>= 35 min)
+    const spoken = estimateSpokenMinutes(lesson);
+    assert.ok(spoken >= 20, `Day ${day} spoken minutes (${spoken}) must be at least 20 minutes (>= 2,400 spoken words @ 120 wpm)`);
+    const total = estimateLessonMinutes(lesson);
+    assert.ok(total >= 35, `Day ${day} total lesson minutes (${total}) must be at least 35 minutes`);
+
+    // Verify summary and projectStep
+    assert.ok(Array.isArray(lesson.summary) && lesson.summary.length >= 3, `Day ${day} must have executive summary`);
+    assert.ok(lesson.projectStep && lesson.projectStep.title && lesson.projectStep.steps.length >= 3, `Day ${day} must have capstone projectStep`);
+
+    // Verify each part
+    lesson.parts.forEach((part, idx) => {
+      assert.ok(part.title, `Day ${day} Part ${idx + 1} must have a title`);
+      assert.ok(Array.isArray(part.say) && part.say.length >= 5, `Day ${day} Part ${idx + 1} must have >= 5 teaching paragraphs`);
+
+      const partWordCount = (part.say as string[]).reduce((sum, p) => sum + p.split(/\s+/).filter(Boolean).length, 0);
+      assert.ok(partWordCount >= 580, `Day ${day} Part ${idx + 1} word count (${partWordCount}) must be >= 580 words`);
+
+      assert.ok(part.example, `Day ${day} Part ${idx + 1} must include an everyday corporate example`);
+      assert.ok(part.code, `Day ${day} Part ${idx + 1} must include executable Python code`);
+      assert.ok(part.output, `Day ${day} Part ${idx + 1} must include expected console output`);
+      assert.ok(part.tryIt, `Day ${day} Part ${idx + 1} must include a tryIt interactive challenge`);
+
+      // Check quiz contract
+      assert.ok(part.check.question, `Day ${day} Part ${idx + 1} check must have question text`);
+      assert.equal(part.check.options.length, 4, `Day ${day} Part ${idx + 1} check must have exactly 4 diagnostic options`);
+      assert.equal(typeof part.check.answer, 'number', `Day ${day} Part ${idx + 1} check must have numerical answer`);
+      assert.ok(part.check.answer >= 0 && part.check.answer < part.check.options.length, `Day ${day} Part ${idx + 1} answer must be in options range`);
+      assert.ok(part.check.why, `Day ${day} Part ${idx + 1} check must have educational rationale`);
+    });
+  }
+});
+
+test('Block 196 (TASK-771..775): bcom-marketing Days 26–30 Gate v2 on-disk visual JSON files uphold cryptographic SHA-256 bindings', async () => {
+  const fs = await import('node:fs');
+  const path = await import('node:path');
+  const crypto = await import('node:crypto');
+  const { loadDayFile, getVisual, clearDayFileCache } = await import('../src/lib/visuals/loadVisuals');
+  const { getTappableLabelsForVisual } = await import('../src/lib/visuals/visualRules');
+
+  clearDayFileCache();
+
+  for (let day = 26; day <= 30; day++) {
+    const dayPadded = String(day).padStart(2, '0');
+    const filePath = path.resolve(process.cwd(), `src/lib/data/lessonVisuals/bcom-marketing/day-${dayPadded}.json`);
+    assert.ok(fs.existsSync(filePath), `On-disk visual file missing: ${filePath}`);
+
+    const dayFile = loadDayFile('bcom-marketing', day);
+    assert.ok(dayFile, `loadDayFile failed for bcom-marketing Day ${day}`);
+    assert.equal(dayFile.schemaVersion, 1);
+    assert.equal(dayFile.prefix, 'bcom-marketing');
+    assert.equal(dayFile.day, day);
+    assert.equal(dayFile.entries.length, 5, `Expected 5 entries in bcom-marketing Day ${day}`);
+
+    const lesson = getLongLesson('bcom-marketing', day)!;
+    for (let partIdx = 0; partIdx < 5; partIdx++) {
+      const entry = dayFile.entries[partIdx];
+      const part = lesson.parts[partIdx];
+
+      assert.equal(entry.partTitle, part.title, `partTitle mismatch at bcom-marketing Day ${day} Part ${partIdx}`);
+      const expectedHash = crypto.createHash('sha256').update(part.code || '').digest('hex');
+      assert.equal(entry.codeHash, expectedHash, `codeHash mismatch at bcom-marketing Day ${day} Part ${partIdx}`);
+
+      const visual = getVisual('bcom-marketing', day, partIdx);
+      assert.ok(visual, `getVisual returned null for bcom-marketing Day ${day} Part ${partIdx}`);
+      assert.equal(visual.template, 'funnel', `Expected template "funnel" for bcom-marketing`);
+      assert.equal(visual.steps.length, 4, `Expected 4 synchronized steps for bcom-marketing Day ${day} Part ${partIdx}`);
+      assert.deepEqual(
+        visual.steps.map(s => s.at),
+        ['intro', 'say1', 'example', 'tryIt'],
+        `Step markers must be ['intro', 'say1', 'example', 'tryIt']`
+      );
+
+      const labels = getTappableLabelsForVisual(visual);
+      assert.ok(labels.length > 0, `Expected non-empty tappable labels for bcom-marketing Day ${day} Part ${partIdx}`);
+    }
+  }
+});
+
+test('Course 25 Milestone Certification: bcom-marketing 100% Complete across all 30 Days (Days 1–30)', () => {
+  for (let day = 1; day <= 30; day++) {
+    const lesson = getLongLesson('bcom-marketing', day);
+    assert.ok(lesson, `bcom-marketing Day ${day} must resolve in master registry`);
+    assert.equal(lesson.day, day);
+    assert.equal(lesson.parts.length, 5);
+  }
+});
+
+
+
 

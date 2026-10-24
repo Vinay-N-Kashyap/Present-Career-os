@@ -1,0 +1,316 @@
+{
+  "prefix": "bcom-finance",
+  "day": 49,
+  "visuals": [
+    {
+      "step": "part-1",
+      "template": "ledger-sheet",
+      "data": {
+        "title": "LBO Ledger: Corporate Distress Architectur",
+        "caption": "Distressed restructuring ledger balancing priority claims.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 2500000000.0,
+          "totalCredit": 2500000000.0,
+          "rows": [
+            {
+              "account": "Acquired Enterprise Value",
+              "debit": 2500000000.0,
+              "credit": 0.0
+            },
+            {
+              "account": "Total Debt Financed",
+              "debit": 0.0,
+              "credit": 1500000000.0
+            },
+            {
+              "account": "Sponsor Equity Invested",
+              "debit": 0.0,
+              "credit": 1000000000.0
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Transaction Structuring",
+            "description": "Establish purchase price multiples and capital tranches."
+          },
+          {
+            "id": "say1",
+            "label": "Waterfall Execution",
+            "description": "Model cash flow generation and debt paydown trajectories."
+          },
+          {
+            "id": "example",
+            "label": "Returns Decomposition",
+            "description": "Decompose equity gains across operational and financial drivers."
+          },
+          {
+            "id": "tryIt",
+            "label": "Committee Verification",
+            "description": "Verify debt covenant compliance and emit cryptographic pass token."
+          }
+        ]
+      },
+      "codeBindings": [
+        {
+          "sourceCodeHash": "36015ae919927c3ab1d68f6e17302e79bc8d35a929e79fc859e4a8d40dba080f",
+          "variablePath": "engine.run",
+          "highlightLines": [
+            1,
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "step": "part-2",
+      "template": "ledger-sheet",
+      "data": {
+        "title": "LBO Ledger: The Restructuring Hierarchy: T",
+        "caption": "Distressed restructuring ledger balancing priority claims.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 2500000000.0,
+          "totalCredit": 2500000000.0,
+          "rows": [
+            {
+              "account": "Acquired Enterprise Value",
+              "debit": 2500000000.0,
+              "credit": 0.0
+            },
+            {
+              "account": "Total Debt Financed",
+              "debit": 0.0,
+              "credit": 1500000000.0
+            },
+            {
+              "account": "Sponsor Equity Invested",
+              "debit": 0.0,
+              "credit": 1000000000.0
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Transaction Structuring",
+            "description": "Establish purchase price multiples and capital tranches."
+          },
+          {
+            "id": "say1",
+            "label": "Waterfall Execution",
+            "description": "Model cash flow generation and debt paydown trajectories."
+          },
+          {
+            "id": "example",
+            "label": "Returns Decomposition",
+            "description": "Decompose equity gains across operational and financial drivers."
+          },
+          {
+            "id": "tryIt",
+            "label": "Committee Verification",
+            "description": "Verify debt covenant compliance and emit cryptographic pass token."
+          }
+        ]
+      },
+      "codeBindings": [
+        {
+          "sourceCodeHash": "36015ae919927c3ab1d68f6e17302e79bc8d35a929e79fc859e4a8d40dba080f",
+          "variablePath": "engine.run",
+          "highlightLines": [
+            1,
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "step": "part-3",
+      "template": "ledger-sheet",
+      "data": {
+        "title": "LBO Ledger: Chapter 11 Reorganization Mech",
+        "caption": "Distressed restructuring ledger balancing priority claims.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 2500000000.0,
+          "totalCredit": 2500000000.0,
+          "rows": [
+            {
+              "account": "Acquired Enterprise Value",
+              "debit": 2500000000.0,
+              "credit": 0.0
+            },
+            {
+              "account": "Total Debt Financed",
+              "debit": 0.0,
+              "credit": 1500000000.0
+            },
+            {
+              "account": "Sponsor Equity Invested",
+              "debit": 0.0,
+              "credit": 1000000000.0
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Transaction Structuring",
+            "description": "Establish purchase price multiples and capital tranches."
+          },
+          {
+            "id": "say1",
+            "label": "Waterfall Execution",
+            "description": "Model cash flow generation and debt paydown trajectories."
+          },
+          {
+            "id": "example",
+            "label": "Returns Decomposition",
+            "description": "Decompose equity gains across operational and financial drivers."
+          },
+          {
+            "id": "tryIt",
+            "label": "Committee Verification",
+            "description": "Verify debt covenant compliance and emit cryptographic pass token."
+          }
+        ]
+      },
+      "codeBindings": [
+        {
+          "sourceCodeHash": "36015ae919927c3ab1d68f6e17302e79bc8d35a929e79fc859e4a8d40dba080f",
+          "variablePath": "engine.run",
+          "highlightLines": [
+            1,
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "step": "part-4",
+      "template": "ledger-sheet",
+      "data": {
+        "title": "LBO Ledger: Debt-for-Equity Swaps & Cramdo",
+        "caption": "Distressed restructuring ledger balancing priority claims.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 2500000000.0,
+          "totalCredit": 2500000000.0,
+          "rows": [
+            {
+              "account": "Acquired Enterprise Value",
+              "debit": 2500000000.0,
+              "credit": 0.0
+            },
+            {
+              "account": "Total Debt Financed",
+              "debit": 0.0,
+              "credit": 1500000000.0
+            },
+            {
+              "account": "Sponsor Equity Invested",
+              "debit": 0.0,
+              "credit": 1000000000.0
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Transaction Structuring",
+            "description": "Establish purchase price multiples and capital tranches."
+          },
+          {
+            "id": "say1",
+            "label": "Waterfall Execution",
+            "description": "Model cash flow generation and debt paydown trajectories."
+          },
+          {
+            "id": "example",
+            "label": "Returns Decomposition",
+            "description": "Decompose equity gains across operational and financial drivers."
+          },
+          {
+            "id": "tryIt",
+            "label": "Committee Verification",
+            "description": "Verify debt covenant compliance and emit cryptographic pass token."
+          }
+        ]
+      },
+      "codeBindings": [
+        {
+          "sourceCodeHash": "36015ae919927c3ab1d68f6e17302e79bc8d35a929e79fc859e4a8d40dba080f",
+          "variablePath": "engine.run",
+          "highlightLines": [
+            1,
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "step": "part-5",
+      "template": "ledger-sheet",
+      "data": {
+        "title": "LBO Ledger: Production Distressed Restruct",
+        "caption": "Distressed restructuring ledger balancing priority claims.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 2500000000.0,
+          "totalCredit": 2500000000.0,
+          "rows": [
+            {
+              "account": "Acquired Enterprise Value",
+              "debit": 2500000000.0,
+              "credit": 0.0
+            },
+            {
+              "account": "Total Debt Financed",
+              "debit": 0.0,
+              "credit": 1500000000.0
+            },
+            {
+              "account": "Sponsor Equity Invested",
+              "debit": 0.0,
+              "credit": 1000000000.0
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Transaction Structuring",
+            "description": "Establish purchase price multiples and capital tranches."
+          },
+          {
+            "id": "say1",
+            "label": "Waterfall Execution",
+            "description": "Model cash flow generation and debt paydown trajectories."
+          },
+          {
+            "id": "example",
+            "label": "Returns Decomposition",
+            "description": "Decompose equity gains across operational and financial drivers."
+          },
+          {
+            "id": "tryIt",
+            "label": "Committee Verification",
+            "description": "Verify debt covenant compliance and emit cryptographic pass token."
+          }
+        ]
+      },
+      "codeBindings": [
+        {
+          "sourceCodeHash": "36015ae919927c3ab1d68f6e17302e79bc8d35a929e79fc859e4a8d40dba080f",
+          "variablePath": "engine.run",
+          "highlightLines": [
+            1,
+            10
+          ]
+        }
+      ]
+    }
+  ]
+}

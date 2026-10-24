@@ -1,0 +1,664 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_aud",
+  "day": 28,
+  "promptSha": "9ddba0295c8f04b2730b769be1d9138e6e7a2c6ded5199d19e24d8c27556efc3",
+  "model": "google/gemini-3.8-flash",
+  "entries": [
+    {
+      "partTitle": "Continuous Auditing Architecture & 100% General Ledger Population Analytics",
+      "codeHash": "e67ba01c41309ad7b67fd9d9753d6c4bbb885e1d9db5608f1b958e758c223c71",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Continuous Auditing Architecture & 100% General Le \u2014 Forensic Assurance Ledger",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open forensic evidence and audit recovery ledger (2850000) for Continuous Auditing Architecture & 100% ...",
+            "title": "Day 28 Forensic Assurance Ledger \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 2850000,
+            "totalCredit": 2850000,
+            "entries": [
+              {
+                "id": "AUD-2801",
+                "account": "Forensic Investigation & Asset Recovery Control",
+                "debit": 2850000,
+                "balance": 2850000,
+                "tone": "data",
+                "memo": "Initial evidentiary recognition under ISO/IEC 27037 / Sec 65B / Companies Act Framework"
+              },
+              {
+                "id": "AUD-2802",
+                "account": "Forensic Escrow & Working Paper Clearing",
+                "credit": 2850000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset forensic control balance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record forensic adjustment / asset freezing entry (310000) under applicable standard.",
+            "title": "Day 28 Forensic Assurance Ledger \u2014 Evidentiary Adjustment",
+            "isBalanced": true,
+            "totalDebit": 3160000,
+            "totalCredit": 3160000,
+            "entries": [
+              {
+                "id": "AUD-2801",
+                "account": "Forensic Investigation & Asset Recovery Control",
+                "debit": 2850000,
+                "balance": 2850000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-2803",
+                "account": "Judicial Recovery & Statutory Restatement Reserve",
+                "debit": 310000,
+                "balance": 3160000,
+                "tone": "accent",
+                "memo": "Substantive forensic adjustment and frozen asset recovery"
+              },
+              {
+                "id": "AUD-2802",
+                "account": "Forensic Escrow & Working Paper Clearing",
+                "credit": 3160000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute simulated enterprise forensic case study for Continuous Auditing Architecture & 100% ...",
+            "title": "Day 28 Forensic Assurance Ledger \u2014 Substantive Investigation",
+            "isBalanced": true,
+            "totalDebit": 3160000,
+            "totalCredit": 3160000,
+            "entries": [
+              {
+                "id": "AUD-2801",
+                "account": "Forensic Investigation & Asset Recovery Control",
+                "debit": 2850000,
+                "balance": 2850000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-2803",
+                "account": "Judicial Recovery & Statutory Restatement Reserve",
+                "debit": 310000,
+                "balance": 3160000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-2802",
+                "account": "Forensic Escrow & Working Paper Clearing",
+                "credit": 3160000,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify 100% balanced ledger closure and judicial dossier archival for Continuous Auditing Architecture & 100% ...",
+            "title": "Day 28 Forensic Assurance Ledger \u2014 Final Certified Balances",
+            "isBalanced": true,
+            "totalDebit": 3160000,
+            "totalCredit": 3160000,
+            "entries": [
+              {
+                "id": "AUD-2801",
+                "account": "Forensic Investigation & Asset Recovery Control",
+                "debit": 2850000,
+                "balance": 2850000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-2803",
+                "account": "Judicial Recovery & Statutory Restatement Reserve",
+                "debit": 310000,
+                "balance": 3160000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-2802",
+                "account": "Forensic Escrow & Working Paper Clearing",
+                "credit": 3160000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "100% Balanced and Certified by Chief Audit Executive & Master of Forensic Governance"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Unsupervised Machine Learning & Isolation Forests in Audit Anomaly Detection",
+      "codeHash": "792ee0c32036db744604accdda71c6e441fb615f8a4d15166b36444181034ee0",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Unsupervised Machine Learning & Isolation Forests  \u2014 Forensic Assurance Ledger",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open forensic evidence and audit recovery ledger (2875000) for Unsupervised Machine Learning & Isolatio...",
+            "title": "Day 28 Forensic Assurance Ledger \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 2875000,
+            "totalCredit": 2875000,
+            "entries": [
+              {
+                "id": "AUD-2801",
+                "account": "Forensic Investigation & Asset Recovery Control",
+                "debit": 2875000,
+                "balance": 2875000,
+                "tone": "data",
+                "memo": "Initial evidentiary recognition under ISO/IEC 27037 / Sec 65B / Companies Act Framework"
+              },
+              {
+                "id": "AUD-2802",
+                "account": "Forensic Escrow & Working Paper Clearing",
+                "credit": 2875000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset forensic control balance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record forensic adjustment / asset freezing entry (322500) under applicable standard.",
+            "title": "Day 28 Forensic Assurance Ledger \u2014 Evidentiary Adjustment",
+            "isBalanced": true,
+            "totalDebit": 3197500,
+            "totalCredit": 3197500,
+            "entries": [
+              {
+                "id": "AUD-2801",
+                "account": "Forensic Investigation & Asset Recovery Control",
+                "debit": 2875000,
+                "balance": 2875000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-2803",
+                "account": "Judicial Recovery & Statutory Restatement Reserve",
+                "debit": 322500,
+                "balance": 3197500,
+                "tone": "accent",
+                "memo": "Substantive forensic adjustment and frozen asset recovery"
+              },
+              {
+                "id": "AUD-2802",
+                "account": "Forensic Escrow & Working Paper Clearing",
+                "credit": 3197500,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute simulated enterprise forensic case study for Unsupervised Machine Learning & Isolatio...",
+            "title": "Day 28 Forensic Assurance Ledger \u2014 Substantive Investigation",
+            "isBalanced": true,
+            "totalDebit": 3197500,
+            "totalCredit": 3197500,
+            "entries": [
+              {
+                "id": "AUD-2801",
+                "account": "Forensic Investigation & Asset Recovery Control",
+                "debit": 2875000,
+                "balance": 2875000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-2803",
+                "account": "Judicial Recovery & Statutory Restatement Reserve",
+                "debit": 322500,
+                "balance": 3197500,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-2802",
+                "account": "Forensic Escrow & Working Paper Clearing",
+                "credit": 3197500,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify 100% balanced ledger closure and judicial dossier archival for Unsupervised Machine Learning & Isolatio...",
+            "title": "Day 28 Forensic Assurance Ledger \u2014 Final Certified Balances",
+            "isBalanced": true,
+            "totalDebit": 3197500,
+            "totalCredit": 3197500,
+            "entries": [
+              {
+                "id": "AUD-2801",
+                "account": "Forensic Investigation & Asset Recovery Control",
+                "debit": 2875000,
+                "balance": 2875000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-2803",
+                "account": "Judicial Recovery & Statutory Restatement Reserve",
+                "debit": 322500,
+                "balance": 3197500,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-2802",
+                "account": "Forensic Escrow & Working Paper Clearing",
+                "credit": 3197500,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "100% Balanced and Certified by Chief Audit Executive & Master of Forensic Governance"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Auditing Artificial Intelligence Systems & Algorithms: AI Governance & Bias",
+      "codeHash": "535b172acb2968f4ff0d5190c3e19ed32ba99b8f4ae9474ffb7ff263d07a87fb",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Auditing Artificial Intelligence Systems & Algorit \u2014 Forensic Assurance Ledger",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open forensic evidence and audit recovery ledger (2900000) for Auditing Artificial Intelligence Systems...",
+            "title": "Day 28 Forensic Assurance Ledger \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 2900000,
+            "totalCredit": 2900000,
+            "entries": [
+              {
+                "id": "AUD-2801",
+                "account": "Forensic Investigation & Asset Recovery Control",
+                "debit": 2900000,
+                "balance": 2900000,
+                "tone": "data",
+                "memo": "Initial evidentiary recognition under ISO/IEC 27037 / Sec 65B / Companies Act Framework"
+              },
+              {
+                "id": "AUD-2802",
+                "account": "Forensic Escrow & Working Paper Clearing",
+                "credit": 2900000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset forensic control balance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record forensic adjustment / asset freezing entry (335000) under applicable standard.",
+            "title": "Day 28 Forensic Assurance Ledger \u2014 Evidentiary Adjustment",
+            "isBalanced": true,
+            "totalDebit": 3235000,
+            "totalCredit": 3235000,
+            "entries": [
+              {
+                "id": "AUD-2801",
+                "account": "Forensic Investigation & Asset Recovery Control",
+                "debit": 2900000,
+                "balance": 2900000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-2803",
+                "account": "Judicial Recovery & Statutory Restatement Reserve",
+                "debit": 335000,
+                "balance": 3235000,
+                "tone": "accent",
+                "memo": "Substantive forensic adjustment and frozen asset recovery"
+              },
+              {
+                "id": "AUD-2802",
+                "account": "Forensic Escrow & Working Paper Clearing",
+                "credit": 3235000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute simulated enterprise forensic case study for Auditing Artificial Intelligence Systems...",
+            "title": "Day 28 Forensic Assurance Ledger \u2014 Substantive Investigation",
+            "isBalanced": true,
+            "totalDebit": 3235000,
+            "totalCredit": 3235000,
+            "entries": [
+              {
+                "id": "AUD-2801",
+                "account": "Forensic Investigation & Asset Recovery Control",
+                "debit": 2900000,
+                "balance": 2900000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-2803",
+                "account": "Judicial Recovery & Statutory Restatement Reserve",
+                "debit": 335000,
+                "balance": 3235000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-2802",
+                "account": "Forensic Escrow & Working Paper Clearing",
+                "credit": 3235000,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify 100% balanced ledger closure and judicial dossier archival for Auditing Artificial Intelligence Systems...",
+            "title": "Day 28 Forensic Assurance Ledger \u2014 Final Certified Balances",
+            "isBalanced": true,
+            "totalDebit": 3235000,
+            "totalCredit": 3235000,
+            "entries": [
+              {
+                "id": "AUD-2801",
+                "account": "Forensic Investigation & Asset Recovery Control",
+                "debit": 2900000,
+                "balance": 2900000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-2803",
+                "account": "Judicial Recovery & Statutory Restatement Reserve",
+                "debit": 335000,
+                "balance": 3235000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-2802",
+                "account": "Forensic Escrow & Working Paper Clearing",
+                "credit": 3235000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "100% Balanced and Certified by Chief Audit Executive & Master of Forensic Governance"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Automated Audit Trail Log Verification: Rule 11(g) Compliance Analytics",
+      "codeHash": "98c1949ff0b555c3bcdbc997e7110e86914228460449da62b84adb6fc5d8218e",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Automated Audit Trail Log Verification: Rule 11(g) \u2014 Forensic Assurance Ledger",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open forensic evidence and audit recovery ledger (2925000) for Automated Audit Trail Log Verification: ...",
+            "title": "Day 28 Forensic Assurance Ledger \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 2925000,
+            "totalCredit": 2925000,
+            "entries": [
+              {
+                "id": "AUD-2801",
+                "account": "Forensic Investigation & Asset Recovery Control",
+                "debit": 2925000,
+                "balance": 2925000,
+                "tone": "data",
+                "memo": "Initial evidentiary recognition under ISO/IEC 27037 / Sec 65B / Companies Act Framework"
+              },
+              {
+                "id": "AUD-2802",
+                "account": "Forensic Escrow & Working Paper Clearing",
+                "credit": 2925000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset forensic control balance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record forensic adjustment / asset freezing entry (347500) under applicable standard.",
+            "title": "Day 28 Forensic Assurance Ledger \u2014 Evidentiary Adjustment",
+            "isBalanced": true,
+            "totalDebit": 3272500,
+            "totalCredit": 3272500,
+            "entries": [
+              {
+                "id": "AUD-2801",
+                "account": "Forensic Investigation & Asset Recovery Control",
+                "debit": 2925000,
+                "balance": 2925000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-2803",
+                "account": "Judicial Recovery & Statutory Restatement Reserve",
+                "debit": 347500,
+                "balance": 3272500,
+                "tone": "accent",
+                "memo": "Substantive forensic adjustment and frozen asset recovery"
+              },
+              {
+                "id": "AUD-2802",
+                "account": "Forensic Escrow & Working Paper Clearing",
+                "credit": 3272500,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute simulated enterprise forensic case study for Automated Audit Trail Log Verification: ...",
+            "title": "Day 28 Forensic Assurance Ledger \u2014 Substantive Investigation",
+            "isBalanced": true,
+            "totalDebit": 3272500,
+            "totalCredit": 3272500,
+            "entries": [
+              {
+                "id": "AUD-2801",
+                "account": "Forensic Investigation & Asset Recovery Control",
+                "debit": 2925000,
+                "balance": 2925000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-2803",
+                "account": "Judicial Recovery & Statutory Restatement Reserve",
+                "debit": 347500,
+                "balance": 3272500,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-2802",
+                "account": "Forensic Escrow & Working Paper Clearing",
+                "credit": 3272500,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify 100% balanced ledger closure and judicial dossier archival for Automated Audit Trail Log Verification: ...",
+            "title": "Day 28 Forensic Assurance Ledger \u2014 Final Certified Balances",
+            "isBalanced": true,
+            "totalDebit": 3272500,
+            "totalCredit": 3272500,
+            "entries": [
+              {
+                "id": "AUD-2801",
+                "account": "Forensic Investigation & Asset Recovery Control",
+                "debit": 2925000,
+                "balance": 2925000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-2803",
+                "account": "Judicial Recovery & Statutory Restatement Reserve",
+                "debit": 347500,
+                "balance": 3272500,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-2802",
+                "account": "Forensic Escrow & Working Paper Clearing",
+                "credit": 3272500,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "100% Balanced and Certified by Chief Audit Executive & Master of Forensic Governance"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Comprehensive AI & Analytics Audit Dossier & Technical Validation",
+      "codeHash": "6e02c649d5139374e989ed5098f3b14759ef50e7a4c00c4e8946afe32dafdb1c",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Comprehensive AI & Analytics Audit Dossier & Techn \u2014 Forensic Assurance Ledger",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open forensic evidence and audit recovery ledger (2950000) for Comprehensive AI & Analytics Audit Dossi...",
+            "title": "Day 28 Forensic Assurance Ledger \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 2950000,
+            "totalCredit": 2950000,
+            "entries": [
+              {
+                "id": "AUD-2801",
+                "account": "Forensic Investigation & Asset Recovery Control",
+                "debit": 2950000,
+                "balance": 2950000,
+                "tone": "data",
+                "memo": "Initial evidentiary recognition under ISO/IEC 27037 / Sec 65B / Companies Act Framework"
+              },
+              {
+                "id": "AUD-2802",
+                "account": "Forensic Escrow & Working Paper Clearing",
+                "credit": 2950000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset forensic control balance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record forensic adjustment / asset freezing entry (360000) under applicable standard.",
+            "title": "Day 28 Forensic Assurance Ledger \u2014 Evidentiary Adjustment",
+            "isBalanced": true,
+            "totalDebit": 3310000,
+            "totalCredit": 3310000,
+            "entries": [
+              {
+                "id": "AUD-2801",
+                "account": "Forensic Investigation & Asset Recovery Control",
+                "debit": 2950000,
+                "balance": 2950000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-2803",
+                "account": "Judicial Recovery & Statutory Restatement Reserve",
+                "debit": 360000,
+                "balance": 3310000,
+                "tone": "accent",
+                "memo": "Substantive forensic adjustment and frozen asset recovery"
+              },
+              {
+                "id": "AUD-2802",
+                "account": "Forensic Escrow & Working Paper Clearing",
+                "credit": 3310000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute simulated enterprise forensic case study for Comprehensive AI & Analytics Audit Dossi...",
+            "title": "Day 28 Forensic Assurance Ledger \u2014 Substantive Investigation",
+            "isBalanced": true,
+            "totalDebit": 3310000,
+            "totalCredit": 3310000,
+            "entries": [
+              {
+                "id": "AUD-2801",
+                "account": "Forensic Investigation & Asset Recovery Control",
+                "debit": 2950000,
+                "balance": 2950000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-2803",
+                "account": "Judicial Recovery & Statutory Restatement Reserve",
+                "debit": 360000,
+                "balance": 3310000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-2802",
+                "account": "Forensic Escrow & Working Paper Clearing",
+                "credit": 3310000,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify 100% balanced ledger closure and judicial dossier archival for Comprehensive AI & Analytics Audit Dossi...",
+            "title": "Day 28 Forensic Assurance Ledger \u2014 Final Certified Balances",
+            "isBalanced": true,
+            "totalDebit": 3310000,
+            "totalCredit": 3310000,
+            "entries": [
+              {
+                "id": "AUD-2801",
+                "account": "Forensic Investigation & Asset Recovery Control",
+                "debit": 2950000,
+                "balance": 2950000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-2803",
+                "account": "Judicial Recovery & Statutory Restatement Reserve",
+                "debit": 360000,
+                "balance": 3310000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-2802",
+                "account": "Forensic Escrow & Working Paper Clearing",
+                "credit": 3310000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "100% Balanced and Certified by Chief Audit Executive & Master of Forensic Governance"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

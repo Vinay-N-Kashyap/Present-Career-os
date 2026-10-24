@@ -1,0 +1,664 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_aud",
+  "day": 18,
+  "promptSha": "f97f858606b7106473c901cfd3494d1f180edc5b78a666b6defd7e139363e343",
+  "model": "google/gemini-3.8-flash",
+  "entries": [
+    {
+      "partTitle": "Subsequent Events Framework: SA 560 & Ind AS 10 Classification",
+      "codeHash": "d420313534e9527310be29327d222e0cc84a13bf527efb905d942c9c21c57bce",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Subsequent Events Framework: SA 560 & Ind AS 10 Cl \u2014 Forensic Audit Ledger",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open forensic assurance verification ledger (1670000) for Subsequent Events Framework: SA 560 & In...",
+            "title": "Day 18 Forensic Assurance Ledger \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 1670000,
+            "totalCredit": 1670000,
+            "entries": [
+              {
+                "id": "AUD-1801",
+                "account": "Substantive Asset & Governance Assurance Control",
+                "debit": 1670000,
+                "balance": 1670000,
+                "tone": "data",
+                "memo": "Initial recognition under SA 540-580 / Ind AS Framework"
+              },
+              {
+                "id": "AUD-1802",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1670000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control balance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record substantive adjustment / governance entry (185000) under applicable standard.",
+            "title": "Day 18 Forensic Assurance Ledger \u2014 Substantive Adjustment",
+            "isBalanced": true,
+            "totalDebit": 1855000,
+            "totalCredit": 1855000,
+            "entries": [
+              {
+                "id": "AUD-1801",
+                "account": "Substantive Asset & Governance Assurance Control",
+                "debit": 1670000,
+                "balance": 1670000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-1803",
+                "account": "Asset Impairment / Governance Restatement Reserve",
+                "debit": 185000,
+                "balance": 1855000,
+                "tone": "accent",
+                "memo": "Substantive audit adjustment"
+              },
+              {
+                "id": "AUD-1802",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1855000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute simulated enterprise forensic case study for Subsequent Events Framework: SA 560 & In...",
+            "title": "Day 18 Forensic Assurance Ledger \u2014 Substantive Audit",
+            "isBalanced": true,
+            "totalDebit": 1855000,
+            "totalCredit": 1855000,
+            "entries": [
+              {
+                "id": "AUD-1801",
+                "account": "Substantive Asset & Governance Assurance Control",
+                "debit": 1670000,
+                "balance": 1670000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-1803",
+                "account": "Asset Impairment / Governance Restatement Reserve",
+                "debit": 185000,
+                "balance": 1855000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-1802",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1855000,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify 100% balanced ledger closure and working paper archival for Subsequent Events Framework: SA 560 & In...",
+            "title": "Day 18 Forensic Assurance Ledger \u2014 Final Certified Balances",
+            "isBalanced": true,
+            "totalDebit": 1855000,
+            "totalCredit": 1855000,
+            "entries": [
+              {
+                "id": "AUD-1801",
+                "account": "Substantive Asset & Governance Assurance Control",
+                "debit": 1670000,
+                "balance": 1670000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-1803",
+                "account": "Asset Impairment / Governance Restatement Reserve",
+                "debit": 185000,
+                "balance": 1855000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-1802",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1855000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "100% Balanced and Certified by Senior Assurance Director"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Auditor's Active Procedures in Period 1: Up to Auditor's Report Date",
+      "codeHash": "bddab12b847fffa4fae3a219e87f9b630cc01dcb52e61b65db83c30d766a3cd0",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Auditor's Active Procedures in Period 1: Up to Aud \u2014 Forensic Audit Ledger",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open forensic assurance verification ledger (1690000) for Auditor's Active Procedures in Period 1:...",
+            "title": "Day 18 Forensic Assurance Ledger \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 1690000,
+            "totalCredit": 1690000,
+            "entries": [
+              {
+                "id": "AUD-1801",
+                "account": "Substantive Asset & Governance Assurance Control",
+                "debit": 1690000,
+                "balance": 1690000,
+                "tone": "data",
+                "memo": "Initial recognition under SA 540-580 / Ind AS Framework"
+              },
+              {
+                "id": "AUD-1802",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1690000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control balance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record substantive adjustment / governance entry (194500) under applicable standard.",
+            "title": "Day 18 Forensic Assurance Ledger \u2014 Substantive Adjustment",
+            "isBalanced": true,
+            "totalDebit": 1884500,
+            "totalCredit": 1884500,
+            "entries": [
+              {
+                "id": "AUD-1801",
+                "account": "Substantive Asset & Governance Assurance Control",
+                "debit": 1690000,
+                "balance": 1690000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-1803",
+                "account": "Asset Impairment / Governance Restatement Reserve",
+                "debit": 194500,
+                "balance": 1884500,
+                "tone": "accent",
+                "memo": "Substantive audit adjustment"
+              },
+              {
+                "id": "AUD-1802",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1884500,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute simulated enterprise forensic case study for Auditor's Active Procedures in Period 1:...",
+            "title": "Day 18 Forensic Assurance Ledger \u2014 Substantive Audit",
+            "isBalanced": true,
+            "totalDebit": 1884500,
+            "totalCredit": 1884500,
+            "entries": [
+              {
+                "id": "AUD-1801",
+                "account": "Substantive Asset & Governance Assurance Control",
+                "debit": 1690000,
+                "balance": 1690000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-1803",
+                "account": "Asset Impairment / Governance Restatement Reserve",
+                "debit": 194500,
+                "balance": 1884500,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-1802",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1884500,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify 100% balanced ledger closure and working paper archival for Auditor's Active Procedures in Period 1:...",
+            "title": "Day 18 Forensic Assurance Ledger \u2014 Final Certified Balances",
+            "isBalanced": true,
+            "totalDebit": 1884500,
+            "totalCredit": 1884500,
+            "entries": [
+              {
+                "id": "AUD-1801",
+                "account": "Substantive Asset & Governance Assurance Control",
+                "debit": 1690000,
+                "balance": 1690000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-1803",
+                "account": "Asset Impairment / Governance Restatement Reserve",
+                "debit": 194500,
+                "balance": 1884500,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-1802",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1884500,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "100% Balanced and Certified by Senior Assurance Director"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Period 2: Events Known After Audit Report Date but Before Financial Statements Issued",
+      "codeHash": "1d62d421173bfb60b40a8b6c5774dc22a4810eeab92952e05d626277fcde6b59",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Period 2: Events Known After Audit Report Date but \u2014 Forensic Audit Ledger",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open forensic assurance verification ledger (1710000) for Period 2: Events Known After Audit Repor...",
+            "title": "Day 18 Forensic Assurance Ledger \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 1710000,
+            "totalCredit": 1710000,
+            "entries": [
+              {
+                "id": "AUD-1801",
+                "account": "Substantive Asset & Governance Assurance Control",
+                "debit": 1710000,
+                "balance": 1710000,
+                "tone": "data",
+                "memo": "Initial recognition under SA 540-580 / Ind AS Framework"
+              },
+              {
+                "id": "AUD-1802",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1710000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control balance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record substantive adjustment / governance entry (204000) under applicable standard.",
+            "title": "Day 18 Forensic Assurance Ledger \u2014 Substantive Adjustment",
+            "isBalanced": true,
+            "totalDebit": 1914000,
+            "totalCredit": 1914000,
+            "entries": [
+              {
+                "id": "AUD-1801",
+                "account": "Substantive Asset & Governance Assurance Control",
+                "debit": 1710000,
+                "balance": 1710000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-1803",
+                "account": "Asset Impairment / Governance Restatement Reserve",
+                "debit": 204000,
+                "balance": 1914000,
+                "tone": "accent",
+                "memo": "Substantive audit adjustment"
+              },
+              {
+                "id": "AUD-1802",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1914000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute simulated enterprise forensic case study for Period 2: Events Known After Audit Repor...",
+            "title": "Day 18 Forensic Assurance Ledger \u2014 Substantive Audit",
+            "isBalanced": true,
+            "totalDebit": 1914000,
+            "totalCredit": 1914000,
+            "entries": [
+              {
+                "id": "AUD-1801",
+                "account": "Substantive Asset & Governance Assurance Control",
+                "debit": 1710000,
+                "balance": 1710000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-1803",
+                "account": "Asset Impairment / Governance Restatement Reserve",
+                "debit": 204000,
+                "balance": 1914000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-1802",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1914000,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify 100% balanced ledger closure and working paper archival for Period 2: Events Known After Audit Repor...",
+            "title": "Day 18 Forensic Assurance Ledger \u2014 Final Certified Balances",
+            "isBalanced": true,
+            "totalDebit": 1914000,
+            "totalCredit": 1914000,
+            "entries": [
+              {
+                "id": "AUD-1801",
+                "account": "Substantive Asset & Governance Assurance Control",
+                "debit": 1710000,
+                "balance": 1710000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-1803",
+                "account": "Asset Impairment / Governance Restatement Reserve",
+                "debit": 204000,
+                "balance": 1914000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-1802",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1914000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "100% Balanced and Certified by Senior Assurance Director"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Period 3: Facts Discovered After Financial Statements Have Been Issued",
+      "codeHash": "03db249f39fcc6b0830b8a0bd886963499190c4f412240d98a247be678460d92",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Period 3: Facts Discovered After Financial Stateme \u2014 Forensic Audit Ledger",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open forensic assurance verification ledger (1730000) for Period 3: Facts Discovered After Financi...",
+            "title": "Day 18 Forensic Assurance Ledger \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 1730000,
+            "totalCredit": 1730000,
+            "entries": [
+              {
+                "id": "AUD-1801",
+                "account": "Substantive Asset & Governance Assurance Control",
+                "debit": 1730000,
+                "balance": 1730000,
+                "tone": "data",
+                "memo": "Initial recognition under SA 540-580 / Ind AS Framework"
+              },
+              {
+                "id": "AUD-1802",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1730000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control balance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record substantive adjustment / governance entry (213500) under applicable standard.",
+            "title": "Day 18 Forensic Assurance Ledger \u2014 Substantive Adjustment",
+            "isBalanced": true,
+            "totalDebit": 1943500,
+            "totalCredit": 1943500,
+            "entries": [
+              {
+                "id": "AUD-1801",
+                "account": "Substantive Asset & Governance Assurance Control",
+                "debit": 1730000,
+                "balance": 1730000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-1803",
+                "account": "Asset Impairment / Governance Restatement Reserve",
+                "debit": 213500,
+                "balance": 1943500,
+                "tone": "accent",
+                "memo": "Substantive audit adjustment"
+              },
+              {
+                "id": "AUD-1802",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1943500,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute simulated enterprise forensic case study for Period 3: Facts Discovered After Financi...",
+            "title": "Day 18 Forensic Assurance Ledger \u2014 Substantive Audit",
+            "isBalanced": true,
+            "totalDebit": 1943500,
+            "totalCredit": 1943500,
+            "entries": [
+              {
+                "id": "AUD-1801",
+                "account": "Substantive Asset & Governance Assurance Control",
+                "debit": 1730000,
+                "balance": 1730000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-1803",
+                "account": "Asset Impairment / Governance Restatement Reserve",
+                "debit": 213500,
+                "balance": 1943500,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-1802",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1943500,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify 100% balanced ledger closure and working paper archival for Period 3: Facts Discovered After Financi...",
+            "title": "Day 18 Forensic Assurance Ledger \u2014 Final Certified Balances",
+            "isBalanced": true,
+            "totalDebit": 1943500,
+            "totalCredit": 1943500,
+            "entries": [
+              {
+                "id": "AUD-1801",
+                "account": "Substantive Asset & Governance Assurance Control",
+                "debit": 1730000,
+                "balance": 1730000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-1803",
+                "account": "Asset Impairment / Governance Restatement Reserve",
+                "debit": 213500,
+                "balance": 1943500,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-1802",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1943500,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "100% Balanced and Certified by Senior Assurance Director"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Subsequent Events Audit File Assembly & Regulatory Form ADT-4 Cross-Link",
+      "codeHash": "4a3389e926155576daf8c5984f52d560d36d4732907c3f15eb41707543bc4ab9",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Subsequent Events Audit File Assembly & Regulatory \u2014 Forensic Audit Ledger",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open forensic assurance verification ledger (1750000) for Subsequent Events Audit File Assembly & ...",
+            "title": "Day 18 Forensic Assurance Ledger \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 1750000,
+            "totalCredit": 1750000,
+            "entries": [
+              {
+                "id": "AUD-1801",
+                "account": "Substantive Asset & Governance Assurance Control",
+                "debit": 1750000,
+                "balance": 1750000,
+                "tone": "data",
+                "memo": "Initial recognition under SA 540-580 / Ind AS Framework"
+              },
+              {
+                "id": "AUD-1802",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1750000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control balance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record substantive adjustment / governance entry (223000) under applicable standard.",
+            "title": "Day 18 Forensic Assurance Ledger \u2014 Substantive Adjustment",
+            "isBalanced": true,
+            "totalDebit": 1973000,
+            "totalCredit": 1973000,
+            "entries": [
+              {
+                "id": "AUD-1801",
+                "account": "Substantive Asset & Governance Assurance Control",
+                "debit": 1750000,
+                "balance": 1750000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-1803",
+                "account": "Asset Impairment / Governance Restatement Reserve",
+                "debit": 223000,
+                "balance": 1973000,
+                "tone": "accent",
+                "memo": "Substantive audit adjustment"
+              },
+              {
+                "id": "AUD-1802",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1973000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute simulated enterprise forensic case study for Subsequent Events Audit File Assembly & ...",
+            "title": "Day 18 Forensic Assurance Ledger \u2014 Substantive Audit",
+            "isBalanced": true,
+            "totalDebit": 1973000,
+            "totalCredit": 1973000,
+            "entries": [
+              {
+                "id": "AUD-1801",
+                "account": "Substantive Asset & Governance Assurance Control",
+                "debit": 1750000,
+                "balance": 1750000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-1803",
+                "account": "Asset Impairment / Governance Restatement Reserve",
+                "debit": 223000,
+                "balance": 1973000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-1802",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1973000,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify 100% balanced ledger closure and working paper archival for Subsequent Events Audit File Assembly & ...",
+            "title": "Day 18 Forensic Assurance Ledger \u2014 Final Certified Balances",
+            "isBalanced": true,
+            "totalDebit": 1973000,
+            "totalCredit": 1973000,
+            "entries": [
+              {
+                "id": "AUD-1801",
+                "account": "Substantive Asset & Governance Assurance Control",
+                "debit": 1750000,
+                "balance": 1750000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-1803",
+                "account": "Asset Impairment / Governance Restatement Reserve",
+                "debit": 223000,
+                "balance": 1973000,
+                "tone": "ok"
+              },
+              {
+                "id": "AUD-1802",
+                "account": "Audit Risk Clearance & Working Paper Clearing",
+                "credit": 1973000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "100% Balanced and Certified by Senior Assurance Director"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

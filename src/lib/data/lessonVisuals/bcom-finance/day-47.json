@@ -1,0 +1,316 @@
+{
+  "prefix": "bcom-finance",
+  "day": 47,
+  "visuals": [
+    {
+      "step": "part-1",
+      "template": "ledger-sheet",
+      "data": {
+        "title": "LBO Ledger: Cash Flow Available for Debt S",
+        "caption": "Cash flow waterfall ledger reconciling mandatory debt sweeps.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 2500000000.0,
+          "totalCredit": 2500000000.0,
+          "rows": [
+            {
+              "account": "Acquired Enterprise Value",
+              "debit": 2500000000.0,
+              "credit": 0.0
+            },
+            {
+              "account": "Total Debt Financed",
+              "debit": 0.0,
+              "credit": 1500000000.0
+            },
+            {
+              "account": "Sponsor Equity Invested",
+              "debit": 0.0,
+              "credit": 1000000000.0
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Transaction Structuring",
+            "description": "Establish purchase price multiples and capital tranches."
+          },
+          {
+            "id": "say1",
+            "label": "Waterfall Execution",
+            "description": "Model cash flow generation and debt paydown trajectories."
+          },
+          {
+            "id": "example",
+            "label": "Returns Decomposition",
+            "description": "Decompose equity gains across operational and financial drivers."
+          },
+          {
+            "id": "tryIt",
+            "label": "Committee Verification",
+            "description": "Verify debt covenant compliance and emit cryptographic pass token."
+          }
+        ]
+      },
+      "codeBindings": [
+        {
+          "sourceCodeHash": "8575615b82efbcd99c1ee1ebc9683d5bff1893f751c74ee4b645c4b3c8d208e8",
+          "variablePath": "engine.run",
+          "highlightLines": [
+            1,
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "step": "part-2",
+      "template": "ledger-sheet",
+      "data": {
+        "title": "LBO Ledger: Mandatory Debt Amortization: R",
+        "caption": "Cash flow waterfall ledger reconciling mandatory debt sweeps.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 2500000000.0,
+          "totalCredit": 2500000000.0,
+          "rows": [
+            {
+              "account": "Acquired Enterprise Value",
+              "debit": 2500000000.0,
+              "credit": 0.0
+            },
+            {
+              "account": "Total Debt Financed",
+              "debit": 0.0,
+              "credit": 1500000000.0
+            },
+            {
+              "account": "Sponsor Equity Invested",
+              "debit": 0.0,
+              "credit": 1000000000.0
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Transaction Structuring",
+            "description": "Establish purchase price multiples and capital tranches."
+          },
+          {
+            "id": "say1",
+            "label": "Waterfall Execution",
+            "description": "Model cash flow generation and debt paydown trajectories."
+          },
+          {
+            "id": "example",
+            "label": "Returns Decomposition",
+            "description": "Decompose equity gains across operational and financial drivers."
+          },
+          {
+            "id": "tryIt",
+            "label": "Committee Verification",
+            "description": "Verify debt covenant compliance and emit cryptographic pass token."
+          }
+        ]
+      },
+      "codeBindings": [
+        {
+          "sourceCodeHash": "8575615b82efbcd99c1ee1ebc9683d5bff1893f751c74ee4b645c4b3c8d208e8",
+          "variablePath": "engine.run",
+          "highlightLines": [
+            1,
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "step": "part-3",
+      "template": "ledger-sheet",
+      "data": {
+        "title": "LBO Ledger: The Cash Sweep Mechanism: Exce",
+        "caption": "Cash flow waterfall ledger reconciling mandatory debt sweeps.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 2500000000.0,
+          "totalCredit": 2500000000.0,
+          "rows": [
+            {
+              "account": "Acquired Enterprise Value",
+              "debit": 2500000000.0,
+              "credit": 0.0
+            },
+            {
+              "account": "Total Debt Financed",
+              "debit": 0.0,
+              "credit": 1500000000.0
+            },
+            {
+              "account": "Sponsor Equity Invested",
+              "debit": 0.0,
+              "credit": 1000000000.0
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Transaction Structuring",
+            "description": "Establish purchase price multiples and capital tranches."
+          },
+          {
+            "id": "say1",
+            "label": "Waterfall Execution",
+            "description": "Model cash flow generation and debt paydown trajectories."
+          },
+          {
+            "id": "example",
+            "label": "Returns Decomposition",
+            "description": "Decompose equity gains across operational and financial drivers."
+          },
+          {
+            "id": "tryIt",
+            "label": "Committee Verification",
+            "description": "Verify debt covenant compliance and emit cryptographic pass token."
+          }
+        ]
+      },
+      "codeBindings": [
+        {
+          "sourceCodeHash": "8575615b82efbcd99c1ee1ebc9683d5bff1893f751c74ee4b645c4b3c8d208e8",
+          "variablePath": "engine.run",
+          "highlightLines": [
+            1,
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "step": "part-4",
+      "template": "ledger-sheet",
+      "data": {
+        "title": "LBO Ledger: Dynamic Deleveraging Trajector",
+        "caption": "Cash flow waterfall ledger reconciling mandatory debt sweeps.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 2500000000.0,
+          "totalCredit": 2500000000.0,
+          "rows": [
+            {
+              "account": "Acquired Enterprise Value",
+              "debit": 2500000000.0,
+              "credit": 0.0
+            },
+            {
+              "account": "Total Debt Financed",
+              "debit": 0.0,
+              "credit": 1500000000.0
+            },
+            {
+              "account": "Sponsor Equity Invested",
+              "debit": 0.0,
+              "credit": 1000000000.0
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Transaction Structuring",
+            "description": "Establish purchase price multiples and capital tranches."
+          },
+          {
+            "id": "say1",
+            "label": "Waterfall Execution",
+            "description": "Model cash flow generation and debt paydown trajectories."
+          },
+          {
+            "id": "example",
+            "label": "Returns Decomposition",
+            "description": "Decompose equity gains across operational and financial drivers."
+          },
+          {
+            "id": "tryIt",
+            "label": "Committee Verification",
+            "description": "Verify debt covenant compliance and emit cryptographic pass token."
+          }
+        ]
+      },
+      "codeBindings": [
+        {
+          "sourceCodeHash": "8575615b82efbcd99c1ee1ebc9683d5bff1893f751c74ee4b645c4b3c8d208e8",
+          "variablePath": "engine.run",
+          "highlightLines": [
+            1,
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "step": "part-5",
+      "template": "ledger-sheet",
+      "data": {
+        "title": "LBO Ledger: Production LBO Waterfall Engin",
+        "caption": "Cash flow waterfall ledger reconciling mandatory debt sweeps.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 2500000000.0,
+          "totalCredit": 2500000000.0,
+          "rows": [
+            {
+              "account": "Acquired Enterprise Value",
+              "debit": 2500000000.0,
+              "credit": 0.0
+            },
+            {
+              "account": "Total Debt Financed",
+              "debit": 0.0,
+              "credit": 1500000000.0
+            },
+            {
+              "account": "Sponsor Equity Invested",
+              "debit": 0.0,
+              "credit": 1000000000.0
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Transaction Structuring",
+            "description": "Establish purchase price multiples and capital tranches."
+          },
+          {
+            "id": "say1",
+            "label": "Waterfall Execution",
+            "description": "Model cash flow generation and debt paydown trajectories."
+          },
+          {
+            "id": "example",
+            "label": "Returns Decomposition",
+            "description": "Decompose equity gains across operational and financial drivers."
+          },
+          {
+            "id": "tryIt",
+            "label": "Committee Verification",
+            "description": "Verify debt covenant compliance and emit cryptographic pass token."
+          }
+        ]
+      },
+      "codeBindings": [
+        {
+          "sourceCodeHash": "8575615b82efbcd99c1ee1ebc9683d5bff1893f751c74ee4b645c4b3c8d208e8",
+          "variablePath": "engine.run",
+          "highlightLines": [
+            1,
+            10
+          ]
+        }
+      ]
+    }
+  ]
+}

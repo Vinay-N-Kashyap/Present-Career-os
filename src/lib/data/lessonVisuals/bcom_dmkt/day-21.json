@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "coursePrefix": "bcom_dmkt",
+  "day": 21,
+  "title": "Dynamic Retargeting & Ad Fatigue Frequency Capping Architecture",
+  "funnelSteps": [
+    {
+      "step": "CATALOG_AND_EVENT_SYNC",
+      "label": "Product Catalog & SKU-Level Pixel Event Synchronization",
+      "metric": "100.0% SKU Match Rate",
+      "status": "COMPLETED",
+      "color": "#10B981"
+    },
+    {
+      "step": "RECENCY_WINDOW_TIERING",
+      "label": "Audience Recency Decay & Bid Multiplier Segmentation",
+      "metric": "4 Intent Tiers (1d to 30d)",
+      "status": "COMPLETED",
+      "color": "#3B82F6"
+    },
+    {
+      "step": "FREQUENCY_CAPPING_GOVERNANCE",
+      "label": "Daily Impression Capping & Spend Leakage Suppression",
+      "metric": "Cap: 3 Imp/User/Day",
+      "status": "COMPLETED",
+      "color": "#6366F1"
+    },
+    {
+      "step": "AD_FATIGUE_AND_WEAROUT",
+      "label": "CTR Decay Kinetics & Automated Creative Refresh Triggering",
+      "metric": "Threshold: 30% CTR Decay",
+      "status": "COMPLETED",
+      "color": "#F59E0B"
+    },
+    {
+      "step": "ENTERPRISE_RETARGETING_GATEWAY",
+      "label": "Full-Stack Retargeting & Brand Equity Protection Gateway",
+      "metric": "100.0/100 RFCI Certified",
+      "status": "COMPLETED",
+      "color": "#8B5CF6"
+    }
+  ],
+  "kpis": [
+    {
+      "label": "Catalog SKU Match Rate",
+      "value": "100.0%"
+    },
+    {
+      "label": "Optimal Frequency Cap",
+      "value": "3 Imp/Day"
+    },
+    {
+      "label": "Max Allowed CTR Decay",
+      "value": "30.0%"
+    },
+    {
+      "label": "Composite RFCI Score",
+      "value": "100.0/100"
+    }
+  ]
+}

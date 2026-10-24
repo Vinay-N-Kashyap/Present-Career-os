@@ -1,0 +1,366 @@
+{
+  "prefix": "bcom-finance",
+  "day": 56,
+  "visuals": [
+    {
+      "part": 1,
+      "template": "ledger-sheet",
+      "caption": "Capital asset pricing model multi factor evolution.",
+      "data": {
+        "title": "Day 56 Part 1 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Long Cointegrated Equity Trading Portfolio",
+            "$100,000,000.00",
+            ""
+          ],
+          [
+            "Factor Hedging Derivative Margin Deposit",
+            "$15,000,000.00",
+            ""
+          ],
+          [
+            "Short Cointegrated Equity Hedge Portfolio",
+            "",
+            "$100,000,000.00"
+          ],
+          [
+            "Quantitative Fund Partner Capital Account",
+            "",
+            "$15,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$115,000,000.00",
+          "$115,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 56 Part 1)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 3
+          }
+        ]
+      },
+      "codeBinding": {
+        "language": "python",
+        "codeHash": "68079e18ec36d1c3ca4b3ac1aa6897c8da9c4052e9530389dec39794ee53721a",
+        "verified": true
+      }
+    },
+    {
+      "part": 2,
+      "template": "ledger-sheet",
+      "caption": "Cross sectional value and momentum factor returns.",
+      "data": {
+        "title": "Day 56 Part 2 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Long Cointegrated Equity Trading Portfolio",
+            "$100,000,000.00",
+            ""
+          ],
+          [
+            "Factor Hedging Derivative Margin Deposit",
+            "$15,000,000.00",
+            ""
+          ],
+          [
+            "Short Cointegrated Equity Hedge Portfolio",
+            "",
+            "$100,000,000.00"
+          ],
+          [
+            "Quantitative Fund Partner Capital Account",
+            "",
+            "$15,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$115,000,000.00",
+          "$115,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 56 Part 2)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 3
+          }
+        ]
+      },
+      "codeBinding": {
+        "language": "python",
+        "codeHash": "68079e18ec36d1c3ca4b3ac1aa6897c8da9c4052e9530389dec39794ee53721a",
+        "verified": true
+      }
+    },
+    {
+      "part": 3,
+      "template": "ledger-sheet",
+      "caption": "Smart beta exchange traded fund sector constraints.",
+      "data": {
+        "title": "Day 56 Part 3 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Long Cointegrated Equity Trading Portfolio",
+            "$100,000,000.00",
+            ""
+          ],
+          [
+            "Factor Hedging Derivative Margin Deposit",
+            "$15,000,000.00",
+            ""
+          ],
+          [
+            "Short Cointegrated Equity Hedge Portfolio",
+            "",
+            "$100,000,000.00"
+          ],
+          [
+            "Quantitative Fund Partner Capital Account",
+            "",
+            "$15,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$115,000,000.00",
+          "$115,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 56 Part 3)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 3
+          }
+        ]
+      },
+      "codeBinding": {
+        "language": "python",
+        "codeHash": "68079e18ec36d1c3ca4b3ac1aa6897c8da9c4052e9530389dec39794ee53721a",
+        "verified": true
+      }
+    },
+    {
+      "part": 4,
+      "template": "ledger-sheet",
+      "caption": "Cointegrated statistical arbitrage pairs execution.",
+      "data": {
+        "title": "Day 56 Part 4 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Long Cointegrated Equity Trading Portfolio",
+            "$100,000,000.00",
+            ""
+          ],
+          [
+            "Factor Hedging Derivative Margin Deposit",
+            "$15,000,000.00",
+            ""
+          ],
+          [
+            "Short Cointegrated Equity Hedge Portfolio",
+            "",
+            "$100,000,000.00"
+          ],
+          [
+            "Quantitative Fund Partner Capital Account",
+            "",
+            "$15,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$115,000,000.00",
+          "$115,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 56 Part 4)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 3
+          }
+        ]
+      },
+      "codeBinding": {
+        "language": "python",
+        "codeHash": "68079e18ec36d1c3ca4b3ac1aa6897c8da9c4052e9530389dec39794ee53721a",
+        "verified": true
+      }
+    },
+    {
+      "part": 5,
+      "template": "ledger-sheet",
+      "caption": "Quantitative multi factor portfolio balance sheet.",
+      "data": {
+        "title": "Day 56 Part 5 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Long Cointegrated Equity Trading Portfolio",
+            "$100,000,000.00",
+            ""
+          ],
+          [
+            "Factor Hedging Derivative Margin Deposit",
+            "$15,000,000.00",
+            ""
+          ],
+          [
+            "Short Cointegrated Equity Hedge Portfolio",
+            "",
+            "$100,000,000.00"
+          ],
+          [
+            "Quantitative Fund Partner Capital Account",
+            "",
+            "$15,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$115,000,000.00",
+          "$115,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 56 Part 5)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 3
+          }
+        ]
+      },
+      "codeBinding": {
+        "language": "python",
+        "codeHash": "68079e18ec36d1c3ca4b3ac1aa6897c8da9c4052e9530389dec39794ee53721a",
+        "verified": true
+      }
+    }
+  ]
+}

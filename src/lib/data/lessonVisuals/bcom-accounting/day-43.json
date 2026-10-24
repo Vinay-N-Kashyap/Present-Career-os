@@ -1,0 +1,659 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom-accounting",
+  "day": 43,
+  "promptSha": "prompt_sha_bcom_accounting_day43_v1",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Contractual Joint Control & Classification of Joint Arrangements (Ind AS 111)",
+      "codeHash": "882885b17076288bd809e35f917d36cf1d062aaf89290ba0837221cb705b12c2",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Contractual Joint Control & Classificati... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($4,775,000) for Contractual Joint Control & Classificati...",
+            "title": "Day 43 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 4775000,
+            "totalCredit": 4775000,
+            "entries": [
+              {
+                "id": "JNL-4301",
+                "account": "Joint Operation Assets & Equity Method Investment",
+                "debit": 4775000,
+                "balance": 4775000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 43"
+              },
+              {
+                "id": "JNL-4302",
+                "account": "Joint Financing Liabilities & Equity Reserves",
+                "credit": 4775000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & consolidation elimination accrual ($510,000).",
+            "title": "Day 43 Journal \u2014 Consolidation & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 5285000,
+            "totalCredit": 5285000,
+            "entries": [
+              {
+                "id": "JNL-4301",
+                "account": "Joint Operation Assets & Equity Method Investment",
+                "debit": 4775000,
+                "balance": 4775000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4303",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 510000,
+                "balance": 5285000,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4302",
+                "account": "Joint Financing Liabilities & Equity Reserves",
+                "credit": 5285000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 43 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 5285000,
+            "totalCredit": 5285000,
+            "entries": [
+              {
+                "id": "JNL-4301",
+                "account": "Joint Operation Assets & Equity Method Investment",
+                "debit": 4775000,
+                "balance": 4775000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4303",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 510000,
+                "balance": 5285000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4302",
+                "account": "Joint Financing Liabilities & Equity Reserves",
+                "credit": 5285000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 43 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 5285000,
+            "totalCredit": 5285000,
+            "entries": [
+              {
+                "id": "JNL-4301",
+                "account": "Joint Operation Assets & Equity Method Investment",
+                "debit": 4775000,
+                "balance": 4775000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4303",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 510000,
+                "balance": 5285000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4302",
+                "account": "Joint Financing Liabilities & Equity Reserves",
+                "credit": 5285000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Accounting for Joint Operations (Direct Asset & Liability Recognition)",
+      "codeHash": "882885b17076288bd809e35f917d36cf1d062aaf89290ba0837221cb705b12c2",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Accounting for Joint Operations (Direct ... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($4,780,000) for Accounting for Joint Operations (Direct ...",
+            "title": "Day 43 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 4780000,
+            "totalCredit": 4780000,
+            "entries": [
+              {
+                "id": "JNL-4301",
+                "account": "Joint Operation Assets & Equity Method Investment",
+                "debit": 4780000,
+                "balance": 4780000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 43"
+              },
+              {
+                "id": "JNL-4302",
+                "account": "Joint Financing Liabilities & Equity Reserves",
+                "credit": 4780000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & consolidation elimination accrual ($510,000).",
+            "title": "Day 43 Journal \u2014 Consolidation & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 5290000,
+            "totalCredit": 5290000,
+            "entries": [
+              {
+                "id": "JNL-4301",
+                "account": "Joint Operation Assets & Equity Method Investment",
+                "debit": 4780000,
+                "balance": 4780000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4303",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 510000,
+                "balance": 5290000,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4302",
+                "account": "Joint Financing Liabilities & Equity Reserves",
+                "credit": 5290000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 43 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 5290000,
+            "totalCredit": 5290000,
+            "entries": [
+              {
+                "id": "JNL-4301",
+                "account": "Joint Operation Assets & Equity Method Investment",
+                "debit": 4780000,
+                "balance": 4780000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4303",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 510000,
+                "balance": 5290000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4302",
+                "account": "Joint Financing Liabilities & Equity Reserves",
+                "credit": 5290000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 43 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 5290000,
+            "totalCredit": 5290000,
+            "entries": [
+              {
+                "id": "JNL-4301",
+                "account": "Joint Operation Assets & Equity Method Investment",
+                "debit": 4780000,
+                "balance": 4780000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4303",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 510000,
+                "balance": 5290000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4302",
+                "account": "Joint Financing Liabilities & Equity Reserves",
+                "credit": 5290000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Equity Method under Ind AS 28 (Investments in Associates & Joint Ventures)",
+      "codeHash": "882885b17076288bd809e35f917d36cf1d062aaf89290ba0837221cb705b12c2",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "The Equity Method under Ind AS 28 (Inves... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($4,785,000) for The Equity Method under Ind AS 28 (Inves...",
+            "title": "Day 43 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 4785000,
+            "totalCredit": 4785000,
+            "entries": [
+              {
+                "id": "JNL-4301",
+                "account": "Joint Operation Assets & Equity Method Investment",
+                "debit": 4785000,
+                "balance": 4785000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 43"
+              },
+              {
+                "id": "JNL-4302",
+                "account": "Joint Financing Liabilities & Equity Reserves",
+                "credit": 4785000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & consolidation elimination accrual ($510,000).",
+            "title": "Day 43 Journal \u2014 Consolidation & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 5295000,
+            "totalCredit": 5295000,
+            "entries": [
+              {
+                "id": "JNL-4301",
+                "account": "Joint Operation Assets & Equity Method Investment",
+                "debit": 4785000,
+                "balance": 4785000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4303",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 510000,
+                "balance": 5295000,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4302",
+                "account": "Joint Financing Liabilities & Equity Reserves",
+                "credit": 5295000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 43 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 5295000,
+            "totalCredit": 5295000,
+            "entries": [
+              {
+                "id": "JNL-4301",
+                "account": "Joint Operation Assets & Equity Method Investment",
+                "debit": 4785000,
+                "balance": 4785000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4303",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 510000,
+                "balance": 5295000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4302",
+                "account": "Joint Financing Liabilities & Equity Reserves",
+                "credit": 5295000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 43 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 5295000,
+            "totalCredit": 5295000,
+            "entries": [
+              {
+                "id": "JNL-4301",
+                "account": "Joint Operation Assets & Equity Method Investment",
+                "debit": 4785000,
+                "balance": 4785000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4303",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 510000,
+                "balance": 5295000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4302",
+                "account": "Joint Financing Liabilities & Equity Reserves",
+                "credit": 5295000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Unrealized Profits Elimination & Loss Absorption Limits",
+      "codeHash": "882885b17076288bd809e35f917d36cf1d062aaf89290ba0837221cb705b12c2",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Unrealized Profits Elimination & Loss Ab... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($4,790,000) for Unrealized Profits Elimination & Loss Ab...",
+            "title": "Day 43 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 4790000,
+            "totalCredit": 4790000,
+            "entries": [
+              {
+                "id": "JNL-4301",
+                "account": "Joint Operation Assets & Equity Method Investment",
+                "debit": 4790000,
+                "balance": 4790000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 43"
+              },
+              {
+                "id": "JNL-4302",
+                "account": "Joint Financing Liabilities & Equity Reserves",
+                "credit": 4790000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & consolidation elimination accrual ($510,000).",
+            "title": "Day 43 Journal \u2014 Consolidation & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 5300000,
+            "totalCredit": 5300000,
+            "entries": [
+              {
+                "id": "JNL-4301",
+                "account": "Joint Operation Assets & Equity Method Investment",
+                "debit": 4790000,
+                "balance": 4790000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4303",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 510000,
+                "balance": 5300000,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4302",
+                "account": "Joint Financing Liabilities & Equity Reserves",
+                "credit": 5300000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 43 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 5300000,
+            "totalCredit": 5300000,
+            "entries": [
+              {
+                "id": "JNL-4301",
+                "account": "Joint Operation Assets & Equity Method Investment",
+                "debit": 4790000,
+                "balance": 4790000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4303",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 510000,
+                "balance": 5300000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4302",
+                "account": "Joint Financing Liabilities & Equity Reserves",
+                "credit": 5300000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 43 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 5300000,
+            "totalCredit": 5300000,
+            "entries": [
+              {
+                "id": "JNL-4301",
+                "account": "Joint Operation Assets & Equity Method Investment",
+                "debit": 4790000,
+                "balance": 4790000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4303",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 510000,
+                "balance": 5300000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4302",
+                "account": "Joint Financing Liabilities & Equity Reserves",
+                "credit": 5300000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Executing the Python Joint Arrangements Suite & Governance Certification",
+      "codeHash": "882885b17076288bd809e35f917d36cf1d062aaf89290ba0837221cb705b12c2",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Executing the Python Joint Arrangements ... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($4,795,000) for Executing the Python Joint Arrangements ...",
+            "title": "Day 43 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 4795000,
+            "totalCredit": 4795000,
+            "entries": [
+              {
+                "id": "JNL-4301",
+                "account": "Joint Operation Assets & Equity Method Investment",
+                "debit": 4795000,
+                "balance": 4795000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 43"
+              },
+              {
+                "id": "JNL-4302",
+                "account": "Joint Financing Liabilities & Equity Reserves",
+                "credit": 4795000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & consolidation elimination accrual ($510,000).",
+            "title": "Day 43 Journal \u2014 Consolidation & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 5305000,
+            "totalCredit": 5305000,
+            "entries": [
+              {
+                "id": "JNL-4301",
+                "account": "Joint Operation Assets & Equity Method Investment",
+                "debit": 4795000,
+                "balance": 4795000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4303",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 510000,
+                "balance": 5305000,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4302",
+                "account": "Joint Financing Liabilities & Equity Reserves",
+                "credit": 5305000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 43 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 5305000,
+            "totalCredit": 5305000,
+            "entries": [
+              {
+                "id": "JNL-4301",
+                "account": "Joint Operation Assets & Equity Method Investment",
+                "debit": 4795000,
+                "balance": 4795000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4303",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 510000,
+                "balance": 5305000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4302",
+                "account": "Joint Financing Liabilities & Equity Reserves",
+                "credit": 5305000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 43 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 5305000,
+            "totalCredit": 5305000,
+            "entries": [
+              {
+                "id": "JNL-4301",
+                "account": "Joint Operation Assets & Equity Method Investment",
+                "debit": 4795000,
+                "balance": 4795000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4303",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 510000,
+                "balance": 5305000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4302",
+                "account": "Joint Financing Liabilities & Equity Reserves",
+                "credit": 5305000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

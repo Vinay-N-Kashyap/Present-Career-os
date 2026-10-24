@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "coursePrefix": "bcom_dmkt",
+  "day": 28,
+  "title": "Digital Marketing Budgeting & Annual Media Planning: Share of Voice (SOV) Architecture",
+  "funnelSteps": [
+    {
+      "step": "OBJECTIVE_TASK_BUDGETING",
+      "label": "Objective-and-Task Mathematical Sizing ($10M Target Revenue)",
+      "metric": "Required Budget: $1,000,000",
+      "status": "COMPLETED",
+      "color": "#10B981"
+    },
+    {
+      "step": "ESOV_MARKET_EXPANSION",
+      "label": "Share of Voice (SOV 15%) vs Share of Market (SOM 10%) Analysis",
+      "metric": "ESOV: +5.0% (Share Growth)",
+      "status": "COMPLETED",
+      "color": "#3B82F6"
+    },
+    {
+      "step": "MULTI_CHANNEL_FLIGHTING",
+      "label": "5-Channel Allocation & Q1-Q4 Seasonal Flighting Pacing",
+      "metric": "Q4 Peak: 35% Spend ($350k)",
+      "status": "COMPLETED",
+      "color": "#6366F1"
+    },
+    {
+      "step": "MER_WORKING_CAPITAL_BUFFER",
+      "label": "Marketing Efficiency Ratio (MER >= 4.0x) & Escrow Protection",
+      "metric": "Audited MER: 4.2x Floor",
+      "status": "COMPLETED",
+      "color": "#F59E0B"
+    },
+    {
+      "step": "ENTERPRISE_MEDIA_PLANNING_GATEWAY",
+      "label": "Institutional Media Planning & Annual Capital Allocation Gateway",
+      "metric": "100.0/100 MPBI Certified",
+      "status": "COMPLETED",
+      "color": "#8B5CF6"
+    }
+  ],
+  "kpis": [
+    {
+      "label": "Annual Media Budget",
+      "value": "$1,000,000.00"
+    },
+    {
+      "label": "Excess Share of Voice",
+      "value": "+5.0% ESOV"
+    },
+    {
+      "label": "Blended MER Target",
+      "value": "4.2x Floor"
+    },
+    {
+      "label": "Composite MPBI Score",
+      "value": "100.0/100"
+    }
+  ]
+}

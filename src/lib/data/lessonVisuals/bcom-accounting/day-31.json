@@ -1,0 +1,659 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom-accounting",
+  "day": 31,
+  "promptSha": "prompt_sha_bcom_accounting_day31_v1",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Evolution of Revenue Accounting: The Shift from Risks & Rewards to the Control Framework",
+      "codeHash": "3bfe9648d08f6601121138f21d33268314b0c536aebcbfe27a4aeecc572bcd2d",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Evolution of Revenue Accounting: The Shi... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($105,000) for Evolution of Revenue Accounting: The Shi...",
+            "title": "Day 31 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 105000,
+            "totalCredit": 105000,
+            "entries": [
+              {
+                "id": "JNL-3101",
+                "account": "Contract Fulfillment Asset / Unbilled Receivable",
+                "debit": 105000,
+                "balance": 105000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 31"
+              },
+              {
+                "id": "JNL-3102",
+                "account": "Contract Liability / Deferred SaaS Revenue",
+                "credit": 105000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & amortization accrual ($20,000).",
+            "title": "Day 31 Journal \u2014 Accrual / Amortization Adjustment",
+            "isBalanced": true,
+            "totalDebit": 125000,
+            "totalCredit": 125000,
+            "entries": [
+              {
+                "id": "JNL-3101",
+                "account": "Contract Fulfillment Asset / Unbilled Receivable",
+                "debit": 105000,
+                "balance": 105000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3103",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 20000,
+                "balance": 125000,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-3102",
+                "account": "Contract Liability / Deferred SaaS Revenue",
+                "credit": 125000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory disclosures.",
+            "title": "Day 31 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 125000,
+            "totalCredit": 125000,
+            "entries": [
+              {
+                "id": "JNL-3101",
+                "account": "Contract Fulfillment Asset / Unbilled Receivable",
+                "debit": 105000,
+                "balance": 105000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3103",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 20000,
+                "balance": 125000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3102",
+                "account": "Contract Liability / Deferred SaaS Revenue",
+                "credit": 125000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 31 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 125000,
+            "totalCredit": 125000,
+            "entries": [
+              {
+                "id": "JNL-3101",
+                "account": "Contract Fulfillment Asset / Unbilled Receivable",
+                "debit": 105000,
+                "balance": 105000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3103",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 20000,
+                "balance": 125000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3102",
+                "account": "Contract Liability / Deferred SaaS Revenue",
+                "credit": 125000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Identifying Distinct Performance Obligations & Calculating the Transaction Price",
+      "codeHash": "3bfe9648d08f6601121138f21d33268314b0c536aebcbfe27a4aeecc572bcd2d",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Identifying Distinct Performance Obligat... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($110,000) for Identifying Distinct Performance Obligat...",
+            "title": "Day 31 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 110000,
+            "totalCredit": 110000,
+            "entries": [
+              {
+                "id": "JNL-3101",
+                "account": "Contract Fulfillment Asset / Unbilled Receivable",
+                "debit": 110000,
+                "balance": 110000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 31"
+              },
+              {
+                "id": "JNL-3102",
+                "account": "Contract Liability / Deferred SaaS Revenue",
+                "credit": 110000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & amortization accrual ($20,000).",
+            "title": "Day 31 Journal \u2014 Accrual / Amortization Adjustment",
+            "isBalanced": true,
+            "totalDebit": 130000,
+            "totalCredit": 130000,
+            "entries": [
+              {
+                "id": "JNL-3101",
+                "account": "Contract Fulfillment Asset / Unbilled Receivable",
+                "debit": 110000,
+                "balance": 110000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3103",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 20000,
+                "balance": 130000,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-3102",
+                "account": "Contract Liability / Deferred SaaS Revenue",
+                "credit": 130000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory disclosures.",
+            "title": "Day 31 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 130000,
+            "totalCredit": 130000,
+            "entries": [
+              {
+                "id": "JNL-3101",
+                "account": "Contract Fulfillment Asset / Unbilled Receivable",
+                "debit": 110000,
+                "balance": 110000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3103",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 20000,
+                "balance": 130000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3102",
+                "account": "Contract Liability / Deferred SaaS Revenue",
+                "credit": 130000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 31 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 130000,
+            "totalCredit": 130000,
+            "entries": [
+              {
+                "id": "JNL-3101",
+                "account": "Contract Fulfillment Asset / Unbilled Receivable",
+                "debit": 110000,
+                "balance": 110000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3103",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 20000,
+                "balance": 130000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3102",
+                "account": "Contract Liability / Deferred SaaS Revenue",
+                "credit": 130000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Allocating Transaction Price via Relative Standalone Selling Prices (SSP)",
+      "codeHash": "3bfe9648d08f6601121138f21d33268314b0c536aebcbfe27a4aeecc572bcd2d",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Allocating Transaction Price via Relativ... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($115,000) for Allocating Transaction Price via Relativ...",
+            "title": "Day 31 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 115000,
+            "totalCredit": 115000,
+            "entries": [
+              {
+                "id": "JNL-3101",
+                "account": "Contract Fulfillment Asset / Unbilled Receivable",
+                "debit": 115000,
+                "balance": 115000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 31"
+              },
+              {
+                "id": "JNL-3102",
+                "account": "Contract Liability / Deferred SaaS Revenue",
+                "credit": 115000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & amortization accrual ($20,000).",
+            "title": "Day 31 Journal \u2014 Accrual / Amortization Adjustment",
+            "isBalanced": true,
+            "totalDebit": 135000,
+            "totalCredit": 135000,
+            "entries": [
+              {
+                "id": "JNL-3101",
+                "account": "Contract Fulfillment Asset / Unbilled Receivable",
+                "debit": 115000,
+                "balance": 115000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3103",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 20000,
+                "balance": 135000,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-3102",
+                "account": "Contract Liability / Deferred SaaS Revenue",
+                "credit": 135000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory disclosures.",
+            "title": "Day 31 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 135000,
+            "totalCredit": 135000,
+            "entries": [
+              {
+                "id": "JNL-3101",
+                "account": "Contract Fulfillment Asset / Unbilled Receivable",
+                "debit": 115000,
+                "balance": 115000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3103",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 20000,
+                "balance": 135000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3102",
+                "account": "Contract Liability / Deferred SaaS Revenue",
+                "credit": 135000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 31 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 135000,
+            "totalCredit": 135000,
+            "entries": [
+              {
+                "id": "JNL-3101",
+                "account": "Contract Fulfillment Asset / Unbilled Receivable",
+                "debit": 115000,
+                "balance": 115000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3103",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 20000,
+                "balance": 135000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3102",
+                "account": "Contract Liability / Deferred SaaS Revenue",
+                "credit": 135000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Over-Time vs Point-in-Time Satisfaction of Performance Obligations & Contract Costs",
+      "codeHash": "3bfe9648d08f6601121138f21d33268314b0c536aebcbfe27a4aeecc572bcd2d",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Over-Time vs Point-in-Time Satisfaction ... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($120,000) for Over-Time vs Point-in-Time Satisfaction ...",
+            "title": "Day 31 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 120000,
+            "totalCredit": 120000,
+            "entries": [
+              {
+                "id": "JNL-3101",
+                "account": "Contract Fulfillment Asset / Unbilled Receivable",
+                "debit": 120000,
+                "balance": 120000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 31"
+              },
+              {
+                "id": "JNL-3102",
+                "account": "Contract Liability / Deferred SaaS Revenue",
+                "credit": 120000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & amortization accrual ($20,000).",
+            "title": "Day 31 Journal \u2014 Accrual / Amortization Adjustment",
+            "isBalanced": true,
+            "totalDebit": 140000,
+            "totalCredit": 140000,
+            "entries": [
+              {
+                "id": "JNL-3101",
+                "account": "Contract Fulfillment Asset / Unbilled Receivable",
+                "debit": 120000,
+                "balance": 120000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3103",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 20000,
+                "balance": 140000,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-3102",
+                "account": "Contract Liability / Deferred SaaS Revenue",
+                "credit": 140000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory disclosures.",
+            "title": "Day 31 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 140000,
+            "totalCredit": 140000,
+            "entries": [
+              {
+                "id": "JNL-3101",
+                "account": "Contract Fulfillment Asset / Unbilled Receivable",
+                "debit": 120000,
+                "balance": 120000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3103",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 20000,
+                "balance": 140000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3102",
+                "account": "Contract Liability / Deferred SaaS Revenue",
+                "credit": 140000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 31 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 140000,
+            "totalCredit": 140000,
+            "entries": [
+              {
+                "id": "JNL-3101",
+                "account": "Contract Fulfillment Asset / Unbilled Receivable",
+                "debit": 120000,
+                "balance": 120000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3103",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 20000,
+                "balance": 140000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3102",
+                "account": "Contract Liability / Deferred SaaS Revenue",
+                "credit": 140000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Balance Sheet Presentation, Contract Assets/Liabilities & Ind AS 115 Engine Execution",
+      "codeHash": "3bfe9648d08f6601121138f21d33268314b0c536aebcbfe27a4aeecc572bcd2d",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Balance Sheet Presentation, Contract Ass... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($125,000) for Balance Sheet Presentation, Contract Ass...",
+            "title": "Day 31 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 125000,
+            "totalCredit": 125000,
+            "entries": [
+              {
+                "id": "JNL-3101",
+                "account": "Contract Fulfillment Asset / Unbilled Receivable",
+                "debit": 125000,
+                "balance": 125000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 31"
+              },
+              {
+                "id": "JNL-3102",
+                "account": "Contract Liability / Deferred SaaS Revenue",
+                "credit": 125000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & amortization accrual ($20,000).",
+            "title": "Day 31 Journal \u2014 Accrual / Amortization Adjustment",
+            "isBalanced": true,
+            "totalDebit": 145000,
+            "totalCredit": 145000,
+            "entries": [
+              {
+                "id": "JNL-3101",
+                "account": "Contract Fulfillment Asset / Unbilled Receivable",
+                "debit": 125000,
+                "balance": 125000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3103",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 20000,
+                "balance": 145000,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-3102",
+                "account": "Contract Liability / Deferred SaaS Revenue",
+                "credit": 145000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory disclosures.",
+            "title": "Day 31 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 145000,
+            "totalCredit": 145000,
+            "entries": [
+              {
+                "id": "JNL-3101",
+                "account": "Contract Fulfillment Asset / Unbilled Receivable",
+                "debit": 125000,
+                "balance": 125000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3103",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 20000,
+                "balance": 145000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3102",
+                "account": "Contract Liability / Deferred SaaS Revenue",
+                "credit": 145000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 31 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 145000,
+            "totalCredit": 145000,
+            "entries": [
+              {
+                "id": "JNL-3101",
+                "account": "Contract Fulfillment Asset / Unbilled Receivable",
+                "debit": 125000,
+                "balance": 125000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3103",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 20000,
+                "balance": 145000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3102",
+                "account": "Contract Liability / Deferred SaaS Revenue",
+                "credit": 145000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,294 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_law",
+  "day": 44,
+  "promptSha": "prompt_sha_bcom_law_day44_fast_track_voluntary_liquidation_v1",
+  "model": "google/gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Fast-Track CIRP Scope, Eligibility & Statutory Thresholds (Sections 55\u201356)",
+      "codeHash": "677d2ef0e6dcab265a97ea52f392f59d73e021f8d0215a73c0c40f0f56597053",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Fast-Track CIRP Scope, Eligibility & Statutory Thresholds (Sections 55\u201356) Architecture",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Notified Classes",
+            "subtext": "Small companies, startups, and asset-capped firms"
+          },
+          {
+            "id": "s2",
+            "name": "Ninety Day Clock",
+            "subtext": "Compressed base statutory resolution window"
+          },
+          {
+            "id": "s3",
+            "name": "Single Extension",
+            "subtext": "Maximum forty-five days with seventy-five percent vote"
+          },
+          {
+            "id": "s4",
+            "name": "Outer Ceiling",
+            "subtext": "One hundred and thirty-five day absolute limit"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Accelerated fast track insolvency resolution mechanisms provide rapid relief.",
+            "activeStageId": "s1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say1",
+            "caption": "Accelerated low cost resolution pathways resolve small corporate entities.",
+            "activeStageId": "s2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Accelerated fast track insolvency resolution mechanisms provide rapid relief.",
+            "activeStageId": "s3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Fast-Track CIRP eligibility engines evaluate small company turnover criteria.",
+            "activeStageId": "s4",
+            "statusBadge": "done"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Fast-Track CIRP Operational Velocity: Claims, Valuation & Plan Approval",
+      "codeHash": "a76c330c250b294d659e0f9d3a1c6768d3078904d84b080eca60a4ad34cf7d9a",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Fast-Track CIRP Operational Velocity: Claims, Valuation & Plan Approval Architecture",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Claims Verification",
+            "subtext": "Ten-day compressed proof of claims window"
+          },
+          {
+            "id": "s2",
+            "name": "Accelerated Valuation",
+            "subtext": "Registered valuers report within twenty-one days"
+          },
+          {
+            "id": "s3",
+            "name": "Form G Issuance",
+            "subtext": "Bidding invitation published within twenty-one days"
+          },
+          {
+            "id": "s4",
+            "name": "CoC Supermajority",
+            "subtext": "Sixty-six percent plan approval before Day 90"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Accelerated regulations mandate operational efficiency in restructuring.",
+            "activeStageId": "s1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say1",
+            "caption": "Accelerated regulations mandate operational efficiency in restructuring.",
+            "activeStageId": "s2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Accelerated regulations mandate operational efficiency in restructuring.",
+            "activeStageId": "s3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Operational velocity simulators evaluate Information Memorandum deadlines.",
+            "activeStageId": "s4",
+            "statusBadge": "done"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Voluntary Liquidation Architecture: Solvent Corporate Exit Invariants (Section 59)",
+      "codeHash": "d58387771a725e48e8902a0726d9d68f04687a4cb7c1140ffcbac0b36906186f",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Voluntary Liquidation Architecture: Solvent Corporate Exit Invariants (Section 59) Architecture",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Solvent Prerequisite",
+            "subtext": "Absolute absence of default across corporate debts"
+          },
+          {
+            "id": "s2",
+            "name": "Solvency Affidavit",
+            "subtext": "Majority directors declare full ability to pay debts"
+          },
+          {
+            "id": "s3",
+            "name": "Special Resolution",
+            "subtext": "Seventy-five percent shareholder vote within four weeks"
+          },
+          {
+            "id": "s4",
+            "name": "Creditor Consent",
+            "subtext": "Two-thirds creditor approval within seven days"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Voluntary liquidation architecture provides exit for solvent corporate persons.",
+            "activeStageId": "s1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say1",
+            "caption": "Voluntary liquidation architecture provides exit for solvent corporate persons.",
+            "activeStageId": "s2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Voluntary liquidation architecture provides exit for solvent corporate persons.",
+            "activeStageId": "s3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Voluntary liquidation engines test director solvency declarations and votes.",
+            "activeStageId": "s4",
+            "statusBadge": "done"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Realization Waterfall, Liquidator Powers & Dissolution Orders (Section 59)",
+      "codeHash": "fb363f8fd5e771dd5d48b8a455fb039a7de85db4fb4d0c5b701410704f91b0d6",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Realization Waterfall, Liquidator Powers & Dissolution Orders (Section 59) Architecture",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Dedicated Bank Account",
+            "subtext": "Mandatory liquidation account for transparent realization"
+          },
+          {
+            "id": "s2",
+            "name": "Section 53 Waterfall",
+            "subtext": "Full debt settlement followed by equity distributions"
+          },
+          {
+            "id": "s3",
+            "name": "Final Report",
+            "subtext": "Audited accounts and certificate of zero litigation"
+          },
+          {
+            "id": "s4",
+            "name": "NCLT Dissolution",
+            "subtext": "Order filed with ROC within fourteen days"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Liquidators assume statutory custody during voluntary liquidation proceedings.",
+            "activeStageId": "s1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say1",
+            "caption": "Liquidators assume statutory custody during voluntary liquidation proceedings.",
+            "activeStageId": "s2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Liquidators assume statutory custody during voluntary liquidation proceedings.",
+            "activeStageId": "s3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Realization waterfall engines distribute surplus capital and filings.",
+            "activeStageId": "s4",
+            "statusBadge": "done"
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Anti-Pattern Defense & Outage Puzzle: The Concealed Debt Fraud in Voluntary Liquidation",
+      "codeHash": "e401151cfc3e5737e1375cc256cc481cecc55dd04c91e3f8b45f9f25bb2baf88",
+      "filled": {},
+      "spec": {
+        "template": "workflow",
+        "title": "Anti-Pattern Defense & Outage Puzzle: The Concealed Debt Fraud in Voluntary Liquidation Architecture",
+        "stages": [
+          {
+            "id": "s1",
+            "name": "Concealed Debt Sham",
+            "subtext": "Falsifying solvency to evade arbitration or taxes"
+          },
+          {
+            "id": "s2",
+            "name": "Section 59(6) Trigger",
+            "subtext": "Mandatory suspension and conversion to CIRP"
+          },
+          {
+            "id": "s3",
+            "name": "Criminal Sanctions",
+            "subtext": "Section 73 imprisonment and heavy personal fines"
+          },
+          {
+            "id": "s4",
+            "name": "Clawback Order",
+            "subtext": "Section 66 recovery of distributed shareholder capital"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Promoters execute fraudulent declaration of solvency in voluntary liquidation.",
+            "activeStageId": "s1",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say1",
+            "caption": "Promoters execute fraudulent declaration of solvency in voluntary liquidation.",
+            "activeStageId": "s2",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Promoters execute fraudulent declaration of solvency in voluntary liquidation.",
+            "activeStageId": "s3",
+            "statusBadge": "active"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Fraud diagnostic engines detect concealed liabilities and enforce conversion.",
+            "activeStageId": "s4",
+            "statusBadge": "done"
+          }
+        ]
+      }
+    }
+  ]
+}
