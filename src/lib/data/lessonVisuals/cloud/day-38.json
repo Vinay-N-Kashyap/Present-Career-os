@@ -1,0 +1,362 @@
+{
+  "schemaVersion": 2,
+  "prefix": "cloud",
+  "day": 38,
+  "entries": [
+    {
+      "partTitle": "Amazon MSK Architecture: Multi-AZ Broker Placement, KRaft Consensus & Storage Auto-Expansion",
+      "codeHash": "cd824bb3e75bbf81b20139452307b579aa66fb3f5bfeaa84ac2f5ff07541a716",
+      "spec": {
+        "template": "workflow",
+        "workflow": {
+          "title": "Amazon MSK Architecture: Multi-AZ Broker Placement, KRaft Consensus & Storage Auto-Expansion",
+          "nodes": [
+            {
+              "id": "producers",
+              "label": "Producer (acks=all)",
+              "status": "active"
+            },
+            {
+              "id": "leader",
+              "label": "Partition Leader (Broker 1)",
+              "status": "active"
+            },
+            {
+              "id": "followers",
+              "label": "Follower ISRs P1",
+              "status": "active"
+            },
+            {
+              "id": "consumers",
+              "label": "Consumer Group Workers",
+              "status": "active"
+            }
+          ],
+          "edges": [
+            {
+              "from": "producers",
+              "to": "leader",
+              "label": "ProduceRequest"
+            },
+            {
+              "from": "leader",
+              "to": "followers",
+              "label": "ISR Replication"
+            },
+            {
+              "from": "leader",
+              "to": "consumers",
+              "label": "Cooperative Read"
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "focus": "producers",
+            "annotation": "Producers emit streaming events with idempotent sequence tracking."
+          },
+          {
+            "at": "say2",
+            "focus": "leader",
+            "annotation": "Partition leader commits record to local EBS log volume."
+          },
+          {
+            "at": "example",
+            "focus": "followers",
+            "annotation": "Follower brokers replicate record to satisfy min.insync.replicas threshold."
+          },
+          {
+            "at": "tryIt",
+            "focus": "consumers",
+            "annotation": "Consumer group workers process assigned partitions with cooperative sticky rebalancing."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Producer Durability Guarantees: acks=all, In-Sync Replicas (ISR) & Idempotent Emitters",
+      "codeHash": "6c5eae1d1eb26b72aabdb8e3be2b4c330165cf15821c632f43a04828d8eca90c",
+      "spec": {
+        "template": "workflow",
+        "workflow": {
+          "title": "Producer Durability Guarantees: acks=all, In-Sync Replicas (ISR) & Idempotent Emitters",
+          "nodes": [
+            {
+              "id": "producers",
+              "label": "Producer (acks=all)",
+              "status": "active"
+            },
+            {
+              "id": "leader",
+              "label": "Partition Leader (Broker 1)",
+              "status": "active"
+            },
+            {
+              "id": "followers",
+              "label": "Follower ISRs P2",
+              "status": "active"
+            },
+            {
+              "id": "consumers",
+              "label": "Consumer Group Workers",
+              "status": "active"
+            }
+          ],
+          "edges": [
+            {
+              "from": "producers",
+              "to": "leader",
+              "label": "ProduceRequest"
+            },
+            {
+              "from": "leader",
+              "to": "followers",
+              "label": "ISR Replication"
+            },
+            {
+              "from": "leader",
+              "to": "consumers",
+              "label": "Cooperative Read"
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "focus": "producers",
+            "annotation": "Producers emit streaming events with idempotent sequence tracking."
+          },
+          {
+            "at": "say2",
+            "focus": "leader",
+            "annotation": "Partition leader commits record to local EBS log volume."
+          },
+          {
+            "at": "example",
+            "focus": "followers",
+            "annotation": "Follower brokers replicate record to satisfy min.insync.replicas threshold."
+          },
+          {
+            "at": "tryIt",
+            "focus": "consumers",
+            "annotation": "Consumer group workers process assigned partitions with cooperative sticky rebalancing."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Consumer Group Topologies: Partition-Consumer Invariants, Rebalance Storms & Heartbeats",
+      "codeHash": "27e9f2437e6b2d27ca813cf6cc36a34f395fd4f67c4f7ca4543eb96a33029305",
+      "spec": {
+        "template": "workflow",
+        "workflow": {
+          "title": "Consumer Group Topologies: Partition-Consumer Invariants, Rebalance Storms & Heartbeats",
+          "nodes": [
+            {
+              "id": "producers",
+              "label": "Producer (acks=all)",
+              "status": "active"
+            },
+            {
+              "id": "leader",
+              "label": "Partition Leader (Broker 1)",
+              "status": "active"
+            },
+            {
+              "id": "followers",
+              "label": "Follower ISRs P3",
+              "status": "active"
+            },
+            {
+              "id": "consumers",
+              "label": "Consumer Group Workers",
+              "status": "active"
+            }
+          ],
+          "edges": [
+            {
+              "from": "producers",
+              "to": "leader",
+              "label": "ProduceRequest"
+            },
+            {
+              "from": "leader",
+              "to": "followers",
+              "label": "ISR Replication"
+            },
+            {
+              "from": "leader",
+              "to": "consumers",
+              "label": "Cooperative Read"
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "focus": "producers",
+            "annotation": "Producers emit streaming events with idempotent sequence tracking."
+          },
+          {
+            "at": "say2",
+            "focus": "leader",
+            "annotation": "Partition leader commits record to local EBS log volume."
+          },
+          {
+            "at": "example",
+            "focus": "followers",
+            "annotation": "Follower brokers replicate record to satisfy min.insync.replicas threshold."
+          },
+          {
+            "at": "tryIt",
+            "focus": "consumers",
+            "annotation": "Consumer group workers process assigned partitions with cooperative sticky rebalancing."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise MSK Security: TLS 1.3 Encryption, SASL/SCRAM & AWS Secrets Manager Integration",
+      "codeHash": "fed15b24a9179f5dff350bbdfb877dad02ea0d81e1fe579fc3000f19c656fc40",
+      "spec": {
+        "template": "workflow",
+        "workflow": {
+          "title": "Enterprise MSK Security: TLS 1.3 Encryption, SASL/SCRAM & AWS Secrets Manager Integration",
+          "nodes": [
+            {
+              "id": "producers",
+              "label": "Producer (acks=all)",
+              "status": "active"
+            },
+            {
+              "id": "leader",
+              "label": "Partition Leader (Broker 1)",
+              "status": "active"
+            },
+            {
+              "id": "followers",
+              "label": "Follower ISRs P4",
+              "status": "active"
+            },
+            {
+              "id": "consumers",
+              "label": "Consumer Group Workers",
+              "status": "active"
+            }
+          ],
+          "edges": [
+            {
+              "from": "producers",
+              "to": "leader",
+              "label": "ProduceRequest"
+            },
+            {
+              "from": "leader",
+              "to": "followers",
+              "label": "ISR Replication"
+            },
+            {
+              "from": "leader",
+              "to": "consumers",
+              "label": "Cooperative Read"
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "focus": "producers",
+            "annotation": "Producers emit streaming events with idempotent sequence tracking."
+          },
+          {
+            "at": "say2",
+            "focus": "leader",
+            "annotation": "Partition leader commits record to local EBS log volume."
+          },
+          {
+            "at": "example",
+            "focus": "followers",
+            "annotation": "Follower brokers replicate record to satisfy min.insync.replicas threshold."
+          },
+          {
+            "at": "tryIt",
+            "focus": "consumers",
+            "annotation": "Consumer group workers process assigned partitions with cooperative sticky rebalancing."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Masterclass Synthesis: Production MSK Cluster Operations, Lag Monitoring & Self-Healing SRE",
+      "codeHash": "8f6bfd1931202fc5ef5a8129f085aefc2494514379de4fb04ed5ba8477723761",
+      "spec": {
+        "template": "workflow",
+        "workflow": {
+          "title": "Masterclass Synthesis: Production MSK Cluster Operations, Lag Monitoring & Self-Healing SRE",
+          "nodes": [
+            {
+              "id": "producers",
+              "label": "Producer (acks=all)",
+              "status": "active"
+            },
+            {
+              "id": "leader",
+              "label": "Partition Leader (Broker 1)",
+              "status": "active"
+            },
+            {
+              "id": "followers",
+              "label": "Follower ISRs P5",
+              "status": "active"
+            },
+            {
+              "id": "consumers",
+              "label": "Consumer Group Workers",
+              "status": "active"
+            }
+          ],
+          "edges": [
+            {
+              "from": "producers",
+              "to": "leader",
+              "label": "ProduceRequest"
+            },
+            {
+              "from": "leader",
+              "to": "followers",
+              "label": "ISR Replication"
+            },
+            {
+              "from": "leader",
+              "to": "consumers",
+              "label": "Cooperative Read"
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "focus": "producers",
+            "annotation": "Producers emit streaming events with idempotent sequence tracking."
+          },
+          {
+            "at": "say2",
+            "focus": "leader",
+            "annotation": "Partition leader commits record to local EBS log volume."
+          },
+          {
+            "at": "example",
+            "focus": "followers",
+            "annotation": "Follower brokers replicate record to satisfy min.insync.replicas threshold."
+          },
+          {
+            "at": "tryIt",
+            "focus": "consumers",
+            "annotation": "Consumer group workers process assigned partitions with cooperative sticky rebalancing."
+          }
+        ]
+      }
+    }
+  ]
+}
