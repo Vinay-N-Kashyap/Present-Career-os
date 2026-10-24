@@ -1,0 +1,362 @@
+{
+  "schemaVersion": 2,
+  "prefix": "cloud",
+  "day": 41,
+  "entries": [
+    {
+      "partTitle": "Enterprise Multi-Account Architecture: AWS Organizations, OU Hierarchies & Blast Radius Isolation",
+      "codeHash": "253438e88e7c89051fdaf9ee1cd9b2399d7a298f1e9f6a6a67ced01682a5eb54",
+      "spec": {
+        "template": "workflow",
+        "workflow": {
+          "title": "Enterprise Multi-Account Architecture: AWS Organizations, OU Hierarchies & Blast Radius Isolation",
+          "nodes": [
+            {
+              "id": "management",
+              "label": "AWS Org Root",
+              "status": "active"
+            },
+            {
+              "id": "ou_core",
+              "label": "Core / Security OU",
+              "status": "active"
+            },
+            {
+              "id": "scp_guardrail",
+              "label": "SCP Deny Guardrail",
+              "status": "active"
+            },
+            {
+              "id": "member_acc",
+              "label": "Workload Member Account",
+              "status": "active"
+            }
+          ],
+          "edges": [
+            {
+              "from": "management",
+              "to": "ou_core",
+              "label": "Policy Inheritance"
+            },
+            {
+              "from": "ou_core",
+              "to": "scp_guardrail",
+              "label": "Attach Guardrail"
+            },
+            {
+              "from": "scp_guardrail",
+              "to": "member_acc",
+              "label": "Enforce Maximum Boundary"
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "focus": "management",
+            "annotation": "AWS Organizations manages root hierarchy, consolidated billing, and core accounts."
+          },
+          {
+            "at": "say2",
+            "focus": "ou_core",
+            "annotation": "Organizational Units structure accounts into Core (Log Archive, Security) and Workloads."
+          },
+          {
+            "at": "example",
+            "focus": "scp_guardrail",
+            "annotation": "Service Control Policies apply immutable explicit Deny rules above local IAM admins."
+          },
+          {
+            "at": "tryIt",
+            "focus": "member_acc",
+            "annotation": "Member accounts operate autonomously within strictly bounded, compliant enclaves."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Service Control Policies (SCPs): Evaluation Logic, Inheritance & Deny Precedence",
+      "codeHash": "2d60c5e516e7dc35a56e80ef0a891ad57a3b1e5163862dd756ef5bd9c9175d18",
+      "spec": {
+        "template": "workflow",
+        "workflow": {
+          "title": "Service Control Policies (SCPs): Evaluation Logic, Inheritance & Deny Precedence",
+          "nodes": [
+            {
+              "id": "management",
+              "label": "AWS Org Root",
+              "status": "active"
+            },
+            {
+              "id": "ou_core",
+              "label": "Core / Security OU",
+              "status": "active"
+            },
+            {
+              "id": "scp_guardrail",
+              "label": "SCP Deny Guardrail",
+              "status": "active"
+            },
+            {
+              "id": "member_acc",
+              "label": "Workload Member Account",
+              "status": "active"
+            }
+          ],
+          "edges": [
+            {
+              "from": "management",
+              "to": "ou_core",
+              "label": "Policy Inheritance"
+            },
+            {
+              "from": "ou_core",
+              "to": "scp_guardrail",
+              "label": "Attach Guardrail"
+            },
+            {
+              "from": "scp_guardrail",
+              "to": "member_acc",
+              "label": "Enforce Maximum Boundary"
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "focus": "management",
+            "annotation": "AWS Organizations manages root hierarchy, consolidated billing, and core accounts."
+          },
+          {
+            "at": "say2",
+            "focus": "ou_core",
+            "annotation": "Organizational Units structure accounts into Core (Log Archive, Security) and Workloads."
+          },
+          {
+            "at": "example",
+            "focus": "scp_guardrail",
+            "annotation": "Service Control Policies apply immutable explicit Deny rules above local IAM admins."
+          },
+          {
+            "at": "tryIt",
+            "focus": "member_acc",
+            "annotation": "Member accounts operate autonomously within strictly bounded, compliant enclaves."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "AWS Control Tower & Account Factory: Guardrails, Baselines & Automated Provisioning",
+      "codeHash": "e010525c7ee9f70dacfbb7b81289ebdafb0816509452237f423e9c8a7cc0b747",
+      "spec": {
+        "template": "workflow",
+        "workflow": {
+          "title": "AWS Control Tower & Account Factory: Guardrails, Baselines & Automated Provisioning",
+          "nodes": [
+            {
+              "id": "management",
+              "label": "AWS Org Root",
+              "status": "active"
+            },
+            {
+              "id": "ou_core",
+              "label": "Core / Security OU",
+              "status": "active"
+            },
+            {
+              "id": "scp_guardrail",
+              "label": "SCP Deny Guardrail",
+              "status": "active"
+            },
+            {
+              "id": "member_acc",
+              "label": "Workload Member Account",
+              "status": "active"
+            }
+          ],
+          "edges": [
+            {
+              "from": "management",
+              "to": "ou_core",
+              "label": "Policy Inheritance"
+            },
+            {
+              "from": "ou_core",
+              "to": "scp_guardrail",
+              "label": "Attach Guardrail"
+            },
+            {
+              "from": "scp_guardrail",
+              "to": "member_acc",
+              "label": "Enforce Maximum Boundary"
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "focus": "management",
+            "annotation": "AWS Organizations manages root hierarchy, consolidated billing, and core accounts."
+          },
+          {
+            "at": "say2",
+            "focus": "ou_core",
+            "annotation": "Organizational Units structure accounts into Core (Log Archive, Security) and Workloads."
+          },
+          {
+            "at": "example",
+            "focus": "scp_guardrail",
+            "annotation": "Service Control Policies apply immutable explicit Deny rules above local IAM admins."
+          },
+          {
+            "at": "tryIt",
+            "focus": "member_acc",
+            "annotation": "Member accounts operate autonomously within strictly bounded, compliant enclaves."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production SCP Engineering: Regional Fencing, CloudTrail Protection & S3 Encryption Mandates",
+      "codeHash": "c88ea9d59be8573c2b2e09a822db17bde96b8c18e79806f3f64163cbb8487b15",
+      "spec": {
+        "template": "workflow",
+        "workflow": {
+          "title": "Production SCP Engineering: Regional Fencing, CloudTrail Protection & S3 Encryption Mandates",
+          "nodes": [
+            {
+              "id": "management",
+              "label": "AWS Org Root",
+              "status": "active"
+            },
+            {
+              "id": "ou_core",
+              "label": "Core / Security OU",
+              "status": "active"
+            },
+            {
+              "id": "scp_guardrail",
+              "label": "SCP Deny Guardrail",
+              "status": "active"
+            },
+            {
+              "id": "member_acc",
+              "label": "Workload Member Account",
+              "status": "active"
+            }
+          ],
+          "edges": [
+            {
+              "from": "management",
+              "to": "ou_core",
+              "label": "Policy Inheritance"
+            },
+            {
+              "from": "ou_core",
+              "to": "scp_guardrail",
+              "label": "Attach Guardrail"
+            },
+            {
+              "from": "scp_guardrail",
+              "to": "member_acc",
+              "label": "Enforce Maximum Boundary"
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "focus": "management",
+            "annotation": "AWS Organizations manages root hierarchy, consolidated billing, and core accounts."
+          },
+          {
+            "at": "say2",
+            "focus": "ou_core",
+            "annotation": "Organizational Units structure accounts into Core (Log Archive, Security) and Workloads."
+          },
+          {
+            "at": "example",
+            "focus": "scp_guardrail",
+            "annotation": "Service Control Policies apply immutable explicit Deny rules above local IAM admins."
+          },
+          {
+            "at": "tryIt",
+            "focus": "member_acc",
+            "annotation": "Member accounts operate autonomously within strictly bounded, compliant enclaves."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Masterclass Synthesis: Multi-Account SRE, Compliance Audits & Emergency Break-Glass Runbooks",
+      "codeHash": "0ff5fadeb8ee41ff86b88d9be7e55e5c05715be4ef5ce8cb2488b823f08a9949",
+      "spec": {
+        "template": "workflow",
+        "workflow": {
+          "title": "Masterclass Synthesis: Multi-Account SRE, Compliance Audits & Emergency Break-Glass Runbooks",
+          "nodes": [
+            {
+              "id": "management",
+              "label": "AWS Org Root",
+              "status": "active"
+            },
+            {
+              "id": "ou_core",
+              "label": "Core / Security OU",
+              "status": "active"
+            },
+            {
+              "id": "scp_guardrail",
+              "label": "SCP Deny Guardrail",
+              "status": "active"
+            },
+            {
+              "id": "member_acc",
+              "label": "Workload Member Account",
+              "status": "active"
+            }
+          ],
+          "edges": [
+            {
+              "from": "management",
+              "to": "ou_core",
+              "label": "Policy Inheritance"
+            },
+            {
+              "from": "ou_core",
+              "to": "scp_guardrail",
+              "label": "Attach Guardrail"
+            },
+            {
+              "from": "scp_guardrail",
+              "to": "member_acc",
+              "label": "Enforce Maximum Boundary"
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "focus": "management",
+            "annotation": "AWS Organizations manages root hierarchy, consolidated billing, and core accounts."
+          },
+          {
+            "at": "say2",
+            "focus": "ou_core",
+            "annotation": "Organizational Units structure accounts into Core (Log Archive, Security) and Workloads."
+          },
+          {
+            "at": "example",
+            "focus": "scp_guardrail",
+            "annotation": "Service Control Policies apply immutable explicit Deny rules above local IAM admins."
+          },
+          {
+            "at": "tryIt",
+            "focus": "member_acc",
+            "annotation": "Member accounts operate autonomously within strictly bounded, compliant enclaves."
+          }
+        ]
+      }
+    }
+  ]
+}
