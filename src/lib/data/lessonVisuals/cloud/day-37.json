@@ -1,0 +1,362 @@
+{
+  "schemaVersion": 2,
+  "prefix": "cloud",
+  "day": 37,
+  "entries": [
+    {
+      "partTitle": "Kinesis Shard Architecture: Log-Structured Append Storage, MD5 Hashing & Throughput Limits",
+      "codeHash": "5e6bf215867eab2de1cba2f8dc16abc540c91495d3b815cd3e8d35c760e26483",
+      "spec": {
+        "template": "workflow",
+        "workflow": {
+          "title": "Kinesis Shard Architecture: Log-Structured Append Storage, MD5 Hashing & Throughput Limits",
+          "nodes": [
+            {
+              "id": "ingest",
+              "label": "Producer Ingest Fleet",
+              "status": "active"
+            },
+            {
+              "id": "router",
+              "label": "MD5 Hash Key Router",
+              "status": "active"
+            },
+            {
+              "id": "shards",
+              "label": "Shard Topology P1",
+              "status": "active"
+            },
+            {
+              "id": "consumers",
+              "label": "EFO / Shared Consumers",
+              "status": "active"
+            }
+          ],
+          "edges": [
+            {
+              "from": "ingest",
+              "to": "router",
+              "label": "PutRecords"
+            },
+            {
+              "from": "router",
+              "to": "shards",
+              "label": "Hash Range"
+            },
+            {
+              "from": "shards",
+              "to": "consumers",
+              "label": "HTTP/2 Push"
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "focus": "ingest",
+            "annotation": "High-throughput telemetry emitted by producer fleets."
+          },
+          {
+            "at": "say2",
+            "focus": "router",
+            "annotation": "128-bit MD5 hashing assigns partition keys to shard ranges."
+          },
+          {
+            "at": "example",
+            "focus": "shards",
+            "annotation": "Shard capacity limits enforced: 1MB/s write and 2MB/s read per shard."
+          },
+          {
+            "at": "tryIt",
+            "focus": "consumers",
+            "annotation": "Enhanced Fan-Out streams records via dedicated HTTP/2 pipes."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Partition Key Design: Hash Key Space Distribution, Low-Cardinality Traps & Random Salting",
+      "codeHash": "52f3f7052b30f8ceb42abbd35666443e24a0ae15f055d77f85eb57683a1d11bc",
+      "spec": {
+        "template": "workflow",
+        "workflow": {
+          "title": "Partition Key Design: Hash Key Space Distribution, Low-Cardinality Traps & Random Salting",
+          "nodes": [
+            {
+              "id": "ingest",
+              "label": "Producer Ingest Fleet",
+              "status": "active"
+            },
+            {
+              "id": "router",
+              "label": "MD5 Hash Key Router",
+              "status": "active"
+            },
+            {
+              "id": "shards",
+              "label": "Shard Topology P2",
+              "status": "active"
+            },
+            {
+              "id": "consumers",
+              "label": "EFO / Shared Consumers",
+              "status": "active"
+            }
+          ],
+          "edges": [
+            {
+              "from": "ingest",
+              "to": "router",
+              "label": "PutRecords"
+            },
+            {
+              "from": "router",
+              "to": "shards",
+              "label": "Hash Range"
+            },
+            {
+              "from": "shards",
+              "to": "consumers",
+              "label": "HTTP/2 Push"
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "focus": "ingest",
+            "annotation": "High-throughput telemetry emitted by producer fleets."
+          },
+          {
+            "at": "say2",
+            "focus": "router",
+            "annotation": "128-bit MD5 hashing assigns partition keys to shard ranges."
+          },
+          {
+            "at": "example",
+            "focus": "shards",
+            "annotation": "Shard capacity limits enforced: 1MB/s write and 2MB/s read per shard."
+          },
+          {
+            "at": "tryIt",
+            "focus": "consumers",
+            "annotation": "Enhanced Fan-Out streams records via dedicated HTTP/2 pipes."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Shard Lifecycle Engineering: Shard Splitting, Shard Merging & Parent-Child Lineage",
+      "codeHash": "4e9eb6160e90e1b726042a7f414deb17f681d9736feccf98b64e0defd382b9a0",
+      "spec": {
+        "template": "workflow",
+        "workflow": {
+          "title": "Shard Lifecycle Engineering: Shard Splitting, Shard Merging & Parent-Child Lineage",
+          "nodes": [
+            {
+              "id": "ingest",
+              "label": "Producer Ingest Fleet",
+              "status": "active"
+            },
+            {
+              "id": "router",
+              "label": "MD5 Hash Key Router",
+              "status": "active"
+            },
+            {
+              "id": "shards",
+              "label": "Shard Topology P3",
+              "status": "active"
+            },
+            {
+              "id": "consumers",
+              "label": "EFO / Shared Consumers",
+              "status": "active"
+            }
+          ],
+          "edges": [
+            {
+              "from": "ingest",
+              "to": "router",
+              "label": "PutRecords"
+            },
+            {
+              "from": "router",
+              "to": "shards",
+              "label": "Hash Range"
+            },
+            {
+              "from": "shards",
+              "to": "consumers",
+              "label": "HTTP/2 Push"
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "focus": "ingest",
+            "annotation": "High-throughput telemetry emitted by producer fleets."
+          },
+          {
+            "at": "say2",
+            "focus": "router",
+            "annotation": "128-bit MD5 hashing assigns partition keys to shard ranges."
+          },
+          {
+            "at": "example",
+            "focus": "shards",
+            "annotation": "Shard capacity limits enforced: 1MB/s write and 2MB/s read per shard."
+          },
+          {
+            "at": "tryIt",
+            "focus": "consumers",
+            "annotation": "Enhanced Fan-Out streams records via dedicated HTTP/2 pipes."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Consumer Topologies: Classic Shared Throughput vs Enhanced Fan-Out (EFO) HTTP/2 Streaming",
+      "codeHash": "92ad7db0cf909cf76a803f54941d60845d24c553c405c2c6dd47cf36a59053e3",
+      "spec": {
+        "template": "workflow",
+        "workflow": {
+          "title": "Consumer Topologies: Classic Shared Throughput vs Enhanced Fan-Out (EFO) HTTP/2 Streaming",
+          "nodes": [
+            {
+              "id": "ingest",
+              "label": "Producer Ingest Fleet",
+              "status": "active"
+            },
+            {
+              "id": "router",
+              "label": "MD5 Hash Key Router",
+              "status": "active"
+            },
+            {
+              "id": "shards",
+              "label": "Shard Topology P4",
+              "status": "active"
+            },
+            {
+              "id": "consumers",
+              "label": "EFO / Shared Consumers",
+              "status": "active"
+            }
+          ],
+          "edges": [
+            {
+              "from": "ingest",
+              "to": "router",
+              "label": "PutRecords"
+            },
+            {
+              "from": "router",
+              "to": "shards",
+              "label": "Hash Range"
+            },
+            {
+              "from": "shards",
+              "to": "consumers",
+              "label": "HTTP/2 Push"
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "focus": "ingest",
+            "annotation": "High-throughput telemetry emitted by producer fleets."
+          },
+          {
+            "at": "say2",
+            "focus": "router",
+            "annotation": "128-bit MD5 hashing assigns partition keys to shard ranges."
+          },
+          {
+            "at": "example",
+            "focus": "shards",
+            "annotation": "Shard capacity limits enforced: 1MB/s write and 2MB/s read per shard."
+          },
+          {
+            "at": "tryIt",
+            "focus": "consumers",
+            "annotation": "Enhanced Fan-Out streams records via dedicated HTTP/2 pipes."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Masterclass Synthesis: High-Throughput Kinesis Telemetry Pipeline & Observability Engine",
+      "codeHash": "3bef086f1cf8b07e655460232300ee872174bfa703877ce1d99a78d3a0311234",
+      "spec": {
+        "template": "workflow",
+        "workflow": {
+          "title": "Masterclass Synthesis: High-Throughput Kinesis Telemetry Pipeline & Observability Engine",
+          "nodes": [
+            {
+              "id": "ingest",
+              "label": "Producer Ingest Fleet",
+              "status": "active"
+            },
+            {
+              "id": "router",
+              "label": "MD5 Hash Key Router",
+              "status": "active"
+            },
+            {
+              "id": "shards",
+              "label": "Shard Topology P5",
+              "status": "active"
+            },
+            {
+              "id": "consumers",
+              "label": "EFO / Shared Consumers",
+              "status": "active"
+            }
+          ],
+          "edges": [
+            {
+              "from": "ingest",
+              "to": "router",
+              "label": "PutRecords"
+            },
+            {
+              "from": "router",
+              "to": "shards",
+              "label": "Hash Range"
+            },
+            {
+              "from": "shards",
+              "to": "consumers",
+              "label": "HTTP/2 Push"
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "focus": "ingest",
+            "annotation": "High-throughput telemetry emitted by producer fleets."
+          },
+          {
+            "at": "say2",
+            "focus": "router",
+            "annotation": "128-bit MD5 hashing assigns partition keys to shard ranges."
+          },
+          {
+            "at": "example",
+            "focus": "shards",
+            "annotation": "Shard capacity limits enforced: 1MB/s write and 2MB/s read per shard."
+          },
+          {
+            "at": "tryIt",
+            "focus": "consumers",
+            "annotation": "Enhanced Fan-Out streams records via dedicated HTTP/2 pipes."
+          }
+        ]
+      }
+    }
+  ]
+}
