@@ -1,0 +1,362 @@
+{
+  "schemaVersion": 2,
+  "prefix": "cloud",
+  "day": 40,
+  "entries": [
+    {
+      "partTitle": "\u2b50 Milestone 7 Architecture: 1,000,000 Event/Sec Ingestion Backbone & Kinesis EFO Sizing",
+      "codeHash": "248af052a72fc3cd96df44fa999918d41ee5fdc92d530716886e6264b4c7dc5f",
+      "spec": {
+        "template": "workflow",
+        "workflow": {
+          "title": "\u2b50 Milestone 7 Architecture: 1,000,000 Event/Sec Ingestion Backbone & Kinesis EFO Sizing",
+          "nodes": [
+            {
+              "id": "producers",
+              "label": "IoT Fleet / Producers",
+              "status": "active"
+            },
+            {
+              "id": "kinesis",
+              "label": "Kinesis 1000 Shards",
+              "status": "active"
+            },
+            {
+              "id": "flink",
+              "label": "Flink State Processor",
+              "status": "active"
+            },
+            {
+              "id": "dual_egress",
+              "label": "MSK & S3 Lakehouse",
+              "status": "active"
+            }
+          ],
+          "edges": [
+            {
+              "from": "producers",
+              "to": "kinesis",
+              "label": "1M msg/s Ingest"
+            },
+            {
+              "from": "kinesis",
+              "to": "flink",
+              "label": "EFO Dedicated Read"
+            },
+            {
+              "from": "flink",
+              "to": "dual_egress",
+              "label": "Dual Egress Routing"
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "focus": "producers",
+            "annotation": "Distributed IoT device fleets emit 1,000,000 telemetry events per second."
+          },
+          {
+            "at": "say2",
+            "focus": "kinesis",
+            "annotation": "1,000 Kinesis shards buffer 500 MB/s ingress with Enhanced Fan-Out delivery."
+          },
+          {
+            "at": "example",
+            "focus": "flink",
+            "annotation": "Apache Flink executes stateful windowing and anomaly detection with RocksDB."
+          },
+          {
+            "at": "tryIt",
+            "focus": "dual_egress",
+            "annotation": "Dual egress routes real-time alerts to Amazon MSK and historical data to S3 Parquet."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Amazon Managed Service for Apache Flink: Stateful Stream Processing & Event-Time Watermarking",
+      "codeHash": "8397fff00ce6e2bf64ff18feacd98a2e24ea841ea6a46bce3114dcb104eab846",
+      "spec": {
+        "template": "workflow",
+        "workflow": {
+          "title": "Amazon Managed Service for Apache Flink: Stateful Stream Processing & Event-Time Watermarking",
+          "nodes": [
+            {
+              "id": "producers",
+              "label": "IoT Fleet / Producers",
+              "status": "active"
+            },
+            {
+              "id": "kinesis",
+              "label": "Kinesis 1000 Shards",
+              "status": "active"
+            },
+            {
+              "id": "flink",
+              "label": "Flink State Processor",
+              "status": "active"
+            },
+            {
+              "id": "dual_egress",
+              "label": "MSK & S3 Lakehouse",
+              "status": "active"
+            }
+          ],
+          "edges": [
+            {
+              "from": "producers",
+              "to": "kinesis",
+              "label": "1M msg/s Ingest"
+            },
+            {
+              "from": "kinesis",
+              "to": "flink",
+              "label": "EFO Dedicated Read"
+            },
+            {
+              "from": "flink",
+              "to": "dual_egress",
+              "label": "Dual Egress Routing"
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "focus": "producers",
+            "annotation": "Distributed IoT device fleets emit 1,000,000 telemetry events per second."
+          },
+          {
+            "at": "say2",
+            "focus": "kinesis",
+            "annotation": "1,000 Kinesis shards buffer 500 MB/s ingress with Enhanced Fan-Out delivery."
+          },
+          {
+            "at": "example",
+            "focus": "flink",
+            "annotation": "Apache Flink executes stateful windowing and anomaly detection with RocksDB."
+          },
+          {
+            "at": "tryIt",
+            "focus": "dual_egress",
+            "annotation": "Dual egress routes real-time alerts to Amazon MSK and historical data to S3 Parquet."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Sliding & Tumbling Windows: RocksDB State Management, Checkpoints & TTL State Pruning",
+      "codeHash": "38cc26714bb13ffd965ae08ef20bfa4ea890b624f8977700fc3af35668eda37a",
+      "spec": {
+        "template": "workflow",
+        "workflow": {
+          "title": "Sliding & Tumbling Windows: RocksDB State Management, Checkpoints & TTL State Pruning",
+          "nodes": [
+            {
+              "id": "producers",
+              "label": "IoT Fleet / Producers",
+              "status": "active"
+            },
+            {
+              "id": "kinesis",
+              "label": "Kinesis 1000 Shards",
+              "status": "active"
+            },
+            {
+              "id": "flink",
+              "label": "Flink State Processor",
+              "status": "active"
+            },
+            {
+              "id": "dual_egress",
+              "label": "MSK & S3 Lakehouse",
+              "status": "active"
+            }
+          ],
+          "edges": [
+            {
+              "from": "producers",
+              "to": "kinesis",
+              "label": "1M msg/s Ingest"
+            },
+            {
+              "from": "kinesis",
+              "to": "flink",
+              "label": "EFO Dedicated Read"
+            },
+            {
+              "from": "flink",
+              "to": "dual_egress",
+              "label": "Dual Egress Routing"
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "focus": "producers",
+            "annotation": "Distributed IoT device fleets emit 1,000,000 telemetry events per second."
+          },
+          {
+            "at": "say2",
+            "focus": "kinesis",
+            "annotation": "1,000 Kinesis shards buffer 500 MB/s ingress with Enhanced Fan-Out delivery."
+          },
+          {
+            "at": "example",
+            "focus": "flink",
+            "annotation": "Apache Flink executes stateful windowing and anomaly detection with RocksDB."
+          },
+          {
+            "at": "tryIt",
+            "focus": "dual_egress",
+            "annotation": "Dual egress routes real-time alerts to Amazon MSK and historical data to S3 Parquet."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "High-Throughput Dual Egress: Real-Time Amazon MSK Alerting & Parquet S3 Lakehouse Storage",
+      "codeHash": "9ce652ec05f14eace2afd8ef83a582da41c4e59b0a50b37ea11ca8eeefb263ba",
+      "spec": {
+        "template": "workflow",
+        "workflow": {
+          "title": "High-Throughput Dual Egress: Real-Time Amazon MSK Alerting & Parquet S3 Lakehouse Storage",
+          "nodes": [
+            {
+              "id": "producers",
+              "label": "IoT Fleet / Producers",
+              "status": "active"
+            },
+            {
+              "id": "kinesis",
+              "label": "Kinesis 1000 Shards",
+              "status": "active"
+            },
+            {
+              "id": "flink",
+              "label": "Flink State Processor",
+              "status": "active"
+            },
+            {
+              "id": "dual_egress",
+              "label": "MSK & S3 Lakehouse",
+              "status": "active"
+            }
+          ],
+          "edges": [
+            {
+              "from": "producers",
+              "to": "kinesis",
+              "label": "1M msg/s Ingest"
+            },
+            {
+              "from": "kinesis",
+              "to": "flink",
+              "label": "EFO Dedicated Read"
+            },
+            {
+              "from": "flink",
+              "to": "dual_egress",
+              "label": "Dual Egress Routing"
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "focus": "producers",
+            "annotation": "Distributed IoT device fleets emit 1,000,000 telemetry events per second."
+          },
+          {
+            "at": "say2",
+            "focus": "kinesis",
+            "annotation": "1,000 Kinesis shards buffer 500 MB/s ingress with Enhanced Fan-Out delivery."
+          },
+          {
+            "at": "example",
+            "focus": "flink",
+            "annotation": "Apache Flink executes stateful windowing and anomaly detection with RocksDB."
+          },
+          {
+            "at": "tryIt",
+            "focus": "dual_egress",
+            "annotation": "Dual egress routes real-time alerts to Amazon MSK and historical data to S3 Parquet."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "\u2b50 Milestone 7 Synthesis: Production 1,000,000 Event/Sec Telemetry Engine & SRE Runbook",
+      "codeHash": "19ae1c3b227a68ed3282a67bddf190b1dda92c4015528376a4b74572f18fd061",
+      "spec": {
+        "template": "workflow",
+        "workflow": {
+          "title": "\u2b50 Milestone 7 Synthesis: Production 1,000,000 Event/Sec Telemetry Engine & SRE Runbook",
+          "nodes": [
+            {
+              "id": "producers",
+              "label": "IoT Fleet / Producers",
+              "status": "active"
+            },
+            {
+              "id": "kinesis",
+              "label": "Kinesis 1000 Shards",
+              "status": "active"
+            },
+            {
+              "id": "flink",
+              "label": "Flink State Processor",
+              "status": "active"
+            },
+            {
+              "id": "dual_egress",
+              "label": "MSK & S3 Lakehouse",
+              "status": "active"
+            }
+          ],
+          "edges": [
+            {
+              "from": "producers",
+              "to": "kinesis",
+              "label": "1M msg/s Ingest"
+            },
+            {
+              "from": "kinesis",
+              "to": "flink",
+              "label": "EFO Dedicated Read"
+            },
+            {
+              "from": "flink",
+              "to": "dual_egress",
+              "label": "Dual Egress Routing"
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "focus": "producers",
+            "annotation": "Distributed IoT device fleets emit 1,000,000 telemetry events per second."
+          },
+          {
+            "at": "say2",
+            "focus": "kinesis",
+            "annotation": "1,000 Kinesis shards buffer 500 MB/s ingress with Enhanced Fan-Out delivery."
+          },
+          {
+            "at": "example",
+            "focus": "flink",
+            "annotation": "Apache Flink executes stateful windowing and anomaly detection with RocksDB."
+          },
+          {
+            "at": "tryIt",
+            "focus": "dual_egress",
+            "annotation": "Dual egress routes real-time alerts to Amazon MSK and historical data to S3 Parquet."
+          }
+        ]
+      }
+    }
+  ]
+}
