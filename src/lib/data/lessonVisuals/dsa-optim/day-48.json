@@ -1,0 +1,779 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "dsa-optim",
+  "day": 48,
+  "promptSha": "dsa-optim-day-48-push-relabel-pipeline",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Preflows, Excess Vector & Relabel Operations",
+      "codeHash": "13b49085d7c73109f5051198967143910f9d6dc8d267f34baa85fc185ae771a2",
+      "filled": {
+        "template": "table",
+        "title": "Preflow Push Excess Relaxation Height Field Matrix.",
+        "columns": [
+          "Preflow Vertex State",
+          "Excess Flow Level",
+          "Local Height Gradient"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Advanced data structures explore classical augmenting path paradigms.",
+            "rows": [
+              [
+                "Active Node Inflow",
+                "Positive Excess Accumulated",
+                "Steepest Downhill Slope"
+              ],
+              [
+                "Drained Node Balance",
+                "Zero Excess Conservation",
+                "Equilibrium Energy Level"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Computer scientists introduced revolutionary push relabel algorithms.",
+            "rows": [
+              [
+                "Active Node Inflow",
+                "Positive Excess Accumulated",
+                "Steepest Downhill Slope"
+              ],
+              [
+                "Drained Node Balance",
+                "Zero Excess Conservation",
+                "Equilibrium Energy Level"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Municipal water reservoir networks model pipelines connecting tanks.",
+            "rows": [
+              [
+                "Active Node Inflow",
+                "Positive Excess Accumulated",
+                "Steepest Downhill Slope"
+              ],
+              [
+                "Drained Node Balance",
+                "Zero Excess Conservation",
+                "Equilibrium Energy Level"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Examine typescript code initializing height and pushing full capacity.",
+            "rows": [
+              [
+                "Active Node Inflow",
+                "Positive Excess Accumulated",
+                "Steepest Downhill Slope"
+              ],
+              [
+                "Drained Node Balance",
+                "Zero Excess Conservation",
+                "Equilibrium Energy Level"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Preflow Push Excess Relaxation Height Field Matrix.",
+        "columns": [
+          "Preflow Vertex State",
+          "Excess Flow Level",
+          "Local Height Gradient"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Advanced data structures explore classical augmenting path paradigms.",
+            "rows": [
+              [
+                "Active Node Inflow",
+                "Positive Excess Accumulated",
+                "Steepest Downhill Slope"
+              ],
+              [
+                "Drained Node Balance",
+                "Zero Excess Conservation",
+                "Equilibrium Energy Level"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Computer scientists introduced revolutionary push relabel algorithms.",
+            "rows": [
+              [
+                "Active Node Inflow",
+                "Positive Excess Accumulated",
+                "Steepest Downhill Slope"
+              ],
+              [
+                "Drained Node Balance",
+                "Zero Excess Conservation",
+                "Equilibrium Energy Level"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Municipal water reservoir networks model pipelines connecting tanks.",
+            "rows": [
+              [
+                "Active Node Inflow",
+                "Positive Excess Accumulated",
+                "Steepest Downhill Slope"
+              ],
+              [
+                "Drained Node Balance",
+                "Zero Excess Conservation",
+                "Equilibrium Energy Level"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Examine typescript code initializing height and pushing full capacity.",
+            "rows": [
+              [
+                "Active Node Inflow",
+                "Positive Excess Accumulated",
+                "Steepest Downhill Slope"
+              ],
+              [
+                "Drained Node Balance",
+                "Zero Excess Conservation",
+                "Equilibrium Energy Level"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Discharge Mechanics & Height Functions (Valid Distance Labeling)",
+      "codeHash": "45518ac47504fe1f4dfb267b66b2a8df41e875e286ec5f97fd137d961c425361",
+      "filled": {
+        "template": "table",
+        "title": "Discharge Mechanics Valid Distance Labeling Table.",
+        "columns": [
+          "Discharge Push Type",
+          "Residual Headroom Delta",
+          "Height Function Invariant"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Mathematical invariants formalize valid distance labeling routines.",
+            "rows": [
+              [
+                "Saturating Forward Push",
+                "Capacity Fully Exhausted",
+                "Admissible Hop Preserved"
+              ],
+              [
+                "Non Saturating Push",
+                "Excess Drained Completely",
+                "Vertex Deactivated Instantly"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Valid distance labeling provides lower bounds on shortest path hops.",
+            "rows": [
+              [
+                "Saturating Forward Push",
+                "Capacity Fully Exhausted",
+                "Admissible Hop Preserved"
+              ],
+              [
+                "Non Saturating Push",
+                "Excess Drained Completely",
+                "Vertex Deactivated Instantly"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Cloud data pipelines connect regional storage clusters accumulating data.",
+            "rows": [
+              [
+                "Saturating Forward Push",
+                "Capacity Fully Exhausted",
+                "Admissible Hop Preserved"
+              ],
+              [
+                "Non Saturating Push",
+                "Excess Drained Completely",
+                "Vertex Deactivated Instantly"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Examine typescript code implementing discharge alternating pushes.",
+            "rows": [
+              [
+                "Saturating Forward Push",
+                "Capacity Fully Exhausted",
+                "Admissible Hop Preserved"
+              ],
+              [
+                "Non Saturating Push",
+                "Excess Drained Completely",
+                "Vertex Deactivated Instantly"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Discharge Mechanics Valid Distance Labeling Table.",
+        "columns": [
+          "Discharge Push Type",
+          "Residual Headroom Delta",
+          "Height Function Invariant"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Mathematical invariants formalize valid distance labeling routines.",
+            "rows": [
+              [
+                "Saturating Forward Push",
+                "Capacity Fully Exhausted",
+                "Admissible Hop Preserved"
+              ],
+              [
+                "Non Saturating Push",
+                "Excess Drained Completely",
+                "Vertex Deactivated Instantly"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Valid distance labeling provides lower bounds on shortest path hops.",
+            "rows": [
+              [
+                "Saturating Forward Push",
+                "Capacity Fully Exhausted",
+                "Admissible Hop Preserved"
+              ],
+              [
+                "Non Saturating Push",
+                "Excess Drained Completely",
+                "Vertex Deactivated Instantly"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Cloud data pipelines connect regional storage clusters accumulating data.",
+            "rows": [
+              [
+                "Saturating Forward Push",
+                "Capacity Fully Exhausted",
+                "Admissible Hop Preserved"
+              ],
+              [
+                "Non Saturating Push",
+                "Excess Drained Completely",
+                "Vertex Deactivated Instantly"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Examine typescript code implementing discharge alternating pushes.",
+            "rows": [
+              [
+                "Saturating Forward Push",
+                "Capacity Fully Exhausted",
+                "Admissible Hop Preserved"
+              ],
+              [
+                "Non Saturating Push",
+                "Excess Drained Completely",
+                "Vertex Deactivated Instantly"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Highest-Label Selection Rule (O(V^2 * sqrt(E)) Bound)",
+      "codeHash": "c12baf5d6c764656e886d835cae9b1f508479289542c9db13eb2f8bedb8f88db",
+      "filled": {
+        "template": "table",
+        "title": "Highest Label Preflow Push Height Bucket Queue.",
+        "columns": [
+          "Bucket Height Index",
+          "Active Node Bucket Set",
+          "Non Saturating Bound"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Highest label preflow push achieves optimal worst case bound search.",
+            "rows": [
+              [
+                "Maximum Height Tier",
+                "Ceiling Active Vertices",
+                "Bounded Downward Cascade"
+              ],
+              [
+                "Ground Sink Level",
+                "Terminal Inflow Absorption",
+                "Zero Return Cancellation"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Highest label active vertices discharge cascading fluid movements.",
+            "rows": [
+              [
+                "Maximum Height Tier",
+                "Ceiling Active Vertices",
+                "Bounded Downward Cascade"
+              ],
+              [
+                "Ground Sink Level",
+                "Terminal Inflow Absorption",
+                "Zero Return Cancellation"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Distributed container scheduling clusters manage job placements.",
+            "rows": [
+              [
+                "Maximum Height Tier",
+                "Ceiling Active Vertices",
+                "Bounded Downward Cascade"
+              ],
+              [
+                "Ground Sink Level",
+                "Terminal Inflow Absorption",
+                "Zero Return Cancellation"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Examine typescript code organizing active vertices into height buckets.",
+            "rows": [
+              [
+                "Maximum Height Tier",
+                "Ceiling Active Vertices",
+                "Bounded Downward Cascade"
+              ],
+              [
+                "Ground Sink Level",
+                "Terminal Inflow Absorption",
+                "Zero Return Cancellation"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Highest Label Preflow Push Height Bucket Queue.",
+        "columns": [
+          "Bucket Height Index",
+          "Active Node Bucket Set",
+          "Non Saturating Bound"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Highest label preflow push achieves optimal worst case bound search.",
+            "rows": [
+              [
+                "Maximum Height Tier",
+                "Ceiling Active Vertices",
+                "Bounded Downward Cascade"
+              ],
+              [
+                "Ground Sink Level",
+                "Terminal Inflow Absorption",
+                "Zero Return Cancellation"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Highest label active vertices discharge cascading fluid movements.",
+            "rows": [
+              [
+                "Maximum Height Tier",
+                "Ceiling Active Vertices",
+                "Bounded Downward Cascade"
+              ],
+              [
+                "Ground Sink Level",
+                "Terminal Inflow Absorption",
+                "Zero Return Cancellation"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Distributed container scheduling clusters manage job placements.",
+            "rows": [
+              [
+                "Maximum Height Tier",
+                "Ceiling Active Vertices",
+                "Bounded Downward Cascade"
+              ],
+              [
+                "Ground Sink Level",
+                "Terminal Inflow Absorption",
+                "Zero Return Cancellation"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Examine typescript code organizing active vertices into height buckets.",
+            "rows": [
+              [
+                "Maximum Height Tier",
+                "Ceiling Active Vertices",
+                "Bounded Downward Cascade"
+              ],
+              [
+                "Ground Sink Level",
+                "Terminal Inflow Absorption",
+                "Zero Return Cancellation"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Heuristics: Global Relabeling (Reverse BFS) & Gap Relabeling",
+      "codeHash": "fdc2697683e36995e4a7b818308ece434a0d80fda8b8b0f41038bc17bce7e1e6",
+      "filled": {
+        "template": "table",
+        "title": "Global Reverse BFS And Gap Relabeling Diagnostics.",
+        "columns": [
+          "Heuristic Engine Component",
+          "Execution Trigger Event",
+          "Computational Work Saved"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Practical engineering heuristics elevate push relabel solver speed.",
+            "rows": [
+              [
+                "Gap Relabeling Circuit",
+                "Empty Height Level Detected",
+                "Eliminate Stranded Relabels"
+              ],
+              [
+                "Global Reverse BFS",
+                "Periodic Work Interval",
+                "Direct True Shortest Paths"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Gap relabeling eliminates pathological behaviors across array counts.",
+            "rows": [
+              [
+                "Gap Relabeling Circuit",
+                "Empty Height Level Detected",
+                "Eliminate Stranded Relabels"
+              ],
+              [
+                "Global Reverse BFS",
+                "Periodic Work Interval",
+                "Direct True Shortest Paths"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Continental pipeline networks model compressor stations and valves.",
+            "rows": [
+              [
+                "Gap Relabeling Circuit",
+                "Empty Height Level Detected",
+                "Eliminate Stranded Relabels"
+              ],
+              [
+                "Global Reverse BFS",
+                "Periodic Work Interval",
+                "Direct True Shortest Paths"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Examine typescript code comparing heuristic speedup optimizations.",
+            "rows": [
+              [
+                "Gap Relabeling Circuit",
+                "Empty Height Level Detected",
+                "Eliminate Stranded Relabels"
+              ],
+              [
+                "Global Reverse BFS",
+                "Periodic Work Interval",
+                "Direct True Shortest Paths"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Global Reverse BFS And Gap Relabeling Diagnostics.",
+        "columns": [
+          "Heuristic Engine Component",
+          "Execution Trigger Event",
+          "Computational Work Saved"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Practical engineering heuristics elevate push relabel solver speed.",
+            "rows": [
+              [
+                "Gap Relabeling Circuit",
+                "Empty Height Level Detected",
+                "Eliminate Stranded Relabels"
+              ],
+              [
+                "Global Reverse BFS",
+                "Periodic Work Interval",
+                "Direct True Shortest Paths"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Gap relabeling eliminates pathological behaviors across array counts.",
+            "rows": [
+              [
+                "Gap Relabeling Circuit",
+                "Empty Height Level Detected",
+                "Eliminate Stranded Relabels"
+              ],
+              [
+                "Global Reverse BFS",
+                "Periodic Work Interval",
+                "Direct True Shortest Paths"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Continental pipeline networks model compressor stations and valves.",
+            "rows": [
+              [
+                "Gap Relabeling Circuit",
+                "Empty Height Level Detected",
+                "Eliminate Stranded Relabels"
+              ],
+              [
+                "Global Reverse BFS",
+                "Periodic Work Interval",
+                "Direct True Shortest Paths"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Examine typescript code comparing heuristic speedup optimizations.",
+            "rows": [
+              [
+                "Gap Relabeling Circuit",
+                "Empty Height Level Detected",
+                "Eliminate Stranded Relabels"
+              ],
+              [
+                "Global Reverse BFS",
+                "Periodic Work Interval",
+                "Direct True Shortest Paths"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Application: Global Financial Liquidity Settlement Engine (PreflowLiquiditySettler)",
+      "codeHash": "fdf8aabf7c4c212abd7bf85b222dc0501291b933485eee90d3a8a66208b7b9cb",
+      "filled": {
+        "template": "table",
+        "title": "Continuous Linked Settlement Interbank Credit Matrix.",
+        "columns": [
+          "Multinational Bank Entity",
+          "Intraday Credit Line",
+          "Multilateral Netting Status"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Enterprise financial infrastructure implements liquidity settler.",
+            "rows": [
+              [
+                "Tier One Settlement Member",
+                "Bilateral Facility Active",
+                "Liquidity Discharged Smoothly"
+              ],
+              [
+                "Central Bank Clearing Hub",
+                "Reserve Account Inflow",
+                "Continuous Settlement Complete"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Continuous settlement engines clear interbank credit obligations.",
+            "rows": [
+              [
+                "Tier One Settlement Member",
+                "Bilateral Facility Active",
+                "Liquidity Discharged Smoothly"
+              ],
+              [
+                "Central Bank Clearing Hub",
+                "Reserve Account Inflow",
+                "Continuous Settlement Complete"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "International interbank clearing systems settle bilateral credit lines.",
+            "rows": [
+              [
+                "Tier One Settlement Member",
+                "Bilateral Facility Active",
+                "Liquidity Discharged Smoothly"
+              ],
+              [
+                "Central Bank Clearing Hub",
+                "Reserve Account Inflow",
+                "Continuous Settlement Complete"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Explore liquidity settler class defining bilateral clearing limits.",
+            "rows": [
+              [
+                "Tier One Settlement Member",
+                "Bilateral Facility Active",
+                "Liquidity Discharged Smoothly"
+              ],
+              [
+                "Central Bank Clearing Hub",
+                "Reserve Account Inflow",
+                "Continuous Settlement Complete"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Continuous Linked Settlement Interbank Credit Matrix.",
+        "columns": [
+          "Multinational Bank Entity",
+          "Intraday Credit Line",
+          "Multilateral Netting Status"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Enterprise financial infrastructure implements liquidity settler.",
+            "rows": [
+              [
+                "Tier One Settlement Member",
+                "Bilateral Facility Active",
+                "Liquidity Discharged Smoothly"
+              ],
+              [
+                "Central Bank Clearing Hub",
+                "Reserve Account Inflow",
+                "Continuous Settlement Complete"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Continuous settlement engines clear interbank credit obligations.",
+            "rows": [
+              [
+                "Tier One Settlement Member",
+                "Bilateral Facility Active",
+                "Liquidity Discharged Smoothly"
+              ],
+              [
+                "Central Bank Clearing Hub",
+                "Reserve Account Inflow",
+                "Continuous Settlement Complete"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "International interbank clearing systems settle bilateral credit lines.",
+            "rows": [
+              [
+                "Tier One Settlement Member",
+                "Bilateral Facility Active",
+                "Liquidity Discharged Smoothly"
+              ],
+              [
+                "Central Bank Clearing Hub",
+                "Reserve Account Inflow",
+                "Continuous Settlement Complete"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Explore liquidity settler class defining bilateral clearing limits.",
+            "rows": [
+              [
+                "Tier One Settlement Member",
+                "Bilateral Facility Active",
+                "Liquidity Discharged Smoothly"
+              ],
+              [
+                "Central Bank Clearing Hub",
+                "Reserve Account Inflow",
+                "Continuous Settlement Complete"
+              ]
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
