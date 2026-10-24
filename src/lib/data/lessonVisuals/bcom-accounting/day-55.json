@@ -1,0 +1,659 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom-accounting",
+  "day": 55,
+  "promptSha": "prompt_sha_bcom_accounting_day55_v1",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Strategic Mandate of the Group CFO & Lead Valuation Partner in Multi-Standard Asset Governance",
+      "codeHash": "b1d67edfca7cb69bed1ad2e2a5e4980f50551a864a929fb536dbe8e45a0742fb",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Strategic Mandate of the Group CFO & Lea... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($52,055,000) for Strategic Mandate of the Group CFO & Lea...",
+            "title": "Day 55 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 52055000,
+            "totalCredit": 52055000,
+            "entries": [
+              {
+                "id": "JNL-5501",
+                "account": "Consolidated Non-Current Assets & Revalued Portfolios",
+                "debit": 52055000,
+                "balance": 52055000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 55"
+              },
+              {
+                "id": "JNL-5502",
+                "account": "Corporate Capital Reserves, Impairment & Divestiture Accounts",
+                "credit": 52055000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & impairment adjustment accrual ($11,135,801).",
+            "title": "Day 55 Journal \u2014 Valuation & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 63190801,
+            "totalCredit": 63190801,
+            "entries": [
+              {
+                "id": "JNL-5501",
+                "account": "Consolidated Non-Current Assets & Revalued Portfolios",
+                "debit": 52055000,
+                "balance": 52055000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5503",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 11135801,
+                "balance": 63190801,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5502",
+                "account": "Corporate Capital Reserves, Impairment & Divestiture Accounts",
+                "credit": 63190801,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 55 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 63190801,
+            "totalCredit": 63190801,
+            "entries": [
+              {
+                "id": "JNL-5501",
+                "account": "Consolidated Non-Current Assets & Revalued Portfolios",
+                "debit": 52055000,
+                "balance": 52055000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5503",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 11135801,
+                "balance": 63190801,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5502",
+                "account": "Corporate Capital Reserves, Impairment & Divestiture Accounts",
+                "credit": 63190801,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 55 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 63190801,
+            "totalCredit": 63190801,
+            "entries": [
+              {
+                "id": "JNL-5501",
+                "account": "Consolidated Non-Current Assets & Revalued Portfolios",
+                "debit": 52055000,
+                "balance": 52055000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5503",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 11135801,
+                "balance": 63190801,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5502",
+                "account": "Corporate Capital Reserves, Impairment & Divestiture Accounts",
+                "credit": 63190801,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Module 1: Ind AS 36 CGU Impairment Testing, Value in Use DCF & Waterfall Write-Down Execution",
+      "codeHash": "b1d67edfca7cb69bed1ad2e2a5e4980f50551a864a929fb536dbe8e45a0742fb",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Module 1: Ind AS 36 CGU Impairment Testi... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($52,060,000) for Module 1: Ind AS 36 CGU Impairment Testi...",
+            "title": "Day 55 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 52060000,
+            "totalCredit": 52060000,
+            "entries": [
+              {
+                "id": "JNL-5501",
+                "account": "Consolidated Non-Current Assets & Revalued Portfolios",
+                "debit": 52060000,
+                "balance": 52060000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 55"
+              },
+              {
+                "id": "JNL-5502",
+                "account": "Corporate Capital Reserves, Impairment & Divestiture Accounts",
+                "credit": 52060000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & impairment adjustment accrual ($11,135,801).",
+            "title": "Day 55 Journal \u2014 Valuation & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 63195801,
+            "totalCredit": 63195801,
+            "entries": [
+              {
+                "id": "JNL-5501",
+                "account": "Consolidated Non-Current Assets & Revalued Portfolios",
+                "debit": 52060000,
+                "balance": 52060000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5503",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 11135801,
+                "balance": 63195801,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5502",
+                "account": "Corporate Capital Reserves, Impairment & Divestiture Accounts",
+                "credit": 63195801,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 55 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 63195801,
+            "totalCredit": 63195801,
+            "entries": [
+              {
+                "id": "JNL-5501",
+                "account": "Consolidated Non-Current Assets & Revalued Portfolios",
+                "debit": 52060000,
+                "balance": 52060000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5503",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 11135801,
+                "balance": 63195801,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5502",
+                "account": "Corporate Capital Reserves, Impairment & Divestiture Accounts",
+                "credit": 63195801,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 55 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 63195801,
+            "totalCredit": 63195801,
+            "entries": [
+              {
+                "id": "JNL-5501",
+                "account": "Consolidated Non-Current Assets & Revalued Portfolios",
+                "debit": 52060000,
+                "balance": 52060000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5503",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 11135801,
+                "balance": 63195801,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5502",
+                "account": "Corporate Capital Reserves, Impairment & Divestiture Accounts",
+                "credit": 63195801,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Module 2: Ind AS 38 Comprehensive Intangibles Portfolio & PIRATE R&D Development Architecture",
+      "codeHash": "b1d67edfca7cb69bed1ad2e2a5e4980f50551a864a929fb536dbe8e45a0742fb",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Module 2: Ind AS 38 Comprehensive Intang... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($52,065,000) for Module 2: Ind AS 38 Comprehensive Intang...",
+            "title": "Day 55 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 52065000,
+            "totalCredit": 52065000,
+            "entries": [
+              {
+                "id": "JNL-5501",
+                "account": "Consolidated Non-Current Assets & Revalued Portfolios",
+                "debit": 52065000,
+                "balance": 52065000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 55"
+              },
+              {
+                "id": "JNL-5502",
+                "account": "Corporate Capital Reserves, Impairment & Divestiture Accounts",
+                "credit": 52065000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & impairment adjustment accrual ($11,135,801).",
+            "title": "Day 55 Journal \u2014 Valuation & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 63200801,
+            "totalCredit": 63200801,
+            "entries": [
+              {
+                "id": "JNL-5501",
+                "account": "Consolidated Non-Current Assets & Revalued Portfolios",
+                "debit": 52065000,
+                "balance": 52065000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5503",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 11135801,
+                "balance": 63200801,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5502",
+                "account": "Corporate Capital Reserves, Impairment & Divestiture Accounts",
+                "credit": 63200801,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 55 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 63200801,
+            "totalCredit": 63200801,
+            "entries": [
+              {
+                "id": "JNL-5501",
+                "account": "Consolidated Non-Current Assets & Revalued Portfolios",
+                "debit": 52065000,
+                "balance": 52065000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5503",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 11135801,
+                "balance": 63200801,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5502",
+                "account": "Corporate Capital Reserves, Impairment & Divestiture Accounts",
+                "credit": 63200801,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 55 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 63200801,
+            "totalCredit": 63200801,
+            "entries": [
+              {
+                "id": "JNL-5501",
+                "account": "Consolidated Non-Current Assets & Revalued Portfolios",
+                "debit": 52065000,
+                "balance": 52065000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5503",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 11135801,
+                "balance": 63200801,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5502",
+                "account": "Corporate Capital Reserves, Impairment & Divestiture Accounts",
+                "credit": 63200801,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Module 3 & Module 4: Ind AS 113 Fair Value Hierarchy & Ind AS 105 Disposal Group Carve-Out",
+      "codeHash": "b1d67edfca7cb69bed1ad2e2a5e4980f50551a864a929fb536dbe8e45a0742fb",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Module 3 & Module 4: Ind AS 113 Fair Val... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($52,070,000) for Module 3 & Module 4: Ind AS 113 Fair Val...",
+            "title": "Day 55 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 52070000,
+            "totalCredit": 52070000,
+            "entries": [
+              {
+                "id": "JNL-5501",
+                "account": "Consolidated Non-Current Assets & Revalued Portfolios",
+                "debit": 52070000,
+                "balance": 52070000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 55"
+              },
+              {
+                "id": "JNL-5502",
+                "account": "Corporate Capital Reserves, Impairment & Divestiture Accounts",
+                "credit": 52070000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & impairment adjustment accrual ($11,135,801).",
+            "title": "Day 55 Journal \u2014 Valuation & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 63205801,
+            "totalCredit": 63205801,
+            "entries": [
+              {
+                "id": "JNL-5501",
+                "account": "Consolidated Non-Current Assets & Revalued Portfolios",
+                "debit": 52070000,
+                "balance": 52070000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5503",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 11135801,
+                "balance": 63205801,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5502",
+                "account": "Corporate Capital Reserves, Impairment & Divestiture Accounts",
+                "credit": 63205801,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 55 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 63205801,
+            "totalCredit": 63205801,
+            "entries": [
+              {
+                "id": "JNL-5501",
+                "account": "Consolidated Non-Current Assets & Revalued Portfolios",
+                "debit": 52070000,
+                "balance": 52070000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5503",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 11135801,
+                "balance": 63205801,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5502",
+                "account": "Corporate Capital Reserves, Impairment & Divestiture Accounts",
+                "credit": 63205801,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 55 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 63205801,
+            "totalCredit": 63205801,
+            "entries": [
+              {
+                "id": "JNL-5501",
+                "account": "Consolidated Non-Current Assets & Revalued Portfolios",
+                "debit": 52070000,
+                "balance": 52070000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5503",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 11135801,
+                "balance": 63205801,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5502",
+                "account": "Corporate Capital Reserves, Impairment & Divestiture Accounts",
+                "credit": 63205801,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Grand Milestone 11 Verification, Statutory Audit Sign-Off & Block 11 Completion",
+      "codeHash": "b1d67edfca7cb69bed1ad2e2a5e4980f50551a864a929fb536dbe8e45a0742fb",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Grand Milestone 11 Verification, Statuto... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($52,075,000) for Grand Milestone 11 Verification, Statuto...",
+            "title": "Day 55 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 52075000,
+            "totalCredit": 52075000,
+            "entries": [
+              {
+                "id": "JNL-5501",
+                "account": "Consolidated Non-Current Assets & Revalued Portfolios",
+                "debit": 52075000,
+                "balance": 52075000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 55"
+              },
+              {
+                "id": "JNL-5502",
+                "account": "Corporate Capital Reserves, Impairment & Divestiture Accounts",
+                "credit": 52075000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & impairment adjustment accrual ($11,135,801).",
+            "title": "Day 55 Journal \u2014 Valuation & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 63210801,
+            "totalCredit": 63210801,
+            "entries": [
+              {
+                "id": "JNL-5501",
+                "account": "Consolidated Non-Current Assets & Revalued Portfolios",
+                "debit": 52075000,
+                "balance": 52075000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5503",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 11135801,
+                "balance": 63210801,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5502",
+                "account": "Corporate Capital Reserves, Impairment & Divestiture Accounts",
+                "credit": 63210801,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 55 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 63210801,
+            "totalCredit": 63210801,
+            "entries": [
+              {
+                "id": "JNL-5501",
+                "account": "Consolidated Non-Current Assets & Revalued Portfolios",
+                "debit": 52075000,
+                "balance": 52075000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5503",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 11135801,
+                "balance": 63210801,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5502",
+                "account": "Corporate Capital Reserves, Impairment & Divestiture Accounts",
+                "credit": 63210801,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 55 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 63210801,
+            "totalCredit": 63210801,
+            "entries": [
+              {
+                "id": "JNL-5501",
+                "account": "Consolidated Non-Current Assets & Revalued Portfolios",
+                "debit": 52075000,
+                "balance": 52075000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5503",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 11135801,
+                "balance": 63210801,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5502",
+                "account": "Corporate Capital Reserves, Impairment & Divestiture Accounts",
+                "credit": 63210801,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
