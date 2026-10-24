@@ -1,0 +1,829 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "sql-mastery",
+  "day": 37,
+  "promptSha": "adf67822ad37076f336240ceda8389919579109452654821160dd38e24417eec",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Fine-Grained Row Latching: FOR UPDATE, FOR NO KEY UPDATE, FOR SHARE & FOR KEY SHARE",
+      "codeHash": "0456740a0c53e8716a3186c8997e641e6cf184554f417937f705b6a62a2721b7",
+      "spec": {
+        "template": "compare",
+        "title": "Row Latching & Concurrency Architecture - Part 1",
+        "leftLabel": "Coarse Pessimistic Latching",
+        "rightLabel": "Fine-Grained Latching & Non-Blocking Primitives",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Explicit database latching coordinates critical section states.",
+            "left": {
+              "code": "Coarse table or row lock",
+              "result": {
+                "text": "blocks unrelated concurrent transactions"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Minimal lock mode selection",
+              "result": {
+                "text": "permits high parallel throughput"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Exclusive row locks block concurrent readers and writers.",
+            "left": {
+              "code": "Blocking queue serialization",
+              "result": {
+                "text": "connection pool exhaustion cascade"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Non-blocking skip locked path",
+              "result": {
+                "text": "zero contention parallel dispatch"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Passenger preference updates allow concurrent ticket checks.",
+            "left": {
+              "code": "Blocked resource waiting line",
+              "result": {
+                "text": "overall system throughput collapse"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Immediate parallel resource access",
+              "result": {
+                "text": "smooth continuous service delivery"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect fine grained row locking modes and concurrency behavior.",
+            "left": {
+              "code": "Unmonitored lock wait conditions",
+              "result": {
+                "text": "hidden latency and thread stalls"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Validated latching telemetry",
+              "result": {
+                "text": "deterministic sub-millisecond execution"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Row Latching & Concurrency Architecture - Part 1",
+        "leftLabel": "Coarse Pessimistic Latching",
+        "rightLabel": "Fine-Grained Latching & Non-Blocking Primitives",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Explicit database latching coordinates critical section states.",
+            "left": {
+              "code": "Coarse table or row lock",
+              "result": {
+                "text": "blocks unrelated concurrent transactions"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Minimal lock mode selection",
+              "result": {
+                "text": "permits high parallel throughput"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Exclusive row locks block concurrent readers and writers.",
+            "left": {
+              "code": "Blocking queue serialization",
+              "result": {
+                "text": "connection pool exhaustion cascade"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Non-blocking skip locked path",
+              "result": {
+                "text": "zero contention parallel dispatch"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Passenger preference updates allow concurrent ticket checks.",
+            "left": {
+              "code": "Blocked resource waiting line",
+              "result": {
+                "text": "overall system throughput collapse"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Immediate parallel resource access",
+              "result": {
+                "text": "smooth continuous service delivery"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect fine grained row locking modes and concurrency behavior.",
+            "left": {
+              "code": "Unmonitored lock wait conditions",
+              "result": {
+                "text": "hidden latency and thread stalls"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Validated latching telemetry",
+              "result": {
+                "text": "deterministic sub-millisecond execution"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Concurrency Killer: Lock Queues, Blocking Trees & Diagnosing pg_locks Contention",
+      "codeHash": "72e81b5f6bfc670217a80f445d23b5bbe804f2bfe71244f42bcfe4cd5a415aaf",
+      "spec": {
+        "template": "compare",
+        "title": "Row Latching & Concurrency Architecture - Part 2",
+        "leftLabel": "Coarse Pessimistic Latching",
+        "rightLabel": "Fine-Grained Latching & Non-Blocking Primitives",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Improper lock orchestration triggers cascading database outages.",
+            "left": {
+              "code": "Coarse table or row lock",
+              "result": {
+                "text": "blocks unrelated concurrent transactions"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Minimal lock mode selection",
+              "result": {
+                "text": "permits high parallel throughput"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Backend workers stall waiting on exclusive row lock queues.",
+            "left": {
+              "code": "Blocking queue serialization",
+              "result": {
+                "text": "connection pool exhaustion cascade"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Non-blocking skip locked path",
+              "result": {
+                "text": "zero contention parallel dispatch"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Customer phone calls stall the entire bank teller line.",
+            "left": {
+              "code": "Blocked resource waiting line",
+              "result": {
+                "text": "overall system throughput collapse"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Immediate parallel resource access",
+              "result": {
+                "text": "smooth continuous service delivery"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Analyze blocked backend processes and lock wait durations.",
+            "left": {
+              "code": "Unmonitored lock wait conditions",
+              "result": {
+                "text": "hidden latency and thread stalls"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Validated latching telemetry",
+              "result": {
+                "text": "deterministic sub-millisecond execution"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Row Latching & Concurrency Architecture - Part 2",
+        "leftLabel": "Coarse Pessimistic Latching",
+        "rightLabel": "Fine-Grained Latching & Non-Blocking Primitives",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Improper lock orchestration triggers cascading database outages.",
+            "left": {
+              "code": "Coarse table or row lock",
+              "result": {
+                "text": "blocks unrelated concurrent transactions"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Minimal lock mode selection",
+              "result": {
+                "text": "permits high parallel throughput"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Backend workers stall waiting on exclusive row lock queues.",
+            "left": {
+              "code": "Blocking queue serialization",
+              "result": {
+                "text": "connection pool exhaustion cascade"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Non-blocking skip locked path",
+              "result": {
+                "text": "zero contention parallel dispatch"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Customer phone calls stall the entire bank teller line.",
+            "left": {
+              "code": "Blocked resource waiting line",
+              "result": {
+                "text": "overall system throughput collapse"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Immediate parallel resource access",
+              "result": {
+                "text": "smooth continuous service delivery"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Analyze blocked backend processes and lock wait durations.",
+            "left": {
+              "code": "Unmonitored lock wait conditions",
+              "result": {
+                "text": "hidden latency and thread stalls"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Validated latching telemetry",
+              "result": {
+                "text": "deterministic sub-millisecond execution"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "High-Throughput Job Queues: FOR UPDATE SKIP LOCKED & Zero-Contention Worker Fleets",
+      "codeHash": "b2117d4bb3ac241a45c3334d3d0ed802affa64f1288f497db3c0bdb908ee7f3b",
+      "spec": {
+        "template": "compare",
+        "title": "Row Latching & Concurrency Architecture - Part 3",
+        "leftLabel": "Coarse Pessimistic Latching",
+        "rightLabel": "Fine-Grained Latching & Non-Blocking Primitives",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Distributed task queues require efficient database coordination.",
+            "left": {
+              "code": "Coarse table or row lock",
+              "result": {
+                "text": "blocks unrelated concurrent transactions"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Minimal lock mode selection",
+              "result": {
+                "text": "permits high parallel throughput"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Naive job queue queries serialize worker fleets at the queue head.",
+            "left": {
+              "code": "Blocking queue serialization",
+              "result": {
+                "text": "connection pool exhaustion cascade"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Non-blocking skip locked path",
+              "result": {
+                "text": "zero contention parallel dispatch"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Parallel taxi ranks board waiting passengers simultaneously.",
+            "left": {
+              "code": "Blocked resource waiting line",
+              "result": {
+                "text": "overall system throughput collapse"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Immediate parallel resource access",
+              "result": {
+                "text": "smooth continuous service delivery"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Observe worker fleets claiming pending jobs without lock contention.",
+            "left": {
+              "code": "Unmonitored lock wait conditions",
+              "result": {
+                "text": "hidden latency and thread stalls"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Validated latching telemetry",
+              "result": {
+                "text": "deterministic sub-millisecond execution"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Row Latching & Concurrency Architecture - Part 3",
+        "leftLabel": "Coarse Pessimistic Latching",
+        "rightLabel": "Fine-Grained Latching & Non-Blocking Primitives",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Distributed task queues require efficient database coordination.",
+            "left": {
+              "code": "Coarse table or row lock",
+              "result": {
+                "text": "blocks unrelated concurrent transactions"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Minimal lock mode selection",
+              "result": {
+                "text": "permits high parallel throughput"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Naive job queue queries serialize worker fleets at the queue head.",
+            "left": {
+              "code": "Blocking queue serialization",
+              "result": {
+                "text": "connection pool exhaustion cascade"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Non-blocking skip locked path",
+              "result": {
+                "text": "zero contention parallel dispatch"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Parallel taxi ranks board waiting passengers simultaneously.",
+            "left": {
+              "code": "Blocked resource waiting line",
+              "result": {
+                "text": "overall system throughput collapse"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Immediate parallel resource access",
+              "result": {
+                "text": "smooth continuous service delivery"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Observe worker fleets claiming pending jobs without lock contention.",
+            "left": {
+              "code": "Unmonitored lock wait conditions",
+              "result": {
+                "text": "hidden latency and thread stalls"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Validated latching telemetry",
+              "result": {
+                "text": "deterministic sub-millisecond execution"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Non-Blocking Real-Time Reservation: NOWAIT Strategies & Fast-Fail Microservices",
+      "codeHash": "a9f93a00e7960e00be8467b9f665504fb94e9b885f6cc9acf5f3dcee857eca89",
+      "spec": {
+        "template": "compare",
+        "title": "Row Latching & Concurrency Architecture - Part 4",
+        "leftLabel": "Coarse Pessimistic Latching",
+        "rightLabel": "Fine-Grained Latching & Non-Blocking Primitives",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Interactive reservations require specific distinct physical resources.",
+            "left": {
+              "code": "Coarse table or row lock",
+              "result": {
+                "text": "blocks unrelated concurrent transactions"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Minimal lock mode selection",
+              "result": {
+                "text": "permits high parallel throughput"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Concurrent seat reservations stall waiting in connection queues.",
+            "left": {
+              "code": "Blocking queue serialization",
+              "result": {
+                "text": "connection pool exhaustion cascade"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Non-blocking skip locked path",
+              "result": {
+                "text": "zero contention parallel dispatch"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Private fitting room handle displays instant occupied status.",
+            "left": {
+              "code": "Blocked resource waiting line",
+              "result": {
+                "text": "overall system throughput collapse"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Immediate parallel resource access",
+              "result": {
+                "text": "smooth continuous service delivery"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect fast fail reservation status and lock exception codes.",
+            "left": {
+              "code": "Unmonitored lock wait conditions",
+              "result": {
+                "text": "hidden latency and thread stalls"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Validated latching telemetry",
+              "result": {
+                "text": "deterministic sub-millisecond execution"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Row Latching & Concurrency Architecture - Part 4",
+        "leftLabel": "Coarse Pessimistic Latching",
+        "rightLabel": "Fine-Grained Latching & Non-Blocking Primitives",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Interactive reservations require specific distinct physical resources.",
+            "left": {
+              "code": "Coarse table or row lock",
+              "result": {
+                "text": "blocks unrelated concurrent transactions"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Minimal lock mode selection",
+              "result": {
+                "text": "permits high parallel throughput"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Concurrent seat reservations stall waiting in connection queues.",
+            "left": {
+              "code": "Blocking queue serialization",
+              "result": {
+                "text": "connection pool exhaustion cascade"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Non-blocking skip locked path",
+              "result": {
+                "text": "zero contention parallel dispatch"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Private fitting room handle displays instant occupied status.",
+            "left": {
+              "code": "Blocked resource waiting line",
+              "result": {
+                "text": "overall system throughput collapse"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Immediate parallel resource access",
+              "result": {
+                "text": "smooth continuous service delivery"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect fast fail reservation status and lock exception codes.",
+            "left": {
+              "code": "Unmonitored lock wait conditions",
+              "result": {
+                "text": "hidden latency and thread stalls"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Validated latching telemetry",
+              "result": {
+                "text": "deterministic sub-millisecond execution"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Distributed Application Coordination: Postgres Advisory Locks (pg_advisory_lock vs pg_try_advisory_lock)",
+      "codeHash": "68779de03ee214c3ed50f6ea33d351db980b10022f7b262fb7fc7c0c4425af7d",
+      "spec": {
+        "template": "compare",
+        "title": "Row Latching & Concurrency Architecture - Part 5",
+        "leftLabel": "Coarse Pessimistic Latching",
+        "rightLabel": "Fine-Grained Latching & Non-Blocking Primitives",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Distributed applications require shared mutex coordination.",
+            "left": {
+              "code": "Coarse table or row lock",
+              "result": {
+                "text": "blocks unrelated concurrent transactions"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Minimal lock mode selection",
+              "result": {
+                "text": "permits high parallel throughput"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "External coordination clusters introduce network failure risks.",
+            "left": {
+              "code": "Blocking queue serialization",
+              "result": {
+                "text": "connection pool exhaustion cascade"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Non-blocking skip locked path",
+              "result": {
+                "text": "zero contention parallel dispatch"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Lobby wooden key indicates conference room occupancy status.",
+            "left": {
+              "code": "Blocked resource waiting line",
+              "result": {
+                "text": "overall system throughput collapse"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Immediate parallel resource access",
+              "result": {
+                "text": "smooth continuous service delivery"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verify distributed lock acquisition states and dispatch choices.",
+            "left": {
+              "code": "Unmonitored lock wait conditions",
+              "result": {
+                "text": "hidden latency and thread stalls"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Validated latching telemetry",
+              "result": {
+                "text": "deterministic sub-millisecond execution"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Row Latching & Concurrency Architecture - Part 5",
+        "leftLabel": "Coarse Pessimistic Latching",
+        "rightLabel": "Fine-Grained Latching & Non-Blocking Primitives",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Distributed applications require shared mutex coordination.",
+            "left": {
+              "code": "Coarse table or row lock",
+              "result": {
+                "text": "blocks unrelated concurrent transactions"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Minimal lock mode selection",
+              "result": {
+                "text": "permits high parallel throughput"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "External coordination clusters introduce network failure risks.",
+            "left": {
+              "code": "Blocking queue serialization",
+              "result": {
+                "text": "connection pool exhaustion cascade"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Non-blocking skip locked path",
+              "result": {
+                "text": "zero contention parallel dispatch"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Lobby wooden key indicates conference room occupancy status.",
+            "left": {
+              "code": "Blocked resource waiting line",
+              "result": {
+                "text": "overall system throughput collapse"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Immediate parallel resource access",
+              "result": {
+                "text": "smooth continuous service delivery"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verify distributed lock acquisition states and dispatch choices.",
+            "left": {
+              "code": "Unmonitored lock wait conditions",
+              "result": {
+                "text": "hidden latency and thread stalls"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Validated latching telemetry",
+              "result": {
+                "text": "deterministic sub-millisecond execution"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
