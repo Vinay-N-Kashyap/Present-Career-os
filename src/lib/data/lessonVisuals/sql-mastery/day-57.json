@@ -1,0 +1,829 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "sql-mastery",
+  "day": 57,
+  "promptSha": "bd3180473f3f05b00643a930a5338eeaa54a77e6434f30b086e90106c8c3fbc6",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Recursive CTE Architecture & Execution Mechanics",
+      "codeHash": "49df5b446db630413c05118f8499c2e633755570bdfd5fd969bb48b287745391",
+      "spec": {
+        "template": "compare",
+        "title": "Recursive Graph Analytics - Part 1",
+        "leftLabel": "Uncontrolled Recursive Traversal",
+        "rightLabel": "High-Velocity Graph Architecture",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Recursive queries traverse hierarchical graph structures with precision.",
+            "left": {
+              "code": "Unbounded recursive traversal on circular graph",
+              "result": {
+                "text": "infinite loop; 100% CPU lock; server crashes"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "CYCLE clause with path array tracking",
+              "result": {
+                "text": "detects cycles automatically; terminates safely"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Relational database engines execute recursive common table expressions.",
+            "left": {
+              "code": "Default unordered recursive output stream",
+              "result": {
+                "text": "arbitrary discovery order; disorganized UI tree"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "SEARCH DEPTH FIRST BY sort_key SET seq",
+              "result": {
+                "text": "clean hierarchical nesting; child follows parent"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Executive corporate ancestry chart traces leadership reporting chains.",
+            "left": {
+              "code": "Small work_mem on wide recursive graph",
+              "result": {
+                "text": "WorkTableScan spills to disk on every iteration"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Calibrated work_mem = 128MB with composite index",
+              "result": {
+                "text": "working table fits in RAM; 5x faster traversal"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect recursive mechanics matrix and computational complexities.",
+            "left": {
+              "code": "Unindexed recursive join on graph_edges",
+              "result": {
+                "text": "Seq Scan on every iteration step; high latency"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Composite B-tree index on (parent_id, child_id)",
+              "result": {
+                "text": "Index Scan on every step; sub-second query execution"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Recursive Graph Analytics - Part 1",
+        "leftLabel": "Uncontrolled Recursive Traversal",
+        "rightLabel": "High-Velocity Graph Architecture",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Recursive queries traverse hierarchical graph structures with precision.",
+            "left": {
+              "code": "Unbounded recursive traversal on circular graph",
+              "result": {
+                "text": "infinite loop; 100% CPU lock; server crashes"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "CYCLE clause with path array tracking",
+              "result": {
+                "text": "detects cycles automatically; terminates safely"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Relational database engines execute recursive common table expressions.",
+            "left": {
+              "code": "Default unordered recursive output stream",
+              "result": {
+                "text": "arbitrary discovery order; disorganized UI tree"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "SEARCH DEPTH FIRST BY sort_key SET seq",
+              "result": {
+                "text": "clean hierarchical nesting; child follows parent"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Executive corporate ancestry chart traces leadership reporting chains.",
+            "left": {
+              "code": "Small work_mem on wide recursive graph",
+              "result": {
+                "text": "WorkTableScan spills to disk on every iteration"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Calibrated work_mem = 128MB with composite index",
+              "result": {
+                "text": "working table fits in RAM; 5x faster traversal"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect recursive mechanics matrix and computational complexities.",
+            "left": {
+              "code": "Unindexed recursive join on graph_edges",
+              "result": {
+                "text": "Seq Scan on every iteration step; high latency"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Composite B-tree index on (parent_id, child_id)",
+              "result": {
+                "text": "Index Scan on every step; sub-second query execution"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Graph Traversal Strategies: Depth-First Search vs Breadth-First Search",
+      "codeHash": "278acfae84d165ab6317a4e69493b15e3551b356d624a238803a297c25873048",
+      "spec": {
+        "template": "compare",
+        "title": "Recursive Graph Analytics - Part 2",
+        "leftLabel": "Uncontrolled Recursive Traversal",
+        "rightLabel": "High-Velocity Graph Architecture",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Traversing hierarchical graph structures dictates algorithmic efficiency.",
+            "left": {
+              "code": "Unbounded recursive traversal on circular graph",
+              "result": {
+                "text": "infinite loop; 100% CPU lock; server crashes"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "CYCLE clause with path array tracking",
+              "result": {
+                "text": "detects cycles automatically; terminates safely"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Modern relational engines control graph traversal using search clauses.",
+            "left": {
+              "code": "Default unordered recursive output stream",
+              "result": {
+                "text": "arbitrary discovery order; disorganized UI tree"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "SEARCH DEPTH FIRST BY sort_key SET seq",
+              "result": {
+                "text": "clean hierarchical nesting; child follows parent"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Warehouse logistics inspector audits automated storage facility bays.",
+            "left": {
+              "code": "Small work_mem on wide recursive graph",
+              "result": {
+                "text": "WorkTableScan spills to disk on every iteration"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Calibrated work_mem = 128MB with composite index",
+              "result": {
+                "text": "working table fits in RAM; 5x faster traversal"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect graph traversal benchmarks and enterprise business use cases.",
+            "left": {
+              "code": "Unindexed recursive join on graph_edges",
+              "result": {
+                "text": "Seq Scan on every iteration step; high latency"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Composite B-tree index on (parent_id, child_id)",
+              "result": {
+                "text": "Index Scan on every step; sub-second query execution"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Recursive Graph Analytics - Part 2",
+        "leftLabel": "Uncontrolled Recursive Traversal",
+        "rightLabel": "High-Velocity Graph Architecture",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Traversing hierarchical graph structures dictates algorithmic efficiency.",
+            "left": {
+              "code": "Unbounded recursive traversal on circular graph",
+              "result": {
+                "text": "infinite loop; 100% CPU lock; server crashes"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "CYCLE clause with path array tracking",
+              "result": {
+                "text": "detects cycles automatically; terminates safely"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Modern relational engines control graph traversal using search clauses.",
+            "left": {
+              "code": "Default unordered recursive output stream",
+              "result": {
+                "text": "arbitrary discovery order; disorganized UI tree"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "SEARCH DEPTH FIRST BY sort_key SET seq",
+              "result": {
+                "text": "clean hierarchical nesting; child follows parent"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Warehouse logistics inspector audits automated storage facility bays.",
+            "left": {
+              "code": "Small work_mem on wide recursive graph",
+              "result": {
+                "text": "WorkTableScan spills to disk on every iteration"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Calibrated work_mem = 128MB with composite index",
+              "result": {
+                "text": "working table fits in RAM; 5x faster traversal"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect graph traversal benchmarks and enterprise business use cases.",
+            "left": {
+              "code": "Unindexed recursive join on graph_edges",
+              "result": {
+                "text": "Seq Scan on every iteration step; high latency"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Composite B-tree index on (parent_id, child_id)",
+              "result": {
+                "text": "Index Scan on every step; sub-second query execution"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cycle Detection & Graph Topology Invariants",
+      "codeHash": "2a6ec8e205c67d788697655f315d34a4f22c939b7fc829ec5a8ee9ad3b9f1d72",
+      "spec": {
+        "template": "compare",
+        "title": "Recursive Graph Analytics - Part 3",
+        "leftLabel": "Uncontrolled Recursive Traversal",
+        "rightLabel": "High-Velocity Graph Architecture",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Real world data graphs frequently contain circular cyclic relationships.",
+            "left": {
+              "code": "Unbounded recursive traversal on circular graph",
+              "result": {
+                "text": "infinite loop; 100% CPU lock; server crashes"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "CYCLE clause with path array tracking",
+              "result": {
+                "text": "detects cycles automatically; terminates safely"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Recursive queries across cyclic graphs trigger infinite execution loops.",
+            "left": {
+              "code": "Default unordered recursive output stream",
+              "result": {
+                "text": "arbitrary discovery order; disorganized UI tree"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "SEARCH DEPTH FIRST BY sort_key SET seq",
+              "result": {
+                "text": "clean hierarchical nesting; child follows parent"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Air traffic controller navigates connecting flights across airports.",
+            "left": {
+              "code": "Small work_mem on wide recursive graph",
+              "result": {
+                "text": "WorkTableScan spills to disk on every iteration"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Calibrated work_mem = 128MB with composite index",
+              "result": {
+                "text": "working table fits in RAM; 5x faster traversal"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect cycle detection mechanisms and production resilience ratings.",
+            "left": {
+              "code": "Unindexed recursive join on graph_edges",
+              "result": {
+                "text": "Seq Scan on every iteration step; high latency"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Composite B-tree index on (parent_id, child_id)",
+              "result": {
+                "text": "Index Scan on every step; sub-second query execution"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Recursive Graph Analytics - Part 3",
+        "leftLabel": "Uncontrolled Recursive Traversal",
+        "rightLabel": "High-Velocity Graph Architecture",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Real world data graphs frequently contain circular cyclic relationships.",
+            "left": {
+              "code": "Unbounded recursive traversal on circular graph",
+              "result": {
+                "text": "infinite loop; 100% CPU lock; server crashes"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "CYCLE clause with path array tracking",
+              "result": {
+                "text": "detects cycles automatically; terminates safely"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Recursive queries across cyclic graphs trigger infinite execution loops.",
+            "left": {
+              "code": "Default unordered recursive output stream",
+              "result": {
+                "text": "arbitrary discovery order; disorganized UI tree"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "SEARCH DEPTH FIRST BY sort_key SET seq",
+              "result": {
+                "text": "clean hierarchical nesting; child follows parent"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Air traffic controller navigates connecting flights across airports.",
+            "left": {
+              "code": "Small work_mem on wide recursive graph",
+              "result": {
+                "text": "WorkTableScan spills to disk on every iteration"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Calibrated work_mem = 128MB with composite index",
+              "result": {
+                "text": "working table fits in RAM; 5x faster traversal"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect cycle detection mechanisms and production resilience ratings.",
+            "left": {
+              "code": "Unindexed recursive join on graph_edges",
+              "result": {
+                "text": "Seq Scan on every iteration step; high latency"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Composite B-tree index on (parent_id, child_id)",
+              "result": {
+                "text": "Index Scan on every step; sub-second query execution"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Hierarchies, Transitive Closures & Bill-of-Materials (BOM) Explosion",
+      "codeHash": "05c7764476af9cb0383f4eeb242d2128768785625858443db6c838871485acae",
+      "spec": {
+        "template": "compare",
+        "title": "Recursive Graph Analytics - Part 4",
+        "leftLabel": "Uncontrolled Recursive Traversal",
+        "rightLabel": "High-Velocity Graph Architecture",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Manufacturing operations require recursive bill of materials explosion.",
+            "left": {
+              "code": "Unbounded recursive traversal on circular graph",
+              "result": {
+                "text": "infinite loop; 100% CPU lock; server crashes"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "CYCLE clause with path array tracking",
+              "result": {
+                "text": "detects cycles automatically; terminates safely"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Finished electric vehicles consist of major sub assemblies and parts.",
+            "left": {
+              "code": "Default unordered recursive output stream",
+              "result": {
+                "text": "arbitrary discovery order; disorganized UI tree"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "SEARCH DEPTH FIRST BY sort_key SET seq",
+              "result": {
+                "text": "clean hierarchical nesting; child follows parent"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Aerospace manufacturer calculates complete aircraft production costs.",
+            "left": {
+              "code": "Small work_mem on wide recursive graph",
+              "result": {
+                "text": "WorkTableScan spills to disk on every iteration"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Calibrated work_mem = 128MB with composite index",
+              "result": {
+                "text": "working table fits in RAM; 5x faster traversal"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect materials explosion matrix and supply chain impact analyses.",
+            "left": {
+              "code": "Unindexed recursive join on graph_edges",
+              "result": {
+                "text": "Seq Scan on every iteration step; high latency"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Composite B-tree index on (parent_id, child_id)",
+              "result": {
+                "text": "Index Scan on every step; sub-second query execution"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Recursive Graph Analytics - Part 4",
+        "leftLabel": "Uncontrolled Recursive Traversal",
+        "rightLabel": "High-Velocity Graph Architecture",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Manufacturing operations require recursive bill of materials explosion.",
+            "left": {
+              "code": "Unbounded recursive traversal on circular graph",
+              "result": {
+                "text": "infinite loop; 100% CPU lock; server crashes"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "CYCLE clause with path array tracking",
+              "result": {
+                "text": "detects cycles automatically; terminates safely"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Finished electric vehicles consist of major sub assemblies and parts.",
+            "left": {
+              "code": "Default unordered recursive output stream",
+              "result": {
+                "text": "arbitrary discovery order; disorganized UI tree"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "SEARCH DEPTH FIRST BY sort_key SET seq",
+              "result": {
+                "text": "clean hierarchical nesting; child follows parent"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Aerospace manufacturer calculates complete aircraft production costs.",
+            "left": {
+              "code": "Small work_mem on wide recursive graph",
+              "result": {
+                "text": "WorkTableScan spills to disk on every iteration"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Calibrated work_mem = 128MB with composite index",
+              "result": {
+                "text": "working table fits in RAM; 5x faster traversal"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect materials explosion matrix and supply chain impact analyses.",
+            "left": {
+              "code": "Unindexed recursive join on graph_edges",
+              "result": {
+                "text": "Seq Scan on every iteration step; high latency"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Composite B-tree index on (parent_id, child_id)",
+              "result": {
+                "text": "Index Scan on every step; sub-second query execution"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Diagnostic Forensics, EXPLAIN Telemetry & Recursive Work_Mem Optimization Runbooks",
+      "codeHash": "2a917227bf4ef02eae51521660c48dc24d650362f05b2d31c57990be5b8f2d19",
+      "spec": {
+        "template": "compare",
+        "title": "Recursive Graph Analytics - Part 5",
+        "leftLabel": "Uncontrolled Recursive Traversal",
+        "rightLabel": "High-Velocity Graph Architecture",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Production diagnostic forensics evaluate recursive execution telemetries.",
+            "left": {
+              "code": "Unbounded recursive traversal on circular graph",
+              "result": {
+                "text": "infinite loop; 100% CPU lock; server crashes"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "CYCLE clause with path array tracking",
+              "result": {
+                "text": "detects cycles automatically; terminates safely"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Reliability engineers scrutinize recursive execution plan nodes.",
+            "left": {
+              "code": "Default unordered recursive output stream",
+              "result": {
+                "text": "arbitrary discovery order; disorganized UI tree"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "SEARCH DEPTH FIRST BY sort_key SET seq",
+              "result": {
+                "text": "clean hierarchical nesting; child follows parent"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Chemical manufacturing refinery operates automated safety relief valves.",
+            "left": {
+              "code": "Small work_mem on wide recursive graph",
+              "result": {
+                "text": "WorkTableScan spills to disk on every iteration"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Calibrated work_mem = 128MB with composite index",
+              "result": {
+                "text": "working table fits in RAM; 5x faster traversal"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect recursive query tuning runbook and expected benefits.",
+            "left": {
+              "code": "Unindexed recursive join on graph_edges",
+              "result": {
+                "text": "Seq Scan on every iteration step; high latency"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Composite B-tree index on (parent_id, child_id)",
+              "result": {
+                "text": "Index Scan on every step; sub-second query execution"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Recursive Graph Analytics - Part 5",
+        "leftLabel": "Uncontrolled Recursive Traversal",
+        "rightLabel": "High-Velocity Graph Architecture",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Production diagnostic forensics evaluate recursive execution telemetries.",
+            "left": {
+              "code": "Unbounded recursive traversal on circular graph",
+              "result": {
+                "text": "infinite loop; 100% CPU lock; server crashes"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "CYCLE clause with path array tracking",
+              "result": {
+                "text": "detects cycles automatically; terminates safely"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Reliability engineers scrutinize recursive execution plan nodes.",
+            "left": {
+              "code": "Default unordered recursive output stream",
+              "result": {
+                "text": "arbitrary discovery order; disorganized UI tree"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "SEARCH DEPTH FIRST BY sort_key SET seq",
+              "result": {
+                "text": "clean hierarchical nesting; child follows parent"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Chemical manufacturing refinery operates automated safety relief valves.",
+            "left": {
+              "code": "Small work_mem on wide recursive graph",
+              "result": {
+                "text": "WorkTableScan spills to disk on every iteration"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Calibrated work_mem = 128MB with composite index",
+              "result": {
+                "text": "working table fits in RAM; 5x faster traversal"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect recursive query tuning runbook and expected benefits.",
+            "left": {
+              "code": "Unindexed recursive join on graph_edges",
+              "result": {
+                "text": "Seq Scan on every iteration step; high latency"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Composite B-tree index on (parent_id, child_id)",
+              "result": {
+                "text": "Index Scan on every step; sub-second query execution"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
