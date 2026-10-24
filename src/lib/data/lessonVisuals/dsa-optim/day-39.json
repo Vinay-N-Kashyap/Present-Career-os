@@ -1,0 +1,779 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "dsa-optim",
+  "day": 39,
+  "promptSha": "dsa-optim-day-39-aho-corasick-dlp-pipeline",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Multi-Pattern Search Problem, Keyword Trees (Trie) & Limits of Linear Single-Pattern Scans",
+      "codeHash": "ec6e91f19995b33721b11570218e7e5f308c9c5e1c9877b22543bcc4dba0fb90",
+      "filled": {
+        "template": "table",
+        "title": "Keyword Prefix Trie Hierarchy.",
+        "columns": [
+          "Trie Node Level",
+          "Character Edge",
+          "Prefix State"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Keyword trie organizes dictionary vocabulary into prefix search trees.",
+            "rows": [
+              [
+                "Root Vertex",
+                "Initial Branches",
+                "Empty String Baseline"
+              ],
+              [
+                "Interior Node",
+                "Character Transition",
+                "Shared Substring Prefix"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Linear dictionary scanning incurs heavy computational overhead.",
+            "rows": [
+              [
+                "Root Vertex",
+                "Initial Branches",
+                "Empty String Baseline"
+              ],
+              [
+                "Interior Node",
+                "Character Transition",
+                "Shared Substring Prefix"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Network firewall inspects packet streams for malicious attack patterns.",
+            "rows": [
+              [
+                "Root Vertex",
+                "Initial Branches",
+                "Empty String Baseline"
+              ],
+              [
+                "Interior Node",
+                "Character Transition",
+                "Shared Substring Prefix"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Prefix trie structures dictionary keywords across connected tree nodes.",
+            "rows": [
+              [
+                "Root Vertex",
+                "Initial Branches",
+                "Empty String Baseline"
+              ],
+              [
+                "Interior Node",
+                "Character Transition",
+                "Shared Substring Prefix"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Keyword Prefix Trie Hierarchy.",
+        "columns": [
+          "Trie Node Level",
+          "Character Edge",
+          "Prefix State"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Keyword trie organizes dictionary vocabulary into prefix search trees.",
+            "rows": [
+              [
+                "Root Vertex",
+                "Initial Branches",
+                "Empty String Baseline"
+              ],
+              [
+                "Interior Node",
+                "Character Transition",
+                "Shared Substring Prefix"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Linear dictionary scanning incurs heavy computational overhead.",
+            "rows": [
+              [
+                "Root Vertex",
+                "Initial Branches",
+                "Empty String Baseline"
+              ],
+              [
+                "Interior Node",
+                "Character Transition",
+                "Shared Substring Prefix"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Network firewall inspects packet streams for malicious attack patterns.",
+            "rows": [
+              [
+                "Root Vertex",
+                "Initial Branches",
+                "Empty String Baseline"
+              ],
+              [
+                "Interior Node",
+                "Character Transition",
+                "Shared Substring Prefix"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Prefix trie structures dictionary keywords across connected tree nodes.",
+            "rows": [
+              [
+                "Root Vertex",
+                "Initial Branches",
+                "Empty String Baseline"
+              ],
+              [
+                "Interior Node",
+                "Character Transition",
+                "Shared Substring Prefix"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Aho-Corasick Automaton: Trie Construction, Breadth-First Failure Links",
+      "codeHash": "6e960e86f8d7a80763825452a1e26b87d3293d35cca57ae034028e0b88ed6f33",
+      "filled": {
+        "template": "table",
+        "title": "Aho-Corasick Breadth First Failure Machine.",
+        "columns": [
+          "Automaton State",
+          "Failure Pointer",
+          "Operational Effect"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Automaton constructs failure links using breadth first search traversal.",
+            "rows": [
+              [
+                "Depth One Nodes",
+                "Root Node Fallback",
+                "Single Character Suffix"
+              ],
+              [
+                "Deeper States",
+                "Longest Proper Suffix",
+                "Zero Pointer Backtracking"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Fallback links redirect failed transitions to longest proper suffixes.",
+            "rows": [
+              [
+                "Depth One Nodes",
+                "Root Node Fallback",
+                "Single Character Suffix"
+              ],
+              [
+                "Deeper States",
+                "Longest Proper Suffix",
+                "Zero Pointer Backtracking"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Antivirus scanner correlates malware definitions across binary payloads.",
+            "rows": [
+              [
+                "Depth One Nodes",
+                "Root Node Fallback",
+                "Single Character Suffix"
+              ],
+              [
+                "Deeper States",
+                "Longest Proper Suffix",
+                "Zero Pointer Backtracking"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Breadth first queue configures automaton fallback pointers seamlessly.",
+            "rows": [
+              [
+                "Depth One Nodes",
+                "Root Node Fallback",
+                "Single Character Suffix"
+              ],
+              [
+                "Deeper States",
+                "Longest Proper Suffix",
+                "Zero Pointer Backtracking"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Aho-Corasick Breadth First Failure Machine.",
+        "columns": [
+          "Automaton State",
+          "Failure Pointer",
+          "Operational Effect"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Automaton constructs failure links using breadth first search traversal.",
+            "rows": [
+              [
+                "Depth One Nodes",
+                "Root Node Fallback",
+                "Single Character Suffix"
+              ],
+              [
+                "Deeper States",
+                "Longest Proper Suffix",
+                "Zero Pointer Backtracking"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Fallback links redirect failed transitions to longest proper suffixes.",
+            "rows": [
+              [
+                "Depth One Nodes",
+                "Root Node Fallback",
+                "Single Character Suffix"
+              ],
+              [
+                "Deeper States",
+                "Longest Proper Suffix",
+                "Zero Pointer Backtracking"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Antivirus scanner correlates malware definitions across binary payloads.",
+            "rows": [
+              [
+                "Depth One Nodes",
+                "Root Node Fallback",
+                "Single Character Suffix"
+              ],
+              [
+                "Deeper States",
+                "Longest Proper Suffix",
+                "Zero Pointer Backtracking"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Breadth first queue configures automaton fallback pointers seamlessly.",
+            "rows": [
+              [
+                "Depth One Nodes",
+                "Root Node Fallback",
+                "Single Character Suffix"
+              ],
+              [
+                "Deeper States",
+                "Longest Proper Suffix",
+                "Zero Pointer Backtracking"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Output Compression via Dictionary Suffix Links & Amortized O(N + M + K) Traversal",
+      "codeHash": "b8c08b34593f676d494222c464767df28eb4b9fdd9c09d215828905fd58cfa41",
+      "filled": {
+        "template": "table",
+        "title": "Dictionary Suffix Link Output Matrix.",
+        "columns": [
+          "Current State",
+          "Output Link Target",
+          "Traversal Bound"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Dictionary suffix links compress output paths for overlapping matches.",
+            "rows": [
+              [
+                "Terminal Pattern Node",
+                "Immediate Pattern Match",
+                "Constant Time Emission"
+              ],
+              [
+                "Internal Branch State",
+                "Nearest Terminal Ancestor",
+                "Proportional Match Scan"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Amortized linear traversal bounds search time across text corpuses.",
+            "rows": [
+              [
+                "Terminal Pattern Node",
+                "Immediate Pattern Match",
+                "Constant Time Emission"
+              ],
+              [
+                "Internal Branch State",
+                "Nearest Terminal Ancestor",
+                "Proportional Match Scan"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Distributed search engine matches multiword entity phrases in documents.",
+            "rows": [
+              [
+                "Terminal Pattern Node",
+                "Immediate Pattern Match",
+                "Constant Time Emission"
+              ],
+              [
+                "Internal Branch State",
+                "Nearest Terminal Ancestor",
+                "Proportional Match Scan"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Dictionary suffix chains discover all overlapping pattern occurrences.",
+            "rows": [
+              [
+                "Terminal Pattern Node",
+                "Immediate Pattern Match",
+                "Constant Time Emission"
+              ],
+              [
+                "Internal Branch State",
+                "Nearest Terminal Ancestor",
+                "Proportional Match Scan"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Dictionary Suffix Link Output Matrix.",
+        "columns": [
+          "Current State",
+          "Output Link Target",
+          "Traversal Bound"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Dictionary suffix links compress output paths for overlapping matches.",
+            "rows": [
+              [
+                "Terminal Pattern Node",
+                "Immediate Pattern Match",
+                "Constant Time Emission"
+              ],
+              [
+                "Internal Branch State",
+                "Nearest Terminal Ancestor",
+                "Proportional Match Scan"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Amortized linear traversal bounds search time across text corpuses.",
+            "rows": [
+              [
+                "Terminal Pattern Node",
+                "Immediate Pattern Match",
+                "Constant Time Emission"
+              ],
+              [
+                "Internal Branch State",
+                "Nearest Terminal Ancestor",
+                "Proportional Match Scan"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Distributed search engine matches multiword entity phrases in documents.",
+            "rows": [
+              [
+                "Terminal Pattern Node",
+                "Immediate Pattern Match",
+                "Constant Time Emission"
+              ],
+              [
+                "Internal Branch State",
+                "Nearest Terminal Ancestor",
+                "Proportional Match Scan"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Dictionary suffix chains discover all overlapping pattern occurrences.",
+            "rows": [
+              [
+                "Terminal Pattern Node",
+                "Immediate Pattern Match",
+                "Constant Time Emission"
+              ],
+              [
+                "Internal Branch State",
+                "Nearest Terminal Ancestor",
+                "Proportional Match Scan"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "High-Throughput Automaton Compilation: Deterministic Finite Automaton (DFA) Transition Matrices",
+      "codeHash": "c97ba80a6c4d36c64dd147ec19fa07c1ec233b998460140b1f4ee6677e7c8c26",
+      "filled": {
+        "template": "table",
+        "title": "Compiled Deterministic Finite Transition Table.",
+        "columns": [
+          "Current DFA State",
+          "Input Byte Value",
+          "Transition Execution"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Compiled deterministic automaton eliminates latency during transitions.",
+            "rows": [
+              [
+                "Active State Index",
+                "Direct Character Transition",
+                "Single Cycle Matrix Shift"
+              ],
+              [
+                "Fallback Target State",
+                "Precomputed Failure Matrix",
+                "Zero Loop Latency Bound"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Dense transition matrix precomputes state shifts for character sets.",
+            "rows": [
+              [
+                "Active State Index",
+                "Direct Character Transition",
+                "Single Cycle Matrix Shift"
+              ],
+              [
+                "Fallback Target State",
+                "Precomputed Failure Matrix",
+                "Zero Loop Latency Bound"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Network packet broker processes streaming traffic across hardware switches.",
+            "rows": [
+              [
+                "Active State Index",
+                "Direct Character Transition",
+                "Single Cycle Matrix Shift"
+              ],
+              [
+                "Fallback Target State",
+                "Precomputed Failure Matrix",
+                "Zero Loop Latency Bound"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Compiled transition matrix executes state shifts with zero branch delays.",
+            "rows": [
+              [
+                "Active State Index",
+                "Direct Character Transition",
+                "Single Cycle Matrix Shift"
+              ],
+              [
+                "Fallback Target State",
+                "Precomputed Failure Matrix",
+                "Zero Loop Latency Bound"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Compiled Deterministic Finite Transition Table.",
+        "columns": [
+          "Current DFA State",
+          "Input Byte Value",
+          "Transition Execution"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Compiled deterministic automaton eliminates latency during transitions.",
+            "rows": [
+              [
+                "Active State Index",
+                "Direct Character Transition",
+                "Single Cycle Matrix Shift"
+              ],
+              [
+                "Fallback Target State",
+                "Precomputed Failure Matrix",
+                "Zero Loop Latency Bound"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Dense transition matrix precomputes state shifts for character sets.",
+            "rows": [
+              [
+                "Active State Index",
+                "Direct Character Transition",
+                "Single Cycle Matrix Shift"
+              ],
+              [
+                "Fallback Target State",
+                "Precomputed Failure Matrix",
+                "Zero Loop Latency Bound"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Network packet broker processes streaming traffic across hardware switches.",
+            "rows": [
+              [
+                "Active State Index",
+                "Direct Character Transition",
+                "Single Cycle Matrix Shift"
+              ],
+              [
+                "Fallback Target State",
+                "Precomputed Failure Matrix",
+                "Zero Loop Latency Bound"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Compiled transition matrix executes state shifts with zero branch delays.",
+            "rows": [
+              [
+                "Active State Index",
+                "Direct Character Transition",
+                "Single Cycle Matrix Shift"
+              ],
+              [
+                "Fallback Target State",
+                "Precomputed Failure Matrix",
+                "Zero Loop Latency Bound"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Application: Real-Time Content Moderation, PII Redaction & Data Loss Prevention (DLP) Engine",
+      "codeHash": "f71ac4d0ac47bce22b6fd56e3bb69a4814db0f94b971310d3ece37a07a1ae8a0",
+      "filled": {
+        "template": "table",
+        "title": "Enterprise Data Loss Prevention Engine.",
+        "columns": [
+          "Policy Category",
+          "Inspection Scope",
+          "Compliance Action"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Content moderation engine redacts sensitive information from text data.",
+            "rows": [
+              [
+                "Personally Identifiable Info",
+                "Inbound Message Stream",
+                "In Place Character Redaction"
+              ],
+              [
+                "Confidential Credentials",
+                "Outbound Transit Payloads",
+                "Tamper Evident Audit Log"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Compliance filter generates structured audit records for security teams.",
+            "rows": [
+              [
+                "Personally Identifiable Info",
+                "Inbound Message Stream",
+                "In Place Character Redaction"
+              ],
+              [
+                "Confidential Credentials",
+                "Outbound Transit Payloads",
+                "Tamper Evident Audit Log"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Financial trading platform monitors outbound chats for compliance.",
+            "rows": [
+              [
+                "Personally Identifiable Info",
+                "Inbound Message Stream",
+                "In Place Character Redaction"
+              ],
+              [
+                "Confidential Credentials",
+                "Outbound Transit Payloads",
+                "Tamper Evident Audit Log"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspection filter compiles sensitive keyword rules for masking.",
+            "rows": [
+              [
+                "Personally Identifiable Info",
+                "Inbound Message Stream",
+                "In Place Character Redaction"
+              ],
+              [
+                "Confidential Credentials",
+                "Outbound Transit Payloads",
+                "Tamper Evident Audit Log"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Enterprise Data Loss Prevention Engine.",
+        "columns": [
+          "Policy Category",
+          "Inspection Scope",
+          "Compliance Action"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Content moderation engine redacts sensitive information from text data.",
+            "rows": [
+              [
+                "Personally Identifiable Info",
+                "Inbound Message Stream",
+                "In Place Character Redaction"
+              ],
+              [
+                "Confidential Credentials",
+                "Outbound Transit Payloads",
+                "Tamper Evident Audit Log"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Compliance filter generates structured audit records for security teams.",
+            "rows": [
+              [
+                "Personally Identifiable Info",
+                "Inbound Message Stream",
+                "In Place Character Redaction"
+              ],
+              [
+                "Confidential Credentials",
+                "Outbound Transit Payloads",
+                "Tamper Evident Audit Log"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Financial trading platform monitors outbound chats for compliance.",
+            "rows": [
+              [
+                "Personally Identifiable Info",
+                "Inbound Message Stream",
+                "In Place Character Redaction"
+              ],
+              [
+                "Confidential Credentials",
+                "Outbound Transit Payloads",
+                "Tamper Evident Audit Log"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspection filter compiles sensitive keyword rules for masking.",
+            "rows": [
+              [
+                "Personally Identifiable Info",
+                "Inbound Message Stream",
+                "In Place Character Redaction"
+              ],
+              [
+                "Confidential Credentials",
+                "Outbound Transit Payloads",
+                "Tamper Evident Audit Log"
+              ]
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
