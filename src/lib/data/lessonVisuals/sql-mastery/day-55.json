@@ -1,0 +1,829 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "sql-mastery",
+  "day": 55,
+  "promptSha": "91ef26fdfeede0f9b5c95fde8211ccd6b5e4340a5d41161ef3006fa70e29a8ac",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Capstone Architecture Blueprint: Autonomous Performance Control Plane",
+      "codeHash": "4f18d5b8a9eb3dc61e73b92524a0cd1dd8ae93226fbf2afe1815f0f054f8217f",
+      "spec": {
+        "template": "compare",
+        "title": "Autonomous Optimizer Engine - Part 1",
+        "leftLabel": "Manual Reactive Administration",
+        "rightLabel": "Autonomous Control Plane",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Milestone capstone synthesizes advanced query optimization architectures.",
+            "left": {
+              "code": "Manual EXPLAIN triage after outages",
+              "result": {
+                "text": "hours of downtime diagnosing query plan drift"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Autonomous closed-loop control plane",
+              "result": {
+                "text": "real-time telemetry detects and fixes regressions"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Modern cloud scale enterprise database architectures process petabytes.",
+            "left": {
+              "code": "Legacy random_page_cost = 4.0",
+              "result": {
+                "text": "planner wrongly avoids indexes on fast NVMe flash"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Dynamic cost calibrator (1.05)",
+              "result": {
+                "text": "aligns cost model with physical hardware reality"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Spacecraft flight control computer reads telemetry and fires thrusters.",
+            "left": {
+              "code": "Unshielded parameter sniffing",
+              "result": {
+                "text": "locked-in generic plan stalls API with 30s scans"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Adaptive plan cache shield",
+              "result": {
+                "text": "dynamically injects force_custom_plan for skew"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect autonomous optimizer control plane query and engine subsystems.",
+            "left": {
+              "code": "Unbounded parallel JIT compilation",
+              "result": {
+                "text": "OOM killer terminates database under analytical load"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "JIT telemetry governance engine",
+              "result": {
+                "text": "bounds worker memory; enforces 15% emission limit"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Autonomous Optimizer Engine - Part 1",
+        "leftLabel": "Manual Reactive Administration",
+        "rightLabel": "Autonomous Control Plane",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Milestone capstone synthesizes advanced query optimization architectures.",
+            "left": {
+              "code": "Manual EXPLAIN triage after outages",
+              "result": {
+                "text": "hours of downtime diagnosing query plan drift"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Autonomous closed-loop control plane",
+              "result": {
+                "text": "real-time telemetry detects and fixes regressions"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Modern cloud scale enterprise database architectures process petabytes.",
+            "left": {
+              "code": "Legacy random_page_cost = 4.0",
+              "result": {
+                "text": "planner wrongly avoids indexes on fast NVMe flash"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Dynamic cost calibrator (1.05)",
+              "result": {
+                "text": "aligns cost model with physical hardware reality"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Spacecraft flight control computer reads telemetry and fires thrusters.",
+            "left": {
+              "code": "Unshielded parameter sniffing",
+              "result": {
+                "text": "locked-in generic plan stalls API with 30s scans"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Adaptive plan cache shield",
+              "result": {
+                "text": "dynamically injects force_custom_plan for skew"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect autonomous optimizer control plane query and engine subsystems.",
+            "left": {
+              "code": "Unbounded parallel JIT compilation",
+              "result": {
+                "text": "OOM killer terminates database under analytical load"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "JIT telemetry governance engine",
+              "result": {
+                "text": "bounds worker memory; enforces 15% emission limit"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Dynamic Cost Calibration & Workload-Aware Storage Modeling",
+      "codeHash": "76b1b553a61df90cd9c30f2f888c5c4c98e8b6808bf97261c8f2361ebe679d58",
+      "spec": {
+        "template": "compare",
+        "title": "Autonomous Optimizer Engine - Part 2",
+        "leftLabel": "Manual Reactive Administration",
+        "rightLabel": "Autonomous Control Plane",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Dynamic cost calibration adjusts optimizer parameters for storage systems.",
+            "left": {
+              "code": "Manual EXPLAIN triage after outages",
+              "result": {
+                "text": "hours of downtime diagnosing query plan drift"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Autonomous closed-loop control plane",
+              "result": {
+                "text": "real-time telemetry detects and fixes regressions"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Modern flash storage arrays eliminate physical rotational seek penalties.",
+            "left": {
+              "code": "Legacy random_page_cost = 4.0",
+              "result": {
+                "text": "planner wrongly avoids indexes on fast NVMe flash"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Dynamic cost calibrator (1.05)",
+              "result": {
+                "text": "aligns cost model with physical hardware reality"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Intelligent highway traffic management system adjusts digital speed signs.",
+            "left": {
+              "code": "Unshielded parameter sniffing",
+              "result": {
+                "text": "locked-in generic plan stalls API with 30s scans"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Adaptive plan cache shield",
+              "result": {
+                "text": "dynamically injects force_custom_plan for skew"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect dynamic cost calibration engine query and storage hardware tiers.",
+            "left": {
+              "code": "Unbounded parallel JIT compilation",
+              "result": {
+                "text": "OOM killer terminates database under analytical load"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "JIT telemetry governance engine",
+              "result": {
+                "text": "bounds worker memory; enforces 15% emission limit"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Autonomous Optimizer Engine - Part 2",
+        "leftLabel": "Manual Reactive Administration",
+        "rightLabel": "Autonomous Control Plane",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Dynamic cost calibration adjusts optimizer parameters for storage systems.",
+            "left": {
+              "code": "Manual EXPLAIN triage after outages",
+              "result": {
+                "text": "hours of downtime diagnosing query plan drift"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Autonomous closed-loop control plane",
+              "result": {
+                "text": "real-time telemetry detects and fixes regressions"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Modern flash storage arrays eliminate physical rotational seek penalties.",
+            "left": {
+              "code": "Legacy random_page_cost = 4.0",
+              "result": {
+                "text": "planner wrongly avoids indexes on fast NVMe flash"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Dynamic cost calibrator (1.05)",
+              "result": {
+                "text": "aligns cost model with physical hardware reality"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Intelligent highway traffic management system adjusts digital speed signs.",
+            "left": {
+              "code": "Unshielded parameter sniffing",
+              "result": {
+                "text": "locked-in generic plan stalls API with 30s scans"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Adaptive plan cache shield",
+              "result": {
+                "text": "dynamically injects force_custom_plan for skew"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect dynamic cost calibration engine query and storage hardware tiers.",
+            "left": {
+              "code": "Unbounded parallel JIT compilation",
+              "result": {
+                "text": "OOM killer terminates database under analytical load"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "JIT telemetry governance engine",
+              "result": {
+                "text": "bounds worker memory; enforces 15% emission limit"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Adaptive Plan Cache Shielding: Parameter Sniffing Protection & Cache Toggling",
+      "codeHash": "62b1f6fd2346ce787247c7e2d6ae01c712d80ecc659ff0b69e2fa2204f43b897",
+      "spec": {
+        "template": "compare",
+        "title": "Autonomous Optimizer Engine - Part 3",
+        "leftLabel": "Manual Reactive Administration",
+        "rightLabel": "Autonomous Control Plane",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Adaptive plan cache shielding protects databases against parameter skew.",
+            "left": {
+              "code": "Manual EXPLAIN triage after outages",
+              "result": {
+                "text": "hours of downtime diagnosing query plan drift"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Autonomous closed-loop control plane",
+              "result": {
+                "text": "real-time telemetry detects and fixes regressions"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Enterprise tables with non uniform data skew challenge query planners.",
+            "left": {
+              "code": "Legacy random_page_cost = 4.0",
+              "result": {
+                "text": "planner wrongly avoids indexes on fast NVMe flash"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Dynamic cost calibrator (1.05)",
+              "result": {
+                "text": "aligns cost model with physical hardware reality"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Airport security automated passport screening gate verifies travelers.",
+            "left": {
+              "code": "Unshielded parameter sniffing",
+              "result": {
+                "text": "locked-in generic plan stalls API with 30s scans"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Adaptive plan cache shield",
+              "result": {
+                "text": "dynamically injects force_custom_plan for skew"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect adaptive plan cache governor query and workload categories.",
+            "left": {
+              "code": "Unbounded parallel JIT compilation",
+              "result": {
+                "text": "OOM killer terminates database under analytical load"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "JIT telemetry governance engine",
+              "result": {
+                "text": "bounds worker memory; enforces 15% emission limit"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Autonomous Optimizer Engine - Part 3",
+        "leftLabel": "Manual Reactive Administration",
+        "rightLabel": "Autonomous Control Plane",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Adaptive plan cache shielding protects databases against parameter skew.",
+            "left": {
+              "code": "Manual EXPLAIN triage after outages",
+              "result": {
+                "text": "hours of downtime diagnosing query plan drift"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Autonomous closed-loop control plane",
+              "result": {
+                "text": "real-time telemetry detects and fixes regressions"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Enterprise tables with non uniform data skew challenge query planners.",
+            "left": {
+              "code": "Legacy random_page_cost = 4.0",
+              "result": {
+                "text": "planner wrongly avoids indexes on fast NVMe flash"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Dynamic cost calibrator (1.05)",
+              "result": {
+                "text": "aligns cost model with physical hardware reality"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Airport security automated passport screening gate verifies travelers.",
+            "left": {
+              "code": "Unshielded parameter sniffing",
+              "result": {
+                "text": "locked-in generic plan stalls API with 30s scans"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Adaptive plan cache shield",
+              "result": {
+                "text": "dynamically injects force_custom_plan for skew"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect adaptive plan cache governor query and workload categories.",
+            "left": {
+              "code": "Unbounded parallel JIT compilation",
+              "result": {
+                "text": "OOM killer terminates database under analytical load"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "JIT telemetry governance engine",
+              "result": {
+                "text": "bounds worker memory; enforces 15% emission limit"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Domain Operator Class Pipeline: Custom Indexing & Zero-Downtime Reindexing",
+      "codeHash": "41bcf1bbd6423521a8001d045ae9e5fc9914ac4e8feb1b229beec4b0ff322739",
+      "spec": {
+        "template": "compare",
+        "title": "Autonomous Optimizer Engine - Part 4",
+        "leftLabel": "Manual Reactive Administration",
+        "rightLabel": "Autonomous Control Plane",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Domain operator class pipelines enable high speed indexing on user types.",
+            "left": {
+              "code": "Manual EXPLAIN triage after outages",
+              "result": {
+                "text": "hours of downtime diagnosing query plan drift"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Autonomous closed-loop control plane",
+              "result": {
+                "text": "real-time telemetry detects and fixes regressions"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Modern enterprise applications utilize proprietary domain data types.",
+            "left": {
+              "code": "Legacy random_page_cost = 4.0",
+              "result": {
+                "text": "planner wrongly avoids indexes on fast NVMe flash"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Dynamic cost calibrator (1.05)",
+              "result": {
+                "text": "aligns cost model with physical hardware reality"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Biometric bank vault lock verifies executive palm print markers cleanly.",
+            "left": {
+              "code": "Unshielded parameter sniffing",
+              "result": {
+                "text": "locked-in generic plan stalls API with 30s scans"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Adaptive plan cache shield",
+              "result": {
+                "text": "dynamically injects force_custom_plan for skew"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect domain opclass pipeline registry query and indexed access methods.",
+            "left": {
+              "code": "Unbounded parallel JIT compilation",
+              "result": {
+                "text": "OOM killer terminates database under analytical load"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "JIT telemetry governance engine",
+              "result": {
+                "text": "bounds worker memory; enforces 15% emission limit"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Autonomous Optimizer Engine - Part 4",
+        "leftLabel": "Manual Reactive Administration",
+        "rightLabel": "Autonomous Control Plane",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Domain operator class pipelines enable high speed indexing on user types.",
+            "left": {
+              "code": "Manual EXPLAIN triage after outages",
+              "result": {
+                "text": "hours of downtime diagnosing query plan drift"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Autonomous closed-loop control plane",
+              "result": {
+                "text": "real-time telemetry detects and fixes regressions"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Modern enterprise applications utilize proprietary domain data types.",
+            "left": {
+              "code": "Legacy random_page_cost = 4.0",
+              "result": {
+                "text": "planner wrongly avoids indexes on fast NVMe flash"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Dynamic cost calibrator (1.05)",
+              "result": {
+                "text": "aligns cost model with physical hardware reality"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Biometric bank vault lock verifies executive palm print markers cleanly.",
+            "left": {
+              "code": "Unshielded parameter sniffing",
+              "result": {
+                "text": "locked-in generic plan stalls API with 30s scans"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Adaptive plan cache shield",
+              "result": {
+                "text": "dynamically injects force_custom_plan for skew"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect domain opclass pipeline registry query and indexed access methods.",
+            "left": {
+              "code": "Unbounded parallel JIT compilation",
+              "result": {
+                "text": "OOM killer terminates database under analytical load"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "JIT telemetry governance engine",
+              "result": {
+                "text": "bounds worker memory; enforces 15% emission limit"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "JIT-Accelerated Analytical Execution & Real-Time Performance Governance",
+      "codeHash": "d21245aefb442693415b5e085573fa099185f988a8667821a4d1ca5f03449cea",
+      "spec": {
+        "template": "compare",
+        "title": "Autonomous Optimizer Engine - Part 5",
+        "leftLabel": "Manual Reactive Administration",
+        "rightLabel": "Autonomous Control Plane",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Analytical execution engines synthesize compiler code generation rules.",
+            "left": {
+              "code": "Manual EXPLAIN triage after outages",
+              "result": {
+                "text": "hours of downtime diagnosing query plan drift"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Autonomous closed-loop control plane",
+              "result": {
+                "text": "real-time telemetry detects and fixes regressions"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Analytical execution engine fuses declarative relational logic with code.",
+            "left": {
+              "code": "Legacy random_page_cost = 4.0",
+              "result": {
+                "text": "planner wrongly avoids indexes on fast NVMe flash"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Dynamic cost calibrator (1.05)",
+              "result": {
+                "text": "aligns cost model with physical hardware reality"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Supersonic passenger aircraft ignites ramjet engines at high altitudes.",
+            "left": {
+              "code": "Unshielded parameter sniffing",
+              "result": {
+                "text": "locked-in generic plan stalls API with 30s scans"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Adaptive plan cache shield",
+              "result": {
+                "text": "dynamically injects force_custom_plan for skew"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect governance telemetry engine query and safety boundary thresholds.",
+            "left": {
+              "code": "Unbounded parallel JIT compilation",
+              "result": {
+                "text": "OOM killer terminates database under analytical load"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "JIT telemetry governance engine",
+              "result": {
+                "text": "bounds worker memory; enforces 15% emission limit"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Autonomous Optimizer Engine - Part 5",
+        "leftLabel": "Manual Reactive Administration",
+        "rightLabel": "Autonomous Control Plane",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Analytical execution engines synthesize compiler code generation rules.",
+            "left": {
+              "code": "Manual EXPLAIN triage after outages",
+              "result": {
+                "text": "hours of downtime diagnosing query plan drift"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Autonomous closed-loop control plane",
+              "result": {
+                "text": "real-time telemetry detects and fixes regressions"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Analytical execution engine fuses declarative relational logic with code.",
+            "left": {
+              "code": "Legacy random_page_cost = 4.0",
+              "result": {
+                "text": "planner wrongly avoids indexes on fast NVMe flash"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Dynamic cost calibrator (1.05)",
+              "result": {
+                "text": "aligns cost model with physical hardware reality"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Supersonic passenger aircraft ignites ramjet engines at high altitudes.",
+            "left": {
+              "code": "Unshielded parameter sniffing",
+              "result": {
+                "text": "locked-in generic plan stalls API with 30s scans"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Adaptive plan cache shield",
+              "result": {
+                "text": "dynamically injects force_custom_plan for skew"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect governance telemetry engine query and safety boundary thresholds.",
+            "left": {
+              "code": "Unbounded parallel JIT compilation",
+              "result": {
+                "text": "OOM killer terminates database under analytical load"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "JIT telemetry governance engine",
+              "result": {
+                "text": "bounds worker memory; enforces 15% emission limit"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
