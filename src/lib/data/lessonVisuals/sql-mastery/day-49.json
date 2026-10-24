@@ -1,0 +1,829 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "sql-mastery",
+  "day": 49,
+  "promptSha": "3ffde3493425a5386c8239df68a88fbdfbe4e618ec1ab8c47b5749d4257c2d89",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Horizontal Sharding vs Vertical Partitioning: Scale-Up Limits & Topologies",
+      "codeHash": "3a41a471e04ecfe90c2befa28e4a5435695d650858d91b6cf0d38b4d451f4bdb",
+      "spec": {
+        "template": "compare",
+        "title": "Distributed Sharding Architecture - Part 1",
+        "leftLabel": "Single-Node Scale-Up",
+        "rightLabel": "Distributed Shared-Nothing Shard",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Distributed sharding scales relational systems across server clusters.",
+            "left": {
+              "code": "Single server hardware limit",
+              "result": {
+                "text": "memory bus contention and WAL controller bottlenecks"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Shared-nothing sharded cluster",
+              "result": {
+                "text": "linear multi-node compute and I/O expansion"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Single node partitioning encounters physical hardware scale ceilings.",
+            "left": {
+              "code": "Application-level manual routing",
+              "result": {
+                "text": "complex client logic and multi-pool overhead"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Declarative foreign partitions",
+              "result": {
+                "text": "transparent SQL routing via coordinator engine"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Municipal government opens regional branch offices across city districts.",
+            "left": {
+              "code": "Fetch raw tuples over network",
+              "result": {
+                "text": "network congestion and coordinator RAM exhaustion"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Distributed query pushdown",
+              "result": {
+                "text": "remote execution returns compact summary results"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect partitioning versus sharding topologies and hardware profiles.",
+            "left": {
+              "code": "Naive modulus re-hashing",
+              "result": {
+                "text": "hundred percent data reshuffling and downtime"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Consistent hashing virtual shards",
+              "result": {
+                "text": "minimal data movement with zero downtime cutover"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Distributed Sharding Architecture - Part 1",
+        "leftLabel": "Single-Node Scale-Up",
+        "rightLabel": "Distributed Shared-Nothing Shard",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Distributed sharding scales relational systems across server clusters.",
+            "left": {
+              "code": "Single server hardware limit",
+              "result": {
+                "text": "memory bus contention and WAL controller bottlenecks"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Shared-nothing sharded cluster",
+              "result": {
+                "text": "linear multi-node compute and I/O expansion"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Single node partitioning encounters physical hardware scale ceilings.",
+            "left": {
+              "code": "Application-level manual routing",
+              "result": {
+                "text": "complex client logic and multi-pool overhead"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Declarative foreign partitions",
+              "result": {
+                "text": "transparent SQL routing via coordinator engine"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Municipal government opens regional branch offices across city districts.",
+            "left": {
+              "code": "Fetch raw tuples over network",
+              "result": {
+                "text": "network congestion and coordinator RAM exhaustion"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Distributed query pushdown",
+              "result": {
+                "text": "remote execution returns compact summary results"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect partitioning versus sharding topologies and hardware profiles.",
+            "left": {
+              "code": "Naive modulus re-hashing",
+              "result": {
+                "text": "hundred percent data reshuffling and downtime"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Consistent hashing virtual shards",
+              "result": {
+                "text": "minimal data movement with zero downtime cutover"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Foreign Data Wrappers (postgres_fdw): Server Definitions & User Mappings",
+      "codeHash": "f955c490aacab85077e7435c9e937afeca56e9594076a82596246c6708684aac",
+      "spec": {
+        "template": "compare",
+        "title": "Distributed Sharding Architecture - Part 2",
+        "leftLabel": "Single-Node Scale-Up",
+        "rightLabel": "Distributed Shared-Nothing Shard",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Foreign data wrappers enable transparent remote relational querying.",
+            "left": {
+              "code": "Single server hardware limit",
+              "result": {
+                "text": "memory bus contention and WAL controller bottlenecks"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Shared-nothing sharded cluster",
+              "result": {
+                "text": "linear multi-node compute and I/O expansion"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Modern database extensions allow clusters to query foreign relations.",
+            "left": {
+              "code": "Application-level manual routing",
+              "result": {
+                "text": "complex client logic and multi-pool overhead"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Declarative foreign partitions",
+              "result": {
+                "text": "transparent SQL routing via coordinator engine"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Multinational bank consortium installs dedicated links between vaults.",
+            "left": {
+              "code": "Fetch raw tuples over network",
+              "result": {
+                "text": "network congestion and coordinator RAM exhaustion"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Distributed query pushdown",
+              "result": {
+                "text": "remote execution returns compact summary results"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect foreign configuration matrix and performance role syntaxes.",
+            "left": {
+              "code": "Naive modulus re-hashing",
+              "result": {
+                "text": "hundred percent data reshuffling and downtime"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Consistent hashing virtual shards",
+              "result": {
+                "text": "minimal data movement with zero downtime cutover"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Distributed Sharding Architecture - Part 2",
+        "leftLabel": "Single-Node Scale-Up",
+        "rightLabel": "Distributed Shared-Nothing Shard",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Foreign data wrappers enable transparent remote relational querying.",
+            "left": {
+              "code": "Single server hardware limit",
+              "result": {
+                "text": "memory bus contention and WAL controller bottlenecks"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Shared-nothing sharded cluster",
+              "result": {
+                "text": "linear multi-node compute and I/O expansion"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Modern database extensions allow clusters to query foreign relations.",
+            "left": {
+              "code": "Application-level manual routing",
+              "result": {
+                "text": "complex client logic and multi-pool overhead"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Declarative foreign partitions",
+              "result": {
+                "text": "transparent SQL routing via coordinator engine"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Multinational bank consortium installs dedicated links between vaults.",
+            "left": {
+              "code": "Fetch raw tuples over network",
+              "result": {
+                "text": "network congestion and coordinator RAM exhaustion"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Distributed query pushdown",
+              "result": {
+                "text": "remote execution returns compact summary results"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect foreign configuration matrix and performance role syntaxes.",
+            "left": {
+              "code": "Naive modulus re-hashing",
+              "result": {
+                "text": "hundred percent data reshuffling and downtime"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Consistent hashing virtual shards",
+              "result": {
+                "text": "minimal data movement with zero downtime cutover"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Foreign Table Partitioning: Declarative Root Table Mapping to Remote Shards",
+      "codeHash": "9e2fd3bd106c7e4a4916d084cdba64b2e90717075150eec7270b3cf36f45b727",
+      "spec": {
+        "template": "compare",
+        "title": "Distributed Sharding Architecture - Part 3",
+        "leftLabel": "Single-Node Scale-Up",
+        "rightLabel": "Distributed Shared-Nothing Shard",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Declarative partitioned root tables attach remote foreign partitions.",
+            "left": {
+              "code": "Single server hardware limit",
+              "result": {
+                "text": "memory bus contention and WAL controller bottlenecks"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Shared-nothing sharded cluster",
+              "result": {
+                "text": "linear multi-node compute and I/O expansion"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Traditional relational databases required complex application routing.",
+            "left": {
+              "code": "Application-level manual routing",
+              "result": {
+                "text": "complex client logic and multi-pool overhead"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Declarative foreign partitions",
+              "result": {
+                "text": "transparent SQL routing via coordinator engine"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Express shipping terminal routes parcel boxes onto automated trucks.",
+            "left": {
+              "code": "Fetch raw tuples over network",
+              "result": {
+                "text": "network congestion and coordinator RAM exhaustion"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Distributed query pushdown",
+              "result": {
+                "text": "remote execution returns compact summary results"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect foreign sharding specifications and distributed routing roles.",
+            "left": {
+              "code": "Naive modulus re-hashing",
+              "result": {
+                "text": "hundred percent data reshuffling and downtime"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Consistent hashing virtual shards",
+              "result": {
+                "text": "minimal data movement with zero downtime cutover"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Distributed Sharding Architecture - Part 3",
+        "leftLabel": "Single-Node Scale-Up",
+        "rightLabel": "Distributed Shared-Nothing Shard",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Declarative partitioned root tables attach remote foreign partitions.",
+            "left": {
+              "code": "Single server hardware limit",
+              "result": {
+                "text": "memory bus contention and WAL controller bottlenecks"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Shared-nothing sharded cluster",
+              "result": {
+                "text": "linear multi-node compute and I/O expansion"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Traditional relational databases required complex application routing.",
+            "left": {
+              "code": "Application-level manual routing",
+              "result": {
+                "text": "complex client logic and multi-pool overhead"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Declarative foreign partitions",
+              "result": {
+                "text": "transparent SQL routing via coordinator engine"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Express shipping terminal routes parcel boxes onto automated trucks.",
+            "left": {
+              "code": "Fetch raw tuples over network",
+              "result": {
+                "text": "network congestion and coordinator RAM exhaustion"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Distributed query pushdown",
+              "result": {
+                "text": "remote execution returns compact summary results"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect foreign sharding specifications and distributed routing roles.",
+            "left": {
+              "code": "Naive modulus re-hashing",
+              "result": {
+                "text": "hundred percent data reshuffling and downtime"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Consistent hashing virtual shards",
+              "result": {
+                "text": "minimal data movement with zero downtime cutover"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Distributed Query Pushdown & Two-Phase Commit (2PC): Remote Filtering & 2PC",
+      "codeHash": "9a60be333fc0dbde073878ede8b1832a9e61c60494574dc5cded51a2d7fc18a5",
+      "spec": {
+        "template": "compare",
+        "title": "Distributed Sharding Architecture - Part 4",
+        "leftLabel": "Single-Node Scale-Up",
+        "rightLabel": "Distributed Shared-Nothing Shard",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Distributed query pushdown minimizes cross network data movement.",
+            "left": {
+              "code": "Single server hardware limit",
+              "result": {
+                "text": "memory bus contention and WAL controller bottlenecks"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Shared-nothing sharded cluster",
+              "result": {
+                "text": "linear multi-node compute and I/O expansion"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Query pushdown delegates relational operations to remote worker nodes.",
+            "left": {
+              "code": "Application-level manual routing",
+              "result": {
+                "text": "complex client logic and multi-pool overhead"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Declarative foreign partitions",
+              "result": {
+                "text": "transparent SQL routing via coordinator engine"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Corporate headquarters collects sales totals directly from branch stores.",
+            "left": {
+              "code": "Fetch raw tuples over network",
+              "result": {
+                "text": "network congestion and coordinator RAM exhaustion"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Distributed query pushdown",
+              "result": {
+                "text": "remote execution returns compact summary results"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect distributed pushdown matrix features and execution layers.",
+            "left": {
+              "code": "Naive modulus re-hashing",
+              "result": {
+                "text": "hundred percent data reshuffling and downtime"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Consistent hashing virtual shards",
+              "result": {
+                "text": "minimal data movement with zero downtime cutover"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Distributed Sharding Architecture - Part 4",
+        "leftLabel": "Single-Node Scale-Up",
+        "rightLabel": "Distributed Shared-Nothing Shard",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Distributed query pushdown minimizes cross network data movement.",
+            "left": {
+              "code": "Single server hardware limit",
+              "result": {
+                "text": "memory bus contention and WAL controller bottlenecks"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Shared-nothing sharded cluster",
+              "result": {
+                "text": "linear multi-node compute and I/O expansion"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Query pushdown delegates relational operations to remote worker nodes.",
+            "left": {
+              "code": "Application-level manual routing",
+              "result": {
+                "text": "complex client logic and multi-pool overhead"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Declarative foreign partitions",
+              "result": {
+                "text": "transparent SQL routing via coordinator engine"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Corporate headquarters collects sales totals directly from branch stores.",
+            "left": {
+              "code": "Fetch raw tuples over network",
+              "result": {
+                "text": "network congestion and coordinator RAM exhaustion"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Distributed query pushdown",
+              "result": {
+                "text": "remote execution returns compact summary results"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect distributed pushdown matrix features and execution layers.",
+            "left": {
+              "code": "Naive modulus re-hashing",
+              "result": {
+                "text": "hundred percent data reshuffling and downtime"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Consistent hashing virtual shards",
+              "result": {
+                "text": "minimal data movement with zero downtime cutover"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Shard Rebalancing & High-Availability: Consistent Hashing & Citus Architecture",
+      "codeHash": "912d70424431b9c2e5d93b1dac3d98f0f83ec5cce9a9c14204a48273c005f39b",
+      "spec": {
+        "template": "compare",
+        "title": "Distributed Sharding Architecture - Part 5",
+        "leftLabel": "Single-Node Scale-Up",
+        "rightLabel": "Distributed Shared-Nothing Shard",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Distributed shard rebalancing and consistent hashing topologies.",
+            "left": {
+              "code": "Single server hardware limit",
+              "result": {
+                "text": "memory bus contention and WAL controller bottlenecks"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Shared-nothing sharded cluster",
+              "result": {
+                "text": "linear multi-node compute and I/O expansion"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Cluster storage capacity grows requiring additional shard nodes.",
+            "left": {
+              "code": "Application-level manual routing",
+              "result": {
+                "text": "complex client logic and multi-pool overhead"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Declarative foreign partitions",
+              "result": {
+                "text": "transparent SQL routing via coordinator engine"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Delivery company assigns fixed neighborhood zones to shipping hubs.",
+            "left": {
+              "code": "Fetch raw tuples over network",
+              "result": {
+                "text": "network congestion and coordinator RAM exhaustion"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Distributed query pushdown",
+              "result": {
+                "text": "remote execution returns compact summary results"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect distributed shard rebalancing topologies and migration profiles.",
+            "left": {
+              "code": "Naive modulus re-hashing",
+              "result": {
+                "text": "hundred percent data reshuffling and downtime"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Consistent hashing virtual shards",
+              "result": {
+                "text": "minimal data movement with zero downtime cutover"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Distributed Sharding Architecture - Part 5",
+        "leftLabel": "Single-Node Scale-Up",
+        "rightLabel": "Distributed Shared-Nothing Shard",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Distributed shard rebalancing and consistent hashing topologies.",
+            "left": {
+              "code": "Single server hardware limit",
+              "result": {
+                "text": "memory bus contention and WAL controller bottlenecks"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Shared-nothing sharded cluster",
+              "result": {
+                "text": "linear multi-node compute and I/O expansion"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Cluster storage capacity grows requiring additional shard nodes.",
+            "left": {
+              "code": "Application-level manual routing",
+              "result": {
+                "text": "complex client logic and multi-pool overhead"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Declarative foreign partitions",
+              "result": {
+                "text": "transparent SQL routing via coordinator engine"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Delivery company assigns fixed neighborhood zones to shipping hubs.",
+            "left": {
+              "code": "Fetch raw tuples over network",
+              "result": {
+                "text": "network congestion and coordinator RAM exhaustion"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Distributed query pushdown",
+              "result": {
+                "text": "remote execution returns compact summary results"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect distributed shard rebalancing topologies and migration profiles.",
+            "left": {
+              "code": "Naive modulus re-hashing",
+              "result": {
+                "text": "hundred percent data reshuffling and downtime"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Consistent hashing virtual shards",
+              "result": {
+                "text": "minimal data movement with zero downtime cutover"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
