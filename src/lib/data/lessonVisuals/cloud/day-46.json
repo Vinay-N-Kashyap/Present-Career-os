@@ -1,0 +1,317 @@
+{
+  "schemaVersion": 2,
+  "prefix": "cloud",
+  "day": 46,
+  "entries": [
+    {
+      "partTitle": "Modular HCL Composition & The Terraform Dependency Graph (DAG): Module Contracts & Topological Evaluation",
+      "codeHash": "01c144e44b421ca583e701f2f5b74bde99225367fdb382956d4a1aa76e88b753",
+      "spec": {
+        "template": "compare",
+        "compare": {
+          "title": "Modular HCL Composition & The Terraform Dependency Graph (DAG): Module Contracts & Topological Evaluation",
+          "leftLabel": "Monolithic Codebase",
+          "rightLabel": "Modular DRY Graph",
+          "leftAttributes": [
+            {
+              "name": "Feature",
+              "value": "Monolithic flat files."
+            },
+            {
+              "name": "Feature",
+              "value": "Sequential execution."
+            },
+            {
+              "name": "Feature",
+              "value": "Fragile numeric indexing."
+            }
+          ],
+          "rightAttributes": [
+            {
+              "name": "Feature",
+              "value": "Composable child modules."
+            },
+            {
+              "name": "Feature",
+              "value": "Topological DAG execution."
+            },
+            {
+              "name": "Feature",
+              "value": "Robust semantic mapping."
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "focus": "left",
+            "annotation": "Legacy architectures suffer from configuration drift and fragile state tracking."
+          },
+          {
+            "at": "say2",
+            "focus": "right",
+            "annotation": "Modern declarative patterns enforce modularity and distributed locking."
+          },
+          {
+            "at": "example",
+            "focus": "both",
+            "annotation": "Modular architecture enables topological graph evaluation without coupling."
+          },
+          {
+            "at": "tryIt",
+            "focus": "right",
+            "annotation": "Verify that declarative rules maintain state parity without service disruption."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "DRY Multi-Environment Orchestration with Terragrunt: Hierarchical HCL & Remote State Inheritance",
+      "codeHash": "533dda2a9b244f2417ef736f53823739457a71203fa4c67bb93db5acb63e2399",
+      "spec": {
+        "template": "compare",
+        "compare": {
+          "title": "DRY Multi-Environment Orchestration with Terragrunt: Hierarchical HCL & Remote State Inheritance",
+          "leftLabel": "Copy-Paste Environments",
+          "rightLabel": "Terragrunt Orchestration",
+          "leftAttributes": [
+            {
+              "name": "Feature",
+              "value": "Duplicate HCL across folders."
+            },
+            {
+              "name": "Feature",
+              "value": "Severe configuration drift."
+            },
+            {
+              "name": "Feature",
+              "value": "Manual multi-file updates."
+            }
+          ],
+          "rightAttributes": [
+            {
+              "name": "Feature",
+              "value": "Canonical module pointer."
+            },
+            {
+              "name": "Feature",
+              "value": "Hierarchical inheritance."
+            },
+            {
+              "name": "Feature",
+              "value": "Single source of truth."
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "focus": "left",
+            "annotation": "Legacy architectures suffer from configuration drift and fragile state tracking."
+          },
+          {
+            "at": "say2",
+            "focus": "right",
+            "annotation": "Modern declarative patterns enforce modularity and distributed locking."
+          },
+          {
+            "at": "example",
+            "focus": "both",
+            "annotation": "Terragrunt eliminates code duplication across multiple deployment stages."
+          },
+          {
+            "at": "tryIt",
+            "focus": "right",
+            "annotation": "Verify that declarative rules maintain state parity without service disruption."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Zero-Downtime State Refactoring: Anatomy of the State File & Declarative Moved Blocks",
+      "codeHash": "b1adcad66d1bd556ead0e492e710df7e3a2d6934eb2b5f7f60f70f34cfefe758",
+      "spec": {
+        "template": "compare",
+        "compare": {
+          "title": "Zero-Downtime State Refactoring: Anatomy of the State File & Declarative Moved Blocks",
+          "leftLabel": "Unmapped Resource Rename",
+          "rightLabel": "Declarative Moved Block",
+          "leftAttributes": [
+            {
+              "name": "Feature",
+              "value": "Destructive plan action."
+            },
+            {
+              "name": "Feature",
+              "value": "Production database wiped."
+            },
+            {
+              "name": "Feature",
+              "value": "Unplanned service outage."
+            }
+          ],
+          "rightAttributes": [
+            {
+              "name": "Feature",
+              "value": "Pure state address rename."
+            },
+            {
+              "name": "Feature",
+              "value": "Zero downtime migration."
+            },
+            {
+              "name": "Feature",
+              "value": "Stateful data preserved."
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "focus": "left",
+            "annotation": "Legacy architectures suffer from configuration drift and fragile state tracking."
+          },
+          {
+            "at": "say2",
+            "focus": "right",
+            "annotation": "Modern declarative patterns enforce modularity and distributed locking."
+          },
+          {
+            "at": "example",
+            "focus": "both",
+            "annotation": "Declarative moved blocks prevent catastrophic resource destruction."
+          },
+          {
+            "at": "tryIt",
+            "focus": "right",
+            "annotation": "Verify that declarative rules maintain state parity without service disruption."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Remote State Architecture: S3 Backend, DynamoDB Distributed Locking & Deadlock Recovery",
+      "codeHash": "e351751bc66b12d33551dc6ff7d8f0a92a3dde7d1670eed42c9e9375aea165c0",
+      "spec": {
+        "template": "compare",
+        "compare": {
+          "title": "Remote State Architecture: S3 Backend, DynamoDB Distributed Locking & Deadlock Recovery",
+          "leftLabel": "Local Developer State",
+          "rightLabel": "S3 and DynamoDB Backend",
+          "leftAttributes": [
+            {
+              "name": "Feature",
+              "value": "Unencrypted disk storage."
+            },
+            {
+              "name": "Feature",
+              "value": "Concurrent write corruption."
+            },
+            {
+              "name": "Feature",
+              "value": "Zero audit trail logging."
+            }
+          ],
+          "rightAttributes": [
+            {
+              "name": "Feature",
+              "value": "KMS encrypted S3 bucket."
+            },
+            {
+              "name": "Feature",
+              "value": "DynamoDB distributed locking."
+            },
+            {
+              "name": "Feature",
+              "value": "Automated version recovery."
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "focus": "left",
+            "annotation": "Legacy architectures suffer from configuration drift and fragile state tracking."
+          },
+          {
+            "at": "say2",
+            "focus": "right",
+            "annotation": "Modern declarative patterns enforce modularity and distributed locking."
+          },
+          {
+            "at": "example",
+            "focus": "both",
+            "annotation": "Remote state backends protect against concurrent execution race conditions."
+          },
+          {
+            "at": "tryIt",
+            "focus": "right",
+            "annotation": "Verify that declarative rules maintain state parity without service disruption."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Masterclass Synthesis: Enterprise IaC GitOps Architecture, Policy-as-Code & Drift Detection",
+      "codeHash": "a25d82dc57351ef5a3a1c839d06025a4b6ca010a25a42c5bc096d0d9527d3e18",
+      "spec": {
+        "template": "compare",
+        "compare": {
+          "title": "Masterclass Synthesis: Enterprise IaC GitOps Architecture, Policy-as-Code & Drift Detection",
+          "leftLabel": "Manual Console Changes",
+          "rightLabel": "Automated GitOps Mesh",
+          "leftAttributes": [
+            {
+              "name": "Feature",
+              "value": "Untracked console drift."
+            },
+            {
+              "name": "Feature",
+              "value": "Zero compliance vetting."
+            },
+            {
+              "name": "Feature",
+              "value": "Manual apply credentials."
+            }
+          ],
+          "rightAttributes": [
+            {
+              "name": "Feature",
+              "value": "Speculative pull request plans."
+            },
+            {
+              "name": "Feature",
+              "value": "Policy as code enforcement."
+            },
+            {
+              "name": "Feature",
+              "value": "Automated drift remediation."
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "focus": "left",
+            "annotation": "Legacy architectures suffer from configuration drift and fragile state tracking."
+          },
+          {
+            "at": "say2",
+            "focus": "right",
+            "annotation": "Modern declarative patterns enforce modularity and distributed locking."
+          },
+          {
+            "at": "example",
+            "focus": "both",
+            "annotation": "Enterprise GitOps enforces automated compliance guardrails before deployment."
+          },
+          {
+            "at": "tryIt",
+            "focus": "right",
+            "annotation": "Verify that declarative rules maintain state parity without service disruption."
+          }
+        ]
+      }
+    }
+  ]
+}
