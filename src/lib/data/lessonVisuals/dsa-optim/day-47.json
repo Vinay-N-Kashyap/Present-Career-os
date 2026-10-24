@@ -1,0 +1,779 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "dsa-optim",
+  "day": 47,
+  "promptSha": "dsa-optim-day-47-dinic-blocking-flows-pipeline",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Limitations of Edmonds-Karp & The Level Graph Paradigm",
+      "codeHash": "213ecd082e644b1e3a109e248b3e43d3766faedffc9336cd5c84f23104f9b8ac",
+      "filled": {
+        "template": "table",
+        "title": "Residual Network Hop Distance Level Layering Graph.",
+        "columns": [
+          "Level Layer Tier",
+          "Residual Admissibility Rule",
+          "DAG Traversal Property"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Advanced data structures establish algorithmic optimization foundations.",
+            "rows": [
+              [
+                "Source Node Baseline",
+                "Zero Distance Label",
+                "Root Level Broadcast Frontier"
+              ],
+              [
+                "Intermediate Core Tier",
+                "Strict Single Hop Advance",
+                "Cycle Free Forward Progress"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Soviet computer scientist introduced revolutionary maximum flow algorithm.",
+            "rows": [
+              [
+                "Source Node Baseline",
+                "Zero Distance Label",
+                "Root Level Broadcast Frontier"
+              ],
+              [
+                "Intermediate Core Tier",
+                "Strict Single Hop Advance",
+                "Cycle Free Forward Progress"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Metropolitan data centers model optical transport networks with fiber.",
+            "rows": [
+              [
+                "Source Node Baseline",
+                "Zero Distance Label",
+                "Root Level Broadcast Frontier"
+              ],
+              [
+                "Intermediate Core Tier",
+                "Strict Single Hop Advance",
+                "Cycle Free Forward Progress"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Examine typescript code constructing level graph builder queue traversal.",
+            "rows": [
+              [
+                "Source Node Baseline",
+                "Zero Distance Label",
+                "Root Level Broadcast Frontier"
+              ],
+              [
+                "Intermediate Core Tier",
+                "Strict Single Hop Advance",
+                "Cycle Free Forward Progress"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Residual Network Hop Distance Level Layering Graph.",
+        "columns": [
+          "Level Layer Tier",
+          "Residual Admissibility Rule",
+          "DAG Traversal Property"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Advanced data structures establish algorithmic optimization foundations.",
+            "rows": [
+              [
+                "Source Node Baseline",
+                "Zero Distance Label",
+                "Root Level Broadcast Frontier"
+              ],
+              [
+                "Intermediate Core Tier",
+                "Strict Single Hop Advance",
+                "Cycle Free Forward Progress"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Soviet computer scientist introduced revolutionary maximum flow algorithm.",
+            "rows": [
+              [
+                "Source Node Baseline",
+                "Zero Distance Label",
+                "Root Level Broadcast Frontier"
+              ],
+              [
+                "Intermediate Core Tier",
+                "Strict Single Hop Advance",
+                "Cycle Free Forward Progress"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Metropolitan data centers model optical transport networks with fiber.",
+            "rows": [
+              [
+                "Source Node Baseline",
+                "Zero Distance Label",
+                "Root Level Broadcast Frontier"
+              ],
+              [
+                "Intermediate Core Tier",
+                "Strict Single Hop Advance",
+                "Cycle Free Forward Progress"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Examine typescript code constructing level graph builder queue traversal.",
+            "rows": [
+              [
+                "Source Node Baseline",
+                "Zero Distance Label",
+                "Root Level Broadcast Frontier"
+              ],
+              [
+                "Intermediate Core Tier",
+                "Strict Single Hop Advance",
+                "Cycle Free Forward Progress"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "BFS Level Assignment & DFS Blocking Flow Extraction in O(V^2 * E) Time",
+      "codeHash": "bb5f55268247767d7c5b2d8ff00dd3493c8aa6d20863c324a2c33260ca66e54e",
+      "filled": {
+        "template": "table",
+        "title": "Blocking Flow Multi Path Augmentation Dynamics.",
+        "columns": [
+          "Algorithmic Phase Step",
+          "Search Traversal Method",
+          "Network Saturation Impact"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Algorithmic machinery dissects phases combining level assignment search.",
+            "rows": [
+              [
+                "Level Construction Pass",
+                "Queue Breadth First Search",
+                "Shortest Hop Distance Verification"
+              ],
+              [
+                "Blocking Flow Extraction",
+                "Depth First Path Saturation",
+                "Admissible Layer Saturated"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Level graph transitions extracting blocking flow across directed paths.",
+            "rows": [
+              [
+                "Level Construction Pass",
+                "Queue Breadth First Search",
+                "Shortest Hop Distance Verification"
+              ],
+              [
+                "Blocking Flow Extraction",
+                "Depth First Path Saturation",
+                "Admissible Layer Saturated"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Regional cloud transit exchange routes data flows across centers.",
+            "rows": [
+              [
+                "Level Construction Pass",
+                "Queue Breadth First Search",
+                "Shortest Hop Distance Verification"
+              ],
+              [
+                "Blocking Flow Extraction",
+                "Depth First Path Saturation",
+                "Admissible Layer Saturated"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Examine typescript code alternating between breadth first search passes.",
+            "rows": [
+              [
+                "Level Construction Pass",
+                "Queue Breadth First Search",
+                "Shortest Hop Distance Verification"
+              ],
+              [
+                "Blocking Flow Extraction",
+                "Depth First Path Saturation",
+                "Admissible Layer Saturated"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Blocking Flow Multi Path Augmentation Dynamics.",
+        "columns": [
+          "Algorithmic Phase Step",
+          "Search Traversal Method",
+          "Network Saturation Impact"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Algorithmic machinery dissects phases combining level assignment search.",
+            "rows": [
+              [
+                "Level Construction Pass",
+                "Queue Breadth First Search",
+                "Shortest Hop Distance Verification"
+              ],
+              [
+                "Blocking Flow Extraction",
+                "Depth First Path Saturation",
+                "Admissible Layer Saturated"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Level graph transitions extracting blocking flow across directed paths.",
+            "rows": [
+              [
+                "Level Construction Pass",
+                "Queue Breadth First Search",
+                "Shortest Hop Distance Verification"
+              ],
+              [
+                "Blocking Flow Extraction",
+                "Depth First Path Saturation",
+                "Admissible Layer Saturated"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Regional cloud transit exchange routes data flows across centers.",
+            "rows": [
+              [
+                "Level Construction Pass",
+                "Queue Breadth First Search",
+                "Shortest Hop Distance Verification"
+              ],
+              [
+                "Blocking Flow Extraction",
+                "Depth First Path Saturation",
+                "Admissible Layer Saturated"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Examine typescript code alternating between breadth first search passes.",
+            "rows": [
+              [
+                "Level Construction Pass",
+                "Queue Breadth First Search",
+                "Shortest Hop Distance Verification"
+              ],
+              [
+                "Blocking Flow Extraction",
+                "Depth First Path Saturation",
+                "Admissible Layer Saturated"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Work-Bound Analysis & Special Case Networks (Unit Capacities in O(E * sqrt(V)))",
+      "codeHash": "c69ad8022aa33df5d59563d74248f188bf82187c13fc3e6108019012d8e01f83",
+      "filled": {
+        "template": "table",
+        "title": "Unit Capacity Geometric Bound Phase Analysis.",
+        "columns": [
+          "Network Architecture Model",
+          "Theoretical Phase Bound",
+          "Worst Case Time Complexity"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Specialized network topologies accelerate unit capacity networks analysis.",
+            "rows": [
+              [
+                "General Integer Flow",
+                "Vertex Count Bound",
+                "Quadratic Vertex Linear Edge"
+              ],
+              [
+                "Unit Capacity Matching",
+                "Square Root Vertex Bound",
+                "Square Root Vertex Linear Edge"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Combinatorial geometry accelerates unit flows across successive phases.",
+            "rows": [
+              [
+                "General Integer Flow",
+                "Vertex Count Bound",
+                "Quadratic Vertex Linear Edge"
+              ],
+              [
+                "Unit Capacity Matching",
+                "Square Root Vertex Bound",
+                "Square Root Vertex Linear Edge"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Course scheduling system matches students to laboratory workstations.",
+            "rows": [
+              [
+                "General Integer Flow",
+                "Vertex Count Bound",
+                "Quadratic Vertex Linear Edge"
+              ],
+              [
+                "Unit Capacity Matching",
+                "Square Root Vertex Bound",
+                "Square Root Vertex Linear Edge"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Examine typescript code tracing bipartite matching benchmark network.",
+            "rows": [
+              [
+                "General Integer Flow",
+                "Vertex Count Bound",
+                "Quadratic Vertex Linear Edge"
+              ],
+              [
+                "Unit Capacity Matching",
+                "Square Root Vertex Bound",
+                "Square Root Vertex Linear Edge"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Unit Capacity Geometric Bound Phase Analysis.",
+        "columns": [
+          "Network Architecture Model",
+          "Theoretical Phase Bound",
+          "Worst Case Time Complexity"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Specialized network topologies accelerate unit capacity networks analysis.",
+            "rows": [
+              [
+                "General Integer Flow",
+                "Vertex Count Bound",
+                "Quadratic Vertex Linear Edge"
+              ],
+              [
+                "Unit Capacity Matching",
+                "Square Root Vertex Bound",
+                "Square Root Vertex Linear Edge"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Combinatorial geometry accelerates unit flows across successive phases.",
+            "rows": [
+              [
+                "General Integer Flow",
+                "Vertex Count Bound",
+                "Quadratic Vertex Linear Edge"
+              ],
+              [
+                "Unit Capacity Matching",
+                "Square Root Vertex Bound",
+                "Square Root Vertex Linear Edge"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Course scheduling system matches students to laboratory workstations.",
+            "rows": [
+              [
+                "General Integer Flow",
+                "Vertex Count Bound",
+                "Quadratic Vertex Linear Edge"
+              ],
+              [
+                "Unit Capacity Matching",
+                "Square Root Vertex Bound",
+                "Square Root Vertex Linear Edge"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Examine typescript code tracing bipartite matching benchmark network.",
+            "rows": [
+              [
+                "General Integer Flow",
+                "Vertex Count Bound",
+                "Quadratic Vertex Linear Edge"
+              ],
+              [
+                "Unit Capacity Matching",
+                "Square Root Vertex Bound",
+                "Square Root Vertex Linear Edge"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Current-Arc Optimization & Dead-End Pruning",
+      "codeHash": "fab48a1cedec4c516d569592c4bfdfe13755d4cb491600ad31451d5b06b4ec1e",
+      "filled": {
+        "template": "table",
+        "title": "Current Arc Pointer Optimization Efficiency Matrix.",
+        "columns": [
+          "Traversal Optimization Mode",
+          "Adjacency Scan Strategy",
+          "Redundant Edge Evaluations"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Production grade flow engines separate theoretical implementation rules.",
+            "rows": [
+              [
+                "Naive Depth First Search",
+                "Reset Pointer Per Path",
+                "High Redundant Search Workload"
+              ],
+              [
+                "Current Arc Optimization",
+                "Persistent Forward Pointer",
+                "Amortized Single Edge Scan"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Current arc optimization maintains index array for admissible edges.",
+            "rows": [
+              [
+                "Naive Depth First Search",
+                "Reset Pointer Per Path",
+                "High Redundant Search Workload"
+              ],
+              [
+                "Current Arc Optimization",
+                "Persistent Forward Pointer",
+                "Amortized Single Edge Scan"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Dense telecommunications network connects parallel fiber channels.",
+            "rows": [
+              [
+                "Naive Depth First Search",
+                "Reset Pointer Per Path",
+                "High Redundant Search Workload"
+              ],
+              [
+                "Current Arc Optimization",
+                "Persistent Forward Pointer",
+                "Amortized Single Edge Scan"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Examine typescript code comparing edge traversal evaluations.",
+            "rows": [
+              [
+                "Naive Depth First Search",
+                "Reset Pointer Per Path",
+                "High Redundant Search Workload"
+              ],
+              [
+                "Current Arc Optimization",
+                "Persistent Forward Pointer",
+                "Amortized Single Edge Scan"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Current Arc Pointer Optimization Efficiency Matrix.",
+        "columns": [
+          "Traversal Optimization Mode",
+          "Adjacency Scan Strategy",
+          "Redundant Edge Evaluations"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Production grade flow engines separate theoretical implementation rules.",
+            "rows": [
+              [
+                "Naive Depth First Search",
+                "Reset Pointer Per Path",
+                "High Redundant Search Workload"
+              ],
+              [
+                "Current Arc Optimization",
+                "Persistent Forward Pointer",
+                "Amortized Single Edge Scan"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Current arc optimization maintains index array for admissible edges.",
+            "rows": [
+              [
+                "Naive Depth First Search",
+                "Reset Pointer Per Path",
+                "High Redundant Search Workload"
+              ],
+              [
+                "Current Arc Optimization",
+                "Persistent Forward Pointer",
+                "Amortized Single Edge Scan"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Dense telecommunications network connects parallel fiber channels.",
+            "rows": [
+              [
+                "Naive Depth First Search",
+                "Reset Pointer Per Path",
+                "High Redundant Search Workload"
+              ],
+              [
+                "Current Arc Optimization",
+                "Persistent Forward Pointer",
+                "Amortized Single Edge Scan"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Examine typescript code comparing edge traversal evaluations.",
+            "rows": [
+              [
+                "Naive Depth First Search",
+                "Reset Pointer Per Path",
+                "High Redundant Search Workload"
+              ],
+              [
+                "Current Arc Optimization",
+                "Persistent Forward Pointer",
+                "Amortized Single Edge Scan"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Application: Multi-Channel Optical Line Carrier Flow Engine (DinicOpticalSwitchEngine)",
+      "codeHash": "444ecce70d6e26ba376166a0f490b22884c18a83510b85229ba1f0c9bc316881",
+      "filled": {
+        "template": "table",
+        "title": "Optical Carrier Wavelength Switch Provisioning Table.",
+        "columns": [
+          "Regional Optical Node",
+          "Wavelength Allocation Plan",
+          "Photonic Signal Quality OSNR"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Enterprise infrastructure engine implements optical switch controller.",
+            "rows": [
+              [
+                "Ingress Transponder Hub",
+                "Dense Carrier Provisioning",
+                "Forward Error Correction Safe"
+              ],
+              [
+                "Transit ROADM Switch",
+                "Optical Cross Connect Matrix",
+                "Sub Millisecond Low Latency"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Software defined optical controller provisions dynamic lightpaths.",
+            "rows": [
+              [
+                "Ingress Transponder Hub",
+                "Dense Carrier Provisioning",
+                "Forward Error Correction Safe"
+              ],
+              [
+                "Transit ROADM Switch",
+                "Optical Cross Connect Matrix",
+                "Sub Millisecond Low Latency"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Transcontinental optical fiber network connects regional switching hubs.",
+            "rows": [
+              [
+                "Ingress Transponder Hub",
+                "Dense Carrier Provisioning",
+                "Forward Error Correction Safe"
+              ],
+              [
+                "Transit ROADM Switch",
+                "Optical Cross Connect Matrix",
+                "Sub Millisecond Low Latency"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Explore optical switch engine class registering wavelength channels.",
+            "rows": [
+              [
+                "Ingress Transponder Hub",
+                "Dense Carrier Provisioning",
+                "Forward Error Correction Safe"
+              ],
+              [
+                "Transit ROADM Switch",
+                "Optical Cross Connect Matrix",
+                "Sub Millisecond Low Latency"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Optical Carrier Wavelength Switch Provisioning Table.",
+        "columns": [
+          "Regional Optical Node",
+          "Wavelength Allocation Plan",
+          "Photonic Signal Quality OSNR"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Enterprise infrastructure engine implements optical switch controller.",
+            "rows": [
+              [
+                "Ingress Transponder Hub",
+                "Dense Carrier Provisioning",
+                "Forward Error Correction Safe"
+              ],
+              [
+                "Transit ROADM Switch",
+                "Optical Cross Connect Matrix",
+                "Sub Millisecond Low Latency"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Software defined optical controller provisions dynamic lightpaths.",
+            "rows": [
+              [
+                "Ingress Transponder Hub",
+                "Dense Carrier Provisioning",
+                "Forward Error Correction Safe"
+              ],
+              [
+                "Transit ROADM Switch",
+                "Optical Cross Connect Matrix",
+                "Sub Millisecond Low Latency"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Transcontinental optical fiber network connects regional switching hubs.",
+            "rows": [
+              [
+                "Ingress Transponder Hub",
+                "Dense Carrier Provisioning",
+                "Forward Error Correction Safe"
+              ],
+              [
+                "Transit ROADM Switch",
+                "Optical Cross Connect Matrix",
+                "Sub Millisecond Low Latency"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Explore optical switch engine class registering wavelength channels.",
+            "rows": [
+              [
+                "Ingress Transponder Hub",
+                "Dense Carrier Provisioning",
+                "Forward Error Correction Safe"
+              ],
+              [
+                "Transit ROADM Switch",
+                "Optical Cross Connect Matrix",
+                "Sub Millisecond Low Latency"
+              ]
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
