@@ -1,0 +1,829 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "sql-mastery",
+  "day": 44,
+  "promptSha": "8ad1d050399beb0b1ff500ba229c667b58dc6bb0ae34a1df5151e66190f421f2",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "PostgreSQL Process-per-Connection Architecture & The High-Concurrency Scaling Wall",
+      "codeHash": "c39d599c95d213e85fd583f6d4954203358518621809336d2fe7a5cd03b95faf",
+      "spec": {
+        "template": "compare",
+        "title": "Connection Pooling Architecture - Part 1",
+        "leftLabel": "Direct Connection / Naive Architecture",
+        "rightLabel": "Resilient PgBouncer Pooled Architecture",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Process per connection architecture consumes server resources.",
+            "left": {
+              "code": "Direct unpooled microservices",
+              "result": {
+                "text": "catastrophic memory context exhaustion"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "PgBouncer transaction pool",
+              "result": {
+                "text": "sub-millisecond multiplexed connection flow"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Dedicated operating system processes handle each connected database client.",
+            "left": {
+              "code": "Over-provisioned connections",
+              "result": {
+                "text": "severe CPU context-switching thrashing"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Little's Law bounded pool",
+              "result": {
+                "text": "maximum physical hardware core saturation"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Airport security checkpoint channels passengers through screening lanes.",
+            "left": {
+              "code": "Missing prepared statement proxy",
+              "result": {
+                "text": "prepared statement does not exist errors"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Proxy statement tracking",
+              "result": {
+                "text": "seamless transparent execution plan reuse"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect connection architecture impact on memory and operating systems.",
+            "left": {
+              "code": "Uncoordinated server restarts",
+              "result": {
+                "text": "widespread client TCP connection drops"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "PgBouncer PAUSE / RESUME",
+              "result": {
+                "text": "zero-downtime buffered query failover"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Connection Pooling Architecture - Part 1",
+        "leftLabel": "Direct Connection / Naive Architecture",
+        "rightLabel": "Resilient PgBouncer Pooled Architecture",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Process per connection architecture consumes server resources.",
+            "left": {
+              "code": "Direct unpooled microservices",
+              "result": {
+                "text": "catastrophic memory context exhaustion"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "PgBouncer transaction pool",
+              "result": {
+                "text": "sub-millisecond multiplexed connection flow"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Dedicated operating system processes handle each connected database client.",
+            "left": {
+              "code": "Over-provisioned connections",
+              "result": {
+                "text": "severe CPU context-switching thrashing"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Little's Law bounded pool",
+              "result": {
+                "text": "maximum physical hardware core saturation"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Airport security checkpoint channels passengers through screening lanes.",
+            "left": {
+              "code": "Missing prepared statement proxy",
+              "result": {
+                "text": "prepared statement does not exist errors"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Proxy statement tracking",
+              "result": {
+                "text": "seamless transparent execution plan reuse"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect connection architecture impact on memory and operating systems.",
+            "left": {
+              "code": "Uncoordinated server restarts",
+              "result": {
+                "text": "widespread client TCP connection drops"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "PgBouncer PAUSE / RESUME",
+              "result": {
+                "text": "zero-downtime buffered query failover"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "PgBouncer Pooling Modes: Session vs Transaction vs Statement Pooling",
+      "codeHash": "bc75c88aa8162dce664dd5fc28596a102edcfb298791e2debff0c829a48541d5",
+      "spec": {
+        "template": "compare",
+        "title": "Connection Pooling Architecture - Part 2",
+        "leftLabel": "Direct Connection / Naive Architecture",
+        "rightLabel": "Resilient PgBouncer Pooled Architecture",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Connection pooling modes govern backend resource allocation efficiency.",
+            "left": {
+              "code": "Direct unpooled microservices",
+              "result": {
+                "text": "catastrophic memory context exhaustion"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "PgBouncer transaction pool",
+              "result": {
+                "text": "sub-millisecond multiplexed connection flow"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Session pooling assigns dedicated server connection for client duration.",
+            "left": {
+              "code": "Over-provisioned connections",
+              "result": {
+                "text": "severe CPU context-switching thrashing"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Little's Law bounded pool",
+              "result": {
+                "text": "maximum physical hardware core saturation"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Municipal car rental service shares vehicle fleet between drivers.",
+            "left": {
+              "code": "Missing prepared statement proxy",
+              "result": {
+                "text": "prepared statement does not exist errors"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Proxy statement tracking",
+              "result": {
+                "text": "seamless transparent execution plan reuse"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect pooling modes multiplexing ratios and session state support.",
+            "left": {
+              "code": "Uncoordinated server restarts",
+              "result": {
+                "text": "widespread client TCP connection drops"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "PgBouncer PAUSE / RESUME",
+              "result": {
+                "text": "zero-downtime buffered query failover"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Connection Pooling Architecture - Part 2",
+        "leftLabel": "Direct Connection / Naive Architecture",
+        "rightLabel": "Resilient PgBouncer Pooled Architecture",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Connection pooling modes govern backend resource allocation efficiency.",
+            "left": {
+              "code": "Direct unpooled microservices",
+              "result": {
+                "text": "catastrophic memory context exhaustion"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "PgBouncer transaction pool",
+              "result": {
+                "text": "sub-millisecond multiplexed connection flow"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Session pooling assigns dedicated server connection for client duration.",
+            "left": {
+              "code": "Over-provisioned connections",
+              "result": {
+                "text": "severe CPU context-switching thrashing"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Little's Law bounded pool",
+              "result": {
+                "text": "maximum physical hardware core saturation"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Municipal car rental service shares vehicle fleet between drivers.",
+            "left": {
+              "code": "Missing prepared statement proxy",
+              "result": {
+                "text": "prepared statement does not exist errors"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Proxy statement tracking",
+              "result": {
+                "text": "seamless transparent execution plan reuse"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect pooling modes multiplexing ratios and session state support.",
+            "left": {
+              "code": "Uncoordinated server restarts",
+              "result": {
+                "text": "widespread client TCP connection drops"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "PgBouncer PAUSE / RESUME",
+              "result": {
+                "text": "zero-downtime buffered query failover"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Sizing Connection Pools with Little's Law & CPU Core Saturation",
+      "codeHash": "02d115d58e4e5c84e550b2d0ac4415bfd04e3a44a313ceb0e32287416af53ea5",
+      "spec": {
+        "template": "compare",
+        "title": "Connection Pooling Architecture - Part 3",
+        "leftLabel": "Direct Connection / Naive Architecture",
+        "rightLabel": "Resilient PgBouncer Pooled Architecture",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Allocating excessive database connections collapses application throughput.",
+            "left": {
+              "code": "Direct unpooled microservices",
+              "result": {
+                "text": "catastrophic memory context exhaustion"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "PgBouncer transaction pool",
+              "result": {
+                "text": "sub-millisecond multiplexed connection flow"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Concurrent queries compete for physical processor cores during execution.",
+            "left": {
+              "code": "Over-provisioned connections",
+              "result": {
+                "text": "severe CPU context-switching thrashing"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Little's Law bounded pool",
+              "result": {
+                "text": "maximum physical hardware core saturation"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Highway traffic toll booths maintain optimal vehicle throughput speeds.",
+            "left": {
+              "code": "Missing prepared statement proxy",
+              "result": {
+                "text": "prepared statement does not exist errors"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Proxy statement tracking",
+              "result": {
+                "text": "seamless transparent execution plan reuse"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect connection pool sizing benchmarks and latency measurements.",
+            "left": {
+              "code": "Uncoordinated server restarts",
+              "result": {
+                "text": "widespread client TCP connection drops"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "PgBouncer PAUSE / RESUME",
+              "result": {
+                "text": "zero-downtime buffered query failover"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Connection Pooling Architecture - Part 3",
+        "leftLabel": "Direct Connection / Naive Architecture",
+        "rightLabel": "Resilient PgBouncer Pooled Architecture",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Allocating excessive database connections collapses application throughput.",
+            "left": {
+              "code": "Direct unpooled microservices",
+              "result": {
+                "text": "catastrophic memory context exhaustion"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "PgBouncer transaction pool",
+              "result": {
+                "text": "sub-millisecond multiplexed connection flow"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Concurrent queries compete for physical processor cores during execution.",
+            "left": {
+              "code": "Over-provisioned connections",
+              "result": {
+                "text": "severe CPU context-switching thrashing"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Little's Law bounded pool",
+              "result": {
+                "text": "maximum physical hardware core saturation"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Highway traffic toll booths maintain optimal vehicle throughput speeds.",
+            "left": {
+              "code": "Missing prepared statement proxy",
+              "result": {
+                "text": "prepared statement does not exist errors"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Proxy statement tracking",
+              "result": {
+                "text": "seamless transparent execution plan reuse"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect connection pool sizing benchmarks and latency measurements.",
+            "left": {
+              "code": "Uncoordinated server restarts",
+              "result": {
+                "text": "widespread client TCP connection drops"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "PgBouncer PAUSE / RESUME",
+              "result": {
+                "text": "zero-downtime buffered query failover"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Handling Prepared Statements in Transaction Pooling: max_prepared_statements & Client Caching",
+      "codeHash": "de9c582010bc0d494d1889db4b89d82ba7979096a4b87b2732e623cbae5a9337",
+      "spec": {
+        "template": "compare",
+        "title": "Connection Pooling Architecture - Part 4",
+        "leftLabel": "Direct Connection / Naive Architecture",
+        "rightLabel": "Resilient PgBouncer Pooled Architecture",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Prepared statements require specialized handling in transaction pools.",
+            "left": {
+              "code": "Direct unpooled microservices",
+              "result": {
+                "text": "catastrophic memory context exhaustion"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "PgBouncer transaction pool",
+              "result": {
+                "text": "sub-millisecond multiplexed connection flow"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Query execution plans remain isolated within private backend memory.",
+            "left": {
+              "code": "Over-provisioned connections",
+              "result": {
+                "text": "severe CPU context-switching thrashing"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Little's Law bounded pool",
+              "result": {
+                "text": "maximum physical hardware core saturation"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Library reservation desk retrieves pre indexed reference manuals.",
+            "left": {
+              "code": "Missing prepared statement proxy",
+              "result": {
+                "text": "prepared statement does not exist errors"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Proxy statement tracking",
+              "result": {
+                "text": "seamless transparent execution plan reuse"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect prepared statement compatibility across client database drivers.",
+            "left": {
+              "code": "Uncoordinated server restarts",
+              "result": {
+                "text": "widespread client TCP connection drops"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "PgBouncer PAUSE / RESUME",
+              "result": {
+                "text": "zero-downtime buffered query failover"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Connection Pooling Architecture - Part 4",
+        "leftLabel": "Direct Connection / Naive Architecture",
+        "rightLabel": "Resilient PgBouncer Pooled Architecture",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Prepared statements require specialized handling in transaction pools.",
+            "left": {
+              "code": "Direct unpooled microservices",
+              "result": {
+                "text": "catastrophic memory context exhaustion"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "PgBouncer transaction pool",
+              "result": {
+                "text": "sub-millisecond multiplexed connection flow"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Query execution plans remain isolated within private backend memory.",
+            "left": {
+              "code": "Over-provisioned connections",
+              "result": {
+                "text": "severe CPU context-switching thrashing"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Little's Law bounded pool",
+              "result": {
+                "text": "maximum physical hardware core saturation"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Library reservation desk retrieves pre indexed reference manuals.",
+            "left": {
+              "code": "Missing prepared statement proxy",
+              "result": {
+                "text": "prepared statement does not exist errors"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Proxy statement tracking",
+              "result": {
+                "text": "seamless transparent execution plan reuse"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect prepared statement compatibility across client database drivers.",
+            "left": {
+              "code": "Uncoordinated server restarts",
+              "result": {
+                "text": "widespread client TCP connection drops"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "PgBouncer PAUSE / RESUME",
+              "result": {
+                "text": "zero-downtime buffered query failover"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "High-Availability Connection Routing: Multi-Tier PgBouncer & Failover DNS/VIPs",
+      "codeHash": "b4e6807c67c0810441524c6006ad0543e95d1fa041ccdbfd44a385e5ffb4b86e",
+      "spec": {
+        "template": "compare",
+        "title": "Connection Pooling Architecture - Part 5",
+        "leftLabel": "Direct Connection / Naive Architecture",
+        "rightLabel": "Resilient PgBouncer Pooled Architecture",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "High availability connection routing decouples microservice clients.",
+            "left": {
+              "code": "Direct unpooled microservices",
+              "result": {
+                "text": "catastrophic memory context exhaustion"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "PgBouncer transaction pool",
+              "result": {
+                "text": "sub-millisecond multiplexed connection flow"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Standalone connection pool instances represent single points of failure.",
+            "left": {
+              "code": "Over-provisioned connections",
+              "result": {
+                "text": "severe CPU context-switching thrashing"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Little's Law bounded pool",
+              "result": {
+                "text": "maximum physical hardware core saturation"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Train station switchboard holds departing trains during track repairs.",
+            "left": {
+              "code": "Missing prepared statement proxy",
+              "result": {
+                "text": "prepared statement does not exist errors"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Proxy statement tracking",
+              "result": {
+                "text": "seamless transparent execution plan reuse"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect high availability pool routing ports and failover targets.",
+            "left": {
+              "code": "Uncoordinated server restarts",
+              "result": {
+                "text": "widespread client TCP connection drops"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "PgBouncer PAUSE / RESUME",
+              "result": {
+                "text": "zero-downtime buffered query failover"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Connection Pooling Architecture - Part 5",
+        "leftLabel": "Direct Connection / Naive Architecture",
+        "rightLabel": "Resilient PgBouncer Pooled Architecture",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "High availability connection routing decouples microservice clients.",
+            "left": {
+              "code": "Direct unpooled microservices",
+              "result": {
+                "text": "catastrophic memory context exhaustion"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "PgBouncer transaction pool",
+              "result": {
+                "text": "sub-millisecond multiplexed connection flow"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Standalone connection pool instances represent single points of failure.",
+            "left": {
+              "code": "Over-provisioned connections",
+              "result": {
+                "text": "severe CPU context-switching thrashing"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Little's Law bounded pool",
+              "result": {
+                "text": "maximum physical hardware core saturation"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Train station switchboard holds departing trains during track repairs.",
+            "left": {
+              "code": "Missing prepared statement proxy",
+              "result": {
+                "text": "prepared statement does not exist errors"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Proxy statement tracking",
+              "result": {
+                "text": "seamless transparent execution plan reuse"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect high availability pool routing ports and failover targets.",
+            "left": {
+              "code": "Uncoordinated server restarts",
+              "result": {
+                "text": "widespread client TCP connection drops"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "PgBouncer PAUSE / RESUME",
+              "result": {
+                "text": "zero-downtime buffered query failover"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
