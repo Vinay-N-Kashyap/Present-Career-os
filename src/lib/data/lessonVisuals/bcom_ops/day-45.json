@@ -1,0 +1,764 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "bcom_ops",
+  "day": 45,
+  "promptSha": "a2928f5f0d0167bc54293d5002c09be4b100553d1ad31fdc1f2e7d81a7ba1793",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Planetary Supply Chain Synthesis: Integrating Multi-Echelon, WMS, Cold Chain & Circularity",
+      "codeHash": "e703535342cf851d293ab22302d8b9fbb115a675629783d6dff4d29f56c8ab72",
+      "filled": {},
+      "spec": {
+        "template": "funnel",
+        "title": "Planetary Supply Chain Synthesis Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Planetary supply chain synthesis unifies inventory warehousing and loops.",
+            "activeStageId": "stage_1",
+            "stages": [
+              {
+                "id": "stage_1",
+                "label": "Primary Ingestion",
+                "value": 100,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "stage_2",
+                "label": "Buffer Allocation",
+                "value": 75,
+                "percentage": 75,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_3",
+                "label": "Execution Control",
+                "value": 50,
+                "percentage": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_4",
+                "label": "Terminal Output",
+                "value": 25,
+                "percentage": 25,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Synchronized control towers align forward velocity with circular flows.",
+            "activeStageId": "stage_2",
+            "stages": [
+              {
+                "id": "stage_1",
+                "label": "Primary Ingestion",
+                "value": 100,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "stage_2",
+                "label": "Buffer Allocation",
+                "value": 75,
+                "percentage": 75,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_3",
+                "label": "Execution Control",
+                "value": 50,
+                "percentage": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_4",
+                "label": "Terminal Output",
+                "value": 25,
+                "percentage": 25,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Medical robotics maker coordinates global assembly hubs and returns.",
+            "activeStageId": "stage_3",
+            "stages": [
+              {
+                "id": "stage_1",
+                "label": "Primary Ingestion",
+                "value": 100,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "stage_2",
+                "label": "Buffer Allocation",
+                "value": 75,
+                "percentage": 75,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_3",
+                "label": "Execution Control",
+                "value": 50,
+                "percentage": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_4",
+                "label": "Terminal Output",
+                "value": 25,
+                "percentage": 25,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Formulate unified data schema linking forward and reverse tracking.",
+            "activeStageId": "stage_4",
+            "stages": [
+              {
+                "id": "stage_1",
+                "label": "Primary Ingestion",
+                "value": 100,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "stage_2",
+                "label": "Buffer Allocation",
+                "value": 75,
+                "percentage": 75,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_3",
+                "label": "Execution Control",
+                "value": 50,
+                "percentage": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_4",
+                "label": "Terminal Output",
+                "value": 25,
+                "percentage": 25,
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Disruption Risk Modeling: Geopolitical Shocks, Port Congestion & Fragility Indices",
+      "codeHash": "091aaad44cc19588e110da9374fe98f2e04e27100d3e0fc238442d145d7214dd",
+      "filled": {},
+      "spec": {
+        "template": "funnel",
+        "title": "Disruption Risk Modeling Geopoli Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Disruption risk modeling measures time to recovery against survival.",
+            "activeStageId": "stage_1",
+            "stages": [
+              {
+                "id": "stage_1",
+                "label": "Primary Ingestion",
+                "value": 100,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "stage_2",
+                "label": "Buffer Allocation",
+                "value": 75,
+                "percentage": 75,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_3",
+                "label": "Execution Control",
+                "value": 50,
+                "percentage": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_4",
+                "label": "Terminal Output",
+                "value": 25,
+                "percentage": 25,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Network fragility gaps identify single source supplier chokepoints.",
+            "activeStageId": "stage_2",
+            "stages": [
+              {
+                "id": "stage_1",
+                "label": "Primary Ingestion",
+                "value": 100,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "stage_2",
+                "label": "Buffer Allocation",
+                "value": 75,
+                "percentage": 75,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_3",
+                "label": "Execution Control",
+                "value": 50,
+                "percentage": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_4",
+                "label": "Terminal Output",
+                "value": 25,
+                "percentage": 25,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Ventilator producer dual sources microcontrollers to close gaps.",
+            "activeStageId": "stage_3",
+            "stages": [
+              {
+                "id": "stage_1",
+                "label": "Primary Ingestion",
+                "value": 100,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "stage_2",
+                "label": "Buffer Allocation",
+                "value": 75,
+                "percentage": 75,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_3",
+                "label": "Execution Control",
+                "value": 50,
+                "percentage": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_4",
+                "label": "Terminal Output",
+                "value": 25,
+                "percentage": 25,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Quantify operational fragility index across critical supply nodes.",
+            "activeStageId": "stage_4",
+            "stages": [
+              {
+                "id": "stage_1",
+                "label": "Primary Ingestion",
+                "value": 100,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "stage_2",
+                "label": "Buffer Allocation",
+                "value": 75,
+                "percentage": 75,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_3",
+                "label": "Execution Control",
+                "value": 50,
+                "percentage": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_4",
+                "label": "Terminal Output",
+                "value": 25,
+                "percentage": 25,
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Digital Twin Network Simulation & Multi-Objective Pareto Frontier Optimization",
+      "codeHash": "5b2ccbdd86fec2a6936e05b7dab405d1643cd51028eb70145143aa2954ec350f",
+      "filled": {},
+      "spec": {
+        "template": "funnel",
+        "title": "Digital Twin Network Simulation Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Digital twin networks simulate stochastic macroeconomic shock waves.",
+            "activeStageId": "stage_1",
+            "stages": [
+              {
+                "id": "stage_1",
+                "label": "Primary Ingestion",
+                "value": 100,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "stage_2",
+                "label": "Buffer Allocation",
+                "value": 75,
+                "percentage": 75,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_3",
+                "label": "Execution Control",
+                "value": 50,
+                "percentage": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_4",
+                "label": "Terminal Output",
+                "value": 25,
+                "percentage": 25,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Multi objective genetic algorithms map out pareto optimal frontiers.",
+            "activeStageId": "stage_2",
+            "stages": [
+              {
+                "id": "stage_1",
+                "label": "Primary Ingestion",
+                "value": 100,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "stage_2",
+                "label": "Buffer Allocation",
+                "value": 75,
+                "percentage": 75,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_3",
+                "label": "Execution Control",
+                "value": 50,
+                "percentage": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_4",
+                "label": "Terminal Output",
+                "value": 25,
+                "percentage": 25,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Global distributor selects optimal warehouse topology trade offs.",
+            "activeStageId": "stage_3",
+            "stages": [
+              {
+                "id": "stage_1",
+                "label": "Primary Ingestion",
+                "value": 100,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "stage_2",
+                "label": "Buffer Allocation",
+                "value": 75,
+                "percentage": 75,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_3",
+                "label": "Execution Control",
+                "value": 50,
+                "percentage": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_4",
+                "label": "Terminal Output",
+                "value": 25,
+                "percentage": 25,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Identify non dominated pareto optimal configurations across options.",
+            "activeStageId": "stage_4",
+            "stages": [
+              {
+                "id": "stage_1",
+                "label": "Primary Ingestion",
+                "value": 100,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "stage_2",
+                "label": "Buffer Allocation",
+                "value": 75,
+                "percentage": 75,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_3",
+                "label": "Execution Control",
+                "value": 50,
+                "percentage": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_4",
+                "label": "Terminal Output",
+                "value": 25,
+                "percentage": 25,
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "ESG & Carbon Footprint Tracking across Global Multimodal Transport Corridors",
+      "codeHash": "c18fee0c3d804fdd69a38cead4efdd7fff9d10d908a76323227f9f463382e72c",
+      "filled": {},
+      "spec": {
+        "template": "funnel",
+        "title": "ESG  Carbon Footprint Tracking a Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Multimodal freight tracking accounts for supply chain carbon emissions.",
+            "activeStageId": "stage_1",
+            "stages": [
+              {
+                "id": "stage_1",
+                "label": "Primary Ingestion",
+                "value": 100,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "stage_2",
+                "label": "Buffer Allocation",
+                "value": 75,
+                "percentage": 75,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_3",
+                "label": "Execution Control",
+                "value": 50,
+                "percentage": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_4",
+                "label": "Terminal Output",
+                "value": 25,
+                "percentage": 25,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Modal shifting from air to rail slashes transport carbon intensity.",
+            "activeStageId": "stage_2",
+            "stages": [
+              {
+                "id": "stage_1",
+                "label": "Primary Ingestion",
+                "value": 100,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "stage_2",
+                "label": "Buffer Allocation",
+                "value": 75,
+                "percentage": 75,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_3",
+                "label": "Execution Control",
+                "value": 50,
+                "percentage": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_4",
+                "label": "Terminal Output",
+                "value": 25,
+                "percentage": 25,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Smartphone maker shifts freight to ocean shipping to save carbon.",
+            "activeStageId": "stage_3",
+            "stages": [
+              {
+                "id": "stage_1",
+                "label": "Primary Ingestion",
+                "value": 100,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "stage_2",
+                "label": "Buffer Allocation",
+                "value": 75,
+                "percentage": 75,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_3",
+                "label": "Execution Control",
+                "value": 50,
+                "percentage": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_4",
+                "label": "Terminal Output",
+                "value": 25,
+                "percentage": 25,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Calculate freight emissions across air truck rail and ocean modes.",
+            "activeStageId": "stage_4",
+            "stages": [
+              {
+                "id": "stage_1",
+                "label": "Primary Ingestion",
+                "value": 100,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "stage_2",
+                "label": "Buffer Allocation",
+                "value": 75,
+                "percentage": 75,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_3",
+                "label": "Execution Control",
+                "value": 50,
+                "percentage": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_4",
+                "label": "Terminal Output",
+                "value": 25,
+                "percentage": 25,
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Master Capstone Simulator: Closed-Loop Global Resilient Supply Chain Command Center",
+      "codeHash": "5c8e9b2d72c563763e8362a97a7210efa2821becf80e4522480f6c18eb6c144e",
+      "filled": {},
+      "spec": {
+        "template": "funnel",
+        "title": "Master Capstone Simulator Closed Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Master supply chain capstone coordinates global resilient operations.",
+            "activeStageId": "stage_1",
+            "stages": [
+              {
+                "id": "stage_1",
+                "label": "Primary Ingestion",
+                "value": 100,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "stage_2",
+                "label": "Buffer Allocation",
+                "value": 75,
+                "percentage": 75,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_3",
+                "label": "Execution Control",
+                "value": 50,
+                "percentage": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_4",
+                "label": "Terminal Output",
+                "value": 25,
+                "percentage": 25,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Planetary command center survives maritime delays and thermal spikes.",
+            "activeStageId": "stage_2",
+            "stages": [
+              {
+                "id": "stage_1",
+                "label": "Primary Ingestion",
+                "value": 100,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "stage_2",
+                "label": "Buffer Allocation",
+                "value": 75,
+                "percentage": 75,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_3",
+                "label": "Execution Control",
+                "value": 50,
+                "percentage": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_4",
+                "label": "Terminal Output",
+                "value": 25,
+                "percentage": 25,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Global manufacturing enterprise sustains high on time delivery rates.",
+            "activeStageId": "stage_3",
+            "stages": [
+              {
+                "id": "stage_1",
+                "label": "Primary Ingestion",
+                "value": 100,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "stage_2",
+                "label": "Buffer Allocation",
+                "value": 75,
+                "percentage": 75,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_3",
+                "label": "Execution Control",
+                "value": 50,
+                "percentage": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_4",
+                "label": "Terminal Output",
+                "value": 25,
+                "percentage": 25,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Execute master supply chain capstone engine to verify final token.",
+            "activeStageId": "stage_4",
+            "stages": [
+              {
+                "id": "stage_1",
+                "label": "Primary Ingestion",
+                "value": 100,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "stage_2",
+                "label": "Buffer Allocation",
+                "value": 75,
+                "percentage": 75,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_3",
+                "label": "Execution Control",
+                "value": 50,
+                "percentage": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_4",
+                "label": "Terminal Output",
+                "value": 25,
+                "percentage": 25,
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
