@@ -1,0 +1,367 @@
+{
+  "schemaVersion": 2,
+  "prefix": "cloud",
+  "day": 36,
+  "entries": [
+    {
+      "partIndex": 1,
+      "partTitle": "Firecracker MicroVM Architecture: Linux KVM, Minimalist Device Model & Sub-Second Boot Mechanics",
+      "codeHash": "7f7ccd44cc6e0d301cfec3172083c96dfacec6d6ca8789840ce8fedaffac4895",
+      "spec": {
+        "template": "workflow",
+        "title": "Firecracker MicroVM Boot & Minimalist Device Model",
+        "description": "Trace Linux KVM API calls, virtio device attachment, and sub-5 millisecond microVM boot mechanics.",
+        "steps": [
+          {
+            "at": "say1",
+            "title": "QEMU vs Firecracker Tradeoff",
+            "description": "Traditional QEMU emulates legacy hardware (PCI/ACPI); Firecracker provides minimal 4-device model in Rust.",
+            "data": {
+              "active": "device_model_comparison",
+              "nodes": [
+                "qemu_monolithic",
+                "heavy_bios",
+                "firecracker_rust",
+                "virtio_minimal"
+              ],
+              "status": "DEVICE_MODEL_OPTIMIZED"
+            }
+          },
+          {
+            "at": "say2",
+            "title": "KVM Hypervisor API Direct Boot",
+            "description": "Minimalist vmlinux kernel loaded directly via /dev/kvm, bypassing firmware initialization.",
+            "data": {
+              "active": "kvm_direct_boot",
+              "nodes": [
+                "dev_kvm",
+                "vmlinux_kernel",
+                "virtio_net",
+                "virtio_block"
+              ],
+              "status": "KVM_INITIALIZED"
+            }
+          },
+          {
+            "at": "example",
+            "title": "Sub-5ms Boot Execution",
+            "description": "MicroVM boots, configures virtio interfaces, and starts execution in 5.3 milliseconds.",
+            "data": {
+              "active": "boot_time_benchmark",
+              "nodes": [
+                "kernel_boot_3ms",
+                "virtio_devices_2ms",
+                "ready_for_traffic",
+                "sub_5ms_verified"
+              ],
+              "status": "BOOT_5MS_ACHIEVED"
+            }
+          },
+          {
+            "at": "tryIt",
+            "title": "High-Density Bare-Metal Packing",
+            "description": "Lazy memory allocation and Extended Page Tables pack thousands of microVMs per bare-metal host.",
+            "data": {
+              "active": "high_density_packing",
+              "nodes": [
+                "bare_metal_host",
+                "lazy_mmap",
+                "hardware_ept",
+                "thousands_microvms"
+              ],
+              "status": "HIGH_DENSITY_VERIFIED"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 2,
+      "partTitle": "The Firecracker Jailer: Multi-Tenant Sandboxing, cgroups, chroot & seccomp-bpf System Call Filters",
+      "codeHash": "9b4fc1adb41d7e9d01ac1b5dae4ce36722b5c769a3b492162df2ad5f577d0d94",
+      "spec": {
+        "template": "workflow",
+        "title": "The Firecracker Jailer Multi-Tenant Sandbox",
+        "description": "Analyze privilege dropping, chroot isolation, cgroups resource limits, and seccomp-bpf filters.",
+        "steps": [
+          {
+            "at": "say1",
+            "title": "Multi-Tenant Threat Model",
+            "description": "Untrusted third-party code runs on shared bare-metal; Jailer builds multi-tier defense.",
+            "data": {
+              "active": "threat_model",
+              "nodes": [
+                "untrusted_code",
+                "shared_host",
+                "jailer_barrier",
+                "isolation_guarantee"
+              ],
+              "status": "THREAT_SURFACE_ISOLATED"
+            }
+          },
+          {
+            "at": "say2",
+            "title": "Privilege Dropping & Chroot",
+            "description": "Jailer revokes root privileges to unprivileged UID/GID and locks process into isolated chroot jailroot.",
+            "data": {
+              "active": "privilege_revocation",
+              "nodes": [
+                "drop_root_uid",
+                "unprivileged_gid",
+                "chroot_jailroot",
+                "host_fs_hidden"
+              ],
+              "status": "PRIVILEGES_REVOKED"
+            }
+          },
+          {
+            "at": "example",
+            "title": "Seccomp-BPF Syscall Filter",
+            "description": "Linux kernel BPF filter intercepts syscalls, killing any process attempting unauthorized calls like ptrace.",
+            "data": {
+              "active": "seccomp_bpf_kill",
+              "nodes": [
+                "attempted_syscall",
+                "bpf_whitelist_check",
+                "sigsys_kill",
+                "sandbox_secured"
+              ],
+              "status": "SECCOMP_BPF_ENFORCED"
+            }
+          },
+          {
+            "at": "tryIt",
+            "title": "Cgroups Resource Quotas",
+            "description": "Hard CPU and memory bandwidth limits prevent noisy-neighbor workloads from impacting adjacent microVMs.",
+            "data": {
+              "active": "cgroups_throttling",
+              "nodes": [
+                "cgroup_v2",
+                "cpu_cfs_quota",
+                "mem_bandwidth",
+                "fair_share_guaranteed"
+              ],
+              "status": "RESOURCE_QUOTA_ACTIVE"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 3,
+      "partTitle": "Lambda SnapStart & Micro-Snapshotting: Coordinated Restore at Checkpoint (CRaC) & Sub-200ms Resume",
+      "codeHash": "dd515e3470c165c9563a88a773ff5f4a528fd6dd193af01a00fa6d8a3d2ea00e",
+      "spec": {
+        "template": "workflow",
+        "title": "Lambda SnapStart & CRaC Lifecycle",
+        "description": "Examine pre-initialization, encrypted micro-snapshots, sub-200ms restore, and CRaC lifecycle hooks.",
+        "steps": [
+          {
+            "at": "say1",
+            "title": "Managed Runtime Cold Start Penalty",
+            "description": "JVM class loading, dependency injection, and JIT compilation incur 6+ second initialization cold starts.",
+            "data": {
+              "active": "runtime_cold_start",
+              "nodes": [
+                "class_loading",
+                "dependency_injection",
+                "jit_compilation",
+                "6s_latency_penalty"
+              ],
+              "status": "COLD_START_IDENTIFIED"
+            }
+          },
+          {
+            "at": "say2",
+            "title": "Offline Pre-Initialization",
+            "description": "AWS pre-initializes function on deployment, executing static blocks and framework setup offline.",
+            "data": {
+              "active": "offline_pre_init",
+              "nodes": [
+                "publish_version",
+                "offline_microvm",
+                "init_phase_complete",
+                "pause_execution"
+              ],
+              "status": "PRE_INIT_COMPLETED"
+            }
+          },
+          {
+            "at": "example",
+            "title": "Encrypted Micro-Snapshotting",
+            "description": "Firecracker captures vCPU registers and memory pages into encrypted, distributed tiered cache.",
+            "data": {
+              "active": "micro_snapshot",
+              "nodes": [
+                "vcpu_registers",
+                "guest_memory_dump",
+                "kms_encryption",
+                "tiered_cache"
+              ],
+              "status": "SNAPSHOT_CAPTURED"
+            }
+          },
+          {
+            "at": "tryIt",
+            "title": "Sub-200ms Restoration",
+            "description": "Upon user invocation, memory is restored directly into guest RAM, resuming execution in under 150ms.",
+            "data": {
+              "active": "sub_200ms_resume",
+              "nodes": [
+                "user_invocation",
+                "restore_ram_snapshot",
+                "crac_after_restore",
+                "sub_150ms_response"
+              ],
+              "status": "SNAPSTART_200MS_ACHIEVED"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 4,
+      "partTitle": "The SnapStart Security Trap: PRNG Entropy Duplication, Connection Busting & Ephemeral Storage (/tmp)",
+      "codeHash": "aa69e7d77fb3178cf9d2f83d40c4e8ccba35eb4712fb943882c17f7739d1596c",
+      "spec": {
+        "template": "workflow",
+        "title": "SnapStart Security Trap: PRNG Entropy & Socket Re-seeding",
+        "description": "Trace snapshot entropy cloning vulnerabilities, CRaC re-seeding guards, and database socket refreshing.",
+        "steps": [
+          {
+            "at": "say1",
+            "title": "Snapshot Cloning Trap",
+            "description": "Memory snapshot captures internal PRNG seeds; 1000 restored instances share the exact same random state.",
+            "data": {
+              "active": "prng_cloning_vulnerability",
+              "nodes": [
+                "frozen_prng_seed",
+                "cloned_1000_vms",
+                "identical_tokens",
+                "auth_broken"
+              ],
+              "status": "PRNG_COLLISION_RISK"
+            }
+          },
+          {
+            "at": "say2",
+            "title": "Automated Kernel Entropy Reseeding",
+            "description": "Linux guest kernel automatically refreshes /dev/urandom pools upon microVM restoration.",
+            "data": {
+              "active": "kernel_entropy_refresh",
+              "nodes": [
+                "vm_restored",
+                "kernel_event",
+                "reseed_urandom",
+                "entropy_refreshed"
+              ],
+              "status": "KERNEL_ENTROPY_RESET"
+            }
+          },
+          {
+            "at": "example",
+            "title": "CRaC Application Reseeding Guard",
+            "description": "AfterRestore() callback explicitly re-seeds custom SecureRandom instances and UUID generators.",
+            "data": {
+              "active": "crac_entropy_guard",
+              "nodes": [
+                "crac_hook",
+                "fresh_host_entropy",
+                "secure_random_reseed",
+                "unique_session_tokens"
+              ],
+              "status": "PRNG_UNIQUENESS_VERIFIED"
+            }
+          },
+          {
+            "at": "tryIt",
+            "title": "Stateful Socket Refresh & /tmp Hygiene",
+            "description": "Database connection pools reconnect cleanly in afterRestore(); ephemeral /tmp storage cleaned up.",
+            "data": {
+              "active": "socket_refresh_tmp_clean",
+              "nodes": [
+                "closed_stale_sockets",
+                "fresh_aurora_handshake",
+                "tmp_storage_freed",
+                "production_hardened"
+              ],
+              "status": "CONNECTIONS_RESTORED"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 5,
+      "partTitle": "Masterclass Synthesis: Production Firecracker MicroVM & Provisioned Concurrency Auto-Scaling Engine",
+      "codeHash": "10074151f758ff47381176d0f46d470f6569193ace36dbedb8e77b336c93bc83",
+      "spec": {
+        "template": "workflow",
+        "title": "Enterprise Firecracker & Provisioned Concurrency Engine",
+        "description": "Comprehensive synthesis of microVM virtualization, SnapStart sub-200ms resume, and auto-scaling.",
+        "steps": [
+          {
+            "at": "say1",
+            "title": "Virtualization Spectrum Synthesis",
+            "description": "Complete unification of Firecracker KVM, Jailer sandboxing, SnapStart, and Provisioned Concurrency.",
+            "data": {
+              "active": "runtime_synthesis",
+              "nodes": [
+                "firecracker_vmm",
+                "jailer_sandbox",
+                "snapstart_cache",
+                "provisioned_pool"
+              ],
+              "status": "RUNTIME_SYNTHESIS_ACTIVE"
+            }
+          },
+          {
+            "at": "say2",
+            "title": "Provisioned Concurrency Spillover",
+            "description": "Requests exceeding provisioned capacity spill into on-demand execution, triggering cold start spikes.",
+            "data": {
+              "active": "spillover_detection",
+              "nodes": [
+                "surge_traffic",
+                "provisioned_exceeded",
+                "on_demand_spillover",
+                "cold_start_spike"
+              ],
+              "status": "SPILLOVER_IDENTIFIED"
+            }
+          },
+          {
+            "at": "example",
+            "title": "Application Auto Scaling Mitigation",
+            "description": "Application Auto Scaling targets 70% provisioned utilization, scaling capacity proactively.",
+            "data": {
+              "active": "auto_scaling_target",
+              "nodes": [
+                "target_tracking_70_pct",
+                "proactive_scaling",
+                "zero_spillover",
+                "uniform_5ms_latency"
+              ],
+              "status": "PROVISIONED_AUTOSCALED"
+            }
+          },
+          {
+            "at": "tryIt",
+            "title": "Grade A+ Runtime Certification",
+            "description": "Serverless virtualization engine verified with 100% test coverage and sub-200ms restoration.",
+            "data": {
+              "active": "grade_a_certification",
+              "nodes": [
+                "snapstart_142ms",
+                "prng_verified",
+                "jailer_secured",
+                "grade_a_certified"
+              ],
+              "status": "GRADE_A_PLUS_PRODUCTION_CERTIFIED"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
